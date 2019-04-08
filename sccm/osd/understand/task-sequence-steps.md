@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95fb105d10fc7afbb94328dd7905ef075daa447b
-ms.sourcegitcommit: 33a006204f7f5f9b9acd1f3e84c4bc207362d00a
-ms.translationtype: HT
+ms.openlocfilehash: a349997150c951d1a4ec9e0b99f9d24c21f37205
+ms.sourcegitcommit: d584c126a0a5725567631b74ac1e01f63242a997
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57305780"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58861089"
 ---
 # <a name="task-sequence-steps-in-configuration-manager"></a>Passaggi della sequenza di attività in Configuration Manager
 
@@ -37,7 +37,7 @@ La parte restante di questo articolo descrive le altre impostazioni della scheda
 
 - **Disattiva questo passaggio**: la sequenza di attività ignora questo passaggio quando viene eseguita in un computer. L'icona del passaggio è disattivata nell'editor della sequenza di attività.  
 
-- **Continua in caso di errore**: in caso di errore durante l'esecuzione del passaggio, la sequenza di attività continua. Per altre informazioni, vedere [Considerazioni sulla pianificazione per l'automazione delle attività](/sccm/osd/plan-design/planning-considerations-for-automating-tasks#BKMK_TSGroups).   
+- **Continua in caso di errori**: in caso di errore durante l'esecuzione del passaggio la sequenza di attività continua. Per altre informazioni, vedere [Considerazioni sulla pianificazione per l'automazione delle attività](/sccm/osd/plan-design/planning-considerations-for-automating-tasks#BKMK_TSGroups).   
 
 - **Aggiungi condizione**: la sequenza di attività valuta queste istruzioni condizionali per determinare se il passaggio viene eseguito. Per un esempio dell'uso di una variabile della sequenza di attività come condizione, vedere [Come usare le variabili della sequenza di attività](/sccm/osd/understand/using-task-sequence-variables#bkmk_access-condition).   
 
@@ -71,7 +71,7 @@ Selezionare **Sfoglia** per specificare il **Pacchetto immagine** usato da quest
 #### <a name="destination"></a>Destinazione  
 Configurare una delle opzioni seguenti:
 
-- **Next available partition** (Partizione successiva disponibile): usare la partizione sequenziale successiva non ancora sottoposta a un passaggio **Applica sistema operativo** o **Applica immagine dei dati** in questa sequenza di attività.  
+- **Next available partition** (Partizione disponibile successiva): usare la partizione sequenziale successiva non ancora sottoposta a un passaggio **Applica sistema operativo** o **Applica immagine dei dati** in questa sequenza di attività.  
 
 - **Disco e partizione specifici**: selezionare un numero per **Disco** (a partire da 0) e per **Partizione** (a partire da 1).  
 
@@ -88,7 +88,7 @@ Specifica che la sequenza di attività elimina tutti i file nella partizione di 
 
 Usare questo passaggio per scaricare tutti i driver del pacchetto di driver e installarli nel sistema operativo Windows.
 
-Il passaggio **Applica pacchetto di driver** della sequenza di attività rende disponibili tutti i driver di dispositivo inclusi in un pacchetto di driver per l'uso da parte di Windows. Aggiungere questo passaggio tra i passaggi **Applica sistema operativo** e **Imposta Windows e ConfigMgr** per rendere disponibili a Windows i driver inclusi nel pacchetto. In genere, il passaggio **Applica pacchetto di driver** viene posizionato dopo il passaggio **Applica automaticamente i driver** della sequenza di attività. Il passaggio **Applica pacchetto di driver** della sequenza di attività è utile anche negli scenari di distribuzione di supporti autonomi.  
+Il passaggio **Applica pacchetto di driver** della sequenza di attività rende disponibili tutti i driver di dispositivo inclusi in un pacchetto di driver per l'uso da parte di Windows. Aggiungere questo passaggio tra i passaggi **Applica sistema operativo** e **Imposta Windows e ConfigMgr** per rendere disponibili a Windows i driver inclusi nel pacchetto. Il passaggio **Applica pacchetto di driver** della sequenza di attività è utile anche negli scenari di distribuzione di supporti autonomi.  
 
 Inserire driver di dispositivi simili in un pacchetto di driver e quindi distribuirli nei punti di distribuzione appropriati. Ad esempio, inserire tutti i driver di un determinato produttore in un pacchetto di driver. Quindi distribuire il pacchetto in punti di distribuzione accessibili ai computer associati.
 
@@ -101,7 +101,7 @@ Usare le variabili della sequenza di attività seguenti con questo passaggio:
 - [OSDApplyDriverBootCriticalHardwareComponent](/sccm/osd/understand/task-sequence-variables#OSDApplyDriverBootCriticalHardwareComponent)  
 - [OSDApplyDriverBootCriticalID](/sccm/osd/understand/task-sequence-variables#OSDApplyDriverBootCriticalID)  
 - [OSDApplyDriverBootCriticalINFFile](/sccm/osd/understand/task-sequence-variables#OSDApplyDriverBootCriticalINFFile)  
-- [OSDInstallDriversAdditionalOptions](/sccm/osd/understand/task-sequence-variables#OSDInstallDriversAdditionalOptions) <!--516679/2840016--> (a partire dalla versione 1806)  
+- [OSDInstallDriversAdditionalOptions](/sccm/osd/understand/task-sequence-variables#OSDInstallDriversAdditionalOptions)<!--516679/2840016--> (a partire dalla versione 1806)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Driver** e quindi selezionare **Applica pacchetto driver**. 
 
@@ -250,7 +250,7 @@ Se non si specifica un file di risposte del programma di installazione di Window
 #### <a name="destination"></a>Destinazione  
 Configurare una delle opzioni seguenti:  
 
-- **Next available partition** (Partizione successiva disponibile): usare la partizione sequenziale successiva non ancora sottoposta a un passaggio **Applica sistema operativo** o **Applica immagine dei dati** in questa sequenza di attività.  
+- **Next available partition** (Partizione disponibile successiva): usare la partizione sequenziale successiva non ancora sottoposta a un passaggio **Applica sistema operativo** o **Applica immagine dei dati** in questa sequenza di attività.  
 
 - **Disco e partizione specifici**: selezionare un numero per **Disco** (a partire da 0) e per **Partizione** (a partire da 1).  
 
@@ -517,7 +517,7 @@ Abilitare questa opzione per specificare una delle impostazioni seguenti:
 
 - **Continua se non è possibile acquisire alcuni file**: abilitare questa impostazione per continuare il processo di migrazione, anche se non è possibile acquisire alcuni file. Se si disabilita questa opzione e non è possibile acquisire un file, il passaggio ha esito negativo. Questa opzione è attivata per impostazione predefinita.  
 
-- **Esegui acquisizione localmente utilizzando i collegamenti invece di copiare i file**: Abilitare questa impostazione per usare i collegamenti reali NTFS per l'acquisizione dei file.  
+- **Esegui acquisizione localmente utilizzando i collegamenti invece di copiare i file**: abilitare questa impostazione per usare i collegamenti reali NTFS per acquisire i file.  
 
     Per altre informazioni sulla migrazione di dati tramite i collegamenti reali, vedere [Archivio delle migrazioni con collegamento reale](https://docs.microsoft.com/windows/deployment/usmt/usmt-hard-link-migration-store).  
 
@@ -685,7 +685,7 @@ Scegliere di salvare il pacchetto in una delle posizioni seguenti:
 
 - **Cache del client di Configuration Manager**: usare questa opzione per archiviare il contenuto nella cache del client. Per impostazione predefinita, il percorso è `%WinDir%\ccmcache`.  
 
-- **Percorso personalizzato**: il motore della sequenza di attività scarica prima di tutto il pacchetto nella directory di lavoro della sequenza di attività e quindi lo sposta nel percorso specificato con questa opzione. Il motore di esecuzione della sequenza di attività aggiunge il percorso con l'ID pacchetto.  
+- **Percorso personalizzato**: il motore di esecuzione della sequenza di attività scarica prima di tutto il pacchetto nella directory di lavoro della sequenza di attività e quindi lo sposta nel percorso specificato con questa opzione. Il motore di esecuzione della sequenza di attività aggiunge il percorso con l'ID pacchetto.  
 
 #### <a name="save-path-as-a-variable"></a>Salvare il percorso come variabile
 Salvare il percorso del pacchetto in una variabile della sequenza di attività personalizzata. Usare quindi questa variabile in un altro passaggio della sequenza di attività. 
@@ -750,7 +750,8 @@ Specifica l'unità da crittografare Per crittografare l'unità del sistema opera
 Per crittografare un'unità dati specifica, non del sistema operativo, selezionare **Unità specifica**. Selezionare quindi l'unità nell'elenco.  
 
 #### <a name="use-full-disk-encryption"></a>Usa la crittografia del disco completo
-<!--SCCMDocs-pr issue 2671--> Per impostazione predefinita, questo passaggio consente di crittografare solo lo spazio usato nell'unità. Questo comportamento predefinito è consigliato perché è più veloce ed efficiente. A partire dalla versione 1806, se l'organizzazione richiede di crittografare l'intera unità durante l'installazione, abilitare questa opzione. Installazione di Windows attende la crittografia dell'intera unità, operazione che richiede molto tempo soprattutto nelle unità di grandi dimensioni. 
+<!--SCCMDocs-pr issue 2671-->
+Per impostazione predefinita, questo passaggio consente di crittografare solo lo spazio usato nell'unità. Questo comportamento predefinito è consigliato perché è più veloce ed efficiente. A partire dalla versione 1806, se l'organizzazione richiede di crittografare l'intera unità durante l'installazione, abilitare questa opzione. Installazione di Windows attende la crittografia dell'intera unità, operazione che richiede molto tempo soprattutto nelle unità di grandi dimensioni. 
 
 #### <a name="choose-where-to-create-the-recovery-key"></a>Scegliere dove creare la chiave di ripristino
 Per specificare la posizione in cui BitLocker crea la password di ripristino e depositarla in Active Directory, selezionare **In Active Directory**. Questa opzione richiede che si estenda Active Directory per il deposito delle chiavi di BitLocker. In questo modo BitLocker può salvare le informazioni di ripristino associate in Active Directory. Selezionare **Non creare una chiave di ripristino** per non creare una password. La creazione di una password è l'opzione consigliata.  
@@ -859,7 +860,7 @@ Queste applicazioni non vengono visualizzate nella finestra di dialogo **Selezio
 #### <a name="install-applications-according-to-dynamic-variable-list"></a>Installa le applicazioni in base all'elenco di variabili dinamiche
 La sequenza di attività installa le applicazioni usando questo nome variabile di base. Il nome variabile di base indica un set di variabili della sequenza di attività definite per una raccolta o un computer. Queste variabili specificano le applicazioni che vengono installate dalla sequenza di attività per tale raccolta o computer. Ogni nome di variabile comprende il nome base comune e un suffisso numerico che inizia con 01. Il valore di ogni variabili deve contenere soltanto il nome dell'applicazione.  
 
-Per consentire alla sequenza di attività di installare applicazioni usando un elenco di variabili dinamiche, abilitare l'impostazione seguente nella scheda **Generale** della finestra **Proprietà** dell'applicazione: **Consenti l'installazione dell'applicazione dall'operazione sequenza di attività Installazione applicazione senza distribuzione**.  
+Per consentire alla sequenza di attività di installare applicazioni usando un elenco di variabili dinamiche, abilitare l'impostazione seguente nella scheda **Generale** della finestra di dialogo **Proprietà** dell'applicazione: **Consenti l'installazione dell'applicazione dall'operazione sequenza di attività Installazione applicazione senza distribuzione**.  
 
 > [!NOTE]  
 > Non è possibile installare le applicazioni usando un elenco dinamico di variabili per distribuzioni con supporti autonomi.  
@@ -942,7 +943,7 @@ Questa impostazione specifica un pacchetto software di Configuration Manager. Il
 #### <a name="install-software-packages-according-to-dynamic-variable-list"></a>Installa i pacchetti software in base all'elenco di variabili dinamiche
 La sequenza di attività installa i pacchetti usando questo nome variabile di base. Il nome variabile di base indica un set di variabili della sequenza di attività definite per una raccolta o un computer. Queste variabili specificano i pacchetti che vengono installati dalla sequenza di attività per la raccolta o il computer. Ogni nome di variabile comprende il nome base comune e un suffisso numerico che inizia con 001. Il valore di ogni variabile deve includere un ID pacchetto e il nome del software separati da due punti.  
 
-Per consentire alla sequenza di attività di installare un software usando un elenco di variabili dinamiche, abilitare l'impostazione seguente nella scheda **Avanzate** della finestra **Proprietà** del pacchetto: **Consenti l'installazione di questo programma dalla sequenza di attività Installa pacchetto senza che venga distribuito**.  
+Per far sì che la sequenza di attività installi un software tramite un elenco di variabili dinamiche, abilitare l'impostazione seguente nella scheda **Avanzate** in **Proprietà** del pacchetto: **Consenti l'installazione di questo programma dalla sequenza di attività Installa pacchetto senza che venga distribuito**.  
 
 > [!NOTE]  
 > Non è possibile installare pacchetti software usando un elenco dinamico di variabili per distribuzioni con supporti autonomi.  
@@ -1113,7 +1114,8 @@ Selezionare questa opzione per fare in modo che Sysprep crei automaticamente un 
 Selezionare questa opzione per impedire a Sysprep di reimpostare il flag di attivazione del prodotto.  
 
 #### <a name="shutdown-the-computer-after-running-this-action"></a>Arresta il computer dopo l'esecuzione di questa azione
-<!--SCCMDocs-pr issue 2695--> A partire dalla versione 1806, questa opzione indica a Sysprep di arrestare il computer in sostituzione del comportamento di riavvio predefinito. 
+<!--SCCMDocs-pr issue 2695-->
+A partire dalla versione 1806, questa opzione indica a Sysprep di arrestare il computer in sostituzione del comportamento di riavvio predefinito. 
 
 A partire dalla versione 1810, questo passaggio viene usato nella sequenza di attività [Windows Autopilot per dispositivi esistenti](/sccm/osd/deploy-use/windows-autopilot-for-existing-devices).
 
@@ -1143,7 +1145,8 @@ Nella scheda **Proprietà** per questo passaggio, configurare le impostazioni de
 Specificare l'unità per cui si vuole abilitare BitLocker. BitLocker consente di crittografare solo lo spazio usato nell'unità.  
 
 #### <a name="use-full-disk-encryption"></a>Usa la crittografia del disco completo
-<!--SCCMDocs-pr issue 2671--> Per impostazione predefinita, questo passaggio consente di crittografare solo lo spazio usato nell'unità. Questo comportamento predefinito è consigliato perché è più veloce ed efficiente. A partire dalla versione 1806, se l'organizzazione richiede di crittografare l'intera unità durante l'installazione, abilitare questa opzione. Installazione di Windows attende la crittografia dell'intera unità, operazione che richiede molto tempo soprattutto nelle unità di grandi dimensioni. 
+<!--SCCMDocs-pr issue 2671-->
+Per impostazione predefinita, questo passaggio consente di crittografare solo lo spazio usato nell'unità. Questo comportamento predefinito è consigliato perché è più veloce ed efficiente. A partire dalla versione 1806, se l'organizzazione richiede di crittografare l'intera unità durante l'installazione, abilitare questa opzione. Installazione di Windows attende la crittografia dell'intera unità, operazione che richiede molto tempo soprattutto nelle unità di grandi dimensioni. 
 
 #### <a name="skip-this-step-for-computers-that-do-not-have-a-tpm-or-when-tpm-is-not-enabled"></a>Ignora questo passaggio per computer senza TPM o con TPM non abilitato
 Selezionare questa opzione per ignorare la crittografia delle unità in un computer che non contiene un modulo TPM supportato o abilitato. Ad esempio, usare questa opzione quando si distribuisce un sistema operativo in una macchina virtuale.  
@@ -1419,9 +1422,9 @@ Specifica i parametri passati allo script di PowerShell. Questi parametri corris
 #### <a name="powershell-execution-policy"></a>Criteri di esecuzione di PowerShell
 Determinare quali script di PowerShell possono essere eseguiti nel computer. Scegliere uno dei criteri di esecuzione seguenti:  
 
-- **AllSigned**: vengono eseguiti solo gli script firmati da un editore attendibile  
+- **Tutti firmati**: vengono eseguiti solo gli script firmati da un editore attendibile.  
 
-- **Non definito**: non viene definito alcun criterio di esecuzione  
+- **Non definito**: non viene definito alcun criterio di esecuzione.  
 
 - **Ignora**: vengono caricati tutti i file di configurazione e vengono eseguiti tutti gli script. Se si scarica uno script non firmato da Internet, Windows PowerShell non richiede l'autorizzazione prima di eseguire tale script.  
 
@@ -1506,7 +1509,7 @@ Per impostare una variabile dinamica da usare nella sequenza di attività, aggiu
 
     `IF Serial Number = 5892087 OR MAC address = 26-78-13-5A-A4-22 THEN`  
 
-- **Percorso**: valutare i valori per il gateway di rete predefinito  
+- **Percorso**: valutare i valori per il gateway di rete predefinito.  
 
 - **Marca e modello**: valutare i valori relativi a marca e modello di un computer. La regola restituisce true solo se entrambi i valori restituiscono true.   
 
@@ -1516,7 +1519,7 @@ Per impostare una variabile dinamica da usare nella sequenza di attività, aggiu
 
     Specificare una o più variabili da impostare per una regola che restituisce true oppure impostare variabili senza usare una regola. Selezionare una variabile esistente o creare una variabile personalizzata.  
 
-    - **Existing task sequence variables** (Variabili esistenti della sequenza di attività): selezionare una o più variabili da un elenco di variabili esistenti della sequenza di attività. Le variabili di matrice non sono disponibili per la selezione.  
+    - **Existing task sequence variables** (Variabili esistenti della sequenza di attività): selezionare una o più variabili esistenti da un elenco di variabili della sequenza di attività. Le variabili di matrice non sono disponibili per la selezione.  
 
     - **Custom task sequence variables** (Variabili personalizzate della sequenza di attività): definire una variabile personalizzata della sequenza di attività. È anche possibile specificare una variabile esistente della sequenza di attività. Questa impostazione è utile per specificare una matrice di variabili esistenti, ad esempio **OSDAdapter**, perché le matrici di variabili non sono incluse nell'elenco di variabili esistenti della sequenza di attività.  
 
@@ -1549,7 +1552,8 @@ Nella scheda **Proprietà** per questo passaggio, configurare le impostazioni de
 Specificare il nome di una variabile di azione o predefinita della sequenza di attività oppure specificare un nome di variabile definito dall'utente.  
 
 #### <a name="do-not-display-this-value"></a>Non visualizzare questo valore
-<!--1358330--> A partire dalla versione 1806, abilitare questa opzione per mascherare i dati sensibili archiviati nelle variabili della sequenza di attività. ad esempio quando si specifica una password. 
+<!--1358330-->
+A partire dalla versione 1806, abilitare questa opzione per mascherare i dati sensibili archiviati nelle variabili della sequenza di attività. ad esempio quando si specifica una password. 
 
 > [!Note]  
 > Abilitare questa opzione e quindi impostare il valore della variabile della sequenza di attività. In caso contrario, il valore della variabile non viene impostato nel modo desiderato e ciò potrebbe causare comportamenti imprevisti quando viene eseguita la sequenza di attività.<!--SCCMdocs issue #800--> 
@@ -1680,11 +1684,11 @@ Specificare l'edizione all'interno del supporto del sistema operativo da usare p
 Specificare il codice Product Key da applicare al processo di aggiornamento.  
 
 #### <a name="provide-the-following-driver-content-to-windows-setup-during-upgrade"></a>Specifica il seguente contenuto del driver in Installazione di Windows durante l'aggiornamento
-Aggiungere driver al computer di destinazione durante il processo di aggiornamento. Questa impostazione corrisponde all'opzione della riga di comando `/InstallDriver` di Installazione di Windows. I driver devono essere compatibili con Windows 10. specificare una delle opzioni seguenti:  
+Aggiungere driver al computer di destinazione durante il processo di aggiornamento. Questa impostazione corrisponde all'opzione della riga di comando `/InstallDriver` di Installazione di Windows. I driver devono essere compatibili con Windows 10. Specificare una delle opzioni seguenti:  
 
-- **Pacchetto driver**: selezionare **Sfoglia** e scegliere un pacchetto driver esistente nell'elenco.  
+- **Pacchetto driver**: selezionare **Sfoglia** e scegliere un pacchetto di driver esistente nell'elenco.  
 
-- **Contenuto preconfigurato**:  selezionare questa opzione per specificare il percorso per il pacchetto di driver. È possibile specificare una cartella locale, un percorso di rete o una variabile della sequenza di attività. Quando si usa una variabile per il percorso di origine, impostarne il valore prima nella sequenza di attività. Ad esempio, usando il passaggio [Scarica contenuto pacchetto](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent).  
+- **Contenuto preconfigurato**: selezionare questa opzione per specificare il percorso per il pacchetto di driver. È possibile specificare una cartella locale, un percorso di rete o una variabile della sequenza di attività. Quando si usa una variabile per il percorso di origine, impostarne il valore prima nella sequenza di attività. Ad esempio, usando il passaggio [Scarica contenuto pacchetto](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent).  
 
 #### <a name="time-out-minutes"></a>Timeout (minuti)
 Specificare il numero di minuti prima che questo passaggio di Configuration Manager abbia esito negativo. Questa opzione è utile se Installazione di Windows interrompe l'elaborazione ma non termina.  
@@ -1692,7 +1696,8 @@ Specificare il numero di minuti prima che questo passaggio di Configuration Mana
 #### <a name="perform-windows-setup-compatibility-scan-without-starting-upgrade"></a>Esegui analisi compatibilità Installazione di Windows senza avviare l'aggiornamento
 Esegue l'analisi di compatibilità di Installazione di Windows senza avviare il processo di aggiornamento. Questa impostazione corrisponde all'opzione della riga di comando `/Compat ScanOnly` di Installazione di Windows. Distribuire l'intero pacchetto di aggiornamento del sistema operativo con questa opzione. 
 
-<!--SCCMDocs-pr issue 2812--> A partire dalla versione 1806, quando si abilita questa opzione, questo passaggio non attiva la modalità di provisioning per il client di Configuration Manager. Installazione di Windows viene eseguito automaticamente in background e il client continuerà a funzionare normalmente. 
+<!--SCCMDocs-pr issue 2812-->
+A partire dalla versione 1806, quando si abilita questa opzione, questo passaggio non attiva la modalità di provisioning per il client di Configuration Manager. Installazione di Windows viene eseguito automaticamente in background e il client continuerà a funzionare normalmente. 
 
 Il programma di installazione restituisce un codice di uscita come risultato dell'analisi. Nella tabella seguente sono elencati alcuni dei più comuni codici di uscita:  
 
