@@ -2,7 +2,7 @@
 title: Come distribuire per contenuto pilota
 titleSuffix: Configuration Manager
 description: Informazioni di Guida per la distribuzione in un gruppo pilota Analitica Desktop.
-ms.date: 01/25/2019
+ms.date: 04/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 797b8ab61f5be2fd851e735c475ed610ed7d3cfe
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 4aa078f5a8306cb30ea83d45b93b18971be7764f
+ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56755171"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59069382"
 ---
 # <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Modalità di distribuzione per eseguire progetti pilota con Desktop Analitica
 
@@ -32,7 +32,7 @@ Uno dei vantaggi di Analitica Desktop è di identificare il set più piccolo di 
 
 ## <a name="address-issues"></a>Risolvere i problemi
 
-Usare il portale di Analitica Desktop per esaminare eventuali problemi segnalati con le risorse che potrebbero bloccare la distribuzione. Quindi approvare, rifiutare o modificare la correzione suggerita. Tutti gli elementi devono essere contrassegnati **pronti** oppure **pronto (con monitoraggio e aggiornamento)** prima dell'avvio della distribuzione pilota. 
+Usare il portale di Analitica Desktop per esaminare eventuali problemi segnalati con le risorse che potrebbero bloccare la distribuzione. Quindi approvare, rifiutare o modificare la correzione suggerita. Tutti gli elementi devono essere contrassegnati **pronti** oppure **pronto (con monitoraggio e aggiornamento)** prima dell'avvio della distribuzione pilota.
 
 1. Passare al portale di Analitica di Desktop e selezionare **piani di distribuzione** nel gruppo di gestione.  
 
@@ -42,10 +42,9 @@ Usare il portale di Analitica Desktop per esaminare eventuali problemi segnalati
 
 4. Nel **app** scheda, esaminare le app che richiedono l'input dell'utente.  
 
-5. Per ogni app, selezionare il nome dell'app. Nel riquadro delle informazioni, esaminare le indicazioni e selezionare la decisione di aggiornamento. Se si sceglie **non rivisti** oppure **Impossibile**, Analitica Desktop non può includere i dispositivi con l'app nella distribuzione pilota.  
+5. Per ogni app, selezionare il nome dell'app. Nel riquadro delle informazioni, esaminare le indicazioni e selezionare la decisione di aggiornamento. Se si sceglie **non rivisti** oppure **Impossibile**, Analitica Desktop non può includere i dispositivi con l'app nella distribuzione pilota. Se si sceglie **pronto (con monitoraggio e aggiornamento)**, utilizzare il **note correzione** per acquisire le azioni da intraprendere per risolvere un problema, ad esempio *reinstallare* o *trovare il versione consigliata del produttore*.
 
 6. Ripetere questa revisione per gli altri asset.  
-
 
 
 
@@ -73,15 +72,18 @@ Configuration Manager usa i dati di Analitica Desktop per creare una raccolta pe
 
     - **Sequenza di attività** per Windows 10  
   
-   Selezionare **distribuire**. Questa azione avvia la distribuzione guidata del Software per il tipo di oggetto selezionato. 
+   Selezionare **distribuire**. Questa azione avvia la distribuzione guidata del Software per il tipo di oggetto selezionato.
 
+    > [!Note]  
+    > Con l'integrazione Analitica Desktop, Configuration Manager crea automaticamente una raccolta per il piano di distribuzione pilota. Possono volerci fino a 10 minuti per questa raccolta per la sincronizzazione prima di usarlo.<!-- 3887891 -->
+    >
+    > Questa raccolta è riservata per i dispositivi piano di distribuzione Desktop Analitica. Non sono supportate le modifiche manuali a questa raccolta.<!-- 3866460, SCCMDocs-pr 3544 -->  
 
 Per altre informazioni, vedere gli articoli seguenti:  
 
 - [Distribuire un'applicazione](/sccm/apps/deploy-use/deploy-applications#bkmk_deploy)  
 
 - [Distribuire una sequenza di attività](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS)  
-
 
 Se il piano di distribuzione per Windows 10 e Office 365, ripetere questo processo per creare una seconda distribuzione. Ad esempio, se la prima distribuzione è per la sequenza di attività, creare una seconda distribuzione per l'applicazione.
 
@@ -100,7 +102,7 @@ Distribuzione di utilizzare Gestione configurazione monitoraggio lo stesso come 
 
 ### <a name="desktop-analytics-portal"></a>Portale Analitica desktop
 
-Usare il portale di Analitica Desktop per visualizzare lo stato di qualsiasi piano di distribuzione. Selezionare il piano di distribuzione e quindi selezionare **Panoramica del piano**. 
+Usare il portale di Analitica Desktop per visualizzare lo stato di qualsiasi piano di distribuzione. Selezionare il piano di distribuzione e quindi selezionare **Panoramica del piano**.
 
 ![Schermata della panoramica del piano di distribuzione in Desktop Analitica](media/deployment-plan-overview.png)
 
@@ -126,7 +128,7 @@ Come risolvere questi problemi di distribuzione, il dashboard continua a mostrar
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Eseguire il progetto pilota per un periodo di tempo per raccogliere dati operativi. Incoraggiare gli utenti dei dispositivi pilota per testare le app, componenti aggiuntivi e macro. 
+Eseguire il progetto pilota per un periodo di tempo per raccogliere dati operativi. Incoraggiare gli utenti dei dispositivi pilota per testare le app, componenti aggiuntivi e macro.
 
 Quando la distribuzione pilota soddisfa i criteri di successo, passare all'articolo successivo per la distribuzione nell'ambiente di produzione.
 > [!div class="nextstepaction"]  

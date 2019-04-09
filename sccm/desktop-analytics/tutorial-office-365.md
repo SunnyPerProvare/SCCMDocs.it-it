@@ -2,7 +2,7 @@
 title: 'Esercitazione: distribuire Office 365'
 titleSuffix: Configuration Manager
 description: Un'esercitazione sull'uso di Desktop Analitica e Configuration Manager per distribuire Office 365 a un gruppo pilota.
-ms.date: 01/25/2019
+ms.date: 04/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: tutorial
@@ -12,14 +12,14 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12f19fe6f52d1ceb4b47b080e45030df898a332a
-ms.sourcegitcommit: da753df27d3909265ca45d3e79091f1e98758d16
+ms.openlocfilehash: 4d21b2b94c53390a9fcdbc1be640578060042ea9
+ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913558"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59069450"
 ---
-# <a name="tutorial-deploy-office-365-to-pilot"></a>Esercitazione: Distribuire Office 365 per contenuto pilota 
+# <a name="tutorial-deploy-office-365-to-pilot"></a>Esercitazione: Distribuire Office 365 per contenuto pilota
 
 > [!Note]  
 > Tali informazioni fanno riferimento a un servizio in anteprima che può essere modificato sostanzialmente prima del rilascio in commercio. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
@@ -34,7 +34,7 @@ In questa esercitazione, apprenderà come:
 > * Creare un piano di distribuzione Desktop Analitica per Office 365 ProPlus  
 > * Distribuire Office 365 ProPlus in Configuration Manager nel gruppo pilota  
 
-Se non hai una sottoscrizione di Azure, creare un [account gratuito](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) prima di iniziare. Quando è configurato correttamente, uso di Desktop Analitica non comporta l'applicazione di eventuali costi di Azure. 
+Se non hai una sottoscrizione di Azure, creare un [account gratuito](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) prima di iniziare. Quando è configurato correttamente, uso di Desktop Analitica non comporta l'applicazione di eventuali costi di Azure.
 
 Desktop Analitica Usa un' *dell'area di lavoro di Log Analitica* nella sottoscrizione di Azure. Un'area di lavoro è sostanzialmente un contenitore che include informazioni sull'account e semplici informazioni di configurazione per l'account. Per altre informazioni, vedere [gestire le aree di lavoro](https://docs.microsoft.com/azure/log-analytics/log-analytics-manage-access?toc=/azure/azure-monitor/toc.json).
 
@@ -109,7 +109,7 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 
     - **I collaboratori dell'area di lavoro**: Creare e gestire i piani di distribuzione nell'area di lavoro. Non è necessario alcun accesso di Azure aggiuntivo.  
   
-   Per aggiungere un utente a entrambi i gruppi, digitare l'indirizzo di posta elettronica o nome nella **immettere l'indirizzo di posta elettronica o nome** sezione del gruppo appropriato. Al termine, selezionare **successivo**. 
+   Per aggiungere un utente a entrambi i gruppi, digitare l'indirizzo di posta elettronica o nome nella **immettere l'indirizzo di posta elettronica o nome** sezione del gruppo appropriato. Al termine, selezionare **successivo**.
 
 5. Nella pagina per **configurare l'area di lavoro**:  
 
@@ -148,11 +148,11 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 
 3. Selezionare l'app e prendere nota di **ID applicazione**. Questo valore è un GUID che viene usato per configurare la connessione di Configuration Manager.  
 
-4. Selezionare **le impostazioni** relativi all'app e quindi selezionare **chiavi**. Nel **password** , quindi immettere un **descrizione chiave**, specificare una scadenza **durata**e quindi selezionare **Salva**. Copia il **valore** della chiave, che consente di configurare la connessione di Configuration Manager. 
+4. Selezionare **le impostazioni** relativi all'app e quindi selezionare **chiavi**. Nel **password** , quindi immettere un **descrizione chiave**, specificare una scadenza **durata**e quindi selezionare **Salva**. Copia il **valore** della chiave, che consente di configurare la connessione di Configuration Manager.
 
     > [!Important]  
     > Questa è l'unica possibilità per copiare il valore della chiave. Se si non copiarlo a questo punto, è necessario creare un'altra chiave.  
-    > 
+    >
     > Salvare il valore della chiave in un luogo sicuro.  
 
 5. Nell'app **le impostazioni** Pannello di selezione **autorizzazioni necessarie**.  
@@ -205,11 +205,11 @@ Installare l'aggiornamento cumulativo Configuration Manager versione 1810 (44864
 
     - **Nome del Tenant di Azure AD**: Questo nome è il modo in cui file è denominato in Configuration Manager  
 
-    - **ID Tenant di Azure AD**: Il **ID Directory** copiato da Azure AD   
+    - **ID Tenant di Azure AD**: Il **ID Directory** copiato da Azure AD  
 
-    - **Client ID** (ID client): Il **ID applicazione** copiato dall'app Azure AD   
+    - **Client ID** (ID client): Il **ID applicazione** copiato dall'app Azure AD  
 
-    - **Chiave privata**: Il tasto **valore** copiato dall'app Azure AD   
+    - **Chiave privata**: Il tasto **valore** copiato dall'app Azure AD  
 
     - **Scadenza della chiave privata**: La stessa data di scadenza della chiave   
 
@@ -233,7 +233,7 @@ Installare l'aggiornamento cumulativo Configuration Manager versione 1810 (44864
 
     - **Raccolta di destinazione**: Questa raccolta include tutti i dispositivi che consente di configurare Configuration Manager con l'ID commerciale e le impostazioni di dati di diagnostica. È il set completo di dispositivi che Configuration Manager si connette al servizio Analitica Desktop.  
 
-    - **I dispositivi nella raccolta di destinazione usano un proxy con autenticazione utente per le comunicazioni in uscita**: Per impostazione predefinita, questo valore è **No**. Se necessario nell'ambiente in uso, impostato su **Sì**.   
+    - **I dispositivi nella raccolta di destinazione usano un proxy con autenticazione utente per le comunicazioni in uscita**: Per impostazione predefinita, questo valore è **No**. Se necessario nell'ambiente in uso, impostato su **Sì**.  
 
     - **Selezionare le raccolte specifiche da sincronizzare con Desktop Analitica**: Selezionare **Add** da includere altre raccolte. Queste raccolte sono disponibili nel portale di Analitica Desktop per il raggruppamento con piani di distribuzione. Assicurarsi di includere raccolte di esclusioni pilota e pilota.  
 
@@ -245,7 +245,7 @@ Configuration Manager crea un criterio delle impostazioni per configurare i disp
 
 Monitorare la configurazione dei dispositivi per Desktop Analitica. Nella console di Configuration Manager passare ad il **raccolta Software** dell'area di lavoro, espandere il **Microsoft 365 Servicing** nodo e selezionare il **integrità della connessione** dashboard.  
 
-Configuration Manager si sincronizza i piani di distribuzione Desktop Analitica entro 15 minuti di creazione della connessione. Nella console di Configuration Manager passare ad il **raccolta Software** dell'area di lavoro, espandere il **Microsoft 365 Servicing** nodo e selezionare il **piani di distribuzione** nodo. 
+Configuration Manager si sincronizza i piani di distribuzione Desktop Analitica entro 15 minuti di creazione della connessione. Nella console di Configuration Manager passare ad il **raccolta Software** dell'area di lavoro, espandere il **Microsoft 365 Servicing** nodo e selezionare il **piani di distribuzione** nodo.
 
 
 
@@ -275,7 +275,7 @@ Utilizzare questa procedura per creare un piano di distribuzione nel Desktop Ana
 
         - Bassa installare soglia conteggio per i componenti aggiuntivi di Office. La soglia predefinita è `2%`. Componenti aggiuntivi sotto questa soglia vengono impostati automaticamente su *bassa conteggio installazioni*. Desktop Analitica non convalida questi componenti aggiuntivi durante la fase pilota. 
 
-            Se un componente aggiuntivo viene installato in una percentuale di computer superiore a questa soglia, contrassegna il piano di distribuzione come il componente aggiuntivo *Noteworthy*. È quindi possibile decidere la sua importanza per eseguire il test durante la fase pilota.   
+            Se un componente aggiuntivo viene installato in una percentuale di computer superiore a questa soglia, contrassegna il piano di distribuzione come il componente aggiuntivo *Noteworthy*. È quindi possibile decidere la sua importanza per eseguire il test durante la fase pilota.  
 
     - **Data completamento**: Scegliere la data che Office deve essere completamente distribuito a tutti i dispositivi di destinazione.  
 
@@ -287,7 +287,7 @@ Utilizzare questa procedura per creare un piano di distribuzione nel Desktop Ana
 
     1. Nel **Office Add-ins** scheda, selezionare questa opzione per mostrare solo **non rivisti** asset.  
 
-    2. Selezionare ogni componente aggiuntivo e quindi selezionare **modifica**. È possibile selezionare più di un'app da modificare nello stesso momento.   
+    2. Selezionare ogni componente aggiuntivo e quindi selezionare **modifica**. È possibile selezionare più di un'app da modificare nello stesso momento.  
 
     3. Scegliere un livello di priorità dal **importanza** elenco. Se si vuole che Desktop Analitica per convalidare il componente aggiuntivo durante la fase pilota, selezionare **critici** oppure **importante**. Componenti aggiuntivi contrassegnati come non vengono convalidate **importanti non**. Valutare i rischi di compatibilità e altre importanti informazioni piano quando si assegnano livelli di importanza.  
 
@@ -337,7 +337,7 @@ Utilizzare questa procedura per distribuire Office 365 ProPlus in Configuration 
 
     5. Al termine, selezionare **revisione** nell'angolo superiore destro. Esaminare le impostazioni configurate e quindi selezionare **Submit**.  
 
-5. Selezionare **Avanti**. Nel **distribuzione** pagina, selezionare **No** per distribuirlo subito. (La procedura successiva Usa il piano di distribuzione Desktop Analitica per la distribuzione). Selezionare **successivo** e completare la procedura guidata.  
+4. Selezionare **Avanti**. Nel **distribuzione** pagina, selezionare **No** per distribuirlo subito. (La procedura successiva Usa il piano di distribuzione Desktop Analitica per la distribuzione). Selezionare **successivo** e completare la procedura guidata.  
 
 
 ### <a name="bkmk_deploy-app"></a> Distribuire Office 365 usando il piano di distribuzione Desktop Analitica
@@ -348,7 +348,12 @@ Utilizzare questa procedura per distribuire Office 365 ProPlus in Configuration 
 
 3. Nel **pilota stato** riquadro, scegliere **Application** dall'elenco a discesa e quindi selezionare **Distribuisci**.  
 
-4. Nel **generali** pagina della distribuzione guidata del Software, selezionare **Sfoglia** accanto al **Software** campo. Selezionare l'applicazione di Office 365, ad esempio **Office 365 ProPlus**. Con l'integrazione Analitica Desktop, Configuration Manager crea automaticamente una raccolta per il piano di distribuzione pilota. Selezionare **Avanti**.  
+4. Nel **generali** pagina della distribuzione guidata del Software, selezionare **Sfoglia** accanto al **Software** campo. Selezionare l'applicazione di Office 365, ad esempio **Office 365 ProPlus**. Selezionare **Avanti**.  
+
+    > [!Note]  
+    > Con l'integrazione Analitica Desktop, Configuration Manager crea automaticamente una raccolta per il piano di distribuzione pilota. Possono volerci fino a 10 minuti per questa raccolta per la sincronizzazione prima di usarlo.<!-- 3887891 -->
+    >
+    > Questa raccolta è riservata per i dispositivi piano di distribuzione Desktop Analitica. Non sono supportate le modifiche manuali a questa raccolta.<!-- 3866460, SCCMDocs-pr 3544 -->  
 
 5. Nel **contenuti** pagina, selezionare **Add**e quindi selezionare **punto di distribuzione**. Selezionare un punto di distribuzione disponibili per ospitare il contenuto di installazione e selezionare **OK**. Selezionare quindi **Avanti**.  
 
@@ -375,11 +380,8 @@ Utilizzare questa procedura per distribuire Office 365 ProPlus in Configuration 
 -->
 
 
-
-
 ## <a name="next-steps"></a>Passaggi successivi
 
 Passare all'articolo successivo per altre informazioni sui piani di distribuzione Desktop Analitica.
 > [!div class="nextstepaction"]  
 > [Piani di distribuzione](/sccm/desktop-analytics/about-deployment-plans)
-

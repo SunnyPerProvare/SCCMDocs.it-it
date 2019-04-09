@@ -2,7 +2,7 @@
 title: Connettere Configuration Manager
 titleSuffix: Configuration Manager
 description: Informazioni di Guida per la connessione di Configuration Manager con Desktop Analitica.
-ms.date: 01/25/2019
+ms.date: 04/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,19 +12,19 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1280e7cbd1c2d8e7524b296e48d0b1bec426d9ed
-ms.sourcegitcommit: da753df27d3909265ca45d3e79091f1e98758d16
+ms.openlocfilehash: b30770b912e012aafa3f1d476c4791873752ecc7
+ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913626"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59069348"
 ---
-# <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Come connettere Configuration Manager con Desktop Analitica 
+# <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Come connettere Configuration Manager con Desktop Analitica
 
 > [!Note]  
 > Tali informazioni fanno riferimento a un servizio in anteprima che può essere modificato sostanzialmente prima del rilascio in commercio. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
-Desktop Analitica è strettamente integrato con Configuration Manager. In primo luogo, assicurarsi che il sito viene aggiornato per supportare le funzionalità più recenti. Creare quindi la connessione di Desktop Analitica in Configuration Manager. Infine, monitorare l'integrità della connessione. 
+Desktop Analitica è strettamente integrato con Configuration Manager. In primo luogo, assicurarsi che il sito viene aggiornato per supportare le funzionalità più recenti. Creare quindi la connessione di Desktop Analitica in Configuration Manager. Infine, monitorare l'integrità della connessione.
 
 
 ## <a name="bkmk_hotfix"></a> Aggiornare il sito
@@ -59,13 +59,13 @@ Utilizzare questa procedura per connettere Configuration Manager a Desktop Anali
 
     - **Nome del Tenant di Azure AD**: Questo nome è il modo in cui file è denominato in Configuration Manager  
 
-    - **ID Tenant di Azure AD**: Il **ID Directory** copiato da Azure AD   
+    - **ID Tenant di Azure AD**: Il **ID Directory** copiato da Azure AD  
 
-    - **Client ID** (ID client): Il **ID applicazione** copiato dall'app Azure AD   
+    - **Client ID** (ID client): Il **ID applicazione** copiato dall'app Azure AD  
 
-    - **Chiave privata**: Il tasto **valore** copiato dall'app Azure AD   
+    - **Chiave privata**: Il tasto **valore** copiato dall'app Azure AD  
 
-    - **Scadenza della chiave privata**: La stessa data di scadenza della chiave   
+    - **Scadenza della chiave privata**: La stessa data di scadenza della chiave  
 
     - **URI ID app**: Questa impostazione verranno inseriti automaticamente con il valore seguente: `https://cmmicrosvc.manage.microsoft.com/`  
   
@@ -82,7 +82,7 @@ Utilizzare questa procedura per connettere Configuration Manager a Desktop Anali
         > [!Note]  
         > A partire da Windows 10 versione 1803, il nome del dispositivo non viene inviato a Microsoft per impostazione predefinita. Se si non invia il nome del dispositivo, viene visualizzata nel Desktop Analitica come "Sconosciuto". Questo comportamento può rendere difficile identificare e valutare i dispositivi.  
 
-   Selezionare **Avanti**. Il **funzionalità disponibili** pagina Mostra le funzionalità di Analitica Desktop sono disponibile con le impostazioni di dati di diagnostica dalla pagina precedente. Selezionare **successivo** per continuare oppure **Previous** per apportare modifiche.   
+   Selezionare **Avanti**. Il **funzionalità disponibili** pagina Mostra le funzionalità di Analitica Desktop sono disponibile con le impostazioni di dati di diagnostica dalla pagina precedente. Selezionare **successivo** per continuare oppure **Previous** per apportare modifiche.  
 
     ![Pagina di funzionalità disponibile di esempio della procedura guidata servizi di Azure](media/available-functionality.png)
 
@@ -92,11 +92,14 @@ Utilizzare questa procedura per connettere Configuration Manager a Desktop Anali
 
     - **Raccolta di destinazione**: Questa raccolta include tutti i dispositivi che consente di configurare Configuration Manager con l'ID commerciale e le impostazioni di dati di diagnostica. È il set completo di dispositivi che Configuration Manager si connette al servizio Analitica Desktop.  
 
-    - **I dispositivi nella raccolta di destinazione usano un proxy con autenticazione utente per le comunicazioni in uscita**: Per impostazione predefinita, questo valore è **No**. Se necessario nell'ambiente in uso, impostato su **Sì**.   
+    - **I dispositivi nella raccolta di destinazione usano un proxy con autenticazione utente per le comunicazioni in uscita**: Per impostazione predefinita, questo valore è **No**. Se necessario nell'ambiente in uso, impostato su **Sì**.  
 
     - **Selezionare le raccolte specifiche da sincronizzare con Desktop Analitica**: Selezionare **Add** da includere altre raccolte. Queste raccolte sono disponibili nel portale di Analitica Desktop per il raggruppamento con piani di distribuzione. Assicurarsi di includere raccolte di esclusioni pilota e pilota.  
 
         Queste raccolte comunque eseguita la sincronizzazione le modifiche all'appartenenza. Ad esempio, il piano di distribuzione Usa una raccolta con una regola di appartenenza a Windows 7. Come aggiornare i dispositivi a Windows 10 e Configuration Manager valuta l'appartenenza alla raccolta, tali dispositivi eliminare esplicitamente la raccolta e un piano di distribuzione.  
+
+        > [!Important]  
+        > Assicurarsi di limitare queste raccolte aggiuntive per la raccolta di destinazione. Nelle proprietà di queste raccolte aggiuntive, il **raccolta di limitazione** deve essere lo stesso insieme di Desktop Analitica **raccolta di destinazione**.<!-- 4097528 -->  
 
 6. Completare la procedura guidata.  
 
@@ -110,7 +113,7 @@ Monitorare la configurazione dei dispositivi per Desktop Analitica. Nella consol
 
 Per altre informazioni, vedere [monitorare l'integrità della connessione](/sccm/desktop-analytics/troubleshooting#monitor-connection-health).
 
-Configuration Manager si sincronizza i piani di distribuzione Desktop Analitica entro 15 minuti di creazione della connessione. Nella console di Configuration Manager passare ad il **raccolta Software** dell'area di lavoro, espandere il **Microsoft 365 Servicing** nodo e selezionare il **piani di distribuzione** nodo. 
+Configuration Manager si sincronizza i piani di distribuzione Desktop Analitica entro 15 minuti di creazione della connessione. Nella console di Configuration Manager passare ad il **raccolta Software** dell'area di lavoro, espandere il **Microsoft 365 Servicing** nodo e selezionare il **piani di distribuzione** nodo.
 
 
 
@@ -119,4 +122,3 @@ Configuration Manager si sincronizza i piani di distribuzione Desktop Analitica 
 Passare all'articolo successivo per registrare i dispositivi Desktop Analitica.
 > [!div class="nextstepaction"]  
 > [Registrare i dispositivi](/sccm/desktop-analytics/enroll-devices)  
-
