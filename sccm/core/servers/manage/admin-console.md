@@ -2,21 +2,21 @@
 title: Console di Configuration Manager
 titleSuffix: Configuration Manager
 description: Informazioni sull'esplorazione tramite la console di Configuration Manager.
-ms.date: 03/06/2019
+ms.date: 04/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 463ce307-59dd-4abd-87b8-42ca9db178d7
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f9c06f40af1134055d4038fd23954b3f4c59682
-ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
+ms.openlocfilehash: fb58662350caec9fd1a08295c93c3811893048a9
+ms.sourcegitcommit: da753df27d3909265ca45d3e79091f1e98758d16
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57562109"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913541"
 ---
 # <a name="using-the-configuration-manager-console"></a>Uso della console di Configuration Manager
 
@@ -47,7 +47,7 @@ A partire dalla versione 1810, è possibile specificare il livello di autenticaz
 
 
 
-## <a name="navigation"></a>Navigazione
+## <a name="navigation"></a>Spostamento
 
 Alcune aree della console potrebbero non essere visibili a seconda del ruolo di sicurezza assegnato. Per altre informazioni sui ruoli, vedere [Nozioni fondamentali sull'amministrazione basata su ruoli](/sccm/core/understand/fundamentals-of-role-based-administration). 
 
@@ -99,7 +99,7 @@ La barra multifunzione è nella parte superiore della console di Configuration M
 ![Barra multifunzione di esempio, evidenziazione di più schede e freccia di riduzione](media/ribbon.png)   
 
 
-### <a name="details-pane"></a>Riquadro dettagli
+### <a name="details-pane"></a>Riquadro dei dettagli
 
 È possibile ottenere informazioni aggiuntive sugli elementi esaminando il riquadro dei dettagli. Il riquadro dei dettagli può avere una o più schede. Le schede variano a seconda del nodo.  
 
@@ -116,7 +116,36 @@ Nella parte inferiore del menu di scelta rapida della colonna è possibile ordin
 
 ![Raggruppare per colonna in Configuration Manager](media/column-group-by.png)  
 
+## <a name="bkmk_viewconnected"></a> Visualizzare le console connesse di recente
+<!--3699367-->
 
+A partire dalla versione 1902, è possibile visualizzare le connessioni più recenti per la console di Configuration Manager. La visualizzazione include le connessioni attive e quelle stabilite di recente. Nell'elenco si vedrà sempre la connessione corrente alla console e si vedranno solo le connessioni dalla console di Configuration Manager. Non sarà possibile vedere le connessioni PowerShell o altre connessioni al provider SMS basate su SDK. Il sito rimuove dall'elenco le istanze anteriori a 30 giorni.
+
+
+### <a name="prerequisites-to-view-connected-consoles"></a>Prerequisiti per visualizzare le console connesse
+
+- Account con autorizzazione di **lettura** per l'oggetto **SMS_Site** 
+- IIS deve essere installato nel server del provider SMS <!---SCCMDocs-pr issue 1326--> 
+- Consentire al provider SMS di usare un certificato.<!--SCCMDocs-pr issue 3135--> Usare una delle opzioni seguenti:  
+
+  - Abilitare [HTTP avanzato](/sccm/core/plan-design/hierarchy/enhanced-http) (scelta consigliata)
+  - Associare manualmente un certificato basato su PKI alla porta 443 in IIS sul server che ospita il ruolo Provider SMS  
+
+### <a name="view-connected-consoles"></a>Visualizzare le console connesse
+
+1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**.  
+
+2. Espandere **Sicurezza** e selezionare il nodo **Connessioni di console**.  
+
+3. Visualizzare le connessioni recenti, con le proprietà seguenti:  
+
+    - Nome utente
+    - Nome computer
+    - Codice del sito connesso
+    - Versione della console
+    - Ora dell'ultima connessione: l'ultima volta che l'utente ha *aperto* la console
+
+![Visualizzare le connessioni della console di Configuration Manager](media/console-connections.png) 
 
 ## <a name="command-line-options"></a>Opzioni della riga di comando
 
@@ -153,7 +182,7 @@ Per altre informazioni, vedere [Commenti e suggerimenti sul prodotto](/sccm/core
 #### <a name="view-users-for-a-device"></a>Visualizzare gli utenti per un dispositivo
 A partire dalla versione 1806, le colonne seguenti sono disponibili nel nodo **Dispositivi**:  
 
-- **Utente/i primario/i** <!--1357280-->  
+- **Utente/i primario** <!--1357280-->  
 
 - **Utente attualmente connesso** <!--1358202-->  
     > [!NOTE]  
@@ -162,7 +191,8 @@ A partire dalla versione 1806, le colonne seguenti sono disponibili nel nodo **D
 Per altre informazioni su come visualizzare una colonna non predefinita, vedere [Colonne](#columns).
 
 #### <a name="improvement-to-device-search-performance"></a>Miglioramento delle prestazioni di ricerca dei dispositivi
-<!-- 3614690 --> A partire dalla versione 1806, quando si esegue la ricerca in una raccolta di dispositivi, non viene eseguita la ricerca della parola chiave in tutte le proprietà degli oggetti. Quando non si specifica cosa cercare, la ricerca viene eseguita nelle quattro proprietà seguenti:
+<!-- 3614690 -->
+A partire dalla versione 1806, quando si esegue la ricerca in una raccolta di dispositivi, non viene eseguita la ricerca della parola chiave in tutte le proprietà degli oggetti. Quando non si specifica cosa cercare, la ricerca viene eseguita nelle quattro proprietà seguenti:
 - Name
 - Utente/i primario/i
 - Utente attualmente connesso
@@ -174,7 +204,8 @@ Questo comportamento migliora significativamente il tempo necessario per le rice
 ### <a name="monitoring-workspace"></a>Area di lavoro di monitoraggio
 
 #### <a name="copy-details-in-monitoring-views"></a>Copiare i dettagli nelle viste monitoraggio
-<!--1357856--> A partire dalla versione 1806, copiare le informazioni dal riquadro **Dettagli asset** per i nodi di monitoraggio seguenti:  
+<!--1357856-->
+A partire dalla versione 1806, copiare le informazioni dal riquadro **Dettagli asset** per i nodi di monitoraggio seguenti:  
 
 - **Stato distribuzione contenuto**  
 

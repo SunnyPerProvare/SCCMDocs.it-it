@@ -2,7 +2,7 @@
 title: Account usati
 titleSuffix: Configuration Manager
 description: Identificare e gestire i gruppi di Windows e gli account usati in Configuration Manager.
-ms.date: 10/26/2018
+ms.date: 03/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0c9ad4831d0450b7a30de4117a65005164d5080
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: a05ff407c3787283a58973f2861432a0a26a52b0
+ms.sourcegitcommit: deb28cdc95a456d4a38499ef1bc71e765ef6dc13
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122390"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58901520"
 ---
 # <a name="accounts-used-in-configuration-manager"></a>Account usati in Configuration Manager
 
@@ -25,8 +25,8 @@ ms.locfileid: "56122390"
 Usare le informazioni seguenti per identificare i gruppi di Windows e gli account usati in Configuration Manager, le relative modalità d'uso e gli eventuali requisiti.  
 
 - [Gruppi Windows creati e usati da Configuration Manager](#bkmk_groups)  
-    - [ConfigMgr_CollectedFilesAccess](#configmgrcollectedfilesaccess)  
-    - [ConfigMgr_DViewAccess](#configmgrdviewaccess)  
+    - [ConfigMgr_CollectedFilesAccess](#configmgr_collectedfilesaccess)  
+    - [ConfigMgr_DViewAccess](#configmgr_dviewaccess)  
     - [Utenti di Controllo remoto di ConfigMgr](#configmgr-remote-control-users)  
     - [SMS Admins](#sms-admins)  
     - [SMS_SiteSystemToSiteServerConnection_MP_&lt;codicesito\>](#bkmk_remotemp)  
@@ -71,7 +71,7 @@ Usare le informazioni seguenti per identificare i gruppi di Windows e gli accoun
 >  Quando Configuration Manager crea un gruppo in un computer appartenente a un dominio, il gruppo è un gruppo di sicurezza locale. Se il computer è un controller di dominio, il gruppo è un gruppo locale di dominio. Questo tipo di gruppo è comune a tutti i controller di dominio del dominio.  
 
 
-### <a name="configmgrcollectedfilesaccess"></a>ConfigMgr_CollectedFilesAccess  
+### <a name="configmgrcollectedfilesaccess"></a>ConfigMgr_CollectedFilesAccess
 
 Configuration Manager usa questo gruppo per concedere l'accesso per la visualizzazione dei file raccolti dall'inventario software.  
 
@@ -357,7 +357,7 @@ Per impostazione predefinita, il gruppo dispone del **controllo completo** per l
 
  Un client di Configuration Manager tenta, in prima battuta, di usare il proprio account computer per scaricare il contenuto. Poiché non riesce, ritenta automaticamente con l'account di accesso alla rete.  
 
- A partire dalla versione 1806, un gruppo di lavoro o un client associato ad Azure AD può accedere in modo sicuro al contenuto dai punti di distribuzione senza la necessità di un account di accesso alla rete. Questo comportamento comprende gli scenari di distribuzione del sistema operativo con una sequenza di attività eseguita da supporti di avvio, PXE o Software Center. Per altre informazioni, vedere [Enhanced HTTP](/sccm/core/plan-design/hierarchy/enhanced-http) (HTTP avanzato).<!--1358228,1358278-->
+ A partire dalla versione 1806, un gruppo di lavoro o un client associato ad Azure AD può accedere in modo sicuro al contenuto dai punti di distribuzione senza la necessità di un account di accesso alla rete. Questo comportamento comprende gli scenari di distribuzione del sistema operativo con una sequenza di attività eseguita da supporti di avvio, PXE o Software Center. Per altre informazioni, vedere [HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http).<!--1358228,1358278-->
 
  > [!Note]  
  > Se si configura **HTTP avanzato** in modo che non richieda l'account di accesso alla rete, il punto di distribuzione deve eseguire Windows Server 2008 R2 SP1 o una versione successiva. <!--SCCMDocs-pr issue #2696-->
@@ -443,7 +443,8 @@ Per altre informazioni, vedere [Introduzione al controllo remoto](/sccm/core/cli
 
 
 ### <a name="site-installation-account"></a>Account di installazione sito
-<!--SCCMDocs issue #572--> Usare un account utente di dominio per accedere al server in cui si esegue il programma di installazione di Configuration Manager e installare un nuovo sito.
+<!--SCCMDocs issue #572-->
+Usare un account utente di dominio per accedere al server in cui eseguire il programma di installazione di Configuration Manager e installare un nuovo sito.
 
 L'account richiede le autorizzazioni seguenti:  
 
@@ -474,7 +475,8 @@ Quando si espande un sito autonomo per includere un sito di amministrazione cent
 
 
 ### <a name="site-system-proxy-server-account"></a>Account del server proxy del sistema del sito
-<!--SCCMDocs issue #648--> I ruoli del sistema del sito seguenti usano **l'account del server proxy del sistema del sito** per accedere a Internet con un server proxy o un firewall che richiede l'accesso autenticato:
+<!--SCCMDocs issue #648-->
+ I ruoli del sistema del sito seguenti usano l'**account del server proxy del sistema sito** per accedere a Internet con un server proxy o un firewall che richiede l'accesso autenticato:
 
 - Punto di sincronizzazione di Asset Intelligence
 - Connettore Exchange Server

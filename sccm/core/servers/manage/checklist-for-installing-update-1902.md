@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60856d3e2621f48fb669a4a1385876ddae849b2e
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.openlocfilehash: 5833db7cd6f47d0711fdcfae5d1f7a4114d7ff34
+ms.sourcegitcommit: d584c126a0a5725567631b74ac1e01f63242a997
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58525031"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58861021"
 ---
 # <a name="checklist-for-installing-update-1902-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1902 di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Quando si usa la versione Current Branch di Configuration Manager, è possibile installare l'aggiornamento nella console per la versione 1902 per aggiornare la gerarchia da una versione precedente. <!-- baseline only statement:-->Dal momento che la versione 1802 è disponibile anche come [supporto di base](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions), è possibile usare il supporto di installazione per installare il primo sito di una nuova gerarchia.
+Quando si usa la versione Current Branch di Configuration Manager, è possibile installare l'aggiornamento nella console per la versione 1902 per aggiornare la gerarchia da una versione precedente. <!-- baseline only statement:-->Dal momento che la versione 1902 è disponibile anche come [supporto di base](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions), è possibile usare il supporto di installazione per installare il primo sito di una nuova gerarchia.
 
 Per ottenere l'aggiornamento per la versione 1902, è necessario usare un punto di connessione del servizio nel sito principale della gerarchia. Questo ruolo del sistema del sito può essere in modalità online o offline. Dopo che la gerarchia ha scaricato l'aggiornamento da Microsoft, lo si può trovare nella console. Nell'area di lavoro **Amministrazione** selezionare il nodo **Aggiornamenti e manutenzione**.
 

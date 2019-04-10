@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c50bc520dfe1703d1881c04db67bac095e084d10
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.openlocfilehash: 971d1cd2a8571b6d0dc120a07cd583674ac7fb62
+ms.sourcegitcommit: 60aff44c76e6432dc544c8b26acba432ac799cfc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58524167"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58639496"
 ---
 # <a name="install-in-console-updates-for-configuration-manager"></a>Installare gli aggiornamenti nella console per Configuration Manager
 
@@ -359,6 +359,8 @@ Passare all'area di lavoro **Monitoraggio** e selezionare il nodo **Site Servici
 ##  <a name="bkmk_after"></a> Dopo l'installazione di un aggiornamento in un sito  
 
 Dopo l'aggiornamento del sito, esaminare l'elenco di controllo post-aggiornamento per la versione applicabile:  
+
+- [Elenco di controllo post-aggiornamento per la versione 1902](/sccm/core/servers/manage/checklist-for-installing-update-1902#post-update-checklist)  
 
 - [Elenco di controllo post-aggiornamento per la versione 1810](/sccm/core/servers/manage/checklist-for-installing-update-1810#post-update-checklist)  
 

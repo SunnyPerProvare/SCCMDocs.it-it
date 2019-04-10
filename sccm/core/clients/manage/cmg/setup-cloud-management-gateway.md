@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e937bf4adf3b695bf33d41318e5d48bc560ad06b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 94a55e0678942623e6afe9752f435ceb8eb71270
+ms.sourcegitcommit: d584c126a0a5725567631b74ac1e01f63242a997
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128103"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58861055"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Configurare il gateway di gestione cloud per Configuration Manager
 
@@ -43,7 +43,7 @@ Usare l'elenco di controllo seguente per assicurarsi di avere le informazioni e 
 
     - Integrazione con [Azure AD](/sccm/core/servers/deploy/configure/azure-services-wizard) per la **Gestione cloud**. L'individuazione utenti di Azure AD non è necessaria.  
     
-    - Il provider di risorse **Microsoft.ClassicCompute** deve essere registrato nella sottoscrizione di Azure. Per altre informazioni, vedere [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
+    - I provider di risorse **Microsoft.ClassicCompute** & **Microsoft.Storage** devono essere registrati nella sottoscrizione di Azure. Per altre informazioni, vedere [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
 
     - Un amministratore della sottoscrizione deve effettuare l'accesso.  
 
@@ -226,7 +226,7 @@ Mantenere sempre almeno un Cloud Management Gateway per consentire ai client bas
 
 Per impostazione predefinita i client aggiornano i criteri ogni 24 ore. Pertanto, dopo aver creato un nuovo Cloud Management Gateway, attendere almeno un giorno prima di eliminare quello precedente. Se i client sono disattivati o non dispongono di una connessione a Internet il tempo di attesa può essere superiore. 
 
-A partire dalla versione 1802, se è presente un Cloud Management Gateway esistente con il metodo di distribuzione classico, è necessario distribuire un nuovo Cloud Management Gateway per usare il metodo di distribuzione Azure Resource Manager.<!--509753--> Sono disponibili due opzioni:  
+A partire dalla versione 1802, se è presente un Cloud Management Gateway esistente nel metodo di distribuzione classico, è necessario distribuire un nuovo Cloud Management Gateway per usare il metodo di distribuzione di Azure Resource Manager.<!--509753--> Sono disponibili due opzioni:  
 
 - Per riusare lo stesso nome di servizio:  
 
@@ -247,7 +247,7 @@ A partire dalla versione 1802, se è presente un Cloud Management Gateway esiste
     4. Eliminare il Cloud Management Gateway versione classica.  
 
 > [!Tip]  
-> Per determinare il modello di distribuzione corrente di un CMG:<!--SCCMDocs issue #611-->  
+> Per determinare il modello di distribuzione corrente di un Cloud Management Gateway:<!--SCCMDocs issue #611-->  
 > 1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e selezionare il nodo **Cloud Management Gateway**.  
 > 2. Selezionare l'istanza di Cloud Management Gateway.  
 > 3. Nel riquadro dei dettagli nella parte inferiore della finestra cercare l'attributo **Modello di distribuzione**. Per una distribuzione di Resource Manager, questo attributo è **Azure Resource Manager**. 

@@ -2,21 +2,21 @@
 title: CMPivot per i dati in tempo reale
 titleSuffix: Configuration Manager
 description: Informazioni su come usare CMPivot in Configuration Manager per eseguire query sui client in tempo reale.
-ms.date: 08/21/2018
+ms.date: 04/04/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 32e2d6b9-148f-45e2-8083-98c656473f82
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2527639e3a0370c4e18d5e6030fc3a26a10c6d21
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: dd914030afb8490b11666fc953d846e03090b834
+ms.sourcegitcommit: deb28cdc95a456d4a38499ef1bc71e765ef6dc13
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120198"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58901469"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>CMPivot per i dati in tempo reale in Configuration Manager
 
@@ -28,6 +28,8 @@ Configuration Manager ha sempre fornito un archivio centralizzato di grandi dime
 
 Ad esempio, perla [mitigazione delle vulnerabilità del canale laterale di esecuzione speculativa](https://blogs.technet.microsoft.com/configurationmgr/2018/01/08/additional-guidance-to-mitigate-speculative-execution-side-channel-vulnerabilities/), uno dei requisiti prevede l'aggiornamento del BIOS di sistema. È possibile usare CMPivot per eseguire rapidamente query sulle informazioni del BIOS di sistema e trovare i client non conformi.
 
+ > [!Tip]  
+ > Alcuni software di sicurezza possono bloccare gli script in esecuzione da c:\windows\ccm\scriptstore. Ciò può impedire la corretta esecuzione delle query CMPivot. Alcuni software di sicurezza possono anche generare avvisi o eventi di controllo quando si esegue CMPivot con PowerShell.
 
 
 ## <a name="prerequisites"></a>Prerequisiti
@@ -36,19 +38,25 @@ Per usare CMPivot sono necessari i componenti seguenti:
 
 - Aggiornare i dispositivi di destinazione alla versione più recente del client Configuration Manager.  
 
-- L'amministratore di Configuration Manager necessita dell'autorizzazione **Lettura** per l'oggetto **Script SMS**, dell'autorizzazione **Esegui script** per l'oggetto **Raccolta** e dell'ambito predefinito. Il ruolo **Scripts Runner** (Esecutore script) ha queste autorizzazioni, che non vengono create per impostazione predefinita. Per altre informazioni sulla creazione di questo ruolo di sicurezza personalizzato, vedere [Creare ruoli di sicurezza per gli script](/sccm/apps/deploy-use/create-deploy-scripts#bkmk_ScriptRoles).  
+- Autorizzazioni per CMPivot:
+  - **Lettura** per l'oggetto **Script SMS**
+  - **Esecuzione degli script** per la **raccolta**
+  - **Lettura** per i **report di inventario**
+  - L'ambito predefinito. 
+
+- I client di destinazione richiedono almeno PowerShell versione 4.
 
 - Per raccogliere dati per le entità seguenti, i client di destinazione richiedono PowerShell versione 5.0:  
-    - Amministratori
-    - Connessioni
-    - IPConfig
-    - SMBConfig 
+  - Amministratori
+  - Connessioni
+  - IPConfig
+  - SMBConfig
 
-
-
+ 
 ## <a name="limitations"></a>Limitazioni
 
-- In una gerarchia connettere la console di Configuration Manager a un *sito primario* per eseguire CMPivot. L'azione **Avvia CMPivot** non viene visualizzata nella console quando è connessa a un sito di amministrazione centrale.  
+- In una gerarchia connettere la console di Configuration Manager a un *sito primario* per eseguire CMPivot. L'azione **Avvia CMPivot** non viene visualizzata nella console quando è connessa a un sito di amministrazione centrale.
+  - A partire da Configuration Manager versione 1902, è possibile eseguire CMPivot da un sito di amministrazione centrale. In alcuni ambienti sono necessarie autorizzazioni aggiuntive. Per altre informazioni, vedere l'articolo su [CMPivot a partire dalla versione 1902](#bkmk_cmpivot1902).
 
 - CMPivot restituisce solo i dati per i client connessi al sito corrente.  
 
@@ -59,7 +67,6 @@ Per usare CMPivot sono necessari i componenti seguenti:
 - In un computer che esegue la console di Configuration Manager si può eseguire una sola istanza di CMPivot per volta.  
 
 - Nella versione 1806, la query per l'entità **Administrators** funziona solo se il gruppo è denominato "Administrators". Non funziona se il nome del gruppo è localizzato. Ad esempio, "Administrateurs" in francese.<!--SCCMDocs issue 759-->  
-
 
 
 ## <a name="start-cmpivot"></a>Avviare CMPivot
@@ -94,7 +101,7 @@ Per usare CMPivot sono necessari i componenti seguenti:
 
 La finestra CMPivot presenta gli elementi seguenti:  
 
-1. L'attuale raccolta di destinazione di CMPivot è visualizzata nella barra del titolo nella parte superiore e nella barra di stato nella parte inferiore della finestra. Ad esempio, **Tutti i sistemi** nello screenshot precedente.  
+1. L'attuale raccolta di destinazione di CMPivot è visualizzata nella barra del titolo nella parte superiore e nella barra di stato nella parte inferiore della finestra. Ad esempio, "PM_Team_Machines" nello screenshot precedente.  
 
 2. Nel riquadro a sinistra sono elencate le **entità** disponibili nei client. Alcune entità si basano su WMI, mentre altre usano PowerShell per ottenere i dati dai client.   
 
@@ -218,35 +225,259 @@ Per [mitigare le vulnerabilità del canale laterale di esecuzione speculativa](h
 
 ### <a name="example-4-free-disk-space"></a>Esempio 4: Spazio libero su disco
 
-È necessario archiviare temporaneamente un file di grandi dimensioni in un file server di rete, ma non si è certi di quale abbia la capacità sufficiente. Si avvia CMPivot su una raccolta di file server e si esegue una query dell'entità **Disk**. Si modifica la query in modo che CMPivot restituisca rapidamente un elenco dei server attivi con i dati di archiviazione in tempo reale:  
+È necessario archiviare temporaneamente un file di grandi dimensioni in un file server di rete, ma non si è certi di quale abbia la capacità sufficiente. Avviare CMPivot su una raccolta di file server ed eseguire una query sull'entità **Disk**. Modificare la query in modo che CMPivot restituisca rapidamente un elenco dei server attivi con i dati di archiviazione in tempo reale:  
 
 `Disk | where (Description == 'Local Fixed Disk') | where isnotnull( FreeSpace ) | order by FreeSpace asc`
 
 
+## <a name="bkmk_cmpivot"></a> CMPivot a partire dalla versione 1810
+<!--1359068, 3607759-->
+
+CMPivot include i miglioramenti seguenti a partire da Configuration Manager versione 1810:
+
+- [Utilità e prestazioni di CMPivot](#bkmk_cmpivot-perf)
+- [Funzioni scalari](#bkmk_cmpivot-functions)  
+- [Visualizzazioni di rendering](#bkmk_cmpivot-charts)  
+- [Inventario hardware](#bkmk_cmpivot-hinv)  
+- [Operatori scalari](#bkmk_cmpivot-operators)  
+- [Riepilogo delle query](#bkmk_cmpivot-summary)  
+- [Messaggi di stato di controllo](#cmpivot-audit-status-messages)
+
+### <a name="bkmk_cmpivot-perf"></a> Utilità e prestazioni di CMPivot
+
+- CMPivot restituisce fino a 100.000 celle anziché 20.000 righe.
+  - Se l'entità ha 5 proprietà, ovvero 5 colonne, vengono visualizzate al massimo 20.000 righe.
+  - Per un'entità con 10 proprietà, vengono visualizzate fino a 10.000 righe.
+  - Il totale dei dati visualizzati sarà minore o uguale a 100.000 celle.
+- Nella scheda Riepilogo delle query selezionare il totale dei dispositivi Con errori o Offline e quindi selezionare l'opzione **Crea una raccolta**. Questa opzione consente di impostare facilmente come destinazione i dispositivi con distribuzione della correzione.
+- Per salvare la query **preferita** fare clic sull'icona della cartella.
+   ![Esempio di salvataggio di una query preferita in CMPivot](media/cmpivot-favorite.png)
+
+- I client aggiornati alla versione 1810 restituiscono un output inferiore a 80 kB al sito su un canale di comunicazione rapida.
+  - Questa modifica migliora le prestazioni di visualizzazione dell'output di script o query.
+  - Se l'output di script o query è maggiore di 80 KB, il client invia i dati tramite un messaggio di stato.
+  - Se non è aggiornato alla versione 1810, il client continua a usare i messaggi di stato.
+
+### <a name="bkmk_cmpivot-functions"></a> Funzioni scalari
+CMPivot supporta le seguenti funzioni scalari:
+- **ago()**: sottrarre l'intervallo di tempo specificato dall'ora UTC corrente  
+- **datetime_diff()**: calcola la differenza di calendario tra due valori DateTime  
+- **now()**: restituisce l'ora UTC corrente  
+- **bin()**: arrotonda per difetto i valori a un multiplo intero di una dimensione di contenitore specificata  
+
+> [!Note]  
+> Il tipo di dati datetime rappresenta un istante nel tempo, in genere espresso come data e ora del giorno. I valori di tempo sono misurati in unità di 1 secondo. Un valore datetime è sempre il fuso orario UTC. Esprimere sempre i valori letterali data e ora in formato ISO 8601, ad esempio `yyyy-mm-dd HH:MM:ss`  
+
+#### <a name="examples"></a>Esempi
+- `datetime(2015-12-31 23:59:59.9)`: un valore letterale data e ora specifico   
+- `now()`: l'ora corrente  
+- `ago(1d)`: l'ora corrente meno un giorno  
+
+
+### <a name="bkmk_cmpivot-charts"></a> Visualizzazioni di rendering
+
+CMPivot include ora il supporto di base per l'[operatore di rendering](https://docs.microsoft.com/azure/kusto/query/renderoperator) di Log Analytics. Questo supporto include i tipi seguenti:  
+- **barchart**: la prima colonna è l'asse x e può essere testo, data/ora o numerica. La seconda colonna deve essere numerica e viene visualizzato come una striscia orizzontale.  
+- **columnchart**: come barchart, con strisce verticali anziché strisce orizzontali.  
+- **piechart**: la prima colonna è l'asse del colore, la seconda colonna è numerica.  
+- **timechart**: grafico a linee. La prima colonna è l'asse x e deve essere datetime. La seconda colonna è l'asse y.  
+
+#### <a name="example-bar-chart"></a>Esempio: grafico a barre
+La query seguente esegue il rendering delle applicazioni usate più di recente come un grafico a barre:
+
+```
+CCMRecentlyUsedApplications
+| summarize dcount( Device ) by ProductName
+| top 10 by dcount_
+| render barchart
+```
+![Esempio di visualizzazione di grafico a barre CMPivot](media/1359068-cmpivot-barchart.png)
+
+#### <a name="example-time-chart"></a>Esempio: grafico del tempo
+Per visualizzare i grafici del tempo, usare il nuovo operatore **bin()** per raggruppare gli eventi nel tempo. La query seguente indica quando sono stati avviati i dispositivi negli ultimi sette giorni:
+
+``` 
+OperatingSystem 
+| where LastBootUpTime <= ago(7d)
+| summarize count() by bin(LastBootUpTime,1d)
+| render timechart
+```
+![Esempio di visualizzazione di grafico del tempo CMPivot](media/1359068-cmpivot-timechart.png)
+
+#### <a name="example-pie-chart"></a>Esempio: grafico a torta
+La query seguente visualizza tutte le versioni del sistema operativo in un grafico a torta:
+
+```
+OperatingSystem 
+| summarize count() by Caption
+| render piechart
+```
+![Esempio di visualizzazione di grafico a torta CMPivot](media/1359068-cmpivot-piechart.png)
+
+
+### <a name="bkmk_cmpivot-hinv"></a> Inventario hardware
+Usare CMPivot per eseguire query sulle classi di inventario hardware. Queste classi includono eventuali estensioni personalizzate create per l'inventario hardware. CMPivot restituisce immediatamente i risultati memorizzati nella cache dell'ultima analisi dell'inventario hardware archiviata nel database del sito. Allo stesso tempo, se necessario aggiorna i risultati con i dati dinamici di tutti i client online.
+
+La saturazione del colore dei dati nella tabella o nel grafico dei risultati indica se i dati sono dinamici o memorizzati nella cache. Ad esempio, blu scuro è un dato in tempo reale proveniente da un client online. Blu chiaro è un dato memorizzato nella cache.
+
+#### <a name="example"></a>Esempio
+```
+LogicalDisk
+| summarize sum( FreeSpace ) by Device
+| order by sum_ desc
+| render columnchart
+```
+![Esempio di query sull'inventario CMPivot con visualizzazione di un istogramma](media/1359068-cmpivot-inventory.png)
+
+#### <a name="limitations"></a>Limitazioni
+- Le seguenti entità di inventario hardware non sono supportate:  
+    - Proprietà della matrice, ad esempio l'indirizzo IP  
+    - Real32/Real64 <!--example?-->  
+    - Proprietà oggetti selezionati <!--example?-->  
+- I nomi di entità di inventario devono iniziare con un carattere
+- Non è possibile sovrascrivere le entità predefinite creando un'entità di inventario con lo stesso nome  
+
+
+### <a name="bkmk_cmpivot-operators"></a> Operatori scalari
+CMPivot include i seguenti operatori scalari:  
+
+> [!Note]  
+> - LHS: stringa a sinistra dell'operatore  
+> - RHS: stringa a destra dell'operatore  
+
+
+|Operator|Descrizione|Esempio (restituisce true)|
+|--------|-----------|---------------------|
+|==|Uguale a|`"aBc" == "aBc"`|
+|!=|Diverso da|`"abc" != "ABC"`|
+|like|LHS contiene una corrispondenza per RHS|`"FabriKam" like "%Brik%"`|
+|!like|LHS non contiene una corrispondenza per RHS|`"Fabrikam" !like "%xyz%"`|
+|contiene|RHS si verifica come sottosequenza di LHS|`"FabriKam" contains "BRik"`|
+|!contains|RHS non si verifica in LHS|`"Fabrikam" !contains "xyz"`|
+|startswith|RHS è una sottosequenza iniziale di LHS|`"Fabrikam" startswith "fab"`|
+|!startswith|RHS non è una sottosequenza iniziale di LHS|`"Fabrikam" !startswith "kam"`|
+|endswith|RHS è una sottosequenza di chiusura di LHS|`"Fabrikam" endswith "Kam"`|
+|!endswith|RHS non è una sottosequenza di chiusura di LHS|`"Fabrikam" !endswith "brik"`|
+
+
+### <a name="bkmk_cmpivot-summary"></a> Riepilogo delle query
+
+Selezionare la scheda **Riepilogo delle query** nella parte inferiore della finestra CMPivot. Questo stato consente di identificare i client che sono offline o di risolvere gli errori che possono verificarsi. Selezionare un valore nella colonna del conteggio per aprire un elenco di dispositivi specifici con tale stato. 
+
+Ad esempio, selezionare il numero di dispositivi con uno stato di errore. Vedere il messaggio di errore specifico ed esportare un elenco di questi dispositivi. Se l'errore è che un cmdlet specifico non viene riconosciuto, creare una raccolta dall'elenco dei dispositivi esportati per distribuire un aggiornamento di Windows PowerShell.  
+
+### <a name="cmpivot-audit-status-messages"></a>Messaggi di stato di controllo di CMPivot
+
+A partire dalla versione 1810, quando si esegue CMPivot viene creato un messaggio di stato di controllo con **MessageID 40805**. Per visualizzare i messaggi di stato, andare a **Monitoraggio** < **Stato del sistema** < **Query messaggi di stato**. È possibile eseguire **tutti i messaggi di stato di controllo per un utente specifico**, **tutti i messaggi di stato di controllo per un sito specifico** o creare la propria query di messaggio di stato.
+
+Per il messaggio viene usato il formato seguente:
+
+MessageId 40805: L'utente &lt;NomeUtente> ha eseguito lo script &lt;GUID-script> con hash &lt;hash-script> nella raccolta &lt;ID-raccolta>.
+
+- 7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14 è il GUID dello script per CMPivot.
+- Il codice hash dello script può essere visualizzato nel file scripts.log del client.
+- È anche possibile visualizzare l'hash archiviato nel punteggio dello script client. Il nome file nel client è &lt;GUID-script>_&lt;hash-script>.
+    - Esempio di nome file: C:\Windows\CCM\ScriptStore\7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14_abc1d23e45678901fabc123d456ce789fa1b2cd3e456789123fab4c56789d0123.ps
+   
+
+![Esempio di messaggio di stato di controllo di CMPivot](media/cmpivot-audit-status-message.png)
+
+## <a name="bkmk_cmpivot1902"></a> CMPivot a partire dalla versione 1902
+<!--3610960-->
+A partire dalla versione 1902 di Configuration Manager è possibile eseguire CMPivot dal sito di amministrazione centrale in una gerarchia. Il sito primario gestisce ancora la comunicazione con il client. Quando CMPivot viene eseguito dal sito di amministrazione centrale, comunica con il sito primario tramite il canale di sottoscrizione dei messaggi ad alta velocità. Questa comunicazione non si basa sulla replica SQL standard tra siti.
+
+L'esecuzione di CMPivot nel sito di amministrazione centrale richiede autorizzazioni aggiuntive quando SQL o il provider non sono nello stesso computer o se la configurazione è SQL Always On. Con queste configurazioni remote, è necessario uno scenario con "doppio hop" per CMPivot.
+
+Per fare in modo che CMPivot funzioni nel sito di amministrazione centrale in uno "scenario con doppio hop", è possibile definire la delega vincolata. Per comprendere le implicazioni di sicurezza di questa configurazione, leggere l'articolo sulla [delega vincolata Kerberos](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview). Se si usa più di una configurazione remota, ad esempio un provider SQL o SCCM che condivide o meno il percorso con il sistema di amministrazione centrale, si può richiedere una combinazione di impostazioni di autorizzazione. Di seguito sono riportati i passaggi che è necessario eseguire:
+
+### <a name="cas-has-a-remote-sql-server"></a>Il sistema di amministrazione centrale usa un'istanza remota di SQL Server
+
+1. Passare all'istanza di SQL Server di ogni sito primario.
+   1. Aggiungere l'istanza remota di SQL Server del sistema di amministrazione centrale e il server del sito del sistema di amministrazione centrale al gruppo [Configmgr_DviewAccess](/sccm/core/plan-design/hierarchy/accounts#configmgr_dviewaccess).
+   ![Gruppo Configmgr_DviewAccess in un'istanza di SQL Server del sito primario](media/cmpivot-dviewaccess-group.png)
+1. Accedere a Utenti e computer di Active Directory.
+   1. Per il server di ogni sito primario, fare clic con il pulsante destro del mouse e selezionare **Proprietà**.
+      1. Nella scheda della delega scegliere la terza opzione, **Computer attendibile per la delega solo ai servizi specificati**. 
+      1. Scegliere **Utilizza solo Kerberos**.
+      1. Aggiungere il servizio SQL Server del sistema di amministrazione centrale con porta e istanza.
+      1. Verificare che queste modifiche siano conformi ai criteri di sicurezza aziendali.
+   1. Per il sito del sistema di amministrazione aziendale, fare clic con il pulsante destro del mouse e selezionare **Proprietà**.
+      1. Nella scheda della delega scegliere la terza opzione, **Computer attendibile per la delega solo ai servizi specificati**. 
+      1. Scegliere **Utilizza solo Kerberos**.
+      1. Aggiungere il servizio SQL Server di ogni sito primario con porta e istanza.
+      1. Verificare che queste modifiche siano conformi ai criteri di sicurezza aziendali.
+
+   ![Esempio di delega AD di CMPivot per doppi hop](media/cmpivot-ad-delegation.png)
+
+### <a name="cas-has-a-remote-provider"></a>Il sistema di amministrazione centrale ha un provider remoto
+
+1. Passare all'istanza di SQL Server di ogni sito primario.
+   1. Aggiungere l'account del computer del provider e il server del sito del sistema di amministrazione centrale al gruppo [Configmgr_DviewAccess](/sccm/core/plan-design/hierarchy/accounts#configmgr_dviewaccess).
+1. Accedere a Utenti e computer di Active Directory.
+   1. Selezionare il computer del provider del sistema di amministrazione centrale, fare clic con il pulsante destro del mouse e selezionare **Proprietà**.
+      1. Nella scheda della delega scegliere la terza opzione, **Computer attendibile per la delega solo ai servizi specificati**. 
+      1. Scegliere **Utilizza solo Kerberos**.
+      1. Aggiungere il servizio SQL Server di ogni sito primario con porta e istanza.
+      1. Verificare che queste modifiche siano conformi ai criteri di sicurezza aziendali.
+   1. Selezionare il server del sito del sistema di amministrazione centrale, fare clic con il pulsante destro del mouse e selezionare **Proprietà**.
+      1. Nella scheda della delega scegliere la terza opzione, **Computer attendibile per la delega solo ai servizi specificati**. 
+      1. Scegliere **Utilizza solo Kerberos**.
+      1. Aggiungere il servizio SQL Server di ogni sito primario con porta e istanza.
+      1. Verificare che queste modifiche siano conformi ai criteri di sicurezza aziendali.
+1. Riavviare il computer del provider remoto del sistema di amministrazione centrale.
+
+### <a name="sql-always-on"></a>SQL Always On
+
+1. Passare all'istanza di SQL Server di ogni sito primario.
+   1. Aggiungere il server del sito del sistema di amministrazione centrale al gruppo [Configmgr_DviewAccess](/sccm/core/plan-design/hierarchy/accounts#configmgr_dviewaccess).
+1. Accedere a Utenti e computer di Active Directory.
+   1. Per il server di ogni sito primario, fare clic con il pulsante destro del mouse e selezionare **Proprietà**.
+      1. Nella scheda della delega scegliere la terza opzione, **Computer attendibile per la delega solo ai servizi specificati**. 
+      1. Scegliere **Utilizza solo Kerberos**.
+      1. Aggiungere gli account del servizio SQL Server del sistema di amministrazione centrale con porta e istanza.
+      1. Verificare che queste modifiche siano conformi ai criteri di sicurezza aziendali.
+   1. Selezionare il server del sito del sistema di amministrazione centrale, fare clic con il pulsante destro del mouse e selezionare **Proprietà**.
+      1. Nella scheda della delega scegliere la terza opzione, **Computer attendibile per la delega solo ai servizi specificati**. 
+      1. Scegliere **Utilizza solo Kerberos**.
+      1. Aggiungere il servizio SQL Server di ogni sito primario con porta e istanza.
+      1. Verificare che queste modifiche siano conformi ai criteri di sicurezza aziendali.
+1. Verificare che il [nome SPN sia pubblicato](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/listeners-client-connectivity-application-failover?view=sql-server-2017#SPNs) per il nome del listener SQL del sistema di amministrazione centrale e per ogni nome del listener SQL primario.
+1. Riavviare le istanze di SQL Server primarie.
+1. Riavviare il server del sito e le istanze di SQL Server del sistema di amministrazione centrale.
+
 
 ## <a name="inside-cmpivot"></a>Informazioni su CMPivot
 
-CMPivot invia le query ai client usando il "canale rapido" di Configuration Manager. Questo canale di comunicazione dal server al client viene usato anche da altre funzionalità, ad esempio le azioni di notifica client, lo stato del client ed Endpoint Protection. I client restituiscono i risultati tramite il sistema di messaggi di stato in modo altrettanto rapido. I messaggi di stato vengono temporaneamente archiviati nel database. 
+CMPivot invia le query ai client usando il "canale rapido" di Configuration Manager. Questo canale di comunicazione dal server al client viene usato anche da altre funzionalità, ad esempio le azioni di notifica client, lo stato del client ed Endpoint Protection. I client restituiscono i risultati tramite il sistema di messaggi di stato in modo altrettanto rapido. I messaggi di stato vengono temporaneamente archiviati nel database. Per altre informazioni sulle porte usate per la notifica client, vedere l'articolo relativo alle [porte](/sccm/core/plan-design/hierarchy/ports#BKMK_PortsClient-MP).
 
-Le query e i risultati contengono solo testo. Le entità **InstallSoftware** e **Process** restituiscono alcuni dei set di risultati più grandi. Durante i test delle prestazioni, le dimensioni del file di un messaggio di stato da un client per queste query non hanno superato **1 KB**. Questa query monouso, eseguita a un ambiente di grandi dimensioni con 50.000 client attivi, genererebbe meno di 50 MB di dati in rete.  
+Le query e i risultati contengono solo testo. Le entità **InstallSoftware** e **Process** restituiscono alcuni dei set di risultati più grandi. Durante i test delle prestazioni, le dimensioni del file di un messaggio di stato da un client per queste query non hanno superato **1 KB**. Questa query monouso, eseguita a un ambiente di grandi dimensioni con 50.000 client attivi, genererebbe meno di 50 MB di dati in rete. Tutti gli elementi sottolineati nella home page restituiranno meno di 1 KB di informazioni per client.
+
+![Esempio di entità sottolineate in CMPivot](media/cmpivot-underlined-entities.png)
+
+A partire da Configuration Manager 1810, CMPivot è in grado di eseguire query sui dati di inventario hardware, incluse le classi di inventario hardware estese. Queste nuove entità (non sottolineate nella home page) possono restituire set di dati molto più grandi, a seconda della quantità di dati definita per una data proprietà di inventario hardware. Ad esempio, l'entità "InstalledExecutable" potrebbe restituire più MB di dati per ogni client, in base ai dati specifici su cui si esegue la query. Prestare attenzione alle prestazioni e alla scalabilità dei sistemi quando usando CMPivot le raccolte di dimensioni maggiori restituiscono set di dati di inventario hardware più grandi.
 
 Una query raggiunge il timeout dopo un'ora. Ad esempio, una raccolta include 500 dispositivi e 450 client sono attualmente online. I dispositivi attivi ricevono la query e restituiscono i risultati quasi immediatamente. Se si lascia aperta la finestra CMPivot, anche gli altri 50 client, non appena passano online, ricevono la query e restituiscono i risultati. 
 
->[!TIP]
-> Le iterazioni CMPivot vengono registrate nei file di log seguenti:
->
-> **Lato server:**
-> - SmsProv.log
-> - bgbServer.log
-> - StateSys.log
->
-> **Lato client:**
-> - CcmNotificationAgent.log
-> - Scripts.log
-> - StateMessage.log
->
-> Per altre informazioni, vedere [File di log](/sccm/core/plan-design/hierarchy/log-files).
+## <a name="log-files"></a>File di registro
 
+ Le interazioni di CMPivot vengono registrate nei file di log seguenti:
 
-## <a name="see-also"></a>Vedere anche
+**Lato server:**
+- SmsProv.log
+- BgbServer.log
+- StateSys.log
+
+**Lato client:**
+ - CcmNotificationAgent.log
+ - Scripts.log
+ - StateMessage.log
+
+Per altre informazioni, vedere [File di log](/sccm/core/plan-design/hierarchy/log-files) e [Risoluzione dei problemi di CMPivot](/sccm/core/servers/manage/cmpivot-tsg.md).
+
+## <a name="next-steps"></a>Passaggi successivi
+ 
+[Risoluzione dei problemi di CMPivot](/sccm/core/servers/manage/cmpivot-tsg.md)
+
 [Creare ed eseguire script di PowerShell](/sccm/apps/deploy-use/create-deploy-scripts)
+
+
