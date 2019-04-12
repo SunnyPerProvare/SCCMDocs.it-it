@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 6d20389a-9de2-4a64-bced-9fc4fa519174
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: feb0f086fca89aed3fc1f251901ade378b020533
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: eb5471c5a993a1a2f683807a12dfc01ea00bf275
+ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133521"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59069518"
 ---
 # <a name="best-practices-for-software-updates-in-configuration-manager"></a>Procedure consigliate per aggiornamenti software in Configuration Manager
 
@@ -40,7 +40,7 @@ In caso di installazione di più di un punto di aggiornamento software in un sit
 
 Per altre informazioni sulla condivisione del database WSUS, vedere i post di blog seguenti:  
 
-- [Come implementare un database SUSDB condiviso per i punti di aggiornamento software di Configuration Manager](https://blogs.technet.microsoft.com/configurationmgr/2016/10/12/how-to-implement-a-shared-susdb-for-configuration-manager-software-update-points/)  
+- [Come implementare un database SUSDB condiviso per i punti di aggiornamento software di Configuration Manager](https://techcommunity.microsoft.com/t5/Configuration-Manager-Archive/How-to-implement-a-shared-SUSDB-for-Configuration-Manager/ba-p/274103)  
 
 - [Considerazioni per più istanze WSUS che condividono un database del contenuto quando si usa System Center Configuration Manager](https://blogs.technet.microsoft.com/wsus/2014/03/22/considerations-for-multiple-wsus-instances-sharing-a-content-database-when-using-system-center-configuration-manager-but-without-network-load-balancing-nlb/)  
 
