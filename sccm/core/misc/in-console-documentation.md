@@ -1,6 +1,6 @@
 ---
 title: Documentazione nella console
-ms.date: 03/11/2019
+ms.date: 04/05/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,12 +10,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9978241a984ae8694f646ea9e08ac22101072a0
-ms.sourcegitcommit: 8803a64692f3edc0422b58f6c3037a8796374cc8
+ms.openlocfilehash: e61eb676d7ec61a2e72cd911389e019c9f0cbd7a
+ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57881589"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59069331"
 ---
 <!-- 
 - Feature 1357546
@@ -24,18 +24,17 @@ ms.locfileid: "57881589"
 - Process: https://microsoft.sharepoint.com/teams/ConfigMgr/Documents/ContentPub/Data%20collection%20process%20for%20Feature%201357546%20In-console%20documentation.docx?web=1
 -->
 
-
 # <a name="configuration-manager-documentation"></a>Documentazione di Configuration Manager
 
-Questo contenuto offre informazioni utili per l'apprendimento e il supporto di Configuration Manager. 
+Questo contenuto offre informazioni utili per l'apprendimento e il supporto di Configuration Manager.
 
 Per altre informazioni, vedere gli articoli seguenti:
+
 - [Libreria della documentazione di Configuration Manager](https://docs.microsoft.com/sccm)  
 - [Uso della documentazione di Configuration Manager](https://docs.microsoft.com/sccm/core/understand/use-docs)
 
+## <a name="recommended"></a>Consigliato
 
-
-## <a name="recommended"></a>Consigliato 
 Elenco aggiornato di articoli importanti.
 
 - [Co-gestione per dispositivi Windows 10](https://docs.microsoft.com/sccm/comanage/overview)  
@@ -50,45 +49,42 @@ Elenco aggiornato di articoli importanti.
 - [Pianificare il gateway di gestione cloud](https://docs.microsoft.com/sccm/core/clients/manage/plan-cloud-management-gateway)
 - [Migrare i dati tra le gerarchie](https://docs.microsoft.com/sccm/core/migration/migrate-data-between-hierarchies)
 
-
-
 ## <a name="trending"></a>Di tendenza
-Gli articoli più visualizzati a febbraio 2019.
 
-| Visualizzazioni pagina | Titolo | 
-|------------|-------| 
-| 20070 | [File di log per la risoluzione dei problemi](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/log-files) |
-| 14297 | [Novità della versione 1810](https://docs.microsoft.com/sccm/core/plan-design/changes/whats-new-in-version-1810) |
-| 10497 | [Distribuire i client in Windows](https://docs.microsoft.com/sccm/core/clients/deploy/deploy-clients-to-windows-computers) |
-| 10140 | [Porte usate per le connessioni](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/ports) |
-| 8836 | [Installare la console](https://docs.microsoft.com/sccm/core/servers/deploy/install/install-consoles) |
-| 8738 | [Supporto per Windows 10](https://docs.microsoft.com/sccm/core/plan-design/configs/support-for-windows-10) |
-| 8291 | [Co-gestione per dispositivi Windows 10](https://docs.microsoft.com/sccm/comanage/overview) |
-| 7995 | [Proprietà e parametri di installazione client](https://docs.microsoft.com/sccm/core/clients/deploy/about-client-installation-properties) |
-| 7788 | [Aggiornamenti e manutenzione](https://docs.microsoft.com/sccm/core/servers/manage/updates) |
-| 7261 | [Strumenti di Configuration Manager](https://docs.microsoft.com/sccm/core/support/tools) |
+Gli articoli più visualizzati a marzo 2019.
 
-
+| Visualizzazioni pagina | Titolo |
+|------------|-------|
+| 21716 | [File di log per la risoluzione dei problemi](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/log-files)
+| 13321 | [Novità della versione 1810](https://docs.microsoft.com/sccm/core/plan-design/changes/whats-new-in-version-1810)
+| 11671 | [Porte usate per le connessioni](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/ports)
+| 10930 | [Distribuire i client in Windows](https://docs.microsoft.com/sccm/core/clients/deploy/deploy-clients-to-windows-computers)
+| 8944 | [Aggiornamenti e manutenzione](https://docs.microsoft.com/sccm/core/servers/manage/updates)
+| 8941 | [Supporto per Windows 10](https://docs.microsoft.com/sccm/core/plan-design/configs/support-for-windows-10)
+| 8844 | [Installare la console](https://docs.microsoft.com/sccm/core/servers/deploy/install/install-consoles)
+| 8797 | [Proprietà e parametri di installazione client](https://docs.microsoft.com/sccm/core/clients/deploy/about-client-installation-properties)
+| 8035 | [Gestire gli aggiornamenti di Office 365 ProPlus](https://docs.microsoft.com/sccm/sum/deploy-use/manage-office-365-proplus-updates)
+| 7866 | [Distribuire applicazioni](https://docs.microsoft.com/sccm/apps/deploy-use/deploy-applications)
 
 ## <a name="recently-updated"></a>Aggiornata di recente
+
 Articoli con un aggiornamento recente e significativo.
 
-| Ultima revisione | Titolo | 
+| Ultima revisione | Titolo |
 |---------------|-------|
-| 27/02/2019 | [Impostare Intune come autorità MDM](https://docs.microsoft.com/sccm/mdm/deploy-use/migrate-change-mdm-authority) |
-| 26/02/2019 | [Messaggi di stato](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/state-messaging-system-center-configuration-manager) |
-| 26/02/2019 | [Novità nella gestione dei dispositivi mobili ibrida](https://docs.microsoft.com/sccm/mdm/understand/whats-new-in-hybrid-mobile-device-management) |
-| 25/02/2019 | [Installa aggiornamenti software](https://docs.microsoft.com/sccm/osd/understand/install-software-updates) |
-| 22/02/2019 | [Windows Autopilot per dispositivi esistenti](https://docs.microsoft.com/sccm/osd/deploy-use/windows-autopilot-for-existing-devices) |
-| 21/02/2019 | [Novità della versione 1810](https://docs.microsoft.com/sccm/core/plan-design/changes/whats-new-in-version-1810) |
-| 21/02/2019 | [Funzionalità deprecate](https://docs.microsoft.com/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures) |
-| 21/02/2019 | [Creare applicazioni Windows](https://docs.microsoft.com/sccm/apps/get-started/creating-windows-applications) |
-| 21/02/2019 | [Note sulla versione](https://docs.microsoft.com/sccm/core/servers/deploy/install/release-notes) |
-| 20/02/2019 | [Note sulla versione 1810](https://docs.microsoft.com/powershell/sccm/1810-release-notes) |
-
-
+| 29/03/2019 | [Novità della versione 1902](https://docs.microsoft.com/sccm/core/plan-design/changes/whats-new-in-version-1902)
+| 29/03/2019 | [Versioni di Technical Preview](https://docs.microsoft.com/sccm/core/get-started/technical-preview)
+| 29/03/2019 | [CMPivot per i dati in tempo reale](https://docs.microsoft.com/sccm/core/servers/manage/cmpivot)
+| 29/03/2019 | [Technical Preview 1903](https://docs.microsoft.com/sccm/core/get-started/2019/technical-preview-1903)
+| 29/03/2019 | [Risoluzione dei problemi di CMPivot](https://docs.microsoft.com/sccm/core/servers/manage/cmpivot-tsg)
+| 27/03/2019 | [Controlli dei prerequisiti](https://docs.microsoft.com/sccm/core/servers/deploy/install/list-of-prerequisite-checks)
+| 27/03/2019 | [Disponibilità elevata del server del sito](https://docs.microsoft.com/sccm/core/servers/deploy/configure/site-server-high-availability)
+| 27/03/2019 | [Note sulla versione 1902 di PowerShell](https://docs.microsoft.com/powershell/sccm/1902-release-notes)
+| 27/03/2019 | [Client di interoperabilità estesa](https://docs.microsoft.com/sccm/core/understand/interoperability-client)
+| 27/03/2019 | [Accessibilità](https://docs.microsoft.com/sccm/core/understand/accessibility-features)
 
 ## <a name="troubleshooting-articles"></a>Articoli sulla risoluzione dei problemi
+
 Procedure dettagliate guidate che semplificano la risoluzione dei problemi relativi a funzionalità e componenti di Configuration Manager.
 
 - [Risoluzione dei problemi di avvio PXE](https://support.microsoft.com/help/4468612)
@@ -98,18 +94,16 @@ Procedure dettagliate guidate che semplificano la risoluzione dei problemi relat
 - [Risoluzione dei problemi di gestione degli aggiornamenti software](https://support.microsoft.com/help/10680)
 - [Risoluzione dei problemi relativi al passaggio Installa applicazione della sequenza di attività](https://support.microsoft.com/help/18408/)
 
-
-
 ## <a name="new-and-updated-support-articles"></a>Articoli di supporto nuovi e aggiornati
-Articoli del supporto tecnico nuovi o aggiornati a febbraio 2019.
 
-- [KB 4490644: Guida completa alla manutenzione con Microsoft WSUS e i punti di aggiornamento software di Configuration Manager](https://support.microsoft.com/help/4490644)
-- [KB 4491117: Le installazioni degli aggiornamenti nei client smettono di rispondere in Configuration Manager, versione 1810 o 1806](https://support.microsoft.com/help/4491117)
-- [KB 4346901: Installazione degli aggiornamenti software nei client di Configuration Manager](https://support.microsoft.com/help/4346901)
-- [KB 4468612: Risoluzione dei problemi di avvio PXE in Configuration Manager](https://support.microsoft.com/help/4468612)
-- [KB 4491871: Risoluzione avanzata dei problemi di avvio PXE in Configuration Manager](https://support.microsoft.com/help/4491871)
-- [KB 4490575: Le installazioni degli aggiornamenti smettono di rispondere o non visualizzano mai il completamento in Configuration Manager, versione 1810](https://support.microsoft.com/help/4490575)
-- [KB 4459394: Descrizione della messaggistica di stato in System Center Configuration Manager](https://support.microsoft.com/help/4459394)
-- [KB 4490434: Vengono create colonne di individuazione utente duplicate in Configuration Manager](https://support.microsoft.com/help/4490434)
+Articoli del supporto tecnico nuovi o aggiornati a marzo 2019.
+
+- [KB 4488598: Aggiornamento cumulativo 2 per System Center Configuration Manager Current Branch, versione 1810](https://support.microsoft.com/help/4488598)
+- [KB 4494015: Una sequenza di attività OSD non continua dopo il completamento dell'installazione di Windows o di un aggiornamento sul posto](https://support.microsoft.com/help/4494015)
+- [KB 4495265: WINHTTP_CALLBACK_STATUS_FLAG_CERT_CN_INVALID quando si usa un Cloud Management Gateway come punto di distribuzione cloud con un certificato di terze parti](https://support.microsoft.com/help/4495265)
+- [KB 4494799: Le versioni precedenti di Windows non vengono avviate dopo il passaggio "Installa Windows e Configuration Manager" se si usa Pre-provisioning di BitLocker con Windows 10 versione 1511](https://support.microsoft.com/help/4494799)
+- [KB 4494362: Viene registrato ripetutamente l'evento "Unable to send update on component PolicyTargetEvalNotify_iud" (Impossibile inviare aggiornamento per il componente PolicyTargetEvalNotify_iud) in Smsdbmon.log dopo l'aggiornamento a Configuration Manager versione 1810](https://support.microsoft.com/help/4494362)
+- [KB 4494361: Il collegamento di un sito di amministrazione centrale a un sito primario autonomo ha esito negativo quando è abilitata l'autenticazione a due fattori](https://support.microsoft.com/help/4494361)
+- [KB 4493667: OSDResults non visualizza le applicazioni installate da una sequenza di attività UDI in Configuration Manager](https://support.microsoft.com/help/4493667)
 
 Per sottoscrivere la notifica Atom o RSS dei nuovi articoli di supporto di Configuration Manager, vedere [Aggiornamenti dei contenuti del supporto](https://support.microsoft.com/help/4089498/) e selezionare **System Center Configuration Manager**.  

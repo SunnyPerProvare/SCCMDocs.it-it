@@ -2,7 +2,7 @@
 title: Impostazioni client
 titleSuffix: Configuration Manager
 description: Informazioni sulle impostazioni predefinite e personalizzate per il controllo dei comportamenti client
-ms.date: 03/21/2019
+ms.date: 04/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e76dc5892ad34d72bfee3cd4aea0fa660e34855d
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: 42218443f83726bfbca0dcf77ffa37e61c46a2b3
+ms.sourcegitcommit: d4b0e44e6bb06a830d0887493528d9166a15154b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58477535"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506210"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -784,11 +784,23 @@ Impostare questa opzione su **Sì** per consentire la configurazione delle impos
 
 Quando si imposta questa opzione su **Sì** e per il client è stata definita almeno una finestra di manutenzione "Aggiornamento software", gli aggiornamenti software verranno installati durante una finestra di manutenzione "Tutte le distribuzioni". Per impostazione predefinita, questa impostazione è impostata su **No**. Questa impostazione client è stata aggiunta in Configuration Manager versione 1810. <!--2839307-->
 
+### <a name="bkmk_thread-priority"></a> Specificare la priorità del thread per gli aggiornamenti delle funzionalità
+<!--3734525-->
+A partire da Configuration Manager versione 1902, è possibile modificare la priorità con cui i client Windows 10 versione 1709 o versioni successive installano un aggiornamento di funzionalità tramite [pacchetti di manutenzione di Windows 10](/sccm/osd/deploy-use/manage-windows-as-a-service). Questa impostazione non influisce sulle sequenze di attività di aggiornamento sul posto di Windows 10.
+
+Questa impostazione client include le opzioni seguenti:
+
+- **Non configurato**: Configuration Manager non cambia l'impostazione. Gli amministratori possono pre-installare un proprio file setupconfig.ini. Questo è il valore predefinito. 
+- **Normale**: Installazione di Windows usa più risorse di sistema ed effettua l'aggiornamento più velocemente. Usa più tempo processore e quindi il tempo totale di installazione è più breve, ma l'interruzione per l'utente è più lunga.  
+   - Consente di configurare il file setupconfig.ini nel dispositivo con l'[opzione della riga di comando di installazione di Windows `/Priority Normal`](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options).
+
+- **Bassa**: è possibile continuare a usare il dispositivo durante il download e l'applicazione degli aggiornamenti in background. Il tempo totale di installazione è più lungo, ma l'interruzione per l'utente è più breve. Potrebbe essere necessario aumentare il tempo di esecuzione massimo dell'aggiornamento per evitare un timeout quando si usa questa opzione.
+  - Rimuove l'[opzione della riga di comando di installazione di Windows `/Priority`](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options) dal file setupconfig.ini.
+
+
 ### <a name="enable-third-party-software-updates"></a>Enable third party software updates (Abilita aggiornamenti software di terze parti) 
 
 Se questa opzione è impostata su **Sì**, i criteri per 'Consenti aggiornamenti firmati da un percorso del servizio di aggiornamento Microsoft nella rete Intranet' vengono impostati e il certificato di firma viene installato nell'archivio degli autori attendibili nel client. Questa impostazione client è stata aggiunta in Configuration Manager versione 1802.
-
-
 
 ## <a name="state-messaging"></a>Messaggistica di stato
 

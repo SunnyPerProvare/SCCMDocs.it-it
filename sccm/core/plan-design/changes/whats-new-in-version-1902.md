@@ -2,7 +2,7 @@
 title: Novità della versione 1902
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1902 di Configuration Manager Current Branch.
-ms.date: 04/03/2019
+ms.date: 04/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0be6a28aa0421c6479ba676e67fd5dd7b4b13d39
-ms.sourcegitcommit: da753df27d3909265ca45d3e79091f1e98758d16
+ms.openlocfilehash: a424a2397f4e1845795441208929b7d9efb7f93c
+ms.sourcegitcommit: d4b0e44e6bb06a830d0887493528d9166a15154b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913677"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506278"
 ---
 # <a name="whats-new-in-version-1902-of-configuration-manager-current-branch"></a>Novità della versione 1902 di Configuration Manager Current Branch
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-L'aggiornamento 1902 per Configuration Manager Current Branch è disponibile come aggiornamento nella console. Applicare questo aggiornamento ai siti con la versione 1710, 1802, 1806 o 1810. <!-- baseline only statement:-->Quando si installa un nuovo sito, è disponibile anche come versione di base. Questo articolo offre un riepilogo delle modifiche e delle nuove funzionalità di Configuration Manager versione 1902.  
+L'aggiornamento 1902 per Configuration Manager Current Branch è disponibile come aggiornamento nella console. Applicare questo aggiornamento ai siti con la versione 1802, 1806 o 1810. <!-- baseline only statement:-->Quando si installa un nuovo sito, è disponibile anche come versione di base. Questo articolo offre un riepilogo delle modifiche e delle nuove funzionalità di Configuration Manager versione 1902.  
 
 Esaminare sempre l'elenco di controllo più recente per installare questo aggiornamento. Per altre informazioni, vedere [Elenco di controllo per l'installazione dell'aggiornamento 1902](/sccm/core/servers/manage/checklist-for-installing-update-1902). Dopo aver aggiornato un sito, vedere anche [Elenco di controllo post-aggiornamento](/sccm/core/servers/manage/checklist-for-installing-update-1902#post-update-checklist).
 
@@ -343,11 +343,11 @@ Specificare queste impostazioni nel gruppo di impostazioni client di **Software 
 
 ### <a name="specify-priority-for-feature-updates-in-windows-10-servicing"></a>Specificare la priorità per gli aggiornamenti delle funzionalità nella manutenzione di Windows 10
 <!--3734525-->
-È possibile modificare la priorità con cui i client installano gli aggiornamenti delle funzionalità tramite [Manutenzione pacchetti di Windows 10](/sccm/osd/deploy-use/manage-windows-as-a-service). Per impostazione predefinita, i client ora installano gli aggiornamenti delle funzionalità con priorità di elaborazione più alta. 
+***[Aggiornato]*** È possibile modificare la priorità con cui i client installano gli aggiornamenti delle funzionalità tramite [Manutenzione pacchetti di Windows 10](/sccm/osd/deploy-use/manage-windows-as-a-service). Per impostazione predefinita, i client ora installano gli aggiornamenti delle funzionalità con priorità di elaborazione più alta. 
 
 Usare le impostazioni client per configurare questa opzione. Nel gruppo **Aggiornamenti software** configurare l'impostazione seguente: **Specificare la priorità del thread per gli aggiornamenti delle funzionalità**. 
 
-<!-- For more information, see [About client settings](/sccm/core/clients/deploy/about-client-settings#software-updates). -->
+Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#software-updates) (Informazioni sulle impostazioni client). 
 
 
 
@@ -355,7 +355,7 @@ Usare le impostazioni client per configurare questa opzione. Nel gruppo **Aggior
 
 ### <a name="redirect-windows-known-folders-to-onedrive"></a>Reindirizzare le cartelle note di Windows in OneDrive
 <!--3556021-->
-Usare Configuration Manager per spostare le cartelle note di Windows in OneDrive for Business. Queste cartelle includono Desktop, Documenti e Immagini. Per semplificare gli aggiornamenti di Windows 10, distribuire queste impostazioni ai client Windows 7 prima di distribuire una sequenza di attività. 
+***[Aggiornato]*** Usare Configuration Manager per spostare le cartelle note di Windows in OneDrive for Business. Queste cartelle includono Desktop, Documenti e Immagini. Per semplificare gli aggiornamenti di Windows 10, distribuire queste impostazioni ai client Windows 7 prima di distribuire una sequenza di attività. 
 
 Per altre informazioni su questa funzionalità di OneDrive for Business, vedere [Reindirizzare e spostare le cartelle note di Windows su OneDrive](https://docs.microsoft.com/onedrive/redirect-known-folders).
 
@@ -363,23 +363,23 @@ Prima di tutto, [trovare l'ID tenant di Office 365](https://docs.microsoft.com/o
 
 Per creare e distribuire un profilo di OneDrive for Business, nella console di Configuration Manager passare all'area di lavoro **Asset e conformità**. Espandere **Impostazioni di conformità** e selezionare il nodo **Profili di OneDrive for Business**.  
 
-<!-- For more information, see [Redirect Windows known folders to OneDrive](/sccm/compliance/deploy-use/onedrive-profile). -->
+Per altre informazioni, vedere la sezione Reindirizzare le cartelle note di Windows in OneDrive nell'articolo [Profili di OneDrive for Business](/sccm/compliance/deploy-use/onedrive-profile).
 
 
-### <a name="integration-with-analytics-for-office-365-proplus-readiness"></a>Integrazione con l'analisi per l'idoneità per Office 365 ProPlus
+### <a name="integration-for-office-365-proplus-readiness"></a>Integrazione per l'idoneità per Office 365 ProPlus
 <!--3735402-->
-Usare Configuration Manager per identificare in modo attendibile i dispositivi pronti per l'aggiornamento a Office 365 ProPlus. Grazie all'integrazione con l'analisi di Office, garantisce approfondimenti relativi a qualsiasi potenziale problema di compatibilità con i componenti aggiuntivi e le macro di Office usate nell'ambiente. Quindi è possibile usare Configuration Manager per distribuire Office nei dispositivi pronti. 
+***[Aggiornato]*** Usare Configuration Manager per identificare in modo attendibile i dispositivi pronti per l'aggiornamento a Office 365 ProPlus. L'integrazione offre informazioni dettagliate su eventuali problemi di compatibilità potenziali con i componenti aggiuntivi e le macro di Office usate nell'ambiente. Quindi è possibile usare Configuration Manager per distribuire Office nei dispositivi pronti. 
 
 Il dashboard di gestione client di Office 365 esistente include ora un nuovo riquadro **Office 365 ProPlus - Preparazione aggiornamenti**.
 
-<!-- For more information, see [Office 365 client management dashboard](/sccm/sum/deploy-use/manage-office-365-proplus-updates#office-365-client-management-dashboard) -->
+Per altre informazioni, vedere [Dashboard di Gestione client di Office 365](/sccm/sum/deploy-use/office-365-dashboard#bkmk_o365_readiness)
 
 
 ### <a name="additional-languages-for-office-365-updates"></a>Lingue aggiuntive per gli aggiornamenti di Office 365
 <!--3555955-->
-Ora Configuration Manager supporta tutte le lingue supportate per gli aggiornamenti del client Office 365. Il flusso di lavoro di aggiornamento ora fa distinzione tra le 38 lingue per **Windows Update** e le 103 lingue per l'**aggiornamento client di Office 365**. 
+Ora Configuration Manager supporta tutte le lingue supportate per gli aggiornamenti del client Office 365. Il flusso di lavoro di aggiornamento ora fa distinzione tra le 38 lingue per **Windows Update** e le numerose lingue per l'**aggiornamento client di Office 365**. 
 
-<!-- For more information, see [Office 365 client management dashboard](/sccm/sum/deploy-use/manage-office-365-proplus-updates#office-365-client-management-dashboard) -->
+Per altre informazioni, vedere [Gestire gli aggiornamenti di Office 365](/sccm/sum/deploy-use/manage-office-365-proplus-updates#bkmk_o365_lang).
 
 
 ### <a name="office-products-on-lifecycle-dashboard"></a>Prodotti Office nel dashboard del ciclo di vita
@@ -469,6 +469,19 @@ Per altre informazioni, vedere [Uso della console di Configuration Manager](/scc
 Per migliorare le funzionalità di accessibilità della console di Configuration Manager, aggiornare .NET alla versione 4.7 o successiva nel computer che esegue la console. 
 
 Per altre informazioni, vedere [Funzionalità di accessibilità in Configuration Manager](/sccm/core/understand/accessibility-features).
+
+
+### <a name="changes-to-console-setup-process"></a>Modifiche al processo di installazione della console
+
+<!-- 3612513 -->
+***[Aggiornato]*** Ci sono nuovi componenti richiesti per l'installazione della console di Configuration Manager. Se si crea un pacchetto per l'installazione della console in altri computer, assicurarsi che il pacchetto includa i file seguenti:
+
+- ConsoleSetup.exe
+- AdminConsole.msi
+- ConfigMgr.AC_Extension.i386.cab
+- ConfigMgr.AC_Extension.amd64.cab
+
+Quando si installa o si aggiorna un server del sito, questo copia i file di installazione e i Language Pack supportati per il sito nella sottocartella **Tools\ConsoleSetup**. Per altre informazioni, vedere [Installare la console di Configuration Manager](/sccm/core/servers/deploy/install/install-consoles).
 
 
 
