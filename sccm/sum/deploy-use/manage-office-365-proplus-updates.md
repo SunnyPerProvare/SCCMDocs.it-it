@@ -2,21 +2,21 @@
 title: Gestire gli aggiornamenti di Office 365 ProPlus
 titleSuffix: Configuration Manager
 description: Configuration Manager sincronizza gli aggiornamenti del client di Office 365 dal catalogo di Windows Server Update Services nel server del sito per rendere disponibili gli aggiornamenti per la distribuzione ai client.
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
-ms.date: 07/30/2018
+ms.date: 04/11/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10c04b5daa53a1b12637fa8470b97ae27a63678b
-ms.sourcegitcommit: 8803a64692f3edc0422b58f6c3037a8796374cc8
+ms.openlocfilehash: 7122d57696a7407731b93da20b995fc3e40949ac
+ms.sourcegitcommit: d4b0e44e6bb06a830d0887493528d9166a15154b
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "57881827"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506176"
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Gestire Office 365 ProPlus con Configuration Manager
 
@@ -24,38 +24,15 @@ ms.locfileid: "57881827"
 
 Configuration Manager consente di gestire le app di Office 365 ProPlus nei modi seguenti:
 
-- [Dashboard di gestione client di Office 365](#office-365-client-management-dashboard): è possibile esaminare le informazioni sul client di Office 365 dal dashboard di gestione client di Office 365. A partire da Configuration Manager versione 1802, il dashboard di gestione client di Office 365 visualizza un elenco di dispositivi pertinenti quando vengono selezionate le sezioni del grafico. <!--1357281 -->
-
-- [Distribuire app di Office 365](#deploy-office-365-apps): è possibile avviare il programma di installazione di Office 365 dal dashboard di gestione client di Office 365 per semplificare l'esperienza iniziale di installazione delle app di Office 365. La procedura guidata consente di configurare le impostazioni di installazione di Office 365, scaricare file dalle reti di distribuzione del contenuto (CDN) e creare e distribuire un'applicazione script con il contenuto.    
+- [Distribuzione di app di Office 365](#deploy-office-365-apps): è possibile avviare il programma di installazione di Office 365 dal [dashboard di Gestione client di Office 365](/sccm/sum/deploy-use/office-365-dashboard) per semplificare l'esperienza iniziale di installazione delle app di Office 365. La procedura guidata consente di configurare le impostazioni di installazione di Office 365, scaricare file dalle reti di distribuzione del contenuto (CDN) e creare e distribuire un'applicazione script con il contenuto.
 
 - [Distribuzione di aggiornamenti di Office 365](#deploy-office-365-updates): è possibile gestire gli aggiornamenti del client di Office 365 usando il flusso di lavoro Gestione aggiornamenti software. Quando pubblica un nuovo aggiornamento del client di Office 365 nella rete per la distribuzione di contenuti (CDN) di Office, Microsoft pubblica anche un pacchetto di aggiornamento per Windows Server Update Services (WSUS). Dopo che Configuration Manager ha sincronizzato l'aggiornamento del client di Office 365 dal catalogo di Windows Server Update Services nel server del sito, l'aggiornamento è disponibile per la distribuzione ai client.    
 
-- [Aggiungere lingue per i download di aggiornamento di Office 365](#add-languages-for-office-365-update-downloads): è possibile aggiungere il supporto per Configuration Manager per scaricare gli aggiornamenti in tutte le lingue supportate da Office 365. Non è necessario che Configuration Manager supporti la lingua se è supportata da Office 365. Prima di Configuration Manager versione 1610, è necessario scaricare e distribuire gli aggiornamenti nelle stesse lingue configurate nei client Office 365. 
+- [Aggiungere lingue per i download di aggiornamento di Office 365](#bkmk_o365_lang): è possibile aggiungere il supporto per Configuration Manager per scaricare gli aggiornamenti in tutte le lingue supportate da Office 365. Non è necessario che Configuration Manager supporti la lingua se è supportata da Office 365. Prima di Configuration Manager versione 1610, è necessario scaricare e distribuire gli aggiornamenti nelle stesse lingue configurate nei client Office 365.
 
 - [Modificare il canale di aggiornamento](#change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager): è possibile usare Criteri di gruppo per distribuire ai client di Office 365 la modifica del valore della chiave del Registro di sistema relativa al canale di aggiornamento.
 
-
-## <a name="office-365-client-management-dashboard"></a>Dashboard di Gestione client di Office 365  
-Il dashboard di Gestione client di Office 365 presenta sotto forma di grafico le informazioni seguenti:
-
-- Numero di client di Office 365
-- Versioni dei client di Office 365
-- Lingue dei client di Office 365
-- Canali dei client di Office 365     
-  Per altre informazioni, vedere [Panoramica dei canali di aggiornamento per Office 365 ProPlus](/DeployOffice/overview-of-update-channels-for-office-365-proplus).
-
-Per visualizzare il dashboard di Gestione client di Office 365, nella console di Configuration Manager passare a **Raccolta software** > **Panoramica** > **Gestione client di Office 365**. Nella parte superiore del dashboard, usare l'impostazione a discesa **Raccolta** per filtrare i dati del dashboard in base ai membri di una raccolta specifica. A partire da Configuration Manager versione 1802, il dashboard di gestione client di Office 365 visualizza un elenco di dispositivi pertinenti quando vengono selezionate le sezioni del grafico.
-
-### <a name="display-data-in-the-office-365-client-management-dashboard"></a>Visualizzare dati nel dashboard di gestione client di Office 365
-I dati visualizzati nel dashboard di gestione client di Office 365 provengono dall'inventario hardware. Abilitare l'inventario hardware e selezionare la classe **Configurazioni di Office 365 ProPlus** di tale inventario per visualizzare i dati nel dashboard. 
-#### <a name="to-display-data-in-the-office-365-client-management-dashboard"></a>Per visualizzare dati nel dashboard di gestione client di Office 365
-1. Abilitare l'inventario hardware, se non è ancora stato fatto. Per altri dettagli, vedere [Configurare l'inventario hardware](/sccm/core/clients/manage/inventory/configure-hardware-inventory).
-2. Nella console di Configuration Manager passare a **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.  
-3. Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
-4. Nel **Impostazioni Client predefinite** nella finestra di dialogo fare clic su **l'inventario Hardware**.  
-5. Nel **le impostazioni del dispositivo** elenco, fare clic su **Imposta classi**.  
-6. Nella finestra di dialogo **Classi di inventario hardware** selezionare **Office 365 ProPlus Configurations**.  
-7.  Fare clic su **OK** per salvare le modifiche e chiudere il **classi di inventario Hardware** nella finestra di dialogo. <br/>Il dashboard di Gestione client di Office 365 inizia a visualizzare i dati in base all'inventario hardware.
+Per esaminare le informazioni sul client Office 365 e avviare alcune di queste azioni di gestione di Office 365, usare il [dashboard di Gestione client di Office 365](/sccm/sum/deploy-use/office-365-dashboard).
 
 ## <a name="deploy-office-365-apps"></a>Distribuire app di Office 365  
 Avviare il programma di installazione di Office 365 dal dashboard di gestione client di Office 365 per l'installazione iniziale delle app di Office 365. La procedura guidata consente di configurare le impostazioni di installazione di Office 365, scaricare file dalle reti di distribuzione del contenuto (CDN) e creare e distribuire un'applicazione script per i file. Finché Office 365 non viene installato nei client e non viene eseguita l'[attività degli aggiornamenti automatici di Office](https://docs.microsoft.com/deployoffice/overview-of-the-update-process-for-office-365-proplus), gli aggiornamenti di Office 365 non sono applicabili. A scopo di test, è possibile eseguire l'attività di aggiornamento manualmente.
@@ -105,33 +82,33 @@ A partire da Configuration Manager 1806, lo Strumento di personalizzazione di Of
 
 Dopo la creazione e la distribuzione di applicazioni di Office 365 mediante il programma di installazione di Office 365, Configuration Manager non gestirà gli aggiornamenti di Office per impostazione predefinita. Per consentire ai client Office 365 di ricevere gli aggiornamenti da Configuration Manager, vedere [Distribuire gli aggiornamenti di Office 365 con Configuration Manager](#deploy-office-365-updates).
 
-Dopo la distribuzione delle applicazioni di Office 365, è possibile creare regole di distribuzione automatica per le applicazioni. Per creare una regola di distribuzione automatica per le app di Office 365, fare clic su **Crea una regola di distribuzione automatica** in Dashboard di gestione client di Office 365. Selezionare **Client Office 365** quando si sceglie il prodotto. Per altre informazioni, vedere [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates).
+Dopo la distribuzione delle applicazioni di Office 365, è possibile creare regole di distribuzione automatica per le applicazioni. Per creare una regola di distribuzione automatica per le app di Office 365, fare clic su **Crea una regola di distribuzione automatica** nel [dashboard di Gestione client di Office 365](/sccm/sum/deploy-use/office-365-dashboard). Selezionare **Client Office 365** quando si sceglie il prodotto. Per altre informazioni, vedere [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates).
 
 
 ## <a name="deploy-office-365-updates"></a>Distribuire aggiornamenti di Office 365
 
 Eseguire i passaggi seguenti per distribuire gli aggiornamenti di Office 365 con Configuration Manager:
 
-1.  [Verificare i requisiti](/DeployOffice/manage-updates-to-office-365-proplus-with-system-center-configuration-manager#requirements-for-using-configuration-manager-to-manage-office-365-client-updates) per l'uso di Configuration Manager per la gestione degli aggiornamenti del client di Office 365 nella sezione **Requisiti necessari per gestire gli aggiornamenti client di Office 365 usando Configuration Manager** dell'articolo.  
+1. [Verificare i requisiti](/DeployOffice/manage-updates-to-office-365-proplus-with-system-center-configuration-manager#requirements-for-using-configuration-manager-to-manage-office-365-client-updates) per l'uso di Configuration Manager per la gestione degli aggiornamenti del client di Office 365 nella sezione **Requisiti necessari per gestire gli aggiornamenti client di Office 365 usando Configuration Manager** dell'articolo.  
 
-2.  [Configurare i punti di aggiornamento software](../get-started/configure-classifications-and-products.md) per sincronizzare gli aggiornamenti del client di Office 365. Impostare gli **aggiornamenti** per la classificazione e selezionare il **client di Office 365** per il prodotto. Sincronizzare gli aggiornamenti software dopo aver configurato i punti di aggiornamento software per l'uso della classificazione **Aggiornamenti**.
-3.  Abilitare i client di Office 365 per la ricezione di aggiornamenti da Configuration Manager. Usare le impostazioni client di Configuration Manager o Criteri di gruppo per abilitare il client.   
+2. [Configurare i punti di aggiornamento software](../get-started/configure-classifications-and-products.md) per sincronizzare gli aggiornamenti del client di Office 365. Impostare gli **aggiornamenti** per la classificazione e selezionare il **client di Office 365** per il prodotto. Sincronizzare gli aggiornamenti software dopo aver configurato i punti di aggiornamento software per l'uso della classificazione **Aggiornamenti**.
+3. Abilitare i client di Office 365 per la ricezione di aggiornamenti da Configuration Manager. Usare le impostazioni client di Configuration Manager o Criteri di gruppo per abilitare il client.
 
     **Metodo 1**: a partire dalla versione 1606 di Configuration Manager è possibile usare l'impostazione del client di Configuration Manager per la gestione dell'agente client di Office 365. Dopo aver configurato questa impostazione e distribuito gli aggiornamenti di Office 365, l'agente client di Configuration Manager comunica con l'agente client di Office 365 al fine di scaricare gli aggiornamenti da un punto di distribuzione e installarli. Configuration Manager esegue l'inventario delle impostazioni client di Office 365 ProPlus.    
 
-      1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Panoramica** > **Impostazioni client**.  
+      1. Nella console di Configuration Manager fare clic su **Amministrazione** > **Panoramica** > **Impostazioni client**.  
 
-      2.  Aprire le impostazioni del dispositivo appropriato per abilitare l'agente client. Per altre informazioni sulle impostazioni client predefinite e personalizzate, vedere [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md) (Come configurare le impostazioni client in System Center Configuration Manager).  
+      2. Aprire le impostazioni del dispositivo appropriato per abilitare l'agente client. Per altre informazioni sulle impostazioni client predefinite e personalizzate, vedere [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md) (Come configurare le impostazioni client in System Center Configuration Manager).  
 
-      3.  Fare clic su **Aggiornamenti software** e selezionare **Sì** per l'impostazione **Abilita la gestione dell'agente client di Office 365**.  
+      3. Fare clic su **Aggiornamenti software** e selezionare **Sì** per l'impostazione **Abilita la gestione dell'agente client di Office 365**.  
 
-    **Metodo 2**: [Abilitare i client di Office 365 per la ricezione di aggiornamenti](/DeployOffice/manage-updates-to-office-365-proplus-with-system-center-configuration-manager#BKMK_EnableClient) da Configuration Manager usando lo Strumento di distribuzione di Office o Criteri di gruppo.  
+    **Metodo 2**: [abilitare i client Office 365 per la ricezione di aggiornamenti](/DeployOffice/manage-updates-to-office-365-proplus-with-system-center-configuration-manager#BKMK_EnableClient) da Configuration Manager usando lo Strumento di distribuzione di Office o Criteri di gruppo.  
 
-4. [Distribuire gli aggiornamenti di Office 365](deploy-software-updates.md) ai client.   
+4. [Distribuire gli aggiornamenti di Office 365](deploy-software-updates.md) ai client.
 
 > [!Important]
 > - A partire da Configuration Manager versione 1706, gli aggiornamenti del client di Office 365 sono stati spostati nel nodo **Gestione client di Office 365** >**Aggiornamenti di Office 365**. Questo spostamento non avrà effetti sulla configurazione delle regole di distribuzione automatica corrente. 
-> - Prima di Configuration Manager versione 1610, è necessario scaricare e distribuire gli aggiornamenti nelle stesse lingue configurate nei client Office 365. Si supponga, ad esempio, di avere un client Office 365 configurato con le lingue en-us e de-de. Si supponga quindi di scaricare e distribuire nel server del sito solo il contenuto en-us di un aggiornamento di Office 365. Quando l'utente avvia l'installazione di questo aggiornamento da Software Center, l'operazione si blocca durante il download del contenuto per de-de.   
+> - Prima di Configuration Manager versione 1610, è necessario scaricare e distribuire gli aggiornamenti nelle stesse lingue configurate nei client Office 365. Si supponga, ad esempio, di avere un client Office 365 configurato con le lingue en-us e de-de. Si supponga quindi di scaricare e distribuire nel server del sito solo il contenuto en-us di un aggiornamento di Office 365. Quando l'utente avvia l'installazione di questo aggiornamento da Software Center, l'operazione si blocca durante il download del contenuto per de-de. 
 
 > [!NOTE]  
 >
@@ -163,15 +140,31 @@ Quando si distribuisce un aggiornamento a un client di Office 365, il comportame
 >- Per altre informazioni, vedere [Notifiche di aggiornamento di Office 365 per gli utenti finali](https://docs.microsoft.com/deployoffice/end-user-update-notifications-for-office-365-proplus)
 
 
+## <a name="bkmk_o365_lang"></a>Aggiungere lingue per i download degli aggiornamenti di Office 365
+È possibile aggiungere il supporto per Configuration Manager per scaricare gli aggiornamenti in tutte le lingue supportate da Office 365.
 
-## <a name="add-languages-for-office-365-update-downloads"></a>Aggiungere lingue per i download degli aggiornamenti di Office 365
-È possibile aggiungere il supporto per Configuration Manager per scaricare gli aggiornamenti in qualsiasi lingua supportata da Office 365, indipendentemente dal fatto che la lingua sia supportata in Configuration Manager.    
+### <a name="download-updates-for-additional-languages-in-version-1902"></a>Scaricare gli aggiornamenti per altre lingue nella versione 1902
+<!--3555955-->
+
+A partire da Configuration Manager versione 1902, il flusso di lavoro di aggiornamento fa distinzione tra le 38 lingue per **Windows Update** e le numerose lingue aggiuntive per l'**aggiornamento del client di Office 365**.
+
+Per selezionare le lingue necessarie usare la pagina **Selezione lingua** nelle seguenti posizioni:
+- Creazione guidata delle regole di distribuzione automatica
+- Distribuzione guidata degli aggiornamenti software
+- Download guidato degli aggiornamenti software
+- Proprietà Regola di distribuzione automatica
+
+Nella pagina **Selezione lingua** selezionare **Aggiornamenti del client Office 365** e quindi fare clic su **Modifica**. Aggiungere le lingue necessarie per Office 365 e quindi fare clic su **OK**.
+
+![Screenshot dell'aggiunta di altre lingue per Office 365](media/office-update-languages-selection.png)
+
+### <a name="to-add-support-to-download-updates-for-additional-languages-in-version-1810-and-earlier"></a>Per aggiungere il supporto per il download degli aggiornamenti in altre lingue nella versione 1810 e precedenti
+
+Seguire questa procedura per il punto di aggiornamento software presso il sito di amministrazione centrale o presso il sito primario autonomo.
 
 > [!IMPORTANT]  
 > La configurazione di lingue aggiuntive per l'aggiornamento di Office 365 è un'impostazione a livello di sito. Dopo l'aggiunta delle lingue in base alla procedura seguente, tutti gli aggiornamenti di Office 365 vengono scaricati in queste lingue, oltre che nelle lingue selezionate nella pagina **Selezione lingua** del Download guidato degli aggiornamenti software o della Distribuzione guidata degli aggiornamenti software.
 
-### <a name="to-add-support-to-download-updates-for-additional-languages"></a>Per aggiungere il supporto per il download degli aggiornamenti in altre lingue
-Seguire questa procedura per il punto di aggiornamento software presso il sito di amministrazione centrale o presso il sito primario autonomo.
 1. Da un prompt dei comandi digitare *wbemtest* come utente amministratore per aprire il Tester di Strumentazione gestione Windows.
 2. Fare clic su **Connetti** e quindi digitare *root\sms\site_&lt;CodiceSito&gt;*.
 3. Fare clic su **Query** e quindi eseguire la query seguente: *select &#42; from SMS_SCI_Component where componentname ="SMS_WSUS_CONFIGURATION_MANAGER"*  
@@ -244,5 +237,6 @@ Per modificare il canale di aggiornamento dopo aver abilitato i client di Office
 You can create an application just as you would with any other application in Configuration Manager from **Software Library** > **Overview** > **Application Management** > **Applications**. For details, see [Create and deploy an application](/sccm/apps/get-started/create-and-deploy-an-application).
 --->
 
-<!--- ## Next steps
-Use the Office 365 Client Management dashboard in Configuration Manager to review Office 365 client information and deploy Office 365 apps. For details, see [Manage Office 365 apps](manage-office-365-apps.md). --->
+## <a name="next-steps"></a>Passaggi successivi
+
+Usare il dashboard di Gestione client di Office 365 in Configuration Manager per esaminare le informazioni sul client Office 365 e distribuire app di Office 365. Per altre informazioni, vedere [Dashboard di Gestione client di Office 365](/sccm/sum/deploy-use/office-365-dashboard). --->

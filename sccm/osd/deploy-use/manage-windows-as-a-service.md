@@ -2,7 +2,7 @@
 title: Gestire Windows come servizio
 titleSuffix: Configuration Manager
 description: Visualizzare lo stato di Windows as a Service (WaaS) usando Configuration Manager, definire piani di manutenzione per formare anelli di distribuzione e visualizzare avvisi quando i client Windows 10 si avvicinano alla scadenza del supporto.
-ms.date: 03/15/2017
+ms.date: 04/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 614ccc06a3fef5cca54c7eb1c32952e8531aedfa
-ms.sourcegitcommit: d71e558db2da124357b840332e2da671b3810507
+ms.openlocfilehash: 13fde17d8fe46b723a8f49b22a68685fbc4d47de
+ms.sourcegitcommit: d4b0e44e6bb06a830d0887493528d9166a15154b
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58269070"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506244"
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gestire Windows come servizio con System Center Configuration Manager
 
@@ -54,6 +54,7 @@ ms.locfileid: "58269070"
 -   Verificare che nel computer che esegue la console di Configuration Manager sia installato Internet Explorer 9 o versione successiva.  
 
 -   Assicurarsi che gli aggiornamenti software siano configurati e sincronizzati nella console. Per rendere disponibili gli eventuali aggiornamenti delle funzionalità di Windows 10 nella console di Configuration Manager, selezionare la classificazione **Aggiornamenti** e sincronizzare gli aggiornamenti software. Per altre informazioni, vedere [Prerequisiti per aggiornamenti software](../../sum/get-started/prepare-for-software-updates-management.md).  
+- A partire da Configuration Manager versione 1902 verificare l'impostazione client **Specificare la priorità del thread per gli aggiornamenti delle funzionalità** [ ](/sccm/core/clients/deploy/about-client-settings#bkmk_thread-priority) per assicurarsi che sia appropriata per l'ambiente in uso.
 
 ##  <a name="BKMK_ServicingDashboard"></a> Dashboard di manutenzione di Windows 10  
  Il dashboard di manutenzione di Windows 10 fornisce informazioni sui computer Windows 10 nell'ambiente, piani di manutenzione attivi, informazioni di conformità e così via. I dati disponibili nel dashboard di manutenzione di Windows 10 variano a seconda che il punto di connessione del servizio sia installato o meno. Il dashboard include i riquadri seguenti:  
@@ -72,7 +73,7 @@ ms.locfileid: "58269070"
 
 -   **Riquadro Monitoraggio piano di manutenzione**: visualizza i piani di manutenzione creati e un grafico della conformità per ognuno. Questo riquadro offre una rapida panoramica dello stato attuale delle distribuzioni del piano di manutenzione. Se un anello di distribuzione precedente soddisfa le previsioni di conformità, è possibile selezionare un piano di manutenzione o un anello di distribuzione successivo e fare clic su **Distribuisci ora** , anziché attendere l'attivazione automatica delle regole del piano di manutenzione.  
 
--   Il **riquadro delle build di Windows 10** visualizza l'immagine fissa di una sequenza temporale che offre una panoramica delle build di Windows 10 attualmente rilasciate e informazioni generali sul momento in cui passeranno a stati diversi.  
+-   Il **riquadro delle build di Windows 10** visualizza l'immagine fissa di una sequenza temporale che offre una panoramica delle build di Windows 10 attualmente rilasciate e informazioni generali sul momento in cui passeranno a stati diversi. Questo riquadro è stato rimosso a partire da Configuration Manager versione 1902. Sono infatti disponibili informazioni più dettagliate nel [dashboard del ciclo di vita del prodotto](/sccm/core/clients/manage/asset-intelligence/product-lifecycle-dashboard). <!--3446861-->
 
 > [!IMPORTANT]  
 >  Le informazioni visualizzate nel dashboard di manutenzione di Windows 10, ad esempio il ciclo di vita del supporto per le versioni di Windows 10, vengono fornite per agevolare l'utente e sono destinate solo all'uso interno all'azienda. Non fare affidamento esclusivamente su queste informazioni per accertare la conformità dell'aggiornamento. Verificare l'accuratezza delle informazioni fornite.  
@@ -148,7 +149,7 @@ ms.locfileid: "58269070"
 
    - **Architettura** (a partire dalla versione 1810)
    - **Lingua**
-   - **Categoria di prodotto** (a partire dalla versione 1810)
+   - **Categoria prodotto** (a partire dalla versione 1810)
    - **Richiesto**
       > [!Important]    
       > Nell'ambito dei criteri di ricerca è consigliabile impostare il valore **>=1** nel campo **Richiesto**. L'uso di questo criterio assicura che solo gli aggiornamenti applicabili vengano aggiunti al piano di manutenzione.
