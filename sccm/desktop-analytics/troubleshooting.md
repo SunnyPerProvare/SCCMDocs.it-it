@@ -2,7 +2,7 @@
 title: Risoluzione dei problemi relativi a Desktop Analitica
 titleSuffix: Configuration Manager
 description: Dettagli tecnici per risolvere i problemi con Desktop Analitica.
-ms.date: 04/05/2019
+ms.date: 04/15/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7fab23b4d1d977d2d634a11959887f1c1baa9a7
-ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
+ms.openlocfilehash: f0da26f1ea2b7f7c0c49377cb934e451d56889b7
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59069433"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673667"
 ---
 # <a name="troubleshooting-desktop-analytics"></a>Risoluzione dei problemi relativi a Desktop Analitica
 
@@ -272,7 +272,7 @@ Per altre informazioni, esaminare M365AHandler.log sul client.
 #### <a name="check-end-user-diagnostic-data"></a>Controllare i dati di diagnostica per l'utente finale
 
 <!--1004-->
-Se questo controllo non è riuscito, un utente ha selezionato un inferiore Windows i dati di diagnostica sul dispositivo.
+Se questo controllo non è riuscito, un utente ha selezionato un inferiore Windows i dati di diagnostica sul dispositivo. Può anche essere causato da un oggetto Criteri di gruppo in conflitto. Per altre informazioni, vedere [delle impostazioni di Windows](/sccm/desktop-analytics/enroll-devices#windows-settings).
 
 A seconda delle esigenze aziendali, è possibile disabilitare la scelta dell'utente tramite criteri di gruppo. Usare l'impostazione **interfaccia utente di acconsentire esplicitamente impostazione dati di telemetria configura**. Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enterprise-management) (Configurare i dati di diagnostica di Windows nell'organizzazione).
 
@@ -289,7 +289,7 @@ Questa proprietà può visualizzare gli errori seguenti:
 
 Per altre informazioni, esaminare M365AHandler.log sul client.  
 
-Controllare le autorizzazioni per questa chiave del Registro di sistema. Assicurarsi che l'account sistema locale possa accedere a questa chiave per il client di Configuration Manager da impostare.  
+Controllare le autorizzazioni per questa chiave del Registro di sistema. Assicurarsi che l'account sistema locale possa accedere a questa chiave per il client di Configuration Manager da impostare. Può anche essere causato da un oggetto Criteri di gruppo in conflitto. Per altre informazioni, vedere [delle impostazioni di Windows](/sccm/desktop-analytics/enroll-devices#windows-settings).  
 
 #### <a name="commercial-id-configuration"></a>Configurazione dell'ID commerciale
 
@@ -308,7 +308,7 @@ In caso contrario, potrebbe essere visualizzato uno dei seguenti errori:
 
 Per altre informazioni, esaminare M365AHandler.log sul client.  
 
-Controllare le autorizzazioni per questa chiave del Registro di sistema. Assicurarsi che l'account sistema locale possa accedere a questa chiave per il client di Configuration Manager da impostare.  
+Controllare le autorizzazioni per questa chiave del Registro di sistema. Assicurarsi che l'account sistema locale possa accedere a questa chiave per il client di Configuration Manager da impostare. Può anche essere causato da un oggetto Criteri di gruppo in conflitto. Per altre informazioni, vedere [delle impostazioni di Windows](/sccm/desktop-analytics/enroll-devices#windows-settings).  
 
 È un ID diverso per il dispositivo. Questa chiave del Registro di sistema viene utilizzata dai criteri di gruppo. Tramite l'ID fornito da Configuration Manager ha la precedenza.  
 
@@ -341,7 +341,7 @@ In caso contrario, potrebbe essere visualizzato uno dei seguenti errori:
 
 Per altre informazioni, esaminare M365AHandler.log sul client.  
 
-Controllare le autorizzazioni per questa chiave del Registro di sistema. Assicurarsi che l'account sistema locale possa accedere a questa chiave per il client di Configuration Manager da impostare.  
+Controllare le autorizzazioni per questa chiave del Registro di sistema. Assicurarsi che l'account sistema locale possa accedere a questa chiave per il client di Configuration Manager da impostare. Può anche essere causato da un oggetto Criteri di gruppo in conflitto. Per altre informazioni, vedere [delle impostazioni di Windows](/sccm/desktop-analytics/enroll-devices#windows-settings).  
 
 Assicurarsi che un altro meccanismo di criterio, ad esempio criteri di gruppo, non è se si disabilita questa impostazione.
 
@@ -402,7 +402,7 @@ Questa proprietà verifica che Windows sia configurato correttamente per consent
 - `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection`
 - `HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection`
 
-Controllare le autorizzazioni per queste chiavi del Registro di sistema. Assicurarsi che l'account sistema locale possa accedere a queste chiavi al client di Configuration Manager per set.  
+Controllare le autorizzazioni per queste chiavi del Registro di sistema. Assicurarsi che l'account sistema locale possa accedere a queste chiavi al client di Configuration Manager per set. Può anche essere causato da un oggetto Criteri di gruppo in conflitto. Per altre informazioni, vedere [delle impostazioni di Windows](/sccm/desktop-analytics/enroll-devices#windows-settings).  
 
 Per altre informazioni, esaminare M365AHandler.log sul client.  
 
@@ -473,6 +473,54 @@ File di log seguenti sono nel client di Configuration Manager nella directory se
 
 
 
-## <a name="bkmk_MALogAnalyticsReader"></a> Ruolo applicazione MALogAnalyticsReader
+## <a name="bkmk_AzureADApps"></a> Applicazioni di Azure AD
 
-Quando si configura Desktop Analitica, si accetta un consenso per conto dell'organizzazione. Questo consenso consiste nell'assegnare il 
+Desktop Analitica aggiunge le seguenti applicazioni in Azure AD:
+
+- **Configuration Manager Microservizio**: Connette Configuration Manager con Analitica Desktop. Questa app non include alcun requisito di accesso.  
+
+- **Amministrazione di Office 365 Client**: Recupera i dati dall'area di lavoro di Log Analitica. Questa app richiede l'accesso in scrittura al registro Analitica.  
+
+- **MALogAnalyticsReader**: Recupera i gruppi di OMS e dispositivi creati in Log Analitica. Per altre informazioni, vedere [ruolo applicazione MALogAnalyticsReader](#bkmk_MALogAnalyticsReader).  
+
+Se è necessario eseguire il provisioning di queste App dopo il completamento di set di backup, andare alla **servizi connessi di** riquadro. Selezionare **configurare l'accesso a utenti e app**ed effettuare il provisioning di App.  
+
+- **App di Azure AD per Configuration Manager**. Se è necessario eseguire il provisioning o risolvere i problemi di connessione dopo il completamento di set di backup, vedere [creare un'app per la configurazione di Manager](/sccm/desktop-analytics/set-up#create-app-for-configuration-manager). Questa app richiede **scrivere i dati della raccolta CM** e **lettura CM raccolta dati** sul **Configuration Manager Service** API.  
+
+### <a name="bkmk_MALogAnalyticsReader"></a> Ruolo applicazione MALogAnalyticsReader
+
+Quando si configura Desktop Analitica, si accetta un consenso per conto dell'organizzazione. Questo consenso consiste nell'assegnare l'applicazione MALogAnalyticsReader il ruolo di lettura Log Analitica per l'area di lavoro. Questo ruolo applicazione è richiesto dal Desktop Analitica.
+
+Se si verifica un problema con questo processo in set di backup, usare la seguente procedura per aggiungere manualmente questa autorizzazione:
+
+1. Andare alla [portale di Azure](http://portal.azure.com)e selezionare **tutte le risorse**. Selezionare l'area di lavoro di tipo **Log Analitica**.  
+
+2. Nel menu dell'area di lavoro, selezionare **controllo di accesso (IAM)**, quindi selezionare **Add**.  
+
+3. Nel **aggiungere autorizzazioni** panel, configurare le impostazioni seguenti:  
+
+    - **Ruolo**: **Agente di lettura log Analitica**  
+
+    - **Assegna accesso a**: **Utente, gruppo o applicazione AD Azure**  
+
+    - **Selezionare**: **MALogAnalyticsReader**  
+
+4. Selezionare **Salva**.
+
+Il portale visualizzerà il messaggio una notifica che aggiunto l'assegnazione di ruolo.
+
+
+## <a name="data-latency"></a>Latenza dei dati
+
+<!-- 3846531 -->
+I dati nel portale di Analitica Desktop viene aggiornati quotidianamente. Questo aggiornamento include modifiche dispositivo raccolte dai dati di diagnostica e le eventuali modifiche apportate alla configurazione. Ad esempio, quando si modifica un asset **decisioni di aggiornamento**, può comportare modifiche allo stato di conformità dei dispositivi con quell'asset installato.
+
+- **Modifiche dell'amministratore** vengono in genere elaborati dal servizio Analitica Desktop all'interno di nove ore. Ad esempio, se si apportano modifiche alle 11:00 PM UTC, il portale deve riflettere tali modifiche prima di 08 12:00:00 AM UTC del giorno successivo.
+
+- **Dispositivo Cambia** rilevato da UTC mezzanotte nell'ora locale sono in genere inclusa nell'aggiornamento giornaliero. È in genere sono altre 23 ore di latenza associata con l'elaborazione del dispositivo cambia rispetto alle modifiche di amministratore.
+
+Se non è possibile visualizzare le modifiche aggiornate all'interno di questi intervalli di tempo, attendere un altro 24 ore il successivo aggiornamento giornaliero. Se viene visualizzato a intervalli più lunghi, controllare il dashboard di integrità del servizio. Se il servizio vengono segnalati come integri, contattare il supporto tecnico Microsoft.
+
+Quando si configura prima Analitica Desktop, i grafici in Configuration Manager e il portale di Analitica Desktop non risultino dati completi. Potrebbero essere necessari 2-3 giorni per i dispositivi attivi inviare dati di diagnostica per il servizio di Analitica Desktop, il servizio per elaborare i dati e quindi eseguire la sincronizzazione con il sito di Configuration Manager.
+
+In una gerarchia di Configuration Manager, può richiedere 10 minuti per le nuove raccolte da visualizzare per i piani di distribuzione. I siti primari creano le raccolte e il sito di amministrazione centrale si sincronizza con Desktop Analitica.<!-- 3896921 -->

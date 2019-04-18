@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da0bde04e019fdf0fbb0a997be652860824270b1
-ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
+ms.openlocfilehash: bf2114ac77a75fedc18c38a8d373b9c0a1ada591
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59069399"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673412"
 ---
 # <a name="compatibility-risk-for-windows-apps-in-desktop-analytics"></a>Rischi di compatibilità per le app di Windows nel Desktop Analitica
 
@@ -52,8 +52,17 @@ L'analizzatore dell'integrità di App è simile a livello di database di compati
 
 ### <a name="ready-for-windows"></a>Pronto per Windows
 
-L'archivio dati pronti per Windows verifica per i blocchi di compatibilità su un dispositivo. Correla inoltre i dati da altri clienti segnalazione App simili. Microsoft Usa i dati provenienti da altri dispositivi simili in cui questa app ha segnalato alcun problema.
+Il [pronto per Windows](https://www.readyforwindows.com) catalogo delle app mette in correlazione i dati di diagnostica da altri clienti reporting stesse App con controlli aggiuntivi da parte di Microsoft, come i blocchi di compatibilità su un dispositivo. 
 
+Le categorie possibili sono:
+
+- **Dati insufficienti** significa un numero troppo ridotto i dispositivi Windows 10 commerciali condividono informazioni per l'app a Microsoft di categorizzare la sua adozione.
+
+- **Adottato** significa che l'app è stato installato in almeno 10.000 dispositivi Windows 10 commerciali.  
+
+- **Ampiamente adottate** significa che l'app è stato installato in almeno 100.000 dispositivi commerciali di Windows 10.  
+
+- **Contattare lo sviluppatore** significa che potrebbero esserci problemi di compatibilità con questa soluzione, e pertanto si consiglia di contattare il provider di software per altre informazioni.  
 
 ### <a name="app-health-analyzer-signals-for-compatibility-assessment"></a>Segnala analizzatore dell'integrità di App per la valutazione della compatibilità
 

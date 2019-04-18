@@ -2,7 +2,7 @@
 title: 'Esercitazione: distribuire Office 365'
 titleSuffix: Configuration Manager
 description: Un'esercitazione sull'uso di Desktop Analitica e Configuration Manager per distribuire Office 365 a un gruppo pilota.
-ms.date: 04/05/2019
+ms.date: 04/15/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: tutorial
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d21b2b94c53390a9fcdbc1be640578060042ea9
-ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
+ms.openlocfilehash: 66fc982fa7f2cee3fdd83945c1b43d490b40d2f2
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59069450"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673786"
 ---
 # <a name="tutorial-deploy-office-365-to-pilot"></a>Esercitazione: Distribuire Office 365 per contenuto pilota
 
@@ -103,13 +103,21 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 
 3. Nel **confermare la tua iscrizione** pagina, l'elenco di licenze idonee sono per la funzionalità integrità del dispositivo Windows del Desktop Analitica. Selezionare **Avanti** per continuare.  
 
-4. Nel **consentire agli utenti accesso** pagina Desktop Analitica preconfigura i due gruppi di sicurezza in Azure Active Directory:  
+4. Nel **consentire agli utenti accesso** pagina:
 
-    - **I proprietari dell'area di lavoro**: Creare e gestire le aree di lavoro. Questi account devono accesso come proprietario della sottoscrizione di Azure.  
+    - **Chcete Desktop Analitica per gestire i ruoli della Directory per gli utenti**: Desktop Analitica assegna automaticamente le **i proprietari dell'area di lavoro** e **collaboratori dell'area di lavoro** Raggruppa per il **Analitica Desktop Administrator** ruolo. Se tali gruppi ha già un **amministratore globale**, non è stata modificata.  
 
-    - **I collaboratori dell'area di lavoro**: Creare e gestire i piani di distribuzione nell'area di lavoro. Non è necessario alcun accesso di Azure aggiuntivo.  
-  
-   Per aggiungere un utente a entrambi i gruppi, digitare l'indirizzo di posta elettronica o nome nella **immettere l'indirizzo di posta elettronica o nome** sezione del gruppo appropriato. Al termine, selezionare **successivo**.
+        Se non si seleziona questa opzione, Analitica Desktop aggiunge comunque agli utenti come membri di due gruppi di sicurezza. Oggetto **amministratore globale** deve assegnare manualmente le **Desktop Administrator Analitica** ruolo per gli utenti.  
+
+        Per altre informazioni sull'assegnazione di autorizzazioni del ruolo amministratore in Azure Active Directory e le autorizzazioni assegnate ai **gli amministratori di Desktop Analitica**, vedere [le autorizzazioni del ruolo amministratore in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
+
+    - Desktop Analitica preconfigura due gruppi di sicurezza in Azure Active Directory:  
+
+        - **I proprietari dell'area di lavoro**: Un gruppo di sicurezza per creare e gestire le aree di lavoro. Questi account devono accesso come proprietario della sottoscrizione di Azure.  
+
+        - **I collaboratori dell'area di lavoro**: Un gruppo di sicurezza per creare e gestire i piani di distribuzione nell'area di lavoro. Non è necessario alcun accesso di Azure aggiuntivo.  
+
+        Per aggiungere un utente a entrambi i gruppi, digitare l'indirizzo di posta elettronica o nome nella **immettere l'indirizzo di posta elettronica o nome** sezione del gruppo appropriato. Al termine, selezionare **successivo**.
 
 5. Nella pagina per **configurare l'area di lavoro**:  
 

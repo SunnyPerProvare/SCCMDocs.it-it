@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b56fac3060acc16fe46221464ddc6535b478399
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 35e8e883acafaa1d606d81402b868b8a755d0887
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56755282"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673463"
 ---
 # <a name="how-to-create-deployment-plans-in-desktop-analytics"></a>Come creare piani di distribuzione in Desktop Analitica 
 
@@ -56,7 +56,7 @@ Seguire i passaggi descritti in questo articolo usare Analitica Desktop per crea
 
     2. Selezionare tutte le app e quindi selezionare **modifica**. È possibile selezionare più di un'app da modificare nello stesso momento.   
 
-    3. Scegliere un livello di priorità dal **importanza** elenco. Se si vuole che Desktop Analitica per convalidare il componente aggiuntivo durante la fase pilota, selezionare **critici** oppure **importante**. Componenti aggiuntivi contrassegnati come non vengono convalidate **importanti non**. Valutare i rischi di compatibilità e altre importanti informazioni piano quando si assegnano livelli di importanza.  
+    3. Scegliere un livello di priorità dal **importanza** elenco. Se si vuole che Desktop Analitica per convalidare il componente aggiuntivo durante la fase pilota, selezionare **critici** oppure **importante**. Componenti aggiuntivi contrassegnati come non vengono convalidate **importanti non**. Prendere in considerazione la [rischi relativi alla compatibilità](/sccm/desktop-analytics/compat-risk) e altre importanti informazioni piano quando si assegnano livelli di importanza.  
 
         Quando si assegnano livelli di importanza, è anche possibile scegliere le decisioni relative all'aggiornamento.  
 

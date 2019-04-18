@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b46bf167bc77716fe360940c4fb45cae2dc9dc5a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: a10a7b5bbb3a1b7d0dada86774f3412e22faff01
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56755386"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673548"
 ---
 # <a name="updates-in-desktop-analytics"></a>Aggiornamenti in Desktop Analitica 
 
@@ -48,7 +48,7 @@ I dispositivi sono in esecuzione un aggiornamento della protezione meno recente 
 #### <a name="not-measured"></a>Non è stato misurato
 Analitica desktop non è stato valutato il dispositivo. 
 
-- Per Windows, inclusi i dispositivi che eseguono Windows 7 o Windows 8.1  
+- Per Windows, inclusi i dispositivi che eseguono Windows 7, Windows 8.1 o Windows 10 dispositivi registrati per il programma di Insider di Windows  
 
 - Per Office, inclusi i dispositivi con una delle versioni seguenti:  
 
@@ -81,12 +81,12 @@ I dispositivi eseguono l'aggiornamento delle funzionalità più recente per tale
 I dispositivi sono in esecuzione un aggiornamento delle funzionalità che è entro 90 giorni di raggiunta la fine del servizio.
 
 #### <a name="end-of-service"></a>Arresto del servizio
-I dispositivi sono in esecuzione un aggiornamento delle funzionalità che ha superato la data di fine del servizio. Per informazioni dettagliate sulla fine del periodo di servizio, vedere {xlink nella relativa sezione del UDR_monitoring} |
+I dispositivi sono in esecuzione un aggiornamento delle funzionalità che ha superato la data di fine del servizio. Per informazioni dettagliate sulla fine del periodo di servizio, vedere [fogli informativi del ciclo di vita di Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)  <!-- {xlink into relevant section of UDR_monitoring}|-->
 
 #### <a name="not-measured"></a>Non è stato misurato
 Analitica desktop non è stato valutato il dispositivo. 
 
-- Per Windows, inclusi i dispositivi che eseguono Windows 7 o Windows 8.1  
+- Per Windows, inclusi i dispositivi che eseguono Windows 7, Windows 8.1 o Windows 10 dispositivi registrati per il programma di Insider di Windows
 
 - Per Office, inclusi i dispositivi con una delle versioni seguenti:  
 

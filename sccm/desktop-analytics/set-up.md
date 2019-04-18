@@ -2,7 +2,7 @@
 title: Configurare Desktop Analytics
 titleSuffix: Configuration Manager
 description: Guida dettagliata per l'installazione e onboarding alla Analitica Desktop.
-ms.date: 01/25/2019
+ms.date: 04/15/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,14 +12,14 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b20637cea4e02f390ae845ff9d421e5011120ab
-ms.sourcegitcommit: 4441b3035222cfaf7442416873ed824ac7d852c5
+ms.openlocfilehash: 0d03b670ade984298df7a1ba5428a3f8696360bb
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58356326"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673565"
 ---
-# <a name="how-to-set-up-desktop-analytics"></a>Come configurare Desktop Analitica 
+# <a name="how-to-set-up-desktop-analytics"></a>Come configurare Desktop Analitica
 
 > [!Note]  
 > Tali informazioni fanno riferimento a un servizio in anteprima che può essere modificato sostanzialmente prima del rilascio in commercio. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
@@ -36,22 +36,30 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 
 3. Nel **confermare la tua iscrizione** pagina, esaminare l'elenco delle necessarie licenze valide. Configurare l'impostazione **Yes** accanto a **sono una delle sottoscrizioni supportate o versioni successive**e quindi selezionare **Next**.  
 
-4. Nel **concedere l'accesso degli utenti e app** pagina Desktop Analitica preconfigura i due gruppi di sicurezza in Azure Active Directory:  
+4. Nel **consentire agli utenti accesso** pagina:
 
-    - **I proprietari dell'area di lavoro**: Creare e gestire le aree di lavoro. Questi account devono accesso come proprietario della sottoscrizione di Azure.  
+    - **Chcete Desktop Analitica per gestire i ruoli della Directory per gli utenti**: Desktop Analitica assegna automaticamente le **i proprietari dell'area di lavoro** e **collaboratori dell'area di lavoro** Raggruppa per il **Analitica Desktop Administrator** ruolo. Se tali gruppi ha già un **amministratore globale**, non è stata modificata.  
 
-    - **I collaboratori dell'area di lavoro**: Creare e gestire i piani di distribuzione nell'area di lavoro. Non è necessario alcun accesso di Azure aggiuntivo.  
-  
-   Per aggiungere un utente a entrambi i gruppi, digitare l'indirizzo di posta elettronica o nome nella **immettere l'indirizzo di posta elettronica o nome** sezione del gruppo appropriato. Al termine, selezionare **successivo**. 
+        Se non si seleziona questa opzione, Analitica Desktop aggiunge comunque agli utenti come membri di due gruppi di sicurezza. Oggetto **amministratore globale** deve assegnare manualmente le **Desktop Administrator Analitica** ruolo per gli utenti.  
+
+        Per altre informazioni sull'assegnazione di autorizzazioni del ruolo amministratore in Azure Active Directory e le autorizzazioni assegnate ai **gli amministratori di Desktop Analitica**, vedere [le autorizzazioni del ruolo amministratore in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
+
+    - Desktop Analitica preconfigura due gruppi di sicurezza in Azure Active Directory:  
+
+        - **I proprietari dell'area di lavoro**: Un gruppo di sicurezza per creare e gestire le aree di lavoro. Questi account devono accesso come proprietario della sottoscrizione di Azure.  
+
+        - **I collaboratori dell'area di lavoro**: Un gruppo di sicurezza per creare e gestire i piani di distribuzione nell'area di lavoro. Non è necessario alcun accesso di Azure aggiuntivo.  
+
+        Per aggiungere un utente a entrambi i gruppi, digitare l'indirizzo di posta elettronica o nome nella **immettere l'indirizzo di posta elettronica o nome** sezione del gruppo appropriato. Al termine, selezionare **successivo**.
 
 5. Nella pagina per **configurare l'area di lavoro**:  
 
     - Per usare un'area di lavoro per Desktop Analitica, selezionarlo e continuare con il passaggio successivo.  
 
         > [!Note]  
-        > Se si usa già Windows Analitica, selezionare tale area di lavoro stesso. È necessario ripetere la registrazione ai dispositivi di Analitica Desktop che sono registrati in precedenza in Analitica di Windows. 
-        > 
-        > È possibile avere solo un'area di lavoro di Analitica Desktop per ogni tenant di Azure AD. Dispositivi possono inviare solo i dati di diagnostica a un'area di lavoro.   
+        > Se si usa già Windows Analitica, selezionare tale area di lavoro stesso. È necessario ripetere la registrazione ai dispositivi di Analitica Desktop che sono registrati in precedenza in Analitica di Windows.
+        >
+        > È possibile avere solo un'area di lavoro di Analitica Desktop per ogni tenant di Azure AD. Dispositivi possono inviare solo i dati di diagnostica a un'area di lavoro.  
 
     - Per creare un'area di lavoro per Desktop Analitica, selezionare **Aggiungi area di lavoro**.  
 
@@ -70,7 +78,7 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 
 8. Tornare alla pagina al **configurare l'area di lavoro**, selezionare **successivo**.  
 
-9. Nel **ultimi passaggi** pagina, selezionare **passare al Desktop Analitica**. 
+9. Nel **ultimi passaggi** pagina, selezionare **passare al Desktop Analitica**.
 
 Il portale di Azure Mostra il Desktop Analitica **Home** pagina.
 
@@ -94,11 +102,11 @@ Creare un'app in Azure AD per Configuration Manager.
 
 3. Selezionare l'app e prendere nota di **ID applicazione**. Questo valore è un GUID che viene usato per configurare la connessione di Configuration Manager.  
 
-4. Selezionare **le impostazioni** relativi all'app e quindi selezionare **chiavi**. Nel **password** , quindi immettere un **descrizione chiave**, specificare una scadenza **durata**e quindi selezionare **Salva**. Copia il **valore** della chiave, che consente di configurare la connessione di Configuration Manager. 
+4. Selezionare **le impostazioni** relativi all'app e quindi selezionare **chiavi**. Nel **password** , quindi immettere un **descrizione chiave**, specificare una scadenza **durata**e quindi selezionare **Salva**. Copia il **valore** della chiave, che consente di configurare la connessione di Configuration Manager.
 
     > [!Important]  
     > Questa è l'unica possibilità per copiare il valore della chiave. Se si non copiarlo a questo punto, è necessario creare un'altra chiave.  
-    > 
+    >
     > Salvare il valore della chiave in un luogo sicuro.  
 
 5. Nell'app **le impostazioni** Pannello di selezione **autorizzazioni necessarie**.  
