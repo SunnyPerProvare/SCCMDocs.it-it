@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f50bb18edf782d5012e90db0b4b21a2309ad4f0b
-ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
+ms.openlocfilehash: f9057a2126a548ebb8706e905b86edb702f0ff35
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58196892"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673684"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
@@ -112,7 +112,7 @@ La procedura guidata di Cloud Management Gateway offre ancora l'opzione per una 
 > A partire dalla versione 1810, la distribuzione classica del servizio in Azure è deprecata in Configuration Manager. Si tratta dell'ultima versione che supporta la creazione di queste distribuzioni di Azure. Questa funzionalità verrà rimossa nella prima versione di Configuration Manager rilasciata dopo il 1° luglio 2019. Spostare CMG e i punti di distribuzione del cloud nelle distribuzioni di Azure Resource Manager prima di tale data. <!--SCCMDocs-pr issue #2993-->  
 
 
-### <a name="hierarchy-design"></a>Modello di gerarchia
+### <a name="hierarchy-design"></a>Progettazione della gerarchia
 
 Creare il gateway di gestione client nel sito di livello superiore della gerarchia. Se si tratta di un sito di amministrazione centrale, creare punti di connessione del gateway di gestione cloud nei siti primari figlio. Il componente di gestione del servizio cloud è sul punto di connessione del servizio, che si trova nel sito di amministrazione centrale. Questa progettazione consente di condividere il servizio tra diversi siti primari, se necessario.
 
@@ -175,7 +175,7 @@ Analogamente, quando effettuano il roaming in Internet, i client di Parigi comun
     - A partire dalla versione 1806, quando si usa l'opzione del sito **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**, il punto di gestione può essere HTTP. Per altre informazioni, vedere [HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http).  
 
 
-- Può essere necessaria l'integrazione con **Azure AD** per i client Windows 10. Per altre informazioni, vedere [Configurare i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard).  
+- L'integrazione con **Azure AD** è necessaria per le distribuzioni di Azure Resource Manager. Potrebbe essere necessaria anche per i client Windows 10. Per altre informazioni, vedere [Configurare i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard).  
 
 - I client devono usare **IPv4**.  
 

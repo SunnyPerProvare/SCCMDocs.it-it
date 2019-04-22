@@ -2,7 +2,7 @@
 title: Novità della versione 1902
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1902 di Configuration Manager Current Branch.
-ms.date: 04/12/2019
+ms.date: 04/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a424a2397f4e1845795441208929b7d9efb7f93c
-ms.sourcegitcommit: d4b0e44e6bb06a830d0887493528d9166a15154b
+ms.openlocfilehash: fbc38cdb72a2c8f595eed88e0b4b5b5e29374597
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59506278"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673650"
 ---
 # <a name="whats-new-in-version-1902-of-configuration-manager-current-branch"></a>Novità della versione 1902 di Configuration Manager Current Branch
 
@@ -166,9 +166,9 @@ La sequenza di attività imposta un timestamp quando il client passa in modalit�
 
 ### <a name="view-first-screen-only-during-remote-control"></a>Visualizzare solo il primo schermo durante il controllo remoto
 <!--3231732-->
-Quando ci si connette a un client con due o più monitor, può essere difficile visualizzarli tutti nel visualizzatore del controllo remoto di Configuration Manager. Un operatore strumenti remoti può ora scegliere tra le opzioni di visualizzazione **Tutti gli schermi** e **Primo schermo**. 
+***[Aggiornato]*** Quando ci si connette a un client con due o più monitor, può essere difficile visualizzarli tutti nel visualizzatore del controllo remoto di Configuration Manager. Un operatore strumenti remoti può ora scegliere tra le opzioni di visualizzazione **Tutti gli schermi** e **Primo schermo**.
 
-<!-- For more information, see [How to remotely administer a Windows client computer](/sccm/core/clients/manage/remote-control/remotely-administer-a-windows-client-computer). -->
+Per altre informazioni, vedere [Come amministrare un computer client Windows in remoto](/sccm/core/clients/manage/remote-control/remotely-administer-a-windows-client-computer). 
 
 
 ### <a name="specify-a-custom-port-for-peer-wakeup"></a>Specificare una porta personalizzata per la riattivazione peer
@@ -492,7 +492,7 @@ Quando si installa o si aggiorna un server del sito, questo copia i file di inst
 
 ## <a name="other-updates"></a>Altri aggiornamenti
 
-<!-- Aside from new features, this release also includes additional changes such as bug fixes. For more information, see [Summary of changes in Configuration Manager current branch, version 1902](https://support.microsoft.com/help/4482169). -->
+A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in Configuration Manager Current Branch, versione 1902](https://support.microsoft.com/help/4498910).
 
 Per altre informazioni sulle modifiche apportate ai cmdlet di Windows PowerShell per Configuration Manager, vedere le [note sulla versione 1902 di PowerShell](https://docs.microsoft.com/powershell/sccm/1902-release-notes?view=sccm-ps).
 

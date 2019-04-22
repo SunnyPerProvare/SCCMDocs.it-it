@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 13fde17d8fe46b723a8f49b22a68685fbc4d47de
-ms.sourcegitcommit: d4b0e44e6bb06a830d0887493528d9166a15154b
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59506244"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59802836"
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gestire Windows come servizio con System Center Configuration Manager
 
@@ -54,7 +54,7 @@ ms.locfileid: "59506244"
 -   Verificare che nel computer che esegue la console di Configuration Manager sia installato Internet Explorer 9 o versione successiva.  
 
 -   Assicurarsi che gli aggiornamenti software siano configurati e sincronizzati nella console. Per rendere disponibili gli eventuali aggiornamenti delle funzionalità di Windows 10 nella console di Configuration Manager, selezionare la classificazione **Aggiornamenti** e sincronizzare gli aggiornamenti software. Per altre informazioni, vedere [Prerequisiti per aggiornamenti software](../../sum/get-started/prepare-for-software-updates-management.md).  
-- A partire da Configuration Manager versione 1902 verificare l'impostazione client **Specificare la priorità del thread per gli aggiornamenti delle funzionalità** [ ](/sccm/core/clients/deploy/about-client-settings#bkmk_thread-priority) per assicurarsi che sia appropriata per l'ambiente in uso.
+- A partire da Configuration Manager versione 1902 verificare [l'impostazione client](/sccm/core/clients/deploy/about-client-settings#bkmk_thread-priority) **Specificare la priorità del thread per gli aggiornamenti delle funzionalità** per assicurarsi che sia appropriata per l'ambiente in uso.
 
 ##  <a name="BKMK_ServicingDashboard"></a> Dashboard di manutenzione di Windows 10  
  Il dashboard di manutenzione di Windows 10 fornisce informazioni sui computer Windows 10 nell'ambiente, piani di manutenzione attivi, informazioni di conformità e così via. I dati disponibili nel dashboard di manutenzione di Windows 10 variano a seconda che il punto di connessione del servizio sia installato o meno. Il dashboard include i riquadri seguenti:  

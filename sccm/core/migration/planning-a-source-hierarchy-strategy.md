@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 76f82734229f3b8e9ed37ed4bc9057eff6421aad
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 44f71aeb0019ce2b481e9f5ecd9f37ce6421398e
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156543"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673820"
 ---
 # <a name="plan-a-source-hierarchy-strategy-in-system-center-configuration-manager"></a>Pianificare una strategia per la gerarchia di origine in System Center Configuration Manager
 
@@ -55,6 +55,7 @@ Se si ripristina una gerarchia di origine inattiva e non si è usato **Pulisci d
 
 > [!CAUTION]  
 >  Se la migrazione di dati viene eseguita da più di una gerarchia di origine, è necessario che ogni gerarchia di origine aggiuntiva contenga un insieme univoco di codici del sito.  
+> Le gerarchie di origine e destinazione richiedono anche set di codici del sito diversi.
 
 Per altre informazioni sulla configurazione di una gerarchia di origine, vedere [Configurazione di gerarchie di origine e siti di origine per la migrazione in System Center Configuration Manager](../../core/migration/configuring-source-hierarchies-and-source-sites-for-migration.md).  
 

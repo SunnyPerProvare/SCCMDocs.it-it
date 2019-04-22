@@ -2,7 +2,7 @@
 title: Porte usate per le connessioni
 titleSuffix: Configuration Manager
 description: Informazioni sulle porte di rete necessarie e personalizzabili usate da Configuration Manager per le connessioni.
-ms.date: 01/29/2019
+ms.date: 04/11/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7aaadae5feaff2aa55e521c4b7438f4f1d24209a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 99df201cb3525a124b42d5d599d4a74708258bad
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156815"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673718"
 ---
 # <a name="ports-used-in-configuration-manager"></a>Porte usate in Configuration Manager
 
@@ -586,6 +586,14 @@ Per altre informazioni, vedere [Porte e flusso di dati](/sccm/core/plan-design/h
 |RPC (DCOM)|--|DYNAMIC <sup>[Nota 6](#bkmk_note6)</sup>|  
 
 
+###  <a name="BKMK_PortsSite-RCL"></a> Server del sito-- > Server che ospita la condivisione della libreria di contenuto remoto  
+ A partire dalla versione 1806 è possibile spostare la libreria del contenuto in un'altra posizione di archiviazione per liberare spazio su disco rigido nei server del sito primario o di amministrazione centrale. Per altre informazioni, vedere [Configurare una raccolta contenuto remota per il server del sito](/sccm/core/plan-design/hierarchy/the-content-library#bkmk_remote).  
+
+|Descrizione|UDP|TCP|  
+|-----------------|---------|---------|  
+|Server Message Block (SMB)|--|445|  
+
+
 ###  <a name="BKMK_PortsSite-RSP"></a> Server del sito &lt; -- > Punto di Reporting Services  
  <sup>[Nota 5](#bkmk_note5)</sup>  
 
@@ -849,7 +857,7 @@ I sistemi del sito o i client locali di Configuration Manager possono eseguire l
 
  I punti di gestione e di distribuzione basati su Internet che supportano i client basati su Internet, il punto di aggiornamento software e il punto di stato di fallback usano le seguenti porte per l'installazione e il ripristino:  
 
--   Server del sito --> Sistema del sito: Agente mapping endpoint RPC tramite la porta TCP e UDP 135.  
+-   Server del sito --> Sistema del sito: mapper di endpoint RPC tramite la porta TCP e UDP 135.  
 
 -   Server del sito --> Sistema del sito: Porte TCP dinamiche RPC  
 

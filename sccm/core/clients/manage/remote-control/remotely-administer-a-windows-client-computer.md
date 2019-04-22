@@ -2,27 +2,25 @@
 title: Gestire computer Windows in remoto
 titleSuffix: Configuration Manager
 description: Amministrare un computer client Windows da posizione remota tramite System Center Configuration Manager.
-ms.date: 07/27/2017
+ms.date: 04/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
 ms.assetid: 3c9648c4-645e-4e47-ae10-2da817b8c83b
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 266961da1fe1f63e996247612a821ee7ac217f65
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: d16cbc892a3f4c7565a9672ca7c0145396dcaa3d
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133664"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673616"
 ---
 # <a name="how-to-remotely-administer-a-windows-client-computer-by-using-system-center-configuration-manager"></a>Come amministrare un computer client Windows in remoto mediante System Center Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
-
-Prima di iniziare a usare il controllo remoto, assicurarsi di aver esaminato le informazioni contenute negli argomenti seguenti:  
+*Si applica a: System Center Configuration Manager (Current Branch)* Configuration Manager consente di connettersi ai computer client che usano **Controllo remoto di Configuration Manager**. Prima di iniziare a usare il controllo remoto, assicurarsi di aver letto le informazioni negli articoli seguenti:  
 
 -   [Prerequisiti per il controllo remoto in System Center Configuration Manager](../../../../core/clients/manage/remote-control/prerequisites-for-remote-control.md)  
 
@@ -34,9 +32,9 @@ Di seguito vengono elencati tre modi per avviare il visualizzatore controllo rem
 
 -   A un prompt dei comandi di Windows.  
 
--   Dal menu **Start** di Windows in un computer che esegue la console di Configuration Manager dal gruppo di programmi **Microsoft System Center**.  
+-   Dal menu **Start** di Windows, in un computer che esegue la console di Configuration Manager, nel gruppo di programmi **Microsoft System Center**.  
 
-### <a name="to-remotely-administer-a-client-computer-from-the-configuration-manager-console"></a>Per amministrare un computer client in remoto dalla console di Configuration Manager  
+## <a name="to-remotely-administer-a-client-computer-from-the-configuration-manager-console"></a>Per amministrare un computer client in remoto dalla console di Configuration Manager  
 
 1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Dispositivi** oppure **Raccolte di dispositivi**.  
 
@@ -50,38 +48,41 @@ Di seguito vengono elencati tre modi per avviare il visualizzatore controllo rem
     > [!NOTE]  
     >  Se il computer a cui ci si connette ha diversi monitor, nella finestra del controllo remoto viene visualizzato ciò che compare su tutti i monitor.  
 
-    -   **File - Connetti**: esegue la connessione a un altro computer. Questa opzione non è disponibile quando è attiva una sessione di controllo remoto.  
-
-    -   **File - Disconnetti**: disconnette la sessione di controllo remoto attiva ma non chiude la finestra **Controllo remoto di Configuration Manager**.  
-
-    -   **File - Esci**: disconnette la sessione di controllo remoto attiva e chiude la finestra **Controllo remoto di Configuration Manager**.  
-
-        > [!NOTE]  
-        >  Quando si disconnette una sessione di controllo remoto, il contenuto degli Appunti di Windows nel computer che si sta visualizzando viene eliminato.  
-
-    -   **Visualizza - Schermo intero**: ingrandisce la finestra **Controllo remoto di Configuration Manager**.  
+    -   **File**
+        - **Connetti** - Esegue la connessione a un altro computer. Questa opzione non è disponibile quando è attiva una sessione di controllo remoto.  
+        -   **Disconnetti** - Disconnette la sessione di controllo remoto attiva ma non chiude la finestra **Controllo remoto di Configuration Manager**.  
+        - **Esci** - Disconnette la sessione di controllo remoto attiva e chiude la finestra **Controllo remoto di Configuration Manager**.  
 
         > [!NOTE]  
-        >  Per uscire dalla modalità schermo intero, premere CTRL+ALT+INTERR.  
+        >  Quando si disconnette una sessione di controllo remoto, il contenuto degli Appunti di Windows nel computer che si sta visualizzando viene eliminato.
 
-    -   **Visualizza - Adatta**: ridimensiona la visualizzazione del computer remoto in modo da adattarla alle dimensioni della finestra **Controllo remoto di Configuration Manager**.  
 
-    -   **Visualizza - Barra di stato**: attiva e disattiva la visualizzazione della barra di stato della finestra **Controllo remoto di Configuration Manager**.  
+    - **Visualizza**
+      - **Intensità colore** - Scegliere 16 bit o 32 bit per pixel.
+      -  **Schermo intero** - Ingrandisce al massimo la finestra **Controllo remoto di Configuration Manager**. Per uscire dalla modalità schermo intero, premere CTRL+ALT+INTERR.  
+      - **Ottimizza per connessione a larghezza di banda ridotta** - Selezionare questa opzione se la connessione ha larghezza di banda ridotta.
+      - **Schermo:**
+        - **Tutti gli schermi** - Opzione aggiunta in Configuration Manager 1902. Se il computer a cui ci si connette ha diversi monitor, nella finestra del controllo remoto viene visualizzato ciò che compare su tutti i monitor. **Tutti gli schermi** è l'unica visualizzazione per i computer con più monitor prima della versione 1902.
+        -  **Primo schermo** - Opzione aggiunta in Configuration Manager 1902. Il *primo schermo* è quello visualizzato in alto all'estrema sinistra nelle impostazioni dello schermo di Windows. Non è possibile selezionare uno schermo specifico. Quando si cambia la configurazione del visualizzatore, riconnettersi alla sessione remota. Il visualizzatore salva le preferenze per le connessioni future.
+        -  **Adatta** - Ridimensiona la visualizzazione del computer remoto in modo da adattarla alle dimensioni della finestra **Controllo remoto di Configuration Manager**.
+       - **Barra di stato** - Attiva e disattiva la visualizzazione della barra di stato della finestra **Controllo remoto di Configuration Manager**.  
 
-    -   **Azione - Invia CTRL+ALT+CANC**: invia la combinazione di tasti CTRL+ALT+CANC al computer remoto.  
+       > [!NOTE]  
+       >  Il visualizzatore salva le preferenze per le connessioni future.
 
-    -   **Azione - Abilita condivisione Appunti**: consente di copiare e incollare elementi nel e dal computer remoto. Se si modifica questo valore, per rendere effettiva la modifica è necessario riavviare la sessione di controllo remoto.  
+    -   **Azione**
+        - **Invia CTRL+ALT+CANC** - Invia la combinazione di tasti CTRL+ALT+CANC al computer remoto. 
+        - **Abilita condivisione Appunti** - Consente di copiare e incollare elementi nel e dal computer remoto. Se si modifica questo valore, per rendere effettiva la modifica è necessario riavviare la sessione di controllo remoto.   
+          - Se non si vuole abilitare la condivisione degli Appunti nella console di Configuration Manager, impostare il valore della chiave del Registro di sistema **HKEY_CURRENT_USER\Software\Microsoft\ConfigMgr10\Remote Control\Clipboard Sharing** su **0** nel computer che esegue la console.
+        - **Abilita tastiera e traduzione** - Converte il layout di tastiera del computer che esegue la console al layout del dispositivo connesso.
+        - **Blocca tastiera e mouse remoti** - Blocca la tastiera e il mouse remoti per impedire all'utente di eseguire operazioni nel computer remoto.  
 
-        > [!NOTE]  
-        >  Se non si vuole abilitare la condivisione degli Appunti nella console di Configuration Manager, impostare il valore della chiave del Registro di sistema **HKEY_CURRENT_USER\Software\Microsoft\ConfigMgr10\Remote Control\Clipboard Sharing** a **0** nel computer che esegue la console.  
+    -   **?**
+        - **Informazioni su Controllo remoto** - Visualizza la versione corrente del visualizzatore.  
 
-    -   **Azione - Blocca tastiera e mouse remoti**: blocca la tastiera e il mouse remoti per impedire all'utente di eseguire operazioni nel computer remoto.  
+5.  Gli utenti del computer remoto possono visualizzare altre informazioni sulla sessione di controllo remoto facendo clic sull'icona **Controllo remoto** di Configuration Manager. L'icona è nell'area di notifica Windows o sulla barra della sessione di controllo remoto.  
 
-    -   **Guida - Informazioni su Controllo remoto**: visualizza la versione corrente del visualizzatore.  
-
-5.  Gli utenti del computer remoto possono visualizzare altre informazioni sulla sessione di controllo remoto facendo clic sull'icona **Controllo remoto** di Configuration Manager nell'area di notifica di Windows o sull'icona della barra della sessione di controllo remoto.  
-
-### <a name="to-start-the-remote-control-viewer-from-the-windows-command-line"></a>Per avviare il visualizzatore controllo remoto dalla riga di comando di Windows  
+## <a name="to-start-the-remote-control-viewer-from-the-windows-command-line"></a>Per avviare il visualizzatore controllo remoto dalla riga di comando di Windows  
 
 -   Al prompt dei comandi di Windows, digitare _<cartella di installazione di Configuration Manager\>_**\AdminConsole\Bin\x64\CmRcViewer.exe**  
 

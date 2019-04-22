@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 01e5d9761cb90715e88a2658d8bf1c31c7cd92cf
-ms.sourcegitcommit: 5ee9487c891c37916294bd34a10d04e398f111f7
-ms.translationtype: MT
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59069552"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59802921"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con Configuration Manager e Microsoft Intune
 

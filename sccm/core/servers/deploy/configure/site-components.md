@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af4d3319e94d8dd673f597e4df4dde3e73e15653
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: c64968ca0348b94e3fb20367af7f739d8a699c58
+ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129052"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59673599"
 ---
 # <a name="site-components-for-configuration-manager"></a>Componenti del sito per Configuration Manager
 
@@ -27,7 +27,8 @@ Per ogni sito di Configuration Manager è possibile configurare i componenti del
 Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Configurazione del sito** e selezionare **Siti**. Selezionare un sito. Nel gruppo **Impostazioni** della barra multifunzione scegliere **Configura componenti del sito**. Selezionare una delle opzioni seguenti:
 
 - [Distribuzione del software](#software-distribution)  
-- [Punto di aggiornamento software](#software-update-point)  
+- [Punto di aggiornamento software](#software-update-point) 
+- [Distribuzione del sistema operativo:](#operating-system-deployment)
 - [Punto di gestione](#management-point)  
 - [Creazione di report sullo stato](#status-reporting)  
 - [Notifica di posta elettronica](#email-notification)
@@ -58,6 +59,11 @@ Per altre informazioni, vedere [Account di accesso alla rete](/sccm/core/plan-de
 ### <a name="software-update-point"></a>Punto di aggiornamento software  
 
 Per altre informazioni, vedere [Install a software update point](/sccm/sum/get-started/install-a-software-update-point) (Installare un punto di aggiornamento software).  
+
+
+### <a name="operating-system-deployment"></a>Distribuzione del sistema operativo
+
+Per altre informazioni, vedere [Specificare l'unità per l'installazione offline dell'immagine del sistema operativo](/sccm/osd/get-started/manage-operating-system-images#bkmk_servicing-drive).
 
 
 ### <a name="management-point"></a>Punto di gestione  
