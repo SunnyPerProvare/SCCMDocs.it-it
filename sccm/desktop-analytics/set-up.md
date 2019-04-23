@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d03b670ade984298df7a1ba5428a3f8696360bb
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: b75b82f632c8bfbbc11a2b11d58ab83116e2180a
+ms.sourcegitcommit: d23ccf7b95e6c2a6b156975194ebbc375cb5e6ea
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59673565"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60124438"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Come configurare Desktop Analitica
 
@@ -51,6 +51,8 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
         - **I collaboratori dell'area di lavoro**: Un gruppo di sicurezza per creare e gestire i piani di distribuzione nell'area di lavoro. Non è necessario alcun accesso di Azure aggiuntivo.  
 
         Per aggiungere un utente a entrambi i gruppi, digitare l'indirizzo di posta elettronica o nome nella **immettere l'indirizzo di posta elettronica o nome** sezione del gruppo appropriato. Al termine, selezionare **successivo**.
+
+Il passaggio seguente può essere completato tramite un **proprietario dell'area di lavoro** oppure **collaboratore**. Vedere [prerequisiti.](/sccm/desktop-analytics/overview#prerequisites) 
 
 5. Nella pagina per **configurare l'area di lavoro**:  
 
@@ -88,7 +90,7 @@ Il portale di Azure Mostra il Desktop Analitica **Home** pagina.
 
 Creare un'app in Azure AD per Configuration Manager.
 
-1. Nel [portale di Azure](http://portal.azure.com)passare alla **Azure Active Directory**e selezionare **registrazioni per l'App**. Quindi selezionare **registrazione nuova applicazione**.  
+1. Aprire il [portale di Azure](http://portal.azure.com) come utente con autorizzazioni di amministratore aziendale, passare alla **Azure Active Directory**e selezionare **registrazioni per l'App**. Quindi selezionare **registrazione nuova applicazione**.  
 
 2. Nel **Create** panel, configurare le impostazioni seguenti:  
 

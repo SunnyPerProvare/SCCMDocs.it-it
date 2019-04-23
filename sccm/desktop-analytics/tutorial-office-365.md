@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66fc982fa7f2cee3fdd83945c1b43d490b40d2f2
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: 006a887a3989d7f05b7cf44b13562e644e6f7d94
+ms.sourcegitcommit: d23ccf7b95e6c2a6b156975194ebbc375cb5e6ea
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59673786"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60124404"
 ---
 # <a name="tutorial-deploy-office-365-to-pilot"></a>Esercitazione: Distribuire Office 365 per contenuto pilota
 
@@ -45,6 +45,8 @@ Desktop Analitica Usa un' *dell'area di lavoro di Log Analitica* nella sottoscri
 Prima di iniziare questa esercitazione, accertarsi di avere i prerequisiti seguenti:  
 
 - Una sottoscrizione di Azure attiva con **amministratore società** autorizzazioni  
+    
+    Per altre informazioni, vedere [prerequisiti di Analitica Desktop](/sccm/desktop-analytics/overview#prerequisites).
 
 - Configuration Manager, versione 1810 con aggiornamento cumulativo 4488598 o versione successiva, con **amministratore completo** ruolo  
 
@@ -119,7 +121,11 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 
         Per aggiungere un utente a entrambi i gruppi, digitare l'indirizzo di posta elettronica o nome nella **immettere l'indirizzo di posta elettronica o nome** sezione del gruppo appropriato. Al termine, selezionare **successivo**.
 
+Il passaggio seguente può essere completato tramite un **proprietario dell'area di lavoro** oppure **collaboratore**. 
+
 5. Nella pagina per **configurare l'area di lavoro**:  
+
+    - Selezionare la sottoscrizione di Azure. 
 
     - Per usare un'area di lavoro per Desktop Analitica, selezionarlo e continuare con il passaggio successivo.  
 
@@ -129,7 +135,9 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 
         2. Selezionare l'elenco a discesa per **selezionare il nome di sottoscrizione di Azure per l'area di lavoro**, scegliere la sottoscrizione di Azure per l'area di lavoro.  
 
-        3. Selezionare il **regione** dall'elenco, quindi selezionare **Add**.  
+        3. **Creare un nuovo** gruppo di risorse oppure **Usa esistente**.  
+
+        4. Selezionare il **regione** dall'elenco, quindi selezionare **Add**.  
 
 6. Selezionare un'area di lavoro nuovo o esistente e quindi selezionare **imposta come area di lavoro di Analitica Desktop**.  Quindi selezionare **continuazione** nel **Confirm e concedere l'accesso** finestra di dialogo.  
 
@@ -142,7 +150,7 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 
 ### <a name="create-an-app-in-azure-ad-for-configuration-manager"></a>Creare un'app in Azure AD per Configuration Manager  
 
-1. Nel [portale di Azure](https://portal.azure.com)passare alla **Azure Active Directory**e selezionare **registrazioni per l'App**. Quindi selezionare **registrazione nuova applicazione**.  
+1. Aprire il [portale di Azure](http://portal.azure.com) come utente con autorizzazioni di amministratore aziendale, passare alla **Azure Active Directory**e selezionare **registrazioni per l'App**. Quindi selezionare **registrazione nuova applicazione**.  
 
 2. Nel **Create** panel, configurare le impostazioni seguenti:  
 

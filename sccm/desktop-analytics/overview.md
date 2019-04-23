@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4105a8a81ab3f09dee9cf3ca5a2462ed2bb4183a
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
-ms.translationtype: HT
+ms.openlocfilehash: 1229dabb0fedf600f7d57a2a400df87906945ba4
+ms.sourcegitcommit: d23ccf7b95e6c2a6b156975194ebbc375cb5e6ea
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802632"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60124421"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Analitica Desktop?
 
@@ -71,8 +71,14 @@ Per usare Desktop Analitica, assicurarsi che l'ambiente soddisfi i prerequisiti 
 ### <a name="technical"></a>Tecnici
 
 - Una sottoscrizione Azure attiva  
+    
+    - [**Amministratore della società** ](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator) le autorizzazioni in Azure per **accettare il contratto di servizio**, **verificare la sottoscrizione** e **concedere l'accesso utente** 
 
-    - **Amministratore società** autorizzazioni in Azure  
+    - **Proprietario dell'area di lavoro** oppure **collaboratore** delle autorizzazioni per **impostare l'area di lavoro** e  
+
+        - [**Log Analitica per i collaboratori** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-contributor) e [ **amministratore accesso utenti** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) sul gruppo di risorse da usare un'area di lavoro o crearne una nuova area di lavoro in un gruppo di risorse esistente.
+
+        - [**Proprietario**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner), o [ **collaboratore** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) e [ **amministratore accesso utenti** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) le autorizzazioni per il sottoscrizione per creare un'area di lavoro in un nuovo gruppo di risorse.
 
 - Configuration Manager, versione 1810 con aggiornamento cumulativo 4488598 o versione successiva. Per altre informazioni, vedere [aggiornamento Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
 
