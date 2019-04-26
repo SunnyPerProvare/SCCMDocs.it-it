@@ -12,11 +12,11 @@ ms.technology: configmgr-hybrid
 ms.assetid: 1dd696ce-3e46-4dfa-a76d-592fe0f0320e
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e2b62362bfcc9a76e407e9c0124306f83ac4a782
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56134470"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62282086"
 ---
 # <a name="migrate-hybrid-mdm-users-and-devices-to-intune-standalone"></a>Eseguire la migrazione di dispositivi e utenti dalla soluzione MDM ibrida alla versione autonoma di Intune
 
@@ -69,7 +69,8 @@ Per altre informazioni, vedere gli articoli seguenti:
 
 
 ## <a name="request-assistance"></a>Richiedere assistenza
-<!--Intune bug 2339232--> Per richiedere assistenza al programma Microsoft FastTrack, iniziare da [FastTrack per Microsoft 365](https://fasttrack.microsoft.com/microsoft365/capabilities?view=security).
+<!--Intune bug 2339232-->
+Per richiedere assistenza dal programma Microsoft FastTrack, iniziare selezionando [FastTrack per Microsoft 365](https://fasttrack.microsoft.com/microsoft365/capabilities?view=security).
 
 1. Fare clic su "Accedi" e immettere l'ID dell'organizzazione.  
 

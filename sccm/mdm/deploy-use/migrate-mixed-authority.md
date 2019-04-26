@@ -12,11 +12,11 @@ ms.technology: configmgr-hybrid
 ms.assetid: 6f0201d7-5714-4ba0-b2bf-d1acd0203e9a
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b7f2875852b49ab8af9b1f34c4747f12a6620896
-ms.sourcegitcommit: fd16fc2b681608fd6def5bad2cedffbcd1f2423a
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56405676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62282482"
 ---
 # <a name="change-the-mdm-authority-for-specific-users-mixed-mdm-authority"></a>Modificare l'autorità MDM per utenti specifici (autorità MDM mista) 
 
@@ -45,7 +45,7 @@ Gestire gli utenti migrati e i dispositivi in Intune. Continuare a gestire gli a
 - I dispositivi per gli utenti nella raccolta associata alla sottoscrizione di Intune possono essere registrati nella soluzione MDM ibrida. Tutti i dispositivi associati agli utenti non inclusi nella raccolta vengono gestiti in Intune fino a quando l'utente dispone di una licenza di Intune o EMS.   
 
     > [!Note]  
-    > Gli utenti possono eseguire la registrazione nella versione di Intune autonoma anche se è stato impedito loro di farlo nella console di Configuration Manager. Per impedire del tutto a un utente di eseguire la registrazione, non concedergli Intune in licenza. Senza una licenza non potrà infatti eseguire la registrazione.<!--SCCMDocs issue 738-->  
+    > Gli utenti possono eseguire la registrazione nella versione di Intune autonoma anche se è stato impedito loro di farlo nella console di Configuration Manager. Per impedire del tutto a un utente di eseguire la registrazione, non concedergli Intune in licenza. Tali utenti non possono registrare senza una licenza.<!--SCCMDocs issue 738-->  
 
 - Quando si esegue la migrazione di un utente a Intune, l'utente e i dispositivi vengono visualizzati in Intune nel portale di Azure dopo circa 15 minuti.   
 
@@ -85,7 +85,7 @@ Gestire gli utenti migrati e i dispositivi in Intune. Continuare a gestire gli a
 - Non eseguire la migrazione degli account utente che sono stati aggiunti come manager di registrazione dispositivi in Configuration Manager. In seguito, quando si modifica l'autorità MDM a livello di tenant spostandola a Intune, verrà eseguita correttamente la migrazione di questi account utente. Se si esegue la migrazione di account utente Manager di registrazione dispositivi prima della modifica di autorità MDM a livello di tenant, è necessario aggiungere manualmente l'utente come un Manager di registrazione dispositivi in Intune in Azure. Tuttavia, i dispositivi registrati usando un Manager di registrazione dispositivi non esegue la migrazione correttamente. Per la migrazione di questi dispositivi chiamare il supporto tecnico. Per altre informazioni, vedere [Aggiungere un manager di registrazione dispositivi](https://docs.microsoft.com/intune/device-enrollment-manager-enroll#add-a-device-enrollment-manager).  
 
     > [!Note]  
-    > In modalità di autorità mista non spostare questi account in Intune rimuovendoli dalla raccolta cloud ConfigMgr, altrimenti l'utente diventa un utente standard e non può registrare più di 15 dispositivi. Eseguire invece la migrazione di questi utenti e dei relativi dispositivi dopo aver completamente abilitato l'autorità MDM per il tenant.<!--Intune bug 2174210-->  
+    > In modalità di autorità mista non spostare questi account in Intune rimuovendoli dalla raccolta cloud ConfigMgr, altrimenti l'utente diventa un utente standard e non può registrare più di 15 dispositivi. In alternativa, eseguire la migrazione di questi utenti e dispositivi dopo aver abilitato completamente l'autorità MDM per il tenant.<!--Intune bug 2174210-->  
 
 - I dispositivi registrati usando un Manager di registrazione dispositivi e i dispositivi senza [affinità utente](/sccm/mdm/deploy-use/user-affinity-for-hybrid-managed-devices) non vengono automaticamente migrati alla nuova autorità MDM. Per cambiare l'autorità di gestione per questi dispositivi MDM, vedere [Eseguire la migrazione di dispositivi senza affinità utente](#migrate-devices-without-user-affinity).  
 

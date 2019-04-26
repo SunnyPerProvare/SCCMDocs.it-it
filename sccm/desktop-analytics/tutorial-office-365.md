@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 006a887a3989d7f05b7cf44b13562e644e6f7d94
-ms.sourcegitcommit: d23ccf7b95e6c2a6b156975194ebbc375cb5e6ea
+ms.openlocfilehash: 66b7d7da7081a4523378c0dc4b2a00917ac16ea9
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60124404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62261418"
 ---
 # <a name="tutorial-deploy-office-365-to-pilot"></a>Esercitazione: Distribuire Office 365 per contenuto pilota
 
@@ -121,7 +121,7 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 
         Per aggiungere un utente a entrambi i gruppi, digitare l'indirizzo di posta elettronica o nome nella **immettere l'indirizzo di posta elettronica o nome** sezione del gruppo appropriato. Al termine, selezionare **successivo**.
 
-Il passaggio seguente può essere completato tramite un **proprietario dell'area di lavoro** oppure **collaboratore**. 
+Il passaggio seguente può essere completato tramite un **proprietario dell'area di lavoro** oppure **collaboratore**. Per altre informazioni, vedere [prerequisiti](/sccm/desktop-analytics/overview#prerequisites).
 
 5. Nella pagina per **configurare l'area di lavoro**:  
 

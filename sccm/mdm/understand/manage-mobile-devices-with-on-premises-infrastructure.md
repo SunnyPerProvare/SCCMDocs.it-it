@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 49e07a7ebe6ec53d61ea9e2ee3bc941dd8561094
-ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57558219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62286986"
 ---
 # <a name="on-premises-mdm-in-configuration-manager"></a>On-premises MDM in Configuration Manager
 
@@ -29,7 +29,7 @@ Configuration Manager in locale la gestione dei dispositivi mobili (MDM) è una 
 MDM locale è diverso da Microsoft Intune, che si basa anche sulle funzionalità OMA DM integrate. Tutte le funzioni di gestione in Intune vengono fornite tramite i servizi cloud. MDM locale è diversa anche dalla soluzione di gestione basata su client tradizionalmente offerta da Configuration Manager. Perché si basa su un'infrastruttura simile ma non usa software client installato separatamente nei dispositivi gestiti.  
 
 > [!Note]  
-> A partire dalla versione 1810, una connessione di Intune non è più necessaria per le nuove distribuzioni MDM locale.<!--3607730, fka 1359124--> Per usare questa funzionalità è comunque necessario che l'organizzazione abbia le licenze di Intune. Attualmente, è possibile rimuovere la connessione di Intune da distribuzione MDM locale esistente. Per altre informazioni, vedere il [post di blog del supporto tecnico di Intune](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150).  
+> A partire dalla versione 1810, una connessione di Intune non è più necessaria per le nuove distribuzioni MDM locale.<!--3607730, fka 1359124--> Per usare questa funzionalità è comunque necessario che l'organizzazione abbia le licenze di Intune. Attualmente non è possibile rimuovere la connessione a Intune dalle distribuzioni MDM locali esistenti. Per altre informazioni, vedere il [post di blog del supporto tecnico di Intune](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150).  
 
 La tabella seguente elenca i vantaggi e svantaggi della MDM locale rispetto alla gestione basata su client tradizionale:  
 

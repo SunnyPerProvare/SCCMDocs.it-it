@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 21b4907667e055c9595b31eedf9da0ad516b5fec
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: d982094a427f1f67992584e3262493d3f4a96766
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62206543"
 ---
 # <a name="how-to-assess-compatibility-with-app-health-analyzer"></a>Come valutare la compatibilità con analizzatore dell'integrità di App
 
@@ -30,7 +30,7 @@ Usare il toolkit di analizzatore dell'integrità di App per Desktop Analitica pe
 
 ## <a name="download"></a>Download
 
-Scaricare il toolkit dal [Microsoft Download Center](http://download.microsoft.com/download/3/7/D/37D7E378-D805-4822-A712-4EADBF50FC08/AppHealthAnalyzer.zip)<!-- (https://www.microsoft.com/download/details.aspx?id=57276) -->. Usare sempre la versione più recente.
+Contattare il rappresentante Microsoft per ottenere un collegamento di download. Usare sempre la versione più recente.
 
 Il download è un file Windows Installer (MSI). Installare il toolkit di analizzatore dell'integrità di App nel computer dell'utente. Quando si esegue il toolkit, una procedura guidata è il processo di creazione di un report di conformità app.
 

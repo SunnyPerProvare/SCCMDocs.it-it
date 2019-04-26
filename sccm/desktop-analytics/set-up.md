@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b75b82f632c8bfbbc11a2b11d58ab83116e2180a
-ms.sourcegitcommit: d23ccf7b95e6c2a6b156975194ebbc375cb5e6ea
+ms.openlocfilehash: 7f59e7a9feb53370b069852b871ce2a2c333dda0
+ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60124438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62258198"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Come configurare Desktop Analitica
 
@@ -68,8 +68,10 @@ Il passaggio seguente può essere completato tramite un **proprietario dell'area
         1. Immettere un **nome area di lavoro**.<!--do we have any guidance for this name?-->  
 
         2. Selezionare l'elenco a discesa per **selezionare il nome di sottoscrizione di Azure per l'area di lavoro**, scegliere la sottoscrizione di Azure per l'area di lavoro.  
+        
+        3. **Creare un nuovo** gruppo di risorse oppure **Usa esistente**. 
 
-        3. Selezionare il **regione** dall'elenco, quindi selezionare **Add**.  
+        4. Selezionare il **regione** dall'elenco, quindi selezionare **Add**.  
 
 6. Selezionare un'area di lavoro nuovo o esistente e quindi selezionare **imposta come area di lavoro di Analitica Desktop**.  Quindi selezionare **continuazione** nel **Confirm e concedere l'accesso** finestra di dialogo.  
 
