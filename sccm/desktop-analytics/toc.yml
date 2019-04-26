@@ -1,51 +1,44 @@
-items:
 - name: Desktop Analytics
   items:
-  - name: Panoramica
-    href: overview.md
-  - name: Esercitazioni
-    items:
-    - name: Office 365 pilota
-      href: tutorial-office-365.md
-  - name: Concetti
-    items:
-    - name: Piani di distribuzione
-      href: about-deployment-plans.md
-    - name: Asset
-      href: about-assets.md
-    - name: Aggiornamenti qualitativi e delle funzionalità
-      href: about-updates.md
-    - name: Rischio per la compatibilità delle app di Windows
-      href: compat-risk.md
-    - name: Monitoraggio dello stato di integrità
-      href: health-status-monitoring.md
-  - name: Guide pratiche
-    items:
-    - name: Configurare Desktop Analytics
-      href: set-up.md
-    - name: Connettere Configuration Manager
-      href: connect-configmgr.md
-    - name: Registrare i dispositivi
-      href: enroll-devices.md
-    - name: Creare piani di distribuzione
-      href: create-deployment-plans.md
-    - name: Distribuire nel progetto pilota
-      href: deploy-pilot.md
-    - name: Distribuire nell'ambiente di produzione
-      href: deploy-prod.md
-    - name: Valutazione della compatibilità con App Health Analyzer
-      href: app-health-analyzer.md
-  - name: Riferimento
-    items:
-    - name: Abilitare la condivisione dei dati
-      href: enable-data-sharing.md
-    - name: Troubleshooting
-      href: troubleshooting.md
-    - name: Privacy
-      href: privacy.md
-ms.openlocfilehash: 473ddb150610af13b099bc601e05e8c50be6aac8
-ms.sourcegitcommit: ad25a7bdd983c5a0e4c95bffdc61c9a1ebcbb765
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55073188"
+    - name: Panoramica
+      href: overview.md
+    - name: Esercitazioni
+      items:
+        - name: Office 365 pilota
+          href: tutorial-office-365.md
+    - name: Concetti
+      items:
+        - name: Piani di distribuzione
+          href: about-deployment-plans.md
+        - name: Asset
+          href: about-assets.md
+        - name: Aggiornamenti qualitativi e delle funzionalità
+          href: about-updates.md
+        - name: Rischio per la compatibilità delle app di Windows
+          href: compat-risk.md
+        - name: Monitoraggio dello stato di integrità
+          href: health-status-monitoring.md
+    - name: Guide pratiche
+      items:
+        - name: Configurare Desktop Analytics
+          href: set-up.md
+        - name: Connettere Configuration Manager
+          href: connect-configmgr.md
+        - name: Registrare i dispositivi
+          href: enroll-devices.md
+        - name: Creare piani di distribuzione
+          href: create-deployment-plans.md
+        - name: Distribuire nel progetto pilota
+          href: deploy-pilot.md
+        - name: Distribuire nell'ambiente di produzione
+          href: deploy-prod.md
+        - name: Valutazione della compatibilità con App Health Analyzer
+          href: app-health-analyzer.md
+    - name: Riferimento
+      items:
+        - name: Abilitare la condivisione dei dati
+          href: enable-data-sharing.md
+        - name: Troubleshooting
+          href: troubleshooting.md
+        - name: Privacy
+          href: privacy.md

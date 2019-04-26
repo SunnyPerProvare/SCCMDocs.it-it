@@ -1,58 +1,51 @@
-items:
 - name: Co-gestione
   items:
-  - name: Informazioni sulla co-gestione
-    href: overview.md
-  - name: Guide introduttive
-    href: quickstarts.md
-    items:
-    - name: Valore immediato
+    - name: Informazioni sulla co-gestione
+      href: overview.md
+    - name: Guide introduttive
+      href: quickstarts.md
       items:
-      - name: Accesso condizionale
-        href: quickstart-conditional-access.md
-      - name: Azioni remote da Intune
-        href: quickstart-remote-actions.md
-      - name: Integrità del client
-        href: quickstart-client-health.md
-      - name: Azure AD ibrido
-        href: quickstart-hybrid-aad.md
-      - name: Windows Autopilot
-        href: quickstart-autopilot.md
-    - name: Guida introduttiva
+        - name: Valore immediato
+          items:
+            - name: Accesso condizionale
+              href: quickstart-conditional-access.md
+            - name: Azioni remote da Intune
+              href: quickstart-remote-actions.md
+            - name: Integrità del client
+              href: quickstart-client-health.md
+            - name: Azure AD ibrido
+              href: quickstart-hybrid-aad.md
+            - name: Windows Autopilot
+              href: quickstart-autopilot.md
+        - name: Guida introduttiva
+          items:
+            - name: Percorsi per la co-gestione
+              href: quickstart-paths.md
+            - name: Configurare Azure AD ibrido
+              href: quickstart-setup-hybrid-aad.md
+            - name: Eseguire l'aggiornamento a Windows 10
+              href: quickstart-upgrade-win10.md
+            - name: Eseguire la migrazione da MDM ibrido
+              href: quickstart-migrate-hybrid-mdm.md
+            - name: Ottenere assistenza da FastTrack
+              href: quickstart-fasttrack.md
+    - name: Esercitazioni
       items:
-      - name: Percorsi per la co-gestione
-        href: quickstart-paths.md
-      - name: Configurare Azure AD ibrido
-        href: quickstart-setup-hybrid-aad.md
-      - name: Eseguire l'aggiornamento a Windows 10
-        href: quickstart-upgrade-win10.md
-      - name: Eseguire la migrazione da MDM ibrido
-        href: quickstart-migrate-hybrid-mdm.md
-      - name: Ottenere assistenza da FastTrack
-        href: quickstart-fasttrack.md
-  - name: Esercitazioni
-    items:
-    - name: Abilitare la co-gestione per i client di Configuration Manager
-      href: tutorial-co-manage-clients.md
-    - name: Abilitare la co-gestione per i dispositivi basati su Internet
-      href: tutorial-co-manage-new-devices.md
-  - name: Concetti
-    items:
-    - name: Carichi di lavoro
-      href: workloads.md
-  - name: Guide pratiche
-    items:
-    - name: Abilitare la co-gestione
-      href: how-to-enable.md
-    - name: Preparare i dispositivi basati su Internet
-      href: how-to-prepare-Win10.md
-    - name: Passare i carichi di lavoro a Intune
-      href: how-to-switch-workloads.md
-    - name: Monitorare la co-gestione
-      href: how-to-monitor.md
-ms.openlocfilehash: ff313299137330aab790e62d1db127c0f1bb1808
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "57737264"
+        - name: Abilitare la co-gestione per i client di Configuration Manager
+          href: tutorial-co-manage-clients.md
+        - name: Abilitare la co-gestione per i dispositivi basati su Internet
+          href: tutorial-co-manage-new-devices.md
+    - name: Concetti
+      items:
+        - name: Carichi di lavoro
+          href: workloads.md
+    - name: Guide pratiche
+      items:
+        - name: Abilitare la co-gestione
+          href: how-to-enable.md
+        - name: Preparare i dispositivi basati su Internet
+          href: how-to-prepare-Win10.md
+        - name: Passare i carichi di lavoro a Intune
+          href: how-to-switch-workloads.md
+        - name: Monitorare la co-gestione
+          href: how-to-monitor.md
