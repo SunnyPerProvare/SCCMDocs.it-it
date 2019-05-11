@@ -2,7 +2,7 @@
 title: Desktop Analytics
 titleSuffix: Configuration Manager
 description: Una panoramica del servizio Desktop Analitica integrato con Configuration Manager.
-ms.date: 01/25/2019
+ms.date: 04/22/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: overview
@@ -12,75 +12,75 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1229dabb0fedf600f7d57a2a400df87906945ba4
-ms.sourcegitcommit: d23ccf7b95e6c2a6b156975194ebbc375cb5e6ea
+ms.openlocfilehash: 52879853e3d3286234ccd51479adddac94098441
+ms.sourcegitcommit: 9af73f5c1b93f6ccaea3e6a096f75a5fecd65c2f
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60124421"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64559101"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Analitica Desktop?
 
 > [!Note]  
 > Tali informazioni fanno riferimento a un servizio in anteprima che può essere modificato sostanzialmente prima del rilascio in commercio. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
-Desktop Analitica è un servizio basato sul cloud che si integra con Configuration Manager. Il servizio fornisce informazioni dettagliate e intelligence per poter prendere decisioni più informate sulla conformità di aggiornamento dei client di Windows e Office. Combina i dati dell'organizzazione con dati aggregati provenienti da milioni di dispositivi connessi ai servizi cloud Microsoft. 
+Desktop Analitica è un servizio basato sul cloud che si integra con Configuration Manager. Il servizio fornisce informazioni dettagliate e intelligence per poter prendere decisioni più informate sulla conformità di aggiornamento dei client di Windows. Combina i dati dell'organizzazione con dati aggregati provenienti da milioni di dispositivi connessi ai servizi cloud Microsoft.
 
 Usare Desktop Analitica con Configuration Manager per:  
 
 - Creare un inventario delle App in esecuzione all'interno dell'organizzazione  
 
-- Valutare la compatibilità delle app con gli ultimi aggiornamenti di funzionalità di Windows 10 e Office 365 ProPlus  
+- Valutare la compatibilità delle app con gli ultimi aggiornamenti di funzionalità di Windows 10  
 
 - Identificare i problemi di compatibilità e ricevere i suggerimenti di mitigazione basate su informazioni dettagliate sui dati abilitata per il cloud  
 
 - Creare gruppi pilota che rappresentano l'estate intera applicazione e il driver in un set minimo di dispositivi  
 
-- Distribuire Windows 10 e Office 365 ProPlus ai dispositivi pilota e di produzione gestite  
+- Distribuire Windows 10 nei dispositivi pilota e di produzione gestite  
 
 ![Screenshot della home page del Desktop Analitica nel portale di Azure](media/portal-home.png)
 
 > [!Note]  
-> Desktop Analitica è il successore di Analitica di Windows. Il *Analitica Windows* service include Upgrade Readiness, conformità degli aggiornamenti e integrità del dispositivo. 
-> 
-> Tutte queste funzionalità vengono combinate nel *Analitica Desktop* servizio. Inoltre, Analitica desktop è più strettamente integrato con Configuration Manager e include Windows e Office. 
+> Desktop Analitica è il successore di Analitica di Windows. Il *Analitica Windows* service include Upgrade Readiness, conformità degli aggiornamenti e integrità del dispositivo.
+>
+> Tutte queste funzionalità vengono combinate nel *Analitica Desktop* servizio. Desktop Analitica inoltre è più strettamente integrato con Configuration Manager.
 
 
 
 ## <a name="benefits"></a>Vantaggi
 
-Molti clienti hanno difficoltà di recupero e rimanere aggiornati con Windows 10 e Office 365 ProPlus. La sfida principale sta testando le applicazioni. Questo processo è in genere manuale. È molto tempo per gli amministratori IT e i proprietari dell'applicazione analizzare continuamente le applicazioni esistenti. Quindi, correggere eventuali problemi riscontrati. 
+Molti clienti hanno difficoltà di recupero e rimanere aggiornati con Windows 10. La sfida principale sta testando le applicazioni. Questo processo è in genere manuale. È molto tempo per gli amministratori IT e i proprietari dell'applicazione analizzare continuamente le applicazioni esistenti. Quindi, correggere eventuali problemi riscontrati.
 
 Analitica desktop offre i vantaggi seguenti:
 
-- **L'inventario software e dispositivo**: Inventario dei fattori chiave quali App, componenti aggiuntivi, macro e le versioni di Office e Windows.  
+- **L'inventario software e dispositivo**: Inventario dei fattori chiave quali App e le versioni di Windows.  
 
-- **Avviare un programma pilota identificazione**: Identificazione del set più piccolo di dispositivi che forniscono la copertura più ampia di fattori. Ma illustra i fattori più importanti per un progetto pilota di Windows e Office gli aggiornamenti. Assicurandosi che il progetto pilota è più riuscito consente di procedere in modo più rapido e sicuro per ampie distribuzioni nell'ambiente di produzione.  
+- **Avviare un programma pilota identificazione**: Identificazione del set più piccolo di dispositivi che forniscono la copertura più ampia di fattori. Ma illustra i fattori più importanti per un progetto pilota di Windows gli aggiornamenti. Assicurandosi che il progetto pilota è più riuscito consente di procedere in modo più rapido e sicuro per ampie distribuzioni nell'ambiente di produzione.  
 
-- **Emettere identificazione**: Usa i dati aggregati insieme ai dati dall'ambiente in uso, il servizio consente di prevedere potenziali problemi di recupero e rimanere aggiornati con Windows e Office. Quindi suggerisce possibili soluzioni.  
+- **Emettere identificazione**: Usa i dati aggregati insieme ai dati dall'ambiente in uso, il servizio consente di prevedere potenziali problemi di recupero e rimanere aggiornati con Windows. Quindi suggerisce possibili soluzioni.  
 
-- **Integrazione di Configuration Manager**: Il servizio cloud-Abilita l'infrastruttura locale esistente. Usare tali dati e analisi per distribuire e gestire Windows e Office nei dispositivi.  
+- **Integrazione di Configuration Manager**: Il servizio cloud-Abilita l'infrastruttura locale esistente. Usare tali dati e analisi per distribuire e gestire Windows nei dispositivi.  
 
 
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-Per usare Desktop Analitica, assicurarsi che l'ambiente soddisfi i prerequisiti seguenti. 
+Per usare Desktop Analitica, assicurarsi che l'ambiente soddisfi i prerequisiti seguenti.
 
 
 ### <a name="technical"></a>Tecnici
 
 - Una sottoscrizione Azure attiva  
-    
-    - [**Amministratore della società** ](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator) le autorizzazioni in Azure per **accettare il contratto di servizio**, **verificare la sottoscrizione** e **concedere l'accesso utente** 
 
-    - **Proprietario dell'area di lavoro** oppure **collaboratore** delle autorizzazioni per **impostare l'area di lavoro** e  
+    - **Proprietario dell'area di lavoro** oppure **collaboratore** delle autorizzazioni per **impostare l'area di lavoro**e i ruoli seguenti:  
 
-        - [**Log Analitica per i collaboratori** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-contributor) e [ **amministratore accesso utenti** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) sul gruppo di risorse da usare un'area di lavoro o crearne una nuova area di lavoro in un gruppo di risorse esistente.
+       - [**Desktop Administrator Analitica** ](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) ruolo.
 
-        - [**Proprietario**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner), o [ **collaboratore** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) e [ **amministratore accesso utenti** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) le autorizzazioni per il sottoscrizione per creare un'area di lavoro in un nuovo gruppo di risorse.
+       - [**Log Analitica per i collaboratori** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-contributor) e [ **amministratore accesso utenti** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) sul gruppo di risorse da usare un'area di lavoro o crearne una nuova area di lavoro in un gruppo di risorse esistente.
 
-- Configuration Manager, versione 1810 con aggiornamento cumulativo 4488598 o versione successiva. Per altre informazioni, vedere [aggiornamento Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
+        - [**Proprietario**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner), o [ **collaboratore** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) e [ **amministratore accesso utenti** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) le autorizzazioni per il sottoscrizione per creare un'area di lavoro in un nuovo gruppo di risorse.  
+
+- Configuration Manager, versione 1810 con aggiornamento cumulativo 2 (4488598) o versione successiva. Per altre informazioni, vedere [aggiornamento Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
 
     - **Amministratore completo** ruoli in Configuration Manager  
 
@@ -88,7 +88,7 @@ Per usare Desktop Analitica, assicurarsi che l'ambiente soddisfi i prerequisiti 
 
     - Installare gli aggiornamenti più recenti. Per altre informazioni, vedere [aggiornare i dispositivi](/sccm/desktop-analytics/enroll-devices#update-devices).  
 
-    - Inoltre necessario che nei dispositivi client di Configuration Manager, versione 1810 con aggiornamento cumulativo 4486457 o versione successiva. Per altre informazioni, vedere [aggiornamento Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
+    - Inoltre necessario che nei dispositivi client di Configuration Manager, versione 1810 con aggiornamento cumulativo 2 (4488598) o versione successiva. Per altre informazioni, vedere [aggiornamento Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
 
 - Dati di diagnostica di Windows. Per altre informazioni, vedere gli articoli seguenti:  
 
@@ -101,7 +101,7 @@ Per usare Desktop Analitica, assicurarsi che l'ambiente soddisfi i prerequisiti 
 
 ### <a name="licensing"></a>Licenza
 
-La maggior parte delle funzionalità di Desktop Analitica non richiede licenze aggiuntive o sottoscrizioni. Quando è configurato correttamente, uso di Desktop Analitica non comporta l'applicazione di eventuali costi di Azure. 
+La maggior parte delle funzionalità di Desktop Analitica non richiede licenze aggiuntive o sottoscrizioni. Quando è configurato correttamente, uso di Desktop Analitica non comporta l'applicazione di eventuali costi di Azure.
 
 Accedere a Windows health insights o per esportare i dati, esistono requisiti di licenza supplementari. Se non si dispone di una delle seguenti sottoscrizioni, è comunque possibile configurare e usare Analitica Desktop, ma non sono concessi in licenza per usare Windows health insights oppure per esportare i dati:
 
@@ -117,21 +117,9 @@ Accedere a Windows health insights o per esportare i dati, esistono requisiti di
 > Per le licenze per ogni dispositivo, non è necessario attivare ogni dispositivo con una licenza. È sufficiente di licenze sufficiente per i dispositivi registrati in Desktop Analitica.  
 
 
-<!-- 
-## Top task
-> *Optional*  
-> *An effective way to structure your overview article is to create an H2 for the top customer tasks and describe how the product/service helps customers with that task.*  
-> *Create a new H2 for each task you list.*  
- -->
-
-
 
 ## <a name="next-steps"></a>Passaggi successivi
 
 L'esercitazione seguente offre una Guida dettagliata di introduzione a Desktop Analitica e Configuration Manager:  
 
-- [Distribuire Office 365 in un progetto pilota](/sccm/desktop-analytics/tutorial-office-365)  
-
-<!-- for future
-- [Deploy Windows 10 to a pilot](/sccm/desktop-analytics/tutorial-windows)  
--->
+- [Distribuire Windows 10 in un progetto pilota](/sccm/desktop-analytics/tutorial-windows10)  
