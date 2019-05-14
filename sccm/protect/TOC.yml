@@ -1,65 +1,72 @@
+- name: Proteggere dati e infrastruttura
 - name: Comprendere ed esplorare
   items:
     - name: Panoramica
       href: understand\protect-data-and-site-infrastructure.md
 - name: Pianificare e progettare
   items:
-    - name: Prerequisiti per i profili certificato
-      href: plan-design/prerequisites-for-certificate-profiles.md
-      items:
-        - name: Autorizzazioni dei modelli di certificato per i profili di certificato
-          href: plan-design/planning-for-certificate-template-permissions.md
-        - name: Sicurezza e privacy per i profili certificato
-          href: plan-design/security-and-privacy-for-certificate-profiles.md
     - name: Pianificare per Endpoint Protection
       href: plan-design/planning-for-endpoint-protection.md
+    - name: Pianificare i profili di certificato
+      items:
+        - name: Prerequisiti per i profili certificato
+          href: plan-design/prerequisites-for-certificate-profiles.md
+        - name: Autorizzazioni dei modelli di certificato per i profili di certificato
+          href: plan-design/planning-for-certificate-template-permissions.md
     - name: 'Pianificare i profili di posta elettronica, Wi-Fi e VPN'
-      href: plan-design/prerequisites-for-email-profiles.md
       items:
         - name: Prerequisiti dei profili di posta elettronica
           href: plan-design/prerequisites-for-email-profiles.md
         - name: Prerequisiti per i profili Wi-Fi e VPN
           href: plan-design/prerequisites-for-wifi-vpn-profiles.md
-    - name: Sicurezza e privacy per i profili Wi-Fi e VPN
-      href: plan-design/security-and-privacy-for-wifi-vpn-profiles.md
-    - name: Sicurezza e privacy per i profili di posta elettronica
-      href: plan-design/security-and-privacy-for-email-profiles.md
-    - name: Sicurezza e privacy per i profili certificato
-      href: plan-design/security-and-privacy-for-certificate-profiles.md
+    - name: Sicurezza e privacy
+      items:
+        - name: Sicurezza e privacy per i profili Wi-Fi e VPN
+          href: plan-design/security-and-privacy-for-wifi-vpn-profiles.md
+        - name: Sicurezza e privacy per i profili di posta elettronica
+          href: plan-design/security-and-privacy-for-email-profiles.md
+        - name: Sicurezza e privacy per i profili certificato
+          href: plan-design/security-and-privacy-for-certificate-profiles.md
 - name: Distribuire e usare
   items:
     - name: Profili VPN
-      href: deploy-use/vpn-profiles.md
       items:
+        - name: Profili VPN in Configuration Manager
+          href: deploy-use/vpn-profiles.md
         - name: Creare profili VPN
           href: deploy-use/create-vpn-profiles.md
         - name: Trovare un nome di famiglia di pacchetti (PFN) per una rete VPN per app
           href: deploy-use/find-a-pfn-for-per-app-vpn.md
     - name: Profili Wi-Fi
-      href: deploy-use/create-wifi-profiles.md
       items:
         - name: Creare profili Wi-Fi
           href: deploy-use/create-wifi-profiles.md
     - name: Profili certificato
-      href: deploy-use/introduction-to-certificate-profiles.md
       items:
+        - name: Introduzione ai profili certificato
+          href: deploy-use/introduction-to-certificate-profiles.md
         - name: Creare i profili certificato
           href: deploy-use/create-certificate-profiles.md
         - name: Configurazione dei profili certificato
           href: deploy-use/certificate-infrastructure.md
+    - name: 'Distribuire profili certificato, Wi-Fi, VPN e di posta elettronica'
+      href: deploy-use/deploy-wifi-vpn-email-cert-profiles.md
     - name: Endpoint Protection
-      href: deploy-use/endpoint-protection.md
       items:
+        - name: Panoramica di Endpoint Protection
+          href: deploy-use/endpoint-protection.md
         - name: Configurare Endpoint Protection
-          href: deploy-use/endpoint-protection-configure.md
           items:
+            - name: Come configurare Endpoint Protection
+              href: deploy-use/endpoint-protection-configure.md
             - name: Ruolo del sistema del sito
               href: deploy-use/endpoint-protection-site-role.md
             - name: Avvisi
               href: deploy-use/endpoint-configure-alerts.md
             - name: Aggiornamenti delle definizioni
-              href: deploy-use/endpoint-definition-updates.md
               items:
+                - name: Panoramica degli aggiornamenti delle definizioni
+                  href: deploy-use/endpoint-definition-updates.md
                 - name: Aggiornamenti di ConfigMgr
                   href: deploy-use/endpoint-definitions-configmgr.md
                 - name: Aggiornamenti di WSUS
@@ -94,12 +101,10 @@
           href: deploy-use/endpoint-protection-client-faq.md
         - name: Impostazioni di Device Guard
           href: deploy-use/use-device-guard-with-configuration-manager.md
-    - name: 'Distribuire profili certificato, Wi-Fi, VPN e di posta elettronica'
-      href: deploy-use/deploy-wifi-vpn-email-cert-profiles.md
     - name: Impostazioni di Windows Hello for Business
       href: deploy-use/windows-hello-for-business-settings.md
     - name: Impostazioni di termini e condizioni
-      href: ../mdm/deploy-use/terms-and-conditions.md
+      href: ../mdm/deploy-use/terms-and-conditions.md?toc=/sccm/protect/toc.json&bc=/sccm/protect/breadcrumb/toc.json
     - name: Monitorare la protezione
       items:
         - name: 'Monitorare i profili Wi-Fi, di posta elettronica e VPN'
