@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6827f94a0191aee9c1fe1e20978e6414050fca7c
-ms.sourcegitcommit: ab9f2a7fb7ea3a0c65808fce2975ab25a670281f
+ms.openlocfilehash: 78e9454212bb8264926c1aba5262f06db1798abe
+ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65612495"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65673432"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Analitica Desktop?
 
@@ -101,20 +101,14 @@ Per usare Desktop Analitica, assicurarsi che l'ambiente soddisfi i prerequisiti 
 
 ### <a name="licensing"></a>Licenza
 
-La maggior parte delle funzionalità di Desktop Analitica non richiede licenze aggiuntive o sottoscrizioni. Quando è configurato correttamente, uso di Desktop Analitica non comporta l'applicazione di eventuali costi di Azure.
+Analitica desktop richiede una delle seguenti sottoscrizioni licenza:
 
-Accedere a Windows health insights o per esportare i dati, esistono requisiti di licenza supplementari. Se non si dispone di una delle seguenti sottoscrizioni, è comunque possibile configurare e usare Analitica Desktop, ma non sono concessi in licenza per usare Windows health insights oppure per esportare i dati:
+- Windows 10 Enterprise E3 o E5; o Microsoft 365 F1 E3 o E5  
 
-- Windows 10 Enterprise o Windows 10 Education: per ogni dispositivo con Software Assurance attivo  
+- Windows 10 Education A3 o A5; o Microsoft 365 A3 o A5  
 
-- Windows 10 Enterprise E3 o E5: sottoscrizione per ogni dispositivo o per utente (incluso in Microsoft 365 F1, E3 o E5)  
+- Windows VDA E3 o E5  
 
-- A5 (incluso in Microsoft 365 Education A3 o A5) o Windows 10 Education A3  
-
-- Windows Virtual Desktop Access E3 o E5: per ogni dispositivo di sottoscrizione utente  
-
-> [!Note]  
-> Per le licenze per ogni dispositivo, non è necessario attivare ogni dispositivo con una licenza. È sufficiente di licenze sufficiente per i dispositivi registrati in Desktop Analitica.  
 
 
 

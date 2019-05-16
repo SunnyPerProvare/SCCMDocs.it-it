@@ -2,7 +2,7 @@
 title: Piani di distribuzione in Desktop Analitica
 titleSuffix: Configuration Manager
 description: Informazioni sui piani di distribuzione in Desktop Analitica.
-ms.date: 04/22/2019
+ms.date: 05/14/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91cd7fc450ee53f900ae890e3a698c26c789ba8c
-ms.sourcegitcommit: 4023fb6fb534d8a0d589c8208f021e3311c7167f
+ms.openlocfilehash: b44684f897e7aad4365c39e58c9bfd486bde7cbb
+ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64880578"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65673289"
 ---
 # <a name="about-deployment-plans-in-desktop-analytics"></a>Informazioni sui piani di distribuzione in Desktop Analitica
 
@@ -51,8 +51,6 @@ Come parte del piano di distribuzione, eseguire le operazioni seguenti:
 Desktop Analitica dati del piano di distribuzione viene aggiornato ogni giorno. Le modifiche apportate potrebbero non essere per 24 ore. Tali modifiche includono l'assegnazione di priorità a un'app o scelta di un dispositivo da includere in un progetto pilota.  
 
 Dopo la connessione Desktop Analitica a Configuration Manager, selezionare le raccolte nei piani di distribuzione. Quindi questa integrazione consente di distribuire Windows in una raccolta in base ai dati di Analitica Desktop.
-
-Mentre Analitica Desktop è ottimizzata per le raccolte di Configuration Manager, è anche possibile creare gruppi di dispositivi nel Log Analitica. Per altre informazioni, vedere [ricerche nei log di gruppi di Computer in Log Analitica](https://docs.microsoft.com/azure/log-analytics/log-analytics-computer-groups).
 
 
 
