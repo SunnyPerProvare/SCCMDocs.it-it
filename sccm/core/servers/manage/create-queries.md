@@ -2,7 +2,7 @@
 title: Creare query
 titleSuffix: Configuration Manager
 description: Questo argomento illustra come creare e importare query in System Center Configuration Manager. Include query di esempio e suggerimenti.
-ms.date: 12/11/2017
+ms.date: 05/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46b052b02ebc55beeb27f26a0a302d10dc516e18
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 204a560ec621ca210a31441ce72a6d79311df2d3
+ms.sourcegitcommit: 99dfe4fb9e9cfd20c44380ae442b3a5b895a0d9b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125001"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65214777"
 ---
 # <a name="how-to-create-queries-in-system-center-configuration-manager"></a>Come creare query in System Center Configuration Manager
 
@@ -185,5 +185,6 @@ Usare uno dei valori seguenti per *&lt;ID dispositivo\>*:
 Select SMS_R_System.ClientEdition from SMS_R_System where SMS_R_System.ClientEdition = 5  
 ```  
 
-## <a name="see-also"></a>Vedere anche  
- [Operazioni e manutenzione per le query in System Center Configuration Manager](../../../core/servers/manage/operations-and-maintenance-for-queries.md)
+## <a name="next-steps"></a>Passaggi successivi
+
+[Come gestire le query](/sccm/core/servers/manage/manage-queries)

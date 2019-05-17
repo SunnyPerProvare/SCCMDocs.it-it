@@ -2,7 +2,7 @@
 title: 'Attività comuni di gestione della conformità per dispositivi gestiti da client '
 titleSuffix: Configuration Manager
 description: Informazioni sulle impostazioni di conformità di System Center Configuration Manager in alcuni scenari comuni.
-ms.date: 10/06/2016
+ms.date: 05/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a06c4294e85d3942ea3c795f3621d15ffb0ad32f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 82826e6b57e479599d02637ee0d8b95dc3173d6f
+ms.sourcegitcommit: 99dfe4fb9e9cfd20c44380ae442b3a5b895a0d9b
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120801"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65214573"
 ---
 # <a name="common-tasks-for-managing-compliance-on-devices-with-the-system-center-configuration-manager-client"></a>Attività comuni per la gestione della conformità nei dispositivi con il client System Center Configuration Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "56120801"
 
 Gli scenari presentati in questo argomento forniscono un'introduzione all'uso delle impostazioni di conformità di System Center Configuration Manager usando alcuni scenari comuni che potrebbero verificarsi.  
 
- Se si ha già familiarità con le impostazioni di conformità, la documentazione dettagliata su tutte le funzionalità disponibili è reperibile nella sezione [Configuration items for devices managed with the System Center Configuration Manager client](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md) (Elementi di configurazione per i dispositivi gestiti con il client di System Center Configuration Manager).  
+ Se si ha già familiarità con le impostazioni di conformità, la documentazione dettagliata su tutte le funzionalità disponibili è reperibile nella sezione [Configuration items for devices managed with the System Center Configuration Manager client](../../compliance/deploy-use/create-configuration-items.md) (Elementi di configurazione per i dispositivi gestiti con il client di System Center Configuration Manager).  
 
  Prima di iniziare, leggere [Get started with compliance settings](../../compliance/get-started/get-started-with-compliance-settings.md) (Introduzione alle impostazioni di conformità) per apprendere alcune nozioni sulle impostazioni di conformità e [Plan for and configure compliance settings](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) (Pianificare e configurare le impostazioni di conformità) per implementare i prerequisiti necessari.  
 
@@ -37,7 +37,7 @@ Gli scenari presentati in questo argomento forniscono un'introduzione all'uso de
 
 4.  Nella scheda **Generale** della Creazione guidata dell'elemento di configurazione mostrata sotto, specificare un nome e una descrizione per l'elemento di configurazione, quindi scegliere il tipo di elemento di configurazione appropriato per ogni scenario di questo argomento.  
 
-     ![Mostra la pagina generale della creazione guidata dell'elemento di configurazione.](/sccm/compliance/plan-design/media/Compliance-Settings-Wizard---1.png)  
+     ![Mostra la pagina generale della creazione guidata dell'elemento di configurazione.](/sccm/mdm/deploy-use/media/Compliance-Settings-Wizard---1.png)  
 
 ## <a name="scenarios-for-windows-10-devices-managed-with-the-configuration-manager-client"></a>Scenari per dispositivi Windows 10 gestiti con il client di Configuration Manager  
 
@@ -107,3 +107,7 @@ Gli scenari presentati in questo argomento forniscono un'introduzione all'uso de
 6. Completare la procedura guidata per creare l'elemento di configurazione.  
 
    È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
+
+## <a name="next-steps"></a>Passaggi successivi
+
+[Creare e distribuire linee di base di configurazione](/sccm/compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines)

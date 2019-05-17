@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 6af92de2-b2c7-4d5c-affd-6cce81979fb5
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96a100131d8fe0e9c289cdf4d272aeefb43fbf15
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 26ea0ed36a8e7f59a475d6e10d26eb2275c20311
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140406"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501184"
 ---
 # <a name="checklist-for-installing-update-1802-for-system-center-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1802 di System Center Configuration Manager
 
@@ -108,7 +108,8 @@ Per altre informazioni, vedere [Repliche di database per i punti di gestione per
 Se si usa un gruppo di disponibilità, prima di iniziare l'installazione dell'aggiornamento verificare che il gruppo di disponibilità sia impostato sul failover manuale. Dopo l'aggiornamento del sito, è possibile ripristinare la modalità di failover automatico. Per altre informazioni, vedere  [SQL Server AlwaysOn per database del sito](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database).
 
 **Riconfigurare i punti di aggiornamento software che usano Bilanciamento carico di rete:**   
-<!-- Support for NLBs is fully removed with 1702. When 1702 is no longer in support, this statement can drop --> Configuration Manager non può aggiornare un sito che usa un cluster Bilanciamento carico di rete (NLB) per ospitare i punti di aggiornamento software.
+<!-- Support for NLBs is fully removed with 1702. When 1702 is no longer in support, this statement can drop -->
+Configuration Manager non può aggiornare un sito che usa un cluster Bilanciamento carico di rete (NLB) per ospitare i punti di aggiornamento software.
 
 Se si usano cluster NLB per i punti di aggiornamento software, usare Windows PowerShell per rimuovere il cluster NLB.
 Per altre informazioni, vedere  [Pianificare gli aggiornamenti software in System Center Configuration Manager](/sccm/sum/plan-design/plan-for-software-updates).

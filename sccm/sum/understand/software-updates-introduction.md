@@ -2,8 +2,8 @@
 title: Introduzione agli aggiornamenti software
 titleSuffix: Configuration Manager
 description: Informazioni di base sugli aggiornamenti software in System Center Configuration Manager.
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.date: 10/30/2017
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac745419dafea6a8fc86ddf1c744944f8f5698b2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: e95055473cc5d61b10ee06e43456f3f7dfeb428b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125035"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65493375"
 ---
 # <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>Introduzione agli aggiornamenti software in System Center Configuration Manager
 
@@ -130,19 +130,19 @@ Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiorn
 
  L'analisi per la conformità degli aggiornamenti software, inclusa la relativa pianificazione, può iniziare nei modi seguenti:  
 
--   **Pianificazione analisi aggiornamenti software**: l'analisi per la conformità degli aggiornamenti software inizia in base alla pianificazione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
+-   **Pianificazione dell'analisi degli aggiornamenti software**: l'analisi per la conformità degli aggiornamenti software inizia in base alla pianificazione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
 
 -   **Azione Proprietà di Configuration Manager**: l'utente può avviare l'azione **Ciclo di analisi per aggiornamenti software** o **Ciclo di valutazione distribuzione aggiornamenti software** nella scheda **Azione** della finestra di dialogo **Proprietà di Configuration Manager** nel computer client.  
 
--   **Pianificazione della rivalutazione della distribuzione**: La valutazione della distribuzione e l'analisi per la conformità degli aggiornamenti software iniziano in base alla pianificazione della rivalutazione della distribuzione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
+-   **Pianificazione della rivalutazione della distribuzione**: la valutazione della distribuzione e l'analisi per la conformità degli aggiornamenti software iniziano in base alla pianificazione della rivalutazione della distribuzione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
 
--   **Prima di scaricare i file di aggiornamento**: quando un computer client riceve un criterio di assegnazione per una nuova distribuzione richiesta, l'Agente client aggiornamenti software scarica i file di aggiornamento software nella cache del client locale. Prima di scaricare i file di aggiornamento software, l'agente client avvia un'analisi per verificare che l'aggiornamento software sia ancora necessario.  
+-   **Prima del download dei file di aggiornamento**: quando un computer client riceve un criterio di assegnazione per una nuova distribuzione richiesta, Agente client aggiornamenti software scarica i file di aggiornamento software nella cache del client locale. Prima di scaricare i file di aggiornamento software, l'agente client avvia un'analisi per verificare che l'aggiornamento software sia ancora necessario.  
 
--   **Prima dell'installazione dell'aggiornamento software**: prima dell'installazione dell'aggiornamento software, l'Agente client aggiornamenti software avvia un'analisi per verificare che gli aggiornamenti software siano ancora necessari.  
+-   **Prima dell'installazione dell'aggiornamento software**: prima dell'installazione dell'aggiornamento software, Agente client aggiornamenti software avvia un'analisi per verificare che gli aggiornamenti software siano ancora necessari.  
 
--   **Dopo l'installazione dell'aggiornamento software**: dopo il completamento dell'installazione dell'aggiornamento software, l'Agente client aggiornamenti software avvia un'analisi per verificare che gli aggiornamenti software non siano più necessari e crea un nuovo messaggio di stato che indica che l'aggiornamento software è installato. Quando l'installazione è terminata, ma è necessario un riavvio, il messaggio di stato indica che il computer client è in attesa di un riavvio.  
+-   **Dopo l'installazione dell'aggiornamento software**: dopo il completamento dell'installazione di un aggiornamento software, Agente client aggiornamenti software avvia un'analisi per verificare che non siano più necessari aggiornamenti software e crea un nuovo messaggio di stato che indica che l'aggiornamento software è installato. Quando l'installazione è terminata, ma è necessario un riavvio, il messaggio di stato indica che il computer client è in attesa di un riavvio.  
 
--   **Dopo il riavvio del sistema**: quando un computer client è in attesa di un riavvio del sistema per completare l'installazione dell'aggiornamento software, l'Agente client aggiornamenti software avvia un'analisi dopo il riavvio per verificare che l'aggiornamento software non sia più richiesto e crea un messaggio di stato che indica che l'aggiornamento software è installato.  
+-   **Dopo il riavvio del sistema**: quando un computer client è in attesa di un riavvio del sistema per completare l'installazione dell'aggiornamento software, Agente client aggiornamenti software avvia un'analisi dopo il riavvio per verificare che l'aggiornamento software non sia più richiesto e crea un messaggio di stato che indica che l'aggiornamento software è installato.  
 
 #### <a name="time-to-live-value"></a>Valore di durata  
  I metadati degli aggiornamenti software richiesti per l'analisi della conformità degli aggiornamenti software vengono memorizzati nel computer client locale e, per impostazione predefinita, sono rilevanti per un massimo di 24 ore. Questo valore è noto come Durata (TTL).  

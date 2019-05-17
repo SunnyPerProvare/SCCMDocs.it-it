@@ -2,21 +2,21 @@
 title: Inventario software
 titleSuffix: Configuration Manager
 description: Introduzione all'inventario software in System Center Configuration Manager.
-ms.date: 2/22/2017
+ms.date: 04/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
 ms.assetid: 79eb49da-cd2b-4ffc-b355-b595aeba3aea
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 54bcd177d228e67748f561be556ff4219523711a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: b4d50e26d2505a5df859f65b89b736783aca0a9a
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130412"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499821"
 ---
 # <a name="introduction-to-software-inventory-in-system-center-configuration-manager"></a>Introduzione all'inventario software in System Center Configuration Manager
 
@@ -28,7 +28,7 @@ Dopo aver abilitato l'inventario software e completato l'esecuzione di un ciclo 
 
  Questi sono i modi disponibili per visualizzare i dati dell'inventario software:  
 
-- [Creare query](../../../../core/servers/manage/queries-technical-reference.md) che restituiscono i dispositivi con i file specificati.   
+- [Creare query](../../../../core/servers/manage/create-queries.md) che restituiscono i dispositivi con i file specificati.   
 
 - Creare [raccolte basate su query](../../../../core/clients/manage/collections/introduction-to-collections.md) che includono dispositivi con i file specificati.   
 

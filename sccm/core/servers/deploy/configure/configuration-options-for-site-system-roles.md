@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 0e9f0fbd-e442-4509-a021-bfdedf2d04dd
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 209e09ba11de851a1275211364af3cee930737d0
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: a5fb9a553efa634dad314da58298611cdf0bbb58
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131541"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65498973"
 ---
 # <a name="configuration-options-for-site-system-roles-in-configuration-manager"></a>Opzioni di configurazione per i ruoli del sistema del sito in Configuration Manager
 
@@ -29,7 +29,7 @@ La maggior parte delle opzioni di configurazione per i ruoli del sistema del sit
 ##  <a name="BKMK_ApplicationCatalog_Website"></a> Punto per siti Web del Catalogo applicazioni  
 
 > [!Note]  
-> A partire dalla versione 1806, il punto per siti Web del Catalogo applicazioni non è più *necessario*, ma è ancora *supportato*. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).  
+> A partire dalla versione 1806, il punto per siti Web del Catalogo applicazioni non è più *necessario*, ma è ancora *supportato*. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).  
 > 
 > L'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).  
 
@@ -54,7 +54,7 @@ La maggior parte delle opzioni di configurazione per i ruoli del sistema del sit
 ##  <a name="BKMK_ApplicationCatalog_WebService"></a> Punto per servizi Web del Catalogo applicazioni  
 
 > [!Note]  
-> A partire dalla versione 1806, il punto per servizi Web del Catalogo applicazioni non è più *necessario*, ma è ancora *supportato*. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).  
+> A partire dalla versione 1806, il punto per servizi Web del Catalogo applicazioni non è più *necessario*, ma è ancora *supportato*. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).  
 
  Per altre informazioni su come configurare il punto per servizi Web del Catalogo applicazioni, vedere [Pianificare e configurare la gestione delle applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management).  
 

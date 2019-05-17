@@ -2,7 +2,7 @@
 title: Introduzione alle raccolte
 titleSuffix: Configuration Manager
 description: Introduzione all'uso delle raccolte in System Center Configuration Manager.
-ms.date: 01/03/2017
+ms.date: 05/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9b995d0abfc3f14dce35e0aec70ac25b2ca2853
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 15359aa414554d0bef9e29c011966caec1c1e6d6
+ms.sourcegitcommit: 417e3834a42b415a8e129327dd3c15cc0c7ec5a2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138943"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65443136"
 ---
 # <a name="introduction-to-collections-in-system-center-configuration-manager"></a>Introduzione alle raccolte in System Center Configuration Manager
 
@@ -35,7 +35,7 @@ Di seguito sono descritti alcuni esempi di uso delle raccolte:
 |Operazione|Esempio|  
 |---------|-------|  
 |Raggruppamento di risorse|È possibile creare raccolte per il raggruppamento delle risorse in base alla gerarchia dell'organizzazione.<br /><br /> Ad esempio, si potrebbe creare una raccolta di tutti i computer nell'unità organizzativa (OU) di Active Directory "Sede centrale Milano". Per altre informazioni su come creare questo tipo di raccolta, vedere [Come creare le raccolte in System Center Configuration Manager](../../../../core/clients/manage/collections/create-collections.md).<br /><br /> Si potrebbe usare questa raccolta per operazioni quali la configurazione delle impostazioni di Endpoint Protection, la configurazione delle impostazioni di risparmio energia per i dispositivi o l'installazione del client di Configuration Manager.|  
-|[Distribuzione delle applicazioni]|È possibile creare una raccolta di tutti i computer in cui non è installato Microsoft Office 2013 e quindi distribuirlo in tutti i computer di tale raccolta.<br /><br /> È anche possibile usare i requisiti dell'applicazione per eseguire questa attività. Per altre informazioni, vedere [Come creare applicazioni con System Center Configuration Manager](../../../../apps/deploy-use/create-applications.md).|  
+|Distribuzione delle applicazioni|È possibile creare una raccolta di tutti i computer in cui non è installato Microsoft Office 2013 e quindi distribuirlo in tutti i computer di tale raccolta.<br /><br /> È anche possibile usare i requisiti dell'applicazione per eseguire questa attività. Per altre informazioni, vedere [Come creare applicazioni con System Center Configuration Manager](../../../../apps/deploy-use/create-applications.md).|  
 |[Gestione delle impostazioni client](../../../../core/clients/deploy/about-client-settings.md)|Sebbene le impostazioni client predefinite in Configuration Manager siano valide per tutti i dispositivi e tutti gli utenti, è possibile creare impostazioni client personalizzate applicabili a una raccolta di dispositivi o a una raccolta di utenti.<br /><br /> Ad esempio, se si vuole che il controllo remoto sia disponibile in tutti i dispositivi a parte alcuni, configurare impostazioni client predefinite per consentire il controllo remoto e quindi configurare impostazioni client personalizzate che non consentono il controllo remoto e distribuirle alla raccolta dei client che rappresentano l'eccezione. |  
 |[Risparmio energia](../power/introduction-to-power-management.md)|È possibile configurare impostazioni di risparmio energia specifiche per ogni raccolta.|  
 |[Amministrazione basata su ruoli](../../../../core/servers/deploy/configure/configure-role-based-administration.md)|Usare le raccolte per controllare i gruppi di utenti con accesso a varie funzionalità nella console di Configuration Manager.|  

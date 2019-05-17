@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
 ms.assetid: 2200b02b-e76b-4aa7-a77a-6dc5e70f1333
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f21e087e73a26191af56793e0015cbb21e8714c
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: d19f2529c549c84b969124bf006dd5793b28521b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56136535"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65493390"
 ---
 # <a name="system-center-updates-publisher"></a>System Center Updates Publisher
 
@@ -45,19 +45,19 @@ Quando si apre Updates Publisher, per impostazione predefinita viene visualizzat
 Per organizzare Updates Publisher sono disponibili quattro aree di lavoro.
 
 
-**Updates Workspace** (Area di lavoro Aggiornamenti): usare quest'area di lavoro per [creare](/sccm/sum/tools/create-updates-with-updates-publisher) e [gestire](/sccm/sum/tools/manage-updates-with-updates-publisher) aggiornamenti software e pacchetti di aggiornamenti. Questo include l'assegnazione di aggiornamenti e aggregazioni a una pubblicazione, nonché la pubblicazione e l'esportazione degli stessi in un altro repository di Updates Publisher.
+**Area di lavoro Aggiornamenti:** usare quest'area di lavoro per [creare](/sccm/sum/tools/create-updates-with-updates-publisher) e [gestire](/sccm/sum/tools/manage-updates-with-updates-publisher) aggiornamenti software e aggregazioni di aggiornamenti. Questo include l'assegnazione di aggiornamenti e aggregazioni a una pubblicazione, nonché la pubblicazione e l'esportazione degli stessi in un altro repository di Updates Publisher.
 
-**Publications Workspace** (Area di lavoro Pubblicazioni): usare quest'area per [gestire le pubblicazioni](/sccm/sum/tools/updates-publisher-publications). Una pubblicazione è gruppo di aggiornamenti creato per semplificare l'esportazione e la pubblicazione degli aggiornamenti stessi.
+**Area di lavoro Pubblicazioni:** usare quest'area per [gestire le pubblicazioni](/sccm/sum/tools/updates-publisher-publications). Una pubblicazione è gruppo di aggiornamenti creato per semplificare l'esportazione e la pubblicazione degli aggiornamenti stessi.
 
 La gestione delle pubblicazioni include la pubblicazione di aggiornamenti in un server in modo che i client possano trovarli e installarli, l'esportazione di aggiornamenti e aggregazioni per l'uso da parte di altre installazioni di Updates Publisher e la modifica del contenuto o dei dettagli di una pubblicazione.
 
 
 
-**Rules Workspace** (Area di lavoro Regole): usare quest'area per [gestire le regole di applicabilità](/sccm/sum/tools/updates-publisher-applicability-rules) che è possibile salvare e quindi usare con gli aggiornamenti distribuiti. Esistono due tipi di regole:
+**Area di lavoro Regole:** usare quest'area per [gestire le regole di applicabilità](/sccm/sum/tools/updates-publisher-applicability-rules) che è possibile salvare e quindi usare con gli aggiornamenti distribuiti. Esistono due tipi di regole:
 
 -   Regole installabili: queste regole consentono di determinare se un client deve installare un aggiornamento.
 -   Regole installate: queste regole verificano se un aggiornamento è già installato.
 
-**Catalogs Workspace** (Area di lavoro Cataloghi): usare quest'area di lavoro per aggiungere e [gestire cataloghi di aggiornamenti software](/sccm/sum/tools/updates-publisher-catalogs). Questo include l'importazione di aggiornamenti software da tali cataloghi nel repository di Updates Publisher.
+**Area di lavoro Cataloghi:** usare quest'area di lavoro per aggiungere e [gestire cataloghi di aggiornamenti software](/sccm/sum/tools/updates-publisher-catalogs). Questo include l'importazione di aggiornamenti software da tali cataloghi nel repository di Updates Publisher.
 ## <a name="first-steps"></a>Passaggi iniziali
 Per iniziare, [installare](/sccm/sum/tools/install-updates-publisher), e quindi [configurare le opzioni](/sccm/sum/tools/updates-publisher-options) per Updates Publisher.

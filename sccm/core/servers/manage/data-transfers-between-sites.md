@@ -2,21 +2,21 @@
 title: Trasferimenti di dati
 titleSuffix: Configuration Manager
 description: Informazioni su come Configuration Manager sposta i dati tra i siti e come gestire il trasferimento dei dati in rete.
-ms.date: 10/06/2016
+ms.date: 05/02/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: dc526e8d-fac3-4bb5-b206-03ad29b0ae11
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39ae7c931b2d69199dc2c24cbb1bf9ae804a04b4
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 33edef5a7dba5274509dcf455b337c71886dd608
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123189"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65497473"
 ---
 # <a name="data-transfers-between-sites-in-system-center-configuration-manager"></a>Trasferimenti di dati tra siti in System Center Configuration Manager
 
