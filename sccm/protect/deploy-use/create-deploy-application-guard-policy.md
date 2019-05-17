@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
 ms.assetid: 33a6c1d9-4dd8-411c-a748-693a5bd2ea5a
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf5345cd54882ae46171b7d3800e1ed818834ecb
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: 3e2eb7aa483c48ee6099cbb1605c082c9b0315ee
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802241"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500637"
 ---
 # <a name="create-and-deploy-windows-defender-application-guard-policy"></a>Creare e distribuire criteri di Windows Defender Application Guard 
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -33,7 +33,7 @@ Per creare e distribuire criteri di Windows Defender Application Guard, è neces
 1. Nella console di Configuration Manager scegliere **Asset e conformità**.
 2. Nell'area di lavoro **Asset e conformità** scegliere **Panoramica** > **Endpoint Protection** > **Windows Defender Application Guard**.
 3. Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea i criteri di Windows Defender Application Guard**.
-4. Usando l'[articolo](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-guard/configure-wd-app-guard) come riferimento, è possibile selezionare e configurare le impostazioni disponibili. Configuration Manager consente di definire impostazioni di criteri specifiche, vedere [Impostazioni per l'interazione degli host](#BKMK_HIS) e [Comportamento delle applicazioni](#BKMK_AppB).
+4. Usando l'[articolo](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-guard/configure-wd-app-guard) come riferimento, è possibile selezionare e configurare le impostazioni disponibili. Configuration Manager consente di definire impostazioni di criteri specifiche, vedere [Impostazioni per l'interazione degli host](#bkmk_HIS) e [Comportamento delle applicazioni](#bkmk_ABS).
 5. Nella pagina **Definizione di rete** specificare l'identità aziendale e definire il limite di rete aziendale.
 
     > [!NOTE]

@@ -2,21 +2,21 @@
 title: 'Scaricare gli aggiornamenti software '
 titleSuffix: Configuration Manager
 description: Usare il download guidato degli aggiornamenti software per scaricare gli aggiornamenti software e distribuirli a punti di distribuzione per essere pronti per la distribuzione ai client.
-author: aczechowski
 ms.date: 01/23/2017
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: de78e8d3-043f-4cd3-97e0-4dfb824fd3fb
 manager: dougeby
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f43379f315a3a2e24a33f2112a26108aa7418bb
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 15ed5e56d5284b3014061a5d910dc88903b624db
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138722"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500207"
 ---
 # <a name="download-software-updates"></a>Scaricare gli aggiornamenti software  
 

@@ -2,21 +2,21 @@
 title: Gestire le impostazioni per gli aggiornamenti software
 titleSuffix: Configuration Manager
 description: Informazioni sulle impostazioni client appropriate per gli aggiornamenti software nel sito successivi all'installazione del punto di aggiornamento software.
-author: aczechowski
 ms.date: 03/26/2017
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 0d484c1a-e903-4bff-9e9b-e452c62e38a8
 manager: dougeby
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 848cb4e23240091c62ff9ca12c46fedae769010f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 90304156778f4f41b2ac35a2840a4a7e7bb4dc32
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129018"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499776"
 ---
 #  <a name="BKMK_ManageSUSettings"></a> Gestire le impostazioni per gli aggiornamenti software  
 
@@ -69,7 +69,7 @@ Nelle proprietà degli aggiornamenti software, è possibile verificare le inform
 ####  <a name="BKMK_SoftwareUpdateDetails"></a> Dettagli sugli aggiornamenti software  
 Nella scheda **Dettagli aggiornamento** è possibile visualizzare le seguenti informazioni di riepilogo relative all'aggiornamento software selezionato:  
 
-- **ID bollettino**: specifica l'ID bollettino associato agli aggiornamenti software di protezione. È possibile trovare i dettagli relativi al bollettino sulla sicurezza cercando l'ID bollettino nella pagina Web [Bollettini sulla sicurezza](http://go.microsoft.com/fwlink/p/?LinkId=58313) .  
+- **ID bollettino**: specifica l'ID bollettino associato agli aggiornamenti software di sicurezza. È possibile trovare i dettagli relativi al bollettino sulla sicurezza cercando l'ID bollettino nella pagina Web [Bollettini sulla sicurezza](http://go.microsoft.com/fwlink/p/?LinkId=58313) .  
 
 - **ID articolo**: specifica l'ID articolo per l'aggiornamento software. L'articolo di riferimento fornisce informazioni più dettagliate sull'aggiornamento software e il problema che l'aggiornamento software consente di correggere o migliorare.  
 
@@ -92,7 +92,7 @@ Nella scheda **Informazioni sul contenuto** , esaminare le seguenti informazioni
 
 -   **Lingua**: specifica le lingue per l'aggiornamento software.  
 
--   **Percorso di origine**: specifica il percorso ai file di origine dell'aggiornamento software.  
+-   **Percorso di origine**: specifica il percorso dei file di origine dell'aggiornamento software.  
 
 -   **Dimensione (MB)**: specifica le dimensioni dei file di origine dell'aggiornamento software.  
 

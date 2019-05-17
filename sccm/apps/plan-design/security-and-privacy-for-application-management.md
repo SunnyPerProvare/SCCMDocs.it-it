@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 13467e3b227a8080d03e3e44864970703c2e000f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 6d8715b8d91f6397fbf5d4d254b48f8078b0dfc3
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126338"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083251"
 ---
 # <a name="security-and-privacy-for-application-management-in-configuration-manager"></a>Sicurezza e privacy per la gestione delle applicazioni in Configuration Manager
 
@@ -27,11 +27,12 @@ ms.locfileid: "56126338"
 
 
 ### <a name="use-the-new-software-center-without-the-application-catalog"></a>Usare il nuovo Software Center senza il Catalogo applicazioni
-<!--1358309--> A partire dalla versione 1806, i ruoli del Catalogo applicazioni non sono più necessari per visualizzare le applicazioni disponibili per gli utenti in Software Center. Questa configurazione consente di ridurre l'infrastruttura server necessaria per distribuire le applicazioni agli utenti. Riducendo l'infrastruttura server si riduce anche la superficie di attacco. 
+<!--1358309-->
+A partire dalla versione 1806, i ruoli del Catalogo applicazioni non sono più necessari per visualizzare le applicazioni disponibili per gli utenti in Software Center. Questa configurazione consente di ridurre l'infrastruttura server necessaria per distribuire le applicazioni agli utenti. Riducendo l'infrastruttura server si riduce anche la superficie di attacco. 
 
 Per offrire un'esperienza dell'applicazione coerente e sicura per i client basati su Internet, usare Azure Active Directory e il gateway di gestione cloud.
 
-Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex). 
+Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex). 
 
 
 ### <a name="use-https-with-the-application-catalog"></a>Usare HTTPS con il Catalogo applicazioni
@@ -178,7 +179,7 @@ Se si configura un tipo di distribuzione delle applicazioni Web, usare HTTPS per
 > [!Important]  
 > A partire da Configuration Manager versione 1802, Silverlight non viene più installato automaticamente.
 > 
-> A partire dalla versione 1806, l'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato. Gli utenti devono usare il nuovo Software Center. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).  
+> A partire dalla versione 1806, l'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato. Gli utenti devono usare il nuovo Software Center. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).  
 
  I client di Configuration Manager versione 1710 e precedenti richiedono Microsoft Silverlight 5, che deve essere eseguito in modalità di attendibilità elevata perché gli utenti installino il software dal Catalogo applicazioni. Per impostazione predefinita, le applicazioni Silverlight vengono eseguite in modalità di attendibilità parziale per evitare l'accesso ai dati utente. Se non è già installato, Configuration Manager installa automaticamente Microsoft Silverlight 5 nei client. Per impostazione predefinita, Configuration Manager imposta su **Sì** l'impostazione client **Consentire alle applicazioni di Silverlight di essere eseguite in modalità attendibilità elevata**. Questa impostazione consente alle applicazioni Silverlight firmate e attendibili di richiedere la modalità attendibilità elevata.  
 
@@ -212,7 +213,7 @@ Se si configura un tipo di distribuzione delle applicazioni Web, usare HTTPS per
 - Il **Catalogo applicazioni** è un sito Web che consente agli utenti di richiedere software da installare.  
 
     > [!Note]  
-    > A partire da Configuration Manager 1802, la funzionalità principale del Catalogo applicazioni è ora inclusa in Software Center. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).  
+    > A partire da Configuration Manager 1802, la funzionalità principale del Catalogo applicazioni è ora inclusa in Software Center. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).  
 
 - **Software Center** viene automaticamente installato in un dispositivo quando si installa il client di Configuration Manager. Gli utenti modificano le impostazioni e cercano e installano applicazioni in Software Center.  
 

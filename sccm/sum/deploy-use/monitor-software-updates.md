@@ -2,8 +2,8 @@
 title: Monitorare gli aggiornamenti software
 titleSuffix: Configuration Manager
 description: La console di System Center Configuration Manager invia avvisi e stati per monitorare gli aggiornamenti e la conformità.
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.date: 07/30/2018
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 9afd7b0f-5c8e-48bc-9a65-1f7d74103688
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9399900849ead41118cb727c3ec36cd8345e393b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 5cd5c27aa04f25b044f74533983a214dc9f9341b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133106"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500146"
 ---
 # <a name="monitor-software-updates-in-system-center-configuration-manager"></a>Monitorare gli aggiornamenti software in System Center Configuration Manager
 
@@ -69,8 +69,8 @@ Di seguito sono riportati alcuni dei report utili per identificare potenziali pr
 #### <a name="compliance-9---overall-health-and-compliance-starting-in-version-1806"></a>Conformità 9 - Dati complessivi su integrità e conformità (a partire dalla versione 1806)
 Il report include le parti seguenti:
 
-- **Clienti integri rispetto a client totali**: questo grafico a barre confronta i client "integri" che hanno comunicato con il sito nel periodo di tempo specificato rispetto al numero totale di client nella raccolta specificata.
-- **Panoramica conformità**: grafico a torta che visualizza lo stato di conformità generale per il gruppo di aggiornamenti software specifico nei client attivi nella raccolta specificata.
+- **Healthy Clients vs Total Clients** (Client integri rispetto a totale client): questo grafico a barre confronta i client "integri" che hanno comunicato con il sito nel periodo di tempo specificato rispetto al numero totale di client nella raccolta specificata.
+- **Compliance Overview** (Panoramica conformità): grafico a torta che mostra lo stato di conformità generale per il gruppo di aggiornamenti software specifico nei client attivi nella raccolta specificata.
 - **Top 5 Non-Compliant by Article ID** (Primi 5 non conformi in base a ID articolo): questo grafico a barre visualizza i primi cinque aggiornamenti software nel gruppo specificato che non sono conformi nei client attivi nella raccolta specificata.
 - La parte inferiore del report è una tabella con altri dettagli, in cui sono elencati gli aggiornamenti software nel gruppo specificato.
 

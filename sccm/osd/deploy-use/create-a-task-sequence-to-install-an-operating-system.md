@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c18d6320397281156e39624ea8dc50e6d0539ed
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: c6d0cecc348076bcf728cb08ba29500ae55d1c77
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56139909"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65082887"
 ---
 # <a name="create-a-task-sequence-to-install-an-operating-system-in-system-center-configuration-manager"></a>Creare una sequenza di attività per installare un sistema operativo in System Center Configuration Manager
 
@@ -55,7 +55,7 @@ Usare le sequenze di attività in System Center Configuration Manager per instal
 
    -   **Descrizione**: specificare una descrizione dell'attività eseguita dalla sequenza di attività.  
 
-   -   **Immagine d'avvio**: specificare l'immagine di avvio che installa il sistema operativo nel computer di destinazione. L'immagine di avvio contiene una versione di Windows PE usata per installare il sistema operativo e i driver di dispositivo aggiuntivi richiesti. Per altre informazioni, vedere [Gestire le immagini di avvio](../get-started/manage-boot-images.md).  
+   -   **Immagine di avvio**: specificare l'immagine di avvio che installa il sistema operativo nel computer di destinazione. L'immagine di avvio contiene una versione di Windows PE usata per installare il sistema operativo e i driver di dispositivo aggiuntivi richiesti. Per altre informazioni, vedere [Gestire le immagini di avvio](../get-started/manage-boot-images.md).  
 
        > [!IMPORTANT]  
        >  L'architettura dell'immagine di avvio deve essere compatibile con l'architettura hardware del computer di destinazione.  
@@ -64,13 +64,13 @@ Usare le sequenze di attività in System Center Configuration Manager per instal
 
    -   **Pacchetto immagine**: specificare il pacchetto che contiene l'immagine del sistema operativo da installare. Per altre informazioni, vedere [Manage operating system images](../get-started/manage-operating-system-images.md) (Gestire le immagini del sistema operativo).  
 
-   -   **Immagine**: se il pacchetto immagine del sistema operativo contiene più immagini, specificare l'indice dell'immagine del sistema operativo da installare.  
+   -   **Immagine**: se il pacchetto dell'immagine del sistema operativo contiene più immagini, specificare l'indice dell'immagine del sistema operativo da installare.  
 
    -   **Creare partizioni e formattare il computer di destinazione prima di installare il sistema operativo**: specificare se si desidera che la sequenza di attività partizioni e formatti il computer di destinazione prima dell'installazione del sistema operativo.  
 
-   -   **Codice Product Key**: specificare il codice Product Key per il sistema operativo Windows da installare. È possibile specificare i codici Product Key per contratti multilicenza codificati e i codici Product Key standard. Se si usa un codice Product Key non codificato, ogni gruppo di 5 caratteri deve essere separato da un trattino (-). Ad esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
+   -   **Codice Product key**: specificare il codice Product Key per il sistema operativo Windows da installare. È possibile specificare i codici Product Key per contratti multilicenza codificati e i codici Product Key standard. Se si usa un codice Product Key non codificato, ogni gruppo di 5 caratteri deve essere separato da un trattino (-). Ad esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
 
-   -   **Modalità di gestione licenze del server**: specificare che la licenza del server è **Per postazione**, **Per server** o che non è specificata alcuna licenza. Se la licenza del server è **Per server**, specificare anche il numero massimo di connessioni al server.  
+   -   **Modalità di gestione licenze del server**: specificare che la licenza del server è **Per postazione**, **Per server**o che non è specificata alcuna licenza. Se la licenza del server è **Per server**, specificare anche il numero massimo di connessioni al server.  
 
    -   Specificare come gestire l'account amministratore usato quando viene distribuita l'immagine del sistema operativo.  
 
@@ -89,7 +89,7 @@ Usare le sequenze di attività in System Center Configuration Manager per instal
 
         È inoltre possibile specificare un'unità organizzativa. Si tratta di un'impostazione facoltativa che specifica il nome distinto LDAP X.500 dell'unità organizzativa in cui creare l'account computer se non esiste già.  
 
-   -   **Account**: specificare il nome utente e la password per l'account che dispone delle autorizzazioni per l'aggiunta al dominio specificato. Ad esempio: *dominio\utente* o *%variabile%*.  
+   -   **Account**: specificare il nome utente e la password per l'account con le autorizzazioni per l'aggiunta al dominio specificato. Ad esempio: *dominio\utente* o *%variabile%*.  
 
        > [!IMPORTANT]  
        >  Se si prevede di migrare le impostazioni del dominio o le impostazioni del gruppo di lavoro, è necessario immettere le credenziali di dominio appropriate.  
@@ -110,7 +110,7 @@ Usare le sequenze di attività in System Center Configuration Manager per instal
 
 12. Completare la procedura guidata.  
 
-    Ora è possibile distribuire la sequenza di attività in una raccolta di computer.  Per altre informazioni, vedere [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
+    Ora è possibile distribuire la sequenza di attività in una raccolta di computer.  Per altre informazioni, vedere [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).  
 
 ##  <a name="BKMK_InstallExistingOSImageTSExample"></a> Esempio di sequenza di attività per l'installazione di un'immagine del sistema operativo esistente  
  Usare la tabella seguente come guida durante la creazione di una sequenza di attività per la distribuzione di un sistema operativo con un'immagine del sistema operativo esistente. La tabella sarà utile per decidere la sequenza generale per i passaggi della sequenza di attività e per determinare come organizzare e strutturare tali passaggi in gruppi logici. La sequenza di attività creata può variare rispetto a questo esempio e può contenere un numero minore o maggiore di passaggi e gruppi.  

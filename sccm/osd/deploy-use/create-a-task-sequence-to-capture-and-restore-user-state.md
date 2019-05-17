@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0077cd6a906da59a06f4cf619b74ddc0af947cea
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 709442083cd2d9c935aeb2c5fe6c2ad30a2dddf5
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133919"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083041"
 ---
 # <a name="create-a-task-sequence-to-capture-and-restore-user-state-in-configuration-manager"></a>Creare una sequenza di attività per acquisire e ripristinare lo stato utente in Configuration Manager
 
@@ -62,7 +62,7 @@ ms.locfileid: "56133919"
     >  È necessario che l'azione della sequenza attività eseguita prima del passaggio **Rilascia archiviazione stati** abbia esito positivo prima dell'avvio del passaggio **Rilascia archiviazione stati**.  
 
 
- Distribuire questa sequenza attività per acquisire lo stato utente in un computer di destinazione. Per altre informazioni su come distribuire sequenze di attività, vedere [Distribuire una sequenza di attività](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).  
+ Distribuire questa sequenza attività per acquisire lo stato utente in un computer di destinazione. Per altre informazioni su come distribuire sequenze di attività, vedere [Distribuire una sequenza di attività](/sccm/osd/deploy-use/deploy-a-task-sequence).  
 
 
 
@@ -86,7 +86,7 @@ ms.locfileid: "56133919"
    >  È necessario che l'azione della sequenza attività eseguita prima del passaggio **Rilascia archiviazione stati** abbia esito positivo prima dell'avvio del passaggio **Rilascia archiviazione stati**.  
 
 
- Distribuire questa sequenza attività per ripristinare lo stato utente in un computer di destinazione. Per informazioni sulla distribuzione di sequenze di attività, vedere [Distribuire una sequenza di attività](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).  
+ Distribuire questa sequenza attività per ripristinare lo stato utente in un computer di destinazione. Per informazioni sulla distribuzione di sequenze di attività, vedere [Distribuire una sequenza di attività](/sccm/osd/deploy-use/deploy-a-task-sequence).  
 
 
 

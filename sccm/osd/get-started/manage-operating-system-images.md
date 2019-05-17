@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea320b42bfb08ec0023598d010375042d143c220
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: e5651f381f2c4a101c82d6f1f7730ffc4ae99a20
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56124071"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083550"
 ---
 # <a name="manage-os-images-with-configuration-manager"></a>Gestire le immagini del sistema operativo con Configuration Manager
 
@@ -106,10 +106,10 @@ Usare le distribuzioni multicast per consentire a più computer di scaricare sim
 
     -   **Consenti trasferimento del pacchetto via multicast (solo WinPE)**: selezionare questa opzione per abilitare la distribuzione simultanea delle immagini del sistema operativo da parte di Configuration Manager tramite multicast.  
 
-    -   **Crittografa pacchetti multicast**: specificare se il sito deve crittografare l'immagine prima di inviarla al punto di distribuzione. Usare questa opzione se l'immagine contiene informazioni riservate. Se l'immagine non è crittografata, il relativo contenuto è visibile in rete come testo non crittografato. Un utente non autorizzato può intercettare e visualizzare il contenuto dell'immagine.  
+    -   **Crittografa pacchetti multicast**: specifica se il sito crittografa l'immagine prima di inviarla al punto di distribuzione. Usare questa opzione se l'immagine contiene informazioni riservate. Se l'immagine non è crittografata, il relativo contenuto è visibile in rete come testo non crittografato. Un utente non autorizzato può intercettare e visualizzare il contenuto dell'immagine.  
 
     -   **Trasferisci il pacchetto solo via multicast**: Specificare se si desidera che il punto di distribuzione distribuisca l'immagine solo durante una sessione multicast.  
 
-         Se si seleziona l'opzione **Trasferisci il pacchetto solo via multicast**, è necessario specificare anche l'opzione di distribuzione della sequenza attività **Scaricare il contenuto localmente quando necessario eseguendo la sequenza attività**. Per altre informazioni, vedere [Deploy a task sequence](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).   
+         Se si seleziona l'opzione **Trasferisci il pacchetto solo via multicast**, è necessario specificare anche l'opzione di distribuzione della sequenza attività **Scaricare il contenuto localmente quando necessario eseguendo la sequenza attività**. Per altre informazioni, vedere [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).   
 
 5.  Selezionare **OK** per salvare le impostazioni e chiudere le proprietà dell'immagine.  

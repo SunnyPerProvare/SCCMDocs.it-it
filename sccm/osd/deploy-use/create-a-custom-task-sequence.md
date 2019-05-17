@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d71afc9ac8af973d43eac9ee7e1fb4322333d49
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 79ef6832a32f0cb3ea36b8c36423b46ae3216438
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131694"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65082906"
 ---
 # <a name="create-a-custom-task-sequence-with-system-center-configuration-manager"></a>Creare una sequenza di attività personalizzata con System Center Configuration Manager
 
@@ -48,4 +48,4 @@ Quando si crea una sequenza di attività personalizzata in System Center Configu
    Le sequenze di attività verranno usate principalmente per automatizzare le attività di distribuzione del sistema operativo, ma è possibile creare una sequenza di attività personalizzata per automatizzare diverse attività. Per altre informazioni, vedere [Creare una sequenza di attività per distribuzioni non di sistema operativo](create-a-task-sequence-for-non-operating-system-deployments.md).  
 
    ## <a name="next-steps"></a>Passaggi successivi
-   [Distribuire la sequenza di attività](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)
+   [Distribuire la sequenza di attività](/sccm/osd/deploy-use/deploy-a-task-sequence)

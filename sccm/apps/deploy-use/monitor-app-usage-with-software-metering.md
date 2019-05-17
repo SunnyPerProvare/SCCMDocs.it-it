@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
 ms.assetid: b1fdaee2-2816-4447-94cd-609f6948f215
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59e64462f22736f7f132ae5f3d683d791b04ccf2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: c10dcc07ba2f67b004da462dbde17fb2200ec7a1
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132919"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65496799"
 ---
 # <a name="software-metering-in-system-center-configuration-manager"></a>Controllo del software in System Center Configuration Manager
 
@@ -46,9 +46,9 @@ Il controllo del software non ha dipendenze esterne, ma solo dipendenze all'inte
 
 4. Nell'elenco **Impostazioni dispositivo** configurare le impostazioni seguenti:
 
-   -   **Abilitare controllo software nei client**: selezionare **True** per abilitare la misurazione del software.
+   -   **Abilitare controllo software nei client**: selezionare **True** per abilitare il controllo del software.
 
-   -   **Pianifica raccolta dati**: configurare la frequenza con cui verranno raccolti i dati dalla misurazione del software nei computer client. Usare il valore predefinito **7 giorni** oppure fare clic su **Pianifica** per configurare una pianificazione personalizzata.
+   -   **Pianifica raccolta dati**: configurare la frequenza con cui verranno raccolti i dati dal controllo del software nei computer client. Usare il valore predefinito **7 giorni** oppure fare clic su **Pianifica** per configurare una pianificazione personalizzata.
 
 5. Fare clic su **OK** per chiudere la finestra di dialogo **Impostazioni dispositivo** .
 

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6030bb1a02a94e61cf3ef53b6d90f7b6a5ae4f7a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 32a645f95d25c92809723ae735f566535fc4043d
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122101"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083297"
 ---
 # <a name="planning-considerations-for-automating-tasks-in-configuration-manager"></a>Considerazioni sulla pianificazione dell'automazione delle attività in Configuration Manager
 
@@ -92,12 +92,13 @@ ms.locfileid: "56122101"
 
 
 ## <a name="add-child-task-sequences-to-a-task-sequence"></a>Aggiungere sequenze di attività figlio a una sequenza di attività
- <!--1261338--> A partire da Configuration Manager versione 1710, è possibile aggiungere un nuovo passaggio della sequenza di attività che esegue un'altra sequenza di attività. Questo passaggio crea una relazione padre-figlio tra le sequenze di attività. Questo passaggio consente di creare più sequenze di attività modulari riusabili.  
+ <!--1261338-->
+ A partire da Configuration Manager versione 1710, è possibile aggiungere un nuovo passaggio della sequenza di attività che esegue un'altra sequenza di attività. Questo passaggio crea una relazione padre-figlio tra le sequenze di attività. Questo passaggio consente di creare più sequenze di attività modulari riusabili.  
 
  Per altre informazioni, vedere [Eseguire una sequenza di attività](/sccm/osd/understand/task-sequence-steps#child-task-sequence). 
 
  > [!Note]  
- > Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+ > Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
 
 
 
@@ -190,7 +191,7 @@ ms.locfileid: "56122101"
  >   
  >  Se i client scaricano sequenze attività al di fuori di una finestra di manutenzione, la sequenza di attività viene scaricata due volte. In questo scenario, il client scarica la sequenza di attività, disabilita il filtro di scrittura, riavvia il computer e quindi scarica nuovamente la sequenza di attività. Il motivo di questo comportamento è che la sequenza di attività era stata originariamente scaricata nella sovrapposizione temporanea, che viene cancellata al riavvio del dispositivo.  
 
- Per altre informazioni su come distribuire sequenze di attività, vedere [Distribuire una sequenza di attività](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).  
+ Per altre informazioni su come distribuire sequenze di attività, vedere [Distribuire una sequenza di attività](/sccm/osd/deploy-use/deploy-a-task-sequence).  
 
 
 
@@ -267,7 +268,7 @@ Per altre informazioni, vedere [HTTP migliorato](/sccm/core/plan-design/hierarch
 > [!Note]  
 > I seguenti scenari di distribuzione del sistema operativo richiedono ancora l'uso dell'account di accesso alla rete:
 >  
-> - L'[opzione di distribuzione](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS) **Accedere al contenuto direttamente da un punto di distribuzione quando necessario eseguendo la sequenza di attività** della sequenza di attività   
+> - L'[opzione di distribuzione](/sccm/osd/deploy-use/deploy-a-task-sequence) **Accedere al contenuto direttamente da un punto di distribuzione quando necessario eseguendo la sequenza di attività** della sequenza di attività   
 > - L'opzione [Se l'account del computer non riesce a connettersi all'archiviazione stati, utilizzare l'account di accesso di rete](/sccm/osd/understand/task-sequence-steps#BKMK_RequestStateStore) del passaggio **Richiedi archiviazione stati** 
 > - Quando si effettua la connessione con un dominio non trusted o in foreste di Active Directory 
 > - L'opzione [Accedi al contenuto direttamente dal punto di distribuzione](/sccm/osd/understand/task-sequence-steps#BKMK_ApplyOperatingSystemImage) del passaggio **Applica immagine del sistema operativo** 

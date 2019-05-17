@@ -2,21 +2,21 @@
 title: Scenario di esempio per la distribuzione e il monitoraggio degli aggiornamenti software di sicurezza
 titleSuffix: Configuration Manager
 description: Questo scenario di esempio descrive come usare gli aggiornamenti software in Configuration Manager per distribuire e monitorare gli aggiornamenti software di sicurezza rilasciati ogni mese da Microsoft.
-author: aczechowski
 manager: dougeby
 ms.date: 10/06/2016
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: c32f757a-02da-43f2-b055-5cfd097d8c43
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30377a9b2cfde1616114779ab7790deec1fb2bb2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 02c1f1cbc80bacf35306d2e4d5367a41ec5d8c1c
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132126"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65496332"
 ---
 # <a name="example-scenario-for-using-system-center-configuration-manager-to-deploy-and-monitor-the-security-software-updates-released-monthly-by-microsoft"></a>Scenario di esempio per l'uso di System Center Configuration Manager per la distribuzione e il monitoraggio degli aggiornamenti software della sicurezza rilasciati ogni mese da Microsoft
 
@@ -42,45 +42,45 @@ Questo argomento illustra uno scenario di esempio sull'uso degli aggiornamenti s
 
  Le sezioni seguenti di questo argomento includono procedure di esempio che consentono di distribuire e monitorare gli aggiornamenti software di sicurezza di Configuration Manager all'interno dell'organizzazione.
 
-##  <a name="BKMK_Step1"></a> Passaggio 1: creare un gruppo di aggiornamento software per conformità annuale  
+##  <a name="BKMK_Step1"></a> Passaggio 1: Creare un gruppo di aggiornamento software per la conformità annuale  
  Giorgio crea un gruppo di aggiornamento software che può usare per monitorare la conformità di tutti gli aggiornamenti software di sicurezza rilasciati nel 2016. Esegue quindi i passaggi indicati nella seguente tabella.  
 
 |Processo|Riferimento|  
 |-------------|---------------|  
-|Dal nodo **Tutti gli aggiornamenti software** nella console di Configuration Manager Giorgio aggiunge i criteri per visualizzare solo gli aggiornamenti software di sicurezza rilasciati o rivisiti nel corso del 2015 che soddisfano i requisiti seguenti:<br /><br /><ul><li>**Criteri**: Data rilascio o revisione</li><li>**Condizione**: è maggiore o uguale a una data specifica<br />**Valore**: 1/1/2015</li><li>**Criteri**: Classificazione degli aggiornamenti<br />**Valore**: Aggiornamenti della sicurezza</li><li>**Criteri**: Scaduto <br />**Valore**: No</li></ul>|Nessuna informazione aggiuntiva|
+|Dal nodo **Tutti gli aggiornamenti software** nella console di Configuration Manager Giorgio aggiunge i criteri per visualizzare solo gli aggiornamenti software di sicurezza rilasciati o rivisiti nel corso del 2015 che soddisfano i requisiti seguenti:<br /><br /><ul><li>**Criteri**: Data rilascio o revisione</li><li>**Condizione**: è maggiore o uguale a una data specifica<br />**Valore**: 1/1/2015</li><li>**Criteri**: Classificazione aggiornamento<br />**Valore**: Aggiornamenti della sicurezza</li><li>**Criteri**: Scaduto <br />**Valore**: No</li></ul>|Nessuna informazione aggiuntiva|
 |Giorgio aggiunge tutti gli aggiornamenti software filtrati in un nuovo gruppo di aggiornamento software con i seguenti requisiti:<br /><br /><ul><li>**Nome**: Gruppo di conformità - Aggiornamenti della sicurezza Microsoft 2015</li><li>**Descrizione**: Aggiornamenti software|[Aggiungere aggiornamenti software a un gruppo di aggiornamento](add-software-updates-to-an-update-group.md)|  
 
-##  <a name="BKMK_Step2"></a> Passaggio 2: creare una regola di distribuzione automatica per il mese corrente  
+##  <a name="BKMK_Step2"></a> Passaggio 2: Creare una regola di distribuzione automatica per il mese corrente  
  Giorgio rea una regola di distribuzione automatica per gli aggiornamenti software di protezione rilasciati da Microsoft per il mese corrente. Esegue quindi i passaggi indicati nella seguente tabella.  
 
 |Processo|Riferimento|  
 |-------------|---------------|  
 |Giorgio crea una regola di distribuzione automatica con i seguenti requisiti:<br /><br /><ol><li>Nella scheda **Generale** Giorgio configura quanto segue:<br /> <ul><li>Specifica **Aggiornamenti mensili della sicurezza** come nome.</li><li>Seleziona una raccolta di test con client limitati.</li><li>Seleziona **Crea un nuovo gruppo di aggiornamento software**.</li><li>Verifica che l'opzione **Abilita la distribuzione dopo l'esecuzione della regola** non sia selezionata.</li></ul></li><li>Nella scheda **Impostazioni di distribuzione** Giorgio seleziona le impostazioni predefinite.</li><li>Nella pagina **Aggiornamenti software** Giorgio configura i filtri proprietà e i criteri di ricerca seguenti:<br /><ul><li>Data rilascio o revisione: **Ultimo mese**.</li><li>Classificazione aggiornamento: **Aggiornamenti della sicurezza**.</li></ul></li><li>Nella pagina **Valutazione** Giorgio abilita la regola in modo che venga eseguita secondo pianificazione il **secondo giovedì** di ogni **mese**. Giorgio verifica anche che la pianificazione della sincronizzazione sia impostata per essere eseguita il **secondo mercoledì** di ogni **mese**.</li><li>Giorgio utilizza le impostazioni predefinite nelle pagine Pianificazione della distribuzione, Esperienza utente, Avvisi e Impostazioni download.</li><li>Nella pagina **Pacchetto di distribuzione** Giorgio specifica un nuovo pacchetto di distribuzione.</li><li>Giorgio utilizza le impostazioni predefinite nelle pagine Percorso download e Selezione lingua.</li></ol>|[Distribuire automaticamente gli aggiornamenti software](automatically-deploy-software-updates.md)|  
 
-##  <a name="BKMK_Step3"></a> Passaggio 3: verificare che gli aggiornamenti software siano pronti per la distribuzione  
+##  <a name="BKMK_Step3"></a> Passaggio 3: Verificare che gli aggiornamenti software siano pronti per la distribuzione  
  Il secondo giovedì di ogni mese Giorgio verifica che gli aggiornamenti software siano pronti per la distribuzione. Esegue il passo seguente.  
 
 |Processo|Riferimento|  
 |-------------|---------------|  
 |Giorgio verifica che la sincronizzazione degli aggiornamenti del software sia stata completata correttamente.|[Software updates synchronization status](monitor-software-updates.md#BKMK_SUSyncStatus) (Stato di sincronizzazione degli aggiornamenti software)|  
 
-##  <a name="BKMK_Step4"></a> Passaggio 4: distribuire il gruppo di aggiornamenti software  
+##  <a name="BKMK_Step4"></a> Passaggio 4: Distribuire il gruppo di aggiornamenti software  
  Dopo aver verificato che gli aggiornamenti software sono pronti per la distribuzione, Giorgio esegue la distribuzione. Esegue quindi i passaggi indicati nella seguente tabella.  
 
 |Processo|Riferimento|  
 |-------------|---------------|  
-|Giorgio crea due distribuzioni di prova per il nuovo gruppo di aggiornamento software. Per ogni distribuzione, considera i seguenti ambienti:<br /><br /> **Distribuzione di prova per workstation**: per la distribuzione di prova per workstation, Giorgio considera quanto segue:<br /><br /><ul><li>Specifica una raccolta di distribuzioni che contiene un subset di client per workstation per la verifica della distribuzione.</li><li>Configura le impostazioni di distribuzione appropriate per i client per workstation presenti nell'ambiente.</li></ul><br />**Distribuzione di prova per server**: per la distribuzione di prova per server, Giorgio considera quanto segue:<br /><br /><ul><li>Specifica una raccolta di distribuzioni che contiene un subset di client di server per la verifica della distribuzione.</li><li>Configura le impostazioni di distribuzione appropriate per i client di server presenti nell'ambiente.</li></ul>|[Distribuire gli aggiornamenti software](deploy-software-updates.md)|  
+|Giorgio crea due distribuzioni di prova per il nuovo gruppo di aggiornamento software. Per ogni distribuzione, considera i seguenti ambienti:<br /><br /> **Distribuzione di test delle workstation**: per la distribuzione di test delle workstation, Giorgio considera quanto segue:<br /><br /><ul><li>Specifica una raccolta di distribuzioni che contiene un subset di client per workstation per la verifica della distribuzione.</li><li>Configura le impostazioni di distribuzione appropriate per i client per workstation presenti nell'ambiente.</li></ul><br />**Distribuzione di test dei server**: per la distribuzione di test dei server, Giorgio considera quanto segue:<br /><br /><ul><li>Specifica una raccolta di distribuzioni che contiene un subset di client di server per la verifica della distribuzione.</li><li>Configura le impostazioni di distribuzione appropriate per i client di server presenti nell'ambiente.</li></ul>|[Distribuire gli aggiornamenti software](deploy-software-updates.md)|  
 |Giorgio verifica che le distribuzioni di prova siano state distribuite correttamente.|[Software updates deployment status](monitor-software-updates.md#BKMK_SUDeployStatus) (Stato di distribuzione degli aggiornamenti software)|  
 |Giorgio aggiorna le due distribuzioni con nuove raccolte che includono i server e le workstation di produzione relativi.|Nessuna informazione aggiuntiva|  
 
-##  <a name="BKMK_Step5"></a> Passaggio 5: monitorare la conformità per gli aggiornamenti del software distribuito  
+##  <a name="BKMK_Step5"></a> Passaggio 5: Monitorare la conformità per gli aggiornamenti software distribuiti  
  Giorgio monitora la conformità delle distribuzioni degli aggiornamenti software. Esegue quindi la procedura indicata nella seguente tabella.  
 
 |Processo|Riferimento|  
 |-------------|---------------|  
 |Giorgio monitora lo stato della distribuzione degli aggiornamenti software nella console di Configuration Manager e controlla i relativi report disponibili nella console.|[Monitor software updates in System Center Configuration Manager](../../sum/deploy-use/monitor-software-updates.md) (Monitorare gli aggiornamenti software in System Center Configuration Manager)|  
 
-##  <a name="BKMK_Step6"></a> Passaggio 6: aggiungere gli aggiornamenti software mensili al gruppo di aggiornamento annuale  
+##  <a name="BKMK_Step6"></a> Passaggio 6: Aggiungere aggiornamenti software mensili al gruppo di aggiornamento annuale  
  Giorgio aggiunge gli aggiornamenti software dal gruppo di aggiornamento software mensile al gruppo di aggiornamento software annuale. Esegue quindi la procedura indicata nella seguente tabella.  
 
 |Processo|Riferimento|  
