@@ -1,6 +1,6 @@
 ---
 title: MMS 2019 Docathon
-ms.date: 04/18/2019
+ms.date: 05/06/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: ffd912f5776f38f9a5af6fd0b628127d0100c926
-ms.sourcegitcommit: 14d27fa21dea8bbb48a410d01def651c31567bd6
+ms.openlocfilehash: 76970a024e54067aaa6a3059bb95a6c134a2e999
+ms.sourcegitcommit: 99dfe4fb9e9cfd20c44380ae442b3a5b895a0d9b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64346664"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65214697"
 ---
 # <a name="mms-2019-docathon"></a>MMS 2019 Docathon
 
@@ -97,7 +97,7 @@ Leggere le informazioni su [come segnalare problemi](/sccm/core/understand/use-d
 
 ## <a name="contest-summary"></a>Riepilogo
 
-Il concorso si terrà durante l'intera settimana, dal 6 al 9 maggio. Tutti gli iscritti al summit MMS 2019 possono partecipare. I premi verranno assegnati giovedì 9 maggio dopo la sessione [ConfigMgr Product Team Q&A](https://sched.co/N6ge). Per vincere è necessario partecipare al summit MMS 2019, ma non necessariamente a tale sessione. Se non si è presenti alla sessione, per ritirare un premio, contattare Aaron prima di venerdì mattina.
+Il concorso si terrà durante l'intera settimana, dal 6 al 9 maggio. Tutti gli iscritti al summit MMS 2019 possono partecipare. Inviare il proprio contributo entro le ore 15:00 (ora centrale del Pacifico) di giovedì 9 maggio 2019. I premi verranno assegnati giovedì 9 maggio dopo la sessione [ConfigMgr Product Team Q&A](https://sched.co/N6ge). Per vincere è necessario partecipare al summit MMS 2019, ma non necessariamente a tale sessione. Se non si è presenti alla sessione, per ritirare un premio, contattare Aaron prima di venerdì mattina.
 
 > [!Important]  
 > Per essere accreditati, è necessario includere l'hashtag **#MMS2019Docathon** in tutti i contributi.
@@ -206,7 +206,7 @@ Concorso dell'Evento Docathon del Microsoft Cloud + AI Developer Relations Conte
         - Il maggior numero di righe modificate
         - Il maggior numero di articoli modificati
 
-    I vincitori verranno selezionati giovedì 9 maggio 2019 dopo le 17:00 (CT).
+    I vincitori verranno selezionati giovedì 9 maggio 2019 dopo le 15:00 (CT).
 
     I vincitori verranno informati in occasione dell'Evento e dovranno ritirare il premio prima della chiusura dell'Evento.
 
