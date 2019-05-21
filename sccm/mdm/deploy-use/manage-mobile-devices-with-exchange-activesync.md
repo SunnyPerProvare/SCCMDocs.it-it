@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a157e8696a9b4b24acb722be037185351f94ccdc
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 8f774fc163d6ec9739733002a4c5054a2e85fec8
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62255380"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933540"
 ---
 # <a name="manage-mobile-devices-with-system-center-configuration-manager-and-exchange"></a>Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange
 
@@ -40,7 +40,7 @@ Usare il connettore Exchange Server in System Center Configuration Manager quand
  Un dispositivo mobile dell'utente viene visualizzato automaticamente nel Catalogo applicazioni quando viene gestito dal connettore Exchange Server ed Exchange Server si trova in locale. Quando si configura il connettore Exchange Server per Microsoft Exchange Online, è necessario configurare manualmente l'affinità utente-dispositivo in modo che il dispositivo mobile dell'utente venga visualizzato nel Catalogo applicazioni. Per altre informazioni sull'affinità utente-dispositivo, vedere [Collegare utenti e dispositivi mediante l'affinità utente-dispositivo in System Center Configuration Manager](../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md).  
 
 > [!TIP]  
->  Se si gestisce un dispositivo mobile usando il connettore Exchange Server e il dispositivo mobile viene trasferito a un altro utente, eliminare il dispositivo mobile dalla console di Configuration Manager prima che il nuovo proprietario del dispositivo configuri l'account di Exchange nel dispositivo mobile trasferito.  
+>  Se si gestisce un dispositivo mobile usando il connettore Exchange Server e il dispositivo mobile viene trasferito a un altro utente, eliminare il dispositivo mobile dalla console di Configuration Manager prima che il nuovo proprietario del dispositivo mobile configura l'account di Exchange nel In questo dispositivo mobile trasferito.  
 
 ## <a name="required-security-permissions"></a>Autorizzazioni di sicurezza richieste  
  È necessario disporre delle seguenti autorizzazioni di sicurezza per configurare il connettore Exchange Server:  
