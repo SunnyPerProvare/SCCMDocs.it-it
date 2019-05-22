@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 100fdd8e9032b1d16ae79b3cd52ffba3b3609446
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: af9d8c16033a22c828f014dfd4bad771851c08de
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140161"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499331"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versioni dei sistemi operativi per client e dispositivi supportate da Configuration Manager
 
@@ -126,7 +126,7 @@ Le versioni del canale semestrale di Windows Server sono installazioni Server Co
 -   **Windows 10 Enterprise** (x86, x64)  
 
 -   **Windows 10 IoT Enterprise** (x86, x64)  
-    Questa versione include il canale di manutenzione a lungo termine. Per altre informazioni, vedere [Overview of Windows 10 IoT Enterprise](https://docs.microsoft.com/windows/iot-core/windows-iot-enterprise) (Panoramica di Windows 10 IoT Enterprise).<!--SCCMDocs issue 560-->  
+    Questa versione include il canale di manutenzione a lungo termine. Per altre informazioni, vedere [Panoramica di Windows 10 IoT Enterprise](https://docs.microsoft.com/windows/iot-core/windows-iot-enterprise).<!--SCCMDocs issue 560-->  
 
 -   **Windows Embedded 8.1 Industry** (x86, x64)    
 
@@ -342,7 +342,7 @@ Le versioni seguenti sono supportate tramite l'uso del file TAR indicato.
 - **Windows 10 Pro Enterprise** (x86, x64)  
 
 - **Windows 10 IoT Enterprise** (x86, x64)  
-    Questa versione include il canale di manutenzione a lungo termine. Per altre informazioni, vedere [Overview of Windows 10 IoT Enterprise](https://docs.microsoft.com/windows/iot-core/windows-iot-enterprise) (Panoramica di Windows 10 IoT Enterprise).<!--SCCMDocs issue 560-->  
+    Questa versione include il canale di manutenzione a lungo termine. Per altre informazioni, vedere [Panoramica di Windows 10 IoT Enterprise](https://docs.microsoft.com/windows/iot-core/windows-iot-enterprise).<!--SCCMDocs issue 560-->  
 
 - **Windows 10 Mobile**  
 

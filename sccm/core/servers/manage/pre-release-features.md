@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 6bce416b-761d-4b23-bd33-5b7c30edb10d
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e31e56948d30b95c6de4d9640985c4387bbe7058
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 666cb86e4acbb46956f768655637d3185fc5df71
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56124967"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65497186"
 ---
 # <a name="pre-release-features-in-configuration-manager"></a>Funzionalità di versioni non definitive in Configuration Manager
 
@@ -76,14 +76,14 @@ Quando si abilita una funzionalità non definitiva, gestione gerarchie (HMAN) di
 
 | Funzionalità          | Aggiunta come versione non definitiva | Aggiunta come funzionalità completa |  
 |------------------|----------------------|-------------------------|
-| API provider SMS <!--1359052--> | Versione 1810 | ![Non ancora](media/red_x.png) |
+| API del provider SMS <!--1359052--> | Versione 1810 | ![Non ancora](media/red_x.png) |
 | [Sistema del sito HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http) <!--1356889,1358228--> | Versione 1806 | Versione 1810 |
 | [App client per dispositivi con co-gestione](/sccm/comanage/workloads#client-apps) <!--1357892--> | Versione 1806 | ![Non ancora](media/red_x.png) |
 | [Estensioni SCAP](/sccm/compliance/plan-design/scap/about-scap) <!--3607889--> | Versione 1806 | ![Non ancora](media/red_x.png) |
 | [Package Conversion Manager](/sccm/apps/pcm/package-conversion-manager) <!--1357861--> | Versione 1806 | Versione 1810 |
 | [Supporto per Cisco AnyConnect 4.0.07x e versioni successive per iOS](/sccm/mdm/deploy-use/create-vpn-profiles) <!--1357393--> | Versione 1802 | Versione 1802 <br>con aggiornamento 4163547 |
 | [Distribuzioni in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence) <!--1356837--> | Versione 1802 | Versione 1806 |
-| [Eseguire il passaggio della sequenza di attività](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#add-child-task-sequences-to-a-task-sequence) <!--1261338--> |  Versione 1710 | Versione 1802 |
+| [Esegui il passaggio della sequenza di attività](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#add-child-task-sequences-to-a-task-sequence) <!--1261338--> |  Versione 1710 | Versione 1802 |
 | [Windows Defender Exploit Guard](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy) <!--1355468--> | Versione 1710 | Versione 1802 |
 | [Valutazione dell'attestazione dell'integrità dei dispositivi per i criteri di conformità dell'accesso condizionale](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) <!--1235616--> | Versione 1710 | Versione 1802 |
 | [Creare ed eseguire script di Windows PowerShell](/sccm/apps/deploy-use/create-deploy-scripts) <!--1236459--> | Versione 1706 | Versione 1802 |
@@ -96,7 +96,7 @@ Quando si abilita una funzionalità non definitiva, gestione gerarchie (HMAN) di
 | [Gateway di gestione cloud](/sccm/core/clients/manage/plan-cloud-management-gateway) <!--1101764--> | Versione 1610 | Versione 1802 |
 | [Connettore di Azure Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics) <!--1236739--> | Versione 1606 | Versione 1802 |
 | [Manutenzione di una raccolta compatibile con cluster (manutenzione di un gruppo di server)](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_ServerGroups) <!--1081776--> | Versione 1602 | ![Non ancora](media/red_x.png) |
-| [Accesso condizionale per i PC gestiti da System Center Configuration Manager](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) <!--  --> | Versione 1602 | Versione 1702 |
+| [Accesso condizionale per i PC gestiti da Configuration Manager](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) <!--  --> | Versione 1602 | Versione 1702 |
 
 <!--Image used = ![Not yet](media/red_x.png) -->
 

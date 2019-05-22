@@ -2,7 +2,7 @@
 title: Gestire le raccolte
 titleSuffix: Configuration Manager
 description: Eseguire le attività comuni di gestione delle raccolte in Configuration Manager.
-ms.date: 08/17/2018
+ms.date: 04/23/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93a502e9c77e05eedba1c2989cbae69e4080832f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 1a6b087b19a27bcb7cbc2fa2022d828aea58800b
+ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133732"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65673327"
 ---
 # <a name="how-to-manage-collections-in-configuration-manager"></a>Come gestire le raccolte in Configuration Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "56133732"
 Usare le informazioni generali di questo articolo per eseguire le attività di gestione per le raccolte in Configuration Manager.  
 
 > [!NOTE]  
->  Per informazioni su come creare raccolte di Configuration Manager, vedere [Come creare le raccolte in Configuration Manager](/sccm/core/clients/manage/collections/create-collections).  
+>  Per informazioni su come creare raccolte di Configuration Manager, vedere [Come creare le raccolte in Configuration Manager](/sccm/core/clients/manage/collections/create-collections).
 
 
 
@@ -112,7 +112,7 @@ Usare le informazioni generali di questo articolo per eseguire le attività di g
 
  - **Linea di base di configurazione**: apre la finestra di dialogo **Distribuisci linee di base di configurazione**. Configurare la distribuzione di una o più linee di base di configurazione nella raccolta selezionata. Per altre informazioni, vedere [Come distribuire linee di base di configurazione](/sccm/compliance/deploy-use/deploy-configuration-baselines).  
 
- - **Sequenza di attività**: apre la **Distribuzione guidata del software**. Selezionare e configurare la distribuzione di una sequenza di attività nella raccolta selezionata. Per altre informazioni, vedere [Gestire le sequenze di attività per automatizzare le attività](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).  
+ - **Sequenza di attività**: apre la **Distribuzione guidata del software**. Selezionare e configurare la distribuzione di una sequenza di attività nella raccolta selezionata. Per altre informazioni, vedere [Gestire le sequenze di attività per automatizzare le attività](/sccm/osd/deploy-use/deploy-a-task-sequence).  
 
  - **Aggiornamenti software**: apre la **Distribuzione guidata degli aggiornamenti software**. Configurare la distribuzione degli aggiornamenti software nelle risorse della raccolta selezionata. Per altre informazioni, vedere [Gestire gli aggiornamenti software](/sccm/sum/understand/software-updates-introduction).  
 
@@ -127,7 +127,6 @@ Usare le informazioni generali di questo articolo per eseguire le attività di g
 
 #### <a name="properties"></a>Proprietà
  Per altre informazioni, vedere [Proprietà della raccolta](#BKMK_CollProp).  
-
 
 
 ## <a name="bkmk_user"></a> Come gestire le raccolte utenti  
@@ -152,10 +151,9 @@ Usare le informazioni generali di questo articolo per eseguire le attività di g
  - **Distribuzione**  
      - **Applicazione**  
      - **Programma**  
-     - **Linea di base di configurazione**   
+     - **Linea di base di configurazione**
  - **Sposta**  
  - **Proprietà**
-
 
 
 ##  <a name="BKMK_CollProp"></a> Proprietà della raccolta  
@@ -188,3 +186,32 @@ Usare le informazioni generali di questo articolo per eseguire le attività di g
 
 #### <a name="alerts"></a>Avvisi 
  Determinare quando vengono generati avvisi per lo stato del client ed Endpoint Protection. Per altre informazioni, vedere [Come configurare lo stato del client](/sccm/core/clients/deploy/configure-client-status) e [Come monitorare Endpoint Protection](/sccm/protect/deploy-use/monitor-endpoint-protection).  
+## <a name="bkmk_powershell"></a> Uso di PowerShell
+
+È possibile usare PowerShell per gestire le raccolte.  Per altre informazioni, vedere:
+
+* [Get-CMCollection](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmcollection)
+* [Set-CMCollection](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmcollection)
+* [New-CMCollection](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmcollection)
+* [Copy-CMCollection](https://docs.microsoft.com/powershell/module/configurationmanager/copy-cmcollection)
+* [Remove-CMCollection](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmcollection)
+* [Import-CMCollection](https://docs.microsoft.com/powershell/module/configurationmanager/import-cmcollection)
+* [Export-CMCollection](https://docs.microsoft.com/powershell/module/configurationmanager/export-cmcollection)
+* [Get-CMCollectionMember](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmcollectionmember)
+* [Get-CMCollectionSetting](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmcollectionsetting)
+* [Invoke-CMCollectionUpdate](https://docs.microsoft.com/powershell/module/configurationmanager/invoke-cmcollectionupdate)
+* [Add-CMCollectionMembershipRule](https://docs.microsoft.com/powershell/module/configurationmanager/add-cmcollectionmembershiprule)
+* [Set-CMCollectionPowerManagement](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmcollectionpowermanagement)
+* [Get-CMCollectionMembershipRule](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmcollectionmembershiprule)
+* [Remove-CMCollectionMembershipRule](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmcollectionmembershiprule)
+* [Get-CMCollectionDirectMembershipRule](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmcollectiondirectmembershiprule)
+* [Get-CMCollectionQueryMembershipRule](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmcollectionquerymembershiprule)
+* [Get-CMCollectionIncludeMembershipRule](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmcollectionincludemembershiprule)
+* [Add-CMCollectionToAdministrativeUser](https://docs.microsoft.com/powershell/module/configurationmanager/add-cmcollectiontoadministrativeuser)
+* [Remove-CMCollectionQueryMembershipRule](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmcollectionquerymembershiprule)
+* [Remove-CMCollectionDirectMembershipRule](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmcollectiondirectmembershiprule)
+* [Get-CMCollectionExcludeMembershipRule](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmcollectionexcludemembershiprule)
+* [Add-CMCollectionToDistributionPointGroup](https://docs.microsoft.com/powershell/module/configurationmanager/add-cmcollectiontodistributionpointgroup)
+* [Remove-CMCollectionIncludeMembershipRule](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmcollectionincludemembershiprule)
+* [Remove-CMCollectionExcludeMembershipRule](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmcollectionexcludemembershiprule)
+* [Remove-CMCollectionFromAdministrativeUser](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmcollectionfromadministrativeuser)

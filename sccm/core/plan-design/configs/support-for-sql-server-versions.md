@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f2d2b10419cec019cc3c0791c7a7aadc016c15b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: fdfb536607ce20cd9727882ad92c3ed963c69241
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133800"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499466"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>Versioni di SQL Server supportate per Configuration Manager
 
@@ -85,7 +85,8 @@ Il supporto per un Service Pack di SQL Server specifico include gli aggiornament
   <!--SMS.498506-->
 
 ### <a name="sql-server-2016-sp2-standard-enterprise"></a>SQL Server 2016 SP2 Standard, Enterprise  
-<!--514985--> È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
+<!--514985-->
+È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
 
 -   sito di amministrazione centrale  
 -   sito primario  
@@ -145,7 +146,8 @@ Il supporto per un Service Pack di SQL Server specifico include gli aggiornament
 
 ### <a name="sql-server-2017-express"></a>SQL Server 2017 Express   
 È possibile usare questa versione di SQL Server con almeno la [versione dell'aggiornamento cumulativo 2](https://support.microsoft.com/help/4052574), a partire da [Configuration Manager versione 1710](/sccm/core/plan-design/changes/whats-new-in-version-1710) per i siti seguenti:
--   Un sito secondario <!--SMS.498506-->
+-   sito secondario
+<!--SMS.498506-->
 
 ### <a name="sql-server-2016-express-sp2"></a>SQL Server 2016 Express SP2  
 È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:
@@ -187,7 +189,7 @@ Il supporto per un Service Pack di SQL Server specifico include gli aggiornament
 ### <a name="sql-server-architecture-version"></a>Versione dell'architettura di SQL Server  
  Configuration Manager richiede una versione a 64 bit di SQL Server per ospitare il database del sito.  
 
-### <a name="database-collation"></a>Regole di confronto del database   
+### <a name="database-collation"></a>Regole di confronto del database  
  In ogni sito, sia l'istanza di SQL Server usata per il sito che il database del sito devono usare le regole di confronto seguenti: **SQL_Latin1_General_CP1_CI_AS**.  
 
  Configuration Manager supporta due eccezioni a queste regole di confronto per rispettare gli standard definiti in GB18030 per l'uso in Cina. Per altre informazioni, vedere [Supporto internazionale](/sccm/core/plan-design/hierarchy/international-support).  
@@ -209,9 +211,9 @@ Il supporto per un Service Pack di SQL Server specifico include gli aggiornament
 ### <a name="sql-server-memory"></a>Memoria di SQL Server  
  Riservare la memoria per SQL Server usando SQL Server Management Studio e l'impostazione **Memoria minima per il server** in **Opzioni per la memoria del server**. Per altre informazioni su come configurare questa impostazione, vedere [Opzioni di configurazione del server Server Memory](https://docs.microsoft.com/sql/database-engine/configure-windows/server-memory-server-configuration-options).  
 
--   **Per un server di database installato nello stesso computer del server del sito**: Limitare la memoria per SQL Server a 50-80% della memoria di sistema indirizzabile disponibile.  
+-   **Per un server di database installato nello stesso computer del server del sito**: Limitare la memoria per SQL Server al 50-80% della memoria di sistema indirizzabile disponibile.  
 
--   **Per un server di database dedicato (remoto dal computer del server del sito)**: Limitare la memoria per SQL Server a 80-90% della memoria di sistema indirizzabile disponibile.  
+-   **Per un server di database dedicato (remoto dal computer del server del sito)**: Limitare la memoria per SQL Server all'80-90% della memoria di sistema indirizzabile disponibile.  
 
 -   **Per una riserva di memoria per il pool di buffer di ogni istanza di SQL Server in uso**:  
 
@@ -219,7 +221,7 @@ Il supporto per un Service Pack di SQL Server specifico include gli aggiornament
     -   Per un sito primario: impostare minimo 8 gigabyte (GB).  
     -   Per un sito secondario: impostare minimo 4 gigabyte (GB).  
 
-### <a name="sql-nested-triggers"></a>Trigger nidificati SQL   
+### <a name="sql-nested-triggers"></a>Trigger annidati SQL  
  I trigger nidificati SQL devono essere abilitati. Per altre informazioni, vedere [Configurare l'opzione di configurazione del server nested triggers](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-the-nested-triggers-server-configuration-option) 
 
 ### <a name="sql-server-clr-integration"></a>Integrazione CLR di SQL Server  

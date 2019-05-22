@@ -7,17 +7,17 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 75652cd2-a95a-46c5-91c1-6d43fc8e787e
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ad9d054f39e5d5a607b0116b438c784950c7ebd
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 8ae0ab69114a3a8aa34d5961b0335a4b922eadef
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138110"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65497856"
 ---
 # <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Elenco di controllo per installare l'aggiornamento 1606 di System Center Configuration Manager
 
@@ -136,7 +136,7 @@ Prima della versione 1606 gli intervalli di servizio si chiamavano finestre di m
 
  **Eseguire il controllo dei prerequisiti di installazione:**  prima di installare l'aggiornamento 1606, è possibile eseguire il controllo dei prerequisiti in modo indipendente dall'installazione dell'aggiornamento. Quando si installa l'aggiornamento nel sito, il controllo dei prerequisiti viene eseguito nuovamente.  
 
-Per ulteriori informazioni, vedere **Passaggio 3: Eseguire il controllo dei prerequisiti prima di installare un aggiornamento** nell'argomento [Aggiornamenti per System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
+Per altre informazioni, vedere **Passaggio 3: Eseguire il controllo dei prerequisiti prima di installare un aggiornamento** nell'argomento [Aggiornamenti per System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
 
 > [!IMPORTANT]  
 >  Quando viene eseguito il controllo dei prerequisiti in modo indipendente o nel contesto dell'installazione di un aggiornamento, il processo aggiorna alcuni file di origine del prodotto usati per le attività di manutenzione del sito. Di conseguenza, dopo aver eseguito il controllo dei prerequisiti ma prima di installare l'aggiornamento 1606, se si deve svolgere un'attività di manutenzione del sito, eseguire **Setupwfe.exe** (il programma di installazione di Configuration Manager) dalla cartella CD.Latest nel server del sito.  

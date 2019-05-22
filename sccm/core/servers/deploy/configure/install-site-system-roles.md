@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 61f5c774-7667-44ae-b8e4-a4951318b183
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d9028077d2d8fdae624ae7c10bfb7bf307f97a2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 991db8c7076f9f76515aba17df6339c133f1d63e
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128315"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65498597"
 ---
 # <a name="install-site-system-roles-for-system-center-configuration-manager"></a>Installare ruoli del sistema del sito per System Center Configuration Manager
 
@@ -24,9 +24,9 @@ ms.locfileid: "56128315"
 
 La console di System Center Configuration Manager include due procedure guidate che è possibile usare per installare i ruoli del sistema del sito:  
 
--   **Aggiunta guidata ruoli del sistema del sito**: Utilizzare questa procedura guidata per aggiungere ruoli del sistema del sito a un server del sistema del sito esistente nel sito.  
+-   **Aggiunta guidata ruoli del sistema del sito**: usare questa procedura guidata per aggiungere ruoli del sistema del sito a un server del sistema del sito esistente nel sito.  
 
--   **Creazione guidata server del sistema sito**: Utilizzare questa procedura guidata per specificare un nuovo server come server del sistema del sito, quindi installare uno o più ruoli del sistema del sito nel server. La procedura guidata è analoga alla procedura **Aggiunta guidata ruoli del sistema del sito**a eccezione della necessità di specificare nella prima pagina il nome del server da utilizzare e il sito in cui eseguire l'installazione.  
+-   **Creazione guidata server del sistema sito**: usare questa procedura guidata per specificare un nuovo server come server del sistema del sito, quindi installare uno o più ruoli del sistema del sito nel server. La procedura guidata è analoga alla procedura **Aggiunta guidata ruoli del sistema del sito**a eccezione della necessità di specificare nella prima pagina il nome del server da utilizzare e il sito in cui eseguire l'installazione.  
 
 Quando un ruolo del sistema del sito viene installato in un computer remoto (compresa un'istanza del provider SMS), l'account computer del computer remoto viene aggiunto a un gruppo locale nel server del sito. Quando il sito viene installato in un controller di dominio, il gruppo nel server del sito è un gruppo di dominio anziché locale. In questo caso, il ruolo del sistema del sito remoto non è operativo fino al riavvio del computer del ruolo del sistema del sito o all'aggiornamento del ticket Kerberos per l'account del computer remoto. Per altre informazioni, vedere [Account usati in System Center Configuration Manager](../../../../core/plan-design/hierarchy/accounts.md).  
 

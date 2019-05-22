@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 19539f4d-1667-4b4c-99a1-9995f12cf5f7
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8a55ec24a70e6059bb638d1d7ddfc7651574055
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 8506996f7b769003c937de69a9c7f659341c4294
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56134368"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501022"
 ---
 #  <a name="recover-a-configuration-manager-site"></a>Ripristinare un sito di Configuration Manager
 
@@ -133,7 +133,7 @@ Il processo per reinizializzare i dati globali o i dati del sito sostituisce i d
 - I dati copiati dal sito XYZ vengono inseriti nel database del sito per il sito ABC.
 
 #### <a name="example-scenario-1-the-primary-site-reinitializes-the-global-data-from-the-central-administration-site"></a>Scenario di esempio 1: il sito primario reinizializza i dati globali dal sito di amministrazione centrale  
-il processo di ripristino rimuove i dati globali esistenti per il sito primario nel database del sito primario e sostituisce i dati con i dati globali copiati dal sito di amministrazione centrale.
+Il processo di ripristino rimuove i dati globali esistenti per il sito primario nel database del sito primario e li sostituisce con i dati globali copiati dal sito di amministrazione centrale.
 
 #### <a name="example-scenario-2-the-central-administration-site-reinitializes-the-site-data-from-a-primary-site"></a>Scenario di esempio 2: il sito di amministrazione centrale reinizializza i dati del sito da un sito primario 
 Il processo di ripristino rimuove i dati del sito esistenti per il sito primario nel database del sito di amministrazione centrale. Sostituisce i dati con i dati del sito copiati dal sito primario. I dati del sito per altri siti primari non sono interessati.
@@ -146,27 +146,27 @@ Dopo il ripristino di un database del sito da un backup, Configuration Manager p
 #### <a name="recovered-site-is-a-central-administration-site"></a>Il sito ripristinato è un sito di amministrazione centrale
 - Backup del database all'interno del periodo di memorizzazione del rilevamento delle modifiche  
 
-     - **Dati globali**: Le modifiche apportate ai dati globali in seguito al backup vengono replicate da tutti i siti primari.  
+     - **Dati globali**: le modifiche apportate ai dati globali in seguito al backup vengono replicate da tutti i siti primari.  
 
-     - **Dati del sito**: Le modifiche apportate ai dati del sito in seguito al backup vengono replicate da tutti i siti primari.  
+     - **Dati del sito**: le modifiche apportate ai dati del sito in seguito al backup vengono replicate da tutti i siti primari.  
 
 - Backup del database antecedente al periodo di memorizzazione del rilevamento delle modifiche  
 
      - **Dati globali**: il sito di amministrazione centrale reinizializza i dati globali dal sito primario di riferimento, se specificato. Tutti gli altri siti primari reinizializzano quindi i dati globali dal sito di amministrazione centrale. Se non si specifica un sito di riferimento, tutti i siti primari reinizializzano quindi i dati globali dal sito di amministrazione centrale. Questi dati sono quelli ripristinati dal backup.  
 
-     - **Dati del sito**: Il sito di amministrazione centrale reinizializza i dati del sito da ciascun sito primario.  
+     - **Dati del sito**: il sito di amministrazione centrale reinizializza i dati del sito da ogni sito primario.  
 
 #### <a name="recovered-site-is-a-primary-site"></a>Il sito ripristinato è un sito primario
 - Backup del database all'interno del periodo di memorizzazione del rilevamento delle modifiche  
 
-     - **Dati globali**: Le modifiche apportate ai dati globali in seguito al backup vengono replicate dal sito di amministrazione centrale.  
+     - **Dati globali**: le modifiche apportate ai dati globali in seguito al backup vengono replicate dal sito di amministrazione centrale.  
 
-     - **Dati del sito**: Il sito di amministrazione centrale reinizializza i dati del sito dal sito primario. Le modifiche apportate dopo il backup vanno perse. I client riscrivono la maggior parte dei dati quando inviano le informazioni al sito primario.  
+     - **Dati del sito**: il sito di amministrazione centrale reinizializza i dati del sito dal sito primario. Le modifiche apportate dopo il backup vanno perse. I client riscrivono la maggior parte dei dati quando inviano le informazioni al sito primario.  
 
 - Backup del database antecedente al periodo di memorizzazione del rilevamento delle modifiche  
-     - **Dati globali**: Il sito primario reinizializza i dati globali dal sito di amministrazione centrale.  
+     - **Dati globali**: il sito primario reinizializza i dati globali dal sito di amministrazione centrale.  
 
-     - **Dati del sito**: Il sito di amministrazione centrale reinizializza i dati del sito dal sito primario. Le modifiche apportate dopo il backup vanno perse. I client riscrivono la maggior parte dei dati quando inviano le informazioni al sito primario.  
+     - **Dati del sito**: il sito di amministrazione centrale reinizializza i dati del sito dal sito primario. Le modifiche apportate dopo il backup vanno perse. I client riscrivono la maggior parte dei dati quando inviano le informazioni al sito primario.  
 
 
 

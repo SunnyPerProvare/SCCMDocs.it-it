@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 7341cc6e-9e08-41e4-bcc6-6c1ff12e85ca
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70e19304d63c9660a685b37db19219ba38981b18
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 52c501c30d2eb4ecea3d7830d0f0c3bb61262137
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133453"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65497223"
 ---
 # <a name="use-alerts-and-the-status-system-for-system-center-configuration-manager"></a>Usare gli avvisi e il sistema di stato per System Center Configuration Manager
 
@@ -296,7 +296,7 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
 
 - **Rimandato**: un utente amministratore ha configurato Configuration Manager per valutare lo stato dell'avviso in un secondo momento.  
 
-- **Disabled**: l'avviso è stato disattivato da un utente amministratore. Quando un avviso ha questo stato, Configuration Manager non aggiorna l'avviso nemmeno in caso di modifica dello stato.  
+- **Disabled**: l'avviso è stato disabilitato da un utente amministratore. Quando un avviso ha questo stato, Configuration Manager non aggiorna l'avviso nemmeno in caso di modifica dello stato.  
 
   Quando Configuration Manager genera un avviso è possibile eseguire una delle seguenti azioni:  
 

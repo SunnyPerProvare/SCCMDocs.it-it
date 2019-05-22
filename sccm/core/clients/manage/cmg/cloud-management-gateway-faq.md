@@ -4,18 +4,18 @@ description: Questo articolo contiene le risposte alle domande frequenti sul gat
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 09/10/2018
+ms.date: 05/02/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 4c1a128d-22fb-49f1-8e0b-36513a8dc117
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4cbb9b37c951c490c1f2245f089fa22707f4c220
-ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
+ms.openlocfilehash: 71c30e6770d667426a0aabbf03043d6fb44ecced
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57558007"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083179"
 ---
 # <a name="frequently-asked-questions-about-the-cloud-management-gateway"></a>Domande frequenti sul gateway di gestione cloud
 
@@ -40,7 +40,8 @@ Se l'organizzazione usa Microsoft Azure ExpressRoute, una procedura ottimale di 
 
 ### <a name="do-i-need-to-maintain-the-azure-virtual-machines"></a>È necessario gestire le macchine virtuali di Azure?
 
-Non è necessaria alcuna manutenzione. La progettazione del gateway di gestione cloud usa una piattaforma come servizio (PaaS) di Azure. Tramite la sottoscrizione offerta dall'utente, Configuration Manager crea le macchine virtuali (VM), le risorse di archiviazione e la rete necessari. Azure protegge e aggiorna la macchina virtuale. Queste macchine virtuali non fanno parte dell'ambiente locale, come accade con l'infrastruttura come servizio (IaaS). Il gateway di gestione cloud è un PaaS che estende l'ambiente di Configuration Manager nel cloud. 
+Non è necessaria alcuna manutenzione. La progettazione del gateway di gestione cloud usa una piattaforma come servizio (PaaS) di Azure. Tramite la sottoscrizione offerta dall'utente, Configuration Manager crea le macchine virtuali (VM), le risorse di archiviazione e la rete necessari. Azure protegge e aggiorna la macchina virtuale. Queste macchine virtuali non fanno parte dell'ambiente locale, come accade con l'infrastruttura come servizio (IaaS). Il gateway di gestione cloud è un PaaS che estende l'ambiente di Configuration Manager nel cloud. Per altre informazioni, vedere [Protezione delle distribuzioni PaaS](/azure/security/security-paas-deployments).
+
 
 ### <a name="how-can-i-ensure-service-continuity-during-service-updates"></a>Come è possibile garantire la continuità del servizio durante gli aggiornamenti del servizio?
 
@@ -53,7 +54,8 @@ Se è già stata distribuita la [gestione client basata su Internet](/sccm/core/
 
 
 ### <a name="do-the-user-accounts-have-to-be-in-the-same-azure-subscription-as-the-subscription-that-hosts-the-cmg-cloud-service"></a>Gli account utente devono trovarsi nella sottoscrizione di Azure che ospita il servizio cloud CMG?
-<!--SCCMDocs-pr issue #2873--> Se l'ambiente ha più di una sottoscrizione, è possibile distribuire CMG in qualsiasi sottoscrizione in grado di ospitare i servizi cloud di Azure. 
+<!--SCCMDocs-pr issue #2873-->
+Se l'ambiente ha più di una sottoscrizione, è possibile distribuire CMG in qualsiasi sottoscrizione in grado di ospitare i servizi cloud di Azure. 
 
 Questa domanda è comune negli scenari seguenti:  
 

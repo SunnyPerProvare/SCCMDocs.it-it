@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f14953b7c2008f6d0e9e5715a8096126e56b0b7e
-ms.sourcegitcommit: 8803a64692f3edc0422b58f6c3037a8796374cc8
+ms.openlocfilehash: f86fccc965fd0d6147c55a7c9a3ad25b81e95aff
+ms.sourcegitcommit: 417e3834a42b415a8e129327dd3c15cc0c7ec5a2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57881963"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65443094"
 ---
 # <a name="log-files-in-configuration-manager"></a>File di log in Configuration Manager
 
@@ -494,9 +494,9 @@ Il file SMS_DM.log nel server di sistema del sito registra anche le comunicazion
 
  Oltre ai file di log di Configuration Manager, esaminare i registri Applicazione Windows in Visualizzatore eventi nel server che esegue il servizio Registrazione dispositivi di rete e nel server che ospita il punto di registrazione certificati. Ad esempio, cercare i messaggi provenienti dall'origine **ServizioRegistrazioneDispositiviDiRete** . È inoltre possibile usare i seguenti file di log:  
 
--   File di log di IIS per il servizio Registrazione dispositivi di rete: **&lt;percorso\>\inetpub\logs\LogFiles\W3SVC1**  
+-   File di log di IIS per il servizio Registrazione dispositivi di rete: **%SYSTEMDRIVE%\inetpub\logs\LogFiles\W3SVC1**  
 
--   File di log di IIS per il punto di registrazione certificati: **&lt;percorso\>\inetpub\logs\LogFiles\W3SVC1**  
+-   File di log di IIS per il punto di registrazione certificati: **%SYSTEMDRIVE%\inetpub\logs\LogFiles\W3SVC1**  
 
 -   File di log criteri di registrazione dispositivi di rete: **mscep.log**  
 

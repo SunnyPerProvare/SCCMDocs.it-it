@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: a79f83be-884c-48e6-94d6-ed0a68c22e2f
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8621f759a2e79090c6cd6dac5f2f3749147cabed
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: f2312cb68940f5d0eb3d0dd33d192d07b6801d8e
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133351"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501030"
 ---
 # <a name="management-insights-in-configuration-manager"></a>Informazioni dettagliate sulla gestione in Configuration Manager
 
@@ -65,7 +65,8 @@ Le regole delle informazioni dettagliate sulla gestione rivalutano la loro appli
 
 Il file di log per le regole di Informazioni dettagliate sulla gestione è **SMS_DataEngine.log** ed è disponibile nel server del sito.
 
-<!--1357930--> A partire dalla versione 1806, alcune regole consentono di intervenire. Selezionare una regola, selezionare **Altri dettagli** e quindi, se disponibile, selezionare **Intervieni**. 
+<!--1357930-->
+A partire dalla versione 1806, alcune regole consentono di intervenire. Selezionare una regola, selezionare **Altri dettagli** e quindi, se disponibile, selezionare **Intervieni**. 
 
 A seconda della regola, questa azione presenta uno dei comportamenti seguenti:  
 
@@ -144,7 +145,8 @@ Informazioni dettagliate che consentono di semplificare la gestione tramite la p
 
 
 ### <a name="proactive-maintenance"></a>Manutenzione proattiva
-<!--1352184--> A partire dalla versione 1806, le regole in questo gruppo evidenziano potenziali problemi di configurazione che possono essere evitati tramite la manutenzione degli oggetti di Configuration Manager.    
+<!--1352184-->
+A partire dalla versione 1806, le regole in questo gruppo evidenziano potenziali problemi di configurazione che possono essere evitati tramite la manutenzione degli oggetti di Configuration Manager.    
 
 - **Gruppi di limiti senza sistemi del sito assegnati**: senza sistemi del sito assegnati, i gruppi di limiti possono essere usati solo per l'assegnazione del sito. Per altre informazioni, vedere [Configurare gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups).  
 
@@ -158,7 +160,7 @@ Informazioni dettagliate che consentono di semplificare la gestione tramite la p
 
 - **Elementi di configurazione inutilizzati**: elementi di configurazione che non fanno parte di una linea di base di configurazione e sono anteriori a 30 giorni. Per altre informazioni, vedere [Creare configurazioni di base](/sccm/compliance/deploy-use/create-configuration-baselines).  
 
-- **Aggiorna le origini di peer cache alla versione più recente del client di Configuration Manager**: identificare i client che fungono da origine di peer cache, ma non sono stati aggiornati da una versione del client precedente alla 1806. I client precedenti alla versione 1806 non possono essere usati come origine di peer cache per i client che eseguono la versione 1806 o versioni successive. Selezionare **Intervieni** per aprire una visualizzazione del dispositivo con l'elenco dei client.<!--1358008-->  
+- **Aggiorna le origini di peer cache alla versione più recente del client di Configuration Manager**: identificare i client che fungono da origine di peer cache, ma non sono stati aggiornati da una versione del client precedente alla 1806. I client precedenti alla versione 1806 non possono essere usati come origine di peer cache per i client che eseguono la versione 1806 o versioni successive. Selezionare **Intervieni** per aprire una visualizzazione del dispositivo che mostra l'elenco dei client.<!--1358008-->  
 
 
 ### <a name="security"></a>Sicurezza

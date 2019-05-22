@@ -2,7 +2,7 @@
 title: Distribuire i client in Windows
 titleSuffix: Configuration Manager
 description: Informazioni su come distribuire il client di Configuration Manager in computer Windows.
-ms.date: 07/30/2018
+ms.date: 04/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 639521ecf0084b40bf61ac3d635ab4f5e55d1321
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 3260fb68d9ce334061fc39fe8d40cd68d109655e
+ms.sourcegitcommit: 99dfe4fb9e9cfd20c44380ae442b3a5b895a0d9b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123846"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65214725"
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-configuration-manager"></a>Come distribuire i client nei computer Windows in Configuration Manager
 
@@ -38,7 +38,7 @@ Sono disponibili tre modi principali per usare il push client:
 
 - Per avviare l'installazione push client, eseguire l'Installazione guidata push client per una raccolta specifica o una risorsa all'interno di una raccolta.  
 
-- Usare l'Installazione guidata push client per installare il client di Configuration Manager nei risultati ottenuti da una [query](/sccm/core/servers/manage/queries-technical-reference). Affinché l'installazione abbia esito positivo, uno degli elementi restituiti dalla query deve essere l'attributo **ResourceID** dalla classe **Risorse di sistema**.   
+- Usare l'Installazione guidata push client per installare il client di Configuration Manager nei risultati ottenuti da una [query](/sccm/core/servers/manage/introduction-to-queries). Affinché l'installazione abbia esito positivo, uno degli elementi restituiti dalla query deve essere l'attributo **ResourceID** dalla classe **Risorse di sistema**.   
 
 Se il server del sito non può contattare il computer client o avviare il processo di installazione, ripete automaticamente il tentativo di installazione ogni ora, per sette giorni.  
 

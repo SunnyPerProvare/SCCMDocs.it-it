@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 8db92d67-5d9c-4e9c-80d0-ae6fa0dd4817
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70612d3f60802892aa99bbc4fc006b9385cb8756
-ms.sourcegitcommit: af8693048e6706ffda72572374f56e0bc7dfce2c
+ms.openlocfilehash: b4f69d686a48af3c6e710c6aff592d71de1dbff1
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57737323"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65496999"
 ---
 # <a name="the-cdlatest-folder-for-configuration-manager"></a>Cartella CD.Latest per Configuration Manager
 
@@ -62,7 +62,8 @@ Quando si vuole installare un nuovo sito primario figlio all'interno di un sito 
 Quando si espande un sito primario autonomo installando un nuovo sito di amministrazione centrale, usare il programma di installazione e i file di origine della cartella CD.Latest del sito primario. Questo processo usa i file di origine per l'installazione corrispondenti alla versione del sito primario. Per altre informazioni, vedere [Espandere un sito primario autonomo](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites#bkmk_expand).
 
 ### <a name="install-a-secondary-site"></a>Installare un sito secondario
-<!-- SCCMDocs-pr issue #3164 --> Quando si vuole installare un nuovo sito secondario all'interno di un sito primario in cui sono stati installati uno o più aggiornamenti nella console, usare i file di origine della cartella CD.Latest del sito primario. 
+<!-- SCCMDocs-pr issue #3164 -->
+Se si vuole installare un nuovo sito secondario all'interno di un sito primario in cui sono stati installati uno o più aggiornamenti nella console, usare i file di origine della cartella CD.Latest del sito primario. 
 
 Per altre informazioni, vedere [Installare un sito secondario](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites#bkmk_secondary). 
 

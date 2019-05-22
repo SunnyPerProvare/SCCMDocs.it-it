@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 1012ec24-27d9-4193-8236-918d283c7448
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 740dda5c41c28e1648eb24e75fe24a2e22784f3b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 297aa9f8756b0c7214381e5e688f26cc21645fc4
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129104"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500845"
 ---
 # <a name="policy-spy"></a>Policy Spy
 
@@ -127,7 +127,7 @@ Il riquadro Client Info (Informazioni client) visualizza un elenco di proprietà
 
 
 
-## <a name="details-pane"></a>Riquadro dettagli
+## <a name="details-pane"></a>Riquadro dei dettagli
 Il riquadro Dettagli visualizza informazioni dettagliate sulla selezione corrente. Se nessuna selezione è attiva, visualizza informazioni su Policy Spy, inclusa la versione. In caso contrario, visualizza una rappresentazione Manage Object Format (MOF) dell'elemento selezionato.
 
 Policy Spy usa la propria routine di generazione MOF per creare una visualizzazione HTML più semplice da usare della visualizzazione MOF di testo normale generata da WMI. Questo comportamento consente a Policy Spy di aggiungere le funzionalità seguenti per rendere la visualizzazione MOF più leggibile:  

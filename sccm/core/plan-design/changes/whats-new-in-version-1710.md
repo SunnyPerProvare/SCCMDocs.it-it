@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1609f162460d525a146289e70426783cd126912
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: b966654712dbe670ea200fbb4c975df26ecac542
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123434"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65495585"
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Novità della versione 1710 di System Center Configuration Manager
 
@@ -49,10 +49,10 @@ Version 1710 drops support for the following products:
 
 ## <a name="site-infrastructure"></a>Infrastruttura del sito
 
-### <a name="updates-for-peer-cache-----sms500850---"></a>Aggiornamenti per Peer cache <!-- sms500850 -->
+### <a name="updates-for-peer-cache-----sms500850---"></a>Aggiornamenti per peer cache  <!-- sms500850 -->
 A partire da questa versione, Peer cache non è più una funzionalità in versione non definitiva.  In questa versione non sono state introdotte altre modifiche per Peer cache. Per altre informazioni, vedere [Peer cache per i client di Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache).
 
-### <a name="cloud-distribution-point-support-for-azure-government-cloud------sms491428---"></a>Supporto per punti di distribuzione cloud per il cloud di Azure per enti pubblici   <!-- sms491428 -->
+### <a name="cloud-distribution-point-support-for-azure-government-cloud------sms491428---"></a>Supporto dei punti di distribuzione cloud per il cloud di Azure per enti pubblici   <!-- sms491428 -->
 È ora possibile usare [punti di distribuzione basati sul cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) nel cloud di Azure per enti pubblici.   
 
 ### <a name="inventory-default-unit-revision----sms503697---"></a>Revisione dell'unità predefinita di inventario <!-- sms503697 -->
@@ -65,9 +65,10 @@ Poiché i moderni dispositivi includono unità disco rigido con dimensioni in gi
 ## <a name="client-management"></a>Gestione dei client
 
 ### <a name="co-management-for-windows-10-devices"></a>Co-gestione per dispositivi Windows 10    
-<!-- 1350871 --> Negli aggiornamenti precedenti di Windows 10 è già possibile aggiungere un dispositivo Windows 10 ad Active Directory (AD) locale e ad Azure AD basata sul cloud allo stesso tempo (Azure AD ibrida). A partire da Configuration Manager versione 1710, la co-gestione sfrutta questo miglioramento e consente di gestire contemporaneamente i dispositivi Windows 10 versione 1709 (noto anche come Fall Creators Update) usando sia Configuration Manager sia Intune. È una soluzione che costituisce un ponte tra la gestione tradizionale e quella moderna e che consente di eseguire la transizione mediante un approccio per fasi. Per i dettagli, vedere [Co-gestione per dispositivi Windows 10](/sccm/comanage/overview).
+<!-- 1350871 -->
+Negli aggiornamenti precedenti di Windows 10 è già possibile aggiungere un dispositivo Windows 10 ad Active Directory (AD) locale e ad Azure AD basata sul cloud allo stesso tempo (Azure AD ibrida). A partire da Configuration Manager versione 1710, la co-gestione sfrutta questo miglioramento e consente di gestire contemporaneamente i dispositivi Windows 10 versione 1709 (noto anche come Fall Creators Update) usando sia Configuration Manager sia Intune. È una soluzione che costituisce un ponte tra la gestione tradizionale e quella moderna e che consente di eseguire la transizione mediante un approccio per fasi. Per i dettagli, vedere [Co-gestione per dispositivi Windows 10](/sccm/comanage/overview).
 
-### <a name="restart-computers-from-the-configuration-manager-console-----1356283---"></a>Riavviare i computer dalla console di Configuration Manager <!-- 1356283 -->
+### <a name="restart-computers-from-the-configuration-manager-console-----1356283---"></a>Riavviare i computer dalla console di Configuration Manager  <!-- 1356283 -->
 A partire da questa versione, è possibile usare la console di Configuration Manager per identificare i dispositivi client che richiedono il riavvio e quindi usare un'azione di notifica client per riavviarli.
 
 Vedere [Come gestire i client in System Center Configuration Manager](/sccm/core/clients/manage/manage-clients#restart-clients)
@@ -88,7 +89,8 @@ Sono inclusi i miglioramenti seguenti:
 Per altre informazioni sull'uso della funzionalità Esegui script, vedere [Creare ed eseguire script](../../../apps/deploy-use/create-deploy-scripts.md).
 
 ### <a name="new-mobile-application-management-policy-settings"></a>Nuove impostazioni dei criteri di gestione delle applicazioni mobili
-<!-- 1324760 --> Sono state aggiunte le impostazioni seguenti relative ai criteri di gestione delle applicazioni per dispositivi mobili:
+<!-- 1324760 -->
+Sono state aggiunte le impostazioni seguenti relative ai criteri di gestione delle applicazioni per dispositivi mobili:
 - **Disabilita la sincronizzazione dei contatti**: impedisce all'app di salvare i dati nell'app dei contatti nativa del dispositivo.
 - **Disabilita stampa**: impedisce all'app di stampare dati aziendali o dell'istituto di istruzione.
 
@@ -101,7 +103,8 @@ Per aggiungere un'icona per l'app in Software Center, vedere [Creare applicazion
 
 ## <a name="operating-system-deployment"></a>Distribuzione del sistema operativo
  > [!TIP]   
- > <!-- 1354281 --> A partire da Windows 10 versione 1709 (denominata anche Fall Creators Update), Windows Media include più edizioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento o di un'immagine del sistema operativo, assicurarsi di selezionare un'[edizione utilizzabile da Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
+ > <!-- 1354281 -->
+ > A partire da Windows 10 versione 1709 (denominata anche Fall Creators Update), Windows Media include più edizioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento o di un'immagine del sistema operativo, assicurarsi di selezionare un'[edizione utilizzabile da Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
 
 ### <a name="add-child-task-sequences-to-a-task-sequence"></a>Aggiungere sequenze di attività figlio a una sequenza di attività
 <!-- 1261338 -->
@@ -111,13 +114,14 @@ Per aggiungere un'icona per l'app in Software Center, vedere [Creare applicazion
 Per altre informazioni sulla sequenza di attività figlio, vedere [Sequenza di attività figlio](/sccm/osd/understand/task-sequence-steps#child-task-sequence).
 
 ## <a name="software-center-customization"></a>Personalizzazione di Software Center
-<!-- 1351224 --> È possibile aggiungere elementi di branding aziendale e specificare la visibilità delle schede in Software Center. È possibile aggiungere il nome specifico della società per Software Center, impostare un tema di colori per la configurazione di Software Center, impostare il logo della società e impostare le schede visibili per i dispositivi client.
+<!-- 1351224 -->
+È possibile aggiungere elementi di branding aziendale e specificare la visibilità delle schede in Software Center. È possibile aggiungere il nome specifico della società per Software Center, impostare un tema di colori per la configurazione di Software Center, impostare il logo della società e impostare le schede visibili per i dispositivi client.
 
 Per altre informazioni, vedere [Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager](/sccm/apps/plan-design/plan-for-and-configure-application-management).
 
 ## <a name="software-updates"></a>Aggiornamenti software
 
-### <a name="surface-driver-updates-----1098490---"></a>Aggiornamenti dei driver di Surface <!-- 1098490 -->
+### <a name="surface-driver-updates-----1098490---"></a>Aggiornamenti driver di Surface  <!-- 1098490 -->
 A partire da questa versione, la gestione degli aggiornamenti dei driver di Surface non è più una funzionalità in versione non definitiva.  
 
 
@@ -180,7 +184,7 @@ Per ridurre al minimo i rischi relativi alla compatibilità, i profili VPN esist
 
 Per altre informazioni, vedere [Profili VPN nei dispositivi mobili in System Center Configuration Manager](../../../mdm/deploy-use/create-vpn-profiles.md).
 
-### <a name="limited-support-for-cryptography-next-generation-cng-certificates----1356191---"></a>Supporto limitato per certificati CNG (Cryptography: Next Generation) <!-- 1356191 -->
+### <a name="limited-support-for-cryptography-next-generation-cng-certificates----1356191---"></a>Supporto limitato per certificati (Cryptography: Next Generation) <!-- 1356191 -->
 
 Configuration Manager offre un supporto limitato per CNG (Cryptography: Next Generation). I client di Configuration Manager possono usare certificati di autenticazione client con chiave privata nel provider di archiviazione chiavi (KSP) CNG. Con il supporto per i provider di archiviazione chiavi, i client di Configuration Manager supportano chiavi private basate sull'hardware, ad esempio TPM KSP per i certificati di autenticazione client PKI.
 
@@ -199,7 +203,8 @@ Per altre informazioni, vedere [Panoramica dei certificati CNG](../network/cng-c
 È possibile [creare e distribuire criteri di Windows Defender Application Guard](/sccm/protect/deploy-use/create-deploy-application-guard-policy) usando Endpoint Protection di Configuration Manager.
 
 ### <a name="device-guard-policy-changes"></a>Modifiche apportate ai criteri di Device Guard
-<!-- 1355092 --> Sono state apportate le tre modifiche seguenti in relazione ai criteri di Device Guard:
+<!-- 1355092 -->
+Sono state apportate le tre modifiche seguenti in relazione ai criteri di Device Guard:
 
 - I criteri di Device Guard sono stati rinominati in criteri di controllo delle applicazioni di Windows Defender. Ad esempio la **procedura guidata Crea criterio di Device Guard** è ora denominata **Create Windows Defender Application Control policy wizard** (Creazione di criteri di controllo delle applicazioni di Windows Defender).
 - I dispositivi che usano la versione Fall Creators Update per Windows 1709 non devono essere riavviati per applicare i criteri di controllo delle applicazioni di Windows Defender. Anche se il riavvio è sempre il comportamento predefinito, è possibile [disattivare i riavvii](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager).

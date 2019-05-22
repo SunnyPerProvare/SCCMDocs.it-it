@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 68dc6acd-5848-47a4-b4c1-ffa40e47890b
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b395cc8a19a3aab86f3ad40302673d41afe4885
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 7cc2e1783843f600f88b78e0db0cc6b8b8db0f55
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123366"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500992"
 ---
 # <a name="reference-for-maintenance-tasks-for-system-center-configuration-manager"></a>Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager
 
@@ -42,7 +42,7 @@ Questo argomento fornisce informazioni dettagliate su ognuna delle attività di 
 -   **Sito primario**: Non abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina dati richiesta applicazione obsoleti**: Usare questa attività per eliminare le richieste di applicazioni obsolete dal database. Per altre informazioni sulle richieste per le applicazioni, vedere [Creare e distribuire un'applicazione con System Center Configuration Manager](/sccm/apps/get-started/create-and-deploy-an-application).  
+**Elimina dati richiesta applicazione obsoleti**: Usare questa attività per eliminare dal database le richieste di applicazioni obsolete. Per altre informazioni sulle richieste per le applicazioni, vedere [Creare e distribuire un'applicazione con System Center Configuration Manager](/sccm/apps/get-started/create-and-deploy-an-application).  
 
 -   Sito di amministrazione centrale: Non disponibile
 -   **Sito primario**: Abilitato    
@@ -71,25 +71,25 @@ Questo argomento fornisce informazioni dettagliate su ognuna delle attività di 
 - Sito secondario: non disponibile
 
 
-**Elimina file raccolti obsoleti**: Usare questa attività per eliminare le informazioni obsolete sui file raccolti dal database. Questa attività elimina anche i file raccolti dalla struttura delle cartelle del server del sito nel sito selezionato. Per impostazione predefinita, le cinque copie più recenti dei file raccolti sono archiviate sul server del sito nella directory **Inboxes\sinv.box\FileCol**. Per altre informazioni, vedere [Introduzione all'inventario software in System Center Configuration Manager](/sccm/core/clients/manage/inventory/introduction-to-software-inventory).  
+**Elimina file raccolti obsoleti**: Usare questa attività per eliminare dal database le informazioni obsolete sui file raccolti. Questa attività elimina anche i file raccolti dalla struttura delle cartelle del server del sito nel sito selezionato. Per impostazione predefinita, le cinque copie più recenti dei file raccolti sono archiviate sul server del sito nella directory **Inboxes\sinv.box\FileCol**. Per altre informazioni, vedere [Introduzione all'inventario software in System Center Configuration Manager](/sccm/core/clients/manage/inventory/introduction-to-software-inventory).  
 
 -   Sito di amministrazione centrale: Non disponibile    
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina dati di associazione computer obsoleti**: Usare questa attività per eliminare i dati di associazione computer della distribuzione del sistema operativo obsoleti dal database. Queste informazioni vengono usate come parte del completamento dei ripristini dello stato utente. Per altre informazioni sulle associazioni computer, vedere [Gestire lo stato utente in System Center Configuration Manager](../../../osd/get-started/manage-user-state.md).  
+**Elimina dati di associazione computer obsoleti**: Usare questa attività per eliminare dal database i dati obsoleti di associazione computer della distribuzione del sistema operativo. Queste informazioni vengono usate come parte del completamento dei ripristini dello stato utente. Per altre informazioni sulle associazioni computer, vedere [Gestire lo stato utente in System Center Configuration Manager](../../../osd/get-started/manage-user-state.md).  
 
 -   Sito di amministrazione centrale: Non disponibile    
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina dati di rilevamento eliminazione obsoleti**: Usare questa attività per eliminare i dati obsoleti dal database creato dalle visualizzazioni di estrazione. Per impostazione predefinita, le visualizzazioni di estrazione sono disattivate. È possibile abilitarle soltanto mediante Configuration Manager SDK. A meno che le visualizzazioni di estrazione non siano abilitate, per questa attività non sono presenti dati da eliminare.  
+**Elimina dati di rilevamento eliminazione obsoleti**: Usare questa attività per eliminare dal database i dati obsoleti creati dalle visualizzazioni di estrazione. Per impostazione predefinita, le visualizzazioni di estrazione sono disattivate. È possibile abilitarle soltanto mediante Configuration Manager SDK. A meno che le visualizzazioni di estrazione non siano abilitate, per questa attività non sono presenti dati da eliminare.  
 
 -   **Sito di amministrazione centrale**: Abilitato    
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina record di cancellazione dati dispositivo obsoleto**: Usare questa attività per eliminare i dati obsoleti sulle azioni di cancellazione dei dispositivi mobili dal database. Per altre informazioni sulla cancellazione dei dispositivi mobili, vedere [Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando System Center Configuration Manager](/sccm/mdm/deploy-use/wipe-lock-reset-devices).  
+**Elimina record di cancellazione dati dispositivo obsoleto**: Usare questa attività per eliminare dal database i dati obsoleti sulle azioni di cancellazione dei dati dei dispositivi mobili. Per altre informazioni sulla cancellazione dei dispositivi mobili, vedere [Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando System Center Configuration Manager](/sccm/mdm/deploy-use/wipe-lock-reset-devices).  
 
 -   Sito di amministrazione centrale: Non disponibile    
 -   **Sito primario**: Abilitato    
@@ -101,19 +101,19 @@ Questo argomento fornisce informazioni dettagliate su ognuna delle attività di 
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina dati di individuazione obsoleti**: Usare questa attività per eliminare i dati di individuazione obsoleti dal database. Questi dati possono includere i record risultanti dall'individuazione heartbeat, l'individuazione di rete e i metodi di individuazione di Active Directory Domain Services (Sistema, Utente e Gruppo). Questa operazione rimuoverà anche i dispositivi obsoleti contrassegnati come non autorizzati. Quando questa attività viene eseguita in un sito, i dati associati a tale sito vengono eliminati e le modifiche vengono replicate in altri siti. Per informazioni sull'individuazione, vedere [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
+**Elimina dati di individuazione obsoleti**: Usare questa attività per eliminare dal database i dati di individuazione obsoleti. Questi dati possono includere i record risultanti dall'individuazione heartbeat, l'individuazione di rete e i metodi di individuazione di Active Directory Domain Services (Sistema, Utente e Gruppo). Questa operazione rimuoverà anche i dispositivi obsoleti contrassegnati come non autorizzati. Quando questa attività viene eseguita in un sito, i dati associati a tale sito vengono eliminati e le modifiche vengono replicate in altri siti. Per informazioni sull'individuazione, vedere [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
 
 -   Sito di amministrazione centrale: Non disponibile    
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina dati di utilizzo punti di distribuzione obsoleti**: Usare questa attività per eliminare dal database i dati obsoleti per i punti di distribuzione che sono archiviati da più tempo rispetto a un tempo specificato.  
+**Elimina dati di utilizzo punti di distribuzione obsoleti**: Usare questa attività per eliminare dal database i dati obsoleti per i punti di distribuzione che sono archiviati da più tempo rispetto a un intervallo specificato.  
 
 -   **Sito di amministrazione centrale**: Abilitato    
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina dati cronologia stato integrità di Endpoint Protection obsoleti**: Usare questa attività per eliminare le informazioni di stato obsolete per Endpoint Protection dal database. Per altre informazioni sui dati sullo stato di Endpoint Protection, vedere [Come monitorare Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/monitor-endpoint-protection.md).  
+**Elimina dati cronologia stato integrità di Endpoint Protection obsoleti**: Usare questa attività per eliminare dal database le informazioni di stato obsolete per Endpoint Protection. Per altre informazioni sui dati sullo stato di Endpoint Protection, vedere [Come monitorare Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/monitor-endpoint-protection.md).  
 
 -   Sito di amministrazione centrale: Non disponibile    
 -   **Sito primario**: Abilitato    
@@ -127,13 +127,13 @@ Questa attività si applica ai dispositivi registrati da Microsoft Intune (modal
 -   **Sito primario**: Non abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina cronologia inventario obsoleta**: Usare questa attività per eliminare dal database i dati di inventario che sono archiviati da più tempo rispetto a un tempo specificato. Per informazioni sulla cronologia di inventario, vedere [How to use Resource Explorer to view hardware inventory in System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md) (Come usare Esplora inventario risorse per visualizzare l'inventario hardware in System Center Configuration Manager).  
+**Elimina cronologia inventario obsoleta**: Usare questa attività per eliminare dal database i dati di inventario che sono archiviati da più tempo rispetto a un intervallo specificato. Per informazioni sulla cronologia di inventario, vedere [How to use Resource Explorer to view hardware inventory in System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md) (Come usare Esplora inventario risorse per visualizzare l'inventario hardware in System Center Configuration Manager).  
 
 -   Sito di amministrazione centrale: Non disponibile    
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina dati registro obsoleti**: Usare questa attività per eliminare dal database i dati di registro obsoleti usati per la risoluzione dei problemi. Questi dati non sono correlati alle operazioni dei componenti di Configuration Manager.  
+**Elimina dati registro obsoleti**: Usare questa attività per eliminare dal database i dati dei log obsoleti usati per la risoluzione dei problemi. Questi dati non sono correlati alle operazioni dei componenti di Configuration Manager.  
 
 > [!IMPORTANT]  
 > Per impostazione predefinita, questa attività viene eseguita ogni giorno in ogni sito. Su un sito di amministrazione centrale e nei siti primari, l'attività elimina i dati che hanno più di 30 giorni. Quando si usa SQL Server Express su un sito secondario, assicurarsi che questa attività venga eseguita ogni giorno e che elimini i dati non attivi da sette giorni.  
@@ -166,25 +166,25 @@ Questa attività si applica ai dispositivi registrati da Microsoft Intune (modal
 -   **Sito primario**: Abilitato    
 -   **Sito secondario**: Abilitato  
 
-**Elimina dati di controllo software obsoleti**: Usare questa attività per eliminare dal database i dati obsoleti per il controllo software che sono archiviati da più tempo rispetto a un tempo specificato. Per altre informazioni, vedere [Controllo del software in System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
+**Elimina dati di controllo software obsoleti**: Usare questa attività per eliminare dal database i dati obsoleti per il controllo software che sono archiviati da più tempo rispetto a un intervallo specificato. Per altre informazioni, vedere [Controllo del software in System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
 
 -   Sito di amministrazione centrale: Non disponibile    
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina dati di riepilogo di controllo software obsoleti**: Usare questa attività per eliminare dal database i dati obsoleti di riepilogo per il controllo software che sono archiviati da più tempo rispetto a un tempo specificato. Per altre informazioni, vedere [Controllo del software in System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
+**Elimina dati di riepilogo di controllo software obsoleti**: Usare questa attività per eliminare dal database i dati obsoleti di riepilogo per il controllo software che sono archiviati da più tempo rispetto a un intervallo specificato. Per altre informazioni, vedere [Controllo del software in System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
 
 -   Sito di amministrazione centrale: Non disponibile    
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina messaggi di stato obsoleti**: Usare questa attività per eliminare dal database i dati dei messaggi di stato obsoleti come configurati nelle regole di filtro dello stato. Per informazioni, vedere la sezione Configurare il sistema di stato di Configuration Manager dell'argomento [Usare gli avvisi e il sistema di stato per System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+**Elimina messaggi di stato obsoleti**: Usare questa attività per eliminare dal database i dati dei messaggi di stato obsoleti configurati nelle regole di filtro dello stato. Per informazioni, vedere la sezione Configurare il sistema di stato di Configuration Manager dell'argomento [Usare gli avvisi e il sistema di stato per System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
 -   **Sito di amministrazione centrale**: Abilitato    
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina dati sulle minacce obsoleti**: Usare questa attività per eliminare dal database i dati minaccia obsoleti di Endpoint Protection che sono archiviati da più tempo rispetto a un tempo specificato. Per informazioni su Endpoint Protection, vedere [Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  
+**Elimina dati sulle minacce obsoleti**: Usare questa attività per eliminare dal database i dati minaccia obsoleti di Endpoint Protection che sono archiviati da più tempo rispetto a un intervallo specificato. Per informazioni su Endpoint Protection, vedere [Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  
 
 -   Sito di amministrazione centrale: Non disponibile    
 -   **Sito primario**: Abilitato    
@@ -196,7 +196,7 @@ Questa attività si applica ai dispositivi registrati da Microsoft Intune (modal
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina dati di affinità utente dispositivo obsoleti**: Usare questa attività per eliminare i dati di affinità utente dispositivo obsoleti dal database. Per altre informazioni, vedere [Collegare utenti e dispositivi mediante l'affinità utente dispositivo in System Center Configuration Manager](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md).  
+**Elimina dati di affinità utente dispositivo obsoleti**: Usare questa attività per eliminare dal database i dati di affinità utente dispositivo obsoleti. Per altre informazioni, vedere [Collegare utenti e dispositivi mediante l'affinità utente dispositivo in System Center Configuration Manager](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md).  
 
 -   Sito di amministrazione centrale: Non disponibile    
 -   **Sito primario**: Abilitato    
@@ -207,7 +207,7 @@ Questa attività si applica ai dispositivi registrati da Microsoft Intune (modal
 -   **Sito primario**: Abilitato
 -   Sito secondario: Non disponibile
 
-**Elimina dati di individuazione client non attivi**: Usare questa attività per eliminare i dati di individuazione per i client non attivi dal database. I client sono contrassegnati come non attivi in base a configurazioni relative allo stato client oppure quando riportano il flag obsoleto.
+**Elimina dati di individuazione client non attivi**: Usare questa attività per eliminare dal database i dati di individuazione per i client inattivi. I client sono contrassegnati come non attivi in base a configurazioni relative allo stato client oppure quando riportano il flag obsoleto.
 
 Questa attività funziona solo nelle risorse che sono client di Configuration Manager. È diversa dall'attività **Elimina dati di individuazione obsoleti** che elimina qualsiasi record dei dati di individuazione obsoleti. Quando questa attività viene eseguita su un sito, rimuove i dati dal database da tutti i siti di una gerarchia. Per ulteriori informazioni, vedere [How to configure client status in System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).  
 
@@ -218,13 +218,13 @@ Questa attività funziona solo nelle risorse che sono client di Configuration Ma
 -   **Sito primario**: Non abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina avvisi obsoleti**: Usare questa attività per eliminare dal database gli avvisi scaduti che sono archiviati da più tempo rispetto a un tempo specificato. Per ulteriori informazioni, vedere [Usare gli avvisi e il sistema di stato per System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+**Elimina avvisi obsoleti**: Usare questa attività per eliminare dal database gli avvisi scaduti che sono archiviati da più tempo rispetto a un intervallo specificato. Per ulteriori informazioni, vedere [Usare gli avvisi e il sistema di stato per System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
 -   **Sito di amministrazione centrale**: Abilitato    
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina dati di individuazione client obsoleti**: Usare questa attività per eliminare i record client obsoleti dal database. Un record contrassegnato come obsoleto è stato in genere sostituito da un record più recente per lo stesso client. Il record più recente diventa il record corrente del client. Per informazioni sull'individuazione, vedere [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
+**Elimina dati di individuazione client obsoleti**: Usare questa attività per eliminare dal database i record dei client obsoleti. Un record contrassegnato come obsoleto è stato in genere sostituito da un record più recente per lo stesso client. Il record più recente diventa il record corrente del client. Per informazioni sull'individuazione, vedere [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
 
 > [!IMPORTANT]  
 > Quando abilitata, configurare questa attività in modo che venga eseguita con un intervallo maggiore rispetto a Individuazione heartbeat. Il client viene quindi abilitato per l'invio di un record dell'individuazione heartbeat che imposta correttamente lo stato obsoleto.  
@@ -270,13 +270,13 @@ Per migliorare le prestazioni, gli indici del database di Configuration Manager 
 -   **Sito primario**: Non abilitato    
 -   **Sito secondario**: Non abilitato  
 
-**Riepiloga dati software installato**: Usare questa attività per riepilogare i dati per il software installato da più record in un unico record generale. L'attività di riepilogo dei dati può ridurre la quantità di dati memorizzati nel database di Configuration Manager. Per altre informazioni, vedere [Introduzione all'inventario software in System Center Configuration Manager](../../clients/manage/inventory/introduction-to-software-inventory.md).  
+**Riepiloga dati software installato**: Usare questa attività per riepilogare in un unico record generale i dati di più record sul software installato. L'attività di riepilogo dei dati può ridurre la quantità di dati memorizzati nel database di Configuration Manager. Per altre informazioni, vedere [Introduzione all'inventario software in System Center Configuration Manager](../../clients/manage/inventory/introduction-to-software-inventory.md).  
 
 -   Sito di amministrazione centrale: Non disponibile    
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Riepiloga dati utilizzo file di controllo software**: Usare questa attività per riepilogare i dati di più record di utilizzo file di controllo software in un unico record generale. L'attività di riepilogo dei dati può ridurre la quantità di dati memorizzati nel database di Configuration Manager.
+**Riepiloga dati utilizzo file di controllo software**: Usare questa attività per riepilogare in un unico record generale i dati di più record sull'utilizzo di file di controllo software. L'attività di riepilogo dei dati può ridurre la quantità di dati memorizzati nel database di Configuration Manager.
 
 È possibile usare questa attività insieme all'attività **Riepiloga dati utilizzo mensile di controllo software** per riepilogare i dati di controllo software e ridurre lo spazio usato nel database di Configuration Manager. Per altre informazioni, vedere [Controllo del software in System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
 
@@ -284,7 +284,7 @@ Per migliorare le prestazioni, gli indici del database di Configuration Manager 
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Riepiloga dati utilizzo mensile di controllo software**: Usare questa attività per riepilogare i dati di più record di utilizzo mensile di controllo software in un unico record generale. L'attività di riepilogo dei dati può ridurre la quantità di dati memorizzati nel database di Configuration Manager.
+**Riepiloga dati utilizzo mensile di controllo software**: Usare questa attività per riepilogare in un unico record generale i dati di più record sull'utilizzo mensile del controllo software. L'attività di riepilogo dei dati può ridurre la quantità di dati memorizzati nel database di Configuration Manager.
 
 È possibile usare questa attività insieme all'attività **Riepiloga dati utilizzo file di controllo software** per riepilogare i dati di controllo software e ridurre lo spazio usato nel database di Configuration Manager. Per altre informazioni, vedere [Controllo del software in System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
 

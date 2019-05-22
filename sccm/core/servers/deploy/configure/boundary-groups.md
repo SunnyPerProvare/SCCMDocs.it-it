@@ -2,21 +2,21 @@
 title: Configurare gruppi di limiti
 titleSuffix: Configuration Manager
 description: Aiutare i client a trovare i sistemi del sito usando i gruppi di limiti per organizzare logicamente i percorsi di rete correlati chiamati limiti
-ms.date: 11/27/2018
+ms.date: 05/09/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 5db2926f-f03e-49c7-b44b-e89b1a5a6779
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1062cd5983c3eb0d1353b6387b7d9ee507df3b4
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 011f2cb69ec2de6070bc4f2266dbf73a0e1e7843
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132640"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65498907"
 ---
 # <a name="configure-boundary-groups-for-configuration-manager"></a>Configurare gruppi di limiti per Configuration Manager
 
@@ -41,7 +41,7 @@ I client usano un gruppo di limiti per gli scopi seguenti:
     - Punti di gestione preferiti  
 
         > [!Note]  
-        > Se si usano i punti di gestione preferiti, è necessario abilitare questa opzione per la gerarchia e non dall'interno della configurazione del gruppo di limiti. Per altre informazioni, vedere [Abilitare l'uso dei punti di gestione preferiti](#to-enable-use-of-preferred-management-points).  
+        > Se si usano i punti di gestione preferiti, è necessario abilitare questa opzione per la gerarchia e non dall'interno della configurazione del gruppo di limiti. Per altre informazioni, vedere [Abilitare l'uso dei punti di gestione preferiti](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_proc-prefer).  
 
 
 
@@ -185,13 +185,15 @@ Il file di log della sequenza di attività **smsts.log** mostra la priorità del
 
 ### <a name="bkmk_bgoptions"></a> Opzioni del gruppo di limiti per download peer
 
-<!--1356193--> A partire dalla versione 1806, i gruppi di limiti includono le impostazioni aggiuntive seguenti per offrire maggiore controllo sulla distribuzione di contenuti nell'ambiente:  
+<!--1356193-->
+A partire dalla versione 1806, i gruppi di limiti includono le impostazioni aggiuntive seguenti per offrire un maggior controllo sulla distribuzione di contenuti nell'ambiente:  
 
 - [Consenti i download peer in questo gruppo di limiti](#bkmk_bgoptions1)  
 
 - [Durante i download peer, usa solo i peer entro la stessa subnet](#bkmk_bgoptions2)  
 
-<!--1358749--> La versione 1810 aggiunge le opzioni seguenti:  
+<!--1358749-->
+Nella versione 1810 sono state aggiunte le opzioni seguenti:  
 
 - [Preferisci i punti di distribuzione rispetto ai peer entro la stessa subnet](#bkmk_bgoptions3)  
 
@@ -280,7 +282,8 @@ Per altre informazioni, vedere [Passaggio manuale dei client a un nuovo punto di
 
 
 ## <a name="management-points"></a>Punti di gestione
-<!-- 1324594 --> A partire dalla versione 1802, è possibile configurare relazioni di fallback per i punti di gestione tra gruppi di limiti. Questo comportamento consente un maggiore controllo per i punti di gestione usati dai client. Nella scheda **Relazioni** delle proprietà del gruppo di limiti è presente una colonna per il punto di gestione. Quando si aggiunge un nuovo gruppo di limiti di fallback, attualmente il tempo di fallback per il punto di gestione è sempre zero (0). Questo comportamento corrisponde all'opzione **Comportamento predefinito** del gruppo di limiti predefinito del sito.
+<!-- 1324594 -->
+A partire dalla versione 1802, è possibile configurare relazioni di fallback per i punti di gestione tra gruppi di limiti. Questo comportamento consente un maggiore controllo per i punti di gestione usati dai client. Nella scheda **Relazioni** delle proprietà del gruppo di limiti è presente una colonna per il punto di gestione. Quando si aggiunge un nuovo gruppo di limiti di fallback, attualmente il tempo di fallback per il punto di gestione è sempre zero (0). Questo comportamento corrisponde all'opzione **Comportamento predefinito** del gruppo di limiti predefinito del sito.
 
 Nelle versioni precedenti si verifica comunemente un problema in presenza di un punto di gestione protetto in una rete protetta. I client nella rete aziendale principale ricevono criteri che includono questo punto di gestione protetto, anche se non possono comunicare con esso attraverso un firewall. Per risolvere il problema, usare l'opzione **Non eseguire mai il fallback** per fare in modo che i client eseguano il fallback solo nei punti di gestione con cui possono comunicare.
 

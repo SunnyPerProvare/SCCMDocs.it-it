@@ -2,7 +2,7 @@
 title: Punto di distribuzione pull
 titleSuffix: Configuration Manager
 description: Informazioni sulle configurazioni e le limitazioni per l'uso di un punto di distribuzione pull con Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 05/06/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5336db0bd16d4845650bae775f2eff895e617fb
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 488fa5251711c8d9c7702e2b240a6f10602d447f
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56142273"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499291"
 ---
 # <a name="use-a-pull-distribution-point-with-configuration-manager"></a>Usare un punto di distribuzione pull con Configuration Manager
 
@@ -120,7 +120,7 @@ Quando si configura il punto di distribuzione pull, specificare uno o più punti
 
 -   Usare Configuration Manager SDK per specificare un punto di distribuzione di origine configurato per HTTPS. Per usare un punto di distribuzione di origine configurato per HTTPS, installare il client di Configuration Manager nel punto di distribuzione pull.  
 
--   A partire dalla versione 1806, se gli uffici remoti hanno una connessione a Internet più efficiente oppure si vuole ridurre il carico sui collegamenti WAN, usare come origine un [punto di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) in Microsoft Azure. Per comunicare con Microsoft Azure, il punto di distribuzione pull richiede l'accesso a Internet. Il contenuto deve essere distribuito nel punto di distribuzione cloud di origine.<!--1321554-->  
+-   A partire dalla versione 1806, se gli uffici remoti hanno una connessione a Internet più efficiente oppure si vuole ridurre il carico sui collegamenti WAN, usare come origine un [punto di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) in Microsoft Azure. Per comunicare con Microsoft Azure, il punto di distribuzione pull richiede l'accesso a Internet. Il contenuto deve essere distribuito al punto di distribuzione cloud di origine.<!--1321554-->  
 
     > [!Note]  
     > Questa funzionalità comporta l'addebito alla sottoscrizione di Azure per l'archiviazione dei dati e il traffico di rete in uscita. Per altre informazioni, vedere il [costo per l'uso di punti di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#bkmk_cost).  

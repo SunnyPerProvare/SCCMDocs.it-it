@@ -2,7 +2,7 @@
 title: Monitorare la co-gestione
 titleSuffix: Configuration Manager
 description: Usare il dashboard di co-gestione per esaminare le informazioni sui dispositivi con co-gestione.
-ms.date: 01/14/2019
+ms.date: 04/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c731692bc2277cc5ce97e079387b392ca09ff3e
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: f10e71bbf3099bad4d367f068c4a5f9e098f97eb
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "56755394"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083268"
 ---
 # <a name="how-to-monitor-co-management-in-configuration-manager"></a>Come monitorare la co-gestione in Configuration Manager
 
@@ -172,6 +172,7 @@ Per altre informazioni, vedere [MDM Registration Error Values](https://docs.micr
 
 vengono creati due criteri nel nodo **Distribuzioni** dell'area di lavoro **Monitoraggio**. Un criterio è per il gruppo pilota e uno per la produzione. Questi criteri segnalano solo il numero di dispositivi in cui Configuration Manager ha applicato il criterio. Non tengono conto del numero di dispositivi registrati in Intune, che è un requisito necessario prima che i dispositivi possano essere co-gestiti.  
 
+Il criterio di produzione (CoMgmtSettingsProd) è destinato alla raccolta **Tutti i sistemi**. Prevede una condizione di applicabilità che verifica il tipo e la versione del sistema operativo. Se il sistema operativo client o server non è Windows 10, il criterio non viene applicato e non vengono eseguite azioni.
 
 
 ## <a name="wmi-device-data"></a>Dati del dispositivo WMI

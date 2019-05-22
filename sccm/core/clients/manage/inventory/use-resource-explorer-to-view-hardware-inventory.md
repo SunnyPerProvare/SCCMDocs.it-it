@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
 ms.assetid: 375912f5-436d-4315-bdbe-d77afee6c9f3
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc4958e83c73da91aa31fb8ac0e1b84375218ac9
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: c55b7b5bc4effdb1bf1f13dbe0248aa56ad2abe1
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128205"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499965"
 ---
 # <a name="how-to-use-resource-explorer-to-view-hardware-inventory-in-configuration-manager"></a>Come usare Esplora inventario risorse per visualizzare l'inventario hardware in Configuration Manager
 
@@ -58,7 +58,8 @@ Esplora inventario risorse contiene le sezioni seguenti relative all'inventario 
 
 
 ## <a name="bkmk_bigint"></a> Utilizzo di valori interi di grandi dimensioni
-<!--1357880--> Nelle versioni di Configuration Manager 1802 e precedenti, l'inventario hardware prevede un limite per i valori interi maggiori di 4.294.967.296 (2^32). Questo limite può essere raggiunto per attributi come le dimensioni delle unità disco rigido in byte. Il punto di gestione non elabora valori interi oltre questo limite, quindi nessun valore viene archiviato nel database. 
+<!--1357880-->
+Nelle versioni di Configuration Manager 1802 e precedenti, l'inventario hardware prevede un limite per i valori interi maggiori di 4.294.967.296 (2^32). Questo limite può essere raggiunto per attributi come le dimensioni delle unità disco rigido in byte. Il punto di gestione non elabora valori interi oltre questo limite, quindi nessun valore viene archiviato nel database. 
 
 A partire dalla versione 1806, il limite è stato aumentato a 18.446.744.073.709.551.616 (2^64). 
 

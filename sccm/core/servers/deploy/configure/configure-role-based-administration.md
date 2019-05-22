@@ -6,16 +6,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 57413dd3-b2f8-4a5f-b27f-8464d357caff
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 554e67e171fe5b800d231d257105531dcd633baf
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 73583d4dea93cefcbe9dd9615671606112cc8860
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131575"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65498939"
 ---
 # <a name="configure-role-based-administration-for-configuration-manager"></a>Configurare l'amministrazione basata su ruoli per Configuration Manager   
 
@@ -175,7 +175,7 @@ In Configuration Manager l'amministrazione basata su ruoli combina ruoli di sicu
 
 -   **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**: questa opzione associa l'utente amministratore all'ambito **Tutto** e alle raccolte **Tutti i sistemi** e **Tutti gli utenti e i gruppi utente**. I ruoli di sicurezza assegnati all'utente definiscono l'accesso agli oggetti.  
 
--   **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**: questa opzione associa l'utente amministratore agli stessi ambiti di protezione e alle stesse raccolte associate all'account utilizzato per configurare l'utente amministratore. Questa opzione supporta l'aggiunta o la rimozione di raccolte e ruoli di sicurezza per personalizzare l'ambito amministrativo dell'utente amministratore.  
+-   **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**: questa opzione associa l'utente amministratore agli stessi ambiti di protezione e alle stesse raccolte associate all'account usato per configurare l'utente amministratore. Questa opzione supporta l'aggiunta o la rimozione di raccolte e ruoli di sicurezza per personalizzare l'ambito amministrativo dell'utente amministratore.  
 
 -   **Associa ruoli di protezione assegnati a raccolte e ambiti di protezione specifici**: questa opzione consente di creare associazioni specifiche tra raccolte, ruoli di sicurezza e ambiti di protezione specifici per l'utente.  
 

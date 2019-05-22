@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: ed931751-18f2-4230-a09e-a0a329fbfa1c
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59376c5b9846e32cc8b63666956424a11211f1c0
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 679f62bb38bab06c074c97e92ff7d3adcae80f1b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130793"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501453"
 ---
 # <a name="about-discovery-methods-for-system-center-configuration-manager"></a>Informazioni sui metodi di individuazione per System Center Configuration Manager
 
@@ -109,9 +109,9 @@ L'individuazione gruppo Active Directory non supporta gli attributi estesi di Ac
 
 È possibile configurare gli ambiti di individuazione seguenti per controllare come questo metodo deve ricercare le informazioni:  
 
--   **Location** (Percorso): utilizzare un percorso se si desidera effettuare la ricerca di uno o più contenitori di Active Directory. Questa opzione di ambito supporta una ricerca ricorsiva dei contenitori Active Directory specificati. Questo processo cerca tutti i contenitori figlio nel contenitore specificato. e continua la ricerca finché non vengono più trovati contenitori figlio.  
+-   **Location** (Percorso): usare un percorso se si vuole eseguire la ricerca in uno o più contenitori di Active Directory. Questa opzione di ambito supporta una ricerca ricorsiva dei contenitori Active Directory specificati. Questo processo cerca tutti i contenitori figlio nel contenitore specificato. e continua la ricerca finché non vengono più trovati contenitori figlio.  
 
--   **Gruppi**: utilizzare i gruppi se si desidera effettuare la ricerca di uno o più gruppi Active Directory specifici. È possibile configurare **Dominio Active Directory** per usare il dominio e la foresta predefiniti o limitare la ricerca a un singolo controller di dominio. Inoltre, è possibile specificare uno o più gruppi in cui effettuare la ricerca. Se non si specifica almeno un gruppo, viene effettuata la ricerca in tutti i gruppi trovati nel percorso specificato del **Dominio Active Directory** .  
+-   **Gruppi**: usare i gruppi se si vuole eseguire la ricerca in uno o più gruppi Active Directory specifici. È possibile configurare **Dominio Active Directory** per usare il dominio e la foresta predefiniti o limitare la ricerca a un singolo controller di dominio. Inoltre, è possibile specificare uno o più gruppi in cui effettuare la ricerca. Se non si specifica almeno un gruppo, viene effettuata la ricerca in tutti i gruppi trovati nel percorso specificato del **Dominio Active Directory** .  
 
 > [!CAUTION]  
 >  Quando si configura un ambito di individuazione, scegliere solo i gruppi che è necessario individuare. Questo perché l'individuazione gruppo Active Directory prova a individuare tutti i membri di ogni gruppo nell'ambito di individuazione. L'individuazione di gruppi di grandi dimensioni può richiedere un uso estensivo della larghezza di banda e di risorse Active Directory.  
@@ -267,7 +267,7 @@ Per eseguire questo metodo è possibile usare gli **account** seguenti:
 Usare questo metodo per individuare la topologia della rete e i dispositivi di rete che hanno un indirizzo IP. L'individuazione della rete consente di cercare nella rete le risorse con IP abilitato eseguendo una query delle entità seguenti: 
 - Server che eseguono un'implementazione Microsoft di DHCP
 - Cache ARP (Address Resolution Protocol) in router di rete
-- dispositivi abilitati SNMP
+- Dispositivi abilitati SNMP
 - Domini Active Directory  
 
 Per usare Individuazione di rete, è necessario prima specificare il *livello* di individuazione da eseguire. È inoltre possibile configurare uno o più meccanismi di individuazione che consentono a Individuazione di rete di eseguire query relative a dispositivi o segmenti di rete. È inoltre possibile configurare impostazioni che consentono di controllare le azioni di individuazione nella rete. Infine, è possibile definire una o più pianificazioni relative all'esecuzione di Individuazione di rete.  

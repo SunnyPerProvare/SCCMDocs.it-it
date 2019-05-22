@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: b87ac054-9b37-4725-a3f3-2340cfb10bff
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11a67aa698340cd100ded1ca64b9a97960bc6b9b
-ms.sourcegitcommit: 56ec6933cf7bfc93842f55835ad336ee3a1c6ab5
+ms.openlocfilehash: c57042e6ea4db7b244b8617bbef99633d9026d1b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57211670"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501118"
 ---
 # <a name="checklist-for-installing-update-1810-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1810 di Configuration Manager
 
@@ -146,7 +146,8 @@ Per altre informazioni, vedere  [Aggiornare i client](/sccm/core/clients/manage
 Per definire un periodo durante il quale possono essere installati gli aggiornamenti a un server del sito, usare gli intervalli di servizio, che permettono di controllare quando i siti nella gerarchia installano l'aggiornamento. Per altre informazioni, vedere  [Intervalli di servizio per i server del sito](/sccm/core/servers/manage/service-windows).
 
 #### <a name="review-supported-extensions"></a>Verificare le estensioni supportate
-<!--SCCMdocs#587--> Se si estende Configuration Manager usando altri prodotti Microsoft o di partner Microsoft, verificare che la versione 1810 sia supportata da tali prodotti. Rivolgersi al fornitore del prodotto per verificare questa informazione. Ad esempio, vedere le [note sulla versione](/sccm/mdt/release-notes) di Microsoft Deployment Toolkit.
+<!--SCCMdocs#587-->
+Se si estende Configuration Manager con altri prodotti Microsoft o di partner Microsoft, verificare che la versione 1810 sia supportata da tali prodotti. Rivolgersi al fornitore del prodotto per verificare questa informazione. Ad esempio, vedere le [note sulla versione](/sccm/mdt/release-notes) di Microsoft Deployment Toolkit.
 
 #### <a name="run-the-setup-prerequisite-checker"></a>Eseguire il controllo dei prerequisiti di installazione   
 Quando l'aggiornamento risulta**Disponibile** nella console, è possibile eseguire il controllo dei prerequisiti in modo indipendente prima di procedere all'installazione. Quando si installa l'aggiornamento nel sito, il controllo dei prerequisiti viene eseguito nuovamente.

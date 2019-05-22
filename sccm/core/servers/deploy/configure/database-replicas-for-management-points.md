@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: b06f781b-ab25-4d9a-b128-02cbd7cbcffe
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ce8cff2be91950ee7e43cd96f03ab41990170c9
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 3f03b5b01b443f1611d514e9a7473a93c8e0e5a0
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56139620"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499552"
 ---
 # <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>Repliche di database per i punti di gestione per System Center Configuration Manager
 
@@ -426,7 +426,7 @@ Per supportare la notifica client con una replica di database per un punto di ge
 
 2. Successivamente, nel server di replica di database, configurare Service Broker per la notifica client ed esportare il certificato di Service Broker. A tale scopo, eseguire una stored procedure di SQL Server che consente di configurare Service Broker ed esportare il certificato come una singola azione. Quando si esegue la stored procedure, è necessario specificare l'FQDN del server di replica di database, il nome del database delle repliche di database e specificare un percorso per l'esportazione del file di certificato.  
 
-    Eseguire la seguente query per configurare i dettagli richiesti nel server di replica di database e per esportare il certificato per il server di replica di database: **EXEC sp_BgbConfigSSBForReplicaDB '&lt;FQDN SQL Server di replica\>', '&lt;Nome database di replica\>', '&lt;Percorso file di backup certificato\>'**  
+    Eseguire la query seguente per configurare i dettagli necessari nel server di replica di database e per esportare il certificato per il server di replica di database: **EXEC sp_BgbConfigSSBForReplicaDB '&lt;FQDN SQL Server di replica\>', '&lt;Nome database di replica\>', '&lt;Percorso file di backup certificato\>'**  
 
    > [!NOTE]  
    >  Quando il server di replica di database non si trova nell'istanza predefinita di SQL Server, per questo passaggio è necessario specificare il nome dell'istanza oltre al nome del database di replica. A tale scopo, sostituire **&lt;Replica Database Name\>** con **&lt;Instance name\\Replica Database Name\>**.  
@@ -435,18 +435,18 @@ Per supportare la notifica client con una replica di database per un punto di ge
 
 3. Usare **SQL Server Management Studio** per connettersi al database del sito primario. Dopo aver eseguito la connessione al database dei siti primari, eseguire una query per importare il certificato e specificare la porta Service Broker in uso nel server di replica di database, l'FQDN del server di replica di database e il nome del database delle repliche di database. In questo modo, il database dei siti primari viene configurato per usare Service Broker per comunicare con il database del server di replica di database.  
 
-    Eseguire la seguente query per importare il certificato dal server di replica di database e specificare i dettagli richiesti: **EXEC sp_BgbConfigSSBForRemoteService 'REPLICA', '&lt;Porta SQL Service Broker\>', '&lt;Percorso file certificato\>', '&lt;FQDN SQL Server di replica\>', '&lt;Nome database replica\>'**  
+    Eseguire la query seguente per importare il certificato dal server di replica di database e specificare i dettagli necessari: **EXEC sp_BgbConfigSSBForRemoteService 'REPLICA', '&lt;Porta SQL Service Broker\>', '&lt;Percorso file certificato\>', '&lt;FQDN SQL Server di replica\>', '&lt;Nome database replica\>'**  
 
    > [!NOTE]  
    >  Quando il server di replica di database non si trova nell'istanza predefinita di SQL Server, per questo passaggio è necessario specificare il nome dell'istanza oltre al nome del database di replica. A tale scopo, sostituire **&lt;Replica Database Name\>** con **\Instance name\\Replica Database Name\>**.  
 
-4. Successivamente, nel server di database del sito, eseguire il seguente comando per esportare il certificato per il server di database del sito: **EXEC sp_BgbCreateAndBackupSQLCert '&lt;Percorso file di backup certificato\>'**  
+4. Successivamente, nel server di database del sito eseguire il comando seguente per esportare il certificato per il server di database del sito: **EXEC sp_BgbCreateAndBackupSQLCert '&lt;Percorso file di backup certificato\>'**  
 
     Dopo aver esportato il certificato dal server di database del sito, inserire una copia del certificato nel server di replica di database.  
 
 5. Usare **SQL Server Management Studio** per connettersi al database del server di replica di database. Dopo aver eseguito la connessione al database del server di replica di database, eseguire una query per importare il certificato e specificare il codice del sito del sito primario e la porta Service Broker in uso nel server di database del sito. In questo modo, il server di replica di database viene configurato per usare Service Broker per comunicare con il database del sito primario.  
 
-    Eseguire la seguente query per importare il certificato dal server di database del sito: **EXEC sp_BgbConfigSSBForRemoteService '&lt;Codice sito\>', '&lt;Porta SQL Service Broker\>', '&lt;Percorso file certificato\>'**  
+    Eseguire la query seguente per importare il certificato dal server di database del sito: **EXEC sp_BgbConfigSSBForRemoteService '&lt;Codice sito\>', '&lt;Porta SQL Service Broker\>', '&lt;Percorso file certificato\>'**  
 
    Alcuni minuti dopo aver completato la configurazione del database del sito e del database della replica di database, Notification Manager imposta la conversazione di Service Broker nel sito primario per la notifica client dal database del sito primario alla replica di database.  
 
@@ -458,7 +458,7 @@ Per supportare la notifica client con una replica di database per un punto di ge
 -   Per ogni replica di database successiva in cui si usa questo script di configurazione, aggiornare il nome descrittivo per il certificato.  A questo scopo, modificare la riga **$enrollment.CertificateFriendlyName = "ConfigMgr SQL Server Identification Certificate"** e sostituire **ConfigMgr SQL Server Identification Certificate** con un nuovo nome, ad esempio  **ConfigMgr SQL Server Identification Certificate1**.  
 
 ##  <a name="BKMK_DBReplicaOps"></a> Gestire le configurazioni di replica di database  
- Quando si usa una replica di database in un sito, usare le informazioni nelle seguenti sezioni per integrare i processi di disinstallazione di un replica di database, disinstallazione di un sito che usa una replica di database oppure spostamento del database del sito in una nuova installazione di SQL Server. Quando si usano le informazioni delle seguenti sezioni per eliminare delle pubblicazioni, usare le informazioni disponibili per l'eliminazione di repliche transazionali per la versione di SQL Server usata per la replica di database. Se ad esempio si usa SQL Server 2008 R2, vedere [Procedura: Eliminazione di una pubblicazione (programmazione Transact-SQL della replica)](http://go.microsoft.com/fwlink/p/?LinkId=273934).  
+ Quando si usa una replica di database in un sito, usare le informazioni nelle seguenti sezioni per integrare i processi di disinstallazione di un replica di database, disinstallazione di un sito che usa una replica di database oppure spostamento del database del sito in una nuova installazione di SQL Server. Quando si usano le informazioni delle seguenti sezioni per eliminare delle pubblicazioni, usare le informazioni disponibili per l'eliminazione di repliche transazionali per la versione di SQL Server usata per la replica di database. Se ad esempio si usa SQL Server 2008 R2, vedere [Procedura: Eliminare una pubblicazione (programmazione Transact-SQL della replica)](http://go.microsoft.com/fwlink/p/?LinkId=273934).  
 
 > [!NOTE]  
 >  Dopo aver ripristinato il database di un sito che era stato configurato per le repliche di database, prima di poter usare le repliche è necessario riconfigurare ciascuna replica del database, ricreando sia le pubblicazioni sia le sottoscrizioni.  

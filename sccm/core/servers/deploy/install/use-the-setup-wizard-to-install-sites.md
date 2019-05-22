@@ -6,16 +6,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 1f703376-5f2c-4fd2-8209-7028c931ddc7
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67c82a884a5d3df3b1e61e1f9f2c109ff2b7fef6
-ms.sourcegitcommit: af8693048e6706ffda72572374f56e0bc7dfce2c
+ms.openlocfilehash: 92c51158412b8bc9737c4851fc43dc2a7776488b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57737345"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501266"
 ---
 # <a name="use-the-setup-wizard-to-install-configuration-manager-sites"></a>Usare l'installazione guidata per installare i siti di Configuration Manager
 
@@ -327,9 +327,9 @@ Usare la console di Configuration Manager per installare un sito secondario.
 
     - **Installa e configura una copia locale di SQL Express nel computer del sito secondario**  
 
-        - **Porta del servizio di SQL Server**: specificare la porta del servizio di SQL Server per l'utilizzo da parte di SQL Server Express. La porta del servizio è in genere configurata per l'utilizzo della porta TCP 1433, ma è possibile configurare un'altra porta.  
+        - **Porta del servizio di SQL Server**: specificare la porta del servizio di SQL Server usata da SQL Server Express. La porta del servizio è in genere configurata per l'utilizzo della porta TCP 1433, ma è possibile configurare un'altra porta.  
 
-        - **Porta di SQL Server Service Broker**: specificare la porta di SQL Server Service Broker (SSB) per l'utilizzo da parte di SQL Server Express. La porta di Service Broker è in genere configurata per l'utilizzo della porta TCP 4022, ma è possibile configurare un'altra porta. Specificare una porta valida che non sia usata da nessun altro sito o servizio e che non sia soggetta ad alcuna restrizione del firewall.  
+        - **Porta di SQL Server Service Broker**: specificare la porta di SQL Server Service Broker (SSB) usata da SQL Server Express. La porta di Service Broker è in genere configurata per l'utilizzo della porta TCP 4022, ma è possibile configurare un'altra porta. Specificare una porta valida che non sia usata da nessun altro sito o servizio e che non sia soggetta ad alcuna restrizione del firewall.  
 
     - **Usa un'istanza di SQL Server esistente**  
 
@@ -339,7 +339,7 @@ Usare la console di Configuration Manager per installare un sito secondario.
 
         - **Nome database del sito di Configuration Manager**: specificare il nome da usare per il database del sito secondario.  
 
-        - **Porta di SQL Server Service Broker**: specificare la porta di SQL Server Service Broker (SSB) per l'utilizzo da parte di SQL Server. Specificare una porta valida che non sia usata da nessun altro sito o servizio e che non sia soggetta ad alcuna restrizione del firewall.  
+        - **Porta di SQL Server Service Broker**: specificare la porta di SQL Server Service Broker (SSB) usata da SQL Server. Specificare una porta valida che non sia usata da nessun altro sito o servizio e che non sia soggetta ad alcuna restrizione del firewall.  
 
     > [!TIP]  
     > Per un elenco delle versioni di SQL Server supportate da System Center Configuration Manager, vedere [Versioni di SQL Server supportate](/sccm/core/plan-design/configs/support-for-sql-server-versions).  
@@ -371,13 +371,13 @@ Usare la console di Configuration Manager per installare un sito secondario.
 
     - **Spazio riservato nell'unità (MB)**: il valore configurato per questa impostazione determina la quantità di spazio disponibile in un'unità prima che Configuration Manager scelga un'altra unità e continui il processo di copia su tale unità. I file di contenuto possono estendersi su più unità.  
 
-    - **Percorsi contenuto**: Specificare i percorsi del contenuto per la condivisione di pacchetti e raccolte di contenuti. Configuration Manager copia i contenuti nel percorso del contenuto principale finché la quantità di spazio libero non raggiunge il valore specificato per **Spazio riservato nell'unità (MB)**.  
+    - **Percorsi contenuto**: specificare i percorsi del contenuto per la condivisione di pacchetti e raccolte di contenuti. Configuration Manager copia i contenuti nel percorso del contenuto principale finché la quantità di spazio libero non raggiunge il valore specificato per **Spazio riservato nell'unità (MB)**.  
 
     Per impostazione predefinita, i percorsi contenuto sono impostati su **Automatico**. Il percorso del contenuto primario è impostato sull'unità disco con più spazio al momento dell'installazione. Il percorso secondario viene impostato per l'unità disco con lo spazio libero maggiore dopo l'unità principale. Quando le unità primaria e secondaria raggiungono il limite di spazio riservato, Configuration Manager seleziona un'altra unità disponibile con la maggiore quantità di spazio libero e continua il processo di copia.  
 
 9. Nella pagina **Convalida contenuto** specificare se convalidare l'integrità dei file di contenuto nel punto di distribuzione.  
 
-    - Quando si abilita la convalida del contenuto in base a una pianificazione, Configuration Manager avvia il processo all'orario pianificato. Tutto il contenuto nel punto di distribuzione viene verificato.  
+    - Quando si abilita la convalida del contenuto in base a una pianificazione, Configuration Manager avvia il processo all'orario pianificato Tutto il contenuto nel punto di distribuzione viene verificato.  
 
     - È anche possibile configurare la **priorità di convalida del contenuto**.  
 

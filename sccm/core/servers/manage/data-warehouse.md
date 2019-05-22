@@ -2,30 +2,31 @@
 title: Data warehouse
 titleSuffix: Configuration Manager
 description: Punto di servizio e database del data warehouse per Configuration Manager
-ms.date: 11/27/2018
+ms.date: 05/09/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: aaf43e69-68b4-469a-ad58-9b66deb29057
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4630504cbbf4b00fbfa12b666e26b93fcda09ae5
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 02990fa09e18a9e46914ff622ed20f4cbb958f33
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130174"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501145"
 ---
 #  <a name="the-data-warehouse-service-point-for-configuration-manager"></a>Punto di servizio del data warehouse per Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-<!--1277922--> Usare il punto di servizio del data warehouse per archiviare e creare report di dati cronologici a lungo termine per la distribuzione di Configuration Manager.
+<!--1277922-->
+Usare il punto di servizio del data warehouse per archiviare e creare report di dati cronologici a lungo termine per la distribuzione di Configuration Manager.
 
 > [!Note]  
-> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
 
 
 Il data warehouse supporta fino a 2 TB di dati, con timestamp per il rilevamento delle modifiche. Il data warehouse archivia i dati sincronizzando i dati automaticamente dal database del sito di Configuration Manager al database del data warehouse. Queste informazioni diventano quindi accessibili dal punto di Reporting Services. I dati sincronizzati nel database del data warehouse vengono mantenuti per tre anni. Periodicamente, un'attività predefinita rimuove i dati che hanno superato i tre anni.
@@ -60,7 +61,7 @@ A partire dalla versione 1810, è possibile sincronizzare un maggior numero di t
 
     - **DB_owner** o **DB_reader** con autorizzazioni di **esecuzione** nel database del sito di primo livello.  
 
-- Il database del data warehouse richiede l'uso di SQL Server 2012 o versione successiva, edizione Standard, Enterprise o Datacenter. La versione di SQL Server per il data warehouse non deve essere la stessa del server di database del sito.<!--SCCMDocs issue 662-->  
+- Il database del data warehouse richiede l'uso di SQL Server 2012 o versione successiva, edizione Standard, Enterprise o Datacenter. La versione di SQL Server per il data warehouse non deve necessariamente essere la stessa del server di database del sito.<!--SCCMDocs issue 662-->  
 
 - Il database warehouse supporta le configurazioni di SQL Server seguenti:  
 
@@ -84,7 +85,7 @@ Ogni gerarchia supporta un'unica istanza di questo ruolo, in qualsiasi sistema d
 
 Per installare il ruolo, usare l'**Aggiunta guidata ruoli del sistema del sito** o la **Creazione guidata server del sistema sito**. Per altre informazioni, vedere [Installare i ruoli del sistema del sito](/sccm/core/servers/deploy/configure/install-site-system-roles). Nella pagina **Selezione ruolo del sistema** della procedura guidata selezionare il ruolo**Punto di servizio del data warehouse**. 
 
-Quando si installa il ruolo, Configuration Manager crea il database del data warehouse nell'istanza di SQL Server specificata dall'utente. Se si specifica il nome di un database esistente, Configuration Manager non crea un nuovo database. Usa invece quello specificato. Questo processo è analogo allo [spostamento del database del data warehouse in un nuovo server SQL Server](#move-the-data-warehouse-database).
+Quando si installa il ruolo, Configuration Manager crea il database del data warehouse nell'istanza di SQL Server specificata dall'utente. Se si specifica il nome di un database esistente, Configuration Manager non crea un nuovo database. Usa invece quello specificato. Questo processo è analogo allo [spostamento del database del data warehouse in un nuovo server SQL Server](#move-the-database).
 
 
 ### <a name="configure-properties"></a>Configurare le proprietà

@@ -2,27 +2,28 @@
 title: Support Center
 titleSuffix: Configuration Manager
 description: Risolvere i problemi dei client di Configuration Manager con Support Center.
-ms.date: 03/06/2019
+ms.date: 05/10/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: c631197d-7daa-4faa-9e22-980cd6d604c2
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 367c293794eea86ef8b7b7fb0e331ce0602b325e
-ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
+ms.openlocfilehash: 9246ea46787b1db466b8aca5d8a602617c80e26a
+ms.sourcegitcommit: ab9f2a7fb7ea3a0c65808fce2975ab25a670281f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57562041"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65612522"
 ---
 # <a name="support-center-for-configuration-manager"></a>Support Center per Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-<!--1357489--> A partire dalla versione 1810, è possibile usare Support Center per risolvere i problemi dei client, visualizzare i log in tempo reale o acquisire lo stato di un client di Configuration Manager per l'analisi successiva. Support Center è un singolo strumento che consolida numerosi strumenti di risoluzione dei problemi per gli amministratori. 
+<!--1357489-->
+A partire dalla versione 1810, è possibile usare il Supporto tecnico per risolvere i problemi dei client, visualizzare i log in tempo reale o acquisire lo stato di un client di Configuration Manager per l'analisi successiva. Support Center è un singolo strumento che consolida numerosi strumenti di risoluzione dei problemi per gli amministratori. 
 
 
 
@@ -46,7 +47,7 @@ Support Center include Support Center Viewer, un visualizzatore che consente al 
 
 ### <a name="support-center-log-file-viewer"></a>Visualizzatore di file di log di Support Center
 
-Support Center include un visualizzatore di log moderno. Questo strumento sostituisce CMTrace. OneTrace ha un'interfaccia personalizzabile, in cui è possibile usare schede e finestre ancorabili. Offre un livello di presentazione veloce e può caricare file di log di grandi dimensioni in pochi secondi.
+Support Center include un visualizzatore di log moderno. Questo strumento sostituisce CMTrace e include un'interfaccia personalizzabile, con il supporto per schede e finestre ancorabili. Offre un livello di presentazione veloce e può caricare file di log di grandi dimensioni in pochi secondi.
 
 
 ### <a name="powershell-cmdlets"></a>Cmdlet di PowerShell
@@ -79,7 +80,8 @@ Dopo averlo installato, cercare gli elementi seguenti nel menu Start nel gruppo 
 ## <a name="known-issues"></a>Problemi noti 
 
 #### <a name="you-cant-install-the-latest-version-if-an-older-version-is-already-installed"></a>Non è possibile installare la versione più recente se è già installata una versione precedente
-<!--SCCMDocs-pr issue #3090--> Se è già stata installata una versione precedente di Support Center, l'installazione della versione 1810 ha esito negativo. Questo problema è dovuto alla modalità di controllo delle versioni dei file, tra la versione originale e la versione più recente. Per risolvere questo problema, disinstallare prima di tutto la versione meno recente di Support Center. Installare quindi la versione più recente da Configuration Manager versione 1810.
+<!--SCCMDocs-pr issue #3090-->
+Se è già stata installata una versione precedente del Supporto tecnico, l'installazione della versione 1810 non riesce. Questo problema è dovuto alla modalità di controllo delle versioni dei file, tra la versione originale e la versione più recente. Per risolvere questo problema, disinstallare prima di tutto la versione meno recente di Support Center. Installare quindi la versione più recente da Configuration Manager versione 1810.
 
 #### <a name="remote-connections-must-include-computer-name-or-domain-as-part-of-the-user-name"></a>Le connessioni remote devono includere il nome del computer o il dominio come parte del nome utente
 Se ci si connette a un client remoto da Support Center, al momento di stabilire la connessione è necessario specificare il nome del computer o il nome di dominio per l'account utente. Se si usa un nome computer o un nome di dominio abbreviato (ad esempio `.\administrator`), la connessione avrà esito positivo, ma Support Center non raccoglierà i dati dal client. 
@@ -93,7 +95,8 @@ Quando ci si connette ai client remoti usando il cmdlet [New-CMMachineConnection
 dove `<connection_name>` è il nome della connessione remota.
 
 #### <a name="application-deployment-evaluation-cycle-request-isnt-sent-correctly-to-remote-machines"></a>La richiesta del ciclo di valutazione della distribuzione dell'applicazione non viene inviata correttamente ai computer remoti
-<!--2849356--> In Support Center, se si seleziona **Application deployment evaluation** (Valutazione distribuzione applicazione) dall'azione **Invoke trigger** (Richiama trigger) nella scheda **Content** (Contenuto), questa azione avvia un'attività che valuta le applicazioni distribuite. Se si è connessi a un client locale, vengono valutate le distribuzioni delle applicazioni sia per computer che per utente. Se si è connessi a un client remoto, invece, vengono valutate solo le distribuzioni delle applicazioni per computer.
+<!--2849356-->
+Nel Supporto tecnico, se si seleziona **Application deployment evaluation** (Valutazione distribuzione applicazione) dall'azione **Invoke trigger** (Richiama trigger) nella scheda **Content** (Contenuto), questa azione avvia un'attività che valuta le applicazioni distribuite. Se si è connessi a un client locale, vengono valutate le distribuzioni delle applicazioni sia per computer che per utente. Se si è connessi a un client remoto, invece, vengono valutate solo le distribuzioni delle applicazioni per computer.
 
 
 ## <a name="next-steps"></a>Passaggi successivi

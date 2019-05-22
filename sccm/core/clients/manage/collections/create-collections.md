@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e79ec4b19ad45c49438ef273bcaf031754cf7e7
-ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
+ms.openlocfilehash: 40cb1a96771181b395ec2f628e0f0c3c2efe29b7
+ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57558134"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65673306"
 ---
 # <a name="how-to-create-collections-in-configuration-manager"></a>Come creare raccolte in Configuration Manager
 
@@ -154,7 +154,7 @@ si crea una raccolta con una regola di inclusione raccolte e una di esclusione r
 
     - **Escludere le risorse in cui non è installato il client di Configuration Manager**: queste risorse non verranno visualizzate nei risultati della ricerca.  
 
-    - **Valore**: immettere un valore per la ricerca del nome di attributo selezionato. Usare il simbolo di percentuale `%` come carattere jolly. Ad esempio:  
+    - **Valore**: immettere un valore per la ricerca del nome di attributo selezionato. Usare il simbolo di percentuale `%` come carattere jolly. Ad esempio,  
         - Per cercare i computer con un nome NetBIOS che inizia con "M", immettere `M%` in questo campo.  
         - Per cercare gli utenti nell'unità organizzativa Contoso, immettere `Contoso` in questo campo.
 
@@ -171,7 +171,7 @@ Nella finestra di dialogo **Proprietà regola di query** specificare le informaz
 
 - **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Selezionare un valore in **Risorsa di sistema** per cercare i dati di inventario restituiti dai computer client o **Computer sconosciuto** per effettuare una selezione tra i valori restituiti dai computer sconosciuti.  
 
-- **Modifica istruzione query**: apre la finestra di dialogo **Proprietà istruzione query**, dove è possibile modificare una query da usare come regola per la raccolta. Per altre informazioni sulle query, vedere [Riferimento tecnico per le query](/sccm/core/servers/manage/queries-technical-reference).  
+- **Modifica istruzione query**: apre la finestra di dialogo **Proprietà istruzione query**, dove è possibile modificare una query da usare come regola per la raccolta. Per altre informazioni sulle query, vedere [Introduzione alle query](/sccm/core/servers/manage/introduction-to-queries).  
 
 
 ### <a name="bkmk-category"></a> Regola categoria di dispositivi
@@ -218,3 +218,10 @@ Per altre informazioni sull'esportazione di raccolte, vedere [Come gestire le ra
 
 5. Completare la procedura guidata per importare la raccolta. La nuova raccolta viene visualizzata nel nodo **Raccolte utenti** o **Raccolte dispositivi** dell'area di lavoro **Asset e conformità** . Aggiornare o ricaricare la console di Configuration Manager per visualizzare i membri della raccolta appena importata.  
 
+## <a name="bkmk_powershell"></a> Uso di PowerShell
+
+È possibile usare PowerShell per creare e importare raccolte.  Per altre informazioni, vedere:
+
+* [New-CMCollection](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmcollection)
+* [Set-CMCollection](https://docs.microsoft.com/powershell/module/ConfigurationManager/Set-CMCollection)
+* [Import-CMCollection](https://docs.microsoft.com/powershell/module/ConfigurationManager/Import-CMCollection)

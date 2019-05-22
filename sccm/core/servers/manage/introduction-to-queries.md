@@ -2,27 +2,29 @@
 title: Introduzione alle query
 titleSuffix: Configuration Manager
 description: Creare ed eseguire query per individuare gli oggetti che soddisfano i criteri delle query stesse all'interno di una gerarchia di System Center Configuration Manager.
-ms.date: 10/06/2016
+ms.date: 05/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 03d1b3a9-41db-4d3a-a70e-e05ab5dc8141
-author: aczechowski
+author: mestew
+ms.author: mstewart
 manager: dougeby
-ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3812953df11daff9d768aa808edd0bcb08ab66f5
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: a976b7beab3650ccad58ea41bca644dc24425ef0
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56124814"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65497407"
 ---
 # <a name="introduction-to-queries-in-system-center-configuration-manager"></a>Introduzione alle query in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 È possibile creare ed eseguire query per individuare gli oggetti che soddisfano i criteri delle query stesse all'interno di una gerarchia di System Center Configuration Manager. Questi oggetti possono essere tipi specifici di computer o gruppi di utenti. Le query possono restituire molti tipi di oggetti di Configuration Manager, ad esempio siti, raccolte, applicazioni e dati di inventario.  
+
+## <a name="query-creation-overview"></a>Panoramica sulla creazione di query
 
  Quando si crea una query, è necessario specificare un minimo di due parametri: dove eseguire la ricerca e cosa si vuole cercare. Ad esempio, per trovare la quantità di spazio disponibile su disco in tutti i computer in un sito di Configuration Manager è possibile creare una query per cercare lo spazio disponibile su disco nella classe di attributi **Disco logico** e nell'attributo **Spazio disponibile (MB)**.  
 
@@ -32,5 +34,6 @@ ms.locfileid: "56124814"
 
  È anche possibile importare una query in una regola di query all'interno di una raccolta di Configuration Manager. Per altre informazioni, vedere [How to create collections in System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md) (Come creare le raccolte in System Center Configuration Manager).  
 
-## <a name="see-also"></a>Vedere anche  
- [Riferimento tecnico per le query per System Center Configuration Manager](../../../core/servers/manage/queries-technical-reference.md)
+## <a name="next-steps"></a>Passaggi successivi
+
+ [Come creare query in System Center Configuration Manager](../../../core/servers/manage/create-queries.md)

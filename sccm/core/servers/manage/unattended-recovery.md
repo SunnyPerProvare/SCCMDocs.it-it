@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 828c31d1-3d70-4412-b1a8-c92e7e504d39
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0da207f92ea2c11266831a0c03f5b846654e83a4
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 34072fe18bc2d0d751938ff536f6d4ba8e4c378b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129001"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500958"
 ---
 # <a name="unattended-site-recovery-for-configuration-manager"></a>Ripristino automatico del sito per Configuration Manager   
 
@@ -44,7 +44,7 @@ ms.locfileid: "56129001"
 
     -   **Richiesto:** Sì
     -   **Valori:** RecoverCCAR
-    -   **Dettagli:** Consente di ripristinare un sito di amministrazione centrale
+    -   **Dettagli:** ripristina un sito di amministrazione centrale
 
 
 -   **Nome chiave:** CDLatest
@@ -104,7 +104,7 @@ ms.locfileid: "56129001"
 
     -   **Richiesto:** Forse
     -   **Valori:** &lt;PercorsoSetBackupDatabaseSito\>
-    -   **Dettagli:** Specifica il percorso per il set di backup del database del sito. La chiave **BackupLocation** è richiesta quando viene configurato il valore **1** o **4** per la chiave **ServerRecoveryOptions** e viene configurato il valore **10** per la chiave **DatabaseRecoveryOptions** .
+    -   **Dettagli:** Specifica il percorso del set di backup del database del sito. La chiave **BackupLocation** è richiesta quando viene configurato il valore **1** o **4** per la chiave **ServerRecoveryOptions** e viene configurato il valore **10** per la chiave **DatabaseRecoveryOptions** .
 
 
 **Opzioni**
@@ -193,7 +193,7 @@ ms.locfileid: "56129001"
 
     -   **Richiesto:** Sì
     -   **Valori:** *&lt;NomeDatabaseSito\>* o *&lt;NomeIstanza\>*\\*&lt;NomeDatabaseSito\>*
-    -   **Dettagli:** Il nome del database SQL Server da creare o usare per installare il database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.
+    -   **Dettagli:** Il nome del database di SQL Server da creare o usare per installare il database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.
 
         > [!IMPORTANT]  
         >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome del database del sito.
@@ -202,7 +202,7 @@ ms.locfileid: "56129001"
 
     -   **Richiesto:** No
     -   **Valori:** &lt;*NumeroPortaSSB*>
-    -   **Dettagli:** Specifica la porta di SQL Server Service Broker (SSB) per l'utilizzo da parte di SQL Server. In genere, SSB è configurato per usare la porta TCP 4022, ma sono supportate anche altre porte. Specificare la stessa porta SSB usata prima dell'errore.
+    -   **Dettagli:** Specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. In genere, SSB è configurato per usare la porta TCP 4022, ma sono supportate anche altre porte. Specificare la stessa porta SSB usata prima dell'errore.
 
 ## <a name="recover-a-primary-site-unattended"></a>Ripristinare un sito primario automatico
  Usare le informazioni seguenti per configurare un file di script di installazione automatica per il ripristino di un sito di amministrazione centrale.
@@ -263,7 +263,7 @@ ms.locfileid: "56129001"
 
     -   **Richiesto:** Forse
     -   **Valori:** &lt;PercorsoSetBackupDatabaseSito\>
-    -   **Dettagli:** Specifica il percorso per il set di backup del database del sito. La chiave **BackupLocation** è richiesta quando viene configurato il valore **1** o **4** per la chiave **ServerRecoveryOptions** e viene configurato il valore **10** per la chiave **DatabaseRecoveryOptions** .
+    -   **Dettagli:** Specifica il percorso del set di backup del database del sito. La chiave **BackupLocation** è richiesta quando viene configurato il valore **1** o **4** per la chiave **ServerRecoveryOptions** e viene configurato il valore **10** per la chiave **DatabaseRecoveryOptions** .
 
 **Opzioni**
 
@@ -355,7 +355,7 @@ ms.locfileid: "56129001"
 
     -   **Richiesto:** Sì
     -   **Valori:** *&lt;NomeDatabaseSito\>* o *&lt;NomeIstanza\>*\\*&lt;NomeDatabaseSito\>*
-    -   **Dettagli:** Il nome del database SQL Server da creare o usare per installare il database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.
+    -   **Dettagli:** Il nome del database di SQL Server da creare o usare per installare il database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.
 
         > [!IMPORTANT]    
         >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome del database del sito.
@@ -364,7 +364,7 @@ ms.locfileid: "56129001"
 
     -   **Richiesto:** No
     -   **Valori:** &lt;*NumeroPortaSSB*>
-    -   **Dettagli:** Specifica la porta di SQL Server Service Broker (SSB) per l'utilizzo da parte di SQL Server. In genere, SSB è configurato per usare la porta TCP 4022, ma sono supportate anche altre porte. Specificare la stessa porta SSB usata prima dell'errore.
+    -   **Dettagli:** Specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. In genere, SSB è configurato per usare la porta TCP 4022, ma sono supportate anche altre porte. Specificare la stessa porta SSB usata prima dell'errore.
 
 **Hierarchy ExpansionOption**
 
@@ -378,7 +378,7 @@ ms.locfileid: "56129001"
 
     -   **Richiesto:** No
     -   **Valori:** &lt;*Intervallo*>
-    -   **Dettagli:** Specifica l'intervallo tra tentativi (in minuti) di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato per CASRetryInterval e quindi prova nuovamente a eseguire la connessione.
+    -   **Dettagli:** Specifica l'intervallo (in minuti) tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato per CASRetryInterval e quindi prova nuovamente a eseguire la connessione.
 
 
 -   **Nome chiave:** WaitForCASTimeout

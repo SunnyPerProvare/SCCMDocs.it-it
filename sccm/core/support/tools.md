@@ -2,27 +2,27 @@
 title: Strumenti di Configuration Manager
 titleSuffix: Configuration Manager
 description: Informazioni sugli strumenti che consentono di gestire e risolvere i problemi di infrastruttura di Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 04/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 395403dc-6997-4415-93fd-6b1eeb6ba31a
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1479524f08f17aa59f6e7dc771253a4fb6720189
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: b3324189cdf482684cc0738c51fbf336a65ee221
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131133"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500698"
 ---
 # <a name="configuration-manager-tools"></a>Strumenti di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Gli strumenti di Configuration Manager comprendono [strumenti basati su client](#client-tools) e [strumenti basati su server](#server-tools). Questi strumenti consentono di supportare e risolvere i problemi di infrastruttura di Configuration Manager. 
+Gli strumenti di Configuration Manager comprendono [strumenti basati su client](#client-tools) e [strumenti basati su server](#server-tools). Questi strumenti consentono di supportare e risolvere i problemi di infrastruttura di Configuration Manager.
 
 A partire dalla versione 1806 di Configuration Manager, questi strumenti sono inclusi nella cartella `CD.Latest\SMSSETUP\Tools` nel server del sito. Non è necessaria un'ulteriore installazione.<!--1357145--> Usare queste versioni degli strumenti con Configuration Manager versione 1806 e versioni successive.
 
@@ -67,16 +67,17 @@ Tutti i sistemi operativi Windows indicati come client supportati in [Sistemi op
 - [Run Meter Summarization Tool](/sccm/core/support/run-meter-summ): consente di eseguire l'attività di riepilogo misurazione e di analizzare i dati di misurazione
 
 > [!Note]  
-> La cartella ServerTools include anche i file seguenti 
+> La cartella ServerTools include anche i file seguenti:
+>
 > - AdminUI.WqlQueryEngine.dll
 > - Microsoft.ConfigurationManagement.ManagementProvider.dll
-> - Microsoft.Diagnostics.Tracing.EventSource.dll. 
+> - Microsoft.Diagnostics.Tracing.EventSource.dll
 >
 > Diversi strumenti server richiedono queste librerie. Non è possibile utilizzarli direttamente.  
 
 
 
-## <a name="other-tools"></a>Altri strumenti
+## <a name="other-tools-and-toolkits"></a>Altri strumenti e toolkit
 
 - [Strumento di pulizia della raccolta contenuto](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool): usare **ContentLibraryCleanup.exe** in `CD.Latest\SMSSETUP\TOOLS\ContentLibraryCleanup` per rimuovere contenuto orfano da un punto di distribuzione.  
 
@@ -85,3 +86,13 @@ Tutti i sistemi operativi Windows indicati come client supportati in [Sistemi op
 - [Strumento di reimpostazione dell'aggiornamento](/sccm/core/servers/manage/update-reset-tool): usare **CMUpdateReset.exe** in `CD.Latest\SMSSETUP\TOOLS\CMUpdateReset` per risolvere i problemi quando gli aggiornamenti nella console registrano problemi di download o replica.  
 
 - [Strumento Connessione al servizio](/sccm/core/servers/manage/use-the-service-connection-tool): usare **ServiceConnectionTool.exe** in `CD.Latest\SMSSETUP\TOOLS\ServiceConnectionTool` per mantenere aggiornato il sito quando il punto di connessione del servizio è offline.  
+
+- [Support Center](/sccm/core/support/support-center): Raccogliere informazioni dai client per eseguire più facilmente l'analisi durante la risoluzione dei problemi.
+
+- [Microsoft Deployment Toolkit (MDT)](/sccm/mdt/): Raccolta unificata di strumenti, processi e linee guida per l'automazione delle distribuzioni dei sistemi operativi desktop e server.
+
+- [System Center Updates Publisher (SCUP)](/sccm/sum/tools/updates-publisher): Strumento autonomo per gestire e importare aggiornamenti software personalizzati.
+
+- [Estensioni SCAP (Security Content Automation Protocol)](/sccm/compliance/plan-design/scap/about-scap): Analizzare e valutare la conformità dell'ambiente con le baseline NIST.
+
+- [Package Conversion Manager](/sccm/apps/pcm/package-conversion-manager): Convertire i pacchetti in applicazioni.

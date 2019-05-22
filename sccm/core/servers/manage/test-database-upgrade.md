@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: abb696f3-a816-4f12-a9f1-0503a81e1976
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6adb326a484976335d114277e095884e107f9906
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: db33a822c762922a04cbfe695435950023384f93
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56124797"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500999"
 ---
 # <a name="test-the-database-upgrade-when-installing-an-update"></a>Testare l'aggiornamento del database quando si installa un aggiornamento
 
@@ -54,7 +54,7 @@ Se si verifica un errore in fase di aggiornamento, non è consigliabile ripristi
 
 4. Dopo avere ripristinato la copia del database, eseguire **Installazione** dalla cartella CD.Latest che contiene i file di origine dalla versione a cui si sta eseguendo l'aggiornamento. Quando si esegue l'installazione, usare l'opzione della riga di comando **/TESTDBUPGRADE** . Se l'istanza di SQL Server che ospita la copia del database non è quella predefinita, fornire gli argomenti della riga di comando per identificare l'istanza che ospita la copia del database del sito.   
 
-   Ad esempio, si dispone di un database del sito con il nome database *SMS_ABC*. Si ripristina una copia di questo database del sito in un'istanza supportata di SQL Server con il nome istanza *DBTest*. Per testare un aggiornamento di questa copia del database del sito, utilizzare la seguente riga di comando: **Setup.exe /TESTDBUPGRADE DBtest\CM_ABC**.  
+   Ad esempio, si dispone di un database del sito con il nome database *SMS_ABC*. Si ripristina una copia di questo database del sito in un'istanza supportata di SQL Server con il nome istanza *DBTest*. Per testare un aggiornamento di questa copia del database del sito, usare la riga di comando seguente: **Setup.exe /TESTDBUPGRADE DBtest\CM_ABC**.  
 
    È possibile trovare Setup.exe nel percorso seguente del supporto di origine per System Center Configuration Manager: **SMSSETUP\BIN\X64**.  
 

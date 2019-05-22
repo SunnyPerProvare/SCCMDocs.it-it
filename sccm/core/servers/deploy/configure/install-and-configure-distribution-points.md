@@ -2,7 +2,7 @@
 title: Gestire punti di distribuzione
 titleSuffix: Configuration Manager
 description: Usare i punti di distribuzione per ospitare il contenuto distribuito a utenti e dispositivi.
-ms.date: 07/30/2018
+ms.date: 05/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5d5d3a1efd2dc58cca06b18fc4221d52ce58bb7f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 3bd5a2b483551fc760b0dc69cd488bf1e3671732
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125304"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65498664"
 ---
 # <a name="install-and-configure-distribution-points-in-configuration-manager"></a>Installare e configurare punti di distribuzione per Configuration Manager
 
@@ -169,7 +169,8 @@ Questo processo popola automaticamente la scheda **Membri** della finestra Crea 
 
 
 ## <a name="bkmk_reassign"></a> Riassegnare un punto di distribuzione
-<!-- 1306937 --> Molti clienti hanno infrastrutture di Configuration Manager di grandi dimensioni e stanno diminuendo i siti primari o secondari per semplificare il proprio ambiente. Per distribuire il contenuto ai client gestiti, questi clienti devono comunque mantenere i punti di distribuzione nelle succursali. Questi punti di distribuzione spesso includono più terabyte di contenuto. La distribuzione di questo contenuto ai server remoti è dispendiosa in termini di tempo e larghezza di banda di rete. 
+<!-- 1306937 -->
+Molti clienti hanno infrastrutture di Configuration Manager di grandi dimensioni e stanno diminuendo i siti primari o secondari per semplificare il proprio ambiente. Per distribuire il contenuto ai client gestiti, questi clienti devono comunque mantenere i punti di distribuzione nelle succursali. Questi punti di distribuzione spesso includono più terabyte di contenuto. La distribuzione di questo contenuto ai server remoti è dispendiosa in termini di tempo e larghezza di banda di rete. 
 
 A partire dalla versione 1802, questa funzionalità consente di riassegnare un punto di distribuzione a un altro sito primario senza ridistribuire il contenuto. Questa azione aggiorna l'assegnazione del sistema del sito mantenendo tutto il contenuto nel server. Se è necessario riassegnare più punti di distribuzione, eseguire prima questa azione su un singolo punto di distribuzione, quindi procedere con gli altri server uno alla volta.
 
@@ -190,7 +191,7 @@ Per riassegnare un punto di distribuzione, seguire questa procedura:
 
 Monitorare la riassegnazione come quando si aggiunge un nuovo ruolo. Il metodo più semplice consiste nell'aggiornare la visualizzazione della console dopo alcuni minuti. Aggiungere la colonna di codice del sito alla visualizzazione. Questo valore cambia quando Configuration Manager riassegna il server. Se si tenta di eseguire un'altra azione nel server di destinazione prima di aggiornare la visualizzazione della console, viene generato un errore "oggetto non trovato". Verificare che il processo sia stato completato e aggiornare la visualizzazione della console prima di avviare tutte le altre azioni nel server.
 
-Dopo aver riassegnato un punto di distribuzione, aggiornare il certificato del server. Il nuovo server del sito crittografa di nuovo questo certificato usando la chiave pubblica e lo archivia nel database del sito. Per altre informazioni, vedere l'impostazione **Create a self-signed certificate or import a public key infrastructure (PKI) client certificate for the distribution point** (Creare un certificato autofirmato o importare un certificato client di infrastruttura a chiave pubblica (PKI) per il punto di distribuzione) nella scheda [Generale](#general) delle proprietà del punto di distribuzione. 
+Dopo aver riassegnato un punto di distribuzione, aggiornare il certificato del server. Il nuovo server del sito crittografa di nuovo questo certificato usando la chiave pubblica e lo archivia nel database del sito. Per altre informazioni, vedere l'impostazione **Create a self-signed certificate or import a public key infrastructure (PKI) client certificate for the distribution point** (Creare un certificato autofirmato o importare un certificato client di infrastruttura a chiave pubblica (PKI) per il punto di distribuzione) nella scheda [Generale](#bkmk_config-general) delle proprietà del punto di distribuzione. 
 
 - Per i certificati PKI, non è necessario creare un nuovo certificato. Importare lo stesso file con estensione pfx e immettere la password.  
 
@@ -255,7 +256,22 @@ Le impostazioni seguenti si trovano nella pagina **Punto di distribuzione** dell
 
 - **Abilita e configura BranchCache per questo punto di distribuzione**: scegliere questa impostazione per consentire a Configuration Manager di configurare Windows BranchCache nel server del punto di distribuzione. Per altre informazioni, vedere [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache).  
 
-- **Regola la velocità del download per usare la larghezza di banda di rete inutilizzata (Windows LEDBAT)**<!--1358112-->: a partire dalla versione 1806, abilitare punti di distribuzione per l'uso del controllo di congestione della rete. Per altre informazioni, vedere [LEDBAT Windows](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#windows-ledbat). Il punto di distribuzione deve eseguire Windows Server versione 1709. Non è presente alcun prerequisito client.  
+- **Regola la velocità del download per usare la larghezza di banda di rete inutilizzata (Windows LEDBAT)**<!--1358112-->: a partire dalla versione 1806, abilitare punti di distribuzione per l'uso del controllo di congestione della rete. Per altre informazioni, vedere [LEDBAT Windows](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#windows-ledbat). Requisiti minimi per il supporto di LEDBAT:<!-- SCCMDocs issue 883 -->  
+
+    - Configuration Manager versione 1806 (aggiornamento pubblico)  
+
+        - Windows Server versione 1709 o successiva  
+
+    - Configuration Manager versione 1806 con aggiornamento cumulativo (4462978) o versione successiva  
+
+        - Windows Server versione 1709 o successiva
+        - Windows Server 2016 con aggiornamenti KB4132216 e KB4284833
+
+    - Configuration Manager versione 1810 o successiva
+
+        - Windows Server versione 1709 o successiva
+        - Windows Server 2016 con aggiornamenti KB4132216 e KB4284833
+        - Windows Server 2019  
 
 - **Descrizione**: descrizione facoltativa del ruolo del punto di distribuzione.  
 
@@ -343,12 +359,14 @@ Selezionare l'opzione **Abilita supporto PXE per i client** e configurare le imp
 
 - **Abilita un risponditore PXE senza i Servizi di distribuzione Windows**: A partire dalla versione 1806, con questa opzione è possibile abilitare un risponditore PXE nel punto di distribuzione, che non richiede Servizi di distribuzione Windows (WDS). Il risponditore PXE supporta le reti IPv6. Se si abilita questa opzione in un punto di distribuzione che già supporta PXE, Configuration Manager sospende l'esecuzione del servizio WDS. Se si disabilita questa opzione ma si lascia selezionata l'opzione **Abilita supporto PXE per i client**, il punto di distribuzione abilita di nuovo Servizi di distribuzione Windows.<!--1357580-->  
 
-    > [!Note]
-    >Non è supportato l'uso del risponditore PXE senza WDS nei server che eseguono anche un server DHCP.
+    > [!Note]  
+    > Nella versione 1810 e precedenti non è supportato l'uso del risponditore PXE senza WDS nei server che eseguono anche un server DHCP.
+    >
+    > A partire dalla versione 1902, quando si abilita un risponditore PXE in un punto di distribuzione senza i Servizi di distribuzione Windows, è ora possibile abilitarlo sullo stesso server del servizio DHCP. <!--3734270-->  
 
-- **Richiedi password quando i computer usano PXE**: per fornire maggiore sicurezza per le distribuzioni PXE, specificare una password complessa.  
+- **Richiedi password quando i computer usano PXE**: per una maggiore sicurezza delle distribuzioni PXE, specificare una password complessa.  
 
-- **Affinità utente dispositivo**: specificare come si desidera che il punto di distribuzione associ gli utenti al computer di destinazione per le distribuzioni PXE. Scegliere una delle seguenti opzioni:  
+- **Affinità utente dispositivo**: specificare come associare gli utenti al computer di destinazione tramite il punto di distribuzione per le distribuzioni PXE. Scegliere una delle seguenti opzioni:  
 
   - **Consenti affinità utente dispositivo con approvazione automatica**: scegliere questa impostazione per associare automaticamente gli utenti al computer di destinazione senza attendere l'approvazione.  
 
@@ -428,7 +446,7 @@ Gestire il contenuto distribuito al punto di distribuzione. Selezionare un pacch
 
 ### <a name="bkmk_config-valid"></a> Convalida contenuto  
 
-Impostare una pianificazione per convalidare l'integrità dei file di contenuto nel punto di distribuzione. Quando si abilita la convalida del contenuto in base a una pianificazione, Configuration Manager avvia il processo all'orario pianificato e verifica tutto il contenuto nel punto di distribuzione. È inoltre possibile configurare la priorità di convalida del contenuto. Per impostazione predefinita, la priorità è impostata su **Minima**. All'incremento della priorità può corrispondere un aumento dell'uso del disco e del processore sul server durante il processo di convalida, ma il processo è più rapido. 
+Impostare una pianificazione per convalidare l'integrità dei file di contenuto nel punto di distribuzione. Quando si abilita la convalida del contenuto in base a una pianificazione, Configuration Manager avvia il processo all'orario pianificato. Verifica tutto il contenuto nel punto di distribuzione in base alla classe SMS_PackagesInContLib SCCMDP locale. È inoltre possibile configurare la priorità di convalida del contenuto. Per impostazione predefinita, la priorità è impostata su **Minima**. All'incremento della priorità può corrispondere un aumento dell'uso del disco e del processore sul server durante il processo di convalida, ma il processo è più rapido. 
 
 Per visualizzare i risultati del processo di convalida del contenuto, nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione** e quindi scegliere il nodo **Stato contenuto**. Viene visualizzato il contenuto per ogni tipo di software, ad esempio applicazione, pacchetto di aggiornamento software e immagine di avvio.  
 
@@ -489,4 +507,4 @@ Configurare i limiti di velocità per controllare la larghezza di banda di rete 
 
 - **Modalità a impulsi**: specifica la dimensione dei blocchi di dati inviati dal server del sito al punto di distribuzione. È inoltre possibile specificare un ritardo tra l'invio di ogni blocco di dati. Usare questa opzione quando è necessario inviare i dati attraverso una connessione di rete con larghezza di banda molto bassa al punto di distribuzione. È possibile, ad esempio, che si sia vincolati a inviare 1 KB di dati ogni cinque secondi, indipendentemente dalla velocità del collegamento o dall'utilizzo in un determinato momento.  
 
-- **Limitato alle velocità di trasferimento massime specificate per ora**: specificare questa impostazione in modo che un sito invii i dati a un punto di distribuzione usando solo la percentuale di tempo configurata. Quando si usa questa opzione, Configuration Manager non identifica la larghezza di banda disponibile della rete, ma divide in intervalli il periodo di tempo in cui può inviare i dati. Il server invia i dati per un breve periodo di tempo, seguito da periodi in cui i dati non vengono inviati. Se, ad esempio, l'opzione **Limita larghezza di banda disponibile** è impostata su **50%**, Configuration Manager trasmette i dati per un periodo di tempo seguito da un periodo di tempo uguale in cui non viene inviato alcun dato. Non vengono gestite né la quantità effettiva di dati né la dimensione del blocco di dati, ma solo la quantità di tempo durante il quale avviene l'invio dei dati.  
+- **Limitato alle velocità di trasferimento massime specificate per ora**: specificare questa impostazione se si vuole che un sito invii i dati a un punto di distribuzione usando solo la percentuale di tempo configurata. Quando si usa questa opzione, Configuration Manager non identifica la larghezza di banda disponibile della rete, ma divide in intervalli il periodo di tempo in cui può inviare i dati. Il server invia i dati per un breve periodo di tempo, seguito da periodi in cui i dati non vengono inviati. Se, ad esempio, l'opzione **Limita larghezza di banda disponibile** è impostata su **50%**, Configuration Manager trasmette i dati per un periodo di tempo seguito da un periodo di tempo uguale in cui non viene inviato alcun dato. Non vengono gestite né la quantità effettiva di dati né la dimensione del blocco di dati, ma solo la quantità di tempo durante il quale avviene l'invio dei dati.  

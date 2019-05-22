@@ -7,17 +7,17 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: ac034143-003e-4629-aac2-99eaffef4db1
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b5b6f62a06d09159b95b14991d1038585281841
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 93862e95a3bae13582c2aa70daf2db22f9d621d8
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56137280"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65495459"
 ---
 # <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Novità della versione 1706 di System Center Configuration Manager
 
@@ -45,28 +45,35 @@ Version 1706 drops support for the following products:
 ## <a name="site-infrastructure"></a>Infrastruttura del sito
 
 ### <a name="client-peer-cache-support-for-express-installation-files-for-windows-10-and-office-365"></a>Supporto della peer cache del client per i file di installazione rapida per Windows 10 e Office 365  
-<!-- 1352486 --> A partire da questa versione, la peer cache supporta la distribuzione dei file di installazione rapida del contenuto per Windows 10 e dei file di aggiornamento per Office 365. Non sono richieste configurazioni aggiuntive per supportare questa modifica.
+<!-- 1352486 -->
+A partire da questa versione, la peer cache supporta la distribuzione dei file di installazione rapida del contenuto per Windows 10 e dei file di aggiornamento per Office 365. Non sono richieste configurazioni aggiuntive per supportare questa modifica.
 
 ### <a name="updates-for-the-data-warehouse"></a>Aggiornamenti per il data warehouse
-<!-- 1277922 --> Il data warehouse non è più una funzionalità di una versione non definitiva. Sono anche stati aggiornati i prerequisiti per includere il supporto per il database nei gruppi di disponibilità AlwaysOn di SQL Server e i cluster di failover. Per altre informazioni, vedere [Punto di servizio del data warehouse](/sccm/core/servers/manage/data-warehouse).
+<!-- 1277922 -->
+Il data warehouse non è più una funzionalità di una versione non definitiva. Sono anche stati aggiornati i prerequisiti per includere il supporto per il database nei gruppi di disponibilità AlwaysOn di SQL Server e i cluster di failover. Per altre informazioni, vedere [Punto di servizio del data warehouse](/sccm/core/servers/manage/data-warehouse).
 
 ### <a name="accessibility-improvements"></a>Miglioramenti all'accessibilità
-<!-- 1253000 --> Sono stati aggiunti altri miglioramenti all'accessibilità per la console di Configuration Manager. Per informazioni dettagliate, vedere [Funzionalità di accessibilità](/sccm/core/understand/accessibility-features).
+<!-- 1253000 -->
+Sono stati aggiunti altri miglioramenti all'accessibilità per la console di Configuration Manager. Per informazioni dettagliate, vedere [Funzionalità di accessibilità](/sccm/core/understand/accessibility-features).
 
 ### <a name="improvements--for-sql-server-always-on-availability-groups"></a>Miglioramenti per i gruppi di disponibilità Always On di SQL Server
-<!-- 1352094 --> Con questa versione è ora possibile usare le repliche con commit asincrono nei gruppi di disponibilità Always On di SQL Server usati con Configuration Manager. Ciò significa che è possibile aggiungere repliche aggiuntive ai gruppi di disponibilità da usare come backup remoti, e quindi usarli in caso di ripristino di emergenza.  
+<!-- 1352094 -->
+Con questa versione è ora possibile usare le repliche con commit asincrono nei gruppi di disponibilità Always On di SQL Server usati con Configuration Manager. Ciò significa che è possibile aggiungere repliche aggiuntive ai gruppi di disponibilità da usare come backup remoti, e quindi usarli in caso di ripristino di emergenza.  
   -   Configuration Manager supporta l'uso della replica con commit asincrono per ripristinare la replica sincrona. Vedere le [opzioni di ripristino del database del sito](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) nell'argomento Backup e ripristino per informazioni su come eseguire questa operazione.
   -   Questa versione non supporta il failover per l'uso della replica con commit asincrono come database del sito.
 Per altre informazioni, vedere [Preparare l'uso di gruppi di disponibilità Always On](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database).
 
 ### <a name="update-reset-tool"></a>Strumento di reimpostazione dell'aggiornamento
-<!-- 1324589 --> A partire dalla versione 1706, i siti primari e i siti di amministrazione centrale di Configuration Manager includono lo strumento di reimpostazione dell'aggiornamento di Configuration Manager, **CMUpdateReset.exe**. Usare questo strumento con tutte le versioni di Current Branch supportate, per correggere gli errori quando gli aggiornamenti nella console presentano problemi durante il download o la replica. Per altre informazioni, vedere [Update reset tool](/sccm/core/servers/manage/update-reset-tool) (Strumento di reimpostazione dell'aggiornamento).
+<!-- 1324589 -->
+A partire dalla versione 1706, i siti primari e i siti di amministrazione centrale di Configuration Manager includono lo strumento di reimpostazione dell'aggiornamento di Configuration Manager, **CMUpdateReset.exe**. Usare questo strumento con tutte le versioni di Current Branch supportate, per correggere gli errori quando gli aggiornamenti nella console presentano problemi durante il download o la replica. Per altre informazioni, vedere [Update reset tool](/sccm/core/servers/manage/update-reset-tool) (Strumento di reimpostazione dell'aggiornamento).
 
 ### <a name="high-dpi-console-support"></a>Supporto per console con DPI elevato  
-<!-- 1353476 --> In questa versione sono state risolte le problematiche legate a come la console di Configuration Manager ridimensiona e visualizza diverse parti dell'interfaccia utente su dispositivi con DPI elevato, ad esempio un Surface Book.
+<!-- 1353476 -->
+In questa versione sono state risolte le problematiche legate a come la console di Configuration Manager ridimensiona e visualizza diverse parti dell'interfaccia utente su dispositivi con DPI elevato, ad esempio un Surface Book.
 
 ### <a name="improved-boundary-groups-for-software-update-points"></a>Gruppi di limiti migliorati per i punti di aggiornamento software
-<!-- 1324591 --> Questa versione include miglioramenti per il funzionamento dei punti di aggiornamento del software con i gruppi di limiti. Di seguito viene riepilogato il nuovo comportamento di fallback:
+<!-- 1324591 -->
+Questa versione include dei miglioramenti per il funzionamento dei punti di aggiornamento del software con i gruppi di limiti. Di seguito viene riepilogato il nuovo comportamento di fallback:
 -   Il fallback per i punti di aggiornamento del software usa attualmente un tempo configurabile per il fallback a gruppi di limiti adiacenti.
 -   Indipendentemente dalla configurazione di fallback, un client tenta di raggiungere l'ultimo punto di aggiornamento del software che ha usato per 120 minuti. Dopo l'esito negativo nel raggiungere il server per 120 minuti, il client controlla quindi il proprio pool di punti di aggiornamento del software disponibili, per poterne trovare uno nuovo.
 -   Dopo l'esito negativo nel raggiungere il server originale per due ore, il client passa a un ciclo più breve per contattare un nuovo punto di aggiornamento del software. Ciò significa che se un client non riesce a connettersi con un nuovo server, seleziona rapidamente il server successivo dal relativo pool di server disponibili e cerca di contattarne uno nuovo.
@@ -74,7 +81,8 @@ Per altre informazioni, vedere [Preparare l'uso di gruppi di disponibilità Alwa
 Per altre informazioni, vedere la sezione [Punti di aggiornamento software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points) nell'argomento Gruppi di limiti e relazioni per il Current Branch.
 
 ### <a name="azure-ad-integration-with-configuration-manager"></a>Integrazione di Azure AD con Configuration Manager
-<!-- 1248187, 1290765, 1258052, 1298097, 1319334, 1319883, 1352135, 1353331 --> Con questa versione, è stata migliorata l'integrazione di Configuration Manager e di Azure Active Directory (Azure AD).  Questi miglioramenti semplificano la configurazione dei servizi di Azure usati con Configuration Manager e consentono di gestire i client e gli utenti che eseguono l'autenticazione tramite Azure AD.
+<!-- 1248187, 1290765, 1258052, 1298097, 1319334, 1319883, 1352135, 1353331 -->
+Con questa versione, è stata migliorata l'integrazione di Configuration Manager e di Azure Active Directory (Azure AD).  Questi miglioramenti semplificano la configurazione dei servizi di Azure usati con Configuration Manager e consentono di gestire i client e gli utenti che eseguono l'autenticazione tramite Azure AD.
 
 Il miglioramento dell'integrazione rende possibile quanto segue:  
   -   Procedura guidata per i servizi di Azure: questa procedura guidata offre un'esperienza di configurazione comune che sostituisce i singoli flussi di lavoro per configurare i servizi di Azure seguenti usati con Configuration Manager.
@@ -93,7 +101,8 @@ Il miglioramento dell'integrazione rende possibile quanto segue:
 -   Configurare l'individuazione utenti di Azure AD.  Usare la Procedura guidata Servizi di Azure per configurare questo nuovo metodo di individuazione, che cerca nell'istanza di Azure AD i dati utente che è quindi possibile usare con i dati di individuazione tradizionali.  Sono supportate sia la sincronizzazione completa che quella delta.  Per altre informazioni, vedere [Individuazione utente Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).
 
 ### <a name="peer-cache-improvements"></a>Miglioramenti della peer cache
-<!-- 1252345 --> La peer cache non usa l'account di accesso alla rete per autenticare le richieste di download dai peer. Esiste un'avvertenza a questo proposito quando l'account continua a essere richiesto dai client. Rimane un requisito per i client che vengono avviati in WinPE e quindi accedono al contenuto da un'origine di peer cache. Per altre informazioni, vedere [Requisiti e considerazioni per la peer cache](/sccm/core/plan-design/hierarchy/client-peer-cache#requirements-and-considerations-for-peer-cache).
+<!-- 1252345 -->
+La peer cache non usa l'account di accesso alla rete per autenticare le richieste di download dai peer. Esiste un'avvertenza a questo proposito quando l'account continua a essere richiesto dai client. Rimane un requisito per i client che vengono avviati in WinPE e quindi accedono al contenuto da un'origine di peer cache. Per altre informazioni, vedere [Requisiti e considerazioni per la peer cache](/sccm/core/plan-design/hierarchy/client-peer-cache#requirements-and-considerations-for-peer-cache).
 
 
 <!-- ## Migration  -->
@@ -105,7 +114,8 @@ Il miglioramento dell'integrazione rende possibile quanto segue:
 ## <a name="compliance-settings"></a>Impostazioni di conformità
 
 ### <a name="new-configuration-settings-for-windows-10-devices-that-are-not-managed-with-the-configuration-manager-client"></a>Nuove impostazioni di configurazione per dispositivi Windows 10 non gestiti con il client di Configuration Manager
-<!-- 1354715 --> In questa versione sono state aggiunte nuove impostazioni degli elementi di configurazione per i dispositivi Windows 10 registrati con Intune o gestiti in locale da Configuration Manager. Le impostazioni sono le seguenti:
+<!-- 1354715 -->
+In questa versione sono state aggiunte nuove impostazioni degli elementi di configurazione per i dispositivi Windows 10 registrati con Intune o gestiti in locale da Configuration Manager. Le impostazioni sono le seguenti:
 
 - **Password**
     - Crittografia dispositivo
@@ -175,7 +185,8 @@ In Configuration Manager, è possibile distribuire script ai dispositivi client 
 Per altre informazioni, vedere [Creare ed eseguire script di PowerShell dalla console di Configuration Manager](/sccm/apps/deploy-use/create-deploy-scripts).
 
 ### <a name="new-mobile-application-management-policy-settings"></a>Nuove impostazioni dei criteri di gestione delle applicazioni mobili    
-<!--1324760--> A partire da questa versione, è possibile usare tre nuove impostazioni di criteri di gestione delle applicazioni per dispositivi mobili (MAM):
+<!--1324760-->
+A partire da questa versione, è possibile usare tre nuove impostazioni di criteri di gestione delle applicazioni per dispositivi mobili (MAM):
 
 - **Blocca acquisizione schermo (solo per dispositivi Android):** Specifica che le funzionalità di acquisizione schermo del dispositivo vengono bloccate quando si usa questa app.
 
@@ -199,7 +210,8 @@ Quando si esegue **Aggiorna punti di distribuzione** su un'immagine d'avvio sele
 In questa versione è stato considerevolmente migliorato il tempo di download per gli aggiornamenti rapidi. Per altre informazioni, vedere [Gestire i file di installazione rapida per gli aggiornamenti di Windows 10](/sccm/sum/deploy-use/manage-express-installation-files-for-windows-10-updates).
 
 ### <a name="manage-microsoft-surface-driver-updates"></a>Gestire gli aggiornamenti dei driver di Microsoft Surface
-<!-- 1098490 --> È ora possibile usare Configuration Manager per gestire gli aggiornamenti dei driver di Microsoft Surface.    
+<!-- 1098490 -->
+È ora possibile usare Configuration Manager per gestire gli aggiornamenti dei driver di Microsoft Surface.    
 
 
 #### <a name="prerequisites"></a>Prerequisiti
@@ -213,7 +225,8 @@ In questa versione è stato considerevolmente migliorato il tempo di download pe
 3. [Distribuire i driver di Microsoft Surface sincronizzati](/sccm/sum/deploy-use/deploy-software-updates)
 
 ### <a name="configure-windows-update-for-business-deferral-policies"></a>Configurare i criteri di rinvio di Windows Update for Business
-<!-- 1290890 --> È ora possibile configurare i criteri di differimento dei dispositivi per gli aggiornamenti delle funzionalità o gli aggiornamenti qualitativi di Windows 10 per dispositivi Windows 10 gestiti direttamente da Windows Update for Business. È possibile gestire i criteri di rinvio nel nuovo nodo **Criteri di Windows Update for Business** in **Libreria Software** > **Manutenzione pacchetti di Windows 10**.
+<!-- 1290890 -->
+È ora possibile configurare i criteri di rinvio dei dispositivi per gli aggiornamenti delle funzionalità di Windows 10 o gli aggiornamenti di qualità di Windows 10 gestiti direttamente da Windows Update for Business. È possibile gestire i criteri di rinvio nel nuovo nodo **Criteri di Windows Update for Business** in **Libreria Software** > **Manutenzione pacchetti di Windows 10**.
 
 Per informazioni dettagliate, vedere [Integrazione con Windows Update for Business in Windows 10](/sccm/sum/deploy-use/integrate-windows-update-for-business-windows-10#configure-windows-update-for-business-deferral-policies).
 
@@ -223,7 +236,8 @@ Sono stati apportati miglioramenti per usare l'esperienza utente a portata di cl
 ## <a name="reporting"></a>Reporting
 
 ### <a name="use-windows-analytics-with-configuration-manager"></a>Usare Windows Analytics con Configuration Manager
-<!-- 1318608 --> Windows Analytics è un set di soluzioni che consentono di ottenere indicazioni sullo stato corrente dell'ambiente. I dispositivi dell'ambiente segnalano i dati di telemetria di Windows. I dati sono accessibili tramite il portale di Azure. Nel caso di Preparazione aggiornamenti i dati sono direttamente disponibili nel nodo di monitoraggio della console di Configuration Manager.
+<!-- 1318608 -->
+Windows Analytics è un set di soluzioni che consentono di ottenere indicazioni sullo stato corrente dell'ambiente. I dispositivi dell'ambiente segnalano i dati di telemetria di Windows. I dati sono accessibili tramite il portale di Azure. Nel caso di Preparazione aggiornamenti i dati sono direttamente disponibili nel nodo di monitoraggio della console di Configuration Manager.
 
 Per altre informazioni, vedere [Usare Windows Analytics con Configuration Manager](/sccm/core/clients/manage/monitor-windows-analytics).
 
@@ -233,19 +247,22 @@ Per altre informazioni, vedere [Usare Windows Analytics con Configuration Manage
 ## <a name="mobile-device-management"></a>Gestione di dispositivi mobili
 
 ### <a name="updates-to-android-for-work-sharing-configuration"></a>Aggiornamenti della configurazione della condivisione di Android for Work
-<!-- 1338403 --> In questa versione sono stati aggiornati i valori per l'impostazione **Consenti la condivisione dei dati tra i profili di lavoro e personali** nel gruppo di impostazioni **Profilo di lavoro**. È anche stata aggiunta un'impostazione personalizzata per bloccare il copia e incolla tra i profili di lavoro e personali.
+<!-- 1338403 -->
+In questa versione sono stati aggiornati i valori per l'impostazione **Consenti la condivisione dei dati tra i profili di lavoro e personali** nel gruppo di impostazioni **Profilo di lavoro**. È anche stata aggiunta un'impostazione personalizzata per bloccare il copia e incolla tra i profili di lavoro e personali.
 
 Per altre informazioni, vedere [Elementi di configurazione per dispositivi Android for Work](/sccm/mdm/deploy-use/create-configuration-items-for-android-for-work-devices-managed-without-the-client).
 
 ### <a name="android-and-ios-enrollment-restrictions"></a>Restrizioni di registrazione di Android e iOS
-<!-- 1290826 --> Con questa versione, è ora possibile specificare che gli utenti non possono registrare dispositivi Android o iOS personali. Le nuove impostazioni per la restrizione dei dispositivi permettono di limitare la registrazione dei dispositivi Android ai soli dispositivi predichiarati. Per i dispositivi iOS, è possibile bloccare la registrazione di tutti i dispositivi tranne quelli registrati tramite Device Enrollment Program di Apple, Apple Configurator o l'account del manager di registrazione dispositivi di Intune.
+<!-- 1290826 -->
+Con questa versione, è ora specificare che gli utenti non possono registrare dispositivi Android o iOS personali. Le nuove impostazioni per la restrizione dei dispositivi permettono di limitare la registrazione dei dispositivi Android ai soli dispositivi predichiarati. Per i dispositivi iOS, è possibile bloccare la registrazione di tutti i dispositivi tranne quelli registrati tramite Device Enrollment Program di Apple, Apple Configurator o l'account del manager di registrazione dispositivi di Intune.
 - Per altre informazioni sulle restrizioni di registrazione per Android, vedere [Configurare la gestione dei dispositivi Android](/sccm/mdm/deploy-use/enroll-hybrid-android).
 - Per altre informazioni sulle restrizioni di registrazione per iOS, vedere [Configurare le restrizioni di registrazione per iOS](/sccm/mdm/deploy-use/enroll-hybrid-ios-mac#configure-enrollment-restrictions).
 
 ## <a name="protect-devices"></a>Proteggere i dispositivi
 
 ### <a name="include-trust-for-specific-files-and-folders-in-a-device-guard-policy"></a>Includere attendibilità per file e cartelle specifici in un criterio di Device Guard
-<!--1324676--> In questa versione sono state aggiunte altre funzionalità alla gestione del criterio di Device Guard.
+<!--1324676-->
+In questa versione sono state aggiunte altre funzionalità alla gestione del criterio di Device Guard.
 
 Ora è possibile aggiungere facoltativamente attendibilità per file e cartelle specifici in un criterio di Device Guard. Ciò consente di:
 

@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 0da167f1-52cf-4dfd-8f73-833ca3eb8478
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5c85e3058a63868cfee28865c1be222919b29a8
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 434b53d24d050cc66cbb5e8bec7a681311f945b8
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56141824"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65498682"
 ---
 # <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opzioni della riga di comando per l'installazione in System Center Configuration Manager
 
@@ -75,7 +75,7 @@ ms.locfileid: "56141824"
 
     -   **Valori:** ManageLanguages  
 
-    -   **Dettagli:** Consente di gestire il supporto lingua di client per dispositivi mobili, client e server in un sito.  
+    -   **Dettagli:** Gestisce il supporto lingua di client per dispositivi mobili, client e server in un sito.  
 
 **Opzioni**  
 
@@ -121,7 +121,7 @@ ms.locfileid: "56141824"
 
          1 = Installare  
 
-    -   **Dettagli:** Specifica se sono installate le lingue del client di dispositivo mobile.  
+    -   **Dettagli:** Specifica se le lingue del dispositivo mobile client sono installate.  
 
 -   **Nome chiave:** PrerequisiteComp  
 
@@ -207,7 +207,7 @@ ms.locfileid: "56141824"
 
     -   **Valori:** <*FQDN del provider SMS*>  
 
-    -   **Dettagli:** Specifica l'FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
+    -   **Dettagli:** Specifica il nome FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
 
 -   **Nome chiave:** PrerequisiteComp  
 
@@ -297,7 +297,7 @@ ms.locfileid: "56141824"
 
          1 = Installare  
 
-    -   **Dettagli:** Specifica se sono installate le lingue del client di dispositivo mobile.  
+    -   **Dettagli:** Specifica se le lingue del dispositivo mobile client sono installate.  
 
 **SQLConfigOptions**  
 
@@ -326,7 +326,7 @@ ms.locfileid: "56141824"
 
     -   **Valori:** <*Numero della porta SSB*>  
 
-    -   **Dettagli:** Specifica la porta di SQL Server Service Broker (SSB) per l'utilizzo da parte di SQL Server. SQL Server Service Broker è in genere configurato per l'uso della porta TCP 4022, ma è possibile configurare un'altra porta.  
+    -   **Dettagli:** Specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. SQL Server Service Broker è in genere configurato per l'uso della porta TCP 4022, ma è possibile configurare un'altra porta.  
 
 -   **Nome chiave:** SQLDataFilePath  
 
@@ -455,7 +455,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*FQDN del provider SMS*>  
 
-    -   **Dettagli:** Specifica l'FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
+    -   **Dettagli:** Specifica il nome FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
 
 -   **Nome chiave:** PrerequisiteComp  
 
@@ -509,7 +509,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** < *FQDN del server del sito del punto di gestione*>  
 
-    -   **Dettagli:** Specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito di punto di gestione.  
+    -   **Dettagli:** Specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di gestione.  
 
 -   **Nome chiave:** ManagementPointProtocol  
 
@@ -553,7 +553,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Usare  
 
-    -   **Dettagli:** Specifica se i client utilizzeranno un certificato PKI client per la comunicazione con i ruoli del sistema del sito.  
+    -   **Dettagli:** Specifica se i client useranno un certificato PKI client per la comunicazione con i ruoli del sistema del sito.  
 
 -   **Nome chiave:** AddServerLanguages  
 
@@ -597,7 +597,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Installare  
 
-    -   **Dettagli:** Specifica se sono installate le lingue del client di dispositivo mobile.  
+    -   **Dettagli:** Specifica se le lingue del dispositivo mobile client sono installate.  
 
 **SQLConfigOptions**  
 
@@ -660,7 +660,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Intervallo*>  
 
-    -   **Dettagli:** Specifica l'intervallo tra tentativi (in minuti) di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato dall'utente per il valore **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
+    -   **Dettagli:** Specifica l'intervallo (in minuti) tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato dall'utente per il valore **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
 
 -   **Nome chiave:** WaitForCASTimeout  
 
@@ -807,7 +807,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Percorso del set di backup del database del sito*>  
 
-    -   **Dettagli:** Specifica il percorso per il set di backup del database del sito.  
+    -   **Dettagli:** Specifica il percorso del set di backup del database del sito.  
 
 **Opzioni**  
 
@@ -1069,7 +1069,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Percorso del set di backup del database del sito*>  
 
-    -   **Dettagli:** Specifica il percorso per il set di backup del database del sito.  
+    -   **Dettagli:** Specifica il percorso del set di backup del database del sito.  
 
 **Opzioni**  
 
@@ -1222,7 +1222,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Intervallo*>  
 
-    -   **Dettagli:** Specifica l'intervallo tra tentativi (in minuti) di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato per **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
+    -   **Dettagli:** Specifica l'intervallo (in minuti) tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato per **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
 
 -   **Nome chiave:** WaitForCASTimeout  
 

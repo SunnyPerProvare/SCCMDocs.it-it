@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 3fab4d67-8d2a-45ce-8b06-471280102cf6
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7a9fcf06630c76fc3e1123fa56861c4de224521
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: dcc3a43f1cc2393a66fe50ef74e864afeb27704c
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129375"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501058"
 ---
 # <a name="monitor-hierarchy-and-replication-infrastructure-in-system-center-configuration-manager"></a>Monitorare l'infrastruttura della gerarchia e di replica in System Center Configuration Manager
 
@@ -89,9 +89,9 @@ Configuration Manager offre diversi metodi per monitorare lo stato e le operazio
 ###  <a name="BKMK_SH_Node"></a> Informazioni sul nodo Gerarchia siti  
 Il nodo **Gerarchia siti** dell'area di lavoro **Monitoraggio** offre una panoramica della gerarchia e dei collegamenti tra siti di Configuration Manager. È possibile utilizzare due viste:  
 
--   **Diagramma gerarchia**: consente di visualizzare la gerarchia come mappa topologica semplificata per mostrare solo le informazioni più importanti.  
+-   **Diagramma gerarchia**: visualizza la gerarchia come mappa topologica semplificata per mostrare solo le informazioni più importanti.  
 
--   **Vista geografica**: consente di visualizzare i siti in una mappa geografica con i percorsi del sito configurati.  
+-   **Vista geografica**: visualizza i siti in una mappa geografica con i percorsi del sito configurati.  
 
 Utilizzare il nodo **Gerarchia siti** per monitorare l'integrità di ciascun sito, i collegamenti di replica tra siti e la loro relazione con fattori esterni, come la posizione geografica.  
 
@@ -106,7 +106,7 @@ Poiché lo stato del sito e lo stato dei collegamenti tra siti vengono replicati
 
  Le seguenti opzioni di modificano il diagramma gerarchia:  
 
--   **Gruppi**: è possibile configurare il numero di siti primari e secondari che attivano una modifica nella vista diagramma gerarchia che combini in siti in un singolo oggetto. Quando i siti vengono combinati in un singolo oggetto, si visualizza il numero totale di siti e un rollup di alto livello si messaggi di stato e stato dei siti. Le configurazioni dei gruppi non influenzano la vista geografica.  
+-   **Gruppi**: è possibile configurare il numero di siti primari e secondari che attivano una modifica nella vista diagramma gerarchia che combini i siti in un singolo oggetto. Quando i siti vengono combinati in un singolo oggetto, si visualizza il numero totale di siti e un rollup di alto livello si messaggi di stato e stato dei siti. Le configurazioni dei gruppi non influenzano la vista geografica.  
 
 -   **Siti preferiti**: è possibile specificare i singoli siti come sito preferito. Un'icona a stella identifica un sito preferito nel diagramma gerarchia. I siti preferiti non si combinano con altri siti quando sono stati utilizzati i gruppi e vengono sempre visualizzati singolarmente.  
 

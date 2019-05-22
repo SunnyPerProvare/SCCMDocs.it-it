@@ -2,7 +2,7 @@
 title: Informazioni su upgrade, aggiornamento e installazione
 titleSuffix: Configuration Manager
 description: Informazioni sulla differenza tra i termini installazione, aggiornamento e upgrade per la gestione dell'infrastruttura di Configuration Manager.
-ms.date: 1/11/2017
+ms.date: 04/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df4daee11a72100debb93270fc6e51ab1a5e2622
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 53803d154a871739c5dd8cf7eaff4eebf92fd651
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140045"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083426"
 ---
 # <a name="about-upgrade-update-and-install-for-site-and-hierarchy-infrastructure"></a>Informazioni su upgrade, aggiornamento e installazione per l'infrastruttura del sito e della gerarchia
 
@@ -34,11 +34,11 @@ Per altre informazioni, vedere l'articolo [Eseguire l'aggiornamento a System Cen
 
 
 ## <a name="update"></a>Aggiornamento
-Il termine *aggiornamento* viene usato per indicare l'installazione di aggiornamenti nella console per System Center Configuration Manager e gli aggiornamenti fuori banda che non possono essere distribuiti dall'interno della console di Configuration Manager. Gli aggiornamenti nella console possono modificare la versione del sito Current Branch (o Technical Preview) in modo da eseguire una versione successiva. Se ad esempio il sito esegue una versione 1606, è possibile installare un aggiornamento per la versione 1610. Gli aggiornamenti possono inoltre installare correzioni per un problema noto, senza modificare la versione dei siti.      
+Il termine *aggiornamento* viene usato per indicare l'installazione di aggiornamenti nella console per System Center Configuration Manager e gli aggiornamenti fuori banda che non possono essere distribuiti dall'interno della console di Configuration Manager. Gli aggiornamenti nella console possono modificare la versione del sito Current Branch (o Technical Preview) in modo da eseguire una versione successiva. Se ad esempio il sito esegue una versione 1806, è possibile installare un aggiornamento per la versione 1810. Gli aggiornamenti possono inoltre installare correzioni per un problema noto, senza modificare la versione dei siti.      
 
 In genere, gli aggiornamenti aggiungono correzioni per la sicurezza, miglioramenti della qualità e nuove funzionalità alla distribuzione esistente. Se si usa il ramo Technical Preview, un aggiornamento può installare una versione più recente della Technical Preview.
 -   È l'utente stesso a scegliere quando installare l'aggiornamento nella console, a partire dal sito di livello superiore della gerarchia.
-- È possibile installare qualsiasi aggiornamento disponibile dall'interno della console. Se ad esempio il sito esegue la versione 1602 e sono disponibili sia la 1606 sia la 1610, può essere opportuno installare la 1610 perché ogni versione include le funzionalità che sono state prima introdotte nelle versioni rilasciate in precedenza.
+- È possibile installare qualsiasi aggiornamento disponibile dall'interno della console. Se ad esempio il sito esegue la versione 1802 e sono disponibili sia la 1806 sia la 1810, può essere opportuno installare la 1810 perché ogni versione include le funzionalità che sono state prima introdotte nelle versioni rilasciate in precedenza.
 - Al termine dell'installazione di un nuovo aggiornamento nel sito di livello superiore, i siti primari figlio avviano automaticamente il processo di aggiornamento. È tuttavia possibile impostare [intervalli di servizio](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkservicewindowa-service-windows-for-site-servers) per controllare i tempi di esecuzione degli aggiornamenti.
 - I siti secondari non installano gli aggiornamenti automaticamente. Spetta all'utente avviare manualmente l'aggiornamento dall'interno della console di Configuration Manager.
 

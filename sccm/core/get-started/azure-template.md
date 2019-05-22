@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25283e513e256e8ce779df7b71ac6f6c17f1e370
-ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
+ms.openlocfilehash: aeef8e447d646df183f7f2075954e381b08d8c93
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58196824"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499726"
 ---
 # <a name="create-a-configuration-manager-technical-preview-lab-in-azure"></a>Creare un lab di Configuration Manager Technical Preview in Azure
 
@@ -33,7 +33,8 @@ Per altre informazioni sul ramo corrente di Configuration Manager, vedere [Confi
 ## <a name="prerequisites"></a>Prerequisiti
 
 Questo processo richiede una sottoscrizione di Azure in cui è possibile creare gli oggetti seguenti: 
-- Tre macchine virtuali Standard_D2s_v3
+- Due macchine virtuali Standard_B2s per il controller di dominio e per i ruoli Punto di gestione e Punto di distribuzione.
+- Una macchina virtuale Standard_B2ms per il server del sito primario e il server di database SQL.
 - Account di archiviazione Standard_LRS
 
 > [!Tip]  
@@ -102,7 +103,7 @@ Controller di dominio Active Directory
 #### <a name="windows-features-and-roles"></a>Ruoli e funzionalità di Windows
 - Active Directory Domain Services (ADDS)
 - .NET
-- Compressione differenziale remota (RDC)
+- Compressione differenziale remota
 
 
 ### `<prefix>PS1`
@@ -113,7 +114,7 @@ Controller di dominio Active Directory
 
 #### <a name="windows-features-and-roles"></a>Ruoli e funzionalità di Windows
 - .NET
-- Compressione differenziale remota (RDC) 
+- Compressione differenziale remota 
 - Internet Information Service (IIS)
 
 
@@ -124,7 +125,7 @@ Controller di dominio Active Directory
 
 #### <a name="windows-features-and-roles"></a>Ruoli e funzionalità di Windows
 - .NET
-- Compressione differenziale remota (RDC) 
+- Compressione differenziale remota 
 - Internet Information Service (IIS)
 - Servizio trasferimento intelligente in background (BITS)
 

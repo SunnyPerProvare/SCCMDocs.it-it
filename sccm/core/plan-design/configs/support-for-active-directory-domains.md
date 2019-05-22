@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 8c5a13f8-42d5-4898-b7b6-e594dae8b335
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2babdf726d468d27d0fe2ab37ad99a101adbb74c
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 02353e516e7af45afe273bc0deff5b227a7c7f2c
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129562"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499447"
 ---
 # <a name="supported-active-directory-domains-for-system-center-configuration-manager"></a>Domini di Active Directory supportati per System Center Configuration Manager
 
@@ -79,6 +79,6 @@ La tabella seguente identifica gli scenari supportati per uno spazio dei nomi no
 
 -   Il dominio con etichetta singola in Servizi di dominio Active Directory deve essere configurato con uno spazio dei nomi DNS non contiguo che dispone di un dominio di livello superiore valido.  
 
-     **Ad esempio:** Il dominio con etichetta singola di Contoso è configurato per disporre di uno spazio dei nomi non contiguo contoso.com in DNS.  Pertanto, quando si specifica il suffisso DNS in Configuration Manager per un computer nel dominio Contoso, specificare Contoso.com e non Contoso.  
+     **Ad esempio:** Il dominio con etichetta singola di Contoso è configurato per avere uno spazio dei nomi contoso.com indipendente in DNS. Pertanto, quando si specifica il suffisso DNS in Configuration Manager per un computer nel dominio Contoso, specificare Contoso.com e non Contoso.  
 
 -   Le connessioni DCOM (Distributed Component Object Model) tra i server del sito nel contesto del sistema devono essere stabilite usando l'autenticazione Kerberos.  

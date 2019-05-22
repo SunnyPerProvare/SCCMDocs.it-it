@@ -2,7 +2,7 @@
 title: Ottenere informazioni
 titleSuffix: Configuration Manager
 description: Trovare risorse per altre informazioni su Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 05/02/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9440a4873b6011ed4a7394c335531afc72ac5d97
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: e767d46c81e3942efb44d9d94ba7f66ecd1f5281
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802547"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083113"
 ---
 # <a name="find-help-for-using-configuration-manager"></a>Reperire informazioni sull'uso di Configuration Manager
 
@@ -112,7 +112,7 @@ Quando si usano **Invia smile** o **Invia faccia imbronciata**, vengono inviate 
 
 1. Fare clic su **Salva** nella parte inferiore della finestra **Commenti e suggerimenti**. 
 2. Salvare il file ZIP. Se il computer locale non ha accesso a Internet, copiare il file in un computer connesso a Internet. 
-3. Se necessario, copiare UploadOfflineFeedback.exe, disponibile in `cd.latest\SMSSETUP\Tools\UploadOfflineFeedback\UploadOfflineFeedback.exe`
+3. Se necessario, copiare la cartella UploadOfflineFeedback, disponibile in `cd.latest\SMSSETUP\Tools\UploadOfflineFeedback\`
     - Per altre informazioni sulla cartella CD.Latest, vedere [Cartella CD.Latest](../servers/manage/the-cd.latest-folder.md)
 
 4. In un computer connesso a Internet aprire il prompt dei comandi. 

@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 41cdebfe-b595-40aa-a385-32e0746255ed
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 970d2fbf69a7c4c91a55cadf5d420988b2207ca2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 7858497f1ff49e5068da066cc481ca5fd38f825f
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131099"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500714"
 ---
 # <a name="support-center-user-interface-reference"></a>Informazioni di riferimento sull'interfaccia utente del Supporto tecnico
 
@@ -223,19 +223,19 @@ Le voci seguenti di questo menu richiedono un'azione del client relativa al cont
 
 - **Location services** (Servizi di posizione)  
 
-    - **Refresh content locations** (Aggiorna posizioni contenuti): Aggiorna i punti di distribuzione usati da tutti i download di contenuto attivi.  
+    - **Refresh content locations** (Aggiorna posizioni contenuti): aggiorna i punti di distribuzione usati da tutti i download di contenuto attivi.  
 
-    - **Refresh management points** (Aggiorna punti di gestione): Aggiorna l'elenco interno di punti di gestione usati dal client.  
+    - **Refresh management points** (Aggiorna punti di gestione): aggiorna l'elenco interno di punti di gestione usati dal client.  
 
     - **Time out content requests** (Timeout richieste contenuto): se una richiesta di posizione di contenuto è in esecuzione da troppo tempo, questa azione la interrompe.  
 
-  - **Application deployment evaluation** (Valutazione distribuzione applicazioni): Avvia un'attività che valuta le applicazioni distribuite.  
+  - **Application deployment evaluation** (Valutazione distribuzione applicazioni): avvia un'attività che valuta le applicazioni distribuite.  
 
-  - **Software updates deployment evaluation** (Valutazione distribuzione aggiornamenti software): Avvia un'attività che valuta gli aggiornamenti del software distribuiti.  
+  - **Software updates deployment evaluation** (Valutazione distribuzione aggiornamenti software): avvia un'attività che valuta gli aggiornamenti del software distribuiti.  
 
-  - **Software updates source scan** (Analisi origine aggiornamenti software): Avvia un'attività che analizza i percorsi di origine degli aggiornamenti.  
+  - **Software updates source scan** (Analisi origine aggiornamenti software): avvia un'attività che analizza i percorsi di origine degli aggiornamenti.  
 
-  - **Windows Installer source list update** (Aggiornamento elenco origine Windows Installer): Avvia un'attività che aggiorna il percorso di origine per le installazioni di Windows Installer (MSI).  
+  - **Windows Installer source list update** (Aggiornamento elenco origine Windows Installer): avvia un'attività che aggiorna il percorso di origine per le installazioni di Windows Installer (MSI).  
 
 #### <a name="content-view"></a>Visualizzazione di contenuto
 Visualizza le applicazioni, i pacchetti e gli aggiornamenti caricati nel client. Se si seleziona un'applicazione, un pacchetto o un aggiornamento, vengono visualizzate informazioni dettagliate sul contenuto. Per alcune applicazioni, è anche possibile eseguire le azioni seguenti:  
@@ -271,7 +271,7 @@ Selezionare **Monitoring** (Monitoraggio) per visualizzare lo stato attivo delle
 Per ogni evento, questa visualizzazione illustra le proprietà seguenti:  
 
  - **Time** (Ora): ora in cui il client ha generato l'evento  
- - **Topic type** (Tipo di argomento): tipo del messaggio di stato  
+ - **Topic type** (Tipo di argomento): il tipo del messaggio di stato  
  - **Topic ID** (ID argomento): ID del messaggio di stato, usato per eseguire il mapping agli eventi nei file di log  
  - **Topic ID type** (Tipo ID argomento): sottotipo del messaggio di stato  
  - **State ID** (ID stato): risultati dell'azione monitorata  
@@ -303,7 +303,7 @@ Le voci seguenti di questo menu richiedono un'azione del client correlata all'in
 
  - **Software inventory cycle** (Ciclo inventario software): attiva l'attività client usata per la raccolta dei dati di inventario software  
 
- - **Software metering report cycle** (Ciclo report misurazione del software): attiva l'attività client usata per creare un report di misurazione del software e inviarlo al punto di gestione. È possibile tenere traccia dello stato dell'attività in **SWMTRReportGen.log**.
+ - **Software metering report cycle** (Ciclo report misurazione del software): attiva l'attività client usata per creare un report di controllo del software e inviarlo al punto di gestione. È possibile tenere traccia dello stato dell'attività in **SWMTRReportGen.log**.
 
  - **Send unsent state messages in queue** (Invia messaggi di stato non inviati in coda): attiva l'attività client per scaricare la coda dei messaggi di stato.
 
@@ -420,7 +420,7 @@ Nella finestra di dialogo **Options** è possibile:
 #### <a name="about"></a>Informazioni su
 Visualizza informazioni sul Visualizzatore log del Supporto tecnico
 
-#### <a name="close"></a>Chiusura
+#### <a name="close"></a>Chiudi
 Chiude il Visualizzatore log del Supporto tecnico
 
 

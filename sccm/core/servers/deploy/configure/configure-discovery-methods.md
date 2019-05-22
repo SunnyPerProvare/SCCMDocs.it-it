@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 49505eb1-d44d-4121-8712-e0f3d8b15bf5
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6524fb7715c9bc3040996a16b4204464e0505123
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 38b2355159e3ce0472a5a5ceb0ff0a5f2275358d
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56139188"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65499534"
 ---
 # <a name="configure-discovery-methods-for-configuration-manager"></a>Configurare i metodi di individuazione per Configuration Manager
 
@@ -195,7 +195,7 @@ Usare quindi le informazioni nelle sezioni seguenti per configurare metodi di in
 3.  Nella scheda **Attributi di Active Directory** configurare gli attributi aggiuntivi di Active Directory per i computer da individuare. In questa scheda sono elencati gli attributi degli oggetti predefiniti.  
 
      > [!Tip]  
-     > Ad esempio, l'organizzazione usa l'attributo **Description** nell'account computer in Active Directory. Selezionare **Personalizzato** e aggiungere `Description` come attributo personalizzato. Quando il metodo di individuazione viene eseguito, questo attributo viene visualizzato nella scheda delle proprietà del dispositivo nella console di Configuration Manager.<!--513948-->  
+     > Ad esempio, l'organizzazione usa l'attributo **Description** nell'account computer in Active Directory. Selezionare **Personalizzato** e aggiungere `Description` come attributo personalizzato. Quando viene eseguito il metodo di individuazione, questo attributo viene visualizzato nella scheda delle proprietà del dispositivo nella console di Configuration Manager.<!--513948-->  
 
 4.  Nella scheda **Opzioni** configurare le impostazioni di filtro per escludere dall'individuazione i record dei computer non aggiornati.  
 

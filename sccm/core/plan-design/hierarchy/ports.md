@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99df201cb3525a124b42d5d599d4a74708258bad
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: a513eb15f9a8c841aa5896ee5d416bd7863d0cb9
+ms.sourcegitcommit: ab9f2a7fb7ea3a0c65808fce2975ab25a670281f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59673718"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65612787"
 ---
 # <a name="ports-used-in-configuration-manager"></a>Porte usate in Configuration Manager
 
@@ -718,7 +718,7 @@ Al termine dell'installazione, è possibile modificare la porta. Non è necessar
 #### <a name="bkmk_note4"></a> Nota 4: Daemon Trivial FTP (TFTP)
 Il servizio del sistema Daemon Trivial FTP (TFTP) non richiede un nome utente o una password ed è parte integrante di Servizi di distribuzione Windows. Il servizio Daemon Trivial FTP implementa il supporto per il protocollo TFTP definito nei seguenti RFC:  
 
-- RFC 350: TFTP  
+- RFC 1350: TFTP  
 
 - RFC 2347: Estensione opzione  
 
@@ -730,7 +730,7 @@ TFTP è progettato per supportare ambienti di avvio privi di dischi. I daemon TF
 
 Il punto di distribuzione che supporta PXE e il client in Windows PE selezionano porte di numero alto ad assegnazione dinamica per i trasferimenti TFTP. Queste porte sono definite da Microsoft in un intervallo compreso tra 49152 e 65535. Per altre informazioni, vedere [Panoramica dei servizi e requisiti delle porte per Windows](https://support.microsoft.com/help/832017/service-overview-and-network-port-requirements-for-windows)
 
-Durante l'effettivo avvio PXE, tuttavia, la scheda di rete presente nel dispositivo seleziona la porta di numero alto ad assegnazione dinamica usata durante il trasferimento TFTP. La scheda di rete presente nel dispositivo non è associata alle porte di numero alto ad assegnazione dinamica definite da Microsoft. È associata solo alle porte definite in RFC 350. Questa porta può essere una qualsiasi nell'intervallo compreso tra 0 e 65535. Per informazioni sulle porte di numero alto ad assegnazione dinamica usate dalla scheda di rete, contattare il produttore dell'hardware del dispositivo.
+Durante l'effettivo avvio PXE, tuttavia, la scheda di rete presente nel dispositivo seleziona la porta di numero alto ad assegnazione dinamica usata durante il trasferimento TFTP. La scheda di rete presente nel dispositivo non è associata alle porte di numero alto ad assegnazione dinamica definite da Microsoft. È associata solo alle porte definite in RFC 1350. Questa porta può essere una qualsiasi nell'intervallo compreso tra 0 e 65535. Per informazioni sulle porte di numero alto ad assegnazione dinamica usate dalla scheda di rete, contattare il produttore dell'hardware del dispositivo.
 
 
 #### <a name="bkmk_note5"></a> Nota 5: Comunicazione tra server del sito e sistemi del sito

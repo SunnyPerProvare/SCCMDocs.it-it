@@ -2,21 +2,21 @@
 title: Dashboard del ciclo di vita del prodotto
 titleSuffix: Configuration Manager
 description: Visualizzare i criteri del ciclo di vita Microsoft con il dashboard del ciclo di vita del prodotto in Configuration Manager.
-ms.date: 11/27/2018
+ms.date: 05/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 8b5b144a-0e5f-4fcc-87b2-33b9bcdb5655
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 716c5218eafaf6297292fdd852589b7327e2ecaa
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: b8876f00ecb26aabd84f863ee1fcef4f2aac283a
+ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120028"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65673411"
 ---
 # <a name="manage-microsoft-lifecycle-policy-with-configuration-manager"></a>Gestire i criteri del ciclo di vita Microsoft con Configuration Manager
 
@@ -35,6 +35,8 @@ A partire dalla versione 1810, il dashboard include le informazioni per System C
  Per visualizzare i dati nel dashboard del ciclo di vita del prodotto, sono necessari i componenti seguenti:  
 
 - Internet Explorer 9 o versione successiva deve essere installato nel computer che esegue la console di Configuration Manager.  
+
+- È necessario che sia installato e configurato un ruolo del punto di connessione del servizio. Per ottenere gli aggiornamenti per i dati in questo dashboard, il punto di connessione del servizio deve essere online oppure deve essere sincronizzato regolarmente se è offline. Per altre informazioni, vedere [Informazioni sul punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point).
 
 - Un punto di Reporting Services è necessario per la funzionalità di collegamento ipertestuale nel dashboard. Il dashboard è collegato ai report di SQL Server Reporting Services (SSRS). Per altre informazioni, vedere [Creazione di report in Configuration Manager](/sccm/core/servers/manage/reporting).  
 
@@ -67,7 +69,8 @@ Modificare la visualizzazione selezionando una delle opzioni seguenti dall'elenc
 - **Client Windows**: visualizza le versioni del sistema operativo dei client Windows  
 - **Windows Server**: visualizza le versioni del sistema operativo Windows Server  
 - **Database**: visualizza le versioni di SQL Server  
-- **Configuration Manager**: a partire dalla versione 1810, visualizza le versioni di Configuration Manager  
+- **Configuration Manager**: a partire dalla versione 1810, visualizza le versioni di Configuration Manager 
+- **Microsoft Office**: a partire dalla versione 1902, visualizza informazioni sulle versioni installate da Office 2003 a Office 2016 <!--3556026-->
 
 Il dashboard include i riquadri seguenti:  
 

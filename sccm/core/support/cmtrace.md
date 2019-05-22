@@ -2,21 +2,21 @@
 title: CMTrace
 titleSuffix: Configuration Manager
 description: Informazioni su come usare lo strumento CMTrace per visualizzare i file di log per Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 05/09/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 6a4a3290-5228-4871-918a-554aa1c20834
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87552016d1cd17e79abf01a9de9109195d3d2a70
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 988e834de78bac64be43600ca73d0d51ff29bf4b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125311"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65496766"
 ---
 # <a name="cmtrace"></a>CMTrace
 
@@ -115,8 +115,8 @@ Nel menu **Strumenti** sono disponibili le azioni seguenti:
 - [Filtro](#filter)
 - [Error lookup](#error-lookup) (Ricerca errori)
 - [Sospendi](#pause)
-- [Show/Hide Details](#show-hide-details) (Mostra/Nascondi dettagli)
-- [Show/Hide Info Pane](#show-hide-info-pane) (Mostra/Nascondi riquadro informazioni)
+- [Show/Hide Details](#show/hide-details) (Mostra/Nascondi dettagli)
+- [Show/Hide Info Pane](#show/hide-info-pane) (Mostra/Nascondi riquadro informazioni)
 
 #### <a name="find"></a>Trova
 Cercare nel file di log aperto una stringa di testo specificata.  
@@ -141,7 +141,8 @@ Immettere una stringa usata da CMTrace per cercare il testo di ogni voce di log.
 #### <a name="filter"></a>Filtro
 Visualizzare o nascondere le righe del log in base ai criteri specificati. Applicare i filtri a qualsiasi delle quattro colonne indipendentemente dal fatto che siano visibili. Queste impostazioni si applicano a ogni file di log aperto. 
 
-Esempi: <!--SCCMDocs issue #603-->
+Esempi:
+<!--SCCMDocs issue #603-->
 - Filtrare **smsts.log** in base al testo delle voci contenente "the action" o "the group". 
 - Filtrare **InventoryAgent.log** in base al testo delle voci contenente "destination".
 
@@ -185,7 +186,7 @@ Visualizza le righe con avvisi con uno sfondo giallo. Nei log in formato CCM le 
 
 ## <a name="info-pane"></a>Riquadro delle informazioni
 
-Il riquadro delle informazioni è nella parte inferiore della finestra CMTrace. Esso comprende le seguenti funzionalità:   
+Il riquadro delle informazioni è nella parte inferiore della finestra CMTrace. Include le funzionalità seguenti:   
 
 - Dettagli sulla voce di log attualmente selezionata  
 
@@ -230,7 +231,8 @@ CMTrace supporta la funzionalità di trascinamento della selezione di base. Tras
 ## <a name="other-tips"></a>Altri suggerimenti
 
 ### <a name="last-directory-registry-key"></a>Chiave del Registro di sistema Last Directory
-<!--511280--> Per impostazione predefinita, CMTrace salva l'ultimo percorso log aperto. Questo comportamento è utile nel server del sito, perché l'impostazione predefinita è ogni volta il percorso log. 
+<!--511280-->
+Per impostazione predefinita, CMTrace salva l'ultimo percorso di log aperto. Questo comportamento è utile nel server del sito, perché l'impostazione predefinita è ogni volta il percorso log. 
 
 La prima volta che lo si avvia in un client, l'impostazione predefinita è la directory di lavoro corrente. Questa posizione può essere il percorso in cui si è salvato CMTrace o un percorso come `%userprofile%\Desktop`. 
 

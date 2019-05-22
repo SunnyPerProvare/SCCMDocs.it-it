@@ -5,32 +5,34 @@ description: Informazioni su come gestire dispositivi Windows 10 contemporaneame
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 01/14/2019
+ms.date: 04/26/2019
 ms.topic: overview
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c88bf98e035499c271de8acf9d8fa222e5058447
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: 1e0ae5c392acd03509f70c19f551731065bc4be2
+ms.sourcegitcommit: 23852dda81bb8496dd10c0a8ec4f740a8e15efc3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "56755370"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873271"
 ---
 # <a name="what-is-co-management"></a>Informazioni sulla co-gestione
 
 <!-- 1350871 -->
-La co-gestione è uno dei modi principali per collegare la distribuzione di Configuration Manager esistente al cloud di Microsoft 365. Consente di avere a disposizione funzionalità aggiuntive basate sul cloud, come l'accesso condizionale. 
+La co-gestione è uno dei modi principali per collegare la distribuzione di Configuration Manager esistente al cloud di Microsoft 365. Consente di avere a disposizione funzionalità aggiuntive basate sul cloud, come l'accesso condizionale.
 
-Con la co-gestione è possibile gestire i dispositivi Windows 10 contemporaneamente tramite Configuration Manager e Microsoft Intune. Consente di collegare al cloud gli investimenti esistenti in Configuration Manager tramite l'aggiunta di nuove funzionalità. La co-gestione offre la flessibilità di usare la soluzione tecnologica più idonea all'organizzazione. 
+Con la co-gestione è possibile gestire i dispositivi Windows 10 contemporaneamente tramite Configuration Manager e Microsoft Intune. Consente di collegare al cloud gli investimenti esistenti in Configuration Manager tramite l'aggiunta di nuove funzionalità. La co-gestione offre la flessibilità di usare la soluzione tecnologica più idonea all'organizzazione.
 
 Quando un dispositivo Windows 10 ha il client di Configuration Manager ed è registrato in Intune, si ottengono i vantaggi di entrambi i servizi. È possibile stabilire per quali carichi di lavoro trasferire eventualmente l'autorità da Configuration Manager a Intune. Configuration Manager continua a gestire tutti gli altri carichi di lavoro, inclusi i carichi di lavoro che non vengono trasferiti a Intune, e tutte le altre funzionalità di Configuration Manager non supportate dalla co-gestione.
 
-È anche possibile eseguire la distribuzione pilota di un carico di lavoro con una raccolta separata di dispositivi. La distribuzione pilota consente di testare la funzionalità di Intune con un subset di dispositivi prima di passare un gruppo più ampio. 
+È anche possibile eseguire la distribuzione pilota di un carico di lavoro con una raccolta separata di dispositivi. La distribuzione pilota consente di testare la funzionalità di Intune con un subset di dispositivi prima di passare un gruppo più ampio.
 
 ![Diagramma della panoramica della co-gestione](media/co-management-overview.png)
 
+> [!Note]  
+> Quando si gestiscono i dispositivi Windows 10 contemporaneamente tramite Configuration Manager e Microsoft Intune, questa configurazione è detta *co-gestione*. Quando si gestiscono i dispositivi con Configuration Manager e ci si iscrive a un servizio MDM di terze parti, questa configurazione è detta *coesistenza*. La disponibilità di due autorità di gestione per un singolo dispositivo può essere problematica se non si implementa la corretta orchestrazione tra le due. Con la co-gestione, Configuration Manager e Intune bilanciano i [carichi di lavoro](#workloads) per assicurare che non si verifichino conflitti. Questa interazione non esiste con i servizi di terze parti, quindi le funzionalità di gestione della coesistenza presentano limitazioni. Per altre informazioni, vedere [Coesistenza di servizi MDM di terze parti con Configuration Manager](/sccm/comanage/coexistence).
 
 
 ## <a name="paths-to-co-management"></a>Percorsi per la co-gestione
@@ -45,7 +47,7 @@ Per altre informazioni sui percorsi, vedere [Percorsi per la co-gestione](/sccm/
 
 
 
-## <a name="benefits"></a>Vantaggi 
+## <a name="benefits"></a>Vantaggi
 
 Quando si registrano client di Configuration Manager esistenti per la co-gestione, si ottiene il valore immediato seguente:  
 
@@ -63,7 +65,7 @@ Quando si registrano client di Configuration Manager esistenti per la co-gestion
 
 Per altre informazioni sul valore immediato offerto dalla co-gestione, vedere la serie di articoli di avvio rapido [Connessione al cloud con la co-gestione](/sccm/comanage/quickstarts).
 
-La co-gestione supporta anche l'orchestrazione con Intune per diversi carichi di lavoro. Per altre informazioni, vedere la sezione [Carichi di lavoro](#workloads). 
+La co-gestione supporta anche l'orchestrazione con Intune per diversi carichi di lavoro. Per altre informazioni, vedere la sezione [Carichi di lavoro](#workloads).
 
 
 
@@ -80,7 +82,7 @@ La co-gestione presenta questi prerequisiti nelle aree seguenti:
 
 ### <a name="licensing"></a>Licenza
 
-- Azure AD Premium 
+- Azure AD Premium
 - Licenza di EMS o Intune per tutti gli utenti  
 
     > [!Note]  
@@ -116,7 +118,7 @@ Per abilitare la co-gestione, non è richiesto l'onboarding del sito in Azure AD
 
 > [!Note]  
 > Se si ha un ambiente MDM ibrido, ovvero Intune integrato con Configuration Manager, non è possibile abilitare la co-gestione. È tuttavia possibile avviare la migrazione degli utenti a Intune autonomo e quindi abilitare i dispositivi Windows 10 ad essi associati per la co-gestione. Per altre informazioni sulla migrazione a Intune autonomo, vedere [Avviare la migrazione da MDM ibrido a Intune autonomo](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).  
-> 
+>
 > Se si usa l'[autorità mista](/sccm/mdm/deploy-use/migrate-mixed-authority), completare prima la migrazione a Intune autonomo. Impostare quindi l'autorità MDM su Intune prima di configurare la co-gestione.<!--SCCMDocs issue #797-->
 
 
@@ -129,21 +131,21 @@ Aggiornare i dispositivi a Windows 10, versione 1709 o successive. Per altre inf
 
 
 ### <a name="permissions-and-roles"></a>Ruoli e autorizzazioni
-<!--SCCMDocs issue #667-->
 
+<!--SCCMDocs issue #667-->
 | Action | Ruolo necessario |
 |----|----|
 | Configurare un Cloud Management Gateway in Configuration Manager | **Gestione di sottoscrizioni** di Azure |
 | Creare app Azure AD da Configuration Manager | **Amministratore globale** di Azure AD |
 | Importare le app di Azure in Configuration Manager | **Amministratore completo** di Configuration Manager<br>Non sono necessari altri ruoli di Azure |
-| Abilitare la co-gestione in Configuration Manager | Un utente di Azure AD<br>**Amministratore completo** di Configuration Manager con diritti appartenenti all'ambito **Tutti**.<!--SCCMDoc issue 626--> | 
+| Abilitare la co-gestione in Configuration Manager | Un utente di Azure AD<br>**Amministratore completo** di Configuration Manager con diritti appartenenti all'ambito **Tutti**.<!--SCCMDoc issue 626--> |
 
 Per altre informazioni sui ruoli di Azure, vedere [Informazioni sui diversi ruoli](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles).
 
 Per altre informazioni sui ruoli di Configuration Manager, vedere [Nozioni fondamentali di amministrazione basata su ruoli](/sccm/core/understand/fundamentals-of-role-based-administration).
 
 
-## <a name="workloads"></a>Carichi di lavoro 
+## <a name="workloads"></a>Carichi di lavoro
 
 Non è obbligatorio trasferire i carichi di lavoro oppure è possibile procedere singolarmente al momento opportuno. Configuration Manager continua a gestire tutti gli altri carichi di lavoro, inclusi i carichi di lavoro che non vengono trasferiti a Intune, e tutte le altre funzionalità di Configuration Manager non supportate dalla co-gestione.
 
@@ -182,4 +184,3 @@ Per altre informazioni, vedere [Come monitorare la co-gestione](/sccm/comanage/h
 - [Altre informazioni sul valore immediato e guida introduttiva alla co-gestione](/sccm/comanage/quickstarts)  
 
 - [Esercitazione: Abilitare la co-gestione per i client di Configuration Manager esistenti](/sccm/comanage/tutorial-co-manage-clients)  
-

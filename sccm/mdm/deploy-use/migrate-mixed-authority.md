@@ -5,22 +5,22 @@ description: Informazioni su come cambiare l'autorità MDM dalla soluzione MDM i
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 11/14/2018
+ms.date: 05/21/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: 6f0201d7-5714-4ba0-b2bf-d1acd0203e9a
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7f2875852b49ab8af9b1f34c4747f12a6620896
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: ccc38188729a05329cc240a9f424ccce9fd433b2
+ms.sourcegitcommit: d1df13fc95a1f1540177c294555d9be26161b9cb
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62282482"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974080"
 ---
-# <a name="change-the-mdm-authority-for-specific-users-mixed-mdm-authority"></a>Modificare l'autorità MDM per utenti specifici (autorità MDM mista) 
+# <a name="change-the-mdm-authority-for-specific-users-mixed-mdm-authority"></a>Modificare l'autorità MDM per utenti specifici (autorità MDM mista)
 
-*Si applica a: System Center Configuration Manager (Current Branch)*    
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 È possibile configurare un'autorità MDM mista nello stesso tenant. Gestire alcuni utenti in Microsoft Intune e altri con MDM ibrida. Questo articolo fornisce informazioni su come iniziare a spostare gli utenti a Intune autonomo. Si presuppone di avere completato i passaggi seguenti:  
 
@@ -28,10 +28,10 @@ ms.locfileid: "62282482"
 
 - [Preparazione di Intune per la migrazione degli utenti](migrate-prepare-intune.md) per assicurarsi che gli utenti e i relativi dispositivi continuino a essere gestiti dopo la migrazione.  
 
-> [!Note]    
+> [!Note]  
 > Un ripristino completo del tenant rimuove tutti i criteri, App e le registrazioni dei dispositivi. Se si decide di eseguire questo processo, contattare il supporto tecnico per assistenza.  
 
-Gestire gli utenti migrati e i dispositivi in Intune. Continuare a gestire gli altri dispositivi in Configuration Manager. Per verificare che tutto funzioni come previsto, iniziare con un gruppo di test di piccole dimensioni di utenti. Quindi gradualmente la migrazione altri gruppi di utenti. Quando si è pronti, cambiare l'autorità MDM a livello di tenant da Configuration Manager alla versione autonoma di Intune. 
+Gestire gli utenti migrati e i dispositivi in Intune. Continuare a gestire gli altri dispositivi in Configuration Manager. Per verificare che tutto funzioni come previsto, iniziare con un gruppo di test di piccole dimensioni di utenti. Quindi gradualmente la migrazione altri gruppi di utenti. Quando si è pronti, cambiare l'autorità MDM a livello di tenant da Configuration Manager alla versione autonoma di Intune.
 
 > [!Important]  
 > A partire dal 13 agosto 2018, la gestione ibrida dei dispositivi mobili è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
@@ -42,12 +42,12 @@ Gestire gli utenti migrati e i dispositivi in Intune. Continuare a gestire gli a
 
 - Durante la migrazione in fasi, le app o i criteri MDM esistenti in Configuration Manager continuano a essere applicati ai dispositivi della soluzione MDM ibrida.  
 
-- I dispositivi per gli utenti nella raccolta associata alla sottoscrizione di Intune possono essere registrati nella soluzione MDM ibrida. Tutti i dispositivi associati agli utenti non inclusi nella raccolta vengono gestiti in Intune fino a quando l'utente dispone di una licenza di Intune o EMS.   
+- I dispositivi per gli utenti nella raccolta associata alla sottoscrizione di Intune possono essere registrati nella soluzione MDM ibrida. Tutti i dispositivi associati agli utenti non inclusi nella raccolta vengono gestiti in Intune fino a quando l'utente dispone di una licenza di Intune o EMS.  
 
     > [!Note]  
     > Gli utenti possono eseguire la registrazione nella versione di Intune autonoma anche se è stato impedito loro di farlo nella console di Configuration Manager. Per impedire del tutto a un utente di eseguire la registrazione, non concedergli Intune in licenza. Tali utenti non possono registrare senza una licenza.<!--SCCMDocs issue 738-->  
 
-- Quando si esegue la migrazione di un utente a Intune, l'utente e i dispositivi vengono visualizzati in Intune nel portale di Azure dopo circa 15 minuti.   
+- Quando si esegue la migrazione di un utente a Intune, l'utente e i dispositivi vengono visualizzati in Intune nel portale di Azure dopo circa 15 minuti.  
 
 - Quando si esegue la migrazione di utenti alla versione autonoma di Intune, continuare a gestire le impostazioni seguenti da Configuration Manager sia per i dispositivi della versione autonoma di Intune che per quelli della soluzione MDM ibrida:  
 
@@ -74,13 +74,12 @@ Gestire gli utenti migrati e i dispositivi in Intune. Continuare a gestire gli a
 
     - File SLK di Windows  
 
-    - Personalizzazione del portale aziendale    
+    - Personalizzazione del portale aziendale  
 
-      
-  > [!Important]    
-  > Continuare a modificare i criteri a livello di tenant usando la console di Configuration Manager. Dopo aver [cambiare l'autorità MDM a livello di tenant](/sccm/mdm/deploy-use/change-mdm-authority) a Intune, i criteri a livello di tenant gestione in Configuration Manager automaticamente la migrazione a Intune in Azure. Un esempio di questo criterio è per i certificati di Apple Push Notification service (APNs).<!--SCCMDocs issue #971-->  
+    > [!Important]  
+    > Continuare a modificare i criteri a livello di tenant usando la console di Configuration Manager. Dopo aver [cambiare l'autorità MDM a livello di tenant](/sccm/mdm/deploy-use/change-mdm-authority) a Intune, i criteri a livello di tenant gestione in Configuration Manager automaticamente la migrazione a Intune in Azure. Un esempio di questo criterio è per i certificati di Apple Push Notification service (APNs).<!--SCCMDocs issue #971-->  
 
--   Se si usano certificati di firma del codice, è consigliabile eseguire la migrazione degli utenti in modo graduale. Dopo la migrazione di un dispositivo mobile, viene richiesto un nuovo certificato all'autorità di certificazione. Eseguendo la migrazione degli utenti, e dei relativi dispositivi, in modo graduale si limita il numero di richieste simultanee all'autorità di certificazione.  
+- Se si usano certificati di firma del codice, è consigliabile eseguire la migrazione degli utenti in modo graduale. Dopo la migrazione di un dispositivo mobile, viene richiesto un nuovo certificato all'autorità di certificazione. Eseguendo la migrazione degli utenti, e dei relativi dispositivi, in modo graduale si limita il numero di richieste simultanee all'autorità di certificazione.  
 
 - Non eseguire la migrazione degli account utente che sono stati aggiunti come manager di registrazione dispositivi in Configuration Manager. In seguito, quando si modifica l'autorità MDM a livello di tenant spostandola a Intune, verrà eseguita correttamente la migrazione di questi account utente. Se si esegue la migrazione di account utente Manager di registrazione dispositivi prima della modifica di autorità MDM a livello di tenant, è necessario aggiungere manualmente l'utente come un Manager di registrazione dispositivi in Intune in Azure. Tuttavia, i dispositivi registrati usando un Manager di registrazione dispositivi non esegue la migrazione correttamente. Per la migrazione di questi dispositivi chiamare il supporto tecnico. Per altre informazioni, vedere [Aggiungere un manager di registrazione dispositivi](https://docs.microsoft.com/intune/device-enrollment-manager-enroll#add-a-device-enrollment-manager).  
 
@@ -99,34 +98,36 @@ Per verificare che le configurazioni di Intune funzionino come previsto, eseguir
 
 ## <a name="migrate-a-test-group-of-users-to-intune-standalone"></a>Eseguire la migrazione di un gruppo di utenti di test alla versione autonoma di Intune
 
-I dispositivi per gli utenti nella raccolta associata alla sottoscrizione di Intune possono essere registrati nella soluzione MDM ibrida. Quando si rimuove un utente dalla raccolta, se l'utente è assegnata una licenza di Intune, vengono eseguita la migrazione di dispositivi registrati in Intune autonomo. Se si non sono assegnate le licenze agli utenti che si intende eseguire la migrazione, vedere [Intune assegna licenze agli account utente](https://docs.microsoft.com/intune/licenses-assign). Nella raccolta per la sottoscrizione di Intune, è possibile escludere raccolte di utenti dalla raccolta principale per eseguire la migrazione degli utenti nella raccolta esclusa. 
+I dispositivi per gli utenti nella raccolta associata alla sottoscrizione di Intune possono essere registrati nella soluzione MDM ibrida. Quando si rimuove un utente dalla raccolta, se l'utente è assegnata una licenza di Intune, vengono eseguita la migrazione di dispositivi registrati in Intune autonomo. Se si non sono assegnate le licenze agli utenti che si intende eseguire la migrazione, vedere [Intune assegna licenze agli account utente](https://docs.microsoft.com/intune/licenses-assign). Nella raccolta per la sottoscrizione di Intune, è possibile escludere raccolte di utenti dalla raccolta principale per eseguire la migrazione degli utenti nella raccolta esclusa.
 
-Nell'esempio seguente la raccolta di utenti ibridi contiene tutti i membri della raccolta Tutti gli utenti. Questa configurazione consente a qualsiasi utente di registrare un dispositivo nella soluzione MDM ibrida. Per eseguire la migrazione degli utenti alla versione autonoma di Intune, selezionare Escludi raccolte e aggiungere una raccolta con gli utenti di cui eseguire la migrazione. Quando si è pronti per eseguire la migrazione di più utenti, aggiungere altre raccolte escluse contenenti tali utenti. 
+Nell'esempio seguente la raccolta di utenti ibridi contiene tutti i membri della raccolta Tutti gli utenti. Questa configurazione consente a qualsiasi utente di registrare un dispositivo nella soluzione MDM ibrida. Per eseguire la migrazione degli utenti alla versione autonoma di Intune, selezionare Escludi raccolte e aggiungere una raccolta con gli utenti di cui eseguire la migrazione. Quando si è pronti per eseguire la migrazione di più utenti, aggiungere altre raccolte escluse contenenti tali utenti.
 
 ![Escludi raccolte](../media/migrate-excludecollections.png)
 
 > [!Note]  
 > Quando si dispone di **tutti gli utenti** raccolta selezionata per la sottoscrizione di Intune, non è consentito aggiungere una regola per escludere le raccolte. Creare una nuova raccolta in base il **tutti gli utenti** raccolta. Verificare che la raccolta contenga gli utenti previsti. Quindi modificare la sottoscrizione di Intune per usare la nuova raccolta. È possibile escludere le raccolte di utenti dalla nuova raccolta per la migrazione degli utenti.  
 
-Per eseguire la migrazione di un gruppo di test di utenti a Intune, creare una raccolta di utenti contenente gli utenti per eseguire la migrazione. Quindi escludere la raccolta di utenti della raccolta che viene usato per la sottoscrizione di Intune.   
+Per eseguire la migrazione di un gruppo di test di utenti a Intune, creare una raccolta di utenti contenente gli utenti per eseguire la migrazione. Quindi escludere la raccolta di utenti della raccolta che viene usato per la sottoscrizione di Intune.  
 
 Il diagramma seguente fornisce una panoramica del funzionamento della migrazione degli utenti.
 
- ![Panoramica dell'autorità mista](../media/migrate-mixedauthority.svg)
+![Panoramica dell'autorità mista](../media/migrate-mixedauthority.svg)
 
-1. Verificare che l'utente abbia una licenza di Intune/EMS.   
+1. Verificare che l'utente abbia una licenza di Intune/EMS.  
 
 2. Creare una raccolta da escludere dalla raccolta per la sottoscrizione di Intune. In questo esempio la raccolta **Tutti gli utenti ibridi** contiene una regola per escludere gli utenti nella raccolta **Pilota migrazione**. **Utente1** è un membro della raccolta **Pilota migrazione** ed è escluso dalla raccolta **Tutti gli utenti ibridi**.  
 
-3. I dispositivi di **Utente1** sono ora gestiti da Intune nel portale di Azure.   
+3. **User1**di dispositivi vengono ora gestiti da Intune nel portale di Azure.  
 
 4. Tutti gli altri dispositivi continuano a essere gestiti dalla console di Configuration Manager.  
 
+> [!Important]  
+> Quando un utente si sposta dalla soluzione ibrida alla versione autonoma, rimozione dei criteri viene sospesa per sette giorni.<!-- SCCMDocs issue #1066 -->
 
 
 ## <a name="verify-intune-standalone-functionality"></a>Verificare le funzionalità della versione autonoma di Intune
 
-Dopo avere eseguito la migrazione di un piccolo set di utenti, verificare che i dispositivi degli utenti siano elencati in Intune. Passare a **Dispositivi** e selezionare **Tutti i dispositivi**. 
+Dopo avere eseguito la migrazione di un piccolo set di utenti, verificare che i dispositivi degli utenti siano elencati in Intune. Passare a **Dispositivi** e selezionare **Tutti i dispositivi**.
 
 Verificare quindi che criteri, profili e app funzionino come previsto nei dispositivi degli utenti.
 
@@ -134,7 +135,7 @@ Verificare quindi che criteri, profili e app funzionino come previsto nei dispos
 
 ## <a name="migrate-additional-users"></a>Eseguire la migrazione di utenti aggiuntivi
 
-Dopo avere verificato che la versione autonoma di Intune funzioni come previsto, avviare la migrazione di altri utenti. Così come è stata creata una raccolta con un set di utenti di test, creare le raccolte che includono gli utenti per eseguire la migrazione. Escludere tali raccolte dalla raccolta associata alla sottoscrizione a Intune. Per informazioni dettagliate, vedere [Raccolta associata alla sottoscrizione di Intune](#collection-associated-with-your-intune-subscription).
+Dopo avere verificato che la versione autonoma di Intune funzioni come previsto, avviare la migrazione di altri utenti. Così come è stata creata una raccolta con un set di utenti di test, creare le raccolte che includono gli utenti per eseguire la migrazione. Escludere tali raccolte dalla raccolta associata alla sottoscrizione a Intune. Per informazioni dettagliate, vedere [eseguire la migrazione di un gruppo di test di utenti a Intune autonomo](#migrate-a-test-group-of-users-to-intune-standalone).
 
 
 
@@ -145,74 +146,86 @@ Per eseguire la migrazione di singoli dispositivi form Configuration Manager a I
 ### <a name="cmdlet-switch-mdmdeviceauthority"></a>Cmdlet *Switch-MdmDeviceAuthority*
 
 #### <a name="synopsis"></a>SYNOPSIS
+
 Il cmdlet cambia l'autorità di gestione dei dispositivi MDM senza affinità utente (ad esempio, dispositivi registrati in blocco). Il cmdlet cambia tra Intune e Configuration Manager le autorità di gestione. Si passa per i dispositivi specificati in base all'autorità gestione quando si esegue il cmdlet.
 
 ### <a name="syntax"></a>SINTASSI
+
 `Switch-MdmDeviceAuthority -DeviceIds <Guid[]> [-Credential <PSCredential>] [-Force] [-LogFilePath <string>] [-LoggingLevel {Off | Critical | Error | Warning | Information | Verbose | ActivityTracing | All}] [-Confirm] [-WhatIf] [<CommonParameters>]`
 
 
 ### <a name="parameters"></a>PARAMETRI
+
 #### `-Credential <PSCredential>`
+
 Un oggetto credenziali di PowerShell per l'account utente di Azure AD che viene usato quando si cambia l'autorità di gestione dei dispositivi. Se il parametro non è specificato, viene richiesto all'utente le credenziali. Il ruolo della directory per questo account utente deve essere un **amministratore globale** o un **amministratore con limitazioni** con il ruolo amministrativo di **amministrazione di Intune**.
 
 #### `-DeviceIds <Guid[]>`
+
 Gli ID dei dispositivi MDM per cui è necessario cambiare l'autorità di gestione. Gli ID dei dispositivi sono identificatori univoci per i dispositivi visualizzati dalla console di Configuration Manager.
 
 #### `-Force [<SwitchParameter>]`
-Specificare un parametro per disabilitare la richiesta di continuazione.<br>
- 
+
+Specificare un parametro per disabilitare la richiesta di continuazione.
+
 #### `-LogFilePath <string>`
+
 Percorso file di log.
- 
+
 #### `-LoggingLevel <SourceLevels>`
+
 Il livello di log usato per determinare i tipi di log che devono essere scritti nel file di log.
- 
+
 Di seguito sono elencati i valori possibili per LoggingLevel:
 
-  - ActivityTracing
-  - All
-  - Critico
-  - Errore
-  - Informazioni
-  - Off
-  - Dettagliato
-  - Avviso
- 
+- ActivityTracing
+- All
+- Critico
+- Errore
+- Informazioni
+- Off
+- Dettagliato
+- Avviso
+
 #### `-Confirm [<SwitchParameter>]`
+
 Chiede conferma prima di eseguire il comando.
- 
+
 #### `-WhatIf [<SwitchParameter>]`
+
 Descrive che cosa accadrebbe se è stato eseguito il comando senza eseguirlo effettivamente.
- 
+
 #### `<CommonParameters>`
+
 Questo cmdlet supporta i parametri comuni: Verbose, Debug, ErrorAction, ErrorVariable, WarningAction, WarningVariable, OutBuffer, PipelineVariable e OutVariable. Per altre informazioni, vedere [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ### <a name="example-1"></a>Esempio 1
 
 ``` powershell
 C:\PS>Switch-MdmDeviceAuthority -Credential $creds -DeviceIds $deviceIds
- 
+
   DeviceId       : 62e6ea43-18f8-4278-bcd4-a4baed2c6d24
   Success        : True
   FailureReason  :
   NewAuthority   : Intune
   CompletionTime : 11/15/2017 8:00:11 PM
- 
+
 Description
- 
+
 -----------
- 
+
 Successfully switched the management authority of the device from Configuration Manager to Intune.
 ```
 
 ### <a name="remarks"></a>SEZIONE OSSERVAZIONI
+
 - Per visualizzare gli esempi, digitare: `get-help Switch-MdmDeviceAuthority -examples`  
 - Per altre informazioni, digitare: `get-help Switch-MdmDeviceAuthority -detailed`  
 - Per informazioni tecniche, digitare: `get-help Switch-MdmDeviceAuthority -full`  
-- Per la Guida in linea, digitare: `get-help Switch-MdmDeviceAuthority -online`   
+- Per la Guida in linea, digitare: `get-help Switch-MdmDeviceAuthority -online`  
 
 
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Dopo avere eseguito la migrazione degli utenti e avere testato la funzionalità di Intune, stabilire se si è pronti per [modificare l'autorità MDM](migrate-change-mdm-authority.md) del tenant di Intune da Configuration Manager a Intune. 
+Dopo avere eseguito la migrazione degli utenti e avere testato la funzionalità di Intune, stabilire se si è pronti per [modificare l'autorità MDM](migrate-change-mdm-authority.md) del tenant di Intune da Configuration Manager a Intune.

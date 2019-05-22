@@ -2,21 +2,21 @@
 title: Novità della versione 1902
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1902 di Configuration Manager Current Branch.
-ms.date: 04/17/2019
+ms.date: 05/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbc38cdb72a2c8f595eed88e0b4b5b5e29374597
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: 0c88cdc52442463bb3788c80c45d6c074dd900f5
+ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59673650"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65673416"
 ---
 # <a name="whats-new-in-version-1902-of-configuration-manager-current-branch"></a>Novità della versione 1902 di Configuration Manager Current Branch
 
@@ -173,9 +173,9 @@ Per altre informazioni, vedere [Come amministrare un computer client Windows in 
 
 ### <a name="specify-a-custom-port-for-peer-wakeup"></a>Specificare una porta personalizzata per la riattivazione peer
 <!--3605925-->
-È ora possibile specificare un numero di porta personalizzato per il proxy di riattivazione. Nel gruppo **Risparmio energia** delle impostazioni client configurare l'impostazione **Numero di porta di riattivazione LAN (UDP)**.  
+***[Aggiornato]*** È ora possibile specificare un numero di porta personalizzato per il proxy di riattivazione. Nel gruppo **Risparmio energia** delle impostazioni client configurare l'impostazione **Numero di porta di riattivazione LAN (UDP)**.  
 
-<!-- For more information, see [How to configure Wake on LAN](/sccm/core/clients/deploy/configure-wake-on-lan). -->
+Per altre informazioni, vedere [Come configurare la riattivazione LAN](/sccm/core/clients/deploy/configure-wake-on-lan).
 
 
 
@@ -218,17 +218,30 @@ Questa versioni include i miglioramenti di [Package Conversion Manager](/sccm/ap
 Questa funzionalità può essere usata con qualsiasi versione supportata di Windows 10 e solo con la sequenza di attività di aggiornamento sul posto. 
 
 
-### <a name="improvements-to-task-sequence-media-creation"></a>Miglioramenti nella creazione del supporto per la sequenza di attività 
+### <a name="improvements-to-task-sequence-media-creation"></a>Miglioramenti nella creazione del supporto per la sequenza di attività
+
 <!--3556027, fka 1359388-->
-Questa versione include diversi miglioramenti che consentono di creare e gestire in modo migliore il supporto per la sequenza di attività. <!-- For more information, see [Create task sequence media](/sccm/osd/deploy-use/create-task-sequence-media). -->
+***[Aggiornato]*** Questa versione include diversi miglioramenti che consentono di creare e gestire con più efficienza il supporto per la sequenza di attività. Per altre informazioni, vedere gli articoli seguenti relativi a specifici tipi di supporto:
+
+- [Creare supporti autonomi](/sccm/osd/deploy-use/create-stand-alone-media)
+- [Creare supporti pre-installati](/sccm/osd/deploy-use/create-prestaged-media)
+- [Creare supporti di avvio](/sccm/osd/deploy-use/create-bootable-media)
+- [Creare supporti di acquisizione](/sccm/osd/deploy-use/create-capture-media)
 
 #### <a name="specify-temporary-storage"></a>Specificare un archivio temporaneo
-Quando si crea il supporto per la sequenza attività, ora è possibile personalizzare il percorso usato dal sito per l'archiviazione temporanea dei dati. Questo processo può richiedere molto spazio sul disco temporaneo. Questa modifica consente una maggiore flessibilità nella scelta del percorso di archiviazione di questi file temporanei. 
+
+Quando si crea il supporto per la sequenza attività, ora è possibile personalizzare il percorso usato dal sito per l'archiviazione temporanea dei dati. Questo processo può richiedere molto spazio temporaneo sul disco. Questa modifica consente una maggiore flessibilità nella scelta del percorso di archiviazione di questi file temporanei.
 
 In **Creazione guidata del supporto per sequenza attività**, specificare un percorso per **Staging folder** (Cartella di gestione temporanea). Per impostazione predefinita questo percorso è simile al seguente: `%UserProfile%\AppData\Local\Temp`.
 
 #### <a name="add-a-label-to-the-media"></a>Aggiungere un'etichetta al supporto
+
 È ora possibile aggiungere un'etichetta al supporto per la sequenza attività. Questa etichetta consente di identificare più facilmente il supporto creato. In **Creazione guidata del supporto per sequenza attività**, specificare un percorso per **Media label** (Etichetta del supporto).
+
+#### <a name="include-autoruninf-file-on-media"></a>Includi il file autorun.inf file sul supporto
+
+<!-- 4090666 -->
+Quando si crea un supporto per sequenza di attività, Configuration Manager non aggiunge un file autorun.inf. Questo file è generalmente bloccato da prodotti antimalware. È ancora possibile includere il file se necessario per lo scenario.
 
 
 ### <a name="import-a-single-index-of-an-os-image"></a>Importare un singolo indice di un'immagine del sistema operativo
@@ -254,8 +267,9 @@ Quando si crea una pianificazione per l'aggiornamento di un'immagine del sistema
 
 
 ### <a name="improvements-to-run-powershell-script-task-sequence-step"></a>Miglioramenti del passaggio della sequenza di attività Esegui script PowerShell
+
 <!--3556028, fka 1359389-->
-Il passaggio della sequenza di attività **Esegui script PowerShell** include ora i miglioramenti seguenti:  
+***[Aggiornato]*** Il passaggio della sequenza di attività **Esegui script PowerShell** include ora i miglioramenti seguenti:  
 
 - È ora possibile immettere direttamente il codice di Windows PowerShell in questo passaggio. Questa modifica consente di eseguire i comandi PowerShell durante una sequenza di attività senza prima creare e distribuire un pacchetto con lo script.
 
@@ -271,17 +285,18 @@ Il passaggio della sequenza di attività **Esegui script PowerShell** include or
 
 - Per includere i parametri dello script nel log della sequenza di attività, impostare la variabile della sequenza di attività **OSDLogPowerShellParameters** su **TRUE**. Per impostazione predefinita, i parametri non sono nel log.  
 
-- Altri miglioramenti che offrono funzionalità simili al passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine). Ad esempio, la possibilità di specificare credenziali utente alternative o un timeout. 
+- Altri miglioramenti che offrono funzionalità simili al passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine). Ad esempio, la possibilità di specificare credenziali utente alternative o un timeout.
 
 > [!Important]  
 > Per sfruttare i vantaggi di questa nuova funzionalità di Configuration Manager, dopo l'aggiornamento del sito aggiornare anche i client alla versione più recente. Anche se le nuove funzionalità vengono visualizzate nella console di Configuration Manager quando si esegue l'aggiornamento del sito e della console, lo scenario completo risulta funzionante solo dopo l'aggiornamento alla versione più recente del client.
 
-<!-- For more information, see [Run PowerShell Script](/sccm/osd/understand/task-sequence-steps#BKMK_RunPowerShellScript). -->
+Per altre informazioni, vedere [Eseguire script di PowerShell](/sccm/osd/understand/task-sequence-steps#BKMK_RunPowerShellScript).
 
 
 ### <a name="other-improvements-to-os-deployment"></a>Altri miglioramenti alla distribuzione del sistema operativo
+
 <!--3633146,3641475,3654172,3734270-->
-Questa versione include i miglioramenti della distribuzione del sistema operativo seguenti:
+***[Aggiornato]*** Questa versione include i seguenti miglioramenti della distribuzione del sistema operativo:
 
 - È disponibile una nuova azione predefinita **Visualizza** nelle sequenza di attività. <!--3633146-->  
 
@@ -296,20 +311,13 @@ Questa versione include i miglioramenti della distribuzione del sistema operativ
 ## <a name="bkmk_userxp"></a> Software Center
 
 ### <a name="replace-toast-notifications-with-dialog-window"></a>Sostituire le notifiche di tipo avviso popup con una finestra di dialogo
+
 <!--3555947-->
-In alcuni casi gli utenti non vedono la notifica di tipo avviso popup di Windows per un riavvio o una distribuzione necessaria, quindi non vedono l'esperienza per posporre il promemoria. Questo comportamento può causare un'esperienza utente insoddisfacente quando il client raggiunge una scadenza.
+***[Aggiornato]*** In alcuni casi gli utenti non vedono la notifica di tipo avviso popup di Windows per un riavvio o una distribuzione necessaria, quindi non vedono l'esperienza per posporre il promemoria. Questo comportamento può causare un'esperienza utente insoddisfacente quando il client raggiunge una scadenza.
 
-Adesso, quando le distribuzioni richiedono un riavvio o sono richieste modifiche software, si ha la possibilità di usare una finestra di dialogo più invasiva. 
+Adesso, quando le distribuzioni richiedono un riavvio o sono richieste modifiche software, si ha la possibilità di usare una finestra di dialogo più invasiva.
 
-#### <a name="software-changes-are-required"></a>Sono richieste modifiche software
-Nella pagina **Esperienza utente** della Distribuzione guidata del software selezionare l'opzione di notifica utente **Visualizza in Software Center e mostra tutte le notifiche**. Selezionare quindi l'opzione seguente: **Quando sono necessarie modifiche al software, mostra una finestra di dialogo all'utente invece di un avviso popup**.  
-
-<!-- For more information, see [Configure Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex) -->
-
-#### <a name="restart-required"></a>Riavvio richiesto
-Nel gruppo **Riavvio del computer** delle impostazioni client abilitare l'opzione seguente: **Quando una distribuzione richiede un riavvio, mostra una finestra di dialogo all'utente invece di un avviso popup**.  
-
-<!-- For more information, see [About client settings](/sccm/core/clients/deploy/about-client-settings#computer-restart). -->
+Per altre informazioni, vedere [Pianificare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_impact)
 
 
 ### <a name="configure-user-device-affinity-in-software-center"></a>Configurare l'affinità utente-dispositivo in Software Center
@@ -345,7 +353,7 @@ Specificare queste impostazioni nel gruppo di impostazioni client di **Software 
 <!--3734525-->
 ***[Aggiornato]*** È possibile modificare la priorità con cui i client installano gli aggiornamenti delle funzionalità tramite [Manutenzione pacchetti di Windows 10](/sccm/osd/deploy-use/manage-windows-as-a-service). Per impostazione predefinita, i client ora installano gli aggiornamenti delle funzionalità con priorità di elaborazione più alta. 
 
-Usare le impostazioni client per configurare questa opzione. Nel gruppo **Aggiornamenti software** configurare l'impostazione seguente: **Specificare la priorità del thread per gli aggiornamenti delle funzionalità**. 
+Usare le impostazioni client per configurare questa opzione. Nel gruppo **Aggiornamenti software** configurare l'impostazione seguente: **Specificare la priorità del thread per gli aggiornamenti delle funzionalità**.
 
 Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#software-updates) (Informazioni sulle impostazioni client). 
 
@@ -384,9 +392,9 @@ Per altre informazioni, vedere [Gestire gli aggiornamenti di Office 365](/sccm/s
 
 ### <a name="office-products-on-lifecycle-dashboard"></a>Prodotti Office nel dashboard del ciclo di vita
 <!--3556026-->
-Il dashboard del ciclo di vita del prodotto ora include informazioni per le versioni installate da Office 2003 a Office 2016. I dati vengono visualizzati dopo che il sito esegue l'attività di riepilogo del ciclo di vita, ovvero ogni 24 ore.
+***[Aggiornato]*** Il dashboard del ciclo di vita del prodotto ora include informazioni per le versioni installate da Office 2003 a Office 2016. I dati vengono visualizzati dopo che il sito esegue l'attività di riepilogo del ciclo di vita, ovvero ogni 24 ore.
 
-<!-- For more information, see [Use the Product Lifecycle dashboard](/sccm/core/clients/manage/asset-intelligence/product-lifecycle-dashboard). -->
+Per altre informazioni, vedere [Usare il dashboard del ciclo di vita del prodotto](/sccm/core/clients/manage/asset-intelligence/product-lifecycle-dashboard).
 
 
 
@@ -398,18 +406,18 @@ Il dashboard del ciclo di vita del prodotto ora include informazioni per le vers
 
 ### <a name="dedicated-monitoring-for-phased-deployments"></a>Monitoraggio dedicato per le distribuzioni in più fasi
 <!--3555949-->
-Le distribuzioni in più fasi hanno ora un nodo di monitoraggio dedicato. Questo nodo semplifica l'identificazione delle distribuzioni in più fasi create ed è quindi possibile passare alla visualizzazione di monitoraggio delle distribuzioni in più fasi. Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio** e selezionare il nodo **Distribuzioni in più fasi**. Questo visualizza l'elenco delle distribuzioni in più fasi.
+***[Aggiornato]*** Le distribuzioni in più fasi hanno ora un nodo di monitoraggio dedicato. Questo nodo semplifica l'identificazione delle distribuzioni in più fasi create ed è quindi possibile passare alla visualizzazione di monitoraggio delle distribuzioni in più fasi. Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio** e selezionare il nodo **Distribuzioni in più fasi**. Questo visualizza l'elenco delle distribuzioni in più fasi.
 
-<!-- For more information, see [Phased deployment monitoring view](/sccm/osd/deploy-use/manage-monitor-phased-deployments#bkmk_monitor). -->
+Per altre informazioni, vedere [Monitorare le distribuzioni in più fasi](/sccm/osd/deploy-use/manage-monitor-phased-deployments#bkmk_monitor). 
 
 
 ### <a name="improvement-to-phased-deployment-success-criteria"></a>Miglioramento dei criteri di superamento della distribuzione in più fasi
 <!--3555946-->
-Specificare criteri aggiuntivi per l'esito positivo di una fase in una distribuzione in più fasi. Anziché essere limitati a una percentuale, questi criteri ora possono corrispondere anche al numero di dispositivi distribuiti correttamente. Questa opzione è utile quando le dimensioni della raccolta sono variabili ed è necessario verificare l'esito positivo per un numero specifico di dispositivi prima di passare alla fase successiva. 
+***[Aggiornato]*** Specificare criteri aggiuntivi per l'esito positivo di una fase in una distribuzione in più fasi. Anziché essere limitati a una percentuale, questi criteri ora possono corrispondere anche al numero di dispositivi distribuiti correttamente. Questa opzione è utile quando le dimensioni della raccolta sono variabili ed è necessario verificare l'esito positivo per un numero specifico di dispositivi prima di passare alla fase successiva. 
 
-Creare una distribuzione in più fasi per una sequenza di attività, un'applicazione o un aggiornamento software. Nella pagina Impostazioni della procedura guidata selezionare quindi l'opzione seguente come criterio per l'esito positivo della prima fase: **Numero di dispositivi distribuiti correttamente**. 
+Creare una distribuzione in più fasi per una sequenza di attività, un'applicazione o un aggiornamento software. Nella pagina Impostazioni della procedura guidata selezionare quindi l'opzione seguente come criterio per l'esito positivo della prima fase: **Numero di dispositivi distribuiti correttamente**.
 
-<!-- For more information, see [Create phased deployments](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence). -->
+Per altre informazioni, vedere [Creare distribuzioni in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence).
 
 
 

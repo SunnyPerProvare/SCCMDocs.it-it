@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 287a6324-ae65-4d38-b2ef-198d47c91231
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40469e8173303eb7ad46ef8e716529c37ec6e76d
-ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
+ms.openlocfilehash: 96a9c497f7b8dbcd831fd42de646e836fc91ef29
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56838787"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65496338"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Funzionalità rimosse e deprecate per Configuration Manager
 
@@ -38,7 +38,7 @@ Queste informazioni sono soggette a modifica nelle versioni future. È possibile
 |Accesso condizionale in locale<br>Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).|30 gennaio 2019|1 settembre 2019|
 |Gestione di dispositivi mobili (MDM) ibrida<br>Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<br><br>A partire dalla versione 1902 del servizio Intune, prevista per la fine di febbraio 2019, i nuovi clienti non possono creare una nuova connessione ibrida.<!--Intune feature 2683117-->|14 agosto 2018|1 settembre 2019|
 |Impostazioni di Windows Hello for Business in Configuration Manager<br>Per altre informazioni, vedere [Impostazioni di Windows Hello for Business](/sccm/protect/deploy-use/windows-hello-for-business-settings).|Dicembre 2017|Prima versione rilasciata dopo il 1° novembre 2019|
-|L'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato. Gli utenti devono usare il nuovo Software Center. NOTA: il ruolo Punto per siti Web del Catalogo applicazioni e il ruolo Punto per servizi Web sono ancora supportati. In alcuni scenari, il nuovo Software Center comunica con il punto per siti Web del Catalogo applicazioni. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).<!--1358309-->|11 agosto 2017| Versione 1806|
+|L'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato. Gli utenti devono usare il nuovo Software Center. NOTA: il ruolo Punto per siti Web del Catalogo applicazioni e il ruolo Punto per servizi Web sono ancora supportati. In alcuni scenari, il nuovo Software Center comunica con il punto per siti Web del Catalogo applicazioni. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).<!--1358309-->|11 agosto 2017| Versione 1806|
 |Versione precedente di Software Center.<br><br>Per altre informazioni sulla nuova versione di Software Center, vedere [Pianificare e configurare la gestione delle applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management##bkmk_userex).|13 dicembre 2016|Versione 1802|
 |Gestione dei dischi rigidi virtuali in Configuration Manager. <br><br>Questa funzionalità deprecata include la rimozione delle opzioni per creare un nuovo disco rigido virtuale o per gestire un disco rigido virtuale con una sequenza di attività e la rimozione del nodo Dischi rigidi virtuali dalla console di Configuration Manager. <br><br>I dischi rigidi virtuali esistenti non vengono eliminati, ma non saranno più accessibili dalla console di Configuration Manager.  |6 gennaio 2017 |Versione 1710|
 |Sequenze attività: <br /> - Converti il disco selezionato in disco dinamico <br /> - Installa strumenti di distribuzione |18 novembre 2016|Versione 1710|
