@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c10dcc07ba2f67b004da462dbde17fb2200ec7a1
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 652c10cfcb4d53b32409dd5af83e7d55f2676463
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496799"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933472"
 ---
 # <a name="software-metering-in-system-center-configuration-manager"></a>Controllo del software in System Center Configuration Manager
 
@@ -163,14 +163,14 @@ Il controllo del software non ha dipendenze esterne, ma solo dipendenze all'inte
 
   Woodgrove Bank ha distribuito Microsoft Office 2010 come famiglia standard di prodotti di produttività per l'ufficio. Per supportare un'applicazione legacy, tuttavia, alcuni computer devono continuare a eseguire Microsoft Office Word 2003. Il reparto IT vuole ridurre i costi di licenza e supporto rimuovendo le copie di Word 2003, se l'applicazione legacy non viene più usata. Anche l'help desk vuole identificare gli utenti che usano l'applicazione legacy.
 
-  Giorgio è responsabile dei sistemi IT di Woodgrove Bank e usa il controllo del software in Configuration Manager per raggiungere questi obiettivi aziendali. Esegue le azioni seguenti:
+  Il responsabile dei sistemi IT di Woodgrove Bank usa la misurazione del software in Configuration Manager per raggiungere questi obiettivi aziendali. L'amministratore esegue le azioni seguenti:
 
-- Giorgio verifica i prerequisiti per la misurazione del software e conferma che il punto di Reporting Services è installato e funzionante.
-- Giorgio configura le impostazioni client predefinite per la misurazione del software:<br>Abilita la misurazione del software e usa la pianificazione di raccolta dati predefinita, una volta ogni sette giorni.<br>Configura l'inventario software in modo da eseguire l'inventario dei file con estensione exe, configurando l'impostazione dell'agente client inventario software **Tipi di file da includere nell'inventario**.<br>Aggiunge una nuova regola di misurazione del software, denominata **woodgrove.exe**, per monitorare l'applicazione legacy.
-- Giorgio aspetta sette giorni, dopo di che i computer client iniziano a inviare report sui dati di utilizzo per il file eseguibile **woodgrove.exe** .
-- Giorgio usa il report di Configuration Manager **Installare la base per tutti i programmi di controllo software** per visualizzare i computer in cui è caricata l'applicazione **woodgrove.exe**.
-- Dopo sei mesi, Giorgio esegue il report **Computer che hanno installato un programma di controllo ma non hanno eseguito il programma da una data specificata**, specificando la regola di misurazione del software e una data di sei mesi nel passato. Questo report identifica 120 computer che non hanno eseguito il programma negli ultimi sei mesi.
-- John effettua ulteriori controlli per verificare che l'applicazione legacy non sia necessaria nei computer identificati. Quindi, disinstalla l'applicazione legacy e la copia di Word 2003 da questi computer.<br>Giorgio esegue il report **Utenti che hanno eseguito un programma di controllo software specifico** per fornire all'help desk un elenco di utenti che continuano a usare l'applicazione legacy.
-- John continua a controllare i report di misurazione del software ogni settimana e, se necessario, esegue azioni correttive.
+- Verifica i prerequisiti per la misurazione del software e conferma che il punto di Reporting Services sia installato e funzionante.
+- Configura le impostazioni client predefinite per la misurazione del software:<br>L'amministratore abilita la misurazione del software e usa la pianificazione di raccolta dati predefinita, una volta ogni sette giorni.<br>L'amministratore configura l'inventario software in modo da eseguire l'inventario dei file con estensione exe, configurando l'impostazione dell'agente client inventario software **Tipi di file da includere nell'inventario**.<br>L'amministratore aggiunge una nuova regola di misurazione del software, denominata **woodgrove.exe**, per monitorare l'applicazione legacy.
+- Aspetta sette giorni, dopo di che i computer client iniziano a inviare report sui dati di utilizzo per il file eseguibile **woodgrove.exe**.
+- L'amministratore usa il report di Configuration Manager **Installare la base per tutti i programmi di controllo software** per visualizzare i computer in cui è caricata l'applicazione **woodgrove.exe**.
+- Dopo sei mesi, l'amministratore esegue il report **Computer che hanno installato un programma di controllo ma non hanno eseguito il programma da una data specificata**, specificando la regola di misurazione del software e una data di sei mesi nel passato. Questo report identifica 120 computer che non hanno eseguito il programma negli ultimi sei mesi.
+- L'amministratore effettua ulteriori controlli per verificare che l'applicazione legacy non sia necessaria nei computer identificati. L'amministratore disinstalla quindi l'applicazione legacy e la copia di Word 2003 da questi computer.<br>L'amministratore esegue il report **Utenti che hanno eseguito un programma di controllo software specifico** per fornire all'help desk un elenco di utenti che continuano a usare l'applicazione legacy.
+- L'amministratore continua a controllare i report di misurazione del software ogni settimana e, se necessario, esegue azioni correttive.
 
   Come risultato di questa linea di azione, i costi di licenza e di supporto IT si riducono, grazie alla rimozione delle applicazioni non più necessarie. Inoltre, ora l'help desk ha a disposizione l'elenco degli utenti che eseguono l'applicazione legacy di cui aveva bisogno.

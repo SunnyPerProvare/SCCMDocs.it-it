@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b8bda1fd21ed3281142a717b768ff7d8c6ac3c3
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
-ms.translationtype: HT
+ms.openlocfilehash: 3e0b8e6a522e367e17d6c13fad3896a6606d3e5c
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500419"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176082"
 ---
 # <a name="troubleshooting-windows-defender-or-endpoint-protection-client"></a>Risoluzione dei problemi di Windows Defender o del client Endpoint Protection
 
@@ -158,7 +158,7 @@ Se si verificano problemi con Windows Defender o Endpoint Protection, chiedere a
 
 ### <a name="step-7-contact-support"></a>Passaggio 7: contattare il supporto  
 
--   Se la procedura non ha consentito di risolvere il problema, contattare il supporto tecnico. Per altre informazioni, vedere il [supporto tecnico](http://go.microsoft.com/fwlink/?LinkID=196174) (http://go.microsoft.com/fwlink/?LinkID=196174).  
+-   Se la procedura non ha consentito di risolvere il problema, contattare il supporto tecnico. Per altre informazioni, vedere [Supporto tecnico](https://support.microsoft.com/contactus/).  
 
 ##  <a name="starting-windows-defender-or-endpoint-protection-service"></a>Avvio del servizio di Windows Defender o Endpoint Protection  
  **Sintomo**  

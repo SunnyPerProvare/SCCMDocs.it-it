@@ -2,7 +2,7 @@
 title: Pianificare la gestione di applicazioni
 titleSuffix: Configuration Manager
 description: Implementare e configurare le dipendenze necessarie per la distribuzione di applicazioni in Configuration Manager.
-ms.date: 05/01/2019
+ms.date: 05/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0c2808bd4fa9501c46012549427e2de4087eb9d
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
-ms.translationtype: HT
+ms.openlocfilehash: 3ec099d9ffbb5ffaee1c962faf8443a900c1b324
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083392"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176866"
 ---
 # <a name="plan-for-and-configure-application-management-in-configuration-manager"></a>Pianificare e configurare la gestione delle applicazioni in Configuration Manager
 
@@ -33,12 +33,12 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
 
 È necessario avere IIS nei server che eseguono i ruoli del sistema del sito seguenti:
 
-- Punto per siti Web del Catalogo applicazioni  
-- Punto per servizi Web del Catalogo applicazioni  
+- Punto per siti Web del catalogo applicazioni  
+- Punto per servizi Web del catalogo applicazioni  
 - Punto di gestione  
 - Punto di distribuzione  
 
-Per altre informazioni su questo requisito, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).  
+Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).  
 
 
 ### <a name="certificates-on-code-signed-applications-for-mobile-devices"></a>Certificati in applicazioni firmate dal codice per dispositivi mobili
@@ -68,7 +68,7 @@ Per altre informazioni sull'affinità utente-dispositivo, vedere l'argomento [Co
 
 ### <a name="management-point"></a>Punto di gestione
 
-I client contattano un punto di gestione per scaricare i criteri client, individuare il contenuto e connettersi al Catalogo applicazioni. Se i client non possono accedere a un punto di gestione, non potranno usare il Catalogo applicazioni.
+I client contattano un punto di gestione per scaricare i criteri client, individuare il contenuto e connettersi al catalogo applicazioni. Se i client non possono accedere a un punto di gestione, non potranno usare il catalogo applicazioni.
 
 > [!Note]  
 > A partire dalla versione 1806, i ruoli del Catalogo applicazioni non sono più necessari per visualizzare le applicazioni disponibili per gli utenti in Software Center. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).<!--1358309-->  
@@ -122,33 +122,26 @@ Per creare applicazioni virtuali in Configuration Manager, installare App-V 4.6 
 Prima di distribuire applicazioni virtuali, aggiornare anche il client App-V con l'aggiornamento rapido descritto nell'[articolo del supporto tecnico Microsoft 2645225](https://support.microsoft.com/help/2645225).  
 
 
-### <a name="discovered-user-accounts-for-application-catalog"></a>Account utente individuati per il Catalogo applicazioni
+### <a name="application-catalog"></a>Catalogo applicazioni
 
-Prima che gli utenti possano visualizzare e richiedere applicazioni dal Catalogo applicazioni, Configuration Manager deve individuare gli account utente. Per altre informazioni, vedere [Eseguire l'individuazione](/sccm/core/servers/deploy/configure/run-discovery).  
+> [!Important]  
+> Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](#bkmk_remove-appcat).  
 
+#### <a name="application-catalog-web-service-point"></a>Punto per servizi Web del catalogo applicazioni
 
-### <a name="application-catalog-web-service-point"></a>Punto per servizi Web del Catalogo applicazioni
-
-Il punto per servizi Web del Catalogo applicazioni è un ruolo del sistema del sito che fornisce informazioni sul software disponibile nella raccolta software al sito Web del Catalogo applicazioni a cui accedono gli utenti.
+Il punto per servizi Web del catalogo applicazioni è un ruolo del sistema del sito che fornisce informazioni sul software disponibile nella raccolta software al sito Web del catalogo applicazioni a cui accedono gli utenti.
 
 Per altre informazioni su come configurare il ruolo del sistema del sito, vedere [Installare e configurare il Catalogo applicazioni](#bkmk_appcat).  
 
-> [!Note]  
-> A partire dalla versione 1806, il ruolo Punto per servizi Web del Catalogo applicazioni non è più *necessario*, ma è ancora *supportato*.<!--1358309-->  
->
-> L'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).  
+#### <a name="application-catalog-website-point"></a>Punto per siti Web del catalogo applicazioni
 
-
-### <a name="application-catalog-website-point"></a>Punto per siti Web del Catalogo applicazioni
-
-Il punto del sito Web del Catalogo applicazioni è un ruolo del sistema del sito che offre agli utenti un elenco del software disponibile.
+Il punto del sito Web del catalogo applicazioni è un ruolo del sistema del sito che offre agli utenti un elenco del software disponibile.
 
 Per altre informazioni su come configurare il ruolo del sistema del sito, vedere [Installare e configurare il Catalogo applicazioni](#bkmk_appcat).
 
-> [!Note]  
-> A partire dalla versione 1806, il ruolo Punto per siti Web del Catalogo applicazioni non è più *necessario*, ma è ancora *supportato*.<!--1358309-->  
->
-> L'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).  
+#### <a name="discovered-user-accounts-for-application-catalog"></a>Account utente individuati per il catalogo applicazioni
+
+Prima che gli utenti possano visualizzare e richiedere applicazioni dal catalogo applicazioni, Configuration Manager deve individuare gli account utente. Per altre informazioni, vedere [Eseguire l'individuazione](/sccm/core/servers/deploy/configure/run-discovery).  
 
 
 
@@ -157,63 +150,83 @@ Per altre informazioni su come configurare il ruolo del sistema del sito, vedere
 Per altre informazioni sulla configurazione e personalizzazione di Software Center, vedere [Pianificare Software Center](/sccm/apps/plan-design/plan-for-software-center).
 
 
-## <a name="bkmk_appcat"></a> Installare e configurare il Catalogo applicazioni  
+## <a name="bkmk_remove-appcat"></a> Rimuovere il catalogo applicazioni
 
-> [!Note]  
-> A partire dalla versione 1806, i ruoli Punto per siti Web e Punto per servizi Web del Catalogo applicazioni non sono più *necessari*, ma sono ancora *supportati*. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).  
->
-> L'**esperienza utente di Silverlight** per il *punto per siti Web* del Catalogo applicazioni non è più supportata. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).  
+<!-- SCCMDocs-pr issue 3051 -->
 
-> [!IMPORTANT]  
-> Prima di eseguire questi passaggi, verificare che tutte le dipendenze siano implementate. Per altre informazioni, vedere le sezioni seguenti di questo articolo:
->
-> - [Dipendenze esterne a Configuration Manager](#dependencies-external-to-configuration-manager)  
-> - [Dipendenze di Configuration Manager](#configuration-manager-dependencies)
+Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). L'elenco seguente riepiloga le modifiche:
 
+- A partire dalla versione 1806, l'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato.<!--1358309--> Il ruolo Punto per servizi Web del Catalogo applicazioni non è più *necessario*, ma è ancora *supportato*.
+
+- Nella prima versione Current Branch dopo il 30 giugno 2019, i client aggiornati useranno automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non sarà inoltre possibile installare nuovi ruoli del catalogo applicazioni.
+
+- Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+
+Questi miglioramenti iterativi di Software Center e il punto di gestione sono pensati per semplificare l'infrastruttura e rimuovere la necessità del catalogo applicazioni per le distribuzioni disponibili per gli utenti. Software Center consente di distribuire tutte le distribuzioni di app senza il catalogo applicazioni. Se si abilita TLS 1.2 e si usa HTTP con il catalogo applicazioni, inoltre, gli utenti non possono vedere le distribuzioni disponibili destinate agli utenti.
+
+1. Aggiornare tutti i client alla versione 1806 o successiva.  
+
+1. Impostare la personalizzazione per Software Center, anziché nelle proprietà del ruolo del sito Web del catalogo applicazioni. Per altre informazioni, vedere [Impostazioni client di Software Center](/sccm/core/clients/deploy/about-client-settings#software-center).  
+
+1. Verificare le impostazioni client predefinite e personalizzate. Nel gruppo **Agente computer** assicurarsi che l'opzione **Punto per siti Web del Catalogo applicazioni predefinito** sia `(none)`.  
+
+    Il client passa all'uso del punto di gestione solo quando non esistono ruoli del catalogo applicazioni nella gerarchia. In caso contrario, i client continuano a usare una delle istanze del catalogo applicazioni nella gerarchia. Questo comportamento viene applicato a tutti i siti primari.  
+
+1. Rimuovere i ruoli del sistema del sito **sito Web del catalogo applicazioni** e **servizio Web del catalogo applicazioni** da tutti i siti primari.
+
+Dopo aver rimosso i ruoli del catalogo applicazioni, Software Center viene avviato usando il punto di gestione per le distribuzioni disponibili destinate agli utenti. Per l'applicazione di questa modifica possono essere necessari fino a 65 minuti. Per verificare questo comportamento in un client specifico, esaminare `SCClient_<username>.log` e cercare una voce simile alla riga seguente:
+
+`Using endpoint Url: https://mp.contoso.com/CMUserService_WindowsAuth, Windows authentication`
+
+
+## <a name="bkmk_appcat"></a> Installare e configurare il catalogo applicazioni  
+
+> [!Important]  
+> Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](#bkmk_remove-appcat).  
 
 ### <a name="step-1-web-server-certificate-for-https"></a>Passaggio 1: Certificato del server Web per HTTPS
 
-Se si usano connessioni HTTPS, distribuire un certificato del server Web nei server di sistema del sito per il punto per siti Web del Catalogo applicazioni e il punto per servizi Web del Catalogo applicazioni.
+Se si usano connessioni HTTPS, distribuire un certificato del server Web nei server di sistema del sito per il punto per siti Web del catalogo applicazioni e il punto per servizi Web del catalogo applicazioni.
 
-Se si vuole che i client usino il Catalogo Applicazioni da Internet, distribuire un certificato del server Web in almeno un punto di gestione. Configurarlo per le connessioni client da Internet.
+Se si vuole che i client usino il catalogo applicazioni da Internet, distribuire un certificato del server Web in almeno un punto di gestione. Configurarlo per le connessioni client da Internet.
 
 Per altre informazioni sui requisiti del certificato, vedere [Requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements).  
 
 
 ### <a name="step-2-client-authentication-certificate-for-https"></a>Passaggio 2: Certificato di autenticazione client per HTTPS
 
-Se si usa un certificato PKI client per le connessioni ai punti di gestione, distribuire un certificato di autenticazione client nei computer client. Anche se i client non usano un certificato PKI del client per connettersi al Catalogo applicazioni, è necessario che si connettano a un punto di gestione prima di poter usare il Catalogo applicazioni.
+Se si usa un certificato PKI client per le connessioni ai punti di gestione, distribuire un certificato di autenticazione client nei computer client. Anche se i client non usano un certificato PKI client per connettersi al catalogo applicazioni, è necessario che si connettano a un punto di gestione prima di poter usare il catalogo applicazioni.
 
 Distribuire un certificato di autenticazione client nei computer client negli scenari seguenti:
 
 - Tutti i punti di gestione in Intranet accettano solo connessioni client HTTPS.
-- I client eseguono la connessione al Catalogo applicazioni da Internet.
+- I client eseguono la connessione al catalogo applicazioni da Internet.
 
 Per altre informazioni sui requisiti del certificato, vedere [Requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements).  
 
 
-### <a name="step-3-install-and-configure-the-application-catalog-roles"></a>Passaggio 3: Installare e configurare i ruoli del Catalogo applicazioni
+### <a name="step-3-install-and-configure-the-application-catalog-roles"></a>Passaggio 3: Installare e configurare i ruoli del catalogo applicazioni
 
-Installare entrambi i ruoli Punto per servizi Web del Catalogo applicazioni e Punto per siti Web del Catalogo applicazioni nello stesso sito. Non è necessario installarli nello stesso server o nella stessa foresta Active Directory. Il punto per servizi Web del Catalogo applicazioni deve trovarsi tuttavia nella stessa foresta del database del sito.
+Installare entrambi i ruoli Punto per servizi Web del catalogo applicazioni e Punto per siti Web del catalogo applicazioni nello stesso sito. Non è necessario installarli nello stesso server o nella stessa foresta Active Directory. Il punto per servizi Web del catalogo applicazioni deve trovarsi tuttavia nella stessa foresta del database del sito.
 
 Per altre informazioni sulla selezione host per i server, vedere [Pianificare i server e i ruoli del sistema del sito](/sccm/core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles).
 
 > [!NOTE]  
-> Installare il Catalogo applicazioni in un sito primario. Non è possibile installarlo in un sito secondario o nel sito di amministrazione centrale.  
+> Installare il catalogo applicazioni in un sito primario. Non è possibile installarlo in un sito secondario o nel sito di amministrazione centrale.  
 
-Installare il Catalogo applicazioni in nuovo server di sistema del sito o in un server esistente nel sito. Per altre informazioni sulla procedura generale, vedere [Installare i ruoli del sistema del sito](/sccm/core/servers/deploy/configure/install-site-system-roles). Nella procedura guidata per aggiungere un ruolo del sistema del sito o creare un server di sistema del sito, selezionare i ruoli seguenti nell'elenco:
+Installare il Catalogo applicazioni in nuovo server di sistema del sito o in un server esistente nel sito. Per altre informazioni sulla procedura generale, vedere [Installare i ruoli del sistema del sito](/sccm/core/servers/deploy/configure/install-site-system-roles). Nella procedura guidata per aggiungere un ruolo del sistema del sito o creare un server di sistema del sito, selezionare i ruoli seguenti nell'elenco:  
 
-- **Punto per servizi Web del Catalogo applicazioni**  
-- **Punto per siti Web del Catalogo applicazioni**  
+- **Punto per servizi Web del catalogo applicazioni**  
+- **Punto per siti Web del catalogo applicazioni**  
 
 > [!TIP]  
-> Se si vuole che i computer client usino il Catalogo applicazioni su Internet, specificare il nome di dominio completo (FQDN) per Internet.  
+> Se si vuole che i computer client usino il catalogo applicazioni tramite Internet, specificare il nome di dominio completo (FQDN) per Internet.  
 
 #### <a name="verify-the-installation-of-these-site-system-roles"></a>Verificare l'installazione di questi ruoli del sistema del sito  
 
 - Messaggi di stato: Utilizzare i componenti **SMS_PORTALWEB_CONTROL_MANAGER** e **SMS_AWEBSVC_CONTROL_MANAGER**.  
 
-    Ad esempio, l'ID stato **1015** per **SMS_PORTALWEB_CONTROL_MANAGER** conferma che Gestione componenti del sito ha completato l'installazione del punto per siti Web del Catalogo applicazioni.  
+    Ad esempio, l'ID stato **1015** per **SMS_PORTALWEB_CONTROL_MANAGER** conferma che Gestione componenti del sito ha completato l'installazione del punto per siti Web del catalogo applicazioni.  
 
 - File di log: cercare **SMSAWEBSVCSetup.log** e **SMSPORTALWEBSetup.log**.  
 
@@ -237,27 +250,27 @@ Per altre informazioni, vedere gli articoli seguenti:
 Il client di Configuration Manager configura i dispositivi con queste impostazioni durante il successivo download dei criteri client. Per attivare il recupero dei criteri per un singolo client, vedere [Come gestire i client](/sccm/core/clients/manage/manage-clients).
 
 
-### <a name="step-5-verify-that-the-application-catalog-is-operational"></a>Passaggio 5: Verificare che il Catalogo applicazioni sia operativo
+### <a name="step-5-verify-that-the-application-catalog-is-operational"></a>Passaggio 5: Verificare che il catalogo applicazioni sia operativo
 
-Utilizzare le seguenti procedure per verificare che il Catalogo applicazioni sia operativo.
+Usare le procedure seguenti per verificare che il catalogo applicazioni sia operativo.
 
 > [!NOTE]  
-> L'esperienza utente con il Catalogo applicazioni richiede Microsoft Silverlight. Se si usa il Catalogo applicazioni direttamente da un browser, verificare prima di tutto che Microsoft Silverlight sia installato nel computer.  
+> L'esperienza utente con il catalogo applicazioni richiede Microsoft Silverlight. Se si usa il catalogo applicazioni direttamente da un browser, verificare prima di tutto che Microsoft Silverlight sia installato nel computer.  
 
 > [!TIP]  
-> La non aderenza ai prerequisiti è una delle più comuni cause di malfunzionamento del Catalogo applicazioni dopo l'installazione. Verificare i prerequisiti per i ruoli del sistema del sito del Catalogo applicazioni. Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).  
+> La non aderenza ai prerequisiti è una delle più comuni cause di malfunzionamento del catalogo applicazioni dopo l'installazione. Verificare i prerequisiti per i ruoli del sistema del sito del catalogo applicazioni. Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).  
 
-In un browser immettere l'indirizzo del sito Web del Catalogo applicazioni. Verificare che nella pagina Web siano presenti tre schede: **Catalogo applicazioni**, **Richieste di applicazioni** e **Dispositivi personali**.  
+In un browser immettere l'indirizzo del sito Web del catalogo applicazioni. Verificare che nella pagina Web siano presenti tre schede: **Catalogo applicazioni**, **Richieste di applicazioni** e **Dispositivi personali**.  
 
-Usare gli indirizzi appropriati per il Catalogo applicazioni tra quelli dell'elenco seguente, tenendo presente che &lt;server&gt; è il nome del computer, il nome di dominio completo Intranet o il nome di dominio completo Internet:  
+Usare gli indirizzi appropriati per il catalogo applicazioni tra quelli dell'elenco seguente, tenendo presente che `<server>` è il nome del computer, il nome di dominio completo Intranet o il nome di dominio completo Internet:  
 
-- Connessioni client HTTPS e impostazioni predefinite del ruolo del sistema del sito: **https://&lt;server&gt;/CMApplicationCatalog**  
+- Connessioni client HTTPS e impostazioni predefinite del ruolo del sistema del sito: `https://<server>/CMApplicationCatalog`  
 
-- Connessioni client HTTP e impostazioni predefinite del ruolo del sistema del sito: **http://&lt;server&gt;/CMApplicationCatalog**  
+- Connessioni client HTTP e impostazioni predefinite del ruolo del sistema del sito: `http://<server>/CMApplicationCatalog`  
 
-- Connessioni client HTTPS e impostazioni personalizzate del ruolo del sistema del sito: **https://&lt;server&gt;:&lt;port&gt;/&lt;web application name&gt;**  
+- Connessioni client HTTPS e impostazioni personalizzate del ruolo del sistema del sito: `https://<server>:<port>/<web application name>`  
 
-- Connessioni client HTTP e impostazioni personalizzate del ruolo del sistema del sito: **http://&lt;server&gt;:&lt;port&gt;/&lt;web application name&gt;**  
+- Connessioni client HTTP e impostazioni personalizzate del ruolo del sistema del sito: `http://<server>:<port>/<web application name>`  
 
 > [!NOTE]  
 > Se è stato eseguito l'accesso al dispositivo con un account amministratore di dominio, il client di Configuration Manager non visualizza messaggi di notifica, ad esempio messaggi indicanti che è disponibile nuovo software.  

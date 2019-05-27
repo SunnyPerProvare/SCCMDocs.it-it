@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0a32357001f37f537f13fe85e71a41f9cb658ac
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: e5178a84443779384e3223998ab8336b46c2d4d0
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122441"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176899"
 ---
 # <a name="manage-apps-from-the-microsoft-store-for-business-with-configuration-manager"></a>Gestire app da Microsoft Store per le aziende con Configuration Manager
 
@@ -29,7 +29,7 @@ Microsoft Store per le aziende supporta due tipi di app:
 
 - **Online**: questo tipo di licenza richiede che gli utenti e i dispositivi si connettano allo Store per ottenere un'app e la relativa licenza. I dispositivi Windows 10 devono appartenere a un dominio Azure Active Directory (Azure AD).  
 
-- **Offline**: questo tipo consente di memorizzare nella cache le app e le licenze da distribuire direttamente nella rete locale, senza che i dispositivi debbano connettersi allo Store o avere una connessione Internet.
+- **Non in linea**: questo tipo consente di memorizzare nella cache le app e le licenze da distribuire direttamente nella rete locale, senza che i dispositivi debbano connettersi allo Store o avere una connessione Internet.
 
 [Altre informazioni](https://docs.microsoft.com/microsoft-store/microsoft-store-for-business-overview) su Microsoft Store per le aziende.
 
@@ -83,7 +83,7 @@ Si verificano quindi i comportamenti seguenti:
 
 - L'utente deve completare l'installazione dallo Store  
 
-- Nella console di Configuration Manager, lo stato di distribuzione dell'app segnala l'esito negativo con l'errore seguente: "L'app di Microsoft Store è stata aperta nel computer client ed è in attesa del completamento dell'installazione da parte dell'utente".  
+- Nella console di Configuration Manager lo stato della distribuzione segnala l'errore specificando "L'app di Windows Store è stata aperta nel computer client ed è in attesa del completamento dell'installazione da parte dell'utente."  
 
 Al successivo ciclo di valutazione dell'applicazione:  
 
@@ -125,9 +125,9 @@ Nella pagina **App** della Procedura guidata per i servizi di Azure configurare 
 
 Nella pagina **Configurazioni** della Procedura guidata per i servizi di Azure specificare le informazioni seguenti:  
 
-- **Percorso per la risorsa di archiviazione dei contenuti dell'app di Microsoft Store per le aziende**: specificare un percorso di rete condiviso, compresa una cartella. Ad esempio, `\\server\share\folder`. Quando il server del sito si sincronizza con lo Store, memorizza il contenuto nella cache usando questo percorso. Quando si crea un'applicazione in Configuration Manager, il server del sito copia il contenuto dell'app da questa cache locale nella raccolta contenuto del sito.  
+- **Percorso per la risorsa di archiviazione dei contenuti dell'app di Microsoft Store per le aziende**: specificare un percorso di rete condiviso, inclusa una cartella. Ad esempio, `\\server\share\folder`. Quando il server del sito si sincronizza con lo Store, memorizza il contenuto nella cache usando questo percorso. Quando si crea un'applicazione in Configuration Manager, il server del sito copia il contenuto dell'app da questa cache locale nella raccolta contenuto del sito.  
 
-- **Lingue selezionate**: selezionare le lingue da sincronizzare dallo Store e da visualizzare per gli utenti in Software Center. Se ad esempio l'utente configura Windows per il tedesco, Software Center mostra stringhe in tedesco per l'app dello Store. Questo comportamento richiede che tale lingua sia sincronizzata e che sia disponibile per l'applicazione specifica.    
+- **Lingue selezionate**: selezionare le lingue da sincronizzare dallo Store e da visualizzare agli utenti in Software Center. Se ad esempio l'utente configura Windows per il tedesco, Software Center mostra stringhe in tedesco per l'app dello Store. Questo comportamento richiede che tale lingua sia sincronizzata e che sia disponibile per l'applicazione specifica.    
 
 - **Lingua predefinita**: se la lingua dell'utente non è disponibile, selezionare una lingua predefinita da usare.  
 
@@ -167,3 +167,8 @@ Dopo aver distribuito le app online, tutte le app vengono aggiornate direttament
 Quando vengono distribuite app offline in dispositivi Windows 10 tramite il client di Configuration Manager, non consentire agli utenti di aggiornare le applicazioni esterne alle distribuzioni di Configuration Manager. Il controllo degli aggiornamenti per le app offline è particolarmente importante in ambienti multiutente, come ad esempio nelle classi. Per disabilitare Microsoft Store è possibile usare i [criteri di gruppo](https://docs.microsoft.com/windows/configuration/stop-employees-from-using-microsoft-store#a-href-idblock-store-group-policyablock-microsoft-store-using-group-policy). 
 
 Quando l'amministratore di Microsoft Store per le aziende ottiene un'app offline, non pubblicare l'app per gli utenti tramite lo Store. In questo modo si impedisce agli utenti di eseguire l'installazione o l'aggiornamento online. Gli utenti ricevono gli aggiornamenti delle app offline solo tramite Configuration Manager. 
+
+## <a name="see-also"></a>Vedere anche
+
+[Informazioni e risoluzione dei problemi di integrazione di Microsoft Store per le aziende con ConfigMgr](https://support.microsoft.com/help/4010214)
+
