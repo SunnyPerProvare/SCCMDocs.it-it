@@ -1,8 +1,8 @@
 ---
 title: Creare supporti pre-installati
 titleSuffix: Configuration Manager
-description: Creare supporti preinstallati in System Center Configuration Manager per semplificare la distribuzione di Windows in diversi scenari.
-ms.date: 04/11/2017
+description: Usare supporti pre-installati in Configuration Manager per semplificare la distribuzione di Windows in diversi scenari.
+ms.date: 05/02/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,132 +11,173 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 166d9653ac1ca5ca192333788fb760dcd030856a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 8cba7fff1ec7144abfa5f92c25c73d36d5d7c749
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56137525"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65082802"
 ---
-# <a name="create-prestaged-media-with-system-center-configuration-manager"></a>Creare supporti pre-installati con System Center Configuration Manager
+# <a name="create-prestaged-media"></a>Creare supporti pre-installati
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-I supporti preinstallati in System Center Configuration Manager sono file WIM (Windows Imaging Format) che possono essere installati in un computer bare metal dal produttore o in un centro di gestione temporanea aziendale non connesso all'ambiente di Configuration Manager.  
-Il supporto pre-installato contiene l'immagine di avvio usata per avviare il computer di destinazione e l'immagine del sistema operativo applicata al computer di destinazione. È anche possibile specificare applicazioni, pacchetti e pacchetti driver da includere come parte del supporto pre-installato. La sequenza di attività che distribuisce il sistema operativo non è inclusa nel supporto. Il supporto pre-installato viene applicato al disco rigido di un nuovo computer prima che il computer venga inviato all'utente finale. Usare i supporti preinstallati per gli scenari di distribuzione del sistema operativo seguenti:  
+I supporti pre-installati in Configuration Manager sono un file WIM che può essere installato in un computer bare metal dal produttore o nel centro di gestione temporanea non connesso all'ambiente di Configuration Manager. I supporti pre-installati contengono l'immagine d'avvio usata per avviare il computer di destinazione e l'immagine del sistema operativo applicata al computer di destinazione. È anche possibile specificare applicazioni, pacchetti e pacchetti driver da includere come parte del supporto pre-installato. La sequenza di attività che distribuisce il sistema operativo non è inclusa nel supporto. Il supporto pre-installato viene applicato al disco rigido di un nuovo computer prima che il computer venga inviato all'utente finale.
 
-- [Creare un'immagine per un OEM presso un produttore computer o un deposito locale](../../osd/deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
+Usare i supporti pre-installati per gli scenari di distribuzione del sistema operativo seguenti:  
 
-- [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
+- [Creare un'immagine per un OEM presso un produttore computer o un deposito locale](/sccm/osd/deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot)  
 
-- [Distribuire Windows to Go](deploy-windows-to-go.md)  
+- [Installare una nuova versione di Windows in un nuovo computer (bare metal)](/sccm/osd/deploy-use/install-new-windows-version-new-computer-bare-metal)  
 
-  Quando viene avviato per la prima volta dopo l'applicazione del supporto pre-installato, il computer avvia Windows PE e si connette a un punto di gestione per trovare la sequenza di attività che completa il processo di distribuzione del sistema operativo. È possibile specificare applicazioni, pacchetti e pacchetti driver da includere come parte del supporto preinstallato. Quando si distribuisce una sequenza di attività che usa un supporto pre-installato, la procedura guidata verifica innanzitutto la presenza di contenuto valido nella cache della sequenza di attività locale. Se non è possibile trovare il contenuto oppure il contenuto è stato rivisto, la procedura guidata scarica il contenuto dal punto di distribuzione.  
+- [Distribuire Windows to Go](/sccm/osd/deploy-use/deploy-windows-to-go)  
 
-##  <a name="BKMK_CreatePrestagedMedia"></a> Come creare un supporto pre-installato  
- Prima di creare un supporto preinstallato usando la Creazione guidata del supporto per la sequenza attività, assicurarsi che siano soddisfatte tutte le condizioni seguenti:  
 
-|Attività|Descrizione|  
-|----------|-----------------|  
-|Immagine d'avvio|Tenere presente quanto segue per l'immagine d'avvio da usare nella sequenza di attività per distribuire il sistema operativo:<br /><br /> - L'architettura dell'immagine di avvio deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.<br />- Verificare che l'immagine di avvio contenga i driver di archiviazione di rete e di massa necessari per eseguire il provisioning del computer di destinazione.|  
-|Creare una sequenza di attività per distribuire un sistema operativo|Come parte del supporto preinstallato, è necessario specificare la sequenza di attività per distribuire il sistema operativo.<br /><br /> - Per i passaggi necessari per creare una nuova sequenza di attività, vedere [Creare una sequenza di attività per installare un sistema operativo](../../osd/deploy-use/create-a-task-sequence-to-install-an-operating-system.md).<br />- Per altre informazioni sulle sequenze di attività, vedere l'argomento sulla [gestione delle sequenze di attività per automatizzare le attività](../../osd/deploy-use/manage-task-sequences-to-automate-tasks.md).|  
-|Distribuire tutto il contenuto associato alla sequenza di attività|È necessario distribuire in almeno un punto di distribuzione tutto il contenuto richiesto dalla sequenza di attività. Ciò include l'immagine d'avvio, l'immagine del sistema operativo e altri file associati. La procedura guidata raccoglie le informazioni dal punto di distribuzione quando viene creato il supporto autonomo. È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto nel punto di distribuzione.  Per informazioni dettagliate, vedere [Informazioni sulla raccolta contenuto](../../core/plan-design/hierarchy/the-content-library.md).|  
-|Disco rigido nel computer di destinazione|È necessario eseguire la formattazione del disco rigido del computer di destinazione prima che il supporto di pre-installazione venga installato nel disco rigido del computer. Se il disco rigido non è formattato quando viene applicato il supporto, la sequenza di attività che distribuisce il sistema operativo non riuscirà ad avviare il computer di destinazione.|  
+## <a name="usage"></a>Utilizzo
+
+Quando il computer viene avviato per la prima volta dopo aver applicato i supporti pre-installati, il computer viene avviato in Windows PE. Si connette a un punto di gestione per individuare la sequenza di attività che completa il processo di distribuzione del sistema operativo. Quando si distribuisce una sequenza di attività che usa supporti pre-installati, il client cerca prima di tutto contenuto valido nella cache della sequenza di attività locale. Se il contenuto non viene trovato o è stato rivisto, il client scarica il contenuto da un punto di distribuzione o da un peer.  
+
+
+## <a name="prerequisites"></a>Prerequisiti
+
+Prima di creare supporti pre-installati usando la Creazione guidata del supporto per la sequenza di attività, assicurarsi che tutte le condizioni siano soddisfatte.
+
+### <a name="boot-image"></a>Immagine d'avvio
+
+Tenere in considerazione i punti seguenti per l'immagine d'avvio da usare nella sequenza di attività per distribuire il sistema operativo:
+
+- L'architettura dell'immagine d'avvio deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.
+- Assicurarsi che l'immagine d'avvio contenga i driver di archiviazione e di rete necessari per eseguire il provisioning del computer di destinazione.
+
+### <a name="create-a-task-sequence-to-deploy-an-os"></a>Creare una sequenza di attività per distribuire un sistema operativo
+
+Nell'ambito dei supporti pre-installati, è necessario specificare la sequenza di attività per distribuire il sistema operativo. Per altre informazioni, vedere [Creare una sequenza di attività per installare un sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-install-an-operating-system).
+
+### <a name="distribute-all-content-associated-with-the-task-sequence"></a>Distribuire tutto il contenuto associato alla sequenza di attività
+
+Distribuire tutto il contenuto richiesto dalla sequenza di attività in almeno un punto di distribuzione. Tale contenuto include l'immagine d'avvio, l'immagine del sistema operativo e altri file associati. La procedura guidata raccoglie il contenuto dal punto di distribuzione quando crea i supporti pre-installati.
+
+L'account utente usato deve avere almeno diritti di accesso in **lettura** per la raccolta contenuto nel punto di distribuzione. Per altre informazioni, vedere [Distribuire il contenuto](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_distribute).
+
+### <a name="hard-drive-on-the-destination-computer"></a>Disco rigido nel computer di destinazione
+
+È necessario eseguire la formattazione del disco rigido del computer di destinazione prima che i supporti pre-installati venga applicati. Se il disco rigido non è formattato quando vengono applicati i supporti, la sequenza di attività che distribuisce il sistema operativo non potrà avviare il computer di destinazione.
 
 > [!NOTE]  
->  La Creazione guidata del supporto per la sequenza di attività imposta la seguente condizione variabile di sequenza di attività nel supporto: **_SMSTSMediaType = OEMMedia**. È possibile usare questa condizione nella sequenza di attività.  
+> La Creazione guidata del supporto per la sequenza di attività imposta la seguente condizione variabile di sequenza di attività nel supporto: **_SMSTSMediaType = OEMMedia**. È possibile usare questa stessa condizione nella sequenza di attività.  
 
- Usare la procedura seguente per creare supporti pre-installati.  
 
-#### <a name="to-create-prestaged-media"></a>Per creare supporti pre-installati  
+## <a name="process"></a>Processo
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Sistemi operativi** e selezionare il nodo **Sequenze di attività**.  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2. Nella scheda **Home** della barra multifunzione nel gruppo **Crea** selezionare **Crea supporto per sequenza attività**. Questa azione avvia la Creazione guidata del supporto per la sequenza di attività.  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea supporto per sequenza di attività** per avviare la Creazione guidata del supporto per la sequenza di attività.  
+3. Nella pagina **Seleziona tipo di supporto** specificare le opzioni seguenti:  
 
-4.  Nella pagina **Seleziona tipo di supporto** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
+    - Selezionare **Supporti preinstallati**.  
 
-    -   Selezionare **Supporti preinstallati**.  
-
-    -   Se si desidera consentire la distribuzione del sistema operativo senza l'interazione dell'utente, selezionare **Consenti distribuzione automatica del sistema operativo**. Quando si seleziona questa opzione, all'utente non verrà chiesto di immettere informazioni sulla configurazione di rete o di scegliere se eseguire sequenze attività facoltative. Tuttavia, all'utente viene richiesta una password se il supporto è configurato per la protezione con password.  
-
-5.  Nella pagina **Gestione del supporto** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
-
-    -   Selezionare **Supporto dinamico** se si desidera consentire a un punto di gestione di reindirizzare il supporto a un altro punto di gestione, in base al percorso del client nei limiti del sito.  
-
-    -   Selezionare **Supporto basato su sito** se si desidera che il supporto contatti solo il punto di gestione specificato.  
-
-6.  Nella pagina **Proprietà del supporto**  specificare le informazioni seguenti e fare clic su **Avanti**.  
-
-    -   **Creato da**: Specificare chi ha creato il supporto.  
-
-    -   **Versione**: Specificare il numero di versione del supporto.  
-
-    -   **Commento**: Specificare una descrizione univoca dello scopo per cui viene usato il supporto.  
-
-    -   **File supporto**: Specificare il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\fileoutput.wim**  
-
-7.  Nella pagina **Sicurezza** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
-
-    -   Selezionare la casella di controllo **Abilita supporto per computer sconosciuti** per consentire al supporto di distribuire un sistema operativo a un computer non gestito da Configuration Manager. Non sono presenti record di questi computer nel database di Configuration Manager.  Per altre informazioni, vedere [Operazioni preliminari alle distribuzioni in computer sconosciuti](../get-started/prepare-for-unknown-computer-deployments.md).  
-
-    -   Selezionare la casella di controllo **Proteggi supporto con password** e immettere una password complessa per proteggere il supporto da accesso non autorizzato. Quando si specifica una password l'utente deve immettere la password per usare il supporto pre-installato.  
+    - Se si vuole solo consentire la distribuzione del sistema operativo senza richiedere input da parte dell'utente, è possibile selezionare **Consenti distribuzione automatica del sistema operativo**.  
 
         > [!IMPORTANT]  
-        >  Come procedura consigliata di sicurezza, assegnare sempre una password per proteggere il supporto pre-installato.  
+        > Quando si seleziona questa opzione, all'utente non vengono richieste informazioni sulla configurazione di rete o su sequenze di attività facoltative. Se si configurano i supporti per la protezione con password, all'utente viene richiesta una password.  
 
-    -   Per le comunicazioni HTTP, selezionare **Crea certificato del supporto autofirmato**e quindi specificare la data di inizio e di scadenza del certificato.  
+4. Nella pagina **Gestione del supporto** specificare una delle opzioni seguenti:  
 
-    -   Per le comunicazioni HTTPS, selezionare **Importa certificato PKI**e quindi specificare il certificato da importare e la relativa password.  
+    - **Supporto dinamico**: consente a un punto di gestione di reindirizzare il supporto a un altro punto di gestione, in base al percorso del client nei limiti del sito.  
 
-         Per altre informazioni su questo certificato client usato per le immagini di avvio, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
+    - **Supporto basato su sito**: tramite il supporto viene contattato il punto di gestione specificato.  
 
-    -   **Affinità utente dispositivo**: per supportare la gestione basata sugli utenti in Configuration Manager, specificare come si vuole che il supporto associ gli utenti al computer di destinazione. Per altre informazioni su come la distribuzione del sistema operativo supporti l'affinità utente dispositivo, vedere [Associare gli utenti a un computer di destinazione](../get-started/associate-users-with-a-destination-computer.md).  
+5. Nella pagina **Proprietà del supporto** specificare le informazioni seguenti:  
 
-        -   Specificare **Consenti affinità utente dispositivo con approvazione automatica** se si desidera che il supporto associ automaticamente gli utenti al computer di destinazione. Questa funzionalità si basa sulle azioni della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
+    - **Creato da**: specificare chi ha creato il supporto.  
 
-        -   Specificare **Consenti approvazione amministratore in sospeso per affinità utente dispositivo** se si desidera che il supporto associ gli utenti al computer di destinazione dopo la concessione dell'approvazione. Questa funzionalità si basa sull'ambito della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione, ma attende l'approvazione di un utente amministratore prima di distribuire il sistema operativo.  
+    - **Versione**: specificare il numero di versione del supporto.  
 
-        -   Specificare **Non consentire affinità utente dispositivo** se non si desidera che il supporto associ gli utenti al computer di destinazione. In questo scenario, la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.  
+    - **Commento**: specificare una descrizione univoca dello scopo per cui viene usato il supporto.  
 
-8.  Nella pagina **Sequenza di attività** specificare la sequenza di attività che verrà eseguita nel computer di destinazione. Il contenuto a cui fa riferimento la sequenza di attività viene visualizzato in **Questa sequenza attività fa riferimento al contenuto seguente**. Verificare il contenuto e quindi fare clic su **Avanti**.  
+    - **File supporto**: specificare il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: `\\servername\folder\outputfile.wim`  
 
-9. Nella pagina **Immagine di avvio** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
+    - **Cartella di gestione temporanea**<!--1359388-->: il processo di creazione del supporto può richiedere molto spazio temporaneo sul disco. Per impostazione predefinita questo percorso è simile al seguente: `%UserProfile%\AppData\Local\Temp`. A partire dalla versione 1902, per offrire maggiore flessibilità dal punto di vista del percorso di archiviazione dei file temporanei, modificare questo valore con un'altra unità e un altro percorso.  
 
-    > [!IMPORTANT]  
-    >  L'architettura dell'immagine di avvio distribuita deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.  
+6. Nella pagina **Sicurezza** specificare le opzioni seguenti:  
 
-    -   Nella casella **Immagine di avvio** specificare l'immagine di avvio per avviare il computer di destinazione. Per altre informazioni, vedere [Manage boot images](../get-started/manage-boot-images.md) (Gestire le immagini d'avvio).  
+    - **Abilita supporto per computer sconosciuti**: consente al supporto di distribuire un sistema operativo a un computer non gestito da Configuration Manager. Non sono presenti record di questi computer nel database di Configuration Manager. Per altre informazioni, vedere [Operazioni preliminari alle distribuzioni in computer sconosciuti](/sccm/osd/get-started/prepare-for-unknown-computer-deployments).  
 
-    -   Nella casella **Punto di distribuzione** specificare il punto di distribuzione in cui si trova l'immagine di avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
+    - **Proteggi supporto con password**: immettere una password complessa per proteggere il supporto da accessi non autorizzati. Quando si specifica una password l'utente deve immettere la password per usare il supporto pre-installato.  
 
-        > [!NOTE]  
-        >  È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto nel punto di distribuzione. Per altre informazioni, vedere [Informazioni sulla raccolta contenuto](../../core/plan-design/hierarchy/the-content-library.md).  
+        > [!IMPORTANT]  
+        > Come procedura consigliata di sicurezza, assegnare sempre una password per proteggere il supporto pre-installato.  
 
-    -   Se è stato selezionato **Supporto basato su sito** nella pagina **Gestione del supporto** della procedura guidata, nella casella **Punto di gestione** specificare un punto di gestione da un sito primario.  
+    - Per le comunicazioni HTTP, selezionare **Crea certificato del supporto autofirmato**. Specificare quindi la data di inizio e di scadenza del certificato.  
 
-    -   Se è stato selezionato **Supporto dinamico** nella pagina **Gestione del supporto** della procedura guidata, nella casella **Punti di gestione associati** specificare i punti di gestione del sito primario da usare e un ordine di priorità per le comunicazioni iniziali.  
+    - Per le comunicazioni HTTPS, selezionare **Importa certificato PKI**. Specificare quindi il certificato da importare e la relativa password.  
 
-10. Nella pagina **Immagini** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
+        Per altre informazioni su questo certificato client usato dalle immagini d'avvio, vedere [Requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements).  
 
-    -   Nella casella **Pacchetto immagine** specificare l'immagine del sistema operativo. Per altre informazioni, vedere [Manage operating system images](../get-started/manage-operating-system-images.md) (Gestire le immagini del sistema operativo).  
+    - **Affinità utente-dispositivo**: per supportare la gestione incentrata sull'utente in Configuration Manager, specificare come si vuole che il supporto associ gli utenti al computer di destinazione. Per altre informazioni su come la distribuzione del sistema operativo supporti l'affinità utente-dispositivo, vedere [Associare gli utenti a un computer di destinazione](/sccm/osd/get-started/associate-users-with-a-destination-computer).  
 
-    -   Se il pacchetto contiene più immagini del sistema operativo, nella casella **Pacchetto immagine** specificare l'immagine da distribuire.  
+        - **Consenti affinità utente dispositivo con approvazione automatica**: il supporto associa automaticamente gli utenti al computer di destinazione. Questa funzionalità si basa sulle azioni della sequenza di attività che distribuisce il sistema operativo. In questo scenario la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
 
-    -   Nella casella **Punto di distribuzione** specificare il punto di distribuzione in cui si trova il pacchetto immagine del sistema operativo. La procedura guidata recupera l'immagine del sistema operativo dal punto di distribuzione e la scrive sul supporto.  
+        - **Consenti approvazione amministratore in sospeso per affinità utente dispositivo**: il supporto associa gli utenti al computer di destinazione dopo la concessione dell'approvazione. Questa funzionalità si basa sull'ambito della sequenza di attività che distribuisce il sistema operativo. In questo scenario la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione, ma attende l'approvazione di un utente amministratore prima di distribuire il sistema operativo.  
 
-11. Nella pagina **Personalizzazione** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
+        - **Non consentire affinità utente dispositivo**: il supporto non associa gli utenti al computer di destinazione. In questo scenario la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.  
 
-    -   Specificare le variabili usate dalla sequenza di attività per distribuire il sistema operativo.  
+7. Nella pagina **Sequenza di attività** specificare la sequenza di attività che viene eseguita nel computer di destinazione. Verificare l'elenco di contenuti a cui si fa riferimento nella sequenza di attività.  
 
-    -   Specificare i comandi preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio sono costituiti da uno script o da un eseguibile in grado di interagire con l'utente in Windows PE prima che venga eseguita la sequenza di attività per l'installazione del sistema operativo. Per altre informazioni sui comandi di preavvio per il supporto, vedere [Comandi di preavvio per supporti per sequenza di attività](../understand/prestart-commands-for-task-sequence-media.md).  
+    - **Rileva le dipendenze dell'applicazione associata e aggiungile a questo contenuto multimediale**: consente di aggiungere contenuto al supporto per le dipendenze dell'applicazione.  
 
         > [!TIP]  
-        >  Durante la creazione del supporto delle sequenza di attività, tale sequenza scrive l'ID del pacchetto e la riga di comando di preavvio, incluso il valore per eventuali variabili della sequenza di attività, nel file di registro CreateTSMedia.log nel computer che esegue la console di Configuration Manager. È possibile rivedere questo file di registro per verificare il valore per le variabili della sequenza di attività.  
+        > Se le dipendenze dell'applicazione previste non vengono visualizzate, deselezionare e selezionare nuovamente questa opzione per aggiornare l'elenco.  
 
-12. Completare la procedura guidata.  
+8. Nella pagina **Immagine d'avvio** specificare le opzioni seguenti:  
+
+    > [!IMPORTANT]  
+    > L'architettura dell'immagine d'avvio distribuita deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.  
+
+    - **Immagine d'avvio**: selezionare l'immagine d'avvio per l'avvio del computer di destinazione.  
+
+    - **Punto di distribuzione**: selezionare il punto di distribuzione che ospita l'immagine d'avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
+
+        > [!NOTE]  
+        > L'account utente usato deve avere almeno autorizzazioni di **lettura** per la raccolta contenuto nel punto di distribuzione.  
+
+    - **Punto di gestione**: solo per *supporti basati su sito*, selezionare un punto di gestione da un sito primario.  
+
+    - **Punti di gestione associati**: solo per *supporti dinamici*, selezionare i punti di gestione del sito primario da usare e l'ordine di priorità per la comunicazione iniziale.  
+
+9. Nella pagina **Generale** specificare le opzioni seguenti:  
+
+    - **Pacchetto immagine**: specificare l'immagine del sistema operativo da usare. Per altre informazioni, vedere [Gestire le immagini del sistema operativo](/sccm/osd/get-started/manage-operating-system-images).  
+
+    - **Indice immagine**: specificare l'indice dell'immagine da distribuire se il pacchetto contiene più immagini del sistema operativo.  
+
+    - **Punto di distribuzione**: specificare il punto di distribuzione che ospita l'immagine d'avvio del sistema operativo. La procedura guidata recupera l'immagine del sistema operativo dal punto di distribuzione e la scrive sul supporto.  
+
+10. Nella pagina **Selezione applicazione** selezionare altre applicazioni da aggiungere al file del supporto pre-installato.  
+
+11. Nella pagina **Selezione pacchetto** selezionare altri pacchetti da aggiungere al file del supporto pre-installato.  
+
+12. Nella pagina **Selezione il pacchetto driver** selezionare altri pacchetti driver da aggiungere al file del supporto pre-installato.  
+
+13. Nella pagina **Punti di distribuzione** selezionare uno o più punti di distribuzione da cui recuperare il contenuto.  
+
+    Configuration Manager visualizza solo i punti di distribuzione che includono il contenuto. Per continuare, distribuire tutto il contenuto associato alla sequenza di attività in almeno un punto di distribuzione. Dopo avere distribuito il contenuto, aggiornare l'elenco di punti di distribuzione. Rimuovere i punti di distribuzione già selezionati in questa pagina, andare alla pagina precedente e quindi di nuovo alla pagina **Punti di distribuzione**. In alternativa, riavviare la procedura guidata. Per altre informazioni, vedere [Distribuire il contenuto a cui fa riferimento una sequenza di attività](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DistributeTS) e [Gestire il contenuto e l'infrastruttura del contenuto](/sccm/core/servers/deploy/configure/manage-content-and-content-infrastructure).  
+
+14. Nella pagina **Personalizzazione** specificare le opzioni seguenti:  
+
+    - Aggiungere eventuali variabili usate dalla sequenza di attività.  
+
+    - **Attiva comando di preavvio**: specificare i comandi di preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio sono costituiti da uno script o da un eseguibile che può interagire con l'utente in Windows PE prima che venga eseguita la sequenza di attività. Per altre informazioni vedere [Comandi di preavvio del supporto per sequenza attività](/sccm/osd/understand/prestart-commands-for-task-sequence-media).  
+
+        > [!TIP]  
+        > Durante la creazione del supporto, tale sequenza scrive l'ID del pacchetto e la riga di comando di preavvio, incluso il valore per eventuali variabili della sequenza di attività, nel file **CreateTSMedia.log** nel computer che esegue la console di Configuration Manager. È possibile rivedere questo file di registro per verificare il valore per le variabili della sequenza di attività.  
+
+        Se il comando di preavvio richiede contenuto, selezionare l'opzione **Includi file per il comando di preavvio**.  
+
+15. Completare la procedura guidata.  
+
 
 ## <a name="next-steps"></a>Passaggi successivi
-[Scenari di distribuzione di sistemi operativi aziendali](scenarios-to-deploy-enterprise-operating-systems.md)
+
+[Creare un'immagine per un OEM presso un produttore computer o un deposito locale](/sccm/osd/deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot)

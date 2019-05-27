@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0815a974f3b1f29f664a2948eed33de24c6ecff3
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: bbc042975840e5b4e840928f01257785f4859dd4
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "56755301"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176837"
 ---
 # <a name="upgrade-windows-10-for-co-management"></a>Eseguire l'aggiornamento a Windows 10 per la co-gestione
 
@@ -52,7 +52,7 @@ Di seguito sono riportati alcuni suggerimenti raccolti da Microsoft aiutando mig
 
 ## <a name="case-studies"></a>Case study
 
-Microsoft IT ha distribuito Windows 10 a 96.000 utenti distribuiti presso Microsoft. La distribuzione ha incluso sia gli utenti remoti che gli utenti nella rete aziendale. La distribuzione è stata completata in nove settimane. Per altre informazioni su questa esperienza, vedere [Distribuzione di Windows 10 in Microsoft come aggiornamento sul posto](https://www.microsoft.com/download/details.aspx?id=50377).  
+Microsoft IT ha distribuito Windows 10 a 96.000 utenti distribuiti presso Microsoft. La distribuzione ha incluso sia gli utenti remoti che gli utenti nella rete aziendale. La distribuzione è stata completata in nove settimane. Per altre informazioni su questa esperienza, vedere [Distribuzione di Windows 10 in Microsoft come aggiornamento sul posto](https://www.microsoft.com/itshowcase/deploying-windows-10-at-microsoft-as-an-in-place-upgrade).  
 
 Una grande azienda europea produttrice di software usa con successo un gruppo di early adopter. Dopo i gruppi per i test iniziali e i progetti pilota, circa 2.000 dipendenti ricevono il primo aggiornamento, gli aggiornamenti successivi e il software. Questo gruppo include il personale IT e alcuni volontari. Questo livello di engagement degli utenti offre un maggiore livello di fiducia durante i test e più credibilità quando vengono avviate le implementazioni di massa.
 

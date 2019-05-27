@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
 ms.assetid: 0317fd02-3721-4634-b18b-7c976a4e92bf
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5990495532e9d4abe3b912a98e69f2aa1a3c16c9
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 2511705610abf87302d0079b5bd89e8ffe240561
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56121829"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500303"
 ---
 # <a name="prerequisites-for-certificate-profiles-in-system-center-configuration-manager"></a>Prerequisiti per i profili certificato in System Center Configuration Manager
 
@@ -40,7 +40,7 @@ I profili certificato in System Center Configuration Manager hanno dipendenze es
 
 |Dipendenza|Altre informazioni|  
 |----------------|----------------------|  
-|Ruolo del sistema del sito punto di registrazione certificati|Prima di usare profili certificato, è necessario installare il ruolo del sistema del sito del punto di registrazione certificati. Questo ruolo comunica con il database, il server del sito e il modulo criteri di System Center Configuration Manager.<br /><br /> Per altre informazioni sui requisiti di sistema per questo ruolo del sistema del sito e sul relativo percorso di installazione nella gerarchia, vedere la sezione **Requisiti di sistema del sito** dell'articolo [Configurazioni supportate per System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md).<br /><br /> Il punto di registrazione certificati non deve essere installato sullo stesso server che esegue il servizio Registrazione dispositivi di rete.|  
+|Ruolo del sistema del sito punto di registrazione certificati|Prima di usare profili certificato, è necessario installare il ruolo del sistema del sito del punto di registrazione certificati. Questo ruolo comunica con il database, il server del sito e il modulo criteri di System Center Configuration Manager.<br /><br /> Per altre informazioni sui requisiti di sistema per questo ruolo del sistema del sito e sul relativo percorso di installazione nella gerarchia, vedere la sezione **Requisiti di sistema del sito** dell'articolo [Configurazioni supportate per System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md).<br /><br /> Il punto di registrazione certificati non deve essere installato nello stesso server che esegue il servizio Registrazione dispositivi di rete.|  
 |Modulo criteri di System Center Configuration Manager installato nel server che esegue il servizio del ruolo del servizio Registrazione dispositivi di rete per servizi certificati Active Directory|Per distribuire i profili certificato, è necessario installare il modulo criteri di System Center Configuration Manager. È possibile trovare questo modulo criteri nel supporto di installazione di System Center Configuration Manager.|  
 |Dati di individuazione|I valori per l'oggetto del certificato e il nome alternativo dell'oggetto vengono specificati da System Center Configuration Manager e recuperati dalle informazioni raccolte dall'individuazione:<br /><br /> Per i certificati utente: individuazione utente Active Directory<br /><br /> Per i certificati computer: individuazione sistema e individuazione della rete Active Directory|  
 |Autorizzazioni di protezione specifiche per la gestione dei profili certificato|È necessario disporre delle seguenti autorizzazioni di protezione per gestire le impostazioni di accesso alle risorse aziendali, quali profili certificato, Wi-Fi e VPN:<br /><br /> Per visualizzare e gestire avvisi e report per i profili certificato: **Crea**, **Elimina**, **Modifica**, **Modifica report**, **Lettura**ed **Esegui report** per l'oggetto **Avvisi** .<br /><br /> Per creare e gestire profili dei certificati: **Criteri autore**, **Modifica report**, **Lettura**e **Esegui report** per l'oggetto **Profilo certificato** .<br /><br /> Per gestire le distribuzioni di profili Wi-Fi, certificato e VPN: **Distribuisci criteri di configurazione**, **Modifica avviso stato client**, **Lettura**e **Leggi risorsa** per l'oggetto **Raccolta** .<br /><br /> Per gestire tutti i criteri di configurazione: **Crea**, **Elimina**, **Modifica**, **Lettura**e **Imposta ambito di protezione** per l'oggetto **Criteri di configurazione** .<br /><br /> Per eseguire query correlate ai profili certificato: autorizzazione **Lettura** per l'oggetto **Query** .<br /><br /> Per visualizzare le informazioni sui profili certificato nella console di System Center Configuration Manager: autorizzazione **Lettura** per l'oggetto **Sito**.<br /><br /> Per visualizzare i messaggi di stato per i profili certificato: autorizzazione **Lettura** per l'oggetto **Messaggi di stato** .<br /><br /> Per creare e modificare il profilo del certificato CA attendibile: **Criteri autore**, **Modifica report**, **Lettura**e **Esegui report** per l'oggetto **Profilo certificato CA attendibile** .<br /><br /> Per creare e gestire profili VPN: **Criteri autore**, **Modifica report**, **Lettura**e **Esegui report** per l'oggetto **Profilo VPN** .<br /><br /> Per creare e gestire profili Wi-Fi: **Criteri autore**, **Modifica report**, **Lettura**e **Esegui report** per l'oggetto **Profilo Wi-Fi** .<br /><br /> Il ruolo di sicurezza **Gestione accesso risorse aziendali** include queste autorizzazioni necessarie per gestire i profili certificato in System Center Configuration Manager. Per altre informazioni, vedere la sezione **Configurare l'amministrazione basata su ruoli** nell'articolo [Configurare la sicurezza in System Center Configuration Manager](../../core/plan-design/security/configure-security.md).|  

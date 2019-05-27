@@ -2,21 +2,21 @@
 title: Gestire e monitorare le distribuzioni in più fasi
 titleSuffix: Configuration Manager
 description: Informazioni su come gestire e monitorare le distribuzioni in più fasi per il software in Configuration Manager.
-ms.date: 11/27/2018
+ms.date: 04/16/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
 ms.assetid: dc245916-bc11-4983-9c4d-015f655007c1
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ebf89e46b33649f12ea5770d6e771e811a66094
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: f378fd399a874b0db3844bbf02528dfe92981db5
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125732"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500656"
 ---
 # <a name="manage-and-monitor-phased-deployments"></a>Gestire e monitorare le distribuzioni in più fasi
 
@@ -86,18 +86,19 @@ When you suspend a phased deployment, it sets the available and deadline times o
 
 ## <a name="bkmk_monitor"></a> Monitoraggio
 <!--1358577-->
+A partire dalla versione 1902, le distribuzioni in più fasi hanno un nodo di monitoraggio dedicato, che semplifica l'identificazione delle distribuzioni in più fasi create e il passaggio alla visualizzazione di monitoraggio delle distribuzioni in più fasi. Dall'area di lavoro di **monitoraggio** selezionare **Distribuzioni in più fasi** e fare doppio clic su una delle distribuzioni in più fasi per visualizzarne lo stato. <!--3555949-->
 
-A partire dalla versione 1806, per le distribuzioni in più fasi è disponibile un'esperienza di monitoraggio nativa. Dal nodo **Distribuzioni** nell'area di lavoro **Monitoraggio** selezionare una distribuzione in più fasi e quindi fare clic su **Stato di distribuzione in più fasi** nella barra multifunzione.
+In Configuration Manager 1806 e 1810 è possibile visualizzare l'esperienza di monitoraggio nativa per le distribuzioni in più fasi. Dal nodo **Distribuzioni** nell'area di lavoro **Monitoraggio** selezionare una distribuzione in più fasi e quindi fare clic su **Stato di distribuzione in più fasi** nella barra multifunzione.
 
 ![Dashboard dello stato di distribuzione in più fasi che mostra lo stato delle due fasi](media/1358577-phased-deployment-status.png)
 
 Questo dashboard visualizza le informazioni seguenti per ogni fase della distribuzione:  
 
-- **Dispositivi totali**: numero di dispositivi interessati da questa fase.  
+- **Totale dispositivi** o **Risorse totali**: numero di dispositivi interessati da questa fase.  
 
-- **Status** (Stato): stato corrente della fase. Ogni fase può trovarsi in uno degli stati seguenti:  
+- **Stato**: stato corrente della fase. Ogni fase può trovarsi in uno degli stati seguenti:  
 
-    - **La distribuzione è stata creata**: la distribuzione in più fasi ha creato una distribuzione del software nella raccolta per questa fase. Ai client viene assegnato in modo attivo questo software.  
+    - **Distribuzione creata**: la distribuzione in più fasi ha creato una distribuzione del software nella raccolta per questa fase. Ai client viene assegnato in modo attivo questo software.  
 
     - **In attesa**: la fase precedente non ha ancora raggiunto i criteri di esito positivo per consentire la continuazione della distribuzione verso questa fase.  
 
@@ -107,11 +108,11 @@ Questo dashboard visualizza le informazioni seguenti per ogni fase della distrib
 
 #### <a name="success-criteria-tile"></a>Riquadro Criteri per l'esito positivo
 
-Usare l'elenco a discesa **Selezionare una fase** per modificare la visualizzazione del riquadro **Criteri per l'esito positivo**. Questo riquadro confronta il valore di **Obiettivo della fase** alla conformità corrente della distribuzione. Con le impostazioni predefinite, l'obiettivo della fase è il 95%. Questo valore indica che la distribuzione richiede una conformità del 95% per passare alla fase successiva. 
+Usare l'elenco a discesa **Selezionare una fase** per modificare la visualizzazione del riquadro **Criteri per l'esito positivo**. Questo riquadro confronta il valore di **Obiettivo della fase** alla conformità corrente della distribuzione. Con le impostazioni predefinite, l'obiettivo della fase è il 95%. Questo valore indica che la distribuzione richiede una conformità del 95% per passare alla fase successiva.
 
 In questo esempio, l'obiettivo della fase è il 65% e la conformità corrente è il 66,7%. La distribuzione in più fasi passa automaticamente alla seconda fase perché la prima fase soddisfa i criteri per l'esito positivo.  
 
-![Riquadro Criteri per l'esito positivo di esempio dallo stato della distribuzione in più fasi](media/pod-status-success-criteria-tile.png)
+   ![Riquadro Criteri per l'esito positivo di esempio dallo stato della distribuzione in più fasi in cui l'obiettivo è del 65%](media/pod-status-success-criteria-tile.png)
 
 L'obiettivo della fase è lo stesso di **Percentuale di esiti positivi della distribuzione** in Impostazioni delle fasi per la fase *successiva*. Affinché la distribuzione in più fasi inizi la fase successiva, questa seconda fase definisce i criteri per l'esito positivo della prima fase. Per visualizzare questa impostazione: 
 

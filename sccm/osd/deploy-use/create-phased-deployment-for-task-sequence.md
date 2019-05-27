@@ -2,21 +2,21 @@
 title: Creare distribuzioni in fasi
 titleSuffix: Configuration Manager
 description: Usare distribuzioni in più fasi per automatizzare l'implementazione del software in diverse raccolte.
-ms.date: 11/27/2018
+ms.date: 04/16/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
 ms.assetid: b634ff68-b909-48d2-9e2c-0933486673c5
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9107e3bf851ddbcec061eeeac064f31e7392ee9f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 028d515efa2e685becec0790b0a7d7b64445e9cc
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56142443"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65494748"
 ---
 # <a name="create-phased-deployments-with-configuration-manager"></a>Creare distribuzioni in più fasi con Configuration Manager
 
@@ -60,11 +60,12 @@ Queste impostazioni sono univoche per le distribuzioni in più fasi. Configurare
 #### <a name="criteria-for-success-of-the-first-phase"></a>Criteri per l'esito positivo della prima fase  
 
 - **Percentuale di esiti positivi della distribuzione**: specificare la percentuale di dispositivi che devono completare la distribuzione per la riuscita della prima fase. Per impostazione predefinita, questo valore è impostato su 95%. In altre parole, il sito considera la prima fase riuscita quando lo stato di conformità del 95% dei dispositivi è **Riuscito** per questa distribuzione. Il sito procede quindi alla seconda fase e crea una distribuzione del software nella raccolta successiva.  
+- **Numero di dispositivi distribuiti correttamente**: aggiunto in Configuration Manager versione 1902. Specificare il numero di dispositivi che devono completare la distribuzione per la riuscita della prima fase. Questa opzione è utile quando le dimensioni della raccolta sono variabili ed è necessario verificare l'esito positivo per un numero specifico di dispositivi prima di passare alla fase successiva. <!--3555946-->
 
 
 #### <a name="conditions-for-beginning-second-phase-of-deployment-after-success-of-the-first-phase"></a>Condizioni per l'inizio della seconda fase della distribuzione dopo la riuscita della prima fase  
 
-- **Inizia automaticamente questa fase dopo un periodo di differimento (in giorni)**: scegliere il numero di giorni di attesa prima di iniziare la seconda fase dopo l'esito positivo della prima. Per impostazione predefinita, questo valore è un giorno.  
+- **Inizia automaticamente questa fase dopo un periodo di differimento (in giorni)** : scegliere il numero di giorni di attesa prima di iniziare la seconda fase dopo la riuscita della prima. Per impostazione predefinita, questo valore è un giorno.  
 
 - **Inizia manualmente la seconda fase della distribuzione**: il sito non inizia automaticamente la seconda fase dopo la riuscita della prima fase. Questa opzione richiede l'avvio manuale della seconda fase. Per altre informazioni, vedere [Passare alla fase successiva](/sccm/osd/deploy-use/manage-monitor-phased-deployments#bkmk_move).  
 
@@ -73,14 +74,16 @@ Queste impostazioni sono univoche per le distribuzioni in più fasi. Configurare
 
 
 #### <a name="gradually-make-this-software-available-over-this-period-of-time-in-days"></a>Rendere gradualmente disponibile il software in questo periodo di tempo (in giorni)
-<!--1358578--> A partire dalla versione 1806, configurare questa impostazione affinché l'implementazione in ogni fase avvenga gradualmente. Questo comportamento consente di ridurre il rischio di problemi di distribuzione e diminuisce il carico sulla rete causato dalla distribuzione di contenuto nei client. Il sito rende gradualmente disponibile il software a seconda della configurazione per ogni fase. Tutti i client in una fase hanno una scadenza definita in base al momento in cui il software viene reso disponibile. L'intervallo di tempo tra l'ora di disponibilità e la scadenza è uguale per tutti i client in una fase. Il valore predefinito di questa impostazione è zero, ovvero la distribuzione non è limitata per impostazione predefinita. Non impostare un valore maggiore di 30.<!--SCCMDocs-pr issue 2767--> 
+<!--1358578-->
+A partire dalla versione 1806, configurare questa impostazione affinché l'implementazione in ogni fase avvenga gradualmente. Questo comportamento consente di ridurre il rischio di problemi di distribuzione e diminuisce il carico sulla rete causato dalla distribuzione di contenuto nei client. Il sito rende gradualmente disponibile il software a seconda della configurazione per ogni fase. Tutti i client in una fase hanno una scadenza definita in base al momento in cui il software viene reso disponibile. L'intervallo di tempo tra l'ora di disponibilità e la scadenza è uguale per tutti i client in una fase. Il valore predefinito di questa impostazione è zero, ovvero la distribuzione non è limitata per impostazione predefinita. Non impostare un valore maggiore di 30.<!--SCCMDocs-pr issue 2767--> 
 
+![Criteri di distribuzione in più fasi per le impostazioni di esito positivo](media/phased-deployment-criteria-for-success.png)
 
 #### <a name="configure-the-deadline-behavior-relative-to-when-the-software-is-made-available"></a>Configurare il comportamento della scadenza rispetto al momento in cui viene reso disponibile il software  
 
-- **L'installazione è obbligatoria non appena possibile**: imposta come scadenza per l'installazione nel dispositivo il momento in cui il dispositivo viene incluso.  
+- **L'installazione è obbligatoria non appena possibile**: impostare come scadenza per l'installazione nel dispositivo il momento in cui il dispositivo viene incluso.  
 
-- **L'installazione è obbligatoria dopo questo periodo di tempo**: imposta la scadenza per l'installazione su un determinato numero di giorni dopo l'inclusione del dispositivo. Per impostazione predefinita, questo valore è 7 giorni.   
+- **L'installazione è obbligatoria dopo questo periodo di tempo**: impostare come scadenza per l'installazione un numero di giorni specifico dopo che il dispositivo è stato incluso. Per impostazione predefinita, questo valore è 7 giorni.   
 
 
 <!--### Examples
@@ -111,7 +114,7 @@ Include a timeline diagram
 3. Selezionare **Sfoglia** e scegliere una raccolta di destinazione per i campi **Prima raccolta** e **Seconda raccolta**. Per una sequenza di attività e per gli aggiornamenti software selezionare le raccolte di dispositivi. Per un'applicazione selezionare le raccolte di utenti o dispositivi. Selezionare **Avanti**.  
 
     > [!Important]  
-    > La procedura guidata Crea una distribuzione in più fasi non segnala all'utente se una distribuzione è potenzialmente ad alto rischio. Per altre informazioni, vedere [Impostazioni per gestire le distribuzioni ad alto rischio](/sccm/core/servers/manage/settings-to-manage-high-risk-deployments) e la nota della sezione [Distribuire una sequenza di attività](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).  
+    > La procedura guidata Crea una distribuzione in più fasi non segnala all'utente se una distribuzione è potenzialmente ad alto rischio. Per altre informazioni, vedere [Impostazioni per gestire le distribuzioni ad alto rischio](/sccm/core/servers/manage/settings-to-manage-high-risk-deployments) e la nota della sezione [Distribuire una sequenza di attività](/sccm/osd/deploy-use/deploy-a-task-sequence).  
 
 4. Nella pagina **Impostazioni** scegliere un'opzione per ogni impostazione di pianificazione. Per altre informazioni, vedere [Impostazioni delle fasi](#bkmk_settings). Al termine, selezionare **Avanti**.  
 
@@ -148,13 +151,13 @@ A partire dalla versione 1806, creare una distribuzione in più fasi con fasi co
         2. Nella pagina **Impostazioni delle fasi** dell'Aggiunta guidata fasi configurare le impostazione di pianificazione e al termine selezionare **Avanti**. Per altre informazioni, vedere [Impostazioni](#bkmk_settings).   
 
             > [!Note]  
-            > Non è possibile modificare l'impostazione della fase, **Percentuale di esiti positivi della distribuzione**, nella prima fase. Questa impostazione si applica solo alle fasi che hanno una fase precedente.  
+            > Non è possibile modificare le impostazioni delle fasi **Percentuale di esiti positivi della distribuzione** o **Numero di dispositivi distribuiti correttamente** (versione 1902 o successiva) nella prima fase. Questa impostazione si applica solo alle fasi che hanno una fase precedente.  
 
         3. Le impostazioni nelle pagine **Esperienza utente** e **Punti di distribuzione** dell'Aggiunta guidata fasi sono uguali a quelle usate quando si distribuisce normalmente una sequenza di attività o gli aggiornamenti software.  
 
         4. Controllare le impostazioni nella pagina **Riepilogo** e quindi completare l'Aggiunta guidata fasi.  
 
-    - **Modifica**: questa azione apre la finestra Proprietà della fase selezionata, le cui schede sono uguali alle pagine dell'Aggiunta guidata fasi.  
+    - **Modifica**: questa azione apre la finestra Proprietà della fase selezionata in cui le schede sono uguali alle pagine dell'Aggiunta guidata fasi.  
 
     - **Rimuovi**: questa azione elimina la fase selezionata.  
 

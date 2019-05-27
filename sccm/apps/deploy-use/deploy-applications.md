@@ -2,7 +2,7 @@
 title: Distribuire applicazioni
 titleSuffix: Configuration Manager
 description: Creare o simulare la distribuzione di un'applicazione a una raccolta di utenti o dispositivi
-ms.date: 11/27/2018
+ms.date: 05/01/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,38 +11,39 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e18832b7d8829d531f0e40c4d532141216d61c1
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: c27e2d4bb90240ad2cfee5e0c470d7a6b8a76653
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122305"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083331"
 ---
 # <a name="deploy-applications-with-configuration-manager"></a>Distribuire applicazioni con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Creare o simulare la distribuzione di un'applicazione a una raccolta di utenti o dispositivi in Configuration Manager. La distribuzione specifica istruzioni per il client di Configuration Manager su come e quando installare il software. 
+Creare o simulare la distribuzione di un'applicazione a una raccolta di utenti o dispositivi in Configuration Manager. La distribuzione specifica istruzioni per il client di Configuration Manager su come e quando installare il software.
 
 Prima di distribuire un'applicazione, creare almeno un tipo di distribuzione per l'applicazione. Per altre informazioni, vedere [Create applications](/sccm/apps/deploy-use/create-applications) (Creare le applicazioni).
 
 È anche possibile simulare la distribuzione di un'applicazione. La simulazione verifica l'applicabilità di una distribuzione senza installare o disinstallare l'applicazione. Una distribuzione simulata esegue una valutazione del metodo di rilevamento, dei requisiti e delle dipendenze per un tipo di distribuzione e segnala i risultati nel nodo **Distribuzioni** dell'area di lavoro **Monitoraggio**. Per altre informazioni, vedere [Simulare distribuzioni di applicazioni ](/sccm/apps/deploy-use/simulate-application-deployments).
 
 > [!Note]
->  È possibile simulare la distribuzione solo di applicazioni necessarie, ma non di pacchetti o aggiornamenti software.   
-> 
->  I dispositivi registrati con MDM non supportano le distribuzioni simulate, l'esperienza utente o le impostazioni di pianificazione.
+> È possibile simulare la distribuzione solo di applicazioni necessarie, ma non di pacchetti o aggiornamenti software.
+>
+> I dispositivi registrati con MDM non supportano le distribuzioni simulate, l'esperienza utente o le impostazioni di pianificazione.
 
 
 
 ## <a name="bkmk_deploy"></a> Distribuire un'applicazione
 
-1.  Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Gestione applicazioni** e selezionare il nodo **Applicazioni**.  
+1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Gestione applicazioni** e selezionare il nodo **Applicazioni**.  
 
-2.  Nell'elenco **Applicazioni** selezionare un'applicazione da distribuire. Sulla barra multifunzione fare clic su **Distribuisci**.  
+2. Nell'elenco **Applicazioni** selezionare un'applicazione da distribuire. Sulla barra multifunzione fare clic su **Distribuisci**.  
 
 > [!Note]  
 > Quando si visualizzano le proprietà di una distribuzione esistente, le sezioni seguenti corrispondono alle schede della finestra delle proprietà della distribuzione:  
+>
 > - [Generalee](#bkmk_deploy-general)
 > - [Contenuto](#bkmk_deploy-content)
 > - [Impostazioni distribuzione](#bkmk_deploy-settings)
@@ -52,84 +53,85 @@ Prima di distribuire un'applicazione, creare almeno un tipo di distribuzione per
 > - [iOS: Criteri di configurazione dell'app](#bkmk_deploy-ios)
 
 
-### <a name="bkmk_deploy-general"></a> Informazioni della scheda **Generale** della distribuzione 
+### <a name="bkmk_deploy-general"></a> Informazioni della scheda **Generale** della distribuzione
 
 Nella pagina **Generale** della Distribuzione guidata del software specificare le seguenti informazioni:  
 
 - **Software**: visualizza l'applicazione da distribuire. Fare clic su **Sfoglia** per selezionare un'altra applicazione.  
 
-- **Raccolta**: Fare clic su **Sfoglia** per selezionare la raccolta in cui distribuire l'applicazione.  
+- **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta in cui distribuire l'applicazione.  
 
-- **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: archivia il contenuto dell'applicazione nel gruppo di punti di distribuzione predefinito della raccolta. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione è disattivata.  
+- **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: consente di archiviare il contenuto dell'applicazione nel gruppo di punti di distribuzione predefinito della raccolta. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione è disattivata.  
 
 - **Distribuisci automaticamente contenuto per dipendenze**: se uno dei tipi di distribuzione dell'applicazione ha dipendenze, il sito invia anche il contenuto dell'applicazione dipendente ai punti di distribuzione.  
 
     >[!Note]  
     > Se l'applicazione dipendente viene aggiornata dopo la distribuzione dell'applicazione primaria, il sito non distribuisce automaticamente il nuovo contenuto per la dipendenza.  
 
-- **Commenti (facoltativo)**: Facoltativamente, immettere una descrizione per la distribuzione.  
+- **Commenti (facoltativo)** : immettere una descrizione facoltativa della distribuzione.  
 
 
 ### <a name="bkmk_deploy-content"></a> Opzioni del **Contenuto** per la distribuzione
 
-Nella pagina **Contenuto** fare clic su **Aggiungi** per distribuire il contenuto per questa applicazione a un punto di distribuzione o a un gruppo di punti di distribuzione. 
+Nella pagina **Contenuto** fare clic su **Aggiungi** per distribuire il contenuto per questa applicazione a un punto di distribuzione o a un gruppo di punti di distribuzione.
 
 Se è stata selezionata l'opzione **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta** nella pagina Generale, questa opzione viene popolata automaticamente. Solo un membro del ruolo di sicurezza **Amministratore applicazione** può modificarlo.
 
-Se il contenuto dell'applicazione è già distribuito, viene visualizzato qui. 
+Se il contenuto dell'applicazione è già distribuito, viene visualizzato qui.
 
 
 ### <a name="bkmk_deploy-settings"></a> **Impostazioni distribuzione**
 
 Nella pagina **Impostazioni distribuzione** specificare le informazioni seguenti:  
 
-- **Azione**: usare l'elenco a discesa per indicare se la distribuzione deve **installare** o **disinstallare** l'applicazione.  
+- **Azione**: dall'elenco a discesa scegliere **Installa** o **Disinstalla** perché la distribuzione installi o disinstalli l'applicazione.  
 
     > [!NOTE]  
-    >  Se si crea una distribuzione per **installare** un'app e un'altra distribuzione per **disinstallare** la stessa app nello stesso dispositivo, la distribuzione di **installazione**  avrà la priorità.  
+    > Se si crea una distribuzione per **installare** un'app e un'altra distribuzione per **disinstallare** la stessa app nello stesso dispositivo, la distribuzione di **installazione**  avrà la priorità.  
 
     Non è possibile modificare l'azione di una distribuzione dopo averla creata.  
 
-- **Scopo**: dall'elenco a discesa scegliere una delle seguenti opzioni:  
+- **Scopo**: dall'elenco a discesa scegliere una delle opzioni seguenti:  
 
   - **Disponibile**: l'utente visualizza l'applicazione in Software Center. Può eseguire l'installazione su richiesta.  
 
   - **Richiesto**: il client installa automaticamente l'app in base alla pianificazione configurata. Se l'applicazione non è nascosta, un utente può verificarne lo stato di distribuzione. Gli utenti possono anche usare Software Center per installare l'applicazione prima della scadenza.  
 
-    > [!NOTE]   
-    >  Quando si imposta l'azione di distribuzione su **Disinstalla**, lo scopo della distribuzione viene impostato automaticamente su **Richiesto**. Non è possibile modificare questo comportamento.  
+    > [!NOTE]  
+    > Quando si imposta l'azione di distribuzione su **Disinstalla**, lo scopo della distribuzione viene impostato automaticamente su **Richiesto**. Non è possibile modificare questo comportamento.  
 
 - **Consenti agli utenti finali di provare a ripristinare questa applicazione**: a partire dalla versione 1810, se l'applicazione è stata creata con una riga di comando di ripristino, abilitare questa opzione. In Software Center è disponibile per gli utenti l'opzione **Ripristina** per ripristinare l'applicazione.<!--1357866-->  
 
-- **Pre-distribuisci il software nel dispositivo primario dell'utente**: se la distribuzione è destinata a un utente, selezionare questa opzione per distribuire l'applicazione nel dispositivo primario dell'utente. Questa impostazione non richiede all'utente di accedere prima che venga eseguita la distribuzione. Non selezionare questa opzione se l'utente deve interagire con l'installazione. Questa opzione è disponibile solo quando la distribuzione è impostata su **Richiesto**.  
+- **Pre-distribuisci il software nel dispositivo primario dell'utente**: se la distribuzione è destinata a un utente, selezionare questa opzione per distribuire l'applicazione nei dispositivi primari dell'utente. Questa impostazione non richiede all'utente di accedere prima che venga eseguita la distribuzione. Non selezionare questa opzione se l'utente deve interagire con l'installazione. Questa opzione è disponibile solo quando la distribuzione è impostata su **Richiesto**.  
 
 - **Invia pacchetti di riattivazione**: se la distribuzione è impostata su **Richiesto**, Configuration Manager invia un pacchetto di riattivazione ai computer prima che il client esegua la distribuzione. Il pacchetto attiva i computer nel momento in cui scade l'installazione. Prima di usare questa opzione, i computer e le reti devono essere configurati per la riattivazione LAN. Per altre informazioni, vedere [Pianificare la riattivazione dei client](/sccm/core/clients/deploy/plan/plan-wake-up-clients).  
 
-- **Consente a tutti i client che usano una connessione di rete a consumo di scaricare il contenuto una volta raggiunta la scadenza dell'installazione. Se si abilita questa opzione, potrebbe essere addebitato un costo aggiuntivo**: Questa opzione è disponibile solo per distribuzioni con scopo **Richiesto**.  
+- **Consente a tutti i client che utilizzano una connessione di rete a consumo di scaricare il contenuto una volta raggiunta la scadenza dell'installazione. Se si abilita questa opzione, potrebbe essere addebitato un costo aggiuntivo**: questa opzione è disponibile solo per le distribuzioni con scopo **Richiesto**.  
 
-- **Aggiorna automaticamente tutte le versioni sostituite di questa applicazione**: il client aggiorna tutte le versioni sostituite dell'applicazione usando l'applicazione sostitutiva. 
+- **Aggiorna automaticamente tutte le versioni sostituite di questa applicazione**: il client aggiorna le versioni sostituite dell'applicazione con l'applicazione sostitutiva.
 
     > [!Note]  
     > Questa opzione funziona indipendentemente dall'approvazione dell'amministratore. Se un amministratore ha già approvato la versione sostituita, non sarà necessario approvare anche la versione sostitutiva. L'approvazione è necessaria solo per le nuove richieste, non per gli aggiornamenti sostitutivi.<!--515824-->  
 
     > [!NOTE]  
-    > A partire dalla versione 1802, per lo scopo di installazione **Disponibile** è possibile abilitare o disabilitare questa opzione. <!--1351266--> 
+    > A partire dalla versione 1802, per lo scopo di installazione **Disponibile** è possibile abilitare o disabilitare questa opzione. <!--1351266-->
 
 
 #### <a name="bkmk_approval"></a> Impostazioni di approvazione
+
 In base alla versione di Configuration Manager, viene visualizzata una delle impostazioni di approvazione seguenti:
 
-- **Richiedi l'approvazione dell'amministratore se gli utenti richiedono questa applicazione**: nelle versioni fino alla 1710 inclusa l'amministratore deve approvare qualsiasi richiesta utente per l'applicazione prima che l'utente possa installarla. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi.  
+- **Richiedi l'approvazione dell'amministratore se gli utenti richiedono questa applicazione**: per la versione 1710 e versioni precedenti, l'amministratore approva tutte le richieste degli utenti per l'applicazione prima che l'utente la installi. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi.  
 
-- **Un amministratore deve approvare una richiesta per questa applicazione nel dispositivo**: A partire dalla versione 1802 l'amministratore deve approvare qualsiasi richiesta utente per l'applicazione prima che l'utente possa installarla nel dispositivo. Se l'amministratore approva la richiesta, l'utente può installare l'applicazione solo su quel dispositivo. Per installare l'applicazione in un altro dispositivo dovrà inviare un'altra richiesta. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi.
+- **Un amministratore deve approvare una richiesta per questa applicazione nel dispositivo**: a partire dalla versione 1802, l'amministratore approva tutte le richieste utente per l'applicazione prima che l'utente la installi nel dispositivo richiesto. Se l'amministratore approva la richiesta, l'utente può installare l'applicazione solo su quel dispositivo. Per installare l'applicazione in un altro dispositivo dovrà inviare un'altra richiesta. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi.
 
- A partire dalla versione 1810 è anche possibile definire un elenco di indirizzi e-mail per notificare la richiesta di approvazione. 
-<!--1357015-->  
+A partire dalla versione 1810 è anche possibile definire un elenco di indirizzi e-mail per notificare la richiesta di approvazione.<!--1357015-->  
 
 Per altre informazioni, vedere [Approvare le applicazioni](/sccm/apps/deploy-use/app-approval).
 
 
 #### <a name="deployment-properties-deployment-settings"></a>**Impostazioni distribuzione** delle proprietà della distribuzione
+
 Quando si visualizzano le proprietà di una distribuzione, l'opzione seguente viene visualizzata nella scheda **Impostazioni distribuzione**, se è supportata dal tipo di tecnologia di distribuzione:
 
 **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione**. Per altre informazioni, vedere [Controllare l'esecuzione di file eseguibili prima di installare un'applicazione](#bkmk_exe-check).
@@ -140,16 +142,17 @@ Quando si visualizzano le proprietà di una distribuzione, l'opzione seguente vi
 
 Nella pagina **Pianificazione** configurare il momento in cui l'applicazione deve essere distribuita o resa disponibile per i dispositivi client.
 
-Per impostazione predefinita, Configuration Manager rende i criteri di distribuzione immediatamente disponibili ai client. Se si vuole creare la distribuzione, ma non renderla disponibile ai client fino a una data successiva, configurare l'opzione **Pianifica disponibilità applicazione**. Selezionare quindi la data e l'ora, specificando anche se viene usata l'ora UTC o il fuso orario del client. 
+Per impostazione predefinita, Configuration Manager rende i criteri di distribuzione immediatamente disponibili ai client. Se si vuole creare la distribuzione, ma non renderla disponibile ai client fino a una data successiva, configurare l'opzione **Pianifica disponibilità applicazione**. Selezionare quindi la data e l'ora, specificando anche se viene usata l'ora UTC o il fuso orario del client.
 
-Se la distribuzione è di tipo **Richiesto**, specificare anche la **Scadenza installazione**. Per impostazione predefinita, la scadenza è Appena possibile. 
+Se la distribuzione è di tipo **Richiesto**, specificare anche la **Scadenza installazione**. Per impostazione predefinita, la scadenza è Appena possibile.
 
-Ad esempio, è necessario distribuire una nuova applicazione line-of-business. Tutti gli utenti devono eseguire l'installazione entro una determinata ora, ma si vuole offrire agli utenti la possibilità di acconsentire esplicitamente in anticipo. È anche necessario assicurarsi che il sito abbia distribuito il contenuto in tutti i punti di distribuzione. È possibile pianificare l'applicazione in modo che sia disponibile tra cinque giorni da oggi. Questa pianificazione offre il tempo necessario per distribuire il contenuto e confermarne lo stato. È quindi possibile impostare la scadenza dell'installazione a un mese da oggi. Gli utenti potranno visualizzare l'applicazione in Software Center quando sarà disponibile tra cinque giorni. Se non eseguono alcuna azione, il client installerà automaticamente l'applicazione in corrispondenza della scadenza dell'installazione. 
+Ad esempio, è necessario distribuire una nuova applicazione line-of-business. Tutti gli utenti devono eseguire l'installazione entro una determinata ora, ma si vuole offrire agli utenti la possibilità di acconsentire esplicitamente in anticipo. È anche necessario assicurarsi che il sito abbia distribuito il contenuto in tutti i punti di distribuzione. È possibile pianificare l'applicazione in modo che sia disponibile tra cinque giorni da oggi. Questa pianificazione offre il tempo necessario per distribuire il contenuto e confermarne lo stato. È quindi possibile impostare la scadenza dell'installazione a un mese da oggi. Gli utenti potranno visualizzare l'applicazione in Software Center quando sarà disponibile tra cinque giorni. Se non eseguono alcuna azione, il client installerà automaticamente l'applicazione in corrispondenza della scadenza dell'installazione.
 
 Se l'applicazione distribuita sostituisce un'altra applicazione, è possibile impostare la scadenza dell'installazione in corrispondenza del momento in cui gli utenti ricevono la nuova applicazione. Per aggiornare gli utenti con l'applicazione sostituita, impostare la **Scadenza installazione**.
 
 
 #### <a name="delay-enforcement-with-a-grace-period"></a>Posticipare l'imposizione con un periodo di tolleranza
+
 È possibile che si voglia concedere agli utenti più tempo per installare le applicazioni necessarie, *oltre* a eventuali scadenze configurate. Questo comportamento è in genere necessario quando un computer è stato disattivato per molto tempo ed è necessario installare molte applicazioni, come nel caso, ad esempio, di un utente che, tornato da una vacanza, deve attendere parecchio tempo mentre il client installa le distribuzioni scadute. Per contribuire alla risoluzione di questo problema, definire un periodo di tolleranza per l'imposizione.
 
 - Configurare prima di tutto il periodo di tolleranza con la proprietà **Periodo di tolleranza per l'imposizione dopo la scadenza della distribuzione (ore)** nelle impostazioni del client. Per altre informazioni, vedere il gruppo [Agente computer](/sccm/core/clients/deploy/about-client-settings#computer-agent). Specificare un valore compreso tra **1** e **120** ore.  
@@ -163,9 +166,11 @@ Dopo la scadenza il client installa l'applicazione nella prima finestra non lavo
 
 Nella pagina **Esperienza utente** specificare le informazioni sulle modalità di interazione degli utenti con l'installazione dell'applicazione.
 
-- **Notifiche utente**: specificare se visualizzare la notifica in Software Center nell'orario disponibile configurato. Questa impostazione consente di stabilire anche se inviare notifiche agli utenti nei computer client. Per le distribuzioni disponibili non è possibile selezionare l'opzione **Nascondi in Software Center e nascondi tutte le notifiche**.  
+- **Notifiche utente**: specificare se visualizzare la notifica in Software Center in corrispondenza dell'orario disponibile configurato. Questa impostazione consente di stabilire anche se inviare notifiche agli utenti nei computer client. Per le distribuzioni disponibili non è possibile selezionare l'opzione **Nascondi in Software Center e nascondi tutte le notifiche**.  
 
-- **Installazione software** e **Riavvio sistema**: configurare queste impostazioni solo per le distribuzioni obbligatorie. Consentono di specificare i comportamenti relativi al raggiungimento della scadenza da parte della distribuzione all'esterno di qualsiasi finestra di manutenzione definita. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).  
+    - **Quando sono necessarie modifiche al software, mostra una finestra di dialogo all'utente invece di un avviso popup**<!--3555947-->: a partire dalla versione 1902, selezionare questa opzione per modificare l'esperienza utente rendendola più invasiva. Si applica solo alle distribuzioni richieste. Per altre informazioni, vedere [Pianificare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_impact).
+
+- **Installazione del software** e **Riavvio del sistema**: configurare queste impostazioni solo per le distribuzioni obbligatorie. Consentono di specificare i comportamenti relativi al raggiungimento della scadenza da parte della distribuzione all'esterno di qualsiasi finestra di manutenzione definita. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).  
 
 - **Gestione filtri di scrittura per dispositivi con Windows Embedded**: questa impostazione controlla il comportamento di installazione nei dispositivi con Windows Embedded in cui è abilitato un filtro di scrittura. Scegliere l'opzione per eseguire il commit delle modifiche alla scadenza dell'installazione o durante una finestra di manutenzione. Quando si seleziona questa opzione, è necessario un riavvio e la modifica viene salvata in modo permanente nel dispositivo. In caso contrario, l'applicazione viene installata nell'overlay temporaneo e il commit viene eseguito successivamente.  
 
@@ -184,7 +189,9 @@ Quando si esegue un tipo di distribuzione iOS, verrà visualizzata anche la pagi
 
 
 ## <a name="bkmk_phased"></a> Creare una distribuzione in più fasi
-<!--1358147--> A partire dalla versione 1806, è possibile creare una distribuzione in più fasi per un'applicazione. Le distribuzioni in più fasi consentono di orchestrare un'implementazione coordinata e in sequenza del software basata su criteri e gruppi personalizzabili. È possibile, ad esempio, distribuire l'applicazione in una raccolta pilota e quindi continuare automaticamente l'implementazione in base ai criteri per l'esito positivo. 
+
+<!--1358147-->
+A partire dalla versione 1806, è possibile creare una distribuzione in più fasi per un'applicazione. Le distribuzioni in più fasi consentono di orchestrare un'implementazione coordinata e in sequenza del software basata su criteri e gruppi personalizzabili. È possibile, ad esempio, distribuire l'applicazione in una raccolta pilota e quindi continuare automaticamente l'implementazione in base ai criteri per l'esito positivo. 
 
 Per altre informazioni, vedere gli articoli seguenti:  
 
@@ -196,11 +203,11 @@ Per altre informazioni, vedere gli articoli seguenti:
 
 ## <a name="bkmk_delete"></a> Eliminare una distribuzione
 
-1.  Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Gestione applicazioni** e selezionare il nodo **Applicazioni**.  
+1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Gestione applicazioni** e selezionare il nodo **Applicazioni**.  
 
-2.  Nell'elenco **Applicazioni** selezionare l'applicazione che include la distribuzione da eliminare.  
+2. Nell'elenco **Applicazioni** selezionare l'applicazione che include la distribuzione da eliminare.  
 
-3.  Passare alla scheda **Distribuzioni** del pannello dei dettagli e selezionare la distribuzione dell'applicazione.  
+3. Passare alla scheda **Distribuzioni** del pannello dei dettagli e selezionare la distribuzione dell'applicazione.  
 
 4. Sulla barra multifunzione fare clic su **Elimina** nella scheda **Distribuzione** e nel gruppo **Distribuzione**.  
 
@@ -214,7 +221,7 @@ Quando gli utenti ricevono software obbligatorio e selezionano l'impostazione **
 
 - **In seguito**: specifica che le notifiche vengono programmate in base alle impostazioni di notifica configurate nelle impostazioni del client.  
 
-- **Orario fisso**: specifica che la notifica venga pianificata per una nuova visualizzazione dopo l'ora selezionata. Ad esempio, se si seleziona un periodo di 30 minuti, la notifica viene visualizzata di nuovo dopo 30 minuti.  
+- **Fixed time** (Orario fisso): specifica che la notifica venga pianificata per una nuova visualizzazione dopo l'ora selezionata. Ad esempio, se si seleziona un periodo di 30 minuti, la notifica viene visualizzata di nuovo dopo 30 minuti.  
 
 ![Gruppo Agente computer nelle impostazioni client predefinite](media/ComputerAgentSettings.png)
 
@@ -224,7 +231,7 @@ Il tempo di posticipo massimo è sempre basato sui valori di notifica configurat
 
 - Il client visualizza la finestra di dialogo di notifica più di 24 ore prima della scadenza di distribuzione.  
 
-- La finestra di dialogo visualizza opzioni di posposizione fino a 10 ore ma mai superiori.   
+- La finestra di dialogo visualizza opzioni di posposizione fino a 10 ore ma mai superiori.  
 
 - Quando la scadenza di distribuzione di avvicina, nella finestra di dialogo vengono visualizzate meno opzioni. Tali opzioni sono coerenti con le impostazioni del client pertinenti per ogni componente della scadenza di distribuzione.  
 
@@ -266,9 +273,11 @@ Dopo che i client ricevono la distribuzione, si applica il comportamento seguent
 
 
 ## <a name="deploy-user-available-applications-on-azure-ad-joined-devices"></a>Distribuire applicazioni disponibili per l'utente in dispositivi aggiunti ad Azure AD
-<!-- 1322613 --> Se si distribuiscono applicazioni come disponibili agli utenti, a partire dalla versione 1802 questi possono esplorarle e installarle tramite Software Center nei dispositivi Azure Active Directory (Azure AD).  
 
-#### <a name="prerequisites"></a>Prerequisiti
+<!-- 1322613 -->
+Se si distribuiscono applicazioni come disponibili agli utenti, a partire dalla versione 1802 questi possono esplorarle e installarle tramite Software Center nei dispositivi Azure Active Directory (Azure AD).  
+
+### <a name="prerequisites"></a>Prerequisiti
 
 - Abilitare HTTPS nel punto di gestione  
 
@@ -288,7 +297,7 @@ Dopo che i client ricevono la distribuzione, si applica il comportamento seguent
 
     - [Gateway di gestione cloud](/sccm/core/clients/manage/plan-cloud-management-gateway)  
 
-    - Abilitare l'impostazione client: **Abilitare le richieste dei criteri utente dai client Internet** nel gruppo [Criteri client](/sccm/core/clients/deploy/about-client-settings#client-policy)  
+    - Abilitare l'impostazione client **Abilitare le richieste dei criteri utente dai client Internet** nel gruppo [Criteri client](/sccm/core/clients/deploy/about-client-settings#client-policy)  
 
 - Per supportare i client su Intranet:  
 
@@ -299,7 +308,7 @@ Dopo che i client ricevono la distribuzione, si applica il comportamento seguent
 
 
 ## <a name="next-steps"></a>Passaggi successivi
+
  - [Monitorare le applicazioni](/sccm/apps/deploy-use/monitor-applications-from-the-console)
  - [Attività di gestione per le applicazioni](/sccm/apps/deploy-use/management-tasks-applications)
  - [Manuale dell'utente di Software Center](/sccm/core/understand/software-center)
-

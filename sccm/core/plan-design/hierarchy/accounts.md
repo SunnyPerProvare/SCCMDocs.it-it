@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7949808110d058bc1511abd1053e583b7f452cfa
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: 5b9f4f95916a2d547f89cab7dac838b7fe68fb30
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083584"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933459"
 ---
 # <a name="accounts-used-in-configuration-manager"></a>Account usati in Configuration Manager
 
@@ -526,7 +526,7 @@ Per altre informazioni, vedere [Pianificare gli aggiornamenti software](/sccm/su
 > [!NOTE]  
 >  L'account del sito di origine e l'[account del database del sito di origine](#source-site-database-account) vengono identificati come **Gestione migrazione** nel nodo **Account** dell'area di lavoro **Amministrazione** nella console di Configuration Manager.  
 
- Per altre informazioni, vedere [Eseguire la migrazione dei dati da una gerarchia all'altra](https://docs.microsoft.com/en-us/sccm/core/migration/migrate-data-between-hierarchies).
+ Per altre informazioni, vedere [Eseguire la migrazione dei dati da una gerarchia all'altra](https://docs.microsoft.com/sccm/core/migration/migrate-data-between-hierarchies).
 
 
 ### <a name="source-site-database-account"></a>Account del database del sito di origine  
@@ -542,7 +542,7 @@ Per altre informazioni, vedere [Pianificare gli aggiornamenti software](/sccm/su
 > [!NOTE]  
 >  L'account del sito di origine e l'[account del database del sito di origine](#source-site-database-account) vengono identificati come **Gestione migrazione** nel nodo **Account** dell'area di lavoro **Amministrazione** nella console di Configuration Manager.  
 
- Per altre informazioni, vedere [Eseguire la migrazione dei dati da una gerarchia all'altra](https://docs.microsoft.com/en-us/sccm/core/migration/migrate-data-between-hierarchies).
+ Per altre informazioni, vedere [Eseguire la migrazione dei dati da una gerarchia all'altra](https://docs.microsoft.com/sccm/core/migration/migrate-data-between-hierarchies).
 
 
 ### <a name="task-sequence-domain-join-account"></a>Account di aggiunta dominio della sequenza di attività 

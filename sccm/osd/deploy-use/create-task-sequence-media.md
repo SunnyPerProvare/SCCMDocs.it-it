@@ -1,8 +1,8 @@
 ---
 title: Crea supporto per sequenza di attività
 titleSuffix: Configuration Manager
-description: È possibile creare supporti per sequenza di attività, ad esempio un CD, per distribuire un sistema operativo in un computer di destinazione nell'ambiente di Configuration Manager.
-ms.date: 10/06/2016
+description: È possibile creare supporti per sequenza di attività per distribuire un sistema operativo in un computer di destinazione nell'ambiente di Configuration Manager.
+ms.date: 05/02/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,57 +11,75 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3aa7a1acdd6378e41afe24c869a8ffa898a916b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 101cee8ed63cacfc41481b2df69b42e1760d8837
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122613"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65082807"
 ---
-# <a name="create-task-sequence-media-with-system-center-configuration-manager"></a>Creare supporti per sequenza di attività con System Center Configuration Manager
+# <a name="create-task-sequence-media"></a>Crea supporto per sequenza di attività
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile usare dei supporti per acquisire un'immagine del sistema operativo da un computer di riferimento o per distribuire un sistema operativo in un computer di destinazione presente nell'ambiente di System Center Configuration Manager. Il supporto creato può essere un set di CD/DVD o un'unità flash USB.  
+Si possono usare supporti per acquisire un'immagine del sistema operativo da un computer di riferimento o per distribuire un sistema operativo in un computer di destinazione nell'ambiente di Configuration Manager. Il supporto creato può essere un set di CD/DVD o un'unità flash USB.  
 
- In genere, il supporto viene usato per distribuire sistemi operativi nei computer di destinazione che non hanno una connessione di rete o la cui connessione di rete al sito di Configuration Manager ha una larghezza di banda bassa. Tuttavia, il supporto di distribuzione viene usati anche per avviare la distribuzione del sistema operativo al di fuori di un sistema operativo Windows esistente. Questo secondo utilizzo del supporto di distribuzione risulta importante quando nel computer di destinazione non è presente alcun sistema operativo, quando il sistema operativo si trova in uno stato non eseguibile o quando l'utente amministratore desidera ripartire il disco rigido nel computer di destinazione.  
+In genere, il supporto viene usato per distribuire sistemi operativi nei computer di destinazione che non hanno una connessione di rete o la cui connessione di rete al sito di Configuration Manager ha una larghezza di banda bassa. Tuttavia, è possibile usare i supporti per avviare una distribuzione del sistema operativo all'esterno di un sistema operativo Windows esistente. Questo metodo è utile quando non esiste un sistema operativo, il sistema operativo non funziona o si vuole ripartire il disco rigido.  
 
- I supporti di distribuzione includono supporti di avvio, supporti autonomi e supporti pre-installati. Il contenuto dei supporti di distribuzione varia a seconda del tipo di supporto usato. Ad esempio, i supporti autonomi includono la sequenza di attività che distribuisce il sistema operativo mentre altri tipi di supporti recuperano le sequenza di attività dal punto di gestione.  
-
-> [!IMPORTANT]  
->  Per creare un supporto per sequenza di attività è necessario essere un amministratore del computer da cui si esegue la console di Configuration Manager. Se non si è un amministratore, verranno richieste le credenziali di amministratore quando si avvia la Creazione guidata del supporto per la sequenza di attività.  
-
-##  <a name="BKMK_PlanCaptureMedia"></a> Supporto di acquisizione per immagini del sistema operativo  
- Il supporto di acquisizione consente di acquisire un'immagine del sistema operativo da un computer di riferimento. Il supporto di acquisizione contiene l'immagine di avvio che avvia il computer di riferimento e la sequenza di attività che acquisisce l'immagine del sistema operativo. Per altre informazioni sulla creazione di supporti di acquisizione, vedere [Creare supporti di acquisizione con System Center Configuration Manager](create-capture-media.md).  
-
-##  <a name="BKMK_PlanBootableMedia"></a> Distribuzioni del sistema operativo con supporti di avvio  
- Il supporto di avvio contiene solo l'immagine di avvio, i [comandi di preavvio opzionali](../understand/prestart-commands-for-task-sequence-media.md) con i relativi file obbligatori e i file binari di Configuration Manager. All'avvio del computer di destinazione, si connette alla rete e recupera la sequenza di attività, l'immagine del sistema operativo e tutti gli altri contenuti richiesti dalla rete. Poiché la sequenza di attività non è presente sul supporto, è possibile modificare la sequenza di attività o il contenuto senza dover ricreare il supporto.  
+I supporti di distribuzione includono supporti di avvio, supporti autonomi e supporti pre-installati. Il contenuto dei supporti varia a seconda del tipo di supporto usato. Ad esempio, un supporto autonomo contiene la sequenza di attività che distribuisce il sistema operativo. Altri tipi di supporto recuperano le sequenze di attività dal punto di gestione.  
 
 > [!IMPORTANT]  
->  I pacchetti nei supporti di avvio non sono crittografati. L'utente amministratore deve adottare misure di protezione appropriate, ad esempio l'aggiunta di una password al supporto, per garantire che il contenuto del pacchetto sia protetto da utenti non autorizzati.  
+> Per creare un supporto per una sequenza di attività è necessario essere un amministratore del computer in cui si esegue la console di Configuration Manager. Se non si è un amministratore, verranno richieste le credenziali di amministratore quando si avvia la Creazione guidata del supporto per la sequenza di attività.  
 
- Per informazioni su come creare il supporto di avvio, vedere [Creare supporti di avvio](create-bootable-media.md).  
 
-##  <a name="BKMK_PlanPrestagedMedia"></a> Distribuzioni del sistema operativo con supporti pre-installati  
- Il supporto pre-installato consente di pre-installare un supporto di avvio e un'immagine del sistema operativo in un disco rigido prima del processo di provisioning. Il supporto preinstallato è un file WIM (Windows Imaging Format) che può essere installato in un computer bare metal dal produttore o in un centro di gestione temporanea aziendale non connesso all'ambiente di Configuration Manager.  
+## <a name="BKMK_PlanCaptureMedia"></a> Supporto di acquisizione
 
- Il supporto pre-installato contiene l'immagine di avvio usata per avviare il computer di destinazione e l'immagine del sistema operativo applicata al computer di destinazione. È anche possibile specificare applicazioni, pacchetti e pacchetti driver da includere come parte del supporto pre-installato. La sequenza di attività che distribuisce il sistema operativo non è inclusa nel supporto. Quando si distribuisce una sequenza di attività che usa un supporto pre-installato, il client verifica prima di tutto la presenza di contenuto valido nella cache della sequenza di attività locale. Se non è possibile trovare il contenuto o se il contenuto è stato modificato, il client scarica il contenuto dal punto di distribuzione.  
+Il supporto di acquisizione consente di acquisire un'immagine del sistema operativo da un computer di riferimento. Contiene l'immagine d'avvio che avvia il computer di riferimento e la sequenza di attività che acquisisce l'immagine del sistema operativo.
 
- Il supporto pre-installato viene applicato al disco rigido di un nuovo computer prima che il computer venga inviato all'utente finale. Quando viene avviato per la prima volta dopo l'applicazione del supporto pre-installato, il computer avvia Windows PE e si connette a un punto di gestione per individuare la sequenza di attività che completa il processo di distribuzione del sistema operativo.  
+Per altre informazioni sulla creazione dei supporti di acquisizione, vedere [Creare supporti di acquisizione](/sccm/osd/deploy-use/create-capture-media).  
+
+
+## <a name="BKMK_PlanBootableMedia"></a> Supporto di avvio
+
+Un supporto di avvio contiene i componenti seguenti:
+
+- L'immagine d'avvio
+- [Comandi di preavvio](/sccm/osd/understand/prestart-commands-for-task-sequence-media) facoltativi e i relativi file obbligatori
+- File binari di Configuration Manager
+
+All'avvio il computer di destinazione si connette alla rete e recupera la sequenza di attività, l'immagine del sistema operativo e tutti gli altri contenuti richiesti dalla rete. Poiché la sequenza di attività non è presente nel supporto, è possibile modificare la sequenza di attività o il contenuto senza dover ricreare il supporto.  
 
 > [!IMPORTANT]  
->  I pacchetti nei supporti pre-installati non sono crittografati. L'utente amministratore deve adottare misure di protezione appropriate, ad esempio l'aggiunta di una password al supporto, per garantire che il contenuto del pacchetto sia protetto da utenti non autorizzati.  
+> I pacchetti nei supporti di avvio non sono crittografati. Adottare le misure di sicurezza appropriate, ad esempio l'aggiunta di una password al supporto, per garantire che il contenuto del pacchetto sia protetto da utenti non autorizzati.  
 
- Per informazioni su come creare i supporti pre-installati, vedere [Creare supporti pre-installati](create-prestaged-media.md).  
+Per altre informazioni su come creare il supporto di avvio, vedere [Creare supporti di avvio](/sccm/osd/deploy-use/create-bootable-media).  
 
-##  <a name="BKMK_PlanStandaloneMedia"></a> Distribuzioni del sistema operativo con supporti autonomi  
- Il supporto autonomo contiene tutti gli elementi necessari per distribuire il sistema operativo. Tra questi anche la sequenza di attività e gli altri contenuti necessari. Poiché tutti gli elementi necessari per distribuire il sistema operativo si trovano nel supporto autonomo, lo spazio sul disco richiesto per il supporto autonomo è notevolmente superiore allo spazio su disco richiesto per altri tipi di supporti.  
 
- Per informazioni sulla creazione dei supporti autonomi, vedere [Creare supporti autonomi](create-stand-alone-media.md).  
+## <a name="BKMK_PlanPrestagedMedia"></a> Supporto pre-installato
 
-## <a name="media-considerations-when-using-site-systems-configured-for-https"></a>Considerazioni sui supporti quando si usano sistemi del sito configurati per HTTPS  
- Quando il punto il gestione e il punto di distribuzione sono configurati per usare la comunicazione HTTPS, è necessario creare un supporto di avvio e un supporto pre-installato in un sito primario e non nel sito di amministrazione centrale. Inoltre, tenere presente quanto segue per stabilire se sia necessario configurare il supporto come dinamico o basato su sito:  
+Il supporto pre-installato consente di applicare i supporti di avvio e un'immagine del sistema operativo in un disco rigido prima del processo di provisioning. È un file di immagine (WIM) di Windows, che può essere installato in un computer bare metal dal produttore o nel centro di gestione temporanea non connesso all'ambiente di produzione di Configuration Manager.  
 
--   Per configurare il supporto come dinamico, tutti i siti primari devono disporre dell'autorità di certificazione radice del sito da cui è stato creato il supporto. È possibile importare la CA radice in tutti i siti primari della gerarchia.  
+I supporti pre-installati contengono l'immagine d'avvio usata per avviare il computer di destinazione e l'immagine del sistema operativo applicata al computer di destinazione. È anche possibile specificare applicazioni, pacchetti e pacchetti driver da includere come parte del supporto pre-installato. La sequenza di attività che distribuisce il sistema operativo non è inclusa nel supporto. Quando si distribuisce una sequenza di attività che usa supporti pre-installati, il client cerca prima di tutto contenuto valido nella cache della sequenza di attività locale. Se il contenuto non viene trovato o è stato rivisto, il client scarica il contenuto da un punto di distribuzione o da un peer.  
 
--   Quando i siti primari presenti nella gerarchia di Configuration Manager usano CA radice diverse è necessario usare un supporto basato su sito in ognuno di essi.  
+Il supporto pre-installato viene applicato al disco rigido di un nuovo computer prima che il computer venga inviato all'utente finale. Quando il computer viene avviato per la prima volta dopo aver applicato i supporti pre-installati, il computer viene avviato in Windows PE. Si connette a un punto di gestione per individuare la sequenza di attività che completa il processo di distribuzione del sistema operativo.  
+
+> [!IMPORTANT]  
+> I pacchetti nei supporti pre-installati non sono crittografati. Adottare le misure di sicurezza appropriate, ad esempio l'aggiunta di una password al supporto, per garantire che il contenuto del pacchetto sia protetto da utenti non autorizzati.  
+
+Per altre informazioni su come creare i supporti pre-installati, vedere [Creare supporti pre-installati](/sccm/osd/deploy-use/create-prestaged-media).  
+
+
+## <a name="BKMK_PlanStandaloneMedia"></a> Supporto autonomo
+
+Il supporto autonomo contiene tutti gli elementi necessari per distribuire il sistema operativo. Il contenuto include anche la sequenza di attività e altri elementi necessari. Poiché tutto il necessario per la distribuzione del sistema operativo è archiviato nel supporto autonomo, lo spazio su disco richiesto per il supporto autonomo è superiore a quello richiesto per altri tipi di supporto.  
+
+Per altre informazioni sulla creazione dei supporti autonomi, vedere [Creare supporti autonomi](/sccm/osd/deploy-use/create-stand-alone-media).  
+
+
+## <a name="considerations-when-using-https"></a>Considerazioni sull'uso di HTTPS
+
+Quando si configurano i punti di gestione e i punti di distribuzione per l'uso di HTTPS, creare un supporto di avvio e un supporto pre-installato in un sito primario e non nel sito di amministrazione centrale. Inoltre, tenere presente quanto segue per stabilire se sia necessario configurare il supporto come dinamico o basato su sito:  
+
+- Per configurare il supporto come dinamico, per tutti i siti primari deve essere disponibile un'autorità di certificazione principale (CA) del sito da cui è stato creato il supporto. È possibile importare la CA radice in tutti i siti primari della gerarchia.  
+
+- Quando i siti primari presenti nella gerarchia di Configuration Manager usano CA radice diverse è necessario usare un supporto basato su sito in ognuno di essi.  

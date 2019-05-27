@@ -2,7 +2,7 @@
 title: 'Creare elementi di configurazione per i computer Windows 10 gestiti tramite client '
 titleSuffix: Configuration Manager
 description: Usare l'elemento di configurazione Windows 10 in System Center Configuration Manager per gestire le impostazioni dei computer Windows 10 gestiti dal client di Configuration Manager.
-ms.date: 03/28/2017
+ms.date: 05/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7215214c315af5965344c2b3c8ffbd29d522012
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 6a26ffcb0d88f50902e82049102825af956a4027
+ms.sourcegitcommit: 99dfe4fb9e9cfd20c44380ae442b3a5b895a0d9b
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56121023"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65214929"
 ---
 # <a name="how-to-create-configuration-items-for-windows-10-devices-managed-with-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows 10 gestiti con il client di System Center Configuration Manager
 Usare l'elemento di configurazione **Windows 10** in System Center Configuration Manager per gestire le impostazioni dei computer che eseguono Windows 10 gestiti dal client di Configuration Manager.  
@@ -42,7 +42,7 @@ Usare l'elemento di configurazione **Windows 10** in System Center Configuration
   
 7. Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme Windows 10 specifiche che valuteranno l'elemento di configurazione.  
   
-8. Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Windows 10 configuration item settings reference](#BKMK_Ref) in questo argomento e quindi fare clic su **Avanti**.  
+8. Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione di Windows 10](#BKMK_Ref) in questo articolo, quindi fare clic su **Avanti**.  
   
    > [!TIP]  
    >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
@@ -70,9 +70,9 @@ Usare l'elemento di configurazione **Windows 10** in System Center Configuration
   
     È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
   
-##  <a name="windows-10-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione di Windows 10  
+## <a name="BKMK_Ref"></a> Windows 10 configuration item settings reference  
   
-### <a name="password"></a>Windows 10  
+### <a name="password"></a>Password  
   
 |Impostazione|Dettagli|  
 |-------------|-------------|  
@@ -83,7 +83,7 @@ Usare l'elemento di configurazione **Windows 10** in System Center Configuration
 |**Numero di tentativi di accesso non riusciti prima della cancellazione dei dati da un dispositivo**|Cancella il dispositivo se l'accesso non riesce per il numero di volte indicato.|  
 |**Tempo di inattività prima del blocco del dispositivo**|Specifica quanti minuti il dispositivo deve restare inattivo prima che venga bloccato automaticamente.|  
 |**Complessità password**|Scegliere se è possibile specificare un PIN, ad esempio "1234", o se è necessario fornire una password complessa.|
-|**Numero di set di caratteri complessi richiesti nella password**|Se è stata scelta una password **complessa**, usare questa impostazione per configurare il numero di set di caratteri complessi necessari. Per ottenere una password complessa, il valore deve essere impostato almeno su **3**, ovvero sono necessari lettere e numeri. Selezionare **4** per imporre una password che richiede anche caratteri speciali, ad esempio **(% $**.<br>(solo Windows 10)  |
+|**Numero di set di caratteri complessi richiesti nella password**|Se è stata scelta una password **complessa**, usare questa impostazione per configurare il numero di set di caratteri complessi necessari. Per ottenere una password complessa, l'impostazione deve essere impostata almeno su **3, ovvero sono necessari lettere e numeri. Selezionare **4** per imporre una password che richiede anche caratteri speciali, ad esempio **(% $**.<br>(solo Windows 10)  |
   
 ###  <a name="device"></a>Dispositivo  
   
@@ -133,4 +133,4 @@ Windows Information Protection, in precedenza denominato Protezione dei dati azi
 Per informazioni su come configurare Windows Information Protection con Configuration Manager, vedere [Proteggere i dati aziendali con Windows Information Protection (WIP)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip).
   
 ## <a name="see-also"></a>Vedere anche  
- [Elementi di configurazione per dispositivi gestiti con il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md)
+ [Elementi di configurazione per dispositivi gestiti con il client di System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items.md)

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 690aefeac875e3c3f39d5801bdb33d69ccecb45e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 1d511df5dc4b6e29a86d4eabacec9037ee204ecc
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135821"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176724"
 ---
 # <a name="how-to-create-configuration-items-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Come creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti con Intune
 Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configuration Manager per gestire le impostazioni per i dispositivi iOS e Mac OS X registrati in Microsoft Intune o gestiti localmente da Configuration Manager.  
@@ -92,7 +92,7 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
 |**Assistente vocale durante il blocco**|Consente l'utilizzo di un'applicazione di assistenza vocale come Siri quando il dispositivo è bloccato.|  
 |**Acquisizione schermo**|Consente di acquisire uno screenshot del display del dispositivo.|  
 |**Client chat video**|Consente l'uso di applicazioni chat video, ad esempio Facetime.|  
-|**Gioco multiplayer**|Consente di giocare con gli altri giocatori su Internet.|  
+|**Gioco multiplayer**|Consente di giocare con gli altri giocatori su internet.|  
 |**Software portafoglio personale durante il blocco**|Consente l'utilizzo di un software di portafoglio personale come Passbook.|  
 |**Invio dati diagnostici**|Consente l’invio dei file di log dell'app.|  
 |**Notifiche del centro notifiche**|Consente di accedere alla visualizzazione delle notifiche senza sbloccare il dispositivo.|
@@ -116,8 +116,8 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
 |**Tastiere predittive** (solo supervisione)|Consente l'uso di tastiere predittive che suggeriscono all'utente le parole che potrebbero essergli utili.|
 |**Controllo ortografico tastiera** (solo supervisione)|Abilita il controllo ortografico nel dispositivo.|
 |**Modifica delle impostazioni di notifica** (solo supervisione)|Consente all'utente di modificare le impostazioni di notifica del dispositivo.|
-|**Restituisci risultati da Internet nella ricerca Spotlight** (solo supervisione)|Consente alla ricerca Spotlight di connettersi a Internet per fornire altri risultati.|
-|**Usa Siri per eseguire query nel contenuto generato dall'utente da Internet** (solo supervisione)|Consente a Siri di accedere ai siti Web per rispondere alle domande.|
+|**Restituisci risultati da internet nella ricerca Spotlight** (solo con supervisione)|Consente alla ricerca Spotlight di connettersi a internet per visualizzare altri risultati.|
+|**Usa Siri per eseguire query nel contenuto generato dall'utente da internet** (solo con supervisione)|Consente a Siri di accedere ai siti Web per rispondere alle domande.|
 
   
 ###  <a name="store"></a>Archivio  
@@ -138,7 +138,7 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
   
 |Nome impostazione|Dettagli|  
 |------------------|-------------|  
-|**Browser predefinito**|È possibile modificare il browser Internet predefinito.|  
+|**Browser predefinito**|Utente può modificare il browser internet predefinito.|  
 |**Riempimento automatico**|L’utente può modificare le impostazioni di completamento automatico nel browser.|  
 |**Esecuzione script attivo**|Il browser può eseguire script, ad esempio gli script ActiveX.|  
 |**Blocco popup**|Attiva o disattiva il blocco popup del browser.|  

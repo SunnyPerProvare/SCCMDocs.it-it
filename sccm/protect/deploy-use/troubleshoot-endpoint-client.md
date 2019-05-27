@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
 ms.assetid: d837253e-fcc2-422a-9e2c-c78b938dfd8c
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f7528f15c67e8ce339013db583d545cb252712d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: MTE75
+ms.openlocfilehash: 1b8bda1fd21ed3281142a717b768ff7d8c6ac3c3
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125664"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500419"
 ---
 # <a name="troubleshooting-windows-defender-or-endpoint-protection-client"></a>Risoluzione dei problemi di Windows Defender o del client Endpoint Protection
 
@@ -234,7 +234,7 @@ Se si verificano problemi con Windows Defender o Endpoint Protection, chiedere a
 3.  Se si usa un modem via cavo o un router DSL, assicurarsi che le connessioni al router e al computer siano corrette. Provare a scollegare e spegnere il router e il modem. Attendere qualche minuto, quindi collegare prima il modem, attendere un minuto, collegare il router e infine riavviare il computer.  
 
 ##  <a name="detected-threat-cant-be-remediated"></a>Minaccia rilevata che non è possibile correggere  
- Non appena viene rilevata una minaccia potenziale all'interno di un file compresso con estensione zip o all'interno di una condivisione di rete, Windows Defender o Endpoint Protection tenta di metterla in quarantena o di rimuoverla.  
+ Non appena viene rilevata una potenziale minaccia all'interno di un file compresso con estensione zip o all'interno di una condivisione di rete, Windows Defender o Endpoint Protection prova a gestirla mettendola in quarantena o rimuovendola.  
 
 ### <a name="remove-or-scan-the-file"></a>Rimuovere o analizzare il file  
 

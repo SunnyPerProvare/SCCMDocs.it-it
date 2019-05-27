@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 160425f461e0191a792185d1eb8ef9bfdec08b1c
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 01253487d7fb90aaa24dae6a55b9110e516ab4ad
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130157"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176003"
 ---
 # <a name="capabilities-in-technical-preview-1708-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1708 per System Center Configuration Manager
 
@@ -74,14 +74,16 @@ La procedura guidata mostra quali parametri sono obbligatori e quali sono facolt
 Quando viene eseguito lo script, verranno usati i valori dei parametri configurati. Se non è stato configurato un parametro obbligatorio, all'utente finale viene chiesto di fornire il parametro quando viene eseguito lo script.
 
 ## <a name="management-insights"></a>Informazioni dettagliate sulla gestione
-<!-- 1353967 --> Ora è possibile ottenere informazioni dettagliate sullo stato corrente dell'ambiente in base all'analisi dei dati nel database del sito. Le informazioni dettagliate aiutano a capire meglio l'ambiente e a intervenire di conseguenza. Rivedere le informazioni dettagliate sulla gestione nella console di Configuration Manager in **Amministrazione**  > **Management Insights** (Informazioni dettagliate gestione) > **All Insights** (Tutte le informazioni dettagliate). In questa versione sono disponibili le informazioni dettagliate seguenti:
+<!-- 1353967 -->
+Ora è possibile ottenere informazioni dettagliate sullo stato corrente dell'ambiente in base all'analisi dei dati nel database del sito. Le informazioni dettagliate aiutano a capire meglio l'ambiente e a intervenire di conseguenza. Rivedere le informazioni dettagliate sulla gestione nella console di Configuration Manager in **Amministrazione**  > **Management Insights** (Informazioni dettagliate gestione) > **All Insights** (Tutte le informazioni dettagliate). In questa versione sono disponibili le informazioni dettagliate seguenti:
 
 - **Applicazioni senza distribuzioni**: elenca le applicazioni dell'ambiente senza distribuzioni attive. Aiuta a individuare ed eliminare le applicazioni non usate per semplificare l'elenco di applicazioni visualizzato nella console.
 - **Raccolte vuote**: un elenco delle raccolte dell'ambiente che non hanno membri. È possibile eliminare queste raccolte ad esempio per semplificare l'elenco delle raccolte visualizzate durante la distribuzione di oggetti.
 
 
 ## <a name="restart-computers-from-the-configuration-manager-console"></a>Riavviare i computer dalla console di Configuration Manager   
-<!-- 1356283 --> A partire da questa versione, è possibile usare la console di Configuration Manager per identificare i dispositivi client che richiedono il riavvio e quindi usare un'azione di notifica client per riavviarli.
+<!-- 1356283 -->
+A partire da questa versione, è possibile usare la console di Configuration Manager per identificare i dispositivi client che richiedono il riavvio e quindi usare un'azione di notifica client per riavviarli.
 
 Per identificare i dispositivi in attesa di riavvio, passare ad **Asset e conformità** > **Dispositivi** e selezionare una raccolta con i dispositivi che potrebbero richiedere un riavvio. Dopo aver selezionato una raccolta, è possibile visualizzare lo stato per ogni dispositivo nel riquadro dei dettagli, in una nuova colonna denominata **Riavvio in sospeso**. Ogni dispositivo ha un valore **Sì** o **No**.
 
@@ -100,15 +102,16 @@ Provare a completare le attività seguenti e quindi inviare **Feedback** dalla s
 
 
 ## <a name="software-center-customization"></a>Personalizzazione di Software Center
-<!-- 1351224 --> È possibile aggiungere elementi di branding aziendale e specificare la visibilità delle schede in Software Center. È possibile aggiungere il nome specifico della società per Software Center, impostare un tema di colori per la configurazione di Software Center, impostare il logo della società e impostare le schede visibili per i dispositivi client.
+<!-- 1351224 -->
+È possibile aggiungere elementi di branding aziendale e specificare la visibilità delle schede in Software Center. È possibile aggiungere il nome specifico della società per Software Center, impostare un tema di colori per la configurazione di Software Center, impostare il logo della società e impostare le schede visibili per i dispositivi client.
 
 ### <a name="customize-software-center"></a>Personalizzare Software Center
 
 Per modificare Software Center:
 
-1. Nella console di **Configuration Manager** scegliere  **Amministrazione** > **Impostazioni client**. Fare clic sull'istanza di impostazione client desiderata.
-2. Nella scheda  **Home** , nel gruppo  **Proprietà** scegliere  **Proprietà**.
-3. Nella finestra di dialogo  **Impostazioni predefinite** scegliere  **Software Center**.
+1. Nella console di **Configuration Manager** scegliere **Amministrazione** > **Impostazioni client**. Fare clic sull'istanza di impostazione client desiderata.
+2. Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.
+3. Nella finestra di dialogo **Impostazioni predefinite** scegliere **Software Center**.
 4. Selezionare **Sì** per **scegliere le nuove impostazioni per specificare informazioni sulla società**, in modo da abilitare le impostazioni di personalizzazione di Software Center.
 5. Digitare il **nome della società**.
 6. Selezionare la **combinazione colori per Software Center**.

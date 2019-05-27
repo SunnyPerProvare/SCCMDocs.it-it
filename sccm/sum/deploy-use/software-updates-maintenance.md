@@ -11,12 +11,12 @@ ms.assetid: 4b0e2e90-aac7-4d06-a707-512eee6e576c
 manager: dougeby
 ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5146ba92da82aad6c8dfbf4d961a52e197d0a9b2
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.openlocfilehash: 1f8624e898e22ebb2eef66d72a242d02b36d342d
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58523827"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083349"
 ---
 # <a name="software-updates-maintenance"></a>Manutenzione degli aggiornamenti software
 
@@ -80,7 +80,7 @@ Nei database WSUS dei siti secondari, tutte le operazioni di manutenzione di WSU
 
 ## <a name="wsus-cleanup-behavior-starting-in-version-1810"></a>Comportamento del processo di pulizia WSUS a partire dalla versione 1810
 
-Avvio della versione 1810, è possibile specificare regole di sostituzione per gli aggiornamenti delle funzionalità separatamente dagli aggiornamenti delle funzionalità non nelle proprietà del componente punto di aggiornamento Software. L'opzione di pulizia WSUS viene eseguita dopo ogni sincronizzazione per questi elementi:
+A partire dalla versione 1810, è possibile specificare regole di sostituzione per gli aggiornamenti delle funzionalità separatamente dagli aggiornamenti diversi dalle funzionalità nelle proprietà del componente del punto di aggiornamento software. L'opzione di pulizia WSUS viene eseguita dopo ogni sincronizzazione per questi elementi:
 <!--2839349,3098809, 2977644-->
 
 - Opzione **Aggiornamenti scaduti** per i server WSUS nei siti CAS, primari e secondari.

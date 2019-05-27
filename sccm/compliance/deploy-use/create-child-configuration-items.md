@@ -2,7 +2,7 @@
 title: Creare elementi di configurazione figlio
 titleSuffix: Configuration Manager
 description: Creare elementi di configurazione figlio in System Center Configuration Manager.Come creare elementi di configurazione figlio in System Center Configuration Manager.
-ms.date: 10/06/2016
+ms.date: 05/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42b6bceacf8d8ecd733e4d13b882fe3b5c0500e7
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 0b88ee7eaac8df8ffce93937f3a3f2616b9e085b
+ms.sourcegitcommit: 417e3834a42b415a8e129327dd3c15cc0c7ec5a2
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135746"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65443167"
 ---
 # <a name="how-to-create-child-configuration-items-in-system-center-configuration-manager"></a>Come creare elementi di configurazione figlio in System Center Configuration Manager
 
@@ -25,10 +25,10 @@ ms.locfileid: "56135746"
 Gli elementi di configurazione figlio in System Center Configuration Manager sono copie di elementi di configurazione che mantengono una relazione con l'elemento di configurazione originale e che quindi ereditano la configurazione originale dall'elemento di configurazione padre.  
 
 Quando si visualizzano le proprietà di un elemento di configurazione figlio nella console di Configuration Manager, non è possibile modificare le impostazioni e gli oggetti ereditati con i relativi criteri di convalida. Tuttavia, è possibile aggiungere e quindi modificare criteri di convalida aggiuntivi per l'elemento di configurazione figlio, al quale è anche possibile aggiungere nuovi oggetti e impostazioni.
-Lo scopo della creazione e della modifica di un elemento di configurazione figlio è di solito quello di ottimizzare l'elemento di configurazione originale per soddisfare i requisiti aziendali.  
+Un esempio della creazione e della modifica di un elemento di configurazione figlio è di solito quello di ottimizzare l'elemento di configurazione originale per soddisfare i requisiti aziendali.  
 
 > [!NOTE]  
->  È possibile creare elementi di configurazione figlio solo da elementi di configurazione del tipo **Windows desktop o server (personalizzato)**.  
+>  È possibile creare elementi di configurazione figlio solo da elementi di configurazione del tipo **Windows desktop o server (personalizzato)** .  
 
 ## <a name="to-create-a-child-configuration-item"></a>Per creare un elemento di configurazione figlio  
 

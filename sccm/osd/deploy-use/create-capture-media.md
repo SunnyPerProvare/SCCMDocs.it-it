@@ -1,8 +1,8 @@
 ---
 title: Creare supporti di acquisizione
 titleSuffix: Configuration Manager
-description: Usare la Creazione guidata del supporto per la sequenza di attività per creare supporti di acquisizione in Configuration Manager per acquisire un'immagine del sistema operativo da un computer di riferimento.
-ms.date: 01/23/2017
+description: Usare supporto di acquisizione in Configuration Manager per acquisire un'immagine del sistema operativo da un computer di riferimento.
+ms.date: 05/02/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: article
@@ -11,68 +11,97 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: edf7d7d40e42535a600d127dc0692aee3d7dd857
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: d6e1e007387a50146a899bca767aa5d1f2d85a3a
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56142426"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65082754"
 ---
-# <a name="create-capture-media-with-system-center-configuration-manager"></a>Creare supporti di acquisizione con System Center Configuration Manager
+# <a name="create-capture-media"></a>Creare supporti di acquisizione
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Il supporto di acquisizione in Configuration Manager consente di acquisire un'immagine del sistema operativo da un computer di riferimento. Usare i supporti di acquisizione per lo scenario seguente:  
+Il supporto di acquisizione in Configuration Manager consente di acquisire un'immagine del sistema operativo da un computer di riferimento. Contiene l'immagine d'avvio che avvia il computer di riferimento e la sequenza di attività che acquisisce l'immagine del sistema operativo. Usare i supporti di acquisizione per lo scenario per [Creare una sequenza di attività per acquisire un sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-capture-an-operating-system).  
 
--   [Creare una sequenza di attività per acquisire un sistema operativo](create-a-task-sequence-to-capture-an-operating-system.md)  
 
-##  <a name="BKMK_CreateCaptureMedia"></a> Come creare supporti di acquisizione  
- Usare il supporto di acquisizione per acquisire un'immagine del sistema operativo da un computer di riferimento. Il supporto di acquisizione contiene l'immagine di avvio che avvia il computer di riferimento e la sequenza di attività che acquisisce l'immagine del sistema operativo.
+## <a name="prerequisites"></a>Prerequisiti
 
-Per creare i supporti di acquisizione, usare la Creazione guidata del supporto per la sequenza di attività. Prima di eseguire la procedura guidata, verificare che siano soddisfatte tutte le condizioni seguenti:  
+Prima di creare supporti di acquisizione usando la Creazione guidata del supporto per la sequenza di attività, assicurarsi che tutte queste condizioni siano soddisfatte.
 
-|Attività|Descrizione|  
-|----------|-----------------|  
-|Immagine d'avvio|Tenere presente quanto segue per l'immagine d'avvio da usare nella sequenza di attività per acquisire il sistema operativo:<br /><br /> - L'architettura dell'immagine di avvio deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine d'avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.<br />- Verificare che l'immagine di avvio contenga i driver di archiviazione di rete e di massa necessari per eseguire il provisioning del computer di destinazione.|  
-|Distribuire tutto il contenuto associato alla sequenza di attività|È necessario distribuire in almeno un punto di distribuzione tutto il contenuto richiesto dalla sequenza di attività. Ciò include l'immagine d'avvio, l'immagine del sistema operativo e altri file associati. La procedura guidata raccoglie le informazioni dal punto di distribuzione quando viene creato il supporto autonomo. È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto nel punto di distribuzione.  Per altre informazioni, vedere [Distribuire il contenuto](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).|  
-|Preparare l'unità USB rimovibile|Per un'unità USB rimovibile:<br /><br /> Se si usa un'unità USB rimovibile, l'unità deve essere collegata al computer in cui viene eseguita la procedura guidata e rilevabile da Windows come dispositivo rimovibile. La procedura guidata scrive direttamente nell'unità USB durante la creazione del supporto.|  
-|Creare una cartella di output|Per un set di CD/DVD:<br /><br /> Prima di eseguire la Creazione guidata del supporto per la sequenza di attività per creare il supporto per un set di CD o DVD, è necessario creare una cartella per i file di output creati dalla procedura guidata. Il supporto creato per un set di CD o DVD viene scritto come file con estensione iso direttamente nella cartella.|  
+### <a name="boot-image"></a>Immagine d'avvio
 
- Usare la procedura seguente per creare supporti di acquisizione.  
+Tenere in considerazione i punti seguenti per l'immagine d'avvio da usare nella sequenza di attività per distribuire il sistema operativo:
 
-#### <a name="to-create-capture-media"></a>Per creare supporti di acquisizione  
+- L'architettura dell'immagine d'avvio deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.
+- Assicurarsi che l'immagine d'avvio contenga i driver di archiviazione e di rete necessari per eseguire il provisioning del computer di destinazione.
 
-1. Nella console di Configuration Manager fare clic su **Raccolta software**.  
+### <a name="distribute-all-content-associated-with-the-task-sequence"></a>Distribuire tutto il contenuto associato alla sequenza di attività
 
-2. Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+Distribuire tutto il contenuto richiesto dalla sequenza di attività in almeno un punto di distribuzione. Tale contenuto include l'immagine d'avvio, l'immagine del sistema operativo e altri file associati. La procedura guidata raccoglie il contenuto dal punto di distribuzione quando crea il supporto di acquisizione.
 
-3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea supporto per sequenza di attività** per avviare la Creazione guidata del supporto per la sequenza di attività.  
+L'account utente usato deve avere almeno diritti di accesso in **lettura** per la raccolta contenuto nel punto di distribuzione. Per altre informazioni, vedere [Distribuire il contenuto](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_distribute).
 
-4. Nella pagina **Seleziona tipo di supporto** selezionare **Acquisisci supporto**, quindi fare clic su **Avanti**.  
+### <a name="prepare-the-removable-usb-drive"></a>Preparare l'unità USB rimovibile
 
-5. Nella pagina **Tipo di supporto** specificare se il supporto è un'unità flash o un set di CD/DVD, quindi configurare quanto segue:  
+Se si usa un'unità USB rimovibile, connetterla al computer in cui si esegue la Creazione guidata del supporto per la sequenza di attività. L'unità USB deve essere rilevabile da Windows come dispositivo rimovibile. La procedura guidata scrive direttamente nell'unità USB durante la creazione del supporto.
 
-   - Se si seleziona **Unità memoria flash USB**, è necessario specificare l'unità in cui archiviare il contenuto.  
+### <a name="create-an-output-folder"></a>Creare una cartella di output
 
-   - Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto e il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\filedioutput.iso**  
+Prima di eseguire la Creazione guidata del supporto per la sequenza di attività per creare il supporto per un set di CD o DVD, creare una cartella per i file di output creati dalla procedura guidata. Il supporto creato per un set di CD o DVD viene scritto come file con estensione iso direttamente nella cartella.
 
-      Se la capacità del supporto non è sufficiente per archiviare l'intero contenuto, vengono creati più file ed è necessario archiviare il contenuto in più CD o DVD. Quando sono necessari più supporti, Configuration Manager aggiunge un numero di sequenza al nome di ogni file di output creato. Se insieme al sistema operativo si distribuisce un'applicazione e questa non può essere contenuta in un unico supporto, Configuration Manager archivia l'applicazione in più supporti. Quando il supporto autonomo viene eseguito Configuration Manager chiede all'utente il supporto successivo contenente l'applicazione.  
 
-     > [!IMPORTANT]  
-     >  Se si seleziona un'immagine iso esistente, la Creazione guidata del supporto per la sequenza di attività elimina l'immagine dall'unità o dalla condivisione non appena si passa alla pagina successiva della procedura guidata. L'immagine esistente viene eliminata, anche se si annulla la procedura guidata.  
+## <a name="process"></a>Processo
 
-     Fare clic su **Avanti**.  
+1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Sistemi operativi** e selezionare il nodo **Sequenze di attività**.  
 
-6. Nella pagina **Immagine di avvio** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
+2. Nella scheda **Home** della barra multifunzione nel gruppo **Crea** selezionare **Crea supporto per sequenza attività**. Questa azione avvia la Creazione guidata del supporto per la sequenza di attività.  
 
-   > [!IMPORTANT]  
-   >  L'architettura dell'immagine di avvio specificata deve essere appropriata per l'architettura del computer di riferimento. Ad esempio, un computer di riferimento x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di riferimento x86 può avviare ed eseguire solo un'immagine di avvio x86.  
+3. Nella pagina **Seleziona tipo di supporto** selezionare **Acquisisci supporto**.  
 
-   -   Nella casella **Immagine di avvio** specificare l'immagine di avvio per avviare il computer di riferimento.  
+4. Nella pagina **Tipo di supporto** specificare se il supporto è **un'unità USB rimovibile** o un **set di CD/DVD**. Configurare quindi le opzioni seguenti:  
 
-   -   Nella casella **Punto di distribuzione** specificare il punto di distribuzione in cui si trova l'immagine di avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
+    > [!IMPORTANT]  
+    > Il supporto usa il file system FAT32. Non è possibile creare supporti in un'unità USB il cui contenuto include un file di oltre 4 GB.  
 
-       > [!NOTE]  
-       >  È necessario disporre dei diritti di accesso in lettura alla raccolta contenuto nel punto di distribuzione.  
+    - Se si seleziona **Unità USB rimovibile**, è necessario selezionare l'unità in cui archiviare il contenuto.  
 
-7. Completare la procedura guidata.  
+        - **Formatta unità USB rimovibile (FAT32) e consenti l'avvio**: per impostazione predefinita, consentire a Configuration Manager di preparare l'unità USB. Molti dispositivi UEFI più recenti richiedono una partizione FAT32 di avvio. Questo formato tuttavia limita anche le dimensioni dei file e la capacità complessiva dell'unità. Se l'unità rimovibile è già stata formattata e configurata, disabilitare questa opzione.
+
+    - Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto (**Dimensione supporto**) e il nome e il percorso dei file di output (**File supporto**). La procedura guidata scrive i file di output in questa posizione. Ad esempio: `\\servername\folder\outputfile.iso`  
+
+        Se la capacità del supporto non è sufficiente per archiviare l'intero contenuto, vengono creati più file. È quindi necessario archiviare il contenuto in più CD o DVD. Quando sono necessari più supporti, Configuration Manager aggiunge un numero di sequenza al nome di ogni file di output creato.  
+
+        > [!IMPORTANT]  
+        > Se si seleziona un'immagine iso esistente, la Creazione guidata del supporto per la sequenza di attività elimina l'immagine dall'unità o dalla condivisione non appena si passa alla pagina successiva della procedura guidata. L'immagine esistente viene eliminata, anche se si annulla la procedura guidata.  
+
+    - **Cartella di gestione temporanea**<!--1359388-->: il processo di creazione del supporto può richiedere molto spazio temporaneo sul disco. Per impostazione predefinita questo percorso è simile al seguente: `%UserProfile%\AppData\Local\Temp`. A partire dalla versione 1902, per offrire maggiore flessibilità dal punto di vista del percorso di archiviazione dei file temporanei, modificare questo valore con un'altra unità e un altro percorso.  
+
+    - **Etichetta supporto**<!--1359388-->: a partire dalla versione 1902, è possibile aggiungere un'etichetta al supporto per la sequenza di attività. Questa etichetta consente di identificare più facilmente il supporto creato. Il valore predefinito è `Configuration Manager`. Questo campo di testo viene visualizzato nelle posizioni seguenti:  
+
+        - Se si monta un file ISO, Windows visualizza questa etichetta come nome dell'unità montata  
+
+        - Se si formatta un'unità USB, vengono utilizzati i primi 11 caratteri dell'etichetta come nome  
+
+        - Configuration Manager scrive un file di testo denominato `MediaLabel.txt` nella radice del supporto. Per impostazione predefinita, il file include un'unica riga di testo: `label=Configuration Manager`. Se si personalizza l'etichetta del supporto, verrà utilizzata l'etichetta personalizzata anziché il valore predefinito.  
+
+    - **Includi il file autorun.inf sul supporto**<!-- 4090666 -->: a partire dalla versione 1902, Configuration Manager non aggiunge il file autorun.inf per impostazione predefinita. Questo file è generalmente bloccato da prodotti antimalware. Per altre informazioni sulla funzionalità di esecuzione automatica di Windows, vedere [Creating an AutoRun-enabled CD-ROM Application](https://docs.microsoft.com/windows/desktop/shell/autoplay) (Creazione di un'applicazione CD-ROM abilitata per l'esecuzione automatica). Se il file è ancora richiesto dallo scenario, selezionare questa opzione per includerlo.  
+
+5. Nella pagina **Immagine d'avvio** specificare le opzioni seguenti:  
+
+    > [!IMPORTANT]  
+    > L'architettura dell'immagine d'avvio distribuita deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.  
+
+    - **Immagine d'avvio**: selezionare l'immagine d'avvio per l'avvio del computer di destinazione.  
+
+    - **Punto di distribuzione**: selezionare il punto di distribuzione che ospita l'immagine d'avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
+
+        > [!NOTE]  
+        > L'account utente usato deve avere almeno autorizzazioni di **lettura** per la raccolta contenuto nel punto di distribuzione.  
+
+6. Completare la procedura guidata.  
+
+
+## <a name="next-steps"></a>Passaggi successivi
+
+[Creare una sequenza di attività per acquisire un sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-capture-an-operating-system)

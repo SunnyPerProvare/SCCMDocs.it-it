@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 021fa2a29512fa3dde06af77093100f5c1dff0ad
-ms.sourcegitcommit: ab9f2a7fb7ea3a0c65808fce2975ab25a670281f
+ms.openlocfilehash: 63eb7fa579d002b4cae48ed0a43a2246350e2633
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613040"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933303"
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Gestire Office 365 ProPlus con Configuration Manager
 
@@ -166,7 +166,7 @@ Seguire questa procedura per il punto di aggiornamento software presso il sito d
 > La configurazione di lingue aggiuntive per l'aggiornamento di Office 365 è un'impostazione a livello di sito. Dopo l'aggiunta delle lingue in base alla procedura seguente, tutti gli aggiornamenti di Office 365 vengono scaricati in queste lingue, oltre che nelle lingue selezionate nella pagina **Selezione lingua** del Download guidato degli aggiornamenti software o della Distribuzione guidata degli aggiornamenti software.
 
 1. Da un prompt dei comandi digitare *wbemtest* come utente amministratore per aprire il Tester di Strumentazione gestione Windows.
-2. Fare clic su **Connetti** e quindi digitare *root\sms\site_&lt;CodiceSito&gt;*.
+2. Fare clic su **Connetti** e quindi digitare *root\sms\site_&lt;CodiceSito&gt;* .
 3. Fare clic su **Query** e quindi eseguire la query seguente: *select &#42; from SMS_SCI_Component where componentname ="SMS_WSUS_CONFIGURATION_MANAGER"*  
    ![query WMI](../media/1-wmiquery.png)
 4. Nel riquadro dei risultati fare doppio clic sull'oggetto con il codice corrispondente al sito di amministrazione centrale o al sito primario autonomo.
@@ -179,7 +179,7 @@ Seguire questa procedura per il punto di aggiornamento software presso il sito d
  
    ![Aggiungere lingue nell'Editor di proprietà](../media/4-props.png)  
 9. Fare clic su **Chiudi**, **Chiudi**, **Salva proprietà** e **Salva oggetto** (se si fa clic su **Chiudi**, i valori vengono ignorati). Fare clic su **Chiudi** e quindi su **Esci** per chiudere il tester di Strumentazione gestione Windows.
-10. Nella console di Configuration Manager passare a **Raccolta software** > **Panoramica** > **Office 365 Client Management (Gestione client di Office 365)** > **Office 365 Updates (Aggiornamenti di Office 365)**.
+10. Nella console di Configuration Manager passare a **Raccolta software** > **Panoramica** > **Office 365 Client Management (Gestione client di Office 365)**  > **Office 365 Updates (Aggiornamenti di Office 365)** .
 11. Ora gli aggiornamenti di Office 365 vengono scaricati nelle lingue selezionate nella procedura guidata e configurati in questa procedura. Per verificare che gli aggiornamenti vengano effettivamente scaricati nelle lingue corrette, passare all'origine pacchetto per gli aggiornamenti e cercare i file con il codice lingua nel nome.  
     ![Nomi di file con altre lingue](../media/5-verification.png)
 
@@ -224,7 +224,7 @@ Per modificare il canale di aggiornamento dopo aver abilitato i client di Office
 - Canale semestrale (mirato) <br/>
 <i>(in precedenza First Release per Deferred Channel</i>:  
   **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/b8f9b850-328d-4355-9145-c59439a0c4cf
-<!--the channel names changed in Sept 2017- https://docs.microsoft.com/en-us/DeployOffice/overview-of-update-channels-for-office-365-proplus?ui=en-US&rs=en-US&ad=US-->
+<!--the channel names changed in Sept 2017- https://docs.microsoft.com/DeployOffice/overview-of-update-channels-for-office-365-proplus?ui=en-US&rs=en-US&ad=US-->
 
 
 <!--- You can create an Office 365 app without using the Office 365 Installation Wizard. To do this, you use the Office 2016 Deployment Tool (ODT) to download Office installation source files to a network share, generate Configure.xml that specifies the correct Office version and channel, and so on. Then, create an app for the files using the normal app management process.

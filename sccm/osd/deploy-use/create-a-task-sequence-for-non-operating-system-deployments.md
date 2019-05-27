@@ -1,8 +1,8 @@
 ---
 title: Creare una sequenza di attività per distribuzioni non di sistema operativo
 titleSuffix: Configuration Manager
-description: Creare sequenze di attività non correlate alla distribuzione di sistemi operativi ad esempio distribuzione del software, aggiornamento di driver, modifica degli stati utente e così via.
-ms.date: 10/06/2016
+description: Creare sequenze di attività non destinate alla distribuzione di un sistema operativo, ad esempio per la distribuzione di software o l'automazione delle attività
+ms.date: 05/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,44 +11,53 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8ef75ea9b0948a932c1b146d0f4fe7051017759
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 17ba0f146a80928b1eaae6334e6418a5e08b1114
+ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140314"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65083070"
 ---
-# <a name="create-a-task-sequence-for-non-operating-system-deployments-with-system-center-configuration-manager"></a>Creare una sequenza di attività per le distribuzioni del sistema non operativo con System Center Configuration Manager
+# <a name="create-a-task-sequence-for-non-os-deployments"></a>Creare una sequenza di attività per distribuzioni non di sistema operativo
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le sequenze di attività in System Center Configuration Manager consentono di automatizzare una serie di attività all'interno dell'ambiente. Queste attività sono progettate e testate principalmente per la distribuzione di sistemi operativi.  Configuration Manager ha molte altre funzionalità che è consigliabile usare come tecnologia principale per scenari quali [installazione dell'applicazione](../../apps/understand/introduction-to-application-management.md), [installazione degli aggiornamenti software](../../sum/understand/software-updates-introduction.md), [configurazione delle impostazioni](../../compliance/understand/ensure-device-compliance.md) o automazione personalizzata. È consigliabile anche considerare altre tecnologie di automazione di Microsoft System Center, come ad esempio [Orchestrator](https://technet.microsoft.com/library/hh237242.aspx) e [Service Management Automation](https://technet.microsoft.com/library/dn469260.aspx) .  
+Le sequenze di attività in Configuration Manager consentono di automatizzare diversi tipi di attività all'interno dell'ambiente. Queste attività sono progettate e testate principalmente per la distribuzione di sistemi operativi. Configuration Manager ha molte altre funzionalità che deve essere la tecnologia principale in uso per gli scenari seguenti:
 
-La potenza delle sequenze di attività risiede nella loro flessibilità e nel modo in cui è possibile usarle per configurare le impostazioni client, distribuire software, aggiornare i driver, modificare stati utente ed eseguire altre attività indipendenti dalla distribuzione del sistema operativo. È possibile creare una sequenza di attività personalizzata per aggiungere qualsiasi numero di attività. L'uso di sequenze di attività personalizzate per la distribuzione non del sistema operativo è supportato in Configuration Manager. Tuttavia, se una sequenza di attività genera risultati indesiderati o incoerenti, considerare i possibili modi per semplificare l'operazione. È possibile farlo usando la procedura più semplice, dividendo le azioni tra più sequenze di attività, oppure con un approccio graduale alla creazione e al test della sequenza di attività.
+- [Installazione di applicazioni](/sccm/apps/understand/introduction-to-application-management)
+- [Installazione di aggiornamenti software](/sccm/sum/understand/software-updates-introduction)
+- [Impostazione della configurazione](/sccm/compliance/understand/ensure-device-compliance)
 
- La procedura seguente è supportata in una sequenza di attività personalizzata di distribuzione non del sistema operativo:  
+Considerare anche altre tecnologie di automazione di Microsoft System Center, ad esempio [Orchestrator](https://docs.microsoft.com/system-center/orchestrator/) e [Service Management Automation](https://docs.microsoft.com/system-center/sma/).  
 
--   [Verifica conformità](../understand/task-sequence-steps.md#BKMK_CheckReadiness)  
+L'efficacia delle sequenze di attività risiede nella loro flessibilità e nel modo in cui si usano. Sono in grado di configurare le impostazioni client, distribuire il software, aggiornare i driver, modificare gli stati utente ed effettuare altre attività in modo indipendente dalla distribuzione del sistema operativo. È possibile creare una sequenza di attività personalizzata per aggiungere qualsiasi numero di attività. L'uso di sequenze di attività personalizzate per la distribuzione non del sistema operativo è supportato in Configuration Manager. Tuttavia, se una sequenza di attività genera risultati indesiderati o incoerenti, considerare i possibili modi per semplificare l'operazione:
 
--   [Connessione a una cartella di rete](../understand/task-sequence-steps.md#BKMK_ConnectToNetworkFolder)  
+- Usare passaggi più semplici
+- Dividere le azioni tra più sequenze di attività
+- Adottare un approccio graduale alla creazione e ai test della sequenza di attività
 
--   [Scaricare il contenuto del pacchetto](../understand/task-sequence-steps.md#BKMK_DownloadPackageContent)  
+I passaggi seguenti sono supportati in una sequenza di attività personalizzata di distribuzione non del sistema operativo:  
 
--   [Installa applicazione](../understand/task-sequence-steps.md#BKMK_InstallApplication)  
+- [Verifica conformità](/sccm/osd/understand/task-sequence-steps#BKMK_CheckReadiness)  
 
--   [Installa pacchetto](../understand/task-sequence-steps.md#BKMK_InstallPackage)  
+- [Connessione a una cartella di rete](/sccm/osd/understand/task-sequence-steps#BKMK_ConnectToNetworkFolder)  
 
--   [Installa aggiornamenti software](../understand/task-sequence-steps.md#BKMK_InstallSoftwareUpdates)  
+- [Scaricare il contenuto del pacchetto](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent)  
 
--   [Riavvia computer](../understand/task-sequence-steps.md#BKMK_RestartComputer)   
+- [Installa applicazione](/sccm/osd/understand/task-sequence-steps#BKMK_InstallApplication)  
 
--   [Esegui riga di comando](../understand/task-sequence-steps.md#BKMK_RunCommandLine)  
+- [Installa pacchetto](/sccm/osd/understand/task-sequence-steps#BKMK_InstallPackage)  
 
--   [Esegui script PowerShell](../understand/task-sequence-steps.md#BKMK_RunPowerShellScript)  
+- [Installa aggiornamenti software](/sccm/osd/understand/task-sequence-steps#BKMK_InstallSoftwareUpdates)  
 
--   [Imposta variabili dinamiche](../understand/task-sequence-steps.md#BKMK_SetDynamicVariables)  
+- [Riavvia computer](/sccm/osd/understand/task-sequence-steps#BKMK_RestartComputer)  
 
--   [Imposta variabile della sequenza di attività](../understand/task-sequence-steps.md#BKMK_SetTaskSequenceVariable)  
+- [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine)  
 
-## <a name="next-steps"></a>Passaggi successivi 
-[Distribuire la sequenza di attività](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)
+- [Esegui script PowerShell](/sccm/osd/understand/task-sequence-steps#BKMK_RunPowerShellScript)  
+
+- [Eseguire la sequenza di attività](/sccm/osd/understand/task-sequence-steps#child-task-sequence)  
+
+- [Imposta variabili dinamiche](/sccm/osd/understand/task-sequence-steps#BKMK_SetDynamicVariables)  
+
+- [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable)  

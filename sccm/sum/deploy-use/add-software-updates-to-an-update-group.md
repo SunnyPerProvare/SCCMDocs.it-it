@@ -2,21 +2,21 @@
 title: 'Aggiungere aggiornamenti a un gruppo di aggiornamento '
 titleSuffix: Configuration Manager
 description: Aggiungere gli aggiornamenti software a un gruppo di aggiornamento software dell'ambiente, manualmente o automaticamente.
-author: aczechowski
 ms.date: 03/18/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: a0767664-fd60-46a8-9da5-86cc431ce53c
 manager: dougeby
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0657877c22aa8ce2382408821d5b61f5fded151d
-ms.sourcegitcommit: d71e558db2da124357b840332e2da671b3810507
+ms.openlocfilehash: b207d0c210aa25489d67a5a551bf795e86c1582b
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58269001"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500239"
 ---
 # <a name="add-software-updates-to-an-update-group"></a>Aggiungere gli aggiornamenti software a un gruppo di aggiornamento  
 
@@ -49,7 +49,7 @@ ms.locfileid: "58269001"
 3.  Selezionare gli aggiornamenti software che si desidera aggiungere al nuovo gruppo di aggiornamento software.  
 
     > [!NOTE]  
-    >  Nel **tutti gli aggiornamenti Software** nodo, Configuration Manager consente di visualizzare tutti gli aggiornamenti, tranne quelle nel **aggiornamenti** classificazione e **Client di Office 365** prodotto classificazione.  
+    >  Nel nodo **Tutti gli aggiornamenti software**, Configuration Manager consente di visualizzare tutti gli aggiornamenti, tranne quelli della classificazione **Aggiornamenti** e della classificazione prodotti **Aggiornamenti del client Office 365**.  
 
 4.  Nella scheda **Home** del gruppo **Aggiorna** , fare clic su **Modifica appartenenza**.  
 

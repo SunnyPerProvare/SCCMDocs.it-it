@@ -2,7 +2,7 @@
 title: Creare una sequenza di attività per l'aggiornamento del sistema operativo
 titleSuffix: Configuration Manager
 description: Usare una sequenza di attività per eseguire automaticamente l'aggiornamento da Windows 7 o versioni successive a Windows 10
-ms.date: 07/30/2018
+ms.date: 05/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc20a7e9be271bde8a5cd6464e2cebdf1ee9bad9
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: b1015573d62bdbbd317b9f787071e7725e5d4362
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138603"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176128"
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-os-in-configuration-manager"></a>Creare una sequenza di attività per aggiornare un sistema operativo in Configuration Manager
 
@@ -66,9 +66,9 @@ Per aggiornare il sistema operativo nei client, è possibile creare una sequenza
 
     -   **Pacchetto di aggiornamento**: specificare il pacchetto di aggiornamento che contiene i file di origine per l'aggiornamento del sistema operativo. Verificare di avere selezionato il pacchetto di aggiornamento corretto esaminando le informazioni nel riquadro **Proprietà**. Per altre informazioni, vedere [Gestire i pacchetti di aggiornamento del sistema operativo](/sccm/osd/get-started/manage-operating-system-upgrade-packages).  
 
-    -   **Indice dell'edizione**: se nel pacchetto sono disponibili più indici dell'edizione del sistema operativo, selezionare l'indice dell'edizione desiderato. Per impostazione predefinita, la procedura guidata seleziona il primo indice.  
+    -   **Indice edizione**: se sono presenti più indici edizione del sistema operativo nel pacchetto, selezionare l'indice edizione desiderato. Per impostazione predefinita, la procedura guidata seleziona il primo indice.  
 
-    -   **Codice Product Key**: specificare il codice Product Key Windows per il sistema operativo da installare. Specificare i codici Product Key per contratti multilicenza codificati o i codici Product Key standard. Se si usa un codice Product Key standard, separare ogni gruppo di cinque caratteri con un trattino (-). Ad esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*. Se l'aggiornamento è per un'edizione per contratti multilicenza, il codice Product Key potrebbe non essere obbligatorio.  
+    -   **Codice Product Key**: specificare il codice Product Key Windows per il sistema operativo da installare. Specificare i codici Product Key per contratti multilicenza codificati o i codici Product Key standard. Se si usa un codice Product Key standard, separare ogni gruppo di cinque caratteri con un trattino (-). Ad esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX* Se l'aggiornamento è per un'edizione per contratti multilicenza, il codice Product Key potrebbe non essere obbligatorio.  
 
         > [!Note]  
         > Questo codice Product Key può essere un codice ad attivazione multipla (MAK) o un codice generico di contratti multilicenza (GVLK). Un codice GVLK è anche definito codice di configurazione client del servizio di gestione delle chiavi (KMS). Per altre informazioni, vedere [Pianificare l'attivazione dei contratti multilicenza](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client). Per un elenco di codici di configurazione client KMS, vedere l'[Appendice A](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys) della Guida di attivazione di Windows Server. 
@@ -93,10 +93,11 @@ A partire dalla versione 1806, questo modello di sequenza di attività include a
 
 
 ## <a name="configure-pre-cache-content"></a>Configurare la pre-cache del contenuto
-<!--1021244--> La funzionalità pre-cache per le distribuzioni di sequenze di attività disponibili consente ai client di scaricare il contenuto pertinente dei pacchetti di aggiornamento del sistema operativo prima che un utente installi la sequenza di attività.  
+<!--1021244-->
+La funzionalità pre-cache per le distribuzioni di sequenze di attività disponibili consente ai client di scaricare il contenuto pertinente dei pacchetti di aggiornamento del sistema operativo prima che un utente installi la sequenza di attività.  
 
 > [!Note]  
-> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
 
 
 Si supponga, ad esempio, di volere una sola sequenza di attività di aggiornamento sul posto per tutti gli utenti, pur avendo molte architetture e lingue diverse. Nelle versioni precedenti il download del contenuto inizia quando l'utente installa una distribuzione di sequenze di attività disponibile da Software Center. Questo ritardo aggiunge ulteriore tempo prima che l'installazione sia pronta per essere avviata. Tutto il contenuto a cui viene fatto riferimento nella sequenza di attività viene scaricato. Questo contenuto include il pacchetto di aggiornamento del sistema operativo per tutte le lingue e tutte le architetture. Se ogni pacchetto di aggiornamento è circa 3 GB, il contenuto totale è molto elevato.
@@ -144,17 +145,17 @@ Con la funzionalità pre-cache del contenuto è possibile consentire al client d
 
 A partire dalla versione 1802, il modello di sequenza di attività predefinito per l'aggiornamento sul posto di Windows 10 include gruppi aggiuntivi con azioni consigliate da aggiungere prima del processo di aggiornamento. Queste azioni nel gruppo **Preparazione dell'aggiornamento** sono comuni tra numerosi clienti che stanno aggiornando i propri dispositivi a Windows 10. Per i siti con versioni precedenti alla 1802, aggiungere manualmente queste azioni alla sequenza di attività nel gruppo **Preparazione dell'aggiornamento**.  
 
-- **Verifiche della batteria**: consente di aggiungere passaggi in questo gruppo per verificare se il computer usa la batteria o l'alimentazione tramite cavo. Per eseguire questo controllo serve un'utilità o uno script personalizzato.  
+- **Verifiche della batteria**: aggiungere in questo gruppo i passaggi da eseguire per verificare se il computer usa la batteria o l'elettricità. Per eseguire questo controllo serve un'utilità o uno script personalizzato. Ad esempio: mediante WbemTest, connettere il `root\cimv2` dello spazio dei nomi. Eseguire la query seguente: `Select Batterystatus From Win32_Battery where batterystatus != 2`. Se viene restituito alcun risultato, il dispositivo è alimentato a batteria. In caso contrario, il dispositivo è connesso all'alimentazione cablata.  
 
-- **Verifiche della connessione di rete/via cavo**: consente di aggiungere passaggi in questo gruppo per verificare se il computer è connesso a una rete e non usa una connessione wireless. Per eseguire questo controllo serve un'utilità o uno script personalizzato.  
+- **Verifiche della connessione di rete/via cavo**: aggiungere in questo gruppo i passaggi da eseguire per verificare se il computer è connesso a una rete e non usa una connessione wireless. Per eseguire questo controllo serve un'utilità o uno script personalizzato.  
 
-- **Rimuovi le applicazioni non compatibili**: consente di aggiungere passaggi in questo gruppo per rimuovere eventuali applicazioni non compatibili con questa versione di Windows 10. Il metodo per disinstallare un'applicazione varia a seconda dei casi.  
+- **Rimuovi le applicazioni non compatibili**: aggiungere in questo gruppo i passaggi da eseguire per rimuovere le applicazioni che non sono compatibili con questa versione di Windows 10. Il metodo per disinstallare un'applicazione varia a seconda dei casi.  
 
     - Se l'applicazione usa Windows Installer, copiare la riga di comando **Disinstalla programma** dalla scheda **Programmi** nelle proprietà del tipo di distribuzione di Windows Installer dell'applicazione. Quindi aggiungere un passaggio **Esegui riga di comando** in questo gruppo con la riga di comando Disinstalla programma. Ad esempio: </br>`msiexec /x {150031D8-1234-4BA8-9F52-D6E5190D1CBA} /q`</br>  
 
-- **Rimuovi i driver non compatibili**: consente di aggiungere passaggi in questo gruppo per rimuovere eventuali driver non compatibili con questa versione di Windows 10.  
+- **Rimuovi i driver non compatibili**: aggiungere in questo gruppo i passaggi da eseguire per rimuovere i driver che non sono compatibili con questa versione di Windows 10.  
 
-- **Rimuovi/Sospendi la sicurezza di terze parti**: consente di aggiungere passaggi in questo gruppo per rimuovere o sospendere programmi di sicurezza di terze parti, ad esempio l'antivirus.  
+- **Rimuovi/Sospendi la sicurezza di terze parti**: aggiungere in questo gruppo i passaggi da eseguire per rimuovere o sospendere le applicazioni di sicurezza di terze parti, come i programmi antivirus.  
 
    - Se si usa un programma di crittografia dischi di terze parti, fornire il relativo driver di crittografia al programma di installazione di Windows con l'[opzione della riga di comando](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#23) `/ReflectDrivers`. Aggiungere un passaggio [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) alla sequenza di attività in questo gruppo. Impostare la variabile della sequenza di attività su **OSDSetupAdditionalUpgradeOptions**. Impostare il valore su `/ReflectDrivers` con il percorso del driver. Questa [variabile della sequenza di attività](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions) accoda la riga di comando di Installazione di Windows usata dalla sequenza di attività. Per ulteriori indicazioni su questo processo, contattare il fornitore del software in uso.  
 
@@ -168,7 +169,7 @@ Usare il passaggio [Scaricare il contenuto del pacchetto](/sccm/osd/understand/t
 -   Per scaricare in modo dinamico un pacchetto di driver applicabile, usare due passaggi **Scarica contenuto pacchetto** con le condizioni per rilevare il tipo di hardware appropriato per ogni pacchetto driver. Configurare ogni passaggio **Scarica contenuto pacchetto** in modo che usi la stessa variabile. Quindi usare tale variabile per il valore **Contenuto preconfigurato** nella sezione dei driver del passaggio **Aggiorna sistema operativo**.  
 
     > [!NOTE]  
-    > Quando sono presenti più pacchetti, Configuration Manager aggiunge un suffisso numerico al nome della variabile. Ad esempio, se si specifica `%mycontent%` come variabile personalizzata, il client archivia tutto il contenuto a cui si fa riferimento in questo percorso. Quando si fa riferimento alla variabile in un passaggio successivo, ad esempio **Aggiorna sistema operativo**, usare la variabile con un suffisso numerico. In questo esempio, `%mycontent01%` o `%mycontent02%`, dove il numero corrisponde all'ordine in cui il passaggio **Scarica contenuto pacchetto** indica il contenuto specifico.  
+    > Configuration Manager aggiunge un suffisso numerico al nome della variabile. Ad esempio, se si specifica `%mycontent%` come variabile personalizzata, il client archivia tutto il contenuto a cui si fa riferimento in questo percorso. Quando si fa riferimento alla variabile in un passaggio successivo, ad esempio **Aggiorna sistema operativo**, usare la variabile con un suffisso numerico. In questo esempio, `%mycontent01%` o `%mycontent02%`, dove il numero corrisponde all'ordine in cui il passaggio **Scarica contenuto pacchetto** indica il contenuto specifico.  
 
 
 
@@ -181,13 +182,13 @@ Dopo aver creato la sequenza di attività, aggiungere questi passaggi nel gruppo
 
 A partire dalla versione 1802, il modello di sequenza di attività predefinito per l'aggiornamento sul posto di Windows 10 include gruppi aggiuntivi con azioni consigliate da aggiungere dopo il processo di aggiornamento. Queste azioni nel gruppo **Post-elaborazione** sono comuni tra numerosi clienti che stanno aggiornando i propri dispositivi a Windows 10. Per i siti con versioni precedenti alla 1802, aggiungere manualmente queste azioni alla sequenza di attività nel gruppo **Post-elaborazione**.  
 
-- **Applica driver basati su installazione**: consente di aggiungere passaggi in questo gruppo per installare driver basati su installazione (EXE) dai pacchetti.  
+- **Applica driver basati su installazione**: aggiungere in questo gruppo i passaggi da eseguire per installare driver basati su installazione (con estensione exe) dai pacchetti.  
 
-- **Installa/Abilita la sicurezza di terze parti**: consente di aggiungere passaggi in questo gruppo per installare o abilitare i programmi di sicurezza di terze parti, ad esempio l'antivirus.  
+- **Installa/Abilita la sicurezza di terze parti**: aggiungere in questo gruppo i passaggi da eseguire per installare o abilitare le applicazioni di sicurezza di terze parti, come i programmi antivirus.  
 
-- **Imposta le app predefinite e le associazioni di Windows**: consente di aggiungere passaggi in questo gruppo per impostare le app predefinite e le associazioni di file di Windows. Preparare prima un computer di riferimento con le associazioni di app desiderate. Quindi eseguire l'esportazione tramite la riga di comando seguente: </br>`dism /online /Export-DefaultAppAssociations:"%UserProfile%\Desktop\DefaultAppAssociations.xml"`</br>Aggiungere il file XML a un pacchetto. Quindi aggiungere un passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) in questo gruppo. Specificare il pacchetto che contiene il file XML, quindi specificare la riga di comando seguente: </br>`dism /online /Import-DefaultAppAssociations:DefaultAppAssocations.xml`</br> Per altre informazioni, vedere [Export or import default application associations](/windows-hardware/manufacture/desktop/export-or-import-default-application-associations) (Esportare o importare associazioni di applicazioni predefinite).  
+- **Imposta le app predefinite e le associazioni di Windows**: aggiungere in questo gruppo i passaggi da eseguire per impostare le app predefinite e le associazioni di file di Windows. Preparare prima un computer di riferimento con le associazioni di app desiderate. Quindi eseguire l'esportazione tramite la riga di comando seguente: </br>`dism /online /Export-DefaultAppAssociations:"%UserProfile%\Desktop\DefaultAppAssociations.xml"`</br>Aggiungere il file XML a un pacchetto. Quindi aggiungere un passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) in questo gruppo. Specificare il pacchetto che contiene il file XML, quindi specificare la riga di comando seguente: </br>`dism /online /Import-DefaultAppAssociations:DefaultAppAssocations.xml`</br> Per altre informazioni, vedere [Export or import default application associations](/windows-hardware/manufacture/desktop/export-or-import-default-application-associations) (Esportare o importare associazioni di applicazioni predefinite).  
 
-- **Applica personalizzazioni**: consente di aggiungere passaggi in questo gruppo per applicare le personalizzazioni del menu Start, ad esempio l'organizzazione di gruppi di programmi. Per altre informazioni, vedere [Customize the Start screen](/windows-hardware/manufacture/desktop/customize-the-start-screen) (Personalizzare la schermata iniziale).  
+- **Applica personalizzazioni**: aggiungere in questo gruppo i passaggi da eseguire per applicare le personalizzazioni del menu Start, organizzando ad esempio gruppi di programmi. Per altre informazioni, vedere [Customize the Start screen](/windows-hardware/manufacture/desktop/customize-the-start-screen) (Personalizzare la schermata iniziale).  
 
 
 

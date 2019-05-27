@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9775bd47e91876a7651bb58fee50b2111f3b7ef1
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: 5738be3bd84d7698e7b67128e3aff178d2460e52
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083532"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176916"
 ---
 # <a name="site-server-high-availability-in-configuration-manager"></a>Disponibilità elevata del server del sito in Configuration Manager
 
@@ -26,10 +26,10 @@ ms.locfileid: "65083532"
 
 In passato, era possibile aggiungere ridondanza per la maggior parte dei ruoli in Configuration Manager definendo più istanze di questi ruoli nell'ambiente in uso. Fatta eccezione per il server del sito stesso. A partire da Configuration Manager versione 1806, la disponibilità elevata per il ruolo del server del sito è una soluzione basata su Configuration Manager per installare un server del sito aggiuntivo in modalità  *passiva*. La versione 1810 aggiunge il supporto della gerarchia, quindi anche i siti di amministrazione centrale e i siti primari figlio possono avere un altro server del sito in modalità passiva. Il server del sito in modalità passiva può essere locale o basato sul cloud in Azure.
 
-Questa funzionalità offre i vantaggi seguenti 
-- Ridondanza e disponibilità elevata per il ruolo del server del sito  
+Questa funzionalità offre i vantaggi seguenti 
+- Ridondanza e disponibilità elevata per il ruolo del server del sito  
 - Modificare più facilmente l'hardware o il sistema operativo del server del sito  
-- Spostare più facilmente il server del sito in un'infrastruttura IaaS di Azure  
+- Spostare più facilmente il server del sito in un'infrastruttura IaaS di Azure  
 
 Il server del sito in modalità passiva è un'aggiunta al server del sito primario esistente in modalità *attiva*. Un server del sito in modalità passiva è disponibile per l'uso immediato, quando necessario. Includere questo server del sito aggiuntivo come parte della progettazione complessiva per rendere il servizio Configuration Manager a [disponibilità elevata](/sccm/core/servers/deploy/configure/high-availability-options).  
 

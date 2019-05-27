@@ -2,8 +2,8 @@
 title: Configurare classificazioni e prodotti
 titleSuffix: Configuration Manager
 description: Seguire questi passaggi per configurare i prodotti e le classificazioni degli aggiornamenti software per la sincronizzazione nella console di Configuration Manager.
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.date: 02/15/2019
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f1d984598288434aa1e81c6bd2c51a315edfa551
-ms.sourcegitcommit: fd16fc2b681608fd6def5bad2cedffbcd1f2423a
-ms.translationtype: HT
+ms.openlocfilehash: 747e66adb8f6ce0d013073463ee2472785d3bb70
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56405693"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500003"
 ---
 #  <a name="configure-classifications-and-products-to-synchronize"></a>configurare le classificazioni e i prodotti per la sincronizzazione  
 
@@ -41,13 +41,13 @@ ms.locfileid: "56405693"
     > [!NOTE]  
     >  Ogni aggiornamento software viene definito in base a una classificazione di aggiornamento che consente di organizzare i diversi tipi di aggiornamenti. Durante il processo di sincronizzazione, verranno sincronizzati i metadati degli aggiornamenti software per le classificazioni selezionate. Configuration Manager consente di sincronizzare gli aggiornamenti software con le classificazioni di aggiornamento seguenti:  
     >   
-    > - **Aggiornamenti critici**: specifica un aggiornamento rilasciato pubblicamente per un problema specifico, per un bug critico, non correlato alla sicurezza.  
-    > - **Aggiornamenti delle definizioni**: specifica un aggiornamento software frequente rilasciato pubblicamente che contiene aggiunte al database che contiene la definizione del prodotto.  
-    > - **Feature Pack**: specifica le nuove funzionalità del prodotto distribuite al di fuori di una versione del prodotto e che in genere sono incluse nella successiva versione completa del prodotto.  
-    > - **Aggiornamenti della sicurezza**: specifica un aggiornamento rilasciato pubblicamente per un problema specifico del prodotto, correlato alla sicurezza.  
-    > - **Service Pack**: specifica un insieme cumulativo e testato di tutti gli aggiornamenti rapidi, gli aggiornamenti della sicurezza, gli aggiornamenti critici e gli aggiornamenti che vengono applicati a un prodotto. I Service Pack possono contenere anche aggiornamenti aggiuntivi per problemi rilevati internamente dopo il rilascio del prodotto.  
-    > - **Strumenti**: specifica un'utilità o una funzionalità che consente di completare una o più attività.  
-    > - **Aggiornamenti cumulativi**: specifica un insieme cumulativo e testato di aggiornamenti rapidi, aggiornamenti della sicurezza, aggiornamenti critici e aggiornamenti riuniti in un unico pacchetto per semplificarne la distribuzione. Un aggiornamento cumulativo interessa in genere un'area specifica, ad esempio la sicurezza o un componente del prodotto.  
+    > - **Aggiornamenti critici**: specifica un aggiornamento rilasciato pubblicamente per un problema specifico che risolve un bug critico non correlato alla sicurezza.  
+    > - **Aggiornamenti delle definizioni**: specifica un aggiornamento software frequente rilasciato pubblicamente che contiene aggiunte al database delle definizioni di un prodotto.  
+    > - **Feature Pack**: specifica le nuove funzionalità del prodotto distribuite prima al di fuori di una versione del prodotto e che in genere sono incluse nella successiva versione completa del prodotto.  
+    > - **Aggiornamenti della sicurezza**: specifica un aggiornamento rilasciato pubblicamente per una vulnerabilità specifica del prodotto correlata alla sicurezza.  
+    > - **Service Pack**: specifica un set cumulativo e testato di tutti gli hotfix, gli aggiornamenti della sicurezza, gli aggiornamenti critici e gli aggiornamenti applicati a un prodotto. I Service Pack possono contenere anche aggiornamenti aggiuntivi per problemi rilevati internamente dopo il rilascio del prodotto.  
+    > - **Strumenti:** specifica un'utilità o una funzionalità che consente di completare una o più attività.  
+    > - **Aggiornamenti cumulativi**: specifica un set cumulativo e testato di hotfix, aggiornamenti della sicurezza, aggiornamenti critici e aggiornamenti riuniti in un unico pacchetto per semplificarne la distribuzione. Un aggiornamento cumulativo interessa in genere un'area specifica, ad esempio la sicurezza o un componente del prodotto.  
     > - **Aggiornamenti**: specifica un aggiornamento rilasciato pubblicamente per un problema specifico. Un aggiornamento risolve un bug non critico, non correlato alla sicurezza.  
     > - **Aggiornamento**: specifica un aggiornamento per le caratteristiche e le funzionalità di Windows 10. Per ottenere la classificazione di [aggiornamento](https://support.microsoft.com/kb/3095113), i punti di aggiornamento software e i siti devono eseguire WSUS 4.0 con l'**hotfix 3095113**.    
     >       
@@ -57,7 +57,7 @@ ms.locfileid: "56405693"
     >  
     > Questa funzionalità è stata introdotta per la prima volta nella versione 1706 come [funzionalità di una versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1710, questa funzionalità non è più in versione non definitiva.  
     >  
-    > Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+    > Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
 
 5.  Nella scheda **Prodotti** specificare i prodotti per cui si desidera sincronizzare gli aggiornamenti software e quindi fare clic su **Chiudi**.  
 

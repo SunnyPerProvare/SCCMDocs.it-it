@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4cba7c2bf782dce636117e71cb6982cd95ffb8ab
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 18de1d67ecc1dfa6d9c5fb87355c4fed04e2c4c4
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500082"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176749"
 ---
 # <a name="hardware-inventory-for-linux-and-unix-in-configuration-manager"></a>Inventario hardware per Linux e UNIX in Configuration Manager
 
@@ -39,7 +39,7 @@ La funzionalità di inventario hardware per i server Linux e UNIX usa un server 
 
 A partire dall'aggiornamento cumulativo 1, il client per Linux e UNIX usa la soluzione open source **omiserver** versione 1.0.6 di **The Open Group**. Prima dell'aggiornamento cumulativo 1, il client usava **nanowbem** come server CIM.  
 
-Il server CIM viene installato come parte del client per Linux e UNIX. Il client per Linux e UNIX comunica direttamente con il server CIM e non usa l'interfaccia WS-MAN del server CIM. La porta WS-MAN nel server CIM viene disabilitata quando si installa il client. Microsoft ha sviluppato il server CIM che è ora disponibile come open source tramite il progetto OMI (Open Management Infrastructure). Per altre informazioni sul progetto OMI, vedere il sito Web di [The Open Group](https://go.microsoft.com/fwlink/p/?LinkId=262317) .  
+Il server CIM viene installato come parte del client per Linux e UNIX. Il client per Linux e UNIX comunica direttamente con il server CIM e non usa l'interfaccia WS-MAN del server CIM. La porta WS-MAN nel server CIM viene disabilitata quando si installa il client. Microsoft ha sviluppato il server CIM che è ora disponibile come open source tramite il progetto OMI (Open Management Infrastructure). Per altre informazioni sul progetto OMI, vedere il sito Web di [The Open Group](https://www.opengroup.org/) .  
 
 L'inventario hardware nei server Linux e UNIX funziona tramite il mapping delle classi e proprietà WMI Win32 esistenti alle classi e proprietà equivalenti per i server Linux e UNIX. Questo mapping uno-a-uno di classi e proprietà consente l'integrazione dell'inventario hardware di Linux e UNIX con Configuration Manager. I dati di inventario dai server Linux e UNIX vengono visualizzati insieme all'inventario dai computer basati su Windows nella console e nei report di Configuration Manager. Questo comportamento garantisce un'esperienza di gestione eterogenea e coerente.  
 

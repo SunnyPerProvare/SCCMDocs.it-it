@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
 ms.assetid: 3b9c4027-a98b-406b-935c-ccabcfe713df
-author: aczechowski
+author: mestew
+ms.author: mstewart
 manager: dougeby
-ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 411811c4047cd781d0edcd5cc345ff82acc80f91
-ms.sourcegitcommit: 0a23cde6112cbb5987f433bffcf6f223b994ba72
+ms.openlocfilehash: 976a6b149175b817ea7039faf1f909a73f2b514d
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56667444"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500534"
 ---
 #  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>Utilizzo degli aggiornamenti Software di Configuration Manager per distribuire gli aggiornamenti delle definizioni
 
@@ -52,23 +52,23 @@ ms.locfileid: "56667444"
 7. Nella pagina **Impostazioni distribuzione** della procedura guidata, nell'elenco **Livello dettaglio** selezionare **Solo messaggi di errore** e quindi fare clic su **Avanti**.
 
    > [!NOTE]
-   >  Selezionando **solo i messaggi di errore** ridurrà il numero di messaggi di stato restituiti dalla distribuzione delle definizioni. Questa configurazione consente di ridurre l'utilizzo dell'elaborazione CPU nei server di Configuration Manager.
+   >  La selezione di **Solo messaggi di errore** consente di ridurre il numero di messaggi di stato restituiti dalla distribuzione delle definizioni. Questa configurazione consente di ridurre l'utilizzo dell'elaborazione CPU nei server di Configuration Manager.
 
 8. Nell'elenco **Filtri proprietà** selezionare la casella di controllo **Classificazione aggiornamento** .
 
-9. Nell'elenco **Criteri di ricerca** fare clic su **<elementi da trovare\>**. Nella finestra di dialogo **Criteri di ricerca** selezionare quindi **Aggiornamenti delle definizioni** nell'elenco **Specificare il valore da cercare**.
+9. Nell'elenco **Criteri di ricerca** fare clic su **<elementi da trovare\>** . Nella finestra di dialogo **Criteri di ricerca** selezionare quindi **Aggiornamenti delle definizioni** nell'elenco **Specificare il valore da cercare**.
 
 10. Fare clic su **OK** per chiudere la finestra di dialogo **Criteri di ricerca** .
 
 11. Nell'elenco **Filtri proprietà** selezionare la casella di controllo **Prodotto** .
 
-12. Nell'elenco **Criteri di ricerca** fare clic su **<elementi da trovare\>**. Nella finestra di dialogo **Criteri di ricerca** selezionare quindi **Forefront Endpoint Protection 2010** , per Windows 8.1 e versioni precedenti, o **Windows Defender** , per Windows 10 e versioni successive, nell'elenco **Specificare il valore da cercare** .
+12. Nell'elenco **Criteri di ricerca** fare clic su **<elementi da trovare\>** . Nella finestra di dialogo **Criteri di ricerca** selezionare quindi **Forefront Endpoint Protection 2010** , per Windows 8.1 e versioni precedenti, o **Windows Defender** , per Windows 10 e versioni successive, nell'elenco **Specificare il valore da cercare** .
 
 13. Fare clic su **OK** per chiudere la finestra di dialogo **Criteri di ricerca** e quindi fare clic su **Avanti**.
 
 14. Facoltativamente, è possibile filtrare gli aggiornamenti sostituiti.   A tale scopo, procedere nel seguente modo:
     1.  Nell'elenco **Filtri proprietà** selezionare la casella di controllo **Sostituito** .
-    2.  Nell'elenco **Criteri di ricerca** fare clic su **<elementi da trovare\>**. Nella finestra di dialogo **Criteri di ricerca** selezionare quindi **No** nell'elenco **Specificare il valore da cercare**.  <br><br>
+    2.  Nell'elenco **Criteri di ricerca** fare clic su **<elementi da trovare\>** . Nella finestra di dialogo **Criteri di ricerca** selezionare quindi **No** nell'elenco **Specificare il valore da cercare**.  <br><br>
 
 15. Fare clic su **OK** per chiudere la finestra di dialogo **Criteri di ricerca** e quindi fare clic su **Avanti**.
 

@@ -5,18 +5,18 @@ description: Usare Windows Update for Business per mantenere aggiornati i dispos
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 03/28/2019
+ms.date: 04/25/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 183315fe-27bd-456f-b2c5-e8d25e05229b
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2929782880971b53be3b6013188f65d50d691c05
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.openlocfilehash: 36ab933876b96c0eebe87ba07932757147e334c0
+ms.sourcegitcommit: 9af73f5c1b93f6ccaea3e6a096f75a5fecd65c2f
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58523759"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64669117"
 ---
 # <a name="integration-with-windows-update-for-business-in-windows-10"></a>Integrazione con Windows Update for Business in Windows 10
 
@@ -25,8 +25,8 @@ ms.locfileid: "58523759"
 Windows Update for Business (WUfB) consente di mantenere i dispositivi basati su Windows 10 nell'organizzazione sempre aggiornati con le difese per la sicurezza e le funzionalità di Windows più recenti, quando questi dispositivi si connettono direttamente al servizio Windows Update (WU). Configuration Manager è in grado di distinguere tra i computer Windows 10 che ricevono gli aggiornamenti software da Windows Update for Business e i computer che li ricevono da WSUS.  
 
 >[!WARNING]
-> Se si usa CO-gestione per i dispositivi e aver spostato il [criteri di Windows Update](/sccm/comanage/workloads#windows-update-policies) quindi a Intune, i dispositivi otterrà loro [criteri di Windows Update for Business da Intune](https://docs.microsoft.com/intune/windows-update-for-business-configure).
-> - Se il client di Configuration Manager è ancora installato nel dispositivo con CO-gestione delle impostazioni per gli aggiornamenti cumulativi e aggiornamenti delle funzionalità sono gestite da Intune. Tuttavia, terze parti l'applicazione di patch, se abilitata nelle [ **impostazioni Client**](/sccm/core/clients/deploy/about-client-settings#enable-third-party-software-updates), sia ancora gestita da Configuration Manager.  
+> Se si usa la co-gestione per i dispositivi e si sono spostati i [criteri di Windows Update](/sccm/comanage/workloads#windows-update-policies) in Intune, i dispositivi otterranno i [criteri di Windows Update for Business da Intune](https://docs.microsoft.com/intune/windows-update-for-business-configure).
+> - Se il client di Configuration Manager è ancora installato nel dispositivo co-gestito, le impostazioni per gli aggiornamenti cumulativi e gli aggiornamenti delle funzionalità sono gestiti da Intune. Tuttavia, l'applicazione di patch di terze parti, se abilitata nelle [ **Impostazioni client**](/sccm/core/clients/deploy/about-client-settings#enable-third-party-software-updates), è ancora gestita da Configuration Manager.  
 
  Alcune funzionalità di Configuration Manager non sono disponibili per i client di Configuration Manager configurati per ricevere gli aggiornamenti da Windows Update. Tra queste, Windows Update for Business e Windows Insider:  
 
@@ -44,7 +44,7 @@ Windows Update for Business (WUfB) consente di mantenere i dispositivi basati su
 
 -   Configuration Manager non sarà in grado di distribuire gli aggiornamenti Microsoft, ad esempio Office, Internet Explorer e Visual Studio, ai client connessi a Windows Update for Business per la ricezione degli aggiornamenti.  
 
--   Configuration Manager non è in grado di distribuire gli aggiornamenti di terze parti pubblicati in WSUS e gestiti tramite Configuration Manager ai client connessi a Windows Update for Business per la ricezione degli aggiornamenti. Se non si vuole eventuali aggiornamenti di terze parti 3rd sia installato nel client connessi a WUfB, disabilitare l'impostazione denominata client [abilitazione degli aggiornamenti software nei client](/sccm/core/clients/deploy/about-client-settings#software-updates).
+-   Configuration Manager non è in grado di distribuire gli aggiornamenti di terze parti pubblicati in WSUS e gestiti tramite Configuration Manager ai client connessi a Windows Update for Business per la ricezione degli aggiornamenti. Se non si desidera che eventuali aggiornamenti di terze parti siano installati nei client connessi a WUfB, disabilitare l'impostazione client denominata [Abilitare aggiornamento software nei client](/sccm/core/clients/deploy/about-client-settings#software-updates).
 
 -   La distribuzione di client completi di Configuration Manager che usa l'infrastruttura di aggiornamenti software non funzionerà per i client connessi a Windows Update for Business per la ricezione degli aggiornamenti.  
 
@@ -105,6 +105,6 @@ A partire da Configuration Manager versione 1706, è possibile configurare i cri
     - **Monitora e aggiorna le regole non conformi, se supportato**: selezionare per correggere automaticamente tutte le regole non conformi per Strumentazione gestione Windows (WMI), il registro di sistema, gli script e tutte le impostazioni per i dispositivi mobili registrati da Configuration Manager.
     - **Consenti monitoraggio e aggiornamento fuori dalla finestra di manutenzione**: se è stata configurata una finestra di manutenzione per la raccolta in cui si distribuiscono i criteri, abilitare questa opzione per consentire alle impostazioni di conformità di monitorare e aggiornare il valore fuori dalla finestra di manutenzione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).
     - **Genera un avviso**: configura un avviso che viene generato se la conformità della linea di base di configurazione è inferiore a una percentuale specificata in base a una data e un orario specifici. È inoltre possibile specificare se si desidera che un avviso venga inviato a System Center Operations Manager.
-    - **Ritardo casuale (ore)**: specifica una finestra di ritardo per evitare un'elaborazione eccessiva nel servizio Registrazione dispositivi di rete. Il valore predefinito è 64 ore.
+    - **Ritardo casuale (ore)** : specifica una finestra di ritardo per evitare un'elaborazione eccessiva nel servizio Registrazione dispositivi di rete. Il valore predefinito è 64 ore.
     - **Pianificazione**: specifica la pianificazione per la valutazione della conformità in base alla quale il profilo distribuito viene valutato nei computer client. Può trattarsi di una pianificazione semplice o personalizzata. Il profilo viene valutato dai computer client quando l'utente effettua l'accesso.
 4.  Completare la procedura guidata per distribuire il profilo.

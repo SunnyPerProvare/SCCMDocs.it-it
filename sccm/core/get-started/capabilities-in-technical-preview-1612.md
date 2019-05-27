@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ffe97408d5de71c9ea67b07649d7b92ad77f0a57
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: a41f144909ba946d3c3bc2f00a1573cad2c9b850
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56143703"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933335"
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1612 per System Center Configuration Manager
 
@@ -318,4 +318,4 @@ Dopo aver apportato queste modifiche alla configurazione, è possibile creare cr
 
 ## <a name="change-to-configuring-multi-factor-authentication-for-device-enrollment"></a>Modifica alla configurazione dell'autenticazione a più fattori per la registrazione dei dispositivi
 
-Ora che è possibile configurare l'autenticazione a più fattori (MFA) per la registrazione del dispositivo nel portale di Azure, l'opzione di autenticazione a più fattori è stata rimossa nella console di Configuration Manager. Altre informazioni sull'impostazione dell'MFA per la registrazione sono disponibili [in questo argomento su Microsoft Intune](https://docs.microsoft.com/en-us/intune/deploy-use/multi-factor-authentication-azure-active-directory).
+Ora che è possibile configurare l'autenticazione a più fattori (MFA) per la registrazione del dispositivo nel portale di Azure, l'opzione di autenticazione a più fattori è stata rimossa nella console di Configuration Manager. Altre informazioni sull'impostazione dell'MFA per la registrazione sono disponibili [in questo argomento su Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/multi-factor-authentication-azure-active-directory).

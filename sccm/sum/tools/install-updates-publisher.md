@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37a468a2b9727d66f7d3fe0cafd1aae044585b2a
-ms.sourcegitcommit: e18853c214c95e4d21b2f032aba6d17c21e97027
-ms.translationtype: HT
+ms.openlocfilehash: eb07b154c1da9c7b93f2d8e0f06b825eb52fd561
+ms.sourcegitcommit: 417e3834a42b415a8e129327dd3c15cc0c7ec5a2
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56443954"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65443187"
 ---
 # <a name="install-updates-publisher"></a>Installare Updates Publisher
 
@@ -40,14 +40,14 @@ Installare ed eseguire Updates Publisher su edizioni a 64 bit dei sistemi operat
 ### <a name="prerequisites"></a>Prerequisiti
 Di seguito sono riportati i requisiti per il computer che esegue Updates Publisher.
 
--   **Sistema operativo a 64 bit**: il computer in cui viene installato Updates Publisher deve eseguire un sistema operativo a 64 bit.
+-   **Sistema operativo a 64 bit**: il sistema in cui viene installato Updates Publisher deve eseguire un sistema operativo a 64 bit.
 -   **WSUS 4.0 o versione successiva**:
     -   per soddisfare questo requisito, in Windows Server installare la console di amministrazione predefinita.
     -   Per Windows 10 e Windows 8.1, installare [Strumenti di amministrazione remota del server per sistemi operativi Windows](https://support.microsoft.com/help/2693643/remote-server-administration-tools-rsat-for-windows-operating-systems). Questo consente di installare il supporto necessario per l'uso di Updates Publisher (*API e cmdlet PowerShell* e *Console di gestione interfaccia utente*).
 -   **Autorizzazioni**:
-    -   Installazione: amministratore locale
+    -   Installazione: Amministratore locale
     -   Maggior parte delle operazioni: utente locale
-    -   Pubblicazione o operazioni che interessano Windows Server Update Services (WSUS): membro del gruppo Amministratori WSUS nel server WSUS.
+    -   Per la pubblicazione o per operazioni che coinvolgono WSUS: membro del gruppo WSUS Administrators nel server WSUS.
 
 ### <a name="supported-languages"></a>Lingue supportate
 Updates Publisher è disponibile solo in lingua inglese, ma può gestire aggiornamenti per altre lingue. Il supporto per le lingue dipende dall'attività, ad esempio pubblicazione, creazione o modifica di aggiornamenti.
@@ -103,12 +103,10 @@ Per i titoli e le descrizioni degli aggiornamenti software sono supportate le li
 -   Russo
 -   Spagnolo
 
-
-
 ## <a name="install-updates-publisher"></a>Installare Updates Publisher
 Per installare System Center Updates Publisher, scaricare il file **UpdatesPubliser.msi** dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=55543).
 
-Per installare Updates Publisher, eseguire il file **UpdatesPublisher.msi** in un computer che soddisfa i *prerequisiti*. Il programma di installazione crea la cartella *&lt;percorso&gt;\Programmi\Microsoft\UpdatesPublisher* in cui sono presenti i file necessari per l'esecuzione di Updates Publisher.
+Per installare Updates Publisher, eseguire il file **UpdatesPublisher.msi** in un computer che soddisfa i *prerequisiti*. Il programma di installazione crea la cartella %PROGRAMFILES%\Microsoft\UpdatesPublisher* in cui sono presenti i file necessari per l'esecuzione di Updates Publisher.
 
 Poiché questa cartella contiene tutti i file necessari per l'uso di Updates Publisher, è possibile copiarla con il relativo contenuto in un nuovo percorso o computer e quindi usare Updates Publisher da tale posizione. Per eseguire Updates Publisher, è tuttavia necessario che la nuova posizione o computer soddisfi i prerequisiti.
 
@@ -118,4 +116,3 @@ Dopo aver completato l'installazione, eseguire il file **UpdatesPublisher.exe** 
  Dopo aver completato l'installazione, è consigliabile [configurare le opzioni](updates-publisher-options.md) per Updates Publisher. Per poter usare alcune funzionalità di Updates Publisher, è prima necessario configurare determinate opzioni.
 
  Se tuttavia si vogliono usare le impostazioni predefinite e non si pianifica la distribuzione di aggiornamenti in un server di aggiornamento o in dispositivi gestiti, è possibile passare direttamente alla [gestione dei cataloghi di aggiornamenti software](updates-publisher-catalogs.md) o alla [creazione di aggiornamenti software](create-updates-with-updates-publisher.md) e creare cataloghi di aggiornamento personalizzati.
-

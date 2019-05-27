@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
 ms.assetid: 4e620080-5400-45bb-87c2-fbdbc8aeacac
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17a233c7f71edfd9d294c33ee3b9813cc581b8c6
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 7a26aaa2d4e409e899763cedebd32ebf64c93ffa
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56124139"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65496372"
 ---
 # <a name="configure-options-for-updates-publisher"></a>Configurare opzioni per Updates Publisher
 
@@ -109,9 +109,9 @@ Le opzioni avanzate includono le seguenti:
 
 -   **Certificate revocation** (Revoca certificati): scegliere questa opzione per abilitare i controlli di revoca dei certificati.
 
--   **Local source publishing** (Pubblicazione origine locale): Updates Publisher può usare una copia locale di un aggiornamento in fase di pubblicazione prima del download di tale aggiornamento da Internet. La posizione deve essere una cartella sul computer che esegue Updates Publisher. Per impostazione predefinita, il percorso è **Documenti\LocalSourcePublishing.** Usare questo percorso quando in precedenza sono stati scaricati uno o più aggiornamenti o sono state apportate modifiche a un aggiornamento che si vuole distribuire.
+-   **Local source publishing** (Pubblicazione origine locale: Updates Publisher può usare una copia locale di un aggiornamento in fase di pubblicazione prima del download di tale aggiornamento da Internet. La posizione deve essere una cartella sul computer che esegue Updates Publisher. Per impostazione predefinita, il percorso è **Documenti\LocalSourcePublishing.** Usare questo percorso quando in precedenza sono stati scaricati uno o più aggiornamenti o sono state apportate modifiche a un aggiornamento che si vuole distribuire.
 
--   **Pulizia guidata aggiornamenti software**: avvia la Pulizia guidata aggiornamenti software. La procedura guidata imposta come scaduti gli aggiornamenti che si trovano sul server di aggiornamento ma non nel repository di Updates Publisher. Per altri dettagli vedere [Impostare come scaduti gli aggiornamenti senza riferimenti](#expire-unreferenced-software-updates).
+-   **Pulizia guidata aggiornamenti software**: avviare la Pulizia guidata aggiornamenti software. La procedura guidata imposta come scaduti gli aggiornamenti che si trovano sul server di aggiornamento ma non nel repository di Updates Publisher. Per altri dettagli vedere [Impostare come scaduti gli aggiornamenti senza riferimenti](#expire-unreferenced-software-updates).
 
 ## <a name="updates"></a>Aggiornamenti
  A ogni avvio, Updates Publisher può verificare automaticamente la presenza di nuovi aggiornamenti. È inoltre possibile scegliere di ricevere versioni di anteprima di Updates Publisher.
@@ -122,7 +122,7 @@ per aprire **Updates Publisher Properties** (Proprietà Updates Publisher), quin
 Quando individua un nuovo aggiornamento, Updates Publisher visualizza la finestra **Aggiornamento disponibile**. A questo punto è possibile scegliere di installare l'aggiornamento. Se si sceglie di non procedere all'installazione, l'aggiornamento viene offerto alla successiva apertura della console.
 
 ## <a name="logging"></a>Registrazione
-Updates Publisher registra le informazioni di base su Updates Publisher in **&lt;*path*&gt;\Windows\Temp\UpdatesPublisher.log**.
+Updates Publisher registra le informazioni di base su Updates Publisher in **%WINDIR%\Temp\UpdatesPublisher.log**.
 
 Usare il blocco note o **CMTrace** per visualizzare il log. CMTrace è lo strumento dei file di log di Configuration Manager ed è disponibile nella cartella **\SMSSetup\Tools** del supporto di origine di Configuration Manager.
 

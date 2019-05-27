@@ -2,7 +2,7 @@
 title: Creare applicazioni
 titleSuffix: Configuration Manager
 description: Creare applicazioni con tipi di distribuzione, metodi di rilevamento e requisiti per installare software.
-ms.date: 03/04/2019
+ms.date: 05/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 236ae6e9efafcfe24f064fb643a43524eee3718d
-ms.sourcegitcommit: 4ab85212268e76d3fd22f00e6c74edaa5abde60c
+ms.openlocfilehash: e796996f870fcdd8428f3a16b08eee56d249cfa6
+ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57426941"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65673385"
 ---
 # <a name="create-applications-in-configuration-manager"></a>Creare applicazioni in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Un'applicazione di Configuration Manager definisce i metadati sull'app. Un'applicazione ha uno o più tipi di distribuzione, che includono i file di installazione e le informazioni necessarie per installare il software nei dispositivi. Un tipo di distribuzione include anche regole, ad esempio i metodi di rilevamento e i requisiti. Queste regole specificano quando e come il client installa il software.  
+Un'applicazione Configuration Manager definisce i metadati relativi all'applicazione. Un'applicazione ha uno o più tipi di distribuzione, che includono i file di installazione e le informazioni necessarie per installare il software nei dispositivi. Un tipo di distribuzione include anche regole, ad esempio i metodi di rilevamento e i requisiti. Queste regole specificano quando e come il client installa il software.  
 
 Creare applicazioni usando i metodi seguenti:  
 
@@ -86,9 +86,9 @@ Rilevare quindi automaticamente o specificare manualmente le informazioni sull'a
 
     -   **Comportamento di installazione**: selezionare una delle tre opzioni disponibili per la modalità di installazione di questo tipo di distribuzione da parte di Configuration Manager. Per altre informazioni su queste opzioni, vedere [Esperienza utente](#bkmk_dt-ux).  
 
-    -   **Usa una connessione VPN automatica (se configurata)**: se è stato distribuito un profilo VPN nel dispositivo in cui l'utente avvia l'app, connettersi alla VPN all'avvio dell'app. Questa opzione è disponibile solo per Windows 8.1 e Windows Phone 8.1. Le connessioni VPN non sono supportate nei dispositivi Windows Phone 8.1 se si distribuisce più di un profilo VPN nel dispositivo. Per altre informazioni, vedere [Profili VPN](/sccm/protect/deploy-use/vpn-profiles).  
+    -   **Usa una connessione VPN automatica (se configurata)** : se è stato distribuito un profilo VPN nel dispositivo in cui l'utente avvia l'app, connettersi alla VPN all'avvio dell'app. Questa opzione è disponibile solo per Windows 8.1 e Windows Phone 8.1. Le connessioni VPN non sono supportate nei dispositivi Windows Phone 8.1 se si distribuisce più di un profilo VPN nel dispositivo. Per altre informazioni, vedere [Profili VPN](/sccm/protect/deploy-use/vpn-profiles).  
 
-    - **Effettua il provisioning di questa applicazione per tutti gli utenti nel dispositivo**<!--1358310-->: a partire dalla versione 1806, è possibile effettuare il provisioning di un'applicazione con un pacchetto app Windows per tutti gli utenti nel dispositivo. Per altre informazioni, vedere [Creare applicazioni Windows](/sccm/apps/get-started/creating-windows-applications#bkmk_provision).  
+    - **Effettua il provisioning di questa applicazione per tutti gli utenti nel dispositivo**<!--1358310-->: a partire dalla versione 1806, è possibile effettuare il provisioning di un'applicazione con un pacchetto di app Windows per tutti gli utenti del dispositivo. Per altre informazioni, vedere [Creare applicazioni Windows](/sccm/apps/get-started/creating-windows-applications#bkmk_provision).  
 
        > [!Tip]  
        > Se si modifica un'applicazione esistente, questa impostazione è disponibile nella scheda **Esperienza utente** delle proprietà del tipo di distribuzione del pacchetto app Windows.  
@@ -126,6 +126,9 @@ Per aggiungere altri tipi di distribuzione o configurare altre impostazioni, ved
         > Un nome dell'applicazione localizzata è necessario per ogni versione configurata per le diverse lingue.  
 
     -   **Categorie utente**: scegliere **Modifica** per specificare le categorie dell'applicazione nella lingua selezionata. Gli utenti di Software Center usano queste categorie per filtrare e ordinare le applicazioni disponibili.  
+
+        > [!IMPORTANT]  
+        > Le categorie utente si applicano solo alle distribuzioni a raccolte di utenti.  Se un'applicazione viene distribuita a una raccolta di computer, le categorie utente vengono ignorate.
 
     -   **Documentazione utente**: specificare il percorso di un file da cui gli utenti di Software Center possono ottenere altre informazioni su questa applicazione. Questo percorso è un indirizzo di sito Web o un percorso di rete con un nome file. Assicurarsi che gli utenti possano accedere a questo percorso.  
 
@@ -206,7 +209,7 @@ Seguire quindi una di queste procedure per [identificare automaticamente](#bkmk_
 
     -   **Comportamento di installazione**: selezionare una delle tre opzioni disponibili per la modalità di installazione di questo tipo di distribuzione da parte di Configuration Manager. Per altre informazioni su queste opzioni, vedere [Esperienza utente](#bkmk_dt-ux).  
 
-    -   **Usa una connessione VPN automatica (se configurata)**: se è stato distribuito un profilo VPN nel dispositivo in cui l'utente avvia l'app, connettersi alla VPN all'avvio dell'app. Questa opzione è disponibile solo per Windows 8.1 e Windows Phone 8.1. Le connessioni VPN non sono supportate nei dispositivi Windows Phone 8.1 se si distribuisce più di un profilo VPN nel dispositivo. Per altre informazioni, vedere [Profili VPN](/sccm/protect/deploy-use/vpn-profiles).  
+    -   **Usa una connessione VPN automatica (se configurata)** : se è stato distribuito un profilo VPN nel dispositivo in cui l'utente avvia l'app, connettersi alla VPN all'avvio dell'app. Questa opzione è disponibile solo per Windows 8.1 e Windows Phone 8.1. Le connessioni VPN non sono supportate nei dispositivi Windows Phone 8.1 se si distribuisce più di un profilo VPN nel dispositivo. Per altre informazioni, vedere [Profili VPN](/sccm/protect/deploy-use/vpn-profiles).  
 
 4.  Scegliere **Avanti** e quindi passare alle [Opzioni del Contenuto per il tipo di distribuzione](#bkmk_dt-content).  
 
@@ -243,7 +246,7 @@ Nella pagina **Contenuto** specificare le informazioni seguenti:
 
     - **Avvio disinstallazione da**: specificare la cartella che contiene il programma di disinstallazione per il tipo di distribuzione (facoltativo). Questa cartella può corrispondere a un percorso assoluto nel client. Può anche essere un percorso relativo in un punto di distribuzione della cartella con il pacchetto.  
 
-- **Ripristino programma**: a partire dalla versione 1810, per i tipi di distribuzione Windows Installer e Script Installer, è possibile specificare il nome del programma di ripristino ed eventuali parametri obbligatori.<!--1357866-->  
+- **Ripristino programma**: a partire dalla versione 1810, per i tipi di distribuzione Windows Installer e Programma di installazione dello script, è possibile specificare il nome del programma di ripristino ed eventuali parametri obbligatori.<!--1357866-->  
 
     - **Inizio ripristino in**: specificare la cartella che contiene il programma di ripristino per il tipo di distribuzione (facoltativo). Questa cartella può corrispondere a un percorso assoluto nel client. Può anche essere un percorso relativo in un punto di distribuzione della cartella con il pacchetto.  
 
@@ -263,7 +266,7 @@ Quando si visualizzano le proprietà di un tipo di distribuzione, le opzioni seg
 
         - **Posizione del contenuto di disinstallazione**: specificare il percorso di rete per il contenuto usato per disinstallare l'applicazione.  
 
-- **Consenti ai client di usare punti di distribuzione dal gruppo di limiti del sito predefinito**: specificare se i clienti devono scaricare e installare il software da un punto di distribuzione nel gruppo di limiti del sito predefinito quando il contenuto non è disponibile da un punto di distribuzione nel gruppo di limiti corrente o nei gruppi di limiti vicini.  
+- **Consenti ai client di usare punti di distribuzione dal gruppo di limiti del sito predefinito**: specificare se i client devono scaricare e installare il software da un punto di distribuzione nel gruppo di limiti predefinito del sito quando il contenuto non è disponibile in un punto di distribuzione nei gruppi di limiti correnti o vicini.  
 
 - **Opzioni di distribuzione**: specificare se i client devono scaricare l'applicazione quando usano un punto di distribuzione da un gruppo di limiti vicino o dai gruppi di limiti del sito predefiniti.  
 
@@ -321,7 +324,7 @@ Passare alla sezione successiva sull'uso di uno script personalizzato come metod
 2.  Nella finestra di dialogo **Editor dello script** fare clic sull'elenco a discesa **Tipo di script**. Selezionare uno dei linguaggi di script seguenti per rilevare il tipo di distribuzione: PowerShell, VBScript o JScript.  
 
     > [!Note]  
-    > A partire dalla versione 1810, quando uno script di Windows PowerShell viene eseguito come un metodo di rilevamento di app, il client di Configuration Manager chiama PowerShell con il `-NoProfile` parametro. Questa opzione avvia PowerShell senza i profili. Un profilo di PowerShell è uno script che viene eseguito all'avvio di PowerShell. <!--3607762-->  
+    > A partire dalla versione 1810, quando si esegue uno script di Windows PowerShell come metodo di rilevamento app, il client di Configuration Manager chiama PowerShell con il parametro `-NoProfile`. Questa opzione avvia PowerShell senza i profili. Un profilo di PowerShell è uno script che viene eseguito all'avvio di PowerShell. <!--3607762-->  
 
 3.  Nella casella **Contenuti script** immettere lo script da usare o incollare i contenuti di uno script esistente. Scegliere **Apri** per passare a uno script salvato esistente. Fare clic su **Cancella** per rimuovere il test dal campo Contenuti script. Se necessario, abilitare l'opzione **Esegui lo script come processo a 32 bit nei client a 64 bit**.  
 
@@ -403,7 +406,7 @@ Nella pagina **Esperienza utente** specificare le informazioni seguenti:
 
     - **Installa per sistema**: il client installa l'applicazione solo una volta. È disponibile per tutti gli utenti.  
 
-    - **Installa per sistema se la risorsa è un dispositivo, altrimenti installa per utente**: se si distribuisce l'applicazione in un dispositivo, il client la installa per tutti gli utenti. Se si distribuisce l'applicazione per un utente, il client la installa solo per tale utente.  
+    - **Installa per sistema se la risorsa è un dispositivo, altrimenti installa per utente**: se si distribuisce l'applicazione a un dispositivo, il client la installa per tutti gli utenti. Se si distribuisce l'applicazione per un utente, il client la installa solo per tale utente.  
 
 - **Requisiti di accesso**: selezionare una delle opzioni seguenti:  
 
@@ -436,7 +439,7 @@ Nella pagina **Esperienza utente** specificare le informazioni seguenti:
     >  
     > L'installazione in un contesto di sistema e l'autorizzazione dell'interazione con l'installazione da parte degli utenti non consentono di ottenere una configurazione sicura. Per altre informazioni, vedere [Sicurezza e privacy per la gestione delle applicazioni](/sccm/apps/plan-design/security-and-privacy-for-application-management#bkmk_interact).  
 
-- **Tempo di esecuzione massimo consentito (minuti)**: specificare la durata massima di esecuzione in minuti prevista per il tipo di distribuzione nel computer client. È possibile specificare questa impostazione come numero intero maggiore di zero. Il valore predefinito è 120 minuti (due ore).  
+- **Tempo di esecuzione massimo consentito (minuti)** : specificare la durata massima di esecuzione in minuti prevista per il tipo di distribuzione nel computer client. È possibile specificare questa impostazione come numero intero maggiore di zero. Il valore predefinito è 120 minuti (due ore).  
 
     Usare questo valore per le azioni seguenti:  
 
@@ -447,7 +450,7 @@ Nella pagina **Esperienza utente** specificare le informazioni seguenti:
     > [!IMPORTANT]  
     >  Potrebbe verificarsi un conflitto se il **Tempo di esecuzione massimo consentito** è maggiore della finestra di manutenzione pianificata. Se l'utente imposta il tempo di esecuzione massimo su una durata maggiore di quella di qualsiasi finestra di manutenzione disponibile, il tipo di distribuzione corrispondente non viene eseguito.  
 
-- **Tempo previsto di installazione (minuti)**: specificare il tempo previsto per l'installazione del tipo di distribuzione. Gli utenti possono visualizzarlo in Software Center.  
+- **Tempo previsto di installazione (minuti)** : specificare il tempo previsto per l'installazione del tipo di distribuzione. Gli utenti possono visualizzarlo in Software Center.  
 
 
 #### <a name="deployment-type-properties-user-experience-options"></a>Opzioni di **Esperienza utente** delle proprietà del tipo di distribuzione
@@ -532,9 +535,9 @@ Specificare i codici restituiti per controllare i comportamenti dopo il completa
 
 3. Selezionare un **Tipo di codice** dall'elenco a discesa. Questa impostazione consente di definire il modo in cui Configuration Manager interpreta il codice restituito da questo tipo di distribuzione. I tipi disponibili dipendono dalla tecnologia del tipo di distribuzione.   
 
-    - **Operazione riuscita (senza riavvio)**: il tipo di distribuzione è stato installato e non è necessario alcun riavvio.  
+    - **Operazione riuscita (senza riavvio)** : il tipo di distribuzione è stato installato e non è necessario alcun riavvio.  
 
-    - **Errore (senza riavvio)**: non è stato possibile installare il tipo di distribuzione.  
+    - **Errore (senza riavvio)** : non è stato possibile installare il tipo di distribuzione.  
 
     - **Avvio a freddo**: il tipo di distribuzione è stato installato ma richiede il riavvio del dispositivo. Non è possibile eseguire altre installazioni fino al riavvio del dispositivo.  
 
@@ -648,9 +651,9 @@ Configuration Manager supporta i tipi di distribuzione seguenti per le applicazi
 |--------------------------|----------------------|  
 | **Windows Installer (file \*.msi)** | Un file di Windows Installer. |  
 | **Pacchetto app Windows (\*.appx, \*.appxbundle)** | Per Windows 8 o versioni successive. Selezionare un file del pacchetto dell'app Windows o un pacchetto di bundle dell'app di Windows. |  
-| **Pacchetto app Windows (\*.appx, \*.appxbundle, \*.msix, \*.msixbundle)** | A partire dalla versione 1806, per nuovi formati pacchetto app Windows 10 (con estensione msix) e bundle dell'app (con estensione msixbundle). Selezionare un file del pacchetto app Windows o un pacchetto bundle dell'app di Windows.<!--1357427--> |  
+| **Pacchetto app Windows (\*.appx, \*.appxbundle, \*.msix, \*.msixbundle)** | A partire dalla versione 1806, per nuovi formati pacchetto app Windows 10 (con estensione msix) e bundle dell'app (con estensione msixbundle). Selezionare un file del pacchetto dell'app Windows o un pacchetto di bundle dell'app di Windows.<!--1357427--> |  
 | **Pacchetto app Windows (in Windows Store)** | Per Windows 8 o versioni successive. Consente di specificare un collegamento all'app in Windows Store o esplorare lo Store per selezionare l'app.<sup>[Nota 1](#bkmk_note1)</sup> |  
-| **Programma di installazione dello script** | Consente di specificare uno script o un programma che viene eseguito nei client Windows per installare contenuti o eseguire un'azione. Usare questo tipo di distribuzione per programmi di installazione di tipo setup.exe o per wrapper di script. |  
+| **Programma di installazione dello script** | Consente di specificare uno script o un programma che viene eseguito nei client Windows per installare contenuti o eseguire un'azione. Usare questo tipo di distribuzione per programmi di installazione di tipo setup.exe o wrapper di script. |  
 | **Microsoft Application Virtualization 4** | Un manifesto di Microsoft App-V v4. |  
 | **Microsoft Application Virtualization 5** | Un file del pacchetto Microsoft App-V v5. |  
 | **Pacchetto app Windows Phone (file \*.xap)** | Un file del pacchetto app Windows Phone. |  

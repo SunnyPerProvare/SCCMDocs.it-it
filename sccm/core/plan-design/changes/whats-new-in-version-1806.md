@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 301b7de8d991b7e272aa57e6d87e912d6c3df210
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 03368d543b539b018ba581277cb0ba7e6e8cb251
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65495390"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933505"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novità della versione 1806 di Configuration Manager (Current Branch)
 
@@ -308,7 +308,7 @@ Per altre informazioni, vedere [Creare applicazioni Windows](/sccm/apps/get-star
 
 ### <a name="uninstall-application-on-approval-revocation"></a>Disinstallare l'applicazione in caso di revoca dell'approvazione
 <!--1357891-->
-Quando si revoca l'approvazione per un'applicazione, il comportamento è stato modificato. Ora, quando si nega la richiesta per l'applicazione, il client disinstalla l'applicazione dal dispositivo dell'utente. Questo comportamento richiede che si abiliti la [funzionalità facoltativa](https://docs.microsoft.com/en-us/sccm/core/servers/manage/install-in-console-updates#bkmk_options) **Approva le richieste dell'applicazione per gli utenti per ogni dispositivo**. 
+Quando si revoca l'approvazione per un'applicazione, il comportamento è stato modificato. Ora, quando si nega la richiesta per l'applicazione, il client disinstalla l'applicazione dal dispositivo dell'utente. Questo comportamento richiede che si abiliti la [funzionalità facoltativa](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_options) **Approva le richieste dell'applicazione per gli utenti per ogni dispositivo**. 
 
 Per altre informazioni, vedere l'argomento relativo alla [distribuzione delle applicazioni](/sccm/apps/deploy-use/deploy-applications#bkmk_approval).
 

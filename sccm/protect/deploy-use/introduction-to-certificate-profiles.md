@@ -7,16 +7,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
 ms.assetid: 41dcc259-f147-4420-bff2-b65bdf8cff77
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5872a6a8ee69e50d0abfe5840a087aaf83ab7aa5
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 07d6ecefb2cc4cded7ce43bad3f681f8f335ec4e
+ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156611"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65500445"
 ---
 # <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Introduzione ai profili certificato in System Center Configuration Manager
 
@@ -46,18 +46,18 @@ I profili di certificato forniscono le seguenti funzionalità di gestione:
 
 -   **Certificato CA attendibile**: consente di distribuire un certificato della CA radice attendibile o un certificato della CA intermedio. Questi certificati formano una catena di certificati quando il dispositivo deve eseguire l'autenticazione a un server.  
 
--   **Simple Certificate Enrollment Protocol (SCEP)**: consente di richiedere un certificato per un dispositivo o un utente usando il protocollo SCEP. Questo tipo richiede il ruolo del servizio Registrazione dispositivi di rete (NDES) in un server che esegue Windows Server 2012 R2 o versione successiva.
+-   **Simple Certificate Enrollment Protocol (SCEP)** : consente di richiedere un certificato per un dispositivo o un utente usando il protocollo SCEP. Questo tipo richiede il ruolo del servizio Registrazione dispositivi di rete (NDES) in un server che esegue Windows Server 2012 R2 o versione successiva.
 
-    Per creare un profilo certificato di tipo **Simple Certificate Enrollment Protocol (SCEP)**, creare prima un profilo **Certificato CA attendibile**.
+    Per creare un profilo certificato di tipo **Simple Certificate Enrollment Protocol (SCEP)** , creare prima un profilo **Certificato CA attendibile**.
 
--   **Scambio di informazioni personali (PFX)**: consente di richiedere un certificato PFX (noto anche come PKCS #12) per un dispositivo o un utente.<!--1321368-->  
+-   **Scambio informazioni personali (.pfx)** : consente di richiedere un certificato con estensione pfx (noto anche come PKCS #12) per un dispositivo o un utente.<!--1321368-->  
 
     Per l'elaborazione delle richieste, è possibile creare profili certificato PFX tramite [importazione delle credenziali](/sccm/mdm/deploy-use/import-pfx-certificate-profiles) da certificati esistenti o tramite [definizione di una CA](/sccm/mdm/deploy-use/create-pfx-certificate-profiles).
 
     > [!Note]  
-    > Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+    > Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
 
-    A partire dalla versione 1706, è possibile usare Microsoft o Entrust come CA per i certificati di **scambio di informazioni personali (PFX)**.
+    A partire dalla versione 1706, è possibile usare Microsoft o Entrust come CA per i certificati di **scambio di informazioni personali (PFX)** .
 
 
 ## <a name="requirements-and-supported-platforms"></a>Requisiti e piattaforme supportate  
