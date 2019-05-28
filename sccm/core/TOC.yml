@@ -706,6 +706,8 @@
               href: clients/manage/cmg/monitor-clients-cloud-management-gateway.md
         - name: Pianificare la gestione dei client basata su Internet
           href: clients/manage/plan-internet-based-client-management.md
+        - name: Flusso di lavoro di autenticazione di Azure AD
+          href: clients/manage/azure-ccmsetup.md
     - name: Raccolte
       items:
         - name: Introduzione alle raccolte
@@ -720,7 +722,7 @@
           href: clients/manage/collections/manage-collections.md
         - name: Come usare le finestre di manutenzione
           href: clients/manage/collections/use-maintenance-windows.md
-        - name: Come classificare automaticamente i dispositivi in raccolte con
+        - name: Come classificare automaticamente i dispositivi in raccolte
           href: clients/manage/collections/automatically-categorize-devices-into-collections.md
         - name: Sicurezza e privacy per le raccolte
           href: clients/manage/collections/security-and-privacy-for-collections.md
