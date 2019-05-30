@@ -2,7 +2,7 @@
 title: Coesistenza di gestioni dei dati master di terze parti
 titleSuffix: Configuration Manager
 description: Informazioni sull'uso di un servizio MDM di terze parti con Configuration Manager
-ms.date: 04/26/2019
+ms.date: 05/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,18 +11,18 @@ ms.assetid: ed4dc65e-e5d5-4f75-88ac-f4849ec8fc10
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6abf4c81d03d5887294c85337b403a6fb17dca98
-ms.sourcegitcommit: 23852dda81bb8496dd10c0a8ec4f740a8e15efc3
+ms.openlocfilehash: 5fbb2d4a902c21ac2fa2186bba70f58d66e50c48
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64873370"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176846"
 ---
 # <a name="third-party-mdm-coexistence-with-configuration-manager"></a>Coesistenza di servizi MDM di terze parti con Configuration Manager
 
 Quando si gestiscono i dispositivi Windows 10 contemporaneamente tramite Configuration Manager e Microsoft Intune, questa funzionalità è detta [co-gestione](/sccm/comanage/overview). Quando si gestiscono i dispositivi con Configuration Manager e ci si iscrive a un servizio MDM di terze parti, questa funzionalità è detta *coesistenza*. La disponibilità di due autorità di gestione per un singolo dispositivo può essere problematica se non si implementa la corretta orchestrazione tra le due. Con la co-gestione, Configuration Manager e Intune bilanciano i [carichi di lavoro](/sccm/comanage/workloads) per assicurare che non si verifichino conflitti. Questa interazione non esiste con i servizi di terze parti, quindi le funzionalità di gestione della coesistenza presentano limitazioni.
 
-Il client Configuration Manager può coesistere con un servizio MDM di terze parti in un dispositivo aggiunto ad Azure Active Directory. Il dispositivo può essere di uno dei due tipi seguenti:
+Il client Configuration Manager può coesistere con un servizio MDM di terze parti in un dispositivo con Windows 10 versione 1709 o successiva, aggiunto ad Azure Active Directory. Il dispositivo può essere di uno dei due tipi seguenti:
 
 - [Aggiunto solo ad Azure AD](https://docs.microsoft.com/azure/active-directory/devices/azureadjoin-plan). Questo tipo è anche noto come "aggiunto a un dominio cloud".  
 

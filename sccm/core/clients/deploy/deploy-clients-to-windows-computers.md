@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3260fb68d9ce334061fc39fe8d40cd68d109655e
-ms.sourcegitcommit: 99dfe4fb9e9cfd20c44380ae442b3a5b895a0d9b
+ms.openlocfilehash: 2b53de9695fc2f2586ef162362394536ac911a06
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65214725"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176799"
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-configuration-manager"></a>Come distribuire i client nei computer Windows in Configuration Manager
 
@@ -310,7 +310,7 @@ Usare la procedura seguente per creare un pacchetto e un programma di Configurat
 
 4.  Nella pagina **File di origine** selezionare **Reperisci sempre i file di origine da una cartella di origine**.  
 
-5.  Nella pagina **Cartella di origine** selezionare **Percorso di rete (nome UNC)**. A questo punto immettere il percorso di rete del server e della condivisione che contiene i file di installazione del client.  
+5.  Nella pagina **Cartella di origine** selezionare **Percorso di rete (nome UNC)** . A questo punto immettere il percorso di rete del server e della condivisione che contiene i file di installazione del client.  
 
     > [!NOTE]  
     >  Il computer in cui è in esecuzione la distribuzione di Configuration Manager deve avere accesso alla cartella di rete specificata. In caso contrario, l'installazione del client ha esito negativo.  
@@ -518,6 +518,8 @@ Per assegnare il punto di gestione basato su Internet dopo l'installazione del c
 
 #### <a name="configure-clients-for-internet-based-client-management-after-client-installation-by-using-a-script"></a>Configurare i client per la gestione client basata su Internet dopo l'installazione usando uno script  
 
+##### <a name="vbscript"></a>VBScript
+
 1.  Aprire un editor di testo, come Blocco note.  
 
 2.  Copiare e inserire l'esempio di VBScript seguente nel file. Sostituire *mp.contoso.com* con l'FQDN Internet del punto di gestione basato su Internet.  
@@ -556,6 +558,28 @@ Per assegnare il punto di gestione basato su Internet dopo l'installazione del c
 
 Potrebbe essere necessario riavviare il client per rendere effettive le modifiche.  
 
+##### <a name="powershell"></a>PowerShell
+
+1. Aprire un editor di righe PowerShell come PowerShell ISE o Visual Studio Code o qualunque editor di testo, come Notepad.
+
+2. Copiare e inserire le seguenti righe di codice nell'editor. Sostituire "mp.contoso.com" con l'FQDN Internet del punto di gestione basato su Internet.
+
+    ``` PowerShell
+    
+    $newInternetBasedManagementPointFQDN = 'mp.contoso.com'
+    $client = New-Object -ComObject Microsoft.SMS.Client
+    $client.SetInternetManagementPointFQDN($newInternetBasedManagementPointFQDN)
+    Restart-Service CcmExec
+    $client.GetInternetManagementPointFQDN()
+    
+    ```
+
+    > [!NOTE]  
+    >  L'ultima riga serve solo a verificare il nuovo valore MP di Internet.
+    >
+    >  Per eliminare il punto di gestione basato su Internet specificato, rimuovere il valore del nome di dominio completo del server racchiuso tra virgolette. La riga avrà l'aspetto seguente: `$newInternetBasedManagementPointFQDN = ''`
+
+3. Eseguire questo script con diritti elevati.
 
 
 ##  <a name="BKMK_Provision"></a> Effettuare il provisioning delle proprietà di installazione client per le installazioni client basate su Criteri di gruppo e aggiornamento software

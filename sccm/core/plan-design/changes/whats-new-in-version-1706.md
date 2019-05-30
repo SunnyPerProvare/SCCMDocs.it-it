@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93862e95a3bae13582c2aa70daf2db22f9d621d8
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: cc88e70360599391c84e54e41e73b53ef3b70678
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65495459"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66177034"
 ---
 # <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Novità della versione 1706 di System Center Configuration Manager
 

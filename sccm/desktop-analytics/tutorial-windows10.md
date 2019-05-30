@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28e0326cf370d000052eb3bc675e70377d7954c5
-ms.sourcegitcommit: 234f97fde834f94b75f90850378521cf0c5a2343
+ms.openlocfilehash: 7eb322550c6d11426240736d3d0c6b9ff2c9764f
+ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64945098"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66264550"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Esercitazione: Distribuire Windows 10 per contenuto pilota
 
@@ -140,6 +140,10 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 6. Selezionare un'area di lavoro nuovo o esistente e quindi selezionare **imposta come area di lavoro di Analitica Desktop**.  Quindi selezionare **continuazione** nel **Confirm e concedere l'accesso** finestra di dialogo.  
 
 7. Nella nuova scheda del browser, scegliere un account da usare per l'accesso. Selezionare l'opzione **fornire il consenso per conto dell'organizzazione** e selezionare **Accept**.  
+
+
+    > [!Note]  
+    > Questo consenso consiste nell'assegnare l'applicazione MALogAnalyticsReader il ruolo di lettura Log Analitica per l'area di lavoro. Questo ruolo applicazione è richiesto dal Desktop Analitica. Per altre informazioni, vedere [ruolo applicazione MALogAnalyticsReader](/sccm/desktop-analytics/troubleshooting#bkmk_MALogAnalyticsReader).  
 
 8. Tornare alla pagina al **configurare l'area di lavoro**, selezionare **successivo**.  
 
@@ -311,11 +315,11 @@ Utilizzare questa procedura per distribuire Windows 10 in Configuration Manager 
 
 5. Completare l'aggiunta guidata pacchetto di aggiornamento del sistema operativo.  
 
-#### <a name="distribute-content"></a>Distribuisci contenuto
+#### <a name="distribute-content"></a>Distribuire il contenuto
 
 Quindi distribuire il pacchetto di aggiornamento del sistema operativo ai punti di distribuzione.  
 
-1. Selezionare il pacchetto di aggiornamento del sistema operativo nell'elenco. Nel **Home** della barra multifunzione, nella **distribuzione** gruppo, selezionare **Distribuisci contenuto**. Viene visualizzata la Distribuzione guidata contenuto.  
+1. Selezionare il pacchetto di aggiornamento del sistema operativo nell'elenco. Nella scheda **Home** della barra multifunzione selezionare **Distribuisci contenuto** nel gruppo **Distribuzione**. Viene visualizzata la Distribuzione guidata contenuto.  
 
 2. Nel **generali** pagina, verificare che il contenuto elencato sia il contenuto che si desidera distribuire e quindi selezionare **successivo**.  
 

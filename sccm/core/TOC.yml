@@ -217,6 +217,8 @@
           href: plan-design/security/configure-security.md
         - name: Riferimento tecnico per i controlli crittografici
           href: plan-design/security/cryptographic-controls-technical-reference.md
+        - name: Abilitare TLS 1.2
+          href: plan-design/security/enable-tls-1-2.md
 - name: Introduzione
   items:
     - name: Valutare Center Configuration Manager in un lab

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b62ca813b11a6c49366c80623e7c4462e2e4897
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: aa92ed294196d44aaafcf4e873c706e135928c90
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133902"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176654"
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Come gestire i client in System Center Configuration Manager
 
@@ -304,10 +304,13 @@ Regolare le dimensioni della cache del client senza reinstallare il client. Conf
 
 1.  Aprire un prompt dei comandi di Windows e modificare la cartella del percorso in cui si trova CCMSetup.exe.  
 
-2.  Digitare **Ccmsetup.exe /uninstall**e quindi premere **Invio**.  
+2.  Digitare **CCMSetup.exe /uninstall** e quindi premere **INVIO**.  
 
 > [!NOTE]  
->  I risultati del processo di disinstallazione non vengono visualizzati sullo schermo. Per verificare il completamento della disinstallazione client, esaminare il file di log **CCMSetup.log** nella cartella *%windir%\ ccmsetup* nel computer client.  
+>  I risultati del processo di disinstallazione non vengono visualizzati sullo schermo. Per verificare il completamento della disinstallazione client, esaminare il file di log **CCMSetup.log** nella cartella *%windir%\ccmsetup\logs* nel computer client.  
+
+> [!TIP]
+> Se è necessario attendere il completamento del processo di disinstallazione prima di eseguire un'altra operazione, eseguire `Wait-Process CCMSetup` in PowerShell. Questo comando consente di sospendere uno script fino al completamento del processo CCMSetup.
 
 ##  <a name="BKMK_ConflictingRecords"></a> Gestire i record in conflitto per i client di Configuration Manager  
  Configuration Manager usa l'identificatore hardware per tentare di identificare i client che potrebbero essere dei duplicati e avvertire l'utente dei record in conflitto. Ad esempio, se si reinstalla un computer, l'identificatore hardware rimane lo stesso mentre il GUID usato da Configuration Manager potrebbe cambiare.  
@@ -425,6 +428,6 @@ Specificando un elenco di identificatori hardware che Configuration Manager deve
 
     -   Individuare il file usando Esplora risorse e fare doppio clic sul file script.  
 
-    -   Aprire un prompt dei comandi e digitare: **cscript &lt;percorso\nomefile.vbs>**.  
+    -   Aprire un prompt dei comandi e digitare: **cscript &lt;percorso\nomefile.vbs>** .  
 
 5.  Scegliere **OK** nella finestra di dialogo **Windows Script Host**.  

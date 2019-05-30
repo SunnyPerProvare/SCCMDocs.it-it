@@ -2,7 +2,7 @@
 title: Novità nella gestione di dispositivi mobili ibrida
 titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità di gestione dei dispositivi mobili disponibili per le distribuzioni ibride con Configuration Manager e Intune.
-ms.date: 05/23/2019
+ms.date: 05/28/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc41388c1586fc73ce93127dd0e6492f587d18be
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: b6a4cfbc7e9db5f4402278b73c2ca7ea1d869953
+ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176685"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66355039"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con Configuration Manager e Microsoft Intune
 
@@ -50,6 +50,12 @@ Ogni sezione di questo articolo elenca le funzionalità ibride in tre categorie 
 ## <a name="may-2019"></a>Maggio 2019
 
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
+
+#### <a name="windows-company-portal-app"></a>App Portale aziendale Windows
+
+<!-- 3316993 -->
+
+L'app portale aziendale di Windows contiene ora una nuova pagina con l'etichetta **dispositivi**. Il **dispositivi** pagina illustra agli utenti tutti i dispositivi registrati. Gli utenti visualizzeranno questa modifica nel portale aziendale quando si usano versione 10.3.4291.0 e versioni successive. Per altre informazioni, vedere [come configurare l'app portale aziendale di Microsoft Intune](https://docs.microsoft.com/intune/company-portal-app).
 
 #### <a name="android-enterprise-app-management"></a>Gestione delle app Android Enterprise
 
@@ -284,7 +290,7 @@ Gli utenti finali possono ora accedere alle proprietà e alle azioni principali 
 #### <a name="pin-prompt-when-you-change-fingerprints-or-face-id-on-an-ios-device"></a>Richiesta del PIN quando si modificano le impronte digitali o l'ID del viso in un dispositivo iOS
 
 <!--2637704-->  
-Agli utenti viene ora richiesto un PIN dopo la modifica dei dati biometrici nel proprio dispositivo iOS. Sono incluse le modifiche alle impronte digitali o all'ID del viso registrati. La durata del messaggio di richiesta dipende dalla configurazione del timeout *Controlla di nuovo i requisiti di accesso dopo (minuti)*.  Se non è impostato alcun PIN, all'utente viene richiesto di impostarne uno.  
+Agli utenti viene ora richiesto un PIN dopo la modifica dei dati biometrici nel proprio dispositivo iOS. Sono incluse le modifiche alle impronte digitali o all'ID del viso registrati. La durata del messaggio di richiesta dipende dalla configurazione del timeout *Controlla di nuovo i requisiti di accesso dopo (minuti)* .  Se non è impostato alcun PIN, all'utente viene richiesto di impostarne uno.  
 
 Questa funzionalità è disponibile solo per iOS e richiede la partecipazione delle applicazioni che integrano Intune APP SDK per iOS, versione 8.1.1 o versioni successive. L'integrazione dell'SDK è necessaria in modo il comportamento possa essere imposto nelle applicazioni di destinazione. Questa integrazione avviene sistematicamente e dipende dai team delle applicazioni specifiche. Alcune app partecipanti sono WXP, Outlook, Managed Browser e Yammer.
 
@@ -588,7 +594,7 @@ Tramite Azure Active Directory (Azure AD) è ora possibile limitare l'accesso ai
   Per l'app Portale aziendale Intune in macOS è disponibile un'esperienza aggiornata. L'app è ottimizzata per visualizzare al meglio tutte le informazioni e le notifiche di conformità che servono agli utenti per tutti i dispositivi registrati. Dopo la distribuzione di Portale aziendale Intune in un dispositivo, inoltre, gli aggiornamenti vengono forniti da Microsoft AutoUpdate per macOS. Per scaricare la nuova app Portale aziendale Intune per macOS, accedere al sito Web Portale aziendale Intune da un dispositivo macOS.
   <!--1541700-->   
 
-- **Microsoft Planner fa ora parte dell'elenco di app approvate per la gestione delle app mobili (MAM)**    
+- **Microsoft Planner fa ora parte dell'elenco di app approvate per la gestione delle app mobili (MAM)**     
   L'app Microsoft Planner per iOS e Android fa ora parte delle app approvate per la gestione delle app mobili (MAM). Configurare l'app da Protezione app di Intune nel portale di Azure in tutti i tenant. Per informazioni dettagliate, vedere [elenco MAM di app approvate](https://www.microsoft.com/cloud-platform/microsoft-intune-apps).
   <!-- 1248473 -->    
 

@@ -10,12 +10,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 985b439a9f74f92a68b1e1c70e4cca0580b819c0
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: bd2a745f7fc158739898930c9d05ea40724879b1
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126795"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176089"
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager in Azure: domande frequenti
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -138,7 +138,7 @@ L'approccio alla gestione dei contenuti è molto simile per i server del sito e 
 ### <a name="while-i-am-ok-with-the-limitations-of-cloud-based-distribution-points-i-dont-want-to-put-my-management-point-into-a-dmz-even-though-that-is-needed-to-support-my-internet-based-clients-do-i-have-any-other-options"></a>Sebbene le limitazioni relative ai punti di distribuzione basati su cloud non rappresentino un problema, non intendo inserire il punto di gestione in una rete perimetrale, anche se ciò è necessario per supportare i client basati su Internet. Sono disponibili altre opzioni?
 Sì. Con Configuration Manager versione 1610, è stato introdotto il [gateway di gestione cloud](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) come funzionalità di versione non definitiva (introdotta inizialmente nella Technical Preview versione 1606 con il nome di [servizio proxy cloud](/sccm/core/get-started/capabilities-in-technical-preview-1606#a-namecloudproxyacloud-proxy-service-for-managing-clients-on-the-internet)).
 
-Il **gateway di gestione cloud** consente di gestire i client di Configuration Manager su Internet in modo semplice. Il servizio, che viene distribuito in Microsoft Azure e richiede una sottoscrizione di Azure, si connette all'infrastruttura di Configuration Manager locale usando un nuovo ruolo, denominato punto del connettore gateway di gestione cloud. Dopo aver completato la distribuzione e la configurazione, i client sono in grado di accedere ai ruoli del sistema del sito Configuration Manager locale, indipendentemente dal fatto che siano connessi alla rete privata interna o su Internet.
+**Cloud Management Gateway** consente di gestire i client di Configuration Manager su Internet in modo semplice. Il servizio, che viene distribuito in Microsoft Azure e richiede una sottoscrizione di Azure, si connette all'infrastruttura di Configuration Manager locale usando un nuovo ruolo, denominato punto del connettore gateway di gestione cloud. Dopo aver completato la distribuzione e la configurazione, i client sono in grado di accedere ai ruoli del sistema del sito Configuration Manager locale, indipendentemente dal fatto che siano connessi alla rete privata interna o su Internet.
 
 È possibile iniziare a usare il gateway di gestione cloud nel proprio ambiente e inviare commenti e suggerimenti per migliorare il servizio. Per informazioni sulle funzionalità di versioni non definitive, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkprereleasea-use-pre-release-features-from-updates).
 

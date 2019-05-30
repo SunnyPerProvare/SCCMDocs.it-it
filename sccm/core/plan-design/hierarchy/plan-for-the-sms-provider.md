@@ -2,7 +2,7 @@
 title: Piano per il provider SMS
 titleSuffix: Configuration Manager
 description: Informazioni sul ruolo Provider SMS del sistema del sito in Configuration Manager.
-ms.date: 03/12/2019
+ms.date: 05/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ff872817805c85665bde7219ca26de0bf8d78ef
-ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
+ms.openlocfilehash: 31818bf0b639db4172e090a68a704380208781ca
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58197113"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176985"
 ---
 # <a name="plan-for-the-sms-provider"></a>Piano per il provider SMS 
 
@@ -259,9 +259,14 @@ L'installazione di Windows ADK può richiedere fino a 650 MB di spazio libero su
 
 A partire dalla versione 1810, il provider SMS fornisce l'accesso per l'interoperabilità API di sola lettura a WMI su HTTPS, chiamato il **servizio di amministrazione**. Questa API REST può essere usata al posto di un servizio Web personalizzato per accedere alle informazioni dal sito.
 
-Il formato di URL per il **servizio di amministrazione** è `https://<servername>/AdminService/wmi/<ClassName>`, in cui `<servername>` è il server in cui è installato il provider SMS e `<ClassName>` è un nome di classe WMI di Configuration Manager valido.
+Il formato di URL per il **servizio di amministrazione** è `https://<servername>/AdminService/wmi/<ClassName>`, in cui `<servername>` è il server in cui è installato il provider SMS e `<ClassName>` è un nome di classe WMI di Configuration Manager valido. Nella versione 1810, il nome della classe non include il prefisso `SMS_`. Nella versione 1902 e versioni successive, il nome della classe è lo stesso del nome della classe WMI. 
 
-Ad esempio: `https://servername/AdminService/wmi/SMS_Site`
+Ad esempio:
+- 1810: `https://servername/AdminService/wmi/Site`
+- 1902 e versioni successive: `https://servername/AdminService/wmi/SMS_Site`
+
+> [!Note]  
+> I nomi delle classi del servizio di amministrazione distinguono tra maiuscole e minuscole. Assicurarsi di usare le maiuscole/minuscole correttamente, ad esempio SMS_Site.
 
 Effettuare chiamate dirette a questo servizio con il cmdlet di Windows PowerShell [Invoke-RestMethod](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod).
 

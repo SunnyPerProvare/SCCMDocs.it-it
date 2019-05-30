@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08f5e0d9986c59d9a2a37c26f3ed9e245ac62f41
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 6f70373f1fea7928e801c0ccdbbe75cf96e54d20
+ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120045"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65933536"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparare l'uso di gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -88,7 +88,7 @@ Ogni istanza di SQL Server può essere eseguita con un account utente di dominio
 - Per ripristinare la replica sincrona, è possibile usare la replica con commit asincrono. Per altre informazioni, vedere [Opzioni di ripristino del database del sito](/sccm/core/servers/manage/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption).  
 
     > [!Warning]  
-    > Configuration Manager non supporta il *failover* per l'uso della replica con commit asincrono come database del sito. Per altre informazioni, vedere [Failover e modalità di failover (gruppi di disponibilità AlwaysOn)](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/failover-and-failover-modes-always-on-availability-groups?view=sql-server-2014).  
+    > Configuration Manager non supporta il *failover* per l'uso della replica con commit asincrono come database del sito. Per altre informazioni, vedere [Failover e modalità di failover (gruppi di disponibilità AlwaysOn)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/failover-and-failover-modes-always-on-availability-groups?view=sql-server-2014).  
 
 Configuration Manager non convalida lo stato della replica con commit asincrono per verificare che sia aggiornato. L'uso di una replica con commit asincrono come database del sito può mettere a rischio l'integrità del sito e dei dati. Da progettazione, una replica di questo tipo potrebbe non essere sincronizzata. Per altre informazioni, vedere [Panoramica di Gruppi di disponibilità AlwaysOn (SQL Server)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server).
 
@@ -247,7 +247,8 @@ Le limitazioni seguenti si applicano a tutti gli scenari.
 - **MultiSubnetFailover**: l'uso di un gruppo di disponibilità con Configuration Manager in una configurazione con più subnet non è supportato. Non è possibile usare nemmeno la stringa di connessione tramite parola chiave [MultiSubnetFailover](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server#MultiSubnetFailover).  
 
 #### <a name="sql-servers-that-host-additional-availability-groups"></a>Istanze di SQL Server che ospitano gruppi di disponibilità aggiuntivi
-<!--SCCMDocs issue 649--> Quando SQL Server ospita uno o più gruppi di disponibilità oltre a quello usato per Configuration Manager, durante l'esecuzione del programma di installazione di Configuration Manager sono necessarie impostazioni specifiche. Queste impostazioni sono necessarie anche per installare un aggiornamento per Configuration Manager. Ogni replica in ogni gruppo di disponibilità deve avere le configurazioni seguenti:
+<!--SCCMDocs issue 649-->
+Quando SQL Server ospita uno o più gruppi di disponibilità oltre a quello usato per Configuration Manager, al momento dell'esecuzione del programma di installazione di Configuration Manager sono necessarie impostazioni specifiche. Queste impostazioni sono necessarie anche per installare un aggiornamento per Configuration Manager. Ogni replica in ogni gruppo di disponibilità deve avere le configurazioni seguenti:
 
 - Failover manuale  
 - Connessioni di sola lettura consentite  
@@ -268,7 +269,8 @@ Quando si esegue il programma di installazione di Configuration Manager per spos
 Ignorare questi errori.
 
 #### <a name="site-expansion"></a>Espansione del sito
-<!--SCCMDocs issue 568--> Se si configura il database del sito per un sito primario autonomo in modo che usi SQL Always On, non è possibile espandere il sito per includere un sito di amministrazione centrale. Se si cerca di eseguire questo processo, l'esito è negativo. Per espandere il sito, rimuovere temporaneamente il database del sito primario dal gruppo di disponibilità.
+<!--SCCMDocs issue 568-->
+Se si configura il database del sito per un sito primario autonomo in modo che usi SQL Always On, non è possibile espandere il sito per includere un sito di amministrazione centrale. Se si cerca di eseguire questo processo, l'esito è negativo. Per espandere il sito, rimuovere temporaneamente il database del sito primario dal gruppo di disponibilità.
 
 
 
@@ -287,9 +289,9 @@ Impostare il modello di recupero del database del sito su **Completo**. Questa c
 
 ## <a name="changes-for-site-recovery"></a>Modifiche per il ripristino del sito
 
-Se almeno uno dei nodi del gruppo di disponibilità continua a funzionare, usare l'opzione di ripristino del sito **Ignora ripristino database (utilizzare questa opzione se non si sono verificati errori nel database del sito)**.
+Se almeno uno dei nodi del gruppo di disponibilità continua a funzionare, usare l'opzione di ripristino del sito **Ignora ripristino database (utilizzare questa opzione se non si sono verificati errori nel database del sito)** .
 
-Se invece tutti i nodi di un gruppo di disponibilità sono andati perduti, prima di poter ripristinare il sito è necessario ricreare il gruppo di disponibilità. Configuration Manager non è in grado di ricompilare o ripristinare il nodo di disponibilità. Ricreare il gruppo, ripristinare il backup e riconfigurare SQL. Quindi usare l'opzione di ripristino sito **Ignora ripristino database (utilizzare questa opzione se non si sono verificati errori nel database del sito)**.
+Se invece tutti i nodi di un gruppo di disponibilità sono andati perduti, prima di poter ripristinare il sito è necessario ricreare il gruppo di disponibilità. Configuration Manager non è in grado di ricompilare o ripristinare il nodo di disponibilità. Ricreare il gruppo, ripristinare il backup e riconfigurare SQL. Quindi usare l'opzione di ripristino sito **Ignora ripristino database (utilizzare questa opzione se non si sono verificati errori nel database del sito)** .
 
 Per altre informazioni, vedere [Backup e ripristino](/sccm/core/servers/manage/backup-and-recovery).
 

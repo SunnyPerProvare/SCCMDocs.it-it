@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab5802ea43884ac23d434edd39569159ca48480a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 6aa1c324a3ff24feb14c6b867728a76252a8c19d
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138433"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176025"
 ---
 # <a name="capabilities-in-technical-preview-1709-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1709 per System Center Configuration Manager
 
@@ -44,7 +44,8 @@ L'articolo illustra le funzionalità disponibili nella versione 1709 di Technica
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
 ## <a name="improved-vpn-profile-experience-in-configuration-manager-console"></a>Esperienza del profilo VPN migliorata nella console di Configuration Manager
-<!-- 1313282 --> In questa versione sono state aggiornate la procedura guidata di creazione del profilo VPN e le pagine delle proprietà per visualizzare le impostazioni appropriate per la piattaforma selezionata. In particolare:
+<!-- 1313282 -->
+In questa versione sono state aggiornate la procedura guidata di creazione del profilo VPN e le pagine delle proprietà per visualizzare le impostazioni appropriate per la piattaforma selezionata. In particolare:
 
 - Ogni piattaforma ha un proprio flusso di lavoro, vale a dire che i nuovi profili VPN contengono solo l'impostazione supportata dalla piattaforma.
 - Le pagine **Piattaforme supportate** vengono ora visualizzate dopo la pagina **Generale**.  È ora possibile scegliere la piattaforma prima di impostare i valori delle proprietà.
@@ -78,7 +79,8 @@ Creare un nuovo profilo VPN usando il processo consueto. Si noti che la prima pa
 Quando si selezionano piattaforme diverse, si noti che vengono visualizzate solo le impostazioni rilevanti per la piattaforma selezionata.
 
 ## <a name="co-management-for-windows-10-devices"></a>Co-gestione per dispositivi Windows 10    
-<!-- 1350871 --> Molti clienti vogliono gestire i dispositivi Windows 10 nello stesso modo in cui gestiscono i dispositivi mobili, usando una soluzione semplice, a costi contenuti e basata sul cloud. Tuttavia, la transizione dalla gestione tradizionale a una gestione moderna può essere complessa. A partire da Windows 10, versione 1607 (nota anche come Aggiornamento dell'anniversario) è possibile aggiungere un dispositivo Windows 10 ad Active Directory (AD) locale e ad Azure AD basata sul cloud AD allo stesso tempo (Azure AD ibrida). La co-gestione sfrutta questo miglioramento e consente di gestire i dispositivi Windows 10 contemporaneamente usando sia Configuration Manager che Intune. È una soluzione che costituisce un ponte tra la gestione tradizionale e quella moderna e che consente di eseguire la transizione mediante un approccio per fasi. 
+<!-- 1350871 -->
+Molti clienti vogliono gestire i dispositivi Windows 10 nello stesso modo in cui gestiscono i dispositivi mobili usando una soluzione semplice, a costi contenuti e basata su cloud. Tuttavia, la transizione dalla gestione tradizionale a una gestione moderna può essere complessa. A partire da Windows 10, versione 1607 (nota anche come Aggiornamento dell'anniversario) è possibile aggiungere un dispositivo Windows 10 ad Active Directory (AD) locale e ad Azure AD basata sul cloud AD allo stesso tempo (Azure AD ibrida). La co-gestione sfrutta questo miglioramento e consente di gestire i dispositivi Windows 10 contemporaneamente usando sia Configuration Manager che Intune. È una soluzione che costituisce un ponte tra la gestione tradizionale e quella moderna e che consente di eseguire la transizione mediante un approccio per fasi. 
 
 ### <a name="prerequisites"></a>Prerequisiti
 Prima di poter abilitare la co-gestione, è necessario soddisfare i prerequisiti seguenti. Esistono prerequisiti generali e prerequisiti diversi per client di Configuration Manager esistenti e per dispositivi non client.
@@ -109,10 +111,10 @@ Di seguito sono elencati i prerequisiti generali per abilitare la co-gestione:
 Dopo aver abilitato la co-gestione, Configuration Manager continua a gestire tutti i carichi di lavoro. Quando si è pronti, impostare Intune perché inizi a gestire i carichi di lavoro disponibili. In questa versione Intune può gestire i carichi di lavoro seguenti.   
 
 #### <a name="compliance-policies"></a>Criteri di conformità
-I criteri di conformità definiscono le regole e le impostazioni che un dispositivo deve avere per essere considerato conforme ai criteri di accesso condizionale. È anche possibile usare tali criteri per monitorare e correggere i problemi di conformità con i dispositivi, indipendentemente dall'accesso condizionale. Per altre informazioni, vedere [Criteri di conformità del dispositivo in System Center Configuration Manager](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/device-compliance-policies).  
+I criteri di conformità definiscono le regole e le impostazioni che un dispositivo deve avere per essere considerato conforme ai criteri di accesso condizionale. È anche possibile usare tali criteri per monitorare e correggere i problemi di conformità con i dispositivi, indipendentemente dall'accesso condizionale. Per altre informazioni, vedere [Criteri di conformità del dispositivo in System Center Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/device-compliance-policies).  
 
 #### <a name="windows-update-for-business-policies"></a>Criteri di Windows Update per le aziende
-I criteri di Windows Update per le aziende consentono di configurare i criteri di rinvio per gli aggiornamenti delle funzionalità di Windows 10 o gli aggiornamenti di qualità dei dispositivi Windows 10 gestiti direttamente da Windows Update per le aziende. Per altre informazioni, vedere [Configurare i criteri di rinvio di Windows Update per le aziende](https://docs.microsoft.com/sccm/sum/deploy-use/integrate-windows-update-for-business-windows-10#configure-windows-update-for-business-deferral-policies).  
+I criteri di Windows Update per le aziende consentono di configurare i criteri di rinvio per gli aggiornamenti delle funzionalità di Windows 10 o gli aggiornamenti di qualità dei dispositivi Windows 10 gestiti direttamente da Windows Update per le aziende. Per altre informazioni, vedere [Configurare i criteri di rinvio di Windows Update per le aziende](https://docs.microsoft.com/sccm/sum/deploy-use/integrate-windows-update-for-business-windows-10#configure-windows-update-for-business-deferral-policies).  
 
 ### <a name="remote-actions-available-in-intune-on-azure-for-co-managed-devices"></a>Azioni remote disponibili in Intune in Azure per dispositivi co-gestiti
 Quando un dispositivo Windows 10 è abilitato per la co-gestione, sono disponibili le azioni remote seguenti da Intune in Azure:  
@@ -177,7 +179,7 @@ ccmsetup.msi CCMSETUPCMD="/mp:https:/&#47;contoso.cloudapp.net/CCM_Proxy_MutualA
 > [!Tip]
 >È possibile trovare i parametri della riga di comando per il sito tramite la procedura seguente:     
 > 1. Nella console di Configuration Manager accedere a **Amministrazione** > **Panoramica** > **Servizi cloud** > **Co-management** (Co-gestione).  
-> 2. Nella scheda Home nel gruppo di gestione scegliere  **Configure co-management** (Configurazione co-gestione) per aprire il caricamento guidato della co-gestione.    
+> 2. Nella scheda Home nel gruppo di gestione scegliere **Configura la co-gestione** per aprire il caricamento guidato della co-gestione.    
 > 3. Nella pagina della sottoscrizione fare clic su **Accedi**, accedere al tenant di Intune e fare clic su **Avanti**.    
 > 4. Nella pagina di attivazione fare clic su **Copia** nella sezione **Devices enrolled in Intune** (Dispositivi registrati in Intune) per copiare la riga di comando negli Appunti e quindi salvare la riga di comando da usare nella procedura per creare l'app.  
 > 5. Per uscire dalla procedura guidata, fare clic su **Annulla**.
@@ -186,21 +188,21 @@ ccmsetup.msi CCMSETUPCMD="/mp:https:/&#47;contoso.cloudapp.net/CCM_Proxy_MutualA
 Per i nuovi dispositivi Windows 10, è possibile usare il servizio AutoPilot per la configurazione guidata, che include l'aggiunta del dispositivo ad AD e Azure AD, nonché la registrazione del dispositivo in Intune. In seguito, creare un'app in Intune per distribuire il client di Configuration Manager.  
 1. Abilitare AutoPilot per i nuovi dispositivi Windows 10. Per informazioni dettagliate, vedere [Panoramica di Windows AutoPilot](https://docs.microsoft.com/windows/deployment/windows-10-auto-pilot).  
 2. Configurare la registrazione automatica in Azure AD perché registri automaticamente i dispositivi in Intune. Per informazioni dettagliate, vedere  [Registrazione di dispositivi Windows](https://docs.microsoft.com/intune/windows-enroll).
-3. Creare un'app in Intune con il pacchetto client di Configuration Manager e distribuire l'app ai dispositivi Windows 10 per i quali si vuole abilitare la co-gestione. Usare la [riga di comando per installare il client di Configuration Manager](#command-line-to-install-configuration-manager-client) quando si eseguono i passaggi per [installare i client da Internet tramite Azure AD](https://docs.microsoft.com/en-us/sccm/core/clients/deploy/deploy-clients-cmg-azure).   
+3. Creare un'app in Intune con il pacchetto client di Configuration Manager e distribuire l'app ai dispositivi Windows 10 per i quali si vuole abilitare la co-gestione. Usare la [riga di comando per installare il client di Configuration Manager](#command-line-to-install-configuration-manager-client) quando si eseguono i passaggi per [installare i client da Internet usando Azure AD](https://docs.microsoft.com/sccm/core/clients/deploy/deploy-clients-cmg-azure).   
 
 #### <a name="windows-10-devices-not-enrolled-in-intune-or-a-configuration-manager-client"></a>Dispositivi Windows 10 non registrati in Intune o che non hanno il client di Configuration Manager
 Per i dispositivi Windows 10 che non sono registrati in Intune o non hanno il client di Configuration Manager, è possibile usare la registrazione automatica in modo che vengano registrati in Intune. In seguito, creare un'app in Intune per distribuire il client di Configuration Manager.
 1. Configurare la registrazione automatica in Azure AD perché registri automaticamente i dispositivi in Intune. Per informazioni dettagliate, vedere  [Registrazione di dispositivi Windows](https://docs.microsoft.com/intune/windows-enroll).  
-2. Creare un'app in Intune con il pacchetto client di Configuration Manager e distribuire l'app ai dispositivi Windows 10 per i quali si vuole abilitare la co-gestione. Usare la [riga di comando per installare il client di Configuration Manager](#command-line-to-install-configuration-manager-client) quando si eseguono i passaggi per [installare i client da Internet tramite Azure AD](https://docs.microsoft.com/en-us/sccm/core/clients/deploy/deploy-clients-cmg-azure).
+2. Creare un'app in Intune con il pacchetto client di Configuration Manager e distribuire l'app ai dispositivi Windows 10 per i quali si vuole abilitare la co-gestione. Usare la [riga di comando per installare il client di Configuration Manager](#command-line-to-install-configuration-manager-client) quando si eseguono i passaggi per [installare i client da Internet usando Azure AD](https://docs.microsoft.com/sccm/core/clients/deploy/deploy-clients-cmg-azure).
 
 #### <a name="windows-10-devices-enrolled-in-intune"></a>Dispositivi Windows 10 registrati in Intune
-Per i dispositivi Windows 10 che sono già registrati in Intune, creare un'app in Intune per distribuire il client di Configuration Manager. Usare la [riga di comando per installare il client di Configuration Manager](#command-line-to-install-configuration-manager-client) quando si eseguono i passaggi per [installare i client da Internet tramite Azure AD](https://docs.microsoft.com/en-us/sccm/core/clients/deploy/deploy-clients-cmg-azure).  
+Per i dispositivi Windows 10 che sono già registrati in Intune, creare un'app in Intune per distribuire il client di Configuration Manager. Usare la [riga di comando per installare il client di Configuration Manager](#command-line-to-install-configuration-manager-client) quando si eseguono i passaggi per [installare i client da Internet usando Azure AD](https://docs.microsoft.com/sccm/core/clients/deploy/deploy-clients-cmg-azure).  
 
 ### <a name="switch-configuration-manager-workloads-to-intune"></a>Passare i carichi di lavoro di Configuration Manager a Intune
 Nella sezione precedente i dispositivi Windows 10 sono stati preparati per la co-gestione. I dispositivi sono stati aggiunti ad AD e Azure AD, sono stati registrati in Intune e hanno il client di Configuration Manager. È probabile che vi siano ancora dispositivi Windows 10 aggiunti ad AD e che hanno il client di Configuration Manager, ma che non sono stati aggiunti ad Azure AD o registrati in Intune. Di seguito sono riportati i passaggi per abilitare la co-gestione, preparare il resto dei dispositivi Windows 10, ovvero quelli che hanno il client di Configuration Manager ma che non sono registrati in Intune, e avviare il passaggio di specifici carichi di lavoro di Configuration Manager a Intune.
 
 1. Nella console di Configuration Manager accedere a **Amministrazione** > **Panoramica** > **Servizi cloud** > **Co-management** (Co-gestione).    
-2. Nella scheda Home nel gruppo di gestione scegliere  **Configure co-management** (Configurazione co-gestione) per aprire il caricamento guidato della co-gestione.    
+2. Nella scheda Home nel gruppo di gestione scegliere **Configura la co-gestione** per aprire il caricamento guidato della co-gestione.    
 3. Nella pagina della sottoscrizione fare clic su **Accedi**, accedere al tenant di Intune e fare clic su **Avanti**.   
 4. Nella pagina della gestione temporanea configurare le impostazioni seguenti e fare clic su **Avanti**:
     - **Gruppo pilota**: il gruppo pilota contiene una o più raccolte selezionate. Usare il gruppo come parte dell'implementazione a fasi della co-gestione. È possibile iniziare con una raccolta di test di piccole dimensioni e quindi aggiungere più raccolte al gruppo pilota durante l'implementazione della co-gestione per più utenti e dispositivi. È possibile modificare le raccolte del gruppo pilota in qualsiasi momento dalle proprietà della co-gestione.

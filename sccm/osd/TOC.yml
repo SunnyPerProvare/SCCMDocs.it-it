@@ -139,3 +139,5 @@
       href: understand/task-sequence-variables.md
     - name: Comandi di preavvio per supporti per sequenza di attività
       href: understand/prestart-commands-for-task-sequence-media.md
+    - name: Modalità di provisioning
+      href: understand/provisioning-mode.md

@@ -2,7 +2,7 @@
 title: Impostazioni client
 titleSuffix: Configuration Manager
 description: Informazioni sulle impostazioni predefinite e personalizzate per il controllo dei comportamenti client
-ms.date: 05/01/2019
+ms.date: 05/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cfb3e50d2f438995db1d28229365caf48f1f6646
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: 3271c0fbd8673e33d7a7bf6a9c6da4b0ce978377
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083291"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176791"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -63,7 +63,7 @@ Configura il computer client per [Windows BranchCache](/sccm/core/plan-design/co
 
 - **Abilita BranchCache**: Abilita BranchCache nei computer client.
 
-- **Dimensioni massime della cache BranchCache (percentuale del disco)**: Percentuale del disco consentita dall'utente per l'uso da parte di BranchCache.
+- **Dimensioni massime della cache BranchCache (percentuale del disco)** : Percentuale del disco consentita dall'utente per l'uso da parte di BranchCache.
 
 ### <a name="configure-client-cache-size"></a>Configurare la dimensione della cache del client
 
@@ -72,7 +72,7 @@ Nei computer Windows la cache client di Configuration Manager archivia i file te
 Se si sceglie **Sì**, specificare:
 
 - **Dimensioni massime della cache (MB)**
-- **Dimensioni massime della cache (percentuale del disco)**: La cache del client può raggiungere le dimensioni massime consentite in MB o in percentuale del disco, a seconda di quale di questi due valori è inferiore.
+- **Dimensioni massime della cache (percentuale del disco)** : La cache del client può raggiungere le dimensioni massime consentite in MB o in percentuale del disco, a seconda di quale di questi due valori è inferiore.
 
 ### <a name="enable-configuration-manager-client-in-full-os-to-share-content"></a>Abilita il client di Configuration Manager nell'intero sistema operativo per condividere i contenuti
 
@@ -277,7 +277,7 @@ Questa opzione richiede almeno Windows PowerShell versione 2.0. Il valore predef
 >
 > - L'area di lavoro **Monitoraggio** nella console visualizza l'ID errore stato distribuzione **0x87D00327** e la descrizione **Script non firmato**.  
 > - I report visualizzano il tipo di errore **Errore di individuazione**, quindi visualizzano il codice di errore **0x87D00327** e la descrizione **Script non firmato** oppure il codice di errore **0x87D00320** e la descrizione **L'host script non è stato ancora installato**. Un report di esempio è: **Dettagli degli errori degli elementi di configurazione in una linea di base configurazione per un asset**.  
-> - Il file **DcmWmiProvider.log** visualizza il messaggio **Script non firmato (errore: 87D00327; origine: CCM)**.  
+> - Il file **DcmWmiProvider.log** visualizza il messaggio **Script non firmato (errore: 87D00327; origine: CCM)** .  
 
 ### <a name="show-notifications-for-new-deployments"></a>Mostra notifiche per nuove distribuzioni
 
@@ -494,16 +494,16 @@ Per altre informazioni sul proxy di riattivazione, vedere [Pianificare la riatti
 
 Configurare quindi le impostazioni aggiuntive seguenti in base alle esigenze:
 
-- **Numero di porta del proxy di riattivazione (UDP)**: Numero di porta usato dai client per inviare pacchetti di riattivazione ai computer in sospensione. Mantenere la porta predefinita 25536 o modificare il numero con un valore a propria scelta.  
+- **Numero di porta del proxy di riattivazione (UDP)** : Numero di porta usato dai client per inviare pacchetti di riattivazione ai computer in sospensione. Mantenere la porta predefinita 25536 o modificare il numero con un valore a propria scelta.  
 
-- **Numero di porta di riattivazione LAN (UDP)**: mantenere il valore predefinito 9 a meno che non sia stato modificato il numero di porta di riattivazione LAN (UDP) nelle **Proprietà** del sito nella scheda **Porte**.  
+- **Numero di porta di riattivazione LAN (UDP)** : mantenere il valore predefinito 9 a meno che non sia stato modificato il numero di porta di riattivazione LAN (UDP) nelle **Proprietà** del sito nella scheda **Porte**.  
 
     > [!IMPORTANT]  
     > Questo numero deve corrispondere al numero nelle **Proprietà**del sito. Se si modifica questo numero in una posizione, non viene aggiornato automaticamente nell'altra.  
 
 - **Eccezione di Windows Defender Firewall per il proxy di riattivazione**: Il client di Configuration Manager configura automaticamente il numero di porta del proxy di riattivazione nei dispositivi che eseguono Windows Defender Firewall. Selezionare **Configura** per specificare i profili firewall desiderati.  
 
-    Se i client eseguono un firewall diverso, è necessario configurarlo manualmente per consentire il **Numero di porta del proxy di riattivazione (UDP)**.  
+    Se i client eseguono un firewall diverso, è necessario configurarlo manualmente per consentire il **Numero di porta del proxy di riattivazione (UDP)** .  
 
 - **Prefissi IPv6 se richiesti per DirectAccess o altri dispositivi di rete. Usare una virgola per specificare più voci**: Immettere i prefissi IPv6 necessari per il funzionamento del proxy di riattivazione nella rete in uso.
 
@@ -644,8 +644,10 @@ Configurare le impostazioni aggiuntive di questo gruppo su **Sì** per rendere v
     - **Nome scheda**
     - **URL del contenuto**
 
->[!NOTE]
-> Alcune funzionalità del sito Web potrebbero non funzionare quando viene usato come scheda personalizzata in Software Center. Assicurarsi di testare i risultati prima di eseguire la distribuzione nei client. <!--519659-->
+    >[!Important]  
+    > Alcune funzionalità del sito Web potrebbero non funzionare quando viene usato come scheda personalizzata in Software Center. Assicurarsi di testare i risultati prima di eseguire la distribuzione nei client. <!--519659-->
+    >
+    > Specificare indirizzi Web solo attendibili o intranet quando si aggiunge una scheda personalizzata.<!--SCCMDocs issue 1575-->
 
 Se ad esempio l'organizzazione non usa criteri di conformità e si vuole nascondere la scheda Conformità del dispositivo in Software Center, impostare **Abilita la scheda Conformità del dispositivo** su **No**.
 
@@ -718,7 +720,7 @@ Se si vogliono raccogliere i file dai computer client, selezionare **Imposta fil
 
     - **Escludi file crittografati e compressi**: quando si seleziona questa opzione, i file compressi o crittografati non vengono inclusi nell'inventario.  
 
-    - **Interrompere la raccolta file quando le dimensioni totali dei file superano (KB)**: specificare le dimensioni del file, in kilobyte (KB), oltre le quali il client smette di raccogliere i file specificati.  
+    - **Interrompere la raccolta file quando le dimensioni totali dei file superano (KB)** : specificare le dimensioni del file, in kilobyte (KB), oltre le quali il client smette di raccogliere i file specificati.  
 
     > [!NOTE]  
     > Il server del sito raccoglie le cinque versioni più recenti dei file raccolti e le archivia nella directory `<ConfigMgr installation directory>\Inboxes\Sinv.box\Filecol`. Se dopo l'ultimo ciclo di inventario software un file non è stato modificato, non viene raccolto nuovamente.  

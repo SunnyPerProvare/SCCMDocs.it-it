@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c65c85c6ec340fe595efa3bfd403e3c8d1d6a017
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: aa7d623cdd27258a265cd1b1ad22edeb78fe4da8
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56134674"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66177012"
 ---
 # <a name="configuring-reporting-in-system-center-configuration-manager"></a>Configurazione della creazione di report in System Center Configuration Manager
 
@@ -110,7 +110,7 @@ Prima di poter creare, modificare ed eseguire report nella console di System Cen
 
 6.  Nella pagina **Punto di Reporting Services** configurare le seguenti impostazioni:  
 
-    -   **Nome server di database del sito**: specificare il nome del server che ospita il database del sito di Configuration Manager. In genere, la procedura guidata recupera automaticamente il nome di dominio completo (FQDN) del server. Per specificare un'istanza di database, usare il formato &lt;*Nome server*>\&lt;*<Nome istanza*>.  
+    -   **Nome server di database del sito**: specificare il nome del server che ospita il database del sito di Configuration Manager. In genere, la procedura guidata recupera automaticamente il nome di dominio completo (FQDN) del server. Per specificare un'istanza di database, usare il formato &lt;*Nome server*>\&lt; *<Nome istanza*>.  
 
     -   **Nome database**: specificare il nome del database del sito di Configuration Manager, quindi fare clic su **Verifica** per verificare che la procedura guidata abbia accesso al database del sito.  
 
@@ -225,7 +225,7 @@ Prima di poter creare, modificare ed eseguire report nella console di System Cen
 
     5.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** , fare clic su **OK**.  
 
-    6.  Nella console espandere **Certificati (computer locale)**, quindi **Persone attendibili**e selezionare **Certificati**.  
+    6.  Nella console espandere **Certificati (computer locale)** , quindi **Persone attendibili**e selezionare **Certificati**.  
 
     7.  Fare clic con il pulsante destro del mouse sul certificato con il nome descrittivo &lt;*FQDN del server sito*>, fare clic su **Tutte le attività**, quindi selezionare **Esporta**.  
 
@@ -235,7 +235,7 @@ Prima di poter creare, modificare ed eseguire report nella console di System Cen
 
     1.  Ripetere i passaggi precedenti da 1.a a 1.e per configurare la console MMC dello snap-in dei **certificati** nel computer del punto di gestione.  
 
-    2.  Nella console espandere **Certificati (computer locale)**, quindi **Persone attendibili**, fare clic con il pulsante destro del mouse su **Certificati**, selezionare **Tutte le attività**e infine **Importa** per avviare l' **Importazione guidata certificati**.  
+    2.  Nella console espandere **Certificati (computer locale)** , quindi **Persone attendibili**, fare clic con il pulsante destro del mouse su **Certificati**, selezionare **Tutte le attività**e infine **Importa** per avviare l' **Importazione guidata certificati**.  
 
     3.  Nella pagina **File da importare** selezionare il certificato salvato nel passaggio 1.h, quindi fare clic su **Avanti**.  
 
@@ -261,7 +261,7 @@ Prima di poter creare, modificare ed eseguire report nella console di System Cen
 
 5.  Nella finestra di dialogo **Proprietà punto di Reporting Services** è possibile modificare le seguenti impostazioni:  
 
-    -   **Nome server di database del sito**: specificare il nome del server che ospita il database del sito di Configuration Manager. In genere, la procedura guidata recupera automaticamente il nome di dominio completo (FQDN) del server. Per specificare un'istanza di database, usare il formato &lt;*Nome server*>\&lt;*<Nome istanza*>.  
+    -   **Nome server di database del sito**: specificare il nome del server che ospita il database del sito di Configuration Manager. In genere, la procedura guidata recupera automaticamente il nome di dominio completo (FQDN) del server. Per specificare un'istanza di database, usare il formato &lt;*Nome server*>\&lt; *<Nome istanza*>.  
 
     -   **Nome database**: specificare il nome del database del sito di System Center 2012 Configuration Manager, quindi fare clic su **Verifica** per verificare che la procedura guidata abbia accesso al database del sito.  
 

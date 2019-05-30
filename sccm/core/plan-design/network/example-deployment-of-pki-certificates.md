@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d686baa95cc29a2e4923c0572a0d056beeff9f5b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: e33c634cd2d0153f635675530e3d876ebb6c4e87
+ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499221"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66176973"
 ---
 # <a name="step-by-step-example-deployment-of-the-pki-certificates-for-system-center-configuration-manager-windows-server-2008-certification-authority"></a>Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008
 
@@ -139,7 +139,7 @@ Questo esempio dettagliato di distribuzione usa un'autorità di certificazione (
 
 6.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **OK**.  
 
-7.  Nella console espandere **Certificati (computer locale)**, quindi scegliere **Personale**.  
+7.  Nella console espandere **Certificati (computer locale)** , quindi scegliere **Personale**.  
 
 8.  Fare clic con il pulsante destro del mouse su **Certificati**, scegliere **Tutte le attività**, quindi **Richiedi nuovo certificato**.  
 
@@ -170,14 +170,14 @@ Questo esempio dettagliato di distribuzione usa un'autorità di certificazione (
 
 15. Nella pagina **Risultati installazione certificati** attendere il completamento dell'installazione del certificato, quindi scegliere **Fine**.  
 
-16. Chiudere **Certificati (computer locale)**.  
+16. Chiudere **Certificati (computer locale)** .  
 
 ###  <a name="BKMK_webserver42008"></a> Configurare IIS per l'uso del certificato del server Web  
  Questa procedura consente di associare il certificato installato nel **Sito Web predefinito**di IIS.  
 
 ##### <a name="to-set-up-iis-to-use-the-web-server-certificate"></a>Per configurare IIS per l'uso del certificato del server Web  
 
-1. Nel server membro in cui è installato IIS fare clic su **Start**, scegliere **Programmi**, **Strumenti di amministrazione**, quindi **Gestione Internet Information Services (IIS)**.  
+1. Nel server membro in cui è installato IIS fare clic su **Start**, scegliere **Programmi**, **Strumenti di amministrazione**, quindi **Gestione Internet Information Services (IIS)** .  
 
 2. Espandere **Siti**, fare clic con il pulsante destro del mouse su **Sito Web predefinito**, quindi scegliere **Modifica binding**.  
 
@@ -190,7 +190,7 @@ Questo esempio dettagliato di distribuzione usa un'autorità di certificazione (
 
 5. Scegliere **OK** nella finestra di dialogo **Modifica binding sito**, quindi scegliere **Chiudi**.  
 
-6. Chiudere **Gestione Internet Information Services (IIS)**.  
+6. Chiudere **Gestione Internet Information Services (IIS)** .  
 
    A questo punto, il server membro è configurato con un certificato server Web di System Center Configuration Manager.  
 
@@ -270,7 +270,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 6.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **OK**.  
 
-7.  Nella console espandere **Certificati (computer locale)**, quindi scegliere **Personale**.  
+7.  Nella console espandere **Certificati (computer locale)** , quindi scegliere **Personale**.  
 
 8.  Fare clic con il pulsante destro del mouse su **Certificati**, scegliere **Tutte le attività**, quindi **Richiedi nuovo certificato**.  
 
@@ -293,7 +293,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 16. Nella pagina **Risultati installazione certificati** attendere il completamento dell'installazione del certificato, quindi scegliere **Fine**.  
 
-17. Chiudere **Certificati (computer locale)**.  
+17. Chiudere **Certificati (computer locale)** .  
 
 ###  <a name="BKMK_clouddpexporting2008"></a> Esportare il certificato del server Web personalizzato per i punti di distribuzione basati su cloud  
  Questa procedura consente di esportare il certificato del server Web personalizzato in un file in modo da importarlo al momento della creazione di un punto di distribuzione basato su cloud.  
@@ -309,7 +309,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
    > [!NOTE]  
    >  Se questa opzione non è disponibile, il certificato è stato creato senza l'opzione per esportare la chiave privata. In questo scenario, non è possibile esportare il certificato nel formato richiesto. È necessario configurare il modello di certificato per consentire l'esportazione della chiave privata e richiedere di nuovo il certificato.  
 
-4. Nella pagina **Formato file di esportazione** assicurarsi che sia selezionata l'opzione **Scambio di informazioni personali - PKCS #12 (.PFX)**.  
+4. Nella pagina **Formato file di esportazione** assicurarsi che sia selezionata l'opzione **Scambio di informazioni personali - PKCS #12 (.PFX)** .  
 
 5. Nella pagina **Password** specificare una password complessa per proteggere il certificato esportato con la relativa chiave privata, quindi scegliere **Avanti**.  
 
@@ -317,7 +317,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 7. Per chiudere la procedura guidata, scegliere **Fine** nella pagina **Esportazione guidata certificato**, quindi scegliere **OK** nella finestra di conferma.  
 
-8. Chiudere **Certificati (computer locale)**.  
+8. Chiudere **Certificati (computer locale)** .  
 
 9. Archiviare il file in modo protetto e assicurarsi che sia possibile accedervi dalla console di System Center Configuration Manager.  
 
@@ -406,11 +406,11 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 8. Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **OK**.  
 
-9. Nella console espandere **Certificati (computer locale)**, espandere **Personale**, quindi scegliere **Certificati**.  
+9. Nella console espandere **Certificati (computer locale)** , espandere **Personale**, quindi scegliere **Certificati**.  
 
 10. Nel riquadro dei risultati verificare che sia presente un certificato con **Autenticazione client** nella colonna **Scopo designato** e **Certificato client di ConfigMgr** nella colonna **Modello di certificato**.  
 
-11. Chiudere **Certificati (computer locale)**.  
+11. Chiudere **Certificati (computer locale)** .  
 
 12. Ripetere i passaggi da 1 a 11 per il server membro per verificare che anche il server che verrà configurato come punto di gestione disponga di un certificato client.  
 
@@ -485,7 +485,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 5.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **OK**.  
 
-6.  Nella console espandere **Certificati (computer locale)**, quindi scegliere **Personale**.  
+6.  Nella console espandere **Certificati (computer locale)** , quindi scegliere **Personale**.  
 
 7.  Fare clic con il pulsante destro del mouse su **Certificati**, scegliere **Tutte le attività**, quindi **Richiedi nuovo certificato**.  
 
@@ -499,7 +499,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 12. Nel riquadro dei risultati verificare che sia presente un certificato con **Autenticazione client** nella colonna **Scopo designato** e **Certificato del punto di distribuzione di ConfigMgr** nella colonna **Modello di certificato**.  
 
-13. Non chiudere **Certificati (computer locale)**.  
+13. Non chiudere **Certificati (computer locale)** .  
 
 ###  <a name="BKMK_exportclientdistributionpoint22008"></a> Esportare il certificato client per i punti di distribuzione  
  Questa procedura consente di esportare il certificato di autenticazione della workstation personalizzato in un file, in modo che possa essere importato nelle proprietà del punto di distribuzione.  
@@ -515,7 +515,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
    > [!NOTE]  
    >  Se questa opzione non è disponibile, il certificato è stato creato senza l'opzione per esportare la chiave privata. In questo scenario, non è possibile esportare il certificato nel formato richiesto. È necessario configurare il modello di certificato per consentire l'esportazione della chiave privata e richiedere di nuovo il certificato.  
 
-4. Nella pagina **Formato file di esportazione** assicurarsi che sia selezionata l'opzione **Scambio di informazioni personali - PKCS #12 (.PFX)**.  
+4. Nella pagina **Formato file di esportazione** assicurarsi che sia selezionata l'opzione **Scambio di informazioni personali - PKCS #12 (.PFX)** .  
 
 5. Nella pagina **Password** specificare una password complessa per proteggere il certificato esportato con la relativa chiave privata, quindi scegliere **Avanti**.  
 
@@ -523,7 +523,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 7. Per chiudere la procedura guidata, scegliere **Fine** nella pagina **Esportazione guidata certificato**, quindi scegliere **OK** nella finestra di conferma.  
 
-8. Chiudere **Certificati (computer locale)**.  
+8. Chiudere **Certificati (computer locale)** .  
 
 9. Archiviare il file in modo protetto e assicurarsi che sia possibile accedervi dalla console di System Center Configuration Manager.  
 
@@ -580,7 +580,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
  Creare il certificato di provisioning con l'autorità di certificazione (CA) interna quando i computer basati su AMT sono configurati con l'identificazione personale del certificato della CA radice interna. Se non è possibile e occorre usare un'autorità di certificazione esterna, seguire le istruzioni della società che ha emesso il certificato di provisioning AMT. In questo caso, è spesso necessario richiedere il certificato sul sito Web pubblico della società. È inoltre possibile trovare istruzioni dettagliate per la CA esterna prescelta nel [sito Web Intel vPro Expert Center: Microsoft vPro Manageability](http://go.microsoft.com/fwlink/?LinkId=132001).  
 
 > [!IMPORTANT]  
->  Le CA esterne potrebbero non supportare l'identificatore di oggetto provisioning Intel AMT. In questo caso, fornire l'attributo OU del **certificato di installazione client di Intel(R)**.  
+>  Le CA esterne potrebbero non supportare l'identificatore di oggetto provisioning Intel AMT. In questo caso, fornire l'attributo OU del **certificato di installazione client di Intel(R)** .  
 
  Quando si richiede un certificato di provisioning AMT da una CA esterna, installare il certificato nell'archivio certificati personale del computer sul server membro che ospiterà il punto di servizio fuori banda.  
 
@@ -648,7 +648,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 6. Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **OK**.  
 
-7. Nella console espandere **Certificati (computer locale)**, quindi scegliere **Personale**.  
+7. Nella console espandere **Certificati (computer locale)** , quindi scegliere **Personale**.  
 
 8. Fare clic con il pulsante destro del mouse su **Certificati**, scegliere **Tutte le attività**, quindi **Richiedi nuovo certificato**.  
 
@@ -660,7 +660,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 12. Nella pagina **Risultati installazione certificati** attendere il completamento dell'installazione del certificato, quindi scegliere **Fine**.  
 
-13. Chiudere **Certificati (computer locale)**.  
+13. Chiudere **Certificati (computer locale)** .  
 
     A questo punto, il certificato di provisioning AMT dalla CA interna è installato e pronto per essere selezionato nelle proprietà del punto di servizio fuori banda.  
 
@@ -714,7 +714,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 3. Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato di autenticazione client 802.1X AMT di ConfigMgr** per generare i certificati client che saranno usati per la gestione fuori banda nei computer AMT.  
 
-4. Scegliere la scheda **Nome soggetto**, scegliere **Crea in base alle informazioni di Active Directory**, quindi scegliere **Nome comune** per **Formato del nome soggetto**. Deselezionare **Nome DNS** per il nome soggetto alternativo, quindi scegliere **Nome entità utente (UPN)**.  
+4. Scegliere la scheda **Nome soggetto**, scegliere **Crea in base alle informazioni di Active Directory**, quindi scegliere **Nome comune** per **Formato del nome soggetto**. Deselezionare **Nome DNS** per il nome soggetto alternativo, quindi scegliere **Nome entità utente (UPN)** .  
 
 5. Scegliere la scheda **Protezione** e quindi rimuovere l'autorizzazione **Registrazione** dai gruppi di sicurezza **Domain Admins** ed **Enterprise Admins**.  
 
@@ -722,7 +722,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 7. Selezionare le seguenti autorizzazioni **Consenti** per questo gruppo di sicurezza: **Lettura** e **Registrazione**.  
 
-8. Scegliere **OK**, quindi chiudere la console di gestione **Modelli di certificato**, **certtmpl - [Modelli di certificato]**.  
+8. Scegliere **OK**, quindi chiudere la console di gestione **Modelli di certificato**, **certtmpl - [Modelli di certificato]** .  
 
 9. Nella console di gestione **Autorità di certificazione** fare clic con il pulsante destro del mouse su **Modelli di certificato**, scegliere **Nuovo** e quindi **Modello di certificato da emettere**.  
 
