@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 007c3b68932a673b5d1971fbcf6919a7ad3adc70
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: cc22c66cfa4cf4e628dce7bf3cb268464610c933
+ms.sourcegitcommit: bfb8a17f60dcb9905e739045a5141ae45613fa2c
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802615"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66198444"
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire gli script di PowerShell dalla console di Configuration Manager
 
@@ -54,8 +54,8 @@ Grazie a questa integrazione in System Center Configuration Manager, è possibil
 - Per eseguire gli script, l'account deve avere autorizzazioni **Esegui script** per **Raccolte**.
 
 Per altre informazioni sui ruoli di sicurezza di Configuration Manager:</br>
-[Ambiti di protezione per l'esecuzione di script](#BKMK_Scopes)</br>
-[Ruoli di sicurezza per l'esecuzione di script](#BKMK_ScriptRoles)</br>
+[Ambiti di protezione per l'esecuzione di script](#security-scopes)</br>
+[Ruoli di sicurezza per l'esecuzione di script](#bkmk_ScriptRoles)</br>
 [Nozioni fondamentali sull'amministrazione basata su ruoli](/sccm/core/understand/fundamentals-of-role-based-administration)
 
 ## <a name="limitations"></a>Limitazioni
@@ -72,7 +72,7 @@ La funzionalità Esegui script supporta attualmente:
 
 ## <a name="run-script-authors-and-approvers"></a>Autori e responsabili dell'approvazione di script
 
-La funzionalità Esegui script usa il concetto di *autore di script* e *responsabile dell'approvazione di script* come ruoli separati per l'implementazione e l'esecuzione di uno script. La separazione tra autori e responsabili dell'approvazione consente un'importante verifica dei processi per questo potente strumento. Un altro ruolo, *esecutori di script*, consente l'esecuzione di script, ma non la creazione o l'approvazione. Vedere [Creare ruoli di sicurezza per gli script](#BKMK_ScriptRoles).
+La funzionalità Esegui script usa il concetto di *autore di script* e *responsabile dell'approvazione di script* come ruoli separati per l'implementazione e l'esecuzione di uno script. La separazione tra autori e responsabili dell'approvazione consente un'importante verifica dei processi per questo potente strumento. Un altro ruolo, *esecutori di script*, consente l'esecuzione di script, ma non la creazione o l'approvazione. Vedere [Creare ruoli di sicurezza per gli script](#bkmk_ScriptRoles).
 
 ### <a name="scripts-roles-control"></a>Controllo dei ruoli per gli script
 
