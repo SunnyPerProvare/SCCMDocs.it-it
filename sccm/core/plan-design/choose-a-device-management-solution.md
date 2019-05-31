@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2b396ad5955227494511355f6efdb88ecd901110
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: c1aec1447207d20393b0b8454851755ec85f5020
+ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120832"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66264370"
 ---
 # <a name="choose-a-device-management-solution-for-configuration-manager"></a>Scegliere una soluzione di gestione dei dispositivi per Configuration Manager
 
@@ -36,7 +36,7 @@ Configuration Manager offre diverse soluzioni per la gestione di PC, server e di
 Questo articolo illustra le quattro soluzioni di gestione dei dispositivi seguenti: 
 - [Client di Configuration Manager](#bkmk_sccm)
 - [Gestione di dispositivi mobili (MDM) locale con Configuration Manager](#bkmk_opmdm)
-- [Co-gestione con Microsoft Intune](#bkmk_intune)
+- [Co-gestione con Microsoft Intune](#bkmk_comanage)
 - [Microsoft Exchange](#bkmk_opmdm)
 
 È possibile usare queste soluzioni di gestione dei dispositivi da sole o in combinazione. Ad esempio, è possibile usare l'approccio alla gestione basata su client per gestire i computer e i server dell'organizzazione e usare anche la co-gestione per gestire i portatili basati su Internet. Combinando i due approcci in questo modo, è possibile coprire tutte le esigenze di gestione dei dispositivi.  
