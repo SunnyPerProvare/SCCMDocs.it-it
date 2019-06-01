@@ -2,7 +2,7 @@
 title: Registrare i dispositivi in Desktop Analitica
 titleSuffix: Configuration Manager
 description: Informazioni su come registrare i dispositivi in Desktop Analitica.
-ms.date: 04/05/2019
+ms.date: 04/22/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5d5e6665b0ddd2e7726af4b8ac8929d5019fedf
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 8d056d533a83290b638958ff78275ddec1409ec5
+ms.sourcegitcommit: 65e9b30e2b53ab9db679a7b1d50634a73c0028db
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62245894"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66429861"
 ---
 # <a name="how-to-enroll-devices-in-desktop-analytics"></a>Come registrare i dispositivi in Desktop Analitica
 
@@ -81,7 +81,7 @@ Per risultati ottimali, installare gli aggiornamenti seguenti in base alla versi
 > Quando si installano questi aggiornamenti, prevede che i comportamenti seguenti:
 > 
 > - I dispositivi che si registrano per Desktop Analitica visualizzati nel servizio in meno di un'ora  
-> - I dispositivi segnalano rapidamente lo stato per gli aggiornamenti qualitativi e delle funzionalità per Windows e Office  
+> - I dispositivi segnalano rapidamente lo stato per gli aggiornamenti qualitativi e delle funzionalità di Windows  
 >
 > Senza questi aggiornamenti, questi processi possono richiedere in 48 ore per un dispositivo segnalare al Desktop Analitica.  
 
@@ -127,7 +127,7 @@ Per modificare queste impostazioni, usare la procedura seguente:
 
 2. Nel **dati di diagnostica** pagina, apportare le modifiche necessarie per le impostazioni seguenti:  
 
-    - **ID commerciale**: non è necessario cambiare o modificare questo valore. Per altre informazioni sulla risoluzione dei problemi con l'ID commerciale, vedere [configurazione dell'ID commerciale](/sccm/desktop-analytics/troubleshooting#commercial-id-configuration).  
+    - **ID commerciale**: questo valore verranno inseriti automaticamente con l'ID. dell'organizzazione Se non, assicurarsi che il server proxy sia configurato nell'elenco elementi consentiti tutti i necessari [endpoint](/sccm/desktop-analytics/enable-data-sharing#endpoints) prima di continuare. In alternativa, recuperare l'ID commerciale dal **servizi connessi** riquadro le [portale Analitica Desktop](https://aka.ms/m365aprod).   
 
     - **A livello di dati di diagnostica di Windows 10**: Per altre informazioni, vedere [livelli di dati di diagnostica](/sccm/desktop-analytics/enable-data-sharing#diagnostic-data-levels).  
 
@@ -135,7 +135,7 @@ Per modificare queste impostazioni, usare la procedura seguente:
 
     Quando si apportano modifiche a questa pagina, il **funzionalità disponibili** pagina viene visualizzata un'anteprima della funzionalità Desktop Analitica con le impostazioni di dati di diagnostica selezionato.  
 
-3. Nel **connessione di Microsoft 365 Analitica** pagina, apportare le modifiche necessarie per le impostazioni seguenti:
+3. Nel **Desktop Analitica connessione** pagina, apportare le modifiche necessarie per le impostazioni seguenti:
 
     - **Nome visualizzato**: Il portale di Analitica Desktop Visualizza questa connessione di Configuration Manager usando questo nome.  
 
@@ -143,9 +143,10 @@ Per modificare queste impostazioni, usare la procedura seguente:
 
     - **I dispositivi nella raccolta di destinazione usano un proxy con autenticazione utente per le comunicazioni in uscita**: Per impostazione predefinita, questo valore è **No**. Se necessario nell'ambiente in uso, impostato su **Sì**. Per altre informazioni, vedere [autenticazione del server Proxy](/sccm/desktop-analytics/enable-data-sharing#proxy-server-authentication).  
 
-    - **Selezionare le raccolte specifiche da sincronizzare con Desktop Analitica**: Selezionare **Add** da includere altre raccolte. Queste raccolte sono disponibili nel portale di Analitica Desktop per il raggruppamento con piani di distribuzione. Assicurarsi di includere raccolte di esclusioni pilota e pilota.  
+    - **Selezionare le raccolte specifiche da sincronizzare con Desktop Analitica**: Selezionare **Add** raccolte aggiuntive da includere le **raccolta di destinazione** gerarchia. Queste raccolte sono disponibili nel portale di Analitica Desktop per il raggruppamento con piani di distribuzione. Assicurarsi di includere raccolte di esclusioni pilota e pilota.  <!-- 4097528 -->
 
-        Queste raccolte comunque eseguita la sincronizzazione le modifiche all'appartenenza. Ad esempio, il piano di distribuzione Usa una raccolta con una regola di appartenenza a Windows 7. Come aggiornare i dispositivi a Windows 10 e Configuration Manager valuta l'appartenenza alla raccolta, tali dispositivi eliminare esplicitamente la raccolta e un piano di distribuzione.  
+        > [!Important] 
+        > Queste raccolte comunque eseguita la sincronizzazione le modifiche all'appartenenza. Ad esempio, il piano di distribuzione Usa una raccolta con una regola di appartenenza a Windows 7. Come aggiornare i dispositivi a Windows 10 e Configuration Manager valuta l'appartenenza alla raccolta, tali dispositivi eliminare esplicitamente la raccolta e un piano di distribuzione.  
 
 
 ### <a name="windows-settings"></a>Impostazioni di Windows
@@ -167,7 +168,7 @@ Visualizzare queste impostazioni in editor Criteri di gruppo nel percorso seguen
 
 ### <a name="device-name"></a>Nome del dispositivo
 
-A partire da Windows 10, versione 1803, il nome del dispositivo non è più raccolte per impostazione predefinita. La raccolta il nome del dispositivo con i dati di diagnostica richiede un consenso esplicito aggiuntivo separato. Senza il nome del dispositivo, è più difficile per identificare quali dispositivi richiedono attenzione durante la valutazione dell'aggiornamento a una nuova versione di Windows o dell'ufficio.
+A partire da Windows 10, versione 1803, il nome del dispositivo non è più raccolte per impostazione predefinita. La raccolta il nome del dispositivo con i dati di diagnostica richiede un consenso esplicito aggiuntivo separato. Senza il nome del dispositivo, è più difficile per identificare quali dispositivi richiedono attenzione durante la valutazione dell'aggiornamento a una nuova versione di Windows.
 
 Se si non invia il nome del dispositivo, viene visualizzata nel Desktop Analitica come "Sconosciuto".
 
