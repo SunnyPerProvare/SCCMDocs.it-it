@@ -1,4 +1,3 @@
-- name: Gestione delle applicazioni
 - name: Comprendere ed esplorare
   items:
     - name: Introduzione
@@ -18,9 +17,8 @@
 - name: Distribuire e usare
   items:
     - name: Creare applicazioni
+      href: deploy-use/create-applications.md
       items:
-        - name: Creare applicazioni
-          href: deploy-use/create-applications.md
         - name: Creare applicazioni per computer Mac
           href: get-started/creating-mac-computer-applications.md
         - name: Creare applicazioni Windows
@@ -47,6 +45,8 @@
           href: deploy-use/simulate-application-deployments.md
         - name: Distribuire applicazioni virtuali App-V
           href: get-started/deploying-app-v-virtual-applications.md
+        - name: Risoluzione dei problemi relativi alla distribuzione di applicazioni
+          href: deploy-use/troubleshoot-application-deployment.md
     - name: Monitorare le applicazioni
       items:
         - name: Monitorare le applicazioni dalla console
@@ -65,6 +65,8 @@
           href: deploy-use/manage-apps-from-the-windows-store-for-business.md
         - name: Ambienti virtuali App-V
           href: deploy-use/create-app-v-virtual-environments.md
+        - name: Importare ed esportare le applicazioni
+          href: deploy-use/import-export-applications.md
     - name: Aggiornare e ritirare applicazioni
       items:
         - name: Aggiornare e ritirare applicazioni
@@ -74,15 +76,13 @@
         - name: Disinstallare applicazioni
           href: deploy-use/uninstall-applications.md
     - name: Eseguire e gestire gli script
+      href: deploy-use/create-deploy-scripts.md
       items:
-        - name: Eseguire e gestire gli script
-          href: deploy-use/create-deploy-scripts.md
         - name: Informazioni sulla sicurezza degli script PowerShell
           href: deploy-use/learn-script-security.md
     - name: Package Conversion Manager
+      href: pcm/package-conversion-manager.md
       items:
-        - name: Package Conversion Manager
-          href: pcm/package-conversion-manager.md
         - name: Come analizzare e convertire i pacchetti
           href: pcm/how-to-analyze-and-convert.md
         - name: Risolvere i problemi di Package Conversion Manager
