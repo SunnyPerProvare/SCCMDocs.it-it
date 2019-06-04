@@ -2,7 +2,7 @@
 title: Risoluzione dei problemi relativi a Desktop Analitica
 titleSuffix: Configuration Manager
 description: Dettagli tecnici per risolvere i problemi con Desktop Analitica.
-ms.date: 04/15/2019
+ms.date: 05/31/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0da26f1ea2b7f7c0c49377cb934e451d56889b7
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: edb871cf9a12862f19109fe885bfb3a0e626f445
+ms.sourcegitcommit: 65753c51fbf596f233fc75a5462ea4a44005c70b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62261527"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66463070"
 ---
 # <a name="troubleshooting-desktop-analytics"></a>Risoluzione dei problemi relativi a Desktop Analitica
 
@@ -51,7 +51,31 @@ Usare la **integrità della connessione** dashboard in Configuration Manager per
 
 Quando si configura prima Desktop Analitica, questi grafici non risultino dati completi. Potrebbero essere necessari 2-3 giorni per i dispositivi attivi inviare dati di diagnostica per il servizio di Analitica Desktop, il servizio per elaborare i dati e quindi eseguire la sincronizzazione con il sito di Configuration Manager.<!-- 4098037 -->
 
-Se si ritiene che alcuni dispositivi non sono visualizzate in Desktop Analitica, verificare innanzitutto la percentuale di **dispositivi connessi**. Se è inferiore al 100%, assicurarsi che i dispositivi sono supportati dal Desktop Analitica. Per altre informazioni, vedere [Prerequisiti](/sccm/desktop-analytics/overview#prerequisites).
+
+### <a name="connection-details"></a>Dettagli della connessione
+
+<!-- 4412133 -->
+
+Questo riquadro mostra le informazioni di base, ad esempio il tenant connesso nome e le ore per gli aggiornamenti dal servizio. Il **dispositivi di destinazione** valore costituito da tutti i dispositivi nella raccolta di destinazione, meno i tipi di dispositivi seguenti:
+
+- Rimuovere le autorizzazioni
+- Obsoleto
+- inattivo
+- non gestito
+
+Per altre informazioni su questi stati dei dispositivi, vedere [sullo stato client](/sccm/core/clients/manage/monitor-clients#bkmk_about).
+
+> [!Note]  
+> Configuration Manager consente di caricare Desktop Analitica di tutti i dispositivi nella raccolta di destinazione meno i client obsoleti e rimossi.
+
+### <a name="connected-devices"></a>Dispositivi connessi
+
+Se si ritiene che alcuni dispositivi non sono visualizzate in Desktop Analitica, verificare innanzitutto la percentuale di **dispositivi connessi**. Questo grafico rappresenta la percentuale di dispositivi utilizzando la formula seguente:
+
+- Numeratore: Il **dispositivi di destinazione** valore il [i dettagli della connessione](#connection-details) riquadro
+- Denominatore: Tutti i dispositivi in Configuration Manager meno dispositivi inattivi e non gestiti
+
+Se è inferiore al 100%, assicurarsi che i dispositivi sono supportati dal Desktop Analitica. Per altre informazioni, vedere [Prerequisiti](/sccm/desktop-analytics/overview#prerequisites).
 
 
 ### <a name="connection-health-states"></a>Stati di integrità connessione
@@ -114,7 +138,9 @@ Per visualizzare un elenco specifico di dispositivi in base allo stato, iniziare
 - Opt-in Windows i dati di diagnostica
 - Windows dati commerciali acconsenti esplicitamente
 - Connettività dell'endpoint diagnostica Windows
-- Connettività dell'endpoint diagnostici Office
+
+> [!Note]  
+> Ignorare la colonna per **connettività dell'endpoint diagnostici Office**. È riservato per le funzionalità future.
 
 Queste colonne corrispondono al tasto [prerequisiti](/sccm/desktop-analytics/overview#prerequisites) per i dispositivi di comunicare con Desktop Analitica.
 
@@ -145,8 +171,9 @@ Le colonne seguenti sono disponibili nell'elenco dei dispositivi:
 - [Recupero ID SQM](#sqm-id-retrieval)  
 - [Recupero di identificatore univoco del dispositivo](#unique-device-identifier-retrieval)  
 - [Opt-in Windows i dati di diagnostica](#windows-diagnostic-data-opt-in)  
-- [Connettività dell'endpoint diagnostici Office](#office-diagnostic-endpoint-connectivity)  
-- [Office i dati di diagnostica acconsenti esplicitamente](#office-diagnostic-data-opt-in)
+
+> [!Note]  
+> Ignorare le proprietà per **connettività dell'endpoint diagnostici Office** e **Office i dati di diagnostica acconsenti esplicitamente**. Sono riservate per le funzionalità future.
 
 #### <a name="appraiser-configuration"></a>Configurazione valutazione
 
@@ -390,7 +417,7 @@ Assicurarsi che non si dispone di ID duplicati nell'ambiente in uso. Ad esempio,
 <!--54-->
 Desktop Analitica Usa il servizio Account Microsoft per un'identità del dispositivo più affidabile.
 
-Assicurarsi che il **Microsoft Account Assistente** servizio non è disabilitato. Il tipo di avvio deve essere **manuale (avvio Trigger)**.
+Assicurarsi che il **Microsoft Account Assistente** servizio non è disabilitato. Il tipo di avvio deve essere **manuale (avvio Trigger)** .
 
 Per disabilitare l'accesso dell'utente finale Microsoft account, usare le impostazioni dei criteri anziché bloccare questo endpoint. Per altre informazioni, vedere [account Microsoft aziendali](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts#block-all-consumer-microsoft-account-user-authentication).
 
@@ -405,31 +432,6 @@ Questa proprietà verifica che Windows sia configurato correttamente per consent
 Controllare le autorizzazioni per queste chiavi del Registro di sistema. Assicurarsi che l'account sistema locale possa accedere a queste chiavi al client di Configuration Manager per set. Può anche essere causato da un oggetto Criteri di gruppo in conflitto. Per altre informazioni, vedere [delle impostazioni di Windows](/sccm/desktop-analytics/enroll-devices#windows-settings).  
 
 Per altre informazioni, esaminare M365AHandler.log sul client.  
-
-#### <a name="office-diagnostic-endpoint-connectivity"></a>Connettività dell'endpoint diagnostici Office
-
-<!-- 1001,1002,1003 -->
-
-Se questo controllo ha esito positivo, il dispositivo è in grado di connettersi agli endpoint diagnostici Office.
-
-In caso contrario, potrebbe essere visualizzato uno dei seguenti errori:
-
-- Impossibile connettersi all'endpoint di diagnostica di Office (Aria). Controllare le impostazioni di rete/proxy  
-
-- Impossibile connettersi all'endpoint di diagnostica di Office (Nexusrules). Controllare le impostazioni di rete/proxy  
-
-- Impossibile connettersi all'endpoint di diagnostica di Office (Nexus). Controllare le impostazioni di rete/proxy  
-
-Assicurarsi che il dispositivo è in grado di comunicare con il servizio. Per altre informazioni, vedere [endpoint](/sccm/desktop-analytics/enable-data-sharing#endpoints).  
-
-#### <a name="office-diagnostic-data-opt-in"></a>Office i dati di diagnostica acconsenti esplicitamente
-
-<!-- SCCMDocs-pr 3570 -->
-A partire da Configuration Manager versione 1902, modificare il comportamento per l'invio di servizio di Office e i dati di diagnostica a Microsoft. Questa proprietà controlla che le impostazioni dei criteri di Office siano configurate correttamente. Queste impostazioni controllano i dati minimi necessari per mantenere Office protetto e aggiornato e le prestazioni previste nel dispositivo è installato.
-
-Per altre informazioni, vedere [Panoramica della privacy controlla per Office 365 ProPlus](https://docs.microsoft.com/DeployOffice/privacy/overview-privacy-controls). Questo articolo descrive in dettaglio controlla la privacy per i dati di diagnostica che dispongono di raccolte e inviate a Microsoft sul software client di Office usata in Windows nei computer dell'organizzazione.
-
-Questa verifica non riuscita per i client di Configuration Manager versione 1810. Aggiornare il client alla versione più recente. Provare ad abilitare l'aggiornamento client automatico per il sito di Configuration Manager. Per altre informazioni, vedere [Aggiornare i client](/sccm/core/clients/manage/upgrade/upgrade-clients#automatic-client-upgrade).
 
 
 
@@ -479,13 +481,88 @@ Desktop Analitica aggiunge le seguenti applicazioni in Azure AD:
 
 - **Configuration Manager Microservizio**: Connette Configuration Manager con Analitica Desktop. Questa app non include alcun requisito di accesso.  
 
-- **Amministrazione di Office 365 Client**: Recupera i dati dall'area di lavoro di Log Analitica. Questa app richiede l'accesso in scrittura al registro Analitica.  
-
 - **MALogAnalyticsReader**: Recupera i gruppi di OMS e dispositivi creati in Log Analitica. Per altre informazioni, vedere [ruolo applicazione MALogAnalyticsReader](#bkmk_MALogAnalyticsReader).  
 
 Se è necessario eseguire il provisioning di queste App dopo il completamento di set di backup, andare alla **servizi connessi di** riquadro. Selezionare **configurare l'accesso a utenti e app**ed effettuare il provisioning di App.  
 
-- **App di Azure AD per Configuration Manager**. Se è necessario eseguire il provisioning o risolvere i problemi di connessione dopo il completamento di set di backup, vedere [creare un'app per la configurazione di Manager](/sccm/desktop-analytics/set-up#create-app-for-configuration-manager). Questa app richiede **scrivere i dati della raccolta CM** e **lettura CM raccolta dati** sul **Configuration Manager Service** API.  
+- **App di Azure AD per Configuration Manager**. Se è necessario eseguire il provisioning o risolvere i problemi di connessione dopo il completamento di set di backup, vedere [crea e importa un'app per Configuration Manager](#create-and-import-app-for-configuration-manager). Questa app richiede **scrivere i dati della raccolta CM** e **lettura CM raccolta dati** sul **Configuration Manager Service** API.  
+
+
+### <a name="create-and-import-app-for-configuration-manager"></a>Creare e importare app for Configuration Manager
+
+Se non è possibile creare questa app di Azure AD dalla procedura guidata Configure Azure Services in Configuration Manager, usare la procedura seguente per creare manualmente e importazione dell'app per Configuration Manager.
+
+#### <a name="create-app-in-azure-ad"></a>Creare app in Azure AD
+
+1. Aprire il [portale di Azure](http://portal.azure.com) come utente con autorizzazioni di amministratore aziendale, passare alla **Azure Active Directory**e selezionare **registrazioni per l'App**. Quindi selezionare **registrazione nuova applicazione**.  
+
+2. Nel **Create** panel, configurare le impostazioni seguenti:  
+
+    - **Nome**: un nome univoco che identifica l'app, ad esempio: `Desktop-Analytics-Connection`  
+
+    - **Tipo di applicazione**: **App Web / API**  
+
+    - **URL Sign-on**: questo valore non è usato da Configuration Manager, ma richiesto da Azure AD. Immettere un URL valido e univoco, ad esempio: `https://configmgrapp`  
+  
+   Selezionare **Create**.  
+
+3. Selezionare l'app e prendere nota di **ID applicazione**. Questo valore è un GUID che viene usato per configurare la connessione di Configuration Manager.  
+
+4. Selezionare **le impostazioni** relativi all'app e quindi selezionare **chiavi**. Nel **password** , quindi immettere un **descrizione chiave**, specificare una scadenza **durata**e quindi selezionare **Salva**. Copia il **valore** della chiave, che consente di configurare la connessione di Configuration Manager.
+
+    > [!Important]  
+    > Questa è l'unica possibilità per copiare il valore della chiave. Se si non copiarlo a questo punto, è necessario creare un'altra chiave.  
+    >
+    > Salvare il valore della chiave in un luogo sicuro.  
+
+5. Nell'app **le impostazioni** Pannello di selezione **autorizzazioni necessarie**.  
+
+    1. Nel **autorizzazioni necessarie** riquadro, seleziona **Aggiungi**.  
+
+    2. Nel **Aggiungi accesso all'API** pannello **selezionare un'API**.  
+
+    3. Cercare il **Microservizio di Configuration Manager** API. Selezionarlo e quindi scegliere **seleziona**.  
+
+    4. Nel **Abilita accesso** pannello, selezionare entrambe le autorizzazioni applicazione: **Scrivere i dati della raccolta CM** e **leggere i dati della raccolta CM**. Quindi scegliere **seleziona**.  
+
+    5. Nel **Aggiungi accesso all'API** Pannello di selezione **eseguita**.  
+
+6. Nel **autorizzazioni necessarie** pagina, selezionare **concedere le autorizzazioni**. Selezionare **Sì**.  
+
+7. Copiare l'ID tenant di Azure AD. Questo valore è un GUID che viene usato per configurare la connessione di Configuration Manager. Selezionare **Azure Active Directory** nel menu principale e quindi selezionare **proprietà**. Copia il **ID Directory** valore.  
+
+#### <a name="import-app-in-configuration-manager"></a>Importa app in Configuration Manager
+
+1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e selezionare il nodo **Servizi di Azure**. Selezionare **configurare i servizi Azure** nella barra multifunzione.  
+
+2. Nel **servizi di Azure** pagina della procedura guidata servizi di Azure, configurare le impostazioni seguenti:  
+
+    - Specificare un **Nome** per l'oggetto in Configuration Manager.  
+
+    - Specificare un parametro facoltativo **Descrizione** per identificare il servizio.  
+
+    - Selezionare **Analitica Desktop** dall'elenco dei servizi disponibili.  
+  
+   Selezionare **Avanti**.  
+
+3. Nel **App** pagina, selezionare un valore appropriato **ambiente Azure**. Quindi selezionare **importazione** per l'app web. Configurare le impostazioni seguenti nel **Importa le app** finestra:  
+
+    - **Nome del Tenant di Azure AD**: Questo nome è il modo in cui file è denominato in Configuration Manager  
+
+    - **ID Tenant di Azure AD**: Il **ID Directory** copiato da Azure AD  
+
+    - **Client ID** (ID client): Il **ID applicazione** copiato dall'app Azure AD  
+
+    - **Chiave privata**: Il tasto **valore** copiato dall'app Azure AD  
+
+    - **Scadenza della chiave privata**: La stessa data di scadenza della chiave  
+
+    - **URI ID app**: Questa impostazione verranno inseriti automaticamente con il valore seguente: `https://cmmicrosvc.manage.microsoft.com/`  
+  
+   Selezionare **Verify**, quindi selezionare **OK** per chiudere la finestra di Importa le app. Selezionare **successivo** nella pagina App della procedura guidata servizi di Azure.  
+
+Per continuare il resto della procedura guidata di **dati di diagnostica** pagina, vedere [Connect al servizio](/sccm/desktop-analytics/connect-configmgr#bkmk_connect).
+
 
 ### <a name="bkmk_MALogAnalyticsReader"></a> Ruolo applicazione MALogAnalyticsReader
 
@@ -495,7 +572,7 @@ Se si verifica un problema con questo processo in set di backup, usare la seguen
 
 1. Andare alla [portale di Azure](http://portal.azure.com)e selezionare **tutte le risorse**. Selezionare l'area di lavoro di tipo **Log Analitica**.  
 
-2. Nel menu dell'area di lavoro, selezionare **controllo di accesso (IAM)**, quindi selezionare **Add**.  
+2. Nel menu dell'area di lavoro, selezionare **controllo di accesso (IAM)** , quindi selezionare **Add**.  
 
 3. Nel **aggiungere autorizzazioni** panel, configurare le impostazioni seguenti:  
 

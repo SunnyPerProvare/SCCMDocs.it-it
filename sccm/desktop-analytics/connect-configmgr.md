@@ -2,7 +2,7 @@
 title: Connettere Configuration Manager
 titleSuffix: Configuration Manager
 description: Informazioni di Guida per la connessione di Configuration Manager con Desktop Analitica.
-ms.date: 04/05/2019
+ms.date: 04/25/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11979d35829660633dd77059562dcf519e0af05b
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 905ea779082387996858727ef8c50f1835b3d61c
+ms.sourcegitcommit: 65753c51fbf596f233fc75a5462ea4a44005c70b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62206157"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66463028"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Come connettere Configuration Manager con Desktop Analitica
 
@@ -55,25 +55,35 @@ Utilizzare questa procedura per connettere Configuration Manager a Desktop Anali
   
    Selezionare **Avanti**.  
 
-3. Nel **App** pagina, selezionare un valore appropriato **ambiente Azure**. Quindi selezionare **importazione** per l'app web. Configurare le impostazioni seguenti nel **Importa le app** finestra:  
+3. Nel **App** pagina, selezionare un valore appropriato **ambiente Azure**. Quindi selezionare **esplorare** per l'app web.  
 
-    - **Nome del Tenant di Azure AD**: Questo nome è il modo in cui file è denominato in Configuration Manager  
+4. Se si dispone di un'app esistente che si desidera riutilizzare per questo servizio, selezionarla dall'elenco e selezionare **OK**.  
 
-    - **ID Tenant di Azure AD**: Il **ID Directory** copiato da Azure AD  
+5. Nella maggior parte dei casi, è possibile creare un'app per la connessione di Desktop Analitica con questa procedura guidata. Selezionare **Create**.<!-- 3572123 -->  
 
-    - **Client ID** (ID client): Il **ID applicazione** copiato dall'app Azure AD  
+    > [!Tip]  
+    > Se è possibile creare l'app da questa procedura guidata, è possibile creare manualmente l'app di Azure AD e quindi importare in Configuration Manager. Per altre informazioni, vedere [crea e importa un'app per Configuration Manager](/sccm/desktop-analytics/troubleshooting#create-and-import-app-for-configuration-manager).  
 
-    - **Chiave privata**: Il tasto **valore** copiato dall'app Azure AD  
+6. Configurare le impostazioni seguenti nel **crea un'applicazione Server** finestra:  
 
-    - **Scadenza della chiave privata**: La stessa data di scadenza della chiave  
+    - **Nome applicazione**: Un nome descrittivo per l'app di Azure AD.
 
-    - **URI ID app**: Questa impostazione verranno inseriti automaticamente con il valore seguente: `https://cmmicrosvc.manage.microsoft.com/`  
-  
-   Selezionare **Verify**, quindi selezionare **OK** per chiudere la finestra di Importa le app. Selezionare **successivo** nella pagina App della procedura guidata servizi di Azure.  
+    - **URL della home page**: questo valore non viene usato da Configuration Manager, ma è richiesto da Azure AD. Per impostazione predefinita, questo valore è impostato su `https://ConfigMgrService`.  
 
-4. Nel **dati di diagnostica** pagina, configurare le impostazioni seguenti:  
+    - **URI ID app**: questo valore deve essere univoco nel tenant di Azure AD. Nel token di accesso utilizzato dal client di Configuration Manager per richiedere l'accesso al servizio. Per impostazione predefinita, questo valore è impostato su `https://ConfigMgrService`.  
 
-    - **ID commerciale**: questo valore verranno inseriti automaticamente con l'ID. dell'organizzazione Se non, assicurarsi che il server proxy sia configurato nell'elenco elementi consentiti tutti i necessari [endpoint](/sccm/desktop-analytics/enable-data-sharing#endpoints) prima di continuare. In alternativa, recuperare l'ID commerciale dal **servizi connessi** riquadro le [portale Analitica Desktop](https://aka.ms/m365aprod).  
+    - **Periodo di validità della chiave privata**: scegliere **1 anno** o **2 anni** dall'elenco a discesa. Il valore predefinito è 1 anno.  
+
+    Selezionare **Accedi** . Dopo l'autenticazione in Azure, nella pagina viene visualizzato il **Nome del tenant di Azure AD** come riferimento.
+        
+    > [!Note]  
+    > Completare questo passaggio come un **amministratore società**. Queste credenziali non vengono memorizzate in Configuration Manager. Questo utente tipo non richiede autorizzazioni in Configuration Manager e non deve necessariamente essere lo stesso account che esegue la procedura guidata per i servizi di Azure.  
+
+    Selezionare **OK** per creare l'app Web in Azure AD e chiudere la finestra di dialogo Crea un'applicazione server. Nella finestra di dialogo App Server, selezionare **OK**. Quindi selezionare **successivo** nella pagina App della procedura guidata servizi di Azure.  
+
+7. Nel **dati di diagnostica** pagina, configurare le impostazioni seguenti:  
+
+    - **ID commerciale**: questo valore verranno inseriti automaticamente con l'ID. dell'organizzazione Se non, assicurarsi che il server proxy sia configurato per consentire tutti obbligatori [endpoint](/sccm/desktop-analytics/enable-data-sharing#endpoints) prima di continuare. In alternativa, recuperare l'ID commerciale dal **servizi connessi** riquadro le [portale Analitica Desktop](https://aka.ms/m365aprod).  
 
     - **A livello di dati di diagnostica di Windows 10**: selezionare almeno **Enhanced (Limited)**  
 
@@ -86,7 +96,7 @@ Utilizzare questa procedura per connettere Configuration Manager a Desktop Anali
 
     ![Pagina di funzionalità disponibile di esempio della procedura guidata servizi di Azure](media/available-functionality.png)
 
-5. Nel **raccolte** pagina, configurare le impostazioni seguenti:  
+8. Nel **raccolte** pagina, configurare le impostazioni seguenti:  
 
     - **Nome visualizzato**: Il portale di Analitica Desktop Visualizza questa connessione di Configuration Manager usando questo nome. Usato per distinguere tra gerarchie diverse. Ad esempio, *lab di test* oppure *produzione*.  
 
@@ -94,14 +104,13 @@ Utilizzare questa procedura per connettere Configuration Manager a Desktop Anali
 
     - **I dispositivi nella raccolta di destinazione usano un proxy con autenticazione utente per le comunicazioni in uscita**: Per impostazione predefinita, questo valore è **No**. Se necessario nell'ambiente in uso, impostato su **Sì**.  
 
-    - **Selezionare le raccolte specifiche da sincronizzare con Desktop Analitica**: Selezionare **Add** da includere altre raccolte. Queste raccolte sono disponibili nel portale di Analitica Desktop per il raggruppamento con piani di distribuzione. Assicurarsi di includere raccolte di esclusioni pilota e pilota.  
-
-        Queste raccolte comunque eseguita la sincronizzazione le modifiche all'appartenenza. Ad esempio, il piano di distribuzione Usa una raccolta con una regola di appartenenza a Windows 7. Come aggiornare i dispositivi a Windows 10 e Configuration Manager valuta l'appartenenza alla raccolta, tali dispositivi eliminare esplicitamente la raccolta e un piano di distribuzione.  
+    - **Selezionare le raccolte specifiche da sincronizzare con Desktop Analitica**: Selezionare **Add** raccolte aggiuntive da includere le **raccolta di destinazione** gerarchia. Queste raccolte sono disponibili nel portale di Analitica Desktop per il raggruppamento con piani di distribuzione. Assicurarsi di includere raccolte di esclusioni pilota e pilota.  <!-- 4097528 -->  
 
         > [!Important]  
-        > Assicurarsi di limitare queste raccolte aggiuntive per la raccolta di destinazione. Nelle proprietà di queste raccolte aggiuntive, il **raccolta di limitazione** deve essere lo stesso insieme di Desktop Analitica **raccolta di destinazione**.<!-- 4097528 -->  
+        > Queste raccolte comunque eseguita la sincronizzazione le modifiche all'appartenenza. Ad esempio, il piano di distribuzione Usa una raccolta con una regola di appartenenza a Windows 7. Come aggiornare i dispositivi a Windows 10 e Configuration Manager valuta l'appartenenza alla raccolta, tali dispositivi eliminare esplicitamente la raccolta e un piano di distribuzione.  
 
-6. Completare la procedura guidata.  
+
+9. Completare la procedura guidata.  
 
 Configuration Manager crea un criterio delle impostazioni per configurare i dispositivi nella raccolta di destinazione. Questo criterio include le impostazioni di dati di diagnostica per consentire ai dispositivi di inviare dati a Microsoft. Per impostazione predefinita, i client di aggiornano i criteri ogni ora. Dopo aver ricevuto le nuove impostazioni, può essere più diverse ore prima che i dati sono disponibili in Desktop Analitica.
 
@@ -109,11 +118,11 @@ Configuration Manager crea un criterio delle impostazioni per configurare i disp
 
 ## <a name="bkmk_monitor"></a> Monitorare l'integrità della connessione
 
-Monitorare la configurazione dei dispositivi per Desktop Analitica. Nella console di Configuration Manager passare ad il **raccolta Software** dell'area di lavoro, espandere il **Microsoft 365 Servicing** nodo e selezionare il **integrità della connessione** dashboard.  
+Monitorare la configurazione dei dispositivi per Desktop Analitica. Nella console di Configuration Manager passare ad il **raccolta Software** dell'area di lavoro, espandere il **Desktop Analitica Servicing** nodo e selezionare il **integrità della connessione** cruscotto.  
 
 Per altre informazioni, vedere [monitorare l'integrità della connessione](/sccm/desktop-analytics/troubleshooting#monitor-connection-health).
 
-Configuration Manager si sincronizza i piani di distribuzione Desktop Analitica entro 15 minuti di creazione della connessione. Nella console di Configuration Manager passare ad il **raccolta Software** dell'area di lavoro, espandere il **Microsoft 365 Servicing** nodo e selezionare il **piani di distribuzione** nodo.
+Configuration Manager si sincronizza raccolte entro 60 minuti dalla creazione della connessione. Nel portale di Analitica Desktop, passare a **pilota globale**e visualizzare le raccolte di dispositivi di Configuration Manager.
 
 
 

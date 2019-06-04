@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d056d533a83290b638958ff78275ddec1409ec5
-ms.sourcegitcommit: 65e9b30e2b53ab9db679a7b1d50634a73c0028db
+ms.openlocfilehash: bfe3094f63440d26a64d8d82cc44007141dd60df
+ms.sourcegitcommit: 65753c51fbf596f233fc75a5462ea4a44005c70b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66429861"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66462998"
 ---
 # <a name="how-to-enroll-devices-in-desktop-analytics"></a>Come registrare i dispositivi in Desktop Analitica
 
@@ -127,7 +127,7 @@ Per modificare queste impostazioni, usare la procedura seguente:
 
 2. Nel **dati di diagnostica** pagina, apportare le modifiche necessarie per le impostazioni seguenti:  
 
-    - **ID commerciale**: questo valore verranno inseriti automaticamente con l'ID. dell'organizzazione Se non, assicurarsi che il server proxy sia configurato nell'elenco elementi consentiti tutti i necessari [endpoint](/sccm/desktop-analytics/enable-data-sharing#endpoints) prima di continuare. In alternativa, recuperare l'ID commerciale dal **servizi connessi** riquadro le [portale Analitica Desktop](https://aka.ms/m365aprod).   
+    - **ID commerciale**: questo valore verranno inseriti automaticamente con l'ID. dell'organizzazione Se non, assicurarsi che il server proxy sia configurato per consentire tutti obbligatori [endpoint](/sccm/desktop-analytics/enable-data-sharing#endpoints) prima di continuare. In alternativa, recuperare l'ID commerciale dal **servizi connessi** riquadro le [portale Analitica Desktop](https://aka.ms/m365aprod).   
 
     - **A livello di dati di diagnostica di Windows 10**: Per altre informazioni, vedere [livelli di dati di diagnostica](/sccm/desktop-analytics/enable-data-sharing#diagnostic-data-levels).  
 
