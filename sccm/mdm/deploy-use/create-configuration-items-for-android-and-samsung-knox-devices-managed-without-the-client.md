@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47d2ee0cf82e9739d8e6364098be6c3033ce1ea2
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 0409e71e09297d23251235aa6093886319c80ae6
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62218195"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66716257"
 ---
 # <a name="how-to-create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Android e Samsung KNOX gestiti senza il client System Center Configuration Manager
 
 Usare l'elemento di configurazione **Android e Samsung KNOX** di System Center Configuration Manager per gestire le impostazioni per i dispositivi Android e Samsung KNOX registrati in Microsoft Intune o gestiti in locale da Configuration Manager.  
 
-#### <a name="to-create-an-android-and-samsung-knox-configuration-item"></a>Per creare un elemento di configurazione per Android e Samsung KNOX  
+## <a name="create-an-android-and-samsung-knox-configuration-item"></a>Creare un elemento di configurazione Android e Samsung KNOX  
 
 1. Nella console di Configuration Manager scegliere **Asset e conformità**.  
 
@@ -38,7 +38,7 @@ Usare l'elemento di configurazione **Android e Samsung KNOX** di System Center C
 
 7. Nella pagina **Piattaforme supportate** della procedura guidata scegliere le piattaforme Android e Samsung KNOX specifiche che valuteranno l'elemento di configurazione.  
 
-8. Nella pagina **Impostazioni dispositivo** della creazione guidata scegliere il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione per Android e Samsung KNOX](#BKMK_setref) in questo argomento e scegliere **Avanti**.  
+8. Nella pagina **Impostazioni dispositivo** della creazione guidata scegliere il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione per Android e Samsung KNOX](#android-and-samsung-knox-configuration-item-settings-reference) in questo argomento e scegliere **Avanti**.  
 
     > [!TIP]  
     >  Se l'impostazione da modificare non è inclusa nell'elenco, scegliere la casella **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
@@ -169,7 +169,7 @@ Nella pagina **App conformi e non conformi (Android)** specificare le informazio
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Elenco app non conformi** |                                                                                                                                                                                                                                                                               Specifica un elenco di app che verranno segnalate come non conformi, quando vengono installate dagli utenti.                                                                                                                                                                                                                                                                               |
 |  **Elenco app conformi**   |                                                                                                                                                                                                                                                              Specifica un elenco di app Mac OS X che gli utenti sono autorizzati a installare. Tutte le altre app installate verranno segnalate come non conformi.                                                                                                                                                                                                                                                               |
-|          **Aggiungi**           | Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare dalla [sezione delle app di Google Play](https://play.google.com/store/apps).<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app conformi e non conformi.<br /><br /> **Esempio:** Cercare Google Play **Microsoft Office Mobile**. L'URL da usare sarà **<https://play.google.com/store/apps/details?id=com.microsoft.office.officehub>**. |
+|          **Aggiungi**           | Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare dalla [sezione delle app di Google Play](https://play.google.com/store/apps).<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app conformi e non conformi.<br /><br /> **Esempio:** Cercare Google Play **Microsoft Office Mobile**. L'URL da usare sarà **<https://play.google.com/store/apps/details?id=com.microsoft.office.officehub>** . |
 |          **Modifica**          |                                                                                                                                                                                                                                                                                          Consente di modificare il nome, l'autore e l'URL dell'app selezionata.                                                                                                                                                                                                                                                                                          |
 |         **Rimuovi**         |                                                                                                                                                                                                                                                                                                      Elimina l'app selezionata dall'elenco.                                                                                                                                                                                                                                                                                                      |
 |         **Importa**         |                                                                                                                                                                                                                                                 Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.                                                                                                                                                                                                                                                 |

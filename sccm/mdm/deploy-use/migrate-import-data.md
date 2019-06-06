@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: b552391d-abc0-48a2-a429-93605a13a66a
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46b5034cb95193a07421fe79a445dac0f5b28503
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 0e7c9fde7298d4733c2f3abd9555edb989d7cb66
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62232334"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66716200"
 ---
 # <a name="import-configuration-manager-data-to-microsoft-intune"></a>Importare i dati di Configuration Manager in Microsoft Intune 
 
@@ -145,7 +145,7 @@ Quando si esegue lo strumento di importazione di dati, estrae il nome del gruppo
 #### <a name="find-the-collections-that-cant-be-imported"></a>Trovare le raccolte non importabili
 È possibile ottenere un elenco di tutte le raccolte che non possono essere importate, in modo da poterle aggiungere al file CSV di mapping delle raccolte. 
 
-1. Eseguire lo strumento di importazione dati e selezionare gli oggetti da importare. Utilizzare le procedure in [fase 1: Individuare gli oggetti di Configuration Manager e raccogliere dati di](#phase-1:-discover-configuration-manager-objects-and-collect-data) e [fase 2: Risolvere i problemi e selezionare gli oggetti da importare](#phase-2:-resolve-issues-and-select-the-objects-to-import) per individuare e scegliere gli oggetti. Nella pagina **Summary** (Riepilogo) scegliere quindi **Export Details** (Esporta dettagli) per creare un file CSV con i dettagli di tutti gli elementi selezionati per l'importazione, inclusi gli oggetti che non possono essere importati e le distribuzioni.  
+1. Eseguire lo strumento di importazione dati e selezionare gli oggetti da importare. Utilizzare le procedure in [fase 1: Individuare gli oggetti di Configuration Manager e raccogliere dati di](#phase-1-discover-configuration-manager-objects-and-collect-data) e [fase 2: Risolvere i problemi e selezionare gli oggetti da importare](#phase-2-resolve-issues-and-select-the-objects-to-import) per individuare e scegliere gli oggetti. Nella pagina **Summary** (Riepilogo) scegliere quindi **Export Details** (Esporta dettagli) per creare un file CSV con i dettagli di tutti gli elementi selezionati per l'importazione, inclusi gli oggetti che non possono essere importati e le distribuzioni.  
 
 2. Aprire il file CSV in Microsoft Excel e filtrare i dati in base a **Deployment** (Distribuzione) per la colonna **Type** (Tipo) e a **No** per la colonna **Importable** (Importabile). La colonna del nome delle raccolte mostra tutte le raccolte che devono essere aggiunte a un file di mapping delle raccolte per rendere importabili le distribuzioni.  
 
@@ -215,7 +215,7 @@ Nella fase 2 si esaminano gli oggetti trovati dallo strumento, si risolvono i pr
 
     - **Nome**: Nome dell'oggetto di Configuration Manager.  
 
-    - **Importable (importabile)**: Specifica se un oggetto può essere importato. È possibile scegliere solo gli oggetti per i quali è indicato Yes (Sì) nella colonna Importable (Importabile).  
+    - **Importable (importabile)** : Specifica se un oggetto può essere importato. È possibile scegliere solo gli oggetti per i quali è indicato Yes (Sì) nella colonna Importable (Importabile).  
 
     - **Piattaforma**: Specifica la piattaforma supportata dall'oggetto.  
 

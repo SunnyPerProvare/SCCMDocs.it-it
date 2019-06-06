@@ -10,17 +10,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 29b46cc49930d47439dc5e60b72e4bf5017829b9
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 0a05fc1c07df8b95ad9305d199bf5abbb3eff3a1
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62275674"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66716170"
 ---
 # <a name="how-to-create-configuration-items-for-windows-phone-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows Phone gestiti senza il client System Center Configuration Manager
+
 Usare l'elemento di configurazione **Windows Phone** di System Center Configuration Manager per gestire le impostazioni per i dispositivi Windows Phone registrati in Microsoft Intune o gestiti localmente da Configuration Manager.  
   
-### <a name="to-create-a-windows-phone-configuration-item"></a>Per creare un elemento di configurazione Windows Phone  
+## <a name="create-a-windows-phone-configuration-item"></a>Creare un elemento di configurazione Windows Phone  
   
 1. Nella console di Configuration Manager fare clic su **Asset e conformità**.  
   
@@ -36,7 +37,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
   
 7. Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme Windows Phone specifiche che valuteranno l'elemento di configurazione.  
   
-8. Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione Windows Phone](#BKMK_Setref) in questo argomento e quindi fare clic su **Avanti**.  
+8. Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione Windows Phone](#windows-phone-configuration-item-settings-reference) in questo argomento e quindi fare clic su **Avanti**.  
   
    > [!TIP]  
    >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  

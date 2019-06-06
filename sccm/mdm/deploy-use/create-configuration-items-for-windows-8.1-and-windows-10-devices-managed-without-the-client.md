@@ -11,19 +11,19 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a696059076c64d8341f5fbfa3dd5ab68fd2b34ff
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 170ae3c327e61bd9bebfb22eb7ac8be513323a3f
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62275690"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66716198"
 ---
 # <a name="how-to-create-configuration-items-for-windows-81-and-windows-10-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client System Center Configuration Manager
 
 
  Usare l'elemento di configurazione **Windows 8.1 e Windows 10** di System Center Configuration Manager per gestire le impostazioni per i dispositivi Windows 8.1 e Windows 10 registrati in Microsoft Intune o gestiti localmente da Configuration Manager.  
 
-### <a name="to-create-a-windows-81-and-windows-10-configuration-item"></a>Per creare un elemento di configurazione per Windows 8.1 e Windows 10  
+## <a name="create-a-windows-81-and-windows-10-configuration-item"></a>Creare un elemento di configurazione Windows 8.1 e Windows 10  
 
 1. Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 
@@ -39,7 +39,7 @@ ms.locfileid: "62275690"
 
 7. Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme Windows specifiche per la valutazione dell'elemento di configurazione.  
 
-8. Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione per Windows 8.1 e Windows 10](#BKMK_Setref) in questo argomento e quindi fare clic su **Avanti**.  
+8. Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione per Windows 8.1 e Windows 10](#windows-81-and-windows-10-configuration-item-settings-reference) in questo argomento e quindi fare clic su **Avanti**.  
 
    > [!TIP]  
    >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
@@ -326,7 +326,7 @@ Nella pagina **Elenco app consentite e bloccate** indicare le informazioni segue
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Elenco delle app bloccate** |                                                                                                                                                                                                                                 Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti non sono autorizzati a installare.                                                                                                                                                                                                                                 |
 | **Elenco delle app consentite** |                                                                                                                                                                                                             Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti sono autorizzati a installare. L'installazione di qualsiasi altra app viene bloccata.                                                                                                                                                                                                             |
-|        **Aggiungi**        | Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare nel Windows Store.<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app consentite o bloccate.<br /><br /> **Esempio:** Cercare nello store il **Skype** app. L'URL da usare è **<http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51>**. |
+|        **Aggiungi**        | Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare nel Windows Store.<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app consentite o bloccate.<br /><br /> **Esempio:** Cercare nello store il **Skype** app. L'URL da usare è **<http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51>** . |
 |       **Modifica**        |                                                                                                                                                                                                                                                 Consente di modificare il nome, l'autore e l'URL dell'app selezionata.                                                                                                                                                                                                                                                 |
 |      **Rimuovi**       |                                                                                                                                                                                                                                                             Elimina l'app selezionata dall'elenco.                                                                                                                                                                                                                                                             |
 |      **Importaa**       |                                                                                                                                                                                                          Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.                                                                                                                                                                                                          |
@@ -343,7 +343,7 @@ Nella pagina **Elenco app consentite e bloccate** indicare le informazioni segue
 |                         **Azure Operational Insights**                         |      Azure Operational Insights, parte della suite Microsoft Operations Manager, raccoglie, archivia e analizza i dati dei file di log provenienti da dispositivi Windows 10 Team.<br>Per connettersi ad Azure Operational Insights, è necessario specificare un ID e una chiave dell'area di lavoro.       |
 |                        **Proiezione wireless Miracast**                        |                   Abilitare questa opzione per consentire al dispositivo Windows 10 Team di usare dispositivi abilitati per Miracast per attività di progetto.<br>Se questa opzione è abilitata, selezionare da **Scegli un canale Miracast** il canale Miracast usato per il contenuto del progetto.                    |
 |              **Informazioni sulla riunione visualizzate nella schermata iniziale**               | Se si abilita questa opzione, è possibile scegliere le informazioni da visualizzare nel riquadro **Riunioni** della **schermata iniziale**. È possibile scegliere:<br><br>- **Mostra solo organizzatore e ora**<br>- **Mostra organizzatore, ora e oggetto (l'oggetto è nascosto per le riunioni private)** |
-|                      **URL dell'immagine di sfondo per la schermata di blocco**                       |                            Usare questa impostazione per visualizzare uno sfondo personalizzato nella **schermata iniziale** dei dispositivi Windows 10 Team dall'URL specificato.<br>L'immagine deve essere in formato PNG e l'URL deve iniziare con **https://**.                             |
+|                      **URL dell'immagine di sfondo per la schermata di blocco**                       |                            Usare questa impostazione per visualizzare uno sfondo personalizzato nella **schermata iniziale** dei dispositivi Windows 10 Team dall'URL specificato.<br>L'immagine deve essere in formato PNG e l'URL deve iniziare con **https://** .                             |
 
 ### <a name="windows-information-protection"></a>Windows Information Protection  
 

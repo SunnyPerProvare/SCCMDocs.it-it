@@ -2,7 +2,7 @@
 title: Desktop Analytics
 titleSuffix: Configuration Manager
 description: Una panoramica del servizio Desktop Analitica integrato con Configuration Manager.
-ms.date: 04/22/2019
+ms.date: 06/04/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: overview
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78e9454212bb8264926c1aba5262f06db1798abe
-ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
+ms.openlocfilehash: bdeffb3b2d478e4984ef721655b78aee5c47c36f
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65673432"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66716217"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Analitica Desktop?
 
@@ -89,6 +89,11 @@ Per usare Desktop Analitica, assicurarsi che l'ambiente soddisfi i prerequisiti 
     - Installare gli aggiornamenti più recenti. Per altre informazioni, vedere [aggiornare i dispositivi](/sccm/desktop-analytics/enroll-devices#update-devices).  
 
     - Inoltre necessario che nei dispositivi client di Configuration Manager, versione 1810 con aggiornamento cumulativo 2 (4488598) o versione successiva. Per altre informazioni, vedere [aggiornamento Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
+
+    > [!Note]  
+    > Analitica desktop non supporta gli aggiornamenti a Windows 10 canale per la manutenzione a lungo termine (LTSC). Per altre informazioni, vedere [Windows come una panoramica del servizio](https://docs.microsoft.com/windows/deployment/update/waas-overview#long-term-servicing-channel).
+    >
+    > Desktop Analitica è progettato per lo scenario di aggiornamento supporto il posto migliore. Se è necessario apportare modifiche significative, ad esempio dall'architettura a 32 bit a 64 bit, usare uno scenario di creazione dell'immagine. Insights Analitica desktop sono ancora utili in questi scenari di distribuzione del sistema operativo classici, ma è possibile ignorare le istruzioni specifiche aggiornamento sul posto. Per altre informazioni, vedere [scenari di distribuzione di sistemi operativi aziendali con Configuration Manager](/sccm/osd/deploy-use/scenarios-to-deploy-enterprise-operating-systems).
 
 - Dati di diagnostica di Windows. Per altre informazioni, vedere gli articoli seguenti:  
 
