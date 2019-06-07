@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12d40a64cd4300b80e8e625672f1da053814f437
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 3bed079e0037ea09afaf050ef08de16523678970
+ms.sourcegitcommit: 65e9b30e2b53ab9db679a7b1d50634a73c0028db
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65497963"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66429823"
 ---
 # <a name="list-of-prerequisite-checks-for-configuration-manager"></a>Elenco dei controlli dei prerequisiti per Configuration Manager
 
@@ -746,7 +746,7 @@ Questa versione di SQL Native Client supporta TLS 1.2. Per altre informazioni, v
 
 - [Supporto di TLS 1.2 per Microsoft SQL Server](https://support.microsoft.com/help/3135244/tls-1-2-support-for-microsoft-sql-server)  
 
-- [Come abilitare TLS 1.2 per Configuration Manager](https://support.microsoft.com/help/4040243/how-to-enable-tls-1-2-for-configuration-manager)  
+- [Come abilitare TLS 1.2 per Configuration Manager](/sccm/core/plan-design/security/enable-tls-1-2)  
 
 Configuration Manager usa SQL Server Native Client nei seguenti ruoli del sistema del sito:<!-- SCCMDocs issue 1150 -->
 

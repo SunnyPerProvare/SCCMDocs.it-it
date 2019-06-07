@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44ffc6aa554e30ef96dbe09409ee5360d0ed236d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 33055f0962ef1220d41a2c8ee463cb2380ff60db
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129851"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66715961"
 ---
 # <a name="capabilities-in-technical-preview-1705-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1705 per System Center Configuration Manager
 
@@ -135,10 +135,6 @@ Prima di usare una replica asincrona per ripristinare il database del sito, è n
 Per arrestare il sito, è possibile usare lo[Strumento di manutenzione gerarchia](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe) per interrompere i servizi principali nel server del sito. Usare la riga di comando: **Preinst.exe /stopsite**   
 
 Arrestare il sito equivale ad arrestare il servizio Gestione componenti del sito (sitecomp) e poi il servizio SMS_Executive service, nel server del sito.
-
-> [!TIP]  
-> Se si usa la replica primaria passiva, introdotta in questa versione Technical Preview come [disponibilità elevata per il ruolo del server del sito](#site-server-role-high-availability), non è necessario arrestare la replica passiva. È necessario arrestare solo il sito primario attivo.
-
 
 
 ## <a name="improved-user-notifications-for-office-365-updates"></a>Notifiche utente migliorate per gli aggiornamenti di Office 365

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c66ef90812e8b5ccf47063fb335c17aaeca4fa64
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 3f6b445bb2e84cb7c3f35d81c66038686f2b9833
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122220"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66715989"
 ---
 # <a name="plan-a-migration-job-strategy-in-system-center-configuration-manager"></a>Pianificare una strategia di processo di migrazione in System Center Configuration Manager
 
@@ -29,18 +29,6 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
  Prima di eseguire la migrazione dei client da una gerarchia all'altra, verificare che gli oggetti utilizzati dai client siano stati migrati e che questi oggetti siano disponibili nella gerarchia di destinazione. Ad esempio, quando si esegue la migrazione da una gerarchia di origine di Configuration Manager 2007 SP2, si potrebbe ricevere un annuncio per contenuti che sono distribuiti in una raccolta personalizzata che include un client. In questo scenario è consigliabile eseguire la migrazione della raccolta, dell'annuncio e del contenuto associato prima di eseguire la migrazione del client. I dati non potranno essere associati al client nella gerarchia di destinazione se la migrazione del contenuto, della raccolta e dell'annuncio non viene eseguita prima di quella del client. Se un client non è associato ai dati relativi a un annuncio e contenuto precedentemente eseguiti, il client potrebbe ricevere il contenuto per l'installazione nella gerarchia di destinazione che potrebbe non essere necessario. Se viene eseguita la migrazione del client dopo che sono stati migrati i dati, il client viene associato al contenuto e all'annuncio e, a meno che l'annuncio non sia ricorrente, non riceve di nuovo il contenuto per l'annuncio migrato.  
 
  Alcuni oggetti richiedono altro oltre alla migrazione dei dati dalla gerarchia di origine nella gerarchia di destinazione. Ad esempio, per eseguire la migrazione degli aggiornamenti software dai client alla gerarchia di destinazione, è necessario distribuire un punto di aggiornamento software attivo, configurare il catalogo dei prodotti e sincronizzare il punto di aggiornamento software con Windows Server Update Services (WSUS) nella gerarchia di destinazione.  
-
- Utilizzare le sezioni seguenti per pianificare i processi di migrazione.  
-
--   [Tipi di processi di migrazione](#Types_of_Migration)  
-
--   [Pianificazione generale di tutti i processi di migrazione](#About_Migration_Jobs)  
-
--   [Pianificazione di processi di migrazione raccolta](#About_Collection_Migration)  
-
--   [Pianificazione di processi di migrazione oggetto](#About_Object_Migration)  
-
--   [Pianificazione di processi di migrazione di oggetti migrati precedentemente](#About_Object_Migrations)  
 
 ##  <a name="Types_of_Migration"></a> Tipi di processi di migrazione  
  Configuration Manager supporta i tipi seguenti di processi di migrazione. Ogni tipo di processo è progettato per definire gli oggetti che è possibile includere nel processo.  

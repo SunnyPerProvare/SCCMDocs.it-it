@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5adc8809edc0a069269dfce71f302452a0e01b45
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 376d35ae0eaca282b9634e2c3eeb50b9c814f270
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56124030"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748004"
 ---
 # <a name="learn-more-about-powershell-script-security"></a>Informazioni sulla sicurezza degli script PowerShell
 
@@ -49,8 +49,6 @@ Di seguito sono stati raccolti alcuni collegamenti che gli amministratori di Con
 
 [Blog sulla protezione da code injection dannoso](https://blogs.msdn.microsoft.com/powershell/2006/11/22/protecting-against-malicious-code-injection/)
 
-[Informazioni sulla sicurezza di PowerShell Gallery](https://blogs.msdn.microsoft.com/powershell/2015/08/06/powershell-gallery-new-security-scan/)
-
 [Blue Team PowerShell: discussione su registrazione blocco script approfondita, registrazione eventi protetti, interfaccia di analisi antimalware, API di generazione codice sicuro](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
 
 [API per un'interfaccia di analisi antimalware disponibile in Windows 10](https://cloudblogs.microsoft.com/microsoftsecure/2015/06/09/windows-10-to-offer-application-developers-new-malware-defenses/?source=mmpc)
@@ -65,7 +63,7 @@ Il passaggio dei parametri garantisce flessibilità agli script e consente di ri
 - Usare il modulo ["hunter injection"](https://www.powershellgallery.com/packages/InjectionHunter/1.0.0) di PowerShell in PowerShell Gallery.
     - Potrebbero essere riscontrati falsi positivi. Controllare quindi la finalità nel caso in cui siano contrassegnati casi sospetti per determinare se si tratta effettivamente di un problema. 
 - Microsoft Visual Studio offre un analizzatore di script che può essere usato per controllare la sintassi di PowerShell.
-- Questo video intitolato: "DEF CON 25 - Lee Holmes - Get $pwnd: Attacking Battle Hardened Windows Server"(DEF CON 25 - Lee Holmes - Colpito e affondato: Attacco ai danni di Windows Server) offre una panoramica dei tipi di problemi da cui è possibile proteggersi (in particolare la sezione compresa tra 12:20 e 17:50):     <iframe width="560" height="315" src="https://www.youtube.com/embed/ahxMOAAani8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+- Questo video intitolato: "DEF CON 25 - Lee Holmes - Get $pwnd: Attacking Battle Hardened Windows Server"(DEF CON 25 - Lee Holmes - Ottenere $pwnd: Attacco ai danni di Windows Server) offre una panoramica dei tipi di problemi da cui è possibile proteggersi (in particolare la sezione compresa tra 12:20 e 17:50):     <iframe width="560" height="315" src="https://www.youtube.com/embed/ahxMOAAani8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## <a name="environment-recommendations"></a>Consigli relativi all'ambiente
 Consigli generali per gli amministratori di PowerShell.

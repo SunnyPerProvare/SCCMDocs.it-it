@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9ef05ac5a931addb5dd5a8dc7d1b04bd4d50e1c
-ms.sourcegitcommit: 417e3834a42b415a8e129327dd3c15cc0c7ec5a2
+ms.openlocfilehash: 07e69561580a22128cf9a5b7b97f33e10cbb0456
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65443105"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66716035"
 ---
 # <a name="capabilities-in-technical-preview-1805-for-system-center-configuration-manager"></a>Funzionalità nella Technical Preview 1805 per System Center Configuration Manager
 
@@ -71,12 +71,12 @@ Seguire le istruzioni per creare una distribuzione in più fasi in cui configura
         - **Percentuale di esiti positivi della distribuzione**: specificare la percentuale di dispositivi che devono completare la distribuzione per i criteri per l'esito positivo della fase precedente.  
 
     - Condizioni per l'inizio di questa fase della distribuzione dopo l'esito positivo della fase precedente  
-        - **Inizia automaticamente questa fase dopo un periodo di differimento (in giorni)**: scegliere il numero di giorni di attesa prima di iniziare la fase successiva dopo l'esito positivo della fase precedente. 
+        - **Inizia automaticamente questa fase dopo un periodo di differimento (in giorni)** : scegliere il numero di giorni di attesa prima di iniziare la fase successiva dopo l'esito positivo della fase precedente. 
         - **Avvia manualmente questa fase della distribuzione**: non avviare questa fase automaticamente dopo l'esito positivo della fase precedente.  
 
     - Dopo avere incluso un dispositivo, installare il software
         - **Appena possibile**: imposta come scadenza per l'installazione nel dispositivo il momento in cui il dispositivo viene incluso.
-        - **Ora della scadenza (rispetto all'ora in cui il dispositivo viene incluso)**: imposta la scadenza per l'installazione un determinato numero di giorni dopo l'inclusione del dispositivo.  
+        - **Ora della scadenza (rispetto all'ora in cui il dispositivo viene incluso)** : imposta la scadenza per l'installazione un determinato numero di giorni dopo l'inclusione del dispositivo.  
      
 7. Completare la procedura guidata Impostazioni delle fasi.
 
@@ -175,11 +175,11 @@ Per altre informazioni su Windows LEDBAT, vedere il post di blog [New transport 
 
 
 ### <a name="try-it-out"></a>Verifica
- Provare a completare le attività. Inviare quindi [commenti e suggerimenti](#bkmk_feedback).
+ Provare a completare le attività. Inviare quindi [commenti e suggerimenti](capabilities-in-technical-preview-1804.md#bkmk_feedback).
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**. Selezionare il nodo **Punti di distribuzione**. Selezionare il punto di distribuzione di destinazione e fare clic su **Proprietà** sulla barra multifunzione.  
 
-2. Nella scheda **Generale** abilitare l'opzione **Regola la velocità del download per usare la larghezza di banda di rete inutilizzata (Windows LEDBAT)**.  
+2. Nella scheda **Generale** abilitare l'opzione **Regola la velocità del download per usare la larghezza di banda di rete inutilizzata (Windows LEDBAT)** .  
 
 
 

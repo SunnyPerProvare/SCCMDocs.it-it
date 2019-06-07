@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e8ebea21b735e6b93d73bf6ff5eb842243ef42d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: fd2e95a82ab01c760ea14158f164e930a77db894
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56121863"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748136"
 ---
 # <a name="how-to-use-task-sequence-variables-in-configuration-manager"></a>Come usare le variabili della sequenza di attività in Configuration Manager
 
@@ -54,7 +54,7 @@ ms.locfileid: "56121863"
 
  Le variabili di azione della sequenza di attività specificano le impostazioni di configurazione usate da un singolo passaggio della sequenza di attività. Per impostazione predefinita, il passaggio inizializza le proprie impostazioni prima dell'esecuzione. Queste impostazioni sono disponibili solo mentre il passaggio della sequenza di attività associato è in esecuzione. La sequenza di attività aggiunge la variabile di azione all'ambiente prima di eseguire il passaggio. Rimuove quindi il valore dall'ambiente dopo l'esecuzione del passaggio.
 
- Ad esempio, aggiungere il passaggio **Esegui riga di comando** a una sequenza di attività. Questo passaggio include una proprietà **Da**. La sequenza di attività archivia un valore predefinito per questa proprietà come variabile **WorkingDirectory**. La sequenza di attività inizializza questo valore prima di eseguire il passaggio **Esegui riga di comando**. Durante l'esecuzione di questo passaggio, accedere al valore della proprietà **Da** dal valore **WorkingDirectory**. Dopo il completamento del passaggio, la sequenza di attività rimuove il valore della variabile **WorkingDirectory** dall'ambiente. Se la sequenza di attività include un altro passaggio **Esegui riga di comando**, inizializza una nuova variabile **WorkingDirectory**. A questo punto la sequenza di attività imposta la variabile sul valore iniziale del passaggio corrente. Per altre informazioni, vedere [WorkingDirectory](using-task-sequence-variables.md#WorkingDirectory).  
+ Ad esempio, aggiungere il passaggio **Esegui riga di comando** a una sequenza di attività. Questo passaggio include una proprietà **Da**. La sequenza di attività archivia un valore predefinito per questa proprietà come variabile **WorkingDirectory**. La sequenza di attività inizializza questo valore prima di eseguire il passaggio **Esegui riga di comando**. Durante l'esecuzione di questo passaggio, accedere al valore della proprietà **Da** dal valore **WorkingDirectory**. Dopo il completamento del passaggio, la sequenza di attività rimuove il valore della variabile **WorkingDirectory** dall'ambiente. Se la sequenza di attività include un altro passaggio **Esegui riga di comando**, inizializza una nuova variabile **WorkingDirectory**. A questo punto la sequenza di attività imposta la variabile sul valore iniziale del passaggio corrente. Per altre informazioni, vedere [WorkingDirectory](/sccm/osd/understand/task-sequence-variables#WorkingDirectory).  
 
  Il valore *predefinito* per una variabile di azione è presente quando il passaggio viene eseguito. Se si imposta un *nuovo* valore, questo è disponibile per più passaggi della sequenza di attività. Se si esegue l'override di un valore predefinito, il nuovo valore rimane nell'ambiente. Questo nuovo valore esegue l'override del valore predefinito per altri passaggi della sequenza di attività. Supponiamo ad esempio di aggiungere un passaggio **Imposta variabile della sequenza di attività** come primo passaggio della sequenza di attività. Questo passaggio imposta la variabile **WorkingDirectory** su `C:\`. Qualsiasi passaggio **Esegui riga di comando** nella sequenza di attività usa il nuovo valore della directory iniziale.  
 
@@ -228,7 +228,7 @@ ms.locfileid: "56121863"
 
     - **Variabile**: nome della variabile. Ad esempio, `_SMSTSInWinPE`.  
 
-    - **Condizione**: condizione in base alla quale valutare il valore della variabile. Ad esempio, **uguale a**.  
+    - **Condizione**: condizione in base a cui valutare il valore della variabile. Ad esempio, **uguale a**.  
 
     - **Valore**: valore della variabile da controllare. Ad esempio, `false`.  
 

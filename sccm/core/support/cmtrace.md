@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 988e834de78bac64be43600ca73d0d51ff29bf4b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 332cdf00256ccfbac07b352c22b232edd4ba9363
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496766"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66716165"
 ---
 # <a name="cmtrace"></a>CMTrace
 
@@ -88,7 +88,7 @@ Configurare le impostazioni per CMTrace. Sono disponibili le seguenti opzioni:
 
      - **Update Interval** (Intervallo di aggiornamento): controlla la frequenza con la quale CMTrace controlla la presenza di modifiche nei file di log e carica le nuove righe. Per impostazione predefinita, questo valore è impostato su 500 millisecondi.  
 
-     - **Highlight (Evidenziazione)**: imposta il colore usato da CMTrace per evidenziare le righe dei log scelte. Per impostazione predefinita, questo colore è il giallo di base (rosso: 255, verde: 255, blu: 0).  
+     - **Highlight (Evidenziazione)** : imposta il colore usato da CMTrace per evidenziare le righe dei log scelte. Per impostazione predefinita, questo colore è il giallo di base (rosso: 255, verde: 255, blu: 0).  
 
      - **Columns** (Colonne): consente di configurare le colonne visibili nella visualizzazione dei log e l'ordine in cui vengono visualizzate. Per impostazione predefinita, visualizza Log Text, Component, Date/Time e Thread.  
 
@@ -115,8 +115,8 @@ Nel menu **Strumenti** sono disponibili le azioni seguenti:
 - [Filtro](#filter)
 - [Error lookup](#error-lookup) (Ricerca errori)
 - [Sospendi](#pause)
-- [Show/Hide Details](#show/hide-details) (Mostra/Nascondi dettagli)
-- [Show/Hide Info Pane](#show/hide-info-pane) (Mostra/Nascondi riquadro informazioni)
+- [Show/Hide Details](#showhide-details) (Mostra/Nascondi dettagli)
+- [Show/Hide Info Pane](#showhide-info-pane) (Mostra/Nascondi riquadro informazioni)
 
 #### <a name="find"></a>Trova
 Cercare nel file di log aperto una stringa di testo specificata.  
