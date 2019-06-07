@@ -10,12 +10,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17a99fff7b6486d6de26e2d4c153244a5665391a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 253710602ca4c46e3ed0d929fb62edea6c3efeb3
+ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56136644"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354823"
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Riferimento tecnico per i controlli crittografici
 
@@ -267,7 +267,7 @@ Per migliorare la sicurezza dei client e server di Configuration Manager, esegui
 
 -   Abilitare TLS 1.2
 
-    Per abilitare TLS 1.2 per Configuration Manager, vedere l'articolo della Knowledge Base seguente: [Come abilitare TLS 1.2 per Configuration Manager](https://support.microsoft.com/en-us/help/4040243/how-to-enable-tls-1-2-for-configuration-manager).
+    Per abilitare TLS 1.2 per Configuration Manager, vedere [Come abilitare TLS 1.2 per Configuration Manager](enable-tls-1-2.md).
 -   Disabilitare SSL 3.0, TLS 1.0 e TLS 1.1 
 -   Riordinare i pacchetti di crittografia relativi a TLS 
 

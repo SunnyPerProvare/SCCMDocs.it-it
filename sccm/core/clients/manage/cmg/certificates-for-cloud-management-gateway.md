@@ -10,12 +10,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69c5f446c465655adb1e9fee1b891a3152af47e9
-ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
+ms.openlocfilehash: 9368bedd80171077767ead54763abede2381c909
+ms.sourcegitcommit: bfb8a17f60dcb9905e739045a5141ae45613fa2c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58197096"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66198448"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificati per il gateway di gestione cloud
 
@@ -59,7 +59,7 @@ I certificati per Cloud Management Gateway supportano le configurazioni seguenti
 
 Usare questo certificato quando si crea il gateway di gestione cloud nella console di Configuration Manager.
 
-Il gateway di gestione cloud crea un servizio HTTPS a cui si connettono i client basati su Internet. Il server richiede un certificato di autenticazione server per compilare il canale sicuro. Acquisire un certificato per questo scopo da un provider pubblico o inviarlo dall'infrastruttura a chiave pubblica. Per altre informazioni, vedere [Certificato radice trusted del gateway di gestione cloud per i client](#cmg-trusted-root-certificate-to-clients).
+Il gateway di gestione cloud crea un servizio HTTPS a cui si connettono i client basati su Internet. Il server richiede un certificato di autenticazione server per compilare il canale sicuro. Acquisire un certificato per questo scopo da un provider pubblico o inviarlo dall'infrastruttura a chiave pubblica. Per altre informazioni, vedere [Certificato radice trusted del gateway di gestione cloud per i client](#bkmk_cmgroot).
 
  > [!TIP]
  > Questo certificato richiede un nome univoco globale per identificare il servizio in Azure. Prima di richiedere un certificato, verificare che il nome di dominio di Azure sia univoco. Ad esempio, *GraniteFalls.CloudApp.Net*. Accedere al [portale di Microsoft Azure](https://portal.azure.com). Selezionare **Crea una risorsa**, scegliere la categoria **Calcolo**, quindi selezionare **Servizio cloud**. Digitare un prefisso nel campo **Nome DNS**, ad esempio *GraniteFalls*. L'interfaccia indica se il nome di dominio è disponibile o se è già in uso in un altro servizio. Non creare il servizio nel portale, usare questo processo per verificare la disponibilità del nome. 
@@ -195,7 +195,7 @@ Dopo aver emesso un certificato di autenticazione client per un computer, usare 
 
 6.  Nella nuova finestra di dialogo Certificato passare alla scheda **Dettagli**. Selezionare **Copia su file**.  
 
-7.  Completare l'Esportazione guidata certificati usando il formato di certificato predefinito, **DER encoded binary X.509 (.CER)**. Prendere nota del nome e del percorso del certificato esportato.  
+7.  Completare l'Esportazione guidata certificati usando il formato di certificato predefinito, **DER encoded binary X.509 (.CER)** . Prendere nota del nome e del percorso del certificato esportato.  
 
 8. Esportare tutti i certificati presenti nel percorso di certificazione del certificato di autenticazione client originale. Prendere nota dei certificati esportati che rappresentano autorità di certificazione intermedie e di quelli che rappresentano autorità radice attendibili.  
 

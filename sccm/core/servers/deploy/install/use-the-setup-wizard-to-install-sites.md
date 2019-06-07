@@ -1,7 +1,7 @@
 ---
 title: Installazione guidata
 titleSuffix: Configuration Manager
-ms.date: 03/07/2019
+ms.date: 05/23/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92c51158412b8bc9737c4851fc43dc2a7776488b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: e69dbd246e9989494db95cfe5996862c7772822b
+ms.sourcegitcommit: bfb8a17f60dcb9905e739045a5141ae45613fa2c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501266"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66198491"
 ---
 # <a name="use-the-setup-wizard-to-install-configuration-manager-sites"></a>Usare l'installazione guidata per installare i siti di Configuration Manager
 
@@ -118,6 +118,13 @@ Se si installa un sito di amministrazione centrale come parte di uno scenario di
 
     - **Cartella di installazione**: questa cartella indica il percorso di installazione di Configuration Manager. Non è possibile modificare il percorso dopo l'installazione del sito. Il percorso non può contenere spazi finali o caratteri Unicode.  
 
+        > [!NOTE]  
+        > Valutare se usare la cartella di installazione predefinita. Se si usa la partizione del sistema operativo predefinita in un ambiente di produzione, in futuro potrebbero verificarsi i problemi seguenti:  
+        >
+        > - Se Configuration Manager usa lo spazio su disco libero aggiuntivo nella partizione del sistema operativo, né Windows né Configuration Manager funzioneranno correttamente. Se si installa Configuration Manager in una partizione separata, l'utilizzo del disco non influirà sul sistema operativo.
+        > - Le prestazioni di Configuration Manager sono migliori con un disco veloce. In alcune progettazioni di server la velocità del disco del sistema operativo non è ottimale.
+        > - È possibile aggiornare, ripristinare o reinstallare il sistema operativo senza alcun impatto sull'installazione di Configuration Manager.  
+
 11. Nella pagina **Installazione sito** usare l'opzione seguente che corrisponde allo scenario:  
 
     - **Installazione di un sito di amministrazione centrale:**  
@@ -140,7 +147,7 @@ Se si installa un sito di amministrazione centrale come parte di uno scenario di
 
 12. Nella pagina **Informazioni database** specificare le informazioni seguenti:  
 
-    - **Nome server SQL (FQDN)**: per impostazione predefinita, questo valore è impostato sul computer server del sito.  
+    - **Nome server SQL (FQDN)** : per impostazione predefinita, questo valore è impostato sul computer server del sito.  
 
         Se si usa una porta personalizzata, aggiungerla al nome FQDN di SQL Server. Dopo l'FQDN di SQL Server, aggiungere una virgola e quindi il numero di porta. Ad esempio, per il server *SQLServer1.fabrikam.com*, usare quanto segue per specificare la porta *1551*: `SQLServer1.fabrikam.com,1551`  
 
@@ -148,7 +155,7 @@ Se si installa un sito di amministrazione centrale come parte di uno scenario di
 
     - **Nome database**: Per impostazione predefinita, questo valore è impostato su `CM_<Sitecode>`. È possibile personalizzare tale valore.  
 
-    - **Porta Service Broker:**: per impostazione predefinita, questo valore è impostato per usare la porta predefinita di SQL Server Service Broker (SSB) 4022. SQL la usa per comunicare direttamente con il database del sito in altri siti.  
+    - **Porta Service Broker:** : per impostazione predefinita, questo valore è impostato per usare la porta predefinita di SQL Server Service Broker (SSB) 4022. SQL la usa per comunicare direttamente con il database del sito in altri siti.  
 
 13. Nella seconda pagina **Informazioni database** è possibile specificare percorsi personalizzati per il file di dati e il file di log di SQL Server per il database del sito:  
 
@@ -369,9 +376,9 @@ Usare la console di Configuration Manager per installare un sito secondario.
 
     È possibile configurare fino a due unità disco per la raccolta contenuto e due unità disco per la condivisione dei pacchetti. Configuration Manager può usare unità aggiuntive nel caso in cui le prime due raggiungano il limite di spazio riservato nell'unità configurata. Nella pagina **Impostazioni unità** è possibile configurare la priorità per le unità disco e la quantità di spazio disponibile su disco da mantenere su ogni unità disco.  
 
-    - **Spazio riservato nell'unità (MB)**: il valore configurato per questa impostazione determina la quantità di spazio disponibile in un'unità prima che Configuration Manager scelga un'altra unità e continui il processo di copia su tale unità. I file di contenuto possono estendersi su più unità.  
+    - **Spazio riservato nell'unità (MB)** : il valore configurato per questa impostazione determina la quantità di spazio disponibile in un'unità prima che Configuration Manager scelga un'altra unità e continui il processo di copia su tale unità. I file di contenuto possono estendersi su più unità.  
 
-    - **Percorsi contenuto**: specificare i percorsi del contenuto per la condivisione di pacchetti e raccolte di contenuti. Configuration Manager copia i contenuti nel percorso del contenuto principale finché la quantità di spazio libero non raggiunge il valore specificato per **Spazio riservato nell'unità (MB)**.  
+    - **Percorsi contenuto**: specificare i percorsi del contenuto per la condivisione di pacchetti e raccolte di contenuti. Configuration Manager copia i contenuti nel percorso del contenuto principale finché la quantità di spazio libero non raggiunge il valore specificato per **Spazio riservato nell'unità (MB)** .  
 
     Per impostazione predefinita, i percorsi contenuto sono impostati su **Automatico**. Il percorso del contenuto primario è impostato sull'unità disco con più spazio al momento dell'installazione. Il percorso secondario viene impostato per l'unità disco con lo spazio libero maggiore dopo l'unità principale. Quando le unità primaria e secondaria raggiungono il limite di spazio riservato, Configuration Manager seleziona un'altra unità disponibile con la maggiore quantità di spazio libero e continua il processo di copia.  
 
