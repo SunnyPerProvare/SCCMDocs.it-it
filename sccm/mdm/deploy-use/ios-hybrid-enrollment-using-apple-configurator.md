@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04b67b324927f4918ff5c0835896cb0d63a9e48c
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: b07fc7bf1c4a226456506d0131c3d6bad14b1766
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62256048"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748221"
 ---
 # <a name="ios-hybrid-enrollment-using-apple-configurator-with-configuration-manager"></a>Registrazione ibrida di iOS tramite Apple Configurator con Configuration Manager
 
@@ -86,7 +86,7 @@ Per altre informazioni, vedere [Predichiarare dispositivi con numeri IMEI o di s
 
     ```
 
-5.  Salvare l'URL del profilo modificato. Verrà usato per aggiungere l'URL del profilo di registrazione in Apple Configurator nella [sezione successiva](#step-4-prepare-the-device-with-apple-configurator).  
+5.  Salvare l'URL del profilo modificato. Verrà usato per aggiungere l'URL del profilo di registrazione in Apple Configurator nella [sezione successiva](#prepare-the-device-with-apple-configurator).  
 
 > [!NOTE]
 > L'URL del profilo di registrazione è valido per due settimane quando viene esportato. Dopo due settimane, è necessario esportare un nuovo URL per registrare i dispositivi iOS.
@@ -104,7 +104,7 @@ Per preparare i dispositivi iOS per la registrazione, collegare ogni dispositivo
 
 3. Nel riquadro delle preferenze selezionare **Server** e fare clic sul simbolo "+" sotto il riquadro a sinistra per avviare la configurazione guidata del server MDM. Fare clic su **Avanti**.  
 
-4. Immettere il **Nome** e l'**URL di registrazione** salvati [in precedenza](#step-3-export-the-profile-to-deploy-to-ios-devices). Fare clic su **Avanti**.  
+4. Immettere il **Nome** e l'**URL di registrazione** salvati [in precedenza](#export-the-profile-to-deploy-to-ios-devices). Fare clic su **Avanti**.  
 
    > [!NOTE]
    > Se si riceve un messaggio di avviso sui requisiti del profilo di attendibilità per Apple TV, è possibile disabilitare senza problemi l'opzione **Trust Profile** facendo clic sulla "X" grigia. Anche gli eventuali avvisi sul certificato Anchor possono essere ignorati.

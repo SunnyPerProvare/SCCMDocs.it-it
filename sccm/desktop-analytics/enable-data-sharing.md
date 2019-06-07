@@ -2,7 +2,7 @@
 title: Abilitare la condivisione dei dati
 titleSuffix: Configuration Manager
 description: Una Guida di riferimento per la condivisione dei dati di diagnostica con Desktop Analitica.
-ms.date: 04/22/2019
+ms.date: 06/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a30dc89882146c892f5eeec1aacfc31efbfd038
-ms.sourcegitcommit: 65753c51fbf596f233fc75a5462ea4a44005c70b
+ms.openlocfilehash: dbe161fd744343927f0b373775182eccfd58c1b6
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66463051"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748239"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Abilitare la condivisione per Desktop Analitica dei dati
 
@@ -56,6 +56,9 @@ Gli articoli seguenti sono anche ottime risorse per meglio comprendere i livelli
 
 Per abilitare la condivisione dei dati, configurare il server proxy per consentire gli endpoint seguenti:
 
+> [!Important]  
+> Per la privacy e l'integrità dei dati, Windows cerca un certificato SSL di Microsoft durante la comunicazione con gli endpoint dei dati di diagnostica. L'ispezione e l'intercettazione SSL non sono possibili. Per usare Desktop Analitica, escludere tali endpoint dall'ispezione SSL.<!-- BUG 4647542 -->
+
 | Endpoint  | Funzione  |
 |-----------|-----------|
 | `https://v10c.events.data.microsoft.com` | Esperienza dell'utente connesso e l'endpoint di componente di diagnostica. Usato dai dispositivi che eseguono Windows 10, versione 1703 o successiva, con l'aggiornamento cumulativo 2018-09 update o versione successiva. |
@@ -77,12 +80,6 @@ Per abilitare la condivisione dei dati, configurare il server proxy per consenti
 | `https://office.pipe.aria.microsoft.com` | Per le funzionalità future <!-- Used by Office clients to send diagnostic data events from universal/modern Office apps, and Win32 Office 16 versions later than 16.0.8702. It's used to collect usage and reliability signals events for Desktop Analytics. --> |
 | `https://graph.windows.net` | Consente di recuperare automaticamente le impostazioni, ad esempio CommercialId quando ci si collega la gerarchia per Desktop Analitica (on solo ruolo del Server di Configuration Manager). |
 | `https://fef.msua06.manage.microsoft.com` | Utilizzato per le appartenenze a raccolte di sincronizzazione dispositivi e piani di distribuzione stato conformità del dispositivo con Desktop Analitica (on solo ruolo del Server di Configuration Manager). |
-
-
-### <a name="ssl-inspection"></a>Ispezione SSL
-
-Per la privacy e l'integrità dei dati, Windows cerca un certificato SSL di Microsoft durante la comunicazione con gli endpoint dei dati di diagnostica. L'ispezione e l'intercettazione SSL non sono possibili. Per usare Desktop Analitica, escludere gli endpoint precedenti dall'ispezione SSL.
-
 
 
 ## <a name="proxy-server-authentication"></a>Autenticazione del server proxy

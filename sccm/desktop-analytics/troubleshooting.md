@@ -2,7 +2,7 @@
 title: Risoluzione dei problemi relativi a Desktop Analitica
 titleSuffix: Configuration Manager
 description: Dettagli tecnici per risolvere i problemi con Desktop Analitica.
-ms.date: 05/31/2019
+ms.date: 06/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: edb871cf9a12862f19109fe885bfb3a0e626f445
-ms.sourcegitcommit: 65753c51fbf596f233fc75a5462ea4a44005c70b
+ms.openlocfilehash: a1f54a2794b3a938366553c635e560ebe1adb320
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66463070"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748135"
 ---
 # <a name="troubleshooting-desktop-analytics"></a>Risoluzione dei problemi relativi a Desktop Analitica
 
@@ -562,6 +562,20 @@ Se non è possibile creare questa app di Azure AD dalla procedura guidata Config
    Selezionare **Verify**, quindi selezionare **OK** per chiudere la finestra di Importa le app. Selezionare **successivo** nella pagina App della procedura guidata servizi di Azure.  
 
 Per continuare il resto della procedura guidata di **dati di diagnostica** pagina, vedere [Connect al servizio](/sccm/desktop-analytics/connect-configmgr#bkmk_connect).
+
+#### <a name="troubleshoot-app-in-configuration-manager"></a>Risolvere i problemi di app in Configuration Manager
+
+Se si verificano problemi creando o importando l'app, verificare innanzitutto **Smsadminui** dell'errore specifico. Quindi verificare le configurazioni seguenti:
+
+- È stato correttamente registrato il tenant per il servizio Desktop Analitica. Per altre informazioni, vedere [come configurare Desktop Analitica](/sccm/desktop-analytics/set-up).
+
+- Gli endpoint sono accessibili tutti necessari. Per altre informazioni, vedere [endpoint](/sccm/desktop-analytics/enable-data-sharing#endpoints).
+
+- Assicurarsi che l'utente che esegue l'accesso disponga delle autorizzazioni corrette. Per altre informazioni, vedere [Prerequisiti](/sccm/desktop-analytics/overview#prerequisites).
+
+- Assicurarsi che l'utente può accedere ad Azure in generale. Questa azione determina se sono presenti AD Azure generale problemi di autenticazione.
+
+- Controllare i messaggi di stato per il **SMS_SERVICE_CONNECTOR** componente per quanto riguarda le *ruolo di lavoro di Analitica Desktop*.
 
 
 ### <a name="bkmk_MALogAnalyticsReader"></a> Ruolo applicazione MALogAnalyticsReader
