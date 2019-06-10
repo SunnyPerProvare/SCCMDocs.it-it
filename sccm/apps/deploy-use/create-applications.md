@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e796996f870fcdd8428f3a16b08eee56d249cfa6
-ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
+ms.openlocfilehash: c54eb02fe3de3246a7c8ed15e7589fcd4d9b1c9b
+ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65673385"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66264442"
 ---
 # <a name="create-applications-in-configuration-manager"></a>Creare applicazioni in Configuration Manager
 
@@ -338,6 +338,9 @@ Passare alla sezione successiva sull'uso di uno script personalizzato come metod
 
 Configuration Manager controlla i risultati dello script. Legge i valori scritti dallo script nel flusso di output standard (STDOUT) e nel flusso degli errori standard (STDERR), nonché il codice di uscita. Se il codice di uscita dello script è un valore diverso da zero, lo script non è riuscito e lo stato del rilevamento dell'applicazione è *Sconosciuto*. Se il codice di uscita è pari a zero e STDOUT contiene dati, lo stato di rilevamento dell'applicazione è *Installato*.
 
+> [!TIP]
+> Quando si crea uno script di rilevamento, se si restituisce un codice di uscita pari a zero ma non si restituisce nessun output (dati in STDOUT), l'applicazione non viene rilevata come installata. Per altre informazioni, vedere gli esempi seguenti.
+
 Usare le tabelle seguenti per controllare se un'applicazione è installata usando l'output di uno script:  
 
 **Codice di uscita uguale a zero:**  
@@ -349,7 +352,6 @@ Usare le tabelle seguenti per controllare se un'applicazione è installata usand
 |Non vuoto|Vuoto|Operazione completata|Installato|
 |Non vuoto|Non vuoto|Operazione completata|Installato|
 
-
 **Codice di uscita diverso da zero:**  
 
 |STDOUT|STDERR|Risultato dello script|Stato di rilevamento dell'applicazione|
@@ -359,34 +361,62 @@ Usare le tabelle seguenti per controllare se un'applicazione è installata usand
 |Non vuoto|Vuoto|Errore|Sconosciuto|
 |Non vuoto|Non vuoto|Errore|Sconosciuto|
 
+**Esempi**
 
-**Esempi di VBScript**
-
-Usare gli esempi di VBScript seguenti per scrivere script di rilevamento applicazioni personalizzati:  
+Usare gli esempi di PowerShell/VBScript seguenti per creare script personalizzati per il rilevamento di applicazioni:  
 
 Esempio 1: Lo script restituisce un codice di uscita diverso da zero. Questo codice indica che l'esecuzione dello script ha avuto esito negativo. In questo caso, lo stato di rilevamento dell'applicazione è sconosciuto.  
+
+``` PowerShell
+Exit 1
+```
+
 ``` VBScript
 WScript.Quit(1)
 ```
 
 Esempio 2: Lo script restituisce un codice di uscita pari a zero, ma il valore di STDERR non è vuoto. Questo risultato indica che l'esecuzione dello script ha avuto esito negativo. In questo caso, lo stato di rilevamento dell'applicazione è sconosciuto.  
+
+``` PowerShell
+Write-Error "Script failed"
+Exit 0
+```
+
 ``` VBScript
 WScript.StdErr.Write "Script failed"
 WScript.Quit(0)
 ```
 
 Esempio 3: Lo script restituisce un valore del codice di uscita pari a zero, che indica un'esecuzione corretta dello script. Il valore di STDOUT è tuttavia vuoto e ciò indica che l'applicazione non è installata.  
+
+``` PowerShell
+Exit 0
+```
+
 ``` VBScript
 WScript.Quit(0)
 ```
 
 Esempio 4: Lo script restituisce un valore del codice di uscita pari a zero, che indica un'esecuzione corretta dello script. Il valore per STDOUT non è vuoto e ciò indica che l'applicazione è installata.  
+
+``` PowerShell
+Write-Host "The application is installed"
+Exit 0
+```
+
 ``` VBScript
 WScript.StdOut.Write "The application is installed"
 WScript.Quit(0)
 ```
 
 Esempio 5: Lo script restituisce un valore del codice di uscita pari a zero, che indica un'esecuzione corretta dello script. I valori per STDOUT e STDERR non sono vuoti e ciò indica che l'applicazione è installata.  
+
+``` PowerShell
+Write-Host "The application is installed"
+Write-Error "Completed"
+Exit 0
+```
+
 ``` VBScript
 WScript.StdOut.Write "The application is installed"
 WScript.StdErr.Write "Completed"

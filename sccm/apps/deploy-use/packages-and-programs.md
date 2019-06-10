@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c840c0a42ccf36e9c69044a6591b29d70c19093
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 818abdeb24d4c050bb8517bffda9ece0b012852c
+ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126456"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66264410"
 ---
 # <a name="packages-and-programs-in-system-center-configuration-manager"></a>Pacchetti e programmi in System Center Configuration Manager
 
@@ -28,6 +28,9 @@ System Center Configuration Manager continua a supportare pacchetti e programmi 
 - Script che non installano un'applicazione in un computer, ad esempio uno script per deframmentare l'unità disco del computer
 - Script occasionali che non devono essere monitorati continuamente  
 - Script eseguiti in base a una pianificazione ricorrente e che non possono usare la valutazione globale
+
+> [!TIP]  
+> È consigliabile usare la funzionalità [Script](/sccm/apps/deploy-use/create-deploy-scripts) nella console di Configuration Manager. Per gli scenari precedenti, l'uso di script potrebbe essere una soluzione migliore rispetto all'uso di pacchetti e programmi.
 
 Quando si esegue la migrazione di pacchetti da una versione precedente di Configuration Manager, è possibile distribuirli nella gerarchia di Configuration Manager. Al termine della migrazione, i pacchetti vengono visualizzati nel nodo **Pacchetti** dell'area di lavoro **Raccolta software** .
 
@@ -59,7 +62,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
    -   **Lingua** (facoltativo): specificare la lingua del pacchetto con un massimo di 32 caratteri.  
 
-   -   **Versione** (facoltativo):  specificare un numero di versione per il pacchetto con un massimo di 32 caratteri.
+   -   **Versione** (facoltativo): specificare un numero di versione per il pacchetto con un massimo di 32 caratteri.
 
    -   **Questo pacchetto contiene file di origine**: questa impostazione indica se il pacchetto richiede che nei dispositivi client siano presenti file di origine. Per impostazione predefinita, questa casella di controllo non è selezionata e Configuration Manager non usa i punti di distribuzione per il pacchetto. Se questa casella di controllo è selezionata, vengono usati punti di distribuzione.  
 
@@ -81,7 +84,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
    2.  Nella pagina **Programma standard**, specificare quanto segue:  
 
-       -   **Nome**: specificare un nome per il programma con un massimo di 50 caratteri.  
+       -   **Nome:** Specificare un nome per il programma con un massimo di 50 caratteri.  
 
            > [!NOTE]  
            >  Il nome del programma deve essere univoco all'interno di un pacchetto. Dopo aver creato un programma, non è possibile modificarne il nome.  
@@ -116,19 +119,19 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
            -   **Richiede lettera di unità**: il programma richiede una lettera di unità per specificare un percorso completo. Per questa impostazione, Configuration Manager può usare qualsiasi lettera di unità disponibile nel client.  
 
-           -   **Richiede lettera di unità specifica**: il programma richiede una lettera di unità specifica per indicarne il percorso completo, ad esempio **Z:**. Se la lettera di unità specificata è già usata in un client, il programma non viene eseguito.  
+           -   **Richiede lettera specifica di unità**: il programma richiede una lettera specifica di unità, specificata per indicarne il percorso completo, ad esempio **Z:** . Se la lettera di unità specificata è già usata in un client, il programma non viene eseguito.  
 
-       -   **Riconnettiti al punto di distribuzione all'accesso**: usare questa casella di controllo per indicare se il computer client si riconnette al punto di distribuzione quando l'utente esegue l'accesso. Per impostazione predefinita, questa casella di controllo è deselezionata.  
+       -   **Riconnettiti al punto di distribuzione all'accesso**: selezionare questa casella di controllo per indicare se il computer client si riconnette al punto di distribuzione quando l'utente esegue l'accesso. Per impostazione predefinita, questa casella di controllo è deselezionata.  
 
    3.  Nella pagina **Requisiti** della **Creazione guidata pacchetto e programma** specificare le informazioni seguenti:  
 
-       -   **Esegui prima un altro programma**: usare questa impostazione per identificare un pacchetto e un programma che devono essere eseguiti prima dell'esecuzione del pacchetto e del programma corrente.  
+       -   **Esegui prima un altro programma**: usare questa impostazione per identificare un pacchetto e un programma che devono essere eseguiti prima dell'esecuzione del pacchetto e del programma.  
 
        -   **Requisiti di piattaforma**: selezionare **Questo programma può essere eseguito in qualsiasi piattaforma** o **Questo programma può essere eseguito solo in piattaforme specifiche** e scegliere i sistemi operativi che i client devono eseguire per poter installare il pacchetto e il programma.  
 
        -   **Spazio su disco stimato**: specificare la quantità di spazio su disco necessaria per l'esecuzione del programma software nel computer. Questo valore può essere specificato come **sconosciuto** (impostazione predefinita) o come un numero intero maggiore o uguale a zero. Se si specifica un valore, è necessario specificare anche l'unità di misura per il valore.  
 
-       -   **Tempo di esecuzione massimo consentito (minuti)**: specifica il tempo massimo previsto dal programma per l'esecuzione nel computer client. Questo valore può essere specificato come **sconosciuto** (impostazione predefinita) o come numero intero maggiore di zero.  
+       -   **Tempo di esecuzione massimo consentito (minuti)** : specifica il tempo massimo previsto dal programma per l'esecuzione nel computer client. Questo valore può essere specificato come **sconosciuto** (impostazione predefinita) o come numero intero maggiore di zero.  
 
             Per impostazione predefinita, il valore è impostato su 120 minuti.  
 
@@ -153,9 +156,9 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
            > [!NOTE]  
            >  Il nome del programma deve essere univoco all'interno di un pacchetto. Dopo aver creato un programma, non è possibile modificarne il nome.  
 
-       -   **Commento** (facoltativo): specificare un commento per il programma del dispositivo, con un massimo di 127 caratteri.  
+       -   **Commento** (facoltativo): specificare un commento per il programma del dispositivo con un massimo di 127 caratteri.  
 
-       -   **Cartella download**: specificare il nome della cartella nel dispositivo Windows CE in cui verranno archiviati i file di origine del pacchetto. Il valore predefinito è **\Temp\\**.  
+       -   **Cartella download**: specificare il nome della cartella nel dispositivo Windows CE in cui verranno archiviati i file di origine del pacchetto. Il valore predefinito è **\Temp\\** .  
 
        -   **Riga di comando**: immettere la riga di comando da usare per avviare il programma oppure scegliere **Sfoglia** per selezionare il percorso del file.  
 
@@ -207,7 +210,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
 5. Nella pagina **Impostazioni distribuzione** scegliere uno scopo per la distribuzione e specificare le opzioni per i pacchetti di riattivazione e le connessioni a consumo:  
 
-   - **Scopo**: È possibile scegliere tra:  
+   - **Scopo**: è possibile scegliere tra:  
 
      -   **Disponibile**: se l'applicazione viene distribuita a un utente, l'utente visualizza il pacchetto e il programma pubblicati nel Catalogo applicazioni e può richiederli appositamente. Se il pacchetto e il programma vengono distribuiti in un dispositivo, vengono visualizzati in Software Center e l'utente può installarli su richiesta.  
 
@@ -216,9 +219,9 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
      > [!NOTE]
      >  Se più utenti hanno eseguito l'accesso al dispositivo, le distribuzioni di sequenze di attività e di pacchetti potrebbero non comparire in Software Center.
 
-   - **Invia pacchetti di riattivazione**: se lo scopo della distribuzione è impostato su **Richiesto** e questa opzione è selezionata, ai computer viene inviato un pacchetto di riattivazione prima dell'installazione della distribuzione, per riattivare il computer dalla sospensione alla scadenza dell'installazione. Prima di poter utilizzare questa opzione, i computer devono essere configurati per la riattivazione LAN.  
+   - **Invia pacchetti di riattivazione**: se lo scopo della distribuzione è impostato su **Richiesto** e l'opzione è selezionata, ai computer viene inviato un pacchetto di riattivazione prima dell'installazione della distribuzione al fine di riattivare i computer da sospensione alla scadenza dell'installazione. Prima di poter utilizzare questa opzione, i computer devono essere configurati per la riattivazione LAN.  
 
-   - **Consente a tutti i client che utilizzano una connessione di rete a consumo di scaricare il contenuto una volta raggiunta la scadenza dell'installazione. Se si abilita questa opzione, potrebbe essere addebitato un costo aggiuntivo**: selezionare questa opzione se richiesto.  
+   - **Consente a tutti i client che utilizzano una connessione di rete a consumo di scaricare il contenuto una volta raggiunta la scadenza dell'installazione. Se si abilita questa opzione, potrebbe essere addebitato un costo aggiuntivo**: selezionare se necessario.  
 
    > [!NOTE]  
    >  L'opzione **Pre-distribuisci il software nel dispositivo primario dell'utente** non è disponibile durante la distribuzione di un pacchetto e di un programma.  
@@ -242,9 +245,9 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
     -   **Consenti agli utenti di eseguire il programma indipendentemente dalle assegnazioni**: se questa opzione è abilitata, gli utenti possono installare il software da Software Center indipendentemente da qualsiasi intervallo di installazione pianificato.  
 
-    -   **Installazione software**: consente al software di essere installato al di fuori di tutte le finestre di manutenzione configurate.  
+    -   **Installazione software**: permette l'installazione del software al di fuori di qualsiasi finestra di manutenzione configurata.  
 
-    -   **Riavvio del sistema (se necessario per completare l'installazione)**: se l'installazione del software richiede un riavvio del dispositivo per il completamento, questa opzione consente di eseguire il riavvio al di fuori di qualsiasi finestra di manutenzione configurata.  
+    -   **Riavvio del sistema (se richiesto per completare l'installazione)** : se l'installazione del software richiede un riavvio del dispositivo per il completamento, questa opzione consente di eseguire il riavvio al di fuori di qualsiasi finestra di manutenzione configurata.  
 
     -   **Embedded devices** (Dispositivi con Embedded): quando si distribuiscono pacchetti e programmi in dispositivi con Windows Embedded con filtro di scrittura abilitato, è possibile specificare di installare i pacchetti e i programmi nella sovrapposizione temporanea ed eseguire il commit delle modifiche successivamente. In alternativa, il commit delle modifiche viene eseguito alla scadenza dell'installazione o all'interno una finestra di manutenzione. Quando si esegue il commit delle modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per salvare le modifiche nel dispositivo in modo permanente.  
 
@@ -255,11 +258,11 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
     -   **Opzioni di distribuzione**: specificare le azioni che un client deve intraprendere per eseguire il contenuto del programma. È possibile specificare il comportamento da adottare quando il client si trova in un limite di rete veloce, lento o non affidabile.  
 
-    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: selezionare questa opzione per ridurre il carico sulla rete consentendo ai client di scaricare contenuto da altri client della rete che lo abbiano già scaricato e memorizzato nella cache. Questa opzione si avvale di Windows BranchCache e può essere usata in computer che eseguono Windows Vista SP2 e versioni successive.  
+    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: selezionare questa opzione per ridurre il carico in rete, consentendo ai client di scaricare il contenuto da altri client in rete che hanno già scaricato e memorizzato nella cache il contenuto. Questa opzione si avvale di Windows BranchCache e può essere usata in computer che eseguono Windows Vista SP2 e versioni successive.  
 
     -   **Consenti ai client di utilizzare un percorso origine di fallback per il contenuto**:  
 
-        -  **Versioni precedenti alla 1610**: è possibile selezionare la casella di controllo **Consenti percorso origine di fallback** per il contenuto per consentire ai client esterni a questi gruppi di limiti di eseguire il fallback e usare il punto di distribuzione come percorso di origine per il contenuto in assenza di altri punti di distribuzione disponibili.
+        -  **Prima della versione 1610**: è possibile selezionare la casella di controllo **Consenti percorso origine di fallback per il contenuto** per consentire ai client esterni a questi gruppi di limiti di eseguire il fallback e usare il punto di distribuzione come percorso di origine per il contenuto in assenza di altri punti di distribuzione disponibili.
 
         - **Versione 1610 e successive**: non è più possibile configurare l'opzione **Consenti percorso origine di fallback per il contenuto**.  È invece possibile configurare relazioni tra gruppi di limiti per determinare quando un client può iniziare la ricerca di gruppi di limiti aggiuntivi per un percorso di origine del contenuto valido.
 
@@ -300,38 +303,38 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 ###  <a name="package-definition"></a>[Package Definition]  
  Specificare le proprietà del pacchetto e del programma. Contiene le informazioni seguenti:  
 
--   **Nome**: nome del pacchetto, con un massimo di 50 caratteri.  
+-   **Nome**: Il nome del pacchetto, fino a 50 caratteri.  
 
--   **Versione** (facoltativo): versione del pacchetto, con un massimo di 32 caratteri.  
+-   **Versione** (facoltativo): la versione del pacchetto, con un massimo di 32 caratteri.  
 
--   **Icona** (facoltativo): file contenente l'icona da usare per il pacchetto. Se specificata, questa icona sostituisce quella del pacchetto predefinita nella console di Configuration Manager.
+-   **Icona** (facoltativo): il file contenente l'icona da usare per il pacchetto. Se specificata, questa icona sostituisce quella del pacchetto predefinita nella console di Configuration Manager.
 
--   **Server di pubblicazione**: server di pubblicazione del pacchetto, con un massimo di 32 caratteri.
+-   **Publisher**: Il server di pubblicazione del pacchetto, un massimo di 32 caratteri.
 
--   **Lingua**: versione della lingua del pacchetto, con un massimo di 32 caratteri.
+-   **Lingua**: La versione della lingua del pacchetto, un massimo di 32 caratteri.
 
 -   **Commento** (facoltativo): commento sul pacchetto, con un massimo di 127 caratteri.
 
--   **ContainsNoFiles**: questa voce indica se al pacchetto è associata un'origine.  
+-   **ContainsNoFiles**: Questa voce indica se un'origine è associata al pacchetto.  
 
--   **Programmi**: programmi definiti per il pacchetto. Ogni nome del programma corrisponde a un **[programma]** sezione in questo file di definizione del pacchetto.  
+-   **Programmi**: i programmi definiti per il pacchetto. Ogni nome del programma corrisponde a un **[programma]** sezione in questo file di definizione del pacchetto.  
 
      Esempio:  
 
      `Programs=Typical, Custom, Uninstall`  
 
--   **MIFFileName**: nome del file MIF (Management Information) che contiene lo stato del pacchetto, con un massimo di 50 caratteri.  
+-   **MIFFileName**: Il nome del file di formato MIF (Management Information) che contiene lo stato del pacchetto, fino a 50 caratteri.  
 
--   **MIFName**: nome del pacchetto (per la corrispondenza MIF), con un massimo di 50 caratteri.  
+-   **MIFName**: Il nome del pacchetto (per la corrispondenza MIF), fino a 50 caratteri.  
 
--   **MIFVersion**: numero di versione del pacchetto (per la corrispondenza MIF), con un massimo di 32 caratteri.  
+-   **MIFVersion**: Il numero di versione del pacchetto (per la corrispondenza MIF), un massimo di 32 caratteri.  
 
--   **MIFPublisher**: autore del software del pacchetto (per la corrispondenza MIF), con un massimo di 32 caratteri.  
+-   **MIFPublisher**: Autore del software del pacchetto (per la corrispondenza MIF), un massimo di 32 caratteri.  
 
 ###  <a name="program"></a>[Program]  
- Per ogni programma specificato alla voce **Programmi** nella sezione **[Package Definition]**, il file di definizione del pacchetto deve includere una sezione [Program] che definisce tale programma. Ogni sezione Program fornisce le informazioni seguenti:  
+ Per ogni programma specificato alla voce **Programmi** nella sezione **[Package Definition]** , il file di definizione del pacchetto deve includere una sezione [Program] che definisce tale programma. Ogni sezione Program fornisce le informazioni seguenti:  
 
--   **Nome**: nome del programma, con un massimo di 50 caratteri. Questa voce deve essere univoca all'interno di un pacchetto. Questo nome viene utilizzato quando si definiscono gli annunci. Nei computer client, viene visualizzato il nome del programma **Esegui programmi annunciati** nel Pannello di controllo.  
+-   **Nome**: Il nome del programma, fino a 50 caratteri. Questa voce deve essere univoca all'interno di un pacchetto. Questo nome viene utilizzato quando si definiscono gli annunci. Nei computer client, viene visualizzato il nome del programma **Esegui programmi annunciati** nel Pannello di controllo.  
 
 -   **Icona** (facoltativo): specificare il file contenente l'icona da usare per il programma. Se specificata, questa icona sostituisce l'icona di programma predefinita nella console di Configuration Manager e viene visualizzata nei computer client quando il programma è annunciato.
 
@@ -343,7 +346,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
 -   **Esegui**: specificare la modalità in cui viene eseguito il programma. È possibile specificare **ridotta a icona**, **ingrandita**, o **Hidden**. Se questa voce non è inclusa, il programma viene eseguito in modalità normale.  
 
--   **AfterRunning**: specificare qualsiasi azione speciale da eseguire dopo che il programma è stato completato correttamente. Le opzioni disponibili sono **SMSRestart**, **ProgramRestart**, o **SMSLogoff**. Se questa voce non è inclusa, il programma non esegue azioni speciali.  
+-   **AfterRunning**: specificare qualsiasi azione speciale che si verifica dopo che il programma è stato completato correttamente. Le opzioni disponibili sono **SMSRestart**, **ProgramRestart**, o **SMSLogoff**. Se questa voce non è inclusa, il programma non esegue azioni speciali.  
 
 -   **EstimatedDiskSpace**: specificare la quantità di spazio su disco necessaria per l'esecuzione del programma software nel computer. Questo valore può essere specificato come **sconosciuto** (impostazione predefinita) o come un numero intero maggiore o uguale a zero. Se viene specificato un valore, anche le unità per il valore devono essere specificate.  
 
@@ -359,7 +362,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
 -   **SupportedClients**: specificare i processori e i sistemi operativi in cui viene eseguito il programma. Le piattaforme specificate devono essere separate da virgole. Se questa voce non è inclusa, il controllo piattaforma supportata viene disabilitato per questo programma.  
 
--   **SupportedClientMinVersionX**, **SupportedClientMaxVersionX**: specificare l'intervallo tra numero di versione iniziale e finale per i sistemi operativi specificati alla voce **SupportedClients**.  
+-   **SupportedClientMinVersionX**, **SupportedClientMaxVersionX**: specificare l'intervallo tra i numeri di versione iniziali e quelli finali per i sistemi operativi specificati alla voce **SupportedClients**.  
 
      Esempio:  
 
@@ -395,21 +398,21 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
 -   **AdminRightsRequired**: specificare se per l'esecuzione del programma è necessario immettere credenziali amministrative nel computer. I valori disponibili sono **True** o **False**. Il valore predefinito è **False**. Questa voce è impostata su **True** se **CanRunWhen** non è impostata su **UserLoggedOn**.  
 
--   **UseInstallAccount**: specificare se il programma usa l'account di installazione software client per l'esecuzione nei computer client. Per impostazione predefinita, questo valore è **False**. Questo valore corrisponde anche **False** se **CanRunWhen** è impostato su **UserLoggedOn**.  
+-   **UseInstallAccount**: specificare se il programma usa l'account di installazione software client durante l'esecuzione nei computer client. Per impostazione predefinita, questo valore è **False**. Questo valore corrisponde anche **False** se **CanRunWhen** è impostato su **UserLoggedOn**.  
 
--   **DriveLetterConnection**: specificare se il programma richiede una connessione con lettera di unità per i file del pacchetto che si trovano nel punto di distribuzione. È possibile specificare **True** o **False**. Il valore predefinito è **False**, che consente al programma di usare una connessione UNC (Universal Naming Convention). Quando questo valore è impostato su **True**, viene usata la lettera di unità successiva disponibile, a partire da Z e andando a ritroso.  
+-   **DriveLetterConnection**: specificare se per il programma è necessaria la connessione di una lettera unità al punto di distribuzione. È possibile specificare **True** o **False**. Il valore predefinito è **False**, che consente al programma di usare una connessione UNC (Universal Naming Convention). Quando questo valore è impostato su **True**, viene usata la lettera di unità successiva disponibile, a partire da Z e andando a ritroso.  
 
--   **SpecifyDrive** (facoltativo): specificare una lettera di unità necessaria al programma per connettersi ai file del pacchetto nel punto di distribuzione. Questa impostazione forza l'uso della lettera di unità specificata per le connessioni client ai punti di distribuzione.
+-   **DriveLetterConnection**: specificare una lettera di unità necessaria al programma per connettersi ai file del pacchetto nel punto di distribuzione. Questa impostazione forza l'uso della lettera di unità specificata per le connessioni client ai punti di distribuzione.
 
 -   **ReconnectDriveAtLogon**: specificare se il computer si riconnette al punto di distribuzione quando l'utente esegue l'accesso. I valori disponibili sono **True** o **False**. Il valore predefinito è **False**.  
 
--   **DependentProgram**: specificare un programma in questo pacchetto che deve essere eseguito prima del programma corrente. Questa voce usa il formato **DependentProgram**=<**NomeProgramma>**, dove **<NomeProgramma\>** corrisponde alla voce **Name** per il programma nel file di definizione del pacchetto. Se non sono presenti programmi dipendenti, lasciare vuota questa voce.  
+-   **DependentProgram**: specificare un programma nel pacchetto che deve essere eseguito prima del programma corrente. Questa voce usa il formato **DependentProgram**=<**NomeProgramma>** , dove **<NomeProgramma\>** corrisponde alla voce **Name** per il programma nel file di definizione del pacchetto. Se non sono presenti programmi dipendenti, lasciare vuota questa voce.  
 
      Esempio:  
 
      DependentProgram = Admin  
     DependentProgram =  
 
--   **Assignment**: specificare come il programma viene assegnato agli utenti. Questo valore può essere: **FirstUser** (solo il primo utente che accede al client esegue il programma) oppure **EveryUser** (chiunque acceda al client può eseguire il programma). Quando **CanRunWhen** non è impostata su **UserLoggedOn**, questa voce è impostata su **FirstUser**.  
+-   **Assignment**: specificare il modo in cui il programma viene assegnato agli utenti. Questo valore può essere: **FirstUser**, quindi solo il primo utente che accede al client esegue il programma, o **EveryUser**, vale a dire che chiunque acceda al client può eseguire il programma. Quando **CanRunWhen** non è impostata su **UserLoggedOn**, questa voce è impostata su **FirstUser**.  
 
--   **Disabled**: specificare se il programma può essere annunciato ai client. I valori disponibili sono **True** o **False**. Il valore predefinito è **False**.  
+-   **Disattivata**: specificare se il programma può essere annunciato ai client. I valori disponibili sono **True** o **False**. Il valore predefinito è **False**.  

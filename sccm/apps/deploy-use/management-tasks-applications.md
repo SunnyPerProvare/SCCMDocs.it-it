@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6f66eedd60c759395126363db9e672c45993d48
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 368fd0b4d86b1ee263bbe47619a4387db614b167
+ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123965"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66264391"
 ---
 # <a name="management-tasks-for-system-center-configuration-manager-applications"></a>Attività di gestione per applicazioni di System Center Configuration Manager
 
@@ -47,6 +47,7 @@ Per altre informazioni sulla creazione di applicazioni e tipi di distribuzione, 
 |**Distribuzione**|Apre la **Distribuzione guidata del software** in cui è possibile distribuire l'applicazione selezionata nelle raccolte di computer presenti nella gerarchia.<br /><br /> Vedere [Come distribuire le applicazioni](../../apps/deploy-use/deploy-applications.md).|  
 |**Distribuisci contenuto**|Apre la **Distribuzione guidata contenuto** in cui è possibile copiare il contenuto dell'applicazione selezionata nei punti di distribuzione presenti nella gerarchia.<br /><br /> Vedere [Gestire il contenuto e l'infrastruttura del contenuto](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
 |**Visualizza relazioni**|Visualizza un diagramma grafico che indica le relazioni delle applicazioni selezionate con altre applicazioni. Scegliere una delle seguenti opzioni:<br><br><ul><li>**Dipendenza**: visualizza le applicazioni che dipendono dall'applicazione selezionata e le applicazioni da cui dipende l'applicazione.</li><li>**Sostituzione**: visualizza le applicazioni che l'applicazione selezionata sostituisce e le applicazioni che si sostituiscono all'applicazione selezionata.</li><li>**Condizioni globali**: visualizza le condizioni globali a cui fa riferimento l'applicazione.</li></ol><br /> Vedere [Come rivedere e sostituire le applicazioni](../../apps/deploy-use/revise-and-supersede-applications.md) e [Come creare condizioni globali](../../apps/deploy-use/create-global-conditions.md).|  
+|**Copiare applicazioni**|Copiare o duplicare applicazioni di Configuration Manager per creare una nuova applicazione. Questa azione è utile per testare un elemento o quando è necessario creare un'applicazione simile. Il sito crea una nuova applicazione con il suffisso **-copy** accodato al nome. Il sito copia la maggior parte dei metadati nella nuova applicazione, ma non copia nessuna distribuzione.|
 
 ##  <a name="manage-deployment-types"></a>Gestire i tipi di distribuzione  
  Nell'area di lavoro **Raccolta software** espandere **Gestione applicazioni**, scegliere **Applicazioni** e quindi scegliere l'applicazione con il tipo di distribuzione che si intende gestire. Nel riquadro dei dettagli scegliere la scheda **Tipi di distribuzione**, scegliere il tipo di distribuzione che si vuole gestire e quindi un'attività di gestione.  

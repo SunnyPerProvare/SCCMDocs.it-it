@@ -2,7 +2,7 @@
 title: Passaggi della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni sui passaggi che è possibile aggiungere a una sequenza di attività di Configuration Manager.
-ms.date: 05/03/2019
+ms.date: 05/28/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0003b80362dadc1105450d2ba526620c1fabf560
-ms.sourcegitcommit: ab9f2a7fb7ea3a0c65808fce2975ab25a670281f
+ms.openlocfilehash: 2d257d9fd328b04b35ff4c4d29b8a8bbd82ae565
+ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613069"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66355057"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
@@ -1814,7 +1814,7 @@ Questo passaggio esegue le azioni seguenti:
 
 2. Abilitare o disabilitare l'account Administrator locale, in base all'opzione selezionata nel passaggio **Applica impostazioni Windows**.  
 
-3. Installare il client di Configuration Manager usando il pacchetto scaricato in precedenza e le proprietà di installazione specificate in questo passaggio. Il client viene installato in "modalità di provisioning". Questa modalità impedisce che il client elabori nuove richieste di criteri fino al completamento della sequenza di attività.  
+3. Installare il client di Configuration Manager usando il pacchetto scaricato in precedenza e le proprietà di installazione specificate in questo passaggio. Il client viene installato in "modalità di provisioning". Questa modalità impedisce che il client elabori nuove richieste di criteri fino al completamento della sequenza di attività. Per altre informazioni, vedere [Modalità di provisioning](/sccm/osd/understand/provisioning-mode).  
 
 4. Attendere la completa operatività del client.  
 
@@ -1906,7 +1906,7 @@ Specificare il numero di minuti prima che questo passaggio di Configuration Mana
 Esegue l'analisi di compatibilità di Installazione di Windows senza avviare il processo di aggiornamento. Questa impostazione corrisponde all'opzione della riga di comando `/Compat ScanOnly` di Installazione di Windows. Distribuire l'intero pacchetto di aggiornamento del sistema operativo con questa opzione.
 
 <!--SCCMDocs-pr issue 2812-->
-A partire dalla versione 1806, quando si abilita questa opzione, questo passaggio non attiva la modalità di provisioning per il client di Configuration Manager. Installazione di Windows viene eseguito automaticamente in background e il client continuerà a funzionare normalmente.
+A partire dalla versione 1806, quando si abilita questa opzione, questo passaggio non attiva la modalità di provisioning per il client di Configuration Manager. Installazione di Windows viene eseguito automaticamente in background e il client continuerà a funzionare normalmente. Per altre informazioni, vedere [Modalità di provisioning](/sccm/osd/understand/provisioning-mode).
 
 Il programma di installazione restituisce un codice di uscita come risultato dell'analisi. Nella tabella seguente sono elencati alcuni dei più comuni codici di uscita:  
 

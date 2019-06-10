@@ -2,7 +2,7 @@
 title: Installa aggiornamenti software
 titleSuffix: Configuration Manager
 description: Suggerimenti per l'uso del passaggio della sequenza di attività Installa aggiornamenti software in Configuration Manager.
-ms.date: 03/01/2019
+ms.date: 05/28/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 132ef497f25f550eccc068e310c1336050ef3b42
-ms.sourcegitcommit: 33a006204f7f5f9b9acd1f3e84c4bc207362d00a
-ms.translationtype: HT
+ms.openlocfilehash: 6699b73bd9a3a911fef788f25cbf2140e90cbe92
+ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57305829"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66355043"
 ---
 # <a name="install-software-updates"></a>Installa aggiornamenti software
 
@@ -31,33 +31,34 @@ Per altre informazioni su questo passaggio, vedere [Installa aggiornamenti softw
 ## <a name="recommendations"></a>Consigli
 
 Per fare in modo che questo processo abbia esito positivo, tenere conto dei consigli seguenti:
+
 - [Usare l'installazione offline](#use-offline-servicing)
 - [Indice singolo](#single-index)
 - [Ridurre le dimensioni dell'immagine](#bkmk_resetbase)
 
-
 ### <a name="use-offline-servicing"></a>Usare l'installazione offline
 
-Usare Configuration Manager per installare regolarmente gli aggiornamenti software applicabili ai file di immagine. Questa abitudine consente di ridurre il numero di aggiornamenti che devono essere installati durante la sequenza di attività. 
+Usare Configuration Manager per installare regolarmente gli aggiornamenti software applicabili ai file di immagine. Questa abitudine consente di ridurre il numero di aggiornamenti che devono essere installati durante la sequenza di attività.
 
 Per altre informazioni, vedere [Applicare aggiornamenti software a un'immagine del sistema operativo](/sccm/osd/get-started/manage-operating-system-images#BKMK_OSImagesApplyUpdates).
 
-
 ### <a name="single-index"></a>Indice singolo
 
-Molti file di immagine includono più indici, ad esempio per diverse edizioni di Windows. Ridurre il file di immagine al singolo indice necessario. Ciò consente di ridurre la quantità di tempo richiesta per applicare gli aggiornamenti software all'immagine, oltre a contribuire al consiglio successivo di ridurre le dimensioni dell'immagine. 
+Molti file di immagine includono più indici, ad esempio per diverse edizioni di Windows. Ridurre il file di immagine al singolo indice necessario. Ciò consente di ridurre la quantità di tempo richiesta per applicare gli aggiornamenti software all'immagine, oltre a contribuire al consiglio successivo di ridurre le dimensioni dell'immagine.
 
+A partire dalla versione 1902, automatizzare questo processo quando si aggiunge un'immagine del sistema operativo al sito. Per altre informazioni, vedere [Aggiungere un'immagine del sistema operativo](/sccm/osd/get-started/manage-operating-system-images#BKMK_AddOSImages).<!--3719699-->
 
 ### <a name="bkmk_resetbase"></a> Ridurre le dimensioni dell'immagine
 
-Quando si applicano aggiornamenti software all'immagine, è possibile ottimizzare l'output rimuovendo tutti gli aggiornamenti sostituiti. Usare lo strumento da riga di comando Gestione e manutenzione immagini distribuzione, ad esempio: 
+Quando si applicano aggiornamenti software all'immagine, è possibile ottimizzare l'output rimuovendo tutti gli aggiornamenti sostituiti. Usare lo strumento da riga di comando Gestione e manutenzione immagini distribuzione, ad esempio:
 
 ```
 dism /Mount-Image /ImageFile:C:\Data\install.wim /MountDir:C:\Mountdir
-dism /Image:C:\Mountdir /Cleanup-Image /StartComponentCleanup /ResetBase 
+dism /Image:C:\Mountdir /Cleanup-Image /StartComponentCleanup /ResetBase
 dism /Unmount-Image /MountDir:C:\Mountdir /Commit  
 ```
 
+A partire dalla versione 1902, è disponibile una nuova opzione per automatizzare questo processo. Per altre informazioni, vedere [Servizio immagini ottimizzato](/sccm/osd/get-started/manage-operating-system-images#bkmk_resetbase).<!--3555951-->
 
 
 ## <a name="image-engineering-decisions"></a>Decisioni per la progettazione delle immagini
@@ -68,57 +69,58 @@ Quando si progetta il processo di creazione dell'immagine, esistono diverse opzi
 - [Usare l'installazione offline](#bkmk_offline)  
 - [Usare solo l'immagine predefinita](#bkmk_installwim)
 
-
 ### <a name="bkmk_goldimage"></a> Riacquisire periodicamente l'immagine
 
 È disponibile un processo automatizzato per acquisire un'immagine del sistema operativo personalizzata in base a una regolare pianificazione. Questa sequenza di attività di acquisizione installa gli aggiornamenti software più recenti. Questi aggiornamenti possono includere gli aggiornamenti cumulativi e non cumulativi, oltre ad altri aggiornamenti critici, ad esempio gli aggiornamenti dello stack di manutenzione. La sequenza di attività di distribuzione installa eventuali aggiornamenti aggiuntivi che diventano disponibili dopo l'acquisizione.
 
 Per altre informazioni su questo processo, vedere [Creare una sequenza di attività per acquisire un sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-capture-an-operating-system).
 
-
 #### <a name="advantages"></a>Vantaggi
+
 - Un minor numero di aggiornamenti da applicare al momento della distribuzione per ogni client, con conseguente risparmio di tempo e di larghezza di banda durante la distribuzione
 - Un minor numero di aggiornamenti di cui preoccuparsi che causano riavvii
 - Immagine personalizzata per l'organizzazione
 - Meno variabili in fase di distribuzione
 
-#### <a name="disadvantages"></a>Svantaggi 
+#### <a name="disadvantages"></a>Svantaggi
+
 - Tempo necessario per creare e acquisire l'immagine, anche se il processo è per lo più automatizzato
 - Maggior tempo per distribuire l'immagine ai punti di distribuzione, operazione che può essere considerata un'interruzione per le distribuzioni attive
-- I tempi per testare gli ambienti di pre-produzione possono essere più lunghi rispetto al ciclo di applicazione delle patch al sistema operativo e ciò potrebbe rendere irrilevante l'immagine aggiornata 
+- I tempi per testare gli ambienti di pre-produzione possono essere più lunghi rispetto al ciclo di applicazione delle patch al sistema operativo e ciò potrebbe rendere irrilevante l'immagine aggiornata
 
 
 ### <a name="bkmk_offline"></a> Usare l'installazione offline
 
-Pianificare Configuration Manager per applicare gli aggiornamenti software alle immagini. 
+Pianificare Configuration Manager per applicare gli aggiornamenti software alle immagini.
 
 Per altre informazioni, vedere [Applicare aggiornamenti software a un'immagine del sistema operativo](/sccm/osd/get-started/manage-operating-system-images#BKMK_OSImagesApplyUpdates).
 
-
 #### <a name="advantages"></a>Vantaggi
+
 - Un minor numero di aggiornamenti da applicare al momento della distribuzione per ogni client, con conseguente risparmio di tempo e di larghezza di banda durante la distribuzione
 - Un minor numero di aggiornamenti di cui preoccuparsi che causano riavvii
 - È possibile pianificare il processo di manutenzione nel sito
 
-#### <a name="disadvantages"></a>Svantaggi 
-- Selezione manuale degli aggiornamenti 
+#### <a name="disadvantages"></a>Svantaggi
+
+- Selezione manuale degli aggiornamenti
 - Maggiore tempo per distribuire l'immagine ai punti di distribuzione
 - Supporta solo aggiornamenti basati su CBS. Non è possibile applicare gli aggiornamenti di Office
 
 > [!Tip]  
 > È possibile automatizzare la selezione degli aggiornamenti software tramite PowerShell. Usare il cmdlet [Get-CMSoftwareUpdate](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmsoftwareupdate?view=sccm-ps) per ottenere un elenco degli aggiornamenti. Usare quindi il cmdlet [New-CMOperatingSystemImageUpdateSchedule](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmoperatingsystemimageupdateschedule?view=sccm-ps) per creare la pianificazione delle installazioni offline. L'esempio seguente illustra un metodo per automatizzare questa azione:
-> 
+>
 > ```PowerShell
 > # Get the OS image
 > $Win10Image = Get-CMOperatingSystemImage -Name "Windows 10 Enterprise"
-> 
+>
 > # Get the latest cumulative update for Windows 10 1809
 > $OSBuild = "1809"
-> $LatestUpdate = Get-CMSoftwareUpdate -Fast | Where {$_.LocalizedDisplayName -Like "*Cumulative Update for Windows 10 Version $OSBuild for x64*" -and $_.LocalizedDisplayName -notlike "*Dynamic*"} | Sort-Object ArticleID -Descending | Select -First 1 
+> $LatestUpdate = Get-CMSoftwareUpdate -Fast | Where {$_.LocalizedDisplayName -Like "*Cumulative Update for Windows 10 Version $OSBuild for x64*" -and $_.LocalizedDisplayName -notlike "*Dynamic*"} | Sort-Object ArticleID -Descending | Select -First 1
 > Write-Host "Latest update for Windows 10 build" $OSBuild "is" $LatestUpdate.LocalizedDisplayName
-> 
+>
 > # Create a new update schedule to apply the latest update
-> New-CMOperatingSystemImageUpdateSchedule -Name $Win10Image.Name -SoftwareUpdate $LatestUpdate -RunNow -ContinueOnError $True 
+> New-CMOperatingSystemImageUpdateSchedule -Name $Win10Image.Name -SoftwareUpdate $LatestUpdate -RunNow -ContinueOnError $True
 > ```
 
 
@@ -127,10 +129,12 @@ Per altre informazioni, vedere [Applicare aggiornamenti software a un'immagine d
 Usare il file di immagine install.wim di Windows predefinito nelle sequenze di attività di distribuzione.
 
 #### <a name="advantages"></a>Vantaggi
+
 - Un'origine valida nota, che riduce il rischio di danneggiamento delle immagini come possibile problema
 - Elimina le modifiche dell'immagine come possibile problema
 
-#### <a name="disadvantages"></a>Svantaggi 
+#### <a name="disadvantages"></a>Svantaggi
+
 - Un volume di aggiornamenti potenzialmente elevato durante la distribuzione
 - Maggiore tempo per la distribuzione per ogni dispositivo
 - Potrebbero non essere incluse personalizzazioni necessarie e potrebbero essere necessari passaggi aggiuntivi della sequenza di attività per la personalizzazione
@@ -155,7 +159,7 @@ Questo diagramma di flusso illustra il processo quando si include il passaggio I
 4. Processo di analisi: analisi completa o analisi dai risultati memorizzati nella cache, con il processo di monitoraggio in parallelo.
     1. **Analisi completa**: il motore della sequenza di attività chiama l'agente di aggiornamento software tramite l'API di analisi degli aggiornamenti per eseguire un'analisi *completa*. (WUAHandler.log, ScanAgent.log)  
         1. **Analisi agente SUM - completa**: processo di analisi normale tramite l'agente di Windows Update (WUA), che comunica con il punto di aggiornamento software che esegue WSUS. Aggiunge tutti gli aggiornamenti applicabili all'archivio degli aggiornamenti locale. (WindowsUpdate.log, UpdateStore.log)
-    2. **Analisi da risultati nella cache**: il motore della sequenza di attività chiama l'agente di aggiornamento software tramite l'API di analisi degli aggiornamenti per eseguire l'analisi in base ai metadati memorizzati nella cache. (WUAHandler.log, ScanAgent.log) 
+    2. **Analisi da risultati nella cache**: il motore della sequenza di attività chiama l'agente di aggiornamento software tramite l'API di analisi degli aggiornamenti per eseguire l'analisi in base ai metadati memorizzati nella cache. (WUAHandler.log, ScanAgent.log)
         1. **Analisi agente SUM - cache**: l'agente di Windows Update esegue un controllo in base agli aggiornamenti già memorizzati nella cache nell'archivio degli aggiornamenti locale. (WindowsUpdate.log, UpdateStore.log)
     3. **Avvia timer analisi**: il motore della sequenza di attività avvia un timer e resta in attesa. (Questo processo avviene in parallelo con il processo di analisi completa o di analisi dei risultati nella cache.)
         1. **Monitoraggio**: il motore della sequenza di attività esegue il monitoraggio dello stato dell'agente SUM.
@@ -168,11 +172,11 @@ Questo diagramma di flusso illustra il processo quando si include il passaggio I
 5. **Enumera elenco aggiornamenti**: l'agente SUM enumera l'elenco degli aggiornamenti restituiti dall'analisi, stabilendo quali sono disponibili o obbligatori.
 6. *Sono presenti aggiornamenti nell'elenco dei risultati dell'analisi?*
     - **Sì**: passare a **Installa aggiornamenti**
-    - **No**: niente da installare, il passaggio viene completato correttamente. 
+    - **No**: niente da installare, il passaggio viene completato correttamente.
 7. Processo di distribuzione: il processo di installazione degli aggiornamenti avviene in parallelo con il processo di monitoraggio della distribuzione.
     1. **Installa aggiornamenti**: il motore della sequenza di attività chiama l'agente SUM tramite l'API di distribuzione degli aggiornamenti per installare tutti gli aggiornamenti disponibili o solo quelli obbligatori. Questo comportamento si basa sulla configurazione del passaggio. Se si seleziona **Necessario per l'installazione - Solo aggiornamenti software obbligatori** oppure **Disponibile per l'installazione - Tutti gli aggiornamenti software**. È anche possibile specificare questo comportamento usando la variabile [SMSInstallUpdateTarget](/sccm/osd/understand/task-sequence-variables#SMSInstallUpdateTarget).
         1. **Installazione agente SUM**: processo di installazione normale con l'elenco esistente memorizzato nella cache degli aggiornamenti, con download del contenuto standard. L'aggiornamento viene installato tramite l'agente di Windows Update. (UpdatesDeployment.log, UpdatesHandler.log, WuaHandler.log, WindowsUpdate.log)
-    2. **Avvia timer distribuzione e visualizza stato**: il motore della sequenza di attività avvia un timer per l'installazione, mostra lo stato di avanzamento a intervalli del 10% nell'interfaccia utente di stato di TS e rimane in attesa.
+    2. **Avvia timer distribuzione e visualizza stato**: il motore della sequenza di attività avvia un timer per l'installazione, mostra lo stato di avanzamento a intervalli del 10% nell'interfaccia utente dello stato di TS e rimane in attesa.
         1. **Monitoraggio**: il motore della sequenza di attività esegue il polling dell'agente SUM per ottenere informazioni sullo stato.
         2. *Qual è la risposta dall'agente SUM?*
             - **In corso**: *Il processo di installazione è rimasto inattivo per 8 ore?*
@@ -184,17 +188,17 @@ Questo diagramma di flusso illustra il processo quando si include il passaggio I
 
 ### <a name="timeouts"></a>Timeout
 
-Il diagramma include due variabili di timeout che si applicano a questo passaggio. Esistono altri timer standard da altri componenti che possono influire su questo processo. 
+Il diagramma include due variabili di timeout che si applicano a questo passaggio. Esistono altri timer standard da altri componenti che possono influire su questo processo.
 
-- Timeout di ricerca degli aggiornamenti: 1 ora (smsts.log)  
-- Timeout della richiesta di posizione: 1 ora (LocationServices.log, CAS.log)  
-- Timeout di download del contenuto: 1 ora (DTS.log)  
-- Timeout di punto di distribuzione inattivo: 1 ora (LocationServices.log, CAS.log)  
+- Timeout analisi dell'aggiornamento: 1 ora (smsts.log)  
+- Timeout richiesta del percorso: 1 ora (LocationServices.log, CAS.log)  
+- Timeout download del contenuto: 1 ora (DTS.log)  
+- Timeout punto di distribuzione inattivo: 1 ora (LocationServices.log, CAS.log)  
 - Timeout installazioni totalmente inattive: 8 ore (smsts.log)  
 
 
 
-## <a name="troubleshooting"></a>Risoluzione dei problemi
+## <a name="troubleshooting"></a>Troubleshooting
 
 Usare le risorse e le informazioni aggiuntive seguenti per risolvere i problemi con questo passaggio:
 
@@ -217,4 +221,3 @@ Usare le risorse e le informazioni aggiuntive seguenti per risolvere i problemi 
         - Version Next
         - ARM
         - Versioni di Windows non distribuite
-

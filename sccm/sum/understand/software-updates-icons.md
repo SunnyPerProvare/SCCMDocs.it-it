@@ -11,12 +11,12 @@ ms.assetid: 63c5ef72-5715-4d86-85a2-71beba469fab
 author: mestew
 ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9dbb2b7fadf13a49c25e2eb9bb6fcc608d3869f6
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 7f096f9ff9baaff2411289c27282ab53eb697b0b
+ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65495851"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354974"
 ---
 # <a name="icons-used-for-software-updates-in-system-center-configuration-manager"></a>Icone usate per gli aggiornamenti software in System Center Configuration Manager
 
@@ -58,7 +58,7 @@ Gli aggiornamenti software sincronizzati vengono visualizzati nella console di C
 
 - Migliora o incrementa la correzione fornita da uno o più aggiornamenti software rilasciati in precedenza.  
 
-- Migliora l'efficienza del pacchetto dei file di aggiornamento software, che viene installato nei client se l'aggiornamento software viene approvato per l'installazione. Ad esempio, l'aggiornamento software sostituito potrebbe contenere file che non sono più rilevanti per la correzione o per i sistemi operativi ora supportati dal nuovo aggiornamento software, quindi tali file non sono inclusi nel pacchetto di file di aggiornamento software sostitutivo.  
+- Migliora l'efficienza del pacchetto dei file di aggiornamento software, che viene installato nei client se l'aggiornamento software viene approvato per l'installazione. Ad esempio, l'aggiornamento software sostituito potrebbe contenere file che non sono più rilevanti per la correzione o per i sistemi operativi ora supportati dal nuovo aggiornamento software e quindi tali file non sono inclusi nel pacchetto di file di aggiornamento software sostitutivo.  
 
 - Aggiorna le versioni più recenti di un prodotto o, in altre parole, non è più applicabile alle versioni o configurazioni precedenti di un prodotto. Gli aggiornamenti software possono anche sostituire altri aggiornamenti software se sono state apportate modifiche per espandere il supporto della lingua. Ad esempio, una revisione recente di un aggiornamento prodotto per Microsoft Office potrebbe rimuovere il supporto per un sistema operativo precedente, ma potrebbe aggiungere supporto aggiuntivo per nuove lingue nel rilascio dell'aggiornamento software iniziale.  
 
@@ -81,7 +81,7 @@ Gli aggiornamenti software sincronizzati vengono visualizzati nella console di C
 
   **Problemi operativi:**  
 
-  Quando non è disponibile contenuto per un aggiornamento software, i client non riescono a installare l'aggiornamento software finché il contenuto non diventa disponibile in un punto di distribuzione. È possibile ridistribuire il contenuto nei punti di distribuzione usando l'azione **Ridistribuisci** . Quando non è disponibile contenuto per un aggiornamento software in una distribuzione creata in un sito padre, l'aggiornamento software deve essere replicato o ridistribuito al sito figlio. Per altre informazioni sulla ridistribuzione di contenuto, vedere [Manage content you have distributed](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage) (Gestire il contenuto distribuito).  
+  Quando non è disponibile contenuto per un aggiornamento software, i client non riescono a installare l'aggiornamento software finché il contenuto non diventa disponibile in un punto di distribuzione. È possibile ridistribuire il contenuto nei punti di distribuzione usando l'azione **Ridistribuisci** . Quando non è disponibile contenuto per un aggiornamento software in una distribuzione creata in un sito padre, l'aggiornamento software deve essere replicato o ridistribuito al sito figlio. Per altre informazioni sulla ridistribuzione di contenuto, vedere [Gestire il contenuto distribuito](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage).  
 
 ### <a name="metadata-only-icon"></a>Icona Solo metadati
  ![Icona](../media/MetadataOnly.png "Icona Solo metadati") L'icona con la freccia blu rappresenta un aggiornamento software solo di metadati.
@@ -123,4 +123,9 @@ Gli aggiornamenti software sincronizzati vengono visualizzati nella console di C
 
  **Problemi operativi:**  
 
- Quando non è disponibile contenuto per un aggiornamento software, i client non riescono a installare l'aggiornamento software finché il contenuto non diventa disponibile in un punto di distribuzione. È possibile ridistribuire il contenuto nei punti di distribuzione usando l'azione **Ridistribuisci** . Quando non è disponibile contenuto per un aggiornamento software in una distribuzione creata in un sito padre, l'aggiornamento software deve essere replicato o ridistribuito al sito figlio. Per altre informazioni sulla ridistribuzione di contenuto, vedere [Manage content you have distributed](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage) (Gestire il contenuto distribuito).  
+ Quando non è disponibile contenuto per un aggiornamento software, i client non riescono a installare l'aggiornamento software finché il contenuto non diventa disponibile in un punto di distribuzione. È possibile ridistribuire il contenuto nei punti di distribuzione usando l'azione **Ridistribuisci** . Quando non è disponibile contenuto per un aggiornamento software in una distribuzione creata in un sito padre, l'aggiornamento software deve essere replicato o ridistribuito al sito figlio. Per altre informazioni sulla ridistribuzione di contenuto, vedere [Gestire il contenuto distribuito](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage).  
+
+
+## <a name="next-steps"></a>Passaggi successivi 
+
+[Plan for software updates](/sccm/sum/plan-design/plan-for-software-updates) (Pianificare gli aggiornamenti del software)

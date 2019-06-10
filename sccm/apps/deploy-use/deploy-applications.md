@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c27e2d4bb90240ad2cfee5e0c470d7a6b8a76653
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
-ms.translationtype: MTE75
+ms.openlocfilehash: 7550987d9b9679085ad5b546274d0c503b9e28ac
+ms.sourcegitcommit: 3f43fa8462bf39b2c18b90a11a384d199c2822d8
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083331"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66403391"
 ---
 # <a name="deploy-applications-with-configuration-manager"></a>Distribuire applicazioni con Configuration Manager
 
@@ -309,6 +309,7 @@ Se si distribuiscono applicazioni come disponibili agli utenti, a partire dalla 
 
 ## <a name="next-steps"></a>Passaggi successivi
 
- - [Monitorare le applicazioni](/sccm/apps/deploy-use/monitor-applications-from-the-console)
- - [Attività di gestione per le applicazioni](/sccm/apps/deploy-use/management-tasks-applications)
- - [Manuale dell'utente di Software Center](/sccm/core/understand/software-center)
+- [Monitorare le applicazioni](/sccm/apps/deploy-use/monitor-applications-from-the-console)
+- [Risolvere i problemi relativi alla distribuzione di applicazioni](/sccm/apps/deploy-use/troubleshoot-application-deployment)
+- [Attività di gestione per le applicazioni](/sccm/apps/deploy-use/management-tasks-applications)
+- [Manuale dell'utente di Software Center](/sccm/core/understand/software-center)

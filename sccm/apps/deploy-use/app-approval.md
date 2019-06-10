@@ -2,7 +2,7 @@
 title: Approvare le applicazioni
 titleSuffix: Configuration Manager
 description: Informazioni sulle impostazioni e i comportamenti per l'approvazione delle applicazioni in Configuration Manager.
-ms.date: 12/14/2018
+ms.date: 05/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,19 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f78ec291701d15c0907aa780b4bed23b712995c7
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: d1352669db30ad2fad1d7287998227ce1556274d
+ms.sourcegitcommit: 3f43fa8462bf39b2c18b90a11a384d199c2822d8
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135222"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66403389"
 ---
 # <a name="approve-applications-in-configuration-manager"></a>Approvare le applicazioni in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Quando si [distribuiscono applicazioni](/sccm/apps/deploy-use/deploy-applications) in Configuration Manager, è possibile richiedere l'approvazione prima dell'installazione. Gli utenti richiedono l'applicazione in Software Center e quindi la richiesta viene esaminata nella console di Configuration Manager. La richiesta può essere approvata o rifiutata. 
-
+Quando si [distribuiscono applicazioni](/sccm/apps/deploy-use/deploy-applications) in Configuration Manager, è possibile richiedere l'approvazione prima dell'installazione. Gli utenti richiedono l'applicazione in Software Center e quindi la richiesta viene esaminata nella console di Configuration Manager. La richiesta può essere approvata o rifiutata.
 
 
 ## <a name="bkmk_approval"></a> Impostazioni di approvazione
@@ -31,6 +30,7 @@ Quando si [distribuiscono applicazioni](/sccm/apps/deploy-use/deploy-application
 Il comportamento di approvazione delle applicazioni varia a seconda della versione di Configuration Manager. Nella pagina **Impostazioni di distribuzione** dell'applicazione di distribuzione viene visualizzata una delle seguenti impostazioni di approvazione:  
 
 #### <a name="require-administrator-approval-if-users-request-this-application"></a>Richiedi l'approvazione dell'amministratore se gli utenti richiedono questa applicazione
+
 *Si applica alla versione 1710 e alle versioni precedenti*
 
 L'amministratore deve approvare qualsiasi richiesta utente per l'applicazione prima che l'utente possa installarla. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi.  
@@ -39,15 +39,15 @@ Le richieste di approvazione dell'applicazione vengono visualizzate nel nodo **R
 
 Dopo avere approvato un'applicazione per l'installazione, è possibile scegliere di negare la richiesta facendo clic su **Nega** nella console di Configuration Manager. Questa azione non provoca la disinstallazione dell'applicazione dai dispositivi da parte del client. Impedisce agli utenti di installare nuove copie dell'applicazione da Software Center.  
 
-
 #### <a name="an-administrator-must-approve-a-request-for-this-application-on-the-device"></a>Un amministratore deve approvare una richiesta per questa applicazione nel dispositivo
+
 *Si applica alla versione 1802 e alle versioni successive <sup>[Nota 1](#bkmk_note1)</sup>*
 
 <a name="bkmk_note1"></a>
 
 > [!Note]  
-> **Nota 1**: Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti). 
-> 
+> **Nota 1**: Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).
+>
 > Se non si abilita questa funzionalità, viene visualizzata l'esperienza precedente.  
 
 L'amministratore deve approvare qualsiasi richiesta utente per l'applicazione prima che l'utente possa installarla nel dispositivo desiderato. Se l'amministratore approva la richiesta, l'utente può installare l'applicazione solo su quel dispositivo. Per installare l'applicazione in un altro dispositivo dovrà inviare un'altra richiesta. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi. <!--1357015-->  
@@ -62,23 +62,28 @@ Se una richiesta non viene approvata entro 30 giorni, viene rimossa. La reinstal
 Dopo avere approvato un'applicazione per l'installazione, è possibile scegliere di negare la richiesta facendo clic su **Nega** nella console di Configuration Manager. Questa azione non provoca la disinstallazione dell'applicazione dai dispositivi da parte del client. Impedisce agli utenti di installare nuove copie dell'applicazione da Software Center.  
 
 > [!Important]  
-> A partire dalla versione 1806, *il comportamento è cambiato* quando si revoca l'approvazione per un'applicazione approvata e installata in precedenza. Ora, quando si **Nega** la richiesta per l'applicazione, il client disinstalla l'applicazione dal dispositivo dell'utente.<!--1357891-->  
+> A partire dalla versione 1806, *il comportamento è cambiato* quando si revoca l'approvazione per un'applicazione approvata e installata in precedenza. Ora quando si imposta **Nega** per la richiesta per l'applicazione il client disinstalla l'applicazione dal dispositivo dell'utente.<!--1357891-->  
 
+Automatizzare il processo di approvazione con il cmdlet di PowerShell [Approve-CMApprovalRequest](https://docs.microsoft.com/powershell/module/configurationmanager/approve-cmapprovalrequest?view=sccm-ps). A partire dalla versione 1902 questo cmdlet include il parametro **InstallActionBehavior**. Usare questo parametro per specificare se installare l'applicazione immediatamente o fuori dall'orario di ufficio.<!-- SCCMDocs-pr issue #3418 -->
 
 
 ## <a name="bkmk_email-approve"></a> Notifiche tramite posta elettronica
+
 <!--1321550-->
 
 A partire dalla versione 1810 è possibile configurare le notifiche tramite posta elettronica per le richieste di approvazione dell'applicazione. Quando un utente richiede un'applicazione, si riceve un messaggio di posta elettronica. Fare clic sui collegamenti nel messaggio di posta elettronica per approvare o rifiutare la richiesta, senza che sia necessario usare la console di Configuration Manager.
 
-È possibile definire gli indirizzi di posta elettronica degli utenti che possono approvare o rifiutare la richiesta durante la creazione di una nuova distribuzione per l'applicazione. Se è necessario modificare l'elenco degli indirizzi di posta elettronica in un secondo momento, passare all'area di lavoro **Monitoraggio**, espandere **Avvisi** e selezionare il nodo **Sottoscrizioni**. Selezionare **Proprietà** da una delle sottoscrizioni **Approva l'applicazione tramite posta elettronica** correlate alla distribuzione dell'applicazione. 
+È possibile definire gli indirizzi di posta elettronica degli utenti che possono approvare o rifiutare la richiesta durante la creazione di una nuova distribuzione per l'applicazione. Se è necessario modificare l'elenco degli indirizzi di posta elettronica in un secondo momento, passare all'area di lavoro **Monitoraggio**, espandere **Avvisi** e selezionare il nodo **Sottoscrizioni**. Selezionare **Proprietà** da una delle sottoscrizioni **Approva l'applicazione tramite posta elettronica** correlate alla distribuzione dell'applicazione.
 
-Se sono presenti più avvisi, è possibile determinare a quale distribuzione si riferisce ognuno di questi. Aprire le proprietà dell'avviso e visualizzare l'elenco di **Avvisi selezionati** nella scheda Generale. La distribuzione viene abilitata come avviso per questa sottoscrizione. 
+Se sono presenti più avvisi, è possibile determinare a quale distribuzione si riferisce ognuno di questi. Aprire le proprietà dell'avviso e visualizzare l'elenco di **Avvisi selezionati** nella scheda Generale. La distribuzione viene abilitata come avviso per questa sottoscrizione.
+
+Gli utenti possono aggiungere un commento alla richiesta da Software Center. Questo commento viene visualizzato nella richiesta dell'applicazione nella console di Configuration Manager. A partire dalla versione 1902 questo commento viene visualizzato anche nel messaggio di posta elettronica. Includere questo commento nel messaggio di posta elettronica consente ai responsabili dell'approvazione di decidere più facilmente se approvare o rifiutare la richiesta.<!--3594063-->
 
 
 ### <a name="prerequisites"></a>Prerequisiti
 
 #### <a name="to-send-email-notifications-and-take-action-on-internal-network"></a>Per inviare notifiche tramite posta elettronica e intraprendere un'azione nella rete interna
+
 Con questi prerequisiti, i destinatari ricevono una notifica della richiesta tramite posta elettronica. Se sono collegati alla rete interna, possono anche approvare o negare la richiesta direttamente dal messaggio di posta elettronica.
 
 - Abilitare la [funzionalità facoltativa](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) **Approva le richieste dell'applicazione per gli utenti per ogni dispositivo**.  
@@ -94,8 +99,8 @@ Con questi prerequisiti, i destinatari ricevono una notifica della richiesta tra
 
     - Associare manualmente un certificato basato su PKI alla porta 443 in IIS sul server che ospita il ruolo Provider SMS  
 
-
 #### <a name="to-take-action-from-internet"></a>Intraprendere un'azione da Internet
+
 Con questi prerequisiti aggiuntivi facoltativi, i destinatari possono approvare o rifiutare la richiesta ovunque sia disponibile l'accesso a Internet.
 
 - Abilitare il servizio di amministrazione del Provider SMS tramite Cloud Management Gateway. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Configurazione del sito** e selezionare il nodo **Server e ruoli del sistema del sito**. Selezionare il server con il ruolo Provider SMS. Nel riquadro dei dettagli selezionare il ruolo **Provider SMS** e scegliere **Proprietà** nella barra multifunzione della scheda Ruolo del sito. Selezionare l'opzione **Consenti il traffico di Configuration Manager Cloud Management Gateway per il servizio di amministrazione**.  
@@ -126,7 +131,7 @@ Con questi prerequisiti aggiuntivi facoltativi, i destinatari possono approvare 
 
             1. Nel riquadro Modifica manifesto individuare la proprietà **oauth2AllowImplicitFlow**.  
 
-            2. Impostarne il valore su **true**. L'intera riga dovrebbe assomigliare, ad esempio, alla riga seguente: `"oauth2AllowImplicitFlow": true,`   
+            2. Impostarne il valore su **true**. L'intera riga dovrebbe assomigliare, ad esempio, alla riga seguente: `"oauth2AllowImplicitFlow": true,`  
 
             3. Selezionare **Salva**.  
 
@@ -150,7 +155,6 @@ Con questi prerequisiti aggiuntivi facoltativi, i destinatari possono approvare 
 Rivedere il file **NotiCtrl.log** nel server del sito per la risoluzione dei problemi.
 
 
-## <a name="maintenance"></a>Manutenzione 
+## <a name="maintenance"></a>Manutenzione
 
 Configuration Manager memorizza le informazioni relative alla richiesta di approvazione per l'applicazione nel database del sito. La cronologia delle richieste annullate o rifiutate viene eliminata dal sito dopo 30 giorni. È possibile configurare il comportamento di eliminazione con l'[attività di manutenzione del sito](/sccm/core/servers/manage/maintenance-tasks) **Elimina dati richiesta applicazione obsoleti**. Il sito non elimina mai le richieste applicazione approvate o in attesa.
-

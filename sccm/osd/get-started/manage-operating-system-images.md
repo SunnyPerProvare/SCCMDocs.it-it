@@ -2,7 +2,7 @@
 title: Gestire le immagini del sistema operativo
 titleSuffix: Configuration Manager
 description: Informazioni sui metodi per gestire le immagini del sistema operativo archiviate nei file di immagine di Windows (WIM).
-ms.date: 11/27/2018
+ms.date: 05/28/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,20 +11,23 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40bfd1c8a541fbb1f108741ef2d4fa00b11088d7
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 35670ea78c2883d232040da30898f753c88e39b1
+ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176103"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66355119"
 ---
 # <a name="manage-os-images-with-configuration-manager"></a>Gestire le immagini del sistema operativo con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le immagini del sistema operativo in Configuration Manager sono archiviate nel formato file di immagine di Windows (WIM). Queste immagini sono una raccolta compressa dei file e delle cartelle di riferimento usati per installare e configurare un nuovo sistema operativo in un computer. Molti scenari di distribuzione del sistema operativo richiedono un'immagine del sistema operativo. 
+Le immagini del sistema operativo in Configuration Manager sono archiviate nel formato file di immagine di Windows (WIM). Queste immagini sono una raccolta compressa dei file e delle cartelle di riferimento usati per installare e configurare un nuovo sistema operativo in un computer. Molti scenari di distribuzione del sistema operativo richiedono un'immagine del sistema operativo.
 
-È possibile usare un'[immagine del sistema operativo predefinita](#default-image) o crearne una da un [computer di riferimento](#bkmk_capture) configurato dall'utente. Quando si configura il computer di riferimento, si aggiungono al sistema operativo i file del sistema operativo e driver, file di supporto, aggiornamenti software, strumenti ed applicazioni. Quindi si acquisisce il sistema operativo per creare il file immagine. 
+
+## <a name="os-image-types"></a>Tipi di immagine del sistema operativo
+
+È possibile usare un'[immagine del sistema operativo predefinita](#default-image) o crearne una da un [computer di riferimento](#bkmk_capture) configurato dall'utente. Quando si configura il computer di riferimento, si aggiungono al sistema operativo i file del sistema operativo e driver, file di supporto, aggiornamenti software, strumenti ed applicazioni. Quindi si acquisisce il sistema operativo per creare il file immagine.
 
 ### <a name="default-image"></a>Immagine predefinita
 
@@ -56,62 +59,66 @@ Per creare un'immagine del sistema operativo personalizzata, creare un computer 
 - Se sono necessari aggiornamenti per le applicazioni e gli strumenti, sarà necessario creare una nuova immagine.  
 
 
+## <a name="BKMK_AddOSImages"></a> Aggiungere un'immagine del sistema operativo  
 
-##  <a name="BKMK_AddOSImages"></a> Aggiungere un'immagine del sistema operativo  
+Prima di poter usare un'immagine del sistema operativo, è necessario aggiungerla al sito di Configuration Manager.
 
-Prima di poter usare un'immagine del sistema operativo, è necessario aggiungerla al sito di Configuration Manager. 
+1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Sistemi operativi** e selezionare il nodo **Immagini del sistema operativo**.  
 
-1.  Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Sistemi operativi** e selezionare il nodo **Immagini del sistema operativo**.  
+2. Nella scheda **Home** della barra multifunzione, nel gruppo **Crea** selezionare **Aggiungi immagine del sistema operativo**. Questa azione avvia l'Aggiunta guidata immagine del sistema operativo.  
 
-2.  Nella scheda **Home** della barra multifunzione, nel gruppo **Crea** selezionare **Aggiungi immagine del sistema operativo**. Questa azione avvia l'Aggiunta guidata immagine del sistema operativo.  
+3. Nella pagina **Origine dati** specificare le informazioni seguenti:
 
-3.  Nella pagina **Origine dati** specificare il **Percorso** di rete del file immagine del sistema operativo. Ad esempio, `\\server\share\path\image.wim`.  
+    - **Percorso** di rete al file di immagine del sistema operativo. Ad esempio, `\\server\share\path\image.wim`.
 
-4.  Nella pagina **Generale** specificare le informazioni seguenti. Queste informazioni sono utili per scopi di identificazione quando sono presenti più immagini del sistema operativo.  
+    - **Estrai un indice delle immagini specifico dal file WIM specificato** e selezionare un indice delle immagini dall'elenco.<!--3719699--> A partire dalla versione 1902, questa opzione importa automaticamente un solo indice anziché tutti gli indici delle immagini nel file. L'uso di questa opzione genera un file di immagine più piccolo e un'installazione offline più rapida. Supporta anche il processo [Servizio immagini ottimizzato](#bkmk_resetbase) che genera un file di immagine più piccolo dopo l'applicazione degli aggiornamenti software.  
 
-    -   **Nome**: nome univoco per l'immagine. Per impostazione predefinita il nome deriva dal nome del file con estensione wim.  
+        > [!Note]  
+        > Configuration Manager non modifica il file di immagine di origine. Crea un nuovo file di immagine nella stessa directory di origine.
+        >
+        > Questo processo di estrazione può non riuscire per i file di immagine di dimensioni molto elevate, ad esempio oltre i 60 GB. L'errore DISM è `Not enough storage is available to process this command.` La riga di comando usata da Configuration Manager è nei file smsprov.log e dism.log. Eseguire manualmente lo stesso comando e quindi importare l'immagine.<!-- SCCMDocs-pr issue 3502 -->  
 
-    -   **Versione**: identificatore di versione facoltativo. Questa proprietà non deve corrispondere alla versione del sistema operativo dell'immagine. Si tratta spesso della versione assegnata dall'organizzazione al pacchetto.   
+4. Nella pagina **Generale** specificare le informazioni seguenti. Queste informazioni sono utili per scopi di identificazione quando sono presenti più immagini del sistema operativo.  
 
-    -   **Commento**: breve descrizione facoltativa.  
+    - **Nome**: nome univoco per l'immagine. Per impostazione predefinita il nome deriva dal nome del file con estensione wim.  
 
-5.  Completare la procedura guidata.  
+    - **Versione**: identificatore di versione facoltativo. Questa proprietà non deve corrispondere alla versione del sistema operativo dell'immagine. Si tratta spesso della versione assegnata dall'organizzazione al pacchetto.  
+
+    - **Commento**: breve descrizione facoltativa.  
+
+5. Completare la procedura guidata.  
 
 Per il cmdlet di PowerShell equivalente a questa procedura guidata della console, vedere [New-CMOperatingSystemImage](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmoperatingsystemimage?view=sccm-ps).
-
 
 Quindi distribuire l'immagine del sistema operativo ai punti di distribuzione.  
 
 
-
-##  <a name="BKMK_DistributeBootImages"></a> Distribuire contenuti ai punti di distribuzione  
+## <a name="BKMK_DistributeBootImages"></a> Distribuire contenuti ai punti di distribuzione  
 
 Distribuire le immagini del sistema operativo nei punti di distribuzione, con le stesse modalità usate per altri contenuti. Prima di distribuire la sequenza di attività, distribuire l'immagine del sistema operativo ad almeno un punto di distribuzione. Per altre informazioni, vedere [Distribuire il contenuto](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_distribute).  
-
 
 
 [!INCLUDE [Apply software updates to an image](includes/wim-apply-updates.md)]
 
 
+## <a name="BKMK_OSImageMulticast"></a> Preparare l'immagine del sistema operativo per le distribuzioni multicast  
 
-##  <a name="BKMK_OSImageMulticast"></a> Preparare l'immagine del sistema operativo per le distribuzioni multicast  
+Usare le distribuzioni multicast per consentire a più computer di scaricare simultaneamente un'immagine del sistema operativo. Il punto di distribuzione esegue il multicast dell'immagine nei client e, evitando che ogni client scarichi una copia dell'immagine dal punto di distribuzione con una connessione separata. Quando si sceglie come metodo di distribuzione del sistema operativo l'[uso del multicast per distribuire Windows in rete](/sccm/osd/deploy-use/use-multicast-to-deploy-windows-over-the-network), configurare l'immagine del sistema operativo in modo che supporti il multicast. Quindi distribuire l'immagine ai punti di distribuzione abilitati per il multicast.
 
-Usare le distribuzioni multicast per consentire a più computer di scaricare simultaneamente un'immagine del sistema operativo. Il punto di distribuzione esegue il multicast dell'immagine nei client e, evitando che ogni client scarichi una copia dell'immagine dal punto di distribuzione con una connessione separata. Quando si sceglie come metodo di distribuzione del sistema operativo l'[uso del multicast per distribuire Windows in rete](/sccm/osd/deploy-use/use-multicast-to-deploy-windows-over-the-network), configurare l'immagine del sistema operativo in modo che supporti il multicast. Quindi distribuire l'immagine ai punti di distribuzione abilitati per il multicast. 
+1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Sistemi operativi** e selezionare il nodo **Immagini del sistema operativo**.  
 
-1.  Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Sistemi operativi** e selezionare il nodo **Immagini del sistema operativo**.  
+2. Selezionare l'immagine del sistema operativo che si desidera distribuire a un punto di distribuzione abilitato per il multicast.  
 
-2.  Selezionare l'immagine del sistema operativo che si desidera distribuire a un punto di distribuzione abilitato per il multicast.  
+3. Nella scheda **Home** della barra multifunzione selezionare **Proprietà** nel gruppo **Proprietà**.  
 
-3.  Nella scheda **Home** della barra multifunzione selezionare **Proprietà** nel gruppo **Proprietà**.  
+4. Passare alla scheda **Impostazioni distribuzione** e configurare le seguenti opzioni:  
 
-4.  Passare alla scheda **Impostazioni distribuzione** e configurare le seguenti opzioni:  
+    - **Consenti trasferimento del pacchetto via multicast (solo WinPE)** : selezionare questa opzione per abilitare la distribuzione simultanea delle immagini del sistema operativo da parte di Configuration Manager tramite multicast.  
 
-    -   **Consenti trasferimento del pacchetto via multicast (solo WinPE)**: selezionare questa opzione per abilitare la distribuzione simultanea delle immagini del sistema operativo da parte di Configuration Manager tramite multicast.  
+    - **Crittografa pacchetti multicast**: specifica se il sito crittografa l'immagine prima di inviarla al punto di distribuzione. Usare questa opzione se l'immagine contiene informazioni riservate. Se l'immagine non è crittografata, il relativo contenuto è visibile in rete come testo non crittografato. Un utente non autorizzato può intercettare e visualizzare il contenuto dell'immagine.  
 
-    -   **Crittografa pacchetti multicast**: specifica se il sito crittografa l'immagine prima di inviarla al punto di distribuzione. Usare questa opzione se l'immagine contiene informazioni riservate. Se l'immagine non è crittografata, il relativo contenuto è visibile in rete come testo non crittografato. Un utente non autorizzato può intercettare e visualizzare il contenuto dell'immagine.  
+    - **Trasferisci il pacchetto solo via multicast**: Specificare se si desidera che il punto di distribuzione distribuisca l'immagine solo durante una sessione multicast.  
 
-    -   **Trasferisci il pacchetto solo via multicast**: Specificare se si desidera che il punto di distribuzione distribuisca l'immagine solo durante una sessione multicast.  
+         Se si seleziona l'opzione **Trasferisci il pacchetto solo via multicast**, è necessario specificare anche l'opzione di distribuzione della sequenza attività **Scaricare il contenuto localmente quando necessario eseguendo la sequenza attività**. Per altre informazioni, vedere [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).  
 
-         Se si seleziona l'opzione **Trasferisci il pacchetto solo via multicast**, è necessario specificare anche l'opzione di distribuzione della sequenza attività **Scaricare il contenuto localmente quando necessario eseguendo la sequenza attività**. Per altre informazioni, vedere [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).   
-
-5.  Selezionare **OK** per salvare le impostazioni e chiudere le proprietà dell'immagine.  
+5. Selezionare **OK** per salvare le impostazioni e chiudere le proprietà dell'immagine.  

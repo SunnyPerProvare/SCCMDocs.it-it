@@ -1,8 +1,8 @@
 ---
-title: Pianificazione dell'interoperabilità per la distribuzione del sistema operativo
+title: Interoperabilità della distribuzione del sistema operativo
 titleSuffix: Configuration Manager
 description: Conoscere i problemi di interoperabilità quando siti diversi di System Center Configuration Manager in un'unica gerarchia usano versioni diverse.
-ms.date: 10/06/2016
+ms.date: 05/28/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,60 +11,75 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9c1d02993c305c951e5f825b8663543976fdfa7
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 7d4f6275ede2a751acb8ca14d7b8b6ad307e78bd
+ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120164"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66355002"
 ---
-# <a name="planning-for-operating-system-deployment-interoperability-in-system-center-configuration-manager"></a>Pianificazione dell'interoperabilità della distribuzione del sistema operativo in System Center Configuration Manager
+# <a name="plan-for-os-deployment-interoperability"></a>Pianificare l'interoperabilità della distribuzione del sistema operativo
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Quando siti diversi di System Center Configuration Manager in un'unica gerarchia usano versioni diverse, alcune funzionalità di Configuration Manager non sono disponibili. In genere, le funzionalità della versione più recente di Configuration Manager non sono accessibili in siti o da client che eseguono una versione precedente. Per ulteriori informazioni, vedere [Interoperabilità tra versioni diverse di System Center Configuration Manager](../../core/plan-design/hierarchy/interoperability-between-different-versions.md).  
+Quando siti diversi di System Center Configuration Manager in un'unica gerarchia usano versioni diverse, alcune funzionalità di Configuration Manager non sono disponibili. In genere, le funzionalità della versione più recente di Configuration Manager non sono accessibili in siti o da client che eseguono una versione precedente. Per ulteriori informazioni, vedere [Interoperabilità tra versioni diverse di System Center Configuration Manager](/sccm/core/plan-design/hierarchy/interoperability-between-different-versions).  
 
- Quando si aggiorna il sito principale nella gerarchia e quando altri siti nella gerarchia eseguono una versione precedente di Configuration Manager, è necessario considerare gli elementi seguenti:  
 
-- Pacchetto di installazione client  
+## <a name="objects"></a>Oggetti
 
-  -   L'origine per il pacchetto di installazione client predefinito viene aggiornata automaticamente e tutti i punti di distribuzione nella gerarchia vengono aggiornati con il nuovo pacchetto di installazione client, anche i punti di distribuzione dei siti della gerarchia che eseguono una versione precedente.  
+Quando si aggiorna il sito principale nella gerarchia e quando altri siti nella gerarchia eseguono una versione precedente di Configuration Manager, è necessario considerare gli oggetti seguenti:  
 
-  -   Impossibile assegnare i client che eseguono la nuova versione ai siti non ancora aggiornati alla nuova versione. Assegnazione bloccata nel punto di gestione.  
+### <a name="client-installation-package"></a>Pacchetto di installazione client  
 
-- Immagini d'avvio  
+- L'origine per il pacchetto di installazione client predefinito viene aggiornata automaticamente. Tutti i punti di distribuzione nella gerarchia vengono aggiornati con il nuovo pacchetto di installazione client. Questo comportamento si verifica anche nei punti di distribuzione in siti nella gerarchia di una versione precedente.  
 
-  -   Quando si aggiorna il sito principale alla versione più recente di Configuration Manager le immagini d'avvio predefinite, x86 e x64, vengono aggiornate automaticamente a Windows ADK per immagini d'avvio basate su Windows 10 che usano Windows PE 10. I file associati alle immagini d'avvio predefinite vengono aggiornati con i file dell'ultima versione di Configuration Manager. Le immagini d'avvio personalizzate non vengono aggiornate automaticamente. È necessario aggiornarle manualmente, incluse le versioni precedenti di Windows PE.  
+- Non è possibile assegnare client della nuova versione a siti per i quali non è ancora stato eseguito l'aggiornamento alla nuova versione. Assegnazione bloccata nel punto di gestione.  
 
-  -   Evitare l'uso di supporto dinamico se la gerarchia del sito contiene siti con versioni diverse di Configuration Manager. Usare invece supporti basati su sito per contattare un punto di gestione specifico fino all'aggiornamento completo di tutti i siti alla stessa versione di Configuration Manager.  
+### <a name="boot-images"></a>Immagini d'avvio  
 
-  -   Verificare che le immagini d'avvio di Configuration Manager più recenti contengano la personalizzazione voluta e aggiornare tutti i punti di distribuzione nei siti che eseguono l'ultima versione di Configuration Manager con le nuove immagini d'avvio.  
+- Quando si aggiorna il sito principale alla versione più recente di Configuration Manager, esso aggiorna automaticamente le immagini d'avvio predefinite (x86 e x64). L'aggiornamento usa Windows ADK per Windows 10, che include Windows PE 10. I file associati alle immagini d'avvio predefinite vengono aggiornati con i file dell'ultima versione di Configuration Manager. Il sito non aggiorna automaticamente immagini d'avvio personalizzate. È necessario aggiornarle manualmente, incluse le versioni precedenti di Windows PE.  
 
-- Utilità di migrazione stato utente (USMT)  
+- Se la gerarchia del sito contiene siti con versioni diverse di Configuration Manager, evitare l'uso di supporto dinamico. Usare invece supporti basati su sito per contattare un punto di gestione specifico. Dopo aver aggiornato tutti i siti alla stessa versione di Configuration Manager, è possibile usare nuovamente il supporto dinamico.
 
-  -   Quando si aggiorna il sito principale alla versione più recente di Configuration Manager, il pacchetto USMT predefinito viene automaticamente aggiornato alla versione più recente. I pacchetti USMT personalizzati non vengono aggiornati automaticamente. È necessario aggiornarli manualmente.  
+- Verificare che le immagini d'avvio di Configuration Manager più recenti includano le personalizzazioni. Aggiornare quindi tutti i punti di distribuzione nei siti della nuova versione con la versione più recente delle nuove immagini d'avvio.  
 
-- Nuovi passaggi della sequenza di attività  
+### <a name="user-state-migration-tool-usmt"></a>Utilità di migrazione stato utente (USMT)  
 
-  -   Vengono introdotti periodicamente nuovi passaggi di sequenza di attività con le nuove versioni di Configuration Manager. Quando si distribuisce una sequenza di attività con un nuovo passaggio a client meno recenti, il passaggio della sequenza di attività avrà esito negativo. Prima di distribuire una sequenza di attività con un nuovo passaggio, assicurarsi che i client nella raccolta di destinazione siano aggiornati alla nuova versione.  
+Quando si aggiorna il sito principale alla versione più recente di Configuration Manager, esso aggiorna automaticamente il pacchetto USMT predefinito alla versione più recente. I pacchetti USMT personalizzati non vengono aggiornati automaticamente. È necessario aggiornarli manualmente.  
 
-- Supporti di distribuzione del sistema operativo  
+### <a name="new-task-sequence-steps"></a>Nuovi passaggi della sequenza di attività  
 
-  -   Quando il sito viene aggiornato a una nuova versione, tutti i supporti (di avvio, di acquisizione, in versione di preproduzione e autonomi) devono essere aggiornati con il nuovo pacchetto client di Configuration Manager.  
+Vengono introdotti periodicamente nuovi passaggi di sequenza di attività con le nuove versioni di Configuration Manager. Quando si distribuisce una sequenza di attività con un nuovo passaggio a client meno recenti, il passaggio della sequenza di attività avrà esito negativo. Prima di distribuire una sequenza di attività con un nuovo passaggio, assicurarsi che i client nella raccolta di destinazione siano aggiornati alla nuova versione.  
 
-- Estensioni di terze parti per la distribuzione del sistema operativo  
+### <a name="os-deployment-media"></a>Supporti di distribuzione dei sistemi operativi  
 
-  -   Quando si hanno estensioni di terze parti per la distribuzione del sistema operativo e versioni diverse di Configuration Manager o di client di Configuration Manager, ovvero una gerarchia mista, si possono verificare problemi con le estensioni.  
+Quando il sito viene aggiornato a una nuova versione, aggiornare tutti i supporti con il nuovo pacchetto client di Configuration Manager. Questi tipi di supporto includono i supporti di avvio, di acquisizione, pre-installati e autonomi.
 
-  Durante l'aggiornamento attivo dei siti della gerarchia, vedere le sezioni seguenti per un supporto nelle distribuzioni del sistema operativo.  
+### <a name="third-party-extensions-to-os-deployment"></a>Estensioni di terze parti per la distribuzione del sistema operativo  
+
+Quando si hanno estensioni di terze parti per la distribuzione del sistema operativo e versioni diverse di siti di Configuration Manager o di client di Configuration Manager, si possono verificare problemi con le estensioni.  
+
 
 ## <a name="latest-version-of-configuration-manager-sites-in-a-mixed-hierarchy"></a>Ultime versioni dei siti di Configuration Manager in una gerarchia mista  
- Quando un sito viene aggiornato con l'ultima versione di Configuration Manager, le sequenze di attività che fanno riferimento al pacchetto di installazione client predefinito inizieranno automaticamente a distribuire l'ultima versione client di Configuration Manager. Le sequenze di attività che fanno riferimento a un pacchetto di installazione client personalizzato continueranno a distribuire la versione del client contenuta in tale pacchetto, probabilmente una versione precedente del client di Configuration Manager, e devono essere aggiornate per evitare errori nella distribuzione delle sequenze di attività. Quando una sequenza di attività è configurata per l'uso di un pacchetto di installazione client personalizzato, è necessario aggiornare il passaggio della sequenza di attività per l'uso dell'ultima versione di Configuration Manager del pacchetto di installazione client oppure aggiornare il pacchetto personalizzato per l'uso dell'origine dell'installazione client di Configuration Manager più recente.  
+
+Quando un sito viene aggiornato con l'ultima versione di Configuration Manager, le sequenze di attività che fanno riferimento al pacchetto di installazione client predefinito iniziano automaticamente a distribuire l'ultima versione client di Configuration Manager.
+
+Le sequenze di attività che fanno riferimento a un pacchetto di installazione client personalizzato continuano a distribuire la versione del client contenuta in tale pacchetto. È probabile che i pacchetti personalizzati includano una versione precedente del client di Configuration Manager. Per evitare errori nella distribuzione di sequenze di attività, aggiornare tutti i pacchetti di installazione client personalizzato alla versione più recente.
+
+Quando si configura una sequenza di attività per usare un pacchetto di installazione client personalizzato, eseguire una delle azioni seguenti:
+
+- Aggiornare il passaggio della sequenza di attività per usare la versione di Configuration Manager più recente del pacchetto di installazione client
+- Aggiornare il pacchetto personalizzato per usare l'origine dell'installazione client Configuration Manager più recente
 
 > [!IMPORTANT]  
->  Non distribuire una sequenza di attività che fa riferimento al pacchetto di installazione client di Configuration Manager più recente nei client di un sito di Configuration Manager meno recente. Quando i client assegnati a un sito di Configuration Manager precedente vengono aggiornati con l'ultima versione client di Configuration Manager, l'assegnazione al sito di Configuration Manager precedente viene bloccata. Il client non è più assegnato ad alcun sito e non viene gestito fino alla sua assegnazione manuale a un sito di Configuration Manager più recente o fino alla reinstallazione della versione precedente del client di Configuration Manager nel computer.  
+> Non distribuire una sequenza di attività che fa riferimento al pacchetto di installazione client di Configuration Manager più recente nei client di un sito di Configuration Manager meno recente. Quando i client assegnati a un sito di Configuration Manager precedente vengono aggiornati con l'ultima versione client di Configuration Manager, l'assegnazione al sito di Configuration Manager precedente viene bloccata. Questi client non sono più assegnati ad alcun sito. Finché il client non viene assegnato manualmente al sito di Configuration Manager più recente o finché non si reinstalla la versione precedente del client di Configuration Manager nel computer, questi client non sono gestiti.
+
 
 ## <a name="older-versions-of-configuration-manager-in-a-mixed-hierarchy"></a>Versioni precedenti dei siti di Configuration Manager in una gerarchia mista  
- Dopo aver aggiornato il sito di amministrazione centrale con l'ultima versione di Configuration Manager, è necessario eseguire quanto indicato di seguito per verificare che le sequenze di attività di distribuzione del sistema operativo distribuite ai client assegnati a un sito di Configuration Manager meno recente, ovvero non ancora aggiornato all'ultima versione di Configuration Manager, non lascino i client in uno stato non gestito.  
 
--   Creare una sequenza di attività da usare solo per la distribuzione ai client in un sito di Configuration Manager. Creare una copia di una sequenza di attività da usare per la distribuzione ai client in un sito aggiornato con l'ultima versione di Configuration Manager e modificare la sequenza di attività per la distribuzione ai client in un sito di Configuration Manager meno recente. Configurare quindi la sequenza di attività in modo che faccia riferimento a un pacchetto di installazione client personalizzato che usa l'origine dell'installazione client di Configuration Manager più recente. Se non si ha già a disposizione un pacchetto di installazione client personalizzato che fa riferimento all'origine dell'installazione client di Configuration Manager meno recente, è necessario crearlo manualmente.  
+Quando si aggiorna il sito di amministrazione centrale all'ultima versione di Configuration Manager, verificare che le sequenze di attività di distribuzione del sistema operativo che vengono distribuite non lascino tali client in uno stato non gestito. Si supponga ad esempio di eseguire la distribuzione a client assegnati a un sito di Configuration Manager meno recente che non è ancora stato ancora aggiornato alla versione più recente di Configuration Manager.
+
+Creare una copia di una sequenza di attività usata per la distribuzione ai client nella versione più recente del sito di Configuration Manager. Modificare quindi la sequenza di attività in modo che sia possibile distribuirla ai client in un sito di Configuration Manager meno recente. Configurare la sequenza di attività in modo che faccia riferimento a un pacchetto di installazione client personalizzato che usa l'origine dell'installazione client di Configuration Manager meno recente. Se non si ha già a disposizione un pacchetto di installazione client personalizzato che fa riferimento all'origine dell'installazione client di Configuration Manager meno recente, crearlo manualmente.  
+
+> [!Important]  
+> A partire dalla versione 1902, non è possibile distribuire un pacchetto o una sequenza di attività in un client versione 5.7730 o precedente. Per aggirare questa limitazione, aggiornare il client a una versione successiva.<!-- SCCMDocs-pr issue #3493 -->
