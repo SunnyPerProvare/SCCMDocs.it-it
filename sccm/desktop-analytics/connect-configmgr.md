@@ -2,7 +2,7 @@
 title: Connettere Configuration Manager
 titleSuffix: Configuration Manager
 description: Informazioni di Guida per la connessione di Configuration Manager con Desktop Analitica.
-ms.date: 04/25/2019
+ms.date: 06/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 905ea779082387996858727ef8c50f1835b3d61c
-ms.sourcegitcommit: 65753c51fbf596f233fc75a5462ea4a44005c70b
+ms.openlocfilehash: 38391c5d922a33696dc10d761847e40c01e151cc
+ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66463028"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66822000"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Come connettere Configuration Manager con Desktop Analitica
 
@@ -29,11 +29,11 @@ Desktop Analitica è strettamente integrato con Configuration Manager. In primo 
 
 ## <a name="bkmk_hotfix"></a> Aggiornare il sito
 
-In primo luogo, assicurarsi che il sito di Configuration Manager è in esecuzione almeno versione 1810. Per altre informazioni, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates).
+In primo luogo, assicurarsi che il sito di Configuration Manager è in esecuzione almeno versione 1902. Per altre informazioni, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates).
 
-È anche necessario installare la versione 1810 aggiornamento cumulativo 2 (4488598) per supportare l'integrazione con Desktop Analitica. Per altre informazioni su questo aggiornamento, vedere [aggiornamento cumulativo 2 per Configuration Manager current branch, versione 1810](https://support.microsoft.com/help/4488598).
+È anche necessario installare l'aggiornamento cumulativo versione 1902 (4500571) per supportare l'integrazione con Desktop Analitica. Per altre informazioni su questo aggiornamento, vedere [aggiornamento cumulativo per Configuration Manager current branch, versione 1902](https://support.microsoft.com/help/4500571).
 
-1. Aggiornare il sito con l'aggiornamento cumulativo per la versione 1810. Per altre informazioni, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates).  
+1. Aggiornare il sito con l'aggiornamento cumulativo per la versione 1902. Per altre informazioni, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates).  
 
 2. Aggiornare i client. Per semplificare questo processo, è consigliabile usare l'aggiornamento automatico. Per altre informazioni, vedere [Aggiornare i client](/sccm/core/clients/manage/upgrade/upgrade-clients#automatic-client-upgrade).  
 
@@ -83,7 +83,7 @@ Utilizzare questa procedura per connettere Configuration Manager a Desktop Anali
 
 7. Nel **dati di diagnostica** pagina, configurare le impostazioni seguenti:  
 
-    - **ID commerciale**: questo valore verranno inseriti automaticamente con l'ID. dell'organizzazione Se non, assicurarsi che il server proxy sia configurato per consentire tutti obbligatori [endpoint](/sccm/desktop-analytics/enable-data-sharing#endpoints) prima di continuare. In alternativa, recuperare l'ID commerciale dal **servizi connessi** riquadro le [portale Analitica Desktop](https://aka.ms/m365aprod).  
+    - **ID commerciale**: questo valore verranno inseriti automaticamente con l'ID. dell'organizzazione Se non, assicurarsi che il server proxy sia configurato per consentire tutti obbligatori [endpoint](/sccm/desktop-analytics/enable-data-sharing#endpoints) prima di continuare. In alternativa, recuperare l'ID commerciale manualmente tramite il [portale Analitica Desktop](/sccm/desktop-analytics/troubleshooting#bkmk_ViewCommercialID).  
 
     - **A livello di dati di diagnostica di Windows 10**: selezionare almeno **Enhanced (Limited)**  
 

@@ -2,7 +2,7 @@
 title: Desktop Analytics
 titleSuffix: Configuration Manager
 description: Una panoramica del servizio Desktop Analitica integrato con Configuration Manager.
-ms.date: 06/04/2019
+ms.date: 06/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: overview
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdeffb3b2d478e4984ef721655b78aee5c47c36f
-ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.openlocfilehash: 8dfa24f92ced6c69f90844e46dccf1df0e93f7a7
+ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66716217"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66821997"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Analitica Desktop?
 
@@ -80,7 +80,7 @@ Per usare Desktop Analitica, assicurarsi che l'ambiente soddisfi i prerequisiti 
 
         - [**Proprietario**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner), o [ **collaboratore** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) e [ **amministratore accesso utenti** ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) le autorizzazioni per il sottoscrizione per creare un'area di lavoro in un nuovo gruppo di risorse.  
 
-- Configuration Manager, versione 1810 con aggiornamento cumulativo 2 (4488598) o versione successiva. Per altre informazioni, vedere [aggiornamento Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
+- Configuration Manager, versione 1902 con aggiornamento cumulativo (4500571) o versione successiva. Per altre informazioni, vedere [aggiornamento Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
 
     - **Amministratore completo** ruoli in Configuration Manager  
 
@@ -88,7 +88,7 @@ Per usare Desktop Analitica, assicurarsi che l'ambiente soddisfi i prerequisiti 
 
     - Installare gli aggiornamenti più recenti. Per altre informazioni, vedere [aggiornare i dispositivi](/sccm/desktop-analytics/enroll-devices#update-devices).  
 
-    - Inoltre necessario che nei dispositivi client di Configuration Manager, versione 1810 con aggiornamento cumulativo 2 (4488598) o versione successiva. Per altre informazioni, vedere [aggiornamento Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
+    - Inoltre necessario che nei dispositivi client di Configuration Manager, versione 1902 con aggiornamento cumulativo (4500571) o versione successiva. Per altre informazioni, vedere [aggiornamento Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
 
     > [!Note]  
     > Analitica desktop non supporta gli aggiornamenti a Windows 10 canale per la manutenzione a lungo termine (LTSC). Per altre informazioni, vedere [Windows come una panoramica del servizio](https://docs.microsoft.com/windows/deployment/update/waas-overview#long-term-servicing-channel).

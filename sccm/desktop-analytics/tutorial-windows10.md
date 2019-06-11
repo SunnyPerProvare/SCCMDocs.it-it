@@ -2,7 +2,7 @@
 title: 'Esercitazione: distribuire Windows 10'
 titleSuffix: Configuration Manager
 description: Un'esercitazione sull'uso di Desktop Analitica e Configuration Manager per distribuire Windows 10 in un gruppo pilota.
-ms.date: 04/25/2019
+ms.date: 06/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: tutorial
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7eb322550c6d11426240736d3d0c6b9ff2c9764f
-ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
+ms.openlocfilehash: 09259b62eba5a6cbd84b487f83f0fb26d7cbb7c1
+ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66264550"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66821948"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Esercitazione: Distribuire Windows 10 per contenuto pilota
 
@@ -48,7 +48,7 @@ Prima di iniziare questa esercitazione, accertarsi di avere i prerequisiti segue
 
     Per altre informazioni, vedere [prerequisiti di Analitica Desktop](/sccm/desktop-analytics/overview#prerequisites).
 
-- Configuration Manager, versione 1810 con aggiornamento cumulativo 2 (4488598) o versione successiva, con **amministratore completo** ruolo  
+- Configuration Manager, versione 1902 con aggiornamento cumulativo (4500571) o versione successiva, con **amministratore completo** ruolo  
 
 - Supporto di installazione per la versione più recente di Windows 10
 
@@ -58,7 +58,7 @@ Prima di iniziare questa esercitazione, accertarsi di avere i prerequisiti segue
 
     - L'aggiornamento di qualità aggiornamento cumulativo più recente di Windows 10  
 
-    - Configuration Manager client versione 1810 con aggiornamento cumulativo 2 (4488598) o versione successiva  
+    - Configuration Manager client versione 1902 con aggiornamento cumulativo (4500571) o versione successiva  
 
 - Approvazione aziendale per configurare il livello di dati di diagnostica di Windows per **Enhanced (Limited)** nei dispositivi pilota  
 
@@ -77,8 +77,6 @@ Prima di iniziare questa esercitazione, accertarsi di avere i prerequisiti segue
     - `https://eaus2watcab02.blob.core.windows.net`  
     - `https://weus2watcab01.blob.core.windows.net`  
     - `https://weus2watcab02.blob.core.windows.net`  
-    - `https://www.msftncsi.com`  
-    - `https://www.msftconnecttest.com`  
     - `https://kmwatsonc.events.data.microsoft.com`  
     - `https://oca.telemetry.microsoft.com`  
     - `https://login.live.com`  
@@ -157,9 +155,9 @@ Usare questa procedura per aggiornare Configuration Manager, connettersi a Deskt
 
 ### <a name="update-configuration-manager"></a>Aggiornamento di Configuration Manager
 
-Installare l'aggiornamento cumulativo di 1810 di Configuration Manager versione 2 (4488598) per supportare l'integrazione con Desktop Analitica. Per altre informazioni su questo aggiornamento, vedere [aggiornamento cumulativo per Configuration Manager current branch, versione 1810](https://support.microsoft.com/help/4488598).
+Installare l'aggiornamento cumulativo Configuration Manager versione 1902 (4500571) per supportare l'integrazione con Desktop Analitica. Per altre informazioni su questo aggiornamento, vedere [aggiornamento cumulativo per Configuration Manager current branch, versione 1902](https://support.microsoft.com/help/4500571).
 
-1. Aggiornare il sito con l'aggiornamento cumulativo per la versione 1810. Per altre informazioni, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates).  
+1. Aggiornare il sito con l'aggiornamento cumulativo per la versione 1902. Per altre informazioni, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates).  
 
 2. Aggiornare i client. Per semplificare questo processo, è consigliabile usare l'aggiornamento automatico. Per altre informazioni, vedere [Aggiornare i client](/sccm/core/clients/manage/upgrade/upgrade-clients#automatic-client-upgrade).  
 
@@ -244,7 +242,7 @@ Utilizzare questa procedura per creare un piano di distribuzione nel Desktop Ana
 
     - **Nome**: Pianificare un nome univoco per la distribuzione, ad esempio `Windows 10 pilot`  
 
-    - **Prodotti e le versioni**: Selezionare il **Windows** prodotto e la versione più recente disponibile consigliato. Ad esempio, **Windows 10, versione 1809 (scelta consigliata)**.  
+    - **Prodotti e le versioni**: Selezionare il **Windows** prodotto e la versione più recente disponibile consigliato. Ad esempio, **Windows 10, versione 1809 (scelta consigliata)** .  
 
     - **Gruppi di dispositivi**: Selezionare uno o più gruppi dalla scheda di Configuration Manager e quindi selezionare **imposta come destinazione gruppi**. Questi gruppi sono raccolte sincronizzate da Configuration Manager.  
 

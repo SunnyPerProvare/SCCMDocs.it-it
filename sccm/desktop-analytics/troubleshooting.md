@@ -2,7 +2,7 @@
 title: Risoluzione dei problemi relativi a Desktop Analitica
 titleSuffix: Configuration Manager
 description: Dettagli tecnici per risolvere i problemi con Desktop Analitica.
-ms.date: 06/05/2019
+ms.date: 06/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1f54a2794b3a938366553c635e560ebe1adb320
-ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
+ms.openlocfilehash: 32e3d1185ff1f93a988074cdbc8dd7a14a4dcba8
+ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66748135"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66822088"
 ---
 # <a name="troubleshooting-desktop-analytics"></a>Risoluzione dei problemi relativi a Desktop Analitica
 
@@ -95,7 +95,7 @@ Selezionare il nome della categoria da rimuovere o aggiungere dal grafico. Quest
 
 Il dispositivo è gli attributi seguenti:
 
-- Un client 1810 o versione successiva di Configuration Manager  
+- Un client 1902 o versione successiva di Configuration Manager  
 - Non sono presenti errori di configurazione  
 - Desktop Analitica ricevuti i dati di diagnostica completati da questo dispositivo negli ultimi 28 giorni  
 - Desktop Analitica dispone di un inventario completo della configurazione del dispositivo e le app installate  
@@ -118,7 +118,7 @@ Assicurarsi che il dispositivo è in grado di comunicare con il servizio. Per al
 
 #### <a name="missing-prerequisites"></a>Prerequisiti mancanti
 
-Il client di Configuration Manager non è presente almeno versione 1810 (5.0.8740).
+Il client di Configuration Manager non è presente almeno versione 1902 (5.0.8790).
 
 Aggiornare il client alla versione più recente. Provare ad abilitare l'aggiornamento client automatico per il sito di Configuration Manager. Per altre informazioni, vedere [Aggiornare i client](/sccm/core/clients/manage/upgrade/upgrade-clients#automatic-client-upgrade).  
 
@@ -339,7 +339,7 @@ Controllare le autorizzazioni per questa chiave del Registro di sistema. Assicur
 
 È un ID diverso per il dispositivo. Questa chiave del Registro di sistema viene utilizzata dai criteri di gruppo. Tramite l'ID fornito da Configuration Manager ha la precedenza.  
 
-Per visualizzare l'ID commerciale nel portale di Analitica Desktop, usare la procedura seguente:
+<a name="bkmk_ViewCommercialID"></a> Per visualizzare l'ID commerciale nel portale di Analitica Desktop, usare la procedura seguente:
 
 1. Passare al portale di Analitica di Desktop e selezionare **servizi connessi** nel gruppo di impostazioni globali.  
 
@@ -348,7 +348,7 @@ Per visualizzare l'ID commerciale nel portale di Analitica Desktop, usare la pro
 ![Screenshot dell'ID commerciale nel portale di Analitica Desktop](media/commercial-id.png)
 
 > [!Important]  
-> Solo **ottenere la nuova chiave ID** quando non è possibile utilizzare quella corrente. Se si rigenera l'ID commerciale, è possibile distribuire il nuovo ID per i dispositivi. Questo processo potrebbe comportare la perdita di dati di diagnostica durante la transizione.  
+> Solo **ottenere la nuova chiave ID** quando non è possibile utilizzare quella corrente. Se si rigenera l'ID commerciale [nuovamente i dispositivi registrati con il nuovo Id](/sccm/desktop-analytics/enroll-devices#device-enrollment). Questo processo potrebbe comportare la perdita di dati di diagnostica durante la transizione.  
 
 #### <a name="windows-commercial-data-opt-in"></a>Windows dati commerciali acconsenti esplicitamente
 
@@ -604,14 +604,18 @@ Il portale visualizzerà il messaggio una notifica che aggiunto l'assegnazione d
 ## <a name="data-latency"></a>Latenza dei dati
 
 <!-- 3846531 -->
-I dati nel portale di Analitica Desktop viene aggiornati quotidianamente. Questo aggiornamento include modifiche dispositivo raccolte dai dati di diagnostica e le eventuali modifiche apportate alla configurazione. Ad esempio, quando si modifica un asset **decisioni di aggiornamento**, può comportare modifiche allo stato di conformità dei dispositivi con quell'asset installato.
+Quando si configura prima Analitica Desktop, i report in Configuration Manager e il portale di Analitica Desktop non risultino dati completi sin da subito. Potrebbero essere necessari 2-3 giorni per i dispositivi attivi inviare dati di diagnostica per il servizio di Analitica Desktop, il servizio per elaborare i dati e quindi eseguire la sincronizzazione con il sito di Configuration Manager.
 
-- **Modifiche dell'amministratore** vengono in genere elaborati dal servizio Analitica Desktop all'interno di nove ore. Ad esempio, se si apportano modifiche alle 11:00 PM UTC, il portale deve riflettere tali modifiche prima di 08 12:00:00 AM UTC del giorno successivo.
+Durante la sincronizzazione di raccolte di dispositivi dalla gerarchia di Configuration Manager per Desktop Analitica, possono volerci fino a 10 minuti per le raccolte da visualizzare nel portale di Analitica Desktop.  Analogamente, quando si crea un piano di distribuzione in Desktop Analitica, possono volerci fino a 10 minuti per le nuove raccolte associati al piano di distribuzione venga visualizzato nella gerarchia di Configuration Manager.  I siti primari creano le raccolte e il sito di amministrazione centrale si sincronizza con Desktop Analitica.
 
-- **Dispositivo Cambia** rilevato da UTC mezzanotte nell'ora locale sono in genere inclusa nell'aggiornamento giornaliero. È in genere sono altre 23 ore di latenza associata con l'elaborazione del dispositivo cambia rispetto alle modifiche di amministratore.
+All'interno del portale di Analitica Desktop, esistono due tipi di dati: **I dati dell'amministratore** e **i dati di diagnostica**:
 
-Se non è possibile visualizzare le modifiche aggiornate all'interno di questi intervalli di tempo, attendere un altro 24 ore il successivo aggiornamento giornaliero. Se viene visualizzato a intervalli più lunghi, controllare il dashboard di integrità del servizio. Se il servizio vengono segnalati come integri, contattare il supporto tecnico Microsoft.
+- **I dati dell'amministratore** fa riferimento a qualsiasi modifica apportata alla configurazione dell'area di lavoro.  Ad esempio, quando si modifica un asset **decisioni di aggiornamento** oppure **importanza** si siano modificando i dati dell'amministratore.  Queste modifiche hanno spesso un effetto di composizione, come è possibile modificare lo stato di conformità di un dispositivo con l'asset in questione è installato.
 
-Quando si configura prima Analitica Desktop, i grafici in Configuration Manager e il portale di Analitica Desktop non risultino dati completi. Potrebbero essere necessari 2-3 giorni per i dispositivi attivi inviare dati di diagnostica per il servizio di Analitica Desktop, il servizio per elaborare i dati e quindi eseguire la sincronizzazione con il sito di Configuration Manager.
+- **I dati di diagnostica** fa riferimento a metadati di sistema caricati dai dispositivi client per Microsoft.  Si tratta dei dati che alimenta Desktop Analitica e includono gli attributi, ad esempio inventario dei dispositivi e sicurezza e funzionalità di aggiornamento dello stato.
 
-In una gerarchia di Configuration Manager, può richiedere 10 minuti per le nuove raccolte da visualizzare per i piani di distribuzione. I siti primari creano le raccolte e il sito di amministrazione centrale si sincronizza con Desktop Analitica.<!-- 3896921 -->
+Per impostazione predefinita, tutti i dati di Analitica Desktop portale viene automaticamente aggiornato ogni giorno. Questo aggiornamento include modifiche di dati di diagnostica, nonché tutte le modifiche apportate alla configurazione (i dati dell'amministratore) ed è in genere visibile nel portale di Analitica Desktop da 08 12:00:00 AM UTC ogni giorno.
+
+Quando si apportano modifiche per i dati dell'amministratore, si hanno la possibilità di attivare un aggiornamento su richiesta dei dati nell'area di lavoro amministrazione, aprire il menu a comparsa valuta i dati e scegliere "Applicare modifiche".  Questo processo richiede in genere compreso tra 15 e 60 minuti, a seconda della portata delle modifiche che richiedono i processi e le dimensioni dell'area di lavoro.  Si noti che la richiesta di un dati on demand di aggiornamento non comporterà modifiche ai dati di diagnostica.  Per altre informazioni su come richiedere un aggiornamento su richiesta, vedere la pagina Domande frequenti.
+
+Se non è possibile visualizzare le modifiche aggiornate entro gli intervalli di tempo indicati in precedenza, attendere un altro 24 ore il successivo aggiornamento giornaliero. Se viene visualizzato a intervalli più lunghi, controllare il dashboard di integrità del servizio. Se il servizio vengono segnalati come integri, contattare il supporto tecnico Microsoft.<!-- 3896921 -->
