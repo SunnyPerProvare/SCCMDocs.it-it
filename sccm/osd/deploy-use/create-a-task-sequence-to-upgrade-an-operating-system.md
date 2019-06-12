@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1015573d62bdbbd317b9f787071e7725e5d4362
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: c7932609d9a52968a3c610fd9c5a00326cced8d5
+ms.sourcegitcommit: 9c02c00c4061ab17beb3bc1cc895b533f3b55bc4
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176128"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501726"
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-os-in-configuration-manager"></a>Creare una sequenza di attività per aggiornare un sistema operativo in Configuration Manager
 
@@ -145,9 +145,9 @@ Con la funzionalità pre-cache del contenuto è possibile consentire al client d
 
 A partire dalla versione 1802, il modello di sequenza di attività predefinito per l'aggiornamento sul posto di Windows 10 include gruppi aggiuntivi con azioni consigliate da aggiungere prima del processo di aggiornamento. Queste azioni nel gruppo **Preparazione dell'aggiornamento** sono comuni tra numerosi clienti che stanno aggiornando i propri dispositivi a Windows 10. Per i siti con versioni precedenti alla 1802, aggiungere manualmente queste azioni alla sequenza di attività nel gruppo **Preparazione dell'aggiornamento**.  
 
-- **Verifiche della batteria**: aggiungere in questo gruppo i passaggi da eseguire per verificare se il computer usa la batteria o l'elettricità. Per eseguire questo controllo serve un'utilità o uno script personalizzato. Ad esempio: mediante WbemTest, connettere il `root\cimv2` dello spazio dei nomi. Eseguire la query seguente: `Select Batterystatus From Win32_Battery where batterystatus != 2`. Se viene restituito alcun risultato, il dispositivo è alimentato a batteria. In caso contrario, il dispositivo è connesso all'alimentazione cablata.  
+- **Verifiche della batteria**: aggiungere in questo gruppo i passaggi da eseguire per verificare se il computer usa la batteria o l'elettricità. Per eseguire questo controllo serve un'utilità o uno script personalizzato. Ad esempio: usando WbemTest, connettersi allo spazio dei nomi `root\cimv2`. Eseguire quindi la query seguente: `Select Batterystatus From Win32_Battery where batterystatus != 2`. Se restituisce un risultato, il dispositivo è alimentato a batteria. In caso contrario, il dispositivo usa l'alimentazione tramite cavo.  
 
-- **Verifiche della connessione di rete/via cavo**: aggiungere in questo gruppo i passaggi da eseguire per verificare se il computer è connesso a una rete e non usa una connessione wireless. Per eseguire questo controllo serve un'utilità o uno script personalizzato.  
+- **Verifiche della connessione di rete/via cavo**: aggiungere in questo gruppo i passaggi da eseguire per verificare se il computer è connesso a una rete e non usa una connessione wireless. Per eseguire questo controllo serve un'utilità o uno script personalizzato.  Ad esempio: usando WbemTest, connettersi allo spazio dei nomi `root\cimv2`. Eseguire quindi la query seguente: `Select * From Win32_NetworkAdapter Where NetConnectionStatus = 2 and PhysicalAdapter = 'True' and NetConnectionID = 'Wi-Fi'`. Se restituisce un risultato, il dispositivo è connesso al Wi-Fi. In caso contrario, il dispositivo usa una connessione di rete cablata.
 
 - **Rimuovi le applicazioni non compatibili**: aggiungere in questo gruppo i passaggi da eseguire per rimuovere le applicazioni che non sono compatibili con questa versione di Windows 10. Il metodo per disinstallare un'applicazione varia a seconda dei casi.  
 
@@ -169,7 +169,7 @@ Usare il passaggio [Scaricare il contenuto del pacchetto](/sccm/osd/understand/t
 -   Per scaricare in modo dinamico un pacchetto di driver applicabile, usare due passaggi **Scarica contenuto pacchetto** con le condizioni per rilevare il tipo di hardware appropriato per ogni pacchetto driver. Configurare ogni passaggio **Scarica contenuto pacchetto** in modo che usi la stessa variabile. Quindi usare tale variabile per il valore **Contenuto preconfigurato** nella sezione dei driver del passaggio **Aggiorna sistema operativo**.  
 
     > [!NOTE]  
-    > Configuration Manager aggiunge un suffisso numerico al nome della variabile. Ad esempio, se si specifica `%mycontent%` come variabile personalizzata, il client archivia tutto il contenuto a cui si fa riferimento in questo percorso. Quando si fa riferimento alla variabile in un passaggio successivo, ad esempio **Aggiorna sistema operativo**, usare la variabile con un suffisso numerico. In questo esempio, `%mycontent01%` o `%mycontent02%`, dove il numero corrisponde all'ordine in cui il passaggio **Scarica contenuto pacchetto** indica il contenuto specifico.  
+    > Configuration Manager aggiunge un suffisso numerico al nome di questa variabile. Ad esempio, se si specifica `%mycontent%` come variabile personalizzata, il client archivia tutto il contenuto a cui si fa riferimento in questo percorso. Quando si fa riferimento alla variabile in un passaggio successivo, ad esempio **Aggiorna sistema operativo**, usare la variabile con un suffisso numerico. In questo esempio, `%mycontent01%` o `%mycontent02%`, dove il numero corrisponde all'ordine in cui il passaggio **Scarica contenuto pacchetto** indica il contenuto specifico.  
 
 
 
@@ -234,7 +234,7 @@ A partire dalla versione 1806, il modello di sequenza di attività predefinito p
 
 - Vedere l'articolo [Risolvere gli errori di aggiornamento di Windows 10](https://docs.microsoft.com/windows/deployment/upgrade/resolve-windows-10-upgrade-errors) nella documentazione di Windows. Questo articolo include anche informazioni dettagliate sul processo di aggiornamento.  
 
-- Nel passaggio predefinito **Verifica conformità** abilitare **Verifica lo spazio minimo disponibile su disco (MB)**. Impostare il valore su almeno **16384** (16 GB) per un pacchetto di aggiornamento del sistema operativo a 32 bit o su **20480** (20 GB) per un pacchetto a 64 bit.  
+- Nel passaggio predefinito **Verifica conformità** abilitare **Verifica lo spazio minimo disponibile su disco (MB)** . Impostare il valore su almeno **16384** (16 GB) per un pacchetto di aggiornamento del sistema operativo a 32 bit o su **20480** (20 GB) per un pacchetto a 64 bit.  
 
 - Usare la [variabile della sequenza di attività](/sccm/osd/understand/task-sequence-variables#SMSTSDownloadRetryCount) **SMSTSDownloadRetryCount** per riprovare a scaricare i criteri. Per impostazione predefinita, attualmente il client esegue due tentativi; questa variabile è impostata su due (2). Se i client non sono su una connessione di rete Intranet cablata, ulteriori tentativi possono aiutare a ottenere i criteri per tali client. L'uso di questa variabile non ha effetti collaterali negativi, se non un errore ritardato nel caso in cui il download dei criteri non riesca.<!--501016--> Aumentare inoltre il valore della variabile **SMSTSDownloadRetryDelay** dai 15 secondi predefiniti.  
 

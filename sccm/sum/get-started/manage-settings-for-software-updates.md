@@ -11,12 +11,12 @@ manager: dougeby
 author: mestew
 ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 90304156778f4f41b2ac35a2840a4a7e7bb4dc32
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: b78d4212201a8ed1a08b7fecdb376cbdfdac7636
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499776"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748213"
 ---
 #  <a name="BKMK_ManageSUSettings"></a> Gestire le impostazioni per gli aggiornamenti software  
 
@@ -69,7 +69,11 @@ Nelle proprietà degli aggiornamenti software, è possibile verificare le inform
 ####  <a name="BKMK_SoftwareUpdateDetails"></a> Dettagli sugli aggiornamenti software  
 Nella scheda **Dettagli aggiornamento** è possibile visualizzare le seguenti informazioni di riepilogo relative all'aggiornamento software selezionato:  
 
-- **ID bollettino**: specifica l'ID bollettino associato agli aggiornamenti software di sicurezza. È possibile trovare i dettagli relativi al bollettino sulla sicurezza cercando l'ID bollettino nella pagina Web [Bollettini sulla sicurezza](http://go.microsoft.com/fwlink/p/?LinkId=58313) .  
+- **ID bollettino**: specifica l'ID bollettino associato agli aggiornamenti software di sicurezza. È possibile trovare i dettagli relativi al bollettino sulla sicurezza cercando l'ID bollettino nella pagina Web [Microsoft Security Response Center](https://portal.msrc.microsoft.com/).  
+
+> [!NOTE]
+> Il modo in cui Microsoft documenta gli aggiornamenti della sicurezza sta cambiando. Il modello precedente usava le pagine Web dei bollettini sulla sicurezza e includeva i numeri ID dei bollettini sulla sicurezza (ad esempio, MS16-XXX) come riferimento. Questa formato della documentazione degli aggiornamenti della sicurezza, inclusi i numeri ID dei bollettini, è in fase di ritiro e verrà sostituito con la guida agli aggiornamenti della sicurezza. Invece che sugli ID dei bollettini, la nuova guida si basa sui numeri ID delle vulnerabilità e sui numeri ID degli articoli della KB. Per altre informazioni, vedere le [domande frequenti sulla guida agli aggiornamenti della sicurezza](https://www.microsoft.com/msrc/faqs-security-update-guide).
+
 
 - **ID articolo**: specifica l'ID articolo per l'aggiornamento software. L'articolo di riferimento fornisce informazioni più dettagliate sull'aggiornamento software e il problema che l'aggiornamento software consente di correggere o migliorare.  
 
@@ -94,7 +98,7 @@ Nella scheda **Informazioni sul contenuto** , esaminare le seguenti informazioni
 
 -   **Percorso di origine**: specifica il percorso dei file di origine dell'aggiornamento software.  
 
--   **Dimensione (MB)**: specifica le dimensioni dei file di origine dell'aggiornamento software.  
+-   **Dimensione (MB)** : specifica le dimensioni dei file di origine dell'aggiornamento software.  
 
 ####  <a name="BKMK_CustomBundleInformation"></a> Informazioni sul bundle personalizzato  
 Nella scheda **Informazioni sul bundle personalizzato** , esaminare le informazioni sul bundle personalizzato per l'aggiornamento software. Quando l'aggiornamento software selezionato contiene aggiornamenti software in bundle contenuti nel file di aggiornamento software, essi vengono visualizzati nella sezione **Informazioni sul bundle** . Questa scheda non visualizza gli aggiornamenti software in bundle che sono visualizzati nella scheda **Informazioni sul contenuto** , come i file di aggiornamento per le diverse lingue.  
@@ -134,6 +138,6 @@ Per impostazione predefinita, l'elenco di revoche di certificati (CRL) non viene
 Se usato, è necessario attivare il controllo CRL nelle console di Configuration Manager che elaborano gli aggiornamenti software.  
 
 #### <a name="to-enable-crl-checking"></a>Per attivare il controllo CRL  
-Nel computer che esegue il controllo CRL eseguire quanto segue da un prompt dei comandi del DVD del prodotto: **\SMSSETUP\BIN\X64\\**<*lingua*>**\UpdDwnldCfg.exe /checkrevocation**.  
+Nel computer che esegue il controllo CRL eseguire quanto segue da un prompt dei comandi del DVD del prodotto: **\SMSSETUP\BIN\X64\\** <*lingua*> **\UpdDwnldCfg.exe /checkrevocation**.  
 
 Per l'inglese (USA), ad esempio, eseguire **\SMSSETUP\BIN\X64\00000409\UpdDwnldCfg.exe /checkrevocation**  

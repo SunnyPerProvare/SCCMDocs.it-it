@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e0b8e6a522e367e17d6c13fad3896a6606d3e5c
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 4a8f1ca1484df0480a7923a8d3de64c1670aec6d
+ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176082"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748190"
 ---
 # <a name="troubleshooting-windows-defender-or-endpoint-protection-client"></a>Risoluzione dei problemi di Windows Defender o del client Endpoint Protection
 
@@ -149,11 +149,7 @@ Se si verificano problemi con Windows Defender o Endpoint Protection, chiedere a
 
 ### <a name="step-6-manually-install-the-virus-and-spyware-definition-updates"></a>Passaggio 6: installare manualmente gli aggiornamenti delle definizioni di virus e spyware  
 
--   Se si esegue un sistema operativo Windows a 32 bit, scaricare gli aggiornamenti più recenti manualmente all'indirizzo [http://go.microsoft.com/fwlink/?LinkID=87342](http://go.microsoft.com/fwlink/?LinkID=87342) (http://go.microsoft.com/fwlink/?LinkID=87342).  
-
--   Se si esegue un sistema operativo Windows a 64 bit, scaricare gli aggiornamenti più recenti manualmente all'indirizzo [http://go.microsoft.com/fwlink/?LinkID=87341](http://go.microsoft.com/fwlink/?LinkID=87341) (http://go.microsoft.com/fwlink/?LinkID=87341).  
-
--   Fare clic su **Esegui**. Gli aggiornamenti più recenti vengono installati manualmente nel computer.  
+-   [Scaricare manualmente gli aggiornamenti più recenti](https://www.microsoft.com/wdsi/definitions/).  
 
 
 ### <a name="step-7-contact-support"></a>Passaggio 7: contattare il supporto  
@@ -196,9 +192,7 @@ Se si verificano problemi con Windows Defender o Endpoint Protection, chiedere a
 >  Alcune applicazioni per la sicurezza in Internet non vengono disinstallate completamente. È possibile che sia necessario scaricare ed eseguire un'utilità di pulitura per rimuovere completamente l'applicazione di sicurezza precedente.  
 
 > [!CAUTION]  
->  Quando si rimuovono i programmi per la sicurezza in Internet, il computer non sarà protetto. Se si verificano problemi durante l'installazione di   
->       Endpoint Protection dopo aver rimosso i programmi di sicurezza Internet esistenti, contattare l'assistenza di Windows Defender o  
->       Endpoint Protection inviando un caso online. Per altre informazioni, vedere [How to Submit a Case Online](http://www.microsoft.com/en-ph/security_essentials/Support/8c9074b6-1558-4d14-bc39-d294ced11096.aspx) (Come inviare un caso online).  
+> Quando si rimuovono i programmi per la sicurezza, il computer non sarà protetto. Se si verificano problemi durante l'installazione di Windows Defender dopo aver rimosso i programmi per la sicurezza esistenti, contattare il [supporto tecnico Microsoft](https://support.microsoft.com/supportforbusiness/productselection) per **Windows Defender** nella famiglia di prodotti per la **sicurezza**.  
 
 ### <a name="step-4-uninstallreinstall-endpoint-protection"></a>Passaggio 4: disinstallare/reinstallare Endpoint Protection  
 

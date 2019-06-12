@@ -2,7 +2,7 @@
 title: Piani di distribuzione in Desktop Analitica
 titleSuffix: Configuration Manager
 description: Informazioni sui piani di distribuzione in Desktop Analitica.
-ms.date: 05/14/2019
+ms.date: 06/10/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b44684f897e7aad4365c39e58c9bfd486bde7cbb
-ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
+ms.openlocfilehash: 88c78cef4717cc3a51a53b7fd5aba0cbefa93a8e
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65673289"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834937"
 ---
 # <a name="about-deployment-plans-in-desktop-analytics"></a>Informazioni sui piani di distribuzione in Desktop Analitica
 
@@ -48,7 +48,7 @@ Come parte del piano di distribuzione, eseguire le operazioni seguenti:
 
 - Decidere come risolvere i problemi relativi alle App basate su consigli da Desktop Analitica  
 
-Desktop Analitica dati del piano di distribuzione viene aggiornato ogni giorno. Le modifiche apportate potrebbero non essere per 24 ore. Tali modifiche includono l'assegnazione di priorità a un'app o scelta di un dispositivo da includere in un progetto pilota.  
+Per impostazione predefinita, Analitica Desktop Aggiorna i dati del piano di distribuzione ogni giorno. Le modifiche apportate all'interno di un piano di distribuzione, ad esempio l'assegnazione di priorità a un'app o scelta di un dispositivo da includere in un progetto pilota, accetta fino a 24 ore per l'elaborazione. Per accelerare questo processo, richiedere un aggiornamento dei dati on demand. Per altre informazioni, vedere [domande frequenti su Analitica Desktop](/sccm/desktop-analytics/faq#can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal).  
 
 Dopo la connessione Desktop Analitica a Configuration Manager, selezionare le raccolte nei piani di distribuzione. Quindi questa integrazione consente di distribuire Windows in una raccolta in base ai dati di Analitica Desktop.
 

@@ -2,7 +2,7 @@
 title: Domande frequenti per l'Analitica Desktop
 titleSuffix: Configuration Manager
 description: Domande frequenti su Desktop Analitica.
-ms.date: 04/26/2019
+ms.date: 06/10/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4596923f9a6a42ad98dc17257b22925ad0bc5eed
-ms.sourcegitcommit: 9af73f5c1b93f6ccaea3e6a096f75a5fecd65c2f
+ms.openlocfilehash: 1187688813c2d7a3308ed5ed53e29cb90640dda8
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "64562448"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834829"
 ---
 # <a name="desktop-analytics-faq"></a>Domande frequenti di Analitica desktop
 
@@ -39,6 +39,13 @@ Sì. Per altre informazioni, vedere [conversione da BIOS a UEFI durante un aggio
 ### <a name="can-i-use-desktop-analytics-with-windows-10-ltsc"></a>È possibile usare Analitica Desktop con Windows 10 LTSC?
 
 Sebbene sia possibile usare Desktop Analitica per agevolare l'aggiornamento di dispositivi da Windows 10 Long-Term Servicing Channel (LTSC) su canale semestrale di Windows 10, Analitica Desktop non supporta gli aggiornamenti per Windows 10 LTSC. Questo canale di Windows 10 non è destinato all'uso ampio e non riceve gli aggiornamenti delle funzionalità, pertanto non è una destinazione supportata con Desktop Analitica. Per altre informazioni, vedere [Windows come una panoramica del servizio](https://docs.microsoft.com/windows/deployment/update/waas-overview#long-term-servicing-channel).
+
+### <a name="can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal"></a>È possibile ridurre la quantità di tempo che necessario per i dati aggiornare nella mio portale Analitica Desktop?
+
+Esistono due tipi di dati nel portale di Analitica Desktop: I dati dell'amministratore e i dati di diagnostica. Per aggiornare l'amministratore dei dati on demand, aprire il menu a comparsa valuta i dati e selezionare **applicare le modifiche**. Questa azione attiva immediatamente un aggiornamento di qualsiasi modifica amministratore nelle aree di lavoro in sospeso una tantum. Le modifiche propagano e sono in genere disponibili entro 15 e 60 minuti. L'intervallo di tempo dipende la dimensione dell'area di lavoro e l'ambito di modifiche in sospeso. È possibile richiedere un aggiornamento dei dati on demand fino a sei volte entro un periodo di 24 ore. 
+
+Tutti i dati vengono aggiornati automaticamente una volta al giorno, anche se si non richiesta un aggiornamento dei dati on demand. Non è possibile attivare un aggiornamento su richiesta dei dati di diagnostica. Per altre informazioni sui diversi tipi di dati in Desktop Analitica, vedere [latenza dei dati](/sccm/desktop-analytics/troubleshooting#data-latency).
+
 
 ## <a name="privacy"></a>Privacy
 

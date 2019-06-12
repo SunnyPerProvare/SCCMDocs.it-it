@@ -2,7 +2,7 @@
 title: Distribuire applicazioni
 titleSuffix: Configuration Manager
 description: Creare o simulare la distribuzione di un'applicazione a una raccolta di utenti o dispositivi
-ms.date: 05/01/2019
+ms.date: 06/04/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7550987d9b9679085ad5b546274d0c503b9e28ac
-ms.sourcegitcommit: 3f43fa8462bf39b2c18b90a11a384d199c2822d8
-ms.translationtype: HT
+ms.openlocfilehash: 5760b36ddb29c39d6887afb61445f1353f46bbec
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66403391"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66715689"
 ---
 # <a name="deploy-applications-with-configuration-manager"></a>Distribuire applicazioni con Configuration Manager
 
@@ -161,6 +161,12 @@ Se l'applicazione distribuita sostituisce un'altra applicazione, è possibile im
 
 Dopo la scadenza il client installa l'applicazione nella prima finestra non lavorativa, configurata dall'utente, fino al termine del periodo di tolleranza. Tuttavia l'utente può comunque aprire Software Center e installare l'applicazione in qualsiasi momento. Una volta scaduto il periodo di tolleranza, le distribuzioni scadute torneranno al normale comportamento.
 
+![Diagramma della sequenza temporale del periodo di tolleranza](media/grace-period.svg)
+
+<!-- SCCMDocs issue #1599 -->
+
+> [!Note]  
+> Nella maggior parte dei casi, questa funzionalità risolve lo scenario in cui il dispositivo è spento mentre l'utente è fuori sede. Tecnicamente, il periodo di tolleranza inizia quando il client ottiene i criteri dopo la scadenza della distribuzione. Lo stesso comportamento si verifica se si arresta il servizio client Configuration Manager (CcmExec) e quindi lo si riavvia in un secondo momento dopo la scadenza della distribuzione.
 
 ### <a name="bkmk_deploy-ux"></a> Impostazioni dell'**Esperienza utente** della distribuzione
 
