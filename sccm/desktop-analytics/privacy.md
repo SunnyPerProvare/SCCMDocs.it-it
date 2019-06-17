@@ -2,7 +2,7 @@
 title: Privacy dei dati di Analitica desktop
 titleSuffix: Configuration Manager
 description: Analitica desktop viene eseguito il commit per la privacy dei dati dei clienti
-ms.date: 01/25/2019
+ms.date: 06/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 370bfc26b8a7b6ca0223803a36e765528460d89f
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: fb109bc126902f4d68b876860e8d5ec3ff514bb8
+ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62258184"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67146019"
 ---
 # <a name="desktop-analytics-data-privacy"></a>Privacy dei dati di Analitica desktop
 
@@ -37,7 +37,7 @@ Analitica desktop viene eseguito il commit completo per la privacy dei dati dei 
 
 La figura seguente mostra i dati di diagnostica come flussi dai singoli dispositivi tramite il servizio dati di diagnostica, archiviazione di Azure Log Analitica e nell'area di lavoro di Log Analitica:
 
-![Diagramma che illustra il flusso di dati diagnostici dai dispositivi](media/da-data-flow-v1.png)
+![Diagramma che illustra il flusso di dati diagnostici dai dispositivi](media/da-data-flow.png)
 
 1. Accedi al portale di Azure e l'onboarding a Desktop Analitica. Si crea l'app di Azure AD per la connessione con Configuration Manager. Quando si configura Desktop Analitica, si crea un'area di lavoro di Analitica di Log di Azure nella posizione di propria scelta.  
 
@@ -49,38 +49,21 @@ La figura seguente mostra i dati di diagnostica come flussi dai singoli disposit
 
     3. Configuration Manager imposta l'ID commerciale, a livello di dati di diagnostica e altre impostazioni per i dispositivi nella raccolta di destinazione. Questa configurazione consente di specificare i dispositivi da visualizzare nell'area di lavoro di Analitica Desktop.  
 
-    4. Compatibilità aggiornamenti vengono distribuiti a tutti i dispositivi di destinazione. Facoltativamente, l'analizzatore dell'integrità di App e Office Readiness Toolkit vengono distribuiti in un set rappresentativo dei dispositivi. Questi strumenti offrono altre informazioni dettagliate sulla riga personalizzato di applicazioni aziendali e le macro di Office.  
+    4. Compatibilità aggiornamenti vengono distribuiti a tutti i dispositivi di destinazione.  
 
-3. I dispositivi inviano dati di diagnostica per i servizi di gestione dei dati di diagnostica Microsoft per Windows e Office. Questo servizio è ospitato negli Stati Uniti.  
+3. I dispositivi inviano dati di diagnostica per il servizio di gestione dei dati di diagnostica Microsoft per Windows. Questo servizio è ospitato negli Stati Uniti.  
 
-4. Ogni giorno, Microsoft fornisce uno snapshot di insights incentrato sull'IT. Questo snapshot combina i dati di diagnostica da Windows e Office con l'input dell'utente per i dispositivi registrati. Questo processo avviene in un archivio temporaneo, ma viene utilizzato solo dai Desktop Analitica. Lo spazio di archiviazione temporaneo è ospitato nei data center di Microsoft negli Stati Uniti. Gli snapshot sono separati da ID commerciale.  
+4. Ogni giorno, Microsoft fornisce uno snapshot di insights incentrato sull'IT. Questo snapshot combina i dati di diagnostica da Windows con l'input dell'utente per i dispositivi registrati. Questo processo avviene in un archivio temporaneo, ma viene utilizzato solo dai Desktop Analitica. Lo spazio di archiviazione temporaneo è ospitato nei data center di Microsoft negli Stati Uniti. Gli snapshot sono separati da ID commerciale.  
 
 5. Gli snapshot vengono quindi copiati nell'area di lavoro di Analitica di Log di Azure appropriato.  
 
 6. Desktop Analitica archivia l'input dell'utente in archiviazione di Azure Log Analitica. Queste configurazioni includono piani di distribuzione e le decisioni di asset per l'aggiornamento e importanza.  
 
 
-<!-- ![Diagram illustrating flow of diagnostic data from devices](media/wa-data-flow-v1.png)
-
-1. Devices send diagnostic data to the Microsoft Diagnostic Data Management service. This service is hosted in the United States.  
-
-2. Set up and enrollment  
-
-    1. You create an Azure Log Analytics workspace when you set up Desktop Analytics. You choose the location and copy the commercial ID. This ID identifies your workspace.  
-    
-    2. When you connect Configuration Manager to Desktop Analytics, it sets the commercial ID on the devices in your target collection. This configuration specifies the devices to appear in your workspace.  
-
-3. Each day Microsoft produces a "snapshot" of IT-focused insights for each workspace in the Diagnostic Data Management service.  
-
-4. These snapshots are copied to transient storage, which is only used by Desktop Analytics. The transient storage is hosted in Microsoft data centers in the United States. The snapshots are segregated by commercial ID.  
-
-5. The snapshots are then copied to the appropriate Azure Log Analytics workspace.  
-
-6. Desktop Analytics stores your configurations in Analytics Azure storage. These configurations include deployment plans and asset upgrade decisions.  
--->
-
 
 ## <a name="other-resources"></a>Altre risorse
+
+Per relative alla privacy le domande frequenti per Desktop Analitica, vedere [domande frequenti sulla Privacy](/sccm/desktop-analytics/faq#privacy).
 
 Per altre informazioni sugli aspetti correlati sulla privacy, vedere gli articoli seguenti:
 
@@ -103,18 +86,3 @@ Per altre informazioni sugli aspetti correlati sulla privacy, vedere gli articol
 - [Fiducia nel cloud attendibile](https://azure.microsoft.com/overview/trusted-cloud/)  
 
 - [Centro protezione](https://www.microsoft.com/trustcenter)  
-
-
-
-## <a name="faq"></a>Domande frequenti
-
-### <a name="can-desktop-analytics-be-used-without-a-direct-client-connection-to-the-microsoft-data-management-service"></a>Desktop Analitica può essere usata senza una connessione client diretto al servizio di gestione dati di Microsoft?
-No, l'intero servizio si basa su Windows i dati di diagnostica, che richiede che i dispositivi hanno la connettività diretta.
-
-
-### <a name="can-i-choose-the-data-center-location"></a>È possibile scegliere la posizione del data center?
-
-Per Analitica di Log di Azure: Sì, quando si imposta Desktop Analitica e crea l'area di lavoro di Log Analitica.
-
-Per il servizio di gestione dati Microsoft e Analitica archiviazione di Azure: No, questi due servizi sono ospitati negli Stati Uniti.
-

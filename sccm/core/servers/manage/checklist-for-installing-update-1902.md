@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 801a4819e4bfc9c0f18b87915ea0969b0aa60dc3
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: ceb7f7156c505e73db3fba0d02d60ec044958846
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65497884"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66716119"
 ---
 # <a name="checklist-for-installing-update-1902-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1902 di Configuration Manager
 
@@ -130,7 +130,7 @@ Quando un'attività di manutenzione del database del sito viene eseguita durante
 Per altre informazioni, vedere  [Attività di manutenzione](/sccm/core/servers/manage/maintenance-tasks)  e [Informazioni di riferimento per le attività di manutenzione](/sccm/core/servers/manage/reference-for-maintenance-tasks).
 
 #### <a name="temporarily-stop-any-antivirus-software"></a>Arrestare temporaneamente i software antivirus 
-Prima di aggiornare un sito, arrestare il software antivirus sui server Configuration Manager. <!--SMS.503481--> 
+Prima di aggiornare un sito, arrestare il software antivirus sui server Configuration Manager. L'aggiornamento infatti potrebbe non riuscire perché il software antivirus può bloccare alcuni file che devono essere aggiornati. <!--SMS.503481--> 
 
 #### <a name="create-a-backup-of-the-site-database"></a>Creare un backup del database del sito 
 Prima di aggiornare un sito, eseguire il backup del database del sito nel sito di amministrazione centrale e nei siti primari. Questo backup assicura di avere un backup corretto da usare per il ripristino di emergenza.

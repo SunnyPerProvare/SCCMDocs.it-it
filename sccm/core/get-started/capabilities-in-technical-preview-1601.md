@@ -12,12 +12,12 @@ ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa96b497ce942430c5a8391eefd41e939c634ae3
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: be84e7bfae54cf3099b588cce35b01a424c45b8f
+ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56143674"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66716011"
 ---
 # <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1601 per System Center Configuration Manager
 
@@ -93,7 +93,7 @@ Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità s
 
 -   **Accesso condizionale con il servizio di attestazione dell'integrità** È ora possibile limitare l'accesso alla posta elettronica e ai servizi di Office 365 in base all'integrità dei dispositivi, come segnalato dal servizio di attestazione dell'integrità.  Inoltre, i dispositivi gestiti da Intune sono inclusi nei report sull'integrità del dispositivo.  
 
-    È stata aggiunta una nuova regola di conformità alla console di Configuration Manager che consente di specificare se l'accesso deve essere consentito o negato ai dispositivi in base al loro stato di integrità.  Per creare questa regola, aprire la **Creazione guidata criteri di conformità** e aggiungere una nuova regola.  Selezionare la condizione **Segnalato come integro dal servizio di attestazione dell'integrità** e impostare il valore su **True**.  Questo garantirà che solo i dispositivi segnalati come integri avranno accesso alle risorse aziendali. Per informazioni dettagliate sul servizio di attestazione dell'integrità e su come viene segnalata l'integrità dei dispositivi in Intune, vedere [Device Health Attestation](#bkmk_devicehealth) (Attestazione dell'integrità dei dispositivi).  
+    È stata aggiunta una nuova regola di conformità alla console di Configuration Manager che consente di specificare se l'accesso deve essere consentito o negato ai dispositivi in base al loro stato di integrità.  Per creare questa regola, aprire la **Creazione guidata criteri di conformità** e aggiungere una nuova regola.  Selezionare la condizione **Segnalato come integro dal servizio di attestazione dell'integrità** e impostare il valore su **True**.  Questo garantirà che solo i dispositivi segnalati come integri avranno accesso alle risorse aziendali. Per informazioni dettagliate sul servizio di attestazione dell'integrità e su come viene segnalata l'integrità dei dispositivi in Intune, vedere [Device Health Attestation](/sccm/core/get-started/capabilities-in-technical-preview-1512#bkmk_devicehealth) (Attestazione dell'integrità dei dispositivi).  
 
 -   **Nuove impostazioni dei criteri di conformità:** le nuove impostazioni dei criteri di conformità consentono di migliorare la sicurezza e la protezione nei dispositivi usati per accedere alla posta elettronica aziendale e ai servizi di SharePoint:  
 

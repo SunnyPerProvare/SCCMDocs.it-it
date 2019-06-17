@@ -2,7 +2,7 @@
 title: Piani di distribuzione in Desktop Analitica
 titleSuffix: Configuration Manager
 description: Informazioni sui piani di distribuzione in Desktop Analitica.
-ms.date: 06/10/2019
+ms.date: 06/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88c78cef4717cc3a51a53b7fd5aba0cbefa93a8e
-ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
+ms.openlocfilehash: a8080d89995b6ed10efd996b4ad757151e315c74
+ms.sourcegitcommit: af207075c4a8bc59242a41d3192a4057452a0e55
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834937"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67141040"
 ---
 # <a name="about-deployment-plans-in-desktop-analytics"></a>Informazioni sui piani di distribuzione in Desktop Analitica
 
@@ -62,6 +62,43 @@ Le regole di conformità seguenti sono disponibili nei piani di distribuzione:
 
 - Bassa installare soglia conteggio per le app di Windows. Se un'app è installata in una percentuale di computer superiore a questa soglia, il piano di distribuzione contrassegna l'app come **Noteworthy**. Questo tag indica che è possibile decidere di quanto sia importante per eseguire il test durante la fase pilota.  
 
+
+## <a name="plan-assets"></a>Pianificare gli asset
+
+<!-- 4670224 -->
+
+Mentre il [asset](/sccm/desktop-analytics/about-assets) ' area Mostra anche i dispositivi e App, il **pianificare asset** area in un piano di distribuzione specifico include informazioni aggiuntive.
+
+### <a name="devices"></a>Dispositivi
+
+Vedere le **decisione di aggiornamento Windows** per ogni dispositivo nel piano di distribuzione.
+
+Decisione di eseguire l'aggiornamento di Windows **Replace dispositivo** può dipendere da uno dei motivi seguenti:
+
+- Non è riuscito una verifica del processore richiesto Windows 10. Per altre informazioni, vedere [requisiti hardware minimi](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview#31-processor).
+- Dispone di un blocco di BIOS
+- Non ha memoria sufficiente
+- Un componente fondamentale di avvio del sistema include un driver bloccato
+- Impossibile aggiornare la marca e modello
+- È presente un componente di visualizzazione della classe con un blocco di driver con tutti gli attributi seguenti:
+    - Non si sostituiscono
+    - Non vi è alcun driver nella nuova versione del sistema operativo
+    - Non è già in Windows Update
+- È un altro componente plug and play nel sistema che blocca l'aggiornamento
+- È presente un componente senza fili che usa un driver emulati XP
+- Un componente di rete con una connessione attiva perderà il relativo driver. In altre parole, dopo l'aggiornamento potrebbe perdere la connettività di rete.
+
+### <a name="apps"></a>App
+
+Impostare il **decisione di aggiornamento** , nonché **importanza** per questa app in questo piano di distribuzione. Per altre informazioni, vedere [come creare piani di distribuzione](/sccm/desktop-analytics/create-deployment-plans).
+
+I dettagli dell'app, è anche possibile vedere le informazioni seguenti: Indicazioni, compatibilità fattori di rischio e problemi noti di Microsoft. Usare queste informazioni per impostare il **decisione di aggiornamento**. Per altre informazioni, vedere [valutazione della compatibilità](/sccm/desktop-analytics/compat-assessment).
+
+Le app che Analitica Desktop viene visualizzato come *degno di nota* sono basati sulla soglia conteggio installazione bassa per le regole di preparazione del piano di distribuzione. Per altre informazioni, vedere [regole di conformità](/sccm/desktop-analytics/create-deployment-plans#readiness-rules).
+
+### <a name="drivers"></a>Driver
+
+Vedere l'elenco di driver incluso con questo piano di distribuzione. Impostare il **decisione di aggiornamento**, verificare la raccomandazione di Microsoft e vedere i fattori di rischio di compatibilità.
 
 
 ## <a name="importance"></a>importanza

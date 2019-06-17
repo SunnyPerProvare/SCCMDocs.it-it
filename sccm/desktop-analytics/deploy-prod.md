@@ -2,7 +2,7 @@
 title: Come distribuire nell'ambiente di produzione
 titleSuffix: Configuration Manager
 description: Informazioni di Guida per la distribuzione in un gruppo di produzione Analitica Desktop.
-ms.date: 04/22/2019
+ms.date: 06/14/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 20067da8eccf9896bcd948f8efa2becd2b35a707
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: e93b08766da4abc37ca3663de5fe2919f1953833
+ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083470"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67146053"
 ---
 # <a name="how-to-deploy-to-production-with-desktop-analytics"></a>Come distribuire nell'ambiente di produzione con Desktop Analitica
 
@@ -76,23 +76,15 @@ Potrebbero essere presenti anche gli asset nel **attenzione necessita** o **risu
 Esaminare tutte le app. Una volta che un determinato dispositivo ha una decisione di aggiornamento positiva per tutti gli asset, quindi il relativo stato viene modificato in "pronto per la produzione". Visualizzare il numero corrente nella pagina principale per il piano di distribuzione selezionando il terzo passaggio di distribuzione, **Distribuisci**.
 
 
-
 ## <a name="bkmk_deploy"></a> Distribuire ai dispositivi che sono pronti
 
 Configuration Manager usa i dati di Analitica Desktop per creare una raccolta per la distribuzione di produzione. Non distribuire la sequenza di attività usando una distribuzione tradizionale. Usare la procedura seguente per creare una distribuzione integrata Analitica Desktop:
 
-1. Nella console di Configuration Manager passare ad il **raccolta Software**, espandere **Desktop Analitica Servicing**e selezionare il **piani di distribuzione** nodo.  
+Se è stato eseguito il processo consigliato per [distribuire ai dispositivi pilota](/sccm/desktop-analytics/deploy-pilot#deploy-to-pilot-devices), la distribuzione di Configuration Manager in più fasi è pronta. Come contrassegnare gli asset come *pronti*, Analitica Desktop Sincronizza automaticamente i dispositivi in Configuration Manager. Questi dispositivi vengono quindi aggiunti alla raccolta di produzione. Quando si sposta la distribuzione in più fasi per la seconda fase, questi dispositivi di produzione ricevono la distribuzione dell'aggiornamento.
 
-2. Selezionare il piano di distribuzione e quindi selezionare **dettagli piano di distribuzione** nella barra multifunzione.  
+Se è configurata la distribuzione in più fasi **inizia manualmente la seconda fase della distribuzione**, è necessario spostare manualmente alla fase successiva. Per altre informazioni, vedere questo articolo: [Gestire e monitorare le distribuzioni in più fasi](/sccm/osd/deploy-use/manage-monitor-phased-deployments#bkmk_move).
 
-3. Nel **lo stato di produzione** riquadro, seleziona **sequenza di attività** nell'elenco a discesa.  
-
-    > [!Note]  
-    > Non usare la **applicazione** opzione. È riservato per le funzionalità future.
-
-    Selezionare **distribuire**. Questa azione avvia la distribuzione guidata del Software per il tipo di oggetto selezionato.
-
-Per altre informazioni, vedere [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).
+Se è stata creata una distribuzione singola Analitica Desktop integrate nella raccolta pilota, quindi è necessario ripetere la procedura per distribuire nella raccolta di produzione.
 
 
 ### <a name="address-deployment-alerts"></a>Risolvere gli avvisi di distribuzione
@@ -106,7 +98,6 @@ Come con la distribuzione pilota, Analitica Desktop suggerisce di eventuali prob
 - Richiede attenzione - i problemi (ordinati in base al tipo di problema)
 
 ![Ambiente di produzione di schermata del Desktop Analitica lo stato di distribuzione](media/prod-deployment-status.png)
-
 
 
 ## <a name="bkmk_monitor"></a> Monitorare l'integrità dei dispositivi aggiornati

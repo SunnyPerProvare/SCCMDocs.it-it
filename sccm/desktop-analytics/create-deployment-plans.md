@@ -2,7 +2,7 @@
 title: Come creare piani di distribuzione
 titleSuffix: Configuration Manager
 description: Informazioni di Guida per la creazione di piani di distribuzione in Desktop Analitica.
-ms.date: 06/10/2019
+ms.date: 06/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b65a700f5c9cdf3225dfb2ecd3c48d76119110f2
-ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
+ms.openlocfilehash: dc94bf46630e2770385b5efaffb431135e3667c7
+ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834916"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67146033"
 ---
 # <a name="how-to-create-deployment-plans-in-desktop-analytics"></a>Come creare piani di distribuzione in Desktop Analitica
 
@@ -26,9 +26,11 @@ ms.locfileid: "66834916"
 
 Questo articolo fornisce i passaggi per la creazione di un piano di distribuzione in Desktop Analitica. Prima di iniziare, innanzitutto [altre informazioni sui piani di distribuzione](/sccm/desktop-analytics/about-deployment-plans).
 
-Seguire i passaggi descritti in questo articolo usare Analitica Desktop per creare un piano per la distribuzione di Windows 10.
+## <a name="create-a-plan-for-windows-10"></a>Creare un piano per Windows 10
 
-1. Aprire il [portale di Analitica Desktop](https://aka.ms/m365aprod). Usare le credenziali che dispongono di almeno **collaboratori dell'area di lavoro** autorizzazioni.  
+Seguire i passaggi descritti in questa sezione usare Analitica Desktop per creare un piano per la distribuzione di Windows 10.
+
+1. Aprire il [portale di Analitica Desktop](https://aka.ms/desktopanalytics). Usare le credenziali che dispongono di almeno **collaboratori dell'area di lavoro** autorizzazioni.  
 
 2. Selezionare **piani di distribuzione** nel gruppo di gestione.  
 
@@ -42,7 +44,7 @@ Seguire i passaggi descritti in questo articolo usare Analitica Desktop per crea
 
     - **Gruppi di dispositivi**: Selezionare uno o più gruppi e quindi selezionare **imposta come destinazione gruppi**. Gruppi con **SCCM** come origine vengono raccolte sincronizzate da Configuration Manager.  
 
-    - **Le regole di conformità**: Queste regole consentono di determinare i dispositivi che soddisfano le condizioni per l'aggiornamento.  
+    - **Le regole di conformità**: Queste regole consentono di determinare i dispositivi che soddisfano le condizioni per l'aggiornamento. Per altre informazioni, vedere [regole di conformità](#readiness-rules).  
 
     - **Data completamento**: Scegliere la data da cui Windows deve essere completamente distribuito a tutti i dispositivi di destinazione.  
 
@@ -56,7 +58,7 @@ Seguire i passaggi descritti in questo articolo usare Analitica Desktop per crea
 
     2. Selezionare tutte le app e quindi selezionare **modifica**. È possibile selezionare più di un'app da modificare nello stesso momento.  
 
-    3. Scegliere un livello di priorità dal **importanza** elenco. Se si vuole che Desktop Analitica per convalidare l'app durante la fase pilota, selezionare **critici** oppure **importante**. Le app contrassegnate come non vengono convalidate **importanti non**. Prendere in considerazione la [rischi relativi alla compatibilità](/sccm/desktop-analytics/compat-risk) e altre importanti informazioni piano quando si assegnano livelli di importanza.  
+    3. Scegliere un livello di priorità dal **importanza** elenco. Se si vuole che Desktop Analitica per convalidare l'app durante la fase pilota, selezionare **critici** oppure **importante**. Le app contrassegnate come non vengono convalidate **importanti non**. Valutare la relativa [compatibilità](/sccm/desktop-analytics/compat-assessment) e altre importanti informazioni piano quando si assegnano livelli di importanza.  
 
         Quando si assegnano livelli di importanza, è anche possibile scegliere le decisioni relative all'aggiornamento.  
 
@@ -70,9 +72,30 @@ Seguire i passaggi descritti in questo articolo usare Analitica Desktop per crea
 
         Per altre informazioni su come Desktop Analitica rende questi consigli, selezionare l'icona informazioni nell'angolo superiore destro del **pilota Identify** riquadro.
 
+## <a name="readiness-rules"></a>Regole di conformità
+
+Queste regole consentono di determinare i dispositivi che soddisfano le condizioni per l'aggiornamento sul posto. Quando si crea il piano di distribuzione o modificarli in un secondo momento, è possibile impostare queste regole.
+
+Per modificare le regole di conformità:
+
+1. Nel portale di Analitica Desktop, selezionare il piano di distribuzione.
+1. Accanto al nome, selezionare **modifica**.
+1. Selezionare **regole di conformità**.
+1. Selezionare **Windows del sistema operativo**.
+1. Apportare le modifiche necessarie e selezionare **salvare**.
+
+Per la **sistemi operativi Windows** gli aggiornamenti, sono disponibili due regole: I driver di dispositivo e le applicazioni di Windows.
+
+### <a name="device-drivers"></a>Driver di dispositivo
+
+Configurare se i dispositivi recuperare i driver da Windows Update. Questo valore è **disattivata** per impostazione predefinita. Attivare questa regola quando si usa Windows Update for Business per gestire gli aggiornamenti inclusi i driver. Se si usa Configuration Manager per gestire gli aggiornamenti software, questa regola impostata su **disattivata**.
+
+### <a name="windows-applications"></a>Applicazioni di Windows
+
+Le app Desktop Analitica visualizzate come *degno di nota* sono basati sulla soglia conteggio installazione bassa. Impostare questa soglia nelle regole di conformità per il piano di distribuzione. Per impostazione predefinita, questa soglia viene **2.0%** . È possibile modificare il valore da `0.0` a `10.0`.
 
 
-### <a name="next-steps"></a>Passaggi successivi
+## <a name="next-steps"></a>Passaggi successivi
 
 Passare all'articolo successivo per la distribuzione pilota nei dispositivi.
 > [!div class="nextstepaction"]  

@@ -2,7 +2,7 @@
 title: Server di sistema del sito supportati
 titleSuffix: Configuration Manager
 description: Informazioni sulle versioni di Windows che è possibile usare per ospitare un sito di Configuration Manager o un ruolo del sistema del sito.
-ms.date: 04/16/2019
+ms.date: 05/28/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e505562ac8a0d34f1b58bd0b6210b4630a6c825
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 871f007bd1ee0e38635e03a6b17a9125758553af
+ms.sourcegitcommit: 65e9b30e2b53ab9db679a7b1d50634a73c0028db
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499316"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66429801"
 ---
 # <a name="supported-operating-systems-for-configuration-manager-site-system-servers"></a>Sistemi operativi supportati per i server dei sistemi del sito di Configuration Manager
 
@@ -213,6 +213,8 @@ Questo sistema operativo non è supportato per i server del sito o per i ruoli d
 
     -   I punti di distribuzione in questo sistema operativo non supportano l'avvio di rete dei computer client in modalità EFI. I computer client con BIOS o con avvio EFI in modalità legacy sono supportati.  
 
+> [!Warning]  
+> Windows Server 2008 non supporta TLS 1.2. Se si abilita questo protocollo nell'ambiente, i computer Windows Server 2008 non comunicheranno più con il sito. Per altre informazioni, vedere [Come abilitare TLS 1.2 per Configuration Manager](/sccm/core/plan-design/security/enable-tls-1-2).  
 
 
 ## <a name="bkmk_client"></a> Versioni del sistema operativo client

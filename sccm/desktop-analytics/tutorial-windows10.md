@@ -2,7 +2,7 @@
 title: 'Esercitazione: distribuire Windows 10'
 titleSuffix: Configuration Manager
 description: Un'esercitazione sull'uso di Desktop Analitica e Configuration Manager per distribuire Windows 10 in un gruppo pilota.
-ms.date: 06/10/2019
+ms.date: 06/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: tutorial
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba11906bb8febcd2c2c5ab9295d391680763e0cf
-ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
+ms.openlocfilehash: d8b73deb60cf88f0bdf428bb87250ce115a1084b
+ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834783"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67145823"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Esercitazione: Distribuire Windows 10 per contenuto pilota
 
@@ -94,7 +94,7 @@ Prima di iniziare questa esercitazione, accertarsi di avere i prerequisiti segue
 
 Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nella sottoscrizione. Questa procedura è un processo unico per configurare Desktop Analitica per l'organizzazione.  
 
-1. Aprire il portale di Analitica Desktop nella gestione di dispositivi di Microsoft 365 come utente con **amministratore globale** autorizzazioni. Selezionare **avviare**.  
+1. Aprire il [portale Desktop Analitica](https://aka.ms/desktopanalytics) in Gestione dei dispositivi Microsoft 365 come utente con **amministratore globale** autorizzazioni. Selezionare **avviare**.  
 
 2. Nel **accettare il contratto di servizio** pagina, esaminare il contratto di servizio e selezionare **Accept**.  
 
@@ -232,7 +232,7 @@ Configuration Manager si sincronizza raccolte entro 60 minuti dalla creazione de
 
 Utilizzare questa procedura per creare un piano di distribuzione nel Desktop Analitica.
 
-1. Aprire il [portale di Analitica Desktop](https://aka.ms/m365aprod). Usare le credenziali che dispongono di almeno **collaboratori dell'area di lavoro** autorizzazioni.  
+1. Aprire il [portale di Analitica Desktop](https://aka.ms/desktopanalytics). Usare le credenziali che dispongono di almeno **collaboratori dell'area di lavoro** autorizzazioni.  
 
 2. Selezionare **piani di distribuzione** nel gruppo di gestione.  
 
@@ -266,7 +266,7 @@ Utilizzare questa procedura per creare un piano di distribuzione nel Desktop Ana
 
     2. Selezionare tutte le app e quindi selezionare **modifica**. È possibile selezionare più di un'app da modificare nello stesso momento.  
 
-    3. Scegliere un livello di priorità dal **importanza** elenco. Se si vuole che Desktop Analitica per convalidare l'app durante la fase pilota, selezionare **critici** oppure **importante**. Le app contrassegnate come non vengono convalidate **importanti non**. Prendere in considerazione la [rischi relativi alla compatibilità](/sccm/desktop-analytics/compat-risk) e altre importanti informazioni piano quando si assegnano livelli di importanza.  
+    3. Scegliere un livello di priorità dal **importanza** elenco. Se si vuole che Desktop Analitica per convalidare l'app durante la fase pilota, selezionare **critici** oppure **importante**. Le app contrassegnate come non vengono convalidate **importanti non**. Valutare la relativa [compatibilità](/sccm/desktop-analytics/compat-assessment) e altre importanti informazioni piano quando si assegnano livelli di importanza.  
 
         Quando si assegnano livelli di importanza, è anche possibile scegliere le decisioni relative all'aggiornamento.  
 

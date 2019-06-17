@@ -1,8 +1,8 @@
 ---
-title: 'Monitorare i client '
+title: Monitorare i client
 titleSuffix: Configuration Manager
-description: Informazioni su come monitorare i client in System Center Configuration Manager.
-ms.date: 04/23/2017
+description: Informazioni su come monitorare i client in Configuration Manager
+ms.date: 05/31/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,70 +11,83 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91eb65d8a0cf1255b846b5d15b9994fb2191df78
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 55fd698ac5213a3b11b207d0625d953f687e319f
+ms.sourcegitcommit: 65753c51fbf596f233fc75a5462ea4a44005c70b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56137154"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66463041"
 ---
-# <a name="how-to-monitor-clients-in-system-center-configuration-manager"></a>Come monitorare i client in System Center Configuration Manager
+# <a name="how-to-monitor-clients-in-configuration-manager"></a>Come monitorare i client in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
+Dopo aver installato il client Configuration Manager nei dispositivi Windows nel proprio sito, monitorarne l'integrità e l'attività nella console di Configuration Manager.  
 
- Dopo aver installato l'applicazione client di System Center Configuration Manager nei computer e dispositivi Windows nel proprio sito, è possibile monitorarne l'integrità e l'attività nella console di Configuration Manager.  
 
-##  <a name="bkmk_about"></a> Informazioni sullo stato del client  
- Configuration Manager offre i seguenti tipi di informazioni come stato del client:  
+## <a name="bkmk_about"></a> Informazioni sullo stato del client
 
--   **Stato online del client**: a partire dalla versione 1602 di Configuration Manager questo stato indica se il computer è online. Un computer viene considerato online se è connesso al relativo punto di gestione assegnato.  Per indicare che è online, il client invia i messaggi di tipo ping al punto di gestione. Se il punto di gestione non riceve un messaggio per circa 5 minuti, lo stato del client è considerato offline.  
+Configuration Manager offre i seguenti tipi di informazioni come stato del client:  
 
--   **Attività del client**: questo stato indica se il client è stato usato attivamente con Configuration Manager negli ultimi 7 giorni. Se non ha richiesto un aggiornamento dei criteri, inviato un messaggio di tipo heartbeat o inviato l'inventario hardware in 7 giorni, il client viene considerato inattivo.  
+- **Stato online del client**: il sito considera un dispositivo **online** se è connesso al relativo punto di gestione assegnato. Per indicare che è online, il client invia i messaggi di tipo ping al punto di gestione. Se il punto di gestione non riceve alcun messaggio per cinque minuti, il sito considera il client **offline**.  
 
--   **Controllo client**: questo stato indica la riuscita della valutazione periodica eseguita dal client di Configuration Manager nel computer.  La valutazione controlla i computer e può correggere alcuni problemi rilevati. Per altre informazioni, vedere [Controlli e correzioni effettuati dal controllo client](#BKMK_ClientHealth).  
+- **Attività client**: il sito considera il client **attivo** se ha comunicato con Configuration Manager negli ultimi sette giorni. Il sito considera il client **inattivo** se non ha eseguito le azioni seguenti per sette giorni:  
 
-     Nei computer che eseguono Windows 7, il controllo dei client viene eseguito come un'attività pianificata. Nei sistemi operativi successivi, il controllo client viene eseguito automaticamente durante la manutenzione di Windows.  
+    - Richiesta di aggiornamento dei criteri  
+    - Invio di un messaggio di tipo heartbeat  
+    - Invio dell'inventario hardware  
 
-     È possibile configurare la correzione in modo che venga eseguita su computer specifici, ad esempio, un server di rilevanza critica per l'azienda. Inoltre, se sono presenti voci aggiuntive che si vuole valutare, è possibile usare le impostazioni di conformità di Configuration Manager per offrire una soluzione completa per monitorare l'integrità, il funzionamento e la conformità complessivi dei computer dell'organizzazione. Per altre informazioni sulle impostazioni di conformità, vedere [Pianificazione e configurazione delle impostazioni di conformità in System Center Configuration Manager](../../../compliance/plan-design/plan-for-and-configure-compliance-settings.md).  
+- **Controllo client**: stato della valutazione periodica eseguita sul dispositivo dal client Configuration Manager. La valutazione controlla il dispositivo e può correggere alcuni problemi rilevati. Per altre informazioni, vedere [Controlli dell'integrità dei client](#BKMK_ClientHealth).  
 
-##  <a name="bkmk_indStatus"></a> Monitorare lo stato dei singoli client  
+     Nei dispositivi che eseguono Windows 7 il controllo dei client viene eseguito come un'attività pianificata. Nelle versioni dei sistemi operativi successivi il controllo dei client viene eseguito automaticamente durante la manutenzione di Windows.  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Dispositivi** oppure scegliere una raccolta in **Raccolte dispositivi**.  
+     È possibile configurare la correzione in modo che venga eseguita su dispositivi specifici, ad esempio un server di rilevanza critica per l'azienda. Per valutare altri elementi, usare le impostazioni di conformità di Configuration Manager per monitorare altre configurazioni. Per altre informazioni sulle impostazioni di conformità, vedere [Pianificare e configurare le impostazioni di conformità](/sccm/compliance/plan-design/plan-for-and-configure-compliance-settings).  
 
-     A partire dalla versione 1602 di Configuration Manager, le icone all'inizio di ogni riga indicano lo stato online del dispositivo:  
+- **Rimozione delle autorizzazioni eseguita**: il sito ha contrassegnato il record del dispositivo per l'eliminazione. Questo comportamento può verificarsi quando una nuova registrazione per lo stesso dispositivo lo assegna allo stesso sito primario di una gerarchia o a uno diverso. Il sito elimina questi dispositivi alla successiva esecuzione dell'attività di manutenzione del sito **Elimina dati di individuazione obsoleti**.<!-- SCCMDocs issue #1418 -->  
+
+- **Obsoleto**: il sito ha individuato un nuovo record di dispositivo con lo stesso ID hardware, quindi contrassegna il record precedente come obsoleto. Nei report i record obsoleti dello stesso dispositivo non vengono conteggiati più volte. È tuttavia possibile assegnare criteri ai dispositivi obsoleti. Se il sito non riceve un heartbeat per un record obsoleto dopo 90 giorni di inattività, rimuove il dispositivo obsoleto quando esegue l'attività di manutenzione del sito **Elimina dati di individuazione client obsoleti**.
+
+
+## <a name="bkmk_indStatus"></a> Monitorare i singoli client
+
+1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità**. Selezionare il nodo **Dispositivi** o scegliere una raccolta in **Raccolte dispositivi**.  
+
+    Le icone all'inizio di ogni riga indicano lo stato online del dispositivo:  
 
     |||  
     |-|-|  
-    |![icona di stato online per i client](../../../core/clients/manage/media/online-status-icon.png)|Il dispositivo è online.|  
-    |![icona di stato offline per i client](../../../core/clients/manage/media/offline-status-icon.png)|Il dispositivo è offline.|  
-    |![icona di stato sconosciuto per i client](../../../core/clients/manage/media/unknown-status-icon.png)|Lo stato online è sconosciuto.|  
-    |![client non installato](../../../core/clients/manage/media/client-not-installed.png)|Il client non è installato nel dispositivo.|  
+    |![icona di stato online per i client](../../../core/clients/manage/media/online-status-icon.png)|Il dispositivo è online|  
+    |![icona di stato offline per i client](../../../core/clients/manage/media/offline-status-icon.png)|Il dispositivo è offline|  
+    |![icona di stato sconosciuto per i client](../../../core/clients/manage/media/unknown-status-icon.png)|Lo stato online è sconosciuto|  
+    |![client non installato](../../../core/clients/manage/media/client-not-installed.png)|Il client non è installato nel dispositivo|  
 
-2.  Per ottenere uno stato online più dettagliato, aggiungere le informazioni di stato online del client alla visualizzazione del dispositivo facendo clic con il pulsante destro del mouse sull'intestazione di colonna e scegliendo i campi di stato in linea da aggiungere. Le colonne che è possibile aggiungere sono:  
+2. Per ottenere uno stato online più dettagliato, aggiungere le informazioni sullo stato online del client alla visualizzazione del dispositivo. Fare clic con il pulsante destro del mouse sull'intestazione di colonna e scegliere i campi dello stato online da aggiungere:
 
-    -   **Stato online dispositivo** indica se il client è attualmente online o offline. (si tratta delle stesse informazioni fornite dalle icone).  
+    - **Stato online del dispositivo**: indica se il client è attualmente online o offline. Questo stato corrisponde alle informazioni fornite dalle icone.  
 
-    -   **Ora ultimo stato online** indica quando lo stato online del client è diventato online.  
+    - **Ora dell'ultimo stato online**: indica quando lo stato online del client è diventato online  
 
-    -   **Ora ultimo stato offline** indica quando lo stato è diventato offline.  
+    - **Ora dell'ultimo stato offline** indica quando lo stato è diventato offline  
 
-3.  Fare clic su un singolo client nel riquadro elenco per visualizzare altre informazioni di stato nel riquadro dei dettagli, incluse informazioni sull'attività del client e controlli client.  
+3. Selezionare un singolo client nel riquadro dell'elenco per visualizzare altre informazioni di stato nel riquadro dei dettagli. Queste informazioni includono l'attività del client e lo stato del controllo del client.  
 
-##  <a name="bkmk_allStatus"></a> Monitorare lo stato di tutti i client  
 
-1. Nella console di Configuration Manager fare clic su **Monitoraggio** > **Stato client**. In questa pagina della console è possibile esaminare le statistiche generali per l'attività client e i controlli client nell'intero sito.  È anche possibile modificare l'ambito delle informazioni scegliendo una raccolta diversa.  
+## <a name="bkmk_allStatus"></a> Monitorare lo stato di tutti i client
 
-2. Per visualizzare i dettagli delle statistiche, fare clic sul nome delle informazioni restituite, ad esempio **Client attivi che hanno superato il controllo o con nessun risultato**, ed esaminare le informazioni sui singoli client.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio** e selezionare il nodo **Stato client**. Esaminare le statistiche generali per l'attività client e i controlli client nell'intero sito. Modificare l'ambito delle informazioni scegliendo una raccolta diversa.  
 
-3. Fare clic su **Attività client** per visualizzare grafici che descrivono l'attività del client nel sito di Configuration Manager.  
+2. Per eseguire il drill-down delle statistiche segnalate, scegliere il nome delle informazioni segnalate. Ad esempio, **Client attivi che hanno superato il controllo o con nessun risultato**. Esaminare quindi le informazioni sui singoli client.  
 
-4. Fare clic su **Controllo client** per visualizzare grafici che descrivono lo stato dei controlli client nel sito di Configuration Manager.  
+3. Selezionare **Attività client** per visualizzare grafici che illustrano l'attività del client nel sito di Configuration Manager.  
 
-   È possibile configurare degli avvisi per inviare una notifica all'utente quando i client controllano i risultati oppure quando l'attività client cade al di sotto di una percentuale specificata di client in una raccolta oppure quando la correzione non viene eseguita correttamente su una percentuale specifica di client. Per informazioni su come configurare lo stato del client, vedere [Come configurare lo stato del client in System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).  
+4. Selezionare **Controllo client** per visualizzare grafici che illustrano lo stato dei controlli client nel sito di Configuration Manager.  
 
-##  <a name="BKMK_ClientHealth"></a> Controlli e correzioni effettuati dal controllo client  
- I controlli e le correzioni seguenti possono essere eseguiti dal controllo client.  
+    Configurare avvisi per ricevere una notifica quando i risultati dei controlli client o l'attività client scende al di sotto di una percentuale specificata. Il sito può generare un avviso anche quando la correzione non riesce su una percentuale di client specificata. Per altre informazioni, vedere [Come configurare lo stato del client](/sccm/core/clients/deploy/configure-client-status).  
+
+
+## <a name="BKMK_ClientHealth"></a> Controlli di integrità dei client
+
+Il controllo dei client esegue i controlli e le correzioni seguenti:  
 
 |Controllo client|Azione di correzione|Altre informazioni|  
 |------------------|------------------------|----------------------|  
@@ -85,7 +98,6 @@ ms.locfileid: "56137154"
 |Verifica del sink di evento WMI.|Riavvio del servizio client|Verificare se il relativo sink di evento WMI di Configuration Manager è stato perso|  
 |Verificare che sia presente il servizio Strumentazione gestione Windows (WMI)|Nessuna correzione|Nessuna informazione aggiuntiva|  
 |Verificare che il client sia stato installato correttamente|Reinstallazione del client|Nessuna informazione aggiuntiva|  
-|Verifica di lettura e scrittura del repository WMI|Reimpostare il repository WMI e reinstallare il client di Configuration Manager|La correzione di questo controllo client viene eseguita solo su computer con Windows Server 2003, Windows XP (64 bit) o versioni precedenti.|  
 |Verificare che il tipo di avvio del servizio antimalware sia automatico|Reimpostare il tipo di avvio del servizio su automatico|Nessuna informazione aggiuntiva|  
 |Verificare che sia in esecuzione il servizio antimalware|Avvio del servizio antimalware|Nessuna informazione aggiuntiva|  
 |Verificare che il tipo di avvio del servizio Windows Update sia automatico o manuale|Reimpostare il tipo di avvio del servizio su automatico|Nessuna informazione aggiuntiva|  
@@ -99,13 +111,21 @@ ms.locfileid: "56137154"
 |Verificare che il tipo di avvio del Servizio trasferimento intelligente in background sia automatico o manuale|Reimpostare il tipo di avvio del servizio su automatico|Nessuna informazione aggiuntiva|  
 |Verificare che il tipo di avvio del servizio controllo di rete sia manuale|Reimpostare il tipo di avvio del servizio su manuale se installato|Nessuna informazione aggiuntiva|  
 |Verificare che il tipo di avvio del servizio Strumentazione gestione Windows (WMI) sia automatico|Reimpostare il tipo di avvio del servizio su automatico|Nessuna informazione aggiuntiva|  
-|Verificare che il tipo di avvio del servizio Windows Update nei computer Windows 8 sia automatico o manuale|Reimpostare il tipo di avvio del servizio su manuale|Nessuna informazione aggiuntiva|  
+|Verificare che il tipo di avvio del servizio Windows Update nei dispositivi Windows 8 sia automatico o manuale|Reimpostare il tipo di avvio del servizio su manuale|Nessuna informazione aggiuntiva|  
 |Verificare che esista il servizio client (Host agenti di SMS).|Nessuna correzione|Nessuna informazione aggiuntiva|  
 |Verificare che il tipo di avvio del servizio Controllo remoto di Configuration Manager sia automatico o manuale|Reimpostare il tipo di avvio del servizio su automatico|Nessuna informazione aggiuntiva|  
 |Verificare che il servizio Controllo remoto di Configuration Manager sia in esecuzione|Avviare il servizio di controllo remoto|Nessuna informazione aggiuntiva|  
-|Verificare che il provider WMI client sia integro|Avviare il servizio Windows Management Instrumentation|La correzione di questo controllo client viene eseguita solo su computer con Windows Server 2003, Windows XP (64 bit) o versioni precedenti.|  
 |Verificare che sia in esecuzione il servizio proxy di riattivazione (Proxy di riattivazione di Configuration Manager)|Avviare il servizio Proxy di riattivazione di Configuration Manager|Questa verifica del client viene eseguita solo se l'impostazione **Risparmio energia**: **Abilitare il proxy di riattivazione** del client è impostata su **Sì** nei sistemi operativi client supportati.|  
 |Verificare che il tipo di avvio del servizio proxy di riattivazione (Proxy di riattivazione di Configuration Manager) sia automatico|Reimpostare il tipo di avvio del servizio Proxy di riattivazione di Configuration Manager su automatico|Questa verifica del client viene eseguita solo se l'impostazione **Risparmio energia**: **Abilitare il proxy di riattivazione** del client è impostata su **Sì** nei sistemi operativi client supportati.|  
 
+
+<!-- 
+5/31/2019 ACz: need to confirm if these checks are still applicable
+|WMI repository read and write test|Reset the WMI repository and reinstall the Configuration Manager client|Remediation of this client check is only performed on devices that run Windows Server 2003, Windows XP (64-bit) or earlier versions.|  
+|Verify that the client WMI provider is healthy|Restart the Windows Management Instrumentation service|Remediation of this client check is only performed on devices that run Windows Server 2003, Windows XP (64-bit) or earlier.|  
+ -->
+
+
 ## <a name="client-deployment-log-files"></a>File di log distribuzione client
-Per informazioni sui file di log usati dalle operazioni di distribuzione e gestione client, vedere [File di log in System Center Configuration Manager](/sccm/core/plan-design/hierarchy/log-files#BKMK_ClientLogs).
+
+Per altre informazioni sui file di log usati dalle operazioni di distribuzione e gestione client, vedere [File di log](/sccm/core/plan-design/hierarchy/log-files#BKMK_ClientLogs).

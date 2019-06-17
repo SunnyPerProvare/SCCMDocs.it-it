@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d719f35ced60d868cd527dc82769595457d69228
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 6bb18dbb093f6182186f648bcde02407f3c14c5a
+ms.sourcegitcommit: e3c1eb0b75d79c05a750d49354c851d15d5e26a3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499407"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67038571"
 ---
 # <a name="site-and-site-system-prerequisites-for-configuration-manager"></a>Prerequisiti del sito e del sistema del sito per Configuration Manager
 
@@ -161,6 +161,7 @@ Per i prerequisiti specifici dei server e dei ruoli del sistema del sito in Wind
 
 - Se si usa il [servizio di amministrazione](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_admin-service), il server che ospita il ruolo di provider SMS richiede .NET 4.5.2 o versione successiva  <!-- SCCMDocs issue #1203 -->
 
+- Server Web (IIS)
 
 ##  <a name="bkmk_2012acwspreq"></a> Punto per siti Web del Catalogo applicazioni  
 
@@ -185,9 +186,9 @@ Per i prerequisiti specifici dei server e dei ruoli del sistema del sito in Wind
 
 -   Sviluppo di applicazioni:  
 
-    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)   
+    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)  
 
-    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)   
+    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)  
 
     -   Estendibilità .NET 3.5  
 
@@ -227,11 +228,11 @@ Per i prerequisiti specifici dei server e dei ruoli del sistema del sito in Wind
 
 -   Sviluppo di applicazioni:  
 
-    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)   
+    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)  
 
     -   Estendibilità .NET 3.5  
 
-    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)   
+    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)  
 
     -   Estendibilità .NET 4.5  
 
@@ -263,9 +264,9 @@ Per i prerequisiti specifici dei server e dei ruoli del sistema del sito in Wind
 
 -   Sviluppo di applicazioni:  
 
-    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)   
+    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)  
 
-    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)   
+    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)  
 
 -   Compatibilità Gestione IIS 6:  
 
@@ -362,11 +363,11 @@ Per altre informazioni, vedere [Installare e configurare i punti di distribuzion
 
 -   Sviluppo di applicazioni:  
 
-    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)   
+    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)  
 
     -   Estendibilità .NET 3.5  
 
-    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)   
+    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)  
 
     -   Estendibilità .NET 4.5  
 
@@ -402,9 +403,9 @@ Per altre informazioni, vedere [Installare e configurare i punti di distribuzion
 
 -   Sviluppo di applicazioni:  
 
-    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)   
+    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)  
 
-    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)   
+    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)  
 
     -   Estendibilità .NET 3.5  
 
@@ -541,11 +542,11 @@ Per altre informazioni, vedere [Installare e configurare i punti di distribuzion
 
 -   Sviluppo di applicazioni:  
 
-    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)   
+    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)  
 
     -   Estendibilità .NET 3.5  
 
-    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)   
+    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)  
 
     -   Estendibilità .NET 4.5  
 

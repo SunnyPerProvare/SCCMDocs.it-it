@@ -2,7 +2,7 @@
 title: Connettere Configuration Manager
 titleSuffix: Configuration Manager
 description: Informazioni di Guida per la connessione di Configuration Manager con Desktop Analitica.
-ms.date: 06/07/2019
+ms.date: 06/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdfed49a68963dc0d46a38810f0ac9dc8041d3fc
-ms.sourcegitcommit: e3c1eb0b75d79c05a750d49354c851d15d5e26a3
+ms.openlocfilehash: 7925bf44c78b6f8d51797145b5ae463ac3498eea
+ms.sourcegitcommit: af207075c4a8bc59242a41d3192a4057452a0e55
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67038768"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67141060"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Come connettere Configuration Manager con Desktop Analitica
 
@@ -44,6 +44,9 @@ In primo luogo, assicurarsi che il sito di Configuration Manager è in esecuzion
 Utilizzare questa procedura per connettere Configuration Manager a Desktop Analitica e configurare le impostazioni del dispositivo. Questa procedura è un processo unico per collegare la gerarchia per il servizio cloud.  
 
 1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e selezionare il nodo **Servizi di Azure**. Selezionare **configurare i servizi Azure** nella barra multifunzione.  
+
+    > [!Tip]  
+    > Nella console di Configuration Manager passare ad il **raccolta Software** dell'area di lavoro e selezionare il **Desktop Analitica Servicing** nodo. Nel *nuovo per Desktop Analitica?* , selezionare il collegamento al secondo *connettere Configuration Manager per il servizio Desktop Analitica*.  
 
 2. Nel **servizi di Azure** pagina della procedura guidata servizi di Azure, configurare le impostazioni seguenti:  
 

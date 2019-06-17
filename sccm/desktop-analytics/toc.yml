@@ -4,8 +4,8 @@
       href: overview.md
     - name: Esercitazioni
       items:
-        - name: Office 365 pilota
-          href: tutorial-office-365.md
+        - name: Windows 10 pilota
+          href: tutorial-windows10.md
     - name: Concetti
       items:
         - name: Piani di distribuzione
@@ -38,7 +38,13 @@
       items:
         - name: Abilitare la condivisione dei dati
           href: enable-data-sharing.md
-        - name: Troubleshooting
-          href: troubleshooting.md
         - name: Privacy
           href: privacy.md
+        - name: Risoluzione dei problemi
+          href: troubleshooting.md
+        - name: Monitorare l'integrità della connessione
+          href: monitor-connection-health.md
+        - name: Domande frequenti
+          href: faq.md
+        - name: Chiusura dell'account
+          href: account-close.md
