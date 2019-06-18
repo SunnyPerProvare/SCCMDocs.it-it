@@ -10,14 +10,13 @@ ms.assetid: 637fbd8e-b8ea-4c7e-95ee-a60a323c496e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e18e2e43e9bb768f81233fb2d2deda0ae05c1961
-ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
+ms.openlocfilehash: 5ee3d2c35424820658f91628b5f6e23be41498b2
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67145830"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159141"
 ---
 # <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Modalità di distribuzione per eseguire progetti pilota con Desktop Analitica
 
@@ -58,12 +57,9 @@ Eseguire le azioni seguenti per l'elenco di dispositivi aggiuntivi consigliati:
     - Tutti i dispositivi IT
     - Office CEO
 - Nel **pilota globale** impostazioni, si include il **dispositivi IT tutte** raccolte. Si esclude il **CEO office** raccolta.
-- Creare un piano di distribuzione e selezionare il **client tutti i dispositivi Windows 10** raccolta.
-- I **pilota dispositivi inclusi** sono elencati i set di dispositivi seguenti:
-    - Tutti i dispositivi nell'elenco di inclusione pilota globale: **Tutti i dispositivi IT**
-    - Raccolte che fanno parte del gruppo di destinazione del piano di distribuzione: **Tutti i client Windows 10**
-- Desktop Analitica esclude dal **aggiuntivi consigliati i dispositivi** elencare tutti i dispositivi nel progetto pilota globale *esclusione* elenco: **CEO office**
-- Solo le prime due raccolte sono considerate come parte della fase pilota. Dopo gli aggiornamenti ha esito positivo a tali gruppi e gli asset vengono *pronti*, Analitica Desktop consente di sincronizzare i dispositivi nel **office CEO** insieme alla raccolta di produzione di Configuration Manager.
+- Creare un piano di distribuzione e selezionare **client tutti i dispositivi Windows 10** raccolta come il **gruppo di destinazione**.
+- Il **pilota dispositivi inclusi** elenco contiene il subset di dispositivi sulle **gruppo di destinazione**: **Tutti i client Windows 10** che sono presenti anche in una distribuzione pilota globali *inclusione* elenco: **Tutti i dispositivi IT**  
+- Il **dispositivi aggiuntivi consigliati** elenchi contiene un set di dispositivi dalle **gruppo di destinazione** che offrono una copertura massima e ridondanza per le risorse importanti.  Desktop Analitica esclude da questo elenco di tutti i dispositivi nel progetto pilota globale *esclusione* elenco: **Office CEO**
 
 
 ## <a name="address-issues"></a>Risolvere i problemi
@@ -117,12 +113,9 @@ Configuration Manager usa i dati di Analitica Desktop per creare raccolte per le
     > [!Note]  
     > Usare l'impostazione predefinita per **inizia automaticamente questa fase dopo un periodo di differimento (in giorni)** . Per la seconda fase avviare devono essere soddisfatti i criteri seguenti:
     >
-    > 1. Dispositivi pilota devono eseguire l'aggiornamento e invio back rivisto i dati di diagnostica.
     > 1. La prima fase raggiunge il **percentuale di completamento distribuzione** criteri per l'esito positivo. Si configura questa impostazione nella distribuzione in più fasi.
     > 1. È necessario rivedere e prendere decisioni di aggiornamento nel Desktop Analitica per contrassegnare gli asset critici e importanti come *pronti*. Per altre informazioni, vedere [esaminare gli asset che richiedono una decisione di aggiornamento](/sccm/desktop-analytics/deploy-prod#bkmk_review).
     > 1. Desktop Analitica Sincronizza per le raccolte di Configuration Manager eventuali dispositivi produzione soddisfano il *pronti* criteri.
-    >
-    > Quando in più fasi di Gestione configurazione di distribuzione verrà spostato automaticamente alla fase successiva, si applica solo ai dispositivi Desktop Analitica Sincronizza nella raccolta di produzione.
 
 > [!Important]  
 > Queste raccolte comunque eseguita la sincronizzazione le modifiche all'appartenenza. Se, ad esempio, identificare un problema con un asset e contrassegnarlo come **Impossibile**, i dispositivi con tale asset non soddisfano più il *pronto* criteri. Questi dispositivi vengono eliminati dalla raccolta di distribuzione di produzione.
@@ -138,7 +131,7 @@ Aprire il piano di distribuzione. Il **Preparazione aggiornamento decisioni - st
 
 - **Eseguire l'aggiornamento delle decisioni completata**: Uno dei seguenti stati:
     - I dispositivi con risorse degno di nota **pronti** o **pronto con monitoraggio e aggiornamento**
-    - Lo stato del dispositivo viene **bloccato**, **dispositivo Replace** o **Reinstall dispositivo**
+    - Lo stato del dispositivo viene **bloccato**, [ **dispositivo sostituire** ](/sccm/desktop-analytics/about-deployment-plans#plan-assets) o **Reinstall dispositivo**
 
 - **Non è stato esaminato**: I dispositivi con risorse degno di nota **non rivisti** o **revisione in corso**
 

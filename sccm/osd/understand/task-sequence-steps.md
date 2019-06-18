@@ -2,7 +2,7 @@
 title: Passaggi della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni sui passaggi che è possibile aggiungere a una sequenza di attività di Configuration Manager.
-ms.date: 05/28/2019
+ms.date: 06/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d257d9fd328b04b35ff4c4d29b8a8bbd82ae565
-ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
-ms.translationtype: MTE75
+ms.openlocfilehash: 6229c0fe0702eac61b482c31195fd35fe3c5792f
+ms.sourcegitcommit: c43996b3cf083d919ff1ccc3d510af664aec4ed4
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66355057"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67046990"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
@@ -575,7 +575,7 @@ Abilitare questa opzione per specificare una delle impostazioni seguenti:
 
     Per altre informazioni sulla migrazione di dati tramite i collegamenti reali, vedere [Archivio delle migrazioni con collegamento reale](https://docs.microsoft.com/windows/deployment/usmt/usmt-hard-link-migration-store).  
 
-- **Acquisisci in modalità non in linea (solo Windows PE)** : abilitare questa impostazione per acquisire lo stato utente in Windows PE invece che nel sistema operativo completo.  
+- **Acquisisci in modalità non in linea (solo Windows PE)**: abilitare questa impostazione per acquisire lo stato utente in Windows PE invece che nel sistema operativo completo.  
 
 #### <a name="capture-by-using-volume-copy-shadow-services-vss"></a>Acquisisci usando Servizio Copia Shadow del volume (VSS)
 
@@ -866,7 +866,7 @@ Numero del disco fisico da formattare. Il numero è basato sull'ordinamento di e
 
 Il tipo del disco da formattare. Nell'elenco a discesa è possibile selezionare le due opzioni seguenti:
 
-- **Standard (MBR)** : record di avvio principale  
+- **Standard (MBR)**: record di avvio principale  
 - **GPT**: tabella delle partizioni GUID  
 
 > [!NOTE]  
@@ -1526,6 +1526,9 @@ Usare le variabili della sequenza di attività seguenti con questo passaggio:
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Generale** e quindi selezionare **Esegui script PowerShell**.
 
+> [!Note]  
+> Usare gli script PowerShell firmati in formato Unicode. Il formato ANSI, ovvero l'impostazione predefinita, non funziona con questo passaggio.
+
 ### <a name="properties"></a>Proprietà  
 
 Nella scheda **Proprietà** per questo passaggio, configurare le impostazioni descritte in questa sezione.  
@@ -1563,7 +1566,7 @@ L'esempio seguente include parametri validi:
 
 `-MyParameter1 MyValue1 -MyParameter2 MyValue2`  
 
-L'esempio seguente include parametri non validi: I primi due elementi sono parametri della riga di comando di Windows PowerShell ( **-NoLogo** e **-ExecutionPolicy Unrestricted**). Lo script non utilizza questi parametri.  
+L'esempio seguente include parametri non validi: I primi due elementi sono parametri della riga di comando di Windows PowerShell (**-NoLogo** e **-ExecutionPolicy Unrestricted**). Lo script non utilizza questi parametri.  
 
 `-NoLogo -ExecutionPolicy Unrestricted -File MyScript.ps1 -MyParameter1 MyValue1 -MyParameter2 MyValue2`
 

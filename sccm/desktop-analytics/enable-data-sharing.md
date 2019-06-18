@@ -2,7 +2,7 @@
 title: Abilitare la condivisione dei dati
 titleSuffix: Configuration Manager
 description: Una Guida di riferimento per la condivisione dei dati di diagnostica con Desktop Analitica.
-ms.date: 06/05/2019
+ms.date: 06/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,14 +10,13 @@ ms.assetid: be680198-4cea-4378-a686-d52f382ba483
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7292fdd3cc370af314cef95a4b782616e315a0cb
-ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
+ms.openlocfilehash: 3eff032113b92055b32cb81c6cae9363c368a421
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66821988"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159094"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Abilitare la condivisione per Desktop Analitica dei dati
 
@@ -61,6 +60,7 @@ Per abilitare la condivisione dei dati, configurare il server proxy per consenti
 
 | Endpoint  | Funzione  |
 |-----------|-----------|
+| `https://aka.ms` | Consente di individuare il servizio |
 | `https://v10c.events.data.microsoft.com` | Esperienza dell'utente connesso e l'endpoint di componente di diagnostica. Usato dai dispositivi che eseguono Windows 10, versione 1703 o successiva, con l'aggiornamento cumulativo 2018-09 update o versione successiva. |
 | `https://v10.events.data.microsoft.com` | Esperienza dell'utente connesso e l'endpoint di componente di diagnostica. Usato dai dispositivi che eseguono Windows 10, versione 1803 o successiva, _senza_ installato l'aggiornamento cumulativo-09 2018. |
 | `https://v10.vortex-win.data.microsoft.com` | Esperienza dell'utente connesso e l'endpoint di componente di diagnostica. Usato dai dispositivi che eseguono Windows 10, versione 1709 o versioni precedente. |

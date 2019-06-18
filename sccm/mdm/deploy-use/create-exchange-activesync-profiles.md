@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3bf178465f5aff508daca1d87b1b548a42db931d
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: a9d1b5e96dc8d2a43dfc39b9d1b2cd9678c083c9
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62275733"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159425"
 ---
 # <a name="exchange-activesync-email-profiles-in-system-center-configuration-manager"></a>Profili di posta elettronica di Exchange ActiveSync in System Center Configuration Manager
 
@@ -40,7 +40,7 @@ Per distribuire profili di posta elettronica ai dispositivi, è necessario regis
 
  Oltre a configurare un account di posta elettronica sul dispositivo, è possibile configurare le impostazioni di sincronizzazione per i contatti, i calendari e le attività.  
 
- Quando si crea un profilo di posta elettronica, è possibile includere una vasta gamma di impostazioni di protezione. Queste impostazioni includono certificati per l'identità, la crittografia e la firma, che sono stati configurati usando profili certificato in System Center Configuration Manager. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles.md).    
+ Quando si crea un profilo di posta elettronica, è possibile includere una vasta gamma di impostazioni di protezione. Queste impostazioni includono certificati per l'identità, la crittografia e la firma, che sono stati configurati usando profili certificato in System Center Configuration Manager. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).    
 
 ## <a name="create-an-exchange-activesync-email-profile"></a>Creare un profilo di posta elettronica di Exchange ActiveSync  
 

@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73eda37c9432750d94ef0b770348fc3d3250800c
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
-ms.translationtype: MT
+ms.openlocfilehash: 27df5154a55717a06924bc906edd2c7f6a4f9a2b
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62287385"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67158368"
 ---
 # <a name="past-hybrid-features-with-system-center-configuration-manager-and-microsoft-intune"></a>Funzionalità ibride precedenti con System Center Configuration Manager e Microsoft Intune
 
@@ -31,7 +31,7 @@ Questo articolo illustra le funzionalità di gestione dei dispositivi mobili (MD
 
 |Categorie di funzionalità|
 |-|  
-|**Novità di Microsoft Intune**: in generale, tutte le funzionalità elencate in questa categoria devono funzionare con tutte le versioni di Configuration Manager, incluse le versioni di System Center 2012 R2 Configuration Manager, poiché richiedono solo il servizio Intune e non richiedono altre funzionalità di Configuration Manager.<br /><br /> **Novità di Configuration Manager Technical Preview**: tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Technical Preview specificata. Per provare queste funzionalità, è necessario installare la versione di Technical Preview specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md).<br /><br /> **Novità di Configuration Manager (Current Branch)**: tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata, ad esempio la versione 1511 o 1602. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, è necessario eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere l'articolo relativo agli [aggiornamenti a System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|  
+|**Novità di Microsoft Intune**: in generale, tutte le funzionalità elencate in questa categoria devono funzionare con tutte le versioni di Configuration Manager, incluse le versioni di System Center 2012 R2 Configuration Manager, poiché richiedono solo il servizio Intune e non richiedono altre funzionalità di Configuration Manager.<br /><br /> **Novità di Configuration Manager Technical Preview**: tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Technical Preview specificata. Per provare queste funzionalità, è necessario installare la versione di Technical Preview specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md).<br /><br /> **Novità di Configuration Manager (Current Branch)** : tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata, ad esempio la versione 1511 o 1602. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, è necessario eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere l'articolo relativo agli [aggiornamenti a System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|  
 
 
 
@@ -432,7 +432,7 @@ Le seguenti funzionalità di Intune introdotte in luglio 2016 funzionano nelle d
 
   - **Cancellazione completa ora disponibile per i dispositivi Windows 10**
 
-    I computer desktop e portatili Windows 10 registrati come dispositivi mobili possono essere cancellati per ripristinare le impostazioni di fabbrica del dispositivo. Per altre informazioni, vedere le istruzioni per [proteggere i dispositivi con la cancellazione remota](/sccm/mdm/deploy-use/wipe-lock-reset).
+    I computer desktop e portatili Windows 10 registrati come dispositivi mobili possono essere cancellati per ripristinare le impostazioni di fabbrica del dispositivo. Per altre informazioni, vedere le istruzioni per [proteggere i dispositivi con la cancellazione remota](/sccm/mdm/deploy-use/wipe-lock-reset-devices).
 
 - **Modifiche agli account di Manager di registrazione dispositivi nell'app Portale aziendale per iOS**
 
@@ -575,11 +575,11 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **App di Windows Store per le aziende**
 
-  In [Windows Store per le aziende](https://www.microsoft.com/en-us/business-store) è possibile trovare e acquistare app per l'organizzazione, singolarmente o con Volume Purchase Program. Connettendo lo Store a Configuration Manager, è possibile gestire le app acquistate con Volume Purchase Program dalla console di Configuration Manager. Per altre informazioni, vedere la sezione sulle [app disponibili in Windows Store per le aziende](/sccm/core/get-started/capabilities-in-technical-preview-1605.md#windows-store-for-business-apps) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
+  In [Windows Store per le aziende](https://www.microsoft.com/en-us/business-store) è possibile trovare e acquistare app per l'organizzazione, singolarmente o con Volume Purchase Program. Connettendo lo Store a Configuration Manager, è possibile gestire le app acquistate con Volume Purchase Program dalla console di Configuration Manager. Per altre informazioni, vedere la sezione sulle [app disponibili in Windows Store per le aziende](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_WSFB) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
 
 - **Miglioramenti generali per le app acquistate con Volume Purchase Program**
 
-  Le app acquistate con Volume Purchase Program da Windows Store per le aziende e dall'App Store di iOS sono state consolidate nella vista delle **informazioni sulle licenze per le app dello Store**. È stato anche migliorato il modo in cui vengono create le app acquistate con Volume Purchase Program per iOS. Per altre informazioni, vedere [Miglioramenti generali per le app acquistate con Volume Purchase Program](/sccm/core/get-started/capabilities-in-technical-preview-1605.md#general-improvements-for-volume-purchased-apps) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
+  Le app acquistate con Volume Purchase Program da Windows Store per le aziende e dall'App Store di iOS sono state consolidate nella vista delle **informazioni sulle licenze per le app dello Store**. È stato anche migliorato il modo in cui vengono create le app acquistate con Volume Purchase Program per iOS. Per altre informazioni, vedere [Miglioramenti generali per le app acquistate con Volume Purchase Program](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_VPP2) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
 
 - **Predichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS**
 
@@ -639,7 +639,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **Impostazione di Smart Lock per dispositivi Android**
 
-  È stata aggiunta all'elemento di configurazione Android e Samsung KNOX Standard una nuova impostazione che consente di controllare la funzionalità Smart Lock sui dispositivi Android compatibili.  È possibile usare questa impostazione per impedire agli utenti finali di configurare Smart Lock. Vedere [Impostazione di SmartLock per dispositivi Android](/sccm/get-started/capabilities-in-technical-preview-1604#smartlock-setting-for-android-devices) in [Funzionalità di Technical Preview 1604 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1604.md).  
+  È stata aggiunta all'elemento di configurazione Android e Samsung KNOX Standard una nuova impostazione che consente di controllare la funzionalità Smart Lock sui dispositivi Android compatibili.  È possibile usare questa impostazione per impedire agli utenti finali di configurare Smart Lock. Vedere [Impostazione di SmartLock per dispositivi Android](/sccm/core/get-started/capabilities-in-technical-preview-1604#BKMK_Smart) in [Funzionalità di Technical Preview 1604 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1604).  
 
 ### <a name="new-in-configuration-manager-current-branch"></a>Novità di Configuration Manager (Current Branch)  
  Non sono state introdotte nuove funzionalità ibride nella versione di aprile 2016 di Configuration Manager (Current Branch).  

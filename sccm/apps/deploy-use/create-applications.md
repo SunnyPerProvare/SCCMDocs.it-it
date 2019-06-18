@@ -2,7 +2,7 @@
 title: Creare applicazioni
 titleSuffix: Configuration Manager
 description: Creare applicazioni con tipi di distribuzione, metodi di rilevamento e requisiti per installare software.
-ms.date: 05/08/2019
+ms.date: 06/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c54eb02fe3de3246a7c8ed15e7589fcd4d9b1c9b
-ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
+ms.openlocfilehash: 6302ca8e1f01f51bef09df2175c4525effd89a7e
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66264442"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834810"
 ---
 # <a name="create-applications-in-configuration-manager"></a>Creare applicazioni in Configuration Manager
 
@@ -86,7 +86,7 @@ Rilevare quindi automaticamente o specificare manualmente le informazioni sull'a
 
     -   **Comportamento di installazione**: selezionare una delle tre opzioni disponibili per la modalità di installazione di questo tipo di distribuzione da parte di Configuration Manager. Per altre informazioni su queste opzioni, vedere [Esperienza utente](#bkmk_dt-ux).  
 
-    -   **Usa una connessione VPN automatica (se configurata)** : se è stato distribuito un profilo VPN nel dispositivo in cui l'utente avvia l'app, connettersi alla VPN all'avvio dell'app. Questa opzione è disponibile solo per Windows 8.1 e Windows Phone 8.1. Le connessioni VPN non sono supportate nei dispositivi Windows Phone 8.1 se si distribuisce più di un profilo VPN nel dispositivo. Per altre informazioni, vedere [Profili VPN](/sccm/protect/deploy-use/vpn-profiles).  
+    -   **Usa una connessione VPN automatica (se configurata)**: se è stato distribuito un profilo VPN nel dispositivo in cui l'utente avvia l'app, connettersi alla VPN all'avvio dell'app. Questa opzione è disponibile solo per Windows 8.1 e Windows Phone 8.1. Le connessioni VPN non sono supportate nei dispositivi Windows Phone 8.1 se si distribuisce più di un profilo VPN nel dispositivo. Per altre informazioni, vedere [Profili VPN](/sccm/protect/deploy-use/vpn-profiles).  
 
     - **Effettua il provisioning di questa applicazione per tutti gli utenti nel dispositivo**<!--1358310-->: a partire dalla versione 1806, è possibile effettuare il provisioning di un'applicazione con un pacchetto di app Windows per tutti gli utenti del dispositivo. Per altre informazioni, vedere [Creare applicazioni Windows](/sccm/apps/get-started/creating-windows-applications#bkmk_provision).  
 
@@ -209,7 +209,7 @@ Seguire quindi una di queste procedure per [identificare automaticamente](#bkmk_
 
     -   **Comportamento di installazione**: selezionare una delle tre opzioni disponibili per la modalità di installazione di questo tipo di distribuzione da parte di Configuration Manager. Per altre informazioni su queste opzioni, vedere [Esperienza utente](#bkmk_dt-ux).  
 
-    -   **Usa una connessione VPN automatica (se configurata)** : se è stato distribuito un profilo VPN nel dispositivo in cui l'utente avvia l'app, connettersi alla VPN all'avvio dell'app. Questa opzione è disponibile solo per Windows 8.1 e Windows Phone 8.1. Le connessioni VPN non sono supportate nei dispositivi Windows Phone 8.1 se si distribuisce più di un profilo VPN nel dispositivo. Per altre informazioni, vedere [Profili VPN](/sccm/protect/deploy-use/vpn-profiles).  
+    -   **Usa una connessione VPN automatica (se configurata)**: se è stato distribuito un profilo VPN nel dispositivo in cui l'utente avvia l'app, connettersi alla VPN all'avvio dell'app. Questa opzione è disponibile solo per Windows 8.1 e Windows Phone 8.1. Le connessioni VPN non sono supportate nei dispositivi Windows Phone 8.1 se si distribuisce più di un profilo VPN nel dispositivo. Per altre informazioni, vedere [Profili VPN](/sccm/protect/deploy-use/vpn-profiles).  
 
 4.  Scegliere **Avanti** e quindi passare alle [Opzioni del Contenuto per il tipo di distribuzione](#bkmk_dt-content).  
 
@@ -312,9 +312,25 @@ Questa procedura configura un metodo di rilevamento che indica la presenza del t
 
 4.  Fare clic su **OK** per chiudere la finestra di dialogo **Regola di rilevamento**.  
 
-Quando si crea più di un metodo di rilevamento per un tipo di distribuzione, creare logica più complessa raggruppando le clausole. 
+Quando si crea più di un metodo di rilevamento per un tipo di distribuzione, è possibile raggruppare le clausole per creare una logica più complessa.  
 
-Passare alla sezione successiva sull'uso di uno script personalizzato come metodo di rilevamento oppure ignorare le opzioni di [Esperienza utente](#bkmk_dt-ux) per il tipo di distribuzione.
+#### <a name="group-detection-clauses-optional"></a>Raggruppare le clausole di rilevamento *(facoltativo)*
+
+1.  Creare tre o più clausole per il metodo di rilevamento per un tipo di distribuzione.  
+
+2.  Selezionare due o più clausole consecutive e quindi selezionare **Raggruppa**. Alle colonne associate verranno aggiunte parentesi, che indicano dove inizia e finisce il gruppo.  
+
+    Esempio: 
+
+    | Connettore  |  ( | Clausola           |  ).  | 
+    |------------|----|------------------|-----| 
+    |            |    | Codice prodotto MSI |     | 
+    | Oppure         | (  | file1.text esiste|     | 
+    | And        |    | file2.text esiste | ).   | 
+
+3.  Per rimuovere il gruppo, selezionare le clausole raggruppate e quindi selezionare **Separa**.  
+
+*Continuare* con la sezione successiva sull'uso di uno script personalizzato come metodo di rilevamento oppure [passare](#bkmk_dt-ux) alle opzioni di *Esperienza utente* per il tipo di distribuzione.
 
 
 #### <a name="bkmk_detect-script"></a> Usare uno script personalizzato per rilevare la presenza di questo tipo di distribuzione  
@@ -469,7 +485,7 @@ Nella pagina **Esperienza utente** specificare le informazioni seguenti:
     >  
     > L'installazione in un contesto di sistema e l'autorizzazione dell'interazione con l'installazione da parte degli utenti non consentono di ottenere una configurazione sicura. Per altre informazioni, vedere [Sicurezza e privacy per la gestione delle applicazioni](/sccm/apps/plan-design/security-and-privacy-for-application-management#bkmk_interact).  
 
-- **Tempo di esecuzione massimo consentito (minuti)** : specificare la durata massima di esecuzione in minuti prevista per il tipo di distribuzione nel computer client. È possibile specificare questa impostazione come numero intero maggiore di zero. Il valore predefinito è 120 minuti (due ore).  
+- **Tempo di esecuzione massimo consentito (minuti)**: specificare la durata massima di esecuzione in minuti prevista per il tipo di distribuzione nel computer client. È possibile specificare questa impostazione come numero intero maggiore di zero. Il valore predefinito è 120 minuti (due ore).  
 
     Usare questo valore per le azioni seguenti:  
 
@@ -480,7 +496,7 @@ Nella pagina **Esperienza utente** specificare le informazioni seguenti:
     > [!IMPORTANT]  
     >  Potrebbe verificarsi un conflitto se il **Tempo di esecuzione massimo consentito** è maggiore della finestra di manutenzione pianificata. Se l'utente imposta il tempo di esecuzione massimo su una durata maggiore di quella di qualsiasi finestra di manutenzione disponibile, il tipo di distribuzione corrispondente non viene eseguito.  
 
-- **Tempo previsto di installazione (minuti)** : specificare il tempo previsto per l'installazione del tipo di distribuzione. Gli utenti possono visualizzarlo in Software Center.  
+- **Tempo previsto di installazione (minuti)**: specificare il tempo previsto per l'installazione del tipo di distribuzione. Gli utenti possono visualizzarlo in Software Center.  
 
 
 #### <a name="deployment-type-properties-user-experience-options"></a>Opzioni di **Esperienza utente** delle proprietà del tipo di distribuzione
@@ -565,9 +581,9 @@ Specificare i codici restituiti per controllare i comportamenti dopo il completa
 
 3. Selezionare un **Tipo di codice** dall'elenco a discesa. Questa impostazione consente di definire il modo in cui Configuration Manager interpreta il codice restituito da questo tipo di distribuzione. I tipi disponibili dipendono dalla tecnologia del tipo di distribuzione.   
 
-    - **Operazione riuscita (senza riavvio)** : il tipo di distribuzione è stato installato e non è necessario alcun riavvio.  
+    - **Operazione riuscita (senza riavvio)**: il tipo di distribuzione è stato installato e non è necessario alcun riavvio.  
 
-    - **Errore (senza riavvio)** : non è stato possibile installare il tipo di distribuzione.  
+    - **Errore (senza riavvio)**: non è stato possibile installare il tipo di distribuzione.  
 
     - **Avvio a freddo**: il tipo di distribuzione è stato installato ma richiede il riavvio del dispositivo. Non è possibile eseguire altre installazioni fino al riavvio del dispositivo.  
 

@@ -10,14 +10,13 @@ ms.assetid: 63e08f3f-9558-4ed7-9bf3-3a185ddaac5c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: acaefcf2c505786dcc65fa7c74063765ca2fe0cf
-ms.sourcegitcommit: e3c1eb0b75d79c05a750d49354c851d15d5e26a3
+ms.openlocfilehash: 305c31c2a40e51b84a0a5da671db1c3f6dad6f2e
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67038614"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67158996"
 ---
 # <a name="troubleshoot-desktop-analytics"></a>Risolvere i problemi di Analitica Desktop
 
@@ -52,29 +51,7 @@ Per altre informazioni, vedere [monitorare l'integrità della connessione](/sccm
 
 ## <a name="log-files"></a>File di registro
 
-Usare file di log seguenti per risolvere i problemi con Desktop Analitica integrato con Configuration Manager.
-
-
-### <a name="service-connection-point"></a>punto di connessione del servizio
-
-Sono i seguenti file di log nel punto di connessione del servizio nella directory seguente: `C:\Program Files\Configuration Manager\Logs\M365A`:
-
-| Registro | Descrizione |
-|---------|---------|
-| **M365ADeploymentPlanWorker.log** | Informazioni sulla sincronizzazione di piano di distribuzione dal Desktop Analitica cloud del servizio per Gestione configurazione locale |
-| **M365ADeviceHealthWorker.log** | Informazioni sull'integrità del dispositivo caricare da Configuration Manager in Microsoft cloud |
-| **M365AUploadWorker.log** | Informazioni sulla raccolta e dispositivo caricare da Configuration Manager in Microsoft cloud |
-| **SmsAdminUI.log** | Informazioni sulle attività della console di Configuration Manager, ad esempio la configurazione dei servizi cloud di Azure  |
-
-
-### <a name="configuration-manager-client"></a>Client di Configuration Manager
-
-File di log seguenti sono nel client di Configuration Manager nella directory seguente: `C:\Windows\CCM\logs`:
-
-| Registro | Descrizione |
-|---------|---------|
-| **M365AHandler.log** | Informazioni sui criteri di impostazioni Desktop Analitica |
-
+Per altre informazioni, vedere [i file di Log di Desktop Analitica](/sccm/core/plan-design/hierarchy/log-files#desktop-analytics)
 
 ### <a name="enable-verbose-logging"></a>Abilita la registrazione dettagliata
 

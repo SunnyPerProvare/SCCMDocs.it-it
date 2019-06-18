@@ -2,7 +2,7 @@
 title: Aggiornare i dispositivi Windows a una versione diversa
 titleSuffix: Configuration Manager
 description: Aggiornare automaticamente i dispositivi che eseguono Windows 10 Desktop o Windows 10 Mobile a un'edizione differente con Configuration Manager.
-ms.date: 01/26/2018
+ms.date: 06/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3cda70e7a5f1b2cf7dec079a7e933af48f0bf8ad
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 87105e2f9fa090c171b35ed4cb8a6523c624eca4
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128399"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834857"
 ---
 # <a name="upgrade-windows-devices-with-the-edition-upgrade-policy-in-system-center-configuration-manager"></a>Aggiornare i dispositivi Windows con i criteri di aggiornamento edizione in System Center Configuration Manager
 
@@ -89,10 +89,10 @@ Monitorare la distribuzione dal nodo **Distribuzioni** dell'area di lavoro **Mon
 - **Non applicabile per questo dispositivo**
 - **Conversione tipo di dati non riuscita**
 
-Questi errori non indicano che la distribuzione non è riuscita. Verificare nel PC di destinazione che l'aggiornamento sia stato completato correttamente.
+Questi errori non indicano che la distribuzione non è riuscita. Verificare nel PC di destinazione che l'aggiornamento sia stato eseguito correttamente.
 
-Dopo che il client ha valutato i criteri di destinazione, verrà riavviato entro due ore per applicare l'aggiornamento. Informare tutti gli utenti interessati dalla distribuzione dei criteri o pianificare la distribuzione dei criteri in ore non lavorative.
+Dopo che il client ha valutato i criteri di destinazione, l'aggiornamento verrà applicato entro due ore. [Se il percorso di aggiornamento richiede un riavvio](https://docs.microsoft.com/windows/deployment/upgrade/windows-10-edition-upgrades), in tale momento verrà eseguito il riavvio. Informare tutti gli utenti interessati dalla distribuzione dei criteri o pianificare la distribuzione dei criteri in ore non lavorative.
 
-Se viene visualizzato l'errore seguente in **DcmWmiProvider.log** nel client, verificare di usare il codice corretto per lo scenario di attivazione. Per altre informazioni, vedere la sezione [Prima di iniziare](#before-you-start). Se si usa un servizio di gestione delle chiavi per l'attivazione, assicurarsi di usare un [codice di configurazione client KMS](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys).  <!-- 496871 -->   
+Se viene visualizzato l'errore seguente in **DcmWmiProvider.log** nel client, verificare di usare il codice corretto per lo scenario di attivazione. Per altre informazioni, vedere la sezione [Prima di iniziare](#before-you-start). Se si usa un servizio di gestione delle chiavi per l'attivazione, assicurarsi di usare un [codice di installazione client KMS](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys).  <!-- 496871 -->   
 
 `Failed to execute CheckApplicabilityMethod with error = 0x80041001 OsEditionUpgradeProvider`

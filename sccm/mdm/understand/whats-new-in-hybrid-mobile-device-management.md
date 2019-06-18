@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6a4cfbc7e9db5f4402278b73c2ca7ea1d869953
-ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
-ms.translationtype: MT
+ms.openlocfilehash: c0b8d24e536348ed853762cb5aa620e76495e064
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66355039"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159437"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con Configuration Manager e Microsoft Intune
 
@@ -201,7 +201,7 @@ Il nuovo [pagina dello stato del Tenant](https://docs.microsoft.com/intune/tenan
 #### <a name="new-help-and-support-experience-in-company-portal-for-windows-10"></a>Nuova Guida e supporto tecnico esperienza nel portale aziendale per Windows 10
 
 <!--1488939-->  
-La nuova pagina nella Guida del portale aziendale e supporto consente agli utenti di risolvere i problemi e richiedere assistenza per problemi di app e l'accesso. Dalla nuova pagina, possono inviare tramite posta elettronica di errori e i dettagli del log di diagnostica e trovare i dettagli di supporto tecnico dell'organizzazione. È disponibile anche una sezione Domande frequenti con i collegamenti per la relativa documentazione di Intune. Per altre informazioni e screenshot, vedere [assistenza e supporto nel portale aziendale per Windows 10](https://docs.microsoft.com/intune-user-help/help-and-support-windows-cpapp).
+La nuova pagina nella Guida del portale aziendale e supporto consente agli utenti di risolvere i problemi e richiedere assistenza per problemi di app e l'accesso. Dalla nuova pagina, possono inviare tramite posta elettronica di errori e i dettagli del log di diagnostica e trovare i dettagli di supporto tecnico dell'organizzazione. È disponibile anche una sezione Domande frequenti con i collegamenti per la relativa documentazione di Intune. Per altre informazioni e screenshot, vedere [assistenza e supporto nel portale aziendale per Windows 10](https://docs.microsoft.com/intune-user-help/help-support-windows-cpapp).
 
 #### <a name="some-bitlocker-settings-support-windows-10-pro-edition"></a>Alcune impostazioni BitLocker supportano Windows 10 Pro edition
 
@@ -376,7 +376,7 @@ La vista **Installata** della pagina **App** consente di visualizzare i dettagli
 #### <a name="more-opportunities-to-sync-in-the-company-portal-app-for-windows"></a>Altre opportunità per eseguire la sincronizzazione nell'app Portale aziendale per Windows
 
 <!--2683177-->  
-A questo punto l'app portale aziendale per Windows consente di avviare la sincronizzazione direttamente dalla barra delle applicazioni Windows e menu Start. Questa funzionalità è particolarmente utile se le uniche attività sono la sincronizzazione dei dispositivi e l'accesso alle risorse aziendali. Per accedere alla nuova funzionalità, fare clic con il pulsante destro del mouse sull'icona Portale aziendale aggiunta alla barra delle applicazioni o al menu Start. Tra le opzioni del menu scegliere **Sincronizza il dispositivo**. Questo menu è detto anche jump list. Dal portale aziendale si accede alla pagina **Impostazioni** e la sincronizzazione viene avviata. Per la procedura aggiornata, vedere l'articolo relativo alla [sincronizzazione manuale del dispositivo Windows](https://docs.microsoft.com/intune/intune-user-help/sync-your-device-manually-windows#sync-from-device-taskbar-or-start-menu).
+A questo punto l'app portale aziendale per Windows consente di avviare la sincronizzazione direttamente dalla barra delle applicazioni Windows e menu Start. Questa funzionalità è particolarmente utile se le uniche attività sono la sincronizzazione dei dispositivi e l'accesso alle risorse aziendali. Per accedere alla nuova funzionalità, fare clic con il pulsante destro del mouse sull'icona Portale aziendale aggiunta alla barra delle applicazioni o al menu Start. Tra le opzioni del menu scegliere **Sincronizza il dispositivo**. Questo menu è detto anche jump list. Dal portale aziendale si accede alla pagina **Impostazioni** e la sincronizzazione viene avviata. Per la procedura aggiornata, vedere l'articolo relativo alla [sincronizzazione manuale del dispositivo Windows](https://docs.microsoft.com/intune-user-help/sync-your-device-manually-windows#sync-from-device-taskbar-or-start-menu).
 
 
 
