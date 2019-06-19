@@ -45,7 +45,7 @@ Usare questo argomento per informazioni su come creare o importare query in Syst
     |**Risorsa utente**|Usare questo tipo di oggetto per cercare informazioni utente standard, ad esempio i nomi utente, i nomi di gruppi di utenti e i nomi dei gruppi di sicurezza.|  
     |**Distribuzione**|Usare questo tipo di oggetto per cercare gli attributi standard di una distribuzione, ad esempio il nome della distribuzione, la pianificazione e la raccolta in cui è stata distribuita.|  
 
-6.  Selezionare **Modifica istruzione query** per aprire la finestra di dialogo *&lt;Nome query\>***Proprietà istruzione**.  
+6.  Selezionare **Modifica istruzione query** per aprire la finestra di dialogo *&lt;Nome query\>* **Proprietà istruzione**.  
 
 7.  Nella scheda **Generale** della finestra di dialogo *&lt;Nome query\>* **Proprietà istruzione** specificare gli attributi restituiti da questa query e la relativa modalità di visualizzazione. Fare clic sull'icona **Nuovo** per aggiungere un nuovo attributo. È anche possibile selezionare **Mostra linguaggio query** per immettere o modificare la query direttamente in WMI Query Language (WQL). Per esempi di query WMI, vedere la sezione [Example WQL queries](#BKMK_Example) in questo argomento.  
 
@@ -61,7 +61,7 @@ Usare questo argomento per informazioni su come creare o importare query in Syst
     > [!IMPORTANT]  
     > Se si crea una query che non contiene alcun criterio, verranno restituiti tutti i dispositivi presenti nella raccolta **Tutti i sistemi** .  
 
-9. Nella scheda **Join** della finestra di dialogo *&lt;Nome query\>***Proprietà istruzione** è possibile combinare i dati di due attributi diversi nei risultati della query. Anche se Configuration Manager crea automaticamente join di query quando vengono selezionati attributi diversi per il risultato della query, nella scheda **Join** sono disponibili ulteriori opzioni avanzate. Le classi di attributi supportate da System Center 2012 Configuration Manager sono illustrate nella tabella seguente:  
+9. Nella scheda **Join** della finestra di dialogo *&lt;Nome query\>* **Proprietà istruzione** è possibile combinare i dati di due attributi diversi nei risultati della query. Anche se Configuration Manager crea automaticamente join di query quando vengono selezionati attributi diversi per il risultato della query, nella scheda **Join** sono disponibili ulteriori opzioni avanzate. Le classi di attributi supportate da System Center 2012 Configuration Manager sono illustrate nella tabella seguente:  
 
     |Tipo di join|Descrizione|  
     |---------------|-----------------|  
@@ -72,7 +72,7 @@ Usare questo argomento per informazioni su come creare o importare query in Syst
 
      Per altre informazioni su come usare le operazioni di join, vedere la documentazione di SQL Server.  
 
-10. Scegliere **OK** per chiudere la finestra di dialogo *&lt;Nome query\>***Proprietà istruzione**.  
+10. Scegliere **OK** per chiudere la finestra di dialogo *&lt;Nome query\>* **Proprietà istruzione**.  
 
 11. Nella scheda **Generale** della **Creazione guidata query**specificare se i risultati della query non sono limitati ai membri di una raccolta, sono limitati ai membri di una raccolta specificata oppure se viene richiesta una raccolta ogni volta che viene eseguita la query.  
 
@@ -156,7 +156,7 @@ I tipi di dispositivo vengono archiviati nel database di Configuration Manager c
 Select SMS_R_System.ClientEdition from SMS_R_System where SMS_R_System.ClientEdition = <Device ID>  
 ```  
 
-Usare uno dei valori seguenti per *&lt;ID dispositivo\>*:  
+Usare uno dei valori seguenti per *&lt;ID dispositivo\>* :  
 
 |Tipo di dispositivo|Valore di AgentEdition|  
 |-----------------|---------------------------|  
