@@ -56,6 +56,20 @@ conceptualContent:
     - text: Eseguire script di PowerShell
       url: https://docs.microsoft.com/sccm/apps/deploy-use/create-deploy-scripts
       itemType: how-to-guide
+  - title: Desktop Analytics
+    links:
+    - text: Panoramica
+      url: https://docs.microsoft.com/sccm/desktop-analytics/overview
+      itemType: overview
+    - text: Distribuire Windows 10 a un gruppo pilota
+      url: https://docs.microsoft.com/sccm/desktop-analytics/tutorial-windows10
+      itemType: tutorial
+    - text: Configurare Desktop Analytics
+      url: https://docs.microsoft.com/sccm/desktop-analytics/set-up
+      itemType: how-to-guide
+    footerLink:
+      text: Altre informazioni
+      url: https://docs.microsoft.com/sccm/desktop-analytics/overview
   - title: Semplificazione dell'infrastruttura
     links:
     - text: Disponibilità elevata del server del sito
@@ -151,34 +165,6 @@ conceptualContent:
     footerLink:
       text: Altre informazioni
       url: https://docs.microsoft.com/sccm/protect/understand/protect-data-and-site-infrastructure
-  - title: Sviluppo
-    links:
-    - text: PowerShell
-      url: https://docs.microsoft.com/powershell/sccm/overview?view=sccm-ps
-      itemType: learn
-    - text: Concetti relativi all'SDK
-      url: https://docs.microsoft.com/sccm/develop/core/misc/system-center-configuration-manager-sdk
-      itemType: overview
-    - text: Informazioni di riferimento per l'SDK
-      url: https://docs.microsoft.com/sccm/develop/reference/configuration-manager-reference
-      itemType: learn
-    - text: Visualizzazioni SQL
-      url: https://docs.microsoft.com/sccm/develop/core/understand/sqlviews/create-custom-reports-using-sql-server-views
-      itemType: learn
-  - title: Strumenti
-    links:
-    - text: Support Center
-      url: https://docs.microsoft.com/sccm/core/support/support-center
-      itemType: how-to-guide
-    - text: MDT
-      url: https://docs.microsoft.com/sccm/mdt/
-      itemType: how-to-guide
-    - text: Package Conversion Manager
-      url: https://docs.microsoft.com/sccm/apps/pcm/package-conversion-manager
-      itemType: learn
-    footerLink:
-      text: Altre informazioni
-      url: https://docs.microsoft.com/sccm/core/support/tools
 additionalContent:
   sections:
   - title: Community e supporto per Configuration Manager
@@ -198,14 +184,35 @@ additionalContent:
     - title: Supporto per il prodotto
       summary: Ottenere supporto professionale dal supporto tecnico Microsoft
       url: https://aka.ms/cmcbsupport
-    - title: ConfigMgr su Reddit
-      summary: Altre informazioni dalla community
-      url: https://www.reddit.com/r/sccm
+  - title: Altri contenuti
+    items:
+    - title: Sviluppo
+      summary: >
+        [PowerShell](https://docs.microsoft.com/powershell/sccm/overview?view=sccm-ps) <br/>
+
+        [Concetti relativi all'SDK](https://docs.microsoft.com/sccm/develop/core/misc/system-center-configuration-manager-sdk) <br/>
+
+        [Informazioni di riferimento per l'SDK](https://docs.microsoft.com/sccm/develop/reference/configuration-manager-reference) <br/>
+
+        [Visualizzazioni SQL](https://docs.microsoft.com/sccm/develop/core/understand/sqlviews/create-custom-reports-using-sql-server-views)
+    - title: Strumenti
+      summary: >
+        [Support Center](https://docs.microsoft.com/sccm/core/support/support-center) <br/>
+
+        [MDT](https://docs.microsoft.com/sccm/mdt/) <br/>
+
+        [Package Conversion Manager](https://docs.microsoft.com/sccm/apps/pcm/package-conversion-manager) <br/>
+
+        [Altre informazioni >](https://docs.microsoft.com/sccm/core/support/tools)
+    - title: Altri siti della community
+      summary: >
+        [ConfigMgr su Reddit](https://www.reddit.com/r/sccm) <br/>
+
+        [Gruppo di professionisti di ConfigMgr su Facebook](https://www.facebook.com/groups/ConfigMgr2012) <br/>
   footer: Sono stati riscontrati problemi nel sito? [Comunicarlo a Microsoft](https://docs.microsoft.com/sccm/core/understand/use-docs#bkmk_docfeedback)
-metadata:
-  ms.openlocfilehash: bf3248bb4e4169ca86741d1936398005d3fd1fd5
-  ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
-  ms.translationtype: HT
-  ms.contentlocale: it-IT
-  ms.lasthandoff: 06/07/2019
-  ms.locfileid: "66463812"
+ms.openlocfilehash: 68055069b363adadc54b5cae7843f4225b3d10e7
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159554"
