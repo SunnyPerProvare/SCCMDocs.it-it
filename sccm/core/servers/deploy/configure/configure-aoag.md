@@ -48,7 +48,7 @@ Per completare la procedura, l'account usato deve:
    - **Sarà membro del gruppo di disponibilità:**  
      Se si usa questo server come membro di replica primaria iniziale del gruppo di disponibilità, non è necessario ripristinare una copia del database del sito su questo o su un altro server nel gruppo. Il database risulterà già incluso nella replica primaria e SQL Server eseguirà la replica del database nelle repliche secondarie in un passaggio successivo.  
 
-     -    **Non sarà membro del gruppo di disponibilità:**   
+     -    **Non sarà membro del gruppo di disponibilità:**    
      Ripristinare una copia del database del sito nel server che ospiterà la replica primaria del gruppo.
 
    Per informazioni su come completare questo passaggio, vedere [Creazione di un backup completo del database (SQL Server)](/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server) e [Ripristinare un backup del database tramite SSMS](/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms) nella documentazione di SQL Server.
@@ -92,7 +92,7 @@ Per completare la procedura, l'account usato per eseguire il programma di instal
 3.  Selezionare l'opzione **Modifica la configurazione di SQL Server** , quindi fare clic su **Avanti**.
 
 4.  Riconfigurare quanto segue per il database del sito:
-    -   **Nome server SQL:** immettere il nome virtuale del **listener** del gruppo di disponibilità configurato al momento della creazione del gruppo di disponibilità. Il nome virtuale deve essere un nome DNS completo, ad esempio ***&lt;Serverendpoint*>.fabrikam.com**.  
+    -   **Nome server SQL:** immettere il nome virtuale del **listener** del gruppo di disponibilità configurato al momento della creazione del gruppo di disponibilità. Il nome virtuale deve essere un nome DNS completo, ad esempio **&lt;*Serverendpoint*>.fabrikam.com**.  
 
     -   **Istanza**: questo valore deve essere vuoto per specificare l'istanza predefinita per il *listener* del gruppo di disponibilità. Se il database del sito corrente viene eseguito in un'istanza denominata, questa istanza viene elencata e deve essere cancellata.
 
