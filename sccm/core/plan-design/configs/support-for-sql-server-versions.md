@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fdfb536607ce20cd9727882ad92c3ed963c69241
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 367ab11340ef36b0caaf23e84f26bdda921ee158
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499466"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834742"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>Versioni di SQL Server supportate per Configuration Manager
 
@@ -213,7 +213,7 @@ Il supporto per un Service Pack di SQL Server specifico include gli aggiornament
 
 -   **Per un server di database installato nello stesso computer del server del sito**: Limitare la memoria per SQL Server al 50-80% della memoria di sistema indirizzabile disponibile.  
 
--   **Per un server di database dedicato (remoto dal computer del server del sito)**: Limitare la memoria per SQL Server all'80-90% della memoria di sistema indirizzabile disponibile.  
+-   **Per un server di database dedicato (remoto dal computer del server del sito)** : Limitare la memoria per SQL Server all'80-90% della memoria di sistema indirizzabile disponibile.  
 
 -   **Per una riserva di memoria per il pool di buffer di ogni istanza di SQL Server in uso**:  
 
@@ -227,7 +227,8 @@ Il supporto per un Service Pack di SQL Server specifico include gli aggiornament
 ### <a name="sql-server-clr-integration"></a>Integrazione CLR di SQL Server  
   Il database del sito richiede l'abilitazione di Common Language Runtime (CLR) di SQL Server. Questa opzione viene abilitata automaticamente quando si installa Configuration Manager. Per altre informazioni su CLR, vedere [Introduzione all'integrazione CLR di SQL Server](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/introduction-to-sql-server-clr-integration).  
 
-
+### <a name="sql-server-service-broker-ssb"></a>SQL Server Service Broker (SSB)
+ SQL Server Service Broker è necessario sia per la replica tra siti che per un singolo sito primario. 
 
 ##  <a name="bkmk_optional"></a> Configurazioni facoltative per SQL Server  
  Le configurazioni seguenti sono facoltative per ogni database che usa un'installazione completa di SQL Server.  

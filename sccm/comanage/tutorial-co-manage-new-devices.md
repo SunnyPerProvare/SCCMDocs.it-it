@@ -3,8 +3,8 @@ title: Esercitazione&#58; Abilitare la co-gestione per nuovi dispositivi Windows
 titleSuffix: Configuration Manager
 description: Configurare la co-gestione per dispositivi Windows 10 con Configuration Manager e Intune.
 keywords: ''
-author: brenduns
-ms.author: brenduns
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 ms.date: 03/08/2019
 ms.topic: tutorial
@@ -12,12 +12,12 @@ ms.prod: configuration-manager
 ms.service: ''
 ms.technology: ''
 ms.assetid: ''
-ms.openlocfilehash: 61400d382a539efa495af99795e32fc1f2a517ab
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: 3c02a9c05e2c7d24654684f122edcd3eb5a84e06
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "57737355"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834871"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Esercitazione: Abilitare la co-gestione per nuovi dispositivi basati su Internet
 Con la co-gestione è possibile mantenere i processi consolidati per l'uso di Configuration Manager per la gestione dei PC nell'organizzazione. Allo stesso tempo, è possibile investire nel cloud usando Intune per sicurezza e provisioning moderno. 
@@ -165,7 +165,7 @@ Esportare il *certificato di autenticazione server di Cloud Management Gateway* 
 
 3. Nell'Esportazione guidata certificati selezionare **Avanti**, selezionare **Sì, esporta la chiave privata** e quindi scegliere **Avanti**.  
 
-4. Nella pagina Formato file di esportazione selezionare **Personal Information Exchange - PKCS #12 (.PFX)**, selezionare **Avanti** e specificare una password. Per il nome del file specificare un nome simile a **C:\ConfigMgrCloudMGServer**. Si farà riferimento a questo file quando si creerà il servizio Cloud Management Gateway in Azure.  
+4. Nella pagina Formato file di esportazione selezionare **Personal Information Exchange - PKCS #12 (.PFX)** , selezionare **Avanti** e specificare una password. Per il nome del file specificare un nome simile a **C:\ConfigMgrCloudMGServer**. Si farà riferimento a questo file quando si creerà il servizio Cloud Management Gateway in Azure.  
 
 5. Selezionare **Avanti** e quindi verificare le impostazioni seguenti prima di selezionare **Fine** per completare l'esportazione:  
 
@@ -357,7 +357,7 @@ Dopo aver predisposto le configurazioni di Azure, i ruoli del sistema del sito e
 
 4. Nella pagina *Abilitazione* selezionare una delle opzioni seguenti nell'elenco a discesa *Registrazione automatica in Intune*:  
 
-   - **Pilota**  - *(scelta consigliata)* I membri della raccolta specificata vengono automaticamente registrati in Intune e possono quindi essere co-gestiti. La raccolta pilota viene specificata nella pagina *Gestione temporanea* di questa procedura guidata. Questa opzione permette di testare la co-gestione in un subset di client. È quindi possibile implementare la co-gestione in altri client usando un approccio in fasi.  
+   - **Pilota**  -  *(scelta consigliata)* I membri della raccolta specificata vengono automaticamente registrati in Intune e possono quindi essere co-gestiti. La raccolta pilota viene specificata nella pagina *Gestione temporanea* di questa procedura guidata. Questa opzione permette di testare la co-gestione in un subset di client. È quindi possibile implementare la co-gestione in altri client usando un approccio in fasi.  
 
    - **Tutti** - La co-gestione è abilitata per tutti i client.  
 
@@ -392,7 +392,7 @@ Quindi, quando un dispositivo Windows 10 precedentemente non gestito viene regis
 Ad esempio, *C:\Programmi\Microsoft Configuration Manager\bin\i386\ccmsetup.msi*   
 
 4. Selezionare **Informazioni sull'app** e quindi specificare i dettagli seguenti:
-   - **Descrizione**: Configuration Manager Client  
+   - **Descrizione**: Client di Configuration Manager  
 
    - **Editore**: Microsoft  
 

@@ -2,7 +2,7 @@
 title: Aggiornare l'infrastruttura locale
 titleSuffix: Configuration Manager
 description: Informazioni su come aggiornare l'infrastruttura, ad esempio SQL Server e il sistema operativo dei sistemi del sito.
-ms.date: 11/27/2018
+ms.date: 06/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac4f22b6da6f0ed3c743848efc5477577376116b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: a361ff057d6448169088f383ac8373673a97294d
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500928"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834976"
 ---
 # <a name="upgrade-on-premises-infrastructure-that-supports-configuration-manager"></a>Aggiornare l'infrastruttura locale che supporta Configuration Manager
 
@@ -211,6 +211,8 @@ Configuration Manager supporta l'aggiornamento sul posto di SQL Server alle vers
 
 - SQL Server 2014  
 
+È incluso l'aggiornamento di SQL Server Express a una versione più recente di SQL Server Express nei siti secondari.
+
 Quando si aggiorna la versione di SQL Server che ospita il database del sito, è necessario aggiornare la versione di SQL Server usata nei siti nell'ordine seguente:
 
 1. Eseguire prima l'aggiornamento di SQL Server nel sito di amministrazione centrale  
@@ -219,7 +221,7 @@ Quando si aggiorna la versione di SQL Server che ospita il database del sito, è
 
 3. Aggiornare per ultimo i siti primari padre. Questi siti includono sia i siti primari figlio che fanno riferimento a un sito di amministrazione centrale sia i siti primari autonomi che sono siti di livello superiore di una gerarchia.  
 
-
+ 
 ### <a name="sql-server-cardinality-estimation-level"></a>Livello di stima della cardinalità di SQL Server   
 
 Quando si aggiorna un database del sito da una versione precedente di SQL Server, il database mantiene il livello di stima della cardinalità SQL esistente, se questo corrisponde al minimo consentito per l'istanza di SQL Server. L'aggiornamento di SQL Server con un database a un livello di compatibilità inferiore a quello consentito imposta automaticamente il database sul livello di compatibilità più basso consentito da SQL Server.

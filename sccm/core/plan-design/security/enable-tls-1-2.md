@@ -11,12 +11,12 @@ ms.assetid: 31de47c9-891b-4de7-8d5e-fbbc1bff7c60
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0ddd2a5cb74dfc9de48299b00fddeb8f849ce9e3
-ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
+ms.openlocfilehash: a3d97ee2e68f9f4606ad46c8566467fad459ffa9
+ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66748159"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66822083"
 ---
 # <a name="how-to-enable-tls-12"></a>Come abilitare TLS 1.2
 
@@ -26,7 +26,7 @@ Questo articolo descrive come abilitare TLS 1.2 per Configuration Manager e per 
 
 Configuration Manager si basa su molti componenti diversi per proteggere le comunicazioni. Il protocollo usato per una determinata connessione dipende dalle funzionalità di tutti i componenti necessari. Se un componente non è aggiornato, la comunicazione potrebbe usare un protocollo meno recente e quindi meno sicuro.
 
-Per la corretta abilitazione di Configuration Manager per supportare TLS 1.2, abilitare TLS 1.2 per tutti i componenti necessari. I componenti necessari dipendono dall'ambiente e dalle funzionalità di Configuration Manager in uso.
+Per la corretta abilitazione di Configuration Manager per supportare TLS 1.2, abilitare TLS 1.2 per tutti i componenti necessari. I componenti necessari variano a seconda dell'ambiente e dalle funzionalità di Configuration Manager in uso.
 
 Avviare il processo con i client, in particolare con le versioni precedenti di Windows. Prima di abilitare TLS 1.2 nei server di Configuration Manager, assicurarsi che tutti i client supportino TLS 1.2. In caso contrario, i client non riusciranno a comunicare con i server e potranno restare orfani.
 

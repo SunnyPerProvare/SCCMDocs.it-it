@@ -2,21 +2,21 @@
 title: Esercitazione:&#58; Abilitare la co-gestione per i client di Configuration Manager esistenti
 titleSuffix: Configuration Manager
 description: Configurare la co-gestione con Microsoft Intune quando si gestiscono già dispositivi Windows 10 con Configuration Manager.
-ms.date: 03/08/2019
+ms.date: 06/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: tutorial
 ms.assetid: 140c522f-d09a-40b6-a4b0-e0d14742834a
-author: brenduns
-ms.author: brenduns
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af526f531ed81de105aea9d6c5d7f2ea81e8f104
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: 8b19f54d60ed0594be4a51b5abcef69304a27ece
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "57737285"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834758"
 ---
 # <a name="tutorial-enable-co-management-for-existing-configuration-manager-clients"></a>Esercitazione: Abilitare la co-gestione per i client di Configuration Manager esistenti
 Con la co-gestione è possibile mantenere i processi consolidati per l'uso di Configuration Manager per la gestione dei PC nell'organizzazione. Allo stesso tempo, è possibile investire nel cloud usando Intune per sicurezza e provisioning moderno.  
@@ -98,14 +98,13 @@ Per configurare Azure AD Connect, sono necessarie le credenziali di amministrato
 4. Nella pagina **Panoramica** selezionare **Avanti**.
 5. Nella pagina **Connessione ad Azure AD** immettere le credenziali di un amministratore globale per il tenant di Azure AD.
 6. Nella pagina **Opzioni dispositivo** selezionare **Configura l'aggiunta ad Azure AD ibrido** e quindi **Avanti**.
-7. Nella pagina **Punto di connessione del servizio** per ogni foresta locale per la quale si vuole che Azure AD Connect configuri il punto di connessione del servizio, eseguire questa procedura e quindi selezionare **Avanti**:  
+7. Nella pagina **Sistemi operativi del dispositivo** selezionare i sistemi operativi usati dai dispositivi nell'ambiente Active Directory e quindi selezionare **Avanti**.  
+
+   È possibile selezionare l'opzione per supportare i dispositivi Windows di livello inferiore aggiunti al dominio, ma tenere presente che la co-gestione dei dispositivi è supportata solo per Windows 10.
+8. Nella pagina **Punto di connessione del servizio** per ogni foresta locale per la quale si vuole che Azure AD Connect configuri il punto di connessione del servizio, eseguire questa procedura e quindi selezionare **Avanti**:  
    1. Selezionare la foresta.  
    2. Selezionare il servizio di autenticazione.  Se si ha un dominio federato, selezionare il server AD FS, a meno che l'organizzazione non abbia esclusivamente client Windows 10 e sia stata configurata la sincronizzazione di computer/dispositivi o che l'organizzazione non usi [Seamless SSO](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso).  
    3. Fare clic su **Aggiungi** per immettere le credenziali di amministratore aziendale.  
-8. Nella pagina **Sistemi operativi del dispositivo** selezionare i sistemi operativi usati dai dispositivi nell'ambiente Active Directory e quindi selezionare **Avanti**.  
-
-   È possibile selezionare l'opzione per supportare i dispositivi Windows di livello inferiore aggiunti al dominio, ma tenere presente che la co-gestione dei dispositivi è supportata solo per Windows 10.
-
 9. Se si ha un dominio gestito, ignorare questo passaggio.  
 
    Nella pagina **Configurazione della federazione** immettere le credenziali dell'amministratore AD FS e quindi selezionare **Avanti**.
@@ -131,7 +130,7 @@ Verrà ora configurata la registrazione automatica dei dispositivi con Intune. C
 
 La registrazione automatica consente inoltre agli utenti di registrare i propri dispositivi Windows 10 in Intune. I dispositivi vengono registrati quando un utente aggiunge il proprio account aziendale nel dispositivo personale o quando un dispositivo aziendale viene aggiunto ad Azure Active Directory.  
 
-1. Accedere al [portale di Azure](https://portal.azure.com/) e selezionare **Azure Active Directory** > **Servizi Mobility (MDM e MAM)** > **Microsoft Intune**.  
+1. Accedere al [portale di Azure](https://portal.azure.com/) e selezionare **Azure Active Directory** > **Servizi Mobility (MDM e MAM)**  > **Microsoft Intune**.  
 
 2. Configurare **Ambito utente MDM**. Specificare una delle opzioni seguenti per configurare quali dispositivi degli utenti sono gestiti da Microsoft Intune e accettare le impostazioni predefinite per i valori di URL.  
 
@@ -193,7 +192,7 @@ Dopo aver completato la configurazione di Azure AD ibrido e le configurazioni de
 
 4. Nella pagina Abilitazione selezionare una delle opzioni seguenti nell'elenco a discesa *Registrazione automatica in Intune*:  
 
-   - **Pilota**  - *(scelta consigliata)* I membri della raccolta specificata vengono automaticamente registrati in Intune e possono quindi essere co-gestiti. La raccolta pilota viene specificata nella pagina *Gestione temporanea* di questa procedura guidata. Questa opzione permette di testare la co-gestione in un subset di client. È quindi possibile implementare la co-gestione in altri client usando un approccio in fasi.  
+   - **Pilota**  -  *(scelta consigliata)* I membri della raccolta specificata vengono automaticamente registrati in Intune e possono quindi essere co-gestiti. La raccolta pilota viene specificata nella pagina *Gestione temporanea* di questa procedura guidata. Questa opzione permette di testare la co-gestione in un subset di client. È quindi possibile implementare la co-gestione in altri client usando un approccio in fasi.  
 
    - **Tutti** - La co-gestione è abilitata per tutti i client.  
 

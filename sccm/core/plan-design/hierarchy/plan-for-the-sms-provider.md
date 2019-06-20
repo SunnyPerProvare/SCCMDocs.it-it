@@ -2,7 +2,7 @@
 title: Piano per il provider SMS
 titleSuffix: Configuration Manager
 description: Informazioni sul ruolo Provider SMS del sistema del sito in Configuration Manager.
-ms.date: 05/21/2019
+ms.date: 06/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31818bf0b639db4172e090a68a704380208781ca
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 0458d4b3c1b406a14f1492ed4df91933436cb9a6
+ms.sourcegitcommit: e3c1eb0b75d79c05a750d49354c851d15d5e26a3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176985"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67038608"
 ---
 # <a name="plan-for-the-sms-provider"></a>Piano per il provider SMS 
 
@@ -63,6 +63,10 @@ Per altre informazioni su come gestire il provider SMS, vedere [Gestire il provi
 
 -   Almeno 650 MB di spazio libero su disco per supportare i componenti di Windows ADK. Per altre informazioni su Windows ADK e il provider SMS, vedere [Requisiti di distribuzione del sistema operativo](#BKMK_WAIKforSMSProv).  
 
+-   Abilitare il ruolo server di Windows **Server Web (IIS)**  
+
+    > [!Note]  
+    > Ogni provider SMS tenta di installare il [servizio di amministrazione](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_admin-service) che richiede un certificato. Questo servizio ha una dipendenza in IIS per associare il certificato alla porta HTTPS 443. Se si abilita [HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http), il sito associa il certificato tramite le API IIS. Se il sito usa l'infrastruttura a chiave pubblica (PKI), è necessario associare manualmente un certificato PKI in IIS nel provider SMS.  
 
 
 ##  <a name="bkmk_location"></a> Sedi  

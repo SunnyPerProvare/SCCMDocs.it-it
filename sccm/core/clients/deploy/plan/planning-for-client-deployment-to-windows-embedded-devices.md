@@ -2,7 +2,7 @@
 title: Pianificazione della distribuzione dei client in dispositivi con Windows Embedded
 titleSuffix: Configuration Manager
 description: Pianificazione della distribuzione del client a dispositivi con Windows Embedded in System Center Configuration Manager.
-ms.date: 04/23/2017
+ms.date: 06/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ba85b6d1e545f467816b3e8dddeec04ae4192a4
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 1fd221ecb62a74e9ff3a56815fbdeacdd27ca026
+ms.sourcegitcommit: e3c1eb0b75d79c05a750d49354c851d15d5e26a3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123686"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67038339"
 ---
 # <a name="planning-for-client-deployment-to-windows-embedded-devices-in-system-center-configuration-manager"></a>Pianificazione della distribuzione del client in dispositivi con Windows Embedded in System Center Configuration Manager
 
@@ -81,6 +81,9 @@ ms.locfileid: "56123686"
 > - c:\Windows\System32\Microsoft\Protect  
 >   -   c:\ProgramData\Microsoft\Crypto  
 >   -   HKEY_LOCAL_MACHINE\Software\Microsoft\SystemCertificates\SMS\Certificates  
+
+> [!NOTE]
+> Non sono richieste altre eccezioni dal client Configuration Manager diverse da quelle documentate nella casella **Importante** riportata sopra. L'aggiunta di altre eccezioni correlate a Configuration Manager o WMI (WBEM) possono causare errori di Configuration Manager, tra cui il blocco dei dispositivi in modalità di manutenzione o i cicli di riavvio dei dispositivi. Le eccezioni non necessarie includono la directory del client Configuration Manager, la directory CCMcache, la directory CCMSetup, la directory della cache della sequenza di attività, la directory WBEM e le chiavi del Registro di sistema correlate di Configuration Manager.
 
  Per uno scenario di esempio su come distribuire e gestire dispositivi con Windows Embedded abilitati per il filtro di scrittura in Configuration Manager, vedere [Scenario di esempio per la distribuzione e gestione dei client di System Center Configuration Manager nei dispositivi con Windows Embedded](../../../../core/clients/deploy/example-scenario-for-deploying-and-managing-clients-on-windows-embedded-devices.md).  
 

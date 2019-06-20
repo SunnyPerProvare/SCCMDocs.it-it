@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4bb3cfa86275562ad46c4fdc988719a493f42bf
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 8c6a6e8a346c53d1f2bc8abdc2c2f2d0b9fafb64
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499072"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834890"
 ---
 # <a name="define-network-locations-as-boundaries-for-system-center-configuration-manager"></a>Definire percorsi di rete come limiti di System Center Configuration Manager
 
@@ -50,9 +50,10 @@ Ogni limite può essere usato da tutti i siti compresi nella gerarchia. Dopo ave
         >  È possibile specificare la **Rete** e la **Subnet Mask** per specificare automaticamente l' **ID subnet** . Quando si salva il limite, viene salvato solo il valore ID subnet.  
 
     -   Se si seleziona **Sito Active Directory**, è necessario specificare o utilizzare **Sfoglia** per selezionare un sito Active Directory nella foresta locale del server del sito.  
+        
+        - Quando si specifica un sito Active Directory per un limite, il limite include ogni subnet IP appartenente a quel sito Active Directory. Se la configurazione del sito Active Directory viene modificata in Active Directory, verranno modificati anche i percorsi di rete inclusi in questo limite.  
 
-        > [!IMPORTANT]  
-        >  Quando si specifica un sito Active Directory per un limite, il limite include ogni subnet IP appartenente a quel sito Active Directory. Se la configurazione del sito Active Directory viene modificata in Active Directory, verranno modificati anche i percorsi di rete inclusi in questo limite.  
+        - I limiti del sito Active Directory non sono validi per i client Azure AD puri. Se effettuano il roaming locale non rientreranno in alcun limite se definiti soltanto usando siti AD.
 
     -   Se si seleziona **Prefisso IPv6**, è necessario specificare un **Prefisso** nel formato del prefisso IPv6.  
 

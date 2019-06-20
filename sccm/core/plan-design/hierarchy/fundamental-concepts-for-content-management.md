@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ffed5e06cca06c5976ac81eecfaca53032bdbc2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: abb8e846598a9ae0d69eb1b134911ec83006b966
+ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140079"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834894"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Concetti di base per la gestione dei contenuti in Configuration Manager
 
@@ -39,7 +39,7 @@ Usato dai client per connettersi a un punto di distribuzione e accedere al conte
 
 Questo account viene usato anche dai punti di distribuzione pull per scaricare contenuto da un punto di distribuzione di origine in una foresta remota.  
 
-A partire dalla versione 1806, in alcuni scenari non è più necessario un account di accesso alla rete. È possibile abilitare il sito affinché usi HTTP migliorato con l'autenticazione di Azure Active Directory.<!--1358228--> 
+A partire dalla versione 1806, in alcuni scenari non è più necessario un account di accesso alla rete. È possibile abilitare il sito per l'uso di HTTP migliorato con l'autenticazione di Azure Active Directory.<!--1358228--> 
 
 Per altre informazioni, vedere [Account di accesso alla rete](/sccm/core/plan-design/hierarchy/accounts#network-access-account).
 
@@ -88,14 +88,16 @@ Per altre informazioni, vedere [Supporto per Windows BranchCache](/sccm/core/pla
 
 
 ## <a name="delivery-optimization"></a>Ottimizzazione recapito
-<!-- 1324696 --> I gruppi di limiti di Configuration Manager consentono di definire e regolamentare la distribuzione del contenuto nella rete aziendale e negli uffici remoti. [Ottimizzazione recapito di Windows](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) è una tecnologia peer-to-peer basata sul cloud per la condivisione di contenuti tra dispositivi Windows 10. A partire dalla versione 1802, è possibile configurare Ottimizzazione recapito in modo che usi i gruppi di limiti per la condivisione di contenuti tra peer. Le impostazioni del client applicano l'identificatore del gruppo di limiti come identificatore di gruppo di Ottimizzazione recapito sul client. Quando il client comunica con il servizio cloud Ottimizzazione recapito, usa questo identificatore per individuare i peer con il contenuto desiderato. Per altre informazioni, vedere impostazioni client per [ottimizzazione recapito](/sccm/core/clients/deploy/about-client-settings#delivery-optimization).
+<!-- 1324696 -->
+I gruppi di limiti di Configuration Manager consentono di definire e regolamentare la distribuzione del contenuto nella rete aziendale e negli uffici remoti. [Ottimizzazione recapito di Windows](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) è una tecnologia peer-to-peer basata sul cloud per la condivisione di contenuti tra dispositivi Windows 10. A partire dalla versione 1802, è possibile configurare Ottimizzazione recapito in modo che usi i gruppi di limiti per la condivisione di contenuti tra peer. Le impostazioni del client applicano l'identificatore del gruppo di limiti come identificatore di gruppo di Ottimizzazione recapito sul client. Quando il client comunica con il servizio cloud Ottimizzazione recapito, usa questo identificatore per individuare i peer con il contenuto desiderato. Per altre informazioni, vedere impostazioni client per [ottimizzazione recapito](/sccm/core/clients/deploy/about-client-settings#delivery-optimization).
 
 Ottimizzazione recapito è la tecnologia consigliata per [ottimizzare il recapito degli aggiornamenti di Windows 10](/sccm/sum/deploy-use/optimize-windows-10-update-delivery) dei file di installazione rapida per gli aggiornamenti qualitativi di Windows 10.
 
 
 
 ## <a name="windows-ledbat"></a>Windows LEDBAT
-<!--1358112--> Windows LEDBAT (Low Extra Delay Background Transport) è una funzionalità di controllo della congestione della rete di Windows Server che consente di gestire i trasferimenti di rete in background. Per i punti di distribuzione in esecuzione in versioni supportate di Windows Server, abilitare un'opzione che consente di regolare il traffico di rete. In questo modo i client usano la larghezza di banda di rete solo quando è disponibile. 
+<!--1358112-->
+Windows LEDBAT (Low Extra Delay Background Transport) è una funzionalità di controllo della congestione della rete di Windows Server che consente di gestire i trasferimenti di rete in background. Per i punti di distribuzione in esecuzione in versioni supportate di Windows Server, abilitare un'opzione che consente di regolare il traffico di rete. In questo modo i client usano la larghezza di banda di rete solo quando è disponibile. 
 
 Per altre informazioni di carattere generale su Windows LEDBAT, vedere il post di blog [New transport advancements](https://blogs.technet.microsoft.com/networking/2016/07/18/announcing-new-transport-advancements-in-the-anniversary-update-for-windows-10-and-windows-server-2016/) (Nuovi miglioramenti per il trasporto).
 
@@ -108,7 +110,7 @@ La peer cache client consente di gestire la distribuzione di contenuti ai client
 
 Distribuire prima di tutto in una raccolta le impostazioni client che abilitano la peer cache. I membri di tale raccolta possono fungere da origine del contenuto peer per altri client all'interno dello stesso gruppo di limiti.
 
-A partire dalla versione 1806, le origini delle peer cache dei client sono in grado di dividere il contenuto in parti, grazie alle quali è possibile ridurre al minimo il trasferimento in rete, riducendo l'utilizzo della rete WAN. Il punto di gestione consente una traccia più dettagliata delle parti del contenuto e prova a eliminare più download dello stesso contenuto per ogni gruppo di limiti.<!--1357346-->
+A partire dalla versione 1806, le origini delle peer cache dei client sono in grado di dividere il contenuto in parti, grazie alle quali è possibile ridurre al minimo il trasferimento in rete, riducendo l'utilizzo della rete WAN. Il punto di gestione consente una traccia più dettagliata delle parti del contenuto e tenta di eliminare più download dello stesso contenuto per ogni gruppo di limiti.<!--1357346-->
 
 Per altre informazioni, vedere [Peer cache per i client di Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache).
 
@@ -134,13 +136,15 @@ Per altre informazioni, vedere [Peer cache di Windows PE](/sccm/osd/get-started/
 
     -   richiede che i punti di distribuzione con connessione Internet accettino HTTPS.  
 
-    -   Può usare un punto di distribuzione cloud.  
+    -   Può usare un punto di distribuzione cloud o Cloud Management Gateway (CMG).  
+    
+        *   A partire dalla versione 1806, un CMG può anche trasferire contenuti ai client. Questa funzionalità riduce i certificati necessari e i costi delle macchine virtuali di Azure. Per altre informazioni, vedere [Modify a CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway) (Modificare un gateway di gestione cloud).
 
 -   **Gruppo di lavoro**:  
 
     -   I punti di distribuzione devono accettare HTTPS.  
 
-    -   Può usare un punto di distribuzione cloud.  
+    -   Può usare un punto di distribuzione cloud o Cloud Management Gateway.  
 
 
 
