@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04963f6c565a9cb83655416dd706d5dd9055a29b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 3279ba7cd78ca6fc10ddb8662ac816679d01d7cf
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499908"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194693"
 ---
 # <a name="enable-third-party-updates"></a>Abilitare gli aggiornamenti di terze parti 
 
@@ -90,7 +90,7 @@ Se è necessario configurare manualmente il certificato, ad esempio per usare un
 
 
 ## <a name="enable-third-party-updates-on-the-clients"></a>Abilitare gli aggiornamenti di terze parti nei client
-Abilitare gli aggiornamenti di terze parti sui client nelle impostazioni client. L'impostazione configura i criteri dell'agente di Windows Update per [Consenti aggiornamenti firmati da un percorso del servizio di aggiornamento Microsoft nella rete Intranet](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates#BKMK_comp3). Questa impostazione client installa anche il certificato di firma WSUS nell'archivio di autori attendibili nel client. La registrazione della gestione del certificato è visibile in `updatesdeployment.log` sui client.  Eseguire questi passaggi per ogni impostazione client personalizzata da usare per gli aggiornamenti di terze parti. Per altre informazioni, vedere l'articolo [Informazioni sulle impostazioni client](/sccm/core/clients/deploy/about-client-settings#Enable-third-party-software-updates).
+Abilitare gli aggiornamenti di terze parti sui client nelle impostazioni client. L'impostazione configura i criteri dell'agente di Windows Update per [Consenti aggiornamenti firmati da un percorso del servizio di aggiornamento Microsoft nella rete Intranet](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates#allow-signed-updates-from-an-intranet-microsoft-update-service-location). Questa impostazione client installa anche il certificato di firma WSUS nell'archivio di autori attendibili nel client. La registrazione della gestione del certificato è visibile in `updatesdeployment.log` sui client.  Eseguire questi passaggi per ogni impostazione client personalizzata da usare per gli aggiornamenti di terze parti. Per altre informazioni, vedere l'articolo [Informazioni sulle impostazioni client](/sccm/core/clients/deploy/about-client-settings#enable-third-party-software-updates).
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione** e selezionare il nodo **Impostazioni client**.
 2. Selezionare un'impostazione client personalizzata esistente o crearne una nuova. 

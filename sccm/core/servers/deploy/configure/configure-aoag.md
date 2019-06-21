@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1e01d423df30e36bcf5e7613aee22962077787b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 2e0ad2568c250cbaab0f52f76b98750153aa0b05
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499274"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252352"
 ---
 # <a name="configure-sql-server-always-on-availability-groups-for-configuration-manager"></a>Configurare gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -122,7 +122,7 @@ Per questa procedura usare le informazioni contenute in [Rimuovere una replica s
 A partire da Configuration Manager versione 1706, è possibile aggiungere una replica asincrona a un gruppo di disponibilità usato con Configuration Manager. A questo scopo, non è necessario eseguire gli script di configurazione richiesti per configurare una replica sincrona perché non viene offerto supporto per l'uso di tale replica asincrona come database del sito. Per altre informazioni sull'aggiunta di repliche secondarie ai gruppi di disponibilità, vedere la [documentazione di SQL Server](https://msdn.microsoft.com/library/hh213247(v=sql.120).aspx(d=robot)).
 
 ## <a name="use-the-asynchronous-replica-to-recover-your-site"></a>Usare la replica asincrona per il ripristino del sito
-Con Configuration Manager versione 1706 e successive, è possibile usare una replica asincrona per recuperare il database del sito. A questo scopo, è necessario arrestare il sito primario attivo per impedire operazioni di scrittura aggiuntive nel database del sito. Dopo aver arrestato il sito, è possibile usare una replica asincrona al posto di un [database ripristinato manualmente](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption).
+Con Configuration Manager versione 1706 e successive, è possibile usare una replica asincrona per recuperare il database del sito. A questo scopo, è necessario arrestare il sito primario attivo per impedire operazioni di scrittura aggiuntive nel database del sito. Dopo aver arrestato il sito, è possibile usare una replica asincrona al posto di un [database ripristinato manualmente](/sccm/core/servers/manage/recover-sites#use-a-site-database-that-has-been-manually-recovered).
 
 Per arrestare il sito, è possibile usare lo[Strumento di manutenzione gerarchia](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe) per interrompere i servizi principali nel server del sito. Usare la riga di comando: **Preinst.exe /stopsite**   
 

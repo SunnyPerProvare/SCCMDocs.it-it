@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 488fa5251711c8d9c7702e2b240a6f10602d447f
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: f3e759ef44170c460118d3629d8a7b9648ed8528
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499291"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67251642"
 ---
 # <a name="use-a-pull-distribution-point-with-configuration-manager"></a>Usare un punto di distribuzione pull con Configuration Manager
 
@@ -42,7 +42,7 @@ I punti di distribuzione pull supportano le stesse configurazioni e funzionalit�
 > [!IMPORTANT]  
 > Anche se un punto di distribuzione pull supporta le comunicazioni su HTTP e HTTPS, quando si usa la console di Configuration Manager è possibile specificare solo punti di distribuzione di origine configurati per HTTP. È possibile usare Configuration Manager SDK per specificare un punto di distribuzione di origine configurato per HTTPS.  
 
-Configurare un punto di distribuzione pull quando si installa il punto di distribuzione. Dopo aver creato un punto di distribuzione, configurarlo come punto di distribuzione pull modificando le proprietà del ruolo. Per altre informazioni su come abilitare un punto di distribuzione come punto di distribuzione pull, vedere [Punto di distribuzione pull](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#pull-distribution-point).  
+Configurare un punto di distribuzione pull quando si installa il punto di distribuzione. Dopo aver creato un punto di distribuzione, configurarlo come punto di distribuzione pull modificando le proprietà del ruolo. Per altre informazioni su come abilitare un punto di distribuzione come punto di distribuzione pull, vedere [Punto di distribuzione pull](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_config-pull).  
 
 Rimuovere la configurazione come punto di distribuzione pull modificando le proprietà del punto di distribuzione. Quando si rimuove la configurazione come punto di distribuzione pull, viene ripristinato il normale funzionamento. I futuri trasferimenti di contenuto al punto di distribuzione verranno gestiti dal server del sito.  
 
@@ -74,13 +74,13 @@ Quando si usa un punto di distribuzione pull, esaminare e configurare le imposta
 
     -   **Numero di tentativi**: numero di tentativi effettuati da Package Transfer Manager per notificare al punto di distribuzione pull di scaricare il contenuto. Dopo il numero di tentativi specificato, Package Transfer Manager annulla il trasferimento. Il valore predefinito è 30.  
 
-    -   **Ritardo prima di riprovare (minuti)**: numero di minuti di attesa da parte di Package Transfer Manager tra un tentativo e il successivo. Il valore predefinito è 20.  
+    -   **Ritardo prima di riprovare (minuti)** : numero di minuti di attesa da parte di Package Transfer Manager tra un tentativo e il successivo. Il valore predefinito è 20.  
 
 5.  Nel gruppo **Impostazioni del polling di stato** esaminare i valori seguenti.  
 
     -   **Numero di polling**: numero di volte per il quale Package Transfer Manager contatta il punto di distribuzione pull per recuperare lo stato del processo. Se esegue questo numero di tentativi prima che il processo sia completato, Package Transfer Manager annulla il trasferimento. Il valore predefinito è 72.   
 
-    -   **Ritardo prima di riprovare (minuti)**: numero di minuti di attesa da parte di Package Transfer Manager tra un tentativo e il successivo. Il valore predefinito è 60.   
+    -   **Ritardo prima di riprovare (minuti)** : numero di minuti di attesa da parte di Package Transfer Manager tra un tentativo e il successivo. Il valore predefinito è 60.   
     
     > [!NOTE]  
     >  Quando Package Transfer Manager annulla un processo perché viene superato il numero di tentativi di polling, il punto di distribuzione pull continua a scaricare il contenuto. Al termine, il punto di distribuzione pull invia il messaggio di stato appropriato e il nuovo stato viene riportato nella console.  

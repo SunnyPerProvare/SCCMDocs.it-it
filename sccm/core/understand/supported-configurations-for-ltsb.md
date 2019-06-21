@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e185244bda88c317e0157618f066056a817a1a82
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: ac26a9b161f869ec3f6410f9f6fb9e5edbc9f8f8
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56141892"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194018"
 ---
 # <a name="supported-configurations-for-the-long-term-servicing-branch-of-system-center-configuration-manager"></a>Configurazioni supportate per Long-Term Servicing Branch di System Center Configuration Manager
 
@@ -163,13 +163,13 @@ Il supporto per i sistemi operativi Linux e UNIX è limitato a quelli elencati i
 
 **Requisiti e limitazioni:**  
 
--   Per informazioni dettagliate sulle dipendenze del file del sistema operativo per il client per Linux e UNIX, vedere [Prerequisites for Client Deployment to Linux and UNIX Servers](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers#bkmk_clientdeployprereqforlnu) (Prerequisiti per la distribuzione client a server Linux e UNIX).  
+-   Per informazioni dettagliate sulle dipendenze del file del sistema operativo per il client per Linux e UNIX, vedere [Prerequisites for Client Deployment to Linux and UNIX Servers](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers#BKMK_ClientDeployPrereqforLnU) (Prerequisiti per la distribuzione client a server Linux e UNIX).  
 -   Per una panoramica delle funzionalità di gestione supportate per i computer che eseguono Linux o UNIX, vedere [How to deploy clients to UNIX and Linux servers in System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-unix-and-linux-servers) (Come distribuire i client a server UNIX e Linux in System Center Configuration Manager).  
 -   Per le versioni supportate di Linux e UNIX, la versione indicata include tutte le versioni secondarie successive. Ad esempio, se la tabella indica il supporto per CentOS versione 6, questo supporto include anche tutte le versioni secondarie successive di CentOS 6, come CentOS 6.3. Analogamente, se la tabella indica il supporto per un sistema operativo che usa Service Pack, ad esempio SUSE Linux Enterprise Server 11 SP1, il supporto include i Service Pack successivi per questo sistema operativo.
 -   Per informazioni sui pacchetti di installazione client e su Universal Agent, vedere [How to deploy clients to UNIX and Linux servers in System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-unix-and-linux-servers) (Come distribuire i client a server UNIX e Linux in System Center Configuration Manager).
 
 
-**Versioni supportate:**   
+**Versioni supportate:**    
 Le versioni seguenti sono supportate tramite l'uso del file TAR indicato.  
 ### <a name="aix"></a>AIX  
 

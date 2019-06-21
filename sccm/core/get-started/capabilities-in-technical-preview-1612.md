@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a41f144909ba946d3c3bc2f00a1573cad2c9b850
-ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
+ms.openlocfilehash: c15b387ec9f2048a923eb220b6c8e3e1fdccded8
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65933335"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286304"
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1612 per System Center Configuration Manager
 
@@ -93,11 +93,11 @@ Pagina **Generale**: sono necessarie le informazioni generali seguenti:
 
 Pagina **Impostazioni di sincronizzazione**:   
 - **Impostazioni per i dati:**
-  - **Replication groups to synchronize** (Gruppi di replica da sincronizzare): selezionare i gruppi di dati da sincronizzare. Per informazioni sui diversi tipi di gruppi di dati, vedere [Replica di database](/sccm/core/servers/manage/data-transfers-between-sites#a-namebkmkdbrepa-database-replication) e **Viste distribuite** in [Trasferimenti di dati tra siti](/sccm/core/servers/manage/data-transfers-between-sites).
+  - **Replication groups to synchronize** (Gruppi di replica da sincronizzare): selezionare i gruppi di dati da sincronizzare. Per informazioni sui diversi tipi di gruppi di dati, vedere [Replica di database](/sccm/core/servers/manage/data-transfers-between-sites#bkmk_dbrep) e **Viste distribuite** in [Trasferimenti di dati tra siti](/sccm/core/servers/manage/data-transfers-between-sites).
   - **Tables included to synchronize** (Tabelle incluse da sincronizzare): specificare il nome di ogni tabella aggiuntiva da sincronizzare. Separare più tabelle tramite la virgola. Queste tabelle verranno sincronizzate dal database del sito in aggiunta ai gruppi di replica selezionati.
   - **Tables excluded to synchronize** (Tabelle escluse da sincronizzare): specificare il nome di tabelle singole da escludere dai gruppi di replica da sincronizzare. Le tabelle specificate verranno escluse. Separare più tabelle tramite la virgola.
 - **Impostazioni di sincronizzazione:**
-  - **Intervallo di sincronizzazione (minuti)**: specificare un valore in minuti. Quando l'intervallo termina, viene avviata una nuova sincronizzazione. Supporta un intervallo compreso tra 60 e 1440 minuti (24 ore).
+  - **Intervallo di sincronizzazione (minuti)** : specificare un valore in minuti. Quando l'intervallo termina, viene avviata una nuova sincronizzazione. Supporta un intervallo compreso tra 60 e 1440 minuti (24 ore).
   - **Pianificazione**: specificare i giorni in cui si vuole eseguire la sincronizzazione.
 
 **Accesso al punto di reporting**:   
@@ -310,7 +310,7 @@ Esistono diversi requisiti per abilitare la creazione di criteri utente nel gate
 
 - Il processo di onboarding di Azure AD deve essere completato e il client deve essere inizialmente connesso alla rete aziendale per ottenere le informazioni di connessione.
 - I client devono appartenere a un dominio (registrato in Active Directory) e a un dominio appartenente al cloud (registrato in Azure AD).
-- È necessario eseguire l'[individuazione utente Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#active-directory-user-discovery#active-directory-user-discovery).
+- È necessario eseguire l'[individuazione utente Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser).
 - È necessario modificare il client di Configuration Manager per consentire le richieste di criteri utente via Internet e distribuire la modifica al client. Poiché questa modifica al client avviene *nel dispositivo client*, può essere distribuita tramite il gateway di gestione cloud anche se non sono state ancora completate le modifiche di configurazione necessarie per i criteri utente.
 - Per proteggere il token nella rete, il punto di gestione deve essere configurato per l'uso del protocollo HTTPS. Nel punto di gestione deve anche essere installato .Net 4.5.
 

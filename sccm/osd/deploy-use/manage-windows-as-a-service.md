@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2380c1a543f223c4e9cdf905c8b3782c91f6387b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 5cf48e73e2d273fcff6b6b99cf0eaa06cababa16
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65494807"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159492"
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gestire Windows come servizio con System Center Configuration Manager
 
@@ -136,7 +136,7 @@ ms.locfileid: "65494807"
 
    -   **Specificare lo stato di conformità di Windows a cui applicare questo piano di manutenzione**: selezionare una delle opzioni riportate di seguito.  
 
-       -   **Canale semestrale (mirato)**: in questo modello di manutenzione, gli aggiornamenti delle funzionalità sono disponibili non appena vengono rilasciati da Microsoft.
+       -   **Canale semestrale (mirato)** : in questo modello di manutenzione, gli aggiornamenti delle funzionalità sono disponibili non appena vengono rilasciati da Microsoft.
 
        -   **Canale semestrale**: questo canale di manutenzione viene in genere usato per distribuzioni di grandi dimensioni. I client Windows 10 nel canale semestrale ricevono la stessa build di Windows 10 dei dispositivi nel canale mirato, ma in un momento successivo.
 
@@ -288,4 +288,4 @@ Per modificare le proprietà di un piano di manutenzione, seguire la procedura r
     >  È possibile riesaminare gli avvisi recenti sugli aggiornamenti software dal nodo **Aggiornamenti software** nell'area di lavoro **Raccolta software** .  
 
 **Per altre informazioni:** <br/>
-[Nozioni di base su Configuration Manager come servizio e Windows distribuito come servizio](/sccm/core/understand/configuration-manager-and-windows-as-service.md)
+[Nozioni di base su Configuration Manager come servizio e Windows distribuito come servizio](/sccm/core/understand/configuration-manager-and-windows-as-service)

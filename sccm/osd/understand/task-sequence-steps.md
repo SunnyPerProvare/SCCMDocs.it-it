@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6229c0fe0702eac61b482c31195fd35fe3c5792f
-ms.sourcegitcommit: c43996b3cf083d919ff1ccc3d510af664aec4ed4
-ms.translationtype: HT
+ms.openlocfilehash: 2d510ab884e471a6fc4803826c9c19e21b614273
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67046990"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67285604"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
@@ -171,7 +171,7 @@ Selezionare questa opzione per aggiungere il computer di destinazione al dominio
 
 #### <a name="account"></a>Account
 
-Selezionare **Imposta** per specificare un account con le autorizzazioni necessarie per l'aggiunta del computer al dominio. Nella finestra di dialogo **Account utente di Windows** immettere il nome utente nel formato seguente: `Domain\User`. Per altre informazioni, vedere [Account di aggiunta dominio](/sccm/core/plan-design/hierarchy/accounts#task-sequence-editor-domain-joining-account).
+Selezionare **Imposta** per specificare un account con le autorizzazioni necessarie per l'aggiunta del computer al dominio. Nella finestra di dialogo **Account utente di Windows** immettere il nome utente nel formato seguente: `Domain\User`. Per altre informazioni, vedere [Account di aggiunta dominio](/sccm/core/plan-design/hierarchy/accounts#task-sequence-domain-join-account).
 
 #### <a name="adapter-settings"></a>Impostazioni della scheda
 
@@ -462,7 +462,7 @@ Configuration Manager acquisisce ogni volume (unità) nel computer di riferiment
 
 Il sistema operativo installato nel computer di riferimento deve essere una versione di Windows supportata da Configuration Manager. Usare lo strumento SysPrep per preparare il sistema operativo nel computer di riferimento. Il volume del sistema operativo installato deve essere uguale al volume di avvio.  
 
-Specificare un account con autorizzazioni di scrittura per la condivisione di rete selezionata. Per altre informazioni sull'account per l'acquisizione dell'immagine del sistema operativo, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#capture-operating-system-image-account).
+Specificare un account con autorizzazioni di scrittura per la condivisione di rete selezionata. Per altre informazioni sull'account per l'acquisizione dell'immagine del sistema operativo, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#capture-os-image-account).
 
 Questo passaggio della sequenza di attività può essere eseguito solo in Windows PE. Non viene eseguito nel sistema operativo completo.
 
@@ -575,7 +575,7 @@ Abilitare questa opzione per specificare una delle impostazioni seguenti:
 
     Per altre informazioni sulla migrazione di dati tramite i collegamenti reali, vedere [Archivio delle migrazioni con collegamento reale](https://docs.microsoft.com/windows/deployment/usmt/usmt-hard-link-migration-store).  
 
-- **Acquisisci in modalità non in linea (solo Windows PE)**: abilitare questa impostazione per acquisire lo stato utente in Windows PE invece che nel sistema operativo completo.  
+- **Acquisisci in modalità non in linea (solo Windows PE)** : abilitare questa impostazione per acquisire lo stato utente in Windows PE invece che nel sistema operativo completo.  
 
 #### <a name="capture-by-using-volume-copy-shadow-services-vss"></a>Acquisisci usando Servizio Copia Shadow del volume (VSS)
 
@@ -680,7 +680,7 @@ Selezionare la lettera dell'unità locale da assegnare per questa connessione.
 
 #### <a name="account"></a>Account
 
-Selezionare **Imposta** per specificare l'account utente con le autorizzazioni per la connessione a questa cartella di rete. Per altre informazioni sull'account di connessione per la cartella di rete della sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-editor-network-folder-connection-account).
+Selezionare **Imposta** per specificare l'account utente con le autorizzazioni per la connessione a questa cartella di rete. Per altre informazioni sull'account di connessione per la cartella di rete della sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-network-folder-connection-account).
 
 
 
@@ -731,6 +731,9 @@ Questo passaggio funziona bene in una sequenza di attività per eseguire l'aggio
 > Quando si distribuisce una sequenza di attività che contiene questo passaggio, non selezionare **Scaricare tutto il contenuto localmente prima di avviare la sequenza di attività** o **Accedi al contenuto direttamente dl punto di distribuzione** per **Opzioni di distribuzione** nella pagina **Punti di distribuzione** della Distribuzione guidata del software.  
 
 Questo passaggio viene eseguito nel sistema operativo completo o in Windows PE. L'opzione relativa al salvataggio del pacchetto nella cache del client di Configuration Manager non è supportata in Windows PE.
+
+> [!NOTE]  
+> Il **scarica contenuto pacchetto** attività non è supportato per l'uso con i supporti autonomi. Per altre informazioni, vedere [non è supportato per i supporti autonomi azioni](/sccm/osd/deploy-use/create-stand-alone-media#unsupported-actions-for-stand-alone-media).  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Software** e quindi selezionare **Scarica contenuto pacchetto**.
 
@@ -866,7 +869,7 @@ Numero del disco fisico da formattare. Il numero è basato sull'ordinamento di e
 
 Il tipo del disco da formattare. Nell'elenco a discesa è possibile selezionare le due opzioni seguenti:
 
-- **Standard (MBR)**: record di avvio principale  
+- **Standard (MBR)** : record di avvio principale  
 - **GPT**: tabella delle partizioni GUID  
 
 > [!NOTE]  
@@ -1158,7 +1161,7 @@ Facoltativamente, immettere o selezionare un'unità organizzativa nel dominio sp
 
 #### <a name="enter-the-account-which-has-permission-to-join-the-domain"></a>Immettere l'account con le autorizzazioni per l'aggiunta al dominio
 
-Selezionare **Imposta** per immettere il nome utente e la password di un account con autorizzazioni per l'aggiunta al dominio. Immettere l'account nel formato: `Domain\account`. Per altre informazioni sull'account di aggiunta del dominio della sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-editor-domain-joining-account).  
+Selezionare **Imposta** per immettere il nome utente e la password di un account con autorizzazioni per l'aggiunta al dominio. Immettere l'account nel formato: `Domain\account`. Per altre informazioni sull'account di aggiunta del dominio della sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-domain-join-account).  
 
 
 
@@ -1566,7 +1569,7 @@ L'esempio seguente include parametri validi:
 
 `-MyParameter1 MyValue1 -MyParameter2 MyValue2`  
 
-L'esempio seguente include parametri non validi: I primi due elementi sono parametri della riga di comando di Windows PowerShell (**-NoLogo** e **-ExecutionPolicy Unrestricted**). Lo script non utilizza questi parametri.  
+L'esempio seguente include parametri non validi: I primi due elementi sono parametri della riga di comando di Windows PowerShell ( **-NoLogo** e **-ExecutionPolicy Unrestricted**). Lo script non utilizza questi parametri.  
 
 `-NoLogo -ExecutionPolicy Unrestricted -File MyScript.ps1 -MyParameter1 MyValue1 -MyParameter2 MyValue2`
 

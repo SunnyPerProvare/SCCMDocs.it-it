@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f14d245ef6bed5749ace29adae6e20d18574905
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: f524096334d50a3a01ebf79436c32fdf732ca088
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65497452"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252050"
 ---
 # <a name="support-for-configuration-manager-current-branch-versions"></a>Supporto per le versioni Current Branch di Configuration Manager
 
@@ -26,7 +26,7 @@ Microsoft prevede di rilasciare diversi aggiornamenti per le versioni Current Br
 
 - Fase di manutenzione **Aggiornamenti di sicurezza e critici**: quando si esegue la versione Current Branch più recente di Configuration Manager si ricevono sia gli aggiornamenti critici che gli aggiornamenti di sicurezza.  
 
-- Fase di manutenzione **Aggiornamenti della sicurezza (solo)**: quando viene resa disponibile una nuova versione Current Branch, Microsoft supporta solo gli aggiornamenti della sicurezza per le versioni precedenti per il ciclo di vita di supporto rimanente per tali versioni (mostrato nella figura 1).  
+- Fase di manutenzione **Aggiornamenti della sicurezza (solo)** : quando viene resa disponibile una nuova versione Current Branch, Microsoft supporta solo gli aggiornamenti della sicurezza per le versioni precedenti per il ciclo di vita di supporto rimanente per tali versioni (mostrato nella figura 1).  
 
 ([Grafico a schermo intero](media/CM_Servicing_support_timeline1.png))
 
@@ -43,4 +43,4 @@ Figura 1. Esempio di sovrapposizione del ciclo di rilascio per il supporto della
 
 Per un elenco di versioni Current Branch, vedere [Dettagli sulla versione](/sccm/core/servers/manage/updates#version-details).
 
-Per altre informazioni sui numeri di versione e sulla disponibilità come aggiornamento nella console o versione di base, vedere [Versioni di base e di aggiornamento](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions).
+Per altre informazioni sui numeri di versione e sulla disponibilità come aggiornamento nella console o versione di base, vedere [Versioni di base e di aggiornamento](/sccm/core/servers/manage/updates#bkmk_Baselines).

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aff3393dca29d558c62c0a508b8cbf6c98f9fbfa
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 243e38273488f72e3e5e693270b10d6865c3a422
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501228"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252250"
 ---
 # <a name="back-up-a-configuration-manager-site"></a>Eseguire il backup di un sito di Configuration Manager
 
@@ -60,7 +60,7 @@ Dopo il ripristino del database del sito, seguire i passaggi della procedura di 
 -   Esegue il backup di cartelle e file specifici
 -   Esegue il backup della cartella [CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder)   
 
-Pianificare l'esecuzione dell'attività di backup del sito predefinita almeno ogni cinque giorni. Il motivo è che Configuration Manager usa un *periodo di conservazione del rilevamento modifiche di SQL Server* di 5 giorni. Per altre informazioni, vedere [Periodo di conservazione del rilevamento modifiche di SQL Server](/sccm/protect/understand/recover-sites#bkmk_SQLretention).
+Pianificare l'esecuzione dell'attività di backup del sito predefinita almeno ogni cinque giorni. Il motivo è che Configuration Manager usa un *periodo di conservazione del rilevamento modifiche di SQL Server* di 5 giorni. Per altre informazioni, vedere [Periodo di conservazione del rilevamento modifiche di SQL Server](/sccm/core/servers/manage/recover-sites#sql-server-change-tracking-retention-period).
 
 Per semplificare il processo di backup, è possibile creare un file **AfterBackup.bat**. Questo script esegue automaticamente le azioni post-backup dopo che l'attività di backup è stata completata correttamente. Il file AfterBackup.bat viene usato di solito per archiviare lo snapshot di backup in un percorso sicuro. È possibile anche usare il file AfterBackup.bat per copiare i file nella cartella di backup e avviare altre attività di backup.  
 

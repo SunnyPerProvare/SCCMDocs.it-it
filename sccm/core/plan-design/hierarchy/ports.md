@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a513eb15f9a8c841aa5896ee5d416bd7863d0cb9
-ms.sourcegitcommit: ab9f2a7fb7ea3a0c65808fce2975ab25a670281f
+ms.openlocfilehash: 9d697427fe9cfa774cc7baca6563d6c1cc285c8b
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65612787"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159390"
 ---
 # <a name="ports-used-in-configuration-manager"></a>Porte usate in Configuration Manager
 
@@ -130,7 +130,7 @@ Oltre alle porte elencate in questa tabella, il proxy di riattivazione usa anche
 |Trasmissione della peer cache di Windows PE|8004|--|  
 |Download della peer cache di Windows PE|--|8003|  
 
-Per altre informazioni, vedere [Peer cache di Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md#-requirements-for-a-client-to-use-a--windows-pe-peer-cache-source).
+Per altre informazioni, vedere [Peer cache di Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic#BKMK_PeerCacheRequirements).
 
 
 ###  <a name="BKMK_PortsClient-PolicyModule"></a> Client -- > Modulo criteri del servizio Registrazione dispositivi di rete (SCEP) di Configuration Manager   

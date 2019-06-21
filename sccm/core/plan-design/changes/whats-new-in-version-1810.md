@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c2be7c446d8ce522d587f970d1fd432f648ab3f
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: fb7206020ff0a31cbf853ac1513e806c5bc05165
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499632"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67251945"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Novità della versione 1810 di Configuration Manager (Current Branch)
 
@@ -76,7 +76,7 @@ Quando si installa la versione 1810 o si esegue l'aggiornamento a questa version
 
 - **Pulizia rilevamento modifiche di SQL**: un nuovo controllo se il database del sito ha un backlog di dati di rilevamento modifiche di SQL. Per altre informazioni, inclusa una procedura per verificare e cancellare il backlog, vedere [SQL change tracking cleanup](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#bkmk_changetracking) (Pulizia rilevamento modifiche di SQL). <!--SCCMDocs-pr issue 3023-->  
 
-- **Versione di SQL Native Client**: questo controllo prerequisiti è aggiornato per le versioni di SQL Native Client che supportano TLS 1.2. La versione minima è [SQL 2012 SP4](https://www.microsoft.com/download/details.aspx?id=50402). Per altre informazioni, vedere [Versione di SQL Native Client](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-native-client). <!--SCCMDocs-pr issue 3094-->  
+- **Versione di SQL Native Client**: questo controllo prerequisiti è aggiornato per le versioni di SQL Native Client che supportano TLS 1.2. La versione minima è [SQL 2012 SP4](https://www.microsoft.com/download/details.aspx?id=50402). Per altre informazioni, vedere [Versione di SQL Native Client](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-server-native-client). <!--SCCMDocs-pr issue 3094-->  
 
 - **Sistema del sito nel nodo del cluster Windows**: Il processo di installazione di Configuration Manager non blocca più l'installazione del ruolo del server del sito in un computer con il ruolo Windows per il clustering di failover. Poiché SQL Always On richiede questo ruolo, non era possibile in precedenza inserire il database del sito nel server del sito. Con questa modifica, è possibile creare un sito a disponibilità elevata con un minor numero di server usando SQL Always On e un server del sito in modalità passiva. Per altre informazioni, vedere [Cluster di failover Windows](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#windows-failover-cluster). <!--1359132-->  
 
@@ -453,7 +453,7 @@ Prima di installare questa versione, vedere [Installazione degli aggiornamenti p
 > Sono disponibili altre informazioni su:
 >
 > - [Installing new sites](/sccm/core/servers/deploy/install/installing-sites) (Installare nuovi siti)  
-> - [Baseline and update versions](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions) (Versioni di base e di aggiornamento)  
+> - [Baseline and update versions](/sccm/core/servers/manage/updates#bkmk_Baselines) (Versioni di base e di aggiornamento)  
 
 Per problemi noti e importanti, vedere [Note sulla versione](/sccm/core/servers/deploy/install/release-notes).
 

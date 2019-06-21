@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b099a645-6434-498f-a408-1d438e394396
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a8961e86ff5184463dd156e2394150968046fb8
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.openlocfilehash: 618dd44a32e624a67f03bb18ea01169dd80daeb7
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58523793"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194675"
 ---
 # <a name="install-and-configure-a-software-update-point"></a>installare e configurare un punto di aggiornamento software  
 
@@ -147,7 +147,7 @@ ms.locfileid: "58523793"
 >  La pagina **Lingue** della procedura guidata è disponibile solo quando si installa il punto di aggiornamento software nel sito di amministrazione centrale. È possibile configurare le lingue del File di aggiornamento software nei siti figlio dalla scheda **Lingue** in Proprietà del componente del punto di aggiornamento software.  
 
 ## <a name="third-party-updates"></a>Aggiornamenti di terze parti
-A partire da Configuration Manager versione 1802, è possibile abilitare gli aggiornamenti di terze parti per i client di Configuration Manager. Quando si abilitano gli aggiornamenti software di terze parti nelle proprietà del componente del punto di aggiornamento software, quest'ultimo scaricherà il certificato di firma usato da WSUS per gli aggiornamenti di terze parti. Questa opzione non è disponibile durante l'installazione del punto di aggiornamento software e deve essere configurata dopo l'installazione. Per abilitare le impostazioni client per gli aggiornamenti di terze parti, vedere l'articolo [Informazioni sulle impostazioni client](/sccm/core/clients/deploy/about-client-settings#Enable-third-party-software-updates).
+A partire da Configuration Manager versione 1802, è possibile abilitare gli aggiornamenti di terze parti per i client di Configuration Manager. Quando si abilitano gli aggiornamenti software di terze parti nelle proprietà del componente del punto di aggiornamento software, quest'ultimo scaricherà il certificato di firma usato da WSUS per gli aggiornamenti di terze parti. Questa opzione non è disponibile durante l'installazione del punto di aggiornamento software e deve essere configurata dopo l'installazione. Per abilitare le impostazioni client per gli aggiornamenti di terze parti, vedere l'articolo [Informazioni sulle impostazioni client](/sccm/core/clients/deploy/about-client-settings#enable-third-party-software-updates).
 
 ## <a name="next-steps"></a>Passaggi successivi
 Il punto di aggiornamento software è stato installato dal sito più in alto della gerarchia di Configuration Manager. Ripetere le procedure descritte in questo articolo per installare il punto di aggiornamento software nei siti figlio.

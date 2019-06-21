@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af9d8c16033a22c828f014dfd4bad771851c08de
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: c6b47c99199458c902f1f56ccc3d5007dfd126eb
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499331"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67251538"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versioni dei sistemi operativi per client e dispositivi supportate da Configuration Manager
 
@@ -94,7 +94,7 @@ Le versioni del canale semestrale di Windows Server sono installazioni Server Co
  Configuration Manager verifica e supporta le edizioni di Windows Server Datacenter, ma non è ufficialmente certificato per Windows Server. Il supporto hotfix di Configuration Manager non è disponibile per problemi specifici di Windows Server Datacenter Edition. Per altre informazioni sul programma di certificazione di Windows Server, vedere [Catalogo di Windows Server](https://www.windowsservercatalog.com/). 
 
 #### <a name="bkmk_note2"></a> Nota 2
- Per supportare l'[installazione push client](/sccm/core/clients/deploy/plan/client-installation-methods#client-push-installation), aggiungere il servizio File server del ruolo del server Servizi file e archiviazione. Per altre informazioni sull'installazione di funzionalità di Windows in Server Core, vedere [Install roles, role services, and features by using Windows PowerShell cmdlets](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#BKMK_installwps) (Installare ruoli, servizi ruolo e funzionalità tramite cmdlet di Windows PowerShell).  
+ Per supportare l'[installazione push client](/sccm/core/clients/deploy/plan/client-installation-methods#client-push-installation), aggiungere il servizio File server del ruolo del server Servizi file e archiviazione. Per altre informazioni sull'installazione di funzionalità di Windows in Server Core, vedere [Install roles, role services, and features by using Windows PowerShell cmdlets](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#install-roles-role-services-and-features-by-using-windows-powershell-cmdlets) (Installare ruoli, servizi ruolo e funzionalità tramite cmdlet di Windows PowerShell).  
 
 #### <a name="bkmk_note3"></a> Nota 3
  La nuova app Software Center non è supportata in alcuna versione di Windows Server Core.<!--SCCMDocs issue 683-->
@@ -361,7 +361,7 @@ Configuration Manager supporta la gestione limitata dei dispositivi che si conne
 
 ### <a name="supported-versions-of-exchange-server"></a>Versioni di Exchange Server supportate
 
-- **Exchange Online (Office 365)**: questa versione include Business Productivity Online Standard Suite  
+- **Exchange Online (Office 365)** : questa versione include Business Productivity Online Standard Suite  
 
 - **Exchange Server 2016** (a partire dalla versione 1802)  
 

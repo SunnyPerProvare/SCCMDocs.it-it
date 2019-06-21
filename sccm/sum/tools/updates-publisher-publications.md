@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 636d9ef3ba7768c73b00de4f50c22629548e7921
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: a56fea517c12e0d6f8e476b28c2af65a04c2593b
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65493944"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67158898"
 ---
 # <a name="manage-publications-in-updates-publisher"></a>Gestire le pubblicazioni in Updates Publisher
 
@@ -76,7 +76,7 @@ Per poter eseguire la pubblicazione, è prima necessario configurare l'opzione [
    Se la pubblicazione ha esito negativo, viene visualizzato un collegamento al file UpdatesPublisher.log in cui sono disponibili maggiori informazioni.
 
 ## <a name="export-a-publication"></a>Esportare una pubblicazione
-È possibile esportare una pubblicazione dal repository di Updates Publisher. Con questa operazione vengono esportati gli aggiornamenti e le aggregazioni assegnati alla pubblicazione e viene creato un catalogo di aggiornamenti. È quindi possibile [aggiungere](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) e [importare](/sccm/sum/tools/updates-publisher-catalogs#mport-updates) tale catalogo in un'altra istanza di Updates Publisher. È anche possibile [esportare aggiornamenti](/sccm/sum/tools/manage-updates-with-updates-publisher#export-updates) che non sono parte di una pubblicazione.
+È possibile esportare una pubblicazione dal repository di Updates Publisher. Con questa operazione vengono esportati gli aggiornamenti e le aggregazioni assegnati alla pubblicazione e viene creato un catalogo di aggiornamenti. È quindi possibile [aggiungere](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) e [importare](/sccm/sum/tools/updates-publisher-catalogs#import-updates) tale catalogo in un'altra istanza di Updates Publisher. È anche possibile [esportare aggiornamenti](/sccm/sum/tools/manage-updates-with-updates-publisher#export-updates) che non sono parte di una pubblicazione.
 
 Per esportare una pubblicazione, passare all'**area di lavoro Pubblicazioni** e selezionare la pubblicazione contenente gli aggiornamenti che si vogliono esportare. È possibile selezionare una sola pubblicazione alla volta.
 

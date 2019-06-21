@@ -12,12 +12,12 @@ ms.prod: configuration-manager
 ms.service: ''
 ms.technology: ''
 ms.assetid: ''
-ms.openlocfilehash: 3c02a9c05e2c7d24654684f122edcd3eb5a84e06
-ms.sourcegitcommit: 0bd336e11c9a7f2de05656496a1bc747c5630452
+ms.openlocfilehash: 94513445c8d1849f0304b304b7dd8672c1e50978
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834871"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67158328"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Esercitazione: Abilitare la co-gestione per nuovi dispositivi basati su Internet
 Con la co-gestione è possibile mantenere i processi consolidati per l'uso di Configuration Manager per la gestione dei PC nell'organizzazione. Allo stesso tempo, è possibile investire nel cloud usando Intune per sicurezza e provisioning moderno. 
@@ -450,5 +450,5 @@ Dopo aver completato i passaggi di configurazione di questa esercitazione, inclu
 
 ## <a name="next-steps"></a>Passaggi successivi
 - Esaminare lo stato dei dispositivi co-gestiti con il [dashboard di co-gestione](https://docs.microsoft.com/sccm/core/clients/manage/co-management-dashboard)
-- Usare [Windows Autopilot]() per effettuare il provisioning di nuovi dispositivi
+- Usare [Windows Autopilot](/sccm/comanage/quickstart-autopilot) per effettuare il provisioning di nuovi dispositivi
 - Usare l'[accesso condizionale](https://docs.microsoft.com/sccm/comanage/quickstart-conditional-access) e le regole di conformità di Intune per gestire l'accesso utente alle risorse aziendali

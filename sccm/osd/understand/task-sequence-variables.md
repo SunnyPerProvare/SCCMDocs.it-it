@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f903fad2bb0654cd445eeedaca6ddf902bff725
-ms.sourcegitcommit: 99dfe4fb9e9cfd20c44380ae442b3a5b895a0d9b
+ms.openlocfilehash: 3e1ad62c8b8b0f780670e7baf7ebf11de7f6b483
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65214982"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194592"
 ---
 # <a name="task-sequence-variables"></a>Variabili della sequenza di attività
 
@@ -505,7 +505,7 @@ Invece di generare una chiave di avvio casuale per l'opzione **Chiave di avvio s
 
 Specifica un nome account di Windows con le autorizzazioni per l'archiviazione dell'immagine acquisita in una condivisione di rete ([OSDCaptureDestination](#OSDCaptureDestination)). Specificare anche [OSDCaptureAccountPassword](#OSDCaptureAccountPassword).
 
-Per altre informazioni sull'account per l'acquisizione dell'immagine del sistema operativo, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#capture-operating-system-image-account).
+Per altre informazioni sull'account per l'acquisizione dell'immagine del sistema operativo, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#capture-os-image-account).
 
 ### <a name="OSDCaptureAccountPassword"></a> OSDCaptureAccountPassword
 
@@ -697,7 +697,7 @@ Per altre informazioni, vedere [Windows 10 DISM Command-Line Options](https://do
 
 Specifica l'account utente di dominio usato per aggiungere il computer di destinazione al dominio. Questa variabile è obbligatoria per l'aggiunta a un dominio.
 
-Per altre informazioni sull'account di aggiunta del dominio della sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-editor-domain-joining-account).
+Per altre informazioni sull'account di aggiunta del dominio della sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-domain-join-account).
 
 ### <a name="OSDJoinDomainName"></a> OSDJoinDomainName
 
@@ -1246,7 +1246,7 @@ Per altre informazioni vedere [Proprietà e parametri di installazione client](/
 
 Specifica l'account utente usato per connettersi alla condivisione di rete in [SMSConnectNetworkFolderPath](#SMSConnectNetworkFolderPath). Specificare la password dell'account con il valore [SMSConnectNetworkFolderPassword](#SMSConnectNetworkFolderPassword).
 
-Per altre informazioni sull'account di connessione per la cartella di rete della sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-editor-network-folder-connection-account).
+Per altre informazioni sull'account di connessione per la cartella di rete della sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-network-folder-connection-account).
 
 ### <a name="SMSConnectNetworkFolderDriveLetter"></a> SMSConnectNetworkFolderDriveLetter
 

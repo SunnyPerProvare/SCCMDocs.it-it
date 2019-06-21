@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b4b289daa6f0f76c1d8e71879050bdfb6f5de679
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 649c0a134f7ebc77c214801d30720f75b80d34ee
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496486"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159467"
 ---
 # <a name="manage-applicability-rules-in-updates-publisher"></a>Gestire le regole di applicabilità in Updates Publisher
 
@@ -48,7 +48,7 @@ Per visualizzare le regole create, nell'**area di lavoro Regole** selezionare un
 -   È anche possibile creare nuove regole al momento della creazione o della modifica di un aggiornamento. Le regole create in questo modo non vengono salvate per uso futuro.
 
 ## <a name="create-applicability-rule"></a>Creare una regola di applicabilità
-Le informazioni seguenti sono simili a quelle per la creazione di regole nella [Creazione guidata aggiornamento](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard). A differenza di quanto si verifica nella procedura guidata, però, è possibile salvare i set di regole per un uso futuro.
+Le informazioni seguenti sono simili a quelle per la creazione di regole nella [Creazione guidata aggiornamento](/sccm/sum/tools/create-updates-with-updates-publisher#use-the-create-update-wizard). A differenza di quanto si verifica nella procedura guidata, però, è possibile salvare i set di regole per un uso futuro.
 
 1. Nell'**area di lavoro Regole** scegliere **Crea** per aprire la **Creazione guidata regola**.
 
@@ -82,7 +82,7 @@ La **Modifica guidata regola** visualizza le regole correnti per il set di regol
 
 Dopo aver apportato le modifiche, scegliere **OK** per salvarle e chiudere la procedura guidata.
 
-Per altri dettagli sull'uso della Creazione guidata regola, vedere il **Passaggio 7**, relativo alla pagina Applicabilità, della [Creazione guidata aggiornamento](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard).
+Per altri dettagli sull'uso della Creazione guidata regola, vedere il **Passaggio 7**, relativo alla pagina Applicabilità, della [Creazione guidata aggiornamento](/sccm/sum/tools/create-updates-with-updates-publisher#use-the-create-update-wizard).
 
 ## <a name="delete-applicability-rules"></a>Eliminare regole di applicabilità
 Per eliminare una regola di applicabilità salvata, nell'**area di lavoro Regole** selezionare la regola o il set di regole dall'elenco **My saved rules** (Regole personali salvate), quindi scegliere **Elimina** dalla barra multifunzione. Questa operazione rimuove da Updates Publisher la regola o il set di regole salvato.

@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31779b3588617816df4309461ed7715b20b0abd4
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: 5600743af8acc0da121454aef2d90167c3ded5fa
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "57558032"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286615"
 ---
 # <a name="how-to-prepare-internet-based-devices-for-co-management"></a>Come preparare i dispositivi basati su Internet per la co-gestione
 
@@ -41,7 +41,7 @@ A partire dalla versione 1802, usare Configuration Manager per raccogliere e seg
 
 2. Eseguire il report **Informazioni sui dispositivi di Windows Autopilot** e visualizzare i risultati.  
 
-3. Nel visualizzatore report selezionare l'icona **Esporta** e scegliere l'opzione **CSV (delimitato da virgole)**.  
+3. Nel visualizzatore report selezionare l'icona **Esporta** e scegliere l'opzione **CSV (delimitato da virgole)** .  
 
 4. Dopo aver salvato il file, caricare i dati in Microsoft Store per le aziende e per la formazione.  
 
@@ -88,7 +88,7 @@ A partire dalla versione 1806, sono necessarie meno proprietà della riga di com
 - Se si usa il proprio certificato SSL PKI e l'elenco di revoche di certificati non è pubblicato in Internet, il parametro seguente è obbligatorio:  
     - /noCRLCheck  
     
-     Per altre informazioni, vedere [Planning for CRLs](/sccm/core/plan-design/security/plan-for-security#-plan-for-the-site-server-signing-certificate-self-signed) (Pianificazione degli elenchi di revoche di certificati)  
+     Per altre informazioni, vedere [Planning for CRLs](/sccm/core/plan-design/security/plan-for-security#BKMK_PlanningForCRLs) (Pianificazione degli elenchi di revoche di certificati)  
 
 A partire dalla versione 1810, il sito pubblica le informazioni aggiuntive di Azure AD in Cloud Management Gateway (CMG). Un client aggiunto ad Azure AD ottiene queste informazioni da CMG durante il processo ccmsetup, usando lo stesso tenant a cui viene aggiunto. Questo comportamento semplifica ulteriormente la registrazione dei dispositivi per la co-gestione in un ambiente con più di un tenant di Azure AD. Al momento le uniche due proprietà obbligatorie di ccmsetup sono **CCMHOSTNAME** e **SMSSiteCode**.<!--3607731-->
 

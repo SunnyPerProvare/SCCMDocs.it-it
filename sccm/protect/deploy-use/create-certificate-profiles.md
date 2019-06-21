@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 600b786bbb2f718868c5d08c722621682582f4e1
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 726df4e6ddbfc34194fd25951d6dbafd1e9008ad
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500654"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159552"
 ---
 # <a name="create-certificate-profiles"></a>Creare i profili certificato
 
@@ -25,7 +25,7 @@ ms.locfileid: "65500654"
 
 Usare i profili certificato in Configuration Manager (SCCM) per effettuare il provisioning dei certificati necessari ai dispositivi gestiti per accedere alle risorse aziendali. Prima di creare i profili certificato, configurare l'infrastruttura di certificazione come descritto in [Set up certificate infrastructure for System Center Configuration Manager](certificate-infrastructure.md) (Configurare l'infrastruttura di certificazione per System Center Configuration Manager).  
 
-Questo argomento descrive come creare profili certificato SCEP e radice attendibile. Se si vuole creare profili certificato PFX, vedere [Creare profili certificato PFX](../../protect/deploy-use/create-pfx-certificate-profiles.md) .
+Questo argomento descrive come creare profili certificato SCEP e radice attendibile. Se si vuole creare profili certificato PFX, vedere [Creare profili certificato PFX](/sccm/mdm/deploy-use/create-pfx-certificate-profiles) .
 
 Per creare un profilo certificato:
 
@@ -56,11 +56,11 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
 
 -   **Certificato CA attendibile**: selezionare questo tipo di profilo certificato se si vuole distribuire un certificato CA radice attendibile o un certificato CA intermedio per formare una catena di certificati attendibili quando l'utente o il dispositivo deve autenticare un altro dispositivo. Ad esempio, il dispositivo può essere un server RADIUS (Remote Authentication Dial-In User Service) o un server di rete privata virtuale (VPN). È anche necessario configurare un profilo certificato CA attendibile prima di creare un profilo certificato SCEP. In questo caso, il certificato CA attendibile deve essere un certificato radice trusted per la CA che rilascerà il certificato per l'utente o il dispositivo.  
 
--   **Impostazioni di Simple Certificate Enrollment Protocol (SCEP)**: selezionare questo tipo di profilo certificato se si desidera richiedere un certificato per un utente o un dispositivo utilizzando il Simple Certificate Enrollment Protocol e il servizio del ruolo del servizio Registrazione dispositivi di rete.
+-   **Impostazioni di Simple Certificate Enrollment Protocol (SCEP)** : selezionare questo tipo di profilo certificato se si desidera richiedere un certificato per un utente o un dispositivo utilizzando il Simple Certificate Enrollment Protocol e il servizio del ruolo del servizio Registrazione dispositivi di rete.
 
--   **Scambio informazioni personali - Impostazioni PKCS #12 (PFX) - Importa**: selezionare questa opzione per importare un certificato PFX. Per altre informazioni sulla creazione del certificato PFX, vedere [Importare profili certificato PFX](/sccm/mdm/deploy-use/import-pfx-certificate-profiles.md).
+-   **Scambio informazioni personali - Impostazioni PKCS #12 (PFX) - Importa**: selezionare questa opzione per importare un certificato PFX. Per altre informazioni sulla creazione del certificato PFX, vedere [Importare profili certificato PFX](/sccm/mdm/deploy-use/import-pfx-certificate-profiles).
 
--   **Personal Information Exchange - Impostazioni PKCS #12 (PFX) - Crea**: selezionare questa opzione per elaborare i certificati PFX usando un'autorità di certificazione. Per altre informazioni sulla creazione del certificato PFX, vedere [Creare profili certificato PFX](/sccm/mdm/deploy-use/create-pfx-certificate-profiles.md).
+-   **Personal Information Exchange - Impostazioni PKCS #12 (PFX) - Crea**: selezionare questa opzione per elaborare i certificati PFX usando un'autorità di certificazione. Per altre informazioni sulla creazione del certificato PFX, vedere [Creare profili certificato PFX](/sccm/mdm/deploy-use/create-pfx-certificate-profiles).
 
 
 ## <a name="configure-a-trusted-ca-certificate"></a>Configurare un certificato CA attendibile  
@@ -97,11 +97,11 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
 
    -  **Tentativi**: specificare il numero di tentativi di richiesta certificato inviati automaticamente dal dispositivo al server che esegue il servizio Registrazione dispositivi di rete. Questa impostazione supporta lo scenario in cui un CA manager deve approvare una richiesta di certificato prima di essere accettata. Questa impostazione viene in genere usata per gli ambienti ad alta protezione o se si dispone di una CA emittente autonoma invece di una CA globale (enterprise). È anche possibile usare questa impostazione a scopo di test, in modo da poter ispezionare le opzioni di richiesta certificato prima che la richiesta certificato venga elaborata dalla CA emittente. Usare questa impostazione con l'opzione **Intervallo tra tentativi (minuti)** .  
 
-   -   **Intervallo tra tentativi (minuti)**: specificare l'intervallo in minuti tra ogni tentativo di registrazione quando si utilizza l'approvazione del responsabile CA prima che la richiesta certificato venga elaborata dalla CA emittente. Se si usa l'approvazione responsabile a scopo di test, potrebbe essere necessario specificare un valore basso in modo da non dover attendere troppo tempo prima di un nuovo tentativo di richiesta certificato dopo che questa è stata approvata. Tuttavia, se si usa l'approvazione responsabile in una rete di produzione, potrebbe essere necessario specificare un valore più elevato per fornire all'amministratore della CA il tempo sufficiente per verificare e approvare o negare le approvazioni in sospeso.  
+   -   **Intervallo tra tentativi (minuti)** : specificare l'intervallo in minuti tra ogni tentativo di registrazione quando si utilizza l'approvazione del responsabile CA prima che la richiesta certificato venga elaborata dalla CA emittente. Se si usa l'approvazione responsabile a scopo di test, potrebbe essere necessario specificare un valore basso in modo da non dover attendere troppo tempo prima di un nuovo tentativo di richiesta certificato dopo che questa è stata approvata. Tuttavia, se si usa l'approvazione responsabile in una rete di produzione, potrebbe essere necessario specificare un valore più elevato per fornire all'amministratore della CA il tempo sufficiente per verificare e approvare o negare le approvazioni in sospeso.  
 
-   -   **Soglia rinnovo (%)**: specificare la percentuale di durata residua del certificato prima che il dispositivo richieda il rinnovo del certificato.  
+   -   **Soglia rinnovo (%)** : specificare la percentuale di durata residua del certificato prima che il dispositivo richieda il rinnovo del certificato.  
 
-   -   **Provider di archiviazione chiavi (KSP)**: specificare dove verrà archiviata la chiave per il certificato. Scegliere tra uno dei seguenti valori:  
+   -   **Provider di archiviazione chiavi (KSP)** : specificare dove verrà archiviata la chiave per il certificato. Scegliere tra uno dei seguenti valori:  
 
    -   **Installa in TPM (Trusted Platform Module) se presente**: installa la chiave nel modulo TPM. Se il TPM non è presente, la chiave verrà installata nel provider di archiviazione per la chiave software.  
 
@@ -131,7 +131,7 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
 
    -   Se si digita il nome del modello del certificato, assicurarsi che il nome corrisponda esattamente a uno dei modelli del certificato elencati nel registro di sistema del servizio che esegue il servizio Registrazione dispositivi di rete. Accertarsi di specificare il nome del modello del certificato e non il nome visualizzato del modello del certificato.  
 
-   Per trovare i nomi dei modelli di certificato, individuare la seguente chiave: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP. I modelli di certificato verranno visualizzati come i valori per **EncryptionTemplate**, **GeneralPurposeTemplate**e **SignatureTemplate**. Per impostazione predefinita, il valore per i tre modelli di certificato è **IPSECIntermediateOffline**, che è associato al nome visualizzato del modello **IPSec (Offline request)**.  
+   Per trovare i nomi dei modelli di certificato, individuare la seguente chiave: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP. I modelli di certificato verranno visualizzati come i valori per **EncryptionTemplate**, **GeneralPurposeTemplate**e **SignatureTemplate**. Per impostazione predefinita, il valore per i tre modelli di certificato è **IPSECIntermediateOffline**, che è associato al nome visualizzato del modello **IPSec (Offline request)** .  
 
    > [!WARNING]  
    > 
@@ -166,7 +166,7 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
    Il modello di certificato selezionato deve essere configurato con una o entrambe le due opzioni di utilizzo della chiave sopra riportate. In caso contrario, verrà visualizzato il messaggio **Utilizzo chiave in CSR e richiesta di verifica non corrispondono** nel file di registro del punto di registrazione certificati, **Reg.cert**.  
 
 
-- **Dimensione chiave (bits)**: selezionare la dimensione della chiave in bit.  
+- **Dimensione chiave (bits)** : selezionare la dimensione della chiave in bit.  
 
 - **Utilizzo chiave esteso**: fare clic su **Seleziona** per aggiungere valori per lo scopo designato del certificato. Nella maggior parte dei casi il certificato richiederà l' **Autenticazione Client** in modo che l'utente o il dispositivo possa eseguire l'autenticazione a un server. È comunque possibile aggiungere altri utilizzi di chiavi secondo necessità.  
 

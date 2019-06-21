@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 818abdeb24d4c050bb8517bffda9ece0b012852c
-ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
+ms.openlocfilehash: e1957dc89e808920daf7e4f40e0d3774afe8b5c5
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66264410"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286565"
 ---
 # <a name="packages-and-programs-in-system-center-configuration-manager"></a>Pacchetti e programmi in System Center Configuration Manager
 
@@ -287,7 +287,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 |----------|----------------------|  
 |**Crea file di contenuto di pre-installazione**|Apre la **Creazione guidata file di contenuto pre-installazione**, che consente di creare un file che include il contenuto del pacchetto che può essere importato manualmente in un altro sito. Questa impostazione è utile nei casi in cui è disponibile larghezza di banda ridotta tra il server del sito e il punto di distribuzione.|  
 |**Crea programma**|Apre la **Creazione guidata programma**, che consente di creare un nuovo programma per il pacchetto.|  
-|**Export**|Apre l'**Esportazione guidata del pacchetto**, che consente di esportare il pacchetto selezionato e il suo contenuto in un file.<br /><br /> Per informazioni su come importare pacchetti e programmi, vedere [Creare pacchetti e programmi ](/sccm/apps/deploy-use/packages-and-programs#create-packages-and-programs) in questo argomento.|  
+|**Export**|Apre l'**Esportazione guidata del pacchetto**, che consente di esportare il pacchetto selezionato e il suo contenuto in un file.<br /><br /> Per informazioni su come importare pacchetti e programmi, vedere [Creare pacchetti e programmi ](/sccm/apps/deploy-use/packages-and-programs#create-a-package-and-program) in questo argomento.|  
 |**Distribuzione**|Apre la **Distribuzione guidata del software**, che consente di distribuire il pacchetto e il programma selezionati in una raccolta. Per altre informazioni, vedere [Distribuire pacchetti e programmi](/sccm/apps/deploy-use/packages-and-programs#deploy-packages-and-programs) in questo argomento.|  
 |**Distribuisci contenuto**|Apre la **Distribuzione guidata contenuto**, che consente di inviare il contenuto associato al pacchetto e al programma a punti di distribuzione o gruppi di punti di distribuzione selezionati.|  
 |**Aggiorna punti di distribuzione**|Aggiorna i punti di distribuzione con il contenuto più recente per il pacchetto e il programma selezionati.|  

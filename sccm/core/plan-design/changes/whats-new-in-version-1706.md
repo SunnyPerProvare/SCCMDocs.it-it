@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc88e70360599391c84e54e41e73b53ef3b70678
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 5b9dcd7465265021d52e44d72c77172d4323144e
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66177034"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67285767"
 ---
 # <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Novità della versione 1706 di System Center Configuration Manager
 
@@ -30,7 +30,7 @@ L'aggiornamento 1706 per System Center Configuration Manager (Current Branch) è
 >  Sono disponibili altre informazioni su:    
 >   - [Installing new sites](https://technet.microsoft.com/library/mt590197.aspx) (Installare nuovi siti)  
 >   - [Installing updates at sites](https://technet.microsoft.com/library/mt607046.aspx) (Installare aggiornamenti nei siti)  
->   - [Baseline and update versions](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions) (Versioni di base e di aggiornamento)  
+>   - [Baseline and update versions](/sccm/core/servers/manage/updates#bkmk_Baselines) (Versioni di base e di aggiornamento)  
 
 Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1706 di Configuration Manager.  
 
@@ -59,7 +59,7 @@ Sono stati aggiunti altri miglioramenti all'accessibilità per la console di Con
 ### <a name="improvements--for-sql-server-always-on-availability-groups"></a>Miglioramenti per i gruppi di disponibilità Always On di SQL Server
 <!-- 1352094 -->
 Con questa versione è ora possibile usare le repliche con commit asincrono nei gruppi di disponibilità Always On di SQL Server usati con Configuration Manager. Ciò significa che è possibile aggiungere repliche aggiuntive ai gruppi di disponibilità da usare come backup remoti, e quindi usarli in caso di ripristino di emergenza.  
-  -   Configuration Manager supporta l'uso della replica con commit asincrono per ripristinare la replica sincrona. Vedere le [opzioni di ripristino del database del sito](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) nell'argomento Backup e ripristino per informazioni su come eseguire questa operazione.
+  -   Configuration Manager supporta l'uso della replica con commit asincrono per ripristinare la replica sincrona. Vedere le [opzioni di ripristino del database del sito](/sccm/core/servers/manage/recover-sites#site-database-recovery-options) nell'argomento Backup e ripristino per informazioni su come eseguire questa operazione.
   -   Questa versione non supporta il failover per l'uso della replica con commit asincrono come database del sito.
 Per altre informazioni, vedere [Preparare l'uso di gruppi di disponibilità Always On](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database).
 
@@ -92,7 +92,7 @@ Il miglioramento dell'integrazione rende possibile quanto segue:
       - **Windows Store per le aziende** Connette allo store online di Windows Store per le aziende e ottiene le app per l'organizzazione che è possibile distribuire con Configuration Manager.
 
 
-  Questo risultato si ottiene usando un'[app Web del server Azure](/azure/azure/app-service/app-service-authentication-overview#service-to-service-authentication) per fornire i dettagli di sottoscrizione e configurazione, che in caso contrario devono essere immessi ogni volta che si configura un nuovo componente o servizio di Configuration Manager con Azure. Per altre informazioni, vedere [Procedura guidata per i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard).
+  Questo risultato si ottiene usando un'[app Web del server Azure](/azure/app-service/app-service-authentication-overview) per fornire i dettagli di sottoscrizione e configurazione, che in caso contrario devono essere immessi ogni volta che si configura un nuovo componente o servizio di Configuration Manager con Azure. Per altre informazioni, vedere [Procedura guidata per i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard).
 
 -   Usare Azure AD per autenticare i client in Internet per l'accesso ai siti di Configuration Manager. Azure AD evita di dover configurare e usare i certificati di autenticazione client. Per questo è necessario il ruolo del sistema del sito del gateway di gestione cloud. Per altre informazioni, vedere [Install and assign Configuration Manager clients from the Internet using Azure AD for authentication](/sccm/core/clients/deploy/deploy-clients-cmg-azure) (Installare e assegnare i client di Configuration Manager da Internet usando Azure AD per l'autenticazione).
 
@@ -102,7 +102,7 @@ Il miglioramento dell'integrazione rende possibile quanto segue:
 
 ### <a name="peer-cache-improvements"></a>Miglioramenti della peer cache
 <!-- 1252345 -->
-La peer cache non usa l'account di accesso alla rete per autenticare le richieste di download dai peer. Esiste un'avvertenza a questo proposito quando l'account continua a essere richiesto dai client. Rimane un requisito per i client che vengono avviati in WinPE e quindi accedono al contenuto da un'origine di peer cache. Per altre informazioni, vedere [Requisiti e considerazioni per la peer cache](/sccm/core/plan-design/hierarchy/client-peer-cache#requirements-and-considerations-for-peer-cache).
+La peer cache non usa l'account di accesso alla rete per autenticare le richieste di download dai peer. Esiste un'avvertenza a questo proposito quando l'account continua a essere richiesto dai client. Rimane un requisito per i client che vengono avviati in WinPE e quindi accedono al contenuto da un'origine di peer cache. Per altre informazioni, vedere [Requisiti e considerazioni per la peer cache](/sccm/core/plan-design/hierarchy/client-peer-cache#requirements).
 
 
 <!-- ## Migration  -->

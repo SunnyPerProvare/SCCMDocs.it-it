@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 194a26a4fee7a8a7c97a91db4b579c9db03c1787
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 7836e1779acbfdfbb66d6eac57bc7797abd52563
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129783"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286474"
 ---
 # <a name="use-windows-analytics-with-configuration-manager"></a>Usare Windows Analytics con Configuration Manager
 
@@ -52,10 +52,10 @@ Impostare questa opzione su **Sì** per configurare le impostazioni dei dati di 
 La chiave ID commerciale esegue il mapping delle informazioni dai dispositivi gestiti all'area di lavoro di Log Analytics che ospita i dati di Windows Analytics dell'organizzazione. Se è già stata configurata una chiave ID commerciale per l'uso con Preparazione aggiornamenti, usare tale ID. Se non è ancora disponibile una chiave ID commerciale, vedere [Copiare la chiave ID commerciale](https://docs.microsoft.com/windows/deployment/update/windows-analytics-get-started#copy-your-commercial-id-key).
 
 #### <a name="windows-10-telemetry"></a>Telemetria di Windows 10
-Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization##diagnostic-data-level) (Configurare i dati di diagnostica di Windows nell'organizzazione).
+Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#diagnostic-data-levels) (Configurare i dati di diagnostica di Windows nell'organizzazione).
 
 > [!Note]  
-> È anche possibile impostare il livello di raccolta dei dati di Windows 10 su **Avanzata (con limitazioni)**. Questa impostazione consente di ottenere informazioni utili sui dispositivi presenti nell'ambiente in uso senza che i dispositivi segnalino tutti i dati nel livello **avanzato** con Windows 10 1709 o versione successiva. Il livello Avanzata (con limitazioni) include metriche del livello di base e un subset di dati raccolti dal livello avanzato pertinenti per Windows Analytics.
+> È anche possibile impostare il livello di raccolta dei dati di Windows 10 su **Avanzata (con limitazioni)** . Questa impostazione consente di ottenere informazioni utili sui dispositivi presenti nell'ambiente in uso senza che i dispositivi segnalino tutti i dati nel livello **avanzato** con Windows 10 1709 o versione successiva. Il livello Avanzata (con limitazioni) include metriche del livello di base e un subset di dati raccolti dal livello avanzato pertinenti per Windows Analytics.
 
 #### <a name="windows-81-and-earlier-telemetry"></a>Telemetria di Windows 8.1 e versioni precedenti   
 Per altre informazioni, vedere [Windows 7, Windows 8, and Windows 8.1 appraiser telemetry events and fields](https://go.microsoft.com/fwlink/?LinkID=822965) (Eventi e campi di valutazione telemetrica per Windows 7, Windows 8 e Windows 8.1).

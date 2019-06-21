@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e6e603210342f5acc3e66328fca95e964dde2bf
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 9d35558da6b25bba16b84c931b0254436ac3dd1e
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65495522"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67285538"
 ---
 # <a name="whats-new-in-version-1802-of-system-center-configuration-manager"></a>Novità della versione 1802 di System Center Configuration Manager
 
@@ -35,7 +35,7 @@ Sono ora disponibili anche i seguenti aggiornamenti aggiuntivi per questa versio
 >  Sono disponibili altre informazioni su:    
 >   - [Installing new sites](/sccm/core/servers/deploy/install/installing-sites) (Installare nuovi siti)  
 >   - [Installing updates at sites](/sccm/core/servers/manage/updates) (Installare aggiornamenti nei siti)  
->   - [Baseline and update versions](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions) (Versioni di base e di aggiornamento)  
+>   - [Baseline and update versions](/sccm/core/servers/manage/updates#bkmk_Baselines) (Versioni di base e di aggiornamento)
 
 Le sezioni seguenti offrono informazioni dettagliate sulle modifiche e sulle nuove funzionalità della versione 1802 di Configuration Manager.  
 
@@ -135,7 +135,7 @@ Quando si crea un'istanza di [Cloud Management Gateway](/sccm/core/clients/manag
 
 ### <a name="configure-hardware-inventory-to-collect-strings-larger-than-255-characters"></a>Configurare l'inventario hardware per raccogliere le stringhe maggiori di 255 caratteri
 <!-- 1357389 -->
-Per le proprietà dell'inventario hardware è possibile configurare la lunghezza delle stringhe su un valore maggiore di 255 caratteri. Questa modifica si applica solo alle nuove classi aggiunte e alle proprietà dell'inventario hardware diverse dalle chiavi. Per informazioni dettagliate, vedere l'articolo [Estendere l'inventario hardware](/sccm/core/clients/manage/inventory/extend-hardware-inventory#BKMK_GreaterThan255). 
+Per le proprietà dell'inventario hardware è possibile configurare la lunghezza delle stringhe su un valore maggiore di 255 caratteri. Questa modifica si applica solo alle nuove classi aggiunte e alle proprietà dell'inventario hardware diverse dalle chiavi. Per informazioni dettagliate, vedere l'articolo [Estendere l'inventario hardware](/sccm/core/clients/manage/inventory/extend-hardware-inventory#bkmk_GreaterThan255). 
 
  ### <a name="deprecation-announcement-for-linux-and-unix-client-support"></a>Annuncio di supporto deprecato per i client Linux e Unix
  <!--510139-->
@@ -162,7 +162,7 @@ A partire da questa versione, Silverlight non viene più installato automaticame
  
 ### <a name="co-management-dashboard-in-system-center-configuration-manager"></a>Dashboard di co-gestione in System Center Configuration Manager
 <!--1356648-->
-A partire da questa versione, è possibile visualizzare un dashboard con informazioni sulla co-gestione. Il dashboard consente di esaminare i computer co-gestiti presenti nell'ambiente. I grafici consentono di identificare i dispositivi che potrebbero richiedere attenzione. Per informazioni dettagliate, vedere l'articolo [Dashboard di co-gestione](/sccm/core/clients/manage/client-management-dashboard). 
+A partire da questa versione, è possibile visualizzare un dashboard con informazioni sulla co-gestione. Il dashboard consente di esaminare i computer co-gestiti presenti nell'ambiente. I grafici consentono di identificare i dispositivi che potrebbero richiedere attenzione. Per informazioni dettagliate, vedere l'articolo [Dashboard di co-gestione](/sccm/comanage/how-to-monitor#co-management-dashboard). 
 
 
 ## <a name="compliance-settings"></a>Impostazioni di conformità
@@ -177,15 +177,15 @@ I clienti che usano il Web browser [Microsoft Edge](https://technet.microsoft.co
 
 ### <a name="allow-user-interaction-when-installing-an-application"></a>Consentire l'interazione utente durante l'installazione di un'applicazione
 <!-- 1356976 -->
-È possibile consentire a un utente finale di interagire con l'installazione di un'applicazione durante l'esecuzione della sequenza di attività. Ad esempio, è possibile eseguire un processo di installazione che chiede all'utente finale diverse opzioni. Nei programmi di installazione di alcune applicazioni non è possibile disattivare i prompt utente o il processo di installazione può richiedere valori di configurazione specifici noti solo all'utente. Questa funzionalità consente di gestire questi scenari di installazione. Per altre informazioni, vedere [Specificare le opzioni dell'esperienza utente per il tipo di distribuzione](/sccm/apps/deploy-use/create-applications#specify-user-experience-options-for-the-deployment-type).
+È possibile consentire a un utente finale di interagire con l'installazione di un'applicazione durante l'esecuzione della sequenza di attività. Ad esempio, è possibile eseguire un processo di installazione che chiede all'utente finale diverse opzioni. Nei programmi di installazione di alcune applicazioni non è possibile disattivare i prompt utente o il processo di installazione può richiedere valori di configurazione specifici noti solo all'utente. Questa funzionalità consente di gestire questi scenari di installazione. Per altre informazioni, vedere [Specificare le opzioni dell'esperienza utente per il tipo di distribuzione](/sccm/apps/deploy-use/create-applications#bkmk_dt-ux).
 
 ### <a name="do-not-automatically-upgrade-superseded-applications"></a>Non vengono aggiornate automaticamente le applicazioni sostituite
 <!-- 1351266 -->
-È possibile configurare la distribuzione di un'applicazione in modo che non aggiorni automaticamente le versioni sostituite. Ora quando si crea la distribuzione, nella pagina **Impostazioni di distribuzione** della **Distribuzione guidata del software**, per lo scopo di installazione **Disponibile** è possibile abilitare o disabilitare l'opzione **Aggiorna automaticamente tutte le versioni sostituite di questa applicazione**. Per altre informazioni, vedere [Specificare le impostazioni di distribuzione](/sccm/apps/deploy-use/deploy-applications#specify-deployment-settings).
+È possibile configurare la distribuzione di un'applicazione in modo che non aggiorni automaticamente le versioni sostituite. Ora quando si crea la distribuzione, nella pagina **Impostazioni di distribuzione** della **Distribuzione guidata del software**, per lo scopo di installazione **Disponibile** è possibile abilitare o disabilitare l'opzione **Aggiorna automaticamente tutte le versioni sostituite di questa applicazione**. Per altre informazioni, vedere [Specificare le impostazioni di distribuzione](/sccm/apps/deploy-use/deploy-applications#bkmk_deploy-settings).
 
 ### <a name="approve-application-requests-for-users-per-device"></a>Approvazione delle richieste di applicazioni degli utenti per dispositivo
 <!-- 1357015 -->
-A partire da questa versione, quando un utente invia la richiesta per un'applicazione che richiede l'approvazione, il nome del dispositivo specifico fa parte della richiesta. Se l'amministratore approva la richiesta, l'utente può installare l'applicazione solo su quel dispositivo. Per installare l'applicazione in un altro dispositivo dovrà inviare un'altra richiesta. Per altre informazioni, vedere [Specificare le impostazioni di distribuzione](/sccm/apps/deploy-use/deploy-applications#specify-deployment-settings).
+A partire da questa versione, quando un utente invia la richiesta per un'applicazione che richiede l'approvazione, il nome del dispositivo specifico fa parte della richiesta. Se l'amministratore approva la richiesta, l'utente può installare l'applicazione solo su quel dispositivo. Per installare l'applicazione in un altro dispositivo dovrà inviare un'altra richiesta. Per altre informazioni, vedere [Specificare le impostazioni di distribuzione](/sccm/apps/deploy-use/deploy-applications#bkmk_deploy-settings).
 
  > [!Note]  
  > Si tratta di una funzionalità facoltativa. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).  
@@ -200,7 +200,7 @@ A partire da questa versione, quando un utente invia la richiesta per un'applica
 
 ### <a name="windows-10-in-place-upgrade-task-sequence-via-cloud-management-gateway"></a>Sequenza di attività di aggiornamento sul posto di Windows 10 tramite Cloud Management Gateway
 <!-- 1357149 -->
-Ora la [sequenza di attività di aggiornamento sul posto](/sccm/osd/deploy-use/upgrade-windows-to-the-latest-version) di Windows 10 supporta la distribuzione nei client basati su Internet tramite [Cloud Management Gateway](/sccm/core/clients/manage/plan-cloud-management-gateway). Ciò consente agli utenti remoti di eseguire più facilmente l'aggiornamento a Windows 10 senza doversi connettere alla rete aziendale. Per altre informazioni, vedere [Deploy a task sequence](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#deploy-windows-10-in-place-upgrade-via-cmg).
+Ora la [sequenza di attività di aggiornamento sul posto](/sccm/osd/deploy-use/upgrade-windows-to-the-latest-version) di Windows 10 supporta la distribuzione nei client basati su Internet tramite [Cloud Management Gateway](/sccm/core/clients/manage/plan-cloud-management-gateway). Ciò consente agli utenti remoti di eseguire più facilmente l'aggiornamento a Windows 10 senza doversi connettere alla rete aziendale. Per altre informazioni, vedere [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).
 
 ### <a name="improvements-to-windows-10-in-place-upgrade-task-sequence"></a>Miglioramenti alla sequenza di attività di aggiornamento sul posto di Windows 10
 <!-- 1357425 -->
@@ -240,11 +240,11 @@ Se si distribuiscono applicazioni come disponibili agli utenti, questi possono o
 
 ### <a name="hide-installed-applications-in-software-center"></a>Nascondi le applicazioni installate in Software Center
 <!--1357592-->
-Le applicazioni installate possono ora essere nascoste in Software Center. Quando questa opzione è abilitata nelle impostazioni del client, le applicazioni già installate non vengono più visualizzate nella scheda Applicazioni. L'opzione abilitata è l'impostazione predefinita quando si installa o si esegue l'aggiornamento a Configuration Manager 1802.  Le applicazioni installate sono ancora visualizzabili nella scheda Stato installazione. [Nascondi le applicazioni installate in Software Center](/sccm/core/clients/deploy/about-client-settings#BKMK_HideInstalled) include altri dettagli.   
+Le applicazioni installate possono ora essere nascoste in Software Center. Quando questa opzione è abilitata nelle impostazioni del client, le applicazioni già installate non vengono più visualizzate nella scheda Applicazioni. L'opzione abilitata è l'impostazione predefinita quando si installa o si esegue l'aggiornamento a Configuration Manager 1802.  Le applicazioni installate sono ancora visualizzabili nella scheda Stato installazione. [Nascondi le applicazioni installate in Software Center](/sccm/core/clients/deploy/about-client-settings#bkmk_HideInstalled) include altri dettagli.   
 
 ### <a name="hide-unapproved-applications-in-software-center"></a>Nascondi le applicazioni non approvate nel Software Center
  <!--1355146-->
-Quando questa impostazione del client è abilitata, le applicazioni disponibili per l'utente che richiedono l'approvazione sono nascoste in Software Center.  [Nascondi le applicazioni non approvate nel Software Center](/sccm/core/clients/deploy/about-client-settings#BKMK_HideUnapproved) include altri dettagli.  
+Quando questa impostazione del client è abilitata, le applicazioni disponibili per l'utente che richiedono l'approvazione sono nascoste in Software Center.  [Nascondi le applicazioni non approvate nel Software Center](/sccm/core/clients/deploy/about-client-settings#bkmk_HideUnapproved) include altri dettagli.  
 
 ### <a name="software-center-shows-user-additional-compliance-information"></a>Software Center offre all'utente informazioni di conformità aggiuntive
 <!-- 1235616 -->

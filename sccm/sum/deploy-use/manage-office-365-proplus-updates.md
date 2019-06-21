@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 63eb7fa579d002b4cae48ed0a43a2246350e2633
-ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
+ms.openlocfilehash: fbbaf7322b0103b9958b4d7b2c66c018d12d20a4
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65933303"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194613"
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Gestire Office 365 ProPlus con Configuration Manager
 
@@ -114,7 +114,7 @@ Eseguire i passaggi seguenti per distribuire gli aggiornamenti di Office 365 con
 >
 > Se Office 365 ProPlus è stato installato di recente e a seconda del modo di installazione, è possibile che il canale di aggiornamento non sia ancora stato impostato. In tal caso, gli aggiornamenti distribuiti verranno rilevati come non applicabili. È presente un'[attività pianificata di aggiornamenti automatici](https://docs.microsoft.com/deployoffice/overview-of-the-update-process-for-office-365-proplus) creata all'installazione di Office 365 ProPlus. In questo caso, questa attività deve essere eseguita almeno una volta per configurare il canale di aggiornamento e rilevare gli aggiornamenti.
 >
-> Se Office 365 ProPlus è stato installato di recente e gli aggiornamenti distribuiti non vengono rilevati, per scopi di test, è possibile avviare manualmente l'attività di aggiornamenti automatici di Office e quindi avviare il [ciclo di valutazione distribuzione aggiornamenti software](https://docs.microsoft.com/sccm/sum/understand/software-updates-introduction#scan-for-software-updates-compliance-process) nel client. Per istruzioni su come eseguire questa operazione in una sequenza di attività, vedere [Aggiornamento di Office 365 ProPlus in una sequenza di attività](https://docs.microsoft.com/sccm/sum/deploy-use/manage-office-365-proplus-updates#updating-office-365-ProPlus-in-a-task-sequence).
+> Se Office 365 ProPlus è stato installato di recente e gli aggiornamenti distribuiti non vengono rilevati, per scopi di test, è possibile avviare manualmente l'attività di aggiornamenti automatici di Office e quindi avviare il [ciclo di valutazione distribuzione aggiornamenti software](https://docs.microsoft.com/sccm/sum/understand/software-updates-introduction#scan-for-software-updates-compliance-process) nel client. Per istruzioni su come eseguire questa operazione in una sequenza di attività, vedere [Aggiornamento di Office 365 ProPlus in una sequenza di attività](https://docs.microsoft.com/sccm/sum/deploy-use/manage-office-365-proplus-updates#updating-office-365-proplus-in-a-task-sequence).
 
 ## <a name="restart-behavior-and-client-notifications-for-office-365-updates"></a>Comportamento di riavvio e notifiche client per gli aggiornamenti di Office 365
 Quando si distribuisce un aggiornamento a un client di Office 365, il comportamento di riavvio e le notifiche client sono diversi a seconda della versione di Configuration Manager. La tabella seguente fornisce informazioni sull'esperienza dell'utente finale quando il client riceve un aggiornamento di Office 365:

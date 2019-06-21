@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71fab49dc6ba5d949aeaf48145e1f7d0446c0f91
-ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
+ms.openlocfilehash: f707eb4b4fabf98d6e436f038f932515749c35c4
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66354994"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194455"
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-configuration-manager"></a>Usare PXE per distribuire Windows in rete con Configuration Manager
 
@@ -126,7 +126,7 @@ Distribuire il sistema operativo in una raccolta di destinazione. Per altre info
 
 - **Distribuzione disponibile**: le distribuzioni disponibili richiedono la presenza dell'utente al computer di destinazione. L'utente deve premere **F12** per continuare il processo di avvio PXE. Se l'utente non è presente per premere **F12**, il computer esegue l'avvio nel sistema operativo corrente oppure dal successivo dispositivo di avvio disponibile.
 
-È possibile ridistribuire una distribuzione PXE richiesta cancellando lo stato dell'ultima distribuzione PXE assegnato a una raccolta di Configuration Manager o a un computer. Per altre informazioni sull'azione **Cancella distribuzioni PXE richieste**, vedere [Gestire i client](/sccm/core/clients/manage/manage-clients#BKMK_ManagingClients_DevicesNode) o [Come gestire le raccolte di dispositivi](/sccm/core/clients/manage/collections/manage-collections#how-to-manage-device-collections). Questa azione consente di reimpostare lo stato di quella distribuzione e reinstalla le distribuzioni richieste più recenti.
+È possibile ridistribuire una distribuzione PXE richiesta cancellando lo stato dell'ultima distribuzione PXE assegnato a una raccolta di Configuration Manager o a un computer. Per altre informazioni sull'azione **Cancella distribuzioni PXE richieste**, vedere [Gestire i client](/sccm/core/clients/manage/manage-clients#BKMK_ManagingClients_DevicesNode) o [Come gestire le raccolte di dispositivi](/sccm/core/clients/manage/collections/manage-collections#bkmk_device). Questa azione consente di reimpostare lo stato di quella distribuzione e reinstalla le distribuzioni richieste più recenti.
 
 > [!IMPORTANT]  
 > Il protocollo PXE non è sicuro. Assicurarsi che il server PXE e il client PXE si trovino in una rete fisicamente sicura, come ad esempio in un data center, per evitare l'accesso non autorizzato al sito.

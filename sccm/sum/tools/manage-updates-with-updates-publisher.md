@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88cc03de66847143336425dbc4b730703d15378c
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 1802c4f21939026f6775daecd9fe011d23ae7a38
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65493777"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159507"
 ---
 # <a name="manage-software-updates-in-updates-publisher"></a>Distribuire e gestire gli aggiornamenti software
 
@@ -44,7 +44,7 @@ Una nuova copia ha lo stato **Unexpired** (Non scaduto) e mantiene le impostazio
 ## <a name="edit-updates-and-bundles"></a>Modificare aggiornamenti e aggregazioni
 È possibile selezionare aggiornamenti e aggregazioni presenti nel repository per modificarli.
 
-Nell'**area di lavoro Aggiornamenti** selezionare un aggiornamento o un'aggregazione e quindi selezionare **Modifica** nella scheda **Home** per aprire la Modifica guidata. Per gli aggiornamenti e le aggregazioni sono disponibili procedure guidate separate, ma strettamente correlate, che presentano le stesse opzioni della [Creazione guidata aggiornamento](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard) o della [Creazione guidata aggregazione](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-bundle-wizard).
+Nell'**area di lavoro Aggiornamenti** selezionare un aggiornamento o un'aggregazione e quindi selezionare **Modifica** nella scheda **Home** per aprire la Modifica guidata. Per gli aggiornamenti e le aggregazioni sono disponibili procedure guidate separate, ma strettamente correlate, che presentano le stesse opzioni della [Creazione guidata aggiornamento](/sccm/sum/tools/create-updates-with-updates-publisher#use-the-create-update-wizard) o della [Creazione guidata aggregazione](/sccm/sum/tools/create-updates-with-updates-publisher#use-the-create-bundle-wizard).
 
 Quando si apportano modifiche, è possibile cambiare qualsiasi dettaglio riguardante l'aggiornamento o l'aggregazione così da consentirne l'utilizzo nell'ambiente in uso. È possibile, ad esempio, modificare le regole di precedenza o applicabilità oppure cambiare la lingua. È inoltre possibile cambiare il prodotto e il fornitore per spostare l'aggiornamento o l'aggregazione in una cartella personalizzata, in modo da raggruppare gli aggiornamenti per uso personale.
 
@@ -73,7 +73,7 @@ Quando si assegnano aggiornamenti a una pubblicazione, tenere presente quanto se
 
     -   Se non sono disponibili pubblicazioni appropriate, usare l'opzione **Assign software update to a new publication** (Assegna aggiornamento software a nuova pubblicazione). In questo modo viene creata una nuova pubblicazione con il nome specificato.
 
-Dopo aver assegnato gli aggiornamenti a una pubblicazione, è possibile usare l'**area di lavoro Pubblicazioni** per [pubblicare](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations) o [esportare](/sccm/sum/tools/updates-publisher-publications#export-a-pubilcation) la pubblicazione come gruppo.
+Dopo aver assegnato gli aggiornamenti a una pubblicazione, è possibile usare l'**area di lavoro Pubblicazioni** per [pubblicare](/sccm/sum/tools/updates-publisher-publications#publish-publications) o [esportare](/sccm/sum/tools/updates-publisher-publications#export-a-publication) la pubblicazione come gruppo.
 
 ## <a name="publish-updates-and-bundles-from-the-updates-workspace"></a>Pubblicare aggiornamenti e aggregazioni dall'area di lavoro Aggiornamenti
 Quando si pubblicano aggiornamenti e aggregazioni, Updates Publisher aggiunge informazioni sugli aggiornamenti e le aggregazioni (metadati) e, se possibile, i file binari degli aggiornamenti (contenuto completo) a un server di aggiornamento per la distribuzione ai dispositivi.
@@ -82,7 +82,7 @@ Per poter eseguire la pubblicazione, è prima necessario configurare l'opzione [
 
 Esistono due modi per pubblicare gli aggiornamenti e le aggregazioni:
 -   Direttamente dall'area di lavoro Aggiornamenti. Vedere la procedura seguente, *Per pubblicare aggiornamenti e aggregazioni*.
--   Come [pubblicazione](/sccm/sum/tools/updates-publisher-publications#publish-pubilcations) dall'area di lavoro Pubblicazioni.  
+-   Come [pubblicazione](/sccm/sum/tools/updates-publisher-publications#publish-publications) dall'area di lavoro Pubblicazioni.  
 
 > [!NOTE]   
 > Updates Publisher può pubblicare soltanto aggiornamenti di dimensioni pari o inferiori a 375 megabyte (MB).
@@ -99,7 +99,7 @@ Esistono due modi per pubblicare gli aggiornamenti e le aggregazioni:
 Se la pubblicazione ha esito negativo, viene visualizzato un collegamento al file UpdatesPublisher.log in cui sono disponibili maggiori informazioni.
 
 ## <a name="export-updates"></a>Esportare gli aggiornamenti
-È possibile esportare aggiornamenti e aggregazioni dal repository di Updates Publisher per creare un catalogo di aggiornamenti personalizzato. È possibile [aggiungere](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) e quindi [importare](/sccm/sum/tools/updates-publisher-catalogs#mport-updates) tale catalogo in un'altra istanza di Updates Publisher. È anche possibile [esportare gli aggiornamenti come una pubblicazione](/sccm/sum/tools/updates-publisher-publications##export-a-publication).
+È possibile esportare aggiornamenti e aggregazioni dal repository di Updates Publisher per creare un catalogo di aggiornamenti personalizzato. È possibile [aggiungere](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) e quindi [importare](/sccm/sum/tools/updates-publisher-catalogs#import-updates) tale catalogo in un'altra istanza di Updates Publisher. È anche possibile [esportare gli aggiornamenti come una pubblicazione](/sccm/sum/tools/updates-publisher-publications##export-a-publication).
 
 Per esportarli direttamente, passare all'**area di lavoro Aggiornamenti** > **All Software Updates** (Tutti gli aggiornamenti software) e selezionare uno o più aggiornamenti o aggregazioni. Non è possibile esportare una cartella di fornitori o prodotti, ma è possibile selezionare una cartella e quindi selezionare gli aggiornamenti in essa presenti per esportarli.
 
@@ -114,7 +114,7 @@ Passare all'**area di lavoro Aggiornamenti** > **All Software Updates** (Tutti g
 
 -   Se la selezione contiene solo aggregazioni o aggiornamenti non pubblicati o scaduti, prima che vengano rimossi viene chiesto di confermare l'eliminazione.
 
--   Se la selezione include un'aggregazione o un aggiornamento pubblicato e non ancora scaduto, viene visualizzato un avviso. È necessario impostare tali aggiornamenti come [scaduti](/sccm/sum/tools/updates-publisher-pubilcations#expire-or-reactivate-updates-and-bundles) e quindi pubblicare la modifica prima di eliminarli dal repository.  
+-   Se la selezione include un'aggregazione o un aggiornamento pubblicato e non ancora scaduto, viene visualizzato un avviso. È necessario impostare tali aggiornamenti come [scaduti](/sccm/sum/tools/updates-publisher-publications#expire-or-reactivate-updates-and-bundles) e quindi pubblicare la modifica prima di eliminarli dal repository.  
 
 Se si elimina un aggiornamento o un'aggregazione di un particolare fornitore e quindi si importa di nuovo il catalogo, l'aggiornamento viene ripristinato nel repository.
 

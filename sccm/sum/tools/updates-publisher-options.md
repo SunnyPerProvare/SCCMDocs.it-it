@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a26aaa2d4e409e899763cedebd32ebf64c93ffa
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 2d576057c1ca7940a8d09bcfa305b80b178a6006
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496372"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159528"
 ---
 # <a name="configure-options-for-updates-publisher"></a>Configurare opzioni per Updates Publisher
 
@@ -40,7 +40,7 @@ Le opzioni sono divise nelle categorie seguenti:
 -   Registrazione
 
 ## <a name="update-server"></a>Server di aggiornamento
-Per poter [pubblicare aggiornamenti](/sccm/sum/tools/manage-updates-with-updates-publisher#publish-updates-and-bundles), è prima necessario configurare Updates Publisher per il funzionamento con server di aggiornamento come WSUS (Windows Server Update Services). Questa operazione include la specifica del server, dei metodi per la connessione a quest'ultimo quando è remoto rispetto alla console e di un certificato da usare per la firma digitale degli aggiornamenti pubblicati.
+Per poter [pubblicare aggiornamenti](/sccm/sum/tools/manage-updates-with-updates-publisher#publish-updates-and-bundles-from-the-updates-workspace), è prima necessario configurare Updates Publisher per il funzionamento con server di aggiornamento come WSUS (Windows Server Update Services). Questa operazione include la specifica del server, dei metodi per la connessione a quest'ultimo quando è remoto rispetto alla console e di un certificato da usare per la firma digitale degli aggiornamenti pubblicati.
 
 - **Configurare un server di aggiornamento**. Quando si configura un server di aggiornamento, selezionare il server WSUS di primo livello (server di aggiornamento) nella gerarchia di Configuration Manager, in modo che tutti i siti figlio abbiano accesso agli aggiornamenti pubblicati.
 

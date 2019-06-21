@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 305c31c2a40e51b84a0a5da671db1c3f6dad6f2e
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: c6a64a007462c8619e05b3002611bb72581b6f92
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67158996"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67285704"
 ---
 # <a name="troubleshoot-desktop-analytics"></a>Risolvere i problemi di Analitica Desktop
 
@@ -82,7 +82,7 @@ Se è necessario eseguire il provisioning di queste App al termine dell'installa
 
 ### <a name="create-and-import-app-for-configuration-manager"></a>Creare e importare app for Configuration Manager
 
-Se non è possibile creare questa app di Azure AD dalla procedura guidata Configure Azure Services in Configuration Manager, usare la procedura seguente per creare manualmente e importazione dell'app per Configuration Manager.
+Dopo aver completato la [onboarding iniziale](/sccm/desktop-analytics/set-up#initial-onboarding) nel portale di Analitica Desktop, usare la procedura seguente per creare e importare l'app per Configuration Manager se non è possibile creare questa app di Azure AD da servizi di Azure configurare manualmente mago.
 
 #### <a name="create-app-in-azure-ad"></a>Creare app in Azure AD
 

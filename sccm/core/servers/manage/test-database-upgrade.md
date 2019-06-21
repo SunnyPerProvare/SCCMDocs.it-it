@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db33a822c762922a04cbfe695435950023384f93
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: c25e2d2aac1c1763df4282e92114257ee34065ac
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500999"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194146"
 ---
 # <a name="test-the-database-upgrade-when-installing-an-update"></a>Testare l'aggiornamento del database quando si installa un aggiornamento
 
@@ -30,9 +30,9 @@ La deprecazione di questo test dell'aggiornamento è stata possibile grazie alle
 Le modifiche interessano la modalità di installazione degli aggiornamenti, inclusa la logica che esegue automaticamente il rollback di un aggiornamento non riuscito senza la necessità di eseguire un ripristino del sito. Queste modifiche consentono l'uso della console per gestire le installazioni degli aggiornamenti e includono un'opzione per [ripetere l'installazione di un aggiornamento non riuscito](/sccm/core/servers/manage/install-in-console-updates#bkmk_retry).
 
 > [!TIP]
-> Quando si esegue l'aggiornamento a System Center Configuration Manager da una versione precedente, ad esempio System Center 2012 Configuration Manager, l'[esecuzione del test degli aggiornamenti del database è ancora un'operazione consigliata](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager#a-namebkmktesta-test-the-site-database-upgrade).
+> Quando si esegue l'aggiornamento a System Center Configuration Manager da una versione precedente, ad esempio System Center 2012 Configuration Manager, l'[esecuzione del test degli aggiornamenti del database è ancora un'operazione consigliata](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager#bkmk_test).
 
-Se si intende testare l'aggiornamento di un database del sito quando si installa un aggiornamento nella console, le informazioni seguenti integrano il [materiale sussidiario sull'installazione di un aggiornamento nella console](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates).
+Se si intende testare l'aggiornamento di un database del sito quando si installa un aggiornamento nella console, le informazioni seguenti integrano il [materiale sussidiario sull'installazione di un aggiornamento nella console](/sccm/core/servers/manage/install-in-console-updates#bkmk_install).
 
 ## <a name="prepare-to-run-a-test-database-upgrade"></a>Preparare l'esecuzione di un test dell'aggiornamento del database  
 Prima di installare un nuovo aggiornamento nella gerarchia, ad esempio l'aggiornamento 1702, è possibile testare l'aggiornamento del database del sito.

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f2110b805ac404a6e3c12d66225633b45eb50ae
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 76ab690024509d63293a7b9b94721644023702a9
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501352"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159323"
 ---
 # <a name="prerequisites-for-installing-configuration-manager-sites"></a>Prerequisiti per l'installazione di siti di Configuration Manager
 
@@ -131,7 +131,7 @@ Per replicare correttamente i dati tra un sito di amministrazione centrale e un 
 Quando si usa uno dei seguenti servizi di Azure con Configuration Manager, dopo l'espansione del sito, rimuovere e quindi ricreare la connessione al servizio.
 
 - [Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics)  
-- [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-readiness)  
+- [Upgrade Readiness](/sccm/core/clients/manage/upgrade-readiness)  
 - [Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)  
 
 Attenersi a questa procedura per risolvere il problema:

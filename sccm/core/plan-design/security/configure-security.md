@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d58f8566f80efa2700f5947f4144623b10eb6ad
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: c623799f4a7dd34a0556069d168f0bb3abfd5ff1
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140593"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67159403"
 ---
 # <a name="configure-security-in-configuration-manager"></a>Configurare la sicurezza in Configuration Manager
 
@@ -164,6 +164,6 @@ A partire dalla versione 1810 è possibile specificare il livello di autenticazi
 
 - [Comunicazioni tra gli endpoint](/sccm/core/plan-design/hierarchy/communications-between-endpoints)  
 
-- [Riferimento tecnico per i controlli crittografici](/sccm/core/plan-design/security/cryptographic-controls-tehnical-reference)  
+- [Riferimento tecnico per i controlli crittografici](/sccm/core/plan-design/security/cryptographic-controls-technical-reference)  
 
 - [Requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements)  

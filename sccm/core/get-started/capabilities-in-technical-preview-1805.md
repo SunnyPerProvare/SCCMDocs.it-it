@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07e69561580a22128cf9a5b7b97f33e10cbb0456
-ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.openlocfilehash: 4da8ff0e4d35284c5b1f2f465da468677cdfbb65
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66716035"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286081"
 ---
 # <a name="capabilities-in-technical-preview-1805-for-system-center-configuration-manager"></a>Funzionalità nella Technical Preview 1805 per System Center Configuration Manager
 
@@ -101,7 +101,7 @@ Configuration Manager non esegue la migrazione dei punti di distribuzione cloud 
 ### <a name="prerequisites"></a>Prerequisiti  
 - Integrazione con [Azure AD](/sccm/core/clients/deploy/deploy-clients-cmg-azure). L'individuazione utenti di Azure AD non è necessaria.  
 
-- Stessi [requisiti di un punto di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#BKMK_PrereqsCloudDP), ad eccezione del certificato di gestione di Azure.  
+- Stessi [requisiti di un punto di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#bkmk_requirements), ad eccezione del certificato di gestione di Azure.  
 
 
 ### <a name="try-it-out"></a>Verifica  
@@ -216,7 +216,7 @@ Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio
 
      1. **Utente di Azure AD**: usare questa opzione per simulare la comunicazione di un'identità utente basata sul cloud connessa a un dispositivo Windows 10 aggiunto ad Azure AD. Fare clic su **Accedi** per immettere le credenziali per questo account utente di Azure AD in modo sicuro.  
 
-     2. **Certificato client**: usare questa opzione per simulare la comunicazione di un client di Configuration Manager con un [certificato di autenticazione client](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#client-authentication-certificate).  
+     2. **Certificato client**: usare questa opzione per simulare la comunicazione di un client di Configuration Manager con un [certificato di autenticazione client](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_clientauth).  
 
 4. Fare clic su **Avvia** per avviare l'analisi. I risultati vengono visualizzati nella finestra dell'analizzatore. Selezionare una voce per visualizzare ulteriori dettagli nel campo Descrizione.  
 
@@ -288,7 +288,7 @@ Gli scenari seguenti traggono vantaggio da questi miglioramenti:
 I [dispositivi aggiunti ad Azure AD](/azure/active-directory/device-management-introduction#azure-ad-joined-devices) possono comunicare tramite un Cloud Management Gateway (CMG) con un punto di gestione configurato per HTTP. Il server del sito genera un certificato per il punto di gestione in modo che possa comunicare tramite un canale sicuro.   
 
 > [!Note]  
-> Questo comportamento è cambiato rispetto a Configuration Manager Current Branch versione 1802, che richiede un punto di gestione abilitato per HTTPS per questo scenario. Per altre informazioni, vedere [Abilitare i punti di gestione per HTTPS](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#enable-management-point-for-https).  
+> Questo comportamento è cambiato rispetto a Configuration Manager Current Branch versione 1802, che richiede un punto di gestione abilitato per HTTPS per questo scenario. Per altre informazioni, vedere [Abilitare i punti di gestione per HTTPS](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_mphttps).  
 
 #### <a name="bkmk_token2"></a> Scenario 2: Da client a punto di distribuzione
 <!--1358228-->

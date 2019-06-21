@@ -12,12 +12,12 @@ manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4edec748950b4601c4f5889f180f74c158171b33
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: b2d72e0134bdc4f7033ff37c54bed4898fce6832
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56136814"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286207"
 ---
 # <a name="capabilities-in-technical-preview-1701-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1701 per System Center Configuration Manager
 
@@ -62,10 +62,10 @@ Di seguito è descritto il funzionamento per i punti di aggiornamento software c
   Quando un client usa il fallback, userà le configurazioni dei gruppi di limiti per il fallback per creare un pool di punti di aggiornamento software disponibili. Il pool include tutti i punti di aggiornamento software del *gruppo di limiti corrente* dei client, dei *gruppi di limiti adiacenti* e del *gruppo di limiti predefinito del sito* dei client.
 
 - **Configurare il gruppo di limiti del sito predefinito:**  
-  Considerare l'aggiunta di un punto di aggiornamento software a *Default-Site-Boundary-Group&lt;codicesito>*. Ciò garantisce che i client che non sono membri di un altro gruppo di limiti possano eseguire il fallback per trovare un punto di aggiornamento software.
+  Considerare l'aggiunta di un punto di aggiornamento software a *Default-Site-Boundary-Group&lt;codicesito>* . Ciò garantisce che i client che non sono membri di un altro gruppo di limiti possano eseguire il fallback per trovare un punto di aggiornamento software.
 
 
-Per gestire i punti di aggiornamento software per i gruppi di limiti, usare le [procedure della documentazione di Current Branch](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#procedures-for-boundary-groups) ricordando che i tempi di fallback che potrebbero essere configurati non vengono ancora usati per i punti di aggiornamento software.
+Per gestire i punti di aggiornamento software per i gruppi di limiti, usare le [procedure della documentazione di Current Branch](/sccm/core/servers/deploy/configure/boundary-group-procedures) ricordando che i tempi di fallback che potrebbero essere configurati non vengono ancora usati per i punti di aggiornamento software.
 
 
 ## <a name="hardware-inventory-collects-uefi-information"></a>L'inventario hardware raccoglie le informazioni UEFI
@@ -116,7 +116,7 @@ A tale scopo, modificare un file di configurazione in modo che punti al cloud pe
      &lt;value>&lt;/value>   
      &lt;/setting>
 
-   - **Modificato:**     
+   - **Modificato:**      
      &lt;setting name="FairFaxArmResourceId" serializeAs="String"> &lt;value><https://management.usgovcloudapi.net/&lt;/value>>  
      &lt;/setting>
 

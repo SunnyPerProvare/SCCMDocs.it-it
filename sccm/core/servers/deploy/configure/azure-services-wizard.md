@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94e632638018d213d46b34e87f8b5398cb49c59e
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: d6d7acf1d5c73c59f2ce1e6d2b7f3f7354e21979
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499074"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67251883"
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurare i servizi di Azure da usare con Configuration Manager
 
@@ -41,7 +41,7 @@ Configurare i seguenti servizi di Azure tramite questa procedura guidata:
 -   **Connettore Log Analytics**: [Connettersi ad Azure Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics). Sincronizza i dati della raccolta a Log Analytics.  
 
     > [!Note]  
-    > Questo articolo si riferisce al *connettore Log Analytics*, che era in precedenza denominato *OMS Connector*. Non esistono differenze funzionali. Per altre informazioni, vedere [Gestione di Azure - Monitoraggio](https://docs.microsoft.com/azure/monitoring/#operations-management-suite).  
+    > Questo articolo si riferisce al *connettore Log Analytics*, che era in precedenza denominato *OMS Connector*. Non esistono differenze funzionali. Per altre informazioni, vedere [Gestione di Azure - Monitoraggio](/azure/azure-monitor/terminology#log-analytics).  
 
 -   **Connettore di Preparazione aggiornamenti**: connettersi a [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics) di Windows Analytics. Consente di visualizzare i dati di compatibilità degli aggiornamenti del client.  
 
@@ -86,7 +86,7 @@ Per altre informazioni sulle autorizzazioni delle app necessarie e sulle configu
 Per altre informazioni sulle app di Azure, vedere gli articoli seguenti:
 - [Autenticazione e autorizzazione nel servizio app di Azure](/azure/app-service/app-service-authentication-overview)
 - [Panoramica di App Web](/azure/app-service-web/app-service-web-overview)
-- [Basics of Registering an Application in Azure AD](/azure/active-directory/develop/active-directory-authentication-scenarios#basics-of-registering-an-application-in-azure-ad) (Nozioni di base per la registrazione di un'applicazione in Azure AD)  
+- [Basics of Registering an Application in Azure AD](/azure/active-directory/develop/authentication-scenarios#authentication-basics-in-microsoft-identity-platform) (Nozioni di base per la registrazione di un'applicazione in Azure AD)  
 - [Registrare l'applicazione nel tenant di Azure Active Directory](/azure/active-directory/active-directory-app-registration)
 
 
@@ -267,7 +267,7 @@ Il diagramma seguente è un flusso di dati concettuale per l'interazione tra Con
 
 3.  Il sito archivia dati sugli oggetti utente. Per altre informazioni, vedere [Individuazione utente Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).  
 
-4.  Il client Configuration Manager richiede il token utente di Azure AD. Il client esegue l'attestazione mediante l'ID applicazione dell'app client di Azure AD, con l'app server come gruppo di destinatari. Per altre informazioni, vedere [Claims in Azure AD Security Tokens](/azure/active-directory/develop/active-directory-authentication-scenarios#claims-in-azure-ad-security-tokens) (Attestazioni nei token di sicurezza di Azure AD).  
+4.  Il client Configuration Manager richiede il token utente di Azure AD. Il client esegue l'attestazione mediante l'ID applicazione dell'app client di Azure AD, con l'app server come gruppo di destinatari. Per altre informazioni, vedere [Claims in Azure AD Security Tokens](/azure/active-directory/develop/authentication-scenarios#claims-in-microsoft-identity-platform-security-tokens) (Attestazioni nei token di sicurezza di Azure AD).  
 
 5.  Il client esegue l'autenticazione con il sito presentando il token Azure AD a Cloud Management Gateway e/o al punto di gestione locale abilitato per HTTPS.  
 

@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d817bf27302b0a894eb834c747fb3bbcb0ad3fa
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 950e3d60d0737d9135eb5f47bbc02a07f2a5e65e
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56141188"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67158334"
 ---
 # <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1702 per System Center Configuration Manager
 
@@ -77,7 +77,7 @@ Per usare Azure AD con Configuration Manager, è necessario quanto segue:
 -   Sito di Configuration Manager eseguito in una macchina virtuale di Azure aggiunta ad Azure AD.
 -   Client di Configuration Manager in esecuzione nello stesso ambiente di Azure AD.
 
-Per configurare Azure AD Domain Services, vedere [Introduzione a Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started).
+Per configurare Azure AD Domain Services, vedere [Introduzione a Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/create-instance).
 
 ### <a name="discover-resources"></a>Individuare risorse
 Dopo avere configurato Configuration Manager per l'esecuzione in Azure AD, è possibile usare i metodi di individuazione di Active Directory seguenti per la ricerca di risorse in Azure AD:  
@@ -202,8 +202,8 @@ Attenersi alla procedura seguente per configurare i dettagli per la sequenza di 
 2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
 3. Nella scheda **Generale** sono disponibili le impostazioni seguenti per Software Center:
    - **Riavvio necessario**: consente all'utente di sapere se è necessario un riavvio durante l'installazione.
-   - **Dimensioni del download (MB)**: specifica quanti megabyte vengono visualizzati in Software Center per la sequenza di attività.  
-   - **Tempo di esecuzione stimato (minuti)**: specifica il tempo di esecuzione stimato in minuti che viene visualizzato in Software Center per la sequenza di attività.
+   - **Dimensioni del download (MB)** : specifica quanti megabyte vengono visualizzati in Software Center per la sequenza di attività.  
+   - **Tempo di esecuzione stimato (minuti)** : specifica il tempo di esecuzione stimato in minuti che viene visualizzato in Software Center per la sequenza di attività.
 
 
 ## <a name="check-for-running-executable-files-before-installing-an-application"></a>Controllare l'esecuzione di file eseguibili prima di installare un'applicazione
@@ -266,7 +266,8 @@ Sono state aggiunte nuove impostazioni che è possibile usare negli elementi di 
 - **Tastiere predittive** (solo modalità di supervisione)
 - **Correzione automatica** (solo modalità di supervisione)
 - **Controllo ortografico tastiera** (solo modalità di supervisione)
-- **Scelte rapide da tastiera** (solo modalità di supervisione) <!--- - **Enterprise app trust settings modification** --->
+- **Scelte rapide da tastiera** (solo modalità di supervisione)
+  <!--- - **Enterprise app trust settings modification** --->
 - **Installazione di app solo con Apple Configurator e iTunes** (solo modalità di supervisione)
 - **Download automatici delle app** (solo modalità di supervisione)
 - **Modifica le impostazioni dell'app Find My Friends** (solo modalità di supervisione)

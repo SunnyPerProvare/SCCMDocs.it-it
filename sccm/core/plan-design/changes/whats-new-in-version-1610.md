@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04e4f24cee033f46ea69080a423b9ca6e2d4c9d5
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 75737d3f640a9ba0a27277f36791227fbdd08a5a
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65495133"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67285837"
 ---
 # <a name="what39s-new-in-version-1610-of-system-center-configuration-manager"></a>Novità della versione 1610 di System Center Configuration Manager
 
@@ -31,13 +31,13 @@ L'aggiornamento 1610 per System Center Configuration Manager (Current Branch) è
 >  Sono disponibili altre informazioni su:    
 >  -   [Installing new sites](https://technet.microsoft.com/library/mt590197.aspx) (Installare nuovi siti)  
 >  -   [Installing updates at sites](https://technet.microsoft.com/library/mt607046.aspx) (Installare aggiornamenti nei siti)  
->  -   [Baseline and update versions](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions) (Versioni di base e di aggiornamento)  
+>  -   [Baseline and update versions](/sccm/core/servers/manage/updates#bkmk_Baselines) (Versioni di base e di aggiornamento)
 
 Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1610 di Configuration Manager.  
 
 
 ## <a name="in-console-monitoring-of-update-installation-status"></a>Monitoraggio dello stato di installazione dell'aggiornamento nella console  
-A partire dalla versione 1610, quando si installa un pacchetto di aggiornamento e si esegue il monitoraggio dell'installazione nella console, viene attivata una nuova fase: la **post-installazione**. Questa fase include lo stato di attività quali il riavvio dei servizi principali e l'inizializzazione del monitoraggio delle repliche. Questa fase è disponibile nella console solo dopo l'aggiornamento del sito alla versione 1610. Per altre informazioni sullo stato di installazione dell'aggiornamento, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates).
+A partire dalla versione 1610, quando si installa un pacchetto di aggiornamento e si esegue il monitoraggio dell'installazione nella console, viene attivata una nuova fase: la **post-installazione**. Questa fase include lo stato di attività quali il riavvio dei servizi principali e l'inizializzazione del monitoraggio delle repliche. Questa fase è disponibile nella console solo dopo l'aggiornamento del sito alla versione 1610. Per altre informazioni sullo stato di installazione dell'aggiornamento, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates#bkmk_install).
 
 
 ## <a name="exclude-clients-from-automatic-upgrade"></a>Impedire l'aggiornamento automatico dei client
@@ -50,7 +50,7 @@ Questi miglioramenti sostituiscono concetti e comportamenti correnti, come la co
 
 Durante l'aggiornamento alla versione 1610 le configurazioni dei gruppi di limiti correnti vengono convertite per adattarle al nuovo modello, per evitare che le modifiche alterino le configurazioni di distribuzione del contenuto.
 
-Per altre informazioni, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#a-namebkmkboundarygroupsa-boundary-groups).
+Per altre informazioni, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups).
 
 
 ## <a name="peer-cache-for-content-distribution-to-clients"></a>Peer cache per la distribuzione del contenuto ai client
@@ -123,9 +123,9 @@ In Software Center la personalizzazione viene applicata secondo le regole seguen
 
 - Se il ruolo del server del sito punto per siti Web del Catalogo applicazioni non è installato, Software Center visualizza il nome dell'organizzazione specificato nell'impostazione **Nome organizzazione visualizzato in Software Center** del client **Agente computer**. Per istruzioni, vedere [Come configurare le impostazioni client](../../clients/deploy/configure-client-settings.md).
 
-- Se il ruolo del server del sito punto per siti Web del Catalogo applicazioni è installato, Software Center visualizza il nome dell'organizzazione e il colore specificati nelle proprietà del ruolo del server del sito punto per siti Web del Catalogo applicazioni. Per altre informazioni, vedere [Configuration options for Application Catalog website point](/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#Application-Catalog-website-point) (Opzioni di configurazione per il punto per siti Web del Catalogo applicazioni).
+- Se il ruolo del server del sito punto per siti Web del Catalogo applicazioni è installato, Software Center visualizza il nome dell'organizzazione e il colore specificati nelle proprietà del ruolo del server del sito punto per siti Web del Catalogo applicazioni. Per altre informazioni, vedere [Configuration options for Application Catalog website point](/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#BKMK_ApplicationCatalog_Website) (Opzioni di configurazione per il punto per siti Web del Catalogo applicazioni).
 
-- Se una sottoscrizione di Microsoft Intune è configurata e connessa all'ambiente Configuration Manager, Software Center visualizza il nome dell'organizzazione, il colore e il logo aziendale specificati nelle proprietà della sottoscrizione di Intune. Per ulteriori informazioni, vedere [Configuring the Microsoft Intune subscription](/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription).
+- Se una sottoscrizione di Microsoft Intune è configurata e connessa all'ambiente Configuration Manager, Software Center visualizza il nome dell'organizzazione, il colore e il logo aziendale specificati nelle proprietà della sottoscrizione di Intune. Per ulteriori informazioni, vedere [Configuring the Microsoft Intune subscription](/sccm/mdm/deploy-use/configure-intune-subscription).
 
 
 ## <a name="enforcement-grace-period-for-required-application-and-software-update-deployments"></a>Periodo di tolleranza per l'imposizione delle distribuzioni di applicazioni e aggiornamenti software obbligatorie
@@ -173,7 +173,7 @@ Questa azione non comporta la disinstallazione dell'applicazione dal dispositivo
 - [Configuration Manager and Simplified Windows Servicing on Down Level Operating Systems](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/) (Configuration Manager e manutenzione Windows semplificata su sistemi operativi di versioni precedenti)
 - [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates)
 
-Per configurare il campo **Dimensioni contenuto (KB)**, eseguire una delle operazioni seguenti:
+Per configurare il campo **Dimensioni contenuto (KB)** , eseguire una delle operazioni seguenti:
 - Quando si crea una regola di distribuzione automatica, nella Creazione regola di distribuzione automatica passare alla pagina **Aggiornamenti software**.
 - Nelle proprietà di una regola di distribuzione automatica esistente passare alla scheda **Aggiornamenti software**.
 
@@ -202,7 +202,7 @@ Il passaggio Prepara client ConfigMgr a questo punto rimuove completamente il cl
 
 
 ## <a name="lookout-integration-for-hybrid-implementations-to-protect-ios-and-android-devices"></a>Integrazione di Lookout nelle implementazioni ibride per la protezione di dispositivi iOS e Android
-Microsoft si integra con la soluzione di protezione dalle minacce Lookout per proteggere i dispositivi mobili iOS e Android mediante il rilevamento di malware, app rischiose e altre minacce nei dispositivi. La soluzione Lookout consente di determinare il livello di minaccia, che è configurabile. È possibile creare una regola dei criteri di conformità in System Center Configuration Manager per determinare la conformità del dispositivo in base alla valutazione dei rischi di Lookout. Tramite criteri di accesso condizionale, è possibile consentire o bloccare l'accesso alle risorse aziendali in base allo stato di conformità del dispositivo. Per informazioni sull'integrazione e sul suo funzionamento, vedere [Gestire l'accesso in base a dispositivo, rete e rischio dell'applicazione](/sccm/protect/deploy-use/manage-access-based-on-device-network-app-risk).
+Microsoft si integra con la soluzione di protezione dalle minacce Lookout per proteggere i dispositivi mobili iOS e Android mediante il rilevamento di malware, app rischiose e altre minacce nei dispositivi. La soluzione Lookout consente di determinare il livello di minaccia, che è configurabile. È possibile creare una regola dei criteri di conformità in System Center Configuration Manager per determinare la conformità del dispositivo in base alla valutazione dei rischi di Lookout. Tramite criteri di accesso condizionale, è possibile consentire o bloccare l'accesso alle risorse aziendali in base allo stato di conformità del dispositivo. Per informazioni sull'integrazione e sul suo funzionamento, vedere [Gestire l'accesso in base a dispositivo, rete e rischio dell'applicazione](/sccm/mdm/deploy-use/mobile-threat-defense).
 
 Agli utenti dei dispositivi iOS non conformi verrà richiesto di effettuare la registrazione. Verrà inoltre richiesto di installare l'applicazione Lookout for Work, di attivare l'app e di correggere le minacce segnalate da Lookout for Work per poter accedere ai dati aziendali. Vedere le informazioni su come [Configurare e distribuire l'app Lookout for Work](/sccm/protect/deploy-use/configure-and-deploy-lookout-for-work-apps).
 

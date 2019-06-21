@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c57042e6ea4db7b244b8617bbef99633d9026d1b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 59cb31a0d57af21331f48c6a6ba415439fa97239
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501118"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252180"
 ---
 # <a name="checklist-for-installing-update-1810-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1810 di Configuration Manager
 
@@ -34,7 +34,7 @@ Per ottenere l'aggiornamento per la versione 1810, è necessario usare un punto 
 
     -   Un altro problema di download comune si verifica quando le impostazioni del server proxy impediscono il download da http://silverlight.dlservice.microsoft.com, da http://download.microsoft.com e/o da http://go.microsoft.com.
 
-Per altre informazioni sull'installazione degli aggiornamenti, vedere [Aggiornamenti e manutenzione nella console](/sccm/core/servers/manage/updates#a-namebkmkinconsolea-in-console-updates-and-servicing).
+Per altre informazioni sull'installazione degli aggiornamenti, vedere [Aggiornamenti e manutenzione nella console](/sccm/core/servers/manage/updates#bkmk_inconsole).
 
 Per altre informazioni sulle versioni Current Branch, vedere [Versioni di base e di aggiornamento](/sccm/core/servers/manage/updates#bkmk_Baselines).
 
@@ -92,7 +92,7 @@ La versione di Windows 10 Assessment and Deployment Kit (ADK) deve essere suppor
 Se si aggiorna il sito prima di aggiornare Windows ADK, vedere [Aggiornare i punti di distribuzione con l'immagine di avvio](/sccm/osd/get-started/manage-boot-images#update-distribution-points-with-the-boot-image).
 
 #### <a name="review-sql-server-native-client-version"></a>Verificare la versione di SQL Server Native Client
-Deve essere installata una versione minima di SQL Server 2012 Native Client che include il supporto per TLS 1.2. Per altre informazioni, vedere [Elenco dei controlli dei prerequisiti](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-native-client).
+Deve essere installata una versione minima di SQL Server 2012 Native Client che include il supporto per TLS 1.2. Per altre informazioni, vedere [Elenco dei controlli dei prerequisiti](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-server-native-client).
 
 #### <a name="review-the-site-and-hierarchy-status-for-unresolved-issues"></a>Esaminare lo stato del sito e della gerarchia per verificare la presenza di problemi non risolti 
 Un aggiornamento del sito può avere esito negativo a causa di problemi operativi esistenti. Prima di aggiornare un sito, risolvere tutti i problemi operativi per i sistemi seguenti:  
@@ -160,7 +160,7 @@ Per altre informazioni, vedere la sezione per **eseguire il controllo dei prereq
 > Quando viene eseguito il controllo dei prerequisiti, vengono aggiornati alcuni file di origine del prodotto usati per le attività di manutenzione del sito. Di conseguenza, dopo aver eseguito il controllo dei prerequisiti, ma prima di installare l'aggiornamento, se si deve svolgere un'attività di manutenzione del sito, eseguire  **Setupwfe.exe** (il programma di installazione di Configuration Manager) dalla cartella CD.Latest nel server del sito.
 
 #### <a name="update-sites"></a>Aggiornare i siti   
-A questo punto è possibile avviare l'installazione dell'aggiornamento per la gerarchia. Per altre informazioni sull'installazione dell'aggiornamento, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates).
+A questo punto è possibile avviare l'installazione dell'aggiornamento per la gerarchia. Per altre informazioni sull'installazione dell'aggiornamento, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates#bkmk_install).
 
 È possibile pianificare l'installazione dell'aggiornamento al di fuori delle normali ore lavorative. Determinare quando il processo avrà l'impatto minimo sulle operazioni aziendali. Con l'installazione dell'aggiornamento e le relative azioni, vengono reinstallati i componenti del sito e i ruoli del sistema del sito.
 

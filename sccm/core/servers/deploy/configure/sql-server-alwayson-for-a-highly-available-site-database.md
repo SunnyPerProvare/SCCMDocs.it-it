@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f70373f1fea7928e801c0ccdbbe75cf96e54d20
-ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
+ms.openlocfilehash: 2fba1d6793b2b285cc9874de316bb2c435a526e8
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65933536"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252313"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparare l'uso di gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -41,8 +41,8 @@ Di seguito sono riportati gli scenari supportati per l'uso di gruppi di disponib
 
 - [Creare un gruppo di disponibilità per l'uso con Configuration Manager](/sccm/core/servers/deploy/configure/configure-aoag#create-and-configure-an-availability-group)  
 - [Configurare un sito per l'uso di un gruppo di disponibilità](/sccm/core/servers/deploy/configure/configure-aoag#configure-a-site-to-use-the-database-in-the-availability-group)  
-- [Aggiungere e rimuovere i membri di una replica sincrona da un gruppo di disponibilità che ospita un database del sito](/sccm/core/servers/deploy/configure/configure-aoag#add-and-remove-synchronous-replica-members)  
-- [Configurare repliche con commit asincrono](/sccm/core/servers/deploy/configure/configure-aoag#configure-an-asynchronous-commit-repilca)  
+- [Aggiungere e rimuovere i membri di una replica sincrona da un gruppo di disponibilità che ospita un database del sito](/sccm/core/servers/deploy/configure/configure-aoag#add-or-remove-synchronous-replica-members)  
+- [Configurare repliche con commit asincrono](/sccm/core/servers/deploy/configure/configure-aoag#configure-an-asynchronous-commit-replica)  
 - [Ripristinare un sito da una replica con commit asincrono](/sccm/core/servers/deploy/configure/configure-aoag#use-the-asynchronous-replica-to-recover-your-site)  
 - [Spostare un database del sito da un gruppo di disponibilità a un'istanza predefinita o denominata di SQL Server autonomo](/sccm/core/servers/deploy/configure/configure-aoag#stop-using-an-availability-group)  
 
@@ -85,7 +85,7 @@ Ogni istanza di SQL Server può essere eseguita con un account utente di dominio
 
 - In un gruppo di disponibilità usare lo stesso numero e lo stesso tipo di repliche supportati dalla versione di SQL Server in uso.
 
-- Per ripristinare la replica sincrona, è possibile usare la replica con commit asincrono. Per altre informazioni, vedere [Opzioni di ripristino del database del sito](/sccm/core/servers/manage/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption).  
+- Per ripristinare la replica sincrona, è possibile usare la replica con commit asincrono. Per altre informazioni, vedere [Opzioni di ripristino del database del sito](/sccm/core/servers/manage/recover-sites#site-database-recovery-options).  
 
     > [!Warning]  
     > Configuration Manager non supporta il *failover* per l'uso della replica con commit asincrono come database del sito. Per altre informazioni, vedere [Failover e modalità di failover (gruppi di disponibilità AlwaysOn)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/failover-and-failover-modes-always-on-availability-groups?view=sql-server-2014).  

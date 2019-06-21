@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6d427571db52f19e9d1e45648bdf2cc66b6c6d9
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 9bdca6ded291ca6e32194c61ce24b33b690489cb
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56141273"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286255"
 ---
 # <a name="capabilities-in-technical-preview-1703-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1703 per System Center Configuration Manager
 
@@ -63,7 +63,7 @@ Usare il formato di URL seguente per aprire Software Center per una determinata 
 3.  Nella visualizzazione **Applicazioni** fare clic con il pulsante destro del mouse su una delle intestazioni di colonna e quindi scegliere **ID CI univoco** nell'elenco. Si noterà che l'ID univoco di ogni applicazione viene ora visualizzato nell'elenco.
 4.  Prendere nota dell'**ID CI univoco** dell'applicazione a cui si vuole fornire un collegamento, ad esempio: **ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f/2**
 5.  Rimuovere quindi qualsiasi testo che segue il GUID dell'applicazione. In questo caso **/2**. Rimane così l'identificatore dell'applicazione.
-6.  Per completare la creazione del collegamento, anteporre **Softwarecenter:SoftwareID=**. Usando l'esempio precedente, il collegamento finale sarà: **Softwarecenter:SoftwareId= ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f**.
+6.  Per completare la creazione del collegamento, anteporre **Softwarecenter:SoftwareID=** . Usando l'esempio precedente, il collegamento finale sarà: **Softwarecenter:SoftwareId= ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f**.
 
 Gli utenti possono usare questo collegamento per aprire Software Center direttamente nell'applicazione specificata.
 
@@ -83,13 +83,13 @@ La versione Technical Preview 1703 introduce la **Configurazione guidata servizi
 
 Nella versione Technical Preview 1703 solo Windows Store per le aziende Business (WSfB) viene configurato con questa procedura guidata.  Gli altri servizi cloud vengono configurati usando i flussi di lavoro corrispondenti separati.
 
--   Usare le informazioni disponibili in questo argomento di anteprima in sostituzione della procedura di configurazione descritta nella sezione [Configurare la sincronizzazione di Windows Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#set-up-windows-store-for-business-synchronization) dell'argomento per la versione Current Branch [Gestire le app da Windows Store per le aziende con System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
+-   Usare le informazioni disponibili in questo argomento di anteprima in sostituzione della procedura di configurazione descritta nella sezione [Configurare la sincronizzazione di Windows Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#bkmk_setup) dell'argomento per la versione Current Branch [Gestire le app da Windows Store per le aziende con System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
 
 -   Per altre informazioni sulle app Web, vedere [Autenticazione e autorizzazione nel servizio app di Azure](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview) e [Panoramica di App Web](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview).
 
 ### <a name="prerequisites-and-planning"></a>Prerequisiti e pianificazione
 Quando si configura una connessione tra Configuration Manager e Windows Store per le aziende, è necessario specificare una cartella in cui verranno mantenuti i contenuti delle app sincronizzati dall'archivio. Per assicurarsi che questa cartella sia protetta e che il relativo contenuto possa essere distribuito ai dispositivi, verificare che siano disponibili le autorizzazioni seguenti:
--   Il computer in cui si installa il ruolo del sistema del sito del punto di connessione del servizio (sito di livello superiore nella gerarchia) deve essere in possesso delle autorizzazioni lettura e scrittura per la cartella specificata quando si usa l'account **Computer$**.  
+-   Il computer in cui si installa il ruolo del sistema del sito del punto di connessione del servizio (sito di livello superiore nella gerarchia) deve essere in possesso delle autorizzazioni lettura e scrittura per la cartella specificata quando si usa l'account **Computer$** .  
 
 -   L'autore di app deve essere in possesso delle autorizzazioni di lettura per la cartella specificata.  
 
@@ -99,7 +99,7 @@ In Azure Active Directory registrare Configuration Manager come strumento di ges
 
 ### <a name="use-the-wizard-to-configure-the-wsfb-cloud-service"></a>Usare la procedura guidata per configurare il servizio cloud WSfB
 
-1. Nella console passare a **Amministrazione** > **Panoramica** > **Cloud Services Management (Gestione dei servizi cloud)** > **Azure** > **Servizi di Azure** e quindi scegliere **Configure Azure Services (Configura servizi di Azure)** per avviare **Azure Services Wizard (Configurazione guidata servizi di Azure)**.
+1. Nella console passare a **Amministrazione** > **Panoramica** > **Cloud Services Management (Gestione dei servizi cloud)**  > **Azure** > **Servizi di Azure** e quindi scegliere **Configure Azure Services (Configura servizi di Azure)** per avviare **Azure Services Wizard (Configurazione guidata servizi di Azure)** .
 
 2. Nella pagina **Servizi di Azure** selezionare il servizio che si vuole configurare e quindi fare clic su **Avanti**. In questa versione di anteprima è possibile configurare solo WSfB.
 
@@ -129,7 +129,7 @@ In Azure Active Directory registrare Configuration Manager come strumento di ges
 ### <a name="modify-a-cloud-service-configuration"></a>Modificare la configurazione di un servizio cloud
 È possibile visualizzare e modificare le proprietà di un servizio cloud per modificare la configurazione.
 
-Nella console passare a **Amministrazione** > **Panoramica** > **Cloud Services Management (Gestione dei servizi cloud)** > **Azure** > **Servizi di Azure** e quindi scegliere **Configure Azure Services (Configura servizi di Azure)**, selezionare un servizio cloud e quindi scegliere **Proprietà**.
+Nella console passare a **Amministrazione** > **Panoramica** > **Cloud Services Management (Gestione dei servizi cloud)**  > **Azure** > **Servizi di Azure** e quindi scegliere **Configure Azure Services (Configura servizi di Azure)** , selezionare un servizio cloud e quindi scegliere **Proprietà**.
 
 ## <a name="convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>Conversione da BIOS a UEFI durante un aggiornamento sul posto
 Windows 10 Creators Update introduce un semplice strumento di conversione che automatizza il processo di ripartizione del disco rigido per l'hardware abilitato per UEFI e integra lo strumento di conversione nel processo di aggiornamento sul posto da Windows 7 a Windows 10. Quando si usa questo strumento in combinazione con la sequenza di attività di aggiornamento del sistema operativo e con lo strumento OEM che converte il firmware da BIOS a UEFI, è possibile convertire i computer da BIOS a UEFI durante un aggiornamento sul posto a Windows 10 Creators Update. Per informazioni dettagliate, vedere [Passaggi della sequenza di attività per la gestione della conversione da BIOS a UEFI](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).
