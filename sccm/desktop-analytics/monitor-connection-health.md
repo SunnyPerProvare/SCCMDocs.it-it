@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1c5d2af3cf97d6093037e248eff3447035ff413f
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 87126ce9de60919299c27bc84e0603b9bb24fdf0
+ms.sourcegitcommit: 9d186b8b9ff652d5ea8a5d352f3f793f11db66f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159065"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67352076"
 ---
 # <a name="monitor-connection-health"></a>Monitorare l'integrità della connessione
 
@@ -226,9 +226,12 @@ Per altre informazioni, esaminare M365AHandler.log sul client.
 
 Cercare il file seguente: `%windir%\System32\CompatTelRunner.exe`. Se non esiste, reinstallare le [compatibilità aggiornamenti](/sccm/desktop-analytics/enroll-devices#bkmk_appraiser). Assicurarsi che nessun altro componente di sistema è la rimozione di questo file, ad esempio criteri di gruppo o un servizio antimalware.
 
-Se il file M365Handler.log sul client include uno dei seguenti errori: `RunAppraiser failed. CompatTelRunner.exe exited with last error code: 0x800703F1`
-`RunAppraiser failed. CompatTelRunner.exe exited with last error code: 0x80070005`
-`RunAppraiser failed. CompatTelRunner.exe exited with last error code: 0x80080005`  
+Se il file M365AHandler.log sul client include uno dei seguenti errori:
+```
+RunAppraiser failed. CompatTelRunner.exe exited with last error code: 0x800703F1
+RunAppraiser failed. CompatTelRunner.exe exited with last error code: 0x80070005
+RunAppraiser failed. CompatTelRunner.exe exited with last error code: 0x80080005
+```
 
 Per aiutare a risolvere questi errori, eseguire i comandi seguenti da una console di Windows PowerShell con privilegi elevata sul client interessati:
 
