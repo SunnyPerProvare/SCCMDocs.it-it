@@ -2,7 +2,7 @@
 title: Novità nella gestione di dispositivi mobili ibrida
 titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità di gestione dei dispositivi mobili disponibili per le distribuzioni ibride con Configuration Manager e Intune.
-ms.date: 05/28/2019
+ms.date: 06/24/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da4798b958e0fd66e53024a2a104a67b3c1b93ea
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: c269e5f90588634e51f1d3f1e31767b11a038503
+ms.sourcegitcommit: d8cfd0edf2579e2b08a0ca8a0a7b8f53d1e4196f
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194598"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67463768"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con Configuration Manager e Microsoft Intune
 
@@ -45,6 +45,14 @@ Ogni sezione di questo articolo elenca le funzionalità ibride in tre categorie 
 |**Novità di Microsoft Intune** | In generale, tutte le funzionalità elencate in questa categoria dovrebbero funzionare con tutte le versioni di Configuration Manager, incluse le versioni di System Center 2012 R2 Configuration Manager, perché richiedono solo il servizio Intune e non richiedono altre funzionalità di Configuration Manager.|
 |**Novità di Configuration Manager Technical Preview**| Tutte le funzionalità elencate in questa categoria funzionano solo con il ramo di Technical Preview specificato. Per provare queste funzionalità, è necessario installare la versione di Technical Preview specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview).|
 |**Novità di Configuration Manager (Current Branch)**| Tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Eseguire l'aggiornamento a Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).|
+
+## <a name="june-2019"></a>Giugno 2019
+
+### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
+
+### <a name="view-all-installed-apps-from-new-company-portal-web-page"></a>Visualizzare le app installate tutte dalla nuova pagina web portale aziendale 
+<!-- 4224326-->
+Del nuovo sito Web del portale aziendale **App installate** pagina sono elencate tutte le app gestite (sia richiesta che disponibile) installate nel dispositivo dell'utente. Oltre a tipo di assegnazione, gli utenti possono visualizzare lo stato dell'installazione corrente, data di pubblicazione e server di pubblicazione dell'app. Se non sono apportate tutte le altre App obbligatoria o disponibile per gli utenti, essi non verrà visualizzato un messaggio che spiega che nessuna società le app sono state installate. Per visualizzare la nuova vista, vedere la [sito Web portale aziendale](https://portal.manage.microsoft.com) e fare clic su **App installate**.  
 
 
 ## <a name="may-2019"></a>Maggio 2019

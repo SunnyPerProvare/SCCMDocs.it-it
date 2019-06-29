@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c7c899f56829d63cebc29518cbeb7497b6a203cd
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 6658f0b7a65027715975e6075e5c18a430d38405
+ms.sourcegitcommit: d8cfd0edf2579e2b08a0ca8a0a7b8f53d1e4196f
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67158912"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67463755"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Come configurare Desktop Analitica
 
@@ -40,24 +40,20 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 
 4. Nel **consentire agli utenti accesso** pagina:
 
-    - **Chcete Desktop Analitica per gestire i ruoli della Directory per gli utenti**: Desktop Analitica assegna automaticamente le **i proprietari dell'area di lavoro** e **collaboratori dell'area di lavoro** Raggruppa per il **Analitica Desktop Administrator** ruolo. Se tali gruppi ha già un **amministratore globale**, non è stata modificata.  
+    - **Consenti Desktop Analitica gestire i ruoli della Directory per tuo conto**: Desktop Analitica assegna automaticamente il **i proprietari dell'area di lavoro** le **Desktop Administrator Analitica** ruolo. Se tali gruppi ha già un **amministratore globale**, non è stata modificata.
 
-        Se non si seleziona questa opzione, Analitica Desktop aggiunge comunque agli utenti come membri di due gruppi di sicurezza. Oggetto **amministratore globale** deve assegnare manualmente le **Desktop Administrator Analitica** ruolo per gli utenti.  
+        Se non si seleziona questa opzione, Analitica Desktop ancora consente di aggiungere utenti come membri del gruppo di sicurezza. Oggetto **amministratore globale** deve assegnare manualmente le **Desktop Administrator Analitica** ruolo per gli utenti.   
 
         Per altre informazioni sull'assegnazione di autorizzazioni del ruolo amministratore in Azure Active Directory e le autorizzazioni assegnate ai **gli amministratori di Desktop Analitica**, vedere [le autorizzazioni del ruolo amministratore in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
 
-    - Desktop Analitica preconfigura due gruppi di sicurezza in Azure Active Directory:  
+    - Desktop Analitica preconfigura i **i proprietari dell'area di lavoro** gruppo di sicurezza in Azure Active Directory per creare e gestire le aree di lavoro e i piani di distribuzione. 
 
-        - **I proprietari dell'area di lavoro**: Un gruppo di sicurezza per creare e gestire le aree di lavoro. Questi account devono accesso come proprietario della sottoscrizione di Azure.  
-
-        - **I collaboratori dell'area di lavoro**: Un gruppo di sicurezza per creare e gestire i piani di distribuzione nell'area di lavoro. Non è necessario alcun accesso di Azure aggiuntivo.  
-
-        Per aggiungere un utente a entrambi i gruppi, digitare l'indirizzo di posta elettronica o nome nella **immettere l'indirizzo di posta elettronica o nome** sezione del gruppo appropriato. Al termine, selezionare **successivo**.
+        Per aggiungere un utente al gruppo, digitare l'indirizzo di posta elettronica o nome nella **immettere l'indirizzo di posta elettronica o nome** sezione. Al termine, selezionare **successivo**.
 
 5. Nella pagina per **configurare l'area di lavoro**:  
 
     > [!Note]  
-    > Completare questo passaggio come un **proprietario dell'area di lavoro** oppure **collaboratore**. Per altre informazioni, vedere [prerequisiti](/sccm/desktop-analytics/overview#prerequisites).  
+    > Per completare questo passaggio, le esigenze degli utenti **proprietario dell'area di lavoro** accesso aggiuntiva per la sottoscrizione di Azure e il gruppo di risorse e delle autorizzazioni. Per altre informazioni, vedere [prerequisiti](/sccm/desktop-analytics/overview#prerequisites).  
 
     - Per usare un'area di lavoro per Desktop Analitica, selezionarlo e continuare con il passaggio successivo.  
 

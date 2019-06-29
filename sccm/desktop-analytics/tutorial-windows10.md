@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f49955fed92061fb856a5ff49203f1fa6c9d186
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 0700644f9548ea588821141a34abc6d249909cdf
+ms.sourcegitcommit: d8cfd0edf2579e2b08a0ca8a0a7b8f53d1e4196f
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67285637"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67463760"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Esercitazione: Distribuire Windows 10 a un gruppo pilota
 
@@ -101,24 +101,20 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 
 4. Nel **consentire agli utenti accesso** pagina:
 
-    - **Chcete Desktop Analitica per gestire i ruoli della Directory per gli utenti**: Desktop Analitica assegna automaticamente le **i proprietari dell'area di lavoro** e **collaboratori dell'area di lavoro** Raggruppa per il **Analitica Desktop Administrator** ruolo. Se tali gruppi ha già un **amministratore globale**, non è stata modificata.  
+    - **Consenti Desktop Analitica gestire i ruoli della Directory per tuo conto**: Desktop Analitica assegna automaticamente il **i proprietari dell'area di lavoro** le **Desktop Administrator Analitica** ruolo. Se tali gruppi ha già un **amministratore globale**, non è stata modificata.  
 
-        Se non si seleziona questa opzione, Analitica Desktop aggiunge comunque agli utenti come membri di due gruppi di sicurezza. Oggetto **amministratore globale** deve assegnare manualmente le **Desktop Administrator Analitica** ruolo per gli utenti.  
+        Se non si seleziona questa opzione, Analitica Desktop ancora consente di aggiungere utenti come membri del gruppo di sicurezza. Oggetto **amministratore globale** deve assegnare manualmente le **Desktop Administrator Analitica** ruolo per gli utenti.  
 
         Per altre informazioni sull'assegnazione di autorizzazioni del ruolo amministratore in Azure Active Directory e le autorizzazioni assegnate ai **gli amministratori di Desktop Analitica**, vedere [le autorizzazioni del ruolo amministratore in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
 
-    - Desktop Analitica preconfigura due gruppi di sicurezza in Azure Active Directory:  
+    - Desktop Analitica preconfigura i **i proprietari dell'area di lavoro** gruppo di sicurezza in Azure Active Directory per creare e gestire le aree di lavoro e i piani di distribuzione. 
 
-        - **I proprietari dell'area di lavoro**: Un gruppo di sicurezza per creare e gestire le aree di lavoro. Questi account devono accesso come proprietario della sottoscrizione di Azure.  
-
-        - **I collaboratori dell'area di lavoro**: Un gruppo di sicurezza per creare e gestire i piani di distribuzione nell'area di lavoro. Non è necessario alcun accesso di Azure aggiuntivo.  
-
-        Per aggiungere un utente a entrambi i gruppi, digitare l'indirizzo di posta elettronica o nome nella **immettere l'indirizzo di posta elettronica o nome** sezione del gruppo appropriato. Al termine, selezionare **successivo**.
+        Per aggiungere un utente al gruppo, digitare l'indirizzo di posta elettronica o nome nella **immettere l'indirizzo di posta elettronica o nome** sezione. Al termine, selezionare **successivo**.
 
 5. Nella pagina per **configurare l'area di lavoro**:  
 
     > [!Note]  
-    > Completare questo passaggio come un **proprietario dell'area di lavoro** oppure **collaboratore**. Per altre informazioni, vedere [prerequisiti](/sccm/desktop-analytics/overview#prerequisites).  
+    > Per completare questo passaggio, le esigenze degli utenti **proprietario dell'area di lavoro** accesso aggiuntiva per la sottoscrizione di Azure e il gruppo di risorse e delle autorizzazioni. Per altre informazioni, vedere [prerequisiti](/sccm/desktop-analytics/overview#prerequisites).  
 
     - Selezionare la sottoscrizione di Azure.  
 
@@ -192,7 +188,7 @@ Installare l'aggiornamento cumulativo Configuration Manager versione 1902 (45005
     Selezionare **Accedi**. Dopo l'autenticazione in Azure, nella pagina viene visualizzato il **Nome del tenant di Azure AD** come riferimento.
 
     > [!Note]  
-    > Completare questo passaggio come un **amministratore società**. Queste credenziali non vengono memorizzate in Configuration Manager. Questo utente tipo non richiede autorizzazioni in Configuration Manager e non deve necessariamente essere lo stesso account che esegue la procedura guidata per i servizi di Azure.  
+    > Completare questo passaggio come un **amministratore globale**. Queste credenziali non vengono memorizzate in Configuration Manager. Questo utente tipo non richiede autorizzazioni in Configuration Manager e non deve necessariamente essere lo stesso account che esegue la procedura guidata per i servizi di Azure.  
 
     Selezionare **OK** per creare l'app Web in Azure AD e chiudere la finestra di dialogo Crea un'applicazione server. Nella finestra di dialogo App Server, selezionare **OK**. Quindi selezionare **successivo** nella pagina App della procedura guidata servizi di Azure.  
 
