@@ -2,7 +2,7 @@
 title: Creare ed eseguire script
 titleSuffix: Configuration Manager
 description: Creare ed eseguire script di PowerShell in dispositivi client.
-ms.date: 03/13/2019
+ms.date: 06/20/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc22c66cfa4cf4e628dce7bf3cb268464610c933
-ms.sourcegitcommit: bfb8a17f60dcb9905e739045a5141ae45613fa2c
+ms.openlocfilehash: 7dc4351cf092437d81f0f30ed6b450ed1cb1efe2
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66198444"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286521"
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire gli script di PowerShell dalla console di Configuration Manager
 
@@ -76,7 +76,7 @@ La funzionalità Esegui script usa il concetto di *autore di script* e *responsa
 
 ### <a name="scripts-roles-control"></a>Controllo dei ruoli per gli script
 
-Per impostazione predefinita, gli utenti non possono approvare uno script da loro stessi creato. Poiché gli script sono potenti e versatili e vengono potenzialmente distribuiti a molti dispositivi, è possibile separare i ruoli tra la persona che crea lo script e la persona che lo approva. Questi ruoli garantiscono un livello aggiuntivo di sicurezza, impedendo l'esecuzione di uno script senza supervisione. Per semplificare le attività di test, è possibile disattivare l'approvazione secondaria.
+Per impostazione predefinita, gli utenti non possono approvare uno script che è stato creato. Poiché gli script sono potenti e versatili e vengono potenzialmente distribuiti a molti dispositivi, è possibile separare i ruoli tra la persona che crea lo script e la persona che lo approva. Questi ruoli garantiscono un livello aggiuntivo di sicurezza, impedendo l'esecuzione di uno script senza supervisione. Per semplificare le attività di test, è possibile disattivare l'approvazione secondaria.
 
 ### <a name="approve-or-deny-a-script"></a>Approvare o rifiutare uno script
 
@@ -85,7 +85,7 @@ Gli script devono essere approvati dal ruolo *responsabile dell'approvazione di 
 1. Nella console di Configuration Manager fare clic su **Raccolta software**.
 2. Nell'area di lavoro **Raccolta software** fare clic su **Script**.
 3. Nell'elenco **Script** scegliere lo script che si desidera approvare o rifiutare e quindi scegliere la scheda **Home** nel gruppo **Script**, quindi fare clic su **Approve/Deny** (Approva/Rifiuta).
-4. Nella finestra di dialogo **Approva o rifiuta script** selezionare **Approva** o **Nega** per lo script. Facoltativamente, immettere un commento sulla decisione.  Se si rifiuta uno script, questo non può essere eseguito sui dispositivi client. <br>
+4. Nella finestra di dialogo **Approva o rifiuta script** selezionare **Approva** o **Nega** per lo script. Facoltativamente, immettere un commento sulla decisione.  Se si rifiuta uno script, questo non può essere eseguito nei dispositivi client. <br>
 ![Script - Approvazione](./media/run-scripts/RS-approval.png)
 1. Completare la procedura guidata. Nell'elenco **Script** la colonna **Stato dell'approvazione** cambia a seconda dell'azione eseguita.
 
@@ -172,7 +172,7 @@ I tre ruoli di sicurezza usati per l'esecuzione di script non vengono creati per
 5. Completare la procedura guidata. Il nuovo script viene visualizzato nell'elenco **Script** con stato **In attesa di approvazione** . Prima di poter eseguire questo script nei dispositivi client, è necessario approvarlo. 
 
 > [!IMPORTANT]
-> Evitare di creare uno script per il riavvio del dispositivo o il riavvio dell'agente di Configuration Manager quando si usa la funzionalità Esegui script. Questa operazione potrebbe causare uno stato di riavvio continuo. Se necessario, sono disponibili miglioramenti delle funzionalità di notifica client che supportano il riavvio dei dispositivi, a partire da Configuration Manager versione 1710. La [colonna Riavvio in sospeso](/sccm/core/clients/manage/manage-clients#Restart-clients) può essere utile per identificare i dispositivi che richiedono un riavvio. 
+> Evitare di creare uno script per il riavvio del dispositivo o il riavvio dell'agente di Configuration Manager quando si usa la funzionalità Esegui script. Questa operazione potrebbe causare uno stato di riavvio continuo. Se necessario, sono disponibili miglioramenti delle funzionalità di notifica client che supportano il riavvio dei dispositivi, a partire da Configuration Manager versione 1710. La [colonna Riavvio in sospeso](/sccm/core/clients/manage/manage-clients#restart-clients) può essere utile per identificare i dispositivi che richiedono un riavvio. 
 > <!--SMS503978  -->
 
 ## <a name="script-parameters"></a>Parametri di script
@@ -240,6 +240,29 @@ Questo script usa WMI per richiedere la versione del sistema operativo al comput
 ``` powershell
 Write-Output (Get-WmiObject -Class Win32_operatingSystem).Caption
 ```
+
+## <a name="bkmk_psedit"></a> Modifica o copia degli script di PowerShell
+<!--3705507-->
+*Introdotti con la versione 1902*  
+È possibile usare il comando **Modifica** o **Copia** per uno script di PowerShell esistente usato con la funzionalità **Esegui script**. Anziché ricreare uno script che è necessario modificare, ora è possibile modificarlo direttamente. Entrambe le azioni usano la stessa esperienza con procedura guidata presentata per la creazione di un nuovo script. Quando si modifica o si copia uno script, Configuration Manager non salva in modo permanente lo stato di approvazione.
+
+> [!Tip]  
+> Non modificare uno script che è in esecuzione nei client. L'esecuzione dello script originale non verrebbe completata e si potrebbero ottenere risultati diversi dal previsto da questi client.  
+
+### <a name="edit-a-script"></a>Modifica di uno script
+
+1. Andare alla **gli script** nodo sotto il **raccolta Software** dell'area di lavoro.
+1. Selezionare lo script da modificare, quindi fare clic su **modifica** nella barra multifunzione. 
+1. Modificare o reimportare lo script nel **ScriptDetails** pagina.
+1. Fare clic su **successivo** per visualizzare i **riepilogo** quindi **Chiudi** al termine della modifica.
+
+### <a name="copy-a-script"></a>Copiare uno script
+
+1. Andare alla **gli script** nodo sotto il **raccolta Software** dell'area di lavoro.
+1. Selezionare lo script da copiare, quindi fare clic su **copia** nella barra multifunzione.
+1. Rinomina lo script nel **nome dello Script** campo e apportare le modifiche aggiuntive, potrebbe essere necessario.
+1. Fare clic su **successivo** per visualizzare i **riepilogo** quindi **Chiudi** al termine della modifica.
+
 
 ## <a name="run-a-script"></a>Esegui uno script
 

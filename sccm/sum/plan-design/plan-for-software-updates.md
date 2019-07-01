@@ -5,18 +5,18 @@ description: La pianificazione dell'infrastruttura del punto di aggiornamento so
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 03/21/2019
+ms.date: 06/19/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4100bca2f1cd1f770c2e739ec229dc020d5d8d8
-ms.sourcegitcommit: 5f17355f954b9d9e10325c0e9854a9d582dec777
+ms.openlocfilehash: 7404e97cd1ef9c68f80904b5ba26373605c7c751
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329584"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67285455"
 ---
 # <a name="plan-for-software-updates-in-configuration-manager"></a>Pianificare gli aggiornamenti software in Configuration Manager
 
@@ -52,7 +52,7 @@ Il numero di client supportati dipende dalla versione di Windows Server Update S
     - Aumentare la lunghezza della coda WsusPool a 2000
     - Aumentare il limite di memoria privata WsusPool di 4 volte oppure impostarlo su 0 (illimitato). Se ad esempio il limite predefinito è 1.843.200 kB, aumentarlo a 7.372.800. Per altre informazioni su questo problema, vedere questo [post del blog del team di supporto di Configuration Manager](https://blogs.technet.microsoft.com/configurationmgr/2015/03/23/configmgr-2012-support-tip-wsus-sync-fails-with-http-503-errors/).  
 
-    Per altre informazioni sui requisiti hardware per il punto di aggiornamento software, vedere [Recommended hardware for site systems](/sccm/core/plan-design/configs/recommended-hardware#a-namebkmkscalesiesystemsa-site-systems) (Hardware consigliato per i sistemi del sito).  
+    Per altre informazioni sui requisiti hardware per il punto di aggiornamento software, vedere [Recommended hardware for site systems](/sccm/core/plan-design/configs/recommended-hardware#bkmk_ScaleSieSystems) (Hardware consigliato per i sistemi del sito).  
 
 
 ### <a name="bkmk_sum-capacity-obj"></a> Pianificazione della capacità per gli oggetti degli aggiornamenti software  
@@ -151,7 +151,9 @@ Per conoscere il significato di un codice di errore, convertire il codice di err
 È possibile commutare i client di Configuration Manager a un nuovo punto di aggiornamento software quando si verificano problemi con il punto di aggiornamento software attivo. Questa modifica avviene solo quando un client riceve più punti di aggiornamento software da un punto di gestione.
 
 > [!IMPORTANT]    
-> Quando si passa a un altro dispositivo per usare un nuovo server, i dispositivi trovano il nuovo server tramite fallback. Prima di avviare questa modifica esaminare le configurazioni dei gruppi di limiti e assicurarsi che i punti di aggiornamento software si trovino nei gruppi di limite appropriati. Per altre informazioni, vedere [Punti di aggiornamento software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points).  
+> Quando si passa a un altro dispositivo per usare un nuovo server, i dispositivi trovano il nuovo server tramite fallback. I client passino al nuovo punto di aggiornamento software durante il successivo ciclo di analisi degli aggiornamenti software.<!-- SCCMDocs#1537 -->
+>
+> Prima di avviare questa modifica esaminare le configurazioni dei gruppi di limiti e assicurarsi che i punti di aggiornamento software si trovino nei gruppi di limite appropriati. Per altre informazioni, vedere [Punti di aggiornamento software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points).  
 >
 > La commutazione a un nuovo punto di aggiornamento software genera traffico di rete aggiuntivo. La quantità di traffico dipende dalle impostazioni di configurazione di WSUS, ad esempio le classificazioni e i prodotti sincronizzati o l'uso di un database WSUS condiviso. Se si prevede di commutare più dispositivi, è consigliabile pianificare l'attività durante una finestra di manutenzione. In tal modo si riduce l'impatto sulle prestazioni di rete quando i client effettuano la scansione con il nuovo punto di aggiornamento software.  
 
@@ -260,7 +262,7 @@ Questa sezione include informazioni sulle procedure per pianificare e preparare 
 
 Installare il ruolo del punto di aggiornamento software in un sistema del sito conforme ai requisiti minimi per WSUS e alle configurazioni supportate per i sistemi del sito di Configuration Manager.  
 
--   Per altre informazioni sui requisiti minimi per il ruolo del server WSUS in Windows Server, vedere [Rivedere le considerazioni e i requisiti di sistema](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/plan/plan-your-wsus-deployment#BKMK_1.1).  
+-   Per altre informazioni sui requisiti minimi per il ruolo del server WSUS in Windows Server, vedere [Rivedere le considerazioni e i requisiti di sistema](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/plan/plan-your-wsus-deployment#11-review-considerations-and-system-requirements).  
 
 -   Per altre informazioni sulle configurazioni supportate per i sistemi del sito di Configuration Manager, vedere [Prerequisiti del sito e di sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).  
 
@@ -315,44 +317,10 @@ La connessione a Microsoft Update viene sempre configurata per utilizzare la por
 
 
 #### <a name="restrict-access-to-specific-domains"></a>Limitare l'accesso a domini specifici  
-Se la propria organizzazione non consente l'apertura delle porte e dei protocolli a tutti gli indirizzi nel firewall tra il punto di aggiornamento software attivo e Internet, limitare l'accesso ai seguenti domini, in modo da consentire la comunicazione di WSUS e Aggiornamenti automatici con Microsoft Update:  
 
--   `http://windowsupdate.microsoft.com`  
+Se l'organizzazione limita le comunicazioni di rete con internet tramite un dispositivo firewall o proxy, è necessario consentire il punto di aggiornamento software attivo accedere agli endpoint internet. WSUS e aggiornamenti automatici possono quindi comunicare con il servizio cloud di Microsoft Update.
 
--   `http://*.windowsupdate.microsoft.com`  
-
--   `https://*.windowsupdate.microsoft.com`  
-
--   `http://*.update.microsoft.com`  
-
--   `https://*.update.microsoft.com`  
-
--   `http://*.windowsupdate.com`  
-
--   `http://download.windowsupdate.com`  
-
--   `http://download.microsoft.com`  
-
--   `http://*.download.windowsupdate.com`  
-
--   `http://test.stats.update.microsoft.com`  
-
--   `http://ntservicepack.microsoft.com`  
-
-Potrebbe essere necessario aggiungere gli indirizzi seguenti al firewall che si trova tra i due sistemi del sito nei seguenti casi: 
-- Se i siti secondari hanno un punto di aggiornamento software 
-- Se è presente un punto di aggiornamento software basato su Internet attivo remoto in un sito
-
-  **Punto di aggiornamento software nel sito secondario**  
-
-- `http://<FQDN for software update point on child site>`  
-
-- `https://<FQDN for software update point on child site>`  
-
-- `http://<FQDN for software update point on parent site>`  
-
-- `https://<FQDN for software update point on parent site>`  
-
+Per altre informazioni, vedere [requisiti di accesso Internet](/sccm/core/plan-design/network/internet-endpoints#bkmk_sum).
 
 
 ##  <a name="BKMK_SyncSettings"></a> Pianificare le impostazioni di sincronizzazione  

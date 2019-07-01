@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5600743af8acc0da121454aef2d90167c3ded5fa
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: a4dd872e803e1d2925f011a60be5d1ee924ca555
+ms.sourcegitcommit: 8e9e7c42a5572797e05936fab0cf84fc27c40862
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286615"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398858"
 ---
 # <a name="how-to-prepare-internet-based-devices-for-co-management"></a>Come preparare i dispositivi basati su Internet per la co-gestione
 
@@ -60,6 +60,9 @@ Per altre informazioni, vedere la [sequenza di attività Windows Autopilot per d
 ## <a name="install-the-configuration-manager-client"></a>Installare il client di Configuration Manager
 
 Per i dispositivi basati su Internet nel secondo percorso, è necessario creare un'app in Intune. Distribuire quest'app nei dispositivi Windows 10 che non sono ancora client di Configuration Manager. 
+
+> [!Note]  
+> Prima di distribuire questa app ai dispositivi, è necessario assicurarsi che i dispositivi considerino attendibile il certificato di autenticazione server di Cloud Management Gateway. Per altre informazioni, vedere [Certificato radice trusted del gateway di gestione cloud per i client](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_cmgroot). Se il dispositivo non considera attendibile il certificato di autenticazione server di Cloud Management Gateway verrà indicato l'errore WINHTTP_CALLBACK_STATUS_FLAG_INVALID_CA nel file ccmsetup.log nel client.
 
 ### <a name="get-the-command-line-from-configuration-manager"></a>Recuperare la riga di comando da Configuration Manager
 
