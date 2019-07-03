@@ -3,6 +3,12 @@ title: System Center Configuration Manager
 summary: Documentazione ufficiale del prodotto per Configuration Manager
 metadata:
   ms.topic: hub-page
+  ms.openlocfilehash: 5839951dd659da3f88598def010330a50b1b4cf9
+  ms.sourcegitcommit: 65c8b29797bc0173f97b1b1144492d093a30ebb7
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 06/24/2019
+  ms.locfileid: "67344727"
 highlightedContent:
   items:
   - title: Novità
@@ -212,9 +218,3 @@ additionalContent:
 
         [Gruppo di professionisti di ConfigMgr su Facebook](https://www.facebook.com/groups/ConfigMgr2012) <br/>
   footer: Sono stati riscontrati problemi nel sito? [Comunicarlo a Microsoft](https://docs.microsoft.com/sccm/core/understand/use-docs#bkmk_docfeedback)
-ms.openlocfilehash: 5839951dd659da3f88598def010330a50b1b4cf9
-ms.sourcegitcommit: 65c8b29797bc0173f97b1b1144492d093a30ebb7
-ms.translationtype: HT
-ms.contentlocale: it-IT
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67344727"
