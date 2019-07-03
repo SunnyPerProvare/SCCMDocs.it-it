@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ebc2b995c763aa54e1d47ee38ab2d250554f5a29
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 0a50dd4df66292837cd7a3667a0790c04ebddb9a
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62185547"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67516014"
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-configuration-manager"></a>Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando Configuration Manager
 
@@ -152,7 +152,7 @@ Le seguenti impostazioni vengono inoltre rimosse dai dispositivi Windows 10 Mobi
 
 Windows 8.1 e Windows RT 8.1 supportano la cancellazione selettiva dei contenuti crittografati con EFS. Quanto descritto di seguito si applica alla cancellazione selettiva di contenuti abilitati EFS:  
 
-- Solo le app e i dati protetti da EFS attraverso lo stesso dominio Internet come account Intune vengono cancellati in modo selettivo. Per altre informazioni, vedere [Cancellazione selettiva di Windows per la gestione di dati del dispositivo](http://technet.microsoft.com/library/dn486874.aspx).  
+- Solo le app e i dati protetti da EFS attraverso lo stesso dominio Internet come account Intune vengono cancellati in modo selettivo. Per altre informazioni, vedere [Cancellazione selettiva di Windows per la gestione di dati del dispositivo](https://technet.microsoft.com/library/dn486874.aspx).  
 
 - In caso di modifiche al dominio associato con EFS, potranno essere necessarie fino a 48 ore prima che le app e i dati che usano il nuovo dominio siano cancellati in modo selettivo.  
 
@@ -252,4 +252,4 @@ Se un utente perde il dispositivo, è possibile bloccare il dispositivo in modal
 
 ## <a name="see-also"></a>Vedere anche  
 
-[Cancellazione selettiva di Windows per la gestione di dati del dispositivo](http://technet.microsoft.com/library/dn486874.aspx)   
+[Cancellazione selettiva di Windows per la gestione di dati del dispositivo](https://technet.microsoft.com/library/dn486874.aspx)   

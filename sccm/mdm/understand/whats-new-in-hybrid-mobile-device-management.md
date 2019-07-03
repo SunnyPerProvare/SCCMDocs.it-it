@@ -2,7 +2,7 @@
 title: Novità nella gestione di dispositivi mobili ibrida
 titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità di gestione dei dispositivi mobili disponibili per le distribuzioni ibride con Configuration Manager e Intune.
-ms.date: 06/24/2019
+ms.date: 07/01/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c269e5f90588634e51f1d3f1e31767b11a038503
-ms.sourcegitcommit: d8cfd0edf2579e2b08a0ca8a0a7b8f53d1e4196f
+ms.openlocfilehash: 2dd14e7beaef6fe636ea220de557a866e547a602
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67463768"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67516222"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con Configuration Manager e Microsoft Intune
 
@@ -50,9 +50,23 @@ Ogni sezione di questo articolo elenca le funzionalità ibride in tre categorie 
 
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
 
-### <a name="view-all-installed-apps-from-new-company-portal-web-page"></a>Visualizzare le app installate tutte dalla nuova pagina web portale aziendale 
+#### <a name="new-view-lets-users-see-all-managed-apps-installed-on-device"></a>Nuova visualizzazione consente di visualizzare tutte le app gestite installate nel dispositivo
+
+<!-- 2352913 -->
+Il portale aziendale per Windows sono ora elencate tutte le app gestite (sia richiesta che disponibile) installate nel dispositivo dell'utente. Gli utenti possono visualizzare anche tentativi e in attesa di installazione delle app e i relativi stati correnti. Se non sono apportate App obbligatoria o disponibile per gli utenti, essi non verrà visualizzato un messaggio che spiega che nessuna società le app sono state installate.
+
+Per visualizzare la nuova visualizzazione, passare al riquadro di spostamento di portale aziendale e selezionare **Apps** > **App installate**. Quindi ordinare o filtrare l'elenco di uno dei seguenti attributi:
+
+- Name
+- Type
+- Publisher
+- Ultimo aggiornamento
+- Stato dell'installazione
+
+#### <a name="view-all-installed-apps-from-new-company-portal-web-page"></a>Visualizzare le app installate tutte dalla nuova pagina web portale aziendale
+
 <!-- 4224326-->
-Del nuovo sito Web del portale aziendale **App installate** pagina sono elencate tutte le app gestite (sia richiesta che disponibile) installate nel dispositivo dell'utente. Oltre a tipo di assegnazione, gli utenti possono visualizzare lo stato dell'installazione corrente, data di pubblicazione e server di pubblicazione dell'app. Se non sono apportate tutte le altre App obbligatoria o disponibile per gli utenti, essi non verrà visualizzato un messaggio che spiega che nessuna società le app sono state installate. Per visualizzare la nuova vista, vedere la [sito Web portale aziendale](https://portal.manage.microsoft.com) e fare clic su **App installate**.  
+Del nuovo sito Web del portale aziendale **App installate** pagina sono elencate tutte le app gestite (sia richiesta che disponibile) installate nel dispositivo dell'utente. Oltre a tipo di assegnazione, gli utenti possono visualizzare lo stato dell'installazione corrente, data di pubblicazione e server di pubblicazione dell'app. Se non sono apportate tutte le altre App obbligatoria o disponibile per gli utenti, essi non verrà visualizzato un messaggio che spiega che nessuna società le app sono state installate. Per visualizzare la nuova vista, vedere la [sito Web portale aziendale](https://portal.manage.microsoft.com) e selezionare **App installate**.  
 
 
 ## <a name="may-2019"></a>Maggio 2019
@@ -119,9 +133,6 @@ Home page dell'app portale aziendale per i dispositivi iOS è stata riprogettata
 
 <!-- 2751523 -->
 I dispositivi Windows registrati in Intune mediante [registrazione in blocco Windows](https://docs.microsoft.com/intune/windows-bulk-enroll) (dei pacchetti di provisioning) saranno possibile usare l'app portale aziendale per installare le app disponibili. Per altre informazioni sull'app portale aziendale, vedere [aggiungere manualmente il portale aziendale di Windows 10](https://docs.microsoft.com/intune/store-apps-company-portal-app) e [come configurare l'app portale aziendale di Microsoft Intune](https://docs.microsoft.com/intune/company-portal-app).
-
-> [!Note]  
-> Questa funzionalità non è ancora completamente distribuita a tutti i clienti. Se è possibile usare l'App portale aziendale nei dispositivi registrato in blocco, si potrebbe essere necessario attendere fino a quando non ha apportato questa modifica al tuo account.
 
 #### <a name="app-icons-are-displayed-with-an-automatically-generated-background"></a>Le icone dell'App vengono visualizzate con uno sfondo generato automaticamente
 

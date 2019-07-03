@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e6055efad94952a7dcd7714cdfb5730289d8dafc
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: b9d5ef21702421a776c7fbe692f6aa99672efcce
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56136144"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67516064"
 ---
 # <a name="troubleshoot-lookout-integration-with-intune"></a>Risolvere i problemi di integrazione di Lookout con Intune
 
@@ -54,7 +54,7 @@ Questo problema può verificarsi in uno dei seguenti scenari:
 
 Se un dispositivo risulta **Pending**  (In sospeso), l'utente finale non ha aperto l'app Lookout for Work e non ha toccato il pulsante **Activate** (Attiva). Per informazioni dettagliate sull'attivazione di dispositivi con l'app Lookout for Work, leggere l'argomento seguente:
 
-[Viene richiesto di installare Lookout for Work nel dispositivo Android](http://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
+[Viene richiesto di installare Lookout for Work nel dispositivo Android](https://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
 
 ### <a name="in-the-lookout-mtp-console-a-device-is-showing-as-active-but-does-not-have-a-device-id"></a>Nella console di Lookout MTP un dispositivo appare come attivo, ma non ha un ID dispositivo.
 Ciò significa che l'utente che possiede il dispositivo non appartiene al gruppo di registrazione specificato nella console di Lookout MTP.   Un dispositivo può assumere questo stato se l'utente che lo possiede è stato rimosso dal gruppo di registrazione o se il gruppo di registrazione a cui appartiene l'utente è stato rimosso.
@@ -79,6 +79,6 @@ Dal modulo **Devices** (Dispositivi) della console di Lookout MTP, l'amministrat
 Se il nuovo utente è incluso in uno dei gruppi di registrazione specificati nella console di Lookout MTP, il dispositivo viene visualizzato una volta che Azure AD lo associa al nuovo utente.
 
 ## <a name="compliance-remediation-workflows"></a>Flussi di lavoro di correzione basata sulla conformità
-[Viene richiesto di installare Lookout for Work nel dispositivo Android]( http://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
+[Viene richiesto di installare Lookout for Work nel dispositivo Android]( https://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
 
-[È necessario risolvere una minaccia rilevata da Lookout for Work nel dispositivo Android](http://docs.microsoft.com/intune/enduser/you-need-to-resolve-a-threat-found-by-lookout-for-work-android)
+[È necessario risolvere una minaccia rilevata da Lookout for Work nel dispositivo Android](https://docs.microsoft.com/intune/enduser/you-need-to-resolve-a-threat-found-by-lookout-for-work-android)
