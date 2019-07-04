@@ -2,7 +2,7 @@
 title: Come usare la documentazione
 titleSuffix: Configuration Manager
 description: Suggerimenti sull'uso della di documentazione tecnica di Configuration Manager.
-ms.date: 09/07/2018
+ms.date: 06/20/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19681e8a84c35a2b26fa85e7d1227bead3ea42d5
-ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.openlocfilehash: 085f91bfb99bcfabbcdee8083fb3a3089a33057e
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66716135"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67285668"
 ---
 # <a name="how-to-use-the-configuration-manager-docs"></a>Uso della documentazione di Configuration Manager
 
@@ -57,7 +57,8 @@ Per informazioni generali sul prodotto, vedere l'argomento sulla [consultazione 
 
 - In caso di problemi durante la ricerca, [inviare un feedback](#bkmk_docfeedback). Quando si segnala il problema specificare il motore di ricerca in uso, le parole chiave che si è tentato di usare e l'articolo di destinazione. Questo feedback consente a Microsoft di ottimizzare il contenuto per migliorare la ricerca.  
 
-
+> [!TIP] 
+> A partire da Configuration Manager versione 1902, è disponibile il nodo **Documentazione** nella nuova area di lavoro **Community**. Questo nodo contiene informazioni aggiornate sulla documentazione di Configuration Manager e gli articoli del supporto tecnico. Per altre informazioni, vedere [Uso della console di Configuration Manager](/sccm/core/servers/manage/admin-console#bkmk_doc-dashboard)
 
 ## <a name="bkmk_docfeedback"></a> Commenti e suggerimenti
 

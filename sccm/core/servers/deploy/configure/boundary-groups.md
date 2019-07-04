@@ -2,7 +2,7 @@
 title: Configurare gruppi di limiti
 titleSuffix: Configuration Manager
 description: Aiutare i client a trovare i sistemi del sito usando i gruppi di limiti per organizzare logicamente i percorsi di rete correlati chiamati limiti
-ms.date: 05/09/2019
+ms.date: 06/18/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,15 +11,14 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 011f2cb69ec2de6070bc4f2266dbf73a0e1e7843
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 716b36060f4fdc768f98e4cc22be1653a967246c
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65498907"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194253"
 ---
 # <a name="configure-boundary-groups-for-configuration-manager"></a>Configurare gruppi di limiti per Configuration Manager
-
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -33,19 +32,19 @@ Per aumentare la disponibilità dei server per una gamma più ampia di percorsi 
 
 I client usano un gruppo di limiti per gli scopi seguenti:  
 
--   Assegnazione automatica al sito  
--   Ricerca di un server del sistema del sito che può fornire un servizio, tra cui:  
+- Assegnazione automatica al sito  
+- Ricerca di un server del sistema del sito che può fornire un servizio, tra cui:  
     - Punti di distribuzione per il percorso del contenuto  
     - Punti di aggiornamento software  
     - Punti di migrazione dello stato  
     - Punti di gestione preferiti  
+    - Cloud Management Gateway (a partire dalla versione 1902)
 
         > [!Note]  
         > Se si usano i punti di gestione preferiti, è necessario abilitare questa opzione per la gerarchia e non dall'interno della configurazione del gruppo di limiti. Per altre informazioni, vedere [Abilitare l'uso dei punti di gestione preferiti](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_proc-prefer).  
 
 
-
-##  <a name="boundary-groups-and-relationships"></a>Gruppi di limiti e relazioni
+## <a name="boundary-groups-and-relationships"></a>Gruppi di limiti e relazioni
 
 Per ogni gruppo di limiti nella gerarchia, è possibile assegnare:
 
@@ -58,9 +57,9 @@ Per ogni gruppo di limiti creato, è possibile configurare un collegamento unidi
 Se un client non riesce a trovare un sistema del sito disponibile nel gruppo di limiti corrente, la configurazione di ogni relazione determina quando iniziare a cercare in un gruppo di limiti adiacente. Questa ricerca in altri gruppi è definita **fallback**.
 
 Per altre informazioni, vedere le procedure seguenti:  
+
 - [Creare un gruppo di limiti](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_create)  
 - [Configurare un gruppo di limiti](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_config)  
-
 
 
 ## <a name="fallback"></a>Fallback
@@ -75,23 +74,21 @@ Se un client non riesce a trovare un ruolo del sistema del sito disponibile nel 
 
 Se un client non riesce a trovare un sistema del sito disponibile, inizia la ricerca nei percorsi dei gruppi di limiti adiacenti. Questo comportamento aumenta il pool di sistemi del sito disponibili. La configurazione dei gruppi di limiti e delle relative relazioni definisce l'uso del client di questo pool di sistemi del sito disponibili.
 
-- Un gruppo di limiti può avere più di una relazione. Con questa configurazione è possibile configurare il fallback per ogni tipo di sistema del sito a diversi gruppi adiacenti dopo diversi intervalli di tempo.    
+- Un gruppo di limiti può avere più di una relazione. Con questa configurazione è possibile configurare il fallback per ogni tipo di sistema del sito a diversi gruppi adiacenti dopo diversi intervalli di tempo.  
 
 - I client eseguono il fallback solo in un gruppo di limiti direttamente adiacente al loro gruppo di limiti corrente.  
 
 - Se un client fa parte di più gruppi di limiti, il relativo gruppo di limiti corrente è definito come l'unione di tutti i gruppi di limiti. Il client esegue il fallback ai gruppi adiacenti di uno dei gruppi di limiti originali.  
 
-
 ### <a name="the-default-site-boundary-group"></a>Gruppo di limiti predefinito del sito
 
-È possibile creare gruppi di limiti personalizzati e ogni sito dispone di un gruppo di limiti predefinito creato da Configuration Manager. Questo gruppo è denominato **Default-Site-Boundary-Group&lt;codicesito>**. Ad esempio, il gruppo per il sito ABC sarebbe denominato **Default-Site-Boundary-Group&lt;ABC>**.
+È possibile creare gruppi di limiti personalizzati e ogni sito dispone di un gruppo di limiti predefinito creato da Configuration Manager. Questo gruppo è denominato **Default-Site-Boundary-Group&lt;codicesito>** . Ad esempio, il gruppo per il sito ABC sarebbe denominato **Default-Site-Boundary-Group&lt;ABC>** .
 
 Per ogni gruppo di limiti creato, Configuration Manager crea automaticamente un collegamento implicito a ogni gruppo di limiti predefinito del sito nella gerarchia.  
 
 - Il collegamento implicito è un'opzione di fallback predefinita da un gruppo di limiti corrente al gruppo di limiti predefinito del sito. Il tempo di fallback predefinito è 120 minuti.  
 
 - Per i client che non si trovano in un limite associato a un gruppo di limiti: per identificare i ruoli del sistema del sito validi, usare il gruppo di limiti predefinito dal sito assegnato.  
-
 
 Per gestire il fallback al gruppo di limiti predefinito del sito:  
 
@@ -100,36 +97,35 @@ Per gestire il fallback al gruppo di limiti predefinito del sito:
 - Aprire le proprietà di un gruppo di limiti personalizzato. Modificare i valori per il collegamento esplicito a un gruppo di limiti predefinito del sito. Quando si imposta un nuovo intervallo in minuti per il fallback o il blocco del fallback, la modifica influisce solo sul collegamento che si sta configurando. La configurazione del collegamento esplicito sostituisce quella della scheda **Comportamento predefinito** di un gruppo di limiti predefinito del sito.  
 
 
-
 ## <a name="site-assignment"></a>Assegnazione sito  
 
- È possibile configurare ciascun gruppo di limiti con un sito assegnato per i client.  
+È possibile configurare ciascun gruppo di limiti con un sito assegnato per i client.  
 
--   Un client appena installato che usa l'assegnazione automatica sito viene aggiunto al sito assegnato di un gruppo di limiti che contiene il percorso di rete corrente del client.  
+- Un client appena installato che usa l'assegnazione automatica sito viene aggiunto al sito assegnato di un gruppo di limiti che contiene il percorso di rete corrente del client.  
 
--   Dopo l'assegnazione a un sito, un client non cambia la propria assegnazione sito quando cambia il percorso di rete. Ad esempio, un client effettua il roaming in un nuovo percorso di rete. Questo percorso è un limite in un gruppo di limiti con un'assegnazione sito diversa. Il sito assegnato del client non cambia.  
+- Dopo l'assegnazione a un sito, un client non cambia la propria assegnazione sito quando cambia il percorso di rete. Ad esempio, un client effettua il roaming in un nuovo percorso di rete. Questo percorso è un limite in un gruppo di limiti con un'assegnazione sito diversa. Il sito assegnato del client non cambia.  
 
--   Quando l'individuazione sistema Active Directory rileva una nuova risorsa, il sito valuta le informazioni di rete per la risorsa in rapporto ai limiti nei gruppi di limiti. Tramite questo processo la nuova risorsa viene associata a un sito assegnato per poter essere utilizzata dal metodo di installazione push client.  
+- Quando l'individuazione sistema Active Directory rileva una nuova risorsa, il sito valuta le informazioni di rete per la risorsa in rapporto ai limiti nei gruppi di limiti. Tramite questo processo la nuova risorsa viene associata a un sito assegnato per poter essere utilizzata dal metodo di installazione push client.  
 
--   Quando un limite è membro di più gruppi di limiti con diversi siti assegnati, i client selezionano uno dei siti in modo casuale.  
+- Quando un limite è membro di più gruppi di limiti con diversi siti assegnati, i client selezionano uno dei siti in modo casuale.  
 
--   Le modifiche a un sito assegnato a gruppi di limiti si applicano solo alle nuove azioni di assegnazione sito. I client assegnati precedentemente a un sito non valutano di nuovo l'assegnazione sito in base alle modifiche alla configurazione di un gruppo di limiti (o al proprio percorso di rete).  
+- Le modifiche a un sito assegnato a gruppi di limiti si applicano solo alle nuove azioni di assegnazione sito. I client assegnati precedentemente a un sito non valutano di nuovo l'assegnazione sito in base alle modifiche alla configurazione di un gruppo di limiti (o al proprio percorso di rete).  
 
 Per altre informazioni sull'assegnazione sito per i client, vedere [Utilizzo dell'assegnazione automatica del sito per i computer](/sccm/core/clients/deploy/assign-clients-to-a-site#BKMK_AutomaticAssignment).  
 
 Per altre informazioni su come configurare l'assegnazione sito, vedere le procedure seguenti:
+
 - [Configurare l'assegnazione sito e selezionare i server del sistema del sito](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_references)
 - [Configurare un sito di fallback per l'assegnazione sito automatica](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_site-fallback)
-
 
 
 ## <a name="distribution-points"></a>Punti di distribuzione
 
 Quando un client richiede il percorso di un punto di distribuzione, Configuration Manager invia al client un elenco dei sistemi del sito. Questi sistemi del sito sono del tipo appropriato associato a ogni gruppo di limiti che include il percorso di rete corrente del client:
 
--   **Durante la distribuzione del software**, i client richiedono un percorso per il contenuto di distribuzione in un'origine contenuto valida. Questo percorso può essere un punto di distribuzione o un'origine peer cache.  
+- **Durante la distribuzione del software**, i client richiedono un percorso per il contenuto di distribuzione in un'origine contenuto valida. Questo percorso può essere un punto di distribuzione o un'origine peer cache.  
 
--   **Durante la distribuzione del sistema operativo**, i client richiedono un percorso per l'invio o la ricezione delle informazioni di migrazione dello stato.  
+- **Durante la distribuzione del sistema operativo**, i client richiedono un percorso per l'invio o la ricezione delle informazioni di migrazione dello stato.  
 
     - A partire dalla versione 1810, i client acquisiscono il contenuto in base ai comportamenti dei gruppi di limiti. Per altre informazioni, vedere [Supporto della sequenza di attività per i gruppi di limiti](#bkmk_bgr-osd).  
 
@@ -137,13 +133,13 @@ Quando viene distribuito il contenuto, se un client richiede contenuto non dispo
 
 Se si configura la distribuzione del contenuto su richiesta e il contenuto non è disponibile in un punto di distribuzione quando viene richiesto da un client, il sito inizia a trasferire il contenuto al punto di distribuzione. È possibile che il client rilevi il server come origine contenuto prima di eseguire il fallback per l'uso di un gruppo di limiti adiacente.
 
-
 ### <a name="bkmk_ccmsetup"></a> Installazione client
-<!--1358840-->
 
-Durante l'installazione del client Configuration Manager, il processo ccmsetup contatta il punto di gestione per individuare i contenuti necessari. Durante il processo nelle versioni 1806 e precedenti il punto di gestione restituisce solo i punti di distribuzione del gruppo di limiti corrente del client. Se non è disponibile alcun contenuto, il processo di installazione esegue il fallback per scaricare i contenuti dal punto di gestione. Non è disponibile alcuna opzione per eseguire il fallback ai punti di distribuzione in altri gruppi di limiti che potrebbero avere i contenuti necessari. 
+<!--1358840-->
+Durante l'installazione del client Configuration Manager, il processo ccmsetup contatta il punto di gestione per individuare i contenuti necessari. Durante il processo nelle versioni 1806 e precedenti il punto di gestione restituisce solo i punti di distribuzione del gruppo di limiti corrente del client. Se non è disponibile alcun contenuto, il processo di installazione esegue il fallback per scaricare i contenuti dal punto di gestione. Non è disponibile alcuna opzione per eseguire il fallback ai punti di distribuzione in altri gruppi di limiti che potrebbero avere i contenuti necessari.
 
 A partire dalla versione 1810 il punto di gestione restituisce i punti di distribuzione in base alla configurazione del gruppo di limiti. Se si definiscono le relazioni nel gruppo di limiti, il punto di gestione restituisce i punti di distribuzione nell'ordine seguente:
+
 1. Gruppo di limiti corrente  
 2. Gruppi di limiti adiacenti  
 3. Gruppo di limiti predefinito del sito  
@@ -151,13 +147,12 @@ A partire dalla versione 1810 il punto di gestione restituisce i punti di distri
 > [!Note]  
 > Il processo di installazione client non usa il tempo di fallback. Per individuare il più rapidamente possibile il contenuto, esegue immediatamente il fallback nel gruppo di limiti successivo.  
 
-
 ### <a name="bkmk_bgr-osd"></a> Supporto della sequenza di attività per i gruppi di limiti
+
 <!--1359025-->
+A partire dalla versione 1810, quando un dispositivo esegue una sequenza di attività e deve acquisire il contenuto, il dispositivo usa comportamenti dei gruppi di limiti simili al client Configuration Manager.
 
-A partire dalla versione 1810, quando un dispositivo esegue una sequenza di attività e deve acquisire il contenuto, il dispositivo usa comportamenti dei gruppi di limiti simili al client Configuration Manager.   
-
-Questo comportamento può essere configurato usando le impostazioni seguenti nella pagina **Punti di distribuzione** della distribuzione della sequenza di attività: 
+Questo comportamento può essere configurato usando le impostazioni seguenti nella pagina **Punti di distribuzione** della distribuzione della sequenza di attività:
 
 - **Usare un punto di distribuzione remoto quando non sono disponibili punti di distribuzione locali**: per questa distribuzione la sequenza di attività può eseguire il fallback ai punti di distribuzione in un gruppo di limiti adiacente.  
 
@@ -182,7 +177,6 @@ La sequenza di attività tenta di acquisire i contenuti nell'ordine seguente:
 
 Il file di log della sequenza di attività **smsts.log** mostra la priorità delle origini delle posizioni usate in base alle proprietà della distribuzione.
 
-
 ### <a name="bkmk_bgoptions"></a> Opzioni del gruppo di limiti per download peer
 
 <!--1356193-->
@@ -201,8 +195,8 @@ Nella versione 1810 sono state aggiunte le opzioni seguenti:
 
 Per altre informazioni su come configurare queste impostazioni, vedere [Configurare gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_config).
 
-
 #### <a name="bkmk_bgoptions1"></a> Consenti i download peer in questo gruppo di limiti
+
 Questa opzione è attivata per impostazione predefinita. Il punto di gestione fornisce ai client un elenco di posizioni del contenuto che include le origini peer. Questa impostazione influisce anche sull'applicazione di ID di gruppo per l'[ottimizzazione recapito](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#delivery-optimization).  
 
 Esistono due scenari comuni in cui potrebbe essere utile disabilitare questa opzione:  
@@ -212,6 +206,7 @@ Esistono due scenari comuni in cui potrebbe essere utile disabilitare questa opz
 - Se si usa un singolo gruppo di limiti di grandi dimensioni per l'assegnazione del sito che non fa riferimento ad alcun punto di distribuzione.  
 
 #### <a name="bkmk_bgoptions2"></a> Durante i download peer, usa solo i peer entro la stessa subnet
+
 Questa impostazione dipende dall'opzione precedente. Se si abilita questa opzione, il punto di gestione include nell'elenco delle posizioni del contenuto solo le origini peer incluse nella stessa subnet del client.
 
 Scenari comuni per l'abilitazione di questa opzione:
@@ -221,11 +216,14 @@ Scenari comuni per l'abilitazione di questa opzione:
 - È disponibile un singolo gruppo di limiti di grandi dimensioni per tutti gli uffici remoti. Abilitare questa opzione e i client potranno condividere solo il contenuto all'interno della subnet nell'ufficio remoto, invece di correre i rischi correlati alla condivisione del contenuto tra posizioni diverse.
 
 #### <a name="bkmk_bgoptions3"></a> Preferisci i punti di distribuzione rispetto ai peer entro la stessa subnet
+
 Per impostazione predefinita, il punto di gestione classifica le origini di peer cache in cima all'elenco delle posizioni dei contenuti. Questa impostazione inverte tale priorità per i client che si trovano nella stessa subnet dell'origine di peer cache.  
 
 #### <a name="bkmk_bgoptions4"></a> Preferisci i punti di distribuzione cloud rispetto ai punti di distribuzione
+
 Se è presente una succursale con un collegamento Internet più veloce, è possibile classificare in ordine di priorità i contenuti cloud.  
 
+Nella versione 1902 questa impostazione è **Preferisci le origini basate sul cloud rispetto alle origini locali** . Il comportamento rimane invariato.<!-- SCCMDocs#1529 -->
 
 
 ## <a name="software-update-points"></a>Punti di aggiornamento software
@@ -236,22 +234,23 @@ Se si esegue l'aggiornamento da una versione precedente alla 1702, ogni sito agg
 
 Se si installa un nuovo sito, i punti di aggiornamento software non vengono aggiunti al gruppo di limiti del sito predefinito. Assegnare i punti di aggiornamento software a un gruppo di limiti in modo che i client possano trovarli e usarli.
 
-
 ### <a name="fallback-for-software-update-points"></a>Fallback per i punti di aggiornamento software
 
 Il fallback per i punti di aggiornamento software è configurato come altri ruoli del sistema del sito, ma con le avvertenze seguenti:  
 
 #### <a name="new-clients-use-boundary-groups-to-select-software-update-points"></a>I nuovi client usano i gruppi di limiti per selezionare i punti di aggiornamento software
+
 I nuovi client installati selezionano un punto di aggiornamento software dai server associati ai gruppi di limiti configurati. Ciò sostituisce il comportamento precedente in cui i client selezionano un punto di aggiornamento software in maniera casuale da un elenco di server che condividono la foresta dei client.
 
 #### <a name="clients-continue-to-use-a-last-known-good-software-update-point-until-they-fallback-to-find-a-new-one"></a>I client continuano a usare l'ultimo punto di aggiornamento software valido noto fino a quando non eseguono il fallback per trovare un nuovo punto
+
 I client che hanno già un punto di aggiornamento software continuano a usarlo fino a quando non può essere raggiunto. Questo comportamento include l'uso continuativo di un punto di aggiornamento software non associato al gruppo di limiti corrente del client.
 
 Si tratta di un comportamento intenzionale. Il client continua a usare un punto di aggiornamento software esistente anche se non è incluso nel gruppo di limiti corrente del client. Quando il punto di aggiornamento software viene modificato, il client sincronizza i dati con il nuovo server, il che determina un uso significativo della rete. Se tuti client i client passano contemporaneamente a un nuovo server, il ritardo nella transizione può evitare la saturazione della rete.
 
 #### <a name="a-client-always-tries-to-reach-its-last-known-good-software-update-point-for-120-minutes-before-starting-fallback"></a>Un client prova sempre a raggiungere l'ultimo punto di aggiornamento software valido noto per 120 minuti prima di avviare il fallback
-Dopo 120 minuti, se il client non ha stabilito il contatto, inizia il fallback. All'avvio del fallback, il client riceve un elenco di tutti i punti di aggiornamento software nel gruppo di limiti corrente. I punti di aggiornamento software aggiuntivi del gruppo di limiti predefinito del sito e di quelli adiacenti sono disponibili in base alle configurazioni di fallback.
 
+Dopo 120 minuti, se il client non ha stabilito il contatto, inizia il fallback. All'avvio del fallback, il client riceve un elenco di tutti i punti di aggiornamento software nel gruppo di limiti corrente. I punti di aggiornamento software aggiuntivi del gruppo di limiti predefinito del sito e di quelli adiacenti sono disponibili in base alle configurazioni di fallback.
 
 ### <a name="fallback-configurations-for-software-update-points"></a>Configurazioni di fallback per i punti di aggiornamento software
 
@@ -262,6 +261,7 @@ Per bloccare il fallback per un punto di aggiornamento software a un gruppo di l
 Dopo l'esito negativo nel raggiungere il server originale per due ore, il client usa quindi un ciclo più breve per stabilire una connessione a un nuovo punto di aggiornamento software. In questo modo il client può eseguire rapidamente una ricerca nell'elenco in espansione di potenziali punti di aggiornamento software.
 
 #### <a name="example"></a>Esempio
+
 Si configurano punti di aggiornamento software nel gruppo di limiti *A* per il fallback dopo **10** minuti. Si configura la stessa impostazione per il gruppo di limiti *B* per **130** minuti. Un client nel gruppo di limiti *Z* non riesce a raggiungere l'ultimo punto di aggiornamento software valido noto.
 
 - Per i successivi 120 minuti, il client prova a raggiungere solo il server originale nel gruppo di limiti Z. Dopo 10 minuti, Configuration Manager aggiunge i punti di aggiornamento software del gruppo di limiti A al pool di server disponibili. Il client tuttavia non prova a contattare questi o altri server fino a che non è trascorso il periodo iniziale di 120 minuti.  
@@ -270,18 +270,19 @@ Si configurano punti di aggiornamento software nel gruppo di limiti *A* per il f
 
 - Dopo altri 10 minuti, il client espande la ricerca per includere i punti di aggiornamento software del gruppo di limiti B. Il tempo totale è di 130 minuti dopo il primo tentativo non riuscito del client di raggiungere l'ultimo punto di aggiornamento software valido noto.  
 
-
 ### <a name="manually-switch-to-a-new-software-update-point"></a>Passare manualmente a un nuovo punto di aggiornamento software
 
 Oltre a usare il fallback, usare la notifica client per forzare manualmente il passaggio di un dispositivo a un nuovo punto di aggiornamento software.
 
-Quando si passa a un nuovo server, i dispositivi usano il fallback per trovare il nuovo server. Esaminare le configurazioni del gruppo di limiti. Prima di apportare questa modifica, verificare che i punti di aggiornamento software si trovino nei gruppi di limiti corretti.
+Quando si passa a un nuovo server, i dispositivi usano il fallback per trovare il nuovo server. I client passano al nuovo punto di aggiornamento software durante il successivo ciclo di analisi per aggiornamenti software.<!-- SCCMDocs#1537 -->
 
-Per altre informazioni, vedere [Passaggio manuale dei client a un nuovo punto di aggiornamento software](/sccm/sum/plan-design/plan-for-software-updates#manually-switch-clients-to-a-new-software-update-point).
+Esaminare le configurazioni del gruppo di limiti. Prima di apportare questa modifica, verificare che i punti di aggiornamento software si trovino nei gruppi di limiti corretti.
 
+Per altre informazioni, vedere [Passaggio manuale dei client a un nuovo punto di aggiornamento software](/sccm/sum/plan-design/plan-for-software-updates#BKMK_ManuallySwitchSUPs).
 
 
 ## <a name="management-points"></a>Punti di gestione
+
 <!-- 1324594 -->
 A partire dalla versione 1802, è possibile configurare relazioni di fallback per i punti di gestione tra gruppi di limiti. Questo comportamento consente un maggiore controllo per i punti di gestione usati dai client. Nella scheda **Relazioni** delle proprietà del gruppo di limiti è presente una colonna per il punto di gestione. Quando si aggiunge un nuovo gruppo di limiti di fallback, attualmente il tempo di fallback per il punto di gestione è sempre zero (0). Questo comportamento corrisponde all'opzione **Comportamento predefinito** del gruppo di limiti predefinito del sito.
 
@@ -294,17 +295,16 @@ Quando si aggiorna il sito alla versione 1802, Configuration Manager aggiunge tu
 
 Se un client si trova in un gruppo di limiti senza alcun punto di gestione assegnato, il sito fornisce al client l'intero elenco di punti di gestione. Questo comportamento garantisce che un client riceva sempre un elenco di punti di gestione.
 
-Il comportamento del fallback dei gruppi di limiti dei punti di gestione non cambia durante l'installazione dei client (ccmsetup.exe). Se la riga di comando non specifica il punto di gestione iniziale tramite il parametro /MP, il nuovo client riceve l'elenco completo dei punti di gestione disponibili. Per il processo di avvio iniziale, il client usa il primo punto di gestione a cui può accedere. Una volta registratosi con il sito, il client riceve l'elenco dei punti di gestione correttamente ordinato con questo nuovo comportamento. 
+Il comportamento del fallback dei gruppi di limiti dei punti di gestione non cambia durante l'installazione dei client (ccmsetup.exe). Se la riga di comando non specifica il punto di gestione iniziale tramite il parametro /MP, il nuovo client riceve l'elenco completo dei punti di gestione disponibili. Per il processo di avvio iniziale, il client usa il primo punto di gestione a cui può accedere. Una volta registratosi con il sito, il client riceve l'elenco dei punti di gestione correttamente ordinato con questo nuovo comportamento.
 
 Per altre informazioni sul comportamento del client per acquisire il contenuto durante l'installazione, vedere [Installazione client](#bkmk_ccmsetup).
 
 Durante l'aggiornamento del client, se non si specifica il parametro della riga di comando /MP, il client esegue query sulle origini, come Active Directory e WMI, per qualsiasi punto di gestione disponibile. L'aggiornamento dei client non rispetta la configurazione dei gruppi di limiti. <!--VSO 2841292-->  
 
-Per consentire ai client di usare questa funzionalità, abilitare l'impostazione seguente: **I client preferiscono usare i punti di gestione specificati nei gruppi di limiti** in **Impostazioni gerarchia**. 
+Per consentire ai client di usare questa funzionalità, abilitare l'impostazione seguente: **I client preferiscono usare i punti di gestione specificati nei gruppi di limiti** in **Impostazioni gerarchia**.
 
 > [!Note]  
 > I processi di distribuzione dei sistemi operativi non sono a conoscenza dei gruppi di limiti per i punti di gestione.  
-
 
 ### <a name="troubleshooting"></a>Troubleshooting
 
@@ -318,18 +318,17 @@ Nel log **LocationServices.log** sono presenti nuove voci. L'attributo **Localit
 
 - **3**: il punto di gestione specificato si trova nel gruppo di limiti locale o corrente. Quando il punto di gestione si trova sia nel gruppo di limiti corrente e in uno vicino o in quello predefinito del sito, l'attributo locality è uguale a 3. Se non si abilita l'impostazione dei punti di gestione preferiti in Impostazioni gerarchia, l'attributo locality è sempre uguale a 3, indipendentemente dal gruppo di limiti in cui si trova il punto di gestione.  
 
-I client usano prima i punti di gestione locali (locality 3), quindi quelli remoti (locality 2) e infine eseguono il fallback (locality 1). 
+I client usano prima i punti di gestione locali (locality 3), quindi quelli remoti (locality 2) e infine eseguono il fallback (locality 1).
 
 Quando un client riceve cinque errori in 10 minuti e non riesce a comunicare con un punto di gestione nel relativo gruppo di limiti corrente, cerca di contattare un punto di gestione in un gruppo di limiti adiacente o in quello predefinito del sito. Se in seguito il punto di gestione nel gruppo di limiti corrente torna online, il client torna al punto di gestione locale al successivo ciclo di aggiornamento. Il ciclo di aggiornamento avviene ogni 24 ore o al riavvio del servizio agente di Configuration Manager.
 
 
-
 ## <a name="bkmk_preferred"></a> Punti di gestione preferiti
 
- > [!Note]
- > Il comportamento dell'impostazione gerarchia, **I client preferiscono usare i punti di gestione specificati nei gruppi di limiti** cambia a partire dalla versione 1802. Quando si abilita questa impostazione, Configuration Manager usa la funzionalità del gruppo di limiti per il punto di gestione assegnato. Per altre informazioni, vedere [Punti di gestione](#management-points). 
+> [!Note]
+> Il comportamento dell'impostazione gerarchia, **I client preferiscono usare i punti di gestione specificati nei gruppi di limiti** cambia a partire dalla versione 1802. Quando si abilita questa impostazione, Configuration Manager usa la funzionalità del gruppo di limiti per il punto di gestione assegnato. Per altre informazioni, vedere [Punti di gestione](#management-points).
 
- I punti di gestione preferiti consentono a un client di identificare un punto di gestione associato al percorso di rete corrente (limite).  
+I punti di gestione preferiti consentono a un client di identificare un punto di gestione associato al percorso di rete corrente (limite).  
 
 - Il client prova a usare un punto di gestione preferito del sito assegnato prima di usarne uno non configurato come preferito per il sito assegnato.  
 
@@ -338,29 +337,27 @@ Quando un client riceve cinque errori in 10 minuti e non riesce a comunicare con
 - Quando si configurano i punti di gestione preferiti e un client organizza l'elenco dei punti di gestione, il client inserisce i punti di gestione preferiti all'inizio del relativo elenco. Questo elenco include tutti i punti di gestione dal sito assegnato del client.  
 
 > [!NOTE]  
->  Il roaming del client si ha quando vengono modificati i percorsi di rete, ad esempio quando un computer portatile viene spostato in un ufficio remoto. Quando un client effettua il roaming, è possibile che usi un punto di gestione del sito locale prima di provare a usare un server del sito assegnato. Questo elenco di server dal sito assegnato include i punti di gestione preferiti. Per altre informazioni, vedere [Informazioni su come i client trovano i servizi e le risorse del sito](/sccm/core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services).  
-
+> Il roaming del client si ha quando vengono modificati i percorsi di rete, ad esempio quando un computer portatile viene spostato in un ufficio remoto. Quando un client effettua il roaming, è possibile che usi un punto di gestione del sito locale prima di provare a usare un server del sito assegnato. Questo elenco di server dal sito assegnato include i punti di gestione preferiti. Per altre informazioni, vedere [Informazioni su come i client trovano i servizi e le risorse del sito](/sccm/core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services).  
 
 
 ## <a name="overlapping-boundaries"></a>Limiti sovrapposti  
 
- Configuration Manager supporta le configurazioni con sovrapposizione dei limiti per il percorso del contenuto. Quando il percorso di rete del client appartiene a più gruppi di limiti:
+Configuration Manager supporta le configurazioni con sovrapposizione dei limiti per il percorso del contenuto. Quando il percorso di rete del client appartiene a più gruppi di limiti:
 
--   Quando un client richiede il contenuto, Configuration Manager invia al client un elenco di tutti i punti di distribuzione che hanno contenuto.  
+- Quando un client richiede il contenuto, Configuration Manager invia al client un elenco di tutti i punti di distribuzione che hanno contenuto.  
 
--   Quando un client richiede a un server di inviare o ricevere le informazioni di migrazione dello stato, Configuration Manager invia al client un elenco di tutti i punti di migrazione dello stato associati a un gruppo di limiti che include il percorso di rete corrente del client.  
+- Quando un client richiede a un server di inviare o ricevere le informazioni di migrazione dello stato, Configuration Manager invia al client un elenco di tutti i punti di migrazione dello stato associati a un gruppo di limiti che include il percorso di rete corrente del client.  
 
 Questo comportamento consente al client di selezionare il server più vicino da cui trasferire le informazioni di migrazione dello stato o sul contenuto.  
 
 
-
 ## <a name="example-of-using-boundary-groups"></a>Esempio d'uso dei gruppi di limiti
 
-L'esempio seguente usa un client che esegue la ricerca di contenuto da un punto di distribuzione. Questo esempio può essere applicato ad altri ruoli del sistema del sito che usano i gruppi di limiti. 
+L'esempio seguente usa un client che esegue la ricerca di contenuto da un punto di distribuzione. Questo esempio può essere applicato ad altri ruoli del sistema del sito che usano i gruppi di limiti.
 
 Creare tre gruppi di limiti che non condividono i limiti o i server del sistema del sito:  
 
-- Gruppo BG_A con punti di distribuzione DP_A1 e DP_A2   
+- Gruppo BG_A con punti di distribuzione DP_A1 e DP_A2  
 
 - Gruppo BG_B con punti di distribuzione DP_B1 e DP_B2  
 
@@ -376,8 +373,7 @@ Aggiungere i percorsi di rete dei client come limiti solo al gruppo di limiti BG
 
     Esempio di gruppi limite e tempi di fallback:
 
-     ![Esempio di gruppi di limiti e tempi di fallback](media/BG_Fallback.png)
-
+    ![Esempio di gruppi di limiti e tempi di fallback](media/BG_Fallback.png)  
 
 Con questa configurazione:  
 
@@ -392,27 +388,26 @@ Con questa configurazione:
 Configurando i diversi gruppi adiacenti in modo da renderli disponibili in momenti diversi, è possibile controllare quando i punti di distribuzione specifici vengono aggiunti come percorso di origine del contenuto. Il client usa il fallback al gruppo di limiti del sito predefinito come garanzia per il contenuto che non è disponibile negli altri percorsi.
 
 
-
 ## <a name="changes-from-prior-versions"></a>Modifiche rispetto alle versioni precedenti
 
 Di seguito sono riportate le modifiche principali ai gruppi di limiti e alle modalità di ricerca del contenuto da parte dei client in Configuration Manager Current Branch. Molti di queste modifiche e concetti funzionano in combinazione.
-
 
 ### <a name="configurations-for-fast-or-slow-are-removed"></a>Rimozione delle configurazioni per i punti lenti o veloci
 
 I singoli punti di distribuzione non vengono più configurati come punti di distribuzione lenti o veloci. Al contrario, ogni sistema del sito associato a un gruppo limite viene trattato ugualmente. Grazie a questa modifica, la scheda **Riferimenti** delle proprietà del gruppo limite non supporta la configurazione Veloce o Lento.  
 
-
 ### <a name="new-default-boundary-group-at-each-site"></a>Nuovo gruppo di limiti predefinito in ogni sito
 
-Ogni sito primario ha un nuovo gruppo di limiti predefinito denominato **Default-Site-Boundary-Group&lt;codicesito>**. Quando un client non si trova in un percorso di rete assegnato a un gruppo di limiti, usa i sistemi del sito associati al gruppo predefinito del sito assegnato. Considerare l'uso di questo gruppo limite come sostituzione del concetto di percorso del contenuto di fallback.     
+Ogni sito primario ha un nuovo gruppo di limiti predefinito denominato **Default-Site-Boundary-Group&lt;codicesito>** . Quando un client non si trova in un percorso di rete assegnato a un gruppo di limiti, usa i sistemi del sito associati al gruppo predefinito del sito assegnato. Considerare l'uso di questo gruppo limite come sostituzione del concetto di percorso del contenuto di fallback.
 
 #### <a name="allow-fallback-source-locations-for-content-is-removed"></a>Rimozione dell'opzione **Allow fallback source locations for content** (Consenti percorsi di origine di fallback per il contenuto)
+
 La configurazione di un punto di distribuzione da usare per il fallback non avviene più in modo esplicito. Le opzioni per configurare questa impostazione vengono rimosse dalla console.
 
 Il risultato dell'impostazione **Allow fallback source locations for content** (Consenti percorsi di origine di fallback per il contenuto) in un tipo di distribuzione per le applicazioni cambia. Questa impostazione su un tipo di distribuzione consente ora al client di usare il gruppo limite del sito predefinito come percorso di origine del contenuto.
 
 #### <a name="boundary-groups-relationships"></a>Relazioni tra gruppi di limiti
+
 È possibile collegare ogni gruppo di limiti a uno o più gruppi di limiti aggiuntivi. Questi collegamenti formano relazioni che è possibile configurare nella nuova scheda delle proprietà del gruppo di limiti denominata **Relazioni**:  
 
 - Ogni gruppo limite associato direttamente a un client viene chiamato gruppo limite **corrente**.  
@@ -429,7 +424,6 @@ Oltre ai gruppi limite configurati in modo esplicito, ogni gruppo limite dispone
 
 Questo comportamento sostituisce ciò che in precedenza veniva definito "fallback per il contenuto". Eseguire l'override di questo comportamento predefinito di 120 minuti associando in modo esplicito il gruppo di limiti del sito predefinito a un gruppo *corrente*. Impostare un periodo di tempo specifico in minuti o bloccare completamente il fallback per impedirne l'uso.
 
-
 ### <a name="clients-try-to-get-content-from-each-distribution-point-for-up-to-two-minutes"></a>I client provano a ottenere il contenuto da ogni punto di distribuzione per un massimo di due minuti
 
 Quando un client cerca un percorso di origine del contenuto, prova ad accedere a ogni punto di distribuzione per due minuti prima di passare a un altro punto di distribuzione. Questo comportamento è diverso rispetto alle versioni precedenti in cui i client provavano a connettersi a un punto di distribuzione per un massimo di due ore.
@@ -444,7 +438,6 @@ Quando un client cerca un percorso di origine del contenuto, prova ad accedere a
     > Quando si crea un collegamento esplicito tra il gruppo di limiti corrente e il gruppo di limiti del sito predefinito e si definisce un intervallo di fallback inferiore al tempo di fallback per il collegamento a un gruppo di limiti adiacente, i client iniziano la ricerca dei percorsi di origine dal gruppo di limiti del sito predefinito prima di includere il gruppo adiacente.  
 
 - Quando il client non riesce a ottenere il contenuto dall'ultimo server nel pool, avvia nuovamente il processo.  
-
 
 
 ## <a name="see-also"></a>Vedere anche

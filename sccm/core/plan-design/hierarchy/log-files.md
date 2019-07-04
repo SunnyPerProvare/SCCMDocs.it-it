@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5994eb6ab241e35bd0b4c4ecceb9fe6c4ef35a00
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: fc52acadacf8ea8e97d23820d521b831bcc31892
+ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176045"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67158798"
 ---
 # <a name="log-files-in-configuration-manager"></a>File di log in Configuration Manager
 
@@ -178,6 +178,7 @@ Nella tabella seguente sono elencati i file di log individuati nel client di Con
 |InventoryAgent.log|Registra le attività di inventario hardware, inventario software e individuazione heartbeat sul client.|  
 |LocationCache.log|Registra l'attività per l'uso e la gestione della cache per l'individuazione per il client.|  
 |LocationServices.log|Registra l'attività del client per l'individuazione di punti di gestione, punti di aggiornamento software e punti di distribuzione.|  
+|M365AHandler.log|Informazioni sui criteri relativi alle impostazioni di Desktop Analytics|
 |MaintenanceCoordinator.log|Registra l'attività per le attività di manutenzione generale per il client.|  
 |Mifprovider.log|Registra l'attività del provider WMI per i file MIF (Management Information Format).|  
 |mtrmgr.log|Esegue il monitoraggio di tutti i processi di controllo software.|  
@@ -434,7 +435,7 @@ Il file SMS_DM.log nel server di sistema del sito registra anche le comunicazion
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
 |AppIntentEval.log|Registra informazioni dettagliate sullo stato corrente e previsto delle applicazioni, sulla relativa applicabilità, sulla soddisfazione dei requisiti, sui tipi di distribuzione e sulle dipendenze.|Client|  
-|AppDiscovery.log|Registra informazioni dettagliate sull'individuazione o sul rilevamento di applicazioni nei computer client. |Client|  
+|AppDiscovery.log|Registra informazioni dettagliate sull'individuazione o sul rilevamento di applicazioni nei computer client.|Client|  
 |AppEnforce.log|Registra informazioni dettagliate sulle azioni di imposizione (installazione e disinstallazione) eseguite per applicazioni sul client.|Client|  
 |awebsctl.log|Registra le attività di monitoraggio per il ruolo del sistema del sito punto per servizi Web del Catalogo applicazioni.|Server del sistema del sito|  
 |awebsvcMSI.log|Registra informazioni di installazione dettagliate per il ruolo del sistema del sito punto per servizi Web del Catalogo applicazioni.|Server del sistema del sito|  
@@ -580,6 +581,23 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |SMSdpmon.log|Registra informazioni dettagliate sulle attività pianificate di monitoraggio dell'integrità del punto di distribuzione configurate su un punto di distribuzione.|Ruolo del sistema del sito|  
 |smsdpprov.log|Registra informazioni dettagliate sull'estrazione di file compressi ricevuti da un sito primario. Questo registro viene generato dal provider WMI del punto di distribuzione remoto.|Computer di punto di distribuzione che non condivide il percorso con il server del sito|  
 |smsdpusage.log|Registra informazioni dettagliate su smsdpusage.exe che viene eseguito e raccoglie i dati per il report di riepilogo di utilizzo dei punti di distribuzione.|Ruolo del sistema del sito|  
+
+
+### <a name="desktop-analytics"></a>Desktop Analytics
+
+Usare i file di log seguenti per risolvere i problemi relativi a Desktop Analytics integrato con Configuration Manager.
+
+I file di log nel punto di connessione del servizio si trovano nella directory seguente: `%ProgramFiles%\Configuration Manager\Logs\M365A`.
+I file di log nel client di Configuration Manager si trovano nella directory seguente: `%WinDir%\CCM\logs`.
+
+| Registro | Descrizione |Computer con file di log|
+|---------|---------|---------|
+| M365ADeploymentPlanWorker.log | Informazioni sulla sincronizzazione del piano di distribuzione dal servizio cloud Desktop Analytics a un'istanza locale di Configuration Manager |punto di connessione del servizio|
+| M365ADeviceHealthWorker.log | Informazioni sul caricamento dell'Integrità dispositivi da Configuration Manager al cloud Microsoft |punto di connessione del servizio|
+| M365AHandler.log | Informazioni sui criteri relativi alle impostazioni di Desktop Analytics |Client|
+| M365AUploadWorker.log | Informazioni sul caricamento di raccolte e dispositivi da Configuration Manager al cloud Microsoft |punto di connessione del servizio|
+| SmsAdminUI.log | Informazioni sulle attività della console di Configuration Manager, come la configurazione dei servizi cloud di Azure  |punto di connessione del servizio|
+
 
 ###  <a name="BKMK_DiscoveryLog"></a> Individuazione  
 Nella tabella seguente sono elencati i file di log contenenti informazioni correlate all'individuazione.  

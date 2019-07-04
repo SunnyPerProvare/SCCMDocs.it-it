@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9f43311ea3d36132d8cf77c0c576ad3f0e2cd93
-ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
+ms.openlocfilehash: 01fa13c907b451a3539ca8169c3a04ebbaa1b92c
+ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57558100"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67145765"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Domande frequenti relative ai rami e alle licenze di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch), System Center Configuration Manager (Long-Term Servicing Branch)*
 
-Queste domande frequenti includono domande comuni sulle licenze in relazione alle versioni Current Branch e Long-Term Servicing Branch (LTSB) di Configuration Manager, disponibili tramite programmi Microsoft Volume Licensing. Questo articolo ha finalità puramente informative e non sostituisce la documentazione relativa alla gestione delle licenze di System Center Configuration Manager. Per altre informazioni, vedere la licenza del prodotto per [System Center 2016](https://www.microsoft.com/en-us/licensing/product-licensing/system-center-2016.aspx)<!-- this link doesn't work without some language code --> e i [termini per i prodotti](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=53). I termini per i prodotti descrivono le condizioni per l'utilizzo di tutti i prodotti Microsoft nell'ambito dei programmi per i contratti multilicenza.
+Queste domande frequenti includono domande comuni sulle licenze in relazione alle versioni Current Branch e Long-Term Servicing Branch (LTSB) di Configuration Manager, disponibili tramite programmi Microsoft Volume Licensing. Questo articolo ha finalità puramente informative e non sostituisce la documentazione relativa alla gestione delle licenze di System Center Configuration Manager. Per altre informazioni, vedere la licenza del prodotto per [System Center 2016](https://www.microsoft.com/en-us/licensing/product-licensing/system-center-2016.aspx)<!-- this link doesn't work without some language code --> e le [condizioni di licenza del prodotto ](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=53). I termini per i prodotti descrivono le condizioni per l'utilizzo di tutti i prodotti Microsoft nell'ambito dei programmi per i contratti multilicenza.
 
 Per altre informazioni sulle funzionalità di Configuration Manager, vedere la [pagina del prodotto](https://www.microsoft.com/cloud-platform/system-center-configuration-manager).
 
@@ -42,17 +42,17 @@ LTSB è una build pronta per la produzione di Configuration Manager. È destinat
 
 **Software Assurance** (SA) e **Licenza e Software Assurance** (L&SA) sono opzioni di licenza che concedono i diritti necessari per usare Configuration Manager. SA è un'opzione per un cliente che rinnova la copertura SA da un contratto precedente. L&SA è un'opzione per il cliente che acquista una nuova licenza e la copertura Software Assurance.
 
-- **Software Assurance (SA)**: i clienti devono disporre di sottoscrizione SA attiva per licenze di Configuration Manager o di diritti di sottoscrizione equivalenti per poter installare e usare l'opzione Current Branch di Configuration Manager.    
+- **Software Assurance (SA)** : i clienti devono disporre di sottoscrizione SA attiva per licenze di Configuration Manager o di diritti di sottoscrizione equivalenti per poter installare e usare l'opzione Current Branch di Configuration Manager.    
 
     - Benché la sottoscrizione SA sia facoltativa per alcuni prodotti Microsoft, l'unico modo per ottenere i diritti di utilizzo di Configuration Manager Current Branch è con SA *o con diritti di sottoscrizione equivalenti*. Per altre informazioni, vedere le [domande frequenti su Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/FAQ-Software-Assurance.aspx).<!--this link doesn't work without some language code-->
 
-- **Licenza Microsoft e Software Assurance (L&SA)**: i clienti che acquistano nuove licenze per Configuration Manager devono acquisire una sottoscrizione L&SA (la copertura Licenza e Software Assurance).   
+- **Licenza Microsoft e Software Assurance (L&SA)** : i clienti che acquistano nuove licenze per Configuration Manager devono acquisire una sottoscrizione L&SA (la copertura Licenza e Software Assurance).   
 
     - La sottoscrizione SA concede i diritti di utilizzo di Current Branch.
 
     - Se la sottoscrizione SA scade e si possiede ancora una licenza per Configuration Manager, non è più possibile usare Current Branch. Per altre informazioni, vedere la domanda frequente [Che cosa ricevo se la mia copertura SA scade e ho una L&SA?](#bkmk_sa-expires)
 
-Per altre informazioni sulle offerte di licenze, vedere [Ways to buy](https://www.microsoft.com/en-us/licensing/licensing-programs)<!--this link doesn't work without some language code--> (Modalità di acquisto) e [Licensing Product Terms](http://www.microsoftvolumelicensing.com/ProductResults.aspx?doc=Product%20Terms,OST&fid=64) (Condizioni di licenza per i prodotti).  
+Per altre informazioni sulle offerte di licenze, vedere [Modalità di acquisto](https://www.microsoft.com/Licensing/licensing-programs/licensing-programs)<!--this link doesn't work without some language code--> e le [condizioni di licenza del prodotto](http://www.microsoftvolumelicensing.com/ProductResults.aspx?doc=Product%20Terms,OST&fid=64).  
 
 
 ### <a name="bkmk_equiv-sub"></a> Ho letto il termine "sottoscrizione equivalente". A cosa si riferisce?   
@@ -76,7 +76,7 @@ Se si usa System Center Endpoint Protection e la sottoscrizione SA scade, è nec
 
 ### <a name="bkmk_owncb"></a> Ogni utente è "proprietario" di Current Branch?   
 
-No. Current Branch viene concesso in licenza d'uso per il periodo durante il quale si è in possesso di una sottoscrizione SA attiva. Ad esempio, alla scadenza della sottoscrizione *SA*, tramite *L&SA* si possiedono solo i diritti *L (licenza)*, che non includono i diritti di utilizzo di Current Branch. Se la licenza offre diritti perpetui, è possibile usare Configuration Manager LTSB al posto di Current Branch. Se la sottoscrizione SA è scaduta prima del 1° ottobre 2016, è anche possibile usare System Center 2012 R2 Configuration Manager.
+No. Current Branch viene concesso in licenza d'uso per il periodo durante il quale si è in possesso di una sottoscrizione SA attiva. Ad esempio, alla scadenza della sottoscrizione *SA*, tramite *L&SA* si possiedono solo i diritti *L (licenza)* , che non includono i diritti di utilizzo di Current Branch. Se la licenza offre diritti perpetui, è possibile usare Configuration Manager LTSB al posto di Current Branch. Se la sottoscrizione SA è scaduta prima del 1° ottobre 2016, è anche possibile usare System Center 2012 R2 Configuration Manager.
 
 
 ### <a name="bkmk_standalone"></a> È possibile acquistare Configuration Manager in modo autonomo senza SA?      

@@ -2,7 +2,7 @@
 title: Abilitare la condivisione dei dati
 titleSuffix: Configuration Manager
 description: Una Guida di riferimento per la condivisione dei dati di diagnostica con Desktop Analitica.
-ms.date: 06/17/2019
+ms.date: 07/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94e7456472c17d61ce42ffaf2109a3254bde1280
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
-ms.translationtype: HT
+ms.openlocfilehash: c5ba70b39330fd21077f5b7997e8aa92a1c57f42
+ms.sourcegitcommit: 3a3f40f3d39cbecfb9219a64c0185ea4b2ef9671
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551267"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67562005"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Abilitare la condivisione per Desktop Analitica dei dati
 
@@ -33,6 +33,12 @@ Per registrare i dispositivi Desktop Analitica, devono inviare dati di diagnosti
 Quando Configuration Manager si integra con Analitica Desktop, anche usarlo per gestire il livello di dati di diagnostica nei dispositivi. Per risultati ottimali, usare Configuration Manager.
 
 La funzionalità di base del Desktop Analitica lavora presso la **base** a livello di dati di diagnostica. Si otterranno i dati di utilizzo o di integrità per i dispositivi aggiornati senza abilitare la **Enhanced (Limited)** livello. Microsoft consiglia di attivare i **Enhanced (Limited)** a livello di dati di diagnostica. Per altre informazioni, vedere [avanzata di Windows 10 gli eventi di dati di diagnostica e i campi usati da Windows Analitica](https://docs.microsoft.com/windows/privacy/enhanced-diagnostic-data-windows-analytics-events-and-fields)).
+
+> [!Important]   
+> Microsoft offre un forte impegno a fornire gli strumenti e risorse che è inserito nel controllo della privacy. Di conseguenza, Microsoft non raccoglie i dati seguenti da dispositivi situati in paesi europei (SEE e dalla Svizzera):
+>
+> - Dati di diagnostica di Windows dai dispositivi Windows 8.1
+> - Dati sull'utilizzo delle App per Windows 7
 
 Per altre informazioni, vedere [privacy Desktop Analitica](/sccm/desktop-analytics/privacy).
 

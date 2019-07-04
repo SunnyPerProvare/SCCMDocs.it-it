@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb16dd6e802c58f042b7eee8ae782e7118dabf1c
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 098c83678585984bbe3dbeddf167e24116afd86b
+ms.sourcegitcommit: 3a3f40f3d39cbecfb9219a64c0185ea4b2ef9671
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159186"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67562017"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Come connettere Configuration Manager con Desktop Analitica
 
@@ -61,7 +61,7 @@ Utilizzare questa procedura per connettere Configuration Manager a Desktop Anali
 
 4. Se si dispone di un'app esistente che si desidera riutilizzare per questo servizio, selezionarla dall'elenco e selezionare **OK**.  
 
-5. Nella maggior parte dei casi, è possibile creare un'app per la connessione di Desktop Analitica con questa procedura guidata. Selezionare **Create**.<!-- 3572123 -->  
+5. Nella maggior parte dei casi, è possibile creare un'app per la connessione di Desktop Analitica con questa procedura guidata. Selezionare **Crea**.<!-- 3572123 -->  
 
     > [!Tip]  
     > Se è possibile creare l'app da questa procedura guidata, è possibile creare manualmente l'app di Azure AD e quindi importare in Configuration Manager. Per altre informazioni, vedere [crea e importa un'app per Configuration Manager](/sccm/desktop-analytics/troubleshooting#create-and-import-app-for-configuration-manager).  
@@ -107,6 +107,16 @@ Utilizzare questa procedura per connettere Configuration Manager a Desktop Anali
     - **I dispositivi nella raccolta di destinazione usano un proxy con autenticazione utente per le comunicazioni in uscita**: Per impostazione predefinita, questo valore è **No**. Se necessario nell'ambiente in uso, impostato su **Sì**.  
 
     - **Selezionare le raccolte specifiche da sincronizzare con Desktop Analitica**: Selezionare **Add** raccolte aggiuntive da includere le **raccolta di destinazione** gerarchia. Queste raccolte sono disponibili nel portale di Analitica Desktop per il raggruppamento con piani di distribuzione. Assicurarsi di includere raccolte di esclusioni pilota e pilota.  <!-- 4097528 -->  
+
+        > [!Tip]  
+        > La finestra di selezionare le raccolte vengono visualizzate soltanto le raccolte che sono limitate in base il **raccolta di destinazione**.
+        >
+        > Nell'esempio seguente, si seleziona CollectionA come la raccolta di destinazione. Quando si aggiungono altre raccolte, verranno visualizzate CollectionA CollectionB e CollectionC. Non è possibile aggiungere CollectionD.
+        >
+        > - CollectionA: limitato dalle **tutti i sistemi** raccolta
+        >     - CollectionB: limitato dalle CollectionA
+        >         - CollectionC: limitato dalle CollectionB
+        > - CollectionD: limitato dalle **tutti i sistemi** raccolta
 
         > [!Important]  
         > Queste raccolte comunque eseguita la sincronizzazione le modifiche all'appartenenza. Ad esempio, il piano di distribuzione Usa una raccolta con una regola di appartenenza a Windows 7. Come aggiornare i dispositivi a Windows 10 e Configuration Manager valuta l'appartenenza alla raccolta, tali dispositivi eliminare esplicitamente la raccolta e un piano di distribuzione.  

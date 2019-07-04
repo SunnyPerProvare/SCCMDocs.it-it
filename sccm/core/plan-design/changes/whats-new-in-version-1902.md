@@ -2,7 +2,7 @@
 title: Novità della versione 1902
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1902 di Configuration Manager Current Branch.
-ms.date: 05/28/2019
+ms.date: 06/20/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17ba88f318f09e0ddc3f61873c881338741b8ccd
-ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
+ms.openlocfilehash: 03610ad219a8ae89de63b87499d4ee9c628a271d
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66822044"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67285646"
 ---
 # <a name="whats-new-in-version-1902-of-configuration-manager-current-branch"></a>Novità della versione 1902 di Configuration Manager Current Branch
 
@@ -94,28 +94,29 @@ Quando si installa la versione 1902 o si esegue l'aggiornamento a questa version
 ## <a name="bkmk_cloud"></a> Gestione collegata al cloud
 
 ### <a name="stop-cloud-service-when-it-exceeds-threshold"></a>Arrestare il servizio cloud al superamento di una soglia
+
 <!--3735092-->
-Configuration Manager ora può arrestare un servizio gateway di gestione cloud quando il trasferimento dei dati totale supera il limite. In Cloud Management Gateway sono sempre stati presenti avvisi per attivare le notifiche quando l'utilizzo raggiunge livelli di avviso o critici. Per ridurre l'incidenza di costi di Azure non previsti a causa di un picco di utilizzo, questa nuova opzione consente di disattivare il servizio cloud. 
+***[Aggiornamento del 18/06]*** Configuration Manager ora può arrestare un servizio Cloud Management Gateway (CMG) quando il trasferimento dei dati totale supera il limite. In Cloud Management Gateway sono sempre stati presenti avvisi per attivare le notifiche quando l'utilizzo raggiunge livelli di avviso o critici. Per ridurre l'incidenza di costi di Azure non previsti a causa di un picco di utilizzo, questa nuova opzione consente di disattivare il servizio cloud.
 
-[Configurare gli avvisi del traffico in uscita](/sccm/core/clients/manage/cmg/monitor-clients-cloud-management-gateway#set-up-outbound-traffic-alerts) in Cloud Management Gateway e quindi abilitare l'opzione **Arresta questo servizio quando viene superata la soglia critica**.  
-
-<!-- For more information, see [Set up outbound traffic alerts](/sccm/core/clients/manage/cmg/monitor-clients-cloud-management-gateway#set-up-outbound-traffic-alerts). -->
+Per altre informazioni, vedere [Arrestare CMG quando supera la soglia](/sccm/core/clients/manage/cmg/monitor-clients-cloud-management-gateway#bkmk_stop).
 
 
 ### <a name="use-azure-resource-manager-for-cloud-services"></a>Usare Azure Resource Manager per i servizi cloud
+
 <!--3605704-->
-A partire dalla versione 1810, la distribuzione classica del servizio in Azure è deprecata in Configuration Manager. La versione citata è l'ultima versione che supporta la creazione di queste distribuzioni di Azure. 
+***[Aggiornamento del 17/06]*** A partire dalla versione 1810, la distribuzione classica del servizio in Azure è deprecata in Configuration Manager. La versione citata è l'ultima versione che supporta la creazione di queste distribuzioni di Azure.
 
 Le distribuzioni esistenti continuano a funzionare normalmente. A partire dalla presente versione Current Branch, Azure Resource Manager è l'unico meccanismo di distribuzione per le nuove istanze di Cloud Management Gateway e del punto di distribuzione cloud.
 
-<!-- For more information, see [Azure Resource Manager for the cloud management gateway](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).   -->
+Per altre informazioni, vedere [Azure Resource Manager per il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).
 
 
 ### <a name="add-cloud-management-gateway-to-boundary-groups"></a>Aggiungere Cloud Management Gateway ai gruppi di limiti
-<!--3640932-->
-È ora possibile associare un Cloud Management Gateway (CMG) con un gruppo di limiti. Questa configurazione consente ai client di usare Cloud Management Gateway per impostazione predefinita o come fallback per le comunicazioni client in base alle relazioni del gruppo di limiti. Questo comportamento è particolarmente utile in scenari con succursali e VPN. È possibile spostare il traffico client da collegamenti WAN lenti e dispendiosi e usare invece collegamenti Internet più veloci a Microsoft Azure.
 
-<!-- For more information, see [Plan for the CMG](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway). -->
+<!--3640932-->
+***[Aggiornamento del 18/06]*** È ora possibile associare un Cloud Management Gateway (CMG) a un gruppo di limiti. Questa configurazione consente ai client di usare Cloud Management Gateway per impostazione predefinita o come fallback per le comunicazioni client in base alle relazioni del gruppo di limiti. Questo comportamento è particolarmente utile in scenari con succursali e VPN. È possibile spostare il traffico client da collegamenti WAN lenti e dispendiosi e usare invece collegamenti Internet più veloci a Microsoft Azure.
+
+Per altre informazioni, vedere [Progettazione della gerarchia CMG](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#hierarchy-design) e [Configurare il Cloud Management Gateway](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#configure-boundary-groups).
 
 
 
@@ -130,9 +131,9 @@ Per altre informazioni, vedere [CMPivot per i dati in tempo reale in Configurati
 
 ### <a name="edit-or-copy-powershell-scripts"></a>Modificare o copiare gli script di PowerShell
 <!--3705507-->
-È ora possibile usare il comando **Modifica** o **Copia** per uno script di PowerShell esistente usato con la funzionalità Esegui script. Anziché ricreare uno script che è necessario modificare, ora è possibile modificarlo direttamente. Entrambe le azioni usano la stessa esperienza con procedura guidata presentata per la creazione di un nuovo script. Quando si modifica o si copia uno script, Configuration Manager non salva in modo permanente lo stato di approvazione. 
+***[Aggiornamento del 20/06]*** È ora possibile usare il comando **Modifica** o **Copia** per uno script di PowerShell esistente usato con la funzionalità Esegui script. Anziché ricreare uno script che è necessario modificare, ora è possibile modificarlo direttamente. Entrambe le azioni usano la stessa esperienza con procedura guidata presentata per la creazione di un nuovo script. Quando si modifica o si copia uno script, Configuration Manager non salva in modo permanente lo stato di approvazione. 
 
-<!-- For more information, see [Run Scripts](/sccm/apps/deploy-use/create-deploy-scripts). -->
+Per altre informazioni, vedere [Eseguire script](/sccm/apps/deploy-use/create-deploy-scripts#bkmk_psedit).
 
 
 
@@ -332,11 +333,11 @@ Per altre informazioni, vedere [Pianificare Software Center](/sccm/apps/plan-des
 
 ### <a name="configure-user-device-affinity-in-software-center"></a>Configurare l'affinità utente-dispositivo in Software Center
 <!--3485366-->
-Con i [miglioramenti dell'infrastruttura di Software Center](/sccm/core/plan-design/changes/whats-new-in-version-1806#software-center-infrastructure-improvements) apportati a partire dalla versione 1806, i ruoli del server del sito del Catalogo applicazioni non sono più necessari per la maggior parte degli scenari. Alcuni clienti si affidano ancora al Catalogo applicazioni per consentire agli utenti di impostare l'affinità utente-dispositivo del dispositivo primario. 
+***[Aggiornamento del 18/06]*** Con i [miglioramenti dell'infrastruttura di Software Center](/sccm/core/plan-design/changes/whats-new-in-version-1806#software-center-infrastructure-improvements) apportati a partire dalla versione 1806, i ruoli del server del sito del Catalogo applicazioni non sono più necessari per la maggior parte degli scenari. Alcuni clienti si affidano ancora al Catalogo applicazioni per consentire agli utenti di impostare l'affinità utente-dispositivo del dispositivo primario. 
 
 Gli utenti possono ora impostare il dispositivo primario in Software Center. Con questa azione diventano utenti primari del dispositivo in Configuration Manager.
 
-<!-- For more information, see [Link users and devices with user device affinity](/sccm/apps/deploy-use/link-users-and-devices-with-user-device-affinity). -->
+Per altre informazioni, vedere [Collegare utenti e dispositivi mediante l'affinità utente dispositivo](/sccm/apps/deploy-use/link-users-and-devices-with-user-device-affinity). 
 
 
 ### <a name="configure-default-views-in-software-center"></a>Configurare le visualizzazioni predefinite in Software Center
@@ -435,25 +436,25 @@ Per altre informazioni, vedere [Creare distribuzioni in più fasi](/sccm/osd/dep
 
 ### <a name="bkmk_console"></a> Miglioramenti alla console di Configuration Manager
 <!--3594151-->
-In base ai suggerimenti dei clienti raccolti durante il Midwest Management Summit (MMS) Desert Edition 2018, questa versione include i miglioramenti seguenti della console di Configuration Manager:
+***[Aggiornamento del 20/06]*** In base ai suggerimenti dei clienti raccolti durante il Midwest Management Summit (MMS) Desert Edition 2018, questa versione include i miglioramenti seguenti della console di Configuration Manager:
 - Ingrandire la finestra Sfoglia Registro di sistema per i metodi di rilevamento delle applicazioni
 - Passare alla raccolta dalla distribuzione di un'applicazione
 - Rimuovere il contenuto dal monitoraggio dello stato
 - Organizzare le visualizzazioni in base a valori interi nel nodo **Distribuzioni** dell'area di lavoro **Monitoraggio**
 - Spostare l'avviso per un numero elevato di risultati
 
-<!-- For more information, see [Using the Configuration Manager console](/sccm/core/servers/manage/admin-console). -->
+Per altre informazioni, vedere [Uso della console di Configuration Manager](/sccm/core/servers/manage/admin-console#tips).
 
 
 ### <a name="configuration-manager-console-notifications"></a>Notifiche della console di Configuration Manager
 <!--3556016, fka 1318035-->
-Per fornire informazioni più accurate che consentano di intraprendere l'azione appropriata, la console di Configuration Manager ora invia una notifica per gli eventi seguenti:
+***[Aggiornato]*** Per fornire informazioni più accurate che consentano di intraprendere l'azione appropriata, la console di Configuration Manager ora invia una notifica per gli eventi seguenti:
 - Quando è disponibile un aggiornamento per Configuration Manager
 - Quando nell'ambiente si verificano eventi di manutenzione e relativi al ciclo di vita
 
-Queste notifiche sono visualizzate in una barra nella parte superiore della finestra della console sotto la barra multifunzione. Sostituiscono l'esperienza precedente che avvisava della disponibilità di aggiornamenti di Configuration Manager. Queste notifiche nella console visualizzano comunque informazioni critiche, ma non interferiscono con l'interazione tra utente e console. Le notifiche critiche non possono essere ignorate. Tutte le notifiche della console sono visualizzate in una nuova area di notifica della barra del titolo. 
+Queste notifiche sono visualizzate in una barra nella parte superiore della finestra della console sotto la barra multifunzione. Sostituiscono l'esperienza precedente che avvisava della disponibilità di aggiornamenti di Configuration Manager. Queste notifiche nella console visualizzano comunque informazioni critiche, ma non interferiscono con l'interazione tra utente e console. Le notifiche critiche non possono essere ignorate. Tutte le notifiche della console sono visualizzate in una nuova area di notifica della barra del titolo.
 
-<!-- For more information, see [Using the Configuration Manager console](/sccm/core/servers/manage/admin-console). -->
+Per altre informazioni, vedere [Uso della console di Configuration Manager](/sccm/core/servers/manage/admin-console).
 
 
 ### <a name="confirmation-of-console-feedback"></a>Conferma del feedback della console
@@ -472,14 +473,16 @@ Per altre informazioni, vedere [Uso della console di Configuration Manager](/scc
 
 ### <a name="in-console-documentation-dashboard"></a>Dashboard della documentazione nella console
 <!--3556019, fka 1357546-->
-È presente un nuovo nodo **Documentazione** nella nuova area di lavoro **Community**. Questo nodo contiene informazioni aggiornate sulla documentazione di Configuration Manager e gli articoli del supporto tecnico.
+***[Aggiornamento del 20/06]*** È presente un nuovo nodo **Documentazione** nella nuova area di lavoro **Community**. Questo nodo contiene informazioni aggiornate sulla documentazione di Configuration Manager e gli articoli del supporto tecnico.
 
-<!-- For more information, see [Using the Configuration Manager console](/sccm/core/servers/manage/admin-console). -->
+Per altre informazioni, vedere [Uso della console di Configuration Manager](/sccm/core/servers/manage/admin-console#bkmk_doc-dashboard).
 
 
 ### <a name="search-device-views-using-mac-address"></a>Eseguire la ricerca nelle visualizzazioni dispositivi tramite indirizzi MAC
 <!--3600878-->
-È ora possibile cercare un indirizzo MAC in una visualizzazione dispositivi della console di Configuration Manager. Questa proprietà è utile per gli amministratori della distribuzione di sistemi operativi durante la risoluzione dei problemi delle distribuzioni basate su Pre-Boot eXecution Environment. Quando si visualizza un elenco di dispositivi, aggiungere la colonna **Indirizzo MAC** alla visualizzazione. Usare il campo di ricerca per aggiungere i criteri di ricerca **Indirizzo MAC**. 
+***[Aggiornamento del 20/06]*** È ora possibile cercare un indirizzo MAC in una visualizzazione dispositivi della console di Configuration Manager. Questa proprietà è utile per gli amministratori della distribuzione di sistemi operativi durante la risoluzione dei problemi delle distribuzioni basate su Pre-Boot eXecution Environment. Quando si visualizza un elenco di dispositivi, aggiungere la colonna **Indirizzo MAC** alla visualizzazione. Usare il campo di ricerca per aggiungere i criteri di ricerca **Indirizzo MAC**. 
+
+Per altre informazioni, vedere [Uso della console di Configuration Manager](/sccm/core/servers/manage/admin-console#tips).
 
 
 ### <a name="use-net-47-for-improved-console-accessibility"></a>Usare .NET 4.7 per una migliore accessibilità della console
@@ -514,10 +517,10 @@ A parte le nuove funzionalità, questa versione include anche ulteriori modifich
 
 Per altre informazioni sulle modifiche apportate ai cmdlet di Windows PowerShell per Configuration Manager, vedere le [note sulla versione 1902 di PowerShell](https://docs.microsoft.com/powershell/sccm/1902-release-notes?view=sccm-ps).
 
-<!-- 
-The following update rollup (4486457) is available in the console starting on 25 January 2019: [Update rollup for Configuration Manager current branch, version 1902](https://support.microsoft.com/help/4486457).
+L'aggiornamento cumulativo seguente (4500571) è disponibile nella console a partire dal 17 giugno 2019: [Aggiornamento cumulativo per Configuration Manager Current Branch, versione 1902](https://support.microsoft.com/help/4500571).
 
 
+<!--
 ### Hotfixes
 
 The following additional hotfixes are available to address specific issues:
@@ -541,7 +544,7 @@ Prima di installare questa versione, vedere [Installazione degli aggiornamenti p
 >
 >  Sono disponibili altre informazioni su:    
 >   - [Installing new sites](/sccm/core/servers/deploy/install/installing-sites) (Installare nuovi siti)  
->   - [Baseline and update versions](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions) (Versioni di base e di aggiornamento)  
+>   - [Baseline and update versions](/sccm/core/servers/manage/updates#bkmk_Baselines) (Versioni di base e di aggiornamento)  
 
 Per problemi noti e importanti, vedere [Note sulla versione](/sccm/core/servers/deploy/install/release-notes).
 

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9671ccad42fc9135193cf41e058b472b52a412e1
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 70ad1d37b1194374110f0c48469b677f0615ead2
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56142307"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286831"
 ---
 # <a name="security-and-privacy-for-configuration-manager-clients"></a>Sicurezza e privacy per i client di Configuration Manager
 
@@ -80,7 +80,7 @@ Per altre informazioni, vedere [Determinare se bloccare i client](/sccm/core/cli
 
 Di tutti i metodi di installazione client, l'installazione push client è il meno sicuro, poiché comporta numerose dipendenze, incluse le autorizzazioni amministrative locali, la condivisione Admin$ e molte eccezioni del firewall. Il numero e la tipologia di queste dipendenze aumentano la superficie di attacco.  
 
-A partire dalla versione 1806, quando si usa il push client il sito può richiedere l'autenticazione reciproca Kerberos non consentendo il fallback a NTLM prima di stabilire la connessione. Questo miglioramento consente di proteggere la comunicazione tra il server e il client. Per altre informazioni, vedere [Come installare i client con l'installazione push client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_ClientPush).<!--1358204-->  
+A partire dalla versione 1806, quando si usa il push client il sito può richiedere l'autenticazione reciproca Kerberos non consentendo il fallback a NTLM prima di stabilire la connessione. Questo miglioramento consente di proteggere la comunicazione tra il server e il client. Per altre informazioni , vedere [Come installare i client con l'installazione push client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_ClientPush).<!--1358204-->  
 
 Per altre informazioni sui diversi metodi di installazione client, vedere [Metodi di installazione client](/sccm/core/clients/deploy/plan/client-installation-methods).  
 
@@ -200,7 +200,7 @@ Per altre informazioni su questa impostazione client, vedere [Informazioni sulle
 Per i dispositivi mobili registrati con Configuration Manager e basati su Internet, installare il punto proxy di registrazione in una rete perimetrale e il punto di registrazione nella intranet. Questa separazione dei ruoli contribuisce a proteggere il punto di registrazione da attacchi esterni. Se il punto di registrazione viene compromesso, un utente malintenzionato potrebbe ottenere i certificati per l'autenticazione e impadronirsi delle credenziali degli utenti che registrano il proprio dispositivo mobile.  
 
 
-#### <a name="configure-the-password-settings-to-help-protect-mobile-devices-from-unauthorized-access"></a>configurare le impostazioni della password per proteggere i dispositivi mobili da accessi non autorizzati  
+#### <a name="configure-the-password-settings-to-help-protect-mobile-devices-from-unauthorized-access"></a>Configurare le impostazioni della password per proteggere i dispositivi mobili da accessi non autorizzati  
 
 *Per i dispositivi mobili registrati da Configuration Manager*: usare un elemento di configurazione del dispositivo mobile per configurare la complessità delle password come PIN. Specificare almeno la lunghezza minima predefinita della password.  
 
@@ -227,7 +227,7 @@ Evitare attacchi tramite elevazione dei privilegi bloccando il dispositivo mobil
 
 #### <a name="restrict-the-users-who-can-enroll-their-mobile-devices"></a>Limitare gli utenti che possono registrare i dispositivi mobili  
 
-evitare l'elevazione dei privilegi limitando gli utenti autorizzati a registrare i propri dispositivi mobili. Usare un'impostazione client personalizzata anziché le impostazioni predefinite per consentire solo a utenti autorizzati di registrare i propri dispositivi mobili.  
+Evitare l'elevazione dei privilegi limitando gli utenti autorizzati a registrare i propri dispositivi mobili. Usare un'impostazione client personalizzata anziché le impostazioni predefinite per consentire solo a utenti autorizzati di registrare i propri dispositivi mobili.  
 
 
 #### <a name="user-device-affinity-guidance-for-mobile-devices"></a>Indicazioni sull'affinità utente-dispositivo per dispositivi mobili  
@@ -257,7 +257,7 @@ La relazione di affinità utente-dispositivo viene creata durante la registrazio
 Usare IPsec se Exchange Server è installato in locale. Exchange ospitato protegge automaticamente la connessione tramite SSL.  
 
 
-#### <a name="use-the-principle-of-least-privileges-for-the-connector"></a>usare il principio dei privilegi minimi per il connettore  
+#### <a name="use-the-principle-of-least-privileges-for-the-connector"></a>Usare il principio dei privilegi minimi per il connettore  
 
 Per un elenco dei cmdlet minimi richiesti dal connettore Exchange Server, vedere [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](/sccm/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync).  
 
@@ -275,7 +275,7 @@ Configuration Manager non verifica se i file di origine client sono stati manome
 
 Per garantire la continuità aziendale, monitorare e tenere traccia del periodo di validità dei certificati usati per i computer Mac. Configuration Manager non supporta il rinnovo automatico del certificato né avvisa della scadenza prossima. In genere, il periodo di validità è 1 anno.  
 
-Per informazioni su come rinnovare il certificato, vedere [Rinnovo del certificato del client Mac](/sccm/core/clients/deploy/deploy-clients-to-macs#renewing-the-mac-client-certificate).  
+Per informazioni su come rinnovare il certificato, vedere [Rinnovo del certificato del client Mac](/sccm/core/clients/deploy/deploy-clients-to-macs#renew-the-mac-client-certificate).  
 
 
 #### <a name="configure-the-trusted-root-certificate-for-ssl-only"></a>Configurare il certificato radice trusted in modo che sia attendibile solo per il protocollo SSL  
@@ -296,7 +296,7 @@ Quando si registrano i computer Mac, viene installato automaticamente un certifi
 
     1.  **When using this certificate** (Quando si usa questo certificato): modificare l'impostazione predefinita **Always Trust** (Considera sempre attendibile) in **Use System Defaults** (Usa valori predefiniti di sistema).  
 
-    2.  **Secure Sockets Layer (SSL)**: modificare **no value specified** (Nessun valore specificato) in **Always Trust** (Considera sempre attendibile).  
+    2.  **Secure Sockets Layer (SSL)** : modificare **no value specified** (Nessun valore specificato) in **Always Trust** (Considera sempre attendibile).  
 
 6.  Chiudere la finestra di dialogo. Quando richiesto, immettere la password dell'amministratore e quindi fare clic su **Aggiorna impostazioni**.  
 

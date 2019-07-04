@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 4c90befe-9c4e-4c27-a947-625887e15052
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9477db29a93cd8d4a8a7c9b48be8be563bbe25a6
-ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
+ms.openlocfilehash: 5fb11ac9ffbacfc37b69cb91d34a6885f44abe08
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66264500"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286637"
 ---
 # <a name="co-management-workloads"></a>Carichi di lavoro con co-gestione
 
@@ -118,9 +118,11 @@ Per altre informazioni sulla funzionalità Intune, vedere [Assegnare le app di O
 
 <!--1357892-->
 
-A partire da Configuration Manager versione 1806, usare Intune per gestire le app client in dispositivi Windows 10 con co-gestione. Dopo la transizione di questo carico di lavoro, qualsiasi app disponibile distribuita da Intune sarà disponibile nel portale aziendale. Le app distribuite da Configuration Manager sono disponibili in Software Center.
+A partire da Configuration Manager versione 1806, usare Intune per gestire le app client e gli script di PowerShell in dispositivi Windows 10 con co-gestione. Dopo la transizione di questo carico di lavoro, qualsiasi app disponibile distribuita da Intune sarà disponibile nel portale aziendale. Le app distribuite da Configuration Manager sono disponibili in Software Center.
+
 
 Per altre informazioni sulla funzionalità Intune, vedere [Informazioni sulla gestione delle app in Microsoft Intune](https://docs.microsoft.com/intune/app-management).
+
 
 > [!Note]  
 > Il carico di lavoro delle app client è una funzionalità non definitiva. Per abilitarla, vedere [Funzionalità di versioni non definitive in System Center Configuration Manager](/sccm/core/servers/manage/pre-release-features).  

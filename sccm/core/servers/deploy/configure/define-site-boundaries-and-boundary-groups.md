@@ -1,8 +1,8 @@
 ---
-title: Usare limiti del sito e gruppi di limiti
+title: Usare limiti e gruppi di limiti
 titleSuffix: Configuration Manager
 description: Usare i limiti e i gruppi di limiti per definire percorsi di rete e sistemi del sito accessibili per i dispositivi gestiti.
-ms.date: 3/27/2017
+ms.date: 06/18/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,52 +11,60 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c747301f6a076902227a2044e4f116207ed811ff
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: d160c6ab64c5ad097bf5986882b65171b0df4651
+ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499204"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194153"
 ---
-# <a name="define-site-boundaries-and-boundary-groups-for-system-center-configuration-manager"></a>Definire i limiti del sito e i gruppi di limiti per System Center Configuration Manager
+# <a name="define-site-boundaries-and-boundary-groups"></a>Definire i limiti e i gruppi di limiti del sito
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-I limiti per System Center Configuration Manager definiscono i percorsi di rete nella intranet che possono contenere i dispositivi da gestire. I gruppi di limiti sono gruppi logici di limiti che è possibile configurare.
+Il termine *limiti* in Configuration Manager definisce percorsi di rete della Intranet. Questi percorsi includono i dispositivi che si vuole gestire. I *gruppi di limiti* sono gruppi logici di limiti che è possibile configurare.
 
- Una gerarchia può includere qualsiasi numero di gruppi di limiti e ogni gruppo di limiti può contenere qualsiasi combinazione dei tipi di limite seguenti:  
+Una gerarchia può includere un numero illimitato di gruppi di limiti. Ogni gruppo di limiti può contenere qualsiasi combinazione dei seguenti tipi di limiti:  
 
--   Subnet IP  
--   Nome del sito Active Directory  
--   Prefisso IPv6  
--   Intervallo indirizzi IP  
+- Subnet IP  
+- Nome del sito Active Directory  
+- Prefisso IPv6  
+- Intervallo indirizzi IP  
 
 I client nella intranet valutano il relativo percorso di rete corrente e quindi usano tali informazioni per identificare i gruppi di limiti a cui appartengono.  
 
- I client usano i gruppi di limiti per:  
--   **Trovare un sito assegnato**: i gruppi di limiti consentono ai client di individuare un sito primario per l'assegnazione client (assegnazione sito automatica).  
--   **Trovare specifici ruoli del sistema del sito che possono usare:** quando si associa un gruppo di limiti a specifici ruoli del sistema del sito, il gruppo di limiti fornisce ai client l'elenco di sistemi del sito da usare durante la specifica del percorso del contenuto e come punti di gestione preferiti.  
+I client usano i gruppi di limiti per:  
 
-I client in Internet o configurati come client solo per Internet non usano le informazioni relative ai limiti. Questi client non possono usare l'assegnazione automatica del sito e, se il punto di distribuzione è configurato per consentire le connessioni client da Internet, scaricano sempre il contenuto da qualsiasi punto di distribuzione del sito assegnato.  
+- **Trovare un sito assegnato**: i gruppi di limiti consentono ai client di individuare un sito primario per l'assegnazione client. Questo comportamento è detto anche *assegnazione sito automatica*.  
 
-**Per iniziare:**
-- Come prima operazione, [definire i percorsi di rete come limiti](/sccm/core/servers/deploy/configure/boundaries).
-- Continuare quindi [configurando gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups) per associare i client presenti in tali limiti ai server del sistema del sito che possono usare.
+- **Trovare specifici ruoli del sistema del sito che possono usare:** Associare un gruppo di limiti a determinati ruoli del sistema del sito. Il sito fornisce quindi ai client questo elenco di sistemi del sito nel gruppo di limiti. I client usano questi sistemi del sito per azioni come l'individuazione di contenuto o di un punto di gestione nelle vicinanze.  
+
+I client in Internet o configurati come client solo per Internet non usano le informazioni relative ai limiti. Questi client non possono usare l'assegnazione sito automatica. Possono scaricare contenuto da un punto di distribuzione basato su Internet dal proprio sito assegnato o da un punto di distribuzione basato su cloud.  
+
+A partire dalla versione 1902 è possibile associare un Cloud Management Gateway (CMG) a un gruppo di limiti. Per altre informazioni, vedere [Progettazione della gerarchia CMG](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#hierarchy-design).<!--3640932-->
 
 
+## <a name="BKMK_BoundaryBestPractices"></a> Consigli
 
-##  <a name="BKMK_BoundaryBestPractices"></a> Procedure consigliate per i limiti e i gruppi di limiti  
+### <a name="use-a-mix-of-the-fewest-boundaries-that-meet-your-needs"></a>Usare una combinazione del numero minimo di limiti che soddisfano le esigenze
 
-- **Usare una combinazione del numero minimo di limiti che soddisfano le esigenze:**  
-  In passato era consigliabile preferire alcuni tipi di limiti rispetto ad altri. Con le modifiche apportate per migliorare le prestazioni, è ora consigliabile usare il tipo o i tipi di limiti più adatti all'ambiente in uso e il numero più basso possibile di limiti, per semplificare le attività di gestione.      
+Usare il tipo o i tipi di limiti più adatti per il proprio ambiente. Per semplificare le attività di gestione, usare tipi di limiti che consentano di usare il minor numero possibile di limiti.
 
-- **Evitare la sovrapposizione dei limiti per l'assegnazione automatica del sito:**  
-   Anche se ogni gruppo di limiti supporta sia le configurazioni di assegnazione del sito che quelle per il percorso del contenuto, è consigliabile creare un set separato di gruppi di limiti da usare solo per l'assegnazione del sito. Significato: verificare che ogni limite in un gruppo di limiti non sia membro di un altro gruppo di limiti con un'assegnazione del sito diversa. Motivo:  
+### <a name="avoid-overlapping-boundaries-for-automatic-site-assignment"></a>Evitare la sovrapposizione dei limiti per l'assegnazione sito automatica
 
-  - Un singolo limite può essere incluso in più gruppi di limiti  
+Anche se ogni gruppo di limiti supporta il riferimento sia all'assegnazione sito che al sistema del sito, creare un set separato di gruppi di limiti da usare solo per l'assegnazione sito. Verificare che ogni limite in un gruppo di limiti non sia membro di un altro gruppo di limiti con un'assegnazione sito diversa.
 
-  - Ogni gruppo di limiti può essere associato a un sito primario diverso per l'assegnazione del sito  
+- Un singolo limite può essere incluso in più gruppi di limiti  
 
-  - Un client in un limite membro di due gruppi di limiti con assegnazioni del sito diverse selezionerà in modo casuale il sito a cui aggiungersi, che potrebbe non corrispondere a quello a cui si intende aggiungere il client.  Questa configurazione è definita a limiti sovrapposti.  
+- Ogni gruppo di limiti può essere associato a un sito primario diverso per l'assegnazione del sito  
 
-    La sovrapposizione dei limiti non è un problema per il percorso del contenuto e spesso è la configurazione desiderata che fornisce ai client risorse aggiuntive o percorsi del contenuto che possono usare.  
+- Se un limite è membro di due diversi gruppi di limiti con assegnazioni sito diverse, i client selezionano in modo casuale un sito a cui aggiungersi. Questo comportamento potrebbe non corrispondere al sito a cui si vuole aggiungere il client. Questa configurazione è definita *a limiti sovrapposti*.  
+
+    La sovrapposizione dei limiti non è un problema per il percorso del contenuto. Può essere una configurazione utile che fornisce ai client ulteriori risorse o percorsi di contenuto da usare.  
+
+
+## <a name="next-steps"></a>Passaggi successivi
+
+- [Definire percorsi di rete come limiti di System Center Configuration Manager](/sccm/core/servers/deploy/configure/boundaries)
+
+- [Configurare gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups)

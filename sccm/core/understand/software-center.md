@@ -5,18 +5,18 @@ description: Informazioni sulle funzionalità di Software Center
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 02/20/2019
+ms.date: 06/18/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.assetid: 9e68de6e-2b33-442b-b674-a382728d9529
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eacd1d1be2564b718423b9d0db8d24b60aac1adb
-ms.sourcegitcommit: 369db96ee84299b5ab6d74b177e6366b3017fc54
+ms.openlocfilehash: c32f3f24f083537396c64c8f8426f8b6e6d6ee7a
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56589918"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67252013"
 ---
 # <a name="software-center-user-guide"></a>Manuale dell'utente di Software Center
 
@@ -53,7 +53,8 @@ Fare clic sulla scheda **Applicazioni** per trovare e installare le applicazioni
 
 
 ### <a name="install-multiple-applications"></a>Installare più applicazioni 
-<!-- 1357126 --> È possibile installare più applicazioni contemporaneamente anziché attendere il completamento di un'installazione prima di iniziare quella successiva. Non tutte le applicazioni sono idonee:
+<!-- 1357126 -->
+È possibile installare più applicazioni contemporaneamente anziché attendere il completamento di un'installazione prima di iniziare quella successiva. Non tutte le applicazioni sono idonee:
 - L'app deve essere visibile all'utente
 - L'app non deve essere già installata o in fase di download
 - Per installare l'app non è necessaria l'approvazione dell'admin IT
@@ -118,9 +119,13 @@ Fare clic sulla scheda **Opzioni** per visualizzare le impostazioni aggiuntive p
 
 Indicare l'orario di lavoro generico. L'amministratore IT può pianificare installazioni di software fuori dall'orario lavorativo. Prevedere almeno quattro ore al giorno per le attività di manutenzione del sistema. L'amministratore IT può installare comunque applicazioni e aggiornamenti critici durante l'orario di ufficio.
 
-- Fare clic sugli elenchi a discesa per selezionare le ore in cui si inizia e si smette di usare il computer. Per impostazione predefinita questi valori sono compresi tra **5.00** e **22.00**.
+   - Fare clic sugli elenchi a discesa per selezionare le ore in cui si inizia e si smette di usare il computer. Per impostazione predefinita questi valori sono compresi tra **5.00** e **22.00**.
 
-- Selezionare la casella di controllo accanto ai giorni della settimana nei quali in genere viene usato il computer. Per impostazione predefinita Software Center seleziona solo i giorni lavorativi.  
+   - Selezionare la casella di controllo accanto ai giorni della settimana nei quali in genere viene usato il computer. Per impostazione predefinita Software Center seleziona solo i giorni lavorativi.  
+
+Specificare se si usa regolarmente questo computer per lavorare. L'amministratore potrebbe installare automaticamente applicazioni o rendere disponibili altre applicazioni ai computer primari. <!--3485366-->
+
+   - Selezionare **Uso regolarmente il computer per lavorare** se il computer in uso è un computer primario.
 
 
 ### <a name="power-management"></a>Risparmio energia

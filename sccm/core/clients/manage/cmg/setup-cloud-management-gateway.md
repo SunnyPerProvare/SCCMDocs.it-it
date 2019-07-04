@@ -5,33 +5,32 @@ description: Usare questa procedura dettagliata per configurare un Cloud Managem
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 11/27/2018
+ms.date: 06/17/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d74759846a1d74e62f2fdd9d157598d7a3412f3a
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 69ad130dddaecf2a9247126802f9c14fb7176db9
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176771"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286608"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Configurare il gateway di gestione cloud per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*  
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Questo processo include i passaggi necessari per configurare un Cloud Management Gateway (CMG). 
+Questo processo include i passaggi necessari per configurare un Cloud Management Gateway (CMG).
 
-> [!Tip]
-> Questa funzionalità è stata introdotta per la prima volta nella versione 1610 come [versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1802, questa funzionalità non è più in versione non definitiva.
-
+> [!Note]  
+> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).
 
 
 ## <a name="before-you-begin"></a>Prima di iniziare
 
-Iniziare leggendo l'articolo [Pianificare il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway). Usare l'articolo per determinare la struttura del Cloud Management Gateway. 
+Iniziare leggendo l'articolo [Pianificare il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway). Usare l'articolo per determinare la struttura del Cloud Management Gateway.
 
 Usare l'elenco di controllo seguente per assicurarsi di avere le informazioni e i prerequisiti necessari per la creazione di un Cloud Management Gateway:  
 
@@ -39,31 +38,32 @@ Usare l'elenco di controllo seguente per assicurarsi di avere le informazioni e 
 
 - A seconda della struttura pianificata saranno necessari uno o più certificati per Cloud Management Gateway. Per altre informazioni, vedere [Certificati per il gateway di gestione del cloud](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway).  
 
-- A partire dalla versione 1802, selezionare la **distribuzione di Azure Resource Manager**. Per altre informazioni, vedere [Azure Resource Manager](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager). Per la distribuzione Azure Resource Manager del Cloud Management Gateway devono essere disponibili i requisiti seguenti:  
+- A partire dalla versione 1802 (*versione consigliata*), selezionare la **distribuzione di Azure Resource Manager**. Per altre informazioni, vedere [Azure Resource Manager](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager). Per la distribuzione Azure Resource Manager del Cloud Management Gateway devono essere disponibili i requisiti seguenti:  
 
     - Integrazione con [Azure AD](/sccm/core/servers/deploy/configure/azure-services-wizard) per la **Gestione cloud**. L'individuazione utenti di Azure AD non è necessaria.  
-    
+
     - I provider di risorse **Microsoft.ClassicCompute** & **Microsoft.Storage** devono essere registrati nella sottoscrizione di Azure. Per altre informazioni, vedere [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
 
     - Un amministratore della sottoscrizione deve effettuare l'accesso.  
 
-- Per la distribuzione classica del servizio Cloud Management Gateway devono essere disponibili i requisiti seguenti:  
+- Un nome univoco globale per il servizio. Il nome deriva dal [certificato di autenticazione server del Cloud Management Gateway](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_serverauth).  
 
-    > [!Important]  
-    > A partire dalla versione 1810, le distribuzioni classiche del servizio in Azure sono deprecate in Configuration Manager. Iniziare a usare le distribuzioni di Azure Resource Manager per il gateway di gestione cloud. Per altre informazioni, vedere [Pianificare il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).  
-
-    - ID della sottoscrizione di Azure  
-
-    - Certificato di gestione di Azure  
-
-- Un nome univoco globale per il servizio. Il nome deriva dal [certificato di autenticazione server del Cloud Management Gateway](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#cmg-server-authentication-certificate).  
-
-- Se si abilita Cloud Management Gateway come punto di distribuzione cloud, lo stesso nome univoco globale selezionato per il servizio Cloud Management Gateway deve essere disponibile anche come nome di account di archiviazione univoco globale. Il nome deriva dal [certificato di autenticazione server del Cloud Management Gateway](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#cmg-server-authentication-certificate).
+- Se si abilita Cloud Management Gateway come punto di distribuzione cloud, lo stesso nome univoco globale selezionato per il servizio Cloud Management Gateway deve essere disponibile anche come nome di account di archiviazione univoco globale. Il nome deriva dal [certificato di autenticazione server del Cloud Management Gateway](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_serverauth).
 
 - Area di Azure per questa distribuzione Cloud Management Gateway.  
 
 - Numero di istanze di macchina virtuale necessarie per la scalabilità e la ridondanza.  
 
+- Se occorre ancora usare la distribuzione classica del servizio di Azure in Configuration Manager versione 1810 o precedenti, sono necessari i requisiti seguenti:  
+
+    > [!Important]  
+    > A partire dalla versione 1810, le distribuzioni classiche del servizio in Azure sono deprecate in Configuration Manager. Usare le distribuzioni di Azure Resource Manager per il gateway di gestione cloud. Per altre informazioni, vedere [Pianificare il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).  
+    >
+    > A partire da Configuration Manager versione 1902, Azure Resource Manager è l'unico meccanismo di distribuzione per le nuove istanze di Cloud Management Gateway.<!-- 3605704 -->
+
+    - ID della sottoscrizione di Azure  
+
+    - Certificato di gestione di Azure  
 
 
 ## <a name="set-up-a-cmg"></a>Impostare un Cloud Management Gateway
@@ -79,9 +79,9 @@ Eseguire questa procedura nel sito di livello superiore. Tale sito è un sito pr
     Selezionare **Accedi** per eseguire l'autenticazione con un account amministratore della sottoscrizione di Azure. La procedura guidata compila automaticamente i campi rimanenti in base alle informazioni archiviate durante il prerequisito di integrazione di Azure AD. Se si hanno più sottoscrizioni, selezionare l'**ID sottoscrizione** di quella che si vuole usare.
 
     > [!Note]  
-    > A partire dalla versione 1810, le distribuzioni classiche del servizio in Azure sono deprecate in Configuration Manager. 
-    > 
-    > Se è necessario usare una distribuzione classica del servizio, selezionare l'opzione in questa pagina. Immettere l'**ID sottoscrizione** di Azure. Quindi selezionare **Sfoglia** e scegliere il file PFX del certificato di gestione di Azure. 
+    > A partire dalla versione 1810, le distribuzioni classiche del servizio in Azure sono deprecate in Configuration Manager.
+    >
+    > Se è necessario usare una distribuzione classica del servizio, selezionare l'opzione in questa pagina. Immettere l'**ID sottoscrizione** di Azure. Quindi selezionare **Sfoglia** e scegliere il file PFX del certificato di gestione di Azure.
 
 4. Specificare l'**ambiente di Azure** per il Cloud Management Gateway. Le opzioni nell'elenco a discesa possono variare a seconda del metodo di distribuzione.  
 
@@ -90,21 +90,20 @@ Eseguire questa procedura nel sito di livello superiore. Tale sito è un sito pr
 6. Nella pagina Impostazioni della procedura guidata, selezionare **Sfoglia** e scegliere il file PFX del certificato di autenticazione server per il Cloud Management Gateway. Il nome di questo certificato popola i campi obbligatori **FQDN servizio** e **Nome servizio**.  
 
    > [!NOTE]  
-   > A partire dalla versione 1802, il certificato di autenticazione server del Cloud Management Gateway supporta i caratteri jolly. Se si usa un certificato con caratteri jolly, sostituire l'asterisco (\*) nel campo **FQDN servizio** con il nome desiderato per il Cloud Management Gateway.  
-   <!--491233-->  
+   > A partire dalla versione 1802, il certificato di autenticazione server del Cloud Management Gateway supporta i caratteri jolly. Se si usa un certificato con caratteri jolly, sostituire l'asterisco (`*`) nel campo **FQDN servizio** con il nome desiderato per il Cloud Management Gateway.<!--491233-->  
 
 7. Selezionare l'elenco a discesa **Area** per scegliere l'area di Azure per questo Cloud Management Gateway.  
 
-8. Nella versione 1802 e con la distribuzione Azure Resource Manager, selezionare un'opzione per **Gruppo di risorse**. 
+8. Nella versione 1802 e con la distribuzione Azure Resource Manager, selezionare un'opzione per **Gruppo di risorse**.
    1. Se si sceglie **Usa esistente** immettere il nome del nuovo gruppo di risorse o selezionare un gruppo di risorse esistente nell'elenco a discesa. Il gruppo di risorse selezionato deve essere già presente nell'area selezionata nel passaggio 7. Se si seleziona un gruppo di risorse esistente che si trova in un'area diversa da quella selezionata in precedenza, Cloud Management Gateway non riuscirà a effettuare il provisioning.
    2. Se si sceglie **Crea nuovo** immettere il nome del nuovo gruppo di risorse.
 
 9. Nel campo **Istanza della macchina virtuale** immettere il numero di macchine virtuali per questo servizio. Il valore predefinito è uno, ma è possibile impostare fino a 16 macchine virtuali per Cloud Management Gateway.  
 
-10. Selezionare **Certificati** per aggiungere i certificati radice trusted del client. Aggiungere fino a due autorità di certificazione radice attendibili e quattro autorità intermedie (subordinate).  
+10. Selezionare **Certificati** per aggiungere i certificati radice trusted del client. Aggiungere fino a due autorità di certificazione radice attendibili e quattro autorità intermedie (subordinate). Assicurarsi di aggiungere tutti i certificati nella catena di certificati.  
 
-     > [!Note]  
-     > A partire dalla versione 1806, quando si crea un CMG non è più necessario specificare un certificato radice trusted nella pagina Impostazioni. Questo certificato non è obbligatorio se si usa Azure Active Directory (Azure AD) per l'autenticazione client, ma veniva richiesto nella procedura guidata. Se si usano certificati di autenticazione client PKI, è comunque necessario aggiungere un certificato radice trusted al CMG.<!--SCCMDocs-pr issue #2872-->  
+    > [!Note]  
+    > A partire dalla versione 1806, quando si crea un CMG non è più necessario specificare un certificato radice trusted nella pagina Impostazioni. Questo certificato non è obbligatorio se si usa Azure Active Directory (Azure AD) per l'autenticazione client, ma veniva richiesto nella procedura guidata. Se si usano certificati di autenticazione client PKI, è comunque necessario aggiungere un certificato radice trusted al CMG.<!--SCCMDocs-pr issue #2872-->  
 
 11. Per impostazione predefinita, la procedura guidata abilita l'opzione **Verifica la revoca del certificato client**. Per il funzionamento di questa verifica è necessario pubblicare in modalità pubblica un elenco di revoche di certificati (CRL). Se non si pubblica un CRL, deselezionare questa opzione.  
 
@@ -120,10 +119,9 @@ Eseguire questa procedura nel sito di livello superiore. Tale sito è un sito pr
     > Per la risoluzione dei problemi relativi alle distribuzioni di Cloud Management Gateway, usare **CloudMgr.log** e **CMGSetup.log**. Per altre informazioni, vedere [File di log](/sccm/core/plan-design/hierarchy/log-files#cloud-management-gateway).
 
 
-
 ## <a name="configure-primary-site-for-client-certificate-authentication"></a>Configurare il sito primario per l'autenticazione del certificato client
 
-Se si usano i [certificati di autenticazione client](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#client-authentication-certificate) per l'autenticazione dei client con Cloud Management Gateway, seguire questa procedura per configurare ogni sito primario.  
+Se si usano i [certificati di autenticazione client](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_clientauth) per l'autenticazione dei client con Cloud Management Gateway, seguire questa procedura per configurare ogni sito primario.  
 
 1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Configurazione del sito** e selezionare **Siti**.  
 
@@ -134,17 +132,14 @@ Se si usano i [certificati di autenticazione client](/sccm/core/clients/manage/c
 4. Se non si pubblica un elenco di revoche di certificati (CRL, Certificate Revocation List) deselezionare l'opzione **Controllo client dell'elenco di revoche di certificati (CRL) per i sistemi del sito**.  
 
 
-
 ## <a name="add-the-cmg-connection-point"></a>Aggiungere il punto di connessione del Cloud Management Gateway
 
-Il punto di connessione del Cloud Management Gateway è il ruolo di sistema del sito per la comunicazione con il Cloud Management Gateway. Per aggiungere il punto di connessione del Cloud Management Gateway, seguire le istruzioni generali per [installare i ruoli del sistema del sito](/sccm/core/servers/deploy/configure/install-site-system-roles). Nella pagina Selezione ruolo del sistema dell'Aggiunta guidata ruoli del sistema del sito selezionare **Punto di connessione del gateway di gestione cloud**. Quindi selezionare il **Nome del gateway di gestione cloud** al quale si connette il server. La procedura guidata visualizza l'area per il Cloud Management Gateway selezionato. 
+Il punto di connessione del Cloud Management Gateway è il ruolo di sistema del sito per la comunicazione con il Cloud Management Gateway. Per aggiungere il punto di connessione del Cloud Management Gateway, seguire le istruzioni generali per [installare i ruoli del sistema del sito](/sccm/core/servers/deploy/configure/install-site-system-roles). Nella pagina Selezione ruolo del sistema dell'Aggiunta guidata ruoli del sistema del sito selezionare **Punto di connessione del gateway di gestione cloud**. Quindi selezionare il **Nome del gateway di gestione cloud** al quale si connette il server. La procedura guidata visualizza l'area per il Cloud Management Gateway selezionato.
 
 > [!Important]
-> In determinati scenari il punto di connessione del Cloud Management Gateway deve avere un [certificato di autenticazione client](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#client-authentication-certificate). 
+> In determinati scenari il punto di connessione del Cloud Management Gateway deve avere un [certificato di autenticazione client](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_clientauth).
 
- > [!Note]  
- > Per la risoluzione dei problemi relativi all'integrità del Cloud Management Gateway, usare **CMGService.log** e **SMS_Cloud_ProxyConnector.log**. Per altre informazioni, vedere [File di log](/sccm/core/plan-design/hierarchy/log-files#cloud-management-gateway).
-
+Per la risoluzione dei problemi relativi all'integrità del Cloud Management Gateway, usare **CMGService.log** e **SMS_Cloud_ProxyConnector.log**. Per altre informazioni, vedere [File di log](/sccm/core/plan-design/hierarchy/log-files#cloud-management-gateway).
 
 
 ## <a name="configure-client-facing-roles-for-cmg-traffic"></a>Configurare i ruoli lato client per il traffico del Cloud Management Gateway
@@ -155,13 +150,23 @@ Configurare il punto di gestione e il punto di aggiornamento software per accett
 
 2. Selezionare il server del sistema del sito da configurare per il traffico del Cloud Management Gateway. Selezionare il ruolo **Punto di gestione** nel riquadro dei dettagli e quindi **Proprietà** nella barra multifunzione.  
 
-3. Nel pannello Proprietà punto di gestione, in Connessioni client selezionare la casella accanto a **Consenti il traffico del gateway di gestione cloud di Configuration Manager**. 
-    - A seconda della progettazione del Cloud Management Gateway e della versione di Configuration Manager, potrebbe essere necessario abilitare l'opzione **HTTPS**. Per altre informazioni, vedere [Abilitare i punti di gestione per HTTPS](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#enable-management-point-for-https).  
+3. Nel pannello Proprietà punto di gestione, in Connessioni client selezionare la casella accanto a **Consenti il traffico del gateway di gestione cloud di Configuration Manager**.
 
-4. Selezionare **OK** per chiudere la finestra delle proprietà del punto di gestione.   
+    A seconda della progettazione del Cloud Management Gateway e della versione di Configuration Manager, potrebbe essere necessario abilitare l'opzione **HTTPS**. Per altre informazioni, vedere [Abilitare i punti di gestione per HTTPS](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_mphttps).  
 
-Ripetere questi passaggi in base alle esigenze per i punti di gestione aggiuntivi e per gli eventuali punti di aggiornamento software. 
+4. Selezionare **OK** per chiudere la finestra delle proprietà del punto di gestione.  
 
+Ripetere questi passaggi in base alle esigenze per i punti di gestione aggiuntivi e per gli eventuali punti di aggiornamento software.
+
+
+## <a name="configure-boundary-groups"></a>Configurare gruppi di limiti
+
+<!--3640932-->
+A partire dalla versione 1902 è possibile associare un Cloud Management Gateway a un gruppo di limiti. Questa configurazione consente ai client di usare Cloud Management Gateway per impostazione predefinita o come fallback per le comunicazioni client in base alle relazioni del gruppo di limiti.
+
+Per altre informazioni sui gruppi di limiti, vedere [Configurare gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups).
+
+Quando si [crea o configura un gruppo di limiti](/sccm/core/servers/deploy/configure/boundary-group-procedures), aggiungere un Cloud Management Gateway nella scheda **Riferimenti**. Questa azione consente di associare il Cloud Management Gateway a questo gruppo di limiti.
 
 
 ## <a name="configure-clients-for-cmg"></a>Configurare i client per il Cloud Management Gateway
@@ -184,9 +189,8 @@ Per verificare che i client dispongano della proprietà che specifica il Cloud M
 
 Questo comando visualizza tutti i punti di gestione basati su Internet rilevati dal client. Il Cloud Management Gateway non è tecnicamente un punto di gestione basato su Internet, ma i client lo rilevano come tale.
 
- > [!Note]  
- > Per la risoluzione dei problemi relativi al traffico client del Cloud Management Gateway, usare **CMGHttpHandler.log**, **CMGService.log** e **SMS_Cloud_ProxyConnector.log**. Per altre informazioni, vedere [File di log](/sccm/core/plan-design/hierarchy/log-files#cloud-management-gateway).
-
+> [!Note]  
+> Per la risoluzione dei problemi relativi al traffico client del Cloud Management Gateway, usare **CMGHttpHandler.log**, **CMGService.log** e **SMS_Cloud_ProxyConnector.log**. Per altre informazioni, vedere [File di log](/sccm/core/plan-design/hierarchy/log-files#cloud-management-gateway).
 
 
 ## <a name="modify-a-cmg"></a>Modificare un Cloud Management Gateway
@@ -210,12 +214,14 @@ Dopo la creazione di un Cloud Management Gateway è possibile modificarne alcune
 - **Consenti il funzionamento di CMG come punto di distribuzione cloud e per la gestione di contenuti da Archiviazione di Azure**: a partire dalla versione 1806 questa nuova opzione è abilitata per impostazione predefinita. Ora un CMG può anche trasferire il contenuto ai client. Questa funzionalità riduce i certificati necessari e i costi delle macchine virtuali di Azure.<!--1358651-->  
 
 #### <a name="alerts"></a>Avvisi
-Riconfigurare gli avvisi in qualsiasi momento dopo la creazione del Cloud Management Gateway. 
+
+Riconfigurare gli avvisi in qualsiasi momento dopo la creazione del Cloud Management Gateway.
 
 
 ### <a name="redeploy-the-service"></a>Ridistribuire il servizio
 
 Altre modifiche significative, ad esempio le configurazioni seguenti, richiedono la ridistribuzione del servizio:
+
 - Metodo di distribuzione classico ad Azure Resource Manager
 - Sottoscrizione
 - Nome del servizio
@@ -224,7 +230,7 @@ Altre modifiche significative, ad esempio le configurazioni seguenti, richiedono
 
 Mantenere sempre almeno un Cloud Management Gateway per consentire ai client basati su Internet di ricevere i criteri aggiornati. I client basati su Internet non possono comunicare con un Cloud Management Gateway rimosso. Inoltre i client non rilevano un nuovo servizio Cloud Management Gateway fino a quando non effettuano nuovamente il roaming all'intranet. Quando si crea una seconda istanza del Cloud Management Gateway per eliminare la prima, è necessario creare anche un altro punto di connessione del Cloud Management Gateway.
 
-Per impostazione predefinita i client aggiornano i criteri ogni 24 ore. Pertanto, dopo aver creato un nuovo Cloud Management Gateway, attendere almeno un giorno prima di eliminare quello precedente. Se i client sono disattivati o non dispongono di una connessione a Internet il tempo di attesa può essere superiore. 
+Per impostazione predefinita i client aggiornano i criteri ogni 24 ore. Pertanto, dopo aver creato un nuovo Cloud Management Gateway, attendere almeno un giorno prima di eliminare quello precedente. Se i client sono disattivati o non dispongono di una connessione a Internet il tempo di attesa può essere superiore.
 
 A partire dalla versione 1802, se è presente un Cloud Management Gateway esistente nel metodo di distribuzione classico, è necessario distribuire un nuovo Cloud Management Gateway per usare il metodo di distribuzione di Azure Resource Manager.<!--509753--> Sono disponibili due opzioni:  
 
@@ -248,22 +254,20 @@ A partire dalla versione 1802, se è presente un Cloud Management Gateway esiste
 
 > [!Tip]  
 > Per determinare il modello di distribuzione corrente di un Cloud Management Gateway:<!--SCCMDocs issue #611-->  
+>
 > 1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e selezionare il nodo **Cloud Management Gateway**.  
 > 2. Selezionare l'istanza di Cloud Management Gateway.  
-> 3. Nel riquadro dei dettagli nella parte inferiore della finestra cercare l'attributo **Modello di distribuzione**. Per una distribuzione di Resource Manager, questo attributo è **Azure Resource Manager**. 
-> 
+> 3. Nel riquadro dei dettagli nella parte inferiore della finestra cercare l'attributo **Modello di distribuzione**. Per una distribuzione di Resource Manager, questo attributo è **Azure Resource Manager**. Il modello di distribuzione legacy con il certificato di gestione di Azure viene visualizzato come **Azure Service Manager**.
+>
 > È anche possibile aggiungere l'attributo **Modello di distribuzione** come colonna alla visualizzazione elenco.  
-
 
 ### <a name="modifications-in-the-azure-portal"></a>Modifiche nel portale di Azure
 
 Modificare il Cloud Management Gateway solo dalla console di Configuration Manager. L'apporto di modifiche al servizio o alle macchine virtuali sottostanti direttamente in Azure non è supportato. Tali modifiche possono andare perdute senza preavviso. Come con qualsiasi PaaS, il servizio può ricompilare le macchine virtuali in qualsiasi momento. Le ricompilazioni possono verificarsi per la manutenzione dell'hardware back-end o per l'applicazione di aggiornamenti al sistema operativo delle macchine virtuali.
 
-
 ### <a name="delete-the-service"></a>Eliminare il servizio
 
-Se è necessario eliminare il Cloud Management Gateway, eseguire questa operazione anche dalla console di Configuration Manager. La rimozione manuale di componenti in Azure crea incoerenze nel sistema. Questo stato produce dati orfani e può dare origine a comportamenti imprevisti. 
-
+Se è necessario eliminare il Cloud Management Gateway, eseguire questa operazione anche dalla console di Configuration Manager. La rimozione manuale di componenti in Azure crea incoerenze nel sistema. Questo stato produce dati orfani e può dare origine a comportamenti imprevisti.
 
 
 ## <a name="next-steps"></a>Passaggi successivi

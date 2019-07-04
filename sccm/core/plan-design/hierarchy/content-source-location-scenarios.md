@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd80955f65b9c18ca0e2ed74e47caecb0e826049
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 61565ee1d6c98a5ab3a3391d6444aed3f082ae64
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129171"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67251740"
 ---
 # <a name="content-source-location-scenarios-in-system-center-configuration-manager"></a>Scenari del percorso di origine del contenuto in System Center Configuration Manager
 
@@ -28,7 +28,7 @@ Nelle versioni precedenti alla versione 1610, System Center Configuration Manage
 > [!IMPORTANT]  
 > **Se i siti eseguono la versione 1511, 1602 o 1606**, le informazioni contenute in questo argomento sono valide per l'infrastruttura in uso. Vedere anche [Gruppi di limiti per System Center Configuration Manager versioni 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606) per informazioni specifiche per i gruppi di limiti con queste versioni di Configuration Manager.
 >
-> **Se i siti eseguono la versione 1610 o versioni successive**, usare le informazioni contenute in [Definire i limiti del sito e i gruppi di limiti per System Center Configuration Manager](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups) per comprendere in che modo i client individuano i punti di distribuzione con contenuto disponibile.
+> **Se i siti eseguono la versione 1610 o versioni successive**, usare le informazioni contenute in [Definire i limiti del sito e i gruppi di limiti per System Center Configuration Manager](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups) per comprendere in che modo i client individuano i punti di distribuzione con contenuto disponibile.
 
 
 
@@ -82,7 +82,7 @@ Nelle versioni precedenti alla versione 1610, System Center Configuration Manage
 
 -   **Consenti fallback**: Abilitato  
 
--   **Comportamento di distribuzione per rete lenta**: Non scaricare contenuto  
+-   **Comportamento di distribuzione per rete lenta**: Non scaricare il contenuto  
 
 
 **Dettagli:** la configurazione per la distribuzione di pacchetti su richiesta non è pertinente in questo scenario.  
@@ -140,7 +140,7 @@ Nelle versioni precedenti alla versione 1610, System Center Configuration Manage
 
 -   **Consenti fallback**: Abilitato  
 
--   **Comportamento di distribuzione per rete lenta**: Non scaricare contenuto  
+-   **Comportamento di distribuzione per rete lenta**: Non scaricare il contenuto  
 
 
 **Dettagli:**  
@@ -208,7 +208,7 @@ Nelle versioni precedenti alla versione 1610, System Center Configuration Manage
 
 -   **Consenti fallback**: Abilitato  
 
--   **Comportamento di distribuzione per rete lenta**: Non scaricare contenuto  
+-   **Comportamento di distribuzione per rete lenta**: Non scaricare il contenuto  
 
 
 **Dettagli:**  

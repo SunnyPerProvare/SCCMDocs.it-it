@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 84e7b2692dae8b924cfa418508433755de4da328
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: e668baafac94dfc7da5008c37556c017c5e01c9d
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128365"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286115"
 ---
 # <a name="capabilities-in-technical-preview-1710-for-system-center-configuration-manager"></a>Funzionalità nella Technical Preview 1710 per System Center Configuration Manager
 
@@ -32,7 +32,7 @@ L'articolo illustra le funzionalità disponibili nella Technical Preview version
     Workaround details.
 -->
 **Problemi noti di questa versione Technical Preview:**
-- **Supporto per Windows 10, versione 1709 (anche noto come Fall Creators Update)**.  A partire da questa versione di Windows, il supporto include più versioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento o di un'immagine del sistema operativo, assicurarsi di selezionare un'[edizione utilizzabile da Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
+- **Supporto per Windows 10, versione 1709 (anche noto come Fall Creators Update)** .  A partire da questa versione di Windows, il supporto include più versioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento o di un'immagine del sistema operativo, assicurarsi di selezionare un'[edizione utilizzabile da Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
 - **L'aggiornamento a una nuova versione di anteprima ha esito negativo se il server del sito è in modalità passiva**. Se si esegue una versione di anteprima con il [server del sito primario in modalità passiva](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), è necessario disinstallare il server del sito in modalità passiva prima di poter aggiornare il sito di anteprima alla nuova versione di anteprima. Sarà possibile reinstallare il server del sito in modalità passiva al termine dell'aggiornamento del sito.
 
   Per disinstallare il server del sito in modalità passiva:
@@ -72,7 +72,7 @@ Per provare la funzionalità Esegui script, vedere [Creare ed eseguire script](.
 
 Con questa versione è ora possibile impostare il livello della raccolta dei dati di telemetria di Windows 10 su **Enhanced (Limited)** (Avanzato - Limitato). Questa impostazione consente di ottenere informazioni utili sui dispositivi presenti nell'ambiente in uso senza che i dispositivi segnalino tutti i dati nel livello di telemetria **Avanzato** con Windows 10 1709 o versione successiva.
 
-Il livello di telemetria Enhanced (Limited) (Avanzato - Limitato) include metriche del livello di base e un subset di dati raccolti dal livello **Avanzato** pertinenti per Windows Analytics. Per altre informazioni sui livelli di telemetria, vedere [Livelli di telemetria](https://docs.microsoft.com/windows/configuration/configure-windows-telemetry-in-your-organization#telemetry-levels).
+Il livello di telemetria Enhanced (Limited) (Avanzato - Limitato) include metriche del livello di base e un subset di dati raccolti dal livello **Avanzato** pertinenti per Windows Analytics. Per altre informazioni sui livelli di telemetria, vedere [Livelli di telemetria](/windows/privacy/configure-windows-diagnostic-data-in-your-organization#use-group-policy-to-set-the-diagnostic-data-level).
 
 ### <a name="try-it-out"></a>Verifica
 Per configurare la raccolta di dati di telemetria di Windows 10 nei client, vedere [Come configurare le impostazioni client](/sccm/core/clients/deploy/configure-client-settings). Aprire la finestra **Servizi cloud** e impostare i dati di telemetria di Windows 10 su **Avanzato**.
@@ -88,7 +88,8 @@ Aggiungere un'icona per l'app in Software Center. Per provare subito, vedere [Cr
 
 
 ## <a name="check-compliance-from-software-center-for-co-managed-devices"></a>Controllare la conformità da Software Center per i dispositivi co-gestiti
-<!-- 1356374 --> In questa versione gli utenti possono usare Software Center per verificare la conformità dei dispositivi Windows 10 co-gestiti, anche se l'accesso condizionale viene gestito da Intune. Per i dettagli, vedere [Co-gestione per dispositivi Windows 10](./capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices).
+<!-- 1356374 -->
+In questa versione gli utenti possono usare Software Center per verificare la conformità dei dispositivi Windows 10 co-gestiti, anche se l'accesso condizionale viene gestito da Intune. Per i dettagli, vedere [Co-gestione per dispositivi Windows 10](./capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices).
 
 
 ## <a name="support-for-exploit-guard"></a>Supporto per Exploit Guard
@@ -112,7 +113,7 @@ I dispositivi gestiti devono eseguire Windows 10 1709 Fall Creators Update o ver
 | Protezione dagli exploit  | Nessuno  |
 | Protezione di rete  |  Nei dispositivi deve essere abilitata la [protezione in tempo reale di Windows Defender AV]( https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/controlled-folders-exploit-guard).  |
 
-### <a name="create-an-exploit-guard-policy----1355468---"></a>Creare un criterio di Exploit Guard <!--1355468 -->
+### <a name="create-an-exploit-guard-policy----1355468---"></a>Creare criteri di Exploit Guard  <!--1355468 -->
 1. Nella console di Configuration Manager passare ad **Asset e conformità** > **Endpoint Protection** e fare clic su **Windows Defender Exploit Guard**.
 2. Nel gruppo **Crea** della scheda **Home** fare clic su **Create Exploit Policy** (Crea criterio di Exploit Guard).
 3. Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.
@@ -127,7 +128,8 @@ I dispositivi gestiti devono eseguire Windows 10 1709 Fall Creators Update o ver
 Dopo aver creato i criteri di Exploit Guard, usare la procedura guidata Deploy Exploit Guard Policy (Distribuzione criterio di Exploit Guard) per distribuirli. A tale scopo, aprire la console di Configuration Manager, passare ad **Asset e conformità** > **Endpoint Protection** e fare clic su **Deploy Exploit Guard Policy** (Distribuzione criterio di Exploit Guard).
 
 ## <a name="limited-support-for-cng-certificates"></a>Supporto limitato per i certificati CNG
-<!-- 1356191 --> A partire da questa versione è possibile usare i modelli di certificato delle [API CNG (Cryptography Next Generation)](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) per gli scenari seguenti:
+<!-- 1356191 -->
+A partire da questa versione è possibile usare i modelli di certificato delle [API Cryptography: CNG (Cryptography Next Generation)](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) per gli scenari seguenti:
 
 - Registrazione e comunicazione dei client con un punto di gestione HTTPS.   
 - Distribuzione di software e applicazioni con un punto di distribuzione HTTPS.   
@@ -150,12 +152,12 @@ Per usare i certificati CNG, l'autorità di certificazione (CA) deve fornire i m
 Per ottenere risultati ottimali, è consigliabile creare il nome soggetto da informazioni di Active Directory.  Usare il nome DNS per **Formato del nome soggetto** e includere il nome DNS nel nome soggetto alternativo.  In caso contrario, è necessario fornire queste informazioni quando si registra il dispositivo nel profilo certificato.
 
 
-## <a name="improved-descriptions-for-pending-computer-restarts-----1356283---"></a>Descrizioni migliorate per i riavvii in sospeso del computer <!--1356283 -->
+## <a name="improved-descriptions-for-pending-computer-restarts-----1356283---"></a>Descrizioni migliorate per i riavvii in sospeso del computer   <!--1356283 -->
 In [Technical Preview 1708](/sccm/core/get-started/capabilities-in-technical-preview-1708#restart-computers-from-the-configuration-manager-console) è stata aggiunta la possibilità di identificare i dispositivi in attesa di riavvio dalla console di Configuration Manager.
 
 A partire da questa Technical Preview, la console visualizza dettagli aggiuntivi con informazioni sul processo o sull'azione che richiede il riavvio del computer.
 
-## <a name="device-guard-policy-changes----1355092---"></a>Modifiche ai criteri di Device Guard <!-- 1355092 -->
+## <a name="device-guard-policy-changes----1355092---"></a>Modifiche apportate ai criteri di Device Guard <!-- 1355092 -->
 Con la Technical Preview versione 1710 sono state apportate le tre modifiche seguenti relative ai criteri di Device Guard:
 
 ### <a name="device-guard-policies-renamed-to-windows-defender-application-control-policies"></a>Criteri di Device Guard rinominati in criteri di controllo delle applicazioni di Windows Defender
@@ -191,7 +193,7 @@ Per consentire a un dispositivo con Windows Defender SmartScreen l'esecuzione di
 3.  Nella casella **File o cartelle attendibili** aggiungere i file e le cartelle che devono essere considerati attendibili.
 4.  Fare clic su **Avanti** fino al termine della procedura guidata.
 
-## <a name="configure-and-deploy-windows-defender-application-guard-policies----1351960---"></a>Configurare e distribuire criteri di Windows Defender Application Guard <!-- 1351960 -->
+## <a name="configure-and-deploy-windows-defender-application-guard-policies----1351960---"></a>Configurare e distribuire i criteri di Windows Defender Application Guard <!-- 1351960 -->
 
 [Windows Defender Application Guard](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) è una nuova funzionalità di Windows che consente di proteggere gli utenti con l'apertura di siti Web non attendibili in un contenitore protetto isolato non è accessibile da altre parti del sistema operativo. In questa versione Technical Preview, è stato aggiunto il supporto per configurare questa funzionalità usando le impostazioni di conformità di Configuration Manager configurate dall'utente e quindi distribuite in una raccolta. Questa funzionalità verrà rilasciata in anteprima per la versione a 64 bit di Windows 10 Creators Update (nome in codice: RS2). Per provare ora questa funzionalità è necessario usare una versione di anteprima dell'aggiornamento.
 

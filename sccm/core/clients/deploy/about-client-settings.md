@@ -2,7 +2,7 @@
 title: Impostazioni client
 titleSuffix: Configuration Manager
 description: Informazioni sulle impostazioni predefinite e personalizzate per il controllo dei comportamenti client
-ms.date: 05/21/2019
+ms.date: 06/18/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9610024219107e81c4440a1e96780aaf300e20f
-ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.openlocfilehash: 157cc09f08cf16056dc3424ddc377fbd95b0fe6e
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66715739"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286859"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -59,7 +59,8 @@ Specifica la velocità massima di trasferimento che i client possono usare al di
 
 ### <a name="configure-branchcache"></a>Configura BranchCache
 
-Configura il computer client per [Windows BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#branchcache). Per consentire la memorizzazione nella cache BranchCache nel client, impostare **Abilita BranchCache** su **Sì**.
+Configura il computer client per [Windows BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#bkmk_branchcache
+). Per consentire la memorizzazione nella cache BranchCache nel client, impostare **Abilita BranchCache** su **Sì**.
 
 - **Abilita BranchCache**: Abilita BranchCache nei computer client.
 
@@ -78,11 +79,11 @@ Se si sceglie **Sì**, specificare:
 
 Abilita la [peer cache](/sccm/core/plan-design/hierarchy/client-peer-cache) per i client di Configuration Manager. Scegliere **Sì** e quindi specificare la porta attraverso la quale il client comunica con il computer peer.
 
-- **Porta per la trasmissione di rete iniziale** (impostazione predefinita 8004): Configuration Manager usa questa porta in Windows PE o nella versione completa del sistema operativo Windows. Il motore della sequenza di attività di Windows PE invia il broadcast per ottenere le posizioni del contenuto prima di avviare la sequenza di attività.<!--SCCMDocs issue 910-->
+- **Porta per la trasmissione di rete iniziale** (impostazione predefinita UDP 8004): Configuration Manager usa questa porta in Windows PE o nella versione completa del sistema operativo Windows. Il motore della sequenza di attività di Windows PE invia il broadcast per ottenere le posizioni del contenuto prima di avviare la sequenza di attività.<!--SCCMDocs issue 910-->
 
-- **Porta per il download di contenuto da peer** (impostazione predefinita 8003): Configuration Manager configura automaticamente le regole di Windows Firewall in modo che questo tipo di traffico sia consentito. Se si usa un firewall diverso, è necessario configurare le regole manualmente.
+- **Porta per il download di contenuto da peer** (impostazione predefinita TCP 8003): Configuration Manager configura automaticamente le regole di Windows Firewall in modo che questo tipo di traffico sia consentito. Se si usa un firewall diverso, è necessario configurare le regole manualmente.  
 
-
+    Per altre informazioni, vedere [Porte usate per le connessioni](/sccm/core/plan-design/hierarchy/ports#BKMK_PortsClient-ClientWakeUp).  
 
 ## <a name="client-policy"></a>Criteri client  
 
@@ -162,7 +163,7 @@ Scegliere **Sì** se si vogliono distribuire elementi di configurazione [dati e 
 
 ### <a name="user-notifications-for-required-deployments"></a>Notifiche utente per le distribuzioni richieste
 
-Per altre informazioni sulle tre impostazioni seguenti, vedere [Notifiche utente per le distribuzioni richieste](/sccm/apps/deploy-use/deploy-applications#user-notifications-for-required-deployments):
+Per altre informazioni sulle tre impostazioni seguenti, vedere [Notifiche utente per le distribuzioni richieste](/sccm/apps/deploy-use/deploy-applications#bkmk_notify):
 
 - **Più di 24 ore alla scadenza di distribuzione. Avvisare l'utente ogni (ore)**
 - **Meno di 24 ore alla scadenza di distribuzione. Avvisare l'utente ogni (ore)**
@@ -205,7 +206,7 @@ Per altre informazioni su questa impostazione, vedere [Certificati per Microsoft
 
 ### <a name="organization-name-displayed-in-software-center"></a>Nome organizzazione visualizzato in Software Center
 
-Digitare il nome visualizzato dagli utenti in Software Center. Queste informazioni di personalizzazione consentono agli utenti di identificare questa applicazione come origine attendibile. Per altre informazioni sulla priorità di questa impostazione, vedere [Personalizzazione di Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#branding-software-center).  
+Digitare il nome visualizzato dagli utenti in Software Center. Queste informazioni di personalizzazione consentono agli utenti di identificare questa applicazione come origine attendibile. Per altre informazioni sulla priorità di questa impostazione, vedere [Personalizzazione di Software Center](/sccm/apps/plan-design/plan-for-software-center#branding-software-center).  
 
 ### <a name="use-new-software-center"></a>Usa il nuovo Software Center
 
@@ -384,7 +385,7 @@ Immettere per quanti minuti i dispositivi moderni possono eseguire il polling de
 
 Per consentire la registrazione dei dispositivi legacy basata sugli utenti, impostare questa opzione su **Sì** e quindi configurare l'impostazione seguente:
 
-- **Profilo di registrazione**: Selezionare **Imposta profilo** per creare o selezionare un profilo di registrazione. Per altre informazioni, vedere [Configurare le impostazioni client per la registrazione](/sccm/core/clients/deploy/deploy-clients-to-macs#configure-client-settings-for-enrollment).
+- **Profilo di registrazione**: Selezionare **Imposta profilo** per creare o selezionare un profilo di registrazione. Per altre informazioni, vedere [Configurare le impostazioni client per la registrazione](/sccm/core/clients/deploy/deploy-clients-to-macs#configure-client-settings).
 
 ### <a name="allow-users-to-enroll-modern-devices"></a>Consenti agli utenti di registrare i dispositivi moderni
 
@@ -865,8 +866,8 @@ Specificare il numero di giorni in cui il client misura la soglia di affinità d
 Scegliere **Sì** per creare automaticamente affinità utente-dispositivo in base alle informazioni sull'utilizzo raccolte da Configuration Manager.  
 
 ### <a name="allow-user-to-define-their-primary-devices"></a>Consentire all'utente di definire i dispositivi primari
-
-Se questa opzione è impostata su **Sì**, gli utenti possono identificare i propri dispositivi primari in Software Center.
+<!--3485366-->
+Se questa opzione è impostata su **Sì**, gli utenti possono identificare i propri dispositivi primari in Software Center. Per altre informazioni, vedere il [Manuale dell'utente di Software Center](/sccm/core/understand/software-center#work-information).
 
 
 

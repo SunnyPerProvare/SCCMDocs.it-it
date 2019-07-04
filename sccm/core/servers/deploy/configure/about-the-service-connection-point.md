@@ -2,7 +2,7 @@
 title: punto di connessione del servizio
 titleSuffix: Configuration Manager
 description: Informazioni sul ruolo di sistema del sito di Configuration Manager e pianificazione della gamma di usi.
-ms.date: 08/01/2018
+ms.date: 06/19/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f1173a8bec0ab05c3519d04430adddab129389b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: af65085590d8b02d6b3a020668566a334de42f13
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499119"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67285562"
 ---
 # <a name="about-the-service-connection-point-in-configuration-manager"></a>Informazioni sul punto di connessione del servizio in Configuration Manager
 
@@ -79,51 +79,13 @@ Per usare Configuration Manager Service Manager, nella console passare a **Monit
 
 - Il responsabile della distribuzione nel server del sito usa l'account di installazione del sistema del sito per trasferire gli aggiornamenti dal punto di connessione del servizio.
 
-##  <a name="bkmk_urls"></a> Requisiti per l'accesso a Internet  
-Per abilitare l'operazione, il computer che ospita il punto di connessione del servizio ed eventuali firewall tra il computer e Internet deve passare le comunicazioni tramite la porta in uscita **TCP 443** per HTTPS e la porta in uscita **TCP 80** per HTTP ai percorsi Internet seguenti. Il punto di connessione del servizio supporta anche l'uso di un proxy Web (con o senza autenticazione) per accedere a questi percorsi. Se è necessario configurare un account proxy Web, vedere [Supporto dei server proxy](/sccm/core/plan-design/network/proxy-server-support).
 
-> [!TIP]  
-> Il punto di connessione del servizio usa il servizio Microsoft Intune quando si connette a go.microsoft.com o manage.Microsoft.com. Esiste un problema noto per cui il connettore Intune riscontra problemi di connettività se il certificato radice Baltimore CyberTrust non è installato, è scaduto o è danneggiato nel punto di connessione del servizio. Per altre informazioni, vedere [Il punto di connessione del servizio non scarica gli aggiornamenti](https://support.microsoft.com/help/3187516).  
+## <a name="bkmk_urls"></a> Requisiti per l'accesso a Internet  
 
-#### <a name="updates-and-servicing"></a>Aggiornamenti e manutenzione
+Se l'organizzazione limita le comunicazioni della rete con Internet tramite un firewall o un dispositivo proxy, è necessario consentire al punto di connessione del servizio di accedere agli endpoint Internet.
 
-- `*.akamaiedge.net`  
+Per altre informazioni, vedere i [requisiti di accesso Internet](/sccm/core/plan-design/network/internet-endpoints#bkmk_scp).
 
-- `*.akamaitechnologies.com`  
-
-- `*.manage.microsoft.com`  
-
-- `go.microsoft.com`  
-
-- `blob.core.windows.net`  
-
-- `download.microsoft.com`  
-
-- `download.windowsupdate.com`  
-
-- `sccmconnected-a01.cloudapp.net`  
-
-- `configmgrbits.azureedge.net`  
-
-#### <a name="microsoft-intune"></a>Microsoft Intune
-
-- `*manage.microsoft.com`  
-
-- `https://bspmts.mp.microsoft.com/V`  
-
-- `https://login.microsoftonline.com/{TenantID}`  
-
-#### <a name="windows-10-servicing"></a>Manutenzione di Windows 10
-
-- `download.microsoft.com`  
-
-- `https://go.microsoft.com/fwlink/?LinkID=619849`  
-
-- `dl.delivery.mp.microsoft.com`  
-
-#### <a name="azure-services"></a>Servizi di Azure
-
-- `management.azure.com`  
 
 ## <a name="install-the-service-connection-point"></a>Installare il punto di connessione del servizio
 Quando si esegue il **programma di installazione** per installare il sito di livello superiore di una gerarchia, viene offerta la possibilità di installare il punto di connessione del servizio.
