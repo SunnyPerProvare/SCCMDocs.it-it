@@ -2,7 +2,7 @@
 title: Gestire l'accesso ai servizi di Office 365
 titleSuffix: Configuration Manager
 description: Informazioni su come configurare l'accesso condizionale ai servizi di Office 365 per i PC gestiti da System Center Configuration Manager.
-ms.date: 03/21/2019
+ms.date: 07/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 434801b170ed5efcbbafa046a3ac1e94a615ed3d
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 2583a53a366b338a3ff0096fb4f9ca2f9bdde94b
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62256034"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551473"
 ---
 # <a name="manage-access-to-office-365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gestire l'accesso ai servizi di Office 365 per i PC gestiti da System Center Configuration Manager
 
@@ -99,8 +99,8 @@ Per informazioni sulla configurazione dell'accesso condizionale per dispositivi 
     - **Richiedi l'abilitazione dell'integrità del codice nel dispositivo**
     - **Richiedi l'abilitazione di antimalware ad esecuzione anticipata nel dispositivo**  
 
-    >[!Tip]  
-    > I criteri di accesso condizionale per l'attestazione dell'integrità dei dispositivi sono stati introdotti per la prima volta nella versione 1710 come [funzionalità di una versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1802, questa funzionalità non è più in versione non definitiva.<!--1235616-->  
+    > [!Important]  
+    > I criteri di accesso condizionale per l'attestazione dell'integrità del dispositivo è deprecata e verrà rimossa in una versione futura. Per altre informazioni, vedere [funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).<!--1235616-->  
 
     > [!Note]  
     > Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  

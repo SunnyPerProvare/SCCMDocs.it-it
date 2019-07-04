@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3eff032113b92055b32cb81c6cae9363c368a421
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
-ms.translationtype: MT
+ms.openlocfilehash: 94e7456472c17d61ce42ffaf2109a3254bde1280
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159094"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551267"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Abilitare la condivisione per Desktop Analitica dei dati
 
@@ -73,9 +73,6 @@ Per abilitare la condivisione dei dati, configurare il server proxy per consenti
 | `https://kmwatsonc.events.data.microsoft.com` | Analisi dell'arresto anomalo in linea. Obbligatorio per i report sull'integrità di dispositivo in Windows 10, versione 1809 o versione successiva. |
 | `https://oca.telemetry.microsoft.com`  | Online Crash Analysis (OCA). Richieste per monitorare l'integrità della distribuzione in Windows 10, versione 1803 o versioni precedente. |
 | `https://login.live.com` | Deve per fornire un'identità del dispositivo più affidabile per Desktop Analitica. <br> <br>Per disabilitare l'accesso dell'utente finale Microsoft account, usare le impostazioni dei criteri anziché bloccare questo endpoint. Per altre informazioni, vedere [account Microsoft aziendali](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts#block-all-consumer-microsoft-account-user-authentication). |
-| `https://nexusrules.officeapps.live.com` | Per le funzionalità future <!-- Used to request dynamic diagnostic data events from Office clients. This data is useful for drill-down and diagnostics purposes in the Desktop Analytics portal --> |
-| `https://nexus.officeapps.live.com` | Per le funzionalità future <!-- Used by Office clients to send diagnostic data events from Office 14, Office 15, and versions of Office 16 earlier than 16.0.8702. It's used to collect usage and reliability signals events for Desktop Analytics. --> |
-| `https://office.pipe.aria.microsoft.com` | Per le funzionalità future <!-- Used by Office clients to send diagnostic data events from universal/modern Office apps, and Win32 Office 16 versions later than 16.0.8702. It's used to collect usage and reliability signals events for Desktop Analytics. --> |
 | `https://graph.windows.net` | Consente di recuperare automaticamente le impostazioni, ad esempio CommercialId quando ci si collega la gerarchia per Desktop Analitica (on solo ruolo del Server di Configuration Manager). |
 | `https://fef.msua06.manage.microsoft.com` | Utilizzato per le appartenenze a raccolte di sincronizzazione dispositivi e piani di distribuzione stato conformità del dispositivo con Desktop Analitica (on solo ruolo del Server di Configuration Manager). |
 

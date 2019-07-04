@@ -1,7 +1,7 @@
 ---
-title: Creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti con Intune
+title: Creare elementi di configurazione per dispositivi iOS e macOS gestiti con Intune
 titleSuffix: Configuration Manager
-description: Usare l'elemento di configurazione iOS e Mac OS X di System Center Configuration Manager per gestire le impostazioni dei dispositivi iOS e Mac OS X.
+description: Usare l'elemento di configurazione iOS e macOS di System Center Configuration Manager per gestire le impostazioni per i dispositivi iOS e macOS.
 ms.date: 03/28/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cadeb04e52e584cf260e84ee4bdd4ea6a07de23f
-ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
+ms.openlocfilehash: a528ef0e53744f5cac466cd08bf2426089a15907
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66748321"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551499"
 ---
-# <a name="how-to-create-configuration-items-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Come creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti con Intune
+# <a name="how-to-create-configuration-items-for-ios-and-macos-devices-managed-with-intune"></a>Come creare elementi di configurazione per dispositivi iOS e macOS gestiti con Intune
 
-Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configuration Manager per gestire le impostazioni per i dispositivi iOS e Mac OS X registrati in Microsoft Intune o gestiti localmente da Configuration Manager.  
+Usare System Center Configuration Manager **iOS e macOS** elemento di configurazione per gestire le impostazioni per i dispositivi iOS e macOS registrati in Microsoft Intune o gestiti localmente da Configuration Manager.  
   
-## <a name="create-an-ios-and-mac-os-x-configuration-item"></a>Creare un elemento di configurazione di Mac OS X e di iOS  
+## <a name="create-an-ios-and-macos-configuration-item"></a>Creare un elemento di configurazione iOS e macOS  
   
 1. Nella console di Configuration Manager fare clic su **Asset e conformità**.  
   
@@ -32,13 +32,13 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
   
 4. Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
   
-5. In **Specificare il tipo di elemento di configurazione da creare**selezionare **iOS e Mac OS X**.  
+5. Sotto **specificare il tipo di elemento di configurazione che si desidera creare**, selezionare **iOS e macOS**.  
   
 6. Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
   
-7. Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme iOS o Mac OS X specifiche che valuteranno l'elemento di configurazione.  
+7. Nel **piattaforme supportate** pagina delle piattaforme di procedura guidata, selezionare le specifiche iOS o macOS che valuteranno l'elemento di configurazione.  
   
-8. Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione per iOS e Mac OS X](#ios-and-mac-os-x-configuration-item-settings-reference) in questo argomento e quindi fare clic su **Avanti**.  
+8. Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Visualizzare [iOS e macOS riferimento di impostazioni di elemento di configurazione](#ios-and-mac-os-x-configuration-item-settings-reference) in questo argomento per informazioni dettagliate e quindi fare clic su **successivo**.  
   
    > [!TIP]  
    >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
@@ -66,7 +66,7 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
   
     È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
   
-##  <a name="ios-and-mac-os-x-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione per iOS e Mac OS X  
+##  <a name="ios-and-macos-configuration-item-settings-reference"></a>Fare riferimento a impostazioni di elemento di configurazione iOS e macOS  
   
 ###  <a name="password"></a>Password  
   
@@ -83,7 +83,7 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
 |**Modifica del passcode** (solo supervisione)|Consente di aggiungere, modificare o rimuovere la password del dispositivo.|
   
 ###  <a name="device"></a>Dispositivo  
- Queste impostazioni si applicano ai dispositivi iOS e Mac OS X.  
+ Queste impostazioni si applicano ai dispositivi iOS e macOS.  
   
 |Nome impostazione|Dettagli|  
 |------------------|-------------|  
@@ -172,7 +172,7 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
 |**Sincronizzazione foto**|Consente la sincronizzazione foto in un servizio cloud.| 
 |**Libreria foto di iCloud**|Se è impostata su **No**, disabilita l'uso della libreria foto di iCloud che consente agli utenti di archiviare foto e video nel cloud. Le foto non completamente scaricate dalla libreria foto di iCloud nel dispositivo vengono rimosse dal dispositivo se l'opzione è impostata su **No**.|
 |**Condivisione foto iCloud**|Impostare su **No** per disabilitare Condivisione foto iCloud sul dispositivo.|
-|**Esegui handoff per continuare le attività nell'altro dispositivo**|Consente all'utente di continuare il lavoro iniziato su un dispositivo iOS in un altro dispositivo iOS o Mac OS X.|
+|**Esegui handoff per continuare le attività nell'altro dispositivo**|Consentire all'utente di proseguire il lavoro iniziato in un dispositivo iOS in un altro iOS o di un dispositivo macOS.|
 |**Sincronizza i dati dalle app gestite a iCloud**|Consente alle app gestite con Intune di sincronizzare i dati con l'account iCloud dell'utente.|
 
   
@@ -258,14 +258,14 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
   
   Per informazioni sull'uso dei report, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
   
-###  <a name="compliant-and-noncompliant-apps-mac-os-x"></a>App conformi e non conformi (Mac OS X)  
- Consente di specificare un elenco di app Mac OS X conformi oppure non conformi nella società. È quindi possibile usare i report per visualizzare i dispositivi nei quali sono installate app non conformi e gli utenti associati.  
+###  <a name="compliant-and-noncompliant-apps-macos"></a>App conformi e non conformi (macOS)  
+ Consente di specificare un elenco di App macOS conformi oppure non conformi nella società. È quindi possibile usare i report per visualizzare i dispositivi nei quali sono installate app non conformi e gli utenti associati.  
   
  Non è possibile specificare sia le app conformi che quelle non conformi nello stesso elemento di configurazione.  
   
 #### <a name="to-specify-the-compliant-or-noncompliant-apps-list"></a>Per indicare le app conformi o non conformi  
   
-1. Nella pagina **App conformi e non conformi (Mac OS X)** specificare le informazioni seguenti:  
+1. Nel **App conformi e non conformi (macOS)** , specificare le informazioni seguenti:  
   
    - **Elenco App non conformi**: selezionare questa opzione per specificare un elenco di app da segnalare come non conformi se installate dagli utenti.  
   
@@ -299,15 +299,15 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
   
   Per informazioni sull'uso dei report, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
   
-### <a name="ios-and-mac-os-x-custom-profile-settings"></a>Impostazioni dei profili personalizzati di iOS e Mac OS X  
- Usare i **profili personalizzati di iOS e Mac OS X** per distribuire le impostazioni create tramite lo [strumento Apple Configurator](https://itunes.apple.com/us/app/apple-configurator-2/id1037126344?mt=12) nei dispositivi iOS e Mac OS X. Questo strumento consente di creare molte impostazioni che controllano il funzionamento di questi dispositivi e di esportarle in un profilo di configurazione. È quindi possibile importare il profilo di configurazione nel profilo personalizzato di iOS e Mac OS X e distribuire le impostazioni a utenti e dispositivi nell'organizzazione.  
+### <a name="ios-and-macos-custom-profile-settings"></a>impostazioni del profilo personalizzato iOS e macOS  
+ Uso **profili personalizzati iOS e macOS** per distribuire le impostazioni create tramite il [strumento Apple Configurator](https://itunes.apple.com/us/app/apple-configurator-2/id1037126344?mt=12) ai dispositivi iOS e macOS. Questo strumento consente di creare molte impostazioni che controllano il funzionamento di questi dispositivi e di esportarle in un profilo di configurazione. È quindi possibile importare questo profilo di configurazione in iOS e un profilo personalizzato macOS e distribuire le impostazioni a utenti e dispositivi nell'organizzazione.  
   
 > [!NOTE]  
->  Assicurarsi che le impostazioni esportate dallo strumento Apple Configurator siano compatibili con la versione di iOS o Mac OS X sui dispositivi in cui viene distribuito il profilo. Per informazioni sulla risoluzione delle impostazioni incompatibili, cercare Configuration Profile Reference e Mobile Device Management Protocol Reference nel sito Web di [Apple Developer](https://developer.apple.com/) .  
+>  Assicurarsi che le impostazioni esportate dallo strumento Apple Configurator siano compatibili con la versione di iOS o macOS nei dispositivi a cui si distribuisce il profilo. Per informazioni sulla risoluzione delle impostazioni incompatibili, cercare Configuration Profile Reference e Mobile Device Management Protocol Reference nel sito Web di [Apple Developer](https://developer.apple.com/) .  
   
-#### <a name="to-create-an-ios-and-mac-os-x-custom-profile"></a>Per creare un profilo personalizzato di iOS e Mac OS X  
+#### <a name="to-create-an-ios-and-macos-custom-profile"></a>Per creare un iOS e macOS profilo personalizzato  
   
-1.  Nella pagina **Configura le impostazioni del profilo personalizzato di iOS e Mac OS X** della **Creazione guidata dell'elemento di configurazione**specificare le informazioni seguenti:  
+1.  Nel **configurare le impostazioni di profilo personalizzato iOS e macOS** pagina della **Create Configuration Item Wizard**, specificare le informazioni seguenti:  
   
     -   **Nome del profilo di configurazione personalizzato (visualizzato agli utenti)** : specificare un nome per il criterio con cui verrà visualizzato nel dispositivo e nei report di Configuration Manager.  
   
@@ -322,7 +322,7 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
     -   **Gravità della non conformità per i report**: specificare il livello di gravità che viene segnalato se i criteri di conformità vengono valutati come non conformi. I livelli di gravità disponibili sono i seguenti:  
   
         > [!NOTE]  
-        >  Quando un dispositivo Mac OS X è in modalità di sospensione, criteri e profili non possono essere forniti né inclusi in un inventario. Di conseguenza, la console di Configuration Manager potrebbe visualizzare temporaneamente lo stato Impostazioni criteri errate fino alla successiva riattivazione del dispositivo dalla modalità sospensione.  
+        >  Quando un dispositivo macOS è in modalità sospensione, criteri e profili non possono recapitare o inclusi nell'inventario. Di conseguenza, la console di Configuration Manager potrebbe visualizzare temporaneamente lo stato Impostazioni criteri errate fino alla successiva riattivazione del dispositivo dalla modalità sospensione.  
   
         -   **Nessuno**: i dispositivi che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
   
