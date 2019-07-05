@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db5c6d0d06328ae73921a80b090dffd1fb711d8b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 4e876041d67263b0b5db2acdfdef0ffa1ff318ef
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500568"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551424"
 ---
 # <a name="deploy-profiles-in-system-center-configuration-manager"></a>Distribuire profili in System Center Configuration Manager
 
@@ -55,9 +55,9 @@ I profili devono essere distribuiti a una o più raccolte prima di poter essere 
 
     -   **Genera un avviso**: abilitare questa opzione per configurare un avviso che viene generato se la conformità del profilo è inferiore a una percentuale specificata in base a una data e un orario specifici. È inoltre possibile specificare se si desidera che un avviso venga inviato a System Center Operations Manager.  
 
-    -   -   **Ritardo casuale (ore)**: (solo per i profili certificato che contengono le impostazioni Simple Certificate Enrollment Protocol) specifica una finestra di ritardo in modo da evitare un'elaborazione eccessiva nel servizio Registrazione dispositivi di rete. Il valore predefinito è **64** ore.  
+    -   -   **Ritardo casuale (ore)** : (solo per i profili certificato che contengono le impostazioni Simple Certificate Enrollment Protocol) specifica una finestra di ritardo in modo da evitare un'elaborazione eccessiva nel servizio Registrazione dispositivi di rete. Il valore predefinito è **64** ore.  
 
-    -   **Specificare la pianificazione per la valutazione della conformità per questo <type>profilo**: specificare la pianificazione in base alla quale il profilo distribuito viene valutato nei computer client. Può trattarsi di una pianificazione semplice o personalizzata.  
+    -   **Specificare la pianificazione per la valutazione della conformità per questo \<tipo> profilo** - Specificare la pianificazione in base alla quale il profilo distribuito viene valutato nei computer client. Può trattarsi di una pianificazione semplice o personalizzata.  
 
         > [!NOTE]  
         >  Il profilo viene valutato dai computer client quando l'utente effettua l'accesso.  

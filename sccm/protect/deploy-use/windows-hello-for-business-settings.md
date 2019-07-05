@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94cbbb7616588fa88bae9ae71f5b5f53dd4a4d63
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 9346e95e3fa66e9f24d1bfc3711917c3d2146e5e
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500353"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551343"
 ---
 # <a name="windows-hello-for-business-settings-in-configuration-manager"></a>Impostazioni di Windows Hello for Business in Configuration Manager
 
@@ -90,9 +90,9 @@ Alcune configurazioni potrebbero non richiedere di configurare le autorizzazioni
 1.  Accedere a un controller di dominio o a workstation di gestione con le credenziali di amministratore di dominio o equivalenti.
 2.  Aprire **Utenti e computer di Active Directory**.
 3.  Nel riquadro di spostamento fare clic con il pulsante destro del mouse sul nome di dominio e scegliere **Proprietà**.
-4.  Nella scheda**Sicurezza** della finestra di dialogo *<domain name>* **Proprietà** fare clic su **Avanzate**. Se la scheda **Sicurezza** non è visualizzata, attivare **Funzionalità avanzate** dal menu **Visualizza** di **Utenti e computer di Active Directory**.
+4.  Nella scheda**Sicurezza** della finestra di dialogo **Proprietà** *\<nome dominio>* fare clic su **Avanzate**. Se la scheda **Sicurezza** non è visualizzata, attivare **Funzionalità avanzate** dal menu **Visualizza** di **Utenti e computer di Active Directory**.
 5.  Fare clic su **Aggiungi**.
-6.  Nella finestra di dialogo **Voci di autorizzazione per** *<domain name>* fare clic su **Selezionare un'entità**.
+6.  Nella finestra di dialogo **Voci di autorizzazione per** *\<nome dominio>* fare clic su **Selezionare un'entità**.
 7.  Nella finestra di dialogo **Select User, Computer, Service Account, or Group** (Seleziona utente, computer, account di servizio o gruppo) digitare **Key Admins** nella casella di testo **Inserire il nome oggetto da selezionare**. Fare clic su **OK**.
 8.  Dall'elenco **Si applica a** scegliere **Oggetti Utente discendenti**.
 9.  Scorrere fino in fondo alla pagina e fare clic su **Cancella tutto**.
