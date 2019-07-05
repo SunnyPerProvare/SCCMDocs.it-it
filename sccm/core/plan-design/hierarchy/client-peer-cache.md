@@ -11,21 +11,22 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b655b21b2d630d91d0e1a143e800d613882ca573
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 90c5c57d1717363d83fa921d68caced8cf9e8da1
+ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135035"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67251707"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-<!--1101436--> Usare la peer cache per gestire la distribuzione di contenuti ai client in posizioni remote. La peer cache è una soluzione integrata di Configuration Manager che consente ai client di condividere i contenuti con altri client direttamente dalla cache locale.   
+<!--1101436-->
+Usare la peer cache per gestire la distribuzione di contenuti ai client in posizioni remote. La peer cache è una soluzione integrata di Configuration Manager che consente ai client di condividere i contenuti con altri client direttamente dalla cache locale.   
 
 > [!Note]  
-> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
 
 
 
@@ -39,7 +40,7 @@ Definizioni:
 
 Usare le impostazioni client per consentire ai client di essere origini di peer cache. Non è necessario abilitare i client di peer cache. Quando si consente ai client di essere origini di peer cache, il punto di gestione li include nell'elenco delle origini di percorso del contenuto.<!--510397--> Per altre informazioni su questo processo, vedere [Operazioni](#operations).  
 
-Un'origine di peer cache deve essere un membro del gruppo di limiti corrente del client di peer cache. Il punto di gestione non include le origini di peer cache di un gruppo di limiti vicino nell'elenco di origini di contenuto che fornisce al client, ma include solo i punti di distribuzione di un gruppo di limiti vicino. Per altre informazioni sui gruppi di limiti correnti e adiacenti, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups).<!--SCCMDocs issue 685-->  
+Un'origine di peer cache deve essere un membro del gruppo di limiti corrente del client di peer cache. Il punto di gestione non include le origini di peer cache di un gruppo di limiti vicino nell'elenco di origini di contenuto che fornisce al client, ma include solo i punti di distribuzione di un gruppo di limiti vicino. Per altre informazioni sui gruppi di limiti correnti e adiacenti, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups).<!--SCCMDocs issue 685-->  
 
 Il client di Configuration Manager usa la peer cache per distribuire ad altri client qualsiasi tipo di contenuto presente nella cache, ad esempio file di Office 365 e file di installazione rapida.<!--SMS.500850-->  
 
@@ -101,12 +102,12 @@ Quando l'origine di peer cache rifiuta una richiesta di contenuto, il client di 
 
     - Quando necessario, l'origine di peer cache usa l'account di accesso alla rete per autenticare le richieste di download ricevute dai peer. Per tale scopo, a questo account sono richieste solo le autorizzazioni utente di dominio.  
 
-- Con la versione 1802 e precedenti, l'ultimo invio dell'individuazione heartbeat del client determina il limite corrente di un'origine di peer cache. Un client che si sposta in un gruppo di limiti diverso potrebbe comunque essere un membro del relativo gruppo di limiti precedente ai fini della peer cache. Di conseguenza, a un client può essere offerta un'origine di peer cache che non si trova nel relativo percorso di rete immediato. Non abilitare il roaming dei client come origine di peer cache.<!--SCCMDocs issue 641-->  
+- Con la versione 1802 e precedenti, l'ultimo invio dell'individuazione heartbeat del client determina il limite corrente di un'origine di peer cache. Un client che si sposta in un gruppo di limiti diverso potrebbe comunque essere un membro del relativo gruppo di limiti precedente ai fini della peer cache. Di conseguenza, a un client può essere offerta un'origine di peer cache che non si trova nel relativo percorso di rete immediato. Non abilitare i client di roaming come origine di peer cache.<!--SCCMDocs issue 641-->  
 
     > [!Important]  
     > A partire dalla versione 1806, Configuration Manager è più efficiente nel determinare se è stato eseguito il roaming di un'origine peer cache in un'altra posizione. Questo comportamento garantisce che il punto di gestione la offra come origine di contenuto ai client nella nuova posizione e non in quella precedente. Se si usa la funzionalità di peer cache con origini di peer cache in roaming, dopo aver aggiornato il sito alla versione 1806, aggiornare anche tutte le origini di peer cache alla versione più recente del client. Il punto di gestione non include tali origini di peer cache nell'elenco di posizioni del contenuto finché non vengono aggiornate almeno alla versione 1806.<!--SCCMDocs issue 850-->  
 
-- Prima di provare a scaricare il contenuto, il punto di gestione esegue una convalida per verificare prima che l'origine di peer cache sia online.<!--sms.498675--> La convalida viene eseguita tramite il "canale rapido" per la notifica client, che usa la porta TCP 10123.<!--511673-->  
+- Prima di provare a scaricare il contenuto, il punto di gestione verifica che l'origine di peer cache sia online.<!--sms.498675--> La convalida viene eseguita tramite il "canale veloce" per la notifica client, che usa la porta TCP 10123.<!--511673-->  
 
 > [!Note]  
 > Per sfruttare i vantaggi delle nuove funzionalità di Configuration Manager, aggiornare prima di tutto i clienti alla versione più recente. Anche se le nuove funzionalità vengono visualizzate nella console di Configuration Manager quando si esegue l'aggiornamento del sito e della console, lo scenario completo risulta funzionante solo dopo l'aggiornamento alla versione più recente del client.  
@@ -124,7 +125,8 @@ Nei client con peer cache abilitata che usano Windows Firewall, Configuration Ma
 
 
 ## <a name="bkmk_parts"></a> Supporto per download parziale
-<!--1357346--> A partire dalla versione 1806, le origini di peer cache dei client sono in grado di dividere il contenuto in parti, grazie alle quali è possibile ridurre al minimo il trasferimento in rete, riducendo l'utilizzo della rete WAN. Il punto di gestione consente una traccia più dettagliata delle parti del contenuto e tenta di eliminare più download dello stesso contenuto per ogni gruppo di limiti. 
+<!--1357346-->
+A partire dalla versione 1806, le origini di peer cache dei client sono in grado di dividere il contenuto in parti, grazie alle quali è possibile ridurre al minimo il trasferimento in rete, riducendo l'utilizzo della rete WAN. Il punto di gestione consente una traccia più dettagliata delle parti del contenuto e tenta di eliminare più download dello stesso contenuto per ogni gruppo di limiti. 
 
 
 ### <a name="example-scenario"></a>Scenario di esempio
@@ -173,7 +175,8 @@ Per visualizzarli durante la gestione del download del contenuto in parti, esami
 
 
 ## <a name="guidance-for-cache-management"></a>Indicazioni per la gestione della cache
-<!--510645--> Per condividere il contenuto, la peer cache si basa sulla cache del client di Configuration Manager. Tenere in considerazione i punti seguenti per la gestione della cache del client nell'ambiente:  
+<!--510645-->
+Per condividere il contenuto, la peer cache si basa sulla cache del client di Configuration Manager. Tenere in considerazione i punti seguenti per la gestione della cache del client nell'ambiente:  
 
 - La cache del client di Configuration Manager non è simile alla raccolta contenuto in un punto di distribuzione. Durante la gestione del contenuto distribuito in un punto di distribuzione, il client di Configuration Manager gestisce automaticamente il contenuto presente nella propria cache. Sono disponibili impostazioni e metodi che consentono di controllare il tipo di contenuto presente nella cache di un'origine di peer cache. Per altre informazioni, vedere [Configurare la cache del client per i client di Configuration Manager](/sccm/core/clients/manage/manage-clients#BKMK_ClientCache).  
 

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 975768c5bfaf239c1f8cd342c988e06dac5d1269
-ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
+ms.openlocfilehash: 3626514d4cd7f2d26e3c198931eb6fad49123dd2
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66264573"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551300"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>CMPivot per i dati in tempo reale in Configuration Manager
 
@@ -124,7 +124,7 @@ La finestra CMPivot presenta gli elementi seguenti:
     - CMPivot usa un subset del [linguaggio di query Kusto](https://docs.microsoft.com/azure/kusto/query/).  
 
     - Tagliare, copiare o incollare il contenuto nel riquadro della query.  
-
+    <!-- markdownlint-disable MD038 -->
     - Per impostazione predefinita, questo riquadro usa IntelliSense. Se ad esempio si inizia a digitare `D`, IntelliSense suggerisce tutte le entità che iniziano con tale lettera. Selezionare un'opzione e premere TAB per inserirla. Digitare un carattere barra verticale e uno spazio `| `. IntelliSense suggerirà tutti gli operatori di tabella. Inserire `summarize` e digitare uno spazio. IntelliSense suggerirà tutte le funzioni di aggregazione. Per altre informazioni su questi operatori e funzioni, fare clic sulla scheda **Home** in CMPivot.  
 
     - Il riquadro della query fornisce anche le opzioni seguenti:  

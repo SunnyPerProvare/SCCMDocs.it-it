@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9bdca6ded291ca6e32194c61ce24b33b690489cb
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: bc5ebcbec87edf52d7ca7d3f9e6f4341ec60c191
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286255"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67515840"
 ---
 # <a name="capabilities-in-technical-preview-1703-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1703 per System Center Configuration Manager
 
@@ -159,4 +159,4 @@ Per informazioni sulle informazioni raccolte da ogni livello di telemetria di Wi
 - **Acconsentire esplicitamente alla raccolta di dati commerciali nei dispositivi Windows 7, 8 e 8.1**   
 Per informazioni sui dati raccolti da questi sistemi operativi dopo il consenso esplicito, scaricare il file PDF sui [campi e gli eventi di telemetria per la valutazione di Windows 7, Windows 8 e Windows 8.1](https://go.microsoft.com/fwlink/?LinkID=822965) da Microsoft.
 
-- **Configurare la raccolta dati di Internet Explorer** Nei dispositivi che eseguono Windows 8.1 o versioni precedenti, la raccolta dati di Internet Explorer consente ad Upgrade Readiness di rilevare incompatibilità di app Web che potrebbero impedire un aggiornamento semplice e rapido a Windows 10. La raccolta dati di Internet Explorer può essere abilitata per ogni area Internet. Per altre informazioni sulle aree Internet, vedere [About URL Security Zones](https://msdn.microsoft.com/en-us/library/ms537183(v=vs.85).aspx) (Informazioni sulle aree di sicurezza degli URL).
+- **Configurare la raccolta dati di Internet Explorer** Nei dispositivi che eseguono Windows 8.1 o versioni precedenti, la raccolta dati di Internet Explorer consente ad Upgrade Readiness di rilevare incompatibilità di app Web che potrebbero impedire un aggiornamento semplice e rapido a Windows 10. La raccolta dati di Internet Explorer può essere abilitata per ogni area Internet. Per altre informazioni sulle aree Internet, vedere [About URL Security Zones](https://msdn.microsoft.com/library/ms537183(v=vs.85).aspx) (Informazioni sulle aree di sicurezza degli URL).

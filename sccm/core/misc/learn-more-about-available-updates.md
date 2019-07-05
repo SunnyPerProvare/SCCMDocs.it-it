@@ -11,17 +11,17 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c342a927fff8d9e120e15695bcd7287a9249648
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 22edda205cc513119b03210cb416a256ec636a80
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120474"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67516059"
 ---
 # <a name="learn-more-about-available-updates-for-system-center-configuration-manager"></a>Altre informazioni sugli aggiornamenti disponibili per System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Se si usa una versione finale di System Center Configuration Manager, vedere [Novità di System Center Configuration Manager](http://technet.microsoft.com/library/mt622084.aspx)  
+Se si usa una versione finale di System Center Configuration Manager, vedere [Novità di System Center Configuration Manager](https://technet.microsoft.com/library/mt622084.aspx)  
 
- Se si usa una versione Technical Preview di System Center Configuration Manager, vedere [Technical Preview per System Center Configuration Manager](http://technet.microsoft.com/library/mt595861.aspx)
+ Se si usa una versione Technical Preview di System Center Configuration Manager, vedere [Technical Preview per System Center Configuration Manager](https://technet.microsoft.com/library/mt595861.aspx)

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e9f851f6dcd21de261729215bad196233610272
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 78fdf0a07d1a299f7d10a0325b48f0c1fcfde2e3
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56127678"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67516007"
 ---
 # <a name="evaluate-system-center-configuration-manager-by-building-your-own-lab-environment"></a>Valutare System Center Configuration Manager creando un proprio ambiente lab
 
@@ -49,7 +49,7 @@ I computer client vengono installati all'interno di Hyper-V. È anche possibile 
  Quando si crea questo lab è necessario avere un ambiente di lavoro funzionale. L'ambiente non deve essere tuttavia ottimizzato per fattori come prestazioni del sistema, gestione dello spazio su disco rigido e archiviazione SQL Server.  
 
 ##  <a name="BKMK_EvalRec"></a> Letture consigliate prima di iniziare il lab  
- Molti contenuti sono disponibili in [Documentazione per System Center Configuration Manager](http://docs.microsoft.com/sccm/). Prima di iniziare il lab, è consigliata la lettura degli argomenti di questa libreria elencati di seguito:  
+ Molti contenuti sono disponibili in [Documentazione per System Center Configuration Manager](https://docs.microsoft.com/sccm/). Prima di iniziare il lab, è consigliata la lettura degli argomenti di questa libreria elencati di seguito:  
 
 -   Informazioni sui concetti di base che riguardano la console di Configuration Manager e i portali degli utenti finali nonché scenari di esempio sono disponibili in [Introduzione a System Center Configuration Manager](../../core/understand/introduction.md).  
 

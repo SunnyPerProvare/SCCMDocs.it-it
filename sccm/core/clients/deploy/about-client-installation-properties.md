@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f84b4b775c2baa59a5281a79f8154c0a6d0820f6
-ms.sourcegitcommit: 5feeb99605be5c4c39896bcee239cc274d89b3e8
+ms.openlocfilehash: feef839af1f51c4cbb291f4ed5bc6336da6409b3
+ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58508531"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67286871"
 ---
 # <a name="about-client-installation-parameters-and-properties-in-system-center-configuration-manager"></a>Informazioni sui parametri e le proprietà di installazione del client in System Center Configuration Manager
 
@@ -114,10 +114,10 @@ Questo parametro può specificare l'URL di un gateway di gestione cloud. Usare q
 - Eseguire il comando seguente: `(Get-WmiObject -Namespace Root\Ccm\LocationServices -Class SMS_ActiveMPCandidate | Where-Object {$_.Type -eq "Internet"}).MP`
 - Aggiungere il prefisso "https://" da usare con il parametro **/mp**.
 
-Esempio per l'uso dell'URL del gateway di gestione cloud: `ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
+Esempio per l'uso dell'URL del gateway di gestione cloud: `ccmsetup.exe /mp: https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
 
  > [!Important]
- > Quando si specifica l'URL di un gateway di gestione cloud per il parametro **/mp**, l'URL deve iniziare con **https://**.
+ > Quando si specifica l'URL di un gateway di gestione cloud per il parametro **/mp**, l'URL deve iniziare con **https://** .
 
 
 ### <a name="retryltminutes"></a>/retry:&lt;minuti\>
@@ -206,7 +206,7 @@ Specificare il nome di un file di testo che elenca le proprietà di installazion
 
 Esempio: `CCMSetup.exe /config:&lt;Configuration File Name.txt\>`  
 
-Per specificare il formato corretto del file, usare il file mobileclienttemplate.tcf nella cartella &lt;directory di Configuration Manager\>\\bin\\&lt;piattaforma\> del server del sito. Questo file contiene anche commenti relativi alle sezioni e alle modalità d'uso. Specificare le proprietà di installazione client nella sezione [Installazione client] dopo il testo seguente: **Install=INSTALL=ALL**.  
+Per specificare il formato corretto del file, usare il file mobileclienttemplate.tcf nella cartella &lt;directory di Configuration Manager\>\\bin\\&lt;piattaforma\> del server del sito. Questo file contiene anche commenti relativi alle sezioni e alle modalità d'uso. Specificare le proprietà di installazione client nella sezione [Client Install] dopo il testo seguente: **Install=INSTALL=ALL**.  
 
 Voce della sezione [Client Install] di esempio: `Install=INSTALL=ALL SMSSITECODE=ABC SMSCACHESIZE=100`  
 
@@ -253,7 +253,7 @@ Esempio: `CCMSetup.exe /ExcludeFeatures:ClientUI` non installa Software Center n
 
 Specifica i parametri e le proprietà della riga di comando che vengono passati a ccmsetup.exe dopo l'installazione tramite ccmsetup.msi. Racchiudere altre proprietà tra virgolette. Usare questa proprietà quando si esegue il bootstrap del client di Configuration Manager tramite il metodo di installazione della gestione dei dispositivi mobili ibrida di Intune. 
 
-Esempio: `ccmsetup.msi CCMSETUPCMD="/mp:https://mp.contoso.com CCMHOSTNAME=mp.contoso.com"`
+Esempio: `ccmsetup.msi CCMSETUPCMD="/mp: https://mp.contoso.com CCMHOSTNAME=mp.contoso.com"`
 
  > [!Tip]
  > Microsoft Intune limita la riga di comando a 1024 caratteri. 
@@ -266,7 +266,7 @@ Esempio: `ccmsetup.msi CCMSETUPCMD="/mp:https://mp.contoso.com CCMHOSTNAME=mp.co
 
 ### <a name="aadclientappid"></a>AADCLIENTAPPID
 
-Specifica l'identificatore dell'app client Azure Active Directory (Azure AD). L'app client viene creata o importata quando si [configurano i servizi Azure](/sccm/core/servers/deploy/configure/azure-services-wizard) per la gestione cloud. Gli amministratori di Azure possono ottenere il valore di questa proprietà dal portale di Azure. Per altre informazioni, vedere [Ottenere l'ID applicazione e la chiave di autenticazione](/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-application-id-and-authentication-key). Per la proprietà **AADCLIENTAPPID** l'ID applicazione è relativo al tipo di applicazione "Nativo".
+Specifica l'identificatore dell'app client Azure Active Directory (Azure AD). L'app client viene creata o importata quando si [configurano i servizi Azure](/sccm/core/servers/deploy/configure/azure-services-wizard) per la gestione cloud. Gli amministratori di Azure possono ottenere il valore di questa proprietà dal portale di Azure. Per altre informazioni, vedere [Ottenere l'ID applicazione e la chiave di autenticazione](/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in). Per la proprietà **AADCLIENTAPPID** l'ID applicazione è relativo al tipo di applicazione "Nativo".
 
 Esempio: `ccmsetup.exe AADCLIENTAPPID=aa28e7f1-b88a-43cd-a2e3-f88b257c863b`
 
@@ -288,7 +288,7 @@ Specifica l'identificatore de tenant di Azure AD. Questo tenant viene collegato 
 - Nella sezione Stato dispositivo trovare il valore **TenantId**. Ad esempio: `TenantId : 607b7853-6f6f-4d5d-b3d4-811c33fdd49a`
 
   > [!Note]
-  > Gli amministratori di Azure possono anche ottenere questo valore nel portale di Azure. Per altre informazioni, vedere [Ottenere l'ID tenant](/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-tenant-id).
+  > Gli amministratori di Azure possono anche ottenere questo valore nel portale di Azure. Per altre informazioni, vedere [Ottenere l'ID tenant](/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in).
 
 Esempio: `ccmsetup.exe AADTENANTID=607b7853-6f6f-4d5d-b3d4-811c33fdd49a`
 
@@ -345,7 +345,7 @@ Esempio: **CCMSetup.exe  CCMALLOWSILENTREBOOT**
 
  Specifica i criteri di selezione del certificato se il client dispone di più di un certificato per la comunicazione HTTPS. Questo certificato è un certificato valido che include la capacità di autenticazione client.  
 
- È possibile cercare una corrispondenza esatta (usare **Subject:**) o una corrispondenza parziale (usare **SubjectStr:)** in Nome soggetto o Nome alternativo soggetto. Esempi:  
+ È possibile cercare una corrispondenza esatta (usare **Subject:** ) o una corrispondenza parziale (usare **SubjectStr:)** in Nome soggetto o Nome alternativo soggetto. Esempi:  
 
  `CCMCERTSEL="Subject:computer1.contoso.com"` esegue la ricerca di un certificato con una corrispondenza esatta al nome computer "computer1.contoso.com" in Nome soggetto o in Nome alternativo soggetto.  
 
@@ -416,7 +416,7 @@ Questa proprietà può specificare l'indirizzo di un gateway di gestione cloud. 
 Ad esempio: `ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
 
  > [!Important]
- > Quando si specifica l'indirizzo di un gateway di gestione cloud per la proprietà **CCMHOSTNAME**, *non* aggiungere un prefisso come **https://**. Questo prefisso viene usato solo con l'URL **/mp** di un gateway di gestione cloud.
+ > Quando si specifica l'indirizzo di un gateway di gestione cloud per la proprietà **CCMHOSTNAME**, *non* aggiungere un prefisso come **https://** . Questo prefisso viene usato solo con l'URL **/mp** di un gateway di gestione cloud.
 
 
 
@@ -539,13 +539,13 @@ Questa impostazione viene ignorata quando si aggiorna un client esistente.
 
 Proprietà:  
 
--   PERCENTDISKSPACE: specifica la dimensione della cartella come una percentuale dello spazio su disco totale. Se si specifica questa proprietà, è necessario specificare anche la proprietà SMSCACHESIZE come valore di percentuale da usare.  
+-   PERCENTDISKSPACE: specifica le dimensioni della cartella come percentuale dello spazio su disco totale. Se si specifica questa proprietà, è necessario specificare anche la proprietà SMSCACHESIZE come valore di percentuale da usare.  
 
--   PERCENTFREEDISKSPACE: specifica la dimensione della cartella come una percentuale dello spazio su disco libero. Se si specifica questa proprietà, è necessario specificare anche la proprietà SMSCACHESIZE come valore di percentuale da usare. Ad esempio, se nel disco sono disponibili 10 MB di spazio e SMSCACHESIZE viene specificata su 50, la dimensione della cartella è impostata su 5 MB. È impossibile usare questa proprietà con la proprietà PERCENTDISKSPACE.  
+-   PERCENTFREEDISKSPACE: specifica le dimensioni della cartella come percentuale dello spazio su disco disponibile. Se si specifica questa proprietà, è necessario specificare anche la proprietà SMSCACHESIZE come valore di percentuale da usare. Ad esempio, se nel disco sono disponibili 10 MB di spazio e SMSCACHESIZE viene specificata su 50, la dimensione della cartella è impostata su 5 MB. È impossibile usare questa proprietà con la proprietà PERCENTDISKSPACE.  
 
 -   MAXDRIVE: specifica che la cartella deve essere installata nel disco più grande disponibile. Questo valore viene ignorato se è stato specificato un percorso con la proprietà SMSCACHEDIR.  
 
--   MAXDRIVESPACE: specifica che la cartella deve essere installata nell'unità disco con maggiore spazio libero. Questo valore viene ignorato se è stato specificato un percorso con la proprietà SMSCACHEDIR.  
+-   MAXDRIVESPACE: specifica che la cartella deve essere installata nell'unità disco con più spazio libero. Questo valore viene ignorato se è stato specificato un percorso con la proprietà SMSCACHEDIR.  
 
 -   NTFSONLY: specifica che la cartella può essere installata solo in unità disco NTFS. Questo valore viene ignorato se è stato specificato un percorso con la proprietà SMSCACHEDIR.  
 
@@ -577,15 +577,15 @@ Esempio: `CCMSetup.exe SMSCACHESIZE=100`
 
 Specifica il percorso e l'ordine in cui il programma di installazione di Configuration Manager verifica le impostazioni di configurazione. La proprietà è una stringa composta da uno o più caratteri, ognuno dei quali definisce un'origine di configurazione specifica. Usare i valori dei caratteri R, P, M e U, singolarmente o combinati:  
 
-- R: cerca le impostazioni di configurazione nel Registro di sistema.  
+- R: verifica le impostazioni di configurazione nel Registro di sistema.  
 
   Per altre informazioni, vedere le [informazioni sull'archiviazione delle proprietà di installazione del client nel Registro di sistema](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).  
 
-- P: cerca le impostazioni di configurazione nelle proprietà di installazione fornite al prompt dei comandi.  
+- P: verifica le impostazioni di configurazione nelle proprietà di installazione fornite al prompt dei comandi.  
 
 - M: verifica le impostazioni esistenti durante l'aggiornamento di un client precedente con il software client di Configuration Manager.  
 
-- U: aggiorna il client installato a una versione più recente (e usa il codice sito assegnato).  
+- U: aggiorna il client installato a una versione più recente (e usa il codice del sito assegnato).  
 
   Per impostazione predefinita, l'installazione client usa `PU` per cercare innanzitutto le proprietà di installazione e quindi le impostazioni esistenti.  
 
@@ -601,7 +601,7 @@ Specifica il percorso e l'ordine in cui il programma di installazione di Configu
 
 -   NOWINS: questo valore è l'impostazione più sicura per la proprietà e impedisce ai client di trovare un punto di gestione in WINS. Quando si usa questa impostazione, i client devono usare un metodo alternativo per individuare un punto di gestione in Intranet, come ad esempio Servizi di dominio Active Directory o tramite la pubblicazione DNS.  
 
--   WINSSECURE (predefinita): In questa modalità, un client che usa la comunicazione HTTP può usare WINS per trovare un punto di gestione. Tuttavia, il client deve disporre di una copia della chiave radice attendibile prima di potersi connettere al punto di gestione. Per altre informazioni, vedere [Pianificare la chiave radice attendibile](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK).  
+-   WINSSECURE (predefinita): in questa modalità, un client che usa la comunicazione HTTP può usare WINS per trovare un punto di gestione. Tuttavia, il client deve disporre di una copia della chiave radice attendibile prima di potersi connettere al punto di gestione. Per altre informazioni, vedere [Pianificare la chiave radice attendibile](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK).  
 
 
  Esempio: `CCMSetup.exe SMSDIRECTORYLOOKUP=NOWINS`  

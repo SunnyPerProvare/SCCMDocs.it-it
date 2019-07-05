@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f794e24bd2626e11ce0f3c1664ad0e63eafbbe37
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 08156819af349af0f052cf2b58e8b4a44ef7b74b
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56134147"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67516205"
 ---
 # <a name="customize-boot-images-with-system-center-configuration-manager"></a>Personalizzare le immagini d'avvio con System Center Configuration Manager
 
@@ -46,15 +46,15 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
 - **WinPE-WMI**: aggiunge il supporto di Strumentazione gestione Windows (WMI).  
 
-- **WinPE-Scripting**: aggiunge il supporto di Windows Script Host (WSH).  
+- **WinPE-Scripting**: aggiunge il supporto Windows Script Host (WSH).  
 
-- **WinPE-WDS-Tools**: installa gli strumenti dei Servizi di distribuzione Windows.  
+- **WinPE-WDS-Tools**: installa gli strumenti dei servizi di distribuzione Windows.  
 
   È possibile aggiungere altri pacchetti Windows PE. Le seguenti risorse forniscono più informazioni sui componenti facoltativi che è possibile aggiungere all'immagine di avvio.  
 
-- Per Windows PE 5, vedere [WinPE: aggiungere pacchetti (informazioni di riferimento sui componenti facoltativi)](https://msdn.microsoft.com/library/windows/hardware/dn938382\(v=vs.85\).aspx).  
+- Per Windows PE 5, vedere [WinPE: aggiungere pacchetti (informazioni di riferimento sui componenti facoltativi)](https://msdn.microsoft.com/library/windows/hardware/dn938382\(v=vs.85\).aspx)  
 
-- Per Windows PE 3.1, vedere l'argomento [Aggiungi un pacchetto a un'immagine Windows PE](http://technet.microsoft.com/library/dd799312\(v=WS.10\).aspx) nella libreria della documentazione TechNet per Windows 7.  
+- Per Windows PE 3.1, vedere l'argomento [Aggiungi un pacchetto a un'immagine Windows PE](https://technet.microsoft.com/library/dd799312\(v=WS.10\).aspx) nella libreria della documentazione TechNet per Windows 7.  
 
 > [!NOTE]
 >All'avvio di WinPE da un'immagine di avvio personalizzata che include strumenti aggiunti dall'utente, è possibile aprire un prompt dei comandi da WinPE e digitare il nome del file dello strumento per eseguirlo. La posizione di questi strumenti viene aggiunta automaticamente alla variabile di percorso. Il prompt dei comandi può essere aggiunto solo se l'impostazione **Abilita supporto comandi (solo test)** è selezionata nella scheda **Personalizzazione** nella finestra delle proprietà dell'immagine di avvio.
@@ -77,7 +77,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
     Dove C:\WinPEWAIK è la cartella che contiene l'immagine di avvio e C:\WinPEMount è la cartella montata.  
 
    > [!NOTE]
-   >  Per altre informazioni su DISM, vedere l'argomento [DISM - Guida tecnica Gestione e manutenzione immagini distribuzione](http://technet.microsoft.com/library/hh824821.aspx) nella libreria della documentazione TechNet per Windows 8.1 e Windows 8.
+   >  Per altre informazioni su DISM, vedere l'argomento [DISM - Guida tecnica Gestione e manutenzione immagini distribuzione](https://technet.microsoft.com/library/hh824821.aspx) nella libreria della documentazione TechNet per Windows 8.1 e Windows 8.
 
 5. Dopo avere montato l'immagine di avvio, usare DISM per aggiungere componenti facoltativi all'immagine di avvio. In Windows PE 5 i componenti facoltativi a 64 bit si trovano in <*Percorso di installazione*>\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs.  
 
@@ -113,7 +113,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Programmi (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\en-us\WinPE-WDS-Tools_en-us.cab"**  
 
    > [!TIP]
-   >  Per altre informazioni sui componenti facoltativi che è possibile aggiungere all'immagine di avvio, vedere l'argomento [Guida componenti facoltativi Windows PE](http://technet.microsoft.com/library/hh824926.aspx) nella libreria della documentazione TechNet per Windows 8.1 e Windows 8.  
+   >  Per altre informazioni sui componenti facoltativi che è possibile aggiungere all'immagine di avvio, vedere l'argomento [Guida componenti facoltativi Windows PE](https://technet.microsoft.com/library/hh824926.aspx) nella libreria della documentazione TechNet per Windows 8.1 e Windows 8.  
 
 6. Usare DISM per aggiungere specifici driver all'immagine di avvio, se necessario. Digitare quanto segue per aggiungere driver all'immagine di avvio:  
 
@@ -137,7 +137,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
    4. Nella pagina **Origine dati** specificare le seguenti opzioni e quindi fare clic su **Avanti**.  
 
-      - Nella casella **Percorso** , specificare il percorso all'immagine di avvio aggiornata. Il percorso specificato deve essere un percorso di rete valido in formato UNC. Ad esempio:  **\\\\<**<em>nomeserver</em>**>\\<**<em>condivisione WinPEWAIK</em>**>\winpe.wim**.  
+      - Nella casella **Percorso** , specificare il percorso all'immagine di avvio aggiornata. Il percorso specificato deve essere un percorso di rete valido in formato UNC. Ad esempio:  **\\\\<** <em>nomeserver</em> **>\\<** <em>condivisione WinPEWAIK</em> **>\winpe.wim**.  
 
       - Selezionare l'immagine di avvio dall'elenco a discesa **Immagine di avvio** . Se il file WIM contiene più immagini di avvio, viene elencata ogni immagine.  
 
@@ -161,7 +161,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
    4. Da un prompt dei comandi, digitare **wbemtest** per aprire il Tester di Strumentazione gestione Windows.  
 
-   5. Digitare **\\\\<**<em>Computer provider SMS</em>**>\root\sms\site_<**<em>codicesito</em>**>** in **Spazio dei nomi** e quindi fare clic su **Connetti**.  
+   5. Digitare **\\\\<** <em>Computer provider SMS</em> **>\root\sms\site_<** <em>codicesito</em> **>** in **Spazio dei nomi** e quindi fare clic su **Connetti**.  
 
    6. Fare clic su **Apri istanza**, digitare **sms_bootimagepackage.packageID="<IDpacchetto\>"** e quindi fare clic su **OK**. Per packageID, immettere il valore identificato nel passaggio 3.  
 
@@ -199,12 +199,12 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
     Dove C:\WinPEWAIK è la cartella che contiene l'immagine di avvio e C:\WinPEMount è la cartella montata.  
 
    > [!NOTE]
-   >  Per altre informazioni su DISM, vedere l'argomento [Documentazione tecnica su Gestione e manutenzione immagini](http://technet.microsoft.com/library/dd744256\(v=ws.10\).aspx) nella libreria della documentazione TechNet per Windows 7.  
+   >  Per altre informazioni su DISM, vedere l'argomento [Documentazione tecnica su Gestione e manutenzione immagini](https://technet.microsoft.com/library/dd744256\(v=ws.10\).aspx) nella libreria della documentazione TechNet per Windows 7.  
 
 5. Dopo avere montato l'immagine di avvio, usare DISM per aggiungere componenti facoltativi all'immagine di avvio. In Windows PE 3.1, ad esempio, i componenti facoltativi si trovano in <*PercorsoInstallazione*>\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\.  
 
    > [!NOTE]
-   >  Questa procedura usa il seguente percorso per i componenti facoltativi: C:\Programmi\Windows AIK\Tools\PETools\amd64\WinPE_FPs. Il percorso da usare potrebbe essere diverso a seconda delle opzioni di installazione e della versione scelte per Windows AIK.  
+   >  Questa procedura utilizza il seguente percorso per i componenti facoltativi: C:\Programmi\Windows AIK\Strumenti\StrumentiPE\amd64\WinPE_FPs. Il percorso da usare potrebbe essere diverso a seconda delle opzioni di installazione e della versione scelte per Windows AIK.  
 
     Digitare quanto segue per installare i componenti facoltativi:  
 
@@ -229,7 +229,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Programmi\Windows AIK\Tools\PETools\amd64\WinPE_FPs\en-us\winpe-wds-tools_en-us.cab"**  
 
    > [!TIP]
-   >  Per altre informazioni sui diversi pacchetti che è possibile aggiungere all'immagine di avvio, vedere l'argomento [Aggiungere un pacchetto a un'immagine di Windows PE](http://technet.microsoft.com/library/dd799312\(v=WS.10\).aspx) nella libreria della documentazione TechNet per Windows 7.  
+   >  Per altre informazioni sui diversi pacchetti che è possibile aggiungere all'immagine di avvio, vedere l'argomento [Aggiungere un pacchetto a un'immagine di Windows PE](https://technet.microsoft.com/library/dd799312\(v=WS.10\).aspx) nella libreria della documentazione TechNet per Windows 7.  
 
 6. Usare DISM per aggiungere specifici driver all'immagine di avvio, se necessario. Se necessario, digitare quanto segue per aggiungere driver all'immagine di avvio:  
 
@@ -253,7 +253,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
    4. Nella pagina **Origine dati** specificare le seguenti opzioni e quindi fare clic su **Avanti**.  
 
-      - Nella casella **Percorso** , specificare il percorso all'immagine di avvio aggiornata. Il percorso specificato deve essere un percorso di rete valido in formato UNC. Ad esempio:  **\\\\<**<em>nomeserver</em>**>\\<**<em>condivisione WinPEWAIK</em>**>\winpe.wim**.  
+      - Nella casella **Percorso** , specificare il percorso all'immagine di avvio aggiornata. Il percorso specificato deve essere un percorso di rete valido in formato UNC. Ad esempio:  **\\\\<** <em>nomeserver</em> **>\\<** <em>condivisione WinPEWAIK</em> **>\winpe.wim**.  
 
       - Selezionare l'immagine di avvio dall'elenco a discesa **Immagine di avvio** . Se il file WIM contiene più immagini di avvio, viene elencata ogni immagine.  
 
@@ -277,7 +277,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
    4. Da un prompt dei comandi, digitare **wbemtest** per aprire il Tester di Strumentazione gestione Windows.  
 
-   5. Digitare **\\\\<**<em>Computer provider SMS</em>**>\root\sms\site_<**<em>codicesito</em>**>** in **Spazio dei nomi** e quindi fare clic su **Connetti**.  
+   5. Digitare **\\\\<** <em>Computer provider SMS</em> **>\root\sms\site_<** <em>codicesito</em> **>** in **Spazio dei nomi** e quindi fare clic su **Connetti**.  
 
    6. Fare clic su **Apri istanza**, digitare **sms_bootimagepackage.packageID="<IDpacchetto\>"** e quindi fare clic su **OK**. Per packageID, immettere il valore identificato nel passaggio 3.  
 

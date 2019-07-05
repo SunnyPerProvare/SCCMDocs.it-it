@@ -10,12 +10,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 410c056b22bc4c52010e941a244cffa1fc3b2dff
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: f4efea7baf7820c4edfb61882b14812336c85518
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194116"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67516178"
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager in Azure: domande frequenti
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -153,26 +153,26 @@ Sì, è completamente diversa. [Peer cache](/sccm/core/plan-design/hierarchy/cli
 È difficile da stabilire poiché ogni ambiente è diverso. L'approccio migliore è quello di calcolare il prezzo per il proprio ambiente mediante il calcolatore prezzi di Microsoft Azure: https://azure.microsoft.com/pricing/calculator/
 
 ## <a name="additional-resources"></a>Risorse aggiuntive
-**Nozioni di base:** http://azure.microsoft.com/documentation/articles/fundamentals-introduction-to-azure/
+**Nozioni di base:** https://azure.microsoft.com/documentation/articles/fundamentals-introduction-to-azure/
 
 **Tipi di VM di Azure:**
  - Dimensioni delle macchine virtuali di Azure: https://azure.microsoft.com/documentation/articles/virtual-machines-size-specs/  
- - Prezzi delle macchine virtuali: http://azure.microsoft.com/pricing/details/virtual-machines/  
- - Prezzi per l'archiviazione: http://azure.microsoft.com/pricing/details/storage/
+ - Prezzi delle macchine virtuali: https://azure.microsoft.com/pricing/details/virtual-machines/  
+ - Prezzi per l'archiviazione: https://azure.microsoft.com/pricing/details/storage/
 
 **Considerazioni sulle prestazioni dei dischi:**    
- - Introduzione disco Premium: http://azure.microsoft.com/blog/2014/12/11/introducing-premium-storage-high-performance-storage-for-azure-virtual-machine-workloads/  
- - Informazioni disco Premium più approfondite: http://azure.microsoft.com/documentation/articles/storage-premium-storage-preview-portal/   
+ - Introduzione disco Premium: https://azure.microsoft.com/blog/2014/12/11/introducing-premium-storage-high-performance-storage-for-azure-virtual-machine-workloads/  
+ - Informazioni disco Premium più approfondite: https://azure.microsoft.com/documentation/articles/storage-premium-storage-preview-portal/   
  - Raccolta utile di grafici per obiettivi di dimensioni e prestazioni per l'archiviazione: https://azure.microsoft.com/documentation/articles/storage-scalability-targets/  
- - Altra introduzione + dati tecnici sul funzionamento dietro le quinte di Archiviazione Premium: http://azure.microsoft.com/blog/2015/04/16/azure-premium-storage-now-generally-available-2/
+ - Altra introduzione + dati tecnici sul funzionamento dietro le quinte di Archiviazione Premium: https://azure.microsoft.com/blog/2015/04/16/azure-premium-storage-now-generally-available-2/
 
 **Disponibilità:**
  - Contratti di servizio tempo di attività di Azure IaaS: https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_0/  
  - Set di disponibilità: https://azure.microsoft.com/documentation/articles/virtual-machines-manage-availability/
 
 **Connettività:**
- - ExpressRoute e VPN di Azure: http://azure.microsoft.com/blog/2014/06/10/expressroute-or-virtual-network-vpn-whats-right-for-me/
- - Prezzi di ExpressRoute: http://azure.microsoft.com/pricing/details/expressroute/
- - Altre informazioni su ExpressRoute: http://azure.microsoft.com/documentation/articles/expressroute-introduction/
+ - ExpressRoute e VPN di Azure: https://azure.microsoft.com/blog/2014/06/10/expressroute-or-virtual-network-vpn-whats-right-for-me/
+ - Prezzi di ExpressRoute: https://azure.microsoft.com/pricing/details/expressroute/
+ - Altre informazioni su ExpressRoute: https://azure.microsoft.com/documentation/articles/expressroute-introduction/
 
  

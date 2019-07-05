@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d510ab884e471a6fc4803826c9c19e21b614273
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: e862fe4907d5e480fd8a19c28d890987f73240fa
+ms.sourcegitcommit: d8cfd0edf2579e2b08a0ca8a0a7b8f53d1e4196f
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67285604"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67463797"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
@@ -1774,7 +1774,7 @@ La sequenza di attività imposta la variabile su questo valore. Impostare questa
 
 Usare questo passaggio per eseguire la transizione da Windows PE al nuovo sistema operativo. Questo passaggio della sequenza di attività è una parte necessaria di qualsiasi distribuzione del sistema operativo. Installa il client di Configuration Manager nel nuovo sistema operativo e prepara la sequenza di attività per continuare l'esecuzione nel nuovo sistema operativo.  
 
-Questo passaggio può essere eseguito solo in Windows PE. Non viene eseguito nel sistema operativo completo.  
+Questo passaggio è responsabile della transizione da Windows PE la sequenza di attività per il sistema operativo completo. Il passaggio viene eseguito sia in Windows PE e il sistema operativo completo a causa di questa transizione. Tuttavia, poiché in Windows PE viene avviata la transizione, può solo essere aggiunto durante la parte di Windows PE della sequenza di attività.  
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 

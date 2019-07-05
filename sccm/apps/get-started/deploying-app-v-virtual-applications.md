@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8bd4b938690ebc3c370e3ae7a5e9152b9330430
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 4598b89429ec3a9bd3bed31f57a6b681f88063cf
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286518"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67515817"
 ---
 # <a name="deploy-app-v-virtual-applications-with-system-center-configuration-manager"></a>Distribuire applicazioni virtuali App-V con System Center Configuration Manager
 
@@ -148,7 +148,7 @@ Per usare questa funzionalità con Configuration Manager, è necessario che entr
 Per altre informazioni sulla funzionalità Dynamic Suite Composition di App-V, vedere la documentazione di App-V.  
 
 ##  <a name="converting-app-v-46-applications-to-app-v-5-applications"></a>Conversione di applicazioni App-V 4.6 in applicazioni App-V 5  
-Il formato relativo al pacchetto dell'applicazione è stato modificato tra App-V 4.6 e App-V 5. Le applicazioni sequenziate da App-V 4.6 non sono più supportate. App-V 5 include comunque uno strumento di conversione pacchetti che può essere usato per convertire le applicazioni. Per altre informazioni, vedere la [documentazione di App-V 5](http://technet.microsoft.com/library/jj713472.aspx).  
+Il formato relativo al pacchetto dell'applicazione è stato modificato tra App-V 4.6 e App-V 5. Le applicazioni sequenziate da App-V 4.6 non sono più supportate. App-V 5 include comunque uno strumento di conversione pacchetti che può essere usato per convertire le applicazioni. Per altre informazioni, vedere la [documentazione di App-V 5](https://technet.microsoft.com/library/jj713472.aspx).  
 
 Per convertire le applicazioni App-V 4.6 in applicazioni App-V 5, attenersi alla procedura seguente:  
 
@@ -179,7 +179,7 @@ Il file di configurazione della distribuzione contiene le impostazioni relative 
 
 Se si intende distribuire applicazioni virtuali App-V 5 con Configuration Manager, questi tre file dovranno essere presenti nella stessa cartella quando si crea il tipo di distribuzione App-V 5. Se la cartella contiene più file, Configuration Manager userà il più recente.  
 
-Per altre informazioni, vedere la [documentazione di App-V 5](http://technet.microsoft.com/library/jj713466.aspx).  
+Per altre informazioni, vedere la [documentazione di App-V 5](https://technet.microsoft.com/library/jj713466.aspx).  
 
 ##  <a name="app-v-local-interaction"></a>Interazione locale di App-V  
 In determinati scenari di distribuzione, alcune applicazioni vengono installate localmente nei computer client e altre applicazioni vengono distribuite come applicazioni virtuali negli stessi computer client. Per impostazione predefinita, le applicazioni installate localmente non possono vedere o comunicare direttamente con le applicazioni virtualizzate. Questo è il comportamento previsto da App-V per l'isolamento delle applicazioni. L'interazione locale è una funzionalità del client App-V che può essere abilitata per consentire alle applicazioni installate localmente in esecuzione in un computer client di vedere e comunicare con le applicazioni virtualizzate. Configuration Manager e App-V offrono il pieno supporto dell'interazione locale.  
@@ -187,7 +187,7 @@ In determinati scenari di distribuzione, alcune applicazioni vengono installate 
 Per altre informazioni sulla funzionalità di interazione locale di App-V, vedere la documentazione di App-V.  
 
 ##  <a name="app-v-5-shared-content-store"></a>Archivio contenuti condivisi di App-V 5  
-Configuration Manager supporta la funzionalità SCS (Shared Content Store) di App-V 5. Per altre informazioni, vedere la pagina relativa alla [pianificazione per Shared Content Store (SCS) di App-V 5.0](http://technet.microsoft.com/library/jj713431.aspx).  
+Configuration Manager supporta la funzionalità SCS (Shared Content Store) di App-V 5. Per altre informazioni, vedere la pagina relativa alla [pianificazione per Shared Content Store (SCS) di App-V 5.0](https://technet.microsoft.com/library/jj713431.aspx).  
 
 ##  <a name="monitoring-virtual-applications"></a>Monitoraggio di applicazioni virtuali  
 

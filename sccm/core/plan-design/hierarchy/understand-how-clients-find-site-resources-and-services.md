@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c3058eed3cd7fe4430824d5a55f155694a2ed44
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: eddce66fe58ca44ece7e9c2f15a5f602ad7a78d7
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66177028"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67516082"
 ---
 # <a name="learn-how-clients-find-site-resources-and-services-for-system-center-configuration-manager"></a>Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager
 
@@ -132,12 +132,12 @@ Dopo aver stabilito la comunicazione con un punto di gestione, un client continu
 A quel punto il client seleziona casualmente un nuovo punto di gestione da usare.  
 
 ##  <a name="bkmk_ad"></a> Active Directory  
-I client appartenenti a un dominio possono usare Servizi di dominio Active Directory per la posizione del servizio. Questa operazione richiede che i siti [pubblichino dati in Active Directory](http://technet.microsoft.com/library/hh696543.aspx).  
+I client appartenenti a un dominio possono usare Servizi di dominio Active Directory per la posizione del servizio. Questa operazione richiede che i siti [pubblichino dati in Active Directory](https://technet.microsoft.com/library/hh696543.aspx).  
 
 Un client può usare Active Directory Domain Services per la posizione del servizio quando si verificano tutte le condizioni seguenti:  
 
 -   Lo [schema di Active Directory è stato esteso](https://technet.microsoft.com/library/mt345589.aspx) o è stato esteso per System Center 2012 Configuration Manager.  
--   La [foresta Active Directory è configurata per la pubblicazione](http://technet.microsoft.com/library/hh696542.aspx) e i siti di Configuration Manager sono configurati per la pubblicazione.  
+-   La [foresta Active Directory è configurata per la pubblicazione](https://technet.microsoft.com/library/hh696542.aspx) e i siti di Configuration Manager sono configurati per la pubblicazione.  
 -   Il computer client è membro di un dominio Active Directory ed è in grado di accedere a un server di catalogo globale.  
 
 Se un client non trova un punto di gestione da usare per la posizione del servizio in Active Directory Domain Services, tenta di usare DNS.  
@@ -149,7 +149,7 @@ I client sulla Intranet possono usare DNS per il percorso del servizio. In quest
 -   Lo schema di Active Directory Domain Services non viene esteso per supportare Configuration Manager.
 -   I client della Intranet si trovano in una foresta che non è abilitata per la pubblicazione in Configuration Manager.  
 -   Sono presenti client nei computer del gruppo di lavoro che non sono configurati per la gestione client basata solo su Internet (un client del gruppo di lavoro configurato per Internet comunicherà solo con i punti di gestione per Internet e non userà DNS per la posizione del servizio).  
--   È possibile [configurare i client per individuare i punti di gestione da DNS](http://technet.microsoft.com/library/gg682055).  
+-   È possibile [configurare i client per individuare i punti di gestione da DNS](https://technet.microsoft.com/library/gg682055).  
 
 Quando un sito pubblica i record di individuazione del servizio per i punti di gestione in DNS:  
 

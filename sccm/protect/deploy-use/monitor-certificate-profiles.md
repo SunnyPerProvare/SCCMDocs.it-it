@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f350f10db18c1de599337afac54596d2dfd988ea
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 1f5518346f0085293a2a9b5422c7aef375076d0c
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65494413"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67516148"
 ---
 # <a name="how-to-monitor-certificate-profiles-in-system-center-configuration-manager"></a>Come monitorare i profili certificato in System Center Configuration Manager
 
@@ -58,7 +58,7 @@ Per monitorare la conformità dei certificati SCEP, usare i [report](#view-compl
    |    0x00000004     |                                                                                                          La registrazione deve essere rinviata.                                                                                                           |
    |    0x00000010     |                                                                                                               Si è verificato un errore.                                                                                                                |
    |    0x00000020     |                                                                                                        Lo stato di registrazione è sconosciuto.                                                                                                        |
-   |    0x00000040     | Le informazioni sullo stato sono state ignorate. Ciò può verificarsi se un'autorità di certificazione (collegamento ipertestuale "<http://msdn.microsoft.com/windows/ms721572>" \l "_security_certification_authority_gly") non è valida o non è stata selezionata per il monitoraggio. |
+   |    0x00000040     | Le informazioni sullo stato sono state ignorate. Ciò può verificarsi se un'autorità di certificazione (collegamento ipertestuale "<https://msdn.microsoft.com/windows/ms721572>" \l "_security_certification_authority_gly") non è valida o non è stata selezionata per il monitoraggio. |
    |    0x00000100     |                                                                                                           La registrazione è stata negata.                                                                                                           |
 
 ##  <a name="view-compliance-results-by-using-reports"></a>Visualizzare i risultati di conformità usando i report

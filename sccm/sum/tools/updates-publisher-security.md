@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 535feb67e700acd5b799c696aa366343581e70fd
-ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
+ms.openlocfilehash: db60b7cf6332e778279b494b2922cd621983c20c
+ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67145727"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67516289"
 ---
 # <a name="manage-certificates-and-security-for-updates-publisher"></a>Gestire certificati e sicurezza per Updates Publisher
 
@@ -77,7 +77,7 @@ Di seguito è riportato un esempio di come configurare il certificato di firma n
    -   Per i certificati emessi dall'autorità di certificazione: aggiungere il certificato all'archivio certificati **Autori attendibili**.
 
    > [!NOTE]
-   > L'agente di Windows Update verifica se l'impostazione di Criteri di gruppo **Allow signed content from intranet Microsoft update service location** (Consenti contenuto firmato dal percorso del servizio di aggiornamento Microsoft nella rete Intranet) è abilitata nel computer locale. È necessario abilitare questa impostazione dei criteri per l'agente di Windows Update affinché venga eseguita la scansione degli aggiornamenti che sono stati creati e pubblicati con Updates Publisher. Per altre informazioni sull'abilitazione di questa impostazione di Criteri di gruppo, vedere [Come configurare Criteri di gruppo sui computer client](https://docs.microsoft.com/en-us/previous-versions/bb530967(v=technet.10)).
+   > L'agente di Windows Update verifica se l'impostazione di Criteri di gruppo **Allow signed content from intranet Microsoft update service location** (Consenti contenuto firmato dal percorso del servizio di aggiornamento Microsoft nella rete Intranet) è abilitata nel computer locale. È necessario abilitare questa impostazione dei criteri per l'agente di Windows Update affinché venga eseguita la scansione degli aggiornamenti che sono stati creati e pubblicati con Updates Publisher. Per altre informazioni sull'abilitazione di questa impostazione di Criteri di gruppo, vedere [Come configurare Criteri di gruppo sui computer client](https://docs.microsoft.com/previous-versions/bb530967(v=technet.10)).
 
 
 
