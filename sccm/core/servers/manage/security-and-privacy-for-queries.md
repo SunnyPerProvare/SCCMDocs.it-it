@@ -11,28 +11,28 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43dcbe3abc200ecf32a83888e7b9712efd21584e
-ms.sourcegitcommit: 99dfe4fb9e9cfd20c44380ae442b3a5b895a0d9b
+ms.openlocfilehash: 0315124b44af4359528b590bf0a6b325bfd14eb1
+ms.sourcegitcommit: 3a3f40f3d39cbecfb9219a64c0185ea4b2ef9671
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65214761"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67561977"
 ---
 # <a name="security-and-privacy-for-queries-in-system-center-configuration-manager"></a>Sicurezza e privacy per le query in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-In System Center Configuration Manager le query restituiscono informazioni dal database del sito in base ai criteri specificati dall'utente. Configuration Manager raccoglie le informazioni del database del sito durante il funzionamento standard. Ad esempio, utilizzando le informazioni raccolte da individuazione o l'inventario, è possibile configurare una query per identificare i dispositivi che soddisfano criteri specificati.  
+In System Center Configuration Manager le query consentono di recuperare informazioni dal database del sito in base ai criteri specificati. Configuration Manager raccoglie le informazioni del database del sito durante il funzionamento standard. Ad esempio, usando le informazioni raccolte durante l'individuazione o l'inventario, è possibile configurare una query per identificare i dispositivi che soddisfano i criteri specificati.  
 
- Per altre informazioni sulle query, vedere [Introduzione alle query in System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md). Per altre informazioni sulle procedure di sicurezza consigliate e le informazioni sulla privacy per le operazioni di Configuration Manager che raccolgono le informazioni richieste dall'utente usando le query, vedere [Protezione e privacy per System Center Configuration Manager](../../../core/plan-design/security/security-and-privacy.md).  
+ Per altre informazioni sulle query, vedere [Introduzione alle query in System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md). Per informazioni sulle procedure di sicurezza consigliate e sulla privacy per le operazioni di Configuration Manager che raccolgono i dati recuperabili tramite query, vedere [Protezione e privacy per System Center Configuration Manager](../../../core/plan-design/security/security-and-privacy.md).  
 
 ## <a name="security-best-practices-for-queries"></a>Procedure di sicurezza consigliate per le query
 
- Usare la seguente procedura di sicurezza consigliata per le query.  
+ Usare questa procedura consigliata di sicurezza per le query.  
 
 |Procedura di sicurezza consigliata|Altre informazioni|  
 |----------------------------|----------------------|  
-|Quando si esporta o si importa una query salvata in un percorso di rete, proteggere il percorso e il canale di rete.|Limitare l'accesso alla cartella di rete.<br /><br /> Usare la firma SMB (Server Message Block) o IPsec (Internet Protocol Security) tra il percorso di rete e il server del sito per impedire a un utente malintenzionato di manomettere i dati della query prima dell'importazione.|  
+|Quando si esporta o si importa una query salvata in un percorso di rete, proteggere il percorso e il canale di rete.|Limitare l'accesso alla cartella di rete.<br /><br /> Usare la firma SMB (Server Message Block) o IPSec (Internet Protocol Security) tra il percorso di rete e il server del sito per impedire a un utente malintenzionato di manomettere i dati della query prima dell'importazione.|  
 
 ## <a name="next-steps"></a>Passaggi successivi
   

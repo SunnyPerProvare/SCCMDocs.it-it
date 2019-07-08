@@ -10,12 +10,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9167ece07e751302fb221a7b0fe2757386346b5f
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: a64a9ee6808354caaee9eadca0ad18e851a3eb71
+ms.sourcegitcommit: 8e9e7c42a5572797e05936fab0cf84fc27c40862
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194475"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398874"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificati per il gateway di gestione cloud
 
@@ -88,10 +88,8 @@ I client devono considerare attendibile il certificato di autenticazione server 
 
 - Usare un certificato rilasciato da un'autorità di certificazione globale (enterprise) dall'infrastruttura a chiave pubblica. Nella maggior parte delle implementazioni di infrastruttura a chiave pubblica di tipo Enterprise le autorità di certificazione radice attendibili vengono aggiunte ai client di Windows. Ad esempio, usando i servizi certificati Active Directory con criteri di gruppo. Se si rilascia il certificato di autenticazione server per il gateway di gestione cloud da un'autorità di certificazione che i client non considerano automaticamente attendibile, aggiungere il certificato radice trusted di tale autorità ai client basati su Internet.  
 
-    - È inoltre possibile usare i profili dei certificati di Configuration Manager per eseguire il provisioning dei certificati nei client. Per altre informazioni, vedere l'[introduzione alle raccolte](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
-
-> [!Note]  
-> A partire dalla versione 1806, quando si crea un CMG non è più necessario specificare un certificato radice trusted nella pagina Impostazioni. Questo certificato non è obbligatorio se si usa Azure Active Directory (Azure AD) per l'autenticazione client, ma veniva richiesto nella procedura guidata. Se si usano certificati di autenticazione client PKI, è comunque necessario aggiungere un certificato radice trusted al CMG.<!--SCCMDocs-pr issue #2872-->  
+    - È inoltre possibile usare i profili dei certificati di Configuration Manager per eseguire il provisioning dei certificati nei client. Per altre informazioni, vedere l'[introduzione alle raccolte](/sccm/protect/deploy-use/introduction-to-certificate-profiles).
+    - Se si intende [installare il client di Configuration Manager da Intune](/sccm/comanage/how-to-prepare-win10#install-the-configuration-manager-client), è anche possibile usare i profili certificato di Intune per eseguire il provisioning dei certificati nei client. Per altre informazioni, vedere [Configurare un profilo di certificato](https://docs.microsoft.com/intune/certificates-configure).
 
 ### <a name="bkmk_serverauthpublic"></a> Certificato di autenticazione server rilasciato da un provider pubblico
 
@@ -146,6 +144,9 @@ Il punto di connessione del gateway di gestione cloud richiede questo certificat
 Usare questo certificato quando si crea il gateway di gestione cloud nella console di Configuration Manager.
 
 Il gateway di gestione client deve considerare attendibile il certificato di autenticazione del client. Per confermare l'attendibilità, specificare la catena di certificati radice trusted. È possibile specificare due autorità di certificazione radice attendibili e quattro autorità intermedie (subordinate). Assicurarsi di aggiungere tutti i certificati nella catena di certificati. Ad esempio, se il certificato di autenticazione client viene emesso da una CA intermedia, aggiungere sia il certificato della CA intermedia che il certificato della CA radice.
+
+> [!Note]  
+> A partire dalla versione 1806, quando si crea un CMG non è più necessario specificare un certificato radice trusted nella pagina Impostazioni. Questo certificato non è obbligatorio se si usa Azure Active Directory (Azure AD) per l'autenticazione client, ma veniva richiesto nella procedura guidata. Se si usano certificati di autenticazione client PKI, è comunque necessario aggiungere un certificato radice trusted al CMG.<!--SCCMDocs-pr issue #2872 SCCMDocs issue #1319-->
 
 #### <a name="export-the-client-certificates-trusted-root"></a>Esportare la radice attendibile del certificato client
 

@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 950e3d60d0737d9135eb5f47bbc02a07f2a5e65e
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 23fbb29ba4676f6c7282e5337f691f88209e15e6
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67158334"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551227"
 ---
 # <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1702 per System Center Configuration Manager
 
@@ -158,7 +158,7 @@ Dopo aver creato i criteri di conformità, è possibile monitorare i risultati d
 ## <a name="improvements-to-software-center-settings-and-notification-messages-for-high-impact-task-sequences"></a>Miglioramenti alle impostazioni e ai messaggi di notifica di Software Center per le sequenze di attività a impatto elevato
 Questa versione include i miglioramenti seguenti alle impostazioni di Software Center e ai messaggi di notifica per le sequenze di attività di distribuzione a impatto elevato:
 
-- Nelle proprietà per la sequenza di attività è ora possibile configurare qualsiasi sequenza di attività, comprese le sequenze di attività non del sistema operativo, come distribuzioni ad alto rischio. Qualsiasi sequenza di attività che soddisfi determinate condizioni viene definita automaticamente come a impatto elevato. Per altri dettagli, vedere [Gestire le distribuzioni ad alto rischio](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
+- Nelle proprietà per la sequenza di attività è ora possibile configurare qualsiasi sequenza di attività, comprese le sequenze di attività non del sistema operativo, come distribuzioni ad alto rischio. Qualsiasi sequenza di attività che soddisfi determinate condizioni viene definita automaticamente come a impatto elevato. Per altri dettagli, vedere [Gestire le distribuzioni ad alto rischio](https://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
 - Nelle proprietà per la sequenza di attività è possibile scegliere di usare il messaggio di notifica predefinito o crearne uno personalizzato per le distribuzioni a impatto elevato.
 - Nelle proprietà per la sequenza di attività è possibile configurare le proprietà di Software Center, tra cui l'obbligatorietà del riavvio, le dimensioni del download della sequenza di attività e il tempo di esecuzione stimato.
 - Il messaggio predefinito di distribuzione a impatto elevato per gli aggiornamenti sul posto indica ora che la migrazione di applicazioni, dati e impostazioni è stata eseguita automaticamente. In precedenza il messaggio predefinito per qualsiasi installazione del sistema operativo indicava che tutte le applicazioni, i dati e le impostazioni sarebbero andati persi, il che non era vero per gli aggiornamenti sul posto.
@@ -166,7 +166,7 @@ Questa versione include i miglioramenti seguenti alle impostazioni di Software C
 ### <a name="set-a-task-sequence-as-a-high-impact-task-sequence"></a>Impostare una sequenza di attività come una sequenza di attività a impatto elevato
 Attenersi alla procedura seguente per impostare una sequenza di attività a impatto elevato.
 > [!NOTE]
-> Qualsiasi sequenza di attività che soddisfi determinate condizioni viene definita automaticamente come a impatto elevato. Per altri dettagli, vedere [Gestire le distribuzioni ad alto rischio](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
+> Qualsiasi sequenza di attività che soddisfi determinate condizioni viene definita automaticamente come a impatto elevato. Per altri dettagli, vedere [Gestire le distribuzioni ad alto rischio](https://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
 
 1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
 2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
@@ -208,7 +208,7 @@ Attenersi alla procedura seguente per configurare i dettagli per la sequenza di 
 
 ## <a name="check-for-running-executable-files-before-installing-an-application"></a>Controllare l'esecuzione di file eseguibili prima di installare un'applicazione
 
-Nella finestra di dialogo *<deployment type name>* **Proprietà** di un tipo di distribuzione, nella scheda Comportamento di installazione è ora possibile specificare uno o più file eseguibili che, se in esecuzione, bloccano l'installazione del tipo di distribuzione. L'utente deve chiudere il file eseguibile in esecuzione, che in alternativa può essere chiuso automaticamente per le distribuzioni con scopo richiesto, prima dell'installazione del tipo di distribuzione.
+Nella finestra di dialogo **Proprietà** *\<nome tipo di distribuzione>* di un tipo di distribuzione, nella scheda Comportamento installazione, è ora possibile specificare uno o più file eseguibili che, se in esecuzione, bloccano l'installazione del tipo di distribuzione. L'utente deve chiudere il file eseguibile in esecuzione, che in alternativa può essere chiuso automaticamente per le distribuzioni con scopo richiesto, prima dell'installazione del tipo di distribuzione.
 
 ### <a name="try-it-out"></a>Procedura.
 

@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5396ec603cab4b16e0d0c7e538618d1e757ab62f
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 50a85f9639cb2f284a431081caea10e71f92b9f3
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286195"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551134"
 ---
 # <a name="capabilities-in-technical-preview-1705-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1705 per System Center Configuration Manager
 
@@ -247,7 +247,7 @@ A questo punto il sito di Configuration Manager è connesso ad Azure AD.
 Prima di iniziare, verificare che i file di origine dell'installazione client vengano archiviati localmente nel dispositivo nel quale viene installato il client.
 Usare le istruzioni in [Come distribuire i client nei computer Windows in System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual) con la riga di comando per l'installazione seguente, sostituendo con valori personalizzati i valori dell'esempio:
 
-**ccmsetup.exe /NoCrlCheck /Source:C:\CLIENT  CCMHOSTNAME=SCCMPROXYCONTOSO.CLOUDAPP.NET/CCM_Proxy_ServerAuth/72457598037527932 SMSSiteCode=HEC AADTENANTID=780433B5-E05E-4B7D-BFD1-E8013911E543 AADTENANTNAME=contoso  AADCLIENTAPPID=<GUID> AADRESOURCEURI=<https://contososerver>**
+**ccmsetup.exe /NoCrlCheck /Source:C:\CLIENT  CCMHOSTNAME=SCCMPROXYCONTOSO.CLOUDAPP.NET/CCM_Proxy_ServerAuth/72457598037527932 SMSSiteCode=HEC AADTENANTID=780433B5-E05E-4B7D-BFD1-E8013911E543 AADTENANTNAME=contoso  AADCLIENTAPPID=\<GUID> AADRESOURCEURI=<https://contososerver>**
 
 - **/NoCrlCheck**: se il punto di gestione o il gateway di gestione cloud usa un certificato server non pubblico, il client potrebbe non raggiungere il percorso CRL.
 - **/Source**: Cartella locale:   posizione dei file di installazione del client.

@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c15b387ec9f2048a923eb220b6c8e3e1fdccded8
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: b3560284733ccad6a9a3676a46f755106596ad03
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286304"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551194"
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1612 per System Center Configuration Manager
 
@@ -186,7 +186,7 @@ Per eseguire lo strumento:
 2. Immettere quindi una riga di comando che includa le opzioni della riga di comando obbligatorie e le opzioni facoltative che si vogliono usare.
 
 **Problema noto** Quando si esegue lo strumento, se un pacchetto o una distribuzione ha esito negativo o è in corso, è possibile che venga restituito un errore simile al seguente:
--  *System.InvalidOperationException: non è possibile eseguire la pulizia della raccolta contenuto perché il pacchetto <packageID> non è installato completamente*.
+-  *System.InvalidOperationException: non è possibile eseguire la pulizia della raccolta contenuto perché il pacchetto \<packageID> non è installato completamente.*
 
 **Soluzione alternativa:** Nessuna. Lo strumento non è in grado di identificare in modo affidabile i file orfani quando il contenuto è in corso o la sua distribuzione ha avuto esito negativo. Di conseguenza, lo strumento non consente di eseguire la pulizia del contenuto fino a quando il problema non viene risolto.
 
@@ -202,7 +202,7 @@ Per eseguire lo strumento:
 | **/dp &lt;FQDN punto di distribuzione>**  | **Richiesto** </br> Specificare il nome di dominio completo (FQDN) del punto di distribuzione che si desidera pulire. </br></br> Esempio:  ***ContentLibraryCleanup.exe /dp server1.contoso.com***|
 | **/ps &lt;FQDN sito primario>**       | **Facoltativa** per la pulizia del contenuto di un punto di distribuzione in un sito primario.</br>**Obbligatoria** per la pulizia del contenuto di un punto di distribuzione in un sito secondario. </br></br> Specificare il nome FQDN del sito primario a cui appartiene il punto di distribuzione o del padre primario se il punto di distribuzione si trova in un sito secondario. </br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com*** |
 | **/sc &lt;codice del sito primario>**  | **Facoltativa** per la pulizia del contenuto di un punto di distribuzione in un sito primario.</br>**Obbligatoria** per la pulizia del contenuto di un punto di distribuzione in un sito secondario. </br></br> Specificare il codice del sito primario a cui appartiene il punto di distribuzione o del sito primario padre se il punto di distribuzione si trova in un sito secondario.</br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com /sc ABC*** |
-| **/log <log file directory>**       |**Facoltativa** </br> Specificare la directory in cui salvare i file di log. Può essere un'unità locale o una condivisione di rete.</br></br> Se questa opzione non viene usata, i file di log vengono salvati automaticamente nella cartella Temp dell'utente.</br></br> Esempio di unità locale: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop*** </br></br>Esempio di condivisione di rete: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log \\&lt;condivisione>\&lt;cartella>***|
+| **/log\<directory file di log>**       |**Facoltativa** </br> Specificare la directory in cui salvare i file di log. Può essere un'unità locale o una condivisione di rete.</br></br> Se questa opzione non viene usata, i file di log vengono salvati automaticamente nella cartella Temp dell'utente.</br></br> Esempio di unità locale: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop*** </br></br>Esempio di condivisione di rete: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log \\&lt;condivisione>\&lt;cartella>***|
 
 
 ## <a name="improvements-for-in-console-search"></a>Miglioramenti per la ricerca nella console

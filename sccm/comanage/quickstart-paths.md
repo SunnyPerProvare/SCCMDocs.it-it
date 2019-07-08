@@ -2,7 +2,7 @@
 title: Percorsi per la co-gestione
 titleSuffix: Configuration Manager
 description: Informazioni sui prerequisiti per i due metodi principali per configurare la co-gestione.
-ms.date: 01/14/2019
+ms.date: 06/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 803f05dd14da8d280f08f2bcf3608865f384d273
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: 4c34cf73133086f08cb390f39ab4fe715dfcefd2
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "56755192"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67550678"
 ---
 # <a name="paths-to-co-management"></a>Percorsi per la co-gestione
 
@@ -35,7 +35,10 @@ Scegliendo questo percorso è possibile registrare rapidamente i dispositivi ges
 
 Prerequisiti per la configurazione:
 - Azure AD ibrido
-    - Active Directory Federation Services (AD FS) con l'autenticazione pass-through (PTA)
+    - Una delle [opzioni di identità ibrida di Azure AD](https://docs.microsoft.com/azure/active-directory/hybrid/plan-connect-user-signin) seguenti:  
+       - [Sincronizzazione dell'hash delle password](https://docs.microsoft.com/azure/active-directory/hybrid/plan-connect-user-signin#password-hash-synchronization) con l'[accesso Single Sign-On facile](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso)
+       - [Autenticazione pass-through](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-pta) con l'[accesso Single Sign-On facile](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso)
+       - [SSO federato (con Active Directory Federation Services (AD FS))](https://docs.microsoft.com/azure/active-directory/hybrid/plan-connect-user-signin#federation-that-uses-a-new-or-existing-farm-with-ad-fs-in-windows-server-2012-r2)
     - Azure AD Connect
     - Licenza Azure AD Premium
     - Configurare l'aggiunta ad Azure AD ibrido (scegliere una delle opzioni):

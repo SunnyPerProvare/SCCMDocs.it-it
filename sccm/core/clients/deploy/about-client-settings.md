@@ -2,7 +2,7 @@
 title: Impostazioni client
 titleSuffix: Configuration Manager
 description: Informazioni sulle impostazioni predefinite e personalizzate per il controllo dei comportamenti client
-ms.date: 06/18/2019
+ms.date: 06/20/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 157cc09f08cf16056dc3424ddc377fbd95b0fe6e
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 0c6bffc94abecb5f700fbb7236c923f26f3a0de0
+ms.sourcegitcommit: 949db4d2af7f605ee40610e45ae9d917b1045772
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286859"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67314414"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -652,6 +652,17 @@ Configurare le impostazioni aggiuntive di questo gruppo su **Sì** per rendere v
 
 Se ad esempio l'organizzazione non usa criteri di conformità e si vuole nascondere la scheda Conformità del dispositivo in Software Center, impostare **Abilita la scheda Conformità del dispositivo** su **No**.
 
+### <a name="bkmk_swctr_defaults"></a> Configurazione delle visualizzazioni predefinite in Software Center
+<!--3612112-->
+*(Funzionalità introdotta nella versione 1902)*
+
+- Impostare **Filtro predefinito dell'applicazione** per tutte le applicazioni (**Tutti**) o solo per le applicazioni richieste (**Richiesto**).  
+
+    - Software Center usa sempre l'impostazione predefinita. Gli utenti possono modificare questo filtro, ma la preferenza non viene salvata da Software Center.  
+
+ - Impostare **Visualizzazione predefinita dell'applicazione** su **Visualizzazione affiancata** o **Visualizzazione elenco**. 
+
+    - Se un utente modifica questa configurazione, Software Center salva la preferenza dell'utente per il futuro. 
 
 
 ## <a name="software-deployment"></a>Distribuzione software  

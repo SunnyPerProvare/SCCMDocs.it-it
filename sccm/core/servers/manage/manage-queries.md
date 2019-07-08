@@ -11,32 +11,32 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5394cd86e1f137bd7cf76549b117cb53f242f8f1
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 456289520e25fe94da7e94f6a795537f68ba069e
+ms.sourcegitcommit: 3a3f40f3d39cbecfb9219a64c0185ea4b2ef9671
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65497295"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67561973"
 ---
 # <a name="how-to-manage-queries-in-system-center-configuration-manager"></a>Come gestire le query in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Usare le informazioni in questo argomento per gestire le query in System Center Configuration Manager.  
+Questo articolo è utile per gestire le query in System Center Configuration Manager.  
 
  Per informazioni su come creare le query, vedere [Come creare query in Configuration Manager](../../../core/servers/manage/create-queries.md).  
 
-## <a name="how-to-manage-queries"></a>Come gestire le query  
+## <a name="manage-queries"></a>Gestire le query
  Nell'area di lavoro **Monitoraggio** selezionare **Query**, selezionare la query da gestire e quindi selezionare un'attività di gestione.  
 
- Per altre informazioni sulle attività di gestione che potrebbero richiedere alcune informazioni prima della relativa selezione, usare la seguente tabella.  
+ Nella tabella seguente vengono fornite informazioni sulle attività di gestione.  
 
-|Attività di gestione|Dettagli|Altre informazioni|  
-|---------------------|-------------|----------------------|  
-|**Esegui**|Esegue la query selezionata e visualizza i risultati nella console di Configuration Manager.|Nessuna informazione aggiuntiva.|  
-|**Installa client**|Apre la **procedura guidata di installazione client** che consente di installare il client di Configuration Manager nei computer restituiti dalla query selezionata.<br /><br /> Questa opzione non è disponibile per le query che restituiscono dispositivi mobili, utenti o gruppi di utenti.|Per altre informazioni su come installare i client di Configuration Manager usando push client, vedere [Come distribuire i client nei computer Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).|  
-|**Export**|Apre l' **Esportazione guidata oggetti** , che consente di esportare questa query in un file MOF (Managed Object Format) che può quindi essere importato in un altro sito.|Nessuna informazione aggiuntiva.|  
-|**Sposta**|Apre la finestra di dialogo **Sposta elementi selezionati** in cui è possibile spostare la query selezionata in una cartella creata in precedenza nel nodo **Query** .|Nessuna informazione aggiuntiva.|  
+|Attività di gestione|Dettagli| 
+|---------------------|-------------|
+|**Esegui**|Esegue la query selezionata e visualizza i risultati nella console di Configuration Manager.|
+|**Installa client**|Apre la **procedura guidata di installazione client** che consente di installare il client di Configuration Manager nei computer restituiti dalla query selezionata.<br /><br /> Questa opzione non è disponibile per le query che restituiscono dispositivi mobili, utenti o gruppi di utenti. <br /><br /> Per altre informazioni su come installare i client di Configuration Manager usando push client, vedere [Come distribuire i client nei computer Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).| 
+|**Export**|Apre l'**Esportazione guidata oggetti**. Questa procedura guidata consente di esportare la query in un file MOF (Managed Object Format) che è quindi possibile importare in un altro sito.
+|**Sposta**|Apre la finestra di dialogo **Sposta elementi selezionati**. Questa finestra di dialogo consente di spostare la query selezionata in una cartella creata in precedenza nel nodo **Query**.|
 
 ## <a name="next-steps"></a>Passaggi successivi 
  [Creare query in System Center Configuration Manager](../../../core/servers/manage/create-queries.md)

@@ -11,35 +11,34 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40cb1a96771181b395ec2f628e0f0c3c2efe29b7
-ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
+ms.openlocfilehash: ed08a9abb746681eb8e89d471e19990ced313788
+ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65673306"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67550905"
 ---
 # <a name="how-to-create-collections-in-configuration-manager"></a>Come creare raccolte in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le raccolte costituiscono raggruppamenti di utenti o dispositivi. Usare le raccolte per attività quali gestione delle applicazioni, distribuzione delle impostazioni di conformità o installazione degli aggiornamenti software. È anche possibile usare le raccolte per gestire gruppi di impostazioni client o con l'amministrazione basata sui ruoli per specificare le risorse accessibili per un utente amministratore. Configuration Manager contiene varie raccolte predefinite. Per altre informazioni, vedere [Introduction to Collections](/sccm/core/clients/manage/collections/introduction-to-collections) (Introduzione alle raccolte).  
+Le raccolte costituiscono raggruppamenti di utenti o dispositivi. Usare le raccolte per attività come la gestione delle applicazioni, la distribuzione delle impostazioni di conformità o installazione degli aggiornamenti software. È anche possibile usare le raccolte per gestire gruppi di impostazioni client o con l'amministrazione basata sui ruoli per specificare le risorse accessibili per un utente amministratore. Configuration Manager contiene varie raccolte predefinite. Per altre informazioni, vedere [Introduction to Collections](/sccm/core/clients/manage/collections/introduction-to-collections) (Introduzione alle raccolte).  
 
 > [!NOTE]  
 > Una raccolta può contenere utenti o dispositivi, ma non entrambi.  
 
 
-Usare questo articolo per informazioni su come creare le raccolte in Configuration Manager. È anche possibile importare le raccolte create in questo o in altro sito di Configuration Manager. Per altre informazioni su come esportare e importare le raccolte, vedere [Come gestire le raccolte](/sccm/core/clients/manage/collections/manage-collections).  
-
+Le informazioni in questo articolo possono essere utili per creare le raccolte in Configuration Manager. È anche possibile importare le raccolte create nel sito di Configuration Manager corrente o in un altro. Per altre informazioni su come esportare e importare le raccolte, vedere [Come gestire le raccolte](/sccm/core/clients/manage/collections/manage-collections).  
 
 
 ## <a name="collection-rules"></a>Regole delle raccolte
 
-Ci sono diverse regole che è possibile usare per configurare i membri di una raccolta in Configuration Manager.  
+Esistono diversi tipi di regole che è possibile usare per configurare i membri di una raccolta in Configuration Manager.  
 
 
 ### <a name="direct-rule"></a>Regola diretta
 
-Consente di scegliere gli utenti o i computer da aggiungere a una raccolta. L'appartenenza non cambia a meno che non si rimuova una risorsa da Configuration Manager. Prima di poter aggiungere le risorse a una raccolta con regola diretta, è necessario che vengano individuate da Configuration Manager oppure che siano state importate. Le raccolte con regole dirette presentano un maggiore carico amministrativo rispetto alle raccolte con regole di query, dal momento che richiedono modifiche manuali.
+Usare le regole dirette per scegliere gli utenti o i computer da aggiungere a una raccolta. L'appartenenza non cambia a meno che non si rimuova una risorsa da Configuration Manager. Prima di poter aggiungere le risorse a una raccolta con regola diretta, è necessario che vengano individuate da Configuration Manager oppure che siano state importate. Le raccolte con regole dirette presentano un maggiore carico amministrativo rispetto alle raccolte con regole di query, dal momento che richiedono modifiche manuali.
 
 
 ### <a name="query-rule"></a>Regola di query
@@ -65,7 +64,7 @@ Per altre informazioni, vedere [Classificare automaticamente i dispositivi in ra
 
 ### <a name="exclude-collection-rule"></a>Regola di esclusione raccolte
 
-Le regole di esclusione raccolte consentono di escludere i membri di un'altra raccolta da una raccolta di Configuration Manager. Se la raccolta esclusa cambia, Configuration Manager aggiorna l'appartenenza della raccolta corrente in base a una pianificazione.
+Le regole di esclusione raccolte consentono di escludere i membri di una raccolta da un'altra raccolta di Configuration Manager. Se la raccolta esclusa cambia, Configuration Manager aggiorna l'appartenenza della raccolta corrente in base a una pianificazione.
 
 È possibile aggiungere più regole di esclusione raccolte in una raccolta. Se una raccolta include sia regole di inclusione raccolte che di esclusione raccolte e si verifica un conflitto, la regola di esclusione raccolte ha la priorità.
 
@@ -78,20 +77,20 @@ si crea una raccolta con una regola di inclusione raccolte e una di esclusione r
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità**.  
 
-    - Per creare una *raccolta di dispositivi*, selezionare il nodo **Raccolte dispositivi**. Nel gruppo **Crea** della scheda **Home** della barra multifunzione scegliere quindi **Crea raccolta dispositivi**.  
+    - Per creare una *raccolta di dispositivi*, selezionare il nodo **Raccolte dispositivi**. Nel gruppo **Crea** della scheda **Home** della barra multifunzione selezionare quindi **Crea raccolta dispositivi**.  
 
-    - Per creare una *raccolta di utenti*, selezionare il nodo **Raccolte utenti**. Nel gruppo **Crea** della scheda **Home** della barra multifunzione scegliere quindi **Crea raccolta utenti**.  
+    - Per creare una *raccolta di utenti*, selezionare il nodo **Raccolte utenti**. Nel gruppo **Crea** della scheda **Home** della barra multifunzione selezionare quindi **Crea raccolta utenti**.  
 
-2. Nella pagina **Generale** della procedura guidata inserire **Nome** e **Commento**. Nella sezione **Raccolta di limitazione** scegliere quindi **Sfoglia** e selezionare una raccolta di limitazione. La raccolta che si sta creando conterrà solo i membri della raccolta di limitazione.  
+2. Nella pagina **Generale** della procedura guidata inserire **Nome** e **Commento**. Nella sezione **Raccolta di limitazione** selezionare **Sfoglia** e quindi selezionare una raccolta di limitazione. La raccolta che si sta creando conterrà solo i membri della raccolta di limitazione.  
 
-4. Nella pagina **Regole di appartenenza**, nell'elenco **Aggiungi regola** selezionare il tipo di regola di appartenenza da usare per la raccolta. È possibile configurare più regole per ogni raccolta. La configurazione varia in base alla regola. Per altre informazioni sulla configurazione di ogni regola, vedere le sezioni seguenti:  
+4. Nella pagina **Regole di appartenenza**, nell'elenco **Aggiungi regola** selezionare il tipo di regola di appartenenza da usare per la raccolta. È possibile configurare più regole per ogni raccolta. La configurazione varia in base alla regola. Per altre informazioni sulla configurazione di ogni regola, vedere le sezioni seguenti di questo articolo:  
     - [Regola diretta](#bkmk-direct)
     - [Regola di query](#bkmk-query)
     - [Regola categoria di dispositivi](#bkmk-category)
     - [Regola di inclusione raccolte](#bkmk-include)
     - [Regola di esclusione raccolte](#bkmk-exclude)
 
-5. Nella pagina **Regole di appartenenza** esaminare inoltre le impostazioni seguenti:
+5. Nella pagina **Regole di appartenenza** esaminare inoltre le impostazioni seguenti.
 
     - **Utilizza aggiornamenti incrementali per questa raccolta**: selezionare questa opzione per eseguire periodicamente una scansione e aggiornare solo le risorse nuove o modificate rispetto alla valutazione raccolta precedente. Questo processo è indipendente da una valutazione raccolta completa. Per impostazione predefinita, gli aggiornamenti incrementali vengono eseguiti a intervalli di 5 minuti.  
 
@@ -115,36 +114,36 @@ si crea una raccolta con una regola di inclusione raccolte e una di esclusione r
 
     - **Pianifica un aggiornamento completo in questa raccolta**: pianificare una valutazione completa regolare dell'appartenenza alla raccolta.  
 
-        A partire dalla versione 1810, le modifiche seguenti nel comportamento di valutazione delle raccolte possono migliorare le prestazioni del sito:<!--3607726-->  
+        A partire dalla versione 1810, queste modifiche del comportamento di valutazione delle raccolte possono migliorare le prestazioni del sito:<!--3607726-->  
 
-        - In precedenza, quando si configurava una pianificazione per una raccolta basata su query, il sito continuava a valutare la query indipendentemente dall'impostazione **Pianifica un aggiornamento completo in questa raccolta**. Per disabilitare completamente la pianificazione, era necessario modificare la pianificazione impostando **Nessuno**. 
+        - In precedenza, quando si configurava una pianificazione per una raccolta basata su query, il sito continuava a valutare la query indipendentemente dall'impostazione **Pianifica un aggiornamento completo in questa raccolta**. Per disabilitare completamente la pianificazione, era necessario modificare la pianificazione impostando **Nessuno**.
 
             Ora il sito cancella la pianificazione quando si disabilita questa impostazione. Per specificare una pianificazione per la valutazione delle raccolte, abilitare l'opzione **Pianifica un aggiornamento completo in questa raccolta**.  
 
-            Quando si aggiorna il sito, per qualsiasi raccolta esistente in cui è stata specificata una pianificazione, il sito abilita l'opzione **Pianifica un aggiornamento completo in questa raccolta**. Anche se questa configurazione poteva non essere intenzionale, questo era il comportamento effettivo. Per interrompere la valutazione di una raccolta in base a una pianificazione nel sito, disabilitare questa opzione.  
+            Quando si aggiorna il sito, per qualsiasi raccolta esistente in cui è stata specificata una pianificazione, il sito abilita l'opzione **Pianifica un aggiornamento completo in questa raccolta**. Anche se questa configurazione potrebbe non essere lo scopo, era il comportamento effettivo della pianificazione prima dell'aggiornamento del sito. Per interrompere la valutazione di una raccolta in base a una pianificazione nel sito, disabilitare questa opzione.  
 
         - Non è possibile disabilitare la valutazione delle raccolte predefinite, come **Tutti i sistemi**, ma ora è possibile configurare la pianificazione. Questo comportamento consente di personalizzare questa azione in base ai requisiti specifici. 
 
-            > [!Tip]  
-            > Modificare solo l'impostazione **Ora** della pianificazione personalizzata per le raccolte predefinite. Non modificare **Criterio ricorrenza**. Nelle iterazioni future potrebbe essere applicato un criterio di ricorrenza specifico.  
+            > [!TIP]  
+            > Per le raccolte predefinite modificare solo l'impostazione **Ora** della pianificazione personalizzata. Non modificare **Criterio ricorrenza**. Le iterazioni future potrebbero imporre un criterio di ricorrenza specifico.  
 
 6. Completare la procedura guidata per creare la nuova raccolta. La nuova raccolta viene visualizzata nel nodo **Raccolte dispositivi** dell'area di lavoro **Asset e conformità** .  
 
 > [!NOTE]  
-> È necessario aggiornare o ricaricare la console di Configuration Manager per visualizzare i membri della raccolta. I membri non vengono visualizzati nella raccolta fino a quando non viene eseguito il primo aggiornamento pianificato. È anche possibile selezionare manualmente il comando **Aggiorna appartenenza** per la raccolta. L'aggiornamento della raccolta può richiedere alcuni minuti.  
+> È necessario aggiornare o ricaricare la console di Configuration Manager per visualizzare i membri della raccolta. I membri non vengono visualizzati nella raccolta fino a quando non viene eseguito il primo aggiornamento pianificato. È anche possibile selezionare manualmente il comando **Aggiorna appartenenza** per la raccolta. L'aggiornamento della raccolta potrebbe richiedere alcuni minuti.  
 
         
 ### <a name="bkmk-direct"></a> Configurare una regola diretta  
 
-1. Nella pagina **Cerca risorse** della **Creazione guidata regola di appartenenza diretta**specificare le informazioni seguenti:  
+1. Nella pagina **Cerca risorse** della **Creazione guidata regola di appartenenza diretta** specificare le informazioni seguenti.  
 
-    - **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Ad esempio, 
-        - **Risorsa di sistema**: cercare i dati di inventario restituiti dai computer client
-        - **Computer sconosciuto**: selezionare tra i valori restituiti dai computer sconosciuti
-        - **Risorsa utente**: cercare informazioni sugli utenti raccolte da Configuration Manager
-        - **Risorsa gruppo utenti**: cercare informazioni sui gruppo di utenti raccolte da Configuration Manager
+    - **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Ad esempio:
+        - **Risorsa di sistema**: cercare i dati di inventario restituiti dai computer client.
+        - **Computer sconosciuto**: selezionare tra i valori restituiti dai computer sconosciuti.
+        - **Risorsa utente**: cercare informazioni sugli utenti raccolte da Configuration Manager.
+        - **Risorsa gruppo utenti**: cercare informazioni sui gruppi di utenti raccolte da Configuration Manager.
 
-    - **Nome attributo**: selezionare l'attributo associato alla classe di risorse selezionata che si vuole cercare. Ad esempio,  
+    - **Nome attributo**: selezionare l'attributo associato alla classe di risorse selezionata che si vuole cercare. Ad esempio:  
 
         - Per selezionare i computer in base al relativo nome NetBIOS, selezionare **Risorsa di sistema** nell'elenco **Classe di risorse** e **Nome NetBIOS** nell'elenco **Nome attributo**.  
 
@@ -154,16 +153,16 @@ si crea una raccolta con una regola di inclusione raccolte e una di esclusione r
 
     - **Escludere le risorse in cui non è installato il client di Configuration Manager**: queste risorse non verranno visualizzate nei risultati della ricerca.  
 
-    - **Valore**: immettere un valore per la ricerca del nome di attributo selezionato. Usare il simbolo di percentuale `%` come carattere jolly. Ad esempio,  
-        - Per cercare i computer con un nome NetBIOS che inizia con "M", immettere `M%` in questo campo.  
-        - Per cercare gli utenti nell'unità organizzativa Contoso, immettere `Contoso` in questo campo.
+    - **Valore**: immettere un valore per la ricerca del nome di attributo selezionato. Usare il simbolo di percentuale (%) come carattere jolly. Ad esempio:  
+        - Per cercare i computer con un nome NetBIOS che inizia con "M", immettere **M%** in questo campo.  
+        - Per cercare gli utenti nell'unità organizzativa Contoso, immettere **Contoso** in questo campo.
 
-2. Nella pagina **Seleziona risorse** selezionare le risorse da aggiungere alla raccolta nell'elenco **Risorse** e quindi scegliere **Avanti**.  
+2. Nella pagina **Seleziona risorse** selezionare le risorse da aggiungere alla raccolta nell'elenco **Risorse** e quindi selezionare **Avanti**.  
 
 
 ### <a name="bkmk-query"></a> Configurare una regola di query  
 
-Nella finestra di dialogo **Proprietà regola di query** specificare le informazioni seguenti:  
+Nella finestra di dialogo **Proprietà regola di query** specificare le informazioni seguenti.  
 
 - **Nome**: specificare un nome univoco per la query.  
 
@@ -171,56 +170,56 @@ Nella finestra di dialogo **Proprietà regola di query** specificare le informaz
 
 - **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Selezionare un valore in **Risorsa di sistema** per cercare i dati di inventario restituiti dai computer client o **Computer sconosciuto** per effettuare una selezione tra i valori restituiti dai computer sconosciuti.  
 
-- **Modifica istruzione query**: apre la finestra di dialogo **Proprietà istruzione query**, dove è possibile modificare una query da usare come regola per la raccolta. Per altre informazioni sulle query, vedere [Introduzione alle query](/sccm/core/servers/manage/introduction-to-queries).  
+- **Modifica istruzione query**: apre la finestra di dialogo **Proprietà istruzione query**, dove è possibile scrivere una query da usare come regola per la raccolta. Per altre informazioni sulle query, vedere [Introduzione alle query](/sccm/core/servers/manage/introduction-to-queries).  
 
 
 ### <a name="bkmk-category"></a> Regola categoria di dispositivi
 
-Nella finestra **Selezionare le categorie di dispositivi** sono disponibili le azioni seguenti:
+Nella finestra **Selezionare le categorie di dispositivi** sono disponibili le azioni seguenti.
 
-- **Crea**: specificare un nome per creare una nuova categoria
-- **Rinomina**: consente di rinominare la categoria selezionata
-- **Elimina**: selezionare una o più categorie e usare questa azione per rimuoverle dall'elenco
+- **Crea**: specificare un nome per creare una nuova categoria.
+- **Rinomina**: consente di rinominare la categoria selezionata.
+- **Elimina**: selezionare una o più categorie e usare questa azione per rimuoverle dall'elenco.
 
 Per altre informazioni, vedere [Classificare automaticamente i dispositivi in raccolte](/sccm/core/clients/manage/collections/automatically-categorize-devices-into-collections).<!-- SCCMDocs issue 552 -->
 
 
 ### <a name="bkmk-include"></a> Configurare una regola di inclusione raccolte  
 
-Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da includere nella nuova raccolta e quindi scegliere **OK**.  
+Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da includere nella nuova raccolta e quindi selezionare **OK**.  
 
 
 ### <a name="bkmk-exclude"></a> Configurare una regola di esclusione raccolte  
 
-Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da escludere dalla nuova raccolta e quindi scegliere **OK**.  
+Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da escludere dalla nuova raccolta e quindi selezionare **OK**.  
 
 
 
 ## <a name="bkmk_import"></a> Importare una raccolta  
 
-Quando si esporta una raccolta da un sito, Configuration Manager la salva come file MOF (Managed Object Format). Usare questa procedura per importare il file nel database del sito. Sono necessarie autorizzazioni di **creazione** per la classe delle raccolte. 
+Quando si esporta una raccolta da un sito, Configuration Manager la salva come file MOF (Managed Object Format). Usare questa procedura per importare il file nel database del sito. Per completare questa procedura, sono necessarie le autorizzazioni di **creazione** per la classe delle raccolte.
 
-> [!Important]  
+> [!IMPORTANT]  
 > - Assicurarsi che il file contenga solo i dati della raccolta, provenga da una fonte attendibile e non sia stato manomesso.  
 > 
-> - Assicurarsi che il file sia stato esportato da un sito che esegue la stessa versione di Configuration Manager.  
+> - Assicurarsi che il file sia stato esportato da un sito che esegue la stessa versione di Configuration Manager in uso.  
 
 Per altre informazioni sull'esportazione di raccolte, vedere [Come gestire le raccolte](/sccm/core/clients/manage/collections/manage-collections).
 
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità**. Selezionare il nodo **Raccolte utenti** o **Raccolte dispositivi**.  
 
-2. Nel gruppo **Crea** della scheda **Home** della barra multifunzione scegliere **Importa raccolte**.  
+2. Nel gruppo **Crea** della scheda **Home** della barra multifunzione selezionare **Importa raccolte**.  
 
-3. Nella pagina **Generale** dell'**Importazione guidata raccolte** scegliere **Avanti**.  
+3. Nella pagina **Generale** dell'**Importazione guidata raccolte** selezionare **Avanti**.  
 
-4. Nella pagina **Nome file MOF** scegliere **Sfoglia**. Passare al file MOF contenente le informazioni sulla raccolta da importare.  
+4. Nella pagina **Nome file MOF** selezionare **Sfoglia**. Passare al file MOF contenente le informazioni sulla raccolta da importare.  
 
 5. Completare la procedura guidata per importare la raccolta. La nuova raccolta viene visualizzata nel nodo **Raccolte utenti** o **Raccolte dispositivi** dell'area di lavoro **Asset e conformità** . Aggiornare o ricaricare la console di Configuration Manager per visualizzare i membri della raccolta appena importata.  
 
 ## <a name="bkmk_powershell"></a> Uso di PowerShell
 
-È possibile usare PowerShell per creare e importare raccolte.  Per altre informazioni, vedere:
+È possibile usare PowerShell per creare e importare raccolte. Per altre informazioni, vedere:
 
 * [New-CMCollection](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmcollection)
 * [Set-CMCollection](https://docs.microsoft.com/powershell/module/ConfigurationManager/Set-CMCollection)
