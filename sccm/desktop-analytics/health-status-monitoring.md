@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5dc3123763430dc35d566b68e3c1c04762d26de5
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 4b32105304354e9b9d4473451a32f52162f80d02
+ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159043"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67623325"
 ---
 # <a name="health-status-monitoring-in-desktop-analytics"></a>Stato di integrità monitoraggio in Desktop Analitica
 
@@ -58,7 +58,7 @@ Nella parte inferiore della pagina di dettagli dell'app, le tre schede seguenti 
 
 - **Altre versioni**: Elenco di versioni alternative di questa app. Per ogni versione, Mostra le modifiche relative alle tariffe di arresto anomalo del sistema all'interno dell'organizzazione e la media commerciale. Se si trova una versione successiva dell'app con una frequenza inferiore di arresto anomalo del sistema, l'aggiornamento dell'app possono essere utili.  
 
-    Indica inoltre se la versione ha una **pronto per Windows** segnale. Per altre informazioni, vedere [valutazione della compatibilità](/sccm/desktop-analytics/compat-assessment#risk-assessment-engine).  
+    Indica inoltre se la versione ha una **pronto per Windows** segnale. Per altre informazioni, vedere [valutazione della compatibilità](compat-assessment.md#driver-risk-assessment).  
 
 - **Problemi principali**: Elenco di ID errore più frequente dal numero di istanze. L'analisi dello stack associato con l'arresto anomalo è identificata da un ID di errore. Quando si chiama il fornitore dell'app per il supporto, è possibile usare questo ID.  
 

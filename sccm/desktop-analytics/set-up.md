@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6658f0b7a65027715975e6075e5c18a430d38405
-ms.sourcegitcommit: d8cfd0edf2579e2b08a0ca8a0a7b8f53d1e4196f
+ms.openlocfilehash: 96cf6f4dcfa878bb1ecafb7187dc6e9b29755509
+ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67463755"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67623377"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Come configurare Desktop Analitica
 
@@ -29,7 +29,7 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 
 ## <a name="initial-onboarding"></a>Onboarding iniziale
 
-1. Aprire il [portale Desktop Analitica](https://aka.ms/desktopanalytics) nella gestione dei dispositivi Microsoft 365 come utente con il **amministratore globale** ruolo. Selezionare **avviare**.  
+1. Aprire il [portale Desktop Analitica](https://aka.ms/desktopanalytics) nella gestione dei dispositivi Microsoft 365 come utente con il **amministratore globale** ruolo. Selezionare **avviare**. Se viene chiesto di immettere un codice invito, usare: `DesktopAnalyticsRocks!`
 
     > [!Tip]  
     > Per accedere al portale di Analitica Desktop dalla console di Configuration Manager, passare al **raccolta Software** dell'area di lavoro, seleziona il **Desktop Analitica Servicing** nodo e selezionare **piano le distribuzioni**.

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0700644f9548ea588821141a34abc6d249909cdf
-ms.sourcegitcommit: d8cfd0edf2579e2b08a0ca8a0a7b8f53d1e4196f
+ms.openlocfilehash: d564a5161011a1af0a4ec70f9bf7b45d87dd9dcb
+ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67463760"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67623156"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Esercitazione: Distribuire Windows 10 a un gruppo pilota
 
@@ -93,7 +93,7 @@ Prima di iniziare questa esercitazione, accertarsi di avere i prerequisiti segue
 
 Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nella sottoscrizione. Questa procedura è un processo unico per configurare Desktop Analitica per l'organizzazione.  
 
-1. Aprire il [portale Desktop Analitica](https://aka.ms/desktopanalytics) in Gestione dei dispositivi Microsoft 365 come utente con **amministratore globale** autorizzazioni. Selezionare **avviare**.  
+1. Aprire il [portale Desktop Analitica](https://aka.ms/desktopanalytics) in Gestione dei dispositivi Microsoft 365 come utente con **amministratore globale** autorizzazioni. Selezionare **avviare**.  Se viene chiesto di immettere un codice invito, usare: `DesktopAnalyticsRocks!`
 
 2. Nel **accettare il contratto di servizio** pagina, esaminare il contratto di servizio e selezionare **Accept**.  
 
@@ -254,7 +254,7 @@ Utilizzare questa procedura per creare un piano di distribuzione nel Desktop Ana
 
     - **Data completamento**: Scegliere la data da cui Windows deve essere completamente distribuito a tutti i dispositivi di destinazione.  
 
-5. Selezionare **Create**. Il nuovo piano viene visualizzato nell'elenco dei piani di distribuzione relativi in fase di elaborazione. Per velocizzare l'elaborazione, richiedere un aggiornamento dei dati on demand. Per altre informazioni, vedere [domande frequenti su Analitica Desktop](/sccm/desktop-analytics/faq#can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal).
+5. Selezionare **Crea**. Il nuovo piano viene visualizzato nell'elenco dei piani di distribuzione relativi in fase di elaborazione. Per velocizzare l'elaborazione, richiedere un aggiornamento dei dati on demand. Per altre informazioni, vedere [domande frequenti su Analitica Desktop](/sccm/desktop-analytics/faq#can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal).
 
 6. Aprire il piano di distribuzione selezionando il relativo nome.  
 
