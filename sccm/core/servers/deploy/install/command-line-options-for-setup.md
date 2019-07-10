@@ -39,7 +39,7 @@ ms.locfileid: "65498682"
  Disabilita l'input utente durante l'installazione, ma visualizza l'installazione guidata. Usare questa opzione solo in combinazione con l'opzione **/SCRIPT**. Il file script di installazione automatica deve fornire tutte le opzioni necessarie. In caso contrario, l'installazione avrà esito negativo.  
 
  **/RESETSITE**  
- Consente di eseguire una reimpostazione del sito per reimpostare gli account di servizio e di database per il sito. Eseguire il programma di installazione dal**<*percorso di installazione di Configuration Manager* >\BIN\X64** nel server del sito. Per altre informazioni sulla reimpostazione del sito, vedere la sezione [Eseguire una reimpostazione del sito](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_reset) in [Modificare l'infrastruttura di System Center Configuration Manager](../../../../core/servers/manage/modify-your-infrastructure.md).  
+ Consente di eseguire una reimpostazione del sito per reimpostare gli account di servizio e di database per il sito. Eseguire il programma di installazione dal **<*percorso di installazione di Configuration Manager* >\BIN\X64** nel server del sito. Per altre informazioni sulla reimpostazione del sito, vedere la sezione [Eseguire una reimpostazione del sito](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_reset) in [Modificare l'infrastruttura di System Center Configuration Manager](../../../../core/servers/manage/modify-your-infrastructure.md).  
 
  **/TESTDBUPGRADE <*Nome istanza*>\\<*Nome database*>**  
  Consente di eseguire un test in un backup del database del sito per verificare che il database supporti l'aggiornamento. Specificare il nome dell'istanza e il nome del database per il database del sito. Se si specifica solo il nome del database, il programma di installazione usa il nome dell'istanza predefinita.  
@@ -139,7 +139,7 @@ ms.locfileid: "65498682"
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
+    -   **Valori:**  <*Percorso dei file dei prerequisiti di installazione*>  
 
     -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
 
@@ -173,7 +173,7 @@ ms.locfileid: "65498682"
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
+    -   **Valori:**  <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
 
     -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
 
@@ -181,7 +181,7 @@ ms.locfileid: "65498682"
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Codice del sito*>  
+    -   **Valori:**  <*Codice del sito*>  
 
     -   **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia.  
 
@@ -189,7 +189,7 @@ ms.locfileid: "65498682"
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Nome del sito*>  
+    -   **Valori:**  <*Nome del sito*>  
 
     -   **Dettagli:** Specifica il nome del sito.  
 
@@ -197,7 +197,7 @@ ms.locfileid: "65498682"
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Percorso di installazione di Configuration Manager*>  
+    -   **Valori:**  <*Percorso di installazione di Configuration Manager*>  
 
     -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
 
@@ -205,7 +205,7 @@ ms.locfileid: "65498682"
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*FQDN del provider SMS*>  
+    -   **Valori:**  <*FQDN del provider SMS*>  
 
     -   **Dettagli:** Specifica il nome FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
 
@@ -225,7 +225,7 @@ ms.locfileid: "65498682"
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
+    -   **Valori:**  <*Percorso dei file dei prerequisiti di installazione*>  
 
     -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
 
@@ -305,7 +305,7 @@ ms.locfileid: "65498682"
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Nome dell'istanza di SQL Server*>  
+    -   **Valori:**  <*Nome dell'istanza di SQL Server*>  
 
     -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospiterà il database del sito.  
 
@@ -313,7 +313,7 @@ ms.locfileid: "65498682"
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
+    -   **Valori:**  <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
 
     -   **Dettagli:** specifica il nome del database SQL Server da creare o del database SQL Server da usare per l'installazione del database del sito di amministrazione centrale.  
 
@@ -324,7 +324,7 @@ ms.locfileid: "65498682"
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Numero della porta SSB*>  
+    -   **Valori:**  <*Numero della porta SSB*>  
 
     -   **Dettagli:** Specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. SQL Server Service Broker è in genere configurato per l'uso della porta TCP 4022, ma è possibile configurare un'altra porta.  
 
@@ -332,7 +332,7 @@ ms.locfileid: "65498682"
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Percorso del file mdb del database*>  
+    -   **Valori:**  <*Percorso del file mdb del database*>  
 
     -   **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
 
@@ -340,7 +340,7 @@ ms.locfileid: "65498682"
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Percorso del file ldf del database*>  
+    -   **Valori:**  <*Percorso del file ldf del database*>  
 
     -   **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
 
@@ -362,7 +362,7 @@ ms.locfileid: "65498682"
 
     -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:** <*FQDN del server del punto di connessione del servizio*>  
+    -   **Valori:**  <*FQDN del server del punto di connessione del servizio*>  
 
     -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
 
@@ -390,7 +390,7 @@ ms.locfileid: "65498682"
 
     -   **Richiesto:** obbligatorio quando **UseProxy** è uguale a 1  
 
-    -   **Valori:** <*Numero della porta*>  
+    -   **Valori:**  <*Numero della porta*>  
 
     -   **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
 
@@ -421,7 +421,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
+    -   **Valori:**  <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
 
     -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
 
@@ -429,7 +429,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Codice del sito*>  
+    -   **Valori:**  <*Codice del sito*>  
 
     -   **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia.  
 
@@ -437,7 +437,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Nome del sito*>  
+    -   **Valori:**  <*Nome del sito*>  
 
     -   **Dettagli:** Specifica il nome del sito.  
 
@@ -445,7 +445,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Percorso di installazione di Configuration Manager*>
+    -   **Valori:**  <*Percorso di installazione di Configuration Manager*>
 
     -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
 
@@ -453,7 +453,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*FQDN del provider SMS*>  
+    -   **Valori:**  <*FQDN del provider SMS*>  
 
     -   **Dettagli:** Specifica il nome FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
 
@@ -473,7 +473,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
+    -   **Valori:**  <*Percorso dei file dei prerequisiti di installazione*>  
 
     -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
 
@@ -507,7 +507,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** < *FQDN del server del sito del punto di gestione*>  
+    -   **Valori:**  < *FQDN del server del sito del punto di gestione*>  
 
     -   **Dettagli:** Specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di gestione.  
 
@@ -523,7 +523,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*FQDN del server del sito del punto di distribuzione*>  
+    -   **Valori:**  <*FQDN del server del sito del punto di distribuzione*>  
 
     -   **Dettagli:** Specifica il protocollo da usare per il punto di distribuzione.  
 
@@ -605,7 +605,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Nome dell'istanza di SQL Server*>  
+    -   **Valori:**  <*Nome dell'istanza di SQL Server*>  
 
     -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospiterà il database del sito.  
 
@@ -613,7 +613,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
+    -   **Valori:**  <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
 
     -   **Dettagli:** specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito primario.  
 
@@ -624,7 +624,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Numero della porta SSB*>  
+    -   **Valori:**  <*Numero della porta SSB*>  
 
     -   **Dettagli:** specifica la porta SSB usata da SQL Server. SQL Server Service Broker è in genere configurato per l'uso della porta TCP 4022, ma è possibile configurare un'altra porta.  
 
@@ -632,7 +632,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Percorso del file mdb del database*>  
+    -   **Valori:**  <*Percorso del file mdb del database*>  
 
     -   **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
 
@@ -640,7 +640,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Percorso del file ldf del database*>  
+    -   **Valori:**  <*Percorso del file ldf del database*>  
 
     -   **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
 
@@ -650,7 +650,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*FQDN del sito di amministrazione centrale*>  
+    -   **Valori:**  <*FQDN del sito di amministrazione centrale*>  
 
     -   **Dettagli:** specifica il sito di amministrazione centrale a cui si collega il sito primario quando viene aggiunto alla gerarchia di Configuration Manager. Durante l'installazione, specificare il sito di amministrazione centrale.  
 
@@ -658,7 +658,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Intervallo*>  
+    -   **Valori:**  <*Intervallo*>  
 
     -   **Dettagli:** Specifica l'intervallo (in minuti) tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato dall'utente per il valore **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
 
@@ -666,7 +666,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Timeout*>  
+    -   **Valori:**  <*Timeout*>  
 
          Un valore tra **0** e **100**  
 
@@ -690,7 +690,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:** <*FQDN del server del punto di connessione del servizio*\>  
+    -   **Valori:**  <*FQDN del server del punto di connessione del servizio*\>  
 
     -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
 
@@ -718,7 +718,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** obbligatorio quando **UseProxy** è uguale a 1  
 
-    -   **Valori:** <*Numero della porta*>  
+    -   **Valori:**  <*Numero della porta*>  
 
     -   **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
 
@@ -785,7 +785,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Questa chiave è richiesta quando l'impostazione **DatabaseRecoveryOptions** ha il valore **40**.  
 
-    -   **Valori:** <*FQDN del sito di riferimento*>  
+    -   **Valori:**  <*FQDN del sito di riferimento*>  
 
     -   **Dettagli:** Specifica il sito primario di riferimento usato dal sito di amministrazione centrale per il ripristino dei dati globali se il backup del database è antecedente al periodo di memorizzazione del rilevamento delle modifiche o se il sito viene ripristinato senza backup.  
 
@@ -797,7 +797,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Percorso del set di backup del server del sito*>  
+    -   **Valori:**  <*Percorso del set di backup del server del sito*>  
 
     -   **Dettagli:** Specifica il percorso per il set di backup del server del sito. Questa chiave è facoltativa quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **2**. Specificare un valore affinché la chiave **SiteServerBackupLocation** ripristini il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
 
@@ -805,7 +805,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** questa chiave è richiesta quando si configura il valore **1** o **4** per la chiave **ServerRecoveryOptions** e si configura il valore **10** per la chiave **DatabaseRecoveryOptions**.  
 
-    -   **Valori:** <*Percorso del set di backup del database del sito*>  
+    -   **Valori:**  <*Percorso del set di backup del database del sito*>  
 
     -   **Dettagli:** Specifica il percorso del set di backup del database del sito.  
 
@@ -815,7 +815,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
+    -   **Valori:**  <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
 
     -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
 
@@ -823,7 +823,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Codice del sito*>  
+    -   **Valori:**  <*Codice del sito*>  
 
     -   **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. Specificare il codice del sito usato dal sito prima dell'errore.
 
@@ -831,7 +831,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Nome del sito*>  
+    -   **Valori:**  <*Nome del sito*>  
 
     -   **Dettagli:** Specifica il nome del sito.  
 
@@ -839,7 +839,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Percorso di installazione di Configuration Manager*>  
+    -   **Valori:**  <*Percorso di installazione di Configuration Manager*>  
 
     -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
 
@@ -847,7 +847,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*FQDN del provider SMS*>  
+    -   **Valori:**  <*FQDN del provider SMS*>  
 
     -   **Dettagli:** specifica l'FQDN del server che ospita il provider SMS. Specificare il server che ospitava il provider SMS prima dell'errore.  
 
@@ -869,7 +869,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
+    -   **Valori:**  <*Percorso dei file dei prerequisiti di installazione*>  
 
     -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
 
@@ -905,7 +905,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Nome dell'istanza di SQL Server*>  
+    -   **Valori:**  <*Nome dell'istanza di SQL Server*>  
 
     -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospita il database del sito. Specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.  
 
@@ -913,7 +913,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
+    -   **Valori:**  <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
 
     -   **Dettagli:** Specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.  
 
@@ -924,7 +924,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Numero della porta SSB*>  
+    -   **Valori:**  <*Numero della porta SSB*>  
 
     -   **Dettagli:** specifica la porta SSB usata da SQL Server. SSB è in genere configurato per usare la porta TCP 4022. Specificare la stessa porta SSB usata prima dell'errore.  
 
@@ -932,7 +932,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Percorso del file mdb del database*>  
+    -   **Valori:**  <*Percorso del file mdb del database*>  
 
     -   **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
 
@@ -940,7 +940,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Percorso del file ldf del database*>  
+    -   **Valori:**  <*Percorso del file ldf del database*>  
 
     -   **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
 
@@ -962,7 +962,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:** <*FQDN del server del punto di connessione del servizio*>  
+    -   **Valori:**  <*FQDN del server del punto di connessione del servizio*>  
 
     -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
 
@@ -990,7 +990,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:** <*Numero della porta*>  
+    -   **Valori:**  <*Numero della porta*>  
 
     -   **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
 
@@ -1003,7 +1003,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*RecoverPrimarySite*>  
+    -   **Valori:**  <*RecoverPrimarySite*>  
 
     -   **Dettagli:** Ripristina un sito primario.  
 
@@ -1057,7 +1057,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Percorso del set di backup del server del sito*>  
+    -   **Valori:**  <*Percorso del set di backup del server del sito*>  
 
     -   **Dettagli:**  
 
@@ -1067,7 +1067,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** la chiave è richiesta quando si configura il valore **1** o **4** per la chiave **ServerRecoveryOptions** e il valore **10** per la chiave **DatabaseRecoveryOptions**.  
 
-    -   **Valori:** <*Percorso del set di backup del database del sito*>  
+    -   **Valori:**  <*Percorso del set di backup del database del sito*>  
 
     -   **Dettagli:** Specifica il percorso del set di backup del database del sito.  
 
@@ -1085,7 +1085,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Codice del sito*>  
+    -   **Valori:**  <*Codice del sito*>  
 
     -   **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. Specificare il codice del sito usato dal sito prima dell'errore.
 
@@ -1093,7 +1093,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Nome del sito*>  
+    -   **Valori:**  <*Nome del sito*>  
 
     -   **Dettagli:** Specifica il nome del sito.  
 
@@ -1101,7 +1101,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Percorso di installazione di Configuration Manager*>  
+    -   **Valori:**  <*Percorso di installazione di Configuration Manager*>  
 
     -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
 
@@ -1109,7 +1109,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*FQDN del provider SMS*>  
+    -   **Valori:**  <*FQDN del provider SMS*>  
 
     -   **Dettagli:** specifica l'FQDN del server che ospita il provider SMS. Specificare il server che ospitava il provider SMS prima dell'errore. Dopo l'installazione iniziale, configurare altri provider SMS per il sito. Per altre informazioni sul provider SMS, vedere [Pianificare per il provider SMS](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
@@ -1129,7 +1129,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
+    -   **Valori:**  <*Percorso dei file dei prerequisiti di installazione*>  
 
     -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
 
@@ -1165,7 +1165,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Nome dell'istanza di SQL Server*>  
+    -   **Valori:**  <*Nome dell'istanza di SQL Server*>  
 
     -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospita il database del sito. Specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.  
 
@@ -1173,7 +1173,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>
+    -   **Valori:**  <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>
 
     -   **Dettagli:**  
 
@@ -1186,7 +1186,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Sì  
 
-    -   **Valori:** <*Numero della porta SSB*>  
+    -   **Valori:**  <*Numero della porta SSB*>  
 
     -   **Dettagli:** specifica la porta SSB usata da SQL Server. In genere, SSB è configurato per usare la porta TCP 4022. Specificare la stessa porta SSB usata prima dell'errore.  
 
@@ -1194,7 +1194,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Percorso del file mdb del database*>  
+    -   **Valori:**  <*Percorso del file mdb del database*>  
 
     -   **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
 
@@ -1202,7 +1202,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Percorso del file ldf del database*>  
+    -   **Valori:**  <*Percorso del file ldf del database*>  
 
     -   **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
 
@@ -1212,7 +1212,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** Visualizzare i dettagli.  
 
-    -   **Valori:** <*Codice del sito per il sito di amministrazione centrale*>  
+    -   **Valori:**  <*Codice del sito per il sito di amministrazione centrale*>  
 
     -   **Dettagli:** specifica il sito di amministrazione centrale a cui si collega il sito primario quando viene aggiunto alla gerarchia di Configuration Manager. Questa impostazione è necessaria se il sito primario era collegato a un sito di amministrazione centrale prima dell'errore. Specificare il codice del sito usato dal sito di amministrazione centrale prima dell'errore.  
 
@@ -1220,7 +1220,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Intervallo*>  
+    -   **Valori:**  <*Intervallo*>  
 
     -   **Dettagli:** Specifica l'intervallo (in minuti) tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato per **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
 
@@ -1228,7 +1228,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** No  
 
-    -   **Valori:** <*Timeout*>  
+    -   **Valori:**  <*Timeout*>  
 
     -   **Dettagli:** Specifica il valore di timeout massimo (in minuti) per la connessione di un sito primario al sito di amministrazione centrale. Se ad esempio un sito primario non riesce a connettersi al sito di amministrazione centrale, tale sito primario proverà nuovamente a connettersi al sito di amministrazione centrale in base al valore **CASRetryInterval** finché non viene raggiunto il periodo di **WaitForCASTimeout**. È possibile specificare un valore compreso tra **0** e **100**.  
 
@@ -1250,7 +1250,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:** <*FQDN del server del punto di connessione del servizio*>  
+    -   **Valori:**  <*FQDN del server del punto di connessione del servizio*>  
 
     -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
 
@@ -1278,6 +1278,6 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:** <*Numero della porta*>  
+    -   **Valori:**  <*Numero della porta*>  
 
     -   **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
