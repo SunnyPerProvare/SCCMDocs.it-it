@@ -11,19 +11,19 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2980cef8a39f790dbb94ab85fa025eeb04f4f996
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 8214793cb724f029892de40bc1191cdc25ed0ec5
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62286903"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678640"
 ---
 # <a name="hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>Soluzione MDM ibrida con Configuration Manager e Intune
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 > [!Important]  
-> A partire dal 14 agosto 2018, la gestione ibrida dei dispositivi mobili è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Inizia con la versione del servizio Intune 1902 prevista alla fine di febbraio 2019, i nuovi clienti non è possibile creare una nuova connessione ibrida. 
+> A partire dal 14 agosto 2018, la gestione ibrida dei dispositivi mobili è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). A partire dalla versione 1902 del servizio Intune, prevista per la fine di febbraio 2019, i nuovi clienti non possono creare una nuova connessione ibrida. 
 > <!--Intune feature 2683117-->  
 > Dopo il lancio in Azure oltre un anno fa, sono state aggiunte a Intune centinaia di nuove funzionalità del servizio leader di settore e richieste dai clienti. Il servizio offre ora molte più funzionalità di quelle offerte nella gestione di dispositivi mobili (MDM) ibrida. Intune in Azure offre un'esperienza amministrativa più integrata e semplificata per le esigenze di mobilità aziendale.
 > 
@@ -88,16 +88,14 @@ La soluzione MDM ibrida supporta le funzionalità di gestione seguenti nei dispo
 
 -   Raccogliere l'inventario software usando i report incorporati  
 
-Per informazioni sulle nuove funzionalità disponibili per il software MDM ibrido, vedere [What's new in hybrid mobile device management](/sccm/mdm/understand/whats-new-in-hybrid-mobile-device-management) (Novità della gestione di dispositivi mobili ibrida).
-
 
 
 ## <a name="hybrid-mdm-enrollment"></a>Registrazione della soluzione MDM ibrida
 
 Per introdurre i dispositivi nella gestione ibrida, i dispositivi devono essere registrati nel servizio. La modalità di registrazione dei dispositivi varia a seconda del tipo di dispositivo in uso, della proprietà e del livello di gestione necessario.
 
-- **"Bring your own device" (BYOD)**: Gli utenti registrano i loro telefoni personali, Tablet o PC  
+- **"Bring your own device" (BYOD)** : Gli utenti registrano i loro telefoni personali, Tablet o PC  
 
-- **Dispositivo dell'azienda (COD)**: Abilitare scenari di gestione come la cancellazione remota, i dispositivi condivisi o affinità utente per un dispositivo  
+- **Dispositivo dell'azienda (COD)** : Abilitare scenari di gestione come la cancellazione remota, i dispositivi condivisi o affinità utente per un dispositivo  
 
 - Se si usa [Exchange ActiveSync](/sccm/mdm/plan-design/device-enrollment-methods#mobile-device-management-with-exchange-activesync-and-configuration-manager), sia in locale che ospitato nel cloud, è possibile abilitare la gestione semplice con Intune, senza registrazione. I PC Windows possono essere anche gestiti tramite il [software client di Intune](/intune/deploy-use/manage-windows-pcs-with-microsoft-intune).

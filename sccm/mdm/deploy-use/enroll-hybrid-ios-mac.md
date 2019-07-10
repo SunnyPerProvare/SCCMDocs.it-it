@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6aef8f927a2c4d3cb3eb7fecc4970cb19cbb83ed
-ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
+ms.openlocfilehash: 6c6573ce4faf893e30eac070efd963dc7465e20e
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66748267"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678842"
 ---
 # <a name="set-up-ios-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la gestione dei dispositivi iOS ibrido con Microsoft Intune e System Center Configuration Manager
 
@@ -73,9 +73,9 @@ Dopo aver completato la configurazione occorre informare gli utenti su come regi
 - Dispositivi registrati con un [account del manager di registrazione dispositivi](enroll-devices-with-device-enrollment-manager.md)
 
 ### <a name="to-enable-enrollment-restrictions"></a>Per abilitare le restrizioni di registrazione
-1.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager andare a **Servizi cloud** > **Sottoscrizioni a Microsoft Intune**.
-2.  Nella scheda **Home** nel gruppo **Sottoscrizione** fare clic su **Configura piattaforme** > **iOS**.
-3.  Scegliere **Blocca dispositivi di proprietà personale** per limitare la registrazione ai dispositivi di proprietà dell'azienda.
+1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager andare a **Servizi cloud** > **Sottoscrizioni a Microsoft Intune**.
+2. Nella scheda **Home** nel gruppo **Sottoscrizione** fare clic su **Configura piattaforme** > **iOS**.
+3. Scegliere **Blocca dispositivi di proprietà personale** per limitare la registrazione ai dispositivi di proprietà dell'azienda.
 
 > [!div class="button"]
 > [< Passaggio precedente](create-service-connection-point.md)  [Passaggio successivo >](set-up-additional-management.md)

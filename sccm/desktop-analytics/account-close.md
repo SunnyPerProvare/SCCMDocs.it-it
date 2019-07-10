@@ -2,7 +2,7 @@
 title: Come chiudere l'account
 titleSuffix: Configuration Manager
 description: Come rimuovere Analitica Desktop dall'account di Azure
-ms.date: 06/11/2019
+ms.date: 07/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 805cb79a1986457f04b11fa5f99b30ec098be99b
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: e2b1c893204366581eacd0f8e953cb2a6fd0d1a4
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159201"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676179"
 ---
 # <a name="how-to-close-your-account"></a>Come chiudere l'account
 
@@ -31,7 +31,7 @@ Il primo passaggio è necessario contattare il supporto tecnico Microsoft. Aprir
 
 ## <a name="delete-the-solution"></a>Eliminare la soluzione
 
-1. Accedi per il [portale di Azure](https://portal.azure.com) come utente con il **amministratore società** ruolo.
+1. Accedi per il [portale di Azure](https://portal.azure.com) come utente con il **amministratore globale** ruolo.
 
 1. Eseguire la ricerca nella **tutte le risorse** per il nome dell'area di lavoro Desktop Analitica. Questo nome è ciò che è stato creato durante l'iscrizione per il servizio.
 
@@ -44,7 +44,7 @@ I dati di Analitica Desktop ormai base i criteri di conservazione dei dati per l
 
 ## <a name="remove-user-and-app-access"></a>Rimuovere l'accesso utente e app
 
-1. Accedi per il [portale di Azure](https://portal.azure.com) come utente con il **amministratore società** ruolo. Passare a **Azure Active Directory**.
+1. Accedi per il [portale di Azure](https://portal.azure.com) come utente con il **amministratore globale** ruolo. Passare a **Azure Active Directory**.
 
 1. Nelle **ruoli e gli amministratori**, cercare il **amministratore Desktop Analitica** ruolo. Rimuovere i relativi membri.
 

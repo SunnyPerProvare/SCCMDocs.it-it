@@ -2,7 +2,7 @@
 title: Connettere Configuration Manager
 titleSuffix: Configuration Manager
 description: Informazioni di Guida per la connessione di Configuration Manager con Desktop Analitica.
-ms.date: 06/13/2019
+ms.date: 07/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 098c83678585984bbe3dbeddf167e24116afd86b
-ms.sourcegitcommit: 3a3f40f3d39cbecfb9219a64c0185ea4b2ef9671
+ms.openlocfilehash: f24161b61c796f9c1605a61656af0eb91f225067
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67562017"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676058"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Come connettere Configuration Manager con Desktop Analitica
 
@@ -79,7 +79,7 @@ Utilizzare questa procedura per connettere Configuration Manager a Desktop Anali
     Selezionare **Accedi** . Dopo l'autenticazione in Azure, nella pagina viene visualizzato il **Nome del tenant di Azure AD** come riferimento.
         
     > [!Note]  
-    > Completare questo passaggio come un **amministratore società**. Queste credenziali non vengono memorizzate in Configuration Manager. Questo utente tipo non richiede autorizzazioni in Configuration Manager e non deve necessariamente essere lo stesso account che esegue la procedura guidata per i servizi di Azure.  
+    > Completare questo passaggio come un **amministratore globale**. Queste credenziali non vengono memorizzate in Configuration Manager. Questo utente tipo non richiede autorizzazioni in Configuration Manager e non deve necessariamente essere lo stesso account che esegue la procedura guidata per i servizi di Azure.  
 
     Selezionare **OK** per creare l'app Web in Azure AD e chiudere la finestra di dialogo Crea un'applicazione server. Nella finestra di dialogo App Server, selezionare **OK**. Quindi selezionare **successivo** nella pagina App della procedura guidata servizi di Azure.  
 

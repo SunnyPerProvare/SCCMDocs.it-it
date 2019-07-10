@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e694b81943dda937f1d95765f75f182e072bc7da
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: b999dddc048c1afe0dd4212ed9b99ebc9c991ff0
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62224738"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678848"
 ---
 # <a name="how-to-create-pfx-certificate-profiles-by-importing-certificate-details"></a>Creare profili certificato PFX importando i dettagli dei certificati
 
@@ -70,10 +70,10 @@ Per importare un certificato PFX, è necessario distribuire uno script Crea PFX 
 I certificati importati vengono distribuiti in seguito ai dispositivi registrati.
 
 1. Nella pagina **Certificato PFX** della **Creazione guidata profilo certificato** specificare dove il provider di archiviazione delle chiavi dispositivo:
-    -   **Installa in TPM (Trusted Platform Module) se presente**  
-    -   **Installa in TPM (Trusted Platform Module) in caso di errore** 
-    -   **Installa in Windows Hello for Business oppure genera errore** 
-    -   **Installa nel provider di archiviazione chiavi software** 
+    - **Installa in TPM (Trusted Platform Module) se presente**  
+    - **Installa in TPM (Trusted Platform Module) in caso di errore** 
+    - **Installa in Windows Hello for Business oppure genera errore** 
+    - **Installa nel provider di archiviazione chiavi software** 
 2. Fare clic su **Avanti**. 
 3. Nella pagina **Piattaforme supportate** della procedura guidata scegliere le piattaforme per dispositivi supportate e quindi fare clic su **Avanti**.
 
@@ -89,9 +89,9 @@ Per distribuire uno script Crea PFX, usare [Configuration Manager SDK](http://go
 
 Lo script di creazione PFX aggiunto in Configuration Manager 2012 SP2 aggiunge una classe SMS_ClientPfxCertificate all'SDK. Questa classe include i metodi seguenti:  
 
-    -   `ImportForUser`  
+-   `ImportForUser`  
 
-    -   `DeleteForUser`  
+-   `DeleteForUser`  
 
 L'esempio seguente importa le credenziali in un profilo certificato PFX.
 

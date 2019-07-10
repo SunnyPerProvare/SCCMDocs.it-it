@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 62db216d2047ee0272c6b3fa226493b5e8af5f84
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 50d79da3ab4e7ace9a682baaa5cfd8d2bdbdce10
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62256486"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678881"
 ---
 # <a name="manage-access-to-company-resource-based-on-device-network-and-application-risk"></a>Gestire l'accesso alle risorse aziendali in base ai rischi per dispositivi, rete e applicazioni
 
@@ -118,8 +118,8 @@ Rilevare le minacce alla rete, ad esempio attacchi di tipo man-in-the-middle, e 
 
 Per implementare questa soluzione, seguire questa procedura:  
 
-1.  [Configurare la sottoscrizione con la protezione dalle minacce mobili Lookout](set-up-your-subscription-with-lookout.md)
-2.  [Abilitare la connessione MTP di Lookout in Intune](enable-lookout-connection-in-intune.md)
+1. [Configurare la sottoscrizione con la protezione dalle minacce mobili Lookout](set-up-your-subscription-with-lookout.md)
+2. [Abilitare la connessione MTP di Lookout in Intune](enable-lookout-connection-in-intune.md)
 3.  [Configurare e distribuire l'app Lookout for Work](configure-and-deploy-lookout-for-work-apps.md)
-4.  [Configurare i criteri di conformità](enable-device-threat-protection-rule-compliance-policy.md)
-5.  [Risoluzione dei problemi di integrazione di Lookout](troubleshoot-lookout-integration.md)
+4. [Configurare i criteri di conformità](enable-device-threat-protection-rule-compliance-policy.md)
+5. [Risoluzione dei problemi di integrazione di Lookout](troubleshoot-lookout-integration.md)

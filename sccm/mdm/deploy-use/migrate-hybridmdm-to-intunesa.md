@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: 1dd696ce-3e46-4dfa-a76d-592fe0f0320e
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2b62362bfcc9a76e407e9c0124306f83ac4a782
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: e3adbb2f7bd75921f45c9c6d5462bdf04deb8c26
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62282086"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678238"
 ---
 # <a name="migrate-hybrid-mdm-users-and-devices-to-intune-standalone"></a>Eseguire la migrazione di dispositivi e utenti dalla soluzione MDM ibrida alla versione autonoma di Intune
 
@@ -32,7 +32,7 @@ Avviare la migrazione alla versione autonoma di Intune usando un approccio in pi
 
 Per altre informazioni, vedere gli articoli seguenti:    
   
-1.  [Importare i dati di Configuration Manager in Microsoft Intune](migrate-import-data.md)   
+1. [Importare i dati di Configuration Manager in Microsoft Intune](migrate-import-data.md)   
 
     Strumento Intune Data Importer:  
 
@@ -46,7 +46,7 @@ Per altre informazioni, vedere gli articoli seguenti:
 
     Questo passaggio è facoltativo. Può consentire di risparmiare tempo automatizzando il processo di ricreazione degli oggetti da Configuration Manager a Intune.  
 
-2.  [Preparare Intune per la migrazione degli utenti](migrate-prepare-intune.md)    
+2. [Preparare Intune per la migrazione degli utenti](migrate-prepare-intune.md)    
 
     - Convalidare gli oggetti importati da Configuration Manager  
 
@@ -58,11 +58,11 @@ Per altre informazioni, vedere gli articoli seguenti:
 
     Dopo aver completato i passaggi e avviare la migrazione a Intune autonomo, non vi è alcun impatto significativo per gli utenti.   
 
-3.  [Modificare l'autorità MDM per utenti specifici (autorità MDM mista)](migrate-mixed-authority.md)    
+3. [Modificare l'autorità MDM per utenti specifici (autorità MDM mista)](migrate-mixed-authority.md)    
 
     Configurare un'autorità MDM mista nello stesso tenant. Selezionare alcuni utenti da gestire in Intune e continuare a gestire tutti gli altri dispositivi con la soluzione MDM ibrida. Verificare che Intune funzioni nei dispositivi per un piccolo subset di utenti prima di iniziare la migrazione di altri utenti.   
 
-4.  [Modificare l'autorità MDM scegliendo la versione autonoma di Intune](change-mdm-authority.md)     
+4. [Modificare l'autorità MDM scegliendo la versione autonoma di Intune](change-mdm-authority.md)     
 
     Modificare l'autorità MDM a livello di tenant da Configuration Manager a Intune. Verrà eseguita la migrazione alla versione autonoma di Intune di tutti gli utenti e i dispositivi rimanenti. Dopo avere testato accuratamente la funzionalità di Intune nel passaggio precedente e aver eseguito la migrazione di tutti gli utenti o della maggior parte di essi, modificare l'autorità MDM a livello di tenant.
 

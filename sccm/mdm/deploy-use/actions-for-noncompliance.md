@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cbd996629d3b312febd271757aff69faf5371c64
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 4d5814895ba2829a1d4238581d85f955816e4058
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62234008"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678695"
 ---
 # <a name="set-up-actions-for-non-compliance"></a>Configurare azioni per la mancata conformità
 
@@ -101,7 +101,7 @@ Configuration Manager offre alcuni modelli di messaggio di posta elettronica, ma
     b. **Altri destinatari (tramite posta elettronica)**  
 
     c. **Selezionare il modello di messaggio:** Scegliere un modello di posta elettronica predefinito o un modello personalizzato creato.  
-    
+
     > [!TIP]   
     > È anche possibile aggiungere un nuovo modello di messaggio di posta elettronica durante l'aggiunta dell'azione **Invia un messaggio di posta elettronica all'utente finale** facendo clic su **Nuovo** nella pagina **Aggiungi azione**.  
 

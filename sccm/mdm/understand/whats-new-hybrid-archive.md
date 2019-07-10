@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78926fb271bf1663dbd497f1894e3b4acbffd08b
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: 7821951461fc03598e91f22a54a49fd3b0c0cf6e
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194631"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678635"
 ---
 # <a name="past-hybrid-features-with-system-center-configuration-manager-and-microsoft-intune"></a>Funzionalità ibride precedenti con System Center Configuration Manager e Microsoft Intune
 
@@ -460,14 +460,14 @@ Non sono state introdotte nuove funzionalità ibride nella versione di luglio 20
 Le seguenti funzionalità, che in precedenza erano disponibili nelle versioni di Configuration Manager Technical Preview, sono ora disponibili nelle distribuzioni ibride con Intune e Configuration Manager (Current Branch) versione 1606.
 
 * Trovare, gestire e distribuire app di Windows Store per le aziende per i dispositivi Windows 10 dalla console di Configuration Manager ([1604](#new-in-1604-technical-preview))
-*   Impostazione di Smart Lock per dispositivi Android ([1604](#new-in-1604-technical-preview))
-*   VPN attivata dall'app per dispositivi Windows 10 ([1605](#new-in-1605-technical-preview))
-*   Nuova esperienza per le azioni dei dispositivi remoti ([1605](#new-in-1605-technical-preview))
-*   App di Windows Store per le aziende ([1605](#new-in-1605-technical-preview))
-*   Miglioramenti generali per le app acquistate con Volume Purchase Program ([1605](#new-in-1605-technical-preview))
-*   Windows Information Protection (WIP) ([1605](#new-in-1605-technical-preview))
-*   Predichiarazione dei dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS ([1605](#new-in-1605-technical-preview))
-*   Categorizzazione automatica dei dispositivi in raccolte ([1606](#new-in-1606-technical-preview))
+* Impostazione di Smart Lock per dispositivi Android ([1604](#new-in-1604-technical-preview))
+* VPN attivata dall'app per dispositivi Windows 10 ([1605](#new-in-1605-technical-preview))
+* Nuova esperienza per le azioni dei dispositivi remoti ([1605](#new-in-1605-technical-preview))
+* App di Windows Store per le aziende ([1605](#new-in-1605-technical-preview))
+* Miglioramenti generali per le app acquistate con Volume Purchase Program ([1605](#new-in-1605-technical-preview))
+* Windows Information Protection (WIP) ([1605](#new-in-1605-technical-preview))
+* Predichiarazione dei dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS ([1605](#new-in-1605-technical-preview))
+* Categorizzazione automatica dei dispositivi in raccolte ([1606](#new-in-1606-technical-preview))
 
 Per informazioni sulle nuove funzionalità, vedere la documentazione relativa alla versione di Technical Preview specificata.
 
@@ -740,9 +740,9 @@ Il supporto per System Center 2012 Configuration Manager SP1 e System Center 201
 Se si esegue una distribuzione ibrida con Configuration Manager 2012 SP1 o R2 RTM, è consigliabile eseguire l'aggiornamento a Configuration Manager (Current Branch) o al Service Pack supportato più recente per Configuration Manager 2012 (R2 SP1 o SP2) prima del 10 aprile 2017 per evitare l'interruzione del servizio.
 
 Risorse aggiuntive:
--   [Eseguire l'aggiornamento a System Center Configuration Manager (Current Branch)](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)
--   [Pianificazione dell'aggiornamento a System Center 2012 R2 Configuration Manager SP1](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningR2SP1Upgrade)
--   [Pianificazione dell'aggiornamento a System Center 2012 Configuration Manager SP2](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningSP2Upgrade)
+- [Eseguire l'aggiornamento a System Center Configuration Manager (Current Branch)](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)
+- [Pianificazione dell'aggiornamento a System Center 2012 R2 Configuration Manager SP1](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningR2SP1Upgrade)
+- [Pianificazione dell'aggiornamento a System Center 2012 Configuration Manager SP2](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningSP2Upgrade)
 
 ### <a name="windows-phone-8-company-portal-upload-deprecated"></a>Il caricamento del portale aziendale per Windows Phone 8 è deprecato
 *25 ottobre 2016*
