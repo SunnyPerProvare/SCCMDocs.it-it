@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43a5e1a4bf3283c185d612cc31428a23a4e12061
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: b0daf2943b0859227d08069be9c9da69165d5d1a
+ms.sourcegitcommit: de3c86077bbf91b793e94e1f60814df18da11bab
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67678107"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726235"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Analitica Desktop?
 
@@ -94,7 +94,7 @@ Per usare Desktop Analitica, assicurarsi che l'ambiente soddisfi i prerequisiti 
     >
     > Desktop Analitica è progettato per lo scenario di aggiornamento supporto il posto migliore. Se è necessario apportare modifiche significative, ad esempio dall'architettura a 32 bit a 64 bit, usare uno scenario di creazione dell'immagine. Insights Analitica desktop sono ancora utili in questi scenari di distribuzione del sistema operativo classici, ma è possibile ignorare le istruzioni specifiche aggiornamento sul posto. Per altre informazioni, vedere [scenari di distribuzione di sistemi operativi aziendali con Configuration Manager](/sccm/osd/deploy-use/scenarios-to-deploy-enterprise-operating-systems).
 
-- Dati di diagnostica di Windows. Per altre informazioni, vedere gli articoli seguenti:  
+- Dati di diagnostica di Windows. Per altre informazioni, vedere i seguenti articoli:  
 
     - [Livelli di dati di diagnostica](/sccm/desktop-analytics/enable-data-sharing#diagnostic-data-levels)  
 
@@ -103,7 +103,7 @@ Per usare Desktop Analitica, assicurarsi che l'ambiente soddisfi i prerequisiti 
 - Connettività di rete dai dispositivi al cloud pubblico Microsoft. Per altre informazioni, vedere [come abilitare la condivisione dei dati](/sccm/desktop-analytics/enable-data-sharing)  
 
 
-### <a name="licensing"></a>Licenza
+### <a name="licensing"></a>Licenze
 
 Analitica desktop richiede una delle seguenti sottoscrizioni licenza:
 
@@ -120,4 +120,4 @@ Analitica desktop richiede una delle seguenti sottoscrizioni licenza:
 
 L'esercitazione seguente offre una Guida dettagliata di introduzione a Desktop Analitica e Configuration Manager:  
 
-- [Distribuire Windows 10 in un progetto pilota](/sccm/desktop-analytics/tutorial-windows10)  
+- [Distribuire Windows 10 per contenuto pilota](/sccm/desktop-analytics/tutorial-windows10)  
