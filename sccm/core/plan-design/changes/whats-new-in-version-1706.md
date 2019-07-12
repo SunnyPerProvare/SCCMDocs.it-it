@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b9dcd7465265021d52e44d72c77172d4323144e
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 050122d6a1b799a30bd2c5a83ab261e92aaafabe
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67285767"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677212"
 ---
 # <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Novità della versione 1706 di System Center Configuration Manager
 
@@ -59,8 +59,8 @@ Sono stati aggiunti altri miglioramenti all'accessibilità per la console di Con
 ### <a name="improvements--for-sql-server-always-on-availability-groups"></a>Miglioramenti per i gruppi di disponibilità Always On di SQL Server
 <!-- 1352094 -->
 Con questa versione è ora possibile usare le repliche con commit asincrono nei gruppi di disponibilità Always On di SQL Server usati con Configuration Manager. Ciò significa che è possibile aggiungere repliche aggiuntive ai gruppi di disponibilità da usare come backup remoti, e quindi usarli in caso di ripristino di emergenza.  
-  -   Configuration Manager supporta l'uso della replica con commit asincrono per ripristinare la replica sincrona. Vedere le [opzioni di ripristino del database del sito](/sccm/core/servers/manage/recover-sites#site-database-recovery-options) nell'argomento Backup e ripristino per informazioni su come eseguire questa operazione.
-  -   Questa versione non supporta il failover per l'uso della replica con commit asincrono come database del sito.
+  - Configuration Manager supporta l'uso della replica con commit asincrono per ripristinare la replica sincrona. Vedere le [opzioni di ripristino del database del sito](/sccm/core/servers/manage/recover-sites#site-database-recovery-options) nell'argomento Backup e ripristino per informazioni su come eseguire questa operazione.
+  - Questa versione non supporta il failover per l'uso della replica con commit asincrono come database del sito.
 Per altre informazioni, vedere [Preparare l'uso di gruppi di disponibilità Always On](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database).
 
 ### <a name="update-reset-tool"></a>Strumento di reimpostazione dell'aggiornamento
@@ -118,25 +118,25 @@ La peer cache non usa l'account di accesso alla rete per autenticare le richiest
 In questa versione sono state aggiunte nuove impostazioni degli elementi di configurazione per i dispositivi Windows 10 registrati con Intune o gestiti in locale da Configuration Manager. Le impostazioni sono le seguenti:
 
 - **Password**
-    - Crittografia dispositivo
+  - Crittografia dispositivo
 - **Dispositivo**
-    - Modifica delle impostazioni dell'area (solo desktop)
-    - Modifica delle impostazioni di risparmio energia e sospensione
-    - Modifiche alle impostazioni della lingua
-    - Modifica dell'ora di sistema
-    - Modifica del nome dispositivo
+  - Modifica delle impostazioni dell'area (solo desktop)
+  - Modifica delle impostazioni di risparmio energia e sospensione
+  - Modifiche alle impostazioni della lingua
+  - Modifica dell'ora di sistema
+  - Modifica del nome dispositivo
 - **Store**
-    - Aggiorna automaticamente le app dallo Store
-    - Usa solo lo Store privato
-    - Avvio di app originate dallo Store
+  - Aggiorna automaticamente le app dallo Store
+  - Usa solo lo Store privato
+  - Avvio di app originate dallo Store
 - **Microsoft Edge**
-    - Blocca l'accesso ai flag Informazioni su
-    - Override del prompt SmartScreen
-    - Override del prompt SmartScreen per i file
-    - Indirizzo IP localhost WebRTC
-    - Motore di ricerca predefinito
-    - URL XML OpenSearch
-    - Homepages (desktop only) (Home page - solo desktop)
+  - Blocca l'accesso ai flag Informazioni su
+  - Override del prompt SmartScreen
+  - Override del prompt SmartScreen per i file
+  - Indirizzo IP localhost WebRTC
+  - Motore di ricerca predefinito
+  - URL XML OpenSearch
+  - Homepages (desktop only) (Home page - solo desktop)
 
 Per informazioni dettagliate su tutte le impostazioni per Windows 10, vedere [Come creare elementi di configurazione per dispositivi Windows 10 e Windows 8.1 gestiti senza il client di System Center Configuration Manager](/sccm/mdm/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client).
 

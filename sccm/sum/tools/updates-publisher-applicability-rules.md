@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 649c0a134f7ebc77c214801d30720f75b80d34ee
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 30200c9da2ea37ef0868db680d04fe6aae9fd314
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159467"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678076"
 ---
 # <a name="manage-applicability-rules-in-updates-publisher"></a>Gestire le regole di applicabilità in Updates Publisher
 
@@ -31,11 +31,13 @@ Le regole di applicabilità vengono gestite nell'**area di lavoro Regole**. Quan
 
 Nell'esempio seguente viene illustrato un set di regole contenente tre regole. La prima regola verifica che il file *MyFile* esista, mentre la seconda e terza regola verificano che la lingua del sistema operativo Windows sia l'inglese o il giapponese.
 
-    And  
-      File ‘\[PROGRAM\_FILES\] \\Microsoft\\MyFile’ exists  
-      Or  
-        Windows Language is English   
-        Windows Language is Japanese
+```
+And  
+  File ‘\[PROGRAM\_FILES\] \\Microsoft\\MyFile’ exists  
+  Or  
+    Windows Language is English   
+    Windows Language is Japanese
+```
 
 Tutti gli aggiornamenti richiedono almeno una regola di applicabilità. Per gli aggiornamenti in fase di importazione sono già attive regole di applicabilità. Quando si creano aggiornamenti personalizzati, è necessario aggiungere ad essi una o più regole. È possibile modificare ed espandere le regole per qualsiasi aggiornamento in Updates Publisher.
 

@@ -12,12 +12,12 @@ manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 339ad109eae4d54ff5f8e04e18f29c9e47e8930d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 246c690550711e15930987794a001ee870456d5a
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56121676"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677694"
 ---
 # <a name="capabilities-in-technical-preview-1608-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1608 per System Center Configuration Manager
 
@@ -48,7 +48,7 @@ Alle proprietà dei software di inventario è stato aggiunto un campo che consen
 
 ### <a name="filter-the-software-display"></a>Filtrare la visualizzazione del software
 Dopo aver definito le relazioni padre-figlio, è possibile filtrare la visualizzazione per mostrare solo i software padre o i software che non presentano relazioni definite. In questo modo vengono nascosti tutti i software impostati come figli di un altro software di inventario. A tale scopo, procedere nel seguente modo:
-   1.   Sulla barra di ricerca, scegliere **Aggiungi criteri**
+   1. Sulla barra di ricerca, scegliere **Aggiungi criteri**
    2. Selezionare **Software padre**, cambiare il valore dei criteri su **è vuoto** e quindi fare clic su **Cerca**.
 
 Ora vengono visualizzati solo i software padre o i software che non presentano relazioni definite. I software che sono soltanto elementi figlio di un altro titolo non vengono visualizzati.

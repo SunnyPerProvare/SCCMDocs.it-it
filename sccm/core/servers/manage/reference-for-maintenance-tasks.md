@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cc2e1783843f600f88b78e0db0cc6b8b8db0f55
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 24e76f9281158aa28e153efe9124ba2adf94a14d
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500992"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676384"
 ---
 # <a name="reference-for-maintenance-tasks-for-system-center-configuration-manager"></a>Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager
 
@@ -50,7 +50,7 @@ Questo argomento fornisce informazioni dettagliate su ognuna delle attività di 
 
 **Eliminare la cronologia di download del client obsoleti**: usare questa attività per eliminare i dati della cronologia relativi all'origine dei download usata dai client. Le informazioni sull'origine dei download consentono di popolare il dashboard [Origini dati del client](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard).  
 -  Sito di amministrazione centrale: non disponibile
--    **Sito primario**: abilitato
+-  **Sito primario**: abilitato
 -  Sito secondario: non disponibile
 
 **Elimina operazioni client obsolete**: usare questa attività per eliminare tutti i dati obsoleti per le operazioni client dal database del sito. Sono inclusi ad esempio i dati delle notifiche client obsolete o scadute come le richieste di download dei criteri computer o utente e i dati di Endpoint Protection come le richieste da un utente amministratore che i client ricerchino o scarichino le definizioni aggiornate.

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6efa58c2257730de0703d850b814f871684b72c6
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 20b50fcd54513ccd780a7da173766fb177bf5da7
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129035"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676123"
 ---
 # <a name="upgrade-the-long-term-servicing-branch-to-the-current-branch"></a>Aggiornare Long-Term Servicing Branch a Current Branch
 
@@ -28,7 +28,7 @@ Se si è dotati di un contratto Software Assurance (o di diritti di licenza simi
 
 Se si dispone di più siti, è sufficiente convertire il sito di livello superiore della gerarchia. Dopo aver convertito il sito di livello superiore:
 - I siti primari figlio vengono convertiti automaticamente.
--   È necessario aggiornare manualmente i siti secondari dalla console di Configuration Manager.
+- È necessario aggiornare manualmente i siti secondari dalla console di Configuration Manager.
 
 ## <a name="run-setup-to-convert-the-long-term-servicing-branch"></a>Eseguire il programma di installazione per convertire Long-Term Servicing Branch
 Nel sito di livello più alto della gerarchia è possibile eseguire l'installazione di Configuration Manager dal supporto di base originale e selezionare **Manutenzione sito**.  Quando viene visualizzata la pagina di gestione delle licenze, selezionare l'opzione Current Branch e completare la procedura guidata.

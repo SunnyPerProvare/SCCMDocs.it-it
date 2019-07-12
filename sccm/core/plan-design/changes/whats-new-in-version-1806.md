@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: deb27df76bb3ed6fc9c6338f302fcc612443cee9
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: 8560c34f1db76afcfe2e65eeaf8311b0a58cc926
+ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67251926"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67623459"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novità della versione 1806 di Configuration Manager (Current Branch)
 
@@ -176,7 +176,7 @@ Per altre informazioni, vedere [HTTP migliorato](/sccm/core/plan-design/hierarch
 
 ### <a name="azure-ad-device-identity"></a>Identità del dispositivo di Azure AD 
 <!--1358460-->
-Un dispositivo [aggiunto ad Azure AD](https://docs.microsoft.com/azure/active-directory/device-management-introduction#azure-ad-joined-devices) o un [dispositivo di Azure AD ibrido](https://docs.microsoft.com/azure/active-directory/device-management-introduction#hybrid-azure-ad-joined-devices) senza un utente di Azure AD connesso può comunicare in modo sicuro con il relativo sito assegnato. L'identità del dispositivo basata sul cloud è ora sufficiente per l'autenticazione con CMG e il punto di gestione.  
+Un dispositivo [aggiunto ad Azure AD](/azure/active-directory/devices/concept-azure-ad-join) o un [dispositivo di Azure AD ibrido](/azure/active-directory/devices/concept-azure-ad-join-hybrid) senza un utente di Azure AD connesso può comunicare in modo sicuro con il relativo sito assegnato. L'identità del dispositivo basata sul cloud è ora sufficiente per l'autenticazione con CMG e il punto di gestione.  
 
 Per altre informazioni, vedere [HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http).
 

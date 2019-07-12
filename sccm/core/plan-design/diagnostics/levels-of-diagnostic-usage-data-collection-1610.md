@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 777237ae657a83da3ff22b540914271b798c1016
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 193ad88be6766c085373185145429d8535655e61
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56121074"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677118"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1610-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1610
 
@@ -43,13 +43,13 @@ A partire dalla versione 1610, è possibile modificare il livello di raccolta da
 
 
 - Informazioni sull'installazione:
-    - Build, tipo di installazione, Language Pack, funzionalità abilitate  
+  - Build, tipo di installazione, Language Pack, funzionalità abilitate  
 
-    - Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti    
+  - Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti    
 
-    - Versione dello script post-aggiornamento
+  - Versione dello script post-aggiornamento
 
-    - Uso di Fast Ring di aggiornamento
+  - Uso di Fast Ring di aggiornamento
 
   - ***[Nuovo]*** Uso delle versioni non definitive, tipo di supporto di installazione, tipo Branch
 
@@ -90,7 +90,7 @@ A partire dalla versione 1610, è possibile modificare il livello di raccolta da
 - Uso di Network Discovery (abilitato o disabilitato)
 - Admin Console:
 
-     - Statistiche sulle connessioni della console (versione del sistema operativo, lingua, SKU e architettura, memoria di sistema, conteggio dei processori logici, ID del sito di connessione, versioni di .NET installate e Language Pack della console)    
+  - Statistiche sulle connessioni della console (versione del sistema operativo, lingua, SKU e architettura, memoria di sistema, conteggio dei processori logici, ID del sito di connessione, versioni di .NET installate e Language Pack della console)    
 
 - Versione SQL, livello Service Pack, edizione, ID delle regole di confronto e set di caratteri
 

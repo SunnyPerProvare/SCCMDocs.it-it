@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2fba1d6793b2b285cc9874de316bb2c435a526e8
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: f88334a9c330d3af298ec63b3d7baa56c9714647
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67252313"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676594"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparare l'uso di gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -100,7 +100,7 @@ Ogni membro di replica deve avere la configurazione seguente:
 
 - L'opzione **Secondario leggibile** deve essere impostata su **Sì**  
 
-- **Failover manuale** deve essere abilitato     
+- **Failover manuale** deve essere abilitato   
 
   > [!TIP]
   >  Configuration Manager supporta l'uso di repliche sincrone del gruppo di disponibilità se è stata scelta l'impostazione **Failover automatico**. Impostare **Failover manuale** quando:

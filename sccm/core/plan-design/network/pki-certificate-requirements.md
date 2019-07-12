@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0982c2096d835bc46d92ef473f5e9878657b22b2
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: cb6b3c800a3083caa3e053e920afc1367a311f67
+ms.sourcegitcommit: 9670e11316c9ec6e5f78cd70c766bbfdf04ea3f9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176948"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67818153"
 ---
 # <a name="pki-certificate-requirements-for-system-center-configuration-manager"></a>Requisiti dei certificati PKI per System Center Configuration Manager
 
@@ -43,12 +43,6 @@ Per informazioni sull'uso dei certificati CNG (Cryptography API: Next Generation
 > Nella maggior parte dei casi il passaggio ai certificati SHA-2 non interferisce con le operazioni. Per altre informazioni, vedere [Windows Enforcement of SHA1 certificates](http://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-sha1-certificates.aspx) (Imposizione Windows di certificati SHA1).
 
  Ad eccezione dei certificati client registrati da System Center Configuration Manager nei dispositivi mobili e nei computer Mac, dei certificati creati automaticamente da Microsoft Intune per la gestione dei dispositivi mobili e dei certificati installati da System Center Configuration Manager nei computer basati su AMT, è possibile usare qualsiasi PKI per creare, distribuire e gestire i certificati seguenti. In caso di uso di Servizi certificati Active Directory e dei modelli di certificato, tuttavia, questa soluzione PKI Microsoft facilita la gestione dei certificati. Usare la colonna **Modello di certificato Microsoft da usare** presente nelle seguenti tabelle per identificare il modello di certificato che più soddisfa i requisiti del certificato. Solo un'autorità di certificazione dell'organizzazione (enterprise) che esegue la versione Enterprise Edition o Datacenter Edition del sistema operativo del server, ad esempio Windows Server 2008 Enterprise e Windows Server 2008 Datacenter, può usare i certificati basati sul modello.  
-
-> [!IMPORTANT]
->  Se si usa un'autorità di certificazione dell'organizzazione (enterprise) e si usano i modelli di certificato, non usare i modelli della Versione 3. Questi modelli di certificato creano certificati incompatibili con System Center Configuration Manager. Usare invece i modelli della Versione 2 usando le seguenti istruzioni:  
-> 
-> - Per una CA su Windows Server 2012: Nella scheda **Compatibilità** delle proprietà del modello di certificato specificare **Windows Server 2003** per l'opzione **Autorità di certificazione** e **Windows XP/Server 2003** per l'opzione **Destinatario certificato**.  
->   -   Per una CA su Windows Server 2008: Quando si duplica un modello di certificato, mantenere la selezione predefinita **Windows Server 2003 Enterprise** quando viene richiesto dalla finestra di dialogo **Duplica modello**. Non selezionare **Windows Server 2008, Enterprise Edition**.  
 
  Usare le seguenti sezioni per visualizzare i requisiti del certificato.  
 

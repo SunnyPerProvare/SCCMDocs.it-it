@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e25d164680530b88670b2589d81231f8e649d1d1
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: f996aa1457fc8b49f914d0f0932836b5fcbd90b9
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122968"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676215"
 ---
 # <a name="install-and-upgrade-with-the-version-1606-baseline-media-for-system-center-configuration-manager"></a>Eseguire installazioni e aggiornamenti con il supporto di base della versione 1606 per System Center Configuration Manager
 
@@ -29,7 +29,7 @@ Il supporto di base è disponibile su DVD come parte di Microsoft System Center 
 
 Quando si usa il supporto di base della versione 1606, il sito che si installa o a cui si esegue l'aggiornamento è:
 - Un *sito Current Branch* equivalente a un sito installato in precedenza con il supporto di base della versione 1511 e quindi aggiornato alla versione 1606 con l'hotfix rollup 1606 (KB3186654).
--   Un *sito LTSB* equivalente al sito Current Branch che esegue la versione 1606 con l'hotfix rollup 1606 (KB3186654). Il supporto di base include già l'hotfix rollup.  Ma LTSB non supporta tutte le funzionalità e tutte le caratteristiche disponibili con Current Branch, come descritto in dettaglio in [Introduzione a Long-Term Servicing Branch di System Center Configuration Manager](introduction-to-the-ltsb.md).
+- Un *sito LTSB* equivalente al sito Current Branch che esegue la versione 1606 con l'hotfix rollup 1606 (KB3186654). Il supporto di base include già l'hotfix rollup.  Ma LTSB non supporta tutte le funzionalità e tutte le caratteristiche disponibili con Current Branch, come descritto in dettaglio in [Introduzione a Long-Term Servicing Branch di System Center Configuration Manager](introduction-to-the-ltsb.md).
 
 Se non si ha familiarità con i diversi rami di System Center Configuration Manager, vedere [Which branch of Configuration Manager should I use](which-branch-should-i-use.md) (Scelta del ramo di Configuration Manager da usare).
 
@@ -83,7 +83,7 @@ Quando si usa uno script automatico per installare un ramo con licenza, è neces
 Ad esempio, per installare una versione con licenza di Current Branch si usa:
 
   **Nome chiave: SABranchOptions**
-   -    **SAActive = 1**
+   - **SAActive = 1**
    - **CurrentBranch = 1**
 
 
@@ -100,7 +100,7 @@ Quando si usa il supporto di base della versione 1606 per installare un nuovo si
 
 - Durante l'installazione è necessario scegliere il ramo di Configuration Manager che si vuole installare specificando i dettagli del contratto Software Assurance.
 - Tutti i siti di una gerarchia devono eseguire lo stesso ramo. Non è supportata una gerarchia con una combinazione di LTSB e Current Branch in siti diversi.
--   Nuova installazione tramite script. Per altre informazioni, tornare a "Nuove opzioni di installazione tramite script" in questo articolo.
+- Nuova installazione tramite script. Per altre informazioni, tornare a "Nuove opzioni di installazione tramite script" in questo articolo.
 
 ## <a name="expand-a-stand-alone-primary-site"></a>Espandere un sito primario autonomo
 È possibile espandere un sito primario autonomo in cui è in esecuzione LTSB.  Il processo non è diverso rispetto a quello usato per un sito di Current Branch, con un'avvertenza:
@@ -114,7 +114,7 @@ Quando si esegue l'aggiornamento da System Center Configuration Manager 2012, us
 
 **Aggiornamento a Current Branch:**
 - Durante l'installazione è necessario scegliere Current Branch, specificando i dettagli del contratto Software Assurance.
--   Nuova installazione tramite script. Per altre informazioni, tornare a "Nuove opzioni di installazione tramite script" in questo articolo.
+- Nuova installazione tramite script. Per altre informazioni, tornare a "Nuove opzioni di installazione tramite script" in questo articolo.
 
 **Aggiornamento a LTSB:**  
 - Passaggi aggiuntivi da seguire nell'elenco di controllo pre-aggiornamento.

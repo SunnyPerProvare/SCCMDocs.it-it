@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23fbb29ba4676f6c7282e5337f691f88209e15e6
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.openlocfilehash: ee32d282bc04e6c1f97b12dedb8d69ccdcca8915
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551227"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677557"
 ---
 # <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1702 per System Center Configuration Manager
 
@@ -72,10 +72,10 @@ L'infrastruttura del sito e i client di Technical Preview e il dominio di Azure 
 
 ### <a name="set-up-configuration-manager-to-use-azure-ad"></a>Configurare Configuration Manager per l'uso di Azure AD
 Per usare Azure AD con Configuration Manager, è necessario quanto segue:
--   Sottoscrizione di Azure.
--   Azure AD con Domain Services (DS).
--   Sito di Configuration Manager eseguito in una macchina virtuale di Azure aggiunta ad Azure AD.
--   Client di Configuration Manager in esecuzione nello stesso ambiente di Azure AD.
+- Sottoscrizione di Azure.
+- Azure AD con Domain Services (DS).
+- Sito di Configuration Manager eseguito in una macchina virtuale di Azure aggiunta ad Azure AD.
+- Client di Configuration Manager in esecuzione nello stesso ambiente di Azure AD.
 
 Per configurare Azure AD Domain Services, vedere [Introduzione a Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/create-instance).
 
@@ -212,9 +212,9 @@ Nella finestra di dialogo **Proprietà** *\<nome tipo di distribuzione>* di un t
 
 ### <a name="try-it-out"></a>Procedura.
 
-1.  Nelle proprietà di un tipo di distribuzione di Configuration Manager scegliere la scheda **Comportamento di installazione**.
-2.  Scegliere **Aggiungi** per aggiungere uno o più nomi di file eseguibile che si vuole cercare. È anche possibile aggiungere un nome visualizzato per facilitare agli utenti l'identificazione delle applicazioni nell'elenco.
-3.  Se la distribuzione avrà scopo richiesto, nella distribuzione guidata del software è possibile scegliere **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione**.
+1. Nelle proprietà di un tipo di distribuzione di Configuration Manager scegliere la scheda **Comportamento di installazione**.
+2. Scegliere **Aggiungi** per aggiungere uno o più nomi di file eseguibile che si vuole cercare. È anche possibile aggiungere un nome visualizzato per facilitare agli utenti l'identificazione delle applicazioni nell'elenco.
+3. Se la distribuzione avrà scopo richiesto, nella distribuzione guidata del software è possibile scegliere **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione**.
 
 Se l'applicazione è stata distribuita come **Disponibile** e un utente finale tenta di installare un'applicazione, verrà richiesto di chiudere tutti i file eseguibili in esecuzione specificati, prima di poter procedere con l'installazione.
 

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3279ba7cd78ca6fc10ddb8662ac816679d01d7cf
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: 821f37f7c4b001fdf49d805dcdca2eef40cdce74
+ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194693"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67623417"
 ---
 # <a name="enable-third-party-updates"></a>Abilitare gli aggiornamenti di terze parti 
 
@@ -38,7 +38,7 @@ A partire dalla versione 1806, il nodo **Cataloghi di aggiornamenti software di 
 ## <a name="additional-requirements-when-the-sup-is-remote-from-the-top-level-site-server"></a>Requisiti aggiuntivi quando il punto di aggiornamento software è remoto rispetto al server del sito principale 
 
 1. Quando il punto di aggiornamento software è remoto, è necessario abilitarvi SSL. Ciò richiede un certificato di autenticazione server generato da un'autorità di certificazione interna o un provider pubblico.
-    - [Configurare SSL in WSUS](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#bkmk_2.5.ConfigSSL)
+    - [Configurare SSL in WSUS](/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#25-secure-wsus-with-the-secure-sockets-layer-protocol)
         - Quando si configura SSL in WSUS, tenere presente che alcuni dei servizi Web e delle directory virtuali sono sempre HTTP e non HTTPS. 
         - Configuration Manager scarica il contenuto di terze parti per gli aggiornamenti software dalla directory del contenuto WSUS tramite HTTP.   
     - [Configurare SSL nel punto di aggiornamento software](../get-started/install-a-software-update-point.md#configure-ssl-communications-to-wsus)

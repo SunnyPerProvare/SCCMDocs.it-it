@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 89ba5d63b1a033db49da73cc0df3fa0a41f2b696
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 31f47fa04275f2be4efa1558e1d816f74b05d369
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67285846"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677319"
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novità della versione 1702 di System Center Configuration Manager
 
@@ -50,14 +50,14 @@ Nella versione 1702 viene eliminato il supporto per i prodotti seguenti:
 
 ### <a name="improvements-for-in-console-search"></a>Miglioramenti per la ricerca nella console
 Di seguito sono riportati i miglioramenti apportati all'uso della funzionalità di ricerca nella console di Configuration Manager:
- - **Percorso oggetto:**  
+- **Percorso oggetto:**  
   Molti oggetti ora supportano una colonna denominata **Percorso oggetto**.  Se si include questa colonna nella visualizzazione dei risultati, è possibile vedere il percorso di ogni oggetto. Se, ad esempio, si esegue la ricerca delle app nel nodo Applicazioni e la ricerca viene eseguita anche nei sottonodi, nella colonna *Percorso oggetto* del riquadro dei risultati verrà visualizzato il percorso di ogni oggetto restituito.   
 
 - **Conservazione del testo della ricerca:**  
   Quando si immette testo nella casella di testo di ricerca e quindi si passa dalla ricerca in un sottonodo alla ricerca nel nodo corrente e viceversa, il testo digitato diventa permanente e rimane disponibile per una nuova ricerca senza che sia necessario immetterlo di nuovo.
 
 - **Mantenimento della decisione relativa alla ricerca nei sottonodi:**  
- L'opzione selezionata per l'esecuzione della ricerca nel *nodo corrente* o in *tutti i sottonodi* ora viene mantenuta quando si modifica il nodo usato. Con il nuovo comportamento non è necessario reimpostare costantemente questa opzione ogni volta che ci si sposta all'interno della console. Per impostazione predefinita, quando si apre la console è impostata l'opzione per l'esecuzione di ricerche solo nel nodo corrente.
+  L'opzione selezionata per l'esecuzione della ricerca nel *nodo corrente* o in *tutti i sottonodi* ora viene mantenuta quando si modifica il nodo usato. Con il nuovo comportamento non è necessario reimpostare costantemente questa opzione ogni volta che ci si sposta all'interno della console. Per impostazione predefinita, quando si apre la console è impostata l'opzione per l'esecuzione di ricerche solo nel nodo corrente.
 
 
 ### <a name="send-feedback-from-the-configuration-manager-console"></a>Inviare commenti e suggerimenti dalla console di Configuration Manager

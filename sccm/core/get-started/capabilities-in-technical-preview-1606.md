@@ -12,12 +12,12 @@ manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0bdc575819c68876093b452e1f5662cd94b3c28e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 4527a67b7a08d7f5b9fd38d2edb223a9de823436
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56127899"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677627"
 ---
 # <a name="capabilities-in-technical-preview-1606-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1606 per System Center Configuration Manager
 
@@ -28,7 +28,9 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 **Problemi noti di questa versione Technical Preview:**  
 *  Quando si esegue l'aggiornamento dalla versione Technical Preview 1604 alla 1605 e quindi alla 1606, l'aggiornamento potrebbe non riuscire e si potrebbe ottenere la registrazione di un errore simile al seguente in **cmupdate.log**:
 
-       ERROR: Failed to execute SQL Server command:  ~ ~-- Create site boundary group ~IF  dbo.fnIsCasOrStandalonePrimary() = 1 ~BEGIN ~   PRINT N'Create site boundary group during upgrade' ~   EXEC dbo.spBuildDefaultBoundaryGroups @UserName = N'SYSTEM' ~END          
+    ```
+    ERROR: Failed to execute SQL Server command:  ~ ~-- Create site boundary group ~IF  dbo.fnIsCasOrStandalonePrimary() = 1 ~BEGIN ~   PRINT N'Create site boundary group during upgrade' ~   EXEC dbo.spBuildDefaultBoundaryGroups @UserName = N'SYSTEM' ~END          
+    ```
 
     In questo caso nel nodo **Aggiornamenti e manutenzione** fare clic su **Controlla aggiornamenti** e quindi su **Riprova** per ritentare l'installazione dell'aggiornamento.
     ***
@@ -162,10 +164,10 @@ Il modo più semplice per ottenere l'esportazione della radice dei certificati c
 
 1. Nella finestra Esegui digitare **mmc** e premere INVIO.
 2. Nel menu File della console di gestione fare clic su **Aggiungi/Rimuovi snap-in**.
-3. Nella finestra di dialogo Aggiungi o rimuovi Snap-in fare clic su **Certificati**, fare clic su **Aggiungi >**, su **Account computer**, su **Avanti**, su **Computer locale**, quindi fare clic su **Fine**. Fare clic su **OK** per chiudere la finestra di dialogo.
+3. Nella finestra di dialogo Aggiungi o rimuovi Snap-in fare clic su **Certificati**, fare clic su **Aggiungi >** , su **Account computer**, su **Avanti**, su **Computer locale**, quindi fare clic su **Fine**. Fare clic su **OK** per chiudere la finestra di dialogo.
 4. Passare a **Certificati > Personale > Certificati**.
 5. Fare doppio clic sul certificato per l'autenticazione client nel computer, fare clic sulla scheda Percorso certificazione e fare doppio clic sull'autorità radice (nella parte superiore del percorso).
-6.  Fare clic sulla scheda Dettagli e fare clic su **Copia su file...**.
+6.  Fare clic sulla scheda Dettagli e fare clic su **Copia su file...** .
 7. Completare l'Esportazione guidata certificati utilizzando il formato di certificato predefinito. Prendere nota del nome e percorso del certificato radice creato. Sarà necessario configurare il servizio proxy cloud in un passaggio successivo.
 
 #### <a name="upload-the-management-certificate-to-azure"></a>Caricare il certificato di gestione in Azure

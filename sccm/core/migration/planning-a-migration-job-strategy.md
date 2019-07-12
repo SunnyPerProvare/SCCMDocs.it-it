@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f6b445bb2e84cb7c3f35d81c66038686f2b9833
-ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.openlocfilehash: b7acec3488d016a309fe2f159d81087d28b795f7
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66715989"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677241"
 ---
 # <a name="plan-a-migration-job-strategy-in-system-center-configuration-manager"></a>Pianificare una strategia di processo di migrazione in System Center Configuration Manager
 
@@ -241,7 +241,7 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
 ### <a name="specify-conflict-resolution-for-migrated-data"></a>Specificare la risoluzione dei conflitti per i dati di cui è stata eseguita la migrazione  
  Per impostazione predefinita, i processi di migrazione non sovrascrivono i dati nel database di destinazione, a meno che il processo di migrazione non sia configurato per ignorare o sovrascrivere i dati di cui è già stata eseguita la migrazione nel database di destinazione.  
 
-##  <a name="About_Collection_Migration "></a> Pianificare processi di migrazione raccolta  
+##  <a name="About_Collection_Migration"></a> Pianificare processi di migrazione raccolta  
  I processi di migrazione raccolta sono disponibili solo quando si esegue la migrazione di dati da una gerarchia di origine che esegue una versione supportata di Configuration Manager 2007. Quando si esegue la migrazione per raccolta, è necessario specificare una o più raccolte di cui eseguire la migrazione. Per ogni raccolta specificata, il processo di migrazione seleziona automaticamente tutti gli oggetti correlati per la migrazione. Ad esempio, se si seleziona una raccolta specifica di utenti, vengono identificati i membri della raccolta e sarà possibile eseguire la migrazione delle distribuzioni associate a tale raccolta. Facoltativamente, è possibile selezionare altri oggetti di distribuzione associati a tali membri per eseguirne la migrazione. Tutti questi elementi selezionati vengono aggiunti all'elenco di oggetti di cui può essere eseguita la migrazione.  
 
  Quando viene eseguita la migrazione di una raccolta, System Center Configuration Manager esegue anche la migrazione delle impostazioni della raccolta, incluse finestre di manutenzione e variabili di raccolta, ma non può eseguire la migrazione delle impostazioni della raccolta per il provisioning del client AMT.  

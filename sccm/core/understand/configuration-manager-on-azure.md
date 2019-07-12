@@ -10,12 +10,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f4efea7baf7820c4edfb61882b14812336c85518
-ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
+ms.openlocfilehash: 042ef488354ff1b527d41407d3ef590ee9fe0e45
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67516178"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676310"
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager in Azure: domande frequenti
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -36,11 +36,11 @@ No, si tratta di un servizio IaaS (Infrastruttura come servizio) perché i serve
 
 ### <a name="what-areas-should-i-pay-attention-to-when-considering-a-move-of-my-configuration-manager-infrastructure-to-azure"></a>A quali aree è necessario prestare attenzione quando si valuta la scelta di trasferire l'infrastruttura di Configuration Manager in Azure?
 Ottima domanda. Di seguito sono indicate le aree più importanti nell'ottica di questa decisione; ogni area viene esaminata in una sezione separata di questo argomento:
-1.  Rete
-2.  Disponibilità
-3.  Prestazioni
-4.  Costi
-5.  Esperienza utente
+1. Rete
+2. Disponibilità
+3. Prestazioni
+4. Costi
+5. Esperienza utente
 
 ## <a name="networking"></a>Rete
 ### <a name="what-about-networking-requirements-should-i-use-expressroute-or-an-azure-vpn-gateway"></a>Per quanto riguarda i requisiti di rete, è opportuno usare un Gateway VPN di Azure o ExpressRoute?

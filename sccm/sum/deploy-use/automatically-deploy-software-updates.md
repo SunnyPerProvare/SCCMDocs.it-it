@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1b77b4c35cfadd3e0e48ddec99344745f402d66
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 8a7cd2e499ac55f9a1210d4f3309b6e0b6cefe16
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500260"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678190"
 ---
 #  <a name="automatically-deploy-software-updates"></a>Distribuire automaticamente gli aggiornamenti software  
 
@@ -71,8 +71,8 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
         > [!IMPORTANT]  
         >  Quando si distribuiscono gli aggiornamenti delle definizioni, impostare il livello di dettaglio su **Solo errori** affinché il client segnali un messaggio di stato solo in caso un aggiornamento delle definizioni non riesca. In caso contrario, il client restituisce un numero elevato di messaggi di stato che potrebbe influire sulle prestazioni del server del sito.  
         
-> [!NOTE]  
-> Il livello di dettaglio **Solo errore** non invia i messaggi di stato di imposizione necessari per il rilevamento delle operazioni di riavvio in sospeso.
+        > [!NOTE]  
+        > Il livello di dettaglio **Solo errore** non invia i messaggi di stato di imposizione necessari per il rilevamento delle operazioni di riavvio in sospeso.
 
     -   **Impostazione condizioni di licenza**: specificare se si desidera distribuire automaticamente gli aggiornamenti software con le condizioni di licenza associate. Alcuni aggiornamenti software includono le condizioni di licenza. Quando si distribuiscono automaticamente gli aggiornamenti software, non vengono visualizzate le condizioni di licenza e non è disponibile un'opzione per accettare tali condizioni. Scegliere di distribuire automaticamente tutti gli aggiornamenti software indipendentemente dalle condizioni di licenza associate o di distribuire solo gli aggiornamenti a cui non sono associate tali condizioni.  
 

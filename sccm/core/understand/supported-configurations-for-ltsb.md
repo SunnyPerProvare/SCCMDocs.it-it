@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac26a9b161f869ec3f6410f9f6fb9e5edbc9f8f8
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: 5499fae986dcd266e0b2a31d2619aa79146f8981
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194018"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676016"
 ---
 # <a name="supported-configurations-for-the-long-term-servicing-branch-of-system-center-configuration-manager"></a>Configurazioni supportate per Long-Term Servicing Branch di System Center Configuration Manager
 
@@ -35,7 +35,7 @@ I prodotti e le versioni di prodotto non elencati negli argomenti seguenti non s
 **Windows:**
 - Per Windows sono supportati solo gli aggiornamenti di sicurezza e qualitativi.
 - Non viene aggiunto alcun supporto per Current Branch (CB), Current Branch for Business (CBB) o LTSB di Windows 10.
--   Nessun supporto per nuove versioni principali di Windows Server.
+- Nessun supporto per nuove versioni principali di Windows Server.
 
 **SQL Server:**
 - Per SQL Server sono supportati solo gli aggiornamenti di sicurezza e qualitativi o aggiornamenti secondari come i Service Pack.

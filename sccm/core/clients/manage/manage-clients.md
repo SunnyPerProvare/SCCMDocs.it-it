@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa92ed294196d44aaafcf4e873c706e135928c90
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 8bfcb73f359bd8d1b4438ac28b2395b01217e35d
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176654"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677735"
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Come gestire i client in System Center Configuration Manager
 
@@ -202,8 +202,8 @@ Per identificare i dispositivi che sono in attesa di riavvio, passare all'area d
  - **Aggiungi o rimuovi la funzionalità**: questo valore proviene dal modulo di manutenzione pacchetti basato su componenti di Windows e segnala che l'aggiunta o la rimozione di una funzionalità di Windows richiede un riavvio (HKLM\Software\Microsoft\Windows\CurrentVersion\Component Based Servicing\Reboot Pending)
 
 **Per creare la notifica client per riavviare un dispositivo:**
-1.  Individuare il dispositivo da riavviare all'interno della raccolta nel nodo **Raccolte di dispositivi** della console.
-2.  Fare clic con il pulsante destro del mouse sul dispositivo, scegliere **Notifica client** e quindi selezionare **Riavvia**. Si aprirà una finestra contenente le informazioni sul riavvio. Fare clic su **OK** per riavviare la richiesta.
+1. Individuare il dispositivo da riavviare all'interno della raccolta nel nodo **Raccolte di dispositivi** della console.
+2. Fare clic con il pulsante destro del mouse sul dispositivo, scegliere **Notifica client** e quindi selezionare **Riavvia**. Si aprirà una finestra contenente le informazioni sul riavvio. Fare clic su **OK** per riavviare la richiesta.
 
 Quando la notifica viene ricevuta da un client, viene visualizzata una finestra di notifica di **Software Center** per informare l'utente del riavvio. Per impostazione predefinita, il riavvio viene eseguito dopo 90 minuti. È possibile modificare il tempo di riavvio configurando le [impostazioni client](/sccm/core/clients/deploy/configure-client-settings). Le impostazioni per il comportamento del riavvio sono disponibili nella scheda [Riavvio del computer](/sccm/core/clients/deploy/about-client-settings#computer-restart) delle impostazioni predefinite.
 

@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bbc26ed19de04fd3000d6c3ca713bb2a705ce8ea
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 3e7a13e53e4054593310378b5f667fd91c597448
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286216"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677440"
 ---
 # <a name="capabilities-in-technical-preview-1706-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1706 per System Center Configuration Manager
 
@@ -28,18 +28,18 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
 <!--  Known Issues Template   
 **Known Issues in this Technical Preview:**
--   **Issue Name**. Details
+- **Issue Name**. Details
     Workaround details.
 -->
 **Problemi noti di questa versione Technical Preview:**
 
--   **Move distribution point** (Sposta punto di distribuzione): le opzioni nella console per spostare un punto di distribuzione tra i siti non possono essere usate con questa versione a causa del limite di Technical Preview a un singolo sito primario.
+- **Move distribution point** (Sposta punto di distribuzione): le opzioni nella console per spostare un punto di distribuzione tra i siti non possono essere usate con questa versione a causa del limite di Technical Preview a un singolo sito primario.
 
--   **Device compliance settings** (Impostazioni di conformità del dispositivo): potrebbe verificarsi un comportamento contrario quando si usano le due nuove impostazioni di conformità del dispositivo:
-    - **Blocca il debug USB nel dispositivo**
-    - **Blocca app da origini sconosciute**
+- **Device compliance settings** (Impostazioni di conformità del dispositivo): potrebbe verificarsi un comportamento contrario quando si usano le due nuove impostazioni di conformità del dispositivo:
+  - **Blocca il debug USB nel dispositivo**
+  - **Blocca app da origini sconosciute**
 
-        Ad esempio, se gli amministratori impostano **Blocca il debug USB nel dispositivo**  su **true**, tutti i dispositivi che non hanno attivato l'USB in esecuzione sono contrassegnati come non conformi.
+    Ad esempio, se gli amministratori impostano **Blocca il debug USB nel dispositivo**  su **true**, tutti i dispositivi che non hanno attivato l'USB in esecuzione sono contrassegnati come non conformi.
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
@@ -60,18 +60,18 @@ Questa versione include dei miglioramenti per il funzionamento dei punti di aggi
 
 - Indipendentemente dalla configurazione di fallback, un client tenta di raggiungere l'ultimo punto di aggiornamento del software che ha usato per 120 minuti. Dopo l'esito negativo nel raggiungere il server per 120 minuti, il client controlla quindi il proprio pool di punti di aggiornamento del software disponibili, per poterne trovare uno nuovo.
 
-  -   Tutti i punti di aggiornamento del software nel gruppo di limiti attuale del client vengono aggiunti immediatamente al pool del client.
+  - Tutti i punti di aggiornamento del software nel gruppo di limiti attuale del client vengono aggiunti immediatamente al pool del client.
 
-  -   Poiché un client cerca di usare il proprio server originale per 120 minuti prima di richiederne uno nuovo, non viene contattato nessun server aggiuntivo fino a che non sono trascorse due ore.
+  - Poiché un client cerca di usare il proprio server originale per 120 minuti prima di richiederne uno nuovo, non viene contattato nessun server aggiuntivo fino a che non sono trascorse due ore.
 
-  -   Se il fallback a un gruppo adiacente è configurato per il valore minimo di 120 minuti, i punti di aggiornamento del software da quel gruppo di limiti adiacente farà parte del pool del client di server disponibili.
+  - Se il fallback a un gruppo adiacente è configurato per il valore minimo di 120 minuti, i punti di aggiornamento del software da quel gruppo di limiti adiacente farà parte del pool del client di server disponibili.
 
 - Dopo l'esito negativo nel raggiungere il server originale per due ore, il client passa a un ciclo più breve per contattare un nuovo punto di aggiornamento del software.
 
   Ciò significa che se un client non riesce a connettersi con un nuovo server, seleziona rapidamente il server successivo dal relativo pool di server disponibili e cerca di contattarne uno nuovo.
 
-  -   Questo ciclo continua fino a quando il client si connette a un punto di aggiornamento del software da poter usare.
-  -   Fino a quando il client non trova un punto di aggiornamento del software, vengono aggiunti dei server aggiuntivi al pool di server disponibili quando si raggiunge l'ora di fallback per ogni gruppo di limiti adiacente.
+  - Questo ciclo continua fino a quando il client si connette a un punto di aggiornamento del software da poter usare.
+  - Fino a quando il client non trova un punto di aggiornamento del software, vengono aggiunti dei server aggiuntivi al pool di server disponibili quando si raggiunge l'ora di fallback per ogni gruppo di limiti adiacente.
 
 Per altre informazioni, vedere la sezione [Punti di aggiornamento software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points) nell'argomento Gruppi di limiti e relazioni per il Current Branch.
 
@@ -81,88 +81,88 @@ Per altre informazioni, vedere la sezione [Punti di aggiornamento software](/scc
 La disponibilità elevata per il ruolo del server del sito è una soluzione di base di Configuration Manager per installare un server del sito primario aggiuntivo in modalità *Passivo*. Il server del sito in modalità Passivo è un'aggiunta al server del sito primario esistente in modalità *Attivo*. Un server del sito in modalità Passivo è disponibile per l'uso immediato, quando necessario.
 
 Un server del sito primario in modalità Passivo:
--   Usa lo stesso database del sito usato dal server del sito attivo.
--   Riceve una copia della raccolta del contenuto dei server del sito attivi, che viene quindi mantenuta sincronizzata.
--   Non scrive dati nel database del sito fino a quando si trova in modalità Passivo.
--   Non supporta l'installazione o la rimozione di ruoli del sistema del sito facoltativi, fino a quando si trova in modalità Passivo.
+- Usa lo stesso database del sito usato dal server del sito attivo.
+- Riceve una copia della raccolta del contenuto dei server del sito attivi, che viene quindi mantenuta sincronizzata.
+- Non scrive dati nel database del sito fino a quando si trova in modalità Passivo.
+- Non supporta l'installazione o la rimozione di ruoli del sistema del sito facoltativi, fino a quando si trova in modalità Passivo.
 
 Per far sì che il server del sito in modalità Passivo diventi il server del sito in modalità attiva, alzare manualmente di livello. In questo modo si otterrà un server del sito attivo dal server del sito passivo. I ruoli del sistema del sito che sono disponibili nel server in modalità Attivo originale rimangono disponibili fin a quando tale computer è accessibile. Solo il ruolo del server del sito viene commutato tra modalità Attivo e Passivo.
 
 Per installare un server del sito in modalità Passivo, usare **Creazione guidata server del sistema sito** per configurare un nuovo server del sito con un tipo di **Server del sito primario** e una modalità di **Passivo**. La procedura guidata esegue quindi l'installazione di Configuration Manager nel server specificato per installare il nuovo server del sito in modalità Passivo. Al completamento dell'installazione, il server del sito in modalità Attivo mantiene il server del sito in modalità Passivo e la sua raccolta contenuto sincronizzata con le modifiche o le configurazioni apportate al server del sito attivo.
 
 ### <a name="prerequisites-and-limitations"></a>Prerequisiti e limiti
--   Ciascun sito primario supporta un singolo server del sito in modalità Passivo.
+- Ciascun sito primario supporta un singolo server del sito in modalità Passivo.
 
--   Il server del sito in modalità Passivo può essere locale o basato su cloud in Azure.
+- Il server del sito in modalità Passivo può essere locale o basato su cloud in Azure.
 
--   I server del sito in modalità Passivo e in modalità Attivo devono essere nello stesso dominio.
+- I server del sito in modalità Passivo e in modalità Attivo devono essere nello stesso dominio.
 
--   I server del sito in modalità Passivo e in modalità Attivo devono usare lo stesso database del sito, che deve essere remoto rispetto ai computer di ogni server del sito.
+- I server del sito in modalità Passivo e in modalità Attivo devono usare lo stesso database del sito, che deve essere remoto rispetto ai computer di ogni server del sito.
 
-    -   SQL Server che ospita il database può usare un'istanza predefinita, un'istanza denominata, un cluster di SQL Server o un gruppo di disponibilità Always on.
+    - SQL Server che ospita il database può usare un'istanza predefinita, un'istanza denominata, un cluster di SQL Server o un gruppo di disponibilità Always on.
 
-    -   Il server del sito in modalità Passivo è configurato per usare lo stesso database del server del sito in modalità Attivo. Tuttavia, il server del sito in modalità Passivo non usa tale database finché non viene poi promosso alla modalità Attivo.
+    - Il server del sito in modalità Passivo è configurato per usare lo stesso database del server del sito in modalità Attivo. Tuttavia, il server del sito in modalità Passivo non usa tale database finché non viene poi promosso alla modalità Attivo.
 
--   Il computer che eseguirà il server del sito in modalità Passivo:
+- Il computer che eseguirà il server del sito in modalità Passivo:
 
-    -   Deve soddisfare i [prerequisiti per l'installazione di un sito primario](https://docs.microsoft.com/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#primary-sites-and-the-central-administration-site).
+    - Deve soddisfare i [prerequisiti per l'installazione di un sito primario](https://docs.microsoft.com/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#primary-sites-and-the-central-administration-site).
 
-    -   Esegue l'installazione usando file di origine che corrispondono alla versione del server del sito in modalità Attivo.
+    - Esegue l'installazione usando file di origine che corrispondono alla versione del server del sito in modalità Attivo.
 
-    -   Non può avere un ruolo del sistema del sito da qualsiasi sito prima di installare il sito in modalità Passivo.
+    - Non può avere un ruolo del sistema del sito da qualsiasi sito prima di installare il sito in modalità Passivo.
 
--   I computer del server del sito in modalità Attivo e Passivo possono eseguire diversi sistemi operativi o versioni di service pack, a condizione che entrambe restino supportate dalla versione di Configuration Manager dell'utente.
+- I computer del server del sito in modalità Attivo e Passivo possono eseguire diversi sistemi operativi o versioni di service pack, a condizione che entrambe restino supportate dalla versione di Configuration Manager dell'utente.
 
--   La promozione del server del sito verso la modalità Attivo è manuale. Non si verifica failover automatico.
+- La promozione del server del sito verso la modalità Attivo è manuale. Non si verifica failover automatico.
 
--   I ruoli del sistema del sito possono essere installati solo sul server del sito che è in modalità Attivo.
+- I ruoli del sistema del sito possono essere installati solo sul server del sito che è in modalità Attivo.
 
-    -   Un server del sito in modalità Attivo supporta tutti i ruoli del sistema del sito. Non è possibile installare i ruoli del sistema del sito nel server quando è in modalità Passivo.
+    - Un server del sito in modalità Attivo supporta tutti i ruoli del sistema del sito. Non è possibile installare i ruoli del sistema del sito nel server quando è in modalità Passivo.
 
-    -   I ruoli del sistema del sito che usano un database, ad esempio il punto di reporting, devono avere il database in un server che sia remoto rispetto ai server del sito in modalità Attivo e Passivo.
+    - I ruoli del sistema del sito che usano un database, ad esempio il punto di reporting, devono avere il database in un server che sia remoto rispetto ai server del sito in modalità Attivo e Passivo.
 
-    -   SMS_Provider non viene installato nel server del sito in modalità Passivo. Poiché è necessario connettersi a un SMS_Provider per far sì che il sito innalzi manualmente il livello del server dalla modalità Passivo a quella Attivo, è consigliabile [installare almeno un'istanza aggiuntiva del provider](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider) su un computer aggiuntivo.
+    - SMS_Provider non viene installato nel server del sito in modalità Passivo. Poiché è necessario connettersi a un SMS_Provider per far sì che il sito innalzi manualmente il livello del server dalla modalità Passivo a quella Attivo, è consigliabile [installare almeno un'istanza aggiuntiva del provider](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider) su un computer aggiuntivo.
 
 **Problema noto**:   
 Con questa versione, lo **Stato** per le condizioni seguenti viene visualizzato nella console come valori numerici anziché come testo leggibile:
--   131071 - Installazione del server del sito non riuscita
--   720895 - Disinstallazione del ruolo del server del sito non riuscita
--   851967 - Failover non riuscito
+- 131071 - Installazione del server del sito non riuscita
+- 720895 - Disinstallazione del ruolo del server del sito non riuscita
+- 851967 - Failover non riuscito
 
 ### <a name="add-a-site-server-in-passive-mode"></a>Aggiungere un server del sito in modalità Passivo
-1.  Nella console passare ad **Amministrazione** > **Configurazione del sito** > **Siti** e avviare l'[Aggiunta guidata ruoli del sistema del sito](/sccm/core/servers/deploy/configure/install-site-system-roles). È possibile usare anche la **Creazione guidata server del sistema sito**.
+1. Nella console passare ad **Amministrazione** > **Configurazione del sito** > **Siti** e avviare l'[Aggiunta guidata ruoli del sistema del sito](/sccm/core/servers/deploy/configure/install-site-system-roles). È possibile usare anche la **Creazione guidata server del sistema sito**.
 
-2.  Nella pagina **Generale** specificare il server che ospiterà il server del sito in modalità Passivo. Il server specificato non può ospitare eventuali ruoli del sistema del sito prima di installare un server del sito in modalità Passivo.
+2. Nella pagina **Generale** specificare il server che ospiterà il server del sito in modalità Passivo. Il server specificato non può ospitare eventuali ruoli del sistema del sito prima di installare un server del sito in modalità Passivo.
 
-3.  Nella pagina **Selezione ruolo del sistema** selezionare solo **Primary site server in passive mode** (Server del sito primario in modalità Passivo).
+3. Nella pagina **Selezione ruolo del sistema** selezionare solo **Primary site server in passive mode** (Server del sito primario in modalità Passivo).
 
-4.  Per completare la procedura guidata, è necessario fornire le informazioni seguenti che vengono usate per eseguire la configurazione e installare il ruolo del server del sito nel server specificato:
-    -   Scegliere di copiare i file di installazione dal server del sito attivo al nuovo server del sito in modalità Passivo o specificare un percorso a una posizione che includa il contenuto della cartella del server del sito attivo **CD.Latest**.
+4. Per completare la procedura guidata, è necessario fornire le informazioni seguenti che vengono usate per eseguire la configurazione e installare il ruolo del server del sito nel server specificato:
+    - Scegliere di copiare i file di installazione dal server del sito attivo al nuovo server del sito in modalità Passivo o specificare un percorso a una posizione che includa il contenuto della cartella del server del sito attivo **CD.Latest**.
 
-    -   Specificare lo stesso server del database del sito e il nome del database come usati dal server del sito in modalità Attivo.
+    - Specificare lo stesso server del database del sito e il nome del database come usati dal server del sito in modalità Attivo.
 
-5.  Configuration Manager installa quindi il server del sito in modalità Passivo nel server specificato.
+5. Configuration Manager installa quindi il server del sito in modalità Passivo nel server specificato.
 
 Per lo stato di installazione dettagliato, passare ad **Amministrazione** > **Configurazione sito** > **Siti**.
--   Lo stato del server per il server del sito in modalità Passivo viene visualizzato come **Installazione**.
+- Lo stato del server per il server del sito in modalità Passivo viene visualizzato come **Installazione**.
 
--   Selezionare il server e quindi fare clic su **Mostra stato** per aprire lo **Site Server Installation Status** (Stato installazione del server del sito) per informazioni più dettagliate.
+- Selezionare il server e quindi fare clic su **Mostra stato** per aprire lo **Site Server Installation Status** (Stato installazione del server del sito) per informazioni più dettagliate.
 
 
 
 ### <a name="promote-the-passive-mode-site-server-to-active-mode"></a>Alzare il livello del server in modalità Passivo passandolo in modalità Attivo
 Se si desidera modificare il server del sito dalla modalità Passivo alla modalità Attivo, l'operazione viene eseguita dal riquadro **Nodi** **Amministrazione** > **Configurazione sito** > **Siti**. Finché si può accedere a un'istanza di SMS_Provider, è possibile accedere al sito per apportare questa modifica.
-1.  Nel riquadro **Nodi** della console di Configuration Manager selezionare il server del sito in modalità Passivo e quindi dalla barra multifunzione scegliere **Alza di livello su attivo**.
+1. Nel riquadro **Nodi** della console di Configuration Manager selezionare il server del sito in modalità Passivo e quindi dalla barra multifunzione scegliere **Alza di livello su attivo**.
 
-2.  Il semplice **Stato** per il server che si sta alzando di livello viene visualizzato nel riquadro **Nodi** come **Innalzamento di livello**.
+2. Il semplice **Stato** per il server che si sta alzando di livello viene visualizzato nel riquadro **Nodi** come **Innalzamento di livello**.
 
-3.  Al termine dell'innalzamento di livello, la colonna **Stato** mostra la scritta **OK** per il nuovo server del sito in modalità *Attivo* e per il nuovo server del sito in modalità *Passivo*.
+3. Al termine dell'innalzamento di livello, la colonna **Stato** mostra la scritta **OK** per il nuovo server del sito in modalità *Attivo* e per il nuovo server del sito in modalità *Passivo*.
 
-4.  In **Amministrazione** > **Configurazione sito** > **Siti** il nome del server del sito primario mostra ora il nome del nuovo server del sito in modalità *Attivo*.
+4. In **Amministrazione** > **Configurazione sito** > **Siti** il nome del server del sito primario mostra ora il nome del nuovo server del sito in modalità *Attivo*.
 Per informazioni dettagliate sullo stato, passare a **Monitoraggio** > **Site Server Status** (Stato server del sito).
-    -   La colonna **Modalità** identifica quale server è *Attivo* o *Passivo*.
+    - La colonna **Modalità** identifica quale server è *Attivo* o *Passivo*.
 
-    -   Durante l'innalzamento di livello di un server dalla modalità Passivo alla modalità Attivo, selezionare il server del sito che si sta innalzando di livello in modalità Attivo e quindi scegliere **Mostra stato** dalla barra multifunzione. Viene visualizzata la finestra**Site Server Promotion Status** (Stato innalzamento di livello server del sito) che mostra altri dettagli relativi al processo.
+    - Durante l'innalzamento di livello di un server dalla modalità Passivo alla modalità Attivo, selezionare il server del sito che si sta innalzando di livello in modalità Attivo e quindi scegliere **Mostra stato** dalla barra multifunzione. Viene visualizzata la finestra**Site Server Promotion Status** (Stato innalzamento di livello server del sito) che mostra altri dettagli relativi al processo.
 
 Quando un server del sito in modalità Attivo passa alla modalità Passivo, solo il ruolo del sistema del sito è reso passivo. Tutti gli altri ruoli del sistema del sito che vengono installati su quel computer restano attivi e accessibili ai client.
 
@@ -171,18 +171,18 @@ Quando un server del sito in modalità Attivo passa alla modalità Passivo, solo
 Quando si dispone di un sito primario in modalità Passivo, è possibile monitorarlo giornalmente per garantire che rimanga sincronizzato con il server del sito in modalità Attivo e pronto per l'uso. A tale scopo, passare a **Monitoraggio** > **Site Server Status** (Stato server del sito). In questa posizione è possibile visualizzare il server del sito in modalità Passivo e in modalità Attivo.
 
 La scheda **Riepilogo**:
--   La colonna **Modalità** identifica quale server è Attivo o Passivo.
--   La colonna **Stato** riporta **OK** quando il server in modalità Passivo è sincronizzato con il server in modalità Attivo.
--   Per visualizzare altri dettagli sullo stato di sincronizzazione del contenuto, fare clic su **Mostra stato** dallo Content Sync State (Stato di sincronizzazione del contenuto). Viene visualizzata la scheda Content Library (Raccolta contenuto) in cui è possibile provare a risolvere i problemi di sincronizzazione del contenuto.
+- La colonna **Modalità** identifica quale server è Attivo o Passivo.
+- La colonna **Stato** riporta **OK** quando il server in modalità Passivo è sincronizzato con il server in modalità Attivo.
+- Per visualizzare altri dettagli sullo stato di sincronizzazione del contenuto, fare clic su **Mostra stato** dallo Content Sync State (Stato di sincronizzazione del contenuto). Viene visualizzata la scheda Content Library (Raccolta contenuto) in cui è possibile provare a risolvere i problemi di sincronizzazione del contenuto.
 
 La scheda **Content Library** (Raccolta contenuto):
--   Visualizzare lo **Stato** per il contenuto che sincronizza dal server del sito Attivo al server del sito in modalità Passivo.
--   È possibile selezionare il contenuto con uno stato di **Non riuscito** e quindi scegliere **Sync selected items** (Sincronizza elementi selezionati) dalla barra multifunzione. Questa azione tenta di sincronizzare nuovamente il contenuto dall'origine del contenuto al server del sito in modalità Passivo. Durante il recupero, lo Stato è visualizzato come **In corso** e dopo la sincronizzazione viene visualizzato come **Operazione riuscita**.
+- Visualizzare lo **Stato** per il contenuto che sincronizza dal server del sito Attivo al server del sito in modalità Passivo.
+- È possibile selezionare il contenuto con uno stato di **Non riuscito** e quindi scegliere **Sync selected items** (Sincronizza elementi selezionati) dalla barra multifunzione. Questa azione tenta di sincronizzare nuovamente il contenuto dall'origine del contenuto al server del sito in modalità Passivo. Durante il recupero, lo Stato è visualizzato come **In corso** e dopo la sincronizzazione viene visualizzato come **Operazione riuscita**.
 
 ### <a name="try-it-out"></a>Verifica
 Provare a completare le attività seguenti e quindi inviare **Feedback** dalla scheda **Home** della barra multifunzione per comunicarci come è andata:
--   È possibile installare un sito primario nella modalità Passivo.
--   È possibile usare la console per alzare di livello il server del sito in modalità Passivo per rendere il server del sito modalità Attivo e confermare la modifica dello stato di entrambi i server del sito.
+- È possibile installare un sito primario nella modalità Passivo.
+- È possibile usare la console per alzare di livello il server del sito in modalità Passivo per rendere il server del sito modalità Attivo e confermare la modifica dello stato di entrambi i server del sito.
 
 
 ## <a name="include-trust-for-specific-files-and-folders-in-a-device-guard-policy"></a>Includere attendibilità per file e cartelle specifici in un criterio di Device Guard
@@ -191,15 +191,15 @@ In questa versione sono state aggiunte altre funzionalità alla gestione del cri
 
 Ora è possibile aggiungere facoltativamente attendibilità per file e cartelle specifici in un criterio di Device Guard. Ciò consente di:
 
-1.  Risolvere i problemi relativi ai comportamenti del programma di installazione gestito
-2.  Rendere attendibili le app line-of-business che non possono essere distribuite con Configuration Manager
-3.  Rendere attendibili le app incluse in un'immagine di distribuzione del sistema operativo.
+1. Risolvere i problemi relativi ai comportamenti del programma di installazione gestito
+2. Rendere attendibili le app line-of-business che non possono essere distribuite con Configuration Manager
+3. Rendere attendibili le app incluse in un'immagine di distribuzione del sistema operativo.
 
 ### <a name="try-it-out"></a>Verifica
 
-1.  Durante la creazione di un criterio di Device Guard, nella scheda Inclusioni della procedura guidata per la creazione di criteri di Device Guard fare clic su **Aggiungi**.
-2.  Nella finestra di dialogo **Aggiungi file o cartella attendibile** specificare le informazioni sul file o sulla cartella che si desidera considerare attendibile. È possibile specificare un percorso di file o cartella locale oppure connettersi a un dispositivo remoto per cui si dispone dell'autorizzazione per connettersi e specificare un percorso di file o cartella nel dispositivo.
-3.  Completare la procedura guidata.
+1. Durante la creazione di un criterio di Device Guard, nella scheda Inclusioni della procedura guidata per la creazione di criteri di Device Guard fare clic su **Aggiungi**.
+2. Nella finestra di dialogo **Aggiungi file o cartella attendibile** specificare le informazioni sul file o sulla cartella che si desidera considerare attendibile. È possibile specificare un percorso di file o cartella locale oppure connettersi a un dispositivo remoto per cui si dispone dell'autorizzazione per connettersi e specificare un percorso di file o cartella nel dispositivo.
+3. Completare la procedura guidata.
 
 
 ## <a name="hide-task-sequence-progress"></a>Nascondere l'avanzamento della sequenza di attività
@@ -223,9 +223,9 @@ Per risolvere questo problema, è ora possibile specificare sia il percorso del 
 1. Nelle proprietà del tipo di distribuzione di un'applicazione fare clic sulla scheda **Contenuto**.
 2. Configurare il **percorso del contenuto di installazione** come di consueto.
 3. Per **Impostazioni del contenuto di disinstallazione**, scegliere una delle opzioni seguenti:
-    - **Uguale al contenuto di installazione**: lo stesso percorso del contenuto sarà usato indipendentemente dal fatto che si stia installando o disinstallando l'applicazione.
-    - **Nessun contenuto di disinstallazione**: scegliere questa opzione se non si desidera fornire un percorso del contenuto di disinstallazione per l'applicazione.
-    - **Diversa dal contenuto di installazione**: scegliere questa opzione se si desidera specificare un percorso del contenuto di disinstallazione diverso dal percorso del contenuto di installazione.
+   - **Uguale al contenuto di installazione**: lo stesso percorso del contenuto sarà usato indipendentemente dal fatto che si stia installando o disinstallando l'applicazione.
+   - **Nessun contenuto di disinstallazione**: scegliere questa opzione se non si desidera fornire un percorso del contenuto di disinstallazione per l'applicazione.
+   - **Diversa dal contenuto di installazione**: scegliere questa opzione se si desidera specificare un percorso del contenuto di disinstallazione diverso dal percorso del contenuto di installazione.
 5. Se si seleziona **Diversa dal contenuto di installazione**, selezionare o immettere il percorso del contenuto dell'applicazione che verrà usato per disinstallare l'applicazione.
 6. Fare clic su **OK** per chiudere la finestra di dialogo delle proprietà del tipo di distribuzione.
 
@@ -235,20 +235,20 @@ Per risolvere questo problema, è ora possibile specificare sia il percorso del 
 Questa versione di anteprima introduce diversi miglioramenti alle [funzionalità di accessibilità](/sccm/core/understand/accessibility-features) nella console di Configuration Manager. Sono inclusi:     
 
 **Nuovi tasti di scelta rapida per spostarsi all'interno della console:**
--   CTRL + M - Imposta il focus nel riquadro principale (centrale).
--   CTRL + T - Imposta il focus sul nodo principale nel riquadro di spostamento. Se il focus era già in questo riquadro, viene impostato sull'ultimo nodo visitato.
--   CTRL + I - Imposta il focus sulla barra di navigazione, sotto la barra multifunzione.
--   CTRL + L - Imposta il focus sul campo **Ricerca**, se disponibile.
--   CTRL + D - Imposta il focus sul riquadro dei dettagli, se disponibile.
--   ALT - Sposta il focus dentro e fuori la barra multifunzione.
+- CTRL + M - Imposta il focus nel riquadro principale (centrale).
+- CTRL + T - Imposta il focus sul nodo principale nel riquadro di spostamento. Se il focus era già in questo riquadro, viene impostato sull'ultimo nodo visitato.
+- CTRL + I - Imposta il focus sulla barra di navigazione, sotto la barra multifunzione.
+- CTRL + L - Imposta il focus sul campo **Ricerca**, se disponibile.
+- CTRL + D - Imposta il focus sul riquadro dei dettagli, se disponibile.
+- ALT - Sposta il focus dentro e fuori la barra multifunzione.
 
 **Miglioramenti generali:**
--   Navigazione migliorata nel riquadro di spostamento quando si digitano le lettere del nome di un nodo.
--   La navigazione tramite tastiera nella vista principale e nella barra multifunzione è ora circolare.
--   La navigazione tramite tastiera nel riquadro dei dettagli è ora circolare. Per tornare al riquadro o all'oggetto precedente, è possibile usare Ctrl + D e poi MAIUSC + TAB.
--   Dopo l'aggiornamento di una vista dell'area di lavoro, il focus è impostato nel riquadro principale dell'area di lavoro.
--   Risolto un problema per abilitare i lettori dello schermo per annunciare i nomi degli elementi dell'elenco.
--   Nomi accessibili aggiunti per più controlli nella pagina che consente ai lettori dello schermo di annunciare informazioni importanti.
+- Navigazione migliorata nel riquadro di spostamento quando si digitano le lettere del nome di un nodo.
+- La navigazione tramite tastiera nella vista principale e nella barra multifunzione è ora circolare.
+- La navigazione tramite tastiera nel riquadro dei dettagli è ora circolare. Per tornare al riquadro o all'oggetto precedente, è possibile usare Ctrl + D e poi MAIUSC + TAB.
+- Dopo l'aggiornamento di una vista dell'area di lavoro, il focus è impostato nel riquadro principale dell'area di lavoro.
+- Risolto un problema per abilitare i lettori dello schermo per annunciare i nomi degli elementi dell'elenco.
+- Nomi accessibili aggiunti per più controlli nella pagina che consente ai lettori dello schermo di annunciare informazioni importanti.
 
 
 ## <a name="changes-to-the-azure-services-wizard-to-support-upgrade-readiness"></a>Modifiche alla procedura guidata dei servizi di Azure per il supporto della Preparazione aggiornamenti
@@ -261,10 +261,10 @@ Anche se il metodo per configurare la connessione è stato modificato, i prerequ
 I prerequisiti per la [connessione a Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade-readiness#connect-configuration-manager-to-upgrade-readiness) sono identici a quelli dettagliate per il Current Branch di Configuration Manager. Ne riportiamo un pratico riepilogo:  
 
 **Prerequisiti**
--   Per l'aggiunta della connessione, è necessario che nell'ambiente di Configuration Manager sia stato configurato un [punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point) in [modalità online](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_modes). Quando si aggiunge la connessione all'ambiente, viene installato anche Microsoft Monitoring Agent nel computer che esegue questo ruolo del sistema del sito.
--   Registrare Configuration Manager come strumento di gestione "Applicazione Web e/o API Web" e ottenere l'[ID client della registrazione](https://azure.microsoft.com/documentation/articles/active-directory-integrating-applications/).
--   Creare una chiave client per lo strumento di gestione registrato in Azure Active Directory.
--   Nel portale di gestione di Azure specificare l'autorizzazione di accesso OMS per l'app Web registrata, come descritto in [Fornire a Configuration Manager le autorizzazioni per accedere a OMS](https://azure.microsoft.com/documentation/articles/log-analytics-sccm/#provide-configuration-manager-with-permissions-to-oms).
+- Per l'aggiunta della connessione, è necessario che nell'ambiente di Configuration Manager sia stato configurato un [punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point) in [modalità online](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_modes). Quando si aggiunge la connessione all'ambiente, viene installato anche Microsoft Monitoring Agent nel computer che esegue questo ruolo del sistema del sito.
+- Registrare Configuration Manager come strumento di gestione "Applicazione Web e/o API Web" e ottenere l'[ID client della registrazione](https://azure.microsoft.com/documentation/articles/active-directory-integrating-applications/).
+- Creare una chiave client per lo strumento di gestione registrato in Azure Active Directory.
+- Nel portale di gestione di Azure specificare l'autorizzazione di accesso OMS per l'app Web registrata, come descritto in [Fornire a Configuration Manager le autorizzazioni per accedere a OMS](https://azure.microsoft.com/documentation/articles/log-analytics-sccm/#provide-configuration-manager-with-permissions-to-oms).
 
 > [!IMPORTANT]       
 > Quando si configura l'autorizzazione per accedere a OMS, assicurarsi di scegliere il ruolo **Collaboratore** e di assegnare a tale ruolo le autorizzazioni per il gruppo di risorse dell'app registrata.
@@ -272,19 +272,19 @@ I prerequisiti per la [connessione a Preparazione aggiornamenti](/sccm/core/clie
 Dopo aver configurato i prerequisiti, si è pronti a usare la procedura guidata per creare la connessione.
 
 ### <a name="use-the-azure-services-wizard-to-configure-upgrade-readiness"></a>Usare la procedura guidata dei servizi di Azure per configurare Preparazione aggiornamenti
-1.  Nella console passare ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Servizi di Azure** e quindi scegliere **Configura i servizi di Azure** dalla scheda **Home** della barra multifunzione per avviare la **Procedura guidata per i servizi di Azure**.
+1. Nella console passare ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Servizi di Azure** e quindi scegliere **Configura i servizi di Azure** dalla scheda **Home** della barra multifunzione per avviare la **Procedura guidata per i servizi di Azure**.
 
-2.  Nella pagina **Servizi di Azure** selezionare **Connettore Upgrade Readiness** e quindi fare clic su **Avanti**.
+2. Nella pagina **Servizi di Azure** selezionare **Connettore Upgrade Readiness** e quindi fare clic su **Avanti**.
 
-3.  Nella pagina **App** specificare l'**ambiente Azure** (technical preview supporta solo cloud pubblici). Quindi, fare clic su **Importa** per aprire la finestra **Importa le app**.
+3. Nella pagina **App** specificare l'**ambiente Azure** (technical preview supporta solo cloud pubblici). Quindi, fare clic su **Importa** per aprire la finestra **Importa le app**.
 
-4.  Nella finestra **Importa le app** specificare i dettagli per un'app Web già esistente in Azure AD.
-    -   Specificare un nome descrittivo per Nome del tenant di Azure AD. Quindi, specificare l'ID Tenant, il nome dell'applicazione, l'ID Client, la chiave privata per l'app Web di Azure e l'URI ID dell'app.
-    -   Fare clic su **Verifica** e, se ha esito positivo, fare clic su **OK** per continuare.
+4. Nella finestra **Importa le app** specificare i dettagli per un'app Web già esistente in Azure AD.
+    - Specificare un nome descrittivo per Nome del tenant di Azure AD. Quindi, specificare l'ID Tenant, il nome dell'applicazione, l'ID Client, la chiave privata per l'app Web di Azure e l'URI ID dell'app.
+    - Fare clic su **Verifica** e, se ha esito positivo, fare clic su **OK** per continuare.
 
-5.   Nella pagina **Configurazione** specificare la sottoscrizione, il gruppo di risorse e l'area di lavoro di Windows Analytics che si desidera usare con questa connessione a Preparazione aggiornamenti.  
+5.  Nella pagina **Configurazione** specificare la sottoscrizione, il gruppo di risorse e l'area di lavoro di Windows Analytics che si desidera usare con questa connessione a Preparazione aggiornamenti.  
 
-6.  Fare clic su **Avanti** per visualizzare la pagina **Riepilogo** e quindi completare la procedura guidata per creare la connessione.
+6. Fare clic su **Avanti** per visualizzare la pagina **Riepilogo** e quindi completare la procedura guidata per creare la connessione.
 
 
 ## <a name="new-client-settings-for-cloud-services"></a>Nuove impostazioni client per i servizi cloud
@@ -306,9 +306,9 @@ Se si rimuove la connessione, non viene annullata la registrazione dei dispositi
 ### <a name="try-it-out"></a>Verifica
 
 1. Configurare la sezione seguente di impostazioni client (in Servizi cloud) tramite le informazioni contenute in [Come configurare le impostazioni client in System Center Configuration Manager](/sccm/core/clients/deploy/configure-client-settings).
-    -   **Registra automaticamente i nuovi dispositivi Windows 10 aggiunti al dominio con Azure Active Directory** impostato su **Sì** (impostazione predefinita) o **No**.
-    -   **Consenti ai client di usare un gateway di gestione cloud** impostato su **Sì** (impostazione predefinita) o **No**.
-2.  Distribuire le impostazioni client per la raccolta necessaria di dispositivi.
+   - **Registra automaticamente i nuovi dispositivi Windows 10 aggiunti al dominio con Azure Active Directory** impostato su **Sì** (impostazione predefinita) o **No**.
+   - **Consenti ai client di usare un gateway di gestione cloud** impostato su **Sì** (impostazione predefinita) o **No**.
+2. Distribuire le impostazioni client per la raccolta necessaria di dispositivi.
 
 Per verificare che il dispositivo sia stato aggiunto ad Azure AD, eseguire il comando **dsregcmd.exe /status** in una finestra del prompt dei comandi. Il campo **AzureAdjoined** nei risultati visualizza **Sì** se il dispositivo è stato aggiunto ad Azure AD.
 
@@ -352,11 +352,11 @@ Per consentire agli utenti di approvare i propri script:
 2. Nell'area di lavoro **Raccolta software** fare clic su **Script**.
 3. Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea gruppo**.
 4. Nella pagina **Script** della procedura guidata **Crea script** configurare quanto segue:
-    - In **Nome script** inserire il nome dello script. Sebbene sia possibile creare più script con lo stesso nome, ciò renderà più difficile individuare lo script necessario per la console di Configuration Manager.
-    - **Lingua script**: attualmente sono supportati solo script di **PowerShell**.
-    - **Importa**: importare uno script di PowerShell nella console. Lo script viene visualizzato nel campo **Script**.
-    - **Elimina**: rimuove lo script corrente dal campo **Script**.
-    - **Script**: visualizza lo script attualmente importato. È possibile modificare lo script in questo campo in base alle esigenze.
+   - In **Nome script** inserire il nome dello script. Sebbene sia possibile creare più script con lo stesso nome, ciò renderà più difficile individuare lo script necessario per la console di Configuration Manager.
+   - **Lingua script**: attualmente sono supportati solo script di **PowerShell**.
+   - **Importa**: importare uno script di PowerShell nella console. Lo script viene visualizzato nel campo **Script**.
+   - **Elimina**: rimuove lo script corrente dal campo **Script**.
+   - **Script**: visualizza lo script attualmente importato. È possibile modificare lo script in questo campo in base alle esigenze.
 5. Completare la procedura guidata. Il nuovo script viene visualizzato nell'elenco **Script** con stato **In attesa di approvazione** . Prima di poter eseguire questo script nei dispositivi client, è necessario approvarlo.
 
 
@@ -507,28 +507,28 @@ Per altre informazioni sulle impostazioni di conformità, vedere [Garantire la c
 
 * **Tipo di password richiesto**. Specificare se gli utenti devono creare una password alfanumerica o una password numerica. Per le password alfanumeriche, si specifica anche il numero minimo di set di caratteri che la password deve contenere. I quattro set di caratteri sono: lettere minuscole, lettere maiuscole, simboli e numeri.
 
-    **Supportato in:**
-    * Windows Phone 8+
-    * Windows 8.1+
-    * iOS 6+
+  **Supportato in:**
+  * Windows Phone 8+
+  * Windows 8.1+
+  * iOS 6+
 <br></br>
 * **Blocca il debug USB nel dispositivo**. Non è necessario configurare questa impostazione poiché l'esecuzione del debug dell'USB è già stata disabilitata in Android per i dispositivi di lavoro.
 
-    **Supportato in:**
-    * Android 4.0+
-    * Samsung KNOX Standard 4.0+
+  **Supportato in:**
+  * Android 4.0+
+  * Samsung KNOX Standard 4.0+
 <br></br>
 * **Blocca app da origini sconosciute**. Obbligare i dispositivi a impedire l'installazione di app da origini sconosciute. Non è necessario configurare questa impostazione poiché Android per i dispositivi di lavoro limita sempre l'installazione da origini sconosciute.
 
-    **Supportato in:**
-    * Android 4.0+
-    * Samsung KNOX Standard 4.0+
+  **Supportato in:**
+  * Android 4.0+
+  * Samsung KNOX Standard 4.0+
 <br></br>
 * **Rendi obbligatoria l'analisi delle minacce nelle app**. Questa impostazione specifica che la funzionalità dell'app di verifica è abilitata nel dispositivo.
 
-    **Supportato in:**
-    * Android da 4.2 a 4.4
-    * Samsung KNOX Standard 4.0+
+  **Supportato in:**
+  * Android da 4.2 a 4.4
+  * Samsung KNOX Standard 4.0+
 
 Vedere [Creare e distribuire criteri di conformità del dispositivo](https://docs.microsoft.com/sccm/mdm/deploy-use/create-compliance-policy) per provare le nuove regole di conformità del dispositivo.
 
@@ -558,13 +558,13 @@ Sono state aggiornate le descrizioni delle impostazioni per Android per gli elem
 |Prima della Technical Preview 1706 | Nuovo nome dell'opzione | Comportamento|
 |-|-|-|
 |Impedire qualsiasi condivisione tra i limiti| Restrizioni di condivisione predefinite| Dall'ambito di lavoro a quello personale: predefinito (dovrà essere bloccato in tutte le versioni) <br>Dall'ambito personale a quello di lavoro: predefinito (consentito in 6.x+, bloccato in 5.x)|
-|Nessuna restrizione|   Le app nel profilo personale possono gestire richieste di condivisione dal profilo di lavoro| Dall'ambito di lavoro a quello personale: È consentito  <br>Dall'ambito personale a quello di lavoro: È consentito|
+|Nessuna restrizione| Le app nel profilo personale possono gestire richieste di condivisione dal profilo di lavoro| Dall'ambito di lavoro a quello personale: È consentito  <br>Dall'ambito personale a quello di lavoro: È consentito|
 |Le app nel profilo di lavoro possono gestire richieste di condivisione dal profilo personale |Le app nel profilo di lavoro possono gestire richieste di condivisione dal profilo personale |Dall'ambito di lavoro a quello personale: Predefinito<br>Dall'ambito personale a quello di lavoro: È consentito<br>(utile solamente su 5.x dove l'opzione dall'ambito personale a quello di lavoro è bloccata)|
 
 Nessuna di queste opzioni impedisce direttamente il comportamento di copia e incolla. È stata aggiunta un'impostazione personalizzata al servizio e all'app del Portale aziendale in 1704 che può essere configurata per evitare di copiare e incollare. L'impostazione è configurabile tramite un URI personalizzato.
 
--   URI OMA:  ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste
--   Tipo valore: Boolean
+- URI OMA:  ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste
+- Tipo valore: Boolean
 
 Impostando DisallowCrossProfileCopyPaste su true si impedisce il comportamento di copia e incolla tra Android for Work personale e i profili di lavoro.
 

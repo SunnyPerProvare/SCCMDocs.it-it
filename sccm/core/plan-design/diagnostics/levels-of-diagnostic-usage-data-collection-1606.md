@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8383b654182ba57b52a53755595413b18d1cd4e7
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 69bec7c52d826d76502e52d0d5ddbc1d0cf9c3ef
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56121710"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677189"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1606-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1606
 
@@ -42,10 +42,10 @@ Le modifiche rispetto alle versioni precedenti sono contrassegnate da ***[Nuovo]
  A partire da System Center Configuration Manager versione 1606, questo livello include i dati seguenti:
 
 
- -   Informazioni sull'installazione:
+-   Informazioni sull'installazione:
       - Build, tipo di installazione, Language Pack, funzionalità abilitate  
 
-      -   Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti  
+      -   Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti 
 
       -  Versione dello script post-aggiornamento
 
@@ -86,7 +86,7 @@ Le modifiche rispetto alle versioni precedenti sono contrassegnate da ***[Nuovo]
 -  Uso di Network Discovery (abilitato o disabilitato)
 -  Admin Console:
 
-     -  Statistiche sulle connessioni della console (versione del sistema operativo, lingua, SKU e architettura, memoria di sistema, conteggio dei processori logici, ID del sito di connessione, versioni di .NET installate e Language Pack della console)    
+    -  Statistiche sulle connessioni della console (versione del sistema operativo, lingua, SKU e architettura, memoria di sistema, conteggio dei processori logici, ID del sito di connessione, versioni di .NET installate e Language Pack della console)    
 
 
 - ***[Nuovo]*** Versione SQL, livello Service Pack, edizione, ID delle regole di confronto e set di caratteri

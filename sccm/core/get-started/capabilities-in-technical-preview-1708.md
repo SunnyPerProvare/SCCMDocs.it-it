@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01253487d7fb90aaa24dae6a55b9110e516ab4ad
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 7e3cb09f6220f7a0fd57960a9b46087a25ee81c5
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176003"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677341"
 ---
 # <a name="capabilities-in-technical-preview-1708-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1708 per System Center Configuration Manager
 
@@ -88,17 +88,17 @@ A partire da questa versione, è possibile usare la console di Configuration Man
 Per identificare i dispositivi in attesa di riavvio, passare ad **Asset e conformità** > **Dispositivi** e selezionare una raccolta con i dispositivi che potrebbero richiedere un riavvio. Dopo aver selezionato una raccolta, è possibile visualizzare lo stato per ogni dispositivo nel riquadro dei dettagli, in una nuova colonna denominata **Riavvio in sospeso**. Ogni dispositivo ha un valore **Sì** o **No**.
 
 Per creare la notifica client per riavviare un dispositivo:
-1.  Individuare il dispositivo da riavviare nel nodo Dispositivi della console.
-2.  Fare clic con il pulsante destro del mouse sul dispositivo, selezionare **Notifica client**, quindi selezionare **Riavvia**. Verrà visualizzata una finestra di informazioni sul riavvio. Fare clic su **OK** per riavviare la richiesta.
+1. Individuare il dispositivo da riavviare nel nodo Dispositivi della console.
+2. Fare clic con il pulsante destro del mouse sul dispositivo, selezionare **Notifica client**, quindi selezionare **Riavvia**. Verrà visualizzata una finestra di informazioni sul riavvio. Fare clic su **OK** per riavviare la richiesta.
 
 Quando la notifica viene ricevuta da un client, viene visualizzata una finestra di notifica di **Software Center** per informare l'utente del riavvio. Per impostazione predefinita, il riavvio viene eseguito dopo 90 minuti. È possibile modificare il tempo di riavvio configurando le [impostazioni del client](/sccm/core/clients/deploy/configure-client-settings). Le impostazioni per il comportamento del riavvio sono disponibili nella scheda [Riavvio del computer](/sccm/core/clients/deploy/about-client-settings#computer-restart) delle impostazioni predefinite.
 
 
 ### <a name="try-it-out"></a>Verifica
 Provare a completare le attività seguenti e quindi inviare **Feedback** dalla scheda **Home** della barra multifunzione per comunicarci come è andata:
-1.  Distribuire un'app o un aggiornamento a un dispositivo richiederà che il dispositivo venga riavviato per completare l'installazione.
-2.  Individuare il dispositivo nel nodo **Asset e conformità** > **Dispositivi** della console e verificare sia visualizzato **Sì** nella colonna **Riavvio in sospeso**. Prima che lo stato Riavvio in sospeso venga visualizzato nella console potrebbero passare fino a 20 minuti.
-3.  Monitorare il dispositivo per confermare che la notifica di Software Center si apra e che il dispositivo venga riavviato correttamente.
+1. Distribuire un'app o un aggiornamento a un dispositivo richiederà che il dispositivo venga riavviato per completare l'installazione.
+2. Individuare il dispositivo nel nodo **Asset e conformità** > **Dispositivi** della console e verificare sia visualizzato **Sì** nella colonna **Riavvio in sospeso**. Prima che lo stato Riavvio in sospeso venga visualizzato nella console potrebbero passare fino a 20 minuti.
+3. Monitorare il dispositivo per confermare che la notifica di Software Center si apra e che il dispositivo venga riavviato correttamente.
 
 
 ## <a name="software-center-customization"></a>Personalizzazione di Software Center

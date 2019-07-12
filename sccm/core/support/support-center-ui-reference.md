@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7858497f1ff49e5068da066cc481ca5fd38f825f
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 42c1fc69d237b6209b49e45e1b185483b1c55163
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500714"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676319"
 ---
 # <a name="support-center-user-interface-reference"></a>Informazioni di riferimento sull'interfaccia utente del Supporto tecnico
 
@@ -229,13 +229,13 @@ Le voci seguenti di questo menu richiedono un'azione del client relativa al cont
 
     - **Time out content requests** (Timeout richieste contenuto): se una richiesta di posizione di contenuto è in esecuzione da troppo tempo, questa azione la interrompe.  
 
-  - **Application deployment evaluation** (Valutazione distribuzione applicazioni): avvia un'attività che valuta le applicazioni distribuite.  
+- **Application deployment evaluation** (Valutazione distribuzione applicazioni): avvia un'attività che valuta le applicazioni distribuite.  
 
-  - **Software updates deployment evaluation** (Valutazione distribuzione aggiornamenti software): avvia un'attività che valuta gli aggiornamenti del software distribuiti.  
+- **Software updates deployment evaluation** (Valutazione distribuzione aggiornamenti software): avvia un'attività che valuta gli aggiornamenti del software distribuiti.  
 
-  - **Software updates source scan** (Analisi origine aggiornamenti software): avvia un'attività che analizza i percorsi di origine degli aggiornamenti.  
+- **Software updates source scan** (Analisi origine aggiornamenti software): avvia un'attività che analizza i percorsi di origine degli aggiornamenti.  
 
-  - **Windows Installer source list update** (Aggiornamento elenco origine Windows Installer): avvia un'attività che aggiorna il percorso di origine per le installazioni di Windows Installer (MSI).  
+- **Windows Installer source list update** (Aggiornamento elenco origine Windows Installer): avvia un'attività che aggiorna il percorso di origine per le installazioni di Windows Installer (MSI).  
 
 #### <a name="content-view"></a>Visualizzazione di contenuto
 Visualizza le applicazioni, i pacchetti e gli aggiornamenti caricati nel client. Se si seleziona un'applicazione, un pacchetto o un aggiornamento, vengono visualizzate informazioni dettagliate sul contenuto. Per alcune applicazioni, è anche possibile eseguire le azioni seguenti:  
@@ -469,8 +469,8 @@ Dopo aver trovato due o più corrispondenze per la stringa cercata, questa opzio
 
 #### <a name="error-lookup"></a>Error lookup
 Immettere un codice di errore per cercarlo nei file di log attualmente aperti. Usare i formati di codice di errore seguenti:
- - **Intero a 32 bit (con segno)**: ad esempio, `-2147024891`  
- - **Intero a 32 bit (senza segno)**: ad esempio, `2147942405`  
+ - **Intero a 32 bit (con segno)** : ad esempio, `-2147024891`  
+ - **Intero a 32 bit (senza segno)** : ad esempio, `2147942405`  
  - **Esadecimale a 32 bit**: ad esempio, `0x80070005`  
 
 #### <a name="decode-certificate"></a>Decode certificate

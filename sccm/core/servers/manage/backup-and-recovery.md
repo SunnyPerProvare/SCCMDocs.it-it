@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 243e38273488f72e3e5e693270b10d6865c3a422
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: bf20d24b8a1322f1d74c42c66f49fd8026ac075e
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67252250"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676615"
 ---
 # <a name="back-up-a-configuration-manager-site"></a>Eseguire il backup di un sito di Configuration Manager
 
@@ -93,7 +93,7 @@ Le informazioni sullo stato di backup del sito vengono scritte nel file **Smsbku
     -   **Unità locali nel server del sito e in SQL Server**: specifica che l'attività deve archiviare i file di backup per il sito nel percorso specificato nell'unità locale del server del sito. L'attività archivia i file di backup per il database del sito nel percorso specificato nell'unità locale del server del database del sito. Creare le cartelle locali prima dell'esecuzione dell'attività di backup. L'account computer del server del sito deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella creata nel server del sito. L'account computer di SQL Server deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella creata nel server di database del sito. Questa opzione è disponibile solo quando il database del sito non è installato nel server del sito.  
 
     > [!NOTE]  
-    >   L'opzione per selezionare la destinazione di backup è disponibile solo quando si specifica il percorso di rete della destinazione di backup.  
+    > L'opzione per selezionare la destinazione di backup è disponibile solo quando si specifica il percorso di rete della destinazione di backup.  
     >  
     > Il nome della cartella o il nome condivisione usato per la destinazione di backup non supporta l'utilizzo di caratteri Unicode.  
 

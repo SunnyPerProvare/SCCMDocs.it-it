@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 838a1dffd5a84544259d26cc8d58eb843cc57d0f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 979409f34e4c32ce812f2a84ce062d2312a85d3c
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56141069"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676146"
 ---
 # <a name="create-and-deploy-an-application-with-system-center-configuration-manager"></a>Creare e distribuire un'applicazione con System Center Configuration Manager
 
@@ -55,9 +55,9 @@ Assicurarsi di aver esaminato le informazioni contenute in [Introduzione alla ge
 
 3. Nella pagina **Generale** della **Creazione guidata applicazione** selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**. Alcune sezioni della procedura guidata vengono prepopolate con le informazioni estratte dal file di installazione con estensione msi. A questo punto, specificare le informazioni seguenti:  
 
-   -   **Tipo**: scegliere **Windows Installer (file \*.msi)**.  
+   -   **Tipo**: scegliere **Windows Installer (file \*.msi)** .  
 
-   -   **Percorso**: immettere il percorso del file di installazione **Contoso.msi** o fare clic su **Sfoglia** per selezionare il percorso. Per trovare i file di installazione con Configuration Manager, il percorso deve essere specificato nel formato *\\\Server\Share\File*.  
+   -   **Percorso**: immettere il percorso del file di installazione **Contoso.msi** o fare clic su **Sfoglia**per selezionare il percorso. Per trovare i file di installazione con Configuration Manager, il percorso deve essere specificato nel formato *\\\Server\Share\File*.  
 
    Al termine, verrà visualizzata una schermata simile alla seguente:  
 
@@ -88,7 +88,7 @@ Dopo aver creato un'applicazione, è possibile ridefinire le impostazioni dell'a
 
  Nella finestra di dialogo **Proprietà applicazione \><Contoso** verranno visualizzati diversi elementi che è possibile configurare per perfezionare il comportamento dell'applicazione. Per informazioni dettagliate su tutte le impostazioni che è possibile configurare, vedere [Creazione di applicazioni](../../apps/deploy-use/create-applications.md). Ai fini di questo esempio, verranno modificate solo alcune delle proprietà del tipo di distribuzione dell'applicazione.  
 
- Fare clic sulla scheda **Tipi di distribuzione** > tipo di distribuzione **Applicazione Contoso** > **Modifica**.  
+ Fare clic sulla scheda **Tipi di distribuzione** > tipo di distribuzione **Applicazione Contoso** > **Modifica**. 
 
 Viene visualizzata una finestra di dialogo simile alla seguente:  
 

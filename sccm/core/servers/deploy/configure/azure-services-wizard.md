@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6d7acf1d5c73c59f2ce1e6d2b7f3f7354e21979
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: 1e6ef01d38b9359bbb82449ad045312e58646475
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67251883"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676705"
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurare i servizi di Azure da usare con Configuration Manager
 
@@ -107,11 +107,11 @@ Quando si configura Preparazione aggiornamenti o il connettore Log Analytics, co
 
 ## <a name="start-the-azure-services-wizard"></a>Avviare la procedura guidata per i servizi di Azure
 
-1.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e selezionare il nodo **Servizi di Azure**.  
+1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e selezionare il nodo **Servizi di Azure**.  
 
-2.  Nella scheda **Home** della barra multifunzione nel gruppo **Servizi di Azure** selezionare **Configura i servizi di Azure**.  
+2. Nella scheda **Home** della barra multifunzione nel gruppo **Servizi di Azure** selezionare **Configura i servizi di Azure**.  
 
-3.  Nella pagina **Servizi di Azure** della procedura guidata per i servizi di Azure:  
+3. Nella pagina **Servizi di Azure** della procedura guidata per i servizi di Azure:  
 
     1. Specificare un **Nome** per l'oggetto in Configuration Manager.  
 
@@ -180,7 +180,7 @@ Selezionare **OK** per creare l'app Web in Azure AD e chiudere la finestra di di
 
 
 ### <a name="native-client-app"></a>App client nativa
-    
+
 Questa app Azure AD di tipo *Nativo* è detta anche app client in Configuration Manager.
 
 #### <a name="client-app-dialog"></a>Finestra di dialogo App client
@@ -261,11 +261,11 @@ Il diagramma seguente è un flusso di dati concettuale per l'interazione tra Con
 
 ![Diagramma di flusso di dati per Configuration Manager con Azure AD e gestione cloud](media/aad-auth.png)
 
-1.  L'amministratore di Configuration Manager importa o crea le app client e server in Azure AD.  
+1. L'amministratore di Configuration Manager importa o crea le app client e server in Azure AD.  
 
-2.  Viene eseguito il metodo di individuazione utenti di Azure AD Configuration Manager. Il sito usa il token dell'app server di Azure AD per il rilevamento di oggetti utente in Microsoft Graph.  
+2. Viene eseguito il metodo di individuazione utenti di Azure AD Configuration Manager. Il sito usa il token dell'app server di Azure AD per il rilevamento di oggetti utente in Microsoft Graph.  
 
-3.  Il sito archivia dati sugli oggetti utente. Per altre informazioni, vedere [Individuazione utente Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).  
+3. Il sito archivia dati sugli oggetti utente. Per altre informazioni, vedere [Individuazione utente Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).  
 
 4.  Il client Configuration Manager richiede il token utente di Azure AD. Il client esegue l'attestazione mediante l'ID applicazione dell'app client di Azure AD, con l'app server come gruppo di destinatari. Per altre informazioni, vedere [Claims in Azure AD Security Tokens](/azure/active-directory/develop/authentication-scenarios#claims-in-microsoft-identity-platform-security-tokens) (Attestazioni nei token di sicurezza di Azure AD).  
 

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e862fe4907d5e480fd8a19c28d890987f73240fa
-ms.sourcegitcommit: d8cfd0edf2579e2b08a0ca8a0a7b8f53d1e4196f
+ms.openlocfilehash: f5434e42bfdcdf9bd423035c1d30a3c68974d9dd
+ms.sourcegitcommit: de3c86077bbf91b793e94e1f60814df18da11bab
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67463797"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726254"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
@@ -719,7 +719,7 @@ Usare questo passaggio per scaricare uno dei tipi di pacchetto seguenti:
 - Pacchetti di aggiornamento del sistema operativo  
 - Pacchetti driver  
 - Pacchetti  
-- Immagini d'avvio  
+- Immagini di avvio (nella versione 1810 e versioni precedenti)  
 
 Questo passaggio funziona bene in una sequenza di attività per eseguire l'aggiornamento di un sistema operativo negli scenari seguenti:  
 
@@ -1623,7 +1623,7 @@ A partire dalla versione 1902, è possibile specificare che lo script di PowerSh
 #### <a name="account"></a>Account
 
 <!-- 3556028 -->
-A partire dalla versione 1902, è possibile specificare l'account utente Windows usato in questo passaggio per eseguire lo script di PowerShell. Lo script viene eseguito con le autorizzazioni dell'account specificato. Selezionare **Imposta** per specificare l'utente locale o l'account di dominio. Per altre informazioni sull'account Esegui come per la sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-run-as-account).
+A partire dalla versione 1902, è possibile specificare l'account utente Windows usato in questo passaggio per eseguire lo script di PowerShell. L'account specificato deve essere un amministratore locale nel sistema e lo script viene eseguito con le autorizzazioni di questo account. Selezionare **Imposta** per specificare l'utente locale o l'account di dominio. Per altre informazioni sull'account Esegui come per la sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-run-as-account).
 
 > [!IMPORTANT]  
 > Se questo passaggio specifica un account utente e viene eseguito in Windows PE, l'azione ha esito negativo. Non è possibile aggiungere Windows PE a un dominio. Questo errore viene registrato nel file **smsts.log**.  

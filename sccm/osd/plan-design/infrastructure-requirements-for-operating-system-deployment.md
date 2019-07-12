@@ -2,7 +2,7 @@
 title: Requisiti dell'infrastruttura di distribuzione del sistema operativo
 titleSuffix: Configuration Manager
 description: Informazioni sulle dipendenze esterne e dei prodotti e sui requisiti per la distribuzione del sistema operativo in Configuration Manager
-ms.date: 10/02/2018
+ms.date: 07/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b7a484bc3e3491ac832ca7b3d6ed926627cbfaa
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 9115fb3e0d36e4664541c70b29929dfe3ef8b6d9
+ms.sourcegitcommit: 5e43c0c6b0b1f449e596f59ceaa92a9b6ca194cc
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133698"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67572732"
 ---
 # <a name="infrastructure-requirements-for-os-deployment-in-configuration-manager"></a>Requisiti dell'infrastruttura per la distribuzione del sistema operativo in Configuration Manager
 
@@ -69,7 +69,7 @@ Installare le funzionalità seguenti di Windows ADK:
 -   Ambiente preinstallazione di Windows (Windows PE)  
 
     > [!Important]  
-    > A partire da Windows 10 versione 1809, Windows PE è un programma di installazione separato. Non esistono differenze funzionali.<!--SCCMDocs-pr issue 2908-->  
+    > A partire da Windows 10 versione 1809, Windows PE è un programma di installazione separato. Non ci sono altre differenze funzionali.<!--SCCMDocs-pr issue 2908-->  
 
 Per un elenco delle versioni di Windows 10 ADK che è possibile usare con versioni diverse di Configuration Manager, vedere [Supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk).
 
@@ -187,9 +187,9 @@ Per usare i report di Configuration Manager per le distribuzioni del sistema ope
 
 Il ruolo di sicurezza **Gestione distribuzione del sistema operativo** è un ruolo predefinito che non può essere modificato. Tuttavia, è possibile copiare il ruolo, apportare modifiche e quindi salvare tali modifiche come un nuovo ruolo di sicurezza personalizzato. Di seguito vengono riportate alcune delle autorizzazioni che si applicano direttamente alle distribuzioni del sistema operativo:  
 
-- **Pacchetto di immagine di avvio**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
+- **Pacchetto immagine d'avvio**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
 
-- **Driver di dispositivo**: Crea, Elimina, Modifica, Modifica cartella, Modificare report, Sposta oggetto, Lettura, Esegui report  
+- **Driver dispositivo**: Crea, Elimina, Modifica, Modifica cartella, Modifica report, Sposta oggetto, Lettura, Esegui report  
 
 - **Pacchetto driver**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
 
@@ -197,7 +197,7 @@ Il ruolo di sicurezza **Gestione distribuzione del sistema operativo** è un ruo
 
 - **Pacchetto di aggiornamento del sistema operativo**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
 
-- **Pacchetto sequenza attività**: Crea, Crea supporto per sequenza attività, Elimina, Modifica, Modifica cartella, Modifica report, Sposta oggetto, Lettura, Esegui report, Imposta ambito di protezione  
+- **Pacchetto sequenza di attività**: Crea, Crea supporto per sequenza di attività, Elimina, Modifica, Modifica cartella, Modifica report, Sposta oggetto, Lettura, Esegui report, Imposta ambito di protezione  
 
 Per altre informazioni, vedere [Creare ruoli di sicurezza personalizzati](/sccm/core/servers/deploy/configure/configure-role-based-administration#BKMK_CreateSecRole).  
 
@@ -262,7 +262,9 @@ Se si prevede di co-ospitare il punto di distribuzione in un server che esegue D
      `WDSUTIL /Set-Server /UseDHCPPorts:No /DHCPOption60:Yes`  
 
 > [!NOTE]
-> Quando si usa il risponditore PXE senza WDS, invece di WDS, non è consentito eseguire anche DHCP nello stesso server.
+> Nella versione 1810 e precedenti non è supportato l'uso del risponditore PXE senza WDS nei server che eseguono anche un server DHCP.
+>
+> A partire dalla versione 1902, quando si abilita un risponditore PXE in un punto di distribuzione senza i Servizi di distribuzione Windows, è ora possibile abilitarlo sullo stesso server del servizio DHCP. Per altre informazioni, vedere [Configurare almeno un punto di distribuzione per accettare le richieste PXE](/sccm/osd/deploy-use/use-pxe-to-deploy-windows-over-the-network#BKMK_Configure).
 
 
 ##  <a name="BKMK_SupportedOS"></a> Sistemi operativi supportati  

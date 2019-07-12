@@ -11,12 +11,12 @@ ms.assetid: b34fe701-5d05-42be-b965-e3dccc9363ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9ab7816e017d48b937a634b5031ba80e7dbfa093
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: f5ed06951fab313a4a1453864ffefb963cc4d8e9
+ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286949"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67623273"
 ---
 # <a name="internet-access-requirements"></a>Requisiti per l'accesso a Internet
 
@@ -120,7 +120,7 @@ Per l'individuazione utenti di Azure AD, il **punto di connessione del servizio*
 
 - Versione 1902 e successive: Endpoint di Microsoft Graph `https://graph.microsoft.com/`
 
-Il sistema del sito del punto di connessione di Cloud Management Gateway supporta l'uso di un proxy Web. Per altre informazioni sulla configurazione di questo ruolo per un proxy, vedere le [informazioni di supporto per server proxy](/sccm/core/plan-design/network/proxy-server-support#to-set-up-the-proxy-server-for-a-site-system-server). Il punto di connessione di Cloud Management Gateway deve connettersi solo agli endpoint del servizio Cloud Management Gateway. Non ha bisogno dell'accesso ad altri endpoint di Azure.
+Il sistema del sito del punto di connessione di Cloud Management Gateway supporta l'uso di un proxy Web. Per altre informazioni sulla configurazione di questo ruolo per un proxy, vedere le [informazioni di supporto per server proxy](proxy-server-support.md#configure-the-proxy-for-a-site-system-server). Il punto di connessione di Cloud Management Gateway deve connettersi solo agli endpoint del servizio Cloud Management Gateway. Non ha bisogno dell'accesso ad altri endpoint di Azure.
 
 Per altre informazioni su Cloud Management Gateway, vedere [Pianificare il gateway di gestione cloud in Configuration Manager](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway).
 

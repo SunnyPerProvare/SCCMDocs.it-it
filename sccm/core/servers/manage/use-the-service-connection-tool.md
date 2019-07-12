@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 002ed233a679cdee928160490c8e1ee4425c7382
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 83838e2642d09c001b638900b6cc4fa23975745e
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496267"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676357"
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usare lo strumento di connessione del servizio per System Center Configuration Manager
 
@@ -101,7 +101,7 @@ A partire dalla versione 1606, mentre si è connessi a Microsoft è possibile ca
 
 #### <a name="specify-the-type-of-updates-to-download"></a>Specificare il tipo di aggiornamenti da scaricare
 A partire dalla versione 1706, è stato modificato il comportamento di download di strumenti predefinito e lo strumento supporta le opzioni per controllare i file da scaricare.
--   Per impostazione predefinita, lo strumento consente di scaricare solo l'aggiornamento più recente disponibile adeguato alla versione del sito. Non scarica gli aggiornamenti rapidi.
+- Per impostazione predefinita, lo strumento consente di scaricare solo l'aggiornamento più recente disponibile adeguato alla versione del sito. Non scarica gli aggiornamenti rapidi.
 
 Per modificare questo comportamento, utilizzare uno dei parametri seguenti per impostare i file che vengono scaricati. 
 
@@ -110,9 +110,9 @@ Per modificare questo comportamento, utilizzare uno dei parametri seguenti per i
 >
 > È possibile verificare la versione cercando il file *SiteVersion*.txt all'interno del file CAB.
 
--   **-downloadall** Questa opzione consente di scaricare tutti gli elementi, inclusi aggiornamenti e aggiornamenti rapidi, indipendentemente dalla versione del sito.
--   **-downloadhotfix** Questa opzione consente di scaricare tutti gli aggiornamenti rapidi indipendentemente dalla versione del sito.
--   **-downloadsiteversion** Questa opzione consente di scaricare aggiornamenti e aggiornamenti rapidi con una versione più recente rispetto alla versione del sito.
+- **-downloadall** Questa opzione consente di scaricare tutti gli elementi, inclusi aggiornamenti e aggiornamenti rapidi, indipendentemente dalla versione del sito.
+- **-downloadhotfix** Questa opzione consente di scaricare tutti gli aggiornamenti rapidi indipendentemente dalla versione del sito.
+- **-downloadsiteversion** Questa opzione consente di scaricare aggiornamenti e aggiornamenti rapidi con una versione più recente rispetto alla versione del sito.
 
 Riga di comando di esempio che utilizza *- downloadsiteversion*:
 - **serviceconnectiontool.exe -connect  *-downloadsiteversion* -usagedatasrc D:\USB -updatepackdest D:\USB\UpdatePacks**

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf0b57ad1753d797b163b0016517cdad09459013
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: 5e4585d21b06bbfaa659fe09693af8cff109a1b6
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67251633"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676826"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Concetti di base per la gestione dei contenuti in Configuration Manager
 
@@ -152,13 +152,13 @@ Per altre informazioni, vedere [Peer cache di Windows PE](/sccm/osd/get-started/
 
 Quando un client ha bisogno di contenuto, invia una richiesta di percorso del contenuto al punto di gestione. Il punto di gestione restituisce un elenco di percorsi del contenuto validi per il contenuto richiesto. Questo elenco varia a seconda dello scenario specifico, delle tecnologie in uso, della struttura del sito, dei gruppi di limiti e delle impostazioni di distribuzione. L'elenco seguente contiene tutti i possibili percorsi di origine del contenuto utilizzabili da un client, in ordine di priorità:  
 
-1.  Il punto di distribuzione presente nello stesso computer del client
-2.  Un'origine peer nella stessa subnet di rete
-3.  Un punto di distribuzione nella stessa subnet di rete
-4.  Un'origine peer nello stesso gruppo di limiti
-5.  Un punto di distribuzione nel gruppo di limiti corrente
-6.  Un punto di distribuzione in un gruppo di limiti vicino configurato per il fallback
-9.  Un punto di distribuzione nel gruppo di limiti predefinito del sito 
+1. Il punto di distribuzione presente nello stesso computer del client
+2. Un'origine peer nella stessa subnet di rete
+3. Un punto di distribuzione nella stessa subnet di rete
+4. Un'origine peer nello stesso gruppo di limiti
+5. Un punto di distribuzione nel gruppo di limiti corrente
+6. Un punto di distribuzione in un gruppo di limiti vicino configurato per il fallback
+9. Un punto di distribuzione nel gruppo di limiti predefinito del sito 
 10. Il servizio cloud di Windows Update
 11. Un punto di distribuzione con connessione Internet
 12. Un punto di distribuzione cloud in Azure

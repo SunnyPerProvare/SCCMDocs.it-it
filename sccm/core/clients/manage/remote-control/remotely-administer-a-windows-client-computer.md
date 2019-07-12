@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d16cbc892a3f4c7565a9672ca7c0145396dcaa3d
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: b1a18371a7f75935b3d72262b35385f8f4e81923
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59673616"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677666"
 ---
 # <a name="how-to-remotely-administer-a-windows-client-computer-by-using-system-center-configuration-manager"></a>Come amministrare un computer client Windows in remoto mediante System Center Configuration Manager
 
@@ -65,7 +65,7 @@ Di seguito vengono elencati tre modi per avviare il visualizzatore controllo rem
         - **Tutti gli schermi** - Opzione aggiunta in Configuration Manager 1902. Se il computer a cui ci si connette ha diversi monitor, nella finestra del controllo remoto viene visualizzato ciò che compare su tutti i monitor. **Tutti gli schermi** è l'unica visualizzazione per i computer con più monitor prima della versione 1902.
         -  **Primo schermo** - Opzione aggiunta in Configuration Manager 1902. Il *primo schermo* è quello visualizzato in alto all'estrema sinistra nelle impostazioni dello schermo di Windows. Non è possibile selezionare uno schermo specifico. Quando si cambia la configurazione del visualizzatore, riconnettersi alla sessione remota. Il visualizzatore salva le preferenze per le connessioni future.
         -  **Adatta** - Ridimensiona la visualizzazione del computer remoto in modo da adattarla alle dimensioni della finestra **Controllo remoto di Configuration Manager**.
-       - **Barra di stato** - Attiva e disattiva la visualizzazione della barra di stato della finestra **Controllo remoto di Configuration Manager**.  
+        - **Barra di stato** - Attiva e disattiva la visualizzazione della barra di stato della finestra **Controllo remoto di Configuration Manager**.  
 
        > [!NOTE]  
        >  Il visualizzatore salva le preferenze per le connessioni future.
@@ -84,7 +84,7 @@ Di seguito vengono elencati tre modi per avviare il visualizzatore controllo rem
 
 ## <a name="to-start-the-remote-control-viewer-from-the-windows-command-line"></a>Per avviare il visualizzatore controllo remoto dalla riga di comando di Windows  
 
--   Al prompt dei comandi di Windows, digitare _<cartella di installazione di Configuration Manager\>_**\AdminConsole\Bin\x64\CmRcViewer.exe**  
+-   Al prompt dei comandi di Windows, digitare _<cartella di installazione di Configuration Manager\>_ **\AdminConsole\Bin\x64\CmRcViewer.exe**  
 
 CmRcViewer.exe supporta le opzioni da riga di comando seguenti:  
 

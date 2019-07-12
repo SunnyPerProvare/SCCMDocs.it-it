@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 90c5c57d1717363d83fa921d68caced8cf9e8da1
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: aadb544180d7662f1b60c73db6a35b64f8b7efe7
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67251707"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676840"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 
@@ -55,11 +55,11 @@ La peer cache non sostituisce l'uso di altre soluzioni, come Windows BranchCache
 
 Per abilitare la peer cache, distribuire le [impostazioni client](#bkmk_settings) in una raccolta. I membri di tale raccolta fungono quindi da origine di peer cache per altri client all'interno dello stesso gruppo di limiti.  
 
- -  Un client che agisce come origine contenuto peer invia un elenco di contenuti disponibili che ha memorizzato nella cache al suo punto di gestione.  
+ - Un client che agisce come origine contenuto peer invia un elenco di contenuti disponibili che ha memorizzato nella cache al suo punto di gestione.  
 
- -  Un altro client nello stesso gruppo di limiti invia una richiesta di percorso del contenuto al punto di gestione. Il server restituisce l'elenco delle possibili origini del contenuto. Questo elenco include tutte le origini di peer cache che includono contenuto e sono online. Include anche i punti di distribuzione e altri percorsi di origine del contenuto in tale gruppo di limiti. Per altre informazioni, vedere [Priorità dell'origine del contenuto](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#content-source-priority).  
+ - Un altro client nello stesso gruppo di limiti invia una richiesta di percorso del contenuto al punto di gestione. Il server restituisce l'elenco delle possibili origini del contenuto. Questo elenco include tutte le origini di peer cache che includono contenuto e sono online. Include anche i punti di distribuzione e altri percorsi di origine del contenuto in tale gruppo di limiti. Per altre informazioni, vedere [Priorità dell'origine del contenuto](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#content-source-priority).  
 
- -  In genere, il client che cerca il contenuto seleziona un'origine dall'elenco specificato. A questo punto il client tenta di ottenere il contenuto.  
+ - In genere, il client che cerca il contenuto seleziona un'origine dall'elenco specificato. A questo punto il client tenta di ottenere il contenuto.  
 
 A partire dalla versione 1806, sono disponibili impostazioni aggiuntive per i gruppi di limiti per offrire maggiore controllo sulla distribuzione di contenuti nell'ambiente. Per altre informazioni, vedere [Opzioni del gruppo di limiti per download peer](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).<!--1356193-->
 

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b3ac315806edd90e85fe654039d620ec0097d1b
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: d7c6fcdf0113dd9fa83d2d303661ad5690362715
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176657"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678743"
 ---
 # <a name="device-guard-management-with-configuration-manager"></a>Gestione di Device Guard con Configuration Manager
 
@@ -38,8 +38,8 @@ Per altre informazioni su Device Guard, vedere [Guida alla distribuzione di Devi
 
 È possibile configurare una delle modalità seguenti:
 
-1.  **Imposizione abilitata**: è possibile eseguire solo file eseguibili attendibili.
-2.  **Solo controllo**: è possibile eseguire tutti i file eseguibili, ma quelli non attendibili vengono registrati nel Registro eventi del client locale.
+1. **Imposizione abilitata**: è possibile eseguire solo file eseguibili attendibili.
+2. **Solo controllo**: è possibile eseguire tutti i file eseguibili, ma quelli non attendibili vengono registrati nel Registro eventi del client locale.
 
 >[!TIP]
 >In questa versione di Configuration Manager, Device Guard è una funzionalità di versione non definitiva. Per abilitarla, vedere [Funzionalità di versioni non definitive in System Center Configuration Manager](/sccm/core/servers/manage/pre-release-features).
@@ -77,10 +77,10 @@ Prima di configurare o distribuire criteri di controllo delle applicazioni di Wi
 - Indipendentemente dalla modalità di applicazione selezionata, quando si distribuisce un criterio di controllo delle applicazioni di Windows Defender, i PC client non possono eseguire applicazioni HTML con estensione hta.
 
 ## <a name="how-to-create-a-windows-defender-application-control-policy"></a>Come creare criteri di controllo delle applicazioni di Windows Defender
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.
-2.  Nell'area di lavoro **Asset e conformità** espandere **Endpoint Protection** e quindi fare clic su **Controllo delle applicazioni di Windows Defender**.
-3.  Nella scheda **Home**, nel gruppo **Crea** fare clic su **Crea un criterio di controllo delle applicazioni**.
-4.  Nella pagina **Generale** della **Create Application Control policy Wizard** (Creazione guidata criteri di Controllo di applicazioni) specificare le informazioni seguenti:
+1. Nella console di Configuration Manager fare clic su **Asset e conformità**.
+2. Nell'area di lavoro **Asset e conformità** espandere **Endpoint Protection** e quindi fare clic su **Controllo delle applicazioni di Windows Defender**.
+3. Nella scheda **Home**, nel gruppo **Crea** fare clic su **Crea un criterio di controllo delle applicazioni**.
+4. Nella pagina **Generale** della **Create Application Control policy Wizard** (Creazione guidata criteri di Controllo di applicazioni) specificare le informazioni seguenti:
     - **Nome**: immettere un nome univoco per il criterio di controllo delle applicazioni di Windows Defender. 
     - **Descrizione**: facoltativamente, immettere una descrizione per il criterio che consenta di identificarlo nella console di Configuration Manager.
     - **Imponi un riavvio dei dispositivi in modo che questo criterio possa essere applicato per tutti i processi**: dopo l'elaborazione del criterio in un PC client, viene pianificato un riavvio nel client in base a quanto specificato in **Impostazioni client** per **Riavvio del computer**.
@@ -89,22 +89,22 @@ Prima di configurare o distribuire criteri di controllo delle applicazioni di Wi
     - **Modalità di imposizione**: scegliere uno dei seguenti metodi di imposizione di Device Guard sul PC client.
         - **Imposizione abilitata**: è possibile eseguire solo file eseguibili attendibili.
         - **Solo controllo**: è possibile eseguire tutti i file eseguibili, ma quelli non attendibili vengono registrati nel Registro eventi del client locale.
-5.  Nella scheda **Inclusioni** della **Create Application Control policy Wizard** (Creazione guidata criteri di Controllo di applicazioni) scegliere se si vuole **autorizzare il software ritenuto attendibile da Intelligent Security Graph**.
+5. Nella scheda **Inclusioni** della **Create Application Control policy Wizard** (Creazione guidata criteri di Controllo di applicazioni) scegliere se si vuole **autorizzare il software ritenuto attendibile da Intelligent Security Graph**.
 6. Fare clic su **Aggiungi** per aggiungere il trust per file o cartelle specifiche sui PC. Nella finestra di dialogo **Aggiungi file o cartella attendibile** è possibile specificare un percorso di file o cartella locale da considerare attendibile. È anche possibile specificare un percorso di file o cartella su un dispositivo remoto a cui si è autorizzati a connettersi. Se si configura il trust per cartelle o file specifici in un criterio di Controllo di applicazioni di Windows Defender, è possibile:
     - Risolvere i problemi relativi ai comportamenti del programma di installazione gestito
     - Rendere attendibili le app line-of-business che non possono essere distribuite con Configuration Manager
     - Rendere attendibili le app incluse in un'immagine di distribuzione del sistema operativo. 
-8.  Fare clic su **Avanti** per completare la procedura guidata.
+8. Fare clic su **Avanti** per completare la procedura guidata.
 
 >[!IMPORTANT]
 >L'inclusione di file o cartelle attendibili è supportata solo nei PC client che eseguono la versione 1706 o versioni successive del client di Configuration Manager. Se si aggiungono regole di inclusione in un criterio di controllo delle applicazioni di Windows Defender e il criterio viene quindi distribuito in un PC client che esegue una versione precedente del client di Configuration Manager, il criterio non verrà applicato. Per risolvere il problema, aggiornare questi client precedenti. I criteri che non comprendono regole di inclusione possono comunque essere applicati alle versioni precedenti del client di Configuration Manager.
 
 ## <a name="how-to-deploy-a-windows-defender-application-control-policy"></a>Come distribuire criteri di controllo delle applicazioni di Windows Defender
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.
-2.  Nell'area di lavoro **Asset e conformità** espandere **Endpoint Protection** e quindi fare clic su **Controllo delle applicazioni di Windows Defender**.
-3.  Nell'elenco dei profili selezionare il profilo da distribuire e fare clic su **Distribuisci un criterio di controllo delle applicazioni** nel gruppo **Distribuzione** della scheda **Home**.
-4.  Nella finestra di dialogo **Distribuisci un criterio di controllo delle applicazioni** selezionare la raccolta in cui si vuole distribuire il criterio, quindi configurare una pianificazione per la valutazione del criterio da parte dei client. Selezionare infine se i client possono valutare i criteri al di fuori delle finestre di manutenzione configurate.
-5.  Al termine, fare clic su **OK** per distribuire il criterio. 
+1. Nella console di Configuration Manager fare clic su **Asset e conformità**.
+2. Nell'area di lavoro **Asset e conformità** espandere **Endpoint Protection** e quindi fare clic su **Controllo delle applicazioni di Windows Defender**.
+3. Nell'elenco dei profili selezionare il profilo da distribuire e fare clic su **Distribuisci un criterio di controllo delle applicazioni** nel gruppo **Distribuzione** della scheda **Home**.
+4. Nella finestra di dialogo **Distribuisci un criterio di controllo delle applicazioni** selezionare la raccolta in cui si vuole distribuire il criterio, quindi configurare una pianificazione per la valutazione del criterio da parte dei client. Selezionare infine se i client possono valutare i criteri al di fuori delle finestre di manutenzione configurate.
+5. Al termine, fare clic su **OK** per distribuire il criterio. 
 
 <!--Reworked article to put this inline while working on VSO 1355092
 ### Restarting the device after deploying the policy
@@ -126,8 +126,8 @@ Per monitorare l'elaborazione di un criterio di controllo delle applicazioni di 
 
 Per verificare che il software specifico sia bloccato o controllato, vedere i registri eventi seguenti del client locale:
 
-1.  Per il blocco e controllo di file eseguibili, usare **Registri applicazioni e servizi** > **Microsoft** > **Windows** > **Integrità del codice** > **Operativo**.
-2.  Per il blocco e il controllo di Windows Installer e dei file di script, usare **Registri applicazioni e servizi** > **Microsoft** > **Windows** > **AppLocker** > **MSI e Script**.
+1. Per il blocco e controllo di file eseguibili, usare **Registri applicazioni e servizi** > **Microsoft** > **Windows** > **Integrità del codice** > **Operativo**.
+2. Per il blocco e il controllo di Windows Installer e dei file di script, usare **Registri applicazioni e servizi** > **Microsoft** > **Windows** > **AppLocker** > **MSI e Script**.
 
 <!--Reworked article to put this inline while working on VSO 1355092
 ## Automatically let software run if it is trusted by Intelligent Security Graph

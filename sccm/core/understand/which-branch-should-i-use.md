@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0d2bc4c8ae366a5e60e9a7a3100b5a5059c341a
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: eae027f2f21c8c69e538c5fdfc429f5215bd6436
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67193957"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676160"
 ---
 # <a name="which-branch-of-configuration-manager-should-i-use"></a>Scelta del ramo di Configuration Manager da usare
 
@@ -89,7 +89,7 @@ Per installare LTSB come un nuovo sito o come aggiornamento da un sito di Config
 
 
 ### <a name="features-of-the-ltsb"></a>Funzionalità di LTSB
--   Riceve gli aggiornamenti nella console che forniscono correzioni critiche per la protezione.
+- Riceve gli aggiornamenti nella console che forniscono correzioni critiche per la protezione.
 - Fornisce un'opzione di installazione dopo che il contratto SA o i diritti equivalenti per Configuration Manager sono scaduti.
 - Supporta l'aggiornamento (conversione) a Current Branch quando si dispone di un contratto SA o diritti equivalenti validi per Configuration Manager.
 
@@ -101,14 +101,14 @@ LTSB si basa su Current Branch 1606, con le limitazioni seguenti:
 - Non riceve gli aggiornamenti per le nuove funzionalità
 - Non supporta le seguenti funzionalità: 
    - Aggiunta di una sottoscrizione Microsoft Intune. Ciò impedisce l'uso di:
-     -  Intune in una configurazione MDM ibrida
+     - Intune in una configurazione MDM ibrida
      - Software MDM locale
-   -    Dashboard di manutenzione di Windows 10, piani di manutenzione o canale semestrale di Windows 10
+   - Dashboard di manutenzione di Windows 10, piani di manutenzione o canale semestrale di Windows 10
    - Versioni future di LTSB di Windows 10 e Windows Server
-   -    Asset intelligence
-   -    Punti di distribuzione basati su cloud
-   -    Exchange Online come Exchange Connector
-   -    Qualsiasi funzionalità di versioni non definitive
+   - Asset intelligence
+   - Punti di distribuzione basati su cloud
+   - Exchange Online come Exchange Connector
+   - Qualsiasi funzionalità di versioni non definitive
 
 
 ### <a name="update-options"></a>Opzioni di aggiornamento
@@ -119,7 +119,7 @@ LTSB si basa su Current Branch 1606, con le limitazioni seguenti:
   - [Licensing and branches for System Center Configuration Manager](learn-more-editions.md) (Licenze e rami per System Center Configuration Manager)
   - [Baseline and update versions](/sccm/core/servers/manage/updates#bkmk_Baselines) (Versioni di base e di aggiornamento) 
 - Non è possibile convertire LTSB in Technical Preview Branch. Technical Preview Branch sono installazioni distinte che non richiedono una licenza.
--   Non è possibile aggiornare una copia di valutazione di Current Branch a un'installazione LTSB.
+- Non è possibile aggiornare una copia di valutazione di Current Branch a un'installazione LTSB.
 
 
 
@@ -150,8 +150,8 @@ Per altre informazioni, vedere [Technical Preview per System Center Configuratio
 
 
 ### <a name="update-options"></a>Opzioni di aggiornamento
--   È possibile installare qualsiasi aggiornamento nella console per una nuova versione di Technical Preview Branch.
--   Non è possibile convertire Technical Preview Branch in Current Branch o LTSB.
+- È possibile installare qualsiasi aggiornamento nella console per una nuova versione di Technical Preview Branch.
+- Non è possibile convertire Technical Preview Branch in Current Branch o LTSB.
 
 
 

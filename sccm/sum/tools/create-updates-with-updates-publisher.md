@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec448f0d2752cda2509b6daa0302ff521044bef4
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: e60ce54c5f792f7ea9c7a6c6d05b32c79c1e9b8d
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65493772"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678784"
 ---
 # <a name="create--software-updates-and-update-bundles-with-updates-publisher"></a>Creare aggiornamenti software e aggiornare aggregazioni con Updates Publisher
 
@@ -47,7 +47,7 @@ Poiché queste due procedure guidate hanno un flusso di lavoro simile, la proced
 
    -   Specificare gli eventuali argomenti della riga di comando necessari per installare l'aggiornamento software.
 
-       -   Questi valori vengono impostati automaticamente dai file e dalle patch di Windows Installer (file con estensione msi e msp). Per questi tipi di file gli argomenti devono essere specificati come **\[nome\]=\[valore\]**. Inoltre, tutte le opzioni che iniziano con **/** (ad esempio **/qn**) non sono supportate per gli aggiornamenti software con estensione msi o msp.
+       -   Questi valori vengono impostati automaticamente dai file e dalle patch di Windows Installer (file con estensione msi e msp). Per questi tipi di file gli argomenti devono essere specificati come **\[nome\]=\[valore\]** . Inoltre, tutte le opzioni che iniziano con **/** (ad esempio **/qn**) non sono supportate per gli aggiornamenti software con estensione msi o msp.
 
        -   Per gli aggiornamenti con estensione exe tutti gli argomenti sono validi.
 
@@ -61,7 +61,7 @@ Poiché queste due procedure guidate hanno un flusso di lavoro simile, la proced
 
    - **Descrizione**: una breve descrizione dell'aggiornamento. È possibile includere il contenuto installato dall'aggiornamento e specificare il motivo o le situazioni d'uso.
 
-     **Classificazione:** di seguito vengono riportate descrizioni di uso comune per le differenti classificazioni.
+   **Classificazione:** di seguito vengono riportate descrizioni di uso comune per le differenti classificazioni.
 
    - **Aggiornamento**: aggiornamento di un'applicazione o di un file attualmente installato.
 
@@ -77,30 +77,30 @@ Poiché queste due procedure guidate hanno un flusso di lavoro simile, la proced
 
    - **Strumento**: specifica uno strumento o una funzionalità che consente di completare una o più attività.
 
-     -   **Driver**: aggiornamento del software driver.
+   - **Driver**: aggiornamento del software driver.
 
    **Fornitore**: specificare un fornitore per l'aggiornamento. Per usare i valori di aggiornamenti disponibili nel repository, è possibile usare l'elenco a discesa. Quando si specifica un fornitore, la procedura guidata crea una cartella con lo stesso nome del fornitore sotto **Tutti gli aggiornamenti software** nell'**area di lavoro Aggiornamenti**, se tale cartella non esiste già. Di seguito sono riportati nomi WSUS (Windows Server Update Services) riservati che non è possibile immettere per gli aggiornamenti creati:
-   >*   Microsoft Corporation
-   >*   Microsoft
-   >*   Aggiornamento
-   >*   Aggiornamento software
-   >*   Strumenti
-   >*   Strumento
-   >*   Critico
-   >*   Aggiornamenti critici
-   >*   Sicurezza
-   >*   Aggiornamenti della sicurezza
-   >*   Feature Pack
-   >*   Aggiornamento cumulativo
-   >*   Service Pack
-   >*   Driver
-   >*   Aggiornamento driver
-   >*   Bundle
-   >*   Aggiornamento aggregazione
+   - Microsoft Corporation
+   - Microsoft
+   - Aggiornamento
+   - Aggiornamento software
+   - Strumenti
+   - Strumento
+   - Critico
+   - Aggiornamenti critici
+   - Sicurezza
+   - Aggiornamenti della sicurezza
+   - Feature Pack
+   - Aggiornamento cumulativo
+   - Service Pack
+   - Driver
+   - Aggiornamento driver
+   - Bundle
+   - Aggiornamento aggregazione
 
-**Prodotto**: specificare il tipo di prodotto a cui si applica l'aggiornamento. Per usare i valori di aggiornamenti disponibili nel repository, è possibile usare l'elenco a discesa. I nomi riservati WSUS che non possono essere usati per **Fornitore** non possono essere usati nemmeno per **Prodotto**.
+   **Prodotto**: specificare il tipo di prodotto a cui si applica l'aggiornamento. Per usare i valori di aggiornamenti disponibili nel repository, è possibile usare l'elenco a discesa. I nomi riservati WSUS che non possono essere usati per **Fornitore** non possono essere usati nemmeno per **Prodotto**.
 
- **More info URL** (URL altre informazioni): specificare l'URL in cui è possibile trovare altre informazioni sull'aggiornamento. Quando si immette l'URL, è necessario usare lettere minuscole per **https** o **http**.
+   **More info URL** (URL altre informazioni): specificare l'URL in cui è possibile trovare altre informazioni sull'aggiornamento. Quando si immette l'URL, è necessario usare lettere minuscole per **https** o **http**.
 
 4. Nella pagina **Optional Info** (Informazioni facoltative) è possibile configurare dettagli che forniscono informazioni aggiuntive sull'aggiornamento.
 

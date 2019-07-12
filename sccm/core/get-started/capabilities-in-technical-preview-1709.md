@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 13db7793b0d5a5b4f0845af21f976089205fdc7d
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: a88052e0d799b324ddbed6acbdf0b25a97f4d80c
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286159"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677367"
 ---
 # <a name="capabilities-in-technical-preview-1709-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1709 per System Center Configuration Manager
 
@@ -63,8 +63,8 @@ Per ridurre al minimo i rischi relativi alla compatibilità, i profili VPN esist
 
 Creare un nuovo profilo VPN usando il processo consueto. Si noti che la prima pagina di opzioni della procedura guidata di creazione del profilo VPN è stata modificata.
 
-1.  Passare a **Asset e conformità** > **Panoramica** > **Impostazioni di conformità** > **Accesso risorse aziendali** > **Profilo VPN** e quindi scegliere **Crea profilo VPN**.
-2.  Immettere un nome nella pagina **Generale** e scegliere una delle opzioni seguenti in **Specificare il tipo di profilo VPN da creare**:
+1. Passare a **Asset e conformità** > **Panoramica** > **Impostazioni di conformità** > **Accesso risorse aziendali** > **Profilo VPN** e quindi scegliere **Crea profilo VPN**.
+2. Immettere un nome nella pagina **Generale** e scegliere una delle opzioni seguenti in **Specificare il tipo di profilo VPN da creare**:
 
     - Windows 10  
     - Windows 8.1  
@@ -73,8 +73,8 @@ Creare un nuovo profilo VPN usando il processo consueto. Si noti che la prima pa
     - Android  
     - Android for Work  
 
-3.  Se si sceglie **Windows 8.1**, sono disponibili anche le opzioni **Create new profile** (Crea nuovo profilo) o **Importa da file**.
-4.  Completare la procedura guidata per la creazione del profilo.
+3. Se si sceglie **Windows 8.1**, sono disponibili anche le opzioni **Create new profile** (Crea nuovo profilo) o **Importa da file**.
+4. Completare la procedura guidata per la creazione del profilo.
 
 Quando si selezionano piattaforme diverse, si noti che vengono visualizzate solo le impostazioni rilevanti per la piattaforma selezionata.
 

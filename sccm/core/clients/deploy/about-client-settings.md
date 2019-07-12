@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c6bffc94abecb5f700fbb7236c923f26f3a0de0
-ms.sourcegitcommit: 949db4d2af7f605ee40610e45ae9d917b1045772
+ms.openlocfilehash: 2d329f2d0125a168d776b2855b6fd35e7a223111
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67314414"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677912"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -658,11 +658,11 @@ Se ad esempio l'organizzazione non usa criteri di conformità e si vuole nascond
 
 - Impostare **Filtro predefinito dell'applicazione** per tutte le applicazioni (**Tutti**) o solo per le applicazioni richieste (**Richiesto**).  
 
-    - Software Center usa sempre l'impostazione predefinita. Gli utenti possono modificare questo filtro, ma la preferenza non viene salvata da Software Center.  
+  - Software Center usa sempre l'impostazione predefinita. Gli utenti possono modificare questo filtro, ma la preferenza non viene salvata da Software Center.  
 
- - Impostare **Visualizzazione predefinita dell'applicazione** su **Visualizzazione affiancata** o **Visualizzazione elenco**. 
+- Impostare **Visualizzazione predefinita dell'applicazione** su **Visualizzazione affiancata** o **Visualizzazione elenco**. 
 
-    - Se un utente modifica questa configurazione, Software Center salva la preferenza dell'utente per il futuro. 
+  - Se un utente modifica questa configurazione, Software Center salva la preferenza dell'utente per il futuro. 
 
 
 ## <a name="software-deployment"></a>Distribuzione software  

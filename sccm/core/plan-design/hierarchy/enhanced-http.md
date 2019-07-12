@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25824b616bb833a715727033504776767b5aa958
-ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
+ms.openlocfilehash: 130cc8511b90da3e95c69f9239e57e2c7ac61d8c
+ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66354803"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67623356"
 ---
 # <a name="enhanced-http"></a>HTTP avanzato
 
@@ -51,7 +51,7 @@ Gli scenari seguenti traggono vantaggio da questi miglioramenti:
 ### <a name="bkmk_scenario1"></a> Scenario 1: Da client a punto di gestione
 
 <!--1356889-->
-[I dispositivi aggiunti ad Azure AD](https://docs.microsoft.com/azure/active-directory/device-management-introduction#azure-ad-joined-devices) possono comunicare usando un punto di gestione configurato per HTTP. Il server del sito genera un certificato per il punto di gestione in modo che possa comunicare tramite un canale sicuro.
+[I dispositivi aggiunti ad Azure AD](/azure/active-directory/devices/concept-azure-ad-join) possono comunicare usando un punto di gestione configurato per HTTP. Il server del sito genera un certificato per il punto di gestione in modo che possa comunicare tramite un canale sicuro.
 
 > [!Note]  
 > Questo comportamento è cambiato rispetto a Configuration Manager Current Branch versione 1802, che richiede un punto di gestione abilitato per HTTPS per i client aggiunti ad Azure AD che comunicano attraverso un gateway di gestione cloud. Per altre informazioni, vedere [Abilitare i punti di gestione per HTTPS](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_mphttps).  
@@ -66,7 +66,7 @@ Questo comportamento comprende gli scenari di distribuzione del sistema operativ
 ### <a name="bkmk_scenario3"></a> Scenario 3: Identità del dispositivo di Azure AD
 
 <!--1358460-->
-Un dispositivo aggiunto ad Azure AD o un [dispositivo di Azure AD ibrido](https://docs.microsoft.com/azure/active-directory/device-management-introduction#hybrid-azure-ad-joined-devices) senza un utente di Azure AD connesso può comunicare in modo sicuro con il relativo sito assegnato. L'identità del dispositivo basata sul cloud è ora sufficiente per l'autenticazione con il gateway di gestione cloud e il punto di gestione negli scenari incentrati sui dispositivi. Un token utente è comunque necessario negli scenari incentrati sull'utente.  
+Un dispositivo aggiunto ad Azure AD o un [dispositivo di Azure AD ibrido](/azure/active-directory/devices/concept-azure-ad-join-hybrid) senza un utente di Azure AD connesso può comunicare in modo sicuro con il relativo sito assegnato. L'identità del dispositivo basata sul cloud è ora sufficiente per l'autenticazione con il gateway di gestione cloud e il punto di gestione negli scenari incentrati sui dispositivi. Un token utente è comunque necessario negli scenari incentrati sull'utente.  
 
 
 ## <a name="features"></a>Caratteristiche

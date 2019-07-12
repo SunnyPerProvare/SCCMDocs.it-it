@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc5ebcbec87edf52d7ca7d3f9e6f4341ec60c191
-ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
+ms.openlocfilehash: 8f830100bd2d227df0206c40071711d9c7888f88
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67515840"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677479"
 ---
 # <a name="capabilities-in-technical-preview-1703-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1703 per System Center Configuration Manager
 
@@ -58,12 +58,12 @@ Usare il formato di URL seguente per aprire Software Center per una determinata 
 
 ### <a name="how-to-get-the-application-identifier-of-an-application"></a>Come ottenere l'identificatore dell'applicazione di un'applicazione
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.
-2.  Nell'area di lavoro Raccolta software espandere **Gestione applicazioni** e quindi fare clic su **Applicazioni**.
-3.  Nella visualizzazione **Applicazioni** fare clic con il pulsante destro del mouse su una delle intestazioni di colonna e quindi scegliere **ID CI univoco** nell'elenco. Si noterà che l'ID univoco di ogni applicazione viene ora visualizzato nell'elenco.
-4.  Prendere nota dell'**ID CI univoco** dell'applicazione a cui si vuole fornire un collegamento, ad esempio: **ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f/2**
-5.  Rimuovere quindi qualsiasi testo che segue il GUID dell'applicazione. In questo caso **/2**. Rimane così l'identificatore dell'applicazione.
-6.  Per completare la creazione del collegamento, anteporre **Softwarecenter:SoftwareID=** . Usando l'esempio precedente, il collegamento finale sarà: **Softwarecenter:SoftwareId= ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f**.
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.
+2. Nell'area di lavoro Raccolta software espandere **Gestione applicazioni** e quindi fare clic su **Applicazioni**.
+3. Nella visualizzazione **Applicazioni** fare clic con il pulsante destro del mouse su una delle intestazioni di colonna e quindi scegliere **ID CI univoco** nell'elenco. Si noterà che l'ID univoco di ogni applicazione viene ora visualizzato nell'elenco.
+4. Prendere nota dell'**ID CI univoco** dell'applicazione a cui si vuole fornire un collegamento, ad esempio: **ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f/2**
+5. Rimuovere quindi qualsiasi testo che segue il GUID dell'applicazione. In questo caso **/2**. Rimane così l'identificatore dell'applicazione.
+6. Per completare la creazione del collegamento, anteporre **Softwarecenter:SoftwareID=** . Usando l'esempio precedente, il collegamento finale sarà: **Softwarecenter:SoftwareId= ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f**.
 
 Gli utenti possono usare questo collegamento per aprire Software Center direttamente nell'applicazione specificata.
 
@@ -83,17 +83,17 @@ La versione Technical Preview 1703 introduce la **Configurazione guidata servizi
 
 Nella versione Technical Preview 1703 solo Windows Store per le aziende Business (WSfB) viene configurato con questa procedura guidata.  Gli altri servizi cloud vengono configurati usando i flussi di lavoro corrispondenti separati.
 
--   Usare le informazioni disponibili in questo argomento di anteprima in sostituzione della procedura di configurazione descritta nella sezione [Configurare la sincronizzazione di Windows Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#bkmk_setup) dell'argomento per la versione Current Branch [Gestire le app da Windows Store per le aziende con System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
+- Usare le informazioni disponibili in questo argomento di anteprima in sostituzione della procedura di configurazione descritta nella sezione [Configurare la sincronizzazione di Windows Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#bkmk_setup) dell'argomento per la versione Current Branch [Gestire le app da Windows Store per le aziende con System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
 
--   Per altre informazioni sulle app Web, vedere [Autenticazione e autorizzazione nel servizio app di Azure](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview) e [Panoramica di App Web](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview).
+- Per altre informazioni sulle app Web, vedere [Autenticazione e autorizzazione nel servizio app di Azure](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview) e [Panoramica di App Web](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview).
 
 ### <a name="prerequisites-and-planning"></a>Prerequisiti e pianificazione
 Quando si configura una connessione tra Configuration Manager e Windows Store per le aziende, è necessario specificare una cartella in cui verranno mantenuti i contenuti delle app sincronizzati dall'archivio. Per assicurarsi che questa cartella sia protetta e che il relativo contenuto possa essere distribuito ai dispositivi, verificare che siano disponibili le autorizzazioni seguenti:
--   Il computer in cui si installa il ruolo del sistema del sito del punto di connessione del servizio (sito di livello superiore nella gerarchia) deve essere in possesso delle autorizzazioni lettura e scrittura per la cartella specificata quando si usa l'account **Computer$** .  
+- Il computer in cui si installa il ruolo del sistema del sito del punto di connessione del servizio (sito di livello superiore nella gerarchia) deve essere in possesso delle autorizzazioni lettura e scrittura per la cartella specificata quando si usa l'account **Computer$** .  
 
--   L'autore di app deve essere in possesso delle autorizzazioni di lettura per la cartella specificata.  
+- L'autore di app deve essere in possesso delle autorizzazioni di lettura per la cartella specificata.  
 
--   L'account **Computer$** di ogni computer che ospita un'istanza del provider SMS deve essere in grado di usare la cartella specificata.
+- L'account **Computer$** di ogni computer che ospita un'istanza del provider SMS deve essere in grado di usare la cartella specificata.
 
 In Azure Active Directory registrare Configuration Manager come strumento di gestione di applicazioni Web o API Web. Viene così creato l'ID client che sarà necessario in seguito.
 

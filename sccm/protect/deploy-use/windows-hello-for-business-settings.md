@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9346e95e3fa66e9f24d1bfc3711917c3d2146e5e
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.openlocfilehash: dcbe2f7b0e7b1d5905e1160d7302498a72116498
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551343"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678658"
 ---
 # <a name="windows-hello-for-business-settings-in-configuration-manager"></a>Impostazioni di Windows Hello for Business in Configuration Manager
 
@@ -72,7 +72,7 @@ Se si vuole usare l'accesso basato sui certificati di Windows Hello for Business
 
 -   Nel profilo certificato selezionare un modello che usi l'utilizzo chiavi avanzato per l'accesso smart card.  
 
--   Se si vogliono archiviare i profili certificato nel contenitore chiave Windows Hello for Business e il profilo certificato usa l'EKU **Accesso smart card**, è necessario configurare le autorizzazioni seguenti per la registrazione delle chiavi per assicurarsi che il certificato venga convalidato correttamente.
+- Se si vogliono archiviare i profili certificato nel contenitore chiave Windows Hello for Business e il profilo certificato usa l'EKU **Accesso smart card**, è necessario configurare le autorizzazioni seguenti per la registrazione delle chiavi per assicurarsi che il certificato venga convalidato correttamente.
 È necessario aver prima creato il gruppo **Key Admins** e aggiunto tutti i computer del gruppo di gestione di Configuration Manager come membri del gruppo.
 
 Alcune configurazioni potrebbero non richiedere di configurare le autorizzazioni o potrebbero richiedere ulteriori configurazioni. Per altre informazioni, vedere la tabella seguente:
@@ -87,15 +87,15 @@ Alcune configurazioni potrebbero non richiedere di configurare le autorizzazioni
 
 ## <a name="to-configure-permissions"></a>Per configurare le autorizzazioni
 
-1.  Accedere a un controller di dominio o a workstation di gestione con le credenziali di amministratore di dominio o equivalenti.
-2.  Aprire **Utenti e computer di Active Directory**.
-3.  Nel riquadro di spostamento fare clic con il pulsante destro del mouse sul nome di dominio e scegliere **Proprietà**.
-4.  Nella scheda**Sicurezza** della finestra di dialogo **Proprietà** *\<nome dominio>* fare clic su **Avanzate**. Se la scheda **Sicurezza** non è visualizzata, attivare **Funzionalità avanzate** dal menu **Visualizza** di **Utenti e computer di Active Directory**.
-5.  Fare clic su **Aggiungi**.
-6.  Nella finestra di dialogo **Voci di autorizzazione per** *\<nome dominio>* fare clic su **Selezionare un'entità**.
-7.  Nella finestra di dialogo **Select User, Computer, Service Account, or Group** (Seleziona utente, computer, account di servizio o gruppo) digitare **Key Admins** nella casella di testo **Inserire il nome oggetto da selezionare**. Fare clic su **OK**.
-8.  Dall'elenco **Si applica a** scegliere **Oggetti Utente discendenti**.
-9.  Scorrere fino in fondo alla pagina e fare clic su **Cancella tutto**.
+1. Accedere a un controller di dominio o a workstation di gestione con le credenziali di amministratore di dominio o equivalenti.
+2. Aprire **Utenti e computer di Active Directory**.
+3. Nel riquadro di spostamento fare clic con il pulsante destro del mouse sul nome di dominio e scegliere **Proprietà**.
+4. Nella scheda**Sicurezza** della finestra di dialogo **Proprietà** *\<nome dominio>* fare clic su **Avanzate**. Se la scheda **Sicurezza** non è visualizzata, attivare **Funzionalità avanzate** dal menu **Visualizza** di **Utenti e computer di Active Directory**.
+5. Fare clic su **Aggiungi**.
+6. Nella finestra di dialogo **Voci di autorizzazione per** *\<nome dominio>* fare clic su **Selezionare un'entità**.
+7. Nella finestra di dialogo **Select User, Computer, Service Account, or Group** (Seleziona utente, computer, account di servizio o gruppo) digitare **Key Admins** nella casella di testo **Inserire il nome oggetto da selezionare**. Fare clic su **OK**.
+8. Dall'elenco **Si applica a** scegliere **Oggetti Utente discendenti**.
+9. Scorrere fino in fondo alla pagina e fare clic su **Cancella tutto**.
 10. Nella sezione **Proprietà** selezionare **Leggi msDS-KeyCredentialLink**.
 11. Fare clic tre volte su **OK** per completare l'attività.
 

@@ -12,17 +12,17 @@ ms.prod: configuration-manager
 ms.service: ''
 ms.technology: ''
 ms.assetid: ''
-ms.openlocfilehash: 94513445c8d1849f0304b304b7dd8672c1e50978
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 696c952484b53c186b6f1d4f8e5b711262ded5a8
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67158328"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678006"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Esercitazione: Abilitare la co-gestione per nuovi dispositivi basati su Internet
 Con la co-gestione è possibile mantenere i processi consolidati per l'uso di Configuration Manager per la gestione dei PC nell'organizzazione. Allo stesso tempo, è possibile investire nel cloud usando Intune per sicurezza e provisioning moderno. 
 
-In questa esercitazione viene configurata la co-gestione di dispositivi Windows 10 in un ambiente in cui si usano sia Azure Active Directory (AD) sia Active Directory locale, ma non è presente [Azure Active Directory ibrido](https://docs.microsoft.com/azure/active-directory/devices/overview#hybrid-azure-ad-joined-devices). L'ambiente di Configuration Manager include un unico sito primario con tutti i ruoli del sistema del sito situati nello stesso server, il server del sito. Questa esercitazione parte dal presupposto che i dispositivi Windows 10 sono già registrati con Intune. 
+In questa esercitazione viene configurata la co-gestione di dispositivi Windows 10 in un ambiente in cui si usano sia Azure Active Directory (AD) sia Active Directory locale, ma non è presente [Azure Active Directory ibrido](/azure/active-directory/devices/concept-azure-ad-join-hybrid). L'ambiente di Configuration Manager include un unico sito primario con tutti i ruoli del sistema del sito situati nello stesso server, il server del sito. Questa esercitazione parte dal presupposto che i dispositivi Windows 10 sono già registrati con Intune. 
 
 Se è presente un'istanza di Azure AD ibrido che unisce Active Directory locale con Azure AD, è consigliabile seguire l'esercitazione complementare [Abilitare la co-gestione per i client di Configuration Manager](/sccm/comanage/tutorial-co-manage-clients). 
  
@@ -154,7 +154,7 @@ I provider di certificati pubblici forniscono in genere istruzioni per l'importa
 
 6. Nella pagina **Archivio certificati** scegliere **Seleziona automaticamente l'archivio certificati secondo il tipo di certificato** e quindi selezionare **Avanti**.  
 
-7.  Selezionare **Fine**.
+7. Selezionare **Fine**.
 
 ### <a name="export-the-certificate"></a>Esportare il certificato
 Esportare il *certificato di autenticazione server di Cloud Management Gateway* dal server. La riesportazione del certificato ne permette l'utilizzo per Cloud Management Gateway in Azure.  
@@ -399,8 +399,10 @@ Ad esempio, *C:\Programmi\Microsoft Configuration Manager\bin\i386\ccmsetup.msi*
    - **Argomenti della riga di comando**:  *\<specificare la riga di comando **CCMSETUPCMD**. È possibile usare la riga di comando salvata dalla pagina* Abilitazione *della Configurazione guidata della co-gestione. Questa riga di comando include i nomi del servizio cloud e altri valori, che permettono ai dispositivi di installare il software client di Configuration Manager.>*  
 
      La struttura della riga di comando dovrebbe essere simile a questo esempio, usando solo i parametri CCMSETUPCMD e SMSSiteCode:  
- 
-         CCMSETUPCMD="CCMHOSTNAME=<ServiceName.CLOUDAPP.NET/CCM_Proxy_MutualAuth/<GUID>" SMSSiteCode="<YourSiteCode>"  
+
+     ```
+     CCMSETUPCMD="CCMHOSTNAME=<ServiceName.CLOUDAPP.NET/CCM_Proxy_MutualAuth/<GUID>" SMSSiteCode="<YourSiteCode>"  
+     ```
 
      > [!TIP]  
      > Se la riga di comando non è disponibile, è possibile visualizzare le proprietà di *CoMgmtSettingsProd* nella console di Configuration Manager per ottenere una copia della riga di comando.    
