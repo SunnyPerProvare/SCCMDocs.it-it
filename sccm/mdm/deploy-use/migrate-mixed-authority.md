@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: 6f0201d7-5714-4ba0-b2bf-d1acd0203e9a
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ccc38188729a05329cc240a9f424ccce9fd433b2
-ms.sourcegitcommit: d1df13fc95a1f1540177c294555d9be26161b9cb
+ms.openlocfilehash: 9ca39be68074213e4bb0a3f667ae69d5257f7a3c
+ms.sourcegitcommit: 9670e11316c9ec6e5f78cd70c766bbfdf04ea3f9
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974080"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67818062"
 ---
 # <a name="change-the-mdm-authority-for-specific-users-mixed-mdm-authority"></a>Modificare l'autorità MDM per utenti specifici (autorità MDM mista)
 
@@ -105,7 +105,7 @@ Nell'esempio seguente la raccolta di utenti ibridi contiene tutti i membri della
 ![Escludi raccolte](../media/migrate-excludecollections.png)
 
 > [!Note]  
-> Quando si dispone di **tutti gli utenti** raccolta selezionata per la sottoscrizione di Intune, non è consentito aggiungere una regola per escludere le raccolte. Creare una nuova raccolta in base il **tutti gli utenti** raccolta. Verificare che la raccolta contenga gli utenti previsti. Quindi modificare la sottoscrizione di Intune per usare la nuova raccolta. È possibile escludere le raccolte di utenti dalla nuova raccolta per la migrazione degli utenti.  
+>   Quando si dispone di **tutti gli utenti** raccolta selezionata per la sottoscrizione di Intune, non è consentito aggiungere una regola per escludere le raccolte. In alternativa, creare una nuova raccolta in base il **tutti gli utenti** raccolta, verificare che la raccolta contenga gli utenti di prevedere e quindi modificare la sottoscrizione di Intune per usare la nuova raccolta. È possibile escludere le raccolte di utenti dalla nuova raccolta per la migrazione degli utenti. Se si include un gruppo cui l'utente è membro di escludere un utente da una raccolta, l'utente non verrà esclusi dalla raccolta.
 
 Per eseguire la migrazione di un gruppo di test di utenti a Intune, creare una raccolta di utenti contenente gli utenti per eseguire la migrazione. Quindi escludere la raccolta di utenti della raccolta che viene usato per la sottoscrizione di Intune.  
 
@@ -179,7 +179,7 @@ Il livello di log usato per determinare i tipi di log che devono essere scritti 
 Di seguito sono elencati i valori possibili per LoggingLevel:
 
 - ActivityTracing
-- All
+- Tutti
 - Critico
 - Errore
 - Informazioni
