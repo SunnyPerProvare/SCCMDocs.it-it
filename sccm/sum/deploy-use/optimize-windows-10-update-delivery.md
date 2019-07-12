@@ -2,7 +2,7 @@
 title: Ottimizzare il recapito degli aggiornamenti di Windows 10
 titleSuffix: Configuration Manager
 description: Informazioni su come usare Configuration Manager per gestire il contenuto di aggiornamento per rimanere aggiornati con Windows 10.
-ms.date: 06/15/2018
+ms.date: 07/09/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d037baba858b3aacc3724e99a66819197b1dd89
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: 4f3f5eb1b25021adee5feecd3119776180250496
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194523"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678686"
 ---
 # <a name="optimize-windows-10-update-delivery-with-configuration-manager"></a>Ottimizzare il recapito degli aggiornamenti di Windows 10 con Configuration Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "67194523"
 
 Per molti clienti, un percorso appropriato per ottenere gli aggiornamenti mensili di Windows 10 e rimanere aggiornati inizia dalla definizione di una strategia di distribuzione del contenuto valida con Configuration Manager. Le dimensioni degli aggiornamenti qualitativi mensili possono essere fonte di preoccupazione per le organizzazioni di grandi dimensioni. Esistono alcune tecnologie che consentono di ridurre il carico sulla rete e la larghezza di banda per ottimizzare il recapito degli aggiornamenti. Questo articolo illustra queste tecnologie, le confronta e fornisce indicazioni per prendere più facilmente decisioni su quella da usare.  
  
-Windows 10 offre diversi tipi di aggiornamenti. Per altre informazioni, vedere [Tipi di aggiornamenti in Windows Update for Business](https://docs.microsoft.com/windows/deployment/update/waas-manage-updates-wufb#update-types). Questo articolo è incentrato sugli aggiornamenti *qualitativi* di Windows 10 con Configuration Manager. 
+Windows 10 offre diversi tipi di aggiornamenti. Per altre informazioni, vedere [Tipi di aggiornamenti in Windows Update for Business](/windows/deployment/update/waas-manage-updates-wufb#types-of-updates-managed-by-windows-update-for-business). Questo articolo è incentrato sugli aggiornamenti *qualitativi* di Windows 10 con Configuration Manager. 
 
 
 ## <a name="express-update-delivery"></a>Recapito rapido degli aggiornamenti
@@ -92,7 +92,7 @@ La selezione della tecnologia di peer caching appropriata per i file di installa
 | Individuazione peer | Tramite il servizio cloud Ottimizzazione recapito (richiede l'accesso a Internet) | Tramite il punto di gestione (basato su gruppi di limiti client) | Multicast |
 | Reporting | Sì (con Windows Analytics) | Dashboard Origini dati del client di ConfigMgr | Dashboard Origini dati del client di ConfigMgr |
 | Controllo dell'utilizzo WAN | Sì (nativa e controllabile tramite impostazioni di Criteri di gruppo) | Gruppi di limiti | Solo supporto subnet |
-| Tipi di contenuto supportati | - Aggiornamenti rapidi (tramite ConfigMgr)</br> - Windows e aggiornamenti della sicurezza</br> - Driver</br> - App di Windows Store</br> - App di Windows Store per le aziende | Tutti i tipi di contenuto ConfigMgr, incluse le immagini scaricate in [Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic) | Tutti i tipi di contenuto di ConfigMgr, ad eccezione delle immagini |
+| Tipi di contenuto supportati | **Tramite Configuration Manager:** </br> Aggiornamenti rapidi </br> </br> **Tramite il cloud di Microsoft:**</br> Windows e aggiornamenti della sicurezza</br> Driver</br> App di Windows Store</br> Windows Store per le app aziendali | Tutti i tipi di contenuto ConfigMgr, incluse le immagini scaricate in [Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic) | Tutti i tipi di contenuto di ConfigMgr, ad eccezione delle immagini |
 | Gestione tramite ConfigMgr | Parziale (impostazione agente client) | Sì (impostazione agente client) | Sì (impostazione agente client) |
 
 

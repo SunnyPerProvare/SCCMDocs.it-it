@@ -2,21 +2,21 @@
 title: Endpoint Protection
 titleSuffix: Configuration Manager
 description: Informazioni su come gestire i criteri antimalware e la sicurezza di Windows Firewall per i client.
-ms.date: 10/26/2018
+ms.date: 05/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
 ms.assetid: 76c90f64-d729-456b-8304-01852cd66fb6
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1048b24dba0658610471d37f12f75fd1d06b8d03
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: ce48f468154357a0032d737c6d77a6b6b29d9565
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123877"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67678826"
 ---
 # <a name="endpoint-protection"></a>Endpoint Protection
 
@@ -29,7 +29,7 @@ Endpoint Protection gestisce i criteri antimalware e la sicurezza di Windows Fir
 
  L'uso di Endpoint Protection con Configuration Manager offre i vantaggi seguenti:  
 
--   Configurare criteri antimalware e impostazioni di Windows Firewall e gestire Windows Defender Advanced Threat Protection per gruppi di computer selezionati  
+-   Configurare criteri antimalware e impostazioni di Windows Firewall e gestire Microsoft Defender Advanced Threat Protection per gruppi di computer selezionati  
 -   Usare gli aggiornamenti software di Configuration Manager per scaricare i file definizioni antimalware più recenti e mantenere aggiornati i computer client  
 -   Inviare notifiche tramite posta elettronica, usare il monitoraggio integrato nella console e visualizzare i report. Queste azioni informano gli utenti amministratori quando viene rilevato malware nei computer client.  
 
@@ -77,9 +77,9 @@ A partire da Windows 10 e Windows Server 2016, Windows Defender è già installa
  Per altre informazioni, vedere [Creare e distribuire criteri di Windows Firewall per Endpoint Protection](create-windows-firewall-policies.md).  
 
 
-## <a name="windows-defender-advanced-threat-protection"></a>Windows Defender Advanced Threat Protection
+## <a name="microsoft-defender-advanced-threat-protection"></a>Microsoft Defender Advanced Threat Protection
 
-Endpoint Protection gestisce e monitora Windows Defender Advanced Threat Protection (ATP). Il servizio Windows Defender ATP consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti aziendali. Per altre informazioni, vedere [Windows Defender Advanced Threat Protection](windows-defender-advanced-threat-protection.md).
+Endpoint Protection gestisce e monitora Microsoft Defender Advanced Threat Protection (ATP), precedentemente noto come Windows Defender ATP. Il servizio Microsoft Defender ATP consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti aziendali. Per altre informazioni, vedere [Microsoft Defender Advanced Threat Protection](windows-defender-advanced-threat-protection.md).
 
 ## <a name="endpoint-protection-workflow"></a>Flusso di lavoro di Endpoint Protection  
  Vedere il diagramma seguente per capire il flusso di lavoro per l'implementazione di Endpoint Protection nella gerarchia di Configuration Manager.  
@@ -110,9 +110,9 @@ Endpoint Protection gestisce e monitora Windows Defender Advanced Threat Protect
 Usare questa procedura per scaricare il file di immagine contenente il software client di Endpoint Protection e la documentazione per computer Mac e server Linux.
 1. Accedere al [Centro servizi per contratti multilicenza](https://www.microsoft.com/licensing/servicecenter/default.aspx).
 2. Selezionare la scheda  **Download e codici** in alto nel sito Web.
-3. Filtrare in base al prodotto **System Center Endpoint Protection (Current Branch)**.
+3. Filtrare in base al prodotto **System Center Endpoint Protection (Current Branch)** .
 4. Fare clic sul collegamento **Download**.
-5. Fare clic su **Continue**. Dovrebbero essere visualizzati vari file, tra i quali uno con il nome **System Center Endpoint Protection (current branch - version 1606) for Linux OS and Macintosh OS Multilanguage   32/64 bit   1878 MB ISO**.
+5. Fare clic su **Continue**. Dovrebbero essere visualizzati vari file, tra i quali uno con il nome **System Center Endpoint Protection (current branch - version 1606) for Linux OS and Macintosh OS Multilanguage 32/64 bit 1878 MB ISO**.
 6. Per scaricare il file, fare clic sull'icona a forma di freccia. Il nome del file è **SW_DVD5_Sys_Ctr_Endpnt_Prtctn_1606_MultiLang_-3_EptProt_Lin_Mac_MLF_X21-67050.ISO**.
 
 Questo aggiornamento di febbraio 2018 (X21-67050) include le versioni seguenti:
