@@ -2,7 +2,7 @@
 title: Domande frequenti per l'Analitica Desktop
 titleSuffix: Configuration Manager
 description: Domande frequenti su Desktop Analitica.
-ms.date: 06/10/2019
+ms.date: 07/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9daf94a21b66fa0137e0a6bf041f10c87c64c34e
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 663490349bcb61f243980c5e1a3fe1f5651d8573
+ms.sourcegitcommit: 448cc0d9094a3c9e23f011c4673cd1e8b956280a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159079"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860843"
 ---
 # <a name="desktop-analytics-faq"></a>Domande frequenti di Analitica desktop
 
@@ -45,7 +45,6 @@ Esistono due tipi di dati nel portale di Analitica Desktop: I dati dell'amminist
 
 Tutti i dati vengono aggiornati automaticamente una volta al giorno, anche se si non richiesta un aggiornamento dei dati on demand. Non è possibile attivare un aggiornamento su richiesta dei dati di diagnostica. Per altre informazioni sui diversi tipi di dati in Desktop Analitica, vedere [latenza dei dati](/sccm/desktop-analytics/troubleshooting#data-latency).
 
-
 ## <a name="privacy"></a>Privacy
 
 ### <a name="can-desktop-analytics-be-used-without-a-direct-client-connection-to-the-microsoft-data-management-service"></a>Desktop Analitica può essere usata senza una connessione client diretto al servizio di gestione dati di Microsoft?
@@ -61,3 +60,9 @@ Per il servizio di gestione dati Microsoft e Analitica archiviazione di Azure: N
 ### <a name="where-is-my-organizations-data-stored"></a>Dove vengono archiviati i dati dell'organizzazione?
 
 I dati di diagnostica di Windows dai computer vengano crittografati, inviati a ed elaborati con i sicura gestita da Microsoft Data Center situati negli Stati Uniti. L'analisi dei dati correlati Analitica Desktop viene quindi fornito all'utente tramite la soluzione Analitica Desktop nel portale di Azure. Desktop Analitica è supportata in tutte le aree di Azure. Selezione di un'area di Azure internazionale non impedire i dati di diagnostica inviati a ed elaborati nel Data Center di proteggere i dati di Microsoft negli Stati Uniti.
+
+## <a name="other"></a>Altro
+
+### <a name="can-i-use-desktop-analytics-for-my-office-365-proplus-upgrades"></a>È possibile usare Desktop Analitica per gli aggiornamenti di Office 365 ProPlus?
+
+No, Analitica Desktop è incentrato su Windows. Microsoft ha sviluppato Analitica Desktop in stretta collaborazione con numerosi clienti. Tramite il programma di anteprima, commenti e suggerimenti dei clienti è stato sul modo in cui Analitica Desktop migliorata la possibilità di gestire in modo sicuro le distribuzioni di Windows. Sono inoltre hanno chiesto [conformità di Office 365 ProPlus ](/sccm/sum/deploy-use/office-365-dashboard#bkmk_o365_readiness) più strettamente integrati con gli strumenti di gestione di office in Configuration Manager e Intune. Microsoft continuerà a investire in queste aree, mentre con particolare attenzione su scenari di Windows in Desktop Analitica.

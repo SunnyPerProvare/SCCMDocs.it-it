@@ -2,7 +2,7 @@
 title: Desktop Analytics
 titleSuffix: Configuration Manager
 description: Una panoramica del servizio Desktop Analitica integrato con Configuration Manager.
-ms.date: 06/07/2019
+ms.date: 07/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: overview
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0daf2943b0859227d08069be9c9da69165d5d1a
-ms.sourcegitcommit: de3c86077bbf91b793e94e1f60814df18da11bab
+ms.openlocfilehash: 45a8e71a3a8777686547ef4e3e05ef868b459792
+ms.sourcegitcommit: 448cc0d9094a3c9e23f011c4673cd1e8b956280a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67726235"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860865"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Analitica Desktop?
 
@@ -70,6 +70,9 @@ Per usare Desktop Analitica, assicurarsi che l'ambiente soddisfi i prerequisiti 
 ### <a name="technical"></a>Tecnici
 
 - Una sottoscrizione di Azure attiva con [amministratore globale](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator) autorizzazioni  
+
+    > [!Important]  
+    > Desktop Analitica è attualmente disponibile come servizio di Office 365 e richiede una sottoscrizione di Office 365 nel tenant di Azure AD. Ciò potrebbe non essere un requisito in futuro.
 
     - **Proprietario dell'area di lavoro** oppure **collaboratore** delle autorizzazioni per **impostare l'area di lavoro**e i ruoli seguenti:  
 

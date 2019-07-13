@@ -2,7 +2,7 @@
 title: Risolvere i problemi di Analitica Desktop
 titleSuffix: Configuration Manager
 description: Dettagli tecnici per risolvere i problemi con Desktop Analitica.
-ms.date: 06/28/2019
+ms.date: 07/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 246ee2c314df3d942d40d16ac9953580fed32803
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.openlocfilehash: 9a1c170394e3db46572c424dcb04715713d4b24f
+ms.sourcegitcommit: 448cc0d9094a3c9e23f011c4673cd1e8b956280a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551241"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860848"
 ---
 # <a name="troubleshoot-desktop-analytics"></a>Risolvere i problemi di Analitica Desktop
 
@@ -49,7 +49,7 @@ Usare la **integrità della connessione** dashboard in Configuration Manager per
 Per altre informazioni, vedere [monitorare l'integrità della connessione](/sccm/desktop-analytics/monitor-connection-health).
 
 
-## <a name="log-files"></a>File di registro
+## <a name="log-files"></a>File di log
 
 Per altre informazioni, vedere [i file di Log di Desktop Analitica](/sccm/core/plan-design/hierarchy/log-files#desktop-analytics)
 
@@ -74,7 +74,7 @@ Se è necessario eseguire il provisioning di queste App al termine dell'installa
 
 ### <a name="create-and-import-app-for-configuration-manager"></a>Creare e importare app for Configuration Manager
 
-Dopo aver completato la [onboarding iniziale](/sccm/desktop-analytics/set-up#initial-onboarding) nel portale di Analitica Desktop, usare la procedura seguente per creare e importare l'app per Configuration Manager se non è possibile creare questa app di Azure AD da servizi di Azure configurare manualmente mago.
+Se è Impossibile creare l'app Azure AD per Configuration Manager dalla procedura guidata configurare servizi di Azure o se si desidera riusare un'app esistente, è necessario creare manualmente e importarlo. Dopo aver completato la [onboarding iniziale](/sccm/desktop-analytics/set-up#initial-onboarding) nel portale di Analitica Desktop, procedere come segue:
 
 #### <a name="create-app-in-azure-ad"></a>Creare app in Azure AD
 
@@ -90,7 +90,7 @@ Dopo aver completato la [onboarding iniziale](/sccm/desktop-analytics/set-up#ini
 
     <!--     - **Sign-on URL**: this value isn't used by Configuration Manager, but required by Azure AD. Enter a unique and valid URL, for example: `https://configmgrapp`   -->
   
-    Selezionare **registrare**.  
+    Selezionare **Registra**.  
 
 3. Selezionare l'app, prendere nota di **ID applicazione (client)** e **ID Directory (tenant)** . I valori sono GUID utilizzati per configurare la connessione di Configuration Manager.  
 
