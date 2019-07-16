@@ -103,6 +103,8 @@
           href: plan-design/configs/supported-configurations.md
         - name: Numeri di ridimensionamento e scalabilità
           href: plan-design/configs/size-and-scale-numbers.md
+        - name: Prerequisiti del sito e del sistema del sito
+          href: plan-design/configs/site-and-site-system-prerequisites.md
         - name: Linee guida per dimensioni e prestazioni del sito
           href: plan-design/configs/site-size-performance-guidelines.md
         - name: Sistemi operativi supportati per i server del sistema del sito
