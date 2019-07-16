@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e0ad2568c250cbaab0f52f76b98750153aa0b05
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: ac3967059b7cb8b8e4d4a3d32a9c88bfdfd1567b
+ms.sourcegitcommit: 9670e11316c9ec6e5f78cd70c766bbfdf04ea3f9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67252352"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67818084"
 ---
 # <a name="configure-sql-server-always-on-availability-groups-for-configuration-manager"></a>Configurare gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -48,10 +48,13 @@ Per completare la procedura, l'account usato deve:
    - **Sarà membro del gruppo di disponibilità:**  
      Se si usa questo server come membro di replica primaria iniziale del gruppo di disponibilità, non è necessario ripristinare una copia del database del sito su questo o su un altro server nel gruppo. Il database risulterà già incluso nella replica primaria e SQL Server eseguirà la replica del database nelle repliche secondarie in un passaggio successivo.  
 
-     -    **Non sarà membro del gruppo di disponibilità:**    
+   - **Non sarà membro del gruppo di disponibilità:**    
      Ripristinare una copia del database del sito nel server che ospiterà la replica primaria del gruppo.
 
    Per informazioni su come completare questo passaggio, vedere [Creazione di un backup completo del database (SQL Server)](/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server) e [Ripristinare un backup del database tramite SSMS](/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms) nella documentazione di SQL Server.
+
+> [!NOTE]  
+> Se si prevede di passare da un gruppo di disponibilità a una versione autonoma in una replica esistente, sarà necessario prima di tutto rimuovere il database dal gruppo di disponibilità.
 
 4. Nel server che ospiterà la replica primaria iniziale del gruppo usare la [Creazione guidata Gruppo di disponibilità](/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio) per creare il gruppo di disponibilità. Nella procedura guidata:
    - Nella pagina **Seleziona database** selezionare il database per il sito di Configuration Manager.  
@@ -85,20 +88,20 @@ Per completare la procedura, l'account usato per eseguire il programma di instal
 > Quando si usa Microsoft Intune con Configuration Manager in una configurazione ibrida, lo spostamento del database del sito da o verso un gruppo di disponibilità attiva la risincronizzazione dei dati con il cloud. Non è possibile evitare questa risincronizzazione.
 
 ### <a name="to-configure-a-site-to-use-the-availability-group"></a>Per configurare un sito per usare un gruppo di disponibilità
-1.  Eseguire **Installazione di Configuration Manager** da **&lt;*cartella di installazione del sito di Configuration Manager*>\BIN\X64\setup.exe**.
+1. Eseguire **Installazione di Configuration Manager** da **&lt;*cartella di installazione del sito di Configuration Manager*>\BIN\X64\setup.exe**.
 
-2.  Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito**, quindi fare clic su **Avanti**.
+2. Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito**, quindi fare clic su **Avanti**.
 
-3.  Selezionare l'opzione **Modifica la configurazione di SQL Server** , quindi fare clic su **Avanti**.
+3. Selezionare l'opzione **Modifica la configurazione di SQL Server** , quindi fare clic su **Avanti**.
 
-4.  Riconfigurare quanto segue per il database del sito:
+4. Riconfigurare quanto segue per il database del sito:
     -   **Nome server SQL:** immettere il nome virtuale del **listener** del gruppo di disponibilità configurato al momento della creazione del gruppo di disponibilità. Il nome virtuale deve essere un nome DNS completo, ad esempio **&lt;*Serverendpoint*>.fabrikam.com**.  
 
     -   **Istanza**: questo valore deve essere vuoto per specificare l'istanza predefinita per il *listener* del gruppo di disponibilità. Se il database del sito corrente viene eseguito in un'istanza denominata, questa istanza viene elencata e deve essere cancellata.
 
     -   **Database**: non modificare il nome visualizzato. È il nome del database del sito corrente.
 
-5.  Dopo aver specificato le informazioni per il nuovo percorso del database, completare l'installazione con il processo e le configurazioni normali.
+5. Dopo aver specificato le informazioni per il nuovo percorso del database, completare l'installazione con il processo e le configurazioni normali.
 
 
 
@@ -144,29 +147,29 @@ Per completare la procedura, l'account usato deve:
 > Quando si usa Microsoft Intune con Configuration Manager in una configurazione ibrida, lo spostamento del database del sito da o verso un gruppo di disponibilità attiva la risincronizzazione dei dati con il cloud. Non è possibile evitare questo problema.
 
 ### <a name="to-move-the-site-database-from-an-availability-group-back-to-a-single-instance-sql-server"></a>Per spostare il database del sito da un gruppo di disponibilità a un'istanza singola di SQL Server
-1.  Usare il comando seguente per arrestare il sito di Configuration Manager: **Preinst.exe /stopsite**. Per altre informazioni, vedere [Strumento di manutenzione gerarchia](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe).
+1. Usare il comando seguente per arrestare il sito di Configuration Manager: **Preinst.exe /stopsite**. Per altre informazioni, vedere [Strumento di manutenzione gerarchia](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe).
 
-2.  Usare SQL Server per creare un backup completo del database del sito dalla replica primaria. Per informazioni su come completare questo passaggio, vedere [Creare un backup completo del database (SQL Server)](/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server) nella documentazione di SQL Server.
+2. Usare SQL Server per creare un backup completo del database del sito dalla replica primaria. Per informazioni su come completare questo passaggio, vedere [Creare un backup completo del database (SQL Server)](/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server) nella documentazione di SQL Server.
 
-3.  Se il server che funge da replica primaria del gruppo di disponibilità ospita l'istanza singola del database del sito, è possibile ignorare questo passaggio:  
+3. Se il server che funge da replica primaria del gruppo di disponibilità ospita l'istanza singola del database del sito, è possibile ignorare questo passaggio:  
 
     -   Usare SQL Server per ripristinare il backup del database del sito nel server che ospiterà il database del sito. Vedere [Ripristinare un backup del database tramite SSMS](/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms) nella documentazione di SQL Server.   <br />  <br />
 
-4.  Nel server che ospiterà il database del sito, che sia la replica primaria o il server in cui è stato ripristinato il database del sito, modificare il modello di backup del database del sito da **Completo** a **Semplice**. Vedere [Visualizzazione o modifica del modello di recupero di un database](/sql/relational-databases/backup-restore/view-or-change-the-recovery-model-of-a-database-sql-server) nella documentazione di SQL Server.  
+4. Nel server che ospiterà il database del sito, che sia la replica primaria o il server in cui è stato ripristinato il database del sito, modificare il modello di backup del database del sito da **Completo** a **Semplice**. Vedere [Visualizzazione o modifica del modello di recupero di un database](/sql/relational-databases/backup-restore/view-or-change-the-recovery-model-of-a-database-sql-server) nella documentazione di SQL Server.  
 
-5.  Eseguire **Installazione di Configuration Manager** da **&lt;*cartella di installazione del sito di Configuration Manager>* \BIN\X64\setup.exe**.
+5. Eseguire **Installazione di Configuration Manager** da **&lt;*cartella di installazione del sito di Configuration Manager>* \BIN\X64\setup.exe**.
 
-6.  Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito**, quindi fare clic su **Avanti**.  
+6. Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito**, quindi fare clic su **Avanti**.  
 
-7.  Selezionare l'opzione **Modifica la configurazione di SQL Server** , quindi fare clic su **Avanti**.  
+7. Selezionare l'opzione **Modifica la configurazione di SQL Server** , quindi fare clic su **Avanti**.  
 
-8.  Riconfigurare quanto segue per il database del sito:
+8. Riconfigurare quanto segue per il database del sito:
     -   **Nome server SQL:** immettere il nome del server che ora ospita il database del sito.
 
     -   **Istanza**: specificare l'istanza denominata che ospita il database del sito o lasciare vuoto il campo se il database si trova nell'istanza predefinita.
 
     -   **Database**: non modificare il nome visualizzato. È il nome del database del sito corrente.    
 
-9.  Dopo aver specificato le informazioni per il nuovo percorso del database, completare l'installazione con il processo e le configurazioni normali. Al termine dell'installazione, il sito viene riavviato e inizia a usare il nuovo percorso del database.    
+9. Dopo aver specificato le informazioni per il nuovo percorso del database, completare l'installazione con il processo e le configurazioni normali. Al termine dell'installazione, il sito viene riavviato e inizia a usare il nuovo percorso del database.    
 
 10. Per pulire i server che erano membri del gruppo di disponibilità, seguire le indicazioni riportate in [Rimuovere un gruppo di disponibilità](/sql/database-engine/availability-groups/windows/remove-an-availability-group-sql-server) nella documentazione di SQL Server.
