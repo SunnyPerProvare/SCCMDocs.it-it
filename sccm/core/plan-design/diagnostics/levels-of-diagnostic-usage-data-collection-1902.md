@@ -2,7 +2,7 @@
 title: Dati di utilizzo e di diagnostica per la versione 1902
 titleSuffix: Configuration Manager
 description: Informazioni sui livelli dei dati di diagnostica e di utilizzo raccolti nella versione 1902.
-ms.date: 03/27/2019
+ms.date: 05/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae3ce80fea4988f6a7a6a6d70c4199090d197ac4
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.openlocfilehash: 726b5a0377791c4d56797cc86015656c7d8ae44d
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58525023"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676846"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1902"></a>Livelli di raccolta dati di utilizzo e di diagnostica per la versione 1902
 
@@ -87,7 +87,7 @@ Per Configuration Manager versione 1902, questo livello include i dati seguenti:
 
     - Data di scadenza di Software Assurance  
 
-    - Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti  
+    - Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti 
 
     - Uso di Fast Ring di aggiornamento  
 
@@ -361,7 +361,7 @@ Per Configuration Manager versione 1902, questo livello include i dati seguenti:
 
 ### <a name="endpoint-protection"></a>Endpoint Protection  
 
-- Criteri avanzati di Advanced Threat Protection (ATP): numero dei criteri e se i criteri sono distribuiti  
+- Criteri avanzati di Microsoft Defender Advanced Threat Protection (ATP) (noto in precedenza come Windows Defender ATP): numero dei criteri e avvenuta distribuzione o meno dei criteri.
 
 - Numero di avvisi configurati per la funzionalità Endpoint Protection  
 

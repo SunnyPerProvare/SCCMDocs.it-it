@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d096681c044b794b849d05c48fa17171344b8a64
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 6b586fb4eded2143e42887236d1c52b0a8bae275
+ms.sourcegitcommit: de3c86077bbf91b793e94e1f60814df18da11bab
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129868"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726239"
 ---
 # <a name="set-up-your-system-center-configuration-manager-lab"></a>Configurare un ambiente lab per System Center Configuration Manager
 
@@ -101,7 +101,7 @@ Nelle procedure successive sono elencati gli altri passaggi necessari per consen
 
 1.  Eseguire **ADSI Edit**e connettersi al dominio in cui risiede il server del sito.  
 
-2.  Espandere **Dominio&lt;nome di dominio completo del computer\>**, espandere **<nome distinto\>**, fare clic con il tasto destro del mouse su **CN=System**, fare clic su **Nuovo** e quindi su **Oggetto**.  
+2.  Espandere **Dominio&lt;nome di dominio completo del computer\>** , espandere **<nome distinto\>** , fare clic con il tasto destro del mouse su **CN=System**, fare clic su **Nuovo** e quindi su **Oggetto**.  
 
 3.  Nella finestra di dialogo **Crea oggetto** , selezionare **Contenitore**, quindi fare clic su **Avanti**.  
 
@@ -272,7 +272,7 @@ Internet Information Services (IIS) è un server Web flessibile e scalabile che 
 
         -   **Autorizzazione URL**  
 
-        -   **Autorizzazione Windows**  
+        -   **Autenticazione di Windows**  
 
     -   **Sviluppo applicazioni**  
 

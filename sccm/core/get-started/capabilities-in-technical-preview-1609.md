@@ -12,12 +12,12 @@ manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31c25622a42586c044e2b9f515f5e89f9e82ba00
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: caa916afa1bb254223844e97d9f2299a91d1ec07
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133749"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677778"
 ---
 # <a name="capabilities-in-technical-preview-1609-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1609 per System Center Configuration Manager
 
@@ -275,9 +275,9 @@ Di seguito sono riportate le modifiche principali ai gruppi limite e alle modali
 
 ### <a name="how-the-new-model-works"></a>Come funziona il nuovo modello
 Quando si configurano i gruppi limite, associare i limiti (percorsi di rete) e i ruoli del sistema del sito, ad esempio i punti di distribuzione, al gruppo limite. Questa operazione agevola il collegamento dei client ai server del sistema del sito, come i punti di distribuzione che si trovano vicino ai client nella rete.   
--   È possibile assegnare lo stesso limite a più gruppi limite.
--   I server del sistema del sito, ad esempio i punti di distribuzione, possono essere associati a più gruppi limite, rendendoli disponibili per una vasta gamma di percorsi di rete.
--   Se un punto di distribuzione non è associato a un gruppo limite, i client non saranno in grado di usare tale punto di distribuzione come percorso di origine del contenuto.
+- È possibile assegnare lo stesso limite a più gruppi limite.
+- I server del sistema del sito, ad esempio i punti di distribuzione, possono essere associati a più gruppi limite, rendendoli disponibili per una vasta gamma di percorsi di rete.
+- Se un punto di distribuzione non è associato a un gruppo limite, i client non saranno in grado di usare tale punto di distribuzione come percorso di origine del contenuto.
 
 A partire da questa Technical Preview, è possibile definire le relazioni del gruppo limite per configurare il comportamento di fallback per i percorsi di origine del contenuto. Questo nuovo comportamento viene configurato nella nuova scheda **Relationships** (Relazioni) delle proprietà del gruppo limite e sostituisce la configurazione veloce o lenta dei sistemi del sito, nonché la configurazione di un gruppo limite per consentire il percorso di origine di fallback per il contenuto.
 
@@ -285,35 +285,34 @@ Nella scheda Relationshps (Relazioni) aggiungere altri gruppi limite per configu
 
 Se un client non riesce a trovare il contenuto e inizia la ricerca dei percorsi nei gruppi limite adiacenti, il pool di punti di distribuzione disponibili aumenta in modo controllato per quel client.  
 
--   Un gruppo limite può avere più di una relazione. Ciò consente di configurare il fallback su diversi gruppi adiacenti a diversi intervalli di tempo.
--   I client eseguiranno il fallback a un gruppo limite solo se è direttamente adiacente al gruppo limite corrente.
--   Se un client fa parte di più gruppi limite, il gruppo limite corrente è definito come un'unione di tutti i gruppi limite del client.  Il client può quindi eseguire il fallback a un gruppo adiacente di uno di questi gruppi limite originali.
+- Un gruppo limite può avere più di una relazione. Ciò consente di configurare il fallback su diversi gruppi adiacenti a diversi intervalli di tempo.
+- I client eseguiranno il fallback a un gruppo limite solo se è direttamente adiacente al gruppo limite corrente.
+- Se un client fa parte di più gruppi limite, il gruppo limite corrente è definito come un'unione di tutti i gruppi limite del client.  Il client può quindi eseguire il fallback a un gruppo adiacente di uno di questi gruppi limite originali.
 
 Oltre ai collegamenti definiti dall'utente, esiste un collegamento implicito che viene creato automaticamente tra i gruppi limite creato dall'utente e il gruppo limite predefinito, creato automaticamente per ogni sito. Questo collegamento automatico:
--   Viene usato dai client che non si trovano su un limite associato a un gruppo limite nella gerarchia che usa automaticamente il gruppo limite predefinito dal proprio sito assegnato per identificare i percorsi di origine del contenuto validi.   
--   Si tratta di un'opzione di fallback predefinita dal gruppo limite corrente al gruppo limite predefinito dei siti, usato dopo 120 minuti.
+- Viene usato dai client che non si trovano su un limite associato a un gruppo limite nella gerarchia che usa automaticamente il gruppo limite predefinito dal proprio sito assegnato per identificare i percorsi di origine del contenuto validi.   
+-  Si tratta di un'opzione di fallback predefinita dal gruppo limite corrente al gruppo limite predefinito dei siti, usato dopo 120 minuti.
 
-**Esempio sull'uso del nuovo modello:**     
-Creare tre gruppi limite che non condividono limiti o server del sistema del sito:
--   Gruppo BG_A con punti di distribuzione DP_A1 e DP_A2 associati al gruppo
--   Gruppo BG_B con punti di distribuzione DP_B1 e DP_B2 associati al gruppo
--   Gruppo BG_C con punti di distribuzione DP_C1 e DP_C2 associati al gruppo
+**Esempio di uso del nuovo modello:** Creare tre gruppi limite che non condividono limiti o server del sistema del sito:
+- Gruppo BG_A con punti di distribuzione DP_A1 e DP_A2 associati al gruppo
+- Gruppo BG_B con punti di distribuzione DP_B1 e DP_B2 associati al gruppo
+- Gruppo BG_C con punti di distribuzione DP_C1 e DP_C2 associati al gruppo
 
 Aggiungere i percorsi di rete dei client come limiti solo al gruppo limite BG_A e configurare le relazioni tra tale gruppo limite e gli altri due gruppi limite:
--   Configurare i punti di distribuzione per il primo gruppo *adiacente* (BG_B) da usare dopo 10 minuti. Questo gruppo contiene i punti di distribuzione DP_B1 e DP_B2. Entrambi sono ben connessi ai percorsi limite dei primi gruppi.
--   Configurare il secondo gruppo *adiacente* (BG_C) da usare dopo 20 minuti. Questo gruppo contiene i punti di distribuzione DP_C1 e DP_C2. Entrambi si trovano a un WAN rispetto agli altri due gruppi limite.
--   Aggiungere anche un punto di distribuzione aggiuntivo che si trova nel server del sito al gruppo limite del sito predefinito di siti. Si tratta della posizione di origine di contenuto meno preferita, ma si trova a livello centrale per tutti i gruppi limite.
+- Configurare i punti di distribuzione per il primo gruppo *adiacente* (BG_B) da usare dopo 10 minuti. Questo gruppo contiene i punti di distribuzione DP_B1 e DP_B2. Entrambi sono ben connessi ai percorsi limite dei primi gruppi.
+- Configurare il secondo gruppo *adiacente* (BG_C) da usare dopo 20 minuti. Questo gruppo contiene i punti di distribuzione DP_C1 e DP_C2. Entrambi si trovano a un WAN rispetto agli altri due gruppi limite.
+- Aggiungere anche un punto di distribuzione aggiuntivo che si trova nel server del sito al gruppo limite del sito predefinito di siti. Si tratta della posizione di origine di contenuto meno preferita, ma si trova a livello centrale per tutti i gruppi limite.
 
-    Esempio di gruppi limite e tempi di fallback:
+  Esempio di gruppi limite e tempi di fallback:
 
-     ![BG_Fallack](media/BG_Fallback.png)
+  ![BG_Fallack](media/BG_Fallback.png)
 
 
 Con questa configurazione:
--   Il client inizia la ricerca del contenuto dai punti di distribuzione nel relativo gruppo limite *corrente* (BG_A), cercando in ogni punto di distribuzione per due minuti prima di passare al successivo punto di distribuzione del gruppo limite. Il pool di client dei percorsi di origine del contenuto validi include DP_A1 e DP_A2.
--   Se il client non riesce a trovare il contenuto nel proprio gruppo limite *corrente* dopo 10 minuti di ricerca, aggiunge i punti di distribuzione dal gruppo limite BG_B alla ricerca. Continua quindi a eseguire la ricerca del contenuto da un punto di distribuzione nel proprio pool combinato di punti di distribuzione che include ora i gruppi limite BG_A sia BG_B. Il client continuerà a contattare ogni punto di distribuzione per due minuti prima di passare al successivo punto di distribuzione del pool. Il pool di client dei percorsi di origine del contenuto validi include DP_A1, DP_A2, DP_B1 e DP_B2.
--   Dopo altri 10 minuti (totale di 20 minuti), se il client non ha ancora rilevato un punto di distribuzione con contenuto, espande il proprio pool di punti di distribuzione disponibili per includere i punti del secondo gruppo *adiacente*, il gruppo limite BG_C. Il client ora dispone di 6 punti di distribuzione per la ricerca (DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2) e continua la modifica a un nuovo punto di distribuzione ogni due minuti fino a quando il contenuto non viene trovato.
--   Se il client non ha rilevato il contenuto dopo un totale di 120 minuti, esegue il fallback per includere il *gruppo limite del sito predefinito* nella ricerca. Il pool di punti di distribuzione include ora tutti i punti di distribuzione dei tre gruppi limite configurati e il punto di distribuzione finale situato nel computer server del sito.  Il client continua quindi la ricerca del contenuto, modificando i punti di distribuzione ogni due minuti fino a quando il contenuto non viene trovato.
+- Il client inizia la ricerca del contenuto dai punti di distribuzione nel relativo gruppo limite *corrente* (BG_A), cercando in ogni punto di distribuzione per due minuti prima di passare al successivo punto di distribuzione del gruppo limite. Il pool di client dei percorsi di origine del contenuto validi include DP_A1 e DP_A2.
+- Se il client non riesce a trovare il contenuto nel proprio gruppo limite *corrente* dopo 10 minuti di ricerca, aggiunge i punti di distribuzione dal gruppo limite BG_B alla ricerca. Continua quindi a eseguire la ricerca del contenuto da un punto di distribuzione nel proprio pool combinato di punti di distribuzione che include ora i gruppi limite BG_A sia BG_B. Il client continuerà a contattare ogni punto di distribuzione per due minuti prima di passare al successivo punto di distribuzione del pool. Il pool di client dei percorsi di origine del contenuto validi include DP_A1, DP_A2, DP_B1 e DP_B2.
+- Dopo altri 10 minuti (totale di 20 minuti), se il client non ha ancora rilevato un punto di distribuzione con contenuto, espande il proprio pool di punti di distribuzione disponibili per includere i punti del secondo gruppo *adiacente*, il gruppo limite BG_C. Il client ora dispone di 6 punti di distribuzione per la ricerca (DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2) e continua la modifica a un nuovo punto di distribuzione ogni due minuti fino a quando il contenuto non viene trovato.
+- Se il client non ha rilevato il contenuto dopo un totale di 120 minuti, esegue il fallback per includere il *gruppo limite del sito predefinito* nella ricerca. Il pool di punti di distribuzione include ora tutti i punti di distribuzione dei tre gruppi limite configurati e il punto di distribuzione finale situato nel computer server del sito.  Il client continua quindi la ricerca del contenuto, modificando i punti di distribuzione ogni due minuti fino a quando il contenuto non viene trovato.
 
 Configurando i vari gruppi adiacenti perché siano disponibili in momenti diversi, è possibile controllare quando i punti di distribuzione specifici vengono aggiunti come percorso di origine del contenuto e quando o se il client esegue il fallback al gruppo limite del sito predefinito come rete di protezione per il contenuto non disponibile in altre posizioni.
 
@@ -333,7 +332,7 @@ Configurazione della distribuzione originale per "Non eseguire il programma" in 
 Selezionato     |  Selezionato    |  **Nessun fallback**: usare solo i punti di distribuzione nel gruppo limite corrente       
 Selezionato     |  Non selezionato|  **Nessun fallback**: usare solo i punti di distribuzione nel gruppo limite corrente       
 Non selezionato |  Non selezionato|  **Fallback verso adiacente**: usare i punti di distribuzione nel gruppo limite corrente e quindi aggiungere i punti di distribuzione del gruppo limite adiacente. A meno che non sia configurato un collegamento esplicito al gruppo limite del sito predefinito, i client non eseguono il fallback su questo gruppo.    
-Non selezionato | Selezionato     |   **Fallback normale**: usare i punti di distribuzione nel gruppo limite corrente, quindi quelli del gruppo adiacente e dal gruppo limite del sito predefinito
+Non selezionato | Selezionato |   **Fallback normale**: usare i punti di distribuzione nel gruppo limite corrente, quindi quelli del gruppo adiacente e dal gruppo limite del sito predefinito
 
  Tutte le altre configurazioni di distribuzione seguiranno il **Fallback normale**.  
 
@@ -404,13 +403,13 @@ In una sequenza di attività esistente per installare un sistema operativo si ag
 
     ![Passaggio Riavvia il computer](media/Restart-in-Windows-PE.png)
 5. Aggiungere un passaggio per avviare lo strumento OEM che convertirà il firmware da BIOS a UEFI. Si tratta in genere di un passaggio della sequenza di attività **Esegui riga di comando** con una riga di comando per avviare lo strumento OEM.
-5.  Aggiungere il passaggio della sequenza attività Formato e disco partizione che partiziona e formatta il disco rigido. Nel passaggio, eseguire le operazioni seguenti:
-    1.  Creare la partizione FAT32 che verrà convertita in UEFI prima di installare il sistema operativo. Scegliere **GPT** per **Tipo disco**.
+5. Aggiungere il passaggio della sequenza attività Formato e disco partizione che partiziona e formatta il disco rigido. Nel passaggio, eseguire le operazioni seguenti:
+    1. Creare la partizione FAT32 che verrà convertita in UEFI prima di installare il sistema operativo. Scegliere **GPT** per **Tipo disco**.
     ![Passaggio Formato e disco partizione](media/Format-and-partition-disk.png)
-    2.  Accedere alle proprietà della partizione FAT32. Immettere **TSUEFIDrive** nel campo **Variabile**. Quando la sequenza di attività rileva questa variabile, si avvia la preparazione per la transizione di UEFI prima di riavviare il computer.
+    2. Accedere alle proprietà della partizione FAT32. Immettere **TSUEFIDrive** nel campo **Variabile**. Quando la sequenza di attività rileva questa variabile, si avvia la preparazione per la transizione di UEFI prima di riavviare il computer.
     ![Proprietà della partizione](media/Partition-properties.png)
     3. Creare una partizione NTFS che il motore della sequenza di attività usa per il salvataggio dello stato e per archiviare i file di log.
-6.  Aggiungere il passaggio della sequenza di attività **Riavvia il computer**. In **Specificare cosa eseguire dopo il riavvio:** selezionare **The boot image assigned to this task sequence is selected** (L'immagine di avvio assegnata a questa sequenza di attività è selezionata) per avviare il computer in Windows PE.  
+6. Aggiungere il passaggio della sequenza di attività **Riavvia il computer**. In **Specificare cosa eseguire dopo il riavvio:** selezionare **The boot image assigned to this task sequence is selected** (L'immagine di avvio assegnata a questa sequenza di attività è selezionata) per avviare il computer in Windows PE.  
 
 
 
@@ -438,13 +437,13 @@ Completare le sezioni seguenti in ordine:
 <!-- 5. Click the **Non-compliant** section of the chart. Both devices should appear in the filtered view under **Assets and Compliance** > **Overview** > **Device**. -->
 
 #### <a name="check-the-top-non-compliance-reasons-chart"></a>Controllare il grafico Top Non-Compliance Reasons (Motivi principali della non conformità).
-5. Controllare il grafico **Top Non-Compliance Reasons (Motivi principali della non conformità)**. Questo grafico elenca i 5 motivi principali della non conformità ma, se sono state configurate solo due impostazioni di conformità nei criteri, vengono visualizzati solo i primi 2 motivi.
+5. Controllare il grafico **Top Non-Compliance Reasons (Motivi principali della non conformità)** . Questo grafico elenca i 5 motivi principali della non conformità ma, se sono state configurate solo due impostazioni di conformità nei criteri, vengono visualizzati solo i primi 2 motivi.
 6. Fare clic su una delle sezioni nel grafico. Entrambi i dispositivi dovrebbero essere visualizzati nella visualizzazione filtrata in **Asset e conformità** > **Panoramica** > **Dispositivo**.
 
 #### <a name="make-devices-compliant-and-check-the-charts"></a>Rendere i dispositivi conformi e controllare i grafici.
 7. Rendere uno dei dispositivi conformi a uno dei criteri. Controllare nuovamente il grafico **Overall Device Compliance** (Conformità generale del dispositivo). Il grafico deve visualizzare un dispositivo conforme e un dispositivo non conforme.
 8. Rendere l'altro dispositivo conforme agli stessi criteri. In questo modo si avrà un dispositivo conforme ai due criteri e un dispositivo conforme a uno solo dei criteri.
-9. Controllare il grafico **Top Non-Compliance Reasons (Motivi principali della non conformità)**. Dovrebbe essere elencato un solo motivo di non conformità.
+9. Controllare il grafico **Top Non-Compliance Reasons (Motivi principali della non conformità)** . Dovrebbe essere elencato un solo motivo di non conformità.
 <!--7. Click the **Compliant** section of the chart. Only the compliant device should appear in the filtered view. -->
 
 

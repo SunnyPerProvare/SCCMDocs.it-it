@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8506996f7b769003c937de69a9c7f659341c4294
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 48e0f2c1d04f0592cd794aa4315641fe6f9cd15b
+ms.sourcegitcommit: 9670e11316c9ec6e5f78cd70c766bbfdf04ea3f9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501022"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67818113"
 ---
 #  <a name="recover-a-configuration-manager-site"></a>Ripristinare un sito di Configuration Manager
 
@@ -177,11 +177,11 @@ Usare una delle procedure seguenti per ripristinare il server del sito e il data
 
 ### <a name="start-a-site-recovery-in-the-setup-wizard"></a>Avviare un ripristino sito nell'Installazione guidata
 
-1.  Copiare la cartella [CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder) in un percorso esterno alla cartella di installazione di Configuration Manager. Dalla copia della cartella CD.Latest eseguire l'Installazione guidata di Configuration Manager.  
+1. Copiare la cartella [CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder) in un percorso esterno alla cartella di installazione di Configuration Manager. Dalla copia della cartella CD.Latest eseguire l'Installazione guidata di Configuration Manager.  
 
-2.  Nella pagina **Riquadro attività iniziale** selezionare **Ripristina un sito**, quindi fare clic su **Avanti**.  
+2. Nella pagina **Riquadro attività iniziale** selezionare **Ripristina un sito**, quindi fare clic su **Avanti**.  
 
-3.  Completare la procedura guidata usando le opzioni appropriate per il ripristino del sito.  
+3. Completare la procedura guidata usando le opzioni appropriate per il ripristino del sito.  
 
      - Durante il ripristino, il programma di installazione identifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. Se questa impostazione della porta viene modificata durante il ripristino, la replica dei dati non verrà eseguita correttamente al termine del ripristino.  
 
@@ -256,7 +256,7 @@ Quando si ripristinano sistemi del sito che eseguono IIS e che erano configurati
 
 ### <a name="reinstall-hotfixes"></a>Reinstallare gli aggiornamenti rapidi 
 
-Dopo il ripristino di un sito, è necessario reinstallare gli aggiornamenti rapidi applicati al server del sito. Dopo il ripristino sito, visualizzare l'elenco degli aggiornamenti rapidi installati in precedenza nella pagina **Completato** dell'Installazione guidata. Questo elenco viene salvato anche in `C:\ConfigMgrPostRecoveryActions.html` nel server del sito ripristinato.
+Dopo il ripristino di un sito, è necessario reinstallare gli [aggiornamenti rapidi fuori banda](/sccm/core/servers/manage/updates#bkmk_outofband) applicati al server del sito. Dopo il ripristino sito, visualizzare l'elenco degli aggiornamenti rapidi installati in precedenza nella pagina **Completato** dell'Installazione guidata. Questo elenco viene salvato anche in `C:\ConfigMgrPostRecoveryActions.html` nel server del sito ripristinato.
 
 
 ### <a name="recover-custom-reports"></a>Recuperare i report personalizzati 

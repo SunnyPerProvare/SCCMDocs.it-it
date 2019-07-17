@@ -2,7 +2,7 @@
 title: Dati di utilizzo e di diagnostica per la versione 1810
 titleSuffix: Configuration Manager
 description: Informazioni sui livelli di raccolta dati di diagnostica e di utilizzo nella versione 1810.
-ms.date: 11/27/2018
+ms.date: 05/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 52c13109710fc35dcd2853f76188ac42269a8058
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 704cc50369e1df251b706690465a4135ed5b3cdb
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120062"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67676911"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1810"></a>Livelli di raccolta dati di utilizzo e di diagnostica per la versione 1810
 
@@ -87,7 +87,7 @@ Per Configuration Manager versione 1810, questo livello include i dati seguenti:
 
     - Data di scadenza di Software Assurance  
 
-    - Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti  
+    - Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti 
 
     - Uso di Fast Ring di aggiornamento  
 
@@ -351,7 +351,7 @@ Per Configuration Manager versione 1810, questo livello include i dati seguenti:
 
 ### <a name="endpoint-protection"></a>Endpoint Protection  
 
-- Criteri avanzati di Advanced Threat Protection (ATP): numero dei criteri e se i criteri sono distribuiti  
+- Criteri avanzati di Microsoft Defender Advanced Threat Protection (ATP) (noto in precedenza come Windows Defender ATP): numero dei criteri e avvenuta distribuzione o meno dei criteri. 
 
 - Numero di avvisi configurati per la funzionalità Endpoint Protection  
 

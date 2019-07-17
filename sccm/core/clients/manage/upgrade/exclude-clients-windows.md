@@ -11,18 +11,22 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba556ffe98fbcf51dbc20975875ddb0c0b1370bb
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: bc1d82de7863f6aa82e43515c28392865388a79f
+ms.sourcegitcommit: 9670e11316c9ec6e5f78cd70c766bbfdf04ea3f9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56139926"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67818193"
 ---
 # <a name="how-to-exclude-upgrading-clients-for-windows-computers-in-system-center-configuration-manager"></a>Come evitare l'aggiornamento dei client per i computer Windows in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-A partire dalla versione 1610, è possibile impedire che una raccolta di client installi automaticamente le versioni aggiornate. Questa funzione si applica sia all'aggiornamento automatico sia ad altri metodi, ad esempio all'aggiornamento basato sull'aggiornamento software, agli script di accesso e ai criteri di gruppo. Questa opzione può essere usata per una raccolta di computer che richiede particolare attenzione durante l'aggiornamento del client. I client che appartengono a una raccolta esclusa ignorano le richieste di aggiornamento del software client.
+È possibile impedire che una raccolta di client installi automaticamente le versioni di client aggiornate. Questa funzione si applica sia all'aggiornamento automatico sia ad altri metodi, ad esempio all'aggiornamento basato sull'aggiornamento software, agli script di accesso e ai criteri di gruppo. Questa opzione può essere usata per una raccolta di computer che richiede particolare attenzione durante l'aggiornamento del client. I client che appartengono a una raccolta esclusa ignorano le richieste di aggiornamento del software client.
+
+>[!NOTE]
+>I client esclusi scaricano ed eseguono comunque CCMSETUP, ma non saranno aggiornati.
+
 
 ## <a name="configure-exclusion-for-automatic-upgrades"></a>Configurare l'esclusione per gli aggiornamenti automatici
 
@@ -35,8 +39,6 @@ A partire dalla versione 1610, è possibile impedire che una raccolta di client 
 4.  Fare clic su **OK** per chiudere e salvare la configurazione. Dopo che i client avranno aggiornato i criteri, i client appartenenti alla raccolta esclusa non installeranno più automaticamente gli aggiornamenti per il software client. Per altre informazioni, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](upgrade-clients-for-windows-computers.md).
 
 ![Impostazioni per l'esclusione dall'aggiornamento automatico](media/automatic_upgrade_exclusion.png)
-
-
 
 >[!NOTE]
 >Anche se l'interfaccia utente indica che i client non verranno aggiornati, esistono due metodi che è possibile usare per sostituire queste impostazioni. L'installazione push del client e l'installazione manuale del client consentono di sostituire questa configurazione. Per altre informazioni, vedere la sezione seguente.

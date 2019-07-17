@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 21ed29204a5ed41e54a12a1294bc9582d3e6eaa1
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: 91bcdf4e593d2c39fed19f0b01045cab32f921da
+ms.sourcegitcommit: 9670e11316c9ec6e5f78cd70c766bbfdf04ea3f9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67252322"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67818179"
 ---
 # <a name="install-and-configure-distribution-points-in-configuration-manager"></a>Installare e configurare punti di distribuzione per Configuration Manager
 
@@ -256,6 +256,7 @@ Le sezioni seguenti descrivono che è possibile selezionare quando si [installa 
 
 - [Impostazioni generali](#bkmk_config-general)
 - [Impostazioni unità](#bkmk_config-drive)
+- [Impostazioni del firewall](#bkmk_firewall)
 - [Punto di distribuzione pull](#bkmk_config-pull)
 - [Impostazioni PXE](#bkmk_config-pxe)
 - [Multicast](#bkmk_config-multicast)
@@ -351,6 +352,15 @@ Specificare le impostazioni unità per il punto di distribuzione. Configurare fi
 > Per evitare l'installazione di Configuration Manager in un'unità specifica, creare un file vuoto denominato **no_sms_on_drive.sms** e copiarlo nella cartella radice dell'unità prima dell'installazione del punto di distribuzione.  
 
 Per altre informazioni, vedere [Raccolta contenuto](/sccm/core/plan-design/hierarchy/the-content-library).
+
+### <a name="bkmk_firewall"></a> Impostazioni del firewall
+
+Il punto di distribuzione deve avere le regole in ingresso seguenti configurate nel firewall di Windows:
+
+- Strumentazione gestione Windows (DCOM-In)
+- Strumentazione gestione Windows (WMI-In)
+
+Senza queste regole i client visualizzeranno l'errore 0x801901F4 in DataTransferService.log durante il tentativo di scaricare il contenuto.
 
 ### <a name="bkmk_config-pull"></a> Punto di distribuzione pull  
 

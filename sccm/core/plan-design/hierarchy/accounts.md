@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 596c88cd679b2cb37cfcc7a1d8df5f82e3e56702
-ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.openlocfilehash: 53505aed5fcdcfcaf3603250a40f484cd49c762f
+ms.sourcegitcommit: 5e43c0c6b0b1f449e596f59ceaa92a9b6ca194cc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66715969"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67572752"
 ---
 # <a name="accounts-used-in-configuration-manager"></a>Account usati in Configuration Manager
 
@@ -577,9 +577,9 @@ Per altre informazioni, vedere [Pianificare gli aggiornamenti software](/sccm/su
 
 ### <a name="task-sequence-run-as-account"></a>Sequenza di attività eseguita come account  
 
- Il motore della sequenza di attività usa la **sequenza di attività eseguita come account** per eseguire righe di comando con credenziali diverse dall'account di sistema locale. Questo account è necessario per il passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) della sequenza di attività con l'opzione **Esegui questo passaggio come account specificato**.  
+ Il motore della sequenza di attività usa la **sequenza di attività eseguita come account** per eseguire righe di comando o script di PowerShell con credenziali diverse dall'account di sistema locale. Questo account è necessario per i passaggi [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) ed **Esegui script PowerShell** della sequenza di attività con l'opzione [Esegui questo passaggio come account specificato](/sccm/osd/understand/task-sequence-steps#BKMK_RunPowerShellScript) selezionata.  
 
- Configurare l'account in modo che abbia le autorizzazioni minime necessarie per eseguire la riga di comando specificata nella sequenza di attività. L'account richiede diritti di accesso interattivi. In genere richiede la possibilità di installare il software e accedere alle risorse di rete.  
+ Configurare l'account in modo che abbia le autorizzazioni minime necessarie per eseguire la riga di comando specificata nella sequenza di attività. L'account richiede diritti di accesso interattivi. In genere richiede la possibilità di installare il software e accedere alle risorse di rete. Per l'attività Esegui script PowerShell, questo account richiede autorizzazioni di amministratore locale. 
 
 > [!IMPORTANT]  
 >  Non usare l'account di accesso alla rete per questo account.  

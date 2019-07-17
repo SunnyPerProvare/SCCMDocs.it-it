@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b45c5938e9c1980802055bd73d5fd7e71122fc2a
-ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
+ms.openlocfilehash: 6af2f179a540c4a532173eacf265ec11bf292209
+ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57558117"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67677865"
 ---
 # <a name="install-and-assign-configuration-manager-windows-10-clients-using-azure-ad-for-authentication"></a>Installare e assegnare client di Configuration Manager in dispositivi Windows 10 usando Azure AD per l'autenticazione
 
@@ -65,7 +65,7 @@ Eseguite queste operazioni, il sito di Configuration Manager è connesso ad Azur
 
 Queste impostazioni client consentono di aggiungere i dispositivi Windows 10 con Azure AD. Consentono inoltre di abilitare i client basati su Internet per l'uso del gateway di gestione cloud e del punto di distribuzione cloud.
 
-1.  Configurare le seguenti impostazioni client nella sezione **Servizi cloud** usando le informazioni contenute in [Come configurare le impostazioni client in System Center Configuration Manager](/sccm/core/clients/deploy/configure-client-settings).  
+1. Configurare le seguenti impostazioni client nella sezione **Servizi cloud** usando le informazioni contenute in [Come configurare le impostazioni client in System Center Configuration Manager](/sccm/core/clients/deploy/configure-client-settings).  
 
     - **Consentire accesso al punto di distribuzione cloud**: abilitare questa impostazione per consentire ai dispositivi basati su Internet di ottenere il contenuto necessario per l'installazione del client di Configuration Manager. Se il contenuto non è disponibile nel punto di distribuzione cloud, dispositivi possono recuperarlo dal gateway di gestione cloud. Il bootstrap di installazione del client ritenta il punto di distribuzione cloud per quattro ore prima di eseguire il fallback al gateway di gestione cloud.<!--495533-->  
 
@@ -73,7 +73,7 @@ Queste impostazioni client consentono di aggiungere i dispositivi Windows 10 con
 
     - **Consenti ai client di usare un gateway di gestione cloud** impostato su **Sì** (impostazione predefinita) o **No**.  
 
-2.  Distribuire le impostazioni client per la raccolta necessaria di dispositivi. Non distribuire queste impostazioni alle raccolte di utenti.
+2. Distribuire le impostazioni client per la raccolta necessaria di dispositivi. Non distribuire queste impostazioni alle raccolte di utenti.
 
 Per verificare se il dispositivo è stato aggiunto ad Azure AD, eseguire `dsregcmd.exe /status` in un prompt dei comandi. Il campo **AzureAdjoined** nei risultati visualizza **SÌ** se il dispositivo è stato aggiunto ad Azure AD.
 
@@ -95,9 +95,9 @@ Le proprietà /mp e CCMHOSTNAME specificano uno degli elementi seguenti, a secon
 - Gateway di gestione cloud
 - Punto di gestione basato su Internet La proprietà SMSMP specifica il punto di gestione locale o basato su Internet.
 
-In questo esempio viene usato un gateway di gestione cloud. Sostituisce i valori di esempio per ogni proprietà: `ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC SMSMP=https://mp1.contoso.com AADTENANTID=daf4a1c2-3a0c-401b-966f-0b855d3abd1a AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://contososerver`
+In questo esempio viene usato un gateway di gestione cloud. Sostituisce i valori di esempio per ogni proprietà: `ccmsetup.exe /mp: https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC SMSMP=https://mp1.contoso.com AADTENANTID=daf4a1c2-3a0c-401b-966f-0b855d3abd1a AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://contososerver`
 
-A partire dalla versione 1810, il sito pubblica le informazioni aggiuntive di Azure AD in Cloud Management Gateway (CMG). Un client aggiunto ad Azure AD ottiene queste informazioni da CMG durante il processo ccmsetup, usando lo stesso tenant a cui viene aggiunto. Questo comportamento semplifica ulteriormente l'installazione del client in un ambiente con più di un tenant di Azure AD. Ora le uniche due proprietà di ccmsetup richieste sono **CCMHOSTNAME** e **SMSSiteCode**.<!--3607731-->
+A partire dalla versione 1810, il sito pubblica le informazioni aggiuntive di Azure AD in Cloud Management Gateway (CMG). Un client aggiunto ad Azure AD ottiene queste informazioni da CMG durante il processo ccmsetup, usando lo stesso tenant a cui viene aggiunto. Questo comportamento semplifica ulteriormente l'installazione del client in un ambiente con più di un tenant di Azure AD. Al momento le uniche due proprietà obbligatorie di ccmsetup sono **CCMHOSTNAME** e **SMSSiteCode**.<!--3607731-->
 
 Per automatizzare l'installazione del client usando l'identità di Azure AD con Microsoft Intune, vedere [How to prepare internet-based devices for co-management](/sccm/comanage/how-to-prepare-win10#install-the-configuration-manager-client) (Come preparare i dispositivi basati su Internet per la cogestione).
 

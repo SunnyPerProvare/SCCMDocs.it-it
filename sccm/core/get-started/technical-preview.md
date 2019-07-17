@@ -2,7 +2,7 @@
 title: Versioni di Technical Preview
 titleSuffix: Configuration Manager
 description: Informazioni sulla versione Technical Preview che consente di testare nuove funzionalità e capacità in Configuration Manager.
-ms.date: 06/12/2019
+ms.date: 07/11/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2041f51714cbed7a9c9a1a3ad14bbb2d8c697ae4
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 3cb49531bd6d10106b17cca65218d7158c24dc3e
+ms.sourcegitcommit: 5a36200c738f20a78299a30723c8e613af71efce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67285978"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843855"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Technical Preview per Configuration Manager
 
@@ -103,7 +103,8 @@ Microsoft supporta ogni versione Technical Preview fino a quando diventano dispo
 
 È possibile installare una versione di base al massimo per un anno dopo il rilascio. Quando si installa un nuovo sito Technical Preview, se sono disponibili più versioni di base, usare la versione di base più recente.
 
-- **Technical preview versione 1902.2**: Configuration Manager Technical Preview versione 1902.2 è disponibile sia come aggiornamento nella console che come nuova versione di base. Scaricare le versioni di base dal [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
+- **Technical Preview versione 1907**: Configuration Manager Technical Preview versione 1907 è disponibile sia come aggiornamento nella console che come nuova versione di base. Scaricare le versioni di base dal [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
+
 
 ## <a name="BKMK_TPFeedback"></a> Invio di commenti e suggerimenti  
 
@@ -111,7 +112,9 @@ Microsoft sarebbe lieta di ricevere commenti e suggerimenti sulle nuove funziona
 
 Siamo anche interessati a conoscere le vostre idee su eventuali nuove funzionalità. Per inviare nuove idee e votare le idee presentate da altri, [visitare la pagina UserVoice](https://configurationmanager.uservoice.com).  
 
+
 <!--   ##  <a name="bdmk_tpknownissues"></a> General changes introduced in Technical Previews    -->
+
 
 ## <a name="bkmk_tpCaps"></a> Funzionalità nella versione più recente  
 
@@ -119,9 +122,30 @@ Le funzionalità seguenti sono disponibili con la versione Technical Preview di 
 
 <!-- This is the full list of new features in the latest TP release -->
 
-### <a name="technical-preview-version-1906"></a>Anteprima tecnica versione 1906
+### <a name="technical-preview-version-1907"></a>Technical Preview versione 1907
 
 <!-- - [title](/sccm/core/get-started/2019/technical-preview-1901#bkmk_anchor) <!--ID-->
+
+- [Ricerca nell'editor delle sequenze di attività](/sccm/core/get-started/2019/technical-preview-1907#bkmk_tsedit) <!--4621085-->
+- [Miglioramenti al dashboard Preparazione aggiornamenti per Office 365 ProPlus](/sccm/core/get-started/2019/technical-preview-1907#improvements-to-office-365-proplus-upgrade-readiness-dashboard) <!--4021125-->
+
+> [!Note]  
+> Le funzionalità disponibili in una versione precedente della Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità aggiunte alla versione Current Branch di Configuration Manager rimangono disponibili nel ramo Technical Preview.  
+
+
+## <a name="features-in-recent-technical-previews"></a>Funzionalità nelle anteprime tecniche recenti
+
+Le funzionalità seguenti sono state rilasciate in versioni precedenti di Configuration Manager Technical Preview Branch dopo l'ultima versione Current Branch:
+
+> [!Tip]  
+> Quando è disponibile una nuova versione Current Branch, le funzionalità presenti in tale versione sono elencate nella versione più recente dell'articolo *Novità*. Per altre informazioni, vedere [Novità delle versioni incrementali](/sccm/core/plan-design/changes/whats-new-incremental-versions#supported-versions).
+
+<!-- This is the full list of new features in the past TP releases since the last CB release. 
+Each month, add features from the list above to a new H3 section at the top of this section. 
+When there's a new CB, add any features not in that CB to the table in H2 "Features in previous technical previews"
+-->
+
+### <a name="technical-preview-version-1906"></a>Anteprima tecnica versione 1906
 
 - [Miglioramenti alle attività di manutenzione](/sccm/core/get-started/2019/technical-preview-1906#improvements-to-maintenance-tasks) <!--3555894-->
 - [Monitoraggio dell'aggiornamento del database di Configuration Manager](/sccm/core/get-started/2019/technical-preview-1906#configuration-manager-update-database-upgrade-monitoring) <!--4200581-->
@@ -145,55 +169,49 @@ Le funzionalità seguenti sono disponibili con la versione Technical Preview di 
 - [Miglioramenti alla distribuzione del sistema operativo](/sccm/core/get-started/2019/technical-preview-1906#bkmk_osd) <!--4668846, 2840337, 4512937-->
 - [Collegamento diretto a schede personalizzate in Software Center](/sccm/core/get-started/2019/technical-preview-1906#bkmk_swctr) <!--4655176-->
 
-> [!Note]  
-> Le funzionalità disponibili in una versione precedente della Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità aggiunte alla versione Current Branch di Configuration Manager rimangono disponibili nel ramo Technical Preview.  
+### <a name="technical-preview-version-1905"></a>Technical Preview versione 1905
 
-## <a name="features-in-recent-supported-technical-previews"></a>Funzionalità nelle versioni Technical Preview supportate recenti
+- [Controllo migliorato sulla manutenzione di WSUS](/sccm/core/get-started/2019/technical-preview-1905#improved-control-over-wsus-maintenance) <!--4110109-->
+- [Miglioramenti della console di Configuration Manager](/sccm/core/get-started/2019/technical-preview-1905#bkmk_console) <!--4616810-->
+- [Configurare il tempo di esecuzione massimo predefinito per gli aggiornamenti software](/sccm/core/get-started/2019/technical-preview-1905#bkmk_timeout) <!--3734426-->
+- [Criteri di attendibilità file di Windows Defender Application Guard](/sccm/core/get-started/2019/technical-preview-1905#bkmk_wdag) <!--3555858-->
+- [Gruppi di applicazioni](/sccm/core/get-started/2019/technical-preview-1905#bkmk_app-group) <!--3555907-->
+- [Sequenza di attività come tipo di distribuzione del modello di app](/sccm/core/get-started/2019/technical-preview-1905#bkmk_tsdt) <!--3555953-->
+- [Gestione di BitLocker](/sccm/core/get-started/2019/technical-preview-1905#bkmk_bitlocker) <!--3601034-->
+- [Debugger di sequenze di attività](/sccm/core/get-started/2019/technical-preview-1905#bkmk_tsdebug) <!--3612274-->
+- [Ottimizzazione del recapito nel dashboard Origini dati del client](/sccm/core/get-started/2019/technical-preview-1905#bkmk_do) <!--3555759-->
+- [Miglioramento dell'hub della community](/sccm/core/get-started/2019/technical-preview-1905#bkmk_hub) <!--4224401-->
+- [Visualizzare il GUID SMBIOS nell'elenco dei dispositivi](/sccm/core/get-started/2019/technical-preview-1905#bkmk_smbios) <!--4526580-->
+- [Visualizzatore log OneTrace](/sccm/core/get-started/2019/technical-preview-1905#bkmk_onetrace) <!--3555962-->
+- [Miglioramenti all'infrastruttura di Software Center](/sccm/core/get-started/2019/technical-preview-1905#bkmk_swctr) <!--3555950-->
+- [Miglioramenti delle personalizzazioni delle schede di Software Center](/sccm/core/get-started/2019/technical-preview-1905#improvements-to-software-center-tab-customizations) <!--4063773-->
+- [Miglioramenti delle approvazioni di app](/sccm/core/get-started/2019/technical-preview-1905#bkmk_approve) <!--4224910-->
+- [Ripetere l'installazione delle applicazioni pre-approvate](/sccm/core/get-started/2019/technical-preview-1905#bkmk_retry) <!--4336307-->
+- [Installare le applicazioni per un dispositivo](/sccm/core/get-started/2019/technical-preview-1905#bkmk_device-app) <!--4402180-->
+- [Notifiche del conto alla rovescia più frequenti per i riavvii](/sccm/core/get-started/2019/technical-preview-1905#bkmk_restart) <!--3976435-->
+- [Sincronizzare i risultati di appartenenza alla raccolta con i gruppi di Azure Active Directory](/sccm/core/get-started/2019/technical-preview-1905#bkmk_aadcollsync) <!--3607475-->
+- [Configurare il periodo di conservazione minimo della cache del client](/sccm/core/get-started/2019/technical-preview-1905#bkmk_cache) <!--4485509-->
+- [Miglioramenti alla distribuzione del sistema operativo](/sccm/core/get-started/2019/technical-preview-1905#bkmk_osd) <!--4512937,4224642-->
+- [Aggiungere un nodo di SQL AlwaysOn](/sccm/core/get-started/2019/technical-preview-1905#bkmk_sqlao) <!--3127336-->
 
-Le funzionalità disponibili sono state rilasciate con le versioni precedenti della Technical Preview di Configuration Manager ma sono ancora supportate:
+### <a name="technical-preview-version-1904"></a>Technical Preview versione 1904
 
-<!-- This is the full list of new features in the past THREE (3) TP releases. 
-Each month, add features from the list above to the top of this table. 
-Then remove the bottom of this list and/or move individual items not in CB to the third table below.
--->
+- [Dashboard Preparazione aggiornamenti per Office 365 ProPlus](/sccm/core/get-started/2019/technical-preview-1904#bkmk_o365) <!--4021125-->  
+- [Configurare l'aggiornamento dinamico durante gli aggiornamenti delle funzionalità](/sccm/core/get-started/2019/technical-preview-1904#configure-dynamic-update-during-feature-updates) <!--4062619-->  
+- [Hub della community e GitHub](/sccm/core/get-started/2019/technical-preview-1904#community-hub-and-github) <!--3555935,3555936-->  
+- [Modalità autonoma per CMPivot](/sccm/core/get-started/2019/technical-preview-1904#bkmk_cmpivot) <!--3555890-->  
+- [Miglioramenti all'infrastruttura di Software Center](/sccm/core/get-started/2019/technical-preview-1904#bkmk_swctr) <!--3555950-->  
+- [Controllo migliorato sulla manutenzione di WSUS](/sccm/core/get-started/2019/technical-preview-1904#improved-control-over-wsus-maintenance) <!--4110109-->  
+- [Pre-cache per pacchetti di driver e immagini del sistema operativo](/sccm/core/get-started/2019/technical-preview-1904#bkmk_precache) <!--4224642-->  
+- [Miglioramenti alla distribuzione del sistema operativo](/sccm/core/get-started/2019/technical-preview-1904#bkmk_osd) <!--2839943,4447680-->  
 
- | Funzionalità | Versione Technical Preview | Versione Current Branch |  
- |---------|---------------------------|------------------------|
- | Controllo migliorato sulla manutenzione di WSUS <!--4110109--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#improved-control-over-wsus-maintenance) | ![Non aggiunta](media/Red_X.gif) |
- | Miglioramenti della console di Configuration Manager <!--4616810--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_console) | ![Non aggiunta](media/Red_X.gif) |
- | Configurare il tempo di esecuzione massimo predefinito per gli aggiornamenti software <!--3734426--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_timeout) | ![Non aggiunta](media/Red_X.gif) |
- | Criteri di attendibilità file di Windows Defender Application Guard <!--3555858--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_wdag) | ![Non aggiunta](media/Red_X.gif) |
- | Gruppi di applicazioni <!--3555907--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_app-group) | ![Non aggiunta](media/Red_X.gif) |
- | Sequenza di attività come tipo di distribuzione del modello di app <!--3555953--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_tsdt) | ![Non aggiunta](media/Red_X.gif) |
- | Gestione di BitLocker <!--3601034--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_bitlocker) | ![Non aggiunta](media/Red_X.gif) |
- | Debugger di sequenze di attività <!--3612274--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_tsdebug) | ![Non aggiunta](media/Red_X.gif) |
- | Ottimizzazione del recapito nel dashboard Origini dati del client <!--3555759--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_do) | ![Non aggiunta](media/Red_X.gif) |
- | Miglioramento dell'hub della community <!--4224401--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_hub) | ![Non aggiunta](media/Red_X.gif) |
- | Visualizzare il GUID SMBIOS nell'elenco dei dispositivi <!--4526580--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_smbios) | ![Non aggiunta](media/Red_X.gif) |
- | Visualizzatore log OneTrace <!--3555962--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_onetrace) | ![Non aggiunta](media/Red_X.gif) |
- | Miglioramenti all'infrastruttura di Software Center <!--3555950--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_swctr) | ![Non aggiunta](media/Red_X.gif) |
- | Miglioramenti delle personalizzazioni delle schede di Software Center <!--4063773--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#improvements-to-software-center-tab-customizations) | ![Non aggiunta](media/Red_X.gif) |
- | Miglioramenti delle approvazioni di app <!--4224910--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_approve) | ![Non aggiunta](media/Red_X.gif) |
- | Ripetere l'installazione delle applicazioni pre-approvate <!--4336307--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_retry) | ![Non aggiunta](media/Red_X.gif) |
- | Installare le applicazioni per un dispositivo <!--4402180--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_device-app) | ![Non aggiunta](media/Red_X.gif) |
- | Notifiche del conto alla rovescia più frequenti per i riavvii <!--3976435--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_restart) | ![Non aggiunta](media/Red_X.gif) |
- | Sincronizzare i risultati di appartenenza alla raccolta con i gruppi di Azure Active Directory <!--3607475--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_aadcollsync) | ![Non aggiunta](media/Red_X.gif) |
- | Configurare il periodo di conservazione minimo della cache del client <!--4485509--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_cache) | ![Non aggiunta](media/Red_X.gif) |
- | Miglioramenti della distribuzione del sistema operativo <!--4512937,4224642--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_osd) | ![Non aggiunta](media/Red_X.gif) |
- | Aggiungere un nodo SQL AlwaysOn <!--3127336--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_sqlao) | ![Non aggiunta](media/Red_X.gif) |
- | Dashboard Preparazione aggiornamenti per Office 365 ProPlus <!--4021125--> | [Tech Preview 1904](/sccm/core/get-started/2019/technical-preview-1904#bkmk_o365) | ![Non aggiunta](media/Red_X.gif) |
- | Configurare l'aggiornamento dinamico durante gli aggiornamenti delle funzionalità <!--4062619--> | [Tech Preview 1904](/sccm/core/get-started/2019/technical-preview-1904#configure-dynamic-update-during-feature-updates) | ![Non aggiunta](media/Red_X.gif) |
- | Hub della community e GitHub <!--3555935,3555936--> | [Tech Preview 1904](/sccm/core/get-started/2019/technical-preview-1904#community-hub-and-github) | ![Non aggiunta](media/Red_X.gif) |
- | Modalità autonoma per CMPivot <!--3555890--> | [Tech Preview 1904](/sccm/core/get-started/2019/technical-preview-1904#bkmk_cmpivot) | ![Non aggiunta](media/Red_X.gif) |
- | Miglioramenti all'infrastruttura di Software Center <!--3555950--> | [Tech Preview 1904](/sccm/core/get-started/2019/technical-preview-1904#bkmk_swctr) | ![Non aggiunta](media/Red_X.gif) |
- | Controllo migliorato sulla manutenzione di WSUS <!--4110109--> | [Tech Preview 1904](/sccm/core/get-started/2019/technical-preview-1904#improved-control-over-wsus-maintenance) | ![Non aggiunta](media/Red_X.gif) |
- | Pre-cache per pacchetti di driver e immagini del sistema operativo <!--4224642--> | [Tech Preview 1904](/sccm/core/get-started/2019/technical-preview-1904#bkmk_precache) | ![Non aggiunta](media/Red_X.gif) |
- | Miglioramenti della distribuzione del sistema operativo <!--2839943,4447680--> | [Tech Preview 1904](/sccm/core/get-started/2019/technical-preview-1904#bkmk_osd) | ![Non aggiunta](media/Red_X.gif) |
- | Stima dei costi dei servizi cloud <!--3555774--> | [Tech Preview 1903](/sccm/core/get-started/2019/technical-preview-1903#bkmk_cmg) | ![Non aggiunta](media/Red_X.gif) |
- | Usare il punto di distribuzione come server di cache locale per Ottimizzazione recapito <!--3555764--> | [Tech Preview 1903](/sccm/core/get-started/2019/technical-preview-1903#bkmk_doinc) | ![Non aggiunta](media/Red_X.gif) |
- | Richiamare il blocco per la modifica delle sequenze di attività <!--3699337--> | [Tech Preview 1903](/sccm/core/get-started/2019/technical-preview-1903#bkmk_sedo) | ![Non aggiunta](media/Red_X.gif) |
- | Drill-through degli aggiornamenti obbligatori <!--4224414--> | [Tech Preview 1903](/sccm/core/get-started/2019/technical-preview-1903#bkmk_req-updates) | ![Non aggiunta](media/Red_X.gif) |
- | Miglioramento alla creazione del supporto per la sequenza di attività <!--4090666--> | [Tech Preview 1903](/sccm/core/get-started/2019/technical-preview-1903#bkmk_tsmedia) | ![Non aggiunta](media/Red_X.gif) |
+### <a name="technical-preview-version-1903"></a>Technical Preview versione 1903
+
+- [Stima dei costi dei servizi cloud](/sccm/core/get-started/2019/technical-preview-1903#bkmk_cmg) <!--3555774-->  
+- [Usare il punto di distribuzione come server di cache locale per Ottimizzazione recapito](/sccm/core/get-started/2019/technical-preview-1903#bkmk_doinc) <!--3555764-->  
+- [Eliminare il blocco per la modifica delle sequenze di attività](/sccm/core/get-started/2019/technical-preview-1903#bkmk_sedo) <!--3699337-->  
+- [Eseguire il drill-through degli aggiornamenti obbligatori](/sccm/core/get-started/2019/technical-preview-1903#bkmk_req-updates) <!--4224414-->  
+- [Miglioramento alla creazione del supporto per la sequenza di attività](/sccm/core/get-started/2019/technical-preview-1903#bkmk_tsmedia) <!--4090666-->  
 
 
 ## <a name="features-in-previous-technical-previews"></a>Funzionalità nelle versioni Technical Preview precedenti
@@ -215,6 +233,7 @@ With each CB release, review and remove from this list for anything that's now a
 | Uso di Azure Active Directory <!--3607315, fka 1322145--> | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#azurediscovery) |
 | Miglioramenti ad Asset Intelligence <!--3601024, fka 1307390--> | [Tech Preview 1608](capabilities-in-technical-preview-1608.md#improvements-to-asset-intelligence) |
 | Gli utenti finali possono installare le app dal portale aziendale <!--3601249, fka 1037233--> | [Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_End) |
+
 
 ## <a name="see-also"></a>Vedere anche  
 

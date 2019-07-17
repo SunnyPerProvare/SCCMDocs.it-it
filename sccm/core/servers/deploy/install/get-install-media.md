@@ -11,18 +11,20 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ab522e7618ff2c64e910a9098d7adc36f43512b
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: 9e4c37bff6942014761c53a5e2a659b398fbf7d2
+ms.sourcegitcommit: 9670e11316c9ec6e5f78cd70c766bbfdf04ea3f9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67252291"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67818143"
 ---
 # <a name="where-to-get-installation-media-for-system-center-configuration-manager"></a>Dove ottenere il supporto di installazione per System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 Se si hanno contratti multilicenza di System Center Configuration Manager con Software Assurance, oppure si sono acquistate licenze per contratti multilicenza di System Center Configuration Manager, è possibile scaricare il supporto di origine di base per installare System Center Configuration Manager dal [Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/default.aspx).   
+
+Se si ottiene una licenza di System Center Configuration Manager da EMS, Microsoft 365 o Cloud Solution Provider (CSP), vedere le [Domande frequenti su prodotto e licenze](/sccm/core/understand/product-and-licensing-faq#bkmk_csp).
 
 Se si vuole acquistare contratti multilicenza per System Center Configuration Manager, contattare il rivenditore Microsoft preferito o vedere [Come acquistare tramite i contratti multilicenza]( https://www.microsoft.com/Licensing/how-to-buy/how-to-buy.aspx). È inoltre possibile scaricare il supporto per installare un'edizione di valutazione di System Center Configuration Manager dal sito Web di [TechNet Evaluation Center]( https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection).
 

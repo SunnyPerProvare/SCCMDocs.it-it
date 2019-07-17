@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f4177417941d5af98b4558705cb53681410349a4
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 65cea36edd50af6beeae20c5ab0eaf1f7b4855fc
+ms.sourcegitcommit: 9670e11316c9ec6e5f78cd70c766bbfdf04ea3f9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135205"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67818112"
 ---
 # <a name="how-to-upgrade-clients-for-windows-computers-in-system-center-configuration-manager"></a>Come aggiornare i client per i computer Windows in System Center Configuration Manager
 
@@ -34,7 +34,7 @@ ms.locfileid: "56135205"
 
   Se si intende aggiornare il client con metodi di installazione client, sono disponibili altre informazioni sull'uso di tali metodi in [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md).
 
-  A partire dalla versione 1610 è possibile escludere client dall'aggiornamento specificando un gruppo di esclusioni. Per altre informazioni, vedere [How to exclude upgrading clients for Windows computers](exclude-clients-windows.md) (Come escludere l'aggiornamento di client per computer Windows).  
+  È possibile escludere client dall'aggiornamento specificando un gruppo di esclusioni. Per altre informazioni, vedere [How to exclude upgrading clients for Windows computers](exclude-clients-windows.md) (Come escludere l'aggiornamento di client per computer Windows). I client esclusi scaricano ed eseguono comunque CCMSETUP, ma non saranno aggiornati.
 
 
 > [!TIP]  
