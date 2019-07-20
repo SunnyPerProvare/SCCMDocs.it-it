@@ -1,8 +1,8 @@
 ---
-title: Domande frequenti per l'Analitica Desktop
+title: Domande frequenti su desktop Analytics
 titleSuffix: Configuration Manager
-description: Domande frequenti su Desktop Analitica.
-ms.date: 07/12/2019
+description: Domande frequenti su desktop Analytics.
+ms.date: 07/19/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,58 +11,64 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 663490349bcb61f243980c5e1a3fe1f5651d8573
-ms.sourcegitcommit: 448cc0d9094a3c9e23f011c4673cd1e8b956280a
+ms.openlocfilehash: 3a1760e0039280e686e716d8cf876813083d544c
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67860843"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340174"
 ---
-# <a name="desktop-analytics-faq"></a>Domande frequenti di Analitica desktop
+# <a name="desktop-analytics-faq"></a>Domande frequenti su desktop Analytics
 
 > [!Note]  
-> Tali informazioni fanno riferimento a un servizio in anteprima che può essere modificato sostanzialmente prima del rilascio in commercio. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
+> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
+
+## <a name="prerequisites"></a>Prerequisiti 
+
+### <a name="can-i-use-desktop-analytics-with-intune-managed-devices"></a>È possibile usare analisi desktop con i dispositivi gestiti da Intune? 
+
+La maggior parte dei clienti che possono trarre vantaggio dal flusso di lavoro di analisi desktop USA Configuration Manager per la distribuzione di Windows. I clienti di Intune apprezzano le informazioni aggiuntive dai dati di analisi e sono in grado di condividere informazioni approfondite anche con loro.
 
 ## <a name="windows-upgrade"></a>Aggiornamento di Windows
 
-### <a name="can-i-upgrade-windows-and-change-architecture"></a>È possibile eseguire l'aggiornamento di Windows e modificare l'architettura?
+### <a name="can-i-upgrade-windows-and-change-architecture"></a>È possibile aggiornare Windows e modificare l'architettura?
 
-Desktop Analitica è progettato per gli aggiornamenti sul posto del migliori supporto. Gli aggiornamenti sul posto non supportano le migrazioni da architettura a 32 bit a 64 bit. Se è necessario eseguire la migrazione di computer in questo scenario, usare lo scenario di aggiornamento. Insights Analitica desktop sono ancora utili in questo scenario, ma è possibile ignorare le linee guida specifiche di aggiornamento.
+Desktop Analytics è progettato per supportare al meglio gli aggiornamenti sul posto. Gli aggiornamenti sul posto non supportano le migrazioni dall'architettura a 32 bit a quella a 64 bit. Se è necessario eseguire la migrazione dei computer in questo scenario, usare lo scenario di aggiornamento. Le informazioni dettagliate su desktop Analytics sono ancora utili in questo scenario, ma è possibile ignorare le indicazioni specifiche per l'aggiornamento.
 
 Per altre informazioni, vedere [Aggiornare un computer esistente con una nuova versione di Windows](/sccm/osd/deploy-use/refresh-an-existing-computer-with-a-new-version-of-windows).
 
-### <a name="can-i-change-from-bios-to-uefi-when-upgrading-windows"></a>È possibile modificare da BIOS a UEFI durante l'aggiornamento di Windows?
+### <a name="can-i-change-from-bios-to-uefi-when-upgrading-windows"></a>È possibile passare da BIOS a UEFI durante l'aggiornamento di Windows?
 
-Sì. Per altre informazioni, vedere [conversione da BIOS a UEFI durante un aggiornamento sul posto](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).
+Sì. Per ulteriori informazioni, vedere [conversione da BIOS a UEFI durante un aggiornamento sul posto](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).
 
-### <a name="can-i-use-desktop-analytics-with-windows-10-ltsc"></a>È possibile usare Analitica Desktop con Windows 10 LTSC?
+### <a name="can-i-use-desktop-analytics-with-windows-10-ltsc"></a>È possibile usare desktop Analytics con Windows 10 LTSC?
 
-Sebbene sia possibile usare Desktop Analitica per agevolare l'aggiornamento di dispositivi da Windows 10 Long-Term Servicing Channel (LTSC) su canale semestrale di Windows 10, Analitica Desktop non supporta gli aggiornamenti per Windows 10 LTSC. Questo canale di Windows 10 non è destinato all'uso ampio e non riceve gli aggiornamenti delle funzionalità, pertanto non è una destinazione supportata con Desktop Analitica. Per altre informazioni, vedere [Windows come una panoramica del servizio](https://docs.microsoft.com/windows/deployment/update/waas-overview#long-term-servicing-channel).
+Sebbene sia possibile usare l'analisi del desktop per supportare l'aggiornamento dei dispositivi da Windows 10 Long-Term Servicing Channel (LTSC) a un canale semestrale di Windows 10, desktop Analytics non supporta gli aggiornamenti per Windows 10 LTSC. Questo canale di Windows 10 non è destinato a un uso ampio e non riceve gli aggiornamenti delle funzionalità, quindi non si tratta di una destinazione supportata con analisi desktop. Per altre informazioni, vedere [Panoramica di Windows come servizio](https://docs.microsoft.com/windows/deployment/update/waas-overview#long-term-servicing-channel).
 
-### <a name="can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal"></a>È possibile ridurre la quantità di tempo che necessario per i dati aggiornare nella mio portale Analitica Desktop?
+### <a name="can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal"></a>È possibile ridurre la quantità di tempo necessaria per l'aggiornamento dei dati nel portale di analisi desktop?
 
-Esistono due tipi di dati nel portale di Analitica Desktop: I dati dell'amministratore e i dati di diagnostica. Per aggiornare l'amministratore dei dati on demand, aprire il menu a comparsa valuta i dati e selezionare **applicare le modifiche**. Questa azione attiva immediatamente un aggiornamento di qualsiasi modifica amministratore nelle aree di lavoro in sospeso una tantum. Le modifiche propagano e sono in genere disponibili entro 15 e 60 minuti. L'intervallo di tempo dipende la dimensione dell'area di lavoro e l'ambito di modifiche in sospeso. È possibile richiedere un aggiornamento dei dati on demand fino a sei volte entro un periodo di 24 ore. 
+Nel portale di analisi desktop sono disponibili due tipi di dati: Dati dell'amministratore e dati di diagnostica. Per aggiornare i dati dell'amministratore su richiesta, aprire il riquadro a comparsa valuta dati e selezionare **Applica modifiche**. Questa azione attiva immediatamente un aggiornamento unico di eventuali modifiche amministrative in sospeso nelle aree di lavoro. Le modifiche vengono propagate e sono disponibili a livello generale entro 15-60 minuti. La durata dipende dalle dimensioni dell'area di lavoro e dall'ambito delle modifiche in sospeso. È possibile richiedere un aggiornamento dati su richiesta fino a sei volte nell'arco di 24 ore. 
 
-Tutti i dati vengono aggiornati automaticamente una volta al giorno, anche se si non richiesta un aggiornamento dei dati on demand. Non è possibile attivare un aggiornamento su richiesta dei dati di diagnostica. Per altre informazioni sui diversi tipi di dati in Desktop Analitica, vedere [latenza dei dati](/sccm/desktop-analytics/troubleshooting#data-latency).
+Tutti i dati vengono aggiornati automaticamente una volta al giorno, anche se non si richiede un aggiornamento dati su richiesta. Non è possibile attivare un aggiornamento su richiesta dei dati di diagnostica. Per altre informazioni sui diversi tipi di dati in analisi desktop, vedere [latenza dei dati](/sccm/desktop-analytics/troubleshooting#data-latency).
 
 ## <a name="privacy"></a>Privacy
 
-### <a name="can-desktop-analytics-be-used-without-a-direct-client-connection-to-the-microsoft-data-management-service"></a>Desktop Analitica può essere usata senza una connessione client diretto al servizio di gestione dati di Microsoft?
+### <a name="can-desktop-analytics-be-used-without-a-direct-client-connection-to-the-microsoft-data-management-service"></a>È possibile usare l'analisi del desktop senza una connessione client diretta al servizio Microsoft Gestione dati?
 
-No, l'intero servizio si basa su Windows i dati di diagnostica, che richiede che i dispositivi hanno la connettività diretta.
+No, l'intero servizio è basato sui dati di diagnostica di Windows, che richiedono che i dispositivi abbiano questa connettività diretta.
 
-### <a name="can-i-choose-the-data-center-location"></a>È possibile scegliere la posizione del data center?
+### <a name="can-i-choose-the-data-center-location"></a>È possibile scegliere il percorso data center?
 
-Per Analitica di Log di Azure: Sì, quando si imposta Desktop Analitica e crea l'area di lavoro di Log Analitica.
+Per Log Analytics di Azure: Sì, quando si configura analisi desktop e si crea l'area di lavoro Log Analytics.
 
-Per il servizio di gestione dati Microsoft e Analitica archiviazione di Azure: No, questi due servizi sono ospitati negli Stati Uniti.
+Per il servizio Microsoft Gestione dati e il servizio di archiviazione Azure Analytics: No, questi due servizi sono ospitati nel Stati Uniti.
 
 ### <a name="where-is-my-organizations-data-stored"></a>Dove vengono archiviati i dati dell'organizzazione?
 
-I dati di diagnostica di Windows dai computer vengano crittografati, inviati a ed elaborati con i sicura gestita da Microsoft Data Center situati negli Stati Uniti. L'analisi dei dati correlati Analitica Desktop viene quindi fornito all'utente tramite la soluzione Analitica Desktop nel portale di Azure. Desktop Analitica è supportata in tutte le aree di Azure. Selezione di un'area di Azure internazionale non impedire i dati di diagnostica inviati a ed elaborati nel Data Center di proteggere i dati di Microsoft negli Stati Uniti.
+I dati di diagnostica di Windows dei computer vengono crittografati, inviati ed elaborati nei data center protetti gestiti da Microsoft presenti nel Stati Uniti. L'analisi dei dati correlati a analisi desktop viene quindi fornita tramite la soluzione desktop Analytics nella portale di Azure. Desktop Analytics è supportato in tutte le aree di Azure. La selezione di un'area di Azure internazionale non impedisce l'invio e l'elaborazione dei dati di diagnostica nei data center protetti di Microsoft negli Stati Uniti.
 
 ## <a name="other"></a>Altro
 
-### <a name="can-i-use-desktop-analytics-for-my-office-365-proplus-upgrades"></a>È possibile usare Desktop Analitica per gli aggiornamenti di Office 365 ProPlus?
+### <a name="can-i-use-desktop-analytics-for-my-office-365-proplus-upgrades"></a>È possibile usare l'analisi del desktop per gli aggiornamenti di Office 365 ProPlus?
 
-No, Analitica Desktop è incentrato su Windows. Microsoft ha sviluppato Analitica Desktop in stretta collaborazione con numerosi clienti. Tramite il programma di anteprima, commenti e suggerimenti dei clienti è stato sul modo in cui Analitica Desktop migliorata la possibilità di gestire in modo sicuro le distribuzioni di Windows. Sono inoltre hanno chiesto [conformità di Office 365 ProPlus ](/sccm/sum/deploy-use/office-365-dashboard#bkmk_o365_readiness) più strettamente integrati con gli strumenti di gestione di office in Configuration Manager e Intune. Microsoft continuerà a investire in queste aree, mentre con particolare attenzione su scenari di Windows in Desktop Analitica.
+No, desktop Analytics è incentrato su Windows. Microsoft ha sviluppato desktop Analytics in stretta collaborazione con numerosi clienti. Tramite il programma di anteprima, il feedback dei clienti riguarda il modo in cui analisi desktop ha migliorato la propria capacità di gestire le distribuzioni di Windows in tutta sicurezza. Ci hanno inoltre comunicato che volevano che [office 365 ProPlussse](/sccm/sum/deploy-use/office-365-dashboard#bkmk_o365_readiness) più accuratamente l'integrazione con gli strumenti di gestione di office in Configuration Manager e Intune. Microsoft continuerà a creare investimenti in tali aree, concentrandosi sugli scenari di Windows in desktop Analytics.

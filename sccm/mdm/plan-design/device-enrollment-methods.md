@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eda9de25d3bdb1a1563d8b74e78ddcad259683f6
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 571334f94d1fcd3f53219b406185af3015356e3a
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67678723"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68338061"
 ---
 # <a name="overview-of-device-enrollment-methods"></a>Panoramica dei metodi di registrazione dei dispositivi
 
@@ -31,18 +31,18 @@ La tabella seguente illustra i metodi di registrazione con le relative funzional
 
 **Metodi di registrazione iOS**
 
-| **Metodo** | **Cancellazione** | **Affinità** | **Blocco** | **Informazioni dettagliate** |
+| **Metodo** | **Cancellazione** | **Affinità** | **Blocco** | **Dettagli** |
 |:---:|:---:|:---:|:---:|:---:|
-|**[BYOD](#byod)** | No| Yes | No | [altro](../deploy-use/enable-platform-enrollment.md)|
+|**[BYOD](#byod)** | No| Sì | No | [altro](../deploy-use/enable-platform-enrollment.md)|
 |**[DEM](#dem)**| No |No |No | [altro](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
 |**[DEP](#dep)**| Yes | Facoltativo | Facoltativo|[altro](../deploy-use/ios-device-enrollment-program-for-hybrid.md)|
-|**[USB-SA](#usb-sa)**| Yes | Facoltativo | No| [altro](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md)|
+|**[USB-SA](#usb-sa)**| Sì | Facoltativo | No| [altro](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md)|
 
 **Metodi di registrazione per Android e Windows**
 
-| **Metodo** | **Cancellazione** | **Affinità** | **Blocco** | **Informazioni dettagliate**|
+| **Metodo** | **Cancellazione** | **Affinità** | **Blocco** | **Dettagli**|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|**[BYOD](#byod)** | No| Yes | No | [altro](../deploy-use/enroll-hybrid-windows.md)|
+|**[BYOD](#byod)** | No| Sì | No | [altro](../deploy-use/enroll-hybrid-windows.md)|
 |**[DEM](#dem)**| No |No |No |[altro](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
 
 Per una serie di domande e risposte utili per individuare il metodo corretto, vedere [Scegliere come registrare i dispositivi mobili](/intune/get-started/choose-how-to-enroll-devices1).
@@ -60,18 +60,18 @@ Il manager di registrazione dispositivi è un account utente speciale usato per 
 
 ### <a name="dep"></a>DEP
 La gestione tramite il programma DEP (Device Enrollment Program) di Apple consente di creare e distribuire criteri in modalità wireless ai dispositivi iOS acquistati e gestiti tramite questo programma. Un dispositivo viene registrato quando l'utente lo accende per la prima volta ed esegue Assistente configurazione di iOS. Questo metodo supporta la modalità **iOS Supervised** (Con supervisione iOS), che a sua volta abilita:
-  - Registrazione bloccata
-  - Accesso condizionale
-  - Rilevamento jailbreak
-  - Gestione per applicazioni mobili
+- Registrazione bloccata
+- Accesso condizionale
+- Rilevamento jailbreak
+- Gestione per applicazioni mobili
 
 Altre informazioni su [DEP](../deploy-use/ios-device-enrollment-program-for-hybrid.md). ([Torna alla tabella](#overview-of-device-enrollment-methods))
 
 ### <a name="usb-sa"></a>USB-SA
 Registrazione con Assistente configurazione con connessione USB. L'amministratore crea i criteri e li esporta in Apple Configurator. I dispositivi di proprietà dell'azienda connessi tramite USB vengono preparati con i criteri. L'amministratore deve registrare ogni dispositivo manualmente. Gli utenti ricevono i propri dispositivi ed eseguono Assistente configurazione per registrarli. Questo metodo supporta la modalità **iOS Supervised** (Con supervisione iOS), che a sua volta abilita:
-  - Accesso condizionale
-  - Rilevamento jailbreak
-  - Gestione per applicazioni mobili
+- Accesso condizionale
+- Rilevamento jailbreak
+- Gestione per applicazioni mobili
 
 Altre informazioni sulla [registrazione tramite Assistente configurazione con Apple Configurator](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md). ([Torna alla tabella](#overview-of-device-enrollment-methods))
 

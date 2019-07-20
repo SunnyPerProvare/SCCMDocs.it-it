@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0bae054d3daa5aea8e343fef05aa4578221f17b6
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: c0d98ec11f7b9003c710b5150732a9137fc1c013
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62226828"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68337910"
 ---
 # <a name="enable-device-threat-protection-rule-in-the-compliance-policy"></a>Abilitare una regola di protezione dalle minacce per i dispositivi mobili nei criteri di conformità
 
@@ -38,12 +38,12 @@ Per abilitare la regola Protezione dalle minacce per il dispositivo, è possibil
 Come parte della configurazione di Lookout Mobile Threat Protection, nella [console di Lookout](https://aad.lookout.com) è necessario creare un criterio che classifichi le minacce secondo i livelli Alto, Medio e Basso. Nei criteri di conformità di Intune questi livelli verranno usati per impostare il livello di minaccia massimo consentito.
 
 Nella pagina **Regole** della Creazione guidata criterio di conformità definire una nuova regola con le informazioni seguenti:
-  * Condizione: Livello di rischio massimo per Device threat protection.
-  * Valore: Il valore può essere uno dei seguenti:
-    * **Nessuno (protetto)**: Questa è la più sicura. e indica che il dispositivo non può avere alcuna minaccia. Se viene individuato un qualsiasi livello di minaccia, il dispositivo viene valutato come non conforme.
-    * **Bassa**: Il dispositivo viene valutato come conforme se sono presenti minacce di livello basso solo. Se sono presenti minacce di livello più alto, lo stato del dispositivo passa a Non conforme.
-    * **Medium**: Il dispositivo viene valutato come conforme se le minacce presenti nel dispositivo sono di livello basso o medio. Se vengono rilevate minacce di livello più alto, il dispositivo viene considerato non conforme.
-    * **Elevata**: Questa è la meno sicura. L'opzione consente praticamente tutti i livelli di minaccia e può essere utile se si usa la soluzione soltanto per la creazione di report.
+* Condizione: Livello di rischio massimo per la protezione dalle minacce del dispositivo.
+* Valore: Il valore può essere uno dei seguenti:
+  * **Nessuno (protetto)** : Questa è la più sicura. e indica che il dispositivo non può avere alcuna minaccia. Se viene individuato un qualsiasi livello di minaccia, il dispositivo viene valutato come non conforme.
+  * **Bassa**: Il dispositivo viene valutato come conforme se sono presenti solo minacce di livello basso. Se sono presenti minacce di livello più alto, lo stato del dispositivo passa a Non conforme.
+  * **Media**: Il dispositivo viene valutato come conforme se le minacce rilevate nel dispositivo sono di livello basso o medio. Se vengono rilevate minacce di livello più alto, il dispositivo viene considerato non conforme.
+  * **Elevato**: Questo è il meno sicuro. L'opzione consente praticamente tutti i livelli di minaccia e può essere utile se si usa la soluzione soltanto per la creazione di report.
 
 Se si creano criteri di accesso condizionale per Office 365 e altri servizi, viene presa in considerazione la valutazione di conformità sopra descritta e ai dispositivi non conformi viene bloccato l'accesso alle risorse dell'azienda fino a quando la minaccia non viene risolta.
 

@@ -11,22 +11,22 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e9c9cd6f881fd43c6d6824fbca5dc05f00fc5ea
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 8633770f0bd6beaec8bddb38688a22fc677bfc51
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56136746"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68338082"
 ---
 # <a name="enable-platform-enrollment-with-system-center-configuration-manager-and-microsoft-intune"></a>Abilitare la registrazione della piattaforma con System Center Configuration Manager e Microsoft Intune
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 Piattaforme per dispositivi diverse richiedono una configurazione aggiuntiva per abilitare la registrazione dei dispositivi.
-  - [iOS e il programma di installazione di Mac registrazione](enroll-hybrid-ios-mac.md): Ottenere un certificato Push MDM Apple
+- [impostazione della registrazione per iOS e Mac](enroll-hybrid-ios-mac.md): Ottenere un certificato push MDM Apple
 
-  - [Impostazione della registrazione Windows](enroll-hybrid-windows.md): Configurare il server DNS e abilitare la registrazione dei dispositivi sia i PC Windows, Windows 10 Mobile e Windows Phone
+- [Configurazione della registrazione di Windows](enroll-hybrid-windows.md): Configurare DNS e abilitare la registrazione per i PC Windows, i dispositivi Windows 10 mobile e Windows Phone
 
-  - [Android](enroll-hybrid-android.md): I dispositivi Android non richiedono operazioni aggiuntive per abilitare la registrazione
+- [Android](enroll-hybrid-android.md): Per i dispositivi Android non sono necessari passaggi aggiuntivi per abilitare la registrazione
 
 Dopo aver abilitato la gestione di dispositivi mobili, è possibile specificare il numero di dispositivi che ogni utente può registrare, fino a 15 dispositivi per utente.
