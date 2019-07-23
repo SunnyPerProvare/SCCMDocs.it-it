@@ -1,7 +1,7 @@
 ---
 title: Configurare Desktop Analytics
 titleSuffix: Configuration Manager
-description: Guida dettagliata per l'installazione e onboarding alla Analitica Desktop.
+description: Guida alle procedure per la configurazione e l'onboarding in desktop Analytics.
 ms.date: 06/14/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,83 +11,79 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96cf6f4dcfa878bb1ecafb7187dc6e9b29755509
-ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
+ms.openlocfilehash: d2a098c560305429e4bba65c95a65f3b0d2e8c45
+ms.sourcegitcommit: 315fbb9c44773b3b1796ae398568cb61bd07092e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67623377"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68374427"
 ---
-# <a name="how-to-set-up-desktop-analytics"></a>Come configurare Desktop Analitica
+# <a name="how-to-set-up-desktop-analytics"></a>Come configurare analisi desktop
 
 > [!Note]  
-> Tali informazioni fanno riferimento a un servizio in anteprima che può essere modificato sostanzialmente prima del rilascio in commercio. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
+> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
-Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nella sottoscrizione. Questa procedura è un processo unico per configurare Desktop Analitica per l'organizzazione.  
+Usare questa procedura per accedere a desktop Analytics e configurarlo nella sottoscrizione. Questa procedura è un processo unico per la configurazione di analisi desktop per l'organizzazione.  
 
 
+> [!Important]  
+> Per informazioni sui prerequisiti generali per analisi desktop con Configuration Manager, vedere [prerequisiti](/sccm/desktop-analytics/overview#prerequisites).  
 
 ## <a name="initial-onboarding"></a>Onboarding iniziale
 
-1. Aprire il [portale Desktop Analitica](https://aka.ms/desktopanalytics) nella gestione dei dispositivi Microsoft 365 come utente con il **amministratore globale** ruolo. Selezionare **avviare**. Se viene chiesto di immettere un codice invito, usare: `DesktopAnalyticsRocks!`
+1. Aprire il [portale di analisi del desktop](https://aka.ms/desktopanalytics) in Microsoft 365 gestione dei dispositivi come utente con il ruolo di **amministratore globale** . Selezionare **Avvia**. In alternativa, nella console di Configuration Manager passare all'area di lavoro **raccolta software** , selezionare il nodo **servizio di analisi desktop** e selezionare **Pianifica distribuzioni**.
 
-    > [!Tip]  
-    > Per accedere al portale di Analitica Desktop dalla console di Configuration Manager, passare al **raccolta Software** dell'area di lavoro, seleziona il **Desktop Analitica Servicing** nodo e selezionare **piano le distribuzioni**.
+2. Nella pagina **accetta contratto di servizio** esaminare il contratto di servizio e selezionare **accetta**.  
 
-2. Nel **accettare il contratto di servizio** pagina, esaminare il contratto di servizio e selezionare **Accept**.  
+3. Nella pagina **conferma sottoscrizione** esaminare l'elenco delle licenze idonee necessarie. Impostare l'opzione su **Sì** accanto a **una delle sottoscrizioni supportate o superiori**, quindi selezionare **Avanti**.  
 
-3. Nel **confermare la tua iscrizione** pagina, esaminare l'elenco delle necessarie licenze valide. Configurare l'impostazione **Yes** accanto a **sono una delle sottoscrizioni supportate o versioni successive**e quindi selezionare **Next**.  
+4. Nella pagina **Give users access** :
 
-4. Nel **consentire agli utenti accesso** pagina:
+    - **Consenti a desktop Analytics di gestire i ruoli della directory per conto dell'utente**: Desktop Analytics assegna automaticamente ai **proprietari dell'area di lavoro** il ruolo di amministratore di **Desktop Analytics** . Se tali gruppi sono già un **amministratore globale**, non vi sono modifiche.
 
-    - **Consenti Desktop Analitica gestire i ruoli della Directory per tuo conto**: Desktop Analitica assegna automaticamente il **i proprietari dell'area di lavoro** le **Desktop Administrator Analitica** ruolo. Se tali gruppi ha già un **amministratore globale**, non è stata modificata.
+        Se non si seleziona questa opzione, desktop Analytics aggiunge ancora gli utenti come membri del gruppo di sicurezza. Un **amministratore globale** deve assegnare manualmente il ruolo di **amministratore di analisi desktop** per gli utenti.   
 
-        Se non si seleziona questa opzione, Analitica Desktop ancora consente di aggiungere utenti come membri del gruppo di sicurezza. Oggetto **amministratore globale** deve assegnare manualmente le **Desktop Administrator Analitica** ruolo per gli utenti.   
+        Per ulteriori informazioni sull'assegnazione delle autorizzazioni del ruolo amministratore in Azure Active Directory e sulle autorizzazioni assegnate agli **amministratori di desktop Analytics**, vedere autorizzazioni per i [ruoli di amministratore in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
 
-        Per altre informazioni sull'assegnazione di autorizzazioni del ruolo amministratore in Azure Active Directory e le autorizzazioni assegnate ai **gli amministratori di Desktop Analitica**, vedere [le autorizzazioni del ruolo amministratore in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
+    - Desktop Analytics preconfigura il gruppo di sicurezza **proprietari dell'area di lavoro** in Azure Active Directory per creare e gestire aree di lavoro e piani di distribuzione. 
 
-    - Desktop Analitica preconfigura i **i proprietari dell'area di lavoro** gruppo di sicurezza in Azure Active Directory per creare e gestire le aree di lavoro e i piani di distribuzione. 
-
-        Per aggiungere un utente al gruppo, digitare l'indirizzo di posta elettronica o nome nella **immettere l'indirizzo di posta elettronica o nome** sezione. Al termine, selezionare **successivo**.
+        Per aggiungere un utente al gruppo, digitarne il nome o l'indirizzo di posta elettronica nella sezione **immettere il nome o l'indirizzo di posta elettronica** . Al termine, selezionare **Avanti**.
 
 5. Nella pagina per **configurare l'area di lavoro**:  
 
-    > [!Note]  
-    > Per completare questo passaggio, le esigenze degli utenti **proprietario dell'area di lavoro** accesso aggiuntiva per la sottoscrizione di Azure e il gruppo di risorse e delle autorizzazioni. Per altre informazioni, vedere [prerequisiti](/sccm/desktop-analytics/overview#prerequisites).  
-
-    - Per usare un'area di lavoro per Desktop Analitica, selezionarlo e continuare con il passaggio successivo.  
+    - Per usare un'area di lavoro esistente per analisi desktop, selezionarla e continuare con il passaggio successivo.  
 
         > [!Note]  
-        > Se si usa già Windows Analitica, selezionare tale area di lavoro stesso. È necessario ripetere la registrazione ai dispositivi di Analitica Desktop che sono registrati in precedenza in Analitica di Windows.
+        > Se si sta già usando Windows Analytics, selezionare la stessa area di lavoro. È necessario registrare nuovamente i dispositivi in desktop Analytics registrati in precedenza in Windows Analytics.
         >
-        > È possibile avere solo un'area di lavoro di Analitica Desktop per ogni tenant di Azure AD. Dispositivi possono inviare solo i dati di diagnostica a un'area di lavoro.  
+        > È possibile avere solo un'area di lavoro di analisi desktop per ogni tenant Azure AD. I dispositivi possono inviare i dati di diagnostica solo a un'area di lavoro.  
 
-    - Per creare un'area di lavoro per Desktop Analitica, selezionare **Aggiungi area di lavoro**.  
+    - Per creare un'area di lavoro per desktop Analytics, selezionare **Aggiungi area di lavoro**.  
 
-        1. Immettere un **nome area di lavoro**.<!--do we have any guidance for this name?-->  
+        1. Immettere un **nome**per l'area di lavoro.<!--do we have any guidance for this name?-->  
 
-        2. Selezionare l'elenco a discesa per **selezionare il nome di sottoscrizione di Azure per l'area di lavoro**, scegliere la sottoscrizione di Azure per l'area di lavoro.  
+        2. Selezionare l'elenco a discesa per **selezionare il nome della sottoscrizione di Azure per l'area di lavoro**e scegliere la sottoscrizione di Azure per l'area di lavoro.  
 
-        3. **Creare un nuovo** gruppo di risorse oppure **Usa esistente**.
+        3. **Crea nuovo** Gruppo di risorse o **utilizza esistente**.
 
-        4. Selezionare il **regione** dall'elenco, quindi selezionare **Add**.  
+        4. Selezionare l' **area** nell'elenco e quindi selezionare **Aggiungi**.  
 
-6. Selezionare un'area di lavoro nuovo o esistente e quindi selezionare **imposta come area di lavoro di Analitica Desktop**.  Quindi selezionare **continuazione** nel **Confirm e concedere l'accesso** finestra di dialogo.  
+6. Selezionare un'area di lavoro nuova o esistente e quindi selezionare **Imposta come area di lavoro di analisi del desktop**.  Quindi selezionare **continua** nella finestra di dialogo **conferma e Concedi accesso** .  
 
-7. Nella nuova scheda del browser, scegliere un account da usare per l'accesso. Selezionare l'opzione **fornire il consenso per conto dell'organizzazione** e selezionare **Accept**.  
+7. Nella scheda nuovo browser selezionare un account da usare per l'accesso. Selezionare l'opzione per il **consenso per conto dell'organizzazione** e selezionare **accetta**.  
 
     > [!Note]  
-    > Questo consenso consiste nell'assegnare l'applicazione MALogAnalyticsReader il ruolo di lettura Log Analitica per l'area di lavoro. Questo ruolo applicazione è richiesto dal Desktop Analitica. Per altre informazioni, vedere [ruolo applicazione MALogAnalyticsReader](/sccm/desktop-analytics/troubleshooting#bkmk_MALogAnalyticsReader).  
+    > Questo consenso consiste nell'assegnare all'applicazione MALogAnalyticsReader il ruolo di lettore Log Analytics per l'area di lavoro. Questo ruolo applicazione è richiesto da desktop Analytics. Per ulteriori informazioni, vedere [ruolo applicazione MALogAnalyticsReader](/sccm/desktop-analytics/troubleshooting#bkmk_MALogAnalyticsReader).  
 
-8. Tornare alla pagina al **configurare l'area di lavoro**, selezionare **successivo**.  
+8. Tornare alla pagina per **configurare l'area di lavoro**, quindi fare clic su **Avanti**.  
 
-9. Nel **ultimi passaggi** pagina, selezionare **passare al Desktop Analitica**.
+9. Nella pagina **Last Steps** selezionare **go to desktop Analytics**.
 
-Il portale di Azure Mostra il Desktop Analitica **Home** pagina.
+Il portale di Azure Mostra la **Home** page di analisi del desktop.
 
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Passare all'articolo successivo per connettere Configuration Manager con Desktop Analitica.
+Passare all'articolo successivo per connettersi Configuration Manager con analisi desktop.
 > [!div class="nextstepaction"]  
-> [Connettere Configuration Manager](/sccm/desktop-analytics/connect-configmgr)  
+> [Connetti Configuration Manager](/sccm/desktop-analytics/connect-configmgr)  
