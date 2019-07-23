@@ -2,7 +2,7 @@
 title: Informazioni dettagliate sulla gestione
 titleSuffix: Configuration Manager
 description: Informazioni sulla funzionalità Informazioni dettagliate sulla gestione disponibile nella console di Configuration Manager.
-ms.date: 11/27/2018
+ms.date: 07/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea90ff0b9c163dac79a96494b03252fbd1935b43
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 17600d9fa04e678e488f36bb923a39e8c41647aa
+ms.sourcegitcommit: b62de6c9cb1bc3e4c9ea5ab5ed3355d83e3a59bc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676504"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67894094"
 ---
 # <a name="management-insights-in-configuration-manager"></a>Informazioni dettagliate sulla gestione in Configuration Manager
 
@@ -143,6 +143,22 @@ Informazioni dettagliate che consentono di semplificare la gestione tramite la p
 
 - **Raccolte vuote**: un elenco delle raccolte dell'ambiente che non hanno membri. Per altre informazioni, vedere [Come gestire le raccolte](/sccm/core/clients/manage/collections/manage-collections).  
 
+A partire dalla versione 1902, sono disponibili nuove regole con raccomandazioni per la gestione delle raccolte.<!--3555752--> Usare queste informazioni dettagliate per semplificare la gestione e migliorare le prestazioni:
+
+- **Raccolte senza regole di query e senza membri diretti**: per semplificare l'elenco di raccolte nella gerarchia, eliminare queste raccolte.  
+
+- **Raccolte con la stessa ora di inizio di rivalutazione**: queste raccolte hanno la stessa ora di rivalutazione di altre raccolte. Modificare l'ora di rivalutazione in modo da evitare conflitti.  
+
+- **Raccolte con tempo di query di oltre due secondi**: rivedere le regole di query per queste raccolte. Prendere in considerazione di modificarle o eliminarle.
+
+- Le regole seguenti includono alcune configurazioni che possono causare un carico non necessario del sito. Rivedere queste raccolte e quindi eliminarle oppure disabilitare la valutazione delle regole:  
+
+    - **Raccolte senza regole di query e con gli aggiornamenti incrementali abilitati**  
+
+    - **Raccolte senza regole di query e abilitate per la valutazione pianificata o incrementale**  
+
+    - **Raccolte senza regole di query e con pianificazione della valutazione completa selezionata**  
+
 
 ### <a name="proactive-maintenance"></a>Manutenzione proattiva
 <!--1352184-->
@@ -174,6 +190,8 @@ Informazioni dettagliate per il miglioramento dell'infrastruttura e dei disposit
 Informazioni dettagliate utili per semplificare la gestione quotidiana dell'ambiente. 
 
 - **Versioni client non CB**: elenca tutti i client le cui versioni non corrispondono a una build Current Branch (CB). Per altre informazioni, vedere [Aggiornare i client](/sccm/core/clients/manage/upgrade/upgrade-clients).  
+
+- **Aggiorna i client a una versione di Windows 10 supportata**: A partire dalla versione 1902, questa regola segnala i client che eseguono una versione di Windows 10 che non è più supportata. Include anche i client con una versione di Windows 10 che sta per raggiungere la fine del servizio (tre mesi).<!--3897268-->  
 
 
 ### <a name="software-center"></a>Software Center

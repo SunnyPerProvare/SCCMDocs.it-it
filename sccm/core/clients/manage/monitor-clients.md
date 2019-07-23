@@ -2,7 +2,7 @@
 title: Monitorare i client
 titleSuffix: Configuration Manager
 description: Informazioni su come monitorare i client in Configuration Manager
-ms.date: 05/31/2019
+ms.date: 07/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55fd698ac5213a3b11b207d0625d953f687e319f
-ms.sourcegitcommit: 65753c51fbf596f233fc75a5462ea4a44005c70b
+ms.openlocfilehash: 9b3c3f52f15ba4d61a589833e43144ce5ecb6de0
+ms.sourcegitcommit: b62de6c9cb1bc3e4c9ea5ab5ed3355d83e3a59bc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66463041"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67894206"
 ---
 # <a name="how-to-monitor-clients-in-configuration-manager"></a>Come monitorare i client in Configuration Manager
 
@@ -70,6 +70,96 @@ Configuration Manager offre i seguenti tipi di informazioni come stato del clien
     - **Ora dell'ultimo stato offline** indica quando lo stato è diventato offline  
 
 3. Selezionare un singolo client nel riquadro dell'elenco per visualizzare altre informazioni di stato nel riquadro dei dettagli. Queste informazioni includono l'attività del client e lo stato del controllo del client.  
+
+
+## <a name="bkmk_health"></a> Dashboard di integrità del client
+
+<!--3599209-->
+La distribuzione di aggiornamenti software e altre app per proteggere l'ambiente raggiunge solo i client integri. I client di Configuration Manager non integri hanno effetti negativi sulla conformità complessiva. Determinare lo stato del client può essere difficile e molto dipende dalla base di partenza, ovvero dal numero totale di dispositivi nell'ambito di gestione. Ad esempio, se si rilevano tutti i sistemi di Active Directory, anche se alcuni record provengono da computer ritirati, il processo aumenta la base di partenza.
+
+A partire dalla versione 1902 è possibile visualizzare un dashboard con informazioni sull'integrità dei client di Configuration Manager nell'ambiente in uso. Il dashboard consente di visualizzare l'integrità dei client, l'integrità dello scenario e gli errori più comuni. È possibile filtrare la visualizzazione per diversi attributi per visualizzare i potenziali problemi per versione del sistema operativo e client.
+
+Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio**. Espandere **Stato client** e selezionare il nodo **Dashboard sull'integrità del client**.
+
+![Screenshot del dashboard sull'integrità del client](media/3599209-client-health-dashboard.png)
+
+> [!Tip]  
+> Nessuna modifica per ccmeval.  
+
+Per impostazione predefinita, il dashboard sull'integrità del client mostra i client online e i client attivi negli ultimi tre giorni. Pertanto, in questo dashboard potrebbero essere visualizzati valori diversi rispetto ad altre fonti cronologiche di dati sull'integrità del client. Ad esempio, altri nodi in **Stato client** o i report nella categoria di stato client.
+
+### <a name="filters"></a>Filtri
+
+Nella parte superiore del dashboard è presente un set di filtri per modificare i dati visualizzati.
+
+- **Raccolta**: per impostazione predefinita, i dispositivi nel dashboard vengono visualizzati nella raccolta **Tutti i sistemi**. Selezionare una raccolta di dispositivi dall'elenco per limitare l'ambito della visualizzazione a un sottoinsieme di dispositivi in una raccolta specifica.  
+
+- **Online/offline**: per impostazione predefinita, nel dashboard vengono visualizzati solo i client online. Questo stato deriva dal canale di notifica client che aggiorna lo stato del client ogni cinque minuti. Per altre informazioni, vedere [Informazioni sullo stato del client](/sccm/core/clients/manage/monitor-clients#bkmk_about).  
+
+- **Active \# days** (N. giorni attività): per impostazione predefinita, nel dashboard vengono visualizzati i client attivi negli ultimi tre giorni.  
+
+- **Failure only** (Solo errore): consente di limitare la visualizzazione solo ai dispositivi che segnalano un errore di integrità del client.  
+
+    > [!Tip]  
+    > Usare questo filtro con i riquadri della versione del client e del sistema operativo. Per altre informazioni, vedere [Riquadri versione](#version-tiles).
+
+### <a name="client-health-percentage"></a>Percentuale di integrità del client
+
+Questo riquadro illustra l'integrità complessiva dei client nella gerarchia.
+
+Un client di Configuration Manager integro presenta le proprietà seguenti:
+
+- Online  
+- Invia attivamente dati  
+- Esegue tutti i controlli di valutazione dell'integrità del client  
+
+Per altre informazioni, vedere [Informazioni sullo stato del client](/sccm/core/clients/manage/monitor-clients#bkmk_about).
+
+Un client integro comunica correttamente con il sito. Segnala tutti i dati in base alle pianificazioni definite nelle impostazioni del client.
+
+Selezionare un segmento del grafico per eseguire il drill-down a un elenco di dispositivi.
+
+### <a name="version-tiles"></a>Riquadri di versione
+
+Sono presenti due riquadri che illustrano lo stato del client in base alla versione del client di Configuration Manager e alla versione del sistema operativo. Questi riquadri sono utili quando si apportano modifiche ai filtri, ad esempio a **Failure only** (Solo errore). Consentono di stabilire se un problema ricorre in modo costante in una versione specifica. Usare queste informazioni per prendere in considerazione eventuali aggiornamenti.
+
+Selezionare un segmento dei grafici per eseguire il drill-down a un elenco di dispositivi.
+
+### <a name="scenario-health"></a>Integrità dello scenario
+
+Questo grafico a barre illustra l'integrità complessiva degli scenari principali seguenti:
+
+- Criteri client
+- Individuazione heartbeat
+- Inventario hardware
+- Inventario software
+- Messaggi di stato
+
+Usare i selettori per evidenziare scenari specifici nel grafico.
+
+Le due barre seguenti vengono sempre visualizzate:
+
+- **Combinati (tutti)** : la combinazione di tutti gli scenari (AND)  
+- **Combinati (qualsiasi)** : almeno uno degli scenari (OR)
+
+> [!Tip]  
+> L'integrità di uno scenario non viene misurato dalla configurazione delle impostazioni del client. Questi valori possono variare in base al set di criteri risultante per ogni dispositivo. Usare la procedura seguente per modificare i periodi di valutazione per l'integrità degli scenari:
+>
+> - Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio** e selezionare il nodo **Stato client**.  
+> - Nella barra multifunzione selezionare **Impostazioni stato client**.  
+>
+> Per impostazione predefinita, se un client non invia i dati specifici dello scenario entro **7 giorni**, Configuration Manager lo considera non integro per lo scenario.
+
+### <a name="top-10-client-health-failures"></a>10 errori principali di Integrità del client
+
+Questo grafico elenca gli errori più comuni nell'ambiente in uso. Questi errori provengono da Windows o da Configuration Manager.
+
+<!-- The following list includes some of the more common failures overall:
+
+#### Failure 1 title
+Failure 1 description
+
+Solution for failure 1 -->
 
 
 ## <a name="bkmk_allStatus"></a> Monitorare lo stato di tutti i client

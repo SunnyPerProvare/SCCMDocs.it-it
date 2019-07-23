@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28ba232fa94ee100c20da31f2eddc5a7341f6ac6
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.openlocfilehash: 60b00c5621f829cd77193758ec415e5173c9da5a
+ms.sourcegitcommit: d74415e49a6db28ee5198440c7f321529a9f7f33
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551141"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68312498"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Funzionalità rimosse e deprecate per Configuration Manager
 
@@ -33,6 +33,7 @@ Queste informazioni sono soggette a modifica nelle versioni future. È possibile
 |Funzionalità|Primo annuncio riguardo agli elementi deprecati|Supporto&nbsp;rimosso|  
 |-----------|---|--------------|  
 | Valutazione dell'attestazione dell'integrità dei dispositivi per i criteri di conformità dell'accesso condizionale <!--1235616 aka 3608202--> Per altre informazioni, vedere [Gestire l'accesso ai servizi di Office 365 per i PC gestiti da System Center Configuration Manager](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm#step-1-configure-compliance-policy).| 3 luglio 2019 | Prima versione rilasciata dopo il 1° novembre 2019 |
+| App Portale aziendale di Configuration Manager | 21 maggio 2019 | Prima versione rilasciata dopo il 1° novembre 2019|
 | Catalogo applicazioni, che comprende i due ruoli del sistema del sito: il punto per siti Web del Catalogo applicazioni e il punto per servizi Web. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat). | 21 maggio 2019 | Prima versione rilasciata dopo il 1° novembre 2019|
 |È stata modificata l'implementazione per la condivisione del contenuto da Azure. Usare un gateway di gestione cloud abilitato per il contenuto. Non sarà possibile creare un punto di distribuzione cloud tradizionale in futuro.|Febbraio 2019|Prima versione rilasciata dopo il 1° novembre 2019|
 |Distribuzione classica del servizio in Azure per il gateway di gestione cloud e il punto di distribuzione cloud. Per altre informazioni, vedere [Pianificare il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).|Novembre 2018|Prima versione rilasciata dopo il 1° luglio 2019|
