@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f5518346f0085293a2a9b5422c7aef375076d0c
-ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
+ms.openlocfilehash: 3a4ea6d12a41de37325cb64e0a702d6842f9508a
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67516148"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340509"
 ---
 # <a name="how-to-monitor-certificate-profiles-in-system-center-configuration-manager"></a>Come monitorare i profili certificato in System Center Configuration Manager
 
@@ -63,16 +63,16 @@ Per monitorare la conformità dei certificati SCEP, usare i [report](#view-compl
 
 ##  <a name="view-compliance-results-by-using-reports"></a>Visualizzare i risultati di conformità usando i report
 
- Le impostazioni di conformità in System Center Configuration Manager includono report incorporati che è possibile usare per monitorare le informazioni sui profili certificato. Tali report dispongono della categoria report di **Gestione conformità e impostazioni**.  
+Le impostazioni di conformità in System Center Configuration Manager includono report incorporati che è possibile usare per monitorare le informazioni sui profili certificato. Tali report dispongono della categoria report di **Gestione conformità e impostazioni**.  
 
 > [!IMPORTANT]  
 >  È necessario utilizzare un carattere jolly (%) quando si utilizzano i parametri **Filtro dispositivo** e **Filtro utente** nei report per le impostazioni di conformità.  
 
 Per monitorare la conformità dei certificati SCEP, usare questi report sui certificati disponibili nel nodo dei report **Accesso risorse aziendali**:  
 
- -   Cronologia di rilascio dei certificati  
- -   Elenco degli asset con certificati prossimi alla scadenza  
- -   Elenco degli asset per stato di rilascio del certificato  
+-   Cronologia di rilascio dei certificati  
+-   Elenco degli asset con certificati prossimi alla scadenza  
+-   Elenco degli asset per stato di rilascio del certificato  
 
 
 

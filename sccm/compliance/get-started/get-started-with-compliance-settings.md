@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f4e85b6886947fe0ac720f5840dcefd91a441d3e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 656411ccf6c949237bf2fa68500520a8f7932137
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130946"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339110"
 ---
 # <a name="get-started-with-compliance-settings-in-system-center-configuration-manager"></a>Introduzione alle impostazioni di conformità in System Center Configuration Manager
 
@@ -27,13 +27,13 @@ Prima di creare le impostazioni di conformità di Configuration Manager, è nece
 
 
 ## <a name="how-compliance-settings-work"></a>Funzionamento delle impostazioni di conformità  
- Con le impostazioni di conformità è possibile gestire la configurazione e la conformità dei client nell'organizzazione.  
+Con le impostazioni di conformità è possibile gestire la configurazione e la conformità dei client nell'organizzazione.  
 
- Gli elementi di configurazione rientrano in due categorie principali:  
+Gli elementi di configurazione rientrano in due categorie principali:  
 
--   **Impostazioni per dispositivi gestiti con il client di Configuration Manager**: in genere i dispositivi in cui è stato installato il software client di Configuration Manager con il quale è possibile gestire il dispositivo.  
+- **Impostazioni per dispositivi gestiti con il client di Configuration Manager**: in genere i dispositivi in cui è stato installato il software client di Configuration Manager con il quale è possibile gestire il dispositivo.  
 
--   **Impostazioni per dispositivi gestiti senza il client di Configuration Manager**: in genere i dispositivi gestiti con Microsoft Intune o con la gestione dei dispositivi locale di Configuration Manager.  
+- **Impostazioni per dispositivi gestiti senza il client di Configuration Manager**: in genere i dispositivi gestiti con Microsoft Intune o con la gestione dei dispositivi locale di Configuration Manager.  
 
 
 
@@ -52,51 +52,51 @@ Prima di creare le impostazioni di conformità di Configuration Manager, è nece
 
 
 ## <a name="what-is-a-configuration-item"></a>Cos'è un elemento di configurazione?  
- Un elemento di configurazione è un contenitore che archivia informazioni specifiche. Le informazioni configurate dipendono dal tipo di elemento di configurazione. Gli elementi di configurazione possono includere le informazioni seguenti:
+Un elemento di configurazione è un contenitore che archivia informazioni specifiche. Le informazioni configurate dipendono dal tipo di elemento di configurazione. Gli elementi di configurazione possono includere le informazioni seguenti:
 
--   **Informazioni sul metodo di rilevamento** è riservato agli elementi di configurazione Windows che contengono impostazioni dell'applicazione. Rilevano se un'applicazione è installata. Questo rilevamento utilizza il programma di installazione di Windows per l'applicazione o uno script personalizzato.  
+- **Informazioni sul metodo di rilevamento** è riservato agli elementi di configurazione Windows che contengono impostazioni dell'applicazione. Rilevano se un'applicazione è installata. Questo rilevamento utilizza il programma di installazione di Windows per l'applicazione o uno script personalizzato.  
 
--   Le **impostazioni** rappresentano le condizioni aziendali o tecniche usate per valutare la conformità nei dispositivi client. Configurare una nuova impostazione o selezionare un'impostazione esistente in un computer di riferimento.  
+- Le **impostazioni** rappresentano le condizioni aziendali o tecniche usate per valutare la conformità nei dispositivi client. Configurare una nuova impostazione o selezionare un'impostazione esistente in un computer di riferimento.  
 
--   Le **regole di conformità** consentono di specificare le condizioni che definiscono la conformità dell'impostazione di un elemento di configurazione. Prima che il client possa valutare la conformità di un'impostazione, è necessario che tale impostazione disponga almeno di una regola di conformità. Alcune impostazioni monitorano e aggiornano i valori non conformi. Creare nuove regole o passare a un'impostazione esistente in qualsiasi elemento di configurazione e selezionare le regole in essa contenute.  
+- Le **regole di conformità** consentono di specificare le condizioni che definiscono la conformità dell'impostazione di un elemento di configurazione. Prima che il client possa valutare la conformità di un'impostazione, è necessario che tale impostazione disponga almeno di una regola di conformità. Alcune impostazioni monitorano e aggiornano i valori non conformi. Creare nuove regole o passare a un'impostazione esistente in qualsiasi elemento di configurazione e selezionare le regole in essa contenute.  
 
--   Le **piattaforme supportate** sono le piattaforme di dispositivo definite su cui il client valuta la conformità degli elementi di configurazione. Se si distribuisce un elemento di configurazione in un dispositivo non incluso nell'elenco delle piattaforme supportate, la conformità non verrà valutata.  
+- Le **piattaforme supportate** sono le piattaforme di dispositivo definite su cui il client valuta la conformità degli elementi di configurazione. Se si distribuisce un elemento di configurazione in un dispositivo non incluso nell'elenco delle piattaforme supportate, la conformità non verrà valutata.  
 
 
 
 ## <a name="what-is-a-configuration-baseline"></a>Cos'è una linea di base di configurazione?  
- Definire una linea di base di configurazione che includa gli elementi di configurazione da valutare. Includere anche le impostazioni e le regole che descrivono il livello di conformità necessario. Importare questi dati di configurazione dai pacchetti di configurazione di Configuration Manager. Questi pacchetti di configurazione sono definiti da Microsoft e da altri fornitori. In alternativa, creare nuovi elementi e linee di base di configurazione.  
+Definire una linea di base di configurazione che includa gli elementi di configurazione da valutare. Includere anche le impostazioni e le regole che descrivono il livello di conformità necessario. Importare questi dati di configurazione dai pacchetti di configurazione di Configuration Manager. Questi pacchetti di configurazione sono definiti da Microsoft e da altri fornitori. In alternativa, creare nuovi elementi e linee di base di configurazione.  
 
- Dopo aver definito una linea di base di configurazione, distribuirla a raccolte di dispositivi e utenti. Il client valuterà quindi la conformità delle impostazioni della linea di base in base alla pianificazione. È possibile distribuire ai dispositivi più di una linea di base di configurazione. La granularità assicura un maggiore controllo della conformità. 
+Dopo aver definito una linea di base di configurazione, distribuirla a raccolte di dispositivi e utenti. Il client valuterà quindi la conformità delle impostazioni della linea di base in base alla pianificazione. È possibile distribuire ai dispositivi più di una linea di base di configurazione. La granularità assicura un maggiore controllo della conformità. 
 
- I dispositivi client valutano la conformità rispetto a ogni linea di base di configurazione distribuita e segnalano immediatamente i risultati al sito usando messaggi sullo stato attuale e messaggi di stato. Se un dispositivo è attualmente disconnesso dalla rete ma la linea di base di configurazione è stata scaricata, la valutazione della conformità degli elementi della configurazione verrà comunque effettuata. Le informazioni sulla conformità verranno inviate quando il dispositivo si riconnette.  
+I dispositivi client valutano la conformità rispetto a ogni linea di base di configurazione distribuita e segnalano immediatamente i risultati al sito usando messaggi sullo stato attuale e messaggi di stato. Se un dispositivo è attualmente disconnesso dalla rete ma la linea di base di configurazione è stata scaricata, la valutazione della conformità degli elementi della configurazione verrà comunque effettuata. Le informazioni sulla conformità verranno inviate quando il dispositivo si riconnette.  
 
 ### <a name="monitoring-configuration-baselines"></a>Monitoraggio delle linee di base di configurazione
 - Monitorare i risultati della valutazione della conformità nella console di Configuration Manager nell'area di lavoro **Monitoraggio**, nodo **Distribuzioni**. Ad esempio:
-    - Cause più comuni di non conformità
-    - Errori
-    - Il numero di dispositivi e utenti interessati
+  - Cause più comuni di non conformità
+  - Errori
+  - Il numero di dispositivi e utenti interessati
 - Eseguire report sulle impostazioni di conformità con dettagli aggiuntivi. Ad esempio:
-    - Quali sono i dispositivi conformi o non conformi
-    - Quale elemento della linea di base di configurazione rende un computer non conforme
+  - Quali sono i dispositivi conformi o non conformi
+  - Quale elemento della linea di base di configurazione rende un computer non conforme
 - Visualizzare i risultati di valutazione di conformità dai computer Windows che eseguono il client di Configuration Manager. Aprire il pannello di controllo di **Configuration Manager** e passare alla scheda **Configurazioni**.  
 
 
 
 ## <a name="user-data-and-profiles-configuration-items"></a>Elementi di configurazione di profili e dati utente  
- Gli elementi di configurazione per i dati utente e i profili includono impostazioni che controllano in che modo gli utenti dei computer che eseguono Windows 8 e versioni successive gestiscono:  
-   - Reindirizzamento cartelle
-   - File non in linea
-   - Profili mobili  
+Gli elementi di configurazione per i dati utente e i profili includono impostazioni che controllano in che modo gli utenti dei computer che eseguono Windows 8 e versioni successive gestiscono:  
+- Reindirizzamento cartelle
+- File non in linea
+- Profili mobili  
 
 Distribuire questi elementi di configurazione alle raccolte di utenti. Monitorarne la conformità dal nodo **Monitoraggio** della console di Configuration Manager. A differenza di altri elementi di configurazione, non vanno aggiunti alle linee di base di configurazione prima di distribuirli. Distribuirli direttamente facendo clic su **Distribuisci** nella barra multifunzione.  
 
- Per altre informazioni, vedere [Creare elementi di configurazione dei profili e di dati utente](/sccm/compliance/deploy-use/create-user-data-and-profiles-configuration-items).  
+Per altre informazioni, vedere [Creare elementi di configurazione dei profili e di dati utente](/sccm/compliance/deploy-use/create-user-data-and-profiles-configuration-items).  
 
 
 
 ## <a name="remote-connection-profiles"></a>Profili di connessione remota  
- I profili di connessione remota in forniscono un set di strumenti e risorse che consentono di creare, distribuire e monitorare le impostazioni di connessione remota. Distribuendo queste impostazioni ai dispositivi, viene ridotto al minimo lo sforzo necessario degli utenti finali per connettersi ai computer nella rete aziendale.  
+I profili di connessione remota in forniscono un set di strumenti e risorse che consentono di creare, distribuire e monitorare le impostazioni di connessione remota. Distribuendo queste impostazioni ai dispositivi, viene ridotto al minimo lo sforzo necessario degli utenti finali per connettersi ai computer nella rete aziendale.  
 
 Per altre informazioni, vedere [Creare profili di connessione remota](/sccm/compliance/deploy-use/create-remote-connection-profiles).  
 
@@ -110,7 +110,8 @@ Per altre informazioni, vedere [Upgrade Windows devices with the edition upgrade
 
 
 ## <a name="microsoft-edge-browser-profiles"></a>Profili del browser Microsoft Edge
-<!-- 1357310 --> A partire dalla versione 1802 i clienti che usano il Web browser [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) nei client Windows 10 possono creare un criterio delle impostazioni di conformità per definire diverse impostazioni di Microsoft Edge. 
+<!-- 1357310 -->
+A partire dalla versione 1802 i clienti che usano il Web browser [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) nei client Windows 10 possono creare un criterio delle impostazioni di conformità per definire diverse impostazioni di Microsoft Edge. 
 
 Per altre informazioni, vedere [Profili del browser Microsoft Edge](/sccm/compliance/deploy-use/browser-profiles).
 

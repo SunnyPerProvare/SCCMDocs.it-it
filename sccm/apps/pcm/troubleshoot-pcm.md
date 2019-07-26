@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e253d731c5c5cefa6bc13b04f40ab18855af4b8
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: 475f80dc4d5841eb014b8f1ecb4d23ffdb699944
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176879"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339191"
 ---
 # <a name="troubleshoot-package-conversion-manager"></a>Risolvere i problemi di Package Conversion Manager
 
@@ -40,16 +40,16 @@ Se il provider SMS non funziona correttamente, la console di Configuration Manag
 
 Prima di convertire un pacchetto in un'applicazione, analizzare il pacchetto usando la funzione **Analizza** di Package Conversion Manager. Dopo l'analisi, aggiungere la colonna **Conformità** nel nodo **Pacchetti** della console di Configuration Manager. L'elenco di pacchetti indica uno degli stati di conformità seguenti per il pacchetto analizzato:
 
- - **Automatico**: il pacchetto può essere convertito usando la funzione **Converti**.      
+- **Automatico**: il pacchetto può essere convertito usando la funzione **Converti**.      
 
-    > [!NOTE]  
-    > Una conversione automatica non converte le query WQL in requisiti dell'applicazione. Per convertire queste query, usare il processo **Correggi e converti**.  
+  > [!NOTE]  
+  > Una conversione automatica non converte le query WQL in requisiti dell'applicazione. Per convertire queste query, usare il processo **Correggi e converti**.  
 
- - **Manuale**: il pacchetto necessita di alcune aggiunte o modifiche prima di poterlo convertire usando la funzione **Correggi e converti**.  
+- **Manuale**: il pacchetto necessita di alcune aggiunte o modifiche prima di poterlo convertire usando la funzione **Correggi e converti**.  
 
- - **Non applicabile**: il pacchetto non è adatto per la conversione. È possibile risolvere eventuali errori del pacchetto oppure continuare a distribuirlo come pacchetto.  
+- **Non applicabile**: il pacchetto non è adatto per la conversione. È possibile risolvere eventuali errori del pacchetto oppure continuare a distribuirlo come pacchetto.  
 
- - **Errore**: il pacchetto contiene errori. Correggere manualmente questi errori prima di procedere con l'analisi e la conversione.  
+- **Errore**: il pacchetto contiene errori. Correggere manualmente questi errori prima di procedere con l'analisi e la conversione.  
 
 Nel riquadro dei dettagli del nodo **Pacchetti** nella console di Configuration Manager sono indicati eventuali problemi di conformità. Selezionare un pacchetto e quindi selezionare la scheda **Riepilogo** nel riquadro dei dettagli.
 

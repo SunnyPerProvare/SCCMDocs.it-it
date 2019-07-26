@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 726df4e6ddbfc34194fd25951d6dbafd1e9008ad
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 375628c7d392a14c22a29cf75e081f6f86783889
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159552"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340459"
 ---
 # <a name="create-certificate-profiles"></a>Creare i profili certificato
 
@@ -68,17 +68,17 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
 > [!IMPORTANT]  
 >  Prima di creare un profilo certificato SCEP è necessario configurare almeno un profilo certificato CA attendibile.    
 >  
->  Se si modifica uno di questi valori dopo aver distribuito il certificato, viene richiesto un nuovo certificato:
->  -  Provider di archiviazione chiavi
->  -  Nome modello di certificato
->  -  Tipo di certificato
->  -  Formato del nome soggetto
->  -  Nome alternativo soggetto
->  -  Periodo di validità del certificato
->  -  Utilizzo chiavi
->  -  Dimensione chiavi
->  -  Utilizzo chiavi avanzato
->  -  Certificato CA radice
+> Se si modifica uno di questi valori dopo aver distribuito il certificato, viene richiesto un nuovo certificato:
+> - Provider di archiviazione chiavi
+> - Nome modello di certificato
+> - Tipo di certificato
+> - Formato del nome soggetto
+> - Nome alternativo soggetto
+> - Periodo di validità del certificato
+> - Utilizzo chiavi
+> - Dimensione chiavi
+> - Utilizzo chiavi avanzato
+> - Certificato CA radice
 
 1. Nella pagina **Certificato CA attendibile** della Creazione guidata profilo certificato specificare le informazioni seguenti:  
 

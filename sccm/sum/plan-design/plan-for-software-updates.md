@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 024902baa4c8bb3b893b60feacad7993af8200e5
-ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
+ms.openlocfilehash: ce5a80b99149d31282036b33b97b57294ab38663
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67623437"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340466"
 ---
 # <a name="plan-for-software-updates-in-configuration-manager"></a>Pianificare gli aggiornamenti software in Configuration Manager
 
@@ -81,9 +81,9 @@ Questa sezione include i seguenti argomenti secondari:
 
 
 Il sito di amministrazione centrale e tutti i siti primari figlio devono avere un punto di aggiornamento software. Quando si pianifica l'infrastruttura del punto di aggiornamento software, determinare le dipendenze seguenti:
- - La posizione in cui installare il punto di aggiornamento software per il sito  
- - Quali siti richiedono un punto di aggiornamento software che accetta la comunicazione da client basati su Internet
- - Se è necessario un punto di aggiornamento software in siti secondari  
+- La posizione in cui installare il punto di aggiornamento software per il sito  
+- Quali siti richiedono un punto di aggiornamento software che accetta la comunicazione da client basati su Internet
+- Se è necessario un punto di aggiornamento software in siti secondari  
 
 > [!IMPORTANT]  
 >  Per altre informazioni sulle dipendenze interne ed esterne necessarie per gli aggiornamenti software, vedere [Prerequisiti per gli aggiornamenti software](prerequisites-for-software-updates.md).  
@@ -318,7 +318,7 @@ La connessione a Microsoft Update viene sempre configurata per utilizzare la por
 
 #### <a name="restrict-access-to-specific-domains"></a>Limitare l'accesso a domini specifici  
 
-Se l'organizzazione limita le comunicazioni della rete con Internet tramite un firewall o un dispositivo proxy, è necessario consentire al punto di aggiornamento software attivo di accedere agli endpoint Internet. WSUS e aggiornamenti automatici possono quindi comunicare con il servizio cloud di Microsoft Update.
+Se l'organizzazione limita le comunicazioni della rete con Internet tramite un firewall o un dispositivo proxy, è necessario consentire al punto di aggiornamento software attivo di accedere agli endpoint Internet. WSUS e Aggiornamenti automatici possono quindi comunicare con il servizio cloud Microsoft Update.
 
 Per altre informazioni, vedere i [requisiti di accesso Internet](/sccm/core/plan-design/network/internet-endpoints#bkmk_sum).
 
@@ -424,7 +424,7 @@ Prendere in considerazione i seguenti scenari in cui potrebbe essere necessario 
 
     > [!NOTE]  
     > - Prima di Configuration Manager versione 1806, quando Configuration Manager imposta un aggiornamento software sostituito su **Scaduto**, non imposta l'aggiornamento su **Rifiutato** in WSUS. I client continuano a eseguire l'analisi dell'aggiornamento scaduto finché l'aggiornamento non viene rifiutato manualmente o tramite uno script personalizzato.  Dopo Configuration Manager versione 1806, Configuration Manager rifiuterà anche gli aggiornamenti sostituiti in WSUS. Per altre informazioni sull'attività di pulizia di WSUS, vedere [Manutenzione degli aggiornamenti software](/sccm/sum/deploy-use/software-updates-maintenance).
-    > - A partire da Configuration Manager versione 1810, è possibile specificare il comportamento delle regole di sostituzione per **gli aggiornamenti delle funzionalità** separatamente dai **gli aggiornamenti delle funzionalità non**.
+    > - A partire da Configuration Manager versione 1810, è possibile specificare il comportamento delle regole sostituzione per **gli aggiornamenti delle funzionalità** separatamente dagli **aggiornamenti non delle funzionalità**.
 
 ###  <a name="BKMK_UpdateLanguages"></a> Lingue  
 
@@ -458,7 +458,7 @@ Configurare le impostazioni dei dettagli di riepilogo solo nel sito di livello s
 
 Aggiungere una finestra di manutenzione dedicata per l'installazione di aggiornamenti software. Questa azione consente di configurare una finestra di manutenzione generale e una finestra di manutenzione diversa per gli aggiornamenti software. Quando si configura sia una finestra di manutenzione generale sia una finestra di manutenzione degli aggiornamenti software, i client installano aggiornamenti software solo nella finestra di manutenzione degli aggiornamenti software. 
 
-A partire da Configuration Manager versione 1810, è possibile modificare questo comportamento e consentire gli aggiornamenti software da installare durante una finestra di manutenzione generale. Per altre informazioni su questa impostazione client, vedere [impostazioni client degli aggiornamenti Software](/sccm/core/clients/deploy/about-client-settings#bkmk_SUMMaint).
+A partire da Configuration Manager versione 1810, è possibile modificare questo comportamento e consentire l'installazione degli aggiornamenti software durante una finestra di manutenzione generale. Per ulteriori informazioni su questa impostazione client, vedere [Software Updates Client Settings](/sccm/core/clients/deploy/about-client-settings#bkmk_SUMMaint).
 
 Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](../../core/clients/manage/collections/use-maintenance-windows.md).  
 

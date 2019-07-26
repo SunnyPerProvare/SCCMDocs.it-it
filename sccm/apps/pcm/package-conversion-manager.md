@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2abfa18bdf454850510c18551f2f64813a7891ea
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.openlocfilehash: a90dff8b187c28d925daeb9dae02849dd5027bab
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58523929"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339251"
 ---
 # <a name="package-conversion-manager"></a>Package Conversion Manager
 
@@ -43,9 +43,9 @@ La versione integrata di Package Conversion Manager funziona con i pacchetti nel
 
 <!-- SCCMDocs-pr issue #3357 -->
 Configuration Manager versione 1902 include i miglioramenti seguenti:
-- Analisi del pacchetto pianificato viene eseguito ogni 7 giorni per impostazione predefinita
-- Cmdlet di PowerShell per l'analisi e conversione dei pacchetti
-- Miglioramenti e correzioni di bug generale
+- L'analisi pianificata dei pacchetti viene eseguita ogni 7 giorni per impostazione predefinita
+- Cmdlet di PowerShell per l'analisi e la conversione dei pacchetti
+- Miglioramenti e correzioni di bug generali
 
 
 
@@ -131,17 +131,17 @@ Non tutti i pacchetti possono essere convertiti in applicazioni. Prima di inizia
 
 I tipi di pacchetti più adatti ad essere convertiti in applicazioni sono quelli che includono software rivolti all'utente, ad esempio:  
 
- - File di Windows Installer (con estensione MSI e MSU)  
+- File di Windows Installer (con estensione MSI e MSU)  
 
- - Programmi Microsoft Application Virtualization (App-V)  
+- Programmi Microsoft Application Virtualization (App-V)  
 
- - File eseguibili di Windows (con estensione EXE)  
+- File eseguibili di Windows (con estensione EXE)  
 
 I tipi di pacchetti che non vengono convertiti in applicazioni e vengono conservati come pacchetti includono:
 
- - Strumenti di manutenzione del sistema. Ad esempio, script o utilità di backup.  
+- Strumenti di manutenzione del sistema. Ad esempio, script o utilità di backup.  
 
- - Pacchetti software per i quali non è più disponibile il supporto.
+- Pacchetti software per i quali non è più disponibile il supporto.
 
 > [!Tip]  
 > Dopo avere identificato i pacchetti non appropriati per la conversione in applicazioni, spostarli in una cartella separata nella console di Configuration Manager. Per creare una cartella dei pacchetti nella console di Configuration Manager:  
@@ -154,26 +154,26 @@ I tipi di pacchetti che non vengono convertiti in applicazioni e vengono conserv
 
 Verificare che ogni pacchetto da convertire rispetti le seguenti condizioni:  
 
- - Il percorso dei file di origine è un percorso UNC completo, ad esempio `\\Server\Share\File`.  
+- Il percorso dei file di origine è un percorso UNC completo, ad esempio `\\Server\Share\File`.  
 
- - I file di Windows Installer usano solo codici prodotto univoci.  
+- I file di Windows Installer usano solo codici prodotto univoci.  
 
 
 ### <a name="bkmk_test"></a> Selezionare i pacchetti di test
 
 Se possibile, il gruppo di pacchetti di test deve includere pacchetti che soddisfano i criteri seguenti:  
 
- - Almeno un pacchetto test deve disporre dello stato di disponibilità **Automatico**.  
+- Almeno un pacchetto test deve disporre dello stato di disponibilità **Automatico**.  
 
- - Almeno un pacchetto test deve disporre dello stato di disponibilità **Manuale**.  
+- Almeno un pacchetto test deve disporre dello stato di disponibilità **Manuale**.  
 
 Idealmente, i pacchetti di test devono essere pacchetti principali, ad esempio:  
 
- - Pacchetti noti all'utente.  
+- Pacchetti noti all'utente.  
 
- - Pacchetti fondamentali per l'organizzazione.  
+- Pacchetti fondamentali per l'organizzazione.  
 
- - Pacchetti che è possibile sottoporre a test con facilità.  
+- Pacchetti che è possibile sottoporre a test con facilità.  
 
 Identificare i pacchetti che sono appropriati per i test. Spostarli quindi in una cartella separata nella console di Configuration Manager.
 
@@ -191,13 +191,13 @@ Per analizzare un singolo pacchetto o un piccolo gruppo, usare Package Conversio
 
 Dopo avere analizzato i pacchetti test, esaminare i pacchetti con stato di disponibilità **Manuale** o **Errore**. Determinare i motivi per cui dispongono di tale stato. Lo stato di disponibilità potrebbe essere impostato su **Manuale** o **Errore** per alcuni dei motivi seguenti:
 
- - Il pacchetto non contiene le informazioni necessarie per creare un metodo di rilevamento in un tipo di distribuzione dell'applicazione.  
+- Il pacchetto non contiene le informazioni necessarie per creare un metodo di rilevamento in un tipo di distribuzione dell'applicazione.  
 
- - Il pacchetto non contiene le informazioni necessarie per convertire le raccolte in requisiti e condizioni globali.  
+- Il pacchetto non contiene le informazioni necessarie per convertire le raccolte in requisiti e condizioni globali.  
 
- - Il pacchetto contiene più di un programma.  
+- Il pacchetto contiene più di un programma.  
 
- - Il pacchetto dipende da un altro pacchetto che non è stato convertito in applicazione.  
+- Il pacchetto dipende da un altro pacchetto che non è stato convertito in applicazione.  
 
 Per altre informazioni, vedere le risorse seguenti:  
 

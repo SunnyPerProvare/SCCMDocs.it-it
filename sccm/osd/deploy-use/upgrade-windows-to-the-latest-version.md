@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36304b836dbedcb411310d5f0dd8d0f0a8fd91f1
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: 2a0ef3dc874e1a90042859fce745f44e8a1e0472
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194460"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340357"
 ---
 # <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>Aggiornare Windows alla versione più recente con System Center Configuration Manager
 
@@ -24,16 +24,16 @@ ms.locfileid: "67194460"
 
 Questo articolo illustra la procedura da eseguire in Configuration Manager per aggiornare il sistema operativo di un computer. Sono disponibili diversi metodi di distribuzione, ad esempio supporti autonomi o Software Center. Lo scenario di aggiornamento sul posto ha le funzionalità seguenti:  
 
--   Aggiorna il sistema operativo nei computer che eseguono:
-    - Windows 7, Windows 8 o Windows 8.1. È anche possibile eseguire aggiornamenti di Windows 10 da build a build. È ad esempio possibile eseguire l'aggiornamento di Windows 10 versione 1607 a Windows 10 versione 1709.  
-    
-    - Windows Server 2012. È anche possibile eseguire aggiornamenti di Windows Server 2016 da build a build. Per altre informazioni sui percorsi di aggiornamento supportati, vedere [Supported upgrade paths](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths#upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016) (Percorsi di aggiornamento supportati).    
+- Aggiorna il sistema operativo nei computer che eseguono:
+  - Windows 7, Windows 8 o Windows 8.1. È anche possibile eseguire aggiornamenti di Windows 10 da build a build. È ad esempio possibile eseguire l'aggiornamento di Windows 10 versione 1607 a Windows 10 versione 1709.  
+  
+  - Windows Server 2012. È anche possibile eseguire aggiornamenti di Windows Server 2016 da build a build. Per altre informazioni sui percorsi di aggiornamento supportati, vedere [Supported upgrade paths](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths#upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016) (Percorsi di aggiornamento supportati).    
 
--   Mantiene applicazioni, impostazioni e dati dell'utente nel computer  
+- Mantiene applicazioni, impostazioni e dati dell'utente nel computer  
 
--   Non presenta dipendenze esterne, ad esempio Windows ADK.  
+- Non presenta dipendenze esterne, ad esempio Windows ADK.  
 
--   È più veloce e più flessibile rispetto alle distribuzioni tradizionali del sistema operativo.  
+- È più veloce e più flessibile rispetto alle distribuzioni tradizionali del sistema operativo.  
 
 
 > [!Note]  
@@ -89,12 +89,12 @@ L'unico prerequisito per lo scenario di aggiornamento è la disponibilità di un
 
 Per distribuire il sistema operativo, usare uno dei metodi di distribuzione seguenti:  
 
-  -   [Use Software Center to deploy Windows over the network](use-software-center-to-deploy-windows-over-the-network.md) (Usare Software Center per distribuire Windows tramite la rete)  
+- [Use Software Center to deploy Windows over the network](use-software-center-to-deploy-windows-over-the-network.md) (Usare Software Center per distribuire Windows tramite la rete)  
 
-  -   [Use stand-alone media to deploy Windows without using the network](use-stand-alone-media-to-deploy-windows-without-using-the-network.md) (Usare i supporti autonomi per distribuire Windows senza usare la rete)  
+- [Use stand-alone media to deploy Windows without using the network](use-stand-alone-media-to-deploy-windows-without-using-the-network.md) (Usare i supporti autonomi per distribuire Windows senza usare la rete)  
 
-      > [!IMPORTANT]  
-      > Quando si usano supporti autonomi, è necessario includere un'immagine di avvio nella sequenza di attività per rendere quest'ultima disponibile nella Creazione guidata del supporto per la sequenza di attività.
+  > [!IMPORTANT]  
+  > Quando si usano supporti autonomi, è necessario includere un'immagine di avvio nella sequenza di attività per rendere quest'ultima disponibile nella Creazione guidata del supporto per la sequenza di attività.
 
 
 

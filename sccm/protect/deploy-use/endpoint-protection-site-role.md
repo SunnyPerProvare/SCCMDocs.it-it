@@ -11,22 +11,22 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f0b489d4241350dc7b0f5ee7f9a9a48fcf026cf
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 2c1cdbbd1c4ede5c5f2e58bd6c42c982ebaa86fe
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500499"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340337"
 ---
 # <a name="create-an-endpoint-protection-point-site-system-role"></a>Creare un ruolo del sistema del sito del punto di Endpoint Protection
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
- Prima di poter usare Endpoint Protection, è necessario installare il ruolo del sistema del sito Punto di Endpoint Protection. Il ruolo deve essere installato in un solo server di sistema del sito, al livello superiore della gerarchia in un sito di amministrazione centrale o un sito primario autonomo.
+Prima di poter usare Endpoint Protection, è necessario installare il ruolo del sistema del sito Punto di Endpoint Protection. Il ruolo deve essere installato in un solo server di sistema del sito, al livello superiore della gerarchia in un sito di amministrazione centrale o un sito primario autonomo.
 
- Usare una delle procedure seguenti a seconda che si voglia installare un nuovo server di sistema del sito per Endpoint Protection o usare un server di sistema del sito esistente:
- - [Installare in un nuovo server di sistema del sito](#new-site-system-server)
- - [Installare in un server di sistema del sito esistente](#existing-site-system-server)
+Usare una delle procedure seguenti a seconda che si voglia installare un nuovo server di sistema del sito per Endpoint Protection o usare un server di sistema del sito esistente:
+- [Installare in un nuovo server di sistema del sito](#new-site-system-server)
+- [Installare in un server di sistema del sito esistente](#existing-site-system-server)
 
 > [!IMPORTANT]
 >  Quando si installa un punto di Endpoint Protection, un client di Endpoint Protection viene installato nel server che ospita il punto di Endpoint Protection. Analisi e servizi sono disabilitati in questo client per consentirne la coesistenza con qualsiasi soluzione antimalware esistente installata nel server. Se in seguito si abilita il server per la gestione con Endpoint Protection e si seleziona l'opzione per rimuovere qualsiasi soluzione antimalware di terze parti, il prodotto di terze parti non verrà rimosso. È necessario disinstallare il prodotto manualmente.

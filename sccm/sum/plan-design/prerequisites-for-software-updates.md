@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92e1d0e672d4fc5e6e98f87ba92cec2602f7d240
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: dcbbd799a87992fb34234f89a8660ed85c05dc3a
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496216"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340479"
 ---
 # <a name="prerequisites-for-software-updates-in-system-center-configuration-manager"></a>Prerequisiti per gli aggiornamenti software in System Center Configuration Manager
 
@@ -40,7 +40,8 @@ Questo articolo elenca i prerequisiti per gli aggiornamenti software in System C
 >[!NOTE]
 >-   A partire dalla versione 1702, Windows Server 2008 R2 non è supportato per il ruolo del punto di aggiornamento software. Per altre informazioni, vedere [Sistemi operativi supportati per i server dei sistemi del sito](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers#bkmk_2008r2sp1).  
 
-Quando esistono più punti di aggiornamento software in un sito, verificare che tutti eseguano la stessa versione di WSUS.  
+> [!WARNING]  
+> Quando esistono più punti di aggiornamento software in un sito, verificare che tutti eseguano la stessa versione di WSUS.  
 
 > [!WARNING]  
 >  La classificazione degli aggiornamenti software **Aggiornamenti** è supportata solo a partire da WSUS 4.0. Prima di sincronizzare questa nuova classificazione e avere la possibilità di valutare i computer Windows 10 in un piano di manutenzione di Windows 10, è fondamentale installare l'[hotfix 3095113](https://support.microsoft.com/kb/3095113) per WSUS nei punti di aggiornamento software e nei server del sito. Questo hotfix consente a WSUS in un server basato su Windows Server 2012 o su Windows Server 2012 R2 di sincronizzare e distribuire gli aggiornamenti di funzionalità per Windows 10. Per altre informazioni, vedere [Gestire Windows come servizio](../../osd/deploy-use/manage-windows-as-a-service.md).  
