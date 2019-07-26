@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01fa13c907b451a3539ca8169c3a04ebbaa1b92c
-ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
+ms.openlocfilehash: 7c0975c2b8dcf945464273930073ebf370bd4c32
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67145765"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340166"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Domande frequenti relative ai rami e alle licenze di Configuration Manager
 
@@ -44,13 +44,13 @@ LTSB è una build pronta per la produzione di Configuration Manager. È destinat
 
 - **Software Assurance (SA)** : i clienti devono disporre di sottoscrizione SA attiva per licenze di Configuration Manager o di diritti di sottoscrizione equivalenti per poter installare e usare l'opzione Current Branch di Configuration Manager.    
 
-    - Benché la sottoscrizione SA sia facoltativa per alcuni prodotti Microsoft, l'unico modo per ottenere i diritti di utilizzo di Configuration Manager Current Branch è con SA *o con diritti di sottoscrizione equivalenti*. Per altre informazioni, vedere le [domande frequenti su Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/FAQ-Software-Assurance.aspx).<!--this link doesn't work without some language code-->
+  - Benché la sottoscrizione SA sia facoltativa per alcuni prodotti Microsoft, l'unico modo per ottenere i diritti di utilizzo di Configuration Manager Current Branch è con SA *o con diritti di sottoscrizione equivalenti*. Per altre informazioni, vedere le [domande frequenti su Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/FAQ-Software-Assurance.aspx).<!--this link doesn't work without some language code-->
 
 - **Licenza Microsoft e Software Assurance (L&SA)** : i clienti che acquistano nuove licenze per Configuration Manager devono acquisire una sottoscrizione L&SA (la copertura Licenza e Software Assurance).   
 
-    - La sottoscrizione SA concede i diritti di utilizzo di Current Branch.
+  - La sottoscrizione SA concede i diritti di utilizzo di Current Branch.
 
-    - Se la sottoscrizione SA scade e si possiede ancora una licenza per Configuration Manager, non è più possibile usare Current Branch. Per altre informazioni, vedere la domanda frequente [Che cosa ricevo se la mia copertura SA scade e ho una L&SA?](#bkmk_sa-expires)
+  - Se la sottoscrizione SA scade e si possiede ancora una licenza per Configuration Manager, non è più possibile usare Current Branch. Per altre informazioni, vedere la domanda frequente [Che cosa ricevo se la mia copertura SA scade e ho una L&SA?](#bkmk_sa-expires)
 
 Per altre informazioni sulle offerte di licenze, vedere [Modalità di acquisto](https://www.microsoft.com/Licensing/licensing-programs/licensing-programs)<!--this link doesn't work without some language code--> e le [condizioni di licenza del prodotto](http://www.microsoftvolumelicensing.com/ProductResults.aspx?doc=Product%20Terms,OST&fid=64).  
 
@@ -104,12 +104,12 @@ Se *SA* o la sottoscrizione è attiva, si dispone dei diritti di utilizzo per Co
 Tutti i prodotti System Center includono la tecnologia SQL Server. Le condizioni di licenza di Microsoft per questi prodotti consentono l'uso da parte dei clienti della tecnologia SQL Server solo per il supporto dei componenti di System Center. Non sono necessarie Licenze CAL (Client Access License) di SQL Server per tale uso. 
  
 I diritti di utilizzo approvati per le funzionalità SQL con Configuration Manager includono:
- - Ruolo Database del sito
- - Windows Server Update Services (WSUS) per il ruolo Punto di aggiornamento software
- - SQL Server Reporting Services (SSRS) per il ruolo Punto di reporting
- - Ruolo Punto di servizio del data warehouse
- - Ruolo Repliche di database per i punti di gestione
- - SQL Server Always On 
+- Ruolo Database del sito
+- Windows Server Update Services (WSUS) per il ruolo Punto di aggiornamento software
+- SQL Server Reporting Services (SSRS) per il ruolo Punto di reporting
+- Ruolo Punto di servizio del data warehouse
+- Ruolo Repliche di database per i punti di gestione
+- SQL Server Always On 
 
 La licenza di SQL Server inclusa con Configuration Manager supporta ogni istanza di SQL Server installata per ospitare un database per Configuration Manager. Tuttavia, solo i database per Configuration Manager nell'elenco precedente possono essere eseguiti in tale sistema SQL Server quando si usa questa licenza. Se un database per un'applicazione Microsoft aggiuntiva o un prodotto di terze parti condivide il sistema SQL Server, è necessaria una licenza distinta per tale istanza di SQL Server. 
  <!-- sms500967 -->

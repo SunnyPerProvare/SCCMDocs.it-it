@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 7304730b-b517-4c76-aadd-4cbd157dc971
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c584169d56c11be29cd536bf408f20ee59dbf3c
-ms.sourcegitcommit: b62de6c9cb1bc3e4c9ea5ab5ed3355d83e3a59bc
+ms.openlocfilehash: 10c47a9f0da6c61ded9b3ef7de5dc854ce931c37
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67894171"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339166"
 ---
 # <a name="security-and-privacy-for-the-cloud-management-gateway"></a>Sicurezza e privacy per il gateway di gestione cloud
 
@@ -43,8 +43,8 @@ Questo articolo contiene informazioni relative alla sicurezza e alla privacy per
 
 ### <a name="configuration-manager-client-facing-roles"></a>Ruoli destinati al client di Configuration Manager
 Il punto di gestione e l'aggiornamento software ospitano gli endpoint in IIS che possono soddisfare le richieste client. Il gateway di gestione cloud non espone tutti gli endpoint interni. Ogni endpoint pubblicato del gateway di gestione cloud ha un mapping di URL.
-  - L'URL esterno è quello usato dal client per comunicare con il gateway di gestione cloud.
-  - L'URL interno è il punto di connessione del gateway di gestione cloud usato per inoltrare le richieste al server interno.
+- L'URL esterno è quello usato dal client per comunicare con il gateway di gestione cloud.
+- L'URL interno è il punto di connessione del gateway di gestione cloud usato per inoltrare le richieste al server interno.
 
 #### <a name="url-mapping-example"></a>Esempio di mapping di URL
 Quando si abilita il traffico del gateway di gestione cloud in un punto di gestione, Configuration Manager crea un set interno di mapping di URL per ogni server del punto di gestione, ad esempio ccm_system, ccm_incoming e sms_mp. L'URL esterno dell'endpoint ccm_system del punto di gestione può essere simile a quanto segue:  

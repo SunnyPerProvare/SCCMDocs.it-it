@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3154f705afc48cebe075083666e7a5d2b7f726b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: ce992a7d47d77d6542c4f6ede3fb37195714659a
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130276"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339971"
 ---
 # <a name="capabilities-in-technical-preview-1712-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1712 per System Center Configuration Manager
 
@@ -58,17 +58,19 @@ Vedere [Technical Preview per System Center Configuration Manager](/sccm/core/ge
 -->
 
 ## <a name="do-not-automatically-upgrade-superseded-applications"></a>Non vengono aggiornate automaticamente le applicazioni sostituite
-<!-- 1351266 --> In base ai [commenti e suggerimenti di UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/11532669-fix-supercedence-behavior), in questa versione è possibile configurare una distribuzione dell'applicazione in modo da non aggiornare automaticamente eventuali versioni sostituite. Ora quando si crea la distribuzione, nella pagina **Impostazioni di distribuzione** della **Distribuzione guidata del software**, ai fini di un'installazione **disponibile** o **necessaria**, è possibile abilitare o disabilitare l'opzione che consente di **aggiornare automaticamente eventuali versioni sostituite dell'applicazione**.
+<!-- 1351266 -->
+In base ai [commenti e suggerimenti di UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/11532669-fix-supercedence-behavior), in questa versione è possibile configurare una distribuzione dell'applicazione in modo da non aggiornare automaticamente eventuali versioni sostituite. Ora quando si crea la distribuzione, nella pagina **Impostazioni di distribuzione** della **Distribuzione guidata del software**, ai fini di un'installazione **disponibile** o **necessaria**, è possibile abilitare o disabilitare l'opzione che consente di **aggiornare automaticamente eventuali versioni sostituite dell'applicazione**.
 
 
 ## <a name="install-multiple-applications-in-software-center"></a>Installare più applicazioni nel Software Center
-<!-- 1357126 --> Se un utente finale o un tecnico desktop deve installare più applicazioni in un dispositivo, Software Center ora supporta l'installazione di più applicazioni selezionate. Ciò consente all'utente di essere più efficiente senza dover aspettare che termini un'installazione prima di avviare quella successiva.
+<!-- 1357126 -->
+Se un utente finale o un tecnico desktop deve installare più applicazioni in un dispositivo, il Software Center ora supporta l'installazione di più applicazioni selezionate. Ciò consente all'utente di essere più efficiente senza dover aspettare che termini un'installazione prima di avviare quella successiva.
 
 Quando si usa la modalità di selezione multipla nella scheda **Applicazioni** i seguenti criteri determinano quali app vengono abilitate nel Software Center per la selezione multipla:
- - L'app è visibile all'utente
- - L'app non è già installata
- - L'approvazione dell'amministratore non è necessaria o è già stata concessa
- - Lo stato dell'app è disponibile (ad esempio, non sta ancora scaricando contenuto)
+- L'app è visibile all'utente
+- L'app non è già installata
+- L'approvazione dell'amministratore non è necessaria o è già stata concessa
+- Lo stato dell'app è disponibile (ad esempio, non sta ancora scaricando contenuto)
 
 ### <a name="try-it-out"></a>Verifica
 **Nella console di Configuration Manager:** distribuire a un utente o un dispositivo più applicazioni per l'installazione, disponibile o richiesta (con scadenza nel futuro). Non è richiesta l'approvazione dell'amministratore. Per altre informazioni, vedere l'argomento relativo alla [distribuzione delle applicazioni](/sccm/apps/deploy-use/deploy-applications).
@@ -83,7 +85,8 @@ Le app vengono installate come di consueto, ma in successione.
 
 
 ## <a name="client-based-pxe-responder-service"></a>Servizio risponditore PXE basato su client
-<!-- 1357148 --> Un problema comune per i clienti è erogare servizi PXE in postazioni remote o succursali con infrastruttura server minima o assente. Il ruolo punto di distribuzione supporta i sistemi operativi client, ma non può essere abilitato per PXE a causa della dipendenza dai servizi di distribuzione Windows.
+<!-- 1357148 -->
+Un problema comune per i clienti è erogare servizi PXE in postazioni remote o succursali con infrastruttura server minima o assente. Il ruolo punto di distribuzione supporta i sistemi operativi client, ma non può essere abilitato per PXE a causa della dipendenza dai servizi di distribuzione Windows.
 
 Sono ora disponibili nuove impostazioni client per l'abilitazione di un servizio risponditore PXE nei client di Configuration Manager. Un'immagine di avvio che supporta PXE deve trovarsi nella cache del client del risponditore PXE.
 
@@ -105,8 +108,8 @@ Nella console di Configuration Manager:
 4. Avviare un altro client nella stessa subnet per avviare la rete PXE come di consueto.
 
 ### <a name="known-issues"></a>Problemi noti
- - L'editor della sequenza di attività visualizza un'icona rossa di errore per il passaggio **Scarica contenuto pacchetto** quando si aggiunge un'immagine di avvio, ma la sequenza di attività viene salvata correttamente. Quando si apre di nuovo questa sequenza di attività nell'editor appare un avviso informativo che indica che non è possibile trovare gli oggetti a cui viene fatto riferimento. <!-- sms427542 -->
- - L'immagine di avvio del passaggio Scarica contenuto pacchetto non appare nell'elenco di riferimenti della sequenza di attività personalizzata. Anche l'azione **Distribuisci contenuto** non è disponibile. <!-- sms504017 -->
+- L'editor della sequenza di attività visualizza un'icona rossa di errore per il passaggio **Scarica contenuto pacchetto** quando si aggiunge un'immagine di avvio, ma la sequenza di attività viene salvata correttamente. Quando si apre di nuovo questa sequenza di attività nell'editor appare un avviso informativo che indica che non è possibile trovare gli oggetti a cui viene fatto riferimento. <!-- sms427542 -->
+- L'immagine di avvio del passaggio Scarica contenuto pacchetto non appare nell'elenco di riferimenti della sequenza di attività personalizzata. Anche l'azione **Distribuisci contenuto** non è disponibile. <!-- sms504017 -->
 
 
 ## <a name="change-in-the-configuration-manager-client-install"></a>Modifica dell'installazione del client di Configuration Manager  
@@ -117,7 +120,8 @@ In seguito ai commenti e suggerimenti di UserVoice, [Silverlight non viene più 
 Il dashboard di Surface ora visualizza la versione del firmware per i dispositivi Surface anziché la versione del sistema operativo. Nella console passare a **Monitoraggio** > **Surface Devices** (Dispositivi Surface). È possibile visualizzare i seguenti elementi:
 - Percentuale di dispositivi Surface
 - Percentuale di modelli Surface
-- Prime cinque versioni di firmware <!--1355788-->
+- Prime cinque versioni di firmware
+ <!--1355788-->
 
 
 ## <a name="improvements-to-office-365-client-management-dashboard"></a>Miglioramenti del dashboard di Gestione client di Office 365 
@@ -134,17 +138,17 @@ Sono stati apportati i miglioramenti seguenti alla console di Configuration Mana
 
 ## <a name="improvements-to-operating-system-deployment"></a>Miglioramenti alla distribuzione del sistema operativo
 Sono stati apportati i miglioramenti seguenti alla distribuzione del sistema operativo a seguito dei commenti e suggerimenti di UserVoice.
- - [Visualizzatore log predefinito nell'immagine d'avvio](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/19269823-stop-cmtrace-from-asking-us-if-we-want-to-use-it-a): In Windows PE quando si avvia cmtrace.exe non viene più richiesto di scegliere se rendere questo programma lo strumento di visualizzazione predefinito per i file di log. <!-- SMS 500897 -->
- - Passaggio Scarica contenuto pacchetto: ora è possibile aggiungere immagini d'avvio a questo passaggio della sequenza di attività.
+- [Visualizzatore log predefinito nell'immagine d'avvio](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/19269823-stop-cmtrace-from-asking-us-if-we-want-to-use-it-a): In Windows PE quando si avvia cmtrace.exe non viene più richiesto di scegliere se rendere questo programma lo strumento di visualizzazione predefinito per i file di log. <!-- SMS 500897 -->
+- Passaggio Scarica contenuto pacchetto: ora è possibile aggiungere immagini d'avvio a questo passaggio della sequenza di attività.
 
 
 ## <a name="windows-10-feedback-hub-app-integration"></a>Integrazione di app dell'hub di commenti e suggerimenti di Windows 10
 
 Il feedback degli utenti è così importante che ora è abilitato attraverso l'[app dell'hub di commenti e suggerimenti](https://support.microsoft.com/en-us/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app) incorporata in Windows 10. Quando si sceglie **Aggiungi nuovo feedback**, assicurarsi di selezionare la categoria **Enterprise Management** e di scegliere una delle sottocategorie seguenti:
- - Configuration Manager Client
- - Console di Configuration Manager
- - Distribuzione del sistema operativo di Configuration Manager
- - Server di Configuration Manager
+- Client di Configuration Manager
+- Console di Configuration Manager
+- Distribuzione del sistema operativo di Configuration Manager
+- Server di Configuration Manager
 
 Continuare a usare la [pagina UserVoice](http://configurationmanager.uservoice.com/) per votare nuove idee sulle funzionalità di Configuration Manager.
 

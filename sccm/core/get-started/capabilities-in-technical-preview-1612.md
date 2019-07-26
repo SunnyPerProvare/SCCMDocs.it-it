@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34fca23c43b34d905e6ecea210c0ba7487feeea2
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 5b425103d4d7455a6453f6415f911e01defdc0d6
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67677527"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340103"
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1612 per System Center Configuration Manager
 
@@ -155,8 +155,8 @@ Dopo aver installato la versione Technical Preview 1612, è possibile trovare il
 Lo strumento rilasciato con questa versione Technical Preview è destinato a sostituire le versioni precedenti di strumenti simili rilasciati per i prodotti Configuration Manager precedenti. Questa versione dello strumento smetterà di funzionare dopo il 1° marzo 2017. Fino a quel momento, tuttavia, verranno rilasciate nuove versioni Technical Preview, dato che questo strumento viene rilasciato nell'ambito di Current Branch o di un rilascio fuori programma pronto per la produzione.
 
 ### <a name="requirements"></a>requisiti  
- - È possibile eseguire lo strumento direttamente nel computer che ospita il punto di distribuzione oppure in remoto da un altro server. Lo strumento può essere eseguito solo per un unico punto di distribuzione alla volta.
- - Per la gerarchia di Configuration Manager l'account utente che esegue lo strumento deve disporre direttamente di autorizzazioni di amministrazione basate sui ruoli equivalenti a quelle di un amministratore completo.  Lo strumento non funziona se all'account utente sono state concesse autorizzazioni in quanto membro di un gruppo di sicurezza di Windows con autorizzazioni di amministratore completo.
+- È possibile eseguire lo strumento direttamente nel computer che ospita il punto di distribuzione oppure in remoto da un altro server. Lo strumento può essere eseguito solo per un unico punto di distribuzione alla volta.
+- Per la gerarchia di Configuration Manager l'account utente che esegue lo strumento deve disporre direttamente di autorizzazioni di amministrazione basate sui ruoli equivalenti a quelle di un amministratore completo.  Lo strumento non funziona se all'account utente sono state concesse autorizzazioni in quanto membro di un gruppo di sicurezza di Windows con autorizzazioni di amministratore completo.
 
 ### <a name="modes-of-operation"></a>Modalità di funzionamento
 Lo strumento può essere eseguito in due modalità:

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8560c34f1db76afcfe2e65eeaf8311b0a58cc926
-ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
+ms.openlocfilehash: 4e260f26295a27c91a69cad563eaec2395b00a5c
+ms.sourcegitcommit: e0438c191df945305625ae91596c9417d16e8510
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67623459"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68491687"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novità della versione 1806 di Configuration Manager (Current Branch)
 
@@ -328,7 +328,8 @@ Per altre informazioni, vedere [Package Conversion Manager](/sccm/apps/pcm/packa
 Questa versione include i miglioramenti seguenti alle distribuzioni in più fasi:  
 
 #### <a name="create-a-phased-deployment-with-manually-configured-phases"></a>Creare una distribuzione in più fasi con fasi configurate manualmente
-<!--1358148--> Per una sequenza di attività, configurare ora manualmente le fasi quando si crea una distribuzione in più fasi. Aggiungere fino a 10 fasi aggiuntive dalla scheda **Fasi** della procedura guidata Crea una distribuzione in più fasi. È comunque possibile creare automaticamente una distribuzione in due fasi predefinita. 
+<!--1358148-->
+Per una sequenza di attività, configurare ora manualmente le fasi quando si crea una distribuzione in più fasi. Aggiungere fino a 10 fasi aggiuntive dalla scheda **Fasi** della procedura guidata Crea una distribuzione in più fasi. È comunque possibile creare automaticamente una distribuzione in due fasi predefinita. 
 
 Per altre informazioni, vedere [Creare una distribuzione in più fasi con fasi configurate manualmente](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence#bkmk_manual).
 
@@ -404,11 +405,11 @@ Per altre informazioni, vedere [Sequenze di attività e account di accesso alla 
  Per altre informazioni, vedere [Aggiorna sistema operativo](/sccm/osd/understand/task-sequence-steps#BKMK_UpgradeOS).
 
 #### <a name="revised-documentation-for-task-sequence-variables"></a>Documentazione rivista per le variabili della sequenza di attività
- Sono ora disponibili due nuovi articoli con informazioni sulle variabili della sequenza di attività:  
+Sono ora disponibili due nuovi articoli con informazioni sulle variabili della sequenza di attività:  
 
- - [How to use task sequence variables](/sccm/osd/understand/using-task-sequence-variables) (Come usare le variabili della sequenza di attività) è un nuovo articolo che descrive i diversi tipi di variabili, i metodi per impostare le variabili e come accedervi.  
+- [How to use task sequence variables](/sccm/osd/understand/using-task-sequence-variables) (Come usare le variabili della sequenza di attività) è un nuovo articolo che descrive i diversi tipi di variabili, i metodi per impostare le variabili e come accedervi.  
 
- - [Task sequence variables](/sccm/osd/understand/task-sequence-variables) (Variabili della sequenza di attività) è un articolo con informazioni di riferimento per tutte le variabili della sequenza di attività. Questo articolo combina gli articoli precedenti in cui le variabili predefinite erano separate dalle variabili di azione. 
+- [Task sequence variables](/sccm/osd/understand/task-sequence-variables) (Variabili della sequenza di attività) è un articolo con informazioni di riferimento per tutte le variabili della sequenza di attività. Questo articolo combina gli articoli precedenti in cui le variabili predefinite erano separate dalle variabili di azione. 
 
 
 
@@ -607,9 +608,9 @@ Quando si è pronti per installare la versione, vedere [Installazione degli aggi
 > [!TIP]  
 > Per installare un nuovo sito, usare una versione base di Configuration Manager.  
 >
->  Sono disponibili altre informazioni su:    
->   - [Installing new sites](/sccm/core/servers/deploy/install/installing-sites) (Installare nuovi siti)  
->   - [Baseline and update versions](/sccm/core/servers/manage/updates#bkmk_Baselines) (Versioni di base e di aggiornamento)
+> Sono disponibili altre informazioni su:    
+> - [Installing new sites](/sccm/core/servers/deploy/install/installing-sites) (Installare nuovi siti)  
+> - [Baseline and update versions](/sccm/core/servers/manage/updates#bkmk_Baselines) (Versioni di base e di aggiornamento)
 
 Per problemi noti e importanti, vedere [Note sulla versione](/sccm/core/servers/deploy/install/release-notes).
 

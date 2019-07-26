@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c492a4fc90b1fba51c8db0031fa73bad2a1e2d2
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: f6004e75c6efee7c2c55a40696407131dd7f02af
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676927"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68338747"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1802-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1802
 
@@ -118,340 +118,340 @@ Per Configuration Manager versione 1802, questo livello include i dati seguenti:
 
 ### <a name="application-management"></a>Gestione delle applicazioni  
 
-   - Requisiti delle app: conteggio delle condizioni predefinite con riferimento per tecnologia di distribuzione
+- Requisiti delle app: conteggio delle condizioni predefinite con riferimento per tecnologia di distribuzione
 
-   - Sostituzione delle app, profondità massima della catena
+- Sostituzione delle app, profondità massima della catena
 
-   - Statistiche sull'approvazione delle applicazioni e frequenza di utilizzo
+- Statistiche sull'approvazione delle applicazioni e frequenza di utilizzo
 
-   - Statistiche sulle dimensioni del contenuto delle applicazioni
+- Statistiche sulle dimensioni del contenuto delle applicazioni
 
-   - Informazioni sulla distribuzione delle applicazioni: uso dell'installazione rispetto alla disinstallazione, obbligatorietà dell'approvazione, abilitazione o disabilitazione dell'interazione con l'utente, dipendenza, sostituzione e numero di utilizzi della funzionalità relativa al comportamento dell'installazione  
+- Informazioni sulla distribuzione delle applicazioni: uso dell'installazione rispetto alla disinstallazione, obbligatorietà dell'approvazione, abilitazione o disabilitazione dell'interazione con l'utente, dipendenza, sostituzione e numero di utilizzi della funzionalità relativa al comportamento dell'installazione  
 
-   - Dimensioni criteri di applicazione e statistiche di complessità
+- Dimensioni criteri di applicazione e statistiche di complessità
 
-   - Dati statistici sulle richieste di applicazioni disponibili
+- Dati statistici sulle richieste di applicazioni disponibili
 
-   - Informazioni di configurazione di base per pacchetti e programmi: opzioni di distribuzione e flag di programma
+- Informazioni di configurazione di base per pacchetti e programmi: opzioni di distribuzione e flag di programma
 
-   - Informazioni di base su utilizzo/destinazione per i tipi di distribuzione: utente e dispositivo di destinazione, richiesto o disponibile e app universali
+- Informazioni di base su utilizzo/destinazione per i tipi di distribuzione: utente e dispositivo di destinazione, richiesto o disponibile e app universali
 
-   - Numero di ambienti e proprietà di distribuzione App-V
+- Numero di ambienti e proprietà di distribuzione App-V
 
-   - Numero di applicabilità delle applicazioni per sistema operativo  
+- Numero di applicabilità delle applicazioni per sistema operativo  
 
-   - Numero di applicazioni a cui fa riferimento una sequenza di attività
+- Numero di applicazioni a cui fa riferimento una sequenza di attività
 
-   - Numero di personalizzazioni distinte per catalogo applicazioni
+- Numero di personalizzazioni distinte per catalogo applicazioni
 
-   - Numero di applicazioni di Office 365 create tramite il dashboard
+- Numero di applicazioni di Office 365 create tramite il dashboard
 
-   - Numero di pacchetti per tipo  
+- Numero di pacchetti per tipo  
 
-   - Numero di distribuzioni di pacchetti/programmi  
+- Numero di distribuzioni di pacchetti/programmi  
 
-   - Numero di licenze per applicazioni con licenza Windows 10  
+- Numero di licenze per applicazioni con licenza Windows 10  
 
-   - Numero di tipi di distribuzione di Windows Installer in base alle impostazioni di disinstallazione del contenuto
+- Numero di tipi di distribuzione di Windows Installer in base alle impostazioni di disinstallazione del contenuto
 
-   - Numero di app di Microsoft Store per le aziende e statistiche di sincronizzazione: riepilogo dei tipi di app, stato delle app con licenza e numero di app con licenza online e offline  
+- Numero di app di Microsoft Store per le aziende e statistiche di sincronizzazione: riepilogo dei tipi di app, stato delle app con licenza e numero di app con licenza online e offline  
 
-   - Tipo e durata della finestra di manutenzione  
+- Tipo e durata della finestra di manutenzione  
 
-   - Numero massimo/minimo/medio di distribuzioni di applicazioni per ogni utente o dispositivo per periodo
+- Numero massimo/minimo/medio di distribuzioni di applicazioni per ogni utente o dispositivo per periodo
 
-   - Codici di errore di installazione delle applicazioni più comuni per tecnologia di distribuzione
+- Codici di errore di installazione delle applicazioni più comuni per tecnologia di distribuzione
 
-   - Opzioni di configurazione MSI e conteggi
+- Opzioni di configurazione MSI e conteggi
 
-   - Statistiche sull'interazione degli utenti finali con notifica per le distribuzioni software obbligatorie   
+- Statistiche sull'interazione degli utenti finali con notifica per le distribuzioni software obbligatorie   
 
-   - Utilizzo di Universal Data Access, modalità di creazione
+- Utilizzo di Universal Data Access, modalità di creazione
 
-   - ***[Nuovo]*** Statistiche aggregate affinità utente dispositivo 
+- ***[Nuovo]*** Statistiche aggregate affinità utente dispositivo 
 
-   - ***[Nuovo]*** Numero massimo e medio di utenti primari per dispositivo
+- ***[Nuovo]*** Numero massimo e medio di utenti primari per dispositivo
 
 
 ### <a name="client"></a>Client  
 
-   - Versione del client AMT (Active Management Technology)
+- Versione del client AMT (Active Management Technology)
 
-   - Età del BIOS in anni
+- Età del BIOS in anni
 
-   - Numero di dispositivi con avvio protetto abilitato
+- Numero di dispositivi con avvio protetto abilitato
 
-   - Numero di dispositivi in base allo stato TPM
+- Numero di dispositivi in base allo stato TPM
 
-   - Aggiornamento automatico del client: configurazione della distribuzione inclusi la distribuzione pilota del client e l'utilizzo di esclusioni (client a interoperabilità estesa)
+- Aggiornamento automatico del client: configurazione della distribuzione inclusi la distribuzione pilota del client e l'utilizzo di esclusioni (client a interoperabilità estesa)
 
-   - Configurazione della dimensione della cache del client
+- Configurazione della dimensione della cache del client
 
-   - Errori di download della distribuzione client
+- Errori di download della distribuzione client
 
-   - Statistiche dell'integrità dei client e riepilogo dei problemi principali
+- Statistiche dell'integrità dei client e riepilogo dei problemi principali
 
-   - Stato dell'azione operazione di notifica client: numero di esecuzioni di ogni azione, numero massimo di client assegnati e frequenza media esecuzioni senza errori
+- Stato dell'azione operazione di notifica client: numero di esecuzioni di ogni azione, numero massimo di client assegnati e frequenza media esecuzioni senza errori
 
-   - Numero di installazioni client da ogni tipo di posizione di origine  
+- Numero di installazioni client da ogni tipo di posizione di origine  
 
-   - Numero di errori di installazioni client  
+- Numero di errori di installazioni client  
 
-   - Numero di dispositivi virtualizzati tramite Hyper-V o Azure  
+- Numero di dispositivi virtualizzati tramite Hyper-V o Azure  
 
-   - Conteggio delle azioni di Software Center   
+- Conteggio delle azioni di Software Center   
 
-   - Numero di dispositivi abilitati per UEFI
+- Numero di dispositivi abilitati per UEFI
 
-   - Metodi di distribuzione usati per il client e numero di client per metodo di distribuzione
+- Metodi di distribuzione usati per il client e numero di client per metodo di distribuzione
 
-   - Elenco/numero di agenti client abilitati  
+- Elenco/numero di agenti client abilitati  
 
-   - Età del sistema operativo in mesi
+- Età del sistema operativo in mesi
 
-   - Numero di classi di inventario hardware, regole dell'inventario software e regole di raccolta dei file
+- Numero di classi di inventario hardware, regole dell'inventario software e regole di raccolta dei file
 
-   - Statistiche per l'attestazione dell'integrità del dispositivo: codici di errore più comuni, numero di server locali e numero di dispositivi nei vari stati
+- Statistiche per l'attestazione dell'integrità del dispositivo: codici di errore più comuni, numero di server locali e numero di dispositivi nei vari stati
 
-   - ***[Nuovo]*** Numero di dispositivi per browser predefinito
+- ***[Nuovo]*** Numero di dispositivi per browser predefinito
 
 
 ### <a name="cloud-services"></a>Servizi cloud  
 
-  - Statistiche di individuazione di Azure Active Directory
+- Statistiche di individuazione di Azure Active Directory
 
-  - Statistiche di configurazione e utilizzo di Cloud Management Gateway: numero delle aree e degli ambienti e statistiche di autenticazione e autorizzazione
+- Statistiche di configurazione e utilizzo di Cloud Management Gateway: numero delle aree e degli ambienti e statistiche di autenticazione e autorizzazione
 
-  - Numero di applicazioni e di servizi di Azure Active Directory connessi a Configuration Manager
+- Numero di applicazioni e di servizi di Azure Active Directory connessi a Configuration Manager
 
-  - Numero di raccolte sincronizzate con Azure Log Analytics
+- Numero di raccolte sincronizzate con Azure Log Analytics
 
-  - Numero di connettori di analisi degli aggiornamenti
+- Numero di connettori di analisi degli aggiornamenti
 
-  - Indica se il connettore cloud Azure Log Analytics è abilitato
+- Indica se il connettore cloud Azure Log Analytics è abilitato
 
 
 ### <a name="co-management"></a>Co-gestione  
-  - Statistiche di utilizzo aggregate relative alla co-gestione: numero di client registrati, client che ricevono criteri, stati dei carichi di lavoro, dimensioni delle raccolte di esclusioni/pilota ed errori di registrazione  
+- Statistiche di utilizzo aggregate relative alla co-gestione: numero di client registrati, client che ricevono criteri, stati dei carichi di lavoro, dimensioni delle raccolte di esclusioni/pilota ed errori di registrazione  
 
-  - Numero di client in base al metodo di registrazione di co-gestione  
+- Numero di client in base al metodo di registrazione di co-gestione  
 
-  - Statistiche degli errori per la registrazione di co-gestione  
+- Statistiche degli errori per la registrazione di co-gestione  
 
-  - Statistiche cronologiche e pianificazione della registrazione  
+- Statistiche cronologiche e pianificazione della registrazione  
 
-  - Numero di client idonei per la co-gestione  
+- Numero di client idonei per la co-gestione  
 
-  - Tenant di Microsoft Intune associato
+- Tenant di Microsoft Intune associato
 
 
 ### <a name="collections"></a>Raccolte  
 
-   - Uso ID raccolte (senza esaurimento degli ID)
+- Uso ID raccolte (senza esaurimento degli ID)
 
-   - Statistiche di valutazione raccolte: durata query, conteggi assegnati e non assegnati, conteggi per tipo, rollover degli ID e utilizzo delle regole
+- Statistiche di valutazione raccolte: durata query, conteggi assegnati e non assegnati, conteggi per tipo, rollover degli ID e utilizzo delle regole
 
-   - Raccolte senza distribuzione
+- Raccolte senza distribuzione
 
 
 ### <a name="compliance-settings"></a>Impostazioni di conformità  
 
-  - Informazioni di base sulla linea di base di configurazione: numero, numero di distribuzioni e numero di riferimenti
+- Informazioni di base sulla linea di base di configurazione: numero, numero di distribuzioni e numero di riferimenti
 
-  - Statistiche degli errori relativi ai criteri di conformità
+- Statistiche degli errori relativi ai criteri di conformità
 
-  - Numero di elementi di configurazione per tipo  
+- Numero di elementi di configurazione per tipo  
 
-  - Numero di distribuzioni che fanno riferimento a impostazioni predefinite, inclusa l'impostazione di correzione  
+- Numero di distribuzioni che fanno riferimento a impostazioni predefinite, inclusa l'impostazione di correzione  
 
-  - Numero di regole e di distribuzioni create per le impostazioni personalizzate inclusa l'impostazione di correzione  
+- Numero di regole e di distribuzioni create per le impostazioni personalizzate inclusa l'impostazione di correzione  
 
-  - Numero di certificati SCEP (Simple Certificate Enrollment Protocol), VPN, Wi-Fi, certificati (.pfx) e modelli dei criteri di conformità distribuiti
+- Numero di certificati SCEP (Simple Certificate Enrollment Protocol), VPN, Wi-Fi, certificati (.pfx) e modelli dei criteri di conformità distribuiti
 
-  - Numero di certificati SCEP, VPN, Wi-Fi, certificati (.pfx) e distribuzioni dei criteri di conformità per piattaforma
+- Numero di certificati SCEP, VPN, Wi-Fi, certificati (.pfx) e distribuzioni dei criteri di conformità per piattaforma
 
-  - Criteri di Windows Hello for Business (creati, distribuiti)
+- Criteri di Windows Hello for Business (creati, distribuiti)
 
 
 ### <a name="content"></a>Content  
 
-  - ***[Aggiornato]*** Statistiche dei gruppi di limiti: numero di rapidi e lenti, conteggio per gruppo e relazioni di fallback
+- ***[Aggiornato]*** Statistiche dei gruppi di limiti: numero di rapidi e lenti, conteggio per gruppo e relazioni di fallback
 
-  - Informazioni sui gruppi di limiti: numero di limiti e di sistemi del sito assegnati a ogni gruppo di limiti  
+- Informazioni sui gruppi di limiti: numero di limiti e di sistemi del sito assegnati a ogni gruppo di limiti  
 
-  - Relazioni di gruppi di limiti e configurazione del fallback
+- Relazioni di gruppi di limiti e configurazione del fallback
 
-  - Statistiche di download dei contenuti client
+- Statistiche di download dei contenuti client
 
-  - Numero di limiti per tipo  
+- Numero di limiti per tipo  
 
-  - Numero di client peer cache, statistiche di utilizzo e statistiche di download parziale
+- Numero di client peer cache, statistiche di utilizzo e statistiche di download parziale
 
-  - Informazioni di configurazione di Distribution Manager: thread, intervallo tra tentativi, numero di tentativi e impostazioni dei punti di distribuzione pull  
+- Informazioni di configurazione di Distribution Manager: thread, intervallo tra tentativi, numero di tentativi e impostazioni dei punti di distribuzione pull  
 
-  - Informazioni di configurazione sui punti di distribuzione: uso di BranchCache e monitoraggio dei punti di distribuzione
+- Informazioni di configurazione sui punti di distribuzione: uso di BranchCache e monitoraggio dei punti di distribuzione
 
-  - Informazioni sui gruppi di punti di distribuzione: numero di pacchetti e punti di distribuzione assegnati a ogni gruppo di punti di distribuzione  
+- Informazioni sui gruppi di punti di distribuzione: numero di pacchetti e punti di distribuzione assegnati a ogni gruppo di punti di distribuzione  
 
 
 ### <a name="endpoint-protection"></a>Endpoint Protection  
 
-   - Criteri avanzati di Microsoft Defender Advanced Threat Protection (ATP) (noto in precedenza come Windows Defender ATP): numero dei criteri e avvenuta distribuzione o meno dei criteri.
+- Criteri avanzati di Microsoft Defender Advanced Threat Protection (ATP) (noto in precedenza come Windows Defender ATP): numero dei criteri e avvenuta distribuzione o meno dei criteri.
 
-   - Numero di avvisi configurati per la funzionalità Endpoint Protection  
+- Numero di avvisi configurati per la funzionalità Endpoint Protection  
 
-   - Numero di raccolte selezionate per la visualizzazione nel dashboard di Endpoint Protection  
+- Numero di raccolte selezionate per la visualizzazione nel dashboard di Endpoint Protection  
 
-   - Numero di criteri di Windows Defender Exploit Guard, distribuzioni e client di destinazione
+- Numero di criteri di Windows Defender Exploit Guard, distribuzioni e client di destinazione
 
-   - Errori di distribuzione di Endpoint Protection: numero di codici di errore di distribuzione dei criteri di Endpoint Protection  
+- Errori di distribuzione di Endpoint Protection: numero di codici di errore di distribuzione dei criteri di Endpoint Protection  
 
-   - Utilizzo dei criteri antimalware di Endpoint Protection e di Windows Firewall (numero di criteri univoci assegnati al gruppo)<br /><br /> Non sono incluse informazioni sulle impostazioni contenute nei criteri.  
+- Utilizzo dei criteri antimalware di Endpoint Protection e di Windows Firewall (numero di criteri univoci assegnati al gruppo)<br /><br /> Non sono incluse informazioni sulle impostazioni contenute nei criteri.  
 
 
 ### <a name="migration"></a>Migrazione  
 
-  - Numero di oggetti migrati (uso della procedura guidata di migrazione)
+- Numero di oggetti migrati (uso della procedura guidata di migrazione)
 
 
 ### <a name="mobile-device-management-mdm"></a>Gestione di dispositivi mobili (MDM)  
 
-   - Numero di azioni eseguite su dispositivi mobili: comandi di blocco, reimpostazione PIN, cancellazione, ritiro e sincronizzazione immediata
+- Numero di azioni eseguite su dispositivi mobili: comandi di blocco, reimpostazione PIN, cancellazione, ritiro e sincronizzazione immediata
 
-   - Numero di criteri per dispositivi mobili  
+- Numero di criteri per dispositivi mobili  
 
-   - Numero di dispositivi mobili gestiti da Configuration Manager e Microsoft Intune e modalità di registrazione (in blocco o basata sull'utente)  
+- Numero di dispositivi mobili gestiti da Configuration Manager e Microsoft Intune e modalità di registrazione (in blocco o basata sull'utente)  
 
-   - Numero di utenti con più dispositivi mobili registrati  
+- Numero di utenti con più dispositivi mobili registrati  
 
-   - Pianificazione del polling dei dispositivi mobili e statistiche della durata della registrazione dei dispositivi mobili  
+- Pianificazione del polling dei dispositivi mobili e statistiche della durata della registrazione dei dispositivi mobili  
 
 
 ### <a name="microsoft-intune-troubleshooting"></a>Risoluzione dei problemi di Microsoft Intune  
 
-   - Numero e dimensioni dei messaggi relativi ad azioni sui dispositivi (cancellazione, ritiro dati, blocco), telemetria e dati replicati in Microsoft Intune
+- Numero e dimensioni dei messaggi relativi ad azioni sui dispositivi (cancellazione, ritiro dati, blocco), telemetria e dati replicati in Microsoft Intune
 
-   - Numero e dimensioni dei messaggi relativi a stato, inventario, RDR, DDR, UDX, stato tenant, POL, LOG, Cert, CRP, risincronizzazione, CFD, RDO, BEX, ISM e conformità scaricati da Microsoft Intune
+- Numero e dimensioni dei messaggi relativi a stato, inventario, RDR, DDR, UDX, stato tenant, POL, LOG, Cert, CRP, risincronizzazione, CFD, RDO, BEX, ISM e conformità scaricati da Microsoft Intune
 
-   - Statistiche della sincronizzazione degli utenti completa e differenziale per Microsoft Intune
+- Statistiche della sincronizzazione degli utenti completa e differenziale per Microsoft Intune
 
 
 ### <a name="on-premises-mobile-device-management-mdm"></a>Gestione dei dispositivi mobili in locale (MDM)  
 
-   - Numero dei pacchetti e dei profili di registrazione in blocco di Windows 10  
+- Numero dei pacchetti e dei profili di registrazione in blocco di Windows 10  
 
-   - Statistiche di esito positivo o negativo della distribuzione per distribuzioni di applicazioni MDM in locale  
+- Statistiche di esito positivo o negativo della distribuzione per distribuzioni di applicazioni MDM in locale  
 
 
 ### <a name="os-deployment"></a>Distribuzione del sistema operativo  
 
-   - Numero di immagini di avvio, driver, pacchetti di driver, punti di distribuzione abilitati per il multicast, punti di distribuzione che supportano PXE e sequenze di attività  
+- Numero di immagini di avvio, driver, pacchetti di driver, punti di distribuzione abilitati per il multicast, punti di distribuzione che supportano PXE e sequenze di attività  
 
-   - Numero di immagini di avvio per versione client di Configuration Manager
+- Numero di immagini di avvio per versione client di Configuration Manager
 
-   - Numero di immagini di avvio per versione di Windows PE
+- Numero di immagini di avvio per versione di Windows PE
 
-   - Numero di criteri di aggiornamento dell'edizione
+- Numero di criteri di aggiornamento dell'edizione
 
-   - Numero di identificatori hardware esclusi da PXE
+- Numero di identificatori hardware esclusi da PXE
 
-   - Numero di distribuzioni del sistema operativo in base alla versione del sistema operativo
+- Numero di distribuzioni del sistema operativo in base alla versione del sistema operativo
 
-   - Numero di aggiornamenti del sistema operativo nel tempo
+- Numero di aggiornamenti del sistema operativo nel tempo
 
-   - Numero di distribuzioni di sequenze di attività che usano l'opzione di pre-download del contenuto
+- Numero di distribuzioni di sequenze di attività che usano l'opzione di pre-download del contenuto
 
-   - Numero uilizzi del passaggio della sequenza di attività
+- Numero uilizzi del passaggio della sequenza di attività
 
-   - Versione di Windows ADK installata
+- Versione di Windows ADK installata
 
 
 ### <a name="site-updates"></a>Aggiornamenti del sito  
 
-   - Versioni degli hotfix di Configuraton Manager installati
+- Versioni degli hotfix di Configuraton Manager installati
 
 
 ### <a name="software-updates"></a>Aggiornamenti software  
 
-   - Valori differenziali di disponibilità e scadenza usati nelle regole di distribuzione automatica  
+- Valori differenziali di disponibilità e scadenza usati nelle regole di distribuzione automatica  
 
-   - Numero medio e massimo di assegnazioni per ogni aggiornamento  
+- Numero medio e massimo di assegnazioni per ogni aggiornamento  
 
-   - Pianificazioni di valutazione e analisi per l'aggiornamento dei client  
+- Pianificazioni di valutazione e analisi per l'aggiornamento dei client  
 
-   - Classificazioni sincronizzate dal punto di aggiornamento software
+- Classificazioni sincronizzate dal punto di aggiornamento software
 
-   - Statistiche relative all'applicazione di patch al cluster  
+- Statistiche relative all'applicazione di patch al cluster  
 
-   - Configurazione degli aggiornamenti rapidi di Windows 10
+- Configurazione degli aggiornamenti rapidi di Windows 10
 
-   - Configurazioni usate per i piani di manutenzione attivi di Windows 10  
+- Configurazioni usate per i piani di manutenzione attivi di Windows 10  
 
-   - Numero di aggiornamenti di Office 365 distribuiti  
+- Numero di aggiornamenti di Office 365 distribuiti  
 
-   - Numero di driver di Microsoft Surface sincronizzati
+- Numero di driver di Microsoft Surface sincronizzati
 
-   - Numero di gruppi e assegnazioni di aggiornamento  
+- Numero di gruppi e assegnazioni di aggiornamento  
 
-   - Numero di pacchetti di aggiornamento e numero massimo/minimo/medio dei punti di distribuzione assegnati con pacchetti  
+- Numero di pacchetti di aggiornamento e numero massimo/minimo/medio dei punti di distribuzione assegnati con pacchetti  
 
-   - Numero di aggiornamenti creati e distribuiti con System Center Update Publisher  
+- Numero di aggiornamenti creati e distribuiti con System Center Update Publisher  
 
-   - Numero di criteri di Windows Update per le aziende creati e distribuiti
+- Numero di criteri di Windows Update per le aziende creati e distribuiti
 
-   - ***[Nuovo]*** Statistiche aggregate delle configurazioni di Windows Update per le aziende
+- ***[Nuovo]*** Statistiche aggregate delle configurazioni di Windows Update per le aziende
 
-   - Numero di regole di distribuzione automatica associate alla sincronizzazione  
+- Numero di regole di distribuzione automatica associate alla sincronizzazione  
 
-   - Numero di regole di distribuzione automatica che aggiungono aggiornamenti o ne creano di nuovi in un gruppo esistente  
+- Numero di regole di distribuzione automatica che aggiungono aggiornamenti o ne creano di nuovi in un gruppo esistente  
 
-   - Numero di regole di distribuzione automatica con più distribuzioni  
+- Numero di regole di distribuzione automatica con più distribuzioni  
 
-   - Numero di gruppi di aggiornamento e numero minimo/massimo/medio di aggiornamenti per ogni gruppo  
+- Numero di gruppi di aggiornamento e numero minimo/massimo/medio di aggiornamenti per ogni gruppo  
 
-   - Numero di aggiornamenti e percentuale di aggiornamenti distribuiti, scaduti, sostituiti, scaricati e contenenti EULA  
+- Numero di aggiornamenti e percentuale di aggiornamenti distribuiti, scaduti, sostituiti, scaricati e contenenti EULA  
 
-   - Statistiche di bilanciamento del carico del punto di aggiornamento software
+- Statistiche di bilanciamento del carico del punto di aggiornamento software
 
-   - Pianificazione della sincronizzazione dei punti di aggiornamento software  
+- Pianificazione della sincronizzazione dei punti di aggiornamento software  
 
-   - Numero totale/medio di raccolte con distribuzioni di aggiornamento del software e numero massimo/medio di aggiornamenti distribuiti  
+- Numero totale/medio di raccolte con distribuzioni di aggiornamento del software e numero massimo/medio di aggiornamenti distribuiti  
 
-   - Codici di errore e numero di computer per l'analisi per l'aggiornamento  
+- Codici di errore e numero di computer per l'analisi per l'aggiornamento  
 
-   - Versioni del contenuto del dashboard di Windows 10  
+- Versioni del contenuto del dashboard di Windows 10  
 
 
 ### <a name="sqlperformance-data"></a>Dati SQL/prestazioni  
 
-   - Configurazione e durata del riepilogo del sito
+- Configurazione e durata del riepilogo del sito
 
-   - Numero delle tabelle di database più grandi  
+- Numero delle tabelle di database più grandi  
 
-   - Statistiche operative di individuazione (numero di oggetti trovati)
+- Statistiche operative di individuazione (numero di oggetti trovati)
 
-   - Tipi di individuazione, abilitazione e pianificazione (completa, incrementale)
+- Tipi di individuazione, abilitazione e pianificazione (completa, incrementale)
 
-   - Stato d'integrità, utilizzo e informazioni sulla replica di SQL AlwaysOn
+- Stato d'integrità, utilizzo e informazioni sulla replica di SQL AlwaysOn
 
-   - Problemi di prestazioni del rilevamento modifiche di SQL, periodo di memorizzazione e stato di pulizia automatica
+- Problemi di prestazioni del rilevamento modifiche di SQL, periodo di memorizzazione e stato di pulizia automatica
 
-   - Periodo di memorizzazione del rilevamento modifiche di SQL
+- Periodo di memorizzazione del rilevamento modifiche di SQL
 
-   - Statistiche sullo stato e sulle prestazioni relative ai messaggi di stato, inclusi i tipi di messaggio più costosi e più comuni
+- Statistiche sullo stato e sulle prestazioni relative ai messaggi di stato, inclusi i tipi di messaggio più costosi e più comuni
 
 
 ### <a name="miscellaneous"></a>Varie  
 
-   - Configurazione del punto di servizio del data warehouse, inclusi il tempo medio e la pianificazione della sincronizzazione
+- Configurazione del punto di servizio del data warehouse, inclusi il tempo medio e la pianificazione della sincronizzazione
 
-   - Numero di script e statistiche di esecuzione
+- Numero di script e statistiche di esecuzione
 
-   - Numero di siti con riattivazione LAN (WOL)
+- Numero di siti con riattivazione LAN (WOL)
 
-   - Statistiche sull'utilizzo e sulle prestazioni dalla funzionalità di creazione di report
-  
-   - ***[Nuovo]*** Statistiche di utilizzo delle distribuzioni in più fasi
+- Statistiche sull'utilizzo e sulle prestazioni dalla funzionalità di creazione di report
+
+- ***[Nuovo]*** Statistiche di utilizzo delle distribuzioni in più fasi
 
 
 

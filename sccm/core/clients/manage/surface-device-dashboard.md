@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 7397fc17-3ae8-4525-8386-aea8a9cffa06
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81ab388784e5fba380eab36db5e6a023199d41e0
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: e131f8c76b03c36557f3f1161729d523e4e7f946
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56137001"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339849"
 ---
 # <a name="surface-device-dashboard-in-system-center-configuration-manager"></a>Dashboard dei dispositivi Surface in System Center Configuration Manager
 
@@ -52,16 +52,17 @@ Il dashboard dei dispositivi Surface visualizza tre grafici per l'ambiente in us
       ![Elenco dei dispositivi per un modello di dispositivo Surface](media/Surface-Model-Device-List.PNG)
 
 - **Prime cinque versioni di firmware**: visualizza un grafico con i primi cinque modelli di firmware nell'ambiente in uso. 
-  - Se si passa il mouse su una sezione del grafico, viene visualizzato il numero dei dispositivi Surface con la versione del firmware selezionata. A partire da Configuration Manager versione 1806, quando si fa clic sulla sezione di un grafico, viene visualizzato un elenco di dispositivi pertinenti. <!--1358654--> ![Elenco dei dispositivi per un modello di dispositivo Surface](media/Surface-Firmware-Hover.PNG)
+  - Se si passa il mouse su una sezione del grafico, viene visualizzato il numero dei dispositivi Surface con la versione del firmware selezionata. A partire da Configuration Manager versione 1806, quando si fa clic sulla sezione di un grafico, viene visualizzato un elenco di dispositivi pertinenti. <!--1358654-->
+     ![Elenco dei dispositivi per un modello di dispositivo Surface](media/Surface-Firmware-Hover.PNG)
 
 
 ## <a name="more-information"></a>Altre informazioni
 
 Per altre informazioni sui dispositivi Surface, vedere:
- - Il sito Web [Surface]( https://go.microsoft.com/fwlink/?linkid=861998).
-    
+- Il sito Web [Surface]( https://go.microsoft.com/fwlink/?linkid=861998).
+
 Per altre informazioni sulla distribuzione degli aggiornamenti del firmware di Surface in Configuration Manager, vedere:
- - [Come gestire gli aggiornamenti dei driver di Surface in Configuration Manager]( https://support.microsoft.com/help/4098906).
+- [Come gestire gli aggiornamenti dei driver di Surface in Configuration Manager]( https://support.microsoft.com/help/4098906).
 
 
 

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9246ea46787b1db466b8aca5d8a602617c80e26a
-ms.sourcegitcommit: ab9f2a7fb7ea3a0c65808fce2975ab25a670281f
+ms.openlocfilehash: 192206c7ffcb2d958935cbe66f79400ee422a774
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65612522"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339505"
 ---
 # <a name="support-center-for-configuration-manager"></a>Support Center per Configuration Manager
 
@@ -33,11 +33,11 @@ Scopo di Support Center è ridurre problematiche e difficoltà che si riscontran
 
 Support Center consente di semplificare la procedura e di eseguire le attività seguenti:
 
- - Creare un bundle di risoluzione dei problemi (file con estensione zip) contenente i file di log del client di Configuration Manager. In questo modo sarà necessario inviare un solo file al personale del supporto.  
+- Creare un bundle di risoluzione dei problemi (file con estensione zip) contenente i file di log del client di Configuration Manager. In questo modo sarà necessario inviare un solo file al personale del supporto.  
 
- - Visualizzare file di log, certificati, impostazioni del Registro di sistema, dump del debug, criteri client di Configuration Manager.  
+- Visualizzare file di log, certificati, impostazioni del Registro di sistema, dump del debug, criteri client di Configuration Manager.  
 
- - Usare funzionalità di diagnostica in tempo reale dell'inventario (sostituisce Client Spy), dei criteri (sostituisce Policy Spy) e della cache del client.  
+- Usare funzionalità di diagnostica in tempo reale dell'inventario (sostituisce Client Spy), dei criteri (sostituisce Policy Spy) e della cache del client.  
 
 
 ### <a name="support-center-viewer"></a>Support Center Viewer

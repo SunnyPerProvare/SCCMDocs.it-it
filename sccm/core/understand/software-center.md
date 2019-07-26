@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.assetid: 9e68de6e-2b33-442b-b674-a382728d9529
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c32f3f24f083537396c64c8f8426f8b6e6d6ee7a
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: 1473db987fc28f9b5a4f487599ad03690b203d23
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67252013"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340152"
 ---
 # <a name="software-center-user-guide"></a>Manuale dell'utente di Software Center
 
@@ -47,9 +47,9 @@ Fare clic sulla scheda **Applicazioni** per trovare e installare le applicazioni
 - **Filtri**: l'amministratore IT può creare categorie di applicazioni. Se disponibile, fare clic sull'elenco a discesa per filtrare la visualizzazione e visualizzare solo le applicazioni di una categoria specifica. Selezionare **Tutte** per visualizzare tutte le applicazioni.
 - **Ordina per**: consente di riordinare l'elenco delle applicazioni. Per impostazione predefinita questo elenco è ordinato per **Più recente**. Le applicazioni rese disponibili di recente sono elencate con un tag **Nuovo** visibile per 7 giorni.
 - **Cerca**: l'elemento cercato non è stato trovato? Immettere parole chiave nella casella di ricerca per trovarlo.
--  **Alternare la visualizzazione**: fare clic sulle icone per alternare tra la visualizzazione elenco e la visualizzazione affiancata. Per impostazione predefinita l'elenco delle applicazioni viene visualizzato sotto forma di elementi grafici affiancati. 
-    - Visualizzazione affiancata: l'amministratore IT può personalizzare le icone. Sotto ogni riquadro vengono visualizzati il nome dell'applicazione, l'editore e la versione. 
-    - Visualizzazione elenco: contiene l'icona dell'applicazione, il nome, l'editore, la versione e lo stato. 
+- **Alternare la visualizzazione**: fare clic sulle icone per alternare tra la visualizzazione elenco e la visualizzazione affiancata. Per impostazione predefinita l'elenco delle applicazioni viene visualizzato sotto forma di elementi grafici affiancati. 
+  - Visualizzazione affiancata: l'amministratore IT può personalizzare le icone. Sotto ogni riquadro vengono visualizzati il nome dell'applicazione, l'editore e la versione. 
+  - Visualizzazione elenco: contiene l'icona dell'applicazione, il nome, l'editore, la versione e lo stato. 
 
 
 ### <a name="install-multiple-applications"></a>Installare più applicazioni 
@@ -119,13 +119,13 @@ Fare clic sulla scheda **Opzioni** per visualizzare le impostazioni aggiuntive p
 
 Indicare l'orario di lavoro generico. L'amministratore IT può pianificare installazioni di software fuori dall'orario lavorativo. Prevedere almeno quattro ore al giorno per le attività di manutenzione del sistema. L'amministratore IT può installare comunque applicazioni e aggiornamenti critici durante l'orario di ufficio.
 
-   - Fare clic sugli elenchi a discesa per selezionare le ore in cui si inizia e si smette di usare il computer. Per impostazione predefinita questi valori sono compresi tra **5.00** e **22.00**.
+- Fare clic sugli elenchi a discesa per selezionare le ore in cui si inizia e si smette di usare il computer. Per impostazione predefinita questi valori sono compresi tra **5.00** e **22.00**.
 
-   - Selezionare la casella di controllo accanto ai giorni della settimana nei quali in genere viene usato il computer. Per impostazione predefinita Software Center seleziona solo i giorni lavorativi.  
+- Selezionare la casella di controllo accanto ai giorni della settimana nei quali in genere viene usato il computer. Per impostazione predefinita Software Center seleziona solo i giorni lavorativi.  
 
 Specificare se si usa regolarmente questo computer per lavorare. L'amministratore potrebbe installare automaticamente applicazioni o rendere disponibili altre applicazioni ai computer primari. <!--3485366-->
 
-   - Selezionare **Uso regolarmente il computer per lavorare** se il computer in uso è un computer primario.
+- Selezionare **Uso regolarmente il computer per lavorare** se il computer in uso è un computer primario.
 
 
 ### <a name="power-management"></a>Risparmio energia

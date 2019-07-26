@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f996aa1457fc8b49f914d0f0932836b5fcbd90b9
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: f0c3c77175f739ff45364c3c014fee6f11fd662c
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676215"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340130"
 ---
 # <a name="install-and-upgrade-with-the-version-1606-baseline-media-for-system-center-configuration-manager"></a>Eseguire installazioni e aggiornamenti con il supporto di base della versione 1606 per System Center Configuration Manager
 
@@ -82,9 +82,9 @@ Quando si usa uno script automatico per installare un ramo con licenza, è neces
 
 Ad esempio, per installare una versione con licenza di Current Branch si usa:
 
-  **Nome chiave: SABranchOptions**
-   - **SAActive = 1**
-   - **CurrentBranch = 1**
+**Nome chiave: SABranchOptions**
+- **SAActive = 1**
+- **CurrentBranch = 1**
 
 
 > [!IMPORTANT]  

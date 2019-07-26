@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42c1fc69d237b6209b49e45e1b185483b1c55163
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 79d805677b6a2572cb659ad8923717922c82f5d2
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676319"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340230"
 ---
 # <a name="support-center-user-interface-reference"></a>Informazioni di riferimento sull'interfaccia utente del Supporto tecnico
 
@@ -240,42 +240,42 @@ Le voci seguenti di questo menu richiedono un'azione del client relativa al cont
 #### <a name="content-view"></a>Visualizzazione di contenuto
 Visualizza le applicazioni, i pacchetti e gli aggiornamenti caricati nel client. Se si seleziona un'applicazione, un pacchetto o un aggiornamento, vengono visualizzate informazioni dettagliate sul contenuto. Per alcune applicazioni, è anche possibile eseguire le azioni seguenti:  
 
- - **Aggiornare**: aggiorna la visualizzazione dei dettagli  
+- **Aggiornare**: aggiorna la visualizzazione dei dettagli  
 
- - **Verify or Download** (Verifica o scarica): consente di verificare se un'applicazione è disponibile per il download  
+- **Verify or Download** (Verifica o scarica): consente di verificare se un'applicazione è disponibile per il download  
 
- - **Install** (Installa): installa l'applicazione  
+- **Install** (Installa): installa l'applicazione  
 
- - **Uninstall** (Disinstalla): Disinstallare l'applicazione  
+- **Uninstall** (Disinstalla): Disinstallare l'applicazione  
 
 #### <a name="cache-view"></a>Visualizzazione Cache
 Visualizza la configurazione della cache del client e i dettagli sul contenuto della cache. Quando si connette il Supporto tecnico a un client locale, è anche possibile eseguire le azioni seguenti:  
 
- - Per cambiare il percorso della cache, selezionare **Change** (Modifica) accanto al campo **Cache location** (Percorso cache).  
+- Per cambiare il percorso della cache, selezionare **Change** (Modifica) accanto al campo **Cache location** (Percorso cache).  
 
- - Per regolare le dimensioni della cache, selezionare **Change** (Modifica) accanto al campo **Cache size** (Dimensioni cache).  
+- Per regolare le dimensioni della cache, selezionare **Change** (Modifica) accanto al campo **Cache size** (Dimensioni cache).  
 
- - Per cancellare la cache del client, selezionare **Clear** (Cancella) accanto al campo **Cache in use** (Cache in uso).  
+- Per cancellare la cache del client, selezionare **Clear** (Cancella) accanto al campo **Cache in use** (Cache in uso).  
 
 Questa visualizzazione illustra le proprietà seguenti:  
 
- - **Location** (Percorso): percorso di ogni cartella della cache. Selezionare il collegamento per aprire la cartella in Esplora risorse.   
- - **Content ID** (ID contenuto)  
- - **Cache ID** (ID cache)  
- - **Size**  
- - **Last Referenced** (Ultimo riferimento): questa proprietà corrisponde alla data in cui il client ha letto o scritto questo elemento nella cache.  
+- **Location** (Percorso): percorso di ogni cartella della cache. Selezionare il collegamento per aprire la cartella in Esplora risorse.   
+- **Content ID** (ID contenuto)  
+- **Cache ID** (ID cache)  
+- **Size**  
+- **Last Referenced** (Ultimo riferimento): questa proprietà corrisponde alla data in cui il client ha letto o scritto questo elemento nella cache.  
 
 #### <a name="monitoring-view"></a>Visualizzazione Monitoring (Monitoraggio)
 Selezionare **Monitoring** (Monitoraggio) per visualizzare lo stato attivo delle distribuzioni di aggiornamenti software e di applicazioni. La visualizzazione mostra i messaggi di stato generati dai messaggi WMI degli eventi di aggiornamento software e applicazioni.
 
 Per ogni evento, questa visualizzazione illustra le proprietà seguenti:  
 
- - **Time** (Ora): ora in cui il client ha generato l'evento  
- - **Topic type** (Tipo di argomento): il tipo del messaggio di stato  
- - **Topic ID** (ID argomento): ID del messaggio di stato, usato per eseguire il mapping agli eventi nei file di log  
- - **Topic ID type** (Tipo ID argomento): sottotipo del messaggio di stato  
- - **State ID** (ID stato): risultati dell'azione monitorata  
- - **Details** (Dettagli) e **Event data** (Dati evento): altre informazioni nei messaggi di stato illustrati nella visualizzazione. I dettagli sullo stato possono anche essere vuoti.  
+- **Time** (Ora): ora in cui il client ha generato l'evento  
+- **Topic type** (Tipo di argomento): il tipo del messaggio di stato  
+- **Topic ID** (ID argomento): ID del messaggio di stato, usato per eseguire il mapping agli eventi nei file di log  
+- **Topic ID type** (Tipo ID argomento): sottotipo del messaggio di stato  
+- **State ID** (ID stato): risultati dell'azione monitorata  
+- **Details** (Dettagli) e **Event data** (Dati evento): altre informazioni nei messaggi di stato illustrati nella visualizzazione. I dettagli sullo stato possono anche essere vuoti.  
 
 
 
@@ -293,23 +293,23 @@ Il Supporto tecnico carica o aggiorna l'inventario del client per la visualizzaz
 
 Le voci seguenti di questo menu richiedono un'azione del client correlata all'inventario:  
 
- - **Discovery data collection cycle (heartbeat)** (Ciclo raccolta dati di individuazione (heartbeat)): attiva l'attività client usata per la raccolta delle informazioni di individuazione dei dispositivi  
+- **Discovery data collection cycle (heartbeat)** (Ciclo raccolta dati di individuazione (heartbeat)): attiva l'attività client usata per la raccolta delle informazioni di individuazione dei dispositivi  
 
- - **File collection cycle** (Ciclo raccolta file): attiva l'attività client usata per la raccolta dei file locali  
+- **File collection cycle** (Ciclo raccolta file): attiva l'attività client usata per la raccolta dei file locali  
 
- - **Hardware inventory cycle** (Ciclo inventario hardware): attiva l'attività client usata per la raccolta dei dati di inventario hardware  
+- **Hardware inventory cycle** (Ciclo inventario hardware): attiva l'attività client usata per la raccolta dei dati di inventario hardware  
 
- - **IDMIF collection cycle** (Ciclo raccolta IDMIF): attiva l'attività client usata per la raccolta dei dati IDMIF  
+- **IDMIF collection cycle** (Ciclo raccolta IDMIF): attiva l'attività client usata per la raccolta dei dati IDMIF  
 
- - **Software inventory cycle** (Ciclo inventario software): attiva l'attività client usata per la raccolta dei dati di inventario software  
+- **Software inventory cycle** (Ciclo inventario software): attiva l'attività client usata per la raccolta dei dati di inventario software  
 
- - **Software metering report cycle** (Ciclo report misurazione del software): attiva l'attività client usata per creare un report di controllo del software e inviarlo al punto di gestione. È possibile tenere traccia dello stato dell'attività in **SWMTRReportGen.log**.
+- **Software metering report cycle** (Ciclo report misurazione del software): attiva l'attività client usata per creare un report di controllo del software e inviarlo al punto di gestione. È possibile tenere traccia dello stato dell'attività in **SWMTRReportGen.log**.
 
- - **Send unsent state messages in queue** (Invia messaggi di stato non inviati in coda): attiva l'attività client per scaricare la coda dei messaggi di stato.
+- **Send unsent state messages in queue** (Invia messaggi di stato non inviati in coda): attiva l'attività client per scaricare la coda dei messaggi di stato.
 
- - **Advanced**  
-     - **Hardware inventory cycle (full resynchronization)** (Ciclo inventario hardware (risincronizzazione completa))  
-     - **Software inventory cycle (full resynchronization)** (Ciclo inventario software (risincronizzazione completa))  
+- **Advanced**  
+    - **Hardware inventory cycle (full resynchronization)** (Ciclo inventario hardware (risincronizzazione completa))  
+    - **Software inventory cycle (full resynchronization)** (Ciclo inventario software (risincronizzazione completa))  
 
 
 #### <a name="views"></a>Visualizzazioni
@@ -469,9 +469,9 @@ Dopo aver trovato due o più corrispondenze per la stringa cercata, questa opzio
 
 #### <a name="error-lookup"></a>Error lookup
 Immettere un codice di errore per cercarlo nei file di log attualmente aperti. Usare i formati di codice di errore seguenti:
- - **Intero a 32 bit (con segno)** : ad esempio, `-2147024891`  
- - **Intero a 32 bit (senza segno)** : ad esempio, `2147942405`  
- - **Esadecimale a 32 bit**: ad esempio, `0x80070005`  
+- **Intero a 32 bit (con segno)** : ad esempio, `-2147024891`  
+- **Intero a 32 bit (senza segno)** : ad esempio, `2147942405`  
+- **Esadecimale a 32 bit**: ad esempio, `0x80070005`  
 
 #### <a name="decode-certificate"></a>Decode certificate
 Nella finestra di dialogo **Decode certificate** (Decodifica certificato), incollare il valore del certificato serializzato per qualsiasi certificato presente nel client. Trovare questo valore nel Registro di sistema, nei file di log o in WMI. Selezionare **Process** (Elabora) per visualizzare informazioni generali e dettagli sul certificato. Queste informazioni includono il percorso di certificazione. Selezionare **Export** (Esporta) per esportare il certificato come file con estensione **cer**.
@@ -517,15 +517,15 @@ Nella finestra di dialogo Advanced filters (Filtri avanzati) è possibile creare
 
 ### <a name="manage-filter-sets"></a>Gestire i set di filtri
 
-  - Per modificare un filtro, selezionare il filtro e quindi selezionare **Edit** (Modifica).  
+- Per modificare un filtro, selezionare il filtro e quindi selezionare **Edit** (Modifica).  
 
-  - Per eliminare un filtro, selezionare il filtro e quindi selezionare **Delete** (Elimina).  
+- Per eliminare un filtro, selezionare il filtro e quindi selezionare **Delete** (Elimina).  
 
-  - Per cancellare tutti i filtri, selezionare **Clear** (Cancella).  
+- Per cancellare tutti i filtri, selezionare **Clear** (Cancella).  
 
-  - Per salvare il set di filtri corrente, selezionare **Save filters** (Salva filtri) e quindi salvare il set di filtri come file con estensione **filterset**.  
+- Per salvare il set di filtri corrente, selezionare **Save filters** (Salva filtri) e quindi salvare il set di filtri come file con estensione **filterset**.  
 
-  - Per caricare un set di filtri salvato, selezionare **Load filters** (Carica filtri) e quindi passare a un file con estensione **filterset** salvato in precedenza.  
+- Per caricare un set di filtri salvato, selezionare **Load filters** (Carica filtri) e quindi passare a un file con estensione **filterset** salvato in precedenza.  
 
 
 

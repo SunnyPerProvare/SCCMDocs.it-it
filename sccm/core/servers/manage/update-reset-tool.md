@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec78a903bd3fa897a240ea04ca7f14349f9a0acd
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: d6366e4a92be6aea0441adf6c81c8c8416b05f33
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500961"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68337987"
 ---
 # <a name="update-reset-tool"></a>Strumento di reimpostazione dell'aggiornamento
 
@@ -33,9 +33,9 @@ Lo strumento viene eseguito nell'aggiornamento specificato. Per impostazione pre
 
 ### <a name="prerequisites"></a>Prerequisiti
 L'account usato per eseguire lo strumento richiede le autorizzazioni seguenti:
--   **Lettura** e **Scrittura** per il database del sito di amministrazione centrale e per ogni sito primario della gerarchia. Per impostare queste autorizzazioni, aggiungere l'account utente come membro dei [ruoli predefiniti del database ](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles)**db_datawriter** e **db_datareader** nel database di Configuration Manager di ogni sito. Lo strumento non interagisce con i siti secondari.
--   **Amministratore locale** nel sito di livello superiore della gerarchia.
--   **Amministratore locale** nel computer che ospita il punto di connessione del servizio.
+- **Lettura** e **Scrittura** per il database del sito di amministrazione centrale e per ogni sito primario della gerarchia. Per impostare queste autorizzazioni, aggiungere l'account utente come membro dei [ruoli predefiniti del database ](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles)**db_datawriter** e **db_datareader** nel database di Configuration Manager di ogni sito. Lo strumento non interagisce con i siti secondari.
+- **Amministratore locale** nel sito di livello superiore della gerarchia.
+- **Amministratore locale** nel computer che ospita il punto di connessione del servizio.
 
 È necessario il GUID dell'aggiornamento da reimpostare. Per ottenere il GUID:
   1.   Nella console passare ad **Amministrazione** > **Aggiornamenti e manutenzione**.
@@ -49,17 +49,17 @@ L'account usato per eseguire lo strumento richiede le autorizzazioni seguenti:
 Lo strumento deve essere eseguito nel sito di livello superiore della gerarchia.
 
 Quando si esegue lo strumento, usare i parametri della riga di comando per specificare:
-  -   L'istanza di SQL Server nel sito di livello superiore della gerarchia.
-  -   Il nome del database del sito nel sito di livello superiore.
-  -   Il GUID dell'aggiornamento da reimpostare.
+- L'istanza di SQL Server nel sito di livello superiore della gerarchia.
+- Il nome del database del sito nel sito di livello superiore.
+- Il GUID dell'aggiornamento da reimpostare.
 
 In base allo stato dell'aggiornamento, lo strumento identifica i server aggiuntivi a cui deve accedere.   
 
 Se il pacchetto di aggiornamento è nella fase *successiva al download*, lo strumento non esegue la pulizia del pacchetto. In alternativa, è possibile forzare la rimozione di un aggiornamento scaricato correttamente usando il parametro per l'eliminazione forzata. I parametri della riga di comando vengono descritti più avanti in questo argomento.
 
 Dopo l'esecuzione dello strumento:
--   Se un pacchetto è stato eliminato, riavviare il servizio SMS_Executive nel sito di livello superiore. Verificare la disponibilità di aggiornamenti per poter scaricare nuovamente il pacchetto.
--   Se un pacchetto non è stato eliminato, non è necessario intraprendere alcuna azione. L'aggiornamento reinizializza e quindi riavvia la replica o l'installazione.
+- Se un pacchetto è stato eliminato, riavviare il servizio SMS_Executive nel sito di livello superiore. Verificare la disponibilità di aggiornamenti per poter scaricare nuovamente il pacchetto.
+- Se un pacchetto non è stato eliminato, non è necessario intraprendere alcuna azione. L'aggiornamento reinizializza e quindi riavvia la replica o l'installazione.
 
 **Parametri della riga di comando:**  
 
@@ -72,7 +72,7 @@ Dopo l'esecuzione dello strumento:
 |           **-I &lt;Nome istanza SQL Server>**           |                    *Facoltativa* <br> Identifica l'istanza di SQL Server che ospita il database del sito.                     |
 |                       **-FDELETE**                       |                       *Facoltativa* <br> Forza l'eliminazione di un aggiornamento scaricato correttamente.                        |
 
- **Esempi:**  
- In uno scenario tipico, si vuole reimpostare un aggiornamento che presenta problemi di download. L'FQDN di SQL Server è *server1.fabrikam.com*, il database del sito è *CM_XYZ* e il GUID del pacchetto è *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Eseguire: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+**Esempi:**  
+In uno scenario tipico, si vuole reimpostare un aggiornamento che presenta problemi di download. L'FQDN di SQL Server è *server1.fabrikam.com*, il database del sito è *CM_XYZ* e il GUID del pacchetto è *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Eseguire: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
- In uno scenario più complesso, si vuole forzare l'eliminazione del pacchetto di aggiornamento che crea problemi. L'FQDN di SQL Server è *server1.fabrikam.com*, il database del sito è *CM_XYZ* e il GUID del pacchetto è *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Eseguire: ***CMUpdateReset.exe  -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+In uno scenario più complesso, si vuole forzare l'eliminazione del pacchetto di aggiornamento che crea problemi. L'FQDN di SQL Server è *server1.fabrikam.com*, il database del sito è *CM_XYZ* e il GUID del pacchetto è *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Eseguire: ***CMUpdateReset.exe  -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***

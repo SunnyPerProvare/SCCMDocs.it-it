@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f560c5bf4ca9a3b58652bc3c53b83d8cf0479cf
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.openlocfilehash: b468162ce19718b6c0f6f31b961cf61378834597
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551051"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339778"
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-configuration-manager"></a>Come distribuire i client nei computer Windows in Configuration Manager
 
@@ -482,13 +482,13 @@ I client gestiti su Internet devono comunicare con sistemi del sito basati su In
 `CCMSetup.exe /source: D:\Clients /UsePKICert CCMHOSTNAME=server1.contoso.com SMSSIGNCERT=siteserver.cer SMSSITECODE=ABC FSP=server2.contoso.com CCMALWAYSINF=1 CCMFIRSTCERT=1`    
 
 In questo esempio il client viene installato con i comportamenti seguenti:
-  - Usare i file di origine da una cartella nell'unità D.
-  - Usare un certificato PKI del client.
-  - Selezionare il certificato con il periodo di validità più esteso.
-  - Gestione client Internet esclusiva.
-  - Assegnare il client per usare il punto di gestione basato su Internet denominato SERVER1.
-  - Assegnare il punto di stato di fallback basato su Internet nel dominio contoso.com.
-  - Assegnare il client al sito ABC.  
+- Usare i file di origine da una cartella nell'unità D.
+- Usare un certificato PKI del client.
+- Selezionare il certificato con il periodo di validità più esteso.
+- Gestione client Internet esclusiva.
+- Assegnare il client per usare il punto di gestione basato su Internet denominato SERVER1.
+- Assegnare il punto di stato di fallback basato su Internet nel dominio contoso.com.
+- Assegnare il client al sito ABC.  
 
 
 ###  <a name="BKMK_ConfigureIBCM_MP"></a> Configurare i client per la gestione client basata su Internet dopo l'installazione  

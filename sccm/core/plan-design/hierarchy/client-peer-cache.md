@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aadb544180d7662f1b60c73db6a35b64f8b7efe7
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 4754077f1a91cd11ce16e17dd3d2ea2f1704ee08
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676840"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68338886"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 
@@ -46,8 +46,8 @@ Il client di Configuration Manager usa la peer cache per distribuire ad altri cl
 
 La peer cache non sostituisce l'uso di altre soluzioni, come Windows BranchCache o Ottimizzazione recapito, ma viene usata insieme ad altre soluzioni. Queste tecnologie offrono maggiori opzioni per estendere le soluzioni tradizionali di distribuzione del contenuto, ad esempio i punti di distribuzione. La peer cache è una soluzione personalizzata che non dipende da BranchCache. Se si non abilita o non si usa BranchCache, la peer cache funziona comunque.  
 
-  > [!Note]  
-  > A partire dalla versione 1802, Windows BranchCache è sempre abilitato nelle distribuzioni. L'impostazione **Consenti ai client di condividere il contenuto con altri client nella stessa subnet** è stata rimossa.<!--SCCMDocs issue 539--> Se il punto di distribuzione lo supporta e se è abilitata nelle impostazioni client, i client usano BranchCache. Per altre informazioni, vedere [Configurare BranchCache](/sccm/core/clients/deploy/about-client-settings#configure-branchcache).<!--SCCMDocs issue 735-->   
+> [!Note]  
+> A partire dalla versione 1802, Windows BranchCache è sempre abilitato nelle distribuzioni. L'impostazione **Consenti ai client di condividere il contenuto con altri client nella stessa subnet** è stata rimossa.<!--SCCMDocs issue 539--> Se il punto di distribuzione lo supporta e se è abilitata nelle impostazioni client, i client usano BranchCache. Per altre informazioni, vedere [Configurare BranchCache](/sccm/core/clients/deploy/about-client-settings#configure-branchcache).<!--SCCMDocs issue 735-->   
 
 
 
@@ -55,11 +55,11 @@ La peer cache non sostituisce l'uso di altre soluzioni, come Windows BranchCache
 
 Per abilitare la peer cache, distribuire le [impostazioni client](#bkmk_settings) in una raccolta. I membri di tale raccolta fungono quindi da origine di peer cache per altri client all'interno dello stesso gruppo di limiti.  
 
- - Un client che agisce come origine contenuto peer invia un elenco di contenuti disponibili che ha memorizzato nella cache al suo punto di gestione.  
+- Un client che agisce come origine contenuto peer invia un elenco di contenuti disponibili che ha memorizzato nella cache al suo punto di gestione.  
 
- - Un altro client nello stesso gruppo di limiti invia una richiesta di percorso del contenuto al punto di gestione. Il server restituisce l'elenco delle possibili origini del contenuto. Questo elenco include tutte le origini di peer cache che includono contenuto e sono online. Include anche i punti di distribuzione e altri percorsi di origine del contenuto in tale gruppo di limiti. Per altre informazioni, vedere [Priorità dell'origine del contenuto](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#content-source-priority).  
+- Un altro client nello stesso gruppo di limiti invia una richiesta di percorso del contenuto al punto di gestione. Il server restituisce l'elenco delle possibili origini del contenuto. Questo elenco include tutte le origini di peer cache che includono contenuto e sono online. Include anche i punti di distribuzione e altri percorsi di origine del contenuto in tale gruppo di limiti. Per altre informazioni, vedere [Priorità dell'origine del contenuto](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#content-source-priority).  
 
- - In genere, il client che cerca il contenuto seleziona un'origine dall'elenco specificato. A questo punto il client tenta di ottenere il contenuto.  
+- In genere, il client che cerca il contenuto seleziona un'origine dall'elenco specificato. A questo punto il client tenta di ottenere il contenuto.  
 
 A partire dalla versione 1806, sono disponibili impostazioni aggiuntive per i gruppi di limiti per offrire maggiore controllo sulla distribuzione di contenuti nell'ambiente. Per altre informazioni, vedere [Opzioni del gruppo di limiti per download peer](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).<!--1356193-->
 
@@ -73,13 +73,13 @@ Scegliere solo i client più adatti come origini di peer cache. Valutare l'idone
 
 Un'origine di peer cache rifiuta le richieste di contenuto quando soddisfa una delle condizioni seguenti nel momento in cui un peer richiede il contenuto:  
 
-  -  È in modalità di batteria in esaurimento  
+- È in modalità di batteria in esaurimento  
 
-  -  Il carico del processore supera l'80%  
+- Il carico del processore supera l'80%  
 
-  -  L'I/O disco ha un valore di *AvgDiskQueueLength* superiore a 10  
+- L'I/O disco ha un valore di *AvgDiskQueueLength* superiore a 10  
 
-  -  Non vi sono più connessioni disponibili al computer  
+- Non vi sono più connessioni disponibili al computer  
 
 > [!Tip]  
 > Configurare queste impostazioni usando la classe WMI del server di configurazione client per la funzionalità dell'origine peer (*SMS_WinPEPeerCacheConfig*) in Configuration Manager SDK.  
@@ -98,14 +98,14 @@ Quando l'origine di peer cache rifiuta una richiesta di contenuto, il client di 
 
 - Non è richiesto alcun [account di accesso alla rete](/sccm/core/plan-design/hierarchy/accounts#network-access-account), ad eccezione dei casi seguenti:  
 
-    - Configurare un account di accesso alla rete nel sito quando un client abilitato per la peer cache esegue una sequenza di attività di Software Center e viene riavviato in un'immagine d'avvio. Quando il dispositivo si trova in Windows PE, usa l'account di accesso alla rete per ottenere il contenuto dall'origine di peer cache.  
+  - Configurare un account di accesso alla rete nel sito quando un client abilitato per la peer cache esegue una sequenza di attività di Software Center e viene riavviato in un'immagine d'avvio. Quando il dispositivo si trova in Windows PE, usa l'account di accesso alla rete per ottenere il contenuto dall'origine di peer cache.  
 
-    - Quando necessario, l'origine di peer cache usa l'account di accesso alla rete per autenticare le richieste di download ricevute dai peer. Per tale scopo, a questo account sono richieste solo le autorizzazioni utente di dominio.  
+  - Quando necessario, l'origine di peer cache usa l'account di accesso alla rete per autenticare le richieste di download ricevute dai peer. Per tale scopo, a questo account sono richieste solo le autorizzazioni utente di dominio.  
 
 - Con la versione 1802 e precedenti, l'ultimo invio dell'individuazione heartbeat del client determina il limite corrente di un'origine di peer cache. Un client che si sposta in un gruppo di limiti diverso potrebbe comunque essere un membro del relativo gruppo di limiti precedente ai fini della peer cache. Di conseguenza, a un client può essere offerta un'origine di peer cache che non si trova nel relativo percorso di rete immediato. Non abilitare i client di roaming come origine di peer cache.<!--SCCMDocs issue 641-->  
 
-    > [!Important]  
-    > A partire dalla versione 1806, Configuration Manager è più efficiente nel determinare se è stato eseguito il roaming di un'origine peer cache in un'altra posizione. Questo comportamento garantisce che il punto di gestione la offra come origine di contenuto ai client nella nuova posizione e non in quella precedente. Se si usa la funzionalità di peer cache con origini di peer cache in roaming, dopo aver aggiornato il sito alla versione 1806, aggiornare anche tutte le origini di peer cache alla versione più recente del client. Il punto di gestione non include tali origini di peer cache nell'elenco di posizioni del contenuto finché non vengono aggiornate almeno alla versione 1806.<!--SCCMDocs issue 850-->  
+  > [!Important]  
+  > A partire dalla versione 1806, Configuration Manager è più efficiente nel determinare se è stato eseguito il roaming di un'origine peer cache in un'altra posizione. Questo comportamento garantisce che il punto di gestione la offra come origine di contenuto ai client nella nuova posizione e non in quella precedente. Se si usa la funzionalità di peer cache con origini di peer cache in roaming, dopo aver aggiornato il sito alla versione 1806, aggiornare anche tutte le origini di peer cache alla versione più recente del client. Il punto di gestione non include tali origini di peer cache nell'elenco di posizioni del contenuto finché non vengono aggiornate almeno alla versione 1806.<!--SCCMDocs issue 850-->  
 
 - Prima di provare a scaricare il contenuto, il punto di gestione verifica che l'origine di peer cache sia online.<!--sms.498675--> La convalida viene eseguita tramite il "canale veloce" per la notifica client, che usa la porta TCP 10123.<!--511673-->  
 
@@ -187,11 +187,11 @@ Per condividere il contenuto, la peer cache si basa sulla cache del client di Co
 - Se necessario, durante una sequenza di attività di distribuzione del sistema operativo usare la variabile **SMSTSPreserveContent** per mantenere il contenuto della cache del client. Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables#SMSTSPreserveContent).  
 
 - Se necessario, durante la creazione del software seguente, usare l'opzione **Rendi permanente il contenuto nella cache client**:  
-    - Applicazioni
-    - Pacchetti
-    - Immagini dei sistemi operativi
-    - Pacchetti di aggiornamento del sistema operativo
-    - Immagini d'avvio
+  - Applicazioni
+  - Pacchetti
+  - Immagini dei sistemi operativi
+  - Pacchetti di aggiornamento del sistema operativo
+  - Immagini d'avvio
 
 
 

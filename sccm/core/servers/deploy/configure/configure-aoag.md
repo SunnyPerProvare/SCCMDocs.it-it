@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac3967059b7cb8b8e4d4a3d32a9c88bfdfd1567b
-ms.sourcegitcommit: 9670e11316c9ec6e5f78cd70c766bbfdf04ea3f9
+ms.openlocfilehash: 84d2c8581eb7ce93ef946a61b8b435815e802b04
+ms.sourcegitcommit: e0438c191df945305625ae91596c9417d16e8510
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67818084"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68491660"
 ---
 # <a name="configure-sql-server-always-on-availability-groups-for-configuration-manager"></a>Configurare gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -157,7 +157,7 @@ Per completare la procedura, l'account usato deve:
 
 4. Nel server che ospiterà il database del sito, che sia la replica primaria o il server in cui è stato ripristinato il database del sito, modificare il modello di backup del database del sito da **Completo** a **Semplice**. Vedere [Visualizzazione o modifica del modello di recupero di un database](/sql/relational-databases/backup-restore/view-or-change-the-recovery-model-of-a-database-sql-server) nella documentazione di SQL Server.  
 
-5. Eseguire **Installazione di Configuration Manager** da **&lt;*cartella di installazione del sito di Configuration Manager>* \BIN\X64\setup.exe**.
+5. Eseguire **Installazione di Configuration Manager** da **\<*cartella di installazione del sito di Configuration Manager>* \BIN\X64\setup.exe**.
 
 6. Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito**, quindi fare clic su **Avanti**.  
 

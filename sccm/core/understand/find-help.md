@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e767d46c81e3942efb44d9d94ba7f66ecd1f5281
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: be9fd76105685a283931bc298e534a6a8f6683d8
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083113"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340272"
 ---
 # <a name="find-help-for-using-configuration-manager"></a>Reperire informazioni sull'uso di Configuration Manager
 
@@ -52,11 +52,11 @@ Per suggerimenti sulle ricerche, l'invio di commenti e suggerimenti e altre info
 
 A partire da Configuration Manager versione 1806, è possibile inviare commenti e suggerimenti sul prodotto direttamente dalla console. Se è necessario allegare log, usare [Hub di Feedback](#BKMK_FeedbackHub). È possibile eseguire le operazioni seguenti: <!--1357542-->
 
-  - **Invia smile**: inviare commenti e suggerimenti su ciò che si è apprezzato.
-  - **Invia faccia imbronciata**: inviare commenti e suggerimenti su ciò che non si è apprezzato.
-  - **Invia un suggerimento**: consente di accedere al [sito Web UserVoice](https://configurationmanager.uservoice.com/) per condividere la propria opinione.
+- **Invia smile**: inviare commenti e suggerimenti su ciò che si è apprezzato.
+- **Invia faccia imbronciata**: inviare commenti e suggerimenti su ciò che non si è apprezzato.
+- **Invia un suggerimento**: consente di accedere al [sito Web UserVoice](https://configurationmanager.uservoice.com/) per condividere la propria opinione.
 
-    ![Inviare commenti e suggerimenti in Configuration Manager 1806](media/1806-send-a-smile.png)
+  ![Inviare commenti e suggerimenti in Configuration Manager 1806](media/1806-send-a-smile.png)
 
 
 ### <a name="send-a-smile"></a>Inviare uno smile
@@ -98,13 +98,13 @@ Quando si usa **Invia un suggerimento**, si viene indirizzati a [UserVoice](http
 ### <a name="information-sent-with-feedback"></a>Informazioni inviate con commenti e suggerimenti
 
 Quando si usano **Invia smile** o **Invia faccia imbronciata**, vengono inviate le informazioni seguenti insieme ai commenti e suggerimenti:
- 
-   - Informazioni sulla build del sistema operativo
-   - ID della gerarchia di Configuration Manager
-   - Informazioni sulla build del prodotto
-   - Informazioni sulla lingua
-   - Identificatore del dispositivo 
-       - HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SQMClient:MachineId
+
+- Informazioni sulla build del sistema operativo
+- ID della gerarchia di Configuration Manager
+- Informazioni sulla build del prodotto
+- Informazioni sulla lingua
+- Identificatore del dispositivo 
+    - HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SQMClient:MachineId
 
 
 
@@ -141,10 +141,10 @@ A partire dalla versione 1902, quando si inviano commenti e suggerimenti tramite
 ##  <a name="BKMK_FeedbackHub"></a> Commenti e suggerimenti sul prodotto per la versione 1802 e precedenti
 
 Per segnalare errori del prodotto potenziali è possibile usare l'[app Hub di Feedback](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app) incorporata in Windows 10. Quando si sceglie **Aggiungi nuovo feedback**, assicurarsi di selezionare la categoria **Enterprise Management** e di scegliere una delle sottocategorie seguenti:
- - Client di Configuration Manager
- - Console di Configuration Manager
- - Distribuzione del sistema operativo di Configuration Manager
- - Server di Configuration Manager
+- Client di Configuration Manager
+- Console di Configuration Manager
+- Distribuzione del sistema operativo di Configuration Manager
+- Server di Configuration Manager
 
 Continuare a usare la [pagina UserVoice](https://configurationmanager.uservoice.com/) per votare nuove idee per le funzionalità di Configuration Manager. Il team di prodotto di Configuration Manager usa i valori di stato di UserVoice seguenti:
 

@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 424710431f9c17642b3a8c6190f8919665f3ac6c
-ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
+ms.openlocfilehash: 7d27baa691c3adca6dd859b79fc92bdd4fe539ab
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67623278"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339902"
 ---
 # <a name="capabilities-in-technical-preview-1806-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1806 per System Center Configuration Manager
 
@@ -258,15 +258,15 @@ Questa versione include i miglioramenti seguenti al gateway di gestione cloud (C
 Quando si installa il client Gestione configurazione su Internet usando un CMG, ora sono richieste meno proprietà della riga di comando. Per altre informazioni su un esempio di questo scenario, vedere la [riga di comando per l'installazione del client Gestione configurazione](/sccm/comanage/how-to-prepare-Win10#install-the-configuration-manager-client) durante la preparazione per la co-gestione. 
 
 Le seguenti proprietà della riga di comando sono richieste in tutti gli scenari:
-  - CCMHOSTNAME  
-  - SMSSITECODE  
+- CCMHOSTNAME  
+- SMSSITECODE  
 
 Le seguenti proprietà sono richieste quando si usa Azure AD per l'autenticazione client anziché i certificati di autenticazione client basati su infrastruttura a chiave pubblica:
-  - AADCLIENTAPPID  
-  - AADRESOURCEURI  
+- AADCLIENTAPPID  
+- AADRESOURCEURI  
 
 La seguente proprietà è obbligatoria se il client effettua il roaming alla rete intranet:
-  - SMSMP  
+- SMSMP  
 
 L'esempio seguente include tutte le proprietà indicate sopra:   
 `ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://contososerver SMSMP=https://mp1.contoso.com`

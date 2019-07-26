@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8bfcb73f359bd8d1b4438ac28b2395b01217e35d
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 0ae4074897359dcebb9b91392bd36893d0276012
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67677735"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339002"
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Come gestire i client in System Center Configuration Manager
 
@@ -152,12 +152,12 @@ A seconda del tipo di dispositivo, alcune di queste opzioni potrebbero non esser
       Per altre informazioni, vedere [Gestione di dispositivi mobili ibridi con System Center Configuration Manager e Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md).  
 
 ##  <a name="BKMK_ManagingClients_DeviceCollectionsNode"></a> Gestire i client dal nodo Raccolte di dispositivi  
-  Molte delle attività disponibili per i dispositivi nel nodo **Dispositivi** sono presenti anche nelle raccolte. La console applica automaticamente l'operazione a tutti i dispositivi idonei della raccolta. Questa azione eseguita in un'intera raccolta genera pacchetti di rete aggiuntivi e aumenta l'utilizzo della CPU nel server del sito.  
+Molte delle attività disponibili per i dispositivi nel nodo **Dispositivi** sono presenti anche nelle raccolte. La console applica automaticamente l'operazione a tutti i dispositivi idonei della raccolta. Questa azione eseguita in un'intera raccolta genera pacchetti di rete aggiuntivi e aumenta l'utilizzo della CPU nel server del sito.  
 
-  Prima di eseguire attività a livello di raccolta, tenere presente quanto segue. Una volta avviata, non è possibile arrestare l'attività dalla console. 
- - Il numero di dispositivi presenti nella raccolta
- - Se i dispositivi usano una connessione di rete con larghezza di banda ridotta
- - Il tempo necessario all'attività per essere completata in tutti i dispositivi
+Prima di eseguire attività a livello di raccolta, tenere presente quanto segue. Una volta avviata, non è possibile arrestare l'attività dalla console. 
+- Il numero di dispositivi presenti nella raccolta
+- Se i dispositivi usano una connessione di rete con larghezza di banda ridotta
+- Il tempo necessario all'attività per essere completata in tutti i dispositivi
 
 #### <a name="to-manage-clients-from-the-device-collections-node"></a>Per gestire i client dal nodo Raccolte dispositivi  
 
@@ -195,11 +195,11 @@ A partire dalla versione 1710, è possibile usare la console di Configuration Ma
 > Per usare questa funzionalità, è anche necessario aggiornare i client alla versione 1710. È consigliabile abilitare l'aggiornamento client automatico per mantenere i client aggiornati e ridurre al minimo il carico amministrativo. Per altre informazioni, vedere [Usare l'aggiornamento client automatico](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#use-automatic-client-upgrade).
 
 Per identificare i dispositivi che sono in attesa di riavvio, passare all'area di lavoro **Asset e conformità** nella console di Configuration Manager e selezionare il nodo **Dispositivi**. È ora possibile visualizzare lo stato di ogni dispositivo nel riquadro dei dettagli, in una nuova colonna denominata **Riavvio in sospeso**. Ogni dispositivo può avere uno o più dei valori seguenti: 
- - **No**: non sono presenti riavvi in sospeso
- - **Configuration Manager**: questo valore proviene dal componente che coordina il riavvio del client (RebootCoordinator.log)
- - **Ridenominazione di file**: questo valore proviene da Windows e segnala un'operazione di ridenominazione file in sospeso (HKLM\SYSTEM\CurrentControlSet\Control\Session Manager, PendingFileRenameOperations)
- - **Windows Update**: questo valore proviene dall'agente di Windows Update e segnala la necessità di un riavvio in sospeso per uno o più aggiornamenti (HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update\RebootRequired)
- - **Aggiungi o rimuovi la funzionalità**: questo valore proviene dal modulo di manutenzione pacchetti basato su componenti di Windows e segnala che l'aggiunta o la rimozione di una funzionalità di Windows richiede un riavvio (HKLM\Software\Microsoft\Windows\CurrentVersion\Component Based Servicing\Reboot Pending)
+- **No**: non sono presenti riavvi in sospeso
+- **Configuration Manager**: questo valore proviene dal componente che coordina il riavvio del client (RebootCoordinator.log)
+- **Ridenominazione di file**: questo valore proviene da Windows e segnala un'operazione di ridenominazione file in sospeso (HKLM\SYSTEM\CurrentControlSet\Control\Session Manager, PendingFileRenameOperations)
+- **Windows Update**: questo valore proviene dall'agente di Windows Update e segnala la necessità di un riavvio in sospeso per uno o più aggiornamenti (HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update\RebootRequired)
+- **Aggiungi o rimuovi la funzionalità**: questo valore proviene dal modulo di manutenzione pacchetti basato su componenti di Windows e segnala che l'aggiunta o la rimozione di una funzionalità di Windows richiede un riavvio (HKLM\Software\Microsoft\Windows\CurrentVersion\Component Based Servicing\Reboot Pending)
 
 **Per creare la notifica client per riavviare un dispositivo:**
 1. Individuare il dispositivo da riavviare all'interno della raccolta nel nodo **Raccolte di dispositivi** della console.

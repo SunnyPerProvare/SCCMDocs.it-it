@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31f47fa04275f2be4efa1558e1d816f74b05d369
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 1e41779d7901471e208c26b9050c4db82b678244
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67677319"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339815"
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novità della versione 1702 di System Center Configuration Manager
 
@@ -27,10 +27,11 @@ L'aggiornamento 1702 per System Center Configuration Manager (Current Branch) è
 
 > [!TIP]  
 > Per installare un nuovo sito, è necessario usare una versione base di Configuration Manager.  
->  Sono disponibili altre informazioni su:    
->   - [Installing new sites](https://technet.microsoft.com/library/mt590197.aspx) (Installare nuovi siti)  
->   - [Installing updates at sites](https://technet.microsoft.com/library/mt607046.aspx) (Installare aggiornamenti nei siti)  
->   - [Baseline and update versions](/sccm/core/servers/manage/updates#bkmk_Baselines) (Versioni di base e di aggiornamento)
+>
+> Sono disponibili altre informazioni su:    
+> - [Installing new sites](https://technet.microsoft.com/library/mt590197.aspx) (Installare nuovi siti)  
+> - [Installing updates at sites](https://technet.microsoft.com/library/mt607046.aspx) (Installare aggiornamenti nei siti)  
+> - [Baseline and update versions](/sccm/core/servers/manage/updates#bkmk_Baselines) (Versioni di base e di aggiornamento)
 
 Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1702 di Configuration Manager.  
 
@@ -62,9 +63,9 @@ Di seguito sono riportati i miglioramenti apportati all'uso della funzionalità 
 
 ### <a name="send-feedback-from-the-configuration-manager-console"></a>Inviare commenti e suggerimenti dalla console di Configuration Manager
 
- È possibile usare le opzioni di feedback dalla console per inviare commenti e suggerimenti direttamente al team di sviluppo.
+È possibile usare le opzioni di feedback dalla console per inviare commenti e suggerimenti direttamente al team di sviluppo.
 
- È possibile trovare l'opzione **Commenti e suggerimenti**:
+È possibile trovare l'opzione **Commenti e suggerimenti**:
 - Nella barra multifunzione, all'estrema sinistra della scheda Home di ogni nodo.  
   ![Barra multifunzione](./media/feedback-home.png)
 
@@ -96,25 +97,25 @@ Di seguito sono riportate le modifiche relative ad Aggiornamenti e manutenzione:
 
 
 ### <a name="data-warehouse-service-point"></a>Punto di servizio del data warehouse
- Usare il punto di servizio del data warehouse per archiviare e creare report di dati cronologici a lungo termine per la distribuzione di Configuration Manager.
+Usare il punto di servizio del data warehouse per archiviare e creare report di dati cronologici a lungo termine per la distribuzione di Configuration Manager.
 
- Il data warehouse supporta fino a 2 TB di dati, con timestamp per il rilevamento delle modifiche. L'archiviazione dei dati viene eseguita tramite sincronizzazioni automatizzate dal database del sito di Configuration Manager al database del data warehouse. Queste informazioni diventano quindi accessibili dal punto di Reporting Services.
+Il data warehouse supporta fino a 2 TB di dati, con timestamp per il rilevamento delle modifiche. L'archiviazione dei dati viene eseguita tramite sincronizzazioni automatizzate dal database del sito di Configuration Manager al database del data warehouse. Queste informazioni diventano quindi accessibili dal punto di Reporting Services.
 
- Per altre informazioni, vedere [Punto di servizio del data warehouse](/sccm/core/servers/manage/data-warehouse).
+Per altre informazioni, vedere [Punto di servizio del data warehouse](/sccm/core/servers/manage/data-warehouse).
 
 
 ### <a name="peer-cache-improvements"></a>Miglioramenti della peer cache
- A partire dalla versione 1702, il computer di origine della peer cache rifiuta le richieste di contenuti quando soddisfa una delle condizioni seguenti:  
-  -  È in modalità di batteria in esaurimento.
-  -  Il carico della CPU supera l'80% nel momento in cui il contenuto viene richiesto.
-  -  L'I/O disco ha un valore di *AvgDiskQueueLength* superiore a 10.
-  -  Non vi sono più connessioni disponibili al computer.   
+A partire dalla versione 1702, il computer di origine della peer cache rifiuta le richieste di contenuti quando soddisfa una delle condizioni seguenti:  
+-  È in modalità di batteria in esaurimento.
+-  Il carico della CPU supera l'80% nel momento in cui il contenuto viene richiesto.
+-  L'I/O disco ha un valore di *AvgDiskQueueLength* superiore a 10.
+-  Non vi sono più connessioni disponibili al computer.   
 Per altre informazioni, vedere la sezione **Accesso limitato a un'origine di peer cache** dell'argomento [Peer cache per i client di Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache).   
 
 Al punto di reporting, inoltre, sono stati aggiunti tre nuovi report. È possibile usare questi report per ottenere maggiori dettagli sulle richieste di contenuto rifiutate, inclusi il gruppo di limiti, il computer e il contenuto interessati. Vedere la sezione [Monitoring](/sccm/core/plan-design/hierarchy/client-peer-cache#monitoring) (Monitoraggio) dell'argomento relativo alla peer cache.
 
 ### <a name="content-library-cleanup-tool"></a>Strumento di pulizia della raccolta contenuto
- Usare lo [strumento per la pulizia della raccolta contenuto](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool) per rimuovere il contenuto dai punti di distribuzione quando tale contenuto non è più associato a un'applicazione.
+Usare lo [strumento per la pulizia della raccolta contenuto](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool) per rimuovere il contenuto dai punti di distribuzione quando tale contenuto non è più associato a un'applicazione.
 
 
 ### <a name="use-the-oms-connector-with-the-azure-government-cloud"></a>Usare OMS Connector con il cloud di Azure per enti pubblici
@@ -201,14 +202,14 @@ In questa versione sono stati introdotti i miglioramenti seguenti:
 
 ### <a name="improvements-to-the-auto-apply-driver-task-sequence"></a>Miglioramenti della sequenza di attività Applica automaticamente i driver
 Sono ora disponibili nuove variabili della sequenza di attività per la configurazione del valore di timeout nel passaggio della sequenza di attività Applica automaticamente i driver durante la creazione di richieste di catalogo HTTP. Sono disponibili le seguenti variabili e valori predefiniti (in secondi):
-   - SMSTSDriverRequestResolveTimeOut  
-     Impostazione predefinita: 60
-   - SMSTSDriverRequestConnectTimeOut  
-     Impostazione predefinita: 60
-   - SMSTSDriverRequestSendTimeOut  
-     Impostazione predefinita: 60
-   - SMSTSDriverRequestReceiveTimeOut  
-     Impostazione predefinita: 480
+- SMSTSDriverRequestResolveTimeOut  
+  Impostazione predefinita: 60
+- SMSTSDriverRequestConnectTimeOut  
+  Impostazione predefinita: 60
+- SMSTSDriverRequestSendTimeOut  
+  Impostazione predefinita: 60
+- SMSTSDriverRequestReceiveTimeOut  
+  Impostazione predefinita: 480
 
 ### <a name="windows-10-adk-tracked-by-build-version"></a>Windows 10 ADK rilevato dalla versione build
 Windows 10 ADK viene ora rilevato dalla versione build per garantire maggior supporto durante la personalizzazione delle immagini d'avvio di Windows 10. Ad esempio, se il sito usa Windows ADK per Windows 10, versione 1607, possono essere personalizzate nella console soltanto le immagini d'avvio con versione 10.0.14393. Per informazioni dettagliate sulla personalizzazione delle versioni WinPE, vedere [Personalizzare le immagini d'avvio](/sccm/osd/get-started/customize-boot-images).

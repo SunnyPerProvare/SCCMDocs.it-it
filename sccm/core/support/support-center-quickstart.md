@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f63193f9d4c9c754a56186f7a36cb9fabaf95725
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: f9124f412b7e22fadf08ddc87668481747d52152
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500723"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339512"
 ---
 # <a name="support-center-quickstart-guide"></a>Guida introduttiva di Support Center
 
@@ -76,15 +76,15 @@ Creare un file di *bundle di risoluzione dei problemi* (con estensione zip) per 
 
 Oltre a queste funzionalità di base, Support Center può raccogliere un'ampia gamma di altre informazioni sullo stato del client. Aprire **Support Center** e selezionare **Collect All Data** (Raccogli tutti i dati). Questo processo dura in genere alcuni minuti, anche nei computer più moderni. Support Center raccoglie i dati aggiuntivi seguenti:
 
-  - **Policy** (Criteri): informazioni sulle impostazioni dei criteri di Configuration Manager, comprese le configurazioni dei criteri richieste e la configurazione dei criteri effettiva  
+- **Policy** (Criteri): informazioni sulle impostazioni dei criteri di Configuration Manager, comprese le configurazioni dei criteri richieste e la configurazione dei criteri effettiva  
 
-  - **Certificati**: informazioni sulle chiavi pubbliche per i certificati client. Support Center non raccoglie chiavi private per i certificati.  
+- **Certificati**: informazioni sulle chiavi pubbliche per i certificati client. Support Center non raccoglie chiavi private per i certificati.  
 
-  - **Client registry** (Registro di sistema client): raccoglie informazioni di configurazione del client dal Registro di sistema. Support Center raccoglie solo le informazioni del Registro di sistema relative a Configuration Manager.  
+- **Client registry** (Registro di sistema client): raccoglie informazioni di configurazione del client dal Registro di sistema. Support Center raccoglie solo le informazioni del Registro di sistema relative a Configuration Manager.  
 
-  - **Client WMI** (WMI client): informazioni di configurazione del client da WMI. Support Center non raccoglie criteri client.  
+- **Client WMI** (WMI client): informazioni di configurazione del client da WMI. Support Center non raccoglie criteri client.  
 
-  - **Troubleshooting** (Risoluzione dei problemi): dati in tempo reale di risoluzione dei problemi che agevolano la diagnosi dei problemi più comuni dei client con Active Directory, punti di gestione, reti, assegnazioni di criteri e registrazione.  
+- **Troubleshooting** (Risoluzione dei problemi): dati in tempo reale di risoluzione dei problemi che agevolano la diagnosi dei problemi più comuni dei client con Active Directory, punti di gestione, reti, assegnazioni di criteri e registrazione.  
 
-  - **Debug dumps** (Dump del debug): esegue il dump del debug del client e dei processi correlati. I dump del debug possono essere di grandi dimensioni. Abilitare questa opzione solo durante la risoluzione dei problemi di prestazioni del client.  
+- **Debug dumps** (Dump del debug): esegue il dump del debug del client e dei processi correlati. I dump del debug possono essere di grandi dimensioni. Abilitare questa opzione solo durante la risoluzione dei problemi di prestazioni del client.  
 

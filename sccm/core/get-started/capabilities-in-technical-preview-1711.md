@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 645f41a7bad4bd9365c9ec9d51e2567ae270385a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: c4194472965ea498626921a1277047783251649e
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123298"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340063"
 ---
 # <a name="capabilities-in-technical-preview-1711-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1711 per System Center Configuration Manager
 
@@ -32,7 +32,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
     Workaround details.
 -->
 **Problemi noti di questa versione Technical Preview:**
-- **Supporto per Windows 10, versione 1709 (anche noto come Fall Creators Update)**.  A partire da questa versione di Windows, il supporto include più versioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento o di un'immagine del sistema operativo, assicurarsi di selezionare un'[edizione utilizzabile da Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
+- **Supporto per Windows 10, versione 1709 (anche noto come Fall Creators Update)** .  A partire da questa versione di Windows, il supporto include più versioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento o di un'immagine del sistema operativo, assicurarsi di selezionare un'[edizione utilizzabile da Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
 - **L'aggiornamento a una nuova versione di anteprima ha esito negativo se il server del sito è in modalità passiva**. Se si esegue una versione di anteprima con il [server del sito primario in modalità passiva](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), è necessario disinstallare il server del sito in modalità passiva prima di poter aggiornare il sito di anteprima alla nuova versione di anteprima. Sarà possibile reinstallare il server del sito in modalità passiva al termine dell'aggiornamento del sito.
 
   Per disinstallare il server del sito in modalità passiva:
@@ -57,11 +57,11 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
 In questa anteprima tecnica è stato migliorato il passaggio Esegui la sequenza di attività. I miglioramenti comprendono:
 
- - Supporto per tutti gli scenari di distribuzione del sistema operativo da Software Center, PXE e dai supporti.
- - Miglioramenti apportati alle operazioni della console, come copia, importazione, esportazione e generazione di avvisi durante l'eliminazione di oggetti.
- - Supporto per la procedura guidata **Crea file di contenuto di pre-installazione**.
- - Integrazione con la verifica della distribuzione.
- - Il passaggio Esegui la sequenza di attività può ora essere usato a più livelli di sequenze di attività e non solo in un'unica relazione padre/figlio. Poiché le relazioni a più livelli aggiungono complessità, usarle con attenzione. Queste relazioni vengono comunque controllate per individuare i riferimenti circolari.
+- Supporto per tutti gli scenari di distribuzione del sistema operativo da Software Center, PXE e dai supporti.
+- Miglioramenti apportati alle operazioni della console, come copia, importazione, esportazione e generazione di avvisi durante l'eliminazione di oggetti.
+- Supporto per la procedura guidata **Crea file di contenuto di pre-installazione**.
+- Integrazione con la verifica della distribuzione.
+- Il passaggio Esegui la sequenza di attività può ora essere usato a più livelli di sequenze di attività e non solo in un'unica relazione padre/figlio. Poiché le relazioni a più livelli aggiungono complessità, usarle con attenzione. Queste relazioni vengono comunque controllate per individuare i riferimenti circolari.
 
 ### <a name="try-it-out"></a>Verifica  
 
@@ -80,7 +80,7 @@ Provare a completare le attività seguenti e quindi usare **Commenti e suggerime
 
 1.  Creare o modificare un'applicazione. Per altre informazioni, vedere [Creare applicazioni con System Center Configuration Manager](/sccm/apps/deploy-use/create-applications).
 
-    a. Scegliere la scheda **Esperienza utente** in **Proprietà Windows Installer (file \*msi)**.
+    a. Scegliere la scheda **Esperienza utente** in **Proprietà Windows Installer (file \*msi)** .
 
     b. Selezionare **Installa per sistema** per **Comportamento di installazione**.
 

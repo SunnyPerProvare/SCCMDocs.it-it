@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3626514d4cd7f2d26e3c198931eb6fad49123dd2
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.openlocfilehash: 704e9ea1c8ddaf8cfebf1377381f6f345a9f7ea1
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551300"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339712"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>CMPivot per i dati in tempo reale in Configuration Manager
 
@@ -468,9 +468,9 @@ Una query raggiunge il timeout dopo un'ora. Ad esempio, una raccolta include 500
 - StateSys.log
 
 **Lato client:**
- - CcmNotificationAgent.log
- - Scripts.log
- - StateMessage.log
+- CcmNotificationAgent.log
+- Scripts.log
+- StateMessage.log
 
 Per altre informazioni, vedere [File di log](/sccm/core/plan-design/hierarchy/log-files) e [Risoluzione dei problemi di CMPivot](/sccm/core/servers/manage/cmpivot-tsg).
 

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d35558da6b25bba16b84c931b0254436ac3dd1e
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 9fdf140b998b4d6d64ade232503b64b14a11416f
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67285538"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68338661"
 ---
 # <a name="whats-new-in-version-1802-of-system-center-configuration-manager"></a>Novità della versione 1802 di System Center Configuration Manager
 
@@ -32,10 +32,10 @@ Sono ora disponibili anche i seguenti aggiornamenti aggiuntivi per questa versio
 > [!TIP]  
 > Per installare un nuovo sito, è necessario usare una versione base di Configuration Manager.  
 >
->  Sono disponibili altre informazioni su:    
->   - [Installing new sites](/sccm/core/servers/deploy/install/installing-sites) (Installare nuovi siti)  
->   - [Installing updates at sites](/sccm/core/servers/manage/updates) (Installare aggiornamenti nei siti)  
->   - [Baseline and update versions](/sccm/core/servers/manage/updates#bkmk_Baselines) (Versioni di base e di aggiornamento)
+> Sono disponibili altre informazioni su:    
+> - [Installing new sites](/sccm/core/servers/deploy/install/installing-sites) (Installare nuovi siti)  
+> - [Installing updates at sites](/sccm/core/servers/manage/updates) (Installare aggiornamenti nei siti)  
+> - [Baseline and update versions](/sccm/core/servers/manage/updates#bkmk_Baselines) (Versioni di base e di aggiornamento)
 
 Le sezioni seguenti offrono informazioni dettagliate sulle modifiche e sulle nuove funzionalità della versione 1802 di Configuration Manager.  
 
@@ -208,15 +208,15 @@ Il modello di sequenza di attività predefinita per l'aggiornamento sul posto di
 
 ### <a name="improvements-to-operating-system-deployment"></a>Miglioramenti alla distribuzione del sistema operativo
 Questa versione include i miglioramenti seguenti alla distribuzione del sistema operativo:
- - In Windows PE quando si avvia cmtrace.exe non viene più richiesto di scegliere se rendere questo programma lo strumento di visualizzazione predefinito per i file di log. <!-- SMS 500897 -->
- - Aggiungere immagini d'avvio al passaggio [Scarica contenuto pacchetto](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent) della sequenza di attività.
- - Miglioramenti del passaggio [Esegui la sequenza di attività](/sccm/osd/understand/task-sequence-steps#child-task-sequence): <!-- 1261338 -->   
-     - Supporto per tutti gli scenari di distribuzione del sistema operativo da Software Center, PXE e dai supporti.
-     - Miglioramenti apportati alle operazioni della console, come copia, importazione, esportazione e generazione di avvisi durante l'eliminazione di oggetti.
-     - Supporto per la [Creazione guidata file di contenuto pre-installazione](/sccm/core/plan-design/hierarchy/manage-network-bandwidth#BKMK_PrestagingContent).
-     - Integrazione con la verifica della distribuzione. Per altre informazioni, vedere [Distribuzioni di sequenze di attività ad alto rischio](/sccm/osd/deploy-use/deploy-a-task-sequence). 
-     - Il passaggio Esegui la sequenza di attività può ora essere usato a più livelli di sequenze di attività e non solo in un'unica relazione padre/figlio. Poiché le relazioni a più livelli aggiungono complessità, usarle con attenzione. Queste relazioni vengono comunque controllate per individuare i riferimenti circolari.
-    
+- In Windows PE quando si avvia cmtrace.exe non viene più richiesto di scegliere se rendere questo programma lo strumento di visualizzazione predefinito per i file di log. <!-- SMS 500897 -->
+- Aggiungere immagini d'avvio al passaggio [Scarica contenuto pacchetto](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent) della sequenza di attività.
+- Miglioramenti del passaggio [Esegui la sequenza di attività](/sccm/osd/understand/task-sequence-steps#child-task-sequence): <!-- 1261338 -->   
+  - Supporto per tutti gli scenari di distribuzione del sistema operativo da Software Center, PXE e dai supporti.
+  - Miglioramenti apportati alle operazioni della console, come copia, importazione, esportazione e generazione di avvisi durante l'eliminazione di oggetti.
+  - Supporto per la [Creazione guidata file di contenuto pre-installazione](/sccm/core/plan-design/hierarchy/manage-network-bandwidth#BKMK_PrestagingContent).
+  - Integrazione con la verifica della distribuzione. Per altre informazioni, vedere [Distribuzioni di sequenze di attività ad alto rischio](/sccm/osd/deploy-use/deploy-a-task-sequence). 
+  - Il passaggio Esegui la sequenza di attività può ora essere usato a più livelli di sequenze di attività e non solo in un'unica relazione padre/figlio. Poiché le relazioni a più livelli aggiungono complessità, usarle con attenzione. Queste relazioni vengono comunque controllate per individuare i riferimenti circolari.
+
 ### <a name="deployment-templates-for-task-sequences"></a>Modelli di distribuzione per le sequenze di attività
 <!-- 1357391 -->
 Ora la [distribuzione guidata per le sequenze di attività](/sccm/osd/deploy-use/deploy-a-task-sequence) può creare un modello di distribuzione. Il modello di distribuzione può essere salvato e applicato a una sequenza di attività nuova o esistente per creare una distribuzione. 
