@@ -1,7 +1,7 @@
 ---
-title: Asset nel Desktop Analitica
+title: Asset in desktop Analytics
 titleSuffix: Configuration Manager
-description: Informazioni sui dispositivi, driver e le app Desktop Analitica.
+description: Informazioni su dispositivi, driver e app in desktop Analytics.
 ms.date: 06/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,58 +11,57 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0e47541d7acf5e1f5a74a58f6d39603bfcb9269
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 63800bf6c8fa1d35eac44f64f2f03bde4f1d5022
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159236"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68535945"
 ---
-# <a name="assets-in-desktop-analytics"></a>Asset nel Desktop Analitica
+# <a name="assets-in-desktop-analytics"></a>Asset in desktop Analytics
 
 > [!Note]  
-> Tali informazioni fanno riferimento a un servizio in anteprima che può essere modificato sostanzialmente prima del rilascio in commercio. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
+> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
-Dopo che i dispositivi segnalano i dati per Desktop Analitica, esso fornisce un inventario degli asset seguenti:
+Dopo che i dispositivi hanno segnalato i dati a analisi desktop, fornisce un inventario delle risorse seguenti:
 
-- Dispositivi  
-- Driver dell'hardware  
+- Dispositivi
 - App installate  
 
-Nel portale dei servizi, selezionare **asset** nel menu Desktop Analitica.
+Nel portale dei servizi selezionare **Asset** nel menu desktop Analytics.
 
 
 ## <a name="devices"></a>Dispositivi
 
-Il **dispositivi** scheda vengono visualizzate informazioni sulla chiave su tutti i dispositivi nell'organizzazione che si registra per Desktop Analitica. È possibile ordinare qualsiasi colonna o un filtro per determinati valori.
+La scheda **dispositivi** Visualizza le informazioni chiave su tutti i dispositivi dell'organizzazione che si registrano a desktop Analytics. È possibile ordinare qualsiasi colonna o filtro per determinati valori.
 
 > [!NOTE]  
-> Se il dashboard non segnala il numero di dispositivi previsto per l'ambiente, vedere [risoluzione dei problemi relativi a Desktop Analitica](/sccm/desktop-analytics/troubleshooting).  
+> Se il dashboard non segnala il numero di dispositivi che si prevede di visualizzare per l'ambiente, vedere [risoluzione dei problemi di analisi del desktop](/sccm/desktop-analytics/troubleshooting).  
 
-In un piano di distribuzione, è più in dettaglio i dispositivi. Per altre informazioni, vedere [pianificare gli asset](/sccm/desktop-analytics/about-deployment-plans#plan-assets)
+In un piano di distribuzione sono disponibili maggiori dettagli sui dispositivi. Per altre informazioni, vedere [pianificare asset](/sccm/desktop-analytics/about-deployment-plans#plan-assets)
 
 ## <a name="apps"></a>App
 
-Il **app** scheda installato Mostra tutte le app che il servizio rileva nei dispositivi Windows.
+La scheda **app** Mostra tutte le app installate che il servizio rileva nei dispositivi Windows.
 
-**Degno di nota** le app vengono installate in più di 2% dei dispositivi registrati.
+Le app **degne** di nota sono installate in più del 2% dei dispositivi registrati.
 
-Configurare il **importanza** delle App quando si imposta una delle categorie seguenti:
+Configurare l' **importanza** delle app impostando una delle categorie seguenti:
 
 - Critico
 - Importante
 - Ignora
-- Verifica non effettuata
+- Non verificato
 
-Selezionare l'app dall'elenco e selezionare **modifica**. Questa azione consente di visualizzare i dettagli per l'app. Selezionare il **importanza** dal menu a discesa e impostare un valore. È anche possibile assegnare un **proprietario**. Se si apportano modifiche, selezionare **salvare**.
+Selezionare l'app dall'elenco e quindi fare clic su **modifica**. Questa azione Visualizza i dettagli per l'app. Selezionare il menu a discesa **importanza** e impostare un valore. È anche possibile assegnare un **proprietario**. Se si apportano modifiche, fare clic su **Salva**.
 
-In un piano di distribuzione, è anche possibile impostare il **decisione di aggiornamento**. Per altre informazioni, vedere [pianificare gli asset](/sccm/desktop-analytics/about-deployment-plans#plan-assets)
+In un piano di distribuzione è inoltre possibile impostare la **decisione di aggiornamento**. Per altre informazioni, vedere [pianificare asset](/sccm/desktop-analytics/about-deployment-plans#plan-assets)
 
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-- [Informazioni sui piani di distribuzione Desktop Analitica](/sccm/desktop-analytics/about-deployment-plans)  
+- [Informazioni sui piani di distribuzione di analisi desktop](/sccm/desktop-analytics/about-deployment-plans)  
 
-- [Informazioni sugli aggiornamenti di sicurezza e funzionalità](/sccm/desktop-analytics/about-updates)  
+- [Informazioni sugli aggiornamenti della sicurezza e delle funzionalità](/sccm/desktop-analytics/about-updates)  
 
-- [Valutazione della compatibilità nel Desktop Analitica](/sccm/desktop-analytics/compat-assessment)  
+- [Valutazione della compatibilità in desktop Analytics](/sccm/desktop-analytics/compat-assessment)  

@@ -1,8 +1,8 @@
 ---
 title: Valutazione della compatibilità
 titleSuffix: Configuration Manager
-description: Informazioni sulla valutazione della compatibilità per le app di Windows e i driver in Desktop Analitica.
-ms.date: 06/14/2019
+description: Informazioni sulla valutazione della compatibilità per le app e i driver di Windows in desktop Analytics.
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,148 +12,209 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bef2c11732177dfb842f0961dc2d5d5a69edd55e
-ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
+ms.openlocfilehash: f6181f0e1a502d701ca7337641013a18b03251f9
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67148098"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68535975"
 ---
-# <a name="compatibility-assessment-in-desktop-analytics"></a>Valutazione della compatibilità nel Desktop Analitica
+# <a name="compatibility-assessment-in-desktop-analytics"></a>Valutazione della compatibilità in desktop Analytics
 
 > [!Note]  
-> Tali informazioni fanno riferimento a un servizio in anteprima che può essere modificato sostanzialmente prima del rilascio in commercio. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
+> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
-Aggiornamento delle valutazioni in Analitica di Windows sono state generiche, ad esempio: Attenzione necessita o correzione disponibile. Non fornisce alcun indicatore visivo sull'assegnazione di priorità le app o i driver con problemi o eseguire l'aggiornamento di insights. Desktop Analitica sostituisce questa funzionalità con **rischi relativi alla compatibilità**. Analitica desktop Mostra la valutazione per le app solo nella visualizzazione della distribuzione per uno scenario di pre-aggiornamento. Vengono suddivisi le app basate su informazioni dettagliate che ottiene Microsoft dai computer inclusi in un piano di distribuzione corrente.
+Le valutazioni degli aggiornamenti in Windows Analytics erano generiche, ad esempio: Attenzione necessaria o correzione disponibile. Non fornisce alcun indicatore visivo su come classificare in ordine di priorità le app o i driver con problemi o informazioni dettagliate sull'aggiornamento. Desktop Analytics sostituisce questa funzionalità con i rischi per la **compatibilità**. Desktop Analytics mostra la valutazione per le app solo nella visualizzazione distribuzione per uno scenario di pre-aggiornamento. Suddivide le app in base alle informazioni ottenute da Microsoft dalle macchine virtuali incluse in un piano di distribuzione corrente.
 
-Analitica desktop utilizza le seguenti categorie di valutazione della compatibilità:
+Desktop Analytics usa le seguenti categorie di valutazione della compatibilità:
 
-- **Bassa**: Trovare il servizio non segnali per mettere l'app a rischio per un Windows esegue l'aggiornamento. È probabile che funzionerà su sistema operativo di destinazione come-è.  
+- **Bassa**: Il servizio non ha rilevato segnali per inserire questa app a rischio di un aggiornamento di Windows. È probabile che funzioni sul sistema operativo di destinazione così com'è.  
 
-- **Medium**: Analitica indica che l'applicazione potrebbe avere compromesse la funzionalità, sebbene correzione è probabilmente possibile.  
+- **Media**: Analytics indica che è possibile che l'applicazione abbia una funzionalità disaccoppiata, anche se è probabile che la correzione sia possibile.  
 
-- **Elevata**: L'applicazione è quasi sicuramente esito negativo durante o dopo l'aggiornamento. Potrebbe essere necessario un monitoraggio e aggiornamento.  
+- **Elevato**: È quasi certo che l'applicazione abbia esito negativo durante o dopo l'aggiornamento. Potrebbe essere necessaria una correzione.  
 
-- **Sconosciuto**: La valutazione non è stata eseguita l'app. Non esistono, ad esempio nessun altro insights *problemi noti di MS* oppure *pronto per Windows*.  
+- **Sconosciuto**: L'app non è stata valutata. Non sono disponibili altre informazioni, ad esempio *problemi noti di MS* o *pronto per Windows*.  
 
-Nell'elenco di app o il driver asset in un piano di distribuzione, si noterà questo valore per ogni asset nel **rischi relativi alla compatibilità** colonna.
+Nell'elenco di asset app o driver in un piano di distribuzione, questo valore verrà visualizzato per ogni asset nella colonna **rischio di compatibilità** .
 
 
-## <a name="app-risk-assessment"></a>Valutazione dei rischi di App
+## <a name="app-risk-assessment"></a>Valutazione del rischio delle app
 
-Esistono varie fonti che Analitica Desktop Usa per generare la valutazione di valutazione per le applicazioni:
+![Diagramma delle origini di valutazione del rischio di app](media/app-risk-assessment-sources.png)
+
+Sono disponibili diverse origini usate da desktop Analytics per generare la valutazione della valutazione per le applicazioni:
 
 - [Problemi noti di Microsoft](#microsoft-known-issues)
 - [Pronto per il catalogo di Windows](#ready-for-windows)
 - [Informazioni dettagliate avanzate](#advanced-insights)
 
-È possibile trovare la valutazione per ogni origine dell'app nel Desktop Analitica. Nell'elenco degli asset di app in un piano di distribuzione, selezionare una singola app per aprire il riquadro di menu a comparsa di proprietà. Verrà visualizzato un livello di valutazione e indicazione generale. Il **fattori di rischio compatibilità** sezione mostra i dettagli per queste valutazioni.
+È possibile trovare la valutazione per ogni origine nell'app in desktop Analytics. Nell'elenco di asset app in un piano di distribuzione selezionare una singola app per aprire il riquadro a comparsa Proprietà. Verrà visualizzato un livello generale di raccomandazione e valutazione. La sezione **fattori di rischio** per la compatibilità Mostra i dettagli per queste valutazioni.
 
 
 ## <a name="microsoft-known-issues"></a>Problemi noti di Microsoft
 
-Desktop Analitica esamina il database di compatibilità delle app di Microsoft per problemi noti. Usa questo database per determinare eventuali blocchi di compatibilità esistenti per le applicazioni disponibili pubblicamente da Microsoft o altri server di pubblicazione. Questo controllo si applica solo al sistema operativo di destinazione per il piano di distribuzione selezionato.
+Desktop Analytics esamina il database di compatibilità delle app Microsoft per individuare eventuali problemi noti. Usa questo database per determinare eventuali blocchi di compatibilità esistenti per le applicazioni disponibili pubblicamente da Microsoft o da altri editori. Questo controllo si applica solo al sistema operativo di destinazione per il piano di distribuzione selezionato.
 
-Si noterà quanto segue nel riquadro delle proprietà app come **problemi noti MS**:
+Verranno visualizzati i seguenti problemi nel riquadro Proprietà app come **problemi noti di MS**:
 
-### <a name="application-is-removed-during-upgrade"></a>Rimozione dell'applicazione durante l'aggiornamento
+### <a name="application-is-removed-during-upgrade"></a>L'applicazione è stata rimossa durante l'aggiornamento
 
-Windows ha rilevato problemi di compatibilità. L'applicazione non eseguire la migrazione alla nuova versione del sistema operativo. Non sono richiesti interventi per continuare l'aggiornamento.
+Problemi di compatibilità rilevati da Windows. L'applicazione non eseguirà la migrazione alla nuova versione del sistema operativo. Per continuare l'aggiornamento, non è necessaria alcuna azione.
 
-### <a name="blocking-upgrade"></a>Il blocco di aggiornamento
+### <a name="blocking-upgrade"></a>Aggiornamento del blocco
 
-Windows ha rilevato problemi di blocco e non è possibile rimuovere l'applicazione durante l'aggiornamento. Potrebbe non funzionare nella nuova versione del sistema operativo. Prima dell'aggiornamento, rimuovere l'applicazione. Reinstallare ed eseguirne il test sulla nuova versione del sistema operativo.
+Windows ha rilevato problemi di blocco e non può rimuovere l'applicazione durante l'aggiornamento. Potrebbe non funzionare con la nuova versione del sistema operativo. Prima di eseguire l'aggiornamento, rimuovere l'applicazione. Reinstallare e testare la nuova versione del sistema operativo.
 
-### <a name="blocking-upgrade-but-can-be-reinstalled-after-upgrading"></a>Il blocco di aggiornamento, ma può essere reinstallato dopo l'aggiornamento
+### <a name="blocking-upgrade-but-can-be-reinstalled-after-upgrading"></a>Blocco dell'aggiornamento, ma è possibile reinstallarlo dopo l'aggiornamento
 
-L'applicazione è compatibile con la nuova versione del sistema operativo, ma non eseguire la migrazione. Rimuovere l'applicazione prima dell'aggiornamento di Windows. Reinstallare il programma per la nuova versione del sistema operativo.
+L'applicazione è compatibile con la nuova versione del sistema operativo, ma non verrà eseguita la migrazione. Rimuovere l'applicazione prima di aggiornare Windows. Reinstallarlo nella nuova versione del sistema operativo.
 
-### <a name="blocking-upgrade-update-application-to-newest-version"></a>Il blocco di aggiornamento, aggiornare l'applicazione alla versione più recente
+### <a name="blocking-upgrade-update-application-to-newest-version"></a>Blocco dell'aggiornamento, aggiornamento dell'applicazione alla versione più recente
 
-La versione esistente dell'applicazione non è compatibile con la nuova versione del sistema operativo e non eseguire la migrazione. È disponibile una versione compatibile dell'applicazione. Aggiornare l'applicazione prima dell'aggiornamento.
+La versione esistente dell'applicazione non è compatibile con la nuova versione del sistema operativo e non viene migrata. È disponibile una versione compatibile dell'applicazione. Aggiornare l'applicazione prima di eseguire l'aggiornamento.
 
-### <a name="disk-encryption-blocking-upgrade"></a>Aggiornamento blocco crittografia del disco
+### <a name="disk-encryption-blocking-upgrade"></a>Aggiornamento del blocco della crittografia del disco
 
-Le funzionalità di crittografia dell'applicazione blocca l'aggiornamento. Disabilitare la funzionalità di crittografia prima di eseguire l'aggiornamento di Windows e abilitarlo dopo l'aggiornamento.
+Le funzionalità di crittografia dell'applicazione bloccano l'aggiornamento. Disabilitare la funzionalità di crittografia prima di aggiornare Windows e abilitarla dopo l'aggiornamento.
 
-### <a name="does-not-work-with-new-os-but-wont-block-upgrade"></a>Non funziona con il nuovo sistema operativo, ma non bloccherà l'aggiornamento
+### <a name="does-not-work-with-new-os-but-wont-block-upgrade"></a>Non funziona con il nuovo sistema operativo, ma non blocca l'aggiornamento
 
-L'applicazione non è compatibile con la nuova versione del sistema operativo, ma non bloccherà l'aggiornamento. Non sono richiesti interventi per continuare l'aggiornamento. Installare una versione compatibile dell'applicazione per la nuova versione del sistema operativo.
+L'applicazione non è compatibile con la nuova versione del sistema operativo, ma non blocca l'aggiornamento. Per continuare l'aggiornamento, non è necessaria alcuna azione. Installare una versione compatibile dell'applicazione nella nuova versione del sistema operativo.
 
-### <a name="does-not-work-with-new-os-and-will-block-upgrade"></a>Non funziona con il nuovo sistema operativo e l'aggiornamento verrà bloccato
+### <a name="does-not-work-with-new-os-and-will-block-upgrade"></a>Non funziona con il nuovo sistema operativo e blocca l'aggiornamento
 
-L'applicazione non è compatibile con la nuova versione del sistema operativo e l'aggiornamento verrà bloccato. Rimuovere l'applicazione prima dell'aggiornamento. Una versione compatibile dell'applicazione potrebbe essere disponibile.
+L'applicazione non è compatibile con la nuova versione del sistema operativo e blocca l'aggiornamento. Rimuovere l'applicazione prima di eseguire l'aggiornamento. Potrebbe essere disponibile una versione compatibile dell'applicazione.
 
-### <a name="evaluate-application-on-new-os"></a>Valutare l'applicazione nel nuovo sistema operativo
+### <a name="evaluate-application-on-new-os"></a>Valutazione dell'applicazione nel nuovo sistema operativo
 
-Windows verrà eseguita la migrazione dell'applicazione, ma rilevati problemi che potrebbero compromettere le prestazioni dell'app per la nuova versione del sistema operativo. Non sono richiesti interventi per continuare l'aggiornamento. Testare l'applicazione nella nuova versione del sistema operativo.
+Windows eseguirà la migrazione dell'applicazione, ma ha rilevato problemi che potrebbero influito sulle prestazioni dell'app sulla nuova versione del sistema operativo. Per continuare l'aggiornamento, non è necessaria alcuna azione. Testare l'applicazione nella nuova versione del sistema operativo.
 
-### <a name="may-block-upgrade-test-application"></a>Potrebbe bloccare l'aggiornamento, applicazione di test
+### <a name="may-block-upgrade-test-application"></a>Può bloccare l'aggiornamento, testare l'applicazione
 
-Windows ha rilevato problemi che potrebbero interferire con l'aggiornamento, ma richiedono ulteriori indagini. Testare il comportamento dell'applicazione durante l'aggiornamento. Se si blocca l'aggiornamento, rimuoverlo prima dell'aggiornamento. Quindi reinstallarlo e testare la nuova versione del sistema operativo.
+Sono stati rilevati problemi che potrebbero interferire con l'aggiornamento, ma è necessario approfondire l'analisi. Testare il comportamento dell'applicazione durante l'aggiornamento. Se blocca l'aggiornamento, rimuoverlo prima dell'aggiornamento. Quindi reinstallare e testare la nuova versione del sistema operativo.
 
 ### <a name="multiple"></a>Più elementi
 
-I problemi più rendere l'applicazione. Selezionare **Query** per visualizzare i dettagli sui problemi rilevati da Windows.
+Più problemi influiscono sull'applicazione. Selezionare **query** per visualizzare i dettagli sui problemi rilevati da Windows.
 
-### <a name="reinstall-application-after-upgrading"></a>Reinstallare l'applicazione dopo l'aggiornamento
+### <a name="reinstall-application-after-upgrading"></a>Reinstalla l'applicazione dopo l'aggiornamento
 
-L'applicazione è compatibile con la nuova versione del sistema operativo, ma è necessario reinstallarlo dopo l'aggiornamento di Windows. Il processo di aggiornamento rimuove l'applicazione. Non sono richiesti interventi per continuare l'aggiornamento. Reinstallare l'applicazione nella nuova versione del sistema operativo.
+L'applicazione è compatibile con la nuova versione del sistema operativo, ma è necessario reinstallarla dopo l'aggiornamento di Windows. Il processo di aggiornamento rimuove l'applicazione. Per continuare l'aggiornamento, non è necessaria alcuna azione. Reinstallare l'applicazione nella nuova versione del sistema operativo.
 
 
 ## <a name="ready-for-windows"></a>Pronto per Windows
 
-Il [pronto per Windows](https://www.readyforwindows.com) catalogo applicazioni mette in correlazione le origini dati seguenti:
+Il Catalogo applicazioni [pronto per Windows mette in](https://www.readyforwindows.com) correlazione le origini dati seguenti:
 
-- Dati di diagnostica da altri clienti che sono subordinati stesse App
-- Controlli aggiuntivi da parte di Microsoft, ad esempio i blocchi di compatibilità su un dispositivo
+- Dati di diagnostica di altri clienti che segnalano le stesse app
+- Ulteriori controlli da Microsoft, ad esempio i blocchi di compatibilità in un dispositivo
 
 Le categorie possibili sono:
 
-- **Ampiamente adottate**: Almeno 100.000 dispositivi commerciali di Windows 10 sono installato l'app.  
+- **Elevata adozione**: Questa app è installata da almeno 100.000 dispositivi commerciali Windows 10.  
 
-- **Adottato**: Almeno 10.000 dispositivi commerciali di Windows 10 sono installato l'app.  
+- **Adottato**: Questa app è installata da almeno 10.000 dispositivi commerciali Windows 10.  
 
-- **Dati insufficienti**: Un numero troppo ridotto i dispositivi Windows 10 commerciali condividono informazioni per l'app a Microsoft di categorizzare la sua adozione.
+- **Dati insufficienti**: Un numero troppo basso di dispositivi Windows 10 commerciali sta condividendo le informazioni per questa app per la categorizzazione dell'adozione da parte di Microsoft.
 
-- **Contattare lo sviluppatore**: Potrebbero esserci problemi di compatibilità con questa versione dell'app. Microsoft consiglia di contattare il provider di software per altre informazioni. Per altre informazioni, vedere [pronto per Windows](https://www.readyforwindows.com/).  
+- **Contattare lo sviluppatore**: Potrebbero verificarsi problemi di compatibilità con questa versione dell'app. Microsoft consiglia di contattare il provider di software per ottenere ulteriori informazioni. Per ulteriori informazioni, vedere [Ready for Windows](https://www.readyforwindows.com/).  
 
-- **Sconosciuto**: Nessuna informazione pronti per Windows è disponibile per questa versione di questa applicazione. Le informazioni potrebbero essere disponibili per le altre versioni dell'applicazione in [pronto per Windows](https://www.readyforwindows.com/).  
+- **Sconosciuto**: Non sono disponibili informazioni pronte per Windows per questa versione di questa applicazione. Le informazioni potrebbero essere disponibili per le altre versioni dell'applicazione in [pronto per Windows](https://www.readyforwindows.com/).  
 
-### <a name="support-statement"></a>Informativa sul supporto
+### <a name="support-statement"></a>Istruzione support
 
-Se il provider di software supporta uno o più versioni dell'applicazione in Windows 10, si noterà l'istruzione seguente nel riquadro delle proprietà app. Nella sezione compatibilità fattori di rischio, esaminare i **supporta istruzione**.
+Se il provider software supporta una o più versioni di questa applicazione in Windows 10, questa istruzione verrà visualizzata nel riquadro Proprietà app. Nella sezione fattori di rischio per la compatibilità esaminare l' **istruzione di supporto**.
 
 
 
 ## <a name="advanced-insights"></a>Informazioni dettagliate avanzate
 
-Desktop Analitica consente inoltre di rilevare i problemi usando le informazioni dettagliate aggiuntive seguenti:
+Desktop Analytics può anche rilevare problemi usando le informazioni aggiuntive seguenti:
 
 ### <a name="adopted-version-available"></a>Versione adottata disponibile
 
-È disponibile un'altra versione dell'app che è ampiamente adottate da altri clienti. Questo segnale utilizza i dati di pronto per Windows. Se sono presenti eventuali blocchi di aggiornamento con la versione corrente, è possibile distribuire la versione alternativa invece.
+È disponibile un'altra versione di questa app che è altamente adottata da altri clienti. Questo segnale usa i dati di Ready per Windows. Se sono presenti blocchi di aggiornamento con la versione corrente, è consigliabile distribuire invece la versione alternativa.
 
-### <a name="driver-dependency"></a>Dipendenze di driver
+### <a name="driver-dependency"></a>Dipendenza driver
 
-L'app è dipendente da un driver. Desktop Analitica consiglia l'app per attività di test. Dovrebbe funzionare correttamente per la fase pilota, ma sono disponibili eventuali regressioni. Se si verificano problemi, contattare l'editore per richiedere una versione compatibile con Windows 10.
+L'app dipende da un driver. Desktop Analytics consiglia all'app di eseguire test pilota per individuare eventuali regressioni. In caso di problemi, contattare l'autore per richiedere una versione conforme a Windows 10.
+
+### <a name="additional-insights"></a>Informazioni aggiuntive
+
+<!-- 4021225 -->
+Quando si aggiorna il sito e i client di Configuration Manager alla versione 1906, i client segnalano anche queste informazioni aggiuntive:
+
+> [!Important]  
+> Per sfruttare i vantaggi delle nuove funzionalità di Configuration Manager, dopo l'aggiornamento del sito aggiornare anche i client alla versione più recente. Questo scenario non è funzionale finché la versione del client non è la più recente.
+
+#### <a name="16-bit-apps"></a>app a 16 bit
+
+Rimuovere tutti i componenti a 16 bit dalle applicazioni e sostituirli con equivalenti a 32 bit o a 64 bit. Per ulteriori informazioni, vedere [la storia per sviluppatori di Windows Vista e Windows Server 2008: Cookbook](https://docs.microsoft.com/previous-versions/aa480152\(v=msdn.10\))per la compatibilità delle applicazioni.
+
+L'altra opzione consiste nell'abilitare la macchina DOS virtuale NT (NTVDM) per il supporto in Windows 10.
+
+#### <a name="requires-admin-privileges"></a>Richiede privilegi di amministratore
+
+L'app richiede che l'utente disponga dell'accesso amministrativo al dispositivo. Usare un manifesto dell'applicazione per queste app che richiedono le autorizzazioni di amministratore. Per altre informazioni, vedere [creare e incorporare un manifesto dell'applicazione](https://docs.microsoft.com/previous-versions/bb756929\(v=msdn.10\)).
+
+Desktop Analytics consiglia all'app di eseguire test pilota per individuare eventuali regressioni.
+
+#### <a name="java-dependency"></a>Dipendenza Java
+
+Molte applicazioni Java si basano su un Java Runtime Environment (JRE) installato separatamente. Sebbene le versioni precedenti di JRE possano continuare a funzionare in Windows 10, Oracle supporta solo le versioni più recenti di JRE. L'uso di un JRE non supportato precedente potrebbe avere vulnerabilità di sicurezza. Verificare che l'applicazione sia in esecuzione nelle versioni più recenti di JRE.
+
+#### <a name="not-dpi-aware"></a>Non compatibile con DPI
+
+È possibile che l'app includa problemi di visualizzazione con risoluzioni avanzate dello schermo in Windows 10. Usare un manifesto dell'applicazione per evitare problemi con risoluzioni DPI elevate. Per altre informazioni, vedere [manifesti dell'applicazione](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests).
+
+Desktop Analytics consiglia all'app di eseguire test pilota per individuare eventuali regressioni.
+
+#### <a name="silverlight-framework"></a>Framework Silverlight
+
+Microsoft consiglia di non usare Silverlight per le app non basate su browser. La data di fine del supporto per Silverlight 5 è il 2021 ottobre.
+
+La maggior parte dei Web browser correnti non supporta Silverlight.
+
+| Browser | Supporto |
+|---------|---------|
+| Google Chrome | Fine del supporto: 2015 settembre |
+| Firefox | Fine del supporto: Marzo 2017 |
+| Microsoft Edge | Nessun plug-in disponibile |
+
+Desktop Analytics consiglia all'app di eseguire test pilota per individuare eventuali regressioni.
+
+#### <a name="net-framework-1011"></a>.NET Framework 1.0/1.1
+
+Il .NET Framework versione 1,0 non è supportato in Windows 10. La versione 1,1 non è compatibile con Windows 10. Se l'app è di un server di pubblicazione di terze parti, contattare il fornitore per richiedere una versione conforme a Windows 10. In caso contrario, risviluppare l'applicazione per usare una versione supportata di .NET.
+
+#### <a name="net-framework-2030"></a>.NET Framework 2.0/3.0
+
+I Framework .NET 2,0 e 3,5 sono supportati in Windows 10. Potrebbe essere necessario abilitare la funzionalità Windows. Per ulteriori informazioni, vedere [installare il .NET Framework 3,5 in Windows 10](https://docs.microsoft.com/dotnet/framework/install/dotnet-35-windows-10).
+
+#### <a name="ui-access"></a>Accesso all'interfaccia utente
+
+Le applicazioni con accesso all'interfaccia utente possono ignorare i livelli di controllo dell'interfaccia utente per guidare l'input a finestre con privilegi più elevati sul desktop. Usare questa impostazione solo per le applicazioni di Assistive Technology dell'interfaccia utente.
+
+Se non si usano le funzionalità di accessibilità nell'app, impostare il flag di accesso dell'interfaccia utente nel manifesto dell'app su false. Per altre informazioni, vedere [creare e incorporare un manifesto dell'applicazione](https://docs.microsoft.com/previous-versions/bb756929\(v=msdn.10\)).
+
+Desktop Analytics consiglia all'app di eseguire test pilota per individuare eventuali regressioni.
 
 
+## <a name="driver-risk-assessment"></a>Valutazione del rischio del driver
 
-## <a name="driver-risk-assessment"></a>Valutazione dei rischi di driver
+In desktop Analytics sono inoltre elencati e raggruppati per disponibilità tutti i driver che non vengono migrati alla versione del sistema operativo.
 
-Elenca inoltre desktop Analitica e gruppi in base alla disponibilità di eventuali driver di non eseguire la migrazione alla versione del sistema operativo.
+È possibile trovare la valutazione sul driver in desktop Analytics. Nell'elenco di asset driver in un piano di distribuzione selezionare un singolo driver per aprire il riquadro a comparsa Proprietà. Verrà visualizzato un livello generale di raccomandazione e valutazione. La sezione **fattori di rischio** per la compatibilità Mostra i dettagli per queste valutazioni.
 
-È possibile trovare la valutazione sul driver in Desktop Analitica. Nell'elenco degli asset di driver in un piano di distribuzione, selezionare un singolo driver per aprire il riquadro di menu a comparsa di proprietà. Verrà visualizzato un livello di valutazione e indicazione generale. Il **fattori di rischio compatibilità** sezione mostra i dettagli per queste valutazioni.
-
-| Disponibilità driver | Azione necessaria? | Che cosa significa | Linee guida |
+| Disponibilità driver | È necessario agire? | Significato | Guida |
 |---------------------|------------------|---------------|----------|
-| Preinstallati disponibili | No, per il riconoscimento solo | La versione attualmente installata di un'applicazione o il driver non eseguire la migrazione alla nuova versione del sistema operativo. È installata una versione compatibile con la nuova versione del sistema operativo. | Non sono richiesti interventi per continuare l'aggiornamento. |
-| Importa da Windows Update | Yes | La versione attualmente installata di un driver non eseguire la migrazione alla nuova versione del sistema operativo. Una versione compatibile è disponibile da Windows Update. | Se il computer riceve automaticamente gli aggiornamenti da Windows Update, è necessaria alcuna azione. In caso contrario, importare un nuovo driver da Windows Update dopo l'aggiornamento di Windows. |
-| Disponibile in arrivo e da Windows Update | Yes | La versione attualmente installata di un driver non eseguire la migrazione alla nuova versione del sistema operativo. Anche se è installato un nuovo driver durante l'aggiornamento, una versione più recente è disponibile da Windows Update. | Se il computer riceve automaticamente gli aggiornamenti da Windows Update, è necessaria alcuna azione. In caso contrario, importare un nuovo driver da Windows Update dopo l'aggiornamento di Windows. |
-| Contattare il fornitore | Yes | Il driver non eseguire la migrazione alla nuova versione del sistema operativo e Analitica Desktop non è possibile individuare una versione compatibile. | Per una soluzione, contattare il fornitore di hardware indipendente (IHV) che produce il driver o OEM (OEM) che ha fornito il dispositivo. |
+| Disponibile in-box | No, solo per la consapevolezza | La versione attualmente installata di un'applicazione o di un driver non verrà migrata alla nuova versione del sistema operativo. Una versione compatibile viene installata con la nuova versione del sistema operativo. | Per continuare l'aggiornamento, non è necessaria alcuna azione. |
+| Importa da Windows Update | Sì | La versione attualmente installata di un driver non verrà migrata alla nuova versione del sistema operativo. Una versione compatibile è disponibile dal Windows Update. | Se il computer riceve automaticamente gli aggiornamenti da Windows Update, non è richiesta alcuna azione. In caso contrario, importare un nuovo driver da Windows Update dopo l'aggiornamento di Windows. |
+| Disponibile in-box e da Windows Update | Sì | La versione attualmente installata di un driver non verrà migrata alla nuova versione del sistema operativo. Sebbene venga installato un nuovo driver durante l'aggiornamento, è disponibile una versione più recente da Windows Update. | Se il computer riceve automaticamente gli aggiornamenti da Windows Update, non è richiesta alcuna azione. In caso contrario, importare un nuovo driver da Windows Update dopo l'aggiornamento di Windows. |
+| Verifica con fornitore | Sì | Il driver non viene migrato alla nuova versione del sistema operativo e desktop Analytics non riesce a trovare una versione compatibile. | Per una soluzione, consultare il fornitore dell'hardware indipendente (IHV) che produce il driver o l'OEM (Original Equipment Manufacturer) che ha fornito il dispositivo. |
 
 
 ## <a name="see-also"></a>Vedere anche
 
-FastTrack Center Benefit per Windows 10 consente di accedervi **garantire App Desktop**. Questo vantaggio è un nuovo servizio progettato per risolvere i problemi con Windows 10 e Office 365 ProPlus compatibilità dell'applicazione. Per altre informazioni, vedere [garantire App Desktop](https://docs.microsoft.com/fasttrack/win-10-desktop-app-assure).
+Il vantaggio FastTrack Center per Windows 10 consente di accedere ad **app desktop assicura**. Questo vantaggio è un nuovo servizio progettato per risolvere i problemi relativi alla compatibilità delle app con Windows 10 e Office 365 ProPlus. Per altre informazioni, vedere [app desktop assicura](https://docs.microsoft.com/fasttrack/win-10-desktop-app-assure).

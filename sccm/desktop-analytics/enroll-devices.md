@@ -1,7 +1,7 @@
 ---
-title: Registrare i dispositivi in Desktop Analitica
+title: Registrare i dispositivi in desktop Analytics
 titleSuffix: Configuration Manager
-description: Informazioni su come registrare i dispositivi in Desktop Analitica.
+description: Informazioni su come registrare i dispositivi in desktop Analytics.
 ms.date: 04/22/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,78 +11,78 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74dfc1b4e314d86c0145b842cbcbb38b557bd336
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 7099a31cc9766a3c9904c5ae1013eb1700181102
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159121"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68535957"
 ---
-# <a name="how-to-enroll-devices-in-desktop-analytics"></a>Come registrare i dispositivi in Desktop Analitica
+# <a name="how-to-enroll-devices-in-desktop-analytics"></a>Come registrare i dispositivi in desktop Analytics
 
 > [!Note]  
-> Tali informazioni fanno riferimento a un servizio in anteprima che può essere modificato sostanzialmente prima del rilascio in commercio. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
+> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
-Quando si [connettere Configuration Manager](/sccm/desktop-analytics/connect-configmgr) per Desktop Analitica, configurare le impostazioni per registrare i dispositivi Desktop Analitica. È possibile modificare queste impostazioni in qualsiasi momento. Assicurarsi anche che i dispositivi siano aggiornati.
+Quando ci si [connette Configuration Manager](/sccm/desktop-analytics/connect-configmgr) a desktop Analytics, si configurano le impostazioni per la registrazione dei dispositivi in analisi desktop. È possibile modificare queste impostazioni in qualsiasi momento. Assicurarsi inoltre che i dispositivi siano aggiornati.
 
 
 
-## <a name="update-devices"></a>Aggiornare i dispositivi
+## <a name="update-devices"></a>Aggiornare dispositivi
 
-Esistono due tipi di aggiornamenti che è necessario applicare per ottenere risultati ottimali con Analitica Desktop:
+Esistono due tipi di aggiornamenti che è necessario applicare per un'esperienza ottimale con l'analisi del desktop:
 
 - [Aggiornamenti per la compatibilità](#bkmk_appraiser)  
-- [Servizio dati di telemetria ed esperienze utente connesso](#bkmk_diagtrack)
+- [Esperienza utente connessa e servizio di telemetria](#bkmk_diagtrack)
 
 
-### <a name="bkmk_appraiser"></a> Aggiornamenti per la compatibilità
+### <a name="bkmk_appraiser"></a>Aggiornamenti per la compatibilità
 
-Il componente di compatibilità (Appraiser) viene eseguita la diagnostica nel dispositivo Windows per valutare lo stato di compatibilità con le versioni più recenti di Windows 10.
+Il componente Compatibility (Estimator) esegue la diagnostica sul dispositivo Windows per valutarne lo stato di compatibilità con le versioni più recenti di Windows 10.
 
-Microsoft incrementa regolarmente gli aggiornamenti per questo componente, ma non modifica il numero di Knowledge Base associato. Assicurarsi di avere sempre la versione più recente dell'aggiornamento.
+Microsoft incrementa regolarmente gli aggiornamenti per questo componente, ma il numero di KB associato non cambia. Assicurarsi di disporre sempre della versione più recente dell'aggiornamento.
 
-Riavviare i dispositivi dopo aver installato gli aggiornamenti di compatibilità per la prima volta.
+Riavviare i dispositivi dopo aver installato gli aggiornamenti per la compatibilità per la prima volta.
 
 > [!Tip]  
 > Usare Configuration Manager per installare automaticamente la versione più recente di questi aggiornamenti. Per altre informazioni, vedere [Distribuire gli aggiornamenti software](/sccm/sum/deploy-use/deploy-software-updates).  
 
 > [!Note]  
-> Un aggiornamento facoltativo correlati, [3150513 KB](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=3150513). Questo aggiornamento fornisce l'aggiornamento della configurazione e le definizioni per gli aggiornamenti di compatibilità precedenti. Per altre informazioni, vedere [aggiornamento definizione di compatibilità più recente di Windows](https://support.microsoft.com/help/3150513).  
+> È disponibile un aggiornamento facoltativo correlato, [KB 3150513](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=3150513). Questo aggiornamento fornisce la configurazione aggiornata e le definizioni per gli aggiornamenti di compatibilità precedenti. Per ulteriori informazioni, vedere l' [aggiornamento più recente per la definizione di compatibilità per Windows](https://support.microsoft.com/help/3150513).  
 
 #### <a name="windows-10"></a>Windows 10
 
-Windows 10 include il componente di compatibilità. Per ottenere l'aggiornamento di compatibilità più recente, installare l'aggiornamento cumulativo più recente di Windows 10.
+Windows 10 include il componente compatibilità. Per ottenere l'aggiornamento più recente per la compatibilità, installare l'aggiornamento cumulativo più recente di Windows 10.
 
-#### <a name="windows-81"></a>Windows 8.1
+#### <a name="windows-81"></a>Windows 8.1
 
 Scaricare l'aggiornamento: [KB 2976978](http://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB2976978) 
 
-Viene eseguita la diagnostica nei sistemi Windows 8.1 che fanno parte di Windows programma Analisi utilizzo software. Questi dati diagnostici consentono di determinare se si potrebbero avere problemi di compatibilità durante l'aggiornamento a Windows 10.
+Esegue la diagnostica nei sistemi Windows 8.1 che partecipano al Analisi utilizzo software di Windows. Questi dati consentono di determinare se è possibile che si verifichino problemi di compatibilità durante l'aggiornamento a Windows 10.
 
-Per altre informazioni, vedere [Compatibility update per mantenere aggiornate in Windows 8.1 Windows](https://support.microsoft.com/help/2976978).
+Per ulteriori informazioni, vedere [aggiornamento della compatibilità per mantenere aggiornato Windows in Windows 8.1](https://support.microsoft.com/help/2976978).
 
 #### <a name="windows-7-with-service-pack-1"></a>Windows 7 con Service Pack 1
 
 Scaricare l'aggiornamento: [KB 2952664](http://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB2952664) 
 
-Viene eseguita la diagnostica di Windows 7 con i sistemi di Service Pack 1 (SP1) che fanno parte di Windows programma Analisi utilizzo software. Questi dati diagnostici consentono di determinare se si potrebbero avere problemi di compatibilità durante l'aggiornamento a Windows 10.
+Esegue la diagnostica nei sistemi Windows 7 con Service Pack 1 (SP1) che partecipano al Analisi utilizzo software di Windows. Questi dati consentono di determinare se è possibile che si verifichino problemi di compatibilità durante l'aggiornamento a Windows 10.
 
-Per altre informazioni, vedere [Compatibility update per mantenere aggiornati Windows 7, Windows](https://support.microsoft.com/help/2952664).
+Per ulteriori informazioni, vedere [aggiornamento della compatibilità per mantenere Windows aggiornato in Windows 7](https://support.microsoft.com/help/2952664).
 
 
-### <a name="bkmk_diagtrack"></a> Servizio dati di telemetria ed esperienze utente connesso
+### <a name="bkmk_diagtrack"></a>Esperienza utente connessa e servizio di telemetria
 
-Con dati di diagnostica Windows abilitati, il servizio esperienze utente connesse e telemetria (DiagTrack) raccoglie i dati di sistema, l'applicazione e del driver. Microsoft analizza i dati e lo condivide all'utente tramite Desktop Analitica.
+Con i dati di diagnostica di Windows abilitati, l'esperienza utente connessa e il servizio di telemetria (DiagTrack) raccolgono i dati del sistema, dell'applicazione e del driver. Microsoft analizza questi dati e li condivide nuovamente con l'utente tramite desktop Analytics.
 
-Per risultati ottimali, installare gli aggiornamenti seguenti in base alla versione del sistema operativo.
+Per un'esperienza ottimale, installare gli aggiornamenti seguenti a seconda della versione del sistema operativo.
 
 > [!Note]  
-> Quando si installano questi aggiornamenti, prevede che i comportamenti seguenti:
+> Quando si installano questi aggiornamenti, prevedere i comportamenti seguenti:
 > 
-> - I dispositivi che si registrano per Desktop Analitica visualizzati nel servizio in meno di un'ora  
-> - I dispositivi segnalano rapidamente lo stato per gli aggiornamenti qualitativi e delle funzionalità di Windows  
+> - I dispositivi registrati per desktop Analytics vengono visualizzati nel servizio in meno di un'ora  
+> - I dispositivi segnalano rapidamente lo stato degli aggiornamenti di qualità e funzionalità di Windows  
 >
-> Senza questi aggiornamenti, questi processi possono richiedere in 48 ore per un dispositivo segnalare al Desktop Analitica.  
+> Senza questi aggiornamenti, questi processi possono richiedere più di 48 ore affinché un dispositivo segnali a desktop Analytics.  
 
 
 #### <a name="windows-10"></a>Windows 10
@@ -97,99 +97,99 @@ Installare l'aggiornamento cumulativo più recente di Windows 10.
 - Windows 10 1607: [KB4457127](https://support.microsoft.com/help/4457127) (OS Build 14393.2517)
  -->
 
-#### <a name="windows-81"></a>Windows 8.1
+#### <a name="windows-81"></a>Windows 8.1
 
-Installare l'aggiornamento cumulativo mensile ottobre 2018, [KB4462926](https://support.microsoft.com/help/4462926)
+Installare il rollup mensile del 2018 ottobre, [KB4462926](https://support.microsoft.com/help/4462926)
 
 #### <a name="windows-7"></a>Windows 7
 
-Installare l'aggiornamento cumulativo mensile ottobre 2018, [KB4462923](https://support.microsoft.com/help/4462923)
+Installare il rollup mensile del 2018 ottobre, [KB4462923](https://support.microsoft.com/help/4462923)
 
 
 
 ## <a name="device-enrollment"></a>Registrazione del dispositivo
 
-Il servizio di Analitica Desktop non presenta nessuna agenti da installare. Registrazione del dispositivo richiede la configurazione delle impostazioni nei dispositivi di cui che si desidera monitorare. Queste impostazioni consentono di controllare a quale istanza di Analitica Desktop il dispositivo deve inviare i dati e altre opzioni di configurazione.
+Il servizio desktop Analytics non ha agenti da installare. Per la registrazione del dispositivo è necessario configurare le impostazioni nei dispositivi che si desidera monitorare. Queste impostazioni controllano l'istanza di desktop Analytics a cui il dispositivo deve inviare i dati e altre opzioni di configurazione.
 
 > [!Note]  
-> Se si usa già Windows Analitica, usare la stessa area di lavoro per Desktop Analitica. È necessario ripetere la registrazione ai dispositivi di Analitica Desktop che sono registrati in precedenza in Analitica di Windows.
+> Se si sta già usando Windows Analytics, usare la stessa area di lavoro per l'analisi desktop. È necessario registrare nuovamente i dispositivi in desktop Analytics registrati in precedenza in Windows Analytics.
 >
-> È possibile avere solo un'area di lavoro di Analitica Desktop per ogni tenant di Azure AD. Dispositivi possono inviare solo i dati di diagnostica a un'area di lavoro.  
+> È possibile avere solo un'area di lavoro di analisi desktop per ogni tenant Azure AD. I dispositivi possono inviare i dati di diagnostica solo a un'area di lavoro.  
 
-Configuration Manager offre un'esperienza integrata per la gestione e distribuzione di queste impostazioni ai client. Per risultati ottimali, usare Configuration Manager.
+Configuration Manager offre un'esperienza integrata per la gestione e la distribuzione di queste impostazioni ai client. Per un'esperienza ottimale, usare Configuration Manager.
 
-Quando ci si connette Configuration Manager per Desktop Analitica, configurare le impostazioni per registrare i dispositivi. Per altre informazioni, vedere [come connettere Configuration Manager con Desktop Analitica](/sccm/desktop-analytics/connect-configmgr#bkmk_connect).
+Quando ci si connette Configuration Manager a desktop Analytics, si configurano le impostazioni per la registrazione dei dispositivi. Per altre informazioni, vedere [How to connect Configuration Manager with desktop Analytics](/sccm/desktop-analytics/connect-configmgr#bkmk_connect).
 
-Per modificare queste impostazioni, usare la procedura seguente:
+Per modificare queste impostazioni, attenersi alla procedura seguente:
 
-1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e selezionare il nodo **Servizi di Azure**. Selezionare la connessione al Desktop Analitica e scegliere **proprietà** nella barra multifunzione.
+1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e selezionare il nodo **Servizi di Azure**. Selezionare la connessione a desktop Analytics e scegliere **Proprietà** nella barra multifunzione.
 
-2. Nel **dati di diagnostica** pagina, apportare le modifiche necessarie per le impostazioni seguenti:  
+2. Nella pagina **dati di diagnostica** apportare le modifiche necessarie alle seguenti impostazioni:  
 
-    - **ID commerciale**: questo valore verranno inseriti automaticamente con l'ID. dell'organizzazione Se non, assicurarsi che il server proxy sia configurato per consentire tutti obbligatori [endpoint](/sccm/desktop-analytics/enable-data-sharing#endpoints) prima di continuare. In alternativa, recuperare l'ID commerciale manualmente tramite il [portale Analitica Desktop](/sccm/desktop-analytics/monitor-connection-health#bkmk_ViewCommercialID).   
+    - **ID commerciale**: questo valore deve essere popolato automaticamente con l'ID dell'organizzazione. In caso contrario, assicurarsi che il server proxy sia configurato per consentire tutti gli [endpoint](/sccm/desktop-analytics/enable-data-sharing#endpoints) necessari prima di continuare. In alternativa, recuperare manualmente l'ID commerciale dal [portale di analisi dei desktop](/sccm/desktop-analytics/monitor-connection-health#bkmk_ViewCommercialID).   
 
-    - **A livello di dati di diagnostica di Windows 10**: Per altre informazioni, vedere [livelli di dati di diagnostica](/sccm/desktop-analytics/enable-data-sharing#diagnostic-data-levels).  
+    - **Livello dati di diagnostica di Windows 10**: Per altre informazioni, vedere [livelli di dati di diagnostica](/sccm/desktop-analytics/enable-data-sharing#diagnostic-data-levels).  
 
-    - **Consente il nome di dispositivo nei dati di diagnostica**: Per altre informazioni, vedere [nome dispositivo](#device-name).  
+    - **Consenti nome dispositivo nei dati di diagnostica**: Per altre informazioni, vedere [nome dispositivo](#device-name).  
 
-    Quando si apportano modifiche a questa pagina, il **funzionalità disponibili** pagina viene visualizzata un'anteprima della funzionalità Desktop Analitica con le impostazioni di dati di diagnostica selezionato.  
+    Quando si apportano modifiche a questa pagina, nella pagina **funzionalità disponibili** viene visualizzata un'anteprima della funzionalità di analisi del desktop con le impostazioni dei dati di diagnostica selezionate.  
 
-3. Nel **Desktop Analitica connessione** pagina, apportare le modifiche necessarie per le impostazioni seguenti:
+3. Nella pagina **connessione a desktop Analytics** apportare le modifiche necessarie alle seguenti impostazioni:
 
-    - **Nome visualizzato**: Il portale di Analitica Desktop Visualizza questa connessione di Configuration Manager usando questo nome.  
+    - **Nome visualizzato**: Il portale di analisi desktop Visualizza questa connessione Configuration Manager usando questo nome.  
 
-    - **Raccolta di destinazione**: Questa raccolta include tutti i dispositivi che consente di configurare Configuration Manager con l'ID commerciale e le impostazioni di dati di diagnostica. È il set completo di dispositivi che Configuration Manager si connette al servizio Analitica Desktop.  
+    - **Raccolta di destinazione**: Questa raccolta include tutti i dispositivi che Configuration Manager configura con l'ID commerciale e le impostazioni dei dati di diagnostica. Si tratta del set completo di dispositivi che Configuration Manager si connette al servizio desktop Analytics.  
 
-    - **I dispositivi nella raccolta di destinazione usano un proxy con autenticazione utente per le comunicazioni in uscita**: Per impostazione predefinita, questo valore è **No**. Se necessario nell'ambiente in uso, impostato su **Sì**. Per altre informazioni, vedere [autenticazione del server Proxy](/sccm/desktop-analytics/enable-data-sharing#proxy-server-authentication).  
+    - **I dispositivi nella raccolta di destinazione usano un proxy autenticato dall'utente per le comunicazioni in uscita**: Per impostazione predefinita, questo valore è **No**. Se necessario nell'ambiente in uso, impostare su **Sì**. Per ulteriori informazioni, vedere [autenticazione del server proxy](/sccm/desktop-analytics/enable-data-sharing#proxy-server-authentication).  
 
-    - **Selezionare le raccolte specifiche da sincronizzare con Desktop Analitica**: Selezionare **Add** raccolte aggiuntive da includere le **raccolta di destinazione** gerarchia. Queste raccolte sono disponibili nel portale di Analitica Desktop per il raggruppamento con piani di distribuzione. Assicurarsi di includere raccolte di esclusioni pilota e pilota.  <!-- 4097528 -->
+    - **Selezionare raccolte specifiche da sincronizzare con analisi desktop**: Selezionare **Aggiungi** per includere raccolte aggiuntive dalla gerarchia della **raccolta di destinazione** . Queste raccolte sono disponibili nel portale di analisi del desktop per il raggruppamento con i piani di distribuzione. Assicurarsi di includere le raccolte di esclusioni pilota e pilota.  <!-- 4097528 -->
 
         > [!Important] 
-        > Queste raccolte comunque eseguita la sincronizzazione le modifiche all'appartenenza. Ad esempio, il piano di distribuzione Usa una raccolta con una regola di appartenenza a Windows 7. Come aggiornare i dispositivi a Windows 10 e Configuration Manager valuta l'appartenenza alla raccolta, tali dispositivi eliminare esplicitamente la raccolta e un piano di distribuzione.  
+        > Queste raccolte continuano a essere sincronizzate in seguito alla modifica dell'appartenenza. Il piano di distribuzione, ad esempio, usa una raccolta con una regola di appartenenza di Windows 7. Quando i dispositivi eseguono l'aggiornamento a Windows 10 e Configuration Manager valuta l'appartenenza alla raccolta, tali dispositivi rilasciano il piano di raccolta e di distribuzione.  
 
 
 ### <a name="windows-settings"></a>Impostazioni di Windows
 
-Configuration Manager imposta le impostazioni di Windows seguenti in `Microsoft\Windows\DataCollection`:
+Configuration Manager imposta le impostazioni di Windows seguenti nel percorso `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection`dei criteri locali:
 
-| Criteri   | Valore  |
+| Criteri   | Value  |
 |----------|--------|
-| **CommercialId** | Affinché un dispositivo da visualizzare nel Desktop Analitica, configurarlo con l'ID commerciale. dell'organizzazione |
-| **AllowTelemetry**  | Impostare `1` per **base**, `2` per **avanzato**, oppure `3` per **completo** i dati di diagnostica. Analitica desktop richiede almeno base dei dati di diagnostica. Microsoft consiglia di utilizzare il livello avanzato (limitato) con Desktop Analitica. Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/configuration/configure-windows-diagnostic-data-in-your-organization) (Configurare i dati di diagnostica di Windows nell'organizzazione). |
-| **LimitEnhancedDiagnosticDataWindowsAnalytics** | *Si applica a Windows 10, versione 1709 e successive*: Questa impostazione si applica solo quando l'impostazione AllowTelemetry `2`. Limita gli eventi di dati di diagnostica avanzata inviati a Microsoft solo gli eventi necessari per Desktop Analitica. Per altre informazioni, vedere [Windows 10, versione 1709 migliorato gli eventi di dati di diagnostica e i campi usati da Windows Analitica](https://docs.microsoft.com/windows/configuration/enhanced-diagnostic-data-windows-analytics-events-and-fields).|
-| **AllowDeviceNameInTelemetry** | *Si applica a Windows 10, versione 1803 e versioni successive*: È necessario un consenso esplicito aggiuntivo separato per consentire ai dispositivi di continuare a inviare il nome del dispositivo.<br> <br>Nota: Per impostazione predefinita, il nome del dispositivo non viene inviato a Microsoft. Se si non invia il nome del dispositivo, viene visualizzata nel Desktop Analitica come "Sconosciuto". Questo comportamento può rendere difficile identificare e valutare i dispositivi. Per altre informazioni, vedere [nome dispositivo](#device-name). |
-| **CommercialDataOptIn** | *Si applica a Windows 7 e Windows 8.1*: Un valore di `1` è necessaria per Desktop Analitica. Per altre informazioni, vedere [Opt-in dati commerciali in Windows 7](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/ee126127\(v=ws.10\)). |
+| **CommercialId** | Per consentire la visualizzazione di un dispositivo in analisi desktop, configurarlo con l'ID commerciale dell'organizzazione. |
+| **AllowTelemetry**  | Set `1` per i dati `2` di diagnostica di **base**, **avanzati**o `3` **completi** . Per desktop Analytics sono necessari almeno i dati di diagnostica di base. Microsoft consiglia di usare il livello avanzato (limitato) con analisi desktop. Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/configuration/configure-windows-diagnostic-data-in-your-organization) (Configurare i dati di diagnostica di Windows nell'organizzazione). |
+| **LimitEnhancedDiagnosticDataWindowsAnalytics** | *Si applica a Windows 10, versione 1709 e successive*: Questa impostazione si applica solo quando l'impostazione AllowTelemetry `2`è. Limita gli eventi dati di diagnostica avanzati inviati a Microsoft solo agli eventi richiesti da desktop Analytics. Per ulteriori informazioni, vedere [gli eventi e i campi dei dati di diagnostica avanzati di Windows 10, versione 1709 utilizzati da Windows Analytics](https://docs.microsoft.com/windows/configuration/enhanced-diagnostic-data-windows-analytics-events-and-fields).|
+| **AllowDeviceNameInTelemetry** | *Si applica a Windows 10, versione 1803 e successive*: Per consentire ai dispositivi di continuare a inviare il nome del dispositivo, è necessario un consenso esplicito.<br> <br>Nota: Per impostazione predefinita, il nome del dispositivo non viene inviato a Microsoft. Se non si invia il nome del dispositivo, questo viene visualizzato in desktop Analytics come "sconosciuto". Questo comportamento può rendere difficile l'identificazione e la valutazione dei dispositivi. Per altre informazioni, vedere [nome dispositivo](#device-name). |
+| **CommercialDataOptIn** | *Si applica a Windows 7 e Windows 8.1*: Per analisi Desktop `1` è necessario un valore di. Per ulteriori informazioni, vedere la pagina relativa al [consenso esplicito ai dati commerciali in Windows 7](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/ee126127\(v=ws.10\)). |
 
-Visualizzare queste impostazioni in editor Criteri di gruppo nel percorso seguente: **Configurazione computer** > **modelli amministrativi** > **componenti di Windows** > **dati raccolta e anteprima Compila**.
+Visualizzare queste impostazioni nell'Editor criteri di gruppo nel percorso seguente: Configurazione > computer**modelli amministrativi** > le compilazioni di raccolta dati e anteprima di componenti di Windows. > 
 
 > [!Important]  
-> Nella maggior parte dei casi, usare solo Configuration Manager per configurare queste impostazioni. Non si applicano anche queste impostazioni negli oggetti Criteri di gruppo di dominio. Per altre informazioni, vedere [risoluzione dei conflitti](#conflict-resolution).<!-- SCCMDocs-pr 3120 -->
+> Nella maggior parte dei casi, usare solo Configuration Manager per configurare queste impostazioni. Non applicare anche queste impostazioni negli oggetti Criteri di gruppo del dominio. Per ulteriori informazioni, vedere [risoluzione dei conflitti](#conflict-resolution).<!-- SCCMDocs-pr 3120 -->
 
-### <a name="device-name"></a>Nome del dispositivo
+### <a name="device-name"></a>Nome dispositivo
 
-A partire da Windows 10, versione 1803, il nome del dispositivo non è più raccolte per impostazione predefinita. La raccolta il nome del dispositivo con i dati di diagnostica richiede un consenso esplicito aggiuntivo separato. Senza il nome del dispositivo, è più difficile per identificare quali dispositivi richiedono attenzione durante la valutazione dell'aggiornamento a una nuova versione di Windows.
+A partire da Windows 10, versione 1803, il nome del dispositivo non viene più raccolto per impostazione predefinita. Per raccogliere il nome del dispositivo con i dati di diagnostica, è necessario un consenso esplicito. Senza il nome del dispositivo, è più difficile identificare i dispositivi che richiedono attenzione durante la valutazione di un aggiornamento a una nuova versione di Windows.
 
-Se si non invia il nome del dispositivo, viene visualizzata nel Desktop Analitica come "Sconosciuto".
+Se non si invia il nome del dispositivo, questo viene visualizzato in desktop Analytics come "sconosciuto".
 
-![Elenco dei dispositivi Analitica desktop contenente i nomi di "sconosciuti"](media/unknown-device-name.png)
+![Elenco dei dispositivi di analisi desktop che mostra i nomi "sconosciuti"](media/unknown-device-name.png)
 
-È disponibile un'opzione nelle impostazioni di Configuration Manager per Desktop Analitica configurare questa opzione: **Consente il nome di dispositivo nei dati di diagnostica**. Questa impostazione di Configuration Manager Controlla l'impostazione di criteri di Windows, AllowDeviceNameInTelemetry.
+Per configurare questa opzione, è disponibile un'opzione nel Configuration Manager impostazioni per desktop Analytics: **Consente il nome del dispositivo nei dati di diagnostica**. Questa impostazione Configuration Manager controlla l'impostazione dei criteri di Windows, AllowDeviceNameInTelemetry.
  
 
-### <a name="conflict-resolution"></a>risoluzione dei conflitti
+### <a name="conflict-resolution"></a>Risoluzione dei conflitti
 
-In generale, usare le raccolte di Configuration Manager di registrazione e le impostazioni di Desktop Analitica di destinazione. Utilizzare l'appartenenza diretta o query per includere o escludere i dispositivi dalla raccolta. Per altre informazioni, vedere [Come creare le raccolte](/sccm/core/clients/manage/collections/create-collections).
+In generale, usare le raccolte di Configuration Manager per individuare le impostazioni e la registrazione di desktop Analytics. Usare l'appartenenza diretta o le query per includere o escludere i dispositivi dalla raccolta. Per altre informazioni, vedere [Come creare le raccolte](/sccm/core/clients/manage/collections/create-collections).
 
-Configuration Manager Configura le impostazioni di Windows solo se un valore non esiste già. Se è necessario configurare impostazioni diverse per un gruppo di dispositivi univoco, è possibile usare [criteri di gruppo](#windows-settings). Destinata dei criteri di gruppo impostazioni avranno precedenza sulle impostazioni di Configuration Manager.
+Configuration Manager configura le impostazioni di Windows solo se un valore non esiste già. Se è necessario configurare impostazioni diverse per un gruppo univoco di dispositivi, è possibile utilizzare [criteri di gruppo](#windows-settings). Le impostazioni di destinazione di criteri di gruppo hanno la precedenza sulle impostazioni Configuration Manager.
 
-Se la destinazione è il client di Configuration Manager con le impostazioni di Windows Analitica e Analitica Desktop, le impostazioni per Desktop Analitica hanno la precedenza.
+Se si hanno come destinazione Configuration Manager client con le impostazioni di Windows Analytics e di analisi desktop, le impostazioni di desktop Analytics hanno la precedenza.
 
-Quando si configura il livello di dati di diagnostica, impostare il limite massimo per il dispositivo. Per impostazione predefinita in Windows 10, versione 1803 e versioni successive, gli utenti possono scegliere di impostare un livello inferiore. È possibile controllare questo comportamento usando l'impostazione di criteri di gruppo **interfaccia utente di acconsentire esplicitamente impostazione dati di telemetria configura**. Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enterprise-management) (Configurare i dati di diagnostica di Windows nell'organizzazione).
+Quando si configura il livello dati di diagnostica, è necessario impostare il limite superiore per il dispositivo. Per impostazione predefinita, in Windows 10, versione 1803 e successive, gli utenti possono scegliere di impostare un livello inferiore. È possibile controllare questo comportamento usando l'impostazione di criteri di gruppo, **configurare l'impostazione del consenso esplicito per**la telemetria dell'interfaccia utente. Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enterprise-management) (Configurare i dati di diagnostica di Windows nell'organizzazione).
 
 
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Passare all'articolo successivo per creare piani di distribuzione in Desktop Analitica.
+Passare all'articolo successivo per creare piani di distribuzione in desktop Analytics.
 > [!div class="nextstepaction"]  
 > [Creare piani di distribuzione](/sccm/desktop-analytics/create-deployment-plans)  

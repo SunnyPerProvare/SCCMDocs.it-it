@@ -1,8 +1,8 @@
 ---
-title: Risolvere i problemi di Analitica Desktop
+title: Risolvere i problemi di analisi del desktop
 titleSuffix: Configuration Manager
-description: Dettagli tecnici per risolvere i problemi con Desktop Analitica.
-ms.date: 07/12/2019
+description: Dettagli tecnici che consentono di risolvere i problemi relativi a desktop Analytics.
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,28 +11,28 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a1c170394e3db46572c424dcb04715713d4b24f
-ms.sourcegitcommit: 448cc0d9094a3c9e23f011c4673cd1e8b956280a
+ms.openlocfilehash: f9e13911ef7337ca4f1f9fb2291aa026c90cfee8
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67860848"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536011"
 ---
-# <a name="troubleshoot-desktop-analytics"></a>Risolvere i problemi di Analitica Desktop
+# <a name="troubleshoot-desktop-analytics"></a>Risolvere i problemi di analisi del desktop
 
-Usare i dettagli in questo articolo per risolvere i problemi con Desktop Analitica integrato con Configuration Manager.
+Usare i dettagli in questo articolo per risolvere i problemi relativi a desktop Analytics integrato con Configuration Manager.
 
 
 
-## <a name="confirm-prerequisites"></a>Verificare i prerequisiti
+## <a name="confirm-prerequisites"></a>Conferma prerequisiti
 
-Molti problemi comuni sono causati da prerequisiti mancanti. Prima di tutto verificare le configurazioni seguenti:
+Molti problemi comuni sono causati da prerequisiti mancanti. Confermare innanzitutto le configurazioni seguenti:
 
 - [Prerequisiti](/sccm/desktop-analytics/overview#prerequisites)  
 
-- [Aggiornamenti dei componenti di Windows](/sccm/desktop-analytics/enroll-devices#update-devices)  
+- [Aggiornamenti componenti Windows](/sccm/desktop-analytics/enroll-devices#update-devices)  
 
-- [Come abilitare la condivisione dei dati](/sccm/desktop-analytics/enable-data-sharing), che include gli argomenti seguenti:  
+- [Come abilitare la condivisione dei dati, in cui vengono](/sccm/desktop-analytics/enable-data-sharing)trattati gli argomenti seguenti:  
 
     - Endpoint Internet a cui i client devono connettersi  
 
@@ -44,175 +44,177 @@ Molti problemi comuni sono causati da prerequisiti mancanti. Prima di tutto veri
 
 ## <a name="monitor-connection-health"></a>Monitorare l'integrità della connessione
 
-Usare la **integrità della connessione** dashboard in Configuration Manager per eseguire il drill-in categorie dall'integrità del dispositivo. Nella console di Configuration Manager passare ad il **raccolta Software** dell'area di lavoro, espandere il **Desktop Analitica Servicing** nodo e selezionare il **integrità della connessione** cruscotto.  
+Usare il dashboard di **integrità della connessione** in Configuration Manager per eseguire il drill-down delle categorie in base all'integrità del dispositivo. Nella console di Configuration Manager passare all'area di lavoro **raccolta software** , espandere il nodo **servizio di analisi desktop** e selezionare il dashboard di integrità della **connessione** .  
 
 Per altre informazioni, vedere [monitorare l'integrità della connessione](/sccm/desktop-analytics/monitor-connection-health).
 
 
 ## <a name="log-files"></a>File di log
 
-Per altre informazioni, vedere [i file di Log di Desktop Analitica](/sccm/core/plan-design/hierarchy/log-files#desktop-analytics)
+Per altre informazioni, vedere [file di log per analisi desktop](/sccm/core/plan-design/hierarchy/log-files#desktop-analytics)
+
+A partire da Configuration Manager versione 1906, usare lo strumento **DesktopAnalyticsLogsCollector. ps1** dalla directory di installazione Configuration Manager per risolvere i problemi di analisi del desktop. Esegue alcuni passaggi di base per la risoluzione dei problemi e raccoglie i log rilevanti in un'unica directory di lavoro. Per altre informazioni, vedere [Log Collector](/sccm/desktop-analytics/log-collector).
 
 ### <a name="enable-verbose-logging"></a>Abilita la registrazione dettagliata
 
-1. Punto di connessione del servizio, passare alla chiave del Registro di sistema seguente: `HKLM\Software\Microsoft\SMS\Tracing\SMS_SERVICE_CONNECTOR`  
-2. Impostare il **LoggingLevel** valore `0`  
+1. Nel punto di connessione del servizio passare alla chiave del registro di sistema seguente:`HKLM\Software\Microsoft\SMS\Tracing\SMS_SERVICE_CONNECTOR`  
+2. Impostare il valore di **LoggingLevel** su`0`  
 
 
-## <a name="bkmk_AzureADApps"></a> Applicazioni di Azure AD
+## <a name="bkmk_AzureADApps"></a>Applicazioni Azure AD
 
-Desktop Analitica aggiunge le seguenti applicazioni in Azure AD:
+Desktop Analytics aggiunge le applicazioni seguenti ai Azure AD:
 
-- **Configuration Manager Microservizio**: Connette Configuration Manager con Analitica Desktop. Questa app non include alcun requisito di accesso.  
+- **Microservizio Configuration Manager**: Stabilisce la connessione Configuration Manager con analisi desktop. Questa app non ha requisiti di accesso.  
 
-- **MALogAnalyticsReader**: Recupera i gruppi di OMS e dispositivi creati in Log Analitica. Per altre informazioni, vedere [ruolo applicazione MALogAnalyticsReader](#bkmk_MALogAnalyticsReader).  
+- **MALogAnalyticsReader**: Recupera i gruppi e i dispositivi OMS creati in Log Analytics. Per ulteriori informazioni, vedere [ruolo applicazione MALogAnalyticsReader](#bkmk_MALogAnalyticsReader).  
 
-Se è necessario eseguire il provisioning di queste App al termine dell'installazione, andare alla **servizi connessi di** riquadro. Selezionare **configurare l'accesso a utenti e app**ed effettuare il provisioning di App.  
+Se è necessario effettuare il provisioning di queste app dopo aver completato l'installazione, passare al riquadro **servizi connessi** . Selezionare **Configure Users and Apps Access**ed effettuare il provisioning delle app.  
 
-- **App di Azure AD per Configuration Manager**. Se è necessario eseguire il provisioning o risolvere i problemi di connessione al termine dell'installazione, vedere [crea e importa un'app per Configuration Manager](#create-and-import-app-for-configuration-manager). Questa app richiede **scrivere i dati della raccolta CM** e **lettura CM raccolta dati** sul **Configuration Manager Service** API.  
+- **App Azure ad per Configuration Manager**. Se è necessario eseguire il provisioning o risolvere i problemi di connessione dopo aver completato l'installazione, vedere [creare e importare app per Configuration Manager](#create-and-import-app-for-configuration-manager). Questa app richiede **i dati della raccolta cm di scrittura** e **legge i dati della raccolta cm** nell'API del **servizio Configuration Manager** .  
 
 
-### <a name="create-and-import-app-for-configuration-manager"></a>Creare e importare app for Configuration Manager
+### <a name="create-and-import-app-for-configuration-manager"></a>Creare e importare app per Configuration Manager
 
-Se è Impossibile creare l'app Azure AD per Configuration Manager dalla procedura guidata configurare servizi di Azure o se si desidera riusare un'app esistente, è necessario creare manualmente e importarlo. Dopo aver completato la [onboarding iniziale](/sccm/desktop-analytics/set-up#initial-onboarding) nel portale di Analitica Desktop, procedere come segue:
+Se non è possibile creare l'app Azure AD per Configuration Manager dalla configurazione guidata dei servizi di Azure o se si vuole riusare un'app esistente, è necessario crearla e importarla manualmente. Dopo aver completato il caricamento [iniziale](/sccm/desktop-analytics/set-up#initial-onboarding) nel portale di analisi desktop, seguire questa procedura:
 
-#### <a name="create-app-in-azure-ad"></a>Creare app in Azure AD
+#### <a name="create-app-in-azure-ad"></a>Crea app in Azure AD
 
-1. Aprire il [portale di Azure](http://portal.azure.com) come utente con *amministratore globale* autorizzazioni, passare a **Azure Active Directory**e selezionare **registrazioni per l'App**. Quindi selezionare **nuova registrazione**.  
+1. Aprire il [portale di Azure](http://portal.azure.com) come utente con autorizzazioni di *amministratore globale* , passare a **Azure Active Directory**e selezionare **registrazioni app**. Quindi selezionare **nuova registrazione**.  
 
-2. Nel **Create** panel, configurare le impostazioni seguenti:  
+2. Nel pannello **Crea** configurare le impostazioni seguenti:  
 
-    - **Nome**: un nome univoco che identifica l'app, ad esempio: `Desktop-Analytics-Connection`  
+    - **Nome**: nome univoco che identifica l'app, ad esempio:`Desktop-Analytics-Connection`  
 
-    - **Tipi di account supportati**: **Account in questa directory dell'organizzazione solo (Contoso)**
+    - **Tipi di account supportati**: **Solo account in questa directory organizzativa (contoso)**
 
-    - **(Facoltativo) URI di reindirizzamento**: **Web**  
+    - **URI di reindirizzamento (facoltativo)** : **Web**  
 
     <!--     - **Sign-on URL**: this value isn't used by Configuration Manager, but required by Azure AD. Enter a unique and valid URL, for example: `https://configmgrapp`   -->
   
     Selezionare **Registra**.  
 
-3. Selezionare l'app, prendere nota di **ID applicazione (client)** e **ID Directory (tenant)** . I valori sono GUID utilizzati per configurare la connessione di Configuration Manager.  
+3. Selezionare l'app, annotare l'ID dell' **applicazione (client)** e l' **ID della directory (tenant)** . I valori sono GUID utilizzati per configurare la connessione Configuration Manager.  
 
-4. Nel **Manage** dal menu **i certificati e i segreti**. Selezionare **nuovo segreto client**. Immettere un **Description**, specificare una durata di scadenza e quindi selezionare **Add**. Copia il **valore** della chiave, che consente di configurare la connessione di Configuration Manager.
+4. Scegliere **certificati & segreti**dal menu **Gestisci** . Selezionare **nuovo segreto client**. Immettere una **Descrizione**, specificare una durata di scadenza e quindi selezionare **Aggiungi**. Copiare il **valore** della chiave, che viene usato per configurare la connessione Configuration Manager.
 
     > [!Important]  
-    > Questa è l'unica possibilità per copiare il valore della chiave. Se si non copiarlo a questo punto, è necessario creare un'altra chiave.  
+    > Questa è l'unica opportunità per copiare il valore della chiave. Se non lo si copia adesso, è necessario creare un'altra chiave.  
     >
-    > Salvare il valore della chiave in un luogo sicuro.  
+    > Salvare il valore della chiave in una posizione sicura.  
 
-5. Nel **Manage** dal menu **autorizzazioni delle API**.  
+5. Scegliere **autorizzazioni API**dal menu **Gestisci** .  
 
-    1. Nel **autorizzazioni delle API** Pannello di selezione **aggiungere un'autorizzazione**.  
+    1. Nel pannello **autorizzazioni API** selezionare **Aggiungi un'autorizzazione**.  
 
-    2. Nel **le autorizzazioni API Request** panel, passare alla **API Usa la mia organizzazione**.  
+    2. Nel pannello **autorizzazioni API richiesta** passare alle **API utilizzate dall'organizzazione**.  
 
-    3. Cercare e selezionare il **Configuration Manager Microservice** API.  
+    3. Cercare e selezionare l'API del **microservizio Configuration Manager** .  
 
-    4. Selezionare il **autorizzazioni applicazione** gruppo. Espandere **CmCollectionData**e selezionare sia le autorizzazioni seguenti: **Scrivere i dati della raccolta CM** e **leggere i dati della raccolta CM**.  
+    4. Selezionare il gruppo **Autorizzazioni applicazione** . Espandere **CmCollectionData**e selezionare entrambe le autorizzazioni seguenti: **Scrivere i dati della raccolta cm** e **leggere i dati della raccolta cm**.  
 
-    5. Selezionare **aggiungere autorizzazioni**.  
+    5. Selezionare **Aggiungi autorizzazioni**.  
 
-6. Nel **le autorizzazioni API** Pannello di selezione **concedere il consenso dell'amministratore...** . Selezionare **Sì**.  
+6. Nel pannello **autorizzazioni API** selezionare Concedi il **consenso dell'amministratore.** Selezionare **Sì**.  
 
 
 #### <a name="import-app-in-configuration-manager"></a>Importa app in Configuration Manager
 
-1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e selezionare il nodo **Servizi di Azure**. Selezionare **configurare i servizi Azure** nella barra multifunzione.  
+1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e selezionare il nodo **Servizi di Azure**. Selezionare **Configura i servizi di Azure** nella barra multifunzione.  
 
-2. Nel **servizi di Azure** pagina della procedura guidata servizi di Azure, configurare le impostazioni seguenti:  
+2. Nella pagina **servizi di Azure** della procedura guidata per i servizi di Azure configurare le impostazioni seguenti:  
 
     - Specificare un **Nome** per l'oggetto in Configuration Manager.  
 
     - Specificare un parametro facoltativo **Descrizione** per identificare il servizio.  
 
-    - Selezionare **Analitica Desktop** dall'elenco dei servizi disponibili.  
+    - Selezionare **Desktop Analytics** dall'elenco dei servizi disponibili.  
   
    Selezionare **Avanti**.  
 
-3. Nel **App** pagina, selezionare un valore appropriato **ambiente Azure**. Quindi selezionare **importazione** per l'app web. Configurare le impostazioni seguenti nel **Importa le app** finestra:  
+3. Nella pagina **app** selezionare l' **ambiente Azure**appropriato. Quindi selezionare **Importa** per l'app Web. Configurare le impostazioni seguenti nella finestra **Importa app** :  
 
-    - **Nome del Tenant di Azure AD**: Questo nome è il modo in cui file è denominato in Configuration Manager  
+    - **Nome del Tenant Azure ad**: Questo nome è il nome in Configuration Manager  
 
-    - **ID Tenant di Azure AD**: Il **ID Directory** copiato da Azure AD  
+    - **ID Tenant Azure ad**: **ID directory** copiato da Azure ad  
 
-    - **Client ID** (ID client): Il **ID applicazione** copiato dall'app Azure AD  
+    - **Client ID** (ID client): **ID applicazione** copiato dall'app Azure ad  
 
-    - **Chiave privata**: Il tasto **valore** copiato dall'app Azure AD  
+    - **Chiave privata**: **Valore** della chiave copiato dall'app Azure ad  
 
-    - **Scadenza della chiave privata**: La stessa data di scadenza della chiave  
+    - **Scadenza della chiave privata**: Data di scadenza della chiave  
 
-    - **URI ID app**: Questa impostazione verranno inseriti automaticamente con il valore seguente: `https://cmmicrosvc.manage.microsoft.com/`  
+    - **URI ID app**: Questa impostazione deve essere popolata automaticamente con il valore seguente:`https://cmmicrosvc.manage.microsoft.com/`  
   
-   Selezionare **Verify**, quindi selezionare **OK** per chiudere la finestra di Importa le app. Selezionare **successivo** nella pagina App della procedura guidata servizi di Azure.  
+   Selezionare **Verifica**, quindi fare clic su **OK** per chiudere la finestra Importa app. Selezionare **Avanti** nella pagina app della procedura guidata per i servizi di Azure.  
 
-Per continuare il resto della procedura guidata di **dati di diagnostica** pagina, vedere [Connect al servizio](/sccm/desktop-analytics/connect-configmgr#bkmk_connect).
+Per continuare il resto della procedura guidata nella pagina **dati di diagnostica** , vedere [connettersi al servizio](/sccm/desktop-analytics/connect-configmgr#bkmk_connect).
 
-#### <a name="troubleshoot-app-in-configuration-manager"></a>Risolvere i problemi di app in Configuration Manager
+#### <a name="troubleshoot-app-in-configuration-manager"></a>Risolvere i problemi dell'app in Configuration Manager
 
-Se si verificano problemi creando o importando l'app, verificare innanzitutto **Smsadminui** dell'errore specifico. Quindi verificare le configurazioni seguenti:
+In caso di problemi durante la creazione o l'importazione dell'app, controllare innanzitutto **SMSAdminUI. log** per l'errore specifico. Controllare quindi le configurazioni seguenti:
 
-- È stato correttamente registrato il tenant per il servizio Desktop Analitica. Per altre informazioni, vedere [come configurare Desktop Analitica](/sccm/desktop-analytics/set-up).
+- Il tenant è stato registrato correttamente nel servizio desktop Analytics. Per altre informazioni, vedere [How to set up desktop Analytics](/sccm/desktop-analytics/set-up).
 
-- Gli endpoint sono accessibili tutti necessari. Per altre informazioni, vedere [endpoint](/sccm/desktop-analytics/enable-data-sharing#endpoints).
+- Tutti gli endpoint necessari sono accessibili. Per ulteriori informazioni, vedere [endpoint](/sccm/desktop-analytics/enable-data-sharing#endpoints).
 
-- Assicurarsi che l'utente che esegue l'accesso disponga delle autorizzazioni corrette. Per altre informazioni, vedere [Prerequisiti](/sccm/desktop-analytics/overview#prerequisites).
+- Assicurarsi che l'utente che accede disponga delle autorizzazioni corrette. Per altre informazioni, vedere [Prerequisiti](/sccm/desktop-analytics/overview#prerequisites).
 
-- Assicurarsi che l'utente può accedere ad Azure in generale. Questa azione determina se sono presenti AD Azure generale problemi di autenticazione.
+- Assicurarsi che l'utente possa accedere ad Azure in generale. Questa azione determina se esistono problemi generali di autenticazione Azure AD.
 
-- Controllare i messaggi di stato per il **SMS_SERVICE_CONNECTOR** componente per quanto riguarda le *ruolo di lavoro di Analitica Desktop*.
+- Controllare i messaggi di stato per il componente **SMS_SERVICE_CONNECTOR** per il ruolo di *lavoro di desktop Analytics*.
 
 
-### <a name="bkmk_MALogAnalyticsReader"></a> Ruolo applicazione MALogAnalyticsReader
+### <a name="bkmk_MALogAnalyticsReader"></a>Ruolo applicazione MALogAnalyticsReader
 
-Quando si configura Desktop Analitica, fornire il consenso per conto dell'organizzazione. Questo consenso consiste nell'assegnare l'applicazione MALogAnalyticsReader il ruolo di lettura Log Analitica per l'area di lavoro. Questo ruolo applicazione è richiesto dal Desktop Analitica.
+Quando si configura analisi desktop, l'utente acconsente per conto dell'organizzazione. Questo consenso consiste nell'assegnare all'applicazione MALogAnalyticsReader il ruolo di lettore Log Analytics per l'area di lavoro. Questo ruolo applicazione è richiesto da desktop Analytics.
 
-Se si è verificato un problema con questo processo durante l'installazione, usare la seguente procedura per aggiungere manualmente questa autorizzazione:
+Se si verifica un problema con questo processo durante l'installazione, usare il processo seguente per aggiungere manualmente questa autorizzazione:
 
-1. Andare alla [portale di Azure](http://portal.azure.com)e selezionare **tutte le risorse**. Selezionare l'area di lavoro di tipo **Log Analitica**.  
+1. Passare alla [portale di Azure](http://portal.azure.com)e selezionare **tutte le risorse**. Selezionare l'area di lavoro di tipo **log Analytics**.  
 
-2. Nel menu dell'area di lavoro, selezionare **controllo di accesso (IAM)** , quindi selezionare **Add**.  
+2. Nel menu dell'area di lavoro selezionare **controllo di accesso (IAM)** , quindi selezionare **Aggiungi**.  
 
-3. Nel **aggiungere autorizzazioni** panel, configurare le impostazioni seguenti:  
+3. Nel pannello **Aggiungi autorizzazioni** configurare le impostazioni seguenti:  
 
     - **Ruolo**: **Lettore**  
 
-    - **Assegna accesso a**: **Utente, gruppo o applicazione AD Azure**  
+    - **Assegnare l'accesso a**: **Azure AD utente, gruppo o applicazione**  
 
     - **Selezionare**: **MALogAnalyticsReader**  
 
 4. Selezionare **Salva**.
 
-Il portale visualizzerà il messaggio una notifica che aggiunto l'assegnazione di ruolo.
+Nel portale viene visualizzata una notifica che ha aggiunto l'assegnazione di ruolo.
 
 
 ## <a name="data-latency"></a>Latenza dei dati
 
 <!-- 3846531 -->
-Quando si configura prima Analitica Desktop, i report in Configuration Manager e il portale di Analitica Desktop non risultino dati completi sin da subito. Potrebbero essere necessari 2-3 giorni per i passaggi seguenti si verifichi:
+Quando si configura per la prima volta analisi desktop, è possibile che i report Configuration Manager e il portale di analisi desktop non visualizzino immediatamente i dati completi. Possono essere necessari 2-3 giorni per l'esecuzione dei passaggi seguenti:
 
-- Dispositivi attivi inviano dati di diagnostica per il servizio Desktop Analitica
+- I dispositivi attivi inviano i dati di diagnostica al servizio desktop Analytics
 - Il servizio elabora i dati
 - Il servizio viene sincronizzato con il sito di Configuration Manager
 
-Durante la sincronizzazione di raccolte di dispositivi dalla gerarchia di Configuration Manager per Desktop Analitica, possono volerci fino a 10 minuti per le raccolte da visualizzare nel portale di Analitica Desktop. Analogamente, quando si crea un piano di distribuzione in Desktop Analitica, possono volerci fino a 10 minuti per le nuove raccolte associati al piano di distribuzione venga visualizzato nella gerarchia di Configuration Manager. I siti primari creano le raccolte e il sito di amministrazione centrale si sincronizza con Desktop Analitica.
+Quando si sincronizzano le raccolte di dispositivi dalla gerarchia di Configuration Manager a analisi desktop, possono essere necessari fino a 10 minuti prima che tali raccolte vengano visualizzate nel portale di analisi del desktop. Analogamente, quando si crea un piano di distribuzione in desktop Analytics, possono essere necessari fino a 10 minuti affinché le nuove raccolte associate al piano di distribuzione vengano visualizzate nella gerarchia di Configuration Manager. I siti primari creano le raccolte e il sito di amministrazione centrale si sincronizza con analisi desktop.
 
-All'interno del portale di Analitica Desktop, esistono due tipi di dati: **I dati dell'amministratore** e **i dati di diagnostica**:
+All'interno del portale di analisi desktop sono disponibili due tipi di dati: Dati di **diagnostica**e **dati dell'amministratore** :
 
-- **I dati dell'amministratore** fa riferimento a qualsiasi modifica apportata alla configurazione dell'area di lavoro. Ad esempio, quando si modifica un asset **decisioni di aggiornamento** oppure **importanza** che si desidera modificare i dati dell'amministratore. Queste modifiche hanno spesso un effetto di composizione, come è possibile modificare lo stato di conformità di un dispositivo con l'asset in questione è installato.
+- **I dati dell'amministratore** fanno riferimento a tutte le modifiche apportate alla configurazione dell'area di lavoro. Ad esempio, quando si modifica la decisione o l' **importanza** dell' **aggiornamento** di un asset, si stanno cambiando i dati dell'amministratore. Queste modifiche hanno spesso un effetto di composizione, in quanto possono modificare lo stato di conformità di un dispositivo con l'asset in questione installato.
 
-- **I dati di diagnostica** fa riferimento a metadati di sistema caricati dai dispositivi client per Microsoft. Questi dati consente di creare Desktop Analitica. Include gli attributi, ad esempio inventario dei dispositivi e sicurezza e funzionalità di aggiornare lo stato.
+- I **dati di diagnostica** fanno riferimento ai metadati di sistema caricati da dispositivi client a Microsoft. Questi dati hanno l'autorità di analisi del desktop. Sono inclusi attributi come l'inventario dei dispositivi e lo stato di sicurezza e aggiornamento delle funzionalità.
 
-Per impostazione predefinita, tutti i dati di Analitica Desktop portale viene automaticamente aggiornato ogni giorno. Questo aggiornamento include modifiche di dati di diagnostica e le eventuali modifiche apportate alla configurazione (i dati dell'amministratore). Deve essere visibile nel portale di Analitica Desktop da 08 12:00:00 AM UTC ogni giorno.
+Per impostazione predefinita, tutti i dati nel portale di analisi desktop vengono aggiornati automaticamente ogni giorno. Questo aggiornamento include le modifiche apportate ai dati di diagnostica e le eventuali modifiche apportate alla configurazione (dati dell'amministratore). Dovrebbe essere visibile nel portale di analisi desktop entro 08:00 UTC ogni giorno.
 
-Quando si apportano modifiche per i dati dell'amministratore, è possibile attivare un aggiornamento su richiesta dei dati di amministratore nell'area di lavoro. Da qualsiasi pagina nel portale di Analitica Desktop, aprire il menu a comparsa valuta i dati:
+Quando si apportano modifiche ai dati dell'amministratore, è possibile attivare un aggiornamento su richiesta dei dati dell'amministratore nell'area di lavoro. Da qualsiasi pagina nel portale di analisi del desktop, aprire il riquadro a comparsa valuta dati:
 
-![Schermata della scheda di controllo flyout valuta i dati nel portale di Analitica Desktop](media/data-currency-flyout.png)
+![Screenshot della scheda del riquadro a comparsa valuta dati nel portale di analisi del desktop](media/data-currency-flyout.png)
 
-Quindi selezionare **applicare le modifiche**:
+Quindi selezionare **Applica modifiche**:
 
-![Screenshot del menu a comparsa valuta espanse dei dati nel portale di Analitica Desktop](media/data-currency-flyout-expand.png)
+![Screenshot del riquadro a comparsa di valuta dati espanso nel portale di analisi desktop](media/data-currency-flyout-expand.png)
 
-Questo processo richiede in genere compreso tra 15 e 60 minuti. L'intervallo di tempo dipende la dimensione dell'area di lavoro e l'ambito delle modifiche che richiedono i processi. Quando si richiede un aggiornamento dei dati on demand, non risulta in tutte le modifiche ai dati di diagnostica.  Per altre informazioni, vedere la [domande frequenti su Analitica Desktop](/sccm/desktop-analytics/faq#can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal).
+Questo processo richiede in genere tra 15-60 minuti. La durata dipende dalle dimensioni dell'area di lavoro e dall'ambito delle modifiche che necessitano di processi. Quando si richiede un aggiornamento dati su richiesta, non vengono apportate modifiche ai dati di diagnostica.  Per altre informazioni, vedere le [domande frequenti su desktop Analytics](/sccm/desktop-analytics/faq#can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal).
 
-Se non è possibile visualizzare le modifiche aggiornate entro gli intervalli di tempo indicati in precedenza, attendere un altro 24 ore il successivo aggiornamento giornaliero. Se viene visualizzato a intervalli più lunghi, controllare il dashboard di integrità del servizio. Se il servizio vengono segnalati come integri, contattare il supporto tecnico Microsoft.<!-- 3896921 -->
+Se non vengono visualizzate modifiche aggiornate entro i frame temporali indicati in precedenza, attendere altre 24 ore per l'aggiornamento giornaliero successivo. Se vengono visualizzati ritardi più lunghi, controllare il dashboard dell'integrità dei servizi. Se il servizio viene segnalato come integro, contattare il supporto tecnico Microsoft.<!-- 3896921 -->

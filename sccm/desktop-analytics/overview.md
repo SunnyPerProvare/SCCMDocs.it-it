@@ -2,7 +2,7 @@
 title: Desktop Analytics
 titleSuffix: Configuration Manager
 description: Panoramica sul servizio desktop Analytics integrato con Configuration Manager.
-ms.date: 07/19/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: overview
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 154c142b285c58da714193c964b353dc1e173481
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: 07d2a1b38f77a3b45c3327c054a9f1f36793e504
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68339269"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68535891"
 ---
 # <a name="what-is-desktop-analytics"></a>Informazioni su desktop Analytics
 
@@ -84,7 +84,7 @@ Per usare desktop Analytics, verificare che l'ambiente soddisfi i prerequisiti s
 
 - Configuration Manager versione 1902 con aggiornamento cumulativo (4500571) o versione successiva. Per ulteriori informazioni, vedere [Update Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
 
-    - Ruolo **amministratore completo** in Configuration Manager  
+    - Ruolo [**amministratore completo**](/sccm/core/understand/fundamentals-of-role-based-administration#bkmk_Planroles) in Configuration Manager  
 
     > [!Note]  
     > Desktop Analytics supporta un ID commerciale per ogni tenant Azure Active Directory (Azure AD) e Configuration Manager gerarchia. Se nell'ambiente sono presenti più gerarchie, utilizzare ID commerciali diversi e tenant Azure AD.<!-- 4958160 -->
