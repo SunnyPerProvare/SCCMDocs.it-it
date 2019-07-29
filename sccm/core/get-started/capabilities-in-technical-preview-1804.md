@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d060a9426207550352216c215efca50e0b774e46
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 5c21f85271b0fd1f96b3e5397d2f2fb7a3e3798d
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129698"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339881"
 ---
 # <a name="capabilities-in-technical-preview-1804-for-system-center-configuration-manager"></a>Funzionalità della Technical Preview 1804 per System Center Configuration Manager
 
@@ -32,14 +32,16 @@ Prima di installare questo aggiornamento, vedere l'articolo [Technical Preview](
 ## <a name="known-issues-in-this-technical-preview"></a>Problemi noti di questa versione Technical Preview
 
 ### <a name="bkmk_ki-prereqs"></a> Il collegamento di installazione per scaricare gli aggiornamenti non funziona
-<!--514334--> Se si esegue l'installazione dal supporto, la pagina iniziale include un collegamento denominato **Get the latest Configuration Manager updates** (Ottieni gli ultimi aggiornamenti di Configuration Manager), che non funziona in questa versione. Questo collegamento consente di scaricare i file necessari per l'installazione.
+<!--514334-->
+Se si esegue l'installazione dal supporto, la pagina iniziale include il collegamento **Get the latest Configuration Manager updates** (Ottieni gli ultimi aggiornamenti di Configuration Manager) che non funziona in questa versione. Questo collegamento consente di scaricare i file necessari per l'installazione.
 
 #### <a name="workaround"></a>Soluzione alternativa
 Per scaricare i file necessari per l'installazione, eseguire l'installazione guidata. Nella pagina Download prerequisiti usare l'opzione **Scarica file richiesti**. 
 
 
 ### <a name="bkmk_appcathttps"></a> Il punto per servizi Web del Catalogo applicazioni non può essere abilitato per HTTPS
-<!--512637--> Se il punto per servizi Web del Catalogo applicazioni è abilitato per HTTPS:
+<!--512637-->
+Se il punto per servizi Web del Catalogo applicazioni è abilitato per HTTPS:
 
 - Le applicazioni distribuite come disponibili per gli utenti non sono visualizzate in Software Center  
 
@@ -59,7 +61,8 @@ Riconfigurare il punto per servizi Web del Catalogo applicazioni per la comunica
 
 
 ## <a name="configure-a-remote-content-library-for-the-site-server"></a>Configurare una raccolta contenuto remota per il server del sito  
-<!--1357525--> Per liberare spazio sul disco rigido nel server del sito primario, spostare la relativa [raccolta contenuto](/sccm/core/plan-design/hierarchy/the-content-library) in un'altra posizione di archiviazione. È possibile spostare la raccolta contenuto in un'altra unità sul server del sito, un server distinto o dischi a tolleranza di errore in una rete di archiviazione (SAN). È consigliabile una SAN perché fornisce uno spazio di archiviazione elastico, che può aumentare o ridursi nel tempo per soddisfare i requisiti del contenuto. 
+<!--1357525-->
+Per liberare spazio sul disco rigido nel server del sito primario, spostare la relativa [raccolta contenuto](/sccm/core/plan-design/hierarchy/the-content-library) in un'altra posizione di archiviazione. È possibile spostare la raccolta contenuto in un'altra unità sul server del sito, un server distinto o dischi a tolleranza di errore in una rete di archiviazione (SAN). È consigliabile una SAN perché fornisce uno spazio di archiviazione elastico, che può aumentare o ridursi nel tempo per soddisfare i requisiti del contenuto. 
 
 Questa raccolta contenuto remota è un nuovo prerequisito per la [disponibilità elevata dei ruoli del server del sito](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability). 
 
@@ -109,15 +112,15 @@ Questi commenti e suggerimenti vengono inviati direttamente al team del prodotto
 
 Le seguenti informazioni anonime vengono sempre incluse con il feedback per il contesto:  
 
- - Versione e lingua della console di Configuration Manager  
+- Versione e lingua della console di Configuration Manager  
 
- - Versione del sito di Configuration Manager  
+- Versione del sito di Configuration Manager  
 
- - ID supporto, noto anche come ID gerarchia  
+- ID supporto, noto anche come ID gerarchia  
 
- - Versione e lingua del sistema operativo per il sistema in cui è in esecuzione la console  
+- Versione e lingua del sistema operativo per il sistema in cui è in esecuzione la console  
 
- - Posizione esatta nella console da cui è stato fatto clic sullo smile  
+- Posizione esatta nella console da cui è stato fatto clic sullo smile  
 
 Questi dati sono coerenti con la raccolta dei dati di utilizzo e di diagnostica. Per altre informazioni, vedere [Diagnostica e dati di utilizzo](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data).
 
@@ -137,9 +140,9 @@ Usare Support Center per la risoluzione dei problemi dei client, la visualizzazi
 
 ### <a name="new-support-center-features"></a>Nuove funzionalità di Support Center  
 
- - Un nuovo visualizzatore di log, OneTrace. Funziona in modo simile a CMTrace e include miglioramenti come una visualizzazione a schede e finestre ancorabili.  
+- Un nuovo visualizzatore di log, OneTrace. Funziona in modo simile a CMTrace e include miglioramenti come una visualizzazione a schede e finestre ancorabili.  
 
- - Una nuova funzionalità dell'agente di raccolta dati raccoglie i log di diagnostica da un client Configuration Manager locale o remoto. Fornisce funzionalità di diagnostica in tempo reale dell'inventario (sostituisce Client Spy), dei criteri (sostituisce Policy Spy) e della cache del client.  
+- Una nuova funzionalità dell'agente di raccolta dati raccoglie i log di diagnostica da un client Configuration Manager locale o remoto. Fornisce funzionalità di diagnostica in tempo reale dell'inventario (sostituisce Client Spy), dei criteri (sostituisce Policy Spy) e della cache del client.  
 
 
 
@@ -150,37 +153,37 @@ Gli strumenti server e client di Configuration Manager ora sono inclusi con la v
 
 #### <a name="server-tools"></a>Strumenti server  
 
- - **DP Job Manager**: consente di risolvere i problemi dei processi di distribuzione del contenuto ai punti di distribuzione  
+- **DP Job Manager**: consente di risolvere i problemi dei processi di distribuzione del contenuto ai punti di distribuzione  
 
- - **Collection Evaluation Viewer**: consente di visualizzare informazioni dettagliate sulla valutazione della raccolta  
+- **Collection Evaluation Viewer**: consente di visualizzare informazioni dettagliate sulla valutazione della raccolta  
 
- - **Content Library Explorer**: consente di visualizzare il contenuto dell'archivio a istanza singola della raccolta contenuto  
+- **Content Library Explorer**: consente di visualizzare il contenuto dell'archivio a istanza singola della raccolta contenuto  
 
- - **Content Library Transfer**: trasferisce la raccolta contenuto tra diverse unità  
+- **Content Library Transfer**: trasferisce la raccolta contenuto tra diverse unità  
 
- - **Content Ownership Tool**: modifica la proprietà dei pacchetti orfani. Questi pacchetti sono presenti nel sito senza un server del sito proprietario.  
+- **Content Ownership Tool**: modifica la proprietà dei pacchetti orfani. Questi pacchetti sono presenti nel sito senza un server del sito proprietario.  
 
- - **Role-based Administration and Auditing Tool**: consente agli amministratori di controllare la configurazione dei ruoli  
+- **Role-based Administration and Auditing Tool**: consente agli amministratori di controllare la configurazione dei ruoli  
 
 #### <a name="client-tools"></a>Strumenti client
 
- - **CMTrace**: consente di visualizzare i log  
+- **CMTrace**: consente di visualizzare i log  
 
- - **Deployment Monitoring Tool**: consente di risolvere i problemi di applicazioni, aggiornamenti e distribuzioni delle linee di base  
+- **Deployment Monitoring Tool**: consente di risolvere i problemi di applicazioni, aggiornamenti e distribuzioni delle linee di base  
 
- - **Policy Spy**: consente di visualizzare le assegnazioni dei criteri  
+- **Policy Spy**: consente di visualizzare le assegnazioni dei criteri  
 
- - **Power Viewer Tool**: consente di visualizzare lo stato della funzionalità di risparmio energia  
+- **Power Viewer Tool**: consente di visualizzare lo stato della funzionalità di risparmio energia  
 
- - **Send Schedule Tool**: consente di attivare pianificazioni e valutazioni delle linee di base DCM  
+- **Send Schedule Tool**: consente di attivare pianificazioni e valutazioni delle linee di base DCM  
 
 > [!Important]  
 > [Support Center](#support-center) è consigliato per la maggior parte casi d'uso, perché include le stesse funzionalità o funzionalità migliorate per gli strumenti seguenti:  
->  - Client Spy
->  - CMTrace<sup>1</sup> 
->  - Deployment Monitoring Tool
->  - Policy Spy
->  - Send Schedule Tool
+> - Client Spy
+> - CMTrace<sup>1</sup> 
+> - Deployment Monitoring Tool
+> - Policy Spy
+> - Send Schedule Tool
 > 
 > <sup>1</sup> CMTrace non dipende da .NET o Windows Presentation Foundation (WPF), pertanto viene ancora usato nelle immagini di avvio Windows PE.
 
@@ -218,7 +221,8 @@ Quando si revoca l'approvazione per un'applicazione, il comportamento è stato m
 
 
 ## <a name="exclude-active-directory-containers-from-discovery"></a>Escludere i contenitori di Active Directory dall'individuazione
-<!--1358143--> Per ridurre il numero degli oggetti individuati, ora è possibile escludere specifici contenitori da Individuazione sistema Active Directory. Questa funzionalità è il risultato dei [commenti e suggerimenti raccolti tramite UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8414520-exclude-virtual-cluster-and-ou-from-discovery).
+<!--1358143-->
+Per ridurre il numero degli oggetti individuati, ora è possibile escludere specifici contenitori da Individuazione sistema Active Directory. Questa funzionalità è il risultato dei [commenti e suggerimenti raccolti tramite UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8414520-exclude-virtual-cluster-and-ou-from-discovery).
 
 ### <a name="try-it-out"></a>Verifica
  Provare a completare le attività. Inviare quindi [commenti e suggerimenti](#bkmk_feedback).
@@ -264,7 +268,8 @@ Per altre informazioni sulle impostazioni client, vedere [Configurare le imposta
 
 
 ## <a name="filter-automatic-deployment-rules-by-software-update-architecture"></a>Filtrare le regole di distribuzione automatica in base all'architettura di aggiornamento software
- <!--1322266--> È ora possibile filtrare le regole di distribuzione automatica in modo da escludere architetture come Itanium e ARM64.
+ <!--1322266-->
+Ora è possibile filtrare le regole di distribuzione automatica in modo da escludere architetture come Itanium e ARM64.
 
 ### <a name="try-it-out"></a>Verifica
 Provare a completare le attività. Inviare quindi [commenti e suggerimenti](#bkmk_feedback).
@@ -290,22 +295,22 @@ Dopo aver aggiunto i criteri relativi all'architettura, nella pagina delle propr
 ## <a name="improvements-to-os-deployment"></a>Miglioramenti della distribuzione del sistema operativo
 Sono stati apportati i miglioramenti seguenti alla distribuzione del sistema operativo a seguito dei commenti e suggerimenti di UserVoice.  
 
- - [Maschera i dati sensibili archiviati nelle variabili della sequenza di attività](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): nel passaggio [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) selezionare la nuova opzione **Non visualizzare questo valore**, ad esempio quando si specifica una password.<!--1358330--> Quando si abilita questa opzione, si applicano i comportamenti seguenti:
-   - Il valore della variabile non viene visualizzato in smsts.log.
-   - La console di Configuration Manager e il provider SMS gestiscono questo valore come gli altri segreti, ad esempio le password.
-   - Il valore non è incluso quando si esporta la sequenza di attività.
-   - L'editor della sequenza di attività non legge questo valore quando si modifica il passaggio. Digitare di nuovo l'intero valore per apportare modifiche.
+- [Maschera i dati sensibili archiviati nelle variabili della sequenza di attività](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): nel passaggio [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) selezionare la nuova opzione **Non visualizzare questo valore**, ad esempio quando si specifica una password.<!--1358330--> Quando si abilita questa opzione, si applicano i comportamenti seguenti:
+  - Il valore della variabile non viene visualizzato in smsts.log.
+  - La console di Configuration Manager e il provider SMS gestiscono questo valore come gli altri segreti, ad esempio le password.
+  - Il valore non è incluso quando si esporta la sequenza di attività.
+  - L'editor della sequenza di attività non legge questo valore quando si modifica il passaggio. Digitare di nuovo l'intero valore per apportare modifiche.
 
-   > [!Important]  
-   > Le variabili e i relativi valori vengono salvati con la sequenza di attività in formato XML e offuscati nel database. Quando il client richiede un criterio della sequenza di attività dal punto di gestione, il criterio viene crittografato in transito e durante l'archiviazione sul client. Tuttavia, tutti i valori delle variabili sono in testo normale nell'ambiente della sequenza di attività in memoria in fase di esecuzione nel client. Se la sequenza di attività include un passaggio per l'output del valore della variabile, questo output è in testo normale. Questo comportamento richiede un'azione esplicita da parte dell'amministratore per includere tale passaggio nella sequenza di attività. 
+  > [!Important]  
+  > Le variabili e i relativi valori vengono salvati con la sequenza di attività in formato XML e offuscati nel database. Quando il client richiede un criterio della sequenza di attività dal punto di gestione, il criterio viene crittografato in transito e durante l'archiviazione sul client. Tuttavia, tutti i valori delle variabili sono in testo normale nell'ambiente della sequenza di attività in memoria in fase di esecuzione nel client. Se la sequenza di attività include un passaggio per l'output del valore della variabile, questo output è in testo normale. Questo comportamento richiede un'azione esplicita da parte dell'amministratore per includere tale passaggio nella sequenza di attività. 
 
 
- - [Maschera 'nome programma' durante il passaggio 'Esegui riga di comando' di una sequenza di attività](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): per impedire la visualizzazione o la registrazione di dati potenzialmente sensibili, impostare la variabile **OSDDoNotLogCommand** della sequenza di attività su `TRUE`. Questa variabile maschera il nome del programma in smsts.log durante il passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) della sequenza di attività. <!--1358493-->  
+- [Maschera 'nome programma' durante il passaggio 'Esegui riga di comando' di una sequenza di attività](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): per impedire la visualizzazione o la registrazione di dati potenzialmente sensibili, impostare la variabile **OSDDoNotLogCommand** della sequenza di attività su `TRUE`. Questa variabile maschera il nome del programma in smsts.log durante il passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) della sequenza di attività. <!--1358493-->  
 
 
 
 ## <a name="improvements-to-the-configuration-manager-console"></a>Miglioramenti della console di Configuration Manager
-- Le informazioni sull'utente primario ora sono visibili durante la visualizzazione dei membri di una raccolta in **Asset e conformità**, **Raccolte di dispositivi**.<!--510252-->  
+- Le informazioni sull'utente primario sono ora visibili durante la visualizzazione dei membri di una raccolta in **Asset e conformità**, **Raccolte di dispositivi**.<!--510252-->  
 
 
 

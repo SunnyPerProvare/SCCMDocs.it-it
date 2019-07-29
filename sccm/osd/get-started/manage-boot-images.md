@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4ed731b9b931e76e6d6b6d1399bf5a273bf561b
-ms.sourcegitcommit: 56ec6933cf7bfc93842f55835ad336ee3a1c6ab5
-ms.translationtype: HT
+ms.openlocfilehash: ddc856b3c1615045aadba60c4616223349a7b61d
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57211653"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340414"
 ---
 # <a name="manage-boot-images-with-configuration-manager"></a>Gestire le immagini d'avvio con Configuration Manager
 
@@ -28,7 +28,7 @@ Un'immagine d'avvio in Configuration Manager è un'immagine [Windows PE](https:/
 
 ## <a name="BKMK_BootImageDefault"></a> Immagini d'avvio predefinite
 
-In Configuration Manager sono disponibili due immagini d'avvio predefinite: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste immagini sono archiviate nelle cartelle *x64* o *i386* nella condivisione seguente nel server del sito: `\\<SiteServerName>\SMS_<sitecode>\osd\boot\`. Le immagini di avvio predefinite vengono aggiornate o rigenerate in base all'azione eseguita.
+Configuration Manager offre due immagini d'avvio predefinite: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste immagini sono archiviate nelle cartelle *x64* o *i386* nella condivisione seguente nel server del sito: `\\<SiteServerName>\SMS_<sitecode>\osd\boot\`. Le immagini di avvio predefinite vengono aggiornate o rigenerate in base all'azione eseguita.
 
 Tenere presente i comportamenti seguenti per le azioni descritte per le immagini d'avvio predefinite:
 
@@ -63,10 +63,10 @@ Quando si esegue l'aggiornamento di Configuration Manager 2012 alla versione Cur
 Quando si usa l'azione **Aggiorna punti di distribuzione** dal nodo **Immagini d'avvio** nella console, il sito aggiorna le immagini d'avvio di destinazione con i componenti client, i driver e le personalizzazioni.    
 
 È possibile ricaricare l'immagine d'avvio con la versione più recente di WinPE dalla directory di installazione di Windows ADK. La pagina **Generale** dell'Aggiornamento guidato punti di distribuzione contiene le informazioni seguenti: 
- - La versione corrente di Windows ADK installata nel server del sito
- - La versione corrente del client di produzione
- - La versione Windows ADK di WinPE nell'immagine d'avvio
- - La versione del client di Configuration Manager nell'immagine d'avvio
+- La versione corrente di Windows ADK installata nel server del sito
+- La versione corrente del client di produzione
+- La versione Windows ADK di WinPE nell'immagine d'avvio
+- La versione del client di Configuration Manager nell'immagine d'avvio
 
 Se le versioni nell'immagine d'avvio non sono aggiornate, usare l'opzione **Ricarica questa immagine d'avvio con la versione corrente di Windows PE da Windows ADK**. 
 
@@ -101,7 +101,7 @@ Ad esempio, usare la console di Configuration Manager per personalizzare le imma
 - [Supporto per Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk)
 - [DISM supported platforms](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-supported-platforms) (Piattaforme supportate per Gestione e manutenzione immagini distribuzione)
 
-#### <a name="bkmk_note1"></a> Nota 1: Supporto per Windows PE 3.1
+#### <a name="bkmk_note1"></a> Nota 1: supporto per Windows PE 3.1
 
 Aggiungere un'immagine d'avvio a Configuration Manager solo se è basata su Windows PE *versione 3.1*. Aggiornare Windows AIK per Windows 7 (basato su Windows PE 3.0) con il supplemento Windows AIK per Windows 7 SP1 (basato su Windows PE 3.1). Scaricare il supplemento Windows AIK per Windows 7 SP1 dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=5188).  
 
@@ -131,7 +131,7 @@ Aggiungere un'immagine d'avvio a Configuration Manager solo se è basata su Wind
 L'immagine d'avvio viene ora elencata nel nodo **Immagine d'avvio**. Prima di usare l'immagine d'avvio per distribuire un sistema operativo, distribuirla ai punti di distribuzione. 
 
 > [!Tip]  
-> Nel nodo **Immagine d'avvio** della console la colonna **Dimensione (KB)** visualizza la dimensione decompressa per ogni immagine d'avvio. Quando il sito invia un'immagine d'avvio in rete, ne invia una copia compressa. Le dimensioni di questa copia sono in genere inferiori rispetto a quelle indicate nella colonna **Dimensione (KB)**.  
+> Nel nodo **Immagine d'avvio** della console la colonna **Dimensione (KB)** visualizza la dimensione decompressa per ogni immagine d'avvio. Quando il sito invia un'immagine d'avvio in rete, ne invia una copia compressa. Le dimensioni di questa copia sono in genere inferiori rispetto a quelle indicate nella colonna **Dimensione (KB)** .  
 
 
 
@@ -185,7 +185,7 @@ Nella scheda **Driver** aggiungere i driver di dispositivo di Windows necessari 
 
 - Aggiungere all'immagine d'avvio solo i driver di rete e di archiviazione, a meno che WinPE non richieda altri driver.  
 
-- Per visualizzare solo i driver di archiviazione e di rete, selezionare **Nascondi driver non inclusi in una classe di archiviazione o di rete (per immagini d'avvio)**. Questa opzione consente di nascondere anche altri driver in genere non necessari per le immagini d'avvio, ad esempio i driver video o quelli per modem.  
+- Per visualizzare solo i driver di archiviazione e di rete, selezionare **Nascondi driver non inclusi in una classe di archiviazione o di rete (per immagini d'avvio)** . Questa opzione consente di nascondere anche altri driver in genere non necessari per le immagini d'avvio, ad esempio i driver video o quelli per modem.  
 
 - Per nascondere i driver privi di una firma digitale valida, selezionare **Nascondi driver senza firma digitale**.  
 
@@ -210,7 +210,7 @@ Nella scheda **Personalizzazione** selezionare una delle seguenti impostazioni:
 - Configurare l'area scratch di Windows PE, ovvero l'archivio temporaneo (unità RAM) usato da WinPE. Ad esempio, quando un'applicazione viene eseguita in WinPE e richiede la scrittura di file temporanei, WinPE reindirizza tali file all'area scratch in memoria per simulare la presenza di un disco rigido. Per impostazione predefinita, questa quantità è 512 MB per i dispositivi con più di 1 GB di RAM. In caso contrario, il valore predefinito è 32 MB.  
 
 #### <a name="optional-components"></a>Componenti facoltativi
-Nella scheda **Componenti facoltativi** specificare i componenti aggiunti a Windows PE per l'utilizzo con Configuration Manager. Per altre informazioni sui componenti facoltativi, vedere [WinPE: aggiungere pacchetti (informazioni di riferimento sui componenti facoltativi)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).  
+Nella scheda **Componenti facoltativi** specificare i componenti aggiunti a Windows PE per l'utilizzo con Configuration Manager. Per altre informazioni sui componenti facoltativi disponibili, vedere [WinPE: aggiungere pacchetti (informazioni di riferimento sui componenti facoltativi)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).  
 
 I componenti seguenti sono richiesti da Configuration Manager e vengono sempre aggiunti alle immagini d'avvio:
 - Scripting (WinPE-Scripting)
@@ -222,8 +222,8 @@ L'elenco **Componenti** mostra gli elementi aggiuntivi che vengono aggiunti a qu
 
 I componenti seguenti vengono usati comunemente dai clienti:
 - Microsoft .NET (WinPE-NetFX): questo componente è un prerequisito per PowerShell. È uno dei componenti facoltativi più grandi.  
-- Windows PowerShell (WinPE-PowerShell): questo componente richiede .NET e aggiunge supporto limitato di PowerShell. Se si eseguono gli script di PowerShell personalizzati durante la fase WinPE della sequenza di attività, aggiungere questo componente. Esistono altri componenti che potrebbero essere necessari per altri cmdlet di PowerShell.   
-- HTML (WinPE-HTA): se si eseguono applicazioni HTML personalizzate durante la fase WinPE della sequenza di attività, aggiungere questo componente. 
+- Windows PowerShell (WinPE-PowerShell): questo componente richiede .NET e aggiunge un supporto limitato per PowerShell. Se si eseguono gli script di PowerShell personalizzati durante la fase WinPE della sequenza di attività, aggiungere questo componente. Esistono altri componenti che potrebbero essere necessari per altri cmdlet di PowerShell.   
+- Se si eseguono applicazioni HTML personalizzate durante la fase WinPE della sequenza di attività, aggiungere questo componente. 
 
 Per altre informazioni sull'aggiunta di ulteriori lingue, vedere [Configurare più lingue](#BKMK_BootImageLanguage). 
 
@@ -257,7 +257,7 @@ Nella scheda **Percorsi contenuto** selezionare il punto di distribuzione o il g
 
 - **Convalida**: controllare l'integrità del pacchetto di immagini d'avvio nel punto di distribuzione o nel gruppo di punti di distribuzione selezionato.  
 
-- **Ridistribuisci**: distribuire nuovamente l'immagine d'avvio nel punto di distribuzione o nel gruppo di punti di distribuzione selezionato.  
+- **Ridistribuisci**: distribuire nuovamente l'immagine di avvio nel punto di distribuzione o nel gruppo di punti di distribuzione selezionato.  
 
 - **Rimuovi**: eliminare l'immagine d'avvio dal punto di distribuzione o dal gruppo di punti di distribuzione selezionato.  
 

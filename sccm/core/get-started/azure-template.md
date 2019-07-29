@@ -1,8 +1,8 @@
 ---
 title: Creare un lab in Azure
 titleSuffix: Configuration Manager
-description: Automatizzare la creazione di un lab di Configuration Manager Technical Preview usando i modelli di Azure
-ms.date: 03/18/2019
+description: Automatizzare la creazione di un lab di Configuration Manager Technical Preview o di un lab di valutazione del ramo corrente usando i modelli di Azure
+ms.date: 07/22/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,22 +11,25 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aeef8e447d646df183f7f2075954e381b08d8c93
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 0c4c565d3c1754ce60ec8f9b7d5dcd2d487f8db1
+ms.sourcegitcommit: cdad3ca82018f1755e5186f8949a898cd201b565
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499726"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68411489"
 ---
-# <a name="create-a-configuration-manager-technical-preview-lab-in-azure"></a>Creare un lab di Configuration Manager Technical Preview in Azure
+# <a name="create-a-configuration-manager-lab-in-azure"></a>Creare un lab di Configuration Manager in Azure
 
 *Si applica a: System Center Configuration Manager (Technical Preview)*
 
 <!--3556017-->
 
-Questa guida descrive come compilare un ambiente lab per Configuration Manager in Microsoft Azure. Vengono usati modelli di Azure per semplificare e automatizzare la creazione di un lab con le risorse di Azure. Il processo installa l'ultima versione del ramo di Configuration Manager Technical Preview. 
+Questa guida descrive come compilare un ambiente lab per Configuration Manager in Microsoft Azure. Vengono usati modelli di Azure per semplificare e automatizzare la creazione di un lab con le risorse di Azure. Sono disponibili due modelli di Azure: 
 
-Per altre informazioni sul ramo corrente di Configuration Manager, vedere [Configuration Manager in Azure](/sccm/core/understand/configuration-manager-on-azure).
+- Il modello di Azure di Configuration Manager Technical Preview installa l'ultima versione del ramo di Configuration Manager Technical Preview.
+- Il modello di Azure del ramo corrente di Configuration Manager installa la valutazione della versione più recente di Configuration Manager Current Branch. 
+
+Per altre informazioni, vedere [Configuration Manager in Azure](/sccm/core/understand/configuration-manager-on-azure).
 
 
 
@@ -44,7 +47,7 @@ Questo processo richiede una sottoscrizione di Azure in cui è possibile creare 
 
 ## <a name="process"></a>Processo
 
-1. Passare al [modello di Configuration Manager](https://azure.microsoft.com/resources/templates/sccm-technicalpreview/).  
+1. Passare al [modello di Configuration Manager Technical Preview](https://azure.microsoft.com/resources/templates/sccm-technicalpreview/) o al [modello del ramo corrente di Configuration Manager](https://azure.microsoft.com/resources/templates/sccm-currentbranch/).  
 
 2. Selezionare **Distribuisci in Azure**. Si aprirà il portale di Azure.  
 
@@ -60,7 +63,7 @@ Questo processo richiede una sottoscrizione di Azure in cui è possibile creare 
 
     - Impostazioni  
 
-        - **Prefisso:**: Nome del prefisso delle macchine. Per altre informazioni, vedere [Informazioni sulle macchine virtuali di Azure](#azure-vm-info).  
+        - **Prefisso:** : Nome del prefisso delle macchine. Per altre informazioni, vedere [Informazioni sulle macchine virtuali di Azure](#azure-vm-info).  
 
         - **Nome utente amministratore**: Nome di un utente nelle macchine virtuali con diritti amministrativi. Questo utente viene usato per accedere alle macchine virtuali.  
 
@@ -88,17 +91,17 @@ Per connettersi alle macchine virtuali, ottenere prima gli indirizzi IP pubblici
 ## <a name="azure-vm-info"></a>Informazioni sulle macchine virtuali di Azure
 
 Le specifiche di tutte le tre macchine virtuali sono le seguenti:
-- Standard_D2s_v3, con due core CPU e 8 GB di memoria  
-- Windows Server 2016 Datacenter Edition
 - 150 GB di spazio su disco
 - Sia un indirizzo IP pubblico che uno privato. Gli indirizzi IP pubblici si trovano in un gruppo di sicurezza di rete che consente solo connessioni desktop remote alla porta TCP 3389. 
 
 Il prefisso specificato nel modello di distribuzione è il prefisso del nome della macchina virtuale. Ad esempio se si imposta il prefisso "contoso", il nome del computer del controller di dominio sarà `contosoDC`.
 
 
-### `<prefix>DC`
+### `<prefix>DC01`
 
-Controller di dominio Active Directory
+- Controller di dominio Active Directory
+- Standard_B2s con due CPU e 4 GB di memoria
+- Windows Server 2019 Datacenter Edition
 
 #### <a name="windows-features-and-roles"></a>Ruoli e funzionalità di Windows
 - Active Directory Domain Services (ADDS)
@@ -106,8 +109,10 @@ Controller di dominio Active Directory
 - Compressione differenziale remota
 
 
-### `<prefix>PS1`
+### `<prefix>PS01`
 
+- Standard_B2ms con due CPU e 8 GB di memoria
+- Windows Server 2016 Datacenter Edition
 - SQL Server
 - Windows 10 ADK con Windows PE 
 - Sito primario di Configuration Manager
@@ -118,8 +123,10 @@ Controller di dominio Active Directory
 - Internet Information Service (IIS)
 
 
-### `<prefix>DPMP`
+### `<prefix>DPMP01`
 
+- Standard_B2s con due CPU e 4 GB di memoria
+- Windows Server 2019 Datacenter Edition
 - Punto di distribuzione
 - Punto di gestione
 
@@ -129,3 +136,8 @@ Controller di dominio Active Directory
 - Internet Information Service (IIS)
 - Servizio trasferimento intelligente in background (BITS)
 
+### `<prefix>CL01`
+
+- Solo per il modello di valutazione del ramo corrente di Configuration Manager
+- Windows 10
+- Client di Configuration Manager

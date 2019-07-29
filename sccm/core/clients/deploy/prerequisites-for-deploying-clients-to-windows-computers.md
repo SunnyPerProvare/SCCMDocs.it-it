@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6d93fcc35a6d038b03a0829c6fe66ecc50a5446
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: d350c99c1f09f79850f1bc532a5a75c2db454d3d
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140280"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339094"
 ---
 # <a name="prerequisites-for-deploying-clients-to-windows-computers-in-configuration-manager"></a>Prerequisiti per la distribuzione dei client nei computer Windows in Configuration Manager
 
@@ -99,26 +99,26 @@ I prerequisiti seguenti sono specifici dei diversi metodi di installazione clien
 
 #### <a name="client-push-installation"></a>Installazione push client  
 
-   -   Il sito usa account di installazione push client per connettersi ai computer per installare il client. Specificare questi account nella scheda **Account** delle proprietà di installazione push client. L'account deve essere membro del gruppo Administrators locale nel computer di destinazione.  
+-   Il sito usa account di installazione push client per connettersi ai computer per installare il client. Specificare questi account nella scheda **Account** delle proprietà di installazione push client. L'account deve essere membro del gruppo Administrators locale nel computer di destinazione.  
 
-         Se non si specifica un account di installazione push client, il server del sito usa il proprio account computer.  
+      Se non si specifica un account di installazione push client, il server del sito usa il proprio account computer.  
 
-   -   Il sito deve individuare il computer in cui verrà installato il client. È necessario almeno un metodo di individuazione di Configuration Manager.  
+-   Il sito deve individuare il computer in cui verrà installato il client. È necessario almeno un metodo di individuazione di Configuration Manager.  
 
-   -   Il computer dispone di una condivisione ADMIN$.  
+-   Il computer dispone di una condivisione ADMIN$.  
 
-   -   Per eseguire automaticamente il push del client di Configuration Manager nelle risorse individuate, selezionare l'opzione **Abilita installazione push client per le risorse assegnate** in Proprietà installazione push client.  
+-   Per eseguire automaticamente il push del client di Configuration Manager nelle risorse individuate, selezionare l'opzione **Abilita installazione push client per le risorse assegnate** in Proprietà installazione push client.  
 
-   -   Il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione per scaricare i file di origine.  
+-   Il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione per scaricare i file di origine.  
 
-   -   A partire dalla versione 1806, quando si richiede l'autenticazione reciproca Kerberos, i client devono risiedere in una foresta Active Directory attendibile. Il protocollo Kerberos in Windows si basa su Active Directory per l'autenticazione reciproca.<!--1358204-->  
+-   A partire dalla versione 1806, quando si richiede l'autenticazione reciproca Kerberos, i client devono risiedere in una foresta Active Directory attendibile. Il protocollo Kerberos in Windows si basa su Active Directory per l'autenticazione reciproca.<!--1358204-->  
 
 
 Per usare il push client, sono necessarie le autorizzazioni di sicurezza seguenti:  
 
-   -   Per configurare l'account di installazione push client: autorizzazione **Modifica** e **Lettura** per l'oggetto **Sito**.  
+-   Per configurare l'account di installazione push client: autorizzazione **Modifica** e **Lettura** per l'oggetto **Sito**.  
 
-   -   Per usare il push client per installare il client in raccolte, dispositivi e query: autorizzazione **Modifica risorsa** e **Lettura** per l'oggetto **Raccolta**.  
+-   Per usare il push client per installare il client in raccolte, dispositivi e query: autorizzazione **Modifica risorsa** e **Lettura** per l'oggetto **Raccolta**.  
 
 
 Il ruolo di sicurezza **Amministratore infrastruttura** predefinito include le autorizzazioni necessarie per gestire le installazioni push client.  
@@ -126,11 +126,11 @@ Il ruolo di sicurezza **Amministratore infrastruttura** predefinito include le a
 
 #### <a name="software-update-point-based-installation"></a>Installazione basata sul punto di aggiornamento software  
 
-   -   Se lo schema di Active Directory non è stato esteso o se si installano i client da un'altra foresta, usare Criteri di gruppo per effettuare il provisioning dei parametri di installazione per CCMSetup.exe. Per altre informazioni, vedere [Come effettuare il provisioning delle proprietà di installazione client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).  
+-   Se lo schema di Active Directory non è stato esteso o se si installano i client da un'altra foresta, usare Criteri di gruppo per effettuare il provisioning dei parametri di installazione per CCMSetup.exe. Per altre informazioni, vedere [Come effettuare il provisioning delle proprietà di installazione client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).  
 
-   -   Pubblicare il client di Configuration Manager nel punto di aggiornamento software.  
+-   Pubblicare il client di Configuration Manager nel punto di aggiornamento software.  
 
-   -   Per scaricare i file di origine, il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione.  
+-   Per scaricare i file di origine, il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione.  
 
 
 Per le autorizzazioni di sicurezza necessarie per gestire gli aggiornamenti software di Configuration Manager, vedere [Prerequisiti per gli aggiornamenti software](/sccm/sum/plan-design/prerequisites-for-software-updates).  
@@ -138,9 +138,9 @@ Per le autorizzazioni di sicurezza necessarie per gestire gli aggiornamenti soft
 
 #### <a name="group-policy-based-installation"></a>Installazione basata sui criteri di gruppo  
 
-   -   Se lo schema di Active Directory non è stato esteso o se si installano i client da un'altra foresta, usare Criteri di gruppo per effettuare il provisioning dei parametri di installazione per CCMSetup.exe. Per altre informazioni, vedere [Come effettuare il provisioning delle proprietà di installazione client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).  
+-   Se lo schema di Active Directory non è stato esteso o se si installano i client da un'altra foresta, usare Criteri di gruppo per effettuare il provisioning dei parametri di installazione per CCMSetup.exe. Per altre informazioni, vedere [Come effettuare il provisioning delle proprietà di installazione client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).  
 
-   -   Per scaricare i file di origine, il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione.  
+-   Per scaricare i file di origine, il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione.  
 
 
 #### <a name="logon-script-based-installation"></a>Installazione basata su script di accesso  
@@ -155,15 +155,15 @@ Per scaricare i file di origine, il computer client deve poter comunicare con un
 
 #### <a name="microsoft-intune-mdm-installation"></a>Installazione MDM di Microsoft Intune
 
- - Richiede un abbonamento di Microsoft Intune e le licenze appropriate.  
+- Richiede un abbonamento di Microsoft Intune e le licenze appropriate.  
 
- - Richiede che il dispositivo abbia accesso a Internet, anche se non è basato su Internet.  
+- Richiede che il dispositivo abbia accesso a Internet, anche se non è basato su Internet.  
 
- - A seconda del caso d'uso, può richiedere anche una o entrambe delle tecnologie seguenti o entrambe:  
+- A seconda del caso d'uso, può richiedere anche una o entrambe delle tecnologie seguenti o entrambe:  
 
-     - Azure Active Directory  
+    - Azure Active Directory  
 
-     - Gateway di gestione cloud  
+    - Gateway di gestione cloud  
 
 
 #### <a name="workgroup-computer-installation"></a>Installazione di computer del gruppo di lavoro  
@@ -175,9 +175,9 @@ Per altre informazioni su come configurare l'account di accesso alla rete, veder
 
 #### <a name="software-distribution-based-installation-for-upgrades-only"></a>Installazione basata sulla distribuzione software (solo per aggiornamenti)  
 
-   -   Se lo schema di Active Directory non è stato esteso o se si installano i client da un'altra foresta, usare Criteri di gruppo per effettuare il provisioning dei parametri di installazione per CCMSetup.exe. Per altre informazioni, vedere [Come effettuare il provisioning delle proprietà di installazione client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).   
+-   Se lo schema di Active Directory non è stato esteso o se si installano i client da un'altra foresta, usare Criteri di gruppo per effettuare il provisioning dei parametri di installazione per CCMSetup.exe. Per altre informazioni, vedere [Come effettuare il provisioning delle proprietà di installazione client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).   
 
-   -   Per scaricare i file di origine, il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione.  
+-   Per scaricare i file di origine, il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione.  
 
 
 Per le autorizzazioni di sicurezza necessarie per eseguire l'aggiornamento client di Configuration Manager usando la gestione delle applicazioni, vedere [Sicurezza e privacy per la gestione delle applicazioni ](/sccm/apps/plan-design/security-and-privacy-for-application-management).  
@@ -243,9 +243,9 @@ Per altre informazioni, vedere [Determinare i ruoli del sistema del sito per i c
 
 - Per configurare la registrazione per dispositivi mobili, è necessario disporre delle autorizzazioni di sicurezza seguenti:  
 
-  - Per aggiungere, modificare ed eliminare i ruoli di sistema sito di registrazione: autorizzazione **Modifica** per l'oggetto **Sito**.  
+  - Per aggiungere, modificare ed eliminare i ruoli del sistema del sito di registrazione: autorizzazione **Modifica** per l'oggetto **Sito**.  
 
-  - Per configurare le impostazioni del client per la registrazione: le impostazioni client predefinite necessitano dell'autorizzazione di **Modifica** per l'oggetto **Sito** e le impostazioni client personalizzate necessitano di autorizzazioni di tipo **Agente client**.  
+  - Per configurare le impostazioni client per la registrazione: le impostazioni client predefinite necessitano dell'autorizzazione di **Modifica** per l'oggetto **Sito** e le impostazioni client personalizzate necessitano di autorizzazioni di tipo **Agente client**.  
 
     Il ruolo di sicurezza **Amministratore completo** include le autorizzazioni necessarie per configurare i ruoli del sistema del sito di registrazione.  
 

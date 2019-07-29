@@ -2,7 +2,7 @@
 title: Note sulla versione
 titleSuffix: Configuration Manager
 description: Informazioni su problemi urgenti non ancora risolti nel prodotto o trattati in un articolo della Knowledge Base del supporto tecnico Microsoft.
-ms.date: 06/17/2019
+ms.date: 07/18/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46e84180aca830be6a4b8b5c7110679d857e95be
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 49600557e304edb86ec9a87bb02ef0ddb82ea037
+ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159343"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68339424"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Note sulla versione per Configuration Manager
 
@@ -159,6 +159,14 @@ Dopo aver connesso il sito a [Desktop Analytics](/sccm/desktop-analytics/connect
 
 Quando si rimuove una raccolta, scegliere **OK** per chiudere la finestra delle proprietà. Aprire quindi di nuovo la finestra delle proprietà per aggiungere una nuova raccolta nella scheda **Connessione di Desktop Analytics** .
 
+### <a name="pilot-status-tile-shows-some-devices-as-undefined"></a>Il riquadro dello stato della distribuzione pilota visualizza alcuni dispositivi come 'non definiti'
+
+<!-- 4547783 -->
+*Si applica a: Configuration Manager versione 1902 con aggiornamento cumulativo*
+
+Quando si usa la console di Configuration Manager per monitorare lo stato della distribuzione pilota, i dispositivi pilota aggiornati nella versione di destinazione di Windows per il piano di distribuzione vengono visualizzati come **non definiti** nel riquadro dello stato della distribuzione pilota.  
+
+Questi dispositivi **non definiti** sono **aggiornati** con la versione di destinazione del sistema operativo per il piano di distribuzione. Non sono richieste ulteriori azioni.
 
 
 ## <a name="mobile-device-management"></a>Gestione di dispositivi mobili  
