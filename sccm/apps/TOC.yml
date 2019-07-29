@@ -29,8 +29,12 @@
           href: get-started/creating-windows-embedded-applications.md
         - name: Creare condizioni globali
           href: deploy-use/create-global-conditions.md
+        - name: Creare gruppi di applicazioni
+          href: deploy-use/create-app-groups.md
         - name: Pacchetti e programmi
           href: deploy-use/packages-and-programs.md
+        - name: File di definizione del pacchetto
+          href: deploy-use/package-definition-files.md
     - name: Distribuire applicazioni
       items:
         - name: Distribuire applicazioni
@@ -39,6 +43,8 @@
           href: ../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json
         - name: Approvare le applicazioni
           href: deploy-use/app-approval.md
+        - name: Installare le applicazioni per un dispositivo
+          href: deploy-use/install-app-for-device.md
         - name: Condividere un'applicazione
           href: deploy-use/share-applications.md
         - name: Simulare le distribuzioni di applicazioni
