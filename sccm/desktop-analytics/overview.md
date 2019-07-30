@@ -2,7 +2,7 @@
 title: Desktop Analytics
 titleSuffix: Configuration Manager
 description: Panoramica sul servizio desktop Analytics integrato con Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 07/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: overview
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07d2a1b38f77a3b45c3327c054a9f1f36793e504
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: fd86e5bd939ecd356a6cf290958a766266248645
+ms.sourcegitcommit: 75f48834b98ea6a238d39f24e04c127b2959d913
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68535891"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68604483"
 ---
 # <a name="what-is-desktop-analytics"></a>Informazioni su desktop Analytics
 
@@ -109,7 +109,7 @@ Per usare desktop Analytics, verificare che l'ambiente soddisfi i prerequisiti s
 - Connettività di rete dai dispositivi al cloud pubblico Microsoft. Per ulteriori informazioni, vedere [come abilitare la condivisione dei dati](/sccm/desktop-analytics/enable-data-sharing)  
 
 
-### <a name="licensing"></a>Licenze
+### <a name="licensing-and-costs"></a>Licenze e costi
 
 Desktop Analytics richiede una delle seguenti sottoscrizioni di licenza:
 
@@ -119,7 +119,14 @@ Desktop Analytics richiede una delle seguenti sottoscrizioni di licenza:
 
 - Windows VDA E3 o E5  
 
+Oltre al costo degli abbonamenti delle licenze, non sono previsti costi aggiuntivi per l'uso di analisi del desktop. All'interno di Azure Log Analytics, desktop Analytics è "con classificazione zero". Questa valutazione significa che è esclusa dai limiti e dai costi dei dati, indipendentemente dal piano tariffario Log Analytics di Azure scelto. Per altre informazioni sui piani tariffari di Azure Log Analytics, vedere [prezzi-log Analytics](https://azure.microsoft.com/pricing/details/monitor/).
 
+- Se si usa il livello gratuito, che prevede un limite per la quantità di dati raccolti al giorno, i dati di analisi desktop non vengono conteggiati per questo limite. È possibile raccogliere tutti i dati di analisi desktop dai dispositivi e disporre ancora del limite completo per la raccolta di dati aggiuntivi da altre origini.
+
+- Se si usa un livello a pagamento che addebita i costi per GB di dati raccolti, non vengono addebitati i costi per i dati di analisi del desktop. Puoi raccogliere tutti i dati di analisi del desktop dai tuoi dispositivi senza sostenere costi.
+
+> [!Note]  
+> Diversi piani di Log Analytics di Azure hanno periodi di conservazione dei dati diversi. Desktop Analytics eredita i criteri di conservazione dei dati dell'area di lavoro. Se l'area di lavoro si trova nel piano gratuito, desktop Analytics mantiene gli ultimi 30 giorni di "snapshot giornalieri" raccolti nell'area di lavoro.
 
 
 ## <a name="next-steps"></a>Passaggi successivi
