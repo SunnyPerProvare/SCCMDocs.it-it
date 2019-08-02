@@ -1,7 +1,7 @@
 ---
-title: Come distribuire per contenuto pilota
+title: Come eseguire la distribuzione in un progetto pilota
 titleSuffix: Configuration Manager
-description: Informazioni di Guida per la distribuzione in un gruppo pilota Analitica Desktop.
+description: Guida alle procedure per la distribuzione in un gruppo pilota di analisi desktop.
 ms.date: 06/14/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,168 +11,168 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ee3d2c35424820658f91628b5f6e23be41498b2
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: aa7566779fe346ddecfd546dc89dc8618fb39953
+ms.sourcegitcommit: ef7800a294e5db5d751921c34f60296c1642fc1f
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159141"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68712663"
 ---
-# <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Modalità di distribuzione per eseguire progetti pilota con Desktop Analitica
+# <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Come eseguire la distribuzione in un progetto pilota con desktop Analytics
 
 > [!Note]  
-> Tali informazioni fanno riferimento a un servizio in anteprima che può essere modificato sostanzialmente prima del rilascio in commercio. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
+> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
-Uno dei vantaggi di Analitica Desktop è di identificare il set più piccolo di dispositivi che forniscono la copertura più ampia di fattori. Ma illustra i fattori più importanti per un progetto pilota di Windows gli aggiornamenti. Assicurandosi che il progetto pilota è più riuscito consente di spostare in modo più rapido e sicuro per ampie distribuzioni nell'ambiente di produzione.  
+Uno dei vantaggi di analisi desktop è quello di identificare il set più piccolo di dispositivi che forniscono la più ampia copertura di fattori. Questo argomento è incentrato sui fattori che sono più importanti per un progetto pilota di aggiornamenti e aggiornamenti di Windows. Assicurarsi che il progetto pilota abbia un maggiore successo consente di spostarsi in modo più rapido e sicuro per le distribuzioni più ampie nell'ambiente di produzione.  
 
 [!INCLUDE [Definition of pilot and production](includes/define-pilot-prod.md)]
 
 
 ## <a name="identify-devices"></a>Identificare i dispositivi
 
-Il primo passaggio consiste nell'identificare i dispositivi da includere nel progetto pilota. Desktop Analitica suggerisce i dispositivi in base i dati segnalati in ed è possibile includere o sostituire i dispositivi in questo elenco.
+Il primo passaggio consiste nell'identificare i dispositivi da includere nel progetto pilota. Desktop Analytics consiglia i dispositivi basati sui dati segnalati ed è possibile includere o sostituire i dispositivi in questo elenco.
 
-1. Andare alla [portal Desktop Analitica](https://aka.ms/desktopanalytics)e selezionare Gestisci gruppo **piani di distribuzione**.
+1. Passare al [portale di analisi del desktop](https://aka.ms/desktopanalytics)e nel gruppo Gestisci selezionare i piani di **distribuzione**.
 
 1. Selezionare un piano di distribuzione.
 
-1. Nel gruppo di preparazione del menu di piano di distribuzione, selezionare **pilota Identify**.
+1. Nel menu prepara gruppo del piano di distribuzione selezionare **identifica pilota**.
 
-Si noterà che i dati di Analitica Desktop che mostra il numero di dispositivi che è consigliabile anche per il code coverage migliore. Questo algoritmo è basato principalmente sull'uso delle App critiche e importanti e la varietà di configurazioni hardware.
+Verranno visualizzati i dati da desktop Analytics che mostrano il numero di dispositivi consigliati, incluso per la migliore copertura. Questo algoritmo si basa principalmente sull'uso di app importanti e critiche e sull'ampia gamma di configurazioni hardware.
 
-Eseguire le azioni seguenti per l'elenco di dispositivi aggiuntivi consigliati:
+Per l'elenco dei dispositivi consigliati aggiuntivi, eseguire le azioni seguenti:
 
-- **Aggiungi tutto al progetto pilota**: Aggiunge tutti i dispositivi consigliati per il gruppo pilota
-- **Aggiungere al progetto pilota**: Aggiungere solo singoli dispositivi
-- **Sostituire** eventuali dispositivi specifici durante la fase pilota
-- **Ricalcolare** al termine delle modifiche
+- **Aggiungi tutto a progetto pilota**: Aggiunge tutti i dispositivi consigliati al gruppo pilota
+- **Aggiungi a progetto pilota**: Aggiungere solo singoli dispositivi
+- **Sostituire** eventuali dispositivi specifici dal progetto pilota
+- **Ricalcola** al termine delle modifiche
 
-È anche possibile prendere decisioni a livello di sistema sulle quali raccolte di Configuration Manager per includere o escludere da progetti pilota. Nel menu principale di Analitica Desktop, nel gruppo di impostazioni globali, selezionare **pilota globale**.
+È inoltre possibile prendere decisioni a livello di sistema relative alle raccolte di Configuration Manager da includere o escludere dai progetti pilota. Nel menu principale di analisi del desktop, nel gruppo impostazioni globali, selezionare **progetto pilota globale**.
 
 ### <a name="example"></a>Esempio
 
-- Si configura la connessione di Desktop Analitica in Configuration Manager alla destinazione di **tutti i sistemi** raccolta. Questa azione registra tutti i client del servizio.
-- È anche possibile configurare raccolte aggiuntive per la sincronizzazione con Analitica Desktop:
+- Configurare la connessione desktop Analytics in Configuration Manager per la raccolta **tutti i sistemi** . Questa azione consente di registrare tutti i client nel servizio.
+- È anche possibile configurare raccolte aggiuntive per la sincronizzazione con il desktop Analytics:
     - Tutti i client Windows 10
     - Tutti i dispositivi IT
-    - Office CEO
-- Nel **pilota globale** impostazioni, si include il **dispositivi IT tutte** raccolte. Si esclude il **CEO office** raccolta.
-- Creare un piano di distribuzione e selezionare **client tutti i dispositivi Windows 10** raccolta come il **gruppo di destinazione**.
-- Il **pilota dispositivi inclusi** elenco contiene il subset di dispositivi sulle **gruppo di destinazione**: **Tutti i client Windows 10** che sono presenti anche in una distribuzione pilota globali *inclusione* elenco: **Tutti i dispositivi IT**  
-- Il **dispositivi aggiuntivi consigliati** elenchi contiene un set di dispositivi dalle **gruppo di destinazione** che offrono una copertura massima e ridondanza per le risorse importanti.  Desktop Analitica esclude da questo elenco di tutti i dispositivi nel progetto pilota globale *esclusione* elenco: **Office CEO**
+    - Ufficio del CEO
+- Nelle impostazioni **globali pilota** si includono tutte le raccolte di **dispositivi it** . Si esclude la raccolta di **uffici del CEO** .
+- Si crea un piano di distribuzione e si seleziona **tutte le raccolte di client Windows 10** come **gruppo di destinazione**.
+- L'elenco di **dispositivi pilota incluso** contiene il subset di dispositivi nel **gruppo di destinazione**: **Tutti i client Windows 10** che si trovano anche nell'elenco di inclusione pilota globale: **Tutti i dispositivi IT**  
+- Gli elenchi **aggiuntivi di dispositivi consigliati** contengono un set di dispositivi del **gruppo di destinazione** che forniscono la massima copertura e ridondanza per le risorse importanti.  Desktop Analytics esclude da questo elenco tutti i dispositivi nell'elenco di *esclusioni* pilota globale: **Ufficio del CEO**
 
 
 ## <a name="address-issues"></a>Risolvere i problemi
 
-Usare il portale di Analitica Desktop per esaminare eventuali problemi segnalati con le risorse che potrebbero bloccare la distribuzione. Quindi approvare, rifiutare o modificare la correzione suggerita. Tutti gli elementi devono essere contrassegnati **pronti** oppure **pronto (con monitoraggio e aggiornamento)** prima dell'avvio della distribuzione pilota.
+Usare il portale di analisi del desktop per esaminare eventuali problemi segnalati con asset che potrebbero bloccare la distribuzione. Quindi approvare, rifiutare o modificare la correzione consigliata. Prima che la distribuzione pilota venga avviata, è necessario che tutti gli elementi siano contrassegnati come **pronto** o **pronto (con monitoraggio e aggiornamento)** .
 
-1. Andare alla [portal Desktop Analitica](https://aka.ms/desktopanalytics)e selezionare Gestisci gruppo **piani di distribuzione**.  
+1. Passare al [portale di analisi del desktop](https://aka.ms/desktopanalytics)e nel gruppo Gestisci selezionare i piani di **distribuzione**.  
 
 2. Selezionare un piano di distribuzione.  
 
-3. Nel gruppo di preparazione del menu di piano di distribuzione, selezionare **pilota Prepare**.  
+3. Nel menu prepara gruppo del piano di distribuzione selezionare prepare **Pilot**.  
 
-4. Nel **app** scheda, esaminare le app che richiedono l'input dell'utente.  
+4. Nella scheda **app** esaminare le app che richiedono l'input.  
 
-5. Per ogni app, selezionare il nome dell'app. Nel riquadro delle informazioni, esaminare le indicazioni e selezionare la decisione di aggiornamento. Se si sceglie **non rivisti** oppure **Impossibile**, Analitica Desktop non può includere i dispositivi con l'app nella distribuzione pilota. Se si sceglie **pronto (con monitoraggio e aggiornamento)** , utilizzare il **note correzione** per acquisire le azioni da intraprendere per risolvere un problema, ad esempio *reinstallare* o *trovare il versione consigliata del produttore*.
+5. Per ogni app, selezionare il nome dell'app. Nel riquadro informazioni esaminare la raccomandazione e selezionare la decisione di aggiornamento. Se si sceglie di **non rivedere o non** è **possibile**, desktop Analytics non include i dispositivi con questa app nella distribuzione pilota. Se si sceglie **pronto (con monitoraggio e aggiornamento)** , utilizzare le **note correttive** per acquisire le azioni da intraprendere per risolvere un problema, ad esempio *reinstallare* o *trovare la versione consigliata del produttore*.
 
-6. Ripetere questa revisione per gli altri asset.  
-
-
-## <a name="create-software"></a>Creazione del software
-
-Prima di poter distribuire Windows, prima di tutto creare gli oggetti di software in Configuration Manager. Per altre informazioni, vedere [sequenza di attività di aggiornamento sul posto di Windows 10](https://docs.microsoft.com/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system).
+6. Ripetere questa verifica per altri asset.  
 
 
-## <a name="deploy-to-pilot-devices"></a>Distribuzione pilota nei dispositivi
+## <a name="create-software"></a>Creazione di software
 
-Configuration Manager usa i dati di Analitica Desktop per creare raccolte per le distribuzioni pilota e di produzione. Per assicurarsi che i dispositivi siano integri dopo ogni fase di distribuzione, usare la procedura seguente per creare una distribuzione graduale Analitica Desktop integrata:
+Prima di poter distribuire Windows, è necessario innanzitutto creare gli oggetti software in Configuration Manager. Per altre informazioni, vedere [sequenza di attività di aggiornamento sul posto di Windows 10](https://docs.microsoft.com/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system).
 
-1. Nella console di Configuration Manager passare ad il **raccolta Software**, espandere **Desktop Analitica Servicing**e selezionare il **piani di distribuzione** nodo.  
 
-2. Selezionare il piano di distribuzione e quindi selezionare **dettagli piano di distribuzione** nella barra multifunzione.  
+## <a name="deploy-to-pilot-devices"></a>Distribuisci nei dispositivi pilota
 
-3. Selezionare **creare la distribuzione in più fasi** nella barra multifunzione. Questa azione avvia la procedura guidata di creare la distribuzione in più fasi.
+Configuration Manager usa i dati di analisi del desktop per creare raccolte per le distribuzioni pilota e di produzione. Per assicurarsi che i dispositivi siano integri dopo ogni fase di distribuzione, usare la procedura seguente per creare una distribuzione in più fasi integrata di analisi del desktop:
+
+1. Nella console di Configuration Manager passare alla **raccolta software**, espandere manutenzione di **analisi desktop**e selezionare il nodo piani di **distribuzione** .  
+
+2. Selezionare il piano di distribuzione e quindi selezionare **Dettagli piano di distribuzione** nella barra multifunzione.  
+
+3. Selezionare **Crea distribuzione** in più fasi nella barra multifunzione. Questa azione avvia la creazione guidata di una distribuzione in più fasi.
 
     > [!Tip]  
-    > Se si desidera creare una distribuzione sequenza di attività classico per solo la raccolta pilota, selezionare **Deploy** nel **pilota stato** riquadro. Questa azione avvia la distribuzione guidata del Software. Per altre informazioni, vedere [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).  
+    > Se si vuole creare una distribuzione della sequenza di attività classica solo per la raccolta pilota, selezionare Distribuisci nel riquadro **stato pilota** . Questa azione avvia la distribuzione guidata del software. Per altre informazioni, vedere [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).  
 
-4. Immettere un nome per la distribuzione e selezionare la sequenza di attività da utilizzare. Usare l'opzione **crea automaticamente una distribuzione predefinita in due fasi**e quindi configurare le raccolte seguenti:  
+4. Immettere un nome per la distribuzione e selezionare la sequenza di attività da usare. Usare l'opzione per **creare automaticamente una distribuzione in due fasi predefinita**e quindi configurare le raccolte seguenti:  
 
-    - **Prima raccolta**: Individuare e selezionare il **pilota** raccolta per questo piano di distribuzione. La convenzione di denominazione standard per questa raccolta è `<deployment plan name> (Pilot)`.
+    - **Prima raccolta**: Trovare e selezionare la raccolta **pilota** per questo piano di distribuzione. La convenzione di denominazione standard per questa raccolta `<deployment plan name> (Pilot)`è.
 
-    - **Seconda raccolta**: Individuare e selezionare il **produzione** raccolta per questo piano di distribuzione. La convenzione di denominazione standard per questa raccolta è `<deployment plan name> (Production)`.
+    - **Seconda raccolta**: Trovare e selezionare la raccolta di **produzione** per questo piano di distribuzione. La convenzione di denominazione standard per questa raccolta `<deployment plan name> (Production)`è.
 
     > [!Note]  
-    > Con l'integrazione Analitica Desktop, Configuration Manager crea automaticamente raccolte pilota e di produzione per il piano di distribuzione. Possono volerci fino a 10 minuti per queste raccolte per la sincronizzazione prima di usarli.<!-- 3887891 -->
+    > Con l'integrazione di analisi del desktop, Configuration Manager crea automaticamente raccolte pilota e di produzione per il piano di distribuzione. Prima di poterli usare, la sincronizzazione di queste raccolte può richiedere tempo. Per ulteriori informazioni, vedere [Troubleshoot-latence data](/sccm/desktop-analytics/troubleshooting#data-latency).<!-- 4984639 -->
     >
-    > Questi insiemi sono riservati per i dispositivi piano di distribuzione Desktop Analitica. Le modifiche manuali a queste raccolte non sono supportate.<!-- 3866460, SCCMDocs-pr 3544 -->  
+    > Queste raccolte sono riservate ai dispositivi dei piani di distribuzione di desktop Analytics. Le modifiche manuali a queste raccolte non sono supportate.<!-- 3866460, SCCMDocs-pr 3544 -->  
 
 5. Completare la procedura guidata per configurare la distribuzione in più fasi. Per altre informazioni, vedere [Creare distribuzioni in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence).
 
     > [!Note]  
-    > Usare l'impostazione predefinita per **inizia automaticamente questa fase dopo un periodo di differimento (in giorni)** . Per la seconda fase avviare devono essere soddisfatti i criteri seguenti:
+    > Usare l'impostazione predefinita per **iniziare automaticamente questa fase dopo un periodo di differimento (in giorni)** . Per avviare la seconda fase, è necessario soddisfare i criteri seguenti:
     >
-    > 1. La prima fase raggiunge il **percentuale di completamento distribuzione** criteri per l'esito positivo. Si configura questa impostazione nella distribuzione in più fasi.
-    > 1. È necessario rivedere e prendere decisioni di aggiornamento nel Desktop Analitica per contrassegnare gli asset critici e importanti come *pronti*. Per altre informazioni, vedere [esaminare gli asset che richiedono una decisione di aggiornamento](/sccm/desktop-analytics/deploy-prod#bkmk_review).
-    > 1. Desktop Analitica Sincronizza per le raccolte di Configuration Manager eventuali dispositivi produzione soddisfano il *pronti* criteri.
+    > 1. La prima fase raggiunge i criteri percentuali di **successo della distribuzione** per l'esito positivo. Questa impostazione viene configurata nella distribuzione in più fasi.
+    > 1. È necessario rivedere e prendere decisioni relative all'aggiornamento in desktop Analytics per contrassegnare le risorse importantie critiche come pronte. Per altre informazioni, vedere [esaminare gli asset che necessitano di una decisione di aggiornamento](/sccm/desktop-analytics/deploy-prod#bkmk_review).
+    > 1. Desktop Analytics sincronizza le raccolte di Configuration Manager tutti i dispositivi di produzione che soddisfano i criteri di *pronto* .
 
 > [!Important]  
-> Queste raccolte comunque eseguita la sincronizzazione le modifiche all'appartenenza. Se, ad esempio, identificare un problema con un asset e contrassegnarlo come **Impossibile**, i dispositivi con tale asset non soddisfano più il *pronto* criteri. Questi dispositivi vengono eliminati dalla raccolta di distribuzione di produzione.
+> Queste raccolte continuano a essere sincronizzate in seguito alla modifica dell'appartenenza. Ad esempio, se si identifica un problema con un asset e lo si contrassegna come **non riuscito**, i dispositivi con tale asset non soddisfano più i criteri di *pronto* . Questi dispositivi vengono eliminati dalla raccolta di distribuzione di produzione.
 
 
 ## <a name="monitor"></a>Monitoraggio
 
 ### <a name="configuration-manager-console"></a>Console di Configuration Manager
 
-Aprire il piano di distribuzione. Il **Preparazione aggiornamento decisioni - stato generale** riquadro offre un riepilogo dello stato per il piano di distribuzione. Questo stato è per raccolte il progetto pilota e di produzione. I dispositivi possono rientrano in una delle categorie seguenti:
+Aprire il piano di distribuzione. Il riquadro **preparazione dell'aggiornamento-generale stato** fornisce un riepilogo dello stato del piano di distribuzione. Questo stato è per le raccolte pilota e di produzione. I dispositivi possono rientrare in una delle categorie seguenti:
 
-- **Aggiornati**: I dispositivi sono aggiornati alla versione di Windows di destinazione per questo piano di distribuzione
+- **Aggiornato**: I dispositivi sono stati aggiornati alla versione di Windows di destinazione per questo piano di distribuzione
 
-- **Eseguire l'aggiornamento delle decisioni completata**: Uno dei seguenti stati:
-    - I dispositivi con risorse degno di nota **pronti** o **pronto con monitoraggio e aggiornamento**
-    - Lo stato del dispositivo viene **bloccato**, [ **dispositivo sostituire** ](/sccm/desktop-analytics/about-deployment-plans#plan-assets) o **Reinstall dispositivo**
+- **Decisione di aggiornamento completata**: Uno degli Stati seguenti:
+    - Dispositivi con asset rilevanti **pronti** o **pronti per la correzione**
+    - Lo stato del dispositivo è **bloccato**, [**sostituire il dispositivo**](/sccm/desktop-analytics/about-deployment-plans#plan-assets) o reinstallare il **dispositivo**
 
-- **Non è stato esaminato**: I dispositivi con risorse degno di nota **non rivisti** o **revisione in corso**
+- **Non verificato**: Dispositivi con asset rilevanti **non rivisti** o **esaminati in corso**
 
-Aggiorna lo stato del dispositivo nel **pilota stato** e **lo stato della produzione** riquadri con le azioni seguenti:
+Lo stato del dispositivo viene aggiornato nei riquadri stato **pilota** e **stato di produzione** con le azioni seguenti:
 
-- Si apportano modifiche nella valutazione della compatibilità
-- Dispositivi aggiornati alla versione di destinazione di Windows
-- L'avanzamento della distribuzione
+- Si apportano modifiche alla valutazione della compatibilità
+- I dispositivi vengono aggiornati alla versione di destinazione di Windows
+- Avanzamento della distribuzione
 
-È anche possibile usare lo stesso come qualsiasi altra distribuzione di sequenza di attività di monitoraggio di distribuzione di Configuration Manager. Per altre informazioni, vedere [distribuzioni del sistema operativo monitoraggio](/sccm/osd/deploy-use/monitor-operating-system-deployments).
+È anche possibile usare Configuration Manager monitoraggio della distribuzione allo stesso modo di qualsiasi altra distribuzione della sequenza di attività. Per altre informazioni, vedere [monitorare le distribuzioni del sistema operativo](/sccm/osd/deploy-use/monitor-operating-system-deployments).
 
 
-### <a name="desktop-analytics-portal"></a>Portale Analitica desktop
+### <a name="desktop-analytics-portal"></a>Portale di analisi desktop
 
-Usare la [portale di Analitica Desktop](https://aka.ms/desktopanalytics) per visualizzare lo stato di qualsiasi piano di distribuzione. Selezionare il piano di distribuzione e quindi selezionare **Panoramica del piano**.
+Usare il [portale di analisi del desktop](https://aka.ms/desktopanalytics) per visualizzare lo stato di un piano di distribuzione. Selezionare il piano di distribuzione e quindi fare clic su **panoramica piano**.
 
-![Schermata della panoramica del piano di distribuzione in Desktop Analitica](media/deployment-plan-overview.png)
+![Screenshot della panoramica del piano di distribuzione in analisi desktop](media/deployment-plan-overview.png)
 
-Selezionare il **pilota** riquadro. Riepilogato lo stato corrente della distribuzione pilota. Questo riquadro Visualizza anche i dati per il numero di dispositivi non è stati avviati, in corso, completato, o la restituzione di problemi.
+Selezionare il riquadro **pilota** . Viene riepilogato lo stato corrente della distribuzione pilota. Questo riquadro Visualizza anche i dati per il numero di dispositivi non avviati, in corso, completati o che restituiscono problemi.
 
-Eventuali dispositivi che segnalano errori o altri problemi sono inoltre elencati nell'area dettaglio programma pilota a destra. Per ottenere i dettagli del problema segnalato, selezionare **revisione**. Questa azione viene modificata la visualizzazione per il **lo stato di distribuzione** pagina
+Tutti i dispositivi che segnalano errori o altri problemi sono elencati anche nell'area dei dettagli pilota a destra. Per ottenere i dettagli del problema segnalato, selezionare **Revisione**. Questa azione consente di modificare la visualizzazione nella pagina **stato distribuzione**
 
-Il **lo stato di distribuzione** pagina vengono elencati i dispositivi nelle categorie seguenti:
+Nella pagina **stato distribuzione** sono elencati i dispositivi nelle categorie seguenti:
 
 - Non avviato
 - In corso
 - Operazione completata
-- Richiede attenzione - i dispositivi
-- Richiede attenzione - problemi
+- Richiede attenzione-dispositivi
+- Richiesta attenzione-problemi
 
-Il **necessita di attenzione** categorie visualizzano le stesse informazioni, ma ordinati in modo diverso.
+Le categorie **richieste attenzione** mostrano le stesse informazioni, ma sono ordinate in modo diverso.
 
-Selezionare un elenco specifico in una visualizzazione per ottenere altri dettagli sul problema rilevato.
+Selezionare un elenco specifico in una delle due visualizzazioni per ottenere maggiori dettagli sul problema rilevato.
 
-Come risolvere questi problemi di distribuzione, il dashboard continua a mostrare lo stato di avanzamento dei dispositivi. Aggiorna dispositivi lo spostamento dalla **necessita di attenzione** al **Completed**.
+Quando si affrontano questi problemi di distribuzione, il dashboard continua a mostrare lo stato dei dispositivi. Si aggiorna quando i dispositivi passano da **richiesta attenzione** a **completata**.
 
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Eseguire il progetto pilota per un periodo di tempo raccogliere dati operativi. Incoraggiare gli utenti dei dispositivi pilota per testare le app.
+Consentire l'esecuzione del progetto pilota per un periodo di tempo per la raccolta dei dati operativi. Incoraggiare gli utenti di dispositivi pilota a testare le app.
 
-Quando la distribuzione pilota soddisfa i criteri di successo, passare all'articolo successivo per la distribuzione nell'ambiente di produzione.
+Quando la distribuzione pilota soddisfa i criteri di riuscita, passare all'articolo successivo per eseguire la distribuzione in produzione.
 > [!div class="nextstepaction"]  
-> [Distribuire nell'ambiente di produzione](/sccm/desktop-analytics/deploy-prod)  
+> [Distribuisci in produzione](/sccm/desktop-analytics/deploy-prod)  

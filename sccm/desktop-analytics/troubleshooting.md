@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9e13911ef7337ca4f1f9fb2291aa026c90cfee8
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 1ecb1657903fd3d1dfe43f2ad46258b4643c2f55
+ms.sourcegitcommit: ef7800a294e5db5d751921c34f60296c1642fc1f
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536011"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68712598"
 ---
 # <a name="troubleshoot-desktop-analytics"></a>Risolvere i problemi di analisi del desktop
 
@@ -80,7 +80,7 @@ Se non è possibile creare l'app Azure AD per Configuration Manager dalla config
 
 #### <a name="create-app-in-azure-ad"></a>Crea app in Azure AD
 
-1. Aprire il [portale di Azure](http://portal.azure.com) come utente con autorizzazioni di *amministratore globale* , passare a **Azure Active Directory**e selezionare **registrazioni app**. Quindi selezionare **nuova registrazione**.  
+1. Aprire il [portale di Azure](https://portal.azure.com) come utente con autorizzazioni di *amministratore globale* , passare a **Azure Active Directory**e selezionare **registrazioni app**. Quindi selezionare **nuova registrazione**.  
 
 2. Nel pannello **Crea** configurare le impostazioni seguenti:  
 
@@ -171,7 +171,7 @@ Quando si configura analisi desktop, l'utente acconsente per conto dell'organizz
 
 Se si verifica un problema con questo processo durante l'installazione, usare il processo seguente per aggiungere manualmente questa autorizzazione:
 
-1. Passare alla [portale di Azure](http://portal.azure.com)e selezionare **tutte le risorse**. Selezionare l'area di lavoro di tipo **log Analytics**.  
+1. Passare alla [portale di Azure](https://portal.azure.com)e selezionare **tutte le risorse**. Selezionare l'area di lavoro di tipo **log Analytics**.  
 
 2. Nel menu dell'area di lavoro selezionare **controllo di accesso (IAM)** , quindi selezionare **Aggiungi**.  
 
@@ -191,13 +191,16 @@ Nel portale viene visualizzata una notifica che ha aggiunto l'assegnazione di ru
 ## <a name="data-latency"></a>Latenza dei dati
 
 <!-- 3846531 -->
-Quando si configura per la prima volta analisi desktop, è possibile che i report Configuration Manager e il portale di analisi desktop non visualizzino immediatamente i dati completi. Possono essere necessari 2-3 giorni per l'esecuzione dei passaggi seguenti:
+Quando si configura per la prima volta analisi desktop, si registrano nuovi client o si configurano nuovi piani di distribuzione, i report in Configuration Manager e il portale di analisi desktop potrebbero non visualizzare immediatamente i dati completi. Possono essere necessari 2-3 giorni per l'esecuzione dei passaggi seguenti:
 
 - I dispositivi attivi inviano i dati di diagnostica al servizio desktop Analytics
 - Il servizio elabora i dati
 - Il servizio viene sincronizzato con il sito di Configuration Manager
 
-Quando si sincronizzano le raccolte di dispositivi dalla gerarchia di Configuration Manager a analisi desktop, possono essere necessari fino a 10 minuti prima che tali raccolte vengano visualizzate nel portale di analisi del desktop. Analogamente, quando si crea un piano di distribuzione in desktop Analytics, possono essere necessari fino a 10 minuti affinché le nuove raccolte associate al piano di distribuzione vengano visualizzate nella gerarchia di Configuration Manager. I siti primari creano le raccolte e il sito di amministrazione centrale si sincronizza con analisi desktop.
+Quando si sincronizzano le raccolte di dispositivi dalla gerarchia di Configuration Manager a analisi desktop, potrebbe essere necessaria fino a un'ora prima che le raccolte vengano visualizzate nel portale di analisi del desktop. Analogamente, quando si crea un piano di distribuzione in analisi desktop, può essere necessaria fino a un'ora prima che le nuove raccolte associate al piano di distribuzione vengano visualizzate nella gerarchia di Configuration Manager. I siti primari creano le raccolte e il sito di amministrazione centrale si sincronizza con analisi desktop. Configuration Manager possono richiedere fino a 24 ore per valutare e aggiornare l'appartenenza alla raccolta. Per velocizzare il processo, aggiornare manualmente l'appartenenza alla raccolta.<!-- 4984639 -->
+
+> [!Note]
+> Per gli aggiornamenti manuali della raccolta in modo da riflettere le modifiche, è necessario innanzitutto sincronizzare il componente SMS_SERVICE_CONNECTOR_M365ADeploymentPlanWorker. L'esecuzione di questo processo può richiedere fino a un'ora. Per ulteriori informazioni, vedere **M365ADeploymentPlanWorker. log**.
 
 All'interno del portale di analisi desktop sono disponibili due tipi di dati: Dati di **diagnostica**e **dati dell'amministratore** :
 

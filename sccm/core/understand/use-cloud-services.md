@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe4e1c83f4079e0df959563ac8209a98983b8d90
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: e58f5cffa201224516e03dd6a1e919f352c297d0
+ms.sourcegitcommit: b59e57ab4cf9f03e8beeb70588f3b9f1a6021e36
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132456"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68662635"
 ---
 # <a name="use-cloud-services-with-system-center-configuration-manager"></a>Usare i servizi cloud con System Center Configuration Manager
 
@@ -66,17 +66,6 @@ I siti e i client di Configuration Manager eseguiti in macchine virtuali di Azur
 -   Supportano client su Internet e intranet.  
 
 È necessaria una sottoscrizione di Azure per usare Azure per ospitare punti di distribuzione. I costi variano in base alla quantità di dati trasferiti da e verso il servizio.  
-
-### <a name="microsoft-intune-for-mobile-device-management"></a>Microsoft Intune (per la gestione dei dispositivi mobili)  
- È possibile integrare la sottoscrizione a Microsoft Intune con Configuration Manager per consentire la gestione dei dispositivi con il servizio Intune. Questa integrazione:  
-
--   Viene definita configurazione ibrida ed estende Configuration Manager (o Intune a seconda della prospettiva) per supportare un'ampia varietà di dispositivi.  
-
--   Richiede il ruolo del sistema del sito del connettore Microsoft Intune.  
-
--   Richiede una sottoscrizione separata a Intune con numero di licenze sufficiente per i dispositivi che verranno gestiti con Intune.  
-
-Anche se Intune usa Azure, non richiede una configurazione indipendente di Azure né di sostenere altri costi oltre a quelli relativi alla sottoscrizione a Intune.  
 
 ### <a name="additional-configuration-manager-capabilities"></a>Funzionalità aggiuntive di Configuration Manager  
  Alcune funzionalità di Configuration Manager possono connettersi ai servizi basati su cloud, ad esempio:  

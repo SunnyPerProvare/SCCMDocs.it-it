@@ -2,7 +2,7 @@
 title: Gestire le sequenze di attività
 titleSuffix: Configuration Manager
 description: Creare, modificare, distribuire, importare ed esportare sequenze di attività per gestirle e automatizzarle nel proprio ambiente.
-ms.date: 05/03/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cbc76a4f2ada16edfbdc139aca77e6a43d3c4a8b
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: 041654b3ba1a25c832232fb26fa09f7ea12e8f97
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65082932"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68537070"
 ---
 # <a name="manage-task-sequences-to-automate-tasks"></a>Gestire le sequenze di attività per automatizzare le attività
 
@@ -67,6 +67,12 @@ Modificare una sequenza di attività aggiungendo o rimuovendo passaggi, aggiunge
 
 Per un elenco dei passaggi della sequenza di attività disponibili, vedere [Passaggi della sequenza di attività](/sccm/osd/understand/task-sequence-steps).  
 
+### <a name="bkmk_sedo"></a> Eliminare il blocco per la modifica delle sequenze di attività
+
+<!--3699337-->
+Se la console di Configuration Manager non risponde, può essere bloccata la possibilità di apportare ulteriori modifiche fino al termine del blocco, dopo 30 minuti. Questo blocco fa parte del sistema di Configuration Manager SEDO (modifica serializzata di Distributed Objects). Per altre informazioni, vedere [Configuration Manager SEDO](/sccm/develop/core/understand/sedo).
+
+A partire dalla versione 1906, è possibile cancellare il blocco su una sequenza di attività. Questa azione si applica solo al proprio account utente che ha il blocco e allo stesso dispositivo da cui il sito ha concesso il blocco. Quando si tenta di accedere a una sequenza di attività bloccata, è ora possibile **rimuovere le modifiche**e continuare a modificare l'oggetto. Queste modifiche andrebbero perse comunque al termine del blocco.
 
 
 ## <a name="bkmk_prop-general"></a> Configurare le proprietà di Software Center

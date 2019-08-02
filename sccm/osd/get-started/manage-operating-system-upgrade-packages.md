@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77a296c20d75603c432282ea84e2b453702f5e86
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 796412b0b2f147c73a13b2f0a363a53177e8c9bc
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133021"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68537018"
 ---
 # <a name="manage-os-upgrade-packages-with-configuration-manager"></a>Gestire i pacchetti di aggiornamento del sistema operativo in Configuration Manager
 
@@ -46,11 +46,11 @@ Prima di poter usare un pacchetto di aggiornamento del sistema operativo, è nec
         > [!IMPORTANT]  
         >  Limitare l'accesso a questi file di origine dell'installazione per impedire manomissioni indesiderate.  
 
-    - Se si desidera memorizzare in anteprima contenuto nella cache in un client, specificare **Architettura** e **Lingua** dell'immagine. Per altre informazioni, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content).  
+    - Se si desidera memorizzare in anteprima contenuto nella cache in un client, specificare **Architettura** e **Lingua** dell'immagine. Per altre informazioni, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/configure-precache-content).  
 
 4.  Nella pagina **Generale** specificare le informazioni seguenti. Queste informazioni sono utili per scopi di identificazione quando sono presenti più pacchetti di aggiornamento del sistema operativo.  
 
-    -   **Nome**: nome univoco del pacchetto di aggiornamento del sistema operativo.  
+    -   **Nome**: nome univoco del pacchetto di aggiornamento per il sistema operativo.  
 
     -   **Versione**: identificatore di versione facoltativo. Questa proprietà non deve corrispondere alla versione del sistema operativo del pacchetto di aggiornamento. Si tratta spesso della versione assegnata dall'organizzazione al pacchetto.  
 

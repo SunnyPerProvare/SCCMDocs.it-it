@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bbc042975840e5b4e840928f01257785f4859dd4
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: fe3f5e35fcec9bfc9bf0746ecfd118e10487f78c
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176837"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68533842"
 ---
 # <a name="upgrade-windows-10-for-co-management"></a>Eseguire l'aggiornamento a Windows 10 per la co-gestione
 
@@ -41,7 +41,7 @@ Di seguito sono riportati alcuni suggerimenti raccolti da Microsoft aiutando mig
 
 - Usare distribuzioni in più fasi per offrire questo aggiornamento agli utenti corretti nel momento più appropriato. Per altre informazioni, vedere [Creare distribuzioni in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence).  
 
-- Usare la memorizzazione anticipata nella cache per ridurre i tempi di attesa degli utenti. Per altre informazioni, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content).  
+- Usare la memorizzazione anticipata nella cache per ridurre i tempi di attesa degli utenti. Per altre informazioni, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/configure-precache-content).  
 
 - Usare il modello di sequenza di attività di aggiornamento sul posto predefinito. Configurare quindi i passaggi specifici pre e post-aggiornamento e le azioni in caso di errore. Per altre informazioni, vedere [Passaggi della sequenza di attività consigliati per la post-elaborazione](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#recommended-task-sequence-steps-for-post-processing).  
 

@@ -11,12 +11,12 @@ ms.assetid: b2abcdb0-72e0-4c70-a4b8-7827480ba5b2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 18179301fc6edcc9148e8bff353a5e14c1b0f210
-ms.sourcegitcommit: ab9f2a7fb7ea3a0c65808fce2975ab25a670281f
+ms.openlocfilehash: e21a1eb9f6d97571c47906e04f030294b875ae17
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613027"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68537096"
 ---
 # <a name="deploy-a-task-sequence"></a>Distribuire una sequenza di attività
 
@@ -56,7 +56,7 @@ Usare la seguente procedura per distribuire una sequenza di attività ai compute
 
     - **Distribuisci automaticamente contenuto per dipendenze**: se uno dei contenuti di riferimento ha dipendenze, il sito invia anche il contenuto dipendente ai punti di distribuzione.  
 
-    - **Pre-download del contenuto per questa sequenza di attività**: per altre informazioni, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content).  
+    - **Pre-download del contenuto per questa sequenza di attività**: per altre informazioni, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/configure-precache-content).  
 
     - **Selezione modello di distribuzione**: a partire da Configuration Manager versione 1802,<!--1357391--> è possibile salvare e specificare un modello di distribuzione per una sequenza di attività.  
 
@@ -193,7 +193,7 @@ Per distribuire una sequenza di attività di aggiornamento sul posto usare le im
 
 - **Scaricare tutto il contenuto localmente prima di avviare la sequenza di attività** nella scheda Punti di distribuzione della distribuzione. Altre opzioni come **Scaricare il contenuto localmente quando necessario eseguendo la sequenza di attività** non sono applicabili a questo scenario. Il motore di esecuzione della sequenza attività non è attualmente in grado di ottenere contenuto da un punto di distribuzione cloud. Il client Gestione configurazione deve scaricare il contenuto dal punto di distribuzione cloud prima di avviare la sequenza di attività.  
 
-- (*Facoltativo*) **Pre-download del contenuto per questa sequenza di attività** nella scheda Generale della distribuzione. Per altre informazioni, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content).  
+- (*Facoltativo*) **Pre-download del contenuto per questa sequenza di attività** nella scheda Generale della distribuzione. Per altre informazioni, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/configure-precache-content).  
 
 
 ## <a name="bkmk_high-risk"></a> Distribuzioni ad alto rischio
