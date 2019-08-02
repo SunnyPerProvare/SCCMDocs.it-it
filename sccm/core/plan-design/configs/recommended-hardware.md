@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cbad2440f9309e712fb00da2739ed5302866ff63
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: af69076b4a1f1e8d18cced225ff2373d8172051d
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68339472"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536869"
 ---
 # <a name="recommended-hardware-for-system-center-configuration-manager"></a>Hardware consigliato per System Center Configuration Manager
 
@@ -63,7 +63,6 @@ Le indicazioni seguenti sono destinate ai computer che contengono un solo ruolo 
 |----------------------|---------------|---------------|--------------------|  
 |Punto di gestione|4|8|50|  
 |Punto di distribuzione|2|8|Come richiesto dal sistema operativo e per archiviare il contenuto distribuito|  
-|Catalogo applicazioni, con servizi Web e sito Web sul computer del sistema del sito|4|16|50|  
 |Punto di aggiornamento software<sup>1</sup>|8|16|Come richiesto dal sistema operativo e per archiviare gli aggiornamenti distribuiti|  
 |Tutti gli altri ruoli del sistema del sito|4|8|50|  
 
@@ -116,18 +115,14 @@ Di seguito sono indicati i requisiti hardware minimi per i computer basati su Wi
 
 - **Spazio su disco:** 500 MB di spazio disponibile su disco, con 5 GB consigliati per la cache del client di Configuration Manager. Se si usano le impostazioni personalizzate per installare il client di Configuration Manager, è necessario meno spazio:  
 
-  - Usare la proprietà della riga di comando CCMSetup /skipprereq per evitare di installare i file non necessari per il clent. Ad esempio, eseguire `CCMSetup.exe /skipprereq:silverlight.exe` se il client non usa il Catalogo applicazioni. A partire da Configuration Manager 1802, Silverlight non viene più installato automaticamente.  
+    - Usare la proprietà Client. msi SMSCACHESIZE per impostare un file di cache inferiore a quello predefinito di 5120 MB. La dimensione minima è 1 MB. Ad esempio, `CCMSetup.exe SMSCachesize=2` crea una cache di 2 MB.  
 
-  - Usare la proprietà Client. msi SMSCACHESIZE per impostare un file di cache inferiore a quello predefinito di 5120 MB. La dimensione minima è 1 MB. Ad esempio, `CCMSetup.exe SMSCachesize=2` crea una cache di 2 MB.  
+    Per altre informazioni su queste impostazioni di installazione del client, vedere [Informazioni sulle proprietà di installazione del client](../../../core/clients/deploy/about-client-installation-properties.md).  
 
-  Per altre informazioni su queste impostazioni di installazione del client, vedere [Informazioni sulle proprietà di installazione del client](../../../core/clients/deploy/about-client-installation-properties.md).  
+    > [!TIP]  
+    > L'installazione del client con lo spazio minimo su disco è utile per i dispositivi Windows Embedded, che in genere hanno dimensioni di disco inferiori a quelle dei computer Windows standard.  
 
-  > [!TIP]  
-  >  L'installazione del client con lo spazio minimo su disco è utile per i dispositivi Windows Embedded, che in genere hanno dimensioni di disco inferiori a quelle dei computer Windows standard.  
-
-
-
- Di seguito sono indicati altri requisiti hardware minimi per la funzionalità facoltativa in Configuration Manager.  
+Di seguito sono indicati altri requisiti hardware minimi per la funzionalità facoltativa in Configuration Manager.  
 
 - **Distribuzione del sistema operativo:** 384 MB di RAM  
 

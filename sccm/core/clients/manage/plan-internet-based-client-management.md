@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: afcc3c2d70e1f6d94e7239a0be78c00294108c76
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: a4ecf757a35556d4b810df47ca50a6c7bac59467
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176691"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68535646"
 ---
 # <a name="plan-for-internet-based-client-management-in-system-center-configuration-manager"></a>Pianificare la gestione client basata su Internet in System Center Configuration Manager
 
@@ -56,6 +56,9 @@ La gestione client basata su Internet consente di gestire i client di System Cen
  I seguenti ruoli del sistema del sito installati nei siti primari supportano connessioni da client che si trovano in percorsi non attendibili, come Internet o una foresta untrusted (i siti secondari non supportano le connessioni client da percorsi non attendibili):  
 
 - Punto per siti Web del Catalogo applicazioni  
+
+    > [!Important]  
+    > Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
 - Modulo criteri di Configuration Manager  
 
