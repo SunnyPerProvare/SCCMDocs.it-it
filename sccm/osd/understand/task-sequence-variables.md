@@ -2,7 +2,7 @@
 title: Informazioni di riferimento sulle variabili della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni sulle variabili per controllare e personalizzare una sequenza di attività di Configuration Manager.
-ms.date: 05/06/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e1ad62c8b8b0f780670e7baf7ebf11de7f6b483
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: b92fad9054c50ea58caeb11e209cd04b6951493f
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194592"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68537124"
 ---
 # <a name="task-sequence-variables"></a>Variabili della sequenza di attività
 
@@ -140,6 +140,11 @@ Archivia il codice restituito dall'ultima azione eseguita. Questa variabile può
 - Se l'ultimo passaggio non è riuscito, è `false`.  
 
 - Se la sequenza di attività ha ignorato l'ultima azione, perché il passaggio è disabilitato o la condizione associata ha restituito **false**, questa variabile non viene reimpostata. Mantiene ancora il valore dell'azione precedente.  
+
+### <a name="SMSTSLastContentDownloadLocation"></a>_SMSTSLastContentDownloadLocation
+
+<!-- 2840337 -->
+A partire dalla versione 1906, questa variabile contiene l'ultimo percorso in cui la sequenza di attività ha scaricato o ha provato a scaricare contenuto. Controllare questa variabile invece di analizzare i log del client per questo percorso del contenuto.
 
 ### <a name="SMSTSLaunchMode"></a> _SMSTSLaunchMode
 
@@ -480,6 +485,28 @@ Se nel catalogo driver ci sono più driver di dispositivo compatibili con un dis
 (input)
 
 Elenco delimitato da virgole di ID categoria univoci del catalogo driver. Il passaggio **Applica automaticamente i driver** considera solo i driver in almeno una delle categorie specificate. Questo valore è facoltativo e non specificato per impostazione predefinita. Ottenere gli ID categoria disponibili enumerando l'elenco di oggetti **SMS_CategoryInstance** nel sito.
+
+### <a name="OSDBitLockerRebootCount"></a>OSDBitLockerRebootCount
+
+*Si applica al passaggio [Disattiva BitLocker](task-sequence-steps.md#BKMK_DisableBitLocker).*
+
+<!-- 4512937 -->
+A partire dalla versione 1906, usare questa variabile per impostare il numero di riavvii dopo i quali riprendere la protezione.
+
+#### <a name="valid-values"></a>Valori validi
+
+Numero intero compreso `1` tra `15`e.
+
+### <a name="OSDBitLockerRebootCountOverride"></a>OSDBitLockerRebootCountOverride
+
+*Si applica al passaggio [Disattiva BitLocker](task-sequence-steps.md#BKMK_DisableBitLocker).*
+
+<!-- 4512937 -->
+A partire dalla versione 1906, impostare questo valore per eseguire l'override del conteggio impostato dal passaggio o dalla variabile [OSDBitLockerRebootCount](#OSDBitLockerRebootCount) . Mentre gli altri metodi accettano solo i valori da 1 a 15, se si imposta questa variabile su 0, BitLocker rimane disattivato per un periodo indefinito. Questa variabile è utile quando la sequenza di attività imposta un solo valore, ma si vuole impostare un valore distinto per ogni dispositivo o per ogni raccolta.
+
+#### <a name="valid-values"></a>Valori validi
+
+Numero intero compreso `0` tra `15`e.
 
 ### <a name="OSDBitLockerRecoveryPassword"></a> OSDBitLockerRecoveryPassword
 
@@ -1477,6 +1504,16 @@ Specifica il tempo di attesa in secondi prima del riavvio del computer. Se quest
 
 - `60`: visualizza una notifica per un minuto  
 
+### <a name="SMSTSRebootDelayNext"></a>SMSTSRebootDelayNext
+
+<!--4447680-->
+A partire dalla versione 1906, usare questa variabile con la variabile [SMSTSRebootDelay](/sccm/osd/understand/task-sequence-variables#SMSTSRebootDelay) esistente. Se si vuole che i riavvii successivi si verifichino con un timeout diverso rispetto al primo, impostare SMSTSRebootDelayNext su un valore diverso in secondi.
+
+#### <a name="example"></a>Esempio
+
+Si vuole inviare all'utente una notifica di riavvio di 60 secondi all'inizio di una sequenza di attività di aggiornamento sul posto di Windows 10. In questo caso, dopo il primo riavvio lungo, i timeout aggiuntivi si dovranno impostare su 60 secondi. Impostare SMSTSRebootDelay su `3600` e SMSTSRebootDelayNext su `60`.  
+
+
 ### <a name="SMSTSRebootMessage"></a> SMSTSRebootMessage
 
 Specifica il messaggio da visualizzare nella finestra di dialogo di notifica di riavvio. Se questa variabile non è impostata, viene visualizzato un messaggio predefinito.
@@ -1541,6 +1578,13 @@ Questa variabile della sequenza di attività facoltativa controlla il comportame
 Impostare il valore SMSTSWaitForSecondReboot in secondi per specificare il tempo di sospensione della sequenza di attività in questo passaggio durante il riavvio del computer. Consentire il tempo necessario in caso di un secondo riavvio.
 
 Ad esempio, se si imposta SMSTSWaitForSecondReboot su `600`, la sequenza di attività viene sospesa per 10 minuti dopo un riavvio prima di eseguire i passaggi aggiuntivi. Questa variabile è utile quando un singolo passaggio della sequenza di attività Installa aggiornamenti software installa centinaia di aggiornamenti software.
+
+### <a name="TSDebugMode"></a>TSDebugMode
+
+<!--3612274-->
+A partire dalla versione 1906, impostare questa variabile `TRUE` su in una raccolta in cui viene distribuita una sequenza di attività. Questa variabile modifica il comportamento di qualsiasi sequenza di attività in qualsiasi dispositivo della raccolta per usare il debugger della sequenza di attività.
+
+Per altre informazioni, vedere [Eseguire il debug di una sequenza di attività](/sccm/osd/deploy-use/debug-task-sequence).
 
 ### <a name="TSDisableProgressUI"></a> TSDisableProgressUI
 

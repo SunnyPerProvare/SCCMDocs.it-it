@@ -1,6 +1,6 @@
 - name: Desktop Analytics
   items:
-    - name: Panoramica
+    - name: Che cos'è Desktop Analytics?
       href: overview.md
     - name: Esercitazioni
       items:

@@ -1,4 +1,7 @@
+- name: Gestione degli aggiornamenti software
+  href: understand/software-updates-introduction.md
 - name: Comprendere ed esplorare
+  expanded: true
   items:
     - name: Introduzione agli aggiornamenti software
       href: understand/software-updates-introduction.md

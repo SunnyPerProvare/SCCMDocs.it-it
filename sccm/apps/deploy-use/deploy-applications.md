@@ -2,7 +2,7 @@
 title: Distribuire applicazioni
 titleSuffix: Configuration Manager
 description: Creare o simulare la distribuzione di un'applicazione a una raccolta di utenti o dispositivi
-ms.date: 06/04/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5760b36ddb29c39d6887afb61445f1353f46bbec
-ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.openlocfilehash: fa56c5ec5b6ad3f24255d6b8e37e56c46c94d17f
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66715689"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68534908"
 ---
 # <a name="deploy-applications-with-configuration-manager"></a>Distribuire applicazioni con Configuration Manager
 
@@ -25,6 +25,8 @@ ms.locfileid: "66715689"
 Creare o simulare la distribuzione di un'applicazione a una raccolta di utenti o dispositivi in Configuration Manager. La distribuzione specifica istruzioni per il client di Configuration Manager su come e quando installare il software.
 
 Prima di distribuire un'applicazione, creare almeno un tipo di distribuzione per l'applicazione. Per altre informazioni, vedere [Create applications](/sccm/apps/deploy-use/create-applications) (Creare le applicazioni).
+
+A partire dalla versione 1906, è possibile creare un gruppo di applicazioni da inviare a un utente o a una raccolta di dispositivi come singola distribuzione. Per ulteriori informazioni, vedere la pagina relativa alla [creazione di gruppi di applicazioni](/sccm/apps/deploy-use/create-app-groups).
 
 È anche possibile simulare la distribuzione di un'applicazione. La simulazione verifica l'applicabilità di una distribuzione senza installare o disinstallare l'applicazione. Una distribuzione simulata esegue una valutazione del metodo di rilevamento, dei requisiti e delle dipendenze per un tipo di distribuzione e segnala i risultati nel nodo **Distribuzioni** dell'area di lavoro **Monitoraggio**. Per altre informazioni, vedere [Simulare distribuzioni di applicazioni ](/sccm/apps/deploy-use/simulate-application-deployments).
 
@@ -37,9 +39,9 @@ Prima di distribuire un'applicazione, creare almeno un tipo di distribuzione per
 
 ## <a name="bkmk_deploy"></a> Distribuire un'applicazione
 
-1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Gestione applicazioni** e selezionare il nodo **Applicazioni**.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Raccolta software**, espandere **Gestione applicazioni** e selezionare il nodo **Applicazioni** o **Gruppi di applicazioni**.
 
-2. Nell'elenco **Applicazioni** selezionare un'applicazione da distribuire. Sulla barra multifunzione fare clic su **Distribuisci**.  
+2. Selezionare un'applicazione o un gruppo di applicazioni dall'elenco da distribuire. Sulla barra multifunzione fare clic su **Distribuisci**.  
 
 > [!Note]  
 > Quando si visualizzano le proprietà di una distribuzione esistente, le sezioni seguenti corrispondono alle schede della finestra delle proprietà della distribuzione:  
@@ -112,20 +114,17 @@ Nella pagina **Impostazioni distribuzione** specificare le informazioni seguenti
 
     > [!Note]  
     > Questa opzione funziona indipendentemente dall'approvazione dell'amministratore. Se un amministratore ha già approvato la versione sostituita, non sarà necessario approvare anche la versione sostitutiva. L'approvazione è necessaria solo per le nuove richieste, non per gli aggiornamenti sostitutivi.<!--515824-->  
-
-    > [!NOTE]  
-    > A partire dalla versione 1802, per lo scopo di installazione **Disponibile** è possibile abilitare o disabilitare questa opzione. <!--1351266-->
+    >
+    > Per lo scopo di installazione **Disponibile** è possibile abilitare o disabilitare questa opzione. <!--1351266-->
 
 
 #### <a name="bkmk_approval"></a> Impostazioni di approvazione
 
-In base alla versione di Configuration Manager, viene visualizzata una delle impostazioni di approvazione seguenti:
+Il comportamento di approvazione dell'applicazione dipende dal fatto che la funzionalità facoltativa consigliata venga abilitata, approvare le **richieste dell'applicazione per gli utenti per dispositivo**.
 
-- **Richiedi l'approvazione dell'amministratore se gli utenti richiedono questa applicazione**: per la versione 1710 e versioni precedenti, l'amministratore approva tutte le richieste degli utenti per l'applicazione prima che l'utente la installi. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi.  
+- **Un amministratore deve approvare una richiesta per questa applicazione nel dispositivo**: se si abilita la funzionalità facoltativa, l'amministratore approva tutte le richieste utente per l'applicazione prima che l'utente la installi nel dispositivo richiesto. Se l'amministratore approva la richiesta, l'utente può installare l'applicazione solo su quel dispositivo. Per installare l'applicazione in un altro dispositivo dovrà inviare un'altra richiesta. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi.
 
-- **Un amministratore deve approvare una richiesta per questa applicazione nel dispositivo**: a partire dalla versione 1802, l'amministratore approva tutte le richieste utente per l'applicazione prima che l'utente la installi nel dispositivo richiesto. Se l'amministratore approva la richiesta, l'utente può installare l'applicazione solo su quel dispositivo. Per installare l'applicazione in un altro dispositivo dovrà inviare un'altra richiesta. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi.
-
-A partire dalla versione 1810 è anche possibile definire un elenco di indirizzi e-mail per notificare la richiesta di approvazione.<!--1357015-->  
+- **Richiedi l'approvazione dell'amministratore se gli utenti richiedono questa applicazione**: se non si abilita la funzionalità facoltativa, l'amministratore approva tutte le richieste degli utenti per l'applicazione prima che l'utente la installi. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi.  
 
 Per altre informazioni, vedere [Approvare le applicazioni](/sccm/apps/deploy-use/app-approval).
 
@@ -197,7 +196,7 @@ Quando si esegue un tipo di distribuzione iOS, verrà visualizzata anche la pagi
 ## <a name="bkmk_phased"></a> Creare una distribuzione in più fasi
 
 <!--1358147-->
-A partire dalla versione 1806, è possibile creare una distribuzione in più fasi per un'applicazione. Le distribuzioni in più fasi consentono di orchestrare un'implementazione coordinata e in sequenza del software basata su criteri e gruppi personalizzabili. È possibile, ad esempio, distribuire l'applicazione in una raccolta pilota e quindi continuare automaticamente l'implementazione in base ai criteri per l'esito positivo. 
+A partire dalla versione 1806, è possibile creare una distribuzione in più fasi per un'applicazione. Le distribuzioni in più fasi consentono di orchestrare un'implementazione coordinata e in sequenza del software basata su criteri e gruppi personalizzabili. È possibile, ad esempio, distribuire l'applicazione in una raccolta pilota e quindi continuare automaticamente l'implementazione in base ai criteri per l'esito positivo.
 
 Per altre informazioni, vedere gli articoli seguenti:  
 
@@ -209,11 +208,11 @@ Per altre informazioni, vedere gli articoli seguenti:
 
 ## <a name="bkmk_delete"></a> Eliminare una distribuzione
 
-1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Gestione applicazioni** e selezionare il nodo **Applicazioni**.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Raccolta software**, espandere **Gestione applicazioni** e selezionare il nodo **Applicazioni** o **Gruppi di applicazioni**.  
 
-2. Nell'elenco **Applicazioni** selezionare l'applicazione che include la distribuzione da eliminare.  
+2. Selezionare l'applicazione o il gruppo di applicazioni che include la distribuzione da eliminare.  
 
-3. Passare alla scheda **Distribuzioni** del pannello dei dettagli e selezionare la distribuzione dell'applicazione.  
+3. Passare alla scheda **Distribuzioni** del riquadro dei dettagli e selezionare la distribuzione.  
 
 4. Sulla barra multifunzione fare clic su **Elimina** nella scheda **Distribuzione** e nel gruppo **Distribuzione**.  
 
@@ -281,7 +280,7 @@ Dopo che i client ricevono la distribuzione, si applica il comportamento seguent
 ## <a name="deploy-user-available-applications-on-azure-ad-joined-devices"></a>Distribuire applicazioni disponibili per l'utente in dispositivi aggiunti ad Azure AD
 
 <!-- 1322613 -->
-Se si distribuiscono applicazioni come disponibili agli utenti, a partire dalla versione 1802 questi possono esplorarle e installarle tramite Software Center nei dispositivi Azure Active Directory (Azure AD).  
+Se si distribuiscono applicazioni come disponibili agli utenti, questi possono esplorarle e installarle tramite Software Center nei dispositivi Azure Active Directory (Azure AD).  
 
 ### <a name="prerequisites"></a>Prerequisiti
 

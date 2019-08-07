@@ -2,7 +2,7 @@
 title: Creare e distribuire un'applicazione
 titleSuffix: Configuration Manager
 description: Creare e distribuire un'applicazione contenente un'app line-of-business e informazioni su come gestire le applicazioni in modo efficace.
-ms.date: 10/06/2016
+ms.date: 07/19/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 979409f34e4c32ce812f2a84ce062d2312a85d3c
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: c754486bd1026ccea3dc3b85f8412420c3c66a40
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676146"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68535389"
 ---
 # <a name="create-and-deploy-an-application-with-system-center-configuration-manager"></a>Creare e distribuire un'applicazione con System Center Configuration Manager
 
@@ -28,13 +28,13 @@ Questo argomento fornisce informazioni che consentono di creare subito un'applic
 
  Per informazioni specifiche su ogni piattaforma, vedere uno degli argomenti seguenti:  
 
--   [Creare applicazioni Windows](../../apps/get-started/creating-windows-applications.md)  
--   [Creazione di applicazioni iOS](../../apps/get-started/creating-ios-applications.md)  
--   [Creazione di applicazioni Android](../../apps/get-started/creating-android-applications.md)  
--   [Creazione di applicazioni Windows Phone](../../apps/get-started/creating-windows-phone-applications.md)  
--   [Creazione di applicazioni per computer Mac](../../apps/get-started/creating-mac-computer-applications.md)  
--   [Creazione di applicazioni server Linux e UNIX](../../apps/get-started/creating-linux-and-unix-server-applications.md)
--   [Creazione di applicazioni Windows Embedded](../../apps/get-started/creating-windows-embedded-applications.md)
+- [Creare applicazioni Windows](../../apps/get-started/creating-windows-applications.md)  
+- [Creazione di applicazioni iOS](../../apps/get-started/creating-ios-applications.md)  
+- [Creazione di applicazioni Android](../../apps/get-started/creating-android-applications.md)  
+- [Creazione di applicazioni Windows Phone](../../apps/get-started/creating-windows-phone-applications.md)  
+- [Creazione di applicazioni per computer Mac](../../apps/get-started/creating-mac-computer-applications.md)  
+- [Creazione di applicazioni server Linux e UNIX](../../apps/get-started/creating-linux-and-unix-server-applications.md)
+- [Creazione di applicazioni Windows Embedded](../../apps/get-started/creating-windows-embedded-applications.md)
 
 
 Se si ha già familiarità con le applicazioni di Configuration Manager, è possibile ignorare questo argomento. Tuttavia, è consigliabile rivedere l'argomento [Create applications](../../apps/deploy-use/create-applications.md) (Creazione di applicazioni) per scoprire tutte le opzioni disponibili quando si creano e si distribuiscono le applicazioni.  
@@ -55,9 +55,9 @@ Assicurarsi di aver esaminato le informazioni contenute in [Introduzione alla ge
 
 3. Nella pagina **Generale** della **Creazione guidata applicazione** selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**. Alcune sezioni della procedura guidata vengono prepopolate con le informazioni estratte dal file di installazione con estensione msi. A questo punto, specificare le informazioni seguenti:  
 
-   -   **Tipo**: scegliere **Windows Installer (file \*.msi)** .  
+   - **Tipo**: scegliere **Windows Installer (file \*.msi)** .  
 
-   -   **Percorso**: immettere il percorso del file di installazione **Contoso.msi** o fare clic su **Sfoglia**per selezionare il percorso. Per trovare i file di installazione con Configuration Manager, il percorso deve essere specificato nel formato *\\\Server\Share\File*.  
+   - **Percorso**: immettere il percorso del file di installazione **Contoso.msi** o fare clic su **Sfoglia**per selezionare il percorso. Per trovare i file di installazione con Configuration Manager, il percorso deve essere specificato nel formato *\\\Server\Share\File*.  
 
    Al termine, verrà visualizzata una schermata simile alla seguente:  
 
@@ -70,7 +70,7 @@ Assicurarsi di aver esaminato le informazioni contenute in [Introduzione alla ge
     Inoltre, il campo **Programma di installazione** consente di specificare l'intera riga di comando usata per installare l'applicazione nei computer. È possibile modificare questa opzione per aggiungere proprietà personalizzate (ad esempio **/q** per un'installazione automatica).  
 
    > [!TIP]  
-   >  Alcuni dei campi in questa pagina della procedura guidata potrebbero essere stati compilati automaticamente durante l'importazione dei file di installazione dell'applicazione.  
+   > Alcuni dei campi in questa pagina della procedura guidata potrebbero essere stati compilati automaticamente durante l'importazione dei file di installazione dell'applicazione.  
 
     Al termine, verrà visualizzata una schermata simile alla seguente:  
 
@@ -88,60 +88,61 @@ Dopo aver creato un'applicazione, è possibile ridefinire le impostazioni dell'a
 
  Nella finestra di dialogo **Proprietà applicazione \><Contoso** verranno visualizzati diversi elementi che è possibile configurare per perfezionare il comportamento dell'applicazione. Per informazioni dettagliate su tutte le impostazioni che è possibile configurare, vedere [Creazione di applicazioni](../../apps/deploy-use/create-applications.md). Ai fini di questo esempio, verranno modificate solo alcune delle proprietà del tipo di distribuzione dell'applicazione.  
 
- Fare clic sulla scheda **Tipi di distribuzione** > tipo di distribuzione **Applicazione Contoso** > **Modifica**. 
+ Fare clic sulla scheda **Tipi di distribuzione** > tipo di distribuzione **Applicazione Contoso** > **Modifica**.
 
 Viene visualizzata una finestra di dialogo simile alla seguente:  
 
 ![Pagina delle proprietà dell'app di gestione](/sccm/apps/get-started/media/App-management-app-properties-page.png)  
 
-## <a name="add-a-requirement-to-the-deployment-type"></a>Aggiungere un requisito al tipo di distribuzione  
+## <a name="add-a-requirement-to-the-deployment-type"></a>Aggiungere un requisito al tipo di distribuzione
+
  I requisiti specificano le condizioni che devono essere soddisfatte prima di installare un'applicazione in un dispositivo.  È possibile scegliere tra i requisiti predefiniti o crearne di personalizzati. In questo esempio viene aggiunto un requisito che consente l'installazione dell'applicazione solo nei computer che eseguono Windows 10.  
 
-1.  Nella pagina delle proprietà del tipo di distribuzione appena aperta scegliere la scheda **Requisiti**.  
+1. Nella pagina delle proprietà del tipo di distribuzione appena aperta scegliere la scheda **Requisiti**.  
 
-2.  Scegliere **Aggiungi** per aprire la finestra di dialogo **Crea requisito**.  
+2. Scegliere **Aggiungi** per aprire la finestra di dialogo **Crea requisito**.  
 
-3.  Nella finestra di dialogo **Crea requisito** specificare le seguenti informazioni:  
+3. Nella finestra di dialogo **Crea requisito** specificare le seguenti informazioni:  
 
-    -   **Categoria**: **Dispositivo**  
+    - **Categoria**: **Dispositivo**  
 
-    -   **Condizione**: **Sistema operativo**  
+    - **Condizione**: **Sistema operativo**  
 
-    -   **Tipo di regola**: **Valore**  
+    - **Tipo di regola**: **Valore**  
 
-    -   **Operatore**: **Uno**  
+    - **Operatore**: **Uno**  
 
-    -   Nell'elenco di sistemi operativi selezionare **Windows 10**.  
+    - Nell'elenco di sistemi operativi selezionare **Windows 10**.  
 
     Al termine, verrà visualizzata una finestra di dialogo simile alla seguente:  
 
     ![Pagina dei requisiti dell'app di gestione](/sccm/apps/get-started/media/App-management-requirements-page.png)  
 
-4.  Scegliere **OK** per chiudere le singole pagine delle proprietà aperte e quindi tornare all'elenco **Applicazioni** nella console di Configuration Manager.  
+4. Scegliere **OK** per chiudere le singole pagine delle proprietà aperte e quindi tornare all'elenco **Applicazioni** nella console di Configuration Manager.  
 
 > [!TIP]  
->  I requisiti consentono di ridurre il numero di raccolte di Configuration Manager necessario. Poiché è stato specificato che l'applicazione può essere installata solo nei computer che eseguono Windows 10, successivamente sarà possibile distribuirla in una raccolta contenente computer che eseguono sistemi operativi diversi. Tuttavia l'applicazione verrà installata solo nei PC con Windows 10.  
+> I requisiti consentono di ridurre il numero di raccolte di Configuration Manager necessario. Poiché è stato specificato che l'applicazione può essere installata solo nei computer che eseguono Windows 10, successivamente sarà possibile distribuirla in una raccolta contenente computer che eseguono sistemi operativi diversi. Tuttavia l'applicazione verrà installata solo nei PC con Windows 10.
 
 ## <a name="add-the-application-content-to-a-distribution-point"></a>Aggiungere il contenuto dell'applicazione a un punto di distribuzione  
 
 Successivamente, per distribuire l'applicazione nei PC, è necessario assicurarsi che il contenuto dell'applicazione venga copiato in un punto di distribuzione. I PC accedono al punto di distribuzione per installare l'applicazione.  
 
 > [!TIP]  
->  Per altre informazioni sui punti di distribuzione e la gestione del contenuto in Configuration Manager, vedere [Gestire il contenuto e l'infrastruttura del contenuto](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+> Per altre informazioni sui punti di distribuzione e la gestione del contenuto in Configuration Manager, vedere [Gestire il contenuto e l'infrastruttura del contenuto](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software**.  
+1. Nella console di Configuration Manager scegliere **Raccolta software**.  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Applicazioni** e quindi selezionare dall'elenco di applicazioni l'**applicazione Contoso** creata.  
+2. Nell'area di lavoro **Raccolta software** espandere **Applicazioni** e quindi selezionare dall'elenco di applicazioni l'**applicazione Contoso** creata.  
 
-3.  Nella scheda **Home**, nel gruppo **Distribuzione**, scegliere **Distribuisci contenuto**.  
+3. Nella scheda **Home**, nel gruppo **Distribuzione**, scegliere **Distribuisci contenuto**.  
 
-4.  Nella pagina **Generale** della **Distribuzione guidata contenuto** verificare che il nome dell'applicazione sia corretto e quindi scegliere **Avanti**.  
+4. Nella pagina **Generale** della **Distribuzione guidata contenuto** verificare che il nome dell'applicazione sia corretto e quindi scegliere **Avanti**.  
 
-5.  Nella pagina **Contenuto** esaminare le informazioni che verranno copiate nel punto di distribuzione e quindi scegliere **Avanti**.  
+5. Nella pagina **Contenuto** esaminare le informazioni che verranno copiate nel punto di distribuzione e quindi scegliere **Avanti**.  
 
-6.  Nella pagina **Destinazione del contenuto** fare clic su **Aggiungi** per selezionare uno o più punti di distribuzione o gruppi di punti di distribuzione in cui installare il contenuto dell'applicazione.  
+6. Nella pagina **Destinazione del contenuto** fare clic su **Aggiungi** per selezionare uno o più punti di distribuzione o gruppi di punti di distribuzione in cui installare il contenuto dell'applicazione.  
 
-7.  Completare la procedura guidata.  
+7. Completare la procedura guidata.  
 
 È possibile verificare che il contenuto dell'applicazione sia stato copiato correttamente nel punto di distribuzione dall'area di lavoro **Monitoraggio** in **Stato di distribuzione** > **Stato contenuto**.  
 
@@ -150,55 +151,62 @@ Successivamente, per distribuire l'applicazione nei PC, è necessario assicurars
 Successivamente, distribuire l'applicazione a una raccolta di dispositivi nella gerarchia. In questo esempio l'applicazione viene distribuita alla raccolta dispositivi **Tutti i sistemi**.  
 
 > [!TIP]  
->  Tenere presente che l'applicazione verrà installata solo nei computer Windows 10 a causa dei requisiti selezionati in precedenza.  
+> Tenere presente che l'applicazione verrà installata solo nei computer Windows 10 a causa dei requisiti selezionati in precedenza.
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
+1. Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
 
-3.  Dall'elenco delle applicazioni selezionare l'applicazione creata in precedenza (**Applicazione Contoso**) e quindi scegliere **Distribuisci** nel gruppo **Distribuzione** della scheda **Home**.  
+2. Dall'elenco delle applicazioni selezionare l'applicazione creata in precedenza (**Applicazione Contoso**) e quindi scegliere **Distribuisci** nel gruppo **Distribuzione** della scheda **Home**.  
 
-4.  Nella pagina **Generale** della **Distribuzione guidata del software** fare clic su **Sfoglia** per selezionare la raccolta di dispositivi **Tutti i sistemi**.  
+3. Nella pagina **Generale** della **Distribuzione guidata del software** fare clic su **Sfoglia** per selezionare la raccolta di dispositivi **Tutti i sistemi**.  
 
-5.  Nella pagina **Contenuto** verificare che il punto di distribuzione da cui si vuole consentire ai PC di installare l'applicazione sia selezionato.  
+4. Nella pagina **Contenuto** verificare che il punto di distribuzione da cui si vuole consentire ai PC di installare l'applicazione sia selezionato.  
 
-6.  Nella pagina **Impostazioni di distribuzione** assicurarsi che l'azione di distribuzione sia impostata su **Installa** e che lo scopo della distribuzione sia impostato su **Richiesto**.  
+5. Nella pagina **Impostazioni di distribuzione** assicurarsi che l'azione di distribuzione sia impostata su **Installa** e che lo scopo della distribuzione sia impostato su **Richiesto**.  
 
     > [!TIP]  
-    >  Impostando lo scopo della distribuzione su **Richiesto** si garantisce che l'applicazione venga installata nei PC che soddisfano i requisiti impostati. Se si imposta questo valore su **Disponibile**, gli utenti possono installare l'applicazione su richiesta da Software Center.  
+    > Impostando lo scopo della distribuzione su **Richiesto** si garantisce che l'applicazione venga installata nei PC che soddisfano i requisiti impostati. Se si imposta questo valore su **Disponibile**, gli utenti possono installare l'applicazione su richiesta da Software Center.
 
-7.  Nella pagina **Pianificazione** è possibile configurare il momento in cui verrà installata l'applicazione. Per questo esempio, selezionare **Appena possibile dopo il tempo disponibile**.  
+6. Nella pagina **Pianificazione** è possibile configurare il momento in cui verrà installata l'applicazione. Per questo esempio, selezionare **Appena possibile dopo il tempo disponibile**.  
 
-8.  Nella pagina **Esperienza utente** scegliere **Avanti** per accettare i valori predefiniti.  
+7. Nella pagina **Esperienza utente** scegliere **Avanti** per accettare i valori predefiniti.  
 
-9. Completare la procedura guidata.  
+8. Completare la procedura guidata.  
 
 Usare le informazioni della sezione seguente **Monitorare l'applicazione** per visualizzare lo stato della distribuzione dell'applicazione.  
 
-## <a name="monitor-the-application"></a>Monitorare l'applicazione  
+## <a name="monitor-the-application"></a>Monitorare l'applicazione
+
  In questa sezione verrà esaminato rapidamente lo stato di distribuzione dell'applicazione appena distribuita.  
 
 ### <a name="to-review-the-deployment-status"></a>Per esaminare lo stato di distribuzione  
 
-1.  Nella console di Configuration Manager scegliere **Monitoraggio** > **Distribuzioni**.  
+1. Nella console di Configuration Manager scegliere **Monitoraggio** > **Distribuzioni**.  
 
-3.  Selezionare **Applicazione Contoso**dall'elenco delle distribuzioni.  
+2. Selezionare **Applicazione Contoso**dall'elenco delle distribuzioni.  
 
-4.  Nella scheda **Home** scegliere **Visualizza stato** nel gruppo **Distribuzione**.  
+3. Nella scheda **Home** scegliere **Visualizza stato** nel gruppo **Distribuzione**.  
 
-5.  Selezionare una delle schede seguenti per visualizzare più aggiornamenti di stato sulla distribuzione delle applicazioni:  
+4. Selezionare una delle schede seguenti per visualizzare più aggiornamenti di stato sulla distribuzione delle applicazioni:  
 
-    -   **Operazione riuscita**: l'applicazione è stata installata correttamente nei PC indicati.  
+    - **Operazione riuscita**: l'applicazione è stata installata correttamente nei PC indicati.  
 
-    -   **In corso**: l'installazione dell'applicazione non è ancora terminata.  
+    - **In corso**: l'installazione dell'applicazione non è ancora terminata.  
 
-    -   **Errore**: si è verificato un errore durante l'installazione dell'applicazione nei PC indicati. Vengono visualizzate anche altre informazioni sull'errore.  
+    - **Errore**: si è verificato un errore durante l'installazione dell'applicazione nei PC indicati. Vengono visualizzate anche altre informazioni sull'errore.  
 
-    -   **Requisiti non soddisfatti**: non è stato effettuato alcun tentativo di installazione nei dispositivi indicati perché non soddisfano i requisiti configurati (in questo esempio, perché non eseguono Windows 10).  
+    - **Requisiti non soddisfatti**: non è stato effettuato alcun tentativo di installazione nei dispositivi indicati perché non soddisfano i requisiti configurati (in questo esempio, perché non eseguono Windows 10).  
 
-    -   **Sconosciuto**: Configuration Manager non è riuscito a segnalare lo stato della distribuzione. Ricontrollare in seguito.  
+    - **Sconosciuto**: Configuration Manager non è riuscito a segnalare lo stato della distribuzione. Ricontrollare in seguito.  
 
 > [!TIP]  
->  Esistono diversi modi in cui è possibile monitorare le distribuzioni di applicazioni. Per informazioni dettagliate, vedere [Monitorare le applicazioni](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
+> Esistono diversi modi in cui è possibile monitorare le distribuzioni di applicazioni. Per informazioni dettagliate, vedere [Monitorare le applicazioni](/sccm/apps/deploy-use/monitor-applications-from-the-console).
 
 ## <a name="end-user-experience"></a>Esperienza utente finale  
 
 Gli utenti con PC gestiti da Configuration Manager che eseguono Windows 10 visualizzano un messaggio che informa della necessità di installare l'applicazione Contoso. Una volta accettata l'installazione, l'applicazione viene installata.  
+
+A partire da Configuration Manager versione 1906, il **nuovo software è disponibile** la notifica verrà visualizzata una sola volta per un utente per una determinata applicazione e revisione. L'utente non visualizzerà più la notifica a ogni accesso. Verranno visualizzate solo altre notifiche per un'applicazione se l'applicazione è stata modificata o è stata ridistribuita.
+
+## <a name="next-steps"></a>Passaggi successivi
+
+[Monitorare le applicazioni](/sccm/apps/deploy-use/monitor-applications-from-the-console)

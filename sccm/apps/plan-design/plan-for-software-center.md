@@ -2,7 +2,7 @@
 title: Pianificare Software Center
 titleSuffix: Configuration Manager
 description: Decidere come configurare e personalizzare Software Center per consentire agli utenti di interagire con Configuration Manager.
-ms.date: 05/01/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,25 +11,33 @@ ms.assetid: c6826794-aa19-469d-ae47-1a0db68a1ff1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 50683b43cff113f7cd77efb5d8798fd24b53f90a
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: 2384fb0584fde331cf8667822c81de51eb60cbf0
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106520"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68534965"
 ---
 # <a name="plan-for-software-center"></a>Pianificare Software Center
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Gli utenti modificano le impostazioni e cercano e installano applicazioni in Software Center. Quando si installa il client di Configuration Manager in un dispositivo Windows, viene automaticamente installato Software Center. Il nuovo Software Center ha un aspetto moderno. e le app che venivano visualizzate solo nel Catalogo applicazioni dipendente da Silverlight (app disponibili per gli utenti) vengono visualizzate ora in Software Center nella scheda **Applicazioni**.
+Gli utenti modificano le impostazioni e cercano e installano applicazioni in Software Center. Quando si installa il client di Configuration Manager in un dispositivo Windows, viene automaticamente installato Software Center.
 
 Per informazioni sulle altre funzionalità di Software Center, vedere il [Manuale dell'utente di Software Center](/sccm/core/understand/software-center).  
 
-
 ## <a name="bkmk_userex"></a> Configurare Software Center  
 
+Aggiornare i siti e i client di Configuration Manager alla versione 1906 o successiva per trarre vantaggio dai miglioramenti più recenti.
+
 Di seguito sono elencati i miglioramenti apportati a Software Center:
+
+> [!Important]  
+> Questi miglioramenti iterativi di Software Center e il punto di gestione sono concepiti per il ritiro dei ruoli del catalogo applicazioni.
+>
+> - L'esperienza utente di Silverlight non è supportata a partire dalla versione Current Branch 1806.
+> - A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per l'utente. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni.
+> - Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
 
 ### <a name="starting-in-version-1802"></a>A partire dalla versione 1802
 
@@ -47,6 +55,24 @@ Di seguito sono elencati i miglioramenti apportati a Software Center:
     > Se il Catalogo applicazioni è attualmente in uso, continua a funzionare anche se si aggiorna Configuration Manager alla versione 1806. I ruoli Punto per siti Web e Punto per servizi Web del Catalogo applicazioni non sono più *necessari*, ma sono ancora *supportati*. L'**esperienza utente di Silverlight** per il *punto per siti Web* del Catalogo applicazioni non è più supportata. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).
     >
     > Iniziare a pianificare la rimozione dei ruoli del Catalogo applicazioni dall'infrastruttura in futuro. Sfruttare i miglioramenti di Software Center per usare il punto di gestione e semplificare l'ambiente di Configuration Manager.  
+
+### <a name="starting-in-version-1902"></a>A partire dalla versione 1902
+
+- Configurare l'affinità utente-dispositivo. Per altre informazioni, vedere [Collegare utenti e dispositivi mediante l'affinità utente dispositivo](/sccm/apps/deploy-use/link-users-and-devices-with-user-device-affinity).
+
+### <a name="starting-in-version-1906"></a>A partire dalla versione 1906
+
+- Software Center comunica ora con un punto di gestione per le app destinate agli utenti, se disponibili. Non usa più il catalogo applicazioni. Grazie a questa modifica, è più facile rimuovere il catalogo applicazioni dal sito.
+
+- In precedenza, Software Center selezionava il primo punto di gestione nell'elenco di server disponibili. A partire da questa versione, usa lo stesso punto di gestione del client. Questa modifica consente a Software Center di usare lo stesso punto di gestione del client dal sito primario assegnato.
+
+- Il punto di gestione dispone di endpoint di Software Center per supportare le nuove funzionalità. Ora controlla l'integrità di questi endpoint ogni cinque minuti. Segnala eventuali problemi usando messaggi di stato per il componente SMS_MP_CONTROL_MANAGER del sito.
+
+- Non è possibile aggiungere nuovi ruoli del catalogo applicazioni al sito. I ruoli esistenti continuano a funzionare. Solo i client esistenti utilizzano il Catalogo applicazioni per le distribuzioni disponibili per gli utenti. I client aggiornati utilizzano automaticamente il punto di gestione per tutte le distribuzioni.
+
+- È possibile aggiungere fino a 5 schede personalizzate a Software Center. Per altre informazioni, vedere [Impostazioni client di Software Center](/sccm/core/clients/deploy/about-client-settings#software-center). <!--4063773-->
+
+### <a name="summary-of-infrastructure-requirements-per-version"></a>Riepilogo dei requisiti dell'infrastruttura per versione
 
 Usare la tabella seguente per conoscere i requisiti di Software Center in base alla versione specifica di Configuration Manager:
 
@@ -109,24 +135,6 @@ Alla finestra di dialogo seguente:
 
 Modificare l'aspetto di Software Center in modo che risponda ai requisiti di personalizzazione dell'organizzazione. Questa configurazione consente agli utenti di considerare attendibile Software Center.
 
-Configuration Manager applica la personalizzazione per Software Center in base alle priorità seguenti:  
-
-- Se il Catalogo applicazioni non è stato installato (scelta consigliata):  
-
-    1. Impostazioni client di **Software Center**. Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#software-center) (Informazioni sulle impostazioni client).  
-
-    2. Impostazione client **Nome organizzazione** nel gruppo **Agente computer**. Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#computer-agent) (Informazioni sulle impostazioni client).  
-
-- Se il Catalogo applicazioni è stato installato:  
-
-    1. Impostazioni client di **Software Center**. Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#software-center) (Informazioni sulle impostazioni client).  
-
-    2. Se si connette una sottoscrizione di Microsoft Intune a Configuration Manager, Software Center visualizza il *nome dell'organizzazione*, il *colore* e il *logo aziendale* specificati nelle proprietà della sottoscrizione di Intune. Per ulteriori informazioni, vedere [Configuring the Microsoft Intune subscription](/sccm/mdm/deploy-use/configure-intune-subscription).  
-
-    3. *Nome dell'organizzazione* e *colore* specificati nelle proprietà del punto per siti Web del Catalogo applicazioni. Per altre informazioni, vedere [Configuration options for Application Catalog website point](/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#BKMK_ApplicationCatalog_Website) (Opzioni di configurazione per il punto per siti Web del Catalogo applicazioni).  
-
-    4. Impostazione client **Nome organizzazione** nel gruppo **Agente computer**. Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#computer-agent) (Informazioni sulle impostazioni client).  
-
 ### <a name="configure-software-center-branding"></a>Configurare la personalizzazione di Software Center
 
 <!-- 1351224 -->
@@ -136,6 +144,32 @@ Per altre informazioni, vedere gli articoli seguenti:
 
 - Gruppo di impostazioni client di [Software Center](/sccm/core/clients/deploy/about-client-settings#software-center)  
 - [Come configurare le impostazioni client](/sccm/core/clients/deploy/configure-client-settings)  
+
+### <a name="branding-priorities"></a>Priorità di personalizzazione
+
+Configuration Manager applica la personalizzazione per Software Center in base alle priorità seguenti:  
+
+1. Impostazioni client di **Software Center**. Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#software-center) (Informazioni sulle impostazioni client).  
+
+2. Impostazione client **Nome organizzazione** nel gruppo **Agente computer**. Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#computer-agent) (Informazioni sulle impostazioni client).  
+
+#### <a name="application-catalog-branding-priorities"></a>Priorità di personalizzazione del catalogo applicazioni
+
+> [!Important]
+> L'esperienza utente Silverlight del catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per l'utente. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+
+Se si usa il Catalogo applicazioni, la personalizzazione segue queste priorità:  
+
+1. Impostazioni client di **Software Center**. Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#software-center) (Informazioni sulle impostazioni client).  
+
+2. Se si connette una sottoscrizione di Microsoft Intune a Configuration Manager, Software Center visualizza il *nome dell'organizzazione*, il *colore* e il *logo aziendale* specificati nelle proprietà della sottoscrizione di Intune. Per ulteriori informazioni, vedere [Configuring the Microsoft Intune subscription](/sccm/mdm/deploy-use/configure-intune-subscription).  
+
+    > [!Important]
+    > La gestione dei dispositivi mobili ibridi è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).
+
+3. *Nome dell'organizzazione* e *colore* specificati nelle proprietà del punto per siti Web del Catalogo applicazioni. Per altre informazioni, vedere [Opzioni di configurazione per il punto per siti Web del Catalogo applicazioni](/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#BKMK_ApplicationCatalog_Website).  
+
+4. Impostazione client **Nome organizzazione** nel gruppo **Agente computer**. Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#computer-agent) (Informazioni sulle impostazioni client).  
 
 
 ## <a name="see-also"></a>Vedere anche

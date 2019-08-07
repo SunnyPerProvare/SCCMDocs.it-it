@@ -2,7 +2,7 @@
 title: Gestire le immagini del sistema operativo
 titleSuffix: Configuration Manager
 description: Informazioni sui metodi per gestire le immagini del sistema operativo archiviate nei file di immagine di Windows (WIM).
-ms.date: 05/28/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35670ea78c2883d232040da30898f753c88e39b1
-ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
+ms.openlocfilehash: ecee342fb65cde6a210a4f2d13d4d75a5f30f19a
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66355119"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536999"
 ---
 # <a name="manage-os-images-with-configuration-manager"></a>Gestire le immagini del sistema operativo con Configuration Manager
 
@@ -77,6 +77,8 @@ Prima di poter usare un'immagine del sistema operativo, è necessario aggiungerl
         > Configuration Manager non modifica il file di immagine di origine. Crea un nuovo file di immagine nella stessa directory di origine.
         >
         > Questo processo di estrazione può non riuscire per i file di immagine di dimensioni molto elevate, ad esempio oltre i 60 GB. L'errore DISM è `Not enough storage is available to process this command.` La riga di comando usata da Configuration Manager è nei file smsprov.log e dism.log. Eseguire manualmente lo stesso comando e quindi importare l'immagine.<!-- SCCMDocs-pr issue 3502 -->  
+
+    - A partire dalla versione 1906, se si vuole memorizzare anticipatamente il contenuto nella cache in un client, specificare **Architettura** e **Lingua** dell'immagine. Per altre informazioni, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/configure-precache-content).<!--4224642-->  
 
 4. Nella pagina **Generale** specificare le informazioni seguenti. Queste informazioni sono utili per scopi di identificazione quando sono presenti più immagini del sistema operativo.  
 

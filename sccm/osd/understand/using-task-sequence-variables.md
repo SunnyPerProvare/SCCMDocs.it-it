@@ -2,7 +2,7 @@
 title: Come usare le variabili della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni su come usare le variabili in una sequenza di attività di Configuration Manager.
-ms.date: 08/17/2018
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,44 +11,43 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 63e3ec73fc08946354a7f7b84ac5bb3245cbbd76
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: ea21450a5065cc2572e84fd52d39c76c9f82c519
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340298"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68537104"
 ---
 # <a name="how-to-use-task-sequence-variables-in-configuration-manager"></a>Come usare le variabili della sequenza di attività in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Il motore di esecuzione della sequenza di attività nella funzionalità di distribuzione del sistema operativo di Configuration Manager usa numerose variabili per controllarne i comportamenti. Usare queste variabili per: 
+ Il motore di esecuzione della sequenza di attività nella funzionalità di distribuzione del sistema operativo di Configuration Manager usa numerose variabili per controllarne i comportamenti. Usare queste variabili per:
+
 - Impostare le condizioni sui passaggi  
 - Cambiare i comportamenti per passaggi specifici  
 - Creare azioni più complesse con gli script  
 
-
 Per informazioni di riferimento su tutte le variabili della sequenza di attività disponibili, vedere [Task sequence variables](/sccm/osd/understand/task-sequence-variables) (Variabili della sequenza di attività).
-
 
 
 ## <a name="bkmk_types"></a> Tipi di variabili
 
 Sono disponibili diversi tipi di variabili:  
+
 - [Predefinite](#bkmk_built-in)  
 - [Azione](#bkmk_action)  
 - [Personalizzato](#bkmk_custom)  
 - [Di sola lettura](#bkmk_read-only)  
 - [Di matrice](#bkmk_array)  
 
-
 ### <a name="bkmk_built-in"></a> Variabili predefinite
 
-Le variabili predefinite forniscono informazioni sull'ambiente in cui viene eseguita la sequenza di attività. I relativi valori sono disponibili nell'intera sequenza di attività. In genere il motore di esecuzione della sequenza di attività inizializza le variabili predefinite prima di eseguire qualsiasi passaggio. 
+Le variabili predefinite forniscono informazioni sull'ambiente in cui viene eseguita la sequenza di attività. I relativi valori sono disponibili nell'intera sequenza di attività. In genere il motore di esecuzione della sequenza di attività inizializza le variabili predefinite prima di eseguire qualsiasi passaggio.
 
-Ad esempio, **\_SMSTSLogPath** è una variabile di ambiente che specifica il percorso in cui i componenti di Configuration Manager scrivono i file di log. Qualsiasi passaggio della sequenza di attività può accedere a questa variabile di ambiente. 
+Ad esempio, **\_SMSTSLogPath** è una variabile di ambiente che specifica il percorso in cui i componenti di Configuration Manager scrivono i file di log. Qualsiasi passaggio della sequenza di attività può accedere a questa variabile di ambiente.
 
-La sequenza di attività valuta alcune variabili prima di ogni passaggio. Ad esempio, **\_SMSTSCurrentActionName** elenca il nome del passaggio corrente. 
+La sequenza di attività valuta alcune variabili prima di ogni passaggio. Ad esempio, **\_SMSTSCurrentActionName** elenca il nome del passaggio corrente.
 
 ### <a name="bkmk_action"></a> Variabili di azione
 
@@ -63,10 +62,9 @@ Alcuni passaggi della sequenza di attività contrassegnano determinate variabili
 > [!Note]  
 > Non tutti i passaggi della sequenza di attività contengono variabili di azione. Ad esempio, anche se ci sono variabili associate all'azione **Attiva BitLocker**, non ci sono variabili associate all'azione **Disattiva BitLocker**.  
 
-
 ### <a name="bkmk_custom"></a> Variabili personalizzate
 
-Le variabili personalizzate sono tutte le variabili non create da Configuration Manager. Inizializzare le variabili personalizzate da usare come condizioni, in righe di comando o in script. 
+Le variabili personalizzate sono tutte le variabili non create da Configuration Manager. Inizializzare le variabili personalizzate da usare come condizioni, in righe di comando o in script.
 
 Quando si specifica un nome per una nuova variabile della sequenza di attività, usare le seguenti linee guida:  
 
@@ -82,20 +80,16 @@ Quando si specifica un nome per una nuova variabile della sequenza di attività,
 
 - I nomi delle variabili della sequenza di attività non possono iniziare o finire con uno spazio né contenere spazi. Gli spazi lasciati all'inizio o alla fine di un nome di variabile vengono ignorati dalla sequenza di attività.  
 
-
 Non è previsto un limite massimo di variabili della sequenza di attività che possono essere create. Tuttavia, il numero di variabili è limitato dalle dimensioni dell'ambiente della sequenza di attività. Il limite di dimensione totale per l'ambiente della sequenza di attività è 32 MB.  
-
 
 ### <a name="bkmk_read-only"></a> Variabili di sola lettura
 
-Le variabili di sola lettura sono variabili di cui non è possibile cambiare il valore. In genere il nome inizia con un carattere di sottolineatura (\_). La sequenza di attività usa queste variabili per le sue operazioni. Le variabili di sola lettura sono visibili nell'ambiente della sequenza di attività. 
+Le variabili di sola lettura sono variabili di cui non è possibile cambiare il valore. In genere il nome inizia con un carattere di sottolineatura (`_`). La sequenza di attività usa queste variabili per le sue operazioni. Le variabili di sola lettura sono visibili nell'ambiente della sequenza di attività.
 
 Queste variabili sono utili negli script o nelle righe di comando. Ad esempio, è possibile eseguire una riga di comando e inviare pipe dell'output a un file di log in **\_SMSTSLogPath** con gli altri file di log.
 
 > [!NOTE]  
->  Le variabili della sequenza di attività di sola lettura possono essere lette dai passaggi di una sequenza di attività, ma non possono essere impostate. Ad esempio, usare una variabile di sola lettura come parte della riga di comando di un passaggio **Esegui riga di comando**. Non è possibile impostare una variabile di sola lettura usando il passaggio **Imposta variabile della sequenza di attività**.  
-
-
+> Le variabili della sequenza di attività di sola lettura possono essere lette dai passaggi di una sequenza di attività, ma non possono essere impostate. Ad esempio, usare una variabile di sola lettura come parte della riga di comando di un passaggio **Esegui riga di comando**. Non è possibile impostare una variabile di sola lettura usando il passaggio **Imposta variabile della sequenza di attività**.  
 
 ### <a name="bkmk_array"></a> Variabili di matrice
 
@@ -104,7 +98,6 @@ La sequenza di attività archivia alcune variabili come matrice. Ogni elemento d
 - [Applica impostazioni di rete](task-sequence-steps.md#BKMK_ApplyNetworkSettings)  
 
 - [Formato e disco partizione](task-sequence-steps.md#BKMK_FormatandPartitionDisk)  
-
 
 
 ## <a name="bkmk_set"></a> Come impostare le variabili
@@ -116,12 +109,12 @@ Sono disponibili diversi metodi che consentono di inizializzare e impostare il v
 - [Variabili di raccolta e dispositivo](#bkmk_set-coll-var)  
 - [Oggetto COM TSEnvironment](#bkmk_set-com)  
 - [Comando di preavvio](#bkmk_set-prestart)  
+- [Creazione guidata sequenza di attività](#bkmk_set-tswiz)
 - [Creazione guidata del supporto per la sequenza di attività](#bkmk_set-media)  
-
 
 Eliminare una variabile dall'ambiente usando gli stessi metodi usati per crearla. Per eliminare una variabile, impostarne il valore su una stringa vuota.  
 
-È possibile combinare metodi per impostare una variabile della sequenza di attività su valori diversi per la stessa sequenza. Ad esempio, impostare i valori predefiniti usando l'editor delle sequenze di attività e i valori personalizzati usando uno script. 
+È possibile combinare metodi per impostare una variabile della sequenza di attività su valori diversi per la stessa sequenza. Ad esempio, impostare i valori predefiniti usando l'editor delle sequenze di attività e i valori personalizzati usando uno script.
 
 Se si imposta la stessa variabile con metodi diversi, il motore di esecuzione della sequenza di attività usa l'ordine seguente:  
 
@@ -131,8 +124,7 @@ Se si imposta la stessa variabile con metodi diversi, il motore di esecuzione de
 
 3. Le variabili impostate da un qualsiasi metodo durante la sequenza di attività hanno la precedenza sulle variabili di raccolta o dispositivo.  
 
-
-#### <a name="general-limitations-for-task-sequence-variable-values"></a>Limitazioni generali per i valori delle variabili della sequenza di attività  
+### <a name="general-limitations-for-task-sequence-variable-values"></a>Limitazioni generali per i valori delle variabili della sequenza di attività
 
 - I valori delle variabili della sequenza di attività non possono superare i 4.000 caratteri.  
 
@@ -140,58 +132,55 @@ Se si imposta la stessa variabile con metodi diversi, il motore di esecuzione de
 
 - I valori delle variabili della sequenza di attività possono applicare la distinzione tra maiuscole e minuscole a seconda dell'uso del valore. Nella maggior parte dei casi, ai valori delle variabili della sequenza di attività non viene applicata la distinzione tra maiuscole e minuscole. Viene invece applicata alle variabili che includono una password.  
 
-
 ### <a name="bkmk_set-ts-step"></a> Imposta variabile della sequenza di attività
 
-Usare questo passaggio nella sequenza di attività per impostare una singola variabile su un singolo valore. 
+Usare questo passaggio nella sequenza di attività per impostare una singola variabile su un singolo valore.
 
-Per altre informazioni, vedere [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable). 
-
+Per altre informazioni, vedere [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable).
 
 ### <a name="bkmk_set-dyn-step"></a> Imposta variabili dinamiche
 
-Usare questo passaggio nella sequenza di attività per impostare una o più variabili della sequenza di attività. Occorre definire le regole in questo passaggio per determinare quali variabili e valori usare. 
+Usare questo passaggio nella sequenza di attività per impostare una o più variabili della sequenza di attività. Occorre definire le regole in questo passaggio per determinare quali variabili e valori usare.
 
 Per altre informazioni, vedere [Imposta variabili dinamiche](/sccm/osd/understand/task-sequence-steps#BKMK_SetDynamicVariables).
 
-
 ### <a name="bkmk_set-coll-var"></a> Variabili di raccolta e dispositivo
 
-Impostare le variabili sulle proprietà di una raccolta o di un dispositivo specifico. 
+Impostare le variabili sulle proprietà di una raccolta o di un dispositivo specifico.
 
 Per altre informazioni, vedere [Creare le variabili della sequenza di attività per computer e raccolte](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_CreateTSVariables).
 
-
 ### <a name="bkmk_set-com"></a> Oggetto COM TSEnvironment
 
-Per lavorare con le variabili da uno script, usare l'oggetto **TSEnvironment**. 
+Per lavorare con le variabili da uno script, usare l'oggetto **TSEnvironment**.
 
 Per altre informazioni, vedere [How to use variables in a running task sequence](/sccm/develop/osd/how-to-use-task-sequence-variables-in-a-running-task-sequence) (Come usare le variabili in una sequenza di attività in esecuzione) in Configuration Manager SDK.
 
-
 ### <a name="bkmk_set-prestart"></a> Comando di preavvio
 
-Il comando di preavvio è uno script o un file eseguibile che viene eseguito in Windows PE prima che l'utente selezioni la sequenza di attività. Può eseguire query su una variabile o richiedere informazioni all'utente e quindi salvarle nell'ambiente. Usare l'oggetto COM [TSEnvironment](#bkmk_set-com) per leggere e scrivere variabili dal comando di preavvio. 
+Il comando di preavvio è uno script o un file eseguibile che viene eseguito in Windows PE prima che l'utente selezioni la sequenza di attività. Può eseguire query su una variabile o richiedere informazioni all'utente e quindi salvarle nell'ambiente. Usare l'oggetto COM [TSEnvironment](#bkmk_set-com) per leggere e scrivere variabili dal comando di preavvio.
 
 Per altre informazioni vedere [Comandi di preavvio del supporto per sequenza attività](/sccm/osd/understand/prestart-commands-for-task-sequence-media).
 
+### <a name="bkmk_set-tswiz"></a> Creazione guidata sequenza di attività
+
+A partire dalla versione 1906, dopo la selezione di una sequenza di attività nella finestra Creazione guidata sequenza di attività, la pagina per la modifica delle variabili della sequenza di attività include un pulsante **Modifica**. È possibile usare scelte rapide da tastiera per modificare le variabili. Questa modifica è utile nei casi in cui non è disponibile un mouse.<!-- 4668846 -->
 
 ### <a name="bkmk_set-media"></a> Creazione guidata del supporto per la sequenza di attività
 
 Specificare le variabili per le sequenze di attività che vengono eseguite da supporti. Quando si usa un supporto per la distribuzione del sistema operativo, al momento della creazione del supporto occorre aggiungere le variabili della sequenza di attività e specificarne i valori. Le variabili e i loro valori vengono memorizzati nel supporto.  
 
 > [!NOTE]  
->  Le sequenze attività vengono memorizzate su un supporto autonomo. Tutti gli altri tipi di supporto, ad esempio i supporti pre-installati, recuperano invece la sequenza di attività da un punto di gestione.  
+> Le sequenze attività vengono memorizzate su un supporto autonomo. Tutti gli altri tipi di supporto, ad esempio i supporti pre-installati, recuperano invece la sequenza di attività da un punto di gestione.  
 
-Quando si esegue una sequenza di attività da un supporto, è possibile aggiungere una variabile nella pagina **Personalizzazione** della procedura guidata. 
+Quando si esegue una sequenza di attività da un supporto, è possibile aggiungere una variabile nella pagina **Personalizzazione** della procedura guidata.
 
 Usare le variabili con ambito supporto anziché le variabili con ambito raccolta o computer. Se la sequenza di attività viene eseguita dal supporto, le variabili con ambito computer e raccolta non sono valide e non vengono usate.  
 
 > [!TIP]  
->  La sequenza di attività scrive l'ID del pacchetto e la riga di comando di preavvio nel file di log **CreateTSMedia.log** nel computer che esegue la console di Configuration Manager. Questo file di log include il valore di tutte le variabili della sequenza di attività. Rivedere questo file di log per verificare il valore per le variabili della sequenza di attività.  
+> La sequenza di attività scrive l'ID del pacchetto e la riga di comando di preavvio nel file di log **CreateTSMedia.log** nel computer che esegue la console di Configuration Manager. Questo file di log include il valore di tutte le variabili della sequenza di attività. Rivedere questo file di log per verificare il valore per le variabili della sequenza di attività.  
 
 Per altre informazioni, vedere [Creare supporti per sequenza di attività](/sccm/osd/deploy-use/create-task-sequence-media).
-
 
 
 ## <a name="bkmk_access"></a> Come accedere alle variabili
@@ -199,20 +188,19 @@ Per altre informazioni, vedere [Creare supporti per sequenza di attività](/sccm
 Dopo aver specificato la variabile e il relativo valore tramite uno dei metodi descritti nella sezione precedente, usarla nelle sequenze di attività. Ad esempio, accedere ai valori predefiniti delle variabili delle sequenze di attività predefinite o rendere un passaggio condizionale in base al valore della variabile.  
 
 Usare i metodi seguenti per accedere ai valori delle variabili nell'ambiente della sequenza di attività:
+
 - [Uso in un passaggio](#bkmk_access-step)  
 - [Condizione del passaggio](#bkmk_access-condition)  
 - [Script personalizzato](#bkmk_access-script)  
 - [File di risposte del programma di installazione di Windows](#bkmk_access-answer)  
-
-
+  
 ### <a name="bkmk_access-step"></a> Uso in un passaggio
 
-Specificare un valore di variabile per un'impostazione in un passaggio della sequenza di attività. Nell'editor di testo delle sequenze di attività modificare il passaggio e specificare il nome della variabile come valore del campo. Racchiudere il nome della variabile tra simboli di percentuale (`%`). 
+Specificare un valore di variabile per un'impostazione in un passaggio della sequenza di attività. Nell'editor di testo delle sequenze di attività modificare il passaggio e specificare il nome della variabile come valore del campo. Racchiudere il nome della variabile tra simboli di percentuale (`%`).
 
-Ad esempio, usare il nome della variabile come parte del campo **Riga di comando** del passaggio **Esegui riga di comando**. La riga di comando seguente scrive il nome computer in un file di testo. 
+Ad esempio, usare il nome della variabile come parte del campo **Riga di comando** del passaggio **Esegui riga di comando**. La riga di comando seguente scrive il nome computer in un file di testo.
 
 `cmd.exe /c %_SMSTSMachineName% > C:\File.txt`
-
 
 ### <a name="bkmk_access-condition"></a> Condizione del passaggio
 
@@ -232,13 +220,11 @@ Per aggiungere una condizione che valuti un valore della variabile, eseguire i p
 
     - **Valore**: valore della variabile da controllare. Ad esempio, `false`.  
 
-
-I tre esempi riportati sopra formano una condizione in base a cui verificare se la sequenza di attività è in esecuzione da un'immagine d'avvio in Windows PE: 
+I tre esempi riportati sopra formano una condizione in base a cui verificare se la sequenza di attività è in esecuzione da un'immagine d'avvio in Windows PE:
 
 > **Variabile della sequenza di attività** `_SMSTSInWinPE equals "false"`
 
 Vedere questa condizione nel gruppo **Acquisisci file e impostazioni** del modello di sequenza di attività predefinita per installare un'immagine del sistema operativo esistente.
-
 
 ### <a name="bkmk_access-script"></a> Script personalizzato
 
@@ -264,13 +250,11 @@ Write-Output "Hello world!" | Out-File -FilePath "$_SMSTSLogPath\mylog.log" -Enc
 $tsenv.Value("startTime") = (Get-Date -Format HH:mm:ss) + ".000+000"
 ```
 
-
-###  <a name="bkmk_access-answer"></a> File di risposte del programma di installazione di Windows
+### <a name="bkmk_access-answer"></a> File di risposte del programma di installazione di Windows
 
 Il file di risposte del programma di installazione di Windows che si specifica può contenere variabili della sequenza di attività incorporate. Usare il formato `%varname%`, dove *varname* è il nome della variabile. Il passaggio **Imposta Windows e ConfigMgr** sostituisce la stringa del nome della variabile con il valore effettivo della variabile. Queste variabili incorporate della sequenza di attività non possono essere usate in campi di tipo solo numerico in un file di risposte unattend.xml.
 
 Per altre informazioni, vedere [Impostare Windows e Configuration Manager](/sccm/osd/understand/task-sequence-steps#BKMK_SetupWindowsandConfigMgr).
-
 
 
 ## <a name="see-also"></a>Vedere anche

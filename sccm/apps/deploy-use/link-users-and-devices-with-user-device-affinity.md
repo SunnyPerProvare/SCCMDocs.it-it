@@ -2,7 +2,7 @@
 title: Collegare utenti e dispositivi mediante l'affinità utente dispositivo
 titleSuffix: Configuration Manager
 description: Collegare gli utenti e i dispositivi mediante l'affinità utente-dispositivo e distribuire automaticamente le app a tutti i dispositivi associati a un utente.
-ms.date: 10/06/2016
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,126 +11,156 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de833817d36ecf3d8dc7c59f4ab2bc1d0b59517f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: e1a6b104d35e037c3e63b07b29c80c9709a9e9fe
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129970"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68534747"
 ---
-# <a name="link-users-and-devices-with-user-device-affinity-in-system-center-configuration-manager"></a>Collegare utenti e dispositivi mediante l'affinità utente dispositivo in System Center Configuration Manager
+# <a name="link-users-and-devices-with-user-device-affinity-in-configuration-manager"></a>Collegare utenti e dispositivi con l'affinità utente-dispositivo in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-L'affinità utente-dispositivo in System Center Configuration Manager (Configuration Manager) associa un utente a uno o più dispositivi. Ciò fa sì che non sia più necessario conoscere i nomi dei dispositivi di un utente per poter distribuire un'applicazione a tale utente. Anziché distribuire l'applicazione a tutti i dispositivi dell'utente, è possibile distribuire l'applicazione all'utente. L'affinità utente dispositivo garantisce quindi automaticamente l'installazione dell'applicazione in tutti i dispositivi associati a tale utente.  
+L'affinità utente-dispositivo in Configuration Manager associa un utente a uno o più dispositivi. Questo comportamento può eliminare la necessità di conoscere i nomi dei dispositivi di un utente per poter distribuire un'applicazione all'utente. Anziché distribuire l'applicazione a ogni dispositivo dell'utente, è possibile distribuire l'applicazione all'utente. L'affinità utente-dispositivo garantisce quindi automaticamente l'installazione dell'applicazione in tutti i dispositivi associati all'utente.  
 
- È possibile definire i dispositivi primari che gli utenti usano quotidianamente per eseguire le proprie attività. Quando si crea un'affinità tra un utente e un dispositivo, si ottengono più opzioni di distribuzione delle app. Se ad esempio un utente deve usare Microsoft Visio, è possibile installarlo nel dispositivo primario dell'utente usando una distribuzione di Windows Installer. Tuttavia, in un dispositivo non primario si potrebbe distribuire Visio come un'applicazione virtuale. È anche possibile usare l'affinità utente-dispositivo per pre-distribuire il software nel dispositivo di un utente quando l'utente non è connesso. In questo modo, quando l'utente esegue l'accesso, l'app è già installata e pronta per essere eseguita.  
+Definire i dispositivi primari che gli utenti usano ogni giorno per il lavoro. Quando si crea un'affinità tra un utente e un dispositivo, si ottengono più opzioni di distribuzione delle app. Ad esempio, se un utente deve usare Microsoft Visio, è possibile installarlo nel dispositivo primario dell'utente usando una distribuzione di Windows Installer. Tuttavia, in un dispositivo non primario si potrebbe distribuire Visio come un'applicazione virtuale. È anche possibile usare l'affinità utente-dispositivo per pre-distribuire il software in un dispositivo dell'utente quando l'utente non è connesso. Quando l'utente esegue l'accesso, l'app è già installata e pronta per essere eseguita.  
 
- È necessario gestire le informazioni sull'affinità utente dispositivo per i computer. Configuration Manager gestisce automaticamente le affinità utente-dispositivo per i dispositivi mobili che registra.  
+È necessario gestire solo le informazioni sull'affinità utente-dispositivo per i computer. Configuration Manager gestisce automaticamente le affinità utente-dispositivo per i dispositivi mobili che registra.  
 
 ## <a name="manually-set-up-user-device-affinity"></a>Configurare manualmente l'affinità utente-dispositivo  
 
-1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Dispositivi**.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità** e selezionare il nodo **Dispositivi**.  
 
-3.  Selezionare un dispositivo dall'elenco. Nella scheda **Home** nel gruppo **Dispositivo** selezionare **Modifica utenti primari**.  
+1. Selezionare un dispositivo. Nella scheda **Home** nella barra multifunzione nel gruppo **Dispositivo** scegliere **Modifica utenti primari**.  
 
-4.  Nella finestra di dialogo **Modifica utenti primari** individuare e selezionare gli utenti da aggiungere come utenti primari per il dispositivo selezionato. Scegliere **Aggiungi**.  
+1. Nella finestra di dialogo **Modifica utenti primari** individuare e selezionare gli utenti da aggiungere come utenti primari per il dispositivo selezionato. Scegliere **Aggiungi**.  
 
     > [!NOTE]  
     > Nell'elenco **Utenti primari** vengono visualizzati gli utenti già configurati come utenti primari del dispositivo e il metodo con cui è stata assegnata ogni relazione utente-dispositivo.  
 
 ## <a name="set-up-primary-devices-for-a-user"></a>Configurare i dispositivi primari per un utente  
 
-1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Utenti**.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità** e selezionare il nodo **Utenti**.  
 
-3.  Selezionare un utente dall'elenco. Nella scheda **Dispositivo** scegliere **Modifica dispositivi primari**.  
+1. Selezionare un utente. Nella scheda **dispositivo** della barra multifunzione scegliere **modifica dispositivi primari**.  
 
-4.  Nella finestra di dialogo **Modifica dispositivi primari** individuare e selezionare i dispositivi da aggiungere come dispositivi primari per l'utente selezionato. Scegliere **Aggiungi**.  
+1. Nella finestra di dialogo **Modifica dispositivi primari** individuare e selezionare i dispositivi da aggiungere come dispositivi primari per l'utente selezionato. Scegliere **Aggiungi**.  
 
     > [!NOTE]  
     > Nell'elenco **Dispositivi primari** vengono visualizzati i dispositivi già configurati come dispositivi primari per l'utente e il metodo con cui è stata assegnata ogni relazione utente-dispositivo.  
 
-## <a name="automatically-create-user-device-affinities-windows-pcs-only"></a>Creare automaticamente le affinità utente dispositivo (solo PC Windows)  
- Configuration Manager legge i dati sugli accessi utente dal registro eventi di Windows. Per creare automaticamente le affinità utente-dispositivo, è necessario attivare le due opzioni seguenti dai criteri di sicurezza locali nei computer client per archiviare gli eventi di accesso nel registro eventi di Windows:  
+## <a name="automatically-create-user-device-affinities-windows-pcs-only"></a>Creare automaticamente le affinità utente dispositivo (solo PC Windows)
+
+Configuration Manager legge i dati sugli eventi di accesso utente dal registro eventi di Windows. Per creare automaticamente le affinità utente-dispositivo, attivare le due opzioni seguenti nei criteri di sicurezza locali nei computer client per archiviare gli eventi di accesso nel registro eventi di Windows:  
 
 - **Controlla eventi di accesso account**  
 - **Controlla eventi di accesso**  
 
-  Per configurare queste impostazioni, usare i criteri di gruppo di Windows.  
+Per configurare queste impostazioni, usare i criteri di gruppo di Windows.  
 
 > [!IMPORTANT]  
-> Se un errore causa la generazione di un numero elevato di voci da parte del registro eventi di Windows, è possibile che venga creato un nuovo registro eventi. In questo caso, gli eventi di accesso esistenti potrebbero non essere più disponibili per Configuration Manager.  
->   
-> Prestare attenzione quando si abilitano le impostazioni **Controlla eventi accesso account** e **Controlla eventi di accesso** in Windows XP. Per impostazione predefinita i criteri di conservazione sono di 7 giorni ed è molto probabile che questi eventi vadano a riempire il registro eventi di protezione. Gli utenti standard non saranno in grado di connettersi se il registro eventi è pieno. Per evitare il problema, impostare il valore dei criteri **Retention Method** (Metodo di conservazione) per il registro di protezione su **Sovrascrivi eventi se necessario**. Per consentire dati sufficienti per l'affinità utente-dispositivo, è anche possibile impostare la massima dimensione del registro di protezione su un valore ragionevole, ad esempio da 5 a 20 MB.  
+> Se un errore causa la generazione di un numero elevato di voci da parte del registro eventi di Windows, è possibile che venga creato un nuovo registro eventi. Se si verifica questo comportamento, gli eventi di accesso esistenti potrebbero non essere disponibili per Configuration Manager.  
 
 ### <a name="set-up-the-site-to-automatically-create-user-device-affinities"></a>Configurare il sito per creare automaticamente le affinità utente-dispositivo  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Impostazioni client**.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione** e selezionare il nodo **Impostazioni client**.  
 
-2.  Per modificare le impostazioni client predefinite, selezionare **Impostazioni client predefinite** e quindi nella scheda **Home** nel gruppo **Proprietà** fare clic su **Proprietà**. Per creare impostazioni agente client personalizzate, selezionare il nodo **Impostazioni client** e quindi nella scheda **Home** nel gruppo **Crea** fare clic su **Crea impostazioni dispositivo client personalizzate**.  
+1. Per modificare le impostazioni client predefinite, selezionare **Impostazioni client predefinite**. Nella scheda **Home** della barra multifunzione scegliere **Proprietà** nel gruppo **Proprietà**.
+
+    Per creare le impostazioni dell'agente client personalizzate, nella scheda **Home** della barra multifunzione, nel gruppo **Crea** , scegliere **Crea impostazioni dispositivo client personalizzate**.
 
     > [!NOTE]  
-    > Se si modificano le impostazioni client predefinite, verranno distribuite a tutti i computer nella gerarchia. Per altre informazioni sulla configurazione delle impostazioni client, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  
+    > Se si modificano le impostazioni client predefinite, le impostazioni verranno distribuite a tutti i computer nella gerarchia. Per altre informazioni, vedere [Come configurare le impostazioni client](/sccm/core/clients/deploy/configure-client-settings).  
 
-3.  Per **Affinità dispositivi e utenti**, impostare quanto segue:  
+1. Nel gruppo **affinità utente e dispositivo** impostare le impostazioni seguenti:  
 
-    -   **Soglia di utilizzo di affinità utente dispositivo (minuti)**. Impostare il numero di minuti di utilizzo del dispositivo prima che venga creata un'affinità utente-dispositivo.  
+    - Soglia di utilizzo di **affinità utente dispositivo (minuti)** : impostare il numero di minuti di utilizzo del dispositivo prima che il sito crei un'affinità utente dispositivo.  
 
-    -   **Soglia di utilizzo di affinità utente dispositivo (giorni)**. Impostare il numero di giorni in cui viene misurata la soglia di affinità in base all'utilizzo.  
+    - **Soglia di utilizzo di affinità utente dispositivo (giorni)** : impostare il numero di giorni per cui il sito misura la soglia di affinità basata sull'utilizzo.  
 
-    -   **Configurare automaticamente l'affinità utente dispositivo dai dati di utilizzo**. Per consentire al sito di creare automaticamente affinità utente-dispositivo, nell'elenco a discesa selezionare **True**. Se si seleziona **False**, sarà necessario approvare tutte le assegnazioni affinità utente-dispositivo.  
+    - **Configurare automaticamente l'affinità utente dispositivo dai dati di utilizzo**: selezionare **true** per consentire al sito di creare automaticamente le affinità utente dispositivo. Se si seleziona **False**, è necessario approvare manualmente tutte le assegnazioni di affinità utente-dispositivo.  
 
     > [!TIP]  
-    > **Esempio:** se l'opzione **Soglia di utilizzo di affinità utente dispositivo (minuti)** viene impostata su **60** minuti e **Soglia di utilizzo di affinità utente dispositivo (giorni)** viene impostata su **5** giorni, l'utente dovrà usare il dispositivo per almeno 60 minuti in un periodo di 5 giorni per creare automaticamente un'affinità utente-dispositivo.  
+    > Ad esempio, se l'opzione **Soglia di utilizzo di affinità utente dispositivo (minuti)** viene impostata su **60** minuti e l'opzione **Soglia di utilizzo di affinità utente dispositivo (giorni)** viene impostata su **5** giorni, l'utente deve usare il dispositivo per almeno 60 minuti in un periodo di 5 giorni per creare automaticamente un'affinità utente-dispositivo.  
 
-Dopo aver creato automaticamente un'affinità utente-dispositivo, Configuration Manager continua a monitorare le soglie di affinità utente-dispositivo. Se l'attività dell'utente per il dispositivo è inferiore alle soglie configurate, l'affinità utente-dispositivo verrà rimossa. Impostare **Soglia di utilizzo di affinità utente dispositivo (giorni)** su un valore di almeno **7** giorni per evitare che un'affinità utente-dispositivo configurata automaticamente possa andare perduta mentre l'utente non è connesso, ad esempio durante il weekend.  
+Dopo aver creato un'affinità utente-dispositivo automatica, Configuration Manager continua a monitorare le soglie di affinità utente-dispositivo. Se l'attività dell'utente per il dispositivo è inferiore alle soglie impostate, il sito rimuove l'affinità utente-dispositivo. Impostare **soglia di utilizzo di affinità utente dispositivo (giorni)** su un valore di almeno sette giorni. Questa configurazione consente di evitare situazioni in cui un'affinità utente dispositivo configurata automaticamente potrebbe andare persa mentre l'utente non è connesso, ad esempio, durante il fine settimana.  
 
-## <a name="import-user-device-affinities-from-a-file"></a>Importare le affinità utente dispositivo da un file  
- Per creare più relazioni in una volta è possibile importare un file contenente dettagli per più affinità utente-dispositivo. Per questa procedura, i dispositivi devono essere stati individuati e devono esistere come risorse nel database di Configuration Manager, in caso contrario la procedura non verrà completata.  
 
-1.  Nella console di Configuration Manager selezionare **Asset e conformità** > **Utenti** o **Dispositivi**.  
+## <a name="import-user-device-affinities-from-a-file"></a>Importare le affinità utente dispositivo da un file
 
-2.  Nella scheda **Home** nel gruppo **Crea** fare clic su **Importa affinità utente dispositivo**.  
+Per creare più relazioni contemporaneamente, importare un file contenente dettagli per più affinità utente-dispositivo. Verificare che i dispositivi di destinazione siano già individuati dal sito e esistano come risorse nel database di Configuration Manager.  
 
-3.  Nell'Importazione guidata affinità utente dispositivo nella pagina **Scegliere il mapping** specificare le informazioni seguenti:  
+1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità** e selezionare il nodo **Utenti** o **Dispositivi**.  
 
-    -   **Nome file**. Specificare un file con valori delimitati da virgole, con estensione CSV, che contenga un elenco di utenti e dispositivi tra cui si vuole creare un'affinità. In questo file ogni coppia utente-dispositivo deve trovarsi su una riga separata, con valori delimitati da una virgola. Usare il formato <*Dominio*>&#92;<*nome utente*>,<*nome NetBIOS dispositivo*>.  
+1. Nella scheda **Home** della barra multifunzione nel gruppo **Crea** scegliere **Importa affinità utente dispositivo**.  
 
-    -   **Questo file contiene intestazioni di colonna a scopo di riferimento**. Se il file CSV include un'intestazione di riga superiore, selezionare questa opzione per far sì che la riga di intestazione venga ignorata durante l'importazione.  
+1. Nell'Importazione guidata affinità utente dispositivo nella pagina **Scegliere il mapping** specificare le informazioni seguenti:  
 
-4.  Se il file che si sta importando contiene più di due elementi per riga, è possibile usare **Colonna** e **Assegna** per specificare quali colonne rappresentano gli utenti e i dispositivi e quali vanno ignorate durante l'importazione.  
+    - **Nome file**. Specificare un file con valori delimitati da virgole, con estensione CSV, che contenga un elenco di utenti e dispositivi tra cui si vuole creare un'affinità. In questo file ogni coppia utente-dispositivo deve trovarsi su una riga separata, con valori delimitati da una virgola. Usare questo formato:`<domain>\<username>,<device NetBIOS name>`  
 
-5.  Scegliere **Avanti** e completare l'Importazione guidata affinità utente dispositivo.  
+    - **Questo file contiene intestazioni di colonna a scopo di riferimento**. Se il file con estensione CSV ha un'intestazione di riga superiore, selezionare questa opzione. Il sito ignora la riga di intestazione durante l'importazione.  
 
-## <a name="let-users-create-their-own-device-affinities"></a>Consentire agli utenti di creare le proprie affinità dispositivo  
- Con la procedura successiva, è possibile configurare un utente perché possa creare un'affinità dispositivo-utente nell'app Software Center.  
+1. Se il file che si sta importando contiene più di due elementi per riga, usare **Colonna** e **Assegna** per specificare le colonne che rappresentano gli utenti e i dispositivi e le colonne da ignorare durante l'importazione.  
+
+1. Completare la procedura guidata.  
+
+
+## <a name="let-users-create-their-own-device-affinities"></a>Consentire agli utenti di creare le proprie affinità dispositivo
+
+Configurare un utente per creare la propria affinità utente-dispositivo in Software Center.
 
 ### <a name="set-up-the-site-to-allow-user-created-user-device-affinity-requests"></a>Configurare il sito per consentire le richieste di affinità utente-dispositivo create dagli utenti  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Impostazioni client**.  
+1  Nella console di Configuration Manager passare all'area di lavoro **Amministrazione** e selezionare il nodo **Impostazioni client**.  
 
-2.  Per modificare le impostazioni client predefinite, selezionare **Impostazioni client predefinite** e quindi nella scheda **Home** nel gruppo **Proprietà** fare clic su **Proprietà**. Per creare impostazioni agente client personalizzate, selezionare il nodo **Impostazioni client** e quindi nella scheda **Home** nel gruppo **Crea** fare clic su **Crea impostazioni utente client personalizzate**.  
+1. Per modificare le impostazioni client predefinite, selezionare **Impostazioni client predefinite**. Nella scheda **Home** della barra multifunzione scegliere **Proprietà** nel gruppo **Proprietà**.
+
+    Per creare le impostazioni dell'agente client personalizzate, nella scheda **Home** della barra multifunzione, nel gruppo **Crea** , scegliere **Crea impostazioni utente client personalizzate**.
 
     > [!NOTE]  
-    > Se si modificano le impostazioni client predefinite, verranno distribuite a tutti i computer nella gerarchia. Per altre informazioni sulla configurazione delle impostazioni client, vedere [Configurare le impostazioni client](../../core/clients/deploy/configure-client-settings.md).  
+    > Se si modificano le impostazioni client predefinite, le impostazioni verranno distribuite a tutti i computer nella gerarchia. Per altre informazioni, vedere [Configurare le impostazioni client](/sccm/core/clients/deploy/configure-client-settings).  
 
-3.  Selezionare l'impostazione client **Affinità dispositivi e utenti** e quindi nell'elenco a discesa **Consentire all'utente di definire i dispositivi primari** selezionare **True**.  
+1. Nel gruppo **affinità utente e dispositivo** abilitare l'impostazione per consentire all' **utente di definire i dispositivi primari**.  
 
-### <a name="set-up-a-user-device-affinity"></a>Configurare un'affinità utente-dispositivo  
+### <a name="set-up-a-user-device-affinity-in-software-center"></a>Impostare un'affinità utente-dispositivo in Software Center
 
-1.  Nel Catalogo applicazioni fare clic su **My Systems** (Sistemi personali).  
+A partire dalla versione 1902, usare software Center per impostare l'affinità.
 
-2.  Attivare l'opzione **Uso regolarmente il computer per lavorare**.  
+1. In Software Center passare alla scheda **Opzioni** .
 
-## <a name="manage-user-device-affinity-requests-from-users"></a>Gestire le richieste di affinità utente dispositivo dagli utenti  
- Quando l'impostazione client **Configurare automaticamente l'affinità utente dispositivo dai dati di utilizzo** è impostata su **False**, è necessario approvare tutte le assegnazioni affinità utente dispositivo.  
+1. Nella sezione **informazioni sul lavoro** selezionare l'opzione **uso regolarmente il computer per lavorare**.
+
+### <a name="set-up-a-user-device-affinity-in-the-application-catalog"></a>Configurare un'affinità utente dispositivo nel Catalogo applicazioni
+
+> [!Important]
+> L'esperienza utente Silverlight del catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per l'utente. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+>
+> Per altre informazioni, vedere gli articoli seguenti:
+>
+> - [Configurare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex)
+> - [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures)  
+
+1. Nel Catalogo applicazioni scegliere **My Systems** (Sistemi personali).  
+
+1. Attivare l'opzione **Uso regolarmente il computer per lavorare**.  
+
+
+## <a name="manage-user-device-affinity-requests-from-users"></a>Gestire le richieste di affinità utente dispositivo dagli utenti
+
+Quando si disabilita l'impostazione client per **configurare automaticamente l'affinità utente dispositivo dai dati di utilizzo**, è necessario approvare manualmente tutte le assegnazioni affinità utente dispositivo.  
 
 ### <a name="approve-or-reject-a-user-device-affinity-request"></a>Approvare o rifiutare una richiesta di affinità utente-dispositivo  
 
-1.  Nella console di Configuration Manager scegliere **Asset e conformità**.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità**.  
 
-2.  Nell'area di lavoro **Asset e conformità** selezionare la raccolta utenti o dispositivi per cui si desidera gestire le richieste di affinità.  
+1. Selezionare la raccolta di utenti o dispositivi per cui si desidera gestire le richieste di affinità.  
 
-3.  Nella scheda **Home** nel gruppo **Raccolta** selezionare **Gestisci richieste affinità**.  
+1. Nella scheda **Home** della barra multifunzione nel gruppo **Raccolta** scegliere **Gestisci richieste affinità**.  
 
-4.  Nella finestra di dialogo **Gestire le richieste di affinità utente dispositivo** selezionare una richiesta di affinità e quindi fare clic su **Approva** o **Rifiuta**.  
+1. Nella finestra di dialogo **Gestire le richieste di affinità utente dispositivo** selezionare una richiesta di affinità e quindi fare clic su **Approva** o **Rifiuta**.  
+
+
+## <a name="next-steps"></a>Passaggi successivi
+
+È anche possibile usare Microsoft Intune per trovare l'uso principale di un dispositivo registrato. Per altre informazioni, vedere [trovare l'utente primario di un dispositivo Intune](https://docs.microsoft.com/intune/find-primary-user) nella documentazione di Intune.

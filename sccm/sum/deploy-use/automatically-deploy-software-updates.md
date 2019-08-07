@@ -5,18 +5,18 @@ description: Per distribuire automaticamente gli aggiornamenti software, si usan
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 10/02/2018
+ms.date: 07/26/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a7cd2e499ac55f9a1210d4f3309b6e0b6cefe16
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 6a45b1d1853ef4b0faa6205919b8b06d58a81b12
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67678190"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68537152"
 ---
 #  <a name="automatically-deploy-software-updates"></a>Distribuire automaticamente gli aggiornamenti software  
 
@@ -88,6 +88,13 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
      - A partire dalla versione 1806, è disponibile un filtro proprietà per **Architettura**. Usare questo filtro per escludere architetture quali Itanium e ARM64, che sono meno comuni. Tenere presente che esistono applicazioni e componenti a 32 bit (x86) che vengono eseguiti in sistemi a 64 bit (x64). A meno che non si sia certi che x86 non è necessario, abilitare questa funzionalità anche quando si sceglie x64.<!--1322266-->  
 
+    > [!NOTE]  
+    > **Windows 10 versione 1903 e successive** è stato aggiunto a Microsoft Update come prodotto a sé stante, anziché all'interno del prodotto **Windows 10** come le versioni precedenti. A causa di questa modifica è necessario eseguire una serie di passaggi manuali per assicurarsi che i client visualizzino questi aggiornamenti. È stato aiutato a ridurre il numero di passaggi manuali da eseguire per il nuovo prodotto nella versione Configuration Manager 1906. <!--4682946-->
+    >
+    > Quando si esegue l'aggiornamento a Configuration Manager versione 1906 e il prodotto **Windows 10** è selezionato per la sincronizzazione, vengono eseguite automaticamente le azioni seguenti:
+    > - Le regole di distribuzione automatica che contengono il prodotto **Windows 10** vengono aggiornate in modo da includere **Windows 10 versione 1903 e successive**.
+    > - Il prodotto **Windows 10 versione 1903 e successive** viene aggiunto per la sincronizzazione. Per altre informazioni, vedere [Configurare le classificazioni e i prodotti](/sccm/sum/get-started/configure-classifications-and-products)
+    > - I [piani di manutenzione](/sccm/osd/deploy-use/manage-windows-as-a-service#servicing-plan-workflow) vengono aggiornati in modo che includano il prodotto **Windows 10 versione 1903 e successive**.
 
 6.  Nella pagina **Pianificazione valutazione** specificare se abilitare l'esecuzione della regola di distribuzione automatica in una pianificazione. Quando attivata, fare clic su **Personalizza** per impostare la pianificazione ricorrente.  
 

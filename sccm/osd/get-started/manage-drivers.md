@@ -2,7 +2,7 @@
 title: Gestire i driver
 titleSuffix: Configuration Manager
 description: Usare il catalogo dei driver di Configuration Manager per importare i driver dei dispositivi, raggruppare i driver in pacchetti e distribuire i pacchetti ai punti di distribuzione.
-ms.date: 03/02/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be3cc24721674e9da276e7a65af03a5b4a266eed
-ms.sourcegitcommit: 33a006204f7f5f9b9acd1f3e84c4bc207362d00a
-ms.translationtype: HT
+ms.openlocfilehash: 685b3f08a855cb8d5a0c4bd3363daf1f8e0a26b0
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/04/2019
-ms.locfileid: "57305695"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68537037"
 ---
 # <a name="manage-drivers-in-configuration-manager"></a>Gestire i driver in Configuration Manager
 
@@ -98,9 +98,13 @@ Aggiorna il pacchetto driver del dispositivo in tutti i punti di distribuzione i
 #### <a name="properties"></a>Proprietà
 Apre la finestra di dialogo **Proprietà**. Esaminare e modificare il contenuto e le proprietà del driver. Ad esempio, modificare il nome e la descrizione del driver, abilitarlo o disabilitarlo e specificare le piattaforme su cui può essere eseguito. 
 
-<!--3607716, fka 1358270--> A partire dalla versione 1810, i pacchetti driver hanno campi di metadati per **Produttore** e **Modello**. Usare questi campi per contrassegnare i pacchetti driver con informazioni utili per la manutenzione generale o per identificare driver precedenti e duplicati che è possibile eliminare. Nella scheda **Generale** selezionare un valore esistente dagli elenchi a discesa o immettere una stringa per creare una nuova voce. 
+<!--3607716, fka 1358270-->
+A partire dalla versione 1810, i pacchetti driver hanno campi di metadati per **Produttore** e **Modello**. Usare questi campi per contrassegnare i pacchetti driver con informazioni utili per la manutenzione generale o per identificare driver precedenti e duplicati che è possibile eliminare. Nella scheda **Generale** selezionare un valore esistente dagli elenchi a discesa o immettere una stringa per creare una nuova voce.
 
-Nel nodo **Pacchetti driver** questi campi sono visualizzati nell'elenco come le colonne **Produttore del driver** e **Modello del driver**. Possono anche essere usati come criteri di ricerca. 
+Nel nodo **Pacchetti driver** questi campi sono visualizzati nell'elenco come le colonne **Produttore del driver** e **Modello del driver**. Possono anche essere usati come criteri di ricerca.
+
+A partire dalla versione 1906, usare questi attributi per la pre-cache del contenuto di un client. Per altre informazioni, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/configure-precache-content).<!--4224642-->  
+
 
 
 
@@ -137,14 +141,14 @@ Dopo aver importato i driver di dispositivo nel catalogo, aggiungerli ai pacchet
 
 3. Nella pagina **Trova driver** specificare le opzioni seguenti:  
 
-    - **Importa tutti i driver presenti nel percorso di rete seguente (UNC)**: Per importare tutti i driver di dispositivo in una cartella specifica, specificare il relativo percorso di rete. Ad esempio: `\\servername\share\folder`.  
+    - **Importa tutti i driver nel percorso di rete seguente (UNC)** : per importare tutti i driver di dispositivo in una cartella specifica, specificare il percorso di rete. Ad esempio: `\\servername\share\folder`.  
 
         > [!NOTE]  
         > Se sono presenti numerose sottocartelle e numerosi file INF di driver, questo processo può richiedere tempo.  
 
-    - **Importa un driver specifico**: Per importare un driver specifico da una cartella, specificare il percorso di rete del file INF del driver di dispositivo Windows.  
+    - **Importa un driver specifico**: per importare un driver specifico da una cartella, specificare il percorso di rete del file INF del driver di dispositivo Windows.  
 
-    - **Specifica l'opzione per i driver duplicati**: Selezionare la modalità di gestione delle categorie di driver da parte di Configuration Manager quando si importa un driver di dispositivo duplicato.  
+    - **Specifica l'opzione per i driver duplicati**: selezionare la modalità di gestione delle categorie driver da parte di Configuration Manager durante l'importazione di un driver di dispositivo duplicato  
         - **Importa il driver e aggiungi una nuova categoria alle categorie esistenti**  
         - **Importa il driver e mantieni le categorie esistenti**  
         - **Importa il driver e sovrascrivi le categorie esistenti**  
@@ -155,13 +159,13 @@ Dopo aver importato i driver di dispositivo nel catalogo, aggiungerli ai pacchet
 
 4. Nella pagina **Dettagli driver** specificare le opzioni seguenti:  
 
-    - **Nascondi driver non inclusi in una classe di archiviazione o di rete (per immagini d'avvio)**: Usare questa impostazione per visualizzare solo i driver di archiviazione e rete. Questa opzione consente di nascondere altri driver in genere non necessari per le immagini d'avvio, ad esempio i driver video o quelli per modem.  
+    - **Nascondi driver non inclusi in una classe di archiviazione o di rete (per immagini d'avvio)** : usare questa impostazione per visualizzare solo i driver di archiviazione e di rete. Questa opzione consente di nascondere altri driver in genere non necessari per le immagini d'avvio, ad esempio i driver video o quelli per modem.  
 
-    - **Nascondi driver senza firma digitale**: Microsoft consiglia di usare solo i driver firmati digitalmente  
+    - **Nascondi driver senza firma digitale**: Microsoft consiglia di usare solo driver con firma digitale  
 
     - Nell'elenco dei driver, selezionare i driver che si desidera importare nel catalogo dei driver.  
 
-    - **Abilita questi driver e consenti ai computer di installarli**: Selezionare questa impostazione per consentire ai computer di installare i driver di dispositivo. Questa opzione è attivata per impostazione predefinita.  
+    - **Abilita questi driver e consenti ai computer di installarli**: selezionare questa impostazione per consentire ai computer di installare i driver di dispositivo. Questa opzione è attivata per impostazione predefinita.  
 
         > [!IMPORTANT]  
         > Se un driver di dispositivo causa un problema o si vuole sospendere l'installazione di un driver di dispositivo, disabilitarlo durante l'importazione. È anche possibile disabilitare i driver dopo averli importati.  
@@ -281,9 +285,9 @@ Apre la finestra di dialogo **Proprietà**. Verificare e modificare le propriet�
 
 Usare le sequenze di attività per automatizzare la modalità di distribuzione del sistema operativo. Ogni passaggio della sequenza di attività può eseguire un'azione specifica, ad esempio l'installazione di un driver. È possibile usare i due passaggi di sequenza di attività seguenti per installare i driver di dispositivo quando si distribuisce un sistema operativo:  
 
-- [Applica automaticamente i driver](/sccm/osd/understand/task-sequence-steps#BKMK_AutoApplyDrivers): Questo passaggio consente di associare e installare automaticamente i driver di dispositivo all'interno della distribuzione di un sistema operativo. È possibile configurare il passaggio della sequenza di attività per installare solo il driver con la corrispondenza migliore per ogni dispositivo hardware rilevato. In alternativa, specificare che il passaggio include l'installazione di tutti i driver compatibili per ogni dispositivo hardware rilevato e quindi consentire al programma di installazione di Windows di scegliere il driver migliore. È anche possibile specificare una categoria di driver per limitare i driver disponibili per questo passaggio.  
+- [Auto Apply Drivers](/sccm/osd/understand/task-sequence-steps#BKMK_AutoApplyDrivers): questo passaggio consente di associare e installare automaticamente i driver di dispositivo all'interno di una distribuzione del sistema operativo. È possibile configurare il passaggio della sequenza di attività per installare solo il driver con la corrispondenza migliore per ogni dispositivo hardware rilevato. In alternativa, specificare che il passaggio include l'installazione di tutti i driver compatibili per ogni dispositivo hardware rilevato e quindi consentire al programma di installazione di Windows di scegliere il driver migliore. È anche possibile specificare una categoria di driver per limitare i driver disponibili per questo passaggio.  
 
-- [Applica pacchetto di driver](/sccm/osd/understand/task-sequence-steps#BKMK_ApplyDriverPackage): Questo passaggio consente di rendere disponibili tutti i driver di dispositivo in un pacchetto driver specifico per l'installazione di Windows. Nei pacchetti driver specificati l'installazione di Windows cerca i driver di dispositivo necessari. Quando si creano supporti autonomi, è necessario usare questo passaggio per installare i driver di dispositivo.  
+- [Apply Driver Package](/sccm/osd/understand/task-sequence-steps#BKMK_ApplyDriverPackage): questo passaggio consente di rendere disponibili tutti i driver di dispositivo in un pacchetto driver specifico per l'installazione di Windows. Nei pacchetti driver specificati l'installazione di Windows cerca i driver di dispositivo necessari. Quando si creano supporti autonomi, è necessario usare questo passaggio per installare i driver di dispositivo.  
 
 Quando si usano questi passaggi della sequenza di attività, è anche possibile specificare la modalità di installazione dei driver nel computer in cui viene distribuito il sistema operativo. Per altre informazioni, vedere [Gestire le sequenze di attività per automatizzare le attività](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks).  
 

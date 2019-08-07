@@ -5,18 +5,18 @@ description: Configuration Manager sincronizza gli aggiornamenti del client di O
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 04/11/2019
+ms.date: 07/26/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbbaf7322b0103b9958b4d7b2c66c018d12d20a4
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: 276c5dd71b62a29a3f68b1eed2cdc814cfd1c804
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194613"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68537175"
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Gestire Office 365 ProPlus con Configuration Manager
 
@@ -58,7 +58,7 @@ A partire da Configuration Manager 1806, lo Strumento di personalizzazione di Of
 3. Nella pagina **Impostazioni applicazione** specificare il nome e la descrizione per l'app, immettere il percorso di download per i file e quindi fare clic su **Avanti**. Il percorso deve essere specificato nel formato &#92;&#92;*server*&#92;*condivisione*.
 4. Nella pagina **Impostazioni di Office** fare clic su **Vai allo Strumento di personalizzazione di Office**. Verrà aperto lo [Strumento di personalizzazione di Office per A portata di clic](https://config.office.com).
 5. Configurare le impostazioni desiderate per l'installazione di Office 365. Fare clic su **Invia** nell'angolo in alto a destra della pagina quando si completa la configurazione. 
-6. Nella pagina **Distribuzione** stabilire se si vuole eseguire la distribuzione subito o in un secondo momento. Se si sceglie di eseguire la distribuzione in un secondo momento, è possibile trovare l'applicazione in **Raccolta Software** < **Gestione applicazioni** < **Applicazioni**.  
+6. Nella pagina **Distribuzione** stabilire se si vuole eseguire la distribuzione subito o in un secondo momento. Se si sceglie di eseguire la distribuzione in un secondo momento, è possibile trovare l'applicazione in **Raccolta Software** > **Gestione applicazioni** > **Applicazioni**.  
 7. Verificare le impostazioni nella pagina **Riepilogo**. 
 8. Fare clic su **Avanti** e quindi fare clic su **Chiudi** una volta completata l'Installazione guidata del client Office 365. 
 
@@ -76,13 +76,26 @@ A partire da Configuration Manager 1806, lo Strumento di personalizzazione di Of
 5. Nella pagina **Prodotti client** selezionare la famiglia di prodotti Office 365 in uso. Selezionare le applicazioni da includere. Selezionare i prodotti Office aggiuntivi che devono essere inclusi e fare clic su **Avanti**.
 6. Nella pagina **Impostazioni client** scegliere le impostazioni da includere e fare clic su **Avanti**.
 7. Nella pagina **Distribuzione** scegliere se distribuire l'applicazione, quindi fare clic su pagina **Avanti**. <br/>Se si sceglie di non distribuire il pacchetto nella procedura guidata, andare al passaggio 9.
-8. Configurare il resto delle pagine della procedura guidata come si farebbe per la distribuzione di un'applicazione comune. Per i dettagli, vedere [Create and deploy an application](/sccm/apps/get-started/create-and-deploy-an-application) (Creare e distribuire un'applicazione).
+8. Configurare il resto delle pagine della procedura guidata con le stesse impostazioni di una distribuzione di applicazioni standard. Per i dettagli, vedere [Create and deploy an application](/sccm/apps/get-started/create-and-deploy-an-application) (Creare e distribuire un'applicazione).
 9. Completare la procedura guidata.
 10. È possibile distribuire o modificare l'applicazione da **Raccolta software** > **Panoramica** > **Gestione applicazioni** > **Applicazioni**.    
 
 Dopo la creazione e la distribuzione di applicazioni di Office 365 mediante il programma di installazione di Office 365, Configuration Manager non gestirà gli aggiornamenti di Office per impostazione predefinita. Per consentire ai client Office 365 di ricevere gli aggiornamenti da Configuration Manager, vedere [Distribuire gli aggiornamenti di Office 365 con Configuration Manager](#deploy-office-365-updates).
 
 Dopo la distribuzione delle applicazioni di Office 365, è possibile creare regole di distribuzione automatica per le applicazioni. Per creare una regola di distribuzione automatica per le app di Office 365, fare clic su **Crea una regola di distribuzione automatica** nel [dashboard di Gestione client di Office 365](/sccm/sum/deploy-use/office-365-dashboard). Selezionare **Client Office 365** quando si sceglie il prodotto. Per altre informazioni, vedere [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates).
+
+
+## <a name="drill-through-required-office-365-updates"></a>Eseguire il drill-through degli aggiornamenti necessari di Office 365
+<!--4224414-->
+*(Funzionalità introdotta nella versione 1906)*
+
+È possibile esaminare le statistiche di conformità per vedere quali dispositivi richiedono un aggiornamento software di Office 365 specifico. Per visualizzare l'elenco dei dispositivi, è necessaria l'autorizzazione per visualizzare gli aggiornamenti e le raccolte a cui appartengano i dispositivi. Per eseguire il drill-down nell'elenco dei dispositivi:
+
+1. Passare a **Raccolta software** > **Gestione client di Office 365** > **Aggiornamenti di Office 365**.
+1. Selezionare tutti gli aggiornamenti richiesti da almeno un dispositivo.
+1. Esaminare la scheda **Riepilogo** e individuare il grafico a torta in **Statistiche**.
+1. Selezionare il collegamento ipertestuale **View Required** (Visualizza richiesto) accanto al grafico a torta per eseguire il drill-down nell'elenco dei dispositivi.
+1. Questa azione consente di visualizzare un nodo temporaneo in **Dispositivi** dove è possibile visualizzare i dispositivi che richiedono l'aggiornamento. È anche possibile eseguire azioni per il nodo, come creare una nuova raccolta dall'elenco.
 
 
 ## <a name="deploy-office-365-updates"></a>Distribuire aggiornamenti di Office 365

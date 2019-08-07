@@ -2,7 +2,7 @@
 title: Passaggi della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni sui passaggi che è possibile aggiungere a una sequenza di attività di Configuration Manager.
-ms.date: 06/12/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5434e42bfdcdf9bd423035c1d30a3c68974d9dd
-ms.sourcegitcommit: de3c86077bbf91b793e94e1f60814df18da11bab
+ms.openlocfilehash: 6f5760e26b7a52f31aea0a272c0e76a2eee547bd
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67726254"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68537132"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
@@ -695,6 +695,11 @@ Se sono disponibili più unità crittografate, disabilitare BitLocker in qualsia
 
 Questo passaggio può essere eseguito solo nel sistema operativo completo. Non viene eseguito in Windows PE.  
 
+A partire dalla versione 1906, usare le seguenti variabili della sequenza di attività con questo passaggio:  
+
+- [OSDBitLockerRebootCount](/sccm/osd/understand/task-sequence-variables#OSDBitLockerRebootCount)  
+- [OSDBitLockerRebootCountOverride](/sccm/osd/understand/task-sequence-variables#OSDBitLockerRebootCountOverride)  
+
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Dischi** e quindi selezionare **Disattiva BitLocker**.
 
 ### <a name="properties"></a>Proprietà  
@@ -709,6 +714,12 @@ Disabilita BitLocker nell'unità del sistema operativo corrente.
 
 Disabilita BitLocker in un'unità specifica. Usare l'elenco a discesa per specificare l'unità in cui BitLocker è disabilitato.  
 
+#### <a name="resume-protection-after-windows-has-been-restarted-the-specified-number-of-times"></a>Riprendere la protezione dopo che Windows è stato riavviato il numero di volte specificato
+
+<!-- 4512937 -->
+A partire dalla versione 1906, usare questa opzione per specificare il numero di riavvii per mantenere BitLocker disabilitato. Anziché aggiungere più istanze di questo passaggio, impostare un valore compreso tra 1 (valore predefinito) e 15.
+
+È possibile impostare e modificare questo comportamento con le variabili della sequenza di attività [OSDBitLockerRebootCount](/sccm/osd/understand/task-sequence-variables#OSDBitLockerRebootCount) e [OSDBitLockerRebootCountOverride](/sccm/osd/understand/task-sequence-variables#OSDBitLockerRebootCountOverride).
 
 
 ## <a name="BKMK_DownloadPackageContent"></a> Scarica contenuto pacchetto  
@@ -719,7 +730,7 @@ Usare questo passaggio per scaricare uno dei tipi di pacchetto seguenti:
 - Pacchetti di aggiornamento del sistema operativo  
 - Pacchetti driver  
 - Pacchetti  
-- Immagini di avvio (nella versione 1810 e versioni precedenti)  
+- Immagini d'avvio (nella versione 1810 e precedenti)  
 
 Questo passaggio funziona bene in una sequenza di attività per eseguire l'aggiornamento di un sistema operativo negli scenari seguenti:  
 
@@ -733,7 +744,7 @@ Questo passaggio funziona bene in una sequenza di attività per eseguire l'aggio
 Questo passaggio viene eseguito nel sistema operativo completo o in Windows PE. L'opzione relativa al salvataggio del pacchetto nella cache del client di Configuration Manager non è supportata in Windows PE.
 
 > [!NOTE]  
-> Il **scarica contenuto pacchetto** attività non è supportato per l'uso con i supporti autonomi. Per altre informazioni, vedere [non è supportato per i supporti autonomi azioni](/sccm/osd/deploy-use/create-stand-alone-media#unsupported-actions-for-stand-alone-media).  
+> L'attività **Scarica contenuto pacchetto** non è supportata per l'uso con supporti autonomi. Per ulteriori informazioni, vedere [azioni non supportate per i supporti](/sccm/osd/deploy-use/create-stand-alone-media#unsupported-actions-for-stand-alone-media)autonomi.  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Software** e quindi selezionare **Scarica contenuto pacchetto**.
 
@@ -909,9 +920,9 @@ Quando si esegue questo passaggio, l'applicazione verifica l'applicabilità dell
 
 > [!NOTE]  
 > Per installare un'applicazione che sostituisce un'altra applicazione è necessario che i file di contenuto per l'applicazione sostituita siano disponibili. In caso contrario questo passaggio della sequenza di attività ha esito negativo. Ad esempio, Microsoft Visio 2010 viene installato in un client o in un'immagine acquisita. Quando il passaggio **Installa applicazione** installa Microsoft Visio 2013, i file di contenuto per Microsoft Visio 2010 (l'applicazione sostituita) devono essere disponibili in un punto di distribuzione. Se Microsoft Visio non è installato in un client o in un'immagine acquisita, la sequenza di attività installa Microsoft Visio 2013 senza verificare i file di contenuto di Microsoft Visio 2010.  
-
-> [!NOTE]  
-> Se il client non riesce a recuperare l'elenco dei punti di gestione dai servizi di posizione, usare le variabili della sequenza di attività **SMSTSMPListRequestTimeoutEnabled** e **SMSTSMPListRequestTimeout**. Queste variabili specificano quanti millisecondi deve attendere una sequenza di attività prima di provare nuovamente a installare un'applicazione. Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables).
+>
+> Se si ritira un'app sostituita e si fa riferimento alla nuova app in una sequenza di attività, la sequenza di attività non viene avviata.
+Questo comportamento è da progettazione: la sequenza di attività richiede tutti i riferimenti alle app.<!-- SCCMDocs 1711 -->  
 
 Questo passaggio della sequenza di attività viene eseguito solo nel sistema operativo completo. Non viene eseguito in Windows PE.  
 
@@ -922,7 +933,17 @@ Usare le variabili della sequenza di attività seguenti con questo passaggio:
 - [SMSTSMPListRequestTimeout](/sccm/osd/understand/task-sequence-variables#SMSTSMPListRequestTimeout)  
 - [TSErrorOnWarning](/sccm/osd/understand/task-sequence-variables#TSErrorOnWarning)  
 
+> [!NOTE]  
+> Se il client non riesce a recuperare l'elenco dei punti di gestione dai servizi di posizione, usare le variabili della sequenza di attività **SMSTSMPListRequestTimeoutEnabled** e **SMSTSMPListRequestTimeout**. Queste variabili specificano quanti millisecondi deve attendere una sequenza di attività prima di provare nuovamente a installare un'applicazione. Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables).
+
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Software** e quindi selezionare **Installa applicazione**.
+
+Gestire questo passaggio con i cmdlet di PowerShell seguenti:<!-- SCCMDocs #1118 -->
+
+- [Get-CMTSStepInstallApplication](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepinstallapplication?view=sccm-ps)
+- [New-CMTSStepInstallApplication](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepinstallapplication?view=sccm-ps)
+- [Remove-CMTSStepInstallApplication](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepinstallapplication?view=sccm-ps)
+- [Set-CMTSStepInstallApplication](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepinstallapplication?view=sccm-ps)
 
 ### <a name="properties"></a>Proprietà  
 
@@ -973,6 +994,12 @@ Le condizioni seguenti influiscono sulle applicazioni installate dalla sequenza 
 #### <a name="if-an-application-fails-continue-installing-other-applications-in-the-list"></a>Se l'installazione di un'applicazione non riesce, continuare installando le altre applicazioni dell'elenco
 
 Questa impostazione specifica che il passaggio continua in caso di errore di installazione di una singola applicazione. Se si specifica questa impostazione, la sequenza di attività continua indipendentemente da eventuali errori di installazione. Se non si specifica questa impostazione e l'installazione non riesce, il passaggio termina immediatamente.  
+
+#### <a name="clear-application-content-from-cache-after-installing"></a>Cancella il contenuto dell'applicazione dalla cache dopo l'installazione
+
+<!--4485675-->
+A partire dalla versione 1906, eliminare il contenuto dell'app dalla cache del client dopo l'esecuzione del passaggio. Questo comportamento è utile per i dispositivi con unità disco di piccole dimensioni o durante l'installazione di un numero elevato di app di grandi dimensioni in successione.
+
 
 ### <a name="options"></a>Opzioni
 
@@ -1623,7 +1650,7 @@ A partire dalla versione 1902, è possibile specificare che lo script di PowerSh
 #### <a name="account"></a>Account
 
 <!-- 3556028 -->
-A partire dalla versione 1902, è possibile specificare l'account utente Windows usato in questo passaggio per eseguire lo script di PowerShell. L'account specificato deve essere un amministratore locale nel sistema e lo script viene eseguito con le autorizzazioni di questo account. Selezionare **Imposta** per specificare l'utente locale o l'account di dominio. Per altre informazioni sull'account Esegui come per la sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-run-as-account).
+A partire dalla versione 1902, è possibile specificare l'account utente Windows usato in questo passaggio per eseguire lo script di PowerShell. L'account specificato deve essere un amministratore locale del sistema e lo script viene eseguito con le autorizzazioni di questo account. Selezionare **Imposta** per specificare l'utente locale o l'account di dominio. Per altre informazioni sull'account Esegui come per la sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-run-as-account).
 
 > [!IMPORTANT]  
 > Se questo passaggio specifica un account utente e viene eseguito in Windows PE, l'azione ha esito negativo. Non è possibile aggiungere Windows PE a un dominio. Questo errore viene registrato nel file **smsts.log**.  
@@ -1647,6 +1674,11 @@ A partire dalla versione 1902, è possibile includere altri codici di uscita dal
 Questo passaggio esegue un'altra sequenza di attività. Crea una relazione padre-figlio tra le sequenze di attività. Le sequenze di attività figlio consentono di creare sequenze di attività più modulari e riutilizzabili.
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Generale** e quindi selezionare **Esegui la sequenza di attività**.
+
+A partire dalla versione 1906, gestire questo passaggio con i cmdlet di PowerShell seguenti:<!-- 2839943, SCCMDocs #1118 -->
+
+- **New-CMTSStepRunTaskSequence**
+- **Set-CMTSStepRunTaskSequence**
 
 ### <a name="specifications-and-limitations"></a>Specifiche e limitazioni
 
@@ -1774,7 +1806,7 @@ La sequenza di attività imposta la variabile su questo valore. Impostare questa
 
 Usare questo passaggio per eseguire la transizione da Windows PE al nuovo sistema operativo. Questo passaggio della sequenza di attività è una parte necessaria di qualsiasi distribuzione del sistema operativo. Installa il client di Configuration Manager nel nuovo sistema operativo e prepara la sequenza di attività per continuare l'esecuzione nel nuovo sistema operativo.  
 
-Questo passaggio è responsabile della transizione da Windows PE la sequenza di attività per il sistema operativo completo. Il passaggio viene eseguito sia in Windows PE e il sistema operativo completo a causa di questa transizione. Tuttavia, poiché in Windows PE viene avviata la transizione, può solo essere aggiunto durante la parte di Windows PE della sequenza di attività.  
+Questo passaggio è responsabile della transizione della sequenza di attività da Windows PE al sistema operativo completo. Il passaggio viene eseguito sia in Windows PE che nel sistema operativo completo a causa di questa transizione. Tuttavia, poiché la transizione viene avviata in Windows PE, può essere aggiunta solo durante la parte di Windows PE della sequenza di attività.  
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 

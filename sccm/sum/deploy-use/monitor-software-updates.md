@@ -5,18 +5,18 @@ description: La console di System Center Configuration Manager invia avvisi e st
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 07/30/2018
+ms.date: 07/09/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 9afd7b0f-5c8e-48bc-9a65-1f7d74103688
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5cd5c27aa04f25b044f74533983a214dc9f9341b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 0933346884c0bad9fcc6923629228391b707a710
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500146"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68537183"
 ---
 # <a name="monitor-software-updates-in-system-center-configuration-manager"></a>Monitorare gli aggiornamenti software in System Center Configuration Manager
 
@@ -25,7 +25,23 @@ ms.locfileid: "65500146"
 System Center Configuration Manager offre vari modi per monitorare aggiornamenti software, processi e informazioni sulla conformità. Usare le sezioni seguenti per monitorare gli aggiornamenti software.
 
 ## <a name="software-updates-dashboard"></a>Dashboard Aggiornamenti software
-A partire da Configuration Manager versione 1610, è possibile usare il nuovo dashboard Aggiornamenti software per visualizzare lo stato di conformità corrente dei dispositivi dell'organizzazione e analizzare rapidamente i dati, per vedere quali dispositivi sono a rischio. Per visualizzare il dashboard, scegliere **Monitoraggio** > **Panoramica** > **Sicurezza** > **Software Updates Dashboard** (Dashboard Aggiornamenti software).   
+
+*(Funzionalità introdotta nella versione 1610)*
+
+A partire da Configuration Manager versione 1610, è possibile usare il nuovo dashboard Aggiornamenti software per visualizzare lo stato di conformità corrente dei dispositivi dell'organizzazione e analizzare rapidamente i dati, per vedere quali dispositivi sono a rischio. Per visualizzare il dashboard, scegliere **Monitoraggio** > **Panoramica** > **Sicurezza** > **Software Updates Dashboard** (Dashboard Aggiornamenti software).
+
+## <a name="drill-through-required-updates"></a>Drill-through degli aggiornamenti obbligatori
+<!--4224414-->
+*(Funzionalità introdotta nella versione 1906)*
+
+È possibile esaminare le statistiche di conformità per vedere quali dispositivi richiedono un aggiornamento software di Office 365 specifico. Per visualizzare l'elenco dei dispositivi, è necessaria l'autorizzazione per visualizzare gli aggiornamenti e le raccolte a cui appartengano i dispositivi. Per eseguire il drill-down nell'elenco dei dispositivi:
+
+1. Passare a **Raccolta software** > **Aggiornamenti software** > **Tutti gli aggiornamenti software**.
+1. Selezionare tutti gli aggiornamenti richiesti da almeno un dispositivo.
+1. Esaminare la scheda **Riepilogo** e individuare il grafico a torta in **Statistiche**.
+1. Selezionare il collegamento ipertestuale **View Required** (Visualizza richiesto) accanto al grafico a torta per eseguire il drill-down nell'elenco dei dispositivi.
+1. Questa azione consente di visualizzare un nodo temporaneo in **Dispositivi** dove è possibile visualizzare i dispositivi che richiedono l'aggiornamento. È anche possibile eseguire azioni per il nodo, come creare una nuova raccolta dall'elenco.
+
 
 ##  <a name="BKMK_SUAlerts"></a> Avvisi per gli aggiornamenti software  
  È possibile configurare avvisi per gli aggiornamenti software per inviare notifiche agli utenti amministratori quando i livelli di conformità per le distribuzioni degli aggiornamenti software sono al di sotto della percentuale configurata. È possibile configurare avvisi per gli aggiornamenti software nei seguenti punti:  
@@ -61,7 +77,7 @@ Dopo aver configurato le impostazioni degli avvisi, Configuration Manager genera
 3.  Nella scheda **Home** fare clic su **Visualizza stato** nel gruppo **Distribuzione**.  
 
 ##  <a name="BKMK_SUReports"></a> Report degli aggiornamenti software  
- I messaggi di stato per gli aggiornamenti software offrono informazioni sulla conformità degli aggiornamenti software e sullo stato di valutazione e applicazione delle distribuzioni di aggiornamenti software. Per visualizzare tali messaggi di stato, è possibile eseguire i report degli aggiornamenti software. Sono disponibili oltre 30 report degli aggiornamenti software predefiniti. Sono organizzati in diverse categorie e forniscono informazioni specifiche sugli aggiornamenti e le distribuzioni di software. Oltre a usare i report preconfigurati, è anche possibile creare report degli aggiornamenti software personalizzati in base alle esigenze dell'azienda. Per altre informazioni, vedere [Operazioni e manutenzione per la creazione di report](../../core/servers/manage/operations-and-maintenance-for-reporting.md).  
+ I messaggi di stato per gli aggiornamenti software offrono informazioni sulla conformità degli aggiornamenti software e sullo stato di valutazione e applicazione delle distribuzioni di aggiornamenti software. Per visualizzare tali messaggi di stato, è possibile eseguire i report degli aggiornamenti software. Sono disponibili oltre 30 report degli aggiornamenti software predefiniti. Sono organizzati in diverse categorie e offrono informazioni specifiche sugli aggiornamenti e le distribuzioni di software. Oltre a usare i report preconfigurati, è anche possibile creare report degli aggiornamenti software personalizzati in base alle esigenze dell'azienda. Per altre informazioni, vedere [Operazioni e manutenzione per la creazione di report](../../core/servers/manage/operations-and-maintenance-for-reporting.md).  
 
 ### <a name="recommended-software-updates-reports"></a>Report degli aggiornamenti software consigliati
 Di seguito sono riportati alcuni dei report utili per identificare potenziali problemi. 

@@ -2,7 +2,7 @@
 title: Pianificare la gestione di applicazioni
 titleSuffix: Configuration Manager
 description: Implementare e configurare le dipendenze necessarie per la distribuzione di applicazioni in Configuration Manager.
-ms.date: 05/21/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ec099d9ffbb5ffaee1c962faf8443a900c1b324
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: aed5c94057dbc564c5275660c488ac82339927f6
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176866"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68535279"
 ---
 # <a name="plan-for-and-configure-application-management-in-configuration-manager"></a>Pianificare e configurare la gestione delle applicazioni in Configuration Manager
 
@@ -33,12 +33,18 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
 
 È necessario avere IIS nei server che eseguono i ruoli del sistema del sito seguenti:
 
-- Punto per siti Web del catalogo applicazioni  
-- Punto per servizi Web del catalogo applicazioni  
 - Punto di gestione  
 - Punto di distribuzione  
 
 Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).  
+
+> [!Note]  
+> Il Catalogo applicazioni richiede anche IIS. Tuttavia, l'esperienza utente di Silverlight non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per l'utente. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+>
+> Per altre informazioni, vedere gli articoli seguenti:
+>
+> - [Configurare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex)
+> - [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures)  
 
 
 ### <a name="certificates-on-code-signed-applications-for-mobile-devices"></a>Certificati in applicazioni firmate dal codice per dispositivi mobili
@@ -68,10 +74,16 @@ Per altre informazioni sull'affinità utente-dispositivo, vedere l'argomento [Co
 
 ### <a name="management-point"></a>Punto di gestione
 
-I client contattano un punto di gestione per scaricare i criteri client, individuare il contenuto e connettersi al catalogo applicazioni. Se i client non possono accedere a un punto di gestione, non potranno usare il catalogo applicazioni.
+I client contattano un punto di gestione per scaricare i criteri client, per individuare il contenuto.
+
+A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per l'utente.
+
+Nella versione 1902 e versioni precedenti, i client usano il punto di gestione per la connessione al Catalogo applicazioni. Se i client non possono accedere a un punto di gestione, non potranno usare il catalogo applicazioni.
 
 > [!Note]  
 > A partire dalla versione 1806, i ruoli del Catalogo applicazioni non sono più necessari per visualizzare le applicazioni disponibili per gli utenti in Software Center. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).<!--1358309-->  
+>
+> A partire dalla versione 1906, non è possibile installare nuovi ruoli del catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
   
 
 ### <a name="distribution-point"></a>Punto di distribuzione
@@ -158,23 +170,23 @@ Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Funzional
 
 - A partire dalla versione 1806, l'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato.<!--1358309--> Il ruolo Punto per servizi Web del Catalogo applicazioni non è più *necessario*, ma è ancora *supportato*.
 
-- Nella prima versione Current Branch dopo il 30 giugno 2019, i client aggiornati useranno automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non sarà inoltre possibile installare nuovi ruoli del catalogo applicazioni.
+- A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per l'utente. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni.
 
 - Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
 
-Questi miglioramenti iterativi di Software Center e il punto di gestione sono pensati per semplificare l'infrastruttura e rimuovere la necessità del catalogo applicazioni per le distribuzioni disponibili per gli utenti. Software Center consente di distribuire tutte le distribuzioni di app senza il catalogo applicazioni. Se si abilita TLS 1.2 e si usa HTTP con il catalogo applicazioni, inoltre, gli utenti non possono vedere le distribuzioni disponibili destinate agli utenti.
+Questi miglioramenti iterativi di Software Center e il punto di gestione sono pensati per semplificare l'infrastruttura e rimuovere la necessità del catalogo applicazioni per le distribuzioni disponibili per gli utenti. Software Center consente di distribuire tutte le distribuzioni di app senza il catalogo applicazioni. Se si abilita TLS 1.2 e si usa HTTP con il catalogo applicazioni, inoltre, gli utenti non possono vedere le distribuzioni disponibili destinate agli utenti. Aggiornare Configuration Manager alla versione 1906 o successiva per trarre vantaggio da questi miglioramenti.
 
-1. Aggiornare tutti i client alla versione 1806 o successiva.  
+1. Aggiornare tutti i client alla versione 1806 o successiva. È consigliabile usare la versione 1906.  
 
 1. Impostare la personalizzazione per Software Center, anziché nelle proprietà del ruolo del sito Web del catalogo applicazioni. Per altre informazioni, vedere [Impostazioni client di Software Center](/sccm/core/clients/deploy/about-client-settings#software-center).  
 
 1. Verificare le impostazioni client predefinite e personalizzate. Nel gruppo **Agente computer** assicurarsi che l'opzione **Punto per siti Web del Catalogo applicazioni predefinito** sia `(none)`.  
 
-    Il client passa all'uso del punto di gestione solo quando non esistono ruoli del catalogo applicazioni nella gerarchia. In caso contrario, i client continuano a usare una delle istanze del catalogo applicazioni nella gerarchia. Questo comportamento viene applicato a tutti i siti primari.  
+    Nella versione 1902 e nelle versioni precedenti il client passa all'uso del punto di gestione solo quando non sono presenti ruoli del catalogo applicazioni nella gerarchia. In caso contrario, i client continuano a usare una delle istanze del catalogo applicazioni nella gerarchia. Questo comportamento viene applicato a tutti i siti primari.  
 
 1. Rimuovere i ruoli del sistema del sito **sito Web del catalogo applicazioni** e **servizio Web del catalogo applicazioni** da tutti i siti primari.
 
-Dopo aver rimosso i ruoli del catalogo applicazioni, Software Center viene avviato usando il punto di gestione per le distribuzioni disponibili destinate agli utenti. Per l'applicazione di questa modifica possono essere necessari fino a 65 minuti. Per verificare questo comportamento in un client specifico, esaminare `SCClient_<username>.log` e cercare una voce simile alla riga seguente:
+Dopo aver rimosso i ruoli del catalogo applicazioni, Software Center viene avviato usando il punto di gestione per le distribuzioni disponibili destinate agli utenti. Nella versione 1902 e versioni precedenti possono essere necessari fino a 65 minuti per la modifica. Per verificare questo comportamento in un client specifico, esaminare `SCClient_<username>.log` e cercare una voce simile alla riga seguente:
 
 `Using endpoint Url: https://mp.contoso.com/CMUserService_WindowsAuth, Windows authentication`
 

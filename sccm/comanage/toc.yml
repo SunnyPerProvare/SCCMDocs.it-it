@@ -1,11 +1,13 @@
 - name: Co-gestione
+  href: overview.md
 - name: Panoramica
+  expanded: true
   items:
     - name: Informazioni sulla co-gestione
       href: overview.md
 - name: Guide introduttive
   items:
-    - name: Panoramica di Avvio rapido
+    - name: Panoramica di avvio rapido
       href: quickstarts.md
     - name: Valore immediato
       items:

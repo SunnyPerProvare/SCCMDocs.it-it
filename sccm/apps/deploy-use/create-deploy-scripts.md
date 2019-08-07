@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28d1f01cbdd6238754cafc36be8d30499b041597
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: d4d4775819efbbb33bdd46e80e857a7d1b2d47ab
+ms.sourcegitcommit: ef7800a294e5db5d751921c34f60296c1642fc1f
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676205"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68712479"
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire gli script di PowerShell dalla console di Configuration Manager
 
@@ -67,16 +67,16 @@ La funzionalità Esegui script supporta attualmente:
 
 
 >[!WARNING]
->Tenere presente che quando si usano i parametri si apre una superficie di attacco con il rischio potenziale di attacchi PowerShell injection. Per ovviare al problema, esistono vari modi e soluzioni alternative, ad esempio l'uso di espressioni regolari per convalidare l'input del parametro o l'uso di parametri predefiniti. Una procedura consigliata comune consiste nel non includere segreti negli script di PowerShell, ad esempio password e altro. [Informazioni sulla sicurezza degli script PowerShell](/sccm/apps/deploy-use/learn-script-security) <!--There are external tools available to validate your PowerShell scripts such as the [PowerShell Injection Hunter](https://www.powershellgallery.com/packages/InjectionHunter/1.0.0) tool. -->
+>Tenere presente che quando si usano i parametri si apre una superficie di attacco con il rischio potenziale di attacchi PowerShell injection. Per ovviare al problema, esistono vari modi e soluzioni alternative, ad esempio l'uso di espressioni regolari per convalidare l'input del parametro o l'uso di parametri predefiniti. Una procedura consigliata comune consiste nel non includere segreti negli script di PowerShell, ad esempio password e così via. [Informazioni sulla sicurezza degli script PowerShell](/sccm/apps/deploy-use/learn-script-security) <!--There are external tools available to validate your PowerShell scripts such as the [PowerShell Injection Hunter](https://www.powershellgallery.com/packages/InjectionHunter/1.0.0) tool. -->
 
 
 ## <a name="run-script-authors-and-approvers"></a>Autori e responsabili dell'approvazione di script
 
-La funzionalità Esegui script usa il concetto di *autore di script* e *responsabile dell'approvazione di script* come ruoli separati per l'implementazione e l'esecuzione di uno script. La separazione tra autori e responsabili dell'approvazione consente un'importante verifica dei processi per questo potente strumento. Un altro ruolo, *esecutori di script*, consente l'esecuzione di script, ma non la creazione o l'approvazione. Vedere [Creare ruoli di sicurezza per gli script](#bkmk_ScriptRoles).
+La funzionalità Esegui script usa il concetto di *autore di script* e *responsabile dell'approvazione di script* come ruoli separati per l'implementazione e l'esecuzione di uno script. La separazione dei ruoli di autore e responsabile dell'approvazione consente un'importante verifica dei processi per lo strumento Esegui script. Un altro ruolo, *esecutori di script*, consente l'esecuzione di script, ma non la creazione o l'approvazione. Vedere [Creare ruoli di sicurezza per gli script](#bkmk_ScriptRoles).
 
 ### <a name="scripts-roles-control"></a>Controllo dei ruoli per gli script
 
-Per impostazione predefinita, gli utenti non possono approvare uno script che è stato creato. Poiché gli script sono potenti e versatili e vengono potenzialmente distribuiti a molti dispositivi, è possibile separare i ruoli tra la persona che crea lo script e la persona che lo approva. Questi ruoli garantiscono un livello aggiuntivo di sicurezza, impedendo l'esecuzione di uno script senza supervisione. Per semplificare le attività di test, è possibile disattivare l'approvazione secondaria.
+Per impostazione predefinita, gli utenti non possono approvare uno script che ha creato. Poiché gli script sono potenti e versatili e vengono potenzialmente distribuiti a molti dispositivi, è possibile separare i ruoli tra la persona che crea lo script e la persona che lo approva. Questi ruoli garantiscono un livello aggiuntivo di sicurezza, impedendo l'esecuzione di uno script senza supervisione. Per semplificare le attività di test, è possibile disattivare l'approvazione secondaria.
 
 ### <a name="approve-or-deny-a-script"></a>Approvare o rifiutare uno script
 
@@ -249,19 +249,19 @@ Write-Output (Get-WmiObject -Class Win32_operatingSystem).Caption
 > [!Tip]  
 > Non modificare uno script che è in esecuzione nei client. L'esecuzione dello script originale non verrebbe completata e si potrebbero ottenere risultati diversi dal previsto da questi client.  
 
-### <a name="edit-a-script"></a>Modifica di uno script
+### <a name="edit-a-script"></a>Modificare uno script
 
-1. Andare alla **gli script** nodo sotto il **raccolta Software** dell'area di lavoro.
+1. Passare al nodo **script** nell'area di lavoro **raccolta software** .
 1. Selezionare lo script da modificare, quindi fare clic su **modifica** nella barra multifunzione. 
-1. Modificare o reimportare lo script nel **ScriptDetails** pagina.
-1. Fare clic su **successivo** per visualizzare i **riepilogo** quindi **Chiudi** al termine della modifica.
+1. Modificare o reimportare lo script nella pagina dei **dettagli dello script** .
+1. Fare clic su **Avanti** per visualizzare il **Riepilogo** e **chiuderlo** al termine della modifica.
 
 ### <a name="copy-a-script"></a>Copiare uno script
 
-1. Andare alla **gli script** nodo sotto il **raccolta Software** dell'area di lavoro.
-1. Selezionare lo script da copiare, quindi fare clic su **copia** nella barra multifunzione.
-1. Rinomina lo script nel **nome dello Script** campo e apportare le modifiche aggiuntive, potrebbe essere necessario.
-1. Fare clic su **successivo** per visualizzare i **riepilogo** quindi **Chiudi** al termine della modifica.
+1. Passare al nodo **script** nell'area di lavoro **raccolta software** .
+1. Selezionare lo script da copiare e quindi fare clic su **copia** nella barra multifunzione.
+1. Rinominare lo script nel campo **nome script** e apportare eventuali modifiche aggiuntive eventualmente necessarie.
+1. Fare clic su **Avanti** per visualizzare il **Riepilogo** e **chiuderlo** al termine della modifica.
 
 
 ## <a name="run-a-script"></a>Esegui uno script

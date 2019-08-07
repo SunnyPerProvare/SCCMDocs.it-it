@@ -1,5 +1,7 @@
 - name: Conformità del dispositivo
+  href: understand/ensure-device-compliance.md
 - name: Comprendere ed esplorare
+  expanded: true
   items:
     - name: Garantire la conformità dei dispositivi
       href: understand/ensure-device-compliance.md

@@ -2,7 +2,7 @@
 title: Approvare le applicazioni
 titleSuffix: Configuration Manager
 description: Informazioni sulle impostazioni e i comportamenti per l'approvazione delle applicazioni in Configuration Manager.
-ms.date: 05/29/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d1352669db30ad2fad1d7287998227ce1556274d
-ms.sourcegitcommit: 3f43fa8462bf39b2c18b90a11a384d199c2822d8
-ms.translationtype: MTE75
+ms.openlocfilehash: a875c5deb30a94d91f7307f1044fc0eeea1f944a
+ms.sourcegitcommit: ef7800a294e5db5d751921c34f60296c1642fc1f
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66403389"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68712386"
 ---
 # <a name="approve-applications-in-configuration-manager"></a>Approvare le applicazioni in Configuration Manager
 
@@ -24,47 +24,72 @@ ms.locfileid: "66403389"
 
 Quando si [distribuiscono applicazioni](/sccm/apps/deploy-use/deploy-applications) in Configuration Manager, è possibile richiedere l'approvazione prima dell'installazione. Gli utenti richiedono l'applicazione in Software Center e quindi la richiesta viene esaminata nella console di Configuration Manager. La richiesta può essere approvata o rifiutata.
 
-
 ## <a name="bkmk_approval"></a> Impostazioni di approvazione
 
-Il comportamento di approvazione delle applicazioni varia a seconda della versione di Configuration Manager. Nella pagina **Impostazioni di distribuzione** dell'applicazione di distribuzione viene visualizzata una delle seguenti impostazioni di approvazione:  
+Il comportamento di approvazione dell'applicazione dipende dal fatto che sia abilitata l'esperienza consigliata facoltativa per l' [app](#bkmk_opt). Nella pagina **Impostazioni di distribuzione** dell'applicazione di distribuzione viene visualizzata una delle seguenti impostazioni di approvazione:  
 
-#### <a name="require-administrator-approval-if-users-request-this-application"></a>Richiedi l'approvazione dell'amministratore se gli utenti richiedono questa applicazione
-
-*Si applica alla versione 1710 e alle versioni precedenti*
-
-L'amministratore deve approvare qualsiasi richiesta utente per l'applicazione prima che l'utente possa installarla. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi.  
-
-Le richieste di approvazione dell'applicazione vengono visualizzate nel nodo **Richieste di approvazione** , in **Gestione applicazioni** , nell'area di lavoro **Raccolta software** . Se una richiesta non viene approvata entro 30 giorni, viene rimossa. La reinstallazione del client potrebbe annullare eventuali richieste di approvazione in sospeso.  
-
-Dopo avere approvato un'applicazione per l'installazione, è possibile scegliere di negare la richiesta facendo clic su **Nega** nella console di Configuration Manager. Questa azione non provoca la disinstallazione dell'applicazione dai dispositivi da parte del client. Impedisce agli utenti di installare nuove copie dell'applicazione da Software Center.  
-
-#### <a name="an-administrator-must-approve-a-request-for-this-application-on-the-device"></a>Un amministratore deve approvare una richiesta per questa applicazione nel dispositivo
-
-*Si applica alla versione 1802 e alle versioni successive <sup>[Nota 1](#bkmk_note1)</sup>*
-
-<a name="bkmk_note1"></a>
+### <a name="bkmk_opt"></a> Un amministratore deve approvare una richiesta per questa applicazione nel dispositivo
 
 > [!Note]  
-> **Nota 1**: Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).
+> Configuration Manager non abilita questa funzionalità per impostazione predefinita. Prima di usarlo, abilitare la funzionalità facoltativa **Approva le richieste dell'applicazione per gli utenti per ogni dispositivo**. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).
 >
-> Se non si abilita questa funzionalità, viene visualizzata l'esperienza precedente.  
+> Se non si abilita questa funzionalità, viene visualizzata l'[esperienza precedente](#bkmk_prior).  
 
 L'amministratore deve approvare qualsiasi richiesta utente per l'applicazione prima che l'utente possa installarla nel dispositivo desiderato. Se l'amministratore approva la richiesta, l'utente può installare l'applicazione solo su quel dispositivo. Per installare l'applicazione in un altro dispositivo dovrà inviare un'altra richiesta. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi. <!--1357015-->  
 
 > [!Note]  
 > Per sfruttare i vantaggi delle nuove funzionalità di Configuration Manager, aggiornare prima di tutto i clienti alla versione più recente. Anche se le nuove funzionalità vengono visualizzate nella console di Configuration Manager quando si esegue l'aggiornamento del sito e della console, lo scenario completo risulta funzionante solo dopo l'aggiornamento alla versione più recente del client.<!--SCCMDocs issue 646-->  
 
-Nell'area di lavoro **Raccolta software** della console di Configuration Manager visualizzare **Richieste di approvazione** in **Gestione applicazioni**. Nell'elenco è ora presente una colonna **Dispositivo** per ogni richiesta. Quando si intraprende un'azione sulla richiesta, la finestra di dialogo Richiesta di applicazioni include anche il nome del dispositivo da cui l'utente ha inviato la richiesta.  
+Visualizzare **Richieste di applicazioni** in **Gestione applicazioni** nell'area di lavoro **Raccolta software** della console di Configuration Manager. (Nella versione 1902 e versioni precedenti, questo nodo è chiamato **richieste di approvazione**). Nell'elenco è ora presente una colonna **Dispositivo** per ogni richiesta. Quando si intraprende un'azione sulla richiesta, la finestra di dialogo Richiesta di applicazioni include anche il nome del dispositivo da cui l'utente ha inviato la richiesta.
 
 Se una richiesta non viene approvata entro 30 giorni, viene rimossa. La reinstallazione del client potrebbe annullare eventuali richieste di approvazione in sospeso.  
+
+Quando è necessaria l'approvazione per una distribuzione in una raccolta di dispositivi, l'app non viene visualizzata in Software Center. Se è necessaria l'approvazione per una distribuzione in una raccolta utenti, l'app viene visualizzata in Software Center. È comunque possibile nasconderlo dagli utenti con l'impostazione client, **Nascondi le applicazioni non approvate nel Software Center**. Per altre informazioni, vedere [Impostazioni client di Software Center](/sccm/core/clients/deploy/about-client-settings#software-center).
 
 Dopo avere approvato un'applicazione per l'installazione, è possibile scegliere di negare la richiesta facendo clic su **Nega** nella console di Configuration Manager. Questa azione non provoca la disinstallazione dell'applicazione dai dispositivi da parte del client. Impedisce agli utenti di installare nuove copie dell'applicazione da Software Center.  
 
 > [!Important]  
 > A partire dalla versione 1806, *il comportamento è cambiato* quando si revoca l'approvazione per un'applicazione approvata e installata in precedenza. Ora quando si imposta **Nega** per la richiesta per l'applicazione il client disinstalla l'applicazione dal dispositivo dell'utente.<!--1357891-->  
 
+A partire dalla versione 1906, se si approva una richiesta di app nella console e poi la si rifiuta, è ora possibile approvarla nuovamente. L'app viene reinstallata nel client dopo l'approvazione.  <!-- 4224910 -->
+
 Automatizzare il processo di approvazione con il cmdlet di PowerShell [Approve-CMApprovalRequest](https://docs.microsoft.com/powershell/module/configurationmanager/approve-cmapprovalrequest?view=sccm-ps). A partire dalla versione 1902 questo cmdlet include il parametro **InstallActionBehavior**. Usare questo parametro per specificare se installare l'applicazione immediatamente o fuori dall'orario di ufficio.<!-- SCCMDocs-pr issue #3418 -->
+
+A partire da 1906, è possibile visualizzare le distribuzioni che richiedono l'approvazione. Selezionare un'app nel nodo **applicazioni** . Nel riquadro dei dettagli passare alla scheda **Distribuzioni**. Per impostazione predefinita, viene visualizzata una nuova colonna, che **richiede l'approvazione**.
+
+#### <a name="bkmk_retry"></a> Ripetere l'installazione delle applicazioni pre-approvate
+
+<!--4336307-->
+A partire dalla versione 1906, è possibile ritentare l'installazione di un'app precedentemente approvata per un utente o un dispositivo. L'opzione di approvazione è destinata solo alle distribuzioni disponibili. Se l'utente disinstalla l'app o se il processo di installazione iniziale non riesce, Configuration Manager non rivaluta lo stato dell'app e la reinstalla. Questa funzionalità consente a un tecnico del supporto di ritentare rapidamente l'installazione dell'app per un utente che richiede assistenza.
+
+1. Aprire l'utente della console Configuration Manager un utente che disponga dell'autorizzazione **approva** per l'oggetto applicazione. Ad esempio, i ruoli predefiniti **Amministratore applicazione** e **Autore applicazione** hanno questa autorizzazione.
+
+1. Distribuire un'app che richiede l'approvazione e approvarla.
+
+    > [!Tip]  
+    > In alternativa, [installare un'applicazione per un dispositivo](/sccm/apps/deploy-use/install-app-for-device). Crea una richiesta approvata per l'app nel dispositivo.  
+
+Se l'applicazione non viene installata correttamente oppure l'utente disinstalla l'app, usare la procedura seguente per riprovare:
+
+1. Nella console di Configuration Manager passare all'area di lavoro **Raccolta software**, espandere **Gestione applicazioni** e selezionare il nodo **Richieste di applicazioni**. (Nella versione 1902 e versioni precedenti, questo nodo è chiamato **richieste di approvazione**).
+
+1. Selezionare l'app approvata in precedenza. Nel gruppo Richiesta di approvazione della barra multifunzione selezionare **Riprova l'installazione**.
+
+#### <a name="other-app-approval-resources"></a>Altre risorse di approvazione di app
+
+- [Miglioramenti dell'approvazione applicazione in ConfigMgr 1810](https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/Application-approval-improvements-in-ConfigMgr-1810/ba-p/303534)
+- [Aggiornamenti al processo di approvazione applicazione in Configuration Manager](https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/Updates-to-the-application-approval-process-in-Configuration/ba-p/275048)
+
+### <a name="bkmk_prior"></a> Richiedi l'approvazione dell'amministratore se gli utenti richiedono questa applicazione
+
+> [!Note]  
+> Questa esperienza è valida se non si Abilita l' [esperienza facoltativa di approvazione delle app](#bkmk_opt).
+
+L'amministratore deve approvare qualsiasi richiesta utente per l'applicazione prima che l'utente possa installarla. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi.  
+
+Le richieste di approvazione dell'applicazione vengono visualizzate nel nodo **Richieste di applicazioni** in **Gestione applicazioni** nell'area di lavoro **Raccolta software**. (Nella versione 1902 e versioni precedenti, questo nodo è chiamato **richieste di approvazione**). Se una richiesta non viene approvata entro 30 giorni, viene rimossa. La reinstallazione del client potrebbe annullare eventuali richieste di approvazione in sospeso.  
+
+Dopo avere approvato un'applicazione per l'installazione, è possibile scegliere di negare la richiesta facendo clic su **Nega** nella console di Configuration Manager. Questa azione non provoca la disinstallazione dell'applicazione dai dispositivi da parte del client. Impedisce agli utenti di installare nuove copie dell'applicazione da Software Center.  
 
 
 ## <a name="bkmk_email-approve"></a> Notifiche tramite posta elettronica
@@ -115,19 +140,19 @@ Con questi prerequisiti aggiuntivi facoltativi, i destinatari possono approvare 
 
     - Configurare manualmente le impostazioni di Azure AD:  
 
-        1. Andare al [portale di Azure](https://portal.azure.com), selezionare **Azure Active Directory**, quindi selezionare **Registrazioni app**.  
+        1. Passare alla [portale di Azure](https://portal.azure.com) come utente con autorizzazioni di *amministratore globale* . Passare a **Azure Active Directory**e selezionare **registrazioni app**.  
 
-        2. Selezionare l'applicazione di tipo **Nativo** creata per l'integrazione **Cloud Management** di Configuration Manager.  
+        2. Selezionare l'applicazione creata per l'integrazione **Gestione cloud** di Configuration Manager.  
 
-        3. Nelle proprietà dell'app selezionare **Impostazioni**, quindi selezionare **URI di reindirizzamento**.  
+        3. Scegliere **autenticazione**dal menu **Gestisci** .  
 
-            1. Incollare il percorso seguente nel riquadro URI di reindirizzamento: `https://<CMG FQDN>/CCM_Proxy_ServerAuth/ImplicitAuth`  
+            1. Nella sezione **URI di reindirizzamento** incollare il percorso seguente: `https://<CMG FQDN>/CCM_Proxy_ServerAuth/ImplicitAuth`  
 
             2. Sostituire `<CMG FQDN>` con il nome di dominio completo (FQDN) del servizio Cloud Management Gateway (CMG). Ad esempio, GraniteFalls.Contoso.com.  
 
-            3. Selezionare **Salva**. Chiudere il riquadro **Impostazioni**.  
+            3. Selezionare **Salva**.  
 
-        4. Nella finestra proprietà dell'app, selezionare **Manifesto**.  
+        4. Scegliere **manifesto**dal menu **Gestisci** .  
 
             1. Nel riquadro Modifica manifesto individuare la proprietà **oauth2AllowImplicitFlow**.  
 

@@ -1,8 +1,8 @@
 ---
 title: Come gestire Windows Device Guard
 titleSuffix: Configuration Manager
-description: Informazioni su come usare System Center Configuration Manager per gestire Windows Device Guard.
-ms.date: 12/19/2017
+description: Informazioni su come usare Configuration Manager per gestire Windows Device Guard.
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7c6fcdf0113dd9fa83d2d303661ad5690362715
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 82f262b01129452da7c34ffb6f1a1bb2f15be8a8
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67678743"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68533802"
 ---
 # <a name="device-guard-management-with-configuration-manager"></a>Gestione di Device Guard con Configuration Manager
 
@@ -41,8 +41,8 @@ Per altre informazioni su Device Guard, vedere [Guida alla distribuzione di Devi
 1. **Imposizione abilitata**: è possibile eseguire solo file eseguibili attendibili.
 2. **Solo controllo**: è possibile eseguire tutti i file eseguibili, ma quelli non attendibili vengono registrati nel Registro eventi del client locale.
 
->[!TIP]
->In questa versione di Configuration Manager, Device Guard è una funzionalità di versione non definitiva. Per abilitarla, vedere [Funzionalità di versioni non definitive in System Center Configuration Manager](/sccm/core/servers/manage/pre-release-features).
+> [!Tip]  
+> Questa funzionalità è stata introdotta per la prima volta nella versione 1702 come [funzionalità in versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1906, questa funzionalità non è più in versione non definitiva.  
 
 ## <a name="what-can-run-when-you-deploy-a-windows-defender-application-control-policy"></a>Che cosa viene eseguito quando si distribuisce un criterio di controllo delle applicazioni di Windows Defender?
 
@@ -89,7 +89,7 @@ Prima di configurare o distribuire criteri di controllo delle applicazioni di Wi
     - **Modalità di imposizione**: scegliere uno dei seguenti metodi di imposizione di Device Guard sul PC client.
         - **Imposizione abilitata**: è possibile eseguire solo file eseguibili attendibili.
         - **Solo controllo**: è possibile eseguire tutti i file eseguibili, ma quelli non attendibili vengono registrati nel Registro eventi del client locale.
-5. Nella scheda **Inclusioni** della **Create Application Control policy Wizard** (Creazione guidata criteri di Controllo di applicazioni) scegliere se si vuole **autorizzare il software ritenuto attendibile da Intelligent Security Graph**.
+5. Nella scheda **Inclusioni** della procedura guidata **Crea un criterio di controllo delle applicazioni** scegliere se si vuole **autorizzare il software ritenuto attendibile da Intelligent Security Graph**.
 6. Fare clic su **Aggiungi** per aggiungere il trust per file o cartelle specifiche sui PC. Nella finestra di dialogo **Aggiungi file o cartella attendibile** è possibile specificare un percorso di file o cartella locale da considerare attendibile. È anche possibile specificare un percorso di file o cartella su un dispositivo remoto a cui si è autorizzati a connettersi. Se si configura il trust per cartelle o file specifici in un criterio di Controllo di applicazioni di Windows Defender, è possibile:
     - Risolvere i problemi relativi ai comportamenti del programma di installazione gestito
     - Rendere attendibili le app line-of-business che non possono essere distribuite con Configuration Manager

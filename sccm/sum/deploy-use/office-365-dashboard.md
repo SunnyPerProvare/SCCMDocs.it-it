@@ -5,18 +5,18 @@ description: Esaminare le informazioni sul client Office 365 dal dashboard di Ge
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 04/10/2019
+ms.date: 07/26/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 69f234a2-b04b-445a-b81f-6b4acfc00eaf
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aff55aee5b2eaa584a6161452b4a232fab07412a
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.openlocfilehash: cf18203d4b6d4c8858e3547671b7bf63a2250db7
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802173"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68537239"
 ---
 # <a name="office-365-client-management-dashboard"></a>Dashboard di Gestione client di Office 365
 
@@ -75,6 +75,34 @@ Per impostazione predefinita l'agente di analisi esamina l'elenco dei file usati
 - Formati di Office meno recenti che non indicano se è presente contenuto con macro. Ad esempio una cartella di lavoro di Excel 97-2003 (file con estensione xls).
 
 Se è necessaria una valutazione più dettagliata, distribuire il **Office Readiness Toolkit**. Questo strumento analizza il codice all'interno di un file di macro. Controlla se sono presenti potenziali problemi di compatibilità. Ad esempio, il file potrebbe usare una funzione che è stata modificata in una versione più recente di Office. Dopo l'esecuzione di Office Readiness Toolkit, i risultati ottenuti possono essere usati da Configuration Manager. Questi dati aggiuntivi migliorano i calcoli di conformità dei dispositivi. Per altre informazioni, vedere [Use the Readiness Toolkit to assess application compatibility for Office 365 ProPlus](http://aka.ms/readinesstoolkit) (Usare Readiness Toolkit per valutare la compatibilità delle applicazioni per Office 365 ProPlus).
+
+## <a name="office-365-proplus-upgrade-readiness-dashboard"></a>Dashboard Preparazione aggiornamenti per Office 365 ProPlus
+
+*(Funzionalità introdotta nella versione 1906)*
+
+<!--4021125-->
+Per individuare i dispositivi pronti per l'aggiornamento a Office 365 ProPlus, a partire dalla versione 1906 è disponibile un dashboard di preparazione. Include il riquadro **Preparazione aggiornamenti di Office 365 ProPlus** rilasciato in Configuration Manager Current Branch versione 1902. I nuovi riquadri seguenti di questo dashboard consentono di valutare l'idoneità di componenti aggiuntivi e macro di Office:
+
+- Distribuzione
+- Conformità dei dispositivi
+- Idoneità dei componenti aggiuntivi
+- Dichiarazioni di supporto dei componenti aggiuntivi
+- Componenti aggiuntivi principali in base al numero di versione
+- Number of devices that have macros (Numero di dispositivi con macro)
+- Idoneità delle macro
+- Avvisi di macro
+
+### <a name="using-the-office-365-proplus-upgrade-readiness-dashboard"></a>Uso del dashboard Preparazione aggiornamenti per Office 365 ProPlus
+ 
+1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software** ed espandere **Gestione client di Office 365**.
+1. Selezionare il nodo **Office 365 ProPlus preparazione aggiornamenti** .
+1. Modificare la **raccolta** e l' **architettura di Office di destinazione** per modificare le informazioni inoltrate nel dashboard.
+
+![Dashboard Preparazione aggiornamenti per Office 365 ProPlus](./media/4021125-office-365-upgrade-readiness-dashboard.png)
+
+![Dashboard Preparazione aggiornamenti per Office 365 ProPlus](./media/4021125-office-365-to-add-ins.png)
+
+![Dashboard Preparazione aggiornamenti per Office 365 ProPlus](./media/4021125-office-365-macro-advisories.png)
 
 ## <a name="next-steps"></a>Passaggi successivi
 
