@@ -2,7 +2,7 @@
 title: Strumenti di Configuration Manager
 titleSuffix: Configuration Manager
 description: Informazioni sugli strumenti che consentono di gestire e risolvere i problemi di infrastruttura di Configuration Manager.
-ms.date: 04/17/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b3324189cdf482684cc0738c51fbf336a65ee221
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 0db0d38a1ed6929659c8c82b5b43f76535b025f9
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500698"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536084"
 ---
 # <a name="configuration-manager-tools"></a>Strumenti di Configuration Manager
 
@@ -76,8 +76,11 @@ Tutti i sistemi operativi Windows indicati come client supportati in [Sistemi op
 > Diversi strumenti server richiedono queste librerie. Non è possibile utilizzarli direttamente.  
 
 
-
 ## <a name="other-tools-and-toolkits"></a>Altri strumenti e toolkit
+
+- [Support Center](/sccm/core/support/support-center): Raccogliere informazioni dai client per eseguire più facilmente l'analisi durante la risoluzione dei problemi.
+
+    A partire dalla versione 1906 **OneTrace** è un nuovo visualizzatore log del Supporto tecnico. Funziona in modo analogo a CMTrace, con miglioramenti. Per altre informazioni, vedere [Supporto tecnico OneTrace](/sccm/core/support/support-center-onetrace).
 
 - [Strumento di pulizia della raccolta contenuto](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool): usare **ContentLibraryCleanup.exe** in `CD.Latest\SMSSETUP\TOOLS\ContentLibraryCleanup` per rimuovere contenuto orfano da un punto di distribuzione.  
 
@@ -86,8 +89,6 @@ Tutti i sistemi operativi Windows indicati come client supportati in [Sistemi op
 - [Strumento di reimpostazione dell'aggiornamento](/sccm/core/servers/manage/update-reset-tool): usare **CMUpdateReset.exe** in `CD.Latest\SMSSETUP\TOOLS\CMUpdateReset` per risolvere i problemi quando gli aggiornamenti nella console registrano problemi di download o replica.  
 
 - [Strumento Connessione al servizio](/sccm/core/servers/manage/use-the-service-connection-tool): usare **ServiceConnectionTool.exe** in `CD.Latest\SMSSETUP\TOOLS\ServiceConnectionTool` per mantenere aggiornato il sito quando il punto di connessione del servizio è offline.  
-
-- [Support Center](/sccm/core/support/support-center): Raccogliere informazioni dai client per eseguire più facilmente l'analisi durante la risoluzione dei problemi.
 
 - [Microsoft Deployment Toolkit (MDT)](/sccm/mdt/): Raccolta unificata di strumenti, processi e linee guida per l'automazione delle distribuzioni dei sistemi operativi desktop e server.
 

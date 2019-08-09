@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a875c5deb30a94d91f7307f1044fc0eeea1f944a
-ms.sourcegitcommit: ef7800a294e5db5d751921c34f60296c1642fc1f
-ms.translationtype: HT
+ms.openlocfilehash: 0a650fd5517fb86108d230cc997c8586520826e7
+ms.sourcegitcommit: 16dd488c51b5cf01a7dd4204f7d40ee9ae0abe85
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68712386"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68743586"
 ---
 # <a name="approve-applications-in-configuration-manager"></a>Approvare le applicazioni in Configuration Manager
 
@@ -62,7 +62,7 @@ A partire da 1906, è possibile visualizzare le distribuzioni che richiedono l'a
 <!--4336307-->
 A partire dalla versione 1906, è possibile ritentare l'installazione di un'app precedentemente approvata per un utente o un dispositivo. L'opzione di approvazione è destinata solo alle distribuzioni disponibili. Se l'utente disinstalla l'app o se il processo di installazione iniziale non riesce, Configuration Manager non rivaluta lo stato dell'app e la reinstalla. Questa funzionalità consente a un tecnico del supporto di ritentare rapidamente l'installazione dell'app per un utente che richiede assistenza.
 
-1. Aprire l'utente della console Configuration Manager un utente che disponga dell'autorizzazione **approva** per l'oggetto applicazione. Ad esempio, i ruoli predefiniti **Amministratore applicazione** e **Autore applicazione** hanno questa autorizzazione.
+1. Aprire la console di Configuration Manager come utente che dispone dell'autorizzazione **approva** per l'oggetto applicazione. Ad esempio, i ruoli predefiniti **Amministratore applicazione** e **Autore applicazione** hanno questa autorizzazione.
 
 1. Distribuire un'app che richiede l'approvazione e approvarla.
 
@@ -140,7 +140,7 @@ Con questi prerequisiti aggiuntivi facoltativi, i destinatari possono approvare 
 
     - Configurare manualmente le impostazioni di Azure AD:  
 
-        1. Passare alla [portale di Azure](https://portal.azure.com) come utente con autorizzazioni di *amministratore globale* . Passare a **Azure Active Directory**e selezionare **registrazioni app**.  
+        1. Passare al [portale di Azure](https://portal.azure.com) come utente con autorizzazioni di *amministratore globale*. Passare ad **Azure Active Directory** e selezionare **Registrazioni app**.  
 
         2. Selezionare l'applicazione creata per l'integrazione **Gestione cloud** di Configuration Manager.  
 

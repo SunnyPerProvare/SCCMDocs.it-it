@@ -2,7 +2,7 @@
 title: Come abilitare TLS 1.2
 titleSuffix: Configuration Manager
 description: Informazioni su come abilitare TLS 1.2 per Configuration Manager.
-ms.date: 06/05/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.assetid: 31de47c9-891b-4de7-8d5e-fbbc1bff7c60
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a3d97ee2e68f9f4606ad46c8566467fad459ffa9
-ms.sourcegitcommit: 725e1bf7d3250c2b7b7be9da01135517428be7a1
+ms.openlocfilehash: b58f6d1441d338c121b67754989128944adcc923
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66822083"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536565"
 ---
 # <a name="how-to-enable-tls-12"></a>Come abilitare TLS 1.2
 
@@ -51,6 +51,7 @@ Questa sezione descrive le dipendenze per funzionalità e scenari specifici di C
 |Ruoli del sistema del sito| - [Aggiornare .NET Framework](#update-net-framework-to-support-tls-12) e verificare le impostazioni della crittografia complessa <br/> - [Aggiornare SQL Server e i componenti client](#update-sql-server-and-client-components) per i ruoli che lo richiedono, incluso [SQL Server Native Client](#sql-server-native-client)|
 |Punto di Reporting Services|- [Aggiornare .NET Framework](#update-net-framework-to-support-tls-12) nel server del sito, nei server di SQL Reporting Services e nei computer con la console<br/> - Riavviare il servizio SMS_Executive in base alle esigenze|
 |Punto di aggiornamento software|[Aggiornare WSUS](#update-windows-server-update-services-wsus)|
+|Gateway di gestione cloud|[Applicare TLS 1.2](/sccm/core/clients/manage/cmg/security-and-privacy-for-cloud-management-gateway#bkmk_tls)|
 |Console di Configuration Manager| - [Aggiornare .NET Framework](#update-net-framework-to-support-tls-12)<br/> - Verificare le impostazioni della crittografia complessa|
 |Client Configuration Manager con ruoli del sistema del sito HTTPS|[Aggiornare Windows per supportare TLS 1.2 per le comunicazioni client-server usando WinHTTP](#update-windows-and-winhttp)|
 |Software Center| - [Aggiornare .NET Framework](#update-net-framework-to-support-tls-12)<br/> - Verificare le impostazioni della crittografia complessa|

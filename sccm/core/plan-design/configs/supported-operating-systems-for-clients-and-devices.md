@@ -2,7 +2,7 @@
 title: Client e dispositivi supportati
 titleSuffix: Configuration Manager
 description: Informazioni sulle versioni dei sistemi operativi supportate da Configuration Manager per client e dispositivi.
-ms.date: 10/02/2018
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,225 +11,233 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6b47c99199458c902f1f56ccc3d5007dfd126eb
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: c391b681d2be9a7ce7e1cc1a9f7c69e58f958840
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67251538"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536786"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versioni dei sistemi operativi per client e dispositivi supportate da Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
- Configuration Manager supporta l'installazione di software client in computer Windows, Mac, Linux e UNIX.  
+Configuration Manager supporta l'installazione di software client in computer Windows e macOS.  
 
-#### <a name="requirements-and-limitations-for-all-clients"></a>Requisiti e limitazioni per tutti i client  
+## <a name="general-requirements-and-limitations"></a>Requisiti e limitazioni di carattere generale
 
--   La modifica delle impostazioni del tipo di avvio o di **accesso per tutti** i servizi di Configuration Manager non è supportata. Se vengono apportate modifiche, i servizi principali potrebbero non funzionare correttamente.    
+Rivedere i requisiti e le limitazioni seguenti per tutti i client:
 
--   Non è consentito installare o eseguire il client di Configuration Manager per Linux o UNIX o il client per Mac nei computer con un account diverso dall'account radice. In caso contrario, i servizi principali potrebbero non funzionare correttamente.  
+- La modifica delle impostazioni del tipo di avvio o di **accesso per tutti** i servizi di Configuration Manager non è supportata. Se vengono apportate modifiche, i servizi principali potrebbero non funzionare correttamente.
 
 
+## <a name="windows-computers"></a>Computer Windows  
 
-##  <a name="windows-computers"></a>Computer Windows  
-
- Per gestire le versioni dei sistemi operativi Windows seguenti, usare il client incluso in Configuration Manager. Per altre informazioni, vedere [Come distribuire i client nei computer Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).  
-
+Per gestire le versioni dei sistemi operativi Windows seguenti, usare il client incluso in Configuration Manager. Per altre informazioni, vedere [Come distribuire i client nei computer Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).  
 
 ### <a name="supported-client-os-versions"></a>Versioni del sistema operativo client supportate
 
--   **Windows 10**  
+- **Windows 10**  
 
     Per altre informazioni dettagliate, vedere [Supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10).  
 
--   **Windows 8.1** (x86, x64): Professional, Enterprise    
+- **Windows 8.1** (x86, x64): Professional, Enterprise
 
--   **Windows 7 con SP1** (x86, x64): Professional, Enterprise e Ultimate    
+- **Windows 7 con SP1** (x86, x64): Professional, Enterprise e Ultimate
 
+#### <a name="windows-virtual-desktop"></a>Desktop virtuale Windows
+
+<!--3556025-->
+[Desktop virtuale Windows](https://docs.microsoft.com/azure/virtual-desktop/) è una funzionalità di anteprima di Microsoft Azure e Microsoft 365. A partire dalla versione 1906, usare Configuration Manager per gestire questi dispositivi virtuali che eseguono Windows in Azure.
+
+Analogamente a un server terminal, questi dispositivi virtuali consentono l'esecuzione di più sessioni utente attive simultanee. Per migliorare le prestazioni dei client, Configuration Manager disabilita ora i criteri utente su tutti i dispositivi che consentono l'esecuzione di più sessioni utente. Anche se si abilitano i criteri utente, il client li disabilita per impostazione predefinita in questi dispositivi che includono Desktop virtuale Windows e i server terminal.
+
+Il client disabilita i criteri utente solo quando rileva questo tipo di dispositivo durante una nuova installazione. Per i client esistenti di questo tipo che vengono aggiornati alla versione corrente, viene mantenuto il comportamento precedente. In un dispositivo esistente l'impostazione dei criteri utente viene configurata anche se il dispositivo consente più sessioni utente.
+
+Se sono necessari i criteri utente in questo scenario e si accetta l'eventuale impatto sulle prestazioni, usare Configuration Manager SDK con la [classe WMI del server SMS_PolicyAgentConfig](/sccm/develop/reference/core/clients/config/sms_policyagentconfig-server-wmi-class). Impostare la nuova proprietà `PolicyEnableUserPolicyOnTS` su `true`.
+
+> [!Note]  
+> Non è possibile usare la co-gestione con un desktop virtuale Windows. Windows 10 Enterprise per il desktop virtuale è in realtà un'edizione di Windows Server che non include i componenti MDM.<!-- SCCMDocs-pr#3950 -->
 
 ### <a name="supported-server-os-versions"></a>Versioni del sistema operativo server supportate
 
--  **Windows Server 2019**: Standard, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>  
+- **Windows Server 2019**: Standard, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>  
     (A partire da Configuration Manager versione 1806.)
 
--  **Windows Server 2016**: Standard, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>  
+- **Windows Server 2016**: Standard, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>  
 
--   **Windows Storage Server 2016**: Workgroup, Standard  
+- **Windows Storage Server 2016**: Workgroup, Standard  
 
--   **Windows Server 2012 R2** (x64): Standard, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>    
+- **Windows Server 2012 R2** (x64): Standard, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>
 
--   **Windows Storage Server 2012 R2** (x64)    
+- **Windows Storage Server 2012 R2** (x64)
 
--   **Windows Server 2012** (x64): Standard, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>    
+- **Windows Server 2012** (x64): Standard, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>
 
--   **Windows Storage Server 2012** (x64)    
+- **Windows Storage Server 2012** (x64)
 
--   **Windows Server 2008 R2 con SP1** (x64): Standard, Enterprise, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>    
+- **Windows Server 2008 R2 con SP1** (x64): Standard, Enterprise, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>
 
--   **Windows Storage Server 2008 R2** (x86, x64): Workgroup, Standard, Enterprise    
+- **Windows Storage Server 2008 R2** (x86, x64): Workgroup, Standard, Enterprise
 
--   **Windows Server 2008 con SP2** (x86, x64): Standard, Enterprise, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>    
-
+- **Windows Server 2008 con SP2** (x86, x64): Standard, Enterprise, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>
 
 #### <a name="server-core"></a>Server Core
+
 Le versioni seguenti fanno riferimento in modo specifico all'installazione Server Core del sistema operativo. <sup>[Nota 3](#bkmk_note3)</sup>  
 
 Le versioni del canale semestrale di Windows Server sono installazioni Server Core, ad esempio Windows Server versione 1809. Come client di Configuration Manager, sono supportate come la versione del canale semestrale di Windows 10 associata. Per altre informazioni, vedere [Supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10).
 
+- **Windows Server 2019** (x64) <sup>[Nota 2](#bkmk_note2)</sup>
 
--   **Windows Server 2019** (x64) <sup>[Nota 2](#bkmk_note2)</sup>  
+- **Windows Server 2016** (x64) <sup>[Nota 2](#bkmk_note2)</sup>
 
--   **Windows Server 2016** (x64) <sup>[Nota 2](#bkmk_note2)</sup>   
+- **Windows Server 2012 R2** (x64) <sup>[Nota 2](#bkmk_note2)</sup>
 
--   **Windows Server 2012 R2** (x64) <sup>[Nota 2](#bkmk_note2)</sup>     
+- **Windows Server 2012** (x64) <sup>[Nota 2](#bkmk_note2)</sup>
 
--   **Windows Server 2012** (x64) <sup>[Nota 2](#bkmk_note2)</sup>     
+- **Windows Server 2008 R2** senza Service Pack o con SP1 (x64)
 
--   **Windows Server 2008 R2** senza Service Pack o con SP1 (x64)     
-
--   **Windows Server 2008 SP2** (x86, x64)   
+- **Windows Server 2008 SP2** (x86, x64)
 
 #### <a name="bkmk_note1"></a> Nota 1
- Configuration Manager verifica e supporta le edizioni di Windows Server Datacenter, ma non è ufficialmente certificato per Windows Server. Il supporto hotfix di Configuration Manager non è disponibile per problemi specifici di Windows Server Datacenter Edition. Per altre informazioni sul programma di certificazione di Windows Server, vedere [Catalogo di Windows Server](https://www.windowsservercatalog.com/). 
+
+Configuration Manager verifica e supporta le edizioni di Windows Server Datacenter, ma non è ufficialmente certificato per Windows Server. Il supporto hotfix di Configuration Manager non è disponibile per problemi specifici di Windows Server Datacenter Edition. Per altre informazioni sul programma di certificazione di Windows Server, vedere [Catalogo di Windows Server](https://www.windowsservercatalog.com/).
 
 #### <a name="bkmk_note2"></a> Nota 2
- Per supportare l'[installazione push client](/sccm/core/clients/deploy/plan/client-installation-methods#client-push-installation), aggiungere il servizio File server del ruolo del server Servizi file e archiviazione. Per altre informazioni sull'installazione di funzionalità di Windows in Server Core, vedere [Install roles, role services, and features by using Windows PowerShell cmdlets](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#install-roles-role-services-and-features-by-using-windows-powershell-cmdlets) (Installare ruoli, servizi ruolo e funzionalità tramite cmdlet di Windows PowerShell).  
+
+Per supportare l'[installazione push client](/sccm/core/clients/deploy/plan/client-installation-methods#client-push-installation), aggiungere il servizio File server del ruolo del server Servizi file e archiviazione. Per altre informazioni sull'installazione di funzionalità di Windows in Server Core, vedere [Install roles, role services, and features by using Windows PowerShell cmdlets](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#install-roles-role-services-and-features-by-using-windows-powershell-cmdlets) (Installare ruoli, servizi ruolo e funzionalità tramite cmdlet di Windows PowerShell).  
 
 #### <a name="bkmk_note3"></a> Nota 3
- La nuova app Software Center non è supportata in alcuna versione di Windows Server Core.<!--SCCMDocs issue 683-->
+
+La nuova app Software Center non è supportata in alcuna versione di Windows Server Core.<!--SCCMDocs issue 683-->
 
 
+## <a name="windows-embedded-computers"></a>Computer Windows Embedded  
 
-##  <a name="windows-embedded-computers"></a>Computer Windows Embedded  
-
- È possibile gestire i dispositivi Windows Embedded installando il client di Configuration Manager nel dispositivo. Per altre informazioni, vedere [Pianificazione della distribuzione del client in dispositivi con Windows Embedded](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices).  
-
+È possibile gestire i dispositivi Windows Embedded installando il client di Configuration Manager nel dispositivo. Per altre informazioni, vedere [Pianificazione della distribuzione del client in dispositivi con Windows Embedded](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices).  
 
 ### <a name="requirements-and-limitations"></a>Requisiti e limitazioni
 
--   Tutte le funzionalità client sono supportate nei sistemi Windows Embedded in cui non sono abilitati filtri di scrittura.  
+- Tutte le funzionalità client sono supportate nei sistemi Windows Embedded in cui non sono abilitati filtri di scrittura.  
 
--   I client che usano uno dei tipi di filtro seguenti sono supportati per tutte le funzionalità tranne che per il risparmio energia:  
+- I client che usano uno dei tipi di filtro seguenti sono supportati per tutte le funzionalità tranne che per il risparmio energia:  
 
-    -   Filtri di scrittura avanzati    
+    - Filtri di scrittura avanzati
 
-    -   Filtri di scrittura basati su file RAM    
+    - Filtri di scrittura basati su file RAM
 
-    -   Filtri di scrittura unificati  
+    - Filtri di scrittura unificati  
 
--   Il Catalogo applicazioni non è supportato per alcun dispositivo Windows Embedded.  
-
+- Il Catalogo applicazioni non è supportato per alcun dispositivo Windows Embedded.  
 
 ### <a name="supported-os-versions"></a>Versioni dei sistemi operativi supportate  
 
--   **Windows 10 Enterprise** (x86, x64)  
+- **Windows 10 Enterprise** (x86, x64)  
 
--   **Windows 10 IoT Enterprise** (x86, x64)  
+- **Windows 10 IoT Enterprise** (x86, x64)  
     Questa versione include il canale di manutenzione a lungo termine. Per altre informazioni, vedere [Panoramica di Windows 10 IoT Enterprise](https://docs.microsoft.com/windows/iot-core/windows-iot-enterprise).<!--SCCMDocs issue 560-->  
 
--   **Windows Embedded 8.1 Industry** (x86, x64)    
+- **Windows Embedded 8.1 Industry** (x86, x64)
 
--   **Windows Embedded 8 Standard** (x86, x64)    
+- **Windows Embedded 8 Standard** (x86, x64)
 
--   **Windows Thin PC** (x86, x64)    
+- **Windows Thin PC** (x86, x64)
 
--   **Windows Embedded POSReady 7** (x86, x64)    
+- **Windows Embedded POSReady 7** (x86, x64)
 
--   **Windows Embedded Standard 7 con SP1** (x86, x64)    
-
+- **Windows Embedded Standard 7 con SP1** (x86, x64)
 
 
 ## <a name="windows-ce-computers"></a>Computer Windows CE
 
- È possibile gestire i dispositivi Windows CE con il client legacy del dispositivo mobile di Configuration Manager incluso in Configuration Manager.  
+È possibile gestire i dispositivi Windows CE con il client legacy del dispositivo mobile di Configuration Manager incluso in Configuration Manager.  
 
+### <a name="requirements-and-limitations"></a>Requisiti e limitazioni
 
-### <a name="requirements-and-limitations"></a>Requisiti e limitazioni  
+- Il client del dispositivo mobile richiede 0,78 MB di spazio di archiviazione per l'installazione. L'accesso può richiedere fino a 256 KB di spazio di archiviazione aggiuntivo.
 
--   Il client del dispositivo mobile richiede 0,78 MB di spazio di archiviazione per l'installazione. L'accesso può richiedere fino a 256 KB di spazio di archiviazione aggiuntivo.    
+- Le funzionalità per questi dispositivi mobili variano a seconda della piattaforma e del tipo di client. Per informazioni sulle funzioni di gestione supportate, vedere [Scegliere una soluzione di gestione dei dispositivi](/sccm/core/plan-design/choose-a-device-management-solution).  
 
--   Le funzionalità per questi dispositivi mobili variano a seconda della piattaforma e del tipo di client. Per informazioni sulle funzioni di gestione supportate, vedere [Scegliere una soluzione di gestione dei dispositivi](/sccm/core/plan-design/choose-a-device-management-solution).  
+### <a name="supported-os-versions"></a>Versioni dei sistemi operativi supportate
 
+- Windows CE 7.0 (processori ARM e x86)  
 
-### <a name="supported-os-versions"></a>Versioni dei sistemi operativi supportate  
-
--   Windows CE 7.0 (processori ARM e x86)  
+    > [!Note]
+    > Il supporto è deprecato per Windows CE 7.0 in Configuration Manager. Per altre informazioni, vedere [Elementi rimossi e deprecati per i client di Configuration Manager](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-client).
 
 #### <a name="supported-languages-include"></a>Le lingue supportate includono
 
--   Cinese (semplificato e tradizionale)    
+- Cinese (semplificato e tradizionale)
 
--   Inglese (Stati Uniti)    
+- Inglese (Stati Uniti)
 
--   Francese (Francia)    
+- Francese (Francia)
 
--   Tedesco    
+- Tedesco
 
--   Italiano    
+- Italiano
 
--   Giapponese  
+- Giapponese  
 
--   Coreano  
+- Coreano  
 
--   Portoghese (Brasile)  
+- Portoghese (Brasile)  
 
--   Russo  
+- Russo  
 
--   Spagnolo (Spagna)  
-
+- Spagnolo (Spagna)  
 
 
 ## <a name="mac-computers"></a>Computer Mac  
 
- È possibile gestire i computer macOS con il client di Configuration Manager per Mac.  
+È possibile gestire i computer Apple Mac con il client di Configuration Manager per macOS.  
 
- Il pacchetto di installazione del client per Mac non viene fornito con i supporti di Configuration Manager. Scaricare i **client per altri sistemi operativi** dall'[Area download Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184).  
+Il pacchetto di installazione del client macOS non viene fornito con i supporti di Configuration Manager. Scaricare i **client per altri sistemi operativi** dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=47719).  
 
- Per altre informazioni, vedere [Come distribuire i client in computer Mac](/sccm/core/clients/deploy/deploy-clients-to-macs).  
-
-
-### <a name="supported-versions"></a>Versioni supportate
-
--   **Mac OS X 10.6** (Snow Leopard)
-
--   **Mac OS X 10.7** (Lion)
-
--   **Mac OS X 10.8** (Mountain Lion)
-
--   **Mac OS X 10.9** (Mavericks)
-
--   **Mac OS X 10.10** (Yosemite)  
-
--   **Mac OS X 10.11** (El Capitan)  
-
--   **Mac OS X 10.12** (macOS Sierra)
-
--   **Mac OS X 10.13** (macOS High Sierra)
-
-- **macOS Mojave (10.14)** 
-
-
-##  <a name="linux-and-unix-servers"></a>Server Linux e UNIX  
-
-> [!Important]  
-> I client Linux e UNIX per Configuration Manager sono deprecati dal 22 marzo 2018. Per altre informazioni, vedere, [Annuncio di supporto deprecato per i client Linux e Unix](/sccm/core/plan-design/changes/whats-new-in-version-1802#deprecation-announcement-for-linux-and-unix-client-support).  
-
- Per gestire i server Linux e UNIX è possibile usare il client di Configuration Manager per Linux e UNIX.  
-
- I pacchetti di installazione del client per Linux e UNIX non sono inclusi con i supporti di Configuration Manager. Scaricare i **client per altri sistemi operativi** dall'[Area download Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184). Oltre ai pacchetti di installazione client, il download del client include lo script che gestisce l'installazione del client in ogni computer.  
-
+Per altre informazioni, vedere [Come distribuire i client in computer Mac](/sccm/core/clients/deploy/deploy-clients-to-macs).  
 
 ### <a name="requirements-and-limitations"></a>Requisiti e limitazioni
 
--   Per informazioni dettagliate sulle dipendenze del file del sistema operativo per il client per Linux e UNIX, vedere [Prerequisiti per la distribuzione dei client ai server Linux e UNIX](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers#BKMK_ClientDeployPrereqforLnU).  
+- Non è consentito installare o eseguire il client di Configuration Manager per macOS nei computer con un account diverso dall'account radice. In caso contrario, i servizi principali potrebbero non funzionare correttamente.  
 
--   Per una panoramica delle funzionalità di gestione supportate per Linux o UNIX, vedere [Come distribuire i client nei server UNIX e Linux](/sccm/core/clients/deploy/deploy-clients-to-unix-and-linux-servers).  
+### <a name="supported-versions"></a>Versioni supportate
 
--   Per le versioni supportate di Linux e UNIX, la versione indicata include tutte le versioni secondarie successive. Ad esempio, la versione 6 di CentOS include CentOS 6.3. Analogamente, il supporto per un sistema operativo che usa Service Pack, ad esempio SUSE Linux Enterprise Server 11 SP1, include i Service Pack successivi per tale versione del sistema operativo.  
+- **macOS Mojave (10.14)**
 
--   Per informazioni sui pacchetti di installazione client e su Universal Agent, vedere [Come distribuire i client nei server UNIX e Linux](/sccm/core/clients/deploy/deploy-clients-to-unix-and-linux-servers).  
+- **macOS High Sierra (10.13)**
 
+- **macOS Sierra (10.12)**
+
+- **macOS 10.11** (El Capitan)  
+
+- **macOS 10.10** (Yosemite)  
+
+- **macOS 10.9** (Mavericks)
+
+- **macOS 10.8** (Mountain Lion)
+
+- **macOS 10.7** (Lion)
+
+- **macOS 10.6** (Snow Leopard)
+
+
+## <a name="linux-and-unix-servers"></a>Server Linux e UNIX  
+
+> [!Important]  
+> Configuration Manager versione 1902 elimina il supporto per Linux e UNIX come client. La deprecazione è stata annunciata con la [versione 1802](/sccm/core/plan-design/changes/whats-new-in-version-1802#deprecation-announcement-for-linux-and-unix-client-support). Per la gestione dei server Linux, è possibile usare la gestione di Microsoft Azure. Le soluzioni di Azure includono un ampio supporto per Linux che nella maggior parte dei casi supera le funzionalità di Configuration Manager, inclusa la gestione end-to-end delle patch per Linux.
+
+I pacchetti di installazione del client per Linux e UNIX non sono inclusi con i supporti di Configuration Manager. Scaricare i **client per altri sistemi operativi** dall'[Area download Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184). Oltre ai pacchetti di installazione client, il download del client include lo script che gestisce l'installazione del client in ogni computer.  
+
+### <a name="requirements-and-limitations"></a>Requisiti e limitazioni
+
+- Per informazioni dettagliate sulle dipendenze del file del sistema operativo per il client per Linux e UNIX, vedere [Prerequisiti per la distribuzione dei client ai server Linux e UNIX](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers#BKMK_ClientDeployPrereqforLnU).  
+
+- Per una panoramica delle funzionalità di gestione supportate per Linux o UNIX, vedere [Come distribuire i client nei server UNIX e Linux](/sccm/core/clients/deploy/deploy-clients-to-unix-and-linux-servers).  
+
+- Per le versioni supportate di Linux e UNIX, la versione indicata include tutte le versioni secondarie successive. Ad esempio, la versione 6 di CentOS include CentOS 6.3. Analogamente, il supporto per un sistema operativo che usa Service Pack, ad esempio SUSE Linux Enterprise Server 11 SP1, include i Service Pack successivi per tale versione del sistema operativo.  
+
+- Per informazioni sui pacchetti di installazione client e su Universal Agent, vedere [Come distribuire i client nei server UNIX e Linux](/sccm/core/clients/deploy/deploy-clients-to-unix-and-linux-servers).  
 
 ### <a name="supported-versions"></a>Versioni supportate
 
@@ -324,16 +332,13 @@ Le versioni seguenti sono supportate tramite l'uso del file TAR indicato.
 |Versione 16.04 LTS x64|ccm-Universalx64.&lt;build\>.tar|  
 
 
+## <a name="bkmk_OnpremOS"></a> Software MDM locale
 
-##  <a name="bkmk_OnpremOS"></a> Gestione dei dispositivi mobili locale  
-
- Configuration Manager include funzionalità predefinite per la gestione dei dispositivi locali senza installare software client. Per altre informazioni, vedere [Gestire i dispositivi mobili con l'infrastruttura locale](/sccm/mdm/understand/manage-mobile-devices-with-on-premises-infrastructure).  
-
+Configuration Manager include funzionalità predefinite per la gestione dei dispositivi mobili locali senza installare software client. Per altre informazioni, vedere [Gestire i dispositivi mobili con l'infrastruttura locale](/sccm/mdm/understand/manage-mobile-devices-with-on-premises-infrastructure).  
 
 ### <a name="requirements-and-limitations"></a>Requisiti e limitazioni
 
--   Configurare il **punto di connessione del servizio** nel sito di livello superiore della gerarchia.  
-
+- Configurare il **punto di connessione del servizio** nel sito di livello superiore della gerarchia.  
 
 ### <a name="supported-operating-systems"></a>Sistemi operativi supportati
 
@@ -344,27 +349,28 @@ Le versioni seguenti sono supportate tramite l'uso del file TAR indicato.
 - **Windows 10 IoT Enterprise** (x86, x64)  
     Questa versione include il canale di manutenzione a lungo termine. Per altre informazioni, vedere [Panoramica di Windows 10 IoT Enterprise](https://docs.microsoft.com/windows/iot-core/windows-iot-enterprise).<!--SCCMDocs issue 560-->  
 
-- **Windows 10 Mobile**  
-
-- **Windows 10 Mobile Enterprise**  
-
 - **Windows 10 IoT Mobile Enterprise**  
 
 - **Windows 10 Team per Surface Hub**  
 
+- **Windows 10 Mobile**  
+
+- **Windows 10 Mobile Enterprise**  
+
+    > [!Note]
+    > Il supporto è deprecato per Windows 10 Mobile e Windows 10 Mobile Enterprise in Configuration Manager. Per altre informazioni, vedere [Elementi rimossi e deprecati per i client di Configuration Manager](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-client).
 
 
-##  <a name="bkmk_ExSrvConOS"></a> Connettore Exchange Server  
+## <a name="bkmk_ExSrvConOS"></a> Connettore Exchange Server  
 
 Configuration Manager supporta la gestione limitata dei dispositivi che si connettono a Exchange Server, senza installare il client di Configuration Manager. Per altre informazioni, vedere [Gestire i dispositivi mobili con Configuration Manager ed Exchange](/sccm/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync).  
-
 
 ### <a name="supported-versions-of-exchange-server"></a>Versioni di Exchange Server supportate
 
 - **Exchange Online (Office 365)** : questa versione include Business Productivity Online Standard Suite  
 
-- **Exchange Server 2016** (a partire dalla versione 1802)  
+- **Exchange Server 2016**  
 
 - **Exchange Server 2013**  
 
-- **Exchange Server 2010 SP1** o **Exchange Server 2010 SP2** 
+- **Exchange Server 2010 SP1** o **Exchange Server 2010 SP2**

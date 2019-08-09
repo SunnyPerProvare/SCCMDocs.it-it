@@ -5,18 +5,18 @@ description: Informazioni sui diversi certificati digitali da usare con il gatew
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 06/17/2019
+ms.date: 07/26/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a905420c2c1189552f1bf11b16fb92968f4f590e
-ms.sourcegitcommit: b62de6c9cb1bc3e4c9ea5ab5ed3355d83e3a59bc
+ms.openlocfilehash: 05031bbec72f5540e7f44d7f232b9527dce7789a
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67894124"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68535594"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificati per il gateway di gestione cloud
 
@@ -47,9 +47,9 @@ I certificati per Cloud Management Gateway supportano le configurazioni seguenti
 
 - Provider di archiviazione chiavi per le chiavi private dei certificati. Per altre informazioni, vedere [Panoramica dei certificati CNG](/sccm/core/plan-design/network/cng-certificates-overview).  
 
-- A partire dalla versione 1802, quando si configura Windows con i criteri seguenti: **Crittografia di sistema: utilizza algoritmi FIPS compatibili per crittografia, hash e firma**  
+- Quando si configura Windows con i criteri seguenti: **Crittografia di sistema: utilizza algoritmi FIPS compatibili per crittografia, hash e firma**  
 
-- A partire dalla versione 1802, supporto per **TLS 1.2**. Per altre informazioni, vedere [Riferimento tecnico per i controlli crittografici](/sccm/core/plan-design/security/cryptographic-controls-technical-reference#about-ssl-vulnerabilities).  
+- **TLS 1.2**. Per altre informazioni, vedere [Come abilitare TLS 1.2](/sccm/core/plan-design/security/enable-tls-1-2).  
 
 
 ## <a name="bkmk_serverauth"></a> Certificato di autenticazione server del gateway di gestione cloud
@@ -61,7 +61,7 @@ Usare questo certificato quando si crea il gateway di gestione cloud nella conso
 Il gateway di gestione cloud crea un servizio HTTPS a cui si connettono i client basati su Internet. Il server richiede un certificato di autenticazione server per compilare il canale sicuro. Acquisire un certificato per questo scopo da un provider pubblico o inviarlo dall'infrastruttura a chiave pubblica. Per altre informazioni, vedere [Certificato radice trusted del gateway di gestione cloud per i client](#bkmk_cmgroot).
 
 > [!NOTE]
-> A partire dalla versione 1802, il certificato di autenticazione server del Cloud Management Gateway supporta i caratteri jolly. Alcune autorità di certificazione rilasciano certificati in cui viene usato un carattere jolly per il nome host. Ad esempio, `*.contoso.com`. Alcune organizzazioni usano certificati con caratteri jolly per semplificare l'infrastruttura a chiave pubblica e ridurre i costi di manutenzione.<!--491233-->  
+> Il certificato di autenticazione server di Cloud Management Gateway supporta i caratteri jolly. Alcune autorità di certificazione rilasciano certificati in cui viene usato un carattere jolly per il nome host. Ad esempio, `*.contoso.com`. Alcune organizzazioni usano certificati con caratteri jolly per semplificare l'infrastruttura a chiave pubblica e ridurre i costi di manutenzione.<!--491233-->  
 >
 > Per altre informazioni su come usare un certificato con caratteri jolly con CMG, vedere [Impostare un Cloud Management Gateway](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#set-up-a-cmg).<!--SCCMDocs issue #565-->  
 
@@ -80,6 +80,7 @@ Se si vuole anche abilitare Cloud Management Gateway per il contenuto, verificar
 - Cercare **Account di archiviazione**
 - Testare il nome nel campo **Nome account di archiviazione**
 
+Il prefisso del nome DNS, ad esempio *GraniteFalls*, deve avere una lunghezza compresa tra i 3 e i 24 caratteri e usare solo caratteri alfanumerici. Non usare i caratteri speciali, ad esempio il trattino (`-`).<!-- SCCMDocs#1080 -->
 
 ### <a name="bkmk_cmgroot"></a> Certificato radice trusted del gateway di gestione cloud per i client
 
@@ -136,7 +137,7 @@ I client usano questo certificato per l'autenticazione con il gateway di gestion
 
 Eseguire il provisioning del certificato all'esterno del contesto di Configuration Manager. Ad esempio, usare Servizi certificati Active Directory e i criteri di gruppo per rilasciare i certificati di autenticazione client. Per altre informazioni, vedere [Distribuzione del certificato client per computer Windows](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_client2008_cm2012).
 
-Il punto di connessione del gateway di gestione cloud richiede questo certificato per inoltrare in modo sicuro le richieste client al punto di gestione HTTPS. Se si usa Azure AD o HTTP avanzato, questo certificato non è obbligatorio. Per altre informazioni, vedere [Abilitare i punti di gestione per HTTPS](#bkmk_mphttps).
+Per inoltrare le richieste client in modo sicuro, il punto di connessione del gateway di gestione cloud richiede un certificato di autenticazione client che corrisponda al certificato di autenticazione server nel punto di gestione HTTPS. Se i client usano l'autenticazione Azure AD o si configura il punto di gestione per HTTP migliorato, questo certificato non è obbligatorio. Per altre informazioni, vedere [Abilitare i punti di gestione per HTTPS](#bkmk_mphttps).
 
 ### <a name="bkmk_clientroot"></a> Certificato radice trusted del client per il gateway di gestione cloud
 
@@ -144,10 +145,12 @@ Il punto di connessione del gateway di gestione cloud richiede questo certificat
 
 Usare questo certificato quando si crea il gateway di gestione cloud nella console di Configuration Manager.
 
-Il gateway di gestione client deve considerare attendibile il certificato di autenticazione del client. Per confermare l'attendibilità, specificare la catena di certificati radice trusted. È possibile specificare due autorità di certificazione radice attendibili e quattro autorità intermedie (subordinate). Assicurarsi di aggiungere tutti i certificati nella catena di certificati. Ad esempio, se il certificato di autenticazione client viene emesso da una CA intermedia, aggiungere sia il certificato della CA intermedia che il certificato della CA radice.
+Il gateway di gestione client deve considerare attendibile il certificato di autenticazione del client. Per confermare l'attendibilità, specificare la catena di certificati radice trusted. Assicurarsi di aggiungere tutti i certificati nella catena di certificati. Ad esempio, se il certificato di autenticazione client viene emesso da una CA intermedia, aggiungere sia il certificato della CA intermedia che il certificato della CA radice.
 
 > [!Note]  
 > A partire dalla versione 1806, quando si crea un CMG non è più necessario specificare un certificato radice trusted nella pagina Impostazioni. Questo certificato non è obbligatorio se si usa Azure Active Directory (Azure AD) per l'autenticazione client, ma veniva richiesto nella procedura guidata. Se si usano certificati di autenticazione client PKI, è comunque necessario aggiungere un certificato radice trusted al CMG.<!--SCCMDocs-pr issue #2872 SCCMDocs issue #1319-->
+>
+> Nella versione 1902 e nelle versioni precedenti è possibile aggiungere solo due autorità di certificazione radice attendibili e quattro autorità intermedie (subordinate).
 
 #### <a name="export-the-client-certificates-trusted-root"></a>Esportare la radice attendibile del certificato client
 
@@ -186,11 +189,12 @@ Dopo aver emesso un certificato di autenticazione client per un computer, usare 
 
 Eseguire il provisioning del certificato all'esterno del contesto di Configuration Manager. Ad esempio, usare Servizi certificati Active Directory e i criteri di gruppo per rilasciare un certificato del server Web. Per altre informazioni, vedere [Requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements) e [Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).
 
-- Nella versione 1710, quando si gestiscono client tradizionali con identità locale usando un certificato di autenticazione client, questo certificato è consigliato ma non obbligatorio. Per la gestione di client Windows 10 aggiunti ad Azure AD, questo certificato è obbligatorio per i punti di gestione.
-
 - Nella versione 1802 questo certificato è richiesto in tutti gli scenari. Solo i punti di gestione abilitati per il gateway di gestione cloud devono essere HTTPS. Questa modifica del comportamento offre un supporto migliore per l'autenticazione basata su token di Azure AD.  
 
-- A partire dalla versione 1806, quando si usa l'opzione del sito **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**, il punto di gestione può essere HTTP. Per altre informazioni, vedere [HTTP avanzato](/sccm/core/plan-design/hierarchy/enhanced-http).
+- A partire dalla versione 1806, quando si usa l'opzione del sito **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**, il punto di gestione può essere HTTP. Per altre informazioni, vedere [HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http).
+
+> [!Tip]  
+> Se non si usa il protocollo HTTP migliorato e l'ambiente include più punti di gestione, non è necessario abilitare HTTPS per tutti i punti per il gateway di gestione cloud. Configurare i punti di gestione abilitati per il gateway di gestione cloud come **Solo Internet**. I client locali non tenteranno di usarli.<!-- SCCMDocs#1676 -->
 
 ### <a name="management-point-client-connection-mode-summary"></a>Riepilogo delle modalità di connessione client ai punti di gestione
 
@@ -200,12 +204,12 @@ Queste tabelle offrono un riepilogo che indica se il punto di gestione richiede 
 
 Configurare un punto di gestione locale per consentire le connessioni dal gateway di gestione cloud con la modalità di connessione client indicata di seguito:
 
-| Tipo di client   | 1710        | 1802        | 1806        | 1810        |
-|------------------|-------------|-------------|-------------|-------------|
-| Gruppo di lavoro        | HTTP, HTTPS | HTTPS       | E-HTTP<sup>[Note 1](#bkmk_note1)</sup>, HTTPS | E-HTTP<sup>[Note 1](#bkmk_note1)</sup>, HTTPS |
-| Aggiunto a un dominio AD | HTTP, HTTPS | HTTPS       | E-HTTP<sup>[Note 1](#bkmk_note1)</sup>, HTTPS | E-HTTP<sup>[Note 1](#bkmk_note1)</sup>, HTTPS |
-| Aggiunto ad Azure AD  | HTTPS       | HTTPS       | E-HTTP, HTTPS | E-HTTP, HTTPS |
-| Aggiunto a ibrido    | HTTP, HTTPS | HTTPS       | E-HTTP, HTTPS | E-HTTP, HTTPS |
+| Tipo di client   | 1802  | 1806        | 1810        |
+|------------------|-------|-------------|-------------|
+| Gruppo di lavoro        | HTTPS | E-HTTP<sup>[Note 1](#bkmk_note1)</sup>, HTTPS | E-HTTP<sup>[Note 1](#bkmk_note1)</sup>, HTTPS |
+| Aggiunto a un dominio AD | HTTPS | E-HTTP<sup>[Note 1](#bkmk_note1)</sup>, HTTPS | E-HTTP<sup>[Note 1](#bkmk_note1)</sup>, HTTPS |
+| Aggiunto ad Azure AD  | HTTPS | E-HTTP, HTTPS | E-HTTP, HTTPS |
+| Aggiunto ad AD ibrido    | HTTPS | E-HTTP, HTTPS | E-HTTP, HTTPS |
 
 <a name="bkmk_note1"></a>
 
@@ -216,12 +220,12 @@ Configurare un punto di gestione locale per consentire le connessioni dal gatewa
 
 Configurare un punto di gestione locale con la modalità di connessione client indicata di seguito:
 
-| Tipo di client   | 1710        | 1802        | 1806        | 1810        |
-|------------------|-------------|-------------|-------------|-------------|
-| Gruppo di lavoro        | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS |
-| Aggiunto a un dominio AD | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS |
-| Aggiunto ad Azure AD  | HTTPS       | HTTPS       | HTTPS       | HTTPS       |
-| Aggiunto ad AD ibrido    | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS |
+| Tipo di client   | 1802        | 1806        | 1810        |
+|------------------|-------------|-------------|-------------|
+| Gruppo di lavoro        | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS |
+| Aggiunto a un dominio AD | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS |
+| Aggiunto ad Azure AD  | HTTPS       | HTTPS       | HTTPS       |
+| Aggiunto ad AD ibrido    | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS |
 
 > [!Note]  
 > Nella versione 1806 i client aggiunti a un dominio AD supportano sia gli scenari incentrati sui dispositivi, sia quelli incentrati sull'utente che comunicano con un punto di gestione HTTP o HTTPS.  
@@ -236,7 +240,9 @@ Configurare un punto di gestione locale con la modalità di connessione client i
 - *Aggiunto ad AD ibrido*: il dispositivo viene aggiunto sia a un dominio di Active Directory, sia a un tenant di Azure AD  
 - *HTTP*: nelle proprietà del punto di gestione le connessioni client sono impostate su **HTTP**  
 - *HTTPS*: nelle proprietà del punto di gestione le connessioni client sono impostate su **HTTPS**  
-- *E-HTTP*: nella scheda Comunicazione computer client delle proprietà del sito configurare le impostazioni di sistema del sito per **HTTPS o HTTP** e abilitare l'opzione **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**. Si configura il punto di gestione per il protocollo HTTP. Il punto di gestione HTTP è pronto per la comunicazione HTTP e HTTPS (scenari di autenticazione basata su token).  
+- *E-HTTP*: nella scheda **Comunicazione computer client** delle proprietà del sito configurare le impostazioni di sistema del sito per **HTTPS o HTTP** e abilitare l'opzione **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**. Si configura il punto di gestione per il protocollo HTTP. Il punto di gestione HTTP è pronto per la comunicazione HTTP e HTTPS (scenari di autenticazione basata su token).  
+    > [!Note]
+    > A partire dalla versione 1906, questa scheda è denominata **Communication Security** (Sicurezza comunicazione).<!-- SCCMDocs#1645 -->  
 
 
 ## <a name="bkmk_azuremgmt"></a> Certificato di gestione di Azure

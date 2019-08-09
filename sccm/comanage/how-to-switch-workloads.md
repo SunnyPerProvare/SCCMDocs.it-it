@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni su come passare i carichi di lavoro attualmente gestiti da Configuration Manager a Microsoft Intune.
 ms.prod: configuration-manager
 ms.technology: configmgr-client
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
-ms.date: 01/14/2019
+ms.date: 07/26/2019
 ms.topic: conceptual
 ms.assetid: 60e2022f-a4f9-40dd-af01-9ecb37b43878
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4b50d0491644e6be0967c1adcf2db641c1bb1cd
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: 1945e2a13418f9e49d19874c1f369cee58e9ac61
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "56755441"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68534860"
 ---
 # <a name="how-to-switch-configuration-manager-workloads-to-intune"></a>Come trasferire i carichi di lavoro di Configuration Manager a Intune
 
@@ -24,10 +24,33 @@ Uno dei vantaggi della co-gestione è il trasferimento dei carichi di lavoro da 
 
 Per altre informazioni sui carichi di lavoro supportati, vedere [Carichi di lavoro](/sccm/comanage/workloads).
 
-È possibile trasferire i carichi di lavoro quando si abilita la co-gestione o in seguito, al momento opportuno. Se non è ancora stata abilitata la co-gestione, eseguire prima di tutto questa operazione. Per altre informazioni, vedere [Come abilitare la co-gestione](/sccm/comanage/how-to-enable).
+## <a name="switch-workloads-starting-in-version-1906"></a>Trasferire i carichi di lavoro a partire dalla versione 1906
+<!--3555750 FKA 1357954 -->
+A partire dalla versione 1906, è possibile configurare raccolte pilota diverse per ognuno dei carichi di lavoro con co-gestione. La possibilità di usare raccolte pilota diverse consente di adottare un approccio più granulare durante il trasferimento dei carichi di lavoro. È possibile trasferire i carichi di lavoro quando si abilita la co-gestione o in seguito, al momento opportuno. Se non è ancora stata abilitata la co-gestione, eseguire prima di tutto questa operazione. Per altre informazioni, vedere [Come abilitare la co-gestione](/sccm/comanage/how-to-enable). Dopo aver abilitato la co-gestione, modificare le impostazioni nelle proprietà di co-gestione.
 
+1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Servizi cloud** e selezionare il nodo **Co-gestione**.  
+2. Selezionare l'oggetto co-gestione e quindi scegliere **Proprietà** nella barra multifunzione.  
+3. Passare alla scheda **Carichi di lavoro**. Per impostazione predefinita, a tutti i carichi di lavoro è applicata l'impostazione **Configuration Manager**. Per trasferire un carico di lavoro, spostare il dispositivo di scorrimento relativo al carico di lavoro sull'impostazione desiderata.  
 
-Dopo aver abilitato la co-gestione, modificare le impostazioni nelle proprietà di co-gestione. 
+    ![Screenshot della scheda Carichi di lavoro nella pagina delle proprietà di co-gestione](media/3555750-co-management-workloads-tab.png)
+
+    - **Configuration Manager**: Configuration Manager continua a gestire questo carico di lavoro.  
+
+    - **Intune pilota**: trasferire questo carico di lavoro solo per i dispositivi nella raccolta pilota. È possibile modificare le **raccolte pilota** nella scheda **Gestione temporanea** della pagina delle proprietà di co-gestione.  
+
+    - **Intune**: trasferire questo carico di lavoro per tutti i dispositivi Windows 10 registrati nella co-gestione.  
+
+4. Passare alla scheda **Gestione temporanea** e modificare la **raccolta pilota** per alcuni carichi di lavoro, se necessario.
+  
+   ![Screenshot della scheda Carichi di lavoro nella pagina delle proprietà di co-gestione](media/3555750-co-management-staging-tab.png)
+
+> [!Important]  
+> - Prima di trasferire eventuali carichi di lavoro, assicurarsi di configurare e distribuire correttamente il carico di lavoro corrispondente in Intune. Verificare che i carichi di lavoro siano sempre gestiti da uno degli strumenti di gestione per i dispositivi.
+> - A partire da Configuration Manager versione 1806, quando si trasferisce un carico di lavoro con co-gestione, i dispositivi con co-gestione sincronizzano automaticamente i criteri MDM da Microsoft Intune. La sincronizzazione si verifica anche quando si avvia l'azione **Scarica criteri computer** dalle notifiche client nella console di Configuration Manager. Per altre informazioni, vedere [Avviare il recupero dei criteri client usando la notifica client](/sccm/core/clients/manage/manage-clients#initiate-client-policy-retrieval-using-client-notification). <!--1357377-->
+
+## <a name="switch-workloads-in-version-1902-and-earlier"></a>Trasferire i carichi di lavoro nella versione 1902 e versioni precedenti
+
+È possibile trasferire i carichi di lavoro quando si abilita la co-gestione o in seguito, al momento opportuno. Se non è ancora stata abilitata la co-gestione, eseguire prima di tutto questa operazione. Per altre informazioni, vedere [Come abilitare la co-gestione](/sccm/comanage/how-to-enable). Dopo aver abilitato la co-gestione, modificare le impostazioni nelle proprietà di co-gestione.
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Servizi cloud** e selezionare il nodo **Co-gestione**.  
 
@@ -43,11 +66,14 @@ Dopo aver abilitato la co-gestione, modificare le impostazioni nelle proprietà 
 
     - **Intune**: trasferire questo carico di lavoro per tutti i dispositivi Windows 10 registrati nella co-gestione.  
 
+4. Nella scheda **Gestione temporanea** della pagina delle proprietà di co-gestione cambiare la **raccolta pilota** per i carichi di lavoro, se necessario.
+
+5. Fare clic su **OK** per salvare e chiudere le proprietà di co-gestione.
 
 > [!Important]  
-> Prima di trasferire eventuali carichi di lavoro, assicurarsi di configurare e distribuire correttamente il carico di lavoro corrispondente in Intune. Verificare che i carichi di lavoro siano sempre gestiti da uno degli strumenti di gestione per i dispositivi.  
+> - Prima di trasferire eventuali carichi di lavoro, assicurarsi di configurare e distribuire correttamente il carico di lavoro corrispondente in Intune. Verificare che i carichi di lavoro siano sempre gestiti da uno degli strumenti di gestione per i dispositivi. 
+> - A partire da Configuration Manager versione 1806, quando si trasferisce un carico di lavoro con co-gestione, i dispositivi con co-gestione sincronizzano automaticamente i criteri MDM da Microsoft Intune. La sincronizzazione si verifica anche quando si avvia l'azione **Scarica criteri computer** dalle notifiche client nella console di Configuration Manager. Per altre informazioni, vedere [Avviare il recupero dei criteri client usando la notifica client](/sccm/core/clients/manage/manage-clients#initiate-client-policy-retrieval-using-client-notification). <!--1357377-->
 
-<!--1357377-->
-A partire da Configuration Manager versione 1806, quando si trasferisce un carico di lavoro con co-gestione, i dispositivi con co-gestione sincronizzano automaticamente i criteri MDM da Microsoft Intune. La sincronizzazione si verifica anche quando si avvia l'azione **Scarica criteri computer** dalle notifiche client nella console di Configuration Manager. Per altre informazioni, vedere [Avviare il recupero dei criteri client usando la notifica client](/sccm/core/clients/manage/manage-clients#initiate-client-policy-retrieval-using-client-notification).
+## <a name="next-steps"></a>Passaggi successivi
 
-
+[Monitorare la co-gestione](/sccm/comanage/how-to-monitor.md)

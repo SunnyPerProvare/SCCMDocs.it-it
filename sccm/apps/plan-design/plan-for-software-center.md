@@ -2,7 +2,7 @@
 title: Pianificare Software Center
 titleSuffix: Configuration Manager
 description: Decidere come configurare e personalizzare Software Center per consentire agli utenti di interagire con Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 08/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.assetid: c6826794-aa19-469d-ae47-1a0db68a1ff1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2384fb0584fde331cf8667822c81de51eb60cbf0
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 7fbd8f570fe0e6fad18b964220d5cb723e5fecad
+ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68534965"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68859857"
 ---
 # <a name="plan-for-software-center"></a>Pianificare Software Center
 
@@ -36,7 +36,7 @@ Di seguito sono elencati i miglioramenti apportati a Software Center:
 > Questi miglioramenti iterativi di Software Center e il punto di gestione sono concepiti per il ritiro dei ruoli del catalogo applicazioni.
 >
 > - L'esperienza utente di Silverlight non è supportata a partire dalla versione Current Branch 1806.
-> - A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per l'utente. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni.
+> - A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni.
 > - Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
 
 ### <a name="starting-in-version-1802"></a>A partire dalla versione 1802
@@ -130,6 +130,8 @@ Alla finestra di dialogo seguente:
 
 ![Finestra di dialogo per riavviare il computer](media/3555947-restart-dialog.png)
 
+> [!IMPORTANT]
+> In Configuration Manager 1902, in determinate circostanze, la finestra di dialogo non sostituisce le notifiche di tipo avviso popup. Per risolvere questo problema, installare l' [aggiornamento cumulativo per Configuration Manager versione 1902](https://support.microsoft.com/help/4500571/update-rollup-for-configuration-manager-current-branch-1902). <!--4404715-->
 
 ## <a name="branding-software-center"></a>Personalizzazione di Software Center
 
@@ -156,7 +158,7 @@ Configuration Manager applica la personalizzazione per Software Center in base a
 #### <a name="application-catalog-branding-priorities"></a>Priorità di personalizzazione del catalogo applicazioni
 
 > [!Important]
-> L'esperienza utente Silverlight del catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per l'utente. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
 
 Se si usa il Catalogo applicazioni, la personalizzazione segue queste priorità:  
 

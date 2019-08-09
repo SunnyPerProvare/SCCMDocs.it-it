@@ -2,7 +2,7 @@
 title: Funzionalità di versioni non definitive
 titleSuffix: Configuration Manager
 description: Le funzionalità di versioni non definitive sono incluse nel Current Branch a scopo di test preliminare in un ambiente di produzione.
-ms.date: 11/27/2018
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab1c8e462e22206177e4907df3c5549ec9ba1692
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: bfcaa12634b313cc1d0071d76e704ed07fc06608
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194203"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536158"
 ---
 # <a name="pre-release-features-in-configuration-manager"></a>Funzionalità di versioni non definitive in Configuration Manager
 
@@ -60,7 +60,7 @@ Quando si abilita una funzionalità non definitiva, gestione gerarchie (HMAN) di
 
 
 
-## <a name="pre-release-features"></a>Funzionalità di versioni non definitive
+## <a name="bkmk_table"></a>Funzionalità di versioni non definitive
 
 <!--Note/tip for target article
 
@@ -69,16 +69,21 @@ Quando si abilita una funzionalità non definitiva, gestione gerarchie (HMAN) di
 
 
 > [!Tip]  
-> This feature was first introduced in version 1702 as a [pre-release feature](/sccm/core/servers/manage/pre-release-features). Beginning with version 1706, this feature is no longer a pre-release feature.  
+> This feature was first introduced in version 1702 as a [pre-release feature](/sccm/core/servers/manage/pre-release-features). Beginning with version 1906, it's no longer a pre-release feature.  
 
 -->
 
-
+<!-- With each current branch release, to help purge this list a bit, remove any entries that were added as a full feature in a version that's no longer supported -->
 | Funzionalità          | Aggiunta come versione non definitiva | Aggiunta come funzionalità completa |  
 |------------------|----------------------|-------------------------|
-| API del provider SMS <!--1359052--> | Versione 1810 | ![Non ancora](media/red_x.png) |
+| [Debugger di sequenze di attività](/sccm/osd/deploy-use/debug-task-sequence) <!--3612274,C3F37661-69E4-4D53-A39C-5D02F97E0E71--> | Versione 1906 | ![Non ancora](media/red_x.png) |
+| [Gruppi di applicazioni](/sccm/apps/deploy-use/create-app-groups) <!--3555907,EE16A1D8-EF1B-4094-845F-AC107E7C621D--> | Versione 1906 | ![Non ancora](media/red_x.png) |
+| [Individuazione dei gruppi utenti in Azure Active Directory](/sccm/core/servers/deploy/configure/configure-discovery-methods#bkmk_azuregroupdisco) <!--3611956,023715E7-BFBA-4E9E-A80F-B5B626464ADD-->| Versione 1906 | ![Non ancora](media/red_x.png) |
+| [Sincronizzare i risultati di appartenenza alla raccolta con Azure Active Directory](/sccm/core/clients/manage/collections/create-collections#bkmk_aadcollsync) <!--3607475,C2127144-C8DE-49F6-9CB3-D4F5B59F9515-->| Versione 1906| ![Non ancora](media/red_x.png)|
+| [Modalità autonoma per CMPivot](/sccm/core/servers/manage/cmpivot#bkmk_standalone) <!--3555890/4692885,no GUID--> | Versione 1906 | ![Non ancora](media/red_x.png) |
+| [Servizio di amministrazione del provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_admin-service) <!--1359052--> | Versione 1810 | Versione 1906 |
 | [Sistema del sito HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http) <!--1356889,1358228--> | Versione 1806 | Versione 1810 |
-| [App client per dispositivi con co-gestione](/sccm/comanage/workloads#client-apps) <!--1357892--> | Versione 1806 | ![Non ancora](media/red_x.png) |
+| [App client per dispositivi con co-gestione](/sccm/comanage/workloads#client-apps) <!--1357892,CC3AE625-BF72-49B1-8AB1-AF0DCF2D6F4C--> | Versione 1806 | ![Non ancora](media/red_x.png) |
 | [Estensioni SCAP](/sccm/compliance/plan-design/scap/about-scap) <!--3607889--> | Versione 1806 | ![Non ancora](media/red_x.png) |
 | [Package Conversion Manager](/sccm/apps/pcm/package-conversion-manager) <!--1357861--> | Versione 1806 | Versione 1810 |
 | [Supporto per Cisco AnyConnect 4.0.07x e versioni successive per iOS](/sccm/mdm/deploy-use/create-vpn-profiles) <!--1357393--> | Versione 1802 | Versione 1802 <br>con aggiornamento 4163547 |
@@ -87,16 +92,10 @@ Quando si abilita una funzionalità non definitiva, gestione gerarchie (HMAN) di
 | [Windows Defender Exploit Guard](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy) <!--1355468--> | Versione 1710 | Versione 1802 |
 | [Valutazione dell'attestazione dell'integrità dei dispositivi per i criteri di conformità dell'accesso condizionale](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) <!--1235616--> | Versione 1710 | Versione 1802 |
 | [Creare ed eseguire script di Windows PowerShell](/sccm/apps/deploy-use/create-deploy-scripts) <!--1236459--> | Versione 1706 | Versione 1802 |
-| [Gestire gli aggiornamenti dei driver di Microsoft Surface](/sccm/sum/get-started/configure-classifications-and-products) <!--1098490--> | Versione 1706 | Versione 1710 |
-| [Gestione di Device Guard](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager) <!--1355092 (1319346)--> | Versione 1702 | ![Non ancora](media/red_x.png) |
-| [Memorizzazione anticipata nella cache dei contenuti della sequenza di attività](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content) <!--1021244--> | Versione 1702 | Versione 1710 |
-| [Controllare l'esecuzione di file eseguibili prima di installare un'applicazione](/sccm/apps/deploy-use/deploy-applications#bkmk_exe-check) <!--1284624--> | Versione 1702 | Versione 1706 |
-| [Punto di servizio del data warehouse](/sccm/core/servers/manage/data-warehouse) <!--1277922--> | Versione 1702 | Versione 1706 |
-| [Peer cache per la distribuzione del contenuto ai client](/sccm/core/plan-design/hierarchy/client-peer-cache) <!--1101436--> | Versione 1610 | Versione 1710 |
+| [Gestione di Device Guard](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager) <!--3600958 (fka 1355092 & 1319346)--> | Versione 1702 | Versione 1906 |
 | [Gateway di gestione cloud](/sccm/core/clients/manage/plan-cloud-management-gateway) <!--1101764--> | Versione 1610 | Versione 1802 |
 | [Connettore di Azure Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics) <!--1236739--> | Versione 1606 | Versione 1802 |
-| [Manutenzione di una raccolta compatibile con cluster (manutenzione di un gruppo di server)](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_ServerGroups) <!--1081776--> | Versione 1602 | ![Non ancora](media/red_x.png) |
-| [Accesso condizionale per i PC gestiti da Configuration Manager](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) <!--  --> | Versione 1602 | Versione 1702 |
+| [Manutenzione di una raccolta compatibile con cluster (gruppi di server)](/sccm/sum/deploy-use/service-a-server-group) <!--1081776,290B66D8-C735-4895-B59A-DD732D84A697--> | Versione 1602 | ![Non ancora](media/red_x.png) |
 
 <!--Image used = ![Not yet](media/red_x.png) -->
 

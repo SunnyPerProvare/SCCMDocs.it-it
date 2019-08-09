@@ -2,7 +2,7 @@
 title: Creare raccolte
 titleSuffix: Configuration Manager
 description: Creare raccolte in Configuration Manager per gestire più facilmente gruppi di utenti e dispositivi.
-ms.date: 03/05/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ed08a9abb746681eb8e89d471e19990ced313788
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.openlocfilehash: b8ff3dac5c5ff4d04be6f30c02dba8523ce1b80b
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67550905"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68535474"
 ---
 # <a name="how-to-create-collections-in-configuration-manager"></a>Come creare raccolte in Configuration Manager
 
@@ -217,6 +217,61 @@ Per altre informazioni sull'esportazione di raccolte, vedere [Come gestire le ra
 
 5. Completare la procedura guidata per importare la raccolta. La nuova raccolta viene visualizzata nel nodo **Raccolte utenti** o **Raccolte dispositivi** dell'area di lavoro **Asset e conformità** . Aggiornare o ricaricare la console di Configuration Manager per visualizzare i membri della raccolta appena importata.  
 
+## <a name="bkmk_aadcollsync"></a> Sincronizzare i risultati di appartenenza alla raccolta con i gruppi di Azure Active Directory
+*Introdotta come funzionalità di versione non definitiva nella versione 1906*
+<!--3607475-->
+> [!NOTE]
+> La sincronizzazione delle appartenenze alla raccolta in un gruppo di Azure Active Directory (Azure AD) è una funzionalità di versione non definitiva introdotta per la prima volta nella versione 1906. Per abilitarla, vedere l'articolo [Funzionalità di versioni non definitive](/sccm/core/servers/manage/pre-release-features).
+
+È possibile abilitare la sincronizzazione delle appartenenze alle raccolte con un gruppo di Azure Active Directory (Azure AD). Questa sincronizzazione consente di usare le regole di raggruppamento locali esistenti nel cloud creando appartenenze ai gruppi di Azure AD in base ai risultati delle appartenenze alle raccolte. È possibile sincronizzare raccolte di dispositivi. Solo i dispositivi con un record Azure Active Directory vengono riportati nel gruppo di Azure AD. Sono supportati sia i dispositivi aggiunti ad Azure AD ibrido che quelli aggiunti ad Azure Active Directory.
+
+La sincronizzazione con Azure AD viene eseguita ogni cinque minuti. Si tratta di un processo unidirezionale, vale a dire da Configuration Manager ad Azure AD. Le modifiche apportate in Azure AD non si riflettono nelle raccolte di Configuration Manager, ma non vengano sovrascritte da Configuration Manager. Se ad esempio la raccolta di Configuration Manager ha due dispositivi e il gruppo di Azure AD ha tre dispositivi diversi, dopo la sincronizzazione il gruppo di Azure AD avrà cinque dispositivi.
+
+
+### <a name="prerequisites"></a>Prerequisiti
+
+- [Gestione cloud](/sccm/core/servers/deploy/configure/azure-services-wizard)
+- [Individuazione utente Azure Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc)
+
+### <a name="create-a-group-and-set-the-owner-in-azure-ad"></a>Creare un gruppo e impostare il proprietario in Azure AD
+
+1. Passare a [https://portal.azure.com](https://portal.azure.com).
+1. Passare ad **Azure Active Directory** > **Gruppi** > **Tutti i gruppi**.
+1. Fare clic su **Nuovo gruppo** e digitare un **Nome gruppo** e una **Descrizione gruppo**.
+1. Selezionare **Proprietari**, quindi aggiungere l'identità che creerà la relazione di sincronizzazione in Configuration Manager.
+1. Fare clic su **Crea** per completare la creazione del gruppo di Azure AD.
+
+### <a name="enable-collection-synchronization-for-the-azure-service"></a>Abilitare la sincronizzazione della raccolta per il servizio di Azure
+
+1. Nella console di Configuration Manager passare ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Servizi di Azure**.
+1. Fare clic con il pulsante destro del mouse sul tenant Azure AD in cui è stato creato il gruppo e selezionare **Proprietà**.
+1. Nella scheda **Sincronizzazione delle raccolte** selezionare la casella **Abilita la sincronizzazione dei gruppi di Azure Active Directory**.
+1. Fare clic su **OK** per salvare l'impostazione.
+
+### <a name="enable-the-collection-to-synchronize"></a>Abilitare la raccolta da sincronizzare
+
+1. Nella console di Configuration Manager passare a **Asset e conformità** > **Panoramica** > **Raccolte dispositivi**.
+1. Fare clic con il pulsante destro del mouse sulla raccolta da sincronizzare, quindi fare clic su **Proprietà**. 
+1. Nella scheda **Sincronizzazione dei gruppi di AAD** fare clic su **Aggiungi**.
+1. Dal menu a discesa selezionare il **Tenant** in cui è stato creato il gruppo di Azure AD.
+1. Digitare i criteri di ricerca nel campo **Il nome inizia con**, quindi fare clic su **Cerca**.
+  - Se viene richiesto di eseguire l'accesso, usare l'identità specificata come proprietario per il gruppo di Azure AD.
+1. Selezionare il gruppo di destinazione, quindi fare clic su **OK** per aggiungere il gruppo e di nuovo su **OK** per uscire dalle proprietà della raccolta.
+1. Prima di poter verificare l'appartenenza ai gruppi nel portale di Azure, è necessario attendere da 5 a 7 minuti.
+   - Per avviare una sincronizzazione completa, fare clic con il pulsante destro del mouse sulla raccolta, quindi selezionare **Sincronizza appartenenza**.
+
+
+### <a name="verify-the-azure-ad-group-membership"></a>Verificare l'appartenenza al gruppo di Azure AD
+
+1. Passare a [https://portal.azure.com](https://portal.azure.com).
+1. Passare ad **Azure Active Directory** > **Gruppi** > **Tutti i gruppi**.
+1. Trovare il gruppo creato e selezionare **Membri**. 
+1. Verificare che i membri riflettano quelli nella raccolta di Configuration Manager.
+   - Solo i dispositivi con identità di Azure AD vengono visualizzati nel gruppo.
+
+
+![Sincronizzare le raccolte in Azure AD](media/3607475-sync-collection-to-azuread.png)
+
 ## <a name="bkmk_powershell"></a> Uso di PowerShell
 
 È possibile usare PowerShell per creare e importare raccolte. Per altre informazioni, vedere:
@@ -224,3 +279,7 @@ Per altre informazioni sull'esportazione di raccolte, vedere [Come gestire le ra
 * [New-CMCollection](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmcollection)
 * [Set-CMCollection](https://docs.microsoft.com/powershell/module/ConfigurationManager/Set-CMCollection)
 * [Import-CMCollection](https://docs.microsoft.com/powershell/module/ConfigurationManager/Import-CMCollection)
+
+## <a name="next-steps"></a>Passaggi successivi
+
+[Gestire le raccolte](/sccm/core/clients/manage/collections/manage-collections)

@@ -2,7 +2,7 @@
 title: Controlli dei prerequisiti
 titleSuffix: Configuration Manager
 description: Informazioni di riferimento sugli specifici controlli dei prerequisiti per gli aggiornamenti di Configuration Manager.
-ms.date: 04/02/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 79730167346490350a7536c6badb5f0bc0fa85f4
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: 85d868793f876d2b749eb5cfc1376278699e2a7d
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67252269"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536432"
 ---
 # <a name="list-of-prerequisite-checks-for-configuration-manager"></a>Elenco dei controlli dei prerequisiti per Configuration Manager
 
@@ -374,6 +374,20 @@ Quando si usa SQL Server Always On, le repliche del gruppo di disponibilità son
 *Si applica a: server di database del sito*
 
 Quando si usa SQL Server Always On, le repliche del gruppo di disponibilità sono nell'istanza predefinita.
+
+### <a name="sql-availability-group-replicas-must-all-have-the-same-seeding-mode"></a>Tutte le repliche dei gruppi di disponibilità SQL devono avere la stessa modalità seeding
+
+<!-- SCCMDocs-pr#3899 -->
+*Si applica a: server di database del sito*
+
+A partire dalla versione 1906, quando si usa SQL Server Always On è necessario configurare le repliche dei gruppi di disponibilità con la stessa [modalità seeding](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/automatic-seeding-secondary-replicas).
+
+### <a name="sql-availability-group-replicas-must-be-healthy"></a>Le repliche dei gruppi di disponibilità di SQL devono essere integre
+
+<!-- SCCMDocs-pr#3899 -->
+*Si applica a: server di database del sito*
+
+A partire dalla versione 1906, quando si usa SQL Server Always On, le repliche del gruppo di disponibilità sono integre.
 
 ### <a name="sql-server-configuration-for-site-upgrade"></a>Configurazione di SQL Server per l'aggiornamento del sito
 

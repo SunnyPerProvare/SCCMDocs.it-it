@@ -1,8 +1,8 @@
 ---
 title: Diagnostica e dati di utilizzo
 titleSuffix: Configuration Manager
-description: Informazioni sui dati di utilizzo e di diagnostica raccolti da System Center Configuration Manager.
-ms.date: 11/27/2018
+description: Informazioni sui dati di diagnostica e utilizzo raccolti da Configuration Manager.
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,53 +11,49 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4341ba1866405f17d4a4b7b8cb24e933ab57a20
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 68a5787b4c4fa2caf05c1a8c9c6e64bbdd437279
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56119323"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536766"
 ---
-# <a name="diagnostics-and-usage-data-for-system-center-configuration-manager"></a>Dati di diagnostica e di utilizzo per System Center Configuration Manager
+# <a name="diagnostics-and-usage-data-for-configuration-manager"></a>Dati di diagnostica e utilizzo per Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 Configuration Manager raccoglie dati di utilizzo e di diagnostica su se stesso che vengono usati da Microsoft per migliorare l'esperienza, la qualità e la sicurezza di installazione delle versioni future.  
 
- I dati di utilizzo e di diagnostica sono abilitati per ogni gerarchia di Configuration Manager. Essi consistono in query di SQL Server eseguite su base settimanale in ogni sito primario e nel sito di amministrazione centrale. Quando la gerarchia usa un sito di amministrazione centrale, i dati dai siti primari vengono quindi replicati in tale sito. Nel sito di livello superiore della gerarchia, il punto di connessione del servizio invia queste informazioni quando verifica la presenza di aggiornamenti. Se il punto di connessione del servizio è in modalità offline, le informazioni vengono trasferite tramite lo strumento di connessione del servizio.  
+I dati di utilizzo e di diagnostica sono abilitati per ogni gerarchia di Configuration Manager. Essi consistono in query di SQL Server eseguite su base settimanale in ogni sito primario e nel sito di amministrazione centrale. Quando la gerarchia usa un sito di amministrazione centrale, i dati dai siti primari vengono quindi replicati in tale sito. Nel sito di livello superiore della gerarchia, il punto di connessione del servizio invia queste informazioni quando verifica la presenza di aggiornamenti. Se il punto di connessione del servizio è in modalità offline, le informazioni vengono trasferite tramite lo strumento di connessione del servizio.  
 
 > [!NOTE]  
->  Configuration Manager raccoglie i dati solo dal database di SQL Server del sito e non direttamente dai client o dai server del sito.  
+> Configuration Manager raccoglie i dati solo dal database di SQL Server del sito e non direttamente dai client o dai server del sito.  
 
- Per altre informazioni, vedere l'[Informativa sulla privacy Microsoft](https://go.microsoft.com/fwlink/?LinkID=626527).  
+Per altre informazioni, vedere l'[Informativa sulla privacy Microsoft](https://go.microsoft.com/fwlink/?LinkID=626527).  
 
 ## <a name="articles"></a>Articoli
- Altre informazioni sui dati di utilizzo e di diagnostica per Configuration Manager sono disponibili negli articoli seguenti:  
 
--   [Come vengono usati i dati di diagnostica e di utilizzo](/sccm/core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-used)  
+Altre informazioni sui dati di utilizzo e di diagnostica per Configuration Manager sono disponibili negli articoli seguenti:  
 
--   Livelli di raccolta dati utilizzo e di diagnostica:
+- [Come vengono usati i dati di diagnostica e di utilizzo](/sccm/core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-used)  
+
+- Livelli di raccolta dati utilizzo e di diagnostica:
+
+    - [Dati di diagnostica per la versione 1906](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1906)  
+
+    - [Dati di diagnostica per la versione 1902](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1902)  
+
     - [Dati di diagnostica per la versione 1810](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1810)  
 
     - [Dati di diagnostica per la versione 1806](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1806)  
 
-    - [Dati di diagnostica per la versione 1802](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1802)  
-    
-    - [Dati di diagnostica per la versione 1710](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1710)  
+- [Come vengono raccolti i dati di diagnostica e di utilizzo](/sccm/core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-collected)  
 
--   [Come vengono raccolti i dati di diagnostica e di utilizzo](/sccm/core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-collected)  
+- [Come visualizzare i dati di diagnostica e di utilizzo](/sccm/core/plan-design/diagnostics/view-diagnostics-and-usage-data)  
 
--   [Come visualizzare i dati di diagnostica e di utilizzo](/sccm/core/plan-design/diagnostics/view-diagnostics-and-usage-data)  
-
--   [Analisi utilizzo software](/sccm/core/plan-design/diagnostics/customer-experience-improvement-program-ceip)  
-
-     > [!Note]  
-     > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.  
+- [Domande frequenti sui dati di diagnostica e di utilizzo](/sccm/core/understand/frequently-asked-questions-about-diagnostics-and-usage-data)  
 
 
--   [Domande frequenti sui dati di diagnostica e di utilizzo](/sccm/core/understand/frequently-asked-questions-about-diagnostics-and-usage-data)  
+## <a name="see-also"></a>Vedere anche
 
-
-
-## <a name="see-also"></a>Vedere anche  
- [Informazioni sul punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point)
+[Informazioni sul punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point)

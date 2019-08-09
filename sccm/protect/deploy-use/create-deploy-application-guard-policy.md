@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3859b56b71b7818baaf6f63e068c0dec80bba44
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
-ms.translationtype: HT
+ms.openlocfilehash: a21ef053cbd5f0a57d7688d69f29bc6f8871484a
+ms.sourcegitcommit: b5c7496ca408803046acc8403858aafd5dca8808
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68533600"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68794728"
 ---
 # <a name="create-and-deploy-windows-defender-application-guard-policy"></a>Creare e distribuire criteri di Windows Defender Application Guard
 
@@ -81,7 +81,7 @@ Consentono di configurare il comportamento delle applicazioni all'interno della 
 <!--3555858-->
 A partire da Configuration Manager versione 1906, è disponibile un'impostazione dei criteri che consente agli utenti di considerare attendibili i file che normalmente si aprono in Application Guard. Al termine dell'esecuzione, i file vengono aperti nel dispositivo host anziché in Application Guard. Per altre informazioni sui criteri di Application Guard, vedere [Configurare le impostazioni dei criteri di Windows Defender Application Guard](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-guard/configure-wd-app-guard).
 
-- **Consenti agli utenti di considerare attendibili i file aperti in Windows Defender Application Guard** : consente all'utente di contrassegnare i file come attendibili. Quando un file è attendibile, viene aperto nell'host anziché in Application Guard. Si applica ai client Windows 10 versione 1810 o versioni successive.
+- **Consenti agli utenti di considerare attendibili i file aperti in Windows Defender Application Guard** : consente all'utente di contrassegnare i file come attendibili. Quando un file è attendibile, viene aperto nell'host anziché in Application Guard. Si applica ai client Windows 10 versione 1809 o versioni successive.
   - **Non consentito:** Impedisce agli utenti di contrassegnare i file come attendibili (impostazione predefinita).
   - **File controllato da antivirus:** Consente agli utenti di contrassegnare i file come attendibili dopo un controllo antivirus.
   - **Tutti i file:** Consente agli utenti di contrassegnare qualsiasi file come attendibile.

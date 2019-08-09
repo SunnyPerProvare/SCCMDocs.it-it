@@ -2,7 +2,7 @@
 title: Aggiornamenti e manutenzione
 titleSuffix: Configuration Manager
 description: Informazioni sul metodo di manutenzione nella console denominato Aggiornamenti e manutenzione che semplifica l'individuazione e l'installazione degli aggiornamenti consigliati.
-ms.date: 06/06/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb875529224655fb56aeea5636bf92c7ddaf8b2c
-ms.sourcegitcommit: 9d186b8b9ff652d5ea8a5d352f3f793f11db66f0
+ms.openlocfilehash: 4901494c195c4602fe40aa191621a0322bc9f8e2
+ms.sourcegitcommit: 75f48834b98ea6a238d39f24e04c127b2959d913
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "66822060"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68604511"
 ---
 # <a name="updates-and-servicing-for-configuration-manager"></a>Aggiornamenti e manutenzione per Configuration Manager
 
@@ -28,7 +28,7 @@ Configuration Manager usa un metodo di manutenzione nella console denominato **A
 > I termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti separati in Configuration Manager. Per altre informazioni su come viene usato ogni termine, vedere [Informazioni su upgrade, aggiornamento e installazione](/sccm/core/understand/upgrade-update-install).  
 
 
-##  <a name="bkmk_Baselines"></a> Versioni di base e di aggiornamento  
+## <a name="bkmk_Baselines"></a> Versioni di base e di aggiornamento  
 
 Usare la versione di base più recente quando si installa un nuovo sito in una nuova gerarchia.
 
@@ -62,11 +62,11 @@ Le versioni supportate seguenti di Configuration Manager sono attualmente dispon
 
 | Version | Data di disponibilità | [Data di fine supporto](/sccm/core/servers/manage/current-branch-versions-supported) | Versione di base | Aggiornamento nella console |  
 |-------------|-----------|------------|--------------|------------------------|  
+| [1906](/sccm/core/plan-design/changes/whats-new-in-version-1906)<br /><br /> 5.00.8853.1000 | 26 luglio 2019 | 26 gennaio 2021 | No | Sì |
 | [1902](/sccm/core/plan-design/changes/whats-new-in-version-1902)<br /><br /> 5.00.8790.1000 | 27 marzo 2019 | 27 settembre 2020 | Sì<sup>[Nota 1](#bkmk_note1)</sup> | Sì |
 | [1810](/sccm/core/plan-design/changes/whats-new-in-version-1810)<br /><br /> 5.00.8740.1000 | 27 novembre 2018 | 27 maggio 2020 | No | Sì |
 | [1806](/sccm/core/plan-design/changes/whats-new-in-version-1806)<br /><br /> 5.00.8692.1000 | 31 luglio 2018 | 31 gennaio 2020 | No | Sì |
 | [1802](/sccm/core/plan-design/changes/whats-new-in-version-1802)<br /><br /> 5.00.8634.1000 | 22 marzo 2018 | 22 settembre 2019 | Sì<sup>[Nota 1](#bkmk_note1)</sup> | Sì |
-| [1710](/sccm/core/plan-design/changes/whats-new-in-version-1710)<br /><br /> 5.00.8577.1000 | 20 novembre 2017 | 20 maggio 2019 | No | Sì |
 
 <a name="bkmk_note1"></a>
 
@@ -85,12 +85,13 @@ La tabella seguente elenca le versioni cronologiche di Configuration Manager Cur
 
 | Version | Data di disponibilità | Data di fine supporto | Versione di base | Aggiornamento nella console |  
 |-------------|-----------|------------|--------------|------------------------|  
+| 1710 <br /><br /> 5.00.8577.1000 | 20 novembre 2017 | 20 maggio 2019 | No | Sì |
 | 1706 <br /><br /> 5.00.8540.1000 | 31 luglio 2017 | 31 luglio 2018 | No | Sì |
 | 1702 <br /><br /> 5.00.8498.1000 | 27 marzo 2017 | 27 marzo 2018 | Sì | Sì |
 | 1610 <br /><br /> 5.00.8458.1000 | 18 novembre 2016 | 18 novembre 2017 | No | Sì |
 | 1606 <br /><br /> 5.00.8412.1000 | 22 luglio 2016 | 22 luglio 2017 | No | Sì |
 | 1606 con hotfix rollup 1606 (KB3186654) <br><br>5.00.8412.1307 | 12 ottobre 2016 | 12 ottobre 2017 | Sì | No |
-| 1602<br /><br /> 5.00.8355.1000 | 11 marzo 2016 | 11 marzo 2017 | No | Sì |
+| 1602 <br /><br /> 5.00.8355.1000 | 11 marzo 2016 | 11 marzo 2017 | No | Sì |
 | 1511 <br /><br /> 5.00.8325.1000 | 8 dicembre 2015 | 8 dicembre 2016 | Sì | No |  
 
 #### <a name="how-to-check-the-version"></a>Come controllare la versione
@@ -98,7 +99,7 @@ La tabella seguente elenca le versioni cronologiche di Configuration Manager Cur
 Per controllare la versione del sito di Configuration Manager, nella console passare a **Informazioni su System Center Configuration Manager** nell'angolo in alto a sinistra. Questa finestra di dialogo consente di visualizzare le versioni del sito e della console.  
 
 > [!Note]  
-> A partire dalla versione 1802, la versione della console è leggermente diversa da quella del sito. La versione secondaria della console ora corrisponde alla versione finale di Configuration Manager. Ad esempio, in Configuration Manager versione 1802 la versione iniziale del sito è 5.0.8634.1000 e la versione iniziale della console è 5.**1802**.1082.1700. Con i futuri hotfix della versione 1802, è possibile che i numeri di build (1082) e revisione (1700) cambino.
+> La versione della console è leggermente diversa da quella del sito. La versione secondaria della console corrisponde alla versione finale di Configuration Manager. Ad esempio, in Configuration Manager versione 1802 la versione iniziale del sito è 5.0.8634.1000 e la versione iniziale della console è 5.**1802**.1082.1700. Con i futuri hotfix è possibile che i numeri di build (1082) e revisione (1700) cambino.
 
 
 ## <a name="bkmk_inconsole"></a> Aggiornamenti e manutenzione nella console  
@@ -153,7 +154,7 @@ Quando si installa un aggiornamento nella console, si verifica quanto segue:
 - Dopo l'aggiornamento di un sito primario, i siti secondari non vengono aggiornati automaticamente. È invece necessario avviare manualmente l'aggiornamento del sito secondario.  
 
 > [!NOTE]  
-> Configuration Manager Current Branch, Long-Term Servicing Branch e Technical Preview Branch sono rilasci diversi. Gli aggiornamenti relativi a un ramo non sono disponibili come aggiornamenti nella console per gli altri rami. Per altre informazioni sui rami disponibili, vedere [Which branch of Configuration Manager should I use?](/sccm/core/understand/which-branch-should-i-use) (Scelta del ramo di Configuration Manager da usare)
+> Configuration Manager Current Branch, Long-Term Servicing Branch e Technical Preview Branch sono rilasci diversi. Gli aggiornamenti relativi a un ramo non sono disponibili come aggiornamenti nella console per gli altri rami. Per altre informazioni sui rami disponibili, vedere [Scelta del ramo di Configuration Manager da usare](/sccm/core/understand/which-branch-should-i-use).
 
 ### <a name="bkmk_supersede"></a> Sostituzione per gli hotfix nella console
 
@@ -179,7 +180,7 @@ Se si sta cercando di risolvere o correggere un problema relativo alla distribuz
 
 Installare questi aggiornamenti manualmente, usando uno dei due metodi seguenti:  
 
-#### <a name="update-registration-tool"></a>Strumento di registrazione dell'aggiornamento
+### <a name="update-registration-tool"></a>Strumento di registrazione dell'aggiornamento
 
 Questo strumento importa manualmente l'hotfix nella console di Configuration Manager. Quindi installa l'aggiornamento come si installerebbero gli aggiornamenti nella console che vengono individuati automaticamente.  
 
@@ -188,7 +189,7 @@ Questo metodo è usato per gli hotfix con la struttura di nome file seguente:
 
 Per altre informazioni, vedere [Use the Update Registration Tool to import hotfixes](/sccm/core/servers/manage/use-the-update-registration-tool-to-import-hotfixes) (Usare lo strumento di registrazione dell'aggiornamento per importare gli hotfix).  
 
-#### <a name="hotfix-installer"></a>Programma di installazione di hotfix
+### <a name="hotfix-installer"></a>Programma di installazione di hotfix
 
 Usare questo strumento per installare manualmente un hotfix che non è possibile installare usando il metodo nella console.  
 

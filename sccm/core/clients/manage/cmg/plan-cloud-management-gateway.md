@@ -2,7 +2,7 @@
 title: Pianificare il gateway di gestione cloud
 titleSuffix: Configuration Manager
 description: Pianificare e progettare il gateway di gestione di cloud (CMG) per semplificare la gestione dei client basati su Internet.
-ms.date: 06/19/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,19 +11,19 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9dadd289c0a275964273d27c5b9685c1fa7f08e6
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 43145e7f94fb381d1051ddb7de09367f4f69d556
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286791"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68535604"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 <!--1101764-->
-Il gateway di gestione cloud (CMG) consente di gestire i client di Configuration Manager in Internet in modo semplice. Distribuendo il gateway di gestione cloud (CMG) come servizio cloud in Microsoft Azure, è possibile gestire i client tradizionali che effettuano il roaming in Internet senza un'infrastruttura aggiuntiva. Inoltre non è necessario esporre l'infrastruttura locale a Internet.
+Il gateway di gestione cloud (CMG) consente di gestire i client di Configuration Manager in Internet in modo semplice. Distribuendo il gateway di gestione cloud come servizio cloud in Microsoft Azure, è possibile gestire i client tradizionali che effettuano il roaming in Internet senza un'infrastruttura locale aggiuntiva. Inoltre non è necessario esporre l'infrastruttura locale a Internet.
 
 > [!Note]  
 > Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
@@ -47,7 +47,7 @@ Un gateway di gestione cloud può essere utile in scenari diversi. Gli scenari s
     - Inventario e stato del client
     - Impostazioni di conformità
     - Distribuzione del software al dispositivo
-    - Sequenza di attività di aggiornamento sul posto di Windows 10 (a partire dalla versione 1802)
+    - Sequenza di attività di aggiornamento sul posto di Windows 10
 
 - Gestire i client Windows 10 tradizionali con identità moderna, ibridi o solo aggiunti al dominio cloud con Azure Active Directory (Azure AD). Per l'autenticazione i client usano Azure AD anziché i certificati PKI. L'uso di Azure AD è più semplice da configurare e gestire rispetto ai sistemi PKI più complessi. Le attività di gestione sono le stesse del primo scenario, come anche:  
     - Distribuzione del software all'utente  
@@ -171,14 +171,12 @@ Analogamente, quando effettuano il roaming in Internet, i client di Parigi comun
 
 - Possono essere necessari **altri certificati**, a seconda della versione del sistema operativo del client e del modello di autenticazione. Per altre informazioni, vedere [CMG certificates](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway) (Certificati per il gateway di gestione cloud).  
 
-    - Nella versione 1802 è necessario configurare tutti i [**punti di gestione abilitati per CMG per l'uso di HTTPS**](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_mphttps).  
-
-    - A partire dalla versione 1806, quando si usa l'opzione del sito **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**, il punto di gestione può essere HTTP. Per altre informazioni, vedere [HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http).  
+    A partire dalla versione 1806, quando si usa l'opzione del sito **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**, il punto di gestione può essere HTTP. Per altre informazioni, vedere [HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http).
 
 - In Configuration Manager versione 1810 o precedenti con il metodo di distribuzione classico di Azure è necessario usare un [**certificato di gestione di Azure**](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_azuremgmt).  
 
     > [!TIP]  
-    > A partire da Configuration Manager versione 1802, usare il modello di distribuzione **Azure Resource Manager**, che non richiede il certificato di gestione.
+    > Usare il modello di distribuzione **Azure Resource Manager**. che non richiede il certificato di gestione.
     >
     > Il metodo di distribuzione classica è deprecato a partire dalla versione 1810.  
 
@@ -195,7 +193,7 @@ Analogamente, quando effettuano il roaming in Internet, i client di Parigi comun
 
 - I punti di aggiornamento software che usano un bilanciamento del carico di rete non funzionano con il gateway di gestione cloud. <!--505311-->  
 
-- A partire dalla versione 1802, le distribuzioni CMG che usano il modello Azure Resource Manager non abilitano il supporto dei provider di servizi cloud di Azure. La distribuzione del gateway di gestione cloud con Azure Resource Manager continua infatti a usare il servizio cloud classico, non supportato dal provider di servizi cloud. Per altre informazioni, vedere [Available Azure services in Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services) (Servizi di Azure disponibili in Azure CSP).  
+- Le distribuzioni del gateway di gestione cloud che usano il modello Azure Resource Manager non abilitano il supporto dei provider di servizi cloud di Azure. La distribuzione del gateway di gestione cloud con Azure Resource Manager continua infatti a usare il servizio cloud classico, non supportato dal provider di servizi cloud. Per altre informazioni, vedere [Available Azure services in Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services) (Servizi di Azure disponibili in Azure CSP).  
 
 ### <a name="support-for-configuration-manager-features"></a>Supporto delle funzionalità di Configuration Manager
 
@@ -212,14 +210,13 @@ La tabella seguente elenca il supporto di Cloud Management Gateway (CMG) per le 
 | Installazione client<br>(con integrazione di Azure AD)     | ![Supportato](media/green_check.png) |
 | Distribuzione del software (indirizzata a dispositivi)     | ![Supportato](media/green_check.png) |
 | Distribuzione del software (indirizzata a utenti, obbligatoria)<br>(con integrazione di Azure AD)     | ![Supportato](media/green_check.png) |
-| Distribuzione del software (indirizzata a utenti, disponibile)<br>([tutti i requisiti](/sccm/apps/deploy-use/deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices)) | ![Supportato](media/green_check.png)  (1802) |
-| Sequenza di attività di aggiornamento sul posto di Windows 10      | ![Supportato](media/green_check.png)  (1802) |
-| Sequenze di attività che non usano le immagini d'avvio e vengono distribuite con un'opzione: **Scaricare tutto il contenuto in locale prima di avviare la sequenza di attività**      | ![Supportato](media/green_check.png)  (1802) |
+| Distribuzione del software (indirizzata a utenti, disponibile)<br>([tutti i requisiti](/sccm/apps/deploy-use/deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices)) | ![Supportato](media/green_check.png) |
+| Sequenza di attività di aggiornamento sul posto di Windows 10      | ![Supportato](media/green_check.png) |
+| Sequenze di attività che non usano le immagini d'avvio e vengono distribuite con un'opzione: **Scaricare tutto il contenuto in locale prima di avviare la sequenza di attività**      | ![Supportato](media/green_check.png) |
 | CMPivot     | ![Supportato](media/green_check.png)  (1806) |
 | Qualsiasi altro scenario di sequenza di attività     | ![Non supportato](media/Red_X.png) |
 | Push client     | ![Non supportato](media/Red_X.png) |
 | Assegnazione automatica al sito     | ![Non supportato](media/Red_X.png) |
-| Catalogo applicazioni     | ![Non supportato](media/Red_X.png) |
 | Richieste di approvazione del software     | ![Non supportato](media/Red_X.png) |
 | Console di Configuration Manager     | ![Non supportato](media/Red_X.png) |
 | Strumenti remoti     | ![Non supportato](media/Red_X.png) |
@@ -272,6 +269,8 @@ Cloud Management Gateway (CMG) usa i componenti di Azure seguenti, che implicano
 
     > [!NOTE]  
     > L'esecuzione di altre azioni, ad esempio la distribuzione di aggiornamenti software o di applicazioni, aumenta la quantità di dati in uscita da Azure.
+
+- Una configurazione errata dell'opzione Gateway di gestione cloud per **verificare la revoca del certificato client** può causare un traffico aggiuntivo dai client al gateway di gestione cloud. Questo traffico aggiuntivo può aumentare i dati in uscita di Azure e quindi i relativi costi.<!-- SCCMDocs#1434 --> Per altre informazioni, vedere [Pubblicare l'elenco di revoche di certificati (CRL)](https://docs.microsoft.com/sccm/core/clients/manage/cmg/security-and-privacy-for-cloud-management-gateway#bkmk_crl).  
 
 ### <a name="content-storage"></a>Archivio del contenuto
 

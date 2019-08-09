@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 679f62bb38bab06c074c97e92ff7d3adcae80f1b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: f02c61a3af0088a2f2bb564643a085bd117d63bb
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501453"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536607"
 ---
 # <a name="about-discovery-methods-for-system-center-configuration-manager"></a>Informazioni sui metodi di individuazione per System Center Configuration Manager
 
@@ -198,14 +198,19 @@ Per altre informazioni su come configurare questo metodo di individuazione, vede
 
 
 ## <a name="azureaddisc"></a> Individuazione utente Azure Active Directory
-Usare l'individuazione utenti di Azure Active Directory (Azure AD) per cercare la sottoscrizione di Azure AD per gli utenti con un'identità cloud moderna. Con l'individuazione utenti di Azure AD è possibile individuare gli attributi seguenti:  
--   objectId
--   displayName
--   mail
--   mailNickname
--   onPremisesSecurityIdentifier
--   userPrincipalName
--   AAD tenantID
+
+Usare l'individuazione utenti di Azure Active Directory (Azure AD) per cercare la sottoscrizione di Azure AD per gli utenti con un'identità cloud moderna. Con l'individuazione utenti di Azure AD è possibile individuare gli attributi seguenti:
+
+- objectId
+- displayName
+- mail
+- mailNickname
+- onPremisesSecurityIdentifier
+- userPrincipalName
+- AAD tenantID
+- onPremisesDomainName
+- onPremisesSamAccountName
+- onPremisesDistinguishedName
 
 Questo metodo supporta la sincronizzazione completa e la sincronizzazione delta degli attributi utente da Azure AD. Queste informazioni possono quindi essere usate con i dati di individuazione raccolti con altri metodi di individuazione.
 
@@ -213,7 +218,19 @@ Le azioni per l'individuazione utenti di Azure AD vengono registrate nel file **
 
 Per configurare l'individuazione utenti di AD Azure, vedere [Configurare i servizi di Azure](/sccm/core/servers/deploy/configure/Azure-services-wizard) per la gestione cloud. Per informazioni su come configurare questo metodo di individuazione, vedere [Configurare l'individuazione utente Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc).
 
+## <a name="bkmk_azuregroupdisco"></a> Individuazione dei gruppi utenti in Azure Active Directory
+<!--3611956-->
+*Introdotta come [funzionalità di versione non definitiva](/sccm/core/servers/manage/pre-release-features) nella versione 1906*
 
+È possibile individuare i gruppi utenti e i membri dei gruppi in Azure Active Directory (Azure AD). Con l'individuazione dei gruppi utenti di Azure AD è possibile trovare gli attributi seguenti:
+
+- objectId
+- displayName
+- mailNickname
+- onPremisesSecurityIdentifier
+- AAD tenantID
+
+Le azioni per l'individuazione dei gruppi utenti di Azure AD vengono registrate nel file **SMS_AZUREAD_DISCOVERY_AGENT.log** nel server del sito di livello superiore della gerarchia. Per informazioni su come configurare questo metodo di individuazione, vedere [Configurare l'individuazione dei gruppi utenti di Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods#azuregroupdisco).
 
 ##  <a name="bkmk_aboutHeartbeat"></a> Individuazione heartbeat  
 **Configurabile:** Sì  

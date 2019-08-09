@@ -2,7 +2,7 @@
 title: Monitoraggio del contenuto
 titleSuffix: Configuration Manager
 description: Informazioni su come monitorare il contenuto distribuito usando la console di Configuration Manager.
-ms.date: 12/05/2017
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,159 +11,184 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6bc81a1aa6d8464094195c33faeecfeaf2d46f0
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 37bb1386284fa80d362479242a693b1a6f9b45a3
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123931"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536503"
 ---
-# <a name="monitor-content-you-have-distributed-with-system-center-configuration-manager"></a>Monitorare il contenuto distribuito con System Center Configuration Manager
+# <a name="monitor-content-you-distribute-with-configuration-manager"></a>Monitorare il contenuto distribuito con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Usare la console di System Center Configuration Manager per monitorare il contenuto distribuito, tra cui:  
+Usare la console di Configuration Manager per monitorare il contenuto distribuito, ad esempio:  
 
--   Lo stato di tutti i tipi di pacchetti in relazione ai punti di distribuzione associati.  
--   Lo stato di convalida per il contenuto di un pacchetto.  
--   Lo stato del contenuto assegnato a un gruppo specifico di punti di distribuzione.  
--   Lo stato del contenuto assegnato a un punto di distribuzione.  
--   Lo stato delle funzionalità facoltative per ogni punto di distribuzione (convalida del contenuto, PXE e multicast).  
+- Lo stato di tutti i tipi di pacchetto per i punti di distribuzione associati.  
+- Lo stato di convalida per il contenuto di un pacchetto.  
+- Lo stato del contenuto assegnato a un gruppo specifico di punti di distribuzione.  
+- Lo stato del contenuto assegnato a un punto di distribuzione.  
+- Lo stato delle funzionalità facoltative per ogni punto di distribuzione (convalida del contenuto, PXE e multicast).  
 
 > [!NOTE]  
->  Configuration Manager monitora solo il contenuto in un punto di distribuzione nella raccolta contenuto. Il contenuto archiviato nel punto di distribuzione in condivisioni pacchetto o personalizzate non è monitorato.  
+> Configuration Manager monitora solo il contenuto in un punto di distribuzione nella raccolta contenuto. Non monitora il contenuto archiviato nel punto di distribuzione in condivisioni pacchetto o personalizzate.  
 
-##  <a name="BKMK_ContentStatus"></a> Monitoraggio dello stato del contenuto  
- Il nodo **Stato componente** dell'area di lavoro **Monitoraggio** fornisce informazioni sui pacchetti contenuto. Nella console di Configuration Manager è possibile esaminare informazioni quali:  
+## <a name="BKMK_ContentStatus"></a> Monitoraggio dello stato del contenuto
 
--   Il nome del pacchetto.  
--   Il tipo.  
--   Il numero di punti di distribuzione a cui è stato inviato un pacchetto.  
--   Il tasso di conformità.  
--   La data di creazione del pacchetto.  
--   L'ID del pacchetto.  
--   La versione di origine.  
+Il nodo **Stato componente** dell'area di lavoro **Monitoraggio** fornisce informazioni sui pacchetti contenuto. Nella console di Configuration Manager esaminare informazioni quali:  
 
-È anche possibile trovare informazioni dettagliate sullo stato di qualsiasi pacchetto nonché lo stato di distribuzione del pacchetto, tra cui:  
+- Nome, tipo e ID del pacchetto
+- Numero di punti di distribuzione a cui è stato inviato un pacchetto
+- Tasso di conformità
+- Data di creazione del pacchetto
+- Versione di origine
 
--   Il numero di errori.  
--   Le distribuzioni in sospeso.  
--   Il numero di installazioni.
+Sono disponibili anche informazioni dettagliate sullo stato di qualsiasi pacchetto, tra cui:  
+
+- Stato di distribuzione
+- Numero di errori
+- Distribuzioni in sospeso  
+- Numero di installazioni
 
 È anche possibile gestire le distribuzioni di contenuto ancora in corso o non completate correttamente in un punto di distribuzione:  
 
--   L'opzione per annullare o ridistribuire il contenuto è disponibile quando si visualizza il messaggio di stato di un processo di distribuzione a un punto di distribuzione nel riquadro **Dettagli asset**. Questo riquadro è disponibile nella scheda **In corso** o nella scheda **Errore** del nodo **Stato contenuto**.  
--   Inoltre, nei dettagli di un processo nella scheda **In corso** viene visualizzata la percentuale di completamento del processo, mentre nei dettagli di un processo nella scheda **Errore** vengono visualizzati il numero di tentativi rimanenti per un processo e il tempo di attesa prima che possa essere effettuato un altro tentativo.  
+- L'opzione per annullare o ridistribuire il contenuto è disponibile quando si visualizza il messaggio di stato di un processo di distribuzione a un punto di distribuzione nel riquadro **Dettagli asset**. Questo riquadro è disponibile nella scheda **In corso** o nella scheda **Errore** del nodo **Stato contenuto**.  
+- Inoltre, nei dettagli di un processo nella scheda **In corso** viene visualizzata la percentuale di completamento del processo, I dettagli del processo indicano anche il numero di tentativi rimanenti per un processo. Quando si visualizzano i dettagli di un processo nella scheda **Errore**, viene indicato tra quanto tempo verrà eseguito il prossimo tentativo.  
 
 Quando si annulla una distribuzione non ancora completata, il processo di distribuzione per il trasferimento del contenuto viene interrotto:  
 
--   Lo stato della distribuzione viene aggiornato per indicare che la distribuzione non è riuscita ed è stata annullata da un'azione dell'utente.  
--   Questo nuovo stato viene visualizzato nella scheda **Errore** .  
-
-> [!TIP]  
->  A distribuzione quasi completata, è possibile che l'annullamento della distribuzione non venga effettuato prima del completamento di tale operazione al punto di distribuzione. In tal caso, l'annullamento della distribuzione viene ignorato e lo stato indica che la distribuzione è stata eseguita correttamente.  
+- Lo stato della distribuzione viene aggiornato per indicare che la distribuzione non è riuscita ed è stata annullata da un'azione dell'utente.  
+- Questo nuovo stato viene visualizzato nella scheda **Errore** .  
 
 > [!NOTE]  
->  Sebbene si possa selezionare l'opzione per annullare una distribuzione a un punto di distribuzione che si trova su un server del sito, tale operazione non ha alcun effetto. Ciò si verifica perché il server del sito e il punto di distribuzione su un server del sito condividono l'archivio di contenuto a istanza singola. Non sono presenti processi di distribuzione da annullare.  
+> A distribuzione quasi completata, è possibile che l'annullamento della distribuzione non venga effettuato prima del completamento dell'operazione al punto di distribuzione. In tal caso, l'annullamento della distribuzione viene ignorato e lo stato indica che la distribuzione è stata eseguita correttamente.  
+>
+> Sebbene si possa selezionare l'opzione per annullare una distribuzione a un punto di distribuzione che si trova su un server del sito, tale operazione non ha alcun effetto. Il motivo di questo comportamento è che il server del sito e il punto di distribuzione in un server del sito condividono lo stesso archivio di contenuti a istanza singola. Non sono presenti processi di distribuzione da annullare.  
 
 Quando si ridistribuisce il contenuto dopo un trasferimento non riuscito in un punto di distribuzione, Configuration Manager inizia subito a ridistribuire il contenuto nel punto di distribuzione, aggiornandone lo stato in base allo stato attuale di tale ridistribuzione.  
 
-Usare le procedure seguenti per visualizzare lo stato del contenuto e gestire distribuzioni ancora in corso o non riuscite.  
+### <a name="tasks-to-monitor-content"></a>Attività per monitorare il contenuto
 
-### <a name="to-monitor-content-status"></a>Per monitorare lo stato del contenuto  
+1. Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio**, espandere **Stato distribuzione** e quindi selezionare il nodo **Stato contenuto**. Questo nodo visualizza i pacchetti.  
 
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
+2. Selezionare il pacchetto che si vuole gestire.  
 
-2.  Nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**, quindi fare clic su **Stato contenuto**. Vengono visualizzati i pacchetti.  
+3. Nella scheda **Home** della barra multifunzione selezionare **Visualizza stato** nel gruppo **Contenuto**. La console visualizzerà informazioni dettagliate sullo stato del pacchetto.
 
-3.  Selezionare il pacchetto di cui visualizzare informazioni dettagliate sullo stato.  
+Per altre azioni, passare a una delle sezioni seguenti:
 
-4.  Nella scheda **Home** fare clic su **Visualizza stato**. Vengono visualizzate informazioni dettagliate sullo stato per il pacchetto.  
+#### <a name="cancel-a-distribution-that-remains-in-progress"></a>Annullare una distribuzione ancora in corso  
 
-### <a name="to-cancel-a-distribution-that-remains-in-progress"></a>Per annullare una distribuzione ancora in corso  
+1. Passare alla scheda **In corso**.
 
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
+2. Nel riquadro **Dettagli asset** fare clic con il pulsante destro del mouse sulla voce relativa alla distribuzione da annullare e scegliere **Annulla**.  
 
-2.  Nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**, quindi fare clic su **Stato contenuto**. Vengono visualizzati i pacchetti.  
+3. Scegliere **Sì** per confermare l'azione e annullare il processo di distribuzione al punto di distribuzione.  
 
-3.  Selezionare il pacchetto che si desidera gestire, quindi nel riquadro dei dettagli fare clic su **Visualizza stato**.  
+#### <a name="redistribute-content-that-failed-to-distribute"></a>Ridistribuire il contenuto dopo una distribuzione non riuscita  
 
-4.  Nel riquadro **Dettagli asset** della scheda **In corso** fare clic con il pulsante destro del mouse sulla voce relativa alla distribuzione che si vuole annullare e scegliere **Annulla**.  
+1. Passare alla scheda **Errore**.
 
-5.  Fare clic su **Sì** per confermare l'operazione e annullare il processo di distribuzione a un determinato punto di distribuzione.  
+2. Nel riquadro **Dettagli asset** fare clic con il pulsante destro del mouse sulla voce relativa alla distribuzione da ridistribuire e scegliere **Ridistribuisci**.  
 
-### <a name="to-redistribute-content-that-failed-to-distribute"></a>Per ridistribuire il contenuto dopo una distribuzione non riuscita  
+3. Scegliere **Sì** per confermare l'azione e avviare il processo di ridistribuzione al punto di distribuzione.  
 
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-2.  Nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**, quindi fare clic su **Stato contenuto**. Vengono visualizzati i pacchetti.  
+## <a name="distribution-point-group-status"></a>Stato del gruppo di punti di distribuzione
 
-3.  Selezionare il pacchetto che si desidera gestire, quindi nel riquadro dei dettagli fare clic su **Visualizza stato**.  
-
-4.  Nel riquadro **Dettagli asset** della scheda **Errore** fare clic con il pulsante destro del mouse sulla voce relativa alla distribuzione che si vuole ripetere e scegliere **Ridistribuisci**.  
-
-5.  Fare clic su **Sì** per confermare l'operazione e avviare il processo di ridistribuzione allo specifico punto di distribuzione.  
-
-## <a name="distribution-point-group-status"></a>Stato del gruppo di punti di distribuzione  
 Il nodo **Stato gruppo di punti di distribuzione** nell'area di lavoro **Monitoraggio** fornisce informazioni sui gruppi di punti di distribuzione. È possibile esaminare informazioni quali:  
 
--   Il nome del gruppo di punti di distribuzione.  
--   La descrizione.  
--   Il numero di punti di distribuzione appartenenti al gruppo.  
--   Il numero di pacchetti assegnati al gruppo.  
--   Lo stato del gruppo di punti di distribuzione.  
--   Il tasso di conformità.  
+- Nome, descrizione e stato del gruppo di punti di distribuzione
+- Numero di punti di distribuzione membri del gruppo di punti di distribuzione
+- Numero di pacchetti assegnati al gruppo
+- Tasso di conformità
 
-È anche possibile visualizzare informazioni dettagliate sullo stato per gli elementi seguenti:  
+È anche possibile visualizzare le informazioni dettagliate sullo stato seguenti:  
 
--   Gli errori del gruppo di punti di distribuzione.  
--   Il numero di distribuzioni in corso.
--   Il numero di distribuzioni completate.  
+- Errori del gruppo di punti di distribuzione  
+- Numero di distribuzioni in corso
+- Numero di distribuzioni completate  
 
-### <a name="to-monitor-distribution-point-group-status"></a>Per monitorare lo stato del gruppo di punti di distribuzione  
+### <a name="monitor-distribution-point-group-status"></a>Monitorare lo stato del gruppo di punti di distribuzione  
 
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio**, espandere **Stato distribuzione** e quindi selezionare il nodo **Stato gruppo di punti di distribuzione**. Verranno visualizzati i gruppi di punti di distribuzione.  
 
-2.  Nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**, quindi fare clic su **Stato gruppo di punti di distribuzione**. Vengono visualizzati i gruppi di punti di distribuzione.  
+2. Selezionare il gruppo di punti di distribuzione di cui visualizzare le informazioni dettagliate sullo stato.  
 
-3.  Selezionare il gruppo di punti di distribuzione di cui visualizzare le informazioni dettagliate sullo stato.  
+3. Nella scheda **Home** della barra multifunzione selezionare **Visualizza stato**. Vengono visualizzate informazioni dettagliate sullo stato del gruppo di punti di distribuzione.  
 
-4.  Nella scheda **Home** fare clic su **Visualizza stato**. Vengono visualizzate le informazioni dettagliate sullo stato per il gruppo di punti di distribuzione.  
 
-## <a name="distribution-point-configuration-status"></a>Stato di configurazione dei punti di distribuzione  
- Il nodo **Stato di configurazione dei punti di distribuzione** nell'area di lavoro **Monitoraggio** fornisce informazioni sul punto di distribuzione. È possibile verificare gli attributi che sono abilitati per il punto di distribuzione, come PXE, multicast, convalida del contenuto e lo stato della distribuzione per il punto di distribuzione. È inoltre possibile visualizzare informazioni dettagliate sullo stato per il punto di distribuzione.  
+## <a name="distribution-point-configuration-status"></a>Stato di configurazione dei punti di distribuzione
+
+Il nodo **Stato di configurazione dei punti di distribuzione** nell'area di lavoro **Monitoraggio** fornisce informazioni sul punto di distribuzione. È possibile esaminare gli attributi abilitati per il punto di distribuzione, ad esempio PXE, multicast, convalida del contenuto. Esaminare anche lo stato di distribuzione per il punto di distribuzione.
 
 > [!WARNING]  
->  Lo stato di configurazione del punto di distribuzione è relativo alle ultime 24 ore. Se il punto di distribuzione ha un errore e viene ripristinato, lo stato dell'errore potrebbe essere visualizzato fino a 24 ore dopo il ripristino del punto di distribuzione.  
+> Lo stato di configurazione del punto di distribuzione è relativo alle ultime 24 ore. Se il punto di distribuzione ha un errore e viene ripristinato, lo stato dell'errore potrebbe essere visualizzato fino a 24 ore dopo il ripristino del punto di distribuzione.  
 
-Usare la procedura seguente per visualizzare lo stato di configurazione del punto di distribuzione.  
+### <a name="monitor-distribution-point-configuration-status"></a>Monitorare lo stato di configurazione del punto di distribuzione  
 
-### <a name="to-monitor-distribution-point-configuration-status"></a>Per monitorare lo stato di configurazione del punto di distribuzione  
+1. Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio**, espandere **Stato distribuzione** e quindi selezionare il nodo **Stato di configurazione dei punti di distribuzione**.  
 
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
+2. Selezionare un punto di distribuzione.  
 
-2.  Nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**, quindi fare clic su **Stato di configurazione dei punti di distribuzione**. Vengono visualizzati i punti di distribuzione.  
-
-3.  Selezionare il punto di distribuzione di cui visualizzare le informazioni sullo stato.  
-
-4.  Nel riquadro dei risultati fare clic sulla scheda **Dettagli** . Verranno visualizzate le informazioni sullo stato per il punto di distribuzione.  
-
-## <a name="client-data-sources-dashboard"></a>Dashboard Origini dati del client
-A partire dalla versione 1610, è possibile usare il dashboard **Origini dati del client** per informazioni sull'uso di [Peer Cache](/sccm/core/plan-design/hierarchy/client-peer-cache) nell'ambiente. Questo dashboard inizierà a visualizzare i dati dopo che il contenuto è stato scaricato dai client e tale informazione viene segnalata al sito. Questa operazione può richiedere al massimo 24 ore.
-
-> [!TIP]  
-> La **peer cache client** e il dashboard **Origini dati del client** sono [funzionalità in versione non definitiva](/sccm/core/servers/manage/pre-release-features) introdotte per la prima volta nella versione 1610. A partire dalla versione 1710, queste funzionalità non sono più in versione non definitiva. È necessario abilitare la peer cache client prima che il dashboard Origini dati del client sia visibile nella console.
+3. Nel riquadro dei risultati passare alla scheda **Dettagli**. Verranno visualizzate le informazioni di stato per il punto di distribuzione.  
 
 
-Nella console passare a **Monitoraggio** > **Stato distribuzione** > **Origini dati del client**. In questa posizione è possibile selezionare un periodo di tempo da applicare al dashboard. Nella visualizzazione è quindi possibile selezionare il gruppo di limiti o il pacchetto per il quale visualizzare le informazioni. Quando si esaminano le informazioni, passare il puntatore sulla superficie per vedere altri dettagli relativi ai diversi contenuti o origini dei criteri.
+## <a name="client-data-sources-dashboard"></a>Dashboard origini dati del client
 
-Sono incluse le seguenti informazioni:  
-- **Origini del contenuto client**: visualizza l'origine da cui i client hanno ottenuto il contenuto.
-- **Punti di distribuzione:**: visualizza il numero di punti di distribuzione che fanno parte del gruppo di limiti selezionato.
-- **Client che hanno usato un punto di distribuzione**: questo valore indica quanti client, tra quelli presenti nel gruppo di limiti selezionato, hanno usato un punto di distribuzione per ottenere contenuto.
-- **Origini di peer cache**: per il gruppo di limiti selezionato indica quante origini di peer cache hanno segnalato la cronologia di download.
-- **Client che hanno usato un peer**: questo valore indica quanti client, tra quelli presenti nel gruppo di limiti selezionato, hanno usato un'origine peer cache per ottenere contenuto.
+Usare la dashboard **Origini dati del client** per acquisire altre informazioni sulle origini dalle quali i client ottengono il contenuto nell'ambiente. La dashboard inizia a visualizzare i dati dopo che i client avranno scaricato il contenuto e segnalato le informazioni al sito. Questo processo può richiedere fino a 24 ore.
 
+> [!Note]  
+> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Prima di usarla è necessario abilitare la funzionalità **Peer cache client**. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).  
 
+Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio**, espandere **Stato distribuzione** e selezionare il nodo **Origini dati del client**. Selezionare un periodo di tempo da applicare alla dashboard. Quindi selezionare il gruppo di limiti per il quale si vuole visualizzare informazioni. È possibile passare il puntatore del mouse sui riquadri per vedere altri dettagli sulle diverse origini del contenuto o dei criteri.
 
-È anche possibile usare un nuovo report, **Client Data Sources - Summarization** (Origini dati del client - Riepilogo), per visualizzare un riepilogo delle origini dati del client per ogni gruppo di limiti.
+Usare anche il report **Origini dati del client - Riepilogo del contenuto** per visualizzare un riepilogo delle origini dati del client per ogni gruppo di limiti.
+
+### <a name="dashboard-tiles"></a>Riquadri del dashboard
+
+Il dashboard include i riquadri seguenti:  
+
+#### <a name="client-content-sources"></a>Origini del contenuto client
+
+Visualizza le origini da cui i client hanno ottenuto il contenuto:
+
+- Punto di distribuzione
+- [Punto di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point)
+- [BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#bkmk_branchcache)
+- [Peer cache](/sccm/core/plan-design/hierarchy/client-peer-cache)
+- [Ottimizzazione recapito](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#delivery-optimization) (a partire dalla versione 1906)<sup>[Nota 1](#bkmk_note1)</sup>
+- Microsoft Update: I dispositivi segnalano questa origine quando il client di Configuration Manager scarica gli aggiornamenti software dai servizi cloud Microsoft. Questi servizi includono Microsoft Update e Office 365.
+
+![Riquadro Origini del contenuto client nel dashboard](media/3555759-do-source.png)
+
+<a name="bkmk_note1"></a>
+
+> [!Note]  
+> A partire dalla versione 1906<!--3555759-->, per includere Ottimizzazione recapito in questa dashboard, seguire questa procedura:
+>
+> - Configurare l'impostazione del client **Abilita l'installazione di aggiornamenti rapidi nei client** nel gruppo Aggiornamenti software
+>
+> - Distribuire gli aggiornamenti rapidi di Windows 10
+>
+> Per altre informazioni, vedere [Gestire i file di installazione rapida per gli aggiornamenti di Windows 10](/sccm/sum/deploy-use/manage-express-installation-files-for-windows-10-updates).
+
+#### <a name="distribution-points"></a>Punti di distribuzione
+
+Visualizza il numero di punti di distribuzione che fanno parte del gruppo di limiti selezionato.
+
+#### <a name="clients-that-used-a-distribution-point"></a>Client che hanno usato un punto di distribuzione
+
+Questo riquadro indica quanti client, tra quelli presenti nel gruppo di limiti selezionato, hanno usato un punto di distribuzione per ottenere contenuto.
+
+#### <a name="peer-cache-sources"></a>Origini di peer cache
+
+Per il gruppo di limiti selezionato, questo riquadro indica quante origini di peer cache hanno segnalato la cronologia di download.
+
+#### <a name="clients-that-used-a-peer"></a>Client che hanno usato un peer
+
+Questo riquadro indica quanti client, tra quelli presenti nel gruppo di limiti selezionato, hanno usato un'origine peer cache per ottenere contenuto.
+
+#### <a name="top-distributed-content"></a>Contenuto distribuito principale
+
+I pacchetti più distribuiti per tipo di origine

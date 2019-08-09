@@ -2,7 +2,7 @@
 title: Funzionalità deprecate
 titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità che Configuration Manager non supporta più.
-ms.date: 07/03/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60b00c5621f829cd77193758ec415e5173c9da5a
-ms.sourcegitcommit: d74415e49a6db28ee5198440c7f321529a9f7f33
+ms.openlocfilehash: b6cd440043c61431b648411eb4eea1bda0635d34
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68312498"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536932"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Funzionalità rimosse e deprecate per Configuration Manager
 
@@ -36,7 +36,7 @@ Queste informazioni sono soggette a modifica nelle versioni future. È possibile
 | App Portale aziendale di Configuration Manager | 21 maggio 2019 | Prima versione rilasciata dopo il 1° novembre 2019|
 | Catalogo applicazioni, che comprende i due ruoli del sistema del sito: il punto per siti Web del Catalogo applicazioni e il punto per servizi Web. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat). | 21 maggio 2019 | Prima versione rilasciata dopo il 1° novembre 2019|
 |È stata modificata l'implementazione per la condivisione del contenuto da Azure. Usare un gateway di gestione cloud abilitato per il contenuto. Non sarà possibile creare un punto di distribuzione cloud tradizionale in futuro.|Febbraio 2019|Prima versione rilasciata dopo il 1° novembre 2019|
-|Distribuzione classica del servizio in Azure per il gateway di gestione cloud e il punto di distribuzione cloud. Per altre informazioni, vedere [Pianificare il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).|Novembre 2018|Prima versione rilasciata dopo il 1° luglio 2019|
+|Distribuzione classica del servizio in Azure per il gateway di gestione cloud e il punto di distribuzione cloud. Per altre informazioni, vedere [Pianificare il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).|Novembre 2018|Versione 1906|
 |System Center Endpoint Protection per Mac e Linux<br>Per altre informazioni, vedere il [post del blog sulla fine del supporto](https://go.microsoft.com/fwlink/?linkid=870182).|Ottobre 2018|31 dicembre 2018|
 |Accesso condizionale in locale<br>Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).|30 gennaio 2019|1 settembre 2019|
 |Gestione di dispositivi mobili (MDM) ibrida<br>Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<br><br>A partire dalla versione 1902 del servizio Intune, prevista per la fine di febbraio 2019, i nuovi clienti non possono creare una nuova connessione ibrida.<!--Intune feature 2683117-->|14 agosto 2018|1 settembre 2019|

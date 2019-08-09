@@ -2,7 +2,7 @@
 title: Elementi deprecati per i client
 titleSuffix: Configuration Manager
 description: Informazioni sui sistemi operativi client che Configuration Manager non supporta più.
-ms.date: 03/27/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad9dba601a1ddc6d16e0c820bf7577531b6eb1db
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: f8f881b828ba30d1e38e76c96c71709fb0e744f2
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496814"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536917"
 ---
 # <a name="removed-and-deprecated-items-for-configuration-manager-clients"></a>Elementi rimossi e deprecati per i client di Configuration Manager
 
@@ -33,14 +33,17 @@ Se non specificato diversamente, ogni sistema operativo supportato è supportato
 
 |**Sistemi operativi**|**Primo avviso funzionalità deprecata**|**Supporto rimosso**|  
 |-|-|-|
+|Windows CE 7.0|19 luglio 2019|Prima versione rilasciata dopo il 30 giugno 2020|
+|Windows 10 Mobile|19 luglio 2019|Prima versione rilasciata dopo il 30 giugno 2020|
+|Windows 10 Mobile Enterprise|19 luglio 2019|Prima versione rilasciata dopo il 30 giugno 2020|
 |Linux e UNIX|22 marzo 2018|Versione 1902|
 |Windows 8: Professional, Enterprise|12 gennaio 2016|Versione 1802|
 |Windows Embedded 8 Pro|12 gennaio 2016|Versione 1802|
 |Windows Embedded 8 Industry|12 gennaio 2016|Versione 1802|
-|Windows XP Embedded <br><br> Include tutti i [sistemi operativi Embedded basati su XP](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#windows-embedded-computers)|10 luglio 2015|Versione 1702| 
-|Windows Vista|10 luglio 2015|Versione 1511| 
+|Windows XP Embedded <br><br> Include tutti i [sistemi operativi Embedded basati su XP](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#windows-embedded-computers)|10 luglio 2015|Versione 1702|
+|Windows Vista|10 luglio 2015|Versione 1511|
 |Windows Server 2003 R2|10 luglio 2015|Versione 1511|
-|Windows Server 2003|10 luglio 2015|Versione 1511|   
+|Windows Server 2003|10 luglio 2015|Versione 1511|
 |Windows XP|10 luglio 2015|Versione 1511|  
 |Mac OS X  10.6 - 10.8|10 luglio 2015|Versione 1511|  
 |Windows Mobile 6.0 - 6.5|10 luglio 2015|Versione 1511|  
@@ -48,8 +51,7 @@ Se non specificato diversamente, ogni sistema operativo supportato è supportato
 |Windows CE 5.0 - 6.0|10 luglio 2015|Versione 1511|  
 
 
-
-## <a name="more-information"></a>Altre informazioni
+## <a name="see-also"></a>Vedere anche
 
 Per altre informazioni, vedere gli articoli seguenti:
 

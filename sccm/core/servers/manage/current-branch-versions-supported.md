@@ -2,7 +2,7 @@
 title: Versioni Current Branch
 titleSuffix: Configuration Manager
 description: Informazioni sulla cronologia delle versioni di Configuration Manager e sulle fasi del servizio offerto.
-ms.date: 03/27/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f524096334d50a3a01ebf79436c32fdf732ca088
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: 1603fb604a4dccb0b61ae69c9c3d54d794c42e40
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67252050"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536303"
 ---
 # <a name="support-for-configuration-manager-current-branch-versions"></a>Supporto per le versioni Current Branch di Configuration Manager
 
@@ -28,17 +28,17 @@ Microsoft prevede di rilasciare diversi aggiornamenti per le versioni Current Br
 
 - Fase di manutenzione **Aggiornamenti della sicurezza (solo)** : quando viene resa disponibile una nuova versione Current Branch, Microsoft supporta solo gli aggiornamenti della sicurezza per le versioni precedenti per il ciclo di vita di supporto rimanente per tali versioni (mostrato nella figura 1).  
 
-([Grafico a schermo intero](media/CM_Servicing_support_timeline1.png))
+([Grafico a schermo intero](media/servicing_support_timeline.png))
 
-![Immagine della sequenza temporale per la manutenzione e il supporto di Configuration Manager](media/CM_Servicing_support_timeline1.png)  
+![Immagine della sequenza temporale per la manutenzione e il supporto di Configuration Manager](media/servicing_support_timeline.png)  
 
 Figura 1. Esempio di sovrapposizione del ciclo di rilascio per il supporto della manutenzione della versione Current Branch. Questo esempio ha il solo scopo di illustrare il ciclo e non rappresenta le date di rilascio effettive o previste.
 
 > [!NOTE]  
->  La versione Current Branch più recente è sempre nella fase di manutenzione **Aggiornamenti di sicurezza e critici**. Questo significa che, nel caso in cui venga rilevato un errore del codice che richiede un aggiornamento critico, è necessario che sia installata la versione Current Branch più recente per ricevere una correzione. Tutte le altre versioni Current Branch supportate sono idonee a ricevere gli aggiornamenti della sicurezza.
-> - Per le versioni 1710 e successive, il supporto termina completamente allo scadere del ciclo di vita di 18 mesi della versione Current Branch corrente.
-> - Per le versioni 1706 e precedenti, il supporto termina allo scadere del ciclo di vita di 12 mesi.
-> 
+> La versione Current Branch più recente è sempre nella fase di manutenzione **Aggiornamenti di sicurezza e critici**. Questo significa che, nel caso in cui venga rilevato un errore del codice che richiede un aggiornamento critico, è necessario che sia installata la versione Current Branch più recente per ricevere una correzione. Tutte le altre versioni Current Branch supportate sono idonee a ricevere gli aggiornamenti della sicurezza.
+>
+> Il supporto termina completamente allo scadere del ciclo di vita di 18 mesi della versione Current Branch corrente.
+>
 > Aggiornare l'ambiente di Configuration Manager alla versione più recente prima della scadenza del supporto per la versione corrente.
 
 Per un elenco di versioni Current Branch, vedere [Dettagli sulla versione](/sccm/core/servers/manage/updates#version-details).

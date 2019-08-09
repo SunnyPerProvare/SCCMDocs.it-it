@@ -2,7 +2,7 @@
 title: CMTrace
 titleSuffix: Configuration Manager
 description: Informazioni su come usare lo strumento CMTrace per visualizzare i file di log per Configuration Manager.
-ms.date: 05/09/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 332cdf00256ccfbac07b352c22b232edd4ba9363
-ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.openlocfilehash: 3de8e414f5740eb5a667d342e875f3f00f37123d
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66716165"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536112"
 ---
 # <a name="cmtrace"></a>CMTrace
 
@@ -35,33 +35,36 @@ A partire dalla versione 1806, lo strumento per la visualizzazione di log CMTrac
 > [!Note]  
 > CMTrace non viene registrato automaticamente in Windows per l'apertura dei file con estensione log. Per altre informazioni, vedere [Associazioni di file](#file-associations).  
 
-
+A partire dalla versione 1906 **OneTrace** è un nuovo visualizzatore log del Supporto tecnico. Funziona in modo analogo a CMTrace, con miglioramenti. Per altre informazioni, vedere [Supporto tecnico OneTrace](/sccm/core/support/support-center-onetrace).
 
 ## <a name="usage"></a>Utilizzo
 
 Eseguire **CMTrace.exe**. La prima volta che si esegue lo strumento, viene visualizzato un prompt per l'associazione del file. Per altre informazioni, vedere [Associazioni di file](#file-associations).
 
 La maggior parte delle azioni in CMTrace viene eseguita dai menu seguenti:
+
 - [File](#file-menu)
 - [Strumenti](#tools-menu)
-
 
 ### <a name="file-menu"></a>Menu File
 
 Nel menu **File** sono disponibili le azioni seguenti:  
+
 - [Apri](#open)
 - [Open on Server](#open-on-server) (Apri nel server)
 - [Stampa](#print)
 - [Preferenze](#preferences)
 
-Il menu File elenca anche gli otto file più recenti. Per riaprire rapidamente uno di questi log, selezionarlo dal menu File. 
+Il menu File elenca anche gli otto file più recenti. Per riaprire rapidamente uno di questi log, selezionarlo dal menu File.
 
 #### <a name="open"></a>Open
-Visualizza la finestra di dialogo Apri per cercare un file di log. 
 
-Filtrare la vista per cercare i tipi di file seguenti: 
+Visualizza la finestra di dialogo Apri per cercare un file di log.
+
+Filtrare la vista per cercare i tipi di file seguenti:
+
 - File di log (\*.log)  
-- File di log obsoleti (\*.lo_) 
+- File di log obsoleti (\*.lo_)
 - Tutti i file (\*.\*)
 
 Per impostazione predefinita, le due opzioni seguenti non sono selezionate:  
@@ -70,44 +73,47 @@ Per impostazione predefinita, le due opzioni seguenti non sono selezionate:
 
 - **Merge selected files** (Unisci file selezionati): se si abilita questa opzione e si selezionano più file di log, CMTrace unisce i log selezionati nella visualizzazione. Li visualizza come se fossero un unico file di log. Il log unito viene aggiornato allo stesso modo e supporta tutte le altre funzionalità di CMTrace come se fosse un unico file di log.  
 
-
 #### <a name="open-on-server"></a>Open on Server (Apri nel server)
-Esplorare la cartella dei log di Configuration Manager in un computer di sistema del sito con la finestra di dialogo Sfoglia. È anche possibile cercare un computer remoto in rete.   
+
+Esplorare la cartella dei log di Configuration Manager in un computer di sistema del sito con la finestra di dialogo Sfoglia. È anche possibile cercare un computer remoto in rete.
 
 Quando si seleziona un computer remoto da esplorare, CMTrace cerca la condivisione di Configuration Manager. Se non riesce a trovare una condivisione con i file di log di Configuration Manager, viene visualizzato un messaggio di errore.  
 
 Per connettersi direttamente a un computer noto senza esplorazione, usare l'azione [Apri](#open), quindi immettere un nome del server e una condivisione usando il formato UNC.
 
 #### <a name="print"></a>Stampa
+
 Visualizzare la finestra di dialogo Stampa di Windows standard. Questa azione invia il file di log corrente a una stampante. Formatta l'output in base alle impostazioni della scheda Stampa delle preferenze di CMTrace.
 
 #### <a name="preferences"></a>Preferenze
+
 Configurare le impostazioni per CMTrace. Sono disponibili le seguenti opzioni:  
 
 - Scheda**Generale**  
 
-     - **Update Interval** (Intervallo di aggiornamento): controlla la frequenza con la quale CMTrace controlla la presenza di modifiche nei file di log e carica le nuove righe. Per impostazione predefinita, questo valore è impostato su 500 millisecondi.  
+    - **Update Interval** (Intervallo di aggiornamento): controlla la frequenza con la quale CMTrace controlla la presenza di modifiche nei file di log e carica le nuove righe. Per impostazione predefinita, questo valore è impostato su 500 millisecondi.  
 
-     - **Highlight (Evidenziazione)** : imposta il colore usato da CMTrace per evidenziare le righe dei log scelte. Per impostazione predefinita, questo colore è il giallo di base (rosso: 255, verde: 255, blu: 0).  
+    - **Highlight (Evidenziazione)** : imposta il colore usato da CMTrace per evidenziare le righe dei log scelte. Per impostazione predefinita, questo colore è il giallo di base (rosso: 255, verde: 255, blu: 0).  
 
-     - **Columns** (Colonne): consente di configurare le colonne visibili nella visualizzazione dei log e l'ordine in cui vengono visualizzate. Per impostazione predefinita, visualizza Log Text, Component, Date/Time e Thread.  
+    - **Columns** (Colonne): consente di configurare le colonne visibili nella visualizzazione dei log e l'ordine in cui vengono visualizzate. Per impostazione predefinita, visualizza Log Text, Component, Date/Time e Thread.  
 
 - Scheda **Stampa**  
 
-     - **Columns** (Colonne): consente di configurare le colonne usate nella stampa dei file di log e l'ordine in cui vengono visualizzate. Per impostazione predefinita, le colonne vengono stampate così come sono visualizzate.  
+    - **Columns** (Colonne): consente di configurare le colonne usate nella stampa dei file di log e l'ordine in cui vengono visualizzate. Per impostazione predefinita, le colonne vengono stampate così come sono visualizzate.  
 
-     - **Orientation** (Orientamento): consente di impostare l'orientamento di stampa predefinito per la stampa dei file di log. Eseguire l'override di questa impostazione nella finestra di dialogo Stampa. Per impostazione predefinita, usa l'orientamento verticale.  
- 
+    - **Orientation** (Orientamento): consente di impostare l'orientamento di stampa predefinito per la stampa dei file di log. Eseguire l'override di questa impostazione nella finestra di dialogo Stampa. Per impostazione predefinita, usa l'orientamento verticale.  
+
 - Scheda **Avanzate**  
 
-     - **Refresh Interval** (Intervallo di aggiornamento): forza CMTrace ad aggiornare la visualizzazione dei log in base a un intervallo specificato durante il caricamento di un numero elevato di righe. Per impostazione predefinita, questa opzione è disabilitata con un valore pari a zero.  
+    - **Refresh Interval** (Intervallo di aggiornamento): forza CMTrace ad aggiornare la visualizzazione dei log in base a un intervallo specificato durante il caricamento di un numero elevato di righe. Per impostazione predefinita, questa opzione è disabilitata con un valore pari a zero.  
 
         > [!Note]  
-        > In generale non modificare l'**intervallo di aggiornamento**. Può aumentare notevolmente la quantità di tempo necessaria per aprire i file di log di grandi dimensioni. 
-
+        > In generale non modificare l'**intervallo di aggiornamento**. Può aumentare notevolmente la quantità di tempo necessaria per aprire i file di log di grandi dimensioni.
 
 ### <a name="tools-menu"></a>Menu Strumenti
-Nel menu **Strumenti** sono disponibili le azioni seguenti:  
+
+Nel menu **Strumenti** sono disponibili le azioni seguenti:
+
 - [Trova](#find)
 - [Trova successivo](#find-next)
 - [Copia negli Appunti](#copy-to-clipboard)
@@ -119,15 +125,19 @@ Nel menu **Strumenti** sono disponibili le azioni seguenti:
 - [Show/Hide Info Pane](#showhide-info-pane) (Mostra/Nascondi riquadro informazioni)
 
 #### <a name="find"></a>Trova
+
 Cercare nel file di log aperto una stringa di testo specificata.  
 
 #### <a name="find-next"></a>Trova successivo
+
 Trova la stringa corrispondente successiva, specificata in precedenza nella finestra di dialogo Trova.  
 
 #### <a name="copy-to-clipboard"></a>Copia negli Appunti
+
 Copia le righe selezionate come testo normale negli Appunti di Windows. Se si stanno esaminando file di log di Configuration Manager e CCM, copia le colonne nello stesso ordine della vista. Separa ogni colonna con un carattere di tabulazione. Usare questa azione quando si copiano i log in messaggi di posta elettronica o in altri documenti.  
 
 #### <a name="highlight"></a>Highlight (Evidenzia)
+
 Immettere una stringa usata da CMTrace per cercare il testo di ogni voce di log. Viene quindi evidenziato ogni testo del log che corrisponde alla stringa immessa.  
 
 - L'evidenziazione usa il colore specificato nelle preferenze.  
@@ -137,20 +147,23 @@ Immettere una stringa usata da CMTrace per cercare il testo di ogni voce di log.
 - Se si immette un numero decimale o esadecimale, CMTrace prova ad associare il valore alla colonna Thread. Usare questo comportamento per evidenziare l'elaborazione di un singolo thread, senza filtrare gli altri thread che potrebbero interagire con esso.  
 
 - Per confrontare le stringhe in base alle lettere maiuscole e minuscole, abilitare l'opzione **Maiuscole/minuscole**.  
- 
+
 #### <a name="filter"></a>Filtro
-Visualizzare o nascondere le righe del log in base ai criteri specificati. Applicare i filtri a qualsiasi delle quattro colonne indipendentemente dal fatto che siano visibili. Queste impostazioni si applicano a ogni file di log aperto. 
+
+Visualizzare o nascondere le righe del log in base ai criteri specificati. Applicare i filtri a qualsiasi delle quattro colonne indipendentemente dal fatto che siano visibili. Queste impostazioni si applicano a ogni file di log aperto.
 
 Esempi:
 <!--SCCMDocs issue #603-->
-- Filtrare **smsts.log** in base al testo delle voci contenente "the action" o "the group". 
+
+- Filtrare **smsts.log** in base al testo delle voci contenente "the action" o "the group".
 - Filtrare **InventoryAgent.log** in base al testo delle voci contenente "destination".
 
-
 #### <a name="error-lookup"></a>Error lookup (Ricerca errori)
+
 Digitare o incollare un codice errore in formato decimale o esadecimale per visualizzare una descrizione. Alcune origini di errore possibili sono: Windows, WMI o Winhttp.
 
 #### <a name="pause"></a>Sospendi
+
 Sospendere o riavviare il monitoraggio dei log. I casi d'uso seguenti sono alcuni dei possibili motivi per usare questa azione:  
 
 - Quando CMTrace visualizza troppo velocemente le informazioni dei file di log  
@@ -160,21 +173,22 @@ Sospendere o riavviare il monitoraggio dei log. I casi d'uso seguenti sono alcun
 - Quando si vuole evitare che CMTrace visualizzi nuovi dati mentre si esamina il file di log  
 
 #### <a name="showhide-details"></a>Show/Hide Details (Mostra/Nascondi dettagli)
+
 Mostrare o nascondere tutte le colonne diverse da quella del testo del log. Espande anche la colonna del testo del log su tutta la larghezza della finestra. Usare questa azione quando si visualizzano i log in un computer con una risoluzione di visualizzazione non sufficiente. Visualizza altre informazioni del testo del log.  
 
-> [!Note]   
+> [!Note]  
 > Quando si visualizzano i file di testo normale, CMTrace nasconde automaticamente i dettagli perché sono sempre vuoti.  
- 
-#### <a name="showhide-info-pane"></a>Show/Hide Info Pane (Mostra/Nascondi riquadro informazioni)
-Visualizza o nasconde il riquadro delle informazioni. Usare questa azione quando si visualizzano i log in un computer con una risoluzione di visualizzazione non sufficiente. Visualizza altri dettagli di registrazione.  
 
+#### <a name="showhide-info-pane"></a>Show/Hide Info Pane (Mostra/Nascondi riquadro informazioni)
+
+Visualizza o nasconde il riquadro delle informazioni. Usare questa azione quando si visualizzano i log in un computer con una risoluzione di visualizzazione non sufficiente. Visualizza altri dettagli di registrazione.  
 
 
 ## <a name="log-pane"></a>Riquadro Log
 
-Il riquadro Log è nella parte superiore della finestra CMTrace. Visualizza le righe dei file di log. 
+Il riquadro Log è nella parte superiore della finestra CMTrace. Visualizza le righe dei file di log.
 
-Quando si seleziona una riga, questa viene temporaneamente evidenziata usando la combinazione colori per la selezione di Windows. 
+Quando si seleziona una riga, questa viene temporaneamente evidenziata usando la combinazione colori per la selezione di Windows.
 
 Le righe evidenziate corrispondono ai criteri definiti con l'opzione **Highlight** (Evidenzia) nel menu **Strumenti**. L'evidenziazione usa il colore specificato in **Preferenze**.
 
@@ -183,10 +197,9 @@ CMTrace visualizza le righe con errori con uno sfondo rosso e il colore del test
 Visualizza le righe con avvisi con uno sfondo giallo. Nei log in formato CCM le voci dei log hanno un valore di tipo esplicito che indica la voce come avviso. Per gli altri formati di log, CMTrace effettua in ogni voce una ricerca con distinzione tra maiuscole e minuscole delle stringhe di testo corrispondenti a "warn".
 
 
-
 ## <a name="info-pane"></a>Riquadro delle informazioni
 
-Il riquadro delle informazioni è nella parte inferiore della finestra CMTrace. Include le funzionalità seguenti:   
+Il riquadro delle informazioni è nella parte inferiore della finestra CMTrace. Include le funzionalità seguenti:
 
 - Dettagli sulla voce di log attualmente selezionata  
 
@@ -198,11 +211,9 @@ Il riquadro delle informazioni è nella parte inferiore della finestra CMTrace. 
 
 Mostrare o nascondere il riquadro delle informazioni con l'opzione **Show/Hide Info Pane** (Mostra/Nascondi riquadro informazioni) nel menu **Tools**. Se il riquadro delle informazioni occupa più di metà della finestra del log, CMTrace lo nasconde automaticamente.
 
-
 ### <a name="progress-bar"></a>Indicatore di stato
 
 Quando si apre un file di log per la prima volta, CMTrace sostituisce il riquadro delle informazioni con un indicatore di stato. Questo stato indica la quantità di contenuti del file esistente già caricata. Lo stato raggiunge il 100%, CMTrace rimuove l'indicatore di stato e lo sostituisce con il riquadro delle informazioni. Quando si caricano file di grandi dimensioni, questo comportamento offre un'indicazione di quanto tempo potrebbe essere necessario per il caricamento.
-
 
 ### <a name="status-bar"></a>Barra di stato
 
@@ -211,34 +222,35 @@ Per i file di log in formato Configuration Manager e in formato CCM, la barra di
 `Elapsed time is <hours>h <minutes>m <seconds>s <milliseconds>ms (<seconds+milliseconds> seconds)`
 
 
-
 ## <a name="windows-shell-integration"></a>Integrazione della shell di Windows
 
 CMTrace supporta le [associazioni di file](#file-associations) e il [trascinamento della selezione](#drag-and-drop).
 
-
-### <a name="file-associations"></a>Associazioni di file 
+### <a name="file-associations"></a>Associazioni di file
 
 CMTrace può associarsi a estensioni di file log e lo_. Quando il programma viene avviato, controlla il Registro di sistema per determinare se è già associato a queste estensioni di file. Se CMTrace non è già associato a nessuna estensione di file, viene chiesto di associare le estensioni di file a CMTrace. Se si seleziona **Non visualizzare più questo messaggio**, CMTrace ignora questo controllo quando viene eseguito su questo computer.
-
 
 ### <a name="drag-and-drop"></a>Trascinamento della selezione
 
 CMTrace supporta la funzionalità di trascinamento della selezione di base. Trascinare un file di log da Esplora risorse a CMTrace per aprirlo.
 
 
-
 ## <a name="other-tips"></a>Altri suggerimenti
 
 ### <a name="last-directory-registry-key"></a>Chiave del Registro di sistema Last Directory
-<!--511280-->
-Per impostazione predefinita, CMTrace salva l'ultimo percorso di log aperto. Questo comportamento è utile nel server del sito, perché l'impostazione predefinita è ogni volta il percorso log. 
 
-La prima volta che lo si avvia in un client, l'impostazione predefinita è la directory di lavoro corrente. Questa posizione può essere il percorso in cui si è salvato CMTrace o un percorso come `%userprofile%\Desktop`. 
+<!--511280-->
+Per impostazione predefinita, CMTrace salva l'ultimo percorso di log aperto. Questo comportamento è utile nel server del sito, perché l'impostazione predefinita è ogni volta il percorso log.
+
+La prima volta che lo si avvia in un client, l'impostazione predefinita è la directory di lavoro corrente. Questa posizione può essere il percorso in cui si è salvato CMTrace o un percorso come `%userprofile%\Desktop`.
 
 Il valore **Last Directory** nella chiave del Registro di sistema `HKEY_CURRENT_USER\Software\Microsoft\Trace32` controlla questa posizione predefinita. Se si imposta questo valore su `%windir%\CCM\Logs` nei client, CMTrace apre i file nel percorso log dei client la prima volta che lo si avvia.
 
 
 ## <a name="see-also"></a>Vedere anche
 
-[File di log](/sccm/core/plan-design/hierarchy/log-files)
+- [File di log](/sccm/core/plan-design/hierarchy/log-files)
+
+- [Visualizzatore file di log del Supporto tecnico](/sccm/core/support/support-center#support-center-log-file-viewer)
+
+- [Supporto tecnico OneTrace](/sccm/core/support/support-center-onetrace)

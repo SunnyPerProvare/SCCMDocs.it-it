@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff14fe508efb5de410f905b8e64d30b55287cacc
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: e96c47c23bd17d7b1059bbcab62b3d1568cd92cd
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68338171"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536593"
 ---
 # <a name="plan-for-security-in-configuration-manager"></a>Pianificare la sicurezza in Configuration Manager
 
@@ -231,6 +231,9 @@ Dato il numero di opzioni e scelte di configurazione in Configuration Manager, l
 1. Installare il sito di Configuration Manager e configurarlo in modo che i sistemi del sito accettino le connessioni client su HTTPS e HTTP.  
 
 2. Configurare la scheda **Comunicazione computer client** nelle proprietà del sito in modo che **Impostazioni sistema del sito** sia **HTTP o HTTPS**, quindi selezionare **Usa certificato client PKI (funzionalità di autenticazione client) quando disponibile**.  Per altre informazioni, vedere [Configurare le impostazioni per i certificati PKI client](/sccm/core/plan-design/security/configure-security#BKMK_ConfigureClientPKI).  
+
+    > [!Note]
+    > A partire dalla versione 1906, questa è la scheda della **sicurezza della comunicazione**.<!-- SCCMDocs#1645 -->  
 
 3. Eseguire il progetto pilota di un'implementazione PKI per i certificati client. Per una distribuzione di esempio, vedere [Distribuire il certificato client per computer Windows](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_client2008_cm2012).  
 

@@ -2,7 +2,7 @@
 title: Prerequisiti per la distribuzione di client Windows
 titleSuffix: Configuration Manager
 description: Informazioni sui prerequisiti per la distribuzione di client Configuration Manager a computer Windows.
-ms.date: 07/30/2018
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d350c99c1f09f79850f1bc532a5a75c2db454d3d
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: d9f9881a8b2cc945b49d79d40777409379aef3fd
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68339094"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68535630"
 ---
 # <a name="prerequisites-for-deploying-clients-to-windows-computers-in-configuration-manager"></a>Prerequisiti per la distribuzione dei client nei computer Windows in Configuration Manager
 
@@ -27,11 +27,10 @@ La distribuzione di client di Configuration Manager nell'ambiente ha le dipenden
 Per altre informazioni sui requisiti minimi per l'hardware e il sistema operativo per il client di Configuration Manager, vedere [Configurazioni supportate](/sccm/core/plan-design/configs/supported-configurations).  
 
 > [!NOTE]  
->  I numeri delle versioni software elencati in questo articolo si riferiscono solo ai numeri delle versioni minime richieste.  
+> I numeri delle versioni software elencati in questo articolo si riferiscono solo ai numeri delle versioni minime richieste.  
 
 
-
-##  <a name="BKMK_prereqs_computers"></a> Prerequisiti per i client Windows  
+## <a name="BKMK_prereqs_computers"></a> Prerequisiti per i client Windows  
 
 Usare le informazioni seguenti per determinare i prerequisiti quando si installa il client di Configuration Manager in dispositivi Windows.  
 
@@ -42,7 +41,31 @@ Usare le informazioni seguenti per determinare i prerequisiti quando si installa
 |Windows Installer versione 3.1.4000.2435|Necessario per supportare l'utilizzo di file di aggiornamento di Windows Installer (MSP) per pacchetti e aggiornamenti software.|  
 |Microsoft Background Intelligent Transfer Service (BITS) versione 2.5|Necessario per consentire i trasferimenti di dati limitati tra il computer client e i sistemi del sito di Configuration Manager. BITS non viene scaricato automaticamente durante l'installazione del client. Quando BITS viene installato nei computer, in genere è necessario un riavvio per completare l'installazione.<br /><br /> La maggior parte dei sistemi operativi include BITS. In caso contrario, installare BITS prima di installare il client di Configuration Manager.|  
 |Utilità di pianificazione di Microsoft|Per completare l'installazione del client, abilitare questo servizio nel client.|  
+|Supporto per la firma del codice SHA-2|A partire dalla versione 1906, i client richiedono il supporto per l'algoritmo di firma del codice SHA-2. Per altre informazioni, vedere [Supporto per la firma del codice SHA-2](#bkmk_sha2).|
 
+#### <a name="bkmk_sha2"></a> Supporto per la firma del codice SHA-2
+
+<!--SCCMDocs-pr#3404-->
+A causa dei punti di debolezza dell'algoritmo SHA-1 e per allinearsi agli standard del settore, Microsoft ora firma solo i file binari di Configuration Manager usando l'algoritmo SHA-2 più sicuro. Per le versioni seguenti del sistema operativo Windows è necessario un aggiornamento per il supporto per la firma del codice SHA-2:
+
+- Windows 7 SP1
+- Windows Server 2008 R2 SP1
+- Windows Server 2008 SP2
+
+Per altre informazioni, vedere [Requisito per il supporto di firma del codice SHA-2 2019 per Windows e Windows Server Update Services](https://support.microsoft.com/en-us/help/4472027/2019-sha-2-code-signing-support-requirement-for-windows-and-wsus).
+
+Se non si aggiornano queste versioni del sistema operativo, non è possibile installare la versione client di Configuration Manager 1906. Questo comportamento si applica a una nuova installazione del client o all'aggiornamento da una versione precedente.
+
+Se è necessario gestire un client in una versione di Windows che non è aggiornata o è meno recente delle versioni elencate in precedenza, usare la versione client di interoperabilità estesa (EIC) di Configuration Manager 1902. Per altre informazioni, vedere [Client di interoperabilità estesa](/sccm/core/understand/interoperability-client).
+
+> [!Tip]  
+> Se non si usa l'[aggiornamento automatico del client](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#use-automatic-client-upgrade) e si aggiornano i client con un altro meccanismo, assicurarsi di aggiornare la versione di ccmsetup. Una versione precedente di ccmsetup potrebbe non convalidare correttamente il nuovo certificato di firma del codice SHA-2 nei file binari del client della versione 1906. Ciò si verifica ad esempio quando si copia ccmsetup.exe in una condivisione file o si usa ccmsetup.msi con criteri di gruppo.<!-- 4963362 -->
+>
+> I meccanismi di aggiornamento client seguenti non dovrebbero esserne interessati:
+>
+> - Installazione push client: Usa il pacchetto client del sito
+> - Installazione basata sull'aggiornamento software: L'aggiornamento del sito viene ripubblicato in WSUS
+> - Dispositivi Windows gestiti da MDM Intune: La versione supportata per questo meccanismo supporta già la firma del codice SHA-2, ma è ancora importante usare la versione più recente di ccmsetup.msi
 
 ### <a name="bkmk_ExternalDependencies"></a> Dipendenze esterne a Configuration Manager e scaricate automaticamente durante l'installazione  
 
@@ -59,27 +82,33 @@ Se il client richiede queste dipendenze per completare l'installazione, le insta
 |Microsoft Visual C++ 2005 Redistributable versione 8.0.50727.42|Per la versione 1606 e precedenti, necessario per supportare le operazioni di Microsoft SQL Server Compact.|  
 |API per Windows Imaging 6.0.6001.18000|Necessario per consentire a Configuration Manager di gestire i file di immagine Windows (wim).|  
 |Microsoft Policy Platform 1.2.3514.0|Necessario per consentire ai client di valutare le impostazioni di conformità.|  
-|Microsoft Silverlight 5.1.41212.0|Necessario per supportare l'esperienza utente del sito Web Catalogo applicazioni. A partire da Configuration Manager 1802, Silverlight non viene più installato automaticamente. La funzionalità principale del Catalogo applicazioni è ora inclusa in Software Center. Il supporto per il sito Web del Catalogo applicazioni termina con la versione 1806.<!--1356195-->|  
 |Microsoft .NET Framework version 4.5.2|Necessario per supportare le operazioni client. Viene installato automaticamente nel computer client se Microsoft .NET Framework 4.5 o versione successiva non è installato in tale computer. Per altre informazioni, vedere [Informazioni aggiuntive su Microsoft .NET Framework versione 4.5.2](#dotNet).|  
 |Componenti di Microsoft SQL Server Compact 4.0 SP1|Necessari per archiviare le informazioni relative alle operazioni client.|  
 
+> [!Important]
+> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+>
+> Per altre informazioni, vedere gli articoli seguenti:
+>
+> - [Configurare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex)
+> - [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures)  
+>
+> Se si sta ancora usando l'esperienza utente del sito Web del Catalogo applicazioni, il client richiede Microsoft Silverlight 5.1.41212.0. A partire da Configuration Manager 1802, Silverlight non viene più installato automaticamente. La funzionalità principale del Catalogo applicazioni è ora inclusa in Software Center.<!--1356195-->
 
-####  <a name="dotNet"></a> Informazioni dettagliate aggiuntive su Microsoft .NET Framework versione 4.5.2  
+#### <a name="dotNet"></a> Informazioni dettagliate aggiuntive su Microsoft .NET Framework versione 4.5.2  
 
 > [!NOTE]  
->  Le versioni .NET 4.0, 4.5 e 4.5.1 non sono più supportate. Per altre informazioni, vedere le [domande frequenti sul ciclo di vita del supporto per Microsoft .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework).  
+> Le versioni .NET 4.0, 4.5 e 4.5.1 non sono più supportate. Per altre informazioni, vedere le [domande frequenti sul ciclo di vita del supporto per Microsoft .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework).  
 
 Per completare l'installazione di Microsoft .NET Framework versione 4.5.2 potrebbe essere necessario un riavvio. L'utente riceve la notifica **Riavvio richiesto** sulla barra delle applicazioni. Gli scenari comuni seguenti richiedono il riavvio dei computer client:  
 
--   Applicazioni o servizi .NET sono in esecuzione NEL computer.  
+- Applicazioni o servizi .NET sono in esecuzione NEL computer.  
 
--   Mancano uno o più aggiornamenti software necessari per l'installazione di .NET.  
+- Mancano uno o più aggiornamenti software necessari per l'installazione di .NET.  
 
--   Il computer è in attesa di un riavvio dalla precedente installazione di aggiornamenti software di .NET Framework.  
-
+- Il computer è in attesa di un riavvio dalla precedente installazione di aggiornamenti software di .NET Framework.  
 
 Al termine dell'installazione di .NET Framework 4.5.2, potrebbero essere necessari ulteriori aggiornamenti. Tali aggiornamenti successivi, potrebbero richiedere un riavvio del computer.  
-
 
 ### <a name="configuration-manager-dependencies"></a>Dipendenze di Configuration Manager  
 
@@ -92,68 +121,62 @@ Per altre informazioni, vedere [Determinare i ruoli del sistema del sito per i c
 |Punto di stato di fallback|Il punto di stato di fallback è un ruolo del sistema del sito facoltativo, ma consigliato per la distribuzione client. Il punto di stato di fallback tiene traccia della distribuzione client e consente ai computer nel sito di Configuration Manager di inviare messaggi di stato quando non possono comunicare con un punto di gestione.|  
 |Punto di Reporting Services|Il punto di Reporting Services è un ruolo del sistema del sito facoltativo, ma consigliato. Visualizza i report relativi alla gestione e alla distribuzione del client. Per altre informazioni, vedere [Creazione di report in Configuration Manager](/sccm/core/servers/manage/reporting).|  
 
-
 ### <a name="installation-method-dependencies"></a>Dipendenze del metodo di installazione  
 
 I prerequisiti seguenti sono specifici dei diversi metodi di installazione client.  
 
 #### <a name="client-push-installation"></a>Installazione push client  
 
--   Il sito usa account di installazione push client per connettersi ai computer per installare il client. Specificare questi account nella scheda **Account** delle proprietà di installazione push client. L'account deve essere membro del gruppo Administrators locale nel computer di destinazione.  
+- Il sito usa account di installazione push client per connettersi ai computer per installare il client. Specificare questi account nella scheda **Account** delle proprietà di installazione push client. L'account deve essere membro del gruppo Administrators locale nel computer di destinazione.  
 
-      Se non si specifica un account di installazione push client, il server del sito usa il proprio account computer.  
+    Se non si specifica un account di installazione push client, il server del sito usa il proprio account computer.  
 
--   Il sito deve individuare il computer in cui verrà installato il client. È necessario almeno un metodo di individuazione di Configuration Manager.  
+- Il sito deve individuare il computer in cui verrà installato il client. È necessario almeno un metodo di individuazione di Configuration Manager.  
 
--   Il computer dispone di una condivisione ADMIN$.  
+- Il computer dispone di una condivisione ADMIN$.  
 
--   Per eseguire automaticamente il push del client di Configuration Manager nelle risorse individuate, selezionare l'opzione **Abilita installazione push client per le risorse assegnate** in Proprietà installazione push client.  
+- Per eseguire automaticamente il push del client di Configuration Manager nelle risorse individuate, selezionare l'opzione **Abilita installazione push client per le risorse assegnate** in Proprietà installazione push client.  
 
--   Il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione per scaricare i file di origine.  
+- Il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione per scaricare i file di origine.  
 
--   A partire dalla versione 1806, quando si richiede l'autenticazione reciproca Kerberos, i client devono risiedere in una foresta Active Directory attendibile. Il protocollo Kerberos in Windows si basa su Active Directory per l'autenticazione reciproca.<!--1358204-->  
-
+- A partire dalla versione 1806, quando si richiede l'autenticazione reciproca Kerberos, i client devono risiedere in una foresta Active Directory attendibile. Il protocollo Kerberos in Windows si basa su Active Directory per l'autenticazione reciproca.<!--1358204-->  
 
 Per usare il push client, sono necessarie le autorizzazioni di sicurezza seguenti:  
 
--   Per configurare l'account di installazione push client: autorizzazione **Modifica** e **Lettura** per l'oggetto **Sito**.  
+- Per configurare l'account di installazione push client: autorizzazione **Modifica** e **Lettura** per l'oggetto **Sito**.  
 
--   Per usare il push client per installare il client in raccolte, dispositivi e query: autorizzazione **Modifica risorsa** e **Lettura** per l'oggetto **Raccolta**.  
-
+- Per usare il push client per installare il client in raccolte, dispositivi e query: autorizzazione **Modifica risorsa** e **Lettura** per l'oggetto **Raccolta**.  
 
 Il ruolo di sicurezza **Amministratore infrastruttura** predefinito include le autorizzazioni necessarie per gestire le installazioni push client.  
 
-
 #### <a name="software-update-point-based-installation"></a>Installazione basata sul punto di aggiornamento software  
 
--   Se lo schema di Active Directory non è stato esteso o se si installano i client da un'altra foresta, usare Criteri di gruppo per effettuare il provisioning dei parametri di installazione per CCMSetup.exe. Per altre informazioni, vedere [Come effettuare il provisioning delle proprietà di installazione client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).  
+- Se lo schema di Active Directory non è stato esteso o se si installano i client da un'altra foresta, usare Criteri di gruppo per effettuare il provisioning dei parametri di installazione per CCMSetup.exe. Per altre informazioni, vedere [Come effettuare il provisioning delle proprietà di installazione client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).  
 
--   Pubblicare il client di Configuration Manager nel punto di aggiornamento software.  
+- Pubblicare il client di Configuration Manager nel punto di aggiornamento software.  
 
--   Per scaricare i file di origine, il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione.  
-
+- Per scaricare i file di origine, il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione.  
 
 Per le autorizzazioni di sicurezza necessarie per gestire gli aggiornamenti software di Configuration Manager, vedere [Prerequisiti per gli aggiornamenti software](/sccm/sum/plan-design/prerequisites-for-software-updates).  
 
-
 #### <a name="group-policy-based-installation"></a>Installazione basata sui criteri di gruppo  
 
--   Se lo schema di Active Directory non è stato esteso o se si installano i client da un'altra foresta, usare Criteri di gruppo per effettuare il provisioning dei parametri di installazione per CCMSetup.exe. Per altre informazioni, vedere [Come effettuare il provisioning delle proprietà di installazione client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).  
+- Se lo schema di Active Directory non è stato esteso o se si installano i client da un'altra foresta, usare Criteri di gruppo per effettuare il provisioning dei parametri di installazione per CCMSetup.exe. Per altre informazioni, vedere [Come effettuare il provisioning delle proprietà di installazione client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).  
 
--   Per scaricare i file di origine, il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione.  
-
+- Per scaricare i file di origine, il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione.  
 
 #### <a name="logon-script-based-installation"></a>Installazione basata su script di accesso  
 
 Per scaricare i file di origine, il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione. A meno che CCMSetup.exe non sia stato specificato con il parametro della riga di comando seguente: `ccmsetup /source`  
 
-
 #### <a name="manual-installation"></a>Installazione manuale  
 
 Per scaricare i file di origine, il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione. A meno che CCMSetup.exe non sia stato specificato con il parametro della riga di comando seguente: `ccmsetup /source`  
 
-
 #### <a name="microsoft-intune-mdm-installation"></a>Installazione MDM di Microsoft Intune
+
+> [!Important]
+> La gestione dei dispositivi mobili ibridi è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).
 
 - Richiede un abbonamento di Microsoft Intune e le licenze appropriate.  
 
@@ -165,112 +188,103 @@ Per scaricare i file di origine, il computer client deve poter comunicare con un
 
     - Gateway di gestione cloud  
 
-
 #### <a name="workgroup-computer-installation"></a>Installazione di computer del gruppo di lavoro  
 
 Per accedere alle risorse nel dominio del server del sito di Configuration Manager, è necessario configurare l'account di accesso alla rete per il sito.  
 
 Per altre informazioni su come configurare l'account di accesso alla rete, vedere [Concetti di base per la gestione dei contenuti](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management).  
 
-
 #### <a name="software-distribution-based-installation-for-upgrades-only"></a>Installazione basata sulla distribuzione software (solo per aggiornamenti)  
 
--   Se lo schema di Active Directory non è stato esteso o se si installano i client da un'altra foresta, usare Criteri di gruppo per effettuare il provisioning dei parametri di installazione per CCMSetup.exe. Per altre informazioni, vedere [Come effettuare il provisioning delle proprietà di installazione client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).   
+- Se lo schema di Active Directory non è stato esteso o se si installano i client da un'altra foresta, usare Criteri di gruppo per effettuare il provisioning dei parametri di installazione per CCMSetup.exe. Per altre informazioni, vedere [Come effettuare il provisioning delle proprietà di installazione client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Provision).
 
--   Per scaricare i file di origine, il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione.  
-
+- Per scaricare i file di origine, il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione.  
 
 Per le autorizzazioni di sicurezza necessarie per eseguire l'aggiornamento client di Configuration Manager usando la gestione delle applicazioni, vedere [Sicurezza e privacy per la gestione delle applicazioni ](/sccm/apps/plan-design/security-and-privacy-for-application-management).  
-
 
 #### <a name="automatic-client-upgrades"></a>Aggiornamenti automatici del client  
 
 È necessario essere membro del ruolo di sicurezza **Amministratore completo** per configurare gli aggiornamenti client automatici.  
-
 
 ### <a name="firewall-requirements"></a>Requisiti del firewall  
 
 Se esiste un firewall tra i server di sistema del sito e i computer in cui si vuole installare il client di Configuration Manager, vedere [Impostazioni di Windows Firewall e delle porte per i client](/sccm/core/clients/deploy/windows-firewall-and-port-settings-for-clients).  
 
 
-
-##  <a name="BKMK_prereqs_mobiledevices"></a> Prerequisiti per i client di dispositivi mobili  
+## <a name="BKMK_prereqs_mobiledevices"></a> Prerequisiti per i client di dispositivi mobili  
 
 Quando si installa il client di Configuration Manager in dispositivi mobili e si esegue la registrazione, usare le informazioni seguenti per determinare i prerequisiti.  
 
-### <a name="dependencies-external-to-configuration-manager"></a>Dipendenze esterne a Configuration Manager  
+### <a name="dependencies-external-to-configuration-manager"></a>Dipendenze esterne a Configuration Manager
 
--   Un'autorità di certificazione (CA) globale (enterprise) Microsoft con modelli di certificato per distribuire e gestire i certificati necessari per i dispositivi mobili.  
+- Un'autorità di certificazione (CA) globale (enterprise) Microsoft con modelli di certificato per distribuire e gestire i certificati necessari per i dispositivi mobili.  
 
-     La CA emittente deve approvare automaticamente le richieste di certificati degli utenti dei dispositivi mobili durante il processo di registrazione.  
+    La CA emittente deve approvare automaticamente le richieste di certificati degli utenti dei dispositivi mobili durante il processo di registrazione.  
 
-     Per altre informazioni sui requisiti dei certificati, vedere [Sicurezza e privacy per i profili certificato](/sccm/protect/plan-design/security-and-privacy-for-certificate-profiles).  
+    Per altre informazioni sui requisiti dei certificati, vedere [Sicurezza e privacy per i profili certificato](/sccm/protect/plan-design/security-and-privacy-for-certificate-profiles).  
 
--   Un gruppo di sicurezza contenente gli utenti che possono registrare i propri dispositivi mobili.  
+- Un gruppo di sicurezza contenente gli utenti che possono registrare i propri dispositivi mobili.  
 
-     Questo gruppo di sicurezza viene usato per configurare il modello di certificato usato durante la registrazione del dispositivo mobile.  
+    Questo gruppo di sicurezza viene usato per configurare il modello di certificato usato durante la registrazione del dispositivo mobile.  
 
--   Facoltativo ma consigliato: un alias DNS (record CNAME) denominato **ConfigMgrEnroll**. Configurare l'alias per il nome del server del punto proxy di registrazione.  
+- Facoltativo ma consigliato: un alias DNS (record CNAME) denominato **ConfigMgrEnroll**. Configurare l'alias per il nome del server del punto proxy di registrazione.  
 
-     Questo alias DNS è necessario per supportare il rilevamento automatico per il servizio di registrazione. Se non si configura il record DNS, gli utenti devono specificare manualmente il nome del punto proxy di registrazione durante il processo di registrazione.  
+    Questo alias DNS è necessario per supportare il rilevamento automatico per il servizio di registrazione. Se non si configura il record DNS, gli utenti devono specificare manualmente il nome del punto proxy di registrazione durante il processo di registrazione.  
 
--   Dipendenze di ruoli del sistema del sito per i computer che eseguono i ruoli del sistema del sito del punto di registrazione e del punto proxy di registrazione.  
+- Dipendenze di ruoli del sistema del sito per i computer che eseguono i ruoli del sistema del sito del punto di registrazione e del punto proxy di registrazione.  
 
-     Per altre informazioni, vedere [Sistemi operativi supportati per i server dei sistemi del sito](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers).  
+    Per altre informazioni, vedere [Sistemi operativi supportati per i server dei sistemi del sito](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers).  
 
-
-### <a name="configuration-manager-dependencies"></a>Dipendenze di Configuration Manager  
+### <a name="configuration-manager-dependencies"></a>Dipendenze di Configuration Manager
 
 Per altre informazioni, vedere [Determinare i ruoli del sistema del sito per i client](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients).  
 
 - Punto di gestione configurato per le connessioni client HTTPS e abilitato per i dispositivi mobili  
 
-   Per installare il client di Configuration Manager in dispositivi mobili è sempre necessario un punto di gestione. Oltre ai requisiti di configurazione di HTTPS e all'abilitazione per dispositivi mobili, il punto di gestione deve essere configurato con FQDN Internet e deve accettare connessioni client da Internet.  
+    Per installare il client di Configuration Manager in dispositivi mobili è sempre necessario un punto di gestione. Oltre ai requisiti di configurazione di HTTPS e all'abilitazione per dispositivi mobili, il punto di gestione deve essere configurato con FQDN Internet e deve accettare connessioni client da Internet.  
 
 - Punto di registrazione e punto proxy di registrazione  
 
-   Un punto proxy di registrazione gestisce le richieste di registrazione da parte di dispositivi mobili e il punto di registrazione completa il processo di registrazione. È necessario che il punto di registrazione si trovi nella stessa foresta Active Directory del server del sito, ma il punto proxy di registrazione può trovarsi in una foresta diversa.  
+    Un punto proxy di registrazione gestisce le richieste di registrazione da parte di dispositivi mobili e il punto di registrazione completa il processo di registrazione. È necessario che il punto di registrazione si trovi nella stessa foresta Active Directory del server del sito, ma il punto proxy di registrazione può trovarsi in una foresta diversa.  
 
 - Impostazioni del client per la registrazione dei dispositivi portatili  
 
-   Configurare le impostazioni del client per consentire agli utenti di registrare i dispositivi mobili e configurare almeno un profilo di registrazione.  
+    Configurare le impostazioni del client per consentire agli utenti di registrare i dispositivi mobili e configurare almeno un profilo di registrazione.  
 
 - Punto di Reporting Services  
 
-   Il punto di Reporting Services è un ruolo di sistema sito facoltativo ma consigliato, in grado di visualizzare report correlati alla registrazione di dispositivi mobili e alla gestione di client.  
+    Il punto di Reporting Services è un ruolo di sistema sito facoltativo ma consigliato, in grado di visualizzare report correlati alla registrazione di dispositivi mobili e alla gestione di client.  
 
-   Per altre informazioni, vedere [Creazione di report in Configuration Manager](/sccm/core/servers/manage/reporting).  
+    Per altre informazioni, vedere [Creazione di report in Configuration Manager](/sccm/core/servers/manage/reporting).  
 
 - Per configurare la registrazione per dispositivi mobili, è necessario disporre delle autorizzazioni di sicurezza seguenti:  
 
-  - Per aggiungere, modificare ed eliminare i ruoli del sistema del sito di registrazione: autorizzazione **Modifica** per l'oggetto **Sito**.  
+    - Per aggiungere, modificare ed eliminare i ruoli del sistema del sito di registrazione: autorizzazione **Modifica** per l'oggetto **Sito**.  
 
-  - Per configurare le impostazioni client per la registrazione: le impostazioni client predefinite necessitano dell'autorizzazione di **Modifica** per l'oggetto **Sito** e le impostazioni client personalizzate necessitano di autorizzazioni di tipo **Agente client**.  
+    - Per configurare le impostazioni client per la registrazione: le impostazioni client predefinite necessitano dell'autorizzazione di **Modifica** per l'oggetto **Sito** e le impostazioni client personalizzate necessitano di autorizzazioni di tipo **Agente client**.  
 
     Il ruolo di sicurezza **Amministratore completo** include le autorizzazioni necessarie per configurare i ruoli del sistema del sito di registrazione.  
 
-    Per gestire i dispositivi mobili registrati, è necessario disporre delle autorizzazioni di sicurezza seguenti:  
+- Per gestire i dispositivi mobili registrati, è necessario disporre delle autorizzazioni di sicurezza seguenti:  
 
-  - Per cancellare o ritirare un dispositivo mobile: **Elimina risorsa** per l'oggetto **Raccolta**.  
+    - Per cancellare o ritirare un dispositivo mobile: **Elimina risorsa** per l'oggetto **Raccolta**.  
 
-  - Per annullare un comando di cancellazione o ritiro: **Elimina risorsa** per l'oggetto **Raccolta**.  
+    - Per annullare un comando di cancellazione o ritiro: **Elimina risorsa** per l'oggetto **Raccolta**.  
 
-  - Per consentire e bloccare i dispositivi mobili: **Modifica risorsa** per l'oggetto **Raccolta**.  
+    - Per consentire e bloccare i dispositivi mobili: **Modifica risorsa** per l'oggetto **Raccolta**.  
 
-  - Per il blocco remoto o la reimpostazione del passcode in un dispositivo mobile: **Modifica risorsa** per l'oggetto **Raccolta**.  
+    - Per il blocco remoto o la reimpostazione del passcode in un dispositivo mobile: **Modifica risorsa** per l'oggetto **Raccolta**.  
 
     Il ruolo di sicurezza **Amministratore operazioni** include le autorizzazioni necessarie per gestire i dispositivi mobili.  
 
     Per altre informazioni su come configurare le autorizzazioni di sicurezza, vedere [Nozioni fondamentali di amministrazione basata su ruoli](/sccm/core/understand/fundamentals-of-role-based-administration) e [Configurare l'amministrazione basata su ruoli](/sccm/core/servers/deploy/configure/configure-role-based-administration).  
 
-
-### <a name="firewall-requirements"></a>Requisiti del firewall  
+### <a name="firewall-requirements"></a>Requisiti del firewall
 
 I dispositivi di rete interessati, ad esempio router e firewall e, se applicabile Windows Firewall, devono consentire il traffico associato alla registrazione dei dispositivi mobili:  
 
--   Tra i dispositivi mobili e il punto proxy di registrazione: HTTPS (per impostazione predefinita, TCP 443)  
+- Tra i dispositivi mobili e il punto proxy di registrazione: HTTPS (per impostazione predefinita, TCP 443)  
 
--   Tra il punto proxy di registrazione e il punto di registrazione: HTTPS (per impostazione predefinita, TCP 443)  
-
+- Tra il punto proxy di registrazione e il punto di registrazione: HTTPS (per impostazione predefinita, TCP 443)  
 
 Se si usa un server Web proxy, deve essere configurato per il tunneling SSL. Il bridging SSL non è supportato per i dispositivi mobili.  

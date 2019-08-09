@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 710f9939b157c27d9eff6007d7f91cdef15889fe
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: b88ca3361390f8577dc44f2a3fd9640d5a49ad7d
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68339382"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536821"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>Versioni di SQL Server supportate per Configuration Manager
 
@@ -182,53 +182,68 @@ Questa versione di SQL Server non è supportata. Per altre informazioni, vedere 
 - sito secondario  
 
 
+## <a name="bkmk_SQLConfig"></a> Configurazioni necessarie per SQL Server
 
-##  <a name="bkmk_SQLConfig"></a> Configurazioni necessarie per SQL Server  
-Le configurazioni seguenti sono necessarie per tutte le installazioni di SQL Server usate per un database del sito, incluso SQL Server Express. Quando Configuration Manager installa SQL Server Express come parte dell'installazione di un sito secondario, queste configurazioni vengono create automaticamente.  
+Le configurazioni seguenti sono necessarie per tutte le installazioni di SQL Server usate per un database del sito, incluso SQL Server Express. Quando Configuration Manager installa SQL Server Express come parte dell'installazione di un sito secondario, crea automaticamente queste configurazioni.  
 
-### <a name="sql-server-architecture-version"></a>Versione dell'architettura di SQL Server  
+### <a name="sql-server-architecture-version"></a>Versione dell'architettura di SQL Server
+
 Configuration Manager richiede una versione a 64 bit di SQL Server per ospitare il database del sito.  
 
-### <a name="database-collation"></a>Regole di confronto del database  
-In ogni sito, sia l'istanza di SQL Server usata per il sito che il database del sito devono usare le regole di confronto seguenti: **SQL_Latin1_General_CP1_CI_AS**.  
+### <a name="database-collation"></a>Regole di confronto del database
 
-Configuration Manager supporta due eccezioni a queste regole di confronto per rispettare gli standard definiti in GB18030 per l'uso in Cina. Per altre informazioni, vedere [Supporto internazionale](/sccm/core/plan-design/hierarchy/international-support).  
+In ogni sito sia l'istanza di SQL Server usata per il sito che il database del sito devono usare le regole di confronto seguenti: **SQL_Latin1_General_CP1_CI_AS**.  
 
-### <a name="database-compatibility-level"></a>Livello di compatibilità database   
-Configuration Manager richiede un livello di compatibilità per il database del sito non inferiore alla versione minima di SQL Server supportata per la versione di Configuration Manager. Ad esempio, a partire dalla versione 1702, è necessario avere un [livello di compatibilità del database](https://docs.microsoft.com/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database) maggiore o uguale a 110. <!-- SMS.506266--> 
+Configuration Manager supporta due eccezioni a queste regole di confronto per lo standard GB18030 per la Cina. Per altre informazioni, vedere [Supporto internazionale](/sccm/core/plan-design/hierarchy/international-support).  
 
-### <a name="sql-server-features"></a>Funzionalità di SQL Server  
+### <a name="database-compatibility-level"></a>Livello di compatibilità database
+
+Configuration Manager richiede un livello di compatibilità per il database del sito non inferiore alla versione minima di SQL Server supportata per la versione di Configuration Manager. Ad esempio, a partire dalla versione 1702, è necessario avere un [livello di compatibilità del database](https://docs.microsoft.com/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database) maggiore o uguale a 110. <!-- SMS.506266-->
+
+### <a name="sql-server-features"></a>Funzionalità di SQL Server
+
 Solo la funzionalità **Servizi Motore di database** è necessaria per ogni server del sito.  
 
 La replica di database di Configuration Manager non richiede la funzionalità di **replica di SQL Server**. Questa configurazione di SQL Server, tuttavia, è necessaria quando si usano [repliche di database per i punti di gestione](/sccm/core/servers/deploy/configure/database-replicas-for-management-points).  
 
-### <a name="windows-authentication"></a>Autenticazione di Windows  
+### <a name="windows-authentication"></a>Autenticazione di Windows
+
 Configuration Manager richiede l' **autenticazione di Windows** per convalidare le connessioni al database.  
 
-### <a name="sql-server-instance"></a>Istanza di SQL Server  
+### <a name="sql-server-instance"></a>Istanza di SQL Server
+
 Usare un'istanza dedicata di SQL Server per ogni sito. L'istanza può essere un'**istanza denominata** o un'**istanza predefinita**.  
 
-### <a name="sql-server-memory"></a>Memoria di SQL Server  
-Riservare la memoria per SQL Server usando SQL Server Management Studio e l'impostazione **Memoria minima per il server** in **Opzioni per la memoria del server**. Per altre informazioni su come configurare questa impostazione, vedere [Opzioni di configurazione del server Server Memory](https://docs.microsoft.com/sql/database-engine/configure-windows/server-memory-server-configuration-options).  
+### <a name="sql-server-memory"></a>Memoria di SQL Server
 
-- **Per un server di database installato nello stesso computer del server del sito**: Limitare la memoria per SQL Server al 50-80% della memoria di sistema indirizzabile disponibile.  
+Riservare la memoria per SQL Server usando SQL Server Management Studio. Impostare la **memoria minima per il server** nelle **opzioni per la memoria del server**. Per altre informazioni su come configurare questa impostazione, vedere [Opzioni di configurazione del server Server Memory](https://docs.microsoft.com/sql/database-engine/configure-windows/server-memory-server-configuration-options).  
 
-- **Per un server di database dedicato (remoto dal computer del server del sito)** : Limitare la memoria per SQL Server all'80-90% della memoria di sistema indirizzabile disponibile.  
+- **Per un server di database che si installa nello stesso computer del server del sito**: Limitare la memoria per SQL Server al 50-80% della memoria di sistema indirizzabile disponibile.  
+
+- **Per un server di database dedicato e remoto dal computer del server del sito**: Limitare la memoria per SQL Server all'80-90% della memoria di sistema indirizzabile disponibile.  
 
 - **Per una riserva di memoria per il pool di buffer di ogni istanza di SQL Server in uso**:  
 
-  - Per un sito di amministrazione centrale: impostare minimo 8 gigabyte (GB).  
-  - Per un sito primario: impostare minimo 8 gigabyte (GB).  
-  - Per un sito secondario: impostare minimo 4 gigabyte (GB).  
+  - Per un sito di amministrazione centrale: Impostare un minimo di 8 GB.  
+  - Per un sito primario: Impostare un minimo di 8 GB.  
+  - Per un sito secondario: Impostare un minimo di 4 GB.  
 
-### <a name="sql-nested-triggers"></a>Trigger annidati SQL  
-I trigger nidificati SQL devono essere abilitati. Per altre informazioni, vedere [Configurare l'opzione di configurazione del server nested triggers](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-the-nested-triggers-server-configuration-option) 
+### <a name="sql-nested-triggers"></a>Trigger annidati SQL
 
-### <a name="sql-server-clr-integration"></a>Integrazione CLR di SQL Server  
+I trigger nidificati SQL devono essere abilitati. Per altre informazioni, vedere [Configurare l'opzione di configurazione del server nested triggers](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-the-nested-triggers-server-configuration-option)
+
+### <a name="sql-server-clr-integration"></a>Integrazione CLR di SQL Server
+
 Il database del sito richiede l'abilitazione di Common Language Runtime (CLR) di SQL Server. Questa opzione viene abilitata automaticamente quando si installa Configuration Manager. Per altre informazioni su CLR, vedere [Introduzione all'integrazione CLR di SQL Server](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/introduction-to-sql-server-clr-integration).  
 
 ### <a name="sql-server-service-broker-ssb"></a>SQL Server Service Broker (SSB)
-SQL Server Service Broker è necessario sia per la replica tra siti che per un singolo sito primario. 
+
+SQL Server Service Broker è necessario sia per la replica tra siti che per un singolo sito primario.
+
+### <a name="trustworthy-setting"></a>Impostazione TRUSTWORTHY
+
+Configuration Manager abilita automaticamente la [proprietà TRUSTWORTHY del database](https://docs.microsoft.com/sql/relational-databases/security/trustworthy-database-property). Questa proprietà è obbligatoria per l'**attivazione di Configuration Manager**.
+
 
 ##  <a name="bkmk_optional"></a> Configurazioni facoltative per SQL Server  
 Le configurazioni seguenti sono facoltative per ogni database che usa un'installazione completa di SQL Server.  

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c623799f4a7dd34a0556069d168f0bb3abfd5ff1
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: 08027a99f37b31ca0100dd9737819bb2eac1b94c
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159403"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536628"
 ---
 # <a name="configure-security-in-configuration-manager"></a>Configurare la sicurezza in Configuration Manager
 
@@ -42,7 +42,8 @@ Se si desidera utilizzare i certificati di infrastruttura a chiave pubblica (PKI
 
 2.  Nella barra multifunzione scegliere **Proprietà**. Quindi passare alla scheda **Comunicazione computer client**.  
 
-    Questa scheda è disponibile solo in un sito primario. Se la scheda **Comunicazione computer client** non viene visualizzata, verificare di non essere connessi a un sito di amministrazione centrale o a un sito secondario.  
+    > [!Note]
+    > A partire dalla versione 1906, questa è la scheda della **sicurezza della comunicazione**.<!-- SCCMDocs#1645 -->  
 
 3.  Selezionare le impostazioni per i sistemi del sito che usano IIS.  
 

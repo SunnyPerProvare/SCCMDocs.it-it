@@ -2,7 +2,7 @@
 title: Gestire le raccolte
 titleSuffix: Configuration Manager
 description: Eseguire le attività comuni di gestione delle raccolte in Configuration Manager.
-ms.date: 04/23/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3099e61b28687ac2705d3da140af272d9de9fe2
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: 02161f79270176f2904ae58af5d0dbec9a204ab6
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68339035"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68535421"
 ---
 # <a name="how-to-manage-collections-in-configuration-manager"></a>Come gestire le raccolte in Configuration Manager
 
@@ -180,6 +180,9 @@ Configurare le variabili che si applicano a questa raccolta e possono essere usa
 
 #### <a name="distribution-point-groups"></a>Gruppi di punti di distribuzione
 Associare uno o più gruppi di punti di distribuzione ai membri della raccolta selezionata. Per altre informazioni, vedere [Manage content and content infrastructure](/sccm/core/servers/deploy/configure/manage-content-and-content-infrastructure) (Gestire il contenuto e l'infrastruttura del contenuto).
+
+#### <a name="aad-group-sync"></a>Sincronizzazione del gruppo AAD
+Sincronizzare i risultati di appartenenza alla raccolta con i gruppi di Azure Active Directory. Questa sincronizzazione è una [funzionalità di versione non definitiva](/sccm/core/servers/manage/pre-release-features) a partire dalla versione 1906. Per altre informazioni, vedere [Creare raccolte](/sccm/core/clients/manage/collections/create-collections#bkmk_aadcollsync).
 
 #### <a name="security"></a>Sicurezza
 Visualizza gli utenti amministratori che dispongono di autorizzazioni per la raccolta selezionata da ambiti di protezione e ruoli associati. Per altre informazioni, vedere [Nozioni fondamentali sull'amministrazione basata su ruoli](/sccm/core/understand/fundamentals-of-role-based-administration).  

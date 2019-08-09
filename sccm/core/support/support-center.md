@@ -2,7 +2,7 @@
 title: Support Center
 titleSuffix: Configuration Manager
 description: Risolvere i problemi dei client di Configuration Manager con Support Center.
-ms.date: 05/10/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,23 +11,22 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 192206c7ffcb2d958935cbe66f79400ee422a774
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: 57762607c64016986ee1544c4b16c3ade9ea34f6
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68339505"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536088"
 ---
 # <a name="support-center-for-configuration-manager"></a>Support Center per Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 <!--1357489-->
-A partire dalla versione 1810, è possibile usare il Supporto tecnico per risolvere i problemi dei client, visualizzare i log in tempo reale o acquisire lo stato di un client di Configuration Manager per l'analisi successiva. Support Center è un singolo strumento che consolida numerosi strumenti di risoluzione dei problemi per gli amministratori. 
+A partire dalla versione 1810, è possibile usare il Supporto tecnico per risolvere i problemi dei client, visualizzare i log in tempo reale o acquisire lo stato di un client di Configuration Manager per l'analisi successiva. Support Center è un singolo strumento che consolida numerosi strumenti di risoluzione dei problemi per gli amministratori.
 
 
-
-## <a name="about"></a>Informazioni su 
+## <a name="about"></a>Informazioni su
 
 Scopo di Support Center è ridurre problematiche e difficoltà che si riscontrano durante la risoluzione dei problemi che riguardano i computer client di Configuration Manager. In precedenza, quando si lavorava con il supporto alla risoluzione di un problema relativo ai client di Configuration Manager, era necessario raccogliere manualmente i file di log e altre informazioni necessarie. Era facile dimenticare accidentalmente un file di log fondamentale, causando altri problemi sia all'utente che al personale del supporto.
 
@@ -39,21 +38,22 @@ Support Center consente di semplificare la procedura e di eseguire le attività 
 
 - Usare funzionalità di diagnostica in tempo reale dell'inventario (sostituisce Client Spy), dei criteri (sostituisce Policy Spy) e della cache del client.  
 
-
 ### <a name="support-center-viewer"></a>Support Center Viewer
 
 Support Center include Support Center Viewer, un visualizzatore che consente al personale di aprire il bundle di file creato con Support Center. L'agente di raccolta dati di Support Center raccoglie i log di diagnostica da un client locale e remoto di Configuration Manager e crea un pacchetto. Per visualizzare i bundle dell'agente di raccolta dati, usare l'applicazione per la visualizzazione.
-
 
 ### <a name="support-center-log-file-viewer"></a>Visualizzatore di file di log di Support Center
 
 Support Center include un visualizzatore di log moderno. Questo strumento sostituisce CMTrace e include un'interfaccia personalizzabile, con il supporto per schede e finestre ancorabili. Offre un livello di presentazione veloce e può caricare file di log di grandi dimensioni in pochi secondi.
 
+### <a name="support-center-onetrace-preview"></a>Supporto tecnico OneTrace (anteprima)
+
+<!--3555962-->
+A partire dalla versione 1906 **OneTrace** è un nuovo visualizzatore log del Supporto tecnico. Funziona in modo analogo a CMTrace, con miglioramenti. Per altre informazioni, vedere [Supporto tecnico OneTrace](/sccm/core/support/support-center-onetrace).
 
 ### <a name="powershell-cmdlets"></a>Cmdlet di PowerShell
 
 Support Center include anche [i cmdlet di Windows PowerShell](https://go.microsoft.com/fwlink/?linkid=397830). Questi cmdlet consentono di creare una connessione remota a un altro client di Configuration Manager, configurare le opzioni di raccolta dati e avviare la raccolta dei dati.
-
 
 
 ## <a name="prerequisites"></a>Prerequisiti
@@ -65,37 +65,45 @@ Installare i componenti seguenti nel server o nel computer client in cui è inst
 - È necessario .NET framework 4.5.2 nel computer in cui viene eseguito Support Center e i relativi componenti.  
 
 
-
 ## <a name="install"></a>Installazione
 
 Individuare il programma di installazione di Support Center nel server del sito nel percorso seguente: `cd.latest\SMSSETUP\Tools\SupportCenter\SupportCenterInstaller.msi`.
 
 Dopo averlo installato, cercare gli elementi seguenti nel menu Start nel gruppo **Microsoft System Center**:  
+
 - Support Center (ConfigMgrSupportCenter.exe)  
 - Visualizzatore dei file di log di Support Center (CMLogViewer.exe)  
 - Support Center Viewer (ConfigMgrSupportCenterViewer.exe)  
 
 
+## <a name="known-issues"></a>Problemi noti
 
-## <a name="known-issues"></a>Problemi noti 
+### <a name="you-cant-install-the-latest-version-if-an-older-version-is-already-installed"></a>Non è possibile installare la versione più recente se è già installata una versione precedente
 
-#### <a name="you-cant-install-the-latest-version-if-an-older-version-is-already-installed"></a>Non è possibile installare la versione più recente se è già installata una versione precedente
 <!--SCCMDocs-pr issue #3090-->
-Se è già stata installata una versione precedente del Supporto tecnico, l'installazione della versione 1810 non riesce. Questo problema è dovuto alla modalità di controllo delle versioni dei file, tra la versione originale e la versione più recente. Per risolvere questo problema, disinstallare prima di tutto la versione meno recente di Support Center. Installare quindi la versione più recente da Configuration Manager versione 1810.
+*Si applica alle versioni 1810 e 1902*
 
-#### <a name="remote-connections-must-include-computer-name-or-domain-as-part-of-the-user-name"></a>Le connessioni remote devono includere il nome del computer o il dominio come parte del nome utente
-Se ci si connette a un client remoto da Support Center, al momento di stabilire la connessione è necessario specificare il nome del computer o il nome di dominio per l'account utente. Se si usa un nome computer o un nome di dominio abbreviato (ad esempio `.\administrator`), la connessione avrà esito positivo, ma Support Center non raccoglierà i dati dal client. 
+Se è già stata installata una versione precedente del Supporto tecnico, il nuovo programma di installazione ha esito negativo. Questo problema è dovuto alla modalità di controllo delle versioni dei file, tra la versione originale e la versione più recente. Per risolvere questo problema, disinstallare prima di tutto la versione meno recente di Support Center. Quindi installare la versione più recente.
 
-Per evitare questo problema, usare i formati di nome utente seguenti per connettersi a un client remoto: 
+### <a name="remote-connections-must-include-computer-name-or-domain-as-part-of-the-user-name"></a>Le connessioni remote devono includere il nome del computer o il dominio come parte del nome utente
+
+Se ci si connette a un client remoto da Support Center, al momento di stabilire la connessione è necessario specificare il nome del computer o il nome di dominio per l'account utente. Se si usa un nome computer o un nome di dominio abbreviato (ad esempio `.\administrator`), la connessione avrà esito positivo, ma Support Center non raccoglierà i dati dal client.
+
+Per evitare questo problema, usare i formati di nome utente seguenti per connettersi a un client remoto:
+
 - `ComputerName\UserName`  
 - `DomainName\UserName`  
 
-#### <a name="scripted-server-message-block-connections-to-remote-clients-might-require-removal"></a>Potrebbe essere necessario rimuovere le connessioni SMB con script ai client remoti
-Quando ci si connette ai client remoti usando il cmdlet [New-CMMachineConnection](https://go.microsoft.com/fwlink/p/?linkid=390542) di PowerShell, Support Center crea una connessione SMB a ogni client remoto. Tali connessioni vengono mantenute dopo aver completato la raccolta dei dati. Per evitare di superare il numero massimo di connessioni remote per Windows, usare il comando `net use` per visualizzare il set di connessioni remote attualmente attivo. A questo punto, disabilitare tutte le connessioni non necessarie usando il comando seguente: `net use <connection_name> /d`, 
+### <a name="scripted-server-message-block-connections-to-remote-clients-might-require-removal"></a>Potrebbe essere necessario rimuovere le connessioni SMB con script ai client remoti
+
+Quando ci si connette ai client remoti usando il cmdlet [New-CMMachineConnection](https://go.microsoft.com/fwlink/p/?linkid=390542) di PowerShell, Support Center crea una connessione SMB a ogni client remoto. Tali connessioni vengono mantenute dopo aver completato la raccolta dei dati. Per evitare di superare il numero massimo di connessioni remote per Windows, usare il comando `net use` per visualizzare il set di connessioni remote attualmente attivo. A questo punto, disabilitare tutte le connessioni non necessarie usando il comando seguente: `net use <connection_name> /d`,
 dove `<connection_name>` è il nome della connessione remota.
 
-#### <a name="application-deployment-evaluation-cycle-request-isnt-sent-correctly-to-remote-machines"></a>La richiesta del ciclo di valutazione della distribuzione dell'applicazione non viene inviata correttamente ai computer remoti
+### <a name="application-deployment-evaluation-cycle-request-isnt-sent-correctly-to-remote-machines"></a>La richiesta del ciclo di valutazione della distribuzione dell'applicazione non viene inviata correttamente ai computer remoti
+
 <!--2849356-->
+*Si applica alla versione 1810*
+
 Nel Supporto tecnico, se si seleziona **Application deployment evaluation** (Valutazione distribuzione applicazione) dall'azione **Invoke trigger** (Richiama trigger) nella scheda **Content** (Contenuto), questa azione avvia un'attività che valuta le applicazioni distribuite. Se si è connessi a un client locale, vengono valutate le distribuzioni delle applicazioni sia per computer che per utente. Se si è connessi a un client remoto, invece, vengono valutate solo le distribuzioni delle applicazioni per computer.
 
 

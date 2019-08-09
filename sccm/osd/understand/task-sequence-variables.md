@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b92fad9054c50ea58caeb11e209cd04b6951493f
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: b78d8b6cd60f14843855d00ea44632b6feda3d90
+ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68537124"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68859829"
 ---
 # <a name="task-sequence-variables"></a>Variabili della sequenza di attività
 
@@ -1378,7 +1378,7 @@ A partire dalla versione 1802, impostare questa variabile su `true` per evitare 
 Quando la sequenza di attività viene riavviata, il valore della variabile viene mantenuto. Tuttavia, la sequenza di attività tenta di inviare un messaggio di stato iniziale. Il primo tentativo include diversi tentativi. Se l'operazione riesce, la sequenza di attività continua a inviare lo stato indipendentemente dal valore della variabile. Se l'invio dello stato non riesce, la sequenza di attività usa il valore della variabile.
 
 > [!NOTE]  
-> La [creazione di report sullo stato della sequenza di attività](/sccm/core/servers/manage/list-of-reports#task-sequence---deployment-status) si basa su questi messaggi di stato per la visualizzazione dell'avanzamento, della cronologia e dei dettagli di ogni passaggio.
+> La [creazione di report sullo stato della sequenza di attività](/sccm/core/servers/manage/list-of-reports#task-sequence---deployment-status) si basa su questi messaggi di stato per la visualizzazione dell'avanzamento, della cronologia e dei dettagli di ogni passaggio. Se i messaggi di stato non vengono inviati, non verranno accodati. Quando la connettività viene ripristinata nel punto di gestione, non viene inviata in un secondo momento. Questo comportamento comporta che la creazione di report sullo stato della sequenza di attività sia incompleta e priva di elementi.
 
 ### <a name="SMSTSDisableWow64Redirection"></a> SMSTSDisableWow64Redirection
 

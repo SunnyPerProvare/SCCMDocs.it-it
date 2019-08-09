@@ -2,7 +2,7 @@
 title: Gestire punti di distribuzione
 titleSuffix: Configuration Manager
 description: Usare i punti di distribuzione per ospitare il contenuto distribuito a utenti e dispositivi.
-ms.date: 05/28/2019
+ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91bcdf4e593d2c39fed19f0b01045cab32f921da
-ms.sourcegitcommit: 9670e11316c9ec6e5f78cd70c766bbfdf04ea3f9
+ms.openlocfilehash: 49be9ccc0f44656752de18f4814b91c0c0d25f66
+ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67818179"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68536477"
 ---
 # <a name="install-and-configure-distribution-points-in-configuration-manager"></a>Installare e configurare punti di distribuzione per Configuration Manager
 
@@ -72,6 +72,7 @@ Usare questa procedura per aggiungere un nuovo punto di distribuzione. Per modif
 Iniziare con la procedura per [installare i ruoli del sistema del sito](/sccm/core/servers/deploy/configure/install-site-system-roles). Selezionare il ruolo di **punto di distribuzione** nella pagina **Selezione ruolo del sistema** della Creazione guidata server del sistema sito. Questa azione aggiunge alla procedura guidata le pagine seguenti:  
 
 - [Punto di distribuzione](#bkmk_config-general)
+- [Comunicazioni](#bkmk_config-comm)
 - [Impostazioni unità](#bkmk_config-drive)
 - [Punto di distribuzione pull](#bkmk_config-pull)
 - [Impostazioni PXE](#bkmk_config-pxe)
@@ -167,7 +168,7 @@ Questo processo popola automaticamente la scheda **Membri** della finestra Crea 
 
 Molti clienti hanno infrastrutture di Configuration Manager di grandi dimensioni e stanno diminuendo i siti primari o secondari per semplificare il proprio ambiente. Per distribuire il contenuto ai client gestiti, questi clienti devono comunque mantenere i punti di distribuzione nelle succursali. Questi punti di distribuzione spesso includono più terabyte di contenuto. La distribuzione di questo contenuto ai server remoti è dispendiosa in termini di tempo e larghezza di banda di rete.
 
-A partire dalla versione 1802, questa funzionalità consente di riassegnare un punto di distribuzione a un altro sito primario senza ridistribuire il contenuto. Questa azione aggiorna l'assegnazione del sistema del sito mantenendo tutto il contenuto nel server. Se è necessario riassegnare più punti di distribuzione, eseguire prima questa azione su un singolo punto di distribuzione, quindi procedere con gli altri server uno alla volta.
+Questa funzionalità consente di riassegnare un punto di distribuzione a un altro sito primario senza ridistribuire il contenuto. Questa azione aggiorna l'assegnazione del sistema del sito mantenendo tutto il contenuto nel server. Se è necessario riassegnare più punti di distribuzione, eseguire prima questa azione su un singolo punto di distribuzione, quindi procedere con gli altri server uno alla volta.
 
 > [!IMPORTANT]  
 > Il server di destinazione può ospitare solo il ruolo del punto di distribuzione. Se il server del sistema del sito ospita un altro ruolo del server di Configuration Manager, ad esempio il punto di migrazione stato, non sarà possibile riassegnare il punto di distribuzione. Non è possibile riassegnare un punto di distribuzione cloud.
@@ -255,6 +256,7 @@ I singoli punti di distribuzione supportano un'ampia gamma di configurazioni div
 Le sezioni seguenti descrivono che è possibile selezionare quando si [installa un nuovo punto di distribuzione](#bkmk_install-procedure) oppure si [modificano le proprietà di un punto di distribuzione esistente](#bkmk_change-procedure):  
 
 - [Impostazioni generali](#bkmk_config-general)
+- [Comunicazioni](#bkmk_config-comm)
 - [Impostazioni unità](#bkmk_config-drive)
 - [Impostazioni del firewall](#bkmk_firewall)
 - [Punto di distribuzione pull](#bkmk_config-pull)
@@ -275,7 +277,12 @@ Le sezioni seguenti descrivono che è possibile selezionare quando si [installa 
 
 ### <a name="bkmk_config-general"></a> Generale  
 
+> [!Note]  
+> Nella versione 1902 e precedenti, questa pagina contiene impostazioni aggiuntive per HTTP/HTTPS e i certificati. A partire dalla versione 1906, queste impostazioni sono disponibili nella pagina [Comunicazioni](#bkmk_config-comm).
+
 Le impostazioni seguenti si trovano nella pagina **Punto di distribuzione** della Creazione guidata server del sistema sito e nella scheda **Generali** della finestra delle proprietà del punto di distribuzione:  
+
+- **Descrizione**: descrizione facoltativa del ruolo del punto di distribuzione.  
 
 - **Installa e configura IIS, se richiesto da Configuration Manager**: se IIS non è già installato nel server, Configuration Manager lo installa e lo configura. IIS deve essere installato su tutti i punti di distribuzione. Se IIS non è installato nel server e non viene selezionata questa impostazione, per poter installare correttamente il punto di distribuzione è necessario installare prima IIS.  
 
@@ -301,7 +308,17 @@ Le impostazioni seguenti si trovano nella pagina **Punto di distribuzione** dell
         - Windows Server 2016 con aggiornamenti KB4132216 e KB4284833
         - Windows Server 2019  
 
-- **Descrizione**: descrizione facoltativa del ruolo del punto di distribuzione.  
+- **Abilita questo punto di distribuzione per il contenuto pre-installato**: questa impostazione consente di aggiungere contenuto al server prima di distribuire il software. Poiché si trovano già nella raccolta, i file di contenuto non vengono trasferiti attraverso la rete quando si distribuisce il software. Per altre informazioni, vedere [Contenuto pre-installato](/sccm/core/plan-design/hierarchy/manage-network-bandwidth#BKMK_PrestagingContent).  
+
+- **Abilita l'uso di questo punto di distribuzione come server di cache in rete di Ottimizzazione recapito**: a partire dalla versione 1906, è possibile installare un server di cache in rete di Ottimizzazione recapito nei punti di distribuzione. Memorizzando nella cache questo contenuto in locale, i client possono trarre vantaggio dalla funzionalità di Ottimizzazione recapito, tuttavia è possibile contribuire a proteggere i collegamenti WAN. Per altre informazioni, inclusa la descrizione delle impostazioni aggiuntive, vedere [Cache in rete di Ottimizzazione recapito in Configuration Manager](/sccm/core/plan-design/hierarchy/delivery-optimization-in-network-cache).
+
+
+### <a name="bkmk_config-comm"></a> Comunicazioni
+
+> [!Note]  
+> A partire dalla versione 1906, le impostazioni seguenti sono disponibili nella scheda **Comunicazioni**. Nella versione 1902 e precedenti, queste impostazioni sono disponibili nella scheda [Generale](#bkmk_config-general).
+
+Le impostazioni seguenti si trovano nella pagina **Comunicazioni** della Creazione guidata server del sistema sito e nella finestra delle proprietà del punto di distribuzione:  
 
 - **Configure how client devices communicate with the distribution point** (Configurare in che modo i dispositivi client comunicano con questo punto di distribuzione): esistono vantaggi e svantaggi associati all'uso di **HTTP** o **HTTPS**. Per altre informazioni, vedere [Procedure di sicurezza consigliate per la gestione del contenuto](/sccm/core/plan-design/hierarchy/security-and-privacy-for-content-management#BKMK_Security_ContentManagement).  
 
@@ -334,8 +351,6 @@ Le impostazioni seguenti si trovano nella pagina **Punto di distribuzione** dell
     Per altre informazioni sui requisiti dei certificati, vedere [Requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements).  
 
     Per un esempio di distribuzione di questo certificato, vedere [Distribuire il certificato client per punti di distribuzione](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clientdistributionpoint2008_cm2012).  
-
-- **Abilita questo punto di distribuzione per il contenuto pre-installato**: questa impostazione consente di aggiungere contenuto al server prima di distribuire il software. Poiché si trovano già nella raccolta, i file di contenuto non vengono trasferiti attraverso la rete quando si distribuisce il software. Per altre informazioni, vedere [Contenuto pre-installato](/sccm/core/plan-design/hierarchy/manage-network-bandwidth#BKMK_PrestagingContent).  
 
 ### <a name="bkmk_config-drive"></a>Impostazioni unità  
 

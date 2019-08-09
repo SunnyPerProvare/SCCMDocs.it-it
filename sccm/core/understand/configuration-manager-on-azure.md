@@ -10,12 +10,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8c713dd1de90eaf8705859f5a814e38da9435e6
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: cb185a009740b73a7836b94aca18f9748aa76fb5
+ms.sourcegitcommit: b59e57ab4cf9f03e8beeb70588f3b9f1a6021e36
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340210"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68662610"
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager in Azure: domande frequenti
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -132,7 +132,7 @@ L'approccio alla gestione dei contenuti è molto simile per i server del sito e 
 - Se si usa un piano dati a consumo e la larghezza di banda è un fattore da valutare con attenzione o la connessione di rete tra Azure e la rete Intranet non è veloce o potrebbe non essere affidabile, è consigliabile valutare altri approcci. Alcune alternative sono l'inserimento di punti di distribuzione pull o standard in locale e l'uso di BranchCache. Un'opzione possibile è l'uso di punti di distribuzione basati su cloud, ma vi sono alcuni limiti ai tipi di contenuto supportati, ad esempio non vengono supportati i pacchetti di aggiornamenti software.
 
 > [!NOTE]
->  Se è necessario il supporto PXE, usare i punti di distribuzione (standard o pull) locali per soddisfare le richieste di avvio. [WDS non è attualmente supportato per l'esecuzione su VM di Azure](https://technet.microsoft.com/library/hh831764(v=ws.11).aspx).
+>  Se è necessario il supporto PXE o multicast, usare i punti di distribuzione (standard o pull) locali per soddisfare le richieste di avvio.
 
 
 ### <a name="while-i-am-ok-with-the-limitations-of-cloud-based-distribution-points-i-dont-want-to-put-my-management-point-into-a-dmz-even-though-that-is-needed-to-support-my-internet-based-clients-do-i-have-any-other-options"></a>Sebbene le limitazioni relative ai punti di distribuzione basati su cloud non rappresentino un problema, non intendo inserire il punto di gestione in una rete perimetrale, anche se ciò è necessario per supportare i client basati su Internet. Sono disponibili altre opzioni?

@@ -2,7 +2,7 @@
 title: Note sulla versione
 titleSuffix: Configuration Manager
 description: Informazioni su problemi urgenti non ancora risolti nel prodotto o trattati in un articolo della Knowledge Base del supporto tecnico Microsoft.
-ms.date: 07/18/2019
+ms.date: 07/31/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 49600557e304edb86ec9a87bb02ef0ddb82ea037
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: 858ba3b39ea2290e1d5ca39d9d804e3f46be3002
+ms.sourcegitcommit: ef7800a294e5db5d751921c34f60296c1642fc1f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68339424"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68712719"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Note sulla versione per Configuration Manager
 
@@ -26,14 +26,14 @@ Con Configuration Manager le note sulla versione del prodotto sono limitate ai p
 
 La documentazione specifica delle funzionalità include informazioni sui problemi noti che interessano gli scenari di base.  
 
-Questo argomento contiene le note sulla versione di Configuration Manager (Current Branch). Per informazioni sul Technical Preview Branch, vedere [Technical Preview](/sccm/core/get-started/technical-preview)  
+Questo articolo include note sulla versione per l'edizione Current Branch di Configuration Manager. Per informazioni sul Technical Preview Branch, vedere [Technical Preview](/sccm/core/get-started/technical-preview)  
 
 Per informazioni sulle nuove funzionalità introdotte con le diverse versioni, vedere gli articoli seguenti:
 
+- [Novità della versione 1906](/sccm/core/plan-design/changes/whats-new-in-version-1906)  
 - [Novità della versione 1902](/sccm/core/plan-design/changes/whats-new-in-version-1902)
 - [Novità della versione 1810](/sccm/core/plan-design/changes/whats-new-in-version-1810)
 - [Novità della versione 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806)  
-- [Novità della versione 1802](/sccm/core/plan-design/changes/whats-new-in-version-1802)
 
 > [!Tip]  
 > Per ricevere una notifica quando questa pagina viene aggiornata, copiare e incollare l'URL seguente nel lettore di feed RSS: `https://docs.microsoft.com/api/search/rss?search=%22release+notes+-+Configuration+Manager%22&locale=en-us`
@@ -41,21 +41,38 @@ Per informazioni sulle nuove funzionalità introdotte con le diverse versioni, v
 
 ## <a name="set-up-and-upgrade"></a>Configurazione e aggiornamento  
 
-### <a name="when-using-redistributable-files-from-the-cdlatest-folder-setup-fails-with-a-manifest-verification-error"></a>Quando si usano file ridistribuibili dalla cartella CD.Latest, l'installazione non riesce con un errore di verifica del manifesto
+### <a name="setup-prerequisite-warning-on-domain-functional-level-on-server-2019"></a>Avviso di prerequisito di installazione relativo al livello di funzionalità del dominio nell'edizione Server 2019
 
-<!-- 510080, 490569  -->
+<!-- 4904376 -->
 
-Quando si esegue il programma di installazione dalla cartella CD.Latest creata per la versione 1606 e si usano i file ridistribuibili inclusi in tale cartella, l'esecuzione del programma di installazione non riesce e restituisce gli errori seguenti nel registro di installazione di Configuration Manager:
+*Si applica alla versione 1906*
 
-`ERROR: File hash check failed for defaultcategories.dll`  
-`ERROR: Manifest verification failed. Wrong version of manifest?`
+Quando si installa l'aggiornamento per la versione 1906 in un ambiente con controller di dominio che eseguono Windows Server 2019, il controllo dei prerequisiti per il livello di funzionalità del dominio restituisce l'avviso seguente:
+
+`[Completed with warning]:Verify that the Active Directory domain functional level is Windows Server 2003 or later`
 
 #### <a name="workaround"></a>Soluzione alternativa
 
-Usare una delle opzioni seguenti:
+Ignorare l'avviso.
 
-- Durante l'installazione, scegliere di scaricare i file ridistribuibili più aggiornati da Microsoft. Usare i file ridistribuibili più recenti invece di quelli inclusi nella cartella CD.Latest.
-- Eliminare manualmente la cartella *cd.latest\redist\languagepack\zhh* ed eseguire di nuovo l'installazione.
+### <a name="azure-ad-user-discovery-and-collection-group-sync-dont-work-after-site-expansion"></a>L'individuazione utenti e la sincronizzazione delle raccolte con i gruppi di Azure AD non funzionano dopo l'espansione del sito
+
+<!-- 4797313 -->
+*Si applica alla versione 1906*
+
+Dopo aver configurato una delle funzionalità seguenti:
+
+- Individuazione dei gruppi utenti in Azure Active Directory
+- Sincronizzare i risultati di appartenenza alla raccolta con i gruppi di Azure Active Directory
+
+se si espande un sito primario autonomo a una gerarchia con un sito di amministrazione centrale, verrà visualizzato l'errore seguente in SMS_AZUREAD_DISCOVERY_AGENT. log:
+
+`Could not obtain application secret for tenant xxxxx. If this is after a site expansion, please run "Renew Secret Key" from admin console.`
+
+#### <a name="workaround"></a>Soluzione alternativa
+
+Rinnovare la chiave associata alla registrazione dell'app in Azure AD. Per altre informazioni, vedere [Rinnovare la chiave privata](/sccm/core/servers/deploy/configure/azure-services-wizard#bkmk_renew).
+
 
 ### <a name="setup-command-line-option-joinceip-must-be-specified"></a>È necessario specificare l'opzione della riga di comando del programma di installazione JoinCEIP
 
@@ -148,6 +165,20 @@ Impostare il valore del Registro di sistema seguente su `0` e riavviare il **Ser
 
 ## <a name="desktop-analytics"></a>Desktop Analytics
 
+### <a name="if-you-use-hardware-inventory-for-distributed-views-you-cant-onboard-to-desktop-analytics"></a>Se si usa l'inventario hardware per le viste distribuite, non è possibile eseguire l'onboarding in Desktop Analytics
+
+<!-- 4950335 -->
+*Si applica a: Configuration Manager versione 1902 con aggiornamento cumulativo e versione 1906*
+
+Se si ha una gerarchia e si abilitano i dati del sito **Inventario hardware** per le [viste distribuite](/sccm/core/servers/manage/data-transfers-between-sites#bkmk_distviews) sui collegamenti di replica siti, dopo aver configurato la connessione a Desktop Analytics in Configuration Manager verrà visualizzato l'errore seguente in M365UploadWorker.log:
+
+`Unexpected exception 'System.Data.SqlClient.SqlException' Remote access is not supported for transaction isolation level "SNAPSHOT".:    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action'1 wrapCloseInAction)`
+
+#### <a name="workaround"></a>Soluzione alternativa
+
+Disabilitare i dati del sito **Inventario hardware** per le viste distribuite su tutti i collegamenti di replica siti.
+
+
 ### <a name="console-unexpectedly-closes-when-removing-collections"></a>La console si chiude in modo imprevisto durante la rimozione di raccolte
 
 <!-- 4749443 -->
@@ -189,29 +220,10 @@ Quando si crea un'app iOS e il nome dell'app non è presente nell'URL, aggiunger
 
 Questa azione consente di completare la procedura guidata. L'app viene comunque distribuita correttamente nei dispositivi iOS. La stringa aggiunta all'URL viene visualizzata come **Nome** nella scheda **Informazioni generali** della procedura guidata. Corrisponde anche all'etichetta dell'app nel Portale aziendale.
 
-### <a name="you-can-no-longer-deploy-windows-phone-81-vpn-profiles-to-windows-10"></a>Non è più possibile distribuire profili VPN di Windows Phone 8.1 in Windows 10
-
-<!-- 503274  -->
-*Si applica a: Configuration Manager versione 1710*
-
-Non è più possibile creare un profilo VPN tramite il flusso di lavoro di Windows Phone 8.1 che sia applicabile anche a dispositivi Windows 10. Per questi profili, la procedura guidata di creazione non visualizza più la pagina Piattaforme supportate. Windows Phone 8.1 è selezionato automaticamente nel back-end. La pagina Piattaforme supportate è disponibile nelle proprietà del profilo ma non visualizza le opzioni di Windows 10.
-
-#### <a name="workaround"></a>Soluzione alternativa
-
-Per i dispositivi Windows 10 usare il flusso di lavoro del profilo VPN di Windows 10. Se questa opzione non è praticabile nell'ambiente in uso, contattare il supporto tecnico, che indicherà come aggiungere la destinazione Windows 10.
 
 
 
 <!-- ## Reports and monitoring    -->
 <!-- ## Conditional access   -->
 
-## <a name="endpoint-protection"></a>Endpoint Protection
-
-### <a name="you-cannot-deploy-windows-defenderscep-policies-to-client-devices-without-domain-connectivity"></a>Non è possibile distribuire criteri di Windows Defender/SCEP ai dispositivi client senza connettività del dominio
-<!-- 4350561 -->
-*Si applica a: Configuration Manager versione 1902 e precedenti*
-
-Quando il client di Configuration Manager applica criteri di Windows Defender/SCEP, è necessario un aggiornamento dei criteri di gruppo, che non funziona se il dominio non è accessibile. Questo problema riguarda i dispositivi gestiti su Internet da CMG.
-
-#### <a name="workaround"></a>Soluzione alternativa
-Nessuno
+<!-- ## Endpoint Protection -->
