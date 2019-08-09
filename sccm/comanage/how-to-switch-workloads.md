@@ -11,12 +11,12 @@ ms.date: 07/26/2019
 ms.topic: conceptual
 ms.assetid: 60e2022f-a4f9-40dd-af01-9ecb37b43878
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1945e2a13418f9e49d19874c1f369cee58e9ac61
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 050242e331796c04d05b8b751203b8d6be4f7e2d
+ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68534860"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68859848"
 ---
 # <a name="how-to-switch-configuration-manager-workloads-to-intune"></a>Come trasferire i carichi di lavoro di Configuration Manager a Intune
 
@@ -76,4 +76,4 @@ A partire dalla versione 1906, è possibile configurare raccolte pilota diverse 
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-[Monitorare la co-gestione](/sccm/comanage/how-to-monitor.md)
+[Monitorare la co-gestione](/sccm/comanage/how-to-monitor)

@@ -2,7 +2,7 @@
 title: Console di Configuration Manager
 titleSuffix: Configuration Manager
 description: Informazioni sull'esplorazione tramite la console di Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 08/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ca011fda7227092f44961e5636ecf86b683129b
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: b93e636ea690fa99fd2a0dfc63bd12932d2f7a5e
+ms.sourcegitcommit: b5c7496ca408803046acc8403858aafd5dca8808
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536380"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68794662"
 ---
 # <a name="using-the-configuration-manager-console"></a>Uso della console di Configuration Manager
 
@@ -337,13 +337,6 @@ Questo comportamento migliora significativamente il tempo necessario per le rice
 *(Funzionalità introdotta nella versione 1906)*
 
 Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi** e selezionare il nodo **Sequenze di attività**. Modificare una sequenza di attività e selezionare o aggiungere il passaggio [Installa pacchetto](/sccm/osd/understand/task-sequence-steps#BKMK_InstallPackage). Se un pacchetto include più di un programma, l'elenco a discesa ora visualizza i programmi in ordine alfabetico.
-
-#### <a name="multiselect-and-delete-packages"></a>Selezione multipla ed eliminazione di pacchetti
-<!--4616810-->
-*(Funzionalità introdotta nella versione 1906)*
-
-Nell'area di lavoro **Raccolta software** espandere **Gestione applicazioni** e selezionare il nodo **Pacchetti**. selezionare più di un pacchetto. Nel gruppo Pacchetti della barra multifunzione è ora possibile eliminare più di un pacchetto alla volta.
-
 
 #### <a name="task-sequences-tab-in-applications-node"></a>Scheda Sequenze di attività nel nodo Applicazioni
 <!--4616810-->
