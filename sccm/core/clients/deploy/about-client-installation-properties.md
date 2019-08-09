@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: feef839af1f51c4cbb291f4ed5bc6336da6409b3
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: e5526afcf826c29ff5cf5d55f730092ce3031a0b
+ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286871"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68859811"
 ---
 # <a name="about-client-installation-parameters-and-properties-in-system-center-configuration-manager"></a>Informazioni sui parametri e le proprietà di installazione del client in System Center Configuration Manager
 
@@ -488,7 +488,7 @@ Esempio: `CCMSetup.exe DISABLECACHEOPT=TRUE`
 
 Specifica il punto di stato di fallback che riceve ed elabora i messaggi di stato inviati dai computer client di Configuration Manager.  
 
-Per altre informazioni sul punto di stato di fallback, vedere [Stabilire se è necessario un punto di stato di fallback](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients#determine-if-you-need-a-fallback-status-point).  
+Per altre informazioni sul punto di stato di fallback, vedere [Stabilire se è necessario un punto di stato di fallback](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients#fallback-status-point).  
 
 Esempio: `CCMSetup.exe FSP=SMSFP01`  
 

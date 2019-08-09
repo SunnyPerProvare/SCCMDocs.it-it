@@ -5,18 +5,18 @@ description: Informazioni su come gestire dispositivi Windows 10 contemporaneame
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 04/26/2019
+ms.date: 08/01/2019
 ms.topic: overview
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e0ae5c392acd03509f70c19f551731065bc4be2
-ms.sourcegitcommit: 23852dda81bb8496dd10c0a8ec4f740a8e15efc3
+ms.openlocfilehash: 3710cc7178020af1d03bfd02953e2a2f3ed64f26
+ms.sourcegitcommit: 16dd488c51b5cf01a7dd4204f7d40ee9ae0abe85
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64873271"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68743611"
 ---
 # <a name="what-is-co-management"></a>Informazioni sulla co-gestione
 
@@ -29,7 +29,9 @@ Quando un dispositivo Windows 10 ha il client di Configuration Manager ed è reg
 
 È anche possibile eseguire la distribuzione pilota di un carico di lavoro con una raccolta separata di dispositivi. La distribuzione pilota consente di testare la funzionalità di Intune con un subset di dispositivi prima di passare un gruppo più ampio.
 
-![Diagramma della panoramica della co-gestione](media/co-management-overview.png)
+![Diagramma della panoramica della co-gestione](media/co-management-overview.svg)
+
+[Visualizzare il diagramma per intero](media/co-management-overview.svg)
 
 > [!Note]  
 > Quando si gestiscono i dispositivi Windows 10 contemporaneamente tramite Configuration Manager e Microsoft Intune, questa configurazione è detta *co-gestione*. Quando si gestiscono i dispositivi con Configuration Manager e ci si iscrive a un servizio MDM di terze parti, questa configurazione è detta *coesistenza*. La disponibilità di due autorità di gestione per un singolo dispositivo può essere problematica se non si implementa la corretta orchestrazione tra le due. Con la co-gestione, Configuration Manager e Intune bilanciano i [carichi di lavoro](#workloads) per assicurare che non si verifichino conflitti. Questa interazione non esiste con i servizi di terze parti, quindi le funzionalità di gestione della coesistenza presentano limitazioni. Per altre informazioni, vedere [Coesistenza di servizi MDM di terze parti con Configuration Manager](/sccm/comanage/coexistence).
