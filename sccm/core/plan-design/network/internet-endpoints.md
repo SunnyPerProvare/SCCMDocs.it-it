@@ -2,7 +2,7 @@
 title: Requisiti per l'accesso a Internet
 titleSuffix: Configuration Manager
 description: Informazioni sugli endpoint Internet a cui consentire l'accesso per usufruire delle funzionalità complete di Configuration Manager.
-ms.date: 06/19/2019
+ms.date: 08/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.assetid: b34fe701-5d05-42be-b965-e3dccc9363ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f5ed06951fab313a4a1453864ffefb963cc4d8e9
-ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
+ms.openlocfilehash: fa7ab85d86a544b3ea0ad22325ddd63e2034982e
+ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67623273"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860049"
 ---
 # <a name="internet-access-requirements"></a>Requisiti per l'accesso a Internet
 
@@ -35,9 +35,12 @@ Per altre informazioni sul punto di connessione del servizio, vedere [Informazio
 > [!TIP]  
 > Il punto di connessione del servizio usa il servizio Microsoft Intune quando si connette a `go.microsoft.com` o a `manage.microsoft.com`. Esiste un problema noto per cui il connettore Intune riscontra problemi di connettività se il certificato radice Baltimore CyberTrust non è installato, è scaduto o è danneggiato nel punto di connessione del servizio. Per altre informazioni, vedere [KB 3187516: Il punto di connessione del servizio non scarica gli aggiornamenti](https://support.microsoft.com/help/3187516).  
 
-### <a name="updates-and-servicing"></a>Aggiornamenti e manutenzione
+### <a name="a-namebkmk_scp-updates-updates-and-servicing"></a><a name="bkmk_scp-updates"/> Aggiornamenti e manutenzione
 
 Per altre informazioni su questa funzione, vedere [Aggiornamenti e manutenzione per Configuration Manager](/sccm/core/servers/manage/updates).
+
+> [!Tip]  
+> Abilitare questi endpoint per la regola delle [informazioni dettagliate sulla gestione](/sccm/core/servers/manage/management-insights), **connettere il sito al cloud Microsoft per gli aggiornamenti di Configuration Manager**.
 
 - `*.akamaiedge.net`  
 

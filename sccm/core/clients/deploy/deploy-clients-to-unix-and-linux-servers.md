@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 855869db6d127999218964d06e50179c70efed0a
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.openlocfilehash: a634d252a4e5a6637b4dae18dcb57efe929fcf88
+ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58524099"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68859703"
 ---
 # <a name="how-to-deploy-clients-to-unix-and-linux-servers-in-configuration-manager"></a>Come distribuire i client in server UNIX e Linux in Configuration Manager
 
@@ -109,7 +109,7 @@ Ogni pacchetto di installazione client contiene tutti i file necessari per compl
 
 -   `-fsp <server_FQDN>`  
 
-     Facoltativo. Specifica nome di dominio completo, i server del punto di stato di fallback che il client utilizza per inviare messaggi di stato. Per altre informazioni, vedere [Stabilire se è necessario un punto di stato di fallback](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients#determine-if-you-need-a-fallback-status-point).  
+     Facoltativo. Specifica nome di dominio completo, i server del punto di stato di fallback che il client utilizza per inviare messaggi di stato. Per altre informazioni, vedere [Stabilire se è necessario un punto di stato di fallback](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients#fallback-status-point).  
 
 -   `-dir <directory>`  
 

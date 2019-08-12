@@ -2,7 +2,7 @@
 title: Configurare la riattivazione LAN
 titleSuffix: Configuration Manager
 description: Selezionare la riattivazione LAN in System Center Configuration Manager.
-ms.date: 05/02/2019
+ms.date: 08/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59d99a3e3626be111e927dae8651d2e01364ccf5
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: d28b4809f3f3c615657a9d4c95af67f97b3d0b66
+ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083154"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68859715"
 ---
 # <a name="how-to-configure-wake-on-lan-in-system-center-configuration-manager"></a>Come configurare la riattivazione LAN in System Center Configuration Manager
 
@@ -53,7 +53,7 @@ In precedenza era necessario abilitare manualmente il client per la riattivazion
 1. Selezionare le impostazioni client da modificare oppure creare nuove impostazioni client personalizzate da distribuire. Per altre informazioni, vedere [Come configurare le impostazioni client](/sccm/core/clients/deploy/configure-client-settings).
 1. Nelle impostazioni client **Risparmio energia** selezionare **Abilita** per l'opzione **Consenti l'attivazione della rete**. Per altre informazioni su questa impostazione, vedere [Informazioni sulle impostazioni client](/sccm/core/clients/deploy/about-client-settings#power-management).
 
-4. A partire da Configuration Manager 1902, la nuova versione di Riattivazione LAN rispetta la porta UDP personalizzata specificata per l'[impostazione client](/sccm/core/clients/deploy/about-client-settings#power-management) **Numero di porta di riattivazione LAN (UDP)**. Questa impostazione viene condivisa sia dalla nuova versione di Riattivazione LAN che da quella precedente.
+4. A partire da Configuration Manager 1902, la nuova versione di Riattivazione LAN rispetta la porta UDP personalizzata specificata per l'[impostazione client](/sccm/core/clients/deploy/about-client-settings#power-management) **Numero di porta di riattivazione LAN (UDP)** . Questa impostazione viene condivisa sia dalla nuova versione di Riattivazione LAN che da quella precedente.
  
 <!--3605925-->
 
@@ -67,7 +67,8 @@ In precedenza era necessario abilitare manualmente il client per la riattivazion
 
 - **Per riattivare tutti i client sospesi in una raccolta:** fare clic con il pulsante destro del mouse sulla raccolta di dispositivi client, scegliere **Notifica client**, quindi selezionare **Riattiva**.
    - Questa operazione non può essere eseguita sulle raccolte predefinite.
-   - Se una raccolta include una combinazione di client sospesi e attivi, la richiesta Riattivazione LAN viene inviata solo ai client sospesi.  
+   - Se una raccolta include una combinazione di client sospesi e attivi, la richiesta Riattivazione LAN viene inviata solo ai client sospesi.
+   - Questa azione è attiva solo quando la console di Configuration Manager è connessa a un sito primario autonomo o figlio. Quando si è connessi a un sito di amministrazione centrale, l'azione non è disponibile.
 
 ### <a name="what-to-expect-when-only-the-new-version-of-wake-on-lan-is-enabled"></a>Comportamento previsto quando è abilitata solo la nuova versione di Riattivazione LAN
 
@@ -79,7 +80,7 @@ A partire da Configuration Manager versione 1902, è possibile specificare la po
 
 Se sono abilitate entrambe le versioni di Riattivazione LAN, è possibile usare la notifica client **Riattiva** e la riattivazione in corrispondenza di una scadenza. Il funzionamento della notifica client è leggermente diverso rispetto alla versione tradizionale di Riattivazione LAN. Per una breve descrizione del funzionamento della notifica client, vedere la sezione [Riattivazione LAN a partire dalla versione 1810](#bkmk_wol-1810). La nuova impostazione client **Consenti la riattivazione della rete** cambia le proprietà della scheda di interfaccia di rete per abilitare Riattivazione LAN. Non è più necessario cambiarle manualmente per i nuovi computer aggiunti all'ambiente. Le altre funzionalità di Riattivazione LAN non sono cambiate.
 
-A partire dalla versione 1902, la notifica client **Riattiva** rispetta l'attuale impostazione di **Numero di porta di riattivazione LAN (UDP)**.
+A partire dalla versione 1902, la notifica client **Riattiva** rispetta l'attuale impostazione di **Numero di porta di riattivazione LAN (UDP)** .
 
 
 ## <a name="bkmk_wol-previous"></a> Riattivazione LAN per la versione1806 e precedenti

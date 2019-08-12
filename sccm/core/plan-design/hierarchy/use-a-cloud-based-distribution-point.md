@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe6544e020f819f1ed18592ce811f2992a5603eb
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: 72b374b738a7938126d0e03a9b8b8fdb8dab220a
+ms.sourcegitcommit: 159c6c9fe1df03fd2c4633125a593e3050a2f2da
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67251496"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68833029"
 ---
 # <a name="use-a-cloud-distribution-point-in-configuration-manager"></a>Usare un punto di distribuzione cloud in Configuration Manager
 
@@ -100,7 +100,7 @@ A partire da Configuration Manager versione 1902, Azure Resource Manager è l'un
 In Configuration Manager versione 1810 e precedenti la procedura guidata del punto di distribuzione cloud offre ancora l'opzione per una **distribuzione classica del servizio** tramite un certificato di gestione di Azure. Per semplificare la distribuzione e la gestione delle risorse, usare il modello di distribuzione Azure Resource Manager per tutti i nuovi punti di distribuzione cloud. Se possibile, ridistribuire i punti di distribuzione cloud esistenti tramite Resource Manager.
 
 > [!Important]  
-> A partire dalla versione 1810, la distribuzione classica del servizio in Azure è deprecata in Configuration Manager. Si tratta dell'ultima versione che supporta la creazione di queste distribuzioni di Azure. Questa funzionalità verrà rimossa nella prima versione di Configuration Manager rilasciata dopo il 1° luglio 2019. Spostare CMG e i punti di distribuzione del cloud nelle distribuzioni di Azure Resource Manager prima di tale data. <!--SCCMDocs-pr issue #2993-->  
+> A partire dalla versione 1810, la distribuzione classica del servizio in Azure è deprecata in Configuration Manager. Si tratta dell'ultima versione che supporta la creazione di queste distribuzioni di Azure. Questa funzionalità verrà rimossa in una versione futura di Configuration Manager.<!--SCCMDocs-pr issue #2993-->  
 
 Configuration Manager non esegue la migrazione dei punti di distribuzione cloud classici esistenti nel modello di distribuzione Azure Resource Manager. Creare nuovi punti di distribuzione cloud usando distribuzioni di Azure Resource Manager e quindi rimuovere i punti di distribuzione cloud classici.
 
