@@ -2,7 +2,7 @@
 title: Versioni di Technical Preview
 titleSuffix: Configuration Manager
 description: Informazioni sulla versione Technical Preview che consente di testare nuove funzionalità e capacità in Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 08/06/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 977f5cc2d9719a333aa4f063a6e4f9c505e82d3b
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 3f208a8bf66748601985434366a30297396254e4
+ms.sourcegitcommit: 159c6c9fe1df03fd2c4633125a593e3050a2f2da
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68535873"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68833069"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Technical Preview per Configuration Manager
 
@@ -26,7 +26,7 @@ Questo articolo include informazioni dettagliate sul ramo Technical Preview mens
 
 Poiché questa versione è una Technical Preview, dettagli e funzionalità sono soggetti a modifiche.  
 
-Queste informazioni si applicano a tutte le versioni del ramo Technical Preview di Configuration Manager. Questo articolo elenca ogni nuova funzionalità insieme alla versione Technical Preview in cui compare per la prima volta. Ad esempio, la versione **1901** per gennaio (01) del 2019 (19). Le singole funzionalità sono descritte in dettaglio in articoli separati dedicati a ogni versione di anteprima.  
+Queste informazioni si applicano a tutte le versioni del ramo Technical Preview di Configuration Manager. Questo articolo elenca ogni nuova funzionalità insieme alla versione Technical Preview in cui compare per la prima volta. Ad esempio, la versione **1908** per agosto (08) del 2019 (19). Le singole funzionalità sono descritte in dettaglio in articoli separati dedicati a ogni versione di anteprima.  
 
 Per informazioni sulle novità della versione *Current Branch* di Configuration Manager, vedere [Novità delle versioni incrementali di Configuration Manager](/sccm/core/plan-design/changes/whats-new-incremental-versions).
 
@@ -122,23 +122,35 @@ Le funzionalità seguenti sono disponibili con la versione Technical Preview di 
 
 <!-- This is the full list of new features in the latest TP release -->
 
-### <a name="technical-preview-version-1907"></a>Technical Preview versione 1907
+### <a name="technical-preview-version-1908"></a>Technical Preview versione 1908
 
 <!-- - [title](/sccm/core/get-started/2019/technical-preview-1901#bkmk_anchor) <!--ID-->
 
-- [Ricerca nell'editor delle sequenze di attività](/sccm/core/get-started/2019/technical-preview-1907#bkmk_tsedit) <!--4621085-->
-- [Miglioramenti al dashboard Preparazione aggiornamenti per Office 365 ProPlus](/sccm/core/get-started/2019/technical-preview-1907#improvements-to-office-365-proplus-upgrade-readiness-dashboard) <!--4021125-->
+- [Miglioramenti delle prestazioni della sequenza di attività per le combinazioni per il risparmio di energia](/sccm/core/get-started/2019/technical-preview-1908#bkmk_tsperf) <!--3555926-->
+- [Valutazione delle query sul dispositivo locale con CMPivot autonomo](/sccm/core/get-started/2019/technical-preview-1908#local-device-query-evaluation-using-cmpivot-standalone) <!--3197353-->
+- [Filtro di aggiornamento software aggiuntivo per le regole di distribuzione automatica](/sccm/core/get-started/2019/technical-preview-1908#additional-software-update-filter-for-adrs) <!--4852033-->
+- [Usare Ottimizzazione recapito per tutti gli aggiornamenti di Windows](/sccm/core/get-started/2019/technical-preview-1908#use-delivery-optimization-for-all-windows-updates) <!--4699118 (4685210)-->
+- [Modelli di distribuzione in più fasi](/sccm/core/get-started/2019/technical-preview-1908#phased-deployment-templates) <!--4961086-->
+- [Miglioramenti al nodo Connessioni di console](/sccm/core/get-started/2019/technical-preview-1908#improvements-to-console-connections-node) <!--4923997 (4951240)-->
+- [Copiare e incollare le condizioni della sequenza di attività](/sccm/core/get-started/2019/technical-preview-1908#bkmk_tscondition) <!--4621098-->
+- [Miglioramenti per la ricerca nell'editor della sequenza di attività](/sccm/core/get-started/2019/technical-preview-1908#bkmk_tssearch) <!--4621085-->
+- [Miglioramenti alla distribuzione del sistema operativo](/sccm/core/get-started/2019/technical-preview-1908#bkmk_osd) <!--4910348, 4931110, 4977616-->
 
 > [!Note]  
 > Le funzionalità disponibili in una versione precedente della Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità aggiunte alla versione Current Branch di Configuration Manager rimangono disponibili nel ramo Technical Preview.  
 
-<!-- comment out until 1908.1 TP
-## Features in recent technical previews
+## <a name="features-in-recent-technical-previews"></a>Funzionalità nelle anteprime tecniche recenti
 
-The following features were released with previous versions of the Configuration Manager technical preview branch since current branch version 1906:
+Le funzionalità seguenti sono state rilasciate in versioni precedenti di Configuration Manager Technical Preview Branch dopo la versione Current Branch 1906:
+
+### <a name="technical-preview-version-1907"></a>Technical Preview versione 1907
+
+- [Ricerca nell'editor delle sequenze di attività](/sccm/core/get-started/2019/technical-preview-1907#bkmk_tsedit) <!--4621085-->
+- [Miglioramenti al dashboard Preparazione aggiornamenti per Office 365 ProPlus](/sccm/core/get-started/2019/technical-preview-1907#improvements-to-office-365-proplus-upgrade-readiness-dashboard) <!--4021125-->
+
 
 > [!Tip]  
-> When a new current branch version is available, features that are available in that version are listed in the latest *What's new* article. For more information, see [What's new in incremental versions](/sccm/core/plan-design/changes/whats-new-incremental-versions#supported-versions).
+> Quando è disponibile una nuova versione Current Branch, le funzionalità presenti in tale versione sono elencate nella versione più recente dell'articolo *Novità*. Per altre informazioni, vedere [Novità delle versioni incrementali](/sccm/core/plan-design/changes/whats-new-incremental-versions#supported-versions).
 
 <!-- This is the full list of new features in the past TP releases since the last CB release.
 Each month, add features from the list above to a new H3 section at the top of this section.

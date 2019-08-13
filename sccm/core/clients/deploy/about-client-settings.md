@@ -2,7 +2,7 @@
 title: Impostazioni client
 titleSuffix: Configuration Manager
 description: Informazioni sulle impostazioni predefinite e personalizzate per il controllo dei comportamenti client
-ms.date: 07/26/2019
+ms.date: 08/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7d43a2eea28073ef0193c454c4e1a10bc5f3763
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: aeba2818b44e69066c02b25429ffd03cec00909e
+ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68535185"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68859792"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -331,6 +331,8 @@ Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le fin
 
 **Quando una distribuzione richiede un riavvio, mostra una finestra di dialogo all'utente invece di un avviso popup**<!--3555947-->: A partire dalla versione 1902, la configurazione di questa impostazione su **Sì** rede più invasiva l'esperienza utente. Questa impostazione si applica a tutte le distribuzioni di applicazioni, sequenze di attività e aggiornamenti software. Per altre informazioni, vedere [Pianificare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_impact).
 
+> [!IMPORTANT]
+> In Configuration Manager 1902, in determinate circostanze, la finestra di dialogo non sostituisce le notifiche di tipo avviso popup. Per risolvere questo problema, installare l'[aggiornamento cumulativo per Configuration Manager versione 1902](https://support.microsoft.com/help/4500571/update-rollup-for-configuration-manager-current-branch-1902). <!--4404715-->
 
 
 ## <a name="delivery-optimization"></a>Ottimizzazione recapito

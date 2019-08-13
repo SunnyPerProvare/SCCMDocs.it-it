@@ -2,7 +2,7 @@
 title: Versioni di SQL Server supportate
 titleSuffix: Configuration Manager
 description: Requisiti di configurazione e della versione di SQL Server per l'hosting di un database del sito di Configuration Manager.
-ms.date: 08/14/2018
+ms.date: 08/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b88ca3361390f8577dc44f2a3fd9640d5a49ad7d
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: e9c84044705c014c547291ea70203e16f3eab004
+ms.sourcegitcommit: ebce34771d39292737a60ba9f051ab4d3636903a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536821"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68822473"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>Versioni di SQL Server supportate per Configuration Manager
 
@@ -24,11 +24,10 @@ ms.locfileid: "68536821"
 
 Ogni sito di System Center Configuration Manager richiede una versione e una configurazione di SQL Server supportate per ospitare il database del sito.  
 
-
-
 ##  <a name="bkmk_Instances"></a> Istanze e percorsi di SQL Server  
  
-### <a name="central-administration-site-and-primary-sites"></a>Sito di amministrazione centrale e siti primari  
+### <a name="central-administration-site-and-primary-sites"></a>Sito di amministrazione centrale e siti primari
+ 
 Il database del sito deve usare un'installazione completa di SQL Server.  
 
 SQL Server può trovarsi:  
@@ -49,138 +48,89 @@ Il database del sito può usare l'istanza predefinita di un'installazione comple
 
 È necessario che SQL Server si trovi nel computer del server del sito.  
 
+### <a name="limitations-to-support"></a>Limitazioni al supporto
 
-### <a name="limitations-to-support"></a>Limitazioni al supporto   
 Le configurazioni seguenti non sono supportate:
+
 - Un cluster SQL Server in una configurazione cluster Bilanciamento carico di rete (NLB)
 - Un cluster SQL Server cluster in un Volume condiviso cluster
 - La tecnologia di mirroring e la replica peer-to-peer del database di SQL Server
 
 La replica transazionale di SQL Server è supportata solo per la replica di oggetti ai punti di gestione configurati per l'uso delle [repliche di database](/sccm/core/servers/deploy/configure/database-replicas-for-management-points).  
 
+##  <a name="bkmk_SQLVersions"></a> Versioni supportate di SQL Server
 
-
-##  <a name="bkmk_SQLVersions"></a> Versioni supportate di SQL Server  
 In una gerarchia con più siti, diversi siti possono usare versioni diverse di SQL Server per ospitare il database del sito, purché siano vere le condizioni seguenti:
+
 - Configuration Manager supporta le versioni di SQL Server usate.
 - Le versioni di SQL Server usate sono supportate da Microsoft.
-- SQL Server supporta la replica tra le due versioni di SQL Server. Ad esempio, SQL Server non supporta la replica tra SQL Server 2008 R2 e SQL Server 2016. Per altre informazioni, vedere [Funzionalità deprecate nella replica di SQL Server](https://docs.microsoft.com/sql/relational-databases/replication/deprecated-features-in-sql-server-replication).
+- SQL Server supporta la replica tra le due versioni di SQL Server. Per altre informazioni, vedere [Compatibilità con le versioni precedenti della replica di SQL Server](https://docs.microsoft.com/sql/relational-databases/replication/replication-backward-compatibility).
+
+Per SQL Server 2016 e versioni precedenti, il supporto per ogni versione di SQL e Service Pack segue i [criteri del ciclo di vita Microsoft](https://aka.ms/sqllifecycle). Il supporto per un Service Pack di SQL Server specifico include gli aggiornamenti cumulativi, a meno che non interrompano la compatibilità con la versione di base del Service Pack. A partire da SQL Server 2017, i Service Pack non verranno rilasciati perché segue un [modello di manutenzione moderno](https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-the-modern-servicing-model-for-sql-server/). Il team di SQL Server consiglia l'[installazione proattiva continua degli aggiornamenti cumulativi](https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/) non appena diventano disponibili.
 
 
-
-Se non specificato diversamente, le versioni seguenti di SQL Server sono supportate con tutte le versioni attive di Configuration Manager. Se viene aggiunto il supporto per una nuova versione di SQL Server o del Service Pack, viene indicata la versione di Configuration Manager che aggiunge tale supporto. Analogamente, se il supporto è deprecato, cercare i dettagli relativi alle versioni di Configuration Manager interessate.   
-
-Il supporto per un Service Pack di SQL Server specifico include gli aggiornamenti cumulativi, a meno che non interrompano la compatibilità con la versione di base del Service Pack. Quando non è indicata alcuna versione del Service Pack, il supporto si intende per la versione di SQL Server senza Service Pack. Se in futuro viene rilasciato un Service Pack per una versione di SQL Server, viene dichiarata un'istruzione di supporto separata prima che sia supportata la nuova versione del Service Pack.
-
+Se non specificato diversamente, le versioni seguenti di SQL Server sono supportate con tutte le versioni attive di Configuration Manager. Se viene aggiunto il supporto per una nuova versione di SQL Server, viene indicata la versione di Configuration Manager che aggiunge tale supporto. Analogamente, se il supporto è deprecato, cercare i dettagli relativi alle versioni di Configuration Manager interessate.
 
 > [!IMPORTANT]  
 > Se si usa SQL Server Standard per il database nel sito di amministrazione centrale, si limita il numero totale di client che una gerarchia può supportare. Vedere [Numeri di ridimensionamento e scalabilità](/sccm/core/plan-design/configs/size-and-scale-numbers).
 
-### <a name="sql-server-2017-standard-enterprise"></a>SQL Server 2017: Standard, Enterprise  
-È possibile usare questa versione di SQL Server con almeno la [versione dell'aggiornamento cumulativo 2](https://support.microsoft.com/help/4052574), a partire da [Configuration Manager versione 1710](/sccm/core/plan-design/changes/whats-new-in-version-1710) per i siti seguenti: 
+### <a name="sql-server-2017-standard-enterprise"></a>SQL Server 2017: Standard, Enterprise
+
+È possibile usare questa versione con la [versione 2 dell'aggiornamento cumulativo](https://support.microsoft.com/help/4052574) o versione successiva, purché la versione dell'aggiornamento cumulativo sia supportata dal ciclo di vita di SQL. Questa versione di SQL può essere usata per i siti seguenti:
 
 - sito di amministrazione centrale  
 - sito primario  
 - sito secondario  
   <!--SMS.498506-->
 
-### <a name="sql-server-2016-sp2-standard-enterprise"></a>SQL Server 2016 SP2 Standard, Enterprise  
-<!--514985-->
-È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
-
-- sito di amministrazione centrale  
-- sito primario  
-- sito secondario  
-
-### <a name="sql-server-2016-sp1-standard-enterprise"></a>SQL Server 2016 SP1: Standard, Enterprise  
-È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
-
-- sito di amministrazione centrale  
-- sito primario  
-- sito secondario  
-
 ### <a name="sql-server-2016-standard-enterprise"></a>SQL Server 2016: Standard, Enterprise  
-È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
+<!--514985-->
+È possibile usare questa versione con il Service Pack minimo e l'aggiornamento cumulativo supportato dal ciclo di vita di SQL. Questa versione di SQL può essere usata per i siti seguenti:
 
 - sito di amministrazione centrale  
 - sito primario  
 - sito secondario  
 
-### <a name="sql-server-2014-sp3-standard-enterprise"></a>SQL Server 2014 SP3: Standard, Enterprise  
-È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
+### <a name="sql-server-2014-standard-enterprise"></a>SQL Server 2014: Standard, Enterprise
+
+È possibile usare questa versione con il Service Pack minimo e l'aggiornamento cumulativo supportato dal ciclo di vita di SQL. Questa versione di SQL può essere usata per i siti seguenti:
 
 - sito di amministrazione centrale  
 - sito primario  
 - sito secondario
 
-### <a name="sql-server-2014-sp2-standard-enterprise"></a>SQL Server 2014 SP2: Standard, Enterprise  
-È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
+### <a name="sql-server-2012-standard-enterprise"></a>SQL Server 2012: Standard, Enterprise
 
-- sito di amministrazione centrale  
-- sito primario  
-- sito secondario
-
-### <a name="sql-server-2014-sp1-standard-enterprise"></a>SQL Server 2014 SP1: Standard, Enterprise  
- È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
-
-- sito di amministrazione centrale  
-- sito primario  
-- sito secondario
-
-### <a name="sql-server-2012-sp4-standard-enterprise"></a>SQL Server 2012 SP4: Standard, Enterprise  
- È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
+È possibile usare questa versione con il Service Pack minimo e l'aggiornamento cumulativo supportato dal ciclo di vita di SQL. Questa versione di SQL può essere usata per i siti seguenti:
 
 - sito di amministrazione centrale  
 - sito primario  
 - sito secondario  
 
-### <a name="sql-server-2012-sp3-standard-enterprise"></a>SQL Server 2012 SP3: Standard, Enterprise  
- È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
+### <a name="sql-server-2017-express"></a>SQL Server 2017 Express
 
-- sito di amministrazione centrale  
-- sito primario  
-- sito secondario  
+È possibile usare questa versione con la [versione 2 dell'aggiornamento cumulativo](https://support.microsoft.com/help/4052574) o versione successiva, purché la versione dell'aggiornamento cumulativo sia supportata dal ciclo di vita di SQL. Questa versione di SQL può essere usata per i siti seguenti:
 
-### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3: Standard, Enterprise, Datacenter     
-Questa versione di SQL Server non è supportata. Per altre informazioni, vedere [Supporto deprecato per le versioni di SQL Server usate come database del sito](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#sql-server).  
-
-### <a name="sql-server-2017-express"></a>SQL Server 2017 Express   
-È possibile usare questa versione di SQL Server con almeno la [versione dell'aggiornamento cumulativo 2](https://support.microsoft.com/help/4052574), a partire da [Configuration Manager versione 1710](/sccm/core/plan-design/changes/whats-new-in-version-1710) per i siti seguenti:
 - sito secondario
 <!--SMS.498506-->
 
-### <a name="sql-server-2016-express-sp2"></a>SQL Server 2016 Express SP2  
-È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:
-- sito secondario
-
-### <a name="sql-server-2016-express-sp1"></a>SQL Server 2016 Express SP1  
-È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:
-- sito secondario
-
 ### <a name="sql-server-2016-express"></a>SQL Server 2016 Express
-È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:
+
+È possibile usare questa versione con il Service Pack minimo e l'aggiornamento cumulativo supportato dal ciclo di vita di SQL. Questa versione di SQL può essere usata per i siti seguenti:
+
 - sito secondario
 
-### <a name="sql-server-2014-express-sp3"></a>SQL Server 2014 Express SP3   
-È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
+### <a name="sql-server-2014-express"></a>SQL Server 2014 Express
+
+È possibile usare questa versione con il Service Pack minimo e l'aggiornamento cumulativo supportato dal ciclo di vita di SQL. Questa versione di SQL può essere usata per i siti seguenti:
 
 - sito secondario  
 
-### <a name="sql-server-2014-express-sp2"></a>SQL Server 2014 Express SP2   
-È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
+### <a name="sql-server-2012-express"></a>SQL Server 2012 Express
+
+È possibile usare questa versione con il Service Pack minimo e l'aggiornamento cumulativo supportato dal ciclo di vita di SQL. Questa versione di SQL può essere usata per i siti seguenti:
 
 - sito secondario  
-
-### <a name="sql-server-2014-express-sp1"></a>SQL Server 2014 Express SP1   
- È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
-
-- sito secondario  
-
-### <a name="sql-server-2012-express-sp3"></a>SQL Server 2012 Express SP3  
-È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
-
-- sito secondario  
-
 
 ## <a name="bkmk_SQLConfig"></a> Configurazioni necessarie per SQL Server
 
@@ -295,7 +245,6 @@ Se è disponibile un firewall abilitato nel computer che esegue SQL Server, assi
 Per un esempio di come configurare SQL Server per l'uso di una porta specifica, vedere [Configurare un server per l'attesa su una porta TCP specifica](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-server-to-listen-on-a-specific-tcp-port).  
 
 
-
 ## <a name="upgrade-options-for-sql-server"></a>Opzioni di aggiornamento per SQL Server
 
 Se è necessario aggiornare la versione di SQL Server, usare uno dei metodi seguenti, dal più semplice al più complesso:  
@@ -304,4 +253,4 @@ Se è necessario aggiornare la versione di SQL Server, usare uno dei metodi segu
 
 - Installare una nuova versione di SQL Server in un nuovo computer e quindi [usare l'opzione di spostamento del database](/sccm/core/servers/manage/modify-your-infrastructure#bkmk_dbconfig) dell'installazione di Configuration Manager in modo che il server del sito punti alla nuova versione di SQL Server  
 
-- Usare le funzionalità di [backup e ripristino](/sccm/protect/understand/backup-and-recovery). L'uso delle funzionalità di backup e ripristino per uno scenario di aggiornamento SQL è supportato. È possibile ignorare il requisito di controllo delle versioni SQL quando si rivedono le [Considerazioni prima del recupero di un sito](/sccm/protect/understand/recover-sites#considerations-before-recovering-a-site). 
+- Usare le funzionalità di [backup e ripristino](/sccm/protect/understand/backup-and-recovery). L'uso delle funzionalità di backup e ripristino per uno scenario di aggiornamento SQL è supportato. È possibile ignorare il requisito di controllo delle versioni SQL quando si rivedono le [Considerazioni prima del recupero di un sito](/sccm/protect/understand/recover-sites#considerations-before-recovering-a-site).

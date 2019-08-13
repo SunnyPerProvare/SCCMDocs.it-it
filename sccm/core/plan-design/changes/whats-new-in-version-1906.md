@@ -2,7 +2,7 @@
 title: Novità della versione 1906
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1906 di Configuration Manager Current Branch.
-ms.date: 07/26/2019
+ms.date: 08/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,18 +11,18 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0dd0b7bd83f33645028755242a48d0581de43460
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 79901ed2922348de06467efbae8d720f9f2d75b5
+ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68538107"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860093"
 ---
 # <a name="whats-new-in-version-1906-of-configuration-manager-current-branch"></a>Novità della versione 1906 di Configuration Manager Current Branch
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-L'aggiornamento 1906 per Configuration Manager Current Branch è disponibile come aggiornamento nella console. Applicare questo aggiornamento ai siti con la versione 1806, 1810 o 1902. <!-- baseline only statement:When installing a new site, it's also available as a baseline version.--> Questo articolo offre un riepilogo delle modifiche e delle nuove funzionalità di Configuration Manager versione 1906.  
+L'aggiornamento 1906 per Configuration Manager Current Branch è disponibile come aggiornamento nella console. Applicare questo aggiornamento ai siti con la versione 1802 o versioni successive. <!-- baseline only statement:When installing a new site, it's also available as a baseline version.--> Questo articolo offre un riepilogo delle modifiche e delle nuove funzionalità di Configuration Manager versione 1906.  
 
 Esaminare sempre l'elenco di controllo più recente per installare questo aggiornamento. Per altre informazioni, vedere [Elenco di controllo per l'installazione dell'aggiornamento 1906](/sccm/core/servers/manage/checklist-for-installing-update-1906). Dopo aver aggiornato un sito, vedere anche [Elenco di controllo post-aggiornamento](/sccm/core/servers/manage/checklist-for-installing-update-1906#post-update-checklist).
 
@@ -395,7 +395,7 @@ Questa versione include i seguenti miglioramenti apportati all'infrastruttura di
 > Questi miglioramenti iterativi di Software Center e il punto di gestione sono concepiti per il ritiro dei ruoli del catalogo applicazioni.
 >
 > - L'esperienza utente di Silverlight non è supportata a partire dalla versione Current Branch 1806.
-> - A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è possibile, poi, installare nuovi ruoli del Catalogo applicazioni.
+> - A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni.
 > - Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
 
 Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat) e [Pianificare per Software Center](/sccm/apps/plan-design/plan-for-software-center).
@@ -581,11 +581,6 @@ Esistono diversi modi per visualizzare un elenco di dispositivi nel nodo **Dispo
 
   - Quando si seleziona un dispositivo in questo elenco, è ora possibile avviare **CMPivot** ed **eseguire script** dal gruppo Dispositivi della barra multifunzione.  
 
-### <a name="multiselect-and-delete-packages"></a>Selezione multipla ed eliminazione di pacchetti
-
-<!--4616810-->
-Nell'area di lavoro **Raccolta software** espandere **Gestione applicazioni** e selezionare il nodo **Pacchetti**. selezionare più di un pacchetto. Nel gruppo Pacchetti della barra multifunzione è ora possibile eliminare più di un pacchetto alla volta.
-
 ### <a name="order-by-program-name-in-task-sequence"></a>Ordinare in base al nome del programma nella sequenza di attività
 
 <!--4616810-->
@@ -602,8 +597,6 @@ Nell'area di lavoro **Monitoraggio** espandere **Operazioni client**. L'operazio
 Per conoscere le modifiche relative al supporto prima che siano implementate, vedere [Elementi rimossi e deprecati](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated).
 
 Nella versione 1906 è stato eliminato il supporto delle funzionalità seguenti:  
-
-- Distribuzione classica del servizio in Azure per il gateway di gestione cloud e il punto di distribuzione cloud. Per altre informazioni, vedere [Pianificare il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).
 
 - Non è possibile installare nuovi ruoli del Catalogo applicazioni. I client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Per altre informazioni, vedere [Pianificare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).
 
@@ -654,7 +647,7 @@ Al momento di installare questa versione, vedere [Installazione degli aggiorname
 > Sono disponibili altre informazioni su:
 >
 > - [Installing new sites](/sccm/core/servers/deploy/install/installing-sites) (Installare nuovi siti)  
-> - [Baseline and update versions](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions) (Versioni di base e di aggiornamento)  
+> - [Baseline and update versions](/sccm/core/servers/manage/updates#bkmk_Baselines) (Versioni di base e di aggiornamento)  
 
 Per problemi noti e importanti, vedere [Note sulla versione](/sccm/core/servers/deploy/install/release-notes).
 

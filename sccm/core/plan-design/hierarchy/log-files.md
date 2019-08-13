@@ -2,7 +2,7 @@
 title: Riferimento ai file di log
 titleSuffix: Configuration Manager
 description: Riferimento di tutti i file di log per i componenti client, server e dipendenti di Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 08/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c88035f7aff8b6021639b3c26387567e722cfc63
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 44ed3f61914cf62a9eceb189be933330cf04124e
+ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536693"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860065"
 ---
 # <a name="log-file-reference"></a>Riferimento ai file di log
 
@@ -144,6 +144,7 @@ Nella tabella seguente sono elencati i file di log individuati nel client di Con
 |CoManagementHandler.log|Usare per risolvere i problemi di co-gestione nel client.|
 |ContentTransferManager.log|Pianifica il Servizio trasferimento intelligente in background (BITS) o Server Message Block (SMB) per il download o per l'accesso ai pacchetti.|  
 |DataTransferService.log|Registra tutte le comunicazioni BITS per l'accesso ai criteri o ai pacchetti.|  
+|DeltaDownload.log|Registra le informazioni sul download di aggiornamenti rapidi e aggiornamenti scaricati con Ottimizzazione recapito.|  
 |EndpointProtectionAgent|Registra le informazioni sull'installazione del client di System Center Endpoint Protection e sull'applicazione di criteri antimalware in tale client.|  
 |execmgr.log|Registra informazioni dettagliate sui pacchetti e sulle sequenze attività in esecuzione nel client.|  
 |ExpressionSolver.log|Registra informazioni dettagliate sui metodi di rilevamento avanzati che vengono usati quando si attiva la registrazione debug o dettagliata.|  
@@ -833,7 +834,8 @@ La tabella seguente elenca i file di log contenenti informazioni correlate agli 
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
 |AlternateHandler.log|Registra informazioni dettagliate quando il client chiama l'interfaccia COM A portata di clic di Office per scaricare e installare gli aggiornamenti del client Office 365. È simile all'uso di WuaHandler quando questo chiama l'API Agente di Windows Update per scaricare e installare gli aggiornamenti di Windows.<!-- SCCMDocs#888 -->|Client|
-|ccmperf.log|Registra le attività di manutenzione e acquisizione dati correlate ai contatori delle prestazioni dei client.|Client|  
+|ccmperf.log|Registra le attività di manutenzione e acquisizione dati correlate ai contatori delle prestazioni dei client.|Client|
+|DeltaDownload.log|Registra le informazioni sul download di aggiornamenti rapidi e aggiornamenti scaricati con Ottimizzazione recapito.|Client|  
 |PatchDownloader.log|Registra informazioni dettagliate sul processo di download degli aggiornamenti software dall'origine degli aggiornamenti alla destinazione del download sul server del sito.|Se si scaricano gli aggiornamenti manualmente, questo file di log si trova nella directory %temp% dell'utente che esegue la console nel computer in cui questa è in esecuzione. Per le regole di distribuzione automatica, questo file di log si trova nel server del sito in %windir%\CCM\Logs, se il client ConfigMgr è installato nel server del sito.|  
 |PolicyEvaluator.log|Registra informazioni dettagliate sulla valutazione dei criteri nei computer client, inclusi quelli derivanti dagli aggiornamenti software.|Client|  
 |RebootCoordinator.log|Registra informazioni dettagliate sul coordinamento dei riavvii del sistema nei computer client dopo le installazioni degli aggiornamenti software.|Client|  

@@ -2,7 +2,7 @@
 title: Notifiche di riavvio del dispositivo
 titleSuffix: Configuration Manager
 description: Riavviare il comportamento delle notifiche per diverse impostazioni client in Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 08/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 948c92fc718446bba92bb92e88223fc93213c798
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 9e057a7391bbdbe697b7f53c13a90a74efe22635
+ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68537867"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68859661"
 ---
 # <a name="device-restart-notifications-in-configuration-manager"></a>Notifiche di riavvio del dispositivo in Configuration Manager
 
@@ -97,6 +97,9 @@ Le impostazioni seguenti devono avere una durata più breve della [finestra di m
 
 - **Visualizzare una notifica temporanea in cui viene indicato l'intervallo di disconnessione dell'utente o di riavvio del computer (minuti)**
 - **Visualizzare una finestra di dialogo che l'utente non può chiudere in cui viene indicato l'intervallo per il conto alla rovescia prima della disconnessione dell'utente o del riavvio del computer (minuti)**
+
+> [!IMPORTANT]
+> In Configuration Manager 1902, in determinate circostanze, la finestra di dialogo non sostituisce le notifiche di tipo avviso popup. Per risolvere questo problema, installare l'[aggiornamento cumulativo per Configuration Manager versione 1902](https://support.microsoft.com/help/4500571/update-rollup-for-configuration-manager-current-branch-1902). <!--4404715-->
 
 ## <a name="device-restart-notifications-starting-in-version-1906"></a>Notifiche di riavvio del dispositivo a partire dalla versione 1906
 <!--3976435-->

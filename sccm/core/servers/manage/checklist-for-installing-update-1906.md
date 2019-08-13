@@ -2,7 +2,7 @@
 title: Elenco di controllo per la versione 1906
 titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager alla versione 1906.
-ms.date: 07/26/2019
+ms.date: 08/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 65e68662217275832d7e36e331c5094f45d0b33e
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: ba3195db4445b4a96e04e9805cf92e6e21c9b2be
+ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68538007"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860005"
 ---
 # <a name="checklist-for-installing-update-1906-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1906 di Configuration Manager
 
@@ -34,7 +34,7 @@ Per ottenere l'aggiornamento per la versione 1906, è necessario usare un punto 
 
     - Un altro problema di download comune si verifica quando le impostazioni del server proxy impediscono il download da `silverlight.dlservice.microsoft.com`, `download.microsoft.com` e `go.microsoft.com`.
 
-Per altre informazioni sull'installazione degli aggiornamenti, vedere [Aggiornamenti e manutenzione nella console](/sccm/core/servers/manage/updates#a-namebkmkinconsolea-in-console-updates-and-servicing).
+Per altre informazioni sull'installazione degli aggiornamenti, vedere [Aggiornamenti e manutenzione nella console](/sccm/core/servers/manage/updates#bkmk_inconsole).
 
 Per altre informazioni sulle versioni Current Branch, vedere [Versioni di base e di aggiornamento](/sccm/core/servers/manage/updates#bkmk_Baselines).
 
@@ -77,7 +77,7 @@ La versione 1906 viene attualmente rilasciata per l'anello di aggiornamento anti
 Microsoft firma digitalmente lo script e lo aggrega all'interno di un file eseguibile autoestraente firmato.
 
 > [!Note]  
-> L'aggiornamento della versione 1906 è applicabile solo ai siti che eseguono la versione 1806 o successiva.
+> L'aggiornamento della versione 1906 è applicabile solo ai siti che eseguono la versione 1802 o versioni successive.
 
 Per acconsentire esplicitamente all'anello di aggiornamento anticipato:
 
@@ -100,7 +100,7 @@ L'aggiornamento della versione 1906 dovrebbe essere ora disponibile nella consol
 
 ### <a name="all-sites-run-a-supported-version-of-configuration-manager"></a>Tutti i siti eseguono una versione supportata di Configuration Manager
 
-Per poter avviare l'installazione dell'aggiornamento alla versione 1906, ogni server del sito nella gerarchia deve eseguire la stessa versione di Configuration Manager. Per eseguire l'aggiornamento alla versione 1906, è necessario usare la versione 1806, 1810 o 1902.
+Per poter avviare l'installazione dell'aggiornamento alla versione 1906, ogni server del sito nella gerarchia deve eseguire la stessa versione di Configuration Manager. Per eseguire l'aggiornamento alla versione 1906, è necessario usare la versione 1802 o versioni successive.
 
 ### <a name="review-the-status-of-your-product-licensing"></a>Esaminare lo stato della licenza del prodotto
 
@@ -131,7 +131,7 @@ Se si aggiorna il sito prima di aggiornare Windows ADK, vedere [Aggiornare i pun
 
 ### <a name="review-sql-server-native-client-version"></a>Verificare la versione di SQL Server Native Client
 
-Installare una versione minima di SQL Server 2012 Native Client che include il supporto per TLS 1.2. Per altre informazioni, vedere [Elenco dei controlli dei prerequisiti](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-native-client).
+Installare una versione minima di SQL Server 2012 Native Client che include il supporto per TLS 1.2. Per altre informazioni, vedere [Elenco dei controlli dei prerequisiti](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-server-native-client).
 
 ### <a name="review-the-site-and-hierarchy-status-for-unresolved-issues"></a>Esaminare lo stato del sito e della gerarchia per verificare la presenza di problemi non risolti
 
@@ -213,7 +213,7 @@ Per altre informazioni, vedere la sezione per **eseguire il controllo dei prereq
 
 ### <a name="update-sites"></a>Aggiornare i siti
 
-A questo punto è possibile avviare l'installazione dell'aggiornamento per la gerarchia. Per altre informazioni sull'installazione dell'aggiornamento, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates).
+A questo punto è possibile avviare l'installazione dell'aggiornamento per la gerarchia. Per altre informazioni sull'installazione dell'aggiornamento, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates#bkmk_install).
 
 È possibile pianificare l'installazione dell'aggiornamento al di fuori delle normali ore lavorative. Determinare quando il processo avrà l'impatto minimo sulle operazioni aziendali. Con l'installazione dell'aggiornamento e le relative azioni, vengono reinstallati i componenti del sito e i ruoli del sistema del sito.
 

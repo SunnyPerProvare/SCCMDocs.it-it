@@ -2,7 +2,7 @@
 title: Informazioni dettagliate sulla gestione
 titleSuffix: Configuration Manager
 description: Informazioni sulla funzionalità Informazioni dettagliate sulla gestione disponibile nella console di Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 08/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23b0839366502e44e37689c4b732c74ed2fe8458
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: ea543edbbb3831e1f1119118a9c9b4730ff5b527
+ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536202"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860026"
 ---
 # <a name="management-insights-in-configuration-manager"></a>Informazioni dettagliate sulla gestione in Configuration Manager
 
@@ -130,6 +130,8 @@ Facilita l'integrazione con molti servizi cloud per una gestione moderna dei dis
 
 - **Configura i servizi di Azure per l'uso con Configuration Manager**: questa regola consente di eseguire l'onboarding di Configuration Manager in Azure AD, in modo che i client possano usare Azure AD per eseguire l'autenticazione nel sito. Per altre informazioni, vedere [Configurare i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard).  
 
+- **Connettere il sito al cloud Microsoft per gli aggiornamenti di Configuration Manager**: Questa regola assicura che il punto di connessione del servizio Configuration Manager sia stato connesso al cloud Microsoft negli ultimi sette giorni. Questa connessione consente di scaricare il contenuto per gli aggiornamenti regolari. Vedere DMPDownloader.log e hman.log. Per altre informazioni, vedere i [requisiti di accesso Internet](/sccm/core/plan-design/network/internet-endpoints#bkmk_scp-updates).
+
 - **Consenti dispositivi ibridi aggiunti ad Azure Active Directory**: i dispositivi aggiunti ad Azure AD consentono agli utenti di accedere con le credenziali del dominio garantendo al contempo che i dispositivi soddisfino gli standard di sicurezza e conformità dell'organizzazione. Per altre informazioni, vedere [Considerazioni di progettazione dell'identità ibrida di Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-hybrid-identity-design-considerations-overview).  
 
 - **Aggiorna i client alla versione più recente di Windows 10**: Windows 10, versione 1709 o versioni successive, migliora e modernizza l'esperienza di elaborazione degli utenti. Per altre informazioni, vedere [Articoli principali sull'adozione di Windows as a Service](/sccm/core/understand/configuration-manager-and-windows-as-service#key-articles-about-adopting-windows-as-a-service).  
@@ -200,6 +202,12 @@ Informazioni dettagliate per la gestione di Software Center.
 - **Indirizza gli utenti a Software Center invece che al Catalogo applicazioni**: controlla se gli utenti hanno installato o richiesto applicazioni dal Catalogo applicazioni negli ultimi 14 giorni. La funzionalità principale del Catalogo applicazioni è ora inclusa in Software Center. Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Funzionalità deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures#deprecated-features).  
 
 - **Usa la nuova versione di Software Center**: La versione precedente di Software Center non è più supportata. Configurare i client per l'uso del nuovo Software Center abilitando l'impostazione client **Usa il nuovo Software Center** nel gruppo **Agente computer**. Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#use-new-software-center) (Informazioni sulle impostazioni client).  
+
+### <a name="software-updates"></a>Aggiornamenti software
+
+- **Le impostazioni client non sono configurate per consentire ai client di scaricare contenuto differenziale**: Alcuni aggiornamenti software sincronizzati nell'ambiente includono contenuto differenziale. Abilitare l'impostazione del client **Consenti ai client di scaricare contenuto differenziale quando disponibile**. Se non si abilita questa impostazione, quando si distribuiscono questi aggiornamenti, il client scaricherà inutilmente più contenuto del necessario. Per altre informazioni, vedere [Impostazioni del client - Aggiornamenti software](/sccm/core/clients/deploy/about-client-settings#software-updates).
+
+- **Abilitare la categoria di prodotti per gli aggiornamenti software 'Windows 10 versione 1903 e versioni successive'** : È presente una nuova categoria di prodotti per gli aggiornamenti software per Windows 10 versione 1903 e versioni successive. Se si sincronizzano gli aggiornamenti di Windows 10 e si hanno client Windows 10 versione 1903 o versioni successive, selezionare la categoria di prodotti **Windows 10 versione 1903 e versioni successive** nelle proprietà del componente del punto di aggiornamento software. Per altre informazioni, vedere [Configurare le classificazioni e i prodotti per la sincronizzazione](/sccm/sum/get-started/configure-classifications-and-products).
 
 ### <a name="windows-10"></a>Windows 10
 

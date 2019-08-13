@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19275385c75477c1c0da24109d6a9c601c5aa8d0
-ms.sourcegitcommit: 75f48834b98ea6a238d39f24e04c127b2959d913
+ms.openlocfilehash: 339c9df44f2647b12936ce8a1077fd0ee0f7ee37
+ms.sourcegitcommit: 16dd488c51b5cf01a7dd4204f7d40ee9ae0abe85
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68604546"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68743733"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>CMPivot per i dati in tempo reale in Configuration Manager
 
@@ -38,12 +38,6 @@ Per usare CMPivot sono necessari i componenti seguenti:
 
 - Aggiornare i dispositivi di destinazione alla versione più recente del client Configuration Manager.  
 
-- Autorizzazioni per CMPivot:
-  - **Lettura** per l'oggetto **Script SMS**
-  - **Esecuzione degli script** per la **raccolta**
-  - **Lettura** per i **report di inventario**
-  - L'ambito predefinito. 
-
 - I client di destinazione richiedono almeno PowerShell versione 4.
 
 - Per raccogliere dati per le entità seguenti, i client di destinazione richiedono PowerShell versione 5.0:  
@@ -52,6 +46,16 @@ Per usare CMPivot sono necessari i componenti seguenti:
   - IPConfig
   - SMBConfig
 
+
+- Autorizzazioni per CMPivot:
+  - **Lettura** per l'oggetto **Script SMS**
+  - **Esecuzione degli script** per la **raccolta**
+    - In alternativa, a partire dalla versione 1906, è possibile usare **Esegui CMPivot** per la **raccolta**.
+  - **Lettura** per i **report di inventario**
+  - L'ambito predefinito.
+
+>[!NOTE]
+> **Esegui script** è un super set dell'autorizzazione **Esegui CMPivot**.
  
 ## <a name="limitations"></a>Limitazioni
 
@@ -527,9 +531,14 @@ L'operatore render esiste già in CMPivot. Sono stati aggiunti il supporto per p
 <!--4683130-->
 
 A partire dalla versione 1906, al ruolo **Amministratore della protezione** predefinito di Configuration Manager sono state aggiunte le autorizzazioni seguenti:
- - Read on SMS Script (Lettura per script SMS)
- - Run CMPivot on Collection (Esecuzione di CMPivot su raccolta)
- - Read on Inventory Report (Lettura su report inventario)
+
+ - **Lettura** per script SMS
+ - **Esegui CMPivot** per la raccolta
+ - **Lettura** per report di inventario
+
+>[!NOTE]
+> **Esegui script** è un super set dell'autorizzazione **Esegui CMPivot**.
+ 
 
 ### <a name="bkmk_standalone"></a> Modalità autonoma per CMPivot
 <!--3555890, 4619340, 4683130 -->

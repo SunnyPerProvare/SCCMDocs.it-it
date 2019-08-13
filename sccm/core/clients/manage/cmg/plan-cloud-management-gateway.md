@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43145e7f94fb381d1051ddb7de09367f4f69d556
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: dff4d0ff8fe2bcb7fbbcd8b0b1c5c701f02d20fb
+ms.sourcegitcommit: 159c6c9fe1df03fd2c4633125a593e3050a2f2da
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68535604"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68833178"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
@@ -54,7 +54,7 @@ Un gateway di gestione cloud può essere utile in scenari diversi. Gli scenari s
 
 - Installare il client Configuration Manager in dispositivi Windows 10 tramite Internet. L'uso di Azure AD consente al dispositivo di eseguire l'autenticazione nel gateway di gestione cloud per la registrazione e l'assegnazione dei client. È possibile installare il client manualmente oppure usando un altro metodo di distribuzione del software, ad esempio Microsoft Intune.  
 
-- Nuovo provisioning di dispositivi von co-gestione. CMG è necessario per la co-gestione. Consente di completare uno scenario end-to-end per i nuovi dispositivi che prevedono l'uso di Windows AutoPilot, Azure AD, Microsoft Intune e Configuration Manager.  
+- Nuovo provisioning di dispositivi von co-gestione. Quando si esegue la registrazione automatica dei client esistenti, CMG non è necessario per la co-gestione. È necessario per i nuovi dispositivi che prevedono l'uso di Windows AutoPilot, Azure AD, Microsoft Intune e Configuration Manager. Per altre informazioni, vedere [Percorsi della co-gestione](https://docs.microsoft.com/sccm/comanage/quickstart-paths).
 
 ### <a name="specific-use-cases"></a>Casi d'uso specifici
 
@@ -109,7 +109,7 @@ A partire da Configuration Manager versione 1902, Azure Resource Manager è l'un
 In Configuration Manager versione 1810 e precedenti la procedura guidata di Cloud Management Gateway offre ancora l'opzione per una **distribuzione classica del servizio** tramite un certificato di gestione di Azure. Per semplificare la distribuzione e la gestione delle risorse, è consigliabile usare il modello di distribuzione Azure Resource Manager per tutte le nuove istanze di Cloud Management Gateway. Se possibile, ridistribuire le istanze di Cloud Management Gateway esistenti tramite Resource Manager. Per altre informazioni, vedere [Modify a CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg) (Modificare un gateway di gestione cloud).
 
 > [!Important]  
-> A partire dalla versione 1810, la distribuzione classica del servizio in Azure è deprecata in Configuration Manager. Si tratta dell'ultima versione che supporta la creazione di queste distribuzioni di Azure. Questa funzionalità verrà rimossa nella prima versione di Configuration Manager rilasciata dopo il 1° luglio 2019. Spostare CMG e i punti di distribuzione del cloud nelle distribuzioni di Azure Resource Manager prima di tale data. <!--SCCMDocs-pr issue #2993-->  
+> A partire dalla versione 1810, la distribuzione classica del servizio in Azure è deprecata in Configuration Manager. Si tratta dell'ultima versione che supporta la creazione di queste distribuzioni di Azure. Questa funzionalità verrà rimossa in una versione futura di Configuration Manager.<!--SCCMDocs-pr issue #2993-->  
 
 ### <a name="hierarchy-design"></a>Progettazione della gerarchia
 
