@@ -2,7 +2,7 @@
 title: Asset in desktop Analytics
 titleSuffix: Configuration Manager
 description: Informazioni su dispositivi, driver e app in desktop Analytics.
-ms.date: 06/13/2019
+ms.date: 08/09/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 63800bf6c8fa1d35eac44f64f2f03bde4f1d5022
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 96e76eb9a1874daa9af844d598808e30bb1a45d2
+ms.sourcegitcommit: 6b5a003256305c1f0cb605e52aeaaf19c23af5a9
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68535945"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68956232"
 ---
 # <a name="assets-in-desktop-analytics"></a>Asset in desktop Analytics
 
@@ -52,6 +52,10 @@ Configurare l' **importanza** delle app impostando una delle categorie seguenti:
 - Importante
 - Ignora
 - Non verificato
+- Non importante<!-- 3587232 -->
+
+    > [!Tip]
+    > Per ulteriori informazioni sulla categoria "non importante", vedere l'argomento relativo alla [decisione di aggiornamento automatico delle app di sistema e dello Store](/sccm/desktop-analytics/about-deployment-plans#bkmk_plan-autoapp).
 
 Selezionare l'app dall'elenco e quindi fare clic su **modifica**. Questa azione Visualizza i dettagli per l'app. Selezionare il menu a discesa **importanza** e impostare un valore. È anche possibile assegnare un **proprietario**. Se si apportano modifiche, fare clic su **Salva**.
 

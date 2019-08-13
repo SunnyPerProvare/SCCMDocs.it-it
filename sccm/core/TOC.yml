@@ -163,6 +163,14 @@
               href: plan-design/hierarchy/manage-network-bandwidth.md
             - name: Sicurezza e privacy per la gestione dei contenuti
               href: plan-design/hierarchy/security-and-privacy-for-content-management.md
+        - name: Trasferimenti di dati tra siti
+          items:
+            - name: Tipi di trasferimento dati
+              href: plan-design/hierarchy/data-transfers-between-sites.md
+            - name: replica basata su file
+              href: plan-design/hierarchy/file-based-replication.md
+            - name: replica di database
+              href: plan-design/hierarchy/database-replication.md
         - name: Informazioni su come i client trovano i servizi e le risorse del sito
           href: plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md
         - name: Sicurezza e privacy per l'amministrazione dei siti
@@ -507,16 +515,34 @@
       href: servers/manage/site-failure-impacts.md
     - name: Monitorare l'infrastruttura
       items:
+        - name: Gerarchia di monitoraggio
+          href: servers/manage/monitor-hierarchy.md
         - name: Usare gli avvisi e il sistema di stato
           href: servers/manage/use-alerts-and-the-status-system.md
         - name: Attestazione dell'integrità
           href: servers/manage/health-attestation.md
-        - name: Monitorare l'infrastruttura della gerarchia e di replica
+        - name: Infrastruttura di replica
           items:
-            - name: Monitorare l'infrastruttura della gerarchia e di replica
-              href: servers/manage/monitor-hierarchy-and-replication-infrastructure.md
-            - name: Trasferimenti di dati tra siti
-              href: servers/manage/data-transfers-between-sites.md
+            - name: Monitorare la replica
+              href: servers/manage/monitor-replication.md
+            - name: Risolvere i problemi di replica SQL
+              items:
+                - name: Risolvere i problemi di replica SQL
+                  href: servers/manage/replication/overview.md
+                - name: Replica SQL
+                  href: servers/manage/replication/sql-replication.md
+                - name: Configurazione SQL
+                  href: servers/manage/replication/sql-configuration.md
+                - name: Prestazioni SQL
+                  href: servers/manage/replication/sql-performance.md
+                - name: Reinizializzazione della replica SQL (reinit)
+                  href: servers/manage/replication/sql-replication-reinit.md
+                - name: Reinizializzazione dei dati globali
+                  href: servers/manage/replication/global-data-reinit.md
+                - name: Reinizializzazione dei dati del sito
+                  href: servers/manage/replication/site-data-reinit.md
+                - name: Reinizializzazione del messaggio mancante
+                  href: servers/manage/replication/reinit-missing-message.md
         - name: Query
           items:
             - name: Introduzione alle query
