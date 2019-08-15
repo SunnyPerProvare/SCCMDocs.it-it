@@ -2,7 +2,7 @@
 title: Piani di distribuzione in desktop Analytics
 titleSuffix: Configuration Manager
 description: Informazioni sui piani di distribuzione in analisi desktop.
-ms.date: 08/09/2019
+ms.date: 08/14/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2a1acd99ca1a4676c4397eee427cdcb8b795cf00
-ms.sourcegitcommit: 6b5a003256305c1f0cb605e52aeaaf19c23af5a9
+ms.openlocfilehash: 65dff1dbf8e8154bc2d481e274dd47d352aa9d6e
+ms.sourcegitcommit: fe8934487158ed3bd15c7a6a456c3cafe58aed64
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68956390"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68995386"
 ---
 # <a name="about-deployment-plans-in-desktop-analytics"></a>Informazioni sui piani di distribuzione in desktop Analytics
 
@@ -95,24 +95,8 @@ Nei dettagli dell'app è possibile vedere anche le informazioni seguenti: Raccom
 
 Le app che desktop Analytics Mostra come *degno* di nota si basano sulla soglia per il numero di installazioni basso per le regole di conformità del piano di distribuzione. Per altre informazioni, vedere [regole di conformità](/sccm/desktop-analytics/create-deployment-plans#readiness-rules).
 
-#### <a name="a-namebkmk_plan-autoapp--automatic-upgrade-decision-of-system-and-store-apps"></a><a name="bkmk_plan-autoapp" />Decisione di aggiornamento automatico delle app di sistema e dello Store
-
-<!-- 3587232 -->
-L'identificazione dell' **importanza** e della **decisione di aggiornamento** è fondamentale per tutte le app degne di nota nel flusso di lavoro di analisi desktop. Per ridurre il lavoro richiesto per l'annotazione di queste app, determinati tipi di app vengono automaticamente contrassegnati come *non importanti*. La decisione di aggiornamento del piano di distribuzione per queste app è inoltre contrassegnata come *pronta*. Le app seguenti sono compatibili e continueranno a funzionare dopo l'aggiornamento di Windows:
-
-- App di sistema e componenti pubblicati da Microsoft
-
-- App gestite e aggiornate dalla Microsoft Store
-
-> [!Tip]
-> Gestisci gli input per qualsiasi app a livello globale o per piano di distribuzione.
->
-> 1. Nel menu Gestisci del portale di analisi del desktop selezionare **Asset**. Quindi selezionare **app**.
->
-> 2. Usare le colonne **tipo** e **categoria** per gestire le categorie di app:
->
->    - Per le app dello Store, filtrare il **tipo** come **moderno**
->    - Per le app di sistema, filtrare la **categoria** come **processo in background** o **componente di Windows**
+   > [!Tip]
+   > Per altre informazioni sulla categoria di app "non importante", vedere l'argomento relativo alla [decisione di aggiornamento automatico delle app di sistema e dello Store](/sccm/desktop-analytics/about-assets#bkmk_plan-autoapp). <!-- 3587232 -->
 
 
 ### <a name="drivers"></a>Driver
