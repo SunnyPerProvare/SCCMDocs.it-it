@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c66a87636850a33f77fccc1c978242cf0323d413
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 975a92d2ef9e93bc5c1c5fc96cd91775a2627530
+ms.sourcegitcommit: 6b5a003256305c1f0cb605e52aeaaf19c23af5a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65498925"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68956369"
 ---
 # <a name="configure-sites-and-hierarchies-for-configuration-manager"></a>Configurare siti e gerarchie per Configuration Manager
 
@@ -47,5 +47,5 @@ Le note di configurazione seguenti sono valide per la maggior parte delle distri
 | Configurare le impostazioni per gestire le distribuzioni ad alto rischio | Configurare le impostazioni in un sito in modo da avvisare gli amministratori quando creano una distribuzione ad alto rischio. Per altre informazioni, vedere [Impostazioni per gestire distribuzioni ad alto rischio](/sccm/core/servers/manage/settings-to-manage-high-risk-deployments). |  
 | Configurare le repliche di database per i punti di gestione | Configurare una replica di database per ridurre il carico del processore determinato nel server di database del sito dai punti di gestione quando questi elaborano le richieste provenienti dai client. Per altre informazioni, vedere [Repliche di database per i punti di gestione](/sccm/core/servers/deploy/configure/database-replicas-for-management-points). |  
 | Configurare un gruppo di disponibilità Always On di SQL Server | Configurare i gruppi di disponibilità come soluzione a disponibilità elevata e ripristino di emergenza per ospitare il database del sito nei siti primari e nel sito di amministrazione centrale. Per altre informazioni, vedere [Preparare l'uso di gruppi di disponibilità Always On di SQL Server](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database). |  
-| Modificare la replica tra siti | Vedere [Trasferimenti di dati tra siti](/sccm/core/servers/manage/data-transfers-between-sites) per informazioni sugli argomenti seguenti:<br /><br /> Configurare la [replica basata su file](/sccm/core/servers/manage/data-transfers-between-sites#bkmk_fileroute) tra siti secondari<br /><br /> Configurare [collegamenti di replica di database](/sccm/core/servers/manage/data-transfers-between-sites#bkmk_Dblinks)<br /><br /> Configurare [viste distribuite](/sccm/core/servers/manage/data-transfers-between-sites#bkmk_distviews) |  
+| Modificare la replica tra siti | Vedere [Trasferimenti di dati tra siti](/sccm/core/plan-design/hierarchy/data-transfers-between-sites) per informazioni sugli argomenti seguenti:<br /><br /> Configurare la [replica basata su file](/sccm/core/plan-design/hierarchy/file-based-replication) tra siti secondari<br /><br /> Configurare [collegamenti di replica di database](/sccm/core/plan-design/hierarchy/database-replication)<br /><br /> Configurare [viste distribuite](/sccm/core/plan-design/hierarchy/database-replication#bkmk_distviews) |  
 | Configurare i server del sito in modalità passiva | A partire dalla versione 1806, configurare un server del sito in modalità passiva per ogni sito primario e per il sito di amministrazione centrale. Questa funzionalità offre un server del sito a disponibilità elevata. Per altre informazioni, vedere [Disponibilità elevata del server del sito](/sccm/core/servers/deploy/configure/site-server-high-availability). |  

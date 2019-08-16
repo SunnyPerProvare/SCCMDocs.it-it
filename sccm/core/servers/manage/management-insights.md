@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea543edbbb3831e1f1119118a9c9b4730ff5b527
-ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
+ms.openlocfilehash: ed1c182aabcfbd9ec974a380c379304d7eef63e9
+ms.sourcegitcommit: 9c29ee22d3af5ab2bf8d51262c11d5a756dc55c7
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 08/09/2019
-ms.locfileid: "68860026"
+ms.locfileid: "68913752"
 ---
 # <a name="management-insights-in-configuration-manager"></a>Informazioni dettagliate sulla gestione in Configuration Manager
 
@@ -130,8 +130,6 @@ Facilita l'integrazione con molti servizi cloud per una gestione moderna dei dis
 
 - **Configura i servizi di Azure per l'uso con Configuration Manager**: questa regola consente di eseguire l'onboarding di Configuration Manager in Azure AD, in modo che i client possano usare Azure AD per eseguire l'autenticazione nel sito. Per altre informazioni, vedere [Configurare i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard).  
 
-- **Connettere il sito al cloud Microsoft per gli aggiornamenti di Configuration Manager**: Questa regola assicura che il punto di connessione del servizio Configuration Manager sia stato connesso al cloud Microsoft negli ultimi sette giorni. Questa connessione consente di scaricare il contenuto per gli aggiornamenti regolari. Vedere DMPDownloader.log e hman.log. Per altre informazioni, vedere i [requisiti di accesso Internet](/sccm/core/plan-design/network/internet-endpoints#bkmk_scp-updates).
-
 - **Consenti dispositivi ibridi aggiunti ad Azure Active Directory**: i dispositivi aggiunti ad Azure AD consentono agli utenti di accedere con le credenziali del dominio garantendo al contempo che i dispositivi soddisfino gli standard di sicurezza e conformità dell'organizzazione. Per altre informazioni, vedere [Considerazioni di progettazione dell'identità ibrida di Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-hybrid-identity-design-considerations-overview).  
 
 - **Aggiorna i client alla versione più recente di Windows 10**: Windows 10, versione 1709 o versioni successive, migliora e modernizza l'esperienza di elaborazione degli utenti. Per altre informazioni, vedere [Articoli principali sull'adozione di Windows as a Service](/sccm/core/understand/configuration-manager-and-windows-as-service#key-articles-about-adopting-windows-as-a-service).  
@@ -189,6 +187,8 @@ Informazioni dettagliate per il miglioramento dell'infrastruttura e dei disposit
 ### <a name="simplified-management"></a>Gestione semplificata
 
 Informazioni dettagliate utili per semplificare la gestione quotidiana dell'ambiente.
+
+- **Connettere il sito al cloud Microsoft per gli aggiornamenti di Configuration Manager**: Questa regola assicura che il punto di connessione del servizio Configuration Manager sia stato connesso al cloud Microsoft negli ultimi sette giorni. Questa connessione consente di scaricare il contenuto per gli aggiornamenti regolari. Vedere DMPDownloader.log e hman.log. Per altre informazioni, vedere i [requisiti di accesso Internet](/sccm/core/plan-design/network/internet-endpoints#bkmk_scp-updates).
 
 - **Versioni client non CB**: elenca tutti i client le cui versioni non corrispondono a una build Current Branch (CB). Per altre informazioni, vedere [Aggiornare i client](/sccm/core/clients/manage/upgrade/upgrade-clients).  
 
