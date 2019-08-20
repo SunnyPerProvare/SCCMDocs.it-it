@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8ff3dac5c5ff4d04be6f30c02dba8523ce1b80b
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 0bec2d55cdf7ff5d405ee689c821735413e8a9ff
+ms.sourcegitcommit: 4241c15a277c57b5480dea70fc30f1ed46ffd4f3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68535474"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69490083"
 ---
 # <a name="how-to-create-collections-in-configuration-manager"></a>Come creare raccolte in Configuration Manager
 
@@ -237,7 +237,8 @@ La sincronizzazione con Azure AD viene eseguita ogni cinque minuti. Si tratta di
 
 1. Passare a [https://portal.azure.com](https://portal.azure.com).
 1. Passare ad **Azure Active Directory** > **Gruppi** > **Tutti i gruppi**.
-1. Fare clic su **Nuovo gruppo** e digitare un **Nome gruppo** e una **Descrizione gruppo**.
+1. Fare clic su **Nuovo gruppo** e digitare un **Nome gruppo** e, facoltativamente, una **Descrizione gruppo**.
+1. Verificare che **Tipo di appartenenza** sia impostato su **Assegnato**.
 1. Selezionare **Proprietari**, quindi aggiungere l'identità che creerà la relazione di sincronizzazione in Configuration Manager.
 1. Fare clic su **Crea** per completare la creazione del gruppo di Azure AD.
 

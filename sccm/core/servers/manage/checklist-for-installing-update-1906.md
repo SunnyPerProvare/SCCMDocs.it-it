@@ -2,7 +2,7 @@
 title: Elenco di controllo per la versione 1906
 titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager alla versione 1906.
-ms.date: 08/07/2019
+ms.date: 08/09/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba3195db4445b4a96e04e9805cf92e6e21c9b2be
-ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
+ms.openlocfilehash: a64fc82121535272c0417d1c2dbc6bed65745ce8
+ms.sourcegitcommit: 6b5a003256305c1f0cb605e52aeaaf19c23af5a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68860005"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68956438"
 ---
 # <a name="checklist-for-installing-update-1906-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1906 di Configuration Manager
 
@@ -145,9 +145,26 @@ Per altre informazioni, vedere  [Usare gli avvisi e il sistema di stato](/sccm/
 
 ### <a name="review-file-and-data-replication-between-sites"></a>Esaminare la replica di file e dati tra siti
 
-Verificare che la replica di file e database tra siti sia funzionante e aggiornata. Eventuali ritardi o backlog in uno dei due ambiti possono compromettere l'aggiornamento. Per la replica di database usare Replication Link Analyzer per risolvere i problemi prima di avviare l'aggiornamento.
+Verificare che la replica di file e database tra siti sia funzionante e aggiornata. Eventuali ritardi o backlog in uno dei due ambiti possono compromettere l'aggiornamento.
 
-Per altre informazioni, vedere [Informazioni su Replication Link Analyzer](/sccm/core/servers/manage/monitor-hierarchy-and-replication-infrastructure#BKMK_RLA).
+#### <a name="database-replication"></a>replica di database
+
+Per la [replica di database](/sccm/core/plan-design/hierarchy/database-replication), per risolvere i problemi prima di avviare l'aggiornamento, usare **Replication Link Analyzer** (RLA). Per altre informazioni, vedere [Monitorare la replica di database](/sccm/core/servers/manage/monitor-replication).
+
+Usare RLA per rispondere alle domande seguenti:
+
+- La replica per gruppo è in uno stato valido?
+- Eventuali collegamenti sono ridotti?
+- Sono presenti errori?
+
+Se è presente un backlog, attendere il completamento della cancellazione. Se il backlog è di grandi dimensioni, ad esempio milioni di record, il collegamento è in uno stato non valido. Prima di aggiornare il sito, risolvere il problema di replica. Se è necessaria ulteriore assistenza, contattare il supporto tecnico Microsoft.<!-- 2838129 -->
+
+#### <a name="file-based-replication"></a>replica basata su file
+
+Per la [replica basata su file](/sccm/core/plan-design/hierarchy/file-based-replication), controllare tutte le cartelle di posta in arrivo per verificare la presenza di un backlog sia nei siti di origine che in quelli di destinazione. Se sono presenti molti processi di replica bloccati o in sospeso, attendere che vengano cancellati.<!-- SCCMDocs#1792 -->
+
+- Nel sito di origine esaminare **sender.log**.
+- Nel sito di destinazione esaminare **despooler.log**.
 
 ### <a name="install-all-applicable-critical-windows-updates"></a>Installare tutti gli aggiornamenti di Windows critici applicabili
 
@@ -241,7 +258,7 @@ Nella console di Configuration Manager passare alle posizioni seguenti per visua
 Per altre informazioni, vedere gli articoli seguenti:  
 
 - [Monitorare l'infrastruttura della gerarchia e di replica](/sccm/core/servers/manage/monitor-hierarchy-and-replication-infrastructure)
-- [Informazioni su Replication Link Analyzer](/sccm/core/servers/manage/monitor-hierarchy-and-replication-infrastructure#BKMK_RLA)  
+- [Informazioni su Replication Link Analyzer](/sccm/core/servers/manage/monitor-replication#BKMK_RLA)  
 
 ### <a name="update-configuration-manager-consoles"></a>Aggiornare le console di Configuration Manager
 

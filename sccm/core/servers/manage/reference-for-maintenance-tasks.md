@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24e76f9281158aa28e153efe9124ba2adf94a14d
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 4bbde522e5c856bbc700fcd6ceb22d4637513d18
+ms.sourcegitcommit: 6b5a003256305c1f0cb605e52aeaaf19c23af5a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676384"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68956421"
 ---
 # <a name="reference-for-maintenance-tasks-for-system-center-configuration-manager"></a>Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager
 
@@ -148,7 +148,7 @@ Questa attività si applica ai dispositivi registrati da Microsoft Intune (modal
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina dati di riepilogo replica obsoleti**: usare questa attività per eliminare i dati di riepilogo replica obsoleti dal database del sito quando tale database non è stato aggiornato per un determinato periodo. Per altre informazioni, vedere la sezione [How to monitor database replication links and replication status](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_MonitorRepLinksAndStatuss) nell'argomento [Monitor hierarchy and replication infrastructure in System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md) .  
+**Elimina dati di riepilogo replica obsoleti**: usare questa attività per eliminare i dati di riepilogo replica obsoleti dal database del sito quando tale database non è stato aggiornato per un determinato periodo. Per altre informazioni, vedere [Monitorare la replica di database](/sccm/core/servers/manage/monitor-replication).  
 
 -   **Sito di amministrazione centrale**: Abilitato    
 -   **Sito primario**: Abilitato    
@@ -160,7 +160,7 @@ Questa attività si applica ai dispositivi registrati da Microsoft Intune (modal
 -   **Sito primario**: Abilitato    
 -   Sito secondario: Non disponibile  
 
-**Elimina dati di rilevamento repliche obsoleti**: usare questa attività per eliminare dati obsoleti relativi alla replica di database tra siti di Configuration Manager dal database. Quando si modifica la configurazione di questa attività di manutenzione, le modifiche si applicano ad ogni sito applicabile della gerarchia. Per altre informazioni, vedere la sezione [How to monitor database replication links and replication status](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_MonitorRepLinksAndStatuss) nell'argomento [Monitor hierarchy and replication infrastructure in System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md) .  
+**Elimina dati di rilevamento repliche obsoleti**: usare questa attività per eliminare dati obsoleti relativi alla replica di database tra siti di Configuration Manager dal database. Quando si modifica la configurazione di questa attività di manutenzione, le modifiche si applicano ad ogni sito applicabile della gerarchia. Per altre informazioni, vedere [Monitorare la replica di database](/sccm/core/servers/manage/monitor-replication).  
 
 -   **Sito di amministrazione centrale**: Abilitato    
 -   **Sito primario**: Abilitato    

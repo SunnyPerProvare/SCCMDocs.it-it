@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8923b380d5ee8de881e4921e9a7d5a7a680c25b0
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: 4097eb828147ec3166d4001e09332bb671db5efd
+ms.sourcegitcommit: 6b5a003256305c1f0cb605e52aeaaf19c23af5a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67252099"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68956346"
 ---
 # <a name="checklist-for-installing-update-1806-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1806 di Configuration Manager
 
@@ -99,7 +99,7 @@ Per altre informazioni, vedere  [Usare gli avvisi e il sistema di stato](/sccm/
 #### <a name="review-file-and-data-replication-between-sites"></a>Esaminare la replica di file e dati tra siti   
 verificare che la replica di file e database tra siti sia funzionante e aggiornata. Eventuali ritardi o backlog in uno dei due ambiti possono complicare o compromettere l'aggiornamento. Per la replica di database è possibile usare Replication Link Analyzer per risolvere i problemi prima di avviare l'aggiornamento.
 
-Per altre informazioni, vedere [Informazioni su Replication Link Analyzer](/sccm/core/servers/manage/monitor-hierarchy-and-replication-infrastructure#BKMK_RLA).
+Per altre informazioni, vedere [Informazioni su Replication Link Analyzer](/sccm/core/servers/manage/monitor-replication#BKMK_RLA).
 
 #### <a name="install-all-applicable-critical-windows-updates"></a>Installare tutti gli aggiornamenti di Windows critici applicabili
 Prima di installare un aggiornamento per Configuration Manager, installare gli aggiornamenti critici del sistema operativo per ogni sistema del sito applicabile. Questi server includono il server del sito, il server di database del sito e i ruoli del sistema del sito remoto. Se un aggiornamento installato richiede un riavvio, riavviare i server interessati prima di iniziare l'aggiornamento.
@@ -181,8 +181,10 @@ Nella console di Configuration Manager passare alle posizioni seguenti per visua
 -   Area di lavoro **Monitoraggio**, nodo **Replica di database**  
 
 Per altre informazioni, vedere gli articoli seguenti:  
-- [Monitorare l'infrastruttura della gerarchia e di replica](/sccm/core/servers/manage/monitor-hierarchy-and-replication-infrastructure)
-- [Informazioni su Replication Link Analyzer](/sccm/core/servers/manage/monitor-hierarchy-and-replication-infrastructure#BKMK_RLA)  
+
+- [Monitorare la gerarchia](/sccm/core/servers/manage/monitor-hierarchy)
+- [Monitorare la replica](/sccm/core/servers/manage/monitor-replication)
+- [Informazioni su Replication Link Analyzer](/sccm/core/servers/manage/monitor-replication#BKMK_RLA)  
 
 
 #### <a name="update-configuration-manager-consoles"></a>Aggiornare le console di Configuration Manager

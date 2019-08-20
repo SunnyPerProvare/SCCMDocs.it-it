@@ -2,7 +2,7 @@
 title: Impostazioni client
 titleSuffix: Configuration Manager
 description: Informazioni sulle impostazioni predefinite e personalizzate per il controllo dei comportamenti client
-ms.date: 08/07/2019
+ms.date: 08/09/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aeba2818b44e69066c02b25429ffd03cec00909e
-ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
+ms.openlocfilehash: 0074e81aade8ee5e26a4bb0024b91244a3ce4111
+ms.sourcegitcommit: 6b5a003256305c1f0cb605e52aeaaf19c23af5a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68859792"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68956219"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -861,14 +861,25 @@ Usare questa impostazione per accelerare l'installazione di aggiornamenti softwa
 
 Usare questa impostazione per specificare il periodo di tempo per l'impostazione precedente. È possibile immettere un valore compreso tra 1 e 23 ore e tra 1 e 365 giorni. Per impostazione predefinita, questa impostazione è configurata su sette giorni.  
 
-### <a name="enable-installation-of-express-installation-files-on-clients"></a>Abilita l'installazione di file per l'installazione rapida nei client
+### <a name="allow-clients-to-download-delta-content-when-available"></a>Consenti ai client di scaricare contenuto differenziale quando disponibile
 
-Impostare questa opzione su **Sì** per consentire ai client di usare file di installazione rapida. Per altre informazioni, vedere [Gestire i file di installazione rapida per gli aggiornamenti di Windows 10](/sccm/sum/deploy-use/manage-express-installation-files-for-windows-10-updates).
+*(Funzionalità introdotta nella versione 1902)*
+
+Impostare questa opzione su **Sì** per consentire ai client di usare file di contenuto differenziale. Questa impostazione consente all'agente di Windows Update sul dispositivo di determinare il contenuto necessario e di scaricarlo in modo selettivo.
+
+> [!NOTE]
+> Questa impostazione client sostituisce **Abilita l'installazione di file per l'installazione rapida nei client**. Impostare questa opzione su **Sì** per consentire ai client di usare file di installazione rapida. Per altre informazioni, vedere [Gestire i file di installazione rapida per gli aggiornamenti di Windows 10](/sccm/sum/deploy-use/manage-express-installation-files-for-windows-10-updates).
 
 
-### <a name="port-used-to-download-content-for-express-installation-files"></a>Porta usata per scaricare contenuto per i file per l'installazione rapida
+### <a name="port-that-clients-use-to-receive-requests-for-delta-content"></a>Porta usata dai client per ricevere richieste per contenuto differenziale
 
-Questa impostazione consente di configurare la porta locale per il listener HTTP per il download del contenuto dell'installazione rapida. Per impostazione predefinita, corrisponde a 8005. Non è necessario aprire questa porta nel firewall client.
+*(Funzionalità introdotta nella versione 1902)*
+
+Questa impostazione consente di configurare la porta locale per il listener HTTP per il download del contenuto differenziale. Per impostazione predefinita, corrisponde a 8005. Non è necessario aprire questa porta nel firewall client. 
+
+> [!NOTE]
+>Questa impostazione client sostituisce **Porta usata per scaricare contenuto per i file per l'installazione rapida**.
+
 
 ### <a name="enable-management-of-the-office-365-client-agent"></a>Abilitare la gestione dell'agente del client Office 365
 
