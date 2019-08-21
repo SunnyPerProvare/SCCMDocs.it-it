@@ -82,7 +82,7 @@ Prima di iniziare questa esercitazione, verificare che siano soddisfatti i prere
     - `https://graph.windows.net`(solo su Configuration Manager ruolo Server)
     - `https://fef.msua06.manage.microsoft.com`(solo su Configuration Manager ruolo Server)
 
-    Per altre informazioni, vedere [How to Enable Data Sharing for desktop Analytics](/sccm/desktop-analytics/enable-data-sharing#endpoints).  
+    Per altre informazioni, vedere [Come abilitare la condivisione dei dati per Desktop Analytics](/sccm/desktop-analytics/enable-data-sharing#endpoints).  
 
 > [!Important]  
 > Questi prerequisiti sono ai fini di questa esercitazione. Per ulteriori informazioni sui prerequisiti generali per desktop Analytics con Configuration Manager, vedere [prerequisiti](/sccm/desktop-analytics/overview#prerequisites).  
