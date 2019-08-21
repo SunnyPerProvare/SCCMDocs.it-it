@@ -11,21 +11,24 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d93e7fd61b2cff49e7729a9037e56d69c6e4c5ac
-ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
+ms.openlocfilehash: 00d6ccd54e7be4021c6dc31d30aedac50b41e3dd
+ms.sourcegitcommit: 7b111cd8a797877031378349898810c3dd0a3750
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65933520"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69632485"
 ---
 # <a name="enroll-devices-with-device-enrollment-manager-with-configuration-manager"></a>Registrare i dispositivi usando il manager di registrazione dispositivi con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
+> [!Important]  
+> A partire dal 14 agosto 2018, la gestione ibrida dei dispositivi mobili è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
+
 Le organizzazioni possono usare Intune per gestire un numero elevato di dispositivi mobili con un singolo account utente. L'account del *manager di registrazione dispositivi* è un account utente speciale usato per registrare i dispositivi. Aggiungendo utenti esistenti all'account del manager di registrazione dispositivi si assegnano loro particolari funzionalità. Ogni dispositivo registrato usa una singola licenza. È consigliabile usare i dispositivi registrati tramite questo account come dispositivi condivisi senza affinità utente anziché come dispositivi personali dedicati.  
 
 ## <a name="enroll-corporate-owned-devices-with-the-device-enrollment-manager"></a>Registrare i dispositivi di proprietà dell'azienda con il manager di registrazione dispositivi  
- È possibile assegnare un gestore del Negozio o supervisore, ad esempio, un manager di registrazione dispositivi account utente per consentire all'utente di eseguire le operazioni seguenti:  
+ È possibile assegnare a un responsabile del negozio o a un supervisore, ad esempio, un account utente del Manager di registrazione dispositivi per consentire all'utente di eseguire le operazioni seguenti:  
 
 -   Registrare un massimo di 1000 dispositivi per la gestione  
 -   Usare l'app Portale aziendale per installare le app aziendali  
@@ -40,8 +43,8 @@ Le limitazioni seguenti si applicano ai dispositivi gestiti usando un account de
 - Il sito Web del portale aziendale non è disponibile per gli account del manager di registrazione dispositivi. Usare l'app Portale aziendale.
 - Se si usa il manager di registrazione dispositivi per registrare i dispositivi iOS, non è possibile usare Apple Configurator o Apple Device Enrollment Program (DEP) per registrare i dispositivi. (solo iOS) 
 
-  **Esempi di scenario con il manager di registrazione dispositivi:**   
-  Un ristorante vuole adottare tablet POS per il personale di sala e monitor per gli ordini per il personale di cucina. I dipendenti non hanno quindi bisogno di accedere a dati aziendali o di effettuare l'accesso come utente. L'amministratore di Intune crea un account di manager di registrazione dispositivi e registra i dispositivi di proprietà dell'azienda con tale account. In alternativa, l'amministratore potrebbe concedere la registrazione del dispositivo le credenziali di gestione a un responsabile del ristorante, consentendo loro di registrare e gestire i dispositivi.  
+  **Esempi di scenario con il manager di registrazione dispositivi:**    
+  Un ristorante vuole adottare tablet POS per il personale di sala e monitor per gli ordini per il personale di cucina. I dipendenti non hanno quindi bisogno di accedere a dati aziendali o di effettuare l'accesso come utente. L'amministratore di Intune crea un account di manager di registrazione dispositivi e registra i dispositivi di proprietà dell'azienda con tale account. In alternativa, l'amministratore può concedere le credenziali del Manager di registrazione dispositivi a un responsabile del ristorante, consentendo loro di registrare e gestire i dispositivi.  
 
   L'amministratore o il manager può quindi distribuire app specifiche del ruolo nei dispositivi del ristorante. Un amministratore può anche selezionare un dispositivo nella console e disattivarlo nella gestione dei dispositivi mobili.  
 
