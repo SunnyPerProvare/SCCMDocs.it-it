@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3406c0fff57a1ecef24a045e3061417fc5fac46c
-ms.sourcegitcommit: e0438c191df945305625ae91596c9417d16e8510
+ms.openlocfilehash: 17a58992c01f59080edd74051329b82a0f760938
+ms.sourcegitcommit: e0d303d87c737811c2d3c40d01cd3d260a5c7bde
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68491648"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69974808"
 ---
 # <a name="monitor-connection-health"></a>Monitorare l'integrità della connessione
 
@@ -63,7 +63,7 @@ Questo riquadro Mostra quando Configuration Manager esegue la sincronizzazione c
 - **Successiva sincronizzazione del servizio**: Quando si può prevedere il successivo snapshot giornaliero in desktop Analytics.
 
 > [!Note]  
-> Nessuno di questi valori viene aggiornato automaticamente quando si richiede uno snapshot su richiesta. Per altre informazioni, vedere [latenza dei dati](/sccm/desktop-analytics/troubleshooting#data-latency).
+> La prima volta che si registrano i dispositivi in desktop Analytics, possono essere disponibili diversi giorni per il caricamento e l'elaborazione dei dati. Durante questo periodo, è possibile che il riquadro **Dettagli ultima sincronizzazione** risulti vuoto. Inoltre, nessuno dei valori in questo riquadro viene aggiornato automaticamente quando si richiede uno snapshot su richiesta. Per altre informazioni, vedere [latenza dei dati](/sccm/desktop-analytics/troubleshooting#data-latency).
 
 Se si ritiene che alcuni dispositivi non vengano visualizzati in analisi desktop, verificare che i dispositivi siano supportati da analisi desktop. Per altre informazioni, vedere [Prerequisiti](/sccm/desktop-analytics/overview#prerequisites).
 

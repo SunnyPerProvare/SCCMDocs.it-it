@@ -11,12 +11,12 @@ ms.assetid: 3e3ff3a4-7a75-41bb-bdf9-33ede9c0e3a3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 970b1fea320d8fe039062cf81789d14398930be5
-ms.sourcegitcommit: 3f43fa8462bf39b2c18b90a11a384d199c2822d8
+ms.openlocfilehash: f0e5a313bb5afd0501f0d6027d42b5a51a7e8946
+ms.sourcegitcommit: 7b111cd8a797877031378349898810c3dd0a3750
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66403428"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69631946"
 ---
 # <a name="provisioning-mode"></a>Modalità di provisioning
 
@@ -45,6 +45,13 @@ A partire dalla versione 1902, la sequenza di attività imposta un timestamp qua
 
 48 ore è il valore predefinito del timeout della modalità di provisioning. È possibile regolare questo timer per un dispositivo impostando il valore **ProvisioningMaxMinutes** nella chiave del Registro di sistema seguente: `HKLM\Software\Microsoft\CCM\CcmExec`. Se questo valore non esiste o è pari a `0`, il client usa il valore predefinito di 48 ore.
 
+Il timestamp **ProvisioningEnabledTime** si trova nella chiave del registro di sistema `HKLM\Software\Microsoft\CCM\CcmExec`seguente:. Il timestamp ha un valore dell'ultima volta in cui il computer è entrato in modalità di provisioning. Il formato è Epoch (timestamp Unix) ed è in formato UTC.
+
+Questo timestamp viene anche reimpostato sull'ora corrente quando si posiziona manualmente il computer in modalità di provisioning usando il comando seguente:
+
+```powershell
+Invoke-WmiMethod -Namespace root\CCM -Class SMS_Client -Name SetClientProvisioningMode -ArgumentList $true
+```
 
 ## <a name="process-flow-diagrams"></a>Diagrammi di flusso del processo
 

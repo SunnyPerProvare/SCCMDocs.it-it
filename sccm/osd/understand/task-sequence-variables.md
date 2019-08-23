@@ -2,7 +2,7 @@
 title: Informazioni di riferimento sulle variabili della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni sulle variabili per controllare e personalizzare una sequenza di attività di Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 08/16/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b78d8b6cd60f14843855d00ea44632b6feda3d90
-ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
+ms.openlocfilehash: 2283b87f305471f2831042f4b6b66d1c8a735b24
+ms.sourcegitcommit: f7e4ff38d4b4afb49e3bccafa28514be406a9d7b
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68859829"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69549541"
 ---
 # <a name="task-sequence-variables"></a>Variabili della sequenza di attività
 
@@ -1582,7 +1582,7 @@ Ad esempio, se si imposta SMSTSWaitForSecondReboot su `600`, la sequenza di atti
 ### <a name="TSDebugMode"></a>TSDebugMode
 
 <!--3612274-->
-A partire dalla versione 1906, impostare questa variabile `TRUE` su in una raccolta in cui viene distribuita una sequenza di attività. Questa variabile modifica il comportamento di qualsiasi sequenza di attività in qualsiasi dispositivo della raccolta per usare il debugger della sequenza di attività.
+A partire dalla versione 1906, impostare questa variabile `TRUE` su in una raccolta o in un oggetto computer in cui viene distribuita la sequenza di attività. Tutti i dispositivi con questo set di variabili comporteranno la distribuzione di una sequenza di attività in modalità di debug.
 
 Per altre informazioni, vedere [Eseguire il debug di una sequenza di attività](/sccm/osd/deploy-use/debug-task-sequence).
 
