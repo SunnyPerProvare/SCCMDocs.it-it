@@ -2,7 +2,7 @@
 title: Eseguire il debug di una sequenza di attività
 titleSuffix: Configuration Manager
 description: Usare lo strumento Debug sequenza di attività per risolvere i problemi relativi a una sequenza di attività.
-ms.date: 07/26/2019
+ms.date: 08/16/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.assetid: 4b60b0e1-ffa4-4fd5-864e-70a0546c8b3b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fadcd362f44e5261ae5226ed22b7cff4c4eb261f
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 00c05b7023f90783fbdd741a354cfd6382f632ad
+ms.sourcegitcommit: f7e4ff38d4b4afb49e3bccafa28514be406a9d7b
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68537739"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69549553"
 ---
 # <a name="debug-a-task-sequence"></a>Eseguire il debug di una sequenza di attività
 
@@ -44,7 +44,7 @@ A partire dalla versione 1906, il debugger della sequenza di attività è un nuo
 1. Selezionare una sequenza di attività. Nel gruppo di distribuzione della barra multifunzione selezionare **Debug**.
 
     > [!Tip]  
-    > In alternativa, impostare la variabile **TSDebugMode** su `TRUE` per una raccolta a cui viene distribuita la sequenza di attività. Questa variabile modifica il comportamento di qualsiasi sequenza di attività su qualsiasi dispositivo in tale raccolta.  
+    > In alternativa, impostare la variabile **TSDebugMode** su `TRUE` per una raccolta o un oggetto computer a cui viene distribuita la sequenza di attività. Tutti i dispositivi con questo set di variabili comporteranno la distribuzione di una sequenza di attività in modalità di debug.
 
 1. Creare una distribuzione di debug. Le impostazioni di distribuzione sono le stesse di una normale distribuzione della sequenza di attività. Per altre informazioni, vedere [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence#process).
 

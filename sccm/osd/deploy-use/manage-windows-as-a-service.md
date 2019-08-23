@@ -2,7 +2,7 @@
 title: Gestire Windows come servizio
 titleSuffix: Configuration Manager
 description: Visualizzare lo stato di Windows as a Service (WaaS) usando Configuration Manager, definire piani di manutenzione per formare anelli di distribuzione e visualizzare avvisi quando i client Windows 10 si avvicinano alla scadenza del supporto.
-ms.date: 07/26/2019
+ms.date: 08/22/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4cf8e70146fa369e11cd26bdd5f982380678655a
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 165574cb85a41cb8acba9efba653ebc7fc4a6fe1
+ms.sourcegitcommit: e0d303d87c737811c2d3c40d01cd3d260a5c7bde
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68537057"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69974694"
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gestire Windows come servizio con System Center Configuration Manager
 
@@ -36,9 +36,11 @@ ms.locfileid: "68537057"
 
 -   I computer Windows 10 devono usare gli aggiornamenti software di Configuration Manager con Windows Server Update Services (WSUS) per la gestione degli aggiornamenti software. Se la gestione degli aggiornamenti software avviene tramite Windows Update per le aziende o Windows Insider, il computer non viene valutato nei piani di manutenzione di Windows 10. Per altre informazioni, vedere [Integrazione con Windows Update for Business in Windows 10](../../sum/deploy-use/integrate-windows-update-for-business-windows-10.md).  
 
--   Installare WSUS 4.0 con l' [hotfix 3095113](https://support.microsoft.com/kb/3095113) nei punti di aggiornamento software e nei server del sito. Questo hotfix aggiunge la classificazione di aggiornamento software **Aggiornamenti**. Per altre informazioni, vedere [Prerequisiti per aggiornamenti software](../../sum/plan-design/prerequisites-for-software-updates.md).  
-
--   È necessario che WSUS 4.0 con [hotfix 3159706](https://support.microsoft.com/kb/3159706) sia installato nei punti di aggiornamento software e nel server del sito per eseguire l'aggiornamento dei computer a Windows 10 Anniversary Update e alle versioni successive. Per installare l'hotfix è necessario eseguire i passaggi manuali descritti nell'articolo del supporto tecnico. Per altre informazioni, vedere [Enterprise Mobility and Security Blog](https://blogs.technet.microsoft.com/enterprisemobility/2016/08/05/update-your-configmgr-1606-sup-servers-to-deploy-the-windows-10-anniversary-update/) (Blog sulla sicurezza e la mobilità aziendale).
+- Usa una versione supportata di WSUS: 
+  - WSUS 10.0.14393 (ruolo in Windows Server 2016)
+  - WSUS 10.0.17763 (ruolo in Windows Server 2019) (richiede Configuration Manager 1810 o versioni successive)
+  - WSUS 6.2 e 6.3 (ruolo in Windows Server 2012 e Windows Server 2012 R2)
+    - In WSUS 6,2 e 6,3 [è necessario installare kb 3095113 e kb 3159706 (o un aggiornamento equivalente)](/sccm/sum/plan-design/prerequisites-for-software-updates#BKMK_wsus2012) .
 
 -   Abilitare Individuazione heartbeat. I dati visualizzati nel dashboard di manutenzione di Windows 10 vengono rilevati con l'individuazione. Per altre informazioni, vedere [Configure Heartbeat Discovery](../../core/servers/deploy/configure/configure-discovery-methods.md#BKMK_ConfigHBDisc).  
 
@@ -84,7 +86,7 @@ ms.locfileid: "68537057"
 <!--4224414-->
 *(Funzionalità introdotta nella versione 1906)*
 
-È possibile esaminare le statistiche di conformità per vedere quali dispositivi richiedono un aggiornamento software di Office 365 specifico. Per visualizzare l'elenco dei dispositivi, è necessaria l'autorizzazione per visualizzare gli aggiornamenti e le raccolte a cui appartengano i dispositivi. Per eseguire il drill-down nell'elenco dei dispositivi:
+È possibile esaminare nel dettaglio le statistiche di conformità per individuare i dispositivi che richiedono un aggiornamento software di Office 365 specifico. Per visualizzare l'elenco dei dispositivi, è necessaria l'autorizzazione per visualizzare gli aggiornamenti e le raccolte a cui appartengano i dispositivi. Per eseguire il drill-down nell'elenco dei dispositivi:
 
 1. Passare a **Raccolta software** > **Manutenzione pacchetti di Windows 10** > **Tutti gli aggiornamenti di Windows 10**.
 1. Selezionare tutti gli aggiornamenti richiesti da almeno un dispositivo.
