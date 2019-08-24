@@ -2,7 +2,7 @@
 title: Domande frequenti su desktop Analytics
 titleSuffix: Configuration Manager
 description: Domande frequenti su desktop Analytics.
-ms.date: 07/22/2019
+ms.date: 08/23/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58230d373d7269c95937a108c021e7c73cdbf07a
-ms.sourcegitcommit: 315fbb9c44773b3b1796ae398568cb61bd07092e
+ms.openlocfilehash: 84cbcd11790ebf83b508a3db167efc7c02152652
+ms.sourcegitcommit: e2e07d74779a2f48693ecaa17a5974204949d109
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68374434"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999379"
 ---
 # <a name="desktop-analytics-faq"></a>Domande frequenti su desktop Analytics
 
@@ -84,3 +84,10 @@ I dati di diagnostica di Windows dei computer vengono crittografati, inviati ed 
 ### <a name="can-i-use-desktop-analytics-for-my-office-365-proplus-upgrades"></a>È possibile usare l'analisi del desktop per gli aggiornamenti di Office 365 ProPlus?
 
 No, desktop Analytics è incentrato su Windows. Microsoft ha sviluppato desktop Analytics in stretta collaborazione con numerosi clienti. Tramite il programma di anteprima, il feedback dei clienti riguarda il modo in cui analisi desktop ha migliorato la propria capacità di gestire le distribuzioni di Windows in tutta sicurezza. Ci hanno inoltre comunicato che volevano che [office 365 ProPlussse](/sccm/sum/deploy-use/office-365-dashboard#bkmk_o365_readiness) più accuratamente l'integrazione con gli strumenti di gestione di office in Configuration Manager e Intune. Microsoft continuerà a creare investimenti in tali aree, concentrandosi sugli scenari di Windows in desktop Analytics.
+
+### <a name="how-can-i-provide-feedback-about-desktop-analytics"></a>Come è possibile fornire commenti e suggerimenti su desktop Analytics?
+
+Per condividere commenti e suggerimenti su desktop Analytics, selezionare l'icona **Invia smile** nella parte superiore del portale. Includi uno screenshot con la tua presentazione per aiutare Microsoft a comprendere meglio i tuoi commenti. È anche possibile inviare suggerimenti sul prodotto e votare altre idee in [UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas?category_id=366805).
+
+> [!Note]
+> Non condividere mai le informazioni private tramite Invia smile o UserVoice. Tali informazioni private includono l'ID tenant o l'ID commerciale. Microsoft non fornisce supporto tramite i canali Invia smile o UserVoice. Per ottenere assistenza con l'area di lavoro di desktop Analytics, selezionare il collegamento **Guida e supporto** nel menu di navigazione per aprire un ticket di supporto.
