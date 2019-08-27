@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0074e81aade8ee5e26a4bb0024b91244a3ce4111
-ms.sourcegitcommit: 6b5a003256305c1f0cb605e52aeaaf19c23af5a9
+ms.openlocfilehash: d48b2f7a842da0a567c4ed1a51e85e0d283603cf
+ms.sourcegitcommit: 7b111cd8a797877031378349898810c3dd0a3750
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68956219"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69632028"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -94,6 +94,7 @@ Abilita la [peer cache](/sccm/core/plan-design/hierarchy/client-peer-cache) per 
 A partire dalla versione 1906, specificare il tempo minimo di mantenimento del contenuto memorizzato nella cache da parte del client di Configuration Manager. Questa impostazione del client definisce per quanto tempo il client archivia il contenuto nella cache prima di eliminarlo.
 
 Per impostazione predefinita, questo valore è impostato su 1.440 minuti (24 ore).
+Il valore massimo per questa impostazione è 10.080 minuti (1 settimana).
 
 Questa impostazione offre maggiore controllo sulla cache del client in diversi tipi di dispositivi. È possibile ridurre il valore in client che hanno dischi rigidi di piccole dimensioni e che non devono mantenere il contenuto esistente prima di eseguire un'altra distribuzione.
 

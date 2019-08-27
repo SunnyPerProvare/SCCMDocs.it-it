@@ -2,7 +2,7 @@
 title: Console di Configuration Manager
 titleSuffix: Configuration Manager
 description: Informazioni sull'esplorazione tramite la console di Configuration Manager.
-ms.date: 08/05/2019
+ms.date: 08/16/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e99d82a39e1b3c1ef9e52072fc01ab722f3e3e61
-ms.sourcegitcommit: 4241c15a277c57b5480dea70fc30f1ed46ffd4f3
+ms.openlocfilehash: 593a479c713df76d63090749ee45cb89aeb413e4
+ms.sourcegitcommit: f7e4ff38d4b4afb49e3bccafa28514be406a9d7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69490113"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69549511"
 ---
 # <a name="using-the-configuration-manager-console"></a>Uso della console di Configuration Manager
 
@@ -290,7 +290,8 @@ Esistono diversi modi per visualizzare un elenco di dispositivi nel nodo **Dispo
 Nell'area di lavoro **Asset e conformità** passare al nodo **Dispositivi** e selezionare un dispositivo. Nel riquadro dei dettagli passare alla nuova scheda **Raccolte**. Questa scheda contiene le raccolte che includono questo dispositivo. 
 
 > [!Note]  
-> La scheda non è attualmente disponibile da un sottonodo dispositivi del nodo **Raccolte di dispositivi**. Ad esempio, quando si seleziona l'opzione che consente di **visualizzare i membri** per una raccolta.
+> - La scheda non è attualmente disponibile da un sottonodo dispositivi del nodo **Raccolte di dispositivi**. Ad esempio, quando si seleziona l'opzione che consente di **visualizzare i membri** per una raccolta.
+> - Questa scheda potrebbe non essere popolata come previsto per alcuni utenti. Per visualizzare l'elenco completo delle raccolte a cui appartiene un dispositivo, è necessario avere il ruolo di sicurezza **Amministratore completo**. Si tratta di un problema noto. <!--5107309--> <!--5107309-->
 
 
 #### <a name="add-smbios-guid-column-to-device-and-device-collection-nodes"></a>Aggiungi la colonna GUID SMBIOS ai nodi Dispositivo e Raccolta di dispositivi

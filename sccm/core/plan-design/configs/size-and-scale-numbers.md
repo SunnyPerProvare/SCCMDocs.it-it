@@ -2,7 +2,7 @@
 title: Ridimensionamento e scalabilità
 titleSuffix: Configuration Manager
 description: Determinare il numero di ruoli del sistema del sito e di siti necessari per supportare i dispositivi nell'ambiente.
-ms.date: 07/26/2019
+ms.date: 08/20/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41614e7f0b63888a8bcee50b4ac4ef2b293d8849
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 17809842c780577db6088bb57de2330e4af09612
+ms.sourcegitcommit: 18e88352860dcaf938dbbe1e8694b658e1bfd8ac
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536838"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69584675"
 ---
 # <a name="size-and-scale-numbers-for-configuration-manager"></a>Numeri di ridimensionamento e scalabilità per Configuration Manager
 
@@ -138,10 +138,37 @@ Per informazioni sul numero di client e dispositivi che un punto di gestione pu�
 
 ### <a name="software-update-point"></a>Punto di aggiornamento software  
 
-- Un punto di aggiornamento software installato nel server del sito può supportare fino a 25.000 client.
+Usare come baseline i seguenti elementi consigliati. Questa baseline consente di determinare le informazioni relative alla pianificazione della capacità degli aggiornamenti software appropriate per la propria organizzazione. I requisiti di capacità effettivi potrebbero differire dagli elementi consigliati in questo articolo in base ai seguenti criteri: 
+- L'ambiente di rete specifico
+- L'hardware usato per ospitare il sistema del sito del punto di aggiornamento software
+- Il numero di client gestiti
+- Gli altri ruoli del sistema del sito installati nel server  
 
-- Un punto di aggiornamento software installato in un computer remoto rispetto al server del sito può supportare fino a 150.000 client quando il computer remoto soddisfa i requisiti di Windows Server Update Services (WSUS) per il supporto di questo numero di client.  
+#### <a name="BKMK_SUMCapacity"></a> Pianificazione della capacità per il punto di aggiornamento software  
 
+Il numero di client supportati dipende dalla versione di Windows Server Update Services (WSUS) in esecuzione nel punto di aggiornamento software. Dipende anche dal fatto che il ruolo del sistema del sito del punto di aggiornamento software coesista o meno con un altro ruolo del sistema del sito:  
+
+- Il punto di aggiornamento software è in grado di supportare fino a 25.000 client quando WSUS è in esecuzione nel server del punto di aggiornamento software e il punto coesiste con un altro ruolo del sistema del sito.  
+
+- Il punto di aggiornamento software può supportare fino a 150.000 client quando un server remoto soddisfa i requisiti di WSUS, WSUS viene usato con Configuration Manager e si configurano le impostazioni seguenti:
+
+    Pool di applicazioni IIS:
+    - Aumentare la lunghezza della coda WsusPool a 2000
+    - Aumentare il limite di memoria privata WsusPool di 4 volte oppure impostarlo su 0 (illimitato). Se ad esempio il limite predefinito è 1.843.200 kB, aumentarlo a 7.372.800. Per altre informazioni su questo problema, vedere questo [post del blog del team di supporto di Configuration Manager](https://blogs.technet.microsoft.com/configurationmgr/2015/03/23/configmgr-2012-support-tip-wsus-sync-fails-with-http-503-errors/).  
+
+    Per altre informazioni sui requisiti hardware per il punto di aggiornamento software, vedere [Recommended hardware for site systems](/sccm/core/plan-design/configs/recommended-hardware#bkmk_ScaleSieSystems) (Hardware consigliato per i sistemi del sito).  
+
+
+#### <a name="bkmk_sum-capacity-obj"></a> Pianificazione della capacità per gli oggetti degli aggiornamenti software  
+
+Usare le seguenti informazioni sulla capacità per la pianificazione degli oggetti degli aggiornamenti software:  
+
+- **Limite di 1000 aggiornamenti software in una distribuzione**: è necessario limitare il numero di aggiornamenti software a 1000 per ogni distribuzione degli aggiornamenti software. Quando si crea una regola di distribuzione automatica (ADR), specificare un criterio che limiti il numero di aggiornamenti software. La regola di distribuzione automatica ha esito negativo quando i criteri specificati restituiscono più di 1000 aggiornamenti software. Controllare lo stato della regola di distribuzione automatica dal nodo **Regole di distribuzione automatica** nella console di Configuration Manager. Durante la distribuzione manuale degli aggiornamenti software, non selezionare più di 1000 aggiornamenti per la distribuzione.  
+
+  È anche necessario limitare il numero di aggiornamenti software a 1000 in una linea di base di configurazione. Per altre informazioni, vedere [Creare configurazioni di base](/sccm/compliance/deploy-use/create-configuration-baselines).
+
+- **Limite di 580 ambiti di protezione per le regole di distribuzione automatica** -<!--ado 4962928-->
+Limitare il numero di ambiti di protezione nelle regole di distribuzione automatica a un valore inferiore a 580. Quando si crea una regola di distribuzione automatica, vengono aggiunti automaticamente gli ambiti di protezione che vi hanno accesso. Se sono presenti più di 580 ambiti di protezione impostati, la regola di distribuzione automatica non viene eseguita e viene registrato un errore in ruleengine.log.
 
 ## <a name="bkmk_clientnumbers"></a> Numero di client per siti e gerarchie
 

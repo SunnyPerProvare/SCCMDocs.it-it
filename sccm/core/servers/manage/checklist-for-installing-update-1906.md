@@ -2,7 +2,7 @@
 title: Elenco di controllo per la versione 1906
 titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager alla versione 1906.
-ms.date: 08/09/2019
+ms.date: 08/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a64fc82121535272c0417d1c2dbc6bed65745ce8
-ms.sourcegitcommit: 6b5a003256305c1f0cb605e52aeaaf19c23af5a9
+ms.openlocfilehash: 37a995305ebfcf5f411c92af5092f9816e89e118
+ms.sourcegitcommit: f7e4ff38d4b4afb49e3bccafa28514be406a9d7b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68956438"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69549528"
 ---
 # <a name="checklist-for-installing-update-1906-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1906 di Configuration Manager
 
@@ -68,32 +68,32 @@ La prima volta che si usa una console di Configuration Manager dopo l'aggiorname
 
 <!-- SCCMDocs#1397 -->
 
-<!-- As of <Date>, version 1906 is globally available for all customers to install. If you previously opted in to the early update ring, watch for an update to this current branch version. -->
+A partire dal 16 agosto 2019, la versione 1906 è disponibile per l'installazione a livello globale da parte di tutti i clienti. Se in precedenza è stato scelto l'anello di aggiornamento anticipato, controllare la presenza di un aggiornamento a questa versione Current Branch.
 
-La versione 1906 viene attualmente rilasciata per l'anello di aggiornamento anticipato. Per installare questo aggiornamento, è necessario acconsentire esplicitamente. Lo script di PowerShell seguente aggiunge la gerarchia o il sito primario autonomo all'anello di aggiornamento anticipato per la versione 1906:
+<!--At this time, version 1906 is released for the early update ring. To install this update, you need to opt-in. The following PowerShell script adds your hierarchy or standalone primary site to the early update ring for version 1906: 
 
-[Script di consenso esplicito per la versione 1906](https://go.microsoft.com/fwlink/?linkid=2099733) <!-- This fwlink points to the script package on the Download Center, don't change the link here! Make any changes to the fwlink target -->
+[Version 1906 opt-in script](https://go.microsoft.com/fwlink/?linkid=2099733) <!-- This fwlink points to the script package on the Download Center, don't change the link here! Make any changes to the fwlink target -->
 
-Microsoft firma digitalmente lo script e lo aggrega all'interno di un file eseguibile autoestraente firmato.
+<!--Microsoft digitally signs the script, and bundles it inside a signed self-extracting executable.
 
 > [!Note]  
-> L'aggiornamento della versione 1906 è applicabile solo ai siti che eseguono la versione 1802 o versioni successive.
+> The version 1906 update is only applicable to sites running version 1802 or later.
 
-Per acconsentire esplicitamente all'anello di aggiornamento anticipato:
+To opt-in to the early update ring:
 
-1. Aprire Windows PowerShell e scegliere **Esegui come amministratore**
-1. Eseguire lo script **EnableEarlyUpdateRing1906.ps1** usando la sintassi seguente:
+1. Open Windows PowerShell and **Run as administrator**
+1. Run the **EnableEarlyUpdateRing1906.ps1** script, using the following syntax:
 
     `EnableEarlyUpdateRing1906.ps1 <SiteServer_Name> | SiteServer_IP>`
 
-    Dove `SiteServer` fa riferimento al sito di amministrazione centrale o a un sito primario autonomo. Ad esempio: `EnableEarlyUpdateRing1906.ps1 cmprimary01`
+    Where `SiteServer` refers to the central administration site or standalone primary site server. For example, `EnableEarlyUpdateRing1906.ps1 cmprimary01`
 
-1. Verificare la disponibilità di aggiornamenti. Per altre informazioni, vedere [Ottenere gli aggiornamenti disponibili](/sccm/core/servers/manage/install-in-console-updates#get-available-updates).
+1. Check for updates. For more information, see [Get available updates](/sccm/core/servers/manage/install-in-console-updates#get-available-updates).
 
-L'aggiornamento della versione 1906 dovrebbe essere ora disponibile nella console.
+The version 1906 update should now be available in the console.
 
 > [!Important]  
-> Questo script si limita ad aggiungere il sito all'anello di aggiornamento anticipato per la versione 1906. Non si tratta di una modifica permanente.
+> This script only adds your site to the early update ring for version 1906. It's not a permanent change. -->
 
 
 ## <a name="checklist"></a>Elenco di controllo
