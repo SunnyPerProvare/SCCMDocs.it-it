@@ -1,8 +1,8 @@
 ---
 title: Opzioni della riga di comando per la configurazione
 titleSuffix: Configuration Manager
-description: Creare script di automazione per installare System Center Configuration Manager dalla riga di comando.
-ms.date: 03/22/2018
+description: Creare script di automazione per installare Configuration Manager dalla riga di comando.
+ms.date: 08/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,1273 +11,1411 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 434b53d24d050cc66cbb5e8bec7a681311f945b8
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 6b49f05708f824c16dd90cbb9c872f49ab484de8
+ms.sourcegitcommit: e0d303d87c737811c2d3c40d01cd3d260a5c7bde
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65498682"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69974718"
 ---
-# <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opzioni della riga di comando per l'installazione in System Center Configuration Manager
+# <a name="command-line-options-for-configuration-manager-setup"></a>Opzioni della riga di comando per la configurazione di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
+Usare le informazioni seguenti per configurare gli script o installare Configuration Manager dalla riga di comando.  
 
- Usare le informazioni seguenti per configurare gli script o installare System Center Configuration Manager dalla riga di comando.  
+## <a name="bkmk_setup"></a> Opzioni della riga di comando per l'installazione
 
-##  <a name="bkmk_setup"></a> Opzioni della riga di comando per l'installazione  
- **/DEINSTALL**  
- Consente di disinstallare il sito. Eseguire l'installazione dal computer del server del sito.  
+Eseguire il programma di installazione dalla directory `\BIN\X64` del percorso di installazione di Configuration Manager nel server del sito.
 
- **/DONTSTARTSITECOMP**  
- Consente di installare un sito, ma impedisce l'avvio del servizio Gestione componenti del sito. Fino all'avvio del servizio Gestione componenti del sito, il sito non è attivo. Gestione componenti del sito si occupa dell'installazione e dell'avvio del servizio SMS_Executive, nonché di processi aggiuntivi nel sito. Al termine dell'installazione del sito, in seguito all'avvio del servizio Gestione componenti del sito verranno installati il servizio SMS_Executive e i processi aggiuntivi necessari per il funzionamento del sito.  
+### `/DEINSTALL`
 
- **/HIDDEN**  
- Consente di nascondere l'interfaccia utente durante l'installazione. Usare questa opzione solo in combinazione con l'opzione **/SCRIPT**. Il file script di installazione automatica deve fornire tutte le opzioni necessarie. In caso contrario, l'installazione avrà esito negativo.  
+Disinstallare il sito. Eseguire l'installazione dal computer del server del sito.  
 
- **/NOUSERINPUT**  
- Disabilita l'input utente durante l'installazione, ma visualizza l'installazione guidata. Usare questa opzione solo in combinazione con l'opzione **/SCRIPT**. Il file script di installazione automatica deve fornire tutte le opzioni necessarie. In caso contrario, l'installazione avrà esito negativo.  
+### `/DONTSTARTSITECOMP`
 
- **/RESETSITE**  
- Consente di eseguire una reimpostazione del sito per reimpostare gli account di servizio e di database per il sito. Eseguire il programma di installazione dal **<*percorso di installazione di Configuration Manager*>\BIN\X64** nel server del sito. Per altre informazioni sulla reimpostazione del sito, vedere la sezione [Eseguire una reimpostazione del sito](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_reset) in [Modificare l'infrastruttura di System Center Configuration Manager](../../../../core/servers/manage/modify-your-infrastructure.md).  
+Consente di installare un sito, ma impedisce l'avvio del servizio Gestione componenti del sito. Fino all'avvio del servizio Gestione componenti del sito, il sito non è attivo. Gestione componenti del sito si occupa dell'installazione e dell'avvio del servizio SMS_Executive, nonché di processi aggiuntivi nel sito. Al termine dell'installazione del sito, in seguito all'avvio del servizio Gestione componenti del sito verranno installati il servizio SMS_Executive e i processi aggiuntivi necessari per il funzionamento del sito.  
 
- **/TESTDBUPGRADE <*Nome istanza*>\\<*Nome database*>**  
- Consente di eseguire un test in un backup del database del sito per verificare che il database supporti l'aggiornamento. Specificare il nome dell'istanza e il nome del database per il database del sito. Se si specifica solo il nome del database, il programma di installazione usa il nome dell'istanza predefinita.  
+### `/HIDDEN`
+
+Consente di nascondere l'interfaccia utente durante l'installazione. Usare questa opzione solo in combinazione con l'opzione **/SCRIPT**. Il file script di installazione automatica deve fornire tutte le opzioni necessarie. In caso contrario, l'installazione avrà esito negativo.  
+
+### `/NOUSERINPUT`
+
+Disabilita l'input utente durante l'installazione, ma visualizza l'installazione guidata. Usare questa opzione solo in combinazione con l'opzione **/SCRIPT**. Il file script di installazione automatica deve fornire tutte le opzioni necessarie. In caso contrario, l'installazione avrà esito negativo.  
+
+### `/RESETSITE`
+
+Consente di eseguire una reimpostazione del sito per reimpostare gli account di servizio e di database per il sito.
+
+Per altre informazioni, vedere [Eseguire una reimpostazione del sito](/sccm/core/servers/manage/modify-your-infrastructure#bkmk_reset).  
+
+### `/TESTDBUPGRADE`
+
+Consente di eseguire un test in un backup del database del sito per verificare che il database possa essere aggiornato.
 
 > [!IMPORTANT]  
->  Non eseguire questa opzione della riga di comando nel database del sito di produzione. L'esecuzione di questa opzione della riga di comando nel database del sito di produzione comporta l'aggiornamento del database del sito e potrebbe rendere inutilizzabile il sito.  
+> Non eseguire questa opzione della riga di comando nel database del sito di produzione. L'esecuzione di questa opzione della riga di comando nel database del sito di produzione comporta l'aggiornamento del database del sito e potrebbe rendere inutilizzabile il sito.
 
- **/UPGRADE**  
- Consente di eseguire l'aggiornamento automatico di un sito. Quando si usa **/UPGRADE**, è necessario specificare il codice Product Key, compresi i trattini (-). È anche necessario specificare il percorso dei file di prerequisito dell'installazione scaricati in precedenza.  
+#### <a name="usage"></a>Utilizzo
 
- Esempio: `setupwpf.exe /UPGRADE xxxxx-xxxxx-xxxxx-xxxxx-xxxxx <path to external component files>`  
+Specificare il nome dell'istanza e il nome del database per il database del sito. Se si specifica solo il nome del database, il programma di installazione usa il nome dell'istanza predefinita.  
 
- Per altre informazioni sui file di prerequisito dell'installazione, vedere la sezione [Downloader di installazione](setup-downloader.md).  
+`/TESTDBUPGRADE <Instance name>\<Database name>`
 
- **/SCRIPT <*percorso script installazione*>**  
- Consente di eseguire installazioni automatiche. Quando si usa l'opzione **/SCRIPT** è necessario un file di inizializzazione dell'installazione. Per altre informazioni su come eseguire l'installazione automatica, vedere [Usare una riga di comando per Installare siti tramite la riga di comando](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).  
+`/TESTDBUPGRADE CM_ABC`
 
- **/SDKINST <*FQDN provider SMS*>**  
- Consente di installare il provider SMS nel computer specificato. Specificare il nome di dominio completo (FQDN) per il computer del provider SMS. Per altre informazioni sul provider SMS, vedere [Pianificare per il provider SMS](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
+`/TESTDBUPGRADE Named\CM_ABC`
 
- **/SDKDEINST <*FQDN provider SMS*>**  
- Consente di disinstallare il provider SMS nel computer specificato. Specificare l'FQDN per il computer del provider SMS.  
+### `/UPGRADE`
 
- **/MANAGELANGS <*Percorso script lingue*>**  
- Consente di gestire le lingue installate in un sito installato precedentemente. Per usare questa opzione, eseguire il programma di installazione dal **<*percorso di installazione di Configuration Manager*>\BIN\X64** nel server del sito. Specificare il percorso per il file script delle lingue che contiene le impostazioni delle lingue. Per altre informazioni sulle opzioni relative alle lingue disponibili nel file script di configurazione della lingua, vedere la sezione [Opzioni della riga di comando per la gestione delle lingue](#bkmk_Lang).  
+Consente di eseguire l'aggiornamento automatico di un sito. Specificare il codice Product Key compresi i trattini (`-`). Specificare anche il percorso dei file di prerequisito dell'installazione scaricati in precedenza.  
 
-##  <a name="bkmk_Lang"></a> Opzioni della riga di comando per la gestione delle lingue  
- **Identification**  
+Per altre informazioni sui file di prerequisito dell'installazione, vedere la sezione [Downloader di installazione](/sccm/core/servers/deploy/install/setup-downloader).  
 
--   **Nome chiave:** Action  
+#### <a name="usage"></a>Utilizzo
 
-    -   **Richiesto:** Sì  
+`setupwpf.exe /UPGRADE xxxxx-xxxxx-xxxxx-xxxxx-xxxxx <path to external component files>`  
 
-    -   **Valori:** ManageLanguages  
+### `/SCRIPT`
 
-    -   **Dettagli:** Gestisce il supporto lingua di client per dispositivi mobili, client e server in un sito.  
+Consente di eseguire un'installazione automatica. Con questa opzione usare un file di inizializzazione dell'installazione. Per altre informazioni su come eseguire l'installazione automatica, vedere [Usare una riga di comando per Installare siti tramite la riga di comando](/sccm/core/servers/deploy/install/use-a-command-line-to-install-sites).  
 
-**Opzioni**  
+#### <a name="usage"></a>Utilizzo
 
--   **Nome chiave:** AddServerLanguages  
+`/SCRIPT <setup script path>`
 
-    -   **Richiesto:** No  
+### `/SDKINST`
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+Consente di installare il provider SMS nel computer specificato. Specificare il nome di dominio completo (FQDN) per il computer del provider SMS. Per altre informazioni sul provider SMS, vedere [Pianificare per il provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider).  
 
-    -   **Dettagli:** specifica le lingue del server che saranno disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. L'inglese è disponibile per impostazione predefinita.  
+#### <a name="usage"></a>Utilizzo
 
--   **Nome chiave:** AddClientLanguages  
+`/SDKINST <SMS Provider FQDN>`
 
-    -   **Richiesto:** No  
+### `/SDKDEINST`
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+Consente di disinstallare il provider SMS nel computer specificato. Specificare l'FQDN per il computer del provider SMS.  
 
-    -   **Dettagli:** Specifica le lingue che saranno disponibili per i computer client. L'inglese è disponibile per impostazione predefinita.  
+#### <a name="usage"></a>Utilizzo
 
--   **Nome chiave:** DeleteServerLanguages  
+`/SDKDEINST <SMS Provider FQDN>`
 
-    -   **Richiesto:** No  
+### `/MANAGELANGS`
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+Consente di gestire le lingue installate in un sito installato precedentemente. Specificare il percorso per il file script delle lingue che contiene le impostazioni delle lingue. Per altre informazioni, vedere la sezione [Opzioni della riga di comando per la gestione delle lingue](#bkmk_Lang).  
 
-    -   **Dettagli:** Specifica le lingue da rimuovere e che non saranno più disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+#### <a name="usage"></a>Utilizzo
 
--   **Nome chiave:** DeleteClientLanguages  
+`/MANAGELANGS <Language script path>`
 
-    -   **Richiesto:** No  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+## <a name="bkmk_Lang"></a> Opzioni della riga di comando per la gestione delle lingue
 
-    -   **Dettagli:** Specifica le lingue da rimuovere e che non saranno più disponibili per i computer client. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+### <a name="identification"></a>Identification
 
--   **Nome chiave:** MobileDeviceLanguage  
+- **Nome chiave:** Action  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:** `ManageLanguages`  
 
-         0 = Non installare  
+    - **Dettagli:** Gestisce il supporto lingua di client per dispositivi mobili, client e server in un sito.  
 
-         1 = Installare  
+### <a name="options"></a>Opzioni
 
-    -   **Dettagli:** Specifica se le lingue del dispositivo mobile client sono installate.  
+- **Nome chiave:** AddServerLanguages  
 
--   **Nome chiave:** PrerequisiteComp  
+    - **Richiesto:** No  
 
-    -   **Richiesto:** Sì  
+    - **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Valori:** 0 o 1  
+    - **Dettagli:** specifica le lingue del server che saranno disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. L'inglese è disponibile per impostazione predefinita.  
 
-         0 = Scaricare  
+- **Nome chiave:** AddClientLanguages  
 
-         1 = Già scaricato  
+    - **Richiesto:** No  
 
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione esegue il download dei file.  
+    - **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
--   **Nome chiave:** PrerequisitePath  
+    - **Dettagli:** Specifica le lingue che saranno disponibili per i computer client. L'inglese è disponibile per impostazione predefinita.  
 
-    -   **Richiesto:** Sì  
+- **Nome chiave:** DeleteServerLanguages  
 
-    -   **Valori:**  <*Percorso dei file dei prerequisiti di installazione*>  
+    - **Richiesto:** No  
 
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
+    - **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-##  <a name="bkmk_Unattended"></a> Chiavi di file script di installazione automatica  
- Usare le sezioni seguenti per facilitare la creazione dello script per l'installazione automatica. Gli elenchi illustrano le chiavi dello script di installazione disponibili, i valori corrispondenti, se sono obbligatorie, il tipo di installazione per cui vengono usate e una breve descrizione di ogni chiave.  
+    - **Dettagli:** Specifica le lingue da rimuovere e che non saranno più disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
 
-### <a name="unattended-install-for-a-central-administration-site"></a>Installare automaticamente un sito di amministrazione centrale  
- Usare i dettagli seguenti per installare un sito di amministrazione centrale usando un file script di installazione automatica.  
+- **Nome chiave:** DeleteClientLanguages  
 
-**Identification**  
+    - **Richiesto:** No  
 
--   **Nome chiave:** Action  
+    - **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Richiesto:** Sì  
+    - **Dettagli:** Specifica le lingue da rimuovere e che non saranno più disponibili per i computer client. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
 
-    -   **Valori:** InstallCAS  
+- **Nome chiave:** MobileDeviceLanguage  
 
-    -   **Dettagli:** consente di installare un sito di amministrazione centrale.  
+    - **Richiesto:** Sì  
 
--   **Nome chiave:** CDLatest  
+    - **Valori:**
 
-    -   **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.    
+        - `0` = Non installare  
 
-    -   **Valori:** 1. Qualsiasi valore diverso da 1 presuppone che non venga usata la cartella CD.Latest.
+        - `1` = Installare  
 
-    -   **Dettagli:** lo script deve includere la chiave e il valore quando si esegue il programma di installazione dal supporto di una cartella CD.Latest allo scopo di installare o ripristinare un sito di amministrazione centrale o primario. Questo valore indica al programma di installazione che viene usato il formato di supporto CD.Latest.
+    - **Dettagli:** Specifica se le lingue del dispositivo mobile client sono installate.  
 
-**Opzioni**  
+- **Nome chiave:** PrerequisiteComp  
 
--   **Nome chiave:** ProductID  
+    - **Richiesto:** Sì  
 
-    -   **Richiesto:** Sì  
+    - **Valori:**
 
-    -   **Valori:**  <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
+        - `0` = Scaricare  
 
-    -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
+        - `1` = Già scaricato  
 
--   **Nome chiave:** SiteCode  
+    - **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa il valore `0`, il programma di installazione eseguirà il download dei file.  
 
-    -   **Richiesto:** Sì  
+- **Nome chiave:** PrerequisitePath  
 
-    -   **Valori:**  <*Codice del sito*>  
+    - **Richiesto:** Sì  
 
-    -   **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia.  
+    - **Valori:**  <*Percorso dei file dei prerequisiti di installazione*>  
 
--   **Nome chiave:** Nome sito  
+    - **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
 
-    -   **Richiesto:** Sì  
 
-    -   **Valori:**  <*Nome del sito*>  
+## <a name="bkmk_Unattended"></a> Chiavi di file script di installazione automatica
 
-    -   **Dettagli:** Specifica il nome del sito.  
+Usare le sezioni seguenti per facilitare la creazione dello script per l'installazione automatica. Gli elenchi mostrano quanto segue:
 
--   **Nome chiave:** SMSInstallDir  
+- Chiavi dello script di installazione disponibili e valori corrispondenti
+- Se sono necessarie
+- Tipo di installazione per cui vengono usate
+- Descrizione breve della chiave
 
-    -   **Richiesto:** Sì  
+### <a name="unattended-install-for-a-central-administration-site-cas"></a>Installare automaticamente un sito di amministrazione centrale
 
-    -   **Valori:**  <*Percorso di installazione di Configuration Manager*>  
+Usare i dettagli seguenti per installare un sito di amministrazione centrale usando un file script di installazione automatica.  
 
-    -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
+#### <a name="identification"></a>Identification
 
--   **Nome chiave:** SDKServer  
+- **Nome chiave:** Action  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:**  <*FQDN del provider SMS*>  
+    - **Valori:** `InstallCAS`  
 
-    -   **Dettagli:** Specifica il nome FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
+    - **Dettagli:** Installa un sito di amministrazione centrale.  
 
--   **Nome chiave:** PrerequisiteComp  
+- **Nome chiave:** CDLatest  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**
 
-         0 = Scaricare  
+        - `1` = si usano supporti dalla cartella CD.Latest
 
-         1 = Già scaricato  
+        - Qualsiasi valore diverso da 1 indica che non si usano supporti dalla cartella CD.Latest
 
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione esegue il download dei file.  
+    - **Dettagli:** Quando si installa o si ripristina un sito primario o un sito di amministrazione centrale e si esegue il programma di installazione dalla cartella CD.Latest, includere questa chiave e il valore. Questo valore indica al programma di installazione che si usano supporti dalla cartella CD.Latest.
 
--   **Nome chiave:** PrerequisitePath  
+#### <a name="options"></a>Opzioni
 
-    -   **Richiesto:** Sì  
+- **Nome chiave:** ProductID  
 
-    -   **Valori:**  <*Percorso dei file dei prerequisiti di installazione*>  
+    - **Richiesto:** Sì  
 
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
+    - **Valori:**
 
--   **Nome chiave:** AdminConsole  
+        - `<xxxxx-xxxxx-xxxxx-xxxxx-xxxxx>` = un codice Product Key valido con trattini
 
-    -   **Richiesto:** Sì  
+        - `Eval` = installa la versione di valutazione di Configuration Manager
 
-    -   **Valori:** 0 o 1  
+    - **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi.
 
-         0 = Non installare  
+- **Nome chiave:** SiteCode  
 
-         1 = Installare  
+    - **Richiesto:** Sì  
 
-    -   **Dettagli:** Specifica se installare la console di Configuration Manager.  
+    - **Valori:**  <*codice del sito*>, ad esempio `ABC`
 
--   **Nome chiave:** JoinCEIP  
+    - **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia.  
+
+- **Nome chiave:** Nome sito  
+
+    - **Richiesto:** Sì  
+
+    - **Valori:**  <*Nome del sito*>  
+
+    - **Dettagli:** Specifica il nome del sito.  
+
+- **Nome chiave:** SMSInstallDir  
+
+    - **Richiesto:** Sì  
+
+    - **Valori:**  <*Percorso di installazione di Configuration Manager*>  
+
+    - **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
+
+- **Nome chiave:** SDKServer  
+
+    - **Richiesto:** Sì  
+
+    - **Valori:**  <*FQDN del provider SMS*>  
+
+    - **Dettagli:** Specifica il nome FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
+
+- **Nome chiave:** PrerequisiteComp  
+
+    - **Richiesto:** Sì  
+
+    - **Valori:**
+
+        - `0` = Scaricare  
+
+        - `1` = Già scaricato  
+
+    - **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa il valore `0`, il programma di installazione eseguirà il download dei file.  
+
+- **Nome chiave:** PrerequisitePath  
+
+    - **Richiesto:** Sì  
+
+    - **Valori:**  <*Percorso dei file dei prerequisiti di installazione*>  
+
+    - **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
+
+- **Nome chiave:** AdminConsole  
+
+    - **Richiesto:** Sì  
+
+    - **Valori:**
+
+        - `0` = Non installare  
+
+        - `1` = Installare  
+
+    - **Dettagli:** Specifica se installare la console di Configuration Manager.  
+
+- **Nome chiave:** JoinCEIP  
+
     > [!Note]  
     > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**
 
-         0 = Non partecipare  
+        - `0` = Non partecipare  
 
-         1 = Partecipare  
+        - `1` = Partecipare  
 
-    -   **Dettagli:** Specifica se partecipare all'Analisi utilizzo software (CEIP).  
+    - **Dettagli:** Specifica se partecipare all'Analisi utilizzo software (CEIP).  
 
--   **Nome chiave:** AddServerLanguages  
+- **Nome chiave:** AddServerLanguages  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    - **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** specifica le lingue del server che saranno disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. L'inglese è disponibile per impostazione predefinita.  
+    - **Dettagli:** specifica le lingue del server che saranno disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. L'inglese è disponibile per impostazione predefinita.  
 
--   **Nome chiave:** AddClientLanguages  
+- **Nome chiave:** AddClientLanguages  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    - **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** Specifica le lingue che saranno disponibili per i computer client. L'inglese è disponibile per impostazione predefinita.  
+    - **Dettagli:** Specifica le lingue che saranno disponibili per i computer client. L'inglese è disponibile per impostazione predefinita.  
 
--   **Nome chiave:** DeleteServerLanguages  
+- **Nome chiave:** DeleteServerLanguages  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    - **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** Modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    - **Dettagli:** Modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
 
--   **Nome chiave:** DeleteClientLanguages  
+- **Nome chiave:** DeleteClientLanguages  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    - **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** Modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per i computer client. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    - **Dettagli:** Modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per i computer client. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
 
--   **Nome chiave:** MobileDeviceLanguage  
+- **Nome chiave:** MobileDeviceLanguage  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**
 
-         0 = Non installare  
+        - `0` = Non installare  
 
-         1 = Installare  
+        - `1` = Installare  
 
-    -   **Dettagli:** Specifica se le lingue del dispositivo mobile client sono installate.  
+    - **Dettagli:** Specifica se le lingue del dispositivo mobile client sono installate.  
 
-**SQLConfigOptions**  
+#### <a name="sqlconfigoptions"></a>SQLConfigOptions
 
--   **Nome chiave:** SQLServerName  
+- **Nome chiave:** SQLServerName  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:**  <*Nome dell'istanza di SQL Server*>  
+    - **Valori:**  <*Nome dell'istanza di SQL Server*>  
 
-    -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospiterà il database del sito.  
+    - **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server per ospitare il database del sito.  
 
--   **Nome chiave:** DatabaseName  
+- **Nome chiave:** DatabaseName  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:**  <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
+    - **Valori:**  <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
 
-    -   **Dettagli:** specifica il nome del database SQL Server da creare o del database SQL Server da usare per l'installazione del database del sito di amministrazione centrale.  
+    - **Dettagli:** specifica il nome del database SQL Server da creare o del database SQL Server da usare per l'installazione del database del sito di amministrazione centrale.  
 
         > [!IMPORTANT]  
-        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome del database del sito.  
+        > Se non si usa l'istanza predefinita, specificare il nome dell'istanza e il nome del database del sito.  
 
--   **Nome chiave:** SQLSSBPort  
+- **Nome chiave:** SQLSSBPort  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*Numero della porta SSB*>  
+    - **Valori:**  <*Numero della porta SSB*>  
 
-    -   **Dettagli:** Specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. SQL Server Service Broker è in genere configurato per l'uso della porta TCP 4022, ma è possibile configurare un'altra porta.  
+    - **Dettagli:** Specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. Per impostazione predefinita, SSB usa la porta TCP 4022, ma è possibile usare una porta diversa.  
 
--   **Nome chiave:** SQLDataFilePath  
+- **Nome chiave:** SQLDataFilePath  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*Percorso del file mdb del database*>  
+    - **Valori:**  <*Percorso del file mdb del database*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
+    - **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
 
--   **Nome chiave:** SQLLogFilePath  
+- **Nome chiave:** SQLLogFilePath  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*Percorso del file ldf del database*>  
+    - **Valori:**  <*Percorso del file ldf del database*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
+    - **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
 
-**CloudConnectorOptions**  
+#### <a name="cloudconnectoroptions"></a>CloudConnectorOptions
 
--   **Nome chiave:** CloudConnector  
+- **Nome chiave:** CloudConnector  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**
 
-         0 = Non installare  
+        - `0` = Non installare  
 
-         1 = Installare  
+        - `1` = Installare  
 
-    -   **Dettagli:** specifica se installare un punto di connessione del servizio in questo sito. Dato che il punto di connessione può essere installato solo nel sito di livello superiore di una gerarchia, questo valore deve essere **0** per un sito primario figlio.  
+    - **Dettagli:** specifica se installare un punto di connessione del servizio in questo sito. Poiché il punto di connessione del servizio può essere installato solo nel sito di livello superiore di una gerarchia, impostare questo valore su `1` per un sito primario figlio.  
 
--   **Nome chiave:** CloudConnectorServer  
+- **Nome chiave:** CloudConnectorServer  
 
-    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
+    - **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:**  <*FQDN del server del punto di connessione del servizio*>  
+    - **Valori:**  <*FQDN del server del punto di connessione del servizio*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
+    - **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
 
--   **Nome chiave:** UseProxy  
+- **Nome chiave:** UseProxy  
 
-    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
+    - **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**
 
-         0 = Non installare  
+        - `0` = Non installare  
 
-         1 = Installare  
+        - `1` = Installare  
 
-    -   **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
+    - **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
 
--   **Nome chiave:** ProxyName  
+- **Nome chiave:** ProxyName  
 
-    -   **Richiesto:** obbligatorio quando **UseProxy** è uguale a 1  
+    - **Richiesto:** obbligatorio quando **UseProxy** è uguale a 1  
 
-    -   **Valori:**  <*FQDN del server proxy*>  
+    - **Valori:**  <*FQDN del server proxy*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server proxy usato dal punto di connessione del servizio.  
+    - **Dettagli:** specifica il nome FQDN del server proxy usato dal punto di connessione del servizio.  
 
--   **Nome chiave:** ProxyPort  
+- **Nome chiave:** ProxyPort  
 
-    -   **Richiesto:** obbligatorio quando **UseProxy** è uguale a 1  
+    - **Richiesto:** obbligatorio quando **UseProxy** è uguale a 1  
 
-    -   **Valori:**  <*Numero della porta*>  
+    - **Valori:**  <*Numero della porta*>  
 
-    -   **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
+    - **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
 
-### <a name="unattended-install-for-a-primary-site"></a>Installare automaticamente un sito primario  
+#### <a name="sabranchoptions"></a>SABranchOptions
+
+<!-- SCCMDocs#390 -->
+
+- **Nome chiave:** SAActive
+
+    - **Richiesto:** No
+
+    - **Valori:**
+
+        - `0` = Non si ha Software Assurance
+
+        - `1` = Software Assurance è attivo
+
+    - **Dettagli:** specifica se si ha Software Assurance attivo. Per altre informazioni, vedere [Domande frequenti su prodotto e licenze](/sccm/core/understand/product-and-licensing-faq).
+
+- **Nome chiave:** CurrentBranch
+
+    - **Richiesto:** No
+
+    - **Valori:**
+
+        - `0` = Installa LTSB
+
+        - `1` = Installa Current Branch
+
+    - **Dettagli:** specifica se usare Configuration Manager (Current Branch) o Configuration Manager (Long-Term Servicing Branch, LTSB). Per altre informazioni, vedere [Scelta del ramo di Configuration Manager da usare](/sccm/core/understand/which-branch-should-i-use).
+
+### <a name="unattended-install-for-a-primary-site"></a>Installare automaticamente un sito primario
+
 Usare i dettagli seguenti per installare un sito primario usando un file script di installazione automatica.  
 
-**Identification**  
+#### <a name="identification"></a>Identification
 
--   **Nome chiave:** Action  
+- **Nome chiave:** Action  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** InstallPrimarySite  
+    - **Valori:** `InstallPrimarySite`  
 
-    -   **Dettagli:** Installa un sito primario.  
+    - **Dettagli:** Installa un sito primario.  
 
--   **Nome chiave:** CDLatest  
+- **Nome chiave:** CDLatest  
 
-    -   **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.    
+    - **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.
 
-    -   **Valori:** 1. Qualsiasi valore diverso da 1 presuppone che non venga usata la cartella CD.Latest.
+    - **Valori:**
 
-    -   **Dettagli:** lo script deve includere la chiave e il valore quando si esegue il programma di installazione dal supporto di una cartella CD.Latest allo scopo di installare o ripristinare un sito di amministrazione centrale o primario. Questo valore indica al programma di installazione che viene usato il formato di supporto CD.Latest.
+        - `1` = si usano supporti dalla cartella CD.Latest
 
-**Opzioni**  
+        - Qualsiasi valore diverso da 1 indica che non si usano supporti dalla cartella CD.Latest
 
--   **Nome chiave:** ProductID  
+    - **Dettagli:** Quando si installa o si ripristina un sito primario o un sito di amministrazione centrale e si esegue il programma di installazione dalla cartella CD.Latest, includere questa chiave e il valore. Questo valore indica al programma di installazione che si usano supporti dalla cartella CD.Latest.
 
-    -   **Richiesto:** Sì  
+#### <a name="options"></a>Opzioni
 
-    -   **Valori:**  <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
+- **Nome chiave:** ProductID  
 
-    -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
+    - **Richiesto:** Sì  
 
--   **Nome chiave:** SiteCode  
+    - **Valori:**
 
-    -   **Richiesto:** Sì  
+        - `<xxxxx-xxxxx-xxxxx-xxxxx-xxxxx>` = un codice Product Key valido con trattini
 
-    -   **Valori:**  <*Codice del sito*>  
+        - `Eval` = installa la versione di valutazione di Configuration Manager
 
-    -   **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia.  
+    - **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi.
 
--   **Nome chiave:** SiteName  
+- **Nome chiave:** SiteCode  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:**  <*Nome del sito*>  
+    - **Valori:**  <*Codice del sito*>  
 
-    -   **Dettagli:** Specifica il nome del sito.  
+    - **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia.  
 
--   **Nome chiave:** SMSInstallDir  
+- **Nome chiave:** SiteName  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:**  <*Percorso di installazione di Configuration Manager*>
+    - **Valori:**  <*Nome del sito*>  
 
-    -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
+    - **Dettagli:** Specifica il nome del sito.  
 
--   **Nome chiave:** SDKServer  
+- **Nome chiave:** SMSInstallDir  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:**  <*FQDN del provider SMS*>  
+    - **Valori:**  <*Percorso di installazione di Configuration Manager*>
 
-    -   **Dettagli:** Specifica il nome FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
+    - **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
 
--   **Nome chiave:** PrerequisiteComp  
+- **Nome chiave:** SDKServer  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**  <*FQDN del provider SMS*>  
 
-         0 = Scaricare  
+    - **Dettagli:** Specifica il nome FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
 
-         1 = Già scaricato  
+- **Nome chiave:** PrerequisiteComp  
 
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione esegue il download dei file.  
+    - **Richiesto:** Sì  
 
--   **Nome chiave:** PrerequisitePath  
+    - **Valori:**
 
-    -   **Richiesto:** Sì  
+        - `0` = Scaricare  
 
-    -   **Valori:**  <*Percorso dei file dei prerequisiti di installazione*>  
+        - `1` = Già scaricato  
 
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
+    - **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa il valore `0`, il programma di installazione eseguirà il download dei file.  
 
--   **Nome chiave:** AdminConsole  
+- **Nome chiave:** PrerequisitePath  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**  <*Percorso dei file dei prerequisiti di installazione*>  
 
-         0 = Non installare  
+    - **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
 
-         1 = Installare  
+- **Nome chiave:** AdminConsole  
 
-    -   **Dettagli:** Specifica se installare la console di Configuration Manager.  
+    - **Richiesto:** Sì  
 
--   **Nome chiave:** JoinCEIP  
+    - **Valori:**
+
+        - `0` = Non installare  
+
+        - `1` = Installare  
+
+    - **Dettagli:** Specifica se installare la console di Configuration Manager.  
+
+- **Nome chiave:** JoinCEIP  
+
     > [!Note]  
     > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**
 
-         0 = Non partecipare  
+        - `0` = Non partecipare  
 
-         1 = Partecipare  
+        - `1` = Partecipare  
 
-    -   **Dettagli:** specifica se partecipare al programma Analisi utilizzo software.  
+    - **Dettagli:** specifica se partecipare al programma Analisi utilizzo software.  
 
--   **Nome chiave:** ManagementPoint  
+- **Nome chiave:** ManagementPoint  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  < *FQDN del server del sito del punto di gestione*>  
+    - **Valori:**  < *FQDN del server del sito del punto di gestione*>  
 
-    -   **Dettagli:** Specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di gestione.  
+    - **Dettagli:** Specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di gestione.  
 
--   **Nome chiave:** ManagementPointProtocol  
+- **Nome chiave:** ManagementPointProtocol  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:** HTTPS *o* HTTP  
+    - **Valori:** `HTTPS` o `HTTP`  
 
-    -   **Dettagli:** Specifica il protocollo da usare per il punto di gestione.  
+    - **Dettagli:** Specifica il protocollo da usare per il punto di gestione.  
 
--   **Nome chiave:** DistributionPoint  
+- **Nome chiave:** DistributionPoint  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*FQDN del server del sito del punto di distribuzione*>  
+    - **Valori:**  <*FQDN del server del sito del punto di distribuzione*>  
 
-    -   **Dettagli:** Specifica il protocollo da usare per il punto di distribuzione.  
+    - **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di distribuzione.  
 
--   **Nome chiave:** DistributionPointProtocol  
+- **Nome chiave:** DistributionPointProtocol  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:** HTTPS *o* HTTP  
+    - **Valori:** `HTTPS` o `HTTP`  
 
-    -   **Dettagli:** Specifica il protocollo da usare per il punto di distribuzione.  
+    - **Dettagli:** Specifica il protocollo da usare per il punto di distribuzione.  
 
--   **Nome chiave:** RoleCommunicationProtocol  
+- **Nome chiave:** RoleCommunicationProtocol  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** EnforceHTTPS *o* HTTPorHTTPS  
+    - **Valori:** `EnforceHTTPS` o `HTTPorHTTPS`  
 
-    -   **Dettagli:** specifica se configurare tutti i sistemi del sito per l'accettazione delle sole comunicazioni HTTPS dai client oppure se configurare un metodo di comunicazione per ogni ruolo del sistema del sito. Se si seleziona **EnforceHTTPS**, il computer client deve disporre di un certificato di infrastruttura a chiave pubblica (PKI) valido per l'autenticazione client.  
+    - **Dettagli:** specifica se configurare tutti i sistemi del sito per l'accettazione delle sole comunicazioni HTTPS dai client oppure se configurare un metodo di comunicazione per ogni ruolo del sistema del sito. Se si seleziona `EnforceHTTPS`, i client devono avere un certificato di infrastruttura a chiave pubblica (PKI) valido per l'autenticazione client.  
 
--   **Nome chiave:** ClientsUsePKICertificate  
+- **Nome chiave:** ClientsUsePKICertificate  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**
 
-         0 = Non usare  
+        - `0` = Non usare  
 
-         1 = Usare  
+        - `1` = Usare  
 
-    -   **Dettagli:** Specifica se i client useranno un certificato PKI client per la comunicazione con i ruoli del sistema del sito.  
+    - **Dettagli:** Specifica se i client useranno un certificato PKI client per la comunicazione con i ruoli del sistema del sito.  
 
--   **Nome chiave:** AddServerLanguages  
+- **Nome chiave:** AddServerLanguages  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    - **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** specifica le lingue del server che saranno disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. L'inglese è disponibile per impostazione predefinita.  
+    - **Dettagli:** specifica le lingue del server che saranno disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. L'inglese è disponibile per impostazione predefinita.  
 
--   **Nome chiave:** AddClientLanguages  
+- **Nome chiave:** AddClientLanguages  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    - **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** Specifica le lingue che saranno disponibili per i computer client. L'inglese è disponibile per impostazione predefinita.  
+    - **Dettagli:** Specifica le lingue che saranno disponibili per i computer client. L'inglese è disponibile per impostazione predefinita.  
 
--   **Nome chiave:** DeleteServerLanguages  
+- **Nome chiave:** DeleteServerLanguages  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    - **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** Modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    - **Dettagli:** Modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
 
--   **Nome chiave:** DeleteClientLanguages  
+- **Nome chiave:** DeleteClientLanguages  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
+    - **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** Modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per i computer client. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    - **Dettagli:** Modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per i computer client. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
 
--   **Nome chiave:** MobileDeviceLanguage  
+- **Nome chiave:** MobileDeviceLanguage  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**
 
-         0 = Non installare  
+        - `0` = Non installare  
 
-         1 = Installare  
+        - `1` = Installare  
 
-    -   **Dettagli:** Specifica se le lingue del dispositivo mobile client sono installate.  
+    - **Dettagli:** Specifica se le lingue del dispositivo mobile client sono installate.  
 
-**SQLConfigOptions**  
+#### <a name="sqlconfigoptions"></a>SQLConfigOptions
 
--   **Nome chiave:** SQLServerName  
+- **Nome chiave:** SQLServerName  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:**  <*Nome dell'istanza di SQL Server*>  
+    - **Valori:**  <*Nome dell'istanza di SQL Server*>  
 
-    -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospiterà il database del sito.  
+    - **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server per ospitare il database del sito.  
 
--   **Nome chiave:** DatabaseName  
+- **Nome chiave:** DatabaseName  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:**  <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
+    - **Valori:**  <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
 
-    -   **Dettagli:** specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito primario.  
+    - **Dettagli:** specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito primario.  
 
         > [!IMPORTANT]  
-        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome del database del sito.  
+        > Se non si usa l'istanza predefinita, specificare il nome dell'istanza e il nome del database del sito.  
 
--   **Nome chiave:** SQLSSBPort  
+- **Nome chiave:** SQLSSBPort  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*Numero della porta SSB*>  
+    - **Valori:**  <*Numero della porta SSB*>  
 
-    -   **Dettagli:** specifica la porta SSB usata da SQL Server. SQL Server Service Broker è in genere configurato per l'uso della porta TCP 4022, ma è possibile configurare un'altra porta.  
+    - **Dettagli:** specifica la porta SSB usata da SQL Server. Per impostazione predefinita, SSB usa la porta TCP 4022, ma è possibile usare una porta diversa.  
 
--   **Nome chiave:** SQLDataFilePath  
+- **Nome chiave:** SQLDataFilePath  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*Percorso del file mdb del database*>  
+    - **Valori:**  <*Percorso del file mdb del database*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
+    - **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
 
--   **Nome chiave:** SQLLogFilePath  
+- **Nome chiave:** SQLLogFilePath  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*Percorso del file ldf del database*>  
+    - **Valori:**  <*Percorso del file ldf del database*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
+    - **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
 
-**HierarchyExpansionOption**  
+#### <a name="hierarchyexpansionoption"></a>HierarchyExpansionOption
 
--   **Nome chiave:** CCARSiteServer  
+- **Nome chiave:** CCARSiteServer  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*FQDN del sito di amministrazione centrale*>  
+    - **Valori:**  <*FQDN del sito di amministrazione centrale*>  
 
-    -   **Dettagli:** specifica il sito di amministrazione centrale a cui si collega il sito primario quando viene aggiunto alla gerarchia di Configuration Manager. Durante l'installazione, specificare il sito di amministrazione centrale.  
+    - **Dettagli:** specifica il sito di amministrazione centrale a cui si collega il sito primario quando viene aggiunto alla gerarchia di Configuration Manager. Specificare il sito di amministrazione centrale durante l'installazione.  
 
--   **Nome chiave:** CASRetryInterval  
+- **Nome chiave:** CASRetryInterval  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*Intervallo*>  
+    - **Valori:**  <*Intervallo in minuti*>  
 
-    -   **Dettagli:** Specifica l'intervallo (in minuti) tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato dall'utente per il valore **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
+    - **Dettagli:** specifica l'intervallo in minuti tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato dall'utente per il valore **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
 
--   **Nome chiave:** WaitForCASTimeout  
+- **Nome chiave:** WaitForCASTimeout  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*Timeout*>  
+    - **Valori:**  <*Timeout in minuti da 0 a 100*>  
 
-         Un valore tra **0** e **100**  
+    - **Dettagli:** specifica il valore di timeout massimo in minuti per la connessione di un sito primario al sito di amministrazione centrale. Se ad esempio un sito primario non riesce a connettersi al sito di amministrazione centrale, tale sito primario proverà nuovamente a connettersi al sito di amministrazione centrale in base al valore **CASRetryInterval** finché non viene raggiunto il periodo di **WaitForCASTimeout**. È possibile specificare un valore compreso tra `0` e `100`.  
 
-    -   **Dettagli:** Specifica il valore di timeout massimo (in minuti) per la connessione di un sito primario al sito di amministrazione centrale. Se ad esempio un sito primario non riesce a connettersi al sito di amministrazione centrale, tale sito primario proverà nuovamente a connettersi al sito di amministrazione centrale in base al valore **CASRetryInterval** finché non viene raggiunto il periodo di **WaitForCASTimeout**. È possibile specificare un valore compreso tra **0** e **100**.  
+#### <a name="cloudconnectoroptions"></a>CloudConnectorOptions
 
-**CloudConnectorOptions**  
+- **Nome chiave:** CloudConnector  
 
--   **Nome chiave:** CloudConnector  
+    - **Richiesto:** Sì  
 
-    -   **Richiesto:** Sì  
+    - **Valori:**
 
-    -   **Valori:** 0 o 1  
+        - `0` = Non installare  
 
-         0 = Non installare  
+        - `1` = Installare  
 
-         1 = Installare  
+    - **Dettagli:** specifica se installare un punto di connessione del servizio in questo sito. Poiché il punto di connessione del servizio può essere installato solo nel sito di livello superiore di una gerarchia, impostare questo valore su `0` per un sito primario figlio.  
 
-    -   **Dettagli:** specifica se installare un punto di connessione del servizio in questo sito. Dato che il punto di connessione può essere installato solo nel sito di livello superiore di una gerarchia, questo valore deve essere **0** per un sito primario figlio.  
+- **Nome chiave:** CloudConnectorServer  
 
--   **Nome chiave:** CloudConnectorServer  
+    - **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
+    - **Valori:**  <*FQDN del server del punto di connessione del servizio*\>  
 
-    -   **Valori:**  <*FQDN del server del punto di connessione del servizio*\>  
+    - **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
 
-    -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
+- **Nome chiave:** UseProxy  
 
--   **Nome chiave:** UseProxy  
+    - **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
+    - **Valori:**
 
-    -   **Valori:** 0 o 1  
+        - `0` = Non installare  
 
-         0 = Non installare  
+        - `1` = Installare  
 
-         1 = Installare  
+    - **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
 
-    -   **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
+- **Nome chiave:** ProxyName  
 
--   **Nome chiave:** ProxyName  
+    - **Richiesto:** obbligatorio quando **UseProxy** è uguale a 1  
 
-    -   **Richiesto:** obbligatorio quando **UseProxy** è uguale a 1  
+    - **Valori:**  <*FQDN del server proxy*>  
 
-    -   **Valori:**  <*FQDN del server proxy*>  
+    - **Dettagli:** specifica il nome FQDN del server proxy usato dal punto di connessione del servizio.  
 
-    -   **Dettagli:** specifica il nome FQDN del server proxy usato dal punto di connessione del servizio.  
+- **Nome chiave:** ProxyPort  
 
--   **Nome chiave:** ProxyPort  
+    - **Richiesto:** obbligatorio quando **UseProxy** è uguale a 1  
 
-    -   **Richiesto:** obbligatorio quando **UseProxy** è uguale a 1  
+    - **Valori:**  <*Numero della porta*>  
 
-    -   **Valori:**  <*Numero della porta*>  
+    - **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
 
-    -   **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
+#### <a name="sabranchoptions"></a>SABranchOptions
 
-### <a name="unattended-recovery-for-a-central-administration-site"></a>Ripristinare automaticamente un sito di amministrazione centrale  
- Usare i dettagli seguenti per ripristinare un sito di amministrazione centrale usando un file script di installazione automatica.  
+<!-- SCCMDocs#390 -->
 
-**Identification**  
+- **Nome chiave:** SAActive
 
--   **Nome chiave:** Action  
+    - **Richiesto:** No
 
-    -   **Richiesto:** Sì  
+    - **Valori:**
 
-    -   **Valori:** RecoverCCAR  
+        - `0` = Non si ha Software Assurance
 
-    -   **Dettagli:** consente di ripristinare un sito di amministrazione centrale.  
+        - `1` = Software Assurance è attivo
 
--   **Nome chiave:** CDLatest  
+    - **Dettagli:** specifica se si ha Software Assurance attivo. Per altre informazioni, vedere [Domande frequenti su prodotto e licenze](/sccm/core/understand/product-and-licensing-faq).
 
-    -   **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.    
+- **Nome chiave:** CurrentBranch
 
-    -   **Valori:** 1. Qualsiasi valore diverso da 1 presuppone che non venga usata la cartella CD.Latest.
+    - **Richiesto:** No
 
-    -   **Dettagli:** lo script deve includere la chiave e il valore quando si esegue il programma di installazione dal supporto di una cartella CD.Latest allo scopo di installare o ripristinare un sito di amministrazione centrale o primario. Questo valore indica al programma di installazione che viene usato il formato di supporto CD.Latest.
+    - **Valori:**
 
-**RecoveryOptions**  
+        - `0` = Installa LTSB
 
--   **Nome chiave:** ServerRecoveryOptions  
+        - `1` = Installa Current Branch
 
-    -   **Richiesto:** Sì  
+    - **Dettagli:** specifica se usare Configuration Manager (Current Branch) o Configuration Manager (Long-Term Servicing Branch, LTSB). Per altre informazioni, vedere [Scelta del ramo di Configuration Manager da usare](/sccm/core/understand/which-branch-should-i-use).
 
-    -   **Valori:** 1, 2 o 4  
+### <a name="unattended-recovery-for-a-cas"></a>Ripristinare automaticamente un sito di amministrazione centrale
 
-         1 = Ripristina il server del sito e SQL Server.  
+Usare i dettagli seguenti per ripristinare un sito di amministrazione centrale usando un file script di installazione automatica.  
 
-         2 = Ripristina solo il server del sito.  
+#### <a name="identification"></a>Identification
 
-         4 = Ripristina solo SQL Server.  
+- **Nome chiave:** Action  
 
-    -   **Dettagli:** specifica se il programma di installazione ripristina il server del sito, SQL Server o entrambi. Le chiavi associate sono necessarie quando si imposta il valore seguente per l'impostazione **ServerRecoveryOptions**:  
+    - **Richiesto:** Sì  
 
-        -   Valore = 1: È possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+    - **Valori:** `RecoverCCAR`  
 
-        -   Valore = 2: È possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+    - **Dettagli:** consente di ripristinare un sito di amministrazione centrale.  
 
-        -   Valore = 4: La chiave **BackupLocation** è richiesta in caso di configurazione del valore **10** per la chiave **DatabaseRecoveryOptions** necessaria per il ripristino del database del sito dal backup.  
+- **Nome chiave:** CDLatest  
 
--   **Nome chiave:** DatabaseRecoveryOptions  
+    - **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.
 
-    -   **Richiesto:** Questa chiave è richiesta quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **4**.  
+    - **Valori:**
 
-    -   **Valori:** 10, 20, 40 o 80  
+        - `1` = si usano supporti dalla cartella CD.Latest
 
-         10 = Ripristina il database del sito dal backup.  
+        - Qualsiasi valore diverso da 1 indica che non si usano supporti dalla cartella CD.Latest
 
-         20 = Usa un database del sito che è stato ripristinato manualmente usando un altro metodo.  
+    - **Dettagli:** Quando si installa o si ripristina un sito primario o un sito di amministrazione centrale e si esegue il programma di installazione dalla cartella CD.Latest, includere questa chiave e il valore. Questo valore indica al programma di installazione che si usano supporti dalla cartella CD.Latest.
 
-         40 = Crea un nuovo database per il sito. Usare questa opzione quando non è disponibile alcun backup di database del sito. I dati globali e i dati del sito vengono ripristinati tramite la replica da altri siti.  
+#### <a name="recoveryoptions"></a>RecoveryOptions
 
-         80 = Ignora il ripristino del database.  
+- **Nome chiave:** ServerRecoveryOptions  
 
-    -   **Dettagli:** specifica le modalità secondo cui il programma di installazione ripristinerà il database del sito in SQL Server.  
+    - **Richiesto:** Sì  
 
--   **Nome chiave:** ReferenceSite  
+    - **Valori:**
 
-    -   **Richiesto:** Questa chiave è richiesta quando l'impostazione **DatabaseRecoveryOptions** ha il valore **40**.  
+        - `1` = Ripristina il server del sito e SQL Server
 
-    -   **Valori:**  <*FQDN del sito di riferimento*>  
+        - `2` = Ripristina solo il server del sito
 
-    -   **Dettagli:** Specifica il sito primario di riferimento usato dal sito di amministrazione centrale per il ripristino dei dati globali se il backup del database è antecedente al periodo di memorizzazione del rilevamento delle modifiche o se il sito viene ripristinato senza backup.  
+        - `4` = Ripristina solo SQL Server  
 
-         Se non viene specificato un sito di riferimento e il backup è antecedente al periodo di memorizzazione del rilevamento delle modifiche, tutti i siti primari vengono reinizializzati con i dati ripristinati dal sito di amministrazione centrale.  
+    - **Dettagli:** specifica se il programma di installazione ripristina il server del sito, SQL Server o entrambi. Sono inoltre necessarie le seguenti opzioni in base al valore specificato:  
 
-         Se non viene specificato un sito di riferimento e il backup rientra nel periodo di memorizzazione del rilevamento delle modifiche, solo le modifiche apportate dal momento del backup verranno replicate dai siti primari. In caso di modifiche in conflitto provenienti da diversi siti primari, il sito di amministrazione centrale usa la prima modifica ricevuta.  
+        - **1** o **2**: specificare un valore per **SiteServerBackupLocation** per ripristinare il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
 
--   **Nome chiave:** SiteServerBackupLocation  
+        - **4**: La chiave **BackupLocation** è richiesta in caso di configurazione del valore **10** per la chiave **DatabaseRecoveryOptions** necessaria per il ripristino del database del sito dal backup.  
 
-    -   **Richiesto:** No  
+- **Nome chiave:** DatabaseRecoveryOptions  
 
-    -   **Valori:**  <*Percorso del set di backup del server del sito*>  
+    - **Richiesto:** Questa chiave è richiesta quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **4**.  
 
-    -   **Dettagli:** Specifica il percorso per il set di backup del server del sito. Questa chiave è facoltativa quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **2**. Specificare un valore affinché la chiave **SiteServerBackupLocation** ripristini il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+    - **Valori:**
 
--   **Nome chiave:** BackupLocation  
+        - `10` = Ripristina il database del sito dal backup.  
 
-    -   **Richiesto:** questa chiave è richiesta quando si configura il valore **1** o **4** per la chiave **ServerRecoveryOptions** e si configura il valore **10** per la chiave **DatabaseRecoveryOptions**.  
+        - `20` = Usa un database del sito che è stato ripristinato manualmente usando un altro metodo.  
 
-    -   **Valori:**  <*Percorso del set di backup del database del sito*>  
+        - `40` = Crea un nuovo database per il sito. Usare questa opzione quando non è disponibile alcun backup di database del sito. I dati globali e i dati del sito vengono ripristinati tramite la replica da altri siti.  
 
-    -   **Dettagli:** Specifica il percorso del set di backup del database del sito.  
+        - `80` = Ignora il ripristino del database.  
 
-**Opzioni**  
+    - **Dettagli:** specifica le modalità secondo cui il programma di installazione ripristinerà il database del sito in SQL Server.  
 
--   **Nome chiave:** ProductID  
+- **Nome chiave:** ReferenceSite  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Questa chiave è richiesta quando l'impostazione **DatabaseRecoveryOptions** ha il valore **40**.  
 
-    -   **Valori:**  <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
+    - **Valori:**  <*FQDN del sito di riferimento*>  
 
-    -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
+    - **Dettagli:** specifica il sito primario di riferimento usato dal sito di amministrazione centrale per il ripristino dei dati globali se il backup del database è antecedente al periodo di memorizzazione del rilevamento delle modifiche o se il sito viene ripristinato senza backup.  
 
--   **Nome chiave:** SiteCode  
+        Se non viene specificato un sito di riferimento e il backup è antecedente al periodo di memorizzazione del rilevamento delle modifiche, tutti i siti primari vengono reinizializzati con i dati ripristinati dal sito di amministrazione centrale.  
 
-    -   **Richiesto:** Sì  
+        Se non viene specificato un sito di riferimento e il backup rientra nel periodo di memorizzazione del rilevamento delle modifiche, solo le modifiche apportate dal momento del backup verranno replicate dai siti primari. In caso di modifiche in conflitto provenienti da diversi siti primari, il sito di amministrazione centrale usa la prima modifica ricevuta.  
 
-    -   **Valori:**  <*Codice del sito*>  
+- **Nome chiave:** SiteServerBackupLocation  
 
-    -   **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. Specificare il codice del sito usato dal sito prima dell'errore.
+    - **Richiesto:** No  
 
--   **Nome chiave:** SiteName  
+    - **Valori:**  <*Percorso del set di backup del server del sito*>  
 
-    -   **Richiesto:** No  
+    - **Dettagli:** Specifica il percorso per il set di backup del server del sito. Questa chiave è facoltativa quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **2**. Specificare un valore affinché la chiave **SiteServerBackupLocation** ripristini il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
 
-    -   **Valori:**  <*Nome del sito*>  
+- **Nome chiave:** BackupLocation  
 
-    -   **Dettagli:** Specifica il nome del sito.  
+    - **Richiesto:** questa chiave è richiesta quando si configura il valore **1** o **4** per la chiave **ServerRecoveryOptions** e si configura il valore **10** per la chiave **DatabaseRecoveryOptions**.  
 
--   **Nome chiave:** SMSInstallDir  
+    - **Valori:**  <*Percorso del set di backup del database del sito*>  
 
-    -   **Richiesto:** Sì  
+    - **Dettagli:** Specifica il percorso del set di backup del database del sito.  
 
-    -   **Valori:**  <*Percorso di installazione di Configuration Manager*>  
+#### <a name="options"></a>Opzioni
 
-    -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
+- **Nome chiave:** ProductID  
 
--   **Nome chiave:** SDKServer  
+    - **Richiesto:** Sì  
 
-    -   **Richiesto:** Sì  
+    - **Valori:**
 
-    -   **Valori:**  <*FQDN del provider SMS*>  
+        - `<xxxxx-xxxxx-xxxxx-xxxxx-xxxxx>` = un codice Product Key valido con trattini
 
-    -   **Dettagli:** specifica l'FQDN del server che ospita il provider SMS. Specificare il server che ospitava il provider SMS prima dell'errore.  
+        - `Eval` = installa la versione di valutazione di Configuration Manager
 
-         Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito. Per altre informazioni sul provider SMS, vedere [Plan for the SMS Provider for System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md) (Pianificare il provider SMS per System Center Configuration Manager).  
+    - **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi.
 
--   **Nome chiave:** PrerequisiteComp  
+- **Nome chiave:** SiteCode  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**  <*Codice del sito*>  
 
-         0 = Scaricare  
+    - **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. Specificare il codice del sito usato dal sito prima dell'errore.
 
-         1 = Già scaricato  
+- **Nome chiave:** SiteName  
 
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione esegue il download dei file.  
+    - **Richiesto:** No  
 
--   **Nome chiave:** PrerequisitePath  
+    - **Valori:**  <*Nome del sito*>  
 
-    -   **Richiesto:** Sì  
+    - **Dettagli:** Specifica il nome del sito.  
 
-    -   **Valori:**  <*Percorso dei file dei prerequisiti di installazione*>  
+- **Nome chiave:** SMSInstallDir  
 
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
+    - **Richiesto:** Sì  
 
--   **Nome chiave:** AdminConsole  
+    - **Valori:**  <*Percorso di installazione di Configuration Manager*>  
 
-    -   **Richiesto:** Questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha valore **4**.  
+    - **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
 
-    -   **Valori:** 0 o 1  
+- **Nome chiave:** SDKServer  
 
-         0 = Non installare  
+    - **Richiesto:** Sì  
 
-         1 = Installare  
+    - **Valori:**  <*FQDN del provider SMS*>  
 
-    -   **Dettagli:** Specifica se installare la console di Configuration Manager.  
+    - **Dettagli:** specifica l'FQDN del server che ospita il provider SMS. Specificare il server che ospitava il provider SMS prima dell'errore.  
 
--   **Nome chiave:** JoinCEIP  
+        Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito. Per altre informazioni sul provider SMS, vedere [Pianificare per il provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider).  
+
+- **Nome chiave:** PrerequisiteComp  
+
+    - **Richiesto:** Sì  
+
+    - **Valori:**
+
+        - `0` = Scaricare  
+
+        - `1` = Già scaricato  
+
+    - **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione esegue il download dei file.  
+
+- **Nome chiave:** PrerequisitePath  
+
+    - **Richiesto:** Sì  
+
+    - **Valori:**  <*Percorso dei file dei prerequisiti di installazione*>  
+
+    - **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
+
+- **Nome chiave:** AdminConsole  
+
+    - **Richiesto:** Questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha valore **4**.  
+
+    - **Valori:**
+
+        - `0` = Non installare  
+
+        - `1` = Installare  
+
+    - **Dettagli:** Specifica se installare la console di Configuration Manager.  
+
+- **Nome chiave:** JoinCEIP  
+
     > [!Note]  
     > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**
 
-         0 = Non partecipare  
+        - `0` = Non partecipare  
 
-         1 = Partecipare  
+        - `1` = Partecipare  
 
-    -   **Dettagli:** specifica se partecipare al programma Analisi utilizzo software.  
+    - **Dettagli:** specifica se partecipare al programma Analisi utilizzo software.  
 
-**SQLConfigOptions**  
+#### <a name="sqlconfigoptions"></a>SQLConfigOptions
 
--   **Nome chiave:** SQLServerName  
+- **Nome chiave:** SQLServerName  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:**  <*Nome dell'istanza di SQL Server*>  
+    - **Valori:**  <*Nome dell'istanza di SQL Server*>  
 
-    -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospita il database del sito. Specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.  
+    - **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospita il database del sito. Specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.  
 
--   **Nome chiave:** DatabaseName  
+- **Nome chiave:** DatabaseName  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:**  <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
+    - **Valori:**  <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
 
-    -   **Dettagli:** Specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.  
+    - **Dettagli:** specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.  
 
         > [!IMPORTANT]  
-        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome del database del sito.  
+        > Se non si usa l'istanza predefinita, specificare il nome dell'istanza e il nome del database del sito.  
 
--   **Nome chiave:** SQLSSBPort  
+- **Nome chiave:** SQLSSBPort  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:**  <*Numero della porta SSB*>  
+    - **Valori:**  <*Numero della porta SSB*>  
 
-    -   **Dettagli:** specifica la porta SSB usata da SQL Server. SSB è in genere configurato per usare la porta TCP 4022. Specificare la stessa porta SSB usata prima dell'errore.  
+    - **Dettagli:** specifica la porta SSB usata da SQL Server. Per impostazione predefinita, SSB usa la porta TCP 4022. Specificare la stessa porta SSB usata prima dell'errore.  
 
--   **Nome chiave:** SQLDataFilePath  
+- **Nome chiave:** SQLDataFilePath  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*Percorso del file mdb del database*>  
+    - **Valori:**  <*Percorso del file mdb del database*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
+    - **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
 
--   **Nome chiave:** SQLLogFilePath  
+- **Nome chiave:** SQLLogFilePath  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*Percorso del file ldf del database*>  
+    - **Valori:**  <*Percorso del file ldf del database*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
+    - **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
 
-**CloudConnectorOptions**  
+#### <a name="cloudconnectoroptions"></a>CloudConnectorOptions
 
--   **Nome chiave:** CloudConnector  
+- **Nome chiave:** CloudConnector  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**
 
-         0 = Non installare  
+        - `0` = Non installare  
 
-         1 = Installare  
+        - `1` = Installare  
 
-    -   **Dettagli:** specifica se installare un punto di connessione del servizio in questo sito. Dato che il punto di connessione può essere installato solo nel sito di livello superiore di una gerarchia, questo valore deve essere **0** per un sito primario figlio.  
+    - **Dettagli:** specifica se installare un punto di connessione del servizio in questo sito. Poiché il punto di connessione del servizio può essere installato solo nel sito di livello superiore di una gerarchia, impostare questo valore su **0** per un sito primario figlio.  
 
--   **Nome chiave:** CloudConnectorServer  
+- **Nome chiave:** CloudConnectorServer  
 
-    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
+    - **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:**  <*FQDN del server del punto di connessione del servizio*>  
+    - **Valori:**  <*FQDN del server del punto di connessione del servizio*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
+    - **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
 
--   **Nome chiave:** UseProxy  
+- **Nome chiave:** UseProxy  
 
-    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
+    - **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**
 
-         0 = Non installare  
+        - `0` = Non installare  
 
-         1 = Installare  
+        - `1` = Installare  
 
-    -   **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
+    - **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
 
--   **Nome chiave:** ProxyName  
+- **Nome chiave:** ProxyName  
 
-    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
+    - **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:**  <*FQDN del server proxy*>  
+    - **Valori:**  <*FQDN del server proxy*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server proxy usato dal punto di connessione del servizio.  
+    - **Dettagli:** specifica il nome FQDN del server proxy usato dal punto di connessione del servizio.  
 
--   **Nome chiave:** ProxyPort  
+- **Nome chiave:** ProxyPort  
 
-    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
+    - **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:**  <*Numero della porta*>  
+    - **Valori:**  <*Numero della porta*>  
 
-    -   **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
+    - **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
 
-### <a name="unattended-recovery-for-a-primary-site"></a>Ripristinare automaticamente un sito primario  
- Usare i dettagli seguenti per recuperare un sito primario usando un file script di installazione automatica.  
+### <a name="unattended-recovery-for-a-primary-site"></a>Ripristinare automaticamente un sito primario
 
-**Identification**  
+Usare i dettagli seguenti per recuperare un sito primario usando un file script di installazione automatica.  
 
--   **Nome chiave:** Action  
+#### <a name="identification"></a>Identification
 
-    -   **Richiesto:** Sì  
+- **Nome chiave:** Action  
 
-    -   **Valori:**  <*RecoverPrimarySite*>  
+    - **Richiesto:** Sì  
 
-    -   **Dettagli:** Ripristina un sito primario.  
+    - **Valori:** `RecoverPrimarySite`  
 
--   **Nome chiave:** CDLatest  
+    - **Dettagli:** Ripristina un sito primario.  
 
-    -   **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.    
+- **Nome chiave:** CDLatest  
 
-    -   **Valori:** 1. Qualsiasi valore diverso da 1 presuppone che non venga usata la cartella CD.Latest.
+    - **Richiesto:** sì, solo quando si usano supporti dalla cartella CD.Latest.
 
-    -   **Dettagli:** lo script deve includere la chiave e il valore quando si esegue il programma di installazione dal supporto di una cartella CD.Latest allo scopo di installare o ripristinare un sito di amministrazione centrale o primario. Questo valore indica al programma di installazione che viene usato il formato di supporto CD.Latest.    
+    - **Valori:**
 
-**RecoveryOptions**  
+        - `1` = si usano supporti dalla cartella CD.Latest
 
--   **Nome chiave:** ServerRecoveryOptions  
+        - Qualsiasi valore diverso da 1 indica che non si usano supporti dalla cartella CD.Latest
 
-    -   **Richiesto:** Sì  
+    - **Dettagli:** Quando si installa o si ripristina un sito primario o un sito di amministrazione centrale e si esegue il programma di installazione dalla cartella CD.Latest, includere questa chiave e il valore. Questo valore indica al programma di installazione che si usano supporti dalla cartella CD.Latest.
 
-    -   **Valori:** 1, 2 o 4  
+#### <a name="recoveryoptions"></a>RecoveryOptions
 
-         1 = Ripristina il server del sito e SQL Server.  
+- **Nome chiave:** ServerRecoveryOptions  
 
-         2 = Ripristina solo il server del sito.  
+    - **Richiesto:** Sì  
 
-         4 = Ripristina solo SQL Server.  
+    - **Valori:**
 
-    -   **Dettagli:** specifica se il programma di installazione ripristina il server del sito, SQL Server o entrambi. Le chiavi associate sono necessarie quando si imposta il valore seguente per l'impostazione **ServerRecoveryOptions**:  
+        - `1` = Ripristina il server del sito e SQL Server
 
-        -   Valore = 1: È possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+        - `2` = Ripristina solo il server del sito
 
-        -   Valore = 2: È possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+        - `4` = Ripristina solo SQL Server  
 
-        -   Valore = 4: La chiave **BackupLocation** è richiesta in caso di configurazione del valore **10** per la chiave **DatabaseRecoveryOptions** necessaria per il ripristino del database del sito dal backup.  
+    - **Dettagli:** specifica se il programma di installazione ripristina il server del sito, SQL Server o entrambi. Sono inoltre necessarie le seguenti opzioni in base al valore specificato:  
 
--   **Nome chiave:** DatabaseRecoveryOptions  
+        - **1** o **2**: specificare un valore per **SiteServerBackupLocation** per ripristinare il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
 
-    -   **Richiesto:** Questa chiave è richiesta quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **4**.  
+        - **4**: La chiave **BackupLocation** è richiesta in caso di configurazione del valore **10** per la chiave **DatabaseRecoveryOptions** necessaria per il ripristino del database del sito dal backup.  
 
-    -   **Valori:** 10, 20, 40 o 80  
+- **Nome chiave:** DatabaseRecoveryOptions  
 
-         10 = Ripristina il database del sito dal backup.  
+    - **Richiesto:** Questa chiave è richiesta quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **4**.  
 
-         20 = Usa un database del sito che è stato ripristinato manualmente usando un altro metodo.  
+    - **Valori:**
 
-         40 = Crea un nuovo database per il sito. Usare questa opzione quando non è disponibile alcun backup di database del sito. I dati globali e i dati del sito vengono ripristinati tramite la replica da altri siti.  
+        - `10` = Ripristina il database del sito dal backup.  
 
-         80 = Ignora il ripristino del database.  
+        - `20` = Usa un database del sito che è stato ripristinato manualmente usando un altro metodo.  
 
-    -   **Dettagli:** specifica le modalità secondo cui il programma di installazione ripristinerà il database del sito in SQL Server.  
+        - `40` = Crea un nuovo database per il sito. Usare questa opzione quando non è disponibile alcun backup di database del sito. I dati globali e i dati del sito vengono ripristinati tramite la replica da altri siti.  
 
--   **Nome chiave:** SiteServerBackupLocation  
+        - `80` = Ignora il ripristino del database.  
 
-    -   **Richiesto:** No  
+    - **Dettagli:** specifica le modalità secondo cui il programma di installazione ripristinerà il database del sito in SQL Server.  
 
-    -   **Valori:**  <*Percorso del set di backup del server del sito*>  
+- **Nome chiave:** SiteServerBackupLocation  
 
-    -   **Dettagli:**  
+    - **Richiesto:** No  
 
-         Specifica il percorso per il set di backup del server del sito. Questa chiave è facoltativa quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **2**. Specificare un valore affinché la chiave **SiteServerBackupLocation** ripristini il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+    - **Valori:**  <*Percorso del set di backup del server del sito*>  
 
--   **Nome chiave:** BackupLocation  
+    - **Dettagli:** Specifica il percorso per il set di backup del server del sito. Questa chiave è facoltativa quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **2**. Specificare un valore affinché la chiave **SiteServerBackupLocation** ripristini il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
 
-    -   **Richiesto:** la chiave è richiesta quando si configura il valore **1** o **4** per la chiave **ServerRecoveryOptions** e il valore **10** per la chiave **DatabaseRecoveryOptions**.  
+- **Nome chiave:** BackupLocation  
 
-    -   **Valori:**  <*Percorso del set di backup del database del sito*>  
+    - **Richiesto:** la chiave è richiesta quando si configura il valore **1** o **4** per la chiave **ServerRecoveryOptions** e il valore **10** per la chiave **DatabaseRecoveryOptions**.  
 
-    -   **Dettagli:** Specifica il percorso del set di backup del database del sito.  
+    - **Valori:**  <*Percorso del set di backup del database del sito*>  
 
-**Opzioni**  
+    - **Dettagli:** Specifica il percorso del set di backup del database del sito.  
 
--   **Nome chiave:** ProductID  
+#### <a name="options"></a>Opzioni
 
-    -   **Richiesto:** Sì  
+- **Nome chiave:** ProductID  
 
-    -   **Valori:** *xxxxx-xxxxx-xxxxx-xxxxx-xxxxx* o *Eval*  
+    - **Richiesto:** Sì  
 
-    -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
+    - **Valori:**
 
--   **Nome chiave:** SiteCode  
+        - `<xxxxx-xxxxx-xxxxx-xxxxx-xxxxx>` = un codice Product Key valido con trattini
 
-    -   **Richiesto:** Sì  
+        - `Eval` = installa la versione di valutazione di Configuration Manager
 
-    -   **Valori:**  <*Codice del sito*>  
+    - **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi.
 
-    -   **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. Specificare il codice del sito usato dal sito prima dell'errore.
+- **Nome chiave:** SiteCode  
 
--   **Nome chiave:** SiteName  
+    - **Richiesto:** Sì  
 
-    -   **Richiesto:** No  
+    - **Valori:**  <*Codice del sito*>  
 
-    -   **Valori:**  <*Nome del sito*>  
+    - **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. Specificare il codice del sito usato dal sito prima dell'errore.
 
-    -   **Dettagli:** Specifica il nome del sito.  
+- **Nome chiave:** SiteName  
 
--   **Nome chiave:** SMSInstallDir  
+    - **Richiesto:** No  
 
-    -   **Richiesto:** Sì  
+    - **Valori:**  <*Nome del sito*>  
 
-    -   **Valori:**  <*Percorso di installazione di Configuration Manager*>  
+    - **Dettagli:** Specifica il nome del sito.  
 
-    -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
+- **Nome chiave:** SMSInstallDir  
 
--   **Nome chiave:** SDKServer  
+    - **Richiesto:** Sì  
 
-    -   **Richiesto:** Sì  
+    - **Valori:**  <*Percorso di installazione di Configuration Manager*>  
 
-    -   **Valori:**  <*FQDN del provider SMS*>  
+    - **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.  
 
-    -   **Dettagli:** specifica l'FQDN del server che ospita il provider SMS. Specificare il server che ospitava il provider SMS prima dell'errore. Dopo l'installazione iniziale, configurare altri provider SMS per il sito. Per altre informazioni sul provider SMS, vedere [Pianificare per il provider SMS](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
+- **Nome chiave:** SDKServer  
 
--   **Nome chiave:** PrerequisiteComp  
+    - **Richiesto:** Sì  
 
-    -   **Richiesto:** Sì  
+    - **Valori:**  <*FQDN del provider SMS*>  
 
-    -   **Valori:** 0 o 1  
+    - **Dettagli:** specifica l'FQDN del server che ospita il provider SMS. Specificare il server che ospitava il provider SMS prima dell'errore. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito. Per altre informazioni sul provider SMS, vedere [Pianificare per il provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider).  
 
-         0 = Scaricare  
+- **Nome chiave:** PrerequisiteComp  
 
-         1 = Già scaricato  
+    - **Richiesto:** Sì  
 
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione esegue il download dei file.  
+    - **Valori:**
 
--   **Nome chiave:** PrerequisitePath  
+        - `0` = Scaricare  
 
-    -   **Richiesto:** Sì  
+        - `1` = Già scaricato  
 
-    -   **Valori:**  <*Percorso dei file dei prerequisiti di installazione*>  
+    - **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione esegue il download dei file.  
 
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
+- **Nome chiave:** PrerequisitePath  
 
--   **Nome chiave:** AdminConsole  
+    - **Richiesto:** Sì  
 
-    -   **Richiesto:** Questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha valore **4**.  
+    - **Valori:**  <*Percorso dei file dei prerequisiti di installazione*>  
 
-    -   **Valori:** 0 o 1  
+    - **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
 
-         0 = Non installare  
+- **Nome chiave:** AdminConsole  
 
-         1 = Installare  
+    - **Richiesto:** Questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha valore **4**.  
 
-    -   **Dettagli:** Specifica se installare la console di Configuration Manager.  
+    - **Valori:**
 
--   **Nome chiave:** JoinCEIP  
+        - `0` = Non installare  
+
+        - `1` = Installare  
+
+    - **Dettagli:** Specifica se installare la console di Configuration Manager.  
+
+- **Nome chiave:** JoinCEIP  
+
     > [!Note]  
     > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**
 
-         0 = Non partecipare  
+        - `0` = Non partecipare  
 
-         1 = Partecipare  
+        - `1` = Partecipare  
 
-    -   **Dettagli:** specifica se partecipare al programma Analisi utilizzo software.  
+    - **Dettagli:** specifica se partecipare al programma Analisi utilizzo software.  
 
-**SQLConfigOptions**  
+#### <a name="sqlconfigoptions"></a>SQLConfigOptions
 
--   **Nome chiave:** SQLServerName  
+- **Nome chiave:** SQLServerName  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:**  <*Nome dell'istanza di SQL Server*>  
+    - **Valori:**  <*Nome dell'istanza di SQL Server*>  
 
-    -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospita il database del sito. Specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.  
+    - **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server per ospitare il database del sito. Specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.  
 
--   **Nome chiave:** DatabaseName  
+- **Nome chiave:** DatabaseName  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:**  <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>
+    - **Valori:**  <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>
 
-    -   **Dettagli:**  
-
-         Specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.  
+    - **Dettagli:** specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.  
 
         > [!IMPORTANT]  
-        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome del database del sito.  
+        > Se non si usa l'istanza predefinita, specificare il nome dell'istanza e il nome del database del sito.  
 
--   **Nome chiave:** SQLSSBPort  
+- **Nome chiave:** SQLSSBPort  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:**  <*Numero della porta SSB*>  
+    - **Valori:**  <*Numero della porta SSB*>  
 
-    -   **Dettagli:** specifica la porta SSB usata da SQL Server. In genere, SSB è configurato per usare la porta TCP 4022. Specificare la stessa porta SSB usata prima dell'errore.  
+    - **Dettagli:** specifica la porta SSB usata da SQL Server. Per impostazione predefinita, SSB usa la porta TCP 4022. Specificare la stessa porta SSB usata prima dell'errore.  
 
--   **Nome chiave:** SQLDataFilePath  
+- **Nome chiave:** SQLDataFilePath  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*Percorso del file mdb del database*>  
+    - **Valori:**  <*Percorso del file mdb del database*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
+    - **Dettagli:** specifica un percorso alternativo per creare il file mdb del database.  
 
--   **Nome chiave:** SQLLogFilePath  
+- **Nome chiave:** SQLLogFilePath  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*Percorso del file ldf del database*>  
+    - **Valori:**  <*Percorso del file ldf del database*>  
 
-    -   **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
+    - **Dettagli:** specifica un percorso alternativo per creare il file ldf del database.  
 
-**HierarchyExpansionOptions**  
+#### <a name="hierarchyexpansionoptions"></a>HierarchyExpansionOptions
 
--   **Nome chiave:** CCARSiteServer  
+- **Nome chiave:** CCARSiteServer  
 
-    -   **Richiesto:** Visualizzare i dettagli.  
+    - **Richiesto:** Visualizzare i dettagli.  
 
-    -   **Valori:**  <*Codice del sito per il sito di amministrazione centrale*>  
+    - **Valori:**  <*Codice del sito per il sito di amministrazione centrale*>  
 
-    -   **Dettagli:** specifica il sito di amministrazione centrale a cui si collega il sito primario quando viene aggiunto alla gerarchia di Configuration Manager. Questa impostazione è necessaria se il sito primario era collegato a un sito di amministrazione centrale prima dell'errore. Specificare il codice del sito usato dal sito di amministrazione centrale prima dell'errore.  
+    - **Dettagli:** specifica il sito di amministrazione centrale a cui si collega il sito primario quando viene aggiunto alla gerarchia di Configuration Manager. Questa impostazione è necessaria se il sito primario era collegato a un sito di amministrazione centrale prima dell'errore. Specificare il codice del sito usato per il sito di amministrazione centrale prima dell'errore.  
 
--   **Nome chiave:** CASRetryInterval  
+- **Nome chiave:** CASRetryInterval  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*Intervallo*>  
+    - **Valori:**  <*Intervallo in minuti*>  
 
-    -   **Dettagli:** Specifica l'intervallo (in minuti) tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato per **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
+    - **Dettagli:** specifica l'intervallo in minuti tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato dall'utente per il valore **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
 
--   **Nome chiave:** WaitForCASTimeout  
+- **Nome chiave:** WaitForCASTimeout  
 
-    -   **Richiesto:** No  
+    - **Richiesto:** No  
 
-    -   **Valori:**  <*Timeout*>  
+    - **Valori:**  <*Timeout in minuti*>  
 
-    -   **Dettagli:** Specifica il valore di timeout massimo (in minuti) per la connessione di un sito primario al sito di amministrazione centrale. Se ad esempio un sito primario non riesce a connettersi al sito di amministrazione centrale, tale sito primario proverà nuovamente a connettersi al sito di amministrazione centrale in base al valore **CASRetryInterval** finché non viene raggiunto il periodo di **WaitForCASTimeout**. È possibile specificare un valore compreso tra **0** e **100**.  
+    - **Dettagli:** specifica il valore di timeout massimo in minuti per la connessione di un sito primario al sito di amministrazione centrale. Se ad esempio un sito primario non riesce a connettersi al sito di amministrazione centrale, tale sito primario proverà nuovamente a connettersi al sito di amministrazione centrale in base al valore **CASRetryInterval** finché non viene raggiunto il periodo di **WaitForCASTimeout**. È possibile specificare un valore compreso tra `0` e `100`.  
 
-**CloudConnectorOptions**  
+#### <a name="cloudconnectoroptions"></a>CloudConnectorOptions
 
--   **Nome chiave:** CloudConnector  
+- **Nome chiave:** CloudConnector  
 
-    -   **Richiesto:** Sì  
+    - **Richiesto:** Sì  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**
 
-         0 = Non installare  
+        - `0` = Non installare  
 
-         1 = Installare  
+        - `1` = Installare  
 
-    -   **Dettagli:** specifica se installare un punto di connessione del servizio in questo sito. Dato che il punto di connessione può essere installato solo nel sito di livello superiore di una gerarchia, questo valore deve essere **0** per un sito primario figlio.  
+    - **Dettagli:** specifica se installare un punto di connessione del servizio in questo sito. Poiché il punto di connessione del servizio può essere installato solo nel sito di livello superiore di una gerarchia, impostare questo valore su `0` per un sito primario figlio.  
 
--   **Nome chiave:** CloudConnectorServer  
+- **Nome chiave:** CloudConnectorServer  
 
-    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
+    - **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:**  <*FQDN del server del punto di connessione del servizio*>  
+    - **Valori:**  <*FQDN del server del punto di connessione del servizio*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
+    - **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di connessione del servizio.  
 
--   **Nome chiave:** UseProxy  
+- **Nome chiave:** UseProxy  
 
-    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
+    - **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:** 0 o 1  
+    - **Valori:**
 
-         0 = Non installare  
+        - `0` = Non installare  
 
-         1 = Installare  
+        - `1` = Installare  
 
-    -   **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
+    - **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
 
--   **Nome chiave:** ProxyName  
+- **Nome chiave:** ProxyName  
 
-    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
+    - **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:**  <*FQDN del server proxy*>  
+    - **Valori:**  <*FQDN del server proxy*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server proxy usato dal punto di connessione del servizio.  
+    - **Dettagli:** specifica il nome FQDN del server proxy usato dal punto di connessione del servizio.  
 
--   **Nome chiave:** ProxyPort  
+- **Nome chiave:** ProxyPort  
 
-    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
+    - **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:**  <*Numero della porta*>  
+    - **Valori:**  <*Numero della porta*>  
 
-    -   **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
+    - **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
