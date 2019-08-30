@@ -2,7 +2,7 @@
 title: Informazioni di riferimento sulle variabili della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni sulle variabili per controllare e personalizzare una sequenza di attività di Configuration Manager.
-ms.date: 08/16/2019
+ms.date: 08/23/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2283b87f305471f2831042f4b6b66d1c8a735b24
-ms.sourcegitcommit: f7e4ff38d4b4afb49e3bccafa28514be406a9d7b
+ms.openlocfilehash: 8a279602a2e52b47f42f0204e6953801c26454a1
+ms.sourcegitcommit: 04dd0c17e47763a3e2b6c44c005428ea7d67f4bd
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69549541"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70021999"
 ---
 # <a name="task-sequence-variables"></a>Variabili della sequenza di attività
 
@@ -1524,7 +1524,10 @@ Specifica il messaggio da visualizzare nella finestra di dialogo di notifica di 
 
 ### <a name="SMSTSRebootRequested"></a> SMSTSRebootRequested
 
-Indica che un riavvio è richiesto al termine del passaggio della sequenza di attività corrente. Se è necessario un riavvio, impostare questa variabile su `true` affinché il motore di esecuzione della sequenza di attività riavvii il computer dopo questo passaggio della sequenza di attività. Se il passaggio della sequenza di attività richiede un riavvio per completare l'azione, impostare questa variabile. Dopo il riavvio del computer, la sequenza di attività continua a essere eseguita dal passaggio successivo della sequenza di attività.
+Indica che un riavvio è richiesto al termine del passaggio della sequenza di attività corrente. Se il passaggio della sequenza di attività richiede un riavvio per completare l'azione, impostare questa variabile. Dopo il riavvio del computer, la sequenza di attività continua a essere eseguita dal passaggio successivo della sequenza di attività.
+
+- `HD`: Riavviare il sistema operativo installato
+- `WinPE`: Riavvia all'immagine di avvio associata
 
 ### <a name="SMSTSRetryRequested"></a> SMSTSRetryRequested
 
@@ -1578,6 +1581,9 @@ Questa variabile della sequenza di attività facoltativa controlla il comportame
 Impostare il valore SMSTSWaitForSecondReboot in secondi per specificare il tempo di sospensione della sequenza di attività in questo passaggio durante il riavvio del computer. Consentire il tempo necessario in caso di un secondo riavvio.
 
 Ad esempio, se si imposta SMSTSWaitForSecondReboot su `600`, la sequenza di attività viene sospesa per 10 minuti dopo un riavvio prima di eseguire i passaggi aggiuntivi. Questa variabile è utile quando un singolo passaggio della sequenza di attività Installa aggiornamenti software installa centinaia di aggiornamenti software.
+
+> [!Note]
+> Questa variabile si applica solo a una sequenza di attività che distribuisce un sistema operativo. Non funziona in una sequenza di attività personalizzata. <!-- 2839998 -->
 
 ### <a name="TSDebugMode"></a>TSDebugMode
 

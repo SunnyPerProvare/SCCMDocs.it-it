@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f5760e26b7a52f31aea0a272c0e76a2eee547bd
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: f4ee01c85cf978b595aa9d6a7948503b34927c31
+ms.sourcegitcommit: 2d38de4846ea47a03cc884cbd3df27db48f64a6a
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68537132"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70110241"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
@@ -915,6 +915,9 @@ Le applicazioni devono soddisfare i criteri seguenti:
 - Non deve interagire con il desktop. Il programma deve essere eseguito automaticamente o in modalità automatica.  
 
 - Non deve dare inizio autonomamente a un riavvio. L'applicazione deve richiedere un riavvio usando il codice di riavvio standard, ovvero 3010. Questo comportamento garantisce che questo passaggio gestisca correttamente il riavvio. Se l'applicazione restituisce un codice di uscita 3010, il motore della sequenza di attività riavvia il computer. Dopo il riavvio, la sequenza di attività continua automaticamente.  
+
+> [!Note]
+> Se l'applicazione [Controlla l'esecuzione dei file eseguibili](/sccm/apps/deploy-use/deploy-applications#bkmk_exe-check), la sequenza di attività non riuscirà a installarla. Se questo passaggio non viene configurato per continuare in caso di errore, l'intera sequenza di attività avrà esito negativo.
 
 Quando si esegue questo passaggio, l'applicazione verifica l'applicabilità delle regole dei requisiti e del metodo di rilevamento nei tipi di distribuzione dell'applicazione stessa. In base ai risultati di questa verifica, l'applicazione installa il tipo di distribuzione applicabile. Se il tipo di distribuzione contiene dipendenze, il tipo di distribuzione dipendente viene valutato e installato come parte di questo passaggio. Le dipendenze delle applicazioni non sono supportate per i supporti autonomi.  
 

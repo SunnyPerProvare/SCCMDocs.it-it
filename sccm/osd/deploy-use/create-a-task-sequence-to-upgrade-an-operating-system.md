@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18c66a959e45a465b2e059dfa191708e885ff0c3
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 6054ce9c276c18e578315b92fbe3d100061795fa
+ms.sourcegitcommit: e2e07d74779a2f48693ecaa17a5974204949d109
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536978"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999412"
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-os-in-configuration-manager"></a>Creare una sequenza di attività per aggiornare un sistema operativo in Configuration Manager
 
@@ -177,7 +177,7 @@ consente di aggiungere passaggi in questo gruppo per impostare le app predefinit
     `dism /online /Export-DefaultAppAssociations:"%UserProfile%\Desktop\DefaultAppAssociations.xml"`  
 1. Aggiungere il file XML a un pacchetto.
 1. Aggiungere un passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) nel gruppo. Specificare il pacchetto che contiene il file XML, quindi specificare la riga di comando seguente:  
-    `dism /online /Import-DefaultAppAssociations:DefaultAppAssocations.xml`  
+    `dism /online /Import-DefaultAppAssociations:DefaultAppAssociations.xml`  
 
 Per altre informazioni, vedere [Export or import default application associations](/windows-hardware/manufacture/desktop/export-or-import-default-application-associations) (Esportare o importare associazioni di applicazioni predefinite).
 

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa56c5ec5b6ad3f24255d6b8e37e56c46c94d17f
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 7871e092369a096d8c776d4733e70095ef629a14
+ms.sourcegitcommit: 2d38de4846ea47a03cc884cbd3df27db48f64a6a
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68534908"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70110186"
 ---
 # <a name="deploy-applications-with-configuration-manager"></a>Distribuire applicazioni con Configuration Manager
 
@@ -26,7 +26,7 @@ Creare o simulare la distribuzione di un'applicazione a una raccolta di utenti o
 
 Prima di distribuire un'applicazione, creare almeno un tipo di distribuzione per l'applicazione. Per altre informazioni, vedere [Create applications](/sccm/apps/deploy-use/create-applications) (Creare le applicazioni).
 
-A partire dalla versione 1906, è possibile creare un gruppo di applicazioni da inviare a un utente o a una raccolta di dispositivi come singola distribuzione. Per ulteriori informazioni, vedere la pagina relativa alla [creazione di gruppi di applicazioni](/sccm/apps/deploy-use/create-app-groups).
+A partire dalla versione 1906, è possibile creare un gruppo di applicazioni da inviare a un utente o a una raccolta di dispositivi come singola distribuzione. Per altre informazioni, vedere [Creare gruppi di applicazioni](/sccm/apps/deploy-use/create-app-groups).
 
 È anche possibile simulare la distribuzione di un'applicazione. La simulazione verifica l'applicabilità di una distribuzione senza installare o disinstallare l'applicazione. Una distribuzione simulata esegue una valutazione del metodo di rilevamento, dei requisiti e delle dipendenze per un tipo di distribuzione e segnala i risultati nel nodo **Distribuzioni** dell'area di lavoro **Monitoraggio**. Per altre informazioni, vedere [Simulare distribuzioni di applicazioni ](/sccm/apps/deploy-use/simulate-application-deployments).
 
@@ -260,6 +260,8 @@ Configurare una distribuzione in modo da verificare se alcuni file eseguibili so
 
 5. Quando si distribuisce l'applicazione, selezionare l'opzione **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione**. Questa opzione è disponibile nella scheda **Impostazioni distribuzione** delle proprietà della distribuzione.  
 
+> [!Note]
+> Se si configura un'applicazione per verificare l'esecuzione dei file eseguibili e lo si include nel passaggio [Installa applicazione](/sccm/osd/understand/task-sequence-steps#BKMK_InstallApplication) della sequenza di attività, la sequenza di attività non riuscirà a installarla. Se non si configura questo passaggio della sequenza di attività per continuare in caso di errore, l'intera sequenza di attività avrà esito negativo.
 
 ### <a name="client-behaviors-and-user-notifications"></a>Comportamenti dei client e notifiche utente
 

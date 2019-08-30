@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9f9881a8b2cc945b49d79d40777409379aef3fd
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 586083f0de3241adb20bacbf432563681b0370f0
+ms.sourcegitcommit: 2d38de4846ea47a03cc884cbd3df27db48f64a6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68535630"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70110090"
 ---
 # <a name="prerequisites-for-deploying-clients-to-windows-computers-in-configuration-manager"></a>Prerequisiti per la distribuzione dei client nei computer Windows in Configuration Manager
 
@@ -59,7 +59,7 @@ Se non si aggiornano queste versioni del sistema operativo, non è possibile ins
 Se è necessario gestire un client in una versione di Windows che non è aggiornata o è meno recente delle versioni elencate in precedenza, usare la versione client di interoperabilità estesa (EIC) di Configuration Manager 1902. Per altre informazioni, vedere [Client di interoperabilità estesa](/sccm/core/understand/interoperability-client).
 
 > [!Tip]  
-> Se non si usa l'[aggiornamento automatico del client](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#use-automatic-client-upgrade) e si aggiornano i client con un altro meccanismo, assicurarsi di aggiornare la versione di ccmsetup. Una versione precedente di ccmsetup potrebbe non convalidare correttamente il nuovo certificato di firma del codice SHA-2 nei file binari del client della versione 1906. Ciò si verifica ad esempio quando si copia ccmsetup.exe in una condivisione file o si usa ccmsetup.msi con criteri di gruppo.<!-- 4963362 -->
+> Se non si usa l'[aggiornamento automatico del client](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#bkmk_autoupdate) e si aggiornano i client con un altro meccanismo, assicurarsi di aggiornare la versione di ccmsetup. Una versione precedente di ccmsetup potrebbe non convalidare correttamente il nuovo certificato di firma del codice SHA-2 nei file binari del client della versione 1906. Ciò si verifica ad esempio quando si copia ccmsetup.exe in una condivisione file o si usa ccmsetup.msi con criteri di gruppo.<!-- 4963362 -->
 >
 > I meccanismi di aggiornamento client seguenti non dovrebbero esserne interessati:
 >

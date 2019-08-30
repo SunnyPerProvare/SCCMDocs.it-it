@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e260f26295a27c91a69cad563eaec2395b00a5c
-ms.sourcegitcommit: e0438c191df945305625ae91596c9417d16e8510
+ms.openlocfilehash: ad5034ca7475009f2dcd4b50df96d22b2f9428fa
+ms.sourcegitcommit: 2d38de4846ea47a03cc884cbd3df27db48f64a6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68491687"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70110126"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novità della versione 1806 di Configuration Manager (Current Branch)
 
@@ -167,7 +167,7 @@ Per altre informazioni , vedere [Come installare i client con l'installazione pu
 
 ### <a name="bkmk_ehttp"></a>Sistema del sito HTTP migliorato
 <!--1356889,1358228-->
-L'uso delle comunicazioni HTTPS è consigliato per tutti i percorsi di comunicazione di Configuration Manager, ma può essere difficile per alcuni clienti a causa del sovraccarico di gestione dei certificati PKI. L'introduzione dell'integrazione di Azure Active Directory (Azure AD) riduce alcuni ma non tutti i requisiti per i certificati. 
+L'uso delle comunicazioni HTTPS è consigliato per tutti i percorsi di comunicazione di Configuration Manager, ma può essere difficile per alcuni clienti a causa del sovraccarico di gestione dei certificati PKI.
 
 Questa versione include miglioramenti per le modalità di comunicazione dei client con i sistemi del sito. Nella scheda **Comunicazione computer client** delle proprietà del sito selezionare l'opzione per **HTTPS o HTTP** e quindi abilitare la nuova opzione **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**. Si tratta di una [funzionalità di versione non definitiva](/sccm/core/servers/manage/pre-release-features).
 
