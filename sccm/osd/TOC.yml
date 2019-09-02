@@ -107,8 +107,6 @@
           href: deploy-use/debug-task-sequence.md
         - name: Configurare la pre-cache del contenuto
           href: deploy-use/configure-precache-content.md
-        - name: Usare una sequenza di attività per gestire dischi rigidi virtuali
-          href: deploy-use/use-a-task-sequence-to-manage-virtual-hard-disks.md
     - name: Scenari di sequenze di attività personalizzate
       items:
         - name: Creare una sequenza di attività personalizzata
