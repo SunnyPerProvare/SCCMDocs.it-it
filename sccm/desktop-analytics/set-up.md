@@ -2,7 +2,7 @@
 title: Configurare Desktop Analytics
 titleSuffix: Configuration Manager
 description: Guida alle procedure per la configurazione e l'onboarding in desktop Analytics.
-ms.date: 06/14/2019
+ms.date: 09/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d2a098c560305429e4bba65c95a65f3b0d2e8c45
-ms.sourcegitcommit: 315fbb9c44773b3b1796ae398568cb61bd07092e
+ms.openlocfilehash: ad8111b7d49f89b85c2a4f8b0bd9336a13446a91
+ms.sourcegitcommit: b28a97e22a9a56c5ce3367c750ea2bb4d50449c3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68374427"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243663"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Come configurare analisi desktop
 
@@ -54,9 +54,11 @@ Usare questa procedura per accedere a desktop Analytics e configurarlo nella sot
     - Per usare un'area di lavoro esistente per analisi desktop, selezionarla e continuare con il passaggio successivo.  
 
         > [!Note]  
-        > Se si sta già usando Windows Analytics, selezionare la stessa area di lavoro. È necessario registrare nuovamente i dispositivi in desktop Analytics registrati in precedenza in Windows Analytics.
-        >
         > È possibile avere solo un'area di lavoro di analisi desktop per ogni tenant Azure AD. I dispositivi possono inviare i dati di diagnostica solo a un'area di lavoro.  
+
+        Se si sta già usando Windows Analytics, selezionare la stessa area di lavoro. È necessario registrare nuovamente i dispositivi in desktop Analytics registrati in precedenza in Windows Analytics.
+
+        Per eseguire la migrazione degli input dall'area di lavoro di Windows Analytics selezionata, impostare si **desidera visualizzare gli input da Windows Analytics?** su **Sì**. Se non si vuole eseguire la migrazione, impostare questa opzione su **No**. Per ulteriori informazioni, vedere le domande frequenti per [i clienti esistenti di Windows Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
 
     - Per creare un'area di lavoro per desktop Analytics, selezionare **Aggiungi area di lavoro**.  
 

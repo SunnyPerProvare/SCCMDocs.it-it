@@ -2,7 +2,7 @@
 title: Domande frequenti su desktop Analytics
 titleSuffix: Configuration Manager
 description: Domande frequenti su desktop Analytics.
-ms.date: 08/23/2019
+ms.date: 09/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,19 +11,19 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 84cbcd11790ebf83b508a3db167efc7c02152652
-ms.sourcegitcommit: e2e07d74779a2f48693ecaa17a5974204949d109
+ms.openlocfilehash: 884626cd46659917734fa309fa6e84fbdd517ae2
+ms.sourcegitcommit: b28a97e22a9a56c5ce3367c750ea2bb4d50449c3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69999379"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243638"
 ---
 # <a name="desktop-analytics-faq"></a>Domande frequenti su desktop Analytics
 
 > [!Note]  
 > Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
-## <a name="prerequisites"></a>Prerequisiti 
+## <a name="prerequisites"></a>Prerequisiti
 
 ### <a name="can-i-use-desktop-analytics-with-intune-managed-devices"></a>È possibile usare analisi desktop con i dispositivi gestiti da Intune? 
 
@@ -39,7 +39,6 @@ Quando si configura per la prima volta analisi desktop, è possibile che i repor
 - Controllare i dispositivi associati all'organizzazione negli ultimi sette giorni. Nel [portale di analisi dei desktop](https://aka.ms/desktopanalytics)passare al riquadro **servizi connessi** . Selezionare **registra i dispositivi**e **visualizzare i dati recenti**
 
 Se i dispositivi sono configurati correttamente e non vengono ancora visualizzati i dati nell'area di lavoro, [contattare il supporto tecnico Microsoft](https://support.microsoft.com/hub/4343728/support-for-business).
-
 
 ## <a name="windows-upgrade"></a>Aggiornamento di Windows
 
@@ -59,7 +58,7 @@ Sebbene sia possibile usare l'analisi del desktop per supportare l'aggiornamento
 
 ### <a name="can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal"></a>È possibile ridurre la quantità di tempo necessaria per l'aggiornamento dei dati nel portale di analisi desktop?
 
-Nel portale di analisi desktop sono disponibili due tipi di dati: Dati dell'amministratore e dati di diagnostica. Per aggiornare i dati dell'amministratore su richiesta, aprire il riquadro a comparsa valuta dati e selezionare **Applica modifiche**. Questa azione attiva immediatamente un aggiornamento unico di eventuali modifiche amministrative in sospeso nelle aree di lavoro. Le modifiche vengono propagate e sono disponibili a livello generale entro 15-60 minuti. La durata dipende dalle dimensioni dell'area di lavoro e dall'ambito delle modifiche in sospeso. È possibile richiedere un aggiornamento dati su richiesta fino a sei volte nell'arco di 24 ore. 
+Nel portale di analisi desktop sono disponibili due tipi di dati: Dati dell'amministratore e dati di diagnostica. Per aggiornare i dati dell'amministratore su richiesta, aprire il riquadro a comparsa valuta dati e selezionare **Applica modifiche**. Questa azione attiva immediatamente un aggiornamento unico di eventuali modifiche amministrative in sospeso nelle aree di lavoro. Le modifiche vengono propagate e sono disponibili a livello generale entro 15-60 minuti. La durata dipende dalle dimensioni dell'area di lavoro e dall'ambito delle modifiche in sospeso. È possibile richiedere un aggiornamento dati su richiesta fino a sei volte nell'arco di 24 ore.
 
 Tutti i dati vengono aggiornati automaticamente una volta al giorno, anche se non si richiede un aggiornamento dati su richiesta. Non è possibile attivare un aggiornamento su richiesta dei dati di diagnostica. Per altre informazioni sui diversi tipi di dati in analisi desktop, vedere [latenza dei dati](/sccm/desktop-analytics/troubleshooting#data-latency).
 
@@ -79,11 +78,56 @@ Per il servizio Microsoft Gestione dati e il servizio di archiviazione Azure Ana
 
 I dati di diagnostica di Windows dei computer vengono crittografati, inviati ed elaborati nei data center protetti gestiti da Microsoft presenti nel Stati Uniti. L'analisi dei dati correlati a analisi desktop viene quindi fornita tramite la soluzione desktop Analytics nella portale di Azure. Desktop Analytics è supportato in tutte le aree di Azure. La selezione di un'area di Azure internazionale non impedisce l'invio e l'elaborazione dei dati di diagnostica nei data center protetti di Microsoft negli Stati Uniti.
 
+## <a name="existing-windows-analytics-customers"></a>Clienti esistenti di Windows Analytics
+
+### <a name="can-i-migrate-inputs-from-windows-analytics"></a>È possibile migrare gli input da Windows Analytics?
+
+Sì, quando si imposta un'area di lavoro di Windows Analytics esistente come area di lavoro di analisi desktop durante l' [onboarding iniziale](/sccm/desktop-analytics/set-up#initial-onboarding). Se si crea una nuova area di lavoro o se ne seleziona una non un'area di lavoro di Windows Analytics, desktop Analytics non esegue la migrazione degli input.
+
+#### <a name="migration-scope"></a>Ambito della migrazione
+
+| Tipo di input | Viene eseguita la migrazione? |
+|------------|---------------|
+| Importanza | Yes |
+| Proprietario dell'app | Sì |
+| Decisione di aggiornamento | No  |
+| Piano di test | No  |
+| Risultato del test | No  |
+
+#### <a name="importance-mapping"></a>Mapping importanza
+
+| Windows Analytics | Desktop Analytics |
+|-------------------| ------------------|
+| Numero di installazioni insufficienti | (Non applicabile) <br> Nota: Desktop Analytics esegue la propria euristica per determinare il numero di installazioni basso |
+| Non verificato | Non verificato |
+| Revisione in corso | Non verificato |
+| Mission-critical | Critico |
+| Business critical | Critico |
+| Importante | Importante |
+| Massimo sforzo | Importante |
+| Ignora | Non importante |
+
+### <a name="can-i-migrate-from-multiple-windows-analytics-workspaces"></a>È possibile eseguire la migrazione da più aree di lavoro di Windows Analytics?
+
+No, è possibile selezionare solo un'area di lavoro di Windows Analytics dalla quale migrare gli input. Se si è proprietari di più aree di lavoro di Windows Analytics, selezionarne una che migliori vantaggi per l'organizzazione.
+
+### <a name="ive-chosen-to-migrate-where-can-i-find-the-inputs-on-desktop-analytics"></a>Si è scelto di eseguire la migrazione, dove è possibile trovare gli input in analisi desktop?
+
+Una volta registrati i dispositivi, per visualizzare gli input migrati nel portale di analisi dei desktop, passare a **gestisci > asset > app**.
+
+### <a name="when-can-i-see-my-migrated-inputs"></a>Quando è possibile visualizzare gli input migrati?
+
+Il processo di migrazione è transazionale. Verranno visualizzati tutti gli input migrati senza danneggiamento o nessun input migrato. Se gli input migrati non vengono visualizzati in 24 ore, contattare supporto tecnico Microsoft. Avviare l'assegnazione di tag alle app quando vengono visualizzati gli input migrati. Se sono già state contrassegnate alcune app, desktop Analytics mantiene gli input nel caso in cui si verifichino conflitti con gli input da Windows Analytics.
+
+### <a name="im-not-ready-yet-can-i-migrate-after-the-initial-onboarding"></a>Se non si è ancora pronti, è possibile eseguire la migrazione dopo l'onboarding iniziale?
+
+No, al momento devi decidere di eseguire la migrazione durante il caricamento [iniziale](/sccm/desktop-analytics/set-up#initial-onboarding).
+
 ## <a name="other"></a>Altro
 
 ### <a name="can-i-use-desktop-analytics-for-my-office-365-proplus-upgrades"></a>È possibile usare l'analisi del desktop per gli aggiornamenti di Office 365 ProPlus?
 
-No, desktop Analytics è incentrato su Windows. Microsoft ha sviluppato desktop Analytics in stretta collaborazione con numerosi clienti. Tramite il programma di anteprima, il feedback dei clienti riguarda il modo in cui analisi desktop ha migliorato la propria capacità di gestire le distribuzioni di Windows in tutta sicurezza. Ci hanno inoltre comunicato che volevano che [office 365 ProPlussse](/sccm/sum/deploy-use/office-365-dashboard#bkmk_o365_readiness) più accuratamente l'integrazione con gli strumenti di gestione di office in Configuration Manager e Intune. Microsoft continuerà a creare investimenti in tali aree, concentrandosi sugli scenari di Windows in desktop Analytics.
+No, desktop Analytics è incentrato su Windows. Microsoft ha sviluppato desktop Analytics in stretta collaborazione con molti clienti. Tramite il programma di anteprima, il feedback dei clienti riguarda il modo in cui analisi desktop ha migliorato la propria capacità di gestire le distribuzioni di Windows in tutta sicurezza. Ci hanno inoltre comunicato che volevano che [office 365 ProPlussse](/sccm/sum/deploy-use/office-365-dashboard#bkmk_o365_readiness) più accuratamente l'integrazione con gli strumenti di gestione di office in Configuration Manager e Intune. Microsoft continuerà a creare investimenti in tali aree, concentrandosi sugli scenari di Windows in desktop Analytics.
 
 ### <a name="how-can-i-provide-feedback-about-desktop-analytics"></a>Come è possibile fornire commenti e suggerimenti su desktop Analytics?
 
