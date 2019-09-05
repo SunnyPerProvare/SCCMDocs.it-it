@@ -2,7 +2,7 @@
 title: Elenco di controllo per la versione 1906
 titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager alla versione 1906.
-ms.date: 08/17/2019
+ms.date: 08/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37a995305ebfcf5f411c92af5092f9816e89e118
-ms.sourcegitcommit: f7e4ff38d4b4afb49e3bccafa28514be406a9d7b
+ms.openlocfilehash: 4b2c712a3d5b0948f5069fb84d48e5cbf01d27b1
+ms.sourcegitcommit: 2d38de4846ea47a03cc884cbd3df27db48f64a6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69549528"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70110042"
 ---
 # <a name="checklist-for-installing-update-1906-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1906 di Configuration Manager
 
@@ -201,6 +201,12 @@ Prima di aggiornare un sito, arrestare il software antivirus sui server Configur
 Prima di aggiornare un sito, eseguire il backup del database del sito nel sito di amministrazione centrale e nei siti primari. Questo backup assicura di avere un backup corretto da usare per il ripristino di emergenza.
 
 Per altre informazioni, vedere  [Backup e ripristino](/sccm/protect/understand/backup-and-recovery).
+
+### <a name="back-up-customized-files"></a>Eseguire il backup di file personalizzati
+
+Se l'utente o un prodotto di terze parti personalizza un file di configurazione di Configuration Manager, salvare una copia delle personalizzazioni.
+
+Ad esempio, aggiungere le voci personalizzate al file **osdinjection.xml** nella cartella `bin\X64` della directory di installazione di Configuration Manager. Dopo l'aggiornamento di Configuration Manager, queste personalizzazioni non vengono mantenute. È necessario riapplicare le personalizzazioni.
 
 ### <a name="plan-for-client-piloting"></a>Pianificare la distribuzione pilota del client
 

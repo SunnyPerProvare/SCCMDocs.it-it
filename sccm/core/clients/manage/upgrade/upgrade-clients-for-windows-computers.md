@@ -1,8 +1,8 @@
 ---
 title: Aggiornare i client
 titleSuffix: Configuration Manager
-description: Aggiornare i client di System Center Configuration Manager in computer Windows.
-ms.date: 05/04/2017
+description: Aggiornare i client di Configuration Manager in computer Windows.
+ms.date: 08/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 65cea36edd50af6beeae20c5ab0eaf1f7b4855fc
-ms.sourcegitcommit: 9670e11316c9ec6e5f78cd70c766bbfdf04ea3f9
+ms.openlocfilehash: 547eb9844ace451a13b01113633796d711bea7c8
+ms.sourcegitcommit: 2d38de4846ea47a03cc884cbd3df27db48f64a6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67818112"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70110098"
 ---
-# <a name="how-to-upgrade-clients-for-windows-computers-in-system-center-configuration-manager"></a>Come aggiornare i client per i computer Windows in System Center Configuration Manager
+# <a name="how-to-upgrade-clients-for-windows-computers-in-configuration-manager"></a>Come aggiornare i client per i computer Windows in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile aggiornare il client in computer Windows usando i metodi di installazione client o le funzionalità di aggiornamento client automatico di Configuration Manager. I metodi di installazione client seguenti sono validi per aggiornare il software client nei computer Windows:  
+Aggiornare il client Configuration Manager in computer Windows usando i metodi di installazione client o le funzionalità di aggiornamento client automatico. I metodi di installazione client seguenti sono validi per aggiornare il software client nei computer Windows:  
 
 - Installazione con Criteri di gruppo  
 
@@ -32,68 +32,76 @@ ms.locfileid: "67818112"
 
 - Aggiornare l'installazione  
 
-  Se si intende aggiornare il client con metodi di installazione client, sono disponibili altre informazioni sull'uso di tali metodi in [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md).
+Per altre informazioni, vedere [Come distribuire i client nei computer Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).
 
-  È possibile escludere client dall'aggiornamento specificando un gruppo di esclusioni. Per altre informazioni, vedere [How to exclude upgrading clients for Windows computers](exclude-clients-windows.md) (Come escludere l'aggiornamento di client per computer Windows). I client esclusi scaricano ed eseguono comunque CCMSETUP, ma non saranno aggiornati.
-
+Escludere client dall'aggiornamento specificando una raccolta di esclusioni. Per altre informazioni, vedere [Come evitare l'aggiornamento dei client](/sccm/core/clients/manage/upgrade/exclude-clients-windows). I client esclusi scaricano ed eseguono comunque CCMSETUP, ma non saranno aggiornati.
 
 > [!TIP]  
->  Se si esegue l'aggiornamento dell'infrastruttura di server da una versione precedente di Configuration Manager \(ad esempio Configuration Manager 2007 o System Center 2012 Configuration Manager\), è consigliabile completare gli aggiornamenti dei server, tra cui l'installazione di tutti gli aggiornamenti del ramo corrente, prima dell'aggiornamento dei client di Configuration Manager.   L'aggiornamento più recente del ramo corrente contiene la versione più recente del client, quindi è consigliabile eseguire gli aggiornamenti dei client dopo aver installato tutti gli aggiornamenti di Configuration Manager che si vogliono usare.
+> Se si aggiorna l'infrastruttura server da una versione precedente di Configuration Manager, completare gli aggiornamenti del server prima di aggiornare i client Configuration Manager. Questo processo include l'installazione di tutti gli aggiornamenti Current Branch. L'aggiornamento Current Branch più recente contiene la versione più recente del client. Aggiornare i client dopo aver installato tutti gli aggiornamenti di Configuration Manager.
 
 > [!NOTE]
-> Se si prevede di riassegnare il sito dei client durante l'aggiornamento, è possibile specificare il nuovo sito tramite la proprietà SMSSITECODE di client.msi. Se si usa AUTO per SMSSITECODE, è necessario specificare anche SITEREASSIGN = TRUE per consentire la riassegnazione automatica del sito durante l'aggiornamento. Per altre informazioni, vedere [SMSSITECODE](../../deploy/about-client-installation-properties.md#smssitecode).
+> Se si prevede di riassegnare il sito dei client durante l'aggiornamento, specificare il nuovo sito tramite la proprietà client.msi `SMSSITECODE`. Se si usa il valore `AUTO` per `SMSSITECODE`, specificare anche `SITEREASSIGN=TRUE`. Questa proprietà consente la riassegnazione automatica del sito durante l'aggiornamento. Per altre informazioni, vedere [Proprietà di installazione del client - SMSSITECODE](/sccm/core/clients/deploy/about-client-installation-properties#smssitecode).
 
-## <a name="use-automatic-client-upgrade"></a>Usare l'aggiornamento client automatico  
- È anche possibile configurare Configuration Manager per l'aggiornamento automatico del software client all'ultima versione client di Configuration Manager quando Configuration Manager rileva che la versione di un client assegnato alla gerarchia di Configuration Manager è precedente a quella usata nella gerarchia. Questo scenario include l'aggiornamento del client all'ultima versione durante il tentativo di assegnazione a un sito di Configuration Manager.  
+## <a name="bkmk_autoupdate"></a> Informazioni sull'aggiornamento client automatico
 
- È possibile aggiornare automaticamente un client negli scenari seguenti:  
+Configurare il sito per l'aggiornamento automatico dei client alla versione di Configuration Manager più recente. Quando Configuration Manager rileva che la versione di un client assegnato è precedente alla versione della gerarchia, aggiorna automaticamente il client. Questo scenario include l'aggiornamento del client all'ultima versione durante il tentativo di assegnazione a un sito di Configuration Manager.  
 
--   La versione client è inferiore a quella usata nella gerarchia.  
+È possibile aggiornare automaticamente un client negli scenari seguenti:  
 
--   Nel client sul sito di amministrazione centrale è installato un Language Pack non presente nel client esistente.  
+- La versione client è precedente a quella usata nella gerarchia.  
 
--   Un prerequisito client nella gerarchia prevede una versione differente rispetto a quella installata sul client.  
+- Nel client sul sito di amministrazione centrale è installato un Language Pack non presente nel client esistente.  
 
--   Uno o più file di installazione client hanno una versione diversa.  
+- Un prerequisito client nella gerarchia prevede una versione differente rispetto a quella installata sul client.  
 
-> [!NOTE]  
->  È possibile eseguire il report **Conteggio dei client di Configuration Manager per versioni client** nella cartella report **Sito - Informazioni client** per individuare le diverse versioni del client di Configuration Manager nella gerarchia.  
-
- Per impostazione predefinita, Configuration Manager crea un pacchetto di aggiornamento che viene inviato automaticamente a tutti i punti di distribuzione nella gerarchia. In caso di modifiche al pacchetto client sul sito di amministrazione centrale, come l'aggiunta di un Language Pack client, Configuration Manager aggiorna automaticamente il pacchetto e lo distribuisce a tutti i punti di distribuzione nella gerarchia. Se l'aggiornamento client automatico è attivato, il nuovo Language Pack client sarà installato automaticamente su tutti i client.  
+- Uno o più file di installazione client hanno una versione diversa.  
 
 > [!NOTE]  
->  Configuration Manager non invia automaticamente il pacchetto di aggiornamento client ai punti di distribuzione di Configuration Manager basati sul cloud.  
+> Per individuare le diverse versioni del client di Configuration Manager nella gerarchia, è possibile eseguire il report **Conteggio dei client di Configuration Manager per versioni client** nella cartella report **Sito - Informazioni client**.  
 
- È consigliabile attivare l'aggiornamento client automatico nell'intera gerarchia. In tal modo i client verranno mantenuti aggiornati con un carico amministrativo minimo.  
+Per impostazione predefinita Configuration Manager crea un pacchetto di aggiornamento. Invia automaticamente il pacchetto a tutti i punti di distribuzione nella gerarchia. Se si apportano modifiche al pacchetto client nel sito di amministrazione centrale, Configuration Manager aggiorna automaticamente il pacchetto e lo ridistribuisce. Una modifica di esempio è quando si aggiunge un Language Pack client. Se si abilita l'aggiornamento client automatico, il nuovo Language Pack client sarà installato automaticamente su tutti i client.
 
- Usare la procedura seguente per configurare l'aggiornamento client automatico. L'aggiornamento client automatico deve essere configurato in un sito di amministrazione centrale e tale configurazione viene applicata a tutti i client nella gerarchia.  
+> [!NOTE]  
+> Configuration Manager non invia automaticamente il pacchetto di aggiornamento client ai punti di distribuzione di Configuration Manager basati sul cloud.  
 
-### <a name="to-configure-automatic-client-upgrades"></a>Per configurare gli aggiornamenti automatici dei client  
+Abilitare l'aggiornamento client automatico nell'intera gerarchia. Questa configurazione consente di mantenere i client aggiornati con il minimo sforzo.  
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
+Se si gestiscono anche i sistemi del sito di Configuration Manager come client, determinare se includerli come parte del processo di aggiornamento automatico. È possibile escludere tutti i server o una raccolta specifica dall'aggiornamento del client. Alcuni ruoli del sito di Configuration Manager condividono il framework client. Ad esempio, il punto di gestione e il punto di distribuzione pull. Questi ruoli vengono aggiornati quando si aggiorna il sito, in modo che la versione del client in questi server venga aggiornata contemporaneamente.
 
-2.  Nell'area di lavoro **Amministrazione** , espandere **Configurazione sito**, quindi fare clic su **Siti**.  
+## <a name="bkmk_configure"></a> Configurare l'aggiornamento automatico del client
 
-3.  Nella scheda **Home** , del gruppo **Siti** , fare clic su **Impostazioni gerarchia**.  
+Usare la procedura seguente per configurare l'aggiornamento client automatico nel sito di amministrazione centrale. Questa configurazione si applica a tutti i client nella gerarchia.  
 
-4.  Nella scheda **Aggiornamento client** della finestra di dialogo **Proprietà delle impostazioni di gerarchia** verificare la versione e la data del client di produzione e assicurarsi che la versione corrisponda a quella che si vuole usare per l'aggiornamento dei computer Windows.  Se la versione del client non è quella prevista, potrebbe essere necessario alzare il livello del client di preproduzione a client di produzione. Per altre informazioni, vedere [Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager](../../../../core/clients/manage/upgrade/test-client-upgrades.md).  
+1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Configurazione del sito** e selezionare il nodo **Siti**.  
 
-5.  Fare clic su **Aggiorna tutti i client nella gerarchia usando il client di produzione** , quindi fare clic su **OK** nella finestra di dialogo di conferma.  
+1. Nella scheda **Home** della barra multifunzione selezionare **Impostazioni gerarchia** nel gruppo **Siti**.  
 
-6.  Se non si vuole che gli aggiornamenti client si applichino ai server, fare clic su **Non aggiornare i server**.  
+1. Passare alla scheda **Aggiornamento client**. Verificare la versione e la data del client di produzione. Assicurarsi che sia la versione che si vuole usare per aggiornare i client. Se la versione del client non è quella prevista, potrebbe essere necessario alzare il livello del client di preproduzione a client di produzione. Per altre informazioni, vedere [Come testare gli aggiornamenti client in una raccolta di pre-produzione](/sccm/core/clients/manage/upgrade/test-client-upgrades).  
 
-7.  Specificare il numero di giorni entro i quali i computer client devono aggiornare il client dopo aver ricevuto i criteri client. Il client verrà aggiornato a un intervallo casuale entro tale periodo. In questo modo è possibile evitare che un numero elevato di computer client venga aggiornato simultaneamente.
+1. Selezionare **Aggiorna tutti i client nella gerarchia usando il client di produzione**. Selezionare **OK** per confermare.  
+
+1. Se non si vuole che gli aggiornamenti client si applichino ai server, selezionare **Non aggiornare i server**.  
+
+1. Specificare il numero di giorni entro i quali i dispositivi devono aggiornare il client. Dopo che il dispositivo ha ricevuto i criteri, aggiorna il client con un intervallo casuale entro il numero di giorni specificato. Questo comportamento impedisce l'aggiornamento simultaneo di un numero elevato di client.
 
     > [!NOTE]
-    > Per eseguire l'aggiornamento del client, è necessario che un computer sia in esecuzione. Se invece il computer non è esecuzione nel momento in cui è pianificata la ricezione dell'aggiornamento, l'aggiornamento non sarà eseguito. Al riavvio del computer, verrà pianificato un altro aggiornamento in un momento casuale entro un numero di giorni consentiti. Se i giorni per eseguire l'aggiornamento sono scaduti, l'aggiornamento sarà pianificato per essere eseguito in un momento casuale entro 24 ore dal riavvio del computer.
-    >     
-    > Dato tale comportamento, è possibile che i computer che vengono regolarmente arrestati alla fine della giornata lavorativa impieghino più tempo del previsto per eseguire l'aggiornamento se il momento casuale dell'aggiornamento pianificato non rientra nelle normali ore lavorative.
+    > Per eseguire l'aggiornamento del client, è necessario che un computer sia in esecuzione. Se invece il computer non è esecuzione nel momento in cui è pianificata la ricezione dell'aggiornamento, l'aggiornamento non sarà eseguito. Quando il computer viene acceso e riceve i criteri, pianifica l'aggiornamento per un periodo casuale entro il numero di giorni consentito. Se i giorni per eseguire l'aggiornamento sono scaduti, l'aggiornamento sarà pianificato per essere eseguito in un momento casuale entro 24 ore dall'accensione del computer.
+    >
+    > Dato tale comportamento, è possibile che i computer che vengono regolarmente arrestati impieghino più tempo del previsto per eseguire l'aggiornamento se il momento casuale dell'aggiornamento pianificato non rientra nelle normali ore lavorative.
 
-7. A partire dalla versione 1610, se si vuole escludere uno o più client dall'aggiornamento, fare clic su **Escludi i client specificati dall'aggiornamento** e specificare la raccolta da escludere.
+1. Per escludere i client dall'aggiornamento, selezionare **Escludi i client specificati dall'aggiornamento** e specificare la raccolta da escludere. Per altre informazioni, vedere [Escludere i client dall'aggiornamento](/sccm/core/clients/manage/upgrade/exclude-clients-windows).
 
-8.  Se si vuole che il pacchetto di installazione venga copiato nei punti di distribuzione che sono stati abilitati per i contenuti in versione di preproduzione, fare clic su **Distribuisci automaticamente il pacchetto di installazione client nei punti di distribuzione abilitati per i contenuti in versione di preproduzione**.  
+1. Se si vuole che il pacchetto di installazione venga copiato nei punti di distribuzione che sono stati abilitati per i [contenuti in versione di preproduzione](/sccm/core/plan-design/hierarchy/manage-network-bandwidth#BKMK_PrestagingContent), selezionare l'opzione **Distribuisci automaticamente il pacchetto di installazione client nei punti di distribuzione abilitati per i contenuti in versione di preproduzione**.  
 
-9. Fare clic su **OK** per salvare le impostazioni e chiudere la finestra di dialogo **Proprietà delle impostazioni di gerarchia** . I client ricevono queste impostazioni al successivo download dei criteri.
+1. Selezionare **OK** per salvare le impostazioni e chiudere le Proprietà delle impostazioni di gerarchia.
 
->[!NOTE]
->Per gli aggiornamenti client vengono rispettate tutte le finestre di manutenzione di Configuration Manager configurate.
+I client ricevono queste impostazioni al successivo download dei criteri.
+
+> [!NOTE]
+> Per gli aggiornamenti client vengono rispettate tutte le finestre di manutenzione di Configuration Manager configurate.
+
+## <a name="next-steps"></a>Passaggi successivi
+
+Per metodi alternativi per aggiornare i client, vedere [Come distribuire i client nei computer Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).
+
+Escludere client specifici dall'aggiornamento automatico. Per altre informazioni, vedere [Come evitare l'aggiornamento dei client](/sccm/core/clients/manage/upgrade/exclude-clients-windows).

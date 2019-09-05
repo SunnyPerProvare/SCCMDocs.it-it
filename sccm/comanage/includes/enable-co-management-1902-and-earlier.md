@@ -3,23 +3,23 @@ author: mestew
 ms.author: mstewart
 ms.prod: configuration-manager
 ms.topic: include
-ms.date: 07/26/2019
+ms.date: 08/23/2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06a138edce2b42bb0f367544eb46bd9120c4fb8c
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 02e8f49972b3cc85dc25ff28c44ed87ea45d61fb
+ms.sourcegitcommit: 04dd0c17e47763a3e2b6c44c005428ea7d67f4bd
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68533924"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70036720"
 ---
 <!--Don't apply H2/H3 in this include file since they are context driven by article-->
 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Servizi cloud** e selezionare il nodo **Co-gestione**. Fare clic su **Configura la co-gestione** nella barra multifunzione per aprire la **procedura guidata di configurazione della co-gestione**.
 
 2. Nella pagina **Sottoscrizione** della procedura guidata fare clic su **Accedi**. Accedere al tenant di Intune e quindi selezionare **Avanti**.  
 
-3. Nella pagina **Abilitazione** scegliere l'impostazione **Registrazione automatica in Intune**: **Pilota** o **Tutti**.
+3. Nella pagina **Abilitazione** scegliere l'impostazione **Registrazione automatica in Intune**: **Pilota** o **Tutti**. Se viene annullata la registrazione di un dispositivo dall'utente, alla successiva valutazione del criterio verrà eseguita di nuovo la registrazione. <!--3330596--> 
 
-    Questa azione abilita la registrazione automatica dei client in Intune per i client di Configuration Manager esistenti. Quando si sceglie **Pilota**, vengono registrati automaticamente in Intune solo i client di Configuration Manager che sono membri della raccolta pilota. Questa opzione consente di abilitare la co-gestione su un subset di client per iniziare a testarla e implementarla mediante un approccio per fasi.  
+    Questa azione abilita la registrazione automatica dei client in Intune per i client di Configuration Manager esistenti. Quando si sceglie **Pilota**, vengono registrati automaticamente in Intune solo i client di Configuration Manager che sono membri della raccolta pilota. Questa opzione consente di abilitare la co-gestione su un subset di client per iniziare a testarla e implementarla mediante un approccio per fasi. 
 
     > [!Note]  
     > A partire dalla versione 1806, la registrazione automatica non è immediata per tutti i client. Questo comportamento consente una migliore scalabilità della registrazione per gli ambienti di grandi dimensioni. Configuration Manager sceglie in modo casuale la registrazione in base al numero di client. Se l'ambiente include 100.000 client, ad esempio, quando si abilita questa impostazione, la registrazione viene eseguita in più giorni.<!--1358003-->  

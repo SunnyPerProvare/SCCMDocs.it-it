@@ -2,7 +2,7 @@
 title: Impostazioni client
 titleSuffix: Configuration Manager
 description: Informazioni sulle impostazioni predefinite e personalizzate per il controllo dei comportamenti client
-ms.date: 08/09/2019
+ms.date: 08/23/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d48b2f7a842da0a567c4ed1a51e85e0d283603cf
-ms.sourcegitcommit: 7b111cd8a797877031378349898810c3dd0a3750
+ms.openlocfilehash: 123515f7b7b78d3c92f7372adb6aec73ee64443c
+ms.sourcegitcommit: e2e07d74779a2f48693ecaa17a5974204949d109
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69632028"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999399"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -91,7 +91,7 @@ Abilita la [peer cache](/sccm/core/plan-design/hierarchy/client-peer-cache) per 
 ### <a name="minimum-duration-before-cached-content-can-be-removed-minutes"></a>Minimum duration before cached content can be removed (minutes) (Durata minima prima della rimozione del contenuto memorizzato nella cache (minuti))
 
 <!--4485509-->
-A partire dalla versione 1906, specificare il tempo minimo di mantenimento del contenuto memorizzato nella cache da parte del client di Configuration Manager. Questa impostazione del client definisce per quanto tempo il client archivia il contenuto nella cache prima di eliminarlo.
+A partire dalla versione 1906, specificare il tempo minimo di mantenimento del contenuto memorizzato nella cache da parte del client di Configuration Manager. Questa impostazione client definisce la quantità minima di tempo che l'agente di Configuration Manager deve attendere prima di poter rimuovere il contenuto dalla cache se è necessario più spazio.
 
 Per impostazione predefinita, questo valore è impostato su 1.440 minuti (24 ore).
 Il valore massimo per questa impostazione è 10.080 minuti (1 settimana).
@@ -325,8 +325,8 @@ Le impostazioni seguenti devono avere una durata più breve della finestra di ma
 
 Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).
 
-- **Specificare la durata del rinvio per le notifiche con conto alla rovescia per il riavvio del computer (ore)** (a partire dalla versione 1906)<!--3976435-->
-  - Il valore predefinito è 4 ore.
+- **Specificare la durata del rinvio per le notifiche con conto alla rovescia per il riavvio del computer (minuti)** (a partire dalla versione 1906)<!--3976435-->
+  - Il valore predefinito è 240 minuti.
   - Il valore di durata della sospensione deve essere minore del valore di notifica minimo meno il valore della notifica che l'utente non può ignorare.
   - Per altre informazioni, vedere [Notifiche di riavvio dispositivo](/sccm/core/clients/deploy/device-restart-notifications).
 

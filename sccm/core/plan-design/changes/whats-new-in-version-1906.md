@@ -2,7 +2,7 @@
 title: Novità della versione 1906
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1906 di Configuration Manager Current Branch.
-ms.date: 08/20/2019
+ms.date: 08/23/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ced44684415c60bede26e86a02a47ed555b2b9e
-ms.sourcegitcommit: 7b111cd8a797877031378349898810c3dd0a3750
+ms.openlocfilehash: 13c9f2e6f6b279aeea13ce2ede66b6d11f2c12a2
+ms.sourcegitcommit: e2e07d74779a2f48693ecaa17a5974204949d109
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69632002"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999443"
 ---
 # <a name="whats-new-in-version-1906-of-configuration-manager-current-branch"></a>Novità della versione 1906 di Configuration Manager Current Branch
 
@@ -224,7 +224,7 @@ Per altre informazioni, vedere [Supporto tecnico OneTrace](/sccm/core/support/su
 ### <a name="configure-client-cache-minimum-retention-period"></a>Configurare il periodo di conservazione minimo della cache del client
 
 <!--4485509-->
-È ora possibile specificare il tempo minimo che il client di Configuration Manager ha per mantenere il contenuto memorizzato nella cache. Questa impostazione del client definisce per quanto tempo il client archivia il contenuto nella cache prima di eliminarlo. Nel gruppo **Impostazioni della cache del client** delle impostazioni del client configurare l'impostazione seguente: **Minimum duration before cached content can be removed (minutes)** (Durata minima prima che il contenuto nella cache possa essere rimosso (minuti)).
+È ora possibile specificare il tempo minimo che il client di Configuration Manager ha per mantenere il contenuto memorizzato nella cache. Questa impostazione client definisce la quantità minima di tempo che l'agente di Configuration Manager deve attendere prima di poter rimuovere il contenuto dalla cache se è necessario più spazio. Nel gruppo **Impostazioni della cache del client** delle impostazioni del client configurare l'impostazione seguente: **Minimum duration before cached content can be removed (minutes)** (Durata minima prima che il contenuto nella cache possa essere rimosso (minuti)).
 
 > [!Note]  
 > Nello stesso gruppo delle impostazioni del client l'impostazione esistente **Abilita il client di Configuration Manager nell'intero sistema operativo per condividere i contenuti** è stata rinominata in **Enable as peer cache source** (Abilita come origine di peer cache). Il comportamento dell'impostazione è il medesimo.  
@@ -411,7 +411,7 @@ Per altre informazioni, vedere [Create and deploy an application](/sccm/apps/get
 
 <!--3976435-->
 
-Gli utenti finali ora riceveranno un promemoria più frequentemente per un riavvio in sospeso tramite notifiche intermittenti del conto alla rovescia. È possibile definire l'intervallo per le notifiche intermittenti in **Impostazioni client** nella pagina **Riavvio del computer**. Modificare il valore di **Specificare la durata del rinvio per le notifiche con conto alla rovescia per il riavvio del computer (ore)** per configurare la frequenza con cui un utente riceve il promemoria di un riavvio in sospeso fino a quando non si verifica la notifica finale del conto alla rovescia.
+Gli utenti finali ora riceveranno un promemoria più frequentemente per un riavvio in sospeso tramite notifiche intermittenti del conto alla rovescia. È possibile definire l'intervallo per le notifiche intermittenti in **Impostazioni client** nella pagina **Riavvio del computer**. Modificare il valore di **Specificare la durata del rinvio per le notifiche con conto alla rovescia per il riavvio del computer (minuti)** per configurare la frequenza con cui un utente riceve il promemoria di un riavvio in sospeso fino a quando non si verifica la notifica finale del conto alla rovescia.
 
 In più, il valore massimo di **Visualizzare una notifica temporanea in cui viene indicato l'intervallo di disconnessione dell'utente o di riavvio del computer (minuti)** è stato aumentato da 1440 minuti (24 ore) a 20160 minuti (due settimane).
 

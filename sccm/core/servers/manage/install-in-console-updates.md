@@ -2,7 +2,7 @@
 title: Aggiornamenti nella console
 titleSuffix: Configuration Manager
 description: Installare gli aggiornamenti in Configuration Manager dal cloud Microsoft
-ms.date: 07/26/2019
+ms.date: 08/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44430d86dfa017475edfe301f1ce112d6cdd9ab2
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 08cde14b93b5f38aece4ee90f8148f467aab25e3
+ms.sourcegitcommit: 2d38de4846ea47a03cc884cbd3df27db48f64a6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536213"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70110052"
 ---
 # <a name="install-in-console-updates-for-configuration-manager"></a>Installare gli aggiornamenti nella console per Configuration Manager
 
@@ -180,7 +180,7 @@ Nell'ambito dell'installazione dell'aggiornamento, Configuration Manager esegue 
 
 - Reinstalla tutti i componenti interessati, ad esempio i ruoli del sistema del sito o la console di Configuration Manager.  
 
-- Gestisce gli aggiornamenti dei client in base alle selezioni effettuate per la distribuzione pilota del client e per gli [aggiornamenti automatici del client](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#use-automatic-client-upgrade).  
+- Gestisce gli aggiornamenti dei client in base alle selezioni effettuate per la distribuzione pilota del client e per gli [aggiornamenti automatici del client](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#bkmk_autoupdate).  
 
 - Nell'ambito dell'aggiornamento non è in genere necessario riavviare i server del sistema del sito. Se un ruolo usa .NET e il pacchetto aggiorna tale componente prerequisito, il sistema del sito potrebbe essere riavviato.  
 
@@ -280,6 +280,9 @@ Le attività di post-installazione includono:
     - Componente critico del sito eseguito nel server del sito.
     - Responsabile della reinstallazione dei ruoli nei server del sistema del sito. Lo stato della reinstallazione dei singoli ruoli del sistema del sito non viene visualizzato.
     - La reinstallazione di questo servizio viene completata rapidamente.
+
+    > [!Note]
+    > Alcuni ruoli del sito di Configuration Manager condividono il framework client. Ad esempio, il punto di gestione e il punto di distribuzione pull. Quando questi ruoli vengono aggiornati, viene aggiornata contemporaneamente la versione client in questi server. Per altre informazioni, vedere [Come aggiornare i client](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers).
 
 - **Installazione del componente SMS_REPLICATION_CONFIGURATION_MONITOR**
 

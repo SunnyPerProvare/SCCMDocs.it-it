@@ -2,7 +2,7 @@
 title: Notifiche di riavvio del dispositivo
 titleSuffix: Configuration Manager
 description: Riavviare il comportamento delle notifiche per diverse impostazioni client in Configuration Manager.
-ms.date: 08/07/2019
+ms.date: 08/23/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e057a7391bbdbe697b7f53c13a90a74efe22635
-ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
+ms.openlocfilehash: b73d3072883405d1ac2b455f12e1c252244884d1
+ms.sourcegitcommit: e2e07d74779a2f48693ecaa17a5974204949d109
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68859661"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999458"
 ---
 # <a name="device-restart-notifications-in-configuration-manager"></a>Notifiche di riavvio del dispositivo in Configuration Manager
 
@@ -105,7 +105,7 @@ Le impostazioni seguenti devono avere una durata più breve della [finestra di m
 <!--3976435-->
 Alcuni amministratori preferiscono notifiche di riavvio frequenti e un breve intervallo di tempo per posporre il riavvio. Altri amministratori consentono agli utenti di posporre il riavvio per periodi di tempo più lunghi e vogliono che gli utenti vengano informati raramente del riavvio in sospeso. La versione 1906 di Configuration Manager offre agli amministratori un controllo aggiuntivo sui tempi e sulla frequenza delle notifiche di riavvio. Gli elementi seguenti sono stati introdotti nella versione 1906 per offrire all'amministratore maggiore controllo:
 
-- L'opzione **Specificare la durata del rinvio per le notifiche con conto alla rovescia per il riavvio del computer (ore)** è stata aggiunta alle [impostazioni client di riavvio del computer](/sccm/core/clients/deploy/about-client-settings#computer-restart).
+- L'opzione **Specificare la durata del rinvio per le notifiche con conto alla rovescia per il riavvio del computer (minuti)** è stata aggiunta alle [impostazioni client di riavvio del computer](/sccm/core/clients/deploy/about-client-settings#computer-restart).
 - Il valore massimo per **Visualizzare una notifica temporanea in cui viene indicato l'intervallo di disconnessione dell'utente o di riavvio del computer (minuti)** è stato aumentato da 1440 minuti (24 ore) a 20160 minuti (due settimane).
 - L'utente non visualizzerà un indicatore di stato nella notifica di riavvio fino a quando non mancheranno meno di 24 ore al riavvio.
 

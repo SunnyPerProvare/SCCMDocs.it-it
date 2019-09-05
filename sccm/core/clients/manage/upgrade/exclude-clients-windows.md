@@ -1,8 +1,8 @@
 ---
 title: Evitare l'aggiornamento di client per Windows
 titleSuffix: Configuration Manager
-description: Informazioni su come evitare l'aggiornamento di client Windows in System Center Configuration Manager.
-ms.date: 04/23/2017
+description: Informazioni su come evitare l'aggiornamento di client Windows in Configuration Manager.
+ms.date: 08/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,45 +11,62 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc1d82de7863f6aa82e43515c28392865388a79f
-ms.sourcegitcommit: 9670e11316c9ec6e5f78cd70c766bbfdf04ea3f9
+ms.openlocfilehash: 7a16bc859006b0253459259d354a68e2ff1dec83
+ms.sourcegitcommit: 2d38de4846ea47a03cc884cbd3df27db48f64a6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67818193"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70110146"
 ---
-# <a name="how-to-exclude-upgrading-clients-for-windows-computers-in-system-center-configuration-manager"></a>Come evitare l'aggiornamento dei client per i computer Windows in System Center Configuration Manager
+# <a name="how-to-exclude-clients-from-upgrade-in-configuration-manager"></a>Come evitare l'aggiornamento di client in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile impedire che una raccolta di client installi automaticamente le versioni di client aggiornate. Questa funzione si applica sia all'aggiornamento automatico sia ad altri metodi, ad esempio all'aggiornamento basato sull'aggiornamento software, agli script di accesso e ai criteri di gruppo. Questa opzione può essere usata per una raccolta di computer che richiede particolare attenzione durante l'aggiornamento del client. I client che appartengono a una raccolta esclusa ignorano le richieste di aggiornamento del software client.
+È possibile impedire che una raccolta di client installi automaticamente le versioni di client aggiornate. Questa opzione può essere usata per una raccolta di computer che richiede particolare attenzione durante l'aggiornamento del client. I client che appartengono a una raccolta esclusa ignorano le richieste di aggiornamento del software client.
 
->[!NOTE]
->I client esclusi scaricano ed eseguono comunque CCMSETUP, ma non saranno aggiornati.
+Questa esclusione si applica ai metodi seguenti:
 
+- Aggiornamento automatico
+- Aggiornamento basato sull'aggiornamento software
+- Script di accesso
+- Criteri di gruppo
 
-## <a name="configure-exclusion-for-automatic-upgrades"></a>Configurare l'esclusione per gli aggiornamenti automatici
+> [!NOTE]
+> Anche se l'interfaccia utente indica che i client non verranno aggiornati, esistono due metodi che è possibile usare per sostituire queste impostazioni. Usare l'installazione push del client o l'installazione manuale del client per sostituire questa configurazione. Per altre informazioni, vedere [Come aggiornare un client escluso](#bkmk_override).
 
-1. Nella console di Configuration Manager accedere a **Amministrazione** > **Configurazione del sito** > **Siti** e fare clic su **Impostazioni gerarchia**.
+## <a name="bkmk_exclude"></a> Configurare l'esclusione
 
-2. Fare clic sulla scheda **Aggiornamento client**.
+1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**. Espandere **Configurazione del sito**, selezionare il nodo **Siti** e quindi selezionare **Impostazioni gerarchia** nella barra multifunzione.
 
-3. Selezionare la casella di controllo **Exclude specified clients from upgrade** (Escludi dall'aggiornamento i client specificati) e, in Exclusion collection (Raccolta di esclusione) selezionare la raccolta da escludere. È possibile selezionare per l'esclusione solo una singola raccolta.
+2. Passare alla scheda **Aggiornamento client**.
 
-4.  Fare clic su **OK** per chiudere e salvare la configurazione. Dopo che i client avranno aggiornato i criteri, i client appartenenti alla raccolta esclusa non installeranno più automaticamente gli aggiornamenti per il software client. Per altre informazioni, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](upgrade-clients-for-windows-computers.md).
+3. Selezionare l'opzione **Escludi i client specificati dall'aggiornamento**. Selezionare quindi la **Raccolta di esclusioni** da escludere. È possibile selezionare per l'esclusione solo una singola raccolta.
+
+4. Selezionare **OK** per chiudere e salvare la configurazione.
 
 ![Impostazioni per l'esclusione dall'aggiornamento automatico](media/automatic_upgrade_exclusion.png)
 
->[!NOTE]
->Anche se l'interfaccia utente indica che i client non verranno aggiornati, esistono due metodi che è possibile usare per sostituire queste impostazioni. L'installazione push del client e l'installazione manuale del client consentono di sostituire questa configurazione. Per altre informazioni, vedere la sezione seguente.
+Dopo l'aggiornamento dei criteri dei client nella raccolta esclusa, gli aggiornamenti client non vengono più installati automaticamente. Per altre informazioni, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers).
 
-## <a name="how-to-upgrade-a-client-that-is-in-an-excluded-collection"></a>Come aggiornare un client in una raccolta esclusa
+> [!NOTE]
+> I client esclusi scaricano ed eseguono comunque Ccmsetup, ma non saranno aggiornati.
 
-Se una raccolta è configurata per l'esclusione, i membri di tale raccolta possono aggiornare il software client solo tramite uno dei due metodi che sostituiscono l'esclusione:
-- **Installazione push client**: è possibile usare l'installazione push del client per eseguire l'aggiornamento di un client che appartiene a una raccolta esclusa. Questa operazione è consentita in quanto richiesta dall'amministratore e permette di aggiornare i client lasciando invariata l'esclusione dell'intera raccolta.       
+Quando si rimuove un client dalla raccolta di esclusione, questo non viene aggiornato automaticamente fino al successivo ciclo di aggiornamento automatico.
 
-- **Installazione client manuale**: è possibile aggiornare manualmente i client che appartengono a una raccolta esclusa usando la seguente opzione della riga di comando con ccmsetup: ***/ignoreskipupgrade***.
+## <a name="bkmk_override"></a> Come aggiornare un client escluso
 
-  Se si tenta di aggiornare manualmente un client che fa parte della raccolta esclusa senza usare questa opzione, il client non installa il nuovo software client. Per altre informazioni, vedere [Come installare manualmente i client di Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual).
+Se un dispositivo è membro di una raccolta esclusa dall'aggiornamento, è comunque possibile aggiornare il client usando uno dei metodi seguenti:
 
-Per altre informazioni su questi metodi di installazione del client, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).
+- **Installazione push client**: Ccmsetup consente l'installazione push client perché è la finalità diretta. Questo metodo consente di aggiornare un client senza rimuoverlo dalla raccolta o rimuovendo l'intera raccolta dall'esclusione.
+
+- **Installazione client manuale**: Aggiornare manualmente un client escluso usando il seguente parametro della riga di comando Ccmsetup: **/IgnoreSkipUpgrade**
+
+    Se si tenta di aggiornare manualmente un client che fa parte della raccolta esclusa senza usare questo parametro, il client non viene aggiornato. Per altre informazioni, vedere [Come installare manualmente i client di Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual).
+
+## <a name="see-also"></a>Vedere anche
+
+- [Aggiornare i client](/sccm/core/clients/manage/upgrade/upgrade-clients)
+
+- [Come distribuire i client nei computer Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers)
+
+- [Client di interoperabilità estesa](/sccm/core/understand/interoperability-client)

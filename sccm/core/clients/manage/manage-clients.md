@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ae4074897359dcebb9b91392bd36893d0276012
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: 52259888bdfe343072bfa34e8eb053c0bb082789
+ms.sourcegitcommit: 2d38de4846ea47a03cc884cbd3df27db48f64a6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68339002"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70110128"
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Come gestire i client in System Center Configuration Manager
 
@@ -189,10 +189,11 @@ Prima di eseguire attività a livello di raccolta, tenere presente quanto segue.
 
 
 ## <a name="restart-clients"></a>Riavviare i client
-A partire dalla versione 1710, è possibile usare la console di Configuration Manager per identificare i client che devono essere riavviati. Usare quindi un'azione di notifica client per riavviarli.
+
+Usare la console di Configuration Manager per identificare i client che devono essere riavviati. Usare quindi un'azione di notifica client per riavviarli.
 
 > [!Tip]
-> Per usare questa funzionalità, è anche necessario aggiornare i client alla versione 1710. È consigliabile abilitare l'aggiornamento client automatico per mantenere i client aggiornati e ridurre al minimo il carico amministrativo. Per altre informazioni, vedere [Usare l'aggiornamento client automatico](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#use-automatic-client-upgrade).
+> Abilitare l'aggiornamento automatico dei client per mantenere i client aggiornati con il minimo sforzo. Per altre informazioni, vedere [Informazioni sull'aggiornamento client automatico](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#bkmk_autoupdate).
 
 Per identificare i dispositivi che sono in attesa di riavvio, passare all'area di lavoro **Asset e conformità** nella console di Configuration Manager e selezionare il nodo **Dispositivi**. È ora possibile visualizzare lo stato di ogni dispositivo nel riquadro dei dettagli, in una nuova colonna denominata **Riavvio in sospeso**. Ogni dispositivo può avere uno o più dei valori seguenti: 
 - **No**: non sono presenti riavvi in sospeso

@@ -2,7 +2,7 @@
 title: Configurare la creazione di report
 titleSuffix: Configuration Manager
 description: Informazioni su come configurare la creazione di report nella gerarchia di Configuration Manager, incluse le informazioni su SQL Server Reporting Services.
-ms.date: 10/06/2016
+ms.date: 08/22/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,287 +11,286 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa7d623cdd27258a265cd1b1ad22edeb78fe4da8
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: bc84435b36fe413f9eab81ebdc0161b7cd64ab53
+ms.sourcegitcommit: e2e07d74779a2f48693ecaa17a5974204949d109
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66177012"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999361"
 ---
-# <a name="configuring-reporting-in-system-center-configuration-manager"></a>Configurazione della creazione di report in System Center Configuration Manager
+# <a name="configure-reporting-in-configuration-manager"></a>Configurare la creazione di report in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Prima di poter creare, modificare ed eseguire report nella console di System Center Configuration Manager, è necessario eseguire una serie di attività di configurazione. Usare le sezioni seguenti di questo argomento per configurare la creazione di report nella gerarchia di Configuration Manager:  
+Prima di poter creare, modificare ed eseguire report nella console di Configuration Manager, è necessario completare alcune attività di configurazione. Usare questo articolo per configurare la creazione di report nella gerarchia di Configuration Manager.  
 
- Prima di procedere all'installazione e alla configurazione di Reporting Services nella gerarchia, esaminare i seguenti argomenti sulla creazione di report in Configuration Manager:  
+Prima di installare e configurare SQL Server Reporting Services nella gerarchia, vedere i seguenti articoli sulla creazione di report in Configuration Manager:  
 
--   [Introduzione alla creazione di report in System Center Configuration Manager](../../../core/servers/manage/introduction-to-reporting.md)  
+- [Introduzione alla creazione di report in Configuration Manager](/sccm/core/servers/manage/introduction-to-reporting)  
 
--   [Pianificazione per la creazione di report in System Center Configuration Manager](../../../core/servers/manage/planning-for-reporting.md)  
+- [Pianificazione della creazione di report in Configuration Manager](/sccm/core/servers/manage/planning-for-reporting)  
 
-##  <a name="BKMK_SQLReportingServices"></a> SQL Server Reporting Services  
- SQL Server Reporting Services è una piattaforma per la creazione di report basata su server che fornisce funzionalità di creazione di report complete per una vasta gamma di origini dati. Il punto di Reporting Services in Configuration Manager comunica con SQL Server Reporting Services per la copia dei report di Configuration Manager in una cartella report specifica, per la configurazione delle impostazioni di Reporting Services e per la configurazione delle impostazioni di protezione di Reporting Services. Reporting Services si connette al database del sito di Configuration Manager per il recupero dei dati restituiti durante l'esecuzione dei report.  
+## <a name="BKMK_SQLReportingServices"></a> SQL Server Reporting Services
 
- Prima dell'installazione del punto di Reporting Services in un sito di Configuration Manager, è necessario installare e configurare SQL Server Reporting Services nel sistema del sito che ospita il ruolo del sistema del sito del punto di Reporting Services. Per informazioni sull'installazione di Reporting Services, vedere la [Libreria TechNet SQL Server](http://go.microsoft.com/fwlink/p/?LinkId=266389).  
+SQL Server Reporting Services è una piattaforma per la creazione di report basata su server che fornisce funzionalità di creazione di report complete per diversi tipi di origini dati. Il punto di Reporting Services in Configuration Manager comunica con SQL Server Reporting Services per:
 
- Utilizzare la seguente procedura per verificare che SQL Server Reporting Services sia installato ed eseguito correttamente.  
+- Copiare i report di Configuration Manager in una cartella report specifica
+- Configurare le impostazioni di Reporting Services
+- Configurare le impostazioni di sicurezza di Reporting Services
 
-#### <a name="to-verify-that-sql-server-reporting-services-is-installed-and-running"></a>Per verificare che SQL Server Reporting Services sia installato ed eseguito correttamente  
+Quando si esegue un report, il componente Reporting Services si connette al database del sito di Configuration Manager per il recupero dei dati.  
 
-1.  Sul desktop fare clic su **Start**, **Tutti i programmi**, **Microsoft SQL Server 2008 R2**, **Strumenti di configurazione**e quindi fare clic su **Gestione configurazione Reporting Services**.  
+Prima dell'installazione del punto di Reporting Services in un sito di Configuration Manager, è necessario installare e configurare SQL Server Reporting Services nel sistema del sito di destinazione. Per altre informazioni, vedere [Installare SQL Server Reporting Services](https://docs.microsoft.com/sql/reporting-services/install-windows/install-reporting-services).  
 
-2.  Nella finestra di dialogo **Connessione configurazione Reporting Services** specificare il nome del server che ospita SQL Server Reporting Services e, nel menu, selezionare l'istanza di SQL Server in cui è stato installato SQL Reporting Services, quindi fare clic su **Connetti**. Verrà visualizzato Gestione configurazione Reporting Services.  
+Utilizzare la seguente procedura per verificare che SQL Server Reporting Services sia installato ed eseguito correttamente.  
 
-3.  Nella pagina **Stato server di report** verificare che **Stato servizio di report** sia impostato su **Avviato**. In caso contrario, fare clic su **Avvia**.  
+1. Passare al menu **Start** nel sistema del sito e aprire **Gestione configurazione Reporting Services**, che si trova nella sezione **Strumenti di configurazione** del gruppo **Microsoft SQL Server**.
 
-4.  Nella pagina **URL servizio Web** fare clic sull'URL in **URL servizio Web Servizio report** per testare la connessione alla cartella report. È possibile che venga visualizzata la finestra di dialogo **Protezione di Windows** e che all'utente vengano richieste le credenziali di protezione. Per impostazione predefinita, viene visualizzato l'account utente. Immettere la password e fare clic su **OK**. Verificare che la pagina Web si apra correttamente. Chiudere la finestra del browser.  
+2. Nella finestra **Connessione configurazione Reporting Services** immettere il nome del server che ospita SQL Server Reporting Services. Selezionare l'istanza di SQL Server in cui è installato SQL Reporting Services. Selezionare quindi **Connetti** per aprire Gestione configurazione Reporting Services.  
 
-5.  Nella pagina **Database** verificare che l'impostazione **Modalità server di report** sia configurata utilizzando **Originale**.  
+3. Nella pagina **Stato server di report** verificare che **Stato servizio di report** sia impostato su **Avviato**. Se non si trova in questo stato, selezionare **Avvia**.  
 
-6.  Nella pagina **URL Gestione report** fare clic sull'URL in **Identificazione sito Gestione report** per testare la connessione alla directory virtuale per Gestione report. È possibile che venga visualizzata la finestra di dialogo **Protezione di Windows** e che all'utente vengano richieste le credenziali di protezione. Per impostazione predefinita, viene visualizzato l'account utente. Immettere la password e fare clic su **OK**. Verificare che la pagina Web si apra correttamente. Chiudere la finestra del browser.  
+4. Nella pagina **URL servizio Web** selezionare l'URL in **URL servizio Web Servizio report**. Questa azione consente di testare la connessione alla cartella report. Il browser potrebbe richiedere le credenziali. Verificare che la pagina Web si apra correttamente.
+
+5. Nella pagina **Database** verificare che **Modalità server di report** sia impostato su **Originale**.  
+
+6. Nella pagina **URL Gestione report** selezionare l'URL in **Identificazione sito Gestione report**. Questa azione verifica la connessione alla directory virtuale per Gestione report. Il browser potrebbe richiedere le credenziali. Verificare che la pagina Web si apra correttamente.
 
     > [!NOTE]  
-    >  Gestione report di Reporting Services non è necessario per la creazione di report in Configuration Manager, ma è necessario per l'esecuzione di report in un browser Internet o per la gestione di report tramite Gestione report.  
+    > La creazione di report in Configuration Manager non richiede Gestione report di Reporting Services. È necessario solo se si vuole eseguire report nel browser o gestire i report usando Gestione report.  
 
-7.  Fare clic su **Esci** per chiudere Configuration Manager Reporting Services.  
+7. Selezionare **Esci** per chiudere Gestione configurazione Reporting Services.  
 
-##  <a name="BKMK_ReportBuilder3"></a> Configurare la creazione di report per l'uso di Generatore report 3.0  
+## <a name="BKMK_ReportBuilder3"></a> Configurare la creazione di report per l'uso di Generatore report 3.0
 
-#### <a name="to-change-the-report-builder-manifest-name-to-report-builder-30"></a>Per modificare il nome del manifesto di Generatore report in Generatore report 3.0  
+1. Nel computer che esegue la console di Configuration Manager aprire l'editor del Registro di sistema di Windows.  
 
-1.  Nel computer che esegue la console di Configuration Manager aprire l'editor del Registro di sistema di Windows.  
+2. Selezionare **HKEY_LOCAL_MACHINE/SOFTWARE/Wow6432Node/Microsoft/ConfigMgr10/AdminUI/Reporting**.  
 
-2.  Selezionare **HKEY_LOCAL_MACHINE/SOFTWARE/Wow6432Node/Microsoft/ConfigMgr10/AdminUI/Reporting**.  
+3. Aprire la chiave **ReportBuilderApplicationManifestName** per modificare i dati del valore.  
 
-3.  Fare doppio clic sulla chiave **ReportBuilderApplicationManifestName** per modificare i dati del valore.  
+4. Modificare **ReportBuilder_2_0_0_0.application** in **ReportBuilder_3_0_0_0.application** e quindi selezionare **OK**.  
 
-4.  Modificare **ReportBuilder_2_0_0_0.application** in **ReportBuilder_3_0_0_0.application**, quindi fare clic su **OK**.  
+5. Chiudere l'editor del Registro di sistema di Windows.  
 
-5.  Chiudere l'editor del Registro di sistema di Windows.  
+## <a name="BKMK_InstallReportingServicesPoint"></a> Installare un punto di Reporting Services
 
-##  <a name="BKMK_InstallReportingServicesPoint"></a> Installare un punto di Reporting Services  
- Il punto di Reporting Services deve essere installato in un sito per gestire i report nel sito. Il punto di Reporting Services consente di copiare i report e le cartelle report in SQL Server Reporting Services, di applicare i criteri di protezione per i report e le cartelle, nonché di impostare le impostazioni di configurazione in Reporting Services. Per consentire la visualizzazione dei report nella console di Configuration Manager e la gestione dei report in Configuration Manager, è necessario configurare un punto di Reporting Services. Il punto di Reporting Services è un ruolo del sistema del sito che è necessario configurare su un server in cui Microsoft SQL Server Reporting Services è installato e in esecuzione. Per altre informazioni sui prerequisiti , vedere [Prerequisiti per la creazione di report](prerequisites-for-reporting.md).  
+Per gestire i report nel sito, installare il punto di Reporting Services. Il punto di Reporting Services:
+
+- Copia le cartelle report e i report in SQL Server Reporting Services
+- Applica i criteri di sicurezza per i report e le cartelle
+- Imposta le impostazioni di configurazione in Reporting Services
+
+### <a name="a-namebkmk_requirements--requirements-and-limitations"></a><a name="bkmk_requirements" /> Requisiti e limitazioni
+
+Prima di poter visualizzare o gestire i report nella console di Configuration Manager, è necessario un punto di Reporting Services. Configurare questo ruolo del sistema del sito in un server con Microsoft SQL Server Reporting Services. Per altre informazioni, vedere [Prerequisiti per la creazione di report](/sccm/core/servers/manage/prerequisites-for-reporting).  
+
+- Quando si seleziona un sito per installare il punto di Reporting Services, gli utenti che avranno accesso ai report devono risiedere nello stesso ambito di sicurezza del sito in cui viene installato il ruolo.  
+
+- Al termine dell'installazione di un punto di Reporting Services in un sistema del sito, non modificare l'URL del server di report.
+
+    Se ad esempio si crea il punto di Reporting Services e quindi si modifica l'URL del server di report in Reporting Services Configuration Manager, la console di Configuration Manager continuerà a usare l'URL precedente e non sarà possibile eseguire, modificare o creare report dalla console.
+
+    Se è necessario modificare l'URL del server di report, rimuovere innanzitutto il punto di Reporting Services esistente. Modificare l'URL e quindi reinstallare il punto di Reporting Services.  
+
+- Quando si installa un punto di Reporting Services, è necessario specificare un [account del punto di Reporting Services](/sccm/core/plan-design/hierarchy/accounts#reporting-services-point-account). Per consentire agli utenti di un dominio diverso di eseguire un report, creare un trust bidirezionale tra i domini. In caso contrario, l'esecuzione del report non riesce.
+
+### <a name="a-namebkmk_install--install-the-reporting-services-point-on-a-site-system"></a><a name="bkmk_install" /> Installare il punto di Reporting Services in un sistema del sito  
+
+Per altre informazioni sulla configurazione dei sistemi del sito, vedere [Installare ruoli del sistema del sito](/sccm/core/servers/deploy/configure/install-site-system-roles).  
+
+1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Configurazione del sito** e quindi selezionare il nodo **Server e ruoli del sistema del sito**.  
+
+1. Aggiungere il punto di Reporting Services a un server del sistema del sito nuovo o esistente:  
+
+    - *Nuovo sistema del sito*: nella scheda **Home** della barra multifunzione nel gruppo **Crea** selezionare **Crea server di sistema sito**. Viene visualizzata la **Creazione guidata server del sistema sito** .  
+
+    - *Sistema del sito esistente*: selezionare il server di destinazione. Nella scheda **Home** della barra multifunzione nel gruppo **Server** selezionare **Aggiungi ruoli del sistema del sito**. Verrà visualizzata la finestra di **Aggiunta guidata ruoli del sistema del sito** .  
+
+1. Nella scheda **Generale** specificare le impostazioni generali per il server del sistema del sito. Quando si aggiunge il punto di Reporting Services a un server esistente, verificare i valori configurati in precedenza.  
+
+1. Nella pagina **Selezione ruolo del sistema** selezionare **Punto di Reporting Services** dall'elenco dei ruoli disponibili e quindi selezionare **Avanti**.  
+
+1. Nella pagina **Punto di Reporting Services** configurare le seguenti impostazioni:  
+
+    - **Nome server di database del sito**: specificare il nome del server che ospita il database del sito di Configuration Manager. In genere, la procedura guidata recupera il nome di dominio completo (FQDN) del server. Per specificare un'istanza di database, usare il formato &lt;*nome server*>\&lt;*nome istanza*>. Ad esempio, `sqlserver\named1`.
+
+    - **Nome database**: specificare il nome del database del sito di Configuration Manager. Selezionare **Verifica** per verificare che la procedura guidata abbia accesso al database del sito.  
+
+        > [!IMPORTANT]  
+        > L'account utente usato per creare il punto di Reporting Services deve avere l'accesso in **Lettura** al database del sito. Se la prova di connessione non riesce, verrà visualizzata un'icona di avviso rossa. Il testo contestuale visualizzato al passaggio del mouse sull'icona contiene i dettagli dell'errore. Correggere l'errore e quindi selezionare di nuovo **Verifica**.  
+
+    - **Nome cartella**: specificare il nome della cartella da creare e usare per i report di Configuration Manager in Reporting Services.  
+
+    - **Istanza server di Reporting Services**: selezionare l'istanza di SQL Server per Reporting Services. Se questa pagina non elenca alcuna istanza, verificare che SQL Server Reporting Services sia installato, configurato e avviato.  
+
+        > [!IMPORTANT]  
+        > Configuration Manager esegue una connessione nell'ambito dell'utente corrente a WMI nel sistema del sito selezionato. Usa questa connessione per recuperare l'istanza di SQL Server per Reporting Services. Se l'utente corrente non ha l'accesso in **Lettura** a WMI nel sistema del sito, la procedura guidata non riesce a recuperare le istanze di Reporting Services.  
+
+    - **Account punto di Reporting Services**: selezionare **Imposta** e quindi selezionare un account da usare. SQL Server Reporting Services nel punto di Reporting Services usa questo account per connettersi al database del sito di Configuration Manager. Questa connessione consente di recuperare i dati per un report. Selezionare **Account esistente** per specificare un account utente di Windows precedentemente configurato come account di Configuration Manager. Selezionare **Nuovo account** per specificare un account utente di Windows non attualmente configurato per l'utilizzo. Configuration Manager concede automaticamente all'utente specificato l'accesso al database del sito.  
+
+        L'account che esegue Reporting Services deve appartenere al gruppo di sicurezza locale del dominio **Gruppo di accesso Windows Authorization**. Deve avere anche l'autorizzazione **Lettura tokenGroupsGlobalAndUniversal** impostata su **Consenti**. Per poter eseguire correttamente i report, gli utenti di un dominio diverso da quello dell'account al punto di Reporting Services devono avere un trust bidirezionale tra i domini.
+
+        La password e l'account utente Windows specificati vengono crittografati e archiviati nel database di Reporting Services. Reporting Services recupera i dati per i report dal database del sito utilizzando l'account e la password.  
+
+        > [!IMPORTANT]  
+        > L'account specificato deve avere l'autorizzazione **Accesso locale** nel server che ospita il database di Reporting Services.  
+
+1. Completare la procedura guidata.
+
+Al termine della procedura guidata, Configuration Manager crea le cartelle report in Reporting Services e copia i report nelle cartelle report specificate.  
+
+> [!TIP]  
+> Per elencare solo i sistemi del sito che ospitano il ruolo del sito del punto di Reporting Services, fare clic con il pulsante destro del mouse su **Server e ruoli del sistema del sito** e scegliere **Punto di Reporting Services**.  
+
+### <a name="a-namebkmk_languages--languages-for-reports"></a><a name="bkmk_languages" /> Lingue per i report
+
+<!-- SCCMDocs#1067 -->
+
+Dopo aver creato le cartelle report e copiato i report nel server di report, Configuration Manager determina la lingua appropriata per gli oggetti.
+
+- Creare cartelle report, copiare report
+
+  - Creare oggetti usando le impostazioni locali del sistema operativo del server del sito
+
+  - Se il Language Pack specifico non è disponibile, l'impostazione predefinita è Inglese (ENU)
+
+- Visualizzare i report in un Web browser
+
+  - Nomi di cartelle e report: le stesse impostazioni locali del server del sito
+  
+  - Contenuto del report: dinamico basato sulle impostazioni locali del browser
+
+- Visualizzare i report nella Console di Configuration Manager
+
+  - Nomi di cartelle e report: dinamici in base alle impostazioni locali della console
+  
+  - Contenuto del report: dinamico in base alle impostazioni locali della console
+
+Quando si installa un punto di Reporting Services in un sito senza Language Pack, i report vengono installati in inglese. Se un Language Pack viene installato in seguito all'installazione del punto di Reporting Services, è necessario disinstallare e reinstallare il punto di Reporting Services affinché i report siano disponibili nella lingua del Language Pack appropriato.  
+
+Per altre informazioni, vedere [Language Pack](/sccm/core/servers/deploy/install/language-packs).
+
+### <a name="BKMK_FileInstallationAndSecurity"></a> Privilegi di protezione della cartella report e della cartella di installazione file
+
+Configuration Manager esegue le seguenti azioni per installare il punto di Reporting Services e configurare Reporting Services:  
 
 > [!IMPORTANT]  
->  Quando si seleziona un sito per installare il punto di Reporting Services, ricordare che gli utenti che avranno accesso ai report devono essere nello stesso ambito di protezione del sito in cui è installato il punto di Reporting Services.  
+> Il sito esegue queste azioni nel contesto dell'account configurato per il servizio SMS_Executive. In genere, questo account è l'account di sistema locale del server del sito.  
+
+- Installare il ruolo del sito del punto di Reporting Services.  
+
+- Creare l'origine dati in Reporting Services con le credenziali archiviate specificate nella procedura guidata. Questo account è rappresentato dall'account utente Windows e dalla password usati da Reporting Services per la connessione al database del sito durante l'esecuzione dei report.  
+
+- Creare la cartella radice di Configuration Manager in Reporting Services.  
+
+- Aggiungere i ruoli di sicurezza **Utenti report di Configuration Manager** e **Amministratori report di Configuration Manager** in Reporting Services.  
+
+- Creare sottocartelle e quindi distribuire i report di Configuration Manager da `%ProgramFiles%\SMS_SRSRP` nel server del sito a Reporting Services.  
+
+- Aggiungere il ruolo **Utenti report di Configuration Manager** in Reporting Services alle cartelle radice per tutti gli account utente in Configuration Manager che dispongono dei diritti di **Lettura sito**.  
+
+- Aggiungere il ruolo **Amministratori report di Configuration Manager** in Reporting Services alle cartelle radice per tutti gli account utente in Configuration Manager che dispongono dei diritti di **Modifica sito**.  
+
+- Recuperare il mapping tra le cartelle report e i tipi di oggetto protetti di Configuration Manager. Configuration Manager gestisce questo mapping nel database del sito.  
+
+- Configurare i seguenti diritti per utenti amministratori di Configuration Manager in cartelle report specifiche di Reporting Services:  
+
+  - Aggiungere utenti e assegnare il ruolo **Utenti report di Configuration Manager** alla cartella report associata per gli utenti amministratori che dispongono delle autorizzazioni **Esegui report** per l'oggetto di Configuration Manager.  
+
+  - Aggiungere utenti e assegnare il ruolo **Amministratori report di Configuration Manager** alla cartella report associata per gli utenti amministratori che dispongono delle autorizzazioni **Modifica report** per l'oggetto di Configuration Manager.  
+
+Configuration Manager si connette a Reporting Services e configura le autorizzazioni per gli utenti nelle cartelle radice di Configuration Manager e di Reporting Services e in cartelle report specifiche. Al termine dell'installazione iniziale del punto di Reporting Services, Configuration Manager si connette a Reporting Services ogni 10 minuti per verificare che i diritti utente configurati nelle cartelle report siano i diritti associati configurati per gli utenti di Configuration Manager. Quando vengono aggiunti utenti o vengono modificati i diritti utente nella cartella report usando Gestione report di Reporting Services, Configuration Manager sovrascrive le modifiche mediante le assegnazioni basate sui ruoli archiviate nel database del sito. Configuration Manager rimuove anche gli utenti che non dispongono dei diritti di creazione di report in Configuration Manager.  
+
+### <a name="BKMK_SecurityRoles"></a> Ruoli di sicurezza di Reporting Services
+
+Quando Configuration Manager installa il punto di Reporting Services, in Reporting Services vengono aggiunti i seguenti ruoli di sicurezza:  
+
+- **Utenti report di Configuration Manager**: gli utenti assegnati a questo ruolo di sicurezza possono eseguire soltanto i report di Configuration Manager.  
+
+- **Amministratori report di Configuration Manager**: gli utenti assegnati a questo ruolo di sicurezza possono eseguire tutte le attività relative alla creazione di report in Configuration Manager.  
+
+## <a name="BKMK_VerifyReportingServicesPointInstallation"></a> Verificare l'installazione
+
+Verificare l'installazione del punto di Reporting Services esaminando i messaggi di stato e le voci dei file di log specifici. Utilizzare la seguente procedura per verificare il completamento dell'installazione del punto di Reporting Services.  
+
+> [!Note]  
+> È possibile ignorare questa procedura se i report vengono visualizzati nella sottocartella **Report** del nodo **Creazione di report** nell'area di lavoro **Monitoraggio** della console di Configuration Manager.
+
+### <a name="verify-installation-by-status-message"></a>Verificare l'installazione in base al messaggio di stato
+
+1. Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio**, espandere **Stato del sistema** e selezionare il nodo **Stato componente**.  
+
+1. Selezionare il componente **SMS_SRS_REPORTING_POINT**.  
+
+1. Nella scheda **Home** della barra multifunzione selezionare **Mostra messaggi** nel gruppo **Componente** e quindi scegliere **Tutti**.  
+
+1. Specificare una data e un'ora per un periodo antecedente all'installazione del punto di Reporting Services e quindi selezionare **OK**.  
+
+1. Verificare l'ID del messaggio di stato **1015**. Questo messaggio di stato indica che l'installazione del punto di Reporting Services è stata completata correttamente.
+
+### <a name="verify-installation-by-log-file"></a>Verificare l'installazione in base al file di log
+
+Aprire il file **Srsrp.log** che si trova nella directory **Logs** del percorso di installazione di Configuration Manager. Cercare la stringa `Installation was successful`.
+
+Scorrere il file di log a partire dalla data in cui è stata completata l'installazione del punto di Reporting Services. Verificare che le cartelle report siano state create, che i report siano stati distribuiti e che i criteri di protezione di ogni cartella siano stati confermati. Dopo l'ultima riga di conferme dei criteri di sicurezza, cercare la stringa `Successfully checked that the SRS web service is healthy on server`.  
+
+## <a name="BKMK_Certificate"></a> Configurare un certificato per la creazione di report
+
+Esistono diverse opzioni per la creazione di report in SQL Server Reporting Services. Quando i report vengono creati o modificati nella console di Configuration Manager, Configuration Manager apre Generatore report che verrà usato come ambiente di creazione. Indipendentemente dalla modalità di creazione dei report di Configuration Manager, è necessario disporre di un certificato autofirmato per eseguire l'autenticazione server nel server di database del sito.
 
 > [!NOTE]  
->  Al termine dell'installazione di un punto di Reporting Services in un sistema del sito, non modificare l'URL del server di report. Se ad esempio viene creato il punto di Reporting Services e in Configuration Manager Reporting Services si modifica l'URL del server di report, la console di Configuration Manager continuerà a usare l'URL precedente e non sarà possibile eseguire, modificare o creare report dalla console. Se è necessario modificare l'URL del server di report, rimuovere il punto di Reporting Services, modificare l'URL e quindi reinstallare il punto di Reporting Services.  
+> Per altre informazioni sulla creazione di report con SQL Server Reporting Services, vedere [Ambiente di creazione di Generatore report](https://docs.microsoft.com/sql/reporting-services/tools/report-builder-authoring-environment-ssrs).  
 
-> [!IMPORTANT]    
-> Quando si installa un punto di Reporting Services, è necessario specificare un account del punto di Reporting Services. In seguito, quando gli utenti di un dominio diverso tenteranno di eseguire un report, l'esecuzione del report non riuscirà a meno che vi sia un trust bidirezionale tra i domini.
+Configuration Manager installa automaticamente il certificato nel server del sito e tutti i ruoli di Provider SMS. È possibile creare o modificare i report dalla console di Configuration Manager quando viene eseguita da uno di questi server.
 
- Utilizzare la seguente procedura per installare il punto di Reporting Services.  
+Quando si creano o si modificano i report da una console di Configuration Manager in un computer diverso, esportare il certificato dal server del sito. Il nome descrittivo del certificato specifico è il nome di dominio completo del server del sito nell'archivio certificati **Persone attendibili** per il computer locale. Aggiungere questo certificato all'archivio certificati **Persone attendibili** nel computer che esegue la console di Configuration Manager.  
 
-#### <a name="to-install-the-reporting-services-point-on-a-site-system"></a>Per installare il punto di Reporting Services in un sistema del sito  
+## <a name="BKMK_ModifyReportingServicesPoint"></a> Modificare le impostazioni del punto di Reporting Services
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
+Dopo l'installazione di questo ruolo, è possibile modificare la connessione di database del sito e le impostazioni di autenticazione nelle proprietà del punto di Reporting Services.
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Configurazione del sito**, quindi fare clic su **Server e ruoli del sistema del sito**.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Configurazione del sito** e quindi selezionare il nodo **Server e ruoli del sistema del sito**.  
 
     > [!TIP]  
-    >  Per elencare solo i sistemi del sito che ospitano il ruolo del sito del punto di Reporting Services, fare clic con il pulsante destro del mouse su **Server e ruoli del sistema del sito** per selezionare **Punto di Reporting Services**.  
+    > Per elencare solo i sistemi del sito che ospitano il punto di Reporting Services, fare clic con il pulsante destro del mouse sul nodo **Server e ruoli del sistema del sito** e scegliere **Punto di Reporting Services**.  
 
-3.  Aggiungere il ruolo del sistema del sito del punto di Reporting Services a un server del sistema del sito nuovo o esistente utilizzando il passaggio associato:  
+1. Selezionare il sistema del sito che ospita il punto di Reporting Services. Selezionare quindi i ruoli del sistema del sito del **Punto di Reporting Services** nel riquadro dei dettagli.
 
-    > [!NOTE]  
-    >  Per altre informazioni sulla configurazione dei sistemi del sito, vedere [Aggiungere ruoli del sistema del sito per System Center Configuration Manager](../deploy/configure/add-site-system-roles.md).  
+1. Nella scheda **Ruolo del sito** della barra multifunzione selezionare **Proprietà** nel gruppo **Proprietà**.  
 
-    -   **Nuovo sistema del sito**: Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea server di sistema sito**. Viene visualizzata la **Creazione guidata server del sistema sito** .  
+1. In **Proprietà punto di Reporting Services** è possibile modificare le seguenti impostazioni:  
 
-    -   **Sistema del sito esistente**: fare clic sul server in cui si desidera installare il ruolo del sistema del sito del punto di Reporting Services. Quando si seleziona un server, nel riquadro dei risultati viene visualizzato un elenco dei ruoli del sistema del sito già installati nel server.  
+    - **Nome server di database del sito**
 
-         Nella scheda **Home** , nel gruppo **Server** , fare clic su **Aggiungi ruoli del sistema del sito**. Verrà visualizzata la finestra di **Aggiunta guidata ruoli del sistema del sito** .  
+    - **Nome database**
 
-4.  Nella scheda **Generale** specificare le impostazioni generali per il server del sistema del sito. Quando si aggiunge il punto di Reporting Services a un server del sistema del sito esistente, verificare i valori configurati in precedenza.  
+    - **Account utente**
 
-5.  Nella pagina **Selezione ruolo del sistema** selezionare **Punto di Reporting Services** dall'elenco dei ruoli disponibili, quindi fare clic su **Avanti**.  
+1. Selezionare **OK** per salvare le modifiche e chiudere le proprietà.  
 
-6.  Nella pagina **Punto di Reporting Services** configurare le seguenti impostazioni:  
+Per altre informazioni su queste impostazioni, vedere le descrizioni nella sezione [Installare il punto di Reporting Services in un sistema del sito](#bkmk_install).
 
-    -   **Nome server di database del sito**: specificare il nome del server che ospita il database del sito di Configuration Manager. In genere, la procedura guidata recupera automaticamente il nome di dominio completo (FQDN) del server. Per specificare un'istanza di database, usare il formato &lt;*Nome server*>\&lt; *<Nome istanza*>.  
+## <a name="a-namebkmk_upgradesql--upgrade-sql-server"></a><a name="bkmk_upgradesql" /> Aggiornare SQL Server
 
-    -   **Nome database**: specificare il nome del database del sito di Configuration Manager, quindi fare clic su **Verifica** per verificare che la procedura guidata abbia accesso al database del sito.  
+Per aggiornare SQL Server e SQL Server Reporting Services, rimuovere prima di tutto il punto di Reporting Services dal sito. Dopo aver aggiornato SQL Server, reinstallare il punto di Reporting Services in Configuration Manager.
 
-        > [!IMPORTANT]  
-        >  L'account utente che crea il punto di Reporting Services deve disporre dell'accesso in **Lettura** al database del sito. Se la prova di connessione non riesce, verrà visualizzata un'icona di avviso rossa. Spostare il cursore sull'icona per leggere i dettagli dell'errore. Correggere l'errore, quindi fare nuovamente clic su **Verifica** .  
+Se non si segue questo processo, verranno visualizzati errori durante l'esecuzione o la modifica dei report nella console di Configuration Manager. È possibile continuare a eseguire e modificare correttamente i report in un Web browser.  
 
-    -   **Nome cartella**: specificare il nome della cartella creata e usata per l'hosting dei report di Configuration Manager in Reporting Services.  
+## <a name="BKMK_ConfigureReportOptions"></a> Configurare le opzioni report
 
-    -   **Istanza server di Reporting Services**: selezionare nell'elenco l'istanza di SQL Server per Reporting Services. Se viene rilevata solo un'istanza, questa verrà elencata e selezionata per impostazione predefinita. Se non viene rilevata nessuna istanza, verificare che SQL Server Reporting Services sia installato e configurato e che il servizio SQL Server Reporting Services sia stato avviato nel sistema nel sito.  
+È possibile selezionare il punto di Reporting Services predefinito usato per gestire i report. Il sito può avere più di un punto di Reporting Services, ma usa solo il server predefinito per gestire i report. Utilizzare la seguente procedura per configurare le opzioni report per il sito.  
 
-        > [!IMPORTANT]  
-        >  Configuration Manager esegue una connessione nell'ambito dell'utente corrente a Windows Management Instrumentation (WMI) nel sistema del sito selezionato per recuperare l'istanza di SQL Server per Reporting Services. Se l'utente corrente non dispone dell'accesso in **Lettura** a WMI nel sistema del sito, non è possibile recuperare le istanze di Reporting Services.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio**, espandere **Report** e quindi selezionare il nodo **Report**.  
 
-    -   **Account punto di Reporting Services**: fare clic su **Imposta**, selezionare un account da utilizzare quando SQL Server Reporting Services nel punto di Reporting Services si connette al database del sito di Configuration Manager per recuperare i dati visualizzati in un report. Selezionare **Account esistente** per specificare un account utente di Windows precedentemente configurato come account di Configuration Manager oppure selezionare **Nuovo account** per specificare un account utente di Windows non attualmente configurato come account di Configuration Manager. Configuration Manager concede automaticamente all'utente specificato l'accesso al database del sito. L'utente viene visualizzato nella sottocartella **Account** del nodo **Sicurezza** nell'area di lavoro **Amministrazione** con il nome account **Punto di Reporting Services di Configuration Manager** .  
+1. Nella scheda **Home** della barra multifunzione selezionare **Opzioni report** nel gruppo **Impostazioni**.  
 
-         L'account che esegue Reporting Services deve appartenere al gruppo di sicurezza locale del dominio **Gruppo di accesso Windows Authorization**e disporre dell'autorizzazione **Lettura tokenGroupsGlobalAndUniversal** impostata su **Consenti**. Per poter eseguire correttamente i report, deve essere presente un trust bidirezionale per gli utenti di un dominio diverso da quello dell'account al punto Servicies Reporting.
+1. Selezionare il server di report predefinito nell'elenco e quindi selezionare **OK**.
 
-         La password e l'account utente Windows specificati vengono crittografati e archiviati nel database di Reporting Services. Reporting Services recupera i dati per i report dal database del sito utilizzando l'account e la password.  
+Se non viene visualizzato alcun server, verificare di aver installato e configurato un punto di Reporting Services nel sito. Per altre informazioni, vedere [Verificare l'installazione](#BKMK_VerifyReportingServicesPointInstallation).
 
-        > [!IMPORTANT]  
-        >  L'account specificato deve disporre delle autorizzazioni di **Accesso locale** nel computer che ospita il database di Reporting Services.  
-
-7.  Nella pagina **Punto di Reporting Services** fare clic su **Avanti**.  
-
-8.  Nella pagina **Riepilogo** verificare le impostazioni, quindi fare clic su **Avanti** per installare il punto di Reporting Services.  
-
-     Al termine della procedura guidata vengono create le cartelle report e i report di Configuration Manager vengono copiati nelle cartelle specificate.  
-
-    > [!NOTE]  
-    >  Dopo che le cartelle report sono state create e i report sono stati copiati nel server di report, Configuration Manager determina la lingua appropriata per gli oggetti. Se il Language Pack associato è installato nel sito, Configuration Manager crea gli oggetti nella stessa lingua del sistema operativo in esecuzione nel server di report del sito. Se la lingua non è disponibile, i report vengono creati e visualizzati in inglese. Quando si installa un punto di Reporting Services in un sito senza Language Pack, i report vengono installati in inglese. Se un Language Pack viene installato in seguito all'installazione del punto di Reporting Services, è necessario disinstallare e reinstallare il punto di Reporting Services affinché i report siano disponibili nella lingua del Language Pack appropriato. Per altre informazioni sui Language Pack, vedere [Language Pack in System Center Configuration Manager](../deploy/install/language-packs.md).  
-
-###  <a name="BKMK_FileInstallationAndSecurity"></a> Privilegi di protezione della cartella report e della cartella di installazione file  
- Configuration Manager esegue le seguenti azioni per installare il punto di Reporting Services e configurare Reporting Services:  
-
-> [!IMPORTANT]  
->  Le azioni contenute nel seguente elenco vengono eseguite utilizzando le credenziali dell'account configurato per il servizio SMS_Executive, che solitamente corrisponde all'account di sistema locale del server del sito.  
-
-- Consente di installare il ruolo del sito del punto di Reporting Services.  
-
-- Consente di creare l'origine dati in Reporting Services con le credenziali archiviate specificate nella procedura guidata. Si tratta della password e dell'account utente Windows utilizzati da Reporting Services per la connessione al database del sito durante l'esecuzione dei report.  
-
-- Consente di creare la cartella radice di Configuration Manager in Reporting Services.  
-
-- Consente di aggiungere i ruoli di sicurezza **Utenti report di Configuration Manager** e **Amministratori report di Configuration Manager** in Reporting Services.  
-
-- Consente di creare sottocartelle e di distribuire i report di Configuration Manager da %ProgramFiles%\SMS_SRSRP a Reporting Services.  
-
-- Consente di aggiungere il ruolo **Utenti report di Configuration Manager** in Reporting Services alle cartelle radice per tutti gli account utente in Configuration Manager che dispongono dei diritti di **Lettura**.  
-
-- Consente di aggiungere il ruolo **Amministratori report di Configuration Manager** in Reporting Services alle cartelle radice per tutti gli account utente in Configuration Manager che dispongono dei diritti di **lettura**.  
-
-- Consente di recuperare il mapping tra le cartelle report e i tipi di oggetti protetti di Configuration Manager (gestiti nel database del sito di Configuration Manager).  
-
-- Consente di configurare i seguenti diritti per utenti amministratori di Configuration Manager in cartelle report specifiche di Reporting Services:  
-
-  - Consente di aggiungere utenti e di assegnare il ruolo **Utenti report di Configuration Manager** alla cartella report associata per gli utenti amministratori che dispongono delle autorizzazioni **Esegui report** per l'oggetto di Configuration Manager.  
-
-  - Consente di aggiungere utenti e di assegnare il ruolo **Amministratori report di Configuration Manager** alla cartella report associata per gli utenti amministratori che dispongono delle autorizzazioni **Modifica report** per l'oggetto di Configuration Manager.  
-
-    Configuration Manager si connette a Reporting Services e configura le autorizzazioni per gli utenti nelle cartelle radice di Configuration Manager e di Reporting Services e in cartelle report specifiche. Al termine dell'installazione iniziale del punto di Reporting Services, Configuration Manager si connette a Reporting Services ad intervalli di 10 minuti per verificare che i diritti utente configurati nelle cartelle report siano i diritti associati configurati per gli utenti di Configuration Manager. Quando vengono aggiunti utenti o vengono modificati i diritti utente nella cartella report usando Gestione report di Reporting Services, Configuration Manager sovrascrive le modifiche mediante le assegnazioni basate sui ruoli archiviate nel database del sito. Configuration Manager rimuove anche gli utenti che non dispongono dei diritti di creazione di report in Configuration Manager.  
-
-##  <a name="BKMK_SecurityRoles"></a> Ruoli di sicurezza di Reporting Services per Configuration Manager  
- Quando Configuration Manager installa il punto di Reporting Services, in Reporting Services vengono aggiunti i seguenti ruoli di sicurezza:  
-
--   **Utenti report di Configuration Manager**: gli utenti assegnati a questo ruolo di sicurezza possono eseguire soltanto i report di Configuration Manager.  
-
--   **Amministratori report di Configuration Manager**: gli utenti assegnati a questo ruolo di sicurezza possono eseguire tutte le attività relative alla creazione di report in Configuration Manager.  
-
-##  <a name="BKMK_VerifyReportingServicesPointInstallation"></a> Verificare l'installazione del punto di Reporting Services  
- Al termine dell'aggiunta del ruolo del sito del punto di Reporting Services, è possibile verificare l'installazione esaminando i messaggi di stato specifici e le voci dei file di log. Utilizzare la seguente procedura per verificare il completamento dell'installazione del punto di Reporting Services.  
-
-> [!WARNING]  
->  È possibile ignorare questa procedura se i report vengono visualizzati nella sottocartella **Report** del nodo **Creazione di report** nell'area di lavoro **Monitoraggio** della console di Configuration Manager.  
-
-#### <a name="to-verify-the-reporting-services-point-installation"></a>Per verificare l'installazione del punto di Reporting Services  
-
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
-
-2.  Nell'area di lavoro **Monitoraggio** , espandere **Stato del sistema**, quindi fare clic su **Stato componente**.  
-
-3.  Fare clic su **SMS_SRS_REPORTING_POINT** nell'elenco dei componenti.  
-
-4.  Nella scheda **Home** , nel gruppo **Componente** , fare clic su **Mostra messaggi**, quindi selezionare **Tutti**.  
-
-5.  Specificare una data e un'ora per un periodo antecedente all'installazione del punto di Reporting Services, quindi fare clic su **OK**.  
-
-6.  Verificare che sia elencato il messaggio di stato ID 1015, in cui viene indicato che l'installazione del punto di Reporting Services è stata completata. In alternativa, è possibile aprire il file Srsrp.log file in &lt;*Percorso di installazione di Configuration Manager*>\Logs e individuare **Installazione completata**.  
-
-     In Esplora risorse passare a Percorso di installazione di &lt;*Configuration Manager*>\Logs.  
-
-7.  Aprire Srsrp.log e procedere con il file di log a partire dal completamento dell'installazione del punto di Reporting Services. Verificare che le cartelle report siano state create, che i report siano stati distribuiti e che i criteri di protezione di ogni cartella siano stati confermati. Individuare **Verifica dell'integrità del servizio Web SRS nel server completata** dopo l'ultima riga di conferme dei criteri di sicurezza.  
-
-##  <a name="BKMK_Certificate"></a> Configurare un certificato autofirmato per i computer della console di Configuration Manager  
- Esistono diverse opzioni per la creazione di report SQL Server Reporting Services. Quando i report vengono creati o modificati nella console di Configuration Manager, Configuration Manager apre Generatore report che verrà usato come ambiente di creazione. A prescindere dalla modalità di creazione dei report di Configuration Manager, è necessario disporre di un certificato autofirmato per eseguire l'autenticazione server nel server di database del sito. Configuration Manager installa automaticamente il certificato nel server del sito e nei computer con installato il provider SMS. È pertanto possibile creare o modificare i report dalla console di Configuration Manager quando viene eseguita da uno di questi computer. Tuttavia, quando i report vengono creati o modificati da una console di Configuration Manager installata in un computer diverso, è necessario esportare il certificato dal server del sito e quindi aggiungerlo all'archivio certificati **Persone attendibili** nel computer che esegue la console di Configuration Manager.  
-
-> [!NOTE]  
->  Per ulteriori informazioni su altri ambienti di creazione report per SQL Server Reporting Services, vedere [Comparing Report Authoring Environments (Confronto tra ambienti di creazione report)](http://go.microsoft.com/fwlink/p/?LinkId=242805) nella documentazione online di SQL Server 2008.  
-
- Usare la procedura seguente come esempio di trasferimento di una copia del certificato autofirmato dal server del sito a un altro computer che esegue la console di Configuration Manager quando entrambi i computer eseguono Windows Server 2008 R2. Se non è possibile seguire questa procedura poiché si dispone di una versione diversa del sistema operativo, fare riferimento alla documentazione del sistema operativo per individuare la procedura equivalente.  
-
-#### <a name="to-transfer-a-copy-of-self-signed-certificate-from-the-site-server-to-another-computer"></a>Per trasferire una copia del certificato autofirmato dal server del sito a un altro computer  
-
-1.  Nel server del sito eseguire i seguenti passaggi per esportare il certificato autofirmato:  
-
-    1.  Fare clic su **Start**, quindi su **Esegui**e digitare **mmc.exe**. Nella console vuota fare clic su **File**, quindi fare clic su **Aggiungi/Rimuovi snap-in**.  
-
-    2.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** , selezionare **Certificati** dall'elenco di **Snap-in disponibili**, quindi fare clic su **Aggiungi**.  
-
-    3.  Nella finestra di dialogo **Snap-in certificati** , selezionare **Account computer**, quindi fare clic su **Avanti**.  
-
-    4.  Nella finestra di dialogo **Seleziona computer** verificare che l'opzione **Computer locale: (computer in cui è in esecuzione la console)** sia selezionata, quindi fare clic su **Fine**.  
-
-    5.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** , fare clic su **OK**.  
-
-    6.  Nella console espandere **Certificati (computer locale)** , quindi **Persone attendibili**e selezionare **Certificati**.  
-
-    7.  Fare clic con il pulsante destro del mouse sul certificato con il nome descrittivo &lt;*FQDN del server sito*>, fare clic su **Tutte le attività**, quindi selezionare **Esporta**.  
-
-    8.  Completare l' **Esportazione guidata certificati** usando le opzioni predefinite e salvare il certificato con l'estensione del nome file **.cer** .  
-
-2.  Eseguire i seguenti passaggi nel computer che esegue la console di Configuration Manager per aggiungere il certificato autofirmato all'archivio certificati Persone attendibili:  
-
-    1.  Ripetere i passaggi precedenti da 1.a a 1.e per configurare la console MMC dello snap-in dei **certificati** nel computer del punto di gestione.  
-
-    2.  Nella console espandere **Certificati (computer locale)** , quindi **Persone attendibili**, fare clic con il pulsante destro del mouse su **Certificati**, selezionare **Tutte le attività**e infine **Importa** per avviare l' **Importazione guidata certificati**.  
-
-    3.  Nella pagina **File da importare** selezionare il certificato salvato nel passaggio 1.h, quindi fare clic su **Avanti**.  
-
-    4.  Nella pagina **Archivio certificati** selezionare **Mettere tutti i certificati nel seguente archivio**con l'opzione **Archivio certificati** impostata su **Persone attendibili**, quindi fare clic su **Avanti**.  
-
-    5.  Fare clic su **fine** per chiudere la procedura guidata e completare la configurazione dei certificati del computer.  
-
-##  <a name="BKMK_ModifyReportingServicesPoint"></a> Modificare le impostazioni del punto di Reporting Services  
- Al termine dell'installazione del punto di Reporting Services, è possibile modificare la connessione database del sito e le impostazioni di autenticazione nelle proprietà del punto di Reporting Services. Utilizzare la seguente procedura per modificare le impostazioni del punto di Reporting Services.  
-
-#### <a name="to-modify-reporting-services-point-settings"></a>Per modificare le impostazioni del punto di Reporting Services  
-
-1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
-
-2.  Nell'area di lavoro **Amministrazione** espandere **Configurazione del sito**, quindi fare clic su **Server e ruoli del sistema del sito** per un elenco dei sistemi del sito.  
-
-    > [!TIP]  
-    >  Per elencare solo i sistemi del sito che ospitano il ruolo del sito del punto di Reporting Services, fare clic con il pulsante destro del mouse su **Server e ruoli del sistema del sito** per selezionare **Punto di Reporting Services**.  
-
-3.  Selezionare il sistema del sito che ospita il punto di Reporting Services in cui si desidera modificare le impostazioni, quindi selezionare **Punto di Reporting Services** in **Ruoli sistema del sito**.  
-
-4.  Nella scheda **Ruolo del sito** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
-
-5.  Nella finestra di dialogo **Proprietà punto di Reporting Services** è possibile modificare le seguenti impostazioni:  
-
-    -   **Nome server di database del sito**: specificare il nome del server che ospita il database del sito di Configuration Manager. In genere, la procedura guidata recupera automaticamente il nome di dominio completo (FQDN) del server. Per specificare un'istanza di database, usare il formato &lt;*Nome server*>\&lt; *<Nome istanza*>.  
-
-    -   **Nome database**: specificare il nome del database del sito di System Center 2012 Configuration Manager, quindi fare clic su **Verifica** per verificare che la procedura guidata abbia accesso al database del sito.  
-
-        > [!IMPORTANT]  
-        >  L'account utente che crea il punto di Reporting Services deve disporre dell'accesso in Lettura al database del sito. Se la prova di connessione non riesce, verrà visualizzata un'icona di avviso rossa. Spostare il cursore sull'icona per leggere i dettagli dell'errore. Correggere l'errore, quindi fare nuovamente clic su **Verifica** .  
-
-    -   **Account utente**: fare clic su **Imposta**, selezionare un account usato quando SQL Server Reporting Services nel punto di Reporting Services si connette al database del sito di Configuration Manager per recuperare i dati visualizzati in un report. Selezionare **Account esistente** per specificare un account utente Windows che attualmente dispone dei diritti per Configuration Manager. oppure selezionare **Nuovo account** per specificare un account utente Windows che attualmente non dispone dei diritti per Configuration Manager. Configuration Manager concede automaticamente all'account utente specificato l'accesso al database del sito. L'account viene visualizzato come account **Punto SQL Server Reporting Services di Configuration Manager** nella sottocartella **Account** del nodo **Sicurezza** nell'area di lavoro **Amministrazione** .  
-
-         La password e l'account utente Windows specificati vengono crittografati e archiviati nel database di Reporting Services. Reporting Services recupera i dati per i report dal database del sito utilizzando l'account e la password.  
-
-        > [!IMPORTANT]  
-        >  Quando il database del sito si trova in un sistema del sito remoto, l'account specificato deve disporre dell'autorizzazione **Accesso locale** per il computer.  
-
-6.  Fare clic su **OK** per salvare le modifiche e chiudere la finestra di dialogo.  
-
-## <a name="upgrading-sql-server"></a>Aggiornamento di SQL Server  
- Al termine dell'aggiornamento di SQL Server e di SQL Server Reporting Services usato come origine dei dati per un punto di Reporting Services, è possibile che si verifichino errori durante l'esecuzione o la modifica dei report dalla console di Configuration Manager. Per una corretta creazione dei report dalla console di Configuration Manager, è necessario rimuovere il ruolo del sistema del sito del punto di Reporting Services per il sito e reinstallarlo. Al termine dell'aggiornamento è tuttavia possibile continuare a eseguire e modificare correttamente i report da un browser Internet.  
-
-##  <a name="BKMK_ConfigureReportOptions"></a> Configurare le opzioni report  
- Usare le opzioni dei report per un sito di Configuration Manager per selezionare il punto di Reporting Services predefinito usato per la gestione dei report. Benché sia possibile disporre di più di un punto di Reporting Services in un sito, per la gestione dei report viene utilizzato solo il server di report predefinito selezionato nelle opzioni report. Utilizzare la seguente procedura per configurare le opzioni report per il sito.  
-
-#### <a name="to-configure-report-options"></a>Per configurare le opzioni report  
-
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
-
-2.  Nell'area di lavoro **Monitoraggio** espandere **Creazione di report**, quindi fare clic su **Report**.  
-
-3.  Nella scheda **Home** , nel gruppo **Impostazioni** , fare clic su **Opzioni rapporti**.  
-
-4.  Selezionare il server di report predefinito nell'elenco, quindi fare clic su **OK**. Se nell'elenco non sono presenti punti di Reporting Services, verificare di disporre di un punto di Reporting Services correttamente installato e configurato nel sito.  
+Verificare che il computer esegua una versione di Generatore report di SQL Server corrispondente alla versione di SQL Server usata per il server di report. In caso contrario, verrà visualizzato un errore, il server di report predefinito non verrà salvato e non sarà possibile creare o modificare i report.<!-- SCCMDocs#791 -->
 
 ## <a name="next-steps"></a>Passaggi successivi
-[Operazioni e manutenzione per la creazione di report](operations-and-maintenance-for-reporting.md)
+
+[Operazioni e manutenzione per la creazione di report](/sccm/core/servers/manage/operations-and-maintenance-for-reporting)
