@@ -72,6 +72,8 @@
           href: deploy-use/link-users-and-devices-with-user-device-affinity.md
         - name: App acquistate con Volume Purchase Program da Microsoft Store per le aziende
           href: deploy-use/manage-apps-from-the-windows-store-for-business.md
+        - name: Risoluzione dei problemi di integrazione di Microsoft Store per le aziende
+          href: deploy-use/troubleshoot-microsoft-store-for-business-integration.md
         - name: Ambienti virtuali App-V
           href: deploy-use/create-app-v-virtual-environments.md
         - name: Importare ed esportare le applicazioni
