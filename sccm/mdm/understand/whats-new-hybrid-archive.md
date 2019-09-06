@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7821951461fc03598e91f22a54a49fd3b0c0cf6e
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 21dc3376212505b15078daddbe9dfb0716486c64
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67678635"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379019"
 ---
 # <a name="past-hybrid-features-with-system-center-configuration-manager-and-microsoft-intune"></a>Funzionalità ibride precedenti con System Center Configuration Manager e Microsoft Intune
 
@@ -67,11 +67,11 @@ Questo articolo illustra le funzionalità di gestione dei dispositivi mobili (MD
 - **Nuova esperienza utente per l'app Portale aziendale per Android**  
   L'app Portale aziendale per Android offre un'interfaccia utente dall'aspetto più moderno. Gli aggiornamenti più importanti riguardano gli aspetti seguenti:
 
-  - Colori: Le intestazioni delle schede di portale aziendale sono colorate in personalizzazione definita dall'IT.
-  - App: Nel **le app** scheda, il **App in primo piano** e **tutte le app** pulsanti vengono aggiornati.
-  - Ricerca: Nel **Apps** scheda, il **ricerca** pulsante è un pulsante di azione mobile.
-  - Navigazione tra le app: **Tutte le app** visualizzazione mostra una visualizzazione a schede dei **in primo piano**, **tutti**, e **categorie** per semplificare l'esplorazione.
-  - Supporto: **Dispositivi personali** e **contatta l'IT** schede sono state aggiornate per migliorare la leggibilità.
+  - Colori Portale aziendale le intestazioni delle schede sono colorate in una personalizzazione definita dall'IT.
+  - Applicazioni Nella scheda **app** vengono aggiornati i pulsanti **app in evidenza** e **tutte le app** .
+  - Ricerca Nella scheda **app** il pulsante **Cerca** è un pulsante di azione mobile.
+  - Esplorazione delle app: Visualizzazione di **tutte le app** Mostra una visualizzazione a schede di in **primo piano**, **tutte**e **categorie** per una navigazione più semplice.
+  - Supporto **Le schede dispositivi personali** e **Contatta it** sono state aggiornate per migliorare la leggibilità.
 
   Per altre informazioni su queste modifiche, vedere [Aggiornamenti dell'interfaccia utente per le applicazioni degli utenti finali in Intune](https://docs.microsoft.com/intune/whats-new-app-ui).
 
@@ -123,12 +123,12 @@ Nella versione 1702 di Configuration Manager (Current Branch) sono disponibili a
 
     | Versione di Configuration Manager | Gestione delle licenze dei dispositivi supportata | Tipo di raccolta della distribuzione | Licenza richiesta |
     |-|-|-|-|
-    |Precedente la 1702|Yes|utente|Licenza utente|
-    |Precedente la 1702|No|utente|Licenza utente|
-    |Precedente la 1702|Yes|Dispositivo|Licenza utente|
+    |Precedente la 1702|Yes|Utente|Licenza utente|
+    |Precedente la 1702|No|Utente|Licenza utente|
+    |Precedente la 1702|Sì|Dispositivo|Licenza utente|
     |Precedente la 1702|No|Dispositivo|Licenza utente|
-    |1702 e versioni successive|Yes|utente|Licenza utente|
-    |1702 e versioni successive|No|utente|Licenza utente|
+    |1702 e versioni successive|Yes|Utente|Licenza utente|
+    |1702 e versioni successive|No|Utente|Licenza utente|
     |1702 e versioni successive|Yes|Dispositivo|Licenza dispositivo|
     |1702 e versioni successive|No|Dispositivo|Licenza utente|
 
@@ -160,7 +160,7 @@ Nella versione 1702 di Configuration Manager (Current Branch) sono disponibili a
 
 - **Nuovo indirizzo del server MDM per dispositivi Windows**
 
-  L'indirizzo del server MDM per la registrazione dei dispositivi Windows e Windows Phone è cambiato da manage.microsoft.com a enrollment.manage.microsoft.com. Comunicare agli utenti di usare enrollment.manage.microsoft.com come indirizzo del server MDM, se richiesto, durante la registrazione di un dispositivo Windows o Windows Phone. Questo aggiornamento richiede anche la sostituzione di qualsiasi CNAME in DNS che reindirizza EnterpriseEnrollment.contoso.com a manage.microsoft.com con un CNAME in DNS che reindirizzi EnterpriseEnrollment.contoso.com a EnterpriseEnrollment-s.manage.microsoft.com. Per altre informazioni su questa modifica, vedere http://aka.ms/intuneenrollsvrchange.
+  L'indirizzo del server MDM per la registrazione dei dispositivi Windows e Windows Phone è cambiato da manage.microsoft.com a enrollment.manage.microsoft.com. Comunicare agli utenti di usare enrollment.manage.microsoft.com come indirizzo del server MDM, se richiesto, durante la registrazione di un dispositivo Windows o Windows Phone. Questo aggiornamento richiede anche la sostituzione di qualsiasi CNAME in DNS che reindirizza EnterpriseEnrollment.contoso.com a manage.microsoft.com con un CNAME in DNS che reindirizzi EnterpriseEnrollment.contoso.com a EnterpriseEnrollment-s.manage.microsoft.com. Per altre informazioni su questa modifica, vedere https://aka.ms/intuneenrollsvrchange.
 
 ### <a name="new-in-configuration-manager-technical-preview-1702"></a>Novità di Configuration Manager Technical Preview 1702
 
@@ -208,7 +208,7 @@ Nella versione 1702 di Configuration Manager (Current Branch) sono disponibili a
 
 - **Multi-Factor Authentication al momento dell'iscrizione è stato trasferito nel portale di Azure**
 
-  In precedenza, per impostare Multi-Factor Authentication per le registrazioni di Intune si accedeva alla console di Intune o alla console di Configuration Manager. Con questo aggiornamento di questa funzionalità è ora possibile accedere per il [portale di Microsoft Azure](https://manage.windowsazure.com) usando le credenziali di Intune e configurare le impostazioni di autenticazione a più fattori tramite Azure AD. Per altre informazioni, vedere [Multi-Factor Authentication per Microsoft Intune](https://aka.ms/mfa_ad).
+  In precedenza, per impostare Multi-Factor Authentication per le registrazioni di Intune si accedeva alla console di Intune o alla console di Configuration Manager. Con questa funzionalità aggiornata, è ora possibile accedere al [portale di Microsoft Azure](https://manage.windowsazure.com) usando le credenziali di Intune e configurare le impostazioni dell'autenticazione a più fattori tramite Azure ad. Per altre informazioni, vedere [Multi-Factor Authentication per Microsoft Intune](https://aka.ms/mfa_ad).
 
 - **App Portale aziendale per Android ora disponibile in Cina**
 
@@ -225,7 +225,7 @@ Nella versione 1702 di Configuration Manager (Current Branch) sono disponibili a
   | Console di amministrazione di Configuration Manager | App Portale aziendale di Intune per Android | Sito Web dell'app Portale aziendale di Intune |
   |----|----|----|
   | Disattiva/Cancella (rimuovere tutti i dati)| Rimuovere un dispositivo remoto | Rimuovi dispositivo (locale e remoto) |
-  | Disattiva/Cancella (rimuovere i dati aziendali)| Reimposta dispositivo | Reimposta dispositivo|
+  | Disattiva/Cancella (rimuovere i dati aziendali)| Reimpostare il dispositivo | Reimposta dispositivo|
   | Distribuzioni di app nuove o aggiornate | Installare le app line-of-business disponibili | Reimpostazione del passcode del dispositivo|
   | Blocco remoto| | |
   | Reimpostazione del passcode | | |
@@ -239,7 +239,7 @@ Nella versione 1702 di Configuration Manager (Current Branch) sono disponibili a
 
   Microsoft ha rilasciato una nuova [app Portale aziendale per dispositivi Windows 10](https://www.microsoft.com/store/apps/9wzdncrfj3pz). Questa app, basata sul nuovo formato universale di Windows 10, offre un'innovativa esperienza utente comune a tutti i dispositivi Windows 10, siano essi PC o dispositivi mobili, pur mantenendo le stesse funzionalità disponibili nella versione precedente dell'app Portale aziendale.
 
-  La nuova app integra funzionalità specifiche della piattaforma, come l'accesso Single Sign-On (SSO) e l'autenticazione basata su certificati nei dispositivi Windows 10. L'app è disponibile come aggiornamento dell'app Portale aziendale per Windows 8.1 e dell'app Portale aziendale di Windows Phone 8.1 e può essere installata da Windows Store. Per altre informazioni, vedere [Intune Support Team Blog](http://aka.ms/intunecp_universalapp) (Blog del team di supporto Intune).
+  La nuova app integra funzionalità specifiche della piattaforma, come l'accesso Single Sign-On (SSO) e l'autenticazione basata su certificati nei dispositivi Windows 10. L'app è disponibile come aggiornamento dell'app Portale aziendale per Windows 8.1 e dell'app Portale aziendale di Windows Phone 8.1 e può essere installata da Windows Store. Per altre informazioni, vedere [Intune Support Team Blog](https://aka.ms/intunecp_universalapp) (Blog del team di supporto Intune).
 
   La nuova app Portale aziendale consente anche di visualizzare qualsiasi applicazione di Windows Store per le aziende contrassegnata come **Disponibile** nella console di Configuration Manager.
 
@@ -375,9 +375,9 @@ Le seguenti nuove funzionalità introdotte in settembre 2016 sono disponibili pe
 
 - **Supporto di iOS 10**
 
-  Se si usano profili o elementi di configurazione destinati a tutte le piattaforme iOS, verranno inseriti in iOS 10. È stato anche rilasciato un aggiornamento di Configuration Manager versione 1606 che consente di destinare i profili e gli elementi di configurazione a singole piattaforme iOS tra cui iOS 10. È possibile installare l'aggiornamento con la console di amministrazione di Configuration Manager da **Amministrazione > Panoramica > Servizi cloud > Aggiornamenti e manutenzione**. Altre informazioni sull'aggiornamento sono disponibili all'indirizzo [http://support.microsoft.com/kb/3192616](http://support.microsoft.com/kb/3192616).
+  Se si usano profili o elementi di configurazione destinati a tutte le piattaforme iOS, verranno inseriti in iOS 10. È stato anche rilasciato un aggiornamento di Configuration Manager versione 1606 che consente di destinare i profili e gli elementi di configurazione a singole piattaforme iOS tra cui iOS 10. È possibile installare l'aggiornamento con la console di amministrazione di Configuration Manager da **Amministrazione > Panoramica > Servizi cloud > Aggiornamenti e manutenzione**. Altre informazioni sull'aggiornamento sono disponibili all'indirizzo [https://support.microsoft.com/kb/3192616](https://support.microsoft.com/kb/3192616).
 
-## <a name="august-2016"></a>Agosto 2016
+## <a name="august-2016"></a>Agosto 2016
 
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
 
@@ -476,7 +476,7 @@ Per informazioni sulle nuove funzionalità, vedere la documentazione relativa al
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
 Le seguenti funzionalità di Intune introdotte in giugno 2016 funzionano nelle distribuzioni ibride.
 
-- **Stato del servizio Intune**: le informazioni sullo stato del servizio per Intune sono state spostate in una posizione centrale con altri servizi Microsoft. Queste informazioni sono ora disponibili nell'interfaccia di amministrazione di Microsoft 365 in integrità dei servizi. Per altre informazioni, vedere questo [post di blog](https://blogs.technet.microsoft.com/enterprisemobility/2016/04/28/intune-service-health-is-now-available-in-the-office-365-portal/).
+- **Stato del servizio Intune**: le informazioni sullo stato del servizio per Intune sono state spostate in una posizione centrale con altri servizi Microsoft. Queste informazioni sono ora disponibili nell'interfaccia di amministrazione di Microsoft 365 in integrità del servizio. Per altre informazioni, vedere questo [post di blog](https://blogs.technet.microsoft.com/enterprisemobility/2016/04/28/intune-service-health-is-now-available-in-the-office-365-portal/).
 
 - **Gestione ottimizzata della configurazione dei criteri per i dati aziendali in Windows 10**
 
@@ -537,7 +537,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune  
  Le seguenti funzionalità di Intune introdotte in maggio 2016 funzionano nelle distribuzioni ibride.
 
-- **MAM SDK: Configurazione della lunghezza del PIN supporto**
+- **MAM SDK: Supportare la configurazione della lunghezza del PIN**
 
   È ora possibile specificare la lunghezza del PIN per le app MAM in modo simile al PIN di un dispositivo. Per eseguire questa operazione gli utenti finali devono rispettare i nuovi limiti impostati. La schermata del PIN è stata leggermente modificata per consentire un input più lungo. Per informazioni dettagliate, vedere le [ impostazioni dei criteri MAM per Android](https://docs.microsoft.com/intune/deploy-use/android-mam-policy-settings) e le [impostazioni dei criteri MAM per iOS](https://docs.microsoft.com/intune/deploy-use/ios-mam-policy-settings).  
 
@@ -547,13 +547,13 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **Nuove app disponibili per la gestione con i criteri MAM**
 
-  Le app Microsoft Word, Excel e PowerPoint per Android ora possono essere associate a criteri MAM sui dispositivi non registrati per Intune. Per un elenco completo delle app supportate, vedere la raccolta di applicazioni per dispositivi mobili di Microsoft Intune nella pagina dei [partner di applicazioni di Microsoft Intune](https://www.microsoft.com/en-us/server-cloud/products/microsoft-intune/partners.aspx).  
+  Le app Microsoft Word, Excel e PowerPoint per Android ora possono essere associate a criteri MAM sui dispositivi non registrati per Intune. Per un elenco completo delle app supportate, vedere la raccolta di applicazioni per dispositivi mobili di Microsoft Intune nella pagina dei [partner di applicazioni di Microsoft Intune](https://www.microsoft.com/server-cloud/products/microsoft-intune/partners.aspx).  
 
-- **App portale aziendale Android: Notifiche di tipo avviso popup degli utenti finali**
+- **App del portale aziendale Android: Notifiche di tipo avviso popup utente finale**
 
   Le notifiche di tipo avviso popup provenienti dall'app Portale aziendale per Android vengono visualizzate quando gli utenti finali registrano o rimuovono i propri dispositivi dal portale aziendale.  
 
-- **Sito Web del portale aziendale: Banner di identificazione del dispositivo offrirà maggiori informazioni agli utenti finali**
+- **Sito Web Portale aziendale: Il banner di identificazione del dispositivo fornirà ulteriori informazioni agli utenti finali**
 
   Gli utenti finali ora possono identificare più facilmente il dispositivo selezionato quando usano il sito Web del portale aziendale. Se è selezionato il dispositivo errato, è possibile selezionare il dispositivo corretto toccando il collegamento **Tocca qui** nel banner della pagina iniziale.  
 
@@ -575,7 +575,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **App di Windows Store per le aziende**
 
-  In [Windows Store per le aziende](https://www.microsoft.com/en-us/business-store) è possibile trovare e acquistare app per l'organizzazione, singolarmente o con Volume Purchase Program. Connettendo lo Store a Configuration Manager, è possibile gestire le app acquistate con Volume Purchase Program dalla console di Configuration Manager. Per altre informazioni, vedere la sezione sulle [app disponibili in Windows Store per le aziende](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_WSFB) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
+  In [Windows Store per le aziende](https://www.microsoft.com/business-store) è possibile trovare e acquistare app per l'organizzazione, singolarmente o con Volume Purchase Program. Connettendo lo Store a Configuration Manager, è possibile gestire le app acquistate con Volume Purchase Program dalla console di Configuration Manager. Per altre informazioni, vedere la sezione sulle [app disponibili in Windows Store per le aziende](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_WSFB) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
 
 - **Miglioramenti generali per le app acquistate con Volume Purchase Program**
 
@@ -671,7 +671,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **Sfruttare i vantaggi della gestione "Open In" di iOS per i dispositivi registrati in una soluzione MDM di terze parti**
 
-  È possibile usare il fornitore MDM di terze parti per sfruttare i vantaggi della gestione "Open In" di iOS. Le restrizioni possono essere impostate nel profilo di configurazione e l'app può essere distribuita usando il software MDM. Quando l'utente installa l'app gestita, vengono applicate le restrizioni. Leggere i dettagli: [I criteri di gestione di app per dispositivi mobili di Microsoft Intune e funzionalità Open In di iOS](/intune/deploy-use/introduction-to-device-compliance-policies-in-microsoft-intune) nella libreria di Intune.  
+  È possibile usare il fornitore MDM di terze parti per sfruttare i vantaggi della gestione "Open In" di iOS. Le restrizioni possono essere impostate nel profilo di configurazione e l'app può essere distribuita usando il software MDM. Quando l'utente installa l'app gestita, vengono applicate le restrizioni. Leggere i dettagli: [Microsoft Intune i criteri di gestione delle app per dispositivi mobili e iOS aperti nella](/intune/deploy-use/introduction-to-device-compliance-policies-in-microsoft-intune) libreria di Intune.  
 
 - **App Microsoft che supportano MAM**
 
@@ -732,7 +732,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 ## <a name="notices"></a>Notifiche
 
-### <a name="system-center-2012-configuration-sp1-and-system-center-2012-r2-configuration-manager-rtm-support-for-hybrid-mobile-device-management-ending-on-april-10-2017"></a>System Center 2012 Configuration SP1 e System Center 2012 R2 Configuration Manager (RTM): Supporto per la gestione dei dispositivi mobili ibrida che termina il 10 aprile 2017
+### <a name="system-center-2012-configuration-sp1-and-system-center-2012-r2-configuration-manager-rtm-support-for-hybrid-mobile-device-management-ending-on-april-10-2017"></a>System Center 2012 Configuration SP1 e System Center 2012 R2 Configuration Manager (RTM): Supporto per la gestione ibrida di dispositivi mobili che termina il 10 aprile 2017
 *11 gennaio 2017*
 
 Il supporto per System Center 2012 Configuration Manager SP1 e System Center 2012 R2 Configuration Manager RTM è terminato il 12 luglio 2016. Per quanto riguarda la connessione di queste versioni al servizio Microsoft Intune per la gestione ibrida di dispositivi mobili, il supporto termina il 10 aprile 2017. Dopo tale data, la gestione ibrida di dispositivi mobili non sarà più disponibile con queste versioni. In pratica, i dispositivi gestiti non saranno più gestiti poiché il connettore Intune non si connetterà più al servizio Intune. I dati di Configuration Manager, ad esempio criteri e applicazioni, non verranno propagati a Intune e i dati dei dispositivi gestiti non verranno propagati a Configuration Manager finché non verrà eseguito un aggiornamento.

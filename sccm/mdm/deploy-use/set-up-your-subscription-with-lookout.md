@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0946c455732bc13520d3363187b22b118d6e403
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 55279eacbe0cddd62a8776b1ff8321b1168534e9
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67678896"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380402"
 ---
 # <a name="set-up-your-subscription-for-lookout-mobile-threat-defense"></a>Configurare la sottoscrizione per Lookout Mobile Threat Defense
 
@@ -62,8 +62,8 @@ Eseguire i passaggi seguenti per raccogliere le informazioni richieste dal team 
 
    La console di Lookout supporta due livelli di accesso:  
 
-   - **Accesso completo:** L'amministratore di Azure AD può creare un gruppo per gli utenti che hanno accesso completo e, facoltativamente, creare un gruppo per gli utenti che avranno accesso limitato. Solo gli utenti di questi gruppi possono accedere alla **console di Lookout**.
-   - **Accesso limitato:** Gli utenti in questo gruppo avranno no l'accesso a diversi moduli correlati alla registrazione della console di Lookout e configurazione e avere accesso in sola lettura per il **criteri di sicurezza** modulo alla console di Lookout.  
+   - **Accesso completo:** L'amministratore Azure AD può creare un gruppo per gli utenti che dispongono di accesso completo e, facoltativamente, creare un gruppo per gli utenti che avranno accesso limitato. Solo gli utenti di questi gruppi possono accedere alla **console di Lookout**.
+   - **Accesso limitato:** Gli utenti di questo gruppo non avranno accesso a diversi moduli correlati alla configurazione e alla registrazione della console di Lookout e avranno accesso in sola lettura al modulo **criteri di sicurezza** della console di Lookout.  
 
      > [!TIP]  
      > Per altre informazioni sulle autorizzazioni, vedere [questo articolo del supporto tecnico di Lookout](https://personal.support.lookout.com/hc/articles/114094105653).
@@ -106,7 +106,7 @@ Eseguire i passaggi seguenti per raccogliere le informazioni richieste dal team 
     >![screenshot del portale di Azure, servizio Microsoft Azure Active Directory, pagina Proprietà](media/aad-group-display-name.png)
 
     >[!NOTE]  
-    >La procedura consigliata prevede l'uso dell'incremento predefinito di cinque minuti per verificare la presenza di nuovi dispositivi. Limitazioni correnti, **Lookout non è possibile convalidare i nomi visualizzati di gruppo:** Verificare che il **nome visualizzato** campo nel portale di Azure corrisponde esattamente al gruppo di sicurezza di Azure AD. **Creazione di gruppi annidati non è supportata:**  Sicurezza di Azure AD i gruppi usati in Lookout devono contenere solo utenti. Non possono contenere altri gruppi.
+    >La procedura consigliata prevede l'uso dell'incremento predefinito di cinque minuti per verificare la presenza di nuovi dispositivi. Limitazioni correnti. **Lookout non può convalidare i nomi visualizzati del gruppo:** Verificare che il campo **nome visualizzato** nella portale di Azure corrisponda esattamente al gruppo di sicurezza Azure ad. **La creazione di gruppi annidati non è supportata:**  Azure AD gruppi di sicurezza usati in Lookout devono contenere solo utenti. Non possono contenere altri gruppi.
 
 3.  Dopo aver aggiunto un gruppo, alla successiva apertura dell'app Lookout for Work nel dispositivo supportato, il dispositivo viene attivato in Lookout.
 
@@ -133,7 +133,7 @@ Nel modulo **System** (Sistema), nella pagina **Connectors** (Connettori), speci
 
 
 
-## <a name="configure-email-notifications"></a>Configurare le notifiche tramite posta elettronica
+## <a name="configure-email-notifications"></a>Configurare le notifiche di posta elettronica
 Per ricevere avvisi relativi alle minacce tramite posta elettronica, accedere alla [console di Lookout](https://aad.lookout.com) con l'account utente che deve ricevere le notifiche. Nella scheda **Preferences** (Preferenze) del modulo **System** (Sistema) scegliere i livelli delle minacce per cui ricevere una notifica e impostarle su **ON** (Attivato). Salvare le modifiche.
 
 ![screenshot della pagina delle preferenze con l'account utente visualizzato](media/lookout-email-notifications.png) Se non si vogliono più ricevere notifiche tramite posta elettronica, impostare le notifiche su OFF (Disattivato) e salvare le modifiche.
@@ -141,7 +141,7 @@ Per ricevere avvisi relativi alle minacce tramite posta elettronica, accedere al
 
 
 ## <a name="configure-threat-classification"></a>Configurare la classificazione delle minacce
-Lookout Mobile Threat Defense classifica diversi tipi di minacce per i dispositivi mobili. Alle [classificazioni delle minacce di Lookout](http://personal.support.lookout.com/hc/articles/114094130693) sono associati livelli di rischio predefiniti, Queste impostazioni possono essere modificate in qualsiasi momento per adattarle ai requisiti aziendali.
+Lookout Mobile Threat Defense classifica diversi tipi di minacce per i dispositivi mobili. Alle [classificazioni delle minacce di Lookout](https://personal.support.lookout.com/hc/articles/114094130693) sono associati livelli di rischio predefiniti, Queste impostazioni possono essere modificate in qualsiasi momento per adattarle ai requisiti aziendali.
 
 ![screenshot della pagina dei criteri con le minacce e le classificazioni visualizzate](media/lookout-threat-classification.png)
 

@@ -1,7 +1,7 @@
 ---
-title: Privacy dei dati di Analitica desktop
+title: Privacy dei dati di analisi desktop
 titleSuffix: Configuration Manager
-description: Analitica desktop viene eseguito il commit per la privacy dei dati dei clienti
+description: L'analisi del desktop è vincolata alla privacy dei dati dei clienti
 ms.date: 06/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,76 +11,76 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08c8837bf71e0f3ff2a19290880d33ac28eed039
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.openlocfilehash: aef08fb2d4c404ea66ded3d1a49d30af68fe4a95
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67159022"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379747"
 ---
-# <a name="desktop-analytics-data-privacy"></a>Privacy dei dati di Analitica desktop
+# <a name="desktop-analytics-data-privacy"></a>Privacy dei dati di analisi desktop
 
-Analitica desktop viene eseguito il commit completo per la privacy dei dati dei clienti, ricropre questi principi:
+Desktop Analytics è pienamente impegnato nella privacy dei dati dei clienti, centrando su questi principi:
 
-- **Trasparenza:** È stato descritto completamente gli eventi di diagnostica di Windows. Esaminarli con i team di sicurezza e conformità dell'azienda. Visualizzatore dati di diagnostica Windows consente di visualizzare i dati diagnostici inviati da un determinato dispositivo. Per altre informazioni, vedere [Cenni preliminari sul visualizzatore dati di diagnostica](https://docs.microsoft.com/windows/configuration/diagnostic-data-viewer-overview).  
+- **Trasparenza** Gli eventi di diagnostica di Windows sono documentati in modo completo. Esaminarli con i team di sicurezza e conformità dell'azienda. Il Visualizzatore dati di diagnostica Windows consente di visualizzare i dati di diagnostica inviati da un determinato dispositivo. Per altre informazioni, vedere [Cenni preliminari sul Visualizzatore dati di diagnostica](https://docs.microsoft.com/windows/configuration/diagnostic-data-viewer-overview).  
 
-- **Controllo:** Controllare il livello di dati di diagnostica da condividere con Microsoft. Windows 10, versione 1709, aggiunge un nuovo criterio per limitare i dati di diagnostica avanzati al minimo richiesto da Desktop Analitica.  
+- **Controllo** È possibile controllare il livello dei dati di diagnostica da condividere con Microsoft. Windows 10, versione 1709, aggiunge un nuovo criterio per limitare i dati di diagnostica avanzati al minimo richiesto da desktop Analytics.  
 
-- **Sicurezza:** Microsoft protegge i dati con protezione avanzata e crittografia.  
+- **Sicurezza** Microsoft protegge i dati con sicurezza e crittografia complesse.  
 
-- **Relazione di trust:** Analitica desktop supporta Microsoft [informativa sulla Privacy](https://privacy.microsoft.com/privacystatement) e [condizioni dei servizi Online](http://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=46).  
+- **Trust** Desktop Analytics supporta l' [informativa sulla privacy](https://privacy.microsoft.com/privacystatement) di Microsoft e le condizioni per i [servizi online](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=46).  
 
 
 
 ## <a name="diagnostic-data-flow"></a>Flusso di dati di diagnostica
 
-La figura seguente mostra i dati di diagnostica come flussi dai singoli dispositivi tramite il servizio dati di diagnostica, archiviazione di Azure Log Analitica e nell'area di lavoro di Log Analitica:
+La figura seguente mostra il flusso dei dati di diagnostica da singoli dispositivi tramite il servizio dati di diagnostica, l'archiviazione di Azure Log Analytics e l'area di lavoro Log Analytics:
 
-![Diagramma che illustra il flusso di dati diagnostici dai dispositivi](media/da-data-flow.png)
+![Diagramma che illustra il flusso dei dati di diagnostica dai dispositivi](media/da-data-flow.png)
 
-1. Accedi al portale di Azure e l'onboarding a Desktop Analitica. Si crea l'app di Azure AD per la connessione con Configuration Manager. Quando si configura Desktop Analitica, si crea un'area di lavoro di Analitica di Log di Azure nella posizione di propria scelta.  
+1. Si accede al portale di Azure e si esegue l'onboarding in desktop Analytics. Si crea l'app Azure AD per connettersi con Configuration Manager. Quando si configura analisi desktop, si crea un'area di lavoro di Azure Log Analytics nel percorso desiderato.  
 
-2. Ci si connette Configuration Manager e registrare i dispositivi  
+2. Connettersi Configuration Manager e registrare i dispositivi  
 
-    1. Configurare il servizio di cloud Analitica Desktop in Configuration Manager con i dettagli dell'app Azure AD.  
+    1. Il servizio cloud di analisi dei desktop viene configurato in Configuration Manager con i dettagli dell'app Azure AD.  
 
-    2. Entro 15 minuti, Configuration Manager si sincronizza raccolte di dispositivi e i piani di distribuzioni con Desktop Analitica. Questo processo viene ripetuto ogni ora.  
+    2. Entro 15 minuti Configuration Manager Sincronizza i piani di raccolte e distribuzioni dei dispositivi con analisi del desktop. Questa operazione viene ripetuta ogni ora.  
 
-    3. Configuration Manager imposta l'ID commerciale, a livello di dati di diagnostica e altre impostazioni per i dispositivi nella raccolta di destinazione. Questa configurazione consente di specificare i dispositivi da visualizzare nell'area di lavoro di Analitica Desktop.  
+    3. Configuration Manager imposta l'ID commerciale, il livello dati di diagnostica e altre impostazioni per i dispositivi nella raccolta di destinazione. Questa configurazione specifica i dispositivi da visualizzare nell'area di lavoro di analisi del desktop.  
 
-    4. Compatibilità aggiornamenti vengono distribuiti a tutti i dispositivi di destinazione.  
+    4. Gli aggiornamenti della compatibilità vengono distribuiti in tutti i dispositivi di destinazione.  
 
-3. I dispositivi inviano dati di diagnostica per il servizio di gestione dei dati di diagnostica Microsoft per Windows. Questo servizio è ospitato negli Stati Uniti.  
+3. I dispositivi inviano i dati di diagnostica al servizio Microsoft Diagnostic Gestione dati per Windows. Questo servizio è ospitato nel Stati Uniti.  
 
-4. Ogni giorno, Microsoft fornisce uno snapshot di insights incentrato sull'IT. Questo snapshot combina i dati di diagnostica da Windows con l'input dell'utente per i dispositivi registrati. Questo processo avviene in un archivio temporaneo, ma viene utilizzato solo dai Desktop Analitica. Lo spazio di archiviazione temporaneo è ospitato nei data center di Microsoft negli Stati Uniti. Gli snapshot sono separati da ID commerciale.  
+4. Ogni giorno, Microsoft produce uno snapshot delle informazioni approfondite incentrate sull'IT. Questo snapshot combina i dati di diagnostica di Windows con l'input per i dispositivi registrati. Questo processo si verifica nell'archiviazione temporanea, che viene usato solo da desktop Analytics. L'archiviazione temporanea è ospitata nei Data Center Microsoft nel Stati Uniti. Gli snapshot vengono isolati in base all'ID commerciale.  
 
-5. Gli snapshot vengono quindi copiati nell'area di lavoro di Analitica di Log di Azure appropriato.  
+5. Gli snapshot vengono quindi copiati nell'area di lavoro di Azure Log Analytics appropriata.  
 
-6. Desktop Analitica archivia l'input dell'utente in archiviazione di Azure Log Analitica. Queste configurazioni includono piani di distribuzione e le decisioni di asset per l'aggiornamento e importanza.  
+6. Desktop Analytics archivia l'input in Azure Log Analytics archiviazione. Queste configurazioni includono i piani di distribuzione e le decisioni relative agli asset per l'aggiornamento e l'importanza.  
 
 
 
 ## <a name="other-resources"></a>Altre risorse
 
-Per relative alla privacy le domande frequenti per Desktop Analitica, vedere [domande frequenti sulla Privacy](/sccm/desktop-analytics/faq#privacy).
+Per le domande frequenti relative alla privacy per analisi desktop, vedere [domande frequenti sulla privacy](/sccm/desktop-analytics/faq#privacy).
 
-Per altre informazioni sugli aspetti correlati sulla privacy, vedere gli articoli seguenti:
+Per ulteriori informazioni sugli aspetti correlati alla privacy, vedere gli articoli seguenti:
 
-- [Windows 10 e il GDPR per Decision Maker dell'IT](https://docs.microsoft.com/windows/privacy/gdpr-it-guidance)  
+- [Windows 10 e GDPR per i responsabili decisionali IT](https://docs.microsoft.com/windows/privacy/gdpr-it-guidance)  
 
 - [Configurare i dati di diagnostica di Windows nell'organizzazione](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization)  
 
-- [Campi ed eventi di dati di diagnostica Windows 7, Windows 8 e Windows 8.1 appraiser](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/appraiser-diagnostic-data-events-and-fields)  
+- [Eventi e campi di dati di diagnostica di Windows 7, Windows 8 e Windows 8.1 Estimator](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/appraiser-diagnostic-data-events-and-fields)  
 
-- [Windows 10, versione 1809 base livello Windows gli eventi di diagnostica e i campi](https://docs.microsoft.com/windows/privacy/basic-level-windows-diagnostic-events-and-fields-1809)  
+- [Eventi e campi di diagnostica Windows 10, versione 1809 livello Basic](https://docs.microsoft.com/windows/privacy/basic-level-windows-diagnostic-events-and-fields-1809)  
 
-- [Windows 10, versione 1709 migliorato gli eventi di dati di diagnostica e i campi usati da Desktop Analitica](https://docs.microsoft.com/windows/privacy/enhanced-diagnostic-data-windows-analytics-events-and-fields)  
+- [Eventi e campi di dati di diagnostica avanzati di Windows 10, versione 1709 usati da desktop Analytics](https://docs.microsoft.com/windows/privacy/enhanced-diagnostic-data-windows-analytics-events-and-fields)  
 
-- [Cenni preliminari sul Visualizzatore di dati di diagnostica](https://docs.microsoft.com/windows/privacy/diagnostic-data-viewer-overview)  
+- [Panoramica del Visualizzatore dati di diagnostica](https://docs.microsoft.com/windows/privacy/diagnostic-data-viewer-overview)  
 
-- [Le condizioni di licenza e documentazione](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31)  
+- [Condizioni di licenza e documentazione](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31)  
 
-- [Sicurezza e privacy nei data center di Microsoft Azure](https://azure.microsoft.com/global-infrastructure/)  
+- [Sicurezza e privacy in Microsoft Azure Data Center](https://azure.microsoft.com/global-infrastructure/)  
 
 - [Fiducia nel cloud attendibile](https://azure.microsoft.com/overview/trusted-cloud/)  
 

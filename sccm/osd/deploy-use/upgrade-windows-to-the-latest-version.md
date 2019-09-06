@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b85c29bb87bb8b05f857198b56ed8ffebf46d964
-ms.sourcegitcommit: ee0d33ef79e1de1f5057a7d7e743f500da977caa
+ms.openlocfilehash: 6d1d6ba76983041c0c6c8d13147cfae481186f23
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70150803"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380087"
 ---
 # <a name="upgrade-windows-to-the-latest-version-with-configuration-manager"></a>Aggiornare Windows all'ultima versione con Configuration Manager
 
@@ -65,7 +65,7 @@ Per ulteriori informazioni, vedere [percorsi di aggiornamento di Windows 10](htt
 - Una versione precedente di Windows Server 2016
 - Una versione precedente di Windows Server 2019
 
-Per ulteriori informazioni sui percorsi di aggiornamento supportati da Windows Server, vedere [percorsi di aggiornamento supportati](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths#upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016) da windows server 2016 e [Centro aggiornamenti Windows Server](http://aka.ms/upgradecenter).
+Per ulteriori informazioni sui percorsi di aggiornamento supportati da Windows Server, vedere [percorsi di aggiornamento supportati](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths#upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016) da windows server 2016 e [Centro aggiornamenti Windows Server](https://aka.ms/upgradecenter).
 
 
 ## <a name="BKMK_Plan"></a> Pianificazione  

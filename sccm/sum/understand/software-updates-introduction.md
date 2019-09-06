@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e95055473cc5d61b10ee06e43456f3f7dfeb428b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: ce8b194ffe0a7efccd112b8f69e60636db5e2721
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65493375"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70378661"
 ---
 # <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>Introduzione agli aggiornamenti software in System Center Configuration Manager
 
@@ -271,12 +271,12 @@ Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiorn
 > [!NOTE]  
 >  Quando si distribuisce un aggiornamento software in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta che dispone di una finestra di manutenzione configurata. Ciò consente di decidere quando abilitare o disabilitare il filtro di scrittura nonché quando riavviare il dispositivo.  
 
- L'impostazione dell'esperienza utente che consente di controllare il comportamento del filtro di scrittura è una casella di controllo denominata **Invia modifiche alla scadenza o in una finestra di manutenzione (riavvio necessario)**.  
+ L'impostazione dell'esperienza utente che consente di controllare il comportamento del filtro di scrittura è una casella di controllo denominata **Invia modifiche alla scadenza o in una finestra di manutenzione (riavvio necessario)** .  
 
  Per altre informazioni sul modo in cui Configuration Manager gestisce dispositivi Windows Embedded che usano filtri di scrittura, vedere [Planning for client deployment to Windows Embedded devices in System Center Configuration Manager](../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md) (Pianificazione della distribuzione di client in dispositivi Windows Embedded in System Center Configuration Manager).  
 
 ##  <a name="BKMK_ExtendSoftwareUpdates"></a> Estendere gli aggiornamenti software in Configuration Manager  
- Usare System Center Updates Publisher per gestire gli aggiornamenti software che non sono disponibili da Microsoft Update. Dopo aver pubblicato gli aggiornamenti software nel server di aggiornamento e averli sincronizzati in Configuration Manager, è possibile distribuire gli aggiornamenti software nei client di Configuration Manager. Per altre informazioni su System Center Updates Publisher, vedere [Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=252947).  
+ Usare System Center Updates Publisher per gestire gli aggiornamenti software che non sono disponibili da Microsoft Update. Dopo aver pubblicato gli aggiornamenti software nel server di aggiornamento e averli sincronizzati in Configuration Manager, è possibile distribuire gli aggiornamenti software nei client di Configuration Manager. Per altre informazioni su System Center Updates Publisher, vedere [Updates Publisher 2011](https://go.microsoft.com/fwlink/p/?LinkId=252947).  
 
 ## <a name="next-steps"></a>Passaggi successivi
 [Plan for software updates](../plan-design/plan-for-software-updates.md) (Pianificare gli aggiornamenti del software)

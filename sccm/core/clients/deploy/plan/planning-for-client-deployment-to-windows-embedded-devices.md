@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fd221ecb62a74e9ff3a56815fbdeacdd27ca026
-ms.sourcegitcommit: e3c1eb0b75d79c05a750d49354c851d15d5e26a3
+ms.openlocfilehash: b96e7f77dae283d31ba3d2f0955c2910ea499dd5
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67038339"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70378667"
 ---
 # <a name="planning-for-client-deployment-to-windows-embedded-devices-in-system-center-configuration-manager"></a>Pianificazione della distribuzione del client in dispositivi con Windows Embedded in System Center Configuration Manager
 
@@ -47,11 +47,11 @@ ms.locfileid: "67038339"
 
  Configuration Manager supporta la gestione dei tipi di filtri di scrittura seguenti:  
 
-- Filtro di scrittura basato su file (FBWF): per altre informazioni, vedere [Filtro di scrittura basato su file](http://go.microsoft.com/fwlink/?LinkID=204717).  
+- Filtro di scrittura basato su file (FBWF): per altre informazioni, vedere [Filtro di scrittura basato su file](https://go.microsoft.com/fwlink/?LinkID=204717).  
 
-- RAM filtro di scrittura avanzato (EWF): per altre informazioni, vedere [Filtro di scrittura avanzato](http://go.microsoft.com/fwlink/?LinkId=204718).  
+- RAM filtro di scrittura avanzato (EWF): per altre informazioni, vedere [Filtro di scrittura avanzato](https://go.microsoft.com/fwlink/?LinkId=204718).  
 
-- Filtro di scrittura unificato (UWF): per altre informazioni, vedere [Filtro di scrittura unificato](http://go.microsoft.com/fwlink/?LinkId=309236).  
+- Filtro di scrittura unificato (UWF): per altre informazioni, vedere [Filtro di scrittura unificato](https://go.microsoft.com/fwlink/?LinkId=309236).  
 
   Configuration Manager non supporta operazioni filtro di scrittura quando il dispositivo con Windows Embedded è in modalità registro RAM EWF.  
 

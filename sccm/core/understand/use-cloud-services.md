@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e58f5cffa201224516e03dd6a1e919f352c297d0
-ms.sourcegitcommit: b59e57ab4cf9f03e8beeb70588f3b9f1a6021e36
+ms.openlocfilehash: 72478590144915075ae224552b6d67f7ad8fd87c
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68662635"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70377783"
 ---
 # <a name="use-cloud-services-with-system-center-configuration-manager"></a>Usare i servizi cloud con System Center Configuration Manager
 
@@ -37,7 +37,7 @@ Anche se non è necessario eseguire il provisioning delle risorse cloud prima di
 
 -   Per informazioni sui punti di distribuzione basati su cloud, vedere [Installare punti di distribuzione basati su cloud](/sccm/core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure).
 
--   Per altre informazioni su Azure, vedere [Azure](http://go.microsoft.com/fwlink/p/?LinkId=262965) in MSDN Library.  
+-   Per altre informazioni su Azure, vedere [Azure](https://go.microsoft.com/fwlink/p/?LinkId=262965) in MSDN Library.  
 
 ### <a name="azure-virtual-machines-for-cloud-based-infrastructure"></a>Macchine virtuali di Azure (per l'infrastruttura basata su cloud)  
  Configuration Manager supporta l'uso di computer eseguiti in macchine virtuali di Azure analogamente a quando vengono eseguiti in locale all'interno della rete fisica aziendale. È possibile usare le macchine virtuali di Azure negli scenari seguenti:  
@@ -81,10 +81,10 @@ Queste funzionalità aggiuntive non richiedono una sottoscrizione di Azure. Non 
 
  Per altre informazioni, vedere i dettagli relativi ai diversi scenari di risorse basate su cloud. È anche possibile visualizzare gli argomenti seguenti per la sicurezza di Azure:  
 
--   [Azure: gestione degli account di protezione in Azure](http://go.microsoft.com/fwlink/p/?LinkId=262968)  
+-   [Azure: gestione degli account di protezione in Azure](https://go.microsoft.com/fwlink/p/?LinkId=262968)  
 
--   [Panoramica sulla protezione di Azure](http://go.microsoft.com/fwlink/p/?LinkId=262970)  
+-   [Panoramica sulla protezione di Azure](https://go.microsoft.com/fwlink/p/?LinkId=262970)  
 
--   [Superare gli incroci di protezione nella migrazione cloud](http://go.microsoft.com/fwlink/p/?LinkId=262971)  
+-   [Superare gli incroci di protezione nella migrazione cloud](https://go.microsoft.com/fwlink/p/?LinkId=262971)  
 
--   [Protezione dei dati in Azure (parte 1 di 2)](http://go.microsoft.com/fwlink/p/?LinkId=262974)  
+-   [Protezione dei dati in Azure (parte 1 di 2)](https://go.microsoft.com/fwlink/p/?LinkId=262974)  

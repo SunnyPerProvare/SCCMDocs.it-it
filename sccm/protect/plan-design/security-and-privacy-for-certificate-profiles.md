@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8c14f6a98aea8178586d99718206590496de2ba
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 75f2a232fe2ad75e8501181c74257a487f996c21
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65493856"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379966"
 ---
 # <a name="security-and-privacy-for-certificate-profiles-in-system-center-configuration-manager"></a>Sicurezza e privacy per i profili certificato in System Center Configuration Manager
 
@@ -28,7 +28,7 @@ ms.locfileid: "65493856"
 
 |Procedura di sicurezza consigliata|Altre informazioni|  
 |----------------------------|----------------------|  
-|Identificare e seguire eventuali procedure consigliate per la protezione per il servizio Registrazione dispositivi di rete, che include la configurazione del sito Web Servizio Registrazione dispositivi di rete in Internet Information Services (IIS) per richiedere SSL e ignorare certificati client.|Vedere [Network Device Enrollment Service Guidance (Informazioni aggiuntive sul servizio Registrazione dispositivi di rete)](http://go.microsoft.com/fwlink/p/?LinkId=309016) nella libreria Servizi certificati Active Directory in TechNet.|  
+|Identificare e seguire eventuali procedure consigliate per la protezione per il servizio Registrazione dispositivi di rete, che include la configurazione del sito Web Servizio Registrazione dispositivi di rete in Internet Information Services (IIS) per richiedere SSL e ignorare certificati client.|Vedere [Network Device Enrollment Service Guidance (Informazioni aggiuntive sul servizio Registrazione dispositivi di rete)](https://go.microsoft.com/fwlink/p/?LinkId=309016) nella libreria Servizi certificati Active Directory in TechNet.|  
 |Quando si configurano profili certificato SCEP, scegliere le opzioni più sicure che i dispositivi e l'infrastruttura sono in grado di supportare.|Identificare, implementare e seguire le procedure consigliate per la protezione per i dispositivi e l'infrastruttura.|  
 |Specificare manualmente l'affinità utente dispositivo invece di consentire agli utenti di identificare il dispositivo principale. Inoltre, non abilitare la configurazione basata sulle statistiche di utilizzo.|Se si fa clic sull'opzione **Consenti registrazione dei certificati solo sul dispositivo primario dell'utente** in un profilo certificato SCEP, non considerare autorevoli le informazioni raccolte dagli utenti o dal dispositivo. Se si distribuiscono profili certificato SCEP con questa configurazione e l'affinità utente dispositivo non è specificata da un utente amministratore attendibile, utenti non autorizzati potrebbero ricevere privilegi elevati e potrebbero essere concessi loro certificati per effettuare l'autenticazione.<br /><br /> **Nota:** se si abilita la configurazione basata sulle statistiche di utilizzo, queste informazioni vengono raccolte usando messaggi di stato che non sono protetti da System Center Configuration Manager. Per limitare questo rischio, utilizzare la firma SMB o IPsec tra computer client e il punto di gestione.|  
 |Non aggiungere autorizzazioni Lettura e Registrazione per utenti ai modelli di certificato, né configurare il punto di registrazione certificati per ignorare la verifica del modello di certificato.|Anche se Configuration Manager supporta il controllo aggiuntivo se si aggiungono le autorizzazioni di protezione Lettura e Registrazione per gli utenti e sebbene sia possibile configurare il punto di registrazione certificati per ignorare questo controllo quando l'autenticazione non è possibile, nessuna delle due configurazioni è una procedura consigliata per la protezione. Per altre informazioni, vedere [Pianificazione delle autorizzazioni dei modelli di certificato per i profili di certificato in System Center Configuration Manager](../../protect/plan-design/planning-for-certificate-template-permissions.md).|  

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2356547d01df346b8b5db090ea8690377c8d0dc8
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.openlocfilehash: 862505e7ea1ad1e59b0bbf7ace07bc07d326a83d
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551021"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379871"
 ---
 # <a name="create-queries-in-system-center-configuration-manager"></a>Creare query in System Center Configuration Manager
 
@@ -50,9 +50,9 @@ Questo articolo descrive come creare e importare query in System Center Configur
     > [!TIP]  
     > È possibile usare la documentazione di riferimento seguente per costruire le query WQL:  
     >   
-    > -   [WQL (SQL per WMI)](http://go.microsoft.com/fwlink/p/?LinkId=256653)  
-    > -   [Clausola WHERE](http://go.microsoft.com/fwlink/p/?LinkId=256654)  
-    > -   [Operatori WQL](http://go.microsoft.com/fwlink/p/?LinkId=256655)  
+    > -   [WQL (SQL per WMI)](https://go.microsoft.com/fwlink/p/?LinkId=256653)  
+    > -   [Clausola WHERE](https://go.microsoft.com/fwlink/p/?LinkId=256654)  
+    > -   [Operatori WQL](https://go.microsoft.com/fwlink/p/?LinkId=256655)  
 
 8.  Nella scheda **Criteri** della finestra di dialogo &lt;Nome query\> **Proprietà istruzione** specificare i criteri usati per definire i risultati della query. Ad esempio, è possibile restituire solo le risorse con un codice di sito **XYZ**. È possibile configurare più criteri per una query.  
 

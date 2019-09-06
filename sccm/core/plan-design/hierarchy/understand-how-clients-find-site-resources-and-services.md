@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e5daac58bce2e0aca97e7872ea7b896b16177b5
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: bded5760fb397f0bd2acc676a9f875235d66fae4
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68339456"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380168"
 ---
 # <a name="learn-how-clients-find-site-resources-and-services-for-system-center-configuration-manager"></a>Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager
 
@@ -63,7 +63,7 @@ Un client seleziona un punto di gestione con cui comunicare in base al relativo 
 
 È possibile usare i punti di gestione preferiti. I punti di gestione preferiti sono punti di gestione del sito assegnato di un client associati a un gruppo di limiti che il client usa per individuare i server del sistema del sito. L'associazione di un punto di gestione preferito a un gruppo di limiti come server del sistema del sito è simile al modo in cui i punti di distribuzione o i punti di migrazione stato sono associati a un gruppo di limiti. Se si abilitano i punti di gestione preferiti per la gerarchia, quando un client usa un punto di gestione dal sito assegnato, verrà effettuato un tentativo di usare un punto di gestione preferito prima di altri punti di gestione dal sito assegnato.  
 
-Per configurare l'affinità del punto di gestione, è possibile usare anche le informazioni nel blog dedicato all'[affinità del punto di gestione](http://blogs.technet.com/b/jchalfant/archive/2014/09/22/management-point-affinity-added-in-configmgr-2012-r2-cu3.aspx) su TechNet.com. L'affinità del punto di gestione esegue l'override del comportamento predefinito per i punti di gestione assegnati e consente al client di usare uno o più punti di gestione specifici.  
+Per configurare l'affinità del punto di gestione, è possibile usare anche le informazioni nel blog dedicato all'[affinità del punto di gestione](https://blogs.technet.com/b/jchalfant/archive/2014/09/22/management-point-affinity-added-in-configmgr-2012-r2-cu3.aspx) su TechNet.com. L'affinità del punto di gestione esegue l'override del comportamento predefinito per i punti di gestione assegnati e consente al client di usare uno o più punti di gestione specifici.  
 
 Ogni volta che un client deve contattare un punto di gestione, controlla l'elenco dei punti di gestione archiviato in locale in Windows Management Instrumentation (WMI). Il client crea un elenco di punti di gestione iniziale quando viene installato. Successivamente aggiorna periodicamente l'elenco con informazioni dettagliate su ogni punto di gestione nella gerarchia.  
 

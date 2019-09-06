@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b07fc7bf1c4a226456506d0131c3d6bad14b1766
-ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
+ms.openlocfilehash: e884b7c5d7ceca7fcb241a5bfef1832e66562d38
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66748221"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70378911"
 ---
 # <a name="ios-hybrid-enrollment-using-apple-configurator-with-configuration-manager"></a>Registrazione ibrida di iOS tramite Apple Configurator con Configuration Manager
 
@@ -32,7 +32,7 @@ La procedura seguente è consigliata per i dispositivi iOS dedicati, con un solo
 
 -   Numeri di serie del dispositivo. [Come ottenere un numero di serie iOS](https://support.apple.com/en-us/HT204308)  
 
--   Computer Mac con [Apple Configurator 2.0](http://go.microsoft.com/fwlink/?LinkId=518017)  
+-   Computer Mac con [Apple Configurator 2.0](https://go.microsoft.com/fwlink/?LinkId=518017)  
 
 -   Cavi USB per connettere i dispositivi al computer Mac  
 
@@ -48,7 +48,7 @@ La procedura seguente è consigliata per i dispositivi iOS dedicati, con un solo
 
     -   **Affinità utente** : specifica la modalità di registrazione dei dispositivi. Per la maggior parte degli scenari di Assistente configurazione, usare **Richiedi affinità utente**.  
 
-        -   **Richiedi affinità utente**: Il dispositivo deve essere associato a un utente durante la configurazione iniziale e potrebbe quindi essere la possibilità di accedere ai dati aziendali e alla posta elettronica come tale utente.  
+        -   **Richiedi affinità utente**: Il dispositivo deve essere associato a un utente durante la configurazione iniziale e potrebbe quindi essere autorizzato ad accedere ai dati aziendali e alla posta elettronica come tale utente.  
 
         -   **Nessuna affinità utente**: Il dispositivo non è associato a un utente. Usare questa associazione per i dispositivi che eseguono attività senza accedere ai dati utente locali. Le app che richiedono l'associazione utente non funzioneranno.
 
@@ -79,7 +79,7 @@ Per altre informazioni, vedere [Predichiarare dispositivi con numeri IMEI o di s
 
     ```  
 
-     con:  
+     con  
 
     ```  
     https://appleconfigurator2.manage.microsoft.com/MDMServiceConfig?id=  

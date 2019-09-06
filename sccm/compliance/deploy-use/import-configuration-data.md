@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 13bf43cb2eb80be6605f6c6a925c641f405732a6
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 1292e2af9a88c1e93252fe080b6b34f2d5702aa3
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130997"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70378131"
 ---
 # <a name="import-configuration-data-with-system-center-configuration-manager"></a>Importare i dati di configurazione con System Center Configuration Manager
 
@@ -30,7 +30,7 @@ Oltre a creare linee base ed elementi di configurazione nella console di System 
 
 - Dati di configurazione creati esternamente e conformi allo schema SML.  
 
-  Per un pacchetto di configurazione di esempio per la gestione della conformità per i ruoli del server del sito System Center Configuration Manager 2012, vedere la pagina di [download del pacchetto di configurazione di System Center Configuration Manager 2012](http://www.microsoft.com/en-us/download/details.aspx?id=30710&WT.mc_id=rss_alldownloads_all).  
+  Per un pacchetto di configurazione di esempio per la gestione della conformità per i ruoli del server del sito System Center Configuration Manager 2012, vedere la pagina di [download del pacchetto di configurazione di System Center Configuration Manager 2012](https://www.microsoft.com/download/details.aspx?id=30710&WT.mc_id=rss_alldownloads_all).  
 
 Quando si importa una linea di base di configurazione, il file CAB potrebbe includere anche alcuni o tutti gli elementi di configurazione a cui si fa riferimento nella linea di base. Durante il processo di importazione Configuration Manager verifica che tutti gli elementi di configurazione a cui si fa riferimento nella linea di base di configurazione siano inclusi anche nel file CAB o esistano già nel sito di Configuration Manager. Il processo di importazione ha esito negativo se si tenta di importare una linea di base di configurazione che fa riferimento a dati di configurazione che Configuration Manager non riesce a individuare.  
 

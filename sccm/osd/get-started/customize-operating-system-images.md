@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b18c8e780ac5fa43f3fdf6790c80ed6d38e02e28
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: fd7f84e097ddfbc36d3c595a28e0cb31b968ce57
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128739"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380059"
 ---
 # <a name="customize-operating-system-images-with-system-center-configuration-manager"></a>Personalizzare le immagini del sistema operativo con System Center Configuration Manager
 
@@ -96,7 +96,7 @@ Le immagini di sistema operativo in System Center Configuration Manager sono fil
     > [!IMPORTANT]  
     >  Il passaggio della sequenza attività [Prepare Windows for Capture](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture) tenta di reimpostare la password dell'amministratore locale nel computer di riferimento su un valore vuoto prima dell'esecuzione di Sysprep. Se è attivato il criterio di protezione locale **La password deve soddisfare i requisiti di complessità** , questo passaggio della sequenza attività non consentirà di reimpostare la password dell'amministratore. In questo caso, disattivare il criterio prima di eseguire la sequenza attività.  
 
-     Per altre informazioni su Sysprep, vedere la [documentazione tecnica di Utilità preparazione sistema (Sysprep)](http://go.microsoft.com/fwlink/?LinkId=280286).  
+     Per altre informazioni su Sysprep, vedere la [documentazione tecnica di Utilità preparazione sistema (Sysprep)](https://go.microsoft.com/fwlink/?LinkId=280286).  
 
 -   **Script e strumenti appropriati necessari per attenuare gli scenari di installazione**  
 

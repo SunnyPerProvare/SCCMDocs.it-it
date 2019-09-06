@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0f3e0a20874539b079541f363c6d494a738225f
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: a28b901c731d46fb19140526af6e85825ad43795
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500508"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380019"
 ---
 # <a name="endpoint-protection-client-frequently-asked-questions"></a>Domande frequenti relative al client Endpoint Protection
 
@@ -146,7 +146,7 @@ Per rimuovere facilmente e velocemente tutti gli elementi indesiderati o potenzi
 
 -   Assicurarsi che il software antivirus e antispyware, Windows Defender, usi gli aggiornamenti più recenti dalle potenziali minacce (vedere Come mantenere aggiornate le definizioni di virus e spyware). Assicurarsi inoltre di usare sempre la versione più recente di Windows Defender.  
 
--   Scaricare aggiornamenti solo da fonti attendibili. Per i sistemi operativi Windows, usare sempre [Microsoft Update](http://go.microsoft.com/fwlink/?LinkID=96304) (http://go.microsoft.com/fwlink/?LinkID=96304) e per altri prodotti software usare sempre i siti Web legittimi dell'azienda o della persona che produce l'applicazione.  
+-   Scaricare aggiornamenti solo da fonti attendibili. Per i sistemi operativi Windows, usare sempre [Microsoft Update](https://go.microsoft.com/fwlink/?LinkID=96304) (https://go.microsoft.com/fwlink/?LinkID=96304) e per altri prodotti software usare sempre i siti Web legittimi dell'azienda o della persona che produce l'applicazione.  
 
 -   Se si riceve un messaggio di posta elettronica con un allegato e non si è certi dell'origine, è opportuno eliminarlo immediatamente. Non scaricare applicazioni o file eseguibili da origini sconosciute e prestare attenzione nello scambio di file con altri utenti.  
 

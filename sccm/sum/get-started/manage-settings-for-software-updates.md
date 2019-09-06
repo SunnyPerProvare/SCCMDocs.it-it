@@ -11,12 +11,12 @@ manager: dougeby
 author: mestew
 ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b78d4212201a8ed1a08b7fecdb376cbdfdac7636
-ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
+ms.openlocfilehash: e96bf2cf8218c16a9862c5777a36aed7515a86d9
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66748213"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379921"
 ---
 #  <a name="BKMK_ManageSUSettings"></a> Gestire le impostazioni per gli aggiornamenti software  
 
@@ -41,7 +41,7 @@ Esistono impostazioni di Criteri di gruppo specifiche usate dall'agente di Windo
 Quando viene creato il punto di aggiornamento software per un sito, i client ricevono criteri computer che forniscono il nome server del punto di aggiornamento software e configurano i criteri locali **Specifica il percorso del servizio di aggiornamento Microsoft nella rete Intranet** sul computer. L'agente WUA recupera il nome server specificato nell'impostazione **Impostare il servizio di aggiornamento nella rete Intranet per il rilevamento degli aggiornamenti** e quindi si connette a questo server quando analizza la conformità degli aggiornamenti software. Quando vengono creati i criteri dominio per l'impostazione **Specifica il percorso del servizio di aggiornamento Microsoft nella rete Intranet** , questi sovrascrivono i criteri locali e l'agente WUA potrebbe connettersi a un server diverso rispetto al punto di aggiornamento software. In questo caso, il client potrebbe analizzare la conformità degli aggiornamenti software in base ai diversi prodotti, classificazioni e lingue. Pertanto, non è consigliabile configurare i criteri di Active Directory per i computer client.  
 
 ### <a name="allow-signed-content-from-intranet-microsoft-update-service-location-group-policy"></a>Criteri di gruppo Consenti contenuto firmato dal percorso del servizio di aggiornamento Microsoft nella rete Intranet  
-È necessario abilitare l'impostazione di Criteri di gruppo **Consenti contenuto firmato dal percorso del servizio di aggiornamento Microsoft nella rete Intranet** prima che l'agente WUA sui computer analizzi gli aggiornamenti software creati e pubblicati con System Center Updates Publisher. Quando l'impostazione dei criteri viene abilitata, WUA accetterà gli aggiornamenti software ricevuti tramite un percorso Intranet se gli aggiornamenti software sono firmati nell'archivio certificati **Autori attendibili** sul computer locale. Per ulteriori informazioni sulle impostazioni di Criteri di gruppo necessarie per Updates Publisher, vedere [Updates Publisher 2011 Documentation Library (Libreria della documentazione di Updates Publisher 2011)](http://go.microsoft.com/fwlink/p/?LinkId=232476).  
+È necessario abilitare l'impostazione di Criteri di gruppo **Consenti contenuto firmato dal percorso del servizio di aggiornamento Microsoft nella rete Intranet** prima che l'agente WUA sui computer analizzi gli aggiornamenti software creati e pubblicati con System Center Updates Publisher. Quando l'impostazione dei criteri viene abilitata, WUA accetterà gli aggiornamenti software ricevuti tramite un percorso Intranet se gli aggiornamenti software sono firmati nell'archivio certificati **Autori attendibili** sul computer locale. Per ulteriori informazioni sulle impostazioni di Criteri di gruppo necessarie per Updates Publisher, vedere [Updates Publisher 2011 Documentation Library (Libreria della documentazione di Updates Publisher 2011)](https://go.microsoft.com/fwlink/p/?LinkId=232476).  
 
 ### <a name="automatic-updates-configuration"></a>Configurazione di Aggiornamenti automatici  
 Aggiornamenti automatici consente di ricevere aggiornamenti della sicurezza e altri download importanti sui computer client. Aggiornamenti automatici viene configurato tramite l'impostazione di Criteri di gruppo **Configura Aggiornamenti automatici** o tramite il Pannello di controllo sul computer locale. Quando Aggiornamenti automatici viene abilitato, i computer client riceveranno le notifiche degli aggiornamenti e, in base alle impostazioni configurate, i computer client scaricheranno e installeranno gli aggiornamenti necessari. Quando Aggiornamenti automatici coesiste con gli aggiornamenti software, su ogni computer client potrebbero essere visualizzate icone di notifica e notifiche popup per lo stesso aggiornamento. Inoltre, quando è necessario un riavvio, su ogni computer client potrebbe essere visualizzata una finestra di dialogo di riavvio per lo stesso aggiornamento.  

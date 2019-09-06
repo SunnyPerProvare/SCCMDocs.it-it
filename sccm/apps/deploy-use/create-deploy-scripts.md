@@ -2,7 +2,7 @@
 title: Creare ed eseguire script
 titleSuffix: Configuration Manager
 description: Creare ed eseguire script di PowerShell in dispositivi client.
-ms.date: 06/20/2019
+ms.date: 09/04/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4d4775819efbbb33bdd46e80e857a7d1b2d47ab
-ms.sourcegitcommit: ef7800a294e5db5d751921c34f60296c1642fc1f
+ms.openlocfilehash: f2b063fe21a674fc066531b1bd970a330d02d9f9
+ms.sourcegitcommit: b28a97e22a9a56c5ce3367c750ea2bb4d50449c3
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68712479"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243684"
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire gli script di PowerShell dalla console di Configuration Manager
 
@@ -210,7 +210,7 @@ La sezione di convalida della finestra di dialogo **Proprietà dei parametri del
 
 Un'espressione regolare è una forma di programmazione compatta per controllare una stringa di caratteri rispetto a una convalida codificata. Ad esempio, si potrebbe verificare se manca un carattere alfabetico maiuscolo nel campo *FirstName* inserendo `[^A-Z]` nel campo *RegEx*.
 
-L'elaborazione delle espressioni regolari per questa finestra di dialogo è supportata da .NET Framework. Per informazioni sull'uso delle espressioni regolari, vedere [Espressioni regolari di .NET](https://docs.microsoft.com/dotnet/standard/base-types/regular-expressions). 
+L'elaborazione delle espressioni regolari per questa finestra di dialogo è supportata da .NET Framework. Per istruzioni sull'uso delle espressioni regolari, vedere espressioni [regolari di .NET](https://docs.microsoft.com/dotnet/standard/base-types/regular-expressions) e [linguaggio di espressioni regolari](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference).
 
 
 ## <a name="script-examples"></a>Esempi di script

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88a127f4dffa42c94f27727801519dfec77c855a
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 3bdf04a0c8454728f15ce26ba295584899997f92
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67677795"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70378380"
 ---
 # <a name="configure-asset-intelligence-in-system-center-configuration-manager"></a>Configurare Asset Intelligence in System Center Configuration Manager
 
@@ -140,7 +140,7 @@ Oltre al download di nuove informazioni per il catalogo di Asset Intelligence, i
 4.  Nella pagina **Importa** specificare se si intende importare un file di Microsoft Volume Licensing (MVLS) (con estensione xml o csv) o un file di resoconto delle licenze generale (con estensione csv). Per altre informazioni sulla creazione di un file di resoconto delle licenze generale, vedere [Creare un file di resoconto delle licenze generale per l'importazione](#BKMK_CreateGeneralLicenseStatement) più avanti in questo argomento.  
 
     > [!WARNING]  
-    >  Per scaricare un file MVLS in formato CSV che è possibile importare nel catalogo di Asset Intelligence, vedere [Microsoft Volume Licensing Service Center](http://go.microsoft.com/fwlink/p/?LinkId=226547). Per accedere a queste informazioni, è necessario disporre di un account registrato nel sito Web. È necessario contattare il rappresentante Microsoft per informazioni su come ottenere il file MVLS in formato XML.  
+    >  Per scaricare un file MVLS in formato CSV che è possibile importare nel catalogo di Asset Intelligence, vedere [Microsoft Volume Licensing Service Center](https://go.microsoft.com/fwlink/p/?LinkId=226547). Per accedere a queste informazioni, è necessario disporre di un account registrato nel sito Web. È necessario contattare il rappresentante Microsoft per informazioni su come ottenere il file MVLS in formato XML.  
 
 5.  Immettere il percorso UNC del file di resoconto delle licenze oppure scegliere **Sfoglia** per selezionare una cartella di rete condivisa e un file.  
 

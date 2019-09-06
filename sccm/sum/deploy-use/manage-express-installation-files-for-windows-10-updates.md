@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b8d8af88-e8ac-4deb-921b-975e2d2afd80
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 503163fda1cae9802fe4ebdceabb9fd4424a35bb
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 5a7bf171804922399f21551e9c8854883de9cf78
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500182"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379941"
 ---
 # <a name="manage-express-installation-files-for-windows-10-updates"></a>Gestire i file di installazione rapida per gli aggiornamenti di Windows 10
 
@@ -26,7 +26,7 @@ Per informazioni su come usare Configuration Manager per gestire il contenuto di
 
 
 > [!IMPORTANT]  
-> Il supporto del client del sistema operativo è disponibile in Windows 10, versione 1607, con un aggiornamento dell'agente di Windows Update. Questo aggiornamento è incluso negli aggiornamenti rilasciati in data 11 aprile 2017. Per altre informazioni su questi aggiornamenti, vedere l'[articolo del supporto tecnico 4015217](http://support.microsoft.com/kb/4015217). Gli aggiornamenti futuri sfrutteranno i file di installazione rapida per download di dimensioni più contenute. Le versioni precedenti di Windows 10 e Windows 10 versione 1607 senza questo aggiornamento non supportano i file di installazione rapida.  
+> Il supporto del client del sistema operativo è disponibile in Windows 10, versione 1607, con un aggiornamento dell'agente di Windows Update. Questo aggiornamento è incluso negli aggiornamenti rilasciati in data 11 aprile 2017. Per altre informazioni su questi aggiornamenti, vedere l'[articolo del supporto tecnico 4015217](https://support.microsoft.com/kb/4015217). Gli aggiornamenti futuri sfrutteranno i file di installazione rapida per download di dimensioni più contenute. Le versioni precedenti di Windows 10 e Windows 10 versione 1607 senza questo aggiornamento non supportano i file di installazione rapida.  
 
 
 ### <a name="enable-the-site-to-download-express-installation-files-for-windows-10-updates"></a>Abilitare il sito per il download dei file di installazione rapida per gli aggiornamenti di Windows 10

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a50dd4df66292837cd7a3667a0790c04ebddb9a
-ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
+ms.openlocfilehash: 358a69af0290cbe7359e07b165ed7f1e805e4db5
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67516014"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380345"
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-configuration-manager"></a>Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando Configuration Manager
 
@@ -47,7 +47,7 @@ Impartire un comando di **cancellazione completa** di un dispositivo per riprist
 > Nei dispositivi di proprietà dell'azienda è possibile eseguire solo una cancellazione completa.
 
 > [!NOTE]
-> La cancellazione nei dispositivi Windows 10 con versioni precedenti alla versione 1511 di meno di 4 GB di RAM potrebbe determinare la mancata risposta del dispositivo. [Altre informazioni](https://technet.microsoft.com/library/mt592024.aspx#full-wipe-disables-windows-10-devices-with-less-than-4-gb-ram).
+> La cancellazione nei dispositivi Windows 10 con versioni precedenti alla versione 1511 di meno di 4 GB di RAM potrebbe determinare la mancata risposta del dispositivo. [Altre informazioni](https://technet.microsoft.com/library/mt592024.aspx#full-wipe-disables-windows-10-devices-with-less-than-4-gb-ram)
 
 #### <a name="to-initiate-a-remote-wipe-from-the-configuration-manager-console"></a>Per avviare una cancellazione remota dalla console di Configuration Manager  
 
@@ -70,7 +70,7 @@ Eseguire una **cancellazione selettiva** per rimuovere solo i dati aziendali pre
 |App aziendali e dati associati installati usando Configuration Manager e Intune|Le app vengono disinstallate e vengono rimossi i dati dell'app aziendale.|  
 |Profili VPN e Wi-Fi|Rimosso.|  
 |Certificati|Rimossi e revocati.|  
-|Impostazioni|Rimosso, tranne per: **Consenti roaming vocale**, **Consenti dati in roaming**, e **Consenti sincronizzazione automatica durante il roaming**.|  
+|Impostazioni|Rimosso, tranne per: **Consenti**il roaming vocale, **Consenti il roaming dei dati**e **Consenti la sincronizzazione automatica durante il roaming**.|  
 |Agente di gestione|Il profilo di gestione viene rimosso.|  
 |Profili di posta elettronica|Per i profili di posta elettronica configurati da Intune, vengono rimossi l'account e l'indirizzo di posta elettronica.|  
 
@@ -164,7 +164,7 @@ I dati e le app attualmente supportati dalla cancellazione selettiva EFS sono:
 
 - Cartelle di lavoro.
 
-- File e cartelle crittografate con EFS. Per altre informazioni, vedere [Procedure ottimali per la crittografia del file system](http://support.microsoft.com/kb/223316).  
+- File e cartelle crittografate con EFS. Per altre informazioni, vedere [Procedure ottimali per la crittografia del file system](https://support.microsoft.com/kb/223316).  
 
 
 ### <a name="best-practices-for-selective-wipe"></a>Procedure consigliate per la cancellazione selettiva  
@@ -186,14 +186,14 @@ Se un utente dimentica il passcode, è possibile aiutarlo rimuovendo il passcode
 | Piattaforma                              | Reimpostazione del passcode                                                                               |
 |---------------------------------------|----------------------------------------------------------------------------------------------|
 | iOS                                   | Funzionalità supportata per cancellare il passcode da un dispositivo. Non implica la creazione di un nuovo passcode temporaneo. |
-| macOS                                 | Non supportata.                                                                               |
+| macOS                                 | Non supportati.                                                                               |
 | Android                               | Supportata nelle versioni precedenti ad Android 7.0. Crea un passcode temporaneo.                |
-| Android for Work                      | Non supportata.                                                                               |
+| Android for Work                      | Non supportati.                                                                               |
 | PC con Windows 10                        | Non supportata.                                                                               |
 | Windows 10 Mobile                     | Funzionalità supportata; esclude i dispositivo aggiunti ad Azure AD.  |
-| Windows Phone 8 e Windows Phone 8.1 | Supportata.                                                                                   |
-| Windows RT 8.1                        | Non supportata.                                                                               |
-| PC con Windows 8.1                       | Non supportata.                                                                               |
+| Windows Phone 8 e Windows Phone 8.1 | Supportato.                                                                                   |
+| Windows RT 8.1                        | Non supportati.                                                                               |
+| PC con Windows 8.1                       | Non supportati.                                                                               |
 
 > [!Note]    
 > È necessario eseguire l'operazione di reimpostazione del passcode dal sito di livello superiore nell'ambiente in uso. Ad esempio, se si usa un sito di amministrazione centrale è possibile eseguire l'azione solo in tale sito. Se si usa un sito primario autonomo è possibile eseguire l'azione solo in tale sito.
@@ -222,12 +222,12 @@ Se un utente perde il dispositivo, è possibile bloccare il dispositivo in modal
 
 |Piattaforma|Blocco remoto|  
 |--------------|-----------------|  
-|iOS|Supportata.|  
-|Android|Supportata.|  
+|iOS|Supportato.|  
+|Android|Supportato.|  
 |Windows 10|Non supportato al momento.|  
-|Windows Phone 8 e Windows Phone 8.1|Supportata.|  
+|Windows Phone 8 e Windows Phone 8.1|Supportato.|  
 |Windows RT 8.1 |Funzionalità supportata se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|  
-|Windows 8.1|Funzionalità supportata se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|  
+|Windows 8.1|Funzionalità supportata se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|  
 
 > [!Note]    
 > È necessario eseguire l'operazione di blocco remoto dal sito di livello superiore nell'ambiente in uso. Ad esempio, se si usa un sito di amministrazione centrale è possibile eseguire l'azione solo in tale sito. Se si usa un sito primario autonomo è possibile eseguire l'azione solo in tale sito.

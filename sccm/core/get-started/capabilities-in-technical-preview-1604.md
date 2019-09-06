@@ -12,12 +12,12 @@ ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f2b4faed757acb10d7919f76ec8835dd7b8095b9
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: e41114313a896403368f8b4eb3c4c1fa6f2ebb31
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128018"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379376"
 ---
 # <a name="capabilities-in-technical-preview-1604-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1604 per System Center Configuration Manager
 
@@ -28,7 +28,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
  Di seguito sono riportate le nuove funzionalità disponibili con questa versione.  
 
 ##  <a name="BKMK_WindowsVPP"></a> Gestire le app acquistate con Volume Purchase Program da Windows Store per le aziende  
- In [Windows Store per le aziende](https://www.microsoft.com/en-us/business-store) è possibile trovare e acquistare app per l'organizzazione, singolarmente o con Volume Purchase Program. Connettendo lo Store a Configuration Manager, è possibile gestire le app acquistate con Volume Purchase Program dalla console di Configuration Manager, ad esempio:  
+ In [Windows Store per le aziende](https://www.microsoft.com/business-store) è possibile trovare e acquistare app per l'organizzazione, singolarmente o con Volume Purchase Program. Connettendo lo Store a Configuration Manager, è possibile gestire le app acquistate con Volume Purchase Program dalla console di Configuration Manager, ad esempio:  
 
 -   È possibile sincronizzare l'elenco di app acquistate con Configuration Manager  
 

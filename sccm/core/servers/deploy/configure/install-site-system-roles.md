@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c93c7ead83a09bb882c5f0468d936c5188d46b2
-ms.sourcegitcommit: 18ad7686d194d8cc9136a761b8153a1ead1cdc6b
+ms.openlocfilehash: ef901e6bb9c0b28d55d8ffe08accca8f30101583
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66176930"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70377900"
 ---
 # <a name="install-site-system-roles-for-system-center-configuration-manager"></a>Installare ruoli del sistema del sito per System Center Configuration Manager
 
@@ -56,7 +56,7 @@ Prima di installare il ruolo del sistema del sito Configuration Manager controll
 7.  Completare la procedura guidata.  
 
 > [!TIP]  
->  Il cmdlet di Windows PowerShell, New-CMSiteSystemServer, esegue la stessa funzione di questa procedura. Per altre informazioni, vedere [New-CMSiteSystemServer](http://go.microsoft.com/fwlink/p/?LinkID=271414) nella documentazione di riferimento dei cmdlet di System Center Configuration Manager 2012 SP1.  
+>  Il cmdlet di Windows PowerShell, New-CMSiteSystemServer, esegue la stessa funzione di questa procedura. Per altre informazioni, vedere [New-CMSiteSystemServer](https://go.microsoft.com/fwlink/p/?LinkID=271414) nella documentazione di riferimento dei cmdlet di System Center Configuration Manager 2012 SP1.  
 
 ## <a name="to-install-site-system-roles-on-a-new-site-system-server"></a>Per installare i ruoli del sistema del sito in un nuovo server del sistema del sito  
 
@@ -78,4 +78,4 @@ Prima di installare il ruolo del sistema del sito Configuration Manager controll
 7.  Completare la procedura guidata.  
 
 > [!TIP]  
->  Il cmdlet di Windows PowerShell, New-CMSiteSystemServer, esegue la stessa funzione di questa procedura. Per altre informazioni, vedere [New-CMSiteSystemServer](http://go.microsoft.com/fwlink/p/?LinkID=271414) nella documentazione di riferimento dei cmdlet di System Center Configuration Manager 2012 SP1.  
+>  Il cmdlet di Windows PowerShell, New-CMSiteSystemServer, esegue la stessa funzione di questa procedura. Per altre informazioni, vedere [New-CMSiteSystemServer](https://go.microsoft.com/fwlink/p/?LinkID=271414) nella documentazione di riferimento dei cmdlet di System Center Configuration Manager 2012 SP1.  

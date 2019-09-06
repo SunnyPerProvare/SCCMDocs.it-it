@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7811e1ab4a323660f16b707076015d9e81bda2bb
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 7ce20ac1917640bd9762bafb37c0e22fe39375fa
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56121295"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379576"
 ---
 # <a name="set-up-windows-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la gestione di dispositivi ibridi Windows con System Center Configuration Manager e Microsoft Intune
 
@@ -60,7 +60,7 @@ Due fattori determinano in che modo è possibile semplificare la registrazione d
 Con la registrazione automatica è possibile registrare PC Windows 10 e dispositivi mobili Windows 10 aziendali o personali in Intune aggiungendo un account aziendale o dell'istituto di istruzione e accettandone la gestione. Non occorrono altre operazioni. Il dispositivo dell'utente registra e aggiunge Azure Active Directory in background. Dopo essere stato registrato, il dispositivo viene gestito con Intune.
 
 **Prerequisiti**
-- Sottoscrizione di Azure Active Directory Premium ([sottoscrizione di prova](http://go.microsoft.com/fwlink/?LinkID=816845))
+- Sottoscrizione di Azure Active Directory Premium ([sottoscrizione di prova](https://go.microsoft.com/fwlink/?LinkID=816845))
 - Sottoscrizione di Microsoft Intune
 
 
@@ -70,7 +70,7 @@ Con la registrazione automatica è possibile registrare PC Windows 10 e disposit
 
    ![Schermata del portale di Azure](../media/auto-enroll-azure-main.png)
 
-2. Selezionare **Servizi Mobility (MDM e MAM)**.
+2. Selezionare **Servizi Mobility (MDM e MAM)** .
 
    ![Schermata del portale di Azure](../media/auto-enroll-mdm.png)
 

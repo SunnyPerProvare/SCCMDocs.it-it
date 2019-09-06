@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7831b8b818f68b3094ed765eb5e69441ce18d0f6
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: e1d5954527fd644b9dbe0ba4aee88170028d511b
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68337899"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379819"
 ---
 # <a name="use-the-hotfix-installer-to-install-updates-for-system-center-configuration-manager"></a>Usare il programma di installazione di hotfix per installare gli aggiornamenti per System Center Configuration Manager
 
@@ -208,7 +208,7 @@ Il catalogo per Updates Publisher, **SCUPCatalog.cab**, è disponibile nel perco
 > [!IMPORTANT]  
 > Poiché viene creato utilizzando i percorsi specifici per il server del sito in cui viene installato il pacchetto di aggiornamento, il file SCUPCatalog.cab non può essere utilizzato in altri server del sito.  
 
-Al termine della procedura guidata è possibile importare il catalogo in Updates Publisher e usare gli aggiornamenti software di Configuration Manager per distribuire gli aggiornamenti. Per informazioni su Updates Publisher, vedere [Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkID=83449) nella libreria TechNet per System Center 2012.  
+Al termine della procedura guidata è possibile importare il catalogo in Updates Publisher e usare gli aggiornamenti software di Configuration Manager per distribuire gli aggiornamenti. Per informazioni su Updates Publisher, vedere [Updates Publisher 2011](https://go.microsoft.com/fwlink/p/?LinkID=83449) nella libreria TechNet per System Center 2012.  
 
 Usare la procedura seguente per importare il file SCUPCatalog.cab in Updates Publisher e pubblicare gli aggiornamenti.  
 

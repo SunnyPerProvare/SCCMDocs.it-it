@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f830100bd2d227df0206c40071711d9c7888f88
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 26933c878a7a57b40ade404b8ef205c18a01f7f6
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67677479"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70378003"
 ---
 # <a name="capabilities-in-technical-preview-1703-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1703 per System Center Configuration Manager
 
@@ -139,7 +139,7 @@ Questa versione introduce la possibilità di espandere e comprimere i gruppi di 
 
 
 ## <a name="client-settings-to-configure-windows-analytics-for-upgrade-readiness"></a>Impostazioni client per configurare Windows Analytics per Upgrade Readiness
-A partire da questa versione, è possibile usare le impostazioni client dei dispositivi per semplificare la configurazione della telemetria di Windows necessaria per usare soluzioni [Windows Analytics](https://www.microsoft.com/en-us/WindowsForBusiness/windows-analytics) come [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics) con Configuration Manager. Configuration Manager è in grado di recuperare da Windows Analytics dati che possono fornire informazioni utili sullo stato corrente dell'ambiente in base ai dati di telemetria di Windows riportati dai computer client. I dati di telemetria di Windows vengono inoltrati dal computer client al servizio di telemetria di Windows. I dati rilevanti vengono quindi trasferiti alle soluzioni Windows Analytics ospitate in una delle aree di lavoro OMS dell'organizzazione. Upgrade Readiness è una soluzione Windows Analytics che consente di definire le priorità per prendere decisioni oculate in merito agli aggiornamenti di Windows per i dispositivi gestiti.
+A partire da questa versione, è possibile usare le impostazioni client dei dispositivi per semplificare la configurazione della telemetria di Windows necessaria per usare soluzioni [Windows Analytics](https://www.microsoft.com/WindowsForBusiness/windows-analytics) come [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics) con Configuration Manager. Configuration Manager è in grado di recuperare da Windows Analytics dati che possono fornire informazioni utili sullo stato corrente dell'ambiente in base ai dati di telemetria di Windows riportati dai computer client. I dati di telemetria di Windows vengono inoltrati dal computer client al servizio di telemetria di Windows. I dati rilevanti vengono quindi trasferiti alle soluzioni Windows Analytics ospitate in una delle aree di lavoro OMS dell'organizzazione. Upgrade Readiness è una soluzione Windows Analytics che consente di definire le priorità per prendere decisioni oculate in merito agli aggiornamenti di Windows per i dispositivi gestiti.
 
 Per informazioni sulle impostazioni di telemetria di Windows, vedere [Configurare la telemetria di Windows nell'organizzazione](https://technet.microsoft.com/itpro/windows/manage/configure-windows-telemetry-in-your-organization).
 

@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b586fb4eded2143e42887236d1c52b0a8bae275
-ms.sourcegitcommit: de3c86077bbf91b793e94e1f60814df18da11bab
+ms.openlocfilehash: 107eb6bfa7f373a0ad13dc687fd373dfcae22d2d
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67726239"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379364"
 ---
 # <a name="set-up-your-system-center-configuration-manager-lab"></a>Configurare un ambiente lab per System Center Configuration Manager
 
@@ -35,7 +35,7 @@ Le linee guida disponibili in questo argomento consentono di configurare un ambi
 
 -   **Nell'ambiente lab viene usato SQL Server 2012 SP2** per il database del sito.  
 
-     È possibile scaricare una versione di valutazione di SQL Server 2012 dall'[Area download Microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=29066).  
+     È possibile scaricare una versione di valutazione di SQL Server 2012 dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=29066).  
 
      SQL Server ha requisiti in merito alle [versioni supportate di SQL Server](../../core/plan-design/configs/support-for-sql-server-versions.md#bkmk_SQLVersions) che devono essere soddisfatti per l'uso con System Center Configuration Manager.  
 
@@ -194,7 +194,7 @@ Nelle procedure successive sono elencati gli altri passaggi necessari per consen
 
 9. Fare clic su **Installa** e verificare che l'installazione sia stata completata correttamente nel riquadro **Notifiche** di **Server Manager**.  
 
-10. Al termine dell'installazione di base di .NET, passare all' [Area download Microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=42643) per ottenere il programma di installazione Web per .NET Framework 4.5.2. Fare clic sul pulsante **Scarica** e quindi **eseguire** il programma di installazione. Verranno automaticamente rilevati e installati i componenti necessari nella lingua selezionata.  
+10. Al termine dell'installazione di base di .NET, passare all' [Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=42643) per ottenere il programma di installazione Web per .NET Framework 4.5.2. Fare clic sul pulsante **Scarica** e quindi **eseguire** il programma di installazione. Verranno automaticamente rilevati e installati i componenti necessari nella lingua selezionata.  
 
 Per altre informazioni, vedere gli articoli seguenti relativi alla necessità di tali versioni di .NET Framework:  
 

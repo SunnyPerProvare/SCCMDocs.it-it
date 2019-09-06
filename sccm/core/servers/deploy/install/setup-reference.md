@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f602bc42d007fa5780f4a8bc3971aa0ad41abfb9
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: f6c8dd4589cd9f1afedc54a3fb45342f6e566b98
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501303"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379886"
 ---
 # <a name="reference-for-system-center-configuration-manager-setup"></a>Informazioni di riferimento per l'installazione di System Center Configuration Manager
 
@@ -47,7 +47,7 @@ Prima di iniziare l'installazione di un nuovo sito, verificare che il server del
 
 Per scaricare i client per la versione di Configuration Manager in uso, usare i collegamenti seguenti:  
 
--   Vedere [Microsoft System Center Configuration Manager - Client per altri sistemi operativi](http://www.microsoft.com/download/details.aspx?id=47719)  
+-   Vedere [Microsoft System Center Configuration Manager - Client per altri sistemi operativi](https://www.microsoft.com/download/details.aspx?id=47719)  
 
 ##  <a name="bkmk_usage"></a> Impostazioni e livelli per i dati di utilizzo  
 Quando si installa il primo sito di System Center Configuration Manager, nel server del sito viene installato e configurato automaticamente un nuovo ruolo del sistema del sito, ovvero il **punto di connessione del servizio**, con le impostazioni predefinite seguenti:  
@@ -72,4 +72,4 @@ La raccolta dati è articolata nei tre livelli seguenti:
 
 Per altre informazioni, tra cui la divulgazione dei dettagli raccolti da ogni livello, vedere [Dati di diagnostica e di utilizzo per System Center Configuration Manager](../../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md).  
 
-Per visualizzare l'Informativa sulla privacy di System Center Configuration Manager, visitare [http://go.microsoft.com/fwlink/?LinkID=626527](http://go.microsoft.com/fwlink/?LinkID=626527).
+Per visualizzare l'Informativa sulla privacy di System Center Configuration Manager, visitare [https://go.microsoft.com/fwlink/?LinkID=626527](https://go.microsoft.com/fwlink/?LinkID=626527).

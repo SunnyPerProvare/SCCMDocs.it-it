@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5499fae986dcd266e0b2a31d2619aa79146f8981
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 98b06429296927ade2dd738fb8df5356668dd89b
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67676016"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70377780"
 ---
 # <a name="supported-configurations-for-the-long-term-servicing-branch-of-system-center-configuration-manager"></a>Configurazioni supportate per Long-Term Servicing Branch di System Center Configuration Manager
 
@@ -26,7 +26,7 @@ Questo argomento illustra i sistemi operativi e le dipendenze dei prodotti suppo
 Se non specificato diversamente in questo o negli argomenti specifici per LTSB, le stesse configurazioni e limitazioni che si applicano alla versione 1606 Current Branch riguardano anche LTSB.  Quando si verificano conflitti, usare le informazioni pertinenti all'edizione in uso. In genere, LTSB è più limitato rispetto a Current Branch.
 
 ## <a name="general-statement-of-support"></a>Descrizione generale del supporto
-I prodotti e tecnologie seguenti sono supportati da questo ramo di Configuration Manager. Il loro inserimento in questo contesto, tuttavia, non implica un'estensione del normale ciclo di vita del supporto per un singolo prodotto o versione. I prodotti che non rientrano nel ciclo di vita del supporto non sono supportati per l'uso con Configuration Manager. Per altre informazioni sui cicli di vita del supporto Microsoft, visitare il sito Web [Criteri relativi al ciclo di vita Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=208270) e leggere le [Domande frequenti](http://go.microsoft.com/fwlink/p/?LinkId=31976).
+I prodotti e tecnologie seguenti sono supportati da questo ramo di Configuration Manager. Il loro inserimento in questo contesto, tuttavia, non implica un'estensione del normale ciclo di vita del supporto per un singolo prodotto o versione. I prodotti che non rientrano nel ciclo di vita del supporto non sono supportati per l'uso con Configuration Manager. Per altre informazioni sui cicli di vita del supporto Microsoft, visitare il sito Web [Criteri relativi al ciclo di vita Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=208270) e leggere le [Domande frequenti](https://go.microsoft.com/fwlink/p/?LinkId=31976).
 
 I prodotti e le versioni di prodotto non elencati negli argomenti seguenti non sono supportati a meno che non siano annunciati nel blog [Enterprise Mobility and Security Blog](https://blogs.technet.microsoft.com/enterprisemobility/).
 
@@ -143,7 +143,7 @@ Le sezioni seguenti identificano i sistemi operativi client che è possibile ges
 ### <a name="mac-computers"></a>Computer Mac  
  È possibile usare LTSB per gestire i computer Mac OS X con il client di Configuration Manager per Mac.
 
-Il pacchetto di installazione del client per Mac non viene fornito con i supporti di Configuration Manager. È possibile scaricarlo come parte del download dei Client per sistemi operativi aggiuntivi nell'[Area download Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184).  
+Il pacchetto di installazione del client per Mac non viene fornito con i supporti di Configuration Manager. È possibile scaricarlo come parte del download dei Client per sistemi operativi aggiuntivi nell'[Area download Microsoft](https://go.microsoft.com/fwlink/?LinkID=525184).  
 
 Il supporto per i sistemi operativi Mac è limitato a quelli elencati in questa sezione. Il supporto non include sistemi operativi aggiuntivi che potrebbero essere supportati da un aggiornamento futuro a pacchetti di installazione client Mac per Current Branch.
 
@@ -157,7 +157,7 @@ Per altre informazioni, vedere [How to deploy clients to Macs in System Center C
 ## <a name="linux-and-unix-servers"></a>Server Linux e UNIX
 È possibile usare LTSB per gestire i server Linux e UNIX con client di Configuration Manager per Linux e UNIX.
 
-I pacchetti di installazione del client per Linux e UNIX non sono inclusi con i supporti di Configuration Manager. È possibile scaricarli come parte del download dei Client per sistemi operativi aggiuntivi nell'[Area download Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184). Oltre ai pacchetti di installazione client, il download del client include lo script di installazione che gestisce l'installazione del client in ogni computer.
+I pacchetti di installazione del client per Linux e UNIX non sono inclusi con i supporti di Configuration Manager. È possibile scaricarli come parte del download dei Client per sistemi operativi aggiuntivi nell'[Area download Microsoft](https://go.microsoft.com/fwlink/?LinkID=525184). Oltre ai pacchetti di installazione client, il download del client include lo script di installazione che gestisce l'installazione del client in ogni computer.
 
 Il supporto per i sistemi operativi Linux e UNIX è limitato a quelli elencati in questa sezione. Il supporto non include sistemi operativi aggiuntivi che potrebbero essere supportati da un aggiornamento futuro a pacchetti client Linux e UNIX per Current Branch.
 

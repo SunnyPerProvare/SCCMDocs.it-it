@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d71ea7cf51d2657cea59ae21f7aa120fe11d191c
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 9b42e8f06cfc5dffb04854f2296837f921eb86c5
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65494554"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380260"
 ---
 # <a name="create-and-deploy-windows-firewall-policies-for-endpoint-protection-in-system-center-configuration-manager"></a>Creare e distribuire criteri di Windows Firewall per Endpoint Protection in System Center Configuration Manager
 
@@ -41,7 +41,7 @@ I criteri di Windows Firewall per Endpoint Protection in System Center Configura
 5.  Nella pagina **Impostazioni profilo** della procedura guidata configurare le impostazioni seguenti per ogni profilo di connessione remota:  
 
     > [!IMPORTANT]  
-    >  Se si vogliono distribuire i criteri di Windows Firewall in computer che eseguono Windows Server 2008 e Windows Vista Service Pack 1, è necessario prima di tutto installare l' [hotfix KB971800](http://go.microsoft.com/fwlink/p/?LinkId=231239) in tali computer.  
+    >  Se si vogliono distribuire i criteri di Windows Firewall in computer che eseguono Windows Server 2008 e Windows Vista Service Pack 1, è necessario prima di tutto installare l' [hotfix KB971800](https://go.microsoft.com/fwlink/p/?LinkId=231239) in tali computer.  
 
     > [!NOTE]  
     >  Per altre informazioni sui profili di rete, vedere la documentazione di Windows.  

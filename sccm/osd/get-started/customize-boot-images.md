@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08156819af349af0f052cf2b58e8b4a44ef7b74b
-ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
+ms.openlocfilehash: dad3906732a237cad94ae94f9974d94fd72292c2
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67516205"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380316"
 ---
 # <a name="customize-boot-images-with-system-center-configuration-manager"></a>Personalizzare le immagini d'avvio con System Center Configuration Manager
 
@@ -38,7 +38,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
    Windows PE 3.1<sup>1</sup> e Windows PE 5  
 
-   <sup>1</sup> È possibile aggiungere un'immagine d'avvio a Configuration Manager solo se è basata su Windows PE 3.1. Installare il supplemento Windows AIK per Windows 7 SP1 per aggiornare Windows AIK per Windows 7 (basato su Windows PE 3) con il supplemento Windows AIK per Windows 7 SP1 (basato su Windows PE 3.1). È possibile scaricare il supplemento Windows AIK per Windows 7 SP1 dall' [Area download Microsoft](http://www.microsoft.com/download/details.aspx?id=5188).  
+   <sup>1</sup> È possibile aggiungere un'immagine d'avvio a Configuration Manager solo se è basata su Windows PE 3.1. Installare il supplemento Windows AIK per Windows 7 SP1 per aggiornare Windows AIK per Windows 7 (basato su Windows PE 3) con il supplemento Windows AIK per Windows 7 SP1 (basato su Windows PE 3.1). È possibile scaricare il supplemento Windows AIK per Windows 7 SP1 dall' [Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=5188).  
 
    Ad esempio, se si ha Configuration Manager, è possibile personalizzare le immagini d'avvio da Windows ADK per Windows 10 (basato su Windows PE 10) dalla console di Configuration Manager. Tuttavia, anche se le immagini di avvio basate su Windows PE 5 sono supportate, è necessario personalizzarle da un computer diverso e usare la versione di Gestione e manutenzione immagini distribuzione installata con Windows AIK per Windows 8. È quindi possibile aggiungere l'immagine d'avvio alla console di Configuration Manager.  
 
@@ -66,7 +66,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
 1. Installare Windows ADK in un computer che non ha un'altra versione di Windows AIK o Windows ADK né componenti di Configuration Manager installati.  
 
-2. Scaricare Windows ADK per Windows 8.1 dall' [Area download Microsoft](http://www.microsoft.com/download/details.aspx?id=39982).  
+2. Scaricare Windows ADK per Windows 8.1 dall' [Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=39982).  
 
 3. Copiare l'immagine d'avvio (wimpe.wim) dalla cartella di installazione di Windows ADK (ad esempio, <*Percorso installazione*>\Windows Kits\\<*versione*>\Assessment and Deployment Kit\Windows Preinstallation Environment\\<*x86 or amd64*>\\<*locale*>) in una cartella di destinazione nel computer da cui si personalizzerà l'immagine d'avvio. Questa procedura usa C:\WinPEWAIK come nome della cartella di destinazione.  
 
@@ -186,9 +186,9 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
 #### <a name="to-customize-a-boot-image-that-uses-windows-pe-31"></a>Personalizzare un'immagine di avvio che usa Windows PE 3.1  
 
-1. Installare Windows AIK in un computer che non ha un'altra versione di Windows AIK o Windows ADK né componenti di Configuration Manager installati. Scaricare Windows AIK dall' [Area download Microsoft](http://www.microsoft.com/download/details.aspx?id=5753).  
+1. Installare Windows AIK in un computer che non ha un'altra versione di Windows AIK o Windows ADK né componenti di Configuration Manager installati. Scaricare Windows AIK dall' [Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=5753).  
 
-2. Installare Windows AIK Supplement per Windows 7 con SP1 nel computer dal passaggio 1. Scaricare Windows AIK per Windows 7 SP1 dall' [Area download Microsoft](http://www.microsoft.com/download/details.aspx?id=5188).  
+2. Installare Windows AIK Supplement per Windows 7 con SP1 nel computer dal passaggio 1. Scaricare Windows AIK per Windows 7 SP1 dall' [Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=5188).  
 
 3. Copiare l'immagine di avvio (wimpe.wim) dalla cartella di installazione Windows AIK (ad esempio *PercorsoInstallazione*>\Windows AIK\Tools\PETools\amd64\\) in una cartella nel computer da cui si personalizzerà l'immagine di avvio. Questa procedura usa C:\WinPEWAIK come nome della cartella.  
 

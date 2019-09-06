@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4ecf757a35556d4b810df47ca50a6c7bac59467
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 6c0880b7ba84ecf2e99c2b0e0e791b1c56802378
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68535646"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70378173"
 ---
 # <a name="plan-for-internet-based-client-management-in-system-center-configuration-manager"></a>Pianificare la gestione client basata su Internet in System Center Configuration Manager
 
@@ -200,4 +200,4 @@ La gestione client basata su Internet consente di gestire i client di System Cen
 
     Per informazioni sulla configurazione richiesta per supportare tali requisiti, consultare la documentazione sul server proxy o firewall.  
 
-    Per i requisiti di comunicazione simili richiesti quando si usa il punto di aggiornamento software per le connessioni client da Internet, vedere la documentazione per Windows Server Update Services (WSUS). Ad esempio, per WSUS su Windows Server 2003, vedere [Appendice D: Impostazioni di protezione](http://go.microsoft.com/fwlink/p/?LinkId=143368), l'appendice della distribuzione per le impostazioni di protezione.
+    Per i requisiti di comunicazione simili richiesti quando si usa il punto di aggiornamento software per le connessioni client da Internet, vedere la documentazione per Windows Server Update Services (WSUS). Ad esempio, per WSUS su Windows Server 2003, vedere [Appendice D: Impostazioni di protezione](https://go.microsoft.com/fwlink/p/?LinkId=143368), l'appendice della distribuzione per le impostazioni di protezione.

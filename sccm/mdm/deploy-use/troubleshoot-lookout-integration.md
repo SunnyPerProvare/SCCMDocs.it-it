@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9066983e631e1444cccb7b8c686c5b31e6fcf096
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.openlocfilehash: 18edb5a18baa7c009638580d9b338d297fb42e76
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551459"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380375"
 ---
 # <a name="troubleshoot-lookout-integration-with-intune"></a>Risolvere i problemi di integrazione di Lookout con Intune
 
@@ -31,7 +31,7 @@ Lookout MTP consente l'accesso solo agli utenti di un gruppo di Azure AD configu
 È possibile contattare il supporto tecnico di Lookout con uno dei metodi seguenti:
 
 * Posta elettronica: enterprisesupport@lookout.com
-* Accedere alla [console di MTP](http://aad.lookout.com) e passare al modulo **Support** (Supporto).
+* Accedere alla [console di MTP](https://aad.lookout.com) e passare al modulo **Support** (Supporto).
 * Passare a: https://enterprise.support.lookout.com/hc/requests e inoltrare una richiesta di supporto.
 
 ### <a name="unable-to-sign-in"></a>L'accesso non è riuscito

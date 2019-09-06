@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c0975c2b8dcf945464273930073ebf370bd4c32
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: acafe2aeefc267446042b12f06763fd0f1737cfb
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340166"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70377837"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Domande frequenti relative ai rami e alle licenze di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch), System Center Configuration Manager (Long-Term Servicing Branch)*
 
-Queste domande frequenti includono domande comuni sulle licenze in relazione alle versioni Current Branch e Long-Term Servicing Branch (LTSB) di Configuration Manager, disponibili tramite programmi Microsoft Volume Licensing. Questo articolo ha finalità puramente informative e non sostituisce la documentazione relativa alla gestione delle licenze di System Center Configuration Manager. Per altre informazioni, vedere la licenza del prodotto per [System Center 2016](https://www.microsoft.com/en-us/licensing/product-licensing/system-center-2016.aspx)<!-- this link doesn't work without some language code --> e le [condizioni di licenza del prodotto ](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=53). I termini per i prodotti descrivono le condizioni per l'utilizzo di tutti i prodotti Microsoft nell'ambito dei programmi per i contratti multilicenza.
+Queste domande frequenti includono domande comuni sulle licenze in relazione alle versioni Current Branch e Long-Term Servicing Branch (LTSB) di Configuration Manager, disponibili tramite programmi Microsoft Volume Licensing. Questo articolo ha finalità puramente informative e non sostituisce la documentazione relativa alla gestione delle licenze di System Center Configuration Manager. Per altre informazioni, vedere la licenza del prodotto per [System Center 2016](https://www.microsoft.com/licensing/product-licensing/system-center-2016.aspx)<!-- this link doesn't work without some language code --> e le [condizioni di licenza del prodotto ](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=53). I termini per i prodotti descrivono le condizioni per l'utilizzo di tutti i prodotti Microsoft nell'ambito dei programmi per i contratti multilicenza.
 
 Per altre informazioni sulle funzionalità di Configuration Manager, vedere la [pagina del prodotto](https://www.microsoft.com/cloud-platform/system-center-configuration-manager).
 
@@ -44,7 +44,7 @@ LTSB è una build pronta per la produzione di Configuration Manager. È destinat
 
 - **Software Assurance (SA)** : i clienti devono disporre di sottoscrizione SA attiva per licenze di Configuration Manager o di diritti di sottoscrizione equivalenti per poter installare e usare l'opzione Current Branch di Configuration Manager.    
 
-  - Benché la sottoscrizione SA sia facoltativa per alcuni prodotti Microsoft, l'unico modo per ottenere i diritti di utilizzo di Configuration Manager Current Branch è con SA *o con diritti di sottoscrizione equivalenti*. Per altre informazioni, vedere le [domande frequenti su Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/FAQ-Software-Assurance.aspx).<!--this link doesn't work without some language code-->
+  - Benché la sottoscrizione SA sia facoltativa per alcuni prodotti Microsoft, l'unico modo per ottenere i diritti di utilizzo di Configuration Manager Current Branch è con SA *o con diritti di sottoscrizione equivalenti*. Per altre informazioni, vedere le [domande frequenti su Software Assurance](https://www.microsoft.com/licensing/licensing-programs/FAQ-Software-Assurance.aspx).<!--this link doesn't work without some language code-->
 
 - **Licenza Microsoft e Software Assurance (L&SA)** : i clienti che acquistano nuove licenze per Configuration Manager devono acquisire una sottoscrizione L&SA (la copertura Licenza e Software Assurance).   
 
@@ -52,12 +52,12 @@ LTSB è una build pronta per la produzione di Configuration Manager. È destinat
 
   - Se la sottoscrizione SA scade e si possiede ancora una licenza per Configuration Manager, non è più possibile usare Current Branch. Per altre informazioni, vedere la domanda frequente [Che cosa ricevo se la mia copertura SA scade e ho una L&SA?](#bkmk_sa-expires)
 
-Per altre informazioni sulle offerte di licenze, vedere [Modalità di acquisto](https://www.microsoft.com/Licensing/licensing-programs/licensing-programs)<!--this link doesn't work without some language code--> e le [condizioni di licenza del prodotto](http://www.microsoftvolumelicensing.com/ProductResults.aspx?doc=Product%20Terms,OST&fid=64).  
+Per altre informazioni sulle offerte di licenze, vedere [Modalità di acquisto](https://www.microsoft.com/Licensing/licensing-programs/licensing-programs)<!--this link doesn't work without some language code--> e le [condizioni di licenza del prodotto](https://www.microsoftvolumelicensing.com/ProductResults.aspx?doc=Product%20Terms,OST&fid=64).  
 
 
 ### <a name="bkmk_equiv-sub"></a> Ho letto il termine "sottoscrizione equivalente". A cosa si riferisce?   
 
-Le sottoscrizioni equivalenti si riferiscono a programmi come [Enterprise Mobility + Security](http://www.microsoftvolumelicensing.com/ProductResults.aspx?doc=Product%20Terms,OST&fid=51) (EMS) o [Microsoft 365 Enterprise](https://www.microsoft.com/microsoft-365/enterprise). Esistono anche altri programmi, ma questi sono i più comuni. Nei termini per i contratti multilicenza Microsoft questi programmi sono denominati licenze equivalenti a licenze di gestione.
+Le sottoscrizioni equivalenti si riferiscono a programmi come [Enterprise Mobility + Security](https://www.microsoftvolumelicensing.com/ProductResults.aspx?doc=Product%20Terms,OST&fid=51) (EMS) o [Microsoft 365 Enterprise](https://www.microsoft.com/microsoft-365/enterprise). Esistono anche altri programmi, ma questi sono i più comuni. Nei termini per i contratti multilicenza Microsoft questi programmi sono denominati licenze equivalenti a licenze di gestione.
 
 
 ### <a name="bkmk_ems-expires"></a> Possiedo Enterprise Mobility + Security ed è scaduto, cosa devo fare?  

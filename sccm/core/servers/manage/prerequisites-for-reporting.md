@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 612056861b896d8c7c271e60e0bb6b78fcbd106e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 226a2632f8aa827975a764f0d22aea0a05ec6d96
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123264"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379759"
 ---
 # <a name="prerequisites-for-reporting-in-system-center-configuration-manager"></a>Prerequisiti per la creazione di report in System Center Configuration Manager
 
@@ -29,7 +29,7 @@ La creazione di report in System Center Configuration Manager ha dipendenze este
 
 |Prerequisito|Altre informazioni|  
 |------------------|----------------------|  
-|SQL Server Reporting Services|Prima di poter usare la creazione di report in Configuration Manager, è necessario installare e configurare SQL Server Reporting Services.<br /><br /> Per informazioni sulla pianificazione e la distribuzione di Reporting Services nell'ambiente, vedere la sezione [Reporting Services](http://go.microsoft.com/fwlink/p/?LinkId=212032) nella documentazione online di SQL Server 2008.|  
+|SQL Server Reporting Services|Prima di poter usare la creazione di report in Configuration Manager, è necessario installare e configurare SQL Server Reporting Services.<br /><br /> Per informazioni sulla pianificazione e la distribuzione di Reporting Services nell'ambiente, vedere la sezione [Reporting Services](https://go.microsoft.com/fwlink/p/?LinkId=212032) nella documentazione online di SQL Server 2008.|  
 |Dipendenze del ruolo del sistema del sito per computer che eseguono il punto di Reporting Services.|[Supported configurations for System Center Configuration Manager](../../../core/plan-design/configs/supported-configurations.md) (Configurazioni supportate per System Center Configuration Manager)|  
 
 ## <a name="dependencies-internal-to-configuration-manager"></a>Dipendenze interne a Configuration Manager  

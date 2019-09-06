@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4598b89429ec3a9bd3bed31f57a6b681f88063cf
-ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
+ms.openlocfilehash: 361676d51c83e298ab2e0e57fcc4cfad2d0b2906
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67515817"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70378048"
 ---
 # <a name="deploy-app-v-virtual-applications-with-system-center-configuration-manager"></a>Distribuire applicazioni virtuali App-V con System Center Configuration Manager
 
@@ -59,7 +59,7 @@ Oltre agli altri requisiti e alle procedure di System Center Configuration Manag
 
 -   **App-V 4.6:** per usare le applicazioni virtuali in Configuration Manager, nei computer client deve essere installato il client App-V 4.6 SP1, App-V 4.6 SP2 o App-V 4.6 SP3.  
 
-     Per poter distribuire correttamente le applicazioni virtuali, è inoltre necessario aggiornare il client App-V 4.6 SP1 con l'hotfix descritto nell'articolo [2645225](http://go.microsoft.com/fwlink/p/?LinkId=237322) della Knowledge Base.  
+     Per poter distribuire correttamente le applicazioni virtuali, è inoltre necessario aggiornare il client App-V 4.6 SP1 con l'hotfix descritto nell'articolo [2645225](https://go.microsoft.com/fwlink/p/?LinkId=237322) della Knowledge Base.  
 
 -   **App-V 5, App-V 5.0 SP1, App-V 5.0 SP2, App-V 5.0 SP3 e App-V 5.1:** per App-V 5.0 SP2 è necessario installare il [pacchetto hotfix 5](https://support.microsoft.com/en-us/kb/2963211) oppure usare App-V 5.0 SP3.  
 -   **App-V 5.2**: questa versione è inclusa in Windows 10 Education (1607 e versioni successive), Windows 10 Enterprise (1607 e versioni successive) e Windows Server 2016.

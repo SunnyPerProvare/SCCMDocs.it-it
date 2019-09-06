@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 376d35ae0eaca282b9634e2c3eeb50b9c814f270
-ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
+ms.openlocfilehash: 2ec958701b81c70677f65815d4fa053004c09c2b
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66748004"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70378085"
 ---
 # <a name="learn-more-about-powershell-script-security"></a>Informazioni sulla sicurezza degli script PowerShell
 
@@ -67,7 +67,7 @@ Il passaggio dei parametri garantisce flessibilità agli script e consente di ri
 
 ## <a name="environment-recommendations"></a>Consigli relativi all'ambiente
 Consigli generali per gli amministratori di PowerShell.
-1. Distribuire la versione più recente di PowerShell, ad esempio la versione 5 o successiva, inclusa in Windows 10. In alternativa, è possibile distribuire [Windows Management Framework ](https://www.microsoft.com/en-us/download/details.aspx?id=54616), disponibile per le versioni precedenti, compresi Windows 7 e Windows Server 2008 R2. 
+1. Distribuire la versione più recente di PowerShell, ad esempio la versione 5 o successiva, inclusa in Windows 10. In alternativa, è possibile distribuire [Windows Management Framework ](https://www.microsoft.com/download/details.aspx?id=54616), disponibile per le versioni precedenti, compresi Windows 7 e Windows Server 2008 R2. 
 2. Abilitare e raccogliere log PowerShell, includendo facoltativamente la registrazione eventi protetti. Incorporare questi log nelle firme e nei flussi di lavoro di ricerca e di risposta a eventi imprevisti.
 3. Implementare Just Enough Administration in sistemi importanti per eliminare o ridurre l'accesso senza vincoli come amministratore a questi sistemi.
 4. Distribuire i criteri di Device Guard/Controllo di applicazioni per consentire alle attività amministrative pre-approvate di usare tutte le funzionalità del linguaggio PowerShell, limitando al tempo stesso l'uso interattivo e non approvato a un sottoinsieme limitato del linguaggio PowerShell.

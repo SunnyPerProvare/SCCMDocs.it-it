@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d456bfa1bf177a721a967a57b51cf513ed5c08c3
-ms.sourcegitcommit: 6b5a003256305c1f0cb605e52aeaaf19c23af5a9
+ms.openlocfilehash: b8e8273cfd3e99f9085baf6db0590b08c6e0623a
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68956415"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379846"
 ---
 # <a name="upgrade-on-premises-infrastructure-that-supports-configuration-manager"></a>Aggiornare l'infrastruttura locale che supporta Configuration Manager
 
@@ -51,7 +51,7 @@ Configuration Manager supporta l'aggiornamento sul posto del sistema operativo s
 
 Per aggiornare un server, eseguire la procedura di aggiornamento indicata dal sistema operativo interessato dall'aggiornamento. Vedere gli articoli seguenti:  
 
-- [Windows Server Upgrade Center](http://aka.ms/upgradecenter)  
+- [Windows Server Upgrade Center](https://aka.ms/upgradecenter)  
 
 - [Opzioni di aggiornamento e conversione per Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths)  
 

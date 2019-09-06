@@ -11,12 +11,12 @@ ms.author: mstewart
 description: Informazioni su come configurare Windows Server Update Services per l'approvazione automatica degli aggiornamenti delle definizioni.
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f79fd876d19ecfae0872c97a8aabe60c121a90f2
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: e868945cf3d87df17dbe8197ec99497f1478d973
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65494536"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380249"
 ---
 # <a name="enable-endpoint-protection-malware-definitions-to-download-from-windows-server-update-services-wsus-for-configuration-manager"></a>Abilitare le definizioni malware di Endpoint Protection da scaricare da Windows Server Update Services (WSUS) per Configuration Manager
 
@@ -92,7 +92,7 @@ ms.locfileid: "65494536"
 10. Nella finestra di dialogo **Approvazioni automatiche** selezionare la casella di controllo per la regola appena creata e quindi fare clic su **Esegui regola**.
 
 > [!NOTE]
->  Per ottimizzare le prestazioni nei computer client e server WSUS, rifiutare gli aggiornamenti delle definizioni obsolete. A questo scopo, è possibile configurare l'approvazione automatica per le revisioni e il rifiuto automatico degli aggiornamenti scaduti. Per altre informazioni, vedere l' [articolo 938947 della Microsoft Knowledge Base](http://go.microsoft.com/fwlink/p/?LinkId=204078).
+>  Per ottimizzare le prestazioni nei computer client e server WSUS, rifiutare gli aggiornamenti delle definizioni obsolete. A questo scopo, è possibile configurare l'approvazione automatica per le revisioni e il rifiuto automatico degli aggiornamenti scaduti. Per altre informazioni, vedere l' [articolo 938947 della Microsoft Knowledge Base](https://go.microsoft.com/fwlink/p/?LinkId=204078).
 > 
 > [!div class="button"]
 > [Passaggio successivo >](endpoint-antimalware-policies.md)

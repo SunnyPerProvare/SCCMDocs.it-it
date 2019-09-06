@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 760b159114796922e2c8707e3b7f14484591f7a2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: c42b8a97c5ceb5bdff64def06f18275585c51dc6
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56141494"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379780"
 ---
 # <a name="introduction-to-reporting-in-system-center-configuration-manager"></a>Introduzione ai report in System Center Configuration Manager
 
@@ -39,7 +39,7 @@ La creazione di report in System Center Configuration Manager offre un set di st
 
 - Esporta report che gli utenti possono selezionare in una gamma dei formati più diffusi.  
 
-  Per ulteriori informazioni su Reporting Services, vedere [SQL Server Reporting Services](http://go.microsoft.com/fwlink/p/?LinkID=212032) nella documentazione online di SQL Server 2008.  
+  Per ulteriori informazioni su Reporting Services, vedere [SQL Server Reporting Services](https://go.microsoft.com/fwlink/p/?LinkID=212032) nella documentazione online di SQL Server 2008.  
 
 ##  <a name="BKMK_ReportingServicesPoint"></a> Punto di Reporting Services  
  Il punto di Reporting Services è un ruolo del sistema del sito installato su un server che esegue Microsoft SQL Server Reporting Services. Il punto di Reporting Services copia le definizioni report di Configuration Manager in Reporting Services, crea cartelle report basate sulle categorie report e imposta criteri di sicurezza per le cartelle report e i report basati sulle autorizzazioni basate su ruoli per gli utenti amministratori di Configuration Manager. In un intervallo di 10 minuti, il punto di Reporting Services si collega a Reporting Services per riapplicare i criteri di protezione se sono stati modificati, ad esempio utilizzando la Gestione report. Per ulteriori informazioni su come pianificare e installare un punto di Reporting Services, vedere la seguente documentazione:  

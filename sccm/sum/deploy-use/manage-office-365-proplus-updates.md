@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 276c5dd71b62a29a3f68b1eed2cdc814cfd1c804
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 493e9138c5be3bdf396dd7fe0d318e3da71f561d
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68537175"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380310"
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Gestire Office 365 ProPlus con Configuration Manager
 
@@ -47,8 +47,8 @@ Per le versioni di Configuration Manager precedenti, è necessario eseguire la p
 - Il computer che esegue il programma di installazione di Office 365 deve avere accesso a Internet.  
 - L'utente che esegue il programma di installazione di Office 365 deve avere accesso in **lettura** e **scrittura** alla condivisione dei contenuti specificata nella procedura guidata.
 - Se si riceve l'errore di download 404, copiare i file seguenti nella cartella %temp% dell'utente:
-  - [releasehistory.xml](http://officecdn.microsoft.com/pr/wsus/releasehistory.cab)
-  - [o365client_32bit.xml](http://officecdn.microsoft.com/pr/wsus/ofl.cab)  
+  - [releasehistory.xml](https://officecdn.microsoft.com/pr/wsus/releasehistory.cab)
+  - [o365client_32bit.xml](https://officecdn.microsoft.com/pr/wsus/ofl.cab)  
 
 ### <a name="deploy-office-365-apps-using-configuration-manager-version-1806-or-higher"></a>Distribuire le app di Office 365 usando Configuration Manager versione 1806 o versione successiva: 
 A partire da Configuration Manager 1806, lo Strumento di personalizzazione di Office è integrato con il Programma di installazione di Office 365 nella console di Configuration Manager. Quando si crea una distribuzione per Office 365, è possibile configurare dinamicamente le impostazioni di gestibilità di Office più recenti. <!--1358149-->
@@ -89,7 +89,7 @@ Dopo la distribuzione delle applicazioni di Office 365, è possibile creare rego
 <!--4224414-->
 *(Funzionalità introdotta nella versione 1906)*
 
-È possibile esaminare le statistiche di conformità per vedere quali dispositivi richiedono un aggiornamento software di Office 365 specifico. Per visualizzare l'elenco dei dispositivi, è necessaria l'autorizzazione per visualizzare gli aggiornamenti e le raccolte a cui appartengano i dispositivi. Per eseguire il drill-down nell'elenco dei dispositivi:
+È possibile esaminare nel dettaglio le statistiche di conformità per individuare i dispositivi che richiedono un aggiornamento software di Office 365 specifico. Per visualizzare l'elenco dei dispositivi, è necessaria l'autorizzazione per visualizzare gli aggiornamenti e le raccolte a cui appartengano i dispositivi. Per eseguire il drill-down nell'elenco dei dispositivi:
 
 1. Passare a **Raccolta software** > **Gestione client di Office 365** > **Aggiornamenti di Office 365**.
 1. Selezionare tutti gli aggiornamenti richiesti da almeno un dispositivo.
@@ -244,7 +244,7 @@ Per modificare il canale di aggiornamento dopo aver abilitato i client di Office
 > [!Note]
 > The Office 365 Installation Wizard was introduced in Configuration Manager version 1702 and provides an easy way to create Office 365 apps.
 
-- [Download the Office 2016 Deployment Tool](http://aka.ms/ODT2016) from the Microsoft Download Center.  
+- [Download the Office 2016 Deployment Tool](https://aka.ms/ODT2016) from the Microsoft Download Center.  
 - Review the [configuration options for the Office Deployment Tool](https://technet.microsoft.com/library/jj219426.aspx).
 
 You can create an application just as you would with any other application in Configuration Manager from **Software Library** > **Overview** > **Application Management** > **Applications**. For details, see [Create and deploy an application](/sccm/apps/get-started/create-and-deploy-an-application).

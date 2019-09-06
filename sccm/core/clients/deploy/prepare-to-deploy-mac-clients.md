@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9ead2348e96856d006c8041705c4b4e30c145e9
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 3718661af1bae7dbf0984e29d95736b9f86104dc
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286824"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70378359"
 ---
 # <a name="prepare-to-deploy-client-software-to-macs"></a>Preparare la distribuzione del software client in computer Mac
 
@@ -28,7 +28,7 @@ Seguire questa procedura per assicurarsi di essere pronti a [distribuire il clie
 
 ## <a name="mac-prerequisites"></a>Prerequisiti Mac
 
-Il pacchetto di installazione del client per Mac non viene fornito con i supporti di Configuration Manager. Scaricare i **client per altri sistemi operativi** dall'[Area download Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184).  
+Il pacchetto di installazione del client per Mac non viene fornito con i supporti di Configuration Manager. Scaricare i **client per altri sistemi operativi** dall'[Area download Microsoft](https://go.microsoft.com/fwlink/?LinkID=525184).  
 
 Per l'elenco delle versioni supportate, vedere [Sistemi operativi supportati per client e dispositivi](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#mac-computers).
 

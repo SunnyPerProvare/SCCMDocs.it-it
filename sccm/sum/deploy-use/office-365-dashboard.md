@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 69f234a2-b04b-445a-b81f-6b4acfc00eaf
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf18203d4b6d4c8858e3547671b7bf63a2250db7
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 6e4f843d8984cbf27fed4e309af523855ab14002
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68537239"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380231"
 ---
 # <a name="office-365-client-management-dashboard"></a>Dashboard di Gestione client di Office 365
 
@@ -74,7 +74,7 @@ Per impostazione predefinita l'agente di analisi esamina l'elenco dei file usati
 - Formati di file Office con attivazione macro, quali cartelle di lavoro di Excel con attivazione macro (file con estensione xlsm) o documenti di Word con attivazione macro (file con estensione docm)  
 - Formati di Office meno recenti che non indicano se è presente contenuto con macro. Ad esempio una cartella di lavoro di Excel 97-2003 (file con estensione xls).
 
-Se è necessaria una valutazione più dettagliata, distribuire il **Office Readiness Toolkit**. Questo strumento analizza il codice all'interno di un file di macro. Controlla se sono presenti potenziali problemi di compatibilità. Ad esempio, il file potrebbe usare una funzione che è stata modificata in una versione più recente di Office. Dopo l'esecuzione di Office Readiness Toolkit, i risultati ottenuti possono essere usati da Configuration Manager. Questi dati aggiuntivi migliorano i calcoli di conformità dei dispositivi. Per altre informazioni, vedere [Use the Readiness Toolkit to assess application compatibility for Office 365 ProPlus](http://aka.ms/readinesstoolkit) (Usare Readiness Toolkit per valutare la compatibilità delle applicazioni per Office 365 ProPlus).
+Se è necessaria una valutazione più dettagliata, distribuire il **Office Readiness Toolkit**. Questo strumento analizza il codice all'interno di un file di macro. Controlla se sono presenti potenziali problemi di compatibilità. Ad esempio, il file potrebbe usare una funzione che è stata modificata in una versione più recente di Office. Dopo l'esecuzione di Office Readiness Toolkit, i risultati ottenuti possono essere usati da Configuration Manager. Questi dati aggiuntivi migliorano i calcoli di conformità dei dispositivi. Per altre informazioni, vedere [Use the Readiness Toolkit to assess application compatibility for Office 365 ProPlus](https://aka.ms/readinesstoolkit) (Usare Readiness Toolkit per valutare la compatibilità delle applicazioni per Office 365 ProPlus).
 
 ## <a name="office-365-proplus-upgrade-readiness-dashboard"></a>Dashboard Preparazione aggiornamenti per Office 365 ProPlus
 

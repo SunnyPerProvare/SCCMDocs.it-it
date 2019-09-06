@@ -10,12 +10,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e424254af1068bdb6f637f38622dc737528702b4
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 81130d513ff4f0a412c1774e50d3ac7058504c99
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536255"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70377871"
 ---
 # <a name="use-the-setup-wizard-to-install-configuration-manager-sites"></a>Usare l'installazione guidata per installare i siti di Configuration Manager
 
@@ -39,7 +39,7 @@ Installare un sito secondario dalla console di Configuration Manager. I siti sec
 > - [**Leggere la documentazione**](https://docs.microsoft.com/sccm)<!-- https://go.microsoft.com/fwlink/p/?LinkId=626547 -->
 > - **Ottenere assistenza per l'installazione**: [Forum TechNet: Configuration Manager (Current Branch) - Distribuzione del sito e del client](https://social.technet.microsoft.com/Forums/en-us/home?forum=ConfigMgrDeployment) <!--NOTE: this link requires en-us locale to work-->   <!-- https://go.microsoft.com/fwlink/p/?LinkId=626549 -->
 > - **Community di Configuration Manager**: [Community di System Center: Come partecipare](https://social.technet.microsoft.com/wiki/contents/articles/11504.system-center-community-how-to-participate.aspx) <!-- https://go.microsoft.com/fwlink/p/?LinkId=626544 -->
-> - [**Home page di Configuration Manager**](https://www.microsoft.com/en-us/cloud-platform/system-center-configuration-manager) <!-- https://go.microsoft.com/fwlink/p/?LinkId=626545 -->
+> - [**Home page di Configuration Manager**](https://www.microsoft.com/cloud-platform/system-center-configuration-manager) <!-- https://go.microsoft.com/fwlink/p/?LinkId=626545 -->
 
 
 ## <a name="bkmk_primary"></a> Installare un sito di amministrazione centrale o primario

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e53c0dd242d1274914738173ee1997109cff8411
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: e041c3ef1725f3084f05b084a9a48716a6fac556
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499379"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70377962"
 ---
 # <a name="supported-configurations-for-system-center-configuration-manager"></a>Configurazioni supportate per System Center Configuration Manager
 
@@ -28,10 +28,10 @@ Le informazioni in questo e negli argomenti seguenti sono fondamentali per ident
 
 Quando una funzionalità di Configuration Manager richiede configurazioni più specifiche, queste informazioni vengono incluse nella documentazione specifica della funzionalità e vanno ad aggiungersi ai dettagli delle configurazioni generiche.  
 
- I prodotti e le tecnologie descritti negli argomenti seguenti sono supportati da Configuration Manager. Il loro inserimento in questo contesto, tuttavia, non implica un'estensione del normale ciclo di vita del supporto per il singolo prodotto. I prodotti che non rientrano nel ciclo di vita del supporto non sono supportati per l'uso con Configuration Manager. Per altre informazioni sui cicli di vita del supporto Microsoft, visitare il sito Web [Ciclo di vita del supporto Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=208270) .  
+ I prodotti e le tecnologie descritti negli argomenti seguenti sono supportati da Configuration Manager. Il loro inserimento in questo contesto, tuttavia, non implica un'estensione del normale ciclo di vita del supporto per il singolo prodotto. I prodotti che non rientrano nel ciclo di vita del supporto non sono supportati per l'uso con Configuration Manager. Per altre informazioni sui cicli di vita del supporto Microsoft, visitare il sito Web [Ciclo di vita del supporto Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=208270) .  
 
 > [!NOTE]  
->  Per informazioni sui criteri del ciclo di vita del supporto Microsoft, vedere le domande frequenti nel sito [Criteri relativi al ciclo di vita Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=31976).  
+>  Per informazioni sui criteri del ciclo di vita del supporto Microsoft, vedere le domande frequenti nel sito [Criteri relativi al ciclo di vita Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=31976).  
 
  I prodotti e le versioni di prodotto non elencati negli argomenti seguenti non sono supportati con System Center Configuration Manager a meno che non siano annunciati nel blog [Enterprise Mobility and Security Blog](https://blogs.technet.microsoft.com/enterprisemobility/).  In alcuni casi è possibile che i contenuti del blog anticipino un aggiornamento alla documentazione.
 

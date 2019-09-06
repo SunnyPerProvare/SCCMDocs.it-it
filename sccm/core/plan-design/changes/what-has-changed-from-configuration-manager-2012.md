@@ -10,12 +10,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8cae90ec8a6120b2a9fcbdb25d7aecbf66bcaae8
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 241b8787548c12dff509078df3b9130d21dbfa10
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67285806"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70378001"
 ---
 # <a name="whats-changed-in-system-center-configuration-manager-from-system-center-2012-configuration-manager"></a>Novità in System Center Configuration Manager rispetto a System Center 2012 Configuration Manager
 
@@ -75,7 +75,7 @@ Per altre informazioni, vedere [Diagnostica e dati di utilizzo](/sccm/core/plan-
 
 ##  <a name="bkmk_AMT"></a> Supporto per la tecnologia Intel AMT (Active Management Technology)  
 
-Configuration Manager Current Branch rimuove il supporto nativo per computer basati su AMT dalla console di Configuration Manager. I computer basati su AMT restano completamente gestiti quando si usa il [componente aggiuntivo Intel SCS per Microsoft System Center Configuration Manager](http://www.intel.com/content/www/us/en/software/setup-configuration-software.html). Il componente aggiuntivo consente di accedere alle funzionalità più recenti per gestire AMT, rimuovendo le limitazioni introdotte fino al momento in cui Configuration Manager è stato in grado di integrare queste modifiche.  
+Configuration Manager Current Branch rimuove il supporto nativo per computer basati su AMT dalla console di Configuration Manager. I computer basati su AMT restano completamente gestiti quando si usa il [componente aggiuntivo Intel SCS per Microsoft System Center Configuration Manager](https://www.intel.com/content/www/us/en/software/setup-configuration-software.html). Il componente aggiuntivo consente di accedere alle funzionalità più recenti per gestire AMT, rimuovendo le limitazioni introdotte fino al momento in cui Configuration Manager è stato in grado di integrare queste modifiche.  
 
 La rimozione della tecnologia AMT integrata per Configuration Manager include la gestione fuori banda. Il ruolo del sistema del sito per il punto di gestione fuori banda non è più disponibile.  
 

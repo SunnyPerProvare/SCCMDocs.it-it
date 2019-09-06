@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 368fd0b4d86b1ee263bbe47619a4387db614b167
-ms.sourcegitcommit: abfc9e1b3945637fa93ca8d3a11519493a5d5391
+ms.openlocfilehash: 39548117fb7e03614af32fa330fb86bf6de4151e
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66264391"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70378057"
 ---
 # <a name="management-tasks-for-system-center-configuration-manager-applications"></a>Attività di gestione per applicazioni di System Center Configuration Manager
 
@@ -41,7 +41,7 @@ Per altre informazioni sulla creazione di applicazioni e tipi di distribuzione, 
 |**Aggiorna statistiche**|Aggiorna le informazioni visualizzate nel nodo **Distribuzioni** dell'area di lavoro **Monitoraggio** relativo alle applicazioni di questa applicazione.<br /><br /> Vedere [Monitorare le applicazioni dalla console di System Center Configuration Manager](../../apps/deploy-use/monitor-applications-from-the-console.md).|  
 |**Ripristina**|Questa opzione ripristina un'applicazione ritirata tramite l'attività di gestione **Ritira**.|  
 |**Ritira**|Quando si ritira un'applicazione, questa non risulta più disponibile per la distribuzione ma non vengono eliminati né l'applicazione né le distribuzioni dell'applicazione. Le copie esistenti di questa applicazione che sono state installate nei computer client non verranno rimosse. Eventuali revisioni dell'applicazione verranno eliminate da Configuration Manager dopo 60 giorni. Le copie installate dell'applicazione non vengono tuttavia rimosse.<br /><br /> Per eliminare un'applicazione, è necessario prima ritirare l'applicazione, rimuovere tutte le distribuzioni, rimuovere i riferimenti all'applicazione da parte di altre distribuzioni e quindi eliminare tutte le revisioni dell'applicazione.<br /><br /> Vedere [Come rivedere e sostituire le applicazioni](../../apps/deploy-use/revise-and-supersede-applications.md).|  
-|**Export**|Apre l'**Esportazione guidata applicazione** che consente di esportare le applicazioni selezionate in un file con estensione zip che è possibile archiviare o installare in un altro sito. Se si sceglie di esportare il contenuto dell'applicazione, verrà creata una cartella con il contenuto.<br /><br /> È anche possibile esportare le dipendenze dell'applicazione, le relazioni e le condizioni di sostituzione, il contenuto per l'applicazione e le relative dipendenze.<br /><br /> Il cmdlet di Windows PowerShell, **Export-CMApplication**, esegue la stessa funzione. Per altre informazioni, vedere [Export-CMApplication](http://go.microsoft.com/fwlink/p/?LinkID=258880) nella documentazione di riferimento dei cmdlet di System Center 2012 Configuration Manager SP1.|  
+|**Export**|Apre l'**Esportazione guidata applicazione** che consente di esportare le applicazioni selezionate in un file con estensione zip che è possibile archiviare o installare in un altro sito. Se si sceglie di esportare il contenuto dell'applicazione, verrà creata una cartella con il contenuto.<br /><br /> È anche possibile esportare le dipendenze dell'applicazione, le relazioni e le condizioni di sostituzione, il contenuto per l'applicazione e le relative dipendenze.<br /><br /> Il cmdlet di Windows PowerShell, **Export-CMApplication**, esegue la stessa funzione. Per altre informazioni, vedere [Export-CMApplication](https://go.microsoft.com/fwlink/p/?LinkID=258880) nella documentazione di riferimento dei cmdlet di System Center 2012 Configuration Manager SP1.|  
 |**Eliminazione**|Elimina l'applicazione attualmente selezionata.<br /><br /> Non è possibile eliminare un'applicazione se esistono altre applicazioni da essa dipendenti, se è presente una distribuzione attiva o se esistono sequenze attività da essa dipendenti.|  
 |**Simula distribuzione**|Apre la **Simulazione guidata distribuzione applicazione** in cui è possibile testare i risultati di una distribuzione di applicazione nei computer senza installare o disinstallare l'applicazione.<br /><br /> Vedere [Come simulare distribuzioni di applicazioni](../../apps/deploy-use/simulate-application-deployments.md).|  
 |**Distribuzione**|Apre la **Distribuzione guidata del software** in cui è possibile distribuire l'applicazione selezionata nelle raccolte di computer presenti nella gerarchia.<br /><br /> Vedere [Come distribuire le applicazioni](../../apps/deploy-use/deploy-applications.md).|  

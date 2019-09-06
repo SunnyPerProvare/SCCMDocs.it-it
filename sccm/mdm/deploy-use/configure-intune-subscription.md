@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ec6756e5c180561bef10bba799e3fdba3dcc303
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: fd48ec41114b122d8d00549c1ae8d99d08ba5f1f
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62289066"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379715"
 ---
 # <a name="configure-your-intune-subscription-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la sottoscrizione di Intune con System Center Configuration Manager e Microsoft Intune
 
@@ -35,7 +35,7 @@ La sottoscrizione di Intune esegue le operazioni seguenti:
 
 ## <a name="to-create-the-microsoft-intune-subscription"></a>Per creare la sottoscrizione a Microsoft Intune
 
-1.  Se non è già stato fatto, creare un account di Microsoft Intune nel sito [Microsoft Intune](http://go.microsoft.com/fwlink/?LinkID=258216).  Dopo aver creato l'account di Intune, non sarà necessario aggiungere utenti per l'account di Intune o eseguire altre configurazioni.
+1.  Se non è già stato fatto, creare un account di Microsoft Intune nel sito [Microsoft Intune](https://go.microsoft.com/fwlink/?LinkID=258216).  Dopo aver creato l'account di Intune, non sarà necessario aggiungere utenti per l'account di Intune o eseguire altre configurazioni.
 
 2.  Nella console di Configuration Manager fare clic su **Amministrazione**.
 
@@ -54,18 +54,18 @@ La sottoscrizione di Intune esegue le operazioni seguenti:
 
 7. Nella pagina **Generale** specificare le seguenti opzioni e quindi fare clic su **Avanti**.
 
-   - **Raccolta**: Specificare una raccolta di utenti contenenti gli utenti che registreranno i dispositivi mobili.
+   - **Raccolta**: Specificare una raccolta utenti che contenga gli utenti che registreranno i dispositivi mobili.
 
      > [!NOTE]
      >  Se un utente viene rimosso dalla raccolta, il dispositivo dell'utente continuerà a essere gestito per un massimo di 24 ore finché il record utente non verrà rimosso dal database utenti.
 
    - **Nome società**: Specificare il nome della società.
 
-   - **URL documentazione sulla privacy**: Se si pubblicano le informazioni sulla privacy della società a un collegamento accessibile da Internet, fornire un collegamento che gli utenti possono accedere dal portale aziendale, ad esempio http://www.contoso.com/CP_privacy.html. Le informazioni sulla privacy possono chiarire quali informazioni gli utenti condividono con la società.
+   - **URL della documentazione sulla privacy dell'azienda**: Se si pubblicano le informazioni sulla privacy della società in un collegamento accessibile da Internet, fornire un collegamento a cui gli utenti possono accedere dal portale aziendale, ad http://www.contoso.com/CP_privacy.html esempio. Le informazioni sulla privacy possono chiarire quali informazioni gli utenti condividono con la società.
 
-   - **Combinazione colori per portale società**: Facoltativamente, modificare il colore predefinito blu per i portali società.
+   - **Combinazione colori per il portale aziendale**: Facoltativamente, modificare il colore predefinito del blu per i portali aziendali.
 
-   - **Codice sito di Configuration Manager**: Specificare un codice del sito per un sito primario gestire i dispositivi mobili.
+   - **Configuration Manager codice sito**: Specificare un codice del sito per un sito primario per la gestione dei dispositivi mobili.
 
    > [!NOTE]
    >  La modifica del codice del sito riguarda solo le nuove registrazioni e non i dispositivi registrati esistenti.

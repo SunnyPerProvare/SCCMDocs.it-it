@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8443430b55ee61e9ad5eeac1e70342dfa6e85851
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.openlocfilehash: 3e454212b5a70c903471d0bda82611e12b3c8693
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62288588"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380340"
 ---
 # <a name="set-up-certificates-for-trusted-communications-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Configurare i certificati per le comunicazioni attendibili per la gestione dei dispositivi mobili locale in System Center Configuration Manager
 
@@ -31,7 +31,7 @@ La gestione dei dispositivi mobili locale di System Center Configuration Manager
  Come alternativa per i dispositivi non aggiunti al dominio, è possibile usare la radice di una CA pubblica nota, come Verisign o GoDaddy, per rilasciare il certificato server, evitando così di dover installare manualmente un certificato sul dispositivo, in quanto la maggior parte dei dispositivi considera attendibili in modo nativo le connessioni al server che usano la stessa radice dell'autorità di certificazione pubblica. Si tratta di un'alternativa utile per i dispositivi registrati dagli utenti in cui non è possibile installare i certificati attendibili attraverso l'autorità di certificazione del sito.  
 
 > [!IMPORTANT]  
->  Esistono diversi modi per configurare i certificati per le comunicazioni attendibili tra i dispositivi e i server del sistema del sito per la gestione dei dispositivi mobili locale. Le informazioni in questo articolo sono un esempio di uno dei modi possibili. Per questo metodo è necessario che nel sito sia in esecuzione un server con il ruolo Servizi certificati Active Directory e con i servizi ruolo Autorità di certificazione e Registrazione Web Autorità di certificazione installati. Per altre informazioni e linee guida su questo ruolo di Windows server, vedere [Servizi certificati Active Directory](http://go.microsoft.com/fwlink/p/?LinkId=115018).  
+>  Esistono diversi modi per configurare i certificati per le comunicazioni attendibili tra i dispositivi e i server del sistema del sito per la gestione dei dispositivi mobili locale. Le informazioni in questo articolo sono un esempio di uno dei modi possibili. Per questo metodo è necessario che nel sito sia in esecuzione un server con il ruolo Servizi certificati Active Directory e con i servizi ruolo Autorità di certificazione e Registrazione Web Autorità di certificazione installati. Per altre informazioni e linee guida su questo ruolo di Windows server, vedere [Servizi certificati Active Directory](https://go.microsoft.com/fwlink/p/?LinkId=115018).  
 
  Per configurare il sito di Configuration Manager per le comunicazioni SSL richieste dalla gestione dei dispositivi mobili locale, attenersi alla procedura seguente:  
 
@@ -95,7 +95,7 @@ La gestione dei dispositivi mobili locale di System Center Configuration Manager
 
 5.  Nella finestra di dialogo **Proprietà nuovo modello** della scheda **Generale** immettere un nome di modello per generare i certificati Web che verranno usati nei sistemi del sito di Configuration Manager, ad esempio **Server Web MDM ConfigMgr**.  
 
-6.  Fare clic sulla scheda **Nome oggetto**, selezionare **Crea in base alle informazioni di Active Directory** e per il formato del nome dell'oggetto specificare **Nome DNS**. Deselezionare la casella di controllo relativa al nome dell'oggetto alternativo se è selezionata l'opzione **Nome entità utente (UPN)**.  
+6.  Fare clic sulla scheda **Nome oggetto**, selezionare **Crea in base alle informazioni di Active Directory** e per il formato del nome dell'oggetto specificare **Nome DNS**. Deselezionare la casella di controllo relativa al nome dell'oggetto alternativo se è selezionata l'opzione **Nome entità utente (UPN)** .  
 
 7.  Fare clic sulla scheda **Protezione** e rimuovere l'autorizzazione **Registrazione** dai gruppi di protezione **Domain Admins** ed **Enterprise Admins**.  
 

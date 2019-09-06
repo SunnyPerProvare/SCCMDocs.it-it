@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7099a31cc9766a3c9904c5ae1013eb1700181102
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 59cd27ac63430a8b9073e7b178b53f9a5cc23da6
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68535957"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70377884"
 ---
 # <a name="how-to-enroll-devices-in-desktop-analytics"></a>Come registrare i dispositivi in desktop Analytics
 
@@ -55,7 +55,7 @@ Windows 10 include il componente compatibilità. Per ottenere l'aggiornamento pi
 
 #### <a name="windows-81"></a>Windows 8.1
 
-Scaricare l'aggiornamento: [KB 2976978](http://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB2976978) 
+Scaricare l'aggiornamento: [KB 2976978](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB2976978) 
 
 Esegue la diagnostica nei sistemi Windows 8.1 che partecipano al Analisi utilizzo software di Windows. Questi dati consentono di determinare se è possibile che si verifichino problemi di compatibilità durante l'aggiornamento a Windows 10.
 
@@ -63,7 +63,7 @@ Per ulteriori informazioni, vedere [aggiornamento della compatibilità per mante
 
 #### <a name="windows-7-with-service-pack-1"></a>Windows 7 con Service Pack 1
 
-Scaricare l'aggiornamento: [KB 2952664](http://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB2952664) 
+Scaricare l'aggiornamento: [KB 2952664](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB2952664) 
 
 Esegue la diagnostica nei sistemi Windows 7 con Service Pack 1 (SP1) che partecipano al Analisi utilizzo software di Windows. Questi dati consentono di determinare se è possibile che si verifichino problemi di compatibilità durante l'aggiornamento a Windows 10.
 
@@ -160,7 +160,7 @@ Configuration Manager imposta le impostazioni di Windows seguenti nel percorso `
 | **AllowDeviceNameInTelemetry** | *Si applica a Windows 10, versione 1803 e successive*: Per consentire ai dispositivi di continuare a inviare il nome del dispositivo, è necessario un consenso esplicito.<br> <br>Nota: Per impostazione predefinita, il nome del dispositivo non viene inviato a Microsoft. Se non si invia il nome del dispositivo, questo viene visualizzato in desktop Analytics come "sconosciuto". Questo comportamento può rendere difficile l'identificazione e la valutazione dei dispositivi. Per altre informazioni, vedere [nome dispositivo](#device-name). |
 | **CommercialDataOptIn** | *Si applica a Windows 7 e Windows 8.1*: Per analisi Desktop `1` è necessario un valore di. Per ulteriori informazioni, vedere la pagina relativa al [consenso esplicito ai dati commerciali in Windows 7](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/ee126127\(v=ws.10\)). |
 
-Visualizzare queste impostazioni nell'Editor criteri di gruppo nel percorso seguente: Configurazione > computer**modelli amministrativi** > le compilazioni di raccolta dati e anteprima di componenti di Windows. > 
+Visualizzare queste impostazioni nell'Editor criteri di gruppo nel percorso seguente:Configurazione > computer**modelli amministrativi** > le compilazioni di raccolta dati e anteprima di componenti di Windows. > 
 
 > [!Important]  
 > Nella maggior parte dei casi, usare solo Configuration Manager per configurare queste impostazioni. Non applicare anche queste impostazioni negli oggetti Criteri di gruppo del dominio. Per ulteriori informazioni, vedere [risoluzione dei conflitti](#conflict-resolution).<!-- SCCMDocs-pr 3120 -->
@@ -184,7 +184,7 @@ Configuration Manager configura le impostazioni di Windows solo se un valore non
 
 Se si hanno come destinazione Configuration Manager client con le impostazioni di Windows Analytics e di analisi desktop, le impostazioni di desktop Analytics hanno la precedenza.
 
-Quando si configura il livello dati di diagnostica, è necessario impostare il limite superiore per il dispositivo. Per impostazione predefinita, in Windows 10, versione 1803 e successive, gli utenti possono scegliere di impostare un livello inferiore. È possibile controllare questo comportamento usando l'impostazione di criteri di gruppo, **configurare l'impostazione del consenso esplicito per**la telemetria dell'interfaccia utente. Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enterprise-management) (Configurare i dati di diagnostica di Windows nell'organizzazione).
+Quando si configura il livello dati di diagnostica, è necessario impostare il limite superiore per il dispositivo. Per impostazione predefinita, in Windows 10, versione 1803 e successive, gli utenti possono scegliere di impostare un livello inferiore. È possibile controllare questo comportamento usando l'impostazione di criteri di gruppo, **configurare l'impostazione del consenso esplicito per la telemetria dell'interfaccia utente**. Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enterprise-management) (Configurare i dati di diagnostica di Windows nell'organizzazione).
 
 
 

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07d6ecefb2cc4cded7ce43bad3f681f8f335ec4e
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: c8e76920dc5f63e3a203d3ec46b4c94c4247d599
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500445"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379999"
 ---
 # <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Introduzione ai profili certificato in System Center Configuration Manager
 
@@ -65,7 +65,7 @@ Per distribuire i profili certificato che usano SCEP, installare il punto di reg
 
 Anche i certificati PFX richiedono un punto di registrazione certificati. Specificare inoltre la CA per il certificato e le credenziali di accesso pertinenti. A partire dalla versione 1706, è possibile specificare Microsoft o Entrust come CA.  
 
-Per altre informazioni sul modo in cui il servizio Registrazione dispositivi di rete supporta moduli criteri per consentire la distribuzione di certificati da parte di Configuration Manager, vedere [Uso di un modulo criteri con il servizio Registrazione dispositivi di rete](http://go.microsoft.com/fwlink/p/?LinkId=328657).  
+Per altre informazioni sul modo in cui il servizio Registrazione dispositivi di rete supporta moduli criteri per consentire la distribuzione di certificati da parte di Configuration Manager, vedere [Uso di un modulo criteri con il servizio Registrazione dispositivi di rete](https://go.microsoft.com/fwlink/p/?LinkId=328657).  
 
 A seconda dei requisiti, Configuration Manager supporta la distribuzione dei certificati in più archivi certificati in diversi tipi di dispositivi e sistemi operativi. Sono supportati i dispositivi e i sistemi operativi seguenti:  
 

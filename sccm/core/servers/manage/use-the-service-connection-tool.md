@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a7206c6eeab7b737ea4f0130cdf736a52635fce
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: ab44233756a237513298391a59951919ac4412d5
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68337875"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380114"
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usare lo strumento di connessione del servizio per System Center Configuration Manager
 
@@ -39,7 +39,7 @@ Di seguito sono elencati i prerequisiti e i problemi noti.
 
   - File x86 e x64 di **Visual C++ Redistributable** .   Per impostazione predefinita, Configuration Manager installa la versione x64 nel computer che ospita il punto di connessione del servizio.  
 
-    Per scaricare una copia dei file di Visual C++, visitare [Visual C++ Redistributable Packages per Visual Studio 2013](http://www.microsoft.com/download/details.aspx?id=40784) nell'Area download Microsoft.  
+    Per scaricare una copia dei file di Visual C++, visitare [Visual C++ Redistributable Packages per Visual Studio 2013](https://www.microsoft.com/download/details.aspx?id=40784) nell'Area download Microsoft.  
 
   - .NET Framework 4.5.2 o versioni successive.  
 

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: baa5a2219a4eb8c22e8fb5f3db19660c4dca77d1
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 4c6085990cf61ac034d2e28de67965216722dce8
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122526"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379409"
 ---
 # <a name="plan-for-the-migration-of-configuration-manager-objects-to-system-center-configuration-manager"></a>Pianificare la migrazione degli oggetti di Configuration Manager a System Center Configuration Manager
 
@@ -89,7 +89,7 @@ Quando si esegue la migrazione di oggetti dalla gerarchia di origine di System C
 >  Per ogni pacchetto di cui si esegue la migrazione, aggiornare il pacchetto nella gerarchia di destinazione. Questo può evitare problemi di distribuzione del pacchetto nei punti di distribuzione nella gerarchia di destinazione. Tuttavia, quando si aggiorna un pacchetto nel punto di distribuzione nella gerarchia di destinazione, i client in tale gerarchia non riusciranno più a ottenere il pacchetto da un punto di distribuzione condiviso. Per aggiornare un pacchetto nella gerarchia di destinazione, nella console di Configuration Manager passare alla Raccolta software, fare clic con il pulsante destro del mouse sul pacchetto e scegliere **Aggiorna punti di distribuzione**. Ripetere questa operazione per ogni pacchetto di cui si esegue la migrazione.  
 
 > [!TIP]  
->  È possibile usare Microsoft System Center Configuration Manager Package Conversion Manager per convertire i pacchetti e i programmi in applicazioni di System Center Configuration Manager. Scaricare Package Conversion Manager nell' [Area download Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=212950) . Per altre informazioni, vedere [Configuration Manager Package Conversion Manager](http://go.microsoft.com/fwlink/p/?LinkId=247245).  
+>  È possibile usare Microsoft System Center Configuration Manager Package Conversion Manager per convertire i pacchetti e i programmi in applicazioni di System Center Configuration Manager. Scaricare Package Conversion Manager nell' [Area download Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=212950) . Per altre informazioni, vedere [Configuration Manager Package Conversion Manager](https://go.microsoft.com/fwlink/p/?LinkId=247245).  
 
 ### <a name="virtual-applications"></a>Applicazioni virtuali  
 Quando si esegue la migrazione dei pacchetti App-V da un sito supportato di Configuration Manager 2007, il processo di migrazione li converte in applicazioni nella gerarchia di destinazione. Inoltre, in base agli annunci esistenti per il pacchetto App-V, è possibile creare i seguenti tipi di distribuzione nella gerarchia di destinazione:  
@@ -144,7 +144,7 @@ Quando si esegue la migrazione da una gerarchia di origine di System Center 2012
 È possibile eseguire la migrazione di elementi e linee di base di configurazione.  
 
 > [!NOTE]  
->  Gli elementi di configurazione non interpretati delle gerarchie di origine di Configuration Manager 2007 non sono supportati per la migrazione. Non è possibile eseguire la migrazione o importare questi elementi di configurazione nella gerarchia di destinazione. Per altre informazioni sugli elementi di configurazione non interpretati, vedere Uninterpreted Configuration Item (Elemento di configurazione non interpretato) nell'argomento [About Configuration Items in Desired Configuration Management](http://go.microsoft.com/fwlink/?LinkId=103846) (Informazioni sugli elementi di configurazione nella gestione configurazione desiderata) nella libreria della documentazione di Configuration Manager 2007.  
+>  Gli elementi di configurazione non interpretati delle gerarchie di origine di Configuration Manager 2007 non sono supportati per la migrazione. Non è possibile eseguire la migrazione o importare questi elementi di configurazione nella gerarchia di destinazione. Per altre informazioni sugli elementi di configurazione non interpretati, vedere Uninterpreted Configuration Item (Elemento di configurazione non interpretato) nell'argomento [About Configuration Items in Desired Configuration Management](https://go.microsoft.com/fwlink/?LinkId=103846) (Informazioni sugli elementi di configurazione nella gestione configurazione desiderata) nella libreria della documentazione di Configuration Manager 2007.  
 
 È possibile importare pacchetti di configurazione di Configuration Manager 2007. Il processo di importazione converte automaticamente i pacchetti di configurazione in un formato compatibile con System Center Configuration Manager.  
 

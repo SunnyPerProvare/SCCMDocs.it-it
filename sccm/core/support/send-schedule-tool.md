@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 97c506c85cbb26dbb68b2e0eb0c223ae2a9d5b7e
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 799de01786debb44450d1ba67c75c14a1762f851
+ms.sourcegitcommit: f679fc1e46c191a1780ae961d155c927fc353dce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500785"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176793"
 ---
 # <a name="send-schedule-tool"></a>Send Schedule Tool
 
@@ -95,7 +95,6 @@ Elencare tutti i GUID dei messaggi o gli UID DCM disponibili per l'invio. Visual
 |{00000000-0000-0000-0000-000000000061}|Creazione report sullo stato DP peer|
 |{00000000-0000-0000-0000-000000000062}|Pianificazione della verifica del pacchetto in sospeso DP peer|
 |{00000000-0000-0000-0000-000000000063}|Pianificazione installazione aggiornamenti SUM|
-|{00000000-0000-0000-0000-000000000071}|Azione NAP|
 |{00000000-0000-0000-0000-000000000101}|Ciclo di raccolta inventario hardware|
 |{00000000-0000-0000-0000-000000000102}|Ciclo di raccolta inventario software|
 |{00000000-0000-0000-0000-000000000103}|Ciclo di recupero dati di rilevamento|
@@ -112,7 +111,6 @@ Elencare tutti i GUID dei messaggi o gli UID DCM disponibili per l'invio. Visual
 |{00000000-0000-0000-0000-000000000114}|Aggiornare criteri store|
 |{00000000-0000-0000-0000-000000000115}|Trasmissione elevata criteri sistema di stato|
 |{00000000-0000-0000-0000-000000000116}|Trasmissione ridotta criteri sistema di stato|
-|{00000000-0000-0000-0000-000000000120}|Criterio di controllo stato ATM|
 |{00000000-0000-0000-0000-000000000121}|Azione dei criteri di gestione dell'applicazione|
 |{00000000-0000-0000-0000-000000000122}|Azione dei criteri utente di gestione dell'applicazione|
 |{00000000-0000-0000-0000-000000000123}|Azione valutazione globale di gestione dell'applicazione|

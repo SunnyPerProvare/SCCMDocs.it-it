@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a8f1ca1484df0480a7923a8d3de64c1670aec6d
-ms.sourcegitcommit: a6a6507e01d819217208cfcea483ce9a2744583d
+ms.openlocfilehash: 1e452d515e586b688001a0cfd1fb9bf0ae837589
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66748190"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380176"
 ---
 # <a name="troubleshooting-windows-defender-or-endpoint-protection-client"></a>Risoluzione dei problemi di Windows Defender o del client Endpoint Protection
 
@@ -96,7 +96,7 @@ Se si verificano problemi con Windows Defender o Endpoint Protection, chiedere a
 
 2.  Se il messaggio di errore visualizzato contiene il codice 0x80072f8f, è molto probabile che il problema dipenda dall'impostazione errata della data o dell'ora nel computer.  
 
-3.  Per reimpostare data e ora del computer, eseguire la procedura in [Individuare e cancellare file e collegamenti inutilizzati ed eseguire attività di manutenzione](http://go.microsoft.com/fwlink/?LinkId=155579) (http://go.microsoft.com/fwlink/?LinkId=155579).  
+3.  Per reimpostare data e ora del computer, eseguire la procedura in [Individuare e cancellare file e collegamenti inutilizzati ed eseguire attività di manutenzione](https://go.microsoft.com/fwlink/?LinkId=155579) (https://go.microsoft.com/fwlink/?LinkId=155579).  
 
 ### <a name="step-4-rename-the-software-distribution-folder-on-your-computer"></a>Passaggio 4: rinominare la cartella SoftwareDistribution nel computer  
 

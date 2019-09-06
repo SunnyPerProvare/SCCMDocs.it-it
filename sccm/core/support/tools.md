@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0db0d38a1ed6929659c8c82b5b43f76535b025f9
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 45b330e28e1c6aa3b993e0a29e57fcb72fe09741
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536084"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379811"
 ---
 # <a name="configuration-manager-tools"></a>Strumenti di Configuration Manager
 
@@ -29,7 +29,7 @@ A partire dalla versione 1806 di Configuration Manager, questi strumenti sono in
 Tutti i sistemi operativi Windows indicati come client supportati in [Sistemi operativi supportati per client e dispositivi](https://docs.microsoft.com/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices) sono supportati per l'uso con questi strumenti.
 
 > [!Note]  
-> Il [System Center 2012 R2 Configuration Manager Toolkit](https://www.microsoft.com/en-us/download/details.aspx?id=50012) è ancora disponibile nell'Area download Microsoft. Per Configuration Manager versione 1806 e versioni successive, usare le versioni degli strumenti nella cartella CD.Latest nel server del sito. Alcuni strumenti erano precedentemente presenti nel toolkit ma non sono stati inclusi nella versione 1806. Questi strumenti legacy non sono più supportati.
+> Il [System Center 2012 R2 Configuration Manager Toolkit](https://www.microsoft.com/download/details.aspx?id=50012) è ancora disponibile nell'Area download Microsoft. Per Configuration Manager versione 1806 e versioni successive, usare le versioni degli strumenti nella cartella CD.Latest nel server del sito. Alcuni strumenti erano precedentemente presenti nel toolkit ma non sono stati inclusi nella versione 1806. Questi strumenti legacy non sono più supportati.
 
 
 ## <a name="client-tools"></a>Strumenti client
