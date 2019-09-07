@@ -1,7 +1,6 @@
 - name: Co-gestione
   href: overview.md
 - name: Panoramica
-  expanded: true
   items:
     - name: Informazioni sulla co-gestione
       href: overview.md

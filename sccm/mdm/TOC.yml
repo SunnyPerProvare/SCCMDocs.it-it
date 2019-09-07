@@ -1,7 +1,6 @@
 - name: Gestione di dispositivi mobili
   href: understand/hybrid-mobile-device-management.md
 - name: Panoramica
-  expanded: true
   items:
     - name: Informazioni sulla gestione di dispositivi mobili ibrida
       href: understand/hybrid-mobile-device-management.md

@@ -1,7 +1,6 @@
 - name: Distribuzione del sistema operativo
   href: understand/introduction-to-operating-system-deployment.md
 - name: Comprendere ed esplorare
-  expanded: true
   items:
     - name: Introduzione alla distribuzione del sistema operativo
       href: understand/introduction-to-operating-system-deployment.md
