@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c3e69f2403b3a937c0ad6ba4c913483eb5dfdb1
-ms.sourcegitcommit: ef7800a294e5db5d751921c34f60296c1642fc1f
+ms.openlocfilehash: eb33c1e6750fe3302a5a59a6f4d67809b359236a
+ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68712515"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70738290"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Esercitazione: Distribuire Windows 10 a un gruppo pilota
 
@@ -43,7 +43,7 @@ Desktop Analytics usa un' *area di lavoro log Analytics* nella sottoscrizione di
 
 Prima di iniziare questa esercitazione, verificare che siano soddisfatti i prerequisiti seguenti:  
 
-- Una sottoscrizione di Azure attiva con autorizzazioni di [**amministratore globale**](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator)  
+- Una sottoscrizione di Azure attiva con autorizzazioni di [**amministratore globale**](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator-permissions)  
 
     Per altre informazioni, vedere [prerequisiti di analisi del desktop](/sccm/desktop-analytics/overview#prerequisites).
 
@@ -114,7 +114,7 @@ Usare questa procedura per accedere a desktop Analytics e configurarlo nella sot
 5. Nella pagina per **configurare l'area di lavoro**:  
 
     > [!Note]  
-    > Per completare questo passaggio, l'utente deve disporre delle autorizzazioni di **proprietario dell'area di lavoro** e di accesso aggiuntivo alla sottoscrizione e al gruppo di risorse di Azure. Per ulteriori informazioni, vedere [prerequisiti](/sccm/desktop-analytics/overview#prerequisites).  
+    > Per completare questo passaggio, l'utente deve disporre delle autorizzazioni di **proprietario dell'area di lavoro** e di accesso aggiuntivo alla sottoscrizione e al gruppo di risorse di Azure. Per altre informazioni, vedere i [prerequisiti](/sccm/desktop-analytics/overview#prerequisites).  
 
     - Selezionare la sottoscrizione di Azure.  
 
@@ -274,7 +274,7 @@ Usare questa procedura per creare un piano di distribuzione in desktop Analytics
 
     1. Esaminare i dispositivi consigliati per il progetto pilota.  
 
-    2. Selezionare ogni dispositivo e selezionare **Aggiungi a progetto pilota**. Se non si è d'accordo con laraccomandazione, selezionare Sostituisci.  
+    2. Selezionare ogni dispositivo e selezionare **Aggiungi a progetto pilota**. Se non si è d'accordo con la raccomandazione, selezionare **Sostituisci**.  
 
         Per ulteriori informazioni sul modo in cui l'analisi desktop esegue queste raccomandazioni, selezionare l'icona informazioni nell'angolo superiore destro del riquadro **identifica progetto pilota** .
 
@@ -326,11 +326,11 @@ Quindi distribuire il pacchetto di aggiornamento del sistema operativo ai punti 
 
 ### <a name="bkmk_create-ts"></a>Creare una sequenza di attività di aggiornamento del sistema operativo per Windows 10
 
-1. Nella console di Configuration Manager passare all'area di lavoro **raccolta software** , espandere **sistemi operativi**e quindi selezionare **sequenze attività**.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Raccolta software**, espandere **Sistemi operativi** e quindi selezionare **Sequenze di attività**.  
 
-2. Nella scheda **Home** della barra multifunzione, nel gruppo **Crea** , selezionare **Crea sequenza di attività**.  
+2. Nella scheda **Home** della barra multifunzione nel gruppo **Crea** selezionare **Crea sequenza di attività**.  
 
-3. Nella pagina **Crea una nuova sequenza di attività** della creazione guidata della sequenza di attività selezionare **Aggiorna un sistema operativo da un pacchetto di aggiornamento**e quindi fare clic su **Avanti**.  
+3. Nella pagina **Crea una nuova sequenza di attività** della Creazione guidata della sequenza di attività selezionare **Aggiorna sistema operativo dal pacchetto di aggiornamento** e quindi selezionare **Avanti**.  
 
 4. Nella pagina **informazioni sequenza di attività** specificare un **nome** per la sequenza di attività che identifichi la sequenza di attività.  
 

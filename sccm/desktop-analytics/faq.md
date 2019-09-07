@@ -2,7 +2,7 @@
 title: Domande frequenti su desktop Analytics
 titleSuffix: Configuration Manager
 description: Domande frequenti su desktop Analytics.
-ms.date: 09/03/2019
+ms.date: 09/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 884626cd46659917734fa309fa6e84fbdd517ae2
-ms.sourcegitcommit: b28a97e22a9a56c5ce3367c750ea2bb4d50449c3
+ms.openlocfilehash: 306c6569551e1068c0e682c893e94b8f1a920ade
+ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70243638"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70738284"
 ---
 # <a name="desktop-analytics-faq"></a>Domande frequenti su desktop Analytics
 
@@ -88,11 +88,11 @@ Sì, quando si imposta un'area di lavoro di Windows Analytics esistente come are
 
 | Tipo di input | Viene eseguita la migrazione? |
 |------------|---------------|
-| Importanza | Yes |
+| Importanza | Sì |
 | Proprietario dell'app | Sì |
-| Decisione di aggiornamento | No  |
-| Piano di test | No  |
-| Risultato del test | No  |
+| Decisione di aggiornamento | No |
+| Piano di test | No |
+| Risultato del test | No |
 
 #### <a name="importance-mapping"></a>Mapping importanza
 
@@ -122,6 +122,12 @@ Il processo di migrazione è transazionale. Verranno visualizzati tutti gli inpu
 ### <a name="im-not-ready-yet-can-i-migrate-after-the-initial-onboarding"></a>Se non si è ancora pronti, è possibile eseguire la migrazione dopo l'onboarding iniziale?
 
 No, al momento devi decidere di eseguire la migrazione durante il caricamento [iniziale](/sccm/desktop-analytics/set-up#initial-onboarding).
+
+### <a name="can-i-use-update-compliance-together-with-desktop-analytics"></a>È possibile usare Conformità aggiornamenti insieme a Analytics per desktop?
+
+Sì. Se attualmente si usa [conformità aggiornamenti](https://docs.microsoft.com/windows/deployment/update/update-compliance-get-started) nella portale di Azure, è possibile continuare a farlo ora e oltre il 2020 gennaio.
+
+<!-- For more information, see [blog post]... -->
 
 ## <a name="other"></a>Altro
 

@@ -11,14 +11,14 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd86e5bd939ecd356a6cf290958a766266248645
-ms.sourcegitcommit: 75f48834b98ea6a238d39f24e04c127b2959d913
+ms.openlocfilehash: 44a01fa12a93b041e61e3bfc85890821bdf09c29
+ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68604483"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70738398"
 ---
-# <a name="what-is-desktop-analytics"></a>Informazioni su desktop Analytics
+# <a name="what-is-desktop-analytics"></a>Che cos'è Desktop Analytics?
 
 > [!Note]  
 > Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
@@ -69,7 +69,7 @@ Per usare desktop Analytics, verificare che l'ambiente soddisfi i prerequisiti s
 
 ### <a name="technical"></a>Tecnico
 
-- Una sottoscrizione di Azure attiva, con autorizzazioni di [amministratore globale](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator) . Gli [account Microsoft](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts) non sono supportati.  
+- Una sottoscrizione di Azure attiva, con autorizzazioni di [amministratore globale](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator-permissions) . Gli [account Microsoft](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts) non sono supportati.  
 
     > [!Important]  
     > Desktop Analytics è attualmente disponibile come servizio Office 365 e richiede un abbonamento Office 365 nel tenant di Azure AD. Questo potrebbe non essere un requisito in futuro.
