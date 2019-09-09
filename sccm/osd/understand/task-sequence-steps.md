@@ -2,7 +2,7 @@
 title: Passaggi della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni sui passaggi che è possibile aggiungere a una sequenza di attività di Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 09/04/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f4ee01c85cf978b595aa9d6a7948503b34927c31
-ms.sourcegitcommit: 2d38de4846ea47a03cc884cbd3df27db48f64a6a
+ms.openlocfilehash: 273e61024032defd10b3176fb70ac6c3a35125e2
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70110241"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380052"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
@@ -1142,7 +1142,7 @@ Molti di questi aggiornamenti hanno dipendenze. Ad esempio, viene visualizzata l
 
 Nella maggior parte dei casi, usare l'impostazione predefinita per usare i risultati di analisi memorizzati nella cache.
 
-La variabile **SMSTSSoftwareUpdateScanTimeout** controlla il timeout dell'analisi degli aggiornamenti software durante questo passaggio. Il valore predefinito è 30 minuti. Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables#SMSTSSoftwareUpdateScanTimeout).
+La variabile **SMSTSSoftwareUpdateScanTimeout** controlla il timeout dell'analisi degli aggiornamenti software durante questo passaggio. Il valore predefinito è 60 minuti. Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables#SMSTSSoftwareUpdateScanTimeout).
 
 ### <a name="options"></a>Opzioni  
 

@@ -5,18 +5,18 @@ description: Usare Windows Update for Business per mantenere aggiornati i dispos
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 04/25/2019
+ms.date: 09/04/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 183315fe-27bd-456f-b2c5-e8d25e05229b
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36ab933876b96c0eebe87ba07932757147e334c0
-ms.sourcegitcommit: 9af73f5c1b93f6ccaea3e6a096f75a5fecd65c2f
+ms.openlocfilehash: 12757bed4c674d12f1e0e2b3dc5c6ef72db59778
+ms.sourcegitcommit: b28a97e22a9a56c5ce3367c750ea2bb4d50449c3
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64669117"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243702"
 ---
 # <a name="integration-with-windows-update-for-business-in-windows-10"></a>Integrazione con Windows Update for Business in Windows 10
 
@@ -59,12 +59,15 @@ Windows Update for Business (WUfB) consente di mantenere i dispositivi basati su
 
 #### <a name="to-identify-clients-that-use-wufb"></a>Per identificare i client che usano WUfB  
 
-1.  Disabilitare l'agente di Windows Update in modo che non esegua l'analisi rispetto a WSUS, se questa è stata precedentemente abilitata. Per indicare se il computer esegue l'analisi rispetto a Windows Update o a WSUS, è possibile impostare la chiave del Registro di sistema seguente.  Se il valore è 2, l'analisi non viene eseguita rispetto a WSUS.  
+1.  Verificare che l'agente di Windows Update non stia eseguendo l'analisi rispetto a WSUS, se è stato precedentemente abilitato. Per indicare se il computer esegue l'analisi rispetto a Windows Update o a WSUS, è possibile impostare la chiave del Registro di sistema seguente. Se la chiave del registro di sistema non esiste, l'analisi non viene eseguita rispetto a WSUS.
     - **HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU\UseWUServer**
 
 2.  Esiste un nuovo attributo, **UseWUServer**, nel nodo **Windows Update** di Esplora inventario risorse di Configuration Manager.  
 
-3.  Creare una raccolta sulla base dell'attributo **UseWUServer** per tutti i computer connessi tramite WUfB per gli aggiornamenti.  
+3.  Creare una raccolta sulla base dell'attributo **UseWUServer** per tutti i computer connessi tramite WUfB per gli aggiornamenti. È possibile creare una raccolta in base a una query simile a quella riportata di seguito:  
+    ``` 
+    Select sr.* from SMS_R_System as sr join SMS_G_System_WINDOWSUPDATE as su on sr.ResourceID=su.ResourceID where su.UseWUServer is null
+    ```
 
 4.  Creare un'impostazione dell'agente client per disabilitare il flusso di lavoro di aggiornamento software. Distribuire l'impostazione nella raccolta di computer connessi direttamente a WUfB.  
 

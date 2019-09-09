@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 969bbb28e64c37d8843d634adce99916333540ed
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 2036b3a9981c1a27b24bff1f1f0f543813267dc7
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130361"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70378118"
 ---
 # <a name="about-the-security-content-automation-protocol-scap-extensions"></a>Informazioni sulle estensioni SCAP (Security Content Automation Protocol)
 
@@ -76,11 +76,11 @@ Questa versione delle estensioni SCEP per Configuration Manager include e suppor
 
 ## <a name="terms"></a>Termini
 
-- **ID OVAL**: identificatore di una definizione OVAL specifica conforme al formato per gli ID OVAL.  
+- **ID OVAL:** identificatore di una definizione OVAL specifica conforme al formato per gli ID OVAL.  
 
 - **Flusso dei dati dei risultati SCAP:** aggregazione di componenti SCAP, insieme ai mapping dei riferimenti tra i componenti SCAP, che contiene il contenuto di output (risultati).  
 
-- **Flusso dei dati di origine SCAP**: aggregazione di componenti SCAP, insieme ai mapping dei riferimenti tra i componenti SCAP, che contiene il contenuto di input (origine).
+- **Flusso dei dati di origine SCAP:** aggregazione di componenti SCAP, insieme ai mapping dei riferimenti tra i componenti SCAP, che contiene il contenuto di input (origine).
 
 
 
@@ -134,7 +134,7 @@ I computer per i quali si desidera valutare la conformità SCAP devono disporre 
 
 - Criteri di esecuzione di PowerShell di Configuration Manager impostati su **Ignora**. Per altre informazioni, vedere l'articolo [Criteri di esecuzione di PowerShell](/sccm/core/clients/deploy/about-client-settings#computer-agent).  
 
-- Uno dei seguenti sistemi operativi:  
+- Uno dei sistemi operativi seguenti:  
   - Windows 7 SP1, a 32 bit o a 64 bit
   - Windows 10 a 32 bit o a 64 bit
   - Windows Server 2012 R2
@@ -153,11 +153,11 @@ Le estensioni SCAP per Configuration Manager includono gli strumenti da riga di 
 
 - I parametri della riga di comando `-help` e `-?` per ogni strumento visualizzano le informazioni per l'utilizzo sullo schermo. I dettagli per l'utilizzo sono quindi disponibili per le utilità per la lettura dello schermo e altri strumenti di Assistive Technology.  
 
-- Per altre informazioni, vedere [Accessibilità di Windows](http://windows.microsoft.com/windows/help/accessibility).
+- Per altre informazioni, vedere [Accessibilità di Windows](https://windows.microsoft.com/windows/help/accessibility).
 
 Le estensioni SCAP usano anche le funzionalità di accessibilità disponibili in Configuration Manager. Per altre informazioni, vedere [Funzionalità di accessibilità in Configuration Manager](/sccm/core/understand/accessibility-features).
 
-Per informazioni generali sui prodotti e i servizi di accessibilità Microsoft, visitare il [sito Web Accessibilità in Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=9212).
+Per informazioni generali sui prodotti e i servizi di accessibilità Microsoft, visitare il [sito Web Accessibilità in Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=9212).
 
 
 

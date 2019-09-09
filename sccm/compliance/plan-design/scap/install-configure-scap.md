@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b63894764e45e67ef262e345140e245297a11c87
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: dee4e3a83f0cdba38f07ba0e7bd9bf6f425ca440
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133936"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70378139"
 ---
 # <a name="install-and-configure-the-scap-extensions-for-configuration-manager"></a>Installare e configurare le estensioni SCAP per Configuration Manager
 
@@ -51,10 +51,10 @@ A seconda dell’ambiente, potrebbero non essere necessario tutti fi file di flu
 
 ### <a name="install-the-scap-data-streams"></a>Installare i flussi dei dati SCAP
 
-1. Visitare il [sito Web NVD](http://nvd.nist.gov/) per identificare i flussi di dati SCAP richiesti dall'organizzazione.
+1. Visitare il [sito Web NVD](https://nvd.nist.gov/) per identificare i flussi di dati SCAP richiesti dall'organizzazione.
 I flussi dei dati SCAP pubblicati da NIST sono organizzati in più bundle, detti anche _elenchi di controllo_.  
 
-2. Scaricare i flussi dei dati SCAP dal [sito Web NVD](http://nvd.nist.gov/home.cfm). I flussi sono archiviati in file compressi con estensione zip o sono contrassegnati come file XML DataStream.  
+2. Scaricare i flussi dei dati SCAP dal [sito Web NVD](https://nvd.nist.gov/home.cfm). I flussi sono archiviati in file compressi con estensione zip o sono contrassegnati come file XML DataStream.  
 
     > [!IMPORTANT]  
     > Esistono molti file di flusso dati SCAP con estensione xml che è possibile scaricare dal NVD. Tuttavia, solo i file con estensione xml che includono contenuto XCCDF (SCAP 1.0 e 1.1)/DataStream (SCAP 1.2) sono appropriati per l'uso con le estensioni SCAP.  

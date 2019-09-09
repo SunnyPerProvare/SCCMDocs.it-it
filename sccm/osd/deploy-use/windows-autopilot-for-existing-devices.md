@@ -11,12 +11,12 @@ ms.assetid: 2e96f847-5b5a-4da9-8e8f-6aa488838508
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6878e36e5bf20774f6eef1ee855dda2f95dabfb4
-ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
+ms.openlocfilehash: 4cc806009f9cb02e50a2b023722a2045d4bde655
+ms.sourcegitcommit: b28a97e22a9a56c5ce3367c750ea2bb4d50449c3
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57558006"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243719"
 ---
 # <a name="windows-autopilot-for-existing-devices"></a>Windows Autopilot per dispositivi esistenti
 <!--3607717, fka 1358333-->
@@ -35,7 +35,7 @@ ms.locfileid: "57558006"
 
 - In Microsoft Intune, creare i profili per Windows Autopilot. Per altre informazioni, vedere [Registrare dispositivi Windows in Intune con Windows Autopilot](https://docs.microsoft.com/intune/enrollment-autopilot).
 
-- Un dispositivo che non sia già registrato con il servizio Windows Autopilot. Se il dispositivo è già registrato, il profilo assegnato ha la precedenza. Di Autopilot per i profili di dispositivi esistenti solo se che il profilo online verifica il timeout.
+- Un dispositivo che non sia già registrato con il servizio Windows Autopilot. Se il dispositivo è già registrato, il profilo assegnato ha la precedenza. Il profilo di Autopilot per i dispositivi esistenti si applica solo se si verifica il timeout del profilo online.
 
 
 
@@ -96,7 +96,7 @@ ms.locfileid: "57558006"
 
     - Abilitare l'opzione **Creare partizioni e formattare il computer di destinazione prima di installare il sistema operativo**  
 
-    - **Configurare la sequenza di attività per l'utilizzo con Bitlocker**: se si abilita questa opzione, la sequenza di attività include i passaggi necessari per abilitare Bitlocker  
+    - **Configurare la sequenza di attività per l'utilizzo con BitLocker**: se si abilita questa opzione, la sequenza di attività include i passaggi necessari per abilitare BitLocker  
 
     - **Codice Product Key**: se è necessario specificare un codice Product Key per l'attivazione di Windows, immetterlo qui  
 
@@ -142,3 +142,6 @@ Usare la co-gestione per migliorare le funzionalità di gestione dei dispositivi
 - [Percorsi per la co-gestione](/sccm/comanage/quickstart-paths)
 - [Windows Autopilot con co-gestione](/sccm/comanage/quickstart-autopilot)
 
+## <a name="see-also"></a>Vedere anche
+
+- [Registrare dispositivi Windows in Intune con Windows AutoPilot](https://docs.microsoft.com/intune/enrollment-autopilot)
