@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44a01fa12a93b041e61e3bfc85890821bdf09c29
-ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
+ms.openlocfilehash: 5f6461d607401a0d932997d3ef38f02c991a5e2b
+ms.sourcegitcommit: cb169396acf0d50fedd9f2ae62f7894615c3cce5
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70738398"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70808346"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Desktop Analytics?
 
@@ -72,7 +72,7 @@ Per usare desktop Analytics, verificare che l'ambiente soddisfi i prerequisiti s
 - Una sottoscrizione di Azure attiva, con autorizzazioni di [amministratore globale](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator-permissions) . Gli [account Microsoft](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts) non sono supportati.  
 
     > [!Important]  
-    > Desktop Analytics è attualmente disponibile come servizio Office 365 e richiede un abbonamento Office 365 nel tenant di Azure AD. Questo potrebbe non essere un requisito in futuro.
+    > Desktop Analytics richiede attualmente la distribuzione di un servizio Office 365 nel tenant del Azure AD. Questo non è un requisito in futuro.
 
     - **Proprietario dell'area di lavoro** o autorizzazioni di **collaboratore** per **configurare l'area di lavoro**e i ruoli seguenti:  
 

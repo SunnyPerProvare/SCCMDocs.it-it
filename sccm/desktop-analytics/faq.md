@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 306c6569551e1068c0e682c893e94b8f1a920ade
-ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
+ms.openlocfilehash: e47827c6ad2b52ebb2b9dfabcdc4c61320385bf3
+ms.sourcegitcommit: cb169396acf0d50fedd9f2ae62f7894615c3cce5
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70738284"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70808385"
 ---
 # <a name="desktop-analytics-faq"></a>Domande frequenti su desktop Analytics
 
@@ -88,7 +88,7 @@ Sì, quando si imposta un'area di lavoro di Windows Analytics esistente come are
 
 | Tipo di input | Viene eseguita la migrazione? |
 |------------|---------------|
-| Importanza | Sì |
+| Importanza | Yes |
 | Proprietario dell'app | Sì |
 | Decisione di aggiornamento | No |
 | Piano di test | No |
@@ -127,7 +127,7 @@ No, al momento devi decidere di eseguire la migrazione durante il caricamento [i
 
 Sì. Se attualmente si usa [conformità aggiornamenti](https://docs.microsoft.com/windows/deployment/update/update-compliance-get-started) nella portale di Azure, è possibile continuare a farlo ora e oltre il 2020 gennaio.
 
-<!-- For more information, see [blog post]... -->
+Per ulteriori informazioni, vedere il post di Blog: [Migrare i dati di input utente da "Windows Analytics: Preparazione aggiornamenti "to desktop Analytics](https://techcommunity.microsoft.com/t5/Desktop-Analytics-Blog/Migrate-user-input-data-from-Windows-Analytics-Upgrade-Readiness/ba-p/841744).
 
 ## <a name="other"></a>Altro
 
