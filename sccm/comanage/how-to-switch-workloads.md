@@ -7,16 +7,16 @@ ms.technology: configmgr-client
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 07/26/2019
+ms.date: 09/05/2019
 ms.topic: conceptual
 ms.assetid: 60e2022f-a4f9-40dd-af01-9ecb37b43878
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 050242e331796c04d05b8b751203b8d6be4f7e2d
-ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
+ms.openlocfilehash: 5c1cdd3358c1d9bf41584658ee25c7210808a8f4
+ms.sourcegitcommit: 1d16ccc20bb00bf2e21f923d7f9dde3c9783dab5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68859848"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70272690"
 ---
 # <a name="how-to-switch-configuration-manager-workloads-to-intune"></a>Come trasferire i carichi di lavoro di Configuration Manager a Intune
 
@@ -54,7 +54,8 @@ A partire dalla versione 1906, è possibile configurare raccolte pilota diverse 
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Servizi cloud** e selezionare il nodo **Co-gestione**.  
 
-2. Selezionare l'oggetto co-gestione e quindi scegliere **Proprietà** nella barra multifunzione.  
+2. Selezionare l'oggetto co-gestione e quindi scegliere **Proprietà** nella barra multifunzione.
+   - Verrà richiesto di accedere ad Azure AD. Questa richiesta non impedisce l'aggiornamento dell'onboarding. Tuttavia, la richiesta verrà visualizzata ogni volta che si apre la pagina **Proprietà** fino a quando non si esegue l'accesso.
 
 3. Passare alla scheda **Carichi di lavoro**. Per impostazione predefinita, a tutti i carichi di lavoro è applicata l'impostazione **Configuration Manager**. Per trasferire un carico di lavoro, spostare il dispositivo di scorrimento relativo al carico di lavoro sull'impostazione desiderata.  
 

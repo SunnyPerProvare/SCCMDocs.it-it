@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9dce5e5277ffc0fbdf7e5432186a237d45933e7c
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 11c9bbbab40ec593ae6455a9018502a754402385
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133419"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70377858"
 ---
 # <a name="operations-and-maintenance-for-reporting-in-system-center-configuration-manager"></a>Operazioni e manutenzione per la creazione di report in System Center Configuration Manager
 
@@ -40,7 +40,7 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 > Per poter eseguire correttamente i report, deve essere presente un trust bidirezionale per gli utenti di un dominio diverso da quello dell'account al punto Servicies Reporting.
 
 > [!NOTE]  
->  Gestione report è uno strumento Web di accesso e gestione di report che consente di amministrare una singola istanza di un server di report in un percorso remoto su una connessione HTTP. È possibile utilizzare Gestione report per attività operative, ad esempio, per visualizzare i report, modificare le proprietà del report e gestire sottoscrizioni di report associate. Questo argomento include i passaggi necessari per visualizzare un report e modificare le proprietà dei report in Gestione report, ma per ulteriori informazioni sulle altre opzioni disponibili in Gestione report, vedere [Gestione report](http://go.microsoft.com/fwlink/p/?LinkId=224916) nella documentazione online di SQL Server 2008.  
+>  Gestione report è uno strumento Web di accesso e gestione di report che consente di amministrare una singola istanza di un server di report in un percorso remoto su una connessione HTTP. È possibile utilizzare Gestione report per attività operative, ad esempio, per visualizzare i report, modificare le proprietà del report e gestire sottoscrizioni di report associate. Questo argomento include i passaggi necessari per visualizzare un report e modificare le proprietà dei report in Gestione report, ma per ulteriori informazioni sulle altre opzioni disponibili in Gestione report, vedere [Gestione report](https://go.microsoft.com/fwlink/p/?LinkId=224916) nella documentazione online di SQL Server 2008.  
 
  Utilizzare le procedure seguenti per eseguire un report di Configuration Manager.  
 
@@ -233,26 +233,26 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
      > [!NOTE]  
      >  Il nome utente specificato in un secondo momento in questa pagina deve avere accesso alla condivisione server e deve disporre delle autorizzazioni di scrittura per la cartella di destinazione.  
 
-   - **Formato rendering**: Selezionare uno dei formati seguenti per il file di report:  
+   - **Formato rendering**: selezionare uno dei formati seguenti per il file di report:  
 
-     -   **File XML con dati report**: salva il report in formato Extensible Markup Language.  
+     -   **File XML con dati report**: salva il report in formato XML (Extensible Markup Language).  
 
-     -   **CSV \(comma delimited\)**: salva il report in formato con valori \-delimitati\- da virgole.  
+     -   **CSV \(comma delimited\)** : salva il report in formato con valori \-delimitati\- da virgole.  
 
      -   **File TIFF**: salva il report in formato TIFF (Tagged Image File Format).  
 
-     -   **File Acrobat \(PDF\)**: salva il rapporto in formato Acrobat PDF (Portable Document Format).  
+     -   **File Acrobat \(PDF\)** : salva il report in formato Acrobat PDF (Portable Document Format).  
 
      -   **HTML 4.0**: salva il report come pagina Web visualizzabile solo in browser che supportano HTML 4.0. Internet Explorer 5 e le versioni successive supportano HTML 4.0.  
 
          > [!NOTE]  
          >  Se nel report sono presenti immagini, il formato HTML 4.0 non le includerà nel file.  
 
-     -   **MHTML \((archivio Web)\)**: salva il report in formato MIME HTML \(mhtml\), visualizzabile in molti browser Web.  
+     -   **MHTML \((archivio Web)\)** : salva il report in formato MIME HTML \(mhtml\), visualizzabile in molti browser Web.  
 
      -   **Renderer RPL**: salva il report in formato RPL \(Report Page Layout\).  
 
-     -   **Excel**: salva il rapporto come foglio di calcolo di Microsoft Excel.  
+     -   **Excel**: salva il report come foglio di calcolo di Microsoft Excel.  
 
      -   **Word**: salva il report come documento di Microsoft Word.  
 
@@ -274,7 +274,7 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 
 5. Nella pagina **Pianificazione della sottoscrizione** selezionare una delle opzioni seguenti della pianificazione di recapito per la sottoscrizione report:  
 
-   -   **Usa pianificazione condivisa**: una pianificazione condivisa è una pianificazione definita in precedenza che può essere utilizzata da altre sottoscrizioni report. Selezionare questa casella di controllo e quindi selezionare una pianificazione condivisa nell'elenco, se disponibile.  
+   -   **Usa pianificazione condivisa**: una pianificazione condivisa è una pianificazione definita in precedenza che può essere usata da altre sottoscrizioni report. Selezionare questa casella di controllo e quindi selezionare una pianificazione condivisa nell'elenco, se disponibile.  
 
    -   **Crea nuova pianificazione**: configurare la pianificazione in base a cui viene eseguito questo report, specificando intervallo, ora e data di inizio e data di fine per la sottoscrizione.  
 
@@ -292,7 +292,7 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 -   Inviare un report collegato o incorporato. Il formato di rendering e il browser determinano se il report è incorporato o collegato. Se il browser supporta HTML 4.0 e MHTML e si seleziona il formato di rendering MHTML \(archivio Web\), il report verrà incorporato come parte del messaggio. Tutti gli altri formati di rendering \(CSV, PDF, Word e così via\) recapitano i report come allegati. Reporting Services non controlla la dimensione dell'allegato o del messaggio prima di inviare il report. Se l'allegato o messaggio supera il limite massimo consentito dal server di posta elettronica, il report non verrà recapitato.  
 
 > [!IMPORTANT]  
->  È necessario configurare le impostazioni di posta elettronica in Reporting Services per rendere disponibile l'opzione di recapito **Posta elettronica** . Per ulteriori informazioni sulla configurazione delle impostazioni di posta elettronica in Reporting Services, vedere [Configurazione di un server di report per il recapito tramite posta elettronica](http://go.microsoft.com/fwlink/p/?LinkId=226668) nella documentazione online di SQL Server.  
+>  È necessario configurare le impostazioni di posta elettronica in Reporting Services per rendere disponibile l'opzione di recapito **Posta elettronica** . Per ulteriori informazioni sulla configurazione delle impostazioni di posta elettronica in Reporting Services, vedere [Configurazione di un server di report per il recapito tramite posta elettronica](https://go.microsoft.com/fwlink/p/?LinkId=226668) nella documentazione online di SQL Server.  
 
  Utilizzare la procedura seguente per creare una sottoscrizione report per recapitare un report tramite posta elettronica.  
 
@@ -313,11 +313,11 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
         > [!NOTE]  
         >  È possibile immettere più destinatari di posta elettronica separando ogni indirizzo di posta elettronica con un punto e virgola.  
 
-    -   **Cc**: facoltativamente, specificare un indirizzo di posta elettronica a cui inviare in copia questo report.  
+    -   **Cc**: facoltativamente, specificare un indirizzo di posta elettronica a cui inviare una copia questo report.  
 
-    -   **Ccn**: facoltativamente, specificare un indirizzo di posta elettronica a cui inviare in copia nascosta questo report.  
+    -   **Ccn**: facoltativamente, specificare un indirizzo di posta elettronica a cui inviare una copia nascosta questo report.  
 
-    -   **Rispondi a**: specificare l'indirizzo di risposta da utilizzare se il destinatario risponde al messaggio di posta elettronica.  
+    -   **Rispondi a**: specificare l'indirizzo di risposta da usare se il destinatario risponde al messaggio di posta elettronica.  
 
     -   **Oggetto**: specificare un oggetto per il messaggio di posta elettronica di sottoscrizione.  
 
@@ -333,23 +333,23 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 
     -   **Formato rendering**: selezionare uno dei formati seguenti per il report allegato:  
 
-        -   **File XML con dati report**: salva il report in formato Extensible Markup Language.  
+        -   **File XML con dati report**: salva il report in formato XML (Extensible Markup Language).  
 
-        -   **CSV \(comma delimited\)**: salva il report in formato con valori \-delimitati\- da virgole.  
+        -   **CSV \(comma delimited\)** : salva il report in formato con valori \-delimitati\- da virgole.  
 
         -   **File TIFF**: salva il report in formato TIFF (Tagged Image File Format).  
 
-        -   **File Acrobat \(PDF\)**: salva il rapporto in formato Acrobat PDF (Portable Document Format).  
+        -   **File Acrobat \(PDF\)** : salva il report in formato Acrobat PDF (Portable Document Format).  
 
-        -   **MHTML \((archivio Web)\)**: salva il report in formato MIME HTML \(mhtml\), visualizzabile in molti browser Web.  
+        -   **MHTML \((archivio Web)\)** : salva il report in formato MIME HTML \(mhtml\), visualizzabile in molti browser Web.  
 
-        -   **Excel**: salva il rapporto come foglio di calcolo di Microsoft Excel.  
+        -   **Excel**: salva il report come foglio di calcolo di Microsoft Excel.  
 
         -   **Word**: salva il report come documento di Microsoft Word.  
 
 -   Nella pagina **Pianificazione della sottoscrizione** selezionare una delle opzioni seguenti della pianificazione di recapito per la sottoscrizione report:  
 
-    -   **Usa pianificazione condivisa**: una pianificazione condivisa è una pianificazione definita in precedenza che può essere utilizzata da altre sottoscrizioni report. Selezionare questa casella di controllo e quindi selezionare una pianificazione condivisa nell'elenco, se disponibile.  
+    -   **Usa pianificazione condivisa**: una pianificazione condivisa è una pianificazione definita in precedenza che può essere usata da altre sottoscrizioni report. Selezionare questa casella di controllo e quindi selezionare una pianificazione condivisa nell'elenco, se disponibile.  
 
     -   **Crea nuova pianificazione**: configurare la pianificazione in base a cui viene eseguito questo report, specificando intervallo, ora e data di inizio e data di fine per la sottoscrizione.  
 

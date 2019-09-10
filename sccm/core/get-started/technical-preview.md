@@ -2,7 +2,7 @@
 title: Versioni di Technical Preview
 titleSuffix: Configuration Manager
 description: Informazioni sulla versione Technical Preview che consente di testare nuove funzionalità e capacità in Configuration Manager.
-ms.date: 08/06/2019
+ms.date: 08/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f208a8bf66748601985434366a30297396254e4
-ms.sourcegitcommit: 159c6c9fe1df03fd2c4633125a593e3050a2f2da
+ms.openlocfilehash: d5c80836ced76bdf1109c9279bf2068efbbd97f5
+ms.sourcegitcommit: f679fc1e46c191a1780ae961d155c927fc353dce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68833069"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176762"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Technical Preview per Configuration Manager
 
@@ -122,9 +122,24 @@ Le funzionalità seguenti sono disponibili con la versione Technical Preview di 
 
 <!-- This is the full list of new features in the latest TP release -->
 
-### <a name="technical-preview-version-1908"></a>Technical Preview versione 1908
+### <a name="technical-preview-version-19082"></a>Technical Preview versione 1908.2
 
 <!-- - [title](/sccm/core/get-started/2019/technical-preview-1901#bkmk_anchor) <!--ID-->
+
+- [Miglioramenti per Connessioni di console](/sccm/core/get-started/2019/technical-preview-1908-2#improvements-to-console-connections) <!--4923997-->
+- [Miglioramenti per i punti di distribuzione abilitati per il multicast](/sccm/core/get-started/2019/technical-preview-1908-2#bkmk_multicast) <!--3785535-->
+- [Ottimizzazioni per il motore CMPivot](/sccm/core/get-started/2019/technical-preview-1908-2#optimizations-to-the-cmpivot-engine) <!--3197353-->
+- [Impostare il layout della tastiera durante la distribuzione del sistema operativo](/sccm/core/get-started/2019/technical-preview-1908-2#bkmk_osd) <!--5138936-->
+
+> [!Note]  
+> Le funzionalità disponibili in una versione precedente della Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità aggiunte alla versione Current Branch di Configuration Manager rimangono disponibili nel ramo Technical Preview.  
+
+
+## <a name="features-in-recent-technical-previews"></a>Funzionalità nelle anteprime tecniche recenti
+
+Le funzionalità seguenti sono state rilasciate in versioni precedenti di Configuration Manager Technical Preview Branch dopo la versione Current Branch 1906:
+
+### <a name="technical-preview-version-1908"></a>Technical Preview versione 1908
 
 - [Miglioramenti delle prestazioni della sequenza di attività per le combinazioni per il risparmio di energia](/sccm/core/get-started/2019/technical-preview-1908#bkmk_tsperf) <!--3555926-->
 - [Valutazione delle query sul dispositivo locale con CMPivot autonomo](/sccm/core/get-started/2019/technical-preview-1908#local-device-query-evaluation-using-cmpivot-standalone) <!--3197353-->
@@ -135,13 +150,6 @@ Le funzionalità seguenti sono disponibili con la versione Technical Preview di 
 - [Copiare e incollare le condizioni della sequenza di attività](/sccm/core/get-started/2019/technical-preview-1908#bkmk_tscondition) <!--4621098-->
 - [Miglioramenti per la ricerca nell'editor della sequenza di attività](/sccm/core/get-started/2019/technical-preview-1908#bkmk_tssearch) <!--4621085-->
 - [Miglioramenti alla distribuzione del sistema operativo](/sccm/core/get-started/2019/technical-preview-1908#bkmk_osd) <!--4910348, 4931110, 4977616-->
-
-> [!Note]  
-> Le funzionalità disponibili in una versione precedente della Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità aggiunte alla versione Current Branch di Configuration Manager rimangono disponibili nel ramo Technical Preview.  
-
-## <a name="features-in-recent-technical-previews"></a>Funzionalità nelle anteprime tecniche recenti
-
-Le funzionalità seguenti sono state rilasciate in versioni precedenti di Configuration Manager Technical Preview Branch dopo la versione Current Branch 1906:
 
 ### <a name="technical-preview-version-1907"></a>Technical Preview versione 1907
 

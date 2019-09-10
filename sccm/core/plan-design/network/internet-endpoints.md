@@ -2,7 +2,7 @@
 title: Requisiti per l'accesso a Internet
 titleSuffix: Configuration Manager
 description: Informazioni sugli endpoint Internet a cui consentire l'accesso per usufruire delle funzionalità complete di Configuration Manager.
-ms.date: 08/08/2019
+ms.date: 08/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.assetid: b34fe701-5d05-42be-b965-e3dccc9363ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fa7ab85d86a544b3ea0ad22325ddd63e2034982e
-ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
+ms.openlocfilehash: 11241176abade1233a6fbdbe2ee3bdd0e3219e48
+ms.sourcegitcommit: b28a97e22a9a56c5ce3367c750ea2bb4d50449c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68860049"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243580"
 ---
 # <a name="internet-access-requirements"></a>Requisiti per l'accesso a Internet
 
@@ -31,6 +31,8 @@ Queste configurazioni si applicano al computer che ospita il punto di connession
 Il punto di connessione del servizio supporta l'uso di un proxy Web (con o senza autenticazione) per accedere a questi percorsi. Per altre informazioni, vedere [Supporto dei server proxy](/sccm/core/plan-design/network/proxy-server-support).
 
 Per altre informazioni sul punto di connessione del servizio, vedere [Informazioni sul punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point).
+
+Altre funzionalità di Configuration Manager possono richiedere endpoint aggiuntivi dal punto di connessione del servizio. Per altre informazioni, vedere le altre sezioni in questo articolo.
 
 > [!TIP]  
 > Il punto di connessione del servizio usa il servizio Microsoft Intune quando si connette a `go.microsoft.com` o a `manage.microsoft.com`. Esiste un problema noto per cui il connettore Intune riscontra problemi di connettività se il certificato radice Baltimore CyberTrust non è installato, è scaduto o è danneggiato nel punto di connessione del servizio. Per altre informazioni, vedere [KB 3187516: Il punto di connessione del servizio non scarica gli aggiornamenti](https://support.microsoft.com/help/3187516).  
@@ -90,6 +92,11 @@ Per altre informazioni su questa funzione, vedere [Configurare i servizi di Azur
 ## <a name="co-management"></a>Co-gestione
 
 Se si registrano dispositivi di Windows 10 in Microsoft Intune per la co-gestione, assicurarsi che questi dispositivi possano accedere agli endpoint richiesti da Intune. Per altre informazioni, vedere [Endpoint di rete per Microsoft Intune](https://docs.microsoft.com/intune/intune-endpoints).
+
+
+## <a name="microsoft-store-for-business"></a>Microsoft Store per le aziende
+
+Se si integra Configuration Manager con [Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business), assicurarsi che il punto di connessione del servizio e i dispositivi di destinazione siano in grado di accedere al servizio cloud. Per altre informazioni, vedere [Configurazione del proxy per Microsoft Store per le aziende](https://docs.microsoft.com/microsoft-store/prerequisites-microsoft-store-for-business#proxy-configuration).
 
 
 ## <a name="bkmk_cloud"></a> Servizi cloud

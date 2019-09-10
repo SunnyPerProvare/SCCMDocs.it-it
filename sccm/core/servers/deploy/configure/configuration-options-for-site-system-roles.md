@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10689b4ae50b06f07516f50041e42a4871fa6bcf
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 947ea5908fdcfc620f043ab57c7174e69c7b0199
+ms.sourcegitcommit: f679fc1e46c191a1780ae961d155c927fc353dce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536582"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176847"
 ---
 # <a name="configuration-options-for-site-system-roles-in-configuration-manager"></a>Opzioni di configurazione per i ruoli del sistema del sito in Configuration Manager
 
@@ -83,7 +83,7 @@ I punti di registrazione vengono usati per installare i computer macOS e registr
 
 ### <a name="allowed-connections"></a>Connessioni consentite
 
-L'impostazione HTTPS viene selezionata automaticamente e richiede un certificato PKI sul server per l'autenticazione tra server e punto proxy di registrazione o punto di servizio fuori banda e per la crittografia dei dati tramite SSL. Per altre informazioni, vedere [requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements).  
+L'impostazione HTTPS viene selezionata automaticamente e richiede un certificato PKI sul server per l'autenticazione tra server e punto proxy di registrazione, nonché per la crittografia dei dati tramite SSL. Per altre informazioni, vedere [requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements).  
 
 Per un esempio di distribuzione del certificato del server e per informazioni sulla relativa configurazione in IIS, vedere [Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).  
 

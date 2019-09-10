@@ -2,7 +2,7 @@
 title: CMPivot per i dati in tempo reale
 titleSuffix: Configuration Manager
 description: Informazioni su come usare CMPivot in Configuration Manager per eseguire query sui client in tempo reale.
-ms.date: 08/28/2019
+ms.date: 09/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c4b0ed9150988deee3f8484e5c7b10eb919c086
-ms.sourcegitcommit: 9aa852d54670b5bc568a1ca6e57cd9c1349e5724
+ms.openlocfilehash: 5e0be6129306e37ba1721923efe1b7533875784e
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70053755"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380038"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>CMPivot per i dati in tempo reale in Configuration Manager
 
@@ -167,7 +167,7 @@ La finestra CMPivot presenta gli elementi seguenti:
 
      - **Mostra dispositivi senza**: esegue una query dei dispositivi senza questo valore della proprietà. Ad esempio, nei risultati della query `OS` selezionare questa opzione in una cella della riga Version: `OS | summarize countif( (Version == '10.0.17134') ) by Device | where (countif_ == 0) | project Device`  
 
-     - **Usa Bing**: avvia il Web browser predefinito per accedere a www.bing.com con questo valore come stringa di query.  
+     - **Usa Bing**: avvia il Web browser predefinito in https://www.bing.com con questo valore come stringa di query.  
 
    - Fare clic su un testo con collegamento ipertestuale per trasformare tramite Pivot la vista su tali informazioni specifiche.  
 
@@ -261,6 +261,14 @@ CMPivot include i miglioramenti seguenti a partire da Configuration Manager vers
   - Questa modifica migliora le prestazioni di visualizzazione dell'output di script o query.
   - Se l'output di script o query è maggiore di 80 KB, il client invia i dati tramite un messaggio di stato.
   - Se non è aggiornato alla versione 1810, il client continua a usare i messaggi di stato.
+
+- Quando si avvia CMPivot, è possibile che venga visualizzato l'errore seguente:  **Non è possibile usare subito CMPivot a causa di una versione dello script incompatibile. Questo problema può dipendere dal fatto che la gerarchia sta aggiornando un sito. Attendere che venga completato l'aggiornamento, quindi riprovare.**
+
+  - Se viene visualizzato questo messaggio, potrebbe significare che:
+    - L'ambito di sicurezza non è configurato correttamente.
+    - Si sono verificati problemi durante l'aggiornamento nel processo.
+    - Lo script CMPivot sottostante è incompatibile.
+
 
 ### <a name="bkmk_cmpivot-functions"></a> Funzioni scalari
 CMPivot supporta le seguenti funzioni scalari:

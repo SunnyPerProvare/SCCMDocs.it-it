@@ -2,7 +2,7 @@
 title: Riferimento ai file di log
 titleSuffix: Configuration Manager
 description: Riferimento di tutti i file di log per i componenti client, server e dipendenti di Configuration Manager.
-ms.date: 08/08/2019
+ms.date: 08/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44ed3f61914cf62a9eceb189be933330cf04124e
-ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
+ms.openlocfilehash: c82cd6cb25763de9c470148c91f80b79e31d981b
+ms.sourcegitcommit: b28a97e22a9a56c5ce3367c750ea2bb4d50449c3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68860065"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243552"
 ---
 # <a name="log-file-reference"></a>Riferimento ai file di log
 
@@ -273,6 +273,7 @@ Nella tabella seguente sono elencati i file di log disponibili nel server del si
 |adsgdis.log|Registra le azioni di individuazione gruppo Active Directory.|Server del sito|  
 |adsysdis.log|Registra le azioni di individuazione sistema Active Directory.|Server del sito|  
 |adusrdis.log|Registra le azioni di individuazione utente Active Directory.|Server del sito|  
+|BusinessAppProcessWorker.log|Registra l'elaborazione per le app di Microsoft Store per le aziende.|Server del sito|
 |ccm.log|Registra le attività per l'installazione push client.|Server del sito|  
 |CertMgr.log|Registra le attività relative ai certificati per le comunicazioni all'interno del sito.|Server del sistema del sito|  
 |chmgr.log|Registra le attività della gestione dell'integrità client.|Server del sito|  
@@ -323,6 +324,7 @@ Nella tabella seguente sono elencati i file di log disponibili nel server del si
 |sitectrl.log|Registra le modifiche alle impostazioni del sito apportate agli oggetti di controllo sito nel database.|Server del sito|  
 |sitestat.log|Registra il processo di monitoraggio di disponibilità e spazio su disco di tutti i sistemi del sito.|Server del sito|
 |SMS_AZUREAD_DISCOVERY_AGENT.log| File di log per la sincronizzazione dei risultati di appartenenza alla raccolta con Azure Active Directory. È stata introdotta come funzionalità di versione non definitiva a partire da Configuration Manager versione 1906.| Server del sito|
+|SMS_BUSINESS_APP_PROCESS_MANAGER.log|File di log per il componente che sincronizza le app da Microsoft Store per le aziende.|Server del sito|
 |SMS_ISVUPDATES_SYNCAGENT.log| File di log per la sincronizzazione degli aggiornamenti software di terze parti a partire da Configuration Manager versione 1806.| Punto di aggiornamento software di livello superiore nella gerarchia di Configuration Manager.|
 |SMS_PhasedDeployment.log| File di log per distribuzioni in più fasi|Sito principale della gerarchia di Configuration Manager|   
 |SmsAdminUI.log|Registra l'attività della console di Configuration Manager.|Computer che esegue la console di Configuration Manager|  
@@ -415,11 +417,13 @@ La tabella seguente elenca i file di log contenenti informazioni correlate al pu
 |Dmpdownloader.log|Registra informazioni dettagliate sui download da Microsoft Intune.|Computer con il punto di connessione del servizio|  
 |Dmpuploader.log|Registra informazioni dettagliate sul caricamento delle modifiche del database in Microsoft Intune.|Computer con il punto di connessione del servizio|  
 |hman.log|Registra informazioni sull'inoltro dei messaggi.|Server del sito|  
+|MSfBSyncWorker.log|Registra informazioni sulle comunicazioni con Microsoft Store per le aziende.|Computer con il punto di connessione del servizio|
 |objreplmgr.log|Registra l'elaborazione di criteri e assegnazione.|Server del sito primario|  
 |PolicyPV.log|Registra la generazione di tutti i criteri.|Server del sito|  
 |outgoingcontentmanager.log|Registra il contenuto caricato in Microsoft Intune.|Computer con il punto di connessione del servizio|  
 |Sitecomp.log|Registra informazioni dettagliate sull'installazione del punto di connessione del servizio.|Server del sito|  
 |SmsAdminUI.log|Registra l'attività della console di Configuration Manager.|Computer che esegue la console di Configuration Manager|  
+|SMS_CLOUDCONNECTION.log|Registra informazioni sui servizi cloud.|Computer con il punto di connessione del servizio|
 |Smsprov.log|Registra le attività eseguite dal provider SMS. Le attività della console di Configuration Manager usano il provider SMS.|Computer con il provider SMS|  
 |SrvBoot.log|Registra informazioni dettagliate sul servizio di installazione del punto di connessione del servizio.|Computer con il punto di connessione del servizio|  
 |Statesys.log|Registra l'elaborazione dei messaggi di gestione dei dispositivi mobili.|Sito primario e sito di amministrazione centrale|  
@@ -457,9 +461,11 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |AppGroupHandler.log|A partire dalla versione 1906, informazioni relative al rilevamento e all'imposizione per i gruppi di applicazioni|Client|
 |awebsctl.log|Registra le attività di monitoraggio per il ruolo del sistema del sito punto per servizi Web del Catalogo applicazioni.|Server del sistema del sito|  
 |awebsvcMSI.log|Registra informazioni di installazione dettagliate per il ruolo del sistema del sito punto per servizi Web del Catalogo applicazioni.|Server del sistema del sito|  
+|BusinessAppProcessWorker.log|Registra l'elaborazione per le app di Microsoft Store per le aziende.|Server del sito|
 |Ccmsdkprovider.log|Registra le attività di SDK di gestione applicazioni.|Client|  
 |colleval.log|Registra dettagli sul momento in cui le raccolte vengono create, modificate ed eliminate dall'analizzatore di raccolte.|Server del sistema del sito|  
 |ConfigMgrSoftwareCatalog.log|Registra l'attività del Catalogo applicazioni, che include l'utilizzo di Silverlight.|Client|  
+|MSfBSyncWorker.log|Registra informazioni sulle comunicazioni con Microsoft Store per le aziende.|Computer con il punto di connessione del servizio|
 |NotiCtrl.log|Notifiche di richiesta dell'applicazione.|Server del sito|  
 |portlctl.log|Registra le attività di monitoraggio per il ruolo del sistema del sito punto per siti Web del Catalogo applicazioni.|Server del sistema del sito|  
 |portlwebMSI.log|Registra l'attività di installazione MSI per il ruolo del sito Web del Catalogo applicazioni.|Server del sistema del sito|  
@@ -467,6 +473,8 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |ServicePortalWebService.log|Registra le attività di installazione dei servizi Web del Catalogo applicazioni.|Server del sistema del sito|  
 |ServicePortalWebSite.log|Registra le attività del sito Web del Catalogo applicazioni.|Server del sistema del sito|  
 |SettingsAgent.log|Imposizione di applicazioni specifiche, registra l'orchestrazione della valutazione del gruppo di applicazioni e i dettagli dei criteri di co-gestione.|Client|
+|SMS_BUSINESS_APP_PROCESS_MANAGER.log|File di log per il componente che sincronizza le app da Microsoft Store per le aziende.|Server del sito|
+|SMS_CLOUDCONNECTION.log|Registra informazioni sui servizi cloud.|Computer con il punto di connessione del servizio|
 |SMSdpmon.log|Registra informazioni dettagliate sulle attività pianificate di monitoraggio dell'integrità del punto di distribuzione configurate su un punto di distribuzione.|Server del sito|  
 |SoftwareCatalogUpdateEndpoint.log|Registra le attività per la gestione di URL per il Catalogo di applicazioni indicato in Software Center.|Client|  
 |SoftwareCenterSystemTasks.log|Registra le attività correlate alla convalida dei componenti dei prerequisiti di Software Center.|Client|  
@@ -754,7 +762,6 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni relat
 |CAS.log|Registra informazioni dettagliate quando vengono rilevati punti di distribuzione per il contenuto a cui si fa riferimento.|Client|  
 |ccmsetup.log|Registra le attività svolte da ccmsetup per l'installazione, l'aggiornamento e la rimozione dei client. Può essere usato per la risoluzione dei problemi di installazione dei client.|Client|  
 |CreateTSMedia.log|Registra informazioni dettagliate sulla creazione del supporto per la sequenza di attività.|Computer che esegue la console di Configuration Manager|  
-|DeployToVhd.log|Registra dettagli relativi al processo di creazione e di modifica del disco rigido virtuale (VHD).|Computer che esegue la console di Configuration Manager|  
 |Dism.log|Registra azioni di installazione driver o di applicazione aggiornamenti per la manutenzione offline.|Server del sistema del sito|  
 |distmgr.log|Registra informazioni dettagliate sulla configurazione per l'attivazione di un punto di distribuzione per PXE (Pre-Boot eXecution Environment).|Server del sistema del sito|  
 |DriverCatalog.log|Registra informazioni dettagliate sui driver di dispositivo importati nel catalogo dei driver.|Server del sistema del sito|  

@@ -2,7 +2,7 @@
 title: Configurare i gruppi di disponibilità
 titleSuffix: Configuration Manager
 description: Configurare e gestire i gruppi di disponibilità Always On di SQL Server con Configuration Manager
-ms.date: 7/19/2019
+ms.date: 09/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4cc514e37554b8238124255584f59647446baf44
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 9677c49dfd577e5dc5e02450821ec73bdfb7f3b4
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536549"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70380139"
 ---
 # <a name="configure-sql-server-always-on-availability-groups-for-configuration-manager"></a>Configurare gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -120,13 +120,9 @@ Se il database del sito è ospitato in un gruppo di disponibilità, usare le pro
 <!--3127336-->
 A partire dalla versione 1906, eseguire l'installazione di Configuration Manager per aggiungere un nuovo membro di replica sincrona.
 
-1. Usare lo [strumento di manutenzione gerarchia](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe) per arrestare il sito: `preinst.exe /stopsite`
+1. Aggiungere una replica secondaria usando le procedure di SQL Server.
 
-1. Modificare il gruppo di disponibilità usando le procedure di SQL Server:
-
-    1. [Creare un backup](https://docs.microsoft.com/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server) del database del sito dalla replica primaria.
-
-    1. [Ripristinare tale backup](https://docs.microsoft.com/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms) nel nuovo server di replica secondaria.
+    1. [Aggiungere una replica secondaria a un gruppo di disponibilità Always On](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/add-a-secondary-replica-to-an-availability-group-sql-server).
 
     1. Controllare lo stato in SQL Management Studio. Attendere che il gruppo di disponibilità torni allo stato di integrità completa.
 

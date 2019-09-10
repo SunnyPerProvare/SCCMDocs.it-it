@@ -2,7 +2,7 @@
 title: Usare Asset Intelligence
 titleSuffix: Configuration Manager
 description: Eseguire attività con Asset Intelligence in System Center Configuration Manager.
-ms.date: 2/22/2017
+ms.date: 08/30/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b200594c4769fb4528c3adc7b846b2345ffeda39
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: fde63b3400441815b227fe8fae78c354bc156c2a
+ms.sourcegitcommit: f679fc1e46c191a1780ae961d155c927fc353dce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499859"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176553"
 ---
 # <a name="how-to-use-asset-intelligence-in-system-center-configuration-manager"></a>Come usare Asset Intelligence in System Center Configuration Manager
 
@@ -193,13 +193,13 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 
    2. **Stato convalida**: elenca lo stato di convalida come **Definito dall'utente** per i requisiti hardware. È impossibile modificare questa impostazione.  
 
-   3. **CPU minima (MHz)**: specifica la velocità minima del processore, in megahertz (MHz), richiesta dal titolo software.  
+   3. **CPU minima (MHz)** : specifica la velocità minima del processore, in megahertz (MHz), richiesta dal titolo software.  
 
-   4. **RAM minima (KB)**: specifica la quantità di RAM minima, in kilobyte (KB), richiesta dal titolo software.  
+   4. **RAM minima (KB)** : specifica la quantità di RAM minima, in kilobyte (KB), richiesta dal titolo software.  
 
-   5. **Dimensioni minime spazio su disco (KB):**: specifica la quantità minima di spazio disponibile sul disco, in KB, richiesta dal titolo software.  
+   5. **Dimensioni minime spazio su disco (KB):** : specifica la quantità minima di spazio disponibile sul disco, in KB, richiesta dal titolo software.  
 
-   6. **Dimensioni disco minime (KB):**: specifica la dimensione minima del disco rigido, in KB, richiesta dal titolo software.  
+   6. **Dimensioni disco minime (KB):** : specifica la dimensione minima del disco rigido, in KB, richiesta dal titolo software.  
 
       Fare clic su **Avanti**.  
 
@@ -288,7 +288,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 3.  Selezionare uno o più nomi di prodotto da inviare a System Center Online per la categorizzazione. Solo i titoli software di inventario senza categoria possono essere inviati a System Center Online per la categorizzazione. Se il titolo software di inventario è stato categorizzato da un amministratore con la conseguente impostazione di uno stato definito dall'utente, è necessario fare clic con il pulsante destro del mouse sul titolo software di inventario e quindi scegliere **Ripristina** per ripristinare lo stato **Senza categoria** del titolo software e poterlo quindi inviare a System Center Online per la categorizzazione.  
 
     > [!NOTE]  
-    >  Configuration Manager può elaborare allo stesso tempo fino a 100 titoli software per categorizzazione. Se si selezionano più di 100 titoli software, verranno elaborati solo i primi 100 titoli. È necessario selezionare i rimanenti titoli software per la categorizzazione in batch minori di 100.  
+    >  Configuration Manager può elaborare allo stesso tempo fino a 2000 titoli software per categorizzazione. Se si selezionano più di 2000 titoli software, verranno elaborati solo i primi 2000 titoli. È necessario selezionare i rimanenti titoli software per la categorizzazione in batch minori di 2000.  
 
     > [!TIP]  
     >  Fare clic sulla colonna **Stato** per ordinare le informazioni in base allo stato di convalida. In questo modo, è possibile visualizzare tutti i nomi di prodotto senza categoria e selezionare rapidamente più elementi da inviare per la categorizzazione.  

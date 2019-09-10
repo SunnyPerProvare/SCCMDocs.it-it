@@ -12,12 +12,12 @@ ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a02fc742ddb975c06bc7e919914ad46ae455bf92
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: a24f33e9cef10df9ba329958e4cf93db838b5969
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56127967"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70378035"
 ---
 # <a name="capabilities-in-technical-preview-1511-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1511 per System Center Configuration Manager
 
@@ -98,7 +98,7 @@ Il processo generale per configurare e usare i gruppi di disponibilità include 
 
 -   Non è possibile aggiungere correttamente un nuovo membro di replica a un gruppo di disponibilità che è già in uso come database del sito. In alternativa, è necessario reinstallare il sito dopo aver aggiunto il nuovo membro di replica.  
 
--   Per questo scenario potrebbe essere necessario installare il **client nativo di SQL Server 2012** ([da SQL Server 2012 Feature Pack](http://www.microsoft.com/download/details.aspx?id=29065)) nel server del punto di gestione. In questo modo vengono evitati gli errori di connessione SQL (che vengono registrati in **mp_getauth.log** nel server del punto di gestione).  
+-   Per questo scenario potrebbe essere necessario installare il **client nativo di SQL Server 2012** ([da SQL Server 2012 Feature Pack](https://www.microsoft.com/download/details.aspx?id=29065)) nel server del punto di gestione. In questo modo vengono evitati gli errori di connessione SQL (che vengono registrati in **mp_getauth.log** nel server del punto di gestione).  
 
 ### <a name="try-it-out"></a>Verifica  
 Prova a completare le attività seguenti, quindi usa le informazioni relative a commenti e suggerimenti nella parte superiore di questo argomento per comunicare i risultati:  
@@ -132,11 +132,11 @@ Per installare un sito che utilizza un gruppo di disponibilità di SQL Server:
 
 1.  Sostituire gli elementi indicati di seguito quando richiesto dal programma di installazione di Configuration Manager:  
 
-    -   **Nome SQL Server**: immettere il nome virtuale per l'Endpoint configurato al momento della creazione del gruppo di disponibilità. Il nome virtuale deve essere un nome DNS completo, ad esempio **&lt;serverEndpoint\>.fabrikam.com**.  
+    -   **Nome SQL Server**: immettere il nome virtuale per l'endpoint configurato al momento della creazione del gruppo di disponibilità. Il nome virtuale deve essere un nome DNS completo, ad esempio **&lt;serverEndpoint\>.fabrikam.com**.  
 
     -   **Istanza**:  questo valore deve rimanere vuoto. In questa configurazione non esiste alcuna istanza.  
 
-    -   **Database**: immettere il nome del database che è stato creato sulla replica primaria del gruppo di disponibilità.  
+    -   **Database**: immettere il nome del database creato nella replica primaria del gruppo di disponibilità.  
 
 2.  Successivamente, è necessario fornire un percorso di rete al quale ciascun SQL Server del gruppo sia in grado di accedere:  
 

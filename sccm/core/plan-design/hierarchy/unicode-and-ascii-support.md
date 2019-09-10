@@ -1,8 +1,8 @@
 ---
 title: Supporto Unicode e ASCII
 titleSuffix: Configuration Manager
-description: Informazioni sul supporto di caratteri Unicode e ASCII in oggetti di System Center Configuration Manager.
-ms.date: 3/1/2017
+description: Informazioni sul supporto di caratteri Unicode e ASCII in oggetti di Configuration Manager.
+ms.date: 08/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,132 +11,103 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8700919d372722f16001fcf1405531b0e2b383ff
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 0214abdf1dd7ce735542ebace443c8aed297b2c3
+ms.sourcegitcommit: f679fc1e46c191a1780ae961d155c927fc353dce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138382"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176716"
 ---
-# <a name="unicode-and-ascii-support-in-system-center-configuration-manager"></a>Supporto per Unicode e ASCII in System Center Configuration Manager
+# <a name="unicode-and-ascii-support-in-configuration-manager"></a>Supporto di Unicode e ASCII in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager crea la maggior parte degli oggetti usando i caratteri Unicode. Tuttavia, numerosi oggetti supportano solo caratteri ASCII o hanno altre limitazioni.  
+Configuration Manager crea la maggior parte degli oggetti usando caratteri Unicode. Tuttavia, numerosi oggetti supportano solo caratteri ASCII o hanno altre limitazioni.  
 
- Nelle seguenti sezioni vengono elencati gli oggetti che devono utilizzare solo i caratteri del set ASCII o che presentano limitazioni aggiuntive.  
+## <a name="BKMK_ASCIIchar"></a> Oggetti che usano i caratteri ASCII
 
--   [Oggetti che usano caratteri ASCII](#BKMK_ASCIIchar)  
+Configuration Manager supporta solo il set di caratteri ASCII quando vengono creati gli oggetti seguenti:  
 
--   [Limitazioni aggiuntive](#BKMK_OtherCharLimitations)  
+- Codice sito  
 
--   [Oggetti di Configuration Manager non localizzati](#BKMK_LangNonLocalize)  
+- Tutti i nomi di computer del server di sistema del sito  
 
-##  <a name="BKMK_ASCIIchar"></a> Oggetti che usano i caratteri ASCII  
- Configuration Manager supporta il set di caratteri ASCII solo quando vengono creati gli oggetti seguenti:  
-
--   Codice sito  
-
--   Tutti i nomi di computer del server di sistema del sito  
-
--   I seguenti account di Configuration Manager:  
+- I seguenti account di Configuration Manager:  
 
     > [!NOTE]  
-    >  Questi account supportano caratteri ASCII e RUS in un sito eseguito in russo.  
+    > Questi account supportano caratteri ASCII e RUS in un sito eseguito in russo.  
 
-    -   Account di installazione push client  
+    - Account di installazione push client  
 
-    -   Account di pubblicazione riferimenti sullo stato di integrità  
+    - Account di connessione al database del punto di gestione  
 
-    -   Account di query riferimenti sullo stato di integrità  
+    - Account di accesso alla rete  
 
-    -   Account di connessione al database del punto di gestione  
+    - Account di accesso al pacchetto  
 
-    -   Account di accesso alla rete  
+    - Account mittente standard  
 
-    -   Account di accesso al pacchetto  
+    - Account di installazione del sistema del sito  
 
-    -   Account mittente standard  
+    - Account di connessione al punto di aggiornamento software  
 
-    -   Account di installazione del sistema del sito  
-
-    -   Account di connessione al punto di aggiornamento software  
-
-    -   Account del server proxy del punto di aggiornamento software  
+    - Account del server proxy del punto di aggiornamento software  
 
     > [!NOTE]  
-    >  L'account specificato per l'amministrazione basata su ruoli supporta Unicode.  
-    >   
-    >  L'account del punto di Reporting Services supporta Unicode, ad eccezione dei caratteri RUS.  
+    > L'account specificato per l'amministrazione basata su ruoli supporta Unicode.  
+    >
+    > L'account del punto di Reporting Services supporta Unicode, ad eccezione dei caratteri RUS.  
 
--   Nome di dominio completo (FQDN) per i server del sito e per i sistemi del sito  
+- Nome di dominio completo (FQDN) per i server del sito e per i sistemi del sito  
 
--   Percorso di installazione per Configuration Manager  
+- Percorso di installazione per Configuration Manager  
 
--   Nomi di istanza di SQL Server  
+- Nomi di istanza di SQL Server  
 
--   Il percorso per i seguenti ruoli di sistema del sito:  
+- Il percorso per i seguenti ruoli di sistema del sito:  
 
-    -   Punto per servizi Web del Catalogo applicazioni  
+    - Punto di registrazione  
 
-    -   Punto per siti Web del Catalogo applicazioni  
+    - Punto proxy di registrazione  
 
-    -   Punto di registrazione  
+    - Punto di Reporting Services  
 
-    -   Punto proxy di registrazione  
+    - Punto di migrazione stato  
 
-    -   Punto di Reporting Services  
+- Il percorso delle seguenti cartelle:  
 
-    -   Punto di migrazione stato  
+    - La cartella che archivia i dati di migrazione dello stato del client  
 
--   Il percorso delle seguenti cartelle:  
+    - La cartella che contiene i report di Configuration Manager  
 
-    -   La cartella che archivia i dati di migrazione dello stato del client  
+    - La cartella che archivia il backup di Configuration Manager  
 
-    -   La cartella che contiene i report di Configuration Manager  
+    - La cartella che archivia i file di origine dell'installazione per l'impostazione del sito  
 
-    -   La cartella che archivia il backup di Configuration Manager  
+    - La cartella che archivia i download dei prerequisiti per l'uso da parte dell'impostazione  
 
-    -   La cartella che archivia i file di origine dell'installazione per l'impostazione del sito  
+- Il percorso dei seguenti oggetti:  
 
-    -   La cartella che archivia i download dei prerequisiti per l'uso da parte dell'impostazione  
+    - Sito Web IIS  
 
--   Il percorso dei seguenti oggetti:  
+    - Percorso di installazione dell'applicazione virtuale  
 
-    -   Sito Web IIS  
+    - Nome dell'applicazione virtuale  
 
-    -   Percorso di installazione dell'applicazione virtuale  
+- Nomi file ISO dei supporti di avvio  
 
-    -   Nome dell'applicazione virtuale  
 
--   Gli oggetti seguenti per AMT e gestione fuori banda:  
+## <a name="BKMK_OtherCharLimitations"></a> Limitazioni aggiuntive
 
-    -   FQDN del computer basato su AMT  
+Di seguito vengono riportate ulteriori limitazioni per i set di caratteri e le versioni delle lingue supportati:  
 
-    -   Il nome del computer basato su AMT  
+- Configuration Manager non supporta la modifica delle impostazioni locali del computer del server del sito.  
 
-    -   Il nome NetBIOS del dominio  
+- Un'autorità di certificazione dell'organizzazione (enterprise) non supporta i nomi dei computer client che usano set di caratteri DBCS. I nomi dei computer client che è possibile utilizzare sono limitati dalla limitazione PKI del set di caratteri IA5. Configuration Manager non supporta i nomi di autorità di certificazione (CA) o i valori del nome soggetto che usano DBCS.  
 
-    -   Nome del profilo wireless e SSID  
 
-    -   Il nome dell'autorità di certificazione radice attendibile  
+## <a name="BKMK_LangNonLocalize"></a> Oggetti che non sono localizzati
 
-    -   Il nome dell'autorità di certificazione (CA) e i nomi dei modelli  
+Il database di Configuration Manager supporta Unicode per la maggior parte degli oggetti archiviati. Quando possibile, visualizza queste informazioni nella lingua del sistema operativo che corrisponde alle impostazioni locali di un computer. Affinché l'interfaccia client o la console di Configuration Manager visualizzi le informazioni nella lingua del sistema operativo del computer, le impostazioni locali del computer devono corrispondere alla lingua di un client o di un server installato in un sito.  
 
-    -   Il nome e il percorso del file di immagine di reindirizzamento IDE  
-
-    -   Il contenuto dell'archivio dati AMT  
-
--   Nomi file ISO dei supporti di avvio  
-
-##  <a name="BKMK_OtherCharLimitations"></a> Limitazioni aggiuntive  
- Di seguito vengono riportate ulteriori limitazioni per i set di caratteri e le versioni delle lingue supportati:  
-
--   Configuration Manager non supporta la modifica delle impostazioni locali del computer del server del sito.  
-
--   Un'autorità di certificazione dell'organizzazione (enterprise) non supporta i nomi dei computer client che utilizzano set di caratteri DBCS. I nomi dei computer client che è possibile utilizzare sono limitati dalla limitazione PKI del set di caratteri IA5. Configuration Manager non supporta neppure i nomi di autorità di certificazione (CA) o i valori del nome oggetto che usano DBCS.  
-
-##  <a name="BKMK_LangNonLocalize"></a> Oggetti di Configuration Manager non localizzati  
- Il database di Configuration Manager supporta Unicode per la maggior parte degli oggetti archiviati e, se possibile, visualizza tali informazioni nella lingua del sistema operativo corrispondente alle impostazioni locali di un computer. Affinché l'interfaccia client o la console di Configuration Manager visualizzi le informazioni nella lingua del sistema operativo del computer, le impostazioni locali del computer devono corrispondere alla lingua di un client o di un server installato in un sito.  
-
- Diversi oggetti di Configuration Manager non supportano i caratteri Unicode, vengono quindi archiviati nel database usando caratteri ASCII oppure presentano limitazioni aggiuntive relative alla lingua. Queste informazioni vengono sempre visualizzate utilizzando il seti di caratteri ASCII o nella lingua in uso al momento della creazione dell'oggetto.  
+Molti oggetti di Configuration Manager non supportano Unicode. Vengono archiviati nel database tramite ASCII o presentano limitazioni aggiuntive per la lingua. Queste informazioni vengono sempre visualizzate usando il seti di caratteri ASCII o nella lingua in uso al momento della creazione dell'oggetto.  

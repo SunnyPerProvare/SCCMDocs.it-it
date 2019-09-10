@@ -10,12 +10,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2015d0ac56be97eeb98e81f4d598c70ca8ee1f3
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: f69277c55cec8c6acf9ef6763d63f18f73b38d87
+ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128484"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70379198"
 ---
 # <a name="online-documentation-for-system-center-configuration-manager"></a>Documentazione online per System Center Configuration Manager
 
@@ -60,7 +60,7 @@ Trovare la raccolta della documentazione per la versione del prodotto in uso:
 
 **Note sulla versione:** le note sulla versione per questa versione Technical Preview sono incluse nella documentazione principale per questa versione e vengono presentate insieme alle informazioni per ogni funzionalità.  
 
-**Accessibilità:** le informazioni sull'accessibilità per questa versione Technical Preview sono invariate rispetto a System Center 2012 Configuration Manager. Vedere [Funzionalità di accessibilità di Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=258586), per informazioni sulle funzionalità, i prodotti e i servizi che rendono Configuration Manager più accessibile per gli utenti disabili.  
+**Accessibilità:** le informazioni sull'accessibilità per questa versione Technical Preview sono invariate rispetto a System Center 2012 Configuration Manager. Vedere [Funzionalità di accessibilità di Configuration Manager](https://go.microsoft.com/fwlink/p/?LinkId=258586), per informazioni sulle funzionalità, i prodotti e i servizi che rendono Configuration Manager più accessibile per gli utenti disabili.  
 
 ## <a name="system-center-2012-configuration-manager"></a>System Center 2012 Configuration Manager  
 **Documentazione in linea:** per gli elementi seguenti:  
@@ -91,10 +91,10 @@ Trovare la raccolta della documentazione per la versione del prodotto in uso:
 
   **Note sulla versione e pubblicazioni tecniche:** le note sulla versione e le pubblicazioni tecniche integrano le guide di Configuration Manager. Le note sulla versione contengono informazioni non presenti nella documentazione del prodotto e necessarie per la corretta installazione di Configuration Manager. Le pubblicazioni tecniche offrono informazioni aggiuntive a supporto di Configuration Manager.  
 
-- [Note sulla versione per System Center 2012 Configuration Manager](http://go.microsoft.com/fwlink/?LinkId=529437)  
+- [Note sulla versione per System Center 2012 Configuration Manager](https://go.microsoft.com/fwlink/?LinkId=529437)  
 
-- [Pubblicazioni tecniche per System Center 2012 Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=261032)  
+- [Pubblicazioni tecniche per System Center 2012 Configuration Manager](https://go.microsoft.com/fwlink/p/?LinkId=261032)  
 
-**Accessibilità:** vedere l'argomento online [Funzionalità di accessibilità di Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=258586), per informazioni sulle funzionalità, i prodotti e i servizi che rendono Configuration Manager più accessibile per gli utenti disabili.  
+**Accessibilità:** vedere l'argomento online [Funzionalità di accessibilità di Configuration Manager](https://go.microsoft.com/fwlink/p/?LinkId=258586), per informazioni sulle funzionalità, i prodotti e i servizi che rendono Configuration Manager più accessibile per gli utenti disabili.  
 
-**Documentazione scaricabile:** È possibile scaricare una [copia di questa documentazione tecnica dall'Area download Microsoft](http://go.microsoft.com/fwlink/?LinkId=253643). Usare la libreria TechNet online per le informazioni più aggiornate.
+**Documentazione scaricabile:** È possibile scaricare una [copia di questa documentazione tecnica dall'Area download Microsoft](https://go.microsoft.com/fwlink/?LinkId=253643). Usare la libreria TechNet online per le informazioni più aggiornate.
