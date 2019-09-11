@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17a58992c01f59080edd74051329b82a0f760938
-ms.sourcegitcommit: e0d303d87c737811c2d3c40d01cd3d260a5c7bde
+ms.openlocfilehash: 7139175a564ffff50d325daf808e32efb7d3436b
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69974808"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70891776"
 ---
 # <a name="monitor-connection-health"></a>Monitorare l'integrità della connessione
 
@@ -174,7 +174,7 @@ Le seguenti proprietà del dispositivo di analisi desktop sono disponibili come 
 - [Consenso esplicito per i dati di diagnostica Windows](#windows-diagnostic-data-opt-in)  
 
 > [!Note]  
-> Ignorare le proprietà per la **connettività degli endpoint di diagnostica di Office** e il consenso esplicito per **i dati di diagnostica Office**. Sono riservati per le funzionalità future.
+> Ignorare le proprietà per la **connettività degli endpoint di diagnostica di Office** e il **consenso esplicito per i dati di diagnostica Office**. Sono riservati per le funzionalità future.
 
 Il riquadro **più frequenti per gli avvisi di configurazione e i blocchi di registrazione** del dashboard di integrità della connessione Visualizza le proprietà che i dispositivi più spesso segnalano come un problema.
 
@@ -229,7 +229,8 @@ Per ulteriori informazioni, vedere M365AHandler. log nel client.
 Verificare la presenza del seguente file `%windir%\System32\CompatTelRunner.exe`:. Se non esiste, reinstallare gli aggiornamenti di [compatibilità](/sccm/desktop-analytics/enroll-devices#bkmk_appraiser)richiesti. Assicurarsi che nessun altro componente di sistema stia rimuovendo questo file, ad esempio criteri di gruppo o un servizio antimalware.
 
 Se il file M365AHandler. log nel client include uno degli errori seguenti:
-```
+
+``` Log
 RunAppraiser failed. CompatTelRunner.exe exited with last error code: 0x800703F1
 RunAppraiser failed. CompatTelRunner.exe exited with last error code: 0x80070005
 RunAppraiser failed. CompatTelRunner.exe exited with last error code: 0x80080005
@@ -307,7 +308,7 @@ Per ulteriori informazioni, vedere M365AHandler. log nel client.
 <!--1004-->
 Se la verifica ha esito negativo, un utente ha selezionato i dati di diagnostica Windows più bassi sul dispositivo. Può anche essere causato da un oggetto Criteri di gruppo in conflitto. Per ulteriori informazioni, vedere [impostazioni di Windows](/sccm/desktop-analytics/enroll-devices#windows-settings).
 
-A seconda dei requisiti aziendali, è possibile disabilitare la scelta dell'utente tramite criteri di gruppo. Usare l'impostazione per configurare il consenso esplicito per la telemetria **impostazione dell'interfaccia utente**. Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enterprise-management) (Configurare i dati di diagnostica di Windows nell'organizzazione).
+A seconda dei requisiti aziendali, è possibile disabilitare la scelta dell'utente tramite criteri di gruppo. Usare l'impostazione per **configurare il consenso esplicito per la telemetria impostazione dell'interfaccia utente**. Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enterprise-management) (Configurare i dati di diagnostica di Windows nell'organizzazione).
 
 ### <a name="check-user-proxy"></a>Verifica proxy utente
 
@@ -359,7 +360,7 @@ Controllare le autorizzazioni per questa chiave del registro di sistema. Verific
 ### <a name="windows-commercial-data-opt-in"></a>Consenso esplicito per i dati commerciali di Windows
 
 <!--64-->
-Questa proprietà è specifica per i dispositivi che eseguono Windows 7 o Windows 8.1. Esegue test simili come consenso esplicito per i [dati di diagnostica di Windows](#windows-diagnostic-data-opt-in), ad eccezione del valore e.
+Questa proprietà è specifica per i dispositivi che eseguono Windows 7 o Windows 8.1. Esegue test simili come [consenso esplicito](#windows-diagnostic-data-opt-in)per i dati di diagnostica di Windows, ad eccezione del valore e.
 
 ### <a name="check-device-name-in-diagnostic-data"></a>Controllare il nome del dispositivo nei dati di diagnostica
 
@@ -399,7 +400,7 @@ In caso contrario, potrebbe essere visualizzato uno degli errori seguenti:
 
 Installare gli aggiornamenti più recenti. Per ulteriori informazioni, vedere [aggiornamenti del dispositivo](/sccm/desktop-analytics/enroll-devices#update-devices).
 
-Assicurarsi che l' **esperienza utente connessa e** il servizio di telemetria sul dispositivo siano in esecuzione.
+Assicurarsi che l' **esperienza utente connessa e il servizio di telemetria** sul dispositivo siano in esecuzione.
 
 ### <a name="diagtrack-version"></a>Versione di DiagTrack
 

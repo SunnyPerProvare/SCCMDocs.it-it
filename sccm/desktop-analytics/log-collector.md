@@ -11,16 +11,16 @@ ms.assetid: 349b2a69-af46-481f-afb2-24d98774e852
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e99899ba9b12416e9549f88c7bc3b72fc09c6c28
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 24f8b723a82f2adb4eb160b0e3edab1efbca1e95
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68537639"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70891747"
 ---
 # <a name="desktop-analytics-log-collector"></a>Agente di raccolta log di analisi desktop
 
-A partire da Configuration Manager versione 1906, usare lo strumento **DesktopAnalyticsLogsCollector. ps1** dalla directory di installazione Configuration Manager per risolvere i problemi di registrazione del dispositivo di analisi del desktop. Esegue alcuni passaggi di base per la risoluzione dei problemi e raccoglie i log rilevanti in un'unica directory di lavoro. È possibile condividere questo contenuto con il supporto tecnico Microsoft.
+A partire da Configuration Manager versione 1906, usare lo strumento **DesktopAnalyticsLogsCollector. ps1** dalla directory di installazione Configuration Manager per risolvere i problemi di registrazione del dispositivo di analisi del desktop. Lo strumento esegue alcuni passaggi di base per la risoluzione dei problemi e raccoglie i log di rilievo in un'unica directory di lavoro. È possibile condividere questo contenuto con il supporto tecnico Microsoft.
 
 
 ## <a name="prerequisites"></a>Prerequisiti
@@ -40,7 +40,7 @@ A partire da Configuration Manager versione 1906, usare lo strumento **DesktopAn
 
 Ottenere lo script dal contenuto del Configuration Manager installazione:`SMSSETUP\TOOLS\DesktopAnalyticsLogsCollector\DesktopAnalyticsLogsCollector.ps1`
 
-```
+``` Syntax
 DesktopAnalyticsLogsCollector.ps1
     [-LogPath] <String>
     [-LogMode] <Int16>

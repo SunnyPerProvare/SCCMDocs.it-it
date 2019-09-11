@@ -2,7 +2,7 @@
 title: Novità di analisi desktop
 titleSuffix: Configuration Manager
 description: Riepilogo delle nuove funzionalità della versione mensile più recente del servizio cloud di analisi dei desktop.
-ms.date: 09/03/2019
+ms.date: 09/10/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.assetid: fa300181-86cb-4afe-8fbf-895a7572378d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5b6afa437dd37603bef668d4bc6ba39ad05aec2d
-ms.sourcegitcommit: b28a97e22a9a56c5ce3367c750ea2bb4d50449c3
+ms.openlocfilehash: 6c25aaba8c93204283723521ac157c62e62343d7
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70243534"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70891709"
 ---
 # <a name="whats-new-in-desktop-analytics"></a>Novità di analisi desktop
 
@@ -38,6 +38,12 @@ Per ricevere una notifica quando questa pagina viene aggiornata, copiare e incol
 <!-- 4252663 -->
 
 Durante l'onboarding, è ora possibile migrare gli input da un'area di lavoro di Windows Analytics esistente. Per ulteriori informazioni, vedere le domande frequenti per [i clienti esistenti di Windows Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
+
+### <a name="offboard-from-desktop-analytics"></a>Offboard da desktop Analytics
+
+<!-- 4972396 -->
+
+Se si configura analisi desktop nell'ambiente, ma si vuole smettere di usare il servizio, è ora possibile chiudere l'account. Se si cambia idea in 90 giorni, è possibile riattivare l'account. Per ulteriori informazioni, vedere [come chiudere l'account](/sccm/desktop-analytics/account-close).
 
 
 ## <a name="august-2019"></a>2019 agosto
