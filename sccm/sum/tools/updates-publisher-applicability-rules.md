@@ -2,7 +2,7 @@
 title: Regole di applicabilità
 titleSuffix: Configuration Manager
 description: Gestire le regole di applicabilità per System Center Updates Publisher
-ms.date: 4/29/2017
+ms.date: 04/29/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30200c9da2ea37ef0868db680d04fe6aae9fd314
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 3b1f638bccb35ac10ea37956405c023a6ab0f184
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67678076"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892240"
 ---
 # <a name="manage-applicability-rules-in-updates-publisher"></a>Gestire le regole di applicabilità in Updates Publisher
 
@@ -31,11 +31,11 @@ Le regole di applicabilità vengono gestite nell'**area di lavoro Regole**. Quan
 
 Nell'esempio seguente viene illustrato un set di regole contenente tre regole. La prima regola verifica che il file *MyFile* esista, mentre la seconda e terza regola verificano che la lingua del sistema operativo Windows sia l'inglese o il giapponese.
 
-```
+``` Example
 And  
   File ‘\[PROGRAM\_FILES\] \\Microsoft\\MyFile’ exists  
   Or  
-    Windows Language is English   
+    Windows Language is English
     Windows Language is Japanese
 ```
 

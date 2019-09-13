@@ -2,7 +2,7 @@
 title: Usare i supporti di avvio per distribuire Windows in rete
 titleSuffix: Configuration Manager
 description: Le distribuzioni dei supporti di avvio in System Center Configuration Manager consentono di distribuire il sistema operativo all'avvio del computer di destinazione.
-ms.date: 6/16/2017
+ms.date: 06/16/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ebe239687489ce14cd77c23b59ec5f01c2e6609
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 98aa69cc0a80b12ca5caabb2c5b7167310ea2c83
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128120"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892527"
 ---
 # <a name="use-bootable-media-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Usare i supporti di avvio per distribuire Windows in rete con System Center Configuration Manager
 

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 273e61024032defd10b3176fb70ac6c3a35125e2
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: 7132bbbc0746af04e4af952b2fcf7d8de46b3c9b
+ms.sourcegitcommit: cb169396acf0d50fedd9f2ae62f7894615c3cce5
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70380052"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70808372"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
@@ -868,6 +868,13 @@ Usare le variabili della sequenza di attività seguenti con questo passaggio:
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Dischi** e quindi selezionare **Formato e disco partizione**.
 
+Gestire questo passaggio con i cmdlet di PowerShell seguenti:<!-- SCCMDocs #1118 -->
+
+- [Get-CMTSStepPartitionDisk](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtssteppartitiondisk?view=sccm-ps)
+- [New-CMTSStepPartitionDisk](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtssteppartitiondisk?view=sccm-ps)
+- [Remove-CMTSStepPartitionDisk](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtssteppartitiondisk?view=sccm-ps)
+- [Set-CMTSStepPartitionDisk](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtssteppartitiondisk?view=sccm-ps)
+
 ### <a name="properties"></a>Proprietà  
 
 Nella scheda **Proprietà** per questo passaggio, configurare le impostazioni descritte in questa sezione.  
@@ -1049,6 +1056,12 @@ Usare le variabili della sequenza di attività seguenti con questo passaggio:
 - [OSDDoNotLogCommand](/sccm/osd/understand/task-sequence-variables#OSDDoNotLogCommand) (a partire dalla versione 1806)<!--1358493-->  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Software** e quindi selezionare **Installa pacchetto**.
+Gestire questo passaggio con i cmdlet di PowerShell seguenti:<!-- SCCMDocs #1118 -->
+
+- [Get-CMTSStepInstallSoftware](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepinstallsoftware?view=sccm-ps)
+- [New-CMTSStepInstallSoftware](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepinstallsoftware?view=sccm-ps)
+- [Remove-CMTSStepInstallSoftware](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepinstallsoftware?view=sccm-ps)
+- [Set-CMTSStepInstallSoftware](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepinstallsoftware?view=sccm-ps)
 
 ### <a name="properties"></a>Proprietà  
 
@@ -1119,6 +1132,13 @@ Usare le variabili della sequenza di attività seguenti con questo passaggio:
 > Se il client non riesce a recuperare l'elenco dei punti di gestione dai servizi di posizione, usare le variabili **SMSTSMPListRequestTimeoutEnabled** e **SMSTSMPListRequestTimeout**. Queste variabili specificano quanti millisecondi deve attendere una sequenza di attività prima di provare nuovamente a installare un'applicazione o un aggiornamento del software. Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables).  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Software** e quindi selezionare **Installa aggiornamenti software**.
+
+Gestire questo passaggio con i cmdlet di PowerShell seguenti:<!-- SCCMDocs #1118 -->
+
+- [Get-CMTSStepInstallUpdate](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepinstallupdate?view=sccm-ps)
+- [New-CMTSStepInstallUpdate](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepinstallupdate?view=sccm-ps)
+- [Remove-CMTSStepInstallUpdate](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepinstallupdate?view=sccm-ps)
+- [Set-CMTSStepInstallUpdate](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepinstallupdate?view=sccm-ps)
 
 Per altre indicazioni e un diagramma di flusso tecnico per questo passaggio, vedere [Installa aggiornamenti software](/sccm/osd/understand/install-software-updates).
 
@@ -1374,6 +1394,13 @@ Usare le variabili della sequenza di attività seguenti con questo passaggio:
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Generale** e quindi selezionare **Riavvia computer**.
 
+Gestire questo passaggio con i cmdlet di PowerShell seguenti:<!-- SCCMDocs #1118 -->
+
+- [Get-CMTSStepReboot](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepreboot?view=sccm-ps)
+- [New-CMTSStepReboot](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepreboot?view=sccm-ps)
+- [Remove-CMTSStepReboot](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepreboot?view=sccm-ps)
+- [Set-CMTSStepReboot](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepreboot?view=sccm-ps)
+
 ### <a name="properties"></a>Proprietà  
 
 Nella scheda **Proprietà** per questo passaggio, configurare le impostazioni descritte in questa sezione.  
@@ -1473,6 +1500,13 @@ Usare le variabili della sequenza di attività seguenti con questo passaggio:
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Generale** e quindi selezionare **Esegui riga di comando**.
 
+Gestire questo passaggio con i cmdlet di PowerShell seguenti:<!-- SCCMDocs #1118 -->
+
+- [Get-CMTSStepRunCommandLine](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepruncommandline?view=sccm-ps)
+- [New-CMTSStepRunCommandLine](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepruncommandline?view=sccm-ps)
+- [Remove-CMTSStepRunCommandLine](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepruncommandline?view=sccm-ps)
+- [Set-CMTSStepRunCommandLine](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepruncommandline?view=sccm-ps)
+
 ### <a name="properties"></a>Proprietà  
 
 Nella scheda **Proprietà** per questo passaggio, configurare le impostazioni descritte in questa sezione.  
@@ -1558,6 +1592,13 @@ Usare le variabili della sequenza di attività seguenti con questo passaggio:
 - [OSDLogPowerShellParameters](/sccm/osd/understand/task-sequence-variables#OSDLogPowerShellParameters) (a partire dalla versione 1902)<!--3556028-->  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Generale** e quindi selezionare **Esegui script PowerShell**.
+
+Gestire questo passaggio con i cmdlet di PowerShell seguenti:<!-- SCCMDocs #1118 -->
+
+- [Get-CMTSStepRunPowerShellScript](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtssteprunpowershellscript?view=sccm-ps)
+- [New-CMTSStepRunPowerShellScript](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtssteprunpowershellscript?view=sccm-ps)
+- [Remove-CMTSStepRunPowerShellScript](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtssteprunpowershellscript?view=sccm-ps)
+- [Set-CMTSStepRunPowerShellScript](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtssteprunpowershellscript?view=sccm-ps)
 
 > [!Note]  
 > Usare gli script PowerShell firmati in formato Unicode. Il formato ANSI, ovvero l'impostazione predefinita, non funziona con questo passaggio.
@@ -1678,10 +1719,14 @@ Questo passaggio esegue un'altra sequenza di attività. Crea una relazione padre
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Generale** e quindi selezionare **Esegui la sequenza di attività**.
 
-A partire dalla versione 1906, gestire questo passaggio con i cmdlet di PowerShell seguenti:<!-- 2839943, SCCMDocs #1118 -->
+A partire dalla versione 1906, gestire questo passaggio con i cmdlet di PowerShell seguenti:<!-- 2839943, SCCMDocs#1118 -->
 
+- **Get-CMTSStepRunTaskSequence**
 - **New-CMTSStepRunTaskSequence**
+- **Remove-CMTSStepRunTaskSequence**
 - **Set-CMTSStepRunTaskSequence**
+
+Per altre informazioni, vedere [Note sulla versione 1906-nuovi cmdlet](https://docs.microsoft.com/powershell/sccm/1906-release-notes?view=sccm-ps#new-cmdlets).
 
 ### <a name="specifications-and-limitations"></a>Specifiche e limitazioni
 
@@ -1737,6 +1782,13 @@ Questo passaggio può essere eseguito nel sistema operativo completo o in Window
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Generale** e quindi selezionare **Imposta variabili dinamiche**.
 
+Gestire questo passaggio con i cmdlet di PowerShell seguenti:<!-- SCCMDocs #1118 -->
+
+- [Get-CMTSStepSetDynamicVariable](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepsetdynamicvariable?view=sccm-ps)
+- [New-CMTSStepSetDynamicVariable](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepsetdynamicvariable?view=sccm-ps)
+- [Remove-CMTSStepSetDynamicVariable](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepsetdynamicvariable?view=sccm-ps)
+- [Set-CMTSStepSetDynamicVariable](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepsetdynamicvariable?view=sccm-ps)
+
 ### <a name="properties"></a>Proprietà  
 
 Nella scheda **Proprietà** per questo passaggio, configurare le impostazioni descritte in questa sezione.  
@@ -1783,6 +1835,13 @@ Le variabili della sequenza di attività vengono lette dalle azioni della sequen
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Generale** e quindi selezionare **Imposta variabile della sequenza di attività**.
 
+Gestire questo passaggio con i cmdlet di PowerShell seguenti:<!-- SCCMDocs #1118 -->
+
+- [Get-CMTSStepSetVariable](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepsetvariable?view=sccm-ps)
+- [New-CMTSStepSetVariable](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepsetvariable?view=sccm-ps)
+- [Remove-CMTSStepSetVariable](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepsetvariable?view=sccm-ps)
+- [Set-CMTSStepSetVariable](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepsetvariable?view=sccm-ps)
+
 ### <a name="properties"></a>Proprietà  
 
 Nella scheda **Proprietà** per questo passaggio, configurare le impostazioni descritte in questa sezione.  
@@ -1818,6 +1877,13 @@ Usare le variabili della sequenza di attività seguenti con questo passaggio:
 Questo passaggio sostituisce le variabili della directory sysprep.inf o unattend.xml, ad esempio `%WINDIR%` e `%ProgramFiles%`, con la directory di installazione di Windows PE, `X:\Windows`. La sequenza di attività ignora le variabili specificate usando queste variabili di ambiente.  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Immagini** e quindi selezionare **Imposta Windows e ConfigMgr**.
+
+Gestire questo passaggio con i cmdlet di PowerShell seguenti:<!-- SCCMDocs #1118 -->
+
+- [Get-CMTSStepSetupWindowsAndConfigMgr](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepsetupwindowsandconfigmgr?view=sccm-ps)
+- [New-CMTSStepSetupWindowsAndConfigMgr](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepsetupwindowsandconfigmgr?view=sccm-ps)
+- [Remove-CMTSStepSetupWindowsAndConfigMgr](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepsetupwindowsandconfigmgr?view=sccm-ps)
+- [Set-CMTSStepSetupWindowsAndConfigMgr](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepsetupwindowsandconfigmgr?view=sccm-ps)
 
 ### <a name="step-actions"></a>Azioni del passaggio
 

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f2b063fe21a674fc066531b1bd970a330d02d9f9
-ms.sourcegitcommit: b28a97e22a9a56c5ce3367c750ea2bb4d50449c3
+ms.openlocfilehash: 4702f29f9c321c4361aea2f2f75c7c7e30e284b7
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70243684"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70888618"
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire gli script di PowerShell dalla console di Configuration Manager
 
@@ -221,7 +221,7 @@ Ecco alcuni esempi che mostrano gli script che è possibile usare con questa fun
 
 Questo script crea una nuova cartella e un file all'interno della cartella in base ai nomi specificati.
 
-``` powershell
+``` PowerShell
 Param(
 [Parameter(Mandatory=$True)]
 [string]$FolderName,
@@ -237,7 +237,7 @@ New-Item $FileName -type file
 
 Questo script usa WMI per richiedere la versione del sistema operativo al computer.
 
-``` powershell
+``` PowerShell
 Write-Output (Get-WmiObject -Class Win32_operatingSystem).Caption
 ```
 
@@ -304,8 +304,7 @@ Dopo aver avviato l'esecuzione di uno script in una raccolta di dispositivi, usa
 ### <a name="example-script-output-is-valid-json"></a>Esempio: output dello script in formato JSON valido
 Comando: `$PSVersionTable.PSVersion`  
 
-Output:  
-```
+``` Output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
 5      1      16299  551
@@ -314,8 +313,7 @@ Major  Minor  Build  Revision
 ### <a name="example-script-output-isnt-valid-json"></a>Esempio: output dello script non in formato JSON valido
 Comando: `Write-Output (Get-WmiObject -Class Win32_OperatingSystem).Caption`  
 
-Output:  
-```
+``` Output
 Microsoft Windows 10 Enterprise
 ```
 

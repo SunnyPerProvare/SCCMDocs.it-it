@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a28b901c731d46fb19140526af6e85825ad43795
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: 642f74319fca149cce15c019a473904641b4ea9e
+ms.sourcegitcommit: cdf2827fb3f44d7522a9b533c115f910aa9c382a
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70380019"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70902936"
 ---
 # <a name="endpoint-protection-client-frequently-asked-questions"></a>Domande frequenti relative al client Endpoint Protection
 
@@ -108,7 +108,7 @@ Per rimuovere facilmente e velocemente tutti gli elementi indesiderati o potenzi
 
 3.  Per ulteriori informazioni sulle minacce rilevate, fare clic sulla scheda **Cronologia** , quindi selezionare **Tutti gli elementi rilevati**.  
 
-4.  Se non vengono visualizzati tutti gli elementi rilevati, fare clic su **Visualizza dettagli**. Se viene richiesta una password di amministratore o una conferma, digitare la password o confermare l'azione. Nei sistemi con Windows XP è possibile che sia necessario accedere come amministratore del computer.  
+4.  Se non vengono visualizzati tutti gli elementi rilevati, fare clic su **Visualizza dettagli**. Se viene richiesta una password di amministratore o una conferma, digitare la password o confermare l'azione.
 
 > [!NOTE]  
 >  Durante la pulizia del computer, laddove possibile, Windows Defender rimuove solo la parte infetta di un file e non tutto il file.  

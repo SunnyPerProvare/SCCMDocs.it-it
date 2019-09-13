@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 841d9f6d7878d7784d22c41bb35720a0e87e662b
-ms.sourcegitcommit: e0d303d87c737811c2d3c40d01cd3d260a5c7bde
+ms.openlocfilehash: 334854072e5c724f2c76432e7a7372c02cab3d54
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69974758"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892258"
 ---
 # <a name="prerequisites-for-software-updates-in-system-center-configuration-manager"></a>Prerequisiti per gli aggiornamenti software in System Center Configuration Manager
 
@@ -97,20 +97,20 @@ Gli aggiornamenti e il problema descritti in questa sezione si applicano solo a 
 
 ### <a name="historical-information-about-kb-3095113"></a>Informazioni cronologiche su KB 3095113
 
- La versione [KB 3095113](https://support.microsoft.com/kb/3095113) è stata rilasciata [come hotfix](https://blogs.technet.microsoft.com/wsus/2015/12/03/important-update-for-wsus-4-0-kb-3095113/) nel ottobre 2015 per aggiungere il supporto per gli aggiornamenti di Windows 10 a WSUS. L'aggiornamento Abilita WSUS per la sincronizzazione e la distribuzione degli aggiornamenti nella classificazione degli **aggiornamenti** per Windows 10.
+ La versione [KB 3095113](https://support.microsoft.com/kb/3095113) è stata [rilasciata come hotfix](https://blogs.technet.microsoft.com/wsus/2015/12/03/important-update-for-wsus-4-0-kb-3095113/) nel ottobre 2015 per aggiungere il supporto per gli aggiornamenti di Windows 10 a WSUS. L'aggiornamento Abilita WSUS per la sincronizzazione e la distribuzione degli aggiornamenti nella classificazione degli **aggiornamenti** per Windows 10.
 
 Se si sincronizzano gli eventuali aggiornamenti senza avere prima installato [KB 3095113](https://support.microsoft.com/kb/3095113), nel database WSUS (SUSDB) vengono inseriti dati inutilizzabili. Tali dati devono essere cancellati prima di poter distribuire correttamente gli aggiornamenti. Non è possibile scaricare gli aggiornamenti di Windows 10 in questo stato usando il download guidato degli aggiornamenti software.
 
 Gli errori simili ai seguenti vengono visualizzati nella pagina completamento del download guidato degli aggiornamenti software:
 
-```
+``` Output
 Error: Upgrade to Windows 10 Pro, version 1511, 10586
 Failed to download content id {content_id}. Error: Invalid certificate signature
 ```
 
 Inoltre, gli errori simili a quelli riportati di seguito vengono registrati nel file PatchDownloader. log:
 
-```
+``` Log
 Download http://wsus.ds.b1.download.windowsupdate.com/d/upgr/2015/12/10586.0.151029-1700.th2_release_...esd...
 Authentication of file C:\Users\{username}\AppData\Local\Temp\2\{temporary_filename}.tmp failed, error 0x800b0004
 ERROR: DownloadContentFiles() failed with hr=0x80073633
@@ -140,7 +140,7 @@ Attenersi alla procedura seguente per risolvere l'errore 0xc1800118 e "errore: f
 1. Disabilitare la classificazione **aggiornamenti** sia in WSUS che in Configuration Manager. Non si vuole che venga eseguita una sincronizzazione fino a quando non si viene reindirizzati a queste istruzioni.  
    - Deselezionare la classificazione **Aggiornamenti** nelle proprietà del componente del punto di aggiornamento software per il sito di primo livello.
      - Per altre informazioni, vedere [Configurare le classificazioni e i prodotti](../get-started/configure-classifications-and-products.md).
-   - Deselezionare la classificazione **aggiornamenti** da WSUS in **prodotti e classificazioni** nella [ **pagina Opzioni** ](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/manage/setting-up-update-synchronizations)oppure usare PowerShell ISE eseguito come amministratore.
+   - Deselezionare la classificazione **aggiornamenti** da WSUS in **prodotti e classificazioni** nella [pagina **Opzioni** ](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/manage/setting-up-update-synchronizations)oppure usare PowerShell ISE eseguito come amministratore.
       ```PowerShell
       Get-WsusClassification | Where-Object -FilterScript {$_.Classification.Title -Eq “Upgrades”} | Set-WsusClassification -Disable
       ```  

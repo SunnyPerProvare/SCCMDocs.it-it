@@ -152,8 +152,6 @@
               href: plan-design/hierarchy/manage-content-library-flowchart.md
             - name: Strumento di pulizia della raccolta contenuto
               href: plan-design/hierarchy/content-library-cleanup-tool.md
-            - name: Ottimizzazione recapito nella cache in rete
-              href: plan-design/hierarchy/delivery-optimization-in-network-cache.md
             - name: Peer cache per i client di Configuration Manager
               href: plan-design/hierarchy/client-peer-cache.md
             - name: Package Transfer Manager
@@ -374,6 +372,10 @@
               href: servers/deploy/configure/deploy-and-manage-content.md
             - name: Monitoraggio del contenuto
               href: servers/deploy/configure/monitor-content-you-have-distributed.md
+            - name: Ottimizzazione recapito nella cache in rete
+              href: plan-design/hierarchy/delivery-optimization-in-network-cache.md
+            - name: Risoluzione dei problemi relativi a Ottimizzazione recapito nella cache in rete
+              href: servers/deploy/configure/troubleshoot-delivery-optimization-in-network-cache.md
         - name: Eseguire l'individuazione
           items:
             - name: Panoramica dei metodi di individuazione

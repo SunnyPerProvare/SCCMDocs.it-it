@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d472f10b5ffdaaeb29d56a704436d0833eb989fc
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 8519d0e93116115dcd6ca223b62af67b4d7a89a4
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123230"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892493"
 ---
 # <a name="prestart-commands-for-task-sequence-media-in-system-center-configuration-manager"></a>Comandi di preavvio per supporti per sequenza di attività in System Center Configuration Manager
 
@@ -27,7 +27,7 @@ ms.locfileid: "56123230"
 ## <a name="create-a-script-file-to-use-for-the-prestart-command"></a>Creare un file di script da usare per il comando di preavvio  
  Le variabili della sequenza di attività possono essere lette e scritte usando l'oggetto COM Microsoft.SMS.TSEnvironment durante l'esecuzione della sequenza di attività. Nell'esempio che segue viene illustrato un file di script Visual Basic che esegue la query della variabile della sequenza attività _SMSTSLogPath per ottenere la posizione corrente del registro. Lo script imposta inoltre una variabile personalizzata.  
 
-```  
+``` VBScript
 dim osd: set env = CreateObject("Microsoft.SMS.TSEnvironment")  
 dim logPath  
 ' You can query the environment to get an existing variable.  
