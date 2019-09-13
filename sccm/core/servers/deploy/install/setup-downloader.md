@@ -2,7 +2,7 @@
 title: Downloader di installazione
 titleSuffix: Configuration Manager
 description: Leggere le informazioni su questa applicazione autonoma progettata per assicurare che l'installazione del sito usi le versioni correnti dei file di installazione principali.
-ms.date: 3/1/2017
+ms.date: 03/1/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23fbe5ecb6b69f9832ca34659cd35f5ad25b29b9
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: fcf41ada4d8fd2d6e4c185a485d94c64cd55b541
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501320"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70888804"
 ---
 # <a name="setup-downloader-for-system-center-configuration-manager"></a>Downloader di installazione per System Center Configuration Manager
 
@@ -66,7 +66,7 @@ Sono disponibili due opzioni per l'esecuzione del downloader di installazione:
 
     -   **/NOUI**: usare questa opzione per avviare il Downloader di installazione senza visualizzare l'interfaccia utente. Quando si usa questa opzione, è necessario specificare il **percorso di download** come parte della riga di comando al prompt dei comandi.  
 
-    -   **&lt;DownloadPath\>**: è possibile specificare il percorso della cartella di download per avviare automaticamente la verifica o il processo di download. Quando si usa l'opzione **/NOUI**, è necessario specificare il percorso di download. Se non si specifica un percorso di download, sarà necessario specificarlo all'apertura del downloader di installazione. Il downloader di installazione crea la cartella se non esiste già.  
+    -   **&lt;DownloadPath\>** : è possibile specificare il percorso della cartella di download per avviare automaticamente la verifica o il processo di download. Quando si usa l'opzione **/NOUI**, è necessario specificare il percorso di download. Se non si specifica un percorso di download, sarà necessario specificarlo all'apertura del downloader di installazione. Il downloader di installazione crea la cartella se non esiste già.  
 
     Comandi di esempio:
 

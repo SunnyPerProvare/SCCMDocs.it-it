@@ -11,12 +11,12 @@ ms.assetid: 31de47c9-891b-4de7-8d5e-fbbc1bff7c60
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b58f6d1441d338c121b67754989128944adcc923
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: ec0d298b6adea38c6b4104f2006b77eba650ac66
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536565"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70889255"
 ---
 # <a name="how-to-enable-tls-12"></a>Come abilitare TLS 1.2
 
@@ -90,7 +90,7 @@ Assicurarsi di impostare le chiavi del Registro di sistema seguenti in qualsiasi
 
 Per le applicazioni a 32 bit in esecuzione su sistemi a 32 bit o per le applicazioni a 64 bit in esecuzione su sistemi a 64 bit, aggiornare il valore della sottochiave seguente:
 
-```Registry
+``` Registry
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v2.0.50727]
       "SystemDefaultTlsVersions" = dword:00000001
       "SchUseStrongCrypto" = dword:00000001
@@ -101,7 +101,7 @@ Per le applicazioni a 32 bit in esecuzione su sistemi a 32 bit o per le applicaz
 
 Per le applicazioni a 32 bit in esecuzione su sistemi a 64 bit, aggiornare il valore della sottochiave seguente:
 
-```Registry
+``` Registry
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v2.0.50727]
       "SystemDefaultTlsVersions" = dword:00000001
       "SchUseStrongCrypto" = dword:00000001
@@ -158,7 +158,7 @@ Le versioni precedenti di Windows, ad esempio Windows 7 o Windows Server 2012, n
 
 Verificare il valore dell'impostazione del Registro di sistema `DefaultSecureProtocols`, ad esempio:
 
-```Registry
+``` Registry
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\
       DefaultSecureProtocols = (DWORD): 0xAA0
 HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\
@@ -244,7 +244,7 @@ Per risolvere questo problema, seguire questa procedura:
 
 1. Nella cartella `%WinDir%\System32\InetSrv` del server del Catalogo applicazioni creare un file **W2SP.exe.config** con il contenuto seguente:
 
-    ```xml
+    ``` XML
     <?xml version="1.0" encoding="utf-8" ?>
     <configuration>
       <runtime>
@@ -296,7 +296,7 @@ A partire dalla versione 1802, le macchine virtuali di Azure usate dal gateway d
 
 **SMSAdminui.log** può contenere un errore simile all'esempio seguente:
 
-```
+``` Log
 Microsoft.ConfigurationManager.CloudBase.AAD.AADAuthenticationException
 Service returned error. Check InnerException for more details
 at Microsoft.ConfigurationManager.CloudBase.AAD.AADAuthenticationContext.GetAADAuthResultObject

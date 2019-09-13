@@ -2,7 +2,7 @@
 title: Estensioni dello schema
 titleSuffix: Configuration Manager
 description: Estendere lo schema di Active Directory per supportare System Center Configuration Manager.
-ms.date: 2/7/2017
+ms.date: 02/7/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e0d5863f1e498bd2f2a5f793b5de9dad03c1218
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 5390dfaeb9a9a45b96e35f2a5b4e988479f0a492
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499134"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70889313"
 ---
 # <a name="schema-extensions-for-system-center-configuration-manager"></a>Estensioni dello schema per System Center Configuration Manager
 
@@ -77,7 +77,7 @@ Prima di [estendere lo schema di Active Directory](https://docs.microsoft.com/sc
 
     -   **Pubblicare il punto di gestione in DNS o WINS** e configurare i client per usare questo metodo di individuazione della posizione del servizio.  
 
-**Configurazione della porta per la comunicazione "client a server"**: durante l'installazione, il client viene configurato con le informazioni della porta archiviate in Active Directory. Se in seguito si modifica la porta per la comunicazione tra client e server di un sito, il client può ottenere l'impostazione della nuova porta da Active Directory Domain Services.  
+**Configurazione della porta per la comunicazione "client a server"** : durante l'installazione, il client viene configurato con le informazioni della porta archiviate in Active Directory. Se in seguito si modifica la porta per la comunicazione tra client e server di un sito, il client può ottenere l'impostazione della nuova porta da Active Directory Domain Services.  
 
 -   **Soluzioni alternative:** se non si estende lo schema, usare una delle soluzioni alternative seguenti per fornire ai client esistenti la configurazione della nuova porta:  
 

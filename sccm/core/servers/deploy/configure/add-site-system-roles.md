@@ -2,7 +2,7 @@
 title: Aggiungere ruoli del sistema del sito
 titleSuffix: Configuration Manager
 description: Informazioni sui ruoli del sistema del sito di Configuration Manager e su come aggiungerli per estendere la funzionalità e la capacità del sito.
-ms.date: 2/7/2017
+ms.date: 02/7/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96710897dd518832a221717b7fdbec0a73eed01e
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 654334e7e2e8a3cf939f51d85cb5ade67f0ff711
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499092"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70889214"
 ---
 # <a name="add-site-system-roles-for-system-center-configuration-manager"></a>Aggiungere ruoli del sistema del sito per System Center Configuration Manager
 

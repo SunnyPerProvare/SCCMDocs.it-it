@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1614327bbea6ecb92d37e1ca89d9ee430b74f2f
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: 7a8c3147b4ba7df547b07947ee47d4084591f52f
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68338115"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892156"
 ---
 # <a name="troubleshooting-cmpivot"></a>Risoluzione dei problemi di CMPivot
 
@@ -28,7 +28,7 @@ Per impostazione predefinita, i file di log del server del sito si trovano in C:
 
 Verificare **smsprov.log** per questa riga:
 
-```
+``` Log
 Auditing: User <username> initiated client operation 135 to collection <CollectionId>.
 ```
 
@@ -38,7 +38,7 @@ Trovare l'ID nella finestra di CMPivot. L'ID è **ClientOperationID**.
 
 Trovare il valore **TaskID** nella tabella ClientAction. **TaskID** corrisponde al valore **UniqueID** nella tabella ClientAction. 
 
-```SQL
+``` SQL
 select * from ClientAction where ClientOperationId=<id>
 ```
 
@@ -57,14 +57,14 @@ Controllare **CcmNotificationAgent.log**. I log saranno simili al seguente:
 
 Controllare **Scripts.log** per trovare **TaskID**. Nell'esempio seguente viene visualizzato **Task ID {F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}** :
 
-```
+``` Log
 Sending script state message: 7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14 Scripts 7/3/2018 11:44:47 AM 5036 (0x13AC)
 State message: Task Id {F8C7C37F-B42B-4C0A-B050-2BB44DF1098A} Scripts 7/3/2018 11:44:47 AM 5036 (0x13AC)
 ```
 
 Controllare **StateMessage.log**. In questo esempio **TaskID** è quasi alla fine del messaggio, accanto a &lt;Param>. Verranno visualizzate righe simile a quelle riportate di seguito:
 
-```xml
+``` XML
 StateMessage body: <?xml version="1.0" encoding="UTF-16"?>
 <Report><ReportHeader><Identification><Machine><ClientInstalled>1</ClientInstalled><ClientType>1
 </ClientType><ClientID>GUID:DBAC52C9-57E6-47D7-A8D6-E0A5A64B57E6</ClientID><ClientVersion>5.00.8670.1000</ClientVersion>
@@ -86,7 +86,7 @@ Successfully forwarded State Messages to the MP StateMessage 7/3/2018 11:44:47 A
 
 Aprire **statesys.log** per visualizzare se il messaggio è stato ricevuto ed elaborato. In questo esempio **TaskID** è quasi alla fine del messaggio, accanto a &lt;Param>.
 
-```xml
+``` XML
 CMessageProcessor - the cmdline to DB exec dbo.spProcessStateReport N'?<?xml version="1.0" encoding="UTF-
 16"?>~~<Report><ReportHeader><Identification><Machine><ClientInstalled>1</ClientInstalled><ClientType>1
 </ClientType><ClientID>GUID:DBAC52C9-57E6-47D7-A8D6-E0A5A64B57E6</ClientID><ClientVersion>5.00.8670.1000</ClientVersion>
@@ -107,7 +107,7 @@ Se il messaggio non è stato elaborato, controllare l'inbox del messaggio di sta
 
 Controllare la vista di monitoraggio per CMPivot da SQL usando **TaskID**.
 
-```SQL
+``` SQL
 select * from vSMS_CMPivotStatus where TaskID='{F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}'
 ```
 

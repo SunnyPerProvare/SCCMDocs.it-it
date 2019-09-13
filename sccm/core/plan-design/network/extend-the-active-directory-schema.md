@@ -2,7 +2,7 @@
 title: Pubblicazione e schema di Active Directory
 titleSuffix: Configuration Manager
 description: Estendere lo schema di Active Directory per System Center Configuration Manager per semplificare il processo di distribuzione e configurazione dei client.
-ms.date: 2/6/2017
+ms.date: 02/6/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fec31437e2f1a587f4262e6dc1984eadbec2d23
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 68be076cd166867ae3a1b181c14e3c888110b029
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499227"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70889459"
 ---
 # <a name="prepare-active-directory-for-site-publishing"></a>Preparare Active Directory per la pubblicazione di siti
 
@@ -62,7 +62,7 @@ Per estendere lo schema per Configuration Manager:
 
 2.  Usare l'utilità della riga di comando LDIFDE per importare il contenuto del file **ConfigMgr_ad_schema.ldf** in Active Directory Domain Services:  
 
-    -   Ad esempio, la seguente riga di comando importa le estensioni dello schema in Active Directory Domain Services, attiva la registrazione dettagliata e crea un file di log durante il processo di importazione: **ldifde -i -f ConfigMgr_ad_schema.ldf -v -j &lt;percorso di archiviazione del file di log\>**.  
+    -   Ad esempio, la seguente riga di comando importa le estensioni dello schema in Active Directory Domain Services, attiva la registrazione dettagliata e crea un file di log durante il processo di importazione: **ldifde -i -f ConfigMgr_ad_schema.ldf -v -j &lt;percorso di archiviazione del file di log\>** .  
 
 3.  Per verificare la riuscita dell'estensione dello schema, esaminare il file di log creato dalla riga di comando usata nel passaggio precedente.  
 

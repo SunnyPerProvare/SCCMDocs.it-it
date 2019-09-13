@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c7c2951ad07c3ac0d2ac0658fecf47f7231c62a7
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: a3520217cde80b080676d23dc49a16974c11823a
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70377932"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70889139"
 ---
 # <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>Repliche di database per i punti di gestione per System Center Configuration Manager
 
@@ -245,7 +245,7 @@ Oltre a configurare il punto di gestione per l'utilizzo del server di replica di
     > [!IMPORTANT]  
     >  Se si configurano più repliche di database in un'unica istanza di SQL Server, per ogni replica successiva configurata è necessario usare una versione modificata dello script per questa procedura. Vedere  [Script supplementari per ulteriori repliche di database in un'unica istanza di SQL Server](#bkmk_supscript)  
 
-    ```  
+    ``` PowerShell
     # Script for creating a self-signed certificate for the local machine and configuring SQL Server to use it.  
 
     Param($SQLInstance)  

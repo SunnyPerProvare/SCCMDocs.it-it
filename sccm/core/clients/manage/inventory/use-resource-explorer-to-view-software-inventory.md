@@ -2,7 +2,7 @@
 title: Visualizzare l'inventario software con Esplora inventario risorse
 titleSuffix: Configuration Manager
 description: Usare Esplora inventario software per visualizzare l'inventario software in System Center Configuration Manager.
-ms.date: 2/22/2017
+ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4aa4b118b87015389762ca4ec6ea79ba5ea2034f
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: eba3e3757a325576222636ca0113bc667639c538
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499653"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70890060"
 ---
 # <a name="how-to-use-resource-explorer-to-view-software-inventory-in-system-center-configuration-manager"></a>Come usare Esplora inventario software per visualizzare l'inventario software in System Center Configuration Manager
 

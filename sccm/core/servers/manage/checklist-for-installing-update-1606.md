@@ -2,7 +2,7 @@
 title: Elenco di controllo per la versione 1606
 titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di System Center Configuration Manager dalla versione 1511 o 1602 alla versione 1606.
-ms.date: 6/6/2017
+ms.date: 06/6/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5275d24cecebbcda06b75de3d27dae1fe7c1e6c
-ms.sourcegitcommit: 6b5a003256305c1f0cb605e52aeaaf19c23af5a9
+ms.openlocfilehash: 5639e66b52d7ea3f7257e495d445a93dd058fe8e
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68956353"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892136"
 ---
 # <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Elenco di controllo per installare l'aggiornamento 1606 di System Center Configuration Manager
 

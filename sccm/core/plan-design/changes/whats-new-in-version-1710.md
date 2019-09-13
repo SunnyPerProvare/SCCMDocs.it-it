@@ -2,7 +2,7 @@
 title: Nuova versione 1710 | Microsoft Docs
 titleSuffix: Configuration Manager
 description: Ottenere informazioni dettagliate sulle modifiche e le nuove funzionalità introdotte nella versione 1710 di System Center Configuration Manager.
-ms.date: 1/08/2018
+ms.date: 01/08/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3bc3123be01ff769e43738ced91d42c5562210c9
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 0f558961ee6f3fe6f20c2ebd4f0b943161156f28
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536896"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70889549"
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Novità della versione 1710 di System Center Configuration Manager
 

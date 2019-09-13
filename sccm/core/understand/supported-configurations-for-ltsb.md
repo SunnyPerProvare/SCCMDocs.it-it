@@ -2,7 +2,7 @@
 title: 'Configurazioni supportate per LTSB '
 titleSuffix: Configuration Manager
 description: Funzionamento di sistemi operativi e prodotti dipendenti con Long-Term Servicing Branch di System Center Configuration Manager.
-ms.date: 5/10/2017
+ms.date: 05/10/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98b06429296927ade2dd738fb8df5356668dd89b
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: 4b71530cbde931c14810ba0e0960e530b56ece04
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70377780"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70891892"
 ---
 # <a name="supported-configurations-for-the-long-term-servicing-branch-of-system-center-configuration-manager"></a>Configurazioni supportate per Long-Term Servicing Branch di System Center Configuration Manager
 

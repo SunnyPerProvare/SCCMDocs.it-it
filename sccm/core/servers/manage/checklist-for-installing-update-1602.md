@@ -2,7 +2,7 @@
 title: Elenco di controllo per la versione 1602
 titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di System Center Configuration Manager dalla versione 1511 alla versione 1602.
-ms.date: 2/7/2017
+ms.date: 02/7/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9a17bd50bd9380b410623ff0c04b6d9a4417d82
-ms.sourcegitcommit: 6b5a003256305c1f0cb605e52aeaaf19c23af5a9
+ms.openlocfilehash: bd67b0ac1d6714b933e396b0d6812ef89a82efcd
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68956499"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892176"
 ---
 # <a name="checklist-for-installing-update-1602-for-system-center-configuration-manager"></a>Elenco di controllo per l'aggiornamento di System Center Configuration Manager dalla versione 1511 alla versione 1602
 

@@ -2,7 +2,7 @@
 title: Strumento di registrazione dell'aggiornamento
 titleSuffix: Configuration Manager
 description: Informazioni su quando e come usare lo strumento di registrazione dell'aggiornamento per importare manualmente un aggiornamento nella console di Configuration Manager.
-ms.date: 3/27/2017
+ms.date: 03/27/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0898dd79eeb81cb7a889a74daf1a4fb7917568e
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 1bd4d86d5ac83062da66c40b596cf86eb3d2bfa9
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65495878"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70891998"
 ---
 # <a name="use-the-update-registration-tool-to-import-hotfixes-to-system-center-configuration-manager"></a>Usare lo strumento di registrazione dell'aggiornamento per importare hotfix in System Center Configuration Manager
 

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 862505e7ea1ad1e59b0bbf7ace07bc07d326a83d
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: e6c5d99860d8897e34038319c5c16417985132cf
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70379871"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892081"
 ---
 # <a name="create-queries-in-system-center-configuration-manager"></a>Creare query in System Center Configuration Manager
 
@@ -101,10 +101,10 @@ Usare la query seguente per restituire il nome NetBIOS e la versione del sistema
 > [!TIP]  
 > Per restituire i computer che eseguono Windows Server 2008 R2, modificare `%Workstation 6.1%` in `%Server 6.1%`.  
 
-```  
+``` WQL
 select SMS_R_System.NetbiosName,  
-SMS_R_System.OperatingSystemNameandVersion from    
-SMS_R_System where   
+SMS_R_System.OperatingSystemNameandVersion from
+SMS_R_System where
 SMS_R_System.OperatingSystemNameandVersion like "%Workstation 6.1%"  
 ```  
 
@@ -115,12 +115,12 @@ Usare la query seguente per restituire il nome NetBIOS e il nome del pacchetto s
 > [!TIP]  
 > Questa query cerca il pacchetto software usando i nomi visualizzati nell'elenco di programmi nel Pannello di controllo di Windows.  
 
-```  
-select SMS_R_System.NetbiosName,   
-SMS_G_System_ADD_REMOVE_PROGRAMS.DisplayName from    
-SMS_R_System inner join SMS_G_System_ADD_REMOVE_PROGRAMS on   
-SMS_G_System_ADD_REMOVE_PROGRAMS.ResourceId =   
-SMS_R_System.ResourceId where   
+``` WQL
+select SMS_R_System.NetbiosName,
+SMS_G_System_ADD_REMOVE_PROGRAMS.DisplayName from
+SMS_R_System inner join SMS_G_System_ADD_REMOVE_PROGRAMS on
+SMS_G_System_ADD_REMOVE_PROGRAMS.ResourceId =
+SMS_R_System.ResourceId where
 SMS_G_System_ADD_REMOVE_PROGRAMS.DisplayName like "Microsoft%Visio%"  
 ```  
 
@@ -128,10 +128,10 @@ SMS_G_System_ADD_REMOVE_PROGRAMS.DisplayName like "Microsoft%Visio%"
 
 Usare la query seguente per restituire il nome NetBIOS e il nome dell'unità organizzativa di tutti i computer in un'unità organizzativa specificata. Sostituire il testo `OU Name` con il nome dell'unità organizzativa da cercare.  
 
-```  
-select SMS_R_System.NetbiosName,   
-SMS_R_System.SystemOUName from    
-SMS_R_System where   
+``` WQL
+select SMS_R_System.NetbiosName,
+SMS_R_System.SystemOUName from
+SMS_R_System where
 SMS_R_System.SystemOUName = "OU Name"  
 ```  
 
@@ -139,8 +139,8 @@ SMS_R_System.SystemOUName = "OU Name"
 
 Usare la query seguente per restituire il nome NetBIOS di tutti i computer il cui nome inizia con una stringa specifica di caratteri. In questo esempio la query restituisce tutti i computer con un nome NetBIOS che inizia con `ABC`.  
 
-```  
-select SMS_R_System.NetbiosName from    
+``` WQL
+select SMS_R_System.NetbiosName from
 SMS_R_System where SMS_R_System.NetbiosName like "ABC%"  
 ```  
 
@@ -148,7 +148,7 @@ SMS_R_System where SMS_R_System.NetbiosName like "ABC%"
 
 I tipi di dispositivo vengono archiviati nel database di Configuration Manager con la classe di risorse **sms_r_system** e il nome di attributo **AgentEdition**. Usare questa query per recuperare solo i dispositivi che corrispondono all'edizione dell'agente del tipo di dispositivo specificato:  
 
-```  
+``` WQL
 Select SMS_R_System.ClientEdition from SMS_R_System where SMS_R_System.ClientEdition = <Device ID>  
 ```  
 
@@ -177,7 +177,7 @@ Usare uno di questi valori per &lt;ID dispositivo\>:
 
  Ad esempio, se si vuole restituire solo i computer Mac, usare questa query:  
 
-```  
+``` WQL
 Select SMS_R_System.ClientEdition from SMS_R_System where SMS_R_System.ClientEdition = 5  
 ```  
 

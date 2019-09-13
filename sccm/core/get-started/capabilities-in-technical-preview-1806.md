@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d27baa691c3adca6dd859b79fc92bdd4fe539ab
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: 8499ff11cc7ba53760e541eefb690c69b2f20fcf
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68339902"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70889718"
 ---
 # <a name="capabilities-in-technical-preview-1806-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1806 per System Center Configuration Manager
 
@@ -43,7 +43,8 @@ Steps to workaround, if any.
 ### <a name="ki_contentlib"></a> Impossibile aggiornare il sito con una raccolta contenuto remota
 <!--514642-->
 Il sito non esegue l'aggiornamento con gli errori seguenti in **cmupdate.log**:  
-```  
+
+``` Log
 Failed to find any valid drives  
 GetContentLibraryParameters failed; 0x80070057  
 ERROR: Failed to process configuration manager update.  
@@ -172,7 +173,7 @@ In questa versione vengono aggiunte tre impostazioni per [Windows Defender Smart
 
 ## <a name="sync-mdm-policy-from-microsoft-intune-for-a-co-managed-device"></a>Sincronizzare i criteri MDM da Microsoft Intune per un dispositivo con co-gestione
 <!--1357377-->
-A partire da questa versione, quando si [passa a un altro carico di lavoro co-gestione](/sccm/core/clients/manage/co-management-switch-workloads), i dispositivi in co-gestione sincronizzano automaticamente i criteri di gestione dei dati master di Microsoft Intune. La sincronizzazione si verifica anche quando si avvia l'azione **Scarica criteri computer** dalle notifiche client nella console di Configuration Manager. Per altre informazioni, vedere [Avviare il recupero dei criteri client usando la notifica client](/sccm/core/clients/manage/manage-clients#initiate-client-policy-retrieval-using-client-notification).
+A partire da questa versione, quando si [passa a un altro carico di lavoro co-gestione](/sccm/core/clients/manage/co-management-switch-workloads), i dispositivi in co-gestione sincronizzano automaticamente i criteri di gestione dei dati master di Microsoft Intune. La sincronizzazione si verifica anche quando si avvia l'azione **Scarica criteri computer** dalle notifiche client nella console di Configuration Manager. Per altre informazioni, vedere [Avviare il recupero dei criteri client usando la notifica client](/sccm/core/clients/manage/manage-clients##BKMK_PolicyRetrieval).
 
 
 

@@ -2,7 +2,7 @@
 title: Privacy e sicurezza per l'inventario software
 titleSuffix: Configuration Manager
 description: Informazioni sulla sicurezza e la privacy per l'inventario software in System Center Configuration Manager.
-ms.date: 2/22/2017
+ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f11178222ebf5edaa9b433ae3763b79d535a9c9d
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 717f6c3a086a74772aaea98fe8a90cf573258f43
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499889"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70889979"
 ---
 # <a name="security-and-privacy-for-software-inventory-in-system-center-configuration-manager"></a>Sicurezza e privacy per l'inventario software in System Center Configuration Manager
 

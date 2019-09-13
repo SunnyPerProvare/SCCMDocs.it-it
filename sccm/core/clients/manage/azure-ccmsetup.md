@@ -11,12 +11,12 @@ ms.assetid: 9aaf466a-3f40-4468-b3cd-f0010f21f05a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 24c8dd69c32cf624526dd1dc2b8bcab4920a1ec5
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 411752ae345b6af255e8fe1e46d5d5e3a93b8900
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67677812"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70890373"
 ---
 # <a name="azure-ad-authentication-workflow"></a>Flusso di lavoro di autenticazione di Azure AD
 
@@ -35,13 +35,13 @@ Un client aggiunto a un dominio di AD Azure in Windows 10 usa i parametri di Azu
 
 - Richiedere un token di dispositivo di Azure AD:
 
-    ```
+    ``` Log
     Getting AAD (device) token with: ClientId = 22ed38d9-XXXX-4036-XXXX-a98452fda4fc, ResourceUrl = https://ConfigMgrService, AccountId = https://login.microsoftonline.com/common/oauth2/token
     ```
 
 - Se non riesce a ottenere un token di dispositivo, richiede un token utente di Azure AD:
 
-    ```
+    ``` Log
     Getting AAD (user) token with: ClientId = f1f9b14e-XXXX-4f17-XXXX-2593f6eee91e, ResourceUrl = https://ConfigMgrService, AccountId = X49FC29A-ECE3-XXX-A3C1-XXXXXXF035A6E
     ```
 
@@ -57,7 +57,7 @@ Una volta che il client dispone di un token di Azure AD, richiede un token del c
 
 Le voci seguenti vengono registrate in **ccmsetup.log** della macchina virtuale CMG:
 
-```
+``` Log
 Getting CCM Token from STS server 'CloudManagementGateway.cloudapp.net/CCM_PROXY_MUTUALAUTH/XXXXXX037938216'
 Getting CCM Token from https://CloudManagementGateway.cloudapp.net/CCM_PROXY_MUTUALAUTH/XXXXXX037938216/CCM_STS
 ```
@@ -66,7 +66,7 @@ Getting CCM Token from https://CloudManagementGateway.cloudapp.net/CCM_PROXY_MUT
 
 Le voci seguenti vengono registrate in **IIS.log**:
 
-```
+``` Log
 RD0003FF74XX2 10.0.0.4 GET /CCM_STS - 443 - HTTP/1.1 python-requests/2.20.0 - - 13.95.234.44 404 0 2 1477 154 15
 ```
 
@@ -74,7 +74,7 @@ RD0003FF74XX2 10.0.0.4 GET /CCM_STS - 443 - HTTP/1.1 python-requests/2.20.0 - - 
 
 Le voci seguenti vengono registrate in **CMGService.log**:
 
-```
+``` Log
 RequestUri: /CCM_PROXY_SERVERAUTH/XXXXXX037938216/CCM_STS  RequestCount: 769  RequestSize: 1081595 Bytes  ResponseCount: 769     ResponseSize: 36143 Bytes  AverageElapsedTime: 3945 ms
 ```
 
@@ -82,7 +82,7 @@ RequestUri: /CCM_PROXY_SERVERAUTH/XXXXXX037938216/CCM_STS  RequestCount: 769  Re
 
 Le voci seguenti vengono registrate in **SMS_CLOUD_PROXYCONNECTOR.log**:
 
-```
+``` Log
 MessageID: 3087bd34-b82c-4950-b972-e82bb0fb8385 RequestURI: https://MP.MYCORP.COM/CCM_STS EndpointName: CCM_STS ResponseHeader: HTTP/1.1 200 OK ~~ ResponseBodySize: 0 ElapsedTime: 2 ms
 ```
 
@@ -90,7 +90,7 @@ MessageID: 3087bd34-b82c-4950-b972-e82bb0fb8385 RequestURI: https://MP.MYCORP.CO
 
 Le voci seguenti vengono registrate in **CCM_STS.log**:
 
-```
+``` Log
 Validated AAD token. TokenType: Device TenantId: XXXXe388-XXXX-485c-XXXX-e8e4eb41XXXX UserId: 00000000-0000-0000-0000-000000000000 DeviceId: 0XXXXX80-77XX-4XXa-X63X-67XXXXX64bb7 OnPrem_UserSid:  OnPrem_DeviceSid:
 
 Return token to client, token type: UDA, hierarchyId: XXXX4f9c-XXXX-46a5-XXXX-7612c324XXXX, userId: 00000000-0000-0000-0000-000000000000, deviceId: GUID:XXXXaee9-cXXc-4ccd-XXXX-f1417d81XXX
@@ -101,7 +101,7 @@ Return token to client, token type: UDA, hierarchyId: XXXX4f9c-XXXX-46a5-XXXX-76
 
 Una volta che il client ottiene una risposta con il token del client Configuration Manager, lo memorizza nella cache e lo usa per richiedere informazioni sul sito e la posizione del contenuto tramite CMG. Le voci seguenti vengono registrate in **ccmsetup.log**:
 
-```
+``` Log
 Cached encrypted token for 'S-1-5-18'. Will expire at '00/99/2999 00:00:00'
 Sending location request to 'CloudManagementGateway.cloudapp.net/CCM_PROXY_MUTUALAUTH/XXXXXX037938216' with payload '< Request >
 Appending CCM Token to the header.
@@ -137,25 +137,25 @@ L'uso di /NoCRLCheck è adatto solo per il bootstrap ccmsetup. Perché i client 
 
 Le voci seguenti vengono registrate in **ClientIDManagerStartup.log**:
 
-```
-[RegTask] - Client is not registered. Sending registration request for GUID:1XXXXXEF-5XX8-4XX3-XEDX-XXXFBFF78XXX ... 
-Registering client using AAD auth. 
+``` Log
+[RegTask] - Client is not registered. Sending registration request for GUID:1XXXXXEF-5XX8-4XX3-XEDX-XXXFBFF78XXX ...
+Registering client using AAD auth.
 ```
 
 ### <a name="2-configuration-manager-request-azure-ad-token-to-register-client"></a>2. Token di Azure AD della richiesta di Configuration Manager per registrare il client
 
 Le voci seguenti vengono registrate in **ADALOperationProvider.log**:
-```
+
+``` Log
 Getting AAD (user) token with: ClientId = f1f9b14e-XXXX-4f17-XXXX-2593f6eee91e, ResourceUrl = https://ConfigMgrService, AccountId = X49FC29A-ECE3-XXX-A3C1-XXXXXXF035A6E
 Retrieved AAD token for AAD user '00000000-0000-0000-0000-000000000000'
-
 ```
 
 #### <a name="21-configuration-manager-client-is-registered"></a>2.1 Il client di Configuration Manager viene registrato  
 
 Le voci seguenti vengono registrate in **ClientIDManagerStartup.log**:
 
-```
+``` Log
 [RegTask] - Client is registered. Server assigned ClientID is GUID:1XXXXXEF-5XX8-4XX3-XEDX-XXXFBFF78XXX. Approval status 3
 ```
 
@@ -169,7 +169,7 @@ Dopo che il sito esegue la registrazione del client, il client richiede un token
 
 Le voci seguenti vengono registrate in **ClientIDManagerStartup.log**:
 
-```
+``` Log
 Getting CCM Token from STS server 'MP.MYCORP.COM'
 Getting CCM Token from https://MP.MYCORP.COM/CCM_STS
 ...
@@ -180,7 +180,7 @@ Cached encrypted token for 'S-1-5-18'. Will expire at 'XX/XX/XX XX:XX:XX'
 
 Le voci seguenti vengono registrate in **IIS.log**:
 
-```
+``` Log
 RD0003FF74XX2 10.0.0.4 GET /CCM_STS - 443 - HTTP/1.1 python-requests/2.20.0 - - 13.95.234.44 404 0 2 1477 154 15
 ```
 
@@ -188,7 +188,7 @@ RD0003FF74XX2 10.0.0.4 GET /CCM_STS - 443 - HTTP/1.1 python-requests/2.20.0 - - 
 
 Le voci seguenti vengono registrate in **CMGService.log**:
 
-```
+``` Log
 RequestUri: /CCM_PROXY_SERVERAUTH/XXXXXX037938216/CCM_STS  RequestCount: 769  RequestSize: 1081595 Bytes  ResponseCount: 769     ResponseSize: 36143 Bytes  AverageElapsedTime: 3945 ms
 ```
 
@@ -196,7 +196,7 @@ RequestUri: /CCM_PROXY_SERVERAUTH/XXXXXX037938216/CCM_STS  RequestCount: 769  Re
 
 Le voci seguenti vengono registrate in **SMS_CLOUD_PROXYCONNECTOR.log**:
 
-```
+``` Log
 MessageID: 3087bd34-b82c-4950-b972-e82bb0fb8385 RequestURI: https://MP.MYCORP.COM/CCM_STS EndpointName: CCM_STS ResponseHeader: HTTP/1.1 200 OK ~~ ResponseBodySize: 0 ElapsedTime: 2 ms
 ```
 
@@ -204,7 +204,7 @@ MessageID: 3087bd34-b82c-4950-b972-e82bb0fb8385 RequestURI: https://MP.MYCORP.CO
 
 Le voci seguenti vengono registrate in **CCM_STS.log**:
 
-```
+``` Log
 Validated AAD token. TokenType: Device TenantId: XXXXe388-XXXX-485c-XXXX-e8e4eb41XXXX UserId: 00000000-0000-0000-0000-000000000000 DeviceId: 0XXXXX80-77XX-4XXa-X63X-67XXXXX64bb7 OnPrem_UserSid:  OnPrem_DeviceSid:
 
 Return token to client, token type: UDA, hierarchyId: XXXX4f9c-XXXX-46a5-XXXX-7612c324XXXX, userId: 00000000-0000-0000-0000-000000000000, deviceId: GUID:XXXXaee9-cXXc-4ccd-XXXX-f1417d81XXX

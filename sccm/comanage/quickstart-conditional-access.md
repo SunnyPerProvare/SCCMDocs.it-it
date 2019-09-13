@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a48dd82b1f4c79953ce88c5e156abe47b891ac14
-ms.sourcegitcommit: d1df13fc95a1f1540177c294555d9be26161b9cb
+ms.openlocfilehash: 0930e2f02d2a99073944c61cfead6767530accbc
+ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65973941"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70738224"
 ---
 # <a name="conditional-access-with-co-management"></a>Accesso condizionale con la co-gestione
 
@@ -34,7 +34,7 @@ Con la co-gestione, Intune valuta tutti i dispositivi nella rete per determinare
 
     - Per i dispositivi con co-gestione, Configuration Manager esegue anche una valutazione basata sulla configurazione. Ad esempio, gli aggiornamenti richiesti o la conformità delle app. Intune combina questi controlli con la propria valutazione.  
 
-2. Intune rileva gli eventi imprevisti di sicurezza attivi in un dispositivo. Usa la sicurezza intelligente di [Microsoft Defender Advanced Threat Protection](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/get-started) (in precedenza Windows Defender ATP) e altri [provider di Mobile Threat Defense](https://www.lookout.com/about/partners/microsoft). Questi partner eseguono analisi del comportamento in modo continuativo sui dispositivi. Queste analisi rilevano gli eventi imprevisti attivi e quindi passano queste informazioni a Intune per la valutazione della conformità in tempo reale.  
+2. Intune rileva gli eventi imprevisti di sicurezza attivi in un dispositivo. Usa la sicurezza intelligente di [Microsoft Defender Advanced Threat Protection](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) (in precedenza Windows Defender ATP) e altri [provider di Mobile Threat Defense](https://www.lookout.com/about/partners/microsoft). Questi partner eseguono analisi del comportamento in modo continuativo sui dispositivi. Queste analisi rilevano gli eventi imprevisti attivi e quindi passano queste informazioni a Intune per la valutazione della conformità in tempo reale.  
 
     - Questa valutazione avviene dopo una violazione della sicurezza ed è basata sugli eventi imprevisti  
 

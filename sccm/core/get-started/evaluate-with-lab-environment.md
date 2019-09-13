@@ -2,7 +2,7 @@
 title: Valutare in un ambiente lab
 titleSuffix: Configuration Manager
 description: Creare un ambiente lab per valutare l'uso di System Center Configuration Manager nell'organizzazione.
-ms.date: 2/28/2017
+ms.date: 02/28/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78fdf0a07d1a299f7d10a0325b48f0c1fcfde2e3
-ms.sourcegitcommit: 4981a796e7886befb7bdeeb346dba32be82aefd6
+ms.openlocfilehash: a5e06d0afc32535e3459cad6da07ce4964055f0b
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67516007"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70889664"
 ---
 # <a name="evaluate-system-center-configuration-manager-by-building-your-own-lab-environment"></a>Valutare System Center Configuration Manager creando un proprio ambiente lab
 

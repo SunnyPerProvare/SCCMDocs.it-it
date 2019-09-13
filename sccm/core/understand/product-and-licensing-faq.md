@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: acafe2aeefc267446042b12f06763fd0f1737cfb
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: f4f4d10d7ae21ac209fc7cdc85f54bd8dbf604b8
+ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70377837"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70738338"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Domande frequenti relative ai rami e alle licenze di Configuration Manager
 
@@ -35,7 +35,7 @@ Current Branch è la build pronta per la produzione di Configuration Manager che
 
 ### <a name="bkmk_ltsb"></a> Che cos'è Long Term Servicing Branch (LTSB)?  
 
-LTSB è una build pronta per la produzione di Configuration Manager. È destinata ai clienti che lasciano scadere la sottoscrizione Software Assurance o diritti di sottoscrizione equivalenti. Rispetto a Current Branch, LTSB include [funzionalità ridotte](/sccm/core/understand/introduction-to-the-ltsb#features-that-are-not-available-in-the-ltsb-of-configuration-manager). I clienti che lasciano scadere una sottoscrizione Software Assurance o diritti di sottoscrizione equivalenti devono disinstallare la versione Current Branch di Configuration Manager. I clienti che dispongono di diritti di licenza perpetui per Configuration Manager possono quindi installare e usare la build LTSB della versione di Configuration Manager corrente al momento della scadenza.
+LTSB è una build pronta per la produzione di Configuration Manager. È destinata ai clienti che lasciano scadere la sottoscrizione Software Assurance o diritti di sottoscrizione equivalenti. Rispetto a Current Branch, LTSB include [funzionalità ridotte](/sccm/core/understand/introduction-to-the-ltsb#features-that-arent-available). I clienti che lasciano scadere una sottoscrizione Software Assurance o diritti di sottoscrizione equivalenti devono disinstallare la versione Current Branch di Configuration Manager. I clienti che dispongono di diritti di licenza perpetui per Configuration Manager possono quindi installare e usare la build LTSB della versione di Configuration Manager corrente al momento della scadenza.
 
 
 ### <a name="bkmk_licensing-acronyms"></a> Nel contenuto delle licenze vengono usati i termini *SA* e *L&SA*. Che cosa significano in relazione a Configuration Manager?    

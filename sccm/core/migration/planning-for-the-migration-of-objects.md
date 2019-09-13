@@ -2,7 +2,7 @@
 title: Eseguire la migrazione di oggetti
 titleSuffix: Configuration Manager
 description: Informazioni su come pianificare la migrazione di oggetti tra le gerarchie in un ambiente di System Center Configuration Manager.
-ms.date: 1/12/2017
+ms.date: 01/12/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c6085990cf61ac034d2e28de67965216722dce8
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: 6e60fa92df1adc4b22f877effda25881ca28ea7c
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70379409"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70889587"
 ---
 # <a name="plan-for-the-migration-of-configuration-manager-objects-to-system-center-configuration-manager"></a>Pianificare la migrazione degli oggetti di Configuration Manager a System Center Configuration Manager
 

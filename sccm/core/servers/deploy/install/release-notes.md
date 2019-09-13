@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 858ba3b39ea2290e1d5ca39d9d804e3f46be3002
-ms.sourcegitcommit: ef7800a294e5db5d751921c34f60296c1642fc1f
+ms.openlocfilehash: a21fcce7d5e8db66a7e85c14c0ef4ad1050b342c
+ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68712719"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70738426"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Note sulla versione per Configuration Manager
 
@@ -170,7 +170,7 @@ Impostare il valore del Registro di sistema seguente su `0` e riavviare il **Ser
 <!-- 4950335 -->
 *Si applica a: Configuration Manager versione 1902 con aggiornamento cumulativo e versione 1906*
 
-Se si ha una gerarchia e si abilitano i dati del sito **Inventario hardware** per le [viste distribuite](/sccm/core/servers/manage/data-transfers-between-sites#bkmk_distviews) sui collegamenti di replica siti, dopo aver configurato la connessione a Desktop Analytics in Configuration Manager verrà visualizzato l'errore seguente in M365UploadWorker.log:
+Se si ha una gerarchia e si abilitano i dati del sito **Inventario hardware** per le [viste distribuite](/sccm/core/plan-design/hierarchy/database-replication#bkmk_distviews) sui collegamenti di replica siti, dopo aver configurato la connessione a Desktop Analytics in Configuration Manager verrà visualizzato l'errore seguente in M365UploadWorker.log:
 
 `Unexpected exception 'System.Data.SqlClient.SqlException' Remote access is not supported for transaction isolation level "SNAPSHOT".:    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action'1 wrapCloseInAction)`
 

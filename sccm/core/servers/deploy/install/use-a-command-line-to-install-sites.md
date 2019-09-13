@@ -2,7 +2,7 @@
 title: Installazione da riga di comando
 titleSuffix: Configuration Manager
 description: Informazioni su come eseguire il programma di installazione di System Center Configuration Manager da un prompt dei comandi per vari tipi di installazione del sito.
-ms.date: 3/27/2017
+ms.date: 03/27/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 63fb00eb446c8e91f8bc741c0375b314ad0ef9a7
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 3e24fb163d144d69b11e7ae1aae4a5ebc5e0c38f
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65497659"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70888704"
 ---
 # <a name="use-a-command-line-to-install-system-center-configuration-manager-sites"></a>Usare una riga di comando per installare i siti di System Center Configuration Manager
 

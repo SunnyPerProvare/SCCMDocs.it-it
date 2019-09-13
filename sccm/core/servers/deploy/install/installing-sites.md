@@ -2,7 +2,7 @@
 title: Risorse per l'installazione di siti
 titleSuffix: Configuration Manager
 description: Esaminare un elenco di argomenti che consentono di installare System Center Configuration Manager o di aggiungere siti alla gerarchia.
-ms.date: 1/3/2017
+ms.date: 01/3/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8ebd90b994e3e6103282e3796be180bfd021128
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 54f79af62780cd29705a84ab4b42275a9226e469
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501372"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70888866"
 ---
 # <a name="resources-for-installing-system-center-configuration-manager-sites"></a>Risorse per l'installazione di siti di System Center Configuration Manager
 

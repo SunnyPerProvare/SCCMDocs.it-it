@@ -2,7 +2,7 @@
 title: Preparare server Windows
 titleSuffix: Configuration Manager
 description: Assicurarsi che un computer soddisfi i prerequisiti per l'uso come server del sito o server di sistema del sito per Configuration Manager.
-ms.date: 2/14/2017
+ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cbe2608058f7364ba2b78a7ed31a01dbec5ef65f
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: ce183f33a022259a5f706a6ec32aab409e0493a0
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499191"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70891264"
 ---
 # <a name="prepare-windows-servers-to-support-configuration-manager"></a>Preparare i server di Windows per il supporto di Configuration Manager
 
@@ -47,20 +47,20 @@ le funzionalità di Windows seguenti sono richieste in alcuni server del sistema
 
     Dal momento che .NET Framework 4.0 e versioni successive non è compatibile con le versioni precedenti e non può sostituire la versione 3.5 e precedenti, quando sono richieste versioni diverse pianificare l'abilitazione di ogni versione nello stesso computer.  
 
-- **Servizio trasferimento intelligente in background (BITS)**: I punti di gestione richiedono BITS (e le opzioni selezionate automaticamente) per supportare la comunicazione con i dispositivi gestiti.  
+- **Servizio trasferimento intelligente in background (BITS)** : I punti di gestione richiedono BITS (e le opzioni selezionate automaticamente) per supportare la comunicazione con i dispositivi gestiti.  
 
 - **BranchCache**: i punti di distribuzione possono essere configurati con BranchCache per supportare i client che usano BranchCache.  
 
 - **Deduplicazione dati**: i punti di distribuzione possono essere configurati con la deduplicazione dei dati, che offre dei vantaggi.  
 
-- **Compressione differenziale remota (RDC)**: Ogni computer che ospita un server del sito o un punto di distribuzione richiede una compressione differenziale remota (RDC). La compressione differenziale remota viene usata per generare le firme dei pacchetti ed eseguire confronti tra le firme.  
+- **Compressione differenziale remota (RDC)** : Ogni computer che ospita un server del sito o un punto di distribuzione richiede una compressione differenziale remota (RDC). La compressione differenziale remota viene usata per generare le firme dei pacchetti ed eseguire confronti tra le firme.  
 
 ### <a name="roles"></a>Ruoli  
 I ruoli di Windows seguenti sono necessari per supportare specifiche funzionalità, ad esempio gli aggiornamenti software e le distribuzioni del sistema operativo, mentre IIS è richiesto per la maggior parte dei ruoli del sistema del sito più comuni.  
 
 - **Servizio Registrazione dispositivi di rete** (in Servizi certificati Active Directory): questo ruolo di Windows è un prerequisito per l'uso dei profili dei certificati in Configuration Manager.  
 
-- **Server Web (IIS)**: include:  
+- **Server Web (IIS)** : include:  
     - Funzionalità HTTP comuni  
           - Reindirizzamento HTTP  
     - Sviluppo applicazioni  

@@ -2,7 +2,7 @@
 title: Aggiornare installazioni di valutazione
 titleSuffix: Configuration Manager
 description: Informazioni su come eseguire l'aggiornamento di un'installazione di valutazione a installazione completa di System Center Configuration Manager.
-ms.date: 2/7/2017
+ms.date: 02/7/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b5e527fbed544447052556041db3de3c5b06ffd
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 29c1aee34669ac65ae3175895bc1061e851182d1
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65497666"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70888876"
 ---
 # <a name="upgrade-an-evaluation-installation-of-system-center-configuration-manager-to-a-full-installation"></a>Aggiornare un'installazione di valutazione di System Center Configuration Manager a un'installazione completa
 
@@ -41,7 +41,7 @@ Prerequisiti per l'aggiornamento di una versione di valutazione a una versione c
 
 ### <a name="to-upgrade-an-evaluation-version-of-configuration-manager-to-a-licensed-version"></a>Per aggiornare una versione di valutazione di Configuration Manager a una versione con licenza  
 
-1.  Nel server del sito eseguire il programma di installazione di Configuration Manager **Setup.exe** dalla cartella di installazione di Configuration Manager (**%path%\BIN\X64**). È necessario copiare il programma di installazione che si trova nel server del sito nella cartella Configuration Manager perché le opzioni di manutenzione del sito non sono disponibili quando si esegue il programma di installazione dal supporto di installazione.  
+1.  Nel server del sito eseguire il programma di installazione di Configuration Manager **Setup.exe** dalla cartella di installazione di Configuration Manager ( **%path%\BIN\X64**). È necessario copiare il programma di installazione che si trova nel server del sito nella cartella Configuration Manager perché le opzioni di manutenzione del sito non sono disponibili quando si esegue il programma di installazione dal supporto di installazione.  
 2.  Nella pagina **Prima di iniziare** scegliere **Avanti**.  
 3.  Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito** e quindi scegliere **Avanti**.  
 4.  Nella pagina **Manutenzione sito** selezionare **Aggiornare la versione di valutazione a una versione con licenza**, immettere un codice Product Key valido e quindi scegliere **Avanti**.  

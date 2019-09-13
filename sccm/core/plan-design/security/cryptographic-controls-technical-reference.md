@@ -2,7 +2,7 @@
 title: Riferimento tecnico per i controlli crittografici
 titleSuffix: Configuration Manager
 description: Questo argomento illustra come la firma e la crittografia consentono di impedire agli autori di attacchi la lettura dei dati in System Center Configuration Manager.
-ms.date: 12/8/2017
+ms.date: 12/08/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
@@ -10,12 +10,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 76bf5ffecd21d25d152d74957473571b05f7d2a8
-ms.sourcegitcommit: f679fc1e46c191a1780ae961d155c927fc353dce
+ms.openlocfilehash: da9ec9265d8929860fa6d15d2ba3efb3eb215343
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70176695"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70889276"
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Riferimento tecnico per i controlli crittografici
 
