@@ -1,5 +1,5 @@
 ---
-title: Definizioni malware di Endpoint Protection da una condivisione di rete
+title: Scarica definizioni da Microsoft
 titleSuffix: Configuration Manager
 description: Informazioni su come abilitare il download delle definizioni malware di Endpoint Protection da Microsoft Updates per Configuration Manager.
 ms.date: 02/14/2017
@@ -11,19 +11,18 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ed7ea945a3454b2c647fec07ebcf3301fc6c708
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 3f5d72fc7dba8fea11c0c51aabac546e1966aa25
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65494573"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892339"
 ---
-# <a name="enable-endpoint-protection-malware-definitions-to-download-from-microsoft-updates-for-configuration-manager"></a>Abilitare le definizioni malware di Endpoint Protection da scaricare da Microsoft Updates per Configuration Manager
+# <a name="enable-endpoint-protection-malware-definitions-to-download-from-microsoft-updates"></a>Abilitare le definizioni malware di Endpoint Protection da scaricare da Microsoft Updates
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-
- Quando si sceglie di scaricare gli aggiornamenti delle definizioni da Microsoft Update, i client controlleranno il sito Microsoft Update con la frequenza definita nella sezione **Aggiornamenti delle definizioni** della finestra di dialogo dei criteri antimalware.
+Quando si sceglie di scaricare gli aggiornamenti delle definizioni da Microsoft Update, i client controlleranno il sito Microsoft Update con la frequenza definita nella sezione **Aggiornamenti delle definizioni** della finestra di dialogo dei criteri antimalware.
 
  Questo metodo può essere utile se il client non ha connettività al sito di Configuration Manager o se si vuole che gli utenti possano avviare gli aggiornamenti delle definizioni.
 

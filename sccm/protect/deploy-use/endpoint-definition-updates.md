@@ -1,7 +1,7 @@
 ---
-title: Configurare Endpoint Protection
+title: Configurare gli aggiornamenti delle definizioni
 titleSuffix: Configuration Manager
-description: Informazioni su come selezionare e configurare metodi con Endpoint Protection in System Center Configuration Manager per mantenere aggiornate le definizioni antimalware nei computer client.
+description: Informazioni su come selezionare e configurare metodi con Endpoint Protection in Configuration Manager per mantenere aggiornate le definizioni antimalware nei computer client.
 ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
@@ -11,14 +11,14 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9eb4cf0b4fabcd130f0e82893392c298dbfdeab1
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 76a8317c92886a76c3a6bf8247ada51c87f6b2f4
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65500548"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892396"
 ---
-#  <a name="configure-definition-updates-for-endpoint-protection"></a>Configurare gli aggiornamenti delle definizioni per Endpoint Protection  
+# <a name="configure-definition-updates-for-endpoint-protection"></a>Configurare gli aggiornamenti delle definizioni per Endpoint Protection  
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 

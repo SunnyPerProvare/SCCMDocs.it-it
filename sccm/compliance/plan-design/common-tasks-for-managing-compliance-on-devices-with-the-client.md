@@ -1,7 +1,7 @@
 ---
-title: 'Attività comuni di gestione della conformità per dispositivi gestiti da client '
+title: Attività comuni di gestione della conformità
 titleSuffix: Configuration Manager
-description: Informazioni sulle impostazioni di conformità di System Center Configuration Manager in alcuni scenari comuni.
+description: Informazioni sulle impostazioni di conformità di Configuration Manager in alcuni scenari comuni.
 ms.date: 05/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
@@ -11,43 +11,43 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67a23fd5c1791253a7789fda74a30a0e71566f92
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.openlocfilehash: da92506d291ca24af807db7b4f4b73473359e12f
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67550829"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70890654"
 ---
-# <a name="common-tasks-for-managing-compliance-on-devices-with-the-system-center-configuration-manager-client"></a>Attività comuni per la gestione della conformità nei dispositivi con il client System Center Configuration Manager
+# <a name="common-tasks-for-managing-compliance-on-devices-with-the-configuration-manager-client"></a>Attività comuni per la gestione della conformità nei dispositivi con il client di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Questo articolo offre un'introduzione all'uso delle impostazioni di conformità di System Center Configuration Manager, illustrando alcuni scenari comuni che potrebbero riscontrare.  
+Questo articolo fornisce un'introduzione all'uso di System Center Configuration Manager impostazioni di conformità grazie ad alcuni scenari comuni che è possibile riscontrare.  
 
  Se si ha già familiarità con le impostazioni di conformità, è possibile trovare informazioni dettagliate su tutte le funzionalità usate in [Elementi di configurazione per dispositivi gestiti con il client di System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items.md).  
 
- Prima di iniziare, leggere [Introduzione alle impostazioni di conformità](../../compliance/get-started/get-started-with-compliance-settings.md) per apprendere alcune nozioni sulle impostazioni di conformità. Lettura [pianificare e configurare le impostazioni di conformità](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) per informazioni sul prerequisiti necessari.  
+ Prima di iniziare, vedere [Introduzione alle impostazioni di conformità](../../compliance/get-started/get-started-with-compliance-settings.md) per apprendere alcune nozioni di base sulle impostazioni di conformità. Per informazioni sui prerequisiti necessari, vedere [pianificare e configurare le impostazioni di conformità](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) .  
 
 ## <a name="general-information-for-each-scenario"></a>Informazioni generali per ogni scenario  
- In ogni scenario verrà creato un elemento di configurazione che esegue un'attività specifica. Per aprire la creazione guidata elemento di configurazione e iniziare a usare, eseguire questi passaggi:  
+ In ogni scenario verrà creato un elemento di configurazione che esegue un'attività specifica. Per aprire la creazione guidata dell'elemento di configurazione e iniziare, seguire questa procedura:  
 
 1.  Nella console di Configuration Manager selezionare **Asset e conformità** > **Impostazioni di conformità** > **Elementi di configurazione**.  
 
 1.  Nella scheda **Home**, nel gruppo **Crea**, selezionare **Crea elemento di configurazione**.  
 
-1.  Nel **generale** pagina della creazione configurazione elemento guidata, illustrato nella schermata seguente, specificare un nome e una descrizione per l'elemento di configurazione. Quindi scegliere il tipo di elemento di configurazione appropriato per ogni scenario di questo articolo.  
+1.  Nella pagina **generale** della creazione guidata dell'elemento di configurazione, come illustrato nella schermata seguente, specificare un nome e una descrizione per l'elemento di configurazione. Quindi scegliere il tipo di elemento di configurazione appropriato per ogni scenario di questo articolo.  
 
      ![Pagina generale della Creazione guidata dell'elemento di configurazione](/sccm/mdm/deploy-use/media/Compliance-Settings-Wizard---1.png)  
 
-## <a name="scenario-disable-bluetooth-on-windows-10-devices"></a>Scenario: Disabilitare Bluetooth in dispositivi Windows 10
+## <a name="scenario-disable-bluetooth-on-windows-10-devices"></a>Scenario: disabilitare il Bluetooth nei dispositivi Windows 10
 
- In questo scenario il reparto responsabile della sicurezza ha stabilito che la funzionalità Bluetooth dei dispositivi potrebbe essere usata per trasmettere informazioni aziendali riservate all'esterno dell'azienda. È stato aggiornato di recente tutti i computer a Windows 10. Si decida di disabilitare Bluetooth su questi dispositivi.  
+ In questo scenario il reparto responsabile della sicurezza ha stabilito che la funzionalità Bluetooth dei dispositivi potrebbe essere usata per trasmettere informazioni aziendali riservate all'esterno dell'azienda. Tutti i computer sono stati aggiornati di recente a Windows 10. Si decide di disabilitare Bluetooth su questi dispositivi.  
 
 1. Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Windows 10** e quindi selezionare **Avanti**.  
 
 2. Nella pagina **Piattaforme supportate** della procedura guidata, selezionare tutte le piattaforme Windows 10.  
 
-3. Nel **le impostazioni del dispositivo** pagina, selezionare **dispositivo**e quindi selezionare **Next**.  
+3. Nella pagina **Impostazioni dispositivo** selezionare **dispositivo**, quindi fare clic su **Avanti**.  
 
 4. Nella pagina **Dispositivo** selezionare **Non consentito** come valore per **Bluetooth**.  
 
@@ -66,7 +66,7 @@ Questo articolo offre un'introduzione all'uso delle impostazioni di conformità 
 >
 >Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md).  
 
- In questo scenario, si scopre che un'app line-of-business importante non viene eseguita correttamente su alcuni computer Windows 8.1 gestiti. Si scopre che il problema è causato da una chiave del Registro di sistema denominata **HKEY_LOCAL_MACHINE\SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1**, che in alcuni computer è impostata sul valore **0**. Affinché l'app line-of-business venga eseguita correttamente, questo valore deve essere impostato su **1**.  
+ In questo scenario si scopre che un'importante app line-of-business non viene eseguita correttamente in alcuni computer Windows 8.1 gestiti. Si scopre che il problema è causato da una chiave del Registro di sistema denominata **HKEY_LOCAL_MACHINE\SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1**, che in alcuni computer è impostata sul valore **0**. Affinché l'app line-of-business venga eseguita correttamente, questo valore deve essere impostato su **1**.  
 
  In questa procedura verrà creato un elemento di configurazione che consente di monitorare e risolvere automaticamente i valori delle chiavi del Registro di sistema non corretti trovati.  
 
@@ -90,7 +90,7 @@ Questo articolo offre un'introduzione all'uso delle impostazioni di conformità 
 
    -   **Valore** > **1** (il valore richiesto)  
 
-5. Nel **regole di conformità** scheda della finestra di **Crea impostazione** finestra di dialogo **New**. Nel **Create Rule** finestra dialogo, configurare queste impostazioni:  
+5. Nella scheda **regole di conformità** della finestra di dialogo **Crea impostazione** Selezionare **nuovo**. Nella finestra di dialogo **Crea regola** configurare le impostazioni seguenti:  
 
    -   **Nome** > **Regola di esempio**  
 

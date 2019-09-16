@@ -11,12 +11,12 @@ manager: dougeby
 author: mestew
 ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ef815287321bf6c5554ff424da58276af0cc655
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: e89fd9422b6bf6c5abb61e154f38a1f479c7ff7e
+ms.sourcegitcommit: cdf2827fb3f44d7522a9b533c115f910aa9c382a
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65493925"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70902969"
 ---
 #  <a name="BKMK_SUMSync"></a> sincronizzare gli aggiornamenti software
 
@@ -79,10 +79,10 @@ Il punto di aggiornamento software di livello superiore usa WSUS per ottenere in
 
 ### <a name="to-import-an-update-from-the-microsoft-update-catalog"></a>Per importare un aggiornamento da Microsoft Update Catalog
 
-1. Aprire la console di amministrazione di WSUS e connetterla al server WSUS di livello superiore nella gerarchia di SCCM. 
+1. Aprire la console di amministrazione di WSUS e connetterla al server WSUS di livello superiore nella gerarchia.
    - Se Internet Explorer non è il Web browser predefinito del computer, impostarlo temporaneamente come predefinito.
 2. Fare clic su **Aggiornamenti** oppure sul nome del server WSUS. 
-3. Nel riquadro **Azioni** selezionare **Importa aggiornamenti...**. Verrà aperta una finestra del browser per [Microsoft Update Catalog](https://catalog.update.microsoft.com).
+3. Nel riquadro **Azioni** selezionare **Importa aggiornamenti...** . Verrà aperta una finestra del browser per [Microsoft Update Catalog](https://catalog.update.microsoft.com).
    ![Selezionare Importa aggiornamenti nella console di WSUS](media/wsus-console-import-updates.png)
 4. Se richiesto, installare il controllo ActiveX Microsoft Update Catalog. Il controllo deve essere installato per importare gli aggiornamenti in WSUS. 
 5. Nella finestra del browser cercare l'aggiornamento desiderato. Fare clic sul pulsante **Aggiungi*** per aggiungerlo al carrello.

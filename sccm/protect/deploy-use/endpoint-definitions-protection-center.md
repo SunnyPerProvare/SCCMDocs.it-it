@@ -1,6 +1,7 @@
 ---
-title: Definizioni malware di Endpoint Protection da una condivisione di rete
+title: Scarica definizioni da MMPC
 titleSuffix: Configuration Manager
+description: Configurare Configuration Manager client per scaricare gli aggiornamenti delle definizioni Endpoint Protection da Microsoft Malware Protection Center (MMPC).
 ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
@@ -10,14 +11,14 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a04ee2264d45124664acbad01b397e1849be4508
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 30f7fc9e92d382eb222691fe21474e654bc44d47
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65494587"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892369"
 ---
-# <a name="using-the-microsoft-malware-protection-center-to-download-definitions"></a>Uso di Microsoft Malware Protection Center per scaricare le definizioni
+# <a name="use-the-microsoft-malware-protection-center-to-download-definitions"></a>Usare Microsoft Malware Protection Center per scaricare le definizioni
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 

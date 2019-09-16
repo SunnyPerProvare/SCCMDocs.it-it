@@ -1,7 +1,7 @@
 ---
-title: Usare i supporti autonomi per distribuire Windows senza usare la rete
+title: Usare supporti autonomi per distribuire Windows
 titleSuffix: Configuration Manager
-description: I supporti autonomi in Configuration Manager consentono di distribuire i sistemi operativi dove la larghezza di banda è limitata nonché di installare e aggiornare i computer.
+description: I supporti autonomi in Configuration Manager consentono di distribuire Windows dove la larghezza di banda è limitata nonché di installare e aggiornare i computer.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87d86ba571e998431fe198d4b4c18d8dd91dc06f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 408f8c17150aa6b6ee9330b40d8b8fef09b7eae5
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56124190"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892522"
 ---
-# <a name="use-stand-alone-media-to-deploy-windows-without-using-the-network-in-system-center-configuration-manager"></a>Usare i supporti autonomi per distribuire Windows senza usare la rete in System Center Configuration Manager
+# <a name="use-stand-alone-media-to-deploy-windows-without-using-the-network"></a>Usare i supporti autonomi per distribuire Windows senza usare la rete
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-I supporti autonomi in System Center Configuration Manager contengono tutti gli elementi necessari per distribuire un sistema operativo in un computer, tra cui l'immagine d'avvio, l'immagine del sistema operativo e la sequenza di attività per installare il sistema operativo, incluse le applicazioni, i driver e così via. Le distribuzioni autonome avviate da supporti consentono di distribuire i sistemi operativi nelle condizioni seguenti:  
+I supporti autonomi in Configuration Manager contengono tutti gli elementi necessari per distribuire un sistema operativo in un computer, tra cui l'immagine d'avvio, l'immagine del sistema operativo e la sequenza di attività per installare il sistema operativo, incluse le applicazioni, i driver e così via. Le distribuzioni autonome avviate da supporti consentono di distribuire i sistemi operativi nelle condizioni seguenti:  
 
 -   In ambienti dove non è semplice copiare un'immagine del sistema operativo o altri pacchetti di grandi dimensioni sulla rete.  
 

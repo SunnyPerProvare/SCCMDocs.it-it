@@ -1,7 +1,7 @@
 ---
-title: Integrazione con Windows Update for Business in Windows 10
+title: Integrare Windows Update per le aziende
 titleSuffix: Configuration Manager
-description: Usare Windows Update for Business per mantenere aggiornati i dispositivi dell'organizzazione basati su Windows 10 connessi al servizio Windows Update.
+description: Usare Windows Update for business (WUfB) per lasciare Windows 10 aggiornato per i dispositivi connessi al servizio Windows Update.
 author: mestew
 ms.author: mstewart
 manager: dougeby
@@ -11,14 +11,14 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 183315fe-27bd-456f-b2c5-e8d25e05229b
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12757bed4c674d12f1e0e2b3dc5c6ef72db59778
-ms.sourcegitcommit: b28a97e22a9a56c5ce3367c750ea2bb4d50449c3
+ms.openlocfilehash: 504ace282988ef8b52863184f0685ea5a6958a27
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70243702"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892284"
 ---
-# <a name="integration-with-windows-update-for-business-in-windows-10"></a>Integrazione con Windows Update for Business in Windows 10
+# <a name="integrate-with-windows-update-for-business"></a>Integrazione con Windows Update for business
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -65,7 +65,8 @@ Windows Update for Business (WUfB) consente di mantenere i dispositivi basati su
 2.  Esiste un nuovo attributo, **UseWUServer**, nel nodo **Windows Update** di Esplora inventario risorse di Configuration Manager.  
 
 3.  Creare una raccolta sulla base dell'attributo **UseWUServer** per tutti i computer connessi tramite WUfB per gli aggiornamenti. È possibile creare una raccolta in base a una query simile a quella riportata di seguito:  
-    ``` 
+
+    ``` WQL
     Select sr.* from SMS_R_System as sr join SMS_G_System_WINDOWSUPDATE as su on sr.ResourceID=su.ResourceID where su.UseWUServer is null
     ```
 

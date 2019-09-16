@@ -1,7 +1,7 @@
 ---
-title: 'Creare elementi di configurazione per i computer Windows 10 gestiti tramite client '
+title: Creare elementi di configurazione per Windows 10
 titleSuffix: Configuration Manager
-description: Usare l'elemento di configurazione Windows 10 in System Center Configuration Manager per gestire le impostazioni dei computer Windows 10 gestiti dal client di Configuration Manager.
+description: Per gestire le impostazioni dei computer Windows 10 gestiti dal client di Configuration Manager, usare l'elemento di configurazione di Windows 10.
 ms.date: 05/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
@@ -11,15 +11,16 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9cfb8209343581f8d6b9dc7949032d6399669f95
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: 3f49820ed0436fe38ce774bf24268fa2ebb363cc
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68339134"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70890667"
 ---
 # <a name="create-configuration-items-for-windows-10-devices"></a>Creare elementi di configurazione per dispositivi Windows 10
-Usare l'elemento di configurazione **Windows 10** in System Center Configuration Manager per gestire le impostazioni dei computer che eseguono Windows 10 gestiti dal client di Configuration Manager.  
+
+Usare l'elemento di configurazione **Windows 10** in Configuration Manager per gestire le impostazioni dei computer che eseguono Windows 10 gestiti dal client di Configuration Manager.  
   
 > [!IMPORTANT]  
 >  In questa versione, se è stata creata un'impostazione **password** come parte di un elemento di configurazione di tipo **Windows 10** (per un dispositivo gestito con il client di Configuration Manager), tenere presente il seguente problema. Se l'impostazione non esiste già o non è stata configurata nel dispositivo Windows 10, viene erroneamente valutata come conforme.  

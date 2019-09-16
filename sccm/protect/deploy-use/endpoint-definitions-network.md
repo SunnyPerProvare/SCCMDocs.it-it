@@ -1,5 +1,5 @@
 ---
-title: Definizioni malware di Endpoint Protection da una condivisione di rete
+title: Scarica definizioni da una condivisione di rete
 titleSuffix: Configuration Manager
 description: Informazioni su come scaricare manualmente gli aggiornamenti delle definizioni più recenti da Microsoft e configurare i client per scaricare le definizioni.
 ms.date: 02/14/2017
@@ -11,14 +11,14 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68ed19c9baebd079d10bda024b9f6457ccb58cab
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: d003ca61a649de3835766adede0869edb4393b20
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65494619"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892451"
 ---
-# <a name="enable-endpoint-protection-malware-definitions-to-download-from-a-network-share-for-configuration-manager"></a>Abilitare le definizioni malware di Endpoint Protection da scaricare da una condivisione di rete per Configuration Manager
+# <a name="enable-endpoint-protection-malware-definitions-to-download-from-a-network-share"></a>Abilitare le definizioni malware di Endpoint Protection da scaricare da una condivisione di rete
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 

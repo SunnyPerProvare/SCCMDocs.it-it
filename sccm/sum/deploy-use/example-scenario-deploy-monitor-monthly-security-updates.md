@@ -1,8 +1,7 @@
 ---
-title: Scenario di esempio per la distribuzione e il monitoraggio degli aggiornamenti software di sicurezza
+title: Scenario di esempio per la distribuzione e il monitoraggio degli aggiornamenti
 titleSuffix: Configuration Manager
-description: Questo scenario di esempio descrive come usare gli aggiornamenti software in Configuration Manager per distribuire e monitorare gli aggiornamenti software di sicurezza rilasciati ogni mese da Microsoft.
-manager: dougeby
+description: Come usare gli aggiornamenti software in Configuration Manager per distribuire e monitorare gli aggiornamenti software mensili.
 ms.date: 10/06/2016
 ms.topic: conceptual
 ms.prod: configuration-manager
@@ -10,15 +9,16 @@ ms.technology: configmgr-sum
 ms.assetid: c32f757a-02da-43f2-b055-5cfd097d8c43
 author: mestew
 ms.author: mstewart
+manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02c1f1cbc80bacf35306d2e4d5367a41ec5d8c1c
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 42c53f88d727a0024f2d5b99f86b4d39a3ba6f6a
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65496332"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70888434"
 ---
-# <a name="example-scenario-for-using-system-center-configuration-manager-to-deploy-and-monitor-the-security-software-updates-released-monthly-by-microsoft"></a>Scenario di esempio per l'uso di System Center Configuration Manager per la distribuzione e il monitoraggio degli aggiornamenti software della sicurezza rilasciati ogni mese da Microsoft
+# <a name="example-scenario-to-deploy-and-monitor-monthly-software-updates"></a>Scenario di esempio per la distribuzione e il monitoraggio degli aggiornamenti software mensili
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
