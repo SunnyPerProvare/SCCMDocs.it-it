@@ -2,7 +2,7 @@
 title: Ottimizzazione recapito nella cache in rete
 titleSuffix: Configuration Manager
 description: Usare il punto di distribuzione di Configuration Manager come server di cache locale per Ottimizzazione recapito
-ms.date: 07/30/2019
+ms.date: 09/10/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,14 +11,16 @@ ms.assetid: c5cb5753-5728-4f81-b830-a6fd1a3e105c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cacc27b95328d5abd43e477762ebe4d55562bfef
-ms.sourcegitcommit: ef7800a294e5db5d751921c34f60296c1642fc1f
+ms.openlocfilehash: 070f7ec6f99a9de89c155e756989fb3b5fa4a594
+ms.sourcegitcommit: 05a984cf94ea43c392701a389c4eb20bd692847c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68712573"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70922728"
 ---
 # <a name="delivery-optimization-in-network-cache-in-configuration-manager"></a>Cache in rete di Ottimizzazione recapito in Configuration Manager
+
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 <!--3555764-->
 
@@ -29,7 +31,7 @@ Questo server di cache agisce come una cache trasparente su richiesta per il con
 Questa cache è separata dal contenuto del punto di distribuzione di Configuration Manager. Se si sceglie la stessa unità come ruolo del punto di distribuzione, il contenuto viene archiviato separatamente.
 
 > [!Note]  
-> Il server della cache nella rete di Ottimizzazione recapito è una funzionalità di Windows Server che è ancora in fase di sviluppo. Nella console di Configuration Manager è contrassegnata da un'etichetta *beta*.  
+> Il server di cache in rete di Ottimizzazione recapito è un'applicazione installata in Windows Server ancora in fase di sviluppo. Nella console di Configuration Manager è contrassegnata da un'etichetta *beta*.  
 
 
 ## <a name="how-it-works"></a>Come funziona
@@ -44,7 +46,7 @@ Se i client vengono configurati per l'uso del server di cache in rete di Ottimiz
 
 3. Il client A richiede il contenuto al server di cache di Ottimizzazione recapito.
 
-4. Se la cache non include il contenuto, il client A lo otterrà dalla rete CDN.
+4. Se la cache non include il contenuto, il server di cache di Ottimizzazione recapito lo ottiene dalla rete CDN.
 
 5. Se il server di cache non risponde, il client scarica il contenuto dalla rete CDN.
 
@@ -78,7 +80,7 @@ Se i client vengono configurati per l'uso del server di cache in rete di Ottimiz
 
         Visualizzare e accettare le condizioni di licenza.
 
-    2. **Unità locale da usare**: Selezionare il disco da usare per la cache. **Automatico** è il valore predefinito, che usa il disco con maggiore spazio libero.  
+    2. **Unità locale da usare**: Selezionare il disco da usare per la cache. **Automatico** è il valore predefinito, che usa il disco con maggiore spazio libero.<sup>[Nota 1](#bkmk_note1)</sup>  
 
         > [!Note]  
         > È possibile cambiare questa unità in un secondo momento. Eventuali contenuti memorizzati nella cache andranno persi, a meno che non vengano copiati nella nuova unità.
@@ -92,6 +94,17 @@ Se i client vengono configurati per l'uso del server di cache in rete di Ottimiz
 
 1. Nel gruppo **Ottimizzazione recapito** delle impostazioni client configurare l'impostazione per **Abilitare i dispositivi gestiti da Configuration Manager in modo che usino i server di cache in rete di Ottimizzazione recapito (beta) per il download dei contenuti**.  
 
+### <a name="bkmk_note1"></a> Nota 1: Informazioni sulla selezione dell'unità
+
+Se si seleziona **Automatico** quando Configuration Manager installa il componente cache in rete di Ottimizzazione recapito, viene rispettato il file **no_sms_on_drive.sms**. Ad esempio, il punto di distribuzione contiene il file `C:\no_sms_on_drive.sms`. Anche se l'unità C: ha maggiore spazio libero, Configuration Manager configura cache in rete di Ottimizzazione recapito per l'uso di un'altra unità per la cache.
+
+Se si seleziona un'unità specifica che ha già il file **no_sms_on_drive.sms**, Configuration Manager ignora il file. La configurazione di cache in rete di Ottimizzazione recapito per l'uso di tale unità è un intento esplicito. Ad esempio, il punto di distribuzione contiene il file `F:\no_sms_on_drive.sms`. Quando si configurano in modo esplicito le proprietà del punto di distribuzione per l'uso dell'unità **F:** , Configuration Manager configura cache in rete di Ottimizzazione recapito per l'uso dell'unità F: per la cache.
+
+Per modificare l'unità dopo l'installazione di cache in rete di Ottimizzazione recapito:
+
+- Configurare manualmente le proprietà del punto di distribuzione per usare una lettera di unità specifica.
+
+- Se impostate su automatico, creare innanzitutto il file **no_sms_on_drive.sms**. Apportare quindi alcune modifiche alle proprietà del punto di distribuzione per attivare una modifica della configurazione.
 
 ## <a name="verify"></a>Verifica
 
@@ -110,7 +123,10 @@ In Windows 10 1809 o versione successiva, verificare questo comportamento con **
 
 Se il server di cache restituisce errori HTTP, il client di Ottimizzazione recapito esegue il fallback all'origine cloud originale.
 
+Per altre informazioni dettagliate, vedere [Risolvere i problemi relativi a cache in rete di Ottimizzazione recapito in Configuration Manager](/sccm/core/servers/deploy/configure/troubleshoot-delivery-optimization-in-network-cache).
 
 ## <a name="see-also"></a>Vedere anche
 
 [Ottimizzare gli aggiornamenti di Windows 10 con Ottimizzazione recapito](/sccm/sum/deploy-use/optimize-windows-10-update-delivery)
+
+[Risolvere i problemi relativi a cache in rete di Ottimizzazione recapito in Configuration Manager](/sccm/core/servers/deploy/configure/troubleshoot-delivery-optimization-in-network-cache)

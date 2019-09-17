@@ -1,7 +1,8 @@
 ---
-title: Informativa sulla privacy per la libreria di cmdlet di Configuration Manager
-description: Informazioni su come Microsoft raccoglie e usa i dati relativi alla libreria di cmdlet di System Center Configuration Manager.
-ms.date: 1/3/2017
+title: Informativa sulla privacy per i cmdlet
+titleSuffix: Configuration Manager
+description: Informazioni su come Microsoft raccoglie e usa i dati correlati ai cmdlet di Configuration Manager
+ms.date: 01/3/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,14 +11,14 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58b5a2eec6df6ecd6b96c18178cc116bc2b6965a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: e777c509ae0461120ae195712aaecf7f44813261
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135671"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70889233"
 ---
-# <a name="system-center-configuration-manager-privacy-statement---configuration-manager-cmdlet-library"></a>Informativa sulla privacy di System Center Configuration Manager - Libreria di cmdlet di Configuration Manager
+# <a name="configuration-manager-cmdlet-library-privacy-statement"></a>Informativa sulla privacy per la libreria di cmdlet di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -25,7 +26,7 @@ Questa informativa sulla privacy riguarda le funzionalità di System Center Conf
 
 ## <a name="usage-data"></a>Dati di utilizzo  
 
-#### <a name="what-this-feature-does"></a>Descrizione della funzionalità   
+#### <a name="what-this-feature-does"></a>Descrizione della funzionalità
 
 La libreria di cmdlet di System Center Configuration Manager consente di usare i cmdlet e gli script di Windows PowerShell per gestire una gerarchia di Configuration Manager. Oltre a raccogliere informazioni sul modo in cui vengono usati i cmdlet della libreria per individuare le tendenze e i modelli di utilizzo, la libreria di cmdlet raccoglie anche i tipi e i numeri degli errori ricevuti durante l'uso dei cmdlet.  
 

@@ -7,20 +7,22 @@ ms.technology: configmgr-client
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 09/05/2019
+ms.date: 09/06/2019
 ms.topic: conceptual
 ms.assetid: 60e2022f-a4f9-40dd-af01-9ecb37b43878
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c1cdd3358c1d9bf41584658ee25c7210808a8f4
-ms.sourcegitcommit: 1d16ccc20bb00bf2e21f923d7f9dde3c9783dab5
+ms.openlocfilehash: 4ff8597442902b70e626d0655cf0afb247366440
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70272690"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70890743"
 ---
 # <a name="how-to-switch-configuration-manager-workloads-to-intune"></a>Come trasferire i carichi di lavoro di Configuration Manager a Intune
 
 Uno dei vantaggi della co-gestione è il trasferimento dei carichi di lavoro da Configuration Manager a Microsoft Intune. Quando un dispositivo Windows 10 ha il client di Configuration Manager ed è registrato in Intune, si ottengono i vantaggi di entrambi i servizi. È possibile stabilire per quali carichi di lavoro trasferire eventualmente l'autorità da Configuration Manager a Intune. Configuration Manager continua a gestire tutti gli altri carichi di lavoro, inclusi i carichi di lavoro che non vengono trasferiti a Intune, e tutte le altre funzionalità di Configuration Manager non supportate dalla co-gestione.
+
+Se si trasferisce un carico di lavoro a Intune, ma in seguito si cambia idea, è possibile tornare a Configuration Manager.
 
 Per altre informazioni sui carichi di lavoro supportati, vedere [Carichi di lavoro](/sccm/comanage/workloads).
 
@@ -46,7 +48,7 @@ A partire dalla versione 1906, è possibile configurare raccolte pilota diverse 
 
 > [!Important]  
 > - Prima di trasferire eventuali carichi di lavoro, assicurarsi di configurare e distribuire correttamente il carico di lavoro corrispondente in Intune. Verificare che i carichi di lavoro siano sempre gestiti da uno degli strumenti di gestione per i dispositivi.
-> - A partire da Configuration Manager versione 1806, quando si trasferisce un carico di lavoro con co-gestione, i dispositivi con co-gestione sincronizzano automaticamente i criteri MDM da Microsoft Intune. La sincronizzazione si verifica anche quando si avvia l'azione **Scarica criteri computer** dalle notifiche client nella console di Configuration Manager. Per altre informazioni, vedere [Avviare il recupero dei criteri client usando la notifica client](/sccm/core/clients/manage/manage-clients#initiate-client-policy-retrieval-using-client-notification). <!--1357377-->
+> - A partire da Configuration Manager versione 1806, quando si trasferisce un carico di lavoro con co-gestione, i dispositivi con co-gestione sincronizzano automaticamente i criteri MDM da Microsoft Intune. La sincronizzazione si verifica anche quando si avvia l'azione **Scarica criteri computer** dalle notifiche client nella console di Configuration Manager. Per altre informazioni, vedere [Avviare il recupero dei criteri client usando la notifica client](/sccm/core/clients/manage/manage-clients##BKMK_PolicyRetrieval). <!--1357377-->
 
 ## <a name="switch-workloads-in-version-1902-and-earlier"></a>Trasferire i carichi di lavoro nella versione 1902 e versioni precedenti
 
@@ -73,7 +75,7 @@ A partire dalla versione 1906, è possibile configurare raccolte pilota diverse 
 
 > [!Important]  
 > - Prima di trasferire eventuali carichi di lavoro, assicurarsi di configurare e distribuire correttamente il carico di lavoro corrispondente in Intune. Verificare che i carichi di lavoro siano sempre gestiti da uno degli strumenti di gestione per i dispositivi. 
-> - A partire da Configuration Manager versione 1806, quando si trasferisce un carico di lavoro con co-gestione, i dispositivi con co-gestione sincronizzano automaticamente i criteri MDM da Microsoft Intune. La sincronizzazione si verifica anche quando si avvia l'azione **Scarica criteri computer** dalle notifiche client nella console di Configuration Manager. Per altre informazioni, vedere [Avviare il recupero dei criteri client usando la notifica client](/sccm/core/clients/manage/manage-clients#initiate-client-policy-retrieval-using-client-notification). <!--1357377-->
+> - A partire da Configuration Manager versione 1806, quando si trasferisce un carico di lavoro con co-gestione, i dispositivi con co-gestione sincronizzano automaticamente i criteri MDM da Microsoft Intune. La sincronizzazione si verifica anche quando si avvia l'azione **Scarica criteri computer** dalle notifiche client nella console di Configuration Manager. Per altre informazioni, vedere [Avviare il recupero dei criteri client usando la notifica client](/sccm/core/clients/manage/manage-clients##BKMK_PolicyRetrieval). <!--1357377-->
 
 ## <a name="next-steps"></a>Passaggi successivi
 

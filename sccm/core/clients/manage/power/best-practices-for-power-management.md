@@ -1,8 +1,8 @@
 ---
-title: Procedure consigliate per il risparmio energia
+title: Suggerimenti per il risparmio energia
 titleSuffix: Configuration Manager
-description: Apprendere le procedure consigliate per il risparmio energia in System Center Configuration Manager.
-ms.date: 10/06/2016
+description: Informazioni sulle raccomandazioni Microsoft per il risparmio energia in Configuration Manager.
+ms.date: 09/10/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,39 +11,54 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 073ee14790c608a7f4f87c2dba3af2d445b0f27a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: a68dceb82f630720287b5215fbdad15eb5bebf93
+ms.sourcegitcommit: cdf2827fb3f44d7522a9b533c115f910aa9c382a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135154"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70902581"
 ---
-# <a name="best-practices-for-power-management-in-system-center-configuration-manager"></a>Procedure consigliate per il risparmio energia in System Center Configuration Manager
+# <a name="recommendations-for-power-management-in-configuration-manager"></a>Raccomandazioni per il risparmio energia in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-In System Center Configuration Manager usare le seguenti procedure consigliate per il risparmio energia.  
+Seguire le raccomandazioni seguenti per il risparmio energia in Configuration Manager.  
 
-## <a name="perform-the-monitoring-phase-at-a-representative-time"></a>Eseguire la fase di monitoraggio in un momento rappresentativo  
- La fase di monitoraggio del risparmio energia fornisce informazioni su consumo di energia elettrica, attività, funzionalità di risparmio energia e impatto sull'ambiente dei computer nell'organizzazione. Assicurarsi di aver scelto un momento rappresentativo per eseguire la fase di monitoraggio. Ad esempio, eseguire la fase di monitoraggio durante un giorno festivo non genera un report realistico relativo all'uso di energia elettrica da parte dei computer.  
+## <a name="monitor-at-a-representative-time"></a>Eseguire il monitoraggio in un momento rappresentativo
 
-## <a name="create-a-control-collection-of-computers-with-no-power-plans-applied"></a>Creare una raccolta di controllo dei computer senza alcuna combinazione per il risparmio di energia applicata  
- Creare due raccolte di computer per semplificare il monitoraggio degli effetti dell'applicazione delle combinazioni per il risparmio di energia ai computer. La prima raccolta deve contenere la maggior parte dei computer a cui si vuole applicare le impostazioni di risparmio energia e l'altra raccolta (raccolta di controllo) deve contenere gli altri computer. Applicare la combinazione per il risparmio energia necessaria alla raccolta contenente la maggior parte dei computer. È quindi possibile eseguire report per confrontare i costi energetici, il consumo energetico e l'impatto ambientale dei computer a cui sono state applicate le impostazioni di risparmio energia con la raccolta di controllo a cui invece tali impostazioni non sono state applicate.  
+La fase di monitoraggio del risparmio energia fornisce le informazioni seguenti dai computer dell'organizzazione:
 
-## <a name="run-the-power-settings-report-before-you-apply-a-power-management-plan"></a>Eseguire il report Impostazioni risparmio energia prima di applicare una combinazione per il risparmio energia  
- Prima di applicare una combinazione per il risparmio energia a una raccolta di computer, eseguire il report **Impostazioni risparmio energia** per analizzare le impostazioni di risparmio energia già configurate nei computer della raccolta. Se si applicano nuove impostazioni di risparmio energia ai computer senza prima esaminare le impostazioni esistenti, ciò potrebbe causare un aumento del consumo di energia.  
+- Consumo di energia elettrica
+- Attività
+- Capacità di risparmio energia
+- Impatto ambientale
 
-## <a name="exclude-servers-from-power-management"></a>Escludere server dal risparmio energia  
- La funzionalità di risparmio energia per i computer che eseguono Windows Server non è supportata, anche se vengono raccolti i dati relativi al consumo di energia. Assicurarsi di aggiungere i server a una raccolta ed escludere tale raccolta dal risparmio energia.  
+Scegliere un orario rappresentativo per il monitoraggio dei dispositivi. Ad esempio, eseguire il monitoraggio durante un giorno festivo non genera un report realistico del consumo energetico dei computer.
 
-## <a name="exclude-computers-that-you-do-not-want-to-manage"></a>Escludere i computer che non si vuole gestire  
- Se sono presenti computer a cui non si vuole applicare il risparmio energia, aggiungerli a una raccolta e assicurarsi che tale raccolta venga esclusa dal risparmio energia.  
+## <a name="create-a-control-collection"></a>Creare una raccolta di controllo
 
- Esempi di computer che possono essere esclusi dal risparmio energia:  
+Creare due raccolte di computer per semplificare il monitoraggio degli effetti dell'applicazione delle combinazioni per il risparmio di energia ai computer. La prima raccolta deve contenere la maggior parte dei computer a cui si vogliono applicare le impostazioni di risparmio energia. La *raccolta di controllo* deve contenere i computer rimanenti. Applicare la combinazione di risparmio energia richiesta alla prima raccolta. Eseguire quindi i report per confrontare l'effetto tra le due raccolte.  
+
+## <a name="run-reports-before-you-apply-a-plan"></a>Eseguire i report prima di applicare un piano
+
+Prima di applicare una combinazione per il risparmio di energia a una raccolta di computer, eseguire il report **Impostazioni risparmio energia**. Usare questo report per esaminare le impostazioni di risparmio energia già configurate nei computer della raccolta. Se si applicano nuove impostazioni di risparmio energia ai computer senza prima esaminare le impostazioni esistenti, ciò potrebbe causare un aumento del consumo di energia.  
+
+## <a name="exclude-servers"></a>Escludere i server
+
+Il risparmio energia per i computer che eseguono Windows Server non è supportato. Aggiungere i server a una raccolta ed escluderla dal risparmio energia.  
+
+> [!NOTE]
+> Anche se Configuration Manager non supporta la gestione del risparmio energia di Windows Server, raccoglie comunque i dati sull'utilizzo di energia per analisi e report.
+
+## <a name="exclude-other-computers"></a>Escludere altri computer
+
+In presenza di computer che non si vuole gestire con il risparmio energia, aggiungerli a una raccolta di esclusioni.  
+
+Potrebbe essere utile, ad esempio, escludere i tipi di computer seguenti dal risparmio energia:
 
 - Computer che devono rimanere accesi.  
 
-- Computer a cui gli utenti devono collegarsi mediante Connessione desktop remoto.  
+- Computer a cui gli utenti devono connettersi in remoto.  
 
 - Computer che non possono usare il risparmio energia.  
 
@@ -51,30 +66,36 @@ In System Center Configuration Manager usare le seguenti procedure consigliate p
 
 - Computer pubblici, ad esempio chioschi multimediali, display informativi o console di monitoraggio, in cui il computer e il monitor devono essere sempre accesi.  
 
-  Per altre informazioni, vedere [Configuring Power Management in System Center Configuration Manager](../../../../core/clients/manage/power/configuring-power-management.md) (Configurazione del risparmio energia in System Center Configuration Manager).  
+Per altre informazioni, vedere [Configurare il risparmio energia](/sccm/core/clients/manage/power/configuring-power-management).  
 
-## <a name="first-apply-power-plans-to-a-test-collection-of-computers"></a>Applicare la combinazione per il risparmio di energia a una raccolta di test di computer  
- Analizzare sempre l'effetto dell'applicazione della combinazione per il risparmio di energia a una raccolta di test di computer prima di applicare tale combinazione a una raccolta più grande di computer.  
+## <a name="apply-power-plans-to-a-test-collection"></a>Applicare combinazioni per il risparmio di energia a una raccolta di test
 
- Le impostazioni di risparmio energia applicate a computer che eseguono Windows XP o Windows Server 2003 non vengono ripristinate sui valori originali anche se i computer vengono esclusi dalla funzionalità di risparmio energia. Nelle versioni successive di Windows, l'esclusione di un computer dal risparmio energia causa il ripristino sui valori originali di tutte le impostazioni di risparmio energia. Non è possibile ripristinare i valori originali per singole impostazioni di risparmio energia.  
+Analizzare sempre l'effetto dell'applicazione della combinazione per il risparmio di energia a una raccolta di test di computer prima di applicare tale combinazione a una raccolta più grande di computer.  
 
-## <a name="apply-power-plan-settings-individually"></a>Applicare le impostazioni della combinazione per il risparmio di energia singolarmente  
- Monitorare l'effetto dell'applicazione di ogni impostazione di risparmio energia prima di applicare quello successivo per verificare che ogni impostazione abbia l'effetto richiesto. Per altre informazioni sulle impostazioni della combinazione per il risparmio di energia, vedere la sezione [Impostazioni disponibili per le combinazioni per il risparmio di energia](../../../../core/clients/manage/power/create-and-apply-power-plans.md#BKMK_Plans) (Available power management plan settings) nell'argomento [How to create and apply power plans in System Center Configuration Manager](../../../../core/clients/manage/power/create-and-apply-power-plans.md) (Come creare e applicare combinazioni per il risparmio di energia in System Center Configuration Manager).  
+Quando si esclude un computer dal risparmio energia, per tutte le impostazioni di risparmio energia vengono ripristinati i valori originali. Non è possibile ripristinare i valori originali per singole impostazioni di risparmio energia.  
 
-## <a name="regularly-monitor-computers-to-see-if-they-have-multiple-power-plans-applied"></a>Monitorare regolarmente i computer per verificare se sono applicate più combinazioni per il risparmio di energia  
- La funzionalità Risparmio energia include un report che visualizza i computer a cui sono applicate più combinazioni per il risparmio di energia.  
+## <a name="apply-power-plan-settings-individually"></a>Applicare le impostazioni della combinazione per il risparmio di energia singolarmente
 
- Se un computer è un membro di più raccolte, ognuna con combinazioni per il risparmio di energia diverse, verranno eseguite le azioni seguenti:  
+Monitorare l'effetto dell'applicazione di ogni impostazione di risparmio energia prima di applicare quella successiva. Questo processo assicura che ogni impostazione abbia l'effetto richiesto. Per altre informazioni sulle impostazioni della combinazione per il risparmio di energia, vedere [Impostazioni disponibili per le combinazioni per il risparmio di energia](/sccm/core/clients/manage/power/create-and-apply-power-plans#BKMK_Plans).  
 
--   Combinazione per il risparmio di energia: se a un computer sono applicati più valori per le impostazioni di risparmio energia, viene usato il valore meno restrittivo.  
+## <a name="regularly-monitor-computers-for-multiple-power-plans"></a>Monitorare regolarmente i computer con più combinazioni per il risparmio di energia
 
--   Ora riattivazione: se a un computer desktop vengono applicate più ore di riattivazione, verrà usata l'ora più vicina alla mezzanotte.  
+La funzionalità di risparmio energia include un report che visualizza i computer a cui sono applicate più combinazioni per il risparmio di energia: **Computer con più combinazioni per il risparmio di energia**.
 
-     Per altre informazioni, vedere la sezione [Computer con più combinazioni per il risparmio di energia](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md#BKMK_Multiple) (Computer con più combinazioni per il risparmio di energia) nell'argomento [How to monitor and plan for power management in System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md) (Come monitorare e pianificare il risparmio di energia in System Center Configuration Manager). Per altre informazioni su come il risparmio di energia risolve i conflitti, vedere [How to create and apply power plans in System Center Configuration Manager](../../../../core/clients/manage/power/create-and-apply-power-plans.md) (Come creare a applicare combinazioni per il risparmio di energia in System Center Configuration Manager).  
+Se un computer è un membro di più raccolte, ognuna delle quali applica combinazioni per il risparmio di energia diverse, i comportamenti sono i seguenti:  
 
-## <a name="save-or-export-power-management-information-during-the-monitoring-and-planning-phase-of-power-management"></a>Salvare o esportare le informazioni sul risparmio di energia durante la fase di pianificazione e monitoraggio del risparmio energia  
- Le informazioni relative al risparmio energia utilizzate per i report giornalieri vengono conservate nel database del sito di Configuration Manager per 31 giorni.  
+- **Combinazione per il risparmio di energia**: se si applicano più valori per le impostazioni di risparmio energia a un computer, viene usato il valore meno restrittivo.  
 
- Le informazioni relative al risparmio energia usate per i report mensili vengono conservate nel database del sito di Configuration Manager per 13 mesi.  
+- **Ora riattivazione:** se si applicano più ore di riattivazione a un computer desktop, viene usata l'ora più prossima alla mezzanotte.  
 
- Quando si creano report durante le fasi di monitoraggio e pianificazione e di verifica della conformità per il risparmio energia, è necessario salvare o esportare i risultati dei report di cui si vuole conservare i dati per confronti successivi, nel caso vengano in seguito rimossi da Configuration Manager.  
+Per altre informazioni, vedere [Computer con più combinazioni per il risparmio di energia](/sccm/core/clients/manage/power/monitor-and-plan-for-power-management#BKMK_Multiple).  
+
+## <a name="save-or-export-power-management-information"></a>Salvare o esportare le informazioni relative al risparmio energia
+
+Quando si eseguono i report durante le fasi di monitoraggio e conformità, salvare o esportare i risultati. Conservare i dati per confronti successivi, nel caso Configuration Manager rimuova i dati in seguito.  
+
+Configuration Manager mantiene le informazioni sul risparmio energia seguenti nel database del sito:
+
+- Informazioni sul risparmio energia usate dai report giornalieri: 31 giorni
+
+- Informazioni sul risparmio energia usate dai report mensili: 13 mesi

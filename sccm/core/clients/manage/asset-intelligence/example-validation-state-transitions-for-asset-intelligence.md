@@ -1,8 +1,8 @@
 ---
-title: Transizioni dello stato di convalida di esempio per Asset Intelligence
+title: Transizioni di stato di convalida di esempio
 titleSuffix: Configuration Manager
-description: Vedere le transizioni di esempio dello stato di convalida per Asset Intelligence in System Center Configuration Manager
-ms.date: 2/22/2017
+description: Vedere le transizioni di esempio dello stato di convalida per Asset Intelligence in Configuration Manager.
+ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,18 +11,18 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b266848d0a15ac26dc6002a6553583f560cb44e
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: f2fb577fc4799dfb1e9c1d6585df4ed244ebfab5
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65499940"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70890296"
 ---
-# <a name="example-validation-state-transitions-for-asset-intelligence-in-system-center-configuration-manager"></a>Transizioni dello stato di convalida di esempio per Asset Intelligence in System Center Configuration Manager
+# <a name="example-validation-state-transitions-for-asset-intelligence"></a>Transizioni dello stato di convalida di esempio per Asset Intelligence
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Gli stati di convalida di Asset Intelligence in System Center Configuration Manager non sono statici e possono essere modificati da operazioni di amministrazione eseguite per modificare i dati archiviati nel catalogo di Asset Intelligence. In questo argomento vengono descritti esempi relativi alle possibili transizioni dello stato di convalida.
+Gli stati di convalida di Asset Intelligence in Configuration Manager non sono statici e possono essere modificati da azioni di amministrazione eseguite per modificare i dati archiviati nel catalogo di Asset Intelligence. In questo argomento vengono descritti esempi relativi alle possibili transizioni dello stato di convalida.
 
 ##  <a name="BKMK_UncategorizedIsCategorized"></a> L'elemento del catalogo senza categoria viene categorizzato dall'utente amministratore  
 

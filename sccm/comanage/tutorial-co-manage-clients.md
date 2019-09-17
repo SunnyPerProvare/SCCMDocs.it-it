@@ -1,5 +1,5 @@
 ---
-title: Esercitazione:&#58; Abilitare la co-gestione per i client di Configuration Manager esistenti
+title: Esercitazione&#58; Abilitare la co-gestione per i client esistenti
 titleSuffix: Configuration Manager
 description: Configurare la co-gestione con Microsoft Intune quando si gestiscono già dispositivi Windows 10 con Configuration Manager.
 ms.date: 07/26/2019
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec46fb91e862c8d835b88a7ca859fcbfd8e4d339
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 947f23f4dd6890326860cd9e499819f6c7c9f546
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68535344"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70890793"
 ---
 # <a name="tutorial-enable-co-management-for-existing-configuration-manager-clients"></a>Esercitazione: Abilitare la co-gestione per i client di Configuration Manager esistenti
 

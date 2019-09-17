@@ -1,7 +1,7 @@
 ---
-title: Proprietà di installazione client in Active Directory Domain Services
+title: Proprietà di installazione client in Active Directory
 titleSuffix: Configuration Manager
-description: Usare le proprietà di installazione client pubblicate per Active Directory Domain Services in System Center Configuration Manager.
+description: Pubblicare le proprietà di installazione client di Configuration Manager in Active Directory Domain Services.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 203de632cea1dbe7c5fa70177f3a111a4e487911
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 39208f0ff2265e2ca9b89647e082224c01cbd731
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123812"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70890345"
 ---
 # <a name="about-client-installation-properties-published-to-active-directory-domain-services"></a>Informazioni sulle proprietà di installazione client pubblicate in Active Directory Domain Services
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Quando si estende lo schema di Active Directory per System Center Configuration Manager e il sito viene pubblicato in Active Directory Domain Services, molte proprietà di installazione client vengono pubblicate in Active Directory Domain Services. Se un computer è in grado di rilevare le proprietà di installazione del client, può usarle durante la distribuzione del client di Configuration Manager.  
+Quando si estende lo schema di Active Directory per Configuration Manager e il sito viene pubblicato in Active Directory Domain Services, molte proprietà di installazione client vengono pubblicate in Active Directory Domain Services. Se un computer è in grado di rilevare le proprietà di installazione del client, può usarle durante la distribuzione del client di Configuration Manager.  
 
  I vantaggi dell'uso di Active Directory Domain Services per pubblicare le proprietà dell'installazione del client includono:  
 

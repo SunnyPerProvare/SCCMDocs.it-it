@@ -1,8 +1,8 @@
 ---
-title: 'Aggiornare i client macOS '
+title: Aggiornare i client macOS
 titleSuffix: Configuration Manager
-description: Aggiornare i client di System Center Configuration Manager in computer Mac.
-ms.date: 04/23/2017
+description: Aggiornare il client di Configuration Manager in computer Mac.
+ms.date: 09/10/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,66 +11,67 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3d465589c0763e0893bfe863ccfe41f82b40265
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: b887a82afce8cf446494e7b9348a0b8c0718e389
+ms.sourcegitcommit: cdf2827fb3f44d7522a9b533c115f910aa9c382a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70378167"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70902566"
 ---
-# <a name="how-to-upgrade-clients-on-mac-computers-in-system-center-configuration-manager"></a>Come aggiornare i client di System Center Configuration Manager in computer Mac
+# <a name="how-to-upgrade-clients-on-mac-computers-in-configuration-manager"></a>Come aggiornare i client nei computer Mac in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Seguire la procedura dettagliata descritta di seguito per aggiornare il client in computer Mac usando un'applicazione di System Center Configuration Manager. In alternativa, è anche possibile scaricare il file di installazione del client Mac, copiarlo in un percorso di rete condiviso o in una cartella locale del computer Mac, quindi fornire agli utenti le istruzioni per eseguire l'installazione manualmente.  
+Seguire la procedura dettagliata descritta in questo articolo per aggiornare il client per i computer Mac usando un'applicazione di Configuration Manager. È anche possibile scaricare il file di installazione del client Mac, copiarlo in un percorso di rete condiviso o in una cartella locale del computer Mac, quindi fornire agli utenti le istruzioni per eseguire l'installazione manualmente.  
 
 > [!NOTE]  
->  Prima di eseguire questi passaggi, assicurarsi che il computer Mac soddisfi i prerequisiti. Vedere [Supported operating systems for Mac computers](../../../plan-design/configs/supported-operating-systems-for-clients-and-devices.md#mac-computers) (Sistemi operativi supportati per computer Mac).  
+> Prima di eseguire questa procedura, assicurarsi che il computer Mac soddisfi i prerequisiti. Vedere [Supported operating systems for Mac computers](/sccm/plan-design/configs/supported-operating-systems-for-clients-and-devices#mac-computers) (Sistemi operativi supportati per computer Mac).  
 
-## <a name="step-1-download-the-latest-mac-client-installation-file-from-the-microsoft-download-center"></a>Passaggio 1: scaricare il file di installazione del client Mac più recente dall'Area download Microsoft  
- Il client Mac per Configuration Manager non è disponibile sul supporto di installazione di Configuration Manager e deve essere scaricato da Area download Microsoft. I file di installazione del client Mac sono contenuti in un file Windows Installer denominato ConfigmgrMacClient.msi.  
+## <a name="download-the-latest-mac-client"></a>Scaricare il client Mac più recente
 
- È possibile scaricare questo file dall' [Area download Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=525184).  
+Il client Mac per Configuration Manager non è incluso nel supporto di installazione di Configuration Manager. Scaricarlo dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=47719). I file di installazione del client Mac sono contenuti in un file di Windows Installer denominato **ConfigmgrMacClient.msi**.  
 
-## <a name="step-2-run-the-downloaded-installation-file-to-create-the-mac-client-installation-file"></a>Passaggio 2: eseguire il file di installazione scaricato per creare il file di installazione del client Mac  
- Su un computer che esegue Windows, eseguire il file **ConfigmgrMacClient.msi** scaricato per decomprimere il file di installazione del client Mac, denominato **Macclient.dmg**. Per impostazione predefinita, questo file si trova nella cartella **C:\Programmi (x86)\Microsoft\System Center 2012 Configuration Manager Mac Client** del computer Windows dopo che i file sono stati decompressi.  
+## <a name="create-the-mac-client-installation-file"></a>Creare il file di installazione del client Mac
 
-## <a name="step-3-extract-the-client-installation-files"></a>Passaggio 3: estrarre i file di installazione client  
- Copiare il file Macclient.dmg in una condivisione di rete o in una cartella locale su un computer Mac. Dal computer Mac, montare e quindi aprire il file Macclient.dmg e copiare i file in una cartella del computer Mac.  
+In un computer Windows eseguire **ConfigmgrMacClient.msi**. Questo programma di installazione decomprime il file di installazione del client Mac, denominato **Macclient.dmg**. Questo file è disponibile nella cartella seguente per impostazione predefinita: **C:\Programmi (x86)\Microsoft\System Center 2012 Configuration Manager Mac Client**.  
 
-## <a name="step-4-create-a-cmmac-file-that-can-be-used-to-create-an-application"></a>Passaggio 4: creare un file con estensione cmmac che può essere usato per creare un'applicazione  
+## <a name="extract-the-client-installation-files"></a>estrarre i file di installazione client
 
-1. Usare lo strumento **CMAppUtil** (disponibile nella cartella **Strumenti** dei file di installazione del client Mac) per creare un file .cmmac dal pacchetto di installazione client. Questo file servirà per creare l'applicazione di Configuration Manager.  
+Copiare il file **Macclient.dmg** in un computer Mac. Montare il file Macclient.dmg in macOS e quindi copiare il contenuto in una cartella nel computer Mac.  
 
-2. Copiare il nuovo file **CMClient.pkg.cmmac** in un percorso disponibile per il computer che esegue la console di Configuration Manager.  
+## <a name="create-a-cmmac-file"></a>Creare un file con estensione cmmac
 
-   Per altre informazioni, vedere [Supplemental procedures to create and deploy applications for Mac computers](/sccm/apps/get-started/creating-mac-computer-applications#supplemental-procedures-to-create-and-deploy-applications-for-mac-computers) (Procedure supplementari per creare e distribuire applicazioni per computer Mac).  
+1. Aprire la cartella **Tools** dei file di installazione del client Mac. Usare lo strumento **CMAppUtil** per creare un file con estensione cmmac dal pacchetto di installazione client. Questo file servirà per creare l'applicazione di Configuration Manager.  
 
-## <a name="step-5-create-and-deploy-an-application-containing-the-mac-client-files"></a>**Passaggio 5:** creare e distribuire un'applicazione contenente i file del client Mac  
+2. Copiare il nuovo file **CMClient.pkg.cmmac** in un percorso di rete disponibile per il computer che esegue la console di Configuration Manager.  
 
-1. Nella console di Configuration Manager creare un'applicazione dal file **CMClient.pkg.cmmac** che contiene i file di installazione del client.  
+    Per altre informazioni, vedere [Supplemental procedures to create and deploy applications for Mac computers](/sccm/apps/get-started/creating-mac-computer-applications#supplemental-procedures-to-create-and-deploy-applications-for-mac-computers) (Procedure supplementari per creare e distribuire applicazioni per computer Mac).  
 
-2. Distribuire l'applicazione nei computer Mac della gerarchia.  
+## <a name="create-and-deploy-the-app"></a>Creare e distribuire l’app
 
-   Per altre informazioni, vedere [Creating Mac computer applications with System Center Configuration Manager](../../../../apps/get-started/creating-mac-computer-applications.md) (Creazione di applicazioni per computer Mac con System Center Configuration Manager).  
+1. Nella console di Configuration Manager [creare un'applicazione](/sccm/apps/get-started/creating-mac-computer-applications) dal file **CMClient.pkg.cmmac**.  
 
-## <a name="step-6-users-install-the-latest-client"></a>Passaggio 6: installare il client più recente  
- Gli utenti di client Mac saranno informati sulla disponibilità di un aggiornamento al client di Configuration Manager che dovrà essere installato. Al termine, è necessario riavviare il computer Mac.  
+2. [Distribuire l'applicazione](/sccm/apps/deploy-use/deploy-applications) nei computer Mac della gerarchia.  
 
- Dopo il riavvio del computer, viene eseguita automaticamente la registrazione guidata computer per richiedere un nuovo certificato utente. La registrazione guidata computer verrà eseguita automaticamente solo al momento della prima installazione del client SCCM e non verrà eseguita di nuovo se si tenta di aggiornare il client con un nuovo programma di installazione in un secondo momento perché ha già un certificato utente valido. 
+## <a name="install-the-updated-client"></a>Installare il client aggiornato
 
- Se non si usa la registrazione di Configuration Manager, ma si installa il certificato client indipendentemente da Configuration Manager, vedere [Configurare il client aggiornato per usare un certificato esistente](#BKMK_UpgradingClient_MachineEnrollment).  
+Il client di Configuration Manager esistente nei computer Mac segnalerà all'utente che è disponibile un aggiornamento per l'installazione. Al termine, è necessario riavviare il computer Mac.  
 
-##  <a name="BKMK_UpgradingClient_MachineEnrollment"></a> Configurare il client aggiornato per l'uso di un certificato esistente  
- Eseguire la procedura seguente per impedire che venga eseguita la registrazione guidata computer e per configurare il client aggiornato in modo da usare un certificato client esistente.  
+Dopo il riavvio del computer, viene eseguita automaticamente la **registrazione guidata computer** per richiedere un nuovo certificato utente.
 
-- Nella console di Configuration Manager creare un elemento di configurazione del tipo **Mac OS X**.  
+Se non si usa la registrazione di Configuration Manager, ma si installa il certificato client indipendentemente da Configuration Manager, vedere [Configurare i client per l'uso di un certificato esistente](#BKMK_UpgradingClient_MachineEnrollment).  
 
-- Aggiungere un'impostazione a questo elemento di configurazione con il tipo di impostazione **Script**.  
+## <a name="BKMK_UpgradingClient_MachineEnrollment"></a> Configurare i client per l'uso di un certificato esistente
 
-- Aggiungere il seguente script all'impostazione:  
+Seguire questa procedura per impedire che venga eseguita la registrazione guidata computer e per configurare il client aggiornato in modo da usare un certificato client esistente.  
 
-  ```  
+1. Nella console di Configuration Manager [creare un elemento di configurazione](/sccm/compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client) del tipo **Mac OS X**.  
+
+1. Aggiungere un'impostazione a questo elemento di configurazione con il tipo di impostazione **Script**.  
+
+1. Aggiungere il seguente script all'impostazione:  
+
+  ``` Shell
   #!/bin/sh  
   echo "Starting script\n"  
   echo "Changing directory to MAC Client\n"  
@@ -93,9 +94,6 @@ Seguire la procedura dettagliata descritta di seguito per aggiornare il client i
   sudo open ./CCMClient  
   echo "Ending Script\n"  
   exit  
-
   ```  
 
-- Aggiungere l'elemento di configurazione a una linea di base di configurazione, distribuire la linea di base di configurazione in tutti i computer Mac che installano un certificato indipendentemente da Configuration Manager.  
-
-  Per altre informazioni su come creare e distribuire elementi di configurazione per computer Mac, vedere [How to create configuration items for Mac OS X devices managed with the System Center Configuration Manager client](../../../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md) (Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager) e [How to deploy configuration baselines in System Center Configuration Manager](../../../../compliance/deploy-use/deploy-configuration-baselines.md) (Come distribuire le linee di base di configurazione in System Center Configuration Manager).  
+1. Aggiungere l'elemento di configurazione a una [linea di base di configurazione](/sccm/compliance/deploy-use/create-configuration-baselines). [Distribuire quindi la linea di base di configurazione](/sccm/compliance/deploy-use/deploy-configuration-baselines) in tutti i computer Mac che installano un certificato indipendentemente da Configuration Manager.  

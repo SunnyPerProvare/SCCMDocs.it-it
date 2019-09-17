@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f4cc83e3b7d234b7dfbab24ba54079e4633814d5
-ms.sourcegitcommit: 9c29ee22d3af5ab2bf8d51262c11d5a756dc55c7
+ms.openlocfilehash: f3ec5f9b9bbda3b3bec6fdd1d955b8911f8029b5
+ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68913774"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70738505"
 ---
 # <a name="support-for-windows-10-in-configuration-manager"></a>Supporto per Windows 10 in Configuration Manager  
 
@@ -103,7 +103,7 @@ La tabella seguente elenca le versioni di Windows ADK 10 che è possibile usare 
 
 |Chiave|
 |--|
-| ![Supportato](media/green_check.png) = **Supportato** <br/> Microsoft consiglia l'uso della versione di Windows ADK corrispondente alla versione di Windows che si vuole distribuire. Quando si distribuisce la versione più recente di Windows 10, usare la versione più recente di Windows ADK. La versione più recente di Windows ADK può supportare la distribuzione di versioni del sistema operativo meno recenti, ad esempio Windows 7.<!-- SCCMDocs issue 1229 --> Per altre informazioni sul supporto del componente Windows ADK, vedere [Piattaforme supportate di Gestione e manutenzione immagini distribuzione](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-supported-platforms) e [Requisiti USMT](https://docs.microsoft.com/windows/deployment/usmt/usmt-requirements#bkmk-1). |
+| ![Supportato](media/green_check.png) = **Supportato** <br/> Questa tabella mostra solo il supporto di Windows ADK in relazione alla versione di Configuration Manager. Microsoft consiglia l'uso della versione di Windows ADK corrispondente alla versione di Windows che si vuole distribuire. Quando si distribuisce la versione più recente di Windows 10, usare la versione più recente di Windows ADK. La versione più recente di Windows ADK può supportare la distribuzione di versioni del sistema operativo meno recenti, ad esempio Windows 7.<!-- SCCMDocs issue 1229 --> Per altre informazioni sul supporto del componente Windows ADK, vedere [Piattaforme supportate di Gestione e manutenzione immagini distribuzione](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-supported-platforms) e [Requisiti USMT](https://docs.microsoft.com/windows/deployment/usmt/usmt-requirements#bkmk-1). |
 | ![Compatibile con le versioni precedenti](media/blue_compat.png)  = **Compatibile con le versioni precedenti** <br/> Questa combinazione non è stata testata ma dovrebbe funzionare. Verranno documentati eventuali problemi noti o avvertenze. |
 | ![Non supportato](media/Red_X.png) = **Non supportato** |
 

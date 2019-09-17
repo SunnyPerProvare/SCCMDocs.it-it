@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e0be6129306e37ba1721923efe1b7533875784e
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: 8ed24e1f7089b7b8078c4cfcfed021bc1bac9346
+ms.sourcegitcommit: cdf2827fb3f44d7522a9b533c115f910aa9c382a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70380038"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70902987"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>CMPivot per i dati in tempo reale in Configuration Manager
 
@@ -297,33 +297,36 @@ CMPivot include ora il supporto di base per l'[operatore di rendering](https://d
 #### <a name="example-bar-chart"></a>Esempio: grafico a barre
 La query seguente esegue il rendering delle applicazioni usate più di recente come un grafico a barre:
 
-```
+``` Kusto
 CCMRecentlyUsedApplications
 | summarize dcount( Device ) by ProductName
 | top 10 by dcount_
 | render barchart
 ```
+
 ![Esempio di visualizzazione di grafico a barre CMPivot](media/1359068-cmpivot-barchart.png)
 
 #### <a name="example-time-chart"></a>Esempio: grafico del tempo
 Per visualizzare i grafici del tempo, usare il nuovo operatore **bin()** per raggruppare gli eventi nel tempo. La query seguente indica quando sono stati avviati i dispositivi negli ultimi sette giorni:
 
-``` 
-OperatingSystem 
+``` Kusto
+OperatingSystem
 | where LastBootUpTime <= ago(7d)
 | summarize count() by bin(LastBootUpTime,1d)
 | render timechart
 ```
+
 ![Esempio di visualizzazione di grafico del tempo CMPivot](media/1359068-cmpivot-timechart.png)
 
 #### <a name="example-pie-chart"></a>Esempio: grafico a torta
 La query seguente visualizza tutte le versioni del sistema operativo in un grafico a torta:
 
-```
-OperatingSystem 
+``` Kusto
+OperatingSystem
 | summarize count() by Caption
 | render piechart
 ```
+
 ![Esempio di visualizzazione di grafico a torta CMPivot](media/1359068-cmpivot-piechart.png)
 
 
@@ -333,12 +336,14 @@ Usare CMPivot per eseguire query sulle classi di inventario hardware. Queste cla
 La saturazione del colore dei dati nella tabella o nel grafico dei risultati indica se i dati sono dinamici o memorizzati nella cache. Ad esempio, blu scuro è un dato in tempo reale proveniente da un client online. Blu chiaro è un dato memorizzato nella cache.
 
 #### <a name="example"></a>Esempio
-```
+
+``` Kusto
 LogicalDisk
 | summarize sum( FreeSpace ) by Device
 | order by sum_ desc
 | render columnchart
 ```
+
 ![Esempio di query sull'inventario CMPivot con visualizzazione di un istogramma](media/1359068-cmpivot-inventory.png)
 
 #### <a name="limitations"></a>Limitazioni
@@ -400,7 +405,7 @@ A partire dalla versione 1902 di Configuration Manager è possibile eseguire CMP
 
 L'esecuzione di CMPivot nel sito di amministrazione centrale richiede autorizzazioni aggiuntive quando SQL o il provider non sono nello stesso computer o in caso di configurazione SQL Always On. Con queste configurazioni remote, è necessario uno scenario con "doppio hop" per CMPivot.
 
-Per fare in modo che CMPivot funzioni nel sito di amministrazione centrale in uno "scenario con doppio hop", è possibile definire la delega vincolata. Per comprendere le implicazioni di sicurezza di questa configurazione, leggere l'articolo sulla [delega vincolata Kerberos](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview). Se si usa più di una configurazione remota, ad esempio un provider SQL o SCCM che condivide o meno il percorso con il sistema di amministrazione centrale, si può richiedere una combinazione di impostazioni di autorizzazione. Di seguito sono riportati i passaggi che è necessario eseguire:
+Per fare in modo che CMPivot funzioni nel sito di amministrazione centrale in uno "scenario con doppio hop", è possibile definire la delega vincolata. Per comprendere le implicazioni di sicurezza di questa configurazione, leggere l'articolo sulla [delega vincolata Kerberos](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview). Se si usa più di una configurazione remota, ad esempio un provider SQL o SMS che condivide o meno il percorso con il sistema di amministrazione centrale, potrebbe essere necessaria una combinazione di impostazioni di autorizzazione. Di seguito sono riportati i passaggi che è necessario eseguire:
 
 ### <a name="cas-has-a-remote-sql-server"></a>Il sistema di amministrazione centrale usa un'istanza remota di SQL Server
 
@@ -517,7 +522,7 @@ L'operatore render esiste già in CMPivot. Sono stati aggiunti il supporto per p
 
 - Visualizza dispositivo, produttore, modello e versione del sistema operativo:
 
-   ```
+   ``` Kusto
    ComputerSystem
    | project Device, Manufacturer, Model
    | join (OperatingSystem | project Device, OSVersion=Caption)
@@ -525,7 +530,7 @@ L'operatore render esiste già in CMPivot. Sono stati aggiunti il supporto per p
 
 - Visualizza un grafico dei tempi di avvio per un dispositivo:
 
-   ```
+   ``` Kusto
    SystemBootData
    | where Device == 'MyDevice'
    | project SystemStartTime, BootDuration, OSStart=EventLogStart, GPDuration, UpdateDuration

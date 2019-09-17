@@ -1,7 +1,7 @@
 ---
-title: Usare i servizi cloud per integrare l'infrastruttura locale
+title: Usare i servizi cloud
 titleSuffix: Configuration Manager
-description: Il provisioning delle risorse cloud per System Center Configuration Manager consente di integrare l'infrastruttura locale.
+description: Il provisioning delle risorse cloud per Configuration Manager consente di integrare l'infrastruttura locale.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 72478590144915075ae224552b6d67f7ad8fd87c
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: 2828443de3833f2b98665fc4d87dcb63eb795b4d
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70377783"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70891840"
 ---
-# <a name="use-cloud-services-with-system-center-configuration-manager"></a>Usare i servizi cloud con System Center Configuration Manager
+# <a name="use-cloud-services-with-configuration-manager"></a>Usare i servizi cloud con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager supporta varie opzioni basate su cloud. Queste opzioni possono integrare l'infrastruttura locale e consentono di risolvere problemi aziendali quali:  
+Configuration Manager supporta varie opzioni basate su cloud. Queste opzioni possono integrare l'infrastruttura locale e consentono di risolvere problemi aziendali quali:  
 
 -   Come gestire la strategia BYOD usando Intune per la gestione dei dispositivi mobili.  
 

@@ -1,7 +1,7 @@
 ---
-title: "Gestione dei client di un'infrastruttura VDI "
+title: Gestire i client VDI
 titleSuffix: Configuration Manager
-description: Gestire i client di System Center Configuration Manager in un'infrastruttura VDI (Virtual Desktop Infrastructure).
+description: Gestire i client di Configuration Manager in un'infrastruttura VDI (Virtual Desktop Infrastructure).
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -11,14 +11,14 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9352d6e5a26afd4cee36f70a19d0566e26643f50
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 07df750daf0af7aa82a13c1eef421678d7df8202
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130572"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70890330"
 ---
-# <a name="considerations-for-managing-system-center-configuration-manager-clients--in-a-virtual-desktop-infrastructure-vdi"></a>Considerazioni per la gestione dei client di System Center Configuration Manager in un'infrastruttura VDI (Virtual Desktop Infrastructure)
+# <a name="manage-configuration-manager-clients-in-a-virtual-desktop-infrastructure-vdi"></a>Gestire i client di Configuration Manager in un'infrastruttura VDI (Virtual Desktop Infrastructure)
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 

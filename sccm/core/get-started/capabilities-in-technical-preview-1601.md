@@ -12,12 +12,12 @@ ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be84e7bfae54cf3099b588cce35b01a424c45b8f
-ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.openlocfilehash: 605a95aa96191fab63f7c4a0e0ce2f8b7c6a8778
+ms.sourcegitcommit: cdf2827fb3f44d7522a9b533c115f910aa9c382a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66716011"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70902550"
 ---
 # <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1601 per System Center Configuration Manager
 
@@ -35,7 +35,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
     -   Eseguire lo script SQL seguente nel database del sito primario:  
 
-        ```  
+        ``` SQL
         DECLARE @PilotingPkgID NVARCHAR(8)  
 
         SELECT @PilotingPkgID = PilotingPackageID FROM ClientDeploymentSettings  
@@ -89,7 +89,7 @@ Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità s
     -   **Richiedi antimalware:** questo è un controllo per verificare se il software antimalware (System Center Endpoint Protection o solo Windows Defender) è abilitato e in esecuzione.  
          Se non è abilitato, l'accesso alla posta elettronica e ai servizi di SharePoint è bloccato.  
 
-    Gli utenti finali bloccati a causa di non conformità visualizzeranno le informazioni di conformità in Software Center di SCCM e verrà avviata una nuova valutazione dei criteri dopo la risoluzione dei problemi di conformità.  
+    Gli utenti finali bloccati a causa di non conformità visualizzeranno le informazioni di conformità in Software Center e verrà avviata una nuova valutazione dei criteri dopo la risoluzione dei problemi di conformità.  
 
 -   **Accesso condizionale con il servizio di attestazione dell'integrità** È ora possibile limitare l'accesso alla posta elettronica e ai servizi di Office 365 in base all'integrità dei dispositivi, come segnalato dal servizio di attestazione dell'integrità.  Inoltre, i dispositivi gestiti da Intune sono inclusi nei report sull'integrità del dispositivo.  
 

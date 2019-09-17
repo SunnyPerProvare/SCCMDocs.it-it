@@ -5,22 +5,24 @@ description: Informazioni sui carichi di lavoro che è possibile trasferire da C
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 08/01/2019
+ms.date: 09/06/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 4c90befe-9c4e-4c27-a947-625887e15052
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef39c354e384f130b5c585e8aeb099d083fe0418
-ms.sourcegitcommit: 16dd488c51b5cf01a7dd4204f7d40ee9ae0abe85
+ms.openlocfilehash: 766d1f0c258dd25fc4aa51ef20b2d3921ac8cc74
+ms.sourcegitcommit: ba68f10d2ca7997057a01af911a2e7cf7e010cf0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68743633"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70863132"
 ---
 # <a name="co-management-workloads"></a>Carichi di lavoro con co-gestione
 
 Non è obbligatorio trasferire i carichi di lavoro oppure è possibile procedere singolarmente al momento opportuno. Configuration Manager continua a gestire tutti gli altri carichi di lavoro, inclusi i carichi di lavoro che non vengono trasferiti a Intune, e tutte le altre funzionalità di Configuration Manager non supportate dalla co-gestione.
+
+Se si trasferisce un carico di lavoro a Intune, ma in seguito si cambia idea, è possibile tornare a Configuration Manager.
 
 La co-gestione supporta i carichi di lavoro seguenti:
 

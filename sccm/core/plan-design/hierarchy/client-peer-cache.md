@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4754077f1a91cd11ce16e17dd3d2ea2f1704ee08
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: 575a011271026e5b617a334476d3c4e8fa401014
+ms.sourcegitcommit: cdf2827fb3f44d7522a9b533c115f910aa9c382a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68338886"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70902966"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 
@@ -55,7 +55,10 @@ La peer cache non sostituisce l'uso di altre soluzioni, come Windows BranchCache
 
 Per abilitare la peer cache, distribuire le [impostazioni client](#bkmk_settings) in una raccolta. I membri di tale raccolta fungono quindi da origine di peer cache per altri client all'interno dello stesso gruppo di limiti.  
 
-- Un client che agisce come origine contenuto peer invia un elenco di contenuti disponibili che ha memorizzato nella cache al suo punto di gestione.  
+- Un client che agisce come origine contenuto peer invia un elenco di contenuti disponibili memorizzati nella cache al suo punto di gestione tramite messaggi di stato.
+
+   > [!NOTE]
+   > Vedere [Messaggi di stato in Configuration Manager](/sccm/core/plan-design/hierarchy/state-messaging-system-center-configuration-manager#7200-state_topictype_super_peer_update_cache_map) per l'elenco dei messaggi di stato dell'origine del contenuto peer applicabili, in particolare quelli con ID messaggio di stato 7200, 7201, 7202 e 7203.
 
 - Un altro client nello stesso gruppo di limiti invia una richiesta di percorso del contenuto al punto di gestione. Il server restituisce l'elenco delle possibili origini del contenuto. Questo elenco include tutte le origini di peer cache che includono contenuto e sono online. Include anche i punti di distribuzione e altri percorsi di origine del contenuto in tale gruppo di limiti. Per altre informazioni, vedere [Priorità dell'origine del contenuto](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#content-source-priority).  
 

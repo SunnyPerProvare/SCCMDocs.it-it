@@ -2,7 +2,7 @@
 title: Visualizzare i dati di diagnostica
 titleSuffix: Configuration Manager
 description: È possibile visualizzare i dati di diagnostica e di utilizzo per verificare che la gerarchia di System Center Configuration Manager non contenga informazioni riservate.
-ms.date: 3/27/2017
+ms.date: 09/10/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,40 +11,54 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64ad8cf66266bd13195925e3de48fc5179714ad0
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 68155a31d1d50d1df4c06882416f158f9a71c8d2
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125630"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70889435"
 ---
-# <a name="how-to-view-diagnostics-and-usage-data-for-system-center-configuration-manager"></a>Come visualizzare dati di diagnostica e di utilizzo per System Center Configuration Manager
+# <a name="how-to-view-diagnostics-and-usage-data-for-configuration-manager"></a>Come visualizzare i dati di diagnostica e utilizzo per Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile visualizzare i dati di diagnostica e di utilizzo della gerarchia di System Center Configuration Manager per verificare che non siano incluse informazioni sensibili o personali. I dati di telemetria vengono riepilogati e archiviati nella tabella **TEL_TelemetryResults** del database del sito e sono formattati per essere utilizzabili ed efficienti a livello di programmazione. Anche se le opzioni seguenti offrono una visualizzazione dei dati esatti inviati a Microsoft, non sono progettate per l'uso per altri scopi, ad esempio per analisi dei dati.  
+È possibile visualizzare i dati di diagnostica e di utilizzo dalla gerarchia di Configuration Manager per verificare che non siano incluse informazioni sensibili o personali. Il sito riepiloga e archivia i dati di diagnostica nella tabella **TEL_TelemetryResults** del database del sito. Formatta i dati in modo che siano utilizzabili ed efficienti a livello di codice.
 
-Usare il comando SQL seguente per visualizzare il contenuto di questa tabella e i dati esatti inviati. È anche possibile esportare questi dati in un file di testo:  
+Le informazioni in questo articolo sono pensate come presentazione dei dati esatti inviati a Microsoft e non sono destinate all'uso per altri scopi, ad esempio l'analisi dei dati.  
 
--   **SELECT \* FROM TEL_TelemetryResults**  
+## <a name="view-data-in-database"></a>Visualizzare i dati nel database
 
-> [!NOTE]  
->  Prima di installare la versione 1602, la tabella che archivia i dati di telemetria è **TelemetryResults**.  
+Usare il comando SQL seguente per visualizzare il contenuto di questa tabella e i dati esatti inviati:  
 
-Quando il punto di connessione del servizio è in modalità offline, è possibile usare lo strumento di connessione del servizio per esportare i dati di diagnostica e di utilizzo correnti in un file con valori delimitati da virgole (CSV). Eseguire lo strumento di connessione del servizio per il punto di connessione del servizio con il parametro **-Export**.  
+``` SQL
+SELECT * FROM TEL_TelemetryResults
+```
 
-##  <a name="bkmk_hashes"></a> Hash unidirezionali  
-Alcuni dati sono costituiti da stringhe di caratteri alfanumerici casuali. Configuration Manager usa l'algoritmo SHA-256, che usa gli hash unidirezionali, per garantire che non vengano raccolti dati potenzialmente sensibili. L'algoritmo lascia i dati in uno stato tale da consentire ancora di usarli per operazioni di correlazione e confronto. Ad esempio, anziché raccogliere i nomi delle tabelle nel database del sito, viene acquisito un hash unidirezionale per ogni nome di tabella. Questo assicura che non siano visibili gli eventuali nomi di tabella personalizzati creati dall'utente o i componenti aggiuntivi del prodotto di altri. È quindi possibile procedere allo stesso modo per acquisire l'hash unidirezionale dei nomi delle tabelle SQL incluse per impostazione predefinita nel prodotto ed eseguire un confronto dei risultati delle due query per determinare eventuali deviazioni dello schema del database da quello predefinito del prodotto. Queste informazioni possono poi essere usate per migliorare gli aggiornamenti che richiedono modifiche allo schema di SQL.  
+## <a name="export-the-data"></a>Esportare i dati
 
-Quando si visualizzano i dati non elaborati, viene visualizzato un valore hash comune in ogni riga di dati. Si tratta dell'ID gerarchia. Questo valore hash viene usato per assicurarsi che i dati siano correlati alla stessa gerarchia senza identificare il cliente o l'origine.  
+Quando il punto di connessione del servizio è in modalità offline, usare lo strumento di connessione del servizio per esportare i dati correnti in un file con valori delimitati da virgole (CSV). Eseguire lo strumento di connessione del servizio per il punto di connessione del servizio con il parametro **-Export**.
 
-#### <a name="to-see-how-the-one-way-hash-works"></a>Per vedere come funziona l'hash unidirezionale  
+Per altre informazioni, vedere [Usare lo strumento di connessione del servizio](/sccm/core/servers/manage/use-the-service-connection-tool).
 
-1.  Ottenere l'ID gerarchia eseguendo l'istruzione SQL seguente in SQL Management Studio nel database di Configuration Manager: **select [dbo].[fnGetHierarchyID]\(\)**  
+## <a name="bkmk_hashes"></a> Hash unidirezionali
 
-2.  Usare lo script di Windows PowerShell seguente per eseguire l'hash unidirezionale del GUID ottenuto dal database. A questo punto, è possibile confrontarlo all'ID gerarchia nei dati non elaborati per vedere come vengono nascosti questi dati.  
+Alcuni dati sono costituiti da stringhe di caratteri alfanumerici casuali. Configuration Manager usa l'algoritmo SHA-256 per creare hash unidirezionali. Questo processo assicura che Microsoft non raccolga dati potenzialmente sensibili. I dati con hash possono comunque essere usati a scopo di correlazione e confronto.
 
-    ```  
+Ad esempio, anziché raccogliere i nomi delle tabelle nel database del sito, viene acquisito l'hash unidirezionale per ogni nome di tabella. Questo comportamento assicura che eventuali nomi di tabella personalizzati non siano visibili. Microsoft esegue quindi lo stesso processo di hash unidirezionale dei nomi predefiniti delle tabelle SQL. Il confronto dei risultati delle due query determina la deviazione dello schema del database rispetto all'impostazione predefinita del prodotto. Queste informazioni possono poi essere usate per migliorare gli aggiornamenti che richiedono modifiche allo schema di SQL.  
+
+Quando si visualizzano i dati non elaborati, viene visualizzato un valore con hash comune in ogni riga di dati. Questo hash è l'ID della gerarchia. Viene usato per correlare i dati alla stessa gerarchia senza identificare il cliente o l'origine.
+
+### <a name="how-the-one-way-hash-works"></a>Come funziona l'hash unidirezionale
+
+1. Ottenere l'ID gerarchia eseguendo la query SQL seguente in SQL Management Studio sul database di Configuration Manager:
+
+    ``` SQL
+    select [dbo].[fnGetHierarchyID]()
+    ```
+
+2. Usare lo script di Windows PowerShell seguente per eseguire l'hash unidirezionale dell'ID gerarchia.  
+
+    ``` PowerShell
     Param( [Parameter(Mandatory=$True)] [string]$value )  
       $guid = [System.Guid]::NewGuid()  
       if( [System.Guid]::TryParse($value,[ref] $guid) -eq $true ) {  
@@ -53,13 +67,15 @@ Quando si visualizzano i dati non elaborati, viene visualizzato un valore hash c
     } else {  
       #otherwise hash as string (unicode)  
       $ue = New-Object System.Text.UnicodeEncoding  
-      $bytesToHash = $ue.GetBytes($value)   
+      $bytesToHash = $ue.GetBytes($value)
     }  
-      # Load Hash Provider (https://en.wikipedia.org/wiki/SHA-2)   
-    $hashAlgorithm = [System.Security.Cryptography.SHA256Cng]::Create()    
-    # Hash the input   
-    $hashedBytes = $hashAlgorithm.ComputeHash($bytesToHash)              
-    # Base64 encode the result for transport   
-    $result = [Convert]::ToBase64String($hashedBytes)    
-    return $result   
-    ```  
+      # Load Hash Provider (https://en.wikipedia.org/wiki/SHA-2)
+    $hashAlgorithm = [System.Security.Cryptography.SHA256Cng]::Create()
+    # Hash the input
+    $hashedBytes = $hashAlgorithm.ComputeHash($bytesToHash)
+    # Base64 encode the result for transport
+    $result = [Convert]::ToBase64String($hashedBytes)
+    return $result
+    ```
+
+3. Confrontare l'output dello script con il GUID nei dati non elaborati. Questo processo mostra come vengono oscurati i dati.

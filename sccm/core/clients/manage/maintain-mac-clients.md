@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c8eef0ad8164ce6545264e0a1c229a647383661
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: dbc0800b78023e3813a31d2482a64a913008e306
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138926"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70889974"
 ---
 # <a name="maintain-mac-clients"></a>Gestire i client Mac
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -29,7 +29,7 @@ Di seguito sono illustrate le procedure per disinstallare i client Mac e rinnova
 
 2.  Spostarsi nella cartella Strumenti e immettere la seguente riga di comando:  
 
-     **./CMUninstall -c**  
+     `./CMUninstall -c`
 
     > [!NOTE]  
     >  La proprietà **-c** indica alla disinstallazione del client di rimuovere anche i registri di arresto anomalo e i file di registro del client. È consigliabile usare questa opzione per evitare confusione nel caso in cui il client sia poi reinstallato.  
@@ -55,9 +55,9 @@ Di seguito sono illustrate le procedure per disinstallare i client Mac e rinnova
 
    - **RenewalReminderInterval2**: specifica, in secondi, la frequenza con la quale la procedura guidata di rinnovo del certificato verrà presentata agli utenti durante il secondo periodo di rinnovo. Il valore predefinito è 28.800 secondi (8 ore). Se **RenewalReminderInterval2** è superiore a 300 secondi, inferiore o uguale a **RenewalReminderInterval1** e inferiore o uguale a **RenewalPeriod2**, verrà usato il valore configurato. In caso contrario, verrà usato un valore di 8 ore.  
 
-     **Esempio:** Se vengono mantenuti i valori predefiniti, 45 giorni prima della scadenza del certificato, la procedura guidata si aprirà ogni 24 ore.  Entro 3 giorni del certificato in scadenza, la procedura guidata si aprirà ogni 8 ore.  
+     **Esempio:** se vengono mantenuti i valori predefiniti, 45 giorni prima della scadenza del certificato la procedura guidata si aprirà ogni 24 ore.  Entro 3 giorni del certificato in scadenza, la procedura guidata si aprirà ogni 8 ore.  
 
-     **Esempio:** utilizzare la seguente riga di comando o uno script per impostare il primo periodo di rinnovo a 20 giorni.  
+     **Esempio:** usare la riga di comando seguente o uno script per impostare il primo periodo di rinnovo su 20 giorni.  
 
      `sudo defaults write com.microsoft.ccmclient RenewalPeriod1 1728000`  
 
@@ -101,7 +101,7 @@ Di seguito sono illustrate le procedure per disinstallare i client Mac e rinnova
 
 7.  Nella finestra di dialogo **Modifica script di individuazione** , immettere il seguente script della shell:  
 
-    ```  
+    ``` Shell
     defaults read com.microsoft.ccmclient SMSID  
     ```  
 
@@ -111,7 +111,7 @@ Di seguito sono illustrate le procedure per disinstallare i client Mac e rinnova
 
 10. Nella finestra di dialogo **Crea script di monitoraggio e aggiornamento** , immettere il seguente script della shell:  
 
-    ```  
+    ``` Shell
     defaults delete com.microsoft.ccmclient SMSID  
     ```  
 
@@ -135,7 +135,7 @@ Di seguito sono illustrate le procedure per disinstallare i client Mac e rinnova
 
 15. Nei computer Mac con l'SMSID rimosso, eseguire il comando seguente per installare un nuovo certificato:  
 
-    ```  
+    ``` Shell
     sudo ./CMEnroll -s <enrollment_proxy_server_name> -ignorecertchainvalidation -u <'user name'>  
     ```  
 
@@ -143,7 +143,7 @@ Di seguito sono illustrate le procedure per disinstallare i client Mac e rinnova
 
 16. Per limitare il certificato registrato in Configuration Manager, sul computer Mac, aprire una finestra terminale e apportare le modifiche seguenti:  
 
-    a.  Immettere il comando **sudo /Applications/Utilities/Keychain\ Access.app/Contents/MacOS/Keychain\ Access**  
+    a.  Immettere il comando `sudo /Applications/Utilities/Keychain\ Access.app/Contents/MacOS/Keychain\ Access`
 
     b.  Nella finestra di dialogo **Keychain Access** (Accesso portachiavi) scegliere **System** (Sistema) nella sezione **Keychains** (Portachiavi) e quindi **Keys** (Chiavi) nella sezione **Category** (Categoria).  
 

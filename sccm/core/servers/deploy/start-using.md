@@ -1,5 +1,6 @@
 ---
-title: Iniziare a usare System Center Configuration Manager
+title: Distribuire server e ruoli
+titleSuffix: Configuration Manager
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -9,25 +10,25 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ccac130293edf3e3e74c0ed0e3a86adad9af084
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 2856869b17f851382750f9347c732f3a75a82467
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65501237"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70891630"
 ---
-# <a name="start-using-system-center-configuration-manager"></a>Iniziare a usare System Center Configuration Manager
+# <a name="deploy-servers-and-roles"></a>Distribuire server e ruoli
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Dopo aver pianificato la topologia del sito e della gerarchia di System Center Configuration Manager e si è pronti per l'installazione o l'aggiornamento dei siti, usare le informazioni degli argomenti seguenti:  
+Dopo aver pianificato la topologia del sito e della gerarchia di Configuration Manager e quando si è pronti per l'installazione o l'aggiornamento dei siti, usare le informazioni negli articoli seguenti:  
 
--   [Install System Center Configuration Manager sites](/sccm/core/servers/deploy/install/installing-sites) (Installare i siti di System Center Configuration Manager)  
+- [Installare i siti di Configuration Manager](/sccm/core/servers/deploy/install/installing-sites)  
 
--   [Upgrade to System Center Configuration Manager](../../../core/servers/deploy/install/upgrade-to-configuration-manager.md) (Eseguire l'aggiornamento a System Center Configuration Manager)  
+- [Eseguire l'aggiornamento a Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)  
 
--   [Scenarios to streamline your installation of System Center Configuration Manager](../../../core/servers/deploy/install/scenarios-to-streamline-your-installation.md) (Scenari per semplificare l'installazione di System Center Configuration Manager)  
+- [Scenari per semplificare l'installazione di Configuration Manager](/sccm/core/servers/deploy/install/scenarios-to-streamline-your-installation)  
 
--   [Configure sites and hierarchies for System Center Configuration Manager](../../../core/servers/deploy/configure/configure-sites-and-hierarchies.md) (Configurare siti e gerarchie per System Center Configuration Manager)  
+- [Configurare siti e gerarchie](/sccm/core/servers/deploy/configure/configure-sites-and-hierarchies)  
 
--   [Migrate data between hierarchies in System Center Configuration Manager](../../../core/migration/migrate-data-between-hierarchies.md) (Eseguire la migrazione dei dati da una gerarchia all'altra in System Center Configuration Manager)  
+- [Migrare i dati tra le gerarchie](/sccm/core/migration/migrate-data-between-hierarchies)  

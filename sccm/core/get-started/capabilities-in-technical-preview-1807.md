@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58c25da6418e2fd3997cd1b5ba40e6c4585c997c
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 41abaa02759a2f49b04f56963e6285b972a61cfc
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123468"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70891667"
 ---
 # <a name="capabilities-in-configuration-manager-technical-preview-version-1807"></a>Funzionalità in Configuration Manager Technical Preview versione 1807 
 
@@ -44,7 +44,8 @@ Steps to workaround, if any.
 ## <a name="known-issues"></a>Problemi noti 
 
 ### <a name="ki_o365"></a> Problemi con gli aggiornamenti software di Office 365
-<!--521365--> Se si gestiscono gli aggiornamenti di Office 365 con le versioni Technical Preview 1806 e 1806.2, l'installazione nei client potrebbe non riuscire. 
+<!--521365-->
+Se si gestiscono gli aggiornamenti di Office 365 con le versioni Technical Preview 1806 e 1806.2, l'installazione nei client potrebbe non riuscire. 
 
 #### <a name="workaround"></a>Soluzione alternativa
 - Eliminare i pacchetti di distribuzione esistenti e i gruppi di aggiornamenti software per Office 365.  
@@ -224,8 +225,7 @@ Provare a completare le attività. Inviare quindi [commenti e suggerimenti](capa
 #### <a name="example-script-output-is-valid-json"></a>Esempio: output dello script in formato JSON valido
 Comando: `$PSVersionTable.PSVersion`  
 
-Output:  
-```
+``` Output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
 5      1      16299  551
@@ -234,8 +234,7 @@ Major  Minor  Build  Revision
 #### <a name="example-script-output-isnt-valid-json"></a>Esempio: output dello script non in formato JSON valido
 Comando: `Write-Output (Get-WmiObject -Class Win32_OperatingSystem).Caption`  
 
-Output:  
-```
+``` Output
 Microsoft Windows 10 Enterprise
 ```
 

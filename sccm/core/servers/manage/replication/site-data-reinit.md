@@ -1,5 +1,5 @@
 ---
-title: Reinizializzazione dei dati globali
+title: Reinizializzazione dei dati del sito
 titleSuffix: Configuration Manager
 description: Usare questo diagramma per avviare la risoluzione dei problemi di reinizializzazione della replica SQL per i dati del sito in una gerarchia di Configuration Manager
 ms.date: 08/09/2019
@@ -11,14 +11,14 @@ ms.assetid: 19741d45-2d42-438e-a9f3-15bb365d63ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b40a38f928351315fe1d0bd9dabc4f187e082a96
-ms.sourcegitcommit: 6b5a003256305c1f0cb605e52aeaaf19c23af5a9
+ms.openlocfilehash: ed35f296b888d9e13d42114aa2bef2932c715a38
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68957761"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892056"
 ---
-# <a name="sql-replication"></a>Replica SQL
+# <a name="troubleshoot-site-data-reinit"></a>Risolvere i problemi di reinizializzazione dei dati del sito
 
 In una gerarchia multisito Configuration Manager usa la replica SQL per trasferire i dati tra i siti. Per altre informazioni, vedere [Replica di database](/sccm/core/plan-design/hierarchy/database-replication).
 

@@ -2,7 +2,7 @@
 title: Notifica client
 titleSuffix: Configuration Manager
 description: Gestire i client intraprendendo azioni immediate dalla console centrale di Configuration Manager.
-ms.date: 03/22/2019
+ms.date: 04/15/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db68a55136d708ad9276f8b1319dde33fcde35ac
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.openlocfilehash: a2835ac13f9ffc2aa7a36ebc9669fb62cccc1257
+ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58477467"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70738181"
 ---
 # <a name="client-notification-in-configuration-manager"></a>Notifica del client in Configuration Manager
 
@@ -141,12 +141,14 @@ Attivare i client per il controllo della conformità dell'accesso condizionale. 
 
 ### <a name="wake-up"></a>Riattiva
 
-A partire dalla versione 1810, è possibile attivare i dispositivi configurati per supportare la riattivazione LAN usando altri dispositivi nella stessa subnet per inviare il pacchetto di riattivazione LAN.
+A partire dalla versione 1810, è possibile attivare i dispositivi configurati per supportare la riattivazione LAN usando altri dispositivi nella stessa subnet per inviare il pacchetto di riattivazione LAN. Per altre informazioni, vedere [Come configurare la riattivazione LAN](/sccm/core/clients/deploy/configure-wake-on-lan).
 
+### <a name="permissions"></a>Autorizzazioni
+Questa azione richiede l'autorizzazione **Invia una notifica alla risorsa** per l'oggetto **Raccolta**.
 
 ### <a name="restart"></a>Riavvia
 
-Attivare i dispositivi selezionati per riavviarli. 
+Attivare i dispositivi selezionati per riavviarli. Per altre informazioni, vedere [Riavviare i client](/sccm/core/clients/manage/manage-clients#restart-clients).
 
 
 

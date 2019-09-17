@@ -1,23 +1,21 @@
 ---
-title: Esercitazione&#58; Abilitare la co-gestione per nuovi dispositivi Windows 10 basati su Internet
+title: Esercitazione&#58; Abilitare la co-gestione per i dispositivi basati su Internet
 titleSuffix: Configuration Manager
-description: Configurare la co-gestione per dispositivi Windows 10 con Configuration Manager e Intune.
-keywords: ''
+description: Informazioni su come configurare la co-gestione per i nuovi dispositivi Windows 10 basati su Internet con Configuration Manager e Microsoft Intune.
 author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.date: 07/26/2019
 ms.topic: tutorial
 ms.prod: configuration-manager
-ms.service: ''
-ms.technology: ''
-ms.assetid: ''
-ms.openlocfilehash: 446068324ab8840600fb1d0e8f7789520a6468d1
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.technology: configmgr-client
+ms.assetid: 7fb02a5c-e286-46b1-a972-6335c858429a
+ms.openlocfilehash: 6215842691aece6eb13bc1969640e4d9c19d9fae
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68533912"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70890777"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Esercitazione: Abilitare la co-gestione per nuovi dispositivi basati su Internet
 
@@ -400,7 +398,7 @@ Ad esempio, *C:\Programmi\Microsoft Configuration Manager\bin\i386\ccmsetup.msi*
 
      La struttura della riga di comando dovrebbe essere simile a questo esempio, usando solo i parametri CCMSETUPCMD e SMSSiteCode:  
 
-     ```
+     ``` Command
      CCMSETUPCMD="CCMHOSTNAME=<ServiceName.CLOUDAPP.NET/CCM_Proxy_MutualAuth/<GUID>" SMSSiteCode="<YourSiteCode>"  
      ```
 

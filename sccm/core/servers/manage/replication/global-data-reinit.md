@@ -11,14 +11,14 @@ ms.assetid: d36622c0-776c-493b-971a-4a586fc394d4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2c57ab69a16e6edb1a6459c89da8920f74d4d845
-ms.sourcegitcommit: 6b5a003256305c1f0cb605e52aeaaf19c23af5a9
+ms.openlocfilehash: 646a8c93b3bc5f90d711e6985983a41d87c38826
+ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68957641"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892099"
 ---
-# <a name="sql-replication"></a>Replica SQL
+# <a name="troubleshoot-global-data-reinit"></a>Risoluzione dei problemi di reinizializzazione dei dati globali
 
 In una gerarchia multisito Configuration Manager usa la replica SQL per trasferire i dati tra i siti. Per altre informazioni, vedere [Replica di database](/sccm/core/plan-design/hierarchy/database-replication).
 

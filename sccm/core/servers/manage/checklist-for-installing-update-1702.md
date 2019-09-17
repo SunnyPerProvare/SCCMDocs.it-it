@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db5f6661c84c328c8b607bcaa9d1b31c0b78fdea
-ms.sourcegitcommit: 16dd488c51b5cf01a7dd4204f7d40ee9ae0abe85
+ms.openlocfilehash: 1c6f874f74a7c788860ce3c2650f2407dfb05b01
+ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68743674"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70738357"
 ---
 # <a name="checklist-for-installing-update-1702-for-system-center-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1702 di System Center Configuration Manager
 
@@ -100,7 +100,7 @@ Per ulteriori informazioni, vedere [Usare gli avvisi e il sistema di stato per S
 verificare che la replica di file e database tra siti sia funzionante e aggiornata. Eventuali ritardi o backlog in uno dei due ambiti possono complicare o compromettere l'aggiornamento.
 Per la replica di database è possibile usare Replication Link Analyzer per risolvere i problemi prima di avviare l'aggiornamento.
 
-Per altre informazioni, vedere [Informazioni su Replication Link Analyzer](/sccm/core/servers/manage/monitor-hierarchy-and-replication-infrastructure#BKMK_RLA) nell'argomento [Monitorare l'infrastruttura della gerarchia e di replica in System Center Configuration Manager](/sccm/core/servers/manage/monitor-hierarchy-and-replication-infrastructure).
+Per altre informazioni, vedere [Replication Link Analyzer](/sccm/core/servers/manage/monitor-replication#BKMK_RLA) nell'argomento  [Monitorare la replica di database](/sccm/core/servers/manage/monitor-replication).
 
 **Installare tutti gli aggiornamenti critici disponibili per i sistemi operativi dei computer che ospitano il sito, il server di database del sito e i ruoli del sistema del sito remoto:** prima di installare un aggiornamento per Configuration Manager, installare gli aggiornamenti critici del sistema operativo per ogni sistema del sito applicabile. Se un aggiornamento installato richiede un riavvio, riavviare i computer interessati prima di iniziare l'aggiornamento.
 
