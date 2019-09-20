@@ -11,12 +11,12 @@ ms.assetid: b2abcdb0-72e0-4c70-a4b8-7827480ba5b2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e21a1eb9f6d97571c47906e04f030294b875ae17
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: c3aca04273c25326c64d696a44089b6c8d1222bf
+ms.sourcegitcommit: 2ef7e69f3db54a90ed4ae2a3f59a75e6329a1584
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68537096"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71062113"
 ---
 # <a name="deploy-a-task-sequence"></a>Distribuire una sequenza di attività
 
@@ -146,7 +146,7 @@ Usare la seguente procedura per distribuire una sequenza di attività ai compute
 
     - **Gestione filtri di scrittura per dispositivi con Windows Embedded**: questa impostazione controlla il comportamento di installazione nei dispositivi con Windows Embedded in cui è abilitato un filtro di scrittura. Scegliere l'opzione per eseguire il commit delle modifiche alla scadenza dell'installazione o durante una finestra di manutenzione. Quando si seleziona questa opzione, è necessario un riavvio e la modifica viene salvata in modo permanente nel dispositivo. In caso contrario, l'applicazione viene installata nell'overlay temporaneo e il commit viene eseguito successivamente. Quando si distribuisce una sequenza di attività in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta con una finestra di manutenzione configurata.  
 
-    - **Consenti l'esecuzione della sequenza di attività per il client in Internet:** specificare se la sequenza di attività può essere eseguita in un client basato su Internet. Le operazioni di installazione di software, come ad esempio un sistema operativo, non sono supportate con questa impostazione. Usare questa opzione solo per le sequenze di attività generiche basate su script che eseguono operazioni nel sistema operativo standard.  
+    - **Consenti l'esecuzione della sequenza di attività per il client in Internet:** specificare se la sequenza di attività può essere eseguita in un client basato su Internet. Le operazioni che richiedono un supporto di avvio, ad esempio l'installazione di un sistema operativo, non sono supportate con questa impostazione. Usare questa opzione solo per installazioni software o sequenze di attività generiche basate su script che eseguono operazioni nel sistema operativo standard.  
 
         - A partire dalla versione 1802, questa impostazione è supportata per le distribuzioni di una sequenza di attività di aggiornamento sul posto di Windows 10 in client basati su Internet mediante Cloud Management Gateway. Per altre informazioni, vedere [Distribuire l'aggiornamento sul posto di Windows 10 mediante Cloud Management Gateway](#deploy-windows-10-in-place-upgrade-via-cmg).  
 

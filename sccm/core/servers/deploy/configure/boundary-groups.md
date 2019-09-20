@@ -2,7 +2,7 @@
 title: Configurare gruppi di limiti
 titleSuffix: Configuration Manager
 description: Aiutare i client a trovare i sistemi del sito usando i gruppi di limiti per organizzare logicamente i percorsi di rete correlati chiamati limiti
-ms.date: 06/18/2019
+ms.date: 09/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 716b36060f4fdc768f98e4cc22be1653a967246c
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.openlocfilehash: 22645b08e3cb5f8b1200ab5c4e77b418ea74c8d8
+ms.sourcegitcommit: 55f68b5adc9bb84e324ead9f0429e41108d5b515
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194253"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010843"
 ---
 # <a name="configure-boundary-groups-for-configuration-manager"></a>Configurare gruppi di limiti per Configuration Manager
 
@@ -223,8 +223,10 @@ Per impostazione predefinita, il punto di gestione classifica le origini di peer
 
 Se è presente una succursale con un collegamento Internet più veloce, è possibile classificare in ordine di priorità i contenuti cloud.  
 
-Nella versione 1902 questa impostazione è **Preferisci le origini basate sul cloud rispetto alle origini locali** . Il comportamento rimane invariato.<!-- SCCMDocs#1529 -->
+Nella versione 1902 questa impostazione è **Preferisci le origini basate sul cloud rispetto alle origini locali** . Le origini basate su cloud includono quanto segue:<!-- SCCMDocs#1529 -->
 
+- Punti di distribuzione cloud
+- Microsoft Update (aggiunto nella versione 1902)
 
 ## <a name="software-update-points"></a>Punti di aggiornamento software
 

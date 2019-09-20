@@ -2,7 +2,7 @@
 title: Configurare la pre-cache del contenuto
 titleSuffix: Configuration Manager
 description: Informazioni su come i client possono scaricare il contenuto della distribuzione del sistema operativo prima di installare la sequenza di attività.
-ms.date: 07/26/2019
+ms.date: 09/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ba7380d35742f01c620d95bfb9351180d56f7df
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: fc212104dc69e4ba4cc7d82e0b8c4813094bea2d
+ms.sourcegitcommit: 2dbe49e3ef1133d49e58d82cefdeba69f9ba3ce2
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68537719"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71127305"
 ---
 # <a name="configure-pre-cache-content-for-task-sequences"></a>Configurare il contenuto pre-cache per le sequenze di attività
 
@@ -51,7 +51,7 @@ Per configurare la funzionalità pre-cache sono necessari tre passaggi:
 3. [Distribuire la sequenza di attività e abilitare la pre-memorizzazione nella cache](#bkmk_deploy)
 
 
-### <a name="bkmk_createpkg"></a>-1 Creare e configurare i pacchetti
+### <a name="bkmk_createpkg"></a> 1. creare e configurare i pacchetti
 
 Il client valuta gli attributi dei pacchetti per determinare il contenuto scaricato durante la pre-memorizzazione nella cache.  
 
@@ -67,11 +67,11 @@ Creare [immagini del sistema operativo](/sccm/osd/get-started/manage-operating-s
 
 Creare [pacchetti driver](/sccm/osd/get-started/manage-drivers#BKMK_ManagingDriverPackages) per modelli di hardware specifici. Specificare il **modello** nella scheda **generale** delle relative proprietà.
 
-Per determinare quale pacchetto di driver scaricare durante la memorizzazione anticipata nella cache, il client valuta il modello rispetto alla proprietà WMI **Win32_ComputerSystemProduct**.  
+Per determinare quale pacchetto di driver scaricare durante la memorizzazione anticipata nella cache, il client valuta il modello rispetto alla proprietà **Name** della classe WMI **Win32_ComputerSystemProduct**.  
 
 #### <a name="package"></a>Pacchetto
 
-Creare [pacchetti](/sccm/apps/deploy-use/packages-and-programs) per lingue e architetture specifiche. Specificare l' **architettura** e la **lingua** nella scheda **generale** delle relative proprietà.
+Creare [pacchetti](/sccm/apps/deploy-use/packages-and-programs) per lingue e architetture specifiche. Specificare i valori per **Architettura** e **Lingua** nella scheda **Generale** delle proprietà.
 
 
 ### <a name="bkmk_createts"></a> 2. Creare una sequenza di attività
