@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad8111b7d49f89b85c2a4f8b0bd9336a13446a91
-ms.sourcegitcommit: b28a97e22a9a56c5ce3367c750ea2bb4d50449c3
+ms.openlocfilehash: ae1bbbd6a8482ea5008eeb87c30a4e35a26e06d0
+ms.sourcegitcommit: 84a6f31797490eeda73bd4f3656ba27741df3030
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70243663"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71343805"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Come configurare analisi desktop
 
@@ -62,7 +62,7 @@ Usare questa procedura per accedere a desktop Analytics e configurarlo nella sot
 
     - Per creare un'area di lavoro per desktop Analytics, selezionare **Aggiungi area di lavoro**.  
 
-        1. Immettere un **nome**per l'area di lavoro.<!--do we have any guidance for this name?-->  
+        1. Immettere un nome univoco globale per l' **area di lavoro**.<!--do we have any guidance for this name?-->  
 
         2. Selezionare l'elenco a discesa per **selezionare il nome della sottoscrizione di Azure per l'area di lavoro**e scegliere la sottoscrizione di Azure per l'area di lavoro.  
 

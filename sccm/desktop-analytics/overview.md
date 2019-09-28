@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f6461d607401a0d932997d3ef38f02c991a5e2b
-ms.sourcegitcommit: cb169396acf0d50fedd9f2ae62f7894615c3cce5
+ms.openlocfilehash: 5ee4075926f5c6f01dddcf41a2c329e88a4ee591
+ms.sourcegitcommit: 160bcdaf783f3946ad5c7869b2566cbfc4da545c
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70808346"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401499"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Desktop Analytics?
 
@@ -100,7 +100,7 @@ Per usare desktop Analytics, verificare che l'ambiente soddisfi i prerequisiti s
     >
     > Desktop Analytics è progettato per supportare al meglio lo scenario di aggiornamento sul posto. Se è necessario apportare modifiche sostanziali, ad esempio dall'architettura a 32 bit a 64 bit, usare uno scenario di imaging. Le informazioni dettagliate di desktop Analytics sono ancora utili in questi scenari di distribuzione di sistemi operativi classici, ma è possibile ignorare le indicazioni specifiche sull'aggiornamento sul posto. Per ulteriori informazioni, vedere [scenari per la distribuzione di sistemi operativi aziendali con Configuration Manager](/sccm/osd/deploy-use/scenarios-to-deploy-enterprise-operating-systems).
 
-- Dati di diagnostica di Windows. Per altre informazioni, vedere i seguenti articoli:  
+- Dati di diagnostica di Windows. Per altre informazioni, vedere gli articoli seguenti:  
 
     - [Livelli di dati di diagnostica](/sccm/desktop-analytics/enable-data-sharing#diagnostic-data-levels)  
 
@@ -108,6 +108,11 @@ Per usare desktop Analytics, verificare che l'ambiente soddisfi i prerequisiti s
 
 - Connettività di rete dai dispositivi al cloud pubblico Microsoft. Per ulteriori informazioni, vedere [come abilitare la condivisione dei dati](/sccm/desktop-analytics/enable-data-sharing)  
 
+> [!Important]   
+> Microsoft è impegnata a fornire gli strumenti e le risorse che consentono di controllare la privacy. Di conseguenza, Microsoft non raccoglie i dati seguenti dai dispositivi che si trovano in paesi europei (See e Switzerland):
+>
+> - Dati di diagnostica di Windows da dispositivi Windows 8.1
+> - Dati di utilizzo delle app per Windows 7
 
 ### <a name="licensing-and-costs"></a>Licenze e costi
 
