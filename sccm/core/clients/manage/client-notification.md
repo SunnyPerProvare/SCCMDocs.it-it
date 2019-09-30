@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2835ac13f9ffc2aa7a36ebc9669fb62cccc1257
-ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
+ms.openlocfilehash: 790fc7d0d9df0d88983671be7cba290393016de0
+ms.sourcegitcommit: 670cfed1e47a7a4a73aa4ccb873c6312be3c21ff
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70738181"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71311525"
 ---
 # <a name="client-notification-in-configuration-manager"></a>Notifica del client in Configuration Manager
 
@@ -70,6 +70,7 @@ Avvia **CMPivot**, che esegue query in tempo reale sui dispositivi di destinazio
 #### <a name="permissions"></a>Autorizzazioni
 Questa azione richiede le stesse autorizzazioni dell'azione [Esegui script](#run-script). 
 
+A partire dalla versione 1906, è possibile usare l'autorizzazione **Esegui CMPivot** nell'oggetto **Raccolta**.
 
 
 ## <a name="client-notification"></a>Notifica client

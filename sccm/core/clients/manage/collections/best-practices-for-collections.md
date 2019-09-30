@@ -1,8 +1,8 @@
 ---
 title: Procedure consigliate per le raccolte
 titleSuffix: Configuration Manager
-description: Apprendere le procedure consigliate per le raccolte in System Center Configuration Manager.
-ms.date: 02/22/2017
+description: Visualizzare le procedure consigliate per le raccolte in Configuration Manager.
+ms.date: 09/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,29 +11,38 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be96b106424c6340a27b015a06e0c3d06e3257d6
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.openlocfilehash: ee91fe8b8b5b1c8d737e5818f42fa08e689a7e5a
+ms.sourcegitcommit: 670cfed1e47a7a4a73aa4ccb873c6312be3c21ff
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70890191"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71311530"
 ---
-# <a name="best-practices-for-collections-in-system-center-configuration-manager"></a>Procedure consigliate per le raccolte in System Center Configuration Manager
+# <a name="best-practices-for-collections-in-configuration-manager"></a>Procedure consigliate per le raccolte in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Per le raccolte in System Center Configuration Manager usare le seguenti procedure consigliate.  
+Usare le procedure consigliate seguenti per le raccolte in Configuration Manager.  
 
-## <a name="do-not-use-incremental-updates-for-a-large-number-of-collections"></a>Non usare gli aggiornamenti incrementali per un numero elevato di raccolte  
- Quando si abilita l'opzione **Utilizza aggiornamenti incrementali per questa raccolta** , questa configurazione potrebbe provocare ritardi di valutazione se l'opzione viene abilitata per più raccolte. La soglia è pari a circa 200 raccolte nella gerarchia. Il numero esatto dipende dai fattori seguenti:  
+## <a name="dont-use-incremental-updates-with-many-collections"></a>Non usare gli aggiornamenti incrementali con un numero di raccolte elevato
 
--   Il numero totale di raccolte  
+Quando si abilita l'opzione **Utilizza aggiornamenti incrementali per questa raccolta** , questa configurazione potrebbe provocare ritardi di valutazione se l'opzione viene abilitata per più raccolte. La soglia è pari a circa 200 raccolte nella gerarchia. Il numero esatto dipende dai fattori seguenti:  
 
--   La frequenza di aggiunta e modifica delle nuove risorse nella gerarchia  
+- Il numero totale di raccolte  
 
--   Il numero di client nella gerarchia  
+- La frequenza di aggiunta e modifica delle nuove risorse nella gerarchia  
 
--   La complessità delle regole di appartenenza alla raccolta nella gerarchia  
+- Il numero di client nella gerarchia  
 
-## <a name="make-sure-that-maintenance-windows-are-large-enough-to-deploy-critical-software-updates"></a>Assicurarsi che le dimensioni delle finestre di manutenzione siano sufficienti per la distribuzione degli aggiornamenti software critici  
- È possibile configurare le finestre di manutenzione per le raccolte di dispositivi al fine di limitare il numero di possibili installazioni del software da parte di Configuration Manager su questi dispositivi. Se si configurano dimensioni insufficienti della finestra di manutenzione, il client potrebbe non essere in grado di installare aggiornamenti software critici, rendendo il client vulnerabile ad attacchi altrimenti limitati dall'aggiornamento software.  
+- La complessità delle regole di appartenenza alla raccolta nella gerarchia  
+
+## <a name="maintenance-window-size-for-software-updates"></a>Dimensioni della finestra di manutenzione degli aggiornamenti software
+
+È possibile configurare le finestre di manutenzione per le raccolte di dispositivi al fine di limitare il numero di possibili installazioni del software da parte di Configuration Manager su questi dispositivi. Se si configurano dimensioni insufficienti della finestra di manutenzione, il client potrebbe non essere in grado di installare aggiornamenti software critici, rendendo il client vulnerabile ad attacchi altrimenti limitati dall'aggiornamento software. 
+ 
+ > [!Tip] 
+ > Durante la pianificazione delle finestre di manutenzione tenere presenti le seguenti considerazioni importanti:
+ > - Il tempo di esecuzione massimo per l'aggiornamento software predefinito è di 60 minuti.
+ > - Quando Configuration Manager calcola se è possibile installare un aggiornamento, aggiunge cinque minuti al tempo di esecuzione massimo per un riavvio.
+ > - La durata rimanente di una finestra di manutenzione deve essere superiore al tempo di esecuzione massimo dell'aggiornamento software a cui vanno aggiunti cinque minuti.
+ 

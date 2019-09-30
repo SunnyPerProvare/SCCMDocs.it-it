@@ -2,7 +2,7 @@
 title: Risoluzione dei problemi di CMPivot
 titleSuffix: Configuration Manager
 description: Informazioni su come risolvere i problemi di CMPivot in Configuration Manager.
-ms.date: 04/04/2019
+ms.date: 09/19/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,26 +11,124 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a8c3147b4ba7df547b07947ee47d4084591f52f
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.openlocfilehash: 09c748e563ea6410b7f2ebc842c77707cf29494a
+ms.sourcegitcommit: 013596de802ac0eb416118169ad049733b5a63e5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70892156"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198232"
 ---
 # <a name="troubleshooting-cmpivot"></a>Risoluzione dei problemi di CMPivot
 
-CMPivot è un'utilità inclusa nella console che ora consente l'accesso allo stato in tempo reale dei dispositivi nell'ambiente in uso. Esegue immediatamente una query su tutti i dispositivi connessi nella raccolta di destinazione e restituisce i risultati. Potrebbe essere talvolta necessario risolvere i problemi di CMPivot. Ad esempio, un client ha inviato un messaggio di stato per CMPivot, ma il server del sito non lo ha elaborato perché è danneggiato. Questo articolo aiuta a comprendere il flusso di informazioni per CMPivot.
+CMPivot è un'utilità che consente l'accesso allo stato in tempo reale dei dispositivi nell'ambiente in uso. Esegue immediatamente una query su tutti i dispositivi connessi nella raccolta di destinazione e restituisce i risultati. Potrebbe essere talvolta necessario risolvere i problemi di CMPivot. Ad esempio, un client ha inviato un messaggio di stato per CMPivot, ma il server del sito non lo ha elaborato perché è danneggiato. Questo articolo aiuta a comprendere il flusso di informazioni per CMPivot.
 
-## <a name="get-information-from-the-site-server"></a>Ottenere informazioni dal server del sito
+## <a name="bkmk_CMPivot-1902"></a> Risoluzione dei problemi relativi a CMPivot nella versione 1902 e successive
+
+A partire dalla versione 1902 di Configuration Manager è possibile eseguire CMPivot dal sito di amministrazione centrale in una gerarchia. Il sito primario gestisce ancora la comunicazione con il client. Quando CMPivot viene eseguito dal sito di amministrazione centrale, comunica con il sito primario tramite il canale di sottoscrizione dei messaggi ad alta velocità. Questa comunicazione non si basa sulla replica SQL standard tra siti. Se SQL Server o il provider è remoto oppure si usa SQL Always On, sarà presente uno scenario a doppio hop per CMPivot. Per informazioni su come definire la delega vincolata per uno scenario a doppio hop, vedere [CMPivot a partire dalla versione 1902](/sccm/core/servers/manage/cmpivot#bkmk_cmpivot1902).
+
+>[!IMPORTANT]
+> Per la risoluzione dei problemi relativi a CMPivot, abilitare la registrazione dettagliata in MP e in SMS_MESSAGE_PROCESSING_ENGINE del server del sito per altre informazioni. Se l'output del client è maggiore di 80 KB, abilitare la registrazione dettagliata in MP e nel componente SMS_STATE_SYSTEM del server del sito. Per informazioni sull'abilitazione della registrazione dettagliata, vedere [Opzioni di registrazione del server del sito](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_reg-site).
+
+### <a name="get-information-from-the-site-server"></a>Ottenere informazioni dal server del sito
+
+Per impostazione predefinita, i file di log del server del sito si trovano in C:\Programmi\Microsoft Configuration Manager\logs. Questo percorso può essere diverso a seconda di quanto è stato specificato per la directory di installazione oppure se alcuni elementi, ad esempio il provider SMS, sono stati scaricati in un altro server. Se si esegue CMPivot da CAS, i log sono disponibili nel server del sito primario.
+
+Verificare **smsprov.log** per le righe seguenti:
+
+- Configuration Manager versione 1906:
+  <pre><code lang="Log">Auditing: User &ltusername> initiated client operation 145 to collection &ltCollectionId>. </code></pre>
+
+- Configuration Manager versione 1902:
+  <pre><code lang="Log">Type parameter is 135.
+  Auditing: User &ltusername> ran script 7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14 with hash dc6c2ad05f1bfda88d880c54121c8b5cea6a394282425a88dd4d8714547dc4a2 on collection &ltCollectionId>. </code></pre>
+
+
+
+**7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14** è il GUID dello script per CMPivot. È anche possibile visualizzare questo GUID nei [Messaggi di stato di controllo di CMPivot](/sccm/core/servers/manage/cmpivot#cmpivot-audit-status-messages).
+
+Individuare quindi l'ID nella finestra di CMPivot. L'ID è **ClientOperationID**.
+
+![Finestra di CMPivot con ClientOperationID evidenziato](media/cmpivot-client-operationid-1902.png)
+
+Trovare il valore **TaskID** nella tabella ClientAction. **TaskID** corrisponde al valore **UniqueID** nella tabella ClientAction.
+
+``` SQL
+select * from ClientAction where ClientOperationId=<id>
+```
+
+In **BgbServer.log** cercare il valore **TaskID** raccolto da SQL e prendere nota del valore **PushID**. In Bgbserver.log il valore **TaskID** sarà denominato **TaskGUID**. Ad esempio:
+
+<pre><code lang="Log">Starting to send push task (<b>PushID: 9</b> TaskID: 12 <b>TaskGUID: 9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0</b> TaskType: 15 TaskParam: PFNjcmlwdENvbnRlbnQgU2NyaXB0R3VpZD0nN0RDNkI2RjEtRTdGNi00M0MxL (truncated log entry)
+Finished sending push task (<b>PushID: 9</b> TaskID: 12) to 2 clients
+</code></pre>
+
+### <a name="client-logs"></a>Log del client
+
+Dopo aver raccolto le informazioni dal server del sito, controllare i log del client. Per impostazione predefinita, i log del client si trovano in C:\Windows\CCM\Logs.
+
+Controllare **CcmNotificationAgent.log**. Le voci del log saranno simili alle righe seguenti:  
+
+<pre><code lang="Log">Receive task from server with <b>pushid=9</b>, taskid=12, <b>taskguid=9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0</b>, tasktype=15 and taskParam=PFNjcmlwdEhhc2ggU2NyaXB0SGF (truncated log entry)
+Send Task response message &ltBgbResponseMessage TimeStamp="2019-09-13T17:29:09Z"><b>&ltPushID>5</b>&lt/PushID>&ltTaskID>4&lt/TaskID>&ltReturnCode>1&lt/ReturnCode>&lt/BgbResponseMessage> successfuly.
+ </code></pre>
+
+Controllare **Scripts.log** per trovare **TaskID**. Nell'esempio seguente viene visualizzato **Task ID {9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}** :
+
+<pre><code lang="Log">Sending script state message (fast): <b>{9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}</b>
+Result are sent for ScriptGuid: 7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14 and <b>TaskID: {9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}</b>
+</code></pre>
+
+> [!NOTE]
+> Se non viene visualizzato "(fast)" in **Scripts.log**, i dati probabilmente superano gli 80 KB. In questo caso, le informazioni vengono inviate al server del sito come messaggio di stato. Usare **StateMessage.log** del client e **Statesys.log** del server del sito.
+
+### <a name="review-messages-on-the-site-server"></a>Rivedere i messaggi nel server del sito
+
+Quando è abilitata la [registrazione dettagliata](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_reg-client) nel punto di gestione, è possibile visualizzare come vengono gestiti i messaggi client in ingresso. In **MP_RelayMsgMgr.log** cercare il valore **TaskID**.
+
+Il file **MP_RelayMsgMgr.log** di esempio visualizza l'ID client (GUID:83F67728-2E6D-4E4F-8075-ED035C31B783) e il valore **Task ID {9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}** . Un ID messaggio viene assegnato alla risposta del client prima che venga inviata al motore di elaborazione dei messaggi:
+
+<pre><code lang="Log">MessageKey: GUID:83F67728-2E6D-4E4F-8075-ED035C31B783<b>{9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}</b>
+Create message succeeded for <b>message id 22f00adf-181e-4bad-b35e-d18912f39f89</b>
+Add message payload succeeded for message id 22f00adf-181e-4bad-b35e-d18912f39f89
+Put message succeeded for message id 22f00adf-181e-4bad-b35e-d18912f39f89
+CRelayMsgMgrHandler::HandleMessage(): ExecuteTask() succeeded
+</code></pre>
+
+Quando è abilitata la [registrazione dettagliata](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_logoptions) in **SMS_MESSAGE_PROCESSING_ENGINE.log**, vengono visualizzati i risultati del client elaborati. Usare l'ID messaggio trovato in **MP_RelayMsgMgr.log**. Le voci del log in elaborazione sono simili alle voci di esempio seguenti:
+
+<pre><code lang="Log">Processing 2 messages with type Instant and IDs <b>22f00adf-181e-4bad-b35e-d18912f39f89[19]</b>, 434d80ae-09d4-4d84-aebf-28a4a29a9852[20]...
+Processed 2 messages with type Instant. Failed to process 0 messages. All message IDs <b>22f00adf-181e-4bad-b35e-d18912f39f89[19]</b>, 434d80ae-09d4-4d84-aebf-28a4a29a9852[20]
+</code></pre>
+
+  - Se si verifica un'eccezione durante l'elaborazione, è possibile esaminarla eseguendo la query SQL seguente ed esaminando la colonna Eccezione. Una volta elaborato, il messaggio non sarà più disponibile nella tabella MPE_RequestMessages_Instant.
+
+    ```SQL
+    select * from MPE_RequestMessages_Instant where MessageID=<ID from SMS_MESSAGE_PROCESSING_ENGINE.log>
+    ```
+
+In **BgbServer.log** cercare il valore **PushID** per visualizzare il numero di client segnalati o non riusciti.
+
+<pre><code lang="Log">Generated BGB task status report c:\ConfigMgr\inboxes\bgb.box\Bgb5c1db.BTS at 09/16/2019 16:46:39. (<b>PushID: 9</b> ReportedClients: 2 FailedClients: 0)
+</code></pre>
+
+Controllare la vista di monitoraggio per CMPivot da SQL usando **TaskID**.
+
+``` SQL
+select * from vSMS_CMPivotStatus where TaskID='{9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}'
+```
+
+![Query SQL di CMPivot per la risoluzione dei problemi nella versione 1902](media/cmpivot-sql-queries-1902.png)
+
+## <a name="bkmk_CMPivot-1810"></a> Risoluzione dei problemi di CMPivot nella versione 1810 e nelle versioni precedenti
+
+### <a name="get-information-from-the-site-server"></a>Ottenere informazioni dal server del sito
 
 Per impostazione predefinita, i file di log del server del sito si trovano in C:\Programmi\Microsoft Configuration Manager\logs. Questo percorso può essere diverso a seconda di quanto è stato specificato per la directory di installazione oppure se alcuni elementi, ad esempio il provider SMS, sono stati scaricati in un altro server.
 
 Verificare **smsprov.log** per questa riga:
 
-``` Log
-Auditing: User <username> initiated client operation 135 to collection <CollectionId>.
-```
+<pre><code lang="Log">Auditing: User <username> initiated client operation 135 to collection &ltCollectionId>.
+</code></pre>
 
 Trovare l'ID nella finestra di CMPivot. L'ID è **ClientOperationID**.
 
@@ -42,27 +140,30 @@ Trovare il valore **TaskID** nella tabella ClientAction. **TaskID** corrisponde 
 select * from ClientAction where ClientOperationId=<id>
 ```
 
-In **Bgbserver** cercare il valore**TaskID** raccolto da SQL. In Bgbserver.log sarà denominato **TaskGUID**. Ad esempio: 
+In **Bgbserver** cercare il valore**TaskID** raccolto da SQL. In Bgbserver.log sarà denominato **TaskGUID**. Ad esempio:
 
+<pre><code lang="Log">Starting to send push task (PushID: 260 TaskID: 258 TaskGUID: <b>F8C7C37F-B42B-4C0A-B050-2BB44DF1098A</b> TaskType: 15
+TaskParam: PFNjcmlwdEhhc2ggU2NyaXB0SGF...truncated...to 5 clients with throttling (strategy: 1 param: 42)
+Finished sending push task (PushID: 260 TaskID: 258) to 5 clients
+</code></pre>
 
-- Iniziare l'invio di un'attività di push (PushID: 260 TaskID: 258 TaskGUID: **F8C7C37F-B42B-4C0A-B050-2BB44DF1098A** TaskType: 15 TaskParam:   PFNjcmlwdEhhc2ggU2NyaXB0SGFzaEFsZz0nU0hBMjU2Jz42YzZmNDY0OGYzZjU3M2MyNTQyNWZiNT   g2ZDVjYTIwNzRjNmViZmQ1NTg5MDZlMWI5NDRmYTEzNmFiMDE0ZGNjPC9TY3JpcHRIYXNoPjxTY3Jp   cHRQYXJhbWV0ZXJzPjxTY3JpcHRQYXJhbWV0ZXIgUGFyYW1ldGVyR3JvdXBHdWlkPSIiIFBhcmFtZX   Rlckdyb3VwTmFtZT0iUEdfIiBQYXJhbWV0ZXJOYW1lPSJzZWxlY3QiIFBhcmFtZXRlckRhdGFUeXBlP   SJTeXN0ZW0uU3RyaW5nIiBQYXJhbWV0ZXJWaXNpYmlsaXR5PSIwIiBQYXJhbWV0ZXJUeXBlPSIwIiBQ   YXJhbWV0ZXJWYWx1ZT0iRGV2aWNlI2tEZXZpY2UjY05hbWUja1N0cmluZyNjTWFudWZhY3R1cmVyI2tTd   HJpbmcjY1ZlcnNpb24ja1N0cmluZyNjUmVsZWFzZURhdGUja1N0cmluZyNjU2VyaWFsTnVtYmVyI2tTdH   JpbmcjY0J1aWxkTnVtYmVyI2tTdHJpbmcjY1NNQklPU0JJT1NWZXJzaW9uI2tTdHJpbmciLz48U2NyaXB0   UGFyYW1ldGVyIFBhcmFtZXRlckdyb3VwR3VpZD0iIiBQYXJhbWV0ZXJHcm91cE5hbWU9IlBHXyIgUGFyYW   1ldGVyTmFtZT0id21pcXVlcnkiIFBhcmFtZXRlckRhdGFUeXBlPSJTeXN0ZW0uU3RyaW5nIiBQYXJhbWV0ZX   JWaXNpYmlsaXR5PSIwIiBQYXJhbWV0ZXJUeXBlPSIwIiBQYXJhbWV0ZXJWYWx1ZT0iU0VMRUNUI3NOYW1lI2N   NYW51ZmFjdHVyZXIjY1ZlcnNpb24jY1JlbGVhc2VEYXRlI2NTZXJpYWxOdW1iZXIjY0J1aWxkTnVtYmVyI2   NTTUJJT1NCSU9TVmVyc2lvbiNzRlJPTSNzV2luMzJfQmlvcyIvPjwvU2NyaXB0UGFyYW1ldGVycz48UGFyYW   1ldGVyR3JvdXBIYXNoIFBhcmFtZXRlckhhc2hBbGc9J1NIQTI1NicOTE5NmEwNzNlOTljY2U4MzEyMWE3ZmFi   ODE5N2M4M2QxMjhjNDRmNTdlMWI0NGU1NWQwNmU4YTA5NGI5ZGRkNTwvUGFyYW1ldGVyR3JvdXBIYXNoPjwvU   2NyaXB0Q29udGVudD4=-) a 5 client con limitazione della larghezza di banda della rete (strategia: 1 param: 42) Terminato l'invio dell'attività di push (PushID: 260 TaskID: 258) a 5 client
-
-## <a name="client-logs"></a>Log del client
+### <a name="client-logs"></a>Log del client
 
 Dopo aver raccolto le informazioni dal server del sito, controllare i log del client. Per impostazione predefinita, i log del client si trovano in C:\Windows\CCM\Logs.
 
 Controllare **CcmNotificationAgent.log**. I log saranno simili al seguente:  
 
-- **Errore. Il segnalibro non è definito.** +PFNjcmlwdEhhc2ggU2NyaXB0SGFzaEFsZz0nU0hBMjU2Jz42YzZmNDY0OGYzZjU3M2MyNTQyNWZiNT   g2ZDVjYTIwNzRjNmViZmQ1NTg5MDZlMWI5NDRmYTEzNmFiMDE0ZGNjPC9TY3JpcHRIYXNoPjxTY3Jp   cHRQYXJhbWV0ZXJzPjxTY3JpcHRQYXJhbWV0ZXIgUGFyYW1ldGVyR3JvdXBHdWlkPSIiIFBhcmFtZX   Rlckdyb3VwTmFtZT0iUEdfIiBQYXJhbWV0ZXJOYW1lPSJzZWxlY3QiIFBhcmFtZXRlckRhdGFUeXBlP   SJTeXN0ZW0uU3RyaW5nIiBQYXJhbWV0ZXJWaXNpYmlsaXR5PSIwIiBQYXJhbWV0ZXJUeXBlPSIwIiBQ   YXJhbWV0ZXJWYWx1ZT0iRGV2aWNlI2tEZXZpY2UjY05hbWUja1N0cmluZyNjTWFudWZhY3R1cmVyI2tTd   HJpbmcjY1ZlcnNpb24ja1N0cmluZyNjUmVsZWFzZURhdGUja1N0cmluZyNjU2VyaWFsTnVtYmVyI2tTdH   JpbmcjY0J1aWxkTnVtYmVyI2tTdHJpbmcjY1NNQklPU0JJT1NWZXJzaW9uI2tTdHJpbmciLz48U2NyaXB0   UGFyYW1ldGVyIFBhcmFtZXRlckdyb3VwR3VpZD0iIiBQYXJhbWV0ZXJHcm91cE5hbWU9IlBHXyIgUGFyYW   1ldGVyTmFtZT0id21pcXVlcnkiIFBhcmFtZXRlckRhdGFUeXBlPSJTeXN0ZW0uU3RyaW5nIiBQYXJhbWV0ZX   JWaXNpYmlsaXR5PSIwIiBQYXJhbWV0ZXJUeXBlPSIwIiBQYXJhbWV0ZXJWYWx1ZT0iU0VMRUNUI3NOYW1lI2N   NYW51ZmFjdHVyZXIjY1ZlcnNpb24jY1JlbGVhc2VEYXRlI2NTZXJpYWxOdW1iZXIjY0J1aWxkTnVtYmVyI2   NTTUJJT1NCSU9TVmVyc2lvbiNzRlJPTSNzV2luMzJfQmlvcyIvPjwvU2NyaXB0UGFyYW1ldGVycz48UGFyYW   1ldGVyR3JvdXBIYXNoIFBhcmFtZXRlckhhc2hBbGc9J1NIQTI1NicOTE5NmEwNzNlOTljY2U4MzEyMWE3ZmFi   ODE5N2M4M2QxMjhjNDRmNTdlMWI0NGU1NWQwNmU4YTA5NGI5ZGRkNTwvUGFyYW1ldGVyR3JvdXBIYXNoPjwvU   2NyaXB0Q29udGVudD4=-
+<pre><code lang="Log"><b>Error! Bookmark not defined.</b>+PFNjcmlwdEhhc2ggU2NyaXB0SGFzaEFsZz0nU0hBMjU2Jz42YzZmNDY0OGYzZjU3M2MyNTQyNWZiNT
+g2ZDVjYTIwNzRjNmViZmQ1NTg5MDZlMWI5NDRmYTEzNmFiMDE0ZGNjPC9TY3JpcHRIYXNoPjxTY3Jp (truncated log entry)
+</code></pre>
 
 Controllare **Scripts.log** per trovare **TaskID**. Nell'esempio seguente viene visualizzato **Task ID {F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}** :
 
-``` Log
-Sending script state message: 7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14 Scripts 7/3/2018 11:44:47 AM 5036 (0x13AC)
-State message: Task Id {F8C7C37F-B42B-4C0A-B050-2BB44DF1098A} Scripts 7/3/2018 11:44:47 AM 5036 (0x13AC)
-```
+<pre><code lang="Log">Sending script state message: 7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14
+State message: Task Id <b>{F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}</b>
+</code></pre>
 
-Controllare **StateMessage.log**. In questo esempio **TaskID** è quasi alla fine del messaggio, accanto a &lt;Param>. Verranno visualizzate righe simile a quelle riportate di seguito:
+Controllare **StateMessage.log**. In questo esempio **TaskID** è quasi alla fine del messaggio, accanto a \<Param>. Verranno visualizzate righe simile a quelle riportate di seguito:
 
 ``` XML
 StateMessage body: <?xml version="1.0" encoding="UTF-16"?>
@@ -75,16 +176,13 @@ StateMessage body: <?xml version="1.0" encoding="UTF-16"?>
 </ReportDetails></ReportHeader><ReportBody><StateMessage MessageTime="20180703184447.517000+000"><Topic ID="7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14" Type="9003" IDType="0" User="" UserSID=""/><State ID="1" Criticality="0"/>
 <StateDetails Type="1"><![CDATA["PAA/AHgAbQBsACAAdgBlAHIAcwBpAG8AbgA9ACIAMQAuADAAIgAgAGUAbgBjAG8AZABpAG4AZwA9ACIAdQB0AGYALQAxADYAIgA/AD4APAByAGUAcwB1AGwAdAAgAFIAZQBzAHUAbAB0AEMAbwBkAGUAPQAiADAAIgA+ADwAZQAgAE4AYQBtAGUAPQAiAEkAbgB0AGUAbAAoAFIAKQAgAFgAZQBvAG4AKABSACkAIABDAFAAVQAgAEUANQAtADIANgA3ADMAIAB2ADQAIABAACAAMgAuADMAMABHAEgAegAiACAATQBhAG4AdQBmAGEAYwB0AHUAcgBlAHIAPQAiAEEAbQBlAHIAaQBjAGEAbgAgAE0AZQBnAGEAdAByAGUAbgBkAHMAIABJAG4AYwAuACIAIABWAGUAcgBzAGkAbwBuAD0AIgBWAFIAVABVAEEATAAgAC0AIAA2ADAAMAAxADcAMAAyACIAIABSAGUAbABlAGEAcwBlAEQAYQB0AGUAPQAiADIAMAAxADcALQAwADYALQAwADIAIAAwADAAOgAwADAAOgAwADAAIgAgAFMAZQByAGkAYQBsAE4AdQBtAGIAZQByAD0AIgAwADAAMAAwAC0AMAAwADEAOAAtADMANgA4ADIALQA0ADcAMAA4AC0ANwA2ADQAMAAtADcANgAwADAALQAzADMAIgAgAFMATQBCAEkATwBTAEIASQBPAFMAVgBlAHIAcwBpAG8AbgA9ACIAMAA5ADAAMAAwADcAIAAiACAALwA+ADwALwByAGUAcwB1AGwAdAA+AA=="~~]]></StateDetails><UserParameters Flags="0" Count="2">
 <Param>{F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}</Param><Param>0</Param></UserParameters></StateMessage></ReportBody></Report>
-StateMessage 7/3/2018 11:44:47 AM 5036 (0x13AC)
+
 Successfully forwarded State Messages to the MP StateMessage 7/3/2018 11:44:47 AM 5036 (0x13AC)
 ```
 
-> [!NOTE]
-> La voce di log precedente in StateSys.log è visibile solo quando la registrazione dettagliata è abilitata per il componente SMS_STATE_SYSTEM. Questa operazione può essere eseguita modificando questa chiave del Registro di sistema: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\COMPONENTS\SMS_STATE_SYSTEM\Verbose logging = 1 (l'impostazione predefinita è 0)
+### <a name="review-messages-on-the-site-server"></a>Rivedere i messaggi nel server del sito
 
-## <a name="review-messages-on-the-site-server"></a>Rivedere i messaggi nel server del sito
-
-Aprire **statesys.log** per visualizzare se il messaggio è stato ricevuto ed elaborato. In questo esempio **TaskID** è quasi alla fine del messaggio, accanto a &lt;Param>.
+Aprire **statesys.log** per visualizzare se il messaggio è stato ricevuto ed elaborato. In questo esempio **TaskID** è quasi alla fine del messaggio, accanto a \<Param>. Per visualizzare queste voci di log, è necessario abilitare la [registrazione dettagliata](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_logoptions) nel componente SMS_STATE_SYSTEM.  
 
 ``` XML
 CMessageProcessor - the cmdline to DB exec dbo.spProcessStateReport N'?<?xml version="1.0" encoding="UTF-
@@ -110,6 +208,13 @@ Controllare la vista di monitoraggio per CMPivot da SQL usando **TaskID**.
 ``` SQL
 select * from vSMS_CMPivotStatus where TaskID='{F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}'
 ```
+
+>[!NOTE]
+>Per i client che usano la versione 1810 o una versione successiva, la messaggistica di stato non viene usata, a meno che l'output non sia superiore a 80 KB. Per la risoluzione dei problemi relativi a CMPivot in questi casi, abilitare la registrazione dettagliata in MP e in SMS_MESSAGE_PROCESSING_ENGINE del server del sito per altre informazioni. Per informazioni sull'abilitazione della registrazione dettagliata, vedere [Opzioni di registrazione del server del sito](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_reg-site).
+> 
+> Usare i log seguenti per la risoluzione dei problemi:
+> - MP_Relay.log
+> - SMS_MESSAGE_PROCESSING_ENGINE.log
 
 ## <a name="next-steps"></a>Passaggi successivi
 

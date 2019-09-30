@@ -2,7 +2,7 @@
 title: Supporto per Windows 10
 titleSuffix: Configuration Manager
 description: Informazioni sulle versioni di Windows 10 supportate come client o per la distribuzione del sistema operativo con Configuration Manager
-ms.date: 08/09/2019
+ms.date: 09/25/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3ec5f9b9bbda3b3bec6fdd1d955b8911f8029b5
-ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
+ms.openlocfilehash: cf8c57a6322c36e0bfe28f76fafb6f3e58640397
+ms.sourcegitcommit: 670cfed1e47a7a4a73aa4ccb873c6312be3c21ff
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70738505"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71311635"
 ---
 # <a name="support-for-windows-10-in-configuration-manager"></a>Supporto per Windows 10 in Configuration Manager  
 
@@ -47,6 +47,7 @@ Una versione di Configuration Manager viene eliminata dalla matrice dopo che ter
 - Le informazioni seguenti sono a complemento dell'articolo [Sistemi operativi supportati per client e dispositivi](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices).  
 
 - Se si usa Long-Term Servicing Branch di Configuration Manager, vedere [Configurazioni supportate per Long-Term Servicing Branch](/sccm/core/understand/supported-configurations-for-ltsb).  
+
 
 <br/>
 La tabella seguente elenca le versioni di Windows 10 che è possibile usare come client con versioni diverse di Configuration Manager.
@@ -79,6 +80,11 @@ Per altre informazioni sul ciclo di vita di Windows, vedere [Date importanti nel
 > [!NOTE]  
 > Configuration Manager supporta il client nei dispositivi ARM64 Windows 10. Le funzionalità di gestione client esistenti dovrebbero funzionare con questi nuovi dispositivi, ad esempio l'inventario hardware e software, gli aggiornamenti del software e la gestione delle applicazioni. La distribuzione del sistema operativo non è attualmente supportata. <!-- 1353704 -->
 
+### <a name="bkmk_WIfB-support"></a> Supporto per Windows Insider 
+
+A partire da Configuration Manager versione 1906, è possibile [aggiornare e gestire le build di Windows Insider](/sccm/sum/get-started/configure-classifications-and-products#bkmk_WIfB). Questa funzionalità viene fornita per comodità ai clienti. In caso di problemi, è disponibile il supporto per questa funzionalità. Configuration Manager potrebbe non emettere un hotfix per questa funzionalità in caso di interruzione del funzionamento.  
+- Per altre informazioni sul supporto per le build in anteprima di Windows Insider, vedere [Come ottenere supporto](https://insider.windows.com/en-us/how-to-overview/#how-to-get-support). <!--the direct page/anchor doesn't work without a locale :(-->
+- Per inviare commenti e suggerimenti su Windows Insider, usare l'[hub di commenti e suggerimenti](https://insider.windows.com/en-us/how-to-feedback/). <!--the direct page link doesn't work without a locale :(-->
 
 ## <a name="windows-10-adk"></a>Windows 10 ADK
 
