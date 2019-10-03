@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 21dc3376212505b15078daddbe9dfb0716486c64
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: 006580a7ae4965ab4662ae02bee13ed9796697f8
+ms.sourcegitcommit: b9cc8e723c5d8c3be44edad24ad29d75c0cdd2b0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70379019"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71826253"
 ---
 # <a name="past-hybrid-features-with-system-center-configuration-manager-and-microsoft-intune"></a>Funzionalità ibride precedenti con System Center Configuration Manager e Microsoft Intune
 
@@ -125,7 +125,7 @@ Nella versione 1702 di Configuration Manager (Current Branch) sono disponibili a
     |-|-|-|-|
     |Precedente la 1702|Yes|Utente|Licenza utente|
     |Precedente la 1702|No|Utente|Licenza utente|
-    |Precedente la 1702|Sì|Dispositivo|Licenza utente|
+    |Precedente la 1702|Yes|Dispositivo|Licenza utente|
     |Precedente la 1702|No|Dispositivo|Licenza utente|
     |1702 e versioni successive|Yes|Utente|Licenza utente|
     |1702 e versioni successive|No|Utente|Licenza utente|
@@ -377,7 +377,7 @@ Le seguenti nuove funzionalità introdotte in settembre 2016 sono disponibili pe
 
   Se si usano profili o elementi di configurazione destinati a tutte le piattaforme iOS, verranno inseriti in iOS 10. È stato anche rilasciato un aggiornamento di Configuration Manager versione 1606 che consente di destinare i profili e gli elementi di configurazione a singole piattaforme iOS tra cui iOS 10. È possibile installare l'aggiornamento con la console di amministrazione di Configuration Manager da **Amministrazione > Panoramica > Servizi cloud > Aggiornamenti e manutenzione**. Altre informazioni sull'aggiornamento sono disponibili all'indirizzo [https://support.microsoft.com/kb/3192616](https://support.microsoft.com/kb/3192616).
 
-## <a name="august-2016"></a>Agosto 2016
+## <a name="august-2016"></a>Agosto 2016
 
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
 
@@ -537,7 +537,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune  
  Le seguenti funzionalità di Intune introdotte in maggio 2016 funzionano nelle distribuzioni ibride.
 
-- **MAM SDK: Supportare la configurazione della lunghezza del PIN**
+- SDK **MAM: Supporto della configurazione della lunghezza del PIN @ no__t-0
 
   È ora possibile specificare la lunghezza del PIN per le app MAM in modo simile al PIN di un dispositivo. Per eseguire questa operazione gli utenti finali devono rispettare i nuovi limiti impostati. La schermata del PIN è stata leggermente modificata per consentire un input più lungo. Per informazioni dettagliate, vedere le [ impostazioni dei criteri MAM per Android](https://docs.microsoft.com/intune/deploy-use/android-mam-policy-settings) e le [impostazioni dei criteri MAM per iOS](https://docs.microsoft.com/intune/deploy-use/ios-mam-policy-settings).  
 
@@ -547,13 +547,13 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **Nuove app disponibili per la gestione con i criteri MAM**
 
-  Le app Microsoft Word, Excel e PowerPoint per Android ora possono essere associate a criteri MAM sui dispositivi non registrati per Intune. Per un elenco completo delle app supportate, vedere la raccolta di applicazioni per dispositivi mobili di Microsoft Intune nella pagina dei [partner di applicazioni di Microsoft Intune](https://www.microsoft.com/server-cloud/products/microsoft-intune/partners.aspx).  
+  Le app Microsoft Word, Excel e PowerPoint per Android ora possono essere associate a criteri MAM sui dispositivi non registrati per Intune. Per un elenco completo delle app supportate, vedere la raccolta di applicazioni per dispositivi mobili di Microsoft Intune nella pagina dei [partner di applicazioni di Microsoft Intune](https://www.microsoft.com/en-us/server-cloud/products/microsoft-intune/partners.aspx).  
 
-- **App del portale aziendale Android: Notifiche di tipo avviso popup utente finale**
+- app portale aziendale **Android: Notifiche di tipo avviso popup utente finale @ no__t-0
 
   Le notifiche di tipo avviso popup provenienti dall'app Portale aziendale per Android vengono visualizzate quando gli utenti finali registrano o rimuovono i propri dispositivi dal portale aziendale.  
 
-- **Sito Web Portale aziendale: Il banner di identificazione del dispositivo fornirà ulteriori informazioni agli utenti finali**
+- sito Web del portale di @no__t 0Company: Il banner di identificazione del dispositivo fornirà ulteriori informazioni agli utenti finali @ no__t-0
 
   Gli utenti finali ora possono identificare più facilmente il dispositivo selezionato quando usano il sito Web del portale aziendale. Se è selezionato il dispositivo errato, è possibile selezionare il dispositivo corretto toccando il collegamento **Tocca qui** nel banner della pagina iniziale.  
 
