@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2edf117f27eda3ee3c9e587edb9f69c8d84bf5dc
-ms.sourcegitcommit: 670cfed1e47a7a4a73aa4ccb873c6312be3c21ff
+ms.openlocfilehash: 7127229ceef948f4e88365255737fbe3844aa428
+ms.sourcegitcommit: b9cc8e723c5d8c3be44edad24ad29d75c0cdd2b0
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71311596"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71826193"
 ---
 # <a name="configure-classifications-and-products-to-synchronize"></a>configurare le classificazioni e i prodotti per la sincronizzazione  
 
@@ -77,14 +77,13 @@ I metadati degli aggiornamenti software vengono recuperati durante il processo d
 <!--3556023-->
 A partire da settembre 2019, è possibile aggiornare i dispositivi che eseguono le build di Windows Insider Preview con Configuration Manager. Questa modifica significa che è possibile gestire questi dispositivi senza modificare i normali processi o abilitare Windows Update for business. È possibile scaricare gli aggiornamenti delle funzionalità e gli aggiornamenti cumulativi per le compilazioni di Windows Insider Preview in Configuration Manager esattamente come qualsiasi altro aggiornamento o aggiornamento di Windows 10. Per ulteriori informazioni, vedere il post di Blog sulla [pubblicazione di aggiornamenti delle funzionalità di Windows 10 in WSUS](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Publishing-pre-release-Windows-10-feature-updates-to-WSUS/ba-p/845054) .
 
-Per ulteriori informazioni sul supporto di Windows insider in Configuration Manager, vedere [supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10bkmk_WIfB-support).
+Per ulteriori informazioni sul supporto di Windows insider in Configuration Manager, vedere [supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10#bkmk_WIfB-support).
 
 ### <a name="prerequisites"></a>Prerequisiti
 
 - Configuration Manager versione 1906 o successiva, configurato per la [gestione degli aggiornamenti software](/sccm/sum/plan-design/plan-for-software-updates).
-- Dispositivi Windows 10 che eseguono [Windows Insider Preview Build](https://insider.windows.com/en-us/how-to-pc/).<!--the direct page link doesn't work without a locale :(-->
+- Dispositivi Windows 10 che eseguono [Windows Insider Preview Build](https://docs.microsoft.com/windows-insider/at-work-pro/wip-4-biz-get-started).
 - Raccolta contenente i dispositivi Windows Insider.
-
 
 ### <a name="enable-windows-insider-upgrades-and-updates"></a>Abilita aggiornamenti e aggiornamenti di Windows Insider
 

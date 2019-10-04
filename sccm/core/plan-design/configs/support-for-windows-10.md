@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf8c57a6322c36e0bfe28f76fafb6f3e58640397
-ms.sourcegitcommit: 670cfed1e47a7a4a73aa4ccb873c6312be3c21ff
+ms.openlocfilehash: 51b234070f92135444e00a8eee672bdc4aa70bf1
+ms.sourcegitcommit: b9cc8e723c5d8c3be44edad24ad29d75c0cdd2b0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71311635"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71826218"
 ---
 # <a name="support-for-windows-10-in-configuration-manager"></a>Supporto per Windows 10 in Configuration Manager  
 
@@ -80,11 +80,11 @@ Per altre informazioni sul ciclo di vita di Windows, vedere [Date importanti nel
 > [!NOTE]  
 > Configuration Manager supporta il client nei dispositivi ARM64 Windows 10. Le funzionalità di gestione client esistenti dovrebbero funzionare con questi nuovi dispositivi, ad esempio l'inventario hardware e software, gli aggiornamenti del software e la gestione delle applicazioni. La distribuzione del sistema operativo non è attualmente supportata. <!-- 1353704 -->
 
-### <a name="bkmk_WIfB-support"></a> Supporto per Windows Insider 
+### <a name="bkmk_WIfB-support"></a> Supporto per Windows Insider
 
 A partire da Configuration Manager versione 1906, è possibile [aggiornare e gestire le build di Windows Insider](/sccm/sum/get-started/configure-classifications-and-products#bkmk_WIfB). Questa funzionalità viene fornita per comodità ai clienti. In caso di problemi, è disponibile il supporto per questa funzionalità. Configuration Manager potrebbe non emettere un hotfix per questa funzionalità in caso di interruzione del funzionamento.  
-- Per altre informazioni sul supporto per le build in anteprima di Windows Insider, vedere [Come ottenere supporto](https://insider.windows.com/en-us/how-to-overview/#how-to-get-support). <!--the direct page/anchor doesn't work without a locale :(-->
-- Per inviare commenti e suggerimenti su Windows Insider, usare l'[hub di commenti e suggerimenti](https://insider.windows.com/en-us/how-to-feedback/). <!--the direct page link doesn't work without a locale :(-->
+
+Per inviare commenti e suggerimenti su Windows Insider, usare l'[hub di commenti e suggerimenti](https://docs.microsoft.com/windows-insider/at-work-pro/wip-4-biz-feedback).
 
 ## <a name="windows-10-adk"></a>Windows 10 ADK
 

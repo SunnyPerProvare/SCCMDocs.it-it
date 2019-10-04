@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f3100e9580566b072bed6c8813018876f720eb3
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: af59b3ea1dfefcf0ae0e4919229b77b633819657
+ms.sourcegitcommit: 160bcdaf783f3946ad5c7869b2566cbfc4da545c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68338810"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401663"
 ---
 # <a name="whats-new-in-version-1902-of-configuration-manager-current-branch"></a>Novità della versione 1902 di Configuration Manager Current Branch
 
@@ -230,11 +230,6 @@ In **Creazione guidata del supporto per sequenza attività**, specificare un per
 #### <a name="add-a-label-to-the-media"></a>Aggiungere un'etichetta al supporto
 
 È ora possibile aggiungere un'etichetta al supporto per la sequenza attività. Questa etichetta consente di identificare più facilmente il supporto creato. In **Creazione guidata del supporto per sequenza attività**, specificare un percorso per **Media label** (Etichetta del supporto).
-
-#### <a name="include-autoruninf-file-on-media"></a>Includi il file autorun.inf file sul supporto
-
-<!-- 4090666 -->
-Quando si crea un supporto per sequenza di attività, Configuration Manager non aggiunge un file autorun.inf. Questo file è generalmente bloccato da prodotti antimalware. È ancora possibile includere il file se necessario per lo scenario.
 
 ### <a name="import-a-single-index-of-an-os-image"></a>Importare un singolo indice di un'immagine del sistema operativo
 

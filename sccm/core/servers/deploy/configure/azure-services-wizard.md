@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30e1804ea1d2e02f5c2d6fbc4b1243c8dccaa775
-ms.sourcegitcommit: ef7800a294e5db5d751921c34f60296c1642fc1f
+ms.openlocfilehash: 5da81e4208e1659ce927b0a55066599d9670ad37
+ms.sourcegitcommit: b9cc8e723c5d8c3be44edad24ad29d75c0cdd2b0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68712626"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71826202"
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurare i servizi di Azure da usare con Configuration Manager
 
@@ -225,7 +225,7 @@ Dopo aver specificato l'app Web e l'app nativa nella pagina App, la procedura gu
 
 - Servizio **Gestione cloud**, pagina **Individuazione**: [Configurare l'individuazione utente di Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc)  
 
-- Servizio **Connettore Log Analytics**, pagina **Configurazione**: [Configurare la connessione a Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics#configure-the-connection-to-log-analytics)  
+- Servizio **Connettore Log Analytics**, pagina **Configurazione**: [Configurare la connessione a Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics#grant-configuration-manager-with-permissions-to-log-analytics)  
 
 - Servizio **Connettore di Preparazione aggiornamenti**, pagina **Configurazione**: [Usare la procedura guidata per Azure per creare la connessione](/sccm/core/clients/manage/upgrade/upgrade-analytics#use-the-azure-wizard-to-create-the-connection)  
 

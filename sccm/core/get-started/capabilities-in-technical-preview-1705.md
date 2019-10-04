@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50a85f9639cb2f284a431081caea10e71f92b9f3
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.openlocfilehash: e61489373c7e5c739485f1a5162f203d883a4835
+ms.sourcegitcommit: b9cc8e723c5d8c3be44edad24ad29d75c0cdd2b0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551134"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71826113"
 ---
 # <a name="capabilities-in-technical-preview-1705-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1705 per System Center Configuration Manager
 
@@ -266,7 +266,7 @@ A partire dalla versione Technical Preview 1705, la **Procedura guidata Servizi 
 -   Configuration Manager si connette a OMS per funzionalità quali [Log Analytics](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) o [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics).
 
 ### <a name="prerequisites-for-the-oms-connector"></a>Prerequisiti per il connettore OMS
-I prerequisiti per configurare una connessione a OMS sono identici a quelli [indicati per la versione Current Branch 1702](/sccm/core/clients/manage/sync-data-log-analytics#prerequisites-for-the-log-analytics-connector). Tali informazioni viene ripetute di seguito:  
+I prerequisiti per configurare una connessione a OMS sono identici a quelli [indicati per la versione Current Branch 1702](/sccm/core/clients/manage/sync-data-log-analytics). Tali informazioni viene ripetute di seguito:  
 
 -   Fornire l'autorizzazione di Configuration Manager a OMS.
 

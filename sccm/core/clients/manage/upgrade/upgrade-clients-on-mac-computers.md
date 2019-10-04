@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b887a82afce8cf446494e7b9348a0b8c0718e389
-ms.sourcegitcommit: cdf2827fb3f44d7522a9b533c115f910aa9c382a
+ms.openlocfilehash: 33a956bf19a1b14a2190467b2148a3ef4b65e908
+ms.sourcegitcommit: b9cc8e723c5d8c3be44edad24ad29d75c0cdd2b0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70902566"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71826130"
 ---
 # <a name="how-to-upgrade-clients-on-mac-computers-in-configuration-manager"></a>Come aggiornare i client nei computer Mac in Configuration Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "70902566"
 Seguire la procedura dettagliata descritta in questo articolo per aggiornare il client per i computer Mac usando un'applicazione di Configuration Manager. È anche possibile scaricare il file di installazione del client Mac, copiarlo in un percorso di rete condiviso o in una cartella locale del computer Mac, quindi fornire agli utenti le istruzioni per eseguire l'installazione manualmente.  
 
 > [!NOTE]  
-> Prima di eseguire questa procedura, assicurarsi che il computer Mac soddisfi i prerequisiti. Vedere [Supported operating systems for Mac computers](/sccm/plan-design/configs/supported-operating-systems-for-clients-and-devices#mac-computers) (Sistemi operativi supportati per computer Mac).  
+> Prima di eseguire questa procedura, assicurarsi che il computer Mac soddisfi i prerequisiti. Vedere [Supported operating systems for Mac computers](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#mac-computers) (Sistemi operativi supportati per computer Mac).  
 
 ## <a name="download-the-latest-mac-client"></a>Scaricare il client Mac più recente
 

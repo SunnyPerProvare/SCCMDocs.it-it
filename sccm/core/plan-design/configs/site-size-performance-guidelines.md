@@ -7,12 +7,12 @@ ms.author: aaroncz
 ms.prod: configuration-manager
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 25d255b986a6ff08842ddab338acc0b3232afc6c
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.openlocfilehash: 91fc86d10eeb0d898866c63207e4d8af3ce06724
+ms.sourcegitcommit: 160bcdaf783f3946ad5c7869b2566cbfc4da545c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70891645"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401683"
 ---
 # <a name="system-center-configuration-manager-site-size-and-performance-guidelines"></a>Linee guida sulle dimensioni e le prestazioni del sito System Center Configuration Manager
 
@@ -69,7 +69,7 @@ Dove possibile, ridurre al minimo le raccolte con query complesse e con regole d
 
 L'abilitazione di aggiornamenti incrementali per le raccolte garantisce aggiornamenti rapidi e tempestivi all'appartenenza alla raccolta. Tuttavia, sebbene risultino efficienti, gli aggiornamenti incrementali comportano comunque un carico sul sistema. Bilanciare la frequenza di modifica prevista con l'esigenza di aggiornamenti quasi in tempo reale all'appartenenza. Ad esempio, si supponga di prevedere una varianza elevata nei membri della raccolta, ma di non avere la necessità di aggiornamenti dell'appartenenza quasi in tempo reale. Un aggiornamento completo pianificato della raccolta con un determinato intervallo risulta più efficiente e produce minor carico sul sistema rispetto all'abilitazione degli aggiornamenti incrementali. 
 
-Quando si abilitano gli aggiornamenti incrementali, ridurre gli aggiornamenti completi pianificati per le stesse raccolte. Gli aggiornamenti completi rappresentano soltanto un metodo di backup di valutazione poiché gli aggiornamenti incrementali mantengono aggiornata l'appartenenza alla raccolta quasi in tempo reale. Sebbene nelle [procedure consigliate per le raccolte](../../clients/manage/collections/best-practices-for-collections.md#do-not-use-incremental-updates-for-a-large-number-of-collections) sia consigliato un numero massimo di raccolte per gli aggiornamenti incrementali, l'esperienza può variare in base a numerosi fattori.
+Quando si abilitano gli aggiornamenti incrementali, ridurre gli aggiornamenti completi pianificati per le stesse raccolte. Gli aggiornamenti completi rappresentano soltanto un metodo di backup di valutazione poiché gli aggiornamenti incrementali mantengono aggiornata l'appartenenza alla raccolta quasi in tempo reale. Sebbene nelle [procedure consigliate per le raccolte](/sccm/core/clients/manage/collections/best-practices-for-collections#bkmk_incremental) sia consigliato un numero massimo di raccolte per gli aggiornamenti incrementali, l'esperienza può variare in base a numerosi fattori.
 
 Le raccolte che includono solo regole di appartenenza diretta e con una raccolta di limitazione che non esegue gli aggiornamenti incrementali non richiedono aggiornamenti completi pianificati. Disabilitare le pianificazioni degli aggiornamenti per questi tipi di raccolte per evitare un carico superfluo sul sistema. Se la raccolta di limitazione usa gli aggiornamenti incrementali, le raccolte che includono solo regole di appartenenza diretta potrebbero non riflettere gli aggiornamenti di appartenenza per un massimo di 24 ore o fino a quando non viene eseguito un aggiornamento pianificato.
 

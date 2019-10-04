@@ -11,12 +11,12 @@ ms.assetid: c5cb5753-5728-4f81-b830-a6fd1a3e105c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 070f7ec6f99a9de89c155e756989fb3b5fa4a594
-ms.sourcegitcommit: 05a984cf94ea43c392701a389c4eb20bd692847c
+ms.openlocfilehash: 55daf45df3216b205dd1242017eb1ddefb128530
+ms.sourcegitcommit: 84a6f31797490eeda73bd4f3656ba27741df3030
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70922728"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71343811"
 ---
 # <a name="delivery-optimization-in-network-cache-in-configuration-manager"></a>Cache in rete di Ottimizzazione recapito in Configuration Manager
 
@@ -31,7 +31,7 @@ Questo server di cache agisce come una cache trasparente su richiesta per il con
 Questa cache è separata dal contenuto del punto di distribuzione di Configuration Manager. Se si sceglie la stessa unità come ruolo del punto di distribuzione, il contenuto viene archiviato separatamente.
 
 > [!Note]  
-> Il server di cache in rete di Ottimizzazione recapito è un'applicazione installata in Windows Server ancora in fase di sviluppo. Nella console di Configuration Manager è contrassegnata da un'etichetta *beta*.  
+> Il server di cache in rete di Ottimizzazione recapito è un'applicazione installata in Windows Server ancora in fase di sviluppo.  
 
 
 ## <a name="how-it-works"></a>Come funziona
