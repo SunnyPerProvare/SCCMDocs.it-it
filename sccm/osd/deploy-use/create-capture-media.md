@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6e1e007387a50146a899bca767aa5d1f2d85a3a
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: bdd6ca5b2ab0c26caf0f558eff39fc8f01bc9d15
+ms.sourcegitcommit: 160bcdaf783f3946ad5c7869b2566cbfc4da545c
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65082754"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401559"
 ---
 # <a name="create-capture-media"></a>Creare supporti di acquisizione
 
@@ -85,7 +85,7 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
         - Configuration Manager scrive un file di testo denominato `MediaLabel.txt` nella radice del supporto. Per impostazione predefinita, il file include un'unica riga di testo: `label=Configuration Manager`. Se si personalizza l'etichetta del supporto, verrà utilizzata l'etichetta personalizzata anziché il valore predefinito.  
 
-    - **Includi il file autorun.inf sul supporto**<!-- 4090666 -->: a partire dalla versione 1902, Configuration Manager non aggiunge il file autorun.inf per impostazione predefinita. Questo file è generalmente bloccato da prodotti antimalware. Per altre informazioni sulla funzionalità di esecuzione automatica di Windows, vedere [Creating an AutoRun-enabled CD-ROM Application](https://docs.microsoft.com/windows/desktop/shell/autoplay) (Creazione di un'applicazione CD-ROM abilitata per l'esecuzione automatica). Se il file è ancora richiesto dallo scenario, selezionare questa opzione per includerlo.  
+    - **Includi il file autorun.inf sul supporto**<!-- 4090666 -->: a partire dalla versione 1906, Configuration Manager non aggiunge il file autorun.inf per impostazione predefinita. Questo file è generalmente bloccato da prodotti antimalware. Per altre informazioni sulla funzionalità di esecuzione automatica di Windows, vedere [Creating an AutoRun-enabled CD-ROM Application](https://docs.microsoft.com/windows/desktop/shell/autoplay) (Creazione di un'applicazione CD-ROM abilitata per l'esecuzione automatica). Se il file è ancora richiesto dallo scenario, selezionare questa opzione per includerlo.  
 
 5. Nella pagina **Immagine d'avvio** specificare le opzioni seguenti:  
 

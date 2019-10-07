@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b7a68dd6d0bdbc2fa043d552aba13562dc175fc
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: d77b817dd19f728ce79aa901591a70acde27cf67
+ms.sourcegitcommit: 160bcdaf783f3946ad5c7869b2566cbfc4da545c
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65082952"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401596"
 ---
 # <a name="create-bootable-media"></a>Creare supporti di avvio
 
@@ -87,7 +87,7 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
     - Se si vuole solo consentire la distribuzione del sistema operativo senza richiedere input da parte dell'utente, è possibile selezionare **Consenti distribuzione automatica del sistema operativo**.  
 
         > [!IMPORTANT]  
-        > Quando si seleziona questa opzione, all'utente non vengono richieste informazioni sulla configurazione di rete o su sequenze di attività facoltative. Se tuttavia si configura il supporto per la protezione con password, all'utente viene richiesta una password.  
+        > Quando si seleziona questa opzione, all'utente non vengono richieste informazioni sulla configurazione di rete o su sequenze di attività facoltative. Se si configurano i supporti per la protezione con password, all'utente viene richiesta una password.  
 
 4. Nella pagina **Gestione del supporto** specificare una delle opzioni seguenti:  
 
@@ -121,7 +121,7 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
         - Configuration Manager scrive un file di testo denominato `MediaLabel.txt` nella radice del supporto. Per impostazione predefinita, il file include un'unica riga di testo: `label=Configuration Manager`. Se si personalizza l'etichetta del supporto, verrà utilizzata l'etichetta personalizzata anziché il valore predefinito.  
 
-    - **Includi il file autorun.inf sul supporto**<!-- 4090666 -->: a partire dalla versione 1902, Configuration Manager non aggiunge il file autorun.inf per impostazione predefinita. Questo file è generalmente bloccato da prodotti antimalware. Per altre informazioni sulla funzionalità di esecuzione automatica di Windows, vedere [Creating an AutoRun-enabled CD-ROM Application](https://docs.microsoft.com/windows/desktop/shell/autoplay) (Creazione di un'applicazione CD-ROM abilitata per l'esecuzione automatica). Se il file è ancora richiesto dallo scenario, selezionare questa opzione per includerlo.  
+    - **Includi il file autorun.inf sul supporto**<!-- 4090666 -->: a partire dalla versione 1906, Configuration Manager non aggiunge il file autorun.inf per impostazione predefinita. Questo file è generalmente bloccato da prodotti antimalware. Per altre informazioni sulla funzionalità di esecuzione automatica di Windows, vedere [Creating an AutoRun-enabled CD-ROM Application](https://docs.microsoft.com/windows/desktop/shell/autoplay) (Creazione di un'applicazione CD-ROM abilitata per l'esecuzione automatica). Se il file è ancora richiesto dallo scenario, selezionare questa opzione per includerlo.  
 
 6. Nella pagina **Sicurezza** specificare le opzioni seguenti:  
 
@@ -136,13 +136,13 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
     - Per le comunicazioni HTTPS, selezionare **Importa certificato PKI**. Specificare quindi il certificato da importare e la relativa password.  
 
-        Per altre informazioni su questo certificato client usato dalle immagini di avvio, vedere [Requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements).  
+        Per altre informazioni su questo certificato client usato dalle immagini d'avvio, vedere [Requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements).  
 
-    - **Affinità utente dispositivo**: per supportare la gestione basata sugli utenti in Configuration Manager, specificare come si vuole che il supporto associ gli utenti al computer di destinazione. Per altre informazioni su come la distribuzione del sistema operativo supporti l'affinità utente-dispositivo, vedere [Associare gli utenti a un computer di destinazione](/sccm/osd/get-started/associate-users-with-a-destination-computer).  
+    - **Affinità utente-dispositivo**: per supportare la gestione incentrata sull'utente in Configuration Manager, specificare come si vuole che il supporto associ gli utenti al computer di destinazione. Per altre informazioni su come la distribuzione del sistema operativo supporti l'affinità utente-dispositivo, vedere [Associare gli utenti a un computer di destinazione](/sccm/osd/get-started/associate-users-with-a-destination-computer).  
 
-        - **Consenti affinità utente dispositivo con approvazione automatica**: il supporto associa automaticamente gli utenti al computer di destinazione. Questa funzionalità si basa sulle azioni della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
+        - **Consenti affinità utente dispositivo con approvazione automatica**: il supporto associa automaticamente gli utenti al computer di destinazione. Questa funzionalità si basa sulle azioni della sequenza di attività che distribuisce il sistema operativo. In questo scenario la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
 
-        - **Consenti approvazione amministratore in sospeso per affinità utente dispositivo**: il supporto associa gli utenti al computer di destinazione dopo la concessione dell'approvazione. Questa funzionalità si basa sull'ambito della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione, ma attende l'approvazione di un utente amministratore prima di distribuire il sistema operativo.  
+        - **Consenti approvazione amministratore in sospeso per affinità utente dispositivo**: il supporto associa gli utenti al computer di destinazione dopo la concessione dell'approvazione. Questa funzionalità si basa sull'ambito della sequenza di attività che distribuisce il sistema operativo. In questo scenario la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione, ma attende l'approvazione di un utente amministratore prima di distribuire il sistema operativo.  
 
         - **Non consentire affinità utente dispositivo**: il supporto non associa gli utenti al computer di destinazione. In questo scenario, la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.  
 
@@ -166,12 +166,12 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
     - Aggiungere eventuali variabili usate dalla sequenza di attività.  
 
-    - **Attiva comando di preavvio**: specificare i comandi di preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio sono costituiti da uno script o da un eseguibile in grado di interagire con l'utente in Windows PE prima che venga eseguita la sequenza di attività. Per altre informazioni vedere [Comandi di preavvio del supporto per sequenza attività](/sccm/osd/understand/prestart-commands-for-task-sequence-media).  
+    - **Attiva comando di preavvio**: specificare i comandi di preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio sono costituiti da uno script o da un eseguibile che può interagire con l'utente in Windows PE prima che venga eseguita la sequenza di attività. Per altre informazioni vedere [Comandi di preavvio del supporto per sequenza attività](/sccm/osd/understand/prestart-commands-for-task-sequence-media).  
 
         > [!TIP]  
         > Durante la creazione del supporto, tale sequenza scrive l'ID del pacchetto e la riga di comando di preavvio, incluso il valore per eventuali variabili della sequenza di attività, nel file **CreateTSMedia.log** nel computer che esegue la console di Configuration Manager. È possibile rivedere questo file di registro per verificare il valore per le variabili della sequenza di attività.  
 
-        Se il comando di preavvio richiede del contenuto, selezionare l'opzione **Includi file per il comando di preavvio**.  
+        Se il comando di preavvio richiede contenuto, selezionare l'opzione **Includi file per il comando di preavvio**.  
 
 9. Completare la procedura guidata.  
 

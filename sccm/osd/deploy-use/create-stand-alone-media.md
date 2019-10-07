@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a00da1511c6410088f318fc619bbddc537e20708
-ms.sourcegitcommit: 2db6863c6740380478a4a8beb74f03b8178280ba
+ms.openlocfilehash: 37143372acdadb6a340c2ee556901f5133683c5f
+ms.sourcegitcommit: 160bcdaf783f3946ad5c7869b2566cbfc4da545c
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65083258"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401564"
 ---
 # <a name="create-stand-alone-media"></a>Creare supporti autonomi
 
@@ -141,7 +141,7 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
         - Configuration Manager scrive un file di testo denominato `MediaLabel.txt` nella radice del supporto. Per impostazione predefinita, il file include un'unica riga di testo: `label=Configuration Manager`. Se si personalizza l'etichetta del supporto, verrà utilizzata l'etichetta personalizzata anziché il valore predefinito.  
 
-    - **Includi il file autorun.inf sul supporto**<!-- 4090666 -->: a partire dalla versione 1902, Configuration Manager non aggiunge il file autorun.inf per impostazione predefinita. Questo file è generalmente bloccato da prodotti antimalware. Per altre informazioni sulla funzionalità di esecuzione automatica di Windows, vedere [Creating an AutoRun-enabled CD-ROM Application](https://docs.microsoft.com/windows/desktop/shell/autoplay) (Creazione di un'applicazione CD-ROM abilitata per l'esecuzione automatica). Se il file è ancora richiesto dallo scenario, selezionare questa opzione per includerlo.  
+    - **Includi il file autorun.inf sul supporto**<!-- 4090666 -->: a partire dalla versione 1906, Configuration Manager non aggiunge il file autorun.inf per impostazione predefinita. Questo file è generalmente bloccato da prodotti antimalware. Per altre informazioni sulla funzionalità di esecuzione automatica di Windows, vedere [Creating an AutoRun-enabled CD-ROM Application](https://docs.microsoft.com/windows/desktop/shell/autoplay) (Creazione di un'applicazione CD-ROM abilitata per l'esecuzione automatica). Se il file è ancora richiesto dallo scenario, selezionare questa opzione per includerlo.  
 
 5. Nella pagina **Sicurezza** specificare le opzioni seguenti:
 
@@ -175,12 +175,12 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
     - Aggiungere eventuali variabili usate dalla sequenza di attività.  
 
-    - **Attiva comando di preavvio**: specificare i comandi di preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio sono costituiti da uno script o da un eseguibile in grado di interagire con l'utente in Windows PE prima che venga eseguita la sequenza di attività. Per altre informazioni vedere [Comandi di preavvio del supporto per sequenza attività](/sccm/osd/understand/prestart-commands-for-task-sequence-media).  
+    - **Attiva comando di preavvio**: specificare i comandi di preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio sono costituiti da uno script o da un eseguibile che può interagire con l'utente in Windows PE prima che venga eseguita la sequenza di attività. Per altre informazioni vedere [Comandi di preavvio del supporto per sequenza attività](/sccm/osd/understand/prestart-commands-for-task-sequence-media).  
 
         > [!TIP]  
         > Durante la creazione del supporto, tale sequenza scrive l'ID del pacchetto e la riga di comando di preavvio, incluso il valore per eventuali variabili della sequenza di attività, nel file **CreateTSMedia.log** nel computer che esegue la console di Configuration Manager. È possibile rivedere questo file di registro per verificare il valore per le variabili della sequenza di attività.  
 
-        Se il comando di preavvio richiede del contenuto, selezionare l'opzione **Includi file per il comando di preavvio**.  
+        Se il comando di preavvio richiede contenuto, selezionare l'opzione **Includi file per il comando di preavvio**.  
 
 12. Completare la procedura guidata.  
 
