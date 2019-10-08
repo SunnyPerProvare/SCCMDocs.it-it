@@ -2,7 +2,7 @@
 title: Domande frequenti su desktop Analytics
 titleSuffix: Configuration Manager
 description: Domande frequenti su desktop Analytics.
-ms.date: 09/05/2019
+ms.date: 10/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e47827c6ad2b52ebb2b9dfabcdc4c61320385bf3
-ms.sourcegitcommit: cb169396acf0d50fedd9f2ae62f7894615c3cce5
+ms.openlocfilehash: 17791a695d2413d867bf5ee212b9e3cfd0837f83
+ms.sourcegitcommit: 23e4f4f02b62e5cc284196067a83eaaa67a6f446
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70808385"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71998988"
 ---
 # <a name="desktop-analytics-faq"></a>Domande frequenti su desktop Analytics
 
@@ -25,7 +25,7 @@ ms.locfileid: "70808385"
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-### <a name="can-i-use-desktop-analytics-with-intune-managed-devices"></a>È possibile usare analisi desktop con i dispositivi gestiti da Intune? 
+### <a name="bkmk_intune"></a>È possibile usare analisi desktop con i dispositivi gestiti da Intune? 
 
 La maggior parte dei clienti che possono trarre vantaggio dal flusso di lavoro di analisi desktop USA Configuration Manager per la distribuzione di Windows. I clienti di Intune apprezzano le informazioni aggiuntive dai dati di analisi e sono in grado di condividere informazioni approfondite anche con loro.
 
@@ -89,7 +89,7 @@ Sì, quando si imposta un'area di lavoro di Windows Analytics esistente come are
 | Tipo di input | Viene eseguita la migrazione? |
 |------------|---------------|
 | Importanza | Yes |
-| Proprietario dell'app | Sì |
+| Proprietario dell'app | Yes |
 | Decisione di aggiornamento | No |
 | Piano di test | No |
 | Risultato del test | No |
@@ -127,13 +127,52 @@ No, al momento devi decidere di eseguire la migrazione durante il caricamento [i
 
 Sì. Se attualmente si usa [conformità aggiornamenti](https://docs.microsoft.com/windows/deployment/update/update-compliance-get-started) nella portale di Azure, è possibile continuare a farlo ora e oltre il 2020 gennaio.
 
-Per ulteriori informazioni, vedere il post di Blog: [Migrare i dati di input utente da "Windows Analytics: Preparazione aggiornamenti "to desktop Analytics](https://techcommunity.microsoft.com/t5/Desktop-Analytics-Blog/Migrate-user-input-data-from-Windows-Analytics-Upgrade-Readiness/ba-p/841744).
+Per ulteriori informazioni, vedere il post di Blog: @no__t 0Migrate i dati di input dell'utente da "Windows Analytics: Preparazione aggiornamenti "to desktop Analytics @ no__t-0.
+
+### <a name="are-there-any-windows-analytics-features-that-arent-available-in-desktop-analytics"></a>Sono disponibili funzionalità di Windows Analytics che non sono disponibili in analisi desktop?
+
+<!-- 3616924 -->
+Sì, le funzionalità di Windows Analytics seguenti verranno ritirate o non sono ancora disponibili in analisi desktop:
+
+#### <a name="general"></a>Generale
+
+- Supporto per gli scenari che non richiedono Configuration Manager. Ad esempio, il [supporto di Intune](#bkmk_intune).
+- Prerequisiti per le licenze di qualsiasi licenza di Windows valida rispetto a E3, E5
+- Supporto per più aree di lavoro per ogni tenant di Azure AD
+- Possibilità di eseguire query personalizzate ed esportare dati non elaborati della soluzione
+- Documentazione del modello di dati per i report personalizzati
+
+#### <a name="upgrade-readiness"></a>Preparazione aggiornamenti
+
+- Dati di individuazione sito Internet Explorer
+- Informazioni dettagliate sui componenti aggiuntivi di Office (ora [disponibili in Configuration Manager](#bkmk_office))
+- Informazioni dettagliate sull'hub feedback
+
+#### <a name="update-compliance"></a>Conformità aggiornamenti
+
+- Supporto per Windows Update for business
+- Informazioni dettagliate sull'ottimizzazione recapito
+- Supporto per il canale di manutenzione a lungo termine di Windows 10 (LTSC)
+- Report di Windows Insider
+- Stato di Windows Defender
+
+> [!Note]
+> Tutte le funzionalità di Conformità aggiornamenti esistenti, incluse quelle non disponibili in desktop Analytics, restano disponibili nella portale di Azure della soluzione [conformità aggiornamenti](/windows/deployment/update/update-compliance-get-started) .
+
+#### <a name="device-health"></a>Integrità dispositivi
+
+- Stato driver
+- Integrità app (all'esterno di un piano di distribuzione)
+- Dispositivi che si arrestano in modo anomalo o arresti anomali del driver
+- Stato di accesso a Windows
+- Windows Information Protection
+- Supporto per Windows Server
 
 ## <a name="other"></a>Altro
 
-### <a name="can-i-use-desktop-analytics-for-my-office-365-proplus-upgrades"></a>È possibile usare l'analisi del desktop per gli aggiornamenti di Office 365 ProPlus?
+### <a name="bkmk_office"></a>È possibile usare l'analisi del desktop per gli aggiornamenti di Office 365 ProPlus?
 
-No, desktop Analytics è incentrato su Windows. Microsoft ha sviluppato desktop Analytics in stretta collaborazione con molti clienti. Tramite il programma di anteprima, il feedback dei clienti riguarda il modo in cui analisi desktop ha migliorato la propria capacità di gestire le distribuzioni di Windows in tutta sicurezza. Ci hanno inoltre comunicato che volevano che [office 365 ProPlussse](/sccm/sum/deploy-use/office-365-dashboard#bkmk_o365_readiness) più accuratamente l'integrazione con gli strumenti di gestione di office in Configuration Manager e Intune. Microsoft continuerà a creare investimenti in tali aree, concentrandosi sugli scenari di Windows in desktop Analytics.
+No, desktop Analytics è incentrato su Windows. Microsoft ha sviluppato desktop Analytics in stretta collaborazione con molti clienti. Il feedback dei clienti riguarda il modo in cui desktop Analytics migliora la propria capacità di gestire le distribuzioni di Windows. Indicano anche che desiderano che l'idoneità di [office 365 ProPlus](/sccm/sum/deploy-use/office-365-dashboard#bkmk_o365_readiness) sia più strettamente integrata con gli strumenti di gestione di office in Configuration Manager e Intune. Microsoft continua a investire in tali aree, concentrandosi sugli scenari di Windows in desktop Analytics.
 
 ### <a name="how-can-i-provide-feedback-about-desktop-analytics"></a>Come è possibile fornire commenti e suggerimenti su desktop Analytics?
 
