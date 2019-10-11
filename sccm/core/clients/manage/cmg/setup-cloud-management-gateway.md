@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d9f3d922093319c3bfc9341f8fe5472a198a083
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: b57a4c63da20cefb7b247f99a97dbba0ec91d9e8
+ms.sourcegitcommit: 84a6f31797490eeda73bd4f3656ba27741df3030
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68535450"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71343838"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Configurare il gateway di gestione cloud per Configuration Manager
 
@@ -184,11 +184,14 @@ Dopo che il Cloud Management Gateway e i ruoli del sistema del sito sono in esec
 Il client di Configuration Manager determina automaticamente se si trova sull'intranet o su Internet. Se il client riesce a contattare un controller di dominio o un punto di gestione locale, imposta il proprio tipo di connessione su **Ora intranet**. In caso contrario, passa all'impostazione **Ora Internet** e usa la posizione del servizio Cloud Management Gateway per comunicare con il sito.
 
 >[!NOTE]
-> È possibile forzare il client perché usi sempre il Cloud Management Gateway, sia che si trovi sull'intranet o su Internet. Questa configurazione è utile per l'esecuzione di test o per client in sedi nelle quali si vuole imporre l'uso del servizio Cloud Management Gateway. Impostare la seguente chiave del Registro di sistema nel client:
+> È possibile forzare il client perché usi sempre il Cloud Management Gateway, sia che si trovi sull'intranet o su Internet. Questa configurazione è utile per l'esecuzione di test o per client ai quali si vuole imporre di usare sempre il servizio Cloud Management Gateway. Impostare la seguente chiave del Registro di sistema nel client:
 >
 > `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCM\Security, ClientAlwaysOnInternet = 1`
 >
 > È anche possibile specificare questa impostazione durante l'installazione client usando la proprietà [CCMALWAYSINF](/sccm/core/clients/deploy/about-client-installation-properties#ccmalwaysinf).
+>
+> Questa impostazione viene applicata sempre, anche se il client si sposta in un percorso in cui le configurazioni del gruppo di limiti utilizzano risorse locali.
+
 
 Per verificare che i client dispongano della proprietà che specifica il Cloud Management Gateway, aprire un prompt dei comandi di Windows PowerShell come amministratore nel computer client ed eseguire il comando seguente: `Get-WmiObject -Namespace Root\Ccm\LocationServices -Class SMS_ActiveMPCandidate | Where-Object {$_.Type -eq "Internet"}`
 

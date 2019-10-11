@@ -2,7 +2,7 @@
 title: Nuova versione 1802
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1802 di Configuration Manager.
-ms.date: 04/05/2019
+ms.date: 10/09/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b92f099a3a64cb6b1943d3d4b1306cbbd4131d6c
-ms.sourcegitcommit: cdf2827fb3f44d7522a9b533c115f910aa9c382a
+ms.openlocfilehash: 64be14a4029258489a6dfda5e344efd803c85adb
+ms.sourcegitcommit: 9c76ed76ead1125b712cef574d832803dbf2c5a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70902929"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72162997"
 ---
 # <a name="whats-new-in-version-1802-of-system-center-configuration-manager"></a>Novità della versione 1802 di System Center Configuration Manager
 
@@ -287,7 +287,7 @@ Il report **Dettagli della manutenzione di Windows 10 per una raccolta specifica
 
 ### <a name="improvements-to-configuration-manager-policies-for-windows-defender-exploit-guard"></a>Miglioramenti ai criteri di Configuration Manager per Windows Defender Exploit Guard
 <!-- 1356220 -->
-Ulteriori impostazioni dei criteri per i componenti [Riduzione della superficie di attacco](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy#bkmk_ASR) e [Accesso controllato alle cartelle](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy#bkmk_CFA) sono state aggiunte in Configuration Manager per [Windows Defender Exploit Guard](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/windows-defender-exploit-guard).
+Ulteriori impostazioni dei criteri per i componenti [Riduzione della superficie di attacco](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy#bkmk_ASR) e [Accesso controllato alle cartelle](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy#bkmk_CFA) sono state aggiunte in Configuration Manager per [Windows Defender Exploit Guard](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-attack-surface-reduction).
 
 ### <a name="new-host-interaction-settings-for-windows-defender-application-guard"></a>Nuove impostazioni per l'interazione con l'host per Windows Defender Application Guard
 <!-- 1356256 -->

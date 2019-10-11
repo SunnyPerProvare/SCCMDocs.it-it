@@ -2,7 +2,7 @@
 title: Novità della versione 1906
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1906 di Configuration Manager Current Branch.
-ms.date: 08/23/2019
+ms.date: 10/01/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 13c9f2e6f6b279aeea13ce2ede66b6d11f2c12a2
-ms.sourcegitcommit: e2e07d74779a2f48693ecaa17a5974204949d109
+ms.openlocfilehash: 05b2a01c66cba7119bc8752dc3ed6f4a4a9ab7da
+ms.sourcegitcommit: 3ecba0573e7b1c99de3291dbeb29a5de432ce647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69999443"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71715910"
 ---
 # <a name="whats-new-in-version-1906-of-configuration-manager-current-branch"></a>Novità della versione 1906 di Configuration Manager Current Branch
 
@@ -371,6 +371,8 @@ Questa versione include i miglioramenti seguenti alla distribuzione del sistema 
 
 - La sequenza di attività imposta una nuova variabile di sola lettura, **_SMSTSLastContentDownloadLocation**. Questa variabile contiene l'ultimo percorso in cui la sequenza di attività ha scaricato o provato a scaricare contenuto. Esaminare questa variabile anziché analizzare i log del client.<!-- 2840337 -->
 
+- Quando si crea un supporto per sequenza di attività, Configuration Manager non aggiunge un file autorun.inf. Questo file è generalmente bloccato da prodotti antimalware. È ancora possibile includere il file se necessario per lo scenario.<!-- 4090666 -->
+
 
 ## <a name="bkmk_userxp"></a> Software Center
 
@@ -615,13 +617,13 @@ A partire da questa versione, le funzionalità seguenti non sono più in version
 - [Servizio di amministrazione del provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_admin-service)
 - [Gestione di Device Guard](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)
 
- A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in Configuration Manager Current Branch, versione 1906](https://support.microsoft.com/help/4514258).
+A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in Configuration Manager Current Branch, versione 1906](https://support.microsoft.com/help/4514258).
 
-Per altre informazioni sulle modifiche apportate ai cmdlet di Windows PowerShell per Configuration Manager, vedere le [note sulla versione 1906 di PowerShell](https://docs.microsoft.com/powershell/sccm/1906-release-notes?view=sccm-ps).<!-- link is not live yet; will be published before this release branch -->
+Per altre informazioni sulle modifiche apportate ai cmdlet di Windows PowerShell per Configuration Manager, vedere le [note sulla versione 1906 di PowerShell](https://docs.microsoft.com/powershell/sccm/1906-release-notes?view=sccm-ps).
+
+L'aggiornamento cumulativo seguente (4517869) è disponibile nella console a partire dal 1° ottobre 2019: [Aggiornamento cumulativo per Configuration Manager Current Branch, versione 1906](https://support.microsoft.com/help/4517869).
 
 <!--
-The following update rollup (4486457) is available in the console starting on 25 January 2019: [Update rollup for Configuration Manager current branch, version 1902](https://support.microsoft.com/help/4486457).
-
 ### Hotfixes
 
 The following additional hotfixes are available to address specific issues:

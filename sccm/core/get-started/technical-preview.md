@@ -2,7 +2,7 @@
 title: Versioni di Technical Preview
 titleSuffix: Configuration Manager
 description: Informazioni sulla versione Technical Preview che consente di testare nuove funzionalità e capacità in Configuration Manager.
-ms.date: 08/30/2019
+ms.date: 09/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d5c80836ced76bdf1109c9279bf2068efbbd97f5
-ms.sourcegitcommit: f679fc1e46c191a1780ae961d155c927fc353dce
+ms.openlocfilehash: b52a152f24b641d0debfdf39ee6a78cfa2352d66
+ms.sourcegitcommit: 3ecba0573e7b1c99de3291dbeb29a5de432ce647
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70176762"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71715875"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Technical Preview per Configuration Manager
 
@@ -77,11 +77,7 @@ I prodotti e tecnologie seguenti sono supportati dal ramo Technical Preview di C
     - SQL Server 2014 (con Service Pack 1 o versioni successive)
     - SQL Server 2012 (con Service Pack 3 o versioni successive)  
 
-- Il sito supporta fino a 10 client, che devono eseguire una delle seguenti versioni di Windows:  
-
-    - Windows 10  
-    - Windows 8.1  
-    - Windows 7  
+- Il sito supporta fino a 10 client, che possono eseguire qualsiasi [versione supportata del sistema operativo client](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices).<!-- SCCMDocs#1656 -->
 
 > [!Note]  
 > L'inclusione di questi prodotti in questo contenuto non implica un'estensione del supporto per una versione oltre il ciclo di vita del supporto. Configuration Manager non supporta prodotti che non rientrano nel ciclo di vita del supporto. Per altre informazioni, vedere [Criteri relativi al ciclo di vita Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=208270).  
@@ -122,14 +118,19 @@ Le funzionalità seguenti sono disponibili con la versione Technical Preview di 
 
 <!-- This is the full list of new features in the latest TP release -->
 
-### <a name="technical-preview-version-19082"></a>Technical Preview versione 1908.2
+### <a name="technical-preview-version-1909"></a>Technical Preview versione 1909
 
 <!-- - [title](/sccm/core/get-started/2019/technical-preview-1901#bkmk_anchor) <!--ID-->
 
-- [Miglioramenti per Connessioni di console](/sccm/core/get-started/2019/technical-preview-1908-2#improvements-to-console-connections) <!--4923997-->
-- [Miglioramenti per i punti di distribuzione abilitati per il multicast](/sccm/core/get-started/2019/technical-preview-1908-2#bkmk_multicast) <!--3785535-->
-- [Ottimizzazioni per il motore CMPivot](/sccm/core/get-started/2019/technical-preview-1908-2#optimizations-to-the-cmpivot-engine) <!--3197353-->
-- [Impostare il layout della tastiera durante la distribuzione del sistema operativo](/sccm/core/get-started/2019/technical-preview-1908-2#bkmk_osd) <!--5138936-->
+- [Gruppi di orchestrazione](/sccm/core/get-started/2019/technical-preview-1909#bkmk_OGs) <!--3098816-->
+- [Miglioramenti alla gestione di BitLocker](/sccm/core/get-started/2019/technical-preview-1909#bkmk_bitlocker) <!--3601034-->
+- [Estendere ed eseguire la migrazione di un sito locale in Microsoft Azure](/sccm/core/get-started/2019/technical-preview-1909#bkmk_Azure-migration) <!--3556022-->
+- [Entità CMPivot aggiuntive e miglioramenti](/sccm/core/get-started/2019/technical-preview-1909#bkmk_CMPivot) <!--5410930-->
+- [Download della sequenza di attività su richiesta tramite Internet](/sccm/core/get-started/2019/technical-preview-1909#bkmk_dodcmg) <!--3601238-->
+- [Supporto per Windows Insider](/sccm/core/get-started/2019/technical-preview-1909#bkmk_wifb) <!--3556023-->
+- [Supporto delle lingue migliorato nella sequenza di attività](/sccm/core/get-started/2019/technical-preview-1909#bkmk_osd) <!--5411057-->
+- [Dashboard sull'integrità di Office 365 ProPlus](/sccm/core/get-started/2019/technical-preview-1909#bkmk_o365health) <!--4488301-->
+- [Miglioramenti per il debugger della sequenza di attività](/sccm/core/get-started/2019/technical-preview-1909#bkmk_tsdebug) <!-- 5012536, 5012509 -->
 
 > [!Note]  
 > Le funzionalità disponibili in una versione precedente della Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità aggiunte alla versione Current Branch di Configuration Manager rimangono disponibili nel ramo Technical Preview.  
@@ -138,6 +139,13 @@ Le funzionalità seguenti sono disponibili con la versione Technical Preview di 
 ## <a name="features-in-recent-technical-previews"></a>Funzionalità nelle anteprime tecniche recenti
 
 Le funzionalità seguenti sono state rilasciate in versioni precedenti di Configuration Manager Technical Preview Branch dopo la versione Current Branch 1906:
+
+### <a name="technical-preview-version-19082"></a>Technical Preview versione 1908.2
+
+- [Miglioramenti per Connessioni di console](/sccm/core/get-started/2019/technical-preview-1908-2#improvements-to-console-connections) <!--4923997-->
+- [Miglioramenti per i punti di distribuzione abilitati per il multicast](/sccm/core/get-started/2019/technical-preview-1908-2#bkmk_multicast) <!--3785535-->
+- [Ottimizzazioni per il motore CMPivot](/sccm/core/get-started/2019/technical-preview-1908-2#optimizations-to-the-cmpivot-engine) <!--3197353-->
+- [Impostare il layout della tastiera durante la distribuzione del sistema operativo](/sccm/core/get-started/2019/technical-preview-1908-2#bkmk_osd) <!--5138936-->
 
 ### <a name="technical-preview-version-1908"></a>Technical Preview versione 1908
 

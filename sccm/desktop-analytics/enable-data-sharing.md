@@ -1,7 +1,7 @@
 ---
 title: Abilitare la condivisione dei dati
 titleSuffix: Configuration Manager
-description: Una Guida di riferimento per la condivisione dei dati di diagnostica con Desktop Analitica.
+description: Guida di riferimento per la condivisione di dati di diagnostica con analisi desktop.
 ms.date: 07/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,47 +11,47 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5ba70b39330fd21077f5b7997e8aa92a1c57f42
-ms.sourcegitcommit: 3a3f40f3d39cbecfb9219a64c0185ea4b2ef9671
+ms.openlocfilehash: 0128a802916958c69b07dffe86d04f31698fd028
+ms.sourcegitcommit: 974b20f5faa0e0bbf9e43391280fdebeb657ac47
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67562005"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72237015"
 ---
-# <a name="enable-data-sharing-for-desktop-analytics"></a>Abilitare la condivisione per Desktop Analitica dei dati
+# <a name="enable-data-sharing-for-desktop-analytics"></a>Abilitare la condivisione dei dati per analisi desktop
 
 > [!Note]  
-> Tali informazioni fanno riferimento a un servizio in anteprima che può essere modificato sostanzialmente prima del rilascio in commercio. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
+> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
-Per registrare i dispositivi Desktop Analitica, devono inviare dati di diagnostica a Microsoft. Se l'ambiente Usa un server proxy, usare queste informazioni per configurare il proxy.
+Per registrare i dispositivi in desktop Analytics, è necessario inviare i dati di diagnostica a Microsoft. Se l'ambiente in uso usa un server proxy, usare queste informazioni per configurare il proxy.
 
 
 ## <a name="diagnostic-data-levels"></a>Livelli di dati di diagnostica
 
-![Diagramma dei livelli di dati di diagnostica per Desktop Analitica](media/diagnostic-data-levels.png)
+![Diagramma dei livelli di dati di diagnostica per analisi desktop](media/diagnostic-data-levels.png)
 
-Quando Configuration Manager si integra con Analitica Desktop, anche usarlo per gestire il livello di dati di diagnostica nei dispositivi. Per risultati ottimali, usare Configuration Manager.
+Quando si integra Configuration Manager con analisi desktop, viene usato anche per gestire il livello di dati di diagnostica nei dispositivi. Per un'esperienza ottimale, usare Configuration Manager.
 
-La funzionalità di base del Desktop Analitica lavora presso la **base** a livello di dati di diagnostica. Si otterranno i dati di utilizzo o di integrità per i dispositivi aggiornati senza abilitare la **Enhanced (Limited)** livello. Microsoft consiglia di attivare i **Enhanced (Limited)** a livello di dati di diagnostica. Per altre informazioni, vedere [avanzata di Windows 10 gli eventi di dati di diagnostica e i campi usati da Windows Analitica](https://docs.microsoft.com/windows/privacy/enhanced-diagnostic-data-windows-analytics-events-and-fields)).
+La funzionalità di base di desktop Analytics funziona a livello di dati di diagnostica di **base** . Non è possibile ottenere dati di utilizzo o di integrità per i dispositivi aggiornati senza abilitare il livello **avanzato (limitato)** . Microsoft consiglia di abilitare il livello dati di diagnostica **avanzato (limitato)** . Per ulteriori informazioni, vedere [gli eventi e i campi dei dati di diagnostica avanzati di Windows 10 usati da Windows Analytics](https://docs.microsoft.com/windows/privacy/enhanced-diagnostic-data-windows-analytics-events-and-fields).
 
 > [!Important]   
-> Microsoft offre un forte impegno a fornire gli strumenti e risorse che è inserito nel controllo della privacy. Di conseguenza, Microsoft non raccoglie i dati seguenti da dispositivi situati in paesi europei (SEE e dalla Svizzera):
+> Microsoft è impegnata a fornire gli strumenti e le risorse che consentono di controllare la privacy. Di conseguenza, Microsoft non raccoglie i dati seguenti dai dispositivi che si trovano in paesi europei (See e Switzerland):
 >
-> - Dati di diagnostica di Windows dai dispositivi Windows 8.1
-> - Dati sull'utilizzo delle App per Windows 7
+> - Dati di diagnostica di Windows da dispositivi Windows 8.1
+> - Dati di utilizzo delle app per Windows 7
 
-Per altre informazioni, vedere [privacy Desktop Analitica](/sccm/desktop-analytics/privacy).
+Per ulteriori informazioni, vedere la pagina relativa alla [privacy di analisi desktop](/sccm/desktop-analytics/privacy).
 
-Gli articoli seguenti sono anche ottime risorse per meglio comprendere i livelli di dati di diagnostica di Windows:
+Gli articoli seguenti sono anche risorse valide per comprendere meglio i livelli di dati di diagnostica di Windows:
 
-- [Windows 10 e il GDPR per Decision Maker dell'IT](https://docs.microsoft.com/windows/privacy/gdpr-it-guidance)  
+- [Windows 10 e GDPR per i responsabili decisionali IT](https://docs.microsoft.com/windows/privacy/gdpr-it-guidance)  
 
 - [Configurare i dati di diagnostica di Windows nell'organizzazione](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization)  
 
 > [!Note]  
-> Il livello avanzato (limitato), quando ogni client esegue l'analisi iniziale completa, invia circa 2 MB di dati a Microsoft cloud. Il delta giornaliero varia tra 400 di 250 KB per ogni giorno.
+> Al livello avanzato (limitato), quando ogni client esegue l'analisi completa iniziale, invia approssimativamente 2 MB di dati al cloud Microsoft. Il Delta giornaliero varia da 250-400 KB al giorno.
 >
-> L'analisi giornaliera delta avviene a 3:00 AM (ora locale del dispositivo). Alcuni eventi vengono inviati al primo momento disponibile nel corso della giornata. Questi tempi non sono configurabili.
+> L'analisi Delta giornaliera viene eseguita alle 3:00 AM (ora locale del dispositivo). Alcuni eventi vengono inviati alla prima ora disponibile nel corso della giornata. Questi orari non sono configurabili.
 >
 > Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://aka.ms/enterprisetelemetry) (Configurare i dati di diagnostica di Windows nell'organizzazione).  
 
@@ -62,37 +62,37 @@ Gli articoli seguenti sono anche ottime risorse per meglio comprendere i livelli
 Per abilitare la condivisione dei dati, configurare il server proxy per consentire gli endpoint seguenti:
 
 > [!Important]  
-> Per la privacy e l'integrità dei dati, Windows cerca un certificato SSL di Microsoft durante la comunicazione con gli endpoint dei dati di diagnostica. L'ispezione e l'intercettazione SSL non sono possibili. Per usare Desktop Analitica, escludere tali endpoint dall'ispezione SSL.<!-- BUG 4647542 -->
+> Per la privacy e l'integrità dei dati, Windows verifica la presenza di un certificato SSL Microsoft durante la comunicazione con gli endpoint dati di diagnostica. L'intercettazione e l'ispezione SSL non sono possibili. Per usare analisi desktop, escludere questi endpoint dall'ispezione SSL.<!-- BUG 4647542 -->
 
 | Endpoint  | Funzione  |
 |-----------|-----------|
-| `https://aka.ms` | Consente di individuare il servizio |
-| `https://v10c.events.data.microsoft.com` | Esperienza dell'utente connesso e l'endpoint di componente di diagnostica. Usato dai dispositivi che eseguono Windows 10, versione 1703 o successiva, con l'aggiornamento cumulativo 2018-09 update o versione successiva. |
-| `https://v10.events.data.microsoft.com` | Esperienza dell'utente connesso e l'endpoint di componente di diagnostica. Usato dai dispositivi che eseguono Windows 10, versione 1803 o successiva, _senza_ installato l'aggiornamento cumulativo-09 2018. |
-| `https://v10.vortex-win.data.microsoft.com` | Esperienza dell'utente connesso e l'endpoint di componente di diagnostica. Usato dai dispositivi che eseguono Windows 10, versione 1709 o versioni precedente. |
-| `https://vortex-win.data.microsoft.com` | Esperienza dell'utente connesso e l'endpoint di componente di diagnostica. Usato dai dispositivi che eseguono Windows 7 e Windows 8.1 |
-| `https://settings-win.data.microsoft.com` | Consente l'aggiornamento di compatibilità inviare dati a Microsoft. |
-| `http://adl.windows.com` | Consente l'aggiornamento di compatibilità ricevere i dati di compatibilità più recenti di Microsoft. |
-| `https://watson.telemetry.microsoft.com` | Errore di Windows (WER) di Reporting. Richieste per monitorare l'integrità della distribuzione in Windows 10, versione 1803 o versioni precedente. |
-| `https://umwatsonc.events.data.microsoft.com` | Errore di Windows (WER) di Reporting. Obbligatorio per i report sull'integrità di dispositivo in Windows 10, versione 1809 o versione successiva. |
-| `https://ceuswatcab01.blob.core.windows.net`<br> `https://ceuswatcab02.blob.core.windows.net`<br> `https://eaus2watcab01.blob.core.windows.net`<br> `https://eaus2watcab02.blob.core.windows.net`<br> `https://weus2watcab01.blob.core.windows.net`<br> `https://weus2watcab02.blob.core.windows.net` | Errore di Windows (WER) di Reporting. Richieste per monitorare l'integrità della distribuzione in Windows 10, versione 1809 o versione successiva. |
-| `https://kmwatsonc.events.data.microsoft.com` | Analisi dell'arresto anomalo in linea. Obbligatorio per i report sull'integrità di dispositivo in Windows 10, versione 1809 o versione successiva. |
-| `https://oca.telemetry.microsoft.com`  | Online Crash Analysis (OCA). Richieste per monitorare l'integrità della distribuzione in Windows 10, versione 1803 o versioni precedente. |
-| `https://login.live.com` | Deve per fornire un'identità del dispositivo più affidabile per Desktop Analitica. <br> <br>Per disabilitare l'accesso dell'utente finale Microsoft account, usare le impostazioni dei criteri anziché bloccare questo endpoint. Per altre informazioni, vedere [account Microsoft aziendali](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts#block-all-consumer-microsoft-account-user-authentication). |
-| `https://graph.windows.net` | Consente di recuperare automaticamente le impostazioni, ad esempio CommercialId quando ci si collega la gerarchia per Desktop Analitica (on solo ruolo del Server di Configuration Manager). |
-| `https://fef.msua06.manage.microsoft.com` | Utilizzato per le appartenenze a raccolte di sincronizzazione dispositivi e piani di distribuzione stato conformità del dispositivo con Desktop Analitica (on solo ruolo del Server di Configuration Manager). |
+| `https://aka.ms` | Usato per individuare il servizio |
+| `https://v10c.events.data.microsoft.com` | Esperienza utente connessa ed endpoint componente di diagnostica. Usato dai dispositivi che eseguono Windows 10, versione 1703 o successiva, con aggiornamento cumulativo 2018-09 o versione successiva installata. |
+| `https://v10.events.data.microsoft.com` | Esperienza utente connessa ed endpoint componente di diagnostica. Usato dai dispositivi che eseguono Windows 10, versione 1803 o successive, _senza_ l'aggiornamento cumulativo 2018-09 installato. |
+| `https://v10.vortex-win.data.microsoft.com` | Esperienza utente connessa ed endpoint componente di diagnostica. Usato dai dispositivi che eseguono Windows 10, versione 1709 o versioni precedenti. |
+| `https://vortex-win.data.microsoft.com` | Esperienza utente connessa ed endpoint componente di diagnostica. Usato dai dispositivi che eseguono Windows 7 e Windows 8.1 |
+| `https://settings-win.data.microsoft.com` | Consente all'aggiornamento per la compatibilità di inviare i dati a Microsoft. |
+| `http://adl.windows.com` | Consente all'aggiornamento della compatibilità di ricevere i dati di compatibilità più recenti da Microsoft. |
+| `https://watson.telemetry.microsoft.com` | Segnalazione errori Windows (WER). Necessaria per monitorare lo stato di distribuzione in Windows 10, versione 1803 o versioni precedenti. |
+| `https://umwatsonc.events.data.microsoft.com` | Segnalazione errori Windows (WER). Obbligatorio per i report sull'integrità dei dispositivi in Windows 10, versione 1809 o successiva. |
+| `https://ceuswatcab01.blob.core.windows.net`<br> `https://ceuswatcab02.blob.core.windows.net`<br> `https://eaus2watcab01.blob.core.windows.net`<br> `https://eaus2watcab02.blob.core.windows.net`<br> `https://weus2watcab01.blob.core.windows.net`<br> `https://weus2watcab02.blob.core.windows.net` | Segnalazione errori Windows (WER). Necessaria per monitorare lo stato di distribuzione in Windows 10, versione 1809 o successiva. |
+| `https://kmwatsonc.events.data.microsoft.com` | Analisi degli arresti anomali in linea. Obbligatorio per i report sull'integrità dei dispositivi in Windows 10, versione 1809 o successiva. |
+| `https://oca.telemetry.microsoft.com`  | Analisi degli arresti anomali (OCA) online. Necessaria per monitorare lo stato di distribuzione in Windows 10, versione 1803 o versioni precedenti. |
+| `https://login.live.com` | Necessario per fornire un'identità del dispositivo più affidabile per desktop Analytics. <br> <br>Per disabilitare l'accesso account Microsoft all'utente finale, utilizzare le impostazioni dei criteri anziché bloccare l'endpoint. Per ulteriori informazioni, vedere [la account Microsoft nell'azienda](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts#block-all-consumer-microsoft-account-user-authentication). |
+| `https://graph.windows.net` | Usato per recuperare automaticamente le impostazioni, come la commercializzazione, quando si connette la gerarchia a analisi desktop (solo su Configuration Manager ruolo del server). |
+| `https://*.manage.microsoft.com` | Usato per sincronizzare l'appartenenza alla raccolta di dispositivi, i piani di distribuzione e lo stato di conformità dei dispositivi con analisi del desktop (solo su Configuration Manager ruolo del server). |
 
 
 ## <a name="proxy-server-authentication"></a>Autenticazione del server proxy
 
-Assicurarsi che un proxy non blocca i dati diagnostici a causa di autenticazione. Se l'organizzazione Usa l'autenticazione del server proxy per il traffico in uscita, usare uno o più degli approcci seguenti:
+Assicurarsi che un proxy non blocchi i dati di diagnostica a causa dell'autenticazione. Se l'organizzazione usa l'autenticazione del server proxy per il traffico in uscita, usare uno o più degli approcci seguenti:
 
-- **Bypass** (scelta consigliata): Configurare i server proxy per non richiedere l'autenticazione del proxy per il traffico verso gli endpoint dei dati di diagnostica. Questa opzione è la soluzione più completa. Funziona per tutte le versioni di Windows 10.  
+- **Bypass** (scelta consigliata): Configurare i server proxy in modo che non richiedano l'autenticazione proxy per il traffico verso gli endpoint dati di diagnostica. Questa opzione è la soluzione più completa. Funziona per tutte le versioni di Windows 10.  
 
-- **Autenticazione dell'utente proxy**: Configurare i dispositivi per l'uso di contesto dell'utente connesso per l'autenticazione proxy. Questo metodo richiede i dispositivi che eseguono Windows 10, versione 1703 o successiva. Assicurarsi che gli utenti dispongano dell'autorizzazione di proxy per raggiungere gli endpoint dei dati di diagnostica. Questa opzione richiede che i dispositivi abbiano gli utenti della console con le autorizzazioni proxy, non è possibile utilizzare questo metodo con i dispositivi headless.  
+- **Autenticazione proxy utente**: Configurare i dispositivi per l'uso del contesto dell'utente connesso per l'autenticazione proxy. Questo metodo richiede che i dispositivi eseguano Windows 10, versione 1703 o successiva. Verificare che gli utenti dispongano dell'autorizzazione proxy per raggiungere gli endpoint dei dati di diagnostica. Questa opzione richiede che i dispositivi dispongano di utenti console con autorizzazioni proxy, quindi non è possibile usare questo metodo con dispositivi senza intestazioni.  
 
-- **L'autenticazione del dispositivo proxy**:
+- **Autenticazione del proxy del dispositivo**:
 
     - Configurare un server proxy a livello di sistema nei dispositivi.  
-    - Configurare i dispositivi per l'utilizzo dell'autenticazione basata su dispositivo proxy in uscita.  
-    - Configurare i server proxy per consentire gli account computer accedere agli endpoint con i dati di diagnostica.  
+    - Configurare questi dispositivi per l'uso dell'autenticazione proxy in uscita basata sul dispositivo.  
+    - Configurare i server proxy per consentire agli account del computer di accedere agli endpoint dei dati di diagnostica.  

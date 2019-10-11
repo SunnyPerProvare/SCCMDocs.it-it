@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb33c1e6750fe3302a5a59a6f4d67809b359236a
-ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
+ms.openlocfilehash: 0f33cd743e02a034049a315b974d2bdf26061cd7
+ms.sourcegitcommit: 974b20f5faa0e0bbf9e43391280fdebeb657ac47
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70738290"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72237011"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Esercitazione: Distribuire Windows 10 a un gruppo pilota
 
@@ -25,7 +25,7 @@ ms.locfileid: "70738290"
 
 Questa esercitazione usa l'analisi del desktop e Configuration Manager per distribuire Windows 10 in un gruppo pilota. Viene evidenziata l'integrazione del servizio cloud per fornire informazioni dettagliate per la distribuzione di Windows con il prodotto locale. Usare analisi del desktop per determinare i dispositivi più adatti da inserire in un gruppo pilota. Usare quindi Configuration Manager per ottenere la corrente con Windows.
 
-In questa esercitazione si imparerà a:  
+In questa esercitazione si apprenderà come:  
 
 > [!div class="checklist"]  
 > * Configurare Desktop Analytics nell'portale di Azure  
@@ -79,8 +79,8 @@ Prima di iniziare questa esercitazione, verificare che siano soddisfatti i prere
     - `https://kmwatsonc.events.data.microsoft.com`  
     - `https://oca.telemetry.microsoft.com`  
     - `https://login.live.com`  
-    - `https://graph.windows.net`(solo su Configuration Manager ruolo Server)
-    - `https://fef.msua06.manage.microsoft.com`(solo su Configuration Manager ruolo Server)
+    - `https://graph.windows.net` (solo nel ruolo Server Configuration Manager)
+    - `https://*.manage.microsoft.com` (solo nel ruolo Server Configuration Manager)
 
     Per altre informazioni, vedere [Come abilitare la condivisione dei dati per Desktop Analytics](/sccm/desktop-analytics/enable-data-sharing#endpoints).  
 
@@ -148,7 +148,7 @@ Usare questa procedura per accedere a desktop Analytics e configurarlo nella sot
 
 Usare questa procedura per aggiornare Configuration Manager, connettersi a desktop Analytics e configurare le impostazioni del dispositivo. Questa procedura è un processo monouso per l'associazione della gerarchia al servizio cloud.  
 
-### <a name="update-configuration-manager"></a>Aggiorna Configuration Manager
+### <a name="update-configuration-manager"></a>Aggiornare Configuration Manager
 
 Installare l'aggiornamento cumulativo di Configuration Manager versione 1902 (4500571) per supportare l'integrazione con desktop Analytics. Per ulteriori informazioni su questo aggiornamento, vedere [aggiornamento cumulativo per Configuration Manager Current Branch, versione 1902](https://support.microsoft.com/help/4500571).
 
@@ -238,7 +238,7 @@ Usare questa procedura per creare un piano di distribuzione in desktop Analytics
 
 4. Nel riquadro **crea piano di distribuzione** configurare le impostazioni seguenti:  
 
-    - **Nome**: Un nome univoco per il piano di distribuzione, ad esempio`Windows 10 pilot`  
+    - **Nome**: Nome univoco per il piano di distribuzione, ad esempio `Windows 10 pilot`  
 
     - **Prodotti e versioni**: Selezionare il prodotto **Windows** e la versione consigliata disponibile più recente. Ad esempio, **Windows 10, versione 1809 (scelta consigliata)** .  
 
@@ -340,7 +340,7 @@ Quindi distribuire il pacchetto di aggiornamento del sistema operativo ai punti 
 
     - **Indice dell'edizione**: se nel pacchetto sono disponibili più indici dell'edizione del sistema operativo, selezionare l'indice dell'edizione desiderato. Per impostazione predefinita, la procedura guidata seleziona il primo indice.  
 
-    - **Codice Product Key**: specificare il codice Product Key Windows per il sistema operativo da installare. Specificare i codici Product Key per contratti multilicenza codificati o i codici Product Key standard. Se si usa un codice Product Key standard, separare ogni gruppo di cinque caratteri con un trattino (-). Ad esempio:  *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*. Se l'aggiornamento è per un'edizione per contratti multilicenza, il codice Product Key potrebbe non essere obbligatorio.  
+    - **Codice Product Key**: specificare il codice Product Key Windows per il sistema operativo da installare. Specificare i codici Product Key per contratti multilicenza codificati o i codici Product Key standard. Se si usa un codice Product Key standard, separare ogni gruppo di cinque caratteri con un trattino (-). Esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*. Se l'aggiornamento è per un'edizione per contratti multilicenza, il codice Product Key potrebbe non essere obbligatorio.  
 
         > [!Note]  
         > Questo codice Product Key può essere un codice ad attivazione multipla (MAK) o un codice generico di contratti multilicenza (GVLK). Un codice GVLK è anche definito codice di configurazione client del servizio di gestione delle chiavi (KMS). Per altre informazioni, vedere [Pianificare l'attivazione dei contratti multilicenza](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client). Per un elenco di codici di configurazione client KMS, vedere l'[Appendice A](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys) della Guida di attivazione di Windows Server.
@@ -367,7 +367,7 @@ Quindi distribuire il pacchetto di aggiornamento del sistema operativo ai punti 
     >
     > Questa raccolta è riservata ai dispositivi del piano di distribuzione di desktop Analytics. Le modifiche manuali a questa raccolta non sono supportate.<!-- 3866460, SCCMDocs-pr 3544 -->  
 
-5. Nella pagina **contenuto** selezionare **Aggiungi**, quindi selezionare **punto di distribuzione**. Selezionare un punto di distribuzione disponibile per ospitare il contenuto di installazione e fare clic su **OK**. Quindi selezionare **Avanti**.  
+5. Nella pagina **contenuto** selezionare **Aggiungi**, quindi selezionare **punto di distribuzione**. Selezionare un punto di distribuzione disponibile per ospitare il contenuto di installazione e fare clic su **OK**. Selezionare quindi **Avanti**.  
 
 6. Nella pagina **Impostazioni distribuzione** selezionare **Avanti** per accettare le impostazioni predefinite. (Un'installazione disponibile).  
 

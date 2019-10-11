@@ -2,7 +2,7 @@
 title: Domande frequenti su desktop Analytics
 titleSuffix: Configuration Manager
 description: Domande frequenti su desktop Analytics.
-ms.date: 10/07/2019
+ms.date: 10/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17791a695d2413d867bf5ee212b9e3cfd0837f83
-ms.sourcegitcommit: 23e4f4f02b62e5cc284196067a83eaaa67a6f446
+ms.openlocfilehash: 13bdb5348e9fc58ca0ba194dd8cf4d509c16b081
+ms.sourcegitcommit: 9c76ed76ead1125b712cef574d832803dbf2c5a9
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71998988"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72163140"
 ---
 # <a name="desktop-analytics-faq"></a>Domande frequenti su desktop Analytics
 
@@ -121,7 +121,7 @@ Il processo di migrazione è transazionale. Verranno visualizzati tutti gli inpu
 
 ### <a name="im-not-ready-yet-can-i-migrate-after-the-initial-onboarding"></a>Se non si è ancora pronti, è possibile eseguire la migrazione dopo l'onboarding iniziale?
 
-No, al momento devi decidere di eseguire la migrazione durante il caricamento [iniziale](/sccm/desktop-analytics/set-up#initial-onboarding).
+Sì.<!-- 5202803 --> I clienti esistenti di Windows Analytics possono ora migrare i dati dopo l'onboarding iniziale. Passare a **servizi connessi** nel portale di analisi del desktop e selezionare l'opzione per la migrazione dei dati da Windows Analytics.
 
 ### <a name="can-i-use-update-compliance-together-with-desktop-analytics"></a>È possibile usare Conformità aggiornamenti insieme a Analytics per desktop?
 

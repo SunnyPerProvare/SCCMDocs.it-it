@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee91fe8b8b5b1c8d737e5818f42fa08e689a7e5a
-ms.sourcegitcommit: 670cfed1e47a7a4a73aa4ccb873c6312be3c21ff
+ms.openlocfilehash: 2e67e9fc63fad6cbfc986203fdec7b92c2aea73c
+ms.sourcegitcommit: 160bcdaf783f3946ad5c7869b2566cbfc4da545c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71311530"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401533"
 ---
 # <a name="best-practices-for-collections-in-configuration-manager"></a>Procedure consigliate per le raccolte in Configuration Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "71311530"
 
 Usare le procedure consigliate seguenti per le raccolte in Configuration Manager.  
 
-## <a name="dont-use-incremental-updates-with-many-collections"></a>Non usare gli aggiornamenti incrementali con un numero di raccolte elevato
+## <a name="bkmk_incremental"></a> Non usare gli aggiornamenti incrementali con un numero di raccolte elevato
 
 Quando si abilita l'opzione **Utilizza aggiornamenti incrementali per questa raccolta** , questa configurazione potrebbe provocare ritardi di valutazione se l'opzione viene abilitata per più raccolte. La soglia è pari a circa 200 raccolte nella gerarchia. Il numero esatto dipende dai fattori seguenti:  
 
@@ -38,11 +38,11 @@ Quando si abilita l'opzione **Utilizza aggiornamenti incrementali per questa rac
 
 ## <a name="maintenance-window-size-for-software-updates"></a>Dimensioni della finestra di manutenzione degli aggiornamenti software
 
-È possibile configurare le finestre di manutenzione per le raccolte di dispositivi al fine di limitare il numero di possibili installazioni del software da parte di Configuration Manager su questi dispositivi. Se si configurano dimensioni insufficienti della finestra di manutenzione, il client potrebbe non essere in grado di installare aggiornamenti software critici, rendendo il client vulnerabile ad attacchi altrimenti limitati dall'aggiornamento software. 
- 
- > [!Tip] 
- > Durante la pianificazione delle finestre di manutenzione tenere presenti le seguenti considerazioni importanti:
- > - Il tempo di esecuzione massimo per l'aggiornamento software predefinito è di 60 minuti.
- > - Quando Configuration Manager calcola se è possibile installare un aggiornamento, aggiunge cinque minuti al tempo di esecuzione massimo per un riavvio.
- > - La durata rimanente di una finestra di manutenzione deve essere superiore al tempo di esecuzione massimo dell'aggiornamento software a cui vanno aggiunti cinque minuti.
- 
+È possibile configurare le finestre di manutenzione per le raccolte di dispositivi al fine di limitare il numero di possibili installazioni del software da parte di Configuration Manager su questi dispositivi. Se si configurano dimensioni insufficienti della finestra di manutenzione, il client potrebbe non essere in grado di installare aggiornamenti software critici, rendendo il client vulnerabile ad attacchi altrimenti limitati dall'aggiornamento software.
+
+> [!Tip]
+> Durante la pianificazione delle finestre di manutenzione tenere presenti le seguenti considerazioni importanti:
+>
+> - Il tempo di esecuzione massimo per l'aggiornamento software predefinito è di 60 minuti.
+> - Quando Configuration Manager calcola se è possibile installare un aggiornamento, aggiunge cinque minuti al tempo di esecuzione massimo per un riavvio.
+> - La durata rimanente di una finestra di manutenzione deve essere superiore al tempo di esecuzione massimo dell'aggiornamento software a cui vanno aggiunti cinque minuti.

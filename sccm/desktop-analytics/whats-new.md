@@ -2,7 +2,7 @@
 title: Novità di analisi desktop
 titleSuffix: Configuration Manager
 description: Riepilogo delle nuove funzionalità della versione mensile più recente del servizio cloud di analisi dei desktop.
-ms.date: 09/10/2019
+ms.date: 10/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.assetid: fa300181-86cb-4afe-8fbf-895a7572378d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6c25aaba8c93204283723521ac157c62e62343d7
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.openlocfilehash: ce51ddc7a6c46dfc8b131ed6bc573b5b501f8598
+ms.sourcegitcommit: 9c76ed76ead1125b712cef574d832803dbf2c5a9
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70891709"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72162886"
 ---
 # <a name="whats-new-in-desktop-analytics"></a>Novità di analisi desktop
 
@@ -30,6 +30,14 @@ Scopri le novità di ogni mese in analisi desktop.
 
 Per ricevere una notifica quando questa pagina viene aggiornata, copiare e incollare l'URL seguente nel lettore di feed RSS: `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+desktop+analytics+-+Configuration+Manager%22&locale=en-us`
 <!-- a locale is required for the RSS search string -->
+
+## <a name="october-2019"></a>2019 ottobre
+
+### <a name="migrate-from-windows-analytics-to-existing-tenant"></a>Eseguire la migrazione da Windows Analytics al tenant esistente
+
+<!-- 5202803 -->
+
+È ora possibile migrare gli input da un'area di lavoro di Windows Analytics esistente dopo l'onboarding in desktop Analytics. Per ulteriori informazioni, vedere le domande frequenti per [i clienti esistenti di Windows Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
 
 ## <a name="september-2019"></a>2019 settembre
 
