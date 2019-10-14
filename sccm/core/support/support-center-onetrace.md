@@ -11,12 +11,12 @@ ms.assetid: 4cde43d1-9b09-4601-b389-0776de451b4e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a015277f9a2fb05c4fbecc4d702d63a5a97777ca
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 0e90a06b956c39cb7a473af87cdfca0f722122ff
+ms.sourcegitcommit: cb813496467a5191237d853a6126ea534c12d2f3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68537977"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172634"
 ---
 # <a name="support-center-onetrace-preview"></a>Supporto tecnico OneTrace (anteprima)
 
@@ -48,6 +48,8 @@ OneTrace funziona con molti tipi di file di log, ad esempio:
 ## <a name="install"></a>Installazione
 
 OneTrace viene installato con il Supporto tecnico. Individuare il programma di installazione di Support Center nel server del sito nel percorso seguente: `cd.latest\SMSSETUP\Tools\SupportCenter\SupportCenterInstaller.msi`.
+
+Per impostazione predefinita, l'applicazione OneTrace viene installata in `"C:\Program Files (x86)\Configuration Manager Support Center\CMPowerLogViewer.exe`.
 
 > [!Note]  
 > Support Center e OneTrace usano Windows Presentation Foundation (WPF). Questo componente non è disponibile in Windows PE. Continuare a usare CMTrace nelle immagini d'avvio con le distribuzioni di sequenze di attività.  

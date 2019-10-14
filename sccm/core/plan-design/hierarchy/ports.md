@@ -2,7 +2,7 @@
 title: Porte usate per le connessioni
 titleSuffix: Configuration Manager
 description: Informazioni sulle porte di rete necessarie e personalizzabili usate da Configuration Manager per le connessioni.
-ms.date: 04/11/2019
+ms.date: 10/09/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8818f858900db76192df1503d9043e6435a4999
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: 5461fd365322cdcfa51084335f375099cb1449e4
+ms.sourcegitcommit: b100e2068d429b0901b54e4a9d405349207fba3b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68338687"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72037372"
 ---
 # <a name="ports-used-in-configuration-manager"></a>Porte usate in Configuration Manager
 
@@ -159,7 +159,7 @@ Per altre informazioni, vedere [Porte e flusso di dati](/sccm/core/plan-design/h
 Per altre informazioni, vedere [Porte CMG e flusso di dati](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#ports-and-data-flow).
 
 
-###  <a name="BKMK_PortsClient-DP"></a> Client -- > Punto di distribuzione  
+###  <a name="BKMK_PortsClient-DP"></a> Client--> Punto di distribuzione, sia standard sia pull  
 
 |Descrizione|UDP|TCP|  
 |-----------------|---------|---------|  
@@ -167,14 +167,14 @@ Per altre informazioni, vedere [Porte CMG e flusso di dati](/sccm/core/clients/m
 |HTTPS|--|443 <sup>[vedere la nota 2](#bkmk_note2) Porta alternativa disponibile</sup>|  
 
 
-###  <a name="BKMK_PortsClient-DP2"></a> Client -- > Punto di distribuzione configurato per multicast  
+###  <a name="BKMK_PortsClient-DP2"></a> Client -- > Punto di distribuzione configurato per multicast, sia standard sia pull  
 
 |Descrizione|UDP|TCP|  
 |-----------------|---------|---------|  
 |Server Message Block (SMB)|--|445|  
 |Protocollo multicast|63000-64000|--|  
 
-###  <a name="BKMK_PortsClient-DP3"></a> Client -- > Punto di distribuzione configurato per PXE  
+###  <a name="BKMK_PortsClient-DP3"></a> Client -- > Punto di distribuzione configurato per PXE, sia standard sia pull  
 
 |Descrizione|UDP|TCP|  
 |-----------------|---------|---------|  
@@ -329,7 +329,7 @@ La console di Configuration Manager usa l'accesso a Internet per le azioni segue
 |SQL su TCP|--|1433 <sup>[vedere la nota 2](#bkmk_note2) Porta alternativa disponibile</sup>|  
 
 
-###  <a name="BKMK_PortsDist_MP"></a> Punto di distribuzione -- > Punto di gestione  
+###  <a name="BKMK_PortsDist_MP"></a> Punto di distribuzione, sia standard sia pull > Punto di gestione  
 Un punto di distribuzione comunica con il punto di gestione negli scenari seguenti:  
 
 - Per segnalare lo stato del contenuto di pre-installazione  
@@ -338,7 +338,7 @@ Un punto di distribuzione comunica con il punto di gestione negli scenari seguen
 
 - Per segnalare la convalida del contenuto  
 
-- Per segnalare lo stato dei download di pacchetti (punto di distribuzione pull)
+- Per segnalare lo stato di download dei pacchetti (solo punto di distribuzione pull)
 
 |Descrizione|UDP|TCP|  
 |-----------------|---------|---------|  
@@ -504,7 +504,7 @@ Per altre informazioni, vedere [Porte CMG e flusso di dati](/sccm/core/clients/m
 Per altre informazioni, vedere [Porte e flusso di dati](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#bkmk_dataflow).
 
 
-###  <a name="BKMK_PortsSite-DP"></a> Server del sito -- > Punto di distribuzione  
+###  <a name="BKMK_PortsSite-DP"></a> Server del sito--> Punto di distribuzione, sia standard sia pull  
  <sup>[Nota 5](#bkmk_note5)</sup>  
 
 |Descrizione|UDP|TCP|  
@@ -872,7 +872,7 @@ Le installazioni di applicazioni e pacchetti nei punti di distribuzione richiedo
 Usare IPsec per proteggere il traffico tra il server del sito e i sistemi del sito. Se è necessario limitare le porte dinamiche usate con RPC, è possibile usare lo strumento di configurazione RPC di Microsoft (rpccfg.exe) per configurare un intervallo limitato di porte per tali pacchetti RPC. Per altre informazioni sullo strumento di configurazione RPC, vedere [Come configurare RPC per l'utilizzo di determinate porte e come proteggere tali porte tramite IPsec](https://support.microsoft.com/help/908472/how-to-configure-rpc-to-use-certain-ports-and-how-to-help-secure-those).  
 
 > [!IMPORTANT]  
->  Prima di installare questi sistemi del sito, verificare che il servizio Registro di sistema remoto sia in esecuzione nel server di sistema del sito e di aver specificato un account di installazione sistema del sito se il sistema del sito si trova in una foresta Active Directory diversa senza una relazione di trust.  
+>  Prima di installare questi sistemi del sito, verificare che il servizio Registro di sistema remoto sia in esecuzione nel server di sistema del sito e di aver specificato un account di installazione sistema del sito se il sistema del sito si trova in una foresta Active Directory diversa senza una relazione di trust. Ad esempio il servizio Registro di sistema remoto viene usato nei server che eseguono sistemi del sito, ad esempio punti di distribuzione sia pull sia standard, server SQL remoti e il Catalogo applicazioni.
 
 
 ###  <a name="BKMK_PortsClientInstall"></a> Porte usate dall'installazione client di Configuration Manager  

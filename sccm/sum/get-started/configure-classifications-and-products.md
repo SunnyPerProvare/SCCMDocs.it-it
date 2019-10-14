@@ -5,18 +5,18 @@ description: Seguire questi passaggi per configurare i prodotti e le classificaz
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 09/25/2019
+ms.date: 10/08/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7127229ceef948f4e88365255737fbe3844aa428
-ms.sourcegitcommit: b9cc8e723c5d8c3be44edad24ad29d75c0cdd2b0
+ms.openlocfilehash: 10ec464f9689f2a4bf7f0c6176cf52bbf7033d0d
+ms.sourcegitcommit: 23e4f4f02b62e5cc284196067a83eaaa67a6f446
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71826193"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71999027"
 ---
 # <a name="configure-classifications-and-products-to-synchronize"></a>configurare le classificazioni e i prodotti per la sincronizzazione  
 
@@ -75,7 +75,7 @@ I metadati degli aggiornamenti software vengono recuperati durante il processo d
 
 ## <a name="bkmk_WIfB"></a>Programma Windows Insider
 <!--3556023-->
-A partire da settembre 2019, è possibile aggiornare i dispositivi che eseguono le build di Windows Insider Preview con Configuration Manager. Questa modifica significa che è possibile gestire questi dispositivi senza modificare i normali processi o abilitare Windows Update for business. È possibile scaricare gli aggiornamenti delle funzionalità e gli aggiornamenti cumulativi per le compilazioni di Windows Insider Preview in Configuration Manager esattamente come qualsiasi altro aggiornamento o aggiornamento di Windows 10. Per ulteriori informazioni, vedere il post di Blog sulla [pubblicazione di aggiornamenti delle funzionalità di Windows 10 in WSUS](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Publishing-pre-release-Windows-10-feature-updates-to-WSUS/ba-p/845054) .
+A partire da settembre 2019 è possibile eseguire la manutenzione e l'aggiornamento dei dispositivi che eseguono build di Windows Insider Preview con Configuration Manager. Questa modifica significa che è possibile gestire questi dispositivi senza modificare i normali processi o abilitare Windows Update per le aziende. È possibile scaricare gli aggiornamenti delle funzionalità e gli aggiornamenti cumulativi per le build di Windows Insider Preview in Configuration Manager esattamente come qualsiasi altro aggiornamento di Windows 10. Per ulteriori informazioni, vedere il post di Blog sulla [pubblicazione di aggiornamenti delle funzionalità di Windows 10 in WSUS](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Publishing-pre-release-Windows-10-feature-updates-to-WSUS/ba-p/845054) .
 
 Per ulteriori informazioni sul supporto di Windows insider in Configuration Manager, vedere [supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10#bkmk_WIfB-support).
 
@@ -103,7 +103,7 @@ Per ulteriori informazioni sul supporto di Windows insider in Configuration Mana
 
 ### <a name="upgrading-windows-insider-devices"></a>Aggiornamento dei dispositivi Windows Insider
 
-Una volta sincronizzati gli aggiornamenti per Windows Insider, è possibile visualizzarli dalla **raccolta** > software**Windows 10 manutenzione** > di**tutti gli aggiornamenti di Windows 10**.
+Una volta sincronizzati gli aggiornamenti per Windows Insider, è possibile visualizzarli dalla **raccolta Software** > **manutenzione di Windows 10** > **tutti gli aggiornamenti di Windows 10**.
 
 ![Aggiornamenti delle funzionalità di Windows Insider per la manutenzione di Windows 10](media/3556023-windows-insiders-pre-release-feature-update.png)
 
@@ -122,6 +122,14 @@ Per altre informazioni su come distribuire gli aggiornamenti, vedere [gestire Wi
 ### <a name="keeping-insider-devices-up-to-date"></a>Mantenere aggiornati i dispositivi Insider
 
 Gli aggiornamenti cumulativi per Windows Insider saranno disponibili per WSUS e per estensione per Configuration Manager. Questi aggiornamenti cumulativi verranno rilasciati con una frequenza simile a quella degli aggiornamenti cumulativi di Windows 10 versione 1903. Gli aggiornamenti cumulativi di Windows Insider si trovano nella categoria di prodotti **Windows 10, versione 1903 e versioni successive** e sono classificati come **aggiornamenti di sicurezza** o **aggiornamenti**. È possibile distribuire gli aggiornamenti cumulativi per Windows Insider usando il normale processo di aggiornamento software come l'uso di [regole di distribuzione automatica](/sccm/sum/deploy-use/automatically-deploy-software-updates) o di [distribuzioni](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json)in più fasi.
+
+## <a name="bkmk_ESU"></a>Aggiornamenti e Configuration Manager della sicurezza estesi
+
+Il programma di [aggiornamento della sicurezza esteso](https://support.microsoft.com/help/4497181/lifecycle-faq-extended-security-updates) è un'ultima opzione per i clienti che devono eseguire alcuni prodotti Microsoft legacy oltre la fine del supporto. Sono inclusi gli aggiornamenti della sicurezza critici e/o importanti (definiti da [Microsoft Security Response Center (MSRC)](https://www.microsoft.com/msrc)) per un massimo di tre anni dopo la fine della data di supporto estesa del prodotto.
+
+I prodotti che non rientrano nel ciclo di vita del supporto non sono supportati per l'uso con Configuration Manager. Sono inclusi tutti i prodotti coperti dal programma dell'unità di verifica. Gli aggiornamenti della sicurezza rilasciati nel programma Ude verranno pubblicati in Windows Server Update Services (WSUS). Questi aggiornamenti verranno visualizzati nella console di Configuration Manager. Sebbene i prodotti coperti dal programma dell'unità di sicurezza non siano più supportati per l'uso con Configuration Manager, la [versione rilasciata più recente di Configuration Manager Current Branch](/sccm/core/servers/manage/updates#version-details) può essere usata per distribuire e installare gli aggiornamenti della sicurezza di Windows rilasciati sotto il programma. La versione rilasciata più recente può essere usata anche per distribuire sistemi operativi supportati tramite l'OSD (Operating System Deployment).
+
+Le funzionalità di gestione client non correlate a gestione aggiornamenti software Windows o OSD non verranno più testate nei sistemi operativi coperti dal programma dell'unità di sicurezza e non garantiamo che continueranno a funzionare. Si consiglia vivamente di eseguire l'aggiornamento o la migrazione a una versione corrente dei sistemi operativi appena possibile per la ricezione del supporto per la gestione dei client.
 
 
 ## <a name="next-steps"></a>Passaggi successivi

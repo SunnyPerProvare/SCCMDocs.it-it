@@ -2,7 +2,7 @@
 title: Client e dispositivi supportati
 titleSuffix: Configuration Manager
 description: Informazioni sulle versioni dei sistemi operativi supportate da Configuration Manager per client e dispositivi.
-ms.date: 07/26/2019
+ms.date: 10/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 862f579069f117af13ecd0720c5e9e92ab7a356d
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: 48568f962f412342e005f18b790ed1478b359163
+ms.sourcegitcommit: 23e4f4f02b62e5cc284196067a83eaaa67a6f446
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70377937"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71999002"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versioni dei sistemi operativi per client e dispositivi supportate da Configuration Manager
 
@@ -188,6 +188,13 @@ La nuova app Software Center non è supportata in alcuna versione di Windows Ser
 
 - Spagnolo (Spagna)  
 
+## <a name="bkmk_ESU"></a> Aggiornamenti della sicurezza estesa e Configuration Manager
+
+Gli [aggiornamenti della sicurezza estesa (ESU, Extended Security Updates) ](https://support.microsoft.com/help/4497181/lifecycle-faq-extended-security-updates) sono un'ultima soluzione per i clienti che devono eseguire alcuni prodotti Microsoft legacy oltre la fine del supporto. Il programma ESU include aggiornamenti della sicurezza critici e/o importanti definiti dal [Microsoft Security Response Center (MSRC) ](https://www.microsoft.com/msrc) per un massimo di tre anni dopo la data di fine del supporto "Extended" del prodotto.
+
+I prodotti che non rientrano nel ciclo di vita del supporto non sono supportati per l'uso con Configuration Manager. Sono inclusi tutti i prodotti coperti dal programma ESU. Gli aggiornamenti della sicurezza rilasciati nel programma ESU verranno pubblicati in Windows Server Update Services (WSUS). Gli aggiornamenti saranno visualizzati nella console di Configuration Manager. Mentre i prodotti coperti dal programma ESU non sono più supportati per l'uso con Configuration Manager, è possibile usare la [versione più recente di Configuration Manager (Current Branch)](/sccm/core/servers/manage/updates#version-details) per distribuire e installare gli aggiornamenti della sicurezza di Windows rilasciati nel programma. La versione più recente può essere usata anche per distribuire i sistemi operativi supportati tramite la distribuzione del sistema operativo.
+
+Le funzionalità di gestione client che non sono correlate alla gestione degli aggiornamenti software Windows o alla distribuzione del sistema operativo non verranno più testate nei sistemi operativi coperti dal programma ESU e non si garantisce che continueranno a funzionare. È consigliabile eseguire l'aggiornamento o la migrazione a una versione corrente dei sistemi operativi appena possibile per ricevere supporto per la gestione dei client.
 
 ## <a name="mac-computers"></a>Computer Mac  
 
