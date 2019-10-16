@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc212104dc69e4ba4cc7d82e0b8c4813094bea2d
-ms.sourcegitcommit: 2dbe49e3ef1133d49e58d82cefdeba69f9ba3ce2
+ms.openlocfilehash: 1a71a35781a2c1586636dc32cbc12b67e97f8471
+ms.sourcegitcommit: 44c48e2cb00e60d6ccb1ddde62a6159663917e2d
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71127305"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71923950"
 ---
 # <a name="configure-pre-cache-content-for-task-sequences"></a>Configurare il contenuto pre-cache per le sequenze di attività
 
@@ -51,7 +51,7 @@ Per configurare la funzionalità pre-cache sono necessari tre passaggi:
 3. [Distribuire la sequenza di attività e abilitare la pre-memorizzazione nella cache](#bkmk_deploy)
 
 
-### <a name="bkmk_createpkg"></a> 1. creare e configurare i pacchetti
+### -1 Creare e configurare i pacchetti
 
 Il client valuta gli attributi dei pacchetti per determinare il contenuto scaricato durante la pre-memorizzazione nella cache.  
 
@@ -95,7 +95,7 @@ Ad esempio, il passaggio di **aggiornamento del sistema operativo** seguente usa
 > La query WMI seguente è consigliata per il sistema operativo in lingua inglese (Stati Uniti) e l'architettura a 64 bit:
 >
 > ```WMI
-> SELECT * FROM Win32_OperatingSystem WHERE OSArchitecture LIKE '%64%' AND OSLanguage=1033`
+> SELECT * FROM Win32_OperatingSystem WHERE OSArchitecture LIKE '%64%' AND OSLanguage='1033'
 > ```
 >
 > Per prima cosa, aggiungere la lingua selezionando la condizione della **lingua del sistema operativo** . Modificare quindi la query WMI per includere la clausola Architecture.
