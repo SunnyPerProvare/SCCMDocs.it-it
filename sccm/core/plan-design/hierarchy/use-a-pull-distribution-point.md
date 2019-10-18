@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3e759ef44170c460118d3629d8a7b9648ed8528
-ms.sourcegitcommit: 86968fc2f129e404ff8e08f91a05fa17b5c47527
+ms.openlocfilehash: e658874c9ff5c7bfbf0305b937779d101fefeeb2
+ms.sourcegitcommit: 262b0796cf270684ad09c2b296d490f076dfa235
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67251642"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72448007"
 ---
 # <a name="use-a-pull-distribution-point-with-configuration-manager"></a>Usare un punto di distribuzione pull con Configuration Manager
 
@@ -38,9 +38,6 @@ I punti di distribuzione pull supportano le stesse configurazioni e funzionalit�
 - Comunicazioni HTTP o HTTPS dai client
 - Opzioni per i certificati identiche a quelle degli altri punti di distribuzione
 - Gestione individuale o come membro di un gruppo di punti di distribuzione  
-
-> [!IMPORTANT]  
-> Anche se un punto di distribuzione pull supporta le comunicazioni su HTTP e HTTPS, quando si usa la console di Configuration Manager è possibile specificare solo punti di distribuzione di origine configurati per HTTP. È possibile usare Configuration Manager SDK per specificare un punto di distribuzione di origine configurato per HTTPS.  
 
 Configurare un punto di distribuzione pull quando si installa il punto di distribuzione. Dopo aver creato un punto di distribuzione, configurarlo come punto di distribuzione pull modificando le proprietà del ruolo. Per altre informazioni su come abilitare un punto di distribuzione come punto di distribuzione pull, vedere [Punto di distribuzione pull](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_config-pull).  
 
