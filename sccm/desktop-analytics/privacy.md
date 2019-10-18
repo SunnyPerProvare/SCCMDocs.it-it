@@ -2,7 +2,7 @@
 title: Privacy dei dati di analisi desktop
 titleSuffix: Configuration Manager
 description: L'analisi del desktop è vincolata alla privacy dei dati dei clienti
-ms.date: 06/13/2019
+ms.date: 10/14/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,26 +11,26 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aef08fb2d4c404ea66ded3d1a49d30af68fe4a95
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: ca2b94b19c4e95da103799e7357063e7253eaa72
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70379747"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72384916"
 ---
 # <a name="desktop-analytics-data-privacy"></a>Privacy dei dati di analisi desktop
 
 Desktop Analytics è pienamente impegnato nella privacy dei dati dei clienti, centrando su questi principi:
 
-- **Trasparenza** Gli eventi di diagnostica di Windows sono documentati in modo completo. Esaminarli con i team di sicurezza e conformità dell'azienda. Il Visualizzatore dati di diagnostica Windows consente di visualizzare i dati di diagnostica inviati da un determinato dispositivo. Per altre informazioni, vedere [Cenni preliminari sul Visualizzatore dati di diagnostica](https://docs.microsoft.com/windows/configuration/diagnostic-data-viewer-overview).  
+- **Trasparenza:** Gli eventi di diagnostica di Windows sono documentati in modo completo. Esaminarli con i team di sicurezza e conformità dell'azienda. Il Visualizzatore dati di diagnostica Windows consente di visualizzare i dati di diagnostica inviati da un determinato dispositivo. Per altre informazioni, vedere [Cenni preliminari sul Visualizzatore dati di diagnostica](https://docs.microsoft.com/windows/configuration/diagnostic-data-viewer-overview).  
 
-- **Controllo** È possibile controllare il livello dei dati di diagnostica da condividere con Microsoft. Windows 10, versione 1709, aggiunge un nuovo criterio per limitare i dati di diagnostica avanzati al minimo richiesto da desktop Analytics.  
+- **Controllo:** È possibile controllare il livello dei dati di diagnostica da condividere con Microsoft. Windows 10, versione 1709, aggiunge un nuovo criterio per limitare i dati di diagnostica avanzati al minimo richiesto da desktop Analytics.  
 
-- **Sicurezza** Microsoft protegge i dati con sicurezza e crittografia complesse.  
+- **Sicurezza:** Microsoft protegge i dati con sicurezza e crittografia complesse.  
 
-- **Trust** Desktop Analytics supporta l' [informativa sulla privacy](https://privacy.microsoft.com/privacystatement) di Microsoft e le condizioni per i [servizi online](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=46).  
+- **Attendibilità:** Desktop Analytics supporta l' [informativa sulla privacy](https://privacy.microsoft.com/privacystatement) di Microsoft e le condizioni per i [servizi online](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=46).  
 
-
+Per ulteriori informazioni, vedere [Servizi Windows in cui Microsoft è il processore sotto la GDPR](https://docs.microsoft.com/windows/privacy/gdpr-it-guidance#windows-services-where-microsoft-is-the-processor-under-the-gdpr).<!-- 5353168 -->
 
 ## <a name="diagnostic-data-flow"></a>Flusso di dati di diagnostica
 
@@ -57,8 +57,6 @@ La figura seguente mostra il flusso dei dati di diagnostica da singoli dispositi
 5. Gli snapshot vengono quindi copiati nell'area di lavoro di Azure Log Analytics appropriata.  
 
 6. Desktop Analytics archivia l'input in Azure Log Analytics archiviazione. Queste configurazioni includono i piani di distribuzione e le decisioni relative agli asset per l'aggiornamento e l'importanza.  
-
-
 
 ## <a name="other-resources"></a>Altre risorse
 

@@ -11,37 +11,34 @@ ms.assetid: 884d4864-950b-4139-b778-d5368e1f6ef2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3eb3f08c7c1358343b4bf06aef80ba84a5fb8d8c
-ms.sourcegitcommit: 2b07fb7e2a17b5624429e81f9b6b9b3223b6f16d
+ms.openlocfilehash: 34bb53bf9819149c989996a950f3b13329e4eef3
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69536780"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72386794"
 ---
 # <a name="how-to-reset-your-account"></a>Come reimpostare l'account
 
 <!-- 3733897 -->
 
-> [!Note]  
-> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
-
 Se si configura analisi desktop nell'ambiente, ma si vuole ricominciare con l'onboarding e la registrazione, usare questo processo per reimpostare l'account.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 Solo un **amministratore globale** può reimpostare l'account nell'portale di Azure.
 
-## <a name="behaviors"></a>comportamenti
+## <a name="behaviors"></a>Comportamenti
 
 - Questo processo non modifica gli utenti, le app o le autorizzazioni di Azure AD esistenti
 
 - Se si sceglie di aggiungere una nuova area di lavoro, nessuno degli input utente seguenti negli asset viene mantenuto:
     - Importanza
-    - Proprietario
+    - Owner
     - Decisione di aggiornamento
     - Note sulla correzione
 
-## <a name="process"></a>Process
+## <a name="process"></a>Processo
 
 1. Aprire il [portale di analisi del desktop](https://aka.ms/desktopanalytics) in Microsoft 365 gestione dei dispositivi come utente con il ruolo di **amministratore globale** .
 

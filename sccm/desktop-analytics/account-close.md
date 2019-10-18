@@ -2,7 +2,7 @@
 title: Come chiudere l'account
 titleSuffix: Configuration Manager
 description: Come rimuovere Desktop Analytics dall'account Azure
-ms.date: 09/10/2019
+ms.date: 10/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,21 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 387d16b75c688640eba0ed6658b281badd3c7c54
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.openlocfilehash: 0a37062bc945a69bfb6679186954146a337f8aed
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70891743"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72386771"
 ---
 # <a name="how-to-close-your-account"></a>Come chiudere l'account
 
-> [!Note]  
-> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
-
 Se si configura desktop Analytics nell'ambiente in uso e quindi si decide di rimuoverlo, usare questo processo per chiudere l'account.
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 Solo un **amministratore globale** può chiudere o riattivare l'account nell'portale di Azure.
 
@@ -57,7 +54,7 @@ Un amministratore globale può riattivare l'account entro 90 giorni. Per riprist
 
 1. Cercare in **tutte le risorse** il nome dell'area di lavoro di analisi del desktop. Questo nome è quello creato durante l'iscrizione al servizio.
 
-1. Eliminazione `Microsoft365Analytics(YourWorkspaceName)` della **soluzione**del tipo.
+1. Elimina `Microsoft365Analytics(YourWorkspaceName)` di tipo **soluzione**.
 
 I dati di analisi desktop sono obsoleti in base ai criteri di conservazione dei dati per l'area di lavoro. È possibile continuare a usare qualsiasi altra soluzione nella stessa area di lavoro.
 
@@ -92,6 +89,12 @@ I dati di analisi desktop sono obsoleti in base ai criteri di conservazione dei 
 
 1. Eliminare il servizio desktop Analytics.
 
+### <a name="delete-collections-for-the-pilot-and-production-deployments"></a>Elimina raccolte per le distribuzioni pilota e di produzione
+
+1. Nella console di Configuration Manager selezionare **Raccolte dispositivi** nell'area di lavoro **asset e conformità** .
+
+1. Eliminare tutte le raccolte che non vengono più usate. Per impostazione predefinita, le raccolte si trovano nella cartella **piani di distribuzione** .  
+
 ## <a name="reconfigure-clients"></a>Riconfigurare i client
 
 ### <a name="unenroll-devices"></a>Annulla la registrazione dei dispositivi
@@ -110,7 +113,7 @@ Se non si vuole che i dispositivi continuino a inviare i dati di diagnostica:
 
 Impostare questi valori utilizzando uno dei metodi seguenti:
 
-- Criteri di gruppo, in **configurazione** > computer**modelli amministrativi** > **componenti** > di Windows**raccolta dati e compilazioni anteprima**
+- Criteri di gruppo, in **Configurazione Computer**  > **modelli amministrativi**  > **componenti di Windows**  > **le compilazioni di raccolta dati e anteprima**
 - Gestione di dispositivi mobili (MDM), ad esempio [Microsoft Intune](https://docs.microsoft.com/intune/device-restrictions-windows-10#reporting-and-telemetry)
 
 Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization) (Configurare i dati di diagnostica di Windows nell'organizzazione).

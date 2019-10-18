@@ -11,17 +11,14 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0cceaf6f4475a024b8f3375ef962a6dfc2dddc4d
-ms.sourcegitcommit: e0d303d87c737811c2d3c40d01cd3d260a5c7bde
+ms.openlocfilehash: f090c80f70ef8d286a36236c48503817adb93591
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69974778"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72387023"
 ---
 # <a name="updates-in-desktop-analytics"></a>Aggiornamenti in desktop Analytics
-
-> [!Note]  
-> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
 Nel portale di analisi dei desktop visualizzare lo stato degli aggiornamenti della sicurezza e delle funzionalità. Selezionare questi nodi nel gruppo monitoraggio del menu principale di analisi desktop. Questi nodi forniscono informazioni dettagliate sullo stato di questi aggiornamenti nell'ambiente in uso.
 
@@ -50,7 +47,7 @@ I dispositivi eseguono un aggiornamento della sicurezza precedente alla più rec
 
 Il dispositivo non è stato valutato da desktop Analytics. Questo stato include i dispositivi che eseguono dispositivi Windows 7, Windows 8.1 o Windows 10 registrati per il programma Windows Insider.  
 
-Se un dispositivo Windows 10 *non* è autenticato con una account Microsoft, Windows non segnala questi dati. Questa autenticazione viene in genere completata come parte del Installazione di Windows la configurazione guidata.<!-- 5148153 -->
+Se un dispositivo Windows 10 *non è autenticato* con una account Microsoft, Windows non segnala questi dati. Questa autenticazione viene in genere completata come parte del Installazione di Windows la configurazione guidata.<!-- 5148153 -->
 
 
 ## <a name="feature-updates"></a>Aggiornamenti delle funzionalità
@@ -81,7 +78,7 @@ I dispositivi eseguono un aggiornamento delle funzionalità oltre la data di fin
 
 Il dispositivo non è stato valutato da desktop Analytics. Questo stato include i dispositivi che eseguono dispositivi Windows 7, Windows 8.1 o Windows 10 registrati per il programma Windows Insider.
 
-Se un dispositivo Windows 10 *non* è autenticato con una account Microsoft, Windows non segnala questi dati. Questa autenticazione viene in genere completata come parte del Installazione di Windows la configurazione guidata.<!-- 5148153 -->
+Se un dispositivo Windows 10 *non è autenticato* con una account Microsoft, Windows non segnala questi dati. Questa autenticazione viene in genere completata come parte del Installazione di Windows la configurazione guidata.<!-- 5148153 -->
 
 
 ## <a name="next-steps"></a>Passaggi successivi

@@ -2,7 +2,7 @@
 title: Domande frequenti su desktop Analytics
 titleSuffix: Configuration Manager
 description: Domande frequenti su desktop Analytics.
-ms.date: 10/08/2019
+ms.date: 10/15/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,19 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 13bdb5348e9fc58ca0ba194dd8cf4d509c16b081
-ms.sourcegitcommit: 9c76ed76ead1125b712cef574d832803dbf2c5a9
+ms.openlocfilehash: 96f84adcacdf298840a981360478bf828a22716a
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163140"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72385476"
 ---
 # <a name="desktop-analytics-faq"></a>Domande frequenti su desktop Analytics
 
-> [!Note]  
-> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
-
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 ### <a name="bkmk_intune"></a>È possibile usare analisi desktop con i dispositivi gestiti da Intune? 
 
@@ -39,6 +36,19 @@ Quando si configura per la prima volta analisi desktop, è possibile che i repor
 - Controllare i dispositivi associati all'organizzazione negli ultimi sette giorni. Nel [portale di analisi dei desktop](https://aka.ms/desktopanalytics)passare al riquadro **servizi connessi** . Selezionare **registra i dispositivi**e **visualizzare i dati recenti**
 
 Se i dispositivi sono configurati correttamente e non vengono ancora visualizzati i dati nell'area di lavoro, [contattare il supporto tecnico Microsoft](https://support.microsoft.com/hub/4343728/support-for-business).
+
+## <a name="connect-configuration-manager"></a>Connettere Configuration Manager
+
+### <a name="can-i-change-the-target-or-additional-collections"></a>È possibile modificare la destinazione o le raccolte aggiuntive?
+
+Sì, usare il processo seguente:
+
+- Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e selezionare il nodo **Servizi di Azure**. Aprire le proprietà per la voce associata al servizio desktop Analytics.
+
+- Nella scheda **Connessione desktop analisi** modificare la raccolta di **destinazione** o gestire le raccolte aggiuntive.
+
+> [!IMPORTANT]  
+> Configuration Manager usa un criterio impostazioni per configurare i dispositivi nella raccolta di destinazione. Questo criterio include le impostazioni dei dati di diagnostica per consentire ai dispositivi di inviare dati a Microsoft. La modifica della raccolta di destinazione non comporta l'annullamento del criterio impostazioni nei dispositivi non più nella raccolta di destinazione. Se non si vuole che i dispositivi continuino a inviare i dati di diagnostica, [riconfigurare i dispositivi](/sccm/desktop-analytics/account-close#reconfigure-clients).
 
 ## <a name="windows-upgrade"></a>Aggiornamento di Windows
 
@@ -58,7 +68,7 @@ Sebbene sia possibile usare l'analisi del desktop per supportare l'aggiornamento
 
 ### <a name="can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal"></a>È possibile ridurre la quantità di tempo necessaria per l'aggiornamento dei dati nel portale di analisi desktop?
 
-Nel portale di analisi desktop sono disponibili due tipi di dati: Dati dell'amministratore e dati di diagnostica. Per aggiornare i dati dell'amministratore su richiesta, aprire il riquadro a comparsa valuta dati e selezionare **Applica modifiche**. Questa azione attiva immediatamente un aggiornamento unico di eventuali modifiche amministrative in sospeso nelle aree di lavoro. Le modifiche vengono propagate e sono disponibili a livello generale entro 15-60 minuti. La durata dipende dalle dimensioni dell'area di lavoro e dall'ambito delle modifiche in sospeso. È possibile richiedere un aggiornamento dati su richiesta fino a sei volte nell'arco di 24 ore.
+Sono disponibili due tipi di dati nel portale di analisi del desktop: dati dell'amministratore e dati di diagnostica. Per aggiornare i dati dell'amministratore su richiesta, aprire il riquadro a comparsa valuta dati e selezionare **Applica modifiche**. Questa azione attiva immediatamente un aggiornamento unico di eventuali modifiche amministrative in sospeso nelle aree di lavoro. Le modifiche vengono propagate e sono disponibili a livello generale entro 15-60 minuti. La durata dipende dalle dimensioni dell'area di lavoro e dall'ambito delle modifiche in sospeso. È possibile richiedere un aggiornamento dati su richiesta fino a sei volte nell'arco di 24 ore.
 
 Tutti i dati vengono aggiornati automaticamente una volta al giorno, anche se non si richiede un aggiornamento dati su richiesta. Non è possibile attivare un aggiornamento su richiesta dei dati di diagnostica. Per altre informazioni sui diversi tipi di dati in analisi desktop, vedere [latenza dei dati](/sccm/desktop-analytics/troubleshooting#data-latency).
 
@@ -72,7 +82,7 @@ No, l'intero servizio è basato sui dati di diagnostica di Windows, che richiedo
 
 Per Log Analytics di Azure: Sì, quando si configura analisi desktop e si crea l'area di lavoro Log Analytics.
 
-Per il servizio Microsoft Gestione dati e il servizio di archiviazione Azure Analytics: No, questi due servizi sono ospitati nel Stati Uniti.
+Per il servizio Microsoft Gestione dati e la risorsa di archiviazione di Azure: No, questi due servizi sono ospitati nel Stati Uniti.
 
 ### <a name="where-is-my-organizations-data-stored"></a>Dove vengono archiviati i dati dell'organizzazione?
 
@@ -98,7 +108,7 @@ Sì, quando si imposta un'area di lavoro di Windows Analytics esistente come are
 
 | Windows Analytics | Desktop Analytics |
 |-------------------| ------------------|
-| Numero di installazioni insufficienti | (Non applicabile) <br> Nota: Desktop Analytics esegue la propria euristica per determinare il numero di installazioni basso |
+| Numero di installazioni insufficienti | (Non applicabile) <br> Nota: desktop Analytics esegue la propria euristica per determinare il numero di installazioni basso |
 | Non verificato | Non verificato |
 | Revisione in corso | Non verificato |
 | Mission-critical | Critico |
@@ -127,7 +137,7 @@ Sì.<!-- 5202803 --> I clienti esistenti di Windows Analytics possono ora migrar
 
 Sì. Se attualmente si usa [conformità aggiornamenti](https://docs.microsoft.com/windows/deployment/update/update-compliance-get-started) nella portale di Azure, è possibile continuare a farlo ora e oltre il 2020 gennaio.
 
-Per ulteriori informazioni, vedere il post di Blog: @no__t 0Migrate i dati di input dell'utente da "Windows Analytics: Preparazione aggiornamenti "to desktop Analytics @ no__t-0.
+Per ulteriori informazioni, vedere [KB 4521815: ritiro di Windows Analytics il 31 gennaio 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement).
 
 ### <a name="are-there-any-windows-analytics-features-that-arent-available-in-desktop-analytics"></a>Sono disponibili funzionalità di Windows Analytics che non sono disponibili in analisi desktop?
 

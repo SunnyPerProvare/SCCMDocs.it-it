@@ -2,7 +2,7 @@
 title: Abilitare la condivisione dei dati
 titleSuffix: Configuration Manager
 description: Guida di riferimento per la condivisione di dati di diagnostica con analisi desktop.
-ms.date: 07/03/2019
+ms.date: 10/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,17 +11,14 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0128a802916958c69b07dffe86d04f31698fd028
-ms.sourcegitcommit: 974b20f5faa0e0bbf9e43391280fdebeb657ac47
+ms.openlocfilehash: 91be1fbb03c49b28d689aff974a43ba8434fc194
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72237015"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72385679"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Abilitare la condivisione dei dati per analisi desktop
-
-> [!Note]  
-> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
 Per registrare i dispositivi in desktop Analytics, è necessario inviare i dati di diagnostica a Microsoft. Se l'ambiente in uso usa un server proxy, usare queste informazioni per configurare il proxy.
 
@@ -79,17 +76,19 @@ Per abilitare la condivisione dei dati, configurare il server proxy per consenti
 | `https://kmwatsonc.events.data.microsoft.com` | Analisi degli arresti anomali in linea. Obbligatorio per i report sull'integrità dei dispositivi in Windows 10, versione 1809 o successiva. |
 | `https://oca.telemetry.microsoft.com`  | Analisi degli arresti anomali (OCA) online. Necessaria per monitorare lo stato di distribuzione in Windows 10, versione 1803 o versioni precedenti. |
 | `https://login.live.com` | Necessario per fornire un'identità del dispositivo più affidabile per desktop Analytics. <br> <br>Per disabilitare l'accesso account Microsoft all'utente finale, utilizzare le impostazioni dei criteri anziché bloccare l'endpoint. Per ulteriori informazioni, vedere [la account Microsoft nell'azienda](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts#block-all-consumer-microsoft-account-user-authentication). |
-| `https://graph.windows.net` | Usato per recuperare automaticamente le impostazioni, come la commercializzazione, quando si connette la gerarchia a analisi desktop (solo su Configuration Manager ruolo del server). |
-| `https://*.manage.microsoft.com` | Usato per sincronizzare l'appartenenza alla raccolta di dispositivi, i piani di distribuzione e lo stato di conformità dei dispositivi con analisi del desktop (solo su Configuration Manager ruolo del server). |
+| `https://graph.windows.net` | Usato per recuperare automaticamente le impostazioni, come la commercializzazione, quando si connette la gerarchia a desktop Analytics (in Configuration Manager ruolo del server). Per ulteriori informazioni, vedere [configurare il proxy per un server del sistema del sito
+] (/SCCM/Core/Plan-Design/Network/Proxy-Server-Support # Configure-the-proxy-for-a-Site-System-Server). |
+| `https://*.manage.microsoft.com` | Usato per sincronizzare l'appartenenza alla raccolta di dispositivi, i piani di distribuzione e lo stato di conformità dei dispositivi con analisi del desktop (solo su Configuration Manager ruolo del server). Per ulteriori informazioni, vedere [configurare il proxy per un server del sistema del sito
+] (/SCCM/Core/Plan-Design/Network/Proxy-Server-Support # Configure-the-proxy-for-a-Site-System-Server). |
 
 
 ## <a name="proxy-server-authentication"></a>Autenticazione del server proxy
 
 Assicurarsi che un proxy non blocchi i dati di diagnostica a causa dell'autenticazione. Se l'organizzazione usa l'autenticazione del server proxy per il traffico in uscita, usare uno o più degli approcci seguenti:
 
-- **Bypass** (scelta consigliata): Configurare i server proxy in modo che non richiedano l'autenticazione proxy per il traffico verso gli endpoint dati di diagnostica. Questa opzione è la soluzione più completa. Funziona per tutte le versioni di Windows 10.  
+- **Bypass** (scelta consigliata): configurare i server proxy in modo che non richiedano l'autenticazione proxy per il traffico verso gli endpoint dati di diagnostica. Questa opzione è la soluzione più completa. Funziona per tutte le versioni di Windows 10.  
 
-- **Autenticazione proxy utente**: Configurare i dispositivi per l'uso del contesto dell'utente connesso per l'autenticazione proxy. Questo metodo richiede che i dispositivi eseguano Windows 10, versione 1703 o successiva. Verificare che gli utenti dispongano dell'autorizzazione proxy per raggiungere gli endpoint dei dati di diagnostica. Questa opzione richiede che i dispositivi dispongano di utenti console con autorizzazioni proxy, quindi non è possibile usare questo metodo con dispositivi senza intestazioni.  
+- **Autenticazione proxy utente**: configurare i dispositivi per l'uso del contesto dell'utente connesso per l'autenticazione proxy. Questo metodo richiede che i dispositivi eseguano Windows 10, versione 1703 o successiva. Verificare che gli utenti dispongano dell'autorizzazione proxy per raggiungere gli endpoint dei dati di diagnostica. Questa opzione richiede che i dispositivi dispongano di utenti console con autorizzazioni proxy, quindi non è possibile usare questo metodo con dispositivi senza intestazioni.  
 
 - **Autenticazione del proxy del dispositivo**:
 

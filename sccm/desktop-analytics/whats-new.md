@@ -11,17 +11,14 @@ ms.assetid: fa300181-86cb-4afe-8fbf-895a7572378d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ce51ddc7a6c46dfc8b131ed6bc573b5b501f8598
-ms.sourcegitcommit: 9c76ed76ead1125b712cef574d832803dbf2c5a9
+ms.openlocfilehash: cf4ec11bbf5595a8e6475d448f7e1d5532b4dd3c
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72162886"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72384709"
 ---
 # <a name="whats-new-in-desktop-analytics"></a>Novità di analisi desktop
-
-> [!Note]  
-> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
 Scopri le novità di ogni mese in analisi desktop.
 

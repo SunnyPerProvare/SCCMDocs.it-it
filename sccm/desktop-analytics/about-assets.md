@@ -11,17 +11,14 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 225cc93d38607c90332c1bc56ea12b2c344ab4ea
-ms.sourcegitcommit: fe8934487158ed3bd15c7a6a456c3cafe58aed64
+ms.openlocfilehash: 8b60326a746768e7045104a571d05a085ac0bd2a
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68995383"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72387110"
 ---
 # <a name="assets-in-desktop-analytics"></a>Asset in desktop Analytics
-
-> [!Note]  
-> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
 Dopo che i dispositivi hanno segnalato i dati a analisi desktop, fornisce un inventario delle risorse seguenti:
 
@@ -40,7 +37,7 @@ La scheda **dispositivi** Visualizza le informazioni chiave su tutti i dispositi
 
 In un piano di distribuzione sono disponibili maggiori dettagli sui dispositivi. Per altre informazioni, vedere [pianificare asset](/sccm/desktop-analytics/about-deployment-plans#plan-assets)
 
-## <a name="apps"></a>App
+## <a name="apps"></a>Applicazioni
 
 La scheda **app** Mostra tutte le app installate che il servizio rileva nei dispositivi Windows.
 
@@ -57,7 +54,7 @@ Configurare l' **importanza** delle app impostando una delle categorie seguenti:
 
 Selezionare l'app dall'elenco e quindi fare clic su **modifica**. Questa azione Visualizza i dettagli per l'app. Selezionare il menu a discesa **importanza** e impostare un valore. È anche possibile assegnare un **proprietario**. Se si apportano modifiche, fare clic su **Salva**.
 
-### <a name="a-namebkmk_plan-autoapp--automatic-upgrade-decision-of-system-and-store-apps"></a><a name="bkmk_plan-autoapp" />Decisione di aggiornamento automatico delle app di sistema e dello Store
+### <a name="a-namebkmk_plan-autoapp--automatic-upgrade-decision-of-system-and-store-apps"></a><a name="bkmk_plan-autoapp" /> la decisione di aggiornamento automatico delle app di sistema e dello Store
 
 <!-- 3587232 -->
 L'identificazione dell' **importanza** e della **decisione di aggiornamento** è fondamentale per tutte le app degne di nota nel flusso di lavoro di analisi desktop. Per ridurre il lavoro richiesto per l'annotazione di queste app, determinati tipi di app vengono automaticamente contrassegnati come *non importanti*. La decisione di aggiornamento del piano di distribuzione per queste app è inoltre contrassegnata come *pronta*. Le app seguenti sono compatibili e continueranno a funzionare dopo l'aggiornamento di Windows:
@@ -69,7 +66,7 @@ L'identificazione dell' **importanza** e della **decisione di aggiornamento** è
 > [!Tip]
 > Gestisci gli input per qualsiasi app a livello globale o per piano di distribuzione. 
 >
-> 1. Nel menu Gestisci del portale di analisi del desktop selezionare **Asset**. Quindi selezionare **app**.
+> 1. Nel menu **Gestisci** del portale di analisi del desktop selezionare **Asset**. Quindi selezionare **app**.
 >
 > 2. Usare le colonne **tipo** e **categoria** per gestire le categorie di app:
 >

@@ -2,7 +2,7 @@
 title: Desktop Analytics
 titleSuffix: Configuration Manager
 description: Panoramica sul servizio desktop Analytics integrato con Configuration Manager.
-ms.date: 07/29/2019
+ms.date: 10/14/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: overview
@@ -11,17 +11,14 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ee4075926f5c6f01dddcf41a2c329e88a4ee591
-ms.sourcegitcommit: 160bcdaf783f3946ad5c7869b2566cbfc4da545c
+ms.openlocfilehash: 76fa92c93a290c49c286be3bb1368dfdf8347ef3
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401499"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72384977"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Desktop Analytics?
-
-> [!Note]  
-> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
 Desktop Analytics è un servizio basato sul cloud che si integra con Configuration Manager. Il servizio fornisce informazioni e informazioni dettagliate per prendere decisioni più informate sulla preparazione degli aggiornamenti dei client Windows. Combina i dati dell'organizzazione con i dati aggregati da milioni di dispositivi connessi ai servizi cloud Microsoft.
 
@@ -52,17 +49,17 @@ Molti clienti hanno problemi a ricevere e rimanere aggiornati con Windows 10. Il
 
 Desktop Analytics offre i vantaggi seguenti:
 
-- **Inventario di dispositivi e software**: Inventario dei fattori chiave come le app e le versioni di Windows.  
+- **Inventario di dispositivi e software**: inventario di fattori chiave come app e versioni di Windows.  
 
-- **Identificazione pilota**: Identificazione del set più piccolo di dispositivi che forniscono la più ampia copertura di fattori. Questo argomento è incentrato sui fattori che sono più importanti per un progetto pilota di aggiornamenti e aggiornamenti di Windows. Assicurandosi che il progetto pilota abbia una maggiore riuscita consente di procedere in modo più rapido e sicuro alle distribuzioni più ampie nell'ambiente di produzione.  
+- **Identificazione pilota**: identificazione del set più piccolo di dispositivi che forniscono la più ampia copertura di fattori. Questo argomento è incentrato sui fattori che sono più importanti per un progetto pilota di aggiornamenti e aggiornamenti di Windows. Assicurandosi che il progetto pilota abbia una maggiore riuscita consente di procedere in modo più rapido e sicuro alle distribuzioni più ampie nell'ambiente di produzione.  
 
-- **Identificazione del problema**: Usando i dati di mercato aggregati insieme ai dati dell'ambiente, il servizio prevede potenziali problemi per ottenere e rimanere aggiornati con Windows. Suggerisce quindi potenziali mitigazioni.  
+- **Identificazione del problema**: usando dati di mercato aggregati insieme ai dati dell'ambiente, il servizio prevede potenziali problemi per ottenere e rimanere aggiornati con Windows. Suggerisce quindi potenziali mitigazioni.  
 
-- **Integrazione Configuration Manager**: Il servizio cloud consente di abilitare l'infrastruttura locale esistente. Usare questi dati e analisi per distribuire e gestire Windows sui dispositivi.  
+- **Integrazione di Configuration Manager**: il servizio cloud consente di abilitare l'infrastruttura locale esistente. Usare questi dati e analisi per distribuire e gestire Windows sui dispositivi.  
 
 
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 Per usare desktop Analytics, verificare che l'ambiente soddisfi i prerequisiti seguenti.
 
@@ -116,13 +113,13 @@ Per usare desktop Analytics, verificare che l'ambiente soddisfi i prerequisiti s
 
 ### <a name="licensing-and-costs"></a>Licenze e costi
 
-Desktop Analytics richiede una delle seguenti sottoscrizioni di licenza:
+I dispositivi registrati in analisi desktop possono essere usati solo dagli utenti con licenza di:
 
-- Windows 10 Enterprise E3 o E5; o Microsoft 365 F1, E3 o E5  
+- Windows 10 Enterprise E3 o E5 (incluso in Microsoft 365 F1, E3 o E5)
 
-- Windows 10 Education a3 o a5; o Microsoft 365 a3 o a5  
+- Windows 10 Education a3 o a5 (incluso in Microsoft 365 a3 o a5)
 
-- Windows VDA E3 o E5  
+- Accesso desktop virtuale Windows E3 o E5  
 
 Oltre al costo degli abbonamenti delle licenze, non sono previsti costi aggiuntivi per l'uso di analisi del desktop. All'interno di Azure Log Analytics, desktop Analytics è "con classificazione zero". Questa valutazione significa che è esclusa dai limiti e dai costi dei dati, indipendentemente dal piano tariffario Log Analytics di Azure scelto. Per altre informazioni sui piani tariffari di Azure Log Analytics, vedere [prezzi-log Analytics](https://azure.microsoft.com/pricing/details/monitor/).
 

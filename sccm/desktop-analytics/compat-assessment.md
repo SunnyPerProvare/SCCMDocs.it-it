@@ -12,29 +12,26 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6181f0e1a502d701ca7337641013a18b03251f9
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: f565128b13d99daf041d56762994b1e2b35e793e
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68535975"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72386744"
 ---
 # <a name="compatibility-assessment-in-desktop-analytics"></a>Valutazione della compatibilità in desktop Analytics
 
-> [!Note]  
-> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
-
-Le valutazioni degli aggiornamenti in Windows Analytics erano generiche, ad esempio: Attenzione necessaria o correzione disponibile. Non fornisce alcun indicatore visivo su come classificare in ordine di priorità le app o i driver con problemi o informazioni dettagliate sull'aggiornamento. Desktop Analytics sostituisce questa funzionalità con i rischi per la **compatibilità**. Desktop Analytics mostra la valutazione per le app solo nella visualizzazione distribuzione per uno scenario di pre-aggiornamento. Suddivide le app in base alle informazioni ottenute da Microsoft dalle macchine virtuali incluse in un piano di distribuzione corrente.
+Le valutazioni dell'aggiornamento in Windows Analytics erano generiche, ad esempio: attenzione necessaria o correzione disponibile. Non fornisce alcun indicatore visivo su come classificare in ordine di priorità le app o i driver con problemi o informazioni dettagliate sull'aggiornamento. Desktop Analytics sostituisce questa funzionalità con i rischi per la **compatibilità**. Desktop Analytics mostra la valutazione per le app solo nella visualizzazione distribuzione per uno scenario di pre-aggiornamento. Suddivide le app in base alle informazioni ottenute da Microsoft dalle macchine virtuali incluse in un piano di distribuzione corrente.
 
 Desktop Analytics usa le seguenti categorie di valutazione della compatibilità:
 
-- **Bassa**: Il servizio non ha rilevato segnali per inserire questa app a rischio di un aggiornamento di Windows. È probabile che funzioni sul sistema operativo di destinazione così com'è.  
+- **Bassa**: il servizio non ha rilevato segnali per inserire questa app a rischio di un aggiornamento di Windows. È probabile che funzioni sul sistema operativo di destinazione così com'è.  
 
-- **Media**: Analytics indica che è possibile che l'applicazione abbia una funzionalità disaccoppiata, anche se è probabile che la correzione sia possibile.  
+- **Media**: Analytics indica che è possibile che l'applicazione abbia funzionalità disaccoppiate, anche se è probabile che la correzione sia possibile.  
 
-- **Elevato**: È quasi certo che l'applicazione abbia esito negativo durante o dopo l'aggiornamento. Potrebbe essere necessaria una correzione.  
+- **Alta**: l'applicazione è quasi certo che si verifichi un errore durante o dopo l'aggiornamento. Potrebbe essere necessaria una correzione.  
 
-- **Sconosciuto**: L'app non è stata valutata. Non sono disponibili altre informazioni, ad esempio *problemi noti di MS* o *pronto per Windows*.  
+- **Sconosciuto**: l'app non è stata valutata. Non sono disponibili altre informazioni, ad esempio *problemi noti di MS* o *pronto per Windows*.  
 
 Nell'elenco di asset app o driver in un piano di distribuzione, questo valore verrà visualizzato per ogni asset nella colonna **rischio di compatibilità** .
 
@@ -112,15 +109,15 @@ Il Catalogo applicazioni [pronto per Windows mette in](https://www.readyforwindo
 
 Le categorie possibili sono:
 
-- **Elevata adozione**: Questa app è installata da almeno 100.000 dispositivi commerciali Windows 10.  
+- **Elevata adozione**: almeno 100.000 dispositivi commerciali Windows 10 hanno installato questa app.  
 
-- **Adottato**: Questa app è installata da almeno 10.000 dispositivi commerciali Windows 10.  
+- **Adottato**: almeno 10.000 dispositivi commerciali Windows 10 hanno installato questa app.  
 
-- **Dati insufficienti**: Un numero troppo basso di dispositivi Windows 10 commerciali sta condividendo le informazioni per questa app per la categorizzazione dell'adozione da parte di Microsoft.
+- **Dati insufficienti**: un numero troppo basso di dispositivi Windows 10 commerciali condivide le informazioni per questa app per la categorizzazione dell'adozione da parte di Microsoft.
 
-- **Contattare lo sviluppatore**: Potrebbero verificarsi problemi di compatibilità con questa versione dell'app. Microsoft consiglia di contattare il provider di software per ottenere ulteriori informazioni. Per ulteriori informazioni, vedere [Ready for Windows](https://www.readyforwindows.com/).  
+- **Contattare lo sviluppatore**: potrebbero essersi verificati problemi di compatibilità con questa versione dell'app. Microsoft consiglia di contattare il provider di software per ottenere ulteriori informazioni. Per ulteriori informazioni, vedere [Ready for Windows](https://www.readyforwindows.com/).  
 
-- **Sconosciuto**: Non sono disponibili informazioni pronte per Windows per questa versione di questa applicazione. Le informazioni potrebbero essere disponibili per le altre versioni dell'applicazione in [pronto per Windows](https://www.readyforwindows.com/).  
+- **Sconosciuto**: per questa versione di questa applicazione non sono disponibili informazioni pronte per Windows. Le informazioni potrebbero essere disponibili per le altre versioni dell'applicazione in [pronto per Windows](https://www.readyforwindows.com/).  
 
 ### <a name="support-statement"></a>Istruzione support
 
@@ -150,7 +147,7 @@ Quando si aggiorna il sito e i client di Configuration Manager alla versione 190
 
 #### <a name="16-bit-apps"></a>app a 16 bit
 
-Rimuovere tutti i componenti a 16 bit dalle applicazioni e sostituirli con equivalenti a 32 bit o a 64 bit. Per ulteriori informazioni, vedere [la storia per sviluppatori di Windows Vista e Windows Server 2008: Cookbook](https://docs.microsoft.com/previous-versions/aa480152\(v=msdn.10\))per la compatibilità delle applicazioni.
+Rimuovere tutti i componenti a 16 bit dalle applicazioni e sostituirli con equivalenti a 32 bit o a 64 bit. Per ulteriori informazioni, vedere la pagina relativa a [Windows Vista e Windows Server 2008 Developer Story: Cookbook per la compatibilità delle applicazioni](https://docs.microsoft.com/previous-versions/aa480152\(v=msdn.10\)).
 
 L'altra opzione consiste nell'abilitare la macchina DOS virtuale NT (NTVDM) per il supporto in Windows 10.
 
@@ -178,8 +175,8 @@ La maggior parte dei Web browser correnti non supporta Silverlight.
 
 | Browser | Supporto |
 |---------|---------|
-| Google Chrome | Fine del supporto: 2015 settembre |
-| Firefox | Fine del supporto: Marzo 2017 |
+| Google Chrome | Fine del supporto: settembre 2015 |
+| Firefox | Fine del supporto: 2017 marzo |
 | Microsoft Edge | Nessun plug-in disponibile |
 
 Desktop Analytics consiglia all'app di eseguire test pilota per individuare eventuali regressioni.
@@ -210,9 +207,9 @@ In desktop Analytics sono inoltre elencati e raggruppati per disponibilità tutt
 | Disponibilità driver | È necessario agire? | Significato | Guida |
 |---------------------|------------------|---------------|----------|
 | Disponibile in-box | No, solo per la consapevolezza | La versione attualmente installata di un'applicazione o di un driver non verrà migrata alla nuova versione del sistema operativo. Una versione compatibile viene installata con la nuova versione del sistema operativo. | Per continuare l'aggiornamento, non è necessaria alcuna azione. |
-| Importa da Windows Update | Sì | La versione attualmente installata di un driver non verrà migrata alla nuova versione del sistema operativo. Una versione compatibile è disponibile dal Windows Update. | Se il computer riceve automaticamente gli aggiornamenti da Windows Update, non è richiesta alcuna azione. In caso contrario, importare un nuovo driver da Windows Update dopo l'aggiornamento di Windows. |
-| Disponibile in-box e da Windows Update | Sì | La versione attualmente installata di un driver non verrà migrata alla nuova versione del sistema operativo. Sebbene venga installato un nuovo driver durante l'aggiornamento, è disponibile una versione più recente da Windows Update. | Se il computer riceve automaticamente gli aggiornamenti da Windows Update, non è richiesta alcuna azione. In caso contrario, importare un nuovo driver da Windows Update dopo l'aggiornamento di Windows. |
-| Verifica con fornitore | Sì | Il driver non viene migrato alla nuova versione del sistema operativo e desktop Analytics non riesce a trovare una versione compatibile. | Per una soluzione, consultare il fornitore dell'hardware indipendente (IHV) che produce il driver o l'OEM (Original Equipment Manufacturer) che ha fornito il dispositivo. |
+| Importa da Windows Update | Yes | La versione attualmente installata di un driver non verrà migrata alla nuova versione del sistema operativo. Una versione compatibile è disponibile dal Windows Update. | Se il computer riceve automaticamente gli aggiornamenti da Windows Update, non è richiesta alcuna azione. In caso contrario, importare un nuovo driver da Windows Update dopo l'aggiornamento di Windows. |
+| Disponibile in-box e da Windows Update | Yes | La versione attualmente installata di un driver non verrà migrata alla nuova versione del sistema operativo. Sebbene venga installato un nuovo driver durante l'aggiornamento, è disponibile una versione più recente da Windows Update. | Se il computer riceve automaticamente gli aggiornamenti da Windows Update, non è richiesta alcuna azione. In caso contrario, importare un nuovo driver da Windows Update dopo l'aggiornamento di Windows. |
+| Verifica con fornitore | Yes | Il driver non viene migrato alla nuova versione del sistema operativo e desktop Analytics non riesce a trovare una versione compatibile. | Per una soluzione, consultare il fornitore dell'hardware indipendente (IHV) che produce il driver o l'OEM (Original Equipment Manufacturer) che ha fornito il dispositivo. |
 
 
 ## <a name="see-also"></a>Vedere anche

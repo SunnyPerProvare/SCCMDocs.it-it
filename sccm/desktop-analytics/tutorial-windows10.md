@@ -11,17 +11,14 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f33cd743e02a034049a315b974d2bdf26061cd7
-ms.sourcegitcommit: 974b20f5faa0e0bbf9e43391280fdebeb657ac47
+ms.openlocfilehash: c84b5bf720a974bd767db56b9e9da4784caefad1
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72237011"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72384681"
 ---
-# <a name="tutorial-deploy-windows-10-to-pilot"></a>Esercitazione: Distribuire Windows 10 a un gruppo pilota
-
-> [!Note]  
-> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
+# <a name="tutorial-deploy-windows-10-to-pilot"></a>Esercitazione: distribuire Windows 10 in progetto pilota
 
 Questa esercitazione usa l'analisi del desktop e Configuration Manager per distribuire Windows 10 in un gruppo pilota. Viene evidenziata l'integrazione del servizio cloud per fornire informazioni dettagliate per la distribuzione di Windows con il prodotto locale. Usare analisi del desktop per determinare i dispositivi più adatti da inserire in un gruppo pilota. Usare quindi Configuration Manager per ottenere la corrente con Windows.
 
@@ -39,7 +36,7 @@ Desktop Analytics usa un' *area di lavoro log Analytics* nella sottoscrizione di
 
 
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 Prima di iniziare questa esercitazione, verificare che siano soddisfatti i prerequisiti seguenti:  
 
@@ -82,7 +79,7 @@ Prima di iniziare questa esercitazione, verificare che siano soddisfatti i prere
     - `https://graph.windows.net` (solo nel ruolo Server Configuration Manager)
     - `https://*.manage.microsoft.com` (solo nel ruolo Server Configuration Manager)
 
-    Per altre informazioni, vedere [Come abilitare la condivisione dei dati per Desktop Analytics](/sccm/desktop-analytics/enable-data-sharing#endpoints).  
+    Per altre informazioni, vedere [How to Enable Data Sharing for desktop Analytics](/sccm/desktop-analytics/enable-data-sharing#endpoints).  
 
 > [!Important]  
 > Questi prerequisiti sono ai fini di questa esercitazione. Per ulteriori informazioni sui prerequisiti generali per desktop Analytics con Configuration Manager, vedere [prerequisiti](/sccm/desktop-analytics/overview#prerequisites).  
@@ -101,7 +98,7 @@ Usare questa procedura per accedere a desktop Analytics e configurarlo nella sot
 
 4. Nella pagina **Give users access** :
 
-    - **Consenti a desktop Analytics di gestire i ruoli della directory per conto dell'utente**: Desktop Analytics assegna automaticamente ai **proprietari dell'area di lavoro** il ruolo di amministratore di **Desktop Analytics** . Se tali gruppi sono già un **amministratore globale**, non vi sono modifiche.  
+    - **Consenti a desktop Analytics di gestire i ruoli della directory per conto dell'utente**: desktop Analytics assegna automaticamente ai proprietari dell'area di **lavoro** il ruolo di **amministratore di desktop Analytics** . Se tali gruppi sono già un **amministratore globale**, non vi sono modifiche.  
 
         Se non si seleziona questa opzione, desktop Analytics aggiunge ancora gli utenti come membri del gruppo di sicurezza. Un **amministratore globale** deve assegnare manualmente il ruolo di **amministratore di analisi desktop** per gli utenti.  
 
@@ -177,7 +174,7 @@ Installare l'aggiornamento cumulativo di Configuration Manager versione 1902 (45
 
 5. Configurare le impostazioni seguenti nella finestra **Crea applicazione server** :  
 
-    - **Nome applicazione**: Nome descrittivo per l'app in Azure AD.
+    - **Nome applicazione**: nome descrittivo per l'app in Azure ad.
 
     - **URL della home page**: questo valore non viene usato da Configuration Manager, ma è richiesto da Azure AD. Per impostazione predefinita, questo valore è impostato su `https://ConfigMgrService`.  
 
@@ -188,7 +185,7 @@ Installare l'aggiornamento cumulativo di Configuration Manager versione 1902 (45
     Selezionare **Sign in (accedi**). Dopo l'autenticazione in Azure, nella pagina viene visualizzato il **Nome del tenant di Azure AD** come riferimento.
 
     > [!Note]  
-    > Completare questo passaggio come **amministratore globale**. Queste credenziali non vengono memorizzate in Configuration Manager. Questo utente tipo non richiede autorizzazioni in Configuration Manager e non deve necessariamente essere lo stesso account che esegue la procedura guidata per i servizi di Azure.  
+    > Completare questo passaggio come **amministratore globale**. Queste credenziali non vengono salvate da Configuration Manager. Questo utente tipo non richiede autorizzazioni in Configuration Manager e non deve necessariamente essere lo stesso account che esegue la procedura guidata per i servizi di Azure.  
 
     Selezionare **OK** per creare l'app Web in Azure AD e chiudere la finestra di dialogo Crea un'applicazione server. Nella finestra di dialogo app Server selezionare **OK**. Quindi selezionare **Avanti** nella pagina app della procedura guidata per i servizi di Azure.  
 
@@ -204,17 +201,17 @@ Installare l'aggiornamento cumulativo di Configuration Manager versione 1902 (45
 
 7. Nella pagina **raccolte** configurare le impostazioni seguenti:  
 
-    - **Nome visualizzato**: Il portale di analisi desktop Visualizza questa connessione Configuration Manager usando questo nome. Utilizzarlo per distinguere le diverse gerarchie. Ad esempio, *Lab di test* o *produzione*.  
+    - **Nome visualizzato**: il portale di analisi del desktop Visualizza questa connessione Configuration Manager usando questo nome. Utilizzarlo per distinguere le diverse gerarchie. Ad esempio, *Lab di test* o *produzione*.  
 
-    - **Raccolta di destinazione**: Questa raccolta include tutti i dispositivi che Configuration Manager configura con l'ID commerciale e le impostazioni dei dati di diagnostica. Si tratta del set completo di dispositivi che Configuration Manager si connette al servizio desktop Analytics.  
+    - **Raccolta di destinazione**: questa raccolta include tutti i dispositivi che Configuration Manager configura con l'ID commerciale e le impostazioni dei dati di diagnostica. Si tratta del set completo di dispositivi che Configuration Manager si connette al servizio desktop Analytics.  
 
-    - **I dispositivi nella raccolta di destinazione usano un proxy autenticato dall'utente per le comunicazioni in uscita**: Per impostazione predefinita, questo valore è **No**. Se necessario nell'ambiente in uso, impostare su **Sì**.  
+    - **I dispositivi nella raccolta di destinazione usano un proxy autenticato dall'utente per le comunicazioni in uscita**: per impostazione predefinita, questo valore è **No**. Se necessario nell'ambiente in uso, impostare su **Sì**.  
 
-    - **Selezionare raccolte specifiche da sincronizzare con analisi desktop**: Selezionare **Aggiungi** per includere raccolte aggiuntive. Queste raccolte sono disponibili nel portale di analisi del desktop per il raggruppamento con i piani di distribuzione. Assicurarsi di includere le raccolte di esclusioni pilota e pilota.  
+    - **Selezionare raccolte specifiche da sincronizzare con analisi desktop**: selezionare **Aggiungi** per includere raccolte aggiuntive. Queste raccolte sono disponibili nel portale di analisi del desktop per il raggruppamento con i piani di distribuzione. Assicurarsi di includere le raccolte di esclusioni pilota e pilota.  
 
         Queste raccolte continuano a essere sincronizzate in seguito alla modifica dell'appartenenza. Il piano di distribuzione, ad esempio, usa una raccolta con una regola di appartenenza di Windows 7. Quando i dispositivi eseguono l'aggiornamento a Windows 10 e Configuration Manager valuta l'appartenenza alla raccolta, tali dispositivi rilasciano il piano di raccolta e di distribuzione.  
 
-8. Completare la procedura guidata.  
+8. completare la procedura guidata.  
 
 Configuration Manager crea un criterio di impostazioni per configurare i dispositivi nella raccolta di destinazione. Questo criterio include le impostazioni dei dati di diagnostica per consentire ai dispositivi di inviare dati a Microsoft. Per impostazione predefinita, i client aggiornano i criteri ogni ora. Dopo aver ricevuto le nuove impostazioni, è possibile che si ritrovino diverse ore prima che i dati siano disponibili in desktop Analytics.
 
@@ -238,23 +235,23 @@ Usare questa procedura per creare un piano di distribuzione in desktop Analytics
 
 4. Nel riquadro **crea piano di distribuzione** configurare le impostazioni seguenti:  
 
-    - **Nome**: Nome univoco per il piano di distribuzione, ad esempio `Windows 10 pilot`  
+    - **Nome**: nome univoco per il piano di distribuzione, ad esempio `Windows 10 pilot`  
 
-    - **Prodotti e versioni**: Selezionare il prodotto **Windows** e la versione consigliata disponibile più recente. Ad esempio, **Windows 10, versione 1809 (scelta consigliata)** .  
+    - **Prodotti e versioni**: selezionare il prodotto **Windows** e la versione consigliata disponibile più recente. Ad esempio, **Windows 10, versione 1809 (scelta consigliata)**.  
 
-    - **Gruppi di dispositivi**: Selezionare uno o più gruppi dalla scheda Configuration Manager, quindi selezionare **Imposta come gruppi di destinazione**. Questi gruppi sono raccolte sincronizzate da Configuration Manager.  
+    - **Gruppi di dispositivi**: selezionare uno o più gruppi dalla scheda Configuration Manager, quindi selezionare **Imposta come gruppi di destinazione**. Questi gruppi sono raccolte sincronizzate da Configuration Manager.  
 
-    - **Regole di conformità**: Queste regole consentono di determinare quali dispositivi sono idonei per l'aggiornamento. Selezionare **sistema operativo Windows** e configurare le impostazioni seguenti:  
+    - **Regole di conformità**: queste regole consentono di determinare quali dispositivi sono idonei per l'aggiornamento. Selezionare **sistema operativo Windows** e configurare le impostazioni seguenti:  
 
-        - I **computer ricevono automaticamente i driver da Windows Update**: L'impostazione predefinita è **off**, che è consigliabile quando si esegue la distribuzione con Configuration Manager.  
+        - I **computer ricevono automaticamente i driver da Windows Update**: l'impostazione predefinita è **off**, che è consigliabile quando si esegue la distribuzione con Configuration Manager.  
 
-        - **Definire una soglia per il numero di installazioni basso per le app**: L'impostazione predefinita è `2%`. Le app al di sotto di questa soglia vengono impostate automaticamente su *numero minimo di installazioni*. Desktop Analytics non convalida questi componenti aggiuntivi durante il progetto pilota.  
+        - **Definire una soglia per il numero di installazioni basso per le app**: l'impostazione predefinita è `2%`. Le app al di sotto di questa soglia vengono impostate automaticamente su *numero minimo di installazioni*. Desktop Analytics non convalida questi componenti aggiuntivi durante il progetto pilota.  
 
             Se un'app è installata in una percentuale superiore di computer rispetto a questa soglia, il piano di distribuzione contrassegna l'app come *degno*di nota. È quindi possibile decidere la relativa importanza da testare durante la fase pilota.  
 
-    - **Data di completamento**: Scegliere la data in cui Windows deve essere completamente distribuito a tutti i dispositivi di destinazione.  
+    - **Data di completamento**: scegliere la data in cui Windows deve essere distribuito completamente a tutti i dispositivi di destinazione.  
 
-5. Selezionare **Create**. Il nuovo piano viene visualizzato nell'elenco dei piani di distribuzione durante l'elaborazione. Per velocizzare l'elaborazione, richiedere un aggiornamento dati su richiesta. Per altre informazioni, vedere [domande frequenti su desktop Analytics](/sccm/desktop-analytics/faq#can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal).
+5. Selezionare **Crea**. Il nuovo piano viene visualizzato nell'elenco dei piani di distribuzione durante l'elaborazione. Per velocizzare l'elaborazione, richiedere un aggiornamento dati su richiesta. Per altre informazioni, vedere [domande frequenti su desktop Analytics](/sccm/desktop-analytics/faq#can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal).
 
 6. Per aprire il piano di distribuzione, selezionarne il nome.  
 
@@ -302,7 +299,7 @@ Usare questa procedura per distribuire Windows 10 in Configuration Manager al gr
 
 2. Nella scheda **Home** della barra multifunzione, nel gruppo **Crea** selezionare **Aggiungi pacchetto di aggiornamento del sistema operativo**. Questa azione avvia l'Aggiunta guidata del pacchetto di aggiornamento del sistema operativo.  
 
-3. Nella pagina **origine dati** specificare il **percorso** di rete dei file di origine dell'installazione del pacchetto di aggiornamento del sistema operativo. Ad esempio `\\server\share\path`.  
+3. Nella pagina **origine dati** specificare il **percorso** di rete dei file di origine dell'installazione del pacchetto di aggiornamento del sistema operativo. Ad esempio, `\\server\share\path`.  
 
     > [!NOTE]  
     > I file di origine dell'installazione contengono Setup.exe e altri file e cartelle per installare il sistema operativo.  
@@ -338,9 +335,9 @@ Quindi distribuire il pacchetto di aggiornamento del sistema operativo ai punti 
 
     - **Pacchetto di aggiornamento**: specificare il pacchetto di aggiornamento che contiene i file di origine per l'aggiornamento del sistema operativo.  
 
-    - **Indice dell'edizione**: se nel pacchetto sono disponibili più indici dell'edizione del sistema operativo, selezionare l'indice dell'edizione desiderato. Per impostazione predefinita, la procedura guidata seleziona il primo indice.  
+    - **Indice edizione**: se sono presenti più indici edizione del sistema operativo nel pacchetto, selezionare l'indice edizione desiderato. Per impostazione predefinita, la procedura guidata seleziona il primo indice.  
 
-    - **Codice Product Key**: specificare il codice Product Key Windows per il sistema operativo da installare. Specificare i codici Product Key per contratti multilicenza codificati o i codici Product Key standard. Se si usa un codice Product Key standard, separare ogni gruppo di cinque caratteri con un trattino (-). Esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*. Se l'aggiornamento è per un'edizione per contratti multilicenza, il codice Product Key potrebbe non essere obbligatorio.  
+    - **Codice Product Key**: specificare il codice Product Key Windows per il sistema operativo da installare. Specificare i codici Product Key per contratti multilicenza codificati o i codici Product Key standard. Se si usa un codice Product Key standard, separare ogni gruppo di cinque caratteri con un trattino (-). Ad esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX* Se l'aggiornamento è per un'edizione per contratti multilicenza, il codice Product Key potrebbe non essere obbligatorio.  
 
         > [!Note]  
         > Questo codice Product Key può essere un codice ad attivazione multipla (MAK) o un codice generico di contratti multilicenza (GVLK). Un codice GVLK è anche definito codice di configurazione client del servizio di gestione delle chiavi (KMS). Per altre informazioni, vedere [Pianificare l'attivazione dei contratti multilicenza](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client). Per un elenco di codici di configurazione client KMS, vedere l'[Appendice A](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys) della Guida di attivazione di Windows Server.
@@ -377,7 +374,7 @@ Quindi distribuire il pacchetto di aggiornamento del sistema operativo ai punti 
 
 9. Nella pagina **avvisi** selezionare **Avanti** per accettare le impostazioni predefinite.  
 
-10. Completare la procedura guidata.  
+10. completare la procedura guidata.  
 
 
 ### <a name="bkmk_install-ts"></a>Installare la sequenza di attività da software Center

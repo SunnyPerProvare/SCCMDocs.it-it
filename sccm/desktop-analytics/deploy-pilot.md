@@ -11,17 +11,14 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa7566779fe346ddecfd546dc89dc8618fb39953
-ms.sourcegitcommit: ef7800a294e5db5d751921c34f60296c1642fc1f
+ms.openlocfilehash: 75cce53f54221c63c0e6b6af3f1276cf51560f3d
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68712663"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72386488"
 ---
 # <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Come eseguire la distribuzione in un progetto pilota con desktop Analytics
-
-> [!Note]  
-> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
 Uno dei vantaggi di analisi desktop è quello di identificare il set più piccolo di dispositivi che forniscono la più ampia copertura di fattori. Questo argomento è incentrato sui fattori che sono più importanti per un progetto pilota di aggiornamenti e aggiornamenti di Windows. Assicurarsi che il progetto pilota abbia un maggiore successo consente di spostarsi in modo più rapido e sicuro per le distribuzioni più ampie nell'ambiente di produzione.  
 
@@ -42,8 +39,8 @@ Verranno visualizzati i dati da desktop Analytics che mostrano il numero di disp
 
 Per l'elenco dei dispositivi consigliati aggiuntivi, eseguire le azioni seguenti:
 
-- **Aggiungi tutto a progetto pilota**: Aggiunge tutti i dispositivi consigliati al gruppo pilota
-- **Aggiungi a progetto pilota**: Aggiungere solo singoli dispositivi
+- **Aggiungi tutto a progetto pilota**: aggiunge tutti i dispositivi consigliati al gruppo pilota
+- **Aggiungi a progetto pilota**: Aggiungi solo i singoli dispositivi
 - **Sostituire** eventuali dispositivi specifici dal progetto pilota
 - **Ricalcola** al termine delle modifiche
 
@@ -58,8 +55,8 @@ Per l'elenco dei dispositivi consigliati aggiuntivi, eseguire le azioni seguenti
     - Ufficio del CEO
 - Nelle impostazioni **globali pilota** si includono tutte le raccolte di **dispositivi it** . Si esclude la raccolta di **uffici del CEO** .
 - Si crea un piano di distribuzione e si seleziona **tutte le raccolte di client Windows 10** come **gruppo di destinazione**.
-- L'elenco di **dispositivi pilota incluso** contiene il subset di dispositivi nel **gruppo di destinazione**: **Tutti i client Windows 10** che si trovano anche nell'elenco di inclusione pilota globale: **Tutti i dispositivi IT**  
-- Gli elenchi **aggiuntivi di dispositivi consigliati** contengono un set di dispositivi del **gruppo di destinazione** che forniscono la massima copertura e ridondanza per le risorse importanti.  Desktop Analytics esclude da questo elenco tutti i dispositivi nell'elenco di *esclusioni* pilota globale: **Ufficio del CEO**
+- L'elenco di **dispositivi pilota incluso** contiene il subset di dispositivi nel **gruppo di destinazione**: **tutti i client Windows 10** presenti anche nell'elenco di *inclusione* pilota globale: **tutti i dispositivi it**  
+- Gli elenchi **aggiuntivi di dispositivi consigliati** contengono un set di dispositivi del **gruppo di destinazione** che forniscono la massima copertura e ridondanza per le risorse importanti.  Desktop Analytics esclude da questo elenco tutti i dispositivi nell'elenco di *esclusioni* pilota globale: **CEO Office**
 
 
 ## <a name="address-issues"></a>Risolvere i problemi
@@ -70,11 +67,11 @@ Usare il portale di analisi del desktop per esaminare eventuali problemi segnala
 
 2. Selezionare un piano di distribuzione.  
 
-3. Nel menu prepara gruppo del piano di distribuzione selezionare prepare **Pilot**.  
+3. Nel menu prepara gruppo del piano di distribuzione selezionare **Prepare Pilot**.  
 
 4. Nella scheda **app** esaminare le app che richiedono l'input.  
 
-5. Per ogni app, selezionare il nome dell'app. Nel riquadro informazioni esaminare la raccomandazione e selezionare la decisione di aggiornamento. Se si sceglie di **non rivedere o non** è **possibile**, desktop Analytics non include i dispositivi con questa app nella distribuzione pilota. Se si sceglie **pronto (con monitoraggio e aggiornamento)** , utilizzare le **note correttive** per acquisire le azioni da intraprendere per risolvere un problema, ad esempio *reinstallare* o *trovare la versione consigliata del produttore*.
+5. Per ogni app, selezionare il nome dell'app. Nel riquadro informazioni esaminare la raccomandazione e selezionare la decisione di aggiornamento. Se si sceglie di **non rivedere o non** è **possibile**, desktop Analytics non include i dispositivi con questa app nella distribuzione pilota. Se si sceglie **pronto (con monitoraggio e aggiornamento)**, utilizzare le **note correttive** per acquisire le azioni da intraprendere per risolvere un problema, ad esempio *reinstallare* o *trovare la versione consigliata del produttore*.
 
 6. Ripetere questa verifica per altri asset.  
 
@@ -95,13 +92,13 @@ Configuration Manager usa i dati di analisi del desktop per creare raccolte per 
 3. Selezionare **Crea distribuzione** in più fasi nella barra multifunzione. Questa azione avvia la creazione guidata di una distribuzione in più fasi.
 
     > [!Tip]  
-    > Se si vuole creare una distribuzione della sequenza di attività classica solo per la raccolta pilota, selezionare Distribuisci nel riquadro **stato pilota** . Questa azione avvia la distribuzione guidata del software. Per altre informazioni, vedere [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).  
+    > Se si vuole creare una distribuzione della sequenza di attività classica solo per la raccolta pilota, selezionare **Distribuisci** nel riquadro **stato pilota** . Questa azione avvia la distribuzione guidata del software. Per altre informazioni, vedere [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).  
 
 4. Immettere un nome per la distribuzione e selezionare la sequenza di attività da usare. Usare l'opzione per **creare automaticamente una distribuzione in due fasi predefinita**e quindi configurare le raccolte seguenti:  
 
-    - **Prima raccolta**: Trovare e selezionare la raccolta **pilota** per questo piano di distribuzione. La convenzione di denominazione standard per questa raccolta `<deployment plan name> (Pilot)`è.
+    - **Prima raccolta**: trovare e selezionare la raccolta **pilota** per questo piano di distribuzione. La convenzione di denominazione standard per questa raccolta è `<deployment plan name> (Pilot)`.
 
-    - **Seconda raccolta**: Trovare e selezionare la raccolta di **produzione** per questo piano di distribuzione. La convenzione di denominazione standard per questa raccolta `<deployment plan name> (Production)`è.
+    - **Seconda raccolta**: trovare e selezionare la raccolta di **produzione** per questo piano di distribuzione. La convenzione di denominazione standard per questa raccolta è `<deployment plan name> (Production)`.
 
     > [!Note]  
     > Con l'integrazione di analisi del desktop, Configuration Manager crea automaticamente raccolte pilota e di produzione per il piano di distribuzione. Prima di poterli usare, la sincronizzazione di queste raccolte può richiedere tempo. Per ulteriori informazioni, vedere [Troubleshoot-latence data](/sccm/desktop-analytics/troubleshooting#data-latency).<!-- 4984639 -->
@@ -111,10 +108,10 @@ Configuration Manager usa i dati di analisi del desktop per creare raccolte per 
 5. Completare la procedura guidata per configurare la distribuzione in più fasi. Per altre informazioni, vedere [Creare distribuzioni in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence).
 
     > [!Note]  
-    > Usare l'impostazione predefinita per **iniziare automaticamente questa fase dopo un periodo di differimento (in giorni)** . Per avviare la seconda fase, è necessario soddisfare i criteri seguenti:
+    > Usare l'impostazione predefinita per **iniziare automaticamente questa fase dopo un periodo di differimento (in giorni)**. Per avviare la seconda fase, è necessario soddisfare i criteri seguenti:
     >
-    > 1. La prima fase raggiunge i criteri percentuali di **successo della distribuzione** per l'esito positivo. Questa impostazione viene configurata nella distribuzione in più fasi.
-    > 1. È necessario rivedere e prendere decisioni relative all'aggiornamento in desktop Analytics per contrassegnare le risorse importantie critiche come pronte. Per altre informazioni, vedere [esaminare gli asset che necessitano di una decisione di aggiornamento](/sccm/desktop-analytics/deploy-prod#bkmk_review).
+    > 1. La prima fase raggiunge i criteri **percentuali di successo della distribuzione** per l'esito positivo. Questa impostazione viene configurata nella distribuzione in più fasi.
+    > 1. È necessario rivedere e prendere decisioni relative all'aggiornamento in desktop Analytics per contrassegnare le risorse importanti e critiche come *pronte*. Per altre informazioni, vedere [esaminare gli asset che necessitano di una decisione di aggiornamento](/sccm/desktop-analytics/deploy-prod#bkmk_review).
     > 1. Desktop Analytics sincronizza le raccolte di Configuration Manager tutti i dispositivi di produzione che soddisfano i criteri di *pronto* .
 
 > [!Important]  
@@ -127,13 +124,13 @@ Configuration Manager usa i dati di analisi del desktop per creare raccolte per 
 
 Aprire il piano di distribuzione. Il riquadro **preparazione dell'aggiornamento-generale stato** fornisce un riepilogo dello stato del piano di distribuzione. Questo stato è per le raccolte pilota e di produzione. I dispositivi possono rientrare in una delle categorie seguenti:
 
-- **Aggiornato**: I dispositivi sono stati aggiornati alla versione di Windows di destinazione per questo piano di distribuzione
+- **Aggiornato: i**dispositivi sono stati aggiornati alla versione di Windows di destinazione per questo piano di distribuzione
 
-- **Decisione di aggiornamento completata**: Uno degli Stati seguenti:
+- **Decisione di aggiornamento completata**: uno dei seguenti stati:
     - Dispositivi con asset rilevanti **pronti** o **pronti per la correzione**
     - Lo stato del dispositivo è **bloccato**, [**sostituire il dispositivo**](/sccm/desktop-analytics/about-deployment-plans#plan-assets) o reinstallare il **dispositivo**
 
-- **Non verificato**: Dispositivi con asset rilevanti **non rivisti** o **esaminati in corso**
+- **Non verificato**: i dispositivi con asset degni di nota non sono stati **rivisti** o **esaminati in corso**
 
 Lo stato del dispositivo viene aggiornato nei riquadri stato **pilota** e **stato di produzione** con le azioni seguenti:
 
@@ -141,7 +138,7 @@ Lo stato del dispositivo viene aggiornato nei riquadri stato **pilota** e **stat
 - I dispositivi vengono aggiornati alla versione di destinazione di Windows
 - Avanzamento della distribuzione
 
-È anche possibile usare Configuration Manager monitoraggio della distribuzione allo stesso modo di qualsiasi altra distribuzione della sequenza di attività. Per altre informazioni, vedere [monitorare le distribuzioni del sistema operativo](/sccm/osd/deploy-use/monitor-operating-system-deployments).
+È anche possibile usare Configuration Manager monitoraggio della distribuzione allo stesso modo di qualsiasi altra distribuzione della sequenza di attività. Per altre informazioni, vedere [Monitorare le distribuzioni del sistema operativo](/sccm/osd/deploy-use/monitor-operating-system-deployments).
 
 
 ### <a name="desktop-analytics-portal"></a>Portale di analisi desktop
@@ -158,7 +155,7 @@ Nella pagina **stato distribuzione** sono elencati i dispositivi nelle categorie
 
 - Non avviato
 - In corso
-- Operazione completata
+- Completato
 - Richiede attenzione-dispositivi
 - Richiesta attenzione-problemi
 

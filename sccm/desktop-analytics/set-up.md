@@ -11,17 +11,14 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae1bbbd6a8482ea5008eeb87c30a4e35a26e06d0
-ms.sourcegitcommit: 84a6f31797490eeda73bd4f3656ba27741df3030
+ms.openlocfilehash: c2d682a7cf53c01e1e5f3d65f3143b1107436dff
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71343805"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72384858"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Come configurare analisi desktop
-
-> [!Note]  
-> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
 Usare questa procedura per accedere a desktop Analytics e configurarlo nella sottoscrizione. Questa procedura è un processo unico per la configurazione di analisi desktop per l'organizzazione.  
 
@@ -39,7 +36,7 @@ Usare questa procedura per accedere a desktop Analytics e configurarlo nella sot
 
 4. Nella pagina **Give users access** :
 
-    - **Consenti a desktop Analytics di gestire i ruoli della directory per conto dell'utente**: Desktop Analytics assegna automaticamente ai **proprietari dell'area di lavoro** il ruolo di amministratore di **Desktop Analytics** . Se tali gruppi sono già un **amministratore globale**, non vi sono modifiche.
+    - **Consenti a desktop Analytics di gestire i ruoli della directory per conto dell'utente**: desktop Analytics assegna automaticamente ai proprietari dell'area di **lavoro** il ruolo di **amministratore di desktop Analytics** . Se tali gruppi sono già un **amministratore globale**, non vi sono modifiche.
 
         Se non si seleziona questa opzione, desktop Analytics aggiunge ancora gli utenti come membri del gruppo di sicurezza. Un **amministratore globale** deve assegnare manualmente il ruolo di **amministratore di analisi desktop** per gli utenti.   
 

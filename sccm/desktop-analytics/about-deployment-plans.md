@@ -11,17 +11,14 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 65dff1dbf8e8154bc2d481e274dd47d352aa9d6e
-ms.sourcegitcommit: fe8934487158ed3bd15c7a6a456c3cafe58aed64
+ms.openlocfilehash: a36093b88887b6722d07c666dead67a9aa974b8a
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68995386"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72387091"
 ---
 # <a name="about-deployment-plans-in-desktop-analytics"></a>Informazioni sui piani di distribuzione in desktop Analytics
-
-> [!Note]  
-> Queste informazioni si riferiscono a un servizio di anteprima che può essere modificato in modo sostanziale prima del rilascio commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
 
 Desktop Analytics raccoglie e analizza i dati dei dispositivi, delle applicazioni e dei driver nell'organizzazione. In base a questa analisi e all'input, è possibile usare il servizio per creare piani di distribuzione per Windows 10. I piani di distribuzione includono le seguenti funzionalità:  
 
@@ -87,11 +84,11 @@ La decisione di aggiornamento di Windows per **sostituire il dispositivo** può 
 - È disponibile un componente wireless che usa un driver emulato da XP
 - Un componente di rete con una connessione attiva perderà il relativo driver. In altre parole, dopo l'aggiornamento potrebbe verificarsi una perdita di connettività di rete.
 
-### <a name="apps"></a>App
+### <a name="apps"></a>Applicazioni
 
 Impostare la **decisione di aggiornamento** e l' **importanza** di questa app in questo piano di distribuzione. Per ulteriori informazioni, vedere [come creare piani di distribuzione](/sccm/desktop-analytics/create-deployment-plans).
 
-Nei dettagli dell'app è possibile vedere anche le informazioni seguenti: Raccomandazioni, fattori di rischio per la compatibilità e problemi noti di Microsoft. Utilizzare queste informazioni per impostare la **decisione di aggiornamento**. Per ulteriori informazioni, vedere [Compatibility assessment](/sccm/desktop-analytics/compat-assessment).
+Nei dettagli dell'app è possibile vedere anche le informazioni seguenti: suggerimenti, fattori di rischio per la compatibilità e problemi noti di Microsoft. Utilizzare queste informazioni per impostare la **decisione di aggiornamento**. Per ulteriori informazioni, vedere [Compatibility assessment](/sccm/desktop-analytics/compat-assessment).
 
 Le app che desktop Analytics Mostra come *degno* di nota si basano sulla soglia per il numero di installazioni basso per le regole di conformità del piano di distribuzione. Per altre informazioni, vedere [regole di conformità](/sccm/desktop-analytics/create-deployment-plans#readiness-rules).
 
