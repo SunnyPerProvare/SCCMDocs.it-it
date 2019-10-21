@@ -2,7 +2,7 @@
 title: Funzionalità deprecate
 titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità che Configuration Manager non supporta più.
-ms.date: 09/06/2019
+ms.date: 10/14/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3fa15a3bcd98c39f2b103793d9cc24ccdd2efd90
-ms.sourcegitcommit: b9cc8e723c5d8c3be44edad24ad29d75c0cdd2b0
+ms.openlocfilehash: 2979adb3965db23579271893f741a0479a22195f
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71826137"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72387153"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Funzionalità rimosse e deprecate per Configuration Manager
 
@@ -32,6 +32,7 @@ Le funzionalità seguenti sono deprecate. È ancora possibile usarle al momento,
 
 |Funzionalità|Primo annuncio riguardo agli elementi deprecati|Supporto&nbsp;rimosso|  
 |-----------|---|--------------|  
+| Integrazione di [Windows Analytics](/sccm/core/clients/manage/monitor-windows-analytics) e [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade-readiness). Per altre informazioni, vedere [KB 4521815: Ritiro di Windows Analytics il 31 gennaio 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement). | 14 ottobre 2019 | 31 gennaio 2020 |
 | Valutazione dell'attestazione dell'integrità dei dispositivi per i criteri di conformità dell'accesso condizionale <!--1235616 aka 3608202--> Per altre informazioni, vedere [Gestire l'accesso ai servizi di Office 365 per i PC gestiti da System Center Configuration Manager](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm#step-1-configure-compliance-policy).| 3 luglio 2019 | Prima versione rilasciata dopo il 1° novembre 2019 |
 | App Portale aziendale di Configuration Manager | 21 maggio 2019 | Prima versione rilasciata dopo il 1° novembre 2019|
 | Catalogo applicazioni, che comprende i due ruoli del sistema del sito: il punto per siti Web del Catalogo applicazioni e il punto per servizi Web. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat). | 21 maggio 2019 | Prima versione rilasciata dopo il 1° novembre 2019|

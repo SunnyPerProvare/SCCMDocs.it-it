@@ -2,7 +2,7 @@
 title: Risoluzione dei problemi di CMPivot
 titleSuffix: Configuration Manager
 description: Informazioni su come risolvere i problemi di CMPivot in Configuration Manager.
-ms.date: 09/19/2019
+ms.date: 10/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,29 +11,33 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09c748e563ea6410b7f2ebc842c77707cf29494a
-ms.sourcegitcommit: 013596de802ac0eb416118169ad049733b5a63e5
+ms.openlocfilehash: 7ea58a234c6de90b57bee0de6ad04b92b32e6263
+ms.sourcegitcommit: 81f3b358e707a6ad67e64c53cbe70d48395a78fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198232"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72303878"
 ---
-# <a name="troubleshooting-cmpivot"></a>Risoluzione dei problemi di CMPivot
+# <a name="troubleshoot-cmpivot"></a>Risoluzione dei problemi di CMPivot
 
-CMPivot è un'utilità che consente l'accesso allo stato in tempo reale dei dispositivi nell'ambiente in uso. Esegue immediatamente una query su tutti i dispositivi connessi nella raccolta di destinazione e restituisce i risultati. Potrebbe essere talvolta necessario risolvere i problemi di CMPivot. Ad esempio, un client ha inviato un messaggio di stato per CMPivot, ma il server del sito non lo ha elaborato perché è danneggiato. Questo articolo aiuta a comprendere il flusso di informazioni per CMPivot.
+CMPivot è uno strumento che offre l'accesso allo stato in tempo reale dei dispositivi nell'ambiente in uso. CMPivot esegue una query su tutti i dispositivi connessi nella raccolta di destinazione e restituisce i risultati.
 
-## <a name="bkmk_CMPivot-1902"></a> Risoluzione dei problemi relativi a CMPivot nella versione 1902 e successive
+Occasionalmente, potrebbe essere necessario risolvere problemi di CMPivot. Ad esempio, se un messaggio di stato da un client a CMPivot viene danneggiato, il server del sito non può elaborare il messaggio. Questo articolo aiuta a comprendere il flusso di informazioni per CMPivot.
 
-A partire dalla versione 1902 di Configuration Manager è possibile eseguire CMPivot dal sito di amministrazione centrale in una gerarchia. Il sito primario gestisce ancora la comunicazione con il client. Quando CMPivot viene eseguito dal sito di amministrazione centrale, comunica con il sito primario tramite il canale di sottoscrizione dei messaggi ad alta velocità. Questa comunicazione non si basa sulla replica SQL standard tra siti. Se SQL Server o il provider è remoto oppure si usa SQL Always On, sarà presente uno scenario a doppio hop per CMPivot. Per informazioni su come definire la delega vincolata per uno scenario a doppio hop, vedere [CMPivot a partire dalla versione 1902](/sccm/core/servers/manage/cmpivot#bkmk_cmpivot1902).
+## <a name="bkmk_CMPivot-1902"></a> Risoluzione dei problemi di CMPivot nelle versioni 1902 e successive
+
+In System Center Configuration Manager versioni 1902 e successive è possibile eseguire CMPivot dal sito di amministrazione centrale in una gerarchia. Il sito primario gestisce ancora la comunicazione con il client.
+
+Quando si esegue CMPivot dal sito di amministrazione centrale, viene usato il canale di sottoscrizione dei messaggi ad alta velocità per comunicare con il sito primario. CMPivot non usa la replica SQL standard tra siti. Se l'istanza di SQL Server o il provider è remoto oppure se si usa SQL Server Always On, sarà presente uno scenario a doppio hop per CMPivot. Per informazioni su come definire la delega vincolata per uno scenario a doppio hop, vedere [CMPivot a partire dalla versione 1902](/sccm/core/servers/manage/cmpivot#bkmk_cmpivot1902).
 
 >[!IMPORTANT]
-> Per la risoluzione dei problemi relativi a CMPivot, abilitare la registrazione dettagliata in MP e in SMS_MESSAGE_PROCESSING_ENGINE del server del sito per altre informazioni. Se l'output del client è maggiore di 80 KB, abilitare la registrazione dettagliata in MP e nel componente SMS_STATE_SYSTEM del server del sito. Per informazioni sull'abilitazione della registrazione dettagliata, vedere [Opzioni di registrazione del server del sito](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_reg-site).
+> Durante la risoluzione dei problemi di CMPivot, abilitare la registrazione dettagliata nei punti di gestione e in SMS_MESSAGE_PROCESSING_ENGINE del server del sito per ottenere altre informazioni. Inoltre, se l'output del client è maggiore di 80 KB, abilitare la registrazione dettagliata nel punto di gestione e nel componente SMS_STATE_SYSTEM del server del sito. Per informazioni sull'abilitazione della registrazione dettagliata, vedere [Opzioni di registrazione del server del sito](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_reg-site).
 
 ### <a name="get-information-from-the-site-server"></a>Ottenere informazioni dal server del sito
 
-Per impostazione predefinita, i file di log del server del sito si trovano in C:\Programmi\Microsoft Configuration Manager\logs. Questo percorso può essere diverso a seconda di quanto è stato specificato per la directory di installazione oppure se alcuni elementi, ad esempio il provider SMS, sono stati scaricati in un altro server. Se si esegue CMPivot da CAS, i log sono disponibili nel server del sito primario.
+Per impostazione predefinita, i file di log del server del sito si trovano in `C:\Program Files\Microsoft Configuration Manager\logs`. Questo percorso può essere diverso se è stata specificata una directory di installazione diversa da quella predefinita oppure se alcuni elementi, ad esempio il provider SMS, sono stati scaricati in un altro server. Se si esegue CMPivot dal sito di amministrazione centrale, i log sono disponibili nel server del sito primario.
 
-Verificare **smsprov.log** per le righe seguenti:
+Cercare in `smsprov.log` le righe seguenti:
 
 - Configuration Manager versione 1906:
   <pre><code lang="Log">Auditing: User &ltusername> initiated client operation 145 to collection &ltCollectionId>. </code></pre>
@@ -42,21 +46,19 @@ Verificare **smsprov.log** per le righe seguenti:
   <pre><code lang="Log">Type parameter is 135.
   Auditing: User &ltusername> ran script 7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14 with hash dc6c2ad05f1bfda88d880c54121c8b5cea6a394282425a88dd4d8714547dc4a2 on collection &ltCollectionId>. </code></pre>
 
+ `7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14` è il GUID di script per CMPivot. È anche possibile visualizzare questo GUID nei [Messaggi di stato di controllo di CMPivot](/sccm/core/servers/manage/cmpivot#cmpivot-audit-status-messages).
 
-
-**7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14** è il GUID dello script per CMPivot. È anche possibile visualizzare questo GUID nei [Messaggi di stato di controllo di CMPivot](/sccm/core/servers/manage/cmpivot#cmpivot-audit-status-messages).
-
-Individuare quindi l'ID nella finestra di CMPivot. L'ID è **ClientOperationID**.
+Individuare quindi l'ID nella finestra di CMPivot. Questo ID corrisponde a `ClientOperationID`.
 
 ![Finestra di CMPivot con ClientOperationID evidenziato](media/cmpivot-client-operationid-1902.png)
 
-Trovare il valore **TaskID** nella tabella ClientAction. **TaskID** corrisponde al valore **UniqueID** nella tabella ClientAction.
+Trovare `TaskID` della tabella ClientAction. `TaskID` corrisponde a `UniqueID` della tabella ClientAction.
 
 ``` SQL
 select * from ClientAction where ClientOperationId=<id>
 ```
 
-In **BgbServer.log** cercare il valore **TaskID** raccolto da SQL e prendere nota del valore **PushID**. In Bgbserver.log il valore **TaskID** sarà denominato **TaskGUID**. Ad esempio:
+In `BgbServer.log` cercare `TaskID` raccolto da SQL e prendere nota di `PushID`. `TaskID` ha l'etichetta `TaskGUID`. Ad esempio:
 
 <pre><code lang="Log">Starting to send push task (<b>PushID: 9</b> TaskID: 12 <b>TaskGUID: 9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0</b> TaskType: 15 TaskParam: PFNjcmlwdENvbnRlbnQgU2NyaXB0R3VpZD0nN0RDNkI2RjEtRTdGNi00M0MxL (truncated log entry)
 Finished sending push task (<b>PushID: 9</b> TaskID: 12) to 2 clients
@@ -64,28 +66,28 @@ Finished sending push task (<b>PushID: 9</b> TaskID: 12) to 2 clients
 
 ### <a name="client-logs"></a>Log del client
 
-Dopo aver raccolto le informazioni dal server del sito, controllare i log del client. Per impostazione predefinita, i log del client si trovano in C:\Windows\CCM\Logs.
+Dopo aver raccolto le informazioni dal server del sito, controllare i log del client. Per impostazione predefinita, i log del client si trovano in `C:\Windows\CCM\Logs`.
 
-Controllare **CcmNotificationAgent.log**. Le voci del log saranno simili alle righe seguenti:  
+In `CcmNotificationAgent.log` cercare le voci di log che hanno un aspetto simile a quello delle righe seguenti:  
 
 <pre><code lang="Log">Receive task from server with <b>pushid=9</b>, taskid=12, <b>taskguid=9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0</b>, tasktype=15 and taskParam=PFNjcmlwdEhhc2ggU2NyaXB0SGF (truncated log entry)
 Send Task response message &ltBgbResponseMessage TimeStamp="2019-09-13T17:29:09Z"><b>&ltPushID>5</b>&lt/PushID>&ltTaskID>4&lt/TaskID>&ltReturnCode>1&lt/ReturnCode>&lt/BgbResponseMessage> successfuly.
  </code></pre>
 
-Controllare **Scripts.log** per trovare **TaskID**. Nell'esempio seguente viene visualizzato **Task ID {9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}** :
+Cercare `TaskID` in `Scripts.log`. Nell'esempio seguente è visualizzato `Task ID`  `{9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}`:
 
 <pre><code lang="Log">Sending script state message (fast): <b>{9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}</b>
 Result are sent for ScriptGuid: 7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14 and <b>TaskID: {9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}</b>
 </code></pre>
 
 > [!NOTE]
-> Se non viene visualizzato "(fast)" in **Scripts.log**, i dati probabilmente superano gli 80 KB. In questo caso, le informazioni vengono inviate al server del sito come messaggio di stato. Usare **StateMessage.log** del client e **Statesys.log** del server del sito.
+> Se non viene visualizzato "(fast)" in `Scripts.log`, i dati probabilmente superano gli 80 KB. In questo caso, le informazioni vengono inviate al server del sito come messaggio di stato. Usare `StateMessage.log` del client e `Statesys.log` del server del sito.
 
 ### <a name="review-messages-on-the-site-server"></a>Rivedere i messaggi nel server del sito
 
-Quando è abilitata la [registrazione dettagliata](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_reg-client) nel punto di gestione, è possibile visualizzare come vengono gestiti i messaggi client in ingresso. In **MP_RelayMsgMgr.log** cercare il valore **TaskID**.
+Quando è abilitata la [registrazione dettagliata](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_reg-client) nel punto di gestione, è possibile visualizzare come vengono gestiti i messaggi client in ingresso. In `MP_RelayMsgMgr.log` cercare `TaskID`.
 
-Il file **MP_RelayMsgMgr.log** di esempio visualizza l'ID client (GUID:83F67728-2E6D-4E4F-8075-ED035C31B783) e il valore **Task ID {9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}** . Un ID messaggio viene assegnato alla risposta del client prima che venga inviata al motore di elaborazione dei messaggi:
+Nell'esempio di `MP_RelayMsgMgr.log` è visualizzato l'ID del client `(GUID:83F67728-2E6D-4E4F-8075-ED035C31B783)` e `Task ID {9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}`. Un ID messaggio viene assegnato alla risposta del client prima che venga inviata al motore di elaborazione dei messaggi:
 
 <pre><code lang="Log">MessageKey: GUID:83F67728-2E6D-4E4F-8075-ED035C31B783<b>{9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}</b>
 Create message succeeded for <b>message id 22f00adf-181e-4bad-b35e-d18912f39f89</b>
@@ -94,53 +96,56 @@ Put message succeeded for message id 22f00adf-181e-4bad-b35e-d18912f39f89
 CRelayMsgMgrHandler::HandleMessage(): ExecuteTask() succeeded
 </code></pre>
 
-Quando è abilitata la [registrazione dettagliata](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_logoptions) in **SMS_MESSAGE_PROCESSING_ENGINE.log**, vengono visualizzati i risultati del client elaborati. Usare l'ID messaggio trovato in **MP_RelayMsgMgr.log**. Le voci del log in elaborazione sono simili alle voci di esempio seguenti:
+Quando la [registrazione dettagliata](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_logoptions) è abilitata in `SMS_MESSAGE_PROCESSING_ENGINE.log`, vengono elaborati i risultati del client. Usare l'ID messaggio trovato in `MP_RelayMsgMgr.log`. Le voci del log in elaborazione sono simili all'esempio seguente:
 
 <pre><code lang="Log">Processing 2 messages with type Instant and IDs <b>22f00adf-181e-4bad-b35e-d18912f39f89[19]</b>, 434d80ae-09d4-4d84-aebf-28a4a29a9852[20]...
 Processed 2 messages with type Instant. Failed to process 0 messages. All message IDs <b>22f00adf-181e-4bad-b35e-d18912f39f89[19]</b>, 434d80ae-09d4-4d84-aebf-28a4a29a9852[20]
 </code></pre>
 
-  - Se si verifica un'eccezione durante l'elaborazione, è possibile esaminarla eseguendo la query SQL seguente ed esaminando la colonna Eccezione. Una volta elaborato, il messaggio non sarà più disponibile nella tabella MPE_RequestMessages_Instant.
+> [!TIP]
+> Se si verifica un'eccezione durante l'elaborazione, è possibile esaminarla eseguendo la query SQL seguente ed esaminando la colonna Eccezione. Una volta elaborato, il messaggio non sarà più disponibile nella tabella `MPE_RequestMessages_Instant`.
+>
+> ```SQL
+> select * from MPE_RequestMessages_Instant where MessageID=<ID from SMS_MESSAGE_PROCESSING_ENGINE.log>
+> ```
 
-    ```SQL
-    select * from MPE_RequestMessages_Instant where MessageID=<ID from SMS_MESSAGE_PROCESSING_ENGINE.log>
-    ```
-
-In **BgbServer.log** cercare il valore **PushID** per visualizzare il numero di client segnalati o non riusciti.
+In `BgbServer.log` cercare `PushID` per visualizzare il numero di client segnalati o non riusciti.
 
 <pre><code lang="Log">Generated BGB task status report c:\ConfigMgr\inboxes\bgb.box\Bgb5c1db.BTS at 09/16/2019 16:46:39. (<b>PushID: 9</b> ReportedClients: 2 FailedClients: 0)
 </code></pre>
 
-Controllare la vista di monitoraggio per CMPivot da SQL usando **TaskID**.
+Controllare la vista di monitoraggio per CMPivot da SQL usando `TaskID`.
 
 ``` SQL
 select * from vSMS_CMPivotStatus where TaskID='{9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}'
 ```
 
-![Query SQL di CMPivot per la risoluzione dei problemi nella versione 1902](media/cmpivot-sql-queries-1902.png)
+[ ![Query SQL di CMPivot per la risoluzione dei problemi nella versione 1902](media/cmpivot-sql-queries-1902.png)](media/cmpivot-sql-queries-1902.png#lightbox)
 
-## <a name="bkmk_CMPivot-1810"></a> Risoluzione dei problemi di CMPivot nella versione 1810 e nelle versioni precedenti
+## <a name="bkmk_CMPivot-1810"></a> Risoluzione dei problemi di CMPivot nelle versioni 1810 e precedenti
+
+In Configuration Manager versione 1810 e precedenti il server del sito gestisce la comunicazione con il client.
 
 ### <a name="get-information-from-the-site-server"></a>Ottenere informazioni dal server del sito
 
-Per impostazione predefinita, i file di log del server del sito si trovano in C:\Programmi\Microsoft Configuration Manager\logs. Questo percorso può essere diverso a seconda di quanto è stato specificato per la directory di installazione oppure se alcuni elementi, ad esempio il provider SMS, sono stati scaricati in un altro server.
+Per impostazione predefinita, i file di log del server del sito si trovano in `C:\Program Files\Microsoft Configuration Manager\logs`. Questo percorso può essere diverso se è stata specificata una directory di installazione diversa da quella predefinita oppure se alcuni elementi, ad esempio il provider SMS, sono stati scaricati in un altro server.
 
-Verificare **smsprov.log** per questa riga:
+Cercare in `smsprov.log` la riga seguente:
 
 <pre><code lang="Log">Auditing: User <username> initiated client operation 135 to collection &ltCollectionId>.
 </code></pre>
 
-Trovare l'ID nella finestra di CMPivot. L'ID è **ClientOperationID**.
+Trovare l'ID nella finestra di CMPivot. Questo ID corrisponde a `ClientOperationID`.
 
 ![Finestra di CMPivot con ClientOperationID evidenziato](media/cmpivot-clientoperationid.png)
 
-Trovare il valore **TaskID** nella tabella ClientAction. **TaskID** corrisponde al valore **UniqueID** nella tabella ClientAction. 
+Trovare `TaskID` della tabella ClientAction. `TaskID` corrisponde a `UniqueID` della tabella ClientAction.
 
 ``` SQL
 select * from ClientAction where ClientOperationId=<id>
 ```
 
-In **Bgbserver** cercare il valore**TaskID** raccolto da SQL. In Bgbserver.log sarà denominato **TaskGUID**. Ad esempio:
+In `BgbServer.log` cercare il valore `TaskID` raccolto da SQL. Il valore ha l'etichetta `TaskGUID`. Ad esempio:
 
 <pre><code lang="Log">Starting to send push task (PushID: 260 TaskID: 258 TaskGUID: <b>F8C7C37F-B42B-4C0A-B050-2BB44DF1098A</b> TaskType: 15
 TaskParam: PFNjcmlwdEhhc2ggU2NyaXB0SGF...truncated...to 5 clients with throttling (strategy: 1 param: 42)
@@ -149,21 +154,21 @@ Finished sending push task (PushID: 260 TaskID: 258) to 5 clients
 
 ### <a name="client-logs"></a>Log del client
 
-Dopo aver raccolto le informazioni dal server del sito, controllare i log del client. Per impostazione predefinita, i log del client si trovano in C:\Windows\CCM\Logs.
+Dopo aver raccolto le informazioni dal server del sito, controllare i log del client. Per impostazione predefinita, i log del client si trovano in `C:\Windows\CCM\Logs`.
 
-Controllare **CcmNotificationAgent.log**. I log saranno simili al seguente:  
+In `CcmNotificationAgent.log` cercare log simili alla voce seguente:  
 
 <pre><code lang="Log"><b>Error! Bookmark not defined.</b>+PFNjcmlwdEhhc2ggU2NyaXB0SGFzaEFsZz0nU0hBMjU2Jz42YzZmNDY0OGYzZjU3M2MyNTQyNWZiNT
 g2ZDVjYTIwNzRjNmViZmQ1NTg5MDZlMWI5NDRmYTEzNmFiMDE0ZGNjPC9TY3JpcHRIYXNoPjxTY3Jp (truncated log entry)
 </code></pre>
 
-Controllare **Scripts.log** per trovare **TaskID**. Nell'esempio seguente viene visualizzato **Task ID {F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}** :
+Cercare `TaskID` in `Scripts.log`. Nell'esempio seguente è visualizzato `Task ID {F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}`:
 
 <pre><code lang="Log">Sending script state message: 7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14
 State message: Task Id <b>{F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}</b>
 </code></pre>
 
-Controllare **StateMessage.log**. In questo esempio **TaskID** è quasi alla fine del messaggio, accanto a \<Param>. Verranno visualizzate righe simile a quelle riportate di seguito:
+Cercare in `StateMessage.log`. Nell'esempio seguente `TaskID` è vicino alla parte inferiore del messaggio accanto a `<Param>`:
 
 ``` XML
 StateMessage body: <?xml version="1.0" encoding="UTF-16"?>
@@ -182,7 +187,7 @@ Successfully forwarded State Messages to the MP StateMessage 7/3/2018 11:44:47 A
 
 ### <a name="review-messages-on-the-site-server"></a>Rivedere i messaggi nel server del sito
 
-Aprire **statesys.log** per visualizzare se il messaggio è stato ricevuto ed elaborato. In questo esempio **TaskID** è quasi alla fine del messaggio, accanto a \<Param>. Per visualizzare queste voci di log, è necessario abilitare la [registrazione dettagliata](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_logoptions) nel componente SMS_STATE_SYSTEM.  
+Aprire `statesys.log` per verificare se il messaggio è stato ricevuto ed elaborato. Nell'esempio seguente `TaskID` è vicino alla parte inferiore del messaggio accanto a `<Param>`. Per visualizzare queste voci di log, abilitare la [registrazione dettagliata](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_logoptions) nel componente SMS_STATE_SYSTEM.
 
 ``` XML
 CMessageProcessor - the cmdline to DB exec dbo.spProcessStateReport N'?<?xml version="1.0" encoding="UTF-
@@ -197,27 +202,27 @@ CMessageProcessor - the cmdline to DB exec dbo.spProcessStateReport N'?<?xml ver
 <Param>{F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}</Param><Param>0</Param></UserParameters></StateMessage></ReportBody></Report>~~'
 ```
 
-Se il messaggio non è stato elaborato, controllare l'inbox del messaggio di stato. Il percorso predefinito dell'inbox è C:\Programmi\Microsoft Configuration Manager\inboxes\auth\statesys.box\. I file avranno uno dei seguenti stati:
-  
+Se il messaggio non è stato elaborato, controllare la casella di posta in arrivo dei messaggi di stato. Il percorso predefinito della casella di posta in arrivo è `C:\Program Files\Microsoft Configuration Manager\inboxes\auth\statesys.box\`. Cercare i file nei percorsi seguenti:
+
 - In arrivo
 - Danneggiato
 - Processo
 
-Controllare la vista di monitoraggio per CMPivot da SQL usando **TaskID**.
+Controllare la vista di monitoraggio per CMPivot da SQL usando `TaskID`.
 
 ``` SQL
 select * from vSMS_CMPivotStatus where TaskID='{F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}'
 ```
 
 >[!NOTE]
->Per i client che usano la versione 1810 o una versione successiva, la messaggistica di stato non viene usata, a meno che l'output non sia superiore a 80 KB. Per la risoluzione dei problemi relativi a CMPivot in questi casi, abilitare la registrazione dettagliata in MP e in SMS_MESSAGE_PROCESSING_ENGINE del server del sito per altre informazioni. Per informazioni sull'abilitazione della registrazione dettagliata, vedere [Opzioni di registrazione del server del sito](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_reg-site).
-> 
-> Usare i log seguenti per la risoluzione dei problemi:
-> - MP_Relay.log
-> - SMS_MESSAGE_PROCESSING_ENGINE.log
+>Per i client che usano la versione 1810 o una versione successiva, la messaggistica di stato non viene usata, a meno che l'output non sia superiore a 80 KB. Per la risoluzione dei problemi relativi a CMPivot in questi casi, abilitare la registrazione dettagliata nei punti di gestione e in SMS_MESSAGE_PROCESSING_ENGINE del server del sito per ottenere altre informazioni. Per informazioni sull'abilitazione della registrazione dettagliata, vedere [Opzioni di registrazione del server del sito](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_reg-site).
+>
+> Per la risoluzione dei problemi, fare riferimento ai log seguenti:
+>
+> - `MP_Relay.log`
+> - `SMS_MESSAGE_PROCESSING_ENGINE.log`
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-[Using CMPivot](/sccm/core/servers/manage/cmpivot) (Uso di CMPivot)
-
-[Creare ed eseguire script di PowerShell](/sccm/apps/deploy-use/create-deploy-scripts)
+- [Using CMPivot](/sccm/core/servers/manage/cmpivot) (Uso di CMPivot)
+- [Creare ed eseguire script di PowerShell](/sccm/apps/deploy-use/create-deploy-scripts)

@@ -3,7 +3,7 @@ title: Manutenzione degli aggiornamenti software
 titleSuffix: Configuration Manager
 description: Per gestire gli aggiornamenti in Configuration Manager, è possibile pianificare l'attività di pulizia di WSUS oppure eseguirla manualmente.
 author: mestew
-ms.date: 07/30/2019
+ms.date: 10/17/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
@@ -11,12 +11,12 @@ ms.assetid: 4b0e2e90-aac7-4d06-a707-512eee6e576c
 manager: dougeby
 ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11a817b907a27c0991fe6fc610063e1151ae94f9
-ms.sourcegitcommit: 75f48834b98ea6a238d39f24e04c127b2959d913
+ms.openlocfilehash: 1e2edd794d582c4ab875ac53f095eb65fcd26ba8
+ms.sourcegitcommit: c56cd368f8e380b7339ec8bcf3f68187eff479fb
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68604540"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72347898"
 ---
 # <a name="software-updates-maintenance"></a>Manutenzione degli aggiornamenti software
 
@@ -104,9 +104,9 @@ Nei siti CAS, primari e secondari non vengono eseguite le opzioni di **Pulizia s
 ## <a name="wsus-cleanup-starting-in-version-1906"></a>Pulizia WSUS a partire dalla versione 1906
 <!--41101009-->
 
- Sono disponibili altre attività di manutenzione WSUS che Configuration Manager possibile eseguire per mantenere i punti di aggiornamento software integri. Oltre a rifiutare gli aggiornamenti scaduti in WSUS, Configuration Manager possibile aggiungere indici non cluster ai database WSUS e rimuovere gli aggiornamenti obsoleti dai database WSUS. La manutenzione di WSUS avviene dopo ogni sincronizzazione.
+ Sono disponibili attività di manutenzione di WSUS aggiuntive che possono essere eseguite da Configuration Manager per mantenere l'integrità dei punti di aggiornamento software. Oltre a rifiutare gli aggiornamenti scaduti in WSUS, Configuration Manager possibile aggiungere indici non cluster ai database WSUS e rimuovere gli aggiornamenti obsoleti dai database WSUS. La manutenzione di WSUS avviene dopo ogni sincronizzazione.
 
-### <a name="add-non-clustered-indexes-to-the-wsus-database-to-improve-wsus-cleanup-performance"></a>Aggiungere indici non cluster al database WSUS per migliorare le prestazioni di pulizia di WSUS
+### <a name="add-non-clustered-indexes-to-the-wsus-database-to-improve-wsus-cleanup-performance"></a>Aggiungere indici non cluster al database di WSUS per migliorare le prestazioni di pulizia di WSUS
 
 L'aggiunta di indici non cluster consente di migliorare le prestazioni di pulizia di WSUS che Configuration Manager.
 
@@ -128,7 +128,7 @@ Quando il database WSUS è in un server SQL remoto, l'account computer del serve
 > [!NOTE]  
 >  Se il database WSUS si trova in un server SQL remoto tramite una porta non predefinita, non è possibile aggiungere gli indici. Per questo scenario, è possibile creare un [alias del server usando Gestione configurazione SQL Server](https://docs.microsoft.com/sql/database-engine/configure-windows/create-or-delete-a-server-alias-for-use-by-a-client?view=sql-server-2017). Dopo l'aggiunta dell'alias e quando Configuration Manager può stabilire una connessione con il database, gli indici verranno aggiunti.
 
-### <a name="remove-obsolete-updates-from-the-wsus-database"></a>Rimuovere gli aggiornamenti obsoleti dal database WSUS
+### <a name="remove-obsolete-updates-from-the-wsus-database"></a>Rimuovere gli aggiornamenti obsoleti dal database di WSUS
 
 Gli aggiornamenti obsoleti sono aggiornamenti inutilizzati e revisioni di aggiornamento nel database WSUS. In generale, un aggiornamento viene considerato obsoleto quando non è più incluso nel [catalogo Microsoft Update](https://www.catalog.update.microsoft.com/) e non è necessario per altri aggiornamenti come prerequisito o dipendenza.
 
@@ -144,6 +144,27 @@ Quando il database WSUS è in un server SQL remoto, l'account computer del serve
 
 - Ruoli predefiniti del database `db_datareader` e `db_datawriter`. Per altre informazioni, vedere [Ruoli a livello di database](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-2017#fixed-database-roles).
 - L'autorizzazione del server `CONNECT SQL` deve essere concessa all'account computer del server del sito. Per altre informazioni, vedere [Autorizzazione del server GRANT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/grant-server-permissions-transact-sql?view=sql-server-2017).
+
+### <a name="known-issues-for-version-1906"></a>Problemi noti per la versione 1906
+
+Considerare lo scenario seguente:
+<!--5418148-->
+- Si sta usando Configuration Manager versione 1906
+- Si dispone di punti di aggiornamento software remoto usando un database interno di Windows
+- Nelle **proprietà del componente del punto di aggiornamento software**è presente una delle seguenti opzioni selezionate nella scheda **manutenzione WSUS** :
+   - Aggiungere indici non cluster al database WSUS
+   - Rimuovere gli aggiornamenti obsoleti dal database di WSUS
+
+In questo scenario, Configuration Manager non è in grado di eseguire le attività di manutenzione WSUS precedenti per i punti di aggiornamento software remoto usando un database interno di Windows. Questo problema si verifica perché il database interno di Windows non consente le connessioni remote. Nel `WSyncMgr.log` nel server del sito verranno visualizzati gli errori seguenti:
+
+```text
+Indexing Failed. Could not connect to SUSDB.
+SqlException thrown while connect to SUSDB in Server: <SUP.CONTOSO.COM>. Error Message: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+...
+Could not Delete Obselete Updates because ConfigManager could not connect to SUSDB: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) UpdateServer: <SUP.CONTOSO.COM>
+```
+
+Per risolvere il problema, è possibile automatizzare la manutenzione WSUS per i punti di aggiornamento software remoto utilizzando un database interno di Windows. Per altre informazioni e procedure dettagliate, vedere la [Guida completa alla manutenzione di Microsoft WSUS e dei punti di aggiornamento software di Configuration Manager](https://support.microsoft.com/help/4490644/complete-guide-to-microsoft-wsus-and-configuration-manager-sup-maint).
 
 ## <a name="updates-cleanup-log-entries"></a>Voci di log per la pulizia degli aggiornamenti
 

@@ -2,7 +2,7 @@
 title: Monitorare i client con Windows Analytics
 titleSuffix: Configuration Manager
 description: Windows Analytics è un set di soluzioni che consentono di ottenere indicazioni preziose sullo stato corrente dell'ambiente.
-ms.date: 09/04/2018
+ms.date: 10/14/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,16 +11,23 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7836e1779acbfdfbb66d6eac57bc7797abd52563
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: c2530b20d065b3b2bd15c0dc38232687d286b6b0
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286474"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72384744"
 ---
 # <a name="use-windows-analytics-with-configuration-manager"></a>Usare Windows Analytics con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
+
+> [!Important]  
+> A partire da ottobre 2019, l'integrazione di Windows Analytics in Configuration Manager è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Il servizio Windows Analytics verrà ritirato il 31 gennaio 2020.
+>
+> [Desktop Analytics ](/sccm/desktop-analytics/overview) è l'evoluzione di Windows Analytics. I clienti esistenti di Windows Analytics possono [eseguire la migrazione a Desktop Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
+>
+> Per altre informazioni, vedere [KB 4521815: Ritiro di Windows Analytics il 31 gennaio 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement).
 
 [Windows Analytics](https://docs.microsoft.com/windows/deployment/update/windows-analytics-overview) è un set di soluzioni che consentono di ottenere indicazioni sullo stato corrente dell'ambiente. I dispositivi Windows dell'ambiente segnalano a Microsoft dati a cui poter accedere e da poter analizzare tramite queste soluzioni. Ad esempio, connettere [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade-readiness) a Configuration Manager per accedere direttamente ai dati nell'area di lavoro **Monitoraggio** della console di Configuration Manager.
 
@@ -55,7 +62,7 @@ La chiave ID commerciale esegue il mapping delle informazioni dai dispositivi ge
 Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#diagnostic-data-levels) (Configurare i dati di diagnostica di Windows nell'organizzazione).
 
 > [!Note]  
-> È anche possibile impostare il livello di raccolta dei dati di Windows 10 su **Avanzata (con limitazioni)** . Questa impostazione consente di ottenere informazioni utili sui dispositivi presenti nell'ambiente in uso senza che i dispositivi segnalino tutti i dati nel livello **avanzato** con Windows 10 1709 o versione successiva. Il livello Avanzata (con limitazioni) include metriche del livello di base e un subset di dati raccolti dal livello avanzato pertinenti per Windows Analytics.
+> È anche possibile impostare il livello di raccolta dei dati di Windows 10 su **Avanzata (con limitazioni)**. Questa impostazione consente di ottenere informazioni utili sui dispositivi presenti nell'ambiente in uso senza che i dispositivi segnalino tutti i dati nel livello **avanzato** con Windows 10 1709 o versione successiva. Il livello Avanzata (con limitazioni) include metriche del livello di base e un subset di dati raccolti dal livello avanzato pertinenti per Windows Analytics.
 
 #### <a name="windows-81-and-earlier-telemetry"></a>Telemetria di Windows 8.1 e versioni precedenti   
 Per altre informazioni, vedere [Windows 7, Windows 8, and Windows 8.1 appraiser telemetry events and fields](https://go.microsoft.com/fwlink/?LinkID=822965) (Eventi e campi di valutazione telemetrica per Windows 7, Windows 8 e Windows 8.1).

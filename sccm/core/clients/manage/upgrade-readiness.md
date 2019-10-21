@@ -5,22 +5,29 @@ description: Integrare Preparazione aggiornamenti con Configuration Manager per 
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 09/04/2018
+ms.date: 10/14/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4340f21ad257bfe311915edaa918e704832e3e77
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 11cb935eef2d214cf541142aea81fbe8e12bd06b
+ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286433"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72384593"
 ---
 # <a name="integrate-upgrade-readiness-with-configuration-manager"></a>Integrare Preparazione aggiornamenti con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
+
+> [!Important]  
+> A partire da ottobre 2019, l'integrazione di Preparazione aggiornamenti in Configuration Manager è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Il servizio Windows Analytics verrà ritirato il 31 gennaio 2020.
+>
+> [Desktop Analytics ](/sccm/desktop-analytics/overview) è l'evoluzione di Windows Analytics. I clienti esistenti di Windows Analytics possono [eseguire la migrazione a Desktop Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
+>
+> Per altre informazioni, vedere [KB 4521815: Ritiro di Windows Analytics il 31 gennaio 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement).
 
 Preparazione aggiornamenti fa parte di [Windows Analytics](https://docs.microsoft.com/windows/deployment/upgrade/manage-windows-upgrades-with-upgrade-readiness). Consente di valutare e analizzare l'idoneità dei dispositivi nell'ambiente per un aggiornamento a Windows 10. Integrare Preparazione aggiornamenti con Configuration Manager per accedere ai dati di compatibilità dell'aggiornamento dei client nella console di Configuration Manager. Usare quindi questi dati per creare raccolte e specificare come destinazione i dispositivi da aggiornare o correggere.
 
