@@ -2,7 +2,7 @@
 title: Abilitare la condivisione dei dati
 titleSuffix: Configuration Manager
 description: Guida di riferimento per la condivisione di dati di diagnostica con analisi desktop.
-ms.date: 10/17/2019
+ms.date: 10/18/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91be1fbb03c49b28d689aff974a43ba8434fc194
-ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
+ms.openlocfilehash: edf0922d4aab8dc5a9c37ae54bbb7e91759e59de
+ms.sourcegitcommit: 90f51008deeabf2a434bd12f81bb25669045029c
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72385679"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72684853"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Abilitare la condivisione dei dati per analisi desktop
 
@@ -29,7 +29,14 @@ Per registrare i dispositivi in desktop Analytics, è necessario inviare i dati 
 
 Quando si integra Configuration Manager con analisi desktop, viene usato anche per gestire il livello di dati di diagnostica nei dispositivi. Per un'esperienza ottimale, usare Configuration Manager.
 
-La funzionalità di base di desktop Analytics funziona a livello di dati di diagnostica di **base** . Non è possibile ottenere dati di utilizzo o di integrità per i dispositivi aggiornati senza abilitare il livello **avanzato (limitato)** . Microsoft consiglia di abilitare il livello dati di diagnostica **avanzato (limitato)** . Per ulteriori informazioni, vedere [gli eventi e i campi dei dati di diagnostica avanzati di Windows 10 usati da Windows Analytics](https://docs.microsoft.com/windows/privacy/enhanced-diagnostic-data-windows-analytics-events-and-fields).
+La funzionalità di base di desktop Analytics funziona a [livello di dati di diagnostica](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#diagnostic-data-levels)di base. Non sarà possibile ottenere dati di utilizzo o di integrità per i dispositivi aggiornati senza configurare il livello **avanzato (limitato)** in Configuration Manager. 
+
+> [!TIP]
+> L'impostazione **avanzata (limitata)** in Configuration Manager è il **limite dei dati di diagnostica avanzati al minimo richiesto dai criteri di Windows Analytics** nei dispositivi che eseguono windows 10, versione 1709 e successive. Microsoft consiglia di abilitare il livello di dati di diagnostica **avanzato (limitato)** con analisi desktop.
+>
+> I dispositivi che eseguono Windows 10, versione 1703 e versioni precedenti non hanno questa impostazione di criteri. Quando si configura l'impostazione **avanzata (limitata)** in Configuration Manager, questi dispositivi eseguono il fallback al livello di **base** .
+
+Per ulteriori informazioni, vedere [gli eventi e i campi dei dati di diagnostica avanzati di Windows 10](https://docs.microsoft.com/windows/privacy/enhanced-diagnostic-data-windows-analytics-events-and-fields).
 
 > [!Important]   
 > Microsoft è impegnata a fornire gli strumenti e le risorse che consentono di controllare la privacy. Di conseguenza, Microsoft non raccoglie i dati seguenti dai dispositivi che si trovano in paesi europei (See e Switzerland):
@@ -46,7 +53,7 @@ Gli articoli seguenti sono anche risorse valide per comprendere meglio i livelli
 - [Configurare i dati di diagnostica di Windows nell'organizzazione](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization)  
 
 > [!Note]  
-> Al livello avanzato (limitato), quando ogni client esegue l'analisi completa iniziale, invia approssimativamente 2 MB di dati al cloud Microsoft. Il Delta giornaliero varia da 250-400 KB al giorno.
+> I client configurati per limitare i dati di diagnostica avanzati invieranno circa 2 MB di dati al cloud Microsoft nell'analisi completa iniziale. Il Delta giornaliero varia da 250-400 KB al giorno.
 >
 > L'analisi Delta giornaliera viene eseguita alle 3:00 AM (ora locale del dispositivo). Alcuni eventi vengono inviati alla prima ora disponibile nel corso della giornata. Questi orari non sono configurabili.
 >

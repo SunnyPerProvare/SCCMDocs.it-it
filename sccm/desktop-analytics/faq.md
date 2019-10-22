@@ -2,7 +2,7 @@
 title: Domande frequenti su desktop Analytics
 titleSuffix: Configuration Manager
 description: Domande frequenti su desktop Analytics.
-ms.date: 10/15/2019
+ms.date: 10/19/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96f84adcacdf298840a981360478bf828a22716a
-ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
+ms.openlocfilehash: bc8b770ff99fbf9c45815e2516639726d47be7a9
+ms.sourcegitcommit: 90f51008deeabf2a434bd12f81bb25669045029c
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72385476"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72684762"
 ---
 # <a name="desktop-analytics-faq"></a>Domande frequenti su desktop Analytics
 
@@ -129,9 +129,13 @@ Una volta registrati i dispositivi, per visualizzare gli input migrati nel porta
 
 Il processo di migrazione è transazionale. Verranno visualizzati tutti gli input migrati senza danneggiamento o nessun input migrato. Se gli input migrati non vengono visualizzati in 24 ore, contattare supporto tecnico Microsoft. Avviare l'assegnazione di tag alle app quando vengono visualizzati gli input migrati. Se sono già state contrassegnate alcune app, desktop Analytics mantiene gli input nel caso in cui si verifichino conflitti con gli input da Windows Analytics.
 
-### <a name="im-not-ready-yet-can-i-migrate-after-the-initial-onboarding"></a>Se non si è ancora pronti, è possibile eseguire la migrazione dopo l'onboarding iniziale?
+### <a name="how-long-do-i-have-to-migrate-my-data"></a>Quanto tempo è necessario per eseguire la migrazione dei dati?
 
-Sì.<!-- 5202803 --> I clienti esistenti di Windows Analytics possono ora migrare i dati dopo l'onboarding iniziale. Passare a **servizi connessi** nel portale di analisi del desktop e selezionare l'opzione per la migrazione dei dati da Windows Analytics.
+La soluzione Preparazione aggiornamenti di Windows Analytics verrà [ritirata il 31 gennaio 2020](https://aka.ms/waretirement). Al termine del ritiro, in base ai criteri di conservazione dell'area di lavoro Log Analytics, i dati andranno oltre il tempo. I clienti che desiderano proteggere i dati devono eseguire la migrazione o l'esportazione prima che si verifichino.
+
+### <a name="can-i-migrate-after-the-initial-onboarding"></a>È possibile eseguire la migrazione dopo l'onboarding iniziale?
+
+Sì.<!-- 5202803 --> Fino a quando si imposta un'area di lavoro di Windows Analytics esistente come area di lavoro di analisi di desktop durante l' [onboarding iniziale](/sccm/desktop-analytics/set-up#initial-onboarding), i clienti esistenti di Windows Analytics possono ora migrare i dati dopo l'onboarding iniziale. Passare a **servizi connessi** nel portale di analisi del desktop e selezionare l'opzione per la migrazione dei dati da Windows Analytics.
 
 ### <a name="can-i-use-update-compliance-together-with-desktop-analytics"></a>È possibile usare Conformità aggiornamenti insieme a Analytics per desktop?
 
