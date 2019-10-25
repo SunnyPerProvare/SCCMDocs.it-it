@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: edf0922d4aab8dc5a9c37ae54bbb7e91759e59de
-ms.sourcegitcommit: 90f51008deeabf2a434bd12f81bb25669045029c
+ms.openlocfilehash: 0126045f737fe6b8eb9e372f590d6c4a241d8024
+ms.sourcegitcommit: d3aa20e2d12b5a68c7d672172234c65095fd4ce8
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72684853"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810764"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Abilitare la condivisione dei dati per analisi desktop
 
@@ -66,7 +66,7 @@ Gli articoli seguenti sono anche risorse valide per comprendere meglio i livelli
 Per abilitare la condivisione dei dati, configurare il server proxy per consentire gli endpoint seguenti:
 
 > [!Important]  
-> Per la privacy e l'integrità dei dati, Windows verifica la presenza di un certificato SSL Microsoft durante la comunicazione con gli endpoint dati di diagnostica. L'intercettazione e l'ispezione SSL non sono possibili. Per usare analisi desktop, escludere questi endpoint dall'ispezione SSL.<!-- BUG 4647542 -->
+> Per la privacy e l'integrità dei dati, Windows verifica la presenza di un certificato SSL Microsoft (blocco del certificato) durante la comunicazione con gli endpoint dei dati di diagnostica. L'intercettazione e l'ispezione SSL non sono possibili. Per usare analisi desktop, escludere questi endpoint dall'ispezione SSL.<!-- BUG 4647542 -->
 
 | Endpoint  | Funzione  |
 |-----------|-----------|
@@ -77,11 +77,11 @@ Per abilitare la condivisione dei dati, configurare il server proxy per consenti
 | `https://vortex-win.data.microsoft.com` | Esperienza utente connessa ed endpoint componente di diagnostica. Usato dai dispositivi che eseguono Windows 7 e Windows 8.1 |
 | `https://settings-win.data.microsoft.com` | Consente all'aggiornamento per la compatibilità di inviare i dati a Microsoft. |
 | `http://adl.windows.com` | Consente all'aggiornamento della compatibilità di ricevere i dati di compatibilità più recenti da Microsoft. |
-| `https://watson.telemetry.microsoft.com` | Segnalazione errori Windows (WER). Necessaria per monitorare lo stato di distribuzione in Windows 10, versione 1803 o versioni precedenti. |
-| `https://umwatsonc.events.data.microsoft.com` | Segnalazione errori Windows (WER). Obbligatorio per i report sull'integrità dei dispositivi in Windows 10, versione 1809 o successiva. |
-| `https://ceuswatcab01.blob.core.windows.net`<br> `https://ceuswatcab02.blob.core.windows.net`<br> `https://eaus2watcab01.blob.core.windows.net`<br> `https://eaus2watcab02.blob.core.windows.net`<br> `https://weus2watcab01.blob.core.windows.net`<br> `https://weus2watcab02.blob.core.windows.net` | Segnalazione errori Windows (WER). Necessaria per monitorare lo stato di distribuzione in Windows 10, versione 1809 o successiva. |
-| `https://kmwatsonc.events.data.microsoft.com` | Analisi degli arresti anomali in linea. Obbligatorio per i report sull'integrità dei dispositivi in Windows 10, versione 1809 o successiva. |
-| `https://oca.telemetry.microsoft.com`  | Analisi degli arresti anomali (OCA) online. Necessaria per monitorare lo stato di distribuzione in Windows 10, versione 1803 o versioni precedenti. |
+| `https://watson.telemetry.microsoft.com` | [Segnalazione errori Windows (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Necessaria per monitorare lo stato di distribuzione in Windows 10, versione 1803 o versioni precedenti. |
+| `https://umwatsonc.events.data.microsoft.com` | [Segnalazione errori Windows (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Obbligatorio per i report sull'integrità dei dispositivi in Windows 10, versione 1809 o successiva. |
+| `https://ceuswatcab01.blob.core.windows.net`<br> `https://ceuswatcab02.blob.core.windows.net`<br> `https://eaus2watcab01.blob.core.windows.net`<br> `https://eaus2watcab02.blob.core.windows.net`<br> `https://weus2watcab01.blob.core.windows.net`<br> `https://weus2watcab02.blob.core.windows.net` | [Segnalazione errori Windows (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Necessaria per monitorare lo stato di distribuzione in Windows 10, versione 1809 o successiva. |
+| `https://kmwatsonc.events.data.microsoft.com` | [Analisi degli arresti anomali (oca) online](https://docs.microsoft.com/windows/win32/dxtecharts/crash-dump-analysis). Obbligatorio per i report sull'integrità dei dispositivi in Windows 10, versione 1809 o successiva. |
+| `https://oca.telemetry.microsoft.com`  | [Analisi degli arresti anomali (oca) online](https://docs.microsoft.com/windows/win32/dxtecharts/crash-dump-analysis). Necessaria per monitorare lo stato di distribuzione in Windows 10, versione 1803 o versioni precedenti. |
 | `https://login.live.com` | Necessario per fornire un'identità del dispositivo più affidabile per desktop Analytics. <br> <br>Per disabilitare l'accesso account Microsoft all'utente finale, utilizzare le impostazioni dei criteri anziché bloccare l'endpoint. Per ulteriori informazioni, vedere [la account Microsoft nell'azienda](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts#block-all-consumer-microsoft-account-user-authentication). |
 | `https://graph.windows.net` | Usato per recuperare automaticamente le impostazioni, come la commercializzazione, quando si connette la gerarchia a desktop Analytics (in Configuration Manager ruolo del server). Per ulteriori informazioni, vedere [configurare il proxy per un server del sistema del sito
 ] (/SCCM/Core/Plan-Design/Network/Proxy-Server-Support # Configure-the-proxy-for-a-Site-System-Server). |

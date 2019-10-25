@@ -11,34 +11,35 @@ ms.assetid: 349b2a69-af46-481f-afb2-24d98774e852
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 24f8b723a82f2adb4eb160b0e3edab1efbca1e95
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.openlocfilehash: e133adf70f66041da43570503c0e7813a59350d0
+ms.sourcegitcommit: d3aa20e2d12b5a68c7d672172234c65095fd4ce8
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70891747"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810640"
 ---
 # <a name="desktop-analytics-log-collector"></a>Agente di raccolta log di analisi desktop
 
 A partire da Configuration Manager versione 1906, usare lo strumento **DesktopAnalyticsLogsCollector. ps1** dalla directory di installazione Configuration Manager per risolvere i problemi di registrazione del dispositivo di analisi del desktop. Lo strumento esegue alcuni passaggi di base per la risoluzione dei problemi e raccoglie i log di rilievo in un'unica directory di lavoro. È possibile condividere questo contenuto con il supporto tecnico Microsoft.
 
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 - Un client di analisi desktop che esegue Windows 10, Windows 8.1 o Windows 7 con Service Pack 1
 
 - Eseguire lo script nel dispositivo come utente **amministratore ed eseguire come amministratore**.
 
     > [!Tip]
-    > Con questo strumento è possibile utilizzare la funzionalità **script** Configuration Manager. Per ulteriori informazioni, vedere [l'esempio 5: Distribuire lo script tramite **script**](#bkmk_ex5)Configuration Manager.
+    > Con questo strumento è possibile utilizzare la funzionalità **script** Configuration Manager. Per altre informazioni, vedere [esempio 5: distribuire lo script tramite **script**Configuration Manager](#bkmk_ex5).
 
-- PowerShell versione 4,0 o successiva
-    - .NET Framework versione 4,6 o successiva
-    - Windows Management Framework versione 4,0 o successiva
+- Per Windows 7 con Service Pack 1, PowerShell versione 4,0 o successiva
+    - [.NET Framework versione 4,6 o successiva](https://dotnet.microsoft.com/download/dotnet-framework)
+
+    - [Windows Management Framework versione 4,0](http://aka.ms/wmf4download) o [successiva](http://aka.ms/wmf5download)
 
 ## <a name="usage"></a>Utilizzo
 
-Ottenere lo script dal contenuto del Configuration Manager installazione:`SMSSETUP\TOOLS\DesktopAnalyticsLogsCollector\DesktopAnalyticsLogsCollector.ps1`
+Ottenere lo script dal contenuto di installazione di Configuration Manager: `SMSSETUP\TOOLS\DesktopAnalyticsLogsCollector\DesktopAnalyticsLogsCollector.ps1`
 
 ``` Syntax
 DesktopAnalyticsLogsCollector.ps1
@@ -56,15 +57,15 @@ Specifica un percorso locale o UNC per inserire il log e altri file di output.
 
 **Valori**:
 
-- Percorso locale (lunghezza massima = 130), ad esempio:`c:\myfolder`
+- Percorso locale (lunghezza massima = 130), ad esempio: `c:\myfolder`
 
-- Percorso UNC (lunghezza massima = 130), ad esempio:`\\myserver\myfolder`
+- Percorso UNC (lunghezza massima = 130), ad esempio: `\\myserver\myfolder`
 
-**Tipo**: String
+**Tipo**: stringa
 
 **Posizione**: 1
 
-**Valore predefinito**: `$Env:SystemDrive\M365AnalyticsLogs`Se questo parametro è null, vuoto o uno spazio vuoto, lo script crea la cartella M365AnalyticsLogs nell'unità di sistema.
+**Valore predefinito**: `$Env:SystemDrive\M365AnalyticsLogs` (se questo parametro è null, vuoto o spazio vuoto, lo script crea la cartella M365AnalyticsLogs nell'unità di sistema).
 
 ### `-LogMode`
 
@@ -72,17 +73,17 @@ Specifica il livello dettagliato dei log.
 
 **Valori**:
 
-- `0`: Registra i messaggi di script nella finestra di comando di PowerShell.
+- `0`: registra solo i messaggi di script nella finestra di comando di PowerShell.
 
-- `1`: Registrare i messaggi di script in entrambi i file di log nella cartella di output e nella finestra di comando di PowerShell.
+- `1`: registra i messaggi di script in entrambi i file di log nella cartella di output e nella finestra di comando di PowerShell.
 
-- `2`: Registra i messaggi di script nel file di log solo nella cartella di output.
+- `2`: registra i messaggi di script nel file di log solo nella cartella di output.
 
 **Tipo**: Int16
 
 **Posizione**: 2
 
-**Valore predefinito**: `1`(Registrare i messaggi di script nel file di log e nella finestra di comando di PowerShell).
+**Valore predefinito**: `1` (registra i messaggi di script nel file di log e nella finestra di comando di PowerShell).
 
 ### `-CollectNetTrace`
 
@@ -90,15 +91,15 @@ Specifica se lo script raccoglie la traccia di rete.
 
 **Valori**:
 
-- `0`: Non abilitare la traccia di rete.
+- `0`: non abilitare la traccia di rete.
 
-- `1`(qualsiasi valore integer diverso da zero): Abilitare la traccia di rete e raccogliere i risultati.
+- `1` (qualsiasi valore integer diverso da zero): abilitare la traccia di rete e raccogliere i risultati.
 
 **Tipo**: Int16
 
 **Posizione**: 3
 
-**Valore predefinito**: `0`(Non abilitare la traccia di rete)
+**Valore predefinito**: `0` (non abilitare la traccia di rete)
 
 ### `-CollectUTCTrace`
 
@@ -106,15 +107,15 @@ Specifica se lo script raccoglie la traccia UTC di Windows ed esegue la diagnosi
 
 **Valori**:
 
-- `0`: Non abilitare la traccia UTC o eseguire la diagnosi di connettività.
+- `0`: non abilitare la traccia UTC o eseguire la diagnosi di connettività.
 
-- `1`(qualsiasi valore integer diverso da zero): Abilitare la traccia UTC, eseguire la diagnostica della connettività e raccogliere i risultati.
+- `1` (qualsiasi valore integer diverso da zero): abilitare la traccia UTC, eseguire la diagnostica della connettività e raccogliere i risultati.
 
 **Tipo**: Int16
 
 **Posizione**: 4
 
-**Valore predefinito**: `0`(Non abilitare la traccia UTC o eseguire la diagnosi di connettività)
+**Valore predefinito**: `0` (non abilitare la traccia UTC o eseguire la diagnosi di connettività)
 
 
 ## <a name="output"></a>Output
@@ -125,38 +126,38 @@ Se si Abilita lo script per la scrittura in un *file di log*, ne viene generato 
 
 Lo script genera anche altri *file di diagnostica* nella cartella di lavoro. Ad esempio:
 
-- `installedKBs.txt`: elenco di aggiornamenti di Windows installati nel dispositivo
-- `appcompat`: dati di compatibilità delle applicazioni
+- `installedKBs.txt`: un elenco di aggiornamenti di Windows installati nel dispositivo
+- `appcompat`: dati sulla compatibilità delle applicazioni
 - `Reg*.txt`: una serie di file con i dati esportati dal registro di sistema di Windows
 
 
 ## <a name="examples"></a>Esempi
 
-### <a name="bkmk_ex1"></a>Esempio 1: Eseguire lo script tramite la finestra di comando di PowerShell con i valori predefiniti
+### <a name="bkmk_ex1"></a>Esempio 1: eseguire lo script tramite la finestra di comando di PowerShell con i valori predefiniti
 
 ```PowerShell
 .\DesktopAnalyticsLogsCollector.ps1
 ```
 
-### <a name="bkmk_ex2"></a>Esempio 2: Eseguire lo script tramite la finestra di comando di PowerShell con i parametri specificati
+### <a name="bkmk_ex2"></a>Esempio 2: eseguire lo script tramite la finestra di comando di PowerShell con i parametri specificati
 
 ```PowerShell
 .\DesktopAnalyticsLogsCollector.ps1 -LogPath "c:\testABC" -LogMode 0 -CollectNetTrace 0 -CollectUTCTrace 0
 ```
 
-### <a name="bkmk_ex3"></a>Esempio 3: Esegui script tramite la finestra di comando di PowerShell con i parametri specificati nella posizione
+### <a name="bkmk_ex3"></a>Esempio 3: eseguire lo script tramite la finestra di comando di PowerShell con i parametri specificati nella posizione
 
 ```PowerShell
 .\DesktopAnalyticsLogsCollector.ps1 "c:\testABC" 2 0 0
 ```
 
-### <a name="bkmk_ex4"></a>Esempio 4: Esegui script tramite la finestra di comando di PowerShell con i parametri specificati e i messaggi dettagliati
+### <a name="bkmk_ex4"></a>Esempio 4: eseguire script tramite la finestra di comando di PowerShell con i parametri specificati e i messaggi dettagliati
 
 ```PowerShell
 .\DesktopAnalyticsLogsCollector.ps1 -LogMode 1 -Verbose
 ```
 
-### <a name="bkmk_ex5"></a>Esempio 5: Distribuire lo script tramite **script** Configuration Manager
+### <a name="bkmk_ex5"></a>Esempio 5: distribuire lo script tramite **script** Configuration Manager
 
 Per altre informazioni, vedere [Creare ed eseguire script di PowerShell dalla console di Configuration Manager](/sccm/apps/deploy-use/create-deploy-scripts).
 
@@ -164,12 +165,12 @@ DesktopAnalyticsLogsCollector. ps1 è firmato digitalmente da Microsoft. Potrebb
 
 1. Aprire le proprietà dello script in Esplora risorse. Passare alla scheda **firme digitali** e selezionare **Dettagli**.
 
-1. Nella scheda **generale** selezionare **Visualizza certificato**.
+2. Nella scheda **generale** selezionare **Visualizza certificato**.
 
     > [!Note]
     > Per distribuire il certificato tramite altri meccanismi, esportare prima il certificato in un file. Passare alla scheda **Dettagli** e selezionare **copia su file**.
 
-1. Selezionare **Installa certificato**. Importare il certificato, inserendolo nell'archivio **autori attendibili** .
+3. Selezionare **Installa certificato**. Importare il certificato, inserendolo nell'archivio **autori attendibili** .
 
 
 ## <a name="see-also"></a>Vedere anche
