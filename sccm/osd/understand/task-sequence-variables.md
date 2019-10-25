@@ -2,7 +2,7 @@
 title: Informazioni di riferimento sulle variabili della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni sulle variabili per controllare e personalizzare una sequenza di attività di Configuration Manager.
-ms.date: 08/23/2019
+ms.date: 10/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a8c13d450acdd268996e1e7c760f12510549a38
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.openlocfilehash: 5c2977d9e99c2a4c4273966f1ce11ce7c93900c0
+ms.sourcegitcommit: 89d6956f8dd9a73e18bf77990ab23cf9255068ad
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70892378"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587742"
 ---
 # <a name="task-sequence-variables"></a>Variabili della sequenza di attività
 
@@ -491,7 +491,7 @@ A partire dalla versione 1906, usare questa variabile per impostare il numero di
 
 #### <a name="valid-values"></a>Valori validi
 
-Numero intero compreso `1` tra `15`e.
+Numero intero compreso tra `1` e `15`.
 
 ### <a name="OSDBitLockerRebootCountOverride"></a>OSDBitLockerRebootCountOverride
 
@@ -502,7 +502,7 @@ A partire dalla versione 1906, impostare questo valore per eseguire l'override d
 
 #### <a name="valid-values"></a>Valori validi
 
-Numero intero compreso `0` tra `15`e.
+Numero intero compreso tra `0` e `15`.
 
 ### <a name="OSDBitLockerRecoveryPassword"></a> OSDBitLockerRecoveryPassword
 
@@ -1522,30 +1522,12 @@ Specifica il messaggio da visualizzare nella finestra di dialogo di notifica di 
 
 Indica che un riavvio è richiesto al termine del passaggio della sequenza di attività corrente. Se il passaggio della sequenza di attività richiede un riavvio per completare l'azione, impostare questa variabile. Dopo il riavvio del computer, la sequenza di attività continua a essere eseguita dal passaggio successivo della sequenza di attività.
 
-- `HD`: Riavviare il sistema operativo installato
-- `WinPE`: Riavvia all'immagine di avvio associata
+- `HD`: riavviare il sistema operativo installato
+- `WinPE`: riavvio all'immagine di avvio associata
 
 ### <a name="SMSTSRetryRequested"></a> SMSTSRetryRequested
 
 Richiede un nuovo tentativo dopo il completamento del passaggio della sequenza di attività. Se questa variabile della sequenza di attività è impostata, impostare la variabile [SMSTSRebootRequested](#SMSTSRebootRequested) su `true`. Dopo il riavvio del computer, il motore di esecuzione della sequenza di attività ripete lo stesso passaggio della sequenza di attività.
-
-### <a name="SMSTSRunCommandLineUserName"></a> SMSTSRunCommandLineUserName
-
-*Si applica al passaggio [Esegui riga di comando](task-sequence-steps.md#BKMK_RunCommandLine).*
-
-(input)
-
-Specifica l'account da cui viene eseguita la riga di comando. Il valore è una stringa nel formato nomeutente o dominio\nome utente. Specificare la password dell'account con la variabile [SMSTSRunCommandLinePassword](#SMSTSRunCommandLinePassword).
-
-Per altre informazioni sull'account Esegui come per la sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-run-as-account).
-
-### <a name="SMSTSRunCommandLinePassword"></a> SMSTSRunCommandLinePassword
-
-*Si applica al passaggio [Esegui riga di comando](task-sequence-steps.md#BKMK_RunCommandLine).*
-
-(input)
-
-Specifica la password per l'account specificato dalla variabile [SMSTSRunCommandLineUserName](#SMSTSRunCommandLineUserName).
 
 ### <a name="SMSTSSoftwareUpdateScanTimeout"></a> SMSTSSoftwareUpdateScanTimeout
 
@@ -1584,7 +1566,7 @@ Ad esempio, se si imposta SMSTSWaitForSecondReboot su `600`, la sequenza di atti
 ### <a name="TSDebugMode"></a>TSDebugMode
 
 <!--3612274-->
-A partire dalla versione 1906, impostare questa variabile `TRUE` su in una raccolta o in un oggetto computer in cui viene distribuita la sequenza di attività. Tutti i dispositivi con questo set di variabili comporteranno la distribuzione di una sequenza di attività in modalità di debug.
+A partire dalla versione 1906, impostare questa variabile su `TRUE` in una raccolta o in un oggetto computer in cui viene distribuita la sequenza di attività. Tutti i dispositivi con questo set di variabili comporteranno la distribuzione di una sequenza di attività in modalità di debug.
 
 Per altre informazioni, vedere [Eseguire il debug di una sequenza di attività](/sccm/osd/deploy-use/debug-task-sequence).
 

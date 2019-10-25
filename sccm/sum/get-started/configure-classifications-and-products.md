@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10ec464f9689f2a4bf7f0c6176cf52bbf7033d0d
-ms.sourcegitcommit: 23e4f4f02b62e5cc284196067a83eaaa67a6f446
+ms.openlocfilehash: 45770da884b74f8f6a166490f5c7f604e8deacaf
+ms.sourcegitcommit: 90f51008deeabf2a434bd12f81bb25669045029c
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71999027"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72684818"
 ---
 # <a name="configure-classifications-and-products-to-synchronize"></a>configurare le classificazioni e i prodotti per la sincronizzazione  
 
@@ -87,7 +87,7 @@ Per ulteriori informazioni sul supporto di Windows insider in Configuration Mana
 
 ### <a name="enable-windows-insider-upgrades-and-updates"></a>Abilita aggiornamenti e aggiornamenti di Windows Insider
 
-È necessario abilitare i prodotti e le classificazioni per gli aggiornamenti e gli aggiornamenti di Windows Insider. Gli aggiornamenti delle funzionalità per Windows Insider si trovano nel prodotto **preliminare Windows Insider** . Gli aggiornamenti cumulativi e gli altri aggiornamenti per Windows Insider saranno tuttavia inclusi nel prodotto **Windows 10, versione 1903 e successive**.
+È necessario abilitare i prodotti e le classificazioni per gli aggiornamenti e gli aggiornamenti di Windows Insider. Gli aggiornamenti delle funzionalità, gli aggiornamenti cumulativi e gli altri aggiornamenti per Windows Insider sono inclusi nella categoria del prodotto **Windows Insider preliminare** .
 
 1. Nella console di **Configuration Manager** passare ad **Amministrazione** > **Configurazione del sito** > **Siti**.
 2. Selezionare il sito di amministrazione centrale o il sito primario autonomo.  
@@ -121,15 +121,15 @@ Per altre informazioni su come distribuire gli aggiornamenti, vedere [gestire Wi
 
 ### <a name="keeping-insider-devices-up-to-date"></a>Mantenere aggiornati i dispositivi Insider
 
-Gli aggiornamenti cumulativi per Windows Insider saranno disponibili per WSUS e per estensione per Configuration Manager. Questi aggiornamenti cumulativi verranno rilasciati con una frequenza simile a quella degli aggiornamenti cumulativi di Windows 10 versione 1903. Gli aggiornamenti cumulativi di Windows Insider si trovano nella categoria di prodotti **Windows 10, versione 1903 e versioni successive** e sono classificati come **aggiornamenti di sicurezza** o **aggiornamenti**. È possibile distribuire gli aggiornamenti cumulativi per Windows Insider usando il normale processo di aggiornamento software come l'uso di [regole di distribuzione automatica](/sccm/sum/deploy-use/automatically-deploy-software-updates) o di [distribuzioni](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json)in più fasi.
+Gli aggiornamenti cumulativi per Windows Insider saranno disponibili per WSUS e per estensione per Configuration Manager. Questi aggiornamenti cumulativi verranno rilasciati con una frequenza simile a quella degli aggiornamenti cumulativi di Windows 10 versione 1903. Gli aggiornamenti cumulativi di Windows Insider si trovano nella categoria del prodotto **versione preliminare di Windows** Insider e vengono classificati come **aggiornamenti di sicurezza** o **aggiornamenti**. È possibile distribuire gli aggiornamenti cumulativi per Windows Insider usando il normale processo di aggiornamento software come l'uso di [regole di distribuzione automatica](/sccm/sum/deploy-use/automatically-deploy-software-updates) o di [distribuzioni](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json)in più fasi.
 
-## <a name="bkmk_ESU"></a>Aggiornamenti e Configuration Manager della sicurezza estesi
+## <a name="bkmk_ESU"></a> Aggiornamenti della sicurezza estesa e Configuration Manager
 
-Il programma di [aggiornamento della sicurezza esteso](https://support.microsoft.com/help/4497181/lifecycle-faq-extended-security-updates) è un'ultima opzione per i clienti che devono eseguire alcuni prodotti Microsoft legacy oltre la fine del supporto. Sono inclusi gli aggiornamenti della sicurezza critici e/o importanti (definiti da [Microsoft Security Response Center (MSRC)](https://www.microsoft.com/msrc)) per un massimo di tre anni dopo la fine della data di supporto estesa del prodotto.
+Gli [aggiornamenti della sicurezza estesa (ESU, Extended Security Updates) ](https://support.microsoft.com/help/4497181/lifecycle-faq-extended-security-updates) sono un'ultima soluzione per i clienti che devono eseguire alcuni prodotti Microsoft legacy oltre la fine del supporto. Il programma ESU include aggiornamenti della sicurezza critici e/o importanti definiti dal [Microsoft Security Response Center (MSRC) ](https://www.microsoft.com/msrc) per un massimo di tre anni dopo la data di fine del supporto "Extended" del prodotto.
 
-I prodotti che non rientrano nel ciclo di vita del supporto non sono supportati per l'uso con Configuration Manager. Sono inclusi tutti i prodotti coperti dal programma dell'unità di verifica. Gli aggiornamenti della sicurezza rilasciati nel programma Ude verranno pubblicati in Windows Server Update Services (WSUS). Questi aggiornamenti verranno visualizzati nella console di Configuration Manager. Sebbene i prodotti coperti dal programma dell'unità di sicurezza non siano più supportati per l'uso con Configuration Manager, la [versione rilasciata più recente di Configuration Manager Current Branch](/sccm/core/servers/manage/updates#version-details) può essere usata per distribuire e installare gli aggiornamenti della sicurezza di Windows rilasciati sotto il programma. La versione rilasciata più recente può essere usata anche per distribuire sistemi operativi supportati tramite l'OSD (Operating System Deployment).
+I prodotti che non rientrano nel ciclo di vita del supporto non sono supportati per l'uso con Configuration Manager. Sono inclusi tutti i prodotti coperti dal programma ESU. Gli aggiornamenti della sicurezza rilasciati nel programma ESU verranno pubblicati in Windows Server Update Services (WSUS). Gli aggiornamenti saranno visualizzati nella console di Configuration Manager. Mentre i prodotti coperti dal programma ESU non sono più supportati per l'uso con Configuration Manager, è possibile usare la [versione più recente di Configuration Manager (Current Branch)](/sccm/core/servers/manage/updates#version-details) per distribuire e installare gli aggiornamenti della sicurezza di Windows rilasciati nel programma. La versione più recente può essere usata anche per distribuire i sistemi operativi supportati tramite la distribuzione del sistema operativo.
 
-Le funzionalità di gestione client non correlate a gestione aggiornamenti software Windows o OSD non verranno più testate nei sistemi operativi coperti dal programma dell'unità di sicurezza e non garantiamo che continueranno a funzionare. Si consiglia vivamente di eseguire l'aggiornamento o la migrazione a una versione corrente dei sistemi operativi appena possibile per la ricezione del supporto per la gestione dei client.
+Le funzionalità di gestione client che non sono correlate alla gestione degli aggiornamenti software Windows o alla distribuzione del sistema operativo non verranno più testate nei sistemi operativi coperti dal programma ESU e non si garantisce che continueranno a funzionare. È consigliabile eseguire l'aggiornamento o la migrazione a una versione corrente dei sistemi operativi appena possibile per ricevere supporto per la gestione dei client.
 
 
 ## <a name="next-steps"></a>Passaggi successivi
