@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f565128b13d99daf041d56762994b1e2b35e793e
-ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
+ms.openlocfilehash: d7ba8c29b9b917a8497d44ebcc3bf4264cf991ff
+ms.sourcegitcommit: 21a4a87d5e137b1cbd2ecd8ea34b5f0bfd2af357
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72386744"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72889725"
 ---
 # <a name="compatibility-assessment-in-desktop-analytics"></a>Valutazione della compatibilità in desktop Analytics
 
@@ -57,7 +57,7 @@ Verranno visualizzati i seguenti problemi nel riquadro Proprietà app come **pro
 
 ### <a name="application-is-removed-during-upgrade"></a>L'applicazione è stata rimossa durante l'aggiornamento
 
-Problemi di compatibilità rilevati da Windows. L'applicazione non eseguirà la migrazione alla nuova versione del sistema operativo. Per continuare l'aggiornamento, non è necessaria alcuna azione.
+Problemi di compatibilità rilevati da Windows. L'applicazione non eseguirà la migrazione alla nuova versione del sistema operativo. Per continuare l'aggiornamento, non è necessaria alcuna azione. Installare una versione compatibile dell'applicazione nella nuova versione del sistema operativo.
 
 ### <a name="blocking-upgrade"></a>Aggiornamento del blocco
 
