@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 165574cb85a41cb8acba9efba653ebc7fc4a6fe1
-ms.sourcegitcommit: e0d303d87c737811c2d3c40d01cd3d260a5c7bde
+ms.openlocfilehash: c03daa588b0ddbdf94cba6df4f3fe7c4adcdbf71
+ms.sourcegitcommit: d3aa20e2d12b5a68c7d672172234c65095fd4ce8
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69974694"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810816"
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gestire Windows come servizio con System Center Configuration Manager
 
@@ -86,7 +86,7 @@ ms.locfileid: "69974694"
 <!--4224414-->
 *(Funzionalità introdotta nella versione 1906)*
 
-È possibile esaminare nel dettaglio le statistiche di conformità per individuare i dispositivi che richiedono un aggiornamento software di Office 365 specifico. Per visualizzare l'elenco dei dispositivi, è necessaria l'autorizzazione per visualizzare gli aggiornamenti e le raccolte a cui appartengano i dispositivi. Per eseguire il drill-down nell'elenco dei dispositivi:
+È possibile esaminare nel dettaglio le statistiche di conformità per individuare i dispositivi che richiedono un aggiornamento delle funzionalità di Windows 10 specifico. Per visualizzare l'elenco dei dispositivi, è necessaria l'autorizzazione per visualizzare gli aggiornamenti e le raccolte a cui appartengano i dispositivi. Per eseguire il drill-down nell'elenco dei dispositivi:
 
 1. Passare a **Raccolta software** > **Manutenzione pacchetti di Windows 10** > **Tutti gli aggiornamenti di Windows 10**.
 1. Selezionare tutti gli aggiornamenti richiesti da almeno un dispositivo.

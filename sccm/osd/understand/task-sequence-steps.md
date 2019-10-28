@@ -2,7 +2,7 @@
 title: Passaggi della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni sui passaggi che è possibile aggiungere a una sequenza di attività di Configuration Manager.
-ms.date: 09/04/2019
+ms.date: 10/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7132bbbc0746af04e4af952b2fcf7d8de46b3c9b
-ms.sourcegitcommit: cb169396acf0d50fedd9f2ae62f7894615c3cce5
+ms.openlocfilehash: ec745842fb03a422f3d08be3de261537f23a0a19
+ms.sourcegitcommit: 89d6956f8dd9a73e18bf77990ab23cf9255068ad
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70808372"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587752"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
@@ -1494,8 +1494,6 @@ Usare le variabili della sequenza di attività seguenti con questo passaggio:
 
 - [OSDDoNotLogCommand](/sccm/osd/understand/task-sequence-variables#OSDDoNotLogCommand) (a partire dalla versione 1902)<!--3654172-->  
 - [SMSTSDisableWow64Redirection](/sccm/osd/understand/task-sequence-variables#SMSTSDisableWow64Redirection)  
-- [SMSTSRunCommandLineUserName](/sccm/osd/understand/task-sequence-variables#SMSTSRunCommandLineUserName)  
-- [SMSTSRunCommandLinePassword](/sccm/osd/understand/task-sequence-variables#SMSTSRunCommandLinePassword)  
 - [WorkingDirectory](/sccm/osd/understand/task-sequence-variables#WorkingDirectory)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Generale** e quindi selezionare **Esegui riga di comando**.

@@ -5,18 +5,18 @@ description: Esaminare le informazioni sul client Office 365 dal dashboard di Ge
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 07/26/2019
+ms.date: 10/23/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 69f234a2-b04b-445a-b81f-6b4acfc00eaf
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e4f843d8984cbf27fed4e309af523855ab14002
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: 4bb08f123e0cf1321ff6eb891e0dca46c712c3f6
+ms.sourcegitcommit: d3aa20e2d12b5a68c7d672172234c65095fd4ce8
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70380231"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810845"
 ---
 # <a name="office-365-client-management-dashboard"></a>Dashboard di Gestione client di Office 365
 
@@ -84,13 +84,15 @@ Se è necessaria una valutazione più dettagliata, distribuire il **Office Readi
 Per individuare i dispositivi pronti per l'aggiornamento a Office 365 ProPlus, a partire dalla versione 1906 è disponibile un dashboard di preparazione. Include il riquadro **Preparazione aggiornamenti di Office 365 ProPlus** rilasciato in Configuration Manager Current Branch versione 1902. I nuovi riquadri seguenti di questo dashboard consentono di valutare l'idoneità di componenti aggiuntivi e macro di Office:
 
 - Distribuzione
-- Conformità dei dispositivi
+- Idoneità del dispositivo
 - Idoneità dei componenti aggiuntivi
 - Dichiarazioni di supporto dei componenti aggiuntivi
 - Componenti aggiuntivi principali in base al numero di versione
 - Number of devices that have macros (Numero di dispositivi con macro)
 - Idoneità delle macro
 - Avvisi di macro
+
+Se è necessaria una valutazione più dettagliata per le macro, usare il **Toolkit di conformità di Office**. Per altre informazioni, vedere [Use the Readiness Toolkit to assess application compatibility for Office 365 ProPlus](https://aka.ms/readinesstoolkit) (Usare Readiness Toolkit per valutare la compatibilità delle applicazioni per Office 365 ProPlus).
 
 ### <a name="using-the-office-365-proplus-upgrade-readiness-dashboard"></a>Uso del dashboard Preparazione aggiornamenti per Office 365 ProPlus
  
@@ -103,6 +105,8 @@ Per individuare i dispositivi pronti per l'aggiornamento a Office 365 ProPlus, a
 ![Dashboard Preparazione aggiornamenti per Office 365 ProPlus](./media/4021125-office-365-to-add-ins.png)
 
 ![Dashboard Preparazione aggiornamenti per Office 365 ProPlus](./media/4021125-office-365-macro-advisories.png)
+
+
 
 ## <a name="next-steps"></a>Passaggi successivi
 

@@ -5,18 +5,18 @@ description: La pianificazione dell'infrastruttura del punto di aggiornamento so
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 09/04/2019
+ms.date: 10/22/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6b2f0e98527ef04a0bdeec8b2efb87f6ff86b23
-ms.sourcegitcommit: b28a97e22a9a56c5ce3367c750ea2bb4d50449c3
+ms.openlocfilehash: b6699ccfb2b987c7b454d364547698dc58c9cf7c
+ms.sourcegitcommit: 90f51008deeabf2a434bd12f81bb25669045029c
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70243733"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72684740"
 ---
 # <a name="plan-for-software-updates-in-configuration-manager"></a>Pianificare gli aggiornamenti software in Configuration Manager
 
@@ -449,7 +449,7 @@ A partire dalla versione 1906, è possibile specificare il tempo di esecuzione m
 
 Aggiungere una finestra di manutenzione dedicata per l'installazione di aggiornamenti software. Questa azione consente di configurare una finestra di manutenzione generale e una finestra di manutenzione diversa per gli aggiornamenti software. Quando si configura sia una finestra di manutenzione generale sia una finestra di manutenzione degli aggiornamenti software, i client installano aggiornamenti software solo nella finestra di manutenzione degli aggiornamenti software. 
 
-A partire da Configuration Manager versione 1810, è possibile modificare questo comportamento e consentire l'installazione degli aggiornamenti software durante una finestra di manutenzione generale. Per ulteriori informazioni su questa impostazione client, vedere [Software Updates Client Settings](/sccm/core/clients/deploy/about-client-settings#bkmk_SUMMaint).
+A partire da Configuration Manager versione 1810, è possibile modificare questo comportamento e consentire l'installazione degli aggiornamenti software durante una finestra di manutenzione generale. Per altre informazioni su questa impostazione client, vedere [Impostazioni client degli aggiornamenti software](/sccm/core/clients/deploy/about-client-settings#bkmk_SUMMaint).
 
 Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
@@ -458,7 +458,7 @@ Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le fin
 
 Quando un aggiornamento software che richiede il riavvio viene distribuito e installato tramite Configuration Manager, il client pianifica un riavvio in sospeso e visualizza una finestra di dialogo di riavvio.
 
-Quando è presente un riavvio in sospeso per un aggiornamento software di Configuration Manager, tra le opzioni di risparmio energia di Windows nei computer Windows 10 sono disponibili **Aggiorna e riavvia** e **Aggiorna e arresta**. Dopo che una di queste opzioni è stata usata e il computer è stato riavviato, la finestra di dialogo di riavvio non viene visualizzata.
+Quando è presente un riavvio in sospeso per un aggiornamento software di Configuration Manager, tra le opzioni di risparmio energia di Windows nei computer Windows 10 sono disponibili **Aggiorna e riavvia** e **Aggiorna e arresta**. Dopo che una di queste opzioni è stata usata e il computer è stato riavviato, la finestra di dialogo di riavvio non viene visualizzata. In alcuni casi, il sistema operativo può rimuovere le opzioni di riavvio in sospeso. Questo problema può verificarsi se è abilitata la funzionalità avvio rapido di Windows 10. Per ulteriori informazioni, vedere [gli aggiornamenti potrebbero non essere installati con avvio rapido in Windows 10](https://support.microsoft.com/help/4011287/windows-updates-not-install-with-fast-startup).
 
 
 
