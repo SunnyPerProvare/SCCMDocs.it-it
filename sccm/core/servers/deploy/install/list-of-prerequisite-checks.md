@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 85d868793f876d2b749eb5cfc1376278699e2a7d
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: b5b2904f7cd6945b6aa447f0404bf67a4caf4279
+ms.sourcegitcommit: d3aa20e2d12b5a68c7d672172234c65095fd4ce8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536432"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810789"
 ---
 # <a name="list-of-prerequisite-checks-for-configuration-manager"></a>Elenco dei controlli dei prerequisiti per Configuration Manager
 
@@ -542,7 +542,7 @@ Il componente Ambiente preinstallazione di Windows di Windows ADK è installato.
 
 *Si applica a: sito di amministrazione centrale, sito primario*
 
-Il livello funzionale del dominio di Active Directory è almeno Windows Server 2008 R2.
+Il livello di funzionalità del dominio e delle foreste di Active Directory è almeno Windows Server 2008 R2. Per altre informazioni, vedere [Supporto per i domini di Active Directory](/sccm/core/plan-design/configs/support-for-active-directory-domains).
 
 ### <a name="administrative-rights-on-distribution-point"></a>Diritti amministrativi sul punto di distribuzione
 

@@ -2,7 +2,7 @@
 title: Documentazione nella console
 titleSuffix: Configuration Manager
 description: Questo articolo viene visualizzato solo nella console di Configuration Manager.
-ms.date: 09/09/2019
+ms.date: 10/22/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b24f5cc928265cf79eeebe2d9beb4c9f8d9d759
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.openlocfilehash: 143aa617484bb45a2d20eb4db3d41733863052ac
+ms.sourcegitcommit: 21a4a87d5e137b1cbd2ecd8ea34b5f0bfd2af357
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70889612"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72889703"
 ---
 <!-- 
 - Feature 1357546
@@ -28,7 +28,7 @@ ms.locfileid: "70889612"
 
 # <a name="configuration-manager-documentation"></a>Documentazione di Configuration Manager
 
-*Ultimo aggiornamento: 09 settembre 2019*
+*Ultimo aggiornamento: 22 ottobre 2019*
 
 Questo contenuto offre informazioni utili per l'apprendimento e il supporto di Configuration Manager.
 
@@ -56,22 +56,22 @@ Elenco aggiornato di articoli importanti.
 
 ## <a name="trending"></a>Di tendenza
 
-Gli articoli più visualizzati tra il 1° e il 31 agosto 2019.
+Gli articoli più visualizzati tra il 1° e il 30 settembre 2019.
 
 | Visualizzazioni pagina | Titolo |
 |------------|-------|
-| 18594 | [Riferimento ai file di log](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/log-files) |
-| 18045 | [Novità della versione 1906](https://docs.microsoft.com/sccm/core/plan-design/changes/whats-new-in-version-1906) |
-| 16244 | [Come abilitare TLS 1.2](https://docs.microsoft.com/sccm/core/plan-design/security/enable-tls-1-2) |
-| 11902 | [Porte usate per le connessioni](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/ports) |
-| 11233 | [Distribuire i client in Windows](https://docs.microsoft.com/sccm/core/clients/deploy/deploy-clients-to-windows-computers) |
-| 8663 | [Supporto per Windows 10](https://docs.microsoft.com/sccm/core/plan-design/configs/support-for-windows-10) |
-| 8399 | [Desktop Analytics](https://docs.microsoft.com/sccm/desktop-analytics/overview) |
-| 8391 | [Aggiornamenti e manutenzione](https://docs.microsoft.com/sccm/core/servers/manage/updates) |
-| 8229 | [Impostazioni client](https://docs.microsoft.com/sccm/core/clients/deploy/about-client-settings) |
-| 8069 | [Passaggi della sequenza di attività](https://docs.microsoft.com/sccm/osd/understand/task-sequence-steps) |
+| 19123 | [Come abilitare TLS 1.2](https://docs.microsoft.com/sccm/core/plan-design/security/enable-tls-1-2) |
+| 18310 | [Riferimento ai file di log](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/log-files) |
+| 16614 | [Novità della versione 1906](https://docs.microsoft.com/sccm/core/plan-design/changes/whats-new-in-version-1906) |
+| 12623 | [Porte usate per le connessioni](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/ports) |
+| 12293 | [Distribuire i client in Windows](https://docs.microsoft.com/sccm/core/clients/deploy/deploy-clients-to-windows-computers) |
+| 9371 | [Supporto per Windows 10](https://docs.microsoft.com/sccm/core/plan-design/configs/support-for-windows-10) |
+| 8894 | [Impostazioni client](https://docs.microsoft.com/sccm/core/clients/deploy/about-client-settings) |
+| 8803 | [Aggiornamenti e manutenzione](https://docs.microsoft.com/sccm/core/servers/manage/updates) |
+| 8692 | [Desktop Analytics](https://docs.microsoft.com/sccm/desktop-analytics/overview) |
+| 8558 | [Manuale dell'utente di Software Center](https://docs.microsoft.com/sccm/core/understand/software-center) |
 
-La [pagina dell'hub di Configuration Manager](https://docs.microsoft.com/sccm/) ha avuto 22.991 visualizzazioni in questo periodo di tempo.
+La [pagina dell'hub di Configuration Manager](https://docs.microsoft.com/sccm/) ha avuto 22.293 visualizzazioni in questo periodo di tempo.
 
 ## <a name="recently-updated"></a>Aggiornata di recente
 
@@ -79,16 +79,16 @@ Articoli con un aggiornamento recente e significativo.
 
 | Ultima revisione | Titolo |
 |---------------|-------|
-| 30/8/2019 | [Technical Preview 1908.2](https://docs.microsoft.com/sccm/core/get-started/2019/technical-preview-1908-2) |
-| 30/8/2019 | [Risolvere i problemi di integrazione con MSfB](https://docs.microsoft.com/sccm/apps/deploy-use/troubleshoot-microsoft-store-for-business-integration) |
-| 23/8/2019 | [Domande frequenti per Desktop Analytics](https://docs.microsoft.com/sccm/desktop-analytics/faq) |
-| 23/8/2019 | [Notifiche di riavvio del dispositivo](https://docs.microsoft.com/sccm/core/clients/deploy/device-restart-notifications) |
-| 22/8/2019 | [Prerequisiti per aggiornamenti software](https://docs.microsoft.com/sccm/sum/plan-design/prerequisites-for-software-updates) |
-| 21/8/2019 | [Opzioni della riga di comando per l'installazione](https://docs.microsoft.com/sccm/core/servers/deploy/install/command-line-options-for-setup) |
-| 15/8/2019 | [Novità di Desktop Analytics](https://docs.microsoft.com/sccm/desktop-analytics/whats-new) |
-| 9/8/2019 | [Risolvere i problemi di replica SQL](https://docs.microsoft.com/sccm/core/servers/manage/replication/overview) |
-| 9/8/2019 | [Database replication](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/database-replication) |
-| 8/8/2019 | [Requisiti per l'accesso a Internet](https://docs.microsoft.com/sccm/core/plan-design/network/internet-endpoints) |
+| 30/9/2019 | [Versioni di Technical Preview](https://docs.microsoft.com/sccm/core/get-started/technical-preview) |
+| 25/9/2019 | [Supporto per Windows 10](https://docs.microsoft.com/sccm/core/plan-design/configs/support-for-windows-10) |
+| 25/9/2019 | [Configurare le classificazioni e i prodotti per la sincronizzazione](https://docs.microsoft.com/sccm/sum/get-started/configure-classifications-and-products) |
+| 19/9/2019 | [Risoluzione dei problemi di CMPivot](https://docs.microsoft.com/sccm/core/servers/manage/cmpivot-tsg) |
+| 10/9/2019 | [Come chiudere l'account](https://docs.microsoft.com/sccm/desktop-analytics/account-close) |
+| 10/9/2019 | [Ottimizzazione recapito nella cache in rete](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/delivery-optimization-in-network-cache) |
+| 6/9/2019 | [Risolvere i problemi relativi alla cache in rete di Ottimizzazione recapito](https://docs.microsoft.com/sccm/core/servers/deploy/configure/troubleshoot-delivery-optimization-in-network-cache) |
+| 6/9/2019 | [Funzionalità deprecate](https://docs.microsoft.com/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures) |
+| 6/9/2019 | [Carichi di lavoro con co-gestione](https://docs.microsoft.com/sccm/comanage/workloads) |
+| 3/9/2019 | [Riferimento per le attività di manutenzione](https://docs.microsoft.com/sccm/core/servers/manage/reference-for-maintenance-tasks) |
 
 ## <a name="troubleshooting-articles"></a>Articoli sulla risoluzione dei problemi
 

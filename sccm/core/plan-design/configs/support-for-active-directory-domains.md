@@ -1,8 +1,8 @@
 ---
-title: Domini di Active Directory supportati
+title: Supporto per i domini di Active Directory
 titleSuffix: Configuration Manager
-description: Requisiti per l'appartenenza di un sistema del sito di System Center Configuration Manager a un dominio di Active Directory.
-ms.date: 09/18/2017
+description: Informazioni sui requisiti per un sistema del sito di Configuration Manager in un dominio di Active Directory.
+ms.date: 10/22/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,74 +11,84 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d3d9b471b5a9cb69204dfb39f8d7a0d3295ee6f
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.openlocfilehash: a04928afc64c16cf5d200abc94008ea29fc73197
+ms.sourcegitcommit: d3aa20e2d12b5a68c7d672172234c65095fd4ce8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70891403"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810776"
 ---
-# <a name="supported-active-directory-domains-for-system-center-configuration-manager"></a>Domini di Active Directory supportati per System Center Configuration Manager
+# <a name="support-for-active-directory-domains-in-configuration-manager"></a>Supporto per i domini di Active Directory in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Tutti i sistemi del sito di System Center Configuration Manager devono essere membri di un dominio di Windows Server Active Directory supportato. I computer client Configuration Manager possono essere membri del dominio o membri del gruppo di lavoro.  
+Tutti i sistemi del sito di Configuration Manager devono essere membri di un dominio di Active Directory supportato. I computer client Configuration Manager possono essere membri del dominio o membri del gruppo di lavoro.  
 
- **Requisiti e limitazioni:**  
+## <a name="requirements-and-limitations"></a>Requisiti e limitazioni
 
--   L'appartenenza al dominio si applica ai sistemi del sito che supportano la gestione client basata su Internet in una rete perimetrale (detta anche subnet schermata).  
+- L'appartenenza al dominio si applica anche ai sistemi del sito che supportano la gestione client basata su Internet in una rete perimetrale (queste reti sono dette anche DMZ e subnet schermate).  
 
--   Non è supportata per modificare gli elementi seguenti per un computer che ospita un ruolo del sistema del sito:  
+- Non è supportata per modificare le configurazioni seguenti per un computer che ospita un ruolo del sistema del sito:  
 
-    -   Appartenenza al dominio *(include la rimozione di un sistema del sito dal dominio e la successiva aggiunta allo stesso dominio)*
+  - Appartenenza al dominio, inclusa la rimozione di un sistema del sito dal dominio e la successiva aggiunta allo stesso dominio.
 
-    -   Nome di dominio  
+  - Nome di dominio  
 
-    -   Nome computer  
+  - Nome computer  
 
-Prima di apportare queste modifiche, è necessario disinstallare il ruolo del sistema del sito (incluso il sito se si tratta di un server del sito).  
+  Prima di apportare queste modifiche, disinstallare il ruolo del sistema del sito. Per apportare queste modifiche a un server del sito, disinstallare prima il sito. È anche possibile prendere in considerazione la creazione di un [server del sito in modalità passiva](/sccm/core/servers/deploy/configure/site-server-high-availability) per semplificare la gestione di questa modifica in un server del sito.
 
-**Sono supportati i domini con i livelli funzionali del dominio seguenti:**  
-- Windows Server 2016
+- Configuration Manager supporta il livello di funzionalità del dominio e delle foreste di Windows Server 2008 R2 o versione successiva.<!-- SCCMDocs#1853 -->
 
-- Windows Server 2012 R2  
+## <a name="bkmk_Disjoint"></a> Spazio dei nomi non contiguo
 
-- Windows Server 2012
+È possibile installare client e sistemi del sito di Configuration Manager in un dominio che contiene uno *spazio dei nomi non contiguo*.  
 
-- Windows Server 2008 R2
+In uno spazio dei nomi non contiguo il suffisso DNS primario di un computer non corrisponde al nome di dominio DNS di Active Directory di tale computer. Un altro scenario di spazio dei nomi non contiguo si ottiene quando il nome di dominio NetBIOS di un controller di dominio non corrisponde al nome di dominio DNS di Active Directory.  
 
-- Windows Server 2008  
+### <a name="disjoint-scenarios"></a>Scenari non contigui
 
+Nelle sezioni successive vengono identificati gli scenari supportati per uno spazio dei nomi non contiguo.  
 
+#### <a name="scenario-1"></a>Scenario 1
 
+Il suffisso DNS primario del controller di dominio è diverso dal nome di dominio DNS di Active Directory. I computer membri del dominio possono essere contigui o non contigui.
 
+Il controller di dominio è non contiguo in questo scenario. I computer membri del dominio, ad esempio computer e server del sito, possono avere un suffisso DNS primario che corrisponde a:
 
+- Suffisso DNS primario del controller di dominio
+- Nome di dominio DNS di Active Directory
 
+#### <a name="scenario-2"></a>Scenario 2
 
-##  <a name="bkmk_Disjoint"></a> Spazio dei nomi non contiguo  
-Configuration Manager supporta l'installazione di client e sistemi del sito in un dominio che contiene uno spazio dei nomi non contiguo.  
+Un computer membro in un dominio di Active Directory è non contiguo, anche se il controller di dominio è contiguo.
 
-In uno scenario di spazio dei nomi non contiguo il suffisso Domain Name System (DNS) primario di un computer non corrisponde al nome di dominio DNS di Active Directory in cui risiede il computer. Il computer che usa il suffisso DNS primario non corrispondente è detto non contiguo. Un altro scenario di spazio dei nomi non contiguo si ottiene quando il nome di dominio NetBIOS di un controller di dominio non corrisponde al nome di dominio DNS di Active Directory.  
+In questo scenario il suffisso DNS primario del sistema del sito è diverso dal nome di dominio DNS di Active Directory. Il suffisso DNS primario del controller di dominio è uguale al nome di dominio DNS di Active Directory. I computer membri che sono client di Configuration Manager possono avere un suffisso DNS primario che corrisponde a:
 
-La tabella seguente identifica gli scenari supportati per uno spazio dei nomi non contiguo.  
+- Suffisso DNS primario del server di sistema del sito non contiguo
+- Nome di dominio DNS di Active Directory
 
-|Scenario|Altre informazioni|  
-|--------------|----------------------|  
-|**Scenario 1:**<br /><br /> Il suffisso DNS primario del controller di dominio è diverso dal nome di dominio DNS di Active Directory. I computer membri del dominio possono essere contigui o non contigui.|In questo scenario, il suffisso DNS primario del controller di dominio è diverso dal nome di dominio DNS di Active Directory. Il controller di dominio è non contiguo in questo scenario. I computer membri del dominio, ad esempio computer e server del sito, possono avere un suffisso DNS primario che corrisponde al suffisso DNS primario del controller di dominio o al nome di dominio DNS di Active Directory.|  
-|**Scenario 2:**<br /><br /> Un computer membro in un dominio Active Directory è non contiguo, anche se il controller di dominio è contiguo.|In questo scenario, il suffisso DNS primario di un computer membro in cui è installato un sistema del sito è diverso dal nome di dominio DNS di Active Directory, anche se il suffisso DNS primario del controller di dominio corrisponde la nome di dominio DNS di Active Directory. In questo scenario sono presenti un controller di dominio contiguo e un computer membro non contiguo. I computer membri che eseguono il client di Configuration Manager possono avere un suffisso DNS primario che corrisponde al suffisso DNS primario del server di sistema del sito non contiguo o al nome di dominio DNS di Active Directory.|  
+### <a name="configure-disjoint-namespace"></a>Configurare lo spazio dei nomi non contiguo
 
- Per consentire a un computer di accedere ai controller di dominio non contigui, è necessario modificare l’attributo **msDS-AllowedDNSSuffixes** di Active Directory nel contenitore dell'oggetto dominio. È necessario aggiungere all'attributo entrambi i suffissi DNS.  
+Per consentire a un computer di accedere ai controller di dominio non contigui, modificare l'attributo **msDS-AllowedDNSSuffixes** di Active Directory nel contenitore dell'oggetto dominio. Aggiungere all'attributo entrambi i suffissi DNS.  
 
- Per assicurarsi che l'elenco di ricerca suffissi DNS contenga tutti gli spazi dei nomi DNS distribuiti all'interno dell'organizzazione, è necessario anche configurare l'elenco di ricerca per ogni computer nel dominio non contiguo. Accertarsi di includere nell'elenco degli spazi dei nomi seguente il suffisso DNS primario del controller di dominio, il nome di dominio DNS ed eventuali spazi dei nomi aggiuntivi per altri server con cui Configuration Manager può interagire. È possibile usare la console Gestione criteri di gruppo per configurare l'elenco di **ricerca suffisso Domain Name System (DNS)** .  
+Per assicurarsi che l'*elenco di ricerca dei suffissi DNS* contenga tutti gli spazi dei nomi DNS nell'organizzazione, configurare l'elenco di ricerca per ogni computer nel dominio non contiguo. Includere nell'elenco degli spazi dei nomi i suffissi seguenti:
+
+- Suffisso DNS primario del controller di dominio
+- Nome di dominio DNS
+- Eventuali spazi dei nomi aggiuntivi per altri server con cui Configuration Manager potrebbe comunicare
+
+È possibile usare i criteri di gruppo per configurare l'elenco di **ricerca dei suffissi Domain Name System (DNS)** .  
 
 > [!IMPORTANT]  
->  Quando si fa riferimento a un computer in Configuration Manager, immettere il computer usando il suffisso DNS primario. Questo suffisso deve corrispondere al nome di dominio completo registrato come attributo **dnsHostName** nel dominio di Active Directory e al nome dell'entità servizio associata al sistema.  
+> Quando si fa riferimento a un computer in Configuration Manager, immettere il computer usando il suffisso DNS primario. Questo suffisso deve corrispondere al nome di dominio completo registrato come attributo **dnsHostName** nel dominio di Active Directory e al nome dell'entità servizio associata al sistema.  
 
-##  <a name="bkmk_SLD"></a> Domini con etichetta singola  
- Configuration Manager supporta client e sistemi del sito in un nome di dominio con etichetta singola quando vengono soddisfatti i criteri seguenti:  
+## <a name="bkmk_SLD"></a> Domini con etichetta singola
 
--   Il dominio con etichetta singola in Servizi di dominio Active Directory deve essere configurato con uno spazio dei nomi DNS non contiguo che dispone di un dominio di livello superiore valido.  
+Configuration Manager supporta client e sistemi del sito in un nome di dominio con etichetta singola quando vengono soddisfatti i criteri seguenti:  
 
-     **Ad esempio:** Il dominio con etichetta singola di Contoso è configurato per avere uno spazio dei nomi contoso.com indipendente in DNS. Pertanto, quando si specifica il suffisso DNS in Configuration Manager per un computer nel dominio Contoso, specificare Contoso.com e non Contoso.  
+- Configurare il dominio con etichetta singola in Active Directory Domain Services con uno spazio dei nomi DNS non contiguo che dispone di un dominio di livello superiore valido.  
 
--   Le connessioni DCOM (Distributed Component Object Model) tra i server del sito nel contesto del sistema devono essere stabilite usando l'autenticazione Kerberos.  
+  **Ad esempio:** Il dominio con etichetta singola di Contoso è configurato per avere uno spazio dei nomi contoso.com indipendente in DNS. Quando si specifica il suffisso DNS in Configuration Manager per un computer nel dominio Contoso, specificare "Contoso.com" e non "Contoso".  
+
+- Le connessioni DCOM (Distributed Component Object Model) tra i server del sito nel contesto del sistema devono essere stabilite usando l'autenticazione Kerberos.  

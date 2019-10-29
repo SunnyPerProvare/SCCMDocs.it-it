@@ -2,7 +2,7 @@
 title: Versioni di Technical Preview
 titleSuffix: Configuration Manager
 description: Informazioni sulla versione Technical Preview che consente di testare nuove funzionalità e capacità in Configuration Manager.
-ms.date: 09/30/2019
+ms.date: 10/18/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b52a152f24b641d0debfdf39ee6a78cfa2352d66
-ms.sourcegitcommit: 3ecba0573e7b1c99de3291dbeb29a5de432ce647
+ms.openlocfilehash: 330a1a1b92a111836b49dcb0127b772d2c0cc636
+ms.sourcegitcommit: 90f51008deeabf2a434bd12f81bb25669045029c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71715875"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72684801"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Technical Preview per Configuration Manager
 
@@ -118,9 +118,30 @@ Le funzionalità seguenti sono disponibili con la versione Technical Preview di 
 
 <!-- This is the full list of new features in the latest TP release -->
 
-### <a name="technical-preview-version-1909"></a>Technical Preview versione 1909
+### <a name="technical-preview-version-1910"></a>Technical Preview versione 1910
 
 <!-- - [title](/sccm/core/get-started/2019/technical-preview-1901#bkmk_anchor) <!--ID-->
+
+- [Distribuire Microsoft Edge versione 77 e successive](/sccm/core/get-started/2019/technical-preview-1910#bkmk_Microsoft_Edge) <!--4561024-->
+- [Includere linee di base di configurazione personalizzate come parte della valutazione dei criteri di conformità](/sccm/core/get-started/2019/technical-preview-1910#bkmk_CAbaselines) <!--3608345-->
+- [Miglioramenti ai gruppi di applicazioni](/sccm/core/get-started/2019/technical-preview-1910#bkmk_appgrp) <!--4760058-->
+- [Riscattare il blocco SEDO](/sccm/core/get-started/2019/technical-preview-1910#bkmk_sedo) <!--4786915-->
+- [Allegare file al feedback](/sccm/core/get-started/2019/technical-preview-1910#attach-files-to-feedback) <!--3556011-->
+- [Azioni di diagnostica del client](/sccm/core/get-started/2019/technical-preview-1910#bkmk_diag) <!--4433455-->
+- [Dashboard sull'integrità e la distribuzione pilota di Office 365 ProPlus](/sccm/core/get-started/2019/technical-preview-1910#office-365-proplus-pilot-and-health-dashboard) <!--4488272-->
+- [Miglioramenti alla ricerca nella console](/sccm/core/get-started/2019/technical-preview-1910#bkmk_search) <!--4640570-->
+- [Nuova variabile per l'aggiornamento sul posto di Windows 10](/sccm/core/get-started/2019/technical-preview-1910#bkmk_osdvar) <!--4680263-->
+- [Miglioramenti al supporto per Desktop virtuale Windows](/sccm/core/get-started/2019/technical-preview-1910#bkmk_wvd) <!--4737447-->
+
+> [!Note]  
+> Le funzionalità disponibili in una versione precedente della Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità aggiunte alla versione Current Branch di Configuration Manager rimangono disponibili nel ramo Technical Preview.  
+
+
+## <a name="features-in-recent-technical-previews"></a>Funzionalità nelle anteprime tecniche recenti
+
+Le funzionalità seguenti sono state rilasciate in versioni precedenti di Configuration Manager Technical Preview Branch dopo la versione Current Branch 1906:
+
+### <a name="technical-preview-version-1909"></a>Technical Preview versione 1909
 
 - [Gruppi di orchestrazione](/sccm/core/get-started/2019/technical-preview-1909#bkmk_OGs) <!--3098816-->
 - [Miglioramenti alla gestione di BitLocker](/sccm/core/get-started/2019/technical-preview-1909#bkmk_bitlocker) <!--3601034-->
@@ -131,14 +152,6 @@ Le funzionalità seguenti sono disponibili con la versione Technical Preview di 
 - [Supporto delle lingue migliorato nella sequenza di attività](/sccm/core/get-started/2019/technical-preview-1909#bkmk_osd) <!--5411057-->
 - [Dashboard sull'integrità di Office 365 ProPlus](/sccm/core/get-started/2019/technical-preview-1909#bkmk_o365health) <!--4488301-->
 - [Miglioramenti per il debugger della sequenza di attività](/sccm/core/get-started/2019/technical-preview-1909#bkmk_tsdebug) <!-- 5012536, 5012509 -->
-
-> [!Note]  
-> Le funzionalità disponibili in una versione precedente della Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità aggiunte alla versione Current Branch di Configuration Manager rimangono disponibili nel ramo Technical Preview.  
-
-
-## <a name="features-in-recent-technical-previews"></a>Funzionalità nelle anteprime tecniche recenti
-
-Le funzionalità seguenti sono state rilasciate in versioni precedenti di Configuration Manager Technical Preview Branch dopo la versione Current Branch 1906:
 
 ### <a name="technical-preview-version-19082"></a>Technical Preview versione 1908.2
 

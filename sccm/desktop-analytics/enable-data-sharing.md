@@ -2,7 +2,7 @@
 title: Abilitare la condivisione dei dati
 titleSuffix: Configuration Manager
 description: Guida di riferimento per la condivisione di dati di diagnostica con analisi desktop.
-ms.date: 10/18/2019
+ms.date: 10/25/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0126045f737fe6b8eb9e372f590d6c4a241d8024
-ms.sourcegitcommit: d3aa20e2d12b5a68c7d672172234c65095fd4ce8
+ms.openlocfilehash: db7f9e63de719c3f6c9f63c476b0b7c4ab919764
+ms.sourcegitcommit: 9ed9551c15abc36f38c92aaeef60dbb699ae7cd8
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72810764"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72984378"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Abilitare la condivisione dei dati per analisi desktop
 
@@ -83,10 +83,8 @@ Per abilitare la condivisione dei dati, configurare il server proxy per consenti
 | `https://kmwatsonc.events.data.microsoft.com` | [Analisi degli arresti anomali (oca) online](https://docs.microsoft.com/windows/win32/dxtecharts/crash-dump-analysis). Obbligatorio per i report sull'integrità dei dispositivi in Windows 10, versione 1809 o successiva. |
 | `https://oca.telemetry.microsoft.com`  | [Analisi degli arresti anomali (oca) online](https://docs.microsoft.com/windows/win32/dxtecharts/crash-dump-analysis). Necessaria per monitorare lo stato di distribuzione in Windows 10, versione 1803 o versioni precedenti. |
 | `https://login.live.com` | Necessario per fornire un'identità del dispositivo più affidabile per desktop Analytics. <br> <br>Per disabilitare l'accesso account Microsoft all'utente finale, utilizzare le impostazioni dei criteri anziché bloccare l'endpoint. Per ulteriori informazioni, vedere [la account Microsoft nell'azienda](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts#block-all-consumer-microsoft-account-user-authentication). |
-| `https://graph.windows.net` | Usato per recuperare automaticamente le impostazioni, come la commercializzazione, quando si connette la gerarchia a desktop Analytics (in Configuration Manager ruolo del server). Per ulteriori informazioni, vedere [configurare il proxy per un server del sistema del sito
-] (/SCCM/Core/Plan-Design/Network/Proxy-Server-Support # Configure-the-proxy-for-a-Site-System-Server). |
-| `https://*.manage.microsoft.com` | Usato per sincronizzare l'appartenenza alla raccolta di dispositivi, i piani di distribuzione e lo stato di conformità dei dispositivi con analisi del desktop (solo su Configuration Manager ruolo del server). Per ulteriori informazioni, vedere [configurare il proxy per un server del sistema del sito
-] (/SCCM/Core/Plan-Design/Network/Proxy-Server-Support # Configure-the-proxy-for-a-Site-System-Server). |
+| `https://graph.windows.net` | Usato per recuperare automaticamente le impostazioni, come la commercializzazione, quando si connette la gerarchia a desktop Analytics (in Configuration Manager ruolo del server). Per ulteriori informazioni, vedere [configurare il proxy per un server del sistema del sito](/sccm/core/plan-design/network/proxy-server-support#configure-the-proxy-for-a-site-system-server). |
+| `https://*.manage.microsoft.com` | Usato per sincronizzare l'appartenenza alla raccolta di dispositivi, i piani di distribuzione e lo stato di conformità dei dispositivi con analisi del desktop (solo su Configuration Manager ruolo del server). Per ulteriori informazioni, vedere [configurare il proxy per un server del sistema del sito](/sccm/core/plan-design/network/proxy-server-support#configure-the-proxy-for-a-site-system-server). |
 
 
 ## <a name="proxy-server-authentication"></a>Autenticazione del server proxy
