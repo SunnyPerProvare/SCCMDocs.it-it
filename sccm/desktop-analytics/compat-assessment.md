@@ -2,7 +2,7 @@
 title: Valutazione della compatibilità
 titleSuffix: Configuration Manager
 description: Informazioni sulla valutazione della compatibilità per le app e i driver di Windows in desktop Analytics.
-ms.date: 07/26/2019
+ms.date: 10/23/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7ba8c29b9b917a8497d44ebcc3bf4264cf991ff
-ms.sourcegitcommit: 21a4a87d5e137b1cbd2ecd8ea34b5f0bfd2af357
+ms.openlocfilehash: 4f0832dc96a5b03e0ed603b76c794444eff7d967
+ms.sourcegitcommit: 07756e9b4ed7b134e32349acb1eeae93c6de9e28
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72889725"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73049429"
 ---
 # <a name="compatibility-assessment-in-desktop-analytics"></a>Valutazione della compatibilità in desktop Analytics
 
@@ -55,9 +55,25 @@ Desktop Analytics esamina il database di compatibilità delle app Microsoft per 
 
 Verranno visualizzati i seguenti problemi nel riquadro Proprietà app come **problemi noti di MS**:
 
-### <a name="application-is-removed-during-upgrade"></a>L'applicazione è stata rimossa durante l'aggiornamento
+### <a name="asset-is-removed-during-upgrade"></a>Asset rimosso durante l'aggiornamento
 
-Problemi di compatibilità rilevati da Windows. L'applicazione non eseguirà la migrazione alla nuova versione del sistema operativo. Per continuare l'aggiornamento, non è necessaria alcuna azione. Installare una versione compatibile dell'applicazione nella nuova versione del sistema operativo.
+Windows ha rilevato problemi di compatibilità con un'applicazione o un driver. L'asset non verrà migrato alla nuova versione del sistema operativo. Per continuare l'aggiornamento, non è necessaria alcuna azione. Installare una versione compatibile dell'applicazione o del driver nella nuova versione del sistema operativo.
+
+<!-- 3594545 -->
+Windows può rimuovere parzialmente o completamente questi asset:
+
+- Rimozione completa: il programma di installazione di Windows rimuove completamente l'app o il driver dal dispositivo durante l'aggiornamento.
+- Rimozione parziale: il programma di installazione di Windows rimuove parzialmente l'app o il driver dal dispositivo. È necessario disinstallarlo manualmente dopo l'aggiornamento di Windows.
+
+In entrambi i casi, dopo l'aggiornamento di Windows l'utente non può usare l'app o l'hardware associato al driver.
+
+Per visualizzare questa raccomandazione nel portale di analisi dei desktop:
+
+1. In un piano di distribuzione selezionare **prepara pilota**.
+1. Selezionare un asset dall'elenco.
+1. Visualizzare i fattori di rischio e le raccomandazioni per la compatibilità nel riquadro laterale.
+
+![Screenshot della raccomandazione asset nel portale di analisi del desktop](media/3594545-app-removed.png)
 
 ### <a name="blocking-upgrade"></a>Aggiornamento del blocco
 
@@ -140,7 +156,7 @@ L'app dipende da un driver. Desktop Analytics consiglia all'app di eseguire test
 ### <a name="additional-insights"></a>Informazioni aggiuntive
 
 <!-- 4021225 -->
-Quando si aggiorna il sito e i client di Configuration Manager alla versione 1906, i client segnalano anche queste informazioni aggiuntive:
+Quando si aggiorna il sito e i client di Configuration Manager alla versione 1906, i client segnalano anche queste informazioni aggiuntive, quando il livello dati di diagnostica è impostato su avanzato limitato:
 
 > [!Important]  
 > Per sfruttare i vantaggi delle nuove funzionalità di Configuration Manager, dopo l'aggiornamento del sito aggiornare anche i client alla versione più recente. Questo scenario non è funzionale finché la versione del client non è la più recente.

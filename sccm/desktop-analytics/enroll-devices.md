@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc0784744affab309697dfec8c7018d50bcc2934
-ms.sourcegitcommit: d3aa20e2d12b5a68c7d672172234c65095fd4ce8
+ms.openlocfilehash: 5fc36829944b2366a05ce2c87e27ac97bfd9e764
+ms.sourcegitcommit: 07756e9b4ed7b134e32349acb1eeae93c6de9e28
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72810720"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73049394"
 ---
 # <a name="how-to-enroll-devices-in-desktop-analytics"></a>Come registrare i dispositivi in desktop Analytics
 
@@ -156,6 +156,7 @@ Configuration Manager imposta le impostazioni di Windows seguenti nel percorso d
 | **LimitEnhancedDiagnosticDataWindowsAnalytics** | *Si applica a Windows 10, versione 1709 e successive*: questa impostazione si applica solo quando l'impostazione AllowTelemetry è `2`. Limita gli eventi dati di diagnostica avanzati inviati a Microsoft solo agli eventi richiesti da desktop Analytics. Per ulteriori informazioni, vedere [gli eventi e i campi dei dati di diagnostica avanzati di Windows 10, versione 1709 utilizzati da Windows Analytics](https://docs.microsoft.com/windows/configuration/enhanced-diagnostic-data-windows-analytics-events-and-fields).|
 | **AllowDeviceNameInTelemetry** | *Si applica a Windows 10, versione 1803 e successive*: è necessario un consenso esplicito per consentire ai dispositivi di continuare a inviare il nome del dispositivo.<br> <br>Nota: per impostazione predefinita, il nome del dispositivo non viene inviato a Microsoft. Se non si invia il nome del dispositivo, questo viene visualizzato in desktop Analytics come "sconosciuto". Questo comportamento può rendere difficile l'identificazione e la valutazione dei dispositivi. Per altre informazioni, vedere [nome dispositivo](#device-name). |
 | **E** | *Si applica a Windows 7 e Windows 8.1*: è necessario un valore di `1` per analisi desktop. Per ulteriori informazioni, vedere la pagina relativa al [consenso esplicito ai dati commerciali in Windows 7](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/ee126127\(v=ws.10\)). |
+| **Commercialdataoptin** | *Si applica a tutte le versioni di Windows*: il valore `1` è necessario per il corretto funzionamento della raccolta dei dati di analisi del desktop. |
 
 Visualizzare queste impostazioni nell'Editor criteri di gruppo nel percorso seguente: **Configurazione Computer**  > **modelli amministrativi**  > **componenti di Windows**  > **compilazioni raccolta dati e anteprima**.
 

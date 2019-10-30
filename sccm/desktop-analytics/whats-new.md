@@ -2,7 +2,7 @@
 title: Novità di analisi desktop
 titleSuffix: Configuration Manager
 description: Riepilogo delle nuove funzionalità della versione mensile più recente del servizio cloud di analisi dei desktop.
-ms.date: 10/08/2019
+ms.date: 10/23/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.assetid: fa300181-86cb-4afe-8fbf-895a7572378d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cf4ec11bbf5595a8e6475d448f7e1d5532b4dd3c
-ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
+ms.openlocfilehash: 9e72ffc07d1c1e833b96131095b88a6fb3d269c3
+ms.sourcegitcommit: 07756e9b4ed7b134e32349acb1eeae93c6de9e28
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72384709"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73049472"
 ---
 # <a name="whats-new-in-desktop-analytics"></a>Novità di analisi desktop
 
@@ -29,6 +29,12 @@ Per ricevere una notifica quando questa pagina viene aggiornata, copiare e incol
 <!-- a locale is required for the RSS search string -->
 
 ## <a name="october-2019"></a>2019 ottobre
+
+### <a name="improvements-to-compatibility-recommendations"></a>Miglioramenti alle raccomandazioni per la compatibilità
+
+<!-- 3594545 -->
+
+Desktop Analytics fornisce ora ulteriori dettagli quando rileva che l'aggiornamento di Windows rimuoverà completamente o parzialmente un'applicazione o un driver. Per ulteriori informazioni, vedere [Compatibility assessment](/sccm/desktop-analytics/compat-assessment#asset-is-removed-during-upgrade).
 
 ### <a name="migrate-from-windows-analytics-to-existing-tenant"></a>Eseguire la migrazione da Windows Analytics al tenant esistente
 
