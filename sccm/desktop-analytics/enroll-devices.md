@@ -2,7 +2,7 @@
 title: Registrare i dispositivi in desktop Analytics
 titleSuffix: Configuration Manager
 description: Informazioni su come registrare i dispositivi in desktop Analytics.
-ms.date: 04/22/2019
+ms.date: 10/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5fc36829944b2366a05ce2c87e27ac97bfd9e764
-ms.sourcegitcommit: 07756e9b4ed7b134e32349acb1eeae93c6de9e28
+ms.openlocfilehash: ab19d24e62f8454a2fc7f4366b8a4cf2fc510481
+ms.sourcegitcommit: c25a91db838805eca5dbb421a3de401928968bf0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73049394"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142969"
 ---
 # <a name="how-to-enroll-devices-in-desktop-analytics"></a>Come registrare i dispositivi in desktop Analytics
 
@@ -147,18 +147,21 @@ Per modificare queste impostazioni, attenersi alla procedura seguente:
 
 ### <a name="windows-settings"></a>Impostazioni di Windows
 
-Configuration Manager imposta le impostazioni di Windows seguenti nel percorso dei criteri locali `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection`:
+Configuration Manager imposta i criteri di Windows in una o in entrambe le chiavi del registro di sistema seguenti:
 
-| Criteri   | Valore  |
-|----------|--------|
-| **CommercialId** | *Si applica a Windows 7, Windows 8.1 e Windows 10*: per consentire la visualizzazione di un dispositivo in analisi desktop, configurarlo con l'ID commerciale dell'organizzazione. |
-| **AllowTelemetry**  | *Si applica a Windows 10*: impostare `1` per **Basic**, `2` per **Enhanced**o `3` per i dati di diagnostica **completi** . Per desktop Analytics sono necessari almeno i dati di diagnostica di base. Microsoft consiglia di usare il livello avanzato (limitato) con analisi desktop. Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/configuration/configure-windows-diagnostic-data-in-your-organization) (Configurare i dati di diagnostica di Windows nell'organizzazione). |
-| **LimitEnhancedDiagnosticDataWindowsAnalytics** | *Si applica a Windows 10, versione 1709 e successive*: questa impostazione si applica solo quando l'impostazione AllowTelemetry è `2`. Limita gli eventi dati di diagnostica avanzati inviati a Microsoft solo agli eventi richiesti da desktop Analytics. Per ulteriori informazioni, vedere [gli eventi e i campi dei dati di diagnostica avanzati di Windows 10, versione 1709 utilizzati da Windows Analytics](https://docs.microsoft.com/windows/configuration/enhanced-diagnostic-data-windows-analytics-events-and-fields).|
-| **AllowDeviceNameInTelemetry** | *Si applica a Windows 10, versione 1803 e successive*: è necessario un consenso esplicito per consentire ai dispositivi di continuare a inviare il nome del dispositivo.<br> <br>Nota: per impostazione predefinita, il nome del dispositivo non viene inviato a Microsoft. Se non si invia il nome del dispositivo, questo viene visualizzato in desktop Analytics come "sconosciuto". Questo comportamento può rendere difficile l'identificazione e la valutazione dei dispositivi. Per altre informazioni, vedere [nome dispositivo](#device-name). |
-| **E** | *Si applica a Windows 7 e Windows 8.1*: è necessario un valore di `1` per analisi desktop. Per ulteriori informazioni, vedere la pagina relativa al [consenso esplicito ai dati commerciali in Windows 7](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/ee126127\(v=ws.10\)). |
-| **Commercialdataoptin** | *Si applica a tutte le versioni di Windows*: il valore `1` è necessario per il corretto funzionamento della raccolta dei dati di analisi del desktop. |
+- **Criteri it**: `HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection`
 
-Visualizzare queste impostazioni nell'Editor criteri di gruppo nel percorso seguente: **Configurazione Computer**  > **modelli amministrativi**  > **componenti di Windows**  > **compilazioni raccolta dati e anteprima**.
+- Preferenza **utente** : `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection`
+
+| Criteri   | Percorso | Valore  | 
+|----------|------|--------|
+| **CommercialId** | utente | *Si applica a Windows 7, Windows 8.1 e Windows 10*: per consentire la visualizzazione di un dispositivo in analisi desktop, configurarlo con l'ID commerciale dell'organizzazione. | 
+| **AllowTelemetry**  | Criteri IT | *Si applica a Windows 10*: impostare `1` per **Basic**, `2` per **Enhanced**o `3` per i dati di diagnostica **completi** . Per desktop Analytics sono necessari almeno i dati di diagnostica di base. Microsoft consiglia di usare il livello avanzato (limitato) con analisi desktop. Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/configuration/configure-windows-diagnostic-data-in-your-organization) (Configurare i dati di diagnostica di Windows nell'organizzazione). |
+| **LimitEnhancedDiagnosticDataWindowsAnalytics** | Criteri IT | *Si applica a Windows 10, versione 1803 e successive*: questa impostazione si applica solo quando l'impostazione AllowTelemetry è `2`. Limita gli eventi dati di diagnostica avanzati inviati a Microsoft solo agli eventi richiesti da desktop Analytics. Per ulteriori informazioni, vedere [gli eventi e i campi dei dati di diagnostica di Windows 10 raccolti tramite il limite dei criteri dati di diagnostica avanzati](https://docs.microsoft.com/windows/configuration/enhanced-diagnostic-data-windows-analytics-events-and-fields).|
+| **AllowDeviceNameInTelemetry** | Criteri IT | *Si applica a Windows 10, versione 1803 e successive*: è necessario un consenso esplicito per consentire ai dispositivi di continuare a inviare il nome del dispositivo.<br> <br>Nota: per impostazione predefinita, il nome del dispositivo non viene inviato a Microsoft. Se non si invia il nome del dispositivo, questo viene visualizzato in desktop Analytics come "sconosciuto". Questo comportamento può rendere difficile l'identificazione e la valutazione dei dispositivi. Per altre informazioni, vedere [nome dispositivo](#device-name). | 
+| **E** | utente |*Si applica a Windows 7 e Windows 8.1*: è necessario un valore di `1` per analisi desktop. Per ulteriori informazioni, vedere la pagina relativa al [consenso esplicito ai dati commerciali in Windows 7](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/ee126127\(v=ws.10\)). |
+| **Commercialdataoptin** | Entrambi |*Si applica a tutte le versioni di Windows*: il valore `1` è necessario per il corretto funzionamento della raccolta dei dati di analisi del desktop. | 
+| **DisableEnterpriseAuthProxy** | Criteri IT |*Si applica a tutte le versioni di Windows*: il valore `0` è necessario per il corretto funzionamento della raccolta dei dati di analisi del desktop. | 
 
 > [!Important]  
 > Nella maggior parte dei casi, usare solo Configuration Manager per configurare queste impostazioni. Non applicare anche queste impostazioni negli oggetti Criteri di gruppo del dominio. Per ulteriori informazioni, vedere [risoluzione dei conflitti](#conflict-resolution).<!-- SCCMDocs-pr 3120 -->
@@ -178,7 +181,9 @@ Per configurare questa opzione, è disponibile un'opzione nel Configuration Mana
 
 In generale, usare le raccolte di Configuration Manager per individuare le impostazioni e la registrazione di desktop Analytics. Usare l'appartenenza diretta o le query per includere o escludere i dispositivi dalla raccolta. Per altre informazioni, vedere [Come creare le raccolte](/sccm/core/clients/manage/collections/create-collections).
 
-Configuration Manager configura le impostazioni di Windows solo se un valore non esiste già. Se è necessario configurare impostazioni diverse per un gruppo univoco di dispositivi, è possibile utilizzare [criteri di gruppo](#windows-settings). Le impostazioni di destinazione di criteri di gruppo hanno la precedenza sulle impostazioni Configuration Manager.
+Configuration Manager configura le impostazioni di Windows solo se un valore non esiste già. Se è necessario configurare impostazioni diverse per un gruppo univoco di dispositivi, è possibile utilizzare [criteri di gruppo](#windows-settings). 
+
+Visualizzare queste impostazioni nell'Editor criteri di gruppo nel percorso seguente: **Configurazione Computer**  > **modelli amministrativi**  > **componenti di Windows**  > **compilazioni raccolta dati e anteprima**. Le impostazioni di destinazione di criteri di gruppo hanno la precedenza sulle impostazioni Configuration Manager.
 
 Se si hanno come destinazione Configuration Manager client con le impostazioni di Windows Analytics e di analisi desktop, le impostazioni di desktop Analytics hanno la precedenza.
 
