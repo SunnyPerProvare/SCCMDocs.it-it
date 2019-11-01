@@ -2,7 +2,7 @@
 title: Anteprima di UUP
 titleSuffix: Configuration Manager
 description: Istruzioni per l'anteprima dell'integrazione UUP
-ms.date: 10/02/2019
+ms.date: 10/25/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab35b96431fccf86e8bce09059f33c6a82d9ff10
-ms.sourcegitcommit: 44c48e2cb00e60d6ccb1ddde62a6159663917e2d
+ms.openlocfilehash: c3000710cf90d9f2d0482bcc2faa37174f8f8190
+ms.sourcegitcommit: 9ed9551c15abc36f38c92aaeef60dbb699ae7cd8
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71923900"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72984334"
 ---
 # <a name="uup-private-preview-instructions"></a>Istruzioni per l'anteprima privata di UUP
 
@@ -26,7 +26,7 @@ ms.locfileid: "71923900"
 
 ## <a name="introduction"></a>Introduzione
 
-La piattaforma di aggiornamento unificata (UUP) è la piattaforma per la creazione di pacchetti e la pubblicazione che i dispositivi consumer e aziendali usano per ricevere gli aggiornamenti da Windows Update for business. Il programma UUP private Preview è per i clienti che hanno accettato di consentire a Microsoft di convalidare l'uso degli aggiornamenti di UUP in Configuration Manager. Questi aggiornamenti non sono attualmente disponibili pubblicamente.
+La piattaforma di aggiornamento unificata (UUP) è la piattaforma per la creazione di pacchetti e la pubblicazione che i dispositivi consumer e aziendali usano per ricevere gli aggiornamenti da Windows Update for business. Il programma di anteprima privata UUP è per i clienti che hanno accettato di consentire a Microsoft di convalidare l'uso degli aggiornamenti di UUP in Configuration Manager per risolvere i problemi che i clienti segnalano attualmente le finestre di manutenzione. Questi aggiornamenti non sono attualmente disponibili pubblicamente.
 
 Per altre informazioni su UUP, vedere il post del blog di Windows [An update on our Unified Update Platform (UUP)](https://blogs.windows.com/windowsexperience/2017/03/02/an-update-on-our-unified-update-platform-uup/) (Un aggiornamento su Unified Update Platform).
 
@@ -150,7 +150,7 @@ Dopo aver sincronizzato gli aggiornamenti di UUP nell'ambiente, trovarli nella c
 
 - Poiché questi aggiornamenti di anteprima si trovano in un prodotto separato, utilizzare il prodotto per filtrare per trovare questi aggiornamenti. Usare il filtro del prodotto del piano di manutenzione per distribuire gli aggiornamenti delle funzionalità UUP o non UUP.  
 
-- Nei nodi **Tutti gli aggiornamenti software** e **Aggiornamenti di tutte le piattaforme Windows 10** di **Raccolta software** è presente la nuova colonna facoltativa **Tag**. Questa proprietà è disponibile anche come filtro in ADR. Per gli aggiornamenti di UUP, cercare `UUP` in questo campo. È vuoto per gli aggiornamenti non UUP.  
+- Nei nodi **Tutti gli aggiornamenti software** e **Aggiornamenti di tutte le piattaforme Windows 10** di **Raccolta software** è presente la nuova colonna facoltativa **Tag**. Questa proprietà è disponibile anche come filtro in ADR. Per gli aggiornamenti di UUP, cercare `UUP`nel campo. È vuoto per gli aggiornamenti non UUP.  
 
 ### <a name="updates-available-during-preview"></a>Aggiornamenti disponibili durante l'anteprima
 
@@ -171,19 +171,19 @@ Sebbene sia possibile visualizzare più aggiornamenti con tag UUP, iniziare con 
 - Aggiornamento delle funzionalità di Windows 10, versione 1809 x64 2019-09B
 - Aggiornamento delle funzionalità di Windows 10, versione 1803 x64 2019-09B
 
-### <a name="scenarios-to-test"></a>Scenari da sottoporre a test
+## <a name="scenarios-to-test"></a>Scenari da sottoporre a test
 
-#### <a name="test-feature-updates"></a>Aggiornamenti delle funzionalità di test
+### <a name="test-feature-updates"></a>Aggiornamenti delle funzionalità di test
 
 - Aggiorna direttamente al livello di conformità di sicurezza scelto  
 
 - Installare FODs e Language Pack prima dell'aggiornamento. Assicurarsi che l'aggiornamento manservi questi componenti.  
 
-#### <a name="test-cumulative-updates"></a>Testare gli aggiornamenti cumulativi
+### <a name="test-cumulative-updates"></a>Testare gli aggiornamenti cumulativi
 
 Durante l'anteprima, Mantieni i client conformi usando l'aggiornamento del tipo di UUP per più aggiornamenti consecutivi. Questo test consente di comprendere il comportamento continuo.
 
-#### <a name="test-content"></a>Contenuto del test
+### <a name="test-content"></a>Contenuto del test
 
 Il primo aggiornamento per ogni versione principale (1809, 1803, 1709), architettura e combinazione di lingue risulterà grande. Questa dimensione è sia per il numero di file che per lo spazio su disco rispetto a quanto precedentemente visto con aggiornamenti non UUP. Questo contenuto aggiuntivo è destinato principalmente a tutte le funzionalità su richiesta e i Language Pack per gli aggiornamenti cumulativi. Per gli aggiornamenti delle funzionalità, è disponibile un contenuto di grandi dimensioni aggiuntivo per il primo aggiornamento.
 
@@ -191,7 +191,7 @@ Per gli aggiornamenti cumulativi e delle funzionalità futuri, la quantità di n
 
 Quando si esamina il contenuto totale scaricato e distribuito in un periodo di 12 mesi per *non Express*, Windows 10 versione 1803 senza Uup deve essere uguale a quello della versione 1809 con UUP. Il contenuto totale scaricato e distribuito nell'intero ciclo di vita della versione è più piccolo nella versione 1809 con UUP.
 
-#### <a name="supported-content-channels"></a>Canali di contenuto supportati
+### <a name="supported-content-channels"></a>Canali di contenuto supportati
 
 Per la versione di anteprima, è preferibile testare i tipici scenari reali. UUP supporta tutti i canali di contenuto, tra cui:
 
