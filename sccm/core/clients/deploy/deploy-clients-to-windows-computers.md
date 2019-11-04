@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51a8bd605fae4aea1cb290a19a06b811a7c80382
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: 86c99fc79f89d94f4a32e34949b91d8633b23a65
+ms.sourcegitcommit: 07756e9b4ed7b134e32349acb1eeae93c6de9e28
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70378208"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73049475"
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-configuration-manager"></a>Come distribuire i client nei computer Windows in Configuration Manager
 
@@ -184,7 +184,7 @@ Usare il pacchetto di Windows Installer CCMSetup.ms per le installazioni basate 
 > [!IMPORTANT]  
 > Per accedere ai file di installazione client, è necessario disporre delle autorizzazioni di amministratore.  
 
-- Se lo schema di Active Directory è stato esteso per Configuration Manager ed è stata selezionata l'opzione **Publish this site in Active Directory Domain Services** (Pubblica questo sito in Active Directory Domain Services) nella scheda **Avanzate** della finestra di dialogo **Proprietà sito**, i computer client eseguono automaticamente una ricerca in Active Directory Domain Services per individuare le proprietà di installazione. Per altre informazioni, vedere [Informazioni sulle proprietà di installazione client pubblicate in Active Directory Domain Services](/sccm/core/clients/deploy/about-client-installation-properties-published-to-active-directory-domain-services).  
+- Se lo schema di Active Directory è stato esteso per Configuration Manager ed è stato selezionato il dominio nella scheda **Pubblicazione** della finestra di dialogo **Proprietà sito**, i computer client eseguono automaticamente una ricerca in Active Directory Domain Services per individuare le proprietà di installazione. Per altre informazioni, vedere [Informazioni sulle proprietà di installazione client pubblicate in Active Directory Domain Services](/sccm/core/clients/deploy/about-client-installation-properties-published-to-active-directory-domain-services).  
 
 - Se lo schema di Active Directory non è stato esteso, vedere la sezione dedicata al [provisioning delle proprietà di installazione client](#BKMK_Provision) per informazioni sull'archiviazione delle proprietà di installazione nel Registro di sistema Windows dei computer. Durante l'installazione, il client usa queste proprietà di installazione.  
 

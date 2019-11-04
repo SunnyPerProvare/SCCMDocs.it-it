@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7c8620c3ec4b7434afcb8176b4720857071757c
-ms.sourcegitcommit: 90f51008deeabf2a434bd12f81bb25669045029c
+ms.openlocfilehash: 24b50ca50f2273161faeb79d20e23d32dc2706c2
+ms.sourcegitcommit: 9ed9551c15abc36f38c92aaeef60dbb699ae7cd8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72684886"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72984373"
 ---
 # <a name="support-for-windows-10-in-configuration-manager"></a>Supporto per Windows 10 in Configuration Manager  
 
@@ -77,8 +77,9 @@ Per altre informazioni sul ciclo di vita di Windows, vedere [Date importanti nel
 | ![Supportato](media/green_check.png) = **Supportato**  |
 | ![Non supportato](media/Red_X.png) = **Non supportato** |
 
-> [!NOTE]  
-> Configuration Manager supporta il client nei dispositivi ARM64 Windows 10. Le funzionalità di gestione client esistenti dovrebbero funzionare con questi nuovi dispositivi, ad esempio l'inventario hardware e software, gli aggiornamenti del software e la gestione delle applicazioni. La distribuzione del sistema operativo non è attualmente supportata. <!-- 1353704 -->
+### <a name="bkmk_arm64"></a> Windows 10 in ARM64
+
+Configuration Manager supporta il client nei dispositivi ARM64 Windows 10. Le funzionalità di gestione client esistenti dovrebbero funzionare con questi nuovi dispositivi, ad esempio l'inventario hardware e software, gli aggiornamenti del software e la gestione delle applicazioni. La distribuzione del sistema operativo non è attualmente supportata. <!-- 1353704 -->
 
 ### <a name="bkmk_WIfB-support"></a> Supporto per Windows Insider
 

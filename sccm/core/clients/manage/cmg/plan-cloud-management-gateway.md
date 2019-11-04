@@ -2,7 +2,7 @@
 title: Pianificare il gateway di gestione cloud
 titleSuffix: Configuration Manager
 description: Pianificare e progettare il gateway di gestione di cloud (CMG) per semplificare la gestione dei client basati su Internet.
-ms.date: 07/26/2019
+ms.date: 10/25/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dff4d0ff8fe2bcb7fbbcd8b0b1c5c701f02d20fb
-ms.sourcegitcommit: 159c6c9fe1df03fd2c4633125a593e3050a2f2da
+ms.openlocfilehash: 60532a2692c8e9b25468d6f2cdca32f90aa88a7a
+ms.sourcegitcommit: 07756e9b4ed7b134e32349acb1eeae93c6de9e28
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68833178"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73049491"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
@@ -135,23 +135,18 @@ Contoso ha un sito primario autonomo in un data center locale nella sede di New 
 
 Quando effettuano il roaming in Internet, i client comunicano con il gateway di gestione cloud nell'area di Azure degli Stati Uniti orientali. Il gateway di gestione cloud inoltra le comunicazioni tramite entrambi i punti di connessione del gateway di gestione cloud.
 
-#### <a name="example-2-hierarchy-with-site-specific-cmg"></a>Esempio 2: gerarchia con gateway di gestione cloud specifico del sito
+#### <a name="example-2-hierarchy"></a>Esempio 2: gerarchia
 
 Fourth Coffee ha un sito di amministrazione centrale in un data center locale nella sede di Seattle. Un sito primario è nel data center, mentre l'altro sito primario è nella sede centrale europea di Parigi.
 
-- Nel sito di amministrazione centrale, vengono creati due servizi Cloud Management Gateway (CMG):
-     - Un Cloud Management Gateway (CMG) nell'area di Azure degli Stati Uniti occidentali.
-     - Un Cloud Management Gateway (CMG) nell'area di Azure dell'Europa occidentale.
-- Nel sito primario di Seattle, viene creato un punto di connessione del gateway di gestione cloud collegato al gateway di gestione cloud degli Stati Uniti occidentali.
-- Nel sito primario di Parigi, viene creato un punto di connessione del gateway di gestione cloud collegato al gateway di gestione cloud dell'Europa occidentale.
+- Nel sito di amministrazione centrale viene creato un servizio CMG (Cloud Management Gateway) nell'area di Azure degli Stati Uniti occidentali. Il numero di macchine virtuali viene ridimensionato per il carico di client roaming previsto nell'intera gerarchia.
+- Nel sito primario di Seattle viene creato un punto di connessione di CMG collegato al singolo gateway CMG.
+- Nel sito primario di Parigi viene creato un punto di connessione di CMG collegato al singolo gateway CMG.
 
-Quando effettuano il roaming in Internet, i client di Seattle comunicano con il gateway di gestione cloud nell'area di Azure degli Stati Uniti occidentali. Il gateway di gestione cloud inoltra le comunicazioni al punto di connessione del gateway di gestione cloud di Seattle.
+Quando effettuano il roaming in Internet, i client comunicano con CMG nell'area di Azure degli Stati Uniti occidentali. CMG trasmette questa comunicazione al punto di connessione di CMG nel sito primario assegnato del client.
 
-Analogamente, quando effettuano il roaming in Internet, i client di Parigi comunicano con il gateway di gestione cloud nell'area di Azure dell'Europa occidentale. Il gateway di gestione cloud inoltra le comunicazioni al punto di connessione del gateway di gestione cloud di Parigi. Quando gli utenti di Parigi si recano nella sede di Seattle, i loro computer continuano a comunicare con il gateway di gestione cloud dell'area di Azure dell'Europa occidentale.
-
-> [!Note]  
-> Fourth Coffee prende in considerazione la creazione di un altro punto di connessione del gateway di gestione cloud nel sito primario di Parigi collegato al gateway di gestione cloud degli Stati Uniti occidentali. I client di Parigi potrebbero in questo modo usare entrambi i gateway di gestione cloud, indipendentemente dalla loro posizione. Sebbene consenta di bilanciare il carico del traffico e di offrire la ridondanza del servizio, questa configurazione potrebbe anche causare ritardi di comunicazione tra i client di Parigi e il gateway di gestione cloud degli Stati Uniti. Poiché i client di Configuration Manager non considerano l'area geografica di appartenenza, non preferire un gateway di gestione cloud geograficamente più vicino. I client usano qualsiasi gateway di gestione cloud disponibile.
-
+> [!TIP]
+> Non è necessario distribuire più istanze di CMG ai fini della georilevazione. Il client Configuration Manager non è in genere influenzato dalla latenza minima che si verifica con il servizio cloud, anche se geograficamente distante.
 
 ## <a name="requirements"></a>requisiti
 

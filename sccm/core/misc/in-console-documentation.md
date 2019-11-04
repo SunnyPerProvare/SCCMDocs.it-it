@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 143aa617484bb45a2d20eb4db3d41733863052ac
-ms.sourcegitcommit: 21a4a87d5e137b1cbd2ecd8ea34b5f0bfd2af357
+ms.openlocfilehash: 0e4cfdfb6ac2df0279136006b8191aaa76b84667
+ms.sourcegitcommit: 9ed9551c15abc36f38c92aaeef60dbb699ae7cd8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72889703"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72984355"
 ---
 <!-- 
 - Feature 1357546
@@ -104,10 +104,11 @@ Procedure dettagliate guidate che semplificano la risoluzione dei problemi relat
 
 ## <a name="new-and-updated-support-articles"></a>Articoli di supporto nuovi e aggiornati
 
-Articoli di supporto nuovi o aggiornati tra l'11 luglio e il 12 agosto 2019.
+Articoli di supporto nuovi o aggiornati tra il 13 agosto e il 24 ottobre 2019.
 
-- [KB 4511621: Errore "Risorse di memoria insufficienti" quando si creano supporti autonomi o pre-installati in Configuration Manager](https://support.microsoft.com/help/4511621)
-- [KB 4511618: Il certificato non è aggiornato in un punto di distribuzione abilitato per PXE e vengono visualizzate più voci di errore del log](https://support.microsoft.com/help/4511618)
-- [KB 4509382: Risoluzione dei problemi di distribuzione di applicazioni in Configuration Manager](https://support.microsoft.com/help/4509382)
-
-Per sottoscrivere la notifica Atom o RSS dei nuovi articoli di supporto di Configuration Manager, vedere [Aggiornamenti dei contenuti del supporto](https://support.microsoft.com/help/4089498/) e selezionare **System Center Configuration Manager**.  
+- [KB 4517137: Il computer si blocca al messaggio "Attendi alcuni minuti" in una distribuzione di debug per una sequenza di attività di Configuration Manager](https://support.microsoft.com/help/4517137)
+- [KB 4517138: La distribuzione di debug per una sequenza di attività non viene visualizzata in Configuration Manager](https://support.microsoft.com/help/4517138)
+- [KB 4517870: Gli aggiornamenti pianificati non vengono eseguiti se il server del provider SMS di Configuration Manager è in Windows Server 2012 R2 o Windows Server 2012](https://support.microsoft.com/help/4517870)
+- [KB 4458143: Errore di mancata corrispondenza dell'hash quando i client scaricano Contentinfo.tar dai punti di distribuzione cloud assegnati a più siti primari](https://support.microsoft.com/help/4458143)
+- [KB 4517482: Per gli aggiornamenti di .NET 4.7.2 di agosto 2019 non viene eseguita la sincronizzazione in System Center Configuration Manager](https://support.microsoft.com/help/4517482)
+- [KB 4517869: Aggiornamento cumulativo per System Center Configuration Manager Current Branch, versione 1906](https://support.microsoft.com/help/4517869) Per sottoscrivere la notifica Atom o RSS dei nuovi articoli di supporto di Configuration Manager, vedere [Aggiornamenti dei contenuti del supporto](https://support.microsoft.com/help/4089498/) e selezionare **System Center Configuration Manager**.  

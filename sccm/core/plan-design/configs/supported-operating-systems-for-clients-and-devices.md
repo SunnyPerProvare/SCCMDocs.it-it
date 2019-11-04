@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 48568f962f412342e005f18b790ed1478b359163
-ms.sourcegitcommit: 23e4f4f02b62e5cc284196067a83eaaa67a6f446
+ms.openlocfilehash: 59f43fca8c493da8684671dce7b2e61b8d67cb64
+ms.sourcegitcommit: 0bad3167dc8349d0da0a5f47c29a0614a9bac467
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71999002"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916982"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versioni dei sistemi operativi per client e dispositivi supportate da Configuration Manager
 
@@ -57,7 +57,7 @@ Il client disabilita i criteri utente solo quando rileva questo tipo di disposit
 Se sono necessari i criteri utente in questo scenario e si accetta l'eventuale impatto sulle prestazioni, usare Configuration Manager SDK con la [classe WMI del server SMS_PolicyAgentConfig](/sccm/develop/reference/core/clients/config/sms_policyagentconfig-server-wmi-class). Impostare la nuova proprietà `PolicyEnableUserPolicyOnTS` su `true`.
 
 > [!Note]  
-> Non è possibile usare la co-gestione con un desktop virtuale Windows. Windows 10 Enterprise per il desktop virtuale è in realtà un'edizione di Windows Server che non include i componenti MDM.<!-- SCCMDocs-pr#3950 -->
+> Non è possibile usare la co-gestione con un client che esegue la multisessione di Windows 10 Enterprise. <!-- SCCMDocs-pr#3950 -->
 
 ### <a name="supported-server-os-versions"></a>Versioni del sistema operativo server supportate
 
