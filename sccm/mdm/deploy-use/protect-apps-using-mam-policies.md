@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2a7b0e8ba4c4c1438c5ecdd6763aa6014e56e176
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: 4870bf56175636fede1ecfa38728ac6c1192fc67
+ms.sourcegitcommit: edc7a5ad6a2eb72d0448d4689b9534f7e6f4d2b7
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70380394"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73623054"
 ---
 # <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Proteggere le app usando i criteri di gestione delle applicazioni mobili in System Center Configuration Manager
 
@@ -30,7 +30,7 @@ I criteri di gestione delle applicazioni di System Center Configuration Manager 
 
 È anche possibile usare i criteri di gestione delle app mobili per proteggere le app su dispositivi non gestiti da Intune. Con questa nuova funzionalità è possibile applicare i criteri di gestione delle app mobili ad app che si connettono ai servizi di Office 365. Questa funzionalità non è supportata per le app che si connettono a Exchange o SharePoint locale.  
 
-Per usare questa nuova funzionalità, è necessario usare il portale di anteprima di Azure. Per acquisire familiarità con tale funzionalità, usare gli argomenti seguenti:  
+Per usare questa nuova funzionalità, è necessario usare il portale di anteprima di Azure. Gli argomenti seguenti possono essere utili per iniziare:  
 - [Introduzione ai criteri di gestione delle app mobili nel portale di Azure](https://technet.microsoft.com/library/mt627830.aspx)  
 - [Creare e distribuire i criteri di gestione delle app mobili con Microsoft Intune](https://technet.microsoft.com/library/mt627829.aspx)  
 
@@ -38,26 +38,26 @@ Per usare questa nuova funzionalità, è necessario usare il portale di anteprim
 
 Per applicare le restrizioni a un'app, è necessario che nell'app sia incorporato il Software Development Kit (SDK) dell'app di Microsoft Intune. Esistono due metodi per ottenere questo tipo di app:  
 
--   **Usare un'app gestita da criteri** (Android e iOS): Per queste app è integrato App SDK. Per aggiungere questo tipo di applicazione, è possibile specificare un collegamento all'app da un archivio di app, ad esempio l'iTunes store o Google Play. Non sono richieste ulteriori elaborazioni per questo tipo di app. Per un elenco delle app gestite da criteri disponibili per dispositivi iOS e Android, vedere [App gestite per criteri di gestione delle applicazioni per dispositivi mobili di Microsoft Intune](https://technet.microsoft.com/library/dn708489.aspx).  
+-   **Usare un'app gestita da criteri** (Android e iOS): queste app includono App SDK incorporato. Per aggiungere questo tipo di applicazione, è possibile specificare un collegamento all'app da un archivio di app, ad esempio l'iTunes store o Google Play. Non sono richieste ulteriori elaborazioni per questo tipo di app. Per un elenco delle app gestite da criteri disponibili per dispositivi iOS e Android, vedere [App gestite per criteri di gestione delle applicazioni per dispositivi mobili di Microsoft Intune](https://technet.microsoft.com/library/dn708489.aspx).  
 
--   **Usare un'app di** cui è stato eseguito il wrapped (Android e iOS): Queste app vengono riassemblate per includere App SDK usando lo strumento di **wrapping delle app Microsoft Intune**. Questo strumento viene in genere usato per elaborare le app aziendali create internamente. Non può essere usato per elaborare le app state scaricate dall'App Store. Per altre informazioni, vedere i seguenti articoli:
+-   **Usare un'app con wrapper** (Android e iOS): app che sono state riassemblate per includere App SDK usando lo  **strumento per la disposizione testo per app di Microsoft Intune**. Questo strumento viene in genere usato per elaborare le app aziendali create internamente. Non può essere usato per elaborare le app state scaricate dall'App Store. Per altre informazioni, vedere i seguenti articoli:
     - [Preparare le app per iOS per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://technet.microsoft.com/library/dn878028.aspx)
 
-    - [Preparare le app per Android per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://technet.microsoft.com/library/mt147413.aspx)  
+    - [Preparare le app per Android per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://docs.microsoft.com/intune/developer/app-wrapper-prepare-android)  
 
 ## <a name="create-and-deploy-an-app-with-a-mobile-application-management-policy"></a>Creare e distribuire un'app con criterio di gestione delle applicazioni mobili  
 
-##  <a name="step-1-obtain-the-link-to-a-policy-managed-app-or-create-a-wrapped-app"></a>Passaggio 1: Ottenere il collegamento a un'app gestita da criteri o creare un'app di cui è stato eseguito il wrapped  
+##  <a name="step-1-obtain-the-link-to-a-policy-managed-app-or-create-a-wrapped-app"></a>Passaggio 1: Ottenere il collegamento a un'app gestita da criteri o creare un'app con wrapper  
 
--   **Per ottenere un collegamento a un'app gestita da criteri**: Dall'App Store trovare e prendere nota dell'URL dell'app gestita da criteri che si vuole distribuire.  
+-   **Per ottenere un collegamento a un'app gestita da criteri**: nell'App Store trovare e prendere nota dell'URL dell'app gestita da criteri che si vuole distribuire.  
 
      Ad esempio, l'URL dell'app Microsoft Word per iPad è **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**  
 
--   **Per creare un'app di cui**è stato eseguito il wrapper: Usare le informazioni negli argomenti [preparare le app iOS per la gestione delle applicazioni mobili con lo strumento di wrapping delle app Microsoft Intune](https://technet.microsoft.com/library/dn878028.aspx) e [preparare le app Android per la gestione delle applicazioni mobili con lo strumento di wrapping delle app Microsoft Intune](https://technet.microsoft.com/library/mt147413.aspx) per creare un app con wrapper.  
+-   **Per creare un'app con wrapper**: usare le informazioni negli argomenti [Preparare le app per iOS per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://technet.microsoft.com/library/dn878028.aspx) e [Preparare le app per Android per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://technet.microsoft.com/library/mt147413.aspx) per creare un'app con wrapper.  
 
      Lo strumento crea un'app elaborata e un file manifesto associato. Questi file vengono usati quando si crea un'applicazione di Configuration Manager che contiene l'app.  
 
-##  <a name="step-2-create-a-configuration-manager-application-that-contains-an-app"></a>Passaggio 2: Creare un'applicazione Configuration Manager che contenga un'app  
+##  <a name="step-2-create-a-configuration-manager-application-that-contains-an-app"></a>Passaggio 2: Creare un'applicazione di Configuration Manager che contenga un'app  
  La procedura per creare l'applicazione di Configuration Manager è diversa quando si usa un'app gestita da criteri (collegamento esterno) o un'app creata tramite Microsoft Intune App Wrapping Tool di Microsoft Intune per iOS (pacchetto dell'app per iOS). Per creare l'applicazione di Configuration Manager, usare una delle procedure seguenti.  
 
 1. Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
@@ -72,7 +72,7 @@ Per applicare le restrizioni a un'app, è necessario che nell'app sia incorporat
 
 6. Nella pagina **Informazioni generali** immettere il testo descrittivo e le informazioni di categoria che si desidera visualizzare agli utenti nel portale della società.  
 
-7. Completare la procedura guidata.  
+7. completare la procedura guidata.  
 
    La nuova applicazione viene visualizzata nel nodo **Applicazioni** dell'area di lavoro **Raccolta software** .  
 
@@ -88,13 +88,13 @@ Per applicare le restrizioni a un'app, è necessario che nell'app sia incorporat
 
    -   Per iOS: **Pacchetto app per iOS nell'App Store**  
 
-   -   Per Android: **Pacchetto app Android in Google Play**  
+   -   Per Android: **Pacchetto app per Android in Google Play**  
 
 5. Immettere l' URL per l'app (dal passaggio 1) e quindi fare clic su **Avanti**.  
 
 6. Nella pagina **Informazioni generali** immettere il testo descrittivo e le informazioni di categoria che si desidera visualizzare agli utenti nel portale della società.  
 
-7. Completare la procedura guidata.  
+7. completare la procedura guidata.  
 
    La nuova applicazione viene visualizzata nel nodo **Applicazioni** dell'area di lavoro **Raccolta software** .  
 
@@ -109,13 +109,13 @@ Per applicare le restrizioni a un'app, è necessario che nell'app sia incorporat
 
 4)  Nella pagina **Tipo di criterio** selezionare la piattaforma e il tipo di criterio e quindi fare clic su **Avanti**. Sono disponibili i tipi di criterio seguenti:  
 
--   **Generale**: Il tipo di criteri generale consente di modificare la funzionalità delle app distribuite per adeguarle ai criteri aziendali di conformità e sicurezza. Ad esempio, è possibile limitare le operazioni taglia, copia e incolla in un'app con restrizioni.  
+-   **Generale**: il tipo di criterio Generale consente di modificare la funzionalità delle app distribuite per adeguarle ai criteri aziendali di conformità e sicurezza. Ad esempio, è possibile limitare le operazioni taglia, copia e incolla in un'app con restrizioni.  
 
--   **Managed browser**: Il Managed Browser criterio consente di decidere se consentire o meno a Managed browser di aprire un elenco di URL. Il tipo di criteri Managed Browser consente di modificare la funzionalità dell'app Intune Managed Browser. Si tratta di un Web browser che consente di gestire le azioni eseguibili dagli utenti, inclusi i siti che possono visitare, e come aprire i collegamenti al contenuto all'interno del browser. Altre informazioni sull'  [app Intune Managed Browser per iOS](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8) e l' [app Intune Managed Browser per Android](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser&hl=en).
+-   **Managed Browser**: consente di scegliere se consentire o meno a Managed Browser di aprire un elenco di URL. Il tipo di criteri Managed Browser consente di modificare la funzionalità dell'app Intune Managed Browser. Si tratta di un Web browser che consente di gestire le azioni eseguibili dagli utenti, inclusi i siti che possono visitare, e come aprire i collegamenti al contenuto all'interno del browser. Altre informazioni sull'  [app Intune Managed Browser per iOS](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8) e l' [app Intune Managed Browser per Android](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser&hl=en).
 
 5)  Nella pagina **Criteri iOS** o **Criteri Android** configurare i valori seguenti come richiesto e quindi fare clic su **Avanti**. Le opzioni possono variare a seconda del tipo di dispositivo per il quale si sta configurando il criterio.  
 
-|Value|Altre informazioni|  
+|Valore|Altre informazioni|  
 |-----------|----------------------|  
 |**Limitare il contenuto Web per la visualizzazione in Managed Browser dell'azienda**|Abilita tutti i collegamenti nell'app da aprire in Managed Browser. Per usare questa opzione, è necessario avere distribuito l'app nei dispositivi.|  
 |**Impedisci backup in Android** o **Impedisci backup in iTunes e iCloud**|Disabilita il backup delle informazioni presenti nell'app.|  
@@ -128,7 +128,7 @@ Per applicare le restrizioni a un'app, è necessario che nell'app sia incorporat
 |**Richiedi credenziali aziendali per l'accesso**|Richiede all'utente di immettere le informazioni di accesso aziendali per poter accedere all'app.|  
 |**Richiedi la conformità del dispositivo ai criteri aziendali per l'accesso**|Consente l'uso dell'app solo se il dispositivo non è jailbroken o rooted.|  
 |**Controlla di nuovo i requisiti di accesso dopo (minuti)**|Specifica il periodo di tempo che deve trascorrere prima che vengano controllati di nuovo i requisiti di accesso per l'app dopo l'avvio (nel campo **Timeout**).<br /><br /> Nel campo **Periodo di prova offline**, se il dispositivo è offline, specifica il periodo di tempo che deve trascorrere prima che vengano controllati di nuovo i requisiti di accesso per l'app.|  
-|**Crittografa dati app**|Specifica che tutti i dati associati a questa app siano crittografati, compresi i dati archiviati esternamente come, ad esempio, i dati archiviati sulle schede SD.<br /><br /> **Crittografia per iOS**<br /><br /> Per le app associate ai criteri di gestione delle applicazioni mobili di Configuration Manager, i dati vengono crittografati a riposo usando la crittografia a livello di dispositivo implementata dal sistema operativo. Ciò viene abilitato tramite i criteri PIN del dispositivo che devono essere impostati dall'amministratore IT. Quando viene richiesto un PIN, i dati vengono crittografati in base alle impostazioni nei criteri di gestione delle applicazioni mobili. Come indicato nella documentazione di Apple, [i moduli usati da iOS 7 sono FIPS 140-2 certified](https://support.apple.com/en-us/HT202739).<br /><br /> **Crittografia per Android**<br /><br /> Per le app associate ai criteri di gestione delle applicazioni mobili di Configuration Manager, la crittografia viene implementata da Microsoft. I dati vengono crittografati in modo sincrono durante le operazioni di I/O dei file in base all'impostazione nei criteri di gestione delle applicazioni mobili. Le app gestite su Android usano la crittografia AES-128 in modalità CBC con le librerie di crittografia della piattaforma. Il metodo di crittografia non è conforme agli standard FIPS 140-2. Il contenuto nell'archivio del dispositivo è sempre crittografato.|  
+|**Crittografa dati app**|Specifica che tutti i dati associati a questa app siano crittografati, compresi i dati archiviati esternamente come, ad esempio, i dati archiviati sulle schede SD.<br /><br /> **Crittografia per iOS**<br /><br /> Per le app associate ai criteri di gestione delle applicazioni mobili di Configuration Manager, i dati vengono crittografati a riposo usando la crittografia a livello di dispositivo implementata dal sistema operativo. Questa funzionalità è abilitata tramite i criteri PIN del dispositivo che devono essere impostati dall'amministratore IT. Quando è necessario un PIN, i dati vengono crittografati in base alle impostazioni nei criteri di gestione delle applicazioni mobili. Come indicato nella documentazione di Apple, [i moduli usati da iOS 7 sono FIPS 140-2 certified](https://support.apple.com/en-us/HT202739).<br /><br /> **Crittografia per Android**<br /><br /> Per le app associate ai criteri di gestione delle applicazioni mobili di Configuration Manager, la crittografia viene implementata da Microsoft. I dati vengono crittografati in modo sincrono durante le operazioni di I/O dei file in base all'impostazione nei criteri di gestione delle applicazioni mobili. Le app gestite su Android usano la crittografia AES-128 in modalità CBC con le librerie di crittografia della piattaforma. Il metodo di crittografia non è conforme agli standard FIPS 140-2. Il contenuto nell'archivio del dispositivo è sempre crittografato.|  
 |**Blocca acquisizione schermo** (solo per dispositivi Android)|Specifica che le funzionalità di acquisizione schermo del dispositivo vengono bloccate quando si usa questa app.|  
 |**Disabilita la sincronizzazione dei contatti**| A partire dalla versione 1710, questa opzione impedisce all'app di salvare i dati nell'app dei contatti nativa del dispositivo. Se si sceglie No, l'app può salvare i dati nell'app dei contatti nativa del dispositivo.|  
 |**Disabilita stampa**| A partire dalla versione 1710, questa opzione impedisce all'app di stampare dati aziendali o dell'istituto di istruzione. |  
@@ -136,7 +136,7 @@ Per applicare le restrizioni a un'app, è necessario che nell'app sia incorporat
 6)  Nella pagina **Managed Browser** selezionare se Managed Browser è autorizzato ad aprire solo gli URL nell'elenco o meno e quindi fare clic su **Avanti**.  
 Per altre informazioni, vedere [Gestire un accesso Internet tramite i criteri di Managed Browser](manage-internet-access-using-managed-browser-policies.md).  
 
-7)  Completare la procedura guidata.  
+7)  completare la procedura guidata.  
 
  Il nuovo criterio viene visualizzato nel nodo **Criteri di gestione delle applicazioni** dell'area di lavoro **Raccolta software** .  
 
