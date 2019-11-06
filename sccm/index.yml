@@ -1,181 +1,181 @@
 ### YamlMime:Hub
-title: System Center Configuration Manager
-summary: Documentazione ufficiale del prodotto per Configuration Manager
+title: Microsoft Endpoint Configuration Manager
+summary: Documentazione del prodotto ufficiale per il componente Configuration Manager di Microsoft Endpoint Manager
 metadata:
   ms.topic: hub-page
-  ms.openlocfilehash: 3c0f4f04b4fc28f96a1749013c393e33e4fea3f8
-  ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
+  ms.openlocfilehash: deb88891b3783a3b168fea11ba48e8fb0a01e1a4
+  ms.sourcegitcommit: edc7a5ad6a2eb72d0448d4689b9534f7e6f4d2b7
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/06/2019
-  ms.locfileid: "70738116"
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73623327"
 highlightedContent:
   items:
   - title: Novità
     itemType: learn
-    url: https://docs.microsoft.com/sccm/core/plan-design/changes/whats-new-incremental-versions
+    url: https://docs.microsoft.com/configmgr/core/plan-design/changes/whats-new-incremental-versions
   - title: Configurazioni supportate
     itemType: architecture
-    url: https://docs.microsoft.com/sccm/core/plan-design/configs/supported-configurations
+    url: https://docs.microsoft.com/configmgr/core/plan-design/configs/supported-configurations
   - title: Aggiornamenti e manutenzione
     itemType: deploy
-    url: https://docs.microsoft.com/sccm/core/servers/manage/updates
+    url: https://docs.microsoft.com/configmgr/core/servers/manage/updates
   - title: File di registro
     itemType: learn
-    url: https://docs.microsoft.com/sccm/core/plan-design/hierarchy/log-files
+    url: https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/log-files
   - title: Porte
     itemType: learn
-    url: https://docs.microsoft.com/sccm/core/plan-design/hierarchy/ports
+    url: https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/ports
   - title: Technical preview
     itemType: get-started
-    url: https://docs.microsoft.com/sccm/core/get-started/technical-preview
+    url: https://docs.microsoft.com/configmgr/core/get-started/technical-preview
 conceptualContent:
   items:
   - title: Gestione collegata al cloud
     links:
     - text: Gestire i client su Internet
-      url: https://docs.microsoft.com/sccm/core/clients/manage/manage-clients-internet
+      url: https://docs.microsoft.com/configmgr/core/clients/manage/manage-clients-internet
       itemType: overview
     - text: Pianificare Azure AD
-      url: https://docs.microsoft.com/sccm/core/plan-design/security/plan-for-security#bkmk_planazuread
+      url: https://docs.microsoft.com/configmgr/core/plan-design/security/plan-for-security#bkmk_planazuread
       itemType: architecture
     - text: Servizi di Azure
-      url: https://docs.microsoft.com/sccm/core/servers/deploy/configure/azure-services-wizard
+      url: https://docs.microsoft.com/configmgr/core/servers/deploy/configure/azure-services-wizard
       itemType: how-to-guide
   - title: Co-gestione
     links:
     - text: Guide introduttive
-      url: https://docs.microsoft.com/sccm/comanage/quickstarts
+      url: https://docs.microsoft.com/configmgr/comanage/quickstarts
       itemType: quickstart
     - text: Esercitazione
-      url: https://docs.microsoft.com/sccm/comanage/tutorial-co-manage-clients
+      url: https://docs.microsoft.com/configmgr/comanage/tutorial-co-manage-clients
       itemType: tutorial
     - text: Carichi di lavoro
-      url: https://docs.microsoft.com/sccm/comanage/workloads
+      url: https://docs.microsoft.com/configmgr/comanage/workloads
       itemType: overview
     footerLink:
       text: Altre informazioni
-      url: https://docs.microsoft.com/sccm/comanage/overview
+      url: https://docs.microsoft.com/configmgr/comanage/overview
   - title: Gestione in tempo reale
     links:
     - text: CMPivot
-      url: https://docs.microsoft.com/sccm/core/servers/manage/cmpivot
+      url: https://docs.microsoft.com/configmgr/core/servers/manage/cmpivot
       itemType: get-started
     - text: Eseguire script di PowerShell
-      url: https://docs.microsoft.com/sccm/apps/deploy-use/create-deploy-scripts
+      url: https://docs.microsoft.com/configmgr/apps/deploy-use/create-deploy-scripts
       itemType: how-to-guide
   - title: Desktop Analytics
     links:
     - text: Panoramica
-      url: https://docs.microsoft.com/sccm/desktop-analytics/overview
+      url: https://docs.microsoft.com/configmgr/desktop-analytics/overview
       itemType: overview
     - text: Distribuire Windows 10 a un gruppo pilota
-      url: https://docs.microsoft.com/sccm/desktop-analytics/tutorial-windows10
+      url: https://docs.microsoft.com/configmgr/desktop-analytics/tutorial-windows10
       itemType: tutorial
     - text: Configurare Desktop Analytics
-      url: https://docs.microsoft.com/sccm/desktop-analytics/set-up
+      url: https://docs.microsoft.com/configmgr/desktop-analytics/set-up
       itemType: how-to-guide
     - text: Dashboard di Office 365
-      url: https://docs.microsoft.com/sccm/sum/deploy-use/office-365-dashboard
+      url: https://docs.microsoft.com/configmgr/sum/deploy-use/office-365-dashboard
       itemType: learn
     footerLink:
       text: Altre informazioni
-      url: https://docs.microsoft.com/sccm/desktop-analytics/overview
+      url: https://docs.microsoft.com/configmgr/desktop-analytics/overview
   - title: Semplificazione dell'infrastruttura
     links:
     - text: Disponibilità elevata del server del sito
-      url: https://docs.microsoft.com/sccm/core/servers/deploy/configure/site-server-high-availability
+      url: https://docs.microsoft.com/configmgr/core/servers/deploy/configure/site-server-high-availability
       itemType: deploy
     - text: Riassegnare un punto di distribuzione
-      url: https://docs.microsoft.com/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_reassign
+      url: https://docs.microsoft.com/configmgr/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_reassign
       itemType: how-to-guide
     - text: Configuration Manager in Azure
-      url: https://docs.microsoft.com/sccm/core/understand/configuration-manager-on-azure
+      url: https://docs.microsoft.com/configmgr/core/understand/configuration-manager-on-azure
       itemType: learn
   - title: Infrastruttura di base
     links:
     - text: Uso della console
-      url: https://docs.microsoft.com/sccm/core/servers/manage/admin-console
+      url: https://docs.microsoft.com/configmgr/core/servers/manage/admin-console
       itemType: how-to-guide
     - text: Distribuire i client
-      url: https://docs.microsoft.com/sccm/core/clients/deploy/deploy-clients-to-windows-computers
+      url: https://docs.microsoft.com/configmgr/core/clients/deploy/deploy-clients-to-windows-computers
       itemType: deploy
     - text: Restare aggiornati con ConfigMgr e Windows 10
-      url: https://docs.microsoft.com/sccm/core/understand/configuration-manager-and-windows-as-service
+      url: https://docs.microsoft.com/configmgr/core/understand/configuration-manager-and-windows-as-service
       itemType: learn
     footerLink:
       text: Altre informazioni
-      url: https://docs.microsoft.com/sccm/core/understand/introduction
+      url: https://docs.microsoft.com/configmgr/core/understand/introduction
   - title: Gestione delle app
     links:
     - text: Creare app
-      url: https://docs.microsoft.com/sccm/apps/get-started/create-and-deploy-an-application
+      url: https://docs.microsoft.com/configmgr/apps/get-started/create-and-deploy-an-application
       itemType: how-to-guide
     - text: Distribuire app
-      url: https://docs.microsoft.com/sccm/apps/deploy-use/deploy-applications
+      url: https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-applications
       itemType: deploy
     - text: Pianificare Software Center
-      url: https://docs.microsoft.com/sccm/apps/plan-design/plan-for-software-center
+      url: https://docs.microsoft.com/configmgr/apps/plan-design/plan-for-software-center
       itemType: architecture
     footerLink:
       text: Altre informazioni
-      url: https://docs.microsoft.com/sccm/apps/understand/introduction-to-application-management
+      url: https://docs.microsoft.com/configmgr/apps/understand/introduction-to-application-management
   - title: Distribuzione del sistema operativo
     links:
     - text: Eseguire l'aggiornamento a Windows 10
-      url: https://docs.microsoft.com/sccm/osd/deploy-use/upgrade-windows-to-the-latest-version
+      url: https://docs.microsoft.com/configmgr/osd/deploy-use/upgrade-windows-to-the-latest-version
       itemType: overview
     - text: Distribuzioni in più fasi
-      url: https://docs.microsoft.com/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence
+      url: https://docs.microsoft.com/configmgr/osd/deploy-use/create-phased-deployment-for-task-sequence
       itemType: how-to-guide
     - text: Passaggi della sequenza di attività
-      url: https://docs.microsoft.com/sccm/osd/understand/task-sequence-steps
+      url: https://docs.microsoft.com/configmgr/osd/understand/task-sequence-steps
       itemType: learn
     footerLink:
       text: Altre informazioni
-      url: https://docs.microsoft.com/sccm/osd/understand/introduction-to-operating-system-deployment
+      url: https://docs.microsoft.com/configmgr/osd/understand/introduction-to-operating-system-deployment
   - title: Aggiornamenti software
     links:
     - text: Pianificare gli aggiornamenti software
-      url: https://docs.microsoft.com/sccm/sum/plan-design/plan-for-software-updates
+      url: https://docs.microsoft.com/configmgr/sum/plan-design/plan-for-software-updates
       itemType: architecture
     - text: Distribuire gli aggiornamenti software
-      url: https://docs.microsoft.com/sccm/sum/deploy-use/deploy-software-updates
+      url: https://docs.microsoft.com/configmgr/sum/deploy-use/deploy-software-updates
       itemType: deploy
     - text: Ottimizzare gli aggiornamenti di Windows 10
-      url: https://docs.microsoft.com/sccm/sum/deploy-use/optimize-windows-10-update-delivery
+      url: https://docs.microsoft.com/configmgr/sum/deploy-use/optimize-windows-10-update-delivery
       itemType: learn
     - text: Aggiornare Office 365
-      url: https://docs.microsoft.com/sccm/sum/deploy-use/manage-office-365-proplus-updates
+      url: https://docs.microsoft.com/configmgr/sum/deploy-use/manage-office-365-proplus-updates
       itemType: how-to-guide
     footerLink:
       text: Altre informazioni
-      url: https://docs.microsoft.com/sccm/sum/understand/software-updates-introduction
+      url: https://docs.microsoft.com/configmgr/sum/understand/software-updates-introduction
   - title: Conformità del dispositivo
     links:
     - text: Creazione di elementi di configurazione
-      url: https://docs.microsoft.com/sccm/compliance/deploy-use/create-configuration-items
+      url: https://docs.microsoft.com/configmgr/compliance/deploy-use/create-configuration-items
       itemType: how-to-guide
     - text: Impostazioni di Microsoft Edge
-      url: https://docs.microsoft.com/sccm/compliance/deploy-use/browser-profiles
+      url: https://docs.microsoft.com/configmgr/compliance/deploy-use/browser-profiles
       itemType: how-to-guide
     - text: Aggiornamento dell'edizione Windows
-      url: https://docs.microsoft.com/sccm/compliance/deploy-use/upgrade-windows-version
+      url: https://docs.microsoft.com/configmgr/compliance/deploy-use/upgrade-windows-version
       itemType: how-to-guide
     footerLink:
       text: Altre informazioni
-      url: https://docs.microsoft.com/sccm/compliance/understand/ensure-device-compliance
+      url: https://docs.microsoft.com/configmgr/compliance/understand/ensure-device-compliance
   - title: Protezione
     links:
     - text: Windows Defender
-      url: https://docs.microsoft.com/sccm/protect/deploy-use/endpoint-protection
+      url: https://docs.microsoft.com/configmgr/protect/deploy-use/endpoint-protection
       itemType: overview
     - text: WDATP
-      url: https://docs.microsoft.com/sccm/protect/deploy-use/windows-defender-advanced-threat-protection
+      url: https://docs.microsoft.com/configmgr/protect/deploy-use/windows-defender-advanced-threat-protection
       itemType: overview
     footerLink:
       text: Altre informazioni
-      url: https://docs.microsoft.com/sccm/protect/understand/protect-data-and-site-infrastructure
+      url: https://docs.microsoft.com/configmgr/protect/understand/protect-data-and-site-infrastructure
 additionalContent:
   sections:
   - title: Community e supporto per Configuration Manager
@@ -201,21 +201,21 @@ additionalContent:
       links:
       - url: https://docs.microsoft.com/powershell/sccm/overview?view=sccm-ps
         text: PowerShell
-      - url: https://docs.microsoft.com/sccm/develop/core/misc/system-center-configuration-manager-sdk
+      - url: https://docs.microsoft.com/configmgr/develop/core/misc/system-center-configuration-manager-sdk
         text: Concetti relativi all'SDK
-      - url: https://docs.microsoft.com/sccm/develop/reference/configuration-manager-reference
+      - url: https://docs.microsoft.com/configmgr/develop/reference/configuration-manager-reference
         text: Informazioni di riferimento per l'SDK
-      - url: https://docs.microsoft.com/sccm/develop/core/understand/sqlviews/create-custom-reports-using-sql-server-views
+      - url: https://docs.microsoft.com/configmgr/develop/core/understand/sqlviews/create-custom-reports-using-sql-server-views
         text: Visualizzazioni SQL
     - title: Strumenti
       links:
-      - url: https://docs.microsoft.com/sccm/core/support/support-center
+      - url: https://docs.microsoft.com/configmgr/core/support/support-center
         text: Support Center
-      - url: https://docs.microsoft.com/sccm/mdt/
+      - url: https://docs.microsoft.com/configmgr/mdt/
         text: MDT
-      - url: https://docs.microsoft.com/sccm/apps/pcm/package-conversion-manager
+      - url: https://docs.microsoft.com/configmgr/apps/pcm/package-conversion-manager
         text: Package Conversion Manager
-      - url: https://docs.microsoft.com/sccm/core/support/tools
+      - url: https://docs.microsoft.com/configmgr/core/support/tools
         text: Altre informazioni >
     - title: Altri siti della community
       links:
@@ -223,4 +223,4 @@ additionalContent:
         text: ConfigMgr su Reddit
       - url: https://www.facebook.com/groups/ConfigMgr2012
         text: Gruppo di professionisti di ConfigMgr su Facebook
-  footer: Sono stati riscontrati problemi nel sito? [Comunicarlo a Microsoft](https://docs.microsoft.com/sccm/core/understand/use-docs#bkmk_docfeedback)
+  footer: Sono stati riscontrati problemi nel sito? [Comunicarlo a Microsoft](https://docs.microsoft.com/configmgr/core/understand/use-docs#bkmk_docfeedback)
