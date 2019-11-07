@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4870bf56175636fede1ecfa38728ac6c1192fc67
-ms.sourcegitcommit: edc7a5ad6a2eb72d0448d4689b9534f7e6f4d2b7
+ms.openlocfilehash: c63d25e8e75bc0216d2a4cb12a9312e921214938
+ms.sourcegitcommit: b0f1c2fe1e034f0fe8676f1528249a4b26f54bd3
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73623054"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73704681"
 ---
 # <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Proteggere le app usando i criteri di gestione delle applicazioni mobili in System Center Configuration Manager
 
@@ -53,7 +53,7 @@ Per applicare le restrizioni a un'app, è necessario che nell'app sia incorporat
 
      Ad esempio, l'URL dell'app Microsoft Word per iPad è **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**  
 
--   **Per creare un'app con wrapper**: usare le informazioni negli argomenti [Preparare le app per iOS per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://technet.microsoft.com/library/dn878028.aspx) e [Preparare le app per Android per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://technet.microsoft.com/library/mt147413.aspx) per creare un'app con wrapper.  
+-   **Per creare un'app con wrapper**: usare le informazioni negli argomenti [Preparare le app per iOS per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://technet.microsoft.com/library/dn878028.aspx) e [Preparare le app per Android per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://docs.microsoft.com/intune/developer/app-wrapper-prepare-android) per creare un'app con wrapper.  
 
      Lo strumento crea un'app elaborata e un file manifesto associato. Questi file vengono usati quando si crea un'applicazione di Configuration Manager che contiene l'app.  
 
