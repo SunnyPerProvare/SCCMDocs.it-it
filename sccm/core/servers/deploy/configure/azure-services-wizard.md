@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5da81e4208e1659ce927b0a55066599d9670ad37
-ms.sourcegitcommit: b9cc8e723c5d8c3be44edad24ad29d75c0cdd2b0
+ms.openlocfilehash: deabd60243f1911993c344e995ac0da848adae62
+ms.sourcegitcommit: b0f1c2fe1e034f0fe8676f1528249a4b26f54bd3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71826202"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73704950"
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurare i servizi di Azure da usare con Configuration Manager
 
@@ -85,7 +85,7 @@ Per altre informazioni sulle app di Azure, vedere gli articoli seguenti:
 
 - [Autenticazione e autorizzazione nel servizio app di Azure](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview)
 - [Panoramica di App Web](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview)
-- [Basics of Registering an Application in Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-scenarios#authentication-basics-in-microsoft-identity-platform) (Nozioni di base per la registrazione di un'applicazione in Azure AD)  
+- [Basics of Registering an Application in Azure AD](/azure/active-directory/develop/authentication-scenarios) (Nozioni di base per la registrazione di un'applicazione in Azure AD)  
 - [Registrare l'applicazione nel tenant di Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-app-registration)
 
 
@@ -274,6 +274,6 @@ Il diagramma seguente è un flusso di dati concettuale per l'interazione tra Con
 
 3. Il sito archivia dati sugli oggetti utente. Per altre informazioni, vedere [Individuazione utente Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).  
 
-4. Il client Configuration Manager richiede il token utente di Azure AD. Il client esegue l'attestazione mediante l'ID applicazione dell'app client di Azure AD, con l'app server come gruppo di destinatari. Per altre informazioni, vedere [Claims in Azure AD Security Tokens](https://docs.microsoft.com/azure/active-directory/develop/authentication-scenarios#claims-in-microsoft-identity-platform-security-tokens) (Attestazioni nei token di sicurezza di Azure AD).  
+4. Il client Configuration Manager richiede il token utente di Azure AD. Il client esegue l'attestazione mediante l'ID applicazione dell'app client di Azure AD, con l'app server come gruppo di destinatari. Per altre informazioni, vedere [Claims in Azure AD Security Tokens](/azure/active-directory/develop/authentication-scenarios#security-tokens) (Attestazioni nei token di sicurezza di Azure AD).  
 
 5. Il client esegue l'autenticazione nel sito presentando il token di Azure AD al gateway di gestione cloud e al punto di gestione locale abilitato per HTTPS.  

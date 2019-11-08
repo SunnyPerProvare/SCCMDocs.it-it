@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 085bf3a7b14582da0fc46568f9f5f61006b2dde5
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.openlocfilehash: 49f125ab40b44c9a70f7e53a0c7a8b34d3bc65ed
+ms.sourcegitcommit: b0f1c2fe1e034f0fe8676f1528249a4b26f54bd3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286125"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73704743"
 ---
 # <a name="capabilities-in-technical-preview-1802-for-system-center-configuration-manager"></a>Funzionalità della Technical Preview 1802 per System Center Configuration Manager
 
@@ -318,7 +318,7 @@ Windows AutoPilot è una soluzione per l'onboarding e la configurazione di nuovi
 
 ## <a name="improvements-to-configuration-manager-policies-for-windows-defender-exploit-guard"></a>Miglioramenti ai criteri di Configuration Manager per Windows Defender Exploit Guard
 <!-- 1356220 -->
-Ulteriori impostazioni dei criteri per i componenti Riduzione della superficie di attacco e Accesso controllato alle cartelle sono state aggiunte in Configuration Manager per [Windows Defender Exploit Guard](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/windows-defender-exploit-guard).
+Ulteriori impostazioni dei criteri per i componenti Riduzione della superficie di attacco e Accesso controllato alle cartelle sono state aggiunte in Configuration Manager per [Windows Defender Exploit Guard](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection).
 
 **Nuove impostazioni per Accesso controllato alle cartelle**<br/>
 Esistono due opzioni aggiuntive quando si configura l'accesso controllato alle cartelle: **Blocca solo i settori del disco** e **Controlla solo i settori del disco**. Queste due impostazioni consentono di abilitare Accesso controllato alle cartelle solo per i settori di avvio e non abilitano la protezione di cartelle specifiche o delle cartelle protette predefinite. 

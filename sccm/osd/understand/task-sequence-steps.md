@@ -2,7 +2,7 @@
 title: Passaggi della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni sui passaggi che è possibile aggiungere a una sequenza di attività di Configuration Manager.
-ms.date: 10/17/2019
+ms.date: 10/31/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec745842fb03a422f3d08be3de261537f23a0a19
-ms.sourcegitcommit: 89d6956f8dd9a73e18bf77990ab23cf9255068ad
+ms.openlocfilehash: c31aa8e72917a50d186a797f091b233c655c54d3
+ms.sourcegitcommit: edc7a5ad6a2eb72d0448d4689b9534f7e6f4d2b7
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72587752"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73623239"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
@@ -1915,7 +1915,7 @@ Questo passaggio esegue le azioni seguenti:
 
 #### <a name="set-up-the-configuration-manager-client"></a>Impostazione del client di Configuration Manager  
 
-1. Al termine dell'installazione minima di Windows, verrà ripresa la sequenza di attività usando setupcomplete.cmd.  
+1. Al termine dell'installazione minima di Windows, verrà ripresa la sequenza di attività usando setupcomplete.cmd. Per altre informazioni, vedere [eseguire uno script al termine dell'installazione (Setupcomplete. cmd)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/add-a-custom-script-to-windows-setup#run-a-script-after-setup-is-complete-setupcompletecmd).  
 
 2. Abilitare o disabilitare l'account Administrator locale, in base all'opzione selezionata nel passaggio **Applica impostazioni Windows**.  
 
@@ -1928,7 +1928,7 @@ Questo passaggio esegue le azioni seguenti:
 L'esecuzione della sequenza di attività continua con il passaggio successivo.  
 
 > [!Note]  
-> Criteri di gruppo di Windows viene in genere eseguito dopo il completamento della sequenza di attività. Questo comportamento è coerente nelle diverse versioni di Windows. Altre azioni personalizzate durante la sequenza di attività possono attivare la valutazione di Criteri di gruppo.<!-- 2841304 -->
+> Criteri di gruppo di Windows viene in genere eseguito dopo il completamento della sequenza di attività. Questo comportamento è coerente nelle diverse versioni di Windows. Altre azioni personalizzate durante la sequenza di attività possono attivare la valutazione di Criteri di gruppo. Per ulteriori informazioni sull'ordine delle operazioni, vedere [eseguire uno script al termine dell'installazione (Setupcomplete. cmd)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/add-a-custom-script-to-windows-setup#run-a-script-after-setup-is-complete-setupcompletecmd). <!-- 2841304 -->
 
 
 ### <a name="properties"></a>Proprietà  

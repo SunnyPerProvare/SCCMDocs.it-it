@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7f2e1521f6746d821258ef301a4df959c3cb559
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: ef5cfc38ea6c91653964e057396c47c11eab97b3
+ms.sourcegitcommit: c25a91db838805eca5dbb421a3de401928968bf0
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140062"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142944"
 ---
 # <a name="manage-user-state-in-system-center-configuration-manager"></a>Gestire lo stato utente in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile usare le sequenze attività di System Center Configuration Manager per acquisire e ripristinare i dati sullo stato utente in scenari di distribuzione del sistema operativo in cui si desidera mantenere lo stato utente del sistema operativo corrente. Ad esempio:  
+È possibile usare le sequenze di attività di System Center Configuration Manager per acquisire e ripristinare i dati sullo stato utente in scenari di distribuzione del sistema operativo in cui si desidera mantenere lo stato utente del sistema operativo corrente. Ad esempio:  
 
 - Distribuzioni in cui si vuole acquisire lo stato utente da un computer per ripristinarlo in un altro computer.  
 

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 001b083318771f00e7122c7f63a40aea95a815a4
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: 5c228132fe36c516b428cee47417fcc66e0dd221
+ms.sourcegitcommit: b0f1c2fe1e034f0fe8676f1528249a4b26f54bd3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70379860"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73704778"
 ---
 # <a name="modify-your-system-center-configuration-manager-infrastructure"></a>Modificare l'infrastruttura di System Center Configuration Manager
 
@@ -192,7 +192,7 @@ La documentazione di SQL Server contiene informazioni su come [registrare manual
 Utilizzare le procedure seguenti come un esempio della modalità di gestione dell'SPN per l'account servizio SQL Server che utilizza lo strumento Setspn su Windows Server 2008 R2. Per una guida specifica sullo strumento Setspn, vedere [Setspn Overview (Panoramica su Setspn)](https://go.microsoft.com/fwlink/p/?LinkId=226343)o una documentazione simile specifica del sistema operativo in uso.  
 
 > [!NOTE]  
-> Le procedure seguenti fanno riferimento allo strumento da riga di comando di Setspn. Lo strumento da riga di comando di Setspn è incluso in caso di installazione degli strumenti di supporto di Windows Server 2003 da CD o da [Microsoft Download Center (Area download Microsoft)](https://go.microsoft.com/fwlink/p/?LinkId=100114). Per ulteriori informazioni sulla modalità di installazione degli strumenti di supporto di Windows da CD, vedere [Installare gli Strumenti di supporto di Windows](https://go.microsoft.com/fwlink/p/?LinkId=62270).  
+> Le procedure seguenti fanno riferimento allo strumento da riga di comando di Setspn. Lo strumento da riga di comando di Setspn è incluso in caso di installazione degli strumenti di supporto di Windows Server 2003 da CD o da [Microsoft Download Center (Area download Microsoft)](https://www.microsoft.com/en-us/download/details.aspx?id=15326). Per ulteriori informazioni sulla modalità di installazione degli strumenti di supporto di Windows da CD, vedere [Installare gli Strumenti di supporto di Windows](https://go.microsoft.com/fwlink/p/?LinkId=62270).  
 
 #### <a name="to-manually-create-a-domain-user-service-principal-name-spn-for-the-sql-server-service-account"></a>Per creare manualmente il nome dell'entità di servizio (SPN) di un utente di dominio per l'account servizio SQL Server  
 

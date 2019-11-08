@@ -5,18 +5,18 @@ description: Configuration Manager supporta file di installazione rapida per Win
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 06/15/2018
+ms.date: 11/02/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b8d8af88-e8ac-4deb-921b-975e2d2afd80
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a7bf171804922399f21551e9c8854883de9cf78
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: 938d6f04a875e443286b3440cd06e3e537b8820d
+ms.sourcegitcommit: edc7a5ad6a2eb72d0448d4689b9534f7e6f4d2b7
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70379941"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73622991"
 ---
 # <a name="manage-express-installation-files-for-windows-10-updates"></a>Gestire i file di installazione rapida per gli aggiornamenti di Windows 10
 
@@ -29,7 +29,7 @@ Per informazioni su come usare Configuration Manager per gestire il contenuto di
 > Il supporto del client del sistema operativo è disponibile in Windows 10, versione 1607, con un aggiornamento dell'agente di Windows Update. Questo aggiornamento è incluso negli aggiornamenti rilasciati in data 11 aprile 2017. Per altre informazioni su questi aggiornamenti, vedere l'[articolo del supporto tecnico 4015217](https://support.microsoft.com/kb/4015217). Gli aggiornamenti futuri sfrutteranno i file di installazione rapida per download di dimensioni più contenute. Le versioni precedenti di Windows 10 e Windows 10 versione 1607 senza questo aggiornamento non supportano i file di installazione rapida.  
 
 
-### <a name="enable-the-site-to-download-express-installation-files-for-windows-10-updates"></a>Abilitare il sito per il download dei file di installazione rapida per gli aggiornamenti di Windows 10
+## <a name="enable-the-site-to-download-express-installation-files-for-windows-10-updates"></a>Abilitare il sito per il download dei file di installazione rapida per gli aggiornamenti di Windows 10
 Per avviare la sincronizzazione dei metadati per i file di installazione rapida di Windows 10, abilitarla nelle proprietà del punto di aggiornamento software.  
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Configurazione del sito** e selezionare **Siti**.  
@@ -45,7 +45,7 @@ Per avviare la sincronizzazione dei metadati per i file di installazione rapida 
 > Per determinare lo spazio effettivo usato su disco dal file, vedere la proprietà **Dimensioni su disco** del file. La proprietà Dimensioni su disco dovrebbe essere notevolmente inferiore rispetto al valore Dimensioni. Per altre informazioni, vedere [FAQs to optimize Windows 10 update delivery](/sccm/sum/deploy-use/optimize-windows-10-update-delivery#bkmk_faq).  
 
 
-### <a name="enable-clients-to-download-and-install-express-installation-files"></a>Abilitare i client per il download e l'installazione dei file di installazione rapida
+## <a name="enable-clients-to-download-and-install-express-installation-files"></a>Abilitare i client per il download e l'installazione dei file di installazione rapida
 Per abilitare il supporto dei file di installazione rapida per i client, abilitare i file di installazione rapida nel gruppo **Aggiornamenti software** delle impostazioni del client. Questa impostazione crea un nuovo listener HTTP che attende le richieste di download dei file di installazione rapida sulla porta specificata.
 
 > [!NOTE]    
@@ -60,3 +60,8 @@ Dopo aver distribuito le impostazioni client per abilitare questa funzionalità 
 3. Selezionare le impostazioni client appropriate e fare clic su **Proprietà** sulla barra multifunzione.  
 
 4. Selezionare il gruppo **Aggiornamenti software**. Specificare **Sì** per l'impostazione **Abilita l'installazione di file per l'installazione rapida nei client**. Configurare la **porta usata per scaricare il contenuto per gli aggiornamenti rapidi** con la porta usata dal listener HTTP nel client.
+    - Nella versione 1902, la **porta usata per scaricare il contenuto per gli aggiornamenti rapidi** è stata modificata in **porta che i client usano per ricevere le richieste di contenuto Delta**.
+
+## <a name="next-steps"></a>Passaggi successivi
+
+[Distribuire gli aggiornamenti software](/sccm/sum/deploy-use/deploy-software-updates)

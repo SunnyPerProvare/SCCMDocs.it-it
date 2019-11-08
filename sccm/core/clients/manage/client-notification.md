@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 790fc7d0d9df0d88983671be7cba290393016de0
-ms.sourcegitcommit: 670cfed1e47a7a4a73aa4ccb873c6312be3c21ff
+ms.openlocfilehash: 4550518db4b2a274ec3bdb1188a52f11489932ec
+ms.sourcegitcommit: 15b2ef81a19b4883d15823ee4c3a19fdb5288a54
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71311525"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73761482"
 ---
 # <a name="client-notification-in-configuration-manager"></a>Notifica del client in Configuration Manager
 
@@ -85,7 +85,7 @@ A partire dalla versione 1810, per le azioni di notifica client ora è necessari
 
 I ruoli predefiniti seguenti hanno questa autorizzazione per impostazione predefinita:
 - Amministratore completo  
-- Amministratore infrastruttura  
+- Amministratore operazioni  
 
 Aggiungere questa autorizzazione ai ruoli personalizzati che devono usare le azioni di notifica client.
 
