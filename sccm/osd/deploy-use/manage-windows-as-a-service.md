@@ -2,7 +2,7 @@
 title: Gestire Windows come servizio
 titleSuffix: Configuration Manager
 description: Visualizzare lo stato di Windows as a Service (WaaS) usando Configuration Manager, definire piani di manutenzione per formare anelli di distribuzione e visualizzare avvisi quando i client Windows 10 si avvicinano alla scadenza del supporto.
-ms.date: 08/22/2019
+ms.date: 11/02/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c03daa588b0ddbdf94cba6df4f3fe7c4adcdbf71
-ms.sourcegitcommit: d3aa20e2d12b5a68c7d672172234c65095fd4ce8
+ms.openlocfilehash: b60b230476bafc3e130c31f1172f5422cfe7d1b8
+ms.sourcegitcommit: edc7a5ad6a2eb72d0448d4689b9534f7e6f4d2b7
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72810816"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73623042"
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gestire Windows come servizio con System Center Configuration Manager
 
@@ -186,9 +186,9 @@ ms.locfileid: "72810816"
 
    -   **Tempo disponibile software**: selezionare una delle seguenti impostazioni per specificare quando gli aggiornamenti del software saranno disponibili per i client:  
 
-       -   **Appena possibile**: selezionare questa impostazione per rendere disponibili il prima possibile gli aggiornamenti software inclusi nella distribuzione per i computer client. Quando si crea la distribuzione con questa impostazione selezionata, Configuration Manager aggiorna i criteri client. Quindi, al successivo ciclo di polling dei criteri client, ai client viene comunicata la distribuzione e possono ottenere gli aggiornamenti disponibili per l'installazione.  
+       - **Appena possibile**: selezionare questa impostazione per rendere disponibili il prima possibile gli aggiornamenti software inclusi nella distribuzione per i computer client. Quando si crea la distribuzione con questa impostazione selezionata, Configuration Manager aggiorna i criteri client. Quindi, al successivo ciclo di polling dei criteri client, ai client viene comunicata la distribuzione e possono ottenere gli aggiornamenti disponibili per l'installazione.  
 
-       -   **Orario specifico**: selezionare questa impostazione per rendere disponibili gli aggiornamenti software inclusi nella distribuzione per i computer client in una data e a un orario specifici. Quando si crea la distribuzione con questa impostazione attivata, Configuration Manager aggiorna i criteri client. Quindi, al successivo ciclo di polling dei criteri client, ai client viene comunicata la distribuzione. Tuttavia, gli aggiornamenti del software nella distribuzione non saranno disponibili per l'installazione prima della data e dell'orario configurati.  
+       -   **Orario specifico**: selezionare questa impostazione per rendere disponibili gli aggiornamenti software inclusi nella distribuzione per i computer client in una data e a un orario specifici. Quando si crea la distribuzione con questa impostazione attivata, Configuration Manager aggiorna i criteri client. Quindi, al successivo ciclo di polling dei criteri client, ai client viene comunicata la distribuzione. Gli aggiornamenti del software nella distribuzione non sono però disponibili per l'installazione prima della data e dell'orario configurati.  
 
    -   **Scadenza installazione**: selezionare una delle seguenti impostazioni per specificare la scadenza per l'installazione degli aggiornamenti software nella distribuzione:  
 
@@ -201,6 +201,8 @@ ms.locfileid: "72810816"
            >   
            >  È possibile configurare l'impostazione **Disabilitare sequenza casuale scadenza** del client **Agente computer** per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti richiesti. Per ulteriori informazioni, vedere [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
+       -   **Ritardare l'imposizione di questa distribuzione in base alle preferenze dell'utente, fino al periodo di tolleranza definito nel client**: selezionare questa opzione per rispettare il [ **periodo di tolleranza per l'imposizione dopo la scadenza della distribuzione (ore)** client impostazione](/sccm/core/clients/deploy/about-client-settings#grace-period-for-enforcement-after-deployment-deadline-hours).
+
 9. Nella pagina Esperienza utente, è possibile configurare le seguenti impostazioni:  
 
     -   **Notifiche utente**: specificare se visualizzare la notifica degli aggiornamenti in Software Center nel computer client in base al **Tempo disponibile software** configurato e se visualizzare le notifiche utente nei computer client.  
@@ -211,19 +213,20 @@ ms.locfileid: "72810816"
 
     -   **Gestione filtri di scrittura per dispositivi con Windows Embedded**: quando si distribuiscono aggiornamenti in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare l'aggiornamento nella sovrapposizione temporanea e confermare le modifiche in seguito oppure alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
         - Quando si distribuisce un aggiornamento in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta con una finestra di manutenzione configurata.  
+    -   **Comportamento di rivalutazione della distribuzione degli aggiornamenti software al riavvio**: per forzare un altro ciclo di valutazione della distribuzione degli aggiornamenti dopo il riavvio, selezionare l'opzione **se un aggiornamento di questa distribuzione richiede un riavvio del sistema, eseguire la valutazione della distribuzione degli aggiornamenti ciclo dopo il riavvio**. 
 
-10. Nella pagina Pacchetto di distribuzione selezionare un pacchetto di distribuzione esistente o configurare le seguenti impostazioni per creare un nuovo pacchetto di distribuzione:  
+10. Nella pagina Pacchetto di distribuzione selezionare un pacchetto di distribuzione esistente, nessun pacchetto di distribuzione o configurare le impostazioni seguenti per creare un nuovo pacchetto di distribuzione:  
 
-    1.  **Nome**: specificare il nome del pacchetto di distribuzione. Questo nome deve essere univoco e descrivere il contenuto del pacchetto. Deve essere lungo massimo 50 caratteri.  
+    1. **Nome**: specificare il nome del pacchetto di distribuzione. Questo nome deve essere univoco e descrivere il contenuto del pacchetto. Il nome può contenere un massimo di 50 caratteri.  
 
-    2.  **Descrizione**: specificare una descrizione che fornisca informazioni sul pacchetto di distribuzione. La descrizione deve contenere un massimo di 127 caratteri.  
+    1. **Descrizione**: specificare una descrizione che fornisca informazioni sul pacchetto di distribuzione. La descrizione deve contenere un massimo di 127 caratteri.  
 
-    3.  **Origine pacchetto**: specifica il percorso dei file di origine dell'aggiornamento software. Digitare un percorso di rete per il percorso di origine, ad esempio **\\\server\nomecondivisione\percorso**oppure fare clic su **Sfoglia** per trovare il percorso di rete. Prima di procedere alla pagina successiva, è necessario creare la cartella condivisa per i file di origine del pacchetto di distribuzione.  
+    1. **Origine pacchetto**: specifica il percorso dei file di origine dell'aggiornamento software. Digitare un percorso di rete per il percorso di origine, ad esempio **\\\server\nomecondivisione\percorso**oppure fare clic su **Sfoglia** per trovare il percorso di rete. Prima di procedere alla pagina successiva, è necessario creare la cartella condivisa per i file di origine del pacchetto di distribuzione.  
         - Il percorso di origine del pacchetto di distribuzione specificato non può essere usato da un altro pacchetto di distribuzione software.  
-        - L'account computer del provider SMS e l'utente che esegue la procedura guidata per scaricare gli aggiornamenti software devono disporre entrambi delle autorizzazioni NTFS di **Scrittura** nel percorso download. È necessario limitare con attenzione l'accesso al percorso download per ridurre il rischio di manomissioni da parte di utenti malintenzionati dei file origine degli aggiornamenti software.  
+        - L'account computer del provider SMS e l'utente che esegue la procedura guidata per scaricare gli aggiornamenti software devono disporre entrambi delle autorizzazioni NTFS di **Scrittura** nel percorso download. È necessario limitare con attenzione l'accesso al percorso di download per ridurre il rischio di manomissioni da parte di utenti malintenzionati dei file origine degli aggiornamenti software.  
         - È possibile modificare il percorso di origine del pacchetto nelle proprietà del pacchetto di distribuzione dopo che Configuration Manager ha creato il pacchetto di distribuzione. Ma in tal caso, è prima necessario copiare il contenuto dall'origine del pacchetto originale nel nuovo percorso di origine del pacchetto.  
-
-    4.  **Priorità di invio**: specificare la priorità di invio per il pacchetto di distribuzione. Configuration Manager usa la priorità di invio quando invia il pacchetto di distribuzione ai punti di distribuzione. I pacchetti di distribuzione vengono inviati in ordine di priorità: Alta, Media o Bassa. I pacchetti con priorità identiche vengono inviati nell'ordine in cui sono stati creati. Se non esiste alcun backlog, il pacchetto esegue l'elaborazione immediatamente indipendentemente dalla relativa priorità.  
+    1. **Priorità di invio**: specificare la priorità di invio per il pacchetto di distribuzione. Configuration Manager usa la priorità di invio quando invia il pacchetto di distribuzione ai punti di distribuzione. I pacchetti di distribuzione vengono inviati in ordine di priorità: Alta, Media o Bassa. I pacchetti con priorità identiche vengono inviati nell'ordine in cui sono stati creati. Se non esiste alcun backlog, il pacchetto esegue immediatamente l'elaborazione, indipendentemente dalla priorità configurata.
+    1. **Abilita replica differenziale binaria**: abilitare questa opzione se si vuole usare la replica differenziale binaria.  
 
 11. Nella pagina Punti di distribuzione specificare i punti di distribuzione o i gruppi di punti di distribuzione che ospitano i file di aggiornamento. Per altre informazioni, vedere [Configurare un punto di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_configs).
 
@@ -234,9 +237,9 @@ ms.locfileid: "72810816"
 
     -   **Scarica aggiornamenti software da Internet**: selezionare questa impostazione per scaricare gli aggiornamenti da un percorso specificato in Internet. Questa opzione è attivata per impostazione predefinita.  
 
-    -   **Scarica aggiornamenti software da un percorso sulla rete locale**: selezionare questa impostazione per scaricare gli aggiornamenti da una directory locale o una cartella condivisa. Questa impostazione è utile quando il computer che esegue la procedura guidata non dispone di accesso a Internet. I computer con accesso a Internet possono scaricare preventivamente gli aggiornamenti e archiviarli in un percorso di rete locale accessibile al computer che esegue la procedura guidata.  
+    -   **Scarica aggiornamenti software da un percorso sulla rete locale**: selezionare questa impostazione per scaricare gli aggiornamenti da una directory locale o una cartella condivisa. Questa impostazione è utile quando il computer che esegue la procedura guidata non ha accesso a Internet. I computer con accesso a Internet possono scaricare preventivamente gli aggiornamenti e archiviarli in un percorso di rete locale accessibile al computer che esegue la procedura guidata.  
 
-13. Nella pagina Selezione lingua selezionare le lingue per cui vengono scaricati gli aggiornamenti selezionati. Gli aggiornamenti vengono scaricati solo se sono disponibili nelle lingue selezionate. Gli aggiornamenti non specifici per la lingua vengono sempre scaricati. Per impostazione predefinita, la procedura guidata consente di selezionare le lingue configurate nelle proprietà del punto di aggiornamento software. Prima di procedere alla pagina successiva, è necessario selezionare almeno una lingua. Quando si selezionano solo lingue non supportate da un aggiornamento, il download dell'aggiornamento non riesce.  
+13. Nella pagina Selezione lingua selezionare le lingue per cui vengono scaricati gli aggiornamenti selezionati. Gli aggiornamenti vengono scaricati solo se sono disponibili nelle lingue selezionate. Gli aggiornamenti non specifici della lingua vengono sempre scaricati. Per impostazione predefinita, la procedura guidata consente di selezionare le lingue configurate nelle proprietà del punto di aggiornamento software. Prima di procedere alla pagina successiva, è necessario selezionare almeno una lingua. Quando si selezionano solo lingue non supportate da un aggiornamento, il download dell'aggiornamento non riesce.  
 
 14. Nella pagina Riepilogo rivedere le impostazioni e fare clic su **Avanti** per creare il piano di manutenzione.  
 
@@ -262,13 +265,7 @@ Per modificare le proprietà di un piano di manutenzione, seguire la procedura r
 
     **Impostazioni distribuzione**: nella scheda Impostazioni distribuzione configurare le impostazioni seguenti:  
 
-    -   **Tipo di distribuzione**: specificare il tipo di distribuzione per la distribuzione degli aggiornamenti software. Selezionare **Richiesto** per creare una distribuzione degli aggiornamenti software obbligatoria in cui gli aggiornamenti software vengano automaticamente installati nei client prima della scadenza di un'installazione configurata. Selezionare **Disponibile** per creare una distribuzione degli aggiornamenti software aggiuntiva che gli utenti possano installare da Software Center.  
-
-        > [!IMPORTANT]  
-        > - Dopo aver creato la distribuzione degli aggiornamenti software, non è possibile modificare successivamente il tipo di distribuzione.  
-        > - Un gruppo di aggiornamenti software distribuito come **Richiesto** viene scaricato in background e rispetta le impostazioni BITS, se configurate. I gruppi di aggiornamenti software distribuiti come **Disponibile** vengono invece scaricati in primo piano e ignorano le impostazioni BITS.  
-
-    -   **Usa riattivazione LAN per riattivare i client per le distribuzioni richieste**: specificare se abilitare la riattivazione LAN alla scadenza per inviare pacchetti di riattivazione ai computer che richiedono uno o più aggiornamenti software nella distribuzione. Tutti i computer in modalità sospensione all'ora di scadenza dell'installazione vengono riattivati in modo che si possa avviare l'installazione degli aggiornamenti software. I client in modalità sospensione che non richiedono aggiornamenti software nella distribuzione non vengono avviati. Per impostazione predefinita, questa impostazione non viene abilitata ed è disponibile solo quando **Tipo di distribuzione** è impostato su **Richiesto**.  
+    -   **Usa riattivazione LAN per riattivare i client per le distribuzioni richieste**: specificare se abilitare la riattivazione LAN alla scadenza per inviare pacchetti di riattivazione ai computer che richiedono uno o più aggiornamenti software nella distribuzione. Tutti i computer in modalità sospensione all'ora di scadenza dell'installazione vengono riattivati in modo che si possa avviare l'installazione degli aggiornamenti software. I client in modalità sospensione che non richiedono aggiornamenti software nella distribuzione non vengono avviati. Per impostazione predefinita, questa impostazione non è abilitata.  
 
         > [!WARNING]  
         >  Prima di usare questa opzione, i computer e le reti devono essere configurati per riattivazione LAN.  
@@ -279,7 +276,7 @@ Per modificare le proprietà di un piano di manutenzione, seguire la procedura r
 
     - Specificare se il client scarica e installa gli aggiornamenti software durante una connessione a una rete lenta o quando usa un percorso di fallback per il contenuto.  
 
-    - Specificare se il client dovrà scaricare e installare gli aggiornamenti software da un punto di distribuzione di fallback nel caso in cui il contenuto per tali aggiornamenti non fosse disponibile su un punto di distribuzione preferito.  
+    - Specificare se il client dovrà scaricare e installare gli aggiornamenti software da un punto di distribuzione di fallback nel caso in cui il contenuto per tali aggiornamenti non fosse disponibile in un punto di distribuzione preferito.  
 
     -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per il download del contenuto. Per altre informazioni su BranchCache, vedere [Concetti di base per la gestione dei contenuti](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
 
@@ -289,7 +286,7 @@ Per modificare le proprietà di un piano di manutenzione, seguire la procedura r
 
     -   Specificare se consentire ai client di eseguire il download dopo una scadenza dell'installazione quando usano connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.   
 
-    **Avvisi**: la scheda Avvisi consente di configurare la modalità usata da Configuration Manager e System Center Operations Manager per generare avvisi relativi alla distribuzione. È possibile configurare gli avvisi solo quando **Tipo di distribuzione** è impostato su **Richiesta** nella pagina Impostazioni distribuzione.  
+    **Avvisi**: la scheda Avvisi consente di configurare la modalità usata da Configuration Manager e System Center Operations Manager per generare avvisi relativi alla distribuzione. 
     - È possibile riesaminare gli avvisi recenti sugli aggiornamenti software dal nodo **Aggiornamenti software** nell'area di lavoro **Raccolta software** .  
 
 ## <a name="next-steps"></a>Passaggi successivi

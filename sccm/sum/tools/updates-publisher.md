@@ -2,7 +2,7 @@
 title: Updates Publisher
 titleSuffix: Configuration Manager
 description: Usare System Center Updates Publisher per gestire gli aggiornamenti personalizzati
-ms.date: 06/17/2019
+ms.date: 11/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25a1003fe6f2c61f089e1e2223d2b6f9fbd9b73f
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.openlocfilehash: 878e69ffb3f4b5a1c823b1b98a1e53305382ac7b
+ms.sourcegitcommit: 54f56bd30a161e8847f8bfd00ede586a1cf97d33
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70888615"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73710523"
 ---
 # <a name="system-center-updates-publisher"></a>System Center Updates Publisher
 
@@ -33,13 +33,10 @@ Updates Publisher consente di effettuare le operazioni seguenti:
 
 Dopo aver pubblicato aggiornamenti in un server di aggiornamento, è possibile usare System Center Configuration Manager per rilevare e distribuire tali aggiornamenti ai dispositivi gestiti.
 
-> [!TIP]  
-> La versione precedente, [System Center Updates Publisher 2011](https://go.microsoft.com/fwlink/?LinkId=848111), rimane supportata. Questa versione aggiornata mantiene le stesse funzionalità ma supporta altri sistemi operativi e nuove funzionalità per semplificare alcune attività. Offre inoltre un'interfaccia utente aggiornata.
-
 ## <a name="workspaces"></a>Aree di lavoro
 Quando si apre Updates Publisher, per impostazione predefinita viene visualizzato automaticamente il nodo Panoramica dell'*area di lavoro Aggiornamenti*.
 
-![Console di Updates Publisher](media/console1.png)   
+![Console di Updates Publisher](media/console1.png)
 
 
 Per organizzare Updates Publisher sono disponibili quattro aree di lavoro.
@@ -58,14 +55,14 @@ La gestione delle pubblicazioni include la pubblicazione di aggiornamenti in un 
 
 **Area di lavoro Cataloghi:** usare quest'area di lavoro per aggiungere e [gestire cataloghi di aggiornamenti software](/sccm/sum/tools/updates-publisher-catalogs). Questa area di lavoro include l'importazione di aggiornamenti software da tali cataloghi nel repository di Updates Publisher.
 
-## <a name="whats-new-in-the-system-center-updates-publisher-preview"></a>Novità della versione di anteprima di System Center Updates Publisher
+## <a name="whats-new-in-system-center-updates-publisher"></a>Novità di System Center Updates Publisher
 
 >[!NOTE] 
->Le informazioni contenute in questa sezione si applicano solo alla versione di anteprima di System Center Updates Publisher. Per installare l'anteprima, scaricarla dall' [area download Microsoft](https://www.microsoft.com/download/details.aspx?id=58390).
+> La versione più recente di System Center Updates Publisher è stata rilasciata il 6 novembre 2019. Per ulteriori informazioni, vedere la sezione [cronologia delle versioni](#release-history) .
 
-Nella versione di anteprima di System Center Updates Publisher è disponibile una nuova modalità di creazione per facilitare la creazione degli aggiornamenti. Quando si Abilita la modalità di creazione, un' **area di lavoro categorie** viene aggiunta alla schermata Start. Viene inoltre aggiunto un nuovo pulsante **detectoid** all' **area di lavoro aggiornamenti** quando è abilitata la modalità di creazione. 
+È disponibile una nuova modalità di creazione System Center Updates Publisher per facilitare la creazione degli aggiornamenti. Quando si Abilita la modalità di creazione, un' **area di lavoro categorie** viene aggiunta alla schermata Start. Viene inoltre aggiunto un nuovo pulsante **detectoid** all' **area di lavoro aggiornamenti** quando è abilitata la modalità di creazione.
 
-### <a name="to-enable-authoring-mode-in-the-preview"></a>Per abilitare la modalità di creazione nell'anteprima
+### <a name="to-enable-authoring-mode"></a>Per abilitare la modalità di creazione
 
 1. Nell'angolo superiore sinistro della console, fare clic sulla scheda **Updates Publisher** **Properties** , quindi scegliere **options**.
 1. Passare alle opzioni di **creazione** .
@@ -85,7 +82,6 @@ Dopo aver creato l'aggiornamento, è possibile assegnarlo a una categoria selezi
 
 ![Screenshot della categorizzazione di un aggiornamento](media/scup-categorize-update.png)
 
-
 ### <a name="about-detectoids"></a>Informazioni su detectoid
 
 Una volta abilitata la modalità di creazione, è possibile creare detectoid per gli aggiornamenti. Detectoid sono utili quando si hanno più aggiornamenti che usano la stessa regola (o un set di regole) per determinare l'applicabilità. In questi casi, è necessario creare un detectoid e assegnarlo come prerequisito per un aggiornamento. È possibile assegnare più detectoid a un aggiornamento creato.
@@ -100,6 +96,12 @@ Una volta abilitata la modalità di creazione, è possibile creare detectoid per
 
 
 ![Aggiornare i prerequisiti usando un detectoid](media/scup-detectoid-as-prerequisite.png)
+
+## <a name="release-history"></a>Cronologia versioni
+
+- [2019 RTW versione 6.0.394.0](https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/SCUP-adds-support-for-update-categories/ba-p/990111). Data di rilascio: 6 novembre 2019
+- [Aggiornamento cumulativo versione 6.0.283.0 da KB4462765](https://support.microsoft.com/help/4462765/update-rollup-for-system-center-updates-publisher). Data di rilascio: 7 settembre 2018
+- [2017 RTW versione 6.0.276.0](https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/System-Center-Updates-Publisher-adds-support-for-new-OSes/ba-p/274986). Data di rilascio: 26 marzo 2018
 
 
 ## <a name="next-steps"></a>Passaggi successivi

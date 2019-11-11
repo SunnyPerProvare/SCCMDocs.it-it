@@ -5,24 +5,26 @@ description: Esaminare le informazioni sul client Office 365 dal dashboard di Ge
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 10/23/2019
+ms.date: 11/06/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 69f234a2-b04b-445a-b81f-6b4acfc00eaf
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4bb08f123e0cf1321ff6eb891e0dca46c712c3f6
-ms.sourcegitcommit: d3aa20e2d12b5a68c7d672172234c65095fd4ce8
+ms.openlocfilehash: bf13e3389ec610ffacb06f56278113eb84a6089b
+ms.sourcegitcommit: edc7a5ad6a2eb72d0448d4689b9534f7e6f4d2b7
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72810845"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73623098"
 ---
 # <a name="office-365-client-management-dashboard"></a>Dashboard di Gestione client di Office 365
 
 A partire da Configuration Manager versione 1802, è possibile esaminare le informazioni sul client Office 365 dal dashboard di Gestione client di Office 365. Il dashboard di Gestione client di Office 365 visualizza un elenco di dispositivi rilevanti quando vengono selezionate le sezioni del grafico. <!--1357281 -->
 
 ## <a name="prerequisites"></a>Prerequisiti
+
+### <a name="enable-hardware-inventory"></a>Abilitare l'inventario hardware
 
 I dati visualizzati nel dashboard di gestione client di Office 365 provengono dall'inventario hardware. Abilitare l'inventario hardware e selezionare la classe **Configurazioni di Office 365 ProPlus** di tale inventario per visualizzare i dati nel dashboard.
  
@@ -32,9 +34,15 @@ I dati visualizzati nel dashboard di gestione client di Office 365 provengono da
 4. Nel **Impostazioni Client predefinite** nella finestra di dialogo fare clic su **l'inventario Hardware**.  
 5. Nel **le impostazioni del dispositivo** elenco, fare clic su **Imposta classi**.  
 6. Nella finestra di dialogo **Classi di inventario hardware** selezionare **Office 365 ProPlus Configurations**.  
-7. Fare clic su **OK** per salvare le modifiche e chiudere il **classi di inventario Hardware** nella finestra di dialogo. 
+7. Fare clic su **OK** per salvare le modifiche e chiudere il **classi di inventario Hardware** nella finestra di dialogo.
 
 Il dashboard di Gestione client di Office 365 inizia a visualizzare i dati in base all'inventario hardware.
+
+### <a name="internet-connectivity-for-clients"></a>Connettività Internet per i client
+
+*(Introdotta nella versione 1906 come prerequisito)*
+
+A partire dalla versione 1906, i dispositivi in cui è installato Office necessitano di connettività Internet per popolare le informazioni sul componente aggiuntivo per il dashboard di conformità per l' [aggiornamento di office 365 ProPlus](#bkmk_readiness-dash). I dispositivi scaricano un file di conformità del componente aggiuntivo dalla rete per la [distribuzione di contenuti di Office](https://docs.microsoft.com/office365/enterprise/content-delivery-networks#the-office-365-cdn). Questo file contiene l'elenco completo dei componenti aggiuntivi noti a Microsoft e i dettagli delle prestazioni previste in Office 365 ProPlus. Ogni dispositivo utilizza le informazioni del file per determinare la compatibilità dei componenti aggiuntivi. Se un dispositivo non è in grado di scaricare il file, avrà lo stato di conformità dei componenti aggiuntivi della **revisione delle esigenze**.
 
 ## <a name="viewing-the-office-365-client-management-dashboard"></a>Visualizzazione del dashboard di Gestione client di Office 365
 
@@ -50,7 +58,7 @@ Il dashboard di Gestione client di Office 365 presenta sotto forma di grafico le
 
 ## <a name="bkmk_o365_readiness"></a> Integrazione per l'idoneità per Office 365 ProPlus
 <!--3735402-->
-A partire da Configuration Manager versione 1902 è possibile usare il dashboard per identificare in modo attendibile i dispositivi pronti per l'aggiornamento a Office 365 ProPlus. Questa integrazione offre informazioni dettagliate su eventuali problemi di compatibilità potenziali con i componenti aggiuntivi e le macro di Office usate nell'ambiente. Quindi è possibile usare Configuration Manager per distribuire Office nei dispositivi pronti.
+A partire da Configuration Manager versione 1902 è possibile usare il dashboard per identificare in modo attendibile i dispositivi pronti per l'aggiornamento a Office 365 ProPlus. Questa integrazione offre informazioni dettagliate sui problemi di compatibilità potenziali con i componenti aggiuntivi e le macro di Office nell'ambiente. Quindi è possibile usare Configuration Manager per distribuire Office nei dispositivi pronti.
 
 Il dashboard di Gestione client di Office 365 include un nuovo riquadro, **Preparazione aggiornamenti di Office 365 ProPlus**. Questo riquadro è un grafico a barre dei dispositivi negli stati seguenti:
 - Valutazione non eseguita
@@ -74,9 +82,9 @@ Per impostazione predefinita l'agente di analisi esamina l'elenco dei file usati
 - Formati di file Office con attivazione macro, quali cartelle di lavoro di Excel con attivazione macro (file con estensione xlsm) o documenti di Word con attivazione macro (file con estensione docm)  
 - Formati di Office meno recenti che non indicano se è presente contenuto con macro. Ad esempio una cartella di lavoro di Excel 97-2003 (file con estensione xls).
 
-Se è necessaria una valutazione più dettagliata, distribuire il **Office Readiness Toolkit**. Questo strumento analizza il codice all'interno di un file di macro. Controlla se sono presenti potenziali problemi di compatibilità. Ad esempio, il file potrebbe usare una funzione che è stata modificata in una versione più recente di Office. Dopo l'esecuzione di Office Readiness Toolkit, i risultati ottenuti possono essere usati da Configuration Manager. Questi dati aggiuntivi migliorano i calcoli di conformità dei dispositivi. Per altre informazioni, vedere [Use the Readiness Toolkit to assess application compatibility for Office 365 ProPlus](https://aka.ms/readinesstoolkit) (Usare Readiness Toolkit per valutare la compatibilità delle applicazioni per Office 365 ProPlus).
+Se sono necessarie informazioni più dettagliate sulla compatibilità delle macro, distribuire il **Toolkit di conformità per Office** per analizzare il codice all'interno dei file di macro. Controlla se sono presenti potenziali problemi di compatibilità. Ad esempio, il file potrebbe usare una funzione che è stata modificata in una versione più recente di Office. Dopo l'esecuzione di Readiness Toolkit per Office, i risultati ottenuti possono essere usati da Configuration Manager. Questi dati aggiuntivi migliorano i calcoli di conformità dei dispositivi. Per altre informazioni, vedere [Valutare la compatibilità delle applicazioni per Office 365 ProPlus tramite Readiness Toolkit](https://aka.ms/readinesstoolkit).
 
-## <a name="office-365-proplus-upgrade-readiness-dashboard"></a>Dashboard Preparazione aggiornamenti per Office 365 ProPlus
+## <a name="bkmk_readiness-dash"></a> Dashboard Preparazione aggiornamenti per Office 365 ProPlus
 
 *(Funzionalità introdotta nella versione 1906)*
 
@@ -92,9 +100,9 @@ Per individuare i dispositivi pronti per l'aggiornamento a Office 365 ProPlus, a
 - Idoneità delle macro
 - Avvisi di macro
 
-Se è necessaria una valutazione più dettagliata per le macro, usare il **Toolkit di conformità di Office**. Per altre informazioni, vedere [Use the Readiness Toolkit to assess application compatibility for Office 365 ProPlus](https://aka.ms/readinesstoolkit) (Usare Readiness Toolkit per valutare la compatibilità delle applicazioni per Office 365 ProPlus).
-
 ### <a name="using-the-office-365-proplus-upgrade-readiness-dashboard"></a>Uso del dashboard Preparazione aggiornamenti per Office 365 ProPlus
+
+Dopo aver verificato i [prerequisiti](#prerequisites), usare le istruzioni seguenti per usare il Dashboard:
  
 1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software** ed espandere **Gestione client di Office 365**.
 1. Selezionare il nodo **Office 365 ProPlus preparazione aggiornamenti** .
@@ -106,6 +114,26 @@ Se è necessaria una valutazione più dettagliata per le macro, usare il **Toolk
 
 ![Dashboard Preparazione aggiornamenti per Office 365 ProPlus](./media/4021125-office-365-macro-advisories.png)
 
+### <a name="device-readiness-information"></a>Informazioni sulla conformità dei dispositivi
+
+Una volta valutato il componente aggiuntivo e l'inventario delle macro in ogni dispositivo, i dispositivi vengono raggruppati in base alle informazioni. I dispositivi il cui stato è elencato come **pronto per l'aggiornamento** non hanno probabilmente problemi di compatibilità.
+
+Selezionando la categoria **pronto per l'aggiornamento** nel grafico vengono visualizzati altri dettagli sui dispositivi nella raccolta di limitazione. È possibile esaminare l'elenco dei dispositivi, effettuare selezioni in base ai requisiti aziendali e creare una nuova raccolta di dispositivi dalla selezione. Usare la nuova raccolta per distribuire Office 365 ProPlus con Configuration Manager.
+
+I dispositivi che potrebbero essere a rischio di problemi di compatibilità sono contrassegnati come **revisione delle esigenze**. Questi dispositivi possono richiedere un'azione da intraprendere prima di aggiornarli a Office 365 ProPlus. Ad esempio, è possibile aggiornare i componenti aggiuntivi critici a una versione più recente.
+
+### <a name="add-in-information"></a>Informazioni sul componente aggiuntivo
+
+ In ogni dispositivo viene raccolto un inventario di tutti i componenti aggiuntivi installati. L'inventario viene quindi confrontato con le informazioni fornite da Microsoft sulle prestazioni dei componenti aggiuntivi in Office 365 ProPlus. Se viene individuato un componente aggiuntivo che probabilmente causa problemi dopo l'aggiornamento, tutti i dispositivi con il componente aggiuntivo vengono contrassegnati per la revisione.
+
+### <a name="macro-information"></a>Informazioni macro
+
+Configuration Manager esamina i file usati più di recente in ogni dispositivo. Conta i file in questo elenco che supportano le macro, inclusi i tipi seguenti:
+
+- Formati di file di Office abilitati per macro.
+- Formati di Office meno recenti, che non indicano se il contenuto della macro è presente.
+
+Se sono necessarie informazioni più dettagliate sulla compatibilità delle macro, distribuire il **Toolkit di conformità per Office** per analizzare il codice all'interno dei file di macro. I risultati possono essere prelevati dall'agente di inventario hardware di Configuration Manager quando si seleziona l'opzione per i **documenti di Office usati più di recente e i componenti aggiuntivi installati nel computer**. I dati aggiuntivi possono migliorare il calcolo della conformità dei dispositivi. Per altre informazioni, vedere [Valutare la compatibilità delle applicazioni per Office 365 ProPlus tramite Readiness Toolkit](https://aka.ms/readinesstoolkit).
 
 
 ## <a name="next-steps"></a>Passaggi successivi
