@@ -31,7 +31,7 @@ Questo articolo illustra le funzionalità di gestione dei dispositivi mobili (MD
 
 |Categorie di funzionalità|
 |-|  
-|**Novità di Microsoft Intune**: in generale, tutte le funzionalità elencate in questa categoria devono funzionare con tutte le versioni di Configuration Manager, incluse le versioni di System Center 2012 R2 Configuration Manager, poiché richiedono solo il servizio Intune e non richiedono altre funzionalità di Configuration Manager.<br /><br /> **Novità di Configuration Manager Technical Preview**: tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Technical Preview specificata. Per provare queste funzionalità, è necessario installare la versione di Technical Preview specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md).<br /><br /> **Novità di Configuration Manager (Current Branch)** : tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata, ad esempio la versione 1511 o 1602. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, è necessario eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere l'articolo relativo agli [aggiornamenti a System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|  
+|**Novità di Microsoft Intune**: in generale, tutte le funzionalità elencate in questa categoria devono funzionare con tutte le versioni di Configuration Manager, incluse le versioni di System Center 2012 R2 Configuration Manager, poiché richiedono solo il servizio Intune e non richiedono altre funzionalità di Configuration Manager.<br /><br /> **Novità di Configuration Manager Technical Preview**: tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Technical Preview specificata. Per provare queste funzionalità, è necessario installare la versione di Technical Preview specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager).<br /><br /> **Novità di Configuration Manager (Current Branch)** : tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata, ad esempio la versione 1511 o 1602. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, è necessario eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Upgrade to System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md) (Eseguire l'aggiornamento a System Center Configuration Manager).|  
 
 
 
@@ -67,11 +67,11 @@ Questo articolo illustra le funzionalità di gestione dei dispositivi mobili (MD
 - **Nuova esperienza utente per l'app Portale aziendale per Android**  
   L'app Portale aziendale per Android offre un'interfaccia utente dall'aspetto più moderno. Gli aggiornamenti più importanti riguardano gli aspetti seguenti:
 
-  - Colori Portale aziendale le intestazioni delle schede sono colorate in una personalizzazione definita dall'IT.
-  - Applicazioni Nella scheda **app** vengono aggiornati i pulsanti **app in evidenza** e **tutte le app** .
-  - Ricerca Nella scheda **app** il pulsante **Cerca** è un pulsante di azione mobile.
-  - Esplorazione delle app: Visualizzazione di **tutte le app** Mostra una visualizzazione a schede di in **primo piano**, **tutte**e **categorie** per una navigazione più semplice.
-  - Supporto **Le schede dispositivi personali** e **Contatta it** sono state aggiornate per migliorare la leggibilità.
+  - Colori: le intestazioni delle schede dell'app Portale aziendale possono avere un colore personalizzato definito dal personale IT.
+  - App: nella scheda **App** i pulsanti **App in evidenza** e **Tutte le app** sono stati aggiornati.
+  - Ricerca: nella scheda **App** il pulsante **Cerca** è un pulsante di azione mobile.
+  - Navigazione tra le app: in **Tutte le app** è disponibile una visualizzazione a schede di **In evidenza**, **Tutte** e **Categorie** per una navigazione più semplice.
+  - Supporto: le schede **Dispositivi personali** e **Contatta l'IT** sono state aggiornate per migliorare la leggibilità.
 
   Per altre informazioni su queste modifiche, vedere [Aggiornamenti dell'interfaccia utente per le applicazioni degli utenti finali in Intune](https://docs.microsoft.com/intune/whats-new-app-ui).
 
@@ -225,7 +225,7 @@ Nella versione 1702 di Configuration Manager (Current Branch) sono disponibili a
   | Console di amministrazione di Configuration Manager | App Portale aziendale di Intune per Android | Sito Web dell'app Portale aziendale di Intune |
   |----|----|----|
   | Disattiva/Cancella (rimuovere tutti i dati)| Rimuovere un dispositivo remoto | Rimuovi dispositivo (locale e remoto) |
-  | Disattiva/Cancella (rimuovere i dati aziendali)| Reimpostare il dispositivo | Reimposta dispositivo|
+  | Disattiva/Cancella (rimuovere i dati aziendali)| Reimposta dispositivo | Reimposta dispositivo|
   | Distribuzioni di app nuove o aggiornate | Installare le app line-of-business disponibili | Reimpostazione del passcode del dispositivo|
   | Blocco remoto| | |
   | Reimpostazione del passcode | | |
@@ -493,7 +493,7 @@ Le seguenti funzionalità di Intune introdotte in giugno 2016 funzionano nelle d
 
 - **Accesso condizionale per il browser**
 
-  È possibile impostare un criterio di accesso condizionale per Exchange Online e SharePoint Online in modo che siano accessibili solo dai Web browser supportati in dispositivi iOS e Android gestiti e conformi. Agli utenti finali che tentano di accedere a siti di Outlook Web Access (OWA) e SharePoint con dispositivi iOS e Android verrà richiesta la registrazione del dispositivo con Intune nonché la correzione di eventuali problemi di conformità per poter eseguire l'accesso. Per ulteriori informazioni, vedere
+  È possibile impostare un criterio di accesso condizionale per Exchange Online e SharePoint Online in modo che siano accessibili solo dai Web browser supportati in dispositivi iOS e Android gestiti e conformi. Agli utenti finali che tentano di accedere a siti di Outlook Web Access (OWA) e SharePoint con dispositivi iOS e Android verrà richiesta la registrazione del dispositivo con Intune nonché la correzione di eventuali problemi di conformità per poter eseguire l'accesso. Per altre informazioni, vedere
 
   * [Limitare l'accesso alla posta elettronica per Exchange Online e il nuovo ambiente Exchange Online dedicato](https://docs.microsoft.com/intune/deploy-use/restrict-access-to-exchange-online-with-microsoft-intune)
   * [Limitare l'accesso a SharePoint Online con Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/restrict-access-to-sharepoint-online-with-microsoft-intune)
@@ -524,7 +524,7 @@ Le seguenti nuove funzionalità introdotte in giugno 2016 sono disponibili nelle
 
 - **Categorizzazione automatica dei dispositivi in raccolte**
 
-  È possibile creare categorie di dispositivi da usare per inserire automaticamente i dispositivi in raccolte quando si usa Configuration Manager con Intune. Agli utenti verrà quindi richiesto di scegliere una categoria di dispositivi quando eseguono la registrazione di un dispositivo in Intune. È possibile modificare la categoria di un dispositivo dalla console di Configuration Manager. Per altre informazioni, vedere [Categorizzazione automatica dei dispositivi in raccolte](/sccm/core/get-started/capabilities-in-technical-preview-1606#dmp_category) in [Funzionalità di Technical Preview 1606 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1606).
+  È possibile creare categorie di dispositivi da usare per inserire automaticamente i dispositivi in raccolte quando si usa Configuration Manager con Intune. Agli utenti verrà quindi richiesto di scegliere una categoria di dispositivi quando eseguono la registrazione di un dispositivo in Intune. È anche possibile modificare la categoria di un dispositivo dalla console di Configuration Manager. Per altre informazioni, vedere [Categorizzazione automatica dei dispositivi in raccolte](/sccm/core/get-started/capabilities-in-technical-preview-1606#dmp_category) in [Funzionalità di Technical Preview 1606 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1606).
 
   > [!IMPORTANT]
   > Questa funzionalità può essere usata con la versione di Microsoft Intune di giugno 2016. Verificare che l'installazione sia aggiornata a questa versione prima di tentare tali procedure.
@@ -537,7 +537,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune  
  Le seguenti funzionalità di Intune introdotte in maggio 2016 funzionano nelle distribuzioni ibride.
 
-- SDK **MAM: Supporto della configurazione della lunghezza del PIN @ no__t-0
+- **SDK MAM: supporto per la configurazione della lunghezza del PIN**
 
   È ora possibile specificare la lunghezza del PIN per le app MAM in modo simile al PIN di un dispositivo. Per eseguire questa operazione gli utenti finali devono rispettare i nuovi limiti impostati. La schermata del PIN è stata leggermente modificata per consentire un input più lungo. Per informazioni dettagliate, vedere le [ impostazioni dei criteri MAM per Android](https://docs.microsoft.com/intune/deploy-use/android-mam-policy-settings) e le [impostazioni dei criteri MAM per iOS](https://docs.microsoft.com/intune/deploy-use/ios-mam-policy-settings).  
 
@@ -549,11 +549,11 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
   Le app Microsoft Word, Excel e PowerPoint per Android ora possono essere associate a criteri MAM sui dispositivi non registrati per Intune. Per un elenco completo delle app supportate, vedere la raccolta di applicazioni per dispositivi mobili di Microsoft Intune nella pagina dei [partner di applicazioni di Microsoft Intune](https://www.microsoft.com/en-us/server-cloud/products/microsoft-intune/partners.aspx).  
 
-- app portale aziendale **Android: Notifiche di tipo avviso popup utente finale @ no__t-0
+- **App Portale aziendale Android: notifiche di tipo avviso popup degli utenti finali**
 
   Le notifiche di tipo avviso popup provenienti dall'app Portale aziendale per Android vengono visualizzate quando gli utenti finali registrano o rimuovono i propri dispositivi dal portale aziendale.  
 
-- sito Web del portale di @no__t 0Company: Il banner di identificazione del dispositivo fornirà ulteriori informazioni agli utenti finali @ no__t-0
+- **Sito Web del portale aziendale: il banner di identificazione del dispositivo contiene più informazioni per gli utenti finali**
 
   Gli utenti finali ora possono identificare più facilmente il dispositivo selezionato quando usano il sito Web del portale aziendale. Se è selezionato il dispositivo errato, è possibile selezionare il dispositivo corretto toccando il collegamento **Tocca qui** nel banner della pagina iniziale.  
 
@@ -563,11 +563,11 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **VPN attivata dall'app per dispositivi Windows 10**
 
-  Per i dispositivi Windows 10 gestiti usando Configuration Manager con Intune è possibile aggiungere un elenco di app che aprono automaticamente una connessione VPN configurata dalla console di amministrazione di Configuration Manager. Per altre informazioni, vedere la sezione relativa alle [connessioni VPN attivate da app per Windows 10](/sccm/core/get-started/capabilities-in-technical-preview-1605) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605)  
+  Per i dispositivi Windows 10 gestiti tramite Configuration Manager con Intune è possibile aggiungere un elenco di app che aprono automaticamente una connessione VPN che è stata configurata tramite la console di amministrazione di Configuration Manager. Per altre informazioni, vedere la sezione relativa alle [connessioni VPN attivate da app per Windows 10](/sccm/core/get-started/capabilities-in-technical-preview-1605) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605)  
 
 - **Nuova esperienza per le azioni dei dispositivi remoti**
 
-  È stata migliorata l'esperienza di esecuzione di azioni dei dispositivi remoti dalla console di Configuration Manager.
+  È stata migliorata l'esperienza di esecuzione delle azioni dei dispositivi remoti dalla console di Configuration Manager.
 
   Azioni comuni come **ritiro/cancellazione**, **reimpostazione passcode**, **blocco remoto** e **blocco attivazione bypass** sono adesso disponibili nel menu **Azioni dispositivo remoto** accessibile dall'area di lavoro **Asset e conformità**
 
@@ -583,7 +583,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **Predichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS**
 
-  È ora possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity). È possibile caricare un file con valori separati da virgola (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi.  È possibile importare i numeri di serie anche per i dispositivi iOS.  Per altre informazioni, vedere [Predichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS](../../core/get-started/capabilities-in-technical-preview-1605.md#BKMK_IMEI) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
+  È ora possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity). È possibile caricare un file con valori delimitati da virgole (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi.  È possibile importare i numeri di serie anche per i dispositivi iOS.  Per altre informazioni, vedere [Predichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS](../../core/get-started/capabilities-in-technical-preview-1605.md#BKMK_IMEI) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
 
 - **Windows Information Protection (WIP)**
 
@@ -671,7 +671,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **Sfruttare i vantaggi della gestione "Open In" di iOS per i dispositivi registrati in una soluzione MDM di terze parti**
 
-  È possibile usare il fornitore MDM di terze parti per sfruttare i vantaggi della gestione "Open In" di iOS. Le restrizioni possono essere impostate nel profilo di configurazione e l'app può essere distribuita usando il software MDM. Quando l'utente installa l'app gestita, vengono applicate le restrizioni. Leggere i dettagli: [Microsoft Intune i criteri di gestione delle app per dispositivi mobili e iOS aperti nella](/intune/deploy-use/introduction-to-device-compliance-policies-in-microsoft-intune) libreria di Intune.  
+  È possibile usare il fornitore MDM di terze parti per sfruttare i vantaggi della gestione "Open In" di iOS. Le restrizioni possono essere impostate nel profilo di configurazione e l'app può essere distribuita usando il software MDM. Quando l'utente installa l'app gestita, vengono applicate le restrizioni. Per maggiori dettagli, vedere [Criteri di gestione delle app per dispositivi mobili e funzionalità Open In di iOS](/intune/deploy-use/introduction-to-device-compliance-policies-in-microsoft-intune) nella libreria di Intune.  
 
 - **App Microsoft che supportano MAM**
 
@@ -701,7 +701,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **Criteri di configurazione delle app iOS**
 
-  Nella versione 1602 di Configuration Manager (Current Branch) è possibile usare i criteri di configurazione delle app per specificare le impostazioni che potrebbero essere necessarie quando l'utente esegue un'app iOS. Per i dettagli, vedere [Configurare le app iOS con i criteri di configurazione in System Center Configuration Manager](/sccm/apps/deploy-use/configure-ios-apps-with-app-configuration-policies).  
+  Nella versione 1602 di Configuration Manager (Current Branch) è possibile usare i criteri di configurazione delle app per specificare le impostazioni che potrebbero essere necessarie quando l'utente esegue un'app iOS. Per informazioni dettagliate, vedere [Configure iOS apps with app configuration policies in System Center Configuration Manager](/sccm/apps/deploy-use/configure-ios-apps-with-app-configuration-policies) (Configurare le app iOS con i criteri di configurazione in System Center Configuration Manager).  
 
 - **Gestire le app iOS acquistate con Volume Purchase Program**
 
@@ -732,7 +732,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 ## <a name="notices"></a>Notifiche
 
-### <a name="system-center-2012-configuration-sp1-and-system-center-2012-r2-configuration-manager-rtm-support-for-hybrid-mobile-device-management-ending-on-april-10-2017"></a>System Center 2012 Configuration SP1 e System Center 2012 R2 Configuration Manager (RTM): Supporto per la gestione ibrida di dispositivi mobili che termina il 10 aprile 2017
+### <a name="system-center-2012-configuration-sp1-and-system-center-2012-r2-configuration-manager-rtm-support-for-hybrid-mobile-device-management-ending-on-april-10-2017"></a>System Center 2012 Configuration SP1 e System Center 2012 R2 Configuration Manager (RTM): il supporto per la gestione ibrida di dispositivi mobili termina il 10 aprile 2017
 *11 gennaio 2017*
 
 Il supporto per System Center 2012 Configuration Manager SP1 e System Center 2012 R2 Configuration Manager RTM è terminato il 12 luglio 2016. Per quanto riguarda la connessione di queste versioni al servizio Microsoft Intune per la gestione ibrida di dispositivi mobili, il supporto termina il 10 aprile 2017. Dopo tale data, la gestione ibrida di dispositivi mobili non sarà più disponibile con queste versioni. In pratica, i dispositivi gestiti non saranno più gestiti poiché il connettore Intune non si connetterà più al servizio Intune. I dati di Configuration Manager, ad esempio criteri e applicazioni, non verranno propagati a Intune e i dati dei dispositivi gestiti non verranno propagati a Configuration Manager finché non verrà eseguito un aggiornamento.
