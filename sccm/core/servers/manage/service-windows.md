@@ -1,7 +1,7 @@
 ---
 title: Manutenzione di Windows
 titleSuffix: Configuration Manager
-description: Usare gli intervalli di servizio per controllare quando i siti di System Center Configuration Manager installano gli aggiornamenti.
+description: Usare gli intervalli di servizio per controllare quando i siti Configuration Manager installano gli aggiornamenti.
 ms.date: 01/11/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4244c92bd312dd67667bb00d19ca6f3cf94ecb6
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.openlocfilehash: 13085d38a043026e88cfcaceb4353f2c69b08305
+ms.sourcegitcommit: edc7a5ad6a2eb72d0448d4689b9534f7e6f4d2b7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70892034"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73623312"
 ---
 #  <a name="service-windows-for-site-servers"></a>Intervalli di servizio per i server del sito
 
