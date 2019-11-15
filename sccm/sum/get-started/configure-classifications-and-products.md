@@ -5,18 +5,18 @@ description: Seguire questi passaggi per configurare i prodotti e le classificaz
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 11/02/2019
+ms.date: 11/14/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f70abe333b0f20316d8206629fe30773c52a9e80
-ms.sourcegitcommit: edc7a5ad6a2eb72d0448d4689b9534f7e6f4d2b7
+ms.openlocfilehash: 6fbc7b5394d8b2871cd879de9b10a5d20be95b5b
+ms.sourcegitcommit: 4b131d023b50796af3fa96a2ac50e2e2c2a45a24
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73623084"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74097422"
 ---
 # <a name="configure-classifications-and-products-to-synchronize"></a>configurare le classificazioni e i prodotti per la sincronizzazione  
 
@@ -50,14 +50,7 @@ I metadati degli aggiornamenti software vengono recuperati durante il processo d
      - **Aggiornamento**: specifica un aggiornamento per le caratteristiche e le funzionalità di Windows 10. Per ottenere la classificazione di [aggiornamento](https://support.microsoft.com/kb/3095113), i punti di aggiornamento software e i siti devono eseguire WSUS 6.2 con l'**hotfix 3095113**. Per ulteriori informazioni sull'installazione di questo aggiornamento e altri **aggiornamenti** per gli aggiornamenti, vedere [prerequisiti per gli aggiornamenti software](/sccm/sum/plan-design/prerequisites-for-software-updates#BKMK_wsus2012).
 
     > [!NOTE]
-    > 
-    > Per sincronizzare i driver di Microsoft Surface, è possibile selezionare la casella di controllo **Includi Microsoft Surface Drivers and Firmware Updates** .<!--1098490--> Tutti i punti di aggiornamento software devono eseguire Windows Server 2016 per sincronizzare correttamente i driver di Surface. Se si abilita un punto di aggiornamento software in un computer che esegue Windows Server 2012 dopo aver abilitato i driver per Surface, i risultati dell'analisi per gli aggiornamenti dei driver non saranno accurati. Questo comportamento causa la visualizzazione di dati di conformità non corretti nella console di Configuration Manager e nei report di Configuration Manager.  
-    >  
-    > - Questa funzionalità è stata introdotta per la prima volta nella versione 1706 come [funzionalità di una versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1710, questa funzionalità non è più in versione non definitiva.  
-    >  
-    > - Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
-    >
-    > - I driver per i dispositivi ARM non sono supportati per la sincronizzazione.
+    > Per sincronizzare i driver di Microsoft Surface, è possibile selezionare la casella di controllo **Includi Microsoft Surface Drivers and Firmware Updates** .<!--1098490--> Per ulteriori informazioni, vedere la sezione [includere i driver di Microsoft Surface e gli aggiornamenti del firmware](#bkmk_Surface) .
 
 5. Nella scheda **Prodotti** specificare i prodotti per cui si desidera sincronizzare gli aggiornamenti software e quindi fare clic su **Chiudi**.  
 
@@ -74,6 +67,59 @@ I metadati degli aggiornamenti software vengono recuperati durante il processo d
     > - Il prodotto **Windows 10 versione 1903 e successive** viene aggiunto per la sincronizzazione.
     > - Le [regole di distribuzione automatica](/sccm/sum/deploy-use/automatically-deploy-software-updates#bkmk_adr-process) contenenti il prodotto **Windows 10** verranno aggiornate in modo da includere **Windows 10 versione 1903 e successive**.
     > - I [piani di manutenzione](/sccm/osd/deploy-use/manage-windows-as-a-service#servicing-plan-workflow) vengono aggiornati in modo che includano il prodotto **Windows 10 versione 1903 e successive**.
+
+## <a name="bkmk_Surface"></a>Includi i driver di Microsoft Surface e gli aggiornamenti del firmware
+
+Per sincronizzare i driver di Microsoft Surface, è possibile selezionare la casella di controllo **Includi Microsoft Surface Drivers and Firmware Updates** .<!--1098490--> Tutti i punti di aggiornamento software devono eseguire Windows Server 2016 per sincronizzare correttamente i driver di Surface. Se si abilita un punto di aggiornamento software in un computer che esegue Windows Server 2012 dopo aver abilitato i driver per Surface, i risultati dell'analisi per gli aggiornamenti dei driver non saranno accurati. Questo comportamento causa la visualizzazione di dati di conformità non corretti nella console di Configuration Manager e nei report di Configuration Manager.  
+
+- Questa funzionalità è stata introdotta per la prima volta nella versione 1706 come [funzionalità di una versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1710, questa funzionalità non è più in versione non definitiva.  
+- Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
+- I driver per i dispositivi ARM non sono supportati per la sincronizzazione.
+
+## <a name="configuring-products-for-versions-of-windows-10"></a>Configurazione dei prodotti per le versioni di Windows 10
+
+### <a name="windows-10-version-1909"></a>Windows 10, versione 1909
+
+Windows 10, versione 1909, condivide un sistema operativo di base comune con Windows 10, versione 1903. Entrambe le versioni sono gestite con gli stessi aggiornamenti cumulativi. Per ulteriori informazioni su Windows 10, versione 1909, vedere il post di Blog relativo alle [Opzioni di recapito di Windows 10, versione 1909](https://aka.ms/1909mechanics) .
+
+Per assicurarsi che i client Windows 10 versione 1909 e Windows 10, versione 1903 installino gli aggiornamenti da Configuration Manager:
+
+- Approva gli aggiornamenti per entrambe le versioni 1909 e 1903 di Windows 10.
+  - Gli aggiornamenti prevedono regole di applicabilità e titoli diversi per ogni versione del sistema operativo.
+  - L'approvazione di ogni aggiornamento per la versione e l'architettura del sistema operativo gestisce il processo di approvazione normale per gli amministratori.
+- I file di installazione dell'aggiornamento cumulativo sono gli stessi per entrambe le versioni 1909 e 1903 di Windows 10.
+  - Configuration Manager scaricherà solo i file di origine dell'aggiornamento una sola volta.
+
+#### <a name="feature-updates-for-windows-10-version-1909"></a>Aggiornamenti delle funzionalità per Windows 10 versione 1909
+
+Quando si approvano gli aggiornamenti delle funzionalità per Windows 10, versione 1909, sono disponibili diverse opzioni:
+
+- Windows 10, versione 1903 è disponibile un [pacchetto di abilitazione](https://support.microsoft.com/en-us/help/4517245/feature-update-via-windows-10-version-1909-enablement-package), rilasciato il 12 novembre 2019.
+  - Il pacchetto di abilitazione è un file piccolo e rapido da installare che attiva le funzionalità di Windows 10, versione 1909 e riavvia il dispositivo.
+  - I prerequisiti per il pacchetto di abilitazione includono:
+    - Aggiornamento cumulativo minimo di [KB4517389](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4517389), rilasciato l'8 ottobre 2019.
+    - Aggiornamento dello stack di manutenzione minimo di [KB4520390](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4520390), rilasciato il 24 settembre 2019.
+  - Questo aggiornamento, come qualsiasi altro aggiornamento delle funzionalità, non è disponibile per l'importazione da `https:\\catalog.update.microsoft.com`.
+  - L'aggiornamento verrà sincronizzato automaticamente con WSUS se si dispone della classificazione del prodotto e degli **aggiornamenti** di **Windows 10, versione 1903 e successive** selezionata per la sincronizzazione.
+  - Nella console di Configuration Manager passare all'area di lavoro **raccolta software** , espandere **manutenzione di Windows 10**e selezionare il nodo **tutti gli aggiornamenti di Windows 10** . Cercare i termini "Enablement" o "4517245".
+
+    > [!TIP]
+    > Poiché si tratta di aggiornamenti delle funzionalità, non sono inclusi nel nodo **tutti gli aggiornamenti software** .
+
+- Windows 10, versione 1809 e client precedenti vengono aggiornati con un singolo aggiornamento della funzionalità diretta.
+  - Questo è esattamente come tutte le altre installazioni precedenti per gli aggiornamenti delle funzionalità eseguite per Windows 10.
+
+> [!NOTE]
+> Sia il pacchetto di abilitazione che l'aggiornamento tradizionale delle funzionalità per Windows 10, versione 1909, vengono visualizzati come "installati" nella creazione di report, indipendentemente dal percorso usato per installarlo.
+
+### <a name="windows-10-version-1903-and-later"></a>Windows 10 versione 1903 e successive
+
+**Windows 10 versione 1903 e successive** è stato aggiunto a Microsoft Update come prodotto a sé stante, anziché all'interno del prodotto **Windows 10** come le versioni precedenti. A causa di questa modifica è necessario eseguire una serie di passaggi manuali per assicurarsi che i client visualizzino questi aggiornamenti. È stato aiutato a ridurre il numero di passaggi manuali da eseguire per il nuovo prodotto nella versione Configuration Manager 1906. <!--4682946-->
+
+Quando si esegue l'aggiornamento a Configuration Manager versione 1906 e il prodotto **Windows 10** è selezionato per la sincronizzazione, vengono eseguite automaticamente le azioni seguenti:
+- Il prodotto **Windows 10 versione 1903 e successive** viene aggiunto per la sincronizzazione.
+- Le [regole di distribuzione automatica](/sccm/sum/deploy-use/automatically-deploy-software-updates#bkmk_adr-process) contenenti il prodotto **Windows 10** verranno aggiornate in modo da includere **Windows 10 versione 1903 e successive**.
+- I [piani di manutenzione](/sccm/osd/deploy-use/manage-windows-as-a-service#servicing-plan-workflow) vengono aggiornati in modo che includano il prodotto **Windows 10 versione 1903 e successive**.
 
 ## <a name="bkmk_WIfB"></a>Programma Windows Insider
 <!--3556023-->

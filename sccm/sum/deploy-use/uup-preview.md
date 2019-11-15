@@ -2,7 +2,7 @@
 title: Anteprima di UUP
 titleSuffix: Configuration Manager
 description: Istruzioni per l'anteprima dell'integrazione UUP
-ms.date: 10/25/2019
+ms.date: 11/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3000710cf90d9f2d0482bcc2faa37174f8f8190
-ms.sourcegitcommit: 9ed9551c15abc36f38c92aaeef60dbb699ae7cd8
+ms.openlocfilehash: 1dbb2ecb6cbac9e8085daafc577e82bc9e9c2b5e
+ms.sourcegitcommit: 3141fa75c410586fcb316ac7b951e28f7cb0f3a7
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72984334"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73962155"
 ---
 # <a name="uup-private-preview-instructions"></a>Istruzioni per l'anteprima privata di UUP
 
@@ -100,9 +100,14 @@ Per installare correttamente gli aggiornamenti di UUP, installare entrambi gli a
 
 | Versione di Windows 10 | Livello di conformità minimo | Aggiornamento del catalogo aggiuntivo |
 | ------------------ | ------------------------ | ------------------ |
-| **Windows 10, versione 1809** | 2019 agosto, [KB4511553](https://support.microsoft.com/help/4511553/windows-10-update-kb4511553) | [KB4514987](https://www.catalog.update.microsoft.com/search.aspx?q=4514987) |
-| **Windows 10, versione 1803** | 2019 aprile, [KB4493464](https://support.microsoft.com/help/4493464/windows-10-update-kb4493464) | [KB4512745](https://www.catalog.update.microsoft.com/search.aspx?q=4512745) |
-| **Windows 10, versione 1709** | 2019 aprile, [KB4493441](https://support.microsoft.com/help/4493441/windows-10-update-kb4493441) | [KB4512744](https://www.catalog.update.microsoft.com/search.aspx?q=4512744) |
+| **Windows 10, versione 1903** | RTM | 7 novembre 2019, [KB4529943](https://www.catalog.update.microsoft.com/search.aspx?q=4529943) |
+| **Windows 10, versione 1809** | 2019 agosto, [KB4511553](https://support.microsoft.com/help/4511553/windows-10-update-kb4511553) | 7 novembre 2019, [KB4514987](https://www.catalog.update.microsoft.com/search.aspx?q=4514987) |
+| **Windows 10, versione 1803** | 2019 aprile, [KB4493464](https://support.microsoft.com/help/4493464/windows-10-update-kb4493464) | 7 novembre 2019, [KB4512745](https://www.catalog.update.microsoft.com/search.aspx?q=4512745) |
+| **Windows 10, versione 1709** | 2019 aprile, [KB4493441](https://support.microsoft.com/help/4493441/windows-10-update-kb4493441) | 7 novembre 2019, [KB4512744](https://www.catalog.update.microsoft.com/search.aspx?q=4512744) |
+
+> [!IMPORTANT]
+> - Se si applicano gli aggiornamenti del 12 novembre 2019 al client prima di applicare il 7 novembre 2019 aggiornamento del catalogo aggiuntivo, le modifiche apportate all'agente Windows Update necessarie per il supporto di UUP verranno sovrascritte. Per correggere i client in tale scenario, applicare l'aggiornamento del catalogo aggiuntivo dopo il 12 novembre 2019 gli aggiornamenti installati.
+> - Se si applica un aggiornamento della funzionalità al client, sarà necessario reinstallare l'aggiornamento del catalogo aggiuntivo dopo il completamento dell'aggiornamento.
 
 ### <a name="4-allow-clients-to-download-delta-content-when-available"></a>4. Consenti ai client di scaricare contenuto differenziale quando disponibile
 
