@@ -1,7 +1,7 @@
 ---
-title: Novità di analisi desktop
+title: Novità di Desktop Analytics
 titleSuffix: Configuration Manager
-description: Riepilogo delle nuove funzionalità della versione mensile più recente del servizio cloud di analisi dei desktop.
+description: Riepilogo delle nuove funzionalità della versione mensile più recente del servizio cloud Desktop Analytics.
 ms.date: 10/23/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -13,74 +13,74 @@ ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: 9e72ffc07d1c1e833b96131095b88a6fb3d269c3
 ms.sourcegitcommit: 07756e9b4ed7b134e32349acb1eeae93c6de9e28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 10/29/2019
 ms.locfileid: "73049472"
 ---
-# <a name="whats-new-in-desktop-analytics"></a>Novità di analisi desktop
+# <a name="whats-new-in-desktop-analytics"></a>Novità di Desktop Analytics
 
-Scopri le novità di ogni mese in analisi desktop.
+Informazioni sulle novità mensili di Desktop Analytics.
 
 > [!Tip]
-> Ogni aggiornamento mensile può richiedere fino a tre giorni per l'implementazione. Alcune funzionalità possono essere implementate in diverse settimane e potrebbero non essere disponibili per tutti i clienti nella prima settimana.
+> L'implementazione degli aggiornamenti mensili può richiedere fino a tre giorni. Alcune funzionalità possono essere implementate in diverse settimane e durante la prima è possibile che non siano disponibili per tutti i clienti.
 
 Per ricevere una notifica quando questa pagina viene aggiornata, copiare e incollare l'URL seguente nel lettore di feed RSS: `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+desktop+analytics+-+Configuration+Manager%22&locale=en-us`
 <!-- a locale is required for the RSS search string -->
 
-## <a name="october-2019"></a>2019 ottobre
+## <a name="october-2019"></a>Ottobre 2019
 
-### <a name="improvements-to-compatibility-recommendations"></a>Miglioramenti alle raccomandazioni per la compatibilità
+### <a name="improvements-to-compatibility-recommendations"></a>Miglioramenti ai consigli per la compatibilità
 
 <!-- 3594545 -->
 
-Desktop Analytics fornisce ora ulteriori dettagli quando rileva che l'aggiornamento di Windows rimuoverà completamente o parzialmente un'applicazione o un driver. Per ulteriori informazioni, vedere [Compatibility assessment](/sccm/desktop-analytics/compat-assessment#asset-is-removed-during-upgrade).
+Desktop Analytics offre ora maggiori dettagli quando rileva che l'aggiornamento di Windows causerà la rimozione completa o parziale di un'applicazione o un driver. Per altre informazioni, vedere [Valutazione della compatibilità](/sccm/desktop-analytics/compat-assessment#asset-is-removed-during-upgrade).
 
 ### <a name="migrate-from-windows-analytics-to-existing-tenant"></a>Eseguire la migrazione da Windows Analytics al tenant esistente
 
 <!-- 5202803 -->
 
-È ora possibile migrare gli input da un'area di lavoro di Windows Analytics esistente dopo l'onboarding in desktop Analytics. Per ulteriori informazioni, vedere le domande frequenti per [i clienti esistenti di Windows Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
+È ora possibile migrare gli input da un'area di lavoro di Windows Analytics esistente dopo l'onboarding in Desktop Analytics. Per altre informazioni, vedere le domande frequenti per [Clienti esistenti di Windows Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
 
-## <a name="september-2019"></a>2019 settembre
+## <a name="september-2019"></a>Settembre 2019
 
-### <a name="migrate-inputs-from-windows-analytics"></a>Migrare gli input da Windows Analytics
+### <a name="migrate-inputs-from-windows-analytics"></a>Eseguire la migrazione degli input da Windows Analytics
 
 <!-- 4252663 -->
 
-Durante l'onboarding, è ora possibile migrare gli input da un'area di lavoro di Windows Analytics esistente. Per ulteriori informazioni, vedere le domande frequenti per [i clienti esistenti di Windows Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
+Durante l'onboarding è ora possibile eseguire la migrazione degli input da un'area di lavoro di Windows Analytics esistente. Per altre informazioni, vedere le domande frequenti per [Clienti esistenti di Windows Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
 
-### <a name="offboard-from-desktop-analytics"></a>Offboard da desktop Analytics
+### <a name="offboard-from-desktop-analytics"></a>Eseguire l'offboarding da Desktop Analytics
 
 <!-- 4972396 -->
 
-Se si configura analisi desktop nell'ambiente, ma si vuole smettere di usare il servizio, è ora possibile chiudere l'account. Se si cambia idea in 90 giorni, è possibile riattivare l'account. Per ulteriori informazioni, vedere [come chiudere l'account](/sccm/desktop-analytics/account-close).
+Se si configura Desktop Analytics nell'ambiente ma si vuole smettere di usare il servizio, è ora possibile chiudere l'account. Se si cambia idea entro 90 giorni, è possibile riattivarlo. Per altre informazioni, vedere [Come chiudere l'account](/sccm/desktop-analytics/account-close).
 
 
-## <a name="august-2019"></a>2019 agosto
+## <a name="august-2019"></a>Agosto 2019
 
 ### <a name="reset-your-account"></a>Reimpostare l'account
 
 <!-- 3733897 -->
 
-Se si configura analisi desktop nell'ambiente, ma si vuole ricominciare con l'onboarding e la registrazione, è ora possibile reimpostarla. Per altre informazioni sul processo, vedere [reimpostare l'account](/sccm/desktop-analytics/account-reset).
+Se si configura Desktop Analytics nell'ambiente ma si vuole ricominciare con l'onboarding e la registrazione, è ora possibile reimpostare l'account. Per altre informazioni sul processo, vedere [Reimpostare l'account](/sccm/desktop-analytics/account-reset).
 
 ### <a name="automatic-upgrade-decision-of-system-and-store-apps"></a>Decisione di aggiornamento automatico delle app di sistema e dello Store
 
 <!-- 3587232 -->
 
-Per ridurre il lavoro richiesto per l'annotazione di app rilevanti, determinati tipi di app vengono automaticamente contrassegnati come *non importanti*. La decisione di aggiornamento del piano di distribuzione per queste app è inoltre contrassegnata come *pronta*. Le app seguenti sono compatibili e continueranno a funzionare dopo l'aggiornamento di Windows:
+Per facilitare l'annotazione di app importanti, alcuni tipi di app vengono contrassegnati automaticamente come *Non importante*. La decisione di aggiornamento del piano di distribuzione per queste app è contrassegnata anche con *Pronto*. Le app seguenti sono compatibili e continueranno a funzionare dopo l'aggiornamento di Windows:
 
 - App di sistema e componenti pubblicati da Microsoft
 
-- App gestite e aggiornate dalla Microsoft Store
+- App gestite e aggiornate da Microsoft Store
 
-Per ulteriori informazioni, vedere l' [aggiornamento automatico decisione delle app di sistema e dello Store](/sccm/desktop-analytics/about-assets#bkmk_plan-autoapp).
+Per altre informazioni, vedere [Decisione di aggiornamento automatico delle app di sistema e dello Store](/sccm/desktop-analytics/about-assets#bkmk_plan-autoapp).
 
 
 ## <a name="whats-new-in-configuration-manager"></a>Novità di Configuration Manager
 
-La documentazione di analisi desktop fa sempre riferimento alla funzionalità della versione più recente di Configuration Manager Current Branch. Per ulteriori informazioni sulle modifiche più recenti in Configuration Manager, vedere gli articoli seguenti:
+La documentazione di Desktop Analytics fa sempre riferimento alla funzionalità della versione più recente di Configuration Manager Current Branch. Per altre informazioni sulle modifiche più recenti di Configuration Manager, vedere gli articoli seguenti:
 
 <!-- - [What's new in version 1910](/sccm/core/plan-design/changes/whats-new-in-version-1910#bkmk_da) -->
 

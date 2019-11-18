@@ -7,12 +7,12 @@ ms.author: aaroncz
 ms.prod: configuration-manager
 ms.topic: conceptual
 ms.date: 04/19/2019
-ms.openlocfilehash: 8157ee2212e18d4938beabd40f16e66a319d0b8c
-ms.sourcegitcommit: cab3dba5ebfe90f28cedee03c1840c9a395160cc
+ms.openlocfilehash: 93ddf18f78667058b137368a4948ac3d4dc38288
+ms.sourcegitcommit: 9e80902f586342e5eea48febb6da7594f2cc9c34
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65849295"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73912964"
 ---
 # <a name="system-center-configuration-manager-site-sizing-and-performance-faq"></a>Domande frequenti sulle dimensioni e le prestazioni del sito di System Center Configuration Manager
 
@@ -34,7 +34,7 @@ Per i dischi contenenti i file di database SQL, usare la formattazione NTFS o Re
 
 Le moderne matrici di unità SSD e Archiviazione Premium di Azure assicurano un numero elevato di operazioni di I/O al secondo in un singolo volume e con un numero limitato di dischi. Si aggiungono, in genere, altre unità a una matrice per ottenere archiviazione aggiuntiva, non per migliorare la velocità effettiva. Se si usano dischi fisici basati su spindle, potrebbe servire un numero più elevato di operazioni di I/O al secondo rispetto a quelle generabili in un singolo volume. È consigliabile allocare il 60% delle operazioni di I/O al secondo e dello spazio su disco totale consigliato al file con estensione *mdf*, il 20% al file con estensione *ldf* e il 20% ai file di log e di dati temporanei. Il file con estensione *ldf* e tutti i file temporanei possono risiedere in un unico volume con il 40%, cioè 20% + 20%, delle operazioni di I/O al secondo allocate.
 
-Per impostazione predefinita, SQL crea un solo file di dati temporanei. È consigliabile tuttavia crearne di più, per evitare blocchi di SQL e attese per accedere all'unico file. Le opinioni della community divergono rispetto al miglior numero di file di dati temporanei da creare, che varia da quattro a otto. I test svolti rivelano che la differenza tra quattro e otto è minima, pertanto è possibile creare quattro file di dati temporanei *delle stesse dimensioni*. I file di dati tempdb devono occupare al massimo il 20-25% delle dimensioni dell'intero database.
+Le versioni di SQL Server precedenti a SQL Server 2016 creavano per impostazione predefinita un solo file di dati temporanei. È consigliabile tuttavia crearne di più, per evitare blocchi di SQL e attese per accedere all'unico file. Le opinioni della community divergono rispetto al miglior numero di file di dati temporanei da creare, che varia da quattro a otto. I test svolti rivelano che la differenza tra quattro e otto è minima, pertanto è possibile creare quattro file di dati temporanei *delle stesse dimensioni*. I file di dati tempdb devono occupare al massimo il 20-25% delle dimensioni dell'intero database.
 
 ### <a name="are-there-any-other-recommendations-for-disk-setup"></a>Ci sono le altre indicazioni per la configurazione dei dischi?
 

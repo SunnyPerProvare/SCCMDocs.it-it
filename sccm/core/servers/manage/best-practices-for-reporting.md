@@ -10,12 +10,12 @@ ms.assetid: 64f9d931-33f1-456f-a4e4-0ec077465bd0
 author: mestew
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6e57099ae31ccc51324dca342265337c79afddd
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.openlocfilehash: 17f120e61b581680185c038d2fa4289bb58a3f39
+ms.sourcegitcommit: edc7a5ad6a2eb72d0448d4689b9534f7e6f4d2b7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65497630"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73623392"
 ---
 # <a name="best-practices-for-reporting-in-system-center-configuration-manager"></a>Procedure consigliate per la creazione di report in System Center Configuration Manager
 
@@ -24,13 +24,16 @@ ms.locfileid: "65497630"
 Usare le seguenti procedure consigliate per la creazione di report in System Center Configuration Manager:  
 
 ## <a name="for-best-performance-install-the-reporting-services-point-on-a-remote-site-system-server"></a>Per ottenere prestazioni ottimali, installare il punto di Reporting Services in un server di sistema del sito remoto  
- Benché sia possibile installare il punto di Reporting Services nel server del sito o in un sistema del sito remoto, l'installazione del punto di Reporting Services in un server di sistema del sito remoto garantisce prestazioni migliori.  
+Benché sia possibile installare il punto di Reporting Services nel server del sito o in un sistema del sito remoto, l'installazione del punto di Reporting Services in un server di sistema del sito remoto garantisce prestazioni migliori.  
 
 ## <a name="optimize-sql-server-reporting-services-queries"></a>Ottimizzare le query di SQL Server Reporting Services  
- I ritardi di reporting sono in genere causati dal tempo necessario per eseguire le query e recuperare risultati. Se si utilizza Microsoft SQL Server, strumenti come Analizzatore query e Profiler consentono di ottimizzare le query.  
+I ritardi di reporting sono in genere causati dal tempo necessario per eseguire le query e recuperare risultati. Se si utilizza Microsoft SQL Server, strumenti come Analizzatore query e Profiler consentono di ottimizzare le query.  
 
 ## <a name="schedule-report-subscription-processing-to-run-outside-standard-office-hours"></a>Pianificare l'elaborazione delle sottoscrizioni report per l'esecuzione in orari non lavorativi  
- Se possibile, pianificare l'elaborazione delle sottoscrizioni report per l'esecuzione in orari non lavorativi al fine di ridurre al minimo l'elaborazione della CPU nel server di database del sito di Configuration Manager. In questo modo è inoltre possibile incrementare la disponibilità per le richieste di report impreviste.  
+Se possibile, pianificare l'elaborazione delle sottoscrizioni report per l'esecuzione in orari non lavorativi al fine di ridurre al minimo l'elaborazione della CPU nel server di database del sito di Configuration Manager. In questo modo è inoltre possibile incrementare la disponibilità per le richieste di report impreviste.  
+
+## <a name="updating-built-in-reports"></a>Aggiornamento di report predefiniti
+Se si modifica un report standard, quando il sito viene aggiornato, il report viene rinominato con un prefisso di sottolineatura (`_`). Questo comportamento assicura che l'aggiornamento del sito non sovrascriva il report modificato dal report standard.
 
 ## <a name="next-steps"></a>Passaggi successivi
 [Configurare la creazione di report](configuring-reporting.md)

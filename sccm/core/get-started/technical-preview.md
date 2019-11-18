@@ -2,7 +2,7 @@
 title: Versioni di Technical Preview
 titleSuffix: Configuration Manager
 description: Informazioni sulla versione Technical Preview che consente di testare nuove funzionalità e capacità in Configuration Manager.
-ms.date: 10/18/2019
+ms.date: 11/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 330a1a1b92a111836b49dcb0127b772d2c0cc636
-ms.sourcegitcommit: 90f51008deeabf2a434bd12f81bb25669045029c
+ms.openlocfilehash: 78b7e88436a0a3031603545a9104d7a5b1d85fd4
+ms.sourcegitcommit: edc7a5ad6a2eb72d0448d4689b9534f7e6f4d2b7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72684801"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73623443"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Technical Preview per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
 Questo articolo include informazioni dettagliate sul ramo Technical Preview mensile di Configuration Manager. La versione Technical Preview introduce nuove funzionalità su cui Microsoft sta lavorando. Vengono introdotte nuove funzionalità non ancora incluse in Current Branch di Configuration Manager. Queste funzionalità potrebbero essere alla fine incluse in un aggiornamento a Current Branch. Prima di finalizzare le funzionalità, Microsoft invita gli utenti a provarle e a inviare commenti e suggerimenti.  
 
@@ -97,10 +97,11 @@ Microsoft supporta ogni versione Technical Preview fino a quando diventano dispo
 
 ### <a name="active-baseline-versions"></a>Versioni di base attive
 
-È possibile installare una versione di base al massimo per un anno dopo il rilascio. Quando si installa un nuovo sito Technical Preview, se sono disponibili più versioni di base, usare la versione di base più recente.
+È possibile installare una versione di base al massimo per un anno dopo il rilascio. Quando si installa un nuovo sito Technical Preview usare la versione di base più recente.
 
-- **Technical Preview versione 1907**: Configuration Manager Technical Preview versione 1907 è disponibile sia come aggiornamento nella console che come nuova versione di base. Scaricare le versioni di base dal [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
+- **Technical Preview versione 1911**: Configuration Manager Technical Preview Branch versione 1911 è disponibile sia come aggiornamento nella console che come nuova versione di base.
 
+Scaricare una versione di base da [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
 
 ## <a name="BKMK_TPFeedback"></a> Invio di commenti e suggerimenti  
 
@@ -118,9 +119,21 @@ Le funzionalità seguenti sono disponibili con la versione Technical Preview di 
 
 <!-- This is the full list of new features in the latest TP release -->
 
-### <a name="technical-preview-version-1910"></a>Technical Preview versione 1910
+### <a name="technical-preview-version-1911"></a>Technical Preview versione 1911
 
 <!-- - [title](/sccm/core/get-started/2019/technical-preview-1901#bkmk_anchor) <!--ID-->
+
+- [Microsoft Endpoint Configuration Manager](/sccm/core/get-started/2019/technical-preview-1911#bkmk_mem) <!--4960084-->
+- [Supporto di Microsoft Connected Cache per le app Win32 di Intune](/sccm/core/get-started/2019/technical-preview-1911#bkmk_cache) <!--5032900-->
+
+> [!Note]  
+> Le funzionalità disponibili in una versione precedente della Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità aggiunte alla versione Current Branch di Configuration Manager rimangono disponibili nel ramo Technical Preview.  
+
+## <a name="features-in-recent-technical-previews"></a>Funzionalità nelle anteprime tecniche recenti
+
+Le funzionalità seguenti sono state rilasciate in versioni precedenti di Configuration Manager Technical Preview Branch dopo la versione Current Branch 1906:
+
+### <a name="technical-preview-version-1910"></a>Technical Preview versione 1910
 
 - [Distribuire Microsoft Edge versione 77 e successive](/sccm/core/get-started/2019/technical-preview-1910#bkmk_Microsoft_Edge) <!--4561024-->
 - [Includere linee di base di configurazione personalizzate come parte della valutazione dei criteri di conformità](/sccm/core/get-started/2019/technical-preview-1910#bkmk_CAbaselines) <!--3608345-->
@@ -132,14 +145,6 @@ Le funzionalità seguenti sono disponibili con la versione Technical Preview di 
 - [Miglioramenti alla ricerca nella console](/sccm/core/get-started/2019/technical-preview-1910#bkmk_search) <!--4640570-->
 - [Nuova variabile per l'aggiornamento sul posto di Windows 10](/sccm/core/get-started/2019/technical-preview-1910#bkmk_osdvar) <!--4680263-->
 - [Miglioramenti al supporto per Desktop virtuale Windows](/sccm/core/get-started/2019/technical-preview-1910#bkmk_wvd) <!--4737447-->
-
-> [!Note]  
-> Le funzionalità disponibili in una versione precedente della Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità aggiunte alla versione Current Branch di Configuration Manager rimangono disponibili nel ramo Technical Preview.  
-
-
-## <a name="features-in-recent-technical-previews"></a>Funzionalità nelle anteprime tecniche recenti
-
-Le funzionalità seguenti sono state rilasciate in versioni precedenti di Configuration Manager Technical Preview Branch dopo la versione Current Branch 1906:
 
 ### <a name="technical-preview-version-1909"></a>Technical Preview versione 1909
 

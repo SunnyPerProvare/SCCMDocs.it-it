@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e76aabecf9777cc93d4df9d4094f9f6fc0d94ff
-ms.sourcegitcommit: fb5f1df6222b6861e296c3b673789df9c2721114
+ms.openlocfilehash: b8f403f1798f3bbb80ed75844e2a272d9d8268e4
+ms.sourcegitcommit: b0f1c2fe1e034f0fe8676f1528249a4b26f54bd3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72778155"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73704729"
 ---
 # <a name="accounts-used-in-configuration-manager"></a>Account usati in Configuration Manager
 
@@ -652,7 +652,7 @@ Importazione di contratti multilicenza per Asset Intelligence. ConfigMgr concede
 
 ### <a name="smsdbrole_aius"></a>smsdbrole_AIUS
 
-Sincronizzazione aggiornamenti di Asset Intelligence. ConfigMgr concede all'account computer che ospita l'account del punto di sincronizzazione di Asset Intelligence l'accesso per ottenere i dati del proxy di Asset Intelligence e visualizzare i dati AI in sospeso per l'upload.
+Sincronizzazione aggiornamenti di Asset Intelligence. ConfigMgr concede all'account computer che ospita l'account del punto di sincronizzazione di Asset Intelligence l'accesso per ottenere i dati del proxy di Asset Intelligence e visualizzare i dati di AI in sospeso per l'upload.
 
 ### <a name="smsdbrole_amtsp"></a>smsdbrole_AMTSP
 
