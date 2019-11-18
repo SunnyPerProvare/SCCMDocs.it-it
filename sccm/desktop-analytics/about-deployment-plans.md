@@ -1,7 +1,7 @@
 ---
-title: Piani di distribuzione in desktop Analytics
+title: Piani di distribuzione in Desktop Analytics
 titleSuffix: Configuration Manager
-description: Informazioni sui piani di distribuzione in analisi desktop.
+description: Informazioni sui piani di distribuzione in Desktop Analytics.
 ms.date: 08/14/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -13,118 +13,118 @@ manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a36093b88887b6722d07c666dead67a9aa974b8a
 ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 10/16/2019
 ms.locfileid: "72387091"
 ---
-# <a name="about-deployment-plans-in-desktop-analytics"></a>Informazioni sui piani di distribuzione in desktop Analytics
+# <a name="about-deployment-plans-in-desktop-analytics"></a>Informazioni sui pani di distribuzione in Desktop Analytics
 
-Desktop Analytics raccoglie e analizza i dati dei dispositivi, delle applicazioni e dei driver nell'organizzazione. In base a questa analisi e all'input, è possibile usare il servizio per creare piani di distribuzione per Windows 10. I piani di distribuzione includono le seguenti funzionalità:  
+Desktop Analytics raccoglie e analizza i dati dei dispositivi, delle applicazioni e dei driver nell'organizzazione. In base a questa analisi e all'input dell'utente, è possibile usare il servizio per creare piani di distribuzione per Windows 10. I piani di distribuzione hanno le caratteristiche seguenti:  
 
-- Consigliare automaticamente i dispositivi da includere nei progetti pilota  
+- Suggeriscono automaticamente quali dispositivi includere nei progetti pilota  
 
-- Identificare i problemi di compatibilità e suggerire le mitigazioni  
+- Identificano i problemi di compatibilità e suggeriscono le mitigazioni  
 
-- Valutare l'integrità della distribuzione prima, durante e dopo gli aggiornamenti  
+- Valutano l'integrità della distribuzione prima, durante e dopo gli aggiornamenti  
 
-- Tenere traccia dello stato di avanzamento della distribuzione  
+- Tengono traccia dello stato della distribuzione  
 
-Come parte del piano di distribuzione, eseguire le azioni seguenti:  
+Nel piano di distribuzione sono previste le azioni seguenti:  
 
-- Definire le versioni di Windows 10 che si desidera distribuire  
+- Definire le versioni di Windows 10 da distribuire  
 
 - Scegliere i gruppi di dispositivi in cui si vuole eseguire la distribuzione  
 
-- Creare regole di conformità per la distribuzione  
+- Creare regole di idoneità per la distribuzione  
 
 - Definire l'importanza delle app  
 
-- Scegli dispositivi pilota basati su consigli automatici  
+- Scegliere i dispositivi pilota in base ai consigli automatici  
 
-- Decidere come risolvere i problemi con le app in base alle raccomandazioni di analisi desktop  
+- Decidere come risolvere i problemi con le app in base ai consigli di Desktop Analytics  
 
-Per impostazione predefinita, desktop Analytics aggiorna quotidianamente i dati del piano di distribuzione. Tutte le modifiche apportate all'interno di un piano di distribuzione, ad esempio l'assegnazione dell'importanza a un'app o la scelta di un dispositivo da includere in un progetto pilota, richiedono fino a 24 ore per l'elaborazione. Per velocizzare questo processo, richiedere un aggiornamento dati su richiesta. Per altre informazioni, vedere [domande frequenti su desktop Analytics](/sccm/desktop-analytics/faq#can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal).  
+Per impostazione predefinita, Desktop Analytics aggiorna quotidianamente i dati del piano di distribuzione. Tutte le modifiche apportate in un piano di distribuzione, ad esempio l'assegnazione dell'importanza a un'app o la scelta di un dispositivo da includere in un progetto pilota, vengono elaborate nelle 24 ore. Per velocizzare questo processo, richiedere un aggiornamento dati su richiesta. Per altre informazioni, vedere [Domande frequenti su Desktop Analytics](/sccm/desktop-analytics/faq#can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal).  
 
-Dopo la connessione di desktop Analytics a Configuration Manager, selezionare le raccolte nei piani di distribuzione. Questa integrazione consente quindi di distribuire Windows in una raccolta basata sui dati di analisi del desktop.
-
-
-
-## <a name="readiness-rules"></a>Regole di conformità
-
-Nei piani di distribuzione sono disponibili le seguenti regole di conformità:
-
-- Indica se i dispositivi ricevono automaticamente driver da Windows Update. Se i dispositivi ricevono gli aggiornamenti dei driver da Windows Update, tutti i problemi relativi ai driver identificati come parte della valutazione della conformità vengono contrassegnati automaticamente come **pronti**.  
-
-- Soglia numero installazione bassa per le app di Windows. Se un'app è installata in una percentuale superiore di computer rispetto a questa soglia, il piano di distribuzione contrassegna l'app come **degno**di nota. Questo tag significa che è possibile decidere quanto sia importante eseguire il test dell'app durante la fase pilota.  
+Dopo aver connesso Desktop Analytics a Configuration Manager, selezionare le raccolte nei piani di distribuzione. Questa integrazione consente di distribuire Windows in una raccolta che si basa sui dati di Desktop Analytics.
 
 
-## <a name="plan-assets"></a>Pianificare asset
+
+## <a name="readiness-rules"></a>Regole di idoneità
+
+Nei piani di distribuzione sono disponibili le regole di idoneità seguenti:
+
+- Se i dispositivi ricevono automaticamente i driver da Windows Update. Se i dispositivi ricevono gli aggiornamenti dei driver da Windows Update, tutti i problemi relativi ai driver identificati nella valutazione dell'idoneità vengono contrassegnati automaticamente con **Pronto**.  
+
+- Soglia del numero di installazioni basso per le app Windows. Se un'app viene installata in una percentuale di computer superiore a questa soglia, il piano di distribuzione contrassegna l'app come **Importante**. In questo modo si può decidere quanto sia importante eseguire il test dell'app durante la fase pilota.  
+
+
+## <a name="plan-assets"></a>Risorse del piano
 
 <!-- 4670224 -->
 
-Mentre l'area [Asset](/sccm/desktop-analytics/about-assets) Mostra anche dispositivi e app, l'area **asset del piano** in un piano di distribuzione specifico include informazioni aggiuntive.
+Mentre l'area [Risorse](/sccm/desktop-analytics/about-assets) visualizza anche i dispositivi e le app, l'area **Risorse del piano** in un piano di distribuzione specifico include informazioni aggiuntive.
 
 ### <a name="devices"></a>Dispositivi
 
-Vedere la **decisione di aggiornamento di Windows** per ogni dispositivo nel piano di distribuzione.
+Vedere la **Decisione relativa all'aggiornamento di Windows** per ogni dispositivo nel piano di distribuzione.
 
-La decisione di aggiornamento di Windows per **sostituire il dispositivo** può essere dovuta a uno dei motivi seguenti:
+La decisione di aggiornamento di Windows di **sostituire il dispositivo** può essere presa per uno dei motivi seguenti:
 
-- Il controllo del processore richiesto di Windows 10 non è riuscito. Per ulteriori informazioni, vedere [requisiti hardware minimi](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview#31-processor).
-- Ha un blocco BIOS
-- Memoria insufficiente
+- Il controllo del processore richiesto di Windows 10 non è riuscito. Per altre informazioni, vedere [Requisiti hardware minimi](https://docs.microsoft.com/windows-hardware/design/minimum/minimum-hardware-requirements-overview#31-processor).
+- È presente un blocco BIOS
+- La memoria non è sufficiente
 - Un componente critico di avvio nel sistema ha un driver bloccato
 - Non è possibile aggiornare la marca e il modello specifici
-- È disponibile un componente della classe di visualizzazione con un blocco driver con tutti gli attributi seguenti:
+- Un componente della classe di visualizzazione ha un blocco di driver con tutti gli attributi seguenti:
     - Non eseguire l'override
-    - Nessun driver nella nuova versione del sistema operativo
-    - Non è già Windows Update
-- Nel sistema è presente un altro componente plug-and-Play che blocca l'aggiornamento
-- È disponibile un componente wireless che usa un driver emulato da XP
-- Un componente di rete con una connessione attiva perderà il relativo driver. In altre parole, dopo l'aggiornamento potrebbe verificarsi una perdita di connettività di rete.
+    - Non esistono driver nella nuova versione del sistema operativo
+    - Non è ancora in Windows Update
+- Un altro componente Plug and Play nel sistema blocca l'aggiornamento
+- Un componente wireless usa un driver di emulazione XP
+- Un componente di rete con una connessione attiva perderà il driver. In altre parole, dopo l'aggiornamento potrebbe verificarsi una perdita di connettività di rete.
 
-### <a name="apps"></a>Applicazioni
+### <a name="apps"></a>App
 
-Impostare la **decisione di aggiornamento** e l' **importanza** di questa app in questo piano di distribuzione. Per ulteriori informazioni, vedere [come creare piani di distribuzione](/sccm/desktop-analytics/create-deployment-plans).
+Impostare la **Decisione di aggiornamento** e l'**Importanza** per questa app in questo piano di distribuzione. Per altre informazioni, vedere [Come creare i piani di distribuzione](/sccm/desktop-analytics/create-deployment-plans).
 
-Nei dettagli dell'app è possibile vedere anche le informazioni seguenti: suggerimenti, fattori di rischio per la compatibilità e problemi noti di Microsoft. Utilizzare queste informazioni per impostare la **decisione di aggiornamento**. Per ulteriori informazioni, vedere [Compatibility assessment](/sccm/desktop-analytics/compat-assessment).
+Nei dettagli dell'app è possibile individuare anche le informazioni seguenti: consigli, fattori di rischio di compatibilità e problemi noti in Microsoft. Usare queste informazioni per impostare la **Decisione di aggiornamento**. Per altre informazioni, vedere [Valutazione della compatibilità](/sccm/desktop-analytics/compat-assessment).
 
-Le app che desktop Analytics Mostra come *degno* di nota si basano sulla soglia per il numero di installazioni basso per le regole di conformità del piano di distribuzione. Per altre informazioni, vedere [regole di conformità](/sccm/desktop-analytics/create-deployment-plans#readiness-rules).
+Le app ritenute *importanti* da Desktop Analytics si basano sulla soglia del numero di installazioni basso per le regole di idoneità del piano di distribuzione. Per altre informazioni, vedere [Regole di idoneità](/sccm/desktop-analytics/create-deployment-plans#readiness-rules).
 
    > [!Tip]
-   > Per altre informazioni sulla categoria di app "non importante", vedere l'argomento relativo alla [decisione di aggiornamento automatico delle app di sistema e dello Store](/sccm/desktop-analytics/about-assets#bkmk_plan-autoapp). <!-- 3587232 -->
+   > Per altre informazioni sulla categoria delle app "Non importante", vedere [Decisione di aggiornamento automatico delle app di sistema e dello Store](/sccm/desktop-analytics/about-assets#bkmk_plan-autoapp). <!-- 3587232 -->
 
 
 ### <a name="drivers"></a>Driver
 
-Vedere l'elenco dei driver inclusi in questo piano di distribuzione. Impostare la **decisione di aggiornamento**, esaminare le raccomandazioni di Microsoft e vedere fattori di rischio per la compatibilità.
+Vedere l'elenco dei driver inclusi in questo piano di distribuzione. Impostare la **Decisione di aggiornamento**, rivedere i consigli di Microsoft e i fattori di rischio di compatibilità.
 
 
 ## <a name="importance"></a>Importanza
 
-Come parte del piano di distribuzione, impostare l' *importanza* delle app. Desktop Analytics rileva queste app come installate nei dispositivi di destinazione. Questa impostazione aiuta desktop Analytics a determinare quali dispositivi include nella fase pilota della distribuzione.
+Il piano di distribuzione prevede l'impostazione dell'*importanza* delle app. Desktop Analytics rileva queste app come app installate nei dispositivi di destinazione. Questa impostazione consente a Desktop Analytics di determinare quali dispositivi includere nella fase pilota della distribuzione.
 
-Se un'app è installata in meno del 2% dei dispositivi di destinazione, il numero di **installazioni**è contrassegnato come basso. Il valore predefinito è due%. È possibile regolare la soglia nelle impostazioni di conformità da 0% a 10%. Desktop Analytics contrassegna automaticamente queste app come **pronte per l'aggiornamento**.  
+Se un'app è installata in meno del 2% dei dispositivi di destinazione, viene impostato il contrassegno **Numero di installazioni basso**. Il 2% è il valore predefinito. È possibile regolare la soglia nelle impostazioni di idoneità definendo un valore compreso tra da 0% e 10%. Desktop Analytics contrassegna automaticamente queste app come **Pronte per l'aggiornamento**.  
 
-Per le app, scegliere un'importanza **critica**, **importante**o **non importante**. Se si contrassegna uno come critico o importante, desktop Analytics include nella distribuzione pilota alcuni dispositivi con tale app. Il servizio include nel progetto pilota più istanze di un'app critica. Se un'app viene contrassegnata come non importante, desktop Analytics la imposta automaticamente su **pronto per l'aggiornamento**.
+Scegliere un'importanza per le app che può essere **Critica**, **Importante** o **Non importante**. Se si contrassegna un'app come critica o importante, Desktop Analytics include nella distribuzione pilota alcuni dispositivi con tale app. Il servizio include nel progetto pilota più istanze di un'app critica. Se si contrassegna un'app come non importante, Desktop Analytics la imposta automaticamente come **Pronta per l'aggiornamento**.
 
 
 
 ## <a name="pilot-devices"></a>Dispositivi pilota
 
-Desktop Analytics combina le informazioni di importanza con le impostazioni pilota globali. Viene quindi creata una raccomandazione per i dispositivi che devono far parte della distribuzione pilota. La distribuzione pilota consigliata include dispositivi con diverse configurazioni hardware e una o più istanze di tutte le app critiche e importanti. Se un'app è contrassegnata come critica, il servizio consiglia più dispositivi con tale app nel progetto pilota.
+Desktop Analytics combina le informazioni relative all'importanza con le impostazioni del progetto pilota globali. Consiglia quindi quali dispositivi includere nella distribuzione pilota. La distribuzione pilota consigliata include dispositivi con diverse configurazioni hardware e una o più istanze di tutte le app critiche e importanti. Se un'app è contrassegnata come critica, il servizio consiglia più dispositivi con tale app nel progetto pilota.
 
 
 
 ## <a name="deployment-plans-in-configuration-manager"></a>Piani di distribuzione in Configuration Manager
 
-Dopo aver creato un piano di distribuzione, usare Configuration Manager per distribuire i prodotti. Una volta avviata la distribuzione, desktop Analytics monitora la distribuzione in base alle impostazioni del piano.
+Dopo aver creato un piano di distribuzione, usare Configuration Manager per distribuire i prodotti. Quando la distribuzione viene avviata, Desktop Analytics la monitora in base alle impostazioni del piano.
 
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-- Informazioni [sulle risorse di analisi desktop](/sccm/desktop-analytics/about-assets): dispositivi, driver e app  
+- [Informazioni sugli asset di Desktop Analytics](/sccm/desktop-analytics/about-assets): dispositivi, driver e app  
 
 - [Informazioni sugli aggiornamenti della sicurezza e delle funzionalità](/sccm/desktop-analytics/about-updates)  
 

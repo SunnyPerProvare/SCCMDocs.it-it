@@ -1,7 +1,7 @@
 ---
-title: Aggiornamenti in desktop Analytics
+title: Aggiornamenti in Desktop Analytics
 titleSuffix: Configuration Manager
-description: Informazioni sugli aggiornamenti della sicurezza e delle funzionalità in desktop Analytics.
+description: Informazioni sugli aggiornamenti della sicurezza e delle funzionalità in Desktop Analytics.
 ms.date: 08/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -13,76 +13,76 @@ manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f090c80f70ef8d286a36236c48503817adb93591
 ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 10/16/2019
 ms.locfileid: "72387023"
 ---
-# <a name="updates-in-desktop-analytics"></a>Aggiornamenti in desktop Analytics
+# <a name="updates-in-desktop-analytics"></a>Aggiornamenti in Desktop Analytics
 
-Nel portale di analisi dei desktop visualizzare lo stato degli aggiornamenti della sicurezza e delle funzionalità. Selezionare questi nodi nel gruppo monitoraggio del menu principale di analisi desktop. Questi nodi forniscono informazioni dettagliate sullo stato di questi aggiornamenti nell'ambiente in uso.
+Nel portale di Desktop Analytics visualizzare lo stato degli aggiornamenti della sicurezza e delle funzionalità. Selezionare questi nodi nel gruppo Monitoraggio del menu principale di Desktop Analytics. Questi nodi offrono informazioni dettagliate sullo stato di questi aggiornamenti nell'ambiente in uso.
 
 
 ## <a name="security-updates"></a>Aggiornamenti della sicurezza
 
-Per esaminare lo stato corrente degli aggiornamenti della sicurezza, selezionare **aggiornamenti della sicurezza** nella sezione **monitoraggio** di analisi del desktop:
+Per verificare lo stato corrente degli aggiornamenti della sicurezza, selezionare **Aggiornamenti della sicurezza** nella sezione **Monitoraggio** di Desktop Analytics:
 
-![Nodo aggiornamenti della sicurezza di analisi desktop](media/security-updates.png)
+![Nodo Aggiornamenti della sicurezza di Desktop Analytics](media/security-updates.png)
 
 Questa vista riepiloga gli aggiornamenti della *sicurezza* per i dispositivi che eseguono Windows 10. I dispositivi nel grafico a barre sono suddivisi in categorie in base alle etichette seguenti:
 
-#### <a name="latest"></a>Ultima
+#### <a name="latest"></a>Più recente
 
 I dispositivi eseguono l'aggiornamento della sicurezza più recente per la versione e il canale.
 
 #### <a name="latest-1"></a>Più recente-1
 
-I dispositivi eseguono un aggiornamento della sicurezza di una versione precedente all'ultimo aggiornamento disponibile sul canale.
+I dispositivi eseguono un aggiornamento della sicurezza della versione precedente all'ultimo aggiornamento disponibile sul canale.
 
-#### <a name="older"></a>Precedente
+#### <a name="older"></a>Meno recente
 
-I dispositivi eseguono un aggiornamento della sicurezza precedente alla più recente-1.
+I dispositivi eseguono un aggiornamento della sicurezza precedente alla versione Più recente-1.
 
-#### <a name="not-measured"></a>Non misurato
+#### <a name="not-measured"></a>Not measured (Non misurato)
 
-Il dispositivo non è stato valutato da desktop Analytics. Questo stato include i dispositivi che eseguono dispositivi Windows 7, Windows 8.1 o Windows 10 registrati per il programma Windows Insider.  
+Il dispositivo non è stato valutato da Desktop Analytics. Questo stato include i dispositivi che eseguono Windows 7, Windows 8.1 o Windows 10 registrati per il Programma Windows Insider.  
 
-Se un dispositivo Windows 10 *non è autenticato* con una account Microsoft, Windows non segnala questi dati. Questa autenticazione viene in genere completata come parte del Installazione di Windows la configurazione guidata.<!-- 5148153 -->
+Se un dispositivo Windows 10 *non è autenticato* con un account Microsoft, Windows non visualizza questi dati. Questa autenticazione viene in genere completata come parte della configurazione guidata dell'Installazione di Windows.<!-- 5148153 -->
 
 
 ## <a name="feature-updates"></a>Aggiornamenti delle funzionalità
 
-Per esaminare lo stato corrente degli aggiornamenti delle funzionalità, selezionare **aggiornamenti funzionalità** nella sezione **monitoraggio** di analisi del desktop:
+Per verificare lo stato corrente degli aggiornamenti delle funzionalità, selezionare **Aggiornamenti delle funzionalità** nella sezione **Monitoraggio** di Desktop Analytics:
 
-![Nodo aggiornamenti funzionalità di analisi desktop](media/feature-updates.png)
+![Nodo Aggiornamenti delle funzionalità di Desktop Analytics](media/feature-updates.png)
 
 Questa vista riepiloga gli aggiornamenti delle *funzionalità* per i dispositivi che eseguono Windows 10.
 
-Per ulteriori informazioni sui periodi di servizio, vedere la pagina dei [fatti del ciclo](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)di vita di Windows.  
+Per altre informazioni sui periodi di assistenza, vedere [Date importanti nel ciclo di vita di Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).  
 
 I dispositivi nel grafico a barre sono suddivisi in categorie in base alle etichette seguenti:
 
-#### <a name="in-service"></a>Nel servizio
+#### <a name="in-service"></a>In servizio
 
 I dispositivi eseguono l'aggiornamento delle funzionalità più recente per la versione e il canale.  
 
-#### <a name="near-end-of-service"></a>Vicino alla fine del servizio
+#### <a name="near-end-of-service"></a>Fine del servizio imminente
 
 I dispositivi eseguono un aggiornamento delle funzionalità entro 90 giorni dalla fine del servizio.
 
 #### <a name="end-of-service"></a>Fine del servizio
 
-I dispositivi eseguono un aggiornamento delle funzionalità oltre la data di fine del servizio. Per informazioni dettagliate sulle date di fine del servizio, vedere [foglio dei fatti del ciclo](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)di vita di Windows.
+I dispositivi eseguono un aggiornamento delle funzionalità successivo alla data di fine del servizio. Per informazioni dettagliate sulle date di fine del servizio, vedere [Date importanti nel ciclo di vita di Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
 
-#### <a name="not-measured"></a>Non misurato
+#### <a name="not-measured"></a>Not measured (Non misurato)
 
-Il dispositivo non è stato valutato da desktop Analytics. Questo stato include i dispositivi che eseguono dispositivi Windows 7, Windows 8.1 o Windows 10 registrati per il programma Windows Insider.
+Il dispositivo non è stato valutato da Desktop Analytics. Questo stato include i dispositivi che eseguono Windows 7, Windows 8.1 o Windows 10 registrati per il Programma Windows Insider.
 
-Se un dispositivo Windows 10 *non è autenticato* con una account Microsoft, Windows non segnala questi dati. Questa autenticazione viene in genere completata come parte del Installazione di Windows la configurazione guidata.<!-- 5148153 -->
+Se un dispositivo Windows 10 *non è autenticato* con un account Microsoft, Windows non visualizza questi dati. Questa autenticazione viene in genere completata come parte della configurazione guidata dell'Installazione di Windows.<!-- 5148153 -->
 
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-- Informazioni [sulle risorse di analisi desktop](/sccm/desktop-analytics/about-assets): dispositivi, driver e app  
+- [Informazioni sugli asset di Desktop Analytics](/sccm/desktop-analytics/about-assets): dispositivi, driver e app  
 
 - [Informazioni sui piani di distribuzione](/sccm/desktop-analytics/about-deployment-plans)  
