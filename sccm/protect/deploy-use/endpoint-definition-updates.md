@@ -2,7 +2,7 @@
 title: Configurare gli aggiornamenti delle definizioni
 titleSuffix: Configuration Manager
 description: Informazioni su come selezionare e configurare metodi con Endpoint Protection in Configuration Manager per mantenere aggiornate le definizioni antimalware nei computer client.
-ms.date: 02/14/2017
+ms.date: 11/18/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 76a8317c92886a76c3a6bf8247ada51c87f6b2f4
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.openlocfilehash: af004cb6a2ed00472abbc784608f897868f45d22
+ms.sourcegitcommit: 5d539522103d0f019797d58aee8c32d3966cd1fa
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70892396"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74161623"
 ---
 # <a name="configure-definition-updates-for-endpoint-protection"></a>Configurare gli aggiornamenti delle definizioni per Endpoint Protection  
 
@@ -50,7 +50,8 @@ ms.locfileid: "70892396"
 
 3.  Aprire la pagina delle proprietà relativa a **Criterio antimalware predefinito** o creare un nuovo criterio antimalware. Per altre informazioni su come creare criteri antimalware, vedere [Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager](endpoint-antimalware-policies.md).
 
-4.  Nella sezione **Aggiornamenti delle definizioni** della finestra di dialogo delle proprietà antimalware fare clic su **Imposta origine**.
+4.  Nella sezione **aggiornamenti di intelligence** per la sicurezza della finestra di dialogo Proprietà Antimalware fare clic su **Imposta origine**.
+    - La sezione relativa agli **aggiornamenti delle definizioni** è stata rinominata in aggiornamenti di intelligence per la **sicurezza** a partire dalla versione Configuration Manager 1902.
 
 5.  Nella finestra di dialogo **Configura origini aggiornamenti definizioni** selezionare le origini da usare per gli aggiornamenti delle definizioni. È possibile fare clic su **Su** o **Giù** per modificare l'ordine in cui le origini vengono usate.
 

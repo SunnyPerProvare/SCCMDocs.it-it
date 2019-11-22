@@ -2,7 +2,7 @@
 title: Anteprima di UUP
 titleSuffix: Configuration Manager
 description: Istruzioni per l'anteprima dell'integrazione UUP
-ms.date: 11/08/2019
+ms.date: 11/15/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1dbb2ecb6cbac9e8085daafc577e82bc9e9c2b5e
-ms.sourcegitcommit: 3141fa75c410586fcb316ac7b951e28f7cb0f3a7
+ms.openlocfilehash: a9ab1b811ad67ee1e3d355af11014fc6013c61a5
+ms.sourcegitcommit: 5d539522103d0f019797d58aee8c32d3966cd1fa
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73962155"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74161642"
 ---
 # <a name="uup-private-preview-instructions"></a>Istruzioni per l'anteprima privata di UUP
 
@@ -108,6 +108,7 @@ Per installare correttamente gli aggiornamenti di UUP, installare entrambi gli a
 > [!IMPORTANT]
 > - Se si applicano gli aggiornamenti del 12 novembre 2019 al client prima di applicare il 7 novembre 2019 aggiornamento del catalogo aggiuntivo, le modifiche apportate all'agente Windows Update necessarie per il supporto di UUP verranno sovrascritte. Per correggere i client in tale scenario, applicare l'aggiornamento del catalogo aggiuntivo dopo il 12 novembre 2019 gli aggiornamenti installati.
 > - Se si applica un aggiornamento della funzionalità al client, sarà necessario reinstallare l'aggiornamento del catalogo aggiuntivo dopo il completamento dell'aggiornamento.
+> - Per semplificare il test degli aggiornamenti delle funzionalità, importare gli aggiornamenti in Configuration Manager. Per altre informazioni, vedere [importare gli aggiornamenti dal catalogo Microsoft Update](/configmgr/sum/get-started/synchronize-software-updates#import-updates-from-the-microsoft-update-catalog). Al termine dell'aggiornamento della funzionalità, l'aggiornamento del catalogo aggiuntivo viene visualizzato come **richiesto**, che consente la distribuzione automatica alla versione del sistema operativo di livello superiore.
 
 ### <a name="4-allow-clients-to-download-delta-content-when-available"></a>4. Consenti ai client di scaricare contenuto differenziale quando disponibile
 
