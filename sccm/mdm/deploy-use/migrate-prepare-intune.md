@@ -20,7 +20,7 @@ ms.locfileid: "71826167"
 ---
 # <a name="prepare-intune-for-user-migration"></a>Preparare Intune per la migrazione degli utenti 
 
-*Si applica a: System Center Configuration Manager (Current Branch)*  @ no__t-1  
+*Si applica a: System Center Configuration Manager (Current Branch)*     
 Prima di eseguire la migrazione degli utenti da MDM ibrido a Intune autonomo, seguire questa procedura per preparare Intune. Questi passaggi consentono di verificare che gli utenti migrati e i relativi dispositivi continuino a essere gestiti. Quando si completano questi passaggi e si avvia la migrazione a Intune, non ci sono effetti signifcant sugli utenti.  
 
 ## <a name="fix-issues-found-during-data-collection-and-import"></a>Correggere i problemi riscontrati durante la raccolta e l'importazione dei dati
@@ -66,7 +66,7 @@ Sono disponibili script di PowerShell per preparare la transizione dei dispositi
 ### <a name="steps-to-make-sure-conditional-access-works-properly-after-user-migration"></a>Passaggi per assicurarsi che l'accesso condizionale funzioni correttamente dopo la migrazione degli utenti
 Per il corretto funzionamento dell'accesso condizionale dopo la migrazione degli utenti e per assicurarsi che gli utenti continuino ad accedere al server di posta elettronica, verificare che siano impostate le configurazioni seguenti:
 - Se l'impostazione del livello di accesso predefinito di Exchange ActiveSync (DefaultAccessLevel) è Blocca o Quarantena, i dispositivi potrebbero perdere l'accesso alla posta elettronica. 
-- Se Exchange Connector viene installato in Configuration Manager e il **livello di accesso quando un dispositivo mobile non è gestito da un'** impostazione della regola ha il valore **Consenti accesso**, installare [on-premises Exchange Connector](https://docs.microsoft.com/intune/conditional-access-exchange-create#configure-exchange-on-premises-access) in Intune prima di migrare gli utenti. Configurare l'impostazione del livello di accesso predefinito in Intune nella pagina **Exchange locale** in **Impostazioni avanzate di accesso a Exchange ActiveSync**. Per altre informazioni, vedere [configurare l'accesso locale a Exchange](https://docs.microsoft.com/intune/conditional-access-exchange-create#configure-exchange-on-premises-access).
+- Se Exchange Connector viene installato in Configuration Manager e il **livello di accesso quando un dispositivo mobile non è gestito da un'** impostazione della regola ha il valore **Consenti accesso**, installare [on-premises Exchange Connector](https://docs.microsoft.com/intune/conditional-access-exchange-create#configure-exchange-on-premises-access) in Intune prima di eseguire la migrazione degli utenti. Configurare l'impostazione del livello di accesso predefinito in Intune nella pagina **Exchange locale** in **Impostazioni avanzate di accesso a Exchange ActiveSync**. Per altre informazioni, vedere [configurare l'accesso locale a Exchange](https://docs.microsoft.com/intune/conditional-access-exchange-create#configure-exchange-on-premises-access).
 - Usare la stessa configurazione per entrambi i connettori. L'ultimo connettore configurato sovrascrive le impostazioni dell'organizzazione di ActiveSync scritte in precedenza dall'altro connettore. Se si configurano i connettori in modo diverso, potrebbero verificarsi modifiche impreviste dell'accesso condizionale.
 - Rimuovere gli utenti dall'accesso condizionale in Configuration Manager una volta eseguita la migrazione alla versione autonoma di Intune.
 
