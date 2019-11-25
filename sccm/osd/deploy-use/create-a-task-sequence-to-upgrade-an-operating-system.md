@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6054ce9c276c18e578315b92fbe3d100061795fa
-ms.sourcegitcommit: e2e07d74779a2f48693ecaa17a5974204949d109
+ms.openlocfilehash: 31f253c0a1aaa2e1268d80a79a4960d2c4da3ad7
+ms.sourcegitcommit: 1e8945c5b9d281805380bd1622616a45494b51da
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69999412"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117628"
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-os-in-configuration-manager"></a>Creare una sequenza di attività per aggiornare un sistema operativo in Configuration Manager
 
@@ -103,7 +103,7 @@ consente di aggiungere passaggi in questo gruppo per verificare se il computer u
 
 #### <a name="battery-check-example"></a>Esempio di controllo della batteria
 
-Utilizzare WBEMTest e connettersi allo `root\cimv2` spazio dei nomi. Eseguire quindi la query seguente:
+Utilizzare WbemTest e connettersi allo spazio dei nomi `root\cimv2`. Eseguire quindi la query seguente:
 
 `Select BatteryStatus From Win32_Battery where BatteryStatus != 2`
 
@@ -115,7 +115,7 @@ consente di aggiungere passaggi in questo gruppo per verificare se il computer �
 
 #### <a name="network-check-example"></a>Esempio di controllo di rete
 
-Utilizzare WBEMTest e connettersi allo `root\cimv2` spazio dei nomi. Eseguire quindi la query seguente:
+Utilizzare WbemTest e connettersi allo spazio dei nomi `root\cimv2`. Eseguire quindi la query seguente:
 
 `Select * From Win32_NetworkAdapter Where NetConnectionStatus = 2 and PhysicalAdapter = 'True' and NetConnectionID = 'Wi-Fi'`
 
@@ -264,7 +264,7 @@ Per altre informazioni, vedere [Aggiorna sistema operativo](/sccm/osd/understand
 
 Se si vuole modificare il dispositivo da BIOS a UEFI durante questa sequenza di attività, vedere [Conversione da BIOS a UEFI durante un aggiornamento sul posto](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).  
 
-### <a name="manage-bitlocker"></a>Gestione di BitLocker
+### <a name="manage-bitlocker"></a>Gestire BitLocker
 
 <!--SCCMDocs issue #494-->
 Se si usa la crittografia dischi BitLocker, per impostazione predefinita il programma di installazione di Windows la sospenderà automaticamente durante l'aggiornamento. A partire da Windows 10 versione 1803, il programma di installazione di Windows include il parametro della riga di comando `/BitLocker` per controllare questo comportamento. Se i requisiti di sicurezza richiedono di mantenere sempre attiva la crittografia dischi, usare la [variabile della sequenza di attività](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions) **OSDSetupAdditionalUpgradeOptions** nel gruppo **Preparazione dell'aggiornamento** per includere `/BitLocker TryKeepActive`. Per altre informazioni, vedere [Opzioni della riga di comando di Installazione di Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#33).
@@ -276,4 +276,4 @@ Alcuni clienti rimuovono le app predefinite di cui è stato effettuato il provis
 
 Aggiungere il passaggio **Esegui riga di comando** alla sequenza di attività nel gruppo **Preparazione dell'aggiornamento**. Specificare una riga di comando simile a quella dell'esempio seguente:
 
-`cmd /c reg delete "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\Microsoft.BingWeather_8wekyb3d8bbwe" /f`
+`cmd /c reg add "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\Microsoft.BingWeather_8wekyb3d8bbwe" /f`
