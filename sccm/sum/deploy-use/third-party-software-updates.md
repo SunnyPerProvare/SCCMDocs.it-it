@@ -2,7 +2,7 @@
 title: Abilitare gli aggiornamenti di terze parti
 titleSuffix: Configuration Manager
 description: Abilitare gli aggiornamenti di terze parti in Configuration Manager
-ms.date: 07/30/2018
+ms.date: 11/19/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,19 +11,21 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 821f37f7c4b001fdf49d805dcdca2eef40cdce74
-ms.sourcegitcommit: 20bbb870baf624c7809d3972f2d09a8d2df79cda
+ms.openlocfilehash: 7828493718dd1436e3421232297bab6a1fc9d548
+ms.sourcegitcommit: bba35def893b2893f6a23f8751bcc5cbf1b87bc3
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67623417"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74190586"
 ---
 # <a name="enable-third-party-updates"></a>Abilitare gli aggiornamenti di terze parti 
 
-*Si applica a: System Center Configuration Manager versione 1806*
+*Si applica a: System Center Configuration Manager*
 
 A partire dalla versione 1806, il nodo **Cataloghi di aggiornamenti software di terze parti** nella console di Configuration Manager consente di sottoscrivere i cataloghi di terze parti, pubblicarne gli aggiornamenti nel punto di aggiornamento software e quindi implementare i cataloghi nei client.  <!--1357605, 1352101, 1358714-->
 
+> [!Note]  
+> Configuration Manager non abilita questa funzionalità per impostazione predefinita. Prima di usarlo, abilitare la funzionalità facoltativa **Abilita supporto per gli aggiornamenti di terze parti nei client**. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).
 
 
 ## <a name="prerequisites"></a>Prerequisiti 
@@ -34,6 +36,7 @@ A partire dalla versione 1806, il nodo **Cataloghi di aggiornamenti software di 
     - Per l'elenco di cataloghi partner, è necessario l'accesso a download.microsoft.com sulla porta HTTPS 443. 
     -  Accesso a Internet per tutti i cataloghi di terze parti e i file di contenuto degli aggiornamenti. Potrebbero essere necessarie altre porte diverse dalla 443.
     - Gli aggiornamenti di terze parti usano le stesse impostazioni proxy del punto di aggiornamento software.
+
 
 ## <a name="additional-requirements-when-the-sup-is-remote-from-the-top-level-site-server"></a>Requisiti aggiuntivi quando il punto di aggiornamento software è remoto rispetto al server del sito principale 
 

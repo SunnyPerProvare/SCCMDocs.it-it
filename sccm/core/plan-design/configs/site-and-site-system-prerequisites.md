@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0075aeeabdebb0884a097baf02c3ced2073bbae9
-ms.sourcegitcommit: ef7800a294e5db5d751921c34f60296c1642fc1f
+ms.openlocfilehash: 1d585df8daaebc3c421aaf9aef9d58a58cfbf6fe
+ms.sourcegitcommit: 08ba85071b886cccfc023fabb21e59c0035c2752
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68712704"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74249880"
 ---
 # <a name="site-and-site-system-prerequisites-for-configuration-manager"></a>Prerequisiti del sito e del sistema del sito per Configuration Manager
 
@@ -85,6 +85,8 @@ Per i prerequisiti specifici dei server e dei ruoli del sistema del sito in Wind
 - .NET Framework 3.5
 
 - Compressione differenziale remota  
+
+- Quando si usa un punto di aggiornamento software in un server diverso dal server del sito, installare la console di amministrazione WSUS nel server del sito.
 
 ### <a name="net-framework"></a>.NET Framework
 
@@ -192,7 +194,7 @@ Quando si installa un nuovo sito, Configuration Manager installa automaticamente
 ## <a name="bkmk_2012acwspreq"></a> Punto per siti Web del catalogo applicazioni  
 
 > [!Important]  
-> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >
@@ -246,7 +248,7 @@ Per altre informazioni sulle versioni di .NET Framework, vedere gli articoli seg
 ## <a name="bkmk_2012ACwsitepreq"></a> Punto per servizi Web del catalogo applicazioni  
 
 > [!Important]  
-> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >

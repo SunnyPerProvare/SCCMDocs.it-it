@@ -2,7 +2,7 @@
 title: Porte usate per le connessioni
 titleSuffix: Configuration Manager
 description: Informazioni sulle porte di rete necessarie e personalizzabili usate da Configuration Manager per le connessioni.
-ms.date: 10/09/2019
+ms.date: 11/19/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5461fd365322cdcfa51084335f375099cb1449e4
-ms.sourcegitcommit: b100e2068d429b0901b54e4a9d405349207fba3b
+ms.openlocfilehash: 7fb5a451c460ccc1bf47315c63a523380fc85d2b
+ms.sourcegitcommit: bba35def893b2893f6a23f8751bcc5cbf1b87bc3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72037372"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74190649"
 ---
 # <a name="ports-used-in-configuration-manager"></a>Porte usate in Configuration Manager
 
@@ -45,6 +45,8 @@ Configuration Manager consente di configurare le porte per i tipi di comunicazio
 - Dal punto di aggiornamento software al server WSUS  
 
 - Dal server del sito al server del database del sito  
+
+- Dal server del sito al server di database WSUS
 
 - Punti di Reporting Services  
 
@@ -625,6 +627,11 @@ A partire dalla versione 1806 è possibile spostare la libreria del contenuto in
 |Agente mapping endpoint RPC|135|135|  
 |RPC|--|DYNAMIC <sup>[Nota 6](#bkmk_note6)</sup>|  
 
+###  <a name="BKMK_PortsSite-SQL-WSUS"></a> Server del sito -- > SQL Server per WSUS  
+
+|Descrizione|UDP|TCP|  
+|-----------------|---------|---------|  
+|SQL su TCP|--|1433 <sup>[Nota 3](#bkmk_note3) Porta alternativa disponibile</sup>|  
 
 ###  <a name="BKMK_PortsSite-Provider"></a> Server del sito -- > Provider SMS  
 
@@ -713,7 +720,13 @@ Al termine dell'installazione, è possibile modificare la porta. Non è necessar
 - Se la porta HTTP è diversa, la porta HTTPS deve essere uguale o maggiore di 1, ad esempio 8530 e 8531.   
 
     > [!NOTE]  
-    >  Quando si configura il punto di aggiornamento software per l'uso di HTTPS, deve essere aperta anche la porta HTTP. I dati non crittografati, ad esempio il contratto di licenza per aggiornamenti specifici, usano la porta HTTP.  
+    >  Quando si configura il punto di aggiornamento software per l'uso di HTTPS, deve essere aperta anche la porta HTTP. I dati non crittografati, ad esempio il contratto di licenza per aggiornamenti specifici, usano la porta HTTP. 
+
+- Il server del sito effettua una connessione al server SQL che ospita il database SUSDB quando si abilitano le opzioni seguenti per la pulizia di WSUS:
+  - Aggiungere indici non cluster al database di WSUS per migliorare le prestazioni di pulizia di WSUS
+  - Rimuovere gli aggiornamenti obsoleti dal database di WSUS
+  
+  Se la porta predefinita di SQL Server viene modificata in una porta alternativa con Gestione configurazione SQL Server, verificare che il server del sito sia in grado di connettersi usando la porta definita. Configuration Manager non supporta porte dinamiche. Per impostazione predefinita, le istanze denominate di SQL Server usano le porte dinamiche per le connessioni al motore di database. Se si usa un'istanza denominata, configurare manualmente la porta statica.
 
 #### <a name="bkmk_note4"></a> Nota 4: Daemon Trivial FTP (TFTP)
 Il servizio del sistema Daemon Trivial FTP (TFTP) non richiede un nome utente o una password ed è parte integrante di Servizi di distribuzione Windows. Il servizio Daemon Trivial FTP implementa il supporto per il protocollo TFTP definito nei seguenti RFC:  

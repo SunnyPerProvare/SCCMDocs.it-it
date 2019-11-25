@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 123515f7b7b78d3c92f7372adb6aec73ee64443c
-ms.sourcegitcommit: e2e07d74779a2f48693ecaa17a5974204949d109
+ms.openlocfilehash: e99d97cb512c8f80a576a6de2c033e0f7aa318cf
+ms.sourcegitcommit: 9ac48edc78ef774d1a2bbfaa3c6206ef5b2382f6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69999399"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74299956"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 

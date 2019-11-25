@@ -5,18 +5,18 @@ description: Seguire questi passaggi per configurare i prodotti e le classificaz
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 11/14/2019
+ms.date: 11/18/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6fbc7b5394d8b2871cd879de9b10a5d20be95b5b
-ms.sourcegitcommit: 4b131d023b50796af3fa96a2ac50e2e2c2a45a24
+ms.openlocfilehash: 80d9fcc24cbda5e002e7f4b3ca78979c351ea08c
+ms.sourcegitcommit: bba35def893b2893f6a23f8751bcc5cbf1b87bc3
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74097422"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74190552"
 ---
 # <a name="configure-classifications-and-products-to-synchronize"></a>configurare le classificazioni e i prodotti per la sincronizzazione  
 
@@ -94,7 +94,7 @@ Per assicurarsi che i client Windows 10 versione 1909 e Windows 10, versione 190
 
 Quando si approvano gli aggiornamenti delle funzionalità per Windows 10, versione 1909, sono disponibili diverse opzioni:
 
-- Windows 10, versione 1903 è disponibile un [pacchetto di abilitazione](https://support.microsoft.com/en-us/help/4517245/feature-update-via-windows-10-version-1909-enablement-package), rilasciato il 12 novembre 2019.
+- Ai client Windows 10, versione 1903 viene offerto un [pacchetto di abilitazione](https://support.microsoft.com/en-us/help/4517245/feature-update-via-windows-10-version-1909-enablement-package), rilasciato il 12 novembre 2019.
   - Il pacchetto di abilitazione è un file piccolo e rapido da installare che attiva le funzionalità di Windows 10, versione 1909 e riavvia il dispositivo.
   - I prerequisiti per il pacchetto di abilitazione includono:
     - Aggiornamento cumulativo minimo di [KB4517389](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4517389), rilasciato l'8 ottobre 2019.
@@ -116,12 +116,19 @@ Quando si approvano gli aggiornamenti delle funzionalità per Windows 10, versio
 
 **Windows 10 versione 1903 e successive** è stato aggiunto a Microsoft Update come prodotto a sé stante, anziché all'interno del prodotto **Windows 10** come le versioni precedenti. A causa di questa modifica è necessario eseguire una serie di passaggi manuali per assicurarsi che i client visualizzino questi aggiornamenti. È stato aiutato a ridurre il numero di passaggi manuali da eseguire per il nuovo prodotto nella versione Configuration Manager 1906. <!--4682946-->
 
+#### <a name="windows-10-version-1903-and-later-with-configuration-manager-version-1906"></a>Windows 10, versione 1903 e versioni successive con Configuration Manager versione 1906
 Quando si esegue l'aggiornamento a Configuration Manager versione 1906 e il prodotto **Windows 10** è selezionato per la sincronizzazione, vengono eseguite automaticamente le azioni seguenti:
 - Il prodotto **Windows 10 versione 1903 e successive** viene aggiunto per la sincronizzazione.
 - Le [regole di distribuzione automatica](/sccm/sum/deploy-use/automatically-deploy-software-updates#bkmk_adr-process) contenenti il prodotto **Windows 10** verranno aggiornate in modo da includere **Windows 10 versione 1903 e successive**.
 - I [piani di manutenzione](/sccm/osd/deploy-use/manage-windows-as-a-service#servicing-plan-workflow) vengono aggiornati in modo che includano il prodotto **Windows 10 versione 1903 e successive**.
 
-## <a name="bkmk_WIfB"></a>Programma Windows Insider
+#### <a name="windows-10-version-1903-and-later-with-configuration-manager-version-1902"></a>Windows 10, versione 1903 e versioni successive con Configuration Manager versione 1902
+Se si usa Configuration Manager 1902 con i client Windows 10, versione 1903, è necessario:
+- Selezionare il prodotto **Windows 10 versione 1903 e successive** per la sincronizzazione.
+- Aggiornare le [regole di distribuzione automatica](/sccm/sum/deploy-use/automatically-deploy-software-updates#bkmk_adr-process) per i client Windows 10, versione 1903.
+- Aggiornare i [piani di manutenzione](/sccm/osd/deploy-use/manage-windows-as-a-service#servicing-plan-workflow) per i client Windows 10, versione 1903.
+
+## <a name="bkmk_WIfB"></a> Programma Windows Insider
 <!--3556023-->
 A partire da settembre 2019 è possibile eseguire la manutenzione e l'aggiornamento dei dispositivi che eseguono build di Windows Insider Preview con Configuration Manager. Questa modifica significa che è possibile gestire questi dispositivi senza modificare i normali processi o abilitare Windows Update per le aziende. È possibile scaricare gli aggiornamenti delle funzionalità e gli aggiornamenti cumulativi per le build di Windows Insider Preview in Configuration Manager esattamente come qualsiasi altro aggiornamento di Windows 10. Per ulteriori informazioni, vedere il post di Blog sulla [pubblicazione di aggiornamenti delle funzionalità di Windows 10 in WSUS](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Publishing-pre-release-Windows-10-feature-updates-to-WSUS/ba-p/845054) .
 

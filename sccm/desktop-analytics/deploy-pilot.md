@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 75cce53f54221c63c0e6b6af3f1276cf51560f3d
-ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
+ms.openlocfilehash: a8cbae87d0dce391ad8ad160f29a598ac044fece
+ms.sourcegitcommit: bba35def893b2893f6a23f8751bcc5cbf1b87bc3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72386488"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74190600"
 ---
 # <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Come eseguire la distribuzione in un progetto pilota con Desktop Analytics
 
@@ -43,6 +43,8 @@ Eseguire le azioni seguenti per l'elenco dei dispositivi consigliati aggiuntivi:
 - **Aggiungere al gruppo pilota**: vengono aggiunti solo singoli dispositivi
 - **Sostituire** i dispositivi specifici del progetto pilota
 - **Ricalcolare** dopo aver apportato le modifiche
+
+## <a name="global-pilot"></a>Progetto pilota globale
 
 È anche possibile prendere decisioni a livello di sistema relativamente alle raccolte di Configuration Manager da includere o escludere dai progetti pilota. Nel menu principale di Desktop Analytics selezionare **Dispositivo pilota globale** nel gruppo Impostazioni globali.
 
