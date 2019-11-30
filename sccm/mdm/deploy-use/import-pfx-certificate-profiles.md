@@ -1,126 +1,106 @@
 ---
-title: Creare profili certificato PFX importando i dettagli dei certificati
+title: Importare profili certificato PFX
 titleSuffix: Configuration Manager
-description: Informazioni su come usare i file PFX in System Center Configuration Manager per generare i certificati specifici dell'utente che supportano lo scambio di dati crittografati.
-ms.date: 04/04/2017
+description: Informazioni su come usare i file PFX in Configuration Manager per generare certificati specifici dell'utente che supportano lo scambio di dati crittografati.
+ms.date: 11/29/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-hybrid
+ms.technology: configmgr-protect
 ms.topic: conceptual
 ms.assetid: e3bb3e13-3037-4122-93bc-504bfd080a4d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69b2c89a449cac5cb9e16b059c6de4239bec8c67
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: c6b0867f5f872eacb52d5e0e3faaffdfd7dae761
+ms.sourcegitcommit: 2f34d9457d95a9bd25603699fcf0e26cac77ad30
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70379517"
+ms.lasthandoff: 11/29/2019
+ms.locfileid: "74659494"
 ---
-# <a name="how-to-create-pfx-certificate-profiles-by-importing-certificate-details"></a>Creare profili certificato PFX importando i dettagli dei certificati
+# <a name="import-pfx-certificate-profiles"></a>Importare profili certificato PFX
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
+Informazioni su come creare un profilo certificato importando le credenziali da certificati esterni. In questo articolo vengono evidenziate informazioni specifiche sui profili certificato PFX (Personal Information Exchange). Per altre informazioni su come creare e configurare questi profili, vedere [profili certificato](/configmgr/protect/deploy-use/introduction-to-certificate-profiles).
 
-Questo argomento illustra come creare un profilo certificato tramite l'importazione delle credenziali da certificati esterni.  
+Configuration Manager supporta diversi tipi di archivi certificati per diversi dispositivi e versioni del sistema operativo. Ad esempio, Windows 10 e Windows 10 Mobile. Per altre informazioni, vedere [prerequisiti per i profili certificato](/configmgr/protect/plan-design/prerequisites-for-certificate-profiles).
 
-L'argomento sui [profili certificato](../../protect/deploy-use/introduction-to-certificate-profiles.md) offre informazioni generali sulla creazione e sulla configurazione dei profili certificato ed evidenzia alcune informazioni specifiche sui profili certificato relative ai certificati PFX.
-
-- In Configuration Manager è disponibile un'ampia gamma di archivi certificati appropriati per sistemi operativi e dispositivi diversi.  Sono inclusi:
-
-  - iOS e MacOS/OSX
-  - Android e Android For Work
-  - Windows 10, incluso Windows 10 Mobile.
-
-Per altre informazioni, vedere [Prerequisiti per i profili certificato](../../protect/plan-design/prerequisites-for-certificate-profiles.md).
-
-## <a name="pfx-certificate-profiles"></a>Profili certificato PFX
-System Center Configuration Manager consente di importare credenziali di certificato e quindi di eseguire il provisioning di file di scambio di informazioni personali (con estensione pfx) nei dispositivi dell'utente. I file con estensione pfx possono essere usati per generare certificati specifici dell'utente per supportare lo scambio di dati crittografati.
+Usare Configuration Manager per importare le credenziali del certificato e quindi eseguire il provisioning dei file PFX nei dispositivi. È possibile usare questi file per generare certificati specifici dell'utente per supportare lo scambio di dati crittografati.
 
 > [!TIP]  
-> La procedura dettagliata che descrive questo processo è disponibile nel post relativo a [come creare e distribuire profili certificato PFX in Configuration Manager](https://blogs.technet.com/b/karanrustagi/archive/2015/09/01/how-to-create-and-deploy-pfx-certificate-profiles-in-configuration-manager.aspx).  
+> Per una procedura dettagliata di questo processo, vedere il post di Blog su [come creare e distribuire profili certificato pfx in Configuration Manager](https://blogs.technet.microsoft.com/karanrustagi/2015/09/01/how-to-create-and-deploy-pfx-certificate-profiles-in-configuration-manager/).  
 
-## <a name="create-import-and-deploy-a-personal-information-exchange-pfx-certificate-profile"></a>Creare, importare e distribuire un profilo certificato PFX  
+## <a name="create-a-profile"></a>Creare un profilo
 
-### <a name="get-started"></a>Attività iniziali
+1. Nella console di Configuration Manager passare all'area di lavoro **asset e conformità** , espandere **impostazioni di conformità**, **accesso risorse aziendali**e quindi selezionare **profili certificato**.
 
-1.  Nella console di System Center Configuration Manager fare clic su **Asset e conformità**.  
-2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**, **Accesso risorse aziendali**e quindi fare clic su **Profili certificati**.  
+1. Nella scheda **Home** della barra multifunzione, nel gruppo **Crea** , selezionare **Crea profilo certificato**.
 
-3.  Nella scheda **Home** del gruppo **Crea** fare clic su **Crea profilo certificato**.
+1. Nella pagina **generale** della **creazione guidata profilo certificato**specificare le seguenti informazioni:  
 
-4.  Nella pagina **Generale** della **Creazione guidata profilo certificato** specificare le informazioni seguenti:  
+    - **Nome**: immettere un nome univoco per il profilo certificato. È possibile usare un massimo di 256 caratteri.  
 
-    - **Nome**: Immettere un nome univoco per il profilo certificato. È possibile usare un massimo di 256 caratteri.  
+    - **Descrizione**: fornire una descrizione che fornisce una panoramica del profilo certificato che consente di identificarlo nella console di Configuration Manager. È possibile usare un massimo di 256 caratteri.  
 
-    - **Descrizione**: digitare una descrizione che offra una panoramica del profilo certificato e altre informazioni rilevanti per facilitarne l'identificazione nella console di System Center Configuration Manager. È possibile usare un massimo di 256 caratteri.  
+1. Selezionare **scambio di informazioni personali-impostazioni di PKCS #12 (PFX)-importa**. Questa opzione Importa le informazioni da un certificato esistente per creare un profilo certificato.
 
-    - **Specificare il tipo di profilo del certificato che si desidera creare**: Per i certificati PFX, scegliere una delle opzioni seguenti:  
+    > [!NOTE]
+    > L'opzione **Crea** richiede un certificato per conto di un utente da un'autorità di certificazione locale connessa (CA). Questo processo distribuisce il certificato ai client come file PFX in modo sicuro. Per altre informazioni, vedere [creare profili certificato PFX usando un'autorità di certificazione](/configmgr/mdm/deploy-use/create-pfx-certificate-profiles).
 
-      - **Scambio informazioni personali -- Impostazioni PKCS #12 (PFX) -- Importa**: Consente di creare un profilo certificato tramite l'importazione di informazioni da certificati esistenti a livello di codice.  
+1. Nella pagina **certificato PFX** della **creazione guidata profilo certificato**specificare il provider di archiviazione chiavi (KSP) del dispositivo:
 
-      - **Scambio informazioni personali-impostazioni #12 PKCS (PFX)-crea**: Crea un profilo certificato PFX usando le credenziali fornite da un'autorità di certificazione.  Per altre informazioni, vedere [Come creare profili certificato PFX usando un'autorità di certificazione](../../mdm/deploy-use/create-pfx-certificate-profiles.md).
-
-
-### <a name="create-a-pfx-certificate-profile-for-the-imported-credentials"></a>Creare un profilo certificato PFX per le credenziali importate
-
-Per importare un certificato PFX, è necessario distribuire uno script Crea PFX tramite Configuration Manager SDK. 
-
-I certificati importati vengono distribuiti in seguito ai dispositivi registrati.
-
-1. Nella pagina **Certificato PFX** della **Creazione guidata profilo certificato** specificare dove il provider di archiviazione delle chiavi dispositivo:
     - **Installa in TPM (Trusted Platform Module) se presente**  
-    - **Installa in TPM (Trusted Platform Module) in caso di errore** 
-    - **Installa in Windows Hello for Business oppure genera errore** 
-    - **Installa nel provider di archiviazione chiavi software** 
-2. Fare clic su **Avanti**. 
-3. Nella pagina **Piattaforme supportate** della procedura guidata scegliere le piattaforme per dispositivi supportate e quindi fare clic su **Avanti**.
+    - **Installa in Trusted Platform Module (TPM) in caso di errore**
+    - **Installa in Windows Hello for Business oppure genera errore**
+    - **Installa nel provider di archiviazione chiavi software**
 
-### <a name="finish-the-profile"></a>Completare il profilo
+1. Nella pagina **piattaforme supportate** scegliere le piattaforme per dispositivi supportate.
 
-1.  Fare clic su **Avanti**, consultare la pagina **Riepilogo** e quindi chiudere la procedura guidata.  
-2.  Il profilo certificato contenente il file PFX è ora disponibile nell'area di lavoro **Profili certificato** . 
-3.  Per distribuire il profilo, nell'area di lavoro **Asset e conformità** aprire **Impostazioni di conformità** > **Accesso risorse aziendali** > **Profili certificati**, fare clic con il pulsante destro del mouse sul certificato desiderato e scegliere **Distribuisci**. 
+1. completare la procedura guidata.
 
-### <a name="deploy-a-create-pfx-script"></a>Distribuire uno script Crea PFX
+## <a name="deploy-the-profile"></a>Distribuire il profilo
 
-Per distribuire uno script Crea PFX, usare [Configuration Manager SDK](https://go.microsoft.com/fwlink/?LinkId=613525). 
+Dopo aver creato ed eseguito il provisioning di un profilo certificato, è ora disponibile nel nodo **profili certificato** . Per altre informazioni su come distribuirlo, vedere [distribuire i profili di accesso alle risorse](/configmgr/protect/deploy-use/deploy-wifi-vpn-email-cert-profiles).
 
-Lo script di creazione PFX aggiunto in Configuration Manager 2012 SP2 aggiunge una classe SMS_ClientPfxCertificate all'SDK. Questa classe include i metodi seguenti:  
+## <a name="assign-primary-users"></a>Assegnare gli utenti primari
 
-- `ImportForUser`  
+Assegnare gli utenti di destinazione come utenti primari nei dispositivi Windows 10 in cui è necessario installare i certificati PFX. Per altre informazioni, vedere [affinità utente dispositivo](/configmgr/apps/deploy-use/link-users-and-devices-with-user-device-affinity).
 
-- `DeleteForUser`  
+## <a name="provision-a-create-pfx-script"></a>Eseguire il provisioning di uno script di creazione PFX
 
-L'esempio seguente importa le credenziali in un profilo certificato PFX.
+Per importare un certificato PFX, usare i cmdlet di PowerShell seguenti Configuration Manager per eseguire il provisioning di uno script di creazione PFX:
 
-``` powershell
-    $EncryptedPfxBlob = "<blob>"  
-    $Password = "abc"  
-    $ProfileName = "PFX_Profile_Name"  
-    $UserName = "ComputerName\Administrator"  
+- [Get-CMClientCertificatePfx](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmclientcertificatepfx?view=sccm-ps)
+- [Import-CMClientCertificatePfx](https://docs.microsoft.com/powershell/module/configurationmanager/import-cmclientcertificatepfx?view=sccm-ps)
+- [Remove-CMClientCertificatePfx](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmclientcertificatepfx?view=sccm-ps)
 
-    #New pfx  
-    $WMIConnection = ([WMIClass]"\\nksccm\root\SMS\Site_MDM:SMS_ClientPfxCertificate")  
-        $NewEntry = $WMIConnection.psbase.GetMethodParameters("ImportForUser")  
-        $NewEntry.EncryptedPfxBlob = $EncryptedPfxBlob  
-        $NewEntry.Password = $Password  
-        $NewEntry.ProfileName = $ProfileName  
-        $NewEntry.UserName = $UserName  
-    $Resource = $WMIConnection.psbase.InvokeMethod("ImportForUser",$NewEntry,$null)  
-```  
+### <a name="example-script"></a>Script di esempio
 
-Per usare questo esempio, aggiornare le variabili di script seguenti:  
+Per eseguire il provisioning di un file PFX in un profilo certificato per un utente, aprire PowerShell in un computer con la console di Configuration Manager. Modificare le variabili con i valori dell'ambiente.
 
-- **blob**\ : blob crittografato con chiave Base64 PFX  
-- **$Password**: password per il file PFX  
-- **$ProfileName**: nome del profilo PFX  
-- **ComputerName**: nome del computer host   
+``` PowerShell
+# The display name of your PFX Import certificate profile
+$PfxProfileDisplayName = "ImportPFX"
+
+# The password you used to protect/encrypt the external PFX file that was created/exported from your certificate storage provider
+# If you omit this password, PowerShell will securely prompt you for it. You can specify it as a parameter for process automation.
+$password = ""
+
+# The username of the user who will receive this PFX certificate on their device
+$user = "Melissa"
+
+# The full path to the PFX file you exported from the certificate store
+$pfxfile = "c:\p1.pfx"
+
+# If the target user isn't in the same domain as the user running this script, specify a different domain
+Import-CMClientCertificatePfx -UserName "$env:USERDOMAIN\$user" -Password (ConvertTo-SecureString -String $password -AsPlainText -Force) -CertificateProfilePfx (Get-CMCertificateProfilePfx -Fast -Name $PfxProfileDisplayName) -Path $pfxfile
+```
 
 ## <a name="see-also"></a>Vedere anche
-La sezione [Creare un nuovo profilo di certificato](../../protect/deploy-use/create-certificate-profiles.md) illustra la Creazione guidata profilo certificato.
 
-[How to create PFX certificate profiles by importing certificate details](../../mdm/deploy-use/create-pfx-certificate-profiles.md) (Come creare i profili certificato PFX importando i dettagli dei certificati)
+[Crea un nuovo profilo certificato](/configmgr/protect/deploy-use/create-certificate-profiles)
 
-[Distribuire profili Wi-Fi, VPN, certificato e di posta elettronica](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md) descrive come distribuire profili certificato.
+[Creare profili certificato PFX usando un'autorità di certificazione](/configmgr/mdm/deploy-use/create-pfx-certificate-profiles)
+
+[Distribuire profili certificato Wi-Fi, VPN e posta elettronica](/configmgr/protect/deploy-use/deploy-wifi-vpn-email-cert-profiles)
