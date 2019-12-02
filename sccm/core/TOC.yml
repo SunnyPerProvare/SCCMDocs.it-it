@@ -2,70 +2,72 @@
   href: understand/introduction.md
 - name: Comprendere ed esplorare
   items:
-    - name: Introduzione a Configuration Manager
+    - name: Che cos'è Configuration Manager?
+      href: understand/introduction.md
+    - name: Domande frequenti per Microsoft Endpoint Configuration Manager
+      href: understand/microsoft-endpoint-manager-faq.md
+    - name: Che ne è stato di SCCM?
+      href: understand/what-happened-to-sccm.md
+    - name: Introduzione
       items:
-        - name: Panoramica di Configuration Manager
-          href: understand/introduction.md
         - name: Reperire informazioni su Configuration Manager
           href: understand/find-help.md
         - name: Come usare la documentazione
           href: understand/use-docs.md
-        - name: Uso della console
+        - name: Come usare la console
           href: servers/manage/admin-console.md
         - name: Funzionalità di accesso facilitato
           href: understand/accessibility-features.md
         - name: Manuale dell'utente di Software Center
           href: understand/software-center.md
-    - name: Nozioni fondamentali di Configuration Manager
+    - name: Nozioni di base
       items:
         - name: Nozioni fondamentali di Configuration Manager
           href: understand/fundamentals.md
-        - name: Nozioni fondamentali su siti e gerarchie
-          items:
-            - name: Nozioni fondamentali su siti e gerarchie
-              href: understand/fundamentals-of-sites-and-hierarchies.md
-            - name: 'Informazioni su upgrade, aggiornamento e installazione per l''infrastruttura del sito e della gerarchia'
-              href: understand/upgrade-update-install.md
-            - name: Nozioni fondamentali sulla gestione dei dispositivi
-              href: understand/fundamentals-of-managing-devices.md
-            - name: Nozioni fondamentali sulla gestione client
-              href: understand/fundamentals-of-client-management-tasks.md
-            - name: Nozioni fondamentali sulla sicurezza
-              href: understand/fundamentals-of-security.md
-            - name: Nozioni fondamentali sull'amministrazione basata su ruoli
-              href: understand/fundamentals-of-role-based-administration.md
-    - name: Introduzione a Long-Term Servicing Branch
-      items:
-        - name: Panoramica di Long-Term Servicing Branch
-          href: understand/introduction-to-the-ltsb.md
-        - name: Configurazioni supportate per Long-Term Servicing Branch
-          href: understand/supported-configurations-for-ltsb.md
-        - name: Installare Long-Term Servicing Branch
-          href: understand/install-the-ltsb.md
-        - name: Gestire Long-Term Servicing Branch
-          href: understand/manage-the-ltsb.md
-        - name: Aggiornare Long-Term Servicing Branch a Current Branch
-          href: understand/convert-to-current-branch.md
-    - name: Scelta del ramo di Configuration Manager da usare
-      href: understand/which-branch-should-i-use.md
+        - name: Siti e gerarchie
+          href: understand/fundamentals-of-sites-and-hierarchies.md
+        - name: 'Informazioni su upgrade, aggiornamento e installazione'
+          href: understand/upgrade-update-install.md
+        - name: Gestire i dispositivi
+          href: understand/fundamentals-of-managing-devices.md
+        - name: Gestione dei client
+          href: understand/fundamentals-of-client-management-tasks.md
+        - name: Sicurezza
+          href: understand/fundamentals-of-security.md
+        - name: Amministrazione basata su ruoli
+          href: understand/fundamentals-of-role-based-administration.md
     - name: Configuration Manager e Windows as a Service
       href: understand/configuration-manager-and-windows-as-service.md
-    - name: Client di interoperabilità estesa
-      href: understand/interoperability-client.md
-    - name: Licenze e rami
-      href: understand/learn-more-editions.md
     - name: Usare i servizi cloud
       items:
         - name: Panoramica dei servizi cloud
           href: understand/use-cloud-services.md
         - name: Configuration Manager in Azure
           href: understand/configuration-manager-on-azure.md
-    - name: Domande frequenti su prodotto e licenze
-      href: understand/product-and-licensing-faq.md
     - name: Domande frequenti per dimensioni e prestazioni del sito
       href: understand/site-size-performance-faq.md
     - name: Domande frequenti sui dati di diagnostica e di utilizzo
       href: understand/frequently-asked-questions-about-diagnostics-and-usage-data.md
+    - name: Domande frequenti su prodotto e licenze
+      href: understand/product-and-licensing-faq.md
+    - name: Scelta del ramo di Configuration Manager da usare
+      href: understand/which-branch-should-i-use.md
+    - name: Licenze e rami
+      href: understand/learn-more-editions.md
+    - name: Client di interoperabilità estesa
+      href: understand/interoperability-client.md
+    - name: Long Term Servicing Branch
+      items:
+        - name: Panoramica di Long-Term Servicing Branch
+          href: understand/introduction-to-the-ltsb.md
+        - name: Configurazioni supportate per LTSB
+          href: understand/supported-configurations-for-ltsb.md
+        - name: Installare LTSB
+          href: understand/install-the-ltsb.md
+        - name: Gestire LTSB
+          href: understand/manage-the-ltsb.md
+        - name: Aggiornare LTSB a Current Branch
+          href: understand/convert-to-current-branch.md
 - name: Pianificare e progettare
   items:
     - name: Prepararsi per Configuration Manager
@@ -78,6 +80,8 @@
           href: plan-design/changes/what-has-changed-from-configuration-manager-2012.md
         - name: Novità delle versioni incrementali
           href: plan-design/changes/whats-new-incremental-versions.md
+        - name: Novità della versione 1910
+          href: plan-design/changes/whats-new-in-version-1910.md
         - name: Novità della versione 1906
           href: plan-design/changes/whats-new-in-version-1906.md
         - name: Novità della versione 1902
@@ -86,8 +90,6 @@
           href: plan-design/changes/whats-new-in-version-1810.md
         - name: Novità della versione 1806
           href: plan-design/changes/whats-new-in-version-1806.md
-        - name: Novità della versione 1802
-          href: plan-design/changes/whats-new-in-version-1802.md
         - name: Elementi rimossi e deprecati
           items:
             - name: Panoramica degli elementi rimossi e deprecati
@@ -204,6 +206,8 @@
           href: plan-design/diagnostics/diagnostics-and-usage-data.md
         - name: Come vengono usati i dati di diagnostica e di utilizzo
           href: plan-design/diagnostics/how-diagnostics-and-usage-data-is-used.md
+        - name: Dati di diagnostica per la versione 1910
+          href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1910.md
         - name: Dati di diagnostica per la versione 1906
           href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1906.md
         - name: Dati di diagnostica per la versione 1902
@@ -212,8 +216,6 @@
           href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1810.md
         - name: Dati di diagnostica per la versione 1806
           href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1806.md
-        - name: Dati di diagnostica per la versione 1802
-          href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1802.md
         - name: Come vengono raccolti i dati di diagnostica e di utilizzo
           href: plan-design/diagnostics/how-diagnostics-and-usage-data-is-collected.md
         - name: Come visualizzare dati di diagnostica e di utilizzo
@@ -334,7 +336,7 @@
               href: servers/deploy/install/install-consoles.md
             - name: Aggiornare un'installazione di valutazione
               href: servers/deploy/install/upgrade-an-evaluation-install-to-a-full-install.md
-            - name: Eseguire l'aggiornamento a System Center Configuration Manager
+            - name: Eseguire l'aggiornamento a Configuration Manager
               href: servers/deploy/install/upgrade-to-configuration-manager.md
             - name: Scenari per semplificare l'installazione
               href: servers/deploy/install/scenarios-to-streamline-your-installation.md
@@ -372,10 +374,10 @@
               href: servers/deploy/configure/deploy-and-manage-content.md
             - name: Monitoraggio del contenuto
               href: servers/deploy/configure/monitor-content-you-have-distributed.md
-            - name: Ottimizzazione recapito nella cache in rete
-              href: plan-design/hierarchy/delivery-optimization-in-network-cache.md
-            - name: Risoluzione dei problemi relativi a Ottimizzazione recapito nella cache in rete
-              href: servers/deploy/configure/troubleshoot-delivery-optimization-in-network-cache.md
+            - name: Microsoft Connected Cache
+              href: plan-design/hierarchy/microsoft-connected-cache.md
+            - name: Risolvere i problemi relativi a Microsoft Connected Cache
+              href: servers/deploy/configure/troubleshoot-microsoft-connected-cache.md
         - name: Eseguire l'individuazione
           items:
             - name: Panoramica dei metodi di individuazione
@@ -442,7 +444,7 @@
           href: plan-design/hierarchy/log-files.md
         - name: Note sulla versione
           href: servers/deploy/install/release-notes.md
-        - name: Messaggi di stato in Configuration Manager
+        - name: Messaggi di stato
           href: plan-design/hierarchy/state-messaging-system-center-configuration-manager.md
         - name: Supporto Unicode e ASCII
           href: plan-design/hierarchy/unicode-and-ascii-support.md
@@ -496,6 +498,8 @@
           href: servers/manage/use-the-update-registration-tool-to-import-hotfixes.md
         - name: Usare il programma di installazione di hotfix
           href: servers/manage/use-the-hotfix-installer-to-install-updates.md
+        - name: Elenco di controllo per l'installazione dell'aggiornamento 1910
+          href: servers/manage/checklist-for-installing-update-1910.md
         - name: Elenco di controllo per l'installazione dell'aggiornamento 1906
           href: servers/manage/checklist-for-installing-update-1906.md
         - name: Elenco di controllo per l'installazione dell'aggiornamento 1902
@@ -504,8 +508,6 @@
           href: servers/manage/checklist-for-installing-update-1810.md
         - name: Elenco di controllo per l'installazione dell'aggiornamento 1806
           href: servers/manage/checklist-for-installing-update-1806.md
-        - name: Elenco di controllo per l'installazione dell'aggiornamento 1802
-          href: servers/manage/checklist-for-installing-update-1802.md
         - name: Supporto per le versioni Current Branch
           href: servers/manage/current-branch-versions-supported.md
     - name: Backup e ripristino
@@ -623,6 +625,8 @@
           href: support/content-library-transfer.md
         - name: Content Ownership Tool
           href: support/content-ownership-tool.md
+        - name: Estendere ed eseguire la migrazione di un sito locale in Microsoft Azure
+          href: support/azure-migration-tool.md
         - name: Role-based Administration and Auditing Tool
           href: support/rbaviewer.md
         - name: Run Meter Summarization Tool

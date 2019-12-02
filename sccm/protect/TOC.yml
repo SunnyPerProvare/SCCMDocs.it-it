@@ -8,6 +8,8 @@
   items:
     - name: Pianificare per Endpoint Protection
       href: plan-design/planning-for-endpoint-protection.md
+    - name: Pianificare la gestione di BitLocker
+      href: plan-design/bitlocker-management.md
     - name: Pianificare i profili di certificato
       items:
         - name: Prerequisiti per i profili certificato
@@ -22,36 +24,14 @@
           href: plan-design/prerequisites-for-wifi-vpn-profiles.md
     - name: Sicurezza e privacy
       items:
-        - name: Sicurezza e privacy per i profili Wi-Fi e VPN
+        - name: Profili Wi-Fi e VPN
           href: plan-design/security-and-privacy-for-wifi-vpn-profiles.md
-        - name: Sicurezza e privacy per i profili di posta elettronica
+        - name: Profili di posta elettronica
           href: plan-design/security-and-privacy-for-email-profiles.md
-        - name: Sicurezza e privacy per i profili certificato
+        - name: Profili certificato
           href: plan-design/security-and-privacy-for-certificate-profiles.md
 - name: Distribuire e usare
   items:
-    - name: Profili VPN
-      items:
-        - name: Profili VPN in Configuration Manager
-          href: deploy-use/vpn-profiles.md
-        - name: Creare profili VPN
-          href: deploy-use/create-vpn-profiles.md
-        - name: Trovare un nome di famiglia di pacchetti (PFN) per una rete VPN per app
-          href: deploy-use/find-a-pfn-for-per-app-vpn.md
-    - name: Profili Wi-Fi
-      items:
-        - name: Creare profili Wi-Fi
-          href: deploy-use/create-wifi-profiles.md
-    - name: Profili certificato
-      items:
-        - name: Introduzione ai profili certificato
-          href: deploy-use/introduction-to-certificate-profiles.md
-        - name: Creare i profili certificato
-          href: deploy-use/create-certificate-profiles.md
-        - name: Configurazione dei profili certificato
-          href: deploy-use/certificate-infrastructure.md
-    - name: 'Distribuire profili certificato, Wi-Fi, VPN e di posta elettronica'
-      href: deploy-use/deploy-wifi-vpn-email-cert-profiles.md
     - name: Endpoint Protection
       items:
         - name: Panoramica di Endpoint Protection
@@ -102,8 +82,46 @@
           href: deploy-use/troubleshoot-endpoint-client.md
         - name: Domande frequenti su Windows Defender
           href: deploy-use/endpoint-protection-client-faq.md
+    - name: Gestione di BitLocker
+      items:
+        - name: Distribuire la gestione di BitLocker
+          href: deploy-use/bitlocker/deploy-management-agent.md
+        - name: Crittografare i dati di ripristino
+          href: deploy-use/bitlocker/encrypt-recovery-data.md
+        - name: Configurare i portali di BitLocker
+          href: deploy-use/bitlocker/setup-websites.md
+        - name: Personalizzare il portale self-service
+          href: deploy-use/bitlocker/customize-self-service-portal.md
+        - name: Visualizzare i report di BitLocker
+          href: deploy-use/bitlocker/view-reports.md
+        - name: Sito Web di amministrazione e monitoraggio
+          href: deploy-use/bitlocker/helpdesk-portal.md
+        - name: Portale self-service
+          href: deploy-use/bitlocker/self-service-portal.md
     - name: Impostazioni di Windows Hello for Business
       href: deploy-use/windows-hello-for-business-settings.md
+    - name: Profili certificato
+      items:
+        - name: Introduzione ai profili certificato
+          href: deploy-use/introduction-to-certificate-profiles.md
+        - name: Creare i profili certificato
+          href: deploy-use/create-certificate-profiles.md
+        - name: Configurazione dei profili certificato
+          href: deploy-use/certificate-infrastructure.md
+    - name: Profili Wi-Fi
+      items:
+        - name: Creare profili Wi-Fi
+          href: deploy-use/create-wifi-profiles.md
+    - name: Profili VPN
+      items:
+        - name: Profili VPN
+          href: deploy-use/vpn-profiles.md
+        - name: Creare profili VPN
+          href: deploy-use/create-vpn-profiles.md
+        - name: Trovare un nome di famiglia di pacchetti (PFN) per una rete VPN per app
+          href: deploy-use/find-a-pfn-for-per-app-vpn.md
+    - name: 'Distribuire profili certificato, Wi-Fi, VPN e di posta elettronica'
+      href: deploy-use/deploy-wifi-vpn-email-cert-profiles.md
     - name: Impostazioni di termini e condizioni
       href: ../mdm/deploy-use/terms-and-conditions.md?toc=/sccm/protect/toc.json&bc=/sccm/protect/breadcrumb/toc.json
     - name: Monitorare la protezione
@@ -114,3 +132,17 @@
           href: deploy-use/monitor-certificate-profiles.md
         - name: Monitorare Endpoint Protection
           href: deploy-use/monitor-endpoint-protection.md
+- name: Riferimento tecnico
+  items:
+    - name: Gestione di BitLocker
+      items:
+        - name: Risolvere i problemi relativi a BitLocker
+          href: tech-ref/bitlocker/troubleshoot.md
+        - name: Registri eventi di BitLocker
+          href: tech-ref/bitlocker/about-event-logs.md
+        - name: Registri eventi del client
+          href: tech-ref/bitlocker/client-event-logs.md
+        - name: Registri eventi del server
+          href: tech-ref/bitlocker/server-event-logs.md
+        - name: Codici di non conformità
+          href: tech-ref/bitlocker/non-compliance-codes.md

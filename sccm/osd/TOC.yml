@@ -1,6 +1,6 @@
 - name: Distribuzione del sistema operativo
   href: understand/introduction-to-operating-system-deployment.md
-- name: Comprendere ed esplorare
+- name: Informazioni generali
   items:
     - name: Introduzione alla distribuzione del sistema operativo
       href: understand/introduction-to-operating-system-deployment.md
@@ -130,6 +130,8 @@
           href: deploy-use/create-capture-media.md
 - name: Informazioni di riferimento tecnico
   items:
+    - name: Usare l'editor delle sequenze di attività
+      href: understand/task-sequence-editor.md
     - name: Passaggi della sequenza di attività
       items:
         - name: Informazioni sui passaggi della sequenza di attività

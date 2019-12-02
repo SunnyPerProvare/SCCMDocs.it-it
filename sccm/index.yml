@@ -3,12 +3,12 @@ title: Documentazione di Microsoft Endpoint Configuration Manager
 summary: 'Documentazione del prodotto ufficiale per i componenti seguenti di Microsoft Endpoint Manager: Configuration Manager, co-gestione e Desktop Analytics'
 metadata:
   ms.topic: hub-page
-  ms.openlocfilehash: 446c37351a6d883fd0e6fc2b9ecd432141d8e512
-  ms.sourcegitcommit: 15b2ef81a19b4883d15823ee4c3a19fdb5288a54
+  ms.openlocfilehash: b7bb0dccb8930987d79158b705a33bfecca3649e
+  ms.sourcegitcommit: 2f34d9457d95a9bd25603699fcf0e26cac77ad30
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/07/2019
-  ms.locfileid: "73761462"
+  ms.lasthandoff: 11/29/2019
+  ms.locfileid: "74661006"
 highlightedContent:
   items:
   - title: Novità
@@ -117,6 +117,9 @@ conceptualContent:
     - text: Pianificare Software Center
       url: ./apps/plan-design/plan-for-software-center.md
       itemType: architecture
+    - text: Gestione di Microsoft Edge
+      url: ./apps/deploy-use/deploy-edge.md
+      itemType: how-to-guide
     footerLink:
       text: Altre informazioni
       url: ./apps/understand/introduction-to-application-management.md
@@ -172,6 +175,9 @@ conceptualContent:
       itemType: overview
     - text: WDATP
       url: ./protect/deploy-use/windows-defender-advanced-threat-protection.md
+      itemType: how-to-guide
+    - text: Gestione di BitLocker
+      url: ./protect/plan-design/bitlocker-management.md
       itemType: overview
     footerLink:
       text: Altre informazioni
@@ -183,8 +189,8 @@ additionalContent:
     - title: Blog di Configuration Manager
       summary: Notizie e annunci
       url: https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/bg-p/ConfigurationManagerBlog
-    - title: '#<a name="configmgr-on-twitter"></a>ConfigMgr su Twitter'
-      summary: Mantenersi aggiornati con la community attiva di Twitter
+    - title: 'Twitter: #ConfigMgr'
+      summary: Mantenersi aggiornati con la community attiva su Twitter
       url: https://twitter.com/hashtag/configmgr
     - title: Forum di Configuration Manager
       summary: Porre domande tecniche nei forum del prodotto
