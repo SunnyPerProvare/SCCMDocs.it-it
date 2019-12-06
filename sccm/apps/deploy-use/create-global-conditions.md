@@ -12,11 +12,11 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7b92c88ae4a88ff674110fdae2dd0bd3f5470f48
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120989"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62193814"
 ---
 # <a name="how-to-create-global-conditions-in-system-center-configuration-manager"></a>Come creare condizioni globali in System Center Configuration Manager
 
@@ -57,9 +57,9 @@ In System Center Configuration Manager le condizioni globali sono regole che rap
 
    - **Query Active Directory**  
 
-     -   **Prefisso LDAP** : specificare un prefisso LDAP valido per la query Servizi di dominio Active Directory per valutare la conformità nei computer client. È possibile usare **LDAP://** o **GC://**.  
+     -   **Prefisso LDAP** : specificare un prefisso LDAP valido per la query Servizi di dominio Active Directory per valutare la conformità nei computer client. È possibile usare **LDAP://** o **GC://** .  
 
-     -   **Nome distinto (DN)**: specificare il nome distinto dell'oggetto Active Directory Domain Services di cui verrà valutata la conformità nei computer client.  
+     -   **Nome distinto (DN)** : specificare il nome distinto dell'oggetto Active Directory Domain Services di cui verrà valutata la conformità nei computer client.  
 
      -   **Filtro di ricerca** : specificare un filtro LDAP opzionale per rifinire i risultati derivanti dalla query Servizi di dominio Active Directory per valutare la conformità nei computer client.  
 
@@ -73,7 +73,7 @@ In System Center Configuration Manager le condizioni globali sono regole che rap
 
      -   **Proprietà** : specificare la proprietà dell'oggetto Servizi di dominio Active Directory che sarà utilizzato per valutare la conformità nei computer client.  
 
-     -   **Query** : visualizza la query LDAP creata dalle voci in **Prefisso LDAP**, **Nome distinto (DN)**, **Filtro di ricerca** se specificati e **Proprietà**. Questa query verrà utilizzata per valutare la conformità nei computer client.  
+     -   **Query** : visualizza la query LDAP creata dalle voci in **Prefisso LDAP**, **Nome distinto (DN)** , **Filtro di ricerca** se specificati e **Proprietà**. Questa query verrà utilizzata per valutare la conformità nei computer client.  
 
    - **Assembly**  
 
@@ -98,7 +98,7 @@ In System Center Configuration Manager le condizioni globali sono regole che rap
 
      - **Includi sottocartelle** : abilitare questa opzione se si desidera effettuare la ricerca anche nelle sottocartelle nel percorso specificato.  
 
-     - **Il file o la cartella sono associati a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%* \system32), oltre al percorso dei file del sistema a 32 bit (*%windir%* \syswow64) nei client di Configuration Manager con una versione a 64 bit di Windows.  
+     - **Il file o la cartella sono associati a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit ( *%windir%* \system32), oltre al percorso dei file del sistema a 32 bit ( *%windir%* \syswow64) nei client di Configuration Manager con una versione a 64 bit di Windows.  
 
        > [!NOTE]  
        >  Se nel percorso dei file del sistema a 64 e 32 bit sullo stesso computer a 64 bit esiste lo stesso file o cartella, la condizione globale individuerà più file.  
@@ -177,7 +177,7 @@ In System Center Configuration Manager le condizioni globali sono regole che rap
 
      -   **Includi sottocartelle** : abilitare questa opzione se si desidera effettuare la ricerca anche nelle sottocartelle nel percorso specificato.  
 
-     -   **Il file è associato a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%* \system32), oltre al percorso dei file del sistema a 32 bit (*%windir%* \syswow64) nei client di Configuration Manager con una versione a 64 bit di Windows.  
+     -   **Il file è associato a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit ( *%windir%* \system32), oltre al percorso dei file del sistema a 32 bit ( *%windir%* \syswow64) nei client di Configuration Manager con una versione a 64 bit di Windows.  
 
      -   **Query XPath** : specificare una query XPath valida e completa da utilizzare per valutare la conformità nei computer client.  
 

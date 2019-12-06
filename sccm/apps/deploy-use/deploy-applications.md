@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7871e092369a096d8c776d4733e70095ef629a14
-ms.sourcegitcommit: 2d38de4846ea47a03cc884cbd3df27db48f64a6a
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70110186"
 ---
 # <a name="deploy-applications-with-configuration-manager"></a>Distribuire applicazioni con Configuration Manager
@@ -120,7 +120,7 @@ Nella pagina **Impostazioni distribuzione** specificare le informazioni seguenti
 
 #### <a name="bkmk_approval"></a> Impostazioni di approvazione
 
-Il comportamento di approvazione dell'applicazione dipende dal fatto che la funzionalità facoltativa consigliata venga abilitata, approvare le **richieste dell'applicazione per gli utenti per dispositivo**.
+Il comportamento di approvazione dell'applicazione dipende dal fatto che la funzionalità facoltativa consigliata venga abilitata, **approvare le richieste dell'applicazione per gli utenti per dispositivo**.
 
 - **Un amministratore deve approvare una richiesta per questa applicazione nel dispositivo**: se si abilita la funzionalità facoltativa, l'amministratore approva tutte le richieste utente per l'applicazione prima che l'utente la installi nel dispositivo richiesto. Se l'amministratore approva la richiesta, l'utente può installare l'applicazione solo su quel dispositivo. Per installare l'applicazione in un altro dispositivo dovrà inviare un'altra richiesta. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi.
 

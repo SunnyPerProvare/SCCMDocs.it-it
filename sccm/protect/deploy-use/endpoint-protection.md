@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ce48f468154357a0032d737c6d77a6b6b29d9565
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67678826"
 ---
 # <a name="endpoint-protection"></a>Endpoint Protection
@@ -79,7 +79,7 @@ A partire da Windows 10 e Windows Server 2016, Windows Defender è già installa
 
 ## <a name="microsoft-defender-advanced-threat-protection"></a>Microsoft Defender Advanced Threat Protection
 
-Endpoint Protection gestisce e monitora Microsoft Defender Advanced Threat Protection (ATP), precedentemente noto come Windows Defender ATP. Il servizio Microsoft Defender ATP consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti aziendali. Per altre informazioni, vedere [Microsoft Defender Advanced Threat Protection](windows-defender-advanced-threat-protection.md).
+Endpoint Protection gestisce e monitora Microsoft Defender Advanced Threat Protection (ATP), noto in precedenza come Windows Defender ATP. Il servizio Microsoft Defender ATP consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti aziendali. Per altre informazioni, vedere [Microsoft Defender Advanced Threat Protection](windows-defender-advanced-threat-protection.md).
 
 ## <a name="endpoint-protection-workflow"></a>Flusso di lavoro di Endpoint Protection  
  Vedere il diagramma seguente per capire il flusso di lavoro per l'implementazione di Endpoint Protection nella gerarchia di Configuration Manager.  

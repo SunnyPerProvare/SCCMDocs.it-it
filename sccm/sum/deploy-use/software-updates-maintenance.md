@@ -12,10 +12,10 @@ manager: dougeby
 ms.author: mstewart
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1e2edd794d582c4ab875ac53f095eb65fcd26ba8
-ms.sourcegitcommit: c56cd368f8e380b7339ec8bcf3f68187eff479fb
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72347898"
 ---
 # <a name="software-updates-maintenance"></a>Manutenzione degli aggiornamenti software

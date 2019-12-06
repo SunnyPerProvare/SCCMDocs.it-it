@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d77b817dd19f728ce79aa901591a70acde27cf67
-ms.sourcegitcommit: 160bcdaf783f3946ad5c7869b2566cbfc4da545c
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71401596"
 ---
 # <a name="create-bootable-media"></a>Creare supporti di avvio

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b60b230476bafc3e130c31f1172f5422cfe7d1b8
-ms.sourcegitcommit: edc7a5ad6a2eb72d0448d4689b9534f7e6f4d2b7
+ms.openlocfilehash: 45dd25a64d8c694fd79f7e2359d07c5b646ecd72
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73623042"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74659357"
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gestire Windows come servizio con System Center Configuration Manager
 
@@ -106,12 +106,8 @@ ms.locfileid: "73623042"
   Quando un aggiornamento soddisfa i criteri, il piano di manutenzione aggiunge l'aggiornamento al pacchetto di distribuzione, distribuisce il pacchetto nei punti di distribuzione e distribuisce l'aggiornamento nella raccolta in base alle impostazioni configurate nel piano di manutenzione. È possibile monitorare le distribuzioni nel riquadro piano di monitoraggio del piano del servizio, nel dashboard di manutenzione di Windows 10. Per altre informazioni, vedere [Monitorare gli aggiornamenti software](../../sum/deploy-use/monitor-software-updates.md).  
 
 > [!NOTE]  
-> **Windows 10 versione 1903 e successive** è stato aggiunto a Microsoft Update come prodotto a sé stante, anziché all'interno del prodotto **Windows 10** come le versioni precedenti. A causa di questa modifica è necessario eseguire una serie di passaggi manuali per assicurarsi che i client visualizzino questi aggiornamenti. È stato aiutato a ridurre il numero di passaggi manuali da eseguire per il nuovo prodotto nella versione Configuration Manager 1906. <!--4682946-->
->
-> Quando si esegue l'aggiornamento a Configuration Manager versione 1906 e il prodotto **Windows 10** è selezionato per la sincronizzazione, vengono eseguite automaticamente le azioni seguenti:
-> - I piani di manutenzione vengono aggiornati in modo da includere il prodotto **Windows 10 versione 1903 e successive**.
-> - Il prodotto **Windows 10 versione 1903 e successive** viene aggiunto per la sincronizzazione. Per altre informazioni, vedere [Configurare le classificazioni e i prodotti](/sccm/sum/get-started/configure-classifications-and-products)
-> - Le [regole di distribuzione automatica](/sccm/sum/deploy-use/automatically-deploy-software-updates#bkmk_adr-process) contenenti il prodotto **Windows 10** verranno aggiornate in modo da includere **Windows 10 versione 1903 e successive**.
+> **Windows 10 versione 1903 e successive** è stato aggiunto a Microsoft Update come prodotto a sé stante, anziché all'interno del prodotto **Windows 10** come le versioni precedenti. A causa di questa modifica è necessario eseguire una serie di passaggi manuali per assicurarsi che i client visualizzino questi aggiornamenti. È stato aiutato a ridurre il numero di passaggi manuali da eseguire per il nuovo prodotto nella versione Configuration Manager 1906. Per ulteriori informazioni, vedere [configurazione dei prodotti per le versioni di Windows 10](/configmgr/sum/get-started/configure-classifications-and-products#windows-10-version-1903-and-later)<!--4682946-->
+
 
 
 ##  <a name="BKMK_ServicingPlan"></a> Piano di manutenzione di Windows 10  

@@ -12,10 +12,10 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3c76e8e55f53303d2284eced04b9d5c4857be259
-ms.sourcegitcommit: de3c86077bbf91b793e94e1f60814df18da11bab
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/10/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67726123"
 ---
 # <a name="create-configuration-items-in-system-center-configuration-manager"></a>Creare elementi di configurazione in System Center Configuration Manager
@@ -34,7 +34,7 @@ Prima di iniziare, leggere [Introduzione alle impostazioni di conformità](../..
 
 ## <a name="configuration-items-for-devices-managed-with-intune"></a>Elementi di configurazione per i dispositivi gestiti con Intune
 
-Prima di iniziare, leggere [Introduzione alle impostazioni di conformità](../../compliance/get-started/get-started-with-compliance-settings.md). Per apprendere alcune nozioni sulle impostazioni di conformità, leggere [Pianificare e configurare le impostazioni di conformità](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) per implementare i prerequisiti necessari. Per esaminare le informazioni sugli elementi di configurazione per i dispositivi gestiti con Intune, vedere [elementi di configurazione per i dispositivi gestiti con Intune](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md).
+Prima di iniziare, leggere [Introduzione alle impostazioni di conformità](../../compliance/get-started/get-started-with-compliance-settings.md). Per apprendere alcune nozioni sulle impostazioni di conformità, leggere [Pianificare e configurare le impostazioni di conformità](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) per implementare i prerequisiti necessari. Per esaminare le informazioni sugli elementi di configurazione per i dispositivi gestiti con Intune, vedere [elementi di configurazione per dispositivi gestiti con Intune](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md).
 
 ## <a name="next-steps"></a>Passaggi successivi
 

@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c0e6a5d3b83bbf98bab8f36616622d376caa2266
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "65500598"
 ---
 # <a name="create-wi-fi-profiles"></a>Creare profili Wi-Fi
@@ -70,10 +70,10 @@ L'articolo [Creare profili Wi-Fi](../../mdm/deploy-use/create-wifi-profiles.md) 
 5. Nella pagina **Profilo Wi-Fi** fornire il nome che i dispositivi visualizzeranno come nome della rete.  
 
    > [!IMPORTANT]  
-   >  Configuration Manager non supporta l'uso dei caratteri apostrofo (**â€˜**) o virgola (**,**) nel nome della rete.  
+   >  Configuration Manager non supporta l'uso dei caratteri apostrofo (**â€˜**) o virgola ( **,** ) nel nome della rete.  
 
 6. Specificare l'**SSID** facendo attenzione alla distinzione tra maiuscole e minuscole.
-7. Scegliere le altre opzioni di connettività appropriate, tra cui   **Connetti quando la rete non sta trasmettendo il nome (SSID)**, se è possibile che l'SSID sia nascosto.  
+7. Scegliere le altre opzioni di connettività appropriate, tra cui   **Connetti quando la rete non sta trasmettendo il nome (SSID)** , se è possibile che l'SSID sia nascosto.  
 
 8. Nella pagina **Configurazione protezione** selezionare il protocollo di sicurezza usato dalla rete wireless oppure selezionare **Nessuna autenticazione (aperta)** se la rete non è protetta.
    > [!IMPORTANT]

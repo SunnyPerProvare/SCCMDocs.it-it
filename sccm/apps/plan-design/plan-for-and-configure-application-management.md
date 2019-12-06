@@ -2,7 +2,7 @@
 title: Pianificare la gestione di applicazioni
 titleSuffix: Configuration Manager
 description: Implementare e configurare le dipendenze necessarie per la distribuzione di applicazioni in Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aed5c94057dbc564c5275660c488ac82339927f6
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 978e8e68a1f9ee64596ad4e40ca43281dce0dd3d
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68535279"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74659697"
 ---
 # <a name="plan-for-and-configure-application-management-in-configuration-manager"></a>Pianificare e configurare la gestione delle applicazioni in Configuration Manager
 
@@ -39,7 +39,7 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
 Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).  
 
 > [!Note]  
-> Il Catalogo applicazioni richiede anche IIS. Tuttavia, l'esperienza utente di Silverlight non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per l'utente. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> Il Catalogo applicazioni richiede anche IIS. Tuttavia, l'esperienza utente di Silverlight non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >
@@ -76,14 +76,14 @@ Per altre informazioni sull'affinità utente-dispositivo, vedere l'argomento [Co
 
 I client contattano un punto di gestione per scaricare i criteri client, per individuare il contenuto.
 
-A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per l'utente.
+A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti.
 
 Nella versione 1902 e versioni precedenti, i client usano il punto di gestione per la connessione al Catalogo applicazioni. Se i client non possono accedere a un punto di gestione, non potranno usare il catalogo applicazioni.
 
 > [!Note]  
 > A partire dalla versione 1806, i ruoli del Catalogo applicazioni non sono più necessari per visualizzare le applicazioni disponibili per gli utenti in Software Center. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).<!--1358309-->  
 >
-> A partire dalla versione 1906, non è possibile installare nuovi ruoli del catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> A partire dalla versione 1906, non è possibile installare nuovi ruoli del catalogo applicazioni. Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910.  
   
 
 ### <a name="distribution-point"></a>Punto di distribuzione
@@ -137,7 +137,7 @@ Prima di distribuire applicazioni virtuali, aggiornare anche il client App-V con
 ### <a name="application-catalog"></a>Catalogo applicazioni
 
 > [!Important]  
-> Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](#bkmk_remove-appcat).  
+> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](#bkmk_remove-appcat).  
 
 #### <a name="application-catalog-web-service-point"></a>Punto per servizi Web del catalogo applicazioni
 
@@ -166,13 +166,13 @@ Per altre informazioni sulla configurazione e personalizzazione di Software Cent
 
 <!-- SCCMDocs-pr issue 3051 -->
 
-Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). L'elenco seguente riepiloga le modifiche:
+Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). L'elenco seguente riepiloga le modifiche:
 
 - A partire dalla versione 1806, l'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato.<!--1358309--> Il ruolo Punto per servizi Web del Catalogo applicazioni non è più *necessario*, ma è ancora *supportato*.
 
-- A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per l'utente. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni.
+- A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni.
 
-- Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+- Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910.  
 
 Questi miglioramenti iterativi di Software Center e il punto di gestione sono pensati per semplificare l'infrastruttura e rimuovere la necessità del catalogo applicazioni per le distribuzioni disponibili per gli utenti. Software Center consente di distribuire tutte le distribuzioni di app senza il catalogo applicazioni. Se si abilita TLS 1.2 e si usa HTTP con il catalogo applicazioni, inoltre, gli utenti non possono vedere le distribuzioni disponibili destinate agli utenti. Aggiornare Configuration Manager alla versione 1906 o successiva per trarre vantaggio da questi miglioramenti.
 
@@ -194,7 +194,7 @@ Dopo aver rimosso i ruoli del catalogo applicazioni, Software Center viene avvia
 ## <a name="bkmk_appcat"></a> Installare e configurare il catalogo applicazioni  
 
 > [!Important]  
-> Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](#bkmk_remove-appcat).  
+> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](#bkmk_remove-appcat).  
 
 ### <a name="step-1-web-server-certificate-for-https"></a>Passaggio 1: Certificato del server Web per HTTPS
 

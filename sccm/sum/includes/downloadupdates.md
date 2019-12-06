@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 8abed619c61c4b5ba3c578a2668ff45b141f34f7
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62283597"
+---
 1.  Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software** e selezionare il nodo **Aggiornamenti software**.  
 
 2.  Scegliere l'aggiornamento software da scaricare usando uno dei seguenti metodi:  
@@ -30,9 +38,9 @@
 
              - Non è possibile usare il percorso specificato come origine di un altro pacchetto di distribuzione software.  
 
-             - È possibile modificare il percorso di origine del pacchetto nelle proprietà del pacchetto di distribuzione dopo che Configuration Manager ha creato il pacchetto di distribuzione. In tal caso, è necessario copiare innanzitutto il contenuto dall'origine del pacchetto originale al nuovo percorso di origine del pacchetto.  
+             - È possibile modificare il percorso di origine del pacchetto nelle proprietà del pacchetto di distribuzione dopo che Configuration Manager ha creato il pacchetto di distribuzione. In tal caso, è necessario copiare prima il contenuto dell'origine del pacchetto originale nel nuovo percorso di origine del pacchetto.  
 
-             -  L'account computer del provider SMS e l'utente che esegue la procedura guidata per scaricare gli aggiornamenti software devono disporre entrambi delle autorizzazioni NTFS di **Scrittura** nel percorso di download. Limitare l'accesso al percorso di download. Questa restrizione riduce il rischio che utenti malintenzionati possano manomettere i file di origine degli aggiornamenti software.  
+             -  L'account computer del provider SMS e l'utente che esegue la procedura guidata per scaricare gli aggiornamenti software devono disporre entrambi delle autorizzazioni di **Scrittura** per il percorso di download. Limitare l'accesso al percorso di download. Questa restrizione riduce il rischio che utenti malintenzionati possano manomettere i file di origine degli aggiornamenti software.  
 
         - **Abilita replica differenziale binaria**: abilitare questa impostazione per ridurre al minimo il traffico di rete tra i siti. La replica differenziale binaria aggiorna soltanto il contenuto del pacchetto che è stato modificato e non l'intero contenuto. Per altre informazioni, vedere [Replica differenziale binaria](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#binary-differential-replication).  
 
@@ -40,7 +48,7 @@
 
 5.  La pagina **Punti di distribuzione** è disponibile soltanto quando si crea un nuovo pacchetto di distribuzione degli aggiornamenti software. Specificare le impostazioni seguenti:  
 
-    -   **Priorità di distribuzione**: usare questa impostazione per specificare la priorità di distribuzione per il pacchetto di distribuzione. La priorità di distribuzione si applica quando il pacchetto di distribuzione viene inviato ai punti di distribuzione nei siti figlio. I pacchetti di distribuzione vengono inviati in ordine di priorità: Alta, Media o Bassa. I pacchetti con priorità identiche vengono inviati nell'ordine in cui sono stati creati. Se non esiste alcun backlog, il pacchetto esegue immediatamente l'elaborazione, indipendentemente dalla priorità configurata. Per impostazione predefinita, il sito invia i pacchetti con priorità **Media**.  
+    -   **Priorità di distribuzione**: usare questa impostazione per specificare la priorità di distribuzione per il pacchetto di distribuzione. La priorità di distribuzione si applica quando il pacchetto di distribuzione viene inviato ai punti di distribuzione nei siti figlio. I pacchetti di distribuzione vengono inviati in ordine di priorità, ovvero Alta, Media o Bassa. I pacchetti con priorità identiche vengono inviati nell'ordine in cui sono stati creati. Se non esiste alcun backlog, il pacchetto esegue immediatamente l'elaborazione, indipendentemente dalla priorità configurata. Per impostazione predefinita, il sito invia i pacchetti con priorità **Media**.  
 
     -   **Abilita per la distribuzione su richiesta**: usare questa impostazione per abilitare la distribuzione del contenuto su richiesta ai punti di distribuzione configurati per questa funzionalità e nel gruppo di limiti corrente del client. Quando questa impostazione è abilitata, il punto di gestione crea un trigger affinché il servizio di gestione della distribuzione distribuisca il contenuto a tutti i punti di distribuzione quando un client richiede il contenuto del pacchetto e questo non è disponibile. Per altre informazioni, vedere [Distribuzione di contenuto su richiesta](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#on-demand-content-distribution).  
 
@@ -59,10 +67,10 @@
 
     -   **Scarica aggiornamenti software da Internet**: selezionare questa impostazione per scaricare gli aggiornamenti software dal percorso su Internet. Questa opzione corrisponde all'impostazione predefinita.  
 
-    -   **Scaricare gli aggiornamenti software da un percorso di rete**: selezionare questa impostazione per scaricare gli aggiornamenti software da una directory locale o da una cartella condivisa. Questa impostazione è utile quando il computer che esegue la procedura guidata non dispone di accesso a Internet. I computer con accesso a Internet possono scaricare preventivamente gli aggiornamenti e archiviarli in un percorso di rete locale accessibile al computer che esegue la procedura guidata.  
+    -   **Scaricare gli aggiornamenti software da un percorso di rete**: selezionare questa impostazione per scaricare gli aggiornamenti software da una directory locale o da una cartella condivisa. Questa impostazione è utile quando il computer che esegue la procedura guidata non dispone di accesso a Internet. I computer con accesso a Internet possono scaricare preventivamente gli aggiornamenti e archiviarli in un percorso nella rete locale accessibile al computer che esegue la procedura guidata.  
 
 
-7.  Nella pagina **Selezione lingua** selezionare le lingue per cui vengono scaricati gli aggiornamenti software selezionati. Il sito scarica gli aggiornamenti software solo se sono disponibili nelle lingue selezionate. Gli aggiornamenti software non specifici per la lingua vengono sempre scaricati. Per impostazione predefinita, la procedura guidata consente di selezionare le lingue configurate nelle proprietà del punto di aggiornamento software. Prima di procedere alla pagina successiva, è necessario selezionare almeno una lingua. Quando si selezionano solo lingue non supportate da un aggiornamento, il download dell'aggiornamento non riesce.  
+7.  Nella pagina **Selezione lingua** selezionare le lingue per le quali il sito scarica gli aggiornamenti software selezionati. Il sito scarica questi aggiornamenti solo se sono disponibili nelle lingue selezionate. Gli aggiornamenti software non specifici della lingua vengono sempre scaricati. Per impostazione predefinita, la procedura guidata consente di selezionare le lingue configurate nelle proprietà del punto di aggiornamento software. Prima di procedere alla pagina successiva, è necessario selezionare almeno una lingua. Quando si selezionano solo lingue non supportate da un aggiornamento software, il download dell'aggiornamento non riesce.  
 
 8. Nella pagina **Riepilogo** verificare le impostazioni selezionate nella procedura guidata e fare clic su **Avanti** per scaricare gli aggiornamenti software.  
 

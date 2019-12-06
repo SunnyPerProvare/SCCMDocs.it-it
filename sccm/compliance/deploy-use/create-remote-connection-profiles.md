@@ -12,11 +12,11 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a5cdb08070c13feed573a947ba1f5ccf6a47b3e1
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126373"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62214550"
 ---
 # <a name="remote-connection-profiles-in-system-center-configuration-manager"></a>Profili di connessione remota in System Center Configuration Manager
 
@@ -158,16 +158,16 @@ Distribuire un profilo di connessione remota
 
      La pagina **Stato distribuzione** contiene le seguenti schede:  
 
-    -   **Conforme:** viene visualizzata la conformità del profilo di connessione remota in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che sono conformi al profilo di connessione remota. Il riquadro **Dettagli asset** visualizza anche i dispositivi che sono conformi a questo profilo. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive.  
+    -   **Conforme** : visualizza la conformità del profilo di connessione remota in base al numero degli asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che sono conformi al profilo di connessione remota. Il riquadro **Dettagli asset** visualizza anche i dispositivi che sono conformi a questo profilo. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive.  
 
         > [!IMPORTANT]  
         >  Un profilo di connessione remota non viene valutato se non è applicabile a un dispositivo client. Tuttavia, viene restituito come conforme.  
 
-    -   **Errore:** viene visualizzato un elenco di tutti gli errori per la distribuzione del profilo di connessione remota selezionato in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che hanno generato errori con questo profilo. Quando si seleziona un dispositivo, il riquadro **Dettagli asset** visualizza i dispositivi interessati dal problema selezionato. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive sul problema.  
+    -   **Errore** : visualizza un elenco di tutti gli errori per la distribuzione del profilo di connessione remota selezionata in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che hanno generato errori con questo profilo. Quando si seleziona un dispositivo, il riquadro **Dettagli asset** visualizza i dispositivi interessati dal problema selezionato. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive sul problema.  
 
-    -   **Non conforme:** viene visualizzato un elenco di tutte le regole non conformi nel profilo di connessione remota in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che non sono conformi a questo profilo. Quando si seleziona un dispositivo, il riquadro **Dettagli asset** visualizza i dispositivi interessati dal problema selezionato. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive sul problema.  
+    -   **Non conforme** : visualizza un elenco di tutte le regole non conformi nel profilo di connessione remota in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che non sono conformi a questo profilo. Quando si seleziona un dispositivo, il riquadro **Dettagli asset** visualizza i dispositivi interessati dal problema selezionato. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive sul problema.  
 
-    -   **Sconosciuto:** viene visualizzato un elenco di tutti i dispositivi che non sono conformi alla distribuzione del profilo di connessione remota selezionato insieme allo stato del client corrente dei dispositivi.  
+    -   **Sconosciuto** : visualizza un elenco di tutti i dispositivi che non sono conformi alla distribuzione del profilo di connessione remota selezionata insieme allo stato client corrente dei dispositivi.  
 
 5.  Nella pagina **Stato distribuzione** è possibile esaminare le informazioni dettagliate sulla conformità del profilo di connessione remota distribuito. Viene creato un nodo temporaneo nel nodo **Distribuzioni** che consente di ritrovare rapidamente queste informazioni.  
 

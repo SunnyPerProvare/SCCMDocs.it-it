@@ -12,11 +12,11 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 07b766db6b80f92eba8d401b3c751ca1d4766b38
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130861"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62206301"
 ---
 # <a name="monitor-compliance-settings-in-system-center-configuration-manager"></a>Monitorare le impostazioni di conformità in System Center Configuration Manager
 
@@ -49,7 +49,7 @@ Dopo aver distribuito le linee di base di configurazione di System Center Config
 
     -   **Non conforme**: visualizza un elenco di tutte le regole non conformi all'interno della linea di base di configurazione, in base al numero di asset interessati. È possibile fare clic su una regola per creare un nodo temporaneo nel nodo **Utenti** o **Dispositivi** dell'area di lavoro **Asset e conformità** che contiene tutti gli utenti o i dispositivi non conformi a questa regola. Quando si seleziona un utente o un dispositivo, il riquadro **Dettagli asset** visualizza gli utenti o i dispositivi interessati dal problema selezionato. Fare doppio clic su un utente o su un dispositivo presente nell'elenco per visualizzare informazioni aggiuntive sul problema.  
 
-    -   **Sconosciuto**: visualizza un elenco di tutti gli utenti e di tutti i dispositivi che non sono conformi alla distribuzione della linea di base di configurazione selezionata e lo stato del client dei dispositivi.  
+    -   **Sconosciuto**: visualizza un elenco di tutti gli utenti o di tutti i dispositivi che non sono conformi alla distribuzione della linea di base di configurazione selezionata e lo stato del client dei dispositivi.  
 
 5.  Nella pagina **Stato distribuzione** è possibile esaminare le informazioni dettagliate sulla conformità della linea di base di configurazione distribuita. Viene creato un nodo temporaneo nel nodo **Distribuzioni** che consente di ritrovare rapidamente queste informazioni.  
 
@@ -57,7 +57,7 @@ Dopo aver distribuito le linee di base di configurazione di System Center Config
  Le impostazioni di conformità in Configuration Manager includono una serie di report predefiniti che consentono di monitorare le informazioni relative a elementi di configurazione, linee di base di configurazione e distribuzioni. Tali report dispongono della categoria report di **Gestione conformità e impostazioni**.  
 
 > [!IMPORTANT]  
->  È necessario usare un carattere jolly (**%**) quando si usano i parametri **Filtro dispositivo** e Filtro utente nei report delle impostazioni di conformità.  
+>  È necessario usare un carattere jolly ( **%** ) quando si usano i parametri **Filtro dispositivo** e Filtro utente nei report delle impostazioni di conformità.  
 
  Per altre informazioni sulle modalità di configurazione dei report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md)  
 

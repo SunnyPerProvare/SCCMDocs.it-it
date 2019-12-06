@@ -12,11 +12,11 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 35765aa804bf0e6d303caf2c395d3d44d5027951
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58524082"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62198293"
 ---
 # <a name="create-linux-and-unix-server-applications-with-configuration-manager"></a>Creare applicazioni server Linux e UNIX con Configuration Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "58524082"
 > [!Important]  
 > A partire dalla versione 1902, Configuration Manager non supporta i client Linux o UNIX. 
 > 
-> Prendere in considerazione Microsoft Azure Management per la gestione dei server Linux. Le soluzioni di Azure includono un ampio supporto per Linux che nella maggior parte dei casi supera le funzionalità di Configuration Manager, inclusa la gestione end-to-end delle patch per Linux.
+> Per la gestione dei server Linux, è possibile usare la gestione di Microsoft Azure. Le soluzioni di Azure includono un ampio supporto per Linux che nella maggior parte dei casi supera le funzionalità di Configuration Manager, inclusa la gestione end-to-end delle patch per Linux.
 
 Tenere presenti le seguenti considerazioni quando si creano e si distribuiscono applicazioni per computer che eseguono Linux e UNIX.  
 

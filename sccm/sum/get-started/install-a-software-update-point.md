@@ -12,10 +12,10 @@ ms.technology: configmgr-sum
 ms.assetid: b099a645-6434-498f-a408-1d438e394396
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 618dd44a32e624a67f03bb18ea01169dd80daeb7
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67194675"
 ---
 # <a name="install-and-configure-a-software-update-point"></a>installare e configurare un punto di aggiornamento software  
@@ -115,7 +115,7 @@ ms.locfileid: "67194675"
 >  Quando si sceglie di non abilitare la sincronizzazione degli aggiornamenti software su una pianificazione, è possibile sincronizzare manualmente tali aggiornamenti dal nodo **Tutti gli aggiornamenti software** o **Gruppi di aggiornamenti software** nell'area di lavoro Raccolta software. Per altre informazioni, vedere [Synchronize software updates from a disconnected software update point](synchronize-software-updates.md) (Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso).  
 
 ## <a name="supersedence-rules"></a>Regole di sostituzione  
- Configurare le impostazioni di sostituzione nella pagina **Regole di sostituzione** della procedura guidata o nella scheda **Regole di sostituzione** in Proprietà del componente del punto di aggiornamento software. È possibile configurare le regole di sostituzione solo nel sito di livello superiore. A partire da Configuration Manager versione 1810, è possibile specificare il comportamento delle regole di sostituzione per **gli aggiornamenti delle funzionalità** separatamente dai **gli aggiornamenti delle funzionalità non**. <!--3098809, 2977644-->
+ Configurare le impostazioni di sostituzione nella pagina **Regole di sostituzione** della procedura guidata o nella scheda **Regole di sostituzione** in Proprietà del componente del punto di aggiornamento software. È possibile configurare le regole di sostituzione solo nel sito di livello superiore. A partire da Configuration Manager versione 1810, è possibile specificare il comportamento delle regole sostituzione per **gli aggiornamenti delle funzionalità** separatamente dagli **aggiornamenti non delle funzionalità**. <!--3098809, 2977644-->
 
  In questa pagina è possibile specificare di applicare immediatamente la scadenza agli aggiornamenti software sostituiti, impedendo in tal modo che siano inclusi nelle nuove distribuzioni e contrassegnando le distribuzioni esistenti per indicare che gli aggiornamenti software sostituiti contengono uno o più aggiornamenti scaduti. In alternativa, è possibile specificare un periodo di tempo prima della scadenza degli aggiornamenti software sostituiti, che consente di continuare a distribuirli. Per altre informazioni, vedere [Supersedence rules](../plan-design/plan-for-software-updates.md#BKMK_SupersedenceRules).  
 

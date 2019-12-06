@@ -12,11 +12,11 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 41ec97899d8f959298b3f62ff4a86837b04af461
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140916"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62198661"
 ---
 # <a name="create-mac-computer-applications-with-system-center-configuration-manager"></a>Creare applicazioni per computer Mac con System Center Configuration Manager
 

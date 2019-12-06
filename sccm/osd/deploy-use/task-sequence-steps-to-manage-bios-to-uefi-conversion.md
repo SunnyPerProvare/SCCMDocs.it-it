@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7dd789f03d5547bdc695370ac28c7f9b81219e58
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56128222"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62270836"
 ---
 # <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>Passaggi della sequenza di attività per la gestione della conversione da BIOS a UEFI
 Molte delle nuove funzionalità di sicurezza offerte da Windows 10 richiedono dispositivi abilitati per UEFI. Alcuni PC Windows moderni supportano UEFI, ma usano un BIOS legacy. Per convertire un dispositivo da BIOS a UEFI, è necessario in genere accedere a ogni PC, ripartire il disco rigido e riconfigurare il firmware. Usando le sequenze di attività disponibili in Configuration Manager, è possibile preparare un disco rigido per la conversione da BIOS a UEFI, eseguire la conversione nell'ambito del processo di aggiornamento sul posto e raccogliere informazioni su UEFI nell'ambito dell'inventario hardware.
@@ -58,7 +58,7 @@ Windows 10 Creators Update introduce un semplice strumento di conversione che au
 ### <a name="to-convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>Per eseguire la conversione da BIOS a UEFI durante un aggiornamento sul posto
 1. Creare una sequenza di attività di aggiornamento del sistema operativo per eseguire un aggiornamento sul posto a Windows 10 Creators Update.
 2. Modificare la sequenza di attività. Nel **gruppo Post-elaborazione** aggiungere i passaggi della sequenza di attività elencati di seguito.
-   1. Da Generale aggiungere un passaggio **Esegui riga di comando**. Verrà aggiunta la riga di comando per lo strumento MBR2GPT che consente di convertire un disco da MBR a GPT senza modificare o eliminare dati dal disco. Nella riga di comando immettere il comando seguente:  **MBR2GPT /convert /disk:0 /AllowFullOS**. È possibile anche scegliere di eseguire lo strumento MBR2GPT.EXE in Windows PE e non nel sistema operativo completo. A questo scopo, è necessario aggiungere un passaggio per riavviare il computer in WinPE prima del passaggio relativo all'esecuzione dello strumento MBR2GPT.EXE e rimuovere l'opzione /AllowFullOS dalla riga di comando. Per informazioni dettagliate sullo strumento e sulle opzioni disponibili, vedere [MBR2GPT.EXE](https://technet.microsoft.com/itpro/windows/deploy/mbr-to-gpt).
+   1. Da Generale aggiungere un passaggio **Esegui riga di comando**. Verrà aggiunta la riga di comando per lo strumento MBR2GPT che consente di convertire un disco da MBR a GPT senza modificare o eliminare dati dal disco. Nella riga di comando digitare quanto segue: **MBR2GPT /convert /disk:0 /AllowFullOS**. È possibile anche scegliere di eseguire lo strumento MBR2GPT.EXE in Windows PE e non nel sistema operativo completo. A questo scopo, è necessario aggiungere un passaggio per riavviare il computer in WinPE prima del passaggio relativo all'esecuzione dello strumento MBR2GPT.EXE e rimuovere l'opzione /AllowFullOS dalla riga di comando. Per informazioni dettagliate sullo strumento e sulle opzioni disponibili, vedere [MBR2GPT.EXE](https://technet.microsoft.com/itpro/windows/deploy/mbr-to-gpt).
    2. Aggiungere un passaggio per avviare lo strumento OEM che convertirà il firmware da BIOS a UEFI. Si tratta in genere di un passaggio della sequenza di attività Esegui riga di comando con una riga di comando per avviare lo strumento OEM.
    3. Da Generale aggiungere il passaggio **Riavvia computer**. Per specificare cosa eseguire dopo il riavvio, selezionare **Il sistema operativo predefinito attualmente installato**.
 3. Distribuire la sequenza di attività.

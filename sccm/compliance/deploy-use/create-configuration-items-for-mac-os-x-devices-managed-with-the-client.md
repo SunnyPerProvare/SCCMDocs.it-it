@@ -12,10 +12,10 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 346848bf3cd8b69b3bcecb479fb82250943dfd49
-ms.sourcegitcommit: de3c86077bbf91b793e94e1f60814df18da11bab
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/10/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67726151"
 ---
 # <a name="create-configuration-items-for-mac-os-x-devices"></a>Creare elementi di configurazione per dispositivi Mac OS X
@@ -66,7 +66,7 @@ Il sistema operativo Mac OS X usa i file elenco delle proprietà (con estensione
         -   **Script di monitoraggio e aggiornamento (facoltativo)** : facoltativamente, selezionare **Aggiungi script** e quindi immettere uno script della shell che viene usato per monitorare e aggiornare le impostazioni non conformi rilevate nei computer client Mac.  
   
             > [!IMPORTANT]  
-            >  Per garantire che non inseriti caratteri di formattazione che il computer Mac non è in grado di interpretare, non usare la copia e Incolla. In alternativa, digitare nello script.  
+            >  Per assicurarsi di non introdurre caratteri di formattazione che il computer Mac non è in grado di interpretare, non usare copia e incolla. Digitare invece lo script.  
   
 11. Scegliere il **tipo di dati** che è il formato in cui la condizione restituisce i dati prima che vengano usati per valutare l'impostazione.  
   
@@ -135,11 +135,11 @@ Il sistema operativo Mac OS X usa i file elenco delle proprietà (con estensione
   
             -   **Errore critico**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico** per i report di Configuration Manager.  
   
-            -   **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico** per i report di Configuration Manager. Il computer client Mac registra inoltre il livello di gravità.  
+            -   **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico** per i report di Configuration Manager. Il computer client Mac registra anche questo livello di gravità.  
   
     -   Per il tipo di regola **Esistenziale**specificare le informazioni seguenti:  
   
-        -   Scegliere uno:  
+        -   Scegliere una delle seguenti operazioni:  
   
             -   **L'impostazione deve esistere in dispositivi client**  
   
@@ -155,14 +155,14 @@ Il sistema operativo Mac OS X usa i file elenco delle proprietà (con estensione
   
             -   **Errore critico**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico** per i report di Configuration Manager.  
   
-            -   **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico** per i report di Configuration Manager. Il computer client Mac registra inoltre il livello di gravità.  
+            -   **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico** per i report di Configuration Manager. Il computer client Mac registra anche questo livello di gravità.  
   
         > [!NOTE]  
         >  Le opzioni visualizzate potrebbero variare a seconda del tipo di impostazione per cui si sta configurando una regola.  
   
 15. Selezionare **OK** per chiudere la finestra di dialogo **Crea regola**.  
   
-16. Nel **riepilogo** pagina, confermare le impostazioni per il nuovo elemento di configurazione. Completare la procedura guidata.  
+16. Nella pagina **Riepilogo** confermare le impostazioni per il nuovo elemento di configurazione. Completare la procedura guidata.  
   
 È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità**.  
   

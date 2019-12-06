@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 50ec232c9f5b007ef7a139cbe7894c333b6eed63
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56137882"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62199261"
 ---
 # <a name="how-to-analyze-and-convert-packages-with-package-conversion-manager"></a>Come analizzare e convertire i pacchetti con Package Conversion Manager
 

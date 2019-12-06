@@ -785,6 +785,8 @@
           href: clients/manage/inventory/configure-hardware-inventory.md
         - name: Come usare Esplora inventario risorse per visualizzare l'inventario hardware
           href: clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md
+        - name: Classi predefinite di Esplora inventario risorse
+          href: clients/manage/inventory/resource-explorer-classes.md
         - name: Inventario hardware per Linux e UNIX
           href: clients/manage/inventory/hardware-inventory-for-linux-and-unix.md
         - name: Sicurezza e privacy per l'inventario hardware

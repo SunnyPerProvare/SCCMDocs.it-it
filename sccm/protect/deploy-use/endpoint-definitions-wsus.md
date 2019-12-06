@@ -12,10 +12,10 @@ description: Informazioni su come configurare Windows Server Update Services per
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e868945cf3d87df17dbe8197ec99497f1478d973
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70380249"
 ---
 # <a name="enable-endpoint-protection-malware-definitions-to-download-from-windows-server-update-services-wsus-for-configuration-manager"></a>Abilitare le definizioni malware di Endpoint Protection da scaricare da Windows Server Update Services (WSUS) per Configuration Manager

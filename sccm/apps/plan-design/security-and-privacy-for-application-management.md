@@ -2,7 +2,7 @@
 title: Sicurezza e privacy per le app
 titleSuffix: Configuration Manager
 description: Indicazioni e consigli per la sicurezza e la privacy nella gestione delle applicazioni in Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e6fd16ce6094d9ed25f496995f1efdaff6a8d674
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 004cc8e723008a79fcc336731f461ff35564c2f2
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68535313"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74661380"
 ---
 # <a name="security-and-privacy-for-application-management-in-configuration-manager"></a>Sicurezza e privacy per la gestione delle applicazioni in Configuration Manager
 
@@ -28,9 +28,9 @@ ms.locfileid: "68535313"
 
 <!--1358309-->
 
-L'esperienza utente Silverlight del catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. Questa configurazione consente di ridurre l'infrastruttura server necessaria per distribuire le applicazioni agli utenti.
+L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. Questa configurazione consente di ridurre l'infrastruttura server necessaria per distribuire le applicazioni agli utenti.
 
-A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per l'utente. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni. Riducendo l'infrastruttura server si riduce anche la superficie di attacco.
+A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Riducendo l'infrastruttura server si riduce anche la superficie di attacco.
 
 Per offrire un'esperienza dell'applicazione coerente e sicura per i client basati su Internet, usare Azure Active Directory e il gateway di gestione cloud.
 
@@ -39,7 +39,7 @@ Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-des
 ### <a name="use-https-with-the-application-catalog"></a>Usare HTTPS con il Catalogo applicazioni
 
 > [!Important]  
-> Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
+> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
 Configurare il punto per siti Web del Catalogo applicazioni e il punto per servizi Web del Catalogo applicazioni per accettare le connessioni HTTPS. Con questa configurazione, il server viene autenticato agli utenti. I dati trasmessi sono protetti da manomissioni e visualizzazioni.
 
@@ -51,14 +51,14 @@ Quando non si usa HTTPS, non usare le opzioni di configurazione della personaliz
 ### <a name="use-role-separation"></a>Usare la separazione dei ruoli
 
 > [!Important]  
-> Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
+> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
 Installare il punto per siti Web del Catalogo applicazioni e il punto per servizi Web del Catalogo applicazioni in server separati. Se il punto del sito Web è compromesso, viene separato dal punto di servizio Web. In questo modo si proteggono i client e l'infrastruttura. Questa configurazione è particolarmente importante se il punto per siti Web accetta connessioni client da Internet, rendendo così il server più vulnerabile agli attacchi.  
 
 ### <a name="close-browser-windows"></a>Chiudere le finestre del browser
 
 > [!Important]  
-> Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
+> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
 Istruire gli utenti a chiudere la finestra del browser dopo aver usato il Catalogo applicazioni. Se gli utenti navigano in un sito Web esterno nella stessa finestra del browser usata per il Catalogo applicazioni, il browser continua a usare le impostazioni di sicurezza adatte per i siti attendibili nell'Intranet.  
 
@@ -176,7 +176,7 @@ Se si configura un tipo di distribuzione delle applicazioni Web, usare HTTPS per
 ## <a name="BKMK_CertificatesSilverlight5"></a> Certificati per Microsoft Silverlight 5 e modalità di attendibilità elevata richiesta per il Catalogo applicazioni  
 
 > [!Important]  
-> Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
+> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
 I client di Configuration Manager versione 1710 e precedenti richiedono Microsoft Silverlight 5 che deve essere eseguito in modalità di attendibilità elevata perché gli utenti installino il software dal Catalogo applicazioni. Per impostazione predefinita, le applicazioni Silverlight vengono eseguite in modalità di attendibilità parziale per evitare l'accesso ai dati utente. Se non è già installato, Configuration Manager installa automaticamente Microsoft Silverlight 5 nei client. Per impostazione predefinita, Configuration Manager imposta su **Sì** l'impostazione client **Consentire alle applicazioni di Silverlight di essere eseguite in modalità attendibilità elevata**. Questa impostazione consente alle applicazioni Silverlight firmate e attendibili di richiedere la modalità attendibilità elevata.  
 
@@ -211,7 +211,7 @@ Le funzionalità seguenti consentono di distribuire il software in modo efficien
 - Il **Catalogo applicazioni** è un sito Web che consente agli utenti di richiedere software da installare.  
 
     > [!Important]  
-    > Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
+    > Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
 ### <a name="bkmk_privacy-uda"></a>Informazioni sulla privacy dell'affinità utente dispositivo
 
@@ -238,7 +238,7 @@ Le funzionalità seguenti consentono di distribuire il software in modo efficien
 ### <a name="application-catalog-privacy-information"></a>Informazioni sulla privacy del catalogo applicazioni
 
 > [!Important]  
-> Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
+> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
 - Il Catalogo applicazioni non viene installato per impostazione predefinita. Questa installazione richiede diversi passaggi di configurazione.  
 

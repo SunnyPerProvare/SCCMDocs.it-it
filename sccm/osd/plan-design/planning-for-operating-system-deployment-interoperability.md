@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7d4f6275ede2a751acb8ca14d7b8b6ad307e78bd
-ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "66355002"
 ---
 # <a name="plan-for-os-deployment-interoperability"></a>Pianificare l'interoperabilità della distribuzione del sistema operativo

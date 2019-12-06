@@ -12,11 +12,11 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1330eafb50d7a855d60b86e427f9cf4f3cb8790e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126103"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62198374"
 ---
 # <a name="revise-and-supersede-applications-in-system-center-configuration-manager"></a>Rivedere e sostituire le applicazioni in System Center Configuration Manager
 
@@ -112,7 +112,7 @@ In questo argomento verrà illustrato come rivedere le versioni delle applicazio
 
 8.  Scegliere **OK** per chiudere la finestra di dialogo **Specificare la relazione di sostituzione** .  
 
-9. Scegliere **OK** per chiudere la finestra di dialogo **Proprietà** *<nome applicazione\>*.  
+9. Scegliere **OK** per chiudere la finestra di dialogo **Proprietà** *<nome applicazione\>* .  
 
 ### <a name="to-display-applications-that-supersede-the-current-application"></a>Per visualizzare le applicazioni che sostituiscono l'applicazione corrente  
 
@@ -120,8 +120,8 @@ In questo argomento verrà illustrato come rivedere le versioni delle applicazio
 
 2.  Nell'area di lavoro **Raccolta software** espandere **Gestione applicazioni**, scegliere **Applicazioni** e quindi scegliere l'applicazione.  
 
-3.  Nel gruppo **Proprietà** della scheda **Home** scegliere **Proprietà** per aprire la finestra di dialogo **Proprietà** *<nome applicazione\>*.  
+3.  Nel gruppo **Proprietà** della scheda **Home** scegliere **Proprietà** per aprire la finestra di dialogo **Proprietà** *<nome applicazione\>* .  
 
 4.  Nella scheda **Riferimenti** della finestra di dialogo **Proprietà** *<nome applicazione\>* scegliere **Applicazioni che sostituiscono l'applicazione** nell'elenco a discesa **Tipo di relazione**.  
 
-5.  Riesaminare l'elenco delle applicazioni che sostituiscono l'applicazione selezionata e quindi scegliere **OK** per chiudere la finestra di dialogo **Proprietà** *<nome applicazione\>*.  
+5.  Riesaminare l'elenco delle applicazioni che sostituiscono l'applicazione selezionata e quindi scegliere **OK** per chiudere la finestra di dialogo **Proprietà** *<nome applicazione\>* .  

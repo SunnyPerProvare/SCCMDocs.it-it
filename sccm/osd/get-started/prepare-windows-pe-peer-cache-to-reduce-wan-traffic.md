@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 80dffb04d7f6ef097ad5b629690e704d1c9a263f
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67286577"
 ---
 # <a name="prepare-windows-pe-peer-cache-to-reduce-wan-traffic-in-system-center-configuration-manager"></a>Preparare la peer cache di Windows PE per ridurre il traffico della rete WAN in System Center Configuration Manager
@@ -64,11 +64,11 @@ Usare le sezioni seguenti per gestire la peer cache.
 
 -   Il client di Configuration Manager deve essere in grado di comunicare attraverso le porte seguenti della rete:  
 
-    -   Porta per la trasmissione di rete iniziale, per trovare un’origine peer cache. Per impostazione predefinita, questa è la porta UDP 8004.  
+    -   Porta per la trasmissione di rete iniziale, per trovare un’origine peer cache. Per impostazione predefinita, è la porta UDP 8004.  
 
-    -   Porta per il download del contenuto da un'origine peer cache (HTTP e HTTPS). Per impostazione predefinita, questa è la porta TCP 8003.  
+    -   Porta per il download del contenuto da un'origine peer cache (HTTP e HTTPS). Per impostazione predefinita, si tratta della porta TCP 8003.  
     
-        Per altre informazioni, vedere [porte usate per le connessioni](/sccm/core/plan-design/hierarchy/ports#BKMK_PortsClient-ClientWakeUp).  
+        Per altre informazioni, vedere [Porte usate per le connessioni](/sccm/core/plan-design/hierarchy/ports#BKMK_PortsClient-ClientWakeUp).  
 
         > [!TIP]  
         >  I client useranno HTTPS per scaricare il contenuto quando è disponibile. Tuttavia, lo stesso numero di porta viene usato per HTTP o HTTPS.  

@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9ab1b811ad67ee1e3d355af11014fc6013c61a5
-ms.sourcegitcommit: 5d539522103d0f019797d58aee8c32d3966cd1fa
+ms.openlocfilehash: 6a83dde537a847f562422a1a972ebc65244435b9
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74161642"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660785"
 ---
 # <a name="uup-private-preview-instructions"></a>Istruzioni per l'anteprima privata di UUP
 
@@ -202,11 +202,12 @@ Quando si esamina il contenuto totale scaricato e distribuito in un periodo di 1
 Per la versione di anteprima, è preferibile testare i tipici scenari reali. UUP supporta tutti i canali di contenuto, tra cui:
 
 - Ottimizzazione recapito di Windows
+  - Quando si usa DO, assicurarsi che sia configurato correttamente. Per altre informazioni, vedere [FAQs to optimize Windows 10 update delivery](/sccm/sum/deploy-use/optimize-windows-10-update-delivery) (FAQ per ottimizzare il recapito degli aggiornamenti di Windows 10).
 - Peer cache di Configuration Manager
 - Windows BranchCache
 - Usare l'opzione **nessun pacchetto di distribuzione** e i client vengono scaricati direttamente da Microsoft Update. Usare questa opzione con ottimizzazione recapito.
 - Provider di contenuti alternativi di terze parti
 
-Per altre informazioni, vedere [FAQs to optimize Windows 10 update delivery](/sccm/sum/deploy-use/optimize-windows-10-update-delivery) (FAQ per ottimizzare il recapito degli aggiornamenti di Windows 10).
+Per ulteriori informazioni sui canali di contenuto, vedere [ottimizzare il recapito degli aggiornamenti di Windows 10](/sccm/sum/deploy-use/optimize-windows-10-update-delivery).
 
 <!-- TODO: Addlink to WSUS Perf documentation-->

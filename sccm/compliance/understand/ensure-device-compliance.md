@@ -12,11 +12,11 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2ac27cfd7bccc55da891707878fccd8829c43d93
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125937"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62213811"
 ---
 # <a name="ensure-device-compliance-with-system-center-configuration-manager"></a>Garantire la conformità dei dispositivi con System Center Configuration Manager
 

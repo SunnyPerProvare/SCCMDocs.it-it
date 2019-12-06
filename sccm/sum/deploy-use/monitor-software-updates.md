@@ -12,10 +12,10 @@ ms.technology: configmgr-sum
 ms.assetid: 9afd7b0f-5c8e-48bc-9a65-1f7d74103688
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0933346884c0bad9fcc6923629228391b707a710
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68537183"
 ---
 # <a name="monitor-software-updates-in-system-center-configuration-manager"></a>Monitorare gli aggiornamenti software in System Center Configuration Manager
@@ -34,7 +34,7 @@ A partire da Configuration Manager versione 1610, è possibile usare il nuovo da
 <!--4224414-->
 *(Funzionalità introdotta nella versione 1906)*
 
-È possibile esaminare le statistiche di conformità per vedere quali dispositivi richiedono un aggiornamento software di Office 365 specifico. Per visualizzare l'elenco dei dispositivi, è necessaria l'autorizzazione per visualizzare gli aggiornamenti e le raccolte a cui appartengano i dispositivi. Per eseguire il drill-down nell'elenco dei dispositivi:
+È possibile esaminare nel dettaglio le statistiche di conformità per individuare i dispositivi che richiedono un aggiornamento software di Office 365 specifico. Per visualizzare l'elenco dei dispositivi, è necessaria l'autorizzazione per visualizzare gli aggiornamenti e le raccolte a cui appartengano i dispositivi. Per eseguire il drill-down nell'elenco dei dispositivi:
 
 1. Passare a **Raccolta software** > **Aggiornamenti software** > **Tutti gli aggiornamenti software**.
 1. Selezionare tutti gli aggiornamenti richiesti da almeno un dispositivo.

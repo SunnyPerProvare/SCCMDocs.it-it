@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 408f8c17150aa6b6ee9330b40d8b8fef09b7eae5
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70892522"
 ---
 # <a name="use-stand-alone-media-to-deploy-windows-without-using-the-network"></a>Usare i supporti autonomi per distribuire Windows senza usare la rete

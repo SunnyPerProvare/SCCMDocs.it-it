@@ -13,11 +13,11 @@ manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1d76b43a1918184fea9cc97bb3ed35a57a7c7ada
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126052"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62198474"
 ---
 # <a name="how-to-use-the-package-conversion-manager-plug-in"></a>Come usare il plug-in Package Conversion Manager
 

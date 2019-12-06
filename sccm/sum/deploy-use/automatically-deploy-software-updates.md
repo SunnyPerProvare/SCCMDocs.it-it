@@ -5,18 +5,18 @@ description: Per distribuire automaticamente gli aggiornamenti software, si usan
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 07/26/2019
+ms.date: 11/29/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a45b1d1853ef4b0faa6205919b8b06d58a81b12
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: daa97e1fe6d3d45356d1ad77213398cdd1e16dd5
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68537152"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660836"
 ---
 #  <a name="automatically-deploy-software-updates"></a>Distribuire automaticamente gli aggiornamenti software  
 
@@ -86,32 +86,27 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
      - Se necessario, filtrare le dimensioni del contenuto per gli aggiornamenti software nelle regole di distribuzione automatica. Per altre informazioni, vedere [Configuration Manager and Simplified Windows Servicing on Down Level Operating Systems](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/) (Configuration Manager e manutenzione Windows semplificata su sistemi operativi di livello inferiore).  
 
+     - A partire dalla versione 1910, è possibile usare **distribuito** come filtro di aggiornamento per le regole di distribuzione automatica. Questo filtro consente di identificare i nuovi aggiornamenti che potrebbero dover essere distribuiti nelle raccolte pilota o di test. Il filtro di aggiornamento software consente anche di evitare la ridistribuzione di aggiornamenti meno recenti. 
+         - Quando si usa il filtro **Distribuito**, tenere presente che è possibile che l'aggiornamento sia già stato distribuito in un'altra raccolta, ad esempio una raccolta pilota o di test. <!--4852033-->
      - A partire dalla versione 1806, è disponibile un filtro proprietà per **Architettura**. Usare questo filtro per escludere architetture quali Itanium e ARM64, che sono meno comuni. Tenere presente che esistono applicazioni e componenti a 32 bit (x86) che vengono eseguiti in sistemi a 64 bit (x64). A meno che non si sia certi che x86 non è necessario, abilitare questa funzionalità anche quando si sceglie x64.<!--1322266-->  
 
     > [!NOTE]  
-    > **Windows 10 versione 1903 e successive** è stato aggiunto a Microsoft Update come prodotto a sé stante, anziché all'interno del prodotto **Windows 10** come le versioni precedenti. A causa di questa modifica è necessario eseguire una serie di passaggi manuali per assicurarsi che i client visualizzino questi aggiornamenti. È stato aiutato a ridurre il numero di passaggi manuali da eseguire per il nuovo prodotto nella versione Configuration Manager 1906. <!--4682946-->
-    >
-    > Quando si esegue l'aggiornamento a Configuration Manager versione 1906 e il prodotto **Windows 10** è selezionato per la sincronizzazione, vengono eseguite automaticamente le azioni seguenti:
-    > - Le regole di distribuzione automatica che contengono il prodotto **Windows 10** vengono aggiornate in modo da includere **Windows 10 versione 1903 e successive**.
-    > - Il prodotto **Windows 10 versione 1903 e successive** viene aggiunto per la sincronizzazione. Per altre informazioni, vedere [Configurare le classificazioni e i prodotti](/sccm/sum/get-started/configure-classifications-and-products)
-    > - I [piani di manutenzione](/sccm/osd/deploy-use/manage-windows-as-a-service#servicing-plan-workflow) vengono aggiornati in modo che includano il prodotto **Windows 10 versione 1903 e successive**.
+    > **Windows 10 versione 1903 e successive** è stato aggiunto a Microsoft Update come prodotto a sé stante, anziché all'interno del prodotto **Windows 10** come le versioni precedenti. A causa di questa modifica è necessario eseguire una serie di passaggi manuali per assicurarsi che i client visualizzino questi aggiornamenti. È stato aiutato a ridurre il numero di passaggi manuali da eseguire per il nuovo prodotto nella versione Configuration Manager 1906. Per ulteriori informazioni, vedere [configurazione dei prodotti per le versioni di Windows 10](/configmgr/sum/get-started/configure-classifications-and-products#windows-10-version-1903-and-later) <!--4682946-->
 
-6.  Nella pagina **Pianificazione valutazione** specificare se abilitare l'esecuzione della regola di distribuzione automatica in una pianificazione. Quando attivata, fare clic su **Personalizza** per impostare la pianificazione ricorrente.  
+
+6. Nella pagina **Pianificazione valutazione** specificare se abilitare l'esecuzione della regola di distribuzione automatica in una pianificazione. Quando attivata, fare clic su **Personalizza** per impostare la pianificazione ricorrente.  
 
     - La configurazione dell'ora di avvio per la pianificazione si basa sull'ora locale del computer su cui è in esecuzione la console di Configuration Manager.  
 
     - La valutazione dell'ADR può essere eseguita per un massimo di tre volte al giorno.  
 
     - Non impostare mai la pianificazione per la valutazione con una frequenza superiore alla pianificazione della sincronizzazione degli aggiornamenti software. In questa pagina è visualizzata la pianificazione di sincronizzazione del punto di aggiornamento software che consente di determinare la frequenza della pianificazione per la valutazione.  
-    
+
     - Per eseguire manualmente la regola di distribuzione automatica, selezionarla nel nodo **Regola di distribuzione automatica** della console e quindi fare clic su **Esegui** nella barra multifunzione.  
-    
-       > [!NOTE]  
-       > A partire dalla versione 1802, è possibile pianificare le regole di distribuzione automatica per valutare l'offset rispetto a un giorno di base. Se, ad esempio, il giorno di Patch Tuesday per l'utente cade in realtà di mercoledì, impostare la pianificazione della valutazione per il secondo martedì del mese con l'offset di un giorno.<!--1357133-->  
-       >  
-       > Quando si pianifica la valutazione con un offset durante l'ultima settimana del mese e si sceglie un offset che causa il passaggio al mese successivo, il sito pianifica la valutazione per l'ultimo giorno del mese.<!--506731-->  
-       >  
-       > ![Offset rispetto al giorno base della pianificazione di valutazione personalizzata ADR](./media/ADR-evaluation-schedule-offset.PNG)
+
+    - A partire dalla versione 1802, è possibile pianificare le regole di distribuzione automatica per valutare l'offset rispetto a un giorno di base. Se, ad esempio, il giorno di Patch Tuesday per l'utente cade in realtà di mercoledì, impostare la pianificazione della valutazione per il secondo martedì del mese con l'offset di un giorno.<!--1357133-->  
+        - Quando si pianifica la valutazione con un offset durante l'ultima settimana del mese e si sceglie un offset che causa il passaggio al mese successivo, il sito pianifica la valutazione per l'ultimo giorno del mese.<!--506731-->  
+        ![Offset rispetto al giorno base della pianificazione di valutazione personalizzata ADR](./media/ADR-evaluation-schedule-offset.PNG)
 
    
 7.  Nella pagina **Pianificazione della distribuzione** configurare le impostazioni seguenti:  

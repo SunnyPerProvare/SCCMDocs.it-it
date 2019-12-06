@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e3162a1477fde3996582dfbe4ab011acfa1e0c4b
-ms.sourcegitcommit: 5d539522103d0f019797d58aee8c32d3966cd1fa
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74161666"
 ---
 # <a name="enable-endpoint-protection-malware-definitions-to-download-from-microsoft-updates"></a>Abilitare le definizioni malware di Endpoint Protection da scaricare da Microsoft Updates

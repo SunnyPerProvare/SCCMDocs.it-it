@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ee1bf48298c3c21388267c4975d6d59383157593
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "65494751"
 ---
 #  <a name="configure-alerts-for-endpoint-protection-in-configuration-manager"></a>Configurare gli avvisi di Endpoint Protection in Configuration Manager
@@ -84,7 +84,7 @@ ms.locfileid: "65494751"
 
         -   **Intervallo per rilevamento (ore)** : specificare l'intervallo di rilevamento, in ore, in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
 
-9. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà** _<Nome raccolta\>_.  
+9. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà** _<Nome raccolta\>_ .  
 
 ## <a name="alert-for-outdated-malware-client"></a>Avviso per client malware obsoleto
 

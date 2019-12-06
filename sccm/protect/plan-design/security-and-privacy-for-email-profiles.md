@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d492d488c08f9eaa5fdda913a902c777c74b99c9
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "65500297"
 ---
 # <a name="security-and-privacy-for-email-profiles-in-system-center-configuration-manager"></a>Sicurezza e privacy per i profili di posta elettronica in System Center Configuration Manager

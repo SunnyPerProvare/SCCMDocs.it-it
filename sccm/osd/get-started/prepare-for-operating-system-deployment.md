@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7e303a7363e0641210cc7c6e436546d864fe0571
-ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
-ms.translationtype: HT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56838719"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62243640"
 ---
 # <a name="prepare-for-os-deployment-in-configuration-manager"></a>Preparare la distribuzione del sistema operativo in Configuration Manager
 

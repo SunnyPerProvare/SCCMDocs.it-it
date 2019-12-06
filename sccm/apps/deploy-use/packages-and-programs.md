@@ -12,10 +12,10 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 11af81b3da1c26fb83e96e5deda108880461333c
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68534772"
 ---
 # <a name="packages-and-programs-in-configuration-manager"></a>Pacchetti e programmi in Configuration Manager
@@ -204,7 +204,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
         > [!NOTE]
         > Se più utenti hanno eseguito l'accesso al dispositivo, le distribuzioni di sequenze di attività e di pacchetti potrebbero non comparire in Software Center.
 
-    - **Invia pacchetti**di riattivazione: se lo scopo della distribuzione è impostato su **richiesto** e si seleziona questa opzione, il sito invia prima di tutto un pacchetto di riattivazione ai computer al momento della scadenza dell'installazione. Prima di poter usare questa opzione, configurare i computer per riattivazione LAN. Per altre informazioni, vedere [Come configurare la riattivazione LAN](/sccm/core/clients/deploy/configure-wake-on-lan).  
+    - **Invia pacchetti di riattivazione**: se lo scopo della distribuzione è impostato su **richiesto** e si seleziona questa opzione, il sito invia prima di tutto un pacchetto di riattivazione ai computer al momento della scadenza dell'installazione. Prima di poter usare questa opzione, configurare i computer per riattivazione LAN. Per altre informazioni, vedere [Come configurare la riattivazione LAN](/sccm/core/clients/deploy/configure-wake-on-lan).  
 
     - **Consente a tutti i client che usano una connessione di rete a consumo di scaricare il contenuto una volta raggiunta la scadenza dell'installazione. Se si abilita questa opzione, potrebbe essere addebitato un costo aggiuntivo**  
 

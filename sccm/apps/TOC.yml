@@ -55,7 +55,7 @@
           href: deploy-use/deploy-edge.md
         - name: Distribuire applicazioni virtuali App-V
           href: get-started/deploying-app-v-virtual-applications.md
-        - name: Risoluzione dei problemi relativi alla distribuzione di applicazioni
+        - name: Suggerimenti per la risoluzione dei problemi di distribuzione delle app
           href: deploy-use/troubleshoot-application-deployment.md
     - name: Monitorare le applicazioni
       items:
@@ -71,10 +71,8 @@
           href: deploy-use/management-tasks-applications.md
         - name: Affinità utente dispositivo
           href: deploy-use/link-users-and-devices-with-user-device-affinity.md
-        - name: App acquistate con Volume Purchase Program da Microsoft Store per le aziende
+        - name: Microsoft Store per le aziende e gli istituti di istruzione
           href: deploy-use/manage-apps-from-the-windows-store-for-business.md
-        - name: Risoluzione dei problemi di integrazione di Microsoft Store per le aziende
-          href: deploy-use/troubleshoot-microsoft-store-for-business-integration.md
         - name: Ambienti virtuali App-V
           href: deploy-use/create-app-v-virtual-environments.md
         - name: Importare ed esportare le applicazioni
@@ -93,13 +91,36 @@
         - name: Informazioni sulla sicurezza degli script PowerShell
           href: deploy-use/learn-script-security.md
     - name: Package Conversion Manager
-      href: pcm/package-conversion-manager.md
       items:
+        - name: Pianificare l'uso di Package Conversion Manager
+          href: pcm/package-conversion-manager.md
         - name: Come analizzare e convertire i pacchetti
           href: pcm/how-to-analyze-and-convert.md
+- name: Risoluzione dei problemi
+  items:
+    - name: Risolvere i problemi relativi alla distribuzione di applicazioni
+      items:
+        - name: Prima di iniziare
+          href: understand/app-deployment-technical-reference.md
+        - name: Criteri di distribuzione delle applicazioni
+          href: understand/deployment-policy-technical-reference.md
+        - name: Distribuzione delle applicazioni per i dispositivi
+          href: understand/device-deployment-technical-reference.md
+        - name: Distribuzione delle applicazioni per gli utenti
+          href: understand/user-deployment-technical-reference.md
+        - name: Componenti client di distribuzione delle applicazioni
+          href: understand/client-components-technical-reference.md
+        - name: Valutazione delle applicazioni
+          href: understand/deployment-evaluation-technical-reference.md
+        - name: Download delle applicazioni
+          href: understand/deployment-download-technical-reference.md
+        - name: Installazione delle applicazioni
+          href: understand/deployment-install-technical-reference.md
+    - name: Risoluzione dei problemi di integrazione di Microsoft Store per le aziende e gli istituti di istruzione
+      href: deploy-use/troubleshoot-microsoft-store-for-business-integration.md
+    - name: Risolvere i problemi di Package Conversion Manager
+      items:
         - name: Risolvere i problemi di Package Conversion Manager
           href: pcm/troubleshoot-pcm.md
-        - name: Informazioni di riferimento tecnico
-          items:
-            - name: Messaggi di errore
-              href: pcm/error-messages.md
+        - name: Messaggi di errore per Package Conversion Manager
+          href: pcm/error-messages.md

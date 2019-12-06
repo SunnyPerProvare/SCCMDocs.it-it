@@ -12,10 +12,10 @@ author: mestew
 ms.author: mstewart
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b207d0c210aa25489d67a5a551bf795e86c1582b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "65500239"
 ---
 # <a name="add-software-updates-to-an-update-group"></a>Aggiungere gli aggiornamenti software a un gruppo di aggiornamento  

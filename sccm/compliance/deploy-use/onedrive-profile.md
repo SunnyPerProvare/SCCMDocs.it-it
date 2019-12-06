@@ -12,11 +12,11 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 22fcc8704651d75b4123e7942d14b861b3f6c099
-ms.sourcegitcommit: 6f4c2987debfba5d02ee67f6b461c1a988a3e201
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59802463"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62215193"
 ---
 # <a name="onedrive-for-business-profiles"></a>Profili di OneDrive for Business
 

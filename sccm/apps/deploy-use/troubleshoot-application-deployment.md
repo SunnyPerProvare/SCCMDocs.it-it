@@ -1,5 +1,5 @@
 ---
-title: Risolvere i problemi relativi alla distribuzione di app
+title: Suggerimenti per la risoluzione dei problemi per le distribuzioni di app
 titleSuffix: Configuration Manager
 description: Suggerimenti per la risoluzione dei problemi di distribuzione dell'applicazione in System Center Configuration Manager
 ms.date: 05/29/2019
@@ -11,14 +11,14 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 75dcf2d4ae69c2181fecde0c04359faa46753e88
-ms.sourcegitcommit: 3f43fa8462bf39b2c18b90a11a384d199c2822d8
+ms.openlocfilehash: 1eb1c19f7001ac144551e8f63b8273fe1db1df8c
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66411020"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74814194"
 ---
-# <a name="troubleshoot-application-deployments"></a>Risolvere i problemi relativi alla distribuzione di applicazioni
+# <a name="troubleshooting-tips-for-application-deployments"></a>Suggerimenti per la risoluzione dei problemi per le distribuzioni di applicazioni
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -28,7 +28,7 @@ I problemi tipici della distribuzione di applicazioni rientrano in una delle cat
 
 - Conformità della distribuzione dell'applicazione bloccata allo 0%
 
-Se si verifica uno di questi problemi, il presente articolo elenca alcuni passaggi da usare per la risoluzione.
+Se si verifica uno di questi problemi, il presente articolo elenca alcuni passaggi da usare per la risoluzione. Per informazioni più dettagliate sulla risoluzione dei problemi, vedere [risoluzione dei problemi di riferimento tecnico](/sccm/apps/understand/app-deployment-technical-reference)per la distribuzione di applicazioni.
 
 
 ## <a name="download-failures"></a>Errori di download
@@ -72,3 +72,4 @@ Se queste azioni non risolvono il problema, controllare lo stato del client. Il 
 - [Monitorare le applicazioni](/sccm/apps/deploy-use/monitor-applications-from-the-console)
 - [Distribuire applicazioni](/sccm/apps/deploy-use/deploy-applications)
 - [Attività di gestione per le applicazioni](/sccm/apps/deploy-use/management-tasks-applications)
+- [Guida di riferimento tecnico per la distribuzione di applicazioni](/sccm/apps/understand/app-deployment-technical-reference)

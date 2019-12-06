@@ -12,11 +12,11 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e6ae7f6b14da4f5959e336e08bec0e71896425ff
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129919"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62205998"
 ---
 # <a name="create-user-data-and-profiles-configuration-items-in-system-center-configuration-manager"></a>Creare elementi di configurazione di profili e dati utente in System Center Configuration Manager
 
@@ -56,15 +56,15 @@ Gli elementi di configurazione di profili e dati utente in System Center Configu
 
 3. Nella pagina **Generale** della **Creazione guidata elemento di configurazione profili e dati utente**specificare le informazioni seguenti:  
 
-   -   **Nome:** immettere un nome univoco per l'elemento di configurazione. È possibile usare un massimo di 256 caratteri.  
+   -   **Nome** : immettere un nome univoco per l'elemento di configurazione. È possibile usare un massimo di 256 caratteri.  
 
-   -   **Descrizione:** fornire una descrizione che offra una panoramica dell'elemento di configurazione e altre informazioni rilevanti per identificarlo nella console di Configuration Manager. È possibile usare un massimo di 256 caratteri.  
+   -   **Descrizione:** Fornire una descrizione che offra una panoramica di elemento di configurazione e altre informazioni rilevanti per identificarlo nella console di Configuration Manager. È possibile usare un massimo di 256 caratteri.  
 
-   -   **Reindirizzamento cartelle:** selezionare questa casella di controllo per configurare le impostazioni per il reindirizzamento delle cartelle per questo elemento di configurazione.  
+   -   **Reindirizzamento cartelle:** selezionare questa casella di controllo se si vuole configurare le impostazioni per il reindirizzamento delle cartelle per questo elemento di configurazione.  
 
-   -   **File offline:** selezionare questa casella di controllo per configurare le impostazioni per i file offline per questo elemento di configurazione.  
+   -   **File offline:** selezionare questa casella di controllo se si vuole configurare le impostazioni per i file offline per questo elemento di configurazione.  
 
-   -   **Profili utente mobili:** selezionare questa casella di controllo per configurare le impostazioni per i profili utente mobili per questo elemento di configurazione.  
+   -   **Profili utente mobili:** selezionare questa casella di controllo se si vuole configurare le impostazioni per i profili utente mobili per questo elemento di configurazione.  
 
 4. Nella pagina **Reindirizzamento cartelle** della **Creazione guidata elemento di configurazione profili e dati utente**specificare come si vuole che i computer client degli utenti che ricevono questo elemento di configurazione gestiscano il reindirizzamento delle cartelle. È possibile configurare le impostazioni per qualsiasi dispositivo a cui l'utente accede o solo per i dispositivi primari dell'utente. Per altre informazioni sul reindirizzamento delle cartelle, vedere la documentazione di Windows Server.  
 

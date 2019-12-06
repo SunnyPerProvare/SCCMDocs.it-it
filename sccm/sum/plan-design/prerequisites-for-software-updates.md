@@ -12,10 +12,10 @@ ms.technology: configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 334854072e5c724f2c76432e7a7372c02cab3d54
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70892258"
 ---
 # <a name="prerequisites-for-software-updates-in-system-center-configuration-manager"></a>Prerequisiti per gli aggiornamenti software in System Center Configuration Manager
@@ -145,7 +145,7 @@ Attenersi alla procedura seguente per risolvere l'errore 0xc1800118 e "errore: f
       Get-WsusClassification | Where-Object -FilterScript {$_.Classification.Title -Eq “Upgrades”} | Set-WsusClassification -Disable
       ```  
      - Se si condivide il database WSUS tra più server WSUS, è sufficiente deselezionare gli **aggiornamenti** una volta per ogni database.  
-1. In ogni server WSUS, da un prompt dei comandi con privilegi `"C:\Program Files\Update Services\Tools\wsusutil.exe" postinstall /servicing`elevati eseguire:. Riavviare quindi il servizio WSUS in tutti i server WSUS.
+1. In ogni server WSUS, da un prompt dei comandi con privilegi elevati eseguire: `"C:\Program Files\Update Services\Tools\wsusutil.exe" postinstall /servicing`. Riavviare quindi il servizio WSUS in tutti i server WSUS.
    -  WSUS posiziona il database in [modalità utente singolo](https://docs.microsoft.com/sql/relational-databases/databases/set-a-database-to-single-user-mode) prima di verificare se è necessaria la manutenzione. La manutenzione viene eseguita o non viene eseguita in base ai risultati del controllo. Quindi, il database viene ripristinato in modalità multiutente. 
    - Se si condivide il database WSUS tra più server WSUS, è necessario eseguire questa operazione una sola volta per ogni database.
 1. Eliminare tutti gli aggiornamenti di Windows 10 da ogni database WSUS usando PowerShell ISE eseguito come amministratore.

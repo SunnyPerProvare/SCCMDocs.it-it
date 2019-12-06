@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0a650fd5517fb86108d230cc997c8586520826e7
-ms.sourcegitcommit: 16dd488c51b5cf01a7dd4204f7d40ee9ae0abe85
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68743586"
 ---
 # <a name="approve-applications-in-configuration-manager"></a>Approvare le applicazioni in Configuration Manager
@@ -26,7 +26,7 @@ Quando si [distribuiscono applicazioni](/sccm/apps/deploy-use/deploy-application
 
 ## <a name="bkmk_approval"></a> Impostazioni di approvazione
 
-Il comportamento di approvazione dell'applicazione dipende dal fatto che sia abilitata l'esperienza consigliata facoltativa per l' [app](#bkmk_opt). Nella pagina **Impostazioni di distribuzione** dell'applicazione di distribuzione viene visualizzata una delle seguenti impostazioni di approvazione:  
+Il comportamento di approvazione dell'applicazione dipende dal fatto che sia abilitata l'esperienza consigliata [facoltativa](#bkmk_opt)per l'app. Nella pagina **Impostazioni di distribuzione** dell'applicazione di distribuzione viene visualizzata una delle seguenti impostazioni di approvazione:  
 
 ### <a name="bkmk_opt"></a> Un amministratore deve approvare una richiesta per questa applicazione nel dispositivo
 

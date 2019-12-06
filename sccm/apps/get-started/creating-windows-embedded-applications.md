@@ -12,11 +12,11 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a76ce199b84db200ed023d610f40dbf6f9f989c2
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120866"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62198545"
 ---
 # <a name="create-windows-embedded-applications-with-system-center-configuration-manager"></a>Creare applicazioni Windows Embedded con System Center Configuration Manager
 
@@ -30,7 +30,7 @@ Oltre agli altri requisiti e alle procedure di System Center Configuration Manag
 
 -   Quando si distribuisce un'applicazione in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta con una finestra di manutenzione configurata. Ciò consente di decidere quando abilitare o disabilitare il filtro di scrittura nonché quando riavviare il dispositivo.  
 
--   L'impostazione che consente di controllare il comportamento del filtro di scrittura è una casella di controllo denominata **Invia modifiche alla scadenza o in una finestra di manutenzione (riavvio necessario)**.  
+-   L'impostazione che consente di controllare il comportamento del filtro di scrittura è una casella di controllo denominata **Invia modifiche alla scadenza o in una finestra di manutenzione (riavvio necessario)** .  
 
 ## <a name="tips-for-deploying-applications"></a>Suggerimenti per la distribuzione di applicazioni  
 
