@@ -11,10 +11,10 @@ author: mestew
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 17f120e61b581680185c038d2fa4289bb58a3f39
-ms.sourcegitcommit: edc7a5ad6a2eb72d0448d4689b9534f7e6f4d2b7
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73623392"
 ---
 # <a name="best-practices-for-reporting-in-system-center-configuration-manager"></a>Procedure consigliate per la creazione di report in System Center Configuration Manager

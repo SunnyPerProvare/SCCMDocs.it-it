@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a83a7100819718dc8bd5fa74f0e4a317b4b47e44
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67676731"
 ---
 # <a name="state-messages-in-configuration-manager"></a>Messaggi di stato in Configuration Manager 
@@ -31,7 +31,7 @@ Ogni funzionalità di Configuration Manager che usa i messaggi di stato viene id
 > [!NOTE]  
 > Il valore zero (0) per un ID del messaggio di stato indica in genere che il tipo di argomento è in uno stato sconosciuto.
 
-## <a name="300-statetopictypesumassignmentcompliance"></a>300 STATE_TOPICTYPE_SUM_ASSIGNMENT_COMPLIANCE
+## <a name="300-state_topictype_sum_assignment_compliance"></a>300 STATE_TOPICTYPE_SUM_ASSIGNMENT_COMPLIANCE
 
 |      ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -39,7 +39,7 @@ Ogni funzionalità di Configuration Manager che usa i messaggi di stato viene id
 | 1 | conformi | 
 | 2 | Non conformi | 
 
-## <a name="301-statetopictypesumassignmentenforcement"></a>301 STATE_TOPICTYPE_SUM_ASSIGNMENT_ENFORCEMENT
+## <a name="301-state_topictype_sum_assignment_enforcement"></a>301 STATE_TOPICTYPE_SUM_ASSIGNMENT_ENFORCEMENT
 
 |       ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -56,7 +56,7 @@ Ogni funzionalità di Configuration Manager che usa i messaggi di stato viene id
 | 10 | In attesa della finestra di manutenzione prima dell'installazione         | 
 | 11 | In attesa di orchestrazione         | 
 
-## <a name="302-statetopictypesumassignmentevaluation"></a>302 STATE_TOPICTYPE_SUM_ASSIGNMENT_EVALUATION
+## <a name="302-state_topictype_sum_assignment_evaluation"></a>302 STATE_TOPICTYPE_SUM_ASSIGNMENT_EVALUATION
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|      
@@ -66,7 +66,7 @@ Ogni funzionalità di Configuration Manager che usa i messaggi di stato viene id
 | 3 |Valutazione non riuscita      |
 
 
-## <a name="400-statetopictypesumcidetection"></a>400 STATE_TOPICTYPE_SUM_CI_DETECTION
+## <a name="400-state_topictype_sum_ci_detection"></a>400 STATE_TOPICTYPE_SUM_CI_DETECTION
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -75,7 +75,7 @@ Ogni funzionalità di Configuration Manager che usa i messaggi di stato viene id
 | 2 | Non rilevato    |
 | 3 | Rilevato   |
 
-## <a name="401-statetopictypesumcicompliance"></a>401 STATE_TOPICTYPE_SUM_CI_COMPLIANCE
+## <a name="401-state_topictype_sum_ci_compliance"></a>401 STATE_TOPICTYPE_SUM_CI_COMPLIANCE
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -88,7 +88,7 @@ Ogni funzionalità di Configuration Manager che usa i messaggi di stato viene id
 | 6 |Conformità parziale   |
 | 7 |Conformità non configurata    |
 
-## <a name="402-statetopictypesumcienforcement"></a>402 STATE_TOPICTYPE_SUM_CI_ENFORCEMENT
+## <a name="402-state_topictype_sum_ci_enforcement"></a>402 STATE_TOPICTYPE_SUM_CI_ENFORCEMENT
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -108,7 +108,7 @@ Ogni funzionalità di Configuration Manager che usa i messaggi di stato viene id
 | 13 | Aggiornamento scaricato        |
 | 14 |Impossibile scaricare l'aggiornamento        |
 
-## <a name="500-statetoptctypesumupdatedetection"></a>500 STATE_TOPTCTYPE_SUM_UPDATE_DETECTION
+## <a name="500-state_toptctype_sum_update_detection"></a>500 STATE_TOPTCTYPE_SUM_UPDATE_DETECTION
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -117,7 +117,7 @@ Ogni funzionalità di Configuration Manager che usa i messaggi di stato viene id
 | 2 | Aggiornamento richiesto   |
 | 3 | Aggiornamento installato  |
 
-## <a name="501-statetopictypesumupdatesourcescan"></a>501 STATE_TOPICTYPE_SUM_UPDATE_SOURCE_SCAN
+## <a name="501-state_topictype_sum_update_source_scan"></a>501 STATE_TOPICTYPE_SUM_UPDATE_SOURCE_SCAN
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -129,19 +129,19 @@ Ogni funzionalità di Configuration Manager che usa i messaggi di stato viene id
 | 5 | Analisi non riuscita   |
 | 6 | Analisi completata con errori |
 
-## <a name="700-statetopictyperesyncstatemsg"></a>700 STATE_TOPICTYPE_RESYNC_STATE_MSG
+## <a name="700-state_topictype_resync_state_msg"></a>700 STATE_TOPICTYPE_RESYNC_STATE_MSG
 
 Nessun ID stato.
 
-## <a name="701-statetopictypesystemheartbeat"></a>701 STATE_TOPICTYPE_SYSTEM_HEARTBEAT
+## <a name="701-state_topictype_system_heartbeat"></a>701 STATE_TOPICTYPE_SYSTEM_HEARTBEAT
 
 Nessun ID stato.
 
-## <a name="702-statetopictypeckdupdate"></a>702 STATE_TOPICTYPE_CKD_UPDATE
+## <a name="702-state_topictype_ckd_update"></a>702 STATE_TOPICTYPE_CKD_UPDATE
  
 Nessun ID stato.
 
-## <a name="800-statetopictypeclientdeployment"></a>800 STATE_TOPICTYPE_CLIENT_DEPLOYMENT
+## <a name="800-state_topictype_client_deployment"></a>800 STATE_TOPICTYPE_CLIENT_DEPLOYMENT
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -194,11 +194,11 @@ Nessun ID stato.
 | 609 |Non è stato possibile ottenere la versione client|
 | 700 |Assegnazione client completata|
 
-## <a name="801-statetopictypedeviceclientdeployment"></a>801 STATE_TOPICTYPE_DEVICE_CLIENT_DEPLOYMENT
+## <a name="801-state_topictype_device_client_deployment"></a>801 STATE_TOPICTYPE_DEVICE_CLIENT_DEPLOYMENT
 
 Nessun ID stato.
 
-## <a name="810-statetopictypeclientcomanagement"></a>810 STATE_TOPICTYPE_CLIENT_COMANAGEMENT
+## <a name="810-state_topictype_client_comanagement"></a>810 STATE_TOPICTYPE_CLIENT_COMANAGEMENT
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -212,101 +212,101 @@ Nessun ID stato.
 | 110 | Registrazione non riuscita   |
 
 
-## <a name="820--statetopictypeclientwufb"></a>820  STATE_TOPICTYPE_CLIENT_WUFB
+## <a name="820--state_topictype_client_wufb"></a>820  STATE_TOPICTYPE_CLIENT_WUFB
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
 | 1 | Stato client Windows Update per le aziende| 
 
-## <a name="900-statetopictypebranchdp"></a>900 STATE_TOPICTYPE_BRANCH_DP
+## <a name="900-state_topictype_branch_dp"></a>900 STATE_TOPICTYPE_BRANCH_DP
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
 | 1 | Spazio su disco   | 
 
-## <a name="901-statetopictyperemotedpmonitoring"></a>901 STATE_TOPICTYPE_REMOTE_DP_MONITORING
+## <a name="901-state_topictype_remote_dp_monitoring"></a>901 STATE_TOPICTYPE_REMOTE_DP_MONITORING
 
 Nessun ID stato.
 
-## <a name="902-statetopictypepulldpmonitoring"></a>902 STATE_TOPICTYPE_PULL_DP_MONITORING
+## <a name="902-state_topictype_pull_dp_monitoring"></a>902 STATE_TOPICTYPE_PULL_DP_MONITORING
 
 Nessun ID stato.
 
-## <a name="903-statetopictypedpusage"></a>903 STATE_TOPICTYPE_DP_USAGE
+## <a name="903-state_topictype_dp_usage"></a>903 STATE_TOPICTYPE_DP_USAGE
 
 Nessun ID stato.
 
-## <a name="1000--statetopictypeclientframeworkcomm"></a>1000  STATE_TOPICTYPE_CLIENT_FRAMEWORK_COMM
+## <a name="1000--state_topictype_client_framework_comm"></a>1000  STATE_TOPICTYPE_CLIENT_FRAMEWORK_COMM
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
 | 1 | Comunicazione del client con il punto di gestione riuscita |
 | 2 | Impossibile per il client comunicare con il punto di gestione |
 
-## <a name="1001-statetopictypeclientframeworklocal"></a>1001 STATE_TOPICTYPE_CLIENT_FRAMEWORK_LOCAL
+## <a name="1001-state_topictype_client_framework_local"></a>1001 STATE_TOPICTYPE_CLIENT_FRAMEWORK_LOCAL
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
 | 1 |Recupero da parte del client di un certificato dall'archivio certificati locale riuscito    |
 | 2 |Impossibile per il client recuperare un certificato dall'archivio certificati locale |
 
-## <a name="1002-statetopictypedeviceclientframeworkcomm"></a>1002 STATE_TOPICTYPE_DEVICE_CLIENT_FRAMEWORK_COMM
+## <a name="1002-state_topictype_device_client_framework_comm"></a>1002 STATE_TOPICTYPE_DEVICE_CLIENT_FRAMEWORK_COMM
 
 Nessun ID stato.
 
-## <a name="1003-statetopictypedeviceclientframeworklocal"></a>1003 STATE_TOPICTYPE_DEVICE_CLIENT_FRAMEWORK_LOCAL
+## <a name="1003-state_topictype_device_client_framework_local"></a>1003 STATE_TOPICTYPE_DEVICE_CLIENT_FRAMEWORK_LOCAL
 
 Nessun ID stato.
 
-## <a name="1004-statetopictypedeviceclientframeworkcertificate"></a>1004 STATE_TOPICTYPE_DEVICE_CLIENT_FRAMEWORK_CERTIFICATE
+## <a name="1004-state_topictype_device_client_framework_certificate"></a>1004 STATE_TOPICTYPE_DEVICE_CLIENT_FRAMEWORK_CERTIFICATE
 
 Nessun ID stato.
 
-## <a name="1005-statetopictypedeviceclientwipe"></a>1005 STATE_TOPICTYPE_DEVICE_CLIENT_WIPE
+## <a name="1005-state_topictype_device_client_wipe"></a>1005 STATE_TOPICTYPE_DEVICE_CLIENT_WIPE
 
 Nessun ID stato.
 
-## <a name="1006-statetopictypedeviceclientretire"></a>1006 STATE_TOPICTYPE_DEVICE_CLIENT_RETIRE
+## <a name="1006-state_topictype_device_client_retire"></a>1006 STATE_TOPICTYPE_DEVICE_CLIENT_RETIRE
 
 Nessun ID stato.
 
-## <a name="1007-statetopictypedeviceclientwipeintune"></a>1007 STATE_TOPICTYPE_DEVICE_CLIENT_WIPE_INTUNE
+## <a name="1007-state_topictype_device_client_wipe_intune"></a>1007 STATE_TOPICTYPE_DEVICE_CLIENT_WIPE_INTUNE
 
 Nessun ID stato.
 
-## <a name="1008-statetopictypedeviceclientretireintune"></a>1008 STATE_TOPICTYPE_DEVICE_CLIENT_RETIRE_INTUNE
+## <a name="1008-state_topictype_device_client_retire_intune"></a>1008 STATE_TOPICTYPE_DEVICE_CLIENT_RETIRE_INTUNE
 
 Nessun ID stato.
 
-## <a name="1009-statetopictypedeviceclientdevicelock"></a>1009 STATE_TOPICTYPE_DEVICE_CLIENT_DEVICELOCK
+## <a name="1009-state_topictype_device_client_devicelock"></a>1009 STATE_TOPICTYPE_DEVICE_CLIENT_DEVICELOCK
 
 Nessun ID stato.
 
-## <a name="1010-statetopictypedeviceclientdevicelockintune"></a>1010 STATE_TOPICTYPE_DEVICE_CLIENT_DEVICELOCK_INTUNE
+## <a name="1010-state_topictype_device_client_devicelock_intune"></a>1010 STATE_TOPICTYPE_DEVICE_CLIENT_DEVICELOCK_INTUNE
 
 Nessun ID stato.
 
-## <a name="1011-statetopictypedeviceclientdevicepinreset"></a>1011 STATE_TOPICTYPE_DEVICE_CLIENT_DEVICEPINRESET
+## <a name="1011-state_topictype_device_client_devicepinreset"></a>1011 STATE_TOPICTYPE_DEVICE_CLIENT_DEVICEPINRESET
 
 Nessun ID stato.
 
-## <a name="1012-statetopictypedeviceclientdevicepinresetintune"></a>1012 STATE_TOPICTYPE_DEVICE_CLIENT_DEVICEPINRESET_INTUNE
+## <a name="1012-state_topictype_device_client_devicepinreset_intune"></a>1012 STATE_TOPICTYPE_DEVICE_CLIENT_DEVICEPINRESET_INTUNE
 
 Nessun ID stato.
 
-## <a name="1013-statetopictypedeviceclientdevicepinresetonprem"></a>1013 STATE_TOPICTYPE_DEVICE_CLIENT_DEVICEPINRESET_ONPREM
+## <a name="1013-state_topictype_device_client_devicepinreset_onprem"></a>1013 STATE_TOPICTYPE_DEVICE_CLIENT_DEVICEPINRESET_ONPREM
 
 Nessun ID stato.
 
-## <a name="1014-statetopictypedeviceclientdevicealbypass"></a>1014 STATE_TOPICTYPE_DEVICE_CLIENT_DEVICEALBYPASS
+## <a name="1014-state_topictype_device_client_devicealbypass"></a>1014 STATE_TOPICTYPE_DEVICE_CLIENT_DEVICEALBYPASS
 
 Nessun ID stato.
 
-## <a name="1015-statetopictypedeviceclientdevicealbypassintune"></a>1015 STATE_TOPICTYPE_DEVICE_CLIENT_DEVICEALBYPASS_INTUNE
+## <a name="1015-state_topictype_device_client_devicealbypass_intune"></a>1015 STATE_TOPICTYPE_DEVICE_CLIENT_DEVICEALBYPASS_INTUNE
 
 Nessun ID stato.
 
-## <a name="1100-statetopictypeclientframeworkmodereadiness"></a>1100 STATE_TOPICTYPE_CLIENT_FRAMEWORK_MODEREADINESS
+## <a name="1100-state_topictype_client_framework_modereadiness"></a>1100 STATE_TOPICTYPE_CLIENT_FRAMEWORK_MODEREADINESS
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -314,45 +314,45 @@ Nessun ID stato.
 | 2 |Client pronto per la modalità nativa     |
 
 
-## <a name="1300-statetopictypeclienthealth"></a>1300 STATE_TOPICTYPE_CLIENT_HEALTH
+## <a name="1300-state_topictype_client_health"></a>1300 STATE_TOPICTYPE_CLIENT_HEALTH
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
 | 1 | Operazione completata|
 | 2 | Operazione non riuscita |
 
-## <a name="1401-statetopictypestatereport"></a>1401 STATE_TOPICTYPE_STATE_REPORT
+## <a name="1401-state_topictype_state_report"></a>1401 STATE_TOPICTYPE_STATE_REPORT
 
 Nessun ID stato.
 
-## <a name="1500-statetopictypecaltrackut"></a>1500 STATE_TOPICTYPE_CAL_TRACK_UT
+## <a name="1500-state_topictype_cal_track_ut"></a>1500 STATE_TOPICTYPE_CAL_TRACK_UT
 
 Nessun ID stato.
 
-## <a name="1502-statetopictypecaltrackmt"></a>1502 STATE_TOPICTYPE_CAL_TRACK_MT
+## <a name="1502-state_topictype_cal_track_mt"></a>1502 STATE_TOPICTYPE_CAL_TRACK_MT
 
 Nessun ID stato.
 
-## <a name="1503-statetopictypecaltrackml"></a>1503 STATE_TOPICTYPE_CAL_TRACK_ML
+## <a name="1503-state_topictype_cal_track_ml"></a>1503 STATE_TOPICTYPE_CAL_TRACK_ML
 
 Nessun ID stato. 
 
-## <a name="1600-statetopictypeuseraffinity"></a>1600 STATE_TOPICTYPE_USER_AFFINITY
+## <a name="1600-state_topictype_user_affinity"></a>1600 STATE_TOPICTYPE_USER_AFFINITY
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
 | 1 |Affinità utente impostata       |
 | 2 |Affinità utente rimossa       |
 
-## <a name="1700-statetopictypeappciscan"></a>1700 STATE_TOPICTYPE_APP_CI_SCAN
+## <a name="1700-state_topictype_app_ci_scan"></a>1700 STATE_TOPICTYPE_APP_CI_SCAN
 
 Nessun ID stato.
 
-## <a name="1701-statetopictypeappcicompliance"></a>1701 STATE_TOPICTYPE_APP_CI_COMPLIANCE
+## <a name="1701-state_topictype_app_ci_compliance"></a>1701 STATE_TOPICTYPE_APP_CI_COMPLIANCE
 
 Nessun ID stato.
 
-## <a name="1702-statetopictypeappcienforcement"></a>1702 STATE_TOPICTYPE_APP_CI_ENFORCEMENT
+## <a name="1702-state_topictype_app_ci_enforcement"></a>1702 STATE_TOPICTYPE_APP_CI_ENFORCEMENT
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -403,39 +403,39 @@ Nessun ID stato.
 | 6010 |Errore di avvio dell'elemento di configurazione            |
 | 6020 |Avvio dell'elemento di configurazione sconosciuto|
 
-## <a name="1703-statetopictypeappciassignmentevaluatio"></a>1703 STATE_TOPICTYPE_APP_CI_ASSIGNMENT_EVALUATIO
+## <a name="1703-state_topictype_app_ci_assignment_evaluatio"></a>1703 STATE_TOPICTYPE_APP_CI_ASSIGNMENT_EVALUATIO
 
 Nessun ID stato.
 
-## <a name="1704-statetopictypeappcilaunch"></a>1704 STATE_TOPICTYPE_APP_CI_LAUNCH
+## <a name="1704-state_topictype_app_ci_launch"></a>1704 STATE_TOPICTYPE_APP_CI_LAUNCH
 
 Nessun ID stato.
 
-## <a name="1800-statetopictypeeventintrinsic"></a>1800 STATE_TOPICTYPE_EVENT_INTRINSIC
+## <a name="1800-state_topictype_event_intrinsic"></a>1800 STATE_TOPICTYPE_EVENT_INTRINSIC
 
 Nessun ID stato.
 
-## <a name="1801-statetopictypeeventextrinsic"></a>1801 STATE_TOPICTYPE_EVENT_EXTRINSIC
+## <a name="1801-state_topictype_event_extrinsic"></a>1801 STATE_TOPICTYPE_EVENT_EXTRINSIC
 
 Nessun ID stato.
 
-## <a name="1900-statetopictypeepaminfection"></a>1900 STATE_TOPICTYPE_EP_AM_INFECTION
+## <a name="1900-state_topictype_ep_am_infection"></a>1900 STATE_TOPICTYPE_EP_AM_INFECTION
 
 Nessun ID stato.
 
-## <a name="1901-statetopictypeepamhealth"></a>1901 State_Topictype_Ep_Am_Health
+## <a name="1901-state_topictype_ep_am_health"></a>1901 State_Topictype_Ep_Am_Health
 
 Nessun ID stato.
 
-## <a name="1902-statetopictypeepmalware"></a>1902 STATE_TOPICTYPE_EP_MALWARE
+## <a name="1902-state_topictype_ep_malware"></a>1902 STATE_TOPICTYPE_EP_MALWARE
 
 Nessun ID stato.
 
-## <a name="1950-statetopictypeatphealthstatus"></a>1950 STATE_TOPICTYPE_ATP_HEALTH_STATUS
+## <a name="1950-state_topictype_atp_health_status"></a>1950 STATE_TOPICTYPE_ATP_HEALTH_STATUS
 
 Nessun ID stato.
 
-## <a name="2001-statetopictypeepclientdeployment"></a>2001 STATE_TOPICTYPE_EP_CLIENT_DEPLOYMENT
+## <a name="2001-state_topictype_ep_client_deployment"></a>2001 STATE_TOPICTYPE_EP_CLIENT_DEPLOYMENT
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -447,7 +447,7 @@ Nessun ID stato.
 | 6 |Endpoint Protection non supportato   |
 | 7 |Endpoint Protection co-gestito   |
 
-## <a name="2002-statetopictypeepclientpolicyapplication"></a>2002 STATE_TOPICTYPE_EP_CLIENT_POLICYAPPLICATION
+## <a name="2002-state_topictype_ep_client_policyapplication"></a>2002 STATE_TOPICTYPE_EP_CLIENT_POLICYAPPLICATION
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -455,7 +455,7 @@ Nessun ID stato.
 | 1 |Applicazione criteri di Endpoint Protection riuscita    |
 | 2 |Applicazione criteri di Endpoint Protection non riuscita    |
 
-## <a name="2003-statetopictypeclientaction"></a>2003 STATE_TOPICTYPE_CLIENT_ACTION
+## <a name="2003-state_topictype_client_action"></a>2003 STATE_TOPICTYPE_CLIENT_ACTION
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -463,7 +463,7 @@ Nessun ID stato.
 | 1 |  Attivo    |
 | 2 |  Inattivo    |
 
-## <a name="2100-statetopictypewpclientdeployment"></a>2100 STATE_TOPICTYPE_WP_CLIENT_DEPLOYMENT
+## <a name="2100-state_topictype_wp_client_deployment"></a>2100 STATE_TOPICTYPE_WP_CLIENT_DEPLOYMENT
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -477,73 +477,73 @@ Nessun ID stato.
 | 8 | Disinstallazione di proxy di riattivazione non riuscita   |
 | 9 | Runtime di proxy di riattivazione non supportato   |
 
-## <a name="2200-statetopictypefdm"></a>2200 STATE_TOPICTYPE_FDM
+## <a name="2200-state_topictype_fdm"></a>2200 STATE_TOPICTYPE_FDM
 
 Nessun ID stato.
 
-## <a name="2201-statetopictypeccmcertbinding"></a>2201 STATE_TOPICTYPE_CCM_CERT_BINDING
+## <a name="2201-state_topictype_ccm_cert_binding"></a>2201 STATE_TOPICTYPE_CCM_CERT_BINDING
 
 Nessun ID stato.
 
-## <a name="2202-statetopictypeserverstatistic"></a>2202 STATE_TOPICTYPE_SERVER_STATISTIC
+## <a name="2202-state_topictype_server_statistic"></a>2202 STATE_TOPICTYPE_SERVER_STATISTIC
 
 Nessun ID stato.
 
-## <a name="3000-statetopictypedmwnschannel"></a>3000 STATE_TOPICTYPE_DM_WNS_CHANNEL
+## <a name="3000-state_topictype_dm_wns_channel"></a>3000 STATE_TOPICTYPE_DM_WNS_CHANNEL
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
 |0 | Set di canale del servizio notifica push di Windows|
 
-## <a name="4000-statetopictypemdmdeviceproperty"></a>4000 STATE_TOPICTYPE_MDM_DEVICE_PROPERTY
+## <a name="4000-state_topictype_mdm_device_property"></a>4000 STATE_TOPICTYPE_MDM_DEVICE_PROPERTY
 
 Nessun ID stato.
 
-## <a name="4002-statetopictypemdmclientidenitity"></a>4002 STATE_TOPICTYPE_MDM_CLIENT_IDENITITY
+## <a name="4002-state_topictype_mdm_client_idenitity"></a>4002 STATE_TOPICTYPE_MDM_CLIENT_IDENITITY
 
 Nessun ID stato.
 
-## <a name="4003-statetopictypemdmapplicationrequest"></a>4003 STATE_TOPICTYPE_MDM_APPLICATION_REQUEST
+## <a name="4003-state_topictype_mdm_application_request"></a>4003 STATE_TOPICTYPE_MDM_APPLICATION_REQUEST
 
 Nessun ID stato.
 
-## <a name="4004-statetopictypemdmapplicationstate"></a>4004 STATE_TOPICTYPE_MDM_APPLICATION_STATE
+## <a name="4004-state_topictype_mdm_application_state"></a>4004 STATE_TOPICTYPE_MDM_APPLICATION_STATE
 
 Nessun ID stato.
 
-## <a name="4005-statetopictypemdmlicensedevicerelation"></a>4005 STATE_TOPICTYPE_MDM_LICENSE_DEVICE_RELATION
+## <a name="4005-state_topictype_mdm_license_device_relation"></a>4005 STATE_TOPICTYPE_MDM_LICENSE_DEVICE_RELATION
 
 Nessun ID stato.
 
-## <a name="4006-statetopictypemdmlicensekeys"></a>4006 STATE_TOPICTYPE_MDM_LICENSE_KEYS
+## <a name="4006-state_topictype_mdm_license_keys"></a>4006 STATE_TOPICTYPE_MDM_LICENSE_KEYS
 
 Nessun ID stato.
 
-## <a name="4007-statetopictypemdmpolicyassignment"></a>4007 STATE_TOPICTYPE_MDM_POLICY_ASSIGNMENT
+## <a name="4007-state_topictype_mdm_policy_assignment"></a>4007 STATE_TOPICTYPE_MDM_POLICY_ASSIGNMENT
 
 Nessun ID stato.
 
-## <a name="4008-statetopictypemdmandroidcount"></a>4008 STATE_TOPICTYPE_MDM_ANDROID_COUNT
+## <a name="4008-state_topictype_mdm_android_count"></a>4008 STATE_TOPICTYPE_MDM_ANDROID_COUNT
 
 Nessun ID stato.
 
-## <a name="4009-statetopictypemdmslkstatus"></a>4009 STATE_TOPICTYPE_MDM_SLK_STATUS
+## <a name="4009-state_topictype_mdm_slk_status"></a>4009 STATE_TOPICTYPE_MDM_SLK_STATUS
 
 Nessun ID stato.
 
-## <a name="4010-statetopictypemdmusercompanytermacceptance"></a>4010 STATE_TOPICTYPE_MDM_USER_COMPANY_TERM_ACCEPTANCE
+## <a name="4010-state_topictype_mdm_user_company_term_acceptance"></a>4010 STATE_TOPICTYPE_MDM_USER_COMPANY_TERM_ACCEPTANCE
 
 Nessun ID stato.
 
-## <a name="4022-statetopictypemdmdepsyncnowstatus"></a>4022 STATE_TOPICTYPE_MDM_DEP_SYNCNOW_STATUS
+## <a name="4022-state_topictype_mdm_dep_syncnow_status"></a>4022 STATE_TOPICTYPE_MDM_DEP_SYNCNOW_STATUS
 
 Nessun ID stato.
 
-## <a name="4023-statetopictypemdmmamstoreappsync"></a>4023 STATE_TOPICTYPE_MDM_MAM_STORE_APP_SYNC
+## <a name="4023-state_topictype_mdm_mam_store_app_sync"></a>4023 STATE_TOPICTYPE_MDM_MAM_STORE_APP_SYNC
 
 Nessun ID stato.
 
-## <a name="5000-statetopictypecertificateenrollment"></a>5000 STATE_TOPICTYPE_CERTIFICATE_ENROLLMENT
+## <a name="5000-state_topictype_certificate_enrollment"></a>5000 STATE_TOPICTYPE_CERTIFICATE_ENROLLMENT
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -570,7 +570,7 @@ Nessun ID stato.
 | 21 |Rinnovo richiesto        |
 
 
-## <a name="5001-statetopictypecertificatecrp"></a>5001 STATE_TOPICTYPE_CERTIFICATE_CRP
+## <a name="5001-state_topictype_certificate_crp"></a>5001 STATE_TOPICTYPE_CERTIFICATE_CRP
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -596,7 +596,7 @@ Nessun ID stato.
 | 20 |Eliminato         |
 | 21 |Rinnovo richiesto        |
 
-## <a name="5200-statetopictyperesourceaccessstatus"></a>5200 STATE_TOPICTYPE_RESOURCE_ACCESS_STATUS
+## <a name="5200-state_topictype_resource_access_status"></a>5200 STATE_TOPICTYPE_RESOURCE_ACCESS_STATUS
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -605,31 +605,31 @@ Nessun ID stato.
 | 3 | Configurazione del pin di stato non supportata      |
 | 4 | Configurazione del pin di stato in corso      |
 
-## <a name="6000-statetopictyperemoteappsubscriptionstatus"></a>6000 STATE_TOPICTYPE_REMOTEAPP_SUBSCRIPTION_STATUS
+## <a name="6000-state_topictype_remoteapp_subscription_status"></a>6000 STATE_TOPICTYPE_REMOTEAPP_SUBSCRIPTION_STATUS
 
 Nessun ID stato.
 
-## <a name="6001-statetopictyperemoteappsubscriptionsyncstatus"></a>6001 STATE_TOPICTYPE_REMOTEAPP_SUBSCRIPTION_SYNC_STATUS
+## <a name="6001-state_topictype_remoteapp_subscription_sync_status"></a>6001 STATE_TOPICTYPE_REMOTEAPP_SUBSCRIPTION_SYNC_STATUS
 
 Nessun ID stato.
 
-## <a name="6002-statetopictyperemoteappauthcookiessyncstatus"></a>6002 STATE_TOPICTYPE_REMOTEAPP_AUTHCOOKIES_SYNC_STATUS
+## <a name="6002-state_topictype_remoteapp_authcookies_sync_status"></a>6002 STATE_TOPICTYPE_REMOTEAPP_AUTHCOOKIES_SYNC_STATUS
 
 Nessun ID stato.
 
-## <a name="6003-statetopictyperemoteapplicationssyncstatus"></a>6003 STATE_TOPICTYPE_REMOTEAPPLICATIONS_SYNC_STATUS
+## <a name="6003-state_topictype_remoteapplications_sync_status"></a>6003 STATE_TOPICTYPE_REMOTEAPPLICATIONS_SYNC_STATUS
 
 Nessun ID stato.
 
-## <a name="6004-statetopictyperemoteapplockresult"></a>6004 STATE_TOPICTYPE_REMOTEAPP_LOCK_RESULT
+## <a name="6004-state_topictype_remoteapp_lock_result"></a>6004 STATE_TOPICTYPE_REMOTEAPP_LOCK_RESULT
 
 Nessun ID stato.
 
-## <a name="7000-statetopictypeusercompanytermacceptance"></a>7000 STATE_TOPICTYPE_USER_COMPANY_TERM_ACCEPTANCE
+## <a name="7000-state_topictype_user_company_term_acceptance"></a>7000 STATE_TOPICTYPE_USER_COMPANY_TERM_ACCEPTANCE
 
 Nessun ID stato.
 
-## <a name="7001-statetopictypepfxcertificate"></a>7001 STATE_TOPICTYPE_PFX_CERTIFICATE
+## <a name="7001-state_topictype_pfx_certificate"></a>7001 STATE_TOPICTYPE_PFX_CERTIFICATE
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -655,7 +655,7 @@ Nessun ID stato.
 | 20 |Eliminato    |
 | 21 |Rinnovo richiesto   |
 
-## <a name="7010-statetopictypeconditionalaccesscompliance"></a>7010 STATE_TOPICTYPE_CONDITIONAL_ACCESS_COMPLIANCE
+## <a name="7010-state_topictype_conditional_access_compliance"></a>7010 STATE_TOPICTYPE_CONDITIONAL_ACCESS_COMPLIANCE
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
@@ -666,103 +666,103 @@ Nessun ID stato.
 | 5 | Errore di conformità in AAD   |
 | 6 | Co-gestione conformità Intune   |
 
-## <a name="7200-statetopictypesuperpeerupdatecachemap"></a>7200 STATE_TOPICTYPE_SUPER_PEER_UPDATE_CACHE_MAP
+## <a name="7200-state_topictype_super_peer_update_cache_map"></a>7200 STATE_TOPICTYPE_SUPER_PEER_UPDATE_CACHE_MAP
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
 | 1 |Origine di peer cache aggiunta       |
 | 2 |Origine di peer cache rimossa      |
 
-## <a name="7201-statetopictypesuperpeerupdateconfig"></a>7201 STATE_TOPICTYPE_SUPER_PEER_UPDATE_CONFIG
+## <a name="7201-state_topictype_super_peer_update_config"></a>7201 STATE_TOPICTYPE_SUPER_PEER_UPDATE_CONFIG
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
 | 1 |Origine di peer cache disattivata       |
 | 2 |Origine di peer cache attiva       |
 
-## <a name="7202-statetopictypedownloadaggregatedata"></a>7202 STATE_TOPICTYPE_DOWNLOAD_AGGREGATE_DATA
+## <a name="7202-state_topictype_download_aggregate_data"></a>7202 STATE_TOPICTYPE_DOWNLOAD_AGGREGATE_DATA
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
 | 1 |Caricamento dati aggregati scaricati       |
 
-## <a name="7203-statetopictypepeersourcereqrejectionstats"></a>7203 STATE_TOPICTYPE_PEERSOURCE_REQ_REJECTION_STATS
+## <a name="7203-state_topictype_peersource_req_rejection_stats"></a>7203 STATE_TOPICTYPE_PEERSOURCE_REQ_REJECTION_STATS
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
 | 1 |Caricamento dati rifiuto origine peer     |
 
-## <a name="7300-statetopictypeproxytraffic"></a>7300 STATE_TOPICTYPE_PROXY_TRAFFIC
+## <a name="7300-state_topictype_proxy_traffic"></a>7300 STATE_TOPICTYPE_PROXY_TRAFFIC
 
 Nessun ID stato.
 
-## <a name="7301-statetopictypeproxyconnection"></a>7301 STATE_TOPICTYPE_PROXY_CONNECTION
+## <a name="7301-state_topictype_proxy_connection"></a>7301 STATE_TOPICTYPE_PROXY_CONNECTION
 
 Nessun ID stato.
 
-## <a name="7302-statetopictypesrsusagedata"></a>7302 STATE_TOPICTYPE_SRS_USAGE_DATA
+## <a name="7302-state_topictype_srs_usage_data"></a>7302 STATE_TOPICTYPE_SRS_USAGE_DATA
 
 Nessun ID stato.
 
-## <a name="7303-statetopictypeproxytrafficidentity"></a>7303 STATE_TOPICTYPE_PROXY_TRAFFIC_IDENTITY
+## <a name="7303-state_topictype_proxy_traffic_identity"></a>7303 STATE_TOPICTYPE_PROXY_TRAFFIC_IDENTITY
 
 Nessun ID stato.
 
-## <a name="8001-statetopictypehasreport"></a>8001 STATE_TOPICTYPE_HAS_REPORT
+## <a name="8001-state_topictype_has_report"></a>8001 STATE_TOPICTYPE_HAS_REPORT
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
 | 1 |Attestazione dell'integrità supportata      |
 | 2 |Attestazione dell'integrità non supportata      |
 
-## <a name="statetopictypedeviceclientedplog"></a>STATE_TOPICTYPE_DEVICE_CLIENT_EDPLOG
+## <a name="state_topictype_device_client_edplog"></a>STATE_TOPICTYPE_DEVICE_CLIENT_EDPLOG
 
 Nessun ID stato.
 
-## <a name="8003-statetopictypeenablelostmode"></a>8003 STATE_TOPICTYPE_ENABLE_LOSTMODE
+## <a name="8003-state_topictype_enable_lostmode"></a>8003 STATE_TOPICTYPE_ENABLE_LOSTMODE
 
 Nessun ID stato.
 
-## <a name="8004-statetopictypedisablelostmode"></a>8004 STATE_TOPICTYPE_DISABLE_LOSTMODE
+## <a name="8004-state_topictype_disable_lostmode"></a>8004 STATE_TOPICTYPE_DISABLE_LOSTMODE
 
 Nessun ID stato.
 
-## <a name="8005-statetopictypelocatedevice"></a>8005 STATE_TOPICTYPE_LOCATE_DEVICE
+## <a name="8005-state_topictype_locate_device"></a>8005 STATE_TOPICTYPE_LOCATE_DEVICE
 
 Nessun ID stato.
 
-## <a name="8006-statetopictyperebootdevice"></a>8006 STATE_TOPICTYPE_REBOOT_DEVICE
+## <a name="8006-state_topictype_reboot_device"></a>8006 STATE_TOPICTYPE_REBOOT_DEVICE
 
 Nessun ID stato.
 
-## <a name="8007-statetopictypelogoutuser"></a>8007 STATE_TOPICTYPE_LOGOUTUSER
+## <a name="8007-state_topictype_logoutuser"></a>8007 STATE_TOPICTYPE_LOGOUTUSER
 
 Nessun ID stato.
 
-## <a name="8008-statetopictypeuserslist"></a>8008 STATE_TOPICTYPE_USERSLIST
+## <a name="8008-state_topictype_userslist"></a>8008 STATE_TOPICTYPE_USERSLIST
 
 Nessun ID stato.
 
-## <a name="8009-statetopictypedeleteuser"></a>8009 STATE_TOPICTYPE_DELETEUSER
+## <a name="8009-state_topictype_deleteuser"></a>8009 STATE_TOPICTYPE_DELETEUSER
 
 Nessun ID stato.
 
-## <a name="8010-statetopictypecleanpcretaininguserdata"></a>8010 STATE_TOPICTYPE_CLEANPCRETAININGUSERDATA
+## <a name="8010-state_topictype_cleanpcretaininguserdata"></a>8010 STATE_TOPICTYPE_CLEANPCRETAININGUSERDATA
 
 Nessun ID stato.
 
-## <a name="8011-statetopictypecleanpcwithoutretaininguserdata"></a>8011 STATE_TOPICTYPE_CLEANPCWITHOUTRETAININGUSERDATA
+## <a name="8011-state_topictype_cleanpcwithoutretaininguserdata"></a>8011 STATE_TOPICTYPE_CLEANPCWITHOUTRETAININGUSERDATA
 
 Nessun ID stato.
 
-## <a name="8012-statetopictypesetdevicename"></a>8012 STATE_TOPICTYPE_SETDEVICENAME
+## <a name="8012-state_topictype_setdevicename"></a>8012 STATE_TOPICTYPE_SETDEVICENAME
 
 Nessun ID stato.
 
-## <a name="9000-statetopictypebookcicompliance"></a>9000 STATE_TOPICTYPE_BOOK_CI_COMPLIANCE
+## <a name="9000-state_topictype_book_ci_compliance"></a>9000 STATE_TOPICTYPE_BOOK_CI_COMPLIANCE
 
 Nessun ID stato.
 
-## <a name="9001-statetopictypebookcienforcement"></a>9001 STATE_TOPICTYPE_BOOK_CI_ENFORCEMENT
+## <a name="9001-state_topictype_book_ci_enforcement"></a>9001 STATE_TOPICTYPE_BOOK_CI_ENFORCEMENT
 
 Nessun ID stato.
 

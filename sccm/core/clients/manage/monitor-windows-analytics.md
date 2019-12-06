@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c2530b20d065b3b2bd15c0dc38232687d286b6b0
-ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72384744"
 ---
 # <a name="use-windows-analytics-with-configuration-manager"></a>Usare Windows Analytics con Configuration Manager
@@ -62,7 +62,7 @@ La chiave ID commerciale esegue il mapping delle informazioni dai dispositivi ge
 Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#diagnostic-data-levels) (Configurare i dati di diagnostica di Windows nell'organizzazione).
 
 > [!Note]  
-> È anche possibile impostare il livello di raccolta dei dati di Windows 10 su **Avanzata (con limitazioni)**. Questa impostazione consente di ottenere informazioni utili sui dispositivi presenti nell'ambiente in uso senza che i dispositivi segnalino tutti i dati nel livello **avanzato** con Windows 10 1709 o versione successiva. Il livello Avanzata (con limitazioni) include metriche del livello di base e un subset di dati raccolti dal livello avanzato pertinenti per Windows Analytics.
+> È anche possibile impostare il livello di raccolta dei dati di Windows 10 su **Avanzata (con limitazioni)** . Questa impostazione consente di ottenere informazioni utili sui dispositivi presenti nell'ambiente in uso senza che i dispositivi segnalino tutti i dati nel livello **avanzato** con Windows 10 1709 o versione successiva. Il livello Avanzata (con limitazioni) include metriche del livello di base e un subset di dati raccolti dal livello avanzato pertinenti per Windows Analytics.
 
 #### <a name="windows-81-and-earlier-telemetry"></a>Telemetria di Windows 8.1 e versioni precedenti   
 Per altre informazioni, vedere [Windows 7, Windows 8, and Windows 8.1 appraiser telemetry events and fields](https://go.microsoft.com/fwlink/?LinkID=822965) (Eventi e campi di valutazione telemetrica per Windows 7, Windows 8 e Windows 8.1).

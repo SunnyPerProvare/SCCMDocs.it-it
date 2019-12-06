@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1da73693354d64e1162abf2a32e6c70a199ad813
-ms.sourcegitcommit: 159c6c9fe1df03fd2c4633125a593e3050a2f2da
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68841981"
 ---
 # <a name="features-in-configuration-manager-technical-preview-version-1908"></a>Funzionalità in Configuration Manager Technical Preview versione 1908

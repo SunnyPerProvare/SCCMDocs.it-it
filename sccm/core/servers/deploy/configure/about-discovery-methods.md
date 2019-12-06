@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 21183b620b8161056377bb7fc6e86bde79f31767
-ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68860087"
 ---
 # <a name="about-discovery-methods-for-system-center-configuration-manager"></a>Informazioni sui metodi di individuazione per System Center Configuration Manager

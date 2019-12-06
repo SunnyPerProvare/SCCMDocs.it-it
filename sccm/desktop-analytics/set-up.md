@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c2d682a7cf53c01e1e5f3d65f3143b1107436dff
-ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72384858"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Come configurare Desktop Analytics
@@ -36,11 +36,11 @@ Usare questa procedura per accedere a Desktop Analytics e configurarlo nell'abbo
 
 4. Nella pagina **Concedere l'accesso a utenti**:
 
-    - **Consentire a Desktop Analytics di gestire i ruoli della directory per conto dell'utente**: Desktop Analytics assegna automaticamente ai **Proprietari dell'area di lavoro** il ruolo **Amministratore di Desktop Analytics**. Se a tali gruppi è già assegnato un **Amministratore globale**, non si apportano modifiche.
+    - **Consentire a Desktop Analytics di gestire i ruoli della directory per conto dell'utente**: Desktop Analytics assegna automaticamente ai **Proprietari dell'area di lavoro** il ruolo **Amministratore di Desktop Analytics**. Se ai gruppi è già assegnato un **Amministratore globale**, non vengono apportate modifiche.
 
         Se non si seleziona questa opzione, Desktop Analytics aggiunge comunque gli utenti come membri del gruppo di sicurezza. Un **Amministratore globale** deve assegnare manualmente il ruolo **Amministratore di Desktop Analytics** per gli utenti.   
 
-        Per altre informazioni sull'assegnazione delle autorizzazioni per il ruolo di amministratore in Azure Active Directory e sulle autorizzazioni assegnate agli **Amministratori di Desktop Analytics**, vedere [Autorizzazioni del ruolo Amministratore in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
+        Per altre informazioni sull'assegnazione delle autorizzazioni del ruolo di amministratore in Azure Active Directory e sulle autorizzazioni assegnate agli **Amministratori di Desktop Analytics**, vedere [Autorizzazioni del ruolo Amministratore in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
 
     - Desktop Analytics preconfigura il gruppo di sicurezza **Proprietari dell'area di lavoro** in Azure Active Directory per creare e gestire aree di lavoro e piani di distribuzione. 
 
@@ -63,11 +63,11 @@ Usare questa procedura per accedere a Desktop Analytics e configurarlo nell'abbo
 
         2. Selezionare l'elenco a discesa per **selezionare il nome dell'abbonamento di Azure per l'area di lavoro** e scegliere l'abbonamento di Azure per l'area di lavoro.  
 
-        3. **Creare un nuovo** gruppo di risorse oppure **usarne uno esistente**.
+        3. Per il gruppo di risorse, scegliere **Crea nuovo** o **Usa esistente**.
 
-        4. Selezionare l'**area** dall'elenco, quindi selezionare **Aggiungi**.  
+        4. Selezionare l'**Area** dall'elenco, quindi selezionare **Aggiungi**.  
 
-6. Selezionare un'area di lavoro nuova o esistente, quindi selezionare **Set as Desktop Analytics workspace** (Imposta come area di lavoro di Desktop Analytics).  Selezionare quindi **Continua** nella finestra di dialogo **Conferma e concedi l'accesso**.  
+6. Selezionare un'area di lavoro nuova o esistente, quindi selezionare **Set as Desktop Analytics workspace** (Imposta come area di lavoro di Desktop Analytics).  Quindi selezionare **Continua** nella finestra di dialogo **Conferma e concedi l'accesso**.  
 
 7. Nella nuova scheda del browser selezionare un account da usare per l'accesso. Selezionare l'opzione **Acconsenti per conto dell'organizzazione** e selezionare **Accetta**.  
 

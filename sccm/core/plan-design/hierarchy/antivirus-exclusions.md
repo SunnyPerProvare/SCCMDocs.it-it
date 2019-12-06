@@ -13,10 +13,10 @@ manager: dougeby
 ms.collection: M365-identity-device-management
 ROBOTS: NOINDEX
 ms.openlocfilehash: a0d844c6ee5b40e987ab25f4183e8365d18edac3
-ms.sourcegitcommit: c25a91db838805eca5dbb421a3de401928968bf0
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73145514"
 ---
 # <a name="recommended-antivirus-exclusions-for-configuration-manager"></a>Esclusioni dell'antivirus consigliate per Configuration Manager

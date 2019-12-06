@@ -12,10 +12,10 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cb1a527a96bcf068253f7832d67a4ee650330e49
-ms.sourcegitcommit: 670cfed1e47a7a4a73aa4ccb873c6312be3c21ff
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/26/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71311576"
 ---
 # <a name="set-up-a-configuration-manager-lab"></a>Configurare un lab di Configuration Manager

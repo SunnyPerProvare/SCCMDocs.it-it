@@ -12,11 +12,11 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d160c6ab64c5ad097bf5986882b65171b0df4651
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194153"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74840463"
 ---
 # <a name="define-site-boundaries-and-boundary-groups"></a>Definire i limiti e i gruppi di limiti del sito
 

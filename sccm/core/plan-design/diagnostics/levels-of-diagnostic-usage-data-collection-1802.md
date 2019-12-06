@@ -11,12 +11,13 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6004e75c6efee7c2c55a40696407131dd7f02af
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ROBOTS: NOINDEX
+ms.openlocfilehash: 730c44ff71816b8fe99ccfac61d2efafad2c1650
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68338747"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660462"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1802-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1802
 

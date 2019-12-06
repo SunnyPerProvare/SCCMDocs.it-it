@@ -13,10 +13,10 @@ manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a88052e0d799b324ddbed6acbdf0b25a97f4d80c
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67677367"
 ---
 # <a name="capabilities-in-technical-preview-1709-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1709 per System Center Configuration Manager

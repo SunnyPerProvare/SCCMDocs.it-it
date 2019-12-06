@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 47a85ec7dea72f08a0ec48ebb151566b8563ba9a
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58523691"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62201349"
 ---
 # <a name="how-to-monitor-clients-for-linux-and-unix-servers-in-configuration-manager"></a>Come monitorare i client per i server Linux e UNIX in Configuration Manager
 

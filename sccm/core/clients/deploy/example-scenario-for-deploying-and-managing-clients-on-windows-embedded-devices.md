@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7f0cc9800931c802d29edd5cacc1f1ed5e95c24e
-ms.sourcegitcommit: f531d0a622f220739710b2fe6644ea58d024064a
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "65933274"
 ---
 # <a name="example-scenario-for-deploying-and-managing-system-center-configuration-manager-clients-on-windows-embedded-devices"></a>Scenario di esempio per la distribuzione e la gestione dei client di System Center Configuration Manager in dispositivi con Windows Embedded

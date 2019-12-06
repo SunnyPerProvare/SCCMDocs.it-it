@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cc4a984b15af66a5426d30f3fb4f0b68c794ba5f
-ms.sourcegitcommit: 53f2380ac67025fb4a69fc1651edad15d98e0cdd
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "65673333"
 ---
 # <a name="how-to-use-maintenance-windows-in-system-center-configuration-manager"></a>Come usare le finestre di manutenzione in System Center Configuration Manager
@@ -65,7 +65,7 @@ Le finestre di manutenzione consentono di definire un periodo di tempo in cui è
 
 7.  Effettuare una selezione nell'elenco a discesa **Applica pianificazione a**.  
 
-8.  Scegliere **OK** e quindi chiudere la finestra di dialogo **Proprietà &lt;nome raccolta\>**.  
+8.  Scegliere **OK** e quindi chiudere la finestra di dialogo **Proprietà &lt;nome raccolta\>** .  
  
 ## <a name="bkmk_powershell"></a> Uso di PowerShell
 

@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 17e9ee2b969a9cc6e9258fa698be91fa15f4c2e3
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56127100"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62252591"
 ---
 # <a name="frequently-asked-questions-about-diagnostics-and-usage-data-for-system-center-configuration-manager"></a>Domande frequenti sui dati di diagnostica e di utilizzo per System Center Configuration Manager
 
@@ -45,7 +45,7 @@ Configuration Manager Current Branch deve essere aggiornato a intervalli regolar
 
 
 ###  <a name="bkmk_tables"></a> È possibile visualizzare i dati in tabelle personalizzate?  
- No. Configuration Manager raccoglie i dati di diagnostica e di utilizzo tramite stored procedure SQL che vengono eseguite per tabelle di prodotti predefinite nel database. Tutte queste tabelle SQL sono precedute dal prefisso **TEL_**. Come parte della query di rilevamento dello schema SQL, viene eseguito l'hashing di tutti i nomi di tabella per il confronto con i valori predefiniti noti. Questo comportamento determina l'esistenza di tabelle personalizzate nel database. La presenza di tabelle personalizzate indica che lo schema di database viene esteso dall'impostazione predefinita. Non include i dati archiviati all'interno di tali tabelle.  
+ No. Configuration Manager raccoglie i dati di diagnostica e di utilizzo tramite stored procedure SQL che vengono eseguite per tabelle di prodotti predefinite nel database. Tutte queste tabelle SQL sono precedute dal prefisso **TEL_** . Come parte della query di rilevamento dello schema SQL, viene eseguito l'hashing di tutti i nomi di tabella per il confronto con i valori predefiniti noti. Questo comportamento determina l'esistenza di tabelle personalizzate nel database. La presenza di tabelle personalizzate indica che lo schema di database viene esteso dall'impostazione predefinita. Non include i dati archiviati all'interno di tali tabelle.  
 
 ###  <a name="bkmk_databases"></a> È possibile visualizzare nomi o dati di altri database? 
  No. Le stored procedure per raccogliere i dati sono limitate al database del sito.  

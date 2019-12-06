@@ -12,11 +12,11 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1bfd0dd70c350196ff3e6e4a66da9fb04863b8b8
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156798"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62203163"
 ---
 # <a name="how-to-monitor-and-plan-for-power-management-in-system-center-configuration-manager"></a>Come monitorare e pianificare il risparmio energia in System Center Configuration Manager
 
@@ -352,7 +352,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 |**Computer portatile spento**|Specificare il consumo di energia di un computer portatile quando è spento. Il valore predefinito è **0** kW all'ora.|  
 |**Monitor desktop acceso**|Specificare il consumo di energia di un monitor di computer desktop quando è acceso. Il valore predefinito è **0,028** kW all'ora.|  
 |**Monitor portatile acceso**|Specificare il consumo di energia di un monitor di computer portatile quando è acceso. Il valore predefinito è **0** kW all'ora.|  
-|**Valuta**|Specificare l'etichetta di valuta da usare per il report. Il valore predefinito è **USD ($)**.|  
+|**Valuta**|Specificare l'etichetta di valuta da usare per il report. Il valore predefinito è **USD ($)** .|  
 
 #### <a name="report-links"></a>Collegamenti per il report  
  Questo report non è collegato ad altri report relativi al risparmio energia.  
@@ -392,7 +392,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 |**Computer portatile spento**|Specificare il consumo di energia di un computer portatile quando è spento. Il valore predefinito è **0** kW all'ora.|  
 |**Monitor desktop acceso**|Specificare il consumo di energia di un monitor di computer desktop quando è acceso. Il valore predefinito è **0,028** kW all'ora.|  
 |**Monitor portatile acceso**|Specificare il consumo di energia di un monitor di computer portatile quando è acceso. Il valore predefinito è **0** kW all'ora.|  
-|**Valuta**|Specificare l'etichetta di valuta da usare per il report. Il valore predefinito è **USD ($)**.|  
+|**Valuta**|Specificare l'etichetta di valuta da usare per il report. Il valore predefinito è **USD ($)** .|  
 
 #### <a name="report-links"></a>Collegamenti per il report  
  Questo report non è collegato ad altri report relativi al risparmio energia.  

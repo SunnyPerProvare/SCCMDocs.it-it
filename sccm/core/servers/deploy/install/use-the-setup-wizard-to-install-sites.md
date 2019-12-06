@@ -11,10 +11,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 81130d513ff4f0a412c1774e50d3ac7058504c99
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70377871"
 ---
 # <a name="use-the-setup-wizard-to-install-configuration-manager-sites"></a>Usare l'installazione guidata per installare i siti di Configuration Manager

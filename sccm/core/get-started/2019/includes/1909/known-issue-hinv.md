@@ -7,10 +7,10 @@ ms.topic: include
 ms.date: 10/04/2019
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d7d24b4032f893cfbbb347a1d0a37090f308c365
-ms.sourcegitcommit: b631fcb2669ac2a5801e70620b0c3e81431bea8f
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71975520"
 ---
 ### <a name="ki_hinv"></a> Report sull'inventario hardware

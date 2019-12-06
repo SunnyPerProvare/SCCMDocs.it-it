@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c033b7a48aeaf4821a67a277f23b2f672115d105
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "65497541"
 ---
 # <a name="hierarchy-maintenance-tool-preinstexe-for-system-center-configuration-manager"></a>Strumento di manutenzione gerarchia (Preinst.exe) per System Center Configuration Manager
@@ -43,14 +43,14 @@ Quando si utilizza lo strumento di manutenzione gerarchia, è necessario eseguir
 
 Quando si esegue lo strumento di manutenzione gerarchia, è necessario usare la sintassi seguente: preinst.exe /&lt;opzione\>. Di seguito sono elencate le opzioni della riga di comando.  
 
- **/DELJOB &lt;*CodiceSito*>**: usare questa opzione in un sito per eliminare tutti i processi o i comandi dal sito corrente nel sito di destinazione specificato.  
+ **/DELJOB &lt;*CodiceSito*>** : usare questa opzione in un sito per eliminare tutti i processi o i comandi dal sito corrente nel sito di destinazione specificato.  
 
- **/DELSITE&lt; *CodiceSitoFiglioDaRimuovere*>**: usare questa opzione in un sito padre per eliminare i dati relativi ai siti figlio dal database del sito padre. In genere, è possibile utilizzare questa opzione se si rimuovono le autorizzazioni da un computer del server del sito prima che il sito sia stato disinstallato da tale computer.  
+ **/DELSITE&lt; *CodiceSitoFiglioDaRimuovere*>** : usare questa opzione in un sito padre per eliminare i dati relativi ai siti figlio dal database del sito padre. In genere, è possibile utilizzare questa opzione se si rimuovono le autorizzazioni da un computer del server del sito prima che il sito sia stato disinstallato da tale computer.  
 
 > [!NOTE]  
 >  L'opzione /DELSITE non disinstalla il sito nel computer specificato dal parametro ChildSiteCodeToRemove. Questa opzione rimuove solamente le informazioni sul sito dal database del sito di Configuration Manager.  
 
-**/DUMP &lt;*CodiceSito*>**: usare questa opzione nel server del sito locale per scrivere le immagini di controllo del sito nella cartella radice dell'unità in cui è installato il sito. È possibile scrivere un'immagine di controllo del sito specifica nella cartella o scrivere tutti i file di controllo del sito nella gerarchia.  
+**/DUMP &lt;*CodiceSito*>** : usare questa opzione nel server del sito locale per scrivere le immagini di controllo del sito nella cartella radice dell'unità in cui è installato il sito. È possibile scrivere un'immagine di controllo del sito specifica nella cartella o scrivere tutti i file di controllo del sito nella gerarchia.  
 
 -   /DUMP &lt;*CodiceSito*> consente di scrivere l'immagine di controllo del sito solo per il sito specificato.  
 

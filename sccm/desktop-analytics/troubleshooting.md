@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1ecb1657903fd3d1dfe43f2ad46258b4643c2f55
-ms.sourcegitcommit: ef7800a294e5db5d751921c34f60296c1642fc1f
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68712598"
 ---
 # <a name="troubleshoot-desktop-analytics"></a>Risolvere i problemi di Desktop Analytics
@@ -44,7 +44,7 @@ Molti problemi comuni sono dovuti a prerequisiti mancanti. Per prima cosa confer
 
 ## <a name="monitor-connection-health"></a>Monitorare l'integrità della connessione
 
-Usare il dashboard **Integrità connessione** in Configuration Manager per eseguire il drill-down nelle categorie in base all'integrità del dispositivo. Nella console di Configuration Manager passare all'area di lavoro **Raccolta software**, espandere il nodo **Manutenzione di Desktop Analytics** e selezionare il dashboard **Integrità connessione**.  
+Usare il dashboard **Integrità connessione** in Configuration Manager per eseguire il drill-down delle categorie in base all'integrità del dispositivo. Nella console di Configuration Manager passare all'area di lavoro **Raccolta software**, espandere il nodo **Manutenzione di Desktop Analytics** e selezionare il dashboard **Integrità connessione**.  
 
 Per altre informazioni, vedere [Monitorare l'integrità della connessione](/sccm/desktop-analytics/monitor-connection-health).
 

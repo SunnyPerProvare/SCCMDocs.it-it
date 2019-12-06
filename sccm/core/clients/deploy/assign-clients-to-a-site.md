@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 31456cac8ff242c377b441a14503c3766f40cf9f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135392"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62202080"
 ---
 # <a name="how-to-assign-clients-to-a-site-in-system-center-configuration-manager"></a>Come assegnare i client a un sito in System Center Configuration Manager
 
@@ -102,7 +102,7 @@ Configuration Manager controlla anche che il client di Configuration Manager (ra
    Il client esegue prima un controllo in Servizi di dominio Active Directory e, se rileva un sito di Configuration Manager (ramo corrente) pubblicato, l'assegnazione al sito riesce. In caso contrario, ad esempio se il sito di Configuration Manager non è pubblicato o il computer è un client di un gruppo di lavoro, il client verificherà la presenza di informazioni del sito dal punto di gestione assegnato.  
 
   > [!NOTE]  
-  >  È possibile assegnare un punto di gestione al client durante l'installazione del client usando la proprietà Client.msi **SMSMP=&lt;nome_server>**.  
+  >  È possibile assegnare un punto di gestione al client durante l'installazione del client usando la proprietà Client.msi **SMSMP=&lt;nome_server>** .  
 
    Se entrambi i metodi hanno esito negativo, si verifica un errore di assegnazione del sito ed è necessario assegnare il client manualmente.  
 

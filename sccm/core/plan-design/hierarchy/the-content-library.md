@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fb4efaf8fb424ee4f6af221ad5316d8fd03f8aa0
-ms.sourcegitcommit: ef7800a294e5db5d751921c34f60296c1642fc1f
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68712584"
 ---
 # <a name="the-content-library-in-configuration-manager"></a>Raccolta contenuto in Configuration Manager

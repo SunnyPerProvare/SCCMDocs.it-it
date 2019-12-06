@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a6c6f931271d8cc8f69e3c65de8c4932f5ab5c95
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67159280"
 ---
 # <a name="fundamentals-of-security-for-configuration-manager"></a>Nozioni fondamentali sulla sicurezza di Configuration Manager

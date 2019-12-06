@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 719620b3903cd85dc387794f8fbbe6b2bffe0aef
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "65500059"
 ---
 # <a name="how-to-extend-hardware-inventory-in-system-center-configuration-manager"></a>Come estendere l'inventario hardware in System Center Configuration Manager
@@ -35,7 +35,7 @@ Il file Configuration.mof, usato per definire le classi di dati da inserire nell
 > [!NOTE]  
 >  Se il file Configuration.mof è stato modificato manualmente per aggiungere classi di inventario personalizzate, queste modifiche vengono sovrascritte quando si esegue l'aggiornamento alla versione 1602. Per continuare a usare le classi personalizzate dopo l'aggiornamento, è necessario aggiungerle alla sezione relativa alle estensioni aggiunte del file Configuration.mof dopo l'aggiornamento alla versione 1602.  
 > È tuttavia necessario evitare di modificare le sezioni che precedono questa, perché sono riservate alle modifiche da parte di Configuration Manager. Un backup del file Configuration.mof personalizzato è disponibile in:  
-> **<Directory installazione CM\>\data\hinvarchive\\**.  
+> **<Directory installazione CM\>\data\hinvarchive\\** .  
 
 |Metodo|Altre informazioni|  
 |------------|----------------------|  
@@ -159,12 +159,12 @@ A partire da Configuration Manager 1802, per le proprietà dell'inventario hardw
 > [!IMPORTANT]  
 >  Quando si crea un file NOIDMIF, è necessario salvarlo in un formato con codifica ANSI. I file NOIDMIF salvati in formato con codifica UTF-8 non sono leggibili per Configuration Manager.  
 
- Dopo aver creato un file NOIDMIF, archiviarlo nella cartella _%Windir%_**\CCM\Inventory\Noidmifs** di ogni client. Configuration Manager raccoglierà informazioni dai file NODMIF in questa cartella durante il successivo ciclo di inventario hardware pianificato.  
+ Dopo aver creato un file NOIDMIF, archiviarlo nella cartella _%Windir%_ **\CCM\Inventory\Noidmifs** di ogni client. Configuration Manager raccoglierà informazioni dai file NODMIF in questa cartella durante il successivo ciclo di inventario hardware pianificato.  
 
 ###  <a name="BKMK_IDMIF"></a> Per creare file IDMIF  
  I file IDMIF possono essere usati per aggiungere al database di Configuration Manager informazioni sugli asset di cui Configuration Manager non può normalmente eseguire l'inventario e che non sono associati a un dispositivo client specifico. È possibile, ad esempio, usare file IDMIF per raccogliere informazioni su proiettori, lettori DVD, fotocopiatrici o altre apparecchiature che non hanno un client Configuration Manager. Per informazioni sulla creazione di file IDMIF, vedere la documentazione di Configuration Manager SDK.  
 
- Dopo aver creato un file IDMIF, archiviarlo nella cartella _%Windir%_**\CCM\Inventory\Idmifs** dei computer client. Configuration Manager raccoglierà informazioni da questo file durante il successivo ciclo di inventario hardware pianificato. È necessario dichiarare nuove classi per le informazioni contenute nel file aggiungendo o importarli.  
+ Dopo aver creato un file IDMIF, archiviarlo nella cartella _%Windir%_ **\CCM\Inventory\Idmifs** dei computer client. Configuration Manager raccoglierà informazioni da questo file durante il successivo ciclo di inventario hardware pianificato. È necessario dichiarare nuove classi per le informazioni contenute nel file aggiungendo o importarli.  
 
 > [!NOTE]
 > I file MIF potrebbero contenere grandi quantità di dati e la raccolta di tali dati potrebbe influire negativamente sulle prestazioni del sito. Abilitare la raccolta di file MIF solo quando necessario e configurare l'opzione **Dimensioni massime file MIF personalizzate (KB)** nelle impostazioni relative all'inventario hardware. Per altre informazioni, vedere [Introduzione all'inventario hardware in System Center Configuration Manager](introduction-to-hardware-inventory.md).

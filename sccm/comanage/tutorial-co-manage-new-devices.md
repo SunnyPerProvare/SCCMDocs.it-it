@@ -11,10 +11,10 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 7fb02a5c-e286-46b1-a972-6335c858429a
 ms.openlocfilehash: 3ecf5f7a0f88275c146adf6c040d98af6c41dc31
-ms.sourcegitcommit: ad2d36e77cc08f5eced848620f926445484e609d
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71712454"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Esercitazione: Abilitare la co-gestione per nuovi dispositivi basati su Internet
@@ -171,7 +171,7 @@ Esportare il *certificato di autenticazione server di Cloud Management Gateway* 
 
 3. Nell'Esportazione guidata certificati selezionare **Avanti**, selezionare **Sì, esporta la chiave privata** e quindi scegliere **Avanti**.  
 
-4. Nella pagina Formato file di esportazione selezionare **Personal Information Exchange - PKCS #12 (.PFX)**, selezionare **Avanti** e specificare una password. Per il nome del file specificare un nome simile a **C:\ConfigMgrCloudMGServer**. Si farà riferimento a questo file quando si creerà il servizio Cloud Management Gateway in Azure.  
+4. Nella pagina Formato file di esportazione selezionare **Personal Information Exchange - PKCS #12 (.PFX)** , selezionare **Avanti** e specificare una password. Per il nome del file specificare un nome simile a **C:\ConfigMgrCloudMGServer**. Si farà riferimento a questo file quando si creerà il servizio Cloud Management Gateway in Azure.  
 
 5. Selezionare **Avanti** e quindi verificare le impostazioni seguenti prima di selezionare **Fine** per completare l'esportazione:  
 
@@ -394,7 +394,7 @@ Ad esempio, *C:\Programmi\Microsoft Configuration Manager\bin\i386\ccmsetup.msi*
 
    - **Editore**: Microsoft  
 
-   - **Argomenti della riga di comando**:  *\<specificare la riga di comando **CCMSETUPCMD**. È possibile usare la riga di comando salvata dalla pagina *Abilitazione* della Configurazione guidata della co-gestione. Questa riga di comando include i nomi del servizio cloud e altri valori, che permettono ai dispositivi di installare il software client di Configuration Manager.>*  
+   - **Argomenti della riga di comando**:  *\<specificare la riga di comando **CCMSETUPCMD**. È possibile usare la riga di comando salvata dalla pagina* Abilitazione *della Configurazione guidata della co-gestione. Questa riga di comando include i nomi del servizio cloud e altri valori, che permettono ai dispositivi di installare il software client di Configuration Manager.>*  
 
      La struttura della riga di comando dovrebbe essere simile a questo esempio, usando solo i parametri CCMSETUPCMD e SMSSiteCode:  
 

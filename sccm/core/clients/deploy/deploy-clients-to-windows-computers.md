@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 86c99fc79f89d94f4a32e34949b91d8633b23a65
-ms.sourcegitcommit: 07756e9b4ed7b134e32349acb1eeae93c6de9e28
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73049475"
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-configuration-manager"></a>Come distribuire i client nei computer Windows in Configuration Manager

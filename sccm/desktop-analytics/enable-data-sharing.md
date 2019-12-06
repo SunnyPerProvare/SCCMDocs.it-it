@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e6dd07526da0e4863362a75d2af81e22848cc207
-ms.sourcegitcommit: 2273f8fd61028e8d369d9ffa7ef31ee2efcb63bd
+ms.openlocfilehash: f8b21f1fcc702190322c97ed36333bd612ae3984
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74049482"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74734614"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Abilitare la condivisione dei dati per Desktop Analytics
 
@@ -28,6 +28,9 @@ Per registrare i dispositivi in Desktop Analytics, è necessario che i dispositi
 ![Diagramma dei livelli dei dati di diagnostica per Desktop Analytics](media/diagnostic-data-levels.png)
 
 Quando si esegue l'integrazione di Configuration Manager con Desktop Analytics, Configuration Manager viene usato anche per gestire il livello dei dati di diagnostica nei dispositivi. Per un'esperienza ottimale, usare Configuration Manager.
+
+> [!Important]  
+> Nella maggior parte dei casi usare solo Configuration Manager per configurare queste impostazioni. Non applicare anche queste impostazioni negli oggetti criteri di gruppo del dominio. Per altre informazioni, vedere [Risoluzione dei conflitti](/configmgr/desktop-analytics/enroll-devices#conflict-resolution).
 
 La funzionalità di base di Desktop Analytics funziona al [livello dei dati di diagnostica](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#diagnostic-data-levels) **Base**. Se non si configura il livello **Avanzata (con limitazioni)** in Configuration Manager, non si ottengono le funzionalità di Desktop Analytics seguenti:
 

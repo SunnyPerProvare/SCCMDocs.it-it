@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5588afeb02ead302201cc99c8c2ad7558ec4b32e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56134783"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62234330"
 ---
 # <a name="planning-to-monitor-migration-activity-in-system-center-configuration-manager"></a>Pianificazione del monitoraggio dell'attività di migrazione in System Center Configuration Manager
 

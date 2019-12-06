@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 34072fe18bc2d0d751938ff536f6d4ba8e4c378b
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "65500958"
 ---
 # <a name="unattended-site-recovery-for-configuration-manager"></a>Ripristino automatico del sito per Configuration Manager   
@@ -192,7 +192,7 @@ ms.locfileid: "65500958"
 -   **Nome chiave:** DatabaseName
 
     -   **Richiesto:** Sì
-    -   **Valori:** *&lt;NomeDatabaseSito\>* o *&lt;NomeIstanza\>*\\*&lt;NomeDatabaseSito\>*
+    -   **Valori:** *&lt;NomeDatabaseSito\>* o *&lt;NomeIstanza\>* \\ *&lt;NomeDatabaseSito\>*
     -   **Dettagli:** Il nome del database di SQL Server da creare o usare per installare il database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.
 
         > [!IMPORTANT]  
@@ -354,7 +354,7 @@ ms.locfileid: "65500958"
 -   **Nome chiave:** DatabaseName
 
     -   **Richiesto:** Sì
-    -   **Valori:** *&lt;NomeDatabaseSito\>* o *&lt;NomeIstanza\>*\\*&lt;NomeDatabaseSito\>*
+    -   **Valori:** *&lt;NomeDatabaseSito\>* o *&lt;NomeIstanza\>* \\ *&lt;NomeDatabaseSito\>*
     -   **Dettagli:** Il nome del database di SQL Server da creare o usare per installare il database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.
 
         > [!IMPORTANT]    

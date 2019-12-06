@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: af65085590d8b02d6b3a020668566a334de42f13
-ms.sourcegitcommit: 3936b869d226cea41fa0090e2cbc92bd530db03a
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67285562"
 ---
 # <a name="about-the-service-connection-point-in-configuration-manager"></a>Informazioni sul punto di connessione del servizio in Configuration Manager

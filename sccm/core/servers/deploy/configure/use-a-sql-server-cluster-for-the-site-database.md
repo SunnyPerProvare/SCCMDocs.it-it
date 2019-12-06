@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d07005c63f0d69d57d24eac163b67c34529658cf
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58477552"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62215681"
 ---
 # <a name="use-a-sql-server-cluster-for-the-site-database"></a>Usare un cluster di SQL Server per il database del sito
 

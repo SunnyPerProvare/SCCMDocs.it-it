@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 704cc50369e1df251b706690465a4135ed5b3cdb
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67676911"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1810"></a>Livelli di raccolta dati di utilizzo e di diagnostica per la versione 1810

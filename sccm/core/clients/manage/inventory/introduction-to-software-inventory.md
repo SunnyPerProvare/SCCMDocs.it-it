@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d0ca25d64f3dd0e86ddbd89e2d86ae13da170891
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67550737"
 ---
 # <a name="introduction-to-software-inventory-in-system-center-configuration-manager"></a>Introduzione all'inventario software in System Center Configuration Manager

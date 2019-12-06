@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 51243f8df55f2736cfb053f9e38cc7b6716b2158
-ms.sourcegitcommit: 18a94eb78043cb565b05cd0e9469b939b29cccf0
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "66354866"
 ---
 # <a name="interoperability-between-different-versions-of-system-center-configuration-manager"></a>Interoperabilità tra versioni diverse di System Center Configuration Manager

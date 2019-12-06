@@ -11,12 +11,13 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b698298838c1fa9d6f050c39e1d6ab5d1df21a9
-ms.sourcegitcommit: 6b5a003256305c1f0cb605e52aeaaf19c23af5a9
+ROBOTS: NOINDEX
+ms.openlocfilehash: 1c0520620f0c4560edd545540b79dcc4e0fa5e91
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68956484"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74659833"
 ---
 # <a name="checklist-for-installing-update-1802-for-system-center-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1802 di System Center Configuration Manager
 

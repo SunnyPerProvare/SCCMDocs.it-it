@@ -8,10 +8,10 @@ ms.prod: configuration-manager
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.openlocfilehash: 91fc86d10eeb0d898866c63207e4d8af3ce06724
-ms.sourcegitcommit: 160bcdaf783f3946ad5c7869b2566cbfc4da545c
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71401683"
 ---
 # <a name="system-center-configuration-manager-site-size-and-performance-guidelines"></a>Linee guida sulle dimensioni e le prestazioni del sito System Center Configuration Manager

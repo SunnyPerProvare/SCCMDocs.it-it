@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5827f68dc7ec499e59291edc4ed4de10f5081311
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "56755201"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62193946"
 ---
 # <a name="get-help-from-fasttrack-for-co-management"></a>Ottenere assistenza da FastTrack per la co-gestione
 

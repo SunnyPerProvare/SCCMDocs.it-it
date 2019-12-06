@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6b49f05708f824c16dd90cbb9c872f49ab484de8
-ms.sourcegitcommit: e0d303d87c737811c2d3c40d01cd3d260a5c7bde
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "69974718"
 ---
 # <a name="command-line-options-for-configuration-manager-setup"></a>Opzioni della riga di comando per la configurazione di Configuration Manager
@@ -912,7 +912,7 @@ Usare i dettagli seguenti per ripristinare un sito di amministrazione centrale u
 
 - **Nome chiave:** ReferenceSite  
 
-    - **Richiesto:** Questa chiave è richiesta quando l'impostazione **DatabaseRecoveryOptions** ha il valore **40**.  
+    - **Richiesto:** Questa chiave è richiesta quando l'impostazione DatabaseRecoveryOptions ha il valore **40**.  
 
     - **Valori:**  <*FQDN del sito di riferimento*>  
 
@@ -1008,7 +1008,7 @@ Usare i dettagli seguenti per ripristinare un sito di amministrazione centrale u
 
 - **Nome chiave:** AdminConsole  
 
-    - **Richiesto:** Questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha valore **4**.  
+    - **Richiesto:** Questa chiave è necessaria tranne quando l'impostazione ServerRecoveryOptions ha valore **4**.  
 
     - **Valori:**
 
@@ -1274,7 +1274,7 @@ Usare i dettagli seguenti per recuperare un sito primario usando un file script 
 
 - **Nome chiave:** AdminConsole  
 
-    - **Richiesto:** Questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha valore **4**.  
+    - **Richiesto:** Questa chiave è necessaria tranne quando l'impostazione ServerRecoveryOptions ha valore **4**.  
 
     - **Valori:**
 

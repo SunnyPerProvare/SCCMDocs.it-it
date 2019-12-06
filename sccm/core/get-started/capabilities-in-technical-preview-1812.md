@@ -13,10 +13,10 @@ manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9655468b868b6ea78d556bf2dbe0a597f375088e
-ms.sourcegitcommit: 8eccf5429aabcef17d5762e4b03912ccad1215e2
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "64928889"
 ---
 # <a name="capabilities-in-configuration-manager-technical-preview-version-1812"></a>Funzionalità in Configuration Manager Technical Preview versione 1812 

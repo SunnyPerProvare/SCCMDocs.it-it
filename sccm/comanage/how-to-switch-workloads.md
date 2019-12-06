@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.assetid: 60e2022f-a4f9-40dd-af01-9ecb37b43878
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4ff8597442902b70e626d0655cf0afb247366440
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70890743"
 ---
 # <a name="how-to-switch-configuration-manager-workloads-to-intune"></a>Come trasferire i carichi di lavoro di Configuration Manager a Intune

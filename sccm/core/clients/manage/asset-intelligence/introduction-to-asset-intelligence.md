@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d63fa2f25b63e663301fdf9b25d8190b57138e31
-ms.sourcegitcommit: 80cbc122937e1add82310b956f7b24296b9c8081
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "65499987"
 ---
 # <a name="introduction-to-asset-intelligence-in-configuration-manager"></a>Introduzione ad Asset Intelligence in Configuration Manager
@@ -85,13 +85,13 @@ Per impostazione predefinita, per ogni requisito hardware elencato vengono visua
 
 - **Titolo software**: il titolo software associato al requisito hardware  
 
-- **CPU minima (MHz)**: la velocità minima del processore, in megahertz (MHz), richiesta dal titolo software  
+- **CPU minima (MHz)** : la velocità minima del processore, in megahertz (MHz), richiesta dal titolo software  
 
-- **RAM minima (KB)**: la quantità di RAM minima, in kilobyte (KB), richiesta dal titolo software  
+- **RAM minima (KB)** : la quantità di RAM minima, in kilobyte (KB), richiesta dal titolo software  
 
-- **Dimensioni minime spazio su disco (KB):**: la quantità minima di spazio disponibile sul disco rigido, in KB, richiesta dal titolo software  
+- **Dimensioni minime spazio su disco (KB):** : la quantità minima di spazio disponibile sul disco rigido, in KB, richiesta dal titolo software  
 
-- **Dimensioni disco minime (KB):**: la dimensione minima del disco rigido, in KB, richiesta dal titolo software  
+- **Dimensioni disco minime (KB):** : la dimensione minima del disco rigido, in KB, richiesta dal titolo software  
 
 - **Stato convalida**: lo stato di convalida per il requisito hardware  
 

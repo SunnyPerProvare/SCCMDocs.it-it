@@ -13,10 +13,10 @@ manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3e7a13e53e4054593310378b5f667fd91c597448
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67677440"
 ---
 # <a name="capabilities-in-technical-preview-1706-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1706 per System Center Configuration Manager

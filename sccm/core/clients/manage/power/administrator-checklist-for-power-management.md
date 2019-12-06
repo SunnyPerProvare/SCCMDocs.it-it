@@ -12,11 +12,11 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8198669fdf7d0acf3273af2d8a2e83f5b89f520c
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156992"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62200118"
 ---
 # <a name="administrator-checklist-for-power-management-in-system-center-configuration-manager"></a>Elenco di controllo amministratore per il risparmio energia in System Center Configuration Manager
 

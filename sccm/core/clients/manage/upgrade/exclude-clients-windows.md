@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7a16bc859006b0253459259d354a68e2ff1dec83
-ms.sourcegitcommit: 2d38de4846ea47a03cc884cbd3df27db48f64a6a
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70110146"
 ---
 # <a name="how-to-exclude-clients-from-upgrade-in-configuration-manager"></a>Come evitare l'aggiornamento di client in Configuration Manager

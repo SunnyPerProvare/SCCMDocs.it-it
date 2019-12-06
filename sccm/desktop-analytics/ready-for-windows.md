@@ -13,10 +13,10 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.openlocfilehash: 338ef88d4fa32767d9e4eb605a4ad800c11dbfce
-ms.sourcegitcommit: c25a91db838805eca5dbb421a3de401928968bf0
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73142947"
 ---
 # <a name="ready-for-modern-desktop-retirement-faq"></a>Domande frequenti sul ritiro di Ready for modern desktop
@@ -47,9 +47,9 @@ Il feedback dei responsabili IT è che vorrebbero che questi dati analitici si i
 
 Desktop Analytics offre i vantaggi seguenti:
 
--   **Inventario di dispositivi e software**: Inventario dei fattori chiave come le app e le versioni di Windows.
+-   **Inventario di dispositivi e software**: Inventario dei fattori chiave, ad esempio le app e le versioni di Windows.
 
--   **Identificazione progetto pilota**: Identificazione dell'insieme minimo di dispositivi che consentono la più ampia copertura di fattori. Vengono identificati i fattori ritenuti più importanti per un progetto pilota di aggiornamenti Windows. Assicurarsi che il progetto pilota sia ottimale consente di procedere in modo più rapido e sicuro a distribuzioni di grandi dimensioni in ambiente di produzione.
+-   **Identificazione del progetto pilota**: Identificazione dell'insieme minimo di dispositivi che consentono la più ampia copertura di fattori. Vengono identificati i fattori ritenuti più importanti per un progetto pilota di aggiornamenti Windows. Assicurarsi che il progetto pilota sia ottimale consente di procedere in modo più rapido e sicuro a distribuzioni di grandi dimensioni in ambiente di produzione.
 
 -   **Identificazione dei problemi**: Usando congiuntamente i dati di mercato aggregati e i dati dell'ambiente, il servizio esegue una previsione dei potenziali problemi per ottenere Windows e mantenerlo aggiornato. Suggerisce quindi eventuali mitigazioni.
 

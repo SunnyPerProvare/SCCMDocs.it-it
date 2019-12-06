@@ -11,10 +11,10 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.openlocfilehash: 76970a024e54067aaa6a3059bb95a6c134a2e999
-ms.sourcegitcommit: 99dfe4fb9e9cfd20c44380ae442b3a5b895a0d9b
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "65214697"
 ---
 # <a name="mms-2019-docathon"></a>MMS 2019 Docathon

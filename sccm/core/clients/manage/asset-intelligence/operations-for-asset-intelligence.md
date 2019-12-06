@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fde63b3400441815b227fe8fae78c354bc156c2a
-ms.sourcegitcommit: f679fc1e46c191a1780ae961d155c927fc353dce
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/30/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70176553"
 ---
 # <a name="how-to-use-asset-intelligence-in-system-center-configuration-manager"></a>Come usare Asset Intelligence in System Center Configuration Manager

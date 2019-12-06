@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f6f0b7f67c1b25fc28f82956a43f9a503ad3d190
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56123502"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62234547"
 ---
 # <a name="migrate-data-between-hierarchies-in-configuration-manager"></a>Eseguire la migrazione dei dati da una gerarchia all'altra in Configuration Manager
 

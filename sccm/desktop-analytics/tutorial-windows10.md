@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c84b5bf720a974bd767db56b9e9da4784caefad1
-ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72384681"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Esercitazione: Distribuire Windows 10 a un gruppo pilota
@@ -233,7 +233,7 @@ Usare questa procedura per creare un piano di distribuzione in Desktop Analytics
 
 3. Nel riquadro **Piani di distribuzione** selezionare **Crea**.  
 
-4. Nella pagina **Crea piano di distribuzione** configurare le impostazioni seguenti:  
+4. Nella riquadro **Crea piano di distribuzione** configurare le impostazioni seguenti:  
 
     - **Nome**: Nome univoco per il piano di distribuzione, ad esempio `Windows 10 pilot`  
 
@@ -249,7 +249,7 @@ Usare questa procedura per creare un piano di distribuzione in Desktop Analytics
 
             Se un'app viene installata in una percentuale di computer superiore a questa soglia, il piano di distribuzione contrassegna l'app come *importanti*. È quindi possibile deciderne l'importanza da testare durante la fase pilota.  
 
-    - **Data di completamento**: Scegliere la data entro cui Windows deve essere completamente distribuito a tutti i dispositivi di destinazione.  
+    - **Data di completamento**: scegliere la data entro cui Windows deve essere completamente distribuito in tutti i dispositivi di destinazione.  
 
 5. Selezionare **Crea**. Il nuovo piano viene visualizzato nell'elenco dei piani di distribuzione durante l'elaborazione. Per velocizzare l'elaborazione, richiedere un aggiornamento dati su richiesta. Per altre informazioni, vedere [Domande frequenti su Desktop Analytics](/sccm/desktop-analytics/faq#can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal).
 
@@ -257,11 +257,11 @@ Usare questa procedura per creare un piano di distribuzione in Desktop Analytics
 
 7. Nel menu del piano di distribuzione nel gruppo **Preparazione** selezionare **Identificazione dell'importanza**.  
 
-    1. Nella scheda **App** selezionare l'opzione per visualizzare solo gli asset con **Verifica non effettuata**.  
+    1. Nella scheda **App** selezionare l'opzione per visualizzare solo le risorse **Non riviste**.  
 
-    2. Selezionare ogni app e quindi selezionare **Modifica**. È possibile selezionare più app da modificare contemporaneamente.  
+    2. Selezionare ogni app, quindi selezionare **Modifica**. È possibile selezionare più app da modificare contemporaneamente.  
 
-    3. Scegliere un livello di importanza dall'elenco **Importanza**. Se si vuole che l'app venga convalidata da Desktop Analytics durante il progetto pilota, selezionare **Critico** o **Importante**. Non viene effettuata la convalida delle app contrassegnate come **Non importante**. Quando si assegnano i livelli di importanza, valutare la [compatibilità](/sccm/desktop-analytics/compat-assessment) e altre informazioni dettagliate sui piani.  
+    3. Scegliere un livello di importanza dall'elenco **Importanza**. Se si vuole che l'app venga convalidata da Desktop Analytics durante il progetto pilota, selezionare **Critica** o **Importante**. Non viene eseguita la convalida delle app contrassegnate come **Non importante**. Quando si assegnano i livelli di importanza, valutare la [compatibilità](/sccm/desktop-analytics/compat-assessment) e altre informazioni dettagliate sui piani.  
 
         Quando si assegnano i livelli di importanza è anche possibile scegliere la decisione di aggiornamento.  
 
@@ -271,7 +271,7 @@ Usare questa procedura per creare un piano di distribuzione in Desktop Analytics
 
     1. Esaminare i dispositivi consigliati per il progetto pilota.  
 
-    2. Selezionare ogni dispositivo e selezionare **Aggiungi al gruppo pilota**. Se non si è d'accordo con la raccomandazione, selezionare **Sostituisci**.  
+    2. Selezionare ogni dispositivo e scegliere **Aggiungi al gruppo pilota**. Se non si è d'accordo con quanto consigliato, selezionare **Sostituisci**.  
 
         Per altre informazioni sulle raccomandazioni di Desktop Analytics, selezionare l'icona Informazioni nell'angolo superiore destro del riquadro **Identifica gruppo pilota**.
 

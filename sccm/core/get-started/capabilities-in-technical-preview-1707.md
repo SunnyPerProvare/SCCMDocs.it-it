@@ -13,11 +13,11 @@ manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7dbd7696821b9c333b556f67e42cdccd086dc2bf
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132575"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62228863"
 ---
 # <a name="capabilities-in-technical-preview-1707-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1707 per System Center Configuration Manager
 
@@ -56,10 +56,12 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 -->
 
 ## <a name="client-peer-cache-support-for-express-installation-files-for-windows-10-and-office-365"></a>Supporto della peer cache del client per i file di installazione rapida per Windows 10 e Office 365
-<!-- 1352486 --> A partire da questa versione, la peer cache supporta la distribuzione dei file di installazione rapida del contenuto per Windows 10 e dei file di aggiornamento per Office 365. Non sono richieste configurazioni aggiuntive.
+<!-- 1352486 -->
+A partire da questa versione, la peer cache supporta la distribuzione dei file di installazione rapida del contenuto per Windows 10 e dei file di aggiornamento per Office 365. Non sono richieste configurazioni aggiuntive.
 
 ## <a name="surface-device-dashboard"></a>Dashboard del dispositivo Surface
-<!--1355788--> Il dashboard dei dispositivi Surface visualizza informazioni sui dispositivi Surface rilevati nell'ambiente. Nella console passare a **Monitoraggio** > **Surface Devices** (Dispositivi Surface). È possibile visualizzare le seguenti informazioni:
+<!--1355788-->
+Il dashboard del dispositivo Surface visualizza informazioni sui dispositivi Surface rilevati nell'ambiente in uso. Nella console passare a **Monitoraggio** > **Surface Devices** (Dispositivi Surface). È possibile visualizzare le seguenti informazioni:
 - percentuale di dispositivi Surface
 - percentuale di modelli Surface
 - prime cinque versioni del sistema operativo

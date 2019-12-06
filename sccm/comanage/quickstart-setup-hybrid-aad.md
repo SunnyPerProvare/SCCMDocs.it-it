@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ec02f740485d3f8b466cde0a644aaaa8885b91f2
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "56755212"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62204474"
 ---
 # <a name="set-up-hybrid-azure-ad-for-co-management"></a>Configurare Azure AD ibrido per la co-gestione
 

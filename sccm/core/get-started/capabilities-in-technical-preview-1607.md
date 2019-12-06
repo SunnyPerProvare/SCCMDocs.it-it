@@ -13,10 +13,10 @@ ms.author: aaroncz
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ac91fa1e9c4f4a8610ab3a0815ea6437eb29862c
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67158213"
 ---
 # <a name="capabilities-in-technical-preview-1607-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1607 per System Center Configuration Manager
