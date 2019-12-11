@@ -2,7 +2,7 @@
 title: Configurare la pre-cache del contenuto
 titleSuffix: Configuration Manager
 description: Informazioni su come i client possono scaricare il contenuto della distribuzione del sistema operativo prima di installare la sequenza di attività.
-ms.date: 09/17/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,22 +11,22 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a71a35781a2c1586636dc32cbc12b67e97f8471
-ms.sourcegitcommit: 44c48e2cb00e60d6ccb1ddde62a6159663917e2d
+ms.openlocfilehash: e1f62f3a0c22d57563a984dc453cf8c41ca1977e
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71923950"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74661057"
 ---
 # <a name="configure-pre-cache-content-for-task-sequences"></a>Configurare il contenuto pre-cache per le sequenze di attività
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!--1021244-->
-La funzionalità pre-cache per le distribuzioni di sequenze di attività disponibili consente ai client di scaricare il contenuto pertinente prima che un utente installi la sequenza di attività. Il client può eseguire il pre-cache del contenuto per le sequenze di attività che [aggiornano un sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system) o [installano un'immagine del sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-install-an-operating-system).
+La funzionalità pre-cache per le distribuzioni di sequenze di attività disponibili consente ai client di scaricare il contenuto pertinente prima che un utente installi la sequenza di attività. Il client può eseguire il pre-cache del contenuto per le sequenze di attività che [aggiornano un sistema operativo](/configmgr/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system) o [installano un'immagine del sistema operativo](/configmgr/osd/deploy-use/create-a-task-sequence-to-install-an-operating-system).
 
 > [!Note]  
-> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
+> Nella versione 1910, Configuration Manager Abilita questa funzionalità per impostazione predefinita. Nella versione 1906 o nelle versioni precedenti Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/configmgr/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
 
 Si supponga, ad esempio, di volere una sola sequenza di attività di aggiornamento sul posto per tutti gli utenti, pur avendo molte architetture e lingue diverse. Nelle versioni precedenti il download del contenuto inizia quando l'utente installa una distribuzione di sequenze di attività disponibile da Software Center. Questo ritardo aggiunge ulteriore tempo prima che l'installazione sia pronta per essere avviata. Tutto il contenuto a cui viene fatto riferimento nella sequenza di attività viene scaricato. Questo contenuto include il pacchetto di aggiornamento del sistema operativo per tutte le lingue e tutte le architetture. Se ogni pacchetto di aggiornamento è circa 3 GB, il contenuto totale è molto elevato.
 
@@ -41,7 +41,6 @@ A partire dalla versione 1906,<!--4224642--> è possibile usare la pre-caching p
 - Pacchetti driver
 - Pacchetti
 
-
 ## <a name="configure-pre-caching"></a>Configurare la pre-memorizzazione nella cache
 
 Per configurare la funzionalità pre-cache sono necessari tre passaggi:
@@ -51,27 +50,27 @@ Per configurare la funzionalità pre-cache sono necessari tre passaggi:
 3. [Distribuire la sequenza di attività e abilitare la pre-memorizzazione nella cache](#bkmk_deploy)
 
 
-### -1 Creare e configurare i pacchetti
+### <a name="bkmk_createpkg"></a>-1 Creare e configurare i pacchetti
 
 Il client valuta gli attributi dei pacchetti per determinare il contenuto scaricato durante la pre-memorizzazione nella cache.  
 
 #### <a name="os-upgrade-package"></a>Pacchetto di aggiornamento del sistema operativo
 
-Creare [pacchetti di aggiornamento del sistema operativo](/sccm/osd/get-started/manage-operating-system-upgrade-packages) per lingue e architetture specifiche. Specificare i valori per **Architettura** e **Lingua** nella scheda **Origine dati** delle proprietà.
+Creare [pacchetti di aggiornamento del sistema operativo](/configmgr/osd/get-started/manage-operating-system-upgrade-packages) per lingue e architetture specifiche. Specificare i valori per **Architettura** e **Lingua** nella scheda **Origine dati** delle proprietà.
 
 #### <a name="os-image"></a>Immagine del sistema operativo
 
-Creare [immagini del sistema operativo](/sccm/osd/get-started/manage-operating-system-images) per lingue e architetture specifiche. Specificare i valori per **Architettura** e **Lingua** nella scheda **Origine dati** delle proprietà.
+Creare [immagini del sistema operativo](/configmgr/osd/get-started/manage-operating-system-images) per lingue e architetture specifiche. Specificare i valori per **Architettura** e **Lingua** nella scheda **Origine dati** delle proprietà.
 
 #### <a name="driver-package"></a>Pacchetto driver
 
-Creare [pacchetti driver](/sccm/osd/get-started/manage-drivers#BKMK_ManagingDriverPackages) per modelli di hardware specifici. Specificare il **modello** nella scheda **generale** delle relative proprietà.
+Creare [pacchetti driver](/configmgr/osd/get-started/manage-drivers#BKMK_ManagingDriverPackages) per modelli di hardware specifici. Specificare il **modello** nella scheda **generale** delle relative proprietà.
 
 Per determinare quale pacchetto di driver scaricare durante la memorizzazione anticipata nella cache, il client valuta il modello rispetto alla proprietà **Name** della classe WMI **Win32_ComputerSystemProduct**.  
 
 #### <a name="package"></a>Pacchetto
 
-Creare [pacchetti](/sccm/apps/deploy-use/packages-and-programs) per lingue e architetture specifiche. Specificare i valori per **Architettura** e **Lingua** nella scheda **Generale** delle proprietà.
+Creare [pacchetti](/configmgr/apps/deploy-use/packages-and-programs) per lingue e architetture specifiche. Specificare i valori per **Architettura** e **Lingua** nella scheda **Generale** delle proprietà.
 
 
 ### <a name="bkmk_createts"></a> 2. Creare una sequenza di attività
@@ -80,10 +79,10 @@ Creare una sequenza di attività con i passaggi condizionali per le diverse ling
 
 |Content|Passaggio|
 |---------|---------|
-|Pacchetto di aggiornamento del sistema operativo|[Aggiorna sistema operativo](/sccm/osd/understand/task-sequence-steps#BKMK_UpgradeOS)|
-|Immagine del sistema operativo|[Applica immagine del sistema operativo](/sccm/osd/understand/task-sequence-steps#BKMK_ApplyOperatingSystemImage)|
-|Pacchetto driver|[Applica pacchetto di driver](/sccm/osd/understand/task-sequence-steps#BKMK_ApplyDriverPackage)|
-|Pacchetto|[Installa pacchetto](/sccm/osd/understand/task-sequence-steps#BKMK_InstallPackage)|
+|Pacchetto di aggiornamento del sistema operativo|[Aggiornare il sistema operativo](/configmgr/osd/understand/task-sequence-steps#BKMK_UpgradeOS)|
+|Immagine del sistema operativo|[Applica immagine del sistema operativo](/configmgr/osd/understand/task-sequence-steps#BKMK_ApplyOperatingSystemImage)|
+|Pacchetto driver|[Applica pacchetto di driver](/configmgr/osd/understand/task-sequence-steps#BKMK_ApplyDriverPackage)|
+|Pacchetto|[Installa pacchetto](/configmgr/osd/understand/task-sequence-steps#BKMK_InstallPackage)|
 
 Ad esempio, il passaggio di **aggiornamento del sistema operativo** seguente usa la versione in lingua inglese:  
 
@@ -103,7 +102,7 @@ Ad esempio, il passaggio di **aggiornamento del sistema operativo** seguente usa
 
 ### <a name="bkmk_deploy"></a> 3. Distribuire la sequenza di attività
 
-[Distribuire la sequenza di attività](/sccm/osd/deploy-use/deploy-a-task-sequence). Per la funzionalità di pre-cache configurare le impostazioni seguenti:  
+[Distribuire la sequenza di attività](/configmgr/osd/deploy-use/deploy-a-task-sequence). Per la funzionalità di pre-cache configurare le impostazioni seguenti:  
 
 - Nella scheda **Generale** selezionare **Pre-download del contenuto per questa sequenza di attività**.  
 
@@ -128,5 +127,5 @@ Ad esempio, il passaggio di **aggiornamento del sistema operativo** seguente usa
 
 ## <a name="see-also"></a>Vedere anche
 
-- [Creare una sequenza di attività per aggiornare un sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system)
-- [Scenario di aggiornamento di Windows alla versione più recente](/sccm/osd/deploy-use/upgrade-windows-to-the-latest-version)
+- [Creare una sequenza di attività per aggiornare un sistema operativo](/configmgr/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system)
+- [Scenario di aggiornamento di Windows alla versione più recente](/configmgr/osd/deploy-use/upgrade-windows-to-the-latest-version)

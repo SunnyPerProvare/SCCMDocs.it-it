@@ -2,7 +2,7 @@
 title: Informazioni di riferimento sulle variabili della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni sulle variabili per controllare e personalizzare una sequenza di attività di Configuration Manager.
-ms.date: 10/17/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,20 +11,20 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c2977d9e99c2a4c4273966f1ce11ce7c93900c0
-ms.sourcegitcommit: 89d6956f8dd9a73e18bf77990ab23cf9255068ad
+ms.openlocfilehash: 0ff08588390e42705596cb0be40e7640a42d7989
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72587742"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74659545"
 ---
 # <a name="task-sequence-variables"></a>Variabili della sequenza di attività
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo articolo include informazioni di riferimento per tutte le variabili disponibili in ordine alfabetico. Usare la funzione **Trova** del browser (in genere **CTRL** + **F**) per trovare una variabile specifica. Per le variabili viene indicato se sono specifiche per un passaggio particolare. L'articolo sui [passaggi della sequenza di attività](/sccm/osd/understand/task-sequence-steps) include l'elenco delle variabili specifiche per ogni passaggio.
+Questo articolo include informazioni di riferimento per tutte le variabili disponibili in ordine alfabetico. Usare la funzione **Trova** del browser (in genere **CTRL** + **F**) per trovare una variabile specifica. Per le variabili viene indicato se sono specifiche per un passaggio particolare. L'articolo sui [passaggi della sequenza di attività](/configmgr/osd/understand/task-sequence-steps) include l'elenco delle variabili specifiche per ogni passaggio.
 
-Per altre informazioni, vedere [Come usare le variabili della sequenza di attività](/sccm/osd/understand/using-task-sequence-variables).
+Per altre informazioni, vedere [Come usare le variabili della sequenza di attività](/configmgr/osd/understand/using-task-sequence-variables).
 
 ## <a name="bkmk_tsvar"></a> Informazioni di riferimento sulle variabili della sequenza di attività
 
@@ -528,7 +528,7 @@ Invece di generare una chiave di avvio casuale per l'opzione **Chiave di avvio s
 
 Specifica un nome account di Windows con le autorizzazioni per l'archiviazione dell'immagine acquisita in una condivisione di rete ([OSDCaptureDestination](#OSDCaptureDestination)). Specificare anche [OSDCaptureAccountPassword](#OSDCaptureAccountPassword).
 
-Per altre informazioni sull'account per l'acquisizione dell'immagine del sistema operativo, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#capture-os-image-account).
+Per altre informazioni sull'account per l'acquisizione dell'immagine del sistema operativo, vedere [Account](/configmgr/core/plan-design/hierarchy/accounts#capture-os-image-account).
 
 ### <a name="OSDCaptureAccountPassword"></a> OSDCaptureAccountPassword
 
@@ -626,10 +626,10 @@ Specifica il nome in formato RFC 1779 dell'unità organizzativa (OU) a cui viene
 
 <!--1358493-->
 *A partire dalla versione 1806*  
-*Si applica al passaggio [Installa pacchetto](/sccm/osd/understand/task-sequence-steps#BKMK_InstallPackage).*
+*Si applica al passaggio [Installa pacchetto](/configmgr/osd/understand/task-sequence-steps#BKMK_InstallPackage).*
 
 *A partire dalla versione 1902*  
-*Si applica al passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine).*
+*Si applica al passaggio [Esegui riga di comando](/configmgr/osd/understand/task-sequence-steps#BKMK_RunCommandLine).*
 
 (input)
 
@@ -699,7 +699,7 @@ Numero di versione facoltativo definito dall'utente da assegnare all'immagine de
 
 <!--516679/2840016-->
 *A partire dalla versione 1806*  
-*Si applica al passaggio [Applica pacchetto di driver](/sccm/osd/understand/task-sequence-steps#BKMK_ApplyDriverPackage).*
+*Si applica al passaggio [Applica pacchetto di driver](/configmgr/osd/understand/task-sequence-steps#BKMK_ApplyDriverPackage).*
 
 (input)
 
@@ -720,7 +720,7 @@ Per altre informazioni, vedere [Windows 10 DISM Command-Line Options](https://do
 
 Specifica l'account utente di dominio usato per aggiungere il computer di destinazione al dominio. Questa variabile è obbligatoria per l'aggiunta a un dominio.
 
-Per altre informazioni sull'account di aggiunta del dominio della sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-domain-join-account).
+Per altre informazioni sull'account di aggiunta del dominio della sequenza di attività, vedere [Account](/configmgr/core/plan-design/hierarchy/accounts#task-sequence-domain-join-account).
 
 ### <a name="OSDJoinDomainName"></a> OSDJoinDomainName
 
@@ -812,7 +812,7 @@ Specifica la password dell'account amministratore locale. Se si abilita l'opzion
 
 <!--3556028-->
 *A partire dalla versione 1902*  
-*Si applica al passaggio [Esegui script PowerShell](/sccm/osd/understand/task-sequence-steps#BKMK_RunPowerShellScript).*
+*Si applica al passaggio [Esegui script PowerShell](/configmgr/osd/understand/task-sequence-steps#BKMK_RunPowerShellScript).*
 
 (input)
 
@@ -1160,7 +1160,7 @@ Per altre informazioni, vedere [Opzioni della riga di comando di Installazione d
 
 Quando l'account computer non riesce a connettersi al punto di migrazione stato, questa variabile specifica se la sequenza di attività esegue il fallback per usare l'account di accesso alla rete.
 
-Per altre informazioni sull'account di accesso alla rete, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#network-access-account).
+Per altre informazioni sull'account di accesso alla rete, vedere [Account](/configmgr/core/plan-design/hierarchy/accounts#network-access-account).
 
 #### <a name="valid-values"></a>Valori validi
 
@@ -1222,11 +1222,53 @@ Specifica il percorso della directory di Windows del sistema operativo installat
 
 Specifica l'impostazione predefinita del fuso orario usata nel nuovo sistema operativo.
 
+Impostare il valore di questa variabile sul nome invariante della lingua del fuso orario. Usare, ad esempio, la stringa nel valore `Std` per un fuso orario sotto la chiave del registro di sistema seguente: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones`.
+
 ### <a name="OSDTimeZone-output"></a> OSDTimeZone (output)
 
 *Si applica al passaggio [Acquisisci impostazioni Windows](task-sequence-steps.md#BKMK_CaptureWindowsSettings).*
 
 Valore impostato sul fuso orario del computer. Il valore viene impostato solo se la variabile [OSDMigrateTimeZone](#OSDMigrateTimeZone) è impostata su `true`.
+
+### <a name="OSDWindowsSettingsInputLocale"></a>OSDWindowsSettingsInputLocale
+
+*Si applica al passaggio [Applica impostazioni Windows](task-sequence-steps.md#BKMK_ApplyWindowsSettings).*
+
+Specifica le impostazioni locali di input predefinite usate nel nuovo sistema operativo.
+
+Per altre informazioni sul valore del file di risposte dell'installazione di Windows, vedere [Microsoft-Windows-International-Core - InputLocale](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-international-core-inputlocale).
+
+### <a name="OSDWindowsSettingsSystemLocale"></a>OSDWindowsSettingsSystemLocale
+
+*Si applica al passaggio [Applica impostazioni Windows](task-sequence-steps.md#BKMK_ApplyWindowsSettings).*
+
+Specifica le impostazioni locali predefinite del sistema usate nel nuovo sistema operativo.
+
+Per altre informazioni sul valore del file di risposte dell'installazione di Windows, vedere [Microsoft-Windows-International-Core - SystemLocale](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-international-core-systemlocale).
+
+### <a name="OSDWindowsSettingsUILanguage"></a>OSDWindowsSettingsUILanguage
+
+*Si applica al passaggio [Applica impostazioni Windows](task-sequence-steps.md#BKMK_ApplyWindowsSettings).*
+
+Specifica l'impostazione predefinita della lingua dell'interfaccia utente usata nel nuovo sistema operativo.
+
+Per altre informazioni sul valore del file di risposte dell'installazione di Windows, vedere [Microsoft-Windows-International-Core - UILanguage](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-international-core-uilanguage).
+
+### <a name="OSDWindowsSettingsUILanguageFallback"></a>OSDWindowsSettingsUILanguageFallback
+
+*Si applica al passaggio [Applica impostazioni Windows](task-sequence-steps.md#BKMK_ApplyWindowsSettings).*
+
+Specifica l'impostazione della lingua dell'interfaccia utente di fallback usata nel nuovo sistema operativo.
+
+Per altre informazioni sul valore del file di risposte dell'installazione di Windows, vedere [Microsoft-Windows-International-Core - UILanguageFallback](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-international-core-uilanguagefallback).
+
+### <a name="OSDWindowsSettingsUserLocale"></a>OSDWindowsSettingsUserLocale
+
+*Si applica al passaggio [Applica impostazioni Windows](task-sequence-steps.md#BKMK_ApplyWindowsSettings).*
+
+Specifica le impostazioni locali dell'utente predefinite usate nel nuovo sistema operativo.
+
+Per altre informazioni sul valore del file di risposte dell'installazione di Windows, vedere [Microsoft-Windows-International-Core - UserLocale](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-international-core-userlocale).
 
 ### <a name="OSDWipeDestinationPartition"></a> OSDWipeDestinationPartition
 
@@ -1251,6 +1293,33 @@ Specifica il nome del gruppo di lavoro a cui viene aggiunto il computer di desti
 
 Specificare questa variabile o la variabile [OSDDomainName](#OSDDomainName). Il nome del gruppo di lavoro può essere costituito da un massimo di 32 caratteri.
 
+### <a name="SetupCompletePause"></a>SetupCompletePause
+
+*Si applica al passaggio [Aggiorna sistema operativo](/configmgr/osd/understand/task-sequence-steps#BKMK_UpgradeOS).*
+
+<!-- 4680263 -->
+
+A partire dalla versione 1910, usare questa variabile per risolvere i problemi di temporizzazione della sequenza di attività di aggiornamento sul posto di Windows 10 nei dispositivi ad alte prestazioni quando l'installazione di Windows è stata completata. Quando si assegna un valore in secondi a questa variabile, il processo di installazione di Windows ritarda questo intervallo di tempo prima di avviare la sequenza di attività. Questo timeout fornisce al client di Configuration Manager altro tempo per l'inizializzazione.
+
+Le voci di log seguenti sono esempi comuni di questo problema che è possibile correggere con questa variabile:
+
+- Il componente TSManager registra voci simili agli errori seguenti in **smsts.log**:
+
+    ``` log
+    Failed to initate policy evaluation for namespace 'root\ccm\policy\machine', hr=0x80041010
+    Error compiling client config policies. code 80041010
+    Task Sequence Manager could not initialize Task Sequence Environment. code 80041010
+    ```
+
+- Il programma di installazione di Windows registra voci simili agli errori seguenti in **setupcomplete.log**:
+
+    ``` log
+    Running C:\windows\CCM\\TSMBootstrap.exe to resume task sequence
+    ERRORLEVEL = -1073741701
+    TSMBootstrap did not request reboot, resetting registry
+    Exiting setupcomplete.cmd
+    ```
+
 ### <a name="SMSClientInstallProperties"></a> SMSClientInstallProperties
 
 *Si applica al passaggio [Imposta Windows e ConfigMgr](task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr).*
@@ -1259,7 +1328,7 @@ Specificare questa variabile o la variabile [OSDDomainName](#OSDDomainName). Il 
 
 Specifica le proprietà di installazione del client usate dalla sequenza di attività per l'installazione del client di Configuration Manager.
 
-Per altre informazioni vedere [Proprietà e parametri di installazione client](/sccm/core/clients/deploy/about-client-installation-properties).
+Per altre informazioni vedere [Proprietà e parametri di installazione client](/configmgr/core/clients/deploy/about-client-installation-properties).
 
 ### <a name="SMSConnectNetworkFolderAccount"></a> SMSConnectNetworkFolderAccount
 
@@ -1269,7 +1338,7 @@ Per altre informazioni vedere [Proprietà e parametri di installazione client](/
 
 Specifica l'account utente usato per connettersi alla condivisione di rete in [SMSConnectNetworkFolderPath](#SMSConnectNetworkFolderPath). Specificare la password dell'account con il valore [SMSConnectNetworkFolderPassword](#SMSConnectNetworkFolderPassword).
 
-Per altre informazioni sull'account di connessione per la cartella di rete della sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-network-folder-connection-account).
+Per altre informazioni sull'account di connessione per la cartella di rete della sequenza di attività, vedere [Account](/configmgr/core/plan-design/hierarchy/accounts#task-sequence-network-folder-connection-account).
 
 ### <a name="SMSConnectNetworkFolderDriveLetter"></a> SMSConnectNetworkFolderDriveLetter
 
@@ -1369,12 +1438,12 @@ Specifica in che modo una sequenza di attività associa gli utenti al computer d
 <!--512358-->
 Negli scenari disconnessi il motore di esecuzione della sequenza di attività prova ripetutamente a inviare messaggi di stato al punto di gestione. Questo comportamento in questo scenario causa ritardi nell'elaborazione della sequenza di attività.
 
-A partire dalla versione 1802, impostare questa variabile su `true` per evitare che il motore di esecuzione della sequenza di attività provi a mandare di nuovo i messaggi di stato dopo il primo errore. Il primo tentativo include diversi tentativi.
+Impostare questa variabile su `true` per evitare che il motore di esecuzione della sequenza di attività provi a mandare di nuovo i messaggi di stato dopo il primo errore. Il primo tentativo include diversi tentativi.
 
 Quando la sequenza di attività viene riavviata, il valore della variabile viene mantenuto. Tuttavia, la sequenza di attività tenta di inviare un messaggio di stato iniziale. Il primo tentativo include diversi tentativi. Se l'operazione riesce, la sequenza di attività continua a inviare lo stato indipendentemente dal valore della variabile. Se l'invio dello stato non riesce, la sequenza di attività usa il valore della variabile.
 
 > [!NOTE]  
-> La [creazione di report sullo stato della sequenza di attività](/sccm/core/servers/manage/list-of-reports#task-sequence---deployment-status) si basa su questi messaggi di stato per la visualizzazione dell'avanzamento, della cronologia e dei dettagli di ogni passaggio. Se i messaggi di stato non vengono inviati, non verranno accodati. Quando la connettività viene ripristinata nel punto di gestione, non viene inviata in un secondo momento. Questo comportamento comporta che la creazione di report sullo stato della sequenza di attività sia incompleta e priva di elementi.
+> La [creazione di report sullo stato della sequenza di attività](/configmgr/core/servers/manage/list-of-reports#task-sequence---deployment-status) si basa su questi messaggi di stato per la visualizzazione dell'avanzamento, della cronologia e dei dettagli di ogni passaggio. Se i messaggi di stato non vengono inviati, non verranno accodati. Quando la connettività viene ripristinata nel punto di gestione, non viene inviata in un secondo momento. Questo comportamento comporta che la creazione di report sullo stato della sequenza di attività sia incompleta e priva di elementi.
 
 ### <a name="SMSTSDisableWow64Redirection"></a> SMSTSDisableWow64Redirection
 
@@ -1503,7 +1572,7 @@ Specifica il tempo di attesa in secondi prima del riavvio del computer. Se quest
 ### <a name="SMSTSRebootDelayNext"></a>SMSTSRebootDelayNext
 
 <!--4447680-->
-A partire dalla versione 1906, usare questa variabile con la variabile [SMSTSRebootDelay](/sccm/osd/understand/task-sequence-variables#SMSTSRebootDelay) esistente. Se si vuole che i riavvii successivi si verifichino con un timeout diverso rispetto al primo, impostare SMSTSRebootDelayNext su un valore diverso in secondi.
+A partire dalla versione 1906, usare questa variabile con la variabile [SMSTSRebootDelay](/configmgr/osd/understand/task-sequence-variables#SMSTSRebootDelay) esistente. Se si vuole che i riavvii successivi si verifichino con un timeout diverso rispetto al primo, impostare SMSTSRebootDelayNext su un valore diverso in secondi.
 
 #### <a name="example"></a>Esempio
 
@@ -1529,20 +1598,59 @@ Indica che un riavvio è richiesto al termine del passaggio della sequenza di at
 
 Richiede un nuovo tentativo dopo il completamento del passaggio della sequenza di attività. Se questa variabile della sequenza di attività è impostata, impostare la variabile [SMSTSRebootRequested](#SMSTSRebootRequested) su `true`. Dopo il riavvio del computer, il motore di esecuzione della sequenza di attività ripete lo stesso passaggio della sequenza di attività.
 
+### <a name="SMSTSRunCommandLineUserName"></a> SMSTSRunCommandLineUserName
+
+*Si applica al passaggio [Esegui riga di comando](/configmgr/osd/understand/task-sequence-steps#BKMK_RunCommandLine).*
+
+(input)
+
+Specifica l'account da cui viene eseguita la riga di comando. Il valore è una stringa nel formato nomeutente o dominio\nome utente. Specificare la password dell'account con la variabile [SMSTSRunCommandLineUserPassword](#SMSTSRunCommandLineUserPassword).
+
+> [!NOTE]
+> Per usare queste variabili, configurare il passaggio **Esegui riga di comando** con l'impostazione per **eseguire questo passaggio come account seguente**. Quando si abilita questa opzione, se si imposta il nome utente e la password con le variabili, specificare un valore per l'account.
+
+Per altre informazioni sull'account Esegui come per la sequenza di attività, vedere [Account](/configmgr/core/plan-design/hierarchy/accounts#task-sequence-run-as-account).
+
+### <a name="SMSTSRunCommandLineUserPassword"></a>SMSTSRunCommandLineUserPassword
+
+*Si applica al passaggio [Esegui riga di comando](/configmgr/osd/understand/task-sequence-steps#BKMK_RunCommandLine).*
+
+(input)
+
+Specifica la password per l'account specificato dalla variabile [SMSTSRunCommandLineUserName](#SMSTSRunCommandLineUserName).
+
+### <a name="SMSTSRunPowerShellUserName"></a>SMSTSRunPowerShellUserName
+
+*Si applica al passaggio [Esegui script PowerShell](/configmgr/osd/understand/task-sequence-steps#BKMK_RunPowerShellScript).*
+
+(input)
+
+Specifica l'account con cui viene eseguito lo script di PowerShell. Il valore è una stringa nel formato nomeutente o dominio\nome utente. Specificare la password dell'account con la variabile [SMSTSRunPowerShellUserPassword](#SMSTSRunPowerShellUserPassword) .
+
+> [!NOTE]
+> Per usare queste variabili, configurare il passaggio **Esegui script PowerShell** con l'impostazione per **eseguire questo passaggio come account seguente**. Quando si abilita questa opzione, se si imposta il nome utente e la password con le variabili, specificare un valore per l'account.
+
+Per altre informazioni sull'account Esegui come per la sequenza di attività, vedere [Account](/configmgr/core/plan-design/hierarchy/accounts#task-sequence-run-as-account).
+
+### <a name="SMSTSRunPowerShellUserPassword"></a>SMSTSRunPowerShellUserPassword
+
+*Si applica al passaggio [Esegui script PowerShell](/configmgr/osd/understand/task-sequence-steps#BKMK_RunPowerShellScript).*
+
+(input)
+
+Specifica la password per l'account specificato dalla variabile [SMSTSRunPowerShellUserName](#SMSTSRunPowerShellUserName).
+
 ### <a name="SMSTSSoftwareUpdateScanTimeout"></a> SMSTSSoftwareUpdateScanTimeout
 
 *Si applica al passaggio [Installa aggiornamenti software](task-sequence-steps.md#BKMK_InstallSoftwareUpdates).*
 
 (input)
 
-Controllare il timeout per l'analisi degli aggiornamenti software durante questo passaggio. Ad esempio, aumentare il valore se si prevedono numerosi aggiornamenti durante l'analisi. Il valore predefinito è `1800` secondi (30 minuti). Il valore della variabile è impostato in secondi.
-
-> [!NOTE]  
-> A partire dalla versione 1802, il valore predefinito è `3600` secondi (60 minuti).  
+Controllare il timeout per l'analisi degli aggiornamenti software durante questo passaggio. Ad esempio, aumentare il valore se si prevedono numerosi aggiornamenti durante l'analisi. Il valore predefinito è `3600` secondi (60 minuti). Il valore della variabile è impostato in secondi.
 
 ### <a name="SMSTSUDAUsers"></a> SMSTSUDAUsers
 
-Specifica gli utenti primari del computer di destinazione usando il formato seguente: `<DomainName>\<UserName>`. Separare più utenti mediante una virgola (`,`). Per altre informazioni, vedere [Associate users with a destination computer](/sccm/osd/get-started/associate-users-with-a-destination-computer) (Associare gli utenti a un computer di destinazione).
+Specifica gli utenti primari del computer di destinazione usando il formato seguente: `<DomainName>\<UserName>`. Separare più utenti mediante una virgola (`,`). Per altre informazioni, vedere [Associate users with a destination computer](/configmgr/osd/get-started/associate-users-with-a-destination-computer) (Associare gli utenti a un computer di destinazione).
 
 #### <a name="example"></a>Esempio
 
@@ -1568,7 +1676,18 @@ Ad esempio, se si imposta SMSTSWaitForSecondReboot su `600`, la sequenza di atti
 <!--3612274-->
 A partire dalla versione 1906, impostare questa variabile su `TRUE` in una raccolta o in un oggetto computer in cui viene distribuita la sequenza di attività. Tutti i dispositivi con questo set di variabili comporteranno la distribuzione di una sequenza di attività in modalità di debug.
 
-Per altre informazioni, vedere [Eseguire il debug di una sequenza di attività](/sccm/osd/deploy-use/debug-task-sequence).
+Per altre informazioni, vedere [Eseguire il debug di una sequenza di attività](/configmgr/osd/deploy-use/debug-task-sequence).
+
+### <a name="TSDebugOnError"></a>TSDebugOnError
+
+<!-- 5012536 -->
+A partire dalla versione 1910, impostare questa variabile su `TRUE` per avviare automaticamente il [debugger della sequenza di attività](/configmgr/osd/deploy-use/debug-task-sequence) quando la sequenza di attività restituisce un errore.
+
+Impostare questa variabile utilizzando:
+
+- Il passaggio [Imposta variabile della sequenza di attività](/configmgr/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable)
+
+- Variabile di raccolta. Per altre informazioni, vedere [Come impostare le variabili](/configmgr/osd/understand/using-task-sequence-variables#bkmk_set).
 
 ### <a name="TSDisableProgressUI"></a> TSDisableProgressUI
 
@@ -1623,6 +1742,6 @@ Le variabili seguenti sono deprecate:
 
 ## <a name="see-also"></a>Vedere anche
 
-- [Passaggi della sequenza di attività](/sccm/osd/understand/task-sequence-steps)
-- [Come usare le variabili della sequenza di attività](/sccm/osd/understand/using-task-sequence-variables)
-- [Considerazioni sulla pianificazione dell'automazione delle attività](/sccm/osd/plan-design/planning-considerations-for-automating-tasks)
+- [Passaggi della sequenza di attività](/configmgr/osd/understand/task-sequence-steps)
+- [Come usare le variabili della sequenza di attività](/configmgr/osd/understand/using-task-sequence-variables)
+- [Considerazioni sulla pianificazione dell'automazione delle attività](/configmgr/osd/plan-design/planning-considerations-for-automating-tasks)

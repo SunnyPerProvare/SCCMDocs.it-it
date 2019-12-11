@@ -1,8 +1,8 @@
 ---
-title: Microsoft Store per le aziende
+title: App di Microsoft Store
 titleSuffix: Configuration Manager
-description: Gestire e distribuire app da Microsoft Store per le aziende con Configuration Manager.
-ms.date: 08/30/2019
+description: Gestire e distribuire app da Microsoft Store per le aziende e Microsoft Store per la formazione con Configuration Manager.
+ms.date: 12/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,30 +11,30 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9e3fab2a62ae6781f976fe5c74504d8c41d0eb0
-ms.sourcegitcommit: b28a97e22a9a56c5ce3367c750ea2bb4d50449c3
+ms.openlocfilehash: 1431e6854786d42194d58e8155e2282445f9e0de
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70243632"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74814302"
 ---
-# <a name="manage-apps-from-the-microsoft-store-for-business-with-configuration-manager"></a>Gestire app da Microsoft Store per le aziende con Configuration Manager
+# <a name="manage-apps-from-the-microsoft-store-for-business-and-education-with-configuration-manager"></a>Gestire app da Microsoft Store per le aziende e Microsoft Store per la formazione con Configuration Manager
 
-In [Microsoft Store per le aziende](https://www.microsoft.com/business-store) è possibile trovare e ottenere le app Windows per l'organizzazione. Quando si connette lo Store a Configuration Manager, viene eseguita quindi la sincronizzazione dell'elenco di app ottenute. È possibile visualizzare le app nella console di Configuration Manager e distribuirle come si distribuisce qualsiasi altra app.
+In [Microsoft Store per le aziende e Microsoft Store per la formazione](https://docs.microsoft.com/microsoft-store/) è possibile trovare e ottenere le app Windows per l'organizzazione. Quando si connette lo Store a Configuration Manager, viene eseguita quindi la sincronizzazione dell'elenco di app ottenute. È possibile visualizzare le app nella console di Configuration Manager e distribuirle come si distribuisce qualsiasi altra app.
 
 ## <a name="bkmk_apps"></a> App online e offline
 
-Microsoft Store per le aziende supporta due tipi di app:
+Il Microsoft Store for business e Education supporta due tipi di app:
 
 - **Online**: questo tipo di licenza richiede che gli utenti e i dispositivi si connettano allo Store per ottenere un'app e la relativa licenza. I dispositivi Windows 10 devono essere Azure Active Directory (Azure AD) aggiunti o ibridi Azure AD aggiunti.  
 
 - **Non in linea**: questo tipo consente di memorizzare nella cache le app e le licenze da distribuire direttamente nella rete locale, senza che i dispositivi debbano connettersi allo Store o avere una connessione Internet.
 
-Per ulteriori informazioni, vedere la [Panoramica di Microsoft Store for business](https://docs.microsoft.com/microsoft-store/microsoft-store-for-business-overview).
+Per altre informazioni, vedere [Panoramica di Microsoft Store per le aziende e Microsoft Store per la formazione](https://docs.microsoft.com/microsoft-store/microsoft-store-for-business-overview).
 
 ### <a name="summary-of-capabilities"></a>Riepilogo delle funzionalità
 
-Configuration Manager supporta la gestione delle app di Microsoft Store per le aziende sia in dispositivi Windows 10 con il client di Configuration Manager che in dispositivi Windows 10 registrati in Microsoft Intune. Configuration Manager offre le funzionalità seguenti per le app online e offline:
+Configuration Manager supporta la gestione delle app di Microsoft Store per le aziende e Microsoft Store per la formazione sia in dispositivi Windows 10 con il client di Configuration Manager che in dispositivi Windows 10 registrati in Microsoft Intune. Configuration Manager offre le funzionalità seguenti per le app online e offline:
 
 |Funzionalità|App offline|App online|
 |------------|------------|------------|
@@ -55,17 +55,17 @@ Per distribuire app con licenza online in dispositivi Windows 10 con il client d
 
 A partire dalla versione 1806. Per altre informazioni, vedere [Creare applicazioni Windows](/sccm/apps/get-started/creating-windows-applications#bkmk_provision).  
 
-### <a name="deploying-online-apps-using-the-microsoft-store-for-business-to-devices-that-run-the-configuration-manager-client"></a>Distribuzione di app online tramite Microsoft Store per le aziende in dispositivi che eseguono il client di Configuration Manager
+### <a name="deploying-online-apps-using-the-microsoft-store-for-business-and-education-to-devices-that-run-the-configuration-manager-client"></a>Distribuzione di app online tramite Microsoft Store per le aziende e Microsoft Store per la formazione in dispositivi che eseguono il client di Configuration Manager
 
-Prima di distribuire app di Microsoft Store per le aziende in dispositivi che eseguono il client completo di Configuration Manager, considerare quanto segue:
+Prima di distribuire app di Microsoft Store per le aziende e Microsoft Store per la formazione in dispositivi che eseguono il client completo di Configuration Manager, considerare quanto segue:
 
 - Per ottenere le funzionalità complete, i dispositivi devono eseguire Windows 10 versione 1703 o successiva.  
 
-- Registrare o aggiungere dispositivi allo stesso tenant di Azure AD in cui è stato registrato il Microsoft Store for business come strumento di gestione.  
+- Registrare o aggiungere dispositivi allo stesso tenant di Azure AD in cui è stato registrato il Microsoft Store per le aziende e la formazione come strumento di gestione.  
 
-- Quando l'account dell'amministratore locale accede al dispositivo, non può accedere alle app di Microsoft Store per le aziende.  
+- Quando l'account dell'amministratore locale accede al dispositivo, non può accedere alle app di Microsoft Store per le aziende e Microsoft Store per la formazione.  
 
-- I dispositivi devono avere una connessione Internet dinamica a Microsoft Store per le aziende. Per altre informazioni, inclusa la configurazione del proxy, vedere [Prerequisiti](https://docs.microsoft.com/microsoft-store/prerequisites-microsoft-store-for-business).  
+- I dispositivi devono avere una connessione Internet attiva a Microsoft Store per le aziende e Microsoft Store per la formazione. Per altre informazioni, inclusa la configurazione del proxy, vedere [Prerequisiti](https://docs.microsoft.com/microsoft-store/prerequisites-microsoft-store-for-business).  
 
 ### <a name="notes-for-devices-running-earlier-versions-of-windows-10"></a>Note per i dispositivi che eseguono versioni precedenti di Windows 10
 
@@ -81,7 +81,7 @@ Quando si impone l'installazione dell'app nel dispositivo tramite uno dei metodi
 
 Si verificano quindi i comportamenti seguenti:  
 
-- Il client di Configuration Manager "impone" l'app avviando l'app Microsoft Store per le aziende  
+- Il client di Configuration Manager "impone" l'app avviando l'app Microsoft Store  
 
 - L'utente deve completare l'installazione dallo Store  
 
@@ -95,27 +95,27 @@ Al successivo ciclo di valutazione dell'applicazione:
 
   - Per le distribuzioni richieste il client di Configuration Manager prova ad avviare di nuovo l'app dello Store  
 
-  - Non viene ripetuta l'imposizione delle distribuzioni disponibili
+  - Configuration Manager non impone nuovamente le distribuzioni disponibili
 
 #### <a name="devices-running-earlier-versions-of-windows-10"></a>Dispositivi che eseguono versioni precedenti di Windows 10
 
-- Non è possibile distribuire app line-of-business da Microsoft Store per le aziende  
+- Non è possibile distribuire app line-of-business da Microsoft Store per le aziende e Microsoft Store per la formazione
 
 - Quando si distribuiscono app a pagamento dallo Store, gli utenti devono accedere allo Store e ottenere personalmente le app  
 
-- Se si distribuiscono criteri di gruppo che disabilitano l'accesso alla versione consumer di Windows Store, le distribuzioni di Microsoft Store per le aziende non funzionano. Questo comportamento si verifica anche se Microsoft Store per le aziende è abilitato.  
+- Se si distribuiscono criteri di gruppo che disabilitano l'accesso alla versione consumer di Microsoft Store, le distribuzioni di Microsoft Store per le aziende e Microsoft Store per la formazione non funzionano. Questo comportamento si verifica anche se si Abilita la Microsoft Store per le aziende e la formazione.  
 
 ## <a name="bkmk_setup"></a>Configurare la sincronizzazione
 
-La sincronizzazione dell'elenco di app di Microsoft Store per le aziende ottenute dall'organizzazione consente di visualizzare tali app nella console di Configuration Manager.
+Quando si sincronizza l'elenco di Microsoft Store per le app aziendali e scolastiche acquisite dall'organizzazione, queste app vengono visualizzate nella console di Configuration Manager.
 
-Connettere il sito di Configuration Manager ad Azure AD e a Microsoft Store per le aziende. Per altre informazioni e dettagli relativi a questo processo, vedere [Configurare i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard). Creare una connessione al servizio **Microsoft Store per le aziende**.
+Connettere il sito di Configuration Manager ad Azure AD e a Microsoft Store per le aziende e Microsoft Store per la formazione. Per altre informazioni e dettagli relativi a questo processo, vedere [Configurare i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard). Creare una connessione al servizio **Microsoft Store per le aziende**.
 
-Assicurarsi che il punto di connessione del servizio e i dispositivi di destinazione siano in grado di accedere al servizio cloud. Per ulteriori informazioni, vedere [la pagina relativa alla configurazione del proxy Microsoft Store for business](https://docs.microsoft.com/microsoft-store/prerequisites-microsoft-store-for-business#proxy-configuration).
+Assicurarsi che il punto di connessione del servizio e i dispositivi di destinazione siano in grado di accedere al servizio cloud. Per ulteriori informazioni, vedere [prerequisiti per la configurazione di Microsoft Store for business e Education-proxy](https://docs.microsoft.com/microsoft-store/prerequisites-microsoft-store-for-business#proxy-configuration).
 
 ### <a name="bkmk_config"></a> Informazioni e configurazioni aggiuntive
 
-Nella pagina **App** della Procedura guidata per i servizi di Azure configurare prima di tutto l'**Ambiente di Azure** e l'**App Web**. Leggere quindi la sezione **Altre informazioni** nella parte inferiore della pagina. Queste informazioni includono le azioni aggiuntive seguenti nel portale di Microsoft Store per le aziende:  
+Nella pagina **App** della Procedura guidata per i servizi di Azure configurare prima di tutto l'**Ambiente di Azure** e l'**App Web**. Leggere quindi la sezione **Altre informazioni** nella parte inferiore della pagina. Queste informazioni includono le azioni aggiuntive seguenti nel portale di Microsoft Store per le aziende e Microsoft Store per la formazione:  
 
 - Configurare Configuration Manager come strumento di gestione dello Store. Per altre informazioni, vedere [Configurare un provider di gestione](https://docs.microsoft.com/microsoft-store/configure-mdm-provider-microsoft-store-for-business).  
 
@@ -133,21 +133,18 @@ Nella pagina **Configurazioni** della Procedura guidata per i servizi di Azure s
 
 ## <a name="bkmk_deploy"></a> Creare e distribuire l’app
 
-Dopo la sincronizzazione, creare e distribuire il Microsoft Store per le app aziendali in modo analogo a qualsiasi altra applicazione Configuration Manager.
+Dopo la sincronizzazione, creare e distribuire il Microsoft Store per le app aziendali e per la formazione in modo analogo a qualsiasi altra applicazione Configuration Manager.
 
 1. Nell'area di lavoro **Raccolta software** della console di Configuration Manager espandere **Gestione delle applicazioni** e quindi selezionare il nodo **Informazioni di licenza per le app dello Store**.  
 
 2. Scegliere l'app da distribuire e quindi selezionare **Crea applicazione** sulla barra multifunzione.  
 
-Il sito crea un'applicazione di Configuration Manager contenente l'app di Microsoft Store per le aziende.
+Il sito crea un'applicazione di Configuration Manager contenente l'app di Microsoft Store per le aziende e Microsoft Store per la formazione.
 
 È quindi possibile distribuire e monitorare l'applicazione come qualsiasi altra applicazione di Configuration Manager. Per altre informazioni, vedere gli articoli seguenti:  
 
 - [Distribuire applicazioni](/sccm/apps/deploy-use/deploy-applications)
 - [Monitorare le applicazioni dalla console](/sccm/apps/deploy-use/monitor-applications-from-the-console)
-
-> [!IMPORTANT]  
-> Per i dispositivi registrati in Microsoft Intune, le app distribuite sono disponibili solo per l'utente che ha originariamente registrato il dispositivo. Nessun altro utente può accedere all'app.
 
 ## <a name="next-steps"></a>Passaggi successivi
 
@@ -162,10 +159,10 @@ Per ogni app dello Store gestita è possibile visualizzare le informazioni segue
 
 Dopo aver distribuito le app online, tutte le app vengono aggiornate direttamente da Microsoft Store. Configuration Manager non verifica inoltre che le app online siano conformi alla versione. Windows segnala solo che l'app è installata.  
 
-Quando vengono distribuite app offline in dispositivi Windows 10 tramite il client di Configuration Manager, non consentire agli utenti di aggiornare le applicazioni esterne alle distribuzioni di Configuration Manager. Il controllo degli aggiornamenti per le app offline è particolarmente importante in ambienti multiutente, come ad esempio nelle classi. Per disabilitare Microsoft Store è possibile usare i [criteri di gruppo](/windows/configuration/stop-employees-from-using-microsoft-store#block-microsoft-store-using-group-policy).
+Quando vengono distribuite app offline in dispositivi Windows 10 tramite il client di Configuration Manager, non consentire agli utenti di aggiornare le applicazioni esterne alle distribuzioni di Configuration Manager. Il controllo degli aggiornamenti per le app offline è particolarmente importante in ambienti multiutente, come ad esempio nelle classi. Per disabilitare Microsoft Store è possibile usare i [criteri di gruppo](https://docs.microsoft.com/windows/configuration/stop-employees-from-using-microsoft-store#block-microsoft-store-using-group-policy).
 
-Quando l'amministratore di Microsoft Store per le aziende ottiene un'app offline, non pubblicare l'app per gli utenti tramite lo Store. In questo modo si impedisce agli utenti di eseguire l'installazione o l'aggiornamento online. Gli utenti ricevono gli aggiornamenti delle app offline solo tramite Configuration Manager.
+Quando l'amministratore di Microsoft Store per le aziende e Microsoft Store per la formazione ottiene un'app offline, non pubblicare l'app per gli utenti tramite lo Store. In questo modo si impedisce agli utenti di eseguire l'installazione o l'aggiornamento online. Gli utenti ricevono gli aggiornamenti delle app offline solo tramite Configuration Manager.
 
 ## <a name="see-also"></a>Vedere anche
 
-[Risolvere i problemi relativi all'integrazione Microsoft Store for business con Configuration Manager](/sccm/apps/deploy-use/troubleshoot-microsoft-store-for-business-integration)
+[Risolvere i problemi relativi all'integrazione di Microsoft Store for business e Education con Configuration Manager](/sccm/apps/deploy-use/troubleshoot-microsoft-store-for-business-integration)

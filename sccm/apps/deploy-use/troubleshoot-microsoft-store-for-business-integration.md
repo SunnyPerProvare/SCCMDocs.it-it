@@ -1,8 +1,8 @@
 ---
 title: Risolvere i problemi di integrazione con MSfB
 titleSuffix: Configuration Manager
-description: Fornisce suggerimenti e soluzioni per risolvere alcuni dei problemi più comuni relativi all'integrazione di Microsoft Store for business.
-ms.date: 08/30/2019
+description: Fornisce suggerimenti e soluzioni per risolvere alcuni dei problemi più comuni con Microsoft Store per l'integrazione aziendale e dell'istruzione.
+ms.date: 12/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5c77e743e34cd731dec5803e0e5c1a23064f62e
-ms.sourcegitcommit: b28a97e22a9a56c5ce3367c750ea2bb4d50449c3
+ms.openlocfilehash: 6e8f59e874d89bcb64d3331d40ef044c4c8beb01
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70243756"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74814278"
 ---
-# <a name="troubleshoot-the-microsoft-store-for-business-integration-with-configuration-manager"></a>Risolvere i problemi relativi all'integrazione Microsoft Store for business con Configuration Manager
+# <a name="troubleshoot-the-microsoft-store-for-business-and-education-integration-with-configuration-manager"></a>Risolvere i problemi relativi all'integrazione di Microsoft Store for business e Education con Configuration Manager
 
-Questo articolo fornisce suggerimenti e correzioni principali per la risoluzione dei problemi che possono verificarsi con l'integrazione di Microsoft Store for business (MSfB) con Configuration Manager.
+Questo articolo fornisce suggerimenti e correzioni principali per la risoluzione dei problemi che si possono avere con l'integrazione di Microsoft Store for Business and Education (MSfB) con Configuration Manager.
 
-Per altre informazioni sull'uso di Microsoft Store for business con Configuration Manager, vedere [gestire le app da Microsoft Store for business con Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
+Per ulteriori informazioni sull'utilizzo di Microsoft Store for business e Education con Configuration Manager, vedere la pagina relativa alla [gestione delle app da Microsoft Store for business e Education con Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
 
 ## <a name="monitor"></a>Monitoraggio
 
@@ -44,38 +44,38 @@ Nell'area di lavoro **Raccolta software** della console di Configuration Manager
 
 ## <a name="log-files"></a>File di registro
 
-### <a name="msfbsyncworkerlog"></a>MSfBSyncWorker. log
+### <a name="msfbsyncworkerlog"></a>MSfBSyncWorker.log
 
-Questo file di log si trova nel punto `\Logs` di connessione del servizio, nella directory di installazione Configuration Manager. Registra le informazioni sulla comunicazione con il servizio cloud. Queste informazioni includono metadati, icone, pacchetti e recupero di file di licenza.
+Questo file di log si trova nel punto di connessione del servizio, in `\Logs` nella directory di installazione Configuration Manager. Registra le informazioni sulla comunicazione con il servizio cloud. Queste informazioni includono metadati, icone, pacchetti e recupero di file di licenza.
 
-Per modificare il livello di registrazione, modificare `LoggingLevel` il `0` valore in nella `HKLM\SOFTWARE\Microsoft\SMS\Tracing\SMS_CLOUDCONNECTION` chiave del registro di sistema. Per altre informazioni, vedere [configurare le opzioni di registrazione](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_reg-site).
+Per modificare il livello di registrazione, modificare il valore di `LoggingLevel` in `0` nella chiave del registro di sistema `HKLM\SOFTWARE\Microsoft\SMS\Tracing\SMS_CLOUDCONNECTION`. Per altre informazioni, vedere [configurare le opzioni di registrazione](/sccm/core/plan-design/hierarchy/about-log-files#bkmk_reg-site).
 
-### <a name="sms_cloudconnectionlog"></a>SMS_CLOUDCONNECTION. log
+### <a name="sms_cloudconnectionlog"></a>SMS_CLOUDCONNECTION.log
 
-Questo file di log si trova nel punto `\Logs` di connessione del servizio, nella directory di installazione Configuration Manager. Se il servizio MSfBSyncWorker non è avviato o viene avviato e interrotto ripetutamente, rivedere le voci del file di log.
+Questo file di log si trova nel punto di connessione del servizio, in `\Logs` nella directory di installazione Configuration Manager. Se il servizio MSfBSyncWorker non è avviato o viene avviato e interrotto ripetutamente, rivedere le voci del file di log.
 
 > [!NOTE]
 > Questo file di log è condiviso con altre funzionalità.
 
-### <a name="businessappprocessworkerlog"></a>BusinessAppProcessWorker. log
+### <a name="businessappprocessworkerlog"></a>BusinessAppProcessWorker.log
 
-Questo file di log si trova nel server del sito per il sito di livello superiore nella gerarchia. Si trova `\Logs` nella directory di installazione Configuration Manager. Registra le informazioni sui processi seguenti:
+Questo file di log si trova nel server del sito per il sito di livello superiore nella gerarchia. È sotto `\Logs` nella directory di installazione Configuration Manager. Registra le informazioni sui processi seguenti:
 
 - Inserire le informazioni sui metadati sincronizzate dal componente BusinessAppProcessWorker nel database
-- Elabora file in`\InstallDir\inboxes\businessappprocess.box`
+- Elaborare i file in `\InstallDir\inboxes\businessappprocess.box`
 
-### <a name="sms_business_app_process_managerlog"></a>SMS_BUSINESS_APP_PROCESS_MANAGER. log
+### <a name="sms_business_app_process_managerlog"></a>SMS_BUSINESS_APP_PROCESS_MANAGER.log
 
-Questo file di log si trova nel server del sito per il sito di livello superiore nella gerarchia. Si trova `\Logs` nella directory di installazione Configuration Manager. Se il servizio BusinessAppProcessWorker non è avviato o viene avviato e interrotto ripetutamente, rivedere le voci del file di log.
+Questo file di log si trova nel server del sito per il sito di livello superiore nella gerarchia. È sotto `\Logs` nella directory di installazione Configuration Manager. Se il servizio BusinessAppProcessWorker non è avviato o viene avviato e interrotto ripetutamente, rivedere le voci del file di log.
 
 
 
-## <a name="last-sync-failed"></a>Ultima sincronizzazione non riuscita
+## <a name="last-sync-failed"></a>L'ultima sincronizzazione non è riuscita
 
 Quando lo stato dell'ultima sincronizzazione *non è riuscito*, iniziare esaminando i seguenti [file di log](#log-files) per identificare il sintomo:
 
-- MSfBSyncWorker. log
-- SMS_CLOUDCONNECTION. log
+- MSfBSyncWorker.log
+- SMS_CLOUDCONNECTION.log
 
 Esaminare quindi una delle sezioni seguenti per i problemi comuni:
 
@@ -90,11 +90,11 @@ Esaminare quindi una delle sezioni seguenti per i problemi comuni:
 
 #### <a name="cause"></a>Causa
 
-Questo problema può verificarsi se l'applicazione di Azure Active Directory (Azure AD) configurata non dispone delle autorizzazioni per gestire il Microsoft Store for business per questo tenant.
+Questo problema può verificarsi se l'applicazione di Azure Active Directory (Azure AD) configurata non dispone delle autorizzazioni per gestire l'Microsoft Store per le aziende e la formazione per questo tenant.
 
 #### <a name="workaround"></a>Soluzione alternativa
 
-1. Aprire il [portale di Microsoft Store for business](https://www.microsoft.com/business-store)e accedere come amministratore.
+1. Accedere come amministratore al portale di Microsoft Store for business o Education.
 1. Passare a **Impostazioni**e selezionare **strumenti di gestione**.
 1. Se l'applicazione non è inclusa nell'elenco, selezionare **Aggiungi uno strumento di gestione**. Quindi cercare in base al nome e selezionare l'applicazione Azure AD associata allo stesso oggetto ClientID come Configuration Manager.
 1. Se lo stato non Mostra **attivo**, selezionare **Activate (attiva** ) nella sezione **Action (azione** ).
@@ -104,14 +104,14 @@ Questo problema può verificarsi se l'applicazione di Azure Active Directory (Az
 > Per trovare i ClientID in Configuration Manager:
 >
 > 1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e selezionare il nodo **Tenant di Azure Active Directory**.
-> 1. Selezionare il tenant usato per l'integrazione Microsoft Store for business.
+> 1. Selezionare il tenant usato per l'integrazione di Microsoft Store for Business and Education.
 > 1. Nel riquadro dei risultati trovare l'applicazione corrispondente ed esaminare la colonna **ID client** .
 
 ### <a name="bkmk_fail-symptom2"></a>La chiave privata non è valida
 
 #### <a name="cause"></a>Causa
 
-Questo problema può verificarsi se la chiave privata è scaduta nell'app Azure AD per la configurazione Microsoft Store for business.
+Questo problema può verificarsi se la chiave privata è scaduta nell'app Azure AD per la configurazione Microsoft Store for business e Education.
 
 #### <a name="resolution"></a>Risoluzione
 
@@ -125,7 +125,7 @@ Questo problema può verificarsi se l'app connessa non esiste più nel Azure AD.
 
 #### <a name="resolution"></a>Risoluzione
 
-Eliminare e ricreare la connessione al Microsoft Store for business.
+Eliminare e ricreare la connessione al Microsoft Store per le aziende e la formazione.
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Servizi cloud** e selezionare il nodo **Microsoft Store per le aziende**.
 1. Consente di selezionare la connessione esistente.
@@ -134,13 +134,13 @@ Eliminare e ricreare la connessione al Microsoft Store for business.
 Quindi ricreare la connessione. Per altre informazioni, vedere gli articoli seguenti:
 
 - [Configurare i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard)
-- [Configurare la sincronizzazione di Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#bkmk_setup)
+- [Configurare Microsoft Store per la sincronizzazione aziendale e dell'istruzione](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#bkmk_setup)
 
 ### <a name="bkmk_fail-symptom4"></a>Il percorso del contenuto non esiste
 
 #### <a name="cause"></a>Causa
 
-Quando si configura la connessione Microsoft Store for business, è necessario specificare una condivisione di rete per l'archiviazione del contenuto sincronizzato. Questo problema può verificarsi se la condivisione non esiste o non dispone di autorizzazioni corrette.
+Quando si configura la connessione Microsoft Store for Business and Education, è necessario specificare una condivisione di rete per l'archiviazione del contenuto sincronizzato. Questo problema può verificarsi se la condivisione non esiste o non dispone di autorizzazioni corrette.
 
 Per visualizzare la posizione configurata:
 
@@ -148,7 +148,7 @@ Per visualizzare la posizione configurata:
 
 1. Selezionare l'account e aprirne le **Proprietà**.
 
-1. Passare alla scheda **configurazione** . L'impostazione **location** indica il percorso di rete in cui archiviare il contenuto dell'applicazione scaricato da Microsoft Store for business.
+1. Passare alla scheda **Configurazione**. L'impostazione **località** Mostra il percorso di rete in cui archiviare il contenuto dell'applicazione scaricato dal Microsoft Store per le aziende e la formazione.
 
 #### <a name="workaround"></a>Soluzione alternativa
 
@@ -193,10 +193,10 @@ Non è possibile sincronizzare automaticamente queste app, ma è possibile scari
 
     `Error(s) syncing or downloading application <ApplicationID> from the Microsoft Store for Business.`
 
-1. Passare al [portale di Microsoft Store for business](https://www.microsoft.com/business-store)e accedere come amministratore del negozio. Trovare la pagina per questa applicazione.
+1. Accedere come amministratore al portale di Microsoft Store for business o Education. Trovare la pagina per questa applicazione.
 
     > [!Tip]
-    > L'URL della pagina è simile al seguente:`https://businessstore.microsoft.com/en-us/store/p/app/ApplicationID`
+    > L'URL della pagina è simile a: `https://businessstore.microsoft.com/en-us/store/p/app/ApplicationID`
 
     1. Selezionare **offline**, se non è già selezionato. Quindi selezionare **Gestisci**.
 
@@ -204,7 +204,7 @@ Non è possibile sincronizzare automaticamente queste app, ma è possibile scari
 
     1. Scaricare il pacchetto nella cartella del pacchetto.
 
-    1. Scaricare il file di licenza codificato come `.bin` file nella cartella del pacchetto.
+    1. Scaricare il file di licenza codificato come file di `.bin` nella cartella del pacchetto.
 
     1. Scaricare tutti i Framework necessari nella cartella del pacchetto.
 
@@ -220,7 +220,7 @@ Non è possibile sincronizzare automaticamente queste app, ma è possibile scari
 
 Nella pagina **informazioni sull'importazione** finale verificare i dettagli seguenti:
 
-- **File di licenza:** Specifica il `.bin` file. Questo file di licenza è necessario per le app offline.
+- **File di licenza:** Specifica il file di `.bin`. Questo file di licenza è necessario per le app offline.
 - **Dipendenze app di Windows:** Verificare che tutte le dipendenze necessarie vengano scaricate per il pacchetto.
 
 
@@ -233,10 +233,10 @@ In questa sezione vengono illustrati i problemi di sincronizzazione seguenti:
 
 Per identificare il sintomo, iniziare esaminando i [file di log](#log-files) seguenti:
 
-- BusinessAppProcessWorker. log
-- SMS_BUSINESS_APP_PROCESS_MANAGER. log
-- MSfBSyncWorker. log
-- SMS_CLOUDCONNECTION. log
+- BusinessAppProcessWorker.log
+- SMS_BUSINESS_APP_PROCESS_MANAGER.log
+- MSfBSyncWorker.log
+- SMS_CLOUDCONNECTION.log
 
 Esaminare quindi una delle sezioni seguenti per i problemi comuni:
 
@@ -257,7 +257,7 @@ Attendere almeno 10 minuti prima di avviare un'altra sincronizzazione.
 
 #### <a name="cause"></a>Causa
 
-Questo problema può verificarsi se il componente SMS_BUSINESS_APP_PROCESS_MANAGER arresta il thread MSfBSyncWorker. Nell'errore possono essere specificati `2` i `4` ruoli di lavoro o.
+Questo problema può verificarsi se il componente SMS_BUSINESS_APP_PROCESS_MANAGER interrompe il thread MSfBSyncWorker. L'errore può specificare `2` o `4` i ruoli di lavoro.
 
 #### <a name="workaround"></a>Soluzione alternativa
 
@@ -305,7 +305,7 @@ Per risolvere il problema, riavviare il servizio **SMS_EXECUTIVE** .
 
 #### <a name="cause"></a>Causa
 
-Questo problema può verificarsi se le informazioni sulla licenza dell'applicazione Microsoft Store for business non contengono dati localizzati per la lingua specificata.
+Questo problema può verificarsi se le informazioni sulle licenze dell'applicazione Microsoft Store for business e Education non contengono dati localizzati per la lingua specificata.
 
 #### <a name="workaround"></a>Soluzione alternativa
 
@@ -333,7 +333,7 @@ Avviare una nuova sincronizzazione. Al termine della sincronizzazione, è necess
 
 #### <a name="cause"></a>Causa
 
-Questo problema può verificarsi se si distribuisce l'applicazione in un client che esegue una versione di Windows 10 precedente alla versione 1511. Le app con licenza offline di Microsoft Store for business sono supportate solo in Windows 10 versione 1511 e successive.
+Questo problema può verificarsi se si distribuisce l'applicazione in un client che esegue una versione di Windows 10 precedente alla versione 1511. Le app con licenza offline di Microsoft Store for business e Education sono supportate solo in Windows 10 versione 1511 e successive.
 
 #### <a name="resolution"></a>Risoluzione
 
@@ -343,10 +343,3 @@ Installare l'ultima versione di Windows 10.
 ## <a name="next-steps"></a>Passaggi successivi
 
 Per ulteriori informazioni, vedere l'argomento [relativo alla ricerca di informazioni sull'utilizzo di Configuration Manager](/sccm/core/understand/find-help).
-
-<!-- these videos are old...1604/1605, is there still benefit in linking to them?
-- Here are also some videos to learn more about it:
-
-  - [How to set up the required prerequisites in AAD and the Microsoft Store for Business portal](https://www.youtube.com/watch?v=fC1AQY42flQ)
-  - [Choose languages to sync and create apps from app metadata for each Microsoft Store for Business, and how to create apps from app metadata](https://www.youtube.com/watch?v=VJs-475rfaI)
- -->

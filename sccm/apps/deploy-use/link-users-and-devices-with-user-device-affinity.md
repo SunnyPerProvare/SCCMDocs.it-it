@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1a6b104d35e037c3e63b07b29c80c9709a9e9fe
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: c91aeb94067a6b61c5a96bc9176a0825634225f8
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68534747"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74658711"
 ---
 # <a name="link-users-and-devices-with-user-device-affinity-in-configuration-manager"></a>Collegare utenti e dispositivi con l'affinità utente-dispositivo in Configuration Manager
 
@@ -97,7 +97,7 @@ Per creare più relazioni contemporaneamente, importare un file contenente detta
 
 1. Nell'Importazione guidata affinità utente dispositivo nella pagina **Scegliere il mapping** specificare le informazioni seguenti:  
 
-    - **Nome file**. Specificare un file con valori delimitati da virgole, con estensione CSV, che contenga un elenco di utenti e dispositivi tra cui si vuole creare un'affinità. In questo file ogni coppia utente-dispositivo deve trovarsi su una riga separata, con valori delimitati da una virgola. Usare questo formato:`<domain>\<username>,<device NetBIOS name>`  
+    - **Nome file**. Specificare un file con valori delimitati da virgole, con estensione CSV, che contenga un elenco di utenti e dispositivi tra cui si vuole creare un'affinità. In questo file ogni coppia utente-dispositivo deve trovarsi su una riga separata, con valori delimitati da una virgola. Usare questo formato: `<domain>\<username>,<device NetBIOS name>`  
 
     - **Questo file contiene intestazioni di colonna a scopo di riferimento**. Se il file con estensione CSV ha un'intestazione di riga superiore, selezionare questa opzione. Il sito ignora la riga di intestazione durante l'importazione.  
 
@@ -134,7 +134,7 @@ A partire dalla versione 1902, usare software Center per impostare l'affinità.
 ### <a name="set-up-a-user-device-affinity-in-the-application-catalog"></a>Configurare un'affinità utente dispositivo nel Catalogo applicazioni
 
 > [!Important]
-> L'esperienza utente Silverlight del catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per l'utente. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >

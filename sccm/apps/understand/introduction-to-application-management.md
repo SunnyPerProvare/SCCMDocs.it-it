@@ -2,7 +2,7 @@
 title: Introduzione alla gestione delle app
 titleSuffix: Configuration Manager
 description: È possibile individuare le informazioni di base necessarie per gestire e distribuire applicazioni in Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f00455a8dc2585ab8812e23ae789ef6cb45f53c7
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: ee7527492851a89b013c6f59464c06e73c72b247
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68534787"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74661329"
 ---
 # <a name="introduction-to-application-management-in-configuration-manager"></a>Introduzione alla gestione delle applicazioni in Configuration Manager
 
@@ -26,7 +26,6 @@ In questo argomento verranno fornite le informazioni di base necessarie prima di
 
 > [!TIP]  
 > Se si ha già familiarità con la modalità di gestione delle applicazioni in Configuration Manager, ignorare questo articolo. Passare alla creazione di un'applicazione di esempio, illustrata in [Creare e distribuire un'applicazione](/sccm/apps/get-started/create-and-deploy-an-application).  
-
 
 ## <a name="what-is-an-application"></a>Che cos'è un'applicazione?
 
@@ -127,8 +126,7 @@ Per altre informazioni, vedere [Collegare utenti e dispositivi mediante l'affini
 
 A partire dalla versione 1906, creare un gruppo di applicazioni che è possibile inviare a un utente o a una raccolta di dispositivi come singola distribuzione. I metadati specificati in relazione al gruppo di app sono visualizzati in Software Center come una singola entità. È possibile ordinare le app del gruppo in modo che il client le installi in un ordine specifico.
 
-Per ulteriori informazioni, vedere la pagina relativa alla [creazione di gruppi di applicazioni](/sccm/apps/deploy-use/create-app-groups).
-
+Per altre informazioni, vedere [Creare gruppi di applicazioni](/sccm/apps/deploy-use/create-app-groups).
 
 ## <a name="what-application-types-can-you-deploy"></a>Quali tipi di applicazione possono essere distribuiti?
 
@@ -139,7 +137,7 @@ Configuration Manager consente di distribuire i tipi di app seguenti:
 - Pacchetto app Windows (appx o appxbundle)  
 
     > [!Note]  
-    > A partire dalla versione 1806, questo tipo include i nuovi formati pacchetto app Windows 10 (con estensione msix) e bundle dell'app (con estensione msixbundle).<!--1357427-->  
+    > Questo tipo include i nuovi formati pacchetto app Windows 10 (con estensione msix) e bundle dell'app (con estensione msixbundle).<!--1357427-->  
 
 - Pacchetto app Windows in Microsoft Store  
 
@@ -165,7 +163,6 @@ Quando poi si gestiscono dispositivi tramite la gestione di dispositivi locale d
 
 - Applicazione Web
 
-
 ## <a name="state-based-applications"></a>Applicazioni basate sullo stato  
 
 Le applicazioni di Configuration Manager usano il monitoraggio basato sullo stato. È possibile tenere traccia dello stato più recente della distribuzione dell'applicazione per utenti e dispositivi. I messaggi di stato visualizzano informazioni sui singoli dispositivi. Ad esempio, se si distribuisce un'applicazione a una raccolta di utenti, è possibile visualizzare lo stato di conformità e lo scopo della distribuzione nella console di Configuration Manager. È possibile monitorare la distribuzione di tutto il software dall'area di lavoro **Monitoraggio** nella console di Configuration Manager. Per altre informazioni, vedere l'argomento relativo al [monitoraggio delle applicazioni](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
@@ -178,13 +175,11 @@ Il client di Configuration Manager ripete regolarmente la valutazione delle dist
 
 È possibile configurare l'intervallo di ripetizione della valutazione per le distribuzioni dell'applicazione. Usare l'impostazione **Pianificare nuova valutazione per le distribuzioni** del client disponibile nel gruppo **Distribuzione software**. Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#software-deployment) (Informazioni sulle impostazioni client).  
 
-
 ## <a name="get-started-creating-an-application"></a>Introduzione alla creazione di un'applicazione  
 
 Per iniziare a creare subito un'applicazione, usare la procedura dettagliata disponibile nell'articolo [Creare e distribuire un'applicazione](/sccm/apps/get-started/create-and-deploy-an-application).  
 
 Se si ha familiarità con le nozioni di base e si cercano informazioni di riferimento più dettagliate su tutte le opzioni disponibili, iniziare a [Creare applicazioni](/sccm/apps/deploy-use/create-applications).  
-
 
 ## <a name="software-center"></a>Software Center  
 
@@ -203,15 +198,13 @@ Per altre informazioni, vedere gli articoli seguenti:
 - [Manuale dell'utente di Software Center](/sccm/core/understand/software-center)
 
 > [!Note]  
-> Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
-
+> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
 ## <a name="packages-and-programs"></a>Pacchetti e programmi  
 
 Configuration Manager continua a supportare pacchetti e programmi usati nelle versioni precedenti del prodotto.
 
 Per altre informazioni, vedere [Packages and programs](/sccm/apps/deploy-use/packages-and-programs) (Pacchetti e programmi).  
-
 
 ## <a name="next-steps"></a>Passaggi successivi
 

@@ -1,7 +1,7 @@
 ---
 title: Creare una sequenza di attività per installare un sistema operativo
 titleSuffix: Configuration Manager
-description: Usare le sequenze di attività in Configuration Manager per installare automaticamente un'immagine del sistema operativo e altri contenuti in un computer di destinazione.
+description: Usare le sequenze di attività in Configuration Manager per installare automaticamente un'immagine del sistema operativo e altro contenuto in un computer di destinazione.
 ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 96a99759d67f01253117356a2d293020379cca5e
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68536955"
 ---
 # <a name="create-a-task-sequence-to-install-an-os"></a>Creare una sequenza di attività per installare un sistema operativo

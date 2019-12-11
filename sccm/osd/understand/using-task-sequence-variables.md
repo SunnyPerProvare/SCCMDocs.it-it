@@ -2,7 +2,7 @@
 title: Come usare le variabili della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni su come usare le variabili in una sequenza di attività di Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea21450a5065cc2572e84fd52d39c76c9f82c519
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: bad851316d0922a62c2c06a718ef879678e67f9b
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68537104"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660921"
 ---
 # <a name="how-to-use-task-sequence-variables-in-configuration-manager"></a>Come usare le variabili della sequenza di attività in Configuration Manager
 
@@ -29,7 +29,6 @@ ms.locfileid: "68537104"
 - Creare azioni più complesse con gli script  
 
 Per informazioni di riferimento su tutte le variabili della sequenza di attività disponibili, vedere [Task sequence variables](/sccm/osd/understand/task-sequence-variables) (Variabili della sequenza di attività).
-
 
 ## <a name="bkmk_types"></a> Tipi di variabili
 
@@ -45,17 +44,17 @@ Sono disponibili diversi tipi di variabili:
 
 Le variabili predefinite forniscono informazioni sull'ambiente in cui viene eseguita la sequenza di attività. I relativi valori sono disponibili nell'intera sequenza di attività. In genere il motore di esecuzione della sequenza di attività inizializza le variabili predefinite prima di eseguire qualsiasi passaggio.
 
-Ad esempio, **\_SMSTSLogPath** è una variabile di ambiente che specifica il percorso in cui i componenti di Configuration Manager scrivono i file di log. Qualsiasi passaggio della sequenza di attività può accedere a questa variabile di ambiente.
+Ad esempio, `_SMSTSLogPath` è una variabile di ambiente che specifica il percorso in cui i componenti di Configuration Manager scrivono i file di log. Qualsiasi passaggio della sequenza di attività può accedere a questa variabile di ambiente.
 
-La sequenza di attività valuta alcune variabili prima di ogni passaggio. Ad esempio, **\_SMSTSCurrentActionName** elenca il nome del passaggio corrente.
+La sequenza di attività valuta alcune variabili prima di ogni passaggio. Ad esempio, `_SMSTSCurrentActionName` elenca il nome del passaggio corrente.
 
 ### <a name="bkmk_action"></a> Variabili di azione
 
 Le variabili di azione della sequenza di attività specificano le impostazioni di configurazione usate da un singolo passaggio della sequenza di attività. Per impostazione predefinita, il passaggio inizializza le proprie impostazioni prima dell'esecuzione. Queste impostazioni sono disponibili solo mentre il passaggio della sequenza di attività associato è in esecuzione. La sequenza di attività aggiunge la variabile di azione all'ambiente prima di eseguire il passaggio. Rimuove quindi il valore dall'ambiente dopo l'esecuzione del passaggio.
 
-Ad esempio, aggiungere il passaggio **Esegui riga di comando** a una sequenza di attività. Questo passaggio include una proprietà **Da**. La sequenza di attività archivia un valore predefinito per questa proprietà come variabile **WorkingDirectory**. La sequenza di attività inizializza questo valore prima di eseguire il passaggio **Esegui riga di comando**. Durante l'esecuzione di questo passaggio, accedere al valore della proprietà **Da** dal valore **WorkingDirectory**. Dopo il completamento del passaggio, la sequenza di attività rimuove il valore della variabile **WorkingDirectory** dall'ambiente. Se la sequenza di attività include un altro passaggio **Esegui riga di comando**, inizializza una nuova variabile **WorkingDirectory**. A questo punto la sequenza di attività imposta la variabile sul valore iniziale del passaggio corrente. Per altre informazioni, vedere [WorkingDirectory](/sccm/osd/understand/task-sequence-variables#WorkingDirectory).  
+Ad esempio, aggiungere il passaggio **Esegui riga di comando** a una sequenza di attività. Questo passaggio include una proprietà **Da**. La sequenza di attività archivia un valore predefinito per questa proprietà come variabile `WorkingDirectory`. La sequenza di attività inizializza questo valore prima di eseguire il passaggio **Esegui riga di comando**. Durante l'esecuzione di questo passaggio, accedere al valore della proprietà **Da** dal valore `WorkingDirectory`. Dopo il completamento del passaggio, la sequenza di attività rimuove il valore della variabile `WorkingDirectory` dall'ambiente. Se la sequenza di attività include un altro passaggio **Esegui riga di comando**, inizializza una nuova variabile `WorkingDirectory`. A questo punto la sequenza di attività imposta la variabile sul valore iniziale del passaggio corrente. Per altre informazioni, vedere [WorkingDirectory](/sccm/osd/understand/task-sequence-variables#WorkingDirectory).  
 
-Il valore *predefinito* per una variabile di azione è presente quando il passaggio viene eseguito. Se si imposta un *nuovo* valore, questo è disponibile per più passaggi della sequenza di attività. Se si esegue l'override di un valore predefinito, il nuovo valore rimane nell'ambiente. Questo nuovo valore esegue l'override del valore predefinito per altri passaggi della sequenza di attività. Supponiamo ad esempio di aggiungere un passaggio **Imposta variabile della sequenza di attività** come primo passaggio della sequenza di attività. Questo passaggio imposta la variabile **WorkingDirectory** su `C:\`. Qualsiasi passaggio **Esegui riga di comando** nella sequenza di attività usa il nuovo valore della directory iniziale.  
+Il valore *predefinito* per una variabile di azione è presente quando il passaggio viene eseguito. Se si imposta un *nuovo* valore, questo è disponibile per più passaggi della sequenza di attività. Se si esegue l'override di un valore predefinito, il nuovo valore rimane nell'ambiente. Questo nuovo valore esegue l'override del valore predefinito per altri passaggi della sequenza di attività. Supponiamo ad esempio di aggiungere un passaggio **Imposta variabile della sequenza di attività** come primo passaggio della sequenza di attività. Questo passaggio imposta la variabile `WorkingDirectory` su `C:\`. Qualsiasi passaggio **Esegui riga di comando** nella sequenza di attività usa il nuovo valore della directory iniziale.  
 
 Alcuni passaggi della sequenza di attività contrassegnano determinate variabili di azione come *output*. I passaggi successivi della sequenza di attività leggono queste variabili di output.
 
@@ -86,7 +85,7 @@ Non è previsto un limite massimo di variabili della sequenza di attività che p
 
 Le variabili di sola lettura sono variabili di cui non è possibile cambiare il valore. In genere il nome inizia con un carattere di sottolineatura (`_`). La sequenza di attività usa queste variabili per le sue operazioni. Le variabili di sola lettura sono visibili nell'ambiente della sequenza di attività.
 
-Queste variabili sono utili negli script o nelle righe di comando. Ad esempio, è possibile eseguire una riga di comando e inviare pipe dell'output a un file di log in **\_SMSTSLogPath** con gli altri file di log.
+Queste variabili sono utili negli script o nelle righe di comando. Ad esempio, è possibile eseguire una riga di comando e inviare pipe dell'output a un file di log in `_SMSTSLogPath` con gli altri file di log.
 
 > [!NOTE]  
 > Le variabili della sequenza di attività di sola lettura possono essere lette dai passaggi di una sequenza di attività, ma non possono essere impostate. Ad esempio, usare una variabile di sola lettura come parte della riga di comando di un passaggio **Esegui riga di comando**. Non è possibile impostare una variabile di sola lettura usando il passaggio **Imposta variabile della sequenza di attività**.  
@@ -98,7 +97,6 @@ La sequenza di attività archivia alcune variabili come matrice. Ogni elemento d
 - [Applica impostazioni di rete](task-sequence-steps.md#BKMK_ApplyNetworkSettings)  
 
 - [Formato e disco partizione](task-sequence-steps.md#BKMK_FormatandPartitionDisk)  
-
 
 ## <a name="bkmk_set"></a> Come impostare le variabili
 
@@ -146,9 +144,47 @@ Per altre informazioni, vedere [Imposta variabili dinamiche](/sccm/osd/understan
 
 ### <a name="bkmk_set-coll-var"></a> Variabili di raccolta e dispositivo
 
-Impostare le variabili sulle proprietà di una raccolta o di un dispositivo specifico.
+È possibile definire variabili della sequenza di attività personalizzate per dispositivi e raccolte. Le variabili definite per un dispositivo sono definite variabili della sequenza di attività per dispositivo. Le variabili definite per una raccolta vengono definite variabili della sequenza di attività con ambito raccolta. Se si verifica un conflitto, le variabili con ambito dispositivo hanno la precedenza sulle variabili con ambito raccolta. Questo significa che le variabili della sequenza di attività assegnate a un dispositivo specifico assumono automaticamente una priorità maggiore di quelle assegnate alla raccolta che contiene il dispositivo.  
 
-Per altre informazioni, vedere [Creare le variabili della sequenza di attività per computer e raccolte](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_CreateTSVariables).
+Il dispositivo XYZ, ad esempio, è un membro della raccolta ABC. Si assegna MyVariable alla raccolta ABC con il valore 1. Si assegna MyVariable anche al dispositivo XYZ con il valore 2. La variabile assegnata al dispositivo XYZ ha priorità più alta rispetto alla variabile assegnata alla raccolta ABC. Quando una sequenza di attività con questa variabile viene eseguita nel dispositivo XYZ, MyVariable ha il valore 2.
+
+Se si vuole che le variabili con ambito dispositivo e raccolta non siano visibili nella console di Configuration Manager, è possibile nasconderle. Quando si usa l'opzione **Non visualizzare questo valore nella console di Configuration Manager**, il valore della variabile non viene visualizzato nella console. La variabile è ancora utilizzabile dalla sequenza di attività durante l'esecuzione. Se non è più necessario nascondere queste variabili, prima di tutto eliminarle, quindi ridefinire le variabili senza selezionare l'opzione per nasconderle.  
+
+> [!WARNING]  
+> L'impostazione **Non visualizzare questo valore nella console di Configuration Manager** si applica solo alla console di Configuration Manager. I valori per le variabili vengono comunque visualizzati nel file di log della sequenza di attività (**smsts.log**).
+
+È possibile gestire le variabili per dispositivo in un sito primario oppure in un sito di amministrazione centrale. Configuration Manager non supporta più di 1.000 variabili assegnate per dispositivo.  
+
+> [!IMPORTANT]  
+> Quando si usano variabili con ambito raccolta per le sequenze di attività, considerare i comportamenti seguenti:  
+>
+> - Le modifiche alle raccolte vengono sempre replicate in tutta la gerarchia. Qualsiasi modifica apportata alle variabili della raccolta si applica non solo ai membri del sito corrente ma a tutti i membri della raccolta in tutta la gerarchia.  
+>  
+> - Quando si elimina una raccolta, questa azione elimina anche le variabili della sequenza di attività configurate per la raccolta.  
+
+#### <a name="create-task-sequence-variables-for-a-device"></a>Creare variabili della sequenza di attività per un *dispositivo*
+
+1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità** e selezionare il nodo **Dispositivi**.  
+
+2. Selezionare il dispositivo di destinazione e selezionare **Proprietà**.  
+
+3. Nella finestra di dialogo **Proprietà** passare alla scheda **Variabili**.  
+
+4. Per ogni variabile che si vuole creare, selezionare l'icona **Nuova**. Specificare il **nome** e il **valore** della variabile della sequenza di attività. Per nascondere le variabili in modo che non siano visibili nella console di Configuration Manager, selezionare l'opzione **Non visualizzare questo valore nella console di Configuration Manager**.  
+
+5. Dopo aver aggiunto tutte le variabili alle proprietà del dispositivo, selezionare **OK**.  
+
+#### <a name="create-task-sequence-variables-for-a-collection"></a>Creare variabili della sequenza di attività per una *raccolta*
+
+1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità** e selezionare il nodo **Raccolte dispositivi**. Selezionare la raccolta di destinazione e scegliere **Proprietà**.  
+
+2. Nella finestra di dialogo **Proprietà** passare alla scheda **Variabili raccolta**.  
+
+3. Per ogni variabile che si vuole creare, selezionare l'icona **Nuova**. Specificare il **nome** e il **valore** della variabile della sequenza di attività. Per nascondere le variabili in modo che non siano visibili nella console di Configuration Manager, selezionare l'opzione **Non visualizzare questo valore nella console di Configuration Manager**.  
+
+4. È anche possibile specificare la priorità in base alla quale Configuration Manager valuterà le variabili della sequenza di attività.  
+
+5. Dopo aver aggiunto tutte le variabili alle proprietà della raccolta, selezionare **OK**.  
 
 ### <a name="bkmk_set-com"></a> Oggetto COM TSEnvironment
 
@@ -181,7 +217,6 @@ Usare le variabili con ambito supporto anziché le variabili con ambito raccolta
 > La sequenza di attività scrive l'ID del pacchetto e la riga di comando di preavvio nel file di log **CreateTSMedia.log** nel computer che esegue la console di Configuration Manager. Questo file di log include il valore di tutte le variabili della sequenza di attività. Rivedere questo file di log per verificare il valore per le variabili della sequenza di attività.  
 
 Per altre informazioni, vedere [Creare supporti per sequenza di attività](/sccm/osd/deploy-use/create-task-sequence-media).
-
 
 ## <a name="bkmk_access"></a> Come accedere alle variabili
 
@@ -226,6 +261,8 @@ I tre esempi riportati sopra formano una condizione in base a cui verificare se 
 
 Vedere questa condizione nel gruppo **Acquisisci file e impostazioni** del modello di sequenza di attività predefinita per installare un'immagine del sistema operativo esistente.
 
+Per altre informazioni sulle condizioni, vedere [Editor della sequenza di attività-condizioni](/sccm/osd/understand/task-sequence-editor#bkmk_conditions).
+
 ### <a name="bkmk_access-script"></a> Script personalizzato
 
 Le variabili possono essere lette e scritte usando l'oggetto COM **Microsoft.SMS.TSEnvironment** durante l'esecuzione della sequenza di attività.
@@ -256,9 +293,12 @@ Il file di risposte del programma di installazione di Windows che si specifica p
 
 Per altre informazioni, vedere [Impostare Windows e Configuration Manager](/sccm/osd/understand/task-sequence-steps#BKMK_SetupWindowsandConfigMgr).
 
-
 ## <a name="see-also"></a>Vedere anche
 
 - [Passaggi della sequenza di attività](/sccm/osd/understand/task-sequence-steps)
+
 - [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables)
+
 - [Considerazioni sulla pianificazione dell'automazione delle attività](/sccm/osd/plan-design/planning-considerations-for-automating-tasks)
+
+- [Editor della sequenza di attività](/sccm/osd/understand/task-sequence-editor)

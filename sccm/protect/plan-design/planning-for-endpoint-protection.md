@@ -1,21 +1,21 @@
 ---
 title: Pianificare per Endpoint Protection
 titleSuffix: Configuration Manager
-ms.date: 03/07/2017
+ms.date: 05/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 7610bbd3-a67f-4a09-8115-e35d40d43b42
-author: aczechowski
+author: mestew
+ms.author: mstewart
 manager: dougeby
-ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94b1da6564c4b23c3db45b7b8851d795b97b061e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 77c87a06a76b6084f499e613dd97077dbf34fe9e
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133640"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "65612844"
 ---
 # <a name="planning-for-endpoint-protection-in-system-center-configuration-manager"></a>Pianificazione di Endpoint Protection in System Center Configuration Manager
 
@@ -29,7 +29,7 @@ Endpoint Protection in System Center Configuration Manager consente di gestire i
 
 L'uso di Endpoint Protection con Configuration Manager offre i vantaggi seguenti:  
 
--   Configurare criteri antimalware e impostazioni di Windows Firewall e gestire Windows Defender Advanced Threat Protection per gruppi di computer selezionati  
+-   Configurare criteri antimalware e impostazioni di Windows Firewall e gestire Microsoft Defender Advanced Threat Protection per gruppi di computer selezionati  
 
 -   Usare gli aggiornamenti software di Configuration Manager per scaricare i file definizioni antimalware più recenti e mantenere aggiornati i computer client  
 
@@ -80,9 +80,9 @@ Endpoint Protection in Configuration Manager consente di creare criteri antimalw
 
   Per altre informazioni su come creare e distribuire i criteri di Windows Firewall per Endpoint Protection, vedere [Come creare e distribuire criteri di Windows Firewall per Endpoint Protection in System Center Configuration Manager](../deploy-use/create-windows-firewall-policies.md).  
 
-## <a name="windows-defender-advanced-threat-protection"></a>Windows Defender Advanced Threat Protection
+## <a name="microsoft-defender-advanced-threat-protection"></a>Microsoft Defender Advanced Threat Protection
 
-A partire dalla versione 1606 di Configuration Manager (Current Branch), Endpoint Protection consente di gestire e monitorare Windows Defender Advanced Threat Protection (ATP). Windows Defender ATP è un nuovo servizio che consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti. Vedere [Windows Defender Advanced Threat Protection](../deploy-use/windows-defender-advanced-threat-protection.md).
+A partire dalla versione 1606 di Configuration Manager (Current Branch), Endpoint Protection consente di gestire e monitorare Microsoft Defender Advanced Threat Protection (ATP), noto in precedenza come Windows Defender ATP. Microsoft Defender ATP è un servizio che consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti. Vedere [Microsoft Defender Advanced Threat Protection](../deploy-use/windows-defender-advanced-threat-protection.md).
 
 ## <a name="endpoint-protection-workflow"></a>Flusso di lavoro di Endpoint Protection  
  Vedere il diagramma seguente per capire il flusso di lavoro per l'implementazione di Endpoint Protection nella gerarchia di Configuration Manager.  

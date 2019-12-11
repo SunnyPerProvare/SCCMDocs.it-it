@@ -2,7 +2,7 @@
 title: Distribuire una sequenza di attività
 titleSuffix: Configuration Manager
 description: Usare le informazioni seguenti per distribuire una sequenza di attività ai computer in una raccolta.
-ms.date: 05/03/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,20 +11,21 @@ ms.assetid: b2abcdb0-72e0-4c70-a4b8-7827480ba5b2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c3aca04273c25326c64d696a44089b6c8d1222bf
-ms.sourcegitcommit: 2ef7e69f3db54a90ed4ae2a3f59a75e6329a1584
+ms.openlocfilehash: 10316c74ebe7469df5db7c7d30394eabbc41eb83
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71062113"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660955"
 ---
 # <a name="deploy-a-task-sequence"></a>Distribuire una sequenza di attività
+
+*Si applica a: Configuration Manager (Current Branch)*
 
 Dopo aver creato una sequenza di attività e aver distribuito il contenuto di riferimento, distribuirla a una raccolta di dispositivi. Questa azione consente alla sequenza di attività di essere eseguita in un dispositivo. Una sequenza di attività distribuita può essere eseguita automaticamente o quando viene installata da un utente del dispositivo.
 
 > [!WARNING]  
-> È possibile gestire il comportamento relativo alle distribuzioni di sequenze di attività ad alto rischio. Una distribuzione ad alto rischio viene installata automaticamente e può causare risultati imprevisti. Ad esempio, una sequenza di attività con scopo impostato su **Richiesto** che distribuisce un sistema operativo viene considerata una distribuzione ad alto rischio. Per altre informazioni, vedere [Impostazioni per gestire distribuzioni ad alto rischio](/sccm/core/servers/manage/settings-to-manage-high-risk-deployments).  
-
+> È possibile gestire il comportamento relativo alle distribuzioni di sequenze di attività ad alto rischio. Una distribuzione ad alto rischio viene installata automaticamente e può causare risultati imprevisti. Ad esempio, una sequenza di attività con scopo impostato su **Richiesto** che distribuisce un sistema operativo viene considerata una distribuzione ad alto rischio. Per altre informazioni, vedere [Impostazioni per gestire distribuzioni ad alto rischio](/configmgr/core/servers/manage/settings-to-manage-high-risk-deployments).  
 
 ## <a name="process"></a>Processo
 
@@ -56,12 +57,12 @@ Usare la seguente procedura per distribuire una sequenza di attività ai compute
 
     - **Distribuisci automaticamente contenuto per dipendenze**: se uno dei contenuti di riferimento ha dipendenze, il sito invia anche il contenuto dipendente ai punti di distribuzione.  
 
-    - **Pre-download del contenuto per questa sequenza di attività**: per altre informazioni, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/configure-precache-content).  
+    - **Pre-download del contenuto per questa sequenza di attività**: per altre informazioni, vedere [Configurare la pre-cache del contenuto](/configmgr/osd/deploy-use/configure-precache-content).  
 
-    - **Selezione modello di distribuzione**: a partire da Configuration Manager versione 1802,<!--1357391--> è possibile salvare e specificare un modello di distribuzione per una sequenza di attività.  
+    - **Selezionare il modello di distribuzione**: salvare e specificare un modello di distribuzione per una sequenza di attività.<!--1357391-->  
 
         > [!IMPORTANT]  
-        > In Configuration Manager versione 1802 alcuni elementi non vengono salvati nel modello.  <!--510610--> Quando si esegue la distribuzione guidata, verificare di applicare gli elementi seguenti:  
+        > Alcuni elementi non vengono salvati nel modello.<!--510610--> Quando si esegue la distribuzione guidata, verificare di applicare gli elementi seguenti:  
         >
         > - Installazione software
         > - Pianificazione
@@ -88,9 +89,9 @@ Usare la seguente procedura per distribuire una sequenza di attività ai compute
         - Solo supporti e PXE (nascosto)  
 
         > [!IMPORTANT]  
-        > Usare l'impostazione **Solo supporti e PXE (nascosto)** per le distribuzioni sequenza di attività automatiche. Per fare in modo che il computer si avvii automaticamente al momento della distribuzione senza intervento dell'utente, selezionare **Consenti distribuzione automatica del sistema operativo** e impostare la variabile **SMSTSPreferredAdvertID** come parte del supporto. Per altre informazioni sulle variabili della sequenza di attività, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables#SMSTSPreferredAdvertID).  
+        > Usare l'impostazione **Solo supporti e PXE (nascosto)** per le distribuzioni sequenza di attività automatiche. Per fare in modo che il computer si avvii automaticamente al momento della distribuzione senza intervento dell'utente, selezionare **Consenti distribuzione automatica del sistema operativo** e impostare la variabile **SMSTSPreferredAdvertID** come parte del supporto. Per altre informazioni sulle variabili della sequenza di attività, vedere [Variabili della sequenza di attività](/configmgr/osd/understand/task-sequence-variables#SMSTSPreferredAdvertID).  
 
-    - **Invia pacchetti di riattivazione**: se la distribuzione è impostata su **Richiesto** e si seleziona questa opzione, il sito invia un pacchetto di riattivazione ai computer prima che il client esegua la distribuzione. Il pacchetto riattiva il computer dalla sospensione nel momento in cui scade l'installazione. Prima di usare questa opzione, i computer e le reti devono essere configurati per la riattivazione LAN. Per altre informazioni, vedere [Pianificare la riattivazione dei client](/sccm/core/clients/deploy/plan/plan-wake-up-clients).  
+    - **Invia pacchetti di riattivazione**: se la distribuzione è impostata su **Richiesto** e si seleziona questa opzione, il sito invia un pacchetto di riattivazione ai computer prima che il client esegua la distribuzione. Il pacchetto riattiva il computer dalla sospensione nel momento in cui scade l'installazione. Prima di usare questa opzione, i computer e le reti devono essere configurati per la riattivazione LAN. Per altre informazioni, vedere [Pianificare la riattivazione dei client](/configmgr/core/clients/deploy/plan/plan-wake-up-clients).  
 
     - **Consente a tutti i client che utilizzano una connessione di rete a consumo di scaricare il contenuto una volta raggiunta la scadenza dell'installazione. Se si abilita questa opzione, potrebbe essere addebitato un costo aggiuntivo**: questa opzione è disponibile solo per le distribuzioni **richieste**. Quando una sequenza di attività personalizzata installa un'applicazione ma non distribuisce un sistema operativo, è possibile specificare se consentire ai client di scaricare il contenuto dopo la scadenza dell'installazione se usano una connessione Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati usati quando si usa una connessione Internet a consumo.  
 
@@ -148,7 +149,7 @@ Usare la seguente procedura per distribuire una sequenza di attività ai compute
 
     - **Consenti l'esecuzione della sequenza di attività per il client in Internet:** specificare se la sequenza di attività può essere eseguita in un client basato su Internet. Le operazioni che richiedono un supporto di avvio, ad esempio l'installazione di un sistema operativo, non sono supportate con questa impostazione. Usare questa opzione solo per installazioni software o sequenze di attività generiche basate su script che eseguono operazioni nel sistema operativo standard.  
 
-        - A partire dalla versione 1802, questa impostazione è supportata per le distribuzioni di una sequenza di attività di aggiornamento sul posto di Windows 10 in client basati su Internet mediante Cloud Management Gateway. Per altre informazioni, vedere [Distribuire l'aggiornamento sul posto di Windows 10 mediante Cloud Management Gateway](#deploy-windows-10-in-place-upgrade-via-cmg).  
+        - Questa impostazione è supportata per le distribuzioni di una sequenza di attività di aggiornamento sul posto di Windows 10 in client basati su Internet mediante Cloud Management Gateway. Per altre informazioni, vedere [Distribuire l'aggiornamento sul posto di Windows 10 mediante Cloud Management Gateway](#deploy-windows-10-in-place-upgrade-via-cmg).  
 
 8. Nella pagina **Avvisi** specificare le impostazioni di avviso desiderate per la distribuzione di questa sequenza di attività.  
 
@@ -173,32 +174,37 @@ Usare la seguente procedura per distribuire una sequenza di attività ai compute
     - **Consenti ai client di usare punti di distribuzione dal gruppo di limiti del sito predefinito**: specificare se i client devono scaricare il contenuto da un punto di distribuzione nel gruppo di limiti del sito predefinito quando non è disponibile da un punto di distribuzione nel gruppo di limiti corrente o nei gruppi di limiti vicini.  
 
         > [!Note]  
-        > A partire dalla versione 1810, quando un dispositivo esegue una sequenza di attività e deve acquisire il contenuto, il dispositivo usa comportamenti dei gruppi di limiti simili al client Configuration Manager. Per altre informazioni, vedere [Supporto della sequenza di attività per i gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgr-osd).<!--1359025-->  
+        > A partire dalla versione 1810, quando un dispositivo esegue una sequenza di attività e deve acquisire il contenuto, il dispositivo usa comportamenti dei gruppi di limiti simili al client Configuration Manager. Per altre informazioni, vedere [Supporto della sequenza di attività per i gruppi di limiti](/configmgr/core/servers/deploy/configure/boundary-groups#bkmk_bgr-osd).<!--1359025-->  
 
-10. A partire da Configuration Manager 1802, nella scheda **Riepilogo** selezionare **Salva come modello** per salvare le impostazioni da usare di nuovo. Assegnare un nome al modello e selezionare le impostazioni da salvare.  
+10. Per salvare queste impostazioni per riutilizzarle, nella scheda **Riepilogo** selezionare **Salva come modello**. Assegnare un nome al modello e selezionare le impostazioni da salvare.  
 
 11. Completare la procedura guidata.  
-
 
 ## <a name="deploy-windows-10-in-place-upgrade-via-cmg"></a>Distribuire l'aggiornamento sul posto di Windows 10 mediante Cloud Management Gateway
 
 <!-- 1357149 -->
-A partire dalla versione 1802, la sequenza di attività di aggiornamento sul posto di Windows 10 supporta la distribuzione nei client basati su Internet tramite [Cloud Management Gateway](/sccm/core/clients/manage/plan-cloud-management-gateway). Ciò consente agli utenti remoti di eseguire più facilmente l'aggiornamento a Windows 10 senza doversi connettere a Internet.
+La sequenza di attività di aggiornamento sul posto di Windows 10 supporta la distribuzione nei client basati su Internet gestiti tramite [Cloud Management Gateway](/configmgr/core/clients/manage/plan-cloud-management-gateway) (CMG). Ciò consente agli utenti remoti di eseguire più facilmente l'aggiornamento a Windows 10 senza doversi connettere a Internet.
 
-Verificare che tutto il contenuto a cui fa riferimento la sequenza di attività di aggiornamento sul posto sia distribuito a un [punto di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point). In caso contrario i dispositivi non potranno eseguire la sequenza di attività.
+Verificare che tutto il contenuto a cui fa riferimento la sequenza di attività di aggiornamento sul posto sia distribuito a un CMG abilitato per il contenuto. (Abilitare l'impostazione [CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#settings): **Consenti il funzionamento di CMG come punto di distribuzione cloud e per la gestione di contenuti da Archiviazione di Azure**.) È anche possibile usare un [punto di distribuzione cloud](/configmgr/core/plan-design/hierarchy/use-a-cloud-based-distribution-point). In caso contrario i dispositivi non potranno eseguire la sequenza di attività.
 
 Per distribuire una sequenza di attività di aggiornamento sul posto usare le impostazioni seguenti:
 
 - **Consenti l'esecuzione della sequenza di attività per il client in Internet** nella scheda Esperienza utente della distribuzione.  
 
-- **Scaricare tutto il contenuto localmente prima di avviare la sequenza di attività** nella scheda Punti di distribuzione della distribuzione. Altre opzioni come **Scaricare il contenuto localmente quando necessario eseguendo la sequenza di attività** non sono applicabili a questo scenario. Il motore di esecuzione della sequenza attività non è attualmente in grado di ottenere contenuto da un punto di distribuzione cloud. Il client Gestione configurazione deve scaricare il contenuto dal punto di distribuzione cloud prima di avviare la sequenza di attività.  
+- Scegliere una delle opzioni seguenti nella scheda punti di distribuzione della distribuzione:
 
-- (*Facoltativo*) **Pre-download del contenuto per questa sequenza di attività** nella scheda Generale della distribuzione. Per altre informazioni, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/configure-precache-content).  
+  - **Scaricare il contenuto localmente quando necessario eseguendo la sequenza di attività**. A partire dalla versione 1910, il motore della sequenza di attività può scaricare pacchetti su richiesta da un servizio CMG abilitato per il contenuto o da un punto di distribuzione cloud. Questa modifica offre ulteriore flessibilità con le distribuzioni di aggiornamento sul posto di Windows 10 ai dispositivi basati su Internet.<!--3601238-->
 
+  - **Scaricare tutto il contenuto in locale prima di avviare la sequenza di attività**. In Configuration Manager versione 1906 e versioni precedenti, altre opzioni come **scaricare il contenuto localmente quando necessario per la sequenza di attività in esecuzione** non funzionano in questo scenario. Il motore della sequenza di attività non è in grado di scaricare il contenuto da un'origine cloud. Il client Gestione configurazione deve scaricare il contenuto dall'origine cloud prima di avviare la sequenza di attività. È comunque possibile usare questa opzione nella versione 1910, se necessario, per soddisfare i requisiti.
+
+- (*Facoltativo*) **Pre-download del contenuto per questa sequenza di attività** nella scheda Generale della distribuzione. Per altre informazioni, vedere [Configurare la pre-cache del contenuto](/configmgr/osd/deploy-use/configure-precache-content).  
+
+> [!NOTE]
+> Avviare la sequenza di attività da Software Center. Questo scenario non supporta Windows PE, PXE e i supporti per sequenza di attività.
 
 ## <a name="bkmk_high-risk"></a> Distribuzioni ad alto rischio
 
-Quando si esegue una distribuzione ad alto rischio, ad esempio quella di un sistema operativo, nella finestra **Seleziona raccolta** vengono visualizzate soltanto le raccolte personalizzate che soddisfano le impostazioni di verifica della distribuzione configurate nelle proprietà del sito. Le distribuzioni ad alto rischio sono sempre limitate alle raccolte personalizzate (quelle create dall'utente) e alla racconta predefinita **Computer sconosciuti** . Quando si crea una distribuzione ad alto rischio, non è possibile selezionare una raccolta predefinita quale **Tutti i sistemi**. Per visualizzare tutte le raccolte personalizzate che contengono un numero di client inferiore rispetto alla dimensione massima configurata, disabilitare **Nascondi le raccolte con un numero di membri maggiore della configurazione delle dimensioni minime del sito**. Per altre informazioni, vedere [Impostazioni per gestire distribuzioni ad alto rischio](/sccm/core/servers/manage/settings-to-manage-high-risk-deployments).  
+Quando si esegue una distribuzione ad alto rischio, ad esempio quella di un sistema operativo, nella finestra **Seleziona raccolta** vengono visualizzate soltanto le raccolte personalizzate che soddisfano le impostazioni di verifica della distribuzione configurate nelle proprietà del sito. Le distribuzioni ad alto rischio sono sempre limitate alle raccolte personalizzate (quelle create dall'utente) e alla racconta predefinita **Computer sconosciuti** . Quando si crea una distribuzione ad alto rischio, non è possibile selezionare una raccolta predefinita quale **Tutti i sistemi**. Per visualizzare tutte le raccolte personalizzate che contengono un numero di client inferiore rispetto alla dimensione massima configurata, disabilitare **Nascondi le raccolte con un numero di membri maggiore della configurazione delle dimensioni minime del sito**. Per altre informazioni, vedere [Impostazioni per gestire distribuzioni ad alto rischio](/configmgr/core/servers/manage/settings-to-manage-high-risk-deployments).  
 
 Le impostazioni di verifica della distribuzione sono basate sull'appartenenza attuale della raccolta. Dopo aver distribuito la sequenza di attività, Configuration Manager non rivaluta l'appartenenza alla raccolta per le impostazioni di distribuzione ad alto rischio.  
 
@@ -210,13 +216,12 @@ Quando si seleziona una raccolta che include un ruolo del sito, si applicano i c
 
 - Se si applica uno dei criteri seguenti, nella Distribuzione guidata del software viene visualizzato un messaggio sul rischio elevato. Per continuare, è necessario accettare di creare una distribuzione ad alto rischio. Il sito genera un messaggio di stato di controllo.  
 
-    - Se la raccolta contiene un server di sistema del sito e le impostazioni di verifica della distribuzione sono state configurate in modo da generare un avviso per le raccolte con server di sistema del sito  
+  - Se la raccolta contiene un server di sistema del sito e le impostazioni di verifica della distribuzione sono state configurate in modo da generare un avviso per le raccolte con server di sistema del sito  
 
-    - Se la raccolta supera il valore predefinito delle dimensioni
+  - Se la raccolta supera il valore predefinito delle dimensioni
 
-    - Se la raccolta contiene un server  
-
+  - Se la raccolta contiene un server  
 
 ## <a name="see-also"></a>Vedere anche
 
-[Gestire le sequenze di attività per automatizzare le attività](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks)
+[Gestire le sequenze di attività per automatizzare le attività](/configmgr/osd/deploy-use/manage-task-sequences-to-automate-tasks)

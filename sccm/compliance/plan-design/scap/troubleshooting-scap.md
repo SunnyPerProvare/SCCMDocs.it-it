@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 58a3c69e6206aa651e55f96286f98f64f748de70
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56137137"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62213971"
 ---
 # <a name="troubleshoot-the-scap-extensions-for-configuration-manager"></a>Risolvere i problemi delle estensioni SCAP per Configuration Manager
 
@@ -40,7 +40,7 @@ Per diagnosticare e risolvere i problemi, usare i metodi seguenti:
 
 Quando viene specificato il parametro `–log`, lo strumento Microsoft.Sces.ScapToDcm.exe crea un file di log con un nome personalizzato. Il file di log contiene informazioni sui risultati dell'esecuzione dello strumento Microsoft.Sces.ScapToDcm.exe. Il file di log, ad esempio, include il numero degli elementi nel file di input XCCDF/DataStream che sono stati rimossi o ignorati durante l'esecuzione dello strumento Microsoft.Sces.ScapToDcm.exe.
 
-Nella tabella seguente sono elencate alcune delle informazioni che vengono visualizzate nel file di log e una descrizione di ogni tipo di informazione.
+Nella tabella seguente sono elencate alcune delle informazioni visualizzate nel file di log e una descrizione di ogni tipo di informazione.
 
 ### <a name="information-found-in-the-microsoftscesscaptodcmexe-log-file"></a>Informazioni presenti nei file di log dello strumento Microsoft.Sces.ScapToDcm.exe
 
@@ -69,7 +69,7 @@ Di seguito sono elencati alcuni problemi e soluzioni comuni per facilitare la ri
 
      - È più probabile che le nuove impostazioni non siano ancora diventate effettive. Per impostazione predefinita, i client Active Directory verificano la disponibilità di aggiornamento a Criteri di gruppo ogni 90 minuti. Questo ciclo potrebbe essere uno dei motivi per cui le impostazioni non sembrano essere effettive, anche se i criteri sono stati configurati correttamente.  
 
-     - Molte impostazioni del computer richiedono un riavvio per diventare effettive. Ad esempio l'impostazione denominata **Crittografia sistema: utilizza algoritmi FIPS compatibili per crittografia, hash e firma** richiede il riavvio del computer prima che Windows possa usare gli algoritmi di crittografia specificati. È possibile ignorare l'intervallo di aggiornamento di Criteri di gruppo immettendo il comando seguente nel prompt dei comandi con privilegi di amministratore: `gpupdate /force`. Dopo aver completato l'aggiornamento di Criteri di gruppo, riavviare il computer per assicurarsi che tutte le impostazioni vengano applicate. Per altre informazioni, vedere [Descrizione dell'utilità di aggiornamento di Criteri di gruppo](https://support.microsoft.com/help/298444).
+     - Molte impostazioni del computer richiedono un riavvio per diventare effettive. L'impostazione denominata **Crittografia di sistema: utilizza algoritmi FIPS compatibili per crittografia, hash e firma**, ad esempio, richiede il riavvio del computer prima che Windows possa usare gli algoritmi di crittografia specificati. È possibile ignorare l'intervallo di aggiornamento di Criteri di gruppo immettendo il comando seguente nel prompt dei comandi con privilegi di amministratore: `gpupdate /force`. Dopo aver completato l'aggiornamento di Criteri di gruppo, riavviare il computer per assicurarsi che tutte le impostazioni vengano applicate. Per altre informazioni, vedere [Descrizione dell'utilità di aggiornamento di Criteri di gruppo](https://support.microsoft.com/help/298444).
 
 - Si verifica un problema quando si specifica la connessione di database usando le informazioni aziendali.  
 

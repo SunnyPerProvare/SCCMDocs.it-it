@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ec958701b81c70677f65815d4fa053004c09c2b
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: 68a495d63a43fe40d4c4479d03b7d4c6ed4e3ba1
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70378085"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74474424"
 ---
 # <a name="learn-more-about-powershell-script-security"></a>Informazioni sulla sicurezza degli script PowerShell
 
@@ -70,5 +70,5 @@ Consigli generali per gli amministratori di PowerShell.
 1. Distribuire la versione più recente di PowerShell, ad esempio la versione 5 o successiva, inclusa in Windows 10. In alternativa, è possibile distribuire [Windows Management Framework ](https://www.microsoft.com/download/details.aspx?id=54616), disponibile per le versioni precedenti, compresi Windows 7 e Windows Server 2008 R2. 
 2. Abilitare e raccogliere log PowerShell, includendo facoltativamente la registrazione eventi protetti. Incorporare questi log nelle firme e nei flussi di lavoro di ricerca e di risposta a eventi imprevisti.
 3. Implementare Just Enough Administration in sistemi importanti per eliminare o ridurre l'accesso senza vincoli come amministratore a questi sistemi.
-4. Distribuire i criteri di Device Guard/Controllo di applicazioni per consentire alle attività amministrative pre-approvate di usare tutte le funzionalità del linguaggio PowerShell, limitando al tempo stesso l'uso interattivo e non approvato a un sottoinsieme limitato del linguaggio PowerShell.
+4. Distribuire i criteri di Controllo di applicazioni di Windows Defender per consentire alle attività amministrative pre-approvate di usare tutte le funzionalità del linguaggio PowerShell, limitando al tempo stesso l'uso interattivo e non approvato a un sottoinsieme limitato del linguaggio PowerShell.
 5. Distribuire Windows 10 per consentire al provider dell'applicazione antivirus accesso completo a tutti i contenuti (incluso il contenuto generato o deoffuscato in fase di esecuzione) elaborato dalle istanze di Windows Scripting Host che includono PowerShell.

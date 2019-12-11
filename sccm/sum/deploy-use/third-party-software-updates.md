@@ -2,7 +2,7 @@
 title: Abilitare gli aggiornamenti di terze parti
 titleSuffix: Configuration Manager
 description: Abilitare gli aggiornamenti di terze parti in Configuration Manager
-ms.date: 11/19/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7828493718dd1436e3421232297bab6a1fc9d548
-ms.sourcegitcommit: bba35def893b2893f6a23f8751bcc5cbf1b87bc3
+ms.openlocfilehash: c975580f3902a2cf468ea5f31ed0710508ef681b
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74190586"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74658982"
 ---
 # <a name="enable-third-party-updates"></a>Abilitare gli aggiornamenti di terze parti 
 
@@ -156,6 +156,73 @@ Quando gli aggiornamenti di terze parti sono nel nodo **Tutti gli aggiornamenti*
 7. Nella pagina **Download Locations** (Percorsi download) della **Distribuzione guidata degli aggiornamenti software** selezionare l'opzione predefinita **Scarica aggiornamenti software da Internet**. In questo scenario il contenuto è già pubblicato nel punto di aggiornamento software, che viene usato per scaricare il contenuto per il pacchetto di distribuzione.
 8. Per poter visualizzare i risultati di conformità, i client dovranno eseguire un'analisi e valutare gli aggiornamenti.  È possibile attivare manualmente questo ciclo dal pannello di controllo di Configuration Manager in un client eseguendo l'azione **Ciclo di analisi per aggiornamenti software**.
 
+
+## <a name="bkmk_1910"></a>Miglioramenti per gli aggiornamenti di terze parti a partire da 1910
+<!--4469002-->
+Sono ora disponibili controlli più granulari sulla sincronizzazione dei cataloghi degli aggiornamenti di terze parti. A partire da Configuration Manager versione 1910, è possibile configurare la pianificazione della sincronizzazione per ogni catalogo in modo indipendente. Quando si utilizzano cataloghi che includono aggiornamenti categorizzati, è possibile configurare la sincronizzazione in modo da includere solo categorie specifiche di aggiornamenti per evitare di sincronizzare l'intero catalogo. Con i cataloghi categorizzati, quando si è certi che si distribuirà una categoria, è possibile configurarla in modo che venga scaricata e pubblicata automaticamente in WSUS.
+
+### <a name="set-the-schedule-for-a-catalog-in-a-new-catalog-subscription"></a>Impostare la pianificazione per un catalogo in una nuova sottoscrizione del catalogo
+
+1. Passare all'area di lavoro **Raccolta software**, espandere **Aggiornamenti software** e quindi selezionare il nodo **Cataloghi di aggiornamenti software di terze parti**.
+1. Selezionare il catalogo per cui eseguire la sottoscrizione e fare clic su **Sottoscrivi il catalogo** nella barra multifunzione.
+1. Scegliere le opzioni disponibili nella pagina **pianificazione** se si desidera eseguire l'override della pianificazione della sincronizzazione predefinita:
+   - **Pianificazione semplice**: scegliere l'intervallo di ora, giorno o mese.
+   - **Pianificazione personalizzata**: impostare una pianificazione complessa.
+
+### <a name="update-the-schedule-per-catalog"></a>Aggiornare la pianificazione per catalogo
+
+1. Passare all'area di lavoro **Raccolta software**, espandere **Aggiornamenti software** e quindi selezionare il nodo **Cataloghi di aggiornamenti software di terze parti**.
+1. Fare clic con il pulsante destro del mouse sul catalogo e scegliere **Proprietà**.
+1. Scegliere le opzioni disponibili nella scheda pianificazione: 
+   - **Pianificazione semplice**: scegliere l'intervallo di ora, giorno o mese.
+   - **Pianificazione personalizzata**: impostare una pianificazione complessa.
+
+### <a name="new-subscription-to-a-third-party-v3-catalog"></a>Nuova sottoscrizione a un catalogo v3 di terze parti
+
+> [!IMPORTANT]
+> Questa opzione è disponibile solo per i cataloghi di aggiornamenti di terze parti v3, che supportano le categorie per gli aggiornamenti. Queste opzioni sono disabilitate per i cataloghi non pubblicati nel nuovo formato v3.
+
+
+1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**. Espandere **Aggiornamenti software** e selezionare il nodo **Cataloghi di aggiornamenti software di terze parti**.
+1. Selezionare il catalogo per cui eseguire la sottoscrizione e fare clic su **Sottoscrivi il catalogo** nella barra multifunzione.
+1. Scegliere le opzioni nella pagina **Seleziona categorie**:
+
+   - **Synchronize all update categories** (Sincronizza tutte le categorie di aggiornamento) (impostazione predefinita)
+       - Sincronizza tutti gli aggiornamenti nel catalogo di aggiornamenti di terze parti in Configuration Manager.
+   -  **Select categories for synchronization** (Seleziona categorie per la sincronizzazione)
+       - Scegliere le categorie e le categorie figlio da sincronizzare in Configuration Manager.
+
+      ![Selezionare le categorie di aggiornamenti per la sincronizzazione in Configuration Manager](./media/4469002-select-categories-for-sync.png)
+1. Scegliere se si vuole **eseguire un'installazione di appoggio del contenuto degli aggiornamenti** per il catalogo. Quando si esegue un'installazione di appoggio del contenuto, tutti gli aggiornamenti delle categorie selezionate vengono scaricati automaticamente nel punto di aggiornamento software di livello superiore. Non è quindi necessario assicurarsi che siano già stati scaricati prima della distribuzione. È consigliabile eseguire un'installazione di appoggio del contenuto automaticamente solo per gli aggiornamenti di cui è probabile che si eseguirà la distribuzione, per evitare un uso eccessivo della larghezza di banda e delle risorse di archiviazione.
+
+   - **Do not stage content, synchronize for scanning only (recommended)** (Non eseguire un'installazione di appoggio, sincronizza solo per l'analisi (scelta consigliata))
+     - Non scaricare alcun contenuto degli aggiornamenti per il catalogo di terze parti
+   - **Stage the content for selected categories automatically** (Esegui installazione di appoggio automaticamente per le categorie selezionate)
+     - Scegliere le categorie di aggiornamenti per le quali scaricare il contenuto automaticamente.
+     - Il contenuto degli aggiornamenti delle categorie selezionate verrà scaricato nella directory del contenuto WSUS del punto di aggiornamento software di livello superiore.
+      ![Selezionare le categorie di aggiornamenti per l'installazione di appoggio del contenuto](./media/4469002-stage-content.png)
+1. Impostare la **pianificazione** per la sincronizzazione del catalogo, quindi completare la procedura guidata.
+
+ 
+
+### <a name="edit-an-existing-subscription"></a>Modificare una sottoscrizione esistente
+
+> [!IMPORTANT]
+> Questa opzione è disponibile solo per i cataloghi di aggiornamenti di terze parti v3, che supportano le categorie per gli aggiornamenti. Queste opzioni sono disabilitate per i cataloghi non pubblicati nel nuovo formato v3.
+
+1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**. Espandere **Aggiornamenti software** e selezionare il nodo **Cataloghi di aggiornamenti software di terze parti**.
+1. Fare clic con il pulsante destro del mouse sul catalogo e scegliere **Proprietà**.
+1. Scegliere le opzioni nella scheda **Seleziona categorie**.
+   - **Synchronize all update categories** (Sincronizza tutte le categorie di aggiornamento) (impostazione predefinita)
+       - Sincronizza tutti gli aggiornamenti nel catalogo di aggiornamenti di terze parti in Configuration Manager.
+   -  **Select categories for synchronization** (Seleziona categorie per la sincronizzazione)
+       - Scegliere le categorie e le categorie figlio da sincronizzare in Configuration Manager.
+1. Scegliere le opzioni per la scheda **Stage update content** (Esegui installazione di appoggio per il contenuto degli aggiornamenti).
+   - **Do not stage content, synchronize for scanning only (recommended)** (Non eseguire un'installazione di appoggio, sincronizza solo per l'analisi (scelta consigliata))
+     - Non scaricare alcun contenuto degli aggiornamenti per il catalogo di terze parti
+   - **Stage the content for selected categories automatically** (Esegui installazione di appoggio automaticamente per le categorie selezionate)
+     - Scegliere le categorie di aggiornamenti per le quali scaricare il contenuto automaticamente.
+     - Il contenuto degli aggiornamenti delle categorie selezionate verrà scaricato nella directory del contenuto WSUS del punto di aggiornamento software di livello superiore. 
 
 ## <a name="monitoring-progress-of-third-party-software-updates"></a>Monitoraggio dello stato degli aggiornamenti software di terze parti 
 

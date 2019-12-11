@@ -2,7 +2,7 @@
 title: Ottimizzare il recapito degli aggiornamenti di Windows 10
 titleSuffix: Configuration Manager
 description: Informazioni su come usare Configuration Manager per gestire il contenuto di aggiornamento per rimanere aggiornati con Windows 10.
-ms.date: 07/09/2019
+ms.date: 12/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f3f5eb1b25021adee5feecd3119776180250496
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.openlocfilehash: 5a9885535e0a6ef6b047b55a6b11eeb3bc225340
+ms.sourcegitcommit: 4d3999de1e13d579dd128578cb5dcee46fe3b0d6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67678686"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74856041"
 ---
 # <a name="optimize-windows-10-update-delivery-with-configuration-manager"></a>Ottimizzare il recapito degli aggiornamenti di Windows 10 con Configuration Manager
 
@@ -35,7 +35,6 @@ Configuration Manager ha aggiunto il supporto per i [file di installazione rapid
 
 > [!NOTE]  
 > Il contenuto della versione rapida è notevolmente più grande rispetto alla versione con file completi. Un file di installazione rapida contiene tutte le possibili varianti per ogni file che dovrà aggiornare. Di conseguenza, la quantità di spazio su disco aumenta per gli aggiornamenti nell'origine del pacchetto di aggiornamento e nei punti di distribuzione quando si abilita il supporto dell'installazione rapida in Configuration Manager. Anche se aumenta il requisito di spazio su disco nei punti di distribuzione, si riducono le dimensioni del contenuto che i client scaricano da questi punti di distribuzione. I client scaricano solo le parti necessarie (delta) ma non l'intero aggiornamento.
-
 
 
 ## <a name="peer-to-peer-content-distribution"></a>Distribuzione del contenuto peer-to-peer
@@ -61,6 +60,19 @@ Per ottenere risultati ottimali, potrebbe essere necessario impostare la [modali
 
 La configurazione manuale di questi ID di gruppo è difficile in caso di roaming dei client tra reti diverse. In Configuration Manager versione 1802 è stata aggiunta una nuova funzionalità per semplificare la gestione di questo processo tramite l'[integrazione di gruppi di limiti con Ottimizzazione recapito](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#delivery-optimization). Quando un client viene riattivato, comunica con il punto di gestione per ottenere i criteri e fornisce informazioni sulla rete e il gruppo di limiti di appartenenza. Configuration Manager crea un ID univoco per ogni gruppo di limiti. Il sito usa le informazioni sulla posizione del client per configurare automaticamente l'ID del gruppo di Ottimizzazione recapito del client con l'ID del limite di Configuration Manager. Quando il client si sposta in un altro gruppo di limiti, comunica con il punto di gestione e viene automaticamente riconfigurato con un nuovo ID di gruppo di limiti. Grazie a questa integrazione, Ottimizzazione recapito può usare le informazioni sul gruppo di limiti di Configuration Manager per trovare un peer da cui scaricare gli aggiornamenti.
 
+### <a name="bkmk_DO-1910"></a> Ottimizzazione recapito a partire dalla versione 1910
+<!--4699118-->
+A partire da Configuration Manager versione 1910, è possibile usare l'ottimizzazione del recapito per la distribuzione di tutti i contenuti di Windows Update per i client che eseguono Windows 10 versione 1709 o successiva, non solo per i file di installazione rapida.
+
+Per utilizzare l'ottimizzazione recapito per tutti i file di installazione di Windows Update, abilitare le seguenti [Impostazioni client per gli aggiornamenti software](/sccm/core/clients/deploy/about-client-settings#software-updates):
+
+- Impostare **Consenti ai client di scaricare contenuto differenziale quando disponibile** su **Sì**.
+- Impostare **Porta usata dai client per ricevere richieste per contenuto differenziale** su 8005 (impostazione predefinita) o un numero di porta personalizzato.
+
+> [!IMPORTANT]
+> - La funzionalità Ottimizzazione del recapito deve essere abilitata (impostazione predefinita) e non ignorata. Per altre informazioni, vedere [Ottimizzazione recapito di Windows](/sccm/sum/deploy-use/optimize-windows-10-update-delivery#windows-delivery-optimization).
+
+
 
 ### <a name="configuration-manager-peer-cache"></a>Peer cache di Configuration Manager
 
@@ -71,7 +83,7 @@ La [peer cache](/sccm/core/plan-design/hierarchy/client-peer-cache) è una funzi
 
 
 ### <a name="windows-branchcache"></a>Windows BranchCache
-[BranchCache](https://docs.microsoft.com/windows-server/networking/branchcache/branchcache) è una tecnologia di ottimizzazione della larghezza di banda in Windows. Ogni client ha una cache e funge da origine alternativa per il contenuto. I dispositivi nella stessa rete possono richiedere questo contenuto. [Configuration Manager può usare BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#bkmk_branchcache) per consentire ai peer di operare reciprocamente come origine del contenuto, invece di dover sempre contattare un punto di distribuzione. Con BranchCache, i file vengono memorizzati nella cache in ogni singolo client e gli altri client possono recuperarli all'occorrenza. Questo approccio consente di distribuire la cache invece di usare un singolo punto di recupero. Con questo comportamento è possibile risparmiare una notevole quantità di larghezza di banda, riducendo contemporaneamente i tempi richiesti per la ricezione del contenuto richiesto nei client. 
+[BranchCache](https://docs.microsoft.com/windows-server/networking/branchcache/branchcache) è una tecnologia di ottimizzazione della larghezza di banda in Windows. Ogni client ha una cache e funge da origine alternativa per il contenuto. I dispositivi nella stessa rete possono richiedere questo contenuto. [Configuration Manager può usare BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#bkmk_branchcache) per consentire ai peer di operare reciprocamente come origine del contenuto, invece di dover sempre contattare un punto di distribuzione. Con BranchCache, i file vengono memorizzati nella cache in ogni singolo client e gli altri client possono recuperarli all'occorrenza. Questo approccio consente di distribuire la cache invece di usare un singolo punto di recupero. Con questo comportamento è possibile risparmiare una notevole quantità di larghezza di banda, riducendo contemporaneamente i tempi richiesti per la ricezione del contenuto richiesto nei client.
 
 
 
@@ -86,13 +98,13 @@ La selezione della tecnologia di peer caching appropriata per i file di installa
 |---------|---------|---------|---------|
 | Supportata tra subnet diverse | Sì | Sì | No |
 | Limitazione larghezza di banda | Sì (nativa) | Sì (tramite BITS) | Sì (tramite BITS) |
-| Supporto del contenuto parziale | Sì | Solo per Office 365 e gli aggiornamenti rapidi | Sì |
+| Supporto del contenuto parziale | Sì, per tutti i tipi di contenuto supportati elencati nella riga successiva della colonna. | Solo per Office 365 e gli aggiornamenti rapidi | Sì, per tutti i tipi di contenuto supportati elencati nella riga successiva della colonna. |
+| Tipi di contenuto supportati | **Tramite ConfigMgr:** </br> -Aggiornamenti rapidi </br> -Tutti gli aggiornamenti di Windows (a partire dalla versione 1910). Questa operazione non include gli aggiornamenti di Office.</br> </br> **Tramite Microsoft Cloud:**</br> - Windows e aggiornamenti della sicurezza</br> - Driver</br> - App di Windows Store</br> - App di Windows Store per le aziende | Tutti i tipi di contenuto ConfigMgr, incluse le immagini scaricate in [Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic) | Tutti i tipi di contenuto di ConfigMgr, ad eccezione delle immagini |
 | Controllo delle dimensioni della cache su disco | Sì | Sì | Sì |
 | Individuazione di un'origine peer | Automatica | Manuale (impostazione agente client) | Automatica |
 | Individuazione peer | Tramite il servizio cloud Ottimizzazione recapito (richiede l'accesso a Internet) | Tramite il punto di gestione (basato su gruppi di limiti client) | Multicast |
 | Reporting | Sì (con Windows Analytics) | Dashboard Origini dati del client di ConfigMgr | Dashboard Origini dati del client di ConfigMgr |
 | Controllo dell'utilizzo WAN | Sì (nativa e controllabile tramite impostazioni di Criteri di gruppo) | Gruppi di limiti | Solo supporto subnet |
-| Tipi di contenuto supportati | **Tramite Configuration Manager:** </br> Aggiornamenti rapidi </br> </br> **Tramite il cloud di Microsoft:**</br> Windows e aggiornamenti della sicurezza</br> Driver</br> App di Windows Store</br> Windows Store per le app aziendali | Tutti i tipi di contenuto ConfigMgr, incluse le immagini scaricate in [Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic) | Tutti i tipi di contenuto di ConfigMgr, ad eccezione delle immagini |
 | Gestione tramite ConfigMgr | Parziale (impostazione agente client) | Sì (impostazione agente client) | Sì (impostazione agente client) |
 
 
@@ -101,7 +113,7 @@ La selezione della tecnologia di peer caching appropriata per i file di installa
 
 Microsoft consiglia di ottimizzare il recapito degli aggiornamenti qualitativi di Windows 10 usando Configuration Manager con file di installazione rapida e una tecnologia di peer caching, a seconda delle esigenze. Questo approccio dovrebbe risolvere le problematiche associate al download nei dispositivi Windows 10 di contenuto di grandi dimensioni per l'installazione degli aggiornamenti qualitativi. È anche consigliabile mantenere i dispositivi Windows 10 aggiornati tramite la distribuzione degli aggiornamenti qualitativi ogni mese. Questa pratica riduce il delta del contenuto degli aggiornamenti qualitativi necessari per i dispositivi ogni mese. Con la riduzione del delta del contenuto si ottengono download di dimensioni più piccole dai punti di distribuzioni o dalle origini peer. 
 
-A causa della natura dei file di installazione rapida, le dimensioni del contenuto sono decisamente superiori rispetto al contenuto tradizionale dei file completi. Queste dimensioni comportano tempi più lunghi per il download degli aggiornamenti dal servizio Windows Update al server del sito di Configuration Manager. Aumenta anche la quantità di spazio su disco necessaria sia per il server del sito che per i punti di distribuzione. Il tempo totale necessario per scaricare e distribuire gli aggiornamenti qualitativi potrebbe essere più lungo. Tuttavia, i vantaggi a livello dei dispositivi dovrebbero essere notevoli durante il download e l'installazione degli aggiornamenti qualitativi per i dispositivi Windows 10.
+A causa della natura dei file di installazione rapida, le dimensioni del contenuto sono decisamente superiori rispetto al contenuto tradizionale dei file completi. Queste dimensioni comportano tempi più lunghi per il download degli aggiornamenti dal servizio Windows Update al server del sito di Configuration Manager. Aumenta anche la quantità di spazio su disco necessaria sia per il server del sito che per i punti di distribuzione. Il tempo totale necessario per scaricare e distribuire gli aggiornamenti qualitativi potrebbe essere più lungo. Tuttavia, i vantaggi a livello dei dispositivi dovrebbero essere notevoli durante il download e l'installazione degli aggiornamenti qualitativi per i dispositivi Windows 10. Per altre informazioni, vedere [uso di file di installazione rapida](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708456(v=ws.10)?#using-express-installation-files).
 
 Se il maggiore carico a livello di server per gli aggiornamenti di dimensioni maggiori non è sostenibile per l'adozione del supporto dell'installazione rapida, ma i vantaggi a livello di dispositivi sono cruciali per le attività aziendali e l'ambiente, Microsoft consiglia di usare [Windows Update for Business](/sccm/sum/deploy-use/integrate-windows-update-for-business-windows-10) con Configuration Manager. Windows Update for Business offre tutti i vantaggi dell'installazione rapida senza la necessità di scaricare, archiviare e distribuire i file di installazione rapida in tutto l'ambiente. I client scaricano il contenuto direttamente dal servizio Windows Update e in questo modo possono comunque usare Ottimizzazione recapito.
 
@@ -150,9 +162,20 @@ Le modifiche diventano effettive solo per gli eventuali nuovi aggiornamenti sinc
 
 
 #### <a name="is-there-any-way-to-see-how-much-content-is-downloaded-from-peers-using-delivery-optimization"></a>È disponibile un modo per visualizzare la quantità di contenuto scaricato dai peer con Ottimizzazione recapito?
-Windows 10, versione 1703 (e versioni successive) include due nuovi cmdlet di PowerShell, **Get-DeliveryOptimizationPerfSnap** e **Get-DeliveryOptimizationStatus**. Questi cmdlet forniscono informazioni dettagliate su Ottimizzazione recapito e l'utilizzo della cache. Per altre informazioni, vedere [Aggiorna ottimizzazione recapito per Windows 10](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#the-cloud-service-doesnt-see-other-peers-on-the-network)
+Windows 10, versione 1703 (e versioni successive) include due nuovi cmdlet di PowerShell, **Get-DeliveryOptimizationPerfSnap** e **Get-DeliveryOptimizationStatus**. Questi cmdlet forniscono informazioni dettagliate su Ottimizzazione recapito e l'utilizzo della cache. Per altre informazioni, vedere [ottimizzazione del recapito per gli aggiornamenti di Windows 10](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#the-cloud-service-doesnt-see-other-peers-on-the-network)
 
 
 #### <a name="how-do-clients-communicate-with-delivery-optimization-over-the-network"></a>In quale modo i client comunicano con Ottimizzazione recapito in rete?
 Per altre informazioni su porte di rete, requisiti proxy e nomi host per i firewall, vedere [Domande frequenti per Ottimizzazione recapito](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#frequently-asked-questions).
 
+## <a name="log-files"></a>File di registro
+
+Usare i file di log seguenti per monitorare i download Delta:
+
+- WUAHandler.log
+- DeltaDownload.log
+
+## <a name="next-steps"></a>Passaggi successivi
+
+- [Distribuire gli aggiornamenti software](/sccm/sum/deploy-use/deploy-software-updates)
+- [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates)

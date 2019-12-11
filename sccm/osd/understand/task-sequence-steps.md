@@ -2,7 +2,7 @@
 title: Passaggi della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni sui passaggi che è possibile aggiungere a una sequenza di attività di Configuration Manager.
-ms.date: 10/31/2019
+ms.date: 12/02/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e338432f9129d2c01fbd3346873e668bf36fc772
-ms.sourcegitcommit: 1e8945c5b9d281805380bd1622616a45494b51da
+ms.openlocfilehash: 0d2763586f7f42ed98a78be277b1fcf702913c55
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74117644"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74734682"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-A una sequenza di attività di Configuration Manager è possibile aggiungere i passaggi seguenti. Per informazioni sulla modifica di una sequenza di attività, vedere [Edit a task sequence](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_ModifyTaskSequence).  
+A una sequenza di attività di Configuration Manager è possibile aggiungere i passaggi seguenti. Per ulteriori informazioni, vedere [utilizzare l'editor della sequenza di attività](/configmgr/osd/understand/task-sequence-editor).  
 
 Le impostazioni seguenti sono comuni a tutti i passaggi della sequenza di attività:
 
@@ -38,9 +38,9 @@ La parte restante di questo articolo descrive le altre impostazioni della scheda
 
 - **Disattiva questo passaggio**: la sequenza di attività ignora questo passaggio quando viene eseguita in un computer. L'icona del passaggio è disattivata nell'editor della sequenza di attività.  
 
-- **Continua in caso di errori**: in caso di errore durante l'esecuzione del passaggio la sequenza di attività continua. Per altre informazioni, vedere [Considerazioni sulla pianificazione per l'automazione delle attività](/sccm/osd/plan-design/planning-considerations-for-automating-tasks#BKMK_TSGroups).  
+- **Continua in caso di errori**: in caso di errore durante l'esecuzione del passaggio la sequenza di attività continua. Per altre informazioni, vedere [Considerazioni sulla pianificazione per l'automazione delle attività](/configmgr/osd/plan-design/planning-considerations-for-automating-tasks#BKMK_TSGroups).  
 
-- **Aggiungi condizione**: la sequenza di attività valuta queste istruzioni condizionali per determinare se il passaggio viene eseguito. Per un esempio dell'uso di una variabile della sequenza di attività come condizione, vedere [Come usare le variabili della sequenza di attività](/sccm/osd/understand/using-task-sequence-variables#bkmk_access-condition).  
+- **Aggiungi condizione**: la sequenza di attività valuta queste istruzioni condizionali per determinare se il passaggio viene eseguito. Per un esempio dell'uso di una variabile della sequenza di attività come condizione, vedere [Come usare le variabili della sequenza di attività](/configmgr/osd/understand/using-task-sequence-variables#bkmk_access-condition). Per altre informazioni sulle condizioni, vedere [Editor della sequenza di attività-condizioni](/configmgr/osd/understand/task-sequence-editor#bkmk_conditions).
 
 Le sezioni seguenti relative a passaggi specifici della sequenza di attività descrivono altre impostazioni possibili della scheda **Opzioni**.
 
@@ -54,8 +54,8 @@ Questo passaggio può essere eseguito solo in Windows PE. Non viene eseguito nel
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDDataImageIndex](/sccm/osd/understand/task-sequence-variables#OSDDataImageIndex)  
-- [OSDWipeDestinationPartition](/sccm/osd/understand/task-sequence-variables#OSDWipeDestinationPartition)  
+- [OSDDataImageIndex](/configmgr/osd/understand/task-sequence-variables#OSDDataImageIndex)  
+- [OSDWipeDestinationPartition](/configmgr/osd/understand/task-sequence-variables#OSDWipeDestinationPartition)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Immagini** e quindi selezionare **Applica immagine dei dati**.
 
@@ -102,11 +102,11 @@ Questo passaggio della sequenza di attività può essere eseguito solo in Window
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDApplyDriverBootCriticalContentUniqueID](/sccm/osd/understand/task-sequence-variables#OSDApplyDriverBootCriticalContentUniqueID)  
-- [OSDApplyDriverBootCriticalHardwareComponent](/sccm/osd/understand/task-sequence-variables#OSDApplyDriverBootCriticalHardwareComponent)  
-- [OSDApplyDriverBootCriticalID](/sccm/osd/understand/task-sequence-variables#OSDApplyDriverBootCriticalID)  
-- [OSDApplyDriverBootCriticalINFFile](/sccm/osd/understand/task-sequence-variables#OSDApplyDriverBootCriticalINFFile)  
-- [OSDInstallDriversAdditionalOptions](/sccm/osd/understand/task-sequence-variables#OSDInstallDriversAdditionalOptions)<!--516679/2840016--> (a partire dalla versione 1806)  
+- [OSDApplyDriverBootCriticalContentUniqueID](/configmgr/osd/understand/task-sequence-variables#OSDApplyDriverBootCriticalContentUniqueID)  
+- [OSDApplyDriverBootCriticalHardwareComponent](/configmgr/osd/understand/task-sequence-variables#OSDApplyDriverBootCriticalHardwareComponent)  
+- [OSDApplyDriverBootCriticalID](/configmgr/osd/understand/task-sequence-variables#OSDApplyDriverBootCriticalID)  
+- [OSDApplyDriverBootCriticalINFFile](/configmgr/osd/understand/task-sequence-variables#OSDApplyDriverBootCriticalINFFile)  
+- [OSDInstallDriversAdditionalOptions](/configmgr/osd/understand/task-sequence-variables#OSDInstallDriversAdditionalOptions)<!--516679/2840016-->
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Driver** e quindi selezionare **Applica pacchetto driver**.
 
@@ -144,16 +144,16 @@ Questo passaggio della sequenza di attività può essere eseguito solo in Window
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDAdapter](/sccm/osd/understand/task-sequence-variables#OSDAdapter)  
-- [OSDAdapterCount](/sccm/osd/understand/task-sequence-variables#OSDAdapterCount)  
-- [OSDDNSDomain](/sccm/osd/understand/task-sequence-variables#OSDDNSDomain)  
-- [OSDDNSSuffixSearchOrder](/sccm/osd/understand/task-sequence-variables#OSDDNSSuffixSearchOrder)  
-- [OSDDomainName](/sccm/osd/understand/task-sequence-variables#OSDDomainName)  
-- [OSDDomainOUName](/sccm/osd/understand/task-sequence-variables#OSDDomainOUName)  
-- [OSDEnableTCPIPFiltering](/sccm/osd/understand/task-sequence-variables#OSDEnableTCPIPFiltering)  
-- [OSDJoinAccount](/sccm/osd/understand/task-sequence-variables#OSDJoinAccount)  
-- [OSDJoinPassword](/sccm/osd/understand/task-sequence-variables#OSDJoinPassword)  
-- [OSDWorkgroupName](/sccm/osd/understand/task-sequence-variables#OSDWorkgroupName)  
+- [OSDAdapter](/configmgr/osd/understand/task-sequence-variables#OSDAdapter)  
+- [OSDAdapterCount](/configmgr/osd/understand/task-sequence-variables#OSDAdapterCount)  
+- [OSDDNSDomain](/configmgr/osd/understand/task-sequence-variables#OSDDNSDomain)  
+- [OSDDNSSuffixSearchOrder](/configmgr/osd/understand/task-sequence-variables#OSDDNSSuffixSearchOrder)  
+- [OSDDomainName](/configmgr/osd/understand/task-sequence-variables#OSDDomainName)  
+- [OSDDomainOUName](/configmgr/osd/understand/task-sequence-variables#OSDDomainOUName)  
+- [OSDEnableTCPIPFiltering](/configmgr/osd/understand/task-sequence-variables#OSDEnableTCPIPFiltering)  
+- [OSDJoinAccount](/configmgr/osd/understand/task-sequence-variables#OSDJoinAccount)  
+- [OSDJoinPassword](/configmgr/osd/understand/task-sequence-variables#OSDJoinPassword)  
+- [OSDWorkgroupName](/configmgr/osd/understand/task-sequence-variables#OSDWorkgroupName)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Impostazioni** e quindi selezionare **Applica impostazioni di rete**.
 
@@ -171,7 +171,7 @@ Selezionare questa opzione per aggiungere il computer di destinazione al dominio
 
 #### <a name="account"></a>Account
 
-Selezionare **Imposta** per specificare un account con le autorizzazioni necessarie per l'aggiunta del computer al dominio. Nella finestra di dialogo **Account utente di Windows** immettere il nome utente nel formato seguente: `Domain\User`. Per altre informazioni, vedere [Account di aggiunta dominio](/sccm/core/plan-design/hierarchy/accounts#task-sequence-domain-join-account).
+Selezionare **Imposta** per specificare un account con le autorizzazioni necessarie per l'aggiunta del computer al dominio. Nella finestra di dialogo **Account utente di Windows** immettere il nome utente nel formato seguente: `Domain\User`. Per altre informazioni, vedere [Account di aggiunta dominio](/configmgr/core/plan-design/hierarchy/accounts#task-sequence-domain-join-account).
 
 #### <a name="adapter-settings"></a>Impostazioni della scheda
 
@@ -187,7 +187,7 @@ Specificare le configurazioni di rete per ogni scheda di rete nel computer. Sele
 ## <a name="BKMK_ApplyOperatingSystemImage"></a> Applica immagine del sistema operativo  
 
 > [!TIP]  
-> A partire da Windows 10 versione 1709 il supporto include più edizioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento del sistema operativo o di un'immagine del sistema operativo, verificare di selezionare un'[edizione supportata](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).  
+> A partire da Windows 10 versione 1709 il supporto include più edizioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento del sistema operativo o di un'immagine del sistema operativo, verificare di selezionare un'[edizione supportata](/configmgr/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).  
 
 Usare questo passaggio per installare un sistema operativo nel computer di destinazione.
 
@@ -200,9 +200,9 @@ Questo passaggio della sequenza di attività può essere eseguito solo in Window
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDConfigFileName](/sccm/osd/understand/task-sequence-variables#OSDConfigFileName)  
-- [OSDImageIndex](/sccm/osd/understand/task-sequence-variables#OSDImageIndex)  
-- [OSDTargetSystemDrive](/sccm/osd/understand/task-sequence-variables#OSDTargetSystemDrive)  
+- [OSDConfigFileName](/configmgr/osd/understand/task-sequence-variables#OSDConfigFileName)  
+- [OSDImageIndex](/configmgr/osd/understand/task-sequence-variables#OSDImageIndex)  
+- [OSDTargetSystemDrive](/configmgr/osd/understand/task-sequence-variables#OSDTargetSystemDrive)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Immagini** e quindi selezionare **Applica immagine del sistema operativo**.
 
@@ -302,15 +302,20 @@ Questo passaggio della sequenza di attività può essere eseguito solo in Window
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDComputerName](/sccm/osd/understand/task-sequence-variables#OSDComputerName-input)  
-- [OSDLocalAdminPassword](/sccm/osd/understand/task-sequence-variables#OSDLocalAdminPassword)  
-- [OSDProductKey](/sccm/osd/understand/task-sequence-variables#OSDProductKey)  
-- [OSDRandomAdminPassword](/sccm/osd/understand/task-sequence-variables#OSDRandomAdminPassword)  
-- [OSDRegisteredOrgName](/sccm/osd/understand/task-sequence-variables#OSDRegisteredOrgName-input)  
-- [OSDRegisteredUserName](/sccm/osd/understand/task-sequence-variables#OSDRegisteredUserName)  
-- [OSDServerLicenseConnectionLimit](/sccm/osd/understand/task-sequence-variables#OSDServerLicenseConnectionLimit)  
-- [OSDServerLicenseMode](/sccm/osd/understand/task-sequence-variables#OSDServerLicenseMode)  
-- [OSDTimeZone](/sccm/osd/understand/task-sequence-variables#OSDTimeZone-input)  
+- [OSDComputerName](/configmgr/osd/understand/task-sequence-variables#OSDComputerName-input)  
+- [OSDLocalAdminPassword](/configmgr/osd/understand/task-sequence-variables#OSDLocalAdminPassword)  
+- [OSDProductKey](/configmgr/osd/understand/task-sequence-variables#OSDProductKey)  
+- [OSDRandomAdminPassword](/configmgr/osd/understand/task-sequence-variables#OSDRandomAdminPassword)  
+- [OSDRegisteredOrgName](/configmgr/osd/understand/task-sequence-variables#OSDRegisteredOrgName-input)  
+- [OSDRegisteredUserName](/configmgr/osd/understand/task-sequence-variables#OSDRegisteredUserName)  
+- [OSDServerLicenseConnectionLimit](/configmgr/osd/understand/task-sequence-variables#OSDServerLicenseConnectionLimit)  
+- [OSDServerLicenseMode](/configmgr/osd/understand/task-sequence-variables#OSDServerLicenseMode)  
+- [OSDTimeZone](/configmgr/osd/understand/task-sequence-variables#OSDTimeZone-input)  
+- [OSDWindowsSettingsInputLocale](/configmgr/osd/understand/task-sequence-variables#OSDWindowsSettingsInputLocale)
+- [OSDWindowsSettingsSystemLocale](/configmgr/osd/understand/task-sequence-variables#OSDWindowsSettingsSystemLocale)
+- [OSDWindowsSettingsUILanguage](/configmgr/osd/understand/task-sequence-variables#OSDWindowsSettingsUILanguage)
+- [OSDWindowsSettingsUILanguageFallback](/configmgr/osd/understand/task-sequence-variables#OSDWindowsSettingsUILanguageFallback)
+- [OSDWindowsSettingsUserLocale](/configmgr/osd/understand/task-sequence-variables#OSDWindowsSettingsUserLocale)
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Impostazioni** e quindi selezionare **Applica impostazioni Windows**.
 
@@ -354,7 +359,24 @@ Selezionare questa opzione per abilitare l'account dell'amministratore locale me
 
 Specificare il fuso orario da configurare nel computer di destinazione. Il valore acquisito dal passaggio della sequenza di attività **Acquisisci impostazioni Windows** può sostituire questo valore.  
 
+#### <a name="language-settings"></a>Impostazione della lingua
 
+<!--5411057, 5138936-->
+
+A partire dalla versione 1910, controllare la configurazione della lingua durante la distribuzione del sistema operativo. Se si stanno già applicando queste impostazioni della lingua, la modifica consente di semplificare la sequenza di attività di distribuzione del sistema operativo. Invece di usare più passaggi per lingua o script distinti, usare una sola istanza per ogni lingua del passaggio con una condizione per tale lingua.
+
+Configurare le seguenti impostazioni:
+
+- Impostazioni locali di input (layout predefinito della tastiera)
+- Impostazioni locali di sistema
+- Lingua dell'interfaccia utente
+- Fallback della lingua dell'interfaccia utente
+- Impostazioni locali dell'utente
+
+Per altre informazioni sui valori dei file di risposte dell'installazione di Windows, vedere [Microsoft-Windows-International-Core](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-international-core).
+
+> [!NOTE]
+> Se si crea un file di risposte personalizzato per l'installazione di Windows (Unattend. Xml), questo passaggio sovrascrive tutti i valori esistenti. Per automatizzare un processo dinamico per queste impostazioni, usare le variabili della sequenza di attività correlate. Ad esempio, [OSDWindowsSettingsInputLocale](/configmgr/osd/understand/task-sequence-variables#OSDWindowsSettingsInputLocale). 
 
 ## <a name="BKMK_AutoApplyDrivers"></a> Applica automaticamente i driver  
 
@@ -383,12 +405,12 @@ Questo passaggio della sequenza di attività può essere eseguito solo in Window
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDAutoApplyDriverBestMatch](/sccm/osd/understand/task-sequence-variables#OSDAutoApplyDriverBestMatch)  
-- [OSDAutoApplyDriverCategoryList](/sccm/osd/understand/task-sequence-variables#OSDAutoApplyDriverCategoryList)  
-- [SMSTSDriverRequestConnectTimeOut](/sccm/osd/understand/task-sequence-variables#SMSTSDriverRequestConnectTimeOut)  
-- [SMSTSDriverRequestReceiveTimeOut](/sccm/osd/understand/task-sequence-variables#SMSTSDriverRequestReceiveTimeOut)  
-- [SMSTSDriverRequestResolveTimeOut](/sccm/osd/understand/task-sequence-variables#SMSTSDriverRequestResolveTimeOut)  
-- [SMSTSDriverRequestSendTimeOut](/sccm/osd/understand/task-sequence-variables#SMSTSDriverRequestSendTimeOut)  
+- [OSDAutoApplyDriverBestMatch](/configmgr/osd/understand/task-sequence-variables#OSDAutoApplyDriverBestMatch)  
+- [OSDAutoApplyDriverCategoryList](/configmgr/osd/understand/task-sequence-variables#OSDAutoApplyDriverCategoryList)  
+- [SMSTSDriverRequestConnectTimeOut](/configmgr/osd/understand/task-sequence-variables#SMSTSDriverRequestConnectTimeOut)  
+- [SMSTSDriverRequestReceiveTimeOut](/configmgr/osd/understand/task-sequence-variables#SMSTSDriverRequestReceiveTimeOut)  
+- [SMSTSDriverRequestResolveTimeOut](/configmgr/osd/understand/task-sequence-variables#SMSTSDriverRequestResolveTimeOut)  
+- [SMSTSDriverRequestSendTimeOut](/configmgr/osd/understand/task-sequence-variables#SMSTSDriverRequestSendTimeOut)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Driver** e quindi selezionare **Applica automaticamente i driver**.
 
@@ -431,8 +453,8 @@ Questo passaggio della sequenza di attività viene eseguito solo nel sistema ope
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDMigrateAdapterSettings](/sccm/osd/understand/task-sequence-variables#OSDMigrateAdapterSettings)  
-- [OSDMigrateNetworkMembership](/sccm/osd/understand/task-sequence-variables#OSDMigrateNetworkMembership)  
+- [OSDMigrateAdapterSettings](/configmgr/osd/understand/task-sequence-variables#OSDMigrateAdapterSettings)  
+- [OSDMigrateNetworkMembership](/configmgr/osd/understand/task-sequence-variables#OSDMigrateNetworkMembership)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Impostazioni** e quindi selezionare **Acquisisci impostazioni di rete**.
 
@@ -462,19 +484,19 @@ Configuration Manager acquisisce ogni volume (unità) nel computer di riferiment
 
 Il sistema operativo installato nel computer di riferimento deve essere una versione di Windows supportata da Configuration Manager. Usare lo strumento SysPrep per preparare il sistema operativo nel computer di riferimento. Il volume del sistema operativo installato deve essere uguale al volume di avvio.  
 
-Specificare un account con autorizzazioni di scrittura per la condivisione di rete selezionata. Per altre informazioni sull'account per l'acquisizione dell'immagine del sistema operativo, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#capture-os-image-account).
+Specificare un account con autorizzazioni di scrittura per la condivisione di rete selezionata. Per altre informazioni sull'account per l'acquisizione dell'immagine del sistema operativo, vedere [Account](/configmgr/core/plan-design/hierarchy/accounts#capture-os-image-account).
 
 Questo passaggio della sequenza di attività può essere eseguito solo in Windows PE. Non viene eseguito nel sistema operativo completo.
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDCaptureAccount](/sccm/osd/understand/task-sequence-variables#OSDCaptureAccount)  
-- [OSDCaptureAccountPassword](/sccm/osd/understand/task-sequence-variables#OSDCaptureAccountPassword)  
-- [OSDCaptureDestination](/sccm/osd/understand/task-sequence-variables#OSDCaptureDestination)  
-- [OSDImageCreator](/sccm/osd/understand/task-sequence-variables#OSDImageCreator)  
-- [OSDImageDescription](/sccm/osd/understand/task-sequence-variables#OSDImageDescription)  
-- [OSDImageVersion](/sccm/osd/understand/task-sequence-variables#OSDImageVersion)  
-- [OSDTargetSystemRoot](/sccm/osd/understand/task-sequence-variables#OSDTargetSystemRoot-input)  
+- [OSDCaptureAccount](/configmgr/osd/understand/task-sequence-variables#OSDCaptureAccount)  
+- [OSDCaptureAccountPassword](/configmgr/osd/understand/task-sequence-variables#OSDCaptureAccountPassword)  
+- [OSDCaptureDestination](/configmgr/osd/understand/task-sequence-variables#OSDCaptureDestination)  
+- [OSDImageCreator](/configmgr/osd/understand/task-sequence-variables#OSDImageCreator)  
+- [OSDImageDescription](/configmgr/osd/understand/task-sequence-variables#OSDImageDescription)  
+- [OSDImageVersion](/configmgr/osd/understand/task-sequence-variables#OSDImageVersion)  
+- [OSDTargetSystemRoot](/configmgr/osd/understand/task-sequence-variables#OSDTargetSystemRoot-input)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Immagini** e quindi selezionare **Acquisisci immagine del sistema operativo**.
 
@@ -508,7 +530,7 @@ Immettere l'account di Windows con autorizzazioni per la condivisione di rete sp
 
 Eseguire questo passaggio per usare l'Utilità di migrazione stato utente (USMT, User State Migration Tool) per acquisire lo stato utente e le impostazioni dal computer che esegue la sequenza di attività. Questo passaggio della sequenza di attività viene usato insieme al passaggio **Ripristina stato utente** . Questo passaggio crittografa sempre l'archivio degli stati USMT usando una chiave di crittografia generata e gestita da Configuration Manager.  
 
-Per altre informazioni sulla gestione dello stato utente durante la distribuzione di sistemi operativi, vedere [Manage user state](/sccm/osd/get-started/manage-user-state) (Gestire lo stato utente).  
+Per altre informazioni sulla gestione dello stato utente durante la distribuzione di sistemi operativi, vedere [Manage user state](/configmgr/osd/get-started/manage-user-state) (Gestire lo stato utente).  
 
 Per salvare e ripristinare le impostazioni dello stato utente da un punto di migrazione stato, usare questo passaggio con i passaggi **Richiedi archiviazione stati** e **Rilascia archiviazione stati**.  
 
@@ -518,14 +540,14 @@ Questo passaggio della sequenza di attività può essere eseguito solo in Window
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [_OSDMigrateUsmtPackageID](/sccm/osd/understand/task-sequence-variables#OSDMigrateUsmtPackageID)  
-- [OSDMigrateAdditionalCaptureOptions](/sccm/osd/understand/task-sequence-variables#OSDMigrateAdditionalCaptureOptions)  
-- [OSDMigrateConfigFiles](/sccm/osd/understand/task-sequence-variables#OSDMigrateConfigFiles)  
-- [OSDMigrateContinueOnLockedFiles](/sccm/osd/understand/task-sequence-variables#OSDMigrateContinueOnLockedFiles)  
-- [OSDMigrateEnableVerboseLogging](/sccm/osd/understand/task-sequence-variables#OSDMigrateEnableVerboseLogging)  
-- [OSDMigrateMode](/sccm/osd/understand/task-sequence-variables#OSDMigrateMode)  
-- [OSDMigrateSkipEncryptedFiles](/sccm/osd/understand/task-sequence-variables#OSDMigrateSkipEncryptedFiles)  
-- [OSDStateStorePath](/sccm/osd/understand/task-sequence-variables#OSDStateStorePath)  
+- [_OSDMigrateUsmtPackageID](/configmgr/osd/understand/task-sequence-variables#OSDMigrateUsmtPackageID)  
+- [OSDMigrateAdditionalCaptureOptions](/configmgr/osd/understand/task-sequence-variables#OSDMigrateAdditionalCaptureOptions)  
+- [OSDMigrateConfigFiles](/configmgr/osd/understand/task-sequence-variables#OSDMigrateConfigFiles)  
+- [OSDMigrateContinueOnLockedFiles](/configmgr/osd/understand/task-sequence-variables#OSDMigrateContinueOnLockedFiles)  
+- [OSDMigrateEnableVerboseLogging](/configmgr/osd/understand/task-sequence-variables#OSDMigrateEnableVerboseLogging)  
+- [OSDMigrateMode](/configmgr/osd/understand/task-sequence-variables#OSDMigrateMode)  
+- [OSDMigrateSkipEncryptedFiles](/configmgr/osd/understand/task-sequence-variables#OSDMigrateSkipEncryptedFiles)  
+- [OSDStateStorePath](/configmgr/osd/understand/task-sequence-variables#OSDStateStorePath)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Stato utente** e quindi selezionare **Acquisisci stato utente**.
 
@@ -591,12 +613,12 @@ Questo passaggio della sequenza di attività può essere eseguito in Windows PE 
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDComputerName](/sccm/osd/understand/task-sequence-variables#OSDComputerName-output)  
-- [OSDMigrateComputerName](/sccm/osd/understand/task-sequence-variables#OSDMigrateComputerName)  
-- [OSDMigrateRegistrationInfo](/sccm/osd/understand/task-sequence-variables#OSDMigrateRegistrationInfo)  
-- [OSDMigrateTimeZone](/sccm/osd/understand/task-sequence-variables#OSDMigrateTimeZone)  
-- [OSDRegisteredOrgName](/sccm/osd/understand/task-sequence-variables#OSDRegisteredOrgName-output)  
-- [OSDTimeZone](/sccm/osd/understand/task-sequence-variables#OSDTimeZone-output)  
+- [OSDComputerName](/configmgr/osd/understand/task-sequence-variables#OSDComputerName-output)  
+- [OSDMigrateComputerName](/configmgr/osd/understand/task-sequence-variables#OSDMigrateComputerName)  
+- [OSDMigrateRegistrationInfo](/configmgr/osd/understand/task-sequence-variables#OSDMigrateRegistrationInfo)  
+- [OSDMigrateTimeZone](/configmgr/osd/understand/task-sequence-variables#OSDMigrateTimeZone)  
+- [OSDRegisteredOrgName](/configmgr/osd/understand/task-sequence-variables#OSDRegisteredOrgName-output)  
+- [OSDTimeZone](/configmgr/osd/understand/task-sequence-variables#OSDTimeZone-output)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Impostazioni** e quindi selezionare **Acquisisci impostazioni Windows**.
 
@@ -659,10 +681,10 @@ Questo passaggio della sequenza di attività viene eseguito nel sistema operativ
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [SMSConnectNetworkFolderAccount](/sccm/osd/understand/task-sequence-variables#SMSConnectNetworkFolderAccount)  
-- [SMSConnectNetworkFolderDriveLetter](/sccm/osd/understand/task-sequence-variables#SMSConnectNetworkFolderDriveLetter)  
-- [SMSConnectNetworkFolderPassword](/sccm/osd/understand/task-sequence-variables#SMSConnectNetworkFolderPassword)  
-- [SMSConnectNetworkFolderPath](/sccm/osd/understand/task-sequence-variables#SMSConnectNetworkFolderPath)  
+- [SMSConnectNetworkFolderAccount](/configmgr/osd/understand/task-sequence-variables#SMSConnectNetworkFolderAccount)  
+- [SMSConnectNetworkFolderDriveLetter](/configmgr/osd/understand/task-sequence-variables#SMSConnectNetworkFolderDriveLetter)  
+- [SMSConnectNetworkFolderPassword](/configmgr/osd/understand/task-sequence-variables#SMSConnectNetworkFolderPassword)  
+- [SMSConnectNetworkFolderPath](/configmgr/osd/understand/task-sequence-variables#SMSConnectNetworkFolderPath)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Generale** e quindi selezionare **Connetti alla cartella di rete**.
 
@@ -680,7 +702,7 @@ Selezionare la lettera dell'unità locale da assegnare per questa connessione.
 
 #### <a name="account"></a>Account
 
-Selezionare **Imposta** per specificare l'account utente con le autorizzazioni per la connessione a questa cartella di rete. Per altre informazioni sull'account di connessione per la cartella di rete della sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-network-folder-connection-account).
+Selezionare **Imposta** per specificare l'account utente con le autorizzazioni per la connessione a questa cartella di rete. Per altre informazioni sull'account di connessione per la cartella di rete della sequenza di attività, vedere [Account](/configmgr/core/plan-design/hierarchy/accounts#task-sequence-network-folder-connection-account).
 
 
 
@@ -697,8 +719,8 @@ Questo passaggio può essere eseguito solo nel sistema operativo completo. Non v
 
 A partire dalla versione 1906, usare le seguenti variabili della sequenza di attività con questo passaggio:  
 
-- [OSDBitLockerRebootCount](/sccm/osd/understand/task-sequence-variables#OSDBitLockerRebootCount)  
-- [OSDBitLockerRebootCountOverride](/sccm/osd/understand/task-sequence-variables#OSDBitLockerRebootCountOverride)  
+- [OSDBitLockerRebootCount](/configmgr/osd/understand/task-sequence-variables#OSDBitLockerRebootCount)  
+- [OSDBitLockerRebootCountOverride](/configmgr/osd/understand/task-sequence-variables#OSDBitLockerRebootCountOverride)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Dischi** e quindi selezionare **Disattiva BitLocker**.
 
@@ -719,7 +741,7 @@ Disabilita BitLocker in un'unità specifica. Usare l'elenco a discesa per specif
 <!-- 4512937 -->
 A partire dalla versione 1906, usare questa opzione per specificare il numero di riavvii per mantenere BitLocker disabilitato. Anziché aggiungere più istanze di questo passaggio, impostare un valore compreso tra 1 (valore predefinito) e 15.
 
-È possibile impostare e modificare questo comportamento con le variabili della sequenza di attività [OSDBitLockerRebootCount](/sccm/osd/understand/task-sequence-variables#OSDBitLockerRebootCount) e [OSDBitLockerRebootCountOverride](/sccm/osd/understand/task-sequence-variables#OSDBitLockerRebootCountOverride).
+È possibile impostare e modificare questo comportamento con le variabili della sequenza di attività [OSDBitLockerRebootCount](/configmgr/osd/understand/task-sequence-variables#OSDBitLockerRebootCount) e [OSDBitLockerRebootCountOverride](/configmgr/osd/understand/task-sequence-variables#OSDBitLockerRebootCountOverride).
 
 
 ## <a name="BKMK_DownloadPackageContent"></a> Scarica contenuto pacchetto  
@@ -730,7 +752,7 @@ Usare questo passaggio per scaricare uno dei tipi di pacchetto seguenti:
 - Pacchetti di aggiornamento del sistema operativo  
 - Pacchetti driver  
 - Pacchetti  
-- Immagini d'avvio (nella versione 1810 e precedenti)  
+- Immagini d'avvio <sup> [Nota 1](#bkmk_note1)</sup>  
 
 Questo passaggio funziona bene in una sequenza di attività per eseguire l'aggiornamento di un sistema operativo negli scenari seguenti:  
 
@@ -744,7 +766,7 @@ Questo passaggio funziona bene in una sequenza di attività per eseguire l'aggio
 Questo passaggio viene eseguito nel sistema operativo completo o in Windows PE. L'opzione relativa al salvataggio del pacchetto nella cache del client di Configuration Manager non è supportata in Windows PE.
 
 > [!NOTE]  
-> L'attività **Scarica contenuto pacchetto** non è supportata per l'uso con supporti autonomi. Per ulteriori informazioni, vedere [azioni non supportate per i supporti](/sccm/osd/deploy-use/create-stand-alone-media#unsupported-actions-for-stand-alone-media)autonomi.  
+> L'attività **Scarica contenuto pacchetto** non è supportata per l'uso con supporti autonomi. Per ulteriori informazioni, vedere [azioni non supportate per i supporti](/configmgr/osd/deploy-use/create-stand-alone-media#unsupported-actions-for-stand-alone-media)autonomi.  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Software** e quindi selezionare **Scarica contenuto pacchetto**.
 
@@ -776,7 +798,24 @@ Configuration Manager aggiunge un suffisso numerico al nome della variabile. Ad 
 
 Se la sequenza di attività non riesce a scaricare un pacchetto, inizia a scaricare il pacchetto successivo nell'elenco.  
 
+### <a name="bkmk_note1"></a>Nota 1: uso delle immagini d'avvio nel passaggio Scarica contenuto pacchetto
 
+*Si applica alla versione 1910 e successive*<!-- SCCMDocs-pr #4202 -->
+
+Se si configurano le [proprietà della sequenza di attività](/configmgr/osd/deploy-use/manage-task-sequences-to-automate-tasks#bkmk_prop-advanced) per l'uso di **un'immagine di avvio**, l'aggiunta di un'immagine di avvio a questo passaggio è ridondante. Aggiungere un'immagine di avvio a questo passaggio solo se non è specificata nelle proprietà della sequenza di attività.
+
+#### <a name="example-use-case"></a>Esempio di caso d'uso
+
+- Una singola sequenza di attività per il pre-download del contenuto:
+  - Nessuna immagine di avvio associata.
+  - Viene eseguita solo nel sistema operativo completo, probabilmente senza interazione dell'utente.
+  - USA più passaggi per **scaricare il contenuto del pacchetto** con le condizioni. A seconda della lingua e dell'architettura specifiche, Scarica il contenuto nella cache del client per prepararsi alla sequenza di attività di distribuzione del sistema operativo.
+  - Esiste solo un'istanza di questa sequenza di attività, con tutte le possibili opzioni di contenuto.
+
+- Più sequenze di attività di distribuzione del sistema operativo:
+  - Una normale sequenza di attività di distribuzione del sistema operativo.
+  - Dispone di un'immagine di avvio a cui viene fatto riferimento nelle relative proprietà.
+  - Sono presenti più istanze di questa sequenza di attività, con immagini di avvio diverse in base alle esigenze di architettura e lingua
 
 ## <a name="BKMK_EnableBitLocker"></a> Attiva BitLocker  
 
@@ -791,8 +830,8 @@ Questo passaggio può essere eseguito solo nel sistema operativo completo. Non v
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDBitLockerRecoveryPassword](/sccm/osd/understand/task-sequence-variables#OSDBitLockerRecoveryPassword)  
-- [OSDBitLockerStartupKey](/sccm/osd/understand/task-sequence-variables#OSDBitLockerStartupKey)  
+- [OSDBitLockerRecoveryPassword](/configmgr/osd/understand/task-sequence-variables#OSDBitLockerRecoveryPassword)  
+- [OSDBitLockerStartupKey](/configmgr/osd/understand/task-sequence-variables#OSDBitLockerStartupKey)  
 
 Quando si specifica **Solo TPM**, **TPM e chiave di avvio su USB** o **TPM e PIN**, lo stato di TPM (Trusted Platform Module) deve essere il seguente perché sia possibile eseguire il passaggio **Attiva BitLocker**:  
 
@@ -836,7 +875,10 @@ Per crittografare un'unità dati specifica, non del sistema operativo, seleziona
 #### <a name="use-full-disk-encryption"></a>Usa la crittografia del disco completo
 
 <!--SCCMDocs-pr issue 2671-->
-Per impostazione predefinita, questo passaggio consente di crittografare solo lo spazio usato nell'unità. Questo comportamento predefinito è consigliato perché è più veloce ed efficiente. A partire dalla versione 1806, se l'organizzazione richiede di crittografare l'intera unità durante l'installazione, abilitare questa opzione. Installazione di Windows attende la crittografia dell'intera unità, operazione che richiede molto tempo soprattutto nelle unità di grandi dimensioni.
+Per impostazione predefinita, questo passaggio consente di crittografare solo lo spazio usato nell'unità. Questo comportamento predefinito è consigliato perché è più veloce ed efficiente. Se l'organizzazione richiede di crittografare l'intera unità durante l'installazione, abilitare questa opzione. Installazione di Windows attende la crittografia dell'intera unità, operazione che richiede molto tempo soprattutto nelle unità di grandi dimensioni.
+
+> [!TIP]
+> A partire dalla versione 1910, è possibile creare e distribuire i criteri di gestione di BitLocker, che usano la crittografia *completa del disco* . Per gestire BitLocker nei dispositivi dopo la distribuzione del sistema operativo da parte della sequenza di attività, abilitare questa opzione. Per ulteriori informazioni, vedere [pianificare la gestione di BitLocker](/configmgr/protect/plan-design/bitlocker-management).
 
 #### <a name="choose-where-to-create-the-recovery-key"></a>Scegliere dove creare la chiave di ripristino
 
@@ -861,10 +903,10 @@ Questo passaggio può essere eseguito solo in Windows PE. Non viene eseguito nel
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDDiskIndex](/sccm/osd/understand/task-sequence-variables#OSDDiskIndex)  
-- [OSDGPTBootDisk](/sccm/osd/understand/task-sequence-variables#OSDGPTBootDisk)  
-- [OSDPartitions](/sccm/osd/understand/task-sequence-variables#OSDPartitions)  
-- [OSDPartitionStyle](/sccm/osd/understand/task-sequence-variables#OSDPartitionStyle)  
+- [OSDDiskIndex](/configmgr/osd/understand/task-sequence-variables#OSDDiskIndex)  
+- [OSDGPTBootDisk](/configmgr/osd/understand/task-sequence-variables#OSDGPTBootDisk)  
+- [OSDPartitions](/configmgr/osd/understand/task-sequence-variables#OSDPartitions)  
+- [OSDPartitionStyle](/configmgr/osd/understand/task-sequence-variables#OSDPartitionStyle)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Dischi** e quindi selezionare **Formato e disco partizione**.
 
@@ -924,7 +966,7 @@ Le applicazioni devono soddisfare i criteri seguenti:
 - Non deve dare inizio autonomamente a un riavvio. L'applicazione deve richiedere un riavvio usando il codice di riavvio standard, ovvero 3010. Questo comportamento garantisce che questo passaggio gestisca correttamente il riavvio. Se l'applicazione restituisce un codice di uscita 3010, il motore della sequenza di attività riavvia il computer. Dopo il riavvio, la sequenza di attività continua automaticamente.  
 
 > [!Note]
-> Se l'applicazione [Controlla l'esecuzione dei file eseguibili](/sccm/apps/deploy-use/deploy-applications#bkmk_exe-check), la sequenza di attività non riuscirà a installarla. Se questo passaggio non viene configurato per continuare in caso di errore, l'intera sequenza di attività avrà esito negativo.
+> Se l'applicazione [Controlla l'esecuzione dei file eseguibili](/configmgr/apps/deploy-use/deploy-applications#bkmk_exe-check), la sequenza di attività non riuscirà a installarla. Se questo passaggio non viene configurato per continuare in caso di errore, l'intera sequenza di attività avrà esito negativo.
 
 Quando si esegue questo passaggio, l'applicazione verifica l'applicabilità delle regole dei requisiti e del metodo di rilevamento nei tipi di distribuzione dell'applicazione stessa. In base ai risultati di questa verifica, l'applicazione installa il tipo di distribuzione applicabile. Se il tipo di distribuzione contiene dipendenze, il tipo di distribuzione dipendente viene valutato e installato come parte di questo passaggio. Le dipendenze delle applicazioni non sono supportate per i supporti autonomi.  
 
@@ -938,13 +980,13 @@ Questo passaggio della sequenza di attività viene eseguito solo nel sistema ope
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [_TSAppInstallStatus](/sccm/osd/understand/task-sequence-variables#TSAppInstallStatus)  
-- [SMSTSMPListRequestTimeoutEnabled](/sccm/osd/understand/task-sequence-variables#SMSTSMPListRequestTimeoutEnabled)  
-- [SMSTSMPListRequestTimeout](/sccm/osd/understand/task-sequence-variables#SMSTSMPListRequestTimeout)  
-- [TSErrorOnWarning](/sccm/osd/understand/task-sequence-variables#TSErrorOnWarning)  
+- [_TSAppInstallStatus](/configmgr/osd/understand/task-sequence-variables#TSAppInstallStatus)  
+- [SMSTSMPListRequestTimeoutEnabled](/configmgr/osd/understand/task-sequence-variables#SMSTSMPListRequestTimeoutEnabled)  
+- [SMSTSMPListRequestTimeout](/configmgr/osd/understand/task-sequence-variables#SMSTSMPListRequestTimeout)  
+- [TSErrorOnWarning](/configmgr/osd/understand/task-sequence-variables#TSErrorOnWarning)  
 
 > [!NOTE]  
-> Se il client non riesce a recuperare l'elenco dei punti di gestione dai servizi di posizione, usare le variabili della sequenza di attività **SMSTSMPListRequestTimeoutEnabled** e **SMSTSMPListRequestTimeout**. Queste variabili specificano quanti millisecondi deve attendere una sequenza di attività prima di provare nuovamente a installare un'applicazione. Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables).
+> Se il client non riesce a recuperare l'elenco dei punti di gestione dai servizi di posizione, usare le variabili della sequenza di attività **SMSTSMPListRequestTimeoutEnabled** e **SMSTSMPListRequestTimeout**. Queste variabili specificano quanti millisecondi deve attendere una sequenza di attività prima di provare nuovamente a installare un'applicazione. Per altre informazioni, vedere [Variabili della sequenza di attività](/configmgr/osd/understand/task-sequence-variables).
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Software** e quindi selezionare **Installa applicazione**.
 
@@ -1047,13 +1089,13 @@ I programmi che usano l'opzione **Esegui prima un altro programma** per installa
 >
 > `WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE`  
 >
-> Per altre informazioni sulla creazione di supporti autonomi, vedere [Create stand-alone media](/sccm/osd/deploy-use/create-stand-alone-media) (Creare supporti autonomi).  
+> Per altre informazioni sulla creazione di supporti autonomi, vedere [Create stand-alone media](/configmgr/osd/deploy-use/create-stand-alone-media) (Creare supporti autonomi).  
 
 Questo passaggio della sequenza di attività viene eseguito solo nel sistema operativo completo. Non viene eseguito in Windows PE.  
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDDoNotLogCommand](/sccm/osd/understand/task-sequence-variables#OSDDoNotLogCommand) (a partire dalla versione 1806)<!--1358493-->  
+- [OSDDoNotLogCommand](/configmgr/osd/understand/task-sequence-variables#OSDDoNotLogCommand) <!--1358493-->  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Software** e quindi selezionare **Installa pacchetto**.
 Gestire questo passaggio con i cmdlet di PowerShell seguenti:<!-- SCCMDocs #1118 -->
@@ -1122,14 +1164,14 @@ Questo passaggio della sequenza di attività viene eseguito solo nel sistema ope
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [SMSInstallUpdateTarget](/sccm/osd/understand/task-sequence-variables#SMSInstallUpdateTarget)  
-- [SMSTSMPListRequestTimeoutEnabled](/sccm/osd/understand/task-sequence-variables#SMSTSMPListRequestTimeoutEnabled)  
-- [SMSTSMPListRequestTimeout](/sccm/osd/understand/task-sequence-variables#SMSTSMPListRequestTimeout)  
-- [SMSTSSoftwareUpdateScanTimeout](/sccm/osd/understand/task-sequence-variables#SMSTSSoftwareUpdateScanTimeout)  
-- [SMSTSWaitForSecondReboot](/sccm/osd/understand/task-sequence-variables#SMSTSWaitForSecondReboot)  
+- [SMSInstallUpdateTarget](/configmgr/osd/understand/task-sequence-variables#SMSInstallUpdateTarget)  
+- [SMSTSMPListRequestTimeoutEnabled](/configmgr/osd/understand/task-sequence-variables#SMSTSMPListRequestTimeoutEnabled)  
+- [SMSTSMPListRequestTimeout](/configmgr/osd/understand/task-sequence-variables#SMSTSMPListRequestTimeout)  
+- [SMSTSSoftwareUpdateScanTimeout](/configmgr/osd/understand/task-sequence-variables#SMSTSSoftwareUpdateScanTimeout)  
+- [SMSTSWaitForSecondReboot](/configmgr/osd/understand/task-sequence-variables#SMSTSWaitForSecondReboot)  
 
 > [!NOTE]  
-> Se il client non riesce a recuperare l'elenco dei punti di gestione dai servizi di posizione, usare le variabili **SMSTSMPListRequestTimeoutEnabled** e **SMSTSMPListRequestTimeout**. Queste variabili specificano quanti millisecondi deve attendere una sequenza di attività prima di provare nuovamente a installare un'applicazione o un aggiornamento del software. Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables).  
+> Se il client non riesce a recuperare l'elenco dei punti di gestione dai servizi di posizione, usare le variabili **SMSTSMPListRequestTimeoutEnabled** e **SMSTSMPListRequestTimeout**. Queste variabili specificano quanti millisecondi deve attendere una sequenza di attività prima di provare nuovamente a installare un'applicazione o un aggiornamento del software. Per altre informazioni, vedere [Variabili della sequenza di attività](/configmgr/osd/understand/task-sequence-variables).  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Software** e quindi selezionare **Installa aggiornamenti software**.
 
@@ -1140,7 +1182,7 @@ Gestire questo passaggio con i cmdlet di PowerShell seguenti:<!-- SCCMDocs #1118
 - [Remove-CMTSStepInstallUpdate](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepinstallupdate?view=sccm-ps)
 - [Set-CMTSStepInstallUpdate](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepinstallupdate?view=sccm-ps)
 
-Per altre indicazioni e un diagramma di flusso tecnico per questo passaggio, vedere [Installa aggiornamenti software](/sccm/osd/understand/install-software-updates).
+Per altre indicazioni e un diagramma di flusso tecnico per questo passaggio, vedere [Installa aggiornamenti software](/configmgr/osd/understand/install-software-updates).
 
 ### <a name="properties"></a>Proprietà  
 
@@ -1156,13 +1198,13 @@ Selezionare questa opzione per installare tutti gli aggiornamenti software dispo
 
 #### <a name="evaluate-software-updates-from-cached-scan-results"></a>Valuta gli aggiornamenti software dai risultati di analisi memorizzati nella cache
 
-Per impostazione predefinita, questo passaggio usa i risultati di analisi memorizzati nella cache dall'agente Windows Update. Disabilitare questa opzione per indicare all'agente Windows Update di scaricare il catalogo più recente dal punto di aggiornamento software. Abilitare questa opzione quando si usa una sequenza di attività per [acquisire e compilare un'immagine del sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-capture-an-operating-system). In questo scenario è probabile che si presenti numero elevato di aggiornamenti software.
+Per impostazione predefinita, questo passaggio usa i risultati di analisi memorizzati nella cache dall'agente Windows Update. Disabilitare questa opzione per indicare all'agente Windows Update di scaricare il catalogo più recente dal punto di aggiornamento software. Abilitare questa opzione quando si usa una sequenza di attività per [acquisire e compilare un'immagine del sistema operativo](/configmgr/osd/deploy-use/create-a-task-sequence-to-capture-an-operating-system). In questo scenario è probabile che si presenti numero elevato di aggiornamenti software.
 
 Molti di questi aggiornamenti hanno dipendenze. Ad esempio, viene visualizzata l'indicazione di installare l'aggiornamento ABC prima dell'aggiornamento XYZ, a seconda dei casi. Se si disabilita questa impostazione e si distribuisce la sequenza di attività a molti client, tutti i client si connettono contemporaneamente al punto di aggiornamento software. Questo comportamento causa problemi di prestazioni durante il processo e il download del catalogo degli aggiornamenti.
 
 Nella maggior parte dei casi, usare l'impostazione predefinita per usare i risultati di analisi memorizzati nella cache.
 
-La variabile **SMSTSSoftwareUpdateScanTimeout** controlla il timeout dell'analisi degli aggiornamenti software durante questo passaggio. Il valore predefinito è 60 minuti. Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables#SMSTSSoftwareUpdateScanTimeout).
+La variabile **SMSTSSoftwareUpdateScanTimeout** controlla il timeout dell'analisi degli aggiornamenti software durante questo passaggio. Il valore predefinito è 60 minuti. Per altre informazioni, vedere [Variabili della sequenza di attività](/configmgr/osd/understand/task-sequence-variables#SMSTSSoftwareUpdateScanTimeout).
 
 ### <a name="options"></a>Opzioni  
 
@@ -1173,7 +1215,7 @@ Oltre alle opzioni predefinite, nella scheda **Opzioni** di questo passaggio del
 Se uno degli aggiornamenti riavvia il computer in modo imprevisto, ripetere questo passaggio. Per impostazione predefinita, il passaggio abilita questa impostazione con due tentativi. È possibile specificare da uno a cinque tentativi.  
 
 > [!NOTE]  
-> Configurare la variabile **SMSTSWaitForSecondReboot** per specificare i secondi di sospensione della sequenza di attività dopo il riavvio del computer in questo scenario. Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables#SMSTSWaitForSecondReboot).  
+> Configurare la variabile **SMSTSWaitForSecondReboot** per specificare i secondi di sospensione della sequenza di attività dopo il riavvio del computer in questo scenario. Per altre informazioni, vedere [Variabili della sequenza di attività](/configmgr/osd/understand/task-sequence-variables#SMSTSWaitForSecondReboot).  
 
 
 
@@ -1185,13 +1227,13 @@ Questo passaggio della sequenza di attività viene eseguito solo nel sistema ope
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDJoinAccount](/sccm/osd/understand/task-sequence-variables#OSDJoinAccount)  
-- [OSDJoinDomainName](/sccm/osd/understand/task-sequence-variables#OSDJoinDomainName)  
-- [OSDJoinDomainOUName](/sccm/osd/understand/task-sequence-variables#OSDJoinDomainOUName)  
-- [OSDJoinPassword](/sccm/osd/understand/task-sequence-variables#OSDJoinPassword)  
-- [OSDJoinSkipReboot](/sccm/osd/understand/task-sequence-variables#OSDJoinSkipReboot)  
-- [OSDJoinType](/sccm/osd/understand/task-sequence-variables#OSDJoinType)  
-- [OSDJoinWorkgroupName](/sccm/osd/understand/task-sequence-variables#OSDJoinWorkgroupName)  
+- [OSDJoinAccount](/configmgr/osd/understand/task-sequence-variables#OSDJoinAccount)  
+- [OSDJoinDomainName](/configmgr/osd/understand/task-sequence-variables#OSDJoinDomainName)  
+- [OSDJoinDomainOUName](/configmgr/osd/understand/task-sequence-variables#OSDJoinDomainOUName)  
+- [OSDJoinPassword](/configmgr/osd/understand/task-sequence-variables#OSDJoinPassword)  
+- [OSDJoinSkipReboot](/configmgr/osd/understand/task-sequence-variables#OSDJoinSkipReboot)  
+- [OSDJoinType](/configmgr/osd/understand/task-sequence-variables#OSDJoinType)  
+- [OSDJoinWorkgroupName](/configmgr/osd/understand/task-sequence-variables#OSDJoinWorkgroupName)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Generale** e quindi selezionare **Aggiunta a dominio o gruppo di lavoro**.
 
@@ -1211,7 +1253,7 @@ Facoltativamente, immettere o selezionare un'unità organizzativa nel dominio sp
 
 #### <a name="enter-the-account-which-has-permission-to-join-the-domain"></a>Immettere l'account con le autorizzazioni per l'aggiunta al dominio
 
-Selezionare **Imposta** per immettere il nome utente e la password di un account con autorizzazioni per l'aggiunta al dominio. Immettere l'account nel formato: `Domain\account`. Per altre informazioni sull'account di aggiunta del dominio della sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-domain-join-account).  
+Selezionare **Imposta** per immettere il nome utente e la password di un account con autorizzazioni per l'aggiunta al dominio. Immettere l'account nel formato: `Domain\account`. Per altre informazioni sull'account di aggiunta del dominio della sequenza di attività, vedere [Account](/configmgr/core/plan-design/hierarchy/accounts#task-sequence-domain-join-account).  
 
 
 
@@ -1242,8 +1284,8 @@ Questo passaggio può essere eseguito solo nel sistema operativo completo. Non v
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDKeepActivation](/sccm/osd/understand/task-sequence-variables#OSDKeepActivation)  
-- [OSDTargetSystemRoot](/sccm/osd/understand/task-sequence-variables#OSDTargetSystemRoot-output)  
+- [OSDKeepActivation](/configmgr/osd/understand/task-sequence-variables#OSDKeepActivation)  
+- [OSDTargetSystemRoot](/configmgr/osd/understand/task-sequence-variables#OSDTargetSystemRoot-output)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Immagini** e quindi selezionare **Prepara Windows per l'acquisizione**.
 
@@ -1262,9 +1304,9 @@ Selezionare questa opzione per impedire a Sysprep di reimpostare il flag di atti
 #### <a name="shutdown-the-computer-after-running-this-action"></a>Arresta il computer dopo l'esecuzione di questa azione
 
 <!--SCCMDocs-pr issue 2695-->
-A partire dalla versione 1806, questa opzione indica a Sysprep di arrestare il computer in sostituzione del comportamento di riavvio predefinito.
+Questa opzione indica a Sysprep di arrestare il computer in sostituzione del comportamento di riavvio predefinito.
 
-A partire dalla versione 1810, questo passaggio viene usato nella sequenza di attività [Windows Autopilot per dispositivi esistenti](/sccm/osd/deploy-use/windows-autopilot-for-existing-devices).
+A partire dalla versione 1810, questo passaggio viene usato nella sequenza di attività [Windows Autopilot per dispositivi esistenti](/configmgr/osd/deploy-use/windows-autopilot-for-existing-devices).
 
 - Se si vuole che la sequenza di attività aggiorni il dispositivo e quindi avvii immediatamente la Configurazione guidata per Autopilot, lasciare deselezionata questa opzione.  
 
@@ -1294,7 +1336,7 @@ Specificare l'unità per cui si vuole abilitare BitLocker. BitLocker consente di
 #### <a name="use-full-disk-encryption"></a>Usa la crittografia del disco completo
 
 <!--SCCMDocs-pr issue 2671-->
-Per impostazione predefinita, questo passaggio consente di crittografare solo lo spazio usato nell'unità. Questo comportamento predefinito è consigliato perché è più veloce ed efficiente. A partire dalla versione 1806, se l'organizzazione richiede di crittografare l'intera unità durante l'installazione, abilitare questa opzione. Installazione di Windows attende la crittografia dell'intera unità, operazione che richiede molto tempo soprattutto nelle unità di grandi dimensioni.
+Per impostazione predefinita, questo passaggio consente di crittografare solo lo spazio usato nell'unità. Questo comportamento predefinito è consigliato perché è più veloce ed efficiente. Se l'organizzazione richiede di crittografare l'intera unità durante l'installazione, abilitare questa opzione. Installazione di Windows attende la crittografia dell'intera unità, operazione che richiede molto tempo soprattutto nelle unità di grandi dimensioni.
 
 #### <a name="skip-this-step-for-computers-that-do-not-have-a-tpm-or-when-tpm-is-not-enabled"></a>Ignora questo passaggio per computer senza TPM o con TPM non abilitato
 
@@ -1306,7 +1348,7 @@ Selezionare questa opzione per ignorare la crittografia delle unità in un compu
 
 Usare questo passaggio per notificare al punto di migrazione stato il completamento dell'azione di acquisizione o ripristino. Usare questo passaggio insieme ai passaggi **Richiedi archiviazione stati**, **Acquisisci stato utente** e **Ripristina stato utente**. Usare questi passaggi per eseguire la migrazione di dati dello stato utente mediante un punto di migrazione stato e l'Utilità di migrazione stato utente (USMT).  
 
-Per altre informazioni sulla gestione dello stato utente durante la distribuzione di sistemi operativi, vedere [Manage user state](/sccm/osd/get-started/manage-user-state) (Gestire lo stato utente).  
+Per altre informazioni sulla gestione dello stato utente durante la distribuzione di sistemi operativi, vedere [Manage user state](/configmgr/osd/get-started/manage-user-state) (Gestire lo stato utente).  
 
 Se si usa il passaggio **Richiedi archiviazione stati** per richiedere l'accesso a un punto di migrazione per *acquisire* lo stato utente, questo passaggio segnala al punto di migrazione stato che il processo di acquisizione è stato completato. Quindi il punto di migrazione stato contrassegna i dati dello stato utente come disponibili per il ripristino. Il punto di migrazione stato imposta le autorizzazioni di controllo dell'accesso per i dati dello stato utente, in modo che solo il computer di ripristino disponga di accesso di sola lettura.  
 
@@ -1319,7 +1361,7 @@ Questo passaggio può essere eseguito solo nel sistema operativo completo. Non v
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDStateStorePath](/sccm/osd/understand/task-sequence-variables#OSDStateStorePath)  
+- [OSDStateStorePath](/configmgr/osd/understand/task-sequence-variables#OSDStateStorePath)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Stato utente** e quindi selezionare **Rilascia archiviazione stati**.
 
@@ -1333,7 +1375,7 @@ Questo passaggio non richiede alcuna impostazione nella scheda **Proprietà**.
 
 Usare questo passaggio per richiedere l'accesso a un punto di migrazione stato durante l'acquisizione o il ripristino dello stato.  
 
-Per altre informazioni sulla gestione dello stato utente durante la distribuzione di sistemi operativi, vedere [Manage user state](/sccm/osd/get-started/manage-user-state) (Gestire lo stato utente).  
+Per altre informazioni sulla gestione dello stato utente durante la distribuzione di sistemi operativi, vedere [Manage user state](/configmgr/osd/get-started/manage-user-state) (Gestire lo stato utente).  
 
 Usare questo passaggio insieme ai passaggi **Rilascia archiviazione stati**, **Acquisisci stato utente** e **Ripristina stato utente**. Usare questi passaggi per eseguire la migrazione dello stato del computer mediante un punto di migrazione stato e l'Utilità di migrazione stato utente (USMT).  
 
@@ -1344,10 +1386,10 @@ Questo passaggio viene eseguito nel sistema operativo completo e in Windows PE p
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDStateFallbackToNAA](/sccm/osd/understand/task-sequence-variables#OSDStateFallbackToNAA)  
-- [OSDStateSMPRetryCount](/sccm/osd/understand/task-sequence-variables#OSDStateSMPRetryCount)  
-- [OSDStateSMPRetryTime](/sccm/osd/understand/task-sequence-variables#OSDStateSMPRetryTime)  
-- [OSDStateStorePath](/sccm/osd/understand/task-sequence-variables#OSDStateStorePath)  
+- [OSDStateFallbackToNAA](/configmgr/osd/understand/task-sequence-variables#OSDStateFallbackToNAA)  
+- [OSDStateSMPRetryCount](/configmgr/osd/understand/task-sequence-variables#OSDStateSMPRetryCount)  
+- [OSDStateSMPRetryTime](/configmgr/osd/understand/task-sequence-variables#OSDStateSMPRetryTime)  
+- [OSDStateStorePath](/configmgr/osd/understand/task-sequence-variables#OSDStateStorePath)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Stato utente** e quindi selezionare **Richiedi archiviazione stati**.
 
@@ -1389,8 +1431,8 @@ Questo passaggio può essere eseguito nel sistema operativo completo o in Window
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [SMSRebootMessage](/sccm/osd/understand/task-sequence-variables#SMSRebootMessage)  
-- [SMSRebootTimeout](/sccm/osd/understand/task-sequence-variables#SMSRebootTimeout)  
+- [SMSRebootMessage](/configmgr/osd/understand/task-sequence-variables#SMSRebootMessage)  
+- [SMSRebootTimeout](/configmgr/osd/understand/task-sequence-variables#SMSRebootTimeout)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Generale** e quindi selezionare **Riavvia computer**.
 
@@ -1431,7 +1473,7 @@ Specificare la quantità di tempo in secondi prima del riavvio del computer di d
 
 Usare questo passaggio per avviare l'Utilità di migrazione stato utente (USMT) e ripristinare lo stato utente e le impostazioni nel computer di destinazione. Usare questo passaggio in combinazione con il passaggio **Acquisisci stato utente**.  
 
-Per altre informazioni sulla gestione dello stato utente durante la distribuzione di sistemi operativi, vedere [Manage user state](/sccm/osd/get-started/manage-user-state) (Gestire lo stato utente).  
+Per altre informazioni sulla gestione dello stato utente durante la distribuzione di sistemi operativi, vedere [Manage user state](/configmgr/osd/get-started/manage-user-state) (Gestire lo stato utente).  
 
 Usare questo passaggio con i passaggi **Richiedi archiviazione stati** e **Rilascia archiviazione stati** per salvare o ripristinare le impostazioni dello stato con un punto di migrazione stato. Questa opzione decrittografa sempre l'archivio degli stati USMT usando una chiave di crittografia generata e gestita da Configuration Manager.  
 
@@ -1444,13 +1486,13 @@ Questo passaggio può essere eseguito solo nel sistema operativo completo. Non v
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [_OSDMigrateUsmtRestorePackageID](/sccm/osd/understand/task-sequence-variables#OSDMigrateUsmtRestorePackageID)  
-- [OSDMigrateAdditionalRestoreOptions](/sccm/osd/understand/task-sequence-variables#OSDMigrateAdditionalRestoreOptions)  
-- [OSDMigrateContinueOnRestore](/sccm/osd/understand/task-sequence-variables#OSDMigrateContinueOnRestore)  
-- [OSDMigrateEnableVerboseLogging](/sccm/osd/understand/task-sequence-variables#OSDMigrateEnableVerboseLogging)  
-- [OSDMigrateLocalAccounts](/sccm/osd/understand/task-sequence-variables#OSDMigrateLocalAccounts)  
-- [OSDMigrateLocalAccountPassword](/sccm/osd/understand/task-sequence-variables#OSDMigrateLocalAccountPassword)  
-- [OSDStateStorePath](/sccm/osd/understand/task-sequence-variables#OSDStateStorePath)  
+- [_OSDMigrateUsmtRestorePackageID](/configmgr/osd/understand/task-sequence-variables#OSDMigrateUsmtRestorePackageID)  
+- [OSDMigrateAdditionalRestoreOptions](/configmgr/osd/understand/task-sequence-variables#OSDMigrateAdditionalRestoreOptions)  
+- [OSDMigrateContinueOnRestore](/configmgr/osd/understand/task-sequence-variables#OSDMigrateContinueOnRestore)  
+- [OSDMigrateEnableVerboseLogging](/configmgr/osd/understand/task-sequence-variables#OSDMigrateEnableVerboseLogging)  
+- [OSDMigrateLocalAccounts](/configmgr/osd/understand/task-sequence-variables#OSDMigrateLocalAccounts)  
+- [OSDMigrateLocalAccountPassword](/configmgr/osd/understand/task-sequence-variables#OSDMigrateLocalAccountPassword)  
+- [OSDStateStorePath](/configmgr/osd/understand/task-sequence-variables#OSDStateStorePath)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Stato utente** e quindi selezionare **Ripristina stato utente**.
 
@@ -1492,9 +1534,11 @@ Questo passaggio può essere eseguito nel sistema operativo completo o in Window
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDDoNotLogCommand](/sccm/osd/understand/task-sequence-variables#OSDDoNotLogCommand) (a partire dalla versione 1902)<!--3654172-->  
-- [SMSTSDisableWow64Redirection](/sccm/osd/understand/task-sequence-variables#SMSTSDisableWow64Redirection)  
-- [WorkingDirectory](/sccm/osd/understand/task-sequence-variables#WorkingDirectory)  
+- [OSDDoNotLogCommand](/configmgr/osd/understand/task-sequence-variables#OSDDoNotLogCommand) (a partire dalla versione 1902)<!--3654172-->  
+- [SMSTSDisableWow64Redirection](/configmgr/osd/understand/task-sequence-variables#SMSTSDisableWow64Redirection)  
+- [SMSTSRunCommandLineUserName](/sccm/osd/understand/task-sequence-variables#SMSTSRunCommandLineUserName)  
+- [SMSTSRunCommandLineUserPassword](/sccm/osd/understand/task-sequence-variables#SMSTSRunCommandLineUserPassword)  
+- [WorkingDirectory](/configmgr/osd/understand/task-sequence-variables#WorkingDirectory)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Generale** e quindi selezionare **Esegui riga di comando**.
 
@@ -1523,6 +1567,15 @@ Esempi:
 
 > [!NOTE]  
 > Per un'esecuzione corretta, far precedere alle azioni della riga di comando il comando **cmd.exe /c**. Sono esempi di queste azioni i comandi di reindirizzamento output, piping e copia.  
+
+#### <a name="output-to-task-sequence-variable"></a>Output nella variabile della sequenza di attività
+
+<!--user story 4977616/bug 4798352-->
+
+A partire dalla versione 1910, salvare l'output del comando in una variabile personalizzata della sequenza di attività.
+
+> [!Note]  
+> Configuration Manager limita questo output agli ultimi 1000 caratteri.
 
 #### <a name="disable-64-bit-file-system-redirection"></a>Disattiva il reindirizzamento del file system a 64 bit
 
@@ -1561,7 +1614,7 @@ Specifica che la riga di comando viene eseguita come account utente Windows dive
 
 #### <a name="account"></a>Account
 
-Specifica l'account utente di Windows usato da questo passaggio per eseguire la riga di comando. La riga di comando viene eseguita con le autorizzazioni dell'account specificato. Selezionare **Imposta** per specificare l'utente locale o l'account di dominio. Per altre informazioni sull'account Esegui come per la sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-run-as-account).
+Specifica l'account utente di Windows usato da questo passaggio per eseguire la riga di comando. La riga di comando viene eseguita con le autorizzazioni dell'account specificato. Selezionare **Imposta** per specificare l'utente locale o l'account di dominio. Per altre informazioni sull'account Esegui come per la sequenza di attività, vedere [Account](/configmgr/core/plan-design/hierarchy/accounts#task-sequence-run-as-account).
 
 > [!IMPORTANT]  
 > Se questo passaggio specifica un account utente e viene eseguito in Windows PE, l'azione ha esito negativo. Non è possibile aggiungere Windows PE a un dominio. Questo errore viene registrato nel file **smsts.log**.  
@@ -1580,14 +1633,16 @@ Includere altri codici di uscita dallo script che devono essere valutati come es
 
 Usare questo passaggio per eseguire lo script di Windows PowerShell specificato.  
 
-Questo passaggio può essere eseguito nel sistema operativo completo o in Windows PE. Per eseguire questo passaggio in Windows PE, abilitare PowerShell nell'immagine di avvio. Abilitare il componente WinPE-PowerShell dalla scheda **Componenti facoltativi** nelle proprietà per l'immagine di avvio. Per altre informazioni su come modificare un'immagine d'avvio, vedere [Manage boot images](/sccm/osd/get-started/manage-boot-images) (Gestire le immagini d'avvio).  
+Questo passaggio può essere eseguito nel sistema operativo completo o in Windows PE. Per eseguire questo passaggio in Windows PE, abilitare PowerShell nell'immagine di avvio. Abilitare il componente WinPE-PowerShell dalla scheda **Componenti facoltativi** nelle proprietà per l'immagine di avvio. Per altre informazioni su come modificare un'immagine d'avvio, vedere [Manage boot images](/configmgr/osd/get-started/manage-boot-images) (Gestire le immagini d'avvio).  
 
 > [!NOTE]  
 > PowerShell non è abilitato per impostazione predefinita nei sistemi operativi Windows Embedded.  
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [OSDLogPowerShellParameters](/sccm/osd/understand/task-sequence-variables#OSDLogPowerShellParameters) (a partire dalla versione 1902)<!--3556028-->  
+- [OSDLogPowerShellParameters](/configmgr/osd/understand/task-sequence-variables#OSDLogPowerShellParameters) (a partire dalla versione 1902)<!--3556028-->  
+- [SMSTSRunPowerShellUserName](/sccm/osd/understand/task-sequence-variables#SMSTSRunPowerShellUserName)  
+- [SMSTSRunPowerShellUserPassword](/sccm/osd/understand/task-sequence-variables#SMSTSRunPowerShellUserPassword)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Generale** e quindi selezionare **Esegui script PowerShell**.
 
@@ -1624,7 +1679,7 @@ Quando si aggiunge o modifica uno script, la finestra dello script di PowerShell
 
 - Aprire uno script esistente dal file  
 
-- Passare a uno [script](/sccm/apps/deploy-use/create-deploy-scripts) esistente approvato in Configuration Manager
+- Passare a uno [script](/configmgr/apps/deploy-use/create-deploy-scripts) esistente approvato in Configuration Manager
 
 > [!Important]  
 > Per sfruttare i vantaggi di questa nuova funzionalità di Configuration Manager, dopo l'aggiornamento del sito aggiornare anche i client alla versione più recente. Anche se le nuove funzionalità vengono visualizzate nella console di Configuration Manager quando si esegue l'aggiornamento del sito e della console, lo scenario completo risulta funzionante solo dopo l'aggiornamento alla versione più recente del client.
@@ -1665,6 +1720,9 @@ Determinare quali script di PowerShell possono essere eseguiti nel computer. Sce
 <!-- 3556028 -->
 A partire dalla versione 1902, è possibile salvare l'output dello script in una variabile personalizzata della sequenza di attività.
 
+> [!Note]  
+> A partire dalla versione 1910, Configuration Manager limita questo output agli ultimi 1000 caratteri.
+
 #### <a name="start-in"></a>Da
 
 <!-- 3556028 -->
@@ -1692,7 +1750,7 @@ A partire dalla versione 1902, è possibile specificare che lo script di PowerSh
 #### <a name="account"></a>Account
 
 <!-- 3556028 -->
-A partire dalla versione 1902, è possibile specificare l'account utente Windows usato in questo passaggio per eseguire lo script di PowerShell. L'account specificato deve essere un amministratore locale del sistema e lo script viene eseguito con le autorizzazioni di questo account. Selezionare **Imposta** per specificare l'utente locale o l'account di dominio. Per altre informazioni sull'account Esegui come per la sequenza di attività, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#task-sequence-run-as-account).
+A partire dalla versione 1902, è possibile specificare l'account utente Windows usato in questo passaggio per eseguire lo script di PowerShell. L'account specificato deve essere un amministratore locale del sistema e lo script viene eseguito con le autorizzazioni di questo account. Selezionare **Imposta** per specificare l'utente locale o l'account di dominio. Per altre informazioni sull'account Esegui come per la sequenza di attività, vedere [Account](/configmgr/core/plan-design/hierarchy/accounts#task-sequence-run-as-account).
 
 > [!IMPORTANT]  
 > Se questo passaggio specifica un account utente e viene eseguito in Windows PE, l'azione ha esito negativo. Non è possibile aggiungere Windows PE a un dominio. Questo errore viene registrato nel file **smsts.log**.  
@@ -1711,7 +1769,7 @@ A partire dalla versione 1902, è possibile includere altri codici di uscita dal
 ## <a name="child-task-sequence"></a> Esegui la sequenza di attività
 
 > [!Note]  
-> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Abilitare questa funzionalità prima di usarla. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).
+> Nella versione 1910, Configuration Manager Abilita questa funzionalità per impostazione predefinita. Nella versione 1906 o nelle versioni precedenti Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Abilitare questa funzionalità prima di usarla. Per altre informazioni, vedere [Enable optional features from updates](/configmgr/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).
 
 Questo passaggio esegue un'altra sequenza di attività. Crea una relazione padre-figlio tra le sequenze di attività. Le sequenze di attività figlio consentono di creare sequenze di attività più modulari e riutilizzabili.
 
@@ -1724,7 +1782,7 @@ A partire dalla versione 1906, gestire questo passaggio con i cmdlet di PowerShe
 - **Remove-CMTSStepRunTaskSequence**
 - **Set-CMTSStepRunTaskSequence**
 
-Per altre informazioni, vedere [Note sulla versione 1906-nuovi cmdlet](https://docs.microsoft.com/powershell/sccm/1906-release-notes?view=sccm-ps#new-cmdlets).
+Per altre informazioni, vedere [Note sulla versione 1906-nuovi cmdlet](https://docs.microsoft.com/powershell/configmgr/1906-release-notes?view=sccm-ps#new-cmdlets).
 
 ### <a name="specifications-and-limitations"></a>Specifiche e limitazioni
 
@@ -1768,13 +1826,13 @@ Usare questo passaggio per eseguire le azioni seguenti:
 
 La sequenza di attività imposta automaticamente le variabili della sequenza di attività di sola lettura seguenti:  
 
-- [\_SMSTSMake](/sccm/osd/understand/task-sequence-variables#SMSTSMake)  
-- [\_SMSTSModel](/sccm/osd/understand/task-sequence-variables#SMSTSModel)  
-- [\_SMSTSMacAddresses](/sccm/osd/understand/task-sequence-variables#SMSTSMacAddresses)  
-- [\_SMSTSIPAddresses](/sccm/osd/understand/task-sequence-variables#SMSTSIPAddresses)  
-- [\_SMSTSSerialNumber](/sccm/osd/understand/task-sequence-variables#SMSTSSerialNumber)  
-- [\_SMSTSAssetTag](/sccm/osd/understand/task-sequence-variables#SMSTSAssetTag)  
-- [\_SMSTSUUID](/sccm/osd/understand/task-sequence-variables#SMSTSUUID)  
+- [\_SMSTSMake](/configmgr/osd/understand/task-sequence-variables#SMSTSMake)  
+- [\_SMSTSModel](/configmgr/osd/understand/task-sequence-variables#SMSTSModel)  
+- [\_SMSTSMacAddresses](/configmgr/osd/understand/task-sequence-variables#SMSTSMacAddresses)  
+- [\_SMSTSIPAddresses](/configmgr/osd/understand/task-sequence-variables#SMSTSIPAddresses)  
+- [\_SMSTSSerialNumber](/configmgr/osd/understand/task-sequence-variables#SMSTSSerialNumber)  
+- [\_SMSTSAssetTag](/configmgr/osd/understand/task-sequence-variables#SMSTSAssetTag)  
+- [\_SMSTSUUID](/configmgr/osd/understand/task-sequence-variables#SMSTSUUID)  
 
 Questo passaggio può essere eseguito nel sistema operativo completo o in Windows PE.  
 
@@ -1828,8 +1886,8 @@ Questo passaggio può essere eseguito nel sistema operativo completo o in Window
 
 Le variabili della sequenza di attività vengono lette dalle azioni della sequenza di attività e specificano il comportamento di tali azioni. Per altre informazioni su variabili specifiche della sequenza attività e su come usarle, vedere gli articoli seguenti:  
 
-- [Come usare le variabili della sequenza di attività](/sccm/osd/understand/using-task-sequence-variables)  
-- [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables)  
+- [Come usare le variabili della sequenza di attività](/configmgr/osd/understand/using-task-sequence-variables)  
+- [Variabili della sequenza di attività](/configmgr/osd/understand/task-sequence-variables)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Generale** e quindi selezionare **Imposta variabile della sequenza di attività**.
 
@@ -1851,7 +1909,7 @@ Specificare il nome di una variabile di azione o predefinita della sequenza di a
 #### <a name="do-not-display-this-value"></a>Non visualizzare questo valore
 
 <!--1358330-->
-A partire dalla versione 1806, abilitare questa opzione per mascherare i dati sensibili archiviati nelle variabili della sequenza di attività. ad esempio quando si specifica una password.
+Abilitare questa opzione per mascherare i dati sensibili archiviati nelle variabili della sequenza di attività. ad esempio quando si specifica una password.
 
 > [!Note]  
 > Abilitare questa opzione e quindi impostare il valore della variabile della sequenza di attività. In caso contrario, il valore della variabile non viene impostato nel modo desiderato e ciò potrebbe causare comportamenti imprevisti quando viene eseguita la sequenza di attività.<!--SCCMdocs issue #800-->
@@ -1870,7 +1928,7 @@ Questo passaggio è responsabile della transizione della sequenza di attività d
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [SMSClientInstallProperties](/sccm/osd/understand/task-sequence-variables#SMSClientInstallProperties)  
+- [SMSClientInstallProperties](/configmgr/osd/understand/task-sequence-variables#SMSClientInstallProperties)  
 
 Questo passaggio sostituisce le variabili della directory sysprep.inf o unattend.xml, ad esempio `%WINDIR%` e `%ProgramFiles%`, con la directory di installazione di Windows PE, `X:\Windows`. La sequenza di attività ignora le variabili specificate usando queste variabili di ambiente.  
 
@@ -1919,7 +1977,7 @@ Questo passaggio esegue le azioni seguenti:
 
 2. Abilitare o disabilitare l'account Administrator locale, in base all'opzione selezionata nel passaggio **Applica impostazioni Windows**.  
 
-3. Installare il client di Configuration Manager usando il pacchetto scaricato in precedenza e le proprietà di installazione specificate in questo passaggio. Il client viene installato in "modalità di provisioning". Questa modalità impedisce che il client elabori nuove richieste di criteri fino al completamento della sequenza di attività. Per altre informazioni, vedere [Modalità di provisioning](/sccm/osd/understand/provisioning-mode).  
+3. Installare il client di Configuration Manager usando il pacchetto scaricato in precedenza e le proprietà di installazione specificate in questo passaggio. Il client viene installato in "modalità di provisioning". Questa modalità impedisce che il client elabori nuove richieste di criteri fino al completamento della sequenza di attività. Per altre informazioni, vedere [Modalità di provisioning](/configmgr/osd/understand/provisioning-mode).  
 
 4. Attendere la completa operatività del client.  
 
@@ -1947,7 +2005,7 @@ Se è disponibile un pacchetto client di pre-produzione e il computer è un memb
 
 Il passaggio della sequenza di attività specifica automaticamente l'assegnazione del sito e la configurazione predefinita. Usare questo campo per specificare eventuali proprietà di installazione aggiuntive da usare quando si installa il client. Per immettere più proprietà di installazione, separarle con uno spazio.  
 
-Specificare le opzioni della riga di comando da usare durante l'installazione del client. Ad esempio, immettere `/skipprereq: silverlight.exe` per segnalare a CCMSetup.exe di non installare i prerequisiti di Microsoft Silverlight. Per altre informazioni sulle opzioni della riga di comando disponibili per CCMSetup.exe, vedere [About client installation properties](/sccm/core/clients/deploy/about-client-installation-properties) (Informazioni sulle proprietà di installazione del client).  
+Specificare le opzioni della riga di comando da usare durante l'installazione del client. Ad esempio, immettere `/skipprereq: silverlight.exe` per segnalare a CCMSetup.exe di non installare i prerequisiti di Microsoft Silverlight. Per altre informazioni sulle opzioni della riga di comando disponibili per CCMSetup.exe, vedere [About client installation properties](/configmgr/core/clients/deploy/about-client-installation-properties) (Informazioni sulle proprietà di installazione del client).  
 
 ### <a name="options"></a>Opzioni
 
@@ -1959,7 +2017,7 @@ Specificare le opzioni della riga di comando da usare durante l'installazione de
 ## <a name="BKMK_UpgradeOS"></a> Aggiorna sistema operativo  
 
 > [!TIP]  
-> A partire da Windows 10 versione 1709 il supporto include più edizioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento del sistema operativo o di un'immagine del sistema operativo, verificare di selezionare un'[edizione supportata](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).  
+> A partire da Windows 10 versione 1709 il supporto include più edizioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento del sistema operativo o di un'immagine del sistema operativo, verificare di selezionare un'[edizione supportata](/configmgr/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).  
 
 Usare questo passaggio per aggiornare una versione precedente di Windows a una versione più recente di Windows 10.  
 
@@ -1967,8 +2025,9 @@ Questo passaggio della sequenza di attività viene eseguito solo nel sistema ope
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
-- [_SMSTSOSUpgradeActionReturnCode](/sccm/osd/understand/task-sequence-variables#SMSTSOSUpgradeActionReturnCode)  
-- [OSDSetupAdditionalUpgradeOptions](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions)  
+- [_SMSTSOSUpgradeActionReturnCode](/configmgr/osd/understand/task-sequence-variables#SMSTSOSUpgradeActionReturnCode)  
+- [SetupCompletePause](/configmgr/osd/understand/task-sequence-variables#SetupCompletePause)
+- [OSDSetupAdditionalUpgradeOptions](/configmgr/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions)  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Immagini** e quindi selezionare **Aggiorna sistema operativo**.
 
@@ -2000,7 +2059,7 @@ Aggiungere driver al computer di destinazione durante il processo di aggiornamen
 
 - **Pacchetto driver**: selezionare **Sfoglia** e scegliere un pacchetto di driver esistente nell'elenco.  
 
-- **Contenuto preconfigurato**: selezionare questa opzione per specificare il percorso per il pacchetto di driver. È possibile specificare una cartella locale, un percorso di rete o una variabile della sequenza di attività. Quando si usa una variabile per il percorso di origine, impostarne il valore prima nella sequenza di attività. Ad esempio, usando il passaggio [Scarica contenuto pacchetto](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent).  
+- **Contenuto preconfigurato**: selezionare questa opzione per specificare il percorso per il pacchetto di driver. È possibile specificare una cartella locale, un percorso di rete o una variabile della sequenza di attività. Quando si usa una variabile per il percorso di origine, impostarne il valore prima nella sequenza di attività. Ad esempio, usando il passaggio [Scarica contenuto pacchetto](/configmgr/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent).  
 
 #### <a name="time-out-minutes"></a>Timeout (minuti)
 
@@ -2011,7 +2070,7 @@ Specificare il numero di minuti prima che questo passaggio di Configuration Mana
 Esegue l'analisi di compatibilità di Installazione di Windows senza avviare il processo di aggiornamento. Questa impostazione corrisponde all'opzione della riga di comando `/Compat ScanOnly` di Installazione di Windows. Distribuire l'intero pacchetto di aggiornamento del sistema operativo con questa opzione.
 
 <!--SCCMDocs-pr issue 2812-->
-A partire dalla versione 1806, quando si abilita questa opzione, questo passaggio non attiva la modalità di provisioning per il client di Configuration Manager. Installazione di Windows viene eseguito automaticamente in background e il client continuerà a funzionare normalmente. Per altre informazioni, vedere [Modalità di provisioning](/sccm/osd/understand/provisioning-mode).
+Quando si abilita questa opzione, questo passaggio non attiva la modalità di provisioning per il client di Configuration Manager. Installazione di Windows viene eseguito automaticamente in background e il client continuerà a funzionare normalmente. Per altre informazioni, vedere [Modalità di provisioning](/configmgr/osd/understand/provisioning-mode).
 
 Il programma di installazione restituisce un codice di uscita come risultato dell'analisi. Nella tabella seguente sono elencati alcuni dei più comuni codici di uscita:  
 

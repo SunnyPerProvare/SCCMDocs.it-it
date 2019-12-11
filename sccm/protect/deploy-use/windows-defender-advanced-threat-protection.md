@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 72ad06228a7ae0dd0fa375ff1152771790b10bbe
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70379978"
 ---
 # <a name="microsoft-defender-advanced-threat-protection"></a>Microsoft Defender Advanced Threat Protection
@@ -47,7 +47,7 @@ Microsoft Defender ATP è un servizio disponibile in [Windows Defender Security 
 
 ## <a name="onboard-devices-for-microsoft-defender-atp"></a>Onboarding dei dispositivi per Microsoft Defender ATP  
 
-1. Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Protezione endpoint** > **Criteri di Windows Defender ATP** e fare clic su **Creare criteri di Windows Defender ATP**. Si apre la procedura guidata criteri di Microsoft Defender ATP.  
+1. Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Protezione endpoint** > **Criteri di Windows Defender ATP** e fare clic su **Creare criteri di Windows Defender ATP**. Viene visualizzata la Creazione guidata criteri di Microsoft Defender ATP.  
 
 2. Digitare il **nome** e la **descrizione** per il criterio di Microsoft Defender ATP e selezionare **Onboarding** (Caricamento). Fare clic su **Avanti**.  
 
@@ -94,7 +94,7 @@ Microsoft Defender ATP è un servizio disponibile in [Windows Defender Security 
 
 4.  Scaricare il file di archivio compresso (zip) ed estrarre il contenuto. I file per l'offboarding sono validi per 30 giorni.
 
-5.  Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Protezione endpoint** > **Criteri di Windows Defender ATP** e fare clic su **Creare criteri di Windows Defender ATP**. Si apre la procedura guidata criteri di Microsoft Defender ATP.  
+5.  Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Protezione endpoint** > **Criteri di Windows Defender ATP** e fare clic su **Creare criteri di Windows Defender ATP**. Viene visualizzata la Creazione guidata criteri di Microsoft Defender ATP.  
 
 6.  Digitare il **nome** e la **descrizione** per il criterio di Microsoft Defender ATP e selezionare **Offboarding**. Fare clic su **Avanti**.  
 

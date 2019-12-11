@@ -12,11 +12,11 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c70212962342bd254a5024c17bb292783b760233
-ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
-ms.translationtype: HT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56838872"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62199151"
 ---
 # <a name="create-windows-applications-in-configuration-manager"></a>Creare applicazioni Windows in Configuration Manager
 
@@ -30,7 +30,7 @@ Oltre agli altri requisiti e alle procedure di Configuration Manager per la [cre
 
 Configuration Manager supporta la distribuzione dei formati pacchetto app Windows (con estensione appx) e bundle dell'app (con estensione appxbundle) per dispositivi Windows 8.1 e Windows 10.
 
-Quando si crea un'applicazione nella console di Configuration Manager, come **Tipo** del file di installazione dell'applicazione selezionare **Pacchetto app Windows (\*.appx, \*.appxbundle, \*.msix, \*.msixbundle)**. Per altre informazioni sulla creazione di app in generale, vedere [Creare applicazioni](/sccm/apps/deploy-use/create-applications). Per altre informazioni sul formato MSIX, vedere [Supporto per il formato MSIX](#bkmk_msix). 
+Quando si crea un'applicazione nella console di Configuration Manager, come **Tipo** del file di installazione dell'applicazione selezionare **Pacchetto app Windows (\*.appx, \*.appxbundle, \*.msix, \*.msixbundle)** . Per altre informazioni sulla creazione di app in generale, vedere [Creare applicazioni](/sccm/apps/deploy-use/create-applications). Per altre informazioni sul formato MSIX, vedere [Supporto per il formato MSIX](#bkmk_msix). 
 
 > [!Note]  
 > Per sfruttare i vantaggi delle nuove funzionalità di Configuration Manager, aggiornare prima di tutto i clienti alla versione più recente. Anche se le nuove funzionalità vengono visualizzate nella console di Configuration Manager quando si esegue l'aggiornamento del sito e della console, lo scenario completo risulta funzionante solo dopo l'aggiornamento alla versione più recente del client.<!--SCCMDocs issue 646-->  
@@ -38,7 +38,8 @@ Quando si crea un'applicazione nella console di Configuration Manager, come **Ti
 
 
 ## <a name="bkmk_provision"></a> Effettuare il provisioning dei pacchetti app Windows per tutti gli utenti in un dispositivo
-<!--1358310--> A partire dalla versione 1806, è possibile effettuare il provisioning di un'applicazione con un pacchetto app Windows per tutti gli utenti nel dispositivo. Un esempio comune di questo scenario è il provisioning di un'app da Microsoft Store per le aziende e la formazione, ad esempio Minecraft: Education Edition, in tutti i dispositivi usati dagli studenti di una scuola. In precedenza, Configuration Manager supportava solo l'installazione di queste applicazioni per ogni utente. Dopo aver eseguito l'accesso a un nuovo dispositivo, uno studente dovrebbe attendere prima di poter accedere a un'app. Ora quando viene eseguito il provisioning dell'app nel dispositivo per tutti gli utenti, tutti possono essere produttivi più rapidamente.
+<!--1358310-->
+a partire dalla versione 1806, è possibile effettuare il provisioning di un'applicazione con un pacchetto dell'app di Windows per tutti gli utenti nel dispositivo. Un esempio comune di questo scenario è il provisioning un'app dal Microsoft Store per le aziende e la formazione, ad esempio Minecraft: Education Edition, in tutti i dispositivi usati dagli studenti di una scuola. In precedenza, Configuration Manager supportava solo l'installazione di queste applicazioni per ogni utente. Dopo aver eseguito l'accesso a un nuovo dispositivo, uno studente dovrebbe attendere prima di poter accedere a un'app. Ora quando viene eseguito il provisioning dell'app nel dispositivo per tutti gli utenti, tutti possono essere produttivi più rapidamente.
 
 > [!Important]  
 > Prestare attenzione con l'installazione, il provisioning e l'aggiornamento di versioni diverse dello stesso pacchetto di app di Windows in un dispositivo, poiché possono causare risultati imprevisti. Questo comportamento può verificarsi quando si usa Configuration Manager per eseguire il provisioning dell'app, ma dopo si consente agli utenti di aggiornare l'app dal Microsoft Store. Per altre informazioni, vedere le istruzioni del passaggio successivo quando si [gestiscono le app dal Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#next-steps).  
@@ -46,8 +47,8 @@ Quando si crea un'applicazione nella console di Configuration Manager, come **Ti
 Quando si esegue il provisioning di un'app con licenza offline Configuration Manager non consente a Windows di aggiornarla automaticamente dal Microsoft Store.  
 
 Configuration Manager supporta il provisioning di app nelle versioni seguenti di Windows:<!--SCCMDocs-pr issue 2762-->
-- Azione di installazione: Windows 10 versione 1607 e successive
-- Azione di disinstallazione: Windows 10 versione 1703 e successive
+- Azione di installazione: Windows 10 versione 1607 e successiva
+- Azione di disinstallazione: Windows 10 versione 1703 e successiva
 
 Per configurare un tipo di distribuzione delle app Windows per questa funzionalità, abilitare l'opzione **Effettua il provisioning di questa applicazione per tutti gli utenti nel dispositivo**. Per altre informazioni, vedere [Create applications](/sccm/apps/deploy-use/create-applications) (Creare le applicazioni).
 

@@ -12,10 +12,10 @@ ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2d55335eb8e55381cfa5481edf027a54a18f6bda
-ms.sourcegitcommit: b9cc8e723c5d8c3be44edad24ad29d75c0cdd2b0
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71826163"
 ---
 # <a name="troubleshoot-windows-defender-or-endpoint-protection-client"></a>Risolvere i problemi di Windows Defender o del client Endpoint Protection
@@ -100,7 +100,7 @@ Se il messaggio di errore contiene il codice 0x80072f8f, è molto probabile che 
 
     2. Selezionare il servizio **Windows Update** . Passare al menu **azione** e selezionare **Avvia**.
 
-    3. Chiudere la finestra servizi.  
+    3. Chiudere la finestra Servizi.  
 
 #### <a name="step-4-reset-the-microsoft-antivirus-update-engine-on-your-computer"></a>Passaggio 4: Reimpostare il motore di aggiornamento dell'antivirus Microsoft nel computer  
 
@@ -188,7 +188,7 @@ Chiudere eventuali programmi aperti e riavviare il computer.
 
 ## <a name="detected-threat-cant-be-remediated"></a>Minaccia rilevata che non è possibile correggere
 
-Quando Windows Defender o Endpoint Protection rileva una potenziale minaccia, tenta di attenuare la minaccia mettendo in quarantena o rimuovendo la minaccia. Queste minacce possono essere nascoste all'interno di un`.zip`archivio compresso () o in una condivisione di rete.
+Quando Windows Defender o Endpoint Protection rileva una potenziale minaccia, tenta di attenuare la minaccia mettendo in quarantena o rimuovendo la minaccia. Queste minacce possono essere nascoste all'interno di un archivio compresso (`.zip`) o in una condivisione di rete.
 
 ### <a name="remove-or-scan-the-file"></a>Rimuovere o analizzare il file  
 

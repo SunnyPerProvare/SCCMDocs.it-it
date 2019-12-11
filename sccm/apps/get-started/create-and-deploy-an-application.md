@@ -12,10 +12,10 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c754486bd1026ccea3dc3b85f8412420c3c66a40
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68535389"
 ---
 # <a name="create-and-deploy-an-application-with-system-center-configuration-manager"></a>Creare e distribuire un'applicazione con System Center Configuration Manager
@@ -205,7 +205,7 @@ Usare le informazioni della sezione seguente **Monitorare l'applicazione** per v
 
 Gli utenti con PC gestiti da Configuration Manager che eseguono Windows 10 visualizzano un messaggio che informa della necessità di installare l'applicazione Contoso. Una volta accettata l'installazione, l'applicazione viene installata.  
 
-A partire da Configuration Manager versione 1906, il **nuovo software è disponibile** la notifica verrà visualizzata una sola volta per un utente per una determinata applicazione e revisione. L'utente non visualizzerà più la notifica a ogni accesso. Verranno visualizzate solo altre notifiche per un'applicazione se l'applicazione è stata modificata o è stata ridistribuita.
+A partire da Configuration Manager versione 1906, il **nuovo software è disponibile** la notifica verrà visualizzata una sola volta per un utente per una determinata applicazione e revisione. L'utente non visualizzerà più la notifica a ogni accesso. Gli utenti visualizzeranno un'altra notifica solo se l'applicazione è stata modificata o ridistribuita.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

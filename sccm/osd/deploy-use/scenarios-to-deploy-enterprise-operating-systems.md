@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f6d34c3d8dfa753934f03337d68e989a8bf8fcd7
-ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
-ms.translationtype: HT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56838702"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62270503"
 ---
 # <a name="scenarios-to-deploy-enterprise-operating-systems-with-configuration-manager"></a>Scenari per distribuire sistemi operativi aziendali con Configuration Manager
 
@@ -31,7 +31,8 @@ Per altre informazioni, vedere [Aggiornare Windows alla versione più recente](/
 
 
 #### <a name="windows-autopilot-for-existing-devices"></a>Windows Autopilot per dispositivi esistenti
-<!--3607717, fka 1358333--> A partire dalla versione 1810, Windows Autopilot per i dispositivi esistenti è disponibile con Windows 10 versione 1809 o successiva. Questa funzionalità consente di ricreare l'immagine ed eseguire il provisioning di un dispositivo Windows 7 per la modalità definita dall'utente di Windows Autopilot usando una singola sequenza di attività di Configuration Manager.
+<!--3607717, fka 1358333-->
+A partire dalla versione 1810, Windows Autopilot per i dispositivi esistenti è disponibile con Windows 10 versione 1809 o successiva. Questa funzionalità consente di ricreare l'immagine ed eseguire il provisioning di un dispositivo Windows 7 per la modalità definita dall'utente di Windows Autopilot usando una singola sequenza di attività di Configuration Manager.
 
 Per altre informazioni, vedere [Windows Autopilot per dispositivi esistenti](/sccm/osd/deploy-use/windows-autopilot-for-existing-devices).
 

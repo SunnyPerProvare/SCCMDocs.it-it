@@ -1,8 +1,8 @@
 ---
-title: Come creare profili certificato SCEP
+title: Creare profili certificato SCEP
 titleSuffix: Configuration Manager
-description: Informazioni su come usare i profili certificato per eseguire il provisioning dei certificati necessari ai dispositivi gestiti in System Center Configuration Manager.
-ms.date: 03/28/2017
+description: Informazioni su come usare i profili certificato per effettuare il provisioning dei dispositivi gestiti con i certificati necessari.
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
@@ -11,64 +11,67 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 375628c7d392a14c22a29cf75e081f6f86783889
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.openlocfilehash: cb0d0d2597dfb0eb2fa06c40db744d4cd5246a50
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340459"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660904"
 ---
 # <a name="create-certificate-profiles"></a>Creare i profili certificato
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
+Usare i profili certificato in Configuration Manager per effettuare il provisioning dei certificati necessari ai dispositivi gestiti per accedere alle risorse aziendali. Prima di creare i profili certificato, configurare l'infrastruttura di certificazione come descritto in [Configurare l'infrastruttura di certificazione per System Center Configuration Manager](/configmgr/protect/deploy-use/certificate-infrastructure).  
 
-Usare i profili certificato in Configuration Manager (SCCM) per effettuare il provisioning dei certificati necessari ai dispositivi gestiti per accedere alle risorse aziendali. Prima di creare i profili certificato, configurare l'infrastruttura di certificazione come descritto in [Set up certificate infrastructure for System Center Configuration Manager](certificate-infrastructure.md) (Configurare l'infrastruttura di certificazione per System Center Configuration Manager).  
+> [!TIP]
+> Per i dispositivi con co-gestione, provare a trasferire il [carico di lavoro **criteri di accesso alle risorse** ](/configmgr/comanage/workloads#resource-access-policies) in Intune. Usare quindi i criteri di Intune per gestire questi certificati. Per altre informazioni, vedere [Come trasferire i carichi di lavoro](/configmgr/comanage/how-to-switch-workloads).
 
-Questo argomento descrive come creare profili certificato SCEP e radice attendibile. Se si vuole creare profili certificato PFX, vedere [Creare profili certificato PFX](/sccm/mdm/deploy-use/create-pfx-certificate-profiles) .
+Questo articolo descrive come creare profili certificato radice attendibile e Simple Certificate Enrollment Protocol (SCEP). Se si vuole creare profili certificato PFX, vedere [Creare profili certificato PFX](/configmgr/mdm/deploy-use/create-pfx-certificate-profiles) .
 
 Per creare un profilo certificato:
 
-1.  Avviare la Creazione guidata profilo certificato.
-1.  Fornire informazioni generali sul certificato.
-1.  Configurare un certificato dell'autorità di certificazione (CA) attendibile.  
-1.  Configurare le informazioni sul certificato SCEP (solo per i certificati SCEP).  
-1.  Specificare le piattaforme supportate per il profilo certificato.
+1. Avviare la Creazione guidata profilo certificato.
+1. Fornire informazioni generali sul certificato.
+1. Configurare un certificato dell'autorità di certificazione (CA) attendibile.  
+1. Configurare le informazioni sul certificato SCEP.  
+1. Specificare le piattaforme supportate per il profilo certificato.
 
+## <a name="start-the-wizard"></a>Avviare la procedura guidata  
 
-## <a name="start-the-create-certificate-profile-wizard"></a>Avviare la Creazione guidata profilo certificato  
+Per avviare la Creazione guidata profilo certificato:
 
-1.  Nella console di System Center Configuration Manager fare clic su **Asset e conformità**.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità**, espandere **Impostazioni di conformità**, espandere **Accesso risorse aziendali** e quindi selezionare il nodo **Profili certificati**.  
 
-2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**, **Accesso risorse aziendali**e quindi fare clic su **Profili certificati**.  
+1. Nella scheda **Home** della barra multifunzione selezionare **Crea profilo certificato** nel gruppo **Crea**.  
 
-3.  Nella scheda **Home** del gruppo **Crea** fare clic su **Crea profilo certificato**.  
-
-## <a name="provide-general-information-about-the-certificate-profile"></a>Fornire informazioni generali sul profilo certificato  
+## <a name="general"></a>Generale
 
 Nella pagina **Generale** della Creazione guidata profilo certificato specificare le informazioni seguenti:  
 
--   **Nome**: immettere un nome univoco per il profilo certificato. È possibile usare un massimo di 256 caratteri.  
+- **Nome**: immettere un nome univoco per il profilo certificato. È possibile usare un massimo di 256 caratteri.  
 
--   **Descrizione**: digitare una descrizione che offra una panoramica del profilo certificato e altre informazioni rilevanti per facilitarne l'identificazione nella console di System Center Configuration Manager. È possibile usare un massimo di 256 caratteri.  
+- **Descrizione**: specificare una descrizione che fornisca una panoramica del profilo certificato. Includere anche altre informazioni rilevanti per facilitarne l'identificazione nella console di Configuration Manager. È possibile usare un massimo di 256 caratteri.  
 
--   **Specificare il tipo di profilo del certificato che si desidera creare**: scegliere uno tipi di profilo certificato seguenti:  
+- Specificare il tipo di profilo certificato che si vuole creare:
 
--   **Certificato CA attendibile**: selezionare questo tipo di profilo certificato se si vuole distribuire un certificato CA radice attendibile o un certificato CA intermedio per formare una catena di certificati attendibili quando l'utente o il dispositivo deve autenticare un altro dispositivo. Ad esempio, il dispositivo può essere un server RADIUS (Remote Authentication Dial-In User Service) o un server di rete privata virtuale (VPN). È anche necessario configurare un profilo certificato CA attendibile prima di creare un profilo certificato SCEP. In questo caso, il certificato CA attendibile deve essere un certificato radice trusted per la CA che rilascerà il certificato per l'utente o il dispositivo.  
+  - **Certificato CA attendibile**: selezionare questo tipo di profilo certificato se si vuole distribuire un certificato CA radice attendibile o un certificato CA intermedio per formare una catena di certificati quando l'utente o il dispositivo deve autenticare un altro dispositivo. Ad esempio, il dispositivo può essere un server RADIUS (Remote Authentication Dial-In User Service) o un server di rete privata virtuale (VPN).
+  
+    Configurare anche un profilo certificato CA attendibile prima di creare un profilo certificato SCEP. In questo caso, il certificato CA attendibile deve essere per la CA che rilascia il certificato all'utente o al dispositivo.  
 
--   **Impostazioni di Simple Certificate Enrollment Protocol (SCEP)** : selezionare questo tipo di profilo certificato se si desidera richiedere un certificato per un utente o un dispositivo utilizzando il Simple Certificate Enrollment Protocol e il servizio del ruolo del servizio Registrazione dispositivi di rete.
+  - **Impostazioni di Simple Certificate Enrollment Protocol (SCEP)** : selezionare questo tipo per richiedere un certificato per un utente o un dispositivo con il protocollo SCEP (Simple Certificate Enrollment Protocol) e il servizio del ruolo del servizio Registrazione dispositivi di rete (NDES).
 
--   **Scambio informazioni personali - Impostazioni PKCS #12 (PFX) - Importa**: selezionare questa opzione per importare un certificato PFX. Per altre informazioni sulla creazione del certificato PFX, vedere [Importare profili certificato PFX](/sccm/mdm/deploy-use/import-pfx-certificate-profiles).
+  - **Scambio informazioni personali - Impostazioni PKCS #12 (PFX) - Importa**: selezionare questa opzione per importare un certificato PFX. Per altre informazioni, vedere [Import PFX certificate Profiles](/configmgr/mdm/deploy-use/import-pfx-certificate-profiles).
 
--   **Personal Information Exchange - Impostazioni PKCS #12 (PFX) - Crea**: selezionare questa opzione per elaborare i certificati PFX usando un'autorità di certificazione. Per altre informazioni sulla creazione del certificato PFX, vedere [Creare profili certificato PFX](/sccm/mdm/deploy-use/create-pfx-certificate-profiles).
+  - **Personal Information Exchange - Impostazioni PKCS #12 (PFX) - Crea**: selezionare questa opzione per elaborare i certificati PFX usando un'autorità di certificazione. Per altre informazioni, vedere [Creare profili certificato PFX](/configmgr/mdm/deploy-use/create-pfx-certificate-profiles).
 
-
-## <a name="configure-a-trusted-ca-certificate"></a>Configurare un certificato CA attendibile  
+## <a name="trusted-ca-certificate"></a>Certificato CA attendibile  
 
 > [!IMPORTANT]  
->  Prima di creare un profilo certificato SCEP è necessario configurare almeno un profilo certificato CA attendibile.    
->  
+> Prima di creare un profilo certificato SCEP è necessario configurare almeno un profilo certificato CA attendibile.
+>
 > Se si modifica uno di questi valori dopo aver distribuito il certificato, viene richiesto un nuovo certificato:
+>
 > - Provider di archiviazione chiavi
 > - Nome modello di certificato
 > - Tipo di certificato
@@ -82,111 +85,112 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
 
 1. Nella pagina **Certificato CA attendibile** della Creazione guidata profilo certificato specificare le informazioni seguenti:  
 
-   -   **File certificato**: fare clic su **Importa** e selezionare il percorso al file del certificato che si desidera utilizzare.  
+    - **File di certificato**: selezionare **Importa**, quindi passare al file del certificato.  
 
-   -   **Archivio di destinazione**: per i dispositivi che dispongono di più archivi di certificati, selezionare dove archiviare il certificato. Per i dispositivi con un solo archivio, questa impostazione viene ignorata.  
+    - **Archivio di destinazione**: per i dispositivi che dispongono di più archivi di certificati, selezionare dove archiviare il certificato. Per i dispositivi con un solo archivio, questa impostazione viene ignorata.  
 
 2. Usare il valore **Identificazione personale certificato** per accertarsi di aver importato il certificato corretto.  
 
+## <a name="scep-certificates"></a>Certificati SCEP
 
-## <a name="configure-scep-certificate-information-only-for-scep-certificates"></a>Configurare le informazioni sul certificato SCEP (solo per i certificati SCEP)  
+### <a name="1-scep-servers"></a>1. Server SCEP
 
-1. Nella pagina **Server SCEP** della Creazione guidata profilo certificato specificare gli URL per i server NDES che emetteranno i certificati tramite SCEP. È possibile scegliere di assegnare automaticamente un URL NDES in base alla configurazione del server del sistema del sito del punto di registrazione certificati o aggiungere manualmente gli URL.  
+Nella pagina **Server SCEP** della Creazione guidata profilo certificato specificare gli URL per i server NDES che emetteranno i certificati tramite SCEP. È possibile assegnare automaticamente un URL NDES in base alla configurazione del punto di registrazione certificati o aggiungere manualmente gli URL.  
 
-2. Completare la pagina **Registrazione SCEP** della Creazione guidata profilo certificato.
+### <a name="2-scep-enrollment"></a>2. Registrazione SCEP
 
-   -  **Tentativi**: specificare il numero di tentativi di richiesta certificato inviati automaticamente dal dispositivo al server che esegue il servizio Registrazione dispositivi di rete. Questa impostazione supporta lo scenario in cui un CA manager deve approvare una richiesta di certificato prima di essere accettata. Questa impostazione viene in genere usata per gli ambienti ad alta protezione o se si dispone di una CA emittente autonoma invece di una CA globale (enterprise). È anche possibile usare questa impostazione a scopo di test, in modo da poter ispezionare le opzioni di richiesta certificato prima che la richiesta certificato venga elaborata dalla CA emittente. Usare questa impostazione con l'opzione **Intervallo tra tentativi (minuti)** .  
+Completare la pagina **Registrazione SCEP** della Creazione guidata profilo certificato.
 
-   -   **Intervallo tra tentativi (minuti)** : specificare l'intervallo in minuti tra ogni tentativo di registrazione quando si utilizza l'approvazione del responsabile CA prima che la richiesta certificato venga elaborata dalla CA emittente. Se si usa l'approvazione responsabile a scopo di test, potrebbe essere necessario specificare un valore basso in modo da non dover attendere troppo tempo prima di un nuovo tentativo di richiesta certificato dopo che questa è stata approvata. Tuttavia, se si usa l'approvazione responsabile in una rete di produzione, potrebbe essere necessario specificare un valore più elevato per fornire all'amministratore della CA il tempo sufficiente per verificare e approvare o negare le approvazioni in sospeso.  
+- **Tentativi**: specificare il numero di volte in cui il dispositivo ritenta automaticamente la richiesta di certificato al server registrazione dispositivi. Questa impostazione supporta lo scenario in cui un CA Manager deve approvare una richiesta di certificato prima dell'accettazione. Questa impostazione viene in genere usata per gli ambienti ad alta protezione o se si dispone di una CA emittente autonoma invece di una CA globale (enterprise). È anche possibile usare questa impostazione a scopo di test, in modo da poter ispezionare le opzioni di richiesta certificato prima che la richiesta certificato venga elaborata dalla CA emittente. Usare questa impostazione con l'opzione **Intervallo tra tentativi (minuti)** .  
 
-   -   **Soglia rinnovo (%)** : specificare la percentuale di durata residua del certificato prima che il dispositivo richieda il rinnovo del certificato.  
+- **Intervallo tra tentativi (minuti)** : specificare l'intervallo in minuti tra ogni tentativo di registrazione quando si utilizza l'approvazione del responsabile CA prima che la richiesta certificato venga elaborata dalla CA emittente. Se si usa l'approvazione del responsabile a scopo di test, specificare un valore basso. Non è quindi necessario attendere molto tempo prima che il dispositivo ritenti la richiesta di certificato dopo l'approvazione della richiesta.
 
-   -   **Provider di archiviazione chiavi (KSP)** : specificare dove verrà archiviata la chiave per il certificato. Scegliere tra uno dei seguenti valori:  
+    Se si utilizza l'approvazione del responsabile in una rete di produzione, specificare un valore più elevato. Questo comportamento consente all'amministratore della CA un tempo sufficiente per approvare o negare le approvazioni in sospeso.  
 
-   -   **Installa in TPM (Trusted Platform Module) se presente**: installa la chiave nel modulo TPM. Se il TPM non è presente, la chiave verrà installata nel provider di archiviazione per la chiave software.  
+- **Soglia rinnovo (%)** : specificare la percentuale di durata residua del certificato prima che il dispositivo richieda il rinnovo del certificato.  
 
-   -   **Installa in TPM (Trusted Platform Module) in caso di errore**: installa la chiave nel modulo TPM. Se il modulo TPM non è presente, l'installazione non riuscirà.  
+- **Provider di archiviazione chiavi (KSP)** : specificare dove è archiviata la chiave per il certificato. Scegliere tra uno dei seguenti valori:  
 
-   -   **Install to Windows Hello for Business otherwise fail** (Installa in Windows Hello per le aziende oppure genera errore): questa opzione è disponibile per i dispositivi Windows 10 Desktop e Mobile. Registra la chiave in **Windows Hello per aziende**, come descritto in [Impostazioni di Windows Hello per le aziende in System Center Configuration Manager](../../protect/deploy-use/windows-hello-for-business-settings.md). Questa opzione consente inoltre di **richiedere l'autenticazione a più fattori** durante la registrazione dei dispositivi prima di rilasciare certificati per i dispositivi. Per altre informazioni, vedere [Proteggere i dispositivi Windows con l'autenticazione a più fattori](https://technet.microsoft.com/library/dn889751.aspx) .
+  - **Installa in TPM (Trusted Platform Module) se presente**: installa la chiave nel modulo TPM. Se il TPM non è presente, la chiave viene installata nel provider di archiviazione per la chiave software.  
 
-   > [!NOTE]  
-   > 
-   > Quando un utente crea un PIN di Windows Hello per le aziende, Windows invia una notifica per la quale Configuration Manager è in ascolto. Ciò consente a Configuration Manager di venire rapidamente a conoscenza di quali utenti hanno creato un PIN di Windows Hello. Configuration Manager può quindi anche rilasciare nuovi certificati a tali utenti se Windows Hello viene usato come provider di archiviazione chiavi in un profilo di certificato.  
+  - **Installa in TPM (Trusted Platform Module) in caso di errore**: installa la chiave nel modulo TPM. Se il modulo TPM non è presente, l'installazione non riesce.  
 
-   -   **Installa nel provider di archiviazione chiavi software**: installa la chiave nel provider di archiviazione per la chiave software.  
+  - **Installa in Windows Hello for Business oppure genera errore**: questa opzione è disponibile per i dispositivi Windows 10. Consente di archiviare il certificato nell'archivio Windows Hello for business, che è protetto da autenticazione a più fattori. Per altre informazioni, vedere [Windows Hello for Business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification).
 
-   -   **Dispositivi per registrazione certificato**: se il profilo certificato viene distribuito in una raccolta utenti, scegliere se consentire la registrazione certificato solo sul dispositivo primario dell'utente o su tutti i dispositivi in cui l'utente esegue l'accesso. Se il profilo certificato viene distribuito in una raccolta dispositivi, scegliere se consentire la registrazione certificato solo per l'utente primario del dispositivo o per tutti gli utenti che accedono al dispositivo.  
+    > [!NOTE]  
+    > Questa opzione non supporta l'accesso con smart card per l'utilizzo chiavi avanzato nella pagina Proprietà certificato.
 
-3. Nella pagina **Proprietà certificato** della Creazione guidata profilo certificato specificare le informazioni seguenti:  
+  - **Installa nel provider di archiviazione chiavi software**: installa la chiave nel provider di archiviazione per la chiave software.  
 
-   -   **Nome modello certificato**: fare clic su **Sfoglia** per selezionare il nome di un modello del certificato configurato per essere utilizzato dal servizio Registrazione dispositivi di rete e che è stato aggiunto a una CA emittente. Per selezionare modelli di certificato, l'account utente usato per eseguire la console di System Center Configuration Manager deve disporre di autorizzazioni in lettura al modello di certificato. In alternativa, se non è possibile usare **Sfoglia**, digitare il nome del modello certificato.  
+- **Dispositivi per la registrazione del certificato**: se il profilo certificato viene distribuito in una raccolta utenti, consentire la registrazione dei certificati solo sul dispositivo primario dell'utente o su qualsiasi dispositivo a cui l'utente accede.
 
-   > [!IMPORTANT]
-   >   
-   >  Se il nome del modello di certificato contiene caratteri non ASCII (ad esempio, i caratteri dell'alfabeto cinese), il certificato non verrà distribuito. Per garantire la distribuzione del certificato, è necessario creare in primo luogo una copia del modello del certificato nella CA e rinominare la copia usando caratteri ASCII.  
+    Se il profilo certificato viene distribuito in una raccolta dispositivi, consentire la registrazione dei certificati solo per l'utente primario del dispositivo o per tutti gli utenti che eseguono l'accesso al dispositivo.  
 
-   Tenere presente quanto segue, a seconda del fatto che si selezioni il percorso al modello di certificato o si digiti il nome del certificato:  
+### <a name="3-certificate-properties"></a>3. Proprietà certificato
 
-   -   Se si seleziona il percorso per scegliere il nome del modello di certificato, alcuni campi nella pagina vengono popolati automaticamente dal modello del certificato. In alcuni casi, non è possibile modificare questi valori, a meno che non si scelga un modello di certificato diverso.  
+Nella pagina **Proprietà certificato** della Creazione guidata profilo certificato specificare le informazioni seguenti:  
 
-   -   Se si digita il nome del modello del certificato, assicurarsi che il nome corrisponda esattamente a uno dei modelli del certificato elencati nel registro di sistema del servizio che esegue il servizio Registrazione dispositivi di rete. Accertarsi di specificare il nome del modello del certificato e non il nome visualizzato del modello del certificato.  
+- **Nome modello di certificato**: selezionare il nome di un modello di certificato configurato in registrazione dispositivi e aggiunto a una CA emittente. Per accedere correttamente ai modelli di certificato, l'account utente deve disporre dell'autorizzazione di **lettura** per il modello di certificato. Se non è possibile **cercare** il certificato, digitarne il nome.  
 
-   Per trovare i nomi dei modelli di certificato, individuare la seguente chiave: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP. I modelli di certificato verranno visualizzati come i valori per **EncryptionTemplate**, **GeneralPurposeTemplate**e **SignatureTemplate**. Per impostazione predefinita, il valore per i tre modelli di certificato è **IPSECIntermediateOffline**, che è associato al nome visualizzato del modello **IPSec (Offline request)** .  
+  > [!IMPORTANT]
+  > Se il nome del modello di certificato contiene caratteri non ASCII, il certificato non viene distribuito. Un esempio di questi caratteri è riportato nell'alfabeto cinese. Per assicurarsi che il certificato venga distribuito, creare prima di tutto una copia del modello di certificato nell'autorità di certificazione. Rinominare quindi la copia usando caratteri ASCII.  
 
-   > [!WARNING]  
-   > 
-   >  Poiché System Center Configuration Manager non è in grado di verificare i contenuti del modello di certificato quando si digita il nome del modello del certificato anziché eseguire una ricerca, potrebbe essere possibile selezionare opzioni che non sono supportate dal modello di certificato e che causano la mancata esecuzione della richiesta certificato. In questo caso, verrà visualizzato un messaggio di errore per w3wp.exe nel file CPR.log per segnalare che il nome modello in CSR e la richiesta di verifica non corrispondono.  
-   >   
-   >  Quando si digita il nome del modello di certificato specificato per il valore **GeneralPurposeTemplate** , è necessario selezionare le opzioni **Crittografia chiave** e **Firma digitale** per il profilo certificato. Tuttavia, se si desidera abilitare solo l'opzione **Crittografia chiave** in questo profilo certificato, specificare il nome modello del certificato per la chiave **EncryptionTemplate** . Analogamente, se si desidera abilitare solo l'opzione **Forma digitale** in questo profilo certificato, specificare il nome modello del certificato per la chiave **SignatureTemplate** .  
+  - Se si *esplora* il percorso per selezionare il nome del modello di certificato, alcuni campi nella pagina vengono popolati automaticamente dal modello del certificato. In alcuni casi, non è possibile modificare questi valori, a meno che non si scelga un modello di certificato diverso.  
 
-   -   **Tipo di certificato**: selezionare se il certificato verrà distribuito a un dispositivo o un utente.  
-   -   **Formato nome soggetto**: dall'elenco, selezionare in che modo System Center Configuration Manager crei automaticamente il nome soggetto nella richiesta certificato. Se il certificato è per un utente, è anche possibile includere l'indirizzo di posta elettronica dell'utente nel nome del soggetto. 
-    
-   > [!NOTE]  
-   > 
-   > La selezione di **Codice IMEI**  o di **Numero di serie** consente di distinguere i diversi dispositivi appartenenti allo stesso utente. Tali dispositivi, ad esempio, potrebbero condividere il nome comune, ma non il codice IMEI o il numero di serie. Se il dispositivo non ha un codice IMEI o un numero di serie, il certificato viene emesso con il nome comune.
+  - Se si *digita* il nome del modello di certificato, assicurarsi che il nome corrisponda esattamente a uno dei modelli di certificato. Deve corrispondere ai nomi elencati nel registro di sistema del server registrazione dispositivi. Accertarsi di specificare il nome del modello del certificato e non il nome visualizzato del modello del certificato.  
 
-   -   **Nome alternativo oggetto**: specificare in che modo System Center Configuration Manager crea automaticamente i valori per il nome alternativo oggetto (SAN) nella richiesta certificato. Ad esempio, se si seleziona un tipo di certificato utente, è possibile includere il nome dell'entità utente (UPN) nel nome alternativo oggetto.  Se il certificato client verrà usato per eseguire l'autenticazione in un server dei criteri di rete, è necessario impostare il nome alternativo oggetto sul nome dell'entità utente.  
+    Per trovare i nomi dei modelli di certificato, individuare la chiave del Registro di sistema seguente: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP`. I modelli di certificato vengono elencati come i valori per **EncryptionTemplate**, **GeneralPurposeTemplate**e **SignatureTemplate**. Per impostazione predefinita, il valore per i tre modelli di certificato è **IPSECIntermediateOffline**, che è associato al nome visualizzato del modello **IPSec (Offline request)** .  
 
-   > [!NOTE]  
-   >  - I dispositivi iOS supportano formati del nome soggetto e nomi alternativi oggetto limitati nei certificati SCEP. Se si specifica un formato non supportato, i certificati non verranno registrati su dispositivi iOS. Quando si configura un profilo certificato SCEP da distribuire nei dispositivi iOS, usare il **Nome comune** per il **Formato del nome soggetto**e **Nome DNS**, **Indirizzo di posta elettronica** o **UPN** per il **Nome alternativo oggetto**.  
+    > [!WARNING]  
+    > Quando si digita il nome del modello di certificato, Configuration Manager possibile verificare il contenuto del modello di certificato. Potrebbe essere possibile selezionare le opzioni non supportate dal modello di certificato, che potrebbe generare una richiesta di certificato non riuscita. In presenza di questo comportamento, verrà visualizzato un messaggio di errore per w3wp.exe nel file CPR.log per segnalare che il nome modello in CSR e la richiesta di verifica non corrispondono.  
+    >
+    > Quando si digita il nome del modello di certificato specificato per il valore **GeneralPurposeTemplate**, selezionare le opzioni **Crittografia chiave** e **Firma digitale** per il profilo certificato. Se si vuole abilitare solo l'opzione **Crittografia chiave** in questo profilo certificato, specificare il nome del modello di certificato per la chiave **EncryptionTemplate**. Analogamente, se si desidera abilitare solo l'opzione **Forma digitale** in questo profilo certificato, specificare il nome modello del certificato per la chiave **SignatureTemplate** .  
 
-   -   **Periodo di validità del certificato**: se il comando certutil - setreg Policy\EditFlags +EDITF_ATTRIBUTEENDDATE è stato eseguito nella CA emittente, che consente un periodo di validità personalizzato, è possibile specificare la quantità di tempo rimanente prima della scadenza del certificato. Per altre informazioni sui profili certificato, vedere [Certificate infrastructure in System Center Configuration Manager](../../protect/deploy-use/certificate-infrastructure.md) (Infrastruttura di certificazione in System Center Configuration Manager).  
+- **Tipo di certificato**: selezionare se il certificato verrà distribuito a un dispositivo o a un utente.  
 
-   È possibile specificare un valore inferiore, ma non superiore rispetto al periodo di validità nel modello di certificato indicato. Ad esempio, se il periodo di validità del certificato nel modello di certificato è di due anni, è possibile specificare un valore di un anno ma non un valore di cinque anni. Inoltre, il valore deve essere inferiore rispetto al periodo di validità rimanente del certificato della CA emittente.  
+- **Formato nome soggetto**: selezionare in che modo Configuration Manager crea automaticamente il nome del soggetto nella richiesta di certificato. Se il certificato è per un utente, è anche possibile includere l'indirizzo di posta elettronica dell'utente nel nome del soggetto.
 
-   -   **Utilizzo chiave**: specificare le opzioni di utilizzo della chiave per il certificato. È possibile scegliere una delle opzioni seguenti:  
+    > [!NOTE]  
+    > Se si seleziona **Codice IMEI**  o **Numero di serie**, è possibile distinguere i diversi dispositivi appartenenti allo stesso utente. Tali dispositivi, ad esempio, potrebbero condividere il nome comune, ma non il codice IMEI o il numero di serie. Se il dispositivo non ha un codice IMEI o un numero di serie, il certificato viene emesso con il nome comune.
 
-       -   **Crittografia chiave**: consentire lo scambio di chiavi solo quando la chiave viene crittografata.  
+- **Nome alternativo soggetto**: specificare in che modo Configuration Manager crea automaticamente i valori per il nome alternativo del soggetto nella richiesta di certificato. Ad esempio, se si seleziona un tipo di certificato utente, è possibile includere il nome dell'entità utente (UPN) nel nome alternativo oggetto. Se il certificato client verrà usato per eseguire l'autenticazione in un server dei criteri di rete, impostare il nome alternativo oggetto sul nome dell'entità utente.  
 
-       -   **Firma digitale**: consentire lo scambio di chiavi soltanto se una firma digitale consente di proteggere la chiave.  
+- **Periodo di validità del certificato**: se si imposta un periodo di validità personalizzato sulla CA emittente, specificare la quantità di tempo rimanente prima della scadenza del certificato.
 
-   Se è stato selezionato un modello di certificato usando **Sfoglia**, potrebbe non essere possibile modificare queste impostazioni senza selezionare un modello di certificato diverso.  
+    > [!TIP]
+    > Impostare un periodo di validità personalizzato con la seguente riga di comando: `certutil -setreg Policy\EditFlags +EDITF_ATTRIBUTEENDDATE`
+    > Per altre informazioni su questo comando, vedere [infrastruttura di certificazione](/configmgr/protect/deploy-use/certificate-infrastructure).  
 
-   Il modello di certificato selezionato deve essere configurato con una o entrambe le due opzioni di utilizzo della chiave sopra riportate. In caso contrario, verrà visualizzato il messaggio **Utilizzo chiave in CSR e richiesta di verifica non corrispondono** nel file di registro del punto di registrazione certificati, **Reg.cert**.  
+    È possibile specificare un valore inferiore, ma non superiore rispetto al periodo di validità nel modello di certificato indicato. Ad esempio, se il periodo di validità del certificato nel modello di certificato è di due anni, è possibile specificare un valore di un anno ma non un valore di cinque anni. Inoltre, il valore deve essere inferiore rispetto al periodo di validità rimanente del certificato della CA emittente.  
 
+- **Utilizzo chiave**: specificare le opzioni di utilizzo della chiave per il certificato. È possibile scegliere una delle opzioni seguenti:  
+
+  - **Crittografia chiave**: consentire lo scambio di chiavi solo quando la chiave viene crittografata.  
+
+  - **Firma digitale**: consentire lo scambio di chiavi soltanto se una firma digitale consente di proteggere la chiave.  
+
+  Se è stato visualizzato un modello di certificato, non è possibile modificare queste impostazioni, a meno che non si selezioni un modello di certificato diverso.  
+
+  Configurare il modello di certificato selezionato con una o entrambe le due opzioni di utilizzo della chiave sopra riportate. In caso contrario, verrà visualizzato il messaggio seguente nel file di registro del punto di registrazione certificati **Crp.log**: **Utilizzo chiave in CSR e richiesta di verifica non corrispondono**  
 
 - **Dimensione chiave (bits)** : selezionare la dimensione della chiave in bit.  
 
-- **Utilizzo chiave esteso**: fare clic su **Seleziona** per aggiungere valori per lo scopo designato del certificato. Nella maggior parte dei casi il certificato richiederà l' **Autenticazione Client** in modo che l'utente o il dispositivo possa eseguire l'autenticazione a un server. È comunque possibile aggiungere altri utilizzi di chiavi secondo necessità.  
-
+- **Utilizzo chiave esteso**: aggiungere valori per lo scopo designato del certificato. Nella maggior parte dei casi il certificato richiede l'**Autenticazione Client** in modo che l'utente o il dispositivo possa eseguire l'autenticazione a un server. È possibile aggiungere altri utilizzi di chiavi secondo necessità.  
 
 - **Algoritmo hash**: selezionare uno dei tipi di algoritmo hash disponibili da utilizzare con il certificato. Selezionare il livello di sicurezza più avanzato supportato dai dispositivi che verranno connessi.  
 
   > [!NOTE]  
-  > 
-  >  **SHA-2** supporta SHA-256, SHA-384 e SHA-512. **SHA-1** supporta solo SHA-3.  
+  > **SHA-2** supporta SHA-256, SHA-384 e SHA-512. **SHA-1** supporta solo SHA-3.  
 
-- **Certificato CA radice**: fare clic su **Seleziona** per scegliere un profilo del certificato CA radice precedentemente configurato e distribuito all'utente o al dispositivo. Questo certificato CA deve essere il certificato radice per l'autorità di certificazione che rilascerà il certificato che si sta configurando in questo profilo certificato.  
+- **Certificato CA radice**: scegliere un profilo del certificato della CA radice già configurato e distribuito all'utente o al dispositivo. Questo certificato CA deve essere il certificato radice per l'autorità di certificazione che rilascerà il certificato che si sta configurando in questo profilo certificato.  
 
   > [!IMPORTANT]  
-  >  Se si specifica un certificato CA radice non distribuito all'utente o al dispositivo, System Center Configuration Manager non avvierà la richiesta certificato in fase di configurazione in questo profilo certificato.  
+  > Se si specifica un certificato CA radice non distribuito all'utente o al dispositivo, Configuration Manager non avvierà la richiesta di certificato in fase di configurazione in questo profilo certificato.  
 
+## <a name="supported-platforms"></a>Piattaforme supportate  
 
-##  <a name="specify-supported-platforms-for-the-certificate-profile"></a>Specificare le piattaforme supportate per il profilo certificato  
+Nella pagina **Piattaforme supportate** della Creazione guidata profilo certificato, selezionare le versioni del sistema operativo in cui si vuole installare il profilo certificato. Scegliere **Seleziona tutto** per installare il profilo certificato in tutti i sistemi operativi disponibili.
 
-1. Nella pagina **Piattaforme supportate** della Creazione guidata profilo certificato, selezionare i sistemi operativi in cui si desidera installare il profilo certificato. In alternativa, fare clic su **Seleziona tutto** per installare il profilo certificato su tutti i sistemi operativi disponibili.
-2. Rivedere le impostazioni nella pagina **Riepilogo** della procedura guidata e scegliere **Fine**. 
- 
- 
-Il nuovo profilo certificato viene visualizzato nel nodo **Profili certificato** nell'area di lavoro **Asset e conformità** e può essere distribuito agli utenti o ai dispositivi come descritto in [How to deploy profiles in System Center Configuration Manager](deploy-wifi-vpn-email-cert-profiles.md)(Come distribuire profili in System Center Configuration Manager).  
+## <a name="next-steps"></a>Passaggi successivi
+
+Il nuovo profilo certificato viene visualizzato nel nodo **profili certificato** nell'area di lavoro **asset e conformità** . È possibile eseguire la distribuzione a utenti o dispositivi. Per altre informazioni vedere [Come distribuire i profili](/configmgr/protect/deploy-use/deploy-wifi-vpn-email-cert-profiles).

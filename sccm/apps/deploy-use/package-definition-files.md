@@ -12,10 +12,10 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ba927286e79d88a6e034fd7eb14f5190cb1f34d6
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68537679"
 ---
 # <a name="package-definition-files"></a>File di definizione del pacchetto
@@ -68,7 +68,7 @@ Specificare le proprietà del pacchetto e del programma. Contiene le informazion
 
 ### <a name="program"></a>[Program]
 
-Includere una sezione [Program] per ogni programma specificato nella voce **programs** nella sezione **[Package Definition]** . In questa sezione viene definito ogni programma. Ogni sezione Program offre le informazioni seguenti:  
+Includere una sezione [Program] per ogni programma specificato nella voce **Programs** nella sezione **[Package Definition]** . In questa sezione viene definito ogni programma. Ogni sezione Program offre le informazioni seguenti:  
 
 - **Nome**: Il nome del programma, fino a 50 caratteri. Questa voce deve essere univoca all'interno di un pacchetto.  
 

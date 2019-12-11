@@ -5,18 +5,18 @@ description: Esaminare le informazioni sul client Office 365 dal dashboard di Ge
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 11/06/2019
+ms.date: 12/05/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 69f234a2-b04b-445a-b81f-6b4acfc00eaf
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf13e3389ec610ffacb06f56278113eb84a6089b
-ms.sourcegitcommit: edc7a5ad6a2eb72d0448d4689b9534f7e6f4d2b7
+ms.openlocfilehash: f59f3fc666fec7fdfaf2eed3eaf2b9e5656a1707
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73623098"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74814990"
 ---
 # <a name="office-365-client-management-dashboard"></a>Dashboard di Gestione client di Office 365
 
@@ -43,6 +43,35 @@ Il dashboard di Gestione client di Office 365 inizia a visualizzare i dati in ba
 *(Introdotta nella versione 1906 come prerequisito)*
 
 A partire dalla versione 1906, i dispositivi in cui è installato Office necessitano di connettività Internet per popolare le informazioni sul componente aggiuntivo per il dashboard di conformità per l' [aggiornamento di office 365 ProPlus](#bkmk_readiness-dash). I dispositivi scaricano un file di conformità del componente aggiuntivo dalla rete per la [distribuzione di contenuti di Office](https://docs.microsoft.com/office365/enterprise/content-delivery-networks#the-office-365-cdn). Questo file contiene l'elenco completo dei componenti aggiuntivi noti a Microsoft e i dettagli delle prestazioni previste in Office 365 ProPlus. Ogni dispositivo utilizza le informazioni del file per determinare la compatibilità dei componenti aggiuntivi. Se un dispositivo non è in grado di scaricare il file, avrà lo stato di conformità dei componenti aggiuntivi della **revisione delle esigenze**.
+
+### <a name="connectivity-for-top-level-site-server"></a>Connettività per il server del sito di livello superiore
+
+*(Introdotta nella versione 1906 come prerequisito)*
+
+Il server del sito di livello superiore deve accedere all'endpoint seguente per scaricare il file di conformità:
+
+`https://contentstorage.osi.office.net/sccmreadinessppe/sot_sccm_addinreadiness.cab` 
+
+### <a name="enable-data-collection-for-office-365-proplus"></a>Abilitare la raccolta dati per Office 365 ProPlus
+
+*(Introdotta nella versione 1910 come prerequisito)*
+
+A partire dalla versione 1910, è necessario abilitare la raccolta dati per Office 365 ProPlus per popolare le informazioni nel **dashboard di office 365 ProPlus Pilot e Health**. I dati vengono archiviati nel database del sito di Configuration Manager e non vengono inviati a Microsoft. Questi dati sono diversi dai dati di diagnostica, che possono essere inviati. Per ulteriori informazioni, vedere [dati di diagnostica inviati da Office 365 ProPlus a Microsoft](https://docs.microsoft.com/deployoffice/privacy/overview-privacy-controls#diagnostic-data-sent-from-office-365-proplus-to-microsoft). È possibile abilitare la raccolta usando Criteri di gruppo o modificando il registro di sistema.
+
+#### <a name="enable-data-collection-from-group-policy"></a>Abilita raccolta dati da Criteri di gruppo
+
+1. Scaricare i [file del modello amministrativo più recenti dall'area download Microsoft](https://www.microsoft.com/download/details.aspx?id=49030).
+2. Abilitare l'impostazione dei criteri **per l'attivazione della raccolta dati di telemetria** in `User Configuration\Policies\Administrative Templates\Microsoft Office 2016\Telemetry Dashboard`.
+    - In alternativa, applicare l'impostazione dei criteri con il [servizio criteri cloud di Office](https://docs.microsoft.com/DeployOffice/overview-office-cloud-policy-service).
+    - L'impostazione dei criteri viene usata anche dal dashboard di telemetria di Office, che non è necessario distribuire per questa raccolta dati.
+
+#### <a name="enable-data-collection-from-the-registry"></a>Abilitare la raccolta dati dal registro di sistema
+
+Il comando seguente è un esempio di come abilitare la raccolta di dati dal registro di sistema:
+
+```cmd
+reg add HKCU\Software\Policies\Microsoft\office\16.0\OSM /v EnableLogging /t REG_DWORD /d 1
+```
 
 ## <a name="viewing-the-office-365-client-management-dashboard"></a>Visualizzazione del dashboard di Gestione client di Office 365
 
@@ -135,6 +164,69 @@ Configuration Manager esamina i file usati più di recente in ogni dispositivo. 
 
 Se sono necessarie informazioni più dettagliate sulla compatibilità delle macro, distribuire il **Toolkit di conformità per Office** per analizzare il codice all'interno dei file di macro. I risultati possono essere prelevati dall'agente di inventario hardware di Configuration Manager quando si seleziona l'opzione per i **documenti di Office usati più di recente e i componenti aggiuntivi installati nel computer**. I dati aggiuntivi possono migliorare il calcolo della conformità dei dispositivi. Per altre informazioni, vedere [Valutare la compatibilità delle applicazioni per Office 365 ProPlus tramite Readiness Toolkit](https://aka.ms/readinesstoolkit).
 
+
+
+## <a name="bkmk_pilot"></a> Dashboard sull'integrità e la distribuzione pilota di Office 365 ProPlus
+<!--4488272, 4488301-->
+*(Funzionalità introdotta nella versione 1910)*
+
+A partire dalla versione 1910, il **dashboard di office 365 ProPlus Pilot and Health** consente di pianificare, pilotare ed eseguire la distribuzione di Office 365 ProPlus. Il dashboard fornisce informazioni dettagliate sull'integrità per i dispositivi con Office 365 ProPlus per identificare i possibili problemi che potrebbero influire sui piani di distribuzione. Il **dashboard sull'integrità e la distribuzione pilota di Office 365 ProPlus** fornisce raccomandazioni per i dispositivi della distribuzione pilota in base all'inventario dei componenti aggiuntivi. Il dashboard include i riquadri seguenti:
+
+- Genera la distribuzione pilota
+- Dispositivi della distribuzione pilota consigliati
+- Distribuisci la raccolta pilota
+- Dispositivi che inviano dati sull'integrità
+- Dispositivi che non soddisfano gli obiettivi di integrità
+- Componenti aggiuntivi che non soddisfano gli obiettivi di integrità
+- Macro che non soddisfano gli obiettivi di integrità
+
+### <a name="using-the-office-365-proplus-pilot-and-health-dashboard"></a>Uso del dashboard sull'integrità e la distribuzione pilota di Office 365 ProPlus
+
+Dopo aver verificato i [prerequisiti](#prerequisites), usare le istruzioni seguenti per usare il Dashboard:
+
+1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software** ed espandere **Gestione client di Office 365**.
+1. Selezionare il nodo **Office 365 Pilot and Health** .
+
+![Dashboard sull'integrità e la distribuzione pilota di Office 365 ProPlus](./media/4488272-office-365-pro-plus-pilot.png)
+
+
+### <a name="generate-pilot"></a>Genera la distribuzione pilota
+
+È ora possibile generare una raccomandazione pilota da una raccolta di limitazione facendo semplicemente clic su un pulsante. Non appena viene avviata l'azione, un'attività in background inizia a calcolare la raccolta pilota. La raccolta di limitazione deve contenere almeno un dispositivo con una versione di Office che non sia ProPlus.
+
+### <a name="recommended-pilot-devices"></a>Dispositivi della distribuzione pilota consigliati
+
+I **dispositivi della distribuzione pilota consigliati** sono un set minimo di dispositivi che rappresentano tutti i componenti aggiuntivi installati nella raccolta di limitazione usata durante la generazione della distribuzione pilota. Eseguire il drill-down per ottenere un elenco di questi dispositivi. Usare quindi i dettagli per escludere eventuali dispositivi dalla distribuzione pilota, se necessario. Se tutti i componenti aggiuntivi sono già presenti nei dispositivi Office 365 ProPlus, i dispositivi con tali componenti aggiuntivi non verranno inclusi nel calcolo. Ciò significa che è anche possibile che non si ottenga alcun risultato nella raccolta pilota perché tutti i componenti aggiuntivi sono presenti nei dispositivi in cui è installato Office 365 ProPlus.
+
+### <a name="deploy-pilot"></a>Distribuisci la raccolta pilota
+
+Dopo aver accettato i dispositivi della distribuzione pilota, distribuire Office 365 ProPlus nella raccolta pilota usando la distribuzione guidata in più fasi. Gli amministratori possono definire la raccolta pilota e di limitazione nella procedura guidata per gestire le distribuzioni.
+
+### <a name="health-data"></a>Dati sull'integrità
+
+Dopo l'installazione di Office 365 ProPlus, abilitare i dati sull'integrità nei dispositivi della distribuzione pilota. I dati sull'integrità forniscono informazioni dettagliate su quali componenti aggiuntivi e macro non soddisfano gli obiettivi di integrità. Il grafico **Dispositivi pronti per la distribuzione** identifica i dispositivi non pilota pronti per la distribuzione usando le informazioni sull'integrità. È possibile ottenere un conteggio dei dispositivi che inviano dati sull'integrità dal grafico **Dispositivi che inviano dati sull'integrità**.
+
+### <a name="devices-not-meeting-health-goals"></a>Dispositivi che non soddisfano gli obiettivi di integrità
+
+Questo riquadro riepiloga i dispositivi che presentano problemi con componenti aggiuntivi, macro o entrambi.
+
+### <a name="add-ins-not-meeting-health-goals"></a>Componenti aggiuntivi che non soddisfano gli obiettivi di integrità
+
+- Errori di caricamento: non è stato possibile avviare il componente aggiuntivo.
+- Arresti anomali: errore del componente aggiuntivo durante l'esecuzione.
+- Errore: il componente aggiuntivo ha segnalato un errore.
+- Più problemi: il componente aggiuntivo presenta più di uno dei problemi descritti in precedenza.
+
+### <a name="macros-not-meeting-health-goals"></a>Macro che non soddisfano gli obiettivi di integrità
+
+- Errori di caricamento: non è stato possibile caricare il documento.
+- Errori di runtime: si è verificato un errore durante l'esecuzione della macro. Questi errori possono dipendere dagli input e pertanto potrebbero non verificarsi in tutte le circostanze.
+- Errori di compilazione: la macro non è stata compilata correttamente e quindi non tenterà l'esecuzione.
+- Più problemi: la macro ha più di uno dei problemi precedenti.
+
+### <a name="known-issues"></a>Problemi noti
+
+Si è verificato un problema noto con il riquadro **Distribuisci progetto pilota** . Al momento non può essere usato per eseguire la distribuzione in un progetto pilota. La soluzione alternativa è il flusso di lavoro esistente per la distribuzione di un'applicazione tramite la distribuzione guidata in più fasi. <!--5525871-->
 
 ## <a name="next-steps"></a>Passaggi successivi
 

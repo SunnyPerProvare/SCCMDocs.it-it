@@ -2,7 +2,7 @@
 title: Creare applicazioni
 titleSuffix: Configuration Manager
 description: Creare applicazioni con tipi di distribuzione, metodi di rilevamento e requisiti per installare software.
-ms.date: 07/26/2019
+ms.date: 12/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae4e88d63ae1bffd56bf6ed151d8d28997bdce23
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: c34dcc2e72f4e1cea79d7df5543887f0f9a7a689
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68534700"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74813780"
 ---
 # <a name="create-applications-in-configuration-manager"></a>Creare applicazioni in Configuration Manager
 
@@ -131,7 +131,7 @@ Per aggiungere altri tipi di distribuzione o configurare altre impostazioni, ved
         > [!Note]  
         > Nella versione 1902 e nelle versioni precedenti, le categorie utente sono valide solo per le distribuzioni disponibili per le raccolte utenti. Se un'applicazione viene distribuita a una raccolta di computer, le categorie utente vengono ignorate.
         >
-        > A partire dalla versione 1906, le categorie utente per le distribuzioni di applicazioni destinate ai dispositivi vengono visualizzate come filtri in Software Center. Queste distribuzioni possono essere disponibili o obbligatorie.
+        > A partire dalla versione 1906, le categorie utente per le distribuzioni di applicazioni destinate a dispositivi vengono visualizzate come filtri in Software Center. Queste distribuzioni possono essere disponibili o obbligatorie.
         >
         > <!-- 4726793 -->La ridenominazione o l'eliminazione di una categoria non viene applicata automaticamente alle app con questa categoria. Queste modifiche si applicano alla revisione successiva dell'app. Per risolvere questo problema per la ridenominazione o l'eliminazione:
         >
@@ -712,6 +712,9 @@ Per distribuire l'app come collegamento a Windows Store, configurare l'impostazi
 
 I client Windows valutano sempre i tipi di distribuzione che usano un collegamento a uno Store prima di altri tipi di distribuzione. Il client valuta quindi i tipi di distribuzione in base alla priorità.
 
+> [!TIP]
+> Alcuni collegamenti all'archivio possono causare l'errore seguente nella creazione guidata applicazione: "collegamento applicazione non valido". Ad esempio, alcune *app in primo piano* possono provocare questo errore. È comunque possibile selezionare **Avanti** nella pagina **generale** della procedura guidata. Configuration Manager crea correttamente l'app ed è possibile distribuirla correttamente.<!-- SCCMDocs-pr #4716 -->
+
 ### <a name="bkmk_note2"></a> Nota 2: applicazione Web
 
 Se è stata installata l'applicazione Microsoft Intune Managed Browser in dispositivi iOS o Android, assicurarsi che gli utenti possano usare Managed Browser solo per aprire l'app. Nell'indirizzo del sito Web sostituire **http** con **http-intunemam** o **https** con **https-intunemam**. Ad esempio:
@@ -728,7 +731,7 @@ Per altre informazioni su Intune Managed Browser, vedere [Gestire l'accesso a In
 
 Dopo aver creato un'applicazione in Configuration Manager, il passaggio successivo consiste nella [distribuzione dell'applicazione](/sccm/apps/deploy-use/deploy-applications).
 
-A partire dalla versione 1906, creare un gruppo di applicazioni che è possibile inviare a un utente o a una raccolta di dispositivi come singola distribuzione. Per ulteriori informazioni, vedere la pagina relativa alla [creazione di gruppi di applicazioni](/sccm/apps/deploy-use/create-app-groups).
+A partire dalla versione 1906, creare un gruppo di applicazioni che è possibile inviare a un utente o a una raccolta di dispositivi come singola distribuzione. Per altre informazioni, vedere [Creare gruppi di applicazioni](/sccm/apps/deploy-use/create-app-groups).
 
 Per altre informazioni sulla creazione di applicazioni in piattaforme del sistema operativo diverse, vedere gli articoli seguenti:  
 

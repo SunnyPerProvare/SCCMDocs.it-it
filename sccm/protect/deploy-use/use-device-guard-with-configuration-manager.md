@@ -1,8 +1,8 @@
 ---
-title: Come gestire Windows Device Guard
+title: Come gestire il controllo delle applicazioni di Windows Defender
 titleSuffix: Configuration Manager
-description: Informazioni su come usare Configuration Manager per gestire Windows Device Guard.
-ms.date: 07/26/2019
+description: Informazioni su come usare Configuration Manager per gestire il controllo delle applicazioni di Windows Defender.
+ms.date: 11/19/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
@@ -11,30 +11,31 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82f262b01129452da7c34ffb6f1a1bb2f15be8a8
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: abc5f4c29e1e97cb116905cc9f9af4a033a5bf8f
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68533802"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74474516"
 ---
-# <a name="device-guard-management-with-configuration-manager"></a>Gestione di Device Guard con Configuration Manager
+# <a name="windows-defender-application-control-management-with-configuration-manager"></a>Gestione controllo delle applicazioni di Windows Defender con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 ## <a name="introduction"></a>Introduzione
-Device Guard è un gruppo di funzionalità di Windows 10 progettate per proteggere i PC dal malware e da altro software non attendibile. Impedisce l'esecuzione di codice dannoso, garantendo che solo il codice approvato e conosciuto possa essere eseguito.
+Il controllo delle applicazioni di Windows Defender è progettato per proteggere i PC dal malware e da altro software non attendibile. Impedisce l'esecuzione di codice dannoso, garantendo che solo il codice approvato e conosciuto possa essere eseguito.
 
-Device Guard comprende funzionalità basate sia su software che su hardware. Controllo di applicazioni di Windows Defender è un livello di protezione basato su software che applica un elenco esplicito di programmi software che possono essere eseguiti in un PC. Autonomamente, Controllo di applicazioni non ha alcun prerequisito hardware o firmware. I criteri di Controllo di applicazioni distribuiti con Configuration Manager abilitano un criterio nei PC inclusi in raccolte di destinazione che soddisfano i requisiti minimi relativi a SKU e versione di Windows descritti in questo articolo. Facoltativamente, è possibile abilitare la protezione basata su hypervisor di Controllo di applicazioni distribuiti con Configuration Manager usando Criteri di gruppo su hardware idoneo.
+Controllo di applicazioni di Windows Defender è un livello di protezione basato su software che applica un elenco esplicito di programmi software che possono essere eseguiti in un PC. Autonomamente, Controllo di applicazioni non ha alcun prerequisito hardware o firmware. I criteri di Controllo di applicazioni distribuiti con Configuration Manager abilitano un criterio nei PC inclusi in raccolte di destinazione che soddisfano i requisiti minimi relativi a SKU e versione di Windows descritti in questo articolo. Facoltativamente, è possibile abilitare la protezione basata su hypervisor di Controllo di applicazioni distribuiti con Configuration Manager usando Criteri di gruppo su hardware idoneo.
 
-Per altre informazioni su Device Guard, vedere [Guida alla distribuzione di Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide).
+Per ulteriori informazioni sul controllo delle applicazioni di Windows Defender, vedere la [Guida alla distribuzione di controllo delle applicazioni di Windows Defender](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide).
 
    > [!NOTE]
-   > A partire da Windows 10, versione 1709, i criteri di integrità del codice configurabili sono noti come Controllo di applicazioni di Windows Defender.
+   > - A partire da Windows 10, versione 1709, i criteri di integrità del codice configurabili sono noti come Controllo di applicazioni di Windows Defender.
+   > - A partire dalla versione Configuration Manager 1710, i criteri di Device Guard sono stati rinominati in criteri di controllo delle applicazioni di Windows Defender.
 
-## <a name="using-device-guard-with-configuration-manager"></a>Uso di Device Guard con Configuration Manager
+## <a name="using-windows-defender-application-control-with-configuration-manager"></a>Uso del controllo delle applicazioni di Windows Defender con Configuration Manager
 
-È possibile usare Configuration Manager per distribuire criteri di Controllo di applicazioni di Windows Defender. Questi criteri consentono di configurare la modalità in cui eseguire Device Guard nei PC di una raccolta. 
+È possibile usare Configuration Manager per distribuire criteri di Controllo di applicazioni di Windows Defender. Questo criterio consente di configurare la modalità di esecuzione del controllo delle applicazioni di Windows Defender nei PC di una raccolta. 
 
 È possibile configurare una delle modalità seguenti:
 
@@ -46,7 +47,7 @@ Per altre informazioni su Device Guard, vedere [Guida alla distribuzione di Devi
 
 ## <a name="what-can-run-when-you-deploy-a-windows-defender-application-control-policy"></a>Che cosa viene eseguito quando si distribuisce un criterio di controllo delle applicazioni di Windows Defender?
 
-Windows Device Guard consente di controllare rigorosamente cosa può essere eseguito sui PC gestiti dall'utente. Questa funzione può essere utile per i PC nei reparti ad alta sicurezza, in cui è fondamentale che impedire l'esecuzione di software indesiderato.
+Il controllo delle applicazioni di Windows Defender consente di controllare in modo sicuro gli elementi che possono essere eseguiti nei PC gestiti. Questa funzione può essere utile per i PC nei reparti ad alta sicurezza, in cui è fondamentale che impedire l'esecuzione di software indesiderato.
 
 Quando si distribuisce un criterio, in genere, è possibile eseguire i file eseguibili seguenti:
 
@@ -69,10 +70,9 @@ Quando si distribuisce un criterio, in genere, è possibile eseguire i file eseg
 
 Prima di configurare o distribuire criteri di controllo delle applicazioni di Windows Defender, leggere le informazioni seguenti:
 
-- La gestione di Device Guard è una funzionalità di versione non definitiva per Configuration Manager ed è soggetta a modifiche.
-- Per usare Device Guard con Configuration Manager, i PC gestiti devono eseguire Windows 10 Enterprise versione 1703 o successiva.
+- La gestione del controllo delle applicazioni di Windows Defender è una funzionalità di versione non definitiva per Configuration Manager ed è soggetta a modifiche.
+- Per usare il controllo delle applicazioni di Windows Defender con Configuration Manager, i PC gestiti devono eseguire Windows 10 Enterprise versione 1703 o successiva.
 - Dopo che il criterio è stato elaborato correttamente in un computer client, Configuration Manager viene configurato come programma di installazione gestito in tale client. Il software distribuito tramite quest'ultimo, dopo l'elaborazione del criterio, viene automaticamente considerato attendibile. Il software installato da Configuration Manager prima dell'elaborazione del criterio di Controllo di applicazioni di Windows Defender non è considerato automaticamente attendibile.
-- Perché sia possibile elaborare correttamente un criterio di controllo delle applicazioni di Windows Defender, i PC client devono essere connessi al rispettivo controller di dominio.
 - In base alla pianificazione, configurabile durante la distribuzione, la valutazione della conformità predefinita per i criteri di Controllo di applicazioni avviene ogni giorno. Se si rilevano problemi nell'elaborazione dei criteri, può essere utile configurare una pianificazione di valutazione di conformità più breve, ad esempio ogni ora. Questa pianificazione determina la frequenza con cui i client riprovano a elaborare un criterio di Controllo di applicazioni di Windows Defender in caso di errore.
 - Indipendentemente dalla modalità di applicazione selezionata, quando si distribuisce un criterio di controllo delle applicazioni di Windows Defender, i PC client non possono eseguire applicazioni HTML con estensione hta.
 
@@ -86,7 +86,7 @@ Prima di configurare o distribuire criteri di controllo delle applicazioni di Wi
     - **Imponi un riavvio dei dispositivi in modo che questo criterio possa essere applicato per tutti i processi**: dopo l'elaborazione del criterio in un PC client, viene pianificato un riavvio nel client in base a quanto specificato in **Impostazioni client** per **Riavvio del computer**.
         - I dispositivi che eseguono Windows 10 versione 1703 o precedente verranno sempre riavviati automaticamente.
         - A partire da Windows 10 versione 1709, il nuovo criterio di Controllo di applicazioni verrà applicato alle applicazioni attualmente in esecuzione nel dispositivo solo dopo il riavvio. Le applicazioni avviate dopo l'applicazione del criterio rispetteranno tuttavia il nuovo criterio di Controllo di applicazioni. 
-    - **Modalità di imposizione**: scegliere uno dei seguenti metodi di imposizione di Device Guard sul PC client.
+    - **Modalità di imposizione** : scegliere uno dei seguenti metodi di imposizione per il controllo delle applicazioni di Windows Defender nel computer client.
         - **Imposizione abilitata**: è possibile eseguire solo file eseguibili attendibili.
         - **Solo controllo**: è possibile eseguire tutti i file eseguibili, ma quelli non attendibili vengono registrati nel Registro eventi del client locale.
 5. Nella scheda **Inclusioni** della procedura guidata **Crea un criterio di controllo delle applicazioni** scegliere se si vuole **autorizzare il software ritenuto attendibile da Intelligent Security Graph**.
@@ -140,7 +140,7 @@ You can let locked-down devices run software with a good reputation as determine
 -->
 
 
-## <a name="security-and-privacy-information-for-device-guard"></a>Informazioni sulla sicurezza e sulla privacy di Device Guard
+## <a name="security-and-privacy-information-for-windows-defender-application-control"></a>Informazioni sulla sicurezza e la privacy per il controllo delle applicazioni di Windows Defender
 
 - In questa versione non definitiva non distribuire criteri di controllo delle applicazioni di Windows Defender con la modalità di applicazione **Solo controllo** in un ambiente di produzione. Questa modalità consente di testare la funzionalità solo in un ambiente di prova.
 - I dispositivi in cui è stato distribuito un criterio in modalità **Solo controllo** o **Imposizione abilitata**, ma che non sono ancora stati riavviati per rendere effettivo il criterio sono vulnerabili nei confronti di eventuale software non attendibile installato.
@@ -151,6 +151,9 @@ In questo caso, l'esecuzione del software potrebbe ancora essere consentita anch
 - L'unico modo per impedire agli utenti con diritti di amministratore locale di disabilitare Controllo di applicazioni consiste nel distribuire un criterio binario firmato, operazione possibile con Criteri di gruppo, ma non attualmente supportata in Configuration Manager.
 - La configurazione di Configuration Manager come programma di installazione gestito nei PC client usa criteri di AppLocker. AppLocker è usato solo per identificare i programmi di installazione gestiti e qualsiasi imposizione avviene con Controllo delle applicazioni di Windows Defender. 
 
+## <a name="next-steps"></a>Passaggi successivi
+
+ [Gestire i criteri antimalware e le impostazioni del firewall](/configmgr/protect/deploy-use/endpoint-antimalware-firewall)
 
 
 
