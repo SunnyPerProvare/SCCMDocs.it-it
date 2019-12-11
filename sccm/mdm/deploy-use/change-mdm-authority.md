@@ -12,10 +12,10 @@ ms.technology: configmgr-hybrid
 ms.assetid: cc397ab5-125f-4f17-905b-fab980194f49
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c0420113feaaf9c9485b8d1e3d488b07878c61b5
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62233994"
 ---
 # <a name="change-your-mdm-authority"></a>Cambiare l'autorità MDM
@@ -124,9 +124,9 @@ Una volta completata la modifica dell'autorità MDM, esaminare i passaggi seguen
     
 - In caso di problemi con dispositivi specifici, annullare e ripetere la registrazione dei dispositivi. Questa operazione consente la connessione alla nuova autorità e fa sì che i dispositivi siano gestiti il più rapidamente possibile.  
 
-- Se si è abilitato [Android for Work](/sccm/mdm/deploy-use/create-configuration-items-for-android-for-work-devices-managed-without-the-client) come tenant ibrido e quindi è stata eseguita la migrazione del tenant a Intune autonomo, l'impostazione di Android for Work nelle restrizioni di registrazione può risultare bloccata anziché consentita. Impostarla manualmente su **Consenti** per riabilitare Android per la registrazione del lavoro.<!--512117-->  
+- Se si è abilitato [Android for Work](/sccm/mdm/deploy-use/create-configuration-items-for-android-for-work-devices-managed-without-the-client) come tenant ibrido e quindi è stata eseguita la migrazione del tenant a Intune autonomo, l'impostazione di Android for Work nelle restrizioni di registrazione può risultare bloccata anziché consentita. Impostarlo manualmente in modo da **consentire** la riabilitazione della registrazione di Android for work.<!--512117-->  
 
-- Dopo aver cambiato l'autorità MDM, il token VPP Apple e le [app iOS acquistate con Volume Purchase Program](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps) associate non vengono rimosse automaticamente. Per eseguire la pulizia di queste informazioni, seguire la procedura descritta in [Eliminare un token VPP di Apple](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps#delete-an-apple-vpp-token). Al termine dell'operazione, il sito rimuove il token. Rimuove inoltre dal nodo dell'App Store concesso in licenza i metadati dell'applicazione per tale token.<!--SCCMDocs issue 579-->  
+- Dopo aver cambiato l'autorità MDM, il token VPP Apple e le [app iOS acquistate con Volume Purchase Program](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps) associate non vengono rimosse automaticamente. Per eseguire la pulizia di queste informazioni, seguire la procedura descritta in [Eliminare un token VPP di Apple](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps#delete-an-apple-vpp-token). Al termine dell'operazione, il sito rimuove il token. Rimuove anche dal nodo app dello Store con licenza tutti i metadati dell'applicazione per il token.<!--SCCMDocs issue 579-->  
 
     In rari casi, potrebbe essere visualizzato un errore che indica che il sito non è riuscito a eliminare l'oggetto di gestione.  
 

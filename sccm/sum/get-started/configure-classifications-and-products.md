@@ -11,12 +11,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80d9fcc24cbda5e002e7f4b3ca78979c351ea08c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 4250f4286c042176d6700eecbe6a65fcc60656af
+ms.sourcegitcommit: a02a4e1a3c034bca00aaf05924a63b08b92201fb
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74190552"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74946496"
 ---
 # <a name="configure-classifications-and-products-to-synchronize"></a>configurare le classificazioni e i prodotti per la sincronizzazione  
 
@@ -70,7 +70,7 @@ I metadati degli aggiornamenti software vengono recuperati durante il processo d
 
 ## <a name="bkmk_Surface"></a>Includi i driver di Microsoft Surface e gli aggiornamenti del firmware
 
-Per sincronizzare i driver di Microsoft Surface, è possibile selezionare la casella di controllo **Includi Microsoft Surface Drivers and Firmware Updates** .<!--1098490--> Tutti i punti di aggiornamento software devono eseguire Windows Server 2016 per sincronizzare correttamente i driver di Surface. Se si abilita un punto di aggiornamento software in un computer che esegue Windows Server 2012 dopo aver abilitato i driver per Surface, i risultati dell'analisi per gli aggiornamenti dei driver non saranno accurati. Questo comportamento causa la visualizzazione di dati di conformità non corretti nella console di Configuration Manager e nei report di Configuration Manager.  
+Per sincronizzare i driver di Microsoft Surface, è possibile selezionare la casella di controllo **Includi Microsoft Surface Drivers and Firmware Updates** .<!--1098490--> Tutti i punti di aggiornamento software devono eseguire Windows Server 2016 con aggiornamento cumulativo [KB4025339](https://support.microsoft.com/help/4025339) o versione successiva installata per sincronizzare correttamente i driver della superficie. Se si abilita un punto di aggiornamento software in un computer che esegue Windows Server 2012 dopo aver abilitato i driver per Surface, i risultati dell'analisi per gli aggiornamenti dei driver non saranno accurati. Questo comportamento causa la visualizzazione di dati di conformità non corretti nella console di Configuration Manager e nei report di Configuration Manager.  
 
 - Questa funzionalità è stata introdotta per la prima volta nella versione 1706 come [funzionalità di una versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1710, questa funzionalità non è più in versione non definitiva.  
 - Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  

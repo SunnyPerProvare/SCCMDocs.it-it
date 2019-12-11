@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fd48ec41114b122d8d00549c1ae8d99d08ba5f1f
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70379715"
 ---
 # <a name="configure-your-intune-subscription-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la sottoscrizione di Intune con System Center Configuration Manager e Microsoft Intune
@@ -59,13 +59,13 @@ La sottoscrizione di Intune esegue le operazioni seguenti:
      > [!NOTE]
      >  Se un utente viene rimosso dalla raccolta, il dispositivo dell'utente continuerà a essere gestito per un massimo di 24 ore finché il record utente non verrà rimosso dal database utenti.
 
-   - **Nome società**: Specificare il nome della società.
+   - **Nome società**: specificare il nome della società.
 
-   - **URL della documentazione sulla privacy dell'azienda**: Se si pubblicano le informazioni sulla privacy della società in un collegamento accessibile da Internet, fornire un collegamento a cui gli utenti possono accedere dal portale aziendale, ad http://www.contoso.com/CP_privacy.html esempio. Le informazioni sulla privacy possono chiarire quali informazioni gli utenti condividono con la società.
+   - **URL della documentazione sulla privacy**: se si pubblicano le informazioni sulla privacy della società in un collegamento accessibile tramite Internet, specificare un collegamento a cui gli utenti possono accedere dal portale aziendale, come ad esempio http://www.contoso.com/CP_privacy.html. Le informazioni sulla privacy possono chiarire quali informazioni gli utenti condividono con la società.
 
-   - **Combinazione colori per il portale aziendale**: Facoltativamente, modificare il colore predefinito del blu per i portali aziendali.
+   - **Combinazione colori per portale società**: Facoltativamente, modificare il colore predefinito blu per i portali società.
 
-   - **Configuration Manager codice sito**: Specificare un codice del sito per un sito primario per la gestione dei dispositivi mobili.
+   - **Codice del sito Configuration Manager**: Specificare un codice del sito per un sito primario per gestire i dispositivi mobili.
 
    > [!NOTE]
    >  La modifica del codice del sito riguarda solo le nuove registrazioni e non i dispositivi registrati esistenti.
@@ -74,7 +74,7 @@ La sottoscrizione di Intune esegue le operazioni seguenti:
 
 9. Nella pagina **Logo società** scegliere se visualizzare un logo nel portale aziendale e quindi fare clic su **Avanti**.
 
-10. Completare la procedura guidata.
+10. completare la procedura guidata.
 
 > [!div class="button"]
 > [< Passaggio precedente](confirm-dns.md)  [Passaggio successivo >](terms-and-conditions.md)

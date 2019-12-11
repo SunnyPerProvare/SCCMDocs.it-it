@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 817e1b3a37ea5e40eb8787b23c56ae69bda8bf19
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62227927"
 ---
 # <a name="manage-devices-for-on-premises-mobile-device-management"></a>Gestire dispositivi per la gestione dei dispositivi mobili locale

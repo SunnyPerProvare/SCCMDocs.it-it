@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dcf12937009a91bb8cc5a8c1c191861fec06ac13
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62227455"
 ---
 # <a name="how-users-enroll-devices-with-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Modalità di registrazione dei dispositivi con la gestione di dispositivi mobili locale da parte degli utenti in System Center Configuration Manager
@@ -25,7 +25,7 @@ ms.locfileid: "62227455"
 Con Gestione dei dispositivi mobili locale di System Center Configuration Manager gli utenti possono registrare i dispositivi se hanno ottenuto l'autorizzazione di registrazione (con le impostazioni client aggiornate) e se i dispositivi hanno il certificato radice necessario per stabilire comunicazioni attendibili con i server che ospitano i ruoli del sistema del sito richiesti. Per altre informazioni su come configurare la registrazione, vedere [Impostare la registrazione dei dispositivi per la Gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md).  
 
 > [!NOTE]  
->  Current Branch di Configuration Manager supporta la registrazione in Gestione dei dispositivi mobili locale per i dispositivi che eseguono i sistemi operativi seguenti:  
+>  Il ramo corrente di Configuration Manager supporta la registrazione in Gestione dispositivi mobili locali per i dispositivi che eseguono i sistemi operativi seguenti:  
 >   
 > -  Windows 10 Enterprise  
 > -   Windows 10 Pro  

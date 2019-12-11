@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 54ca57956db37a26e2edad27c6cf6b92aecd1645
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62227846"
 ---
 # <a name="user-affinity-for-hybrid-managed-devices-in-configuration-manager"></a>Affinità utente per i dispositivi gestiti ibridi in Configuration Manager
@@ -37,7 +37,7 @@ Quando si configurano profili per i dispositivi di proprietà dell'azienda, l'am
 
 4.  A questo punto l'utente può accedere al Portale aziendale con l'UPN usato durante la configurazione del dispositivo.  
 
-5.  Dopo l'accesso, viene chiesto di registrare il dispositivo. Il primo passaggio consiste nell' **identificare il dispositivo**. L'applicazione visualizza un elenco di dispositivi iOS registrati dall'azienda e assegnati all'account di Intune dell'utente finale. Scegliere il dispositivo corrispondente.  
+5.  Dopo l'accesso, viene chiesto di registrare il dispositivo. Il primo passaggio consiste nell'**identificare il dispositivo**. L'applicazione visualizza un elenco di dispositivi iOS registrati dall'azienda e assegnati all'account di Intune dell'utente finale. Scegliere il dispositivo corrispondente.  
 
      Se il dispositivo non è registrato dall'azienda, selezionare "nuovo dispositivo" per continuare con il flusso di registrazione standard.  
 

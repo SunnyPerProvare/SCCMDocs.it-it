@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d3b761eac32daf591789a790209e25e62f1ea81d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56121483"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62216030"
 ---
 # <a name="set-up-device-enrollment-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Impostare la registrazione dei dispositivi per la gestione dei dispositivi mobili (MDM) locale in System Center Configuration Manager
 

@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8a259e81831c00ad585a0177ac75473eb6d62860
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67678592"
 ---
 # <a name="apply-settings-to-ios-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Applicare le impostazioni alle app iOS con i criteri di configurazione app in System Center Configuration Manager
@@ -35,7 +35,7 @@ Per usare un criterio di configurazione delle app in Configuration Manager, anzi
 
 I criteri di configurazione delle app sono attualmente disponibili solo per i dispositivi che eseguono iOS 8 e versioni successive e per i tipi di applicazioni seguenti:
 
-- **pacchetto App per iOS (\*file con estensione IPA)**
+- **pacchetto app per iOS (file\*. IPA)**
 - **Pacchetto app iOS nell'App Store**
 
 Per altre informazioni sui tipi di installazione delle app, vedere l'[introduzione alla gestione delle applicazioni](/sccm/apps/understand/introduction-to-application-management).

@@ -1,7 +1,7 @@
 ---
 title: Gestire l'accesso alla posta elettronica
 titleSuffix: Configuration Manager
-description: Informazioni su come usare l'accesso condizionale di Configuration Manager per gestire l'accesso alla posta elettronica di Exchange.
+description: Informazioni su come usare Configuration Manager l'accesso condizionale per gestire l'accesso alla posta elettronica di Exchange.
 ms.date: 03/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -12,17 +12,17 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2ee4ed8f102507b4d62a1ccbfe1cc38240e85df9
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62260554"
 ---
 # <a name="manage-email-access-in-configuration-manager"></a>Gestire l'accesso alla posta elettronica in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Utilizzare Gestione configurazione di accesso condizionale per gestire l'accesso alla posta elettronica di Exchange in base alle condizioni specificate.  
+Usare Configuration Manager accesso condizionale per gestire l'accesso alla posta elettronica di Exchange in base alle condizioni specificate.  
 
 È possibile gestire l'accesso a:  
 
@@ -44,12 +44,12 @@ Utilizzare Gestione configurazione di accesso condizionale per gestire l'accesso
 
 Le applicazione desktop di Office possono accedere a Exchange Online nei PC che eseguono:  
 
-- Office Desktop 2013 e versioni successive con l' [autenticazione moderna](https://support.office.com/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a) abilitata.  
+- La versione desktop di Office 2013 e versioni successive con [autenticazione moderna](https://support.office.com/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a) attiva.  
 
 - Windows 7.0 o Windows 8.1  
 
 > [!NOTE]  
-> I PC devono essere aggiunti a un dominio oppure essere conformi ai criteri impostati in Intune.  
+> I PC devono essere aggiunti a un dominio o essere conformi ai criteri impostati in Intune.  
 
 
 ## <a name="device-requirements"></a>Requisiti dei dispositivi
@@ -59,27 +59,27 @@ Se si configura l'accesso condizionale, prima che un utente possa connettersi al
 
 - Deve essere registrato in Azure Active Directory. La registrazione viene eseguita automaticamente quando il dispositivo è registrato in Intune (solo per Exchange Online). Inoltre, l'ID di Exchange ActiveSync del client deve essere registrato con Azure Active Directory (non applicabile a dispositivi Windows e Windows Phone collegati a Exchange in locale).  
 
-    Per un PC aggiunto a un dominio, è necessario impostarlo in modo che venga registrato automaticamente con Azure Active Directory. Il **accesso condizionale per PC** sezione il [gestire l'accesso ai servizi](../../protect/deploy-use/manage-access-to-services.md) articolo elenca il set completo di requisiti per abilitare l'accesso condizionale per PC.  
+    Per un PC aggiunto a un dominio, è necessario impostarlo in modo che venga registrato automaticamente con Azure Active Directory. La sezione **accesso condizionale per i PC** nell'articolo [gestire l'accesso ai servizi](../../protect/deploy-use/manage-access-to-services.md) elenca il set completo di requisiti per abilitare l'accesso condizionale per i PC.  
 
 - Deve essere compatibile con i criteri di compatibilità di Configuration Manager distribuiti nel dispositivo  
 
-    Se non viene soddisfatta una condizione di accesso condizionale, viene visualizzato quando l'utente con uno dei seguenti messaggi di accesso:  
+    Se non viene soddisfatta una condizione di accesso condizionale, viene visualizzato uno dei messaggi seguenti quando l'utente esegue l'accesso:  
 
-- Se il dispositivo non è registrato con Intune oppure non è registrato in Azure Active Directory, viene visualizzato un messaggio contenente istruzioni su come installare l'app portale aziendale, registrare il dispositivo e (per dispositivi Android e iOS), attivare la posta elettronica, che associa il ID del dispositivo Exchange ActiveSync con il record di dispositivo in Azure Active Directory.  
+- Se il dispositivo non è registrato con Intune oppure non è registrato in Azure Active Directory, viene visualizzato un messaggio con le istruzioni su come installare l'app portale aziendale, registrare il dispositivo e, per i dispositivi Android e iOS, attivare la posta elettronica, che associa il ID Exchange ActiveSync del dispositivo con il record del dispositivo in Azure Active Directory.  
 
-- Se il dispositivo non è conforme, viene visualizzato un messaggio che indirizza l'utente al portale web Intune dove sono disponibili informazioni sul problema e su come risolverlo.  
+- Se il dispositivo non è conforme, viene visualizzato un messaggio che indirizza l'utente al portale Web di Intune dove sono reperibili informazioni sul problema e su come risolverlo.  
 
 #### <a name="for-mobile-devices"></a>Per i dispositivi mobili
 
-È possibile limitare l'accesso a **Outlook Web Access (OWA)** in Exchange Online quando si accede da un browser di dispositivi **iOS** e **Android** . L'accesso verrà consentito solo da browser supportati di dispositivi compatibili:  
+È possibile limitare l'accesso a **Outlook Web Access (OWA)** in Exchange Online quando si accede da un browser di dispositivi **iOS** e **Android**. L'accesso verrà consentito solo da browser supportati di dispositivi compatibili:  
 
 - Safari (iOS)  
 - Chrome (Android)  
 - Managed Browser (iOS e Android)  
 
-I browser non supportati verranno bloccati. Non sono supportate le app OWA per iOS e Android. Devono essere bloccate usando le regole delle attestazioni ADFS:  
+I browser non supportati verranno bloccati. Le app OWA per iOS e Android non sono supportate. Devono essere bloccate usando le regole delle attestazioni ADFS:  
 
-- Configurare le regole delle attestazioni ADFS per bloccare i protocolli di autenticazione non moderni. Nello scenario 3 per cui vengono fornite istruzioni dettagliate [bloccare completamente l'accesso a Office 365, ad eccezione di applicazioni basate su browser](https://technet.microsoft.com/library/dn592182.aspx).  
+- Configurare le regole delle attestazioni ADFS per bloccare i protocolli di autenticazione non moderni. Le istruzioni dettagliate sono disponibili nello scenario 3 per [bloccare l'accesso a Office 365 ad eccezione delle applicazioni basate su browser](https://technet.microsoft.com/library/dn592182.aspx).  
 
 #### <a name="for-pcs"></a>Per i PC
 
@@ -109,7 +109,7 @@ L'app Outlook per iOS e Android e la versione desktop di Outlook 2013 e versioni
 
 ### <a name="step-1-evaluate-the-effect-of-the-conditional-access-policy"></a>Passaggio 1: Valutare l'effetto dei criteri di accesso condizionale  
 
-Dopo aver configurato il **Exchange connector locale**, è possibile utilizzare Gestione configurazione **elenco dei dispositivi per stato di accesso condizionale** report per identificare i dispositivi che non potranno essere aperti da l'accesso a Exchange dopo aver configurato i criteri di accesso condizionale. Questo report richiede inoltre:  
+Dopo la configurazione di **on-premises Exchange Connector**, è possibile usare il report Configuration Manager **elenco di dispositivi per stato di accesso condizionale** per identificare i dispositivi a cui verrà impedito l'accesso a Exchange dopo aver configurato i criteri di accesso condizionale. Questo report richiede inoltre:  
 
 - Una sottoscrizione a Intune  
 
@@ -121,13 +121,13 @@ Per altre su come eseguire i report, vedere [Reporting in Configuration Manager]
 
 Dopo aver eseguito il report, esaminare le quattro colonne seguenti per determinare se un utente verrà bloccato:  
 
-- **Canale di gestione**: Il dispositivo è gestito da Intune, Exchange ActiveSync o entrambi.  
+- **Canale di gestione**: il dispositivo è gestito da Intune, Exchange ActiveSync o entrambi.  
 
-- **Registrato con AAD**: Il dispositivo è registrato con Azure Active Directory (noto come workplace join).  
+- **Registrato con AAD**: il dispositivo è registrato con Azure Active Directory, noto come aggiunta all'area di lavoro.  
 
-- **Conforme**: Il dispositivo è conforme ai criteri di conformità distribuiti.  
+- **Conforme**: il dispositivo è conforme ai criteri di conformità distribuiti.  
 
-- **Attivato da EAS**: dispositivi iOS e Android devono avere ID Exchange ActiveSync associato al record di registrazione dispositivi in Azure Active Directory. Ciò si verifica quando l'utente fa clic sul link **Attiva posta elettronica** nell'e-mail in quarantena.  
+- **Attivato da EAS**: i dispositivi iOS e Android devono avere un ID Exchange ActiveSync associato al record di registrazione del dispositivo in Azure Active Directory. Ciò si verifica quando l'utente fa clic sul link **Attiva posta elettronica** nell'e-mail in quarantena.  
 
     > [!NOTE]  
     > Per i dispositivi Windows Phone un valore viene sempre visualizzato in questa colonna.  
@@ -136,39 +136,39 @@ L'accesso ad Exchange da parte dei dispositivi che appartengono a un gruppo di d
 
 |Canale di gestione|AAD registrato|conformi|Attivato da EAS|Azione risultante|  
 |------------------------|--------------------|---------------|-------------------|----------------------|  
-|**Gestito da Microsoft Intune ed Exchange ActiveSync**|Yes|Yes|Viene visualizzato**Sì** o **No** |Accesso alla posta elettronica consentito|  
+|**Gestito da Microsoft Intune ed Exchange ActiveSync**|Yes|Yes|Viene visualizzato**Sì** o **No**|Accesso alla posta elettronica consentito|  
 |Qualsiasi altro valore|No|No|Non viene visualizzato alcun valore|Accesso alla posta elettronica bloccato|  
 
 È possibile esportare il contenuto del report e usare la colonna **Indirizzo di posta elettronica** per informare gli utenti che verranno bloccati.  
 
 
-### <a name="step-2-configure-user-groups-or-collections-for-the-conditional-access-policy"></a>Passaggio 2: Configurare gruppi di utenti o le raccolte per i criteri di accesso condizionale  
+### <a name="step-2-configure-user-groups-or-collections-for-the-conditional-access-policy"></a>Passaggio 2: Configurare gruppi di utenti o raccolte per i criteri di accesso condizionale  
 
 I criteri di accesso condizionale sono destinati a diversi gruppi o raccolte di utenti in base ai tipi di criteri. Questi gruppi contengono gli utenti a cui saranno destinati i criteri o che ne saranno esenti. Quando a un utente viene destinato un criterio, ogni dispositivo in uso deve essere conforme per accedere alla posta elettronica.  
 
-- **Per i criteri di Exchange Online**: ai gruppi di utenti di sicurezza di Azure Active Directory. È possibile configurare questi gruppi nel **interfaccia di amministrazione di Microsoft 365**, o il **portale account Intune**.  
+- **Per i criteri di Exchange Online**: per Azure Active Directory gruppi di utenti di sicurezza. È possibile configurare questi gruppi nel **centro di amministrazione Microsoft 365**o nel portale per gli **account di Intune**.  
 
-- **Per i criteri di On-premises Exchange**: alle raccolte di utenti di Configuration Manager. È possibile configurarli nell'area di lavoro **Asset e conformità** .  
+- **Per i criteri di Exchange locale**: per Configuration Manager le raccolte utenti. È possibile configurarli nell'area di lavoro **Asset e conformità** .  
 
 È possibile specificare due tipi di gruppi in ogni criterio:  
 
-- **Gruppi di destinazione**: Gruppi di utenti o le raccolte a cui viene applicato il criterio  
+- **Gruppi di destinazione**: gruppi o raccolte di utenti a cui sono applicati i criteri  
 
-- **Gruppi esentati**: Gruppi di utenti o le raccolte che sono esente dai criteri (facoltativo)  
+- **Gruppi esentati**: gruppi o raccolte di utenti che sono esentati dai criteri (facoltativo)  
 
 Se un utente si trova in entrambi i gruppi, sarà esentato dai criteri.  
 
 Solo i gruppi o le raccolte che sono considerati come destinazione dei criteri di accesso condizionale vengono valutati per l'accesso di Exchange.  
 
 
-### <a name="step-3-configure-and-deploy-a-compliance-policy"></a>Passaggio 3: Configurare e distribuire criteri di conformità  
+### <a name="step-3-configure-and-deploy-a-compliance-policy"></a>Passaggio 3: Configurare e distribuire i criteri di conformità  
 
 Assicurarsi di aver creato e distribuito i criteri di conformità per tutti i dispositivi a cui saranno destinati i criteri di accesso condizionale di Exchange.  
 
 Per informazioni dettagliate su come configurare i criteri di conformità, vedere [Gestire i criteri di conformità del dispositivo](device-compliance-policies.md).  
 
 > [!IMPORTANT]  
-> Se sono stati distribuiti criteri di conformità e abilitati i criteri di accesso condizionale di Exchange, tutti i dispositivi di destinazione verranno consentiti l'accesso.  
+> Se non sono stati distribuiti criteri di conformità e abilitati i criteri di accesso condizionale di Exchange, a tutti i dispositivi di destinazione verrà consentito l'accesso.  
 
 
 ### <a name="step-4-configure-the-conditional-access-policy"></a>Passaggio 4: Configurare i criteri di accesso condizionale  
@@ -176,19 +176,19 @@ Per informazioni dettagliate su come configurare i criteri di conformità, veder
 #### <a name="for-exchange-online-and-tenants-in-the-new-exchange-online-dedicated-environment"></a>Per Exchange Online (e i tenant nel nuovo ambiente Exchange Online dedicato)
 
 > [!NOTE]  
-> È possibile creare i criteri di accesso condizionale anche nella console di gestione di Azure AD. La console di gestione di Azure AD consente di creare i criteri di accesso condizionale dei dispositivi Intune (chiamati criteri di accesso condizionale basati su dispositivo in Azure AD) oltre ad altri criteri di accesso condizionale come Multi-Factor Authentication. È anche possibile impostare criteri di accesso condizionale per app aziendali di terze parti supportate da Azure AD, ad esempio Salesforce e Box. Per altre informazioni, vedere [How To: Richiedere dispositivi gestiti per l'accesso alle app cloud con l'accesso condizionale](https://docs.microsoft.com/azure/active-directory/conditional-access/require-managed-devices).  
+> È possibile creare i criteri di accesso condizionale anche nella console di gestione di Azure AD. La console di gestione di Azure AD consente di creare i criteri di accesso condizionale dei dispositivi Intune (chiamati criteri di accesso condizionale basati su dispositivo in Azure AD) oltre ad altri criteri di accesso condizionale come Multi-Factor Authentication. È anche possibile impostare criteri di accesso condizionale per app aziendali di terze parti supportate da Azure AD, ad esempio Salesforce e Box. Per altre informazioni, vedere [procedura: richiedere i dispositivi gestiti per l'accesso alle app cloud con accesso condizionale](https://docs.microsoft.com/azure/active-directory/conditional-access/require-managed-devices).  
 
 Il flusso seguente viene usato dai criteri di accesso condizionale per fare in modo che Exchange Online valuti se consentire o bloccare i dispositivi.  
 
-![Flusso accesso condizionale](media/ConditionalAccess8-1.png)  
+![Flusso di accesso condizionale](media/ConditionalAccess8-1.png)  
 
 Per accedere alla posta elettronica, il dispositivo:  
 
 - Essere registrato con Intune  
 
-- I PC devono essere aggiunti a un dominio o essere registrati e conformi ai criteri impostati in Intune  
+- I PC devono essere aggiunti a un dominio o registrati e conformi ai criteri impostati in Intune  
 
-- Registrare il dispositivo in Azure AD. Ciò avviene automaticamente quando il dispositivo è registrato con Intune. Per i PC appartenenti al dominio, è necessario configurarli vengano [automaticamente la registrazione del dispositivo](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-manual-steps) con Azure AD.  
+- Registrare il dispositivo in Azure AD. Ciò avviene automaticamente quando il dispositivo è registrato in Intune. Per i PC aggiunti a un dominio, è necessario configurarlo in modo che [registri automaticamente il dispositivo](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-manual-steps) con Azure ad.  
 
 - Deve avere la posta elettronica attivata che associa l'ID Exchange ActiveSync del dispositivo al record del dispositivo in Azure Active Directory (si applica solo a dispositivi iOS e Android).  
 
@@ -196,75 +196,75 @@ Per accedere alla posta elettronica, il dispositivo:
 
 Lo stato del dispositivo viene archiviato in Azure Active Directory che consente o blocca l'accesso alla posta elettronica, in base a condizioni valutate.  
 
-Se non viene soddisfatta una condizione, quando effettuano l'accesso viene visualizzato l'utente con uno dei seguenti messaggi:  
+Se non viene soddisfatta una condizione, viene visualizzato uno dei messaggi seguenti quando l'utente esegue l'accesso:  
 
-- Se il dispositivo non è registrato oppure registrato in Azure AD, viene visualizzato un messaggio contenente istruzioni su come installare l'app portale aziendale ed eseguire la registrazione  
+- Se il dispositivo non è registrato o è registrato in Azure AD, viene visualizzato un messaggio con le istruzioni su come installare l'app portale aziendale ed eseguire la registrazione  
 
-- Se il dispositivo non è conforme, viene visualizzato un messaggio che indirizza l'utente per il sito Web portale aziendale di Intune o l'app portale aziendale dove sono disponibili informazioni sul problema e su come risolverlo.  
+- Se il dispositivo non è conforme, viene visualizzato un messaggio che indirizza l'utente al sito Web Portale aziendale Intune o all'app Portale aziendale dove possono trovare informazioni sul problema e su come risolverlo.  
 
 - Per un PC:  
 
-    - Se i criteri sono impostati per richiedere l'aggiunta a dominio e il PC non è aggiunto al dominio, viene visualizzato un messaggio che indica di contattare l'amministratore IT.  
+    - Se i criteri sono impostati in modo da richiedere l'aggiunta a un dominio e il PC non è aggiunto a un dominio, viene visualizzato un messaggio per contattare l'amministratore IT.  
 
-    - Se i criteri sono impostati per richiedere l'aggiunta a dominio o la conformità e il PC non soddisfa questi requisiti, viene visualizzato un messaggio contenente istruzioni su come installare l'app portale aziendale ed eseguire la registrazione.  
+    - Se i criteri sono impostati in modo da richiedere l'aggiunta a un dominio o la conformità e il PC non soddisfa questi requisiti, viene visualizzato un messaggio con le istruzioni su come installare l'app portale aziendale ed eseguire la registrazione.  
 
 Il messaggio viene visualizzato sul dispositivo per gli utenti di Exchange Online e i tenant nel nuovo ambiente di Exchange Online dedicato e viene recapitato nella posta in arrivo degli utenti per dispositivi Exchange locale e Exchange Online legacy dedicato.  
 
 > [!NOTE]  
 > Le regole di accesso condizionale di Configuration Manager sovrascrivono, consentono, bloccano e mettono in quarantena le regole definite nella console di amministrazione di Exchange Online.  
 > 
-> I criteri di accesso condizionale devono essere configurati nella console di Intune. All'inizio della procedura seguente è necessario accedere alla console di Intune tramite Configuration Manager. Se richiesto, accedere usando le stesse credenziali usate per configurare il punto di connessione tra Configuration Manager e Intune.  
+> I criteri di accesso condizionale devono essere configurati nella console di Intune. All'inizio della procedura seguente è necessario accedere alla console di Intune tramite Configuration Manager. Se richiesto, accedere con le stesse credenziali usate per configurare il punto di connessione del servizio tra Configuration Manager e Intune.  
 
 ##### <a name="to-enable-the-exchange-online-policy"></a>Per abilitare i criteri di Exchange Online  
 
-1. Nella console di Configuration Manager, selezionare **asset e conformità**.  
+1. Nella console di Configuration Manager selezionare **Asset e conformità**.  
 
-2. Espandere **le impostazioni di conformità**, espandere **accesso condizionale**, quindi selezionare **Exchange Online**.  
+2. Espandere **impostazioni di conformità**, espandere **accesso condizionale**e quindi selezionare **Exchange Online**.  
 
-3. Nel **Home** nella scheda il **collegamenti** gruppo, selezionare **configurare dei criteri di accesso condizionale nella Console di Intune**. Potrebbe essere necessario specificare il nome utente e la password dell'account usato per connettere Configuration Manager a qualsiasi amministratore globale del servizio Intune. Viene visualizzata la console di amministrazione di Intune.  
+3. Nella scheda **Home** , nel gruppo **collegamenti** , selezionare **Configura criteri di accesso condizionale nella console di Intune**. Potrebbe essere necessario specificare il nome utente e la password dell'account usato per connettere Configuration Manager a qualsiasi amministratore globale del servizio Intune. Viene visualizzata la console di amministrazione di Intune.  
 
-4. Nel portale di Microsoft Intune, selezionare **criterio** > **accesso condizionale** > **criteri di Exchange Online**.  
+4. Nel portale di Microsoft Intune selezionare **criteri** > **accesso condizionale** > **criteri di Exchange Online**.  
 
     ![HybridOnlineSetupIntune](media/HybridOnlineSetupIntune.png)  
 
-5. Nella pagina **Criteri di Exchange Online** selezionare **Abilita criteri di accesso condizionale per Exchange Online**. Se si seleziona questa opzione, il dispositivo deve essere conforme. Se questa opzione non è selezionata non è applicato l'accesso condizionale.  
+5. Nella pagina **Criteri di Exchange Online** selezionare **Abilita criteri di accesso condizionale per Exchange Online**. Se si seleziona questa opzione, il dispositivo deve essere conforme. Se questa opzione non è selezionata, l'accesso condizionale non viene applicato.  
 
     > [!NOTE]  
-    > Se sono stati distribuiti criteri di conformità e abilitati i criteri di Exchange Online, tutti i dispositivi di destinazione verranno segnalati come conformi.  
+    > Se non sono stati distribuiti criteri di conformità e abilitati i criteri di Exchange Online, tutti i dispositivi di destinazione vengono segnalati come conformi.  
    >   
    >  Indipendentemente dallo stato di conformità, tutti gli utenti interessati dai criteri dovranno registrare i propri dispositivi in Intune.  
 
-6. Sotto **accesso alle applicazioni**per Outlook e altre App con l'autenticazione moderna, è possibile scegliere di limitare l'accesso solo ai dispositivi conformi per ogni piattaforma. I dispositivi Windows devono essere aggiunti a un dominio oppure devono essere registrati in Intune e conformi.  
+6. In **accesso all'applicazione**, per Outlook e altre app che usano l'autenticazione moderna, è possibile scegliere di limitare l'accesso solo ai dispositivi conformi per ogni piattaforma. I dispositivi Windows devono essere aggiunti a un dominio oppure devono essere registrati in Intune e conformi.  
 
     > [!TIP]  
-    > Con**Autenticazione moderna** i client Office possono usare l'accesso basato su Active Directory Authentication Library (ADAL).  
+    > Con l'**autenticazione moderna** i client Office possono usare l'accesso basato su Active Directory Authentication Library (ADAL).  
     > 
     > - Questo tipo di autenticazione consente ai client Office di usare l'autenticazione basata su browser, nota anche come autenticazione passiva. Per eseguire l'autenticazione, l'utente viene indirizzato a una pagina Web di accesso.  
     > - Questo nuovo metodo di accesso offre nuovi scenari, tra cui l'accesso condizionale, basato sulla **conformità del dispositivo** e sull'uso dell' **autenticazione a più fattori** .  
     > 
     >  Per altre informazioni, vedere [Funzionamento dell'autenticazione moderna per le applicazioni client di Office 2013 e Office 2016](https://docs.microsoft.com/office365/enterprise/modern-auth-for-office-2013-and-2016).  
 
-    Se si usa Exchange Online con Configuration Manager e Intune, è possibile gestire non solo i dispositivi mobili con accesso condizionale, ma anche i computer desktop. I PC devono essere aggiunti a un dominio o registrati in Intune e conformi. È possibile impostare i requisiti seguenti:  
+    Se si usa Exchange Online con Configuration Manager e Intune, è possibile gestire non solo i dispositivi mobili con accesso condizionale, ma anche i computer desktop. I PC devono essere aggiunti a un dominio o essere registrati in Intune e conformi. È possibile impostare i requisiti seguenti:  
 
-    - **I dispositivi devono essere aggiunti a un dominio o conformi.** I PC devono essere aggiunti a un dominio o conformi ai criteri. Se un PC non soddisfa uno di questi requisiti, all'utente verrà richiesto di registrare il dispositivo con Intune.  
+    - **I dispositivi devono essere aggiunti a un dominio o conformi.** I PC devono essere aggiunti a un dominio o conformi ai criteri. Se un PC non soddisfa uno di questi requisiti, all'utente verrà richiesto di registrare il dispositivo in Intune.  
 
-    - **I dispositivi devono essere aggiunti a un dominio.** I PC devono essere aggiunti a un dominio per accedere a Exchange Online. Se un PC non è aggiunto al dominio, l'accesso alla posta elettronica è bloccato e l'utente viene richiesto di contattare l'amministratore IT.  
+    - **I dispositivi devono essere aggiunti a un dominio.** Per accedere a Exchange Online, i PC devono essere aggiunti a un dominio. Se un PC non è aggiunto a un dominio, l'accesso alla posta elettronica è bloccato e all'utente viene richiesto di contattare l'amministratore IT.  
 
-    - **I dispositivi devono essere conformi.** I PC devono essere registrati in Intune e conformi. Se un PC non è registrato, viene visualizzato un messaggio con istruzioni su come eseguire la registrazione.  
+    - **I dispositivi devono essere conformi.** I PC devono essere registrati in Intune e conformi. Se un PC non è registrato, viene visualizzato un messaggio contenente le istruzioni su come eseguire la registrazione.  
 
-7. Sotto **OWA (OWA)**, è possibile scegliere di consentire l'accesso a Exchange Online solo dai browser supportati: Safari (iOS) e Chrome (Android). Non sarà possibile accedere da altri browser. Vengono applicate anche le restrizioni di piattaforma selezionate per l'accesso all'applicazione per Outlook.  
+7. In **Outlook Web Access (OWA)** è possibile scegliere di consentire l'accesso a Exchange Online esclusivamente attraverso i browser supportati: Safari (iOS) e Chrome (Android). Non sarà possibile accedere da altri browser. Vengono applicate anche le restrizioni di piattaforma selezionate per l'accesso all'applicazione per Outlook.  
 
-    - Nei dispositivi **Android** è necessario che gli utenti abilitino l'accesso al browser. Per eseguire questa azione, l'utente deve abilitare l'opzione "Abilita accesso al Browser" nel dispositivo registrato come indicato di seguito:  
+    - Nei dispositivi **Android** è necessario che gli utenti abilitino l'accesso al browser. Per eseguire questa azione, l'utente deve abilitare l'opzione "Abilita l'accesso al browser" nel dispositivo registrato come indicato di seguito:  
 
-        1. Avviare l' **app Portale aziendale**.  
+        1. Avviare l'**app Portale aziendale**.  
 
         2. Passare alla pagina **Impostazioni** facendo clic sui punti di sospensione (...) o sul tasto di menu.  
 
-        3. Scegliere il pulsante **Abilita l'accesso al browser** .  
+        3. Scegliere il pulsante **Abilita l'accesso al browser**.  
 
         4. Nel browser Chrome disconnettersi da Office 365 e riavviare Chrome.  
 
-    - Sul **iOS e Android** piattaforme, per identificare il dispositivo utilizzato per accedere al servizio, Azure AD emetta un certificato TLS per il dispositivo. Il dispositivo Visualizza il certificato richiedendo all'utente di selezionare il certificato come illustrato nelle schermate seguenti. L'utente deve selezionare questo certificato prima di poter continuare a usare il browser.  
+    - Nelle piattaforme **iOS e Android** , per identificare il dispositivo usato per accedere al servizio, Azure ad emetterà un certificato TLS sul dispositivo. Il dispositivo Visualizza il certificato con una richiesta all'utente di selezionare il certificato come illustrato nelle schermate seguenti. Per continuare a usare il browser, è necessario che l'utente selezioni il certificato.  
 
         - **iOS**  
 
@@ -279,21 +279,21 @@ Il messaggio viene visualizzato sul dispositivo per gli utenti di Exchange Onlin
 9. In **Gruppi di destinazione**selezionare i gruppi di sicurezza di Active Directory degli utenti ai quali applicare i criteri.  
 
     > [!NOTE]  
-    > Per gli utenti inclusi nei gruppi di destinazione, i criteri di Intune sostituiranno le regole di Exchange e i criteri.  
+    > Per gli utenti inclusi nei gruppi di destinazione, i criteri di Intune sostituiranno le regole e i criteri di Exchange.  
     > 
     > Exchange applicherà le regole di autorizzazione, blocco e quarantena e i criteri di Exchange solo nei casi seguenti:  
     > 
     > - L'utente non dispone di una licenza per Intune.  
-    > - L'utente ha una licenza per Intune, ma l'utente non appartiene ad alcun gruppo di sicurezza di destinazione nei criteri di accesso condizionale.  
+    > - L'utente ha una licenza per Intune, ma non appartiene ad alcun gruppo di sicurezza di destinazione nei criteri di accesso condizionale.  
 
-10. In **Gruppi esentati**selezionare i gruppi di sicurezza di Active Directory degli utenti che verranno esentati da questi criteri. Se un utente è in entrambi i gruppi di destinazione ed esentati, essi saranno esenti dai criteri e sarà possibile accedere alla posta elettronica.  
+10. In **Gruppi esentati**selezionare i gruppi di sicurezza di Active Directory degli utenti che verranno esentati da questi criteri. Se un utente è incluso sia nel gruppo di destinazione che in quello esentato, sarà esentato dai criteri e avrà accesso alla posta elettronica.  
 
 11. Al termine, fare clic su **Salva**.  
 
 
-Esaminare le note seguenti su questi criteri:  
+Esaminare le note seguenti relative a questo criterio:  
 
-- Non è necessario distribuire i criteri di accesso condizionale. perché diventano immediatamente effettivi.  
+- Non è necessario distribuire i criteri di accesso condizionale. viene applicato immediatamente.  
 
 - Dopo la creazione di un account di posta elettronica da parte di un utente, il dispositivo viene bloccato immediatamente.  
 
@@ -309,18 +309,18 @@ Il flusso seguente viene usato dai criteri di accesso condizionale per fare in m
 
 #### <a name="to-enable-the-exchange-on-premises-policy"></a>Per abilitare i criteri di Exchange locale  
 
-1. Nella console di Configuration Manager, selezionare **asset e conformità**.  
+1. Nella console di Configuration Manager selezionare **Asset e conformità**.  
 
-2. Espandere **le impostazioni di conformità**, espandere **accesso condizionale**, quindi selezionare **On-Premises Exchange**.  
+2. Espandere **impostazioni di conformità**, espandere **accesso condizionale**e quindi selezionare **Exchange locale**.  
 
-3. Nel **Home** nella scheda il **Exchange On-Premises** gruppo, selezionare **configurare criteri di accesso condizionale**.  
+3. Nel gruppo **Exchange locale** della scheda **Home** selezionare **Configura criteri di accesso condizionale**.  
 
-4. Nel **generali** pagina della **configurazione guidata criteri di accesso condizionale**, specificare se si desidera sostituire la regola predefinita di Exchange Active Sync. Selezionare questa opzione se si desidera registrati e accedere ai dispositivi conformi abbiano sempre accesso alla posta elettronica, anche quando la regola predefinita è impostata su blocco o quarantena.  
+4. Nella pagina **generale** della **Configurazione guidata dei criteri di accesso condizionale**specificare se si vuole eseguire l'override della regola predefinita Exchange Active Sync. Selezionare questa opzione se si vuole che i dispositivi registrati e conformi abbiano sempre accesso alla posta elettronica, anche quando la regola predefinita è impostata su quarantena o blocca l'accesso.  
 
     > [!NOTE]  
-    > Si verifica un problema con la sostituzione predefinita per i dispositivi Android. Se la regola di accesso predefinita del server Exchange viene impostata su **Blocca** e il criterio di accesso condizionale di Exchange è attivato con l'opzione di sostituzione regola predefinita, i dispositivi Android degli utenti di destinazione potrebbero non essere sbloccati anche dopo che i dispositivi sono registrati e conformi con Intune. Per risolvere questo problema, impostare la regola di accesso predefinita di Exchange su **Quarantena**. Il dispositivo non potrà accedere a Exchange per impostazione predefinita e l'amministratore può ottenere un report dal server di Exchange nell'elenco dei dispositivi che vengono messi in quarantena.  
+    > Si è verificato un problema con la sostituzione predefinita per i dispositivi Android. Se la regola di accesso predefinita del server Exchange viene impostata su **Blocca** e il criterio di accesso condizionale di Exchange è attivato con l'opzione di sostituzione regola predefinita, i dispositivi Android degli utenti di destinazione potrebbero non essere sbloccati anche dopo che i dispositivi sono registrati e conformi con Intune. Per risolvere questo problema, impostare la regola di accesso predefinita di Exchange su **Quarantena**. Il dispositivo non ottiene l'accesso a Exchange per impostazione predefinita e l'amministratore può ottenere un report dal server Exchange nell'elenco dei dispositivi che vengono messi in quarantena.  
 
-    Se non è ancora stato installazione di un account di posta elettronica di notifica quando si configura Exchange connector, verrà visualizzato un avviso in questa pagina e il **successivo** pulsante è disabilitato.  Prima di continuare, è necessario prima configurare le impostazioni di notifica di posta elettronica in Exchange Connector e quindi tornare alla **Configurazione guidata dei criteri di accesso condizionale** per completare il processo.  
+    Se non è stato configurato un account di posta elettronica di notifica quando si configura Exchange Connector, verrà visualizzato un avviso in questa pagina e il pulsante **Avanti** sarà disabilitato.  Prima di continuare, è necessario prima configurare le impostazioni di notifica di posta elettronica in Exchange Connector e quindi tornare alla **Configurazione guidata dei criteri di accesso condizionale** per completare il processo.  
 
      ![HybridCondAccessWiz1](media/HybridCondAccessWiz1.PNG)  
 
@@ -328,7 +328,7 @@ Il flusso seguente viene usato dai criteri di accesso condizionale per fare in m
 
      ![HybridCondAccessWiz2](media/HybridCondAccessWiz2.PNG)  
 
-6. Nella pagina **Raccolte esentate** aggiungere tutte le raccolte di utenti che si desidera esentare dal criterio di accesso condizionale. Gli utenti di questi gruppi, non necessario per registrare i propri dispositivi in Intune e non necessario essere conformi ai criteri di conformità distribuiti per poter accedere a Exchange.  
+6. Nella pagina **Raccolte esentate** aggiungere tutte le raccolte di utenti che si desidera esentare dal criterio di accesso condizionale. Gli utenti di questi gruppi non devono registrare i propri dispositivi in Intune e non devono essere conformi ai criteri di conformità distribuiti per poter accedere a Exchange.  
 
      ![HybridCondAccessWiz3](media/HybridCondAccessWiz3.png)  
 
@@ -343,22 +343,22 @@ Il flusso seguente viene usato dai criteri di accesso condizionale per fare in m
     > [!NOTE]  
     > Perché il messaggio di posta elettronica di notifica di Intune contenente le istruzioni per la correzione viene recapitato alla cassetta postale di Exchange dell'utente, nel caso in cui il dispositivo dell'utente venga bloccato prima della ricezione del messaggio di posta elettronica, è possibile usare un dispositivo sbloccato o un altro metodo per accedere a Exchange e visualizzare il messaggio.  
     > 
-    > Affinché Exchange inviare il messaggio di posta elettronica di notifica, configurare l'account che verrà usato per inviare il messaggio di posta elettronica di notifica. Si esegue questa operazione quando si configurano le proprietà del connettore Exchange Server.  
+    > Per consentire a Exchange di inviare il messaggio di posta elettronica di notifica, configurare l'account che verrà usato per inviare il messaggio di posta elettronica di notifica. Si esegue questa operazione quando si configurano le proprietà del connettore Exchange Server.  
     >   
     > Per altre informazioni, vedere [Gestire i dispositivi mobili con Configuration Manager ed Exchange](/sccm/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync).  
 
-8. Nel **riepilogo** pagina, rivedere le impostazioni e quindi completare la procedura guidata.  
+8. Nella pagina **Riepilogo** verificare le impostazioni e quindi completare la procedura guidata.  
 
 
-Esaminare le note seguenti su questi criteri:  
+Esaminare le note seguenti relative a questo criterio:  
 
 - Non è necessario distribuire i criteri di accesso condizionale perché diventano immediatamente effettivi.  
 
-- Dopo che un utente ha configurato un profilo di Exchange ActiveSync, potrebbe richiedere uno a tre ore il dispositivo venga bloccato (se non è gestito da Intune).  
+- Dopo che un utente ha configurato un profilo di Exchange ActiveSync, il blocco del dispositivo potrebbe richiedere da 1 a tre ore (se non è gestito da Intune).  
 
-- Se un utente bloccato quindi registra il dispositivo con Intune (o risolve il problema della non conformità), accesso alla posta elettronica verrà sbloccato entro 2 minuti.  
+- Se un utente bloccato registra il dispositivo in Intune (o corregge la mancata conformità), l'accesso alla posta elettronica verrà sbloccato entro due minuti.  
 
-- Se l'utente annulla la-registrazione in Intune potrebbe richiedere uno a tre ore il dispositivo venga bloccato.  
+- Se l'utente annulla la registrazione da Intune, il blocco del dispositivo potrebbe richiedere da 1 a 3 ore.  
 
 
 ## <a name="see-also"></a>Vedere anche  

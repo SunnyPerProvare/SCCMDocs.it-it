@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9f4674921917bb7d087da52f2c8250ca943597f1
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70378886"
 ---
 # <a name="how-to-create-configuration-items-for-windows-81-and-windows-10-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client System Center Configuration Manager
@@ -29,7 +29,7 @@ ms.locfileid: "70378886"
 
 2. Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
 
-3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
+3. Nel **Home** nella scheda il **Crea** di gruppo, fare clic su **Crea elemento di configurazione**.  
 
 4. Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
 
@@ -56,23 +56,23 @@ ms.locfileid: "70378886"
 
     -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
 
-    -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel log eventi dell'applicazione.  
+    -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche essere registrato come un evento Windows nel registro eventi dell'applicazione.  
 
 11. Nella pagina **Applicabilità piattaforma** della creazione guidata, verificare le eventuali impostazioni non compatibili con le piattaforme supportate selezionate in precedenza. È possibile tornare indietro e rimuovere queste impostazioni oppure continuare.  
 
     > [!TIP]  
     >  Non viene valutata la conformità delle impostazioni non supportate.  
 
-12. Completare la procedura guidata.  
+12. completare la procedura guidata.  
 
     È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
 
 ##  <a name="windows-81-and-windows-10-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione per Windows 8.1 e Windows 10  
 
-### <a name="password"></a>Password  
+### <a name="password"></a>Windows 10  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 10 e versioni successive.  
 
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Richiedi impostazioni password nei dispositivi mobili**|Richiede una password nei dispositivi supportati.|  
 |**Lunghezza minima password (caratteri)**|La lunghezza minima della password.|  
@@ -87,7 +87,7 @@ ms.locfileid: "70378886"
 
 ###  <a name="device"></a>Dispositivo  
 
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Acquisizione schermo**|Consente di acquisire uno screenshot del display del dispositivo.<br /><br /> (solo Windows 10)|  
 |**Invio dati diagnostici**|Consente l’invio dei file di log dell'app.<br /><br /> (solo Windows 8.1)|  
@@ -110,7 +110,7 @@ ms.locfileid: "70378886"
 ### <a name="email-management"></a>Gestione della posta elettronica  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.  
 
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Posta elettronica IMAP e POP**|Consente la connessione agli account di posta elettronica che usano gli standard POP e IMAP.|  
 |**Tempo massimo di conservazione della posta elettronica**|Il tempo di conservazione della posta elettronica prima che venga eliminata dal server.|  
@@ -125,7 +125,7 @@ ms.locfileid: "70378886"
 ### <a name="store"></a>Archivio  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 10 e versioni successive.  
 
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Archivio applicazioni**|Consente l'accesso all'archivio applicazioni sul dispositivo.|  
 |**Immettere una password per accedere all'archivio applicazioni**|Gli utenti devono immettere una password per accedere all'archivio applicazioni.|  
@@ -137,7 +137,7 @@ ms.locfileid: "70378886"
 ### <a name="browser"></a>Browser  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.  
 
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Consenti browser Web**|Consentire l'uso del Web browser nel dispositivo.|  
 |**Riempimento automatico**|L’utente può modificare le impostazioni di completamento automatico nel browser.|  
@@ -150,7 +150,7 @@ ms.locfileid: "70378886"
 ###  <a name="internet-explorer"></a>Internet Explorer  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.  
 
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Invia sempre l'intestazione DNT (Do Not Track)**|Impedisce che le informazioni cercate vengano inviate a siti di terze parti.|  
 |**Area di protezione Intranet**|Assegnare un livello di sicurezza all'area di protezione Intranet.|  
@@ -160,23 +160,23 @@ ms.locfileid: "70378886"
 |**Livello di protezione per l'area siti con restrizioni**|Configurare il livello di protezione per l'area siti con restrizioni.|  
 |**Spazi dei nomi per l'area intranet**|Configurare siti Web che vengono aggiunti o rimossi dall'area Intranet.|  
 |**Accedi a un sito Intranet nel caso di immissione di una singola parola**|Abilita o disabilita l'impostazione che consente a Internet Explorer di passare automaticamente a un sito Intranet se viene immesso un nome di sito valido senza HTTP precedente:|  
-|**Opzione di menu modalità Enterprise**|Consente agli utenti di attivare e disattivare la modalità Enterprise dal menu **Strumenti** di Internet Explorer.|  
+|**Opzione di menu modalità Enterprise**|Consente agli utenti di attivare e disattivare la modalità Enterprise dal menu **Strumenti** di Internet Explorer .|  
 |**Posizione report di registrazione (URL)**|Specificare un URL in cui registrare i siti Web visitati quando è attiva la modalità Enterprise.|  
 |**Posizione elenco siti modalità Enterprise (URL)**|Specificare il percorso dell'elenco di siti Web che usano la modalità Enterprise quando è attiva.|  
 
 ###  <a name="cloud"></a>Cloud  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.  
 
-|Nome impostazione|Dettagli|Windows 8.1|Windows 10|  
+|Nome impostazione|Details|Windows 8,1|Windows 10|  
 |------------------|-------------|-----------------|----------------|  
-|**Sincronizzazione impostazioni**|Consente la sincronizzazione delle impostazioni tra i dispositivi.|Sì|Sì|  
-|**Sincronizzazione credenziali**|Consente la sincronizzazione delle credenziali tra i dispositivi.|Sì|Sì|  
-|**Account Microsoft**|Consente di usare un account Microsoft sul dispositivo.|Sì|Sì|  
-|**Sincronizzazione delle impostazioni con connessione a consumo**|Consente la sincronizzazione delle impostazioni quando la connessione a Internet è a consumo.|Sì|Sì|  
+|**Sincronizzazione impostazioni**|Consente la sincronizzazione delle impostazioni tra i dispositivi.|Yes|Yes|  
+|**Sincronizzazione credenziali**|Consente la sincronizzazione delle credenziali tra i dispositivi.|Yes|Yes|  
+|**Account Microsoft**|Consente di usare un account Microsoft sul dispositivo.|Yes|Yes|  
+|**Sincronizzazione delle impostazioni con connessione a consumo**|Consente la sincronizzazione delle impostazioni quando la connessione a Internet è a consumo.|Yes|Yes|  
 
 ###  <a name="security"></a>Sicurezza  
 
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Installazione file non firmati**|Consente il caricamento di file non firmati.<br /><br /> (solo Windows 10)|  
 |**Applicazioni non firmate**|Consente il caricamento di file non firmati.<br /><br /> (solo Windows 10)|  
@@ -193,7 +193,7 @@ ms.locfileid: "70378886"
 ###  <a name="peak-synchronization"></a>Sincronizzazione nelle ore di punta  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 10 e versioni successive.  
 
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Specificare l'ora di punta**|Configurare le ore di punta per la sincronizzazione del dispositivo mobile.|  
 |**Frequenza di sincronizzazione nelle ore di punta**|Configurare la frequenza con cui viene eseguita la sincronizzazione durante le ore di picco configurate.|  
@@ -201,7 +201,7 @@ ms.locfileid: "70378886"
 
 ###  <a name="roaming"></a>Roaming  
 
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Gestione dispositivi mobili durante il roaming**|Consente la gestione del dispositivo con Configuration Manager in caso di roaming.<br /><br /> (solo Windows 10)|  
 |**Download del software durante il roaming**|Consente il download di applicazioni e software durante il roaming.<br /><br /> (solo Windows 10)|  
@@ -212,7 +212,7 @@ ms.locfileid: "70378886"
 
 ###  <a name="encryption"></a>Crittografia  
 
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Crittografia scheda di memoria**|Richiede la crittografia delle schede di memoria usate con il dispositivo.<br /><br /> (solo Windows 10)|  
 |**Crittografia file nel dispositivo mobile**|Richiede la crittografia dei file nel dispositivo.|  
@@ -224,7 +224,7 @@ ms.locfileid: "70378886"
 ###  <a name="wireless-communications"></a>Comunicazioni wireless  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 10 e versioni successive.  
 
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Connessione rete wireless**|Abilita o disabilita la funzionalità Wi-Fi dei dispositivi.|  
 |**Tethering Wi-Fi**|Consente agli utente di usare il proprio dispositivo come hotspot mobile.|  
@@ -238,7 +238,7 @@ ms.locfileid: "70378886"
 
 2.  Nella finestra di dialogo **Connessione rete wireless** specificare le informazioni sulla connessione wireless seguenti, di cui viene eseguito il provisioning nei dispositivi mobili:  
 
-|Impostazione|Altre informazioni|  
+|Impostazioni|Altre informazioni|  
 |-------------|----------------------|  
 |**Nome rete (SSID)**|Immettere il nome della rete Wi-Fi.|  
 |**Connessione di rete**|Scegliere **Internet** o **Lavoro**.|  
@@ -246,7 +246,7 @@ ms.locfileid: "70378886"
 |**Crittografia dei dati**|Scegliere il metodo di crittografia usato dalla connessione. I valori che è possibile selezionare variano a seconda del metodo di **Autenticazione** scelto:<br /><br /> - **Disabilitato**<br /><br /> - **WEP**<br /><br /> - **TKIP**<br /><br /> - **AES**|  
 |**Indice chiavi**|Selezionare un indice chiavi da **1** a **4** da usare con l'impostazione di **Crittografia dei dati** corrispondente a **WEP**.|  
 |**Questa rete è connessa a Internet**|Selezionare questa opzione se si desidera specificare le impostazioni proxy che consentono la connessione a Internet dei dispositivi mobili su una connessione wireless.|  
-|**Impostazioni del server proxy**|Specificare le impostazioni **Server** e **Porta** necessarie per **HTTP**, **WAP** e **Socket**.|  
+|**Impostazioni del server proxy**|Specificare le impostazioni **Server** e **Porta** necessarie per **HTTP**, **WAP** e **Sockets**.|  
 |**Abilita accesso alla rete 802.1X**|Selezionare questa opzione per proteggere la connessione specificando un tipo di EAP.|  
 |**Tipo EAP**|Scegliere il tipo EAP da usare:<br /><br /> - **PEAP**<br> - **Smart card o certificato**|  
 
@@ -289,7 +289,7 @@ ms.locfileid: "70378886"
 
 ### <a name="system-security"></a>Protezione del sistema  
 
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Controllo dell'account utente**|Abilita o disabilita il controllo account utente di Windows sul dispositivo.|  
 |**Firewall di rete**|Attiva o disattiva Windows Firewall.<br /><br /> (solo Windows 8.1)|  
@@ -308,7 +308,7 @@ ms.locfileid: "70378886"
 ###  <a name="windows-server-work-folders"></a>Cartelle di lavoro di Windows Server  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.  
 
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**URL cartelle di lavoro**|Configura il percorso di una cartella di lavoro di Windows Server a cui gli utenti possono connettersi dal dispositivo.|  
 
@@ -322,20 +322,20 @@ ms.locfileid: "70378886"
 Nella pagina **Elenco app consentite e bloccate** indicare le informazioni seguenti:  
 
 
-|        Impostazione        |                                                                                                                                                                                                                                                                        Altre informazioni                                                                                                                                                                                                                                                                         |
+|        Impostazioni        |                                                                                                                                                                                                                                                                        Altre informazioni                                                                                                                                                                                                                                                                         |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Elenco delle app bloccate** |                                                                                                                                                                                                                                 Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti non sono autorizzati a installare.                                                                                                                                                                                                                                 |
 | **Elenco delle app consentite** |                                                                                                                                                                                                             Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti sono autorizzati a installare. L'installazione di qualsiasi altra app viene bloccata.                                                                                                                                                                                                             |
-|        **Aggiungi**        | Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare nel Windows Store.<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app consentite o bloccate.<br /><br /> **Esempio:** Cercare l'app **Skype** nello Store. L'URL da usare è **<https://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51>** . |
+|        **Aggiungi**        | Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare nel Windows Store.<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app consentite o bloccate.<br /><br /> **Esempio:** cercare l'app **Skype** nell'App Store. L'URL da usare è **<https://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51>** . |
 |       **Modifica**        |                                                                                                                                                                                                                                                 Consente di modificare il nome, l'autore e l'URL dell'app selezionata.                                                                                                                                                                                                                                                 |
 |      **Rimuovi**       |                                                                                                                                                                                                                                                             Elimina l'app selezionata dall'elenco.                                                                                                                                                                                                                                                             |
-|      **Importaa**       |                                                                                                                                                                                                          Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.                                                                                                                                                                                                          |
+|      **Importa**       |                                                                                                                                                                                                          Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.                                                                                                                                                                                                          |
 
 ### <a name="windows-10-team"></a>Windows 10 Team  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 10 Team.  
 
 
-|                                  Nome impostazione                                  |                                                                                                                              Dettagli                                                                                                                               |
+|                                  Nome impostazione                                  |                                                                                                                              Details                                                                                                                               |
 |--------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Consenti la riattivazione automatica dello schermo quando i sensori rilevano la presenza di qualcuno nella stanza** |                                                                                        Consente di riattivare automaticamente il dispositivo quando il sensore rileva la presenza di qualcuno nella stanza.                                                                                        |
 |                    **PIN obbligatorio per proiezione wireless**                    |                                                                           Specifica se immettere un PIN prima di usare le funzionalità di proiezione wireless del dispositivo.                                                                            |
@@ -359,7 +359,7 @@ Per informazioni su come configurare la protezione dati con Configuration Manage
 ### <a name="microsoft-edge"></a>Microsoft Edge  
 Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e versioni successive.  
 
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------| 
 |Microsoft Edge|Consentire l'uso del Web browser Edge nel dispositivo.| 
 |**Consenti suggerimenti di ricerca nella barra degli indirizzi**|Consente al motore di ricerca di suggerire siti durante la digitazione delle frasi di ricerca.|  
@@ -383,7 +383,7 @@ Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e vers
 ### <a name="windows-defender"></a>Windows Defender
 Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e versioni successive.
 
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Consenti il monitoraggio in tempo reale**|Abilita l'analisi in tempo reale per cercare malware, spyware e altro software indesiderato.|
 |**Consenti il monitoraggio del comportamento**|Consente a Defender di controllare particolari modelli noti di attività sospette sui dispositivi.|

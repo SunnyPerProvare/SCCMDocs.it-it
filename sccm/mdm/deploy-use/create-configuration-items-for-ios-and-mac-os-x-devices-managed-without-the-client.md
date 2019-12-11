@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5d1b15f441015ebea7ca00e9fa8bee7e02f168b8
-ms.sourcegitcommit: c60fdfb9df107c430389b69b08f9670ce5f526c3
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68859991"
 ---
 # <a name="how-to-create-configuration-items-for-ios-and-macos-devices-managed-with-intune"></a>Come creare elementi di configurazione per dispositivi iOS e macOS gestiti con Intune
@@ -28,7 +28,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
   
 2. Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
   
-3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
+3. Nel **Home** nella scheda il **Crea** di gruppo, fare clic su **Crea elemento di configurazione**.  
   
 4. Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
   
@@ -55,22 +55,22 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
   
     -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
   
-    -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel log eventi dell'applicazione.  
+    -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche essere registrato come un evento Windows nel registro eventi dell'applicazione.  
   
 11. Nella pagina **Applicabilità piattaforma** della creazione guidata, verificare le eventuali impostazioni non compatibili con le piattaforme supportate selezionate in precedenza. È possibile tornare indietro e rimuovere queste impostazioni oppure continuare.  
   
     > [!TIP]  
     >  Non viene valutata la conformità delle impostazioni non supportate.  
   
-12. Completare la procedura guidata.  
+12. completare la procedura guidata.  
   
     È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
   
 ##  <a name="ios-and-macos-configuration-item-settings-reference"></a>informazioni di riferimento sulle impostazioni degli elementi di configurazione iOS e macOS  
   
-###  <a name="password"></a>Password  
+###  <a name="password"></a>Windows 10  
   
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Richiedi impostazioni password nei dispositivi mobili**|Richiede una password nei dispositivi supportati.|  
 |**Lunghezza minima password (caratteri)**|La lunghezza minima della password.|  
@@ -85,7 +85,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
 ###  <a name="device"></a>Dispositivo  
  Queste impostazioni si applicano ai dispositivi iOS e macOS.  
   
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Aggiungi amici dell'area giochi**|Consente di aggiungere amici nell'app di area giochi.|
 |**Chiamata vocale**|Consente l'utilizzo della funzionalità di composizione vocale sul dispositivo.|  
@@ -118,13 +118,13 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
 |**Controllo ortografico tastiera** (solo supervisione)|Abilita il controllo ortografico nel dispositivo.|
 |**Modifica delle impostazioni di notifica** (solo supervisione)|Consente all'utente di modificare le impostazioni di notifica del dispositivo.|
 |**Restituisci risultati da Internet nella ricerca Spotlight** (solo con supervisione)|Consentire alla ricerca Spotlight di connettersi a Internet per fornire ulteriori risultati.|
-|**Usare Siri per eseguire query sul contenuto generato dall'utente da Internet** (solo con supervisione)|Consente a Siri di accedere ai siti Web per rispondere alle domande.|
+|**USA Siri per eseguire query sul contenuto generato dall'utente da Internet** (solo con supervisione)|Consente a Siri di accedere ai siti Web per rispondere alle domande.|
 
   
 ###  <a name="store"></a>Archivio  
  Queste impostazioni si applicano solo ai dispositivi iOS.  
   
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Archivio applicazioni**|Consente l'accesso all'archivio applicazioni sul dispositivo.|  
 |**Immettere una password per accedere all'archivio applicazioni**|Gli utenti devono immettere una password per accedere all'archivio applicazioni.|  
@@ -137,7 +137,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
 ###  <a name="browser"></a>Browser  
  Queste impostazioni si applicano solo ai dispositivi iOS.  
   
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Browser predefinito**|L'utente può modificare il browser Internet predefinito.|  
 |**Riempimento automatico**|L’utente può modificare le impostazioni di completamento automatico nel browser.|  
@@ -149,7 +149,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
 ###  <a name="content-rating"></a>Classificazione del contenuto  
  Queste impostazioni si applicano solo ai dispositivi iOS.  
   
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Contenuti espliciti nell'archivio multimediale**|Specifica se si desidera consentire l’accesso a contenuti per adulti dall’archivio applicazioni.|  
 |**Area classificazioni**|Specifica il paese per il quale si desidera applicare restrizioni di classificazioni.|  
@@ -164,7 +164,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
 ###  <a name="cloud"></a>Cloud  
  Queste impostazioni si applicano solo ai dispositivi iOS.  
   
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Backup cloud**|Consente il backup su un servizio cloud come iCloud.|  
 |**Backup crittografato**|Consente la crittografia del backup su un servizio cloud.|  
@@ -176,10 +176,10 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
 |**Sincronizza i dati dalle app gestite a iCloud**|Consente alle app gestite con Intune di sincronizzare i dati con l'account iCloud dell'utente.|
 
   
-###  <a name="security"></a>Security  
+###  <a name="security"></a>Sicurezza  
  Queste impostazioni si applicano solo ai dispositivi iOS.  
   
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Fotocamera**|Consente di utilizzare la fotocamera del dispositivo.| 
 |**Ritieni attendibili gli autori di una nuova app aziendale**|Consente all'utente di scegliere di considerare attendibili le app che non sono state scaricate dall'App Store.| 
@@ -187,7 +187,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
 ###  <a name="roaming"></a>Roaming  
  Queste impostazioni si applicano solo ai dispositivi iOS.  
   
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Roaming vocale**|Consente le chiamate vocali durante il roaming.|  
 |**Sincronizzazione automatica durante il roaming**|Consente la sincronizzazione automatica del dispositivo durante il roaming.|  
@@ -196,7 +196,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
 ###  <a name="system-security"></a>Protezione del sistema  
  Queste impostazioni si applicano solo ai dispositivi iOS.  
   
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Accettare certificati TLS non attendibili**|Se **consentito**, permette all'utente di accettare tali certificati. Se **non consentito**, rifiuta automaticamente i certificati non attendibili.|
 |**Consenti blocco attivazione (solo modalità di supervisione)**|Usare questa impostazione per abilitare il blocco attivazione iOS Activation per i dispositivi iOS **con supervisione** gestiti. Per altre informazioni sul blocco attivazione, vedere [Gestire il blocco attivazione iOS con System Center Configuration Manager](../../mdm/deploy-use/manage-ios-activation-lock.md).
@@ -214,7 +214,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
 ###  <a name="data-protection"></a>Protezione dati  
  Queste impostazioni si applicano solo ai dispositivi iOS.  
   
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Apre i documenti nelle app gestite in altre app non gestite**|Per l'utilizzo con app gestite da Configuration Manager con criteri di gestione delle applicazioni.|  
 |**Apre i documenti nelle app gestite in altre app gestite**|Per l'utilizzo con app gestite da Configuration Manager con criteri di gestione delle applicazioni.| 
@@ -240,7 +240,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
   
         Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app conformi e non conformi.  
   
-        **Esempio:** Cercare l'app **Microsoft Word per iPad** nell'archivio. L'URL da usare sarà **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8** .  
+        **Esempio:** cercare l'app **Microsoft Word per iPad** nell'App Store. L'URL da usare sarà **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8** .  
   
    -   **Modifica**: consente di modificare il nome, l'autore e l'URL dell'app selezionata.  
   
@@ -248,7 +248,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
   
    -   **Importa**: importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.  
   
-2. Una volta finito, fare clic su **Avanti**.  
+2. Al termine, fare clic su **Avanti**.  
   
    È possibile usare uno dei report seguenti per monitorare le app conformi e non conformi:  
   
@@ -289,7 +289,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
   
    - **Importa**: importa un elenco di app specificate in un file con valori delimitati da virgole. Nel file usare il formato, il nome dell'app, l'autore e l'ID bundle dell'app.  
   
-2. Una volta finito, fare clic su **Avanti**.  
+2. Al termine, fare clic su **Avanti**.  
   
    È possibile usare uno dei report seguenti per monitorare le app conformi e non conformi:  
   
@@ -332,7 +332,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
   
         -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico** per i report di Configuration Manager.  
   
-        -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel log eventi dell'applicazione.  
+        -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche essere registrato come un evento Windows nel registro eventi dell'applicazione.  
   
 #### <a name="how-to-create-a-configuration-profile-file"></a>Come creare un file del profilo di configurazione  
  Il file del profilo di configurazione usato dai criteri personalizzati può essere creato in due modi:  
@@ -406,7 +406,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
   
      -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico** per i report di Configuration Manager.  
   
-     -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel log eventi dell'applicazione.  
+     -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche essere registrato come un evento Windows nel registro eventi dell'applicazione.  
   
 ## <a name="see-also"></a>Vedere anche  
  [Elementi di configurazione per dispositivi gestiti senza il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

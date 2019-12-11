@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: da2c809c4aaf95de450570814a5b967ca563a2c2
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68340287"
 ---
 # <a name="manage-access-to-services-in-system-center-configuration-manager"></a>Gestire l'accesso ai servizi in System Center Configuration Manager
@@ -89,7 +89,7 @@ L'accesso condizionale a Exchange Online supporta i dispositivi che eseguono:
 
   La sezione **Accesso condizionale per i PC** in questo articolo descrive tutti i requisiti necessari per abilitare l'accesso condizionale per un PC.<br />     
   Il servizio DRS di AAD viene attivato automaticamente per i clienti di Microsoft Intune e Office 365. I clienti che hanno già distribuito il servizio Device Registration Service di AD FS non visualizzano i dispositivi registrati in Active Directory locale.
-- Usare un abbonamento a Office 365 che include Exchange Online (ad esempio E3). Gli utenti devono avere una licenza per Exchange Online.
+- Usare un abbonamento a Office 365 che include Exchange Online (ad esempio E3). Gli utenti devono avere la licenza per Exchange Online.
 - Il connettore Exchange Server è facoltativo e connette Configuration Manager a Microsoft Exchange Online. Questo connettore consente di monitorare le informazioni sul dispositivo tramite la console di Configuration Manager. Per altre informazioni, vedere [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).
   Il connettore non è necessario per usare i criteri di conformità o i criteri di accesso condizionale. Il connettore è invece richiesto per eseguire report di valutazione dell'impatto dell'accesso condizionale.
 
@@ -168,7 +168,7 @@ L'accesso condizionale a SharePoint Online supporta i dispositivi che eseguono:
 - [L'autenticazione moderna di Office 365 deve essere attivata](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/)ed è necessario disporre di tutti gli aggiornamenti di Office più recenti.<br />     L'autenticazione moderna garantisce accesso basato su Active Directory Authentication Library (ADAL) ai client Windows di Office 2013 e offre migliori opzioni di sicurezza, ad esempio, l'autenticazione a più fattori e l'autenticazione basata sui certificati.
 - Configurare le regole delle attestazioni ADFS per bloccare i protocolli di autenticazione non moderni.  
 
-## <a name="next-steps"></a>Fasi successive  
+## <a name="next-steps"></a>Passaggi successivi  
  Leggere i seguenti argomenti per informazioni su come configurare i criteri di conformità e i criterio di accesso condizionale per lo scenario richiesto:  
 
 - [Gestire i criteri di conformità del dispositivo in System Center Configuration Manager](../../protect/deploy-use/device-compliance-policies.md)  

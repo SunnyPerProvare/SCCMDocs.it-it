@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ef070186112642d204aade24039da87c0e3a22f0
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62277039"
 ---
 # <a name="create-android-applications-in-configuration-manager"></a>Creare applicazioni Android in Configuration Manager
@@ -38,7 +38,7 @@ Sono supportate le azioni di distribuzione seguenti:
 
 |Tipo di dispositivo|Azioni supportate|
 |-|-|
-|Android|**Disponibile**, **obbligatorio**: L'utente deve accettare l'installazione e la disinstallazione.|
+|Android|**Disponibile**, **Richiesto**: l'utente deve acconsentire all'installazione e alla disinstallazione.|
 |Android for Work |**Disponibile**, **Richiesto** |
 
 
@@ -59,11 +59,11 @@ Attenersi alla procedura seguente per approvare le applicazioni nello store di P
 
 5. Fare clic su **Sincronizza** nella barra multifunzione.  
 
-6. Attendere fino a 10 minuti per la sincronizzazione delle app. Quindi andare nell'area di lavoro **Raccolta software** espandere **Gestione applicazioni** e selezionare il nodo **Informazioni di licenza per le app dello Store**.  
+6. Attendere fino a 10 minuti per la sincronizzazione delle app. Passare quindi all'area di lavoro **raccolta software** , espandere **Gestione applicazioni**e selezionare le **informazioni di licenza per** il nodo app dello Store.  
 
 7. Selezionare un'app sincronizzata da Play for Work e quindi fare clic su **Crea applicazione**.  
 
-8. Completare la procedura guidata.  
+8. completare la procedura guidata.  
 
 9. Andare nell'area di lavoro **Raccolta software**, espandere **Gestione applicazioni** e quindi selezionare il nodo **Applicazioni**. Selezionare un'app Android for Work ed eseguire la distribuzione come di consueto.  
 

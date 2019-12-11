@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 50d79da3ab4e7ace9a682baaa5cfd8d2bdbdce10
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67678881"
 ---
 # <a name="manage-access-to-company-resource-based-on-device-network-and-application-risk"></a>Gestire l'accesso alle risorse aziendali in base ai rischi per dispositivi, rete e applicazioni
@@ -54,7 +54,7 @@ Per informazioni sulle piattaforme e i linguaggi supportati da Lookout, vedere q
 
 
 
-## <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisites
 
 - [Gestione dei dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management)  
 

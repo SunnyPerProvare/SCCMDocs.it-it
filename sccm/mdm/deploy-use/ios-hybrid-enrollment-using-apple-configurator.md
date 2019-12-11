@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e884b7c5d7ceca7fcb241a5bfef1832e66562d38
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70378911"
 ---
 # <a name="ios-hybrid-enrollment-using-apple-configurator-with-configuration-manager"></a>Registrazione ibrida di iOS tramite Apple Configurator con Configuration Manager
@@ -26,7 +26,7 @@ Le aziende che acquistano dispositivi iOS per l'uso da parte dei dipendenti poss
 
 La procedura seguente è consigliata per i dispositivi iOS dedicati, con un solo utente e usati per accedere alla posta elettronica di lavoro e alle risorse aziendali, ad esempio app e dati.  
 
-## <a name="prerequisites"></a>Prerequisiti  
+## <a name="prerequisites"></a>Prerequisites  
 
 -   Accesso fisico ai dispositivi iOS  
 
@@ -48,9 +48,9 @@ La procedura seguente è consigliata per i dispositivi iOS dedicati, con un solo
 
     -   **Affinità utente** : specifica la modalità di registrazione dei dispositivi. Per la maggior parte degli scenari di Assistente configurazione, usare **Richiedi affinità utente**.  
 
-        -   **Richiedi affinità utente**: Il dispositivo deve essere associato a un utente durante la configurazione iniziale e potrebbe quindi essere autorizzato ad accedere ai dati aziendali e alla posta elettronica come tale utente.  
+        -   **Richiedi affinità utente**: il dispositivo può essere associato a un utente durante la configurazione iniziale e potrebbe quindi accedere ai dati aziendali e alla posta elettronica come tale utente.  
 
-        -   **Nessuna affinità utente**: Il dispositivo non è associato a un utente. Usare questa associazione per i dispositivi che eseguono attività senza accedere ai dati utente locali. Le app che richiedono l'associazione utente non funzioneranno.
+        -   **Nessuna affinità utente**: il dispositivo non è associato a un utente. Usare questa associazione per i dispositivi che eseguono attività senza accedere ai dati utente locali. Le app che richiedono l'associazione utente non funzioneranno.
 
     Fare clic su **Avanti** per continuare.  
 
@@ -79,7 +79,7 @@ Per altre informazioni, vedere [Predichiarare dispositivi con numeri IMEI o di s
 
     ```  
 
-     con  
+     con:  
 
     ```  
     https://appleconfigurator2.manage.microsoft.com/MDMServiceConfig?id=  

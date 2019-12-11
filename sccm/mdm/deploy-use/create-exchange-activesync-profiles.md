@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a9d1b5e96dc8d2a43dfc39b9d1b2cd9678c083c9
-ms.sourcegitcommit: 659976b943226c5124057429ac7444989f98433f
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/17/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67159425"
 ---
 # <a name="exchange-activesync-email-profiles-in-system-center-configuration-manager"></a>Profili di posta elettronica di Exchange ActiveSync in System Center Configuration Manager
@@ -33,7 +33,7 @@ Usando Microsoft Intune ed Exchange ActiveSync è possibile configurare i dispos
 - Samsung KNOX Standard (4 e versioni successive)
 - Android for Work
 
-Per distribuire profili di posta elettronica ai dispositivi, è necessario registrare questi ultimi in Intune. Per informazioni su come registrare i dispositivi, vedere [Gestire i dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/library/dn646962.aspx).
+Per distribuire profili di posta elettronica ai dispositivi, è necessario registrare questi ultimi in Intune. Per informazioni su come ottenere i dispositivi registrati, vedere [gestione dei dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/library/dn646962.aspx).
 
 > [!NOTE]
 > Intune offre due profili di posta elettronica Android for Work, uno per Gmail e l'altro per l'app di posta elettronica Nine Work. Queste app sono disponibili in Google Play Store e possono connettersi a Exchange. Per abilitare la connettività della posta elettronica, distribuire una di queste app nei dispositivi dell'utente. In seguito creare e distribuire il profilo appropriato. App di posta elettronica come Nine Work potrebbero non essere gratuite. Rivedere i dettagli della licenza dell'app o contattare la società produttrice per chiedere chiarimenti.
@@ -130,7 +130,7 @@ Nella pagina **Configura impostazioni di sincronizzazione** della Creazione guid
 
     -   **Manuale**. L'utente del dispositivo deve avviare manualmente la sincronizzazione.  
 
--   **Numero di giorni di messaggi di posta elettronica da sincronizzare**. Scegliere il numero di giorni di posta elettronica da sincronizzare. Scegliere uno dei valori seguenti:  
+-   **Numero di giorni di messaggi di posta elettronica da sincronizzare**. Dall'elenco a discesa, scegliere il numero di giorni di messaggi di posta elettronica che si desidera sincronizzare. Scegliere uno dei valori seguenti:  
 
     -   **Non configurato**. L'impostazione non viene applicata. In questo modo gli utenti possono configurare la quantità di posta elettronica da scaricare sul dispositivo.  
 

@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0f6c25817973dcfacefe8aae31f0db02dcbd5807
-ms.sourcegitcommit: 160bcdaf783f3946ad5c7869b2566cbfc4da545c
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71401525"
 ---
 # <a name="hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>Soluzione MDM ibrida con Configuration Manager e Intune
@@ -33,7 +33,7 @@ Se il sito Configuration Manager dispone di una sottoscrizione Microsoft Intune,
 
 1. Nella **procedura guidata rimuovi Microsoft Intune sottoscrizione**selezionare l'opzione per **rimuovere Microsoft Intune sottoscrizione da Configuration Manager**, quindi fare clic su **Avanti**.
 
-1. Completare la procedura guidata.
+1. completare la procedura guidata.
 
 ## <a name="deprecation-announcement"></a>Annuncio di deprecazione
 

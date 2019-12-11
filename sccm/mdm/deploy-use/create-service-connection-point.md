@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d0ce47e9ade73d76e99aa5c0d4e5581c713a847a
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62224848"
 ---
 # <a name="create-a-service-connection-point-with-system-center-configuration-manager-and-microsoft-intune"></a>Creare un punto di connessione del servizio con System Center Configuration Manager e Microsoft Intune
@@ -38,14 +38,14 @@ Dopo avere creato la sottoscrizione, sarà quindi possibile installare il ruolo 
 
 3.  Aggiungere il ruolo del **punto di connessione del servizio** a un server del sistema del sito nuovo o esistente usando il passaggio associato:
 
-    -   Nuovo server del sistema del sito: Nel **Home** nella scheda il **Create** fare clic su **crea Server di sistema del sito** per avviare Creazione guidata Server del sistema del sito.
+    -   nuovo server del sistema del sito: Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea server di sistema sito** per avviare la Creazione guidata server del sistema sito.
 
-    -   Server del sistema del sito esistente: Selezionare il server in cui si desidera installare il ruolo punto di connessione del servizio. Nella scheda **Home** , nel gruppo **Server** , fare clic su **Aggiungi ruoli del sistema del sito** per avviare l'Aggiunta guidata ruoli del sistema del sito.
+    -   Server del sistema del sito esistente: fare clic sul server in cui si vuole installare il ruolo del punto di connessione del servizio. Nella scheda **Home** , nel gruppo **Server** , fare clic su **Aggiungi ruoli del sistema del sito** per avviare l'Aggiunta guidata ruoli del sistema del sito.
 
 4.  Nella pagina **Selezione ruolo del sistema** selezionare **Punto di connessione del servizio**, quindi fare clic su **Avanti**.
 ![Creare un punto di connessione del servizio](../media/mdm-service-connection-point.png)
 
-* Completare la procedura guidata.
+* completare la procedura guidata.
 
 ## <a name="how-does-the-service-connection-point-authenticate-with-the-microsoft-intune-service"></a>Autenticazione del punto di connessione del servizio con il servizio Microsoft Intune
  Il punto di connessione del servizio estende Configuration Manager mediante una connessione al servizio basato su cloud Intune che gestisce i dispositivi mobili su Internet. Il punto di connessione del servizio esegue l'autenticazione con il servizio Intune come di seguito:

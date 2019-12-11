@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a836ec8c15e89a7959db9f10d1329c9182f3998c
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62227601"
 ---
 # <a name="add-terms-and-conditions-with-system-center-configuration-manager"></a>Aggiungere termini e condizioni con System Center Configuration Manager
@@ -47,7 +47,7 @@ ms.locfileid: "62227601"
 
    - **Testo per le condizioni** - Termini e condizioni visualizzati agli utenti nel portale aziendale  
 
-   - **Testo in cui vengono spiegate le implicazioni dell'accettazione da parte dell'utente** : etichetta visualizzata agli utenti relativa all'accettazione. **Esempio**: "Accetto i termini e condizioni."  
+   - **Testo in cui vengono spiegate le implicazioni dell'accettazione da parte dell'utente** : etichetta visualizzata agli utenti relativa all'accettazione. **Esempio**: "Accetto le condizioni".  
 
      Fare clic su **Avanti**.  
 
@@ -74,11 +74,11 @@ ms.locfileid: "62227601"
 
      L'area di riepilogo visualizza le statistiche seguenti:  
 
-    -   **Conforme** : gli utenti hanno accettato la versione più recente di termini e condizioni  
+    -   **Conforme**: gli utenti hanno accettato la versione più recente di termini e condizioni  
 
     -   **Erroree**  
 
-    -   **Non conforme** : gli utenti hanno accettato una versione precedente di termini e condizioni  
+    -   **Non conforme**: gli utenti hanno accettato una versione precedente di termini e condizioni  
 
     -   **Sconosciuto** : gli utenti non hanno accettato termini e condizioni, inclusi quelli senza un dispositivo registrato  
 

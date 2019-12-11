@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a3586f51b7112f8667b7e120ea278ceb9adbbe89
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62226558"
 ---
 # <a name="enroll-company-owned-devices-for-hybrid-deployments-with-configuration-manager"></a>Registrare i dispositivi aziendali per le distribuzioni ibride con Configuration Manager
@@ -39,6 +39,6 @@ I dispositive aziendali possono essere gestiti in modi diversi a seconda del dis
 ## <a name="manage-devices-with-activation-lock"></a>Gestire i dispositivi con il blocco attivazione  
  Microsoft Intune consente di gestire il blocco attivazione iOS, una funzionalità dell'app Trova il mio iPhone per dispositivi iOS 7.1 e versioni successive. Blocco attivazione viene abilitato automaticamente quando si usa l'app Trova il mio iPhone in un dispositivo. Vedere [Manage iOS Activation Lock with System Center Configuration Manager](../../mdm/deploy-use/manage-ios-activation-lock.md) (Gestire il blocco attivazione iOS con System Center Configuration Manager).
 
- ## <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare i dispositivi con i numeri di serie IMEI o iOS
+ ## <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare dispositivi con i numeri di serie IMEI o iOS
 
 È possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity) o i numeri di serie iOS. È possibile caricare un file con valori separati da virgola (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi.  Vedere [Predeclare devices with hardware ID numbers](../../mdm/deploy-use/predeclare-devices-with-hardware-id.md) (Predichiarare i dispositivi con numeri ID hardware).

@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 40e99ccb5cb72b7a1b60ac15d1267d6f7d27e9c9
-ms.sourcegitcommit: 2f34d9457d95a9bd25603699fcf0e26cac77ad30
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/29/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74659511"
 ---
 # <a name="manage-access-to-office-365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gestire l'accesso ai servizi di Office 365 per i PC gestiti da System Center Configuration Manager
@@ -75,7 +75,7 @@ Per informazioni sulla configurazione dell'accesso condizionale per dispositivi 
 
   -   Per i PC Windows 8.1 e Windows 10, è possibile usare un oggetto Criteri di gruppo di Active Directory per configurare i dispositivi per la registrazione automatica con Azure AD.  
 
-  -    Per i PC Windows 7, è necessario distribuire il pacchetto software di registrazione dei dispositivi nel PC Windows 7 tramite System Center Configuration Manager. L'articolo [Registrazione automatica dei dispositivi con Azure Active Directory per i dispositivi Windows aggiunti a un dominio](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup) offre informazioni più dettagliate.  
+  -    Per i PC Windows 7, è necessario distribuire il pacchetto software di registrazione dei dispositivi nel PC Windows 7 con System Center Configuration Manager. L'articolo [Registrazione automatica dei dispositivi con Azure Active Directory per i dispositivi Windows aggiunti a un dominio](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup) offre informazioni più dettagliate.  
 
 - I PC devono usare Office 2013 o Office 2016 con l'autenticazione moderna [abilitata](https://support.office.com/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a).  
 

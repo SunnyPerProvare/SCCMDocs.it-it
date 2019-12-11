@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 780abd0702e34dff7a8026fb54e29ccea6f67170
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67678747"
 ---
 # <a name="manage-ios-activation-lock-with-system-center-configuration-manager"></a>Gestire il blocco attivazione iOS con System Center Configuration Manager
@@ -67,7 +67,7 @@ I vantaggi garantiti alle aziende da questa funzionalità sui dispositivi di pro
 
 ## <a name="enable-activation-lock-on-supervised-devices"></a>Abilitare il blocco attivazione nei dispositivi con supervisione
 
-Per abilitare il blocco attivazione nei dispositivi con supervisione, si usano le impostazioni di conformità di Configuration Manager per creare e distribuire un elemento di configurazione di tipo **iOS e Mac OS X** :
+Per abilitare il blocco attivazione nei dispositivi con supervisione, si usano le impostazioni di conformità di Configuration Manager per creare e distribuire un elemento di configurazione di tipo **iOS e Mac OS X**:
 
 1. Usare le informazioni nell'argomento [Come creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti senza il client System Center Configuration Manager](/sccm/compliance/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client) per creare un elemento di configurazione di tipo **iOS e Mac OS X**.
 2. Nella pagina **Protezione del sistema** della Creazione guidata dell'elemento di configurazione configurare l'impostazione **Consenti blocco attivazione (solo modalità di supervisione)** su **Consentito**.

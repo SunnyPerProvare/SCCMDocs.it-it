@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a276ab19267d97526d916fb246facd75314006dd
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70379623"
 ---
 # <a name="confirm-domain-name-requirements-with-system-center-configuration-manager-and-microsoft-intune"></a>Confermare i requisiti del nome di dominio con System Center Configuration Manager e Microsoft Intune
@@ -43,7 +43,7 @@ Se necessario, eseguire i passaggi seguenti per soddisfare le dipendenze esterne
 
     Per altre informazioni, vedere [Integrazione di directory](https://go.microsoft.com/fwlink/?LinkID=271120) nella libreria della documentazione di Active Directory.
 
-4. Facoltativo, non consigliato: Se non si utilizza Active Directory Federation Services, reimpostare le password di Microsoft online degli utenti.
+4. Facoltativo, non consigliato: se non si usa Active Directory Federation Services, reimpostare le password di Microsoft Online degli utenti.
 
     Se non si usa ADFS, è necessario impostare una password di Microsoft Online per ciascun utente.
 

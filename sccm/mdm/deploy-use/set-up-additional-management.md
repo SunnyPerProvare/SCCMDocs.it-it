@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d866ce901640b6e7fafb13a6c24318f26c5d5feb
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131796"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62227799"
 ---
 # <a name="set-up-additional-management-with-system-center-configuration-manager"></a>Impostare soluzioni di gestione aggiuntive con System Center Configuration Manager
 

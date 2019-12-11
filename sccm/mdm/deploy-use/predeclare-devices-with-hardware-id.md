@@ -1,5 +1,5 @@
 ---
-title: Predichiarare i dispositivi con i numeri di serie IMEI o iOS
+title: Predichiarare dispositivi con i numeri di serie IMEI o iOS
 titleSuffix: Configuration Manager
 description: Predichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS.
 ms.date: 09/01/2017
@@ -12,17 +12,17 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 743976f35fb2ced98e0685bf51f38374aea5408e
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67678932"
 ---
-# <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare i dispositivi con i numeri di serie IMEI o iOS
+# <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare dispositivi con i numeri di serie IMEI o iOS
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity) o i numeri di serie iOS. È possibile caricare un file con valori delimitati da virgole (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi.  Le informazioni importate imposteranno la **Proprietà** dei dispositivi registrati come **Aziendale** negli elenchi di dispositivi. È tuttavia necessaria una licenza di Intune per ogni utente che accede al servizio.  
+È possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity) o i numeri di serie iOS. È possibile caricare un file con valori separati da virgola (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi.  Le informazioni importate imposteranno la **Proprietà** dei dispositivi registrati come **Aziendale** negli elenchi di dispositivi. È tuttavia necessaria una licenza di Intune per ogni utente che accede al servizio.  
 
 Se si caricano numeri di serie di dispositivi iOS di proprietà dell'azienda, è necessario che siano associati a un profilo di registrazione aziendale. Per fare in modo che risultino di proprietà dell'azienda, i dispositivi devono anche essere registrati tramite il programma di registrazione dispositivi di Apple o Apple Configurator.
 
@@ -63,7 +63,7 @@ Se si caricano numeri di serie di dispositivi iOS di proprietà dell'azienda, è
 
 Il file con estensione csv da usare per identificare i dispositivi in base al codice IMEI o al numero di serie iOS deve essere nel formato seguente, esclusa la riga superiore che viene indicata unicamente a scopo informativo. Ogni riga deve contenere un numero ID, ovvero un numero IMEI o un numero di serie iOS. Per i dispositivi iOS è possibile includere entrambi i valori. I numeri IMEI possono essere usati per dispositivi Android, iOS e Windows. Questa tabella contiene dati di esempio:
 
-| Numero IMEI  | Numero di serie iOS  | OS | Dettagli |
+| Numero IMEI  | Numero di serie iOS  | OS | Details |
 |------------ |---------------|-----|-----|
 | 123456789012345    |   | WINDOWS | Dispositivo Windows di proprietà dell'azienda|
 |   | A1B2C3D4E5C6 | IOS | Dispositivo iOS di proprietà dell'azienda|

@@ -10,23 +10,23 @@ author: aczechowski
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1ebae22b8536c67fc5c912009b836185be3b17b6
-ms.sourcegitcommit: 7dd42b5a280e64feb69a947dae082fdaf1571272
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "66716248"
 ---
 # <a name="how-to-create-configuration-items-for-android-for-work-devices-managed-with-intune"></a>Come creare elementi di configurazione per dispositivi Android for Work gestiti con Intune
 
  Usare l'elemento di configurazione **Android for Work** di System Center Configuration Manager per gestire le impostazioni dei dispositivi Android for Work registrati in Microsoft Intune o gestiti in locale da Configuration Manager.  
 
-## <a name="create-an-android-for-work-configuration-item"></a>Creare un Android per un elemento di configurazione  
+## <a name="create-an-android-for-work-configuration-item"></a>Creare un elemento di configurazione di Android for Work  
 
 1. Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 
 2. Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
 
-3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
+3. Nel **Home** nella scheda il **Crea** di gruppo, fare clic su **Crea elemento di configurazione**.  
 
 4. Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
 
@@ -53,22 +53,22 @@ ms.locfileid: "66716248"
 
    -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
 
-   -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel log eventi dell'applicazione.  
+   -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche essere registrato come un evento Windows nel registro eventi dell'applicazione.  
 
 10. Nella pagina **Applicabilità piattaforma** della creazione guidata, verificare le eventuali impostazioni non compatibili con le piattaforme supportate selezionate in precedenza. È possibile tornare indietro e rimuovere queste impostazioni oppure continuare.  
 
     > [!TIP]  
     >  Non viene valutata la conformità delle impostazioni non supportate.  
 
-11. Completare la procedura guidata.  
+11. completare la procedura guidata.  
 
     È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
 
 ##  <a name="android-for-work-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione di Android for Work  
 
-### <a name="password"></a>Password  
+### <a name="password"></a>Windows 10  
 
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Richiedi impostazioni password nei dispositivi mobili**|Richiede una password nei dispositivi supportati.|  
 |**Lunghezza minima password (caratteri)**|La lunghezza minima della password.|  
@@ -83,7 +83,7 @@ ms.locfileid: "66716248"
 ###  <a name="work-profile"></a>Profilo di lavoro  
  Queste impostazioni si applicano solo ai dispositivi Samsung KNOX.  
 
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Consenti la condivisione dei dati tra i profili di lavoro e personali**|È possibile scegliere tra:<br>- **Non configurato**<br>- **Restrizioni di condivisione predefinite**<br>- **Le app nel profilo di lavoro possono gestire una richiesta di condivisione dal profilo personale**<br>- **Le app nel profilo personale possono gestire una richiesta di condivisione dal profilo di lavoro**<br><br>Vedere anche l'uso di URI personalizzati per le [impostazioni di copia e incolla](#copy-paste-configuration-item-settings)|  
 |**Nascondi le notifiche del profilo di lavoro quando il dispositivo è bloccato (Android 6.0+)**||
@@ -93,7 +93,7 @@ ms.locfileid: "66716248"
 Nessuna delle opzioni di **Consenti la condivisione dei dati tra i profili di lavoro e personali** impedisce il comportamento di copia e incolla. Usare un'impostazione personalizzata che può essere configurata per impedire le operazioni di copia e incolla. L'impostazione è configurabile tramite un URI personalizzato.
 
 - URI OMA: ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste
-- Tipo valore: Boolean
+- Tipo valore: booleano
 
 Impostando DisallowCrossProfileCopyPaste su true si impedisce il comportamento di copia e incolla tra Android for Work personale e i profili di lavoro.
 

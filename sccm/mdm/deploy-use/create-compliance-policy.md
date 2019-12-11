@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 170725e28d821b8e0df83ecb9b503bdb0227ecbc
-ms.sourcegitcommit: 2f34d9457d95a9bd25603699fcf0e26cac77ad30
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/29/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74660989"
 ---
 # <a name="create-and-deploy-a-device-compliance-policy"></a>Creare e distribuire criteri di conformità del dispositivo
@@ -158,7 +158,7 @@ ms.locfileid: "74660989"
 
 - **Richiedi impostazioni password nei dispositivi mobili**: è possibile richiedere agli utenti di immettere una password per poter accedere al dispositivo.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - Windows Phone 8+  
     - iOS 6+  
     - Android 4.0+  
@@ -166,7 +166,7 @@ ms.locfileid: "74660989"
 
 - **Richiedi una password per sbloccare un dispositivo inattivo**: è possibile richiedere agli utenti di immettere una password per accedere al dispositivo bloccato.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - Windows Phone 8+  
     - iOS 6+  
     - Android 4.0+  
@@ -176,7 +176,7 @@ ms.locfileid: "74660989"
 
     Questa regola deve essere usata con **Richiedi una password per sbloccare un dispositivo inattivo**. Il valore qui impostato determina quando considerare il dispositivo inattivo e bloccato. Quando l'opzione **Richiedi una password per sbloccare un dispositivo inattivo** è impostata su **True**, l'utente deve immettere una password per accedere al dispositivo bloccato.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - Windows Phone 8+  
     - Windows RT/8.1  
     - iOS 6+  
@@ -187,18 +187,18 @@ ms.locfileid: "74660989"
 
     Per evitare l'installazione automatica, il valore deve essere impostato su **Nessuno**. Impostarlo su **Consigliati** per installare automaticamente tutti gli aggiornamenti consigliati. Per installare solo gli aggiornamenti classificati come importanti, impostarlo su **Importanti**.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - Windows Phone 8+  
 
 - **Consenti le password semplici**: è possibile consentire agli utenti di creare password semplici come "1234" o "1111". Per impostazione predefinita, questa impostazione è disabilitata.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - Windows Phone 8+  
     - iOS 6+  
 
 - **Lunghezza minima password**: è possibile specificare il numero minimo di cifre o caratteri che la password dell'utente deve avere (6 per impostazione predefinita).  
 
-    **Supported on**:  
+    **Supportato in**:  
     - Windows Phone 8+  
     - Windows 8,1  
     - iOS 6+  
@@ -210,7 +210,7 @@ ms.locfileid: "74660989"
 
 - **Crittografia file nel dispositivo mobile**: è possibile richiedere la crittografia del dispositivo per la connessione alle risorse. I dispositivi che eseguono Windows Phone 8 vengono crittografati automaticamente. I dispositivi che eseguono iOS vengono crittografati quando si configura l'impostazione **Richiedi impostazioni password nei dispositivi mobili**. Questa opzione è attivata per impostazione predefinita.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - Windows Phone 8+  
     - Windows 8,1  
     - iOS 6+  
@@ -219,7 +219,7 @@ ms.locfileid: "74660989"
 
 - Il **dispositivo non deve essere jailbroken o rooted**: se si abilita questa impostazione, i dispositivi jailbroken (iOS) o rooted (Android) non sono conformi. Per impostazione predefinita, questa impostazione è disabilitata.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - iOS 6+  
     - Android 4.0+  
     - Samsung KNOX Standard 4.0+  
@@ -230,17 +230,17 @@ ms.locfileid: "74660989"
 
     Per altre informazioni sui profili di posta elettronica, vedere [abilitare l'accesso alla posta elettronica aziendale usando profili di posta elettronica con Microsoft Intune](https://docs.microsoft.com/intune/email-settings-configure). Per impostazione predefinita, questa impostazione è disabilitata.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - iOS 6+  
 
 - **Profilo di posta elettronica**: se l' **account di posta elettronica deve essere gestito da Intune** è selezionato, scegliere **Seleziona** per scegliere il profilo di posta elettronica da cui devono essere gestiti i dispositivi. Il profilo di posta elettronica deve essere presente nel dispositivo.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - iOS 6+  
 
 - **Sistema operativo minimo necessario**: quando un dispositivo non soddisfa il requisito di versione minima del sistema operativo specificato, viene segnalato come non conforme. viene visualizzato un collegamento con informazioni su come eseguire l'aggiornamento. È possibile scegliere di aggiornare il dispositivo e dopo l'aggiornamento si potrà accedere alle risorse aziendali.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - Windows Phone 8+  
     - Windows 8,1  
     - iOS 6+  
@@ -249,7 +249,7 @@ ms.locfileid: "74660989"
 
 - **Versione massima del sistema operativo**: quando un dispositivo usa una versione del sistema operativo successiva rispetto a quella specificata nella regola, l'accesso alle risorse aziendali è bloccato e all'utente viene richiesto di contattare l'amministratore it. Fino a quando non si modifica la regola per consentire la versione del sistema operativo, questo dispositivo non può essere usato per accedere alle risorse aziendali.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - Windows Phone 8+  
     - Windows 8,1  
     - iOS 6+  
@@ -274,7 +274,7 @@ ms.locfileid: "74660989"
 
     Per ulteriori informazioni, vedere [CSP di attestazione dell'integrità](https://msdn.microsoft.com/library/dn934876.aspx).  
 
-    **Supported on**:  
+    **Supportato in**:  
     - Windows 10 e Windows 10 Mobile  
 
     > [!NOTE]  
@@ -283,47 +283,47 @@ ms.locfileid: "74660989"
 
 - **App che non possono essere installate nel dispositivo**: se gli utenti installano un'app dall'elenco di app non conformi per l'amministratore, verranno bloccate quando tenteranno di accedere alla posta elettronica aziendale e ad altre risorse aziendali che supportano l'accesso condizionale. Questa regola richiede il nome dell'app e l'ID dell'app quando si aggiunge un'app all'elenco non conforme definito dall'amministratore. È anche possibile aggiungere l'autore dell'app, ma non è obbligatorio.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - iOS 6+  
     - Android 4.0+  
     - Samsung KNOX Standard 4.0+  
 
 - **Tipo di password richiesto**: specificare se l'utente deve creare una password alfanumerica o una password numerica. Per le password alfanumeriche, si specifica anche il numero minimo di set di caratteri che la password deve contenere. I quattro set di caratteri sono: lettere minuscole, lettere maiuscole, simboli e numeri.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - Windows Phone 8+  
     - Windows 8.1+  
     - iOS 6+  
 
 - **Blocca il debug USB nel dispositivo**: non è necessario configurare questa impostazione perché il debug USB è già disabilitato nei dispositivi Android for work.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - Android 4.0+  
     - Samsung KNOX Standard 4.0+  
 
 - **Blocca le app da origini sconosciute**: richiedere che i dispositivi impediscano l'installazione di app da origini sconosciute. Non è necessario configurare questa impostazione perché i dispositivi Android for Work limitano sempre l'installazione da origini sconosciute.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - Android 4.0+  
     - Samsung KNOX Standard 4.0+  
 
 - **Richiedi analisi delle minacce nelle app**: questa impostazione specifica che la funzionalità Verifica app è abilitata nel dispositivo.  
 
-    **Supported on**:  
+    **Supportato in**:  
     - Android da 4.2 a 4.4  
     - Samsung KNOX Standard 4.0+  
 
 
 ### <a name="find-an-app-id"></a>Trovare l'ID di un'app
 
-L'ID dell'app è un identificatore che identifica in modo univoco l'app all'interno dei servizi per applicazioni di Apple e Google, An example is `com.contoso.myapp`. Per trovare un ID:
+L'ID dell'app è un identificatore che identifica in modo univoco l'app all'interno dei servizi per applicazioni di Apple e Google, Un esempio è `com.contoso.myapp`. Per trovare un ID:
 
-- **Android**: Find the app ID in the Google Play store URL that was used to create the app. An example app ID is: `...?id=com.companyname.appname&hl=en`  
+- **Android**: trovare l'ID app nell'URL di Google Play Store usato per creare l'app. Un esempio di ID app è: `...?id=com.companyname.appname&hl=en`  
 
 - **iOS**  
-    1. Find the ID number in the iTunes store URL. Ad esempio: `/id875948587?mt=8`  
+    1. Trovare il numero ID nell'URL di iTunes Store. Ad esempio: `/id875948587?mt=8`  
 
-    2. In a web browser, go to the following URL, replacing the number with the ID number that you just found. Ad esempio: `https://itunes.apple.com/lookup?id=875948587`  
+    2. In un Web browser passare all'URL seguente, sostituendo il numero con il numero ID appena trovato. Ad esempio: `https://itunes.apple.com/lookup?id=875948587`  
 
     3. Scaricare e aprire il file di testo.  
 

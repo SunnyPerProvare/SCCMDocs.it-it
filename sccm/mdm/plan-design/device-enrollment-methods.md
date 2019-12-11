@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 571334f94d1fcd3f53219b406185af3015356e3a
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68338061"
 ---
 # <a name="overview-of-device-enrollment-methods"></a>Panoramica dei metodi di registrazione dei dispositivi
@@ -31,18 +31,18 @@ La tabella seguente illustra i metodi di registrazione con le relative funzional
 
 **Metodi di registrazione iOS**
 
-| **Metodo** | **Cancellazione** | **Affinità** | **Blocco** | **Dettagli** |
+| **Metodo** | **Cancellazione** | **Affinità** | **Blocco** | **Informazioni dettagliate** |
 |:---:|:---:|:---:|:---:|:---:|
-|**[BYOD](#byod)** | No| Sì | No | [altro](../deploy-use/enable-platform-enrollment.md)|
+|**[BYOD](#byod)** | No| Yes | No | [altro](../deploy-use/enable-platform-enrollment.md)|
 |**[DEM](#dem)**| No |No |No | [altro](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
 |**[DEP](#dep)**| Yes | Facoltativo | Facoltativo|[altro](../deploy-use/ios-device-enrollment-program-for-hybrid.md)|
-|**[USB-SA](#usb-sa)**| Sì | Facoltativo | No| [altro](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md)|
+|**[USB-SA](#usb-sa)**| Yes | Facoltativo | No| [altro](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md)|
 
 **Metodi di registrazione per Android e Windows**
 
-| **Metodo** | **Cancellazione** | **Affinità** | **Blocco** | **Dettagli**|
+| **Metodo** | **Cancellazione** | **Affinità** | **Blocco** | **Informazioni dettagliate**|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|**[BYOD](#byod)** | No| Sì | No | [altro](../deploy-use/enroll-hybrid-windows.md)|
+|**[BYOD](#byod)** | No| Yes | No | [altro](../deploy-use/enroll-hybrid-windows.md)|
 |**[DEM](#dem)**| No |No |No |[altro](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
 
 Per una serie di domande e risposte utili per individuare il metodo corretto, vedere [Scegliere come registrare i dispositivi mobili](/intune/get-started/choose-how-to-enroll-devices1).
@@ -53,7 +53,7 @@ Gli utenti BYOD (Bring Your Own Device) installano l'app del portale aziendale e
 ## <a name="corporate-owned-devices"></a>Dispositivi di proprietà dell'azienda
 I dispositivi di proprietà dell'azienda possono essere gestiti con la console di Configuration Manager. I dispositivi iOS possono essere registrati direttamente tramite strumenti forniti da Apple. Tutti i tipi di dispositivo possono essere registrati da un amministratore o da un responsabile usando il manager di registrazione dispositivi. È anche possibile identificare e contrassegnare come dispositivi di proprietà dell'azienda i dispositivi con numero IMEI e abilitare questo tipo di registrazione.
 
-[Enroll corporate-owned devices](../deploy-use/enroll-company-owned-devices.md) (Registrare dispositivi di proprietà dell'azienda)
+[Registrare dispositivi di proprietà dell'azienda](../deploy-use/enroll-company-owned-devices.md)
 
 ### <a name="dem"></a>DEM
 Il manager di registrazione dispositivi è un account utente speciale usato per registrare e gestire più dispositivi di proprietà dell'azienda. I responsabili possono installare il portale aziendale e registrare molti dispositivi senza utente associato. Altre informazioni su [DEM](../deploy-use/enroll-devices-with-device-enrollment-manager.md). ([Torna alla tabella](#overview-of-device-enrollment-methods))

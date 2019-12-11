@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9b77fabc6ea4f5823777e932011313c5e2de1acf
-ms.sourcegitcommit: f42b9e802331273291ed498ec88f710110fea85a
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67551331"
 ---
 # <a name="monitor-mobile-threat-defense-compliance"></a>**Monitorare la conformità a Mobile Threat Defense**
@@ -35,7 +35,7 @@ Per monitorare lo stato di Mobile Threat Defense:
 - Numero di dispositivi indicati come non conformi dalla piattaforma
 - Eventuali errori correlati allo stato di conformità dei dispositivi
 
-![Dashboard di Device Threat Protection](device-threat-protection-dashboard.png)
+![Dashboard di protezione dalle minacce per il dispositivo](device-threat-protection-dashboard.png)
 
 ## <a name="to-monitor-the-individual-compliance-status"></a>Per monitorare lo stato di conformità dei singoli dispositivi
 
@@ -59,11 +59,11 @@ Nella schermata **Dispositivi** è inoltre possibile selezionare dispositivi spe
 |-|-|-|
 |**Descrizione**| Yes | Dettagli sulla minaccia forniti dal partner Mobile Threat Defense. |
 |**Ora ultimo aggiornamento**| Yes | Ora dell'ultimo invio da parte del partner Mobile Threat Defense di dettagli aggiornati sulla minaccia a Intune. |
-|**Gravità minaccia**| Yes | "Gravità minaccia" è la definizione di una singola minaccia in base alla configurazione dell'amministratore nella console del partner Mobile Threat Defense. Dispone di uno dei tre valori: **Low**, **Medium** o **elevata** |
-|**Stato minacce**| Yes | Stato corrente della minaccia nel dispositivo. Stati possibili: **Active**, **risolto** o **ignorati:** Indica che l'utente ha ignorato la minaccia sul dispositivo, ma è ancora presente la minaccia. |
-|**Tipo di minaccia**| Yes | Tipo di minaccia del partner Mobile Threat Defense. Valori possibili: **App**, **File** o **OS** |
+|**Gravità minaccia**| Yes | "Gravità minaccia" è la definizione di una singola minaccia in base alla configurazione dell'amministratore nella console del partner Mobile Threat Defense. I valori possibili sono: **Bassa**, **Media** o **Alta** |
+|**Stato minacce**| Yes | Stato corrente della minaccia nel dispositivo. Gli stati possibili sono: **Attivo**, **Risolto** o **Ignorato**. Quest'ultimo stato indica che l'utente ha ignorato la minaccia sul dispositivo, ma che questa è ancora presente. |
+|**Tipo di minaccia**| Yes | Tipo di minaccia del partner Mobile Threat Defense. I valori possibili sono i seguenti: **App**, **File** o **Sistema operativo** |
 |**ID account AAD**| No | Identificatore univoco di Azure Active Directory. |
-|**Classificazione**| Yes | Classificazione della minaccia fornita dal partner Mobile Threat Defense. Valori possibili: **Abilitatore radice, Riskware, Adware, Chargeware, DataLeak, Trojan, Worm, Virus, Exploit, Backdoor, Bot, AppDropper, ClickFraud, Spam, Spyware, surveillance-ware, vulnerabilità, Unknown, Root Jailbrake, Connectivity, TollFraud, SideloadedApp** |
+|**Classificazione**| Yes | Classificazione della minaccia fornita dal partner Mobile Threat Defense. I valori possibili sono: **Root Enabler, Riskware, Adware, Chargeware, DataLeak, Trojan, Worm, Virus, Exploit, Backdoor, Bot, AppDropper, ClickFraud, Spam, Spyware, SurveillanceWare, Vulnerability, Unknown, Root Jailbrake, Connectivity, TollFraud, SideloadedApp** |
 |**ID dispositivo**| No | ID dell'oggetto Azure Active Directory che rappresenta il dispositivo aggiunto all'area di lavoro con informazioni sulle minacce. |
 |**ID minaccia**| No | Identificatore univoco della minaccia generato dal partner Mobile Threat Defense. L'ID minaccia viene usato per tenere traccia della risoluzione. |
 |**URL della minaccia**| No | Quando presente, l'URL della minaccia fornisce un collegamento alla vista della console di gestione del partner Mobile Threat Defense per la minaccia specifica. |

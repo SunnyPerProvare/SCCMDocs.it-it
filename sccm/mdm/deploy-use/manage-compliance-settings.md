@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 78ff2181c3ae4bc7069998bf4a6db526da835037
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68337881"
 ---
 # <a name="managing-compliance-on-devices-managed-with-intune"></a>Gestione della conformità nei dispositivi gestiti con Intune
@@ -33,7 +33,7 @@ Questi scenari forniscono un'introduzione all'uso delle impostazioni di conformi
 
 1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Elementi di configurazione**.  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
+3.  Nel **Home** nella scheda il **Crea** di gruppo, fare clic su **Crea elemento di configurazione**.  
 
 4.  Nella scheda **Generale** della Creazione guidata dell'elemento di configurazione mostrata sotto, specificare un nome e una descrizione per l'elemento di configurazione, quindi scegliere il tipo di elemento di configurazione appropriato per ogni scenario di questo argomento.  
 
@@ -60,7 +60,7 @@ Questi scenari forniscono un'introduzione all'uso delle impostazioni di conformi
 
 ## <a name="scenarios-for-windows-phone-devices-managed-with-intune"></a>Scenari per dispositivi Windows Phone gestiti con Intune  
 
-### <a name="scenario-disable-the-use-of-screen-capture-on-a-windows-phone"></a>Scenario: Disabilitare l'uso dell'acquisizione schermo in un Windows Phone  
+### <a name="scenario-disable-the-use-of-screen-capture-on-a-windows-phone"></a>Scenario: Disabilitare l'uso dell'acquisizione schermo in un dispositivo Windows Phone  
  Questo scenario prevede l'uso di dispositivi Windows Phone 8.1 nell'azienda. Questi dispositivi eseguono un'app di vendita che contiene informazioni riservate. Per proteggere l'azienda, si vuole disabilitare l'uso dell'acquisizione schermo nel dispositivo, che potrebbe essere usato per trasmettere informazioni sensibili all'esterno dell'azienda.  
 
 1. Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Windows Phone** , quindi fare clic su **Avanti**.  
@@ -79,7 +79,7 @@ Questi scenari forniscono un'introduzione all'uso delle impostazioni di conformi
 
 ## <a name="scenarios-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Scenari per dispositivi iOS e Mac OS X gestiti con Intune  
 
-### <a name="scenario-disable-the-camera-on-ios-devices"></a>Scenario: Disabilitare la fotocamera nei dispositivi iOS  
+### <a name="scenario-disable-the-camera-on-ios-devices"></a>Scenario: Disabilitare la fotocamera sui dispositivi iOS  
  In questo scenario l'azienda produce disegni per nuovi progetti di prodotti, che contengono informazioni sensibili da non divulgare. Considerato che la società fornisce iPhone o iPad a tutti i dipendenti, si vuole disabilitare l'uso della fotocamera su tali dispositivi per impedire che venga usata per fotografare i disegni.  
 
 1. Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **iOS e Mac OS X** , quindi fare clic su **Avanti**.  
@@ -98,7 +98,7 @@ Questi scenari forniscono un'introduzione all'uso delle impostazioni di conformi
 
 ## <a name="scenarios-for-android-and-samsung-knox-standard-devices-managed-with-intune"></a>Scenari per dispositivi Android e Samsung KNOX Standard gestiti con Intune  
 
-### <a name="scenario-require-a-password-on-all-android-5-devices"></a>Scenario: Richiedi una password in tutti i dispositivi Android 5  
+### <a name="scenario-require-a-password-on-all-android-5-devices"></a>Scenario: Richiedere una password per tutti i dispositivi Android 5  
  In questo scenario verrà creato un elemento di configurazione solo per i dispositivi Android 5 che richiede agli utenti di configurare una password di almeno 6 caratteri nei propri dispositivi. Inoltre, se un utente immette per 5 volte una password errata, i dati del dispositivo vengono cancellati.  
 
 1. Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Android e Samsung KNOX** , quindi fare clic su **Avanti**.  

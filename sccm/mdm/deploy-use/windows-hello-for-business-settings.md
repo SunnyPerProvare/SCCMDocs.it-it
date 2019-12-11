@@ -12,20 +12,20 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 71f853034133e2ec73a4d8e606c2e0c0c94841a4
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62227584"
 ---
-# <a name="windows-hello-for-business-settings-in-configuration-manager-hybrid"></a>Windows Hello per le impostazioni di Business in Configuration Manager (ibrido)
+# <a name="windows-hello-for-business-settings-in-configuration-manager-hybrid"></a>Impostazioni di Windows Hello for business in Configuration Manager (ibrido)
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Configuration Manager consente l'integrazione con Windows Hello for Business (in precedenza Microsoft Passport for Windows), che è un metodo di accesso alternativo per i dispositivi Windows 10. Hello for Business usa Active Directory o un account di Azure Active Directory per sostituire una password, una smart card o una smart card virtuale. Hello for Business consente di eseguire l'accesso usando un **movimento dell'utente** anziché una password. Il movimento dell'utente può essere un semplice PIN, un'autenticazione biometrica o un dispositivo esterno come un lettore di impronte digitali.  
+Configuration Manager consente l'integrazione con Windows Hello for Business (in precedenza Microsoft Passport per Windows), che rappresenta un metodo di accesso alternativo per i dispositivi Windows 10. Hello for Business usa Active Directory o un account di Azure Active Directory per sostituire una password, una smart card o una smart card virtuale. Hello for Business consente di eseguire l'accesso usando un **movimento dell'utente** anziché una password. Il movimento dell'utente può essere un semplice PIN, un'autenticazione biometrica o un dispositivo esterno come un lettore di impronte digitali.  
 
 > [!Important]  
-> A partire da dicembre 2017, Windows Hello per le impostazioni di Business in Configuration Manager è un [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Distribuzione di Windows Server 2016 Active Directory Federation Services registrazione (RA ad FS) è più semplice, offre un'esperienza utente migliore e offre un'esperienza di registrazione certificati più deterministica. Per altre informazioni, vedere [Windows Hello for Business](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification).  
+> Da dicembre 2017 le impostazioni di Windows Hello for Business in Configuration Manager sono una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). La distribuzione di Active Directory Federation Services Registration Authority (ADFS RA) di Windows Server 2016 è più semplice, offre un'esperienza utente migliore e consente un'esperienza di registrazione certificati più deterministica. Per altre informazioni, vedere [Windows Hello for Business](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification).  
 
 
 Configuration Manager si integra con Windows Hello per le aziende in due modi:  
@@ -36,7 +36,7 @@ Configuration Manager si integra con Windows Hello per le aziende in due modi:
 
 - È possibile distribuire i criteri di Windows Hello per le aziende su dispositivi appartenenti a un dominio Windows 10 che eseguono il client di Configuration Manager. Questa configurazione è descritta in [Configurare Windows Hello per le aziende su dispositivi appartenenti a un dominio Windows 10](/sccm/protect/deploy-use/windows-hello-for-business-settings#configure-windows-hello-for-business-on-domain-joined-windows-10-devices). Quando si usa Configuration Manager con Intune (ibrido), è possibile configurare queste impostazioni nei dispositivi Windows 10 e Windows 10 Mobile, ma non su dispositivi appartenenti a un dominio che eseguono il client di Configuration Manager.   
 
-Per informazioni generali sulla configurazione di Windows Hello per le impostazioni di Business, vedere [Windows Hello per le impostazioni di Business in Configuration Manager](/sccm/protect/deploy-use/windows-hello-for-business-settings).
+Per informazioni generali sulla configurazione delle impostazioni di Windows Hello for business, vedere [le impostazioni di Windows Hello for business in Configuration Manager](/sccm/protect/deploy-use/windows-hello-for-business-settings).
 
 
 
@@ -44,7 +44,7 @@ Per informazioni generali sulla configurazione di Windows Hello per le impostazi
 
 1. Nella console di Configuration Manager fare clic su **Amministrazione** > **Servizi cloud** > **Sottoscrizioni a Microsoft Intune**.  
 
-2. Nell'elenco selezionare la sottoscrizione a Microsoft Intune e quindi nel gruppo **Sottoscrizione** della scheda **Home** fare clic su **Configura piattaforme** > **Windows (MDM)**.  
+2. Nell'elenco selezionare la sottoscrizione a Microsoft Intune e quindi nel gruppo **Sottoscrizione** della scheda **Home** fare clic su **Configura piattaforme** > **Windows (MDM)** .  
 
 3. Nella scheda **Windows Hello for Business** della finestra di dialogo **Sottoscrizione a Microsoft Intune - Proprietà** scegliere tra i valori seguenti, che avranno effetto sui tutti i dispositivi Windows 10 e Windows 10 Mobile registrati:  
 
@@ -84,7 +84,7 @@ Per informazioni generali sulla configurazione di Windows Hello per le impostazi
 
      - **Non consentito** (impostazione predefinita) - Gli utenti non possono usare caratteri speciali nel PIN (questo è anche il comportamento se l'impostazione non è configurata).  
 
-       I caratteri speciali includono: **! " # $ % & ' ( ) \* + , - . / : ; < = > ? @ [ \ ] ^ _ ` { &#124; } ~**.  
+       I caratteri speciali includono: **! " # $ % & ' ( ) \* + , - . / : ; < = > ? @ [ \ ] ^ _ ` { &#124; } ~** .  
 
    - **Richiedi scadenza PIN (giorni)** - Specifica il numero di giorni prima che sia necessario modificare il PIN del dispositivo. L'impostazione predefinita è 41 giorni.  
 
@@ -106,6 +106,6 @@ Per informazioni generali sulla configurazione di Windows Hello per le impostazi
 
 ## <a name="see-also"></a>Vedere anche  
 
-[Proteggere i dati e infrastruttura del sito](/sccm/protect/understand/protect-data-and-site-infrastructure)
+[Proteggere i dati e l'infrastruttura del sito](/sccm/protect/understand/protect-data-and-site-infrastructure)
 
 [Windows Hello for Business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)  

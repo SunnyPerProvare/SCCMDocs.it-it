@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b2e63720bf4a5e6b2cf2f7d1a034d916c9ca5338
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62255476"
 ---
 # <a name="manage-an-intune-subscription-associated-with-system-center-configuration-manager"></a>Gestire una sottoscrizione di Intune associata a System Center Configuration Manager

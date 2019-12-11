@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4d5814895ba2829a1d4238581d85f955816e4058
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67678695"
 ---
 # <a name="set-up-actions-for-non-compliance"></a>Configurare azioni per la mancata conformità
@@ -60,14 +60,14 @@ Configuration Manager offre alcuni modelli di messaggio di posta elettronica, ma
 
 4. Immettere le informazioni seguenti:  
 
-    a. **Nome**: Nome del modello di posta elettronica  
+    a. **Nome**: nome del modello di messaggio di posta elettronica  
 
     > [!Note]  
-    > Il **da** campo viene popolato automaticamente con un indirizzo di posta elettronica Nessuna risposta da Microsoft.<!--SCCMDocs issue 652-->  
+    > Il campo **da** viene popolato automaticamente con un indirizzo di posta elettronica senza risposta da Microsoft.<!--SCCMDocs issue 652-->  
 
-    c. **Oggetto**: Un oggetto che descrive la notifica di posta elettronica da inviare  
+    c. **Oggetto**: oggetto che descrive la notifica inviata tramite posta elettronica  
 
-    d. **Corpo del messaggio**: Altri dettagli sulla notifica di posta elettronica  
+    d. **Corpo del messaggio**: altri dettagli sulla notifica tramite posta elettronica  
 
     > [!TIP]  
     > È anche possibile includere un'**intestazione del messaggio di posta elettronica** con il logo dell'azienda e un **piè di pagina** contenente il nome dell'organizzazione e le informazioni di contatto. Modificare queste informazioni anche nelle proprietà della sottoscrizione di Intune.  
@@ -92,22 +92,22 @@ Configuration Manager offre alcuni modelli di messaggio di posta elettronica, ma
 
 5. Nella pagina **Azioni di non conformità** è necessario definire il comportamento desiderato quando un dispositivo diventa non conforme facendo clic su **Nuovo**.  
 
-6. È possibile scegliere due opzioni: **Invia messaggio di posta elettronica all'utente finale** oppure **contrassegna il dispositivo non conforme**.  
+6. È possibile scegliere tra due opzioni: **Invia un messaggio di posta elettronica all'utente finale** e **Contrassegna il dispositivo come non conforme**.  
 
 7. Se si seleziona **Invia un messaggio di posta elettronica all'utente finale**, immettere i dettagli seguenti:  
 
-    a. **Periodo di tolleranza (in giorni):** Immettere un numero di giorni compreso tra 0 e 365  
+    a. **Periodo di tolleranza (in giorni):** immettere un numero di giorni compreso tra 0 e 365  
 
     b. **Altri destinatari (tramite posta elettronica)**  
 
-    c. **Selezionare il modello di messaggio:** Scegliere un modello di posta elettronica predefinito o un modello personalizzato creato.  
+    c. **Selezionare un modello di messaggio:** scegliere un modello di messaggio di posta elettronica predefinito o un modello personalizzato creato.  
 
     > [!TIP]   
     > È anche possibile aggiungere un nuovo modello di messaggio di posta elettronica durante l'aggiunta dell'azione **Invia un messaggio di posta elettronica all'utente finale** facendo clic su **Nuovo** nella pagina **Aggiungi azione**.  
 
 8. Se si seleziona **Contrassegna il dispositivo come non conforme**, immettere i dettagli seguenti:  
 
-    a. **Periodo di tolleranza (in giorni):** Immettere un numero di giorni compreso tra 0 e 365  
+    a. **Periodo di tolleranza (in giorni):** immettere un numero di giorni compreso tra 0 e 365  
 
-9. Completare la procedura guidata.  
+9. completare la procedura guidata.  
 

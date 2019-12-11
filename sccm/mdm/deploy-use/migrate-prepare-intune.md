@@ -12,10 +12,10 @@ ms.technology: configmgr-hybrid
 ms.assetid: db97ae9e-34f4-4e10-a282-cd211f612bb4
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 68cf60bd5ebcb38e08dd3de6d7cc144752de848c
-ms.sourcegitcommit: b9cc8e723c5d8c3be44edad24ad29d75c0cdd2b0
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71826167"
 ---
 # <a name="prepare-intune-for-user-migration"></a>Preparare Intune per la migrazione degli utenti 
@@ -44,7 +44,7 @@ In Intune autonomo configurare una licenza di Intune per ogni utente. Configurar
 È probabile che utenti e gruppi siano già in Azure AD perché è stata configurata la sincronizzazione della directory. Per assicurarsi che gli utenti facciano parte del gruppo di utenti corretto, è consigliabile esaminare i gruppi di utenti di Intune. I criteri, i profili e le app sono destinati a questi gruppi. Assicurarsi che gli utenti di cui si esegue la migrazione alla versione autonoma di Intune facciano parte dei gruppi corretti. 
 
 ## <a name="configure-role-based-administration-control-rbac"></a>Configurare Controllo degli accessi in base al ruolo
-Come parte della migrazione, configurare tutti i ruoli Controllo degli accessi in base al ruolo necessari in Intune e assegnare gli utenti a tali ruoli. Esistono differenze tra il controllo degli accessi in base al ruolo in Configuration Manager e Intune, ad esempio l'ambito delle risorse. Per altre informazioni, vedere [controllo dell'amministrazione basata su ruoli (RBAC) con Intune](https://docs.microsoft.com/intune/role-based-access-control).
+Come parte della migrazione, configurare tutti i ruoli Controllo degli accessi in base al ruolo necessari in Intune e assegnare gli utenti a tali ruoli. Esistono differenze tra il controllo degli accessi in base al ruolo in Configuration Manager e Intune, ad esempio l'ambito delle risorse. Per altre informazioni, vedere [Controllo degli accessi in base al ruolo (RBAC) con Intune](https://docs.microsoft.com/intune/role-based-access-control).
 
 ## <a name="assign-apps-and-policies-to-aad-groups"></a>Assegnare app e criteri ai gruppi di AAD
 Se sono stati [importati Configuration Manager dati Microsoft Intune](migrate-import-data.md), molti degli oggetti potrebbero essere già stati assegnati ai gruppi di Azure ad. Verificare che tutti gli oggetti (app, criteri e profili) siano assegnati ai gruppi di Azure AD corretti. Se si assegnano correttamente oggetti, i dispositivi dell'utente vengono configurati automaticamente dopo la migrazione dell'utente e la migrazione non dovrebbe avere alcun effetto signifcant per gli utenti. Per ulteriori informazioni sull'assegnazione degli oggetti a un gruppo di Azure AD, vedere gli articoli seguenti: 

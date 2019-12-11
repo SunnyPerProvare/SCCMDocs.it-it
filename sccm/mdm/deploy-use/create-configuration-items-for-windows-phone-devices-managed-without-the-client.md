@@ -11,10 +11,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9a205d17835675f804736c0513bc9d6c7706e19b
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70379594"
 ---
 # <a name="how-to-create-configuration-items-for-windows-phone-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows Phone gestiti senza il client System Center Configuration Manager
@@ -27,7 +27,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
   
 2. Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
   
-3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
+3. Nel **Home** nella scheda il **Crea** di gruppo, fare clic su **Crea elemento di configurazione**.  
   
 4. Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
   
@@ -37,7 +37,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
   
 7. Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme Windows Phone specifiche che valuteranno l'elemento di configurazione.  
   
-8. Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione Windows Phone](#windows-phone-configuration-item-settings-reference) in questo argomento e quindi fare clic su **Avanti**.  
+8. Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per i dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione Windows Phone](#windows-phone-configuration-item-settings-reference) in questo argomento e quindi fare clic su **Avanti**.  
   
    > [!TIP]  
    >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
@@ -54,23 +54,23 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
   
     -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
   
-    -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel log eventi dell'applicazione.  
+    -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche essere registrato come un evento Windows nel registro eventi dell'applicazione.  
   
 11. Nella pagina **Applicabilità piattaforma** della creazione guidata, verificare le eventuali impostazioni non compatibili con le piattaforme supportate selezionate in precedenza. È possibile tornare indietro e rimuovere queste impostazioni oppure continuare.  
   
     > [!TIP]  
     >  Non viene valutata la conformità delle impostazioni non supportate.  
   
-12. Completare la procedura guidata.  
+12. completare la procedura guidata.  
   
     È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
   
 ##  <a name="windows-phone-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione Windows Phone  
   
-### <a name="password"></a>Password  
+### <a name="password"></a>Windows 10  
  Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Richiedi impostazioni password nei dispositivi mobili**|Richiede una password nei dispositivi supportati.|  
 |**Lunghezza minima password (caratteri)**|La lunghezza minima della password.|  
@@ -82,7 +82,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
   
 ### <a name="device"></a>Dispositivo  
   
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Acquisizione schermo**|Consente all'utente di acquisire uno screenshot del display del dispositivo.<br /><br /> Solo Windows Phone 8.1.|  
 |**Invio dati diagnostici**|Consente l’invio dei file di log dell'app.|  
@@ -93,7 +93,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 ### <a name="email-management"></a>Gestione della posta elettronica  
  Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Posta elettronica IMAP e POP**|Consente la connessione agli account di posta elettronica che usano gli standard POP e IMAP.|  
 |**Tempo massimo di conservazione della posta elettronica**|Il tempo di conservazione della posta elettronica prima che venga eliminata dal server.|  
@@ -108,14 +108,14 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 ### <a name="store"></a>Archivio  
  Queste impostazioni si applicano solo ai dispositivi Windows Phone 8.1.  
   
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Archivio applicazioni**|Consente l'accesso all'archivio applicazioni sul dispositivo.|  
   
 ### <a name="browser"></a>Browser  
  Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Consenti browser Web**|Abilita o disabilita il browser Internet predefinito.|  
 |**Riempimento automatico**|L’utente può modificare le impostazioni di completamento automatico nel browser.|  
@@ -127,7 +127,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 ### <a name="internet-explorer"></a>Internet Explorer  
  Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Invia sempre l'intestazione DNT (Do Not Track)**|Impedisce che le informazioni cercate vengano inviate a siti di terze parti.|  
 |**Area di protezione Intranet**||  
@@ -137,22 +137,22 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 |**Livello di protezione per l'area siti con restrizioni**|Configurare il livello di protezione per l'area siti con restrizioni.|  
 |**Spazi dei nomi per l'area intranet**||  
 |**Accedi a un sito Intranet nel caso di immissione di una singola parola**|Abilita o disabilita l'impostazione che consente a Internet Explorer di passare automaticamente a un sito Intranet se viene immesso un nome di sito valido senza HTTP precedente:|  
-|**Opzione di menu modalità Enterprise**|Consente agli utenti di attivare e disattivare la modalità Enterprise dal menu **Strumenti** di Internet Explorer.|  
+|**Opzione di menu modalità Enterprise**|Consente agli utenti di attivare e disattivare la modalità Enterprise dal menu **Strumenti** di Internet Explorer .|  
 |**Posizione report di registrazione (URL)**|Specificare un URL in cui verranno registrati i siti Web visitati quando è attiva la modalità Enterprise.|  
 |**Posizione elenco siti modalità Enterprise (URL)**|Specificare il percorso dell'elenco di siti Web che useranno la modalità Enterprise quando è attiva.|  
   
 ### <a name="cloud"></a>Cloud  
   
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Sincronizzazione impostazioni**|Consente la sincronizzazione delle impostazioni tra i dispositivi.|  
 |**Sincronizzazione credenziali**|Consente la sincronizzazione delle credenziali tra i dispositivi.|  
 |**Account Microsoft**|Consente di usare un account Microsoft sul dispositivo.<br /><br /> Solo Windows Phone 8.1.|  
 |**Sincronizzazione delle impostazioni con connessione a consumo**|Consente la sincronizzazione delle impostazioni quando la connessione a Internet è a consumo.|  
   
-### <a name="security"></a>Security  
+### <a name="security"></a>Sicurezza  
   
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Installazione file non firmati**|Consente il caricamento di file non firmati.|  
 |**Applicazioni non firmate**|Consente il caricamento di file non firmati.|  
@@ -165,7 +165,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 ### <a name="peak-synchronization"></a>Sincronizzazione nelle ore di punta  
  Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Specificare l'ora di punta**|Specificare un intervallo di tempo che verrà usato dalle due impostazioni seguenti.|  
 |**Frequenza di sincronizzazione nelle ore di punta**|Scegliere la frequenza con cui il dispositivo eseguirà la sincronizzazione durante le ore di punta specificate.|  
@@ -174,7 +174,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 ### <a name="roaming"></a>Roaming  
  Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Gestione dispositivi mobili durante il roaming**|Consente la gestione del dispositivo con Configuration Manager in caso di roaming.|  
 |**Download del software durante il roaming**|Consente il download di applicazioni e software durante il roaming.|  
@@ -184,7 +184,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 ### <a name="encryption"></a>Crittografia  
  Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Crittografia scheda di memoria**|Richiede la crittografia delle schede di memoria usate con il dispositivo.|  
 |**Crittografia file nel dispositivo mobile**|Richiede la crittografia dei file sul dispositivo mobile.|  
@@ -196,7 +196,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 ###  <a name="wireless-communications"></a>Comunicazioni wireless  
  Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|Nome impostazione|Dettagli|  
+|Nome impostazione|Details|  
 |------------------|-------------|  
 |**Connessione rete wireless**|Abilita o disabilita la funzionalità Wi-Fi dei dispositivi.|  
 |**Tethering Wi-Fi**|Consente agli utente di usare il proprio dispositivo come hotspot mobile.|  
@@ -209,15 +209,15 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
   
 2.  Nella finestra di dialogo **Connessione rete wireless** , specificare le informazioni seguenti sulla connessione wireless che sarà fornita nei dispositivi mobili:  
   
-|Impostazione|Altre informazioni|  
+|Impostazioni|Altre informazioni|  
 |-------------|----------------------|  
 |**Nome rete (SSID)**||  
 |**Connessione di rete**|Scegliere **Internet** o **Lavoro**.|  
 |**Autenticazione**|Selezionare il metodo di autenticazione per la connessione:<br><br> - **Aperta**<br> - **Condivisa**<br> - **WPA**<br> - **WPA-PSK**<br> - **WPA2**<br> - **WPA2-PSK**|  
 |**Crittografia dei dati**|Scegliere il metodo di crittografia usato dalla connessione. I valori che è possibile selezionare variano a seconda del metodo di **Autenticazione** scelto:<br><br> - **Disabilitato**<br> - **WEP**<br> - **TKIP**<br> - **AES**|  
-|**Indice chiavi**|Selezionare un indice chiavi da **1** a **4** da usare con l'impostazione di **Crittografia dei dati** **WEP**.|  
+|**Indice chiavi**|Selezionare un indice chiavi da **1** a **4** che verrà usato con l’impostazione di **Crittografia dei dati** **WEP**.|  
 |**Questa rete è connessa a Internet**|Selezionare questa opzione se si desidera specificare le impostazioni proxy che consentono la connessione a Internet dei dispositivi mobili su una connessione wireless.|  
-|**Impostazioni del server proxy**|Specificare le impostazioni **Server** e **Porta** necessarie per **HTTP**, **WAP** e **Socket**.|  
+|**Impostazioni del server proxy**|Specificare le impostazioni **Server** e **Porta** necessarie per **HTTP**, **WAP** e **Sockets**.|  
 |**Abilita accesso alla rete 802.1X**|Selezionare questa opzione per proteggere la connessione specificando un tipo di EAP.|  
 |**Tipo EAP**|Scegliere il tipo EAP da usare:<br><br> - **PEAP**<br> - **Smart card o certificato**|  
     
@@ -229,7 +229,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
   
 -   **File di certificato** - fare clic su **Sfoglia** , quindi selezionare il file di certificato con estensione **cer** da importare.  
   
--   **Archivio di destinazione** - Scegliere uno o più archivi di destinazione da cui sarà aggiunto il certificato importato sul dispositivo mobile:  
+-   **Archivio di destinazione** - sceglire uno o più archivi di destinazione da cui sarà aggiunto il certificato importato sul dispositivo mobile:  
   
     -   **Radice**  
   
@@ -260,12 +260,12 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 ### <a name="system-security"></a>Protezione del sistema  
  Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Controllo dell'account utente**|Abilita o disabilita il controllo account utente di Windows sul dispositivo.|  
 |**Firewall di rete**|Attiva o disattiva Windows Firewall.|  
 |**Aggiornamenti**|Scegliere come gli aggiornamenti software di Windows verranno scaricati nel computer. Ad esempio, è possibile scaricare automaticamente gli aggiornamenti, ma consentire all'utente di scegliere quando installarli.|  
-|**Classificazione minima degli aggiornamenti**|Scegliere la classificazione minima degli aggiornamenti che verranno scaricati nei computer Windows: **Nessuno**, **Importante**o **Consigliato**.|  
+|**Classificazione minima degli aggiornamenti**|Scegliere la classificazione minima degli aggiornamenti scaricati nei computer Windows, **Nessuno**, **Importante**o **Consigliato**.|  
 |**SmartScreen**|Abilita o disabilita SmartScreen.|  
 |**Protezione da virus**|Verifica che il dispositivo sia protetto da software antivirus.|  
 |**Le firme per la protezione da virus sono aggiornate**|Verifica che le firme del software antivirus siano aggiornate.|
@@ -274,7 +274,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 ### <a name="windows-server-work-folders"></a>Cartelle di lavoro di Windows Server  
  Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**URL cartelle di lavoro**|Configura il percorso di una cartella di lavoro di Windows Server a cui gli utenti possono connettersi dal dispositivo.|  
   
@@ -292,13 +292,13 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
   
 |||  
 |-|-|  
-|Impostazione|Altre informazioni|  
+|Impostazioni|Altre informazioni|  
 |**Elenco delle app bloccate**|Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti non sono autorizzati a installare.|  
 |**Elenco delle app consentite**|Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti sono autorizzati a installare.|  
-|**Aggiungi**|Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, nella pagina di Windows Phone Store cercare l'app da usare.<br /><br /> **Esempio:** Cercare l'app **Skype** nello Store. L'URL da usare sarà https://www.windowsphone.com/en-us/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51.<br /><br /> Nel caso dell'app del portale aziendale o delle app line-of-business, non è necessario specificare un URL completo ma soltanto il GUID dell'app.|  
+|**Aggiungi**|Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, nella pagina di Windows Phone Store cercare l'app da usare.<br /><br /> **Esempio:** cercare l'app **Skype** nell'App Store. L'URL da usare sarà https://www.windowsphone.com/en-us/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51.<br /><br /> Nel caso dell'app del portale aziendale o delle app line-of-business, non è necessario specificare un URL completo ma soltanto il GUID dell'app.|  
 |**Modifica**|Consente di modificare il nome, l'autore e l'URL dell'app selezionata.|  
 |**Rimuovi**|Elimina l'app selezionata dall'elenco.|  
-|**Importaa**|Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.|  
+|**Importa**|Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.|  
   
 ## <a name="see-also"></a>Vedere anche  
  [Elementi di configurazione per dispositivi gestiti senza il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

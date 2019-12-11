@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3e454212b5a70c903471d0bda82611e12b3c8693
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70380340"
 ---
 # <a name="set-up-certificates-for-trusted-communications-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Configurare i certificati per le comunicazioni attendibili per la gestione dei dispositivi mobili locale in System Center Configuration Manager
@@ -58,7 +58,7 @@ La gestione dei dispositivi mobili locale di System Center Configuration Manager
 
 4.  Selezionare **http://<NomeDNSServer\>/CertEnroll/<NomeCA\><SuffissoNomeCRL\><DeltaCRLAllowed\>.crl**. Selezionare anche le tre opzioni seguenti:  
 
-    -   **Includi nei CRL. I client la utilizzeranno per trovare i percorsi Delta CRL.**  
+    -   **Includi nei CRL. i client lo usano per trovare i percorsi Delta CRL.**  
 
     -   **Includi nell'estensione dei punti di distribuzione dei certificati emessi.**  
 

@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7d6f8c25902be857e0eec3cd4b969d1fb5bda136
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62288769"
 ---
 # <a name="apply-settings-to-android-for-work-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Applicare le impostazioni alle app Android for Work con i criteri di configurazione delle app in System Center Configuration Manager
@@ -42,7 +42,7 @@ Per altre informazioni sui tipi di installazione delle app, vedere l'[introduzio
 3. Nella pagina **Generale** della Creazione guidata criteri di configurazione dell'app impostare le seguenti informazioni per i criteri:
    - **Nome**. Immettere un nome univoco per i criteri.
    - **Descrizione**. (Facoltativo) Per rendere più semplice l'identificazione dei criteri, è possibile aggiungere una descrizione.
-   -  **Selezionare un tipo di criteri di configurazione**. Specificare la piattaforma di destinazione dei criteri di configurazione dell'app: **Criteri di configurazione per le app Android for Work**.
+   -  **Selezionare un tipo di criteri di configurazione**. Specificare la piattaforma di destinazione per i criteri di configurazione dell'app: **Configuration policy for Android for Work apps** (Criteri di configurazione per app Android for Work).
    -  **Categorie assegnate per migliorare la ricerca e i filtri**. (Facoltativo) Per creare e assegnare categorie ai criteri, scegliere **Categorie**. Con le categorie è più semplice trovare e ordinare gli elementi nella console di Configuration Manager.
 4. Nella pagina **Criteri Android for Work** scegliere come impostare le informazioni sui criteri di configurazione:
    - **Specify name and value pairs** (Specifica coppie nome/valore). È possibile usare questa opzione per i file elenco di proprietà senza annidamento. Per specificare una coppia nome/valore:

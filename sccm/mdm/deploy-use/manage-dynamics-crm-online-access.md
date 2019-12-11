@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fbd3d765a17d41bfbc2c400a3368cf00784b16c1
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62256097"
 ---
 # <a name="manage-dynamics-crm-online-access-in-system-center-configuration-manager"></a>Gestire l'accesso a Dynamics CRM Online in System Center Configuration Manager
@@ -45,9 +45,9 @@ Se non viene soddisfatta una condizione, viene visualizzato uno dei due messaggi
 * Se il dispositivo non è conforme, viene visualizzato un messaggio che indirizza l'utente al sito Web del portale aziendale di Microsoft Intune o all'app Portale aziendale dove sono disponibili informazioni sul problema e su come risolverlo.
 
 ## <a name="configure-conditional-access-for-dynamics-crm-online"></a>Configurare l'accesso condizionale per Dynamics CRM Online  
-### <a name="step-1-configure-active-directory-security-groups"></a>Passaggio 1: Configurare gruppi di sicurezza di Active Directory
+### <a name="step-1-configure-active-directory-security-groups"></a>Passaggio 1: Configurare i gruppi di sicurezza di Active Directory
 
-Prima di iniziare configurare i gruppi di sicurezza di Azure Active Directory per i criteri di accesso condizionale. È possibile configurare questi gruppi nel **interfaccia di amministrazione di Microsoft 365**. I gruppi verranno usati per applicare o ignorare i criteri per gli utenti. Per poter accedere alle risorse, un utente di destinazione in un criterio deve usare solo dispositivi conformi.
+Prima di iniziare configurare i gruppi di sicurezza di Azure Active Directory per i criteri di accesso condizionale. È possibile configurare questi gruppi nel **centro di amministrazione Microsoft 365**. I gruppi verranno usati per applicare o ignorare i criteri per gli utenti. Per poter accedere alle risorse, un utente di destinazione in un criterio deve usare solo dispositivi conformi.
 
 È possibile specificare due tipi di gruppo da usare per i criteri di Dynamics CRM:
 * **Gruppi di destinazione**: contiene i gruppi di utenti per i quali si applicano i criteri.
@@ -55,7 +55,7 @@ Prima di iniziare configurare i gruppi di sicurezza di Azure Active Directory pe
 
 Se un utente si trova in entrambi i gruppi, sarà esentato dai criteri.
 
-### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>Passaggio 2: Configurare e distribuire criteri di conformità
+### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>Passaggio 2: Configurare e distribuire i criteri di conformità
 [Creare e distribuire](../../protect/deploy-use/device-compliance-policies.md) i criteri di conformità in tutti i dispositivi cui verranno applicati i criteri. Si tratta di tutti i dispositivi usati dagli utenti dei gruppi di destinazione.
 
 > [!NOTE]
@@ -85,7 +85,7 @@ L'accesso condizionale per Dynamics CRM è stato configurato. Non è necessario 
 
 Nell'area di lavoro **Gruppi** è possibile visualizzare lo stato dell'accesso condizionale per i dispositivi.
 
-Selezionare un gruppo qualsiasi di dispositivi mobili e quindi nella scheda **Dispositivi** selezionare uno dei **Filtri**seguenti:
+Selezionare un gruppo qualsiasi di dispositivi mobili e quindi nella scheda **Dispositivi** selezionare uno dei **Filtri** seguenti:
 * **Dispositivi non registrati con AAD**: si tratta dei dispositivi che non possono accedere a Dynamics CRM.
 * **Dispositivi non conformi**: si tratta dei dispositivi che non possono accedere a Dynamics CRM.
 * **Dispositivi conformi e registrati con AAD**: si tratta dei dispositivi che possono accedere a Dynamics CRM.

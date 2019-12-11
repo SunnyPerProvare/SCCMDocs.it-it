@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8762282c6a5007642e2cc174b9d2496b2d705c24
-ms.sourcegitcommit: 60d45a5df135b84146f6cfea2bac7fd4921d0469
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67194656"
 ---
 # <a name="configure-and-deploy-lookout-for-work-apps"></a>Configurare e distribuire l'app Lookout for Work
@@ -32,9 +32,9 @@ Questo articolo illustra come configurare e distribuire l'app Lookout for Work p
 2.  Nella pagina **Generale** della Distribuzione guidata del software specificare le seguenti informazioni:  
     - Tipo: selezionare **Pacchetto app Android in Google Play**.
     - Percorso: copiare il collegamento dell'app Lookout for Work da Google Play Store e incollarlo qui
-    - Server di pubblicazione: Lookout Mobile Security
+    - Autore: Lookout Mobile Security
     - Nome: Lookout for Work
-    - Descrizione: Lookout offre la migliore protezione contro le minacce per dispositivi mobili per proteggere il dispositivo. Dopo l'installazione, l'app Lookout protegge il dispositivo dalle minacce che, se rilevate, vengono segnalate all'utente e all'amministratore IT.
+    - Descrizione: Lookout offre la migliore protezione contro le minacce per dispositivi mobili. Dopo l'installazione, l'app Lookout protegge il dispositivo dalle minacce che, se rilevate, vengono segnalate all'utente e all'amministratore IT.
     - Categoria amministrativa: Gestione computer  
 
     Al completamento, l'app Lookout for Work viene visualizzata nell'elenco di applicazioni.  
@@ -87,7 +87,7 @@ Questo articolo illustra come configurare e distribuire l'app Lookout for Work p
 
 Quando l'utente apre Lookout for Work nel dispositivo, viene richiesta l'attivazione dell'app. L'utente deve scegliere di accedere con l'opzione Azure AD. Una procedura dettagliata con il flusso di lavoro per l'utente finale è disponibile in questi articoli:
 
-- [Viene richiesto di installare Lookout for Work nel dispositivo Android](/intune-user-help/you-are-prompted-to-install-lookout-for-work-android)
+- [Richiesta di installare Lookout for Work](/intune-user-help/you-are-prompted-to-install-lookout-for-work-android)
 
 - [È necessario risolvere una minaccia trovata da Lookout for Work](/intune-user-help/you-need-to-resolve-a-threat-found-by-lookout-for-work-android)
 

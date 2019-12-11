@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c7312346550860484dc99097963b5fd07783abbd
-ms.sourcegitcommit: 79c51028f90b6966d6669588f25e8233cf06eb61
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "68340310"
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Profili VPN nei dispositivi mobili in System Center Configuration Manager
@@ -36,19 +36,19 @@ Per distribuire i profili nei dispositivi Android, iOS, Windows Phone e Windows 
 
 La tabella seguente mostra il tipo di connessione supportato per ogni piattaforma del dispositivo:  
 
-|Tipo di connessione|iOS e MacOS X|Android|Windows 8.1|Windows RT|Windows RT 8.1|Windows Phone 8.1|Windows 10 Desktop e Mobile|  
+|Tipo di connessione|iOS e MacOS X|Android|Windows 8,1|Windows RT|Windows RT 8.1|Windows Phone 8.1|Windows 10 Desktop e Mobile|  
 |---------------|---------------|-------|-----------|----------|--------------|-----------------|-----------------------------|  
 |Cisco AnyConnect|Sì<sup>1</sup>|Yes|No|No|No|No|No|
 |Cisco (IPSec)|Solo iOS|No|No|No|No|No|No|  
-|Pulse Secure|Yes|Sì|Sì|No|Yes|Sì|Sì|  
-|F5 Edge Client|Sì|Sì|Sì|No|Yes|Sì|Yes|  
-|Dell SonicWALL Mobile Connect|Yes|Sì|Sì|No|Yes|Sì|Sì|  
-|VPN mobile Check Point|Sì|Sì|Sì|No|Yes|Sì|Yes|  
-|Microsoft SSL (SSTP)|No|No|Yes|Sì|Sì|No|No|  
-|Microsoft Automatico|No|No|Yes|Sì|Sì|No|Sì|  
-|IKEv2|Sì (criteri personalizzati iOS 9 e versioni successive)|No|Yes|Sì|Sì|Sì|Sì|  
-|PPTP|Yes|No|Yes|Sì|Sì|No|Yes|  
-|L2TP|Yes|No|Yes|Sì|Sì|No|Sì (URI OMA)|  
+|Pulse Secure|Yes|Yes|Yes|No|Yes|Yes|Yes|  
+|F5 Edge Client|Yes|Yes|Yes|No|Yes|Yes|Yes|  
+|Dell SonicWALL Mobile Connect|Yes|Yes|Yes|No|Yes|Yes|Yes|  
+|VPN mobile Check Point|Yes|Yes|Yes|No|Yes|Yes|Yes|  
+|Microsoft SSL (SSTP)|No|No|Yes|Yes|Yes|No|No|  
+|Microsoft Automatico|No|No|Yes|Yes|Yes|No|Yes|  
+|IKEv2|Sì (criteri personalizzati iOS 9 e versioni successive)|No|Yes|Yes|Yes|Yes|Yes|  
+|PPTP|Yes|No|Yes|Yes|Yes|No|Yes|  
+|L2TP|Yes|No|Yes|Yes|Yes|No|Sì (URI OMA)|  
 
 <sup>1</sup> a partire dalla versione 1802, l'utilizzo del tipo di connessione Cisco AnyConnect varia.<!--1357393-->  
 - Usare l'opzione **Cisco Legacy AnyConnect** per i profili VPN nelle versioni seguenti:
@@ -69,18 +69,18 @@ La tabella seguente mostra il tipo di connessione supportato per ogni piattaform
 
 Le opzioni seguenti sono disponibili per tutti i tipi di connessione in Windows 10:
 
-- **Ignora VPN se connessa alla rete Wi-Fi aziendale**: La connessione VPN non viene usata quando il dispositivo è connesso alla rete Wi-Fi aziendale. Immettere il nome di rete attendibile usato per determinare se il dispositivo è connesso alla rete aziendale.  
+- **Disabilita VPN quando il dispositivo è connesso alla rete Wi-Fi aziendale**: la connessione VPN non viene usata quando il dispositivo è connesso alla rete Wi-Fi aziendale. Immettere il nome di rete attendibile usato per determinare se il dispositivo è connesso alla rete aziendale.  
 
-- **Regole del traffico di rete**: Impostare i protocolli, la porta locale, la porta remota e gli intervalli di indirizzi da abilitare per la connessione VPN.  
+- **Network traffic rules** (Regole del traffico di rete): impostare i protocolli, la porta locale, la porta remota e gli intervalli di indirizzi per l'abilitazione della connessione VPN.  
 
   > [!Note]  
   > Se non si crea una regola del traffico di rete, verranno abilitati tutti i protocolli, le porte e gli intervalli di indirizzi. Dopo la creazione di una regola, vengono usati dalla connessione VPN solo i protocolli, le porte e gli intervalli di indirizzi specificati in tale regola o nelle regole aggiuntive.  
 
-- **Route**: Route che usano la connessione VPN. La creazione di più di 60 route può causare errori dei criteri.  
+- **Route**: route che usano la connessione VPN. La creazione di più di 60 route può causare errori dei criteri.  
 
-- **Server DNS**: Server DNS usati dalla connessione VPN una volta stabilita la connessione.  
+- **Server DNS**: server DNS usati dalla connessione VPN una volta stabilita la connessione.  
 
-- **App che si connettono automaticamente alla VPN**: È possibile aggiungere app o importare elenchi di app che usano automaticamente la connessione VPN. Il tipo di app determina l'identificatore dell'app. Per un'app desktop, specificare il percorso file dell'app. Per un'app universale, specificare il nome della famiglia di pacchetti (PFN). Per sapere come individuare il nome PFN per un'app, vedere la sezione relativa al [reperimento di un nome di famiglia di pacchetti per la VPN per app](../../protect/deploy-use/find-a-pfn-for-per-app-vpn.md).  
+- **Apps that automatically connect to the VPN** (App che si connettono automaticamente alla VPN): è possibile aggiungere app o importare elenchi di app che usano automaticamente la connessione VPN. Il tipo di app determina l'identificatore dell'app. Per un'app desktop, specificare il percorso file dell'app. Per un'app universale, specificare il nome della famiglia di pacchetti (PFN). Per sapere come individuare il nome PFN per un'app, vedere la sezione relativa al [reperimento di un nome di famiglia di pacchetti per la VPN per app](../../protect/deploy-use/find-a-pfn-for-per-app-vpn.md).  
 
   > [!IMPORTANT]  
   > Proteggere tutti gli elenchi di app associate che vengono compilati per l'uso nella configurazione della VPN per app. Se l'elenco viene modificato da un utente non autorizzato e viene importato nell'elenco di app della VPN per app, si autorizza potenzialmente l'accesso alla VPN da parte di applicazioni che non devono potervi accedere. Un modo per proteggere gli elenchi di app consiste nell'usare un elenco di controllo di accesso (ACL).  
@@ -105,7 +105,7 @@ Le opzioni seguenti sono disponibili per tutti i tipi di connessione in Windows 
 
 6. Nella pagina **Metodo di autenticazione** specificare le informazioni seguenti:  
 
-   - **Metodo di autenticazione**: Selezionare il metodo di autenticazione usato dalla connessione VPN. I metodi disponibili variano a seconda del tipo di connessione come illustrato in questa tabella.  
+   - **Metodo di autenticazione**: selezionare il metodo di autenticazione usato dalla connessione VPN. I metodi disponibili variano a seconda del tipo di connessione come illustrato in questa tabella.  
 
      |Metodo di autenticazione|Tipi di &nbsp;connessione&nbsp; supportati|  
      |---------------------------|--------------------------------|  
@@ -121,9 +121,9 @@ Le opzioni seguenti sono disponibili per tutti i tipi di connessione in Windows 
 
       A seconda delle opzioni selezionate, potrebbe essere necessario specificare altre informazioni, ad esempio:  
 
-     - **Memorizza le credenziali utente a ogni accesso**: Le credenziali utente vengono memorizzate in modo che gli utenti non debbano immetterle ogni volta che si connettono.  
+     - **Memorizza le credenziali utente a ogni accesso**: le credenziali utente vengono memorizzate in modo che gli utenti non debbano immetterle ogni volta che si connettono.  
 
-     - **Selezionare un certificato client per l'autenticazione client**: Selezionare il [certificato SCEP](create-pfx-certificate-profiles.md) client creato in precedenza usato per autenticare la connessione VPN.   
+     - **Selezionare un certificato client per l'autenticazione client**: selezionare il [certificato SCEP](create-pfx-certificate-profiles.md) creato in precedenza che viene usato per autenticare la connessione VPN.   
 
        > [!NOTE]  
        > Per i dispositivi iOS, il profilo SCEP selezionato viene incorporato nel profilo VPN. Per altre piattaforme, viene aggiunta una regola di applicabilità per garantire che il profilo VPN non venga installato se il certificato non è presente o non è conforme.  
@@ -137,7 +137,7 @@ Le opzioni seguenti sono disponibili per tutti i tipi di connessione in Windows 
 
        - Scegliere **Abilita l'accesso Single Sign-On (SSO) con il certificato alternativo** per scegliere un certificato diverso dal certificato di autenticazione VPN per la conformità del dispositivo. Se si sceglie questa opzione, specificare **EKU** (elenco delimitato da virgole) e **Hash dell'emittente** per ottenere il certificato corretto che il client VPN deve individuare.  
 
-       - Per **Windows Information Protection**, specificare l'identità aziendale gestita dall'organizzazione, che corrisponde in genere al dominio primario dell'organizzazione, ad esempio *contoso.com*. È possibile specificare più domini di proprietà dell'organizzazione separandoli con il carattere "|". Ad esempio, *contoso.com|newcontoso.com*. Per altre informazioni, vedere [Creare e distribuire criteri di protezione delle app Windows Information Protection (WIP) con Intune](/intune/windows-information-protection-policy-create).   
+       - Per **Windows Information Protection**, specificare l'identità aziendale gestita dall'organizzazione, che corrisponde in genere al dominio primario dell'organizzazione, ad esempio *contoso.com*. È possibile specificare più domini di proprietà dell'organizzazione separandoli con il carattere "|". Ad esempio, *contoso.com|newcontoso.com*. Per altre informazioni, vedere [creare e distribuire un criterio di protezione delle app di Windows Information Protection con Intune](/intune/windows-information-protection-policy-create).   
 
        ![Pagina Metodo di autenticazione, creazione guidata profilo VPN](media/vpn-conditional-access.png)
 

@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cd17461f0db42afcbec821716eaeef83dfddcc98
-ms.sourcegitcommit: d47d2f03482e48d343e2139a341e61022331e6c2
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/14/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67145987"
 ---
 # <a name="how-to-create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Android e Samsung KNOX gestiti senza il client System Center Configuration Manager
@@ -68,10 +68,10 @@ Usare l'elemento di configurazione **Android e Samsung KNOX** di System Center C
 
 ## <a name="android-and-samsung-knox-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione per Android e Samsung KNOX  
 
-### <a name="password"></a>Password  
+### <a name="password"></a>Windows 10  
 Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.  
 
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Richiedi impostazioni password nei dispositivi mobili**|Richiede una password nei dispositivi supportati.|  
 |**Lunghezza minima password (caratteri)**|Specifica la lunghezza minima della password.|  
@@ -85,7 +85,7 @@ Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.
 
 ### <a name="device"></a>Dispositivo   
 
-|                 Impostazione                  |                             Dettagli                             |
+|                 Impostazioni                  |                             Details                             |
 |------------------------------------------|-----------------------------------------------------------------|
 |            **Chiamata vocale**             |  Abilita o disabilita la funzionalità di composizione vocale sul dispositivo.   |
 |           **Assistente vocale**            |    Consente di usare un assistente vocale sul dispositivo.    |
@@ -99,13 +99,13 @@ Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.
 
 ### <a name="store"></a>Archivio
 
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |------------------|-------------|  
 |**Archivio applicazioni**|Consente all'utente di accedere all'app Google Play Store sul dispositivo.|
 
 ### <a name="browser"></a>Browser
 
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |------------------|-------------|  
 |**Consenti browser Web**|Consente di usare il Web browser predefinito del dispositivo.|
 |**Riempimento automatico**|Specifica se è possibile usare la funzione di riempimento automatico del Web browser.|
@@ -115,14 +115,14 @@ Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.
 
 ### <a name="cloud"></a>Cloud  
 
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Backup di Google**|Consente l'uso del backup di Google.|  
 |**Sincronizzazione automatica dell'account Google**|Consente la sincronizzazione automatica delle impostazioni dell'account Google.|  
 
 ### <a name="security"></a>Sicurezza  
 
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Messaggistica SMS e MMS**|Consente l'uso della messaggistica SMS e MMS sul dispositivo.|
 |**Archivi rimovibili**|Consente l'uso di archivi rimovibili, ad esempio una scheda SD, sul dispositivo.|
@@ -133,7 +133,7 @@ Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.
 
 ### <a name="roaming"></a>Roaming
 
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |Roaming vocale|Consente il roaming vocale quando il dispositivo si trova in una rete cellulare.|
 |Roaming dati|Consente il roaming dati quando il dispositivo si trova in una rete cellulare.|
@@ -142,14 +142,14 @@ Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.
 ### <a name="encryption"></a>Crittografia  
  Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.  
 
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Crittografia scheda di memoria**|È necessario che la scheda di memoria del dispositivo sia crittografata.|
 |**Crittografia file nel dispositivo mobile**|Richiede la crittografia dei file sul dispositivo mobile.|  
 
 ### <a name="wireless-communications"></a>Comunicazioni wireless
 
-|Impostazione|Dettagli|  
+|Impostazioni|Details|  
 |-------------|-------------|  
 |**Connessione rete wireless**|Consente l'uso delle funzionalità Wi-Fi sul dispositivo.|
 |**Tethering Wi-Fi**|Consente l'uso del tethering Wi-Fi sul dispositivo.|
@@ -165,11 +165,11 @@ Non è possibile specificare sia le app conformi che quelle non conformi nello s
 Nella pagina **App conformi e non conformi (Android)** specificare le informazioni seguenti:  
 
 
-|          Impostazione           |                                                                                                                                                                                                                                                                                                                 Altre informazioni                                                                                                                                                                                                                                                                                                                  |
+|          Impostazioni           |                                                                                                                                                                                                                                                                                                                 Altre informazioni                                                                                                                                                                                                                                                                                                                  |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Elenco app non conformi** |                                                                                                                                                                                                                                                                               Specifica un elenco di app che verranno segnalate come non conformi, quando vengono installate dagli utenti.                                                                                                                                                                                                                                                                               |
 |  **Elenco app conformi**   |                                                                                                                                                                                                                                                              Specifica un elenco di app Mac OS X che gli utenti sono autorizzati a installare. Tutte le altre app installate verranno segnalate come non conformi.                                                                                                                                                                                                                                                               |
-|          **Aggiungi**           | Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare dalla [sezione delle app di Google Play](https://play.google.com/store/apps).<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app conformi e non conformi.<br /><br /> **Esempio:** Cercare Google Play **Microsoft Office Word**. L'URL da usare sarà **<https://play.google.com/store/apps/details?id=com.microsoft.office.word>** . |
+|          **Aggiungi**           | Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare dalla [sezione delle app di Google Play](https://play.google.com/store/apps).<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app conformi e non conformi.<br /><br /> **Esempio:** Cerca Google Play per **Microsoft Office Word**. L'URL da usare sarà **<https://play.google.com/store/apps/details?id=com.microsoft.office.word>** . |
 |          **Modifica**          |                                                                                                                                                                                                                                                                                          Consente di modificare il nome, l'autore e l'URL dell'app selezionata.                                                                                                                                                                                                                                                                                          |
 |         **Rimuovi**         |                                                                                                                                                                                                                                                                                                      Elimina l'app selezionata dall'elenco.                                                                                                                                                                                                                                                                                                      |
 |         **Importa**         |                                                                                                                                                                                                                                                 Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.                                                                                                                                                                                                                                                 |
@@ -193,7 +193,7 @@ Per creare un elemento di configurazione nel profilo di lavoro di Android, scegl
 
 1. Nella pagina **Configura impostazioni della modalità tutto schermo per i dispositivi Samsung KNOX** della Creazione guidata dell'elemento di configurazione specificare le informazioni seguenti:  
 
-   |Impostazione|Altre informazioni|  
+   |Impostazioni|Altre informazioni|  
    |-------------|----------------------|  
    |**Seleziona app**|Scegliere **Sfoglia** per selezionare un'applicazione Android (con estensione **apk**) che possa essere eseguita quando il dispositivo è in modalità tutto schermo. Non sarà possibile eseguire altre applicazioni nel dispositivo.|  
    |**Pulsanti volume**|Abilita o disabilita l'uso dei pulsanti del volume nel dispositivo.|  

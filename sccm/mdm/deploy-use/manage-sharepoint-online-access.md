@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 69a160a3c7833f196d50185e551f619d68dc0925
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62255595"
 ---
 # <a name="manage-sharepoint-online-access-in-system-center-configuration-manager"></a>Gestire l'accesso a SharePoint Online in System Center Configuration Manager
@@ -40,7 +40,7 @@ I criteri di accesso condizionale di Configuration Manager per **SharePoint Onli
 
 Le applicazioni desktop di Office possono accedere a SharePoint Online nei PC che eseguono:  
 
--   Office Desktop 2013 e versioni successive con l' [autenticazione moderna](https://support.office.com/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a) abilitata.  
+-   La versione desktop di Office 2013 e versioni successive con [autenticazione moderna](https://support.office.com/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a) attiva.  
 
 -   Windows 7.0 o Windows 8.1  
 
@@ -105,18 +105,18 @@ Le applicazioni desktop di Office possono accedere a SharePoint Online nei PC ch
 
 ## <a name="configure-conditional-access-for-sharepoint-online"></a>Configurare l'accesso condizionale per SharePoint Online  
 
-### <a name="step-1-configure-active-directory-security-groups"></a>Passaggio 1: Configurare gruppi di sicurezza di Active Directory  
- Prima di iniziare, configurare i gruppi di sicurezza di Azure AD per i criteri di accesso condizionale. È possibile configurare questi gruppi nel **interfaccia di amministrazione di Microsoft 365**, o il **portale account Intune**. Questi gruppi includono gli utenti a cui sono destinati i criteri o che ne sono esenti. Per accedere alle risorse, gli utenti a cui sono destinati i criteri devono usare solo dispositivi conformi.  
+### <a name="step-1-configure-active-directory-security-groups"></a>Passaggio 1: Configurare i gruppi di sicurezza di Active Directory  
+ Prima di iniziare, configurare i gruppi di sicurezza di Azure AD per i criteri di accesso condizionale. È possibile configurare questi gruppi nel **centro di amministrazione Microsoft 365**o nel portale per gli **account di Intune**. Questi gruppi includono gli utenti a cui sono destinati i criteri o che ne sono esenti. Per accedere alle risorse, gli utenti a cui sono destinati i criteri devono usare solo dispositivi conformi.  
 
  In un criterio di SharePoint Online è possibile specificare due tipi di gruppi:  
 
-- **Gruppi di destinazione**: Contiene i gruppi di utenti a cui si applicano i criteri  
+- **Gruppi di destinazione**: contiene i gruppi di utenti per i quali si applicano i criteri.  
 
-- **Gruppi esentati**: Contiene i gruppi di utenti che sono esentati dai criteri (facoltativo)  
+- **Gruppi esentati**: contiene i gruppi di utenti che sono esentati dai criteri (facoltativo).  
 
   Se un utente si trova in entrambi i gruppi, è esentato dai criteri.  
 
-### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>Passaggio 2: Configurare e distribuire criteri di conformità  
+### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>Passaggio 2: Configurare e distribuire i criteri di conformità  
  Creare i criteri di conformità e distribuirli a tutti i dispositivi ai quali sono destinati i criteri di SharePoint Online.  
 
 > [!NOTE]   
@@ -154,21 +154,21 @@ Le applicazioni desktop di Office possono accedere a SharePoint Online nei PC ch
 
     I PC Windows devono essere aggiunti a un dominio oppure devono essere registrati in Intune ed essere conformi. È possibile impostare i requisiti seguenti:  
 
-   -   **I dispositivi devono essere aggiunto al dominio o conforme**: Il PC deve essere aggiunto al dominio o conforme ai criteri impostati in Intune. Se il PC non soddisfa nessuno dei due requisiti, all'utente verrà richiesto di registrare il dispositivo in Intune.  
+   -   **I dispositivi devono essere aggiunti a un dominio o conformi**: i PC devono essere aggiunti a un dominio o essere conformi ai criteri impostati in Intune. Se il PC non soddisfa nessuno dei due requisiti, all'utente verrà richiesto di registrare il dispositivo in Intune.  
 
-   -   **I dispositivi devono essere aggiunti a un dominio**: I PC devono appartenere al dominio per accedere a Exchange Online. Se il PC non è aggiunto a un dominio, l'accesso alla posta elettronica è bloccato e all'utente viene richiesto di contattare l'amministratore IT.  
+   -   **I dispositivi devono essere aggiunti a un dominio**: per accedere a Exchange Online i PC devono essere aggiunti a un dominio. Se il PC non è aggiunto a un dominio, l'accesso alla posta elettronica è bloccato e all'utente viene richiesto di contattare l'amministratore IT.  
 
-   -   **I dispositivi devono essere conformi**: I PC devono essere registrati in Intune e conformi. Se il PC non è registrato, viene visualizzato un messaggio con le istruzioni su come eseguire la registrazione.  
+   -   **I dispositivi devono essere conformi**: i PC devono essere registrati in Intune ed essere conformi. Se il PC non è registrato, viene visualizzato un messaggio con le istruzioni su come eseguire la registrazione.  
 
-4. Sotto **l'accesso al Browser** a SharePoint Online e OneDrive for Business, è possibile scegliere di consentire l'accesso a Exchange Online solo dai browser supportati: Safari (iOS) e Chrome (Android). Non è possibile accedere da altri browser. Vengono applicate anche le restrizioni di piattaforma selezionate per l'accesso all'applicazione per OneDrive.
+4. In **Browser access** (Accesso al browser) per SharePoint Online e OneDrive for Business è possibile scegliere di consentire l'accesso a Exchange Online esclusivamente tramite i browser supportati: Safari (iOS) e Chrome (Android). Non è possibile accedere da altri browser. Vengono applicate anche le restrizioni di piattaforma selezionate per l'accesso all'applicazione per OneDrive.
 
    Per i dispositivi **Android**, gli utenti devono abilitare l'opzione **Abilita l'accesso al browser** nel dispositivo registrato seguendo questa procedura:
-   1.  Avviare l' **app Portale aziendale**.
+   1.  Avviare l'**app Portale aziendale**.
    2.  Passare alla pagina **Impostazioni** facendo clic sui punti di sospensione (...) o sul tasto di menu.
-   3.  Scegliere il pulsante **Abilita l'accesso al browser** .
+   3.  Scegliere il pulsante **Abilita l'accesso al browser**.
    4.  Nel browser Chrome disconnettersi da Office 365 e riavviare Chrome.
 
-   Nelle piattaforme **iOS e Android**, per identificare il dispositivo usato per accedere al servizio, Azure AD rilascia al dispositivo un certificato TLS. Il dispositivo Visualizza il certificato richiedendo all'utente finale per selezionare il certificato come illustrato negli screenshot seguenti: L'utente finale necessario selezionare questo certificato prima di poter continuare a usare il browser.
+   Nelle piattaforme **iOS e Android**, per identificare il dispositivo usato per accedere al servizio, Azure AD rilascia al dispositivo un certificato TLS. Il dispositivo visualizza il certificato richiedendo all'utente finale di selezionare il certificato come illustrato nelle schermate seguenti. Per continuare a usare il browser è necessario che l'utente finale selezioni il certificato.
 
     **iOS**
 

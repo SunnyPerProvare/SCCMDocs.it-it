@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a57beb79bf7e4dc51e72d7254ff0f190c6ca32c4
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62228000"
 ---
 # <a name="manage-applications-in-system-center-configuration-manager"></a>Gestire applicazioni in System Center Configuration Manager
@@ -46,7 +46,7 @@ Di seguito sono riportate alcune considerazioni specifiche per la gestione dei d
 
 - I dispositivi registrati con MDM non supportano le distribuzioni simulate, l'esperienza utente o le impostazioni di pianificazione.
 
-- Non aggiungere più di 100 lingue a una singola app. Aggiunta di più di 100 lingue impedisce all'app la sincronizzazione con Intune. Questa azione impedisce inoltre l'app in corso l'installazione o sono disponibili per l'installazione nel dispositivo.
+- Non aggiungere più di 100 impostazioni locali a una singola app. L'aggiunta di più di 100 impostazioni locali impedisce la sincronizzazione dell'app con Intune. Questa azione impedisce anche l'installazione o la disponibilità dell'app per l'installazione nel dispositivo.
 
 - È possibile associare la distribuzione a criteri di configurazione dell'app iOS, se già configurati. Vedere [Configurare le app iOS con i criteri di configurazione delle app](configure-ios-apps-with-app-configuration-policies.md).
 

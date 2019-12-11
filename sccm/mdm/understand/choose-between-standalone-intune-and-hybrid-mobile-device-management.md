@@ -13,10 +13,10 @@ manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9dfbec94ac584442f65826d08c6b7abefc16d375
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62286718"
 ---
 # <a name="choose-between-microsoft-intune-standalone-and-hybrid-mdm-with-configuration-manager"></a>Scegliere tra la versione autonoma di Microsoft Intune e la gestione di dispositivi mobili ibrida con Configuration Manager
@@ -24,7 +24,7 @@ ms.locfileid: "62286718"
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-A partire da agosto 14 maggio 2018, gestione di dispositivi mobili (MDM) ibrida è un [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Intune in Azure è la soluzione MDM consigliata da Microsoft.  
+A partire dal 14 agosto 2018, gestione di dispositivi mobili (MDM) ibrida è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Intune in Azure è la soluzione MDM consigliata da Microsoft.  
 
 Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
 
@@ -83,5 +83,5 @@ You may choose hybrid MDM for the following reasons:
 
 #### <a name="change-the-mdm-authority"></a>Cambiare l'autorità MDM
 
-Se è necessario modificare l'impostazione relativa all'autorità MDM, è possibile farlo personalmente senza contattare il supporto Microsoft e senza annullare e ripetere la registrazione dei dispositivi gestiti esistenti. Per altre informazioni, vedere [cambiare l'autorità MDM](/sccm/mdm/deploy-use/change-mdm-authority).
+Se è necessario modificare l'impostazione relativa all'autorità MDM, è possibile farlo personalmente senza contattare il supporto Microsoft e senza annullare e ripetere la registrazione dei dispositivi gestiti esistenti. Per altre informazioni, vedere [modificare l'autorità MDM](/sccm/mdm/deploy-use/change-mdm-authority).
 

@@ -12,10 +12,10 @@ ms.technology: configmgr-hybrid
 ms.assetid: 1dd696ce-3e46-4dfa-a76d-592fe0f0320e
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e3adbb2f7bd75921f45c9c6d5462bdf04deb8c26
-ms.sourcegitcommit: f9654cd1a3af6d67de52fedaccceb2e22dafc159
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67678238"
 ---
 # <a name="migrate-hybrid-mdm-users-and-devices-to-intune-standalone"></a>Eseguire la migrazione di dispositivi e utenti dalla soluzione MDM ibrida alla versione autonoma di Intune
@@ -56,7 +56,7 @@ Per altre informazioni, vedere gli articoli seguenti:
 
     - Installare i connettori NDES ed Exchange  
 
-    Dopo aver completato i passaggi e avviare la migrazione a Intune autonomo, non vi è alcun impatto significativo per gli utenti.   
+    Quando si completano i passaggi e si avvia la migrazione a Intune autonomo, non vi è alcun impatto significativo sugli utenti.   
 
 3. [Modificare l'autorità MDM per utenti specifici (autorità MDM mista)](migrate-mixed-authority.md)    
 
@@ -70,7 +70,7 @@ Per altre informazioni, vedere gli articoli seguenti:
 
 ## <a name="request-assistance"></a>Richiedere assistenza
 <!--Intune bug 2339232-->
-Per richiedere assistenza dal programma Microsoft FastTrack, iniziare selezionando [FastTrack per Microsoft 365](https://fasttrack.microsoft.com/microsoft365/capabilities?view=security).
+Per richiedere assistenza dal programma Microsoft FastTrack, per iniziare, passare a [FastTrack per Microsoft 365](https://fasttrack.microsoft.com/microsoft365/capabilities?view=security).
 
 1. Fare clic su "Accedi" e immettere l'ID dell'organizzazione.  
 

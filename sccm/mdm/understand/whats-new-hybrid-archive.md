@@ -13,10 +13,10 @@ manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 006580a7ae4965ab4662ae02bee13ed9796697f8
-ms.sourcegitcommit: b9cc8e723c5d8c3be44edad24ad29d75c0cdd2b0
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71826253"
 ---
 # <a name="past-hybrid-features-with-system-center-configuration-manager-and-microsoft-intune"></a>Funzionalità ibride precedenti con System Center Configuration Manager e Microsoft Intune
@@ -123,12 +123,12 @@ Nella versione 1702 di Configuration Manager (Current Branch) sono disponibili a
 
     | Versione di Configuration Manager | Gestione delle licenze dei dispositivi supportata | Tipo di raccolta della distribuzione | Licenza richiesta |
     |-|-|-|-|
-    |Precedente la 1702|Yes|Utente|Licenza utente|
-    |Precedente la 1702|No|Utente|Licenza utente|
+    |Precedente la 1702|Yes|utente|Licenza utente|
+    |Precedente la 1702|No|utente|Licenza utente|
     |Precedente la 1702|Yes|Dispositivo|Licenza utente|
     |Precedente la 1702|No|Dispositivo|Licenza utente|
-    |1702 e versioni successive|Yes|Utente|Licenza utente|
-    |1702 e versioni successive|No|Utente|Licenza utente|
+    |1702 e versioni successive|Yes|utente|Licenza utente|
+    |1702 e versioni successive|No|utente|Licenza utente|
     |1702 e versioni successive|Yes|Dispositivo|Licenza dispositivo|
     |1702 e versioni successive|No|Dispositivo|Licenza utente|
 
@@ -493,7 +493,7 @@ Le seguenti funzionalità di Intune introdotte in giugno 2016 funzionano nelle d
 
 - **Accesso condizionale per il browser**
 
-  È possibile impostare un criterio di accesso condizionale per Exchange Online e SharePoint Online in modo che siano accessibili solo dai Web browser supportati in dispositivi iOS e Android gestiti e conformi. Agli utenti finali che tentano di accedere a siti di Outlook Web Access (OWA) e SharePoint con dispositivi iOS e Android verrà richiesta la registrazione del dispositivo con Intune nonché la correzione di eventuali problemi di conformità per poter eseguire l'accesso. Per altre informazioni, vedere
+  È possibile impostare un criterio di accesso condizionale per Exchange Online e SharePoint Online in modo che siano accessibili solo dai Web browser supportati in dispositivi iOS e Android gestiti e conformi. Agli utenti finali che tentano di accedere a siti di Outlook Web Access (OWA) e SharePoint con dispositivi iOS e Android verrà richiesta la registrazione del dispositivo con Intune nonché la correzione di eventuali problemi di conformità per poter eseguire l'accesso. Per ulteriori informazioni, vedere
 
   * [Limitare l'accesso alla posta elettronica per Exchange Online e il nuovo ambiente Exchange Online dedicato](https://docs.microsoft.com/intune/deploy-use/restrict-access-to-exchange-online-with-microsoft-intune)
   * [Limitare l'accesso a SharePoint Online con Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/restrict-access-to-sharepoint-online-with-microsoft-intune)
@@ -524,10 +524,10 @@ Le seguenti nuove funzionalità introdotte in giugno 2016 sono disponibili nelle
 
 - **Categorizzazione automatica dei dispositivi in raccolte**
 
-  È possibile creare categorie di dispositivi da usare per inserire automaticamente i dispositivi in raccolte quando si usa Configuration Manager con Intune. Agli utenti verrà quindi richiesto di scegliere una categoria di dispositivi quando eseguono la registrazione di un dispositivo in Intune. È anche possibile modificare la categoria di un dispositivo dalla console di Configuration Manager. Per altre informazioni, vedere [Categorizzazione automatica dei dispositivi in raccolte](/sccm/core/get-started/capabilities-in-technical-preview-1606#dmp_category) in [Funzionalità di Technical Preview 1606 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1606).
+  È possibile creare categorie di dispositivi da usare per inserire automaticamente i dispositivi in raccolte quando si usa Configuration Manager con Intune. Agli utenti verrà quindi richiesto di scegliere una categoria di dispositivo quando eseguono la registrazione di un dispositivo in Intune. È anche possibile modificare la categoria di un dispositivo dalla console di Configuration Manager. Per altre informazioni, vedere [Categorizzazione automatica dei dispositivi in raccolte](/sccm/core/get-started/capabilities-in-technical-preview-1606#dmp_category) in [Funzionalità di Technical Preview 1606 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1606).
 
   > [!IMPORTANT]
-  > Questa funzionalità può essere usata con la versione di Microsoft Intune di giugno 2016. Verificare che l'installazione sia aggiornata a questa versione prima di tentare tali procedure.
+  > Questa funzionalità può essere usata con la versione di Microsoft Intune di giugno 2016. Verificare che l'installazione sia aggiornata a questa versione prima di tentare queste procedure.
 
 ### <a name="new-in-configuration-manager-current-branch"></a>Novità di Configuration Manager (Current Branch)
 Non sono state introdotte nuove funzionalità ibride nella versione di giugno 2016 di Configuration Manager (Current Branch).
@@ -563,11 +563,11 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **VPN attivata dall'app per dispositivi Windows 10**
 
-  Per i dispositivi Windows 10 gestiti tramite Configuration Manager con Intune è possibile aggiungere un elenco di app che aprono automaticamente una connessione VPN che è stata configurata tramite la console di amministrazione di Configuration Manager. Per altre informazioni, vedere la sezione relativa alle [connessioni VPN attivate da app per Windows 10](/sccm/core/get-started/capabilities-in-technical-preview-1605) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605)  
+  Per i dispositivi Windows 10 gestiti usando Configuration Manager con Intune è possibile aggiungere un elenco di app che aprono automaticamente una connessione VPN configurata dalla console di amministrazione di Configuration Manager. Per altre informazioni, vedere la sezione relativa alle [connessioni VPN attivate da app per Windows 10](/sccm/core/get-started/capabilities-in-technical-preview-1605) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605)  
 
 - **Nuova esperienza per le azioni dei dispositivi remoti**
 
-  È stata migliorata l'esperienza di esecuzione delle azioni dei dispositivi remoti dalla console di Configuration Manager.
+  È stata migliorata l'esperienza di esecuzione di azioni dei dispositivi remoti dalla console di Configuration Manager.
 
   Azioni comuni come **ritiro/cancellazione**, **reimpostazione passcode**, **blocco remoto** e **blocco attivazione bypass** sono adesso disponibili nel menu **Azioni dispositivo remoto** accessibile dall'area di lavoro **Asset e conformità**
 
@@ -583,7 +583,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **Predichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS**
 
-  È ora possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity). È possibile caricare un file con valori delimitati da virgole (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi.  È possibile importare i numeri di serie anche per i dispositivi iOS.  Per altre informazioni, vedere [Predichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS](../../core/get-started/capabilities-in-technical-preview-1605.md#BKMK_IMEI) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
+  È ora possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity). È possibile caricare un file con valori separati da virgola (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi.  Possono essere importati i numeri di serie anche per i dispositivi iOS.  Per altre informazioni, vedere [Predichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS](../../core/get-started/capabilities-in-technical-preview-1605.md#BKMK_IMEI) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
 
 - **Windows Information Protection (WIP)**
 

@@ -12,10 +12,10 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d27e81da4da7caa89988d78a705648c5709cc2c3
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62226811"
 ---
 # <a name="enroll-devices-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Registrare i dispositivi per la gestione di dispositivi mobili locale in System Center Configuration Manager
@@ -26,14 +26,14 @@ Per gestire i computer e i dispositivi con la gestione di dispositivi mobili loc
 
 - **Registrazione utente** : in questo metodo gli utenti avviano il processo di registrazione nei propri dispositivi. Per la corretta esecuzione della registrazione utente è necessario che nel dispositivo sia installato un certificato radice trusted e che sia stato effettuato il provisioning dell'utente per la registrazione da Configuration Manager.  Per registrare un dispositivo, l'utente fornisce semplicemente le credenziali di lavoro e il dispositivo viene registrato per la gestione.  
 
-   Per altre informazioni, vedere [Modalità di registrazione dei dispositivi con la gestione di dispositivi mobili locale da parte degli utenti in System Center Configuration Manager](../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md)  
+   Per altre informazioni, vedere [How users enroll devices with On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md) (Come eseguire la registrazione utente dei dispositivi con la gestione di dispositivi mobili locale in System Center Configuration Manager)  
 
 - **Registrazione in blocco** : in questo metodo l'utente del dispositivo non deve avviare la registrazione. Viene invece creato un pacchetto di registrazione in blocco in Configuration Manager che viene immesso nel dispositivo e aperto. All'apertura il pacchetto fornisce le informazioni necessarie per registrare il dispositivo.  
 
    Per altre informazioni, vedere [How to bulk-enroll devices with On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/deploy-use/bulk-enroll-devices-on-premises-mdm.md) (Come eseguire la registrazione in blocco dei dispositivi con la gestione di dispositivi mobili locale in System Center Configuration Manager)  
 
   > [!NOTE]
-  >  Il Current Branch di Configuration Manager supporta la registrazione nella gestione dispositivi mobili locale per i dispositivi che eseguono i sistemi operativi seguenti:  
+  >  Il ramo corrente di Configuration Manager supporta la registrazione in Gestione dispositivi mobili locali per i dispositivi che eseguono i sistemi operativi seguenti:  
   > 
   > - Windows 10 Enterprise  
   >   -   Windows 10 Pro  
