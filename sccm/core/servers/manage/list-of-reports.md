@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 35aff235d537efd738f29a0794f1fdb51a1fbb74
-ms.sourcegitcommit: 0bf253085adeca0d9ea62d76497eb5ebf5ce89da
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "57012514"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62216744"
 ---
 # <a name="list-of-reports-in-configuration-manager"></a>Elenco dei report di Configuration Manager
 

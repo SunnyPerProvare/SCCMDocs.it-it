@@ -2,7 +2,7 @@
 title: Domande frequenti su prodotto e licenze
 titleSuffix: Configuration Manager
 description: Risposte alle domande frequenti sul prodotto e le licenze per Configuration Manager.
-ms.date: 10/22/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 630edcb8b71ca9ec0edb61437406df08792463a7
-ms.sourcegitcommit: d3aa20e2d12b5a68c7d672172234c65095fd4ce8
+ms.openlocfilehash: d8a86319168143850c754427651add636ff12ad5
+ms.sourcegitcommit: 4d3999de1e13d579dd128578cb5dcee46fe3b0d6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72810748"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74855864"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Domande frequenti relative ai rami e alle licenze di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch), System Center Configuration Manager (Long-Term Servicing Branch)*
+*Si applica a: Configuration Manager (Current Branch) e System Center Configuration Manager (Long-Term Servicing Branch)*
 
 Queste domande frequenti includono domande comuni sulle licenze in relazione alle versioni Current Branch e Long-Term Servicing Branch (LTSB) di Configuration Manager, disponibili tramite programmi Microsoft Volume Licensing. Questo articolo ha finalità puramente informative e non sostituisce la documentazione relativa alla gestione delle licenze di Configuration Manager. Per altre informazioni, vedere le [condizioni di licenza del prodotto](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=53). I termini per i prodotti descrivono le condizioni per l'utilizzo di tutti i prodotti Microsoft nell'ambito dei programmi per i contratti multilicenza.
 
@@ -68,6 +68,21 @@ https://www.microsoft.com/microsoft-365/enterprise-mobility-security/compare-pla
 
 > [!IMPORTANT]
 > Configuration Manager non è incluso nel piano di [Microsoft 365 Business](https://www.microsoft.com/microsoft-365/business).
+
+### <a name="bkmk_mem"></a> È cambiato qualcosa con il passaggio al marchio Microsoft Endpoint Manager?
+
+Sì. Se si dispone già di una licenza per Configuration Manager, viene anche assegnata automaticamente una licenza per Intune per la registrazione dei PC Windows in [co-gestione](/configmgr/comanage/overview). Questa modifica consente di gestire più facilmente i dispositivi Windows con Microsoft Endpoint Manager.
+
+È ora disponibile una nuova licenza che consente ai clienti di Configuration Manager con Software Assurance di ottenere i diritti di gestione dei PC Intune senza dover acquistare una licenza di Intune aggiuntiva per la co-gestione. Non è più necessario assegnare singole licenze di Intune o EMS ai propri utenti.
+
+- I dispositivi gestiti da Configuration Manager e registrati in co-gestione hanno quasi gli stessi diritti di un PC gestito autonomamente da Intune. Tuttavia, dopo la reimpostazione non è possibile eseguire di nuovo il provisioning tramite AutoPilot.
+
+- I dispositivi Windows 10 registrati in Intune con altri mezzi richiedono licenze di Intune complete.
+
+- Se si vuole usare Intune per la gestione di dispositivi iOS, Android o macOS, è necessario ottenere una sottoscrizione di Intune appropriata tramite una licenza autonoma di Intune, Enterprise Mobility + Security (EMS) o Microsoft 365.
+
+- Le licenze precedentemente disponibili per System Center Configuration Manager sono ancora applicabili a Microsoft Endpoint Configuration Manager. Se si installa un nuovo sito, usare i codici Product Key esistenti.
+
 
 ### <a name="bkmk_ems-expires"></a> Possiedo Enterprise Mobility + Security ed è scaduto, cosa devo fare?  
 
@@ -117,7 +132,7 @@ Se *SA* o la sottoscrizione è attiva, si dispone dei diritti di utilizzo per Co
 
 ### <a name="bkmk_sql"></a> Quali sono i diritti di utilizzo associati alla tecnologia SQL inclusa in Configuration Manager?
 
-Tutti i prodotti System Center includono la tecnologia SQL Server. Le condizioni di licenza di Microsoft per questi prodotti consentono l'uso da parte dei clienti della tecnologia SQL Server solo per il supporto dei componenti di System Center. Non sono necessarie Licenze CAL (Client Access License) di SQL Server per tale uso.
+Configuration Manager include la tecnologia SQL Server. Le condizioni di licenza di Microsoft per questo prodotto consentono l'uso della tecnologia SQL Server solo per il supporto dei componenti di Configuration Manager. Non sono necessarie Licenze CAL (Client Access License) di SQL Server per tale uso.
 
 I diritti di utilizzo approvati per le funzionalità SQL con Configuration Manager includono:
 

@@ -2,7 +2,7 @@
 title: Strumenti di Configuration Manager
 titleSuffix: Configuration Manager
 description: Informazioni sugli strumenti che consentono di gestire e risolvere i problemi di infrastruttura di Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 45b330e28e1c6aa3b993e0a29e57fcb72fe09741
-ms.sourcegitcommit: 9648ce8a8b5c82518e7c8b6a7668e0e9b076cae6
+ms.openlocfilehash: 80a51140ed356390aeae809912f46c3c512063b3
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70379811"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74659680"
 ---
 # <a name="configuration-manager-tools"></a>Strumenti di Configuration Manager
 
@@ -60,7 +60,7 @@ Tutti i sistemi operativi Windows indicati come client supportati in [Sistemi op
 
 - [Content Library Transfer](/sccm/core/support/content-library-transfer): trasferisce la raccolta contenuto tra diverse unità  
 
-- [Content Ownership Tool](/sccm/core/support/content-ownership-tool): modifica la proprietà dei pacchetti orfani. Questi pacchetti sono presenti nel sito senza un server del sito proprietario.  
+- [Content Ownership Tool](/sccm/core/support/content-ownership-tool): modifica la proprietà dei pacchetti orfani. Questi pacchetti sono presenti nel sito senza un server del sito proprietario.
 
 - [Role-based Administration and Auditing Tool](/sccm/core/support/rbaviewer): consente agli amministratori di controllare la configurazione dei ruoli  
 
@@ -81,6 +81,8 @@ Tutti i sistemi operativi Windows indicati come client supportati in [Sistemi op
 - [Support Center](/sccm/core/support/support-center): Raccogliere informazioni dai client per eseguire più facilmente l'analisi durante la risoluzione dei problemi.
 
     A partire dalla versione 1906 **OneTrace** è un nuovo visualizzatore log del Supporto tecnico. Funziona in modo analogo a CMTrace, con miglioramenti. Per altre informazioni, vedere [Supporto tecnico OneTrace](/sccm/core/support/support-center-onetrace).
+
+- [Estendi ed esegui la migrazione dell'ambiente locale di Configuration Manager in Microsoft Azure](/sccm/core/support/azure-migration-tool): consente di creare a livello di codice macchine virtuali di Azure per Configuration Manager. <!--3556022--> 
 
 - [Strumento di pulizia della raccolta contenuto](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool): usare **ContentLibraryCleanup.exe** in `CD.Latest\SMSSETUP\TOOLS\ContentLibraryCleanup` per rimuovere contenuto orfano da un punto di distribuzione.  
 

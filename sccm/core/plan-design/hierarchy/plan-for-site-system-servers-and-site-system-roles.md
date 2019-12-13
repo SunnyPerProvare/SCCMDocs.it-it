@@ -2,7 +2,7 @@
 title: Pianificare ruoli del sistema del sito
 titleSuffix: Configuration Manager
 description: Prendere in considerazione i server di sistema del sito e i ruoli di sistema del sito quando si pianifica la gerarchia di Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1af17ad6ac9350c6fb78644b0cc2592f6a529595
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 13353f6798196b6f096297b8eb016eceda8df70e
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536677"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660063"
 ---
 # <a name="plan-for-site-system-servers-and-site-system-roles-in-configuration-manager"></a>Pianificare i server e i ruoli del sistema del sito in Configuration Manager
 
@@ -70,7 +70,7 @@ Per installare provider aggiuntivi eseguire il programma di installazione di Con
 ### <a name="application-catalog-web-service-point"></a>Punto per servizi Web del catalogo applicazioni
 
 > [!Important]
-> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >
@@ -82,7 +82,7 @@ Ruolo del sistema del sito che visualizza informazioni sul software per il sito 
 ### <a name="application-catalog-website-point"></a>Punto per siti Web del catalogo applicazioni
 
 > [!Important]
-> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >

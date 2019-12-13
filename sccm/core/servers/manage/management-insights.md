@@ -2,7 +2,7 @@
 title: Informazioni dettagliate sulla gestione
 titleSuffix: Configuration Manager
 description: Informazioni sulla funzionalità Informazioni dettagliate sulla gestione disponibile nella console di Configuration Manager.
-ms.date: 08/08/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,19 +11,18 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ed1c182aabcfbd9ec974a380c379304d7eef63e9
-ms.sourcegitcommit: 9c29ee22d3af5ab2bf8d51262c11d5a756dc55c7
+ms.openlocfilehash: 813c8afd46927ddb5b3d3cc621c900ed8e0516d3
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68913752"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74661261"
 ---
 # <a name="management-insights-in-configuration-manager"></a>Informazioni dettagliate sulla gestione in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-La funzionalità Informazioni dettagliate sulla gestione in Configuration Manager offre indicazioni utili sullo stato corrente dell'ambiente. Le informazioni si basano sull'analisi dei dati presenti nel database del sito. Le informazioni dettagliate aiutano a capire meglio l'ambiente e a intervenire di conseguenza. Questa funzionalità è stata rilasciata in Configuration Manager versione 1802. <!--1353967-->
-
+La funzionalità Informazioni dettagliate sulla gestione in Configuration Manager offre indicazioni utili sullo stato corrente dell'ambiente. Le informazioni si basano sull'analisi dei dati presenti nel database del sito. Le informazioni dettagliate aiutano a capire meglio l'ambiente e a intervenire di conseguenza. <!--1353967-->
 
 ## <a name="review-management-insights"></a>Esaminare le informazioni dettagliate sulla gestione
 
@@ -56,7 +55,6 @@ Nel riquadro **Prerequisiti** sono elencati gli elementi obbligatori per eseguir
 
 Selezionare una regola e quindi selezionare **Altri dettagli** per visualizzarne i dettagli.
 
-
 ## <a name="operations"></a>Operazioni
 
 Le regole delle informazioni dettagliate sulla gestione rivalutano la loro applicabilità a una pianificazione settimanale. Per valutare nuovamente una regola su richiesta, fare clic con il pulsante destro del mouse sulla regola e selezionare **Valuta di nuovo**.
@@ -64,14 +62,13 @@ Le regole delle informazioni dettagliate sulla gestione rivalutano la loro appli
 Il file di log per le regole di Informazioni dettagliate sulla gestione è **SMS_DataEngine.log** ed è disponibile nel server del sito.
 
 <!--1357930-->
-A partire dalla versione 1806, alcune regole consentono di intervenire. Selezionare una regola, selezionare **Altri dettagli** e quindi, se disponibile, selezionare **Intervieni**.
+Alcune regole consentono di intervenire. Selezionare una regola, selezionare **Altri dettagli** e quindi, se disponibile, selezionare **Intervieni**.
 
 A seconda della regola, questa azione presenta uno dei comportamenti seguenti:  
 
 - Passare direttamente nella console al nodo in cui è possibile eseguire ulteriori azioni. Ad esempio, se le informazioni dettagliate sulla gestione consigliano di modificare un'impostazione client, l'opzione per eseguire un'azione consente di passare al nodo Impostazioni client. Eseguire quindi ulteriori azioni modificando l'impostazione predefinita o un oggetto impostazioni client personalizzato.  
 
 - Passare a una visualizzazione filtrata in base a una query. Ad esempio, eseguire l'azione per la regola delle raccolte vuote mostra semplicemente queste raccolte nell'elenco delle raccolte. Eseguire quindi eseguire ulteriori azioni, ad esempio eliminare una raccolta o modificarne le regole di appartenenza.  
-
 
 ## <a name="bkmk_insights"></a> Dashboard delle informazioni dettagliate sulla gestione
 
@@ -96,12 +93,11 @@ Il dashboard include i riquadri seguenti:
 
 - **Tutte le informazioni dettagliate sulla gestione**: tabella delle informazioni dettagliate con priorità e stato. Usare il campo **Filtro** nella parte superiore della tabella per la corrispondenza con stringhe in una qualsiasi delle colonne disponibili. Il dashboard consente di ordinare la tabella nell'ordine seguente:
 
-    - Stato: Azione necessaria, Completato, Sconosciuto  
-    - Priorità: Critico, Consigliato, Facoltativo  
-    - Ultima modifica: le date meno recenti sono visualizzate all'inizio  
+  - Stato: Azione necessaria, Completato, Sconosciuto  
+  - Priorità: Critico, Consigliato, Facoltativo  
+  - Ultima modifica: le date meno recenti sono visualizzate all'inizio  
 
 ![Screenshot del dashboard delle informazioni dettagliate sulla gestione](media/1357979-management-insights-dashboard.png)
-
 
 ## <a name="groups-and-rules"></a>Gruppi e regole
 
@@ -150,17 +146,16 @@ A partire dalla versione 1902, sono disponibili nuove regole con raccomandazioni
 
 - Le regole seguenti includono alcune configurazioni che possono causare un carico non necessario del sito. Rivedere queste raccolte e quindi eliminarle oppure disabilitare la valutazione delle regole:  
 
-    - **Raccolte senza regole di query e con gli aggiornamenti incrementali abilitati**  
+  - **Raccolte senza regole di query e con gli aggiornamenti incrementali abilitati**  
 
-    - **Raccolte senza regole di query e abilitate per la valutazione pianificata o incrementale**  
+  - **Raccolte senza regole di query e abilitate per la valutazione pianificata o incrementale**  
 
-    - **Raccolte senza regole di query e con pianificazione della valutazione completa selezionata**  
-
+  - **Raccolte senza regole di query e con pianificazione della valutazione completa selezionata**  
 
 ### <a name="proactive-maintenance"></a>Manutenzione proattiva
 
 <!--1352184-->
-A partire dalla versione 1806, le regole in questo gruppo evidenziano potenziali problemi di configurazione che possono essere evitati tramite la manutenzione degli oggetti di Configuration Manager.
+Le regole in questo gruppo evidenziano potenziali problemi di configurazione che possono essere evitati tramite la manutenzione degli oggetti di Configuration Manager.
 
 - **Gruppi di limiti senza sistemi del sito assegnati**: senza sistemi del sito assegnati, i gruppi di limiti possono essere usati solo per l'assegnazione del sito. Per altre informazioni, vedere [Configurare gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups).  
 
@@ -194,12 +189,11 @@ Informazioni dettagliate utili per semplificare la gestione quotidiana dell'ambi
 
 - **Aggiorna i client a una versione di Windows 10 supportata**: A partire dalla versione 1902, questa regola segnala i client che eseguono una versione di Windows 10 che non è più supportata. Include anche i client con una versione di Windows 10 che sta per raggiungere la fine del servizio (tre mesi).<!--3897268-->  
 
-
 ### <a name="software-center"></a>Software Center
 
 Informazioni dettagliate per la gestione di Software Center.
 
-- **Indirizza gli utenti a Software Center invece che al Catalogo applicazioni**: controlla se gli utenti hanno installato o richiesto applicazioni dal Catalogo applicazioni negli ultimi 14 giorni. La funzionalità principale del Catalogo applicazioni è ora inclusa in Software Center. Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Funzionalità deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures#deprecated-features).  
+- **Indirizza gli utenti a Software Center invece che al Catalogo applicazioni**: controlla se gli utenti hanno installato o richiesto applicazioni dal Catalogo applicazioni negli ultimi 14 giorni. La funzionalità principale del Catalogo applicazioni è ora inclusa in Software Center. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Funzionalità deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures#deprecated-features).  
 
 - **Usa la nuova versione di Software Center**: La versione precedente di Software Center non è più supportata. Configurare i client per l'uso del nuovo Software Center abilitando l'impostazione client **Usa il nuovo Software Center** nel gruppo **Agente computer**. Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#use-new-software-center) (Informazioni sulle impostazioni client).  
 

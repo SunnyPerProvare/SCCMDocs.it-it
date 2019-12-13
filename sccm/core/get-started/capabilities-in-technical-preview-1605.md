@@ -12,12 +12,12 @@ manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa84ade15cb3054385442e599e99c63fd10e9fd3
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 0726f08d5c0e0e31e8a49cb792ac36954e47ae46
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122254"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "65612618"
 ---
 # <a name="capabilities-in-technical-preview-1605-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1605 per System Center Configuration Manager
 
@@ -338,19 +338,19 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 
 2.  Sulla scheda **Home**, nel gruppo **Distribuzione**, fare clic su **Cancellare i blocchi di distribuzione del gruppo di server**. Quando i client non sono riusciti a installare gli aggiornamenti software e impediscono ad altri client di installare i loro, i blocchi di distribuzione possono essere cancellati manualmente.  
 
-##  <a name="BKMK_ATP"></a> Supporto del servizio Windows Defender Advanced Threat Protection  
- Windows Defender Advanced Threat Protection (ATP) è un nuovo servizio che consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti. Altre informazioni su [Windows Defender ATP](https://blogs.windows.com/windowsexperience/2016/03/01/announcing-windows-defender-advanced-threat-protection). Configuration Manager può essere d'aiuto per caricare e monitorare dispositivi client Windows 10 Anniversary Edition gestiti.  
+##  <a name="BKMK_ATP"></a> Supporto del servizio Microsoft Defender Advanced Threat Protection  
+ Microsoft Defender Advanced Threat Protection (ATP) è un servizio che consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti. Microsoft Defender ATP era noto in precedenza come Windows Defender ATP. Altre informazioni su [Microsoft Defender ATP](https://blogs.windows.com/windowsexperience/2016/03/01/announcing-windows-defender-advanced-threat-protection). Configuration Manager può essere d'aiuto per caricare e monitorare dispositivi client Windows 10 Anniversary Edition gestiti.  
 
 ### <a name="try-it-now"></a>Prova subito!  
  Provare a completare le operazioni seguenti e inviare le informazioni sul funzionamento della procedura utilizzando il modulo di feedback disponibile alla pagina del [programma dei commenti e suggerimenti di Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) sul sito Microsoft Connect:  
 
-- Caricare dispositivi sul servizio online Windows Defender Advanced Threat Protection (ATP)  
+- Caricare dispositivi sul servizio online Microsoft Defender Advanced Threat Protection (ATP)  
 
-- Monitorare la distribuzione di Windows Defender ATP per dispositivi gestiti  
+- Monitorare la distribuzione di Microsoft Defender ATP in dispositivi gestiti  
 
   **Prerequisiti**  
 
-- Sottoscrizione al servizio online Windows Defender Advanced Threat Protection  
+- Sottoscrizione al servizio online Microsoft Defender Advanced Threat Protection  
 
 - Client che eseguono Windows 10 Anniversary Edition (build 14328 e versioni successive)  
 
@@ -358,7 +358,7 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 
   ##### <a name="how-to-create-an-onboarding-configuration-file"></a>Come creare un file di configurazione per il caricamento  
 
-  1.  Accedere al servizio online Windows Defender ATP  
+  1.  Accedere al servizio online Microsoft Defender ATP  
 
   2.  Fare clic sulla voce di menu **Client On-boarding** (Caricamento client)  
 
@@ -367,13 +367,13 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
   4.  Scaricare il file di archivio compresso (zip) ed estrarre il contenuto.  
 
 
-##### <a name="onboard-devices-for-windows-defender-atp"></a>Caricare dispositivi per Windows Defender ATP  
+##### <a name="onboard-devices-for-microsoft-defender-atp"></a>Caricare dispositivi per Microsoft Defender ATP  
 
-1. Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Protezione endpoint** > **Criteri di Windows Defender ATP** e fare clic su **Creare criteri di Windows Defender ATP**. Verrà visualizzata la Creazione guidata criteri di Windows Defender ATP.  
+1. Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Protezione endpoint** > **Criteri di Windows Defender ATP** e fare clic su **Creare criteri di Windows Defender ATP**. Viene visualizzata la Creazione guidata criteri di Microsoft Defender ATP.  
 
-2. Digitare il **nome** e la **descrizione** per il criterio di Windows Defender ATP e selezionare **Onboarding** (Caricamento). Scegliere Avanti.  
+2. Digitare il **nome** e la **descrizione** per il criterio di Microsoft Defender ATP e selezionare **Onboarding** (Caricamento). Scegliere Avanti.  
 
-3. Usare **Sfoglia** per cercare il file di configurazione fornito dal tenant del servizio cloud Windows Defender ATP dell'organizzazione. Fare clic su **Avanti**.  
+3. Usare **Sfoglia** per cercare il file di configurazione fornito dal tenant del servizio cloud Microsoft Defender ATP dell'organizzazione. Fare clic su **Avanti**.  
 
 4. Specificare i file campione che vengono raccolti e condivisi dai dispositivi gestiti per l'analisi.  
 
@@ -385,17 +385,17 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 
 5. Esaminare le informazioni di riepilogo e completare la procedura guidata.  
 
-6. È ora possibile distribuire i criteri di Windows Defender ATP nei computer client gestiti facendo clic su **Distribuisci**.  
+6. È ora possibile distribuire i criteri di Microsoft Defender ATP nei computer client gestiti facendo clic su **Distribuisci**.  
 
-##### <a name="monitor-windows-defender-atp"></a>Monitorare Windows Defender ATP  
+##### <a name="monitor-microsoft-defender-atp"></a>Monitorare Microsoft Defender ATP  
 
 1.  Nella console di Configuration Manager passare a **Monitoraggio** > **Panoramica** > **Sicurezza** e quindi fare clic su **Windows Defender ATP**.  
 
-2.  Esaminare il dashboard di Windows Defender Advanced Threat Protection.  
+2.  Esaminare il dashboard di Microsoft Defender Advanced Threat Protection.  
 
-    -   **Windows Defender Agent Deployment Status** (Stato distribuzione agente Windows Defender): il numero e la percentuale di computer client gestiti idonei con criteri Windows Defender ATP attivi caricati  
+    -   **Windows Defender Agent Deployment Status** (Stato distribuzione agente Windows Defender): il numero e la percentuale di computer client gestiti idonei con criteri Microsoft Defender ATP attivi caricati  
 
-    -   **Integrità dell'agente di Windows Defender ATP**: percentuale di computer client che inviano informazioni sullo stato per i relativi agenti di Windows Defender ATP  
+    -   **Integrità dell'agente di Windows Defender ATP**: percentuale di computer client che inviano informazioni sullo stato per i relativi agenti di Microsoft Defender ATP  
 
         -   **Integro**: funziona correttamente  
 

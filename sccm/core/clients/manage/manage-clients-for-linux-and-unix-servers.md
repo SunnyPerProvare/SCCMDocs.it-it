@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 32e7a643c98fc8a6bd4baccda703146816930367
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58524048"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62214570"
 ---
 # <a name="how-to-manage-clients-for-linux-and-unix-servers-in-configuration-manager"></a>Come gestire i client per i server Linux e UNIX in Configuration Manager
 

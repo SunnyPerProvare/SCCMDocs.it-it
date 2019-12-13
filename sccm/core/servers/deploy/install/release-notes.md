@@ -2,7 +2,7 @@
 title: Note sulla versione
 titleSuffix: Configuration Manager
 description: Informazioni su problemi urgenti non ancora risolti nel prodotto o trattati in un articolo della Knowledge Base del supporto tecnico Microsoft.
-ms.date: 07/31/2019
+ms.date: 12/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,16 +11,16 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a21fcce7d5e8db66a7e85c14c0ef4ad1050b342c
-ms.sourcegitcommit: 4316bff400ffbde8404f8a2092ec17e3601b8d29
+ms.openlocfilehash: 48decd20e6a77657e4ba6ac1e074e3068b69ef12
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70738426"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74813482"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Note sulla versione per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Con Configuration Manager le note sulla versione del prodotto sono limitate ai problemi urgenti. Questi problemi non sono ancora stati risolti nel prodotto né trattati in dettaglio in un articolo della Knowledge Base del supporto tecnico Microsoft.  
 
@@ -30,16 +30,26 @@ Questo articolo include note sulla versione per l'edizione Current Branch di Con
 
 Per informazioni sulle nuove funzionalità introdotte con le diverse versioni, vedere gli articoli seguenti:
 
+- [Novità della versione 1910](/sccm/core/plan-design/changes/whats-new-in-version-1910)
 - [Novità della versione 1906](/sccm/core/plan-design/changes/whats-new-in-version-1906)  
 - [Novità della versione 1902](/sccm/core/plan-design/changes/whats-new-in-version-1902)
 - [Novità della versione 1810](/sccm/core/plan-design/changes/whats-new-in-version-1810)
-- [Novità della versione 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806)  
 
 > [!Tip]  
 > Per ricevere una notifica quando questa pagina viene aggiornata, copiare e incollare l'URL seguente nel lettore di feed RSS: `https://docs.microsoft.com/api/search/rss?search=%22release+notes+-+Configuration+Manager%22&locale=en-us`
 
 
 ## <a name="set-up-and-upgrade"></a>Configurazione e aggiornamento  
+
+### <a name="site-server-in-passive-mode-doesnt-update-configurationmof"></a>Il server del sito in modalità passiva non aggiorna configuration.mof
+
+<!-- 5787848 -->
+
+*Si applica alla versione 1910*
+
+Se il sito include un [server del sito in modalità passiva](/configmgr/core/servers/deploy/configure/site-server-high-availability), quando si aggiorna il sito è possibile che le personalizzazioni dell'inventario vadano perse. Quando si esegue il failover dei server del sito, il sito non sincronizza il file configuration.mof.
+
+Per risolvere questo problema, eseguire manualmente il backup e il ripristino del file configuration.mof del sito.
 
 ### <a name="setup-prerequisite-warning-on-domain-functional-level-on-server-2019"></a>Avviso di prerequisito di installazione relativo al livello di funzionalità del dominio nell'edizione Server 2019
 
@@ -74,20 +84,6 @@ se si espande un sito primario autonomo a una gerarchia con un sito di amministr
 Rinnovare la chiave associata alla registrazione dell'app in Azure AD. Per altre informazioni, vedere [Rinnovare la chiave privata](/sccm/core/servers/deploy/configure/azure-services-wizard#bkmk_renew).
 
 
-### <a name="setup-command-line-option-joinceip-must-be-specified"></a>È necessario specificare l'opzione della riga di comando del programma di installazione JoinCEIP
-
-<!--510806-->
-*Si applica a: Configuration Manager versione 1802*
-
-A partire da Configuration Manager versione 1802, la funzionalità Analisi utilizzo software è stata rimossa dal prodotto. Quando si esegue l'[automazione dell'installazione](/sccm/core/servers/deploy/install/command-line-options-for-setup) di un nuovo sito dalla riga di comando o da uno script automatico, il programma di installazione restituisce un errore relativo alla mancanza di un parametro obbligatorio.
-
-#### <a name="workaround"></a>Soluzione alternativa
-
-Anche se non produce alcun effetto sul risultato del processo di installazione, includere il parametro **JoinCEIP** nella riga di comando del programma di installazione.
-
-> [!Note]  
-> Il parametro EnableSQM per il [programma di installazione della console](/sccm/core/servers/deploy/install/install-consoles) non è necessario.
-
 ### <a name="cloud-service-manager-component-stopped-on-site-server-in-passive-mode"></a>Componente di gestione del servizio cloud arrestato nel server del sito in modalità passiva
 
 <!--VSO 2858826, SCCMDocs issue 772-->
@@ -103,6 +99,21 @@ Spostare il ruolo del punto di connessione del servizio in un altro server.
 <!-- ## Backup and recovery  -->
 
 <!--## Client deployment and upgrade-->
+## <a name="application-management"></a>Gestione delle applicazioni
+
+### <a name="unable-to-get-certificate-for-powershell-error-when-deploying-microsoft-edge-version-77-and-later"></a>Non è possibile ottenere il certificato per l'errore di PowerShell durante la distribuzione di Microsoft Edge, versione 77 e successive
+<!--5769384-->
+*Si applica a: Configuration Manager versione 1910*
+
+Se si esegue la console di Configuration Manager in un sistema operativo in lingua svedese, ungherese o giapponese, durante la distribuzione di Microsoft Edge, versione 77 e successive, verrà restituito l'errore seguente:
+
+- Non è possibile ottenere il certificato per PowerShell
+
+Questo errore si verifica perché non esiste una cartella `scripts` nella directory `AdminConsole\bin` per la lingua svedese, ungherese o giapponese. In queste lingue del sistema operativo la cartella scripts è localizzata.
+
+#### <a name="workaround"></a>Soluzione alternativa
+
+Creare una cartella denominata `scripts` nella directory `AdminConsole\bin`. Copiare i file dalla cartella localizzata nella nuova cartella `scripts` creata. Distribuire Microsoft Edge, versione 77 e successive, dopo aver copiato i file.
 
 
 ## <a name="os-deployment"></a>Distribuzione del sistema operativo
@@ -147,22 +158,6 @@ Creare un ruolo di sicurezza personalizzato. Copiare un ruolo di sicurezza esist
 
 Per altre informazioni, vedere [Creare ruoli di sicurezza personalizzati](/sccm/core/servers/deploy/configure/configure-role-based-administration#BKMK_CreateSecRole).
 
-### <a name="changing-office-365-client-setting-doesnt-apply"></a>La modifica dell'impostazione client di Office 365 non si applica
-
-<!--511551-->
-*Si applica a: Configuration Manager versione 1802*  
-
-Distribuire un'[impostazione client](/sccm/core/clients/deploy/about-client-settings#enable-management-of-the-office-365-client-agent) con **Abilitare la gestione dell'agente del client Office 365** impostato su `Yes`. Modificare quindi tale impostazione in `No` o `Not Configured`. Dopo l'aggiornamento dei criteri nei client di destinazione, gli aggiornamenti di Office 365 vengono ancora gestiti da Configuration Manager.
-
-#### <a name="workaround"></a>Soluzione alternativa
-
-Impostare il valore del Registro di sistema seguente su `0` e riavviare il **Servizio A portata di clic di Microsoft Office** (ClickToRunSvc):
-
-```Registry
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\office\16.0\Common\officeupdate]
-"OfficeMgmtCOM"=dword:00000000
-```
-
 ## <a name="desktop-analytics"></a>Desktop Analytics
 
 ### <a name="if-you-use-hardware-inventory-for-distributed-views-you-cant-onboard-to-desktop-analytics"></a>Se si usa l'inventario hardware per le viste distribuite, non è possibile eseguire l'onboarding in Desktop Analytics
@@ -199,31 +194,30 @@ Quando si usa la console di Configuration Manager per monitorare lo stato della 
 
 Questi dispositivi **non definiti** sono **aggiornati** con la versione di destinazione del sistema operativo per il piano di distribuzione. Non sono richieste ulteriori azioni.
 
+## <a name="cloud-services"></a>Servizi cloud
 
-## <a name="mobile-device-management"></a>Gestione di dispositivi mobili  
+### <a name="cant-download-content-from-a-cloud-management-gateway-enabled-for-tls-12"></a>Non è possibile scaricare contenuti da un gateway di gestione cloud abilitato per TLS 1.2
 
-### <a name="validation-for-ios-app-link-sometimes-fails-on-valid-link"></a>Talvolta si verifica un errore di convalida per il collegamento dell'app iOS anche se il collegamento è valido
+<!-- 5771680 -->
 
-*Si applica a: Configuration Manager versione 1810 e precedenti*
+*Si applica alla versione 1906, 1910*
 
-<!-- LSI 106004348 -->
-Quando si crea una nuova applicazione di tipo **Pacchetto app per iOS nell'App Store**, il validator non accetta alcuni URL validi come **Percorso**. In particolare, l'App Store iOS non richiede un valore per la sezione dell'URL relativa al nome dell'app. Ad esempio, entrambi i collegamenti seguenti sono validi e puntano alla stessa app, ma la **Creazione guidata applicazione** accetta solo il primo:
+Se si abilita un gateway di gestione cloud in modo che **funzioni come punto di distribuzione cloud e gestisca i contenuti di Archiviazione di Azure** ed **Enforce TLS 1.2**, è possibile che il download dei contenuti non riesca.
 
-- `https://itunes.apple.com/us/app/app-name/id123456789?mt=8`
-- `https://itunes.apple.com/us/app//id123456789?mt=8`
+Nel file DataTransferService.log del client verranno riportati gli errori seguenti:
 
-#### <a name="workaround"></a>Soluzione alternativa
+``` log
+Request to https://cmg1.contoso.com:443/downloadrestservice.svc/getcontentxmlsecure?pid=CMG00013&cid=CMG00013&tid=GUID:3fb5cf5d-28a5-4460-ab39-9184ca214369&iss=CMDP.IAAS2.CONTOSO.COM&alg=1.2.840.113549.1.1.11&st=2019-11-19T01:44:04&et=2019-11-19T09:44:04 failed with 400
+Successfully queued event on HTTP/HTTPS failure for server 'cmg1.contoso.com'.
+Error sending DAV request. HTTP code 400, status 'Bad Request'
+GetDirectoryList_HTTP('https://cmg1.contoso.com:443/downloadrestservice.svc/getcontentxmlsecure?pid=CMG00013&cid=CMG00013&tid=GUID:3fb5cf5d-28a5-4460-ab39-9184ca214369&iss=CMDP.IAAS2.CONTOSO.COM&alg=1.2.840.113549.1.1.11&st=2019-11-19T01:44:04&et=2019-11-19T09:44:04') failed with code 0x87d0027e.
+Error retrieving manifest (0x87d0027e).
+```
 
-Quando si crea un'app iOS e il nome dell'app non è presente nell'URL, aggiungere qualsiasi valore nell'URL come se fosse il nome dell'app. Ad esempio:
+Nel file CMGContentService.log del server verranno riportati gli errori seguenti:
 
-- `https://itunes.apple.com/us/app/any-string/id123456789?mt=8`
+``` log
+ERROR: Exception processing request. Microsoft.WindowsAzure.Storage.StorageException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.ComponentModel.Win32Exception: The client and server cannot communicate, because they do not possess a common algorithm...
+```
 
-Questa azione consente di completare la procedura guidata. L'app viene comunque distribuita correttamente nei dispositivi iOS. La stringa aggiunta all'URL viene visualizzata come **Nome** nella scheda **Informazioni generali** della procedura guidata. Corrisponde anche all'etichetta dell'app nel Portale aziendale.
-
-
-
-
-<!-- ## Reports and monitoring    -->
-<!-- ## Conditional access   -->
-
-<!-- ## Endpoint Protection -->
+Per ovviare a questo problema, usare un [punto di distribuzione cloud](/configmgr/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) tradizionale. Tale ruolo non impone l'uso di TLS 1.2, ma è compatibile con i client che richiedono TLS 1.2.

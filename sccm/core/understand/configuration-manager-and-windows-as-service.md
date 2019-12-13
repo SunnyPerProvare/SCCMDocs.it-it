@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1ea9e2ef8da09d0ab344d56fe0ad4f1b3fb9d94b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130504"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62250700"
 ---
 # <a name="configuration-manager-and-windows-as-a-service"></a>Configuration Manager e Windows as a Service
 

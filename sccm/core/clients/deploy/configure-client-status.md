@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 70c213a628c72d415a912f99ae5efd6f07150ebf
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140746"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62213464"
 ---
 # <a name="how-to-configure-client-status-in-system-center-configuration-manager"></a>Come configurare lo stato del client in System Center Configuration Manager
 
@@ -35,7 +35,7 @@ Prima di poter monitorare lo stato del client di System Center Configuration Man
     > [!NOTE]  
     >  Se nessuna delle impostazioni viene soddisfatta, il client verrà contrassegnato come inattivo.  
 
-    -   **Richieste di criteri client nei seguenti giorni:** Specificare il numero di giorni dalla richiesta di criterio da parte del client. Il valore predefinito è **7** giorni.  
+    -   **Richieste di criteri client nei seguenti giorni:** Specificare il numero di giorni dalla richiesta di criteri da parte del client. Il valore predefinito è **7** giorni.  
 
     -   **Individuazione heartbeat nei seguenti giorni:** Specificare il numero di giorni dall'invio del record di individuazione heartbeat al database del sito da parte del computer client. Il valore predefinito è **7** giorni.  
 

@@ -13,11 +13,11 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 33bba1b837e8336a72ff5f3588a58ca8598e5d2d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132541"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62219350"
 ---
 # <a name="capabilities-in-technical-preview-1512-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1512 per System Center Configuration Manager
 
@@ -78,7 +78,7 @@ Nella Technical Preview 1512 sono state aggiunte le nuove impostazioni seguenti 
 
     -   Avanzata: **Abilitare l'invio automatico di file di esempio per consentire a Microsoft di determinare se alcuni elementi rilevati siano dannosi**:  Impostare questa opzione su "Sì" per abilitare l'invio automatico di file di esempio. L'impostazione predefinita è "No", che indica che l'invio automatico dei file di esempio è disabilitato e verrà visualizzata una richiesta agli utenti prima dell'invio dei campioni.   (Questa impostazione è stata introdotta in System Center 2012 R2 Configuration Manager SP1)  
 
-    -   Avanzata: **Consenti agli utenti di modificare le impostazioni di invio automatico dei file di esempio**: Questa impostazione determina se un utente con diritti amministrativi locali in un dispositivo può modificare l'impostazione per l'invio automatico dei file di esempio nell'interfaccia del client. L'impostazione predefinita è "No" e indica che le impostazioni possono essere modificate solo in Configuration Manager e gli amministratori locali di un dispositivo non possono modificare questa configurazione.  
+    -   Avanzata: **Consenti agli utenti di modificare le impostazioni di invio automatico dei file di esempio**: questa impostazione determina se un utente con diritti amministrativi locali in un dispositivo può modificare l'impostazione per l'invio automatico dei file di esempio nell'interfaccia del client. L'impostazione predefinita è "No" e indica che le impostazioni possono essere modificate solo in Configuration Manager e gli amministratori locali di un dispositivo non possono modificare questa configurazione.  
 
          Ad esempio, di seguito viene illustrata l'impostazione di Windows Defender in Windows 10 configurata dall'amministratore come abilitata e l'utente non è in grado di modificarla:  
 

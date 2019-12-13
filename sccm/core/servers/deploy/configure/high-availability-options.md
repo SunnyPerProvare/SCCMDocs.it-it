@@ -2,7 +2,7 @@
 title: Disponibilità elevata
 titleSuffix: Configuration Manager
 description: Informazioni su come distribuire Configuration Manager usando opzioni che consentono di mantenere un livello elevato di disponibilità dei servizi.
-ms.date: 07/26/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ecfde816d4060c58bd1266aaff2c1b22b100576
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 58e0eb1327786d79fd8b9126dbd4a4691d565f62
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536451"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660062"
 ---
 # <a name="high-availability-options-for-configuration-manager"></a>Opzioni di disponibilità elevata per Configuration Manager
 
@@ -26,7 +26,7 @@ Questo articolo descrive come distribuire Configuration Manager usando opzioni c
 
 Le seguenti opzioni di Configuration Manager supportano la disponibilità elevata:
 
-- A partire dalla versione 1806, configurare i siti primari autonomi con un server del sito aggiuntivo in modalità passiva.  
+- Configurare i siti primari autonomi con un server del sito aggiuntivo in modalità passiva.  
 
 - Configurare un gruppo di disponibilità Always On di SQL Server per il database del sito nei siti primari e nel sito di amministrazione centrale.
 
@@ -48,9 +48,9 @@ Configuration Manager include diverse funzionalità che forniscono il servizio i
 
 - Messaggi basati sullo stato per le funzionalità di monitoraggio, ad esempio aggiornamenti software e protezione degli endpoint.
 
-- [Script](/sccm/apps/deploy-use/create-deploy-scripts), a partire dalla versione 1706  
+- [Script](/sccm/apps/deploy-use/create-deploy-scripts)
 
-- [CMPivot](/sccm/core/servers/manage/cmpivot), a partire dalla versione 1806  
+- [CMPivot](/sccm/core/servers/manage/cmpivot)
 
 Le altre funzionalità di Configuration Manager non forniscono il servizio in tempo reale. Queste funzionalità includono, a titolo esemplificativo, impostazioni client, inventario hardware e software, distribuzioni software e impostazioni di conformità. È previsto che funzionino con una certa latenza dei dati. È insolito che la maggior parte degli scenari che comportano un'interruzione temporanea del servizio costituisca un problema critico. Per ridurre al minimo il tempo di inattività, mantenere l'autonomia di funzionamento e fornire un alto livello di servizio, configurare i siti e le gerarchie con la disponibilità elevata.  
 
@@ -69,11 +69,11 @@ Ad esempio, i client di Configuration Manager in genere funzionano in maniera au
 
 ### <a name="use-a-site-server-in-passive-mode"></a>Usare un server del sito in modalità passiva
 
-A partire dalla versione 1806, installare un server del sito aggiuntivo in modalità *passiva* per un sito primario autonomo. Il server del sito in modalità passiva è in aggiunta al server del sito esistente in modalità *attiva*. Un server del sito in modalità passiva è disponibile per l'uso immediato, quando è necessario. Per altre informazioni, vedere [Disponibilità elevata del server del sito](/sccm/core/servers/deploy/configure/site-server-high-availability).  
+Installare un server del sito aggiuntivo in modalità *passiva* per un sito primario autonomo. Il server del sito in modalità passiva è in aggiunta al server del sito esistente in modalità *attiva*. Un server del sito in modalità passiva è disponibile per l'uso immediato, quando è necessario. Per altre informazioni, vedere [Disponibilità elevata del server del sito](/sccm/core/servers/deploy/configure/site-server-high-availability).  
 
 ### <a name="use-a-remote-content-library"></a>Usare una raccolta contenuto remota
 
-A partire dalla versione 1806, spostare la raccolta contenuto del sito in una posizione remota che fornisca uno spazio di archiviazione a disponibilità elevata. Questa funzionalità è un requisito per la disponibilità elevata del server del sito. Per altre informazioni, vedere [Raccolta contenuto](/sccm/core/plan-design/hierarchy/the-content-library#bkmk_remote).
+Spostare la raccolta contenuto del sito in una posizione remota che fornisca uno spazio di archiviazione a disponibilità elevata. Questa funzionalità è un requisito per la disponibilità elevata del server del sito. Per altre informazioni, vedere [Raccolta contenuto](/sccm/core/plan-design/hierarchy/the-content-library#bkmk_remote).
 
 ### <a name="centralize-content-sources"></a>Centralizzare le origini contenuto
 
@@ -168,7 +168,7 @@ Installare più punti di distribuzione e distribuire il contenuto in più punti 
 ### <a name="application-catalog-web-service-point-and-application-catalog-website-point"></a>Punto per servizi Web del catalogo applicazioni e punto per siti Web del catalogo applicazioni
 
 > [!Important]
-> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >
@@ -232,25 +232,6 @@ Il database del sito, anziché il client singolo, mantiene informazioni importan
 ## <a name="bkmk_nonHAoptions"></a> Opzioni per siti e ruoli del sistema del sito non a disponibilità elevata
 
 Alcuni sistemi del sito non supportano istanze multiple in un sito o nella gerarchia. Queste informazioni consentono di prepararsi per i casi in cui i sistemi del sito passino in modalità offline.  
-
-### <a name="site-server-site"></a>Server del sito (sito)
-
-> [!Note]  
-> Questa sezione si applica solo a Configuration Manager versioni 1802 e precedenti. A partire dalla versione 1806, Configuration Manager offre un'opzione di disponibilità elevata per il server del sito. Per altre informazioni, vedere [Disponibilità elevata del server del sito](/sccm/core/servers/deploy/configure/site-server-high-availability).  
-
-Configuration Manager non supporta l'installazione del server del sito per ogni sito in un cluster di Windows Server o in un cluster Bilanciamento carico di rete.  
-
-A partire dalla versione 1810, il programma di installazione di Configuration Manager non blocca più l'installazione del ruolo del server del sito in un computer con il ruolo Windows per il clustering di failover. Poiché SQL Always On richiede questo ruolo, non era possibile in precedenza inserire il database del sito nel server del sito. Con questa modifica, è possibile creare un sito a disponibilità elevata con un minor numero di server usando SQL Always On e un server del sito in modalità passiva. <!--3607761, fka 1359132-->  
-
-Le informazioni seguenti consentono la preparazione per situazioni di errore o di mancata operatività di un server del sito:  
-
-- Per creare regolarmente un backup del sito, utilizzare l'attività di backup incorporato. In un ambiente di prova, esercitarsi regolarmente nel ripristino di siti da un backup.  
-
-- Distribuire più siti primari di Configuration Manager in una gerarchia con un sito di amministrazione centrale per creare ridondanza. In caso di errore del sito, valutare l'utilizzo dei Criteri di gruppo di Windows o degli script di accesso per riassegnare i client a un sito funzionante.  
-
-- Se è disponibile una gerarchia con un sito di amministrazione centrale, sarà possibile ripristinare il sito di amministrazione centrale o un sito primario figlio utilizzando l'opzione per il ripristino di un database del sito da un altro sito nella gerarchia.  
-
-- I siti secondari non possono essere ripristinati e devono essere reinstallati.  
 
 ### <a name="asset-intelligence-synchronization-point-hierarchy"></a>Punto di sincronizzazione di Asset Intelligence (gerarchia)
 

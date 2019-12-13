@@ -2,7 +2,7 @@
 title: Informazioni sui file di log
 titleSuffix: Configuration Manager
 description: Usare i file di log per la risoluzione dei problemi con i client di Configuration Manager e i sistemi del sito.
-ms.date: 07/26/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,14 +11,16 @@ ms.assetid: b1751e3c-a60c-4ab7-a943-2595df1eb612
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3885e4323e8c41bcf644de7c62fd1dcb22c684c8
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 6f0febe5dcfda5f95c695ad347e2d4408a901b25
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68538047"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660258"
 ---
 # <a name="about-log-files-in-configuration-manager"></a>Informazioni sui file di log di Configuration Manager
+
+*Si applica a: Configuration Manager (Current Branch)*
 
 In Configuration Manager i componenti client e del server del sito registrano le informazioni di processo in singoli file di log. È possibile usare le informazioni contenute nei file di log per risolvere i problemi che potrebbero verificarsi. Per impostazione predefinita, la registrazione dei componenti client e server è abilitata in Configuration Manager.
 
@@ -40,7 +42,7 @@ Tutti i file di log di Configuration Manager sono file di testo normale, pertant
 
 ### <a name="cmtrace"></a>CMTrace
 
-Per visualizzare i log usare lo strumento visualizzatore log **CMTrace** di Configuration Manager. È disponibile nella cartella \\SMSsetup\\Tools del supporto di origine di Configuration Manager. Lo strumento CMTrace viene aggiunto a tutte le immagini di avvio aggiunte alla Raccolta software. A partire dalla versione 1806, lo strumento per la visualizzazione di log CMTrace viene installato automaticamente insieme al client Configuration Manager.<!--1357971--> Per altre informazioni, vedere [CMTrace](/sccm/core/support/cmtrace).
+Per visualizzare i log usare lo strumento visualizzatore log **CMTrace** di Configuration Manager. È disponibile nella cartella `\SMSSetup\Tools` del supporto di origine di Configuration Manager. Lo strumento CMTrace viene aggiunto a tutte le immagini di avvio aggiunte alla Raccolta software. Lo strumento per la visualizzazione di log di CMTrace viene ora installato automaticamente insieme al client di Configuration Manager.<!--1357971--> Per altre informazioni, vedere [CMTrace](/sccm/core/support/cmtrace).
 
 ### <a name="onetrace"></a>OneTrace
 
@@ -61,6 +63,7 @@ Il **Supporto tecnico** include un visualizzatore log aggiornato. Questo strumen
 - [Durante l'installazione client](#bkmk_logoptions-clientprop)
 - [Tramite Configuration Manager Service Manager](#bkmk_logoptions-sm)
 - [Tramite il Registro di sistema di Windows](#bkmk_logoptions-registry)
+- [Nella console di Configuration Manager](#bkmk_logoptions-console)
 
 ### <a name="bkmk_logoptions-clientprop"></a> Configurare le opzioni di registrazione durante l'installazione client
 
@@ -217,6 +220,17 @@ Per modificare il livello di dettaglio di AdminUI.log per la console di Configur
 
 1. Salvare il file e riavviare la console.
 
+### <a name="bkmk_logoptions-console"></a> Configurare le opzioni di registrazione nella console di Configuration Manager
+
+<!-- 4433455 -->
+
+A partire dalla versione 1910, abilitare o disabilitare la registrazione dettagliata in un client o una raccolta dalla console:
+
+1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità**, selezionare il nodo **Dispositivi** e scegliere un dispositivo di destinazione.
+
+1. Nella scheda **Home** della barra multifunzione, nel gruppo **Dispositivo**, selezionare **Diagnostica client**. Scegliere una delle azioni disponibili.
+
+Per altre informazioni, vedere [Diagnostica client](/sccm/core/clients/manage/client-notification#client-diagnostics).
 
 ## <a name="BKMK_LogLocation"></a> Come trovare i file di log
 

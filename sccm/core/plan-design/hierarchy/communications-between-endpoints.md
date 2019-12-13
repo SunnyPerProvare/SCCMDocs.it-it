@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5ebe37bb97c4a1e231bfaf94f420f7f0471f30f6
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56141960"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62237730"
 ---
 # <a name="communications-between-endpoints-in-configuration-manager"></a>Comunicazioni tra gli endpoint in Configuration Manager
 
@@ -153,7 +153,7 @@ Ad esempio, le configurazioni seguenti illustrano quando la gestione client basa
 
 Come visualizzato nell'esempio precedente, è possibile posizionare i sistemi del sito basati su Internet nell'intranet quando vengono pubblicati su Internet usando un server Web proxy. Questi sistemi del sito possono essere configurati per connessioni client solo da Internet o per connessioni client da Internet e dall'intranet. Quando si usa un server Web proxy, è possibile configurarlo per il bridging Secure Sockets Layer (SSL) a SSL (più sicuro) o tunneling SSL, come segue:  
 
--   **Bridging SSL a SSL:**   
+-   **Bridging SSL a SSL:**    
     La configurazione consigliata quando si usano server Web proxy per la gestione client basata su Internet è il bridging da SSL a SSL, che usa la terminazione SSL con l'autenticazione. I computer client devono essere autenticati usando l'autenticazione computer e i client legacy di dispositivi mobili vengono autenticati usando l'autenticazione utente. I dispositivi mobili che vengono registrati da Configuration Manager non supportano il bridging SSL.  
 
      Il vantaggio della terminazione SSL sul server Web proxy è che i pacchetti provenienti da Internet sono sottoposti a verifica prima di essere inoltrati alla rete interna. Il server Web proxy autentica la connessione dal client, la termina, quindi apre una nuova connessione autenticata ai sistemi del sito basati su Internet. Quando i client di Configuration Manager usano un server Web proxy, l'identità client (GUID client) viene inclusa in modo protetto nel payload dei pacchetti, in modo che il punto di gestione non consideri il server Web proxy come il client. Il bridging da HTTP a HTTPS o da HTTPS a HTTP non è supportato in Configuration Manager.  

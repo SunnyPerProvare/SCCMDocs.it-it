@@ -2,7 +2,7 @@
 title: Client e dispositivi supportati
 titleSuffix: Configuration Manager
 description: Informazioni sulle versioni dei sistemi operativi supportate da Configuration Manager per client e dispositivi.
-ms.date: 10/08/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,16 +11,16 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59f43fca8c493da8684671dce7b2e61b8d67cb64
-ms.sourcegitcommit: 0bad3167dc8349d0da0a5f47c29a0614a9bac467
+ms.openlocfilehash: 278c8df83940f982e2daff6d4f5cd15fe923e03b
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916982"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660497"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versioni dei sistemi operativi per client e dispositivi supportate da Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager supporta l'installazione di software client in computer Windows e macOS.  
 
@@ -50,11 +50,15 @@ Per gestire le versioni dei sistemi operativi Windows seguenti, usare il client 
 <!--3556025-->
 [Desktop virtuale Windows](https://docs.microsoft.com/azure/virtual-desktop/) è una funzionalità di anteprima di Microsoft Azure e Microsoft 365. A partire dalla versione 1906, usare Configuration Manager per gestire questi dispositivi virtuali che eseguono Windows in Azure.
 
-Analogamente a un server terminal, questi dispositivi virtuali consentono l'esecuzione di più sessioni utente attive simultanee. Per migliorare le prestazioni dei client, Configuration Manager disabilita ora i criteri utente su tutti i dispositivi che consentono l'esecuzione di più sessioni utente. Anche se si abilitano i criteri utente, il client li disabilita per impostazione predefinita in questi dispositivi che includono Desktop virtuale Windows e i server terminal.
+Analogamente a un server terminal, alcuni di questi dispositivi virtuali consentono l'esecuzione di più sessioni utente attive simultanee. Per migliorare le prestazioni dei client, Configuration Manager disabilita ora i criteri utente su tutti i dispositivi che consentono l'esecuzione di più sessioni utente. Anche se si abilitano i criteri utente, il client li disabilita per impostazione predefinita in questi dispositivi, che includono server terminal e Windows 10 Enterprise multisessione.
 
 Il client disabilita i criteri utente solo quando rileva questo tipo di dispositivo durante una nuova installazione. Per i client esistenti di questo tipo che vengono aggiornati alla versione corrente, viene mantenuto il comportamento precedente. In un dispositivo esistente l'impostazione dei criteri utente viene configurata anche se il dispositivo consente più sessioni utente.
 
-Se sono necessari i criteri utente in questo scenario e si accetta l'eventuale impatto sulle prestazioni, usare Configuration Manager SDK con la [classe WMI del server SMS_PolicyAgentConfig](/sccm/develop/reference/core/clients/config/sms_policyagentconfig-server-wmi-class). Impostare la nuova proprietà `PolicyEnableUserPolicyOnTS` su `true`.
+Se in questo scenario è necessario usare criteri utente e si accettano le potenziali conseguenze sulle prestazioni, adottare una delle soluzioni seguenti per abilitare i criteri utente:
+
+- Nella versione 1910 e successive usare le [impostazioni client](/configmgr/core/clients/deploy/configure-client-settings). Nel gruppo **Criteri client** configurare l'impostazione seguente: **Abilita i criteri utente per più sessioni utente**.<!-- 4737447 -->
+
+- Nella versione 1906 usare Configuration Manager SDK con la [classe WMI del server SMS_PolicyAgentConfig](/sccm/develop/reference/core/clients/config/sms_policyagentconfig-server-wmi-class). Impostare la nuova proprietà `PolicyEnableUserPolicyOnTS` su `true`.
 
 > [!Note]  
 > Non è possibile usare la co-gestione con un client che esegue la multisessione di Windows 10 Enterprise. <!-- SCCMDocs-pr#3950 -->

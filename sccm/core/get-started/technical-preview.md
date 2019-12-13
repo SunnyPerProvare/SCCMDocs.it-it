@@ -2,7 +2,7 @@
 title: Versioni di Technical Preview
 titleSuffix: Configuration Manager
 description: Informazioni sulla versione Technical Preview che consente di testare nuove funzionalità e capacità in Configuration Manager.
-ms.date: 11/05/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78b7e88436a0a3031603545a9104d7a5b1d85fd4
-ms.sourcegitcommit: edc7a5ad6a2eb72d0448d4689b9534f7e6f4d2b7
+ms.openlocfilehash: 0705c644c5284040dfb22147257b32b3eec3002b
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73623443"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74658354"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Technical Preview per Configuration Manager
 
@@ -46,8 +46,8 @@ Per la maggior parte dei prerequisiti del prodotto, usare le informazioni in [Co
 
 - Supporta solo i parametri della riga di comando di installazione seguenti:  
 
-    - `/silent`  
-    - `/testdbupgrade`  
+  - `/silent`  
+  - `/testdbupgrade`  
 
 - Il punto di connessione del servizio viene installato in modalità online. e non supporta la modalità offline.  
 
@@ -55,11 +55,11 @@ Per la maggior parte dei prerequisiti del prodotto, usare le informazioni in [Co
 
 - Le funzionalità seguenti non sono supportate con il ramo Technical Preview:  
 
-    - [Migrazione](/sccm/core/migration/migrate-data-between-hierarchies) da o verso questo ramo di anteprima.  
+  - [Migrazione](/sccm/core/migration/migrate-data-between-hierarchies) da o verso questo ramo di anteprima.  
 
-    - [Aggiornamento](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager) a questo ramo di anteprima.  
+  - [Aggiornamento](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager) a questo ramo di anteprima.  
 
-    - [Ripristino di siti](/sccm/core/servers/manage/recover-sites) dalla cartella cd.latest.  <!--507106-->
+  - [Ripristino di siti](/sccm/core/servers/manage/recover-sites) dalla cartella cd.latest.  <!--507106-->
 
 - Non è previsto alcun supporto per l'aggiornamento a Current Branch da questo ramo di anteprima.  
 
@@ -72,10 +72,10 @@ I prodotti e tecnologie seguenti sono supportati dal ramo Technical Preview di C
 
 - Sono supportate solo le versioni seguenti di **SQL Server**:  
 
-    - SQL Server 2017 (con aggiornamento cumulativo 2 o versione successiva)
-    - SQL Server 2016 (senza Service Pack o versioni successive)
-    - SQL Server 2014 (con Service Pack 1 o versioni successive)
-    - SQL Server 2012 (con Service Pack 3 o versioni successive)  
+  - SQL Server 2017 (con aggiornamento cumulativo 2 o versione successiva)
+  - SQL Server 2016 (senza Service Pack o versioni successive)
+  - SQL Server 2014 (con Service Pack 1 o versioni successive)
+  - SQL Server 2012 (con Service Pack 3 o versioni successive)  
 
 - Il sito supporta fino a 10 client, che possono eseguire qualsiasi [versione supportata del sistema operativo client](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices).<!-- SCCMDocs#1656 -->
 
@@ -86,14 +86,14 @@ I prodotti e tecnologie seguenti sono supportati dal ramo Technical Preview di C
 
 Il ramo Technical Preview di Configuration Manager per l'uso in ambienti lab è diverso da Current Branch di Configuration Manager per l'uso in ambienti di produzione.  
 
-Prima di tutto installare una versione di base del ramo Technical Preview. Dopo l'installazione di una versione di base, è possibile usare gli aggiornamenti nella console per aggiornare l'installazione con la versione di anteprima più recente. In genere, le nuove versioni Technical Preview sono disponibili ogni mese.
+Prima di tutto installare una versione di base del ramo Technical Preview. Dopo l'installazione di una versione di base, eseguire gli aggiornamenti nella console per aggiornare l'installazione con la versione di anteprima più recente. In genere, le nuove versioni Technical Preview sono disponibili ogni mese.
 
-Microsoft supporta ogni versione Technical Preview fino a quando diventano disponibili tre versioni successive. Ad esempio, quando è stata rilasciata la versione 1708, la versione 1704 non era più inclusa nel supporto. Le versioni 1705, 1706 e 1707 sono rimaste incluse nel supporto. Quando una versione di base non è più inclusa nel supporto, è ancora supportata per l'installazione di un nuovo sito Technical Preview, presupponendo che venga eseguito l'aggiornamento immediato a una versione supportata. La versione di base precedente è supportata fino a quando non diventa disponibile una nuova versione di base. Eseguire l'aggiornamento alla versione più recente disponibile dalla versione di base e quindi ripetere il processo di aggiornamento fino a installare l'ultima versione Technical Preview.
+Microsoft supporta ogni versione Technical Preview fino a quando diventano disponibili tre versioni successive. Ad esempio, quando è stata rilasciata la versione 1908, la versione 1904 è stata esclusa dal supporto. Le versioni 1905, 1906 e 1907 sono invece rimaste. Quando una versione di base non è più inclusa nel supporto, è ancora supportata per l'installazione di un nuovo sito Technical Preview, presupponendo che venga eseguito l'aggiornamento immediato a una versione supportata. La versione di base precedente è supportata fino a quando non diventa disponibile una nuova versione di base. Eseguire l'aggiornamento alla versione più recente disponibile dalla versione di base e quindi ripetere il processo di aggiornamento fino a installare l'ultima versione Technical Preview.
 
 > [!TIP]  
 > Quando si installa un aggiornamento della Technical Preview, si aggiorna l'installazione di anteprima alla nuova versione Technical Preview. Un'installazione Technical Preview non prevede mai la possibilità di eseguire l'aggiornamento a un'installazione Current Branch, né di ricevere gli aggiornamenti dalla versione Current Branch corrente.
 >
-> Più volte nel corso dell'anno diventano disponibili versioni del ramo Technical Preview e Current Branch con lo stesso numero di versione. Ad esempio, è presente una versione Technical Preview 1802 e una versione Current Branch 1802.
+> Più volte nel corso dell'anno diventano disponibili versioni del ramo Technical Preview e Current Branch con lo stesso numero di versione. Ad esempio, una versione Technical Preview 1910 e una versione Current Branch 1910.
 
 ### <a name="active-baseline-versions"></a>Versioni di base attive
 
@@ -107,108 +107,68 @@ Scaricare una versione di base da [TechNet Evaluation Center](https://www.micros
 
 Microsoft sarebbe lieta di ricevere commenti e suggerimenti sulle nuove funzionalità della Technical Preview. Per altre informazioni, vedere la sezione su [commenti e suggerimenti per i prodotti](/sccm/core/understand/find-help#product-feedback).
 
-Siamo anche interessati a conoscere le vostre idee su eventuali nuove funzionalità. Per inviare nuove idee e votare le idee presentate da altri, [visitare la pagina UserVoice](https://configurationmanager.uservoice.com).  
+Microsoft è interessata a conoscere le idee degli utenti su nuove funzionalità che potrebbero essere implementate. È possibile inviare nuove idee e votare le idee di altri utenti: [UserVoice per Configuration Manager](https://configurationmanager.uservoice.com).  
 
+<!--
+## <a name="bdmk_tpknownissues"></a> General changes introduced in technical preview branch
 
-<!--   ##  <a name="bdmk_tpknownissues"></a> General changes introduced in Technical Previews    -->
-
+<!-- (explanatory comment)
+Enable this section if needed to include any broad change to the tech preview branch
+-->
 
 ## <a name="bkmk_tpCaps"></a> Funzionalità nella versione più recente  
 
-Le funzionalità seguenti sono disponibili con la versione Technical Preview di Configuration Manager più recente:
+<!-- (explanatory comment)
+This is the full list of new features in the latest TP release
+-->
 
-<!-- This is the full list of new features in the latest TP release -->
+<!-- (commented out for 1910 CB since there's nothing to show, 1911tp section is an example for next TP)
+The following features are available with the most recent Configuration Manager technical preview version:
 
-### <a name="technical-preview-version-1911"></a>Technical Preview versione 1911
+### Technical preview version 1911 -->
 
 <!-- - [title](/sccm/core/get-started/2019/technical-preview-1901#bkmk_anchor) <!--ID-->
 
-- [Microsoft Endpoint Configuration Manager](/sccm/core/get-started/2019/technical-preview-1911#bkmk_mem) <!--4960084-->
-- [Supporto di Microsoft Connected Cache per le app Win32 di Intune](/sccm/core/get-started/2019/technical-preview-1911#bkmk_cache) <!--5032900-->
-
-> [!Note]  
+> [!NOTE]  
 > Le funzionalità disponibili in una versione precedente della Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità aggiunte alla versione Current Branch di Configuration Manager rimangono disponibili nel ramo Technical Preview.  
 
 ## <a name="features-in-recent-technical-previews"></a>Funzionalità nelle anteprime tecniche recenti
 
-Le funzionalità seguenti sono state rilasciate in versioni precedenti di Configuration Manager Technical Preview Branch dopo la versione Current Branch 1906:
-
-### <a name="technical-preview-version-1910"></a>Technical Preview versione 1910
-
-- [Distribuire Microsoft Edge versione 77 e successive](/sccm/core/get-started/2019/technical-preview-1910#bkmk_Microsoft_Edge) <!--4561024-->
-- [Includere linee di base di configurazione personalizzate come parte della valutazione dei criteri di conformità](/sccm/core/get-started/2019/technical-preview-1910#bkmk_CAbaselines) <!--3608345-->
-- [Miglioramenti ai gruppi di applicazioni](/sccm/core/get-started/2019/technical-preview-1910#bkmk_appgrp) <!--4760058-->
-- [Riscattare il blocco SEDO](/sccm/core/get-started/2019/technical-preview-1910#bkmk_sedo) <!--4786915-->
-- [Allegare file al feedback](/sccm/core/get-started/2019/technical-preview-1910#attach-files-to-feedback) <!--3556011-->
-- [Azioni di diagnostica del client](/sccm/core/get-started/2019/technical-preview-1910#bkmk_diag) <!--4433455-->
-- [Dashboard sull'integrità e la distribuzione pilota di Office 365 ProPlus](/sccm/core/get-started/2019/technical-preview-1910#office-365-proplus-pilot-and-health-dashboard) <!--4488272-->
-- [Miglioramenti alla ricerca nella console](/sccm/core/get-started/2019/technical-preview-1910#bkmk_search) <!--4640570-->
-- [Nuova variabile per l'aggiornamento sul posto di Windows 10](/sccm/core/get-started/2019/technical-preview-1910#bkmk_osdvar) <!--4680263-->
-- [Miglioramenti al supporto per Desktop virtuale Windows](/sccm/core/get-started/2019/technical-preview-1910#bkmk_wvd) <!--4737447-->
-
-### <a name="technical-preview-version-1909"></a>Technical Preview versione 1909
-
-- [Gruppi di orchestrazione](/sccm/core/get-started/2019/technical-preview-1909#bkmk_OGs) <!--3098816-->
-- [Miglioramenti alla gestione di BitLocker](/sccm/core/get-started/2019/technical-preview-1909#bkmk_bitlocker) <!--3601034-->
-- [Estendere ed eseguire la migrazione di un sito locale in Microsoft Azure](/sccm/core/get-started/2019/technical-preview-1909#bkmk_Azure-migration) <!--3556022-->
-- [Entità CMPivot aggiuntive e miglioramenti](/sccm/core/get-started/2019/technical-preview-1909#bkmk_CMPivot) <!--5410930-->
-- [Download della sequenza di attività su richiesta tramite Internet](/sccm/core/get-started/2019/technical-preview-1909#bkmk_dodcmg) <!--3601238-->
-- [Supporto per Windows Insider](/sccm/core/get-started/2019/technical-preview-1909#bkmk_wifb) <!--3556023-->
-- [Supporto delle lingue migliorato nella sequenza di attività](/sccm/core/get-started/2019/technical-preview-1909#bkmk_osd) <!--5411057-->
-- [Dashboard sull'integrità di Office 365 ProPlus](/sccm/core/get-started/2019/technical-preview-1909#bkmk_o365health) <!--4488301-->
-- [Miglioramenti per il debugger della sequenza di attività](/sccm/core/get-started/2019/technical-preview-1909#bkmk_tsdebug) <!-- 5012536, 5012509 -->
-
-### <a name="technical-preview-version-19082"></a>Technical Preview versione 1908.2
-
-- [Miglioramenti per Connessioni di console](/sccm/core/get-started/2019/technical-preview-1908-2#improvements-to-console-connections) <!--4923997-->
-- [Miglioramenti per i punti di distribuzione abilitati per il multicast](/sccm/core/get-started/2019/technical-preview-1908-2#bkmk_multicast) <!--3785535-->
-- [Ottimizzazioni per il motore CMPivot](/sccm/core/get-started/2019/technical-preview-1908-2#optimizations-to-the-cmpivot-engine) <!--3197353-->
-- [Impostare il layout della tastiera durante la distribuzione del sistema operativo](/sccm/core/get-started/2019/technical-preview-1908-2#bkmk_osd) <!--5138936-->
-
-### <a name="technical-preview-version-1908"></a>Technical Preview versione 1908
-
-- [Miglioramenti delle prestazioni della sequenza di attività per le combinazioni per il risparmio di energia](/sccm/core/get-started/2019/technical-preview-1908#bkmk_tsperf) <!--3555926-->
-- [Valutazione delle query sul dispositivo locale con CMPivot autonomo](/sccm/core/get-started/2019/technical-preview-1908#local-device-query-evaluation-using-cmpivot-standalone) <!--3197353-->
-- [Filtro di aggiornamento software aggiuntivo per le regole di distribuzione automatica](/sccm/core/get-started/2019/technical-preview-1908#additional-software-update-filter-for-adrs) <!--4852033-->
-- [Usare Ottimizzazione recapito per tutti gli aggiornamenti di Windows](/sccm/core/get-started/2019/technical-preview-1908#use-delivery-optimization-for-all-windows-updates) <!--4699118 (4685210)-->
-- [Modelli di distribuzione in più fasi](/sccm/core/get-started/2019/technical-preview-1908#phased-deployment-templates) <!--4961086-->
-- [Miglioramenti al nodo Connessioni di console](/sccm/core/get-started/2019/technical-preview-1908#improvements-to-console-connections-node) <!--4923997 (4951240)-->
-- [Copiare e incollare le condizioni della sequenza di attività](/sccm/core/get-started/2019/technical-preview-1908#bkmk_tscondition) <!--4621098-->
-- [Miglioramenti per la ricerca nell'editor della sequenza di attività](/sccm/core/get-started/2019/technical-preview-1908#bkmk_tssearch) <!--4621085-->
-- [Miglioramenti alla distribuzione del sistema operativo](/sccm/core/get-started/2019/technical-preview-1908#bkmk_osd) <!--4910348, 4931110, 4977616-->
-
-### <a name="technical-preview-version-1907"></a>Technical Preview versione 1907
-
-- [Ricerca nell'editor delle sequenze di attività](/sccm/core/get-started/2019/technical-preview-1907#bkmk_tsedit) <!--4621085-->
-- [Miglioramenti al dashboard Preparazione aggiornamenti per Office 365 ProPlus](/sccm/core/get-started/2019/technical-preview-1907#improvements-to-office-365-proplus-upgrade-readiness-dashboard) <!--4021125-->
-
-
-> [!Tip]  
-> Quando è disponibile una nuova versione Current Branch, le funzionalità presenti in tale versione sono elencate nella versione più recente dell'articolo *Novità*. Per altre informazioni, vedere [Novità delle versioni incrementali](/sccm/core/plan-design/changes/whats-new-incremental-versions#supported-versions).
-
-<!-- This is the full list of new features in the past TP releases since the last CB release.
+<!-- (explanatory comment)
+This is the full list of new features in the past TP releases since the last CB release.
 Each month, add features from the list above to a new H3 section at the top of this section.
 When there's a new CB, add any features not in that CB to the table in H2 "Features in previous technical previews"
 -->
 
+<!-- (commented out for 1910 CB since there's nothing to show, 1910tp section is an example for next TP)
+The following features were released with previous versions of the Configuration Manager technical preview branch since current branch version 1910:
+
+### Technical preview version 1910
+
+- [Attach files to feedback](/sccm/core/get-started/2019/technical-preview-1910#attach-files-to-feedback) <!--3556011-->
+
+> [!TIP]  
+> Quando è disponibile una nuova versione Current Branch, le funzionalità presenti in tale versione sono elencate nella versione più recente dell'articolo *Novità*. Per altre informazioni, vedere [Novità delle versioni incrementali](/sccm/core/plan-design/changes/whats-new-incremental-versions#supported-versions).
 
 ## <a name="features-in-previous-technical-previews"></a>Funzionalità nelle versioni Technical Preview precedenti
 
-Le funzionalità seguenti sono state rilasciate con le versioni precedenti del ramo Technical Preview di Configuration Manager. Queste funzionalità rimangono disponibili nelle versioni successive, ma non sono ancora disponibili in Current Branch.
-
-<!-- This is the list of individual features that are still in TP (not in CB). 
-**Note there is no third column in this table!**
-Copy from the bottom of the list above any individual feature that is still in TP and add to the top of this list (then remove the third column)
+<!-- (explanatory comment)
+This is the list of individual features that are still in TP (not in CB). 
+Copy from the lists above any individual features that are still in TP and add to the top of this list
 With each CB release, review and remove from this list for anything that's now available in CB. 
 -->
 
+Le funzionalità seguenti sono state rilasciate con le versioni precedenti del ramo Technical Preview di Configuration Manager. Queste funzionalità rimangono disponibili nelle versioni successive, ma non sono ancora disponibili in Current Branch.
+
 | Funzionalità        | Versione Technical Preview |  
 |----------------|---------------------------|
+| Allegare file al feedback <!--3556011--> | [Tech Preview 1910](/sccm/core/get-started/2019/technical-preview-1910#attach-files-to-feedback) |
+| Gruppi di orchestrazione <!--3098816--> | [Tech Preview 1909](/sccm/core/get-started/2019/technical-preview-1909#bkmk_OGs) |
+| Miglioramenti ai punti di distribuzione abilitati per il multicast <!--3785535--> | [Tech Preview 1908.2](/sccm/core/get-started/2019/technical-preview-1908-2#bkmk_multicast) |
+| Modelli di distribuzione in più fasi <!--4961086--> | [Tech Preview 1908](/sccm/core/get-started/2019/technical-preview-1908#phased-deployment-templates) |
 | Controllo remoto tramite il gateway di gestione cloud <!--4575930--> | [Tech Preview 1906](/sccm/core/get-started/2019/technical-preview-1906#remote-control-anywhere-using-cloud-management-gateway) |
 | Miglioramento dell'hub della community <!--3555935--> | [Tech Preview 1906](/sccm/core/get-started/2019/technical-preview-1906#bkmk_hub) |
-| Opzioni aggiuntive per i cataloghi di aggiornamenti di terze parti <!--4469002--> | [Tech Preview 1906](/sccm/core/get-started/2019/technical-preview-1906#additional-options-for-third-party-update-catalogs) |
 | Sequenza di attività come tipo di distribuzione del modello di app <!--3555953--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_tsdt) |
-| Gestione di BitLocker <!--3601034--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_bitlocker) |
 | Miglioramento dell'hub della community <!--4224401--> | [Anteprima tecnica 1905](/sccm/core/get-started/2019/technical-preview-1905#bkmk_hub) |
 | Hub della community e GitHub <!--3555935--> | [Tech Preview 1904](/sccm/core/get-started/2019/technical-preview-1904#community-hub-and-github) |
 | Stima dei costi dei servizi cloud <!--3555774--> | [Tech Preview 1903](/sccm/core/get-started/2019/technical-preview-1903#bkmk_cmg) |
@@ -218,7 +178,6 @@ With each CB release, review and remove from this list for anything that's now a
 | Supporto dell'avvio della rete PXE per IPv6 <!--3601254, fka 1269793--> |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#pxe-network-boot-support-for-ipv6)|
 | Uso di Azure Active Directory <!--3607315, fka 1322145--> | [Tech Preview 1702](capabilities-in-technical-preview-1702.md#azurediscovery) |
 | Miglioramenti ad Asset Intelligence <!--3601024, fka 1307390--> | [Tech Preview 1608](capabilities-in-technical-preview-1608.md#improvements-to-asset-intelligence) |
-
 
 ## <a name="see-also"></a>Vedere anche  
 

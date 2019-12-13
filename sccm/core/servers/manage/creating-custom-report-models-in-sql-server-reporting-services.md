@@ -12,11 +12,11 @@ manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ab6cb2816096697d4ccff6db17f03e4aac1d4f14
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56127219"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62245273"
 ---
 # <a name="creating-custom-report-models-for-system-center-configuration-manager-in-sql-server-reporting-services"></a>Creazione di modelli di report personalizzati per System Center Configuration Manager in SQL Server Reporting Services
 
@@ -96,7 +96,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 3.  Nella finestra **Origini dati relazionali** verificare che l'origine dati **Modello_Semplificato** sia selezionata, quindi fare clic su **Avanti**.  
 
-4.  Nella pagina **Selezione tabelle e viste** selezionare la seguente vista dall'elenco **Oggetti disponibili** per l'uso nel modello di report: **v_R_System (dbo)**.  
+4.  Nella pagina **Selezione tabelle e viste** selezionare la seguente vista dall'elenco **Oggetti disponibili** per l'uso nel modello di report: **v_R_System (dbo)** .  
 
     > [!TIP]  
     >  Per agevolare l'individuazione delle viste nell'elenco **Oggetti disponibili** , fare clic sull'intestazione **Nome** nella parte superiore dell'elenco per disporre gli oggetti in ordine alfabetico.  
@@ -137,7 +137,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 ###  <a name="BKMK_DeployReportModel"></a> To deploy the custom report model to Configuration Manager  
 
-1. Individuare la cartella in cui è stato creato il progetto di modello di report. Ad esempio, %*PROFILOUTENTE*%\Documents\Visual Studio 2008\Projects\\*&lt;Nome progetto\>.*  
+1. Individuare la cartella in cui è stato creato il progetto di modello di report. Ad esempio, %*PROFILOUTENTE*%\Documents\Visual Studio 2008\Projects\\ *&lt;Nome progetto\>.*  
 
 2. Copiare i seguenti file dalla cartella del progetto di modello di report in una cartella temporanea nel computer:  
 
@@ -147,7 +147,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 3. Aprire i file precedenti utilizzando un editor di testo, ad esempio Blocco note.  
 
-4. Nel file _&lt;Nome modello\>_**.dsv** individuare la prima riga del file, simile alla seguente:  
+4. Nel file _&lt;Nome modello\>_ **.dsv** individuare la prima riga del file, simile alla seguente:  
 
     **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
 
@@ -157,9 +157,9 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 5. Copiare l'intero contenuto del file negli Appunti di Windows.  
 
-6. Chiudere il file _&lt;Nome modello\>_**.dsv**.  
+6. Chiudere il file _&lt;Nome modello\>_ **.dsv**.  
 
-7. Nel file _&lt;Nome modello\>_**.smdl** individuare le ultime tre righe del file, simili alle seguenti:  
+7. Nel file _&lt;Nome modello\>_ **.smdl** individuare le ultime tre righe del file, simili alle seguenti:  
 
     `</Entity>`  
 
@@ -167,11 +167,11 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
     `</SemanticModel>`  
 
-8. Incollare il contenuto del file _&lt;Nome modello\>_**.dsv** direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
+8. Incollare il contenuto del file _&lt;Nome modello\>_ **.dsv** direttamente prima dell'ultima riga del file ( **&lt;SemanticModel\>** ).  
 
-9. Salvare e chiudere il file _&lt;Nome modello\>_**.smdl**.  
+9. Salvare e chiudere il file _&lt;Nome modello\>_ **.smdl**.  
 
-10. Copiare il file _&lt;Nome modello\>_**.smdl** nella cartella *%programmi%* \Microsoft Configuration Manager \AdminConsole\XmlStorage\Other nel server del sito di Configuration Manager.  
+10. Copiare il file _&lt;Nome modello\>_ **.smdl** nella cartella *%programmi%* \Microsoft Configuration Manager \AdminConsole\XmlStorage\Other nel server del sito di Configuration Manager.  
 
     > [!IMPORTANT]  
     >  Dopo aver copiato il file del modello di report nel server del sito di Configuration Manager, sarà necessario chiudere e riavviare la console di Configuration Manager prima di usare il modello di report in **Creazione guidata report**.  
@@ -380,7 +380,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 #### <a name="to-deploy-the-custom-report-model-to-configuration-manager"></a>To deploy the custom report model to Configuration Manager  
 
-1. Individuare la cartella in cui è stato creato il progetto di modello di report. Ad esempio, %*PROFILOUTENTE*%\Documents\Visual Studio 2008\Projects\\*&lt;Nome progetto\>.*  
+1. Individuare la cartella in cui è stato creato il progetto di modello di report. Ad esempio, %*PROFILOUTENTE*%\Documents\Visual Studio 2008\Projects\\ *&lt;Nome progetto\>.*  
 
 2. Copiare i seguenti file dalla cartella del progetto di modello di report in una cartella temporanea nel computer:  
 
@@ -390,7 +390,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 3. Aprire i file precedenti utilizzando un editor di testo, ad esempio Blocco note.  
 
-4. Nel file _&lt;Nome modello\>_**.dsv** individuare la prima riga del file, simile alla seguente:  
+4. Nel file _&lt;Nome modello\>_ **.dsv** individuare la prima riga del file, simile alla seguente:  
 
     **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
 
@@ -400,9 +400,9 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 5. Copiare l'intero contenuto del file negli Appunti di Windows.  
 
-6. Chiudere il file _&lt;Nome modello\>_**.dsv**.  
+6. Chiudere il file _&lt;Nome modello\>_ **.dsv**.  
 
-7. Nel file _&lt;Nome modello\>_**.smdl** individuare le ultime tre righe del file, simili alle seguenti:  
+7. Nel file _&lt;Nome modello\>_ **.smdl** individuare le ultime tre righe del file, simili alle seguenti:  
 
     `</Entity>`  
 
@@ -410,11 +410,11 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
     `</SemanticModel>`  
 
-8. Incollare il contenuto del file _&lt;Nome modello\>_**.dsv** direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
+8. Incollare il contenuto del file _&lt;Nome modello\>_ **.dsv** direttamente prima dell'ultima riga del file ( **&lt;SemanticModel\>** ).  
 
-9. Salvare e chiudere il file _&lt;Nome modello\>_**.smdl**.  
+9. Salvare e chiudere il file _&lt;Nome modello\>_ **.smdl**.  
 
-10. Copiare il file _&lt;Nome modello\>_**.smdl** nella cartella *%programmi%* \Microsoft Configuration Manager\AdminConsole\XmlStorage\Other nel server del sito di Configuration Manager.  
+10. Copiare il file _&lt;Nome modello\>_ **.smdl** nella cartella *%programmi%* \Microsoft Configuration Manager\AdminConsole\XmlStorage\Other nel server del sito di Configuration Manager.  
 
     > [!IMPORTANT]  
     >  Dopo aver copiato il file del modello di report nel server del sito di Configuration Manager, sarà necessario chiudere e riavviare la console di Configuration Manager prima di usare il modello di report in **Creazione guidata report**.  

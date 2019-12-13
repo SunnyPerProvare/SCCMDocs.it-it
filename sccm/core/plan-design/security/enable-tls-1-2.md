@@ -2,7 +2,7 @@
 title: Come abilitare TLS 1.2
 titleSuffix: Configuration Manager
 description: Informazioni su come abilitare TLS 1.2 per Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.assetid: 31de47c9-891b-4de7-8d5e-fbbc1bff7c60
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ec0d298b6adea38c6b4104f2006b77eba650ac66
-ms.sourcegitcommit: 13ac4f5e600dc1edf69e8566e00968f40e1d1761
+ms.openlocfilehash: 5717d983ac6aa2c095ca056a5764e2b0feb6c18e
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70889255"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660088"
 ---
 # <a name="how-to-enable-tls-12"></a>Come abilitare TLS 1.2
 
@@ -232,7 +232,7 @@ Per risolvere questo problema, seguire questa procedura:
 ### <a name="application-catalog-doesnt-initialize"></a>Il Catalogo applicazioni non viene inizializzato
 
 > [!Important]  
-> Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).
+> Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).
 
 Se il Catalogo applicazioni non viene inizializzato, cercare il messaggio di errore seguente nel file **ServicePortalWebSite.svclog**:
 
@@ -266,7 +266,7 @@ Per risolvere questo problema, seguire questa procedura:
 ### <a name="software-center-or-browser-doesnt-communicate-with-the-application-catalog"></a>Software Center o il browser non comunica con il Catalogo applicazioni
 
 > [!Important]  
-> Il catalogo applicazioni è deprecato. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).
+> Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).
 
 Il metodo migliore per usare Software Center con le app disponibili per gli utenti in un sito abilitato per TLS 1.2 consiste nel rimuovere il ruolo del Catalogo applicazioni. Consentire quindi a Software Center di comunicare direttamente con un punto di gestione. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).
 
@@ -292,7 +292,7 @@ Quando si prova a creare applicazioni di Azure AD (Azure AD), se la finestra di 
 
 ### <a name="configuration-manager-cloud-services-and-tls-12"></a>Servizi cloud di Configuration Manager e TLS 1.2
 
-A partire dalla versione 1802, le macchine virtuali di Azure usate dal gateway di gestione cloud e dai punti di distribuzione cloud supportano TLS 1.2. I client supportati nella versione 1802 o successiva usano automaticamente TLS 1.2.
+Le macchine virtuali di Azure usate dal gateway di gestione cloud e dai punti di distribuzione cloud supportano TLS 1.2. Le versioni client supportate usano automaticamente TLS 1.2.
 
 **SMSAdminui.log** può contenere un errore simile all'esempio seguente:
 

@@ -2,7 +2,7 @@
 title: Aggiornamenti nella console
 titleSuffix: Configuration Manager
 description: Installare gli aggiornamenti in Configuration Manager dal cloud Microsoft
-ms.date: 08/27/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,19 +11,18 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08cde14b93b5f38aece4ee90f8148f467aab25e3
-ms.sourcegitcommit: 2d38de4846ea47a03cc884cbd3df27db48f64a6a
+ms.openlocfilehash: 944b502c2c4ae258cef693f7bc3f59ed22917fd9
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70110052"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74661244"
 ---
 # <a name="install-in-console-updates-for-configuration-manager"></a>Installare gli aggiornamenti nella console per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager si sincronizza con il servizio cloud Microsoft per ottenere aggiornamenti. Installare quindi tali aggiornamenti dalla console di Configuration Manager.
-
 
 ## <a name="get-available-updates"></a>Ottenere gli aggiornamenti disponibili
 
@@ -102,13 +101,13 @@ Esaminare i passaggi seguenti prima di installare un aggiornamento dalla console
 
 Esaminare l'elenco di controllo dell'aggiornamento valido per le azioni da eseguire prima di iniziare l'aggiornamento:
 
+- [Elenco di controllo per l'installazione dell'aggiornamento 1910](/sccm/core/servers/manage/checklist-for-installing-update-1910)  
+
 - [Elenco di controllo per l'installazione dell'aggiornamento 1906](/sccm/core/servers/manage/checklist-for-installing-update-1906)  
 
 - [Elenco di controllo per l'installazione dell'aggiornamento 1902](/sccm/core/servers/manage/checklist-for-installing-update-1902)
 
 - [Elenco di controllo per l'installazione dell'aggiornamento 1810](/sccm/core/servers/manage/checklist-for-installing-update-1810)  
-
-- [Elenco di controllo per l'installazione dell'aggiornamento 1806](/sccm/core/servers/manage/checklist-for-installing-update-1806)  
 
 ### <a name="bkmk_step2"></a> Passaggio 2: Eseguire il controllo dei prerequisiti prima di installare un aggiornamento  
 
@@ -210,11 +209,12 @@ Per monitorare lo stato di avanzamento, eseguire questi passaggi:
 - Visualizzare il file **CMUpdate.log** disponibile in `<ConfigMgr_Installation_Directory>\Logs` nel server del sito.  
 
 >[!NOTE]
-> - A partire dalla versione 1906 è possibile visualizzare lo stato dell'attività **Aggiorna database di ConfigMgr** durante la fase di **installazione**.
->   - Se l'aggiornamento del database è bloccato, viene visualizzato l'avviso **In corso, Richiesta attenzione**.
->     - cmupdate.log registrerà il nome del programma e l'ID sessione SQL che blocca l'aggiornamento del database.
->   - Quando l'aggiornamento del database non sarà più bloccato, lo stato verrà reimpostato su **In corso** o **Completato**.
->     - Quando l'aggiornamento del database è bloccato, viene effettuato un controllo ogni 5 minuti per verificare se è ancora bloccato.
+> A partire dalla versione 1906 è possibile visualizzare lo stato dell'attività **Aggiorna database di ConfigMgr** durante la fase di **installazione**.
+>
+> - Se l'aggiornamento del database è bloccato, viene visualizzato l'avviso **In corso, Richiesta attenzione**.
+>   - cmupdate.log registrerà il nome del programma e l'ID sessione SQL che blocca l'aggiornamento del database.
+> - Quando l'aggiornamento del database non sarà più bloccato, lo stato verrà reimpostato su **In corso** o **Completato**.
+>   - Quando l'aggiornamento del database è bloccato, viene effettuato un controllo ogni 5 minuti per verificare se è ancora bloccato.
 
 #### <a name="4-when-the-update-installation-completes"></a>4. Quando viene completata l'installazione dell'aggiornamento
 
@@ -236,7 +236,7 @@ Dopo l'aggiornamento di un sito di amministrazione centrale o di un sito primari
 
 Aggiornare la console subito dopo l'aggiornamento del sito.  
 
-Dopo aver completato l'aggiornamento della console, verificare che le versioni della console e del sito siano corrette. Passare a **Informazioni su System Center Configuration Manager** nell'angolo in alto a sinistra della console.  
+Dopo aver completato l'aggiornamento della console, verificare che le versioni della console e del sito siano corrette. Nella console passare a **Informazioni su Configuration Manager** nell'angolo in alto a sinistra.  
 
 > [!Note]  
 > La versione della console è leggermente diversa da quella del sito. La versione secondaria della console corrisponde alla versione finale di Configuration Manager. Ad esempio, in Configuration Manager versione 1802 la versione iniziale del sito è 5.0.8634.1000 e la versione iniziale della console è 5.**1802**.1082.1700. Con i futuri hotfix è possibile che i numeri di build (1082) e revisione (1700) cambino.
@@ -365,19 +365,17 @@ Passare all'area di lavoro **Monitoraggio** e selezionare il nodo **Site Servici
 
 - **Ignora avvisi dei prerequisiti**: se l'installazione dell'aggiornamento si interrompe a causa di un avviso, è quindi possibile selezionare **Ignora avvisi dei prerequisiti**. Questa azione consente di continuare l'installazione dell'aggiornamento dopo alcuni minuti, usando l'opzione per ignorare gli avvisi relativi ai prerequisiti.  
 
-
 ## <a name="bkmk_after"></a> Dopo l'installazione di un aggiornamento in un sito  
 
 Dopo l'aggiornamento del sito, esaminare l'elenco di controllo post-aggiornamento per la versione applicabile:  
+
+- [Elenco di controllo post-aggiornamento per la versione 1910](/sccm/core/servers/manage/checklist-for-installing-update-1910#post-update-checklist)  
 
 - [Elenco di controllo post-aggiornamento per la versione 1906](/sccm/core/servers/manage/checklist-for-installing-update-1906#post-update-checklist)  
 
 - [Elenco di controllo post-aggiornamento per la versione 1902](/sccm/core/servers/manage/checklist-for-installing-update-1902#post-update-checklist)  
 
 - [Elenco di controllo post-aggiornamento per la versione 1810](/sccm/core/servers/manage/checklist-for-installing-update-1810#post-update-checklist)  
-
-- [Elenco di controllo post-aggiornamento per la versione 1806](/sccm/core/servers/manage/checklist-for-installing-update-1806#post-update-checklist)  
-
 
 ## <a name="bkmk_options"></a> Abilitare le funzionalità facoltative degli aggiornamenti  
 
@@ -403,7 +401,8 @@ Le funzionalità seguenti sono facoltative nella versione più recente di Config
 
 -->
 
-- [Sincronizzare i risultati di appartenenza alla raccolta con i gruppi di Azure Active Directory](/sccm/core/clients/manage/collections/create-collections#bkmk_aadcollsync) <!--3607475,C2127144-C8DE-49F6-9CB3-D4F5B59F9515-->
+- [Gestione di BitLocker](/configmgr/protect/plan-design/bitlocker-management) <!-- 3601034,6DD56E46-C3EC-4E38-A16F-E98644BB6434 -->
+- [Sincronizzare i risultati di appartenenza alla raccolta con Azure Active Directory](/sccm/core/clients/manage/collections/create-collections#bkmk_aadcollsync) <!--3607475,C2127144-C8DE-49F6-9CB3-D4F5B59F9515-->
 - [Individuazione dei gruppi utenti in Azure Active Directory](/sccm/core/servers/deploy/configure/configure-discovery-methods#bkmk_azuregroupdisco) <!--3611956,023715E7-BFBA-4E9E-A80F-B5B626464ADD-->
 - [Gruppi di applicazioni](/sccm/apps/deploy-use/create-app-groups) <!--3555907,EE16A1D8-EF1B-4094-845F-AC107E7C621D-->
 - [Debugger di sequenze di attività](/sccm/osd/deploy-use/debug-task-sequence) <!--3612274,C3F37661-69E4-4D53-A39C-5D02F97E0E71-->
@@ -411,15 +410,10 @@ Le funzionalità seguenti sono facoltative nella versione più recente di Config
 - [App client per dispositivi con co-gestione](/sccm/comanage/workloads#client-apps) <!--1357892,CC3AE625-BF72-49B1-8AB1-AF0DCF2D6F4C-->
 - [Aggiornamenti software di terze parti ](/sccm/sum/deploy-use/third-party-software-updates)<!--1357605,1352101,1358714;B5E192AE-C81F-4348-9EF9-07A3C0FBE597-->
 - [Approva le richieste dell'applicazione per gli utenti per ogni dispositivo](/sccm/apps/deploy-use/deploy-applications#bkmk_deploy-settings) <!--1357015,4BA987C9-08FC-48E2-BFFE-C9DCF35B496A-->  
-- [Supporto per Cisco AnyConnect 4.0.07x e versioni successive per iOS](/sccm/mdm/deploy-use/create-vpn-profiles)<!--1357393,A421682F-C1A5-4933-A329-3EF35737E52A-->
 - [Valutazione Attestazione dell'integrità del dispositivo per i criteri di conformità per l'accesso condizionale](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) <!--1235616,0E986DC1-D20A-4386-9EB5-108D9D5118EB-->
 - [Crea ed esegui script](/sccm/apps/deploy-use/create-deploy-scripts) <!--1236459,566F8720-F415-4E10-9A51-CDE682BA2B2E-->
-- [Esegui il passaggio della sequenza di attività](/sccm/osd/understand/task-sequence-steps#child-task-sequence) <!--1261338,3CFFE6AC-D46F-47F0-AD25-19F6EEF21F28-->
-- [Memorizzazione anticipata nella cache dei contenuti della sequenza di attività](/sccm/osd/deploy-use/configure-precache-content) <!--1021244,1C6BD2E9-C8DB-4DEE-A937-AA84B38957A7-->
 - [Aggiornamenti driver di Surface](/sccm/sum/get-started/configure-classifications-and-products) <!--1098490,82AD973A-7CDF-4B67-A665-72875D6E099A-->
 - [Gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) <!--1101764,DD043119-789C-4158-AC79-725E999F385A-->
-- [Punto di servizio del data warehouse](/sccm/core/servers/manage/data-warehouse) <!--1277922,0EAC8088-6895-440F-B871-11E3C305CFCD-->
-- [Peer cache client](/sccm/core/plan-design/hierarchy/client-peer-cache) <!--1101436,4C5F2976-7999-4E0C-BAF2-DEB793AD540E-->
 - [Creazione di PFX](/sccm/protect/deploy-use/introduction-to-certificate-profiles) <!--1321368,CED76B79-929C-4C45-981F-B9BCA6D38A17-->
 - [Connettore di Azure Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics) <!--1258052,73A7EC4D-EF22-4EA4-82A9-419C2A8CFC4D-->
 - [Criteri di Windows Defender Exploit Guard](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy) <!--1355468,8491D4C8-8484-46B8-BCD6-17DC2CADBAEB-->

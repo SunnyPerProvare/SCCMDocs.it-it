@@ -2,7 +2,7 @@
 title: Gestire punti di distribuzione
 titleSuffix: Configuration Manager
 description: Usare i punti di distribuzione per ospitare il contenuto distribuito a utenti e dispositivi.
-ms.date: 07/26/2019
+ms.date: 12/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 49be9ccc0f44656752de18f4814b91c0c0d25f66
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: d739737db498a59743f98a114eefaa1ffed3217e
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536477"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74814913"
 ---
 # <a name="install-and-configure-distribution-points-in-configuration-manager"></a>Installare e configurare punti di distribuzione per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Installando i punti di distribuzione di Configuration Manager è possibile ospitare i file di contenuto da distribuire a utenti e dispositivi. È anche possibile creare gruppi di punti di distribuzione per semplificare la gestione dei punti di distribuzione e la distribuzione di contenuto agli stessi.  
 
@@ -230,6 +230,14 @@ Quando il punto di distribuzione è in modalità di manutenzione, ha i comportam
 
 Prestare attenzione quando si abilita la modalità di manutenzione su più punti di distribuzione. Questa azione può influire sulle prestazioni degli altri punti di distribuzione. A seconda delle configurazioni dei gruppi di limiti, i client potrebbero registrare tempi di download più lunghi o non essere in grado di scaricare il contenuto.
 
+La modalità di manutenzione non deve essere uno stato a lungo termine per qualsiasi punto di distribuzione. Per le azioni con una durata prolungata, è consigliabile rimuovere prima il ruolo del punto di distribuzione.
+
+> [!NOTE]
+> Quando il punto di distribuzione è in modalità di manutenzione, non eseguire le azioni seguenti:<!-- SCCMDocs-pr #4699 -->
+>
+> - Rimuovere il ruolo
+> - Riassegnare un punto di distribuzione
+
 ### <a name="enable-maintenance-mode"></a>Abilitare la modalità di manutenzione
 
 Per impostare un punto di distribuzione sulla modalità di manutenzione, l'account utente richiede l'autorizzazione **Modifica** per la classe **Sito**. I ruoli predefiniti **Amministratore infrastruttura** e **Amministratore completo**, ad esempio, hanno questa autorizzazione.<!-- SCCMDocs-pr issue #3407 -->
@@ -310,7 +318,7 @@ Le impostazioni seguenti si trovano nella pagina **Punto di distribuzione** dell
 
 - **Abilita questo punto di distribuzione per il contenuto pre-installato**: questa impostazione consente di aggiungere contenuto al server prima di distribuire il software. Poiché si trovano già nella raccolta, i file di contenuto non vengono trasferiti attraverso la rete quando si distribuisce il software. Per altre informazioni, vedere [Contenuto pre-installato](/sccm/core/plan-design/hierarchy/manage-network-bandwidth#BKMK_PrestagingContent).  
 
-- **Abilita l'uso di questo punto di distribuzione come server di cache in rete di Ottimizzazione recapito**: a partire dalla versione 1906, è possibile installare un server di cache in rete di Ottimizzazione recapito nei punti di distribuzione. Memorizzando nella cache questo contenuto in locale, i client possono trarre vantaggio dalla funzionalità di Ottimizzazione recapito, tuttavia è possibile contribuire a proteggere i collegamenti WAN. Per altre informazioni, inclusa la descrizione delle impostazioni aggiuntive, vedere [Cache in rete di Ottimizzazione recapito in Configuration Manager](/sccm/core/plan-design/hierarchy/delivery-optimization-in-network-cache).
+- **Abilita l'uso di questo punto di distribuzione come server di Microsoft Connected Cache**: a partire dalla versione 1906, è possibile installare un server di Microsoft Connected Cache nei punti di distribuzione. Memorizzando nella cache questo contenuto in locale, i client possono trarre vantaggio dalla funzionalità di Ottimizzazione recapito, tuttavia è possibile contribuire a proteggere i collegamenti WAN. Per altre informazioni, inclusa la descrizione delle impostazioni aggiuntive, vedere [Microsoft Connected Cache in Configuration Manager](/sccm/core/plan-design/hierarchy/microsoft-connected-cache).
 
 
 ### <a name="bkmk_config-comm"></a> Comunicazioni

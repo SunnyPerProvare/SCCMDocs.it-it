@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec203fec08394a0df9d979b0a32f15741397947e
-ms.sourcegitcommit: 4d789c7e83ae13e22c1c9f6a33dce72d4ff5009d
+ms.openlocfilehash: f0bf382fc9b6dd5cb176755354bec0445b356306
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73842289"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660768"
 ---
 <!-- 
 - Feature 1357546
@@ -105,13 +105,11 @@ Procedure dettagliate guidate che semplificano la risoluzione dei problemi relat
 
 ## <a name="new-and-updated-support-articles"></a>Articoli di supporto nuovi e aggiornati
 
-Articoli di supporto nuovi o aggiornati tra il 13 agosto e il 24 ottobre 2019.
+Articoli di supporto nuovi o aggiornati tra il 25 ottobre e il 27 novembre 2019.
 
-- [KB 4517137: Il computer si blocca al messaggio "Attendi alcuni minuti" in una distribuzione di debug per una sequenza di attività di Configuration Manager](https://support.microsoft.com/help/4517137)
-- [KB 4517138: La distribuzione di debug per una sequenza di attività non viene visualizzata in Configuration Manager](https://support.microsoft.com/help/4517138)
-- [KB 4517870: Gli aggiornamenti pianificati non vengono eseguiti se il server del provider SMS di Configuration Manager è in Windows Server 2012 R2 o Windows Server 2012](https://support.microsoft.com/help/4517870)
-- [KB 4458143: Errore di mancata corrispondenza dell'hash quando i client scaricano Contentinfo.tar dai punti di distribuzione cloud assegnati a più siti primari](https://support.microsoft.com/help/4458143)
-- [KB 4517482: Per gli aggiornamenti di .NET 4.7.2 di agosto 2019 non viene eseguita la sincronizzazione in Configuration Manager](https://support.microsoft.com/help/4517482)
-- [KB 4517869: Aggiornamento cumulativo per Configuration Manager Current Branch, versione 1906](https://support.microsoft.com/help/4517869)
+- [KB 4528414: Console di Configuration Manager visualizza la versione della definizione di Endpoint Protection non aggiornata e l'ora dell'ultimo aggiornamento](https://support.microsoft.com/help/4528414/)
+- [KB 4529905: Ritardi nella distribuzione del contenuto in Configuration Manager Current Branch, versione 1906](https://support.microsoft.com/help/4529905)
+- [KB 4529827: I client di Configuration Manager rilevano erroneamente lo stato di co-gestione](https://support.microsoft.com/help/4529827)
+
 
 Per sottoscrivere la notifica Atom o RSS dei nuovi articoli di supporto di Configuration Manager, vedere [Aggiornamenti dei contenuti del supporto](https://support.microsoft.com/help/4089498/) e selezionare **Microsoft Endpoint Configuration Manager**.  

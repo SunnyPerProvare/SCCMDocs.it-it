@@ -2,7 +2,7 @@
 title: Supporto per Windows 10
 titleSuffix: Configuration Manager
 description: Informazioni sulle versioni di Windows 10 supportate come client o per la distribuzione del sistema operativo con Configuration Manager
-ms.date: 10/18/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24b50ca50f2273161faeb79d20e23d32dc2706c2
-ms.sourcegitcommit: 9ed9551c15abc36f38c92aaeef60dbb699ae7cd8
+ms.openlocfilehash: 447f4eb89dbddb705019c3ed744b29c060958747
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72984373"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660615"
 ---
 # <a name="support-for-windows-10-in-configuration-manager"></a>Supporto per Windows 10 in Configuration Manager  
 
@@ -52,30 +52,33 @@ Una versione di Configuration Manager viene eliminata dalla matrice dopo che ter
 <br/>
 La tabella seguente elenca le versioni di Windows 10 che è possibile usare come client con versioni diverse di Configuration Manager.
 
-| Versione di Windows 10 | Configuration Manager 1802 | Configuration Manager 1806 | Configuration Manager 1810 | Configuration Manager 1902 | Configuration Manager 1906 |
+| Versione di Windows 10 | ConfigMgr 1806 | ConfigMgr 1810 | ConfigMgr 1902 | ConfigMgr 1906 | ConfigMgr 1910 |
 |---------------------|-----|-----|-----|-----|-----|
-| Enterprise 2015 LTSB <!--10/14/2025-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| Enterprise 2016 LTSB <!--10/13/2026-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| Enterprise LTSC 2019 <!--01/09/2029-->   | ![Non supportato](media/Red_X.png)   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| 1709   <!--04/14/2020-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| 1803   <!--11/10/2020-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| 1809   <!--05/11/2021-->   | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| 1903   <!--12/08/2020-->   | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| 1909   <!--TBD-->   | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) |
+| **Enterprise 2015 LTSB** <!--10/14/2025-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| **Enterprise 2016 LTSB** <!--10/13/2026-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| **Enterprise LTSC 2019** <!--01/09/2029-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| **1709**<br>(10.0.16299)   <!--04/14/2020-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| **1803**<br>(10.0.17134)   <!--11/10/2020-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| **1809**<br>(10.0.17763)   <!--05/11/2021-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| **1903**<br>(10.0.18362)   <!--12/08/2020-->   | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| **1909**<br>(10.0.18363)   <!--TBD-->   | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
 
 <!-- lifecycle reference: https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet -->
 
 Per altre informazioni sul ciclo di vita di Windows, vedere [Date importanti nel ciclo di vita di Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)
 
-> [!Note]  
-> Il supporto delle versioni di canale semestrale Windows 10 include le edizioni seguenti: Enterprise, Pro, Education e Pro Education.  
->
-> A partire dalla versione 1906 Configuration Manager supporta Windows 10 Pro for Workstations.
-
 | Chiave |
 |--|
 | ![Supportato](media/green_check.png) = **Supportato**  |
 | ![Non supportato](media/Red_X.png) = **Non supportato** |
+
+### <a name="bkmk_win10-notes"></a> Note sul supporto del client Windows 10
+
+- Il supporto delle versioni di canale semestrale Windows 10 include le edizioni seguenti: Enterprise, Pro, Education e Pro Education.  
+
+- A partire dalla versione 1906 Configuration Manager supporta Windows 10 Pro for Workstations.
+
+- Per Windows 10, versione 1909, il supporto di distribuzione del sistema operativo mostra la versione come 10.0.18362.418.
 
 ### <a name="bkmk_arm64"></a> Windows 10 in ARM64
 
@@ -97,15 +100,12 @@ Quando si distribuiscono sistemi operativi con Configuration Manager, Windows AD
 <br/>
 La tabella seguente elenca le versioni di Windows ADK 10 che è possibile usare con versioni diverse di Configuration Manager.
 
-| Versione di Windows 10 ADK  | Configuration Manager 1802 | Configuration Manager 1806 | Configuration Manager 1810 | Configuration Manager 1902 | Configuration Manager 1906 |
+| Versione di Windows 10 ADK  | ConfigMgr 1806 | ConfigMgr 1810 | ConfigMgr 1902 | ConfigMgr 1906 | ConfigMgr 1910 |
 |--------------------|-----|-----|-----|-----|-----|
-| **1709**<br>(10.1.16299) | ![Supportato](media/green_check.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Non supportato](media/Red_X.png)   | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) |
-| **1803**<br>(10.1.17134) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Non supportato](media/Red_X.png) |
-| **1809**<br>(10.1.17763) | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) |
-| **1903**<br>(10.1.18362) | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-
-> [!Note]  
-> Configuration Manager supporta solo i componenti x86 e amd64 di Windows 10 ADK e attualmente non supporta i componenti ARM e ARM64.
+| **1709**<br>(10.1.16299) | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Non supportato](media/Red_X.png)   | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) |
+| **1803**<br>(10.1.17134) | ![Supportato](media/green_check.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) |
+| **1809**<br>(10.1.17763) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) |
+| **1903**<br>(10.1.18362) | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
 
 |Chiave|
 |--|
@@ -113,5 +113,8 @@ La tabella seguente elenca le versioni di Windows ADK 10 che è possibile usare 
 | ![Compatibile con le versioni precedenti](media/blue_compat.png)  = **Compatibile con le versioni precedenti** <br/> Questa combinazione non è stata testata ma dovrebbe funzionare. Verranno documentati eventuali problemi noti o avvertenze. |
 | ![Non supportato](media/Red_X.png) = **Non supportato** |
 
-> [!Tip]
-> Le build di Windows Server hanno gli stessi requisiti Windows ADK della versione di Windows 10 associata. Ad esempio, Windows Server 2016 è la stessa versione build di Windows 10 LTSB 2016.
+### <a name="bkmk_adk-notes"></a> Note sul supporto di Windows 10 ADK
+
+- Configuration Manager supporta solo i componenti x86 e amd64 di Windows 10 ADK e attualmente non supporta i componenti ARM e ARM64.
+
+- Le build di Windows Server hanno gli stessi requisiti Windows ADK della versione di Windows 10 associata. Ad esempio, Windows Server 2016 è la stessa versione build di Windows 10 LTSB 2016.

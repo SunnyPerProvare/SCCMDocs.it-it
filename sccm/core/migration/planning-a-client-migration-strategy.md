@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 088f300e475e7299ae0f589790c6c9bfabea3544
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132558"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62234577"
 ---
 # <a name="plan-a-client-migration-strategy-in-system-center-configuration-manager"></a>Pianificare una strategia di migrazione client in System Center Configuration Manager
 
@@ -37,7 +37,7 @@ Per eseguire la migrazione dei client dalla gerarchia di origine a una gerarchia
 
 -   **Gerarchia di origine con Configuration Manager 2007:** quando si esegue la migrazione dei client da una gerarchia di origine che esegue una versione supportata di Configuration Manager, il software client esegue l'aggiornamento alla versione client per la gerarchia di destinazione.  
 
--   **System Center 2012 Configuration Manager o gerarchia di origine successiva:** Quando si esegue la migrazione dei client tra gerarchie della stessa versione prodotto, il software client non esegue modifiche o aggiornamenti. Il client esegue invece la riassegnazione dalla gerarchia di origine a un sito della gerarchia di destinazione.  
+-   **System Center 2012 Configuration Manager o gerarchia di origine successiva:** quando si esegue la migrazione dei client tra gerarchie della stessa versione prodotto, il software client non esegue modifiche o aggiornamenti. Il client esegue invece la riassegnazione dalla gerarchia di origine a un sito della gerarchia di destinazione.  
 
     > [!NOTE]  
     >  Quando la versione prodotto di una gerarchia non è supportata per la migrazione alla gerarchia di destinazione, aggiornare a una versione prodotto compatibile tutti i siti e i client nella gerarchia di origine. Dopo che la gerarchia di origine è stata aggiornata alla versione prodotto supportata, è possibile eseguire la migrazione tra le gerarchie. Per altre informazioni, vedere [Versioni di Configuration Manager supportate per la migrazione](../../core/migration/prerequisites-for-migration.md#BKMK_SupportedMigrationVersions) in [Prerequisiti per la migrazione in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  

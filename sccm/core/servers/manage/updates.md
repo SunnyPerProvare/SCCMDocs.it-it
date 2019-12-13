@@ -2,7 +2,7 @@
 title: Aggiornamenti e manutenzione
 titleSuffix: Configuration Manager
 description: Informazioni sul metodo di manutenzione nella console denominato Aggiornamenti e manutenzione che semplifica l'individuazione e l'installazione degli aggiornamenti consigliati.
-ms.date: 07/26/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,16 +11,16 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4901494c195c4602fe40aa191621a0322bc9f8e2
-ms.sourcegitcommit: 75f48834b98ea6a238d39f24e04c127b2959d913
+ms.openlocfilehash: 269dba944d014a756389fb5f80fb56eb26e2641b
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68604511"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74661210"
 ---
 # <a name="updates-and-servicing-for-configuration-manager"></a>Aggiornamenti e manutenzione per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager usa un metodo di manutenzione nella console denominato **Aggiornamenti e manutenzione**. Questo metodo nella console semplifica l'individuazione e l'installazione degli aggiornamenti consigliati per l'infrastruttura di Configuration Manager. La manutenzione nella console integra gli aggiornamenti fuori programma, come gli hotfix. Gli aggiornamenti fuori programma sono destinati ai clienti che devono risolvere problemi che potrebbero essere specifici dell'ambiente in uso.  
 
@@ -62,11 +62,11 @@ Le versioni supportate seguenti di Configuration Manager sono attualmente dispon
 
 | Version | Data di disponibilità | [Data di fine supporto](/sccm/core/servers/manage/current-branch-versions-supported) | Versione di base | Aggiornamento nella console |  
 |-------------|-----------|------------|--------------|------------------------|  
-| [1906](/sccm/core/plan-design/changes/whats-new-in-version-1906)<br /><br /> 5.00.8853.1000 | 26 luglio 2019 | 26 gennaio 2021 | No | Sì |
-| [1902](/sccm/core/plan-design/changes/whats-new-in-version-1902)<br /><br /> 5.00.8790.1000 | 27 marzo 2019 | 27 settembre 2020 | Sì<sup>[Nota 1](#bkmk_note1)</sup> | Sì |
-| [1810](/sccm/core/plan-design/changes/whats-new-in-version-1810)<br /><br /> 5.00.8740.1000 | 27 novembre 2018 | 27 maggio 2020 | No | Sì |
-| [1806](/sccm/core/plan-design/changes/whats-new-in-version-1806)<br /><br /> 5.00.8692.1000 | 31 luglio 2018 | 31 gennaio 2020 | No | Sì |
-| [1802](/sccm/core/plan-design/changes/whats-new-in-version-1802)<br /><br /> 5.00.8634.1000 | 22 marzo 2018 | 22 settembre 2019 | Sì<sup>[Nota 1](#bkmk_note1)</sup> | Sì |
+| [**1910**](/sccm/core/plan-design/changes/whats-new-in-version-1910)<br /> (5.00.8913) | 29 novembre 2019 | 29 maggio 2021 | No | Sì |
+| [**1906**](/sccm/core/plan-design/changes/whats-new-in-version-1906)<br /> (5.00.8853) | 26 luglio 2019 | 26 gennaio 2021 | No | Sì |
+| [**1902**](/sccm/core/plan-design/changes/whats-new-in-version-1902)<br /> (5.00.8790) | 27 marzo 2019 | 27 settembre 2020 | Sì<sup>[Nota 1](#bkmk_note1)</sup> | Sì |
+| [**1810**](/sccm/core/plan-design/changes/whats-new-in-version-1810)<br /> (5.00.8740) | 27 novembre 2018 | 27 maggio 2020 | No | Sì |
+| [**1806**](/sccm/core/plan-design/changes/whats-new-in-version-1806)<br /> (5.00.8692) | 31 luglio 2018 | 31 gennaio 2020 | No | Sì |
 
 <a name="bkmk_note1"></a>
 
@@ -85,18 +85,19 @@ La tabella seguente elenca le versioni cronologiche di Configuration Manager Cur
 
 | Version | Data di disponibilità | Data di fine supporto | Versione di base | Aggiornamento nella console |  
 |-------------|-----------|------------|--------------|------------------------|  
-| 1710 <br /><br /> 5.00.8577.1000 | 20 novembre 2017 | 20 maggio 2019 | No | Sì |
-| 1706 <br /><br /> 5.00.8540.1000 | 31 luglio 2017 | 31 luglio 2018 | No | Sì |
-| 1702 <br /><br /> 5.00.8498.1000 | 27 marzo 2017 | 27 marzo 2018 | Sì | Sì |
-| 1610 <br /><br /> 5.00.8458.1000 | 18 novembre 2016 | 18 novembre 2017 | No | Sì |
-| 1606 <br /><br /> 5.00.8412.1000 | 22 luglio 2016 | 22 luglio 2017 | No | Sì |
-| 1606 con hotfix rollup 1606 (KB3186654) <br><br>5.00.8412.1307 | 12 ottobre 2016 | 12 ottobre 2017 | Sì | No |
-| 1602 <br /><br /> 5.00.8355.1000 | 11 marzo 2016 | 11 marzo 2017 | No | Sì |
-| 1511 <br /><br /> 5.00.8325.1000 | 8 dicembre 2015 | 8 dicembre 2016 | Sì | No |  
+| **1802** <br /> (5.00.8634) | 22 marzo 2018 | 22 settembre 2019 | Sì | Sì |
+| **1710** <br /> (5.00.8577) | 20 novembre 2017 | 20 maggio 2019 | No | Sì |
+| **1706** <br /> (5.00.8540) | 31 luglio 2017 | 31 luglio 2018 | No | Sì |
+| **1702** <br /> (5.00.8498) | 27 marzo 2017 | 27 marzo 2018 | Sì | Sì |
+| **1610** <br /> (5.00.8458) | 18 novembre 2016 | 18 novembre 2017 | No | Sì |
+| **1606** <br /> (5.00.8412.1000) | 22 luglio 2016 | 22 luglio 2017 | No | Sì |
+| **1606 con KB3186654** <br />5.00.8412.1307) | 12 ottobre 2016 | 12 ottobre 2017 | Sì | No |
+| **1602** <br /> (5.00.8355) | 11 marzo 2016 | 11 marzo 2017 | No | Sì |
+| **1511** <br /> (5.00.8325) | 8 dicembre 2015 | 8 dicembre 2016 | Sì | No |  
 
 #### <a name="how-to-check-the-version"></a>Come controllare la versione
 
-Per controllare la versione del sito di Configuration Manager, nella console passare a **Informazioni su System Center Configuration Manager** nell'angolo in alto a sinistra. Questa finestra di dialogo consente di visualizzare le versioni del sito e della console.  
+Per controllare la versione del sito di Configuration Manager, nella console passare a **Informazioni su Configuration Manager** nell'angolo in alto a sinistra. Questa finestra di dialogo consente di visualizzare le versioni del sito e della console.  
 
 > [!Note]  
 > La versione della console è leggermente diversa da quella del sito. La versione secondaria della console corrisponde alla versione finale di Configuration Manager. Ad esempio, in Configuration Manager versione 1802 la versione iniziale del sito è 5.0.8634.1000 e la versione iniziale della console è 5.**1802**.1082.1700. Con i futuri hotfix è possibile che i numeri di build (1082) e revisione (1700) cambino.

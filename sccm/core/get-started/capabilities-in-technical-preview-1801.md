@@ -13,11 +13,11 @@ manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c0ce9a88e66e441749034dff3a6e0dc1dd6bc745
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56134004"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62226366"
 ---
 # <a name="capabilities-in-technical-preview-1801-for-system-center-configuration-manager"></a>Funzionalità della Technical Preview 1801 per System Center Configuration Manager
 
@@ -60,7 +60,8 @@ Vedere [Technical Preview per System Center Configuration Manager](/sccm/core/ge
 
 
 ## <a name="create-phased-deployments"></a>Creare distribuzioni in fasi
-<!-- 1357405 --> Le distribuzioni in fasi automatizzano un'implementazione del software coordinata e in sequenza senza creare più distribuzioni. In questa versione Technical Preview è possibile completare la distribuzione guidata in fasi per le sequenze di attività nella console di amministrazione. Le distribuzioni non vengono tuttavia create. 
+<!-- 1357405 -->
+Le distribuzioni in fasi automatizzano un'implementazione del software coordinata e in sequenza senza creare più distribuzioni. In questa versione Technical Preview è possibile completare la distribuzione guidata in fasi per le sequenze di attività nella console di amministrazione. Le distribuzioni non vengono tuttavia create. 
 
 ### <a name="try-it-out"></a>Verifica  
   Provare a completare le attività. Quindi inviare **Commenti e suggerimenti** dalla scheda **Home** della barra multifunzione.
@@ -75,7 +76,8 @@ Vedere [Technical Preview per System Center Configuration Manager](/sccm/core/ge
 7. Confermare le selezioni nella scheda **Riepilogo** e fare clic su **Avanti** per continuare.
 
 ## <a name="co-management-reporting"></a>Creazione di report di co-gestione
-<!-- 1356648 --> Se si usano le funzionalità di [co-gestione](/sccm/core/clients/manage/co-management-overview) è ora possibile visualizzare un dashboard con informazioni sulla co-gestione nell'ambiente. Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio**, espandere **Preparazione aggiornamenti** e selezionare il dashboard **Co-gestione**. Il dashboard include i riquadri seguenti:
+<!-- 1356648 -->
+Se si usano le funzionalità di [co-gestione](/sccm/core/clients/manage/co-management-overview) è ora possibile visualizzare un dashboard con informazioni sulla co-gestione nell'ambiente. Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio**, espandere **Preparazione aggiornamenti** e selezionare il dashboard **Co-gestione**. Il dashboard include i riquadri seguenti:
 - **Co-managed devices** (Dispositivi co-gestiti): la percentuale di dispositivi nell'ambiente abilitati per la co-gestione
 - **Distribuzione del sistema operativo**: la suddivisione dei sistemi operativi per versione. In questo grafico vengono usati i raggruppamenti seguenti:
   - Windows 7 e 8.x
@@ -98,7 +100,8 @@ Vedere [Technical Preview per System Center Configuration Manager](/sccm/core/ge
 
 
 ## <a name="improvements-to-automatic-deployment-rule-evaluation-schedule"></a>Miglioramenti alla pianificazione di valutazione delle regole di distribuzione automatica
-<!-- 1357133 --> In risposta a quanto richiesto nei [commenti e suggerimenti in UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8819518-software-update-patch-tuesday-scheduling), è ora possibile pianificare la valutazione della regola di distribuzione automatica per specificare un offset rispetto a un giorno di base. Con un offset di due giorni dopo il secondo martedì del mese, ad esempio, la regola viene valutata di giovedì. 
+<!-- 1357133 -->
+In risposta a quanto richiesto nei [commenti e suggerimenti in User Voice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8819518-software-update-patch-tuesday-scheduling), è ora possibile pianificare la valutazione delle regole di distribuzione automatica (ADR, Automatic Deployment Rule) con un offset da un giorno di base. Con un offset di due giorni dopo il secondo martedì del mese, ad esempio, la regola viene valutata di giovedì. 
 
 ### <a name="try-it-out"></a>Verifica  
  Provare a completare le attività. Quindi inviare **Commenti e suggerimenti** dalla scheda **Home** della barra multifunzione. <br/>
@@ -115,7 +118,8 @@ Vedere [Technical Preview per System Center Configuration Manager](/sccm/core/ge
 
 
 ## <a name="reassign-distribution-point"></a>Riassegnare un punto di distribuzione
-<!-- 1306937 --> Molti clienti hanno infrastrutture di Configuration Manager di grandi dimensioni e stanno diminuendo i siti primari o secondari per semplificare il proprio ambiente. Per distribuire il contenuto ai client gestiti, questi clienti devono comunque mantenere i punti di distribuzione nelle succursali. Questi punti di distribuzione spesso includono più terabyte di contenuto. La distribuzione di questo contenuto ai server remoti è dispendiosa in termini di tempo e larghezza di banda di rete. 
+<!-- 1306937 -->
+Molti clienti hanno infrastrutture di Configuration Manager di grandi dimensioni e stanno diminuendo i siti primari o secondari per semplificare il proprio ambiente. Per distribuire il contenuto ai client gestiti, questi clienti devono comunque mantenere i punti di distribuzione nelle succursali. Questi punti di distribuzione spesso includono più terabyte di contenuto. La distribuzione di questo contenuto ai server remoti è dispendiosa in termini di tempo e larghezza di banda di rete. 
 
 Questa funzionalità consente di riassegnare un punto di distribuzione a un altro sito primario senza ridistribuire il contenuto. Questa azione aggiorna l'assegnazione del sistema del sito mantenendo tutto il contenuto nel server. Se è necessario riassegnare più punti di distribuzione, eseguire prima questa azione su un singolo punto di distribuzione, quindi procedere con gli altri server uno alla volta.
 
@@ -132,7 +136,8 @@ Questa opzione non funziona in questa versione a causa del limite della Technica
 
 
 ## <a name="improvements-to-hardware-inventory"></a>Miglioramenti all'inventario hardware
-<!-- 1357389 --> Per le classi appena aggiunte è possibile specificare lunghezze di stringa superiori a 255 caratteri per proprietà dell'inventario hardware diverse dalle chiavi.
+<!-- 1357389 -->
+Per le classi appena aggiunte è possibile specificare lunghezze di stringa superiori a 255 caratteri per le proprietà dell'inventario hardware diverse dalle chiavi.
 
 ### <a name="try-it-out"></a>Verifica  
 Provare a completare le attività. Quindi inviare **Commenti e suggerimenti** dalla scheda **Home** della barra multifunzione.<br/>
@@ -149,7 +154,8 @@ Provare a completare le attività. Quindi inviare **Commenti e suggerimenti** da
 
 
 ## <a name="improvements-to-client-settings-for-software-center"></a>Miglioramenti alle impostazioni client per Software Center
-<!-- 1351224 & 1355146 --> In questa versione della Technical Preview sono stati apportati miglioramenti per la personalizzazione di Software Center nelle impostazioni client. 
+<!-- 1351224 & 1355146 -->
+In questa versione della Technical Preview sono stati apportati miglioramenti per la personalizzazione di Software Center nelle impostazioni client. 
 
 1. Le impostazioni client per Software Center ora includono un pulsante **Personalizza**.
 2. È stata aggiunta un'anteprima che consente di visualizzare l'aspetto del banner di Software Center.<!--1351224-->
@@ -167,14 +173,16 @@ Provare a completare le attività. Quindi inviare **Commenti e suggerimenti** da
 
 
 ## <a name="new-settings-for-windows-defender-application-guard"></a>Nuove impostazioni per Windows Defender Application Guard
-<!-- 1356256 --> Per i dispositivi Windows 10 versione 1709 e successive sono disponibili due nuove impostazioni per l'interazione con l'host per [Windows Defender Application Guard](/sccm/protect/deploy-use/create-deploy-application-guard-policy). 
+<!-- 1356256 -->
+Per i dispositivi Windows 10 versione 1709 e successive sono disponibili due nuove impostazioni per l'interazione con l'host per [Windows Defender Application Guard](/sccm/protect/deploy-use/create-deploy-application-guard-policy). 
 1. È possibile concedere ai siti Web l'accesso all'unità di elaborazione grafica virtuale dell'host. 
 2. È possibile salvare in modo permanente nell'host i file scaricati all'interno del contenitore. </br>
 
 
 
 ## <a name="improvements-to-run-scripts"></a>Miglioramenti alla funzionalità Esegui script
-<!-- 1236459 --> La [funzionalità **Esegui script**](/sccm/apps/deploy-use/create-deploy-scripts) consente ora di importare ed eseguire script PowerShell firmati. 
+<!-- 1236459 -->
+La [funzionalità **Esegui script**](/sccm/apps/deploy-use/create-deploy-scripts) consente ora di importare ed eseguire script PowerShell firmati. 
 - Per mantenere l'integrità dello script, è necessario importare gli script firmati anziché usare l'operazione di copia e incolla. 
 - Dopo l'importazione non è possibile modificare gli script firmati importati.
     

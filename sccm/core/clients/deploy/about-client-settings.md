@@ -2,7 +2,7 @@
 title: Impostazioni client
 titleSuffix: Configuration Manager
 description: Informazioni sulle impostazioni predefinite e personalizzate per il controllo dei comportamenti client
-ms.date: 08/23/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e99d97cb512c8f80a576a6de2c033e0f7aa318cf
-ms.sourcegitcommit: 9ac48edc78ef774d1a2bbfaa3c6206ef5b2382f6
+ms.openlocfilehash: 194889939601a30234b0d72cf27f73581ce09aab
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74299956"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74813824"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile gestire tutte le impostazioni client nella console di Configuration Manager dal nodo **Impostazioni client** nell'area di lavoro **Amministrazione**. Con Configuration Manager viene specificato un set di impostazioni predefinite. Quando si modificano le impostazioni client predefinite, tali impostazioni vengono applicate a tutti i client nella gerarchia. È anche possibile configurare le impostazioni client personalizzate, che sostituiscono le impostazioni client predefinite quando le si assegnano a raccolte. Per altre informazioni, vedere [Come configurare le impostazioni client](/sccm/core/clients/deploy/configure-client-settings).
 
@@ -125,7 +125,6 @@ Questa impostazione si applica agli utenti i cui computer si trovano nella Intra
 >
 > Se ancora in uso, il Catalogo applicazioni riceve l'elenco del software disponibile per gli utenti dal server del sito. Per questa ragione, questa impostazione non deve essere **Sì** perché gli utenti possano visualizzare e richiedere applicazioni dal Catalogo applicazioni. Se questa impostazione è **No**, gli utenti non possono installare le applicazioni visualizzate nel Catalogo applicazioni.  
 
-
 ### <a name="enable-user-policy-requests-from-internet-clients"></a>Abilitare le richieste dei criteri utente dai client Internet
 
 Impostare questa opzione su **Sì** se si vuole che gli utenti ricevano i criteri utente nei computer basati su Internet. Devono essere rispettati anche i requisiti seguenti:  
@@ -143,6 +142,17 @@ Se si imposta questa opzione su **No** o uno o più dei requisiti precedenti non
 > [!NOTE]  
 > Per la gestione client basata su Internet, le richieste di approvazione dell'applicazione da parte degli utenti non richiedono criteri utente o l'autenticazione dell'utente. Cloud Management Gateway non supporta le richieste di approvazione dell'applicazione.  
 
+### <a name="enable-user-policy-for-multiple-user-sessions"></a>Abilitare i criteri utente per più sessioni utente
+
+<!--4737447-->
+
+*Si applica alla versione 1910*
+
+Per impostazione predefinita, questa impostazione è disabilitata. Anche se si abilitano i criteri utente, a partire dalla versione 1906 il client li disabilita per impostazione predefinita su qualsiasi dispositivo che consente più sessioni utente attive simultanee. Ad esempio, server terminal o Windows 10 Enterprise multisessione in [Desktop virtuale Windows](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#windows-virtual-desktop).
+
+Il client disabilita i criteri utente solo quando rileva questo tipo di dispositivo durante una nuova installazione. Per i client esistenti di questo tipo che vengono aggiornati alla versione 1906 o successiva, viene mantenuto il comportamento precedente. In un dispositivo esistente l'impostazione dei criteri utente viene configurata anche se il dispositivo consente più sessioni utente.
+
+Se è necessario usare criteri utente e si accettano le potenziali conseguenze sulle prestazioni, abilitare questa impostazione client.
 
 
 ## <a name="cloud-services"></a>Servizi cloud
@@ -190,7 +200,7 @@ Per altre informazioni sulle tre impostazioni seguenti, vedere [Notifiche utente
 ### <a name="default-application-catalog-website-point"></a>Punto per siti Web del Catalogo applicazioni predefinito
 
 > [!Important]  
-> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >
@@ -202,7 +212,7 @@ Configuration Manager usa questa impostazione per connettere gli utenti al Catal
 ### <a name="add-default-application-catalog-website-to-internet-explorer-trusted-sites-zone"></a>Aggiungere il sito Web del Catalogo applicazioni predefinito all'area siti attendibili di Internet Explorer
 
 > [!Important]  
-> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >
@@ -348,10 +358,10 @@ I gruppi di limiti di Configuration Manager consentono di definire e regolamenta
 
 Scegliere **Sì** per applicare l'identificatore del gruppo di limiti come identificatore di gruppo di Ottimizzazione recapito sul client. Quando il client comunica con il servizio cloud Ottimizzazione recapito, usa questo identificatore per individuare i peer con il contenuto desiderato.
 
-### <a name="enable-devices-managed-by-configuration-manager-to-use-delivery-optimization-in-network-cache-servers-beta-for-content-download"></a>Abilitare i dispositivi gestiti da Configuration Manager in modo che usino i server di cache in rete di Ottimizzazione recapito (beta) per il download dei contenuti
+### <a name="enable-devices-managed-by-configuration-manager-to-use-microsoft-connected-cache-servers-for-content-download"></a>Abilitare i dispositivi gestiti da Configuration Manager in modo che usino i server di Microsoft Connected Cache per il download dei contenuti
 
 <!--3555764-->
-Scegliere **Sì** per consentire ai client di scaricare i contenuti da un punto di distribuzione locale abilitato come server di cache in rete di Ottimizzazione recapito. Per altre informazioni, vedere [Cache in rete di Ottimizzazione recapito in Configuration Manager](/sccm/core/plan-design/hierarchy/delivery-optimization-in-network-cache).
+Scegliere **Sì** per consentire ai client di scaricare i contenuti da un punto di distribuzione locale abilitato come server di Microsoft Connected Cache. Per altre informazioni, vedere [Microsoft Connected Cache in Configuration Manager](/sccm/core/plan-design/hierarchy/microsoft-connected-cache).
 
 
 ## <a name="endpoint-protection"></a>Endpoint Protection
@@ -656,8 +666,10 @@ Quando si abilita questa opzione, le applicazioni che sono già installate non c
 
 ### <a name="bkmk_HideAppCat"></a> Nascondi il collegamento al Catalogo applicazioni in Software Center
 
-A partire da Configuration Manager versione 1806, è possibile specificare la visibilità del collegamento al sito Web del Catalogo applicazioni in Software Center. Quando questa opzione è impostata, gli utenti non possono visualizzare il collegamento al sito Web del Catalogo applicazioni nel nodo Stato dell'installazione di Software Center. <!--1358214-->
+Specifica la visibilità del collegamento al sito Web del Catalogo applicazioni in Software Center. Quando questa opzione è impostata, gli utenti non possono visualizzare il collegamento al sito Web del Catalogo applicazioni nel nodo Stato dell'installazione di Software Center. <!--1358214-->
 
+> [!Important]  
+> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 
 ### <a name="software-center-tab-visibility"></a>Visibilità delle schede di Software Center
 
@@ -691,7 +703,7 @@ Configurare le impostazioni aggiuntive di questo gruppo su **Sì** per rendere v
 - **Stato installazione**
 - **Conformità del dispositivo**
 - **Opzioni**
-- **Specifica una scheda personalizzata per Software Center** (a partire dalla versione 1806) <!--1358132-->
+- **Specifica una scheda personalizzata per Software Center** <!--1358132-->
     - **Nome scheda**
     - **URL del contenuto**
 
@@ -866,10 +878,11 @@ Usare questa impostazione per specificare il periodo di tempo per l'impostazione
 
 *(Funzionalità introdotta nella versione 1902)*
 
-Impostare questa opzione su **Sì** per consentire ai client di usare file di contenuto differenziale. Questa impostazione consente all'agente di Windows Update sul dispositivo di determinare il contenuto necessario e di scaricarlo in modo selettivo.
+Impostare questa opzione su **Sì** per consentire ai client di usare file di contenuto differenziale. Questa impostazione consente all'agente di Windows Update sul dispositivo di determinare il contenuto necessario e di scaricarlo in modo selettivo. 
 
-> [!NOTE]
-> Questa impostazione client sostituisce **Abilita l'installazione di file per l'installazione rapida nei client**. Impostare questa opzione su **Sì** per consentire ai client di usare file di installazione rapida. Per altre informazioni, vedere [Gestire i file di installazione rapida per gli aggiornamenti di Windows 10](/sccm/sum/deploy-use/manage-express-installation-files-for-windows-10-updates).
+- Prima di abilitare questa impostazione client, verificare che la funzionalità Ottimizzazione recapito sia configurata in modo appropriato per l'ambiente in uso. Per altre informazioni, vedere [Ottimizzazione recapito di Windows](/sccm/sum/deploy-use/optimize-windows-10-update-delivery#windows-delivery-optimization).
+ - Questa impostazione client sostituisce **Abilita l'installazione di file per l'installazione rapida nei client**. Impostare questa opzione su **Sì** per consentire ai client di usare file di installazione rapida. Per altre informazioni, vedere [Gestire i file di installazione rapida per gli aggiornamenti di Windows 10](/sccm/sum/deploy-use/manage-express-installation-files-for-windows-10-updates).
+ - A partire da Configuration Manager versione 1910, se questa opzione è impostata, il download del contenuto differenziale viene usato per tutti i file di installazione di Windows Update, non solo per i file di installazione rapida.
 
 
 ### <a name="port-that-clients-use-to-receive-requests-for-delta-content"></a>Porta usata dai client per ricevere richieste per contenuto differenziale
@@ -889,6 +902,19 @@ Impostare questa opzione su **Sì** per consentire la configurazione delle impos
 ### <a name="bkmk_SUMMaint"></a> Consenti l'installazione degli aggiornamenti software nella finestra di manutenzione "Tutte le distribuzioni" quando la finestra di manutenzione "Aggiornamento software" è disponibile
 
 Quando si imposta questa opzione su **Sì** e per il client è stata definita almeno una finestra di manutenzione "Aggiornamento software", gli aggiornamenti software verranno installati durante una finestra di manutenzione "Tutte le distribuzioni". Per impostazione predefinita, questa impostazione è impostata su **No**. Questa impostazione client è stata aggiunta in Configuration Manager versione 1810. <!--2839307-->
+
+> [!NOTE]
+> Questa impostazione si applica anche alle finestre di manutenzione configurate per l'applicazione a **Sequenze di attività**.<!-- SCCMDocs-pr #4596 -->
+
+#### <a name="maintenance-window-example"></a>Esempio di finestre di manutenzione
+
+È ad esempio possibile configurare le finestre di manutenzione seguenti:
+
+- **Distribuzione completa**: 02:00 - 04:00
+- **Aggiornamenti software**: 04:00 - 06:00
+
+Per impostazione predefinita, il client installa gli aggiornamenti software solo durante la seconda finestra di manutenzione. Ignora la finestra di manutenzione per tutte le distribuzioni in questo scenario. Quando si imposta questa opzione su **Sì**, il client installa gli aggiornamenti software nell'intervallo di tempo compreso tra le 02.00 e le 06.00.
+
 
 ### <a name="bkmk_thread-priority"></a> Specificare la priorità del thread per gli aggiornamenti delle funzionalità
 

@@ -2,7 +2,7 @@
 title: Versioni Current Branch
 titleSuffix: Configuration Manager
 description: Informazioni sulla cronologia delle versioni di Configuration Manager e sulle fasi del servizio offerto.
-ms.date: 07/26/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,18 +11,18 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1603fb604a4dccb0b61ae69c9c3d54d794c42e40
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: e98cf178e7c88ec441bd46cb61e8b5c2a33831bb
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536303"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74661303"
 ---
 # <a name="support-for-configuration-manager-current-branch-versions"></a>Supporto per le versioni Current Branch di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Microsoft prevede di rilasciare diversi aggiornamenti per le versioni Current Branch di Configuration Manager ogni anno. Per le versioni di Configuration Manager precedenti alla 1710, il supporto è per 12 mesi. A partire dalla versione 1710, ogni versione di aggiornamento continua a essere supportata per 18 mesi dalla data in cui viene resa disponibile a livello generale. Microsoft fornisce il supporto tecnico per l'intero periodo. Ci sono due fasi di manutenzione distinte che dipendono dalla disponibilità della versione Current Branch più recente.  
+Microsoft prevede di rilasciare diversi aggiornamenti per le versioni Current Branch di Configuration Manager ogni anno. Il supporto di ogni versione aggiornata dura 18 mesi dalla data di rilascio con disponibilità generale. Microsoft fornisce il supporto tecnico per l'intero periodo. Ci sono due fasi di manutenzione distinte che dipendono dalla disponibilità della versione Current Branch più recente:
 
 - Fase di manutenzione **Aggiornamenti di sicurezza e critici**: quando si esegue la versione Current Branch più recente di Configuration Manager si ricevono sia gli aggiornamenti critici che gli aggiornamenti di sicurezza.  
 

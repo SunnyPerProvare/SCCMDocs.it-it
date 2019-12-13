@@ -2,7 +2,7 @@
 title: Prerequisiti del sito
 titleSuffix: Configuration Manager
 description: Informazioni su come configurare un computer Windows come un server di sistema del sito di Configuration Manager.
-ms.date: 07/31/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d585df8daaebc3c421aaf9aef9d58a58cfbf6fe
-ms.sourcegitcommit: 08ba85071b886cccfc023fabb21e59c0035c2752
+ms.openlocfilehash: 201441b4fd00199d5c8730b10dbb8631b69c1ee6
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74249880"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660581"
 ---
 # <a name="site-and-site-system-prerequisites-for-configuration-manager"></a>Prerequisiti del sito e del sistema del sito per Configuration Manager
 
@@ -194,7 +194,7 @@ Quando si installa un nuovo sito, Configuration Manager installa automaticamente
 ## <a name="bkmk_2012acwspreq"></a> Punto per siti Web del catalogo applicazioni  
 
 > [!Important]  
-> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >
@@ -248,7 +248,7 @@ Per altre informazioni sulle versioni di .NET Framework, vedere gli articoli seg
 ## <a name="bkmk_2012ACwsitepreq"></a> Punto per servizi Web del catalogo applicazioni  
 
 > [!Important]  
-> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >
@@ -395,12 +395,12 @@ Quando si installa un nuovo sito, Configuration Manager installa automaticamente
 
 ### <a name="to-support-pxe-or-multicast"></a>Per il supporto di PXE o del multicast  
 
+- Abilitare un risponditore PXE in un punto di distribuzione senza Servizi di distribuzione Windows.  
+
 - Installare e configurare il ruolo Servizi di distribuzione Windows di Windows Server.  
 
     > [!NOTE]  
     > Servizi di distribuzione Windows viene installato e configurato automaticamente quando si configura un punto di distribuzione per il supporto di PXE o del multicast in un server che esegue Windows Server 2012 o versioni successive.  
-
-- A partire dalla versione 1806, è possibile abilitare un risponditore PXE in un punto di distribuzione senza Servizi di distribuzione Windows.  
 
 - Per un punto di distribuzione abilitato per multicast, verificare che il SQL Server Native Client sia installato e aggiornato. Per altre informazioni, vedere i [controlli dei prerequisiti per SQL Server Native Client](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-server-native-client).
 
@@ -765,12 +765,12 @@ Quando si usa una configurazione personalizzata di IIS, è possibile rimuovere l
 
 ### <a name="to-support-pxe-or-multicast"></a>Per il supporto di PXE o del multicast  
 
+- Abilitare un risponditore PXE in un punto di distribuzione senza Servizi di distribuzione Windows.  
+
 - Installare e configurare il ruolo Servizi di distribuzione Windows di Windows Server.  
 
     > [!NOTE]  
     > Servizi di distribuzione Windows viene installato e configurato automaticamente quando si configura un punto di distribuzione per il supporto di PXE o del multicast in un server che esegue Windows Server 2012 o versioni successive.  
-
-- A partire dalla versione 1806, è possibile abilitare un risponditore PXE in un punto di distribuzione senza Servizi di distribuzione Windows.  
 
 Per altre informazioni, vedere [Installare e configurare i punti di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_config-pxe).
 

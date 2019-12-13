@@ -1,99 +1,118 @@
 ---
 title: Caratteristiche e funzionalità
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità di gestione principali di System Center Configuration Manager.
-ms.date: 12/29/2016
+description: Informazioni sulle funzionalità di gestione principali di Configuration Manager.
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 5d388399-07ca-431c-a9b2-56c69771aa87
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 235355dff634bab09ef7be65645dbb32c5b86cf9
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 1df7198895878d5ffea296b24790067545c0e42b
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56133715"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660734"
 ---
-# <a name="features-and-capabilities-of-system-center-configuration-manager"></a>Caratteristiche e funzionalità di System Center Configuration Manager
+# <a name="features-and-capabilities-of-configuration-manager"></a>Caratteristiche e funzionalità di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Di seguito sono descritte le funzionalità di gestione principali di System Center Configuration Manager. Poiché ogni funzionalità ha requisiti diversi, le funzionalità che si intende usare potrebbero influire sulla struttura e l'implementazione della gerarchia di Configuration Manager. Se, ad esempio, si desidera distribuire il software nei dispositivi della gerarchia, è necessario installare il ruolo del sistema del sito del punto di distribuzione.  
+Questo articolo include un riepilogo delle principali funzionalità di gestione di Configuration Manager. Poiché ogni funzionalità ha prerequisiti diversi, la modalità d'uso di ciascuna potrebbe influire sulla struttura e l'implementazione della gerarchia di Configuration Manager. Se, ad esempio, si vogliono distribuire gli aggiornamenti del software nei dispositivi della gerarchia, è necessario installare il ruolo del sistema del sito del punto di aggiornamento software.  
 
- Per altre informazioni sulla pianificazione e l'installazione di Configuration Manager per supportare queste funzionalità di gestione nell'ambiente, vedere [Get ready for System Center Configuration Manager](../../../core/plan-design/get-ready.md) (Preparativi per System Center Configuration Manager).  
+Per altre informazioni su come pianificare e installare Configuration Manager per supportare queste funzionalità di gestione nel proprio ambiente, vedere [Preparativi per Configuration Manager](/sccm/core/plan-design/get-ready).  
 
- **Gestione delle applicazioni**  
+## <a name="co-management"></a>Co-gestione
 
- Fornisce un set di strumenti e risorse che consentono di creare, gestire, distribuire e monitorare le applicazioni in una gamma di diversi dispositivi gestiti. Configuration Manager offre anche strumenti che consentono di proteggere i dati aziendali contenuti nelle app dell'utente. Vedere [Introduction to application management](/sccm/apps/understand/introduction-to-application-management) (Introduzione alla gestione delle applicazioni).
+La co-gestione è uno dei modi principali per collegare la distribuzione di Configuration Manager esistente al cloud di Microsoft 365. Consente di gestire dispositivi Windows 10 contemporaneamente tramite Configuration Manager e Microsoft Intune. La co-gestione consente di collegare al cloud gli investimenti esistenti in Configuration Manager tramite l'aggiunta di nuove funzionalità, come l'accesso condizionale. Per altre informazioni, vedere [Informazioni sulla co-gestione](/sccm/comanage/overview).
 
- **Accesso alle risorse aziendali**  
+## <a name="desktop-analytics"></a>Desktop Analytics
 
- Offre un insieme di strumenti e risorse che consentono di dare agli utenti dell'organizzazione accesso in remoto ai dati e alle applicazioni. Questi strumenti includono profili Wi-Fi, profili VPN, profili del certificato e l'accesso condizionale a Exchange e SharePoint Online. Vedere [Protect data and site infrastructure with System Center Configuration Manager](../../../protect/understand/protect-data-and-site-infrastructure.md) (Proteggere i dati e l'infrastruttura del sito con System Center Configuration Manager) e [Manage access to services in System Center Configuration Manager](../../../protect/deploy-use/manage-access-to-services.md) (Gestire l'accesso ai servizi in System Center Configuration Manager).  
+Desktop Analytics è un servizio basato sul cloud che si integra con Configuration Manager. Il servizio offre dati analitici e intelligenza per consentire agli utenti di prendere decisioni più informate sull'idoneità degli aggiornamenti dei client Windows. Combina i dati dell'organizzazione con i dati aggregati di milioni di dispositivi connessi a servizi cloud Microsoft. Per altre informazioni, vedere [Che cos'è Desktop Analytics?](/configmgr/desktop-analytics/overview)
 
- **Impostazioni di conformità**  
+## <a name="cloud-attached-management"></a>Gestione collegata al cloud
 
- Offre un set di strumenti e risorse che consentono di valutare, tenere traccia e correggere la conformità della configurazione dei dispositivi client nell'azienda. Inoltre, è possibile usare le impostazioni di conformità per configurare una gamma di funzionalità e impostazioni di sicurezza nei dispositivi gestiti. Vedere [Ensure device compliance with System Center Configuration Manager](../../../compliance/understand/ensure-device-compliance.md) (Garantire la conformità dei dispositivi con System Center Configuration Manager).  
+Usare funzionalità come Cloud Management Gateway, i punti di distribuzione basati sul cloud e Azure Active Directory per gestire i client basati su Internet.
 
- **Endpoint Protection**  
+Per altre informazioni, vedere gli articoli seguenti:
 
- Offre sicurezza, antimalware e gestione di Windows Firewall per i computer dell'azienda. Vedere [Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  
+- [Gestire i client su Internet](/sccm/core/clients/manage/manage-clients-internet)
+- [Pianificare per Azure AD](/sccm/core/plan-design/security/plan-for-security#bkmk_planazuread)
+- [Servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard)
 
- **Inventario**  
+## <a name="real-time-management"></a>Gestione in tempo reale
 
- Offre un set di strumenti per identificare e monitorare gli asset:  
+Con CMPivot è possibile eseguire immediatamente query sui dispositivi online e quindi filtrare e raggruppare i dati per informazioni dettagliate più approfondite. È inoltre possibile usare la console di Configuration Manager per gestire e distribuire script di Windows PowerShell nei client. Per altre informazioni, vedere [CMPivot](/sccm/core/servers/manage/cmpivot) e [Creare ed eseguire script di PowerShell](/sccm/apps/deploy-use/create-deploy-scripts).
 
--   **Inventario hardware**: raccoglie informazioni dettagliate sull'hardware dei dispositivi nell'azienda. Vedere [Introduction to hardware inventory in System Center Configuration Manager](../../../core/clients/manage/inventory/introduction-to-hardware-inventory.md) (Introduzione all'inventario hardware in System Center Configuration Manager).  
+## <a name="application-management"></a>Gestione delle applicazioni
 
--   **Inventario software**: raccoglie e segnala le informazioni sui file archiviati sui computer client dell'organizzazione. Vedere [Introduction to software inventory in System Center Configuration Manager](../../../core/clients/manage/inventory/introduction-to-software-inventory.md) (Introduzione all'inventario software in System Center Configuration Manager).  
+È disponibile un set di strumenti e risorse che consentono di creare, gestire, distribuire e monitorare le applicazioni in una vasta gamma di dispositivi gestiti. Dalla console di Configuration Manager è anche possibile distribuire, aggiornare e gestire Office 365. Configuration Manager si integra con il Microsoft Store per le aziende e la formazione per distribuire app basate sul cloud. Per altre informazioni, vedere [Introduzione alla gestione delle applicazioni](/sccm/apps/understand/introduction-to-application-management).
 
--   **Asset Intelligence**: offre strumenti per raccogliere i dati di inventario e per monitorare l'utilizzo delle licenze software nell'azienda. Vedere [Introduction to Asset Intelligence in System Center Configuration Manager](../../../core/clients/manage/asset-intelligence/introduction-to-asset-intelligence.md) (Introduzione ad Asset Intelligence in System Center Configuration Manager).  
+## <a name="os-deployment"></a>Distribuzione del sistema operativo
 
-**Gestione dei dispositivi mobili con Microsoft Intune**  
+È possibile distribuire un aggiornamento sul posto di Windows 10 oppure acquisire e distribuire immagini del sistema operativo. Per la distribuzione di immagini è possibile usare supporti di avvio, PXE o multicast. Per la ridistribuzione di dispositivi esistenti può inoltre essere utile Windows AutoPilot. Per altre informazioni, vedere [Introduzione alla distribuzione del sistema operativo](/sccm/osd/understand/introduction-to-operating-system-deployment).  
 
- È possibile usare Configuration Manager per gestire dispositivi iOS, Android (incluso Samsung KNOX Standard), Windows Phone e Windows con il servizio Microsoft Intune in Internet.
+## <a name="software-updates"></a>Aggiornamenti software
 
- Anche se si usa il servizio Intune, le attività di gestione vengono completate usando il ruolo del sistema del sito del punto di connessione del servizio disponibile tramite la console Configuration Manager. Vedere [Hybrid mobile device management (MDM) with System Center Configuration Manager and Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md) (Gestione dei dispositivi mobili (MDM) ibrida con System Center Configuration Manager e Microsoft Intune).  
+È possibile gestire, distribuire e monitorare gli aggiornamenti software nell'organizzazione. Questa funzionalità di aggiornamento del software può essere integrata con Ottimizzazione recapito di Windows e altre tecnologie di peer caching per facilitare il controllo dell'utilizzo della rete. Per altre informazioni, vedere [Introduzione agli aggiornamenti software](/sccm/sum/understand/software-updates-introduction).  
 
- **Gestione dei dispositivi mobili locale**  
+## <a name="company-resource-access"></a>Accesso alle risorse aziendali
 
- Registra e gestisce i PC e i dispositivi mobili usando l'infrastruttura di Configuration Manager locale e la funzionalità di gestione integrata nelle piattaforme per dispositivi (anziché fare affidamento su un client di Configuration Manager installato separatamente). Attualmente supporta la gestione dei dispositivi Windows 10 Enterprise e Windows 10 Mobile. Vedere [Manage mobile devices with on-premises infrastructure in System Center Configuration Manager](../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md) (Gestire i dispositivi mobili con l'infrastruttura locale in System Center Configuration Manager).  
+Gli utenti dell'organizzazione hanno la possibilità di accedere a dati e applicazioni da postazioni remote. Include Wi-Fi, VPN, posta elettronica e profili di certificato. Per altre informazioni, vedere [Proteggere dati e infrastruttura e del sito](/sccm/protect/understand/protect-data-and-site-infrastructure).
 
- **Distribuzione del sistema operativo:**  
+## <a name="compliance-settings"></a>Impostazioni di conformità
 
- Offre uno strumento per creare immagini del sistema operativo. È quindi possibile usare queste immagini per distribuire i sistemi operativi nei computer, usando l'avvio PXE o supporti di avvio, ad esempio un set di CD, DVD o unità flash USB. Si noti che questo vale per i computer gestiti da Configuration Manager, nonché per i computer non gestiti. Vedere [Introduction to operating system deployment in System Center Configuration Manager](../../../osd/understand/introduction-to-operating-system-deployment.md) (Introduzione alla distribuzione del sistema operativo in System Center Configuration Manager).  
+È possibile valutare, rilevare e correggere la conformità della configurazione dei dispositivi client nell'organizzazione. Inoltre, è possibile usare le impostazioni di conformità per configurare una gamma di funzionalità e impostazioni di sicurezza nei dispositivi gestiti. Per altre informazioni, vedere [Garantire la conformità dei dispositivi](/sccm/compliance/understand/ensure-device-compliance).  
 
- **Risparmio energia**  
+## <a name="endpoint-protection"></a>Endpoint Protection
 
- Offre un set di strumenti e risorse utilizzabili per gestire e monitorare il consumo di energia dei computer client nell'azienda. Vedere [Introduction to power management in System Center Configuration Manager](../../../core/clients/manage/power/introduction-to-power-management.md) (Introduzione al risparmio energia in System Center Configuration Manager).  
+Sono disponibili funzionalità di sicurezza, antimalware e gestione di Windows Firewall per i computer dell'organizzazione. Questa area consente la gestione e l'integrazione con le funzionalità seguenti di Windows Defender:
 
- **Query**  
+- Windows Defender Antivirus
+- Microsoft Defender Advanced Threat Protection
+- Windows Defender Exploit Guard
+- Windows Defender Application Guard
+- Controllo delle applicazioni di Windows Defender
+- Windows Defender Firewall
 
- Offre uno strumento per recuperare informazioni sulle risorse nella gerarchia e informazioni sui dati di inventario e sui messaggi di stato. È quindi possibile usare queste informazioni per creare report o definire le raccolte di dispositivi o utenti per le impostazioni di distribuzione e configurazione del software. Vedere [Introduction to queries in System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md) (Introduzione alle query in System Center Configuration Manager).  
+Per altre informazioni, vedere [Endpoint Protection](/sccm/protect/deploy-use/endpoint-protection).  
 
- **Profili di connessione remota**  
+## <a name="inventory"></a>Inventario
 
- Offre un set di strumenti e risorse che consentono di creare, distribuire e monitorare le impostazioni di connessione remota nei dispositivi dell'organizzazione. Distribuendo queste impostazioni, viene ridotto al minimo l'impegno richiesto agli utenti per connettersi ai computer nella rete aziendale. Vedere [Working with remote connection profiles in System Center Configuration Manager](/sccm/compliance/deploy-use/create-remote-connection-profiles) (Uso di profili di connessione remota in System Center Configuration Manager).  
+Consente di identificare e monitorare gli asset.
 
- **Elementi di configurazione di profili e dati utente**  
+### <a name="hardware-inventory"></a>Inventario hardware
 
- Gli elementi di configurazione di profili e dati utente in Configuration Manager contengono le impostazioni che consentono di gestire il reindirizzamento delle cartelle, i file offline e i profili mobili nei computer che eseguono Windows 8 e versioni successive per gli utenti della gerarchia. Vedere [Working with user data and profiles configuration items in System Center Configuration Manager](/sccm/compliance/deploy-use/create-user-data-and-profiles-configuration-items) (Uso degli elementi di configurazione di profili e dati utente in System Center Configuration Manager).  
+Raccoglie informazioni dettagliate sull'hardware dei dispositivi nell'organizzazione. Per altre informazioni, vedere [Introduzione all'inventario hardware](/sccm/core/clients/manage/inventory/introduction-to-hardware-inventory).  
 
- **Controllo remoto**  
+### <a name="software-inventory"></a>Inventario software
 
- Offre strumenti per amministrare in remoto i computer client dalla console di Configuration Manager. Vedere [Introduction to remote control in System Center Configuration Manager](../../../core/clients/manage/remote-control/introduction-to-remote-control.md) (Introduzione al controllo remoto in System Center Configuration Manager).  
+Raccoglie e segnala le informazioni sui file archiviati sui computer client dell'organizzazione. Per altre informazioni, vedere [Introduzione all'inventario software](/sccm/core/clients/manage/inventory/introduction-to-software-inventory).  
 
- **Creazione di report**  
+### <a name="asset-intelligence"></a>Asset Intelligence
 
- Offre un set di strumenti e risorse che consentono di usare le funzionalità di creazione di report avanzate di SQL Server Reporting Services dalla console di Configuration Manager. Vedere [Introduction to reporting in System Center Configuration Manager](../../../core/servers/manage/introduction-to-reporting.md) (Introduzione alla creazione di report in System Center Configuration Manager).  
+Sono disponibili strumenti per raccogliere i dati di inventario e monitorare l'utilizzo delle licenze software nell'organizzazione. Per altre informazioni, vedere [Introduzione ad Asset Intelligence](/sccm/core/clients/manage/asset-intelligence/introduction-to-asset-intelligence).  
 
- **Controllo del software**  
+## <a name="on-premises-mobile-device-management"></a>Gestione di dispositivi mobili locale
 
- Offre strumenti per monitorare e raccogliere i dati di utilizzo del software dai client di Configuration Manager. Vedere [Monitorare l'utilizzo delle app con la misurazione del software in System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
+È possibile registrare e gestire i dispositivi usando l'infrastruttura locale di Configuration Manager con la funzionalità di gestione integrata nelle piattaforme dei dispositivi. La modalità di gestione tipica prevede l'uso di un client di Configuration Manager installato separatamente. Questa funzionalità supporta attualmente la gestione dei dispositivi Windows 10 Enterprise e Windows 10 Mobile. Per altre informazioni, vedere [Gestire i dispositivi mobili con l'infrastruttura locale](/sccm/mdm/understand/manage-mobile-devices-with-on-premises-infrastructure).  
 
- **Aggiornamenti software**  
+## <a name="power-management"></a>Risparmio energia
 
- Offre un set di strumenti e risorse che consentono di gestire, distribuire e monitorare gli aggiornamenti software nell'azienda. Vedere [Introduction to software updates in System Center Configuration Manager](/sccm/sum/understand/software-updates-introduction) (Introduzione agli aggiornamenti software in System Center Configuration Manager).  
+Sono disponibili funzionalità per gestire e monitorare il consumo di energia dei computer client nell'organizzazione. È possibile configurare combinazioni per il risparmio di energia e usare la tecnologia di riattivazione LAN per eseguire gli interventi di manutenzione al di fuori dell'orario di lavoro. Per altre informazioni, vedere [Introduzione alle raccolte](/sccm/core/clients/manage/power/introduction-to-power-management).  
+
+## <a name="remote-control"></a>Controllo remoto
+
+Offre strumenti per amministrare in remoto i computer client dalla console di Configuration Manager. Per altre informazioni, vedere [Introduzione al controllo remoto](/sccm/core/clients/manage/remote-control/introduction-to-remote-control).  
+
+## <a name="reporting"></a>Reporting
+
+È possibile usare le funzionalità avanzate per la creazione di report di SQL Server Reporting Services dalla console di Configuration Manager. Sono disponibili centinaia di report predefiniti. Per altre informazioni, vedere [Introduzione ai report](/sccm/core/servers/manage/introduction-to-reporting).  
+
+## <a name="software-metering"></a>Controllo del software
+
+Sono disponibili strumenti per monitorare e raccogliere i dati di utilizzo del software dai client di Configuration Manager. È possibile usare questi dati per determinare se il software viene usato dopo l'installazione. Per altre informazioni, vedere [Monitorare l'utilizzo delle app con la misurazione del software](/sccm/apps/deploy-use/monitor-app-usage-with-software-metering).  

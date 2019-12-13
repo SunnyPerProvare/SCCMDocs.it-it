@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3b773c0bfe8cd0f8253a67ac96f5a0113b7206c0
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "56755410"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62193668"
 ---
 # <a name="use-azure-ad-for-co-management"></a>Usare Azure AD per la co-gestione
 

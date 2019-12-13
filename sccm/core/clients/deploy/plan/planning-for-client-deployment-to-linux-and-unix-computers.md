@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cfa2a2412744046ca1a16aad2721fcb9efcff38e
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58524150"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62202297"
 ---
 # <a name="planning-for-client-deployment-to-linux-and-unix-computers-in-configuration-manager"></a>Pianificazione della distribuzione del client in computer Linux e UNIX in Configuration Manager
 
@@ -178,7 +178,7 @@ ms.locfileid: "58524150"
 
 |Pacchetto necessario|Descrizione|Versione minima|  
 |----------------------|-----------------|---------------------|  
-|HPUX11i-OE|HP-UX Foundation Operating Environment|B.11.31.0709 |  
+|HPUX11i-OE|HP-UX Foundation Operating Environment|B.11.31.0709|  
 |OS-Core.MinimumRuntime.CORE-SHLIBS|Librerie di sviluppo specifico IA|B.11.31|  
 |SysMgmtMin|Strumenti minimi di distribuzione software|B.11.31.0709|  
 |SysMgmtMin.openssl|Librerie OpenSSL; Secure Network Communications Protocol|A.00.09.08d.002|  
@@ -211,7 +211,7 @@ ms.locfileid: "58524150"
 
  I client a cui viene fornito un certificato PKI durante l'installazione usano HTTPS per comunicare con i punti di gestione. Se un client non riesce a rilevare un punto di gestione che supporta HTTPS, tornerà a usare HTTP con il certificato PKI fornito.  
 
- Quando un client Linux o UNIX usa un certificato PKI, non è necessaria l'approvazione. Se un client usa un certificato autofirmato, verificare le impostazioni di gerarchia per l'approvazione client nella console di Configuration Manager. Se non è il metodo di approvazione client **approvare automaticamente tutti i computer (scelta non consigliati)**, è necessario approvare manualmente il client.  
+ Quando un client Linux o UNIX usa un certificato PKI, non è necessaria l'approvazione. Se un client usa un certificato autofirmato, verificare le impostazioni di gerarchia per l'approvazione client nella console di Configuration Manager. Se non è il metodo di approvazione client **approvare automaticamente tutti i computer (scelta non consigliati)** , è necessario approvare manualmente il client.  
 
  Per altre informazioni sull'approvazione manuale del client, vedere [Gestire i client dal nodo Dispositivi](/sccm/core/clients/manage/manage-clients#BKMK_ManagingClients_DevicesNode).  
 

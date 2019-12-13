@@ -2,7 +2,7 @@
 title: Ruoli del sistema del sito per i client
 titleSuffix: Configuration Manager
 description: Determinare i ruoli del sistema del sito per i client in System Center Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c13385a4c0f7b36cac1f67b1a8ceacbec6819631
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: 40328e2156ea238bca29eff4a89c6d32efa2124d
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68533789"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74658490"
 ---
 # <a name="determine-the-site-system-roles-for-configuration-manager-clients"></a>Determinare i ruoli del sistema del sito per i client di Configuration Manager
 
@@ -87,7 +87,7 @@ Configuration Manager richiede un punto di registrazione e un punto proxy di reg
 ## <a name="application-catalog"></a>Catalogo applicazioni
 
 > [!Important]  
-> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >

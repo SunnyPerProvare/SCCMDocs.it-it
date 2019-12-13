@@ -5,22 +5,22 @@ description: Informazioni sulle funzionalità di Software Center
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 07/26/2019
+ms.date: 11/29/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.assetid: 9e68de6e-2b33-442b-b674-a382728d9529
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab07bb40e511b7bd862a4592842f2c1e6d69fff8
-ms.sourcegitcommit: 72faa1266b31849ce1a23d661a1620b01e94f517
+ms.openlocfilehash: a662e768cf4657e0b0ef1889d6bd869d62c71efe
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68536029"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74825640"
 ---
 # <a name="software-center-user-guide"></a>Manuale dell'utente di Software Center
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 L'amministratore IT dell'organizzazione usa Software Center per installare le applicazioni e gli aggiornamenti dei prodotti software e di Windows. Questo manuale dell'utente illustra le funzionalità di Software Center per gli utenti del computer.
 
@@ -32,13 +32,16 @@ Note generali sulle funzionalità di Software Center:
 
 <!-- - Your IT admin may change the color of Software Center, and add your organization's logo. The images in this article show the default experience. -->
 
+## <a name="bkmk_open"></a> Come aprire Software Center
 
-## <a name="how-to-open-software-center"></a>Come aprire Software Center
+Il metodo più semplice per avviare Software Center in un computer Windows 10 consiste nel premere **Start** e digitare `Software Center`. Può non essere necessario digitare l'intera stringa per consentire a Windows di trovare la migliore corrispondenza.
 
-Il metodo più semplice per avviare Software Center in un computer Windows 10 consiste nel premere **Start** e digitare `Software Center`.
+Se si scorre il menu Start, cercare l'icona **Software Center** nel gruppo **Microsoft Endpoint Manager**.
 
-Se si scorre il menu Start, trovare nel gruppo **Microsoft System Center** l'icona **Software Center**.
+![Icone del menu Start di Microsoft Endpoint Manager](media/microsoft-endpoint-manager-start-menu.png)
 
+> [!NOTE]
+> Nella versione 1910 il percorso del menu Start è stato modificato. Nella versione 1906 e precedenti, il nome della cartella è **Microsoft System Center**. Quando si aggiorna Configuration Manager alla versione 1910 o successiva, assicurarsi di aggiornare la documentazione gestita internamente in modo da includere questo nuovo percorso.
 
 ## <a name="applications"></a>Applicazioni
 

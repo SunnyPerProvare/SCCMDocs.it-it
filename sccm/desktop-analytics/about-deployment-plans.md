@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a36093b88887b6722d07c666dead67a9aa974b8a
-ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
+ms.openlocfilehash: 1cb1f2f2040a08d81387ecd2ba92c65efbdfb183
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72387091"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74734580"
 ---
 # <a name="about-deployment-plans-in-desktop-analytics"></a>Informazioni sui pani di distribuzione in Desktop Analytics
 
@@ -83,6 +83,8 @@ La decisione di aggiornamento di Windows di **sostituire il dispositivo** può e
 - Un altro componente Plug and Play nel sistema blocca l'aggiornamento
 - Un componente wireless usa un driver di emulazione XP
 - Un componente di rete con una connessione attiva perderà il driver. In altre parole, dopo l'aggiornamento potrebbe verificarsi una perdita di connettività di rete.
+
+La scelta dell'opzione **Reinstalla** indica che per Windows sarà necessaria una reinstallazione rispetto a un aggiornamento sul posto. 
 
 ### <a name="apps"></a>App
 

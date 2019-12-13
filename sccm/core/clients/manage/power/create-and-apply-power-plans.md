@@ -2,7 +2,7 @@
 title: Creare e applicare combinazioni per il risparmio di energia
 titleSuffix: Configuration Manager
 description: Creare e applicare combinazioni per il risparmio di energia in System Center Configuration Manager.
-ms.date: 10/06/2016
+ms.date: 04/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: daafd70cbd58f510732a60c915770621f048ce2c
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 22ee6cb6cba41baf66e471e32635e30fa9f88bc1
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156679"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62200294"
 ---
 # <a name="how-to-create-and-apply-power-plans-in-system-center-configuration-manager"></a>Come creare e applicare combinazioni per il risparmio di energia in System Center Configuration Manager
 
@@ -65,7 +65,7 @@ Le funzionalità di risparmio energia in System Center Configuration Manager con
    > [!NOTE]  
    >  È possibile usare il report **Attività computer** per decidere le pianificazioni da usare per le ore di punta e non di punta quando si applicano combinazioni per il risparmio di energia a raccolte di computer. Per altre informazioni, vedere [Come monitorare e pianificare il risparmio energia in System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
 
-    È anche possibile selezionare le combinazioni per il risparmio di energia predefinite, **Bilanciamento (Configuration Manager)**, **Prestazioni elevate (Configuration Manager)** e **Risparmio di energia (Configuration Manager)**, quindi fare clic su **Visualizza** per visualizzare le proprietà di ogni combinazione.  
+    È anche possibile selezionare le combinazioni per il risparmio di energia predefinite, **Bilanciamento (Configuration Manager)** , **Prestazioni elevate (Configuration Manager)** e **Risparmio di energia (Configuration Manager)** , quindi fare clic su **Visualizza** per visualizzare le proprietà di ogni combinazione.  
 
    > [!NOTE]  
    >  Non è possibile modificare le combinazioni per il risparmio di energia predefinite.  
@@ -96,14 +96,14 @@ Le funzionalità di risparmio energia in System Center Configuration Manager con
 |**Disattiva schermo dopo (minuti)**|Specifica per quanto tempo, in minuti, il computer deve essere inattivo prima che venga disattivato lo schermo. Specificare il valore **0** se non si vuole disattivare lo schermo.|  
 |**Entra in sospensione dopo (minuti)**|Specifica per quanto tempo, in minuti, il computer deve essere inattivo prima che venga attivata la sospensione. Specificare il valore **0** se non si vuole attivare lo stato di sospensione per il computer.|  
 |**Richiedi password alla riattivazione**|Un valore **Sì** o **No** specifica se una password è necessaria per sbloccare il computer quando si accede alla riattivazione dalla sospensione.|  
-|**Azione pulsante di alimentazione**|Specifica l'azione da eseguire quando viene premuto il pulsante di alimentazione del computer. Specifica l'azione che si verifica quando l'utente chiude il coperchio di un computer portatile. Valori possibili: **Non eseguire alcuna operazione**, **Sospendi**, **Iberna** e **Arresta**.|  
-|**Pulsante di alimentazione menu Start**|Specifica l'azione che si verifica quando si preme il pulsante di alimentazione nel menu **Start** del computer. Specifica l'azione che si verifica quando l'utente chiude il coperchio di un computer portatile. Valori possibili: **Sospendi**, **Iberna** e **Arresta**.|  
-|**Azione pulsante di sospensione**|Specifica l'azione che si verifica quando si preme il pulsante **Sospendi** del computer. Specifica l'azione che si verifica quando l'utente chiude il coperchio di un computer portatile. Valori possibili: **Non eseguire alcuna operazione**, **Sospendi**, **Iberna** e **Arresta**.|  
+|**Azione pulsante di alimentazione**|Specifica l'azione da eseguire quando viene premuto il pulsante di alimentazione del computer. Valori possibili: **Non eseguire alcuna operazione**, **Sospendi**, **Iberna** e **Arresta**.|  
+|**Pulsante di alimentazione menu Start**|Specifica l'azione che si verifica quando si preme il pulsante di alimentazione nel menu **Start** del computer. Valori possibili: **Sospendi**, **Iberna** e **Arresta**.|  
+|**Azione pulsante di sospensione**|Specifica l'azione che si verifica quando si preme il pulsante **Sospendi** del computer. Valori possibili: **Non eseguire alcuna operazione**, **Sospendi**, **Iberna** e **Arresta**.|  
 |**Azione chiusura coperchio**|Specifica l'azione che si verifica quando l'utente chiude il coperchio di un computer portatile. Valori possibili: **Non eseguire alcuna operazione**, **Sospendi**, **Iberna** e **Arresta**.|  
 |**Disattiva disco rigido dopo (minuti)**|Specifica per quanto tempo, in minuti, il disco rigido del computer deve essere inattivo prima che venga disattivato. Specificare il valore **0** se non si vuole disattivare il disco rigido del computer.|  
 |**Metti in stato di ibernazione dopo (minuti)**|Specifica per quanto tempo, in minuti, il computer deve essere inattivo prima che venga attivato lo stato di ibernazione. Specificare il valore **0** se non si vuole attivare lo stato di ibernazione per il computer.|  
-|**Azione per batteria in esaurimento**|Specifica l'azione che si verifica quando la batteria del computer raggiunge il livello di notifica di batteria in esaurimento specificato. Specifica l'azione che si verifica quando l'utente chiude il coperchio di un computer portatile. Valori possibili: **Non eseguire alcuna operazione**, **Sospendi**, **Iberna** e **Arresta**.|  
-|**Azione per batteria quasi scarica**|Specifica l'azione da eseguita quando della batteria raggiunge il livello di notifica di batteria specificato. Specifica l'azione che si verifica quando l'utente chiude il coperchio di un computer portatile. I valori possibili includono: **Sospendi**, **Iberna** e **Arresta**.|  
+|**Azione per batteria in esaurimento**|Specifica l'azione che si verifica quando la batteria del computer raggiunge il livello di notifica di batteria in esaurimento specificato. Valori possibili: **Non eseguire alcuna operazione**, **Sospendi**, **Iberna** e **Arresta**.|  
+|**Azione per batteria quasi scarica**|Specifica l'azione da eseguita quando della batteria raggiunge il livello di notifica di batteria specificato. Quando è attiva l'impostazione **A batteria**, i valori possibili sono **Sospendi**, **Iberna** e **Arresta**. Quando invece è attiva **Alimentazione da rete elettrica**, i valori possibili sono **Non eseguire alcuna operazione**, **Sospendi**, **Iberna** e **Arresta**.|  
 |**Consenti sospensione ibrida**|Impostando l'opzione su **Disattivato** o **Attivato** si specifica se Windows salva un file di ibernazione quando entra in stato di sospensione, che può essere usato per ripristinare lo stato del computer in caso di interruzione dell'alimentazione mentre è in stato di sospensione.<br /><br /> La sospensione ibrida è progettata per i computer desktop e, per impostazione predefinita, non è abilitata nei computer portatili. Nei computer che eseguono Windows 7 l'abilitazione della sospensione ibrida disabilita la funzionalità di ibernazione.|  
 |**Consentire lo stato di standby durante la sospensione dell'azione**|Impostando l'opzione su **Disattivato** o **Attivato** si consente lo stato di standby per il computer, che consuma un po' di energia, ma permette una riattivazione più veloce del computer. Se questa impostazione è impostata su **Disattivato**, il computer può solo entrare in stato ibernazione o essere spento.|  
 |**Inattività richiesta prima della sospensione (%)**|Specifica la percentuale del tempo di inattività per il tempo del processore del computer, prima che il computer possa entrare in stato di sospensione. Nei computer che eseguono Windows 7, questo valore è sempre impostato su **0**.|  

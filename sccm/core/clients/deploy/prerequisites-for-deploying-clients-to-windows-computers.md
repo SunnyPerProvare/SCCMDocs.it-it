@@ -2,7 +2,7 @@
 title: Prerequisiti per la distribuzione di client Windows
 titleSuffix: Configuration Manager
 description: Informazioni sui prerequisiti per la distribuzione di client Configuration Manager a computer Windows.
-ms.date: 07/26/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 586083f0de3241adb20bacbf432563681b0370f0
-ms.sourcegitcommit: 2d38de4846ea47a03cc884cbd3df27db48f64a6a
+ms.openlocfilehash: 433ccd79363f53304bf9822846de19723397eaa2
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70110090"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74658456"
 ---
 # <a name="prerequisites-for-deploying-clients-to-windows-computers-in-configuration-manager"></a>Prerequisiti per la distribuzione dei client nei computer Windows in Configuration Manager
 
@@ -86,14 +86,14 @@ Se il client richiede queste dipendenze per completare l'installazione, le insta
 |Componenti di Microsoft SQL Server Compact 4.0 SP1|Necessari per archiviare le informazioni relative alle operazioni client.|  
 
 > [!Important]
-> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >
 > - [Configurare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex)
 > - [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures)  
 >
-> Se si sta ancora usando l'esperienza utente del sito Web del Catalogo applicazioni, il client richiede Microsoft Silverlight 5.1.41212.0. A partire da Configuration Manager 1802, Silverlight non viene più installato automaticamente. La funzionalità principale del Catalogo applicazioni è ora inclusa in Software Center.<!--1356195-->
+> Se si sta ancora usando l'esperienza utente del sito Web del Catalogo applicazioni, il client richiede Microsoft Silverlight 5.1.41212.0. Il client non installa automaticamente Silverlight. La funzionalità principale del Catalogo applicazioni è ora inclusa in Software Center.<!--1356195-->
 
 #### <a name="dotNet"></a> Informazioni dettagliate aggiuntive su Microsoft .NET Framework versione 4.5.2  
 
@@ -139,7 +139,7 @@ I prerequisiti seguenti sono specifici dei diversi metodi di installazione clien
 
 - Il computer client deve poter comunicare con un punto di distribuzione o un punto di gestione per scaricare i file di origine.  
 
-- A partire dalla versione 1806, quando si richiede l'autenticazione reciproca Kerberos, i client devono risiedere in una foresta Active Directory attendibile. Il protocollo Kerberos in Windows si basa su Active Directory per l'autenticazione reciproca.<!--1358204-->  
+- Quando è necessaria l'autenticazione reciproca Kerberos, i client devono risiedere in una foresta Active Directory attendibile. Il protocollo Kerberos in Windows si basa su Active Directory per l'autenticazione reciproca.<!--1358204-->  
 
 Per usare il push client, sono necessarie le autorizzazioni di sicurezza seguenti:  
 

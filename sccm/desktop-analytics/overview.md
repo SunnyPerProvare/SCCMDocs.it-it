@@ -2,7 +2,7 @@
 title: Desktop Analytics
 titleSuffix: Configuration Manager
 description: Panoramica del servizio Desktop Analytics integrato con Configuration Manager.
-ms.date: 10/14/2019
+ms.date: 12/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: overview
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 76fa92c93a290c49c286be3bb1368dfdf8347ef3
-ms.sourcegitcommit: b64ed4a10a90b93a5bd5454b6efafda90ad45718
+ms.openlocfilehash: 95f39681835a381720de3bddd1b5773893660280
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72384977"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74734597"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Desktop Analytics?
 
@@ -53,7 +53,7 @@ Desktop Analytics offre i vantaggi seguenti:
 
 - **Identificazione del progetto pilota**: Identificazione dell'insieme minimo di dispositivi che consentono la più ampia copertura di fattori. Vengono identificati i fattori ritenuti più importanti per un progetto pilota di aggiornamenti Windows. Assicurarsi che il progetto pilota sia ottimale per poter procedere in modo più rapido e sicuro a distribuzioni di grani dimensioni in ambiente di produzione.  
 
-- **Identificazione dei problemi**: Usando congiuntamente i dati di mercato aggregati e i dati dell'ambiente, il servizio esegue una previsione dei potenziali problemi per ottenere Windows e rimanere aggiornati. Suggerisce quindi eventuali mitigazioni.  
+- **Identificazione dei problemi**: Usando congiuntamente i dati di mercato aggregati e i dati dell'ambiente, il servizio esegue una previsione dei potenziali problemi per ottenere Windows e mantenerlo aggiornato. Suggerisce quindi eventuali mitigazioni.  
 
 - **Integrazione di Configuration Manager**: Il servizio cloud consente di abilitare l'infrastruttura locale esistente. Usare questi dati e queste analisi per distribuire e gestire Windows nei dispositivi.  
 
@@ -73,7 +73,7 @@ Per usare Desktop Analytics, verificare che l'ambiente soddisfi i prerequisiti s
 
     - Autorizzazioni di **Proprietario dell'area di lavoro** o di **Collaboratore** per **configurare l'area di lavoro** e i ruoli seguenti:  
 
-      - Ruolo [**Amministratore di Desktop Analytics**](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).
+      - Ruolo [**Amministratore di Desktop Analytics**](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#desktop-analytics-administrator-permissions).
 
       - [**Collaboratore di Log Analytics**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-contributor) e [**Amministratore Accesso utenti**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) nel gruppo di risorse per usare un'area di lavoro esistente o crearne una nuova in un gruppo di risorse esistente.
 
@@ -114,6 +114,10 @@ Per usare Desktop Analytics, verificare che l'ambiente soddisfi i prerequisiti s
 ### <a name="licensing-and-costs"></a>Licenze e costi
 
 I dispositivi registrati in Desktop Analytics possono essere usati solo dagli utenti che hanno una licenza per i prodotti seguenti:
+
+- Configuration Manager. Per altre informazioni, vedere [Gestione delle licenze di Configuration Manager](/configmgr/core/understand/product-and-licensing-faq)
+
+e 
 
 - Windows 10 Enterprise E3 o E5 (incluso in Microsoft 365 F1, E3 o E5)
 

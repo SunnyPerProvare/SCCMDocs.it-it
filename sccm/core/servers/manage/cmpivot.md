@@ -2,7 +2,7 @@
 title: CMPivot per i dati in tempo reale
 titleSuffix: Configuration Manager
 description: Informazioni su come usare CMPivot in Configuration Manager per eseguire query sui client in tempo reale.
-ms.date: 09/05/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 450b8a930fa04e88db5d6bf9ff2516cb31dff92a
-ms.sourcegitcommit: 013596de802ac0eb416118169ad049733b5a63e5
+ms.openlocfilehash: 002bb488501bc3ec152f58aa22b08fec61216a9f
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198254"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74659952"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>CMPivot per i dati in tempo reale in Configuration Manager
 
@@ -571,8 +571,165 @@ A partire dalla versione 1906 è possibile usare CMPivot come app autonoma. La v
    ![Passare alla raccolta in cui si vuole eseguire la query](./media/3555890-cmpivot-standalone-browse-collection.png)
 
 > [!NOTE]
-> Azioni con il pulsante destro del mouse, quali ad esempio **Esegui script** ed **Esplora inventario risorse**, non sono disponibili nella versione autonoma di CMPivot.
+> Azioni con il pulsante destro del mouse, come **Esegui script**, **Esplora inventario risorse** e la ricerca Web non sono disponibili nella versione autonoma di CMPivot. L'uso principale della versione autonoma di CMPivot consiste nell'esecuzione di query indipendentemente dall'infrastruttura di Configuration Manager. Per facilitare gli amministratori della sicurezza, la versione autonoma di CMPivot include la possibilità di connettersi a Microsoft Defender Security Center. <!--5605358-->
 
+## <a name="bkmk_cmpivot1910"></a> Avvio di CMPivot nella versione 1910
+<!--5410930, 3197353-->
+A partire dalla versione 1910, CMPivot è stato notevolmente ottimizzato per ridurre il traffico di rete e il carico sui server. È stata inoltre aggiunta una serie di nuove entità e di miglioramenti alle entità per facilitare l'individuazione e la risoluzione dei problemi. Nella versione 1910 sono state introdotte le modifiche seguenti per CMPivot:
+
+- [Ottimizzazioni per il motore CMPivot](#bkmk_optimization)
+- Entità aggiuntive e miglioramenti delle entità:
+  - Registri eventi di Windows ([WinEvent](#bkmk_WinEvent))
+  - Contenuto del file ([FileContent](#bkmk_File))
+  - DLL caricate dai processi ([ProcessModule](#bkmk_ProcessModule))
+  - Informazioni Azure Active Directory ([AADStatus](#bkmk_AadStatus))
+  - Stato di Endpoint Protection ([EPStatus](#bkmk_EPStatus))
+- [Valutazione delle query sul dispositivo locale con CMPivot autonomo](#bkmk_local-eval)
+- [Altri miglioramenti a CMPivot](#bkmk_Other)
+
+
+### <a name="bkmk_optimization"></a> Ottimizzazioni per il motore di CMPivot
+<!--3197353-->
+Per ridurre il traffico di rete e il carico sui server, CMPivot è stato ottimizzato nella versione 1910. Molte operazioni di query vengono ora eseguite direttamente sul client anziché sui server. Per effetto di questa modifica, alcune operazioni di CMPivot restituiscono una quantità minima di dati la prima volta che viene eseguita la query. Se si decide di eseguire il drill-down per ottenere altre informazioni, potrebbe essere eseguita una nuova query per recuperare i dati aggiuntivi dal client. In precedenza, ad esempio, come riposta a una query di "conteggio di riepilogo" veniva restituito un set di dati di grandi dimensioni.  Il set di dati restituito consentiva il drill-down immediato, ma molte volte sarebbe stato sufficiente il conteggio di riepilogo. Nella versione 1910, quando si sceglie di eseguire il drill-down in un client specifico, per restituire i dati aggiuntivi richiesti viene eseguita un'altra raccolta. Questa modifica offre un maggiore livello di prestazioni e scalabilità per l'esecuzione di query su un numero elevato di client. <!--3197353, 5458337-->
+
+#### <a name="examples"></a>Esempi
+
+Le ottimizzazioni di CMPivot riducono drasticamente il carico della CPU del server e della rete necessario per eseguire le query di CMPivot. Con queste ottimizzazioni, è ora possibile eseguire operazioni su gigabyte di dati client in tempo reale. Le query seguenti illustrano queste ottimizzazioni:
+
+- Eseguire una ricerca in tutti i registri eventi di tutti i client dell'organizzazione per trovare errori di autenticazione.
+
+   ``` Kusto
+   EventLog('Security')
+   | where  EventID == 4673
+   | summarize count() by Device
+   | order by count_ desc
+   ```
+
+- Eseguire la ricerca di un file in base all'hash.
+
+   ``` Kusto
+   Device
+   | join kind=leftouter ( File('%windir%\\system32\\*.exe')
+   | where SHA256Hash == 'A92056D772260B39A876D01552496B2F8B4610A0B1E084952FE1176784E2CE77')
+   | project Device, MalwareFound = iif( isnull(FileName), 'No', 'Yes')
+   ```
+
+### <a name="bkmk_WinEvent"></a> WinEvent (\<nomeregistro>, [\<intervalloditempo>])
+
+Questa entità viene usata per ottenere gli eventi dai registri eventi e dai file di log di Event Tracing. L'entità ottiene i dati dai registri eventi generati dalla tecnologia del Registro eventi di Windows. L'entità ottiene anche gli eventi nei file di log generati da Event Tracing for Windows (ETW). WinEvent esamina gli eventi che si sono verificati nelle ultime 24 ore per impostazione predefinita. L'impostazione predefinita di 24 ore può tuttavia essere ignorata includendo un intervallo di tempo.
+
+``` Kusto
+WinEvent('Microsoft-Windows-HelloForBusiness/Operational', 1d)
+| where LevelDisplayName =='Error'
+| summarize count() by Device
+```
+
+### <a name="bkmk_File"></a> FileContent (\<nomefile>)
+
+FileContent viene usato per ottenere il contenuto di un file di testo.
+
+``` Kusto
+FileContent('c:\\windows\\SMSCFG.ini')
+| where Content startswith  'SMS Unique Identifier='
+| project Device, SMSId= substring(Content,22)
+```
+
+### <a name="bkmk_ProcessModule"></a> ProcessModule(\<nomeprocesso>)  
+
+Questa entità viene usata per enumerare i moduli (dll) caricati da un determinato processo. ProcessModule è utile per la ricerca del malware nascosto in processi legittimi.  
+
+``` Kusto
+ProcessModule('powershell')
+| summarize count() by ModuleName
+| order by count_ desc
+```
+
+### <a name="bkmk_AadStatus"></a> AadStatus
+
+Questa entità può essere usata per ottenere le informazioni di identità di Azure Active Directory correnti da un dispositivo.
+
+``` Kusto
+AadStatus
+| project Device, IsAADJoined=iif( isnull(DeviceId),'No','Yes')
+| summarize DeviceCount=count() by IsAADJoined
+| render piechart
+```
+
+### <a name="bkmk_EPStatus"></a> EPStatus
+
+EPStatus viene usato per ottenere lo stato del software antimalware installato nel computer.
+
+``` Kusto
+EPStatus
+| project Device, QuickScanAge=datetime_diff('day',now(),QuickScanEndTime)
+| summarize DeviceCount=count() by QuickScanAge
+| order by QuickScanAge
+| render barchart
+```
+
+### <a name="bkmk_local-eval"></a> Valutazione delle query sul dispositivo locale con la versione autonoma di CMPivot
+<!--3197353-->
+Quando si usa CMPivot all'esterno della console di Configuration Manager, è possibile eseguire query solo sul dispositivo locale senza la necessità dell'infrastruttura di Configuration Manager. È ora possibile sfruttare le query di Azure Log Analytics CMPivot per visualizzare rapidamente informazioni WMI sul dispositivo locale. Ciò consente anche di convalidare e perfezionare le query CMPivot, prima di eseguirle in un ambiente più esteso. La versione autonoma di CMPivot è una [funzionalità in versione non definitiva](/sccm/core/servers/manage/pre-release-features#bkmk_table) ed è disponibile solo in inglese. Per altre informazioni sull'installazione autonoma di CMPivot, vedere [Installare la versione autonoma di CMPivot](#install-cmpivot-standalone).
+
+#### <a name="known-issues-for-local-device-query-evaluation"></a>Problemi noti relativi alla valutazione delle query sul dispositivo locale
+
+ - Se si esegue una query su **Questo PC** per trovare un'entità WMI a cui non si può accedere, ad esempio una classe WMI bloccata, può verificarsi un arresto anomalo in CMPivot. Eseguire CMPivot usando un account con privilegi elevati per eseguire query su tali entità. <!--5753242-->
+- Se si esegue una query su entità non WMI in **Questo PC**, verrà restituito un messaggio di **Spazio dei nomi non valido** o un'eccezione ambigua.
+- Eseguire la versione autonoma di CMPivot dal collegamento del menu Start e non direttamente dal percorso del file eseguibile. <!--5787962-->
+
+### <a name="bkmk_Other"></a> Altri miglioramenti
+
+- È possibile eseguire query sui tipi di espressione regolare usando il nuovo operatore `like`. Ad esempio:<!--3056858-->
+  
+   ```kusto
+   //Find BIOS manufacture that contains any word like Micro, such as Microsoft
+   Bios
+   | where Manufacturer like ‘%Micro%’
+   ```
+
+- Sono state aggiornate le entità **CcmLog()** e **EventLog()** per esaminare solo i messaggi nelle ultime 24 ore per impostazione predefinita. Questo comportamento può essere ignorato passando un intervallo di tempo facoltativo. Ad esempio, la query seguente esaminerà gli eventi che si sono verificati nell'ultima ora:
+
+   ```kusto
+   CcmLog('Scripts',1h)
+   ```
+
+- L'entità **File()** è stata aggiornata per raccogliere informazioni sui file di sistema e nascosti e includere l'hash MD5. Pur non essendo accurato come l'hash SHA256, un hash MD5 tende a essere l'hash comunemente segnalato nella maggior parte dei bollettini malware.  
+
+- È possibile aggiungere commenti nelle query.<!-- 5431463 --> Questo comportamento è utile quando si condividono le query. Ad esempio:
+
+    ``` Kusto
+    //Get the top ten devices sorted by user
+    Device
+    | top 10 by UserName
+    ```
+
+- CMPivot si connette automaticamente all'ultimo sito.<!-- 5420395 --> Dopo l'avvio di CMPivot è possibile connettersi a un nuovo sito, se necessario.
+
+- Dal menu **Esporta** selezionare la nuova opzione che consente di **collegare la query agli Appunti**.<!-- 5431577 --> Questa azione consente di copiare un collegamento negli Appunti per poterlo condividere con altri utenti. Ad esempio:
+
+    `cmpivot:Ly8gU2FtcGxlIHF1ZXJ5DQpPcGVyYXRpbmdTeXN0ZW0NCnwgc3VtbWFyaXplIGNvdW50KCkgYnkgQ2FwdGlvbg0KfCBvcmRlciBieSBjb3VudF8gYXNjDQp8IHJlbmRlciBiYXJjaGFydA==`
+
+    Questo collegamento apre la modalità autonoma per CMPivot con la query seguente:
+
+    ``` Kusto
+    // Sample query
+    OperatingSystem
+    | summarize count() by Caption
+    | order by count_ asc
+    | render barchart
+    ```
+
+    > [!TIP]
+    > Per il funzionamento di questo collegamento, [installare la modalità autonoma per CMPivot](#install-cmpivot-standalone).
+
+- Nei risultati della query, se il dispositivo è registrato in Microsoft Defender Advanced Threat Protection (ATP), fare clic con il pulsante destro del mouse sul dispositivo per avviare il portale online **Microsoft Defender Security Center**.
+
+### <a name="known-issues-for-cmpivot-in-version-1910"></a>Problemi noti relativi a CMPivot nella versione 1910
+
+- Quando viene raggiunto il limite, è possibile che il banner relativo al numero massimo di risultati non venga visualizzato. <!--5431427-->
+  - Ogni client può restituire al massimo 128 kB di dati per ogni query.
+  - Se i risultati della query superano 128 kB, è possibile che vengano troncati.
+ 
 ## <a name="inside-cmpivot"></a>Informazioni su CMPivot
 
 CMPivot invia le query ai client usando il "canale rapido" di Configuration Manager. Questo canale di comunicazione dal server al client viene usato anche da altre funzionalità, ad esempio le azioni di notifica client, lo stato del client ed Endpoint Protection. I client restituiscono i risultati tramite il sistema di messaggi di stato in modo altrettanto rapido. I messaggi di stato vengono temporaneamente archiviati nel database. Per altre informazioni sulle porte usate per la notifica client, vedere l'articolo relativo alle [porte](/sccm/core/plan-design/hierarchy/ports#BKMK_PortsClient-MP).

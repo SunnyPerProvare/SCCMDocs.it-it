@@ -6,15 +6,15 @@ ms.topic: include
 ms.date: 12/30/2018
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8305102657a5973c19ca161f65204587954b0232
-ms.sourcegitcommit: 4e47f63a449f5cc2d90f9d68500dfcacab1f4dac
-ms.translationtype: MT
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62231898"
 ---
-Usare le definizioni seguenti per distinguere tra pilota e di produzione:  
+Usare le definizioni seguenti per distinguere tra pilota e produzione:  
 
-- **Pilota**: Un subset dei dispositivi che si desidera convalidare prima di distribuire un set più ampio. Utilizzare Desktop Analitica per contrassegnare i dispositivi di proprietà univoci per il gruppo pilota. Dispositivi in una distribuzione pilota sono pronti per eseguire l'aggiornamento quando nessun asset siano bloccate. Un asset di blocco è contrassegnato come *critici* e *Impossibile* per eseguire l'aggiornamento.  
+- **Pilota**: un subset di dispositivi da convalidare prima di procedere alla distribuzione in un set più ampio. Usare Desktop Analytics per contrassegnare i dispositivi come univoci per il set pilota. I dispositivi nel set pilota sono pronti per l'aggiornamento quando non sono presenti asset bloccanti. Un asset bloccante è contrassegnato come *critico* e *non idoneo* per l'aggiornamento.  
 
-- **Production**: Tutti gli altri dispositivi registrati in Analitica Desktop che non sono in una distribuzione pilota. I dispositivi di produzione sono pronti per l'aggiornamento quando ingaggio sono tutte le risorse. Desktop Analitica conclude automaticamente tutte le risorse non critici.  
+- **Production**: tutti gli altri dispositivi registrati in Desktop Analytics che non sono inclusi nel set pilota. I dispositivi di produzione sono pronti per l'aggiornamento quando tutti gli asset sono approvati. Desktop Analytics approva automaticamente tutti gli asset non critici.  
 

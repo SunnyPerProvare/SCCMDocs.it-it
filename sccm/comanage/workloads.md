@@ -5,18 +5,18 @@ description: Informazioni sui carichi di lavoro che è possibile trasferire da C
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 09/06/2019
+ms.date: 11/29/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 4c90befe-9c4e-4c27-a947-625887e15052
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 766d1f0c258dd25fc4aa51ef20b2d3921ac8cc74
-ms.sourcegitcommit: ba68f10d2ca7997057a01af911a2e7cf7e010cf0
+ms.openlocfilehash: 99ef87c6317cd1284cf692196fa50ffdae3aca52
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70863132"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74658830"
 ---
 # <a name="co-management-workloads"></a>Carichi di lavoro con co-gestione
 
@@ -40,20 +40,17 @@ La co-gestione supporta i carichi di lavoro seguenti:
 
 - [App client](#client-apps)  
 
-
 ## <a name="compliance-policies"></a>Criteri di conformità
 
-I criteri di conformità definiscono le regole e le impostazioni che un dispositivo deve avere per essere considerato conforme ai criteri di accesso condizionale. Usare tali criteri anche per monitorare e correggere i problemi di conformità con i dispositivi, indipendentemente dall'accesso condizionale.
+I criteri di conformità definiscono le regole e le impostazioni che un dispositivo deve avere per essere considerato conforme ai criteri di accesso condizionale. Usare tali criteri anche per monitorare e correggere i problemi di conformità con i dispositivi, indipendentemente dall'accesso condizionale. A partire dalla versione 1910 di Configuration Manager, è possibile aggiungere la valutazione delle linee di base di configurazione personalizzate come regola di valutazione dei criteri di conformità. Per altre informazioni, vedere [Includere linee di base di configurazione personalizzate come parte della valutazione dei criteri di conformità](/sccm/compliance/deploy-use/create-configuration-baselines#bkmk_CAbaselines).
 
 Per altre informazioni sulla funzionalità Intune, vedere [Criteri di conformità dei dispositivi](https://docs.microsoft.com/intune/device-compliance-get-started).  
-
 
 ## <a name="windows-update-policies"></a>Criteri di Windows Update
 
 I criteri di Windows Update per le aziende consentono di configurare i criteri di rinvio per gli aggiornamenti delle funzionalità di Windows 10 o gli aggiornamenti di qualità dei dispositivi Windows 10 gestiti direttamente da Windows Update per le aziende.
 
 Per altre informazioni sulla funzionalità Intune, vedere [Configurare i criteri di rinvio di Windows Update per le aziende](https://docs.microsoft.com/intune/windows-update-for-business-configure).  
-
 
 ## <a name="resource-access-policies"></a>Criteri di accesso alle risorse
 
@@ -64,12 +61,11 @@ Per altre informazioni sulla funzionalità Intune, vedere [Distribuire profili d
 > [!Note]  
 > Il carico di lavoro di accesso alle risorse fa parte anche della configurazione del dispositivo. Questi criteri vengono gestiti da Intune quando si passa al carico di lavoro [Configurazione del dispositivo](#device-configuration).
 
-
 ## <a name="endpoint-protection"></a>Endpoint Protection
 
 <!--1357365-->
 
-A partire da Configuration Manager 1802, il carico di lavoro di Endpoint Protection include la suite di funzionalità di protezione antimalware di Windows Defender:
+Il carico di lavoro di Endpoint Protection include l'insieme di funzionalità di protezione antimalware di Windows Defender:
 
 - Windows Defender Antimalware
 - Windows Defender Application Guard  
@@ -89,23 +85,21 @@ Per altre informazioni sulla funzionalità Intune, vedere [Endpoint Protection p
 >
 > Il carico di lavoro Endpoint Protection fa parte anche della configurazione del dispositivo. Lo stesso comportamento si applica quando si passa al carico di lavoro [Configurazione del dispositivo](#device-configuration).<!-- SCCMDocs.nl-nl issue #4 -->
 
-
 ## <a name="device-configuration"></a>Configurazione del dispositivo
 
 <!--1357903-->
 
-A partire da Configuration Manager 1806, il carico di lavoro di configurazione dei dispositivi include le impostazioni gestite per i dispositivi dell'organizzazione. Trasferendo questo carico di lavoro vengono spostati anche i carichi di lavoro **Accesso alla risorsa** ed **Endpoint Protection**.
+Il carico di lavoro di configurazione dei dispositivi include le impostazioni gestite per i dispositivi dell'organizzazione. Trasferendo questo carico di lavoro vengono spostati anche i carichi di lavoro **Accesso alla risorsa** ed **Endpoint Protection**.
 
 È comunque possibile continuare a distribuire le impostazioni da Configuration Manager ai dispositivi con co-gestione, anche se Intune è l'autorità di configurazione del dispositivo. Questa eccezione può essere usata per configurare le impostazioni richieste dall'organizzazione, ma non ancora disponibili in Intune. Specificare questa eccezione in una [linea di base di configurazione di Configuration Manager](/sccm/compliance/deploy-use/create-configuration-baselines). Abilitare l'opzione **Applica sempre questa baseline anche per client con co-gestione** quando si crea la baseline. È possibile modificarla in un secondo momento nella scheda **Generale** delle proprietà di una baseline esistente.  
 
 Per altre informazioni sulla funzionalità Intune, vedere [Creare un profilo di dispositivo in Microsoft Intune](https://docs.microsoft.com/intune/device-profile-create).  
 
-
 ## <a name="office-click-to-run-apps"></a>App A portata di clic di Office
 
 <!--1357841-->
 
-A partire da Configuration Manager 1806, questo carico di lavoro consente di gestire le app di Office 365 nei dispositivi con co-gestione.
+Questo carico di lavoro consente di gestire le app di Office 365 nei dispositivi con co-gestione.
 
 - Dopo lo spostamento del carico di lavoro, l'app viene visualizzata nel **portale aziendale** sul dispositivo  
 
@@ -115,25 +109,24 @@ A partire da Configuration Manager 1806, questo carico di lavoro consente di ges
 
 Per altre informazioni sulla funzionalità Intune, vedere [Assegnare le app di Office 365 ai dispositivi Windows 10 con Microsoft Intune](https://docs.microsoft.com/intune/apps-add-office365).
 
-
 ## <a name="client-apps"></a>App client
 
 <!--1357892-->
 
-A partire da Configuration Manager versione 1806, usare Intune per gestire le app client e gli script di PowerShell in dispositivi Windows 10 con co-gestione. Dopo la transizione di questo carico di lavoro, qualsiasi app disponibile distribuita da Intune sarà disponibile nel portale aziendale. Le app distribuite da Configuration Manager sono disponibili in Software Center.
+Usare Intune per gestire le app client e gli script di PowerShell in dispositivi Windows 10 con co-gestione. Dopo la transizione di questo carico di lavoro, qualsiasi app disponibile distribuita da Intune sarà disponibile nel portale aziendale. Le app distribuite da Configuration Manager sono disponibili in Software Center.
 
 Per altre informazioni sulla funzionalità Intune, vedere [Informazioni sulla gestione delle app in Microsoft Intune](https://docs.microsoft.com/intune/app-management).
 
 > [!Note]  
 > Il carico di lavoro delle app client è una funzionalità non definitiva. Per abilitarla, vedere [Funzionalità di versioni non definitive in System Center Configuration Manager](/sccm/core/servers/manage/pre-release-features).  
 
+A partire dalla versione 1910, quando si abilita Microsoft Connected Cache nei punti di distribuzione di Configuration Manager, questi possono essere usati per gestire le app Win32 di Microsoft Intune nei client con co-gestione. Per altre informazioni, vedere [Microsoft Connected Cache in Configuration Manager](/configmgr/core/plan-design/hierarchy/microsoft-connected-cache#bkmk_intune).
 
 ## <a name="diagram-for-app-workloads"></a>Diagramma per i carichi di lavoro delle app
 
 ![Diagramma dei carichi di lavoro delle app di co-gestione](media/co-management-apps.svg)
 
 [Visualizzare il diagramma per intero](media/co-management-apps.svg)
-
 
 ## <a name="next-steps"></a>Passaggi successivi
 

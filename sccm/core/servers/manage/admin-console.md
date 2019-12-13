@@ -2,7 +2,7 @@
 title: Console di Configuration Manager
 titleSuffix: Configuration Manager
 description: Informazioni sull'esplorazione tramite la console di Configuration Manager.
-ms.date: 08/16/2019
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,23 +11,35 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 593a479c713df76d63090749ee45cb89aeb413e4
-ms.sourcegitcommit: f7e4ff38d4b4afb49e3bccafa28514be406a9d7b
+ms.openlocfilehash: 2a76fd3338e8b15587b90b837af04affc691aa46
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69549511"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74825673"
 ---
-# <a name="using-the-configuration-manager-console"></a>Uso della console di Configuration Manager
+# <a name="how-to-use-the-configuration-manager-console"></a>Come usare la console di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Gli amministratori usano la console di Configuration Manager per gestire l'ambiente di Configuration Manager. Questo articolo illustra le nozioni di base dell'esplorazione della console.  
 
+## <a name="bkmk_open"></a> Aprire la console
+
+La console di Configuration Manager viene sempre installata nel server del sito. È anche possibile installarla in altri computer. Per altre informazioni, vedere [Installare la console di Configuration Manager](/configmgr/core/servers/deploy/install/install-consoles).
+
+Il metodo più semplice per aprire la console in un computer Windows 10 consiste nel premere **Start** e iniziare a digitare `Configuration Manager console`. Può non essere necessario digitare l'intera stringa per consentire a Windows di trovare la migliore corrispondenza.
+
+Se si scorre il menu Start, cercare l'icona **Console di Configuration Manager** nel gruppo **Microsoft Endpoint Manager**.
+
+![Icone del menu Start di Microsoft Endpoint Manager](media/microsoft-endpoint-manager-start-menu.png)
+
+> [!NOTE]
+> Nella versione 1910 il percorso del menu Start è stato modificato. Nella versione 1906 e precedenti, il nome della cartella è **System Center**. Quando si aggiorna Configuration Manager alla versione 1910 o successiva, assicurarsi di aggiornare la documentazione gestita internamente in modo da includere questo nuovo percorso.
 
 ## <a name="connect-to-a-site-server"></a>Connettersi a un server del sito
 
-La console si connette al server di sito di amministrazione centrale o ai server del sito primario. Non è possibile connettere una console di Configuration Manager a un sito secondario. È possibile [installare la console di Configuration Manager](/sccm/core/servers/deploy/install/install-consoles). Durante l'installazione, è stato specificato il nome di dominio completo (FQDN) del server del sito a cui si connette la console.
+La console si connette al server di sito di amministrazione centrale o ai server del sito primario. Non è possibile connettere una console di Configuration Manager a un sito secondario. Durante l'installazione, è stato specificato il nome di dominio completo (FQDN) del server del sito a cui si connette la console.
 
 Per connettersi a un server del sito diverso, eseguire questa procedura:
 
@@ -41,12 +53,11 @@ Per connettersi a un server del sito diverso, eseguire questa procedura:
 
 3. Selezionare **Connetti**.  
 
-A partire dalla versione 1810, è possibile specificare il livello di autenticazione minimo per gli amministratori per l'accesso ai siti di Configuration Manager. Questa funzionalità impone agli amministratori di accedere a Windows con il livello richiesto. Per altre informazioni, vedere [Piano per il provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_auth). <!--1357013-->  
-
+A partire dalla versione 1810, è possibile specificare il livello di autenticazione minimo per gli amministratori per l'accesso ai siti di Configuration Manager. Questa funzionalità impone agli amministratori di accedere a Windows con il livello richiesto. Per altre informazioni, vedere [Piano per il provider SMS](/configmgr/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_auth). <!--1357013-->  
 
 ## <a name="navigation"></a>Spostamento
 
-Alcune aree della console potrebbero non essere visibili a seconda del ruolo di sicurezza assegnato. Per altre informazioni sui ruoli, vedere [Nozioni fondamentali sull'amministrazione basata su ruoli](/sccm/core/understand/fundamentals-of-role-based-administration).
+Alcune aree della console potrebbero non essere visibili a seconda del ruolo di sicurezza assegnato. Per altre informazioni sui ruoli, vedere [Nozioni fondamentali sull'amministrazione basata su ruoli](/configmgr/core/understand/fundamentals-of-role-based-administration).
 
 ### <a name="workspaces"></a>Aree di lavoro
 
@@ -108,21 +119,30 @@ Nella parte inferiore del menu di scelta rapida della colonna è possibile ordin
 
 ![Raggruppare per colonna in Configuration Manager](media/column-group-by.png)  
 
+## <a name="bkmk_sedo"></a> Richiamare il blocco per la modifica delle sequenze di attività
+
+<!--4786915-->
+
+Se la console di Configuration Manager non risponde, può essere bloccata la possibilità di apportare ulteriori modifiche fino al termine del blocco, dopo 30 minuti. Questo blocco fa parte del sistema di Configuration Manager SEDO (modifica serializzata di Distributed Objects). Per altre informazioni, vedere [Configuration Manager SEDO](/configmgr/develop/core/understand/sedo).
+
+A partire da [Current Branch versione 1906](/configmgr/core/plan-design/changes/whats-new-in-version-1906#reclaim-sedo-lock-for-task-sequences), è possibile cancellare il blocco su una sequenza di attività. A partire dalla versione 1910, è possibile cancellare il blocco su qualsiasi oggetto nella console di Configuration Manager.
+
+Questa azione si applica solo al proprio account utente che ha il blocco e allo stesso dispositivo da cui il sito ha concesso il blocco. Quando si tenta di accedere a un oggetto bloccato, è ora possibile **rimuovere le modifiche** e continuare a modificare l'oggetto. Queste modifiche andrebbero perse comunque al termine del blocco.
 
 ## <a name="bkmk_viewconnected"></a> Visualizzare le console connesse di recente
 
 <!--3699367-->
 A partire dalla versione 1902, è possibile visualizzare le connessioni più recenti per la console di Configuration Manager. La visualizzazione include le connessioni attive e quelle stabilite di recente. Nell'elenco si vedrà sempre la connessione corrente alla console e si vedranno solo le connessioni dalla console di Configuration Manager. Non sarà possibile vedere le connessioni PowerShell o altre connessioni al provider SMS basate su SDK. Il sito rimuove dall'elenco le istanze anteriori a 30 giorni.
 
-### <a name="prerequisites-to-view-connected-consoles"></a>Prerequisiti per visualizzare le console connesse
+### <a name="bkmk_connections-prereq"></a> Prerequisiti per visualizzare le console connesse
 
 - Account con autorizzazione di **lettura** per l'oggetto **SMS_Site**
 - Installare IIS sul server del provider SMS <!---SCCMDocs-pr issue 1326-->
 - Consentire al provider SMS di usare un certificato.<!--SCCMDocs-pr issue 3135--> Usare una delle opzioni seguenti:  
 
-    - Abilitare [HTTP avanzato](/sccm/core/plan-design/hierarchy/enhanced-http) (scelta consigliata)
+    - Abilitare [HTTP avanzato](/configmgr/core/plan-design/hierarchy/enhanced-http) (scelta consigliata)
     - Associare manualmente un certificato basato su PKI alla porta 443 in IIS sul server che ospita il ruolo Provider SMS  
-
+- Il [servizio di amministrazione](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_admin-service) deve essere abilitato per il funzionamento di **Ultimo heartbeat della console** (funzionalità introdotta nella versione 1910).
 ### <a name="view-connected-consoles"></a>Visualizzare le console connesse
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**.  
@@ -136,9 +156,41 @@ A partire dalla versione 1902, è possibile visualizzare le connessioni più rec
     - Codice del sito connesso
     - Versione della console
     - Ora dell'ultima connessione: l'ultima volta che l'utente ha *aperto* la console
+    - A partire dalla versione 1910, la colonna **Ultimo heartbeat della console** ha sostituito la colonna **Ora dell'ultima connessione**. <!--4923997-->
+       - Il [servizio di amministrazione](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_admin-service) deve essere abilitato per il funzionamento di **Last Console Heartbeat** (Ultimo heartbeat colonna).
+       - Una console aperta in primo piano invia un heartbeat ogni 10 minuti.
 
 ![Visualizzare le connessioni della console di Configuration Manager](media/console-connections.png) 
+## <a name="bkmk_message"></a> Inviare messaggi agli amministratori da Connessioni di console
+<!--4923997-->
+*(Funzionalità introdotta nella versione 1910)*
 
+A partire dalla versione 1910, è possibile inviare messaggi agli altri amministratori di Configuration Manager dal nodo **Connessioni di console**. Quando si sceglie di inviare un messaggio a un amministratore, viene avviato Microsoft Teams e viene aperta una chat con l'utente.
+
+### <a name="prerequisites-for-messaging-administrators"></a>Prerequisiti per l'invio di messaggi agli amministratori
+
+- Per gli amministratori della messaggistica, è necessario che l'account destinatario del messaggio sia stato individuato con [Azure AD o individuazione dell'utente AD](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser).
+- Nel dispositivo da cui viene eseguita la console deve essere installato Microsoft Teams.
+nota
+- Tutti i [prerequisiti per visualizzare le console connesse](#bkmk_connections-prereq)
+
+### <a name="message-administrators"></a>Inviare messaggi agli amministratori
+
+1. Passare ad **Amministrazione** > **Sicurezza** > **Connessioni di console**.
+1. Fare clic con il pulsante destro del mouse sulla connessione di console di un utente e scegliere **Message Administrator** (Amministratore messaggi).
+    - Se il nome dell'entità utente non viene trovato per l'amministratore selezionato, l'opzione **Message Administrator** (Amministratore messaggi) è disattivata.
+    - Viene visualizzato un messaggio di errore, incluso un collegamento per il download, se Microsoft Teams non è installato nel dispositivo da cui viene eseguita la console.
+    - Se Microsoft Teams è installato nel dispositivo da cui viene eseguita la console, verrà aperta una chat con l'utente.
+
+![Screenshot degli amministratori dei messaggi con Microsoft Teams](media/4923997-message-administrator.png)
+
+### <a name="known-issues"></a>Problemi noti
+
+Il messaggio di errore che informa che Microsoft Teams non è installato non verrà visualizzato se la chiave del Registro di sistema seguente non esiste:
+
+Computer\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
+
+Per risolvere il problema, creare manualmente la chiave del Registro di sistema.
 
 ## <a name="bkmk_notify"></a> Notifiche della console di Configuration Manager
 
@@ -263,7 +315,7 @@ Inviare commenti e suggerimenti dalla console.
 
 - **Invia un suggerimento**: consente di accedere a UserVoice per condividere la propria opinione  
 
-Per altre informazioni, vedere [Commenti e suggerimenti sul prodotto](/sccm/core/understand/find-help#BKMK_1806Feedback).
+Per altre informazioni, vedere [Commenti e suggerimenti sul prodotto](/configmgr/core/understand/find-help#BKMK_1806Feedback).
 
 
 ### <a name="assets-and-compliance-workspace"></a>Area di lavoro Asset e conformità
@@ -317,7 +369,7 @@ A partire dalla versione 1806, le colonne seguenti sono disponibili nel nodo **D
 - **Utente attualmente connesso** <!--1358202-->  
 
     > [!NOTE]  
-    > La visualizzazione dell'utente attualmente connesso richiede l'[individuazione dell'utente](/sccm/core/servers/deploy/configure/configure-discovery-methods#bkmk_config-adud) e l'[affinità utente-dispositivo](/sccm/apps/deploy-use/link-users-and-devices-with-user-device-affinity).  
+    > La visualizzazione dell'utente attualmente connesso richiede l'[individuazione dell'utente](/configmgr/core/servers/deploy/configure/configure-discovery-methods#bkmk_config-adud) e l'[affinità utente-dispositivo](/configmgr/apps/deploy-use/link-users-and-devices-with-user-device-affinity).  
 
 Per altre informazioni su come visualizzare una colonna non predefinita, vedere [Colonne](#columns).
 
@@ -340,7 +392,7 @@ Questo comportamento migliora significativamente il tempo necessario per le rice
 <!--4616810-->
 *(Funzionalità introdotta nella versione 1906)*
 
-Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi** e selezionare il nodo **Sequenze di attività**. Modificare una sequenza di attività e selezionare o aggiungere il passaggio [Installa pacchetto](/sccm/osd/understand/task-sequence-steps#BKMK_InstallPackage). Se un pacchetto include più di un programma, l'elenco a discesa ora visualizza i programmi in ordine alfabetico.
+Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi** e selezionare il nodo **Sequenze di attività**. Modificare una sequenza di attività e selezionare o aggiungere il passaggio [Installa pacchetto](/configmgr/osd/understand/task-sequence-steps#BKMK_InstallPackage). Se un pacchetto include più di un programma, l'elenco a discesa ora visualizza i programmi in ordine alfabetico.
 
 #### <a name="task-sequences-tab-in-applications-node"></a>Scheda Sequenze di attività nel nodo Applicazioni
 <!--4616810-->
@@ -428,9 +480,11 @@ Copiare le informazioni dal riquadro **Dettagli asset** per i nodi di monitoragg
 ### <a name="administration-workspace"></a>Area di lavoro Amministrazione
 
 <!--4223683-->
-A partire dalla versione 1906, è possibile abilitare alcuni nodi nel nodo **Protezione** per usare il servizio di amministrazione. Questa modifica consente alla console di comunicare con il provider SMS tramite HTTPS anziché tramite WMI. Per altre informazioni, vedere [Servizio di amministrazione](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_admin-service).
+A partire dalla versione 1906, è possibile abilitare alcuni nodi nel nodo **Protezione** per usare il servizio di amministrazione. Questa modifica consente alla console di comunicare con il provider SMS tramite HTTPS anziché tramite WMI. Per altre informazioni, vedere [Servizio di amministrazione](/configmgr/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_admin-service).
 
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-[Funzionalità di accesso facilitato](/sccm/core/understand/accessibility-features)
+[Funzionalità di accesso facilitato](/configmgr/core/understand/accessibility-features)
+
+[Editor delle sequenze di attività](/configmgr/osd/understand/task-sequence-editor#bkmk_conditions)

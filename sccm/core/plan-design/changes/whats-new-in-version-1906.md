@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 05b2a01c66cba7119bc8752dc3ed6f4a4a9ab7da
-ms.sourcegitcommit: 3ecba0573e7b1c99de3291dbeb29a5de432ce647
+ms.openlocfilehash: 09357d591bde8c2585291b7de12d1f1f7388a94b
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71715910"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660700"
 ---
 # <a name="whats-new-in-version-1906-of-configuration-manager-current-branch"></a>Novità della versione 1906 di Configuration Manager Current Branch
 
@@ -340,7 +340,7 @@ Per altre informazioni, vedere [Passaggi della sequenza di attività](/sccm/osd/
 <!--3699337-->
 Se la console di Configuration Manager non risponde, può essere bloccata la possibilità di apportare ulteriori modifiche a una sequenza di attività. Quando si tenta di accedere a una sequenza di attività bloccata, è ora possibile **rimuovere le modifiche** e continuare a modificare l'oggetto.
 
-Per altre informazioni, vedere [Gestire sequenze di attività](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#bkmk_sedo).
+Per altre informazioni, vedere [Usare l'editor delle sequenze di attività](/sccm/osd/understand/task-sequence-editor#bkmk_sedo).
 
 ### <a name="pre-cache-driver-packages-and-os-images"></a>Pre-cache per pacchetti di driver e immagini del sistema operativo
 
@@ -398,7 +398,7 @@ Questa versione include i seguenti miglioramenti apportati all'infrastruttura di
 >
 > - L'esperienza utente di Silverlight non è supportata a partire dalla versione Current Branch 1806.
 > - A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni.
-> - Nella prima versione Current Branch dopo il 31 ottobre 2019, il supporto terminerà per i ruoli del catalogo applicazioni.  
+> - Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 
 Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat) e [Pianificare per Software Center](/sccm/apps/plan-design/plan-for-software-center).
 
@@ -615,7 +615,7 @@ Nella versione 1906 vengono impostati come deprecati i prodotti seguenti:
 A partire da questa versione, le funzionalità seguenti non sono più in versione non definitiva:
 
 - [Servizio di amministrazione del provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_admin-service)
-- [Gestione di Device Guard](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)
+- [Gestione di Controllo di applicazioni di Windows Defender](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)
 
 A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in Configuration Manager Current Branch, versione 1906](https://support.microsoft.com/help/4514258).
 

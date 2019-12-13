@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b53f55a47a77848840493fa7fe08b599a4db2111
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56139154"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62200834"
 ---
 # <a name="windows-firewall-and-port-settings-for-clients-in-system-center-configuration-manager"></a>Impostazioni di Windows Firewall e delle porte per i client in System Center Configuration Manager
 
@@ -92,7 +92,7 @@ I computer client in System Center Configuration Manager che eseguono Windows Fi
 
  In uscita: Porta UDP **9**  
 
- Questi numeri di porta predefiniti possono essere modificati in Configuration Manager usando le impostazioni client **Risparmio energia**: **Numero di porta del proxy di riattivazione (UDP)** e **Numero di porta di riattivazione LAN (UDP)**. Se si specifica l'impostazione client **Risparmio energia**: **Eccezione di Windows Firewall per il proxy di riattivazione**, queste porte vengono configurate automaticamente in Windows Firewall per i client. Tuttavia, se i client eseguono un firewall diverso, è necessario configurare manualmente le eccezioni per i numeri di porta.  
+ Questi numeri di porta predefiniti possono essere modificati in Configuration Manager usando le impostazioni client **Risparmio energia**: **Numero di porta del proxy di riattivazione (UDP)** e **Numero di porta di riattivazione LAN (UDP)** . Se si specifica l'impostazione client **Risparmio energia**: **Eccezione di Windows Firewall per il proxy di riattivazione**, queste porte vengono configurate automaticamente in Windows Firewall per i client. Tuttavia, se i client eseguono un firewall diverso, è necessario configurare manualmente le eccezioni per i numeri di porta.  
 
  Oltre a queste porte, il proxy di riattivazione utilizza i messaggi di richiesta echo di Internet Control Message Protocol (ICMP) da un computer client all'altro. Questo tipo di comunicazione viene usata per verificare se l'altro computer è attivo nella rete. ICMP viene talvolta indicato come comandi ping TCP/IP.  
 
@@ -132,7 +132,7 @@ I computer client in System Center Configuration Manager che eseguono Windows Fi
 |-----------------|---------|---------|  
 |Protocollo HTTP (Hypertext Transfer Protocol) dal computer client al punto di aggiornamento software.|--|80 o 8530 (vedere la nota 2, **Windows Server Update Services**)|  
 |Protocollo HTTPS (Secure Hypertext Transfer Protocol) dal computer client al punto di aggiornamento software.|--|443 o 8531 (vedere la nota 2, **Windows Server Update Services**)|  
-|Server Message Block (SMB) tra il server di origine e il computer client quando si specifica la proprietà della riga di comando CCMSetup **/source:&lt;percorso\>**.|--|445|  
+|Server Message Block (SMB) tra il server di origine e il computer client quando si specifica la proprietà della riga di comando CCMSetup **/source:&lt;percorso\>** .|--|445|  
 
 ### <a name="ports-that-are-used-with-group-policy-based-installation"></a>Porte utilizzate con l'installazione basata sui criteri di gruppo  
 
@@ -140,16 +140,16 @@ I computer client in System Center Configuration Manager che eseguono Windows Fi
 |-----------------|---------|---------|  
 |Protocollo HTTP (Hypertext Transfer Protocol) dal computer client a un punto di gestione in caso di connessione tramite HTTP.|--|80 (vedere la nota 1, **Porta alternativa disponibile**)|  
 |Protocollo HTTPS (Secure Hypertext Transfer Protocol) dal computer client a un punto di gestione in caso di connessione tramite HTTPS.|--|443 (vedere la nota 1, **Porta alternativa disponibile**)|  
-|Server Message Block (SMB) tra il server di origine e il computer client quando si specifica la proprietà della riga di comando CCMSetup **/source:&lt;percorso\>**.|--|445|  
+|Server Message Block (SMB) tra il server di origine e il computer client quando si specifica la proprietà della riga di comando CCMSetup **/source:&lt;percorso\>** .|--|445|  
 
 ### <a name="ports-that-are-used-with-manual-installation-and-logon-script-based-installation"></a>Porte utilizzate con l'installazione manuale e l'installazione basata sugli script di accesso  
 
 |Descrizione|UDP|TCP|  
 |-----------------|---------|---------|  
 |SMB (Server Message Block) tra il computer client e una condivisione di rete da cui si esegue CCMSetup.exe.<br /><br /> Quando si installa Configuration Manager, i file di origine dell'installazione client vengono copiati e automaticamente condivisi dalla cartella *&lt;PercorsoInstallazione\>* \Client nei punti di gestione. È tuttavia possibile copiare i file e creare una nuova condivisione in qualsiasi computer della rete. In alternativa, è possibile eliminare il traffico di rete eseguendo CCMSetup.exe in locale, utilizzando ad esempio supporti rimovibili.|--|445|  
-|Protocollo HTTP (Hypertext Transfer Protocol) dal computer client a un punto di gestione in caso di connessione tramite HTTP e quando non viene specificata la proprietà della riga di comando CCMSetup **/source:&lt;percorso\>**.|--|80 (vedere la nota 1, **Porta alternativa disponibile**)|  
-|Protocollo HTTPS (Secure Hypertext Transfer Protocol) dal computer client a un punto di gestione in caso di connessione tramite HTTPS e quando non viene specificata la proprietà della riga di comando CCMSetup **/source:&lt;percorso\>**.|--|443 (vedere la nota 1, **Porta alternativa disponibile**)|  
-|Server Message Block (SMB) tra il server di origine e il computer client quando si specifica la proprietà della riga di comando CCMSetup **/source:&lt;percorso\>**.|--|445|  
+|Protocollo HTTP (Hypertext Transfer Protocol) dal computer client a un punto di gestione in caso di connessione tramite HTTP e quando non viene specificata la proprietà della riga di comando CCMSetup **/source:&lt;percorso\>** .|--|80 (vedere la nota 1, **Porta alternativa disponibile**)|  
+|Protocollo HTTPS (Secure Hypertext Transfer Protocol) dal computer client a un punto di gestione in caso di connessione tramite HTTPS e quando non viene specificata la proprietà della riga di comando CCMSetup **/source:&lt;percorso\>** .|--|443 (vedere la nota 1, **Porta alternativa disponibile**)|  
+|Server Message Block (SMB) tra il server di origine e il computer client quando si specifica la proprietà della riga di comando CCMSetup **/source:&lt;percorso\>** .|--|445|  
 
 ### <a name="ports-that-are-used-with-software-distribution-based-installation"></a>Porte utilizzate con l'installazione basata sul punto di distribuzione software  
 

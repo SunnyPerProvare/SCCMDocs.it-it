@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4439aa280edaffbb59f8d49ece58e067a729ec91
-ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "56755426"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62199455"
 ---
 # <a name="remote-actions-with-co-management"></a>Azioni remote con la co-gestione
 
@@ -49,7 +49,7 @@ Per altre informazioni su queste azioni, vedere [Azioni remote disponibili](#ava
 
 La società di consulenza globale Avanade usa regolarmente le azioni remote per gestire i dispositivi usati dai 30.000 dipendenti. In un [post di blog recente](https://www.microsoft.com/microsoft-365/blog/2018/02/07/the-future-is-on-the-other-side-of-this-bridge/), il CIO di Avanade si è così espresso:
 
-> *Il grande vantaggio immediato ottenuto dalle funzionalità di Intune è la possibilità di reimpostare in modalità remota Windows in un computer. Questo è importante per i computer persi o rubati, che è un evento più comune per la nostra forza lavoro in mobilità.*
+> *Il grande vantaggio immediato ottenuto dalle funzionalità di Intune è la possibilità di reimpostare in modalità remota Windows in un computer. Questo è importante per i computer persi o rubati, che è un evento più comune per la nostra forza lavoro in mobilità.* 
 > *Altrimenti, avremmo dovuto integrare e gestire questa funzionalità in un pacchetto di Configuration Manager personalizzato.*
 
 Per altre informazioni su come usare queste azioni remote, vedere [Azioni del dispositivo disponibili](https://docs.microsoft.com/intune/device-management#available-device-actions).

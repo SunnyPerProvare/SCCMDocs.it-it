@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e53e5fc081be04209312cd3144c38d0ecd944fc1
-ms.sourcegitcommit: 04dd0c17e47763a3e2b6c44c005428ea7d67f4bd
+ms.openlocfilehash: 1d91dd8045bc95ea69c4f60e981f4e74af6da141
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70021959"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74660037"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Concetti di base per la gestione dei contenuti in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager supporta un solido sistema di strumenti e opzioni per gestire i contenuti software, necessari per tutte le distribuzioni di software, quali applicazioni, pacchetti, aggiornamenti software e distribuzioni del sistema operativo. Configuration Manager archivia il contenuto sia sui server del sito che sui punti di distribuzione. Questo contenuto richiede una grande quantità di larghezza di banda di rete durante il trasferimento tra i percorsi. Per pianificare e usare efficacemente l'infrastruttura di gestione dei contenuti, è opportuno conoscere prima le opzioni e le configurazioni disponibili. Quindi valutare come usarle per adattare al meglio l'ambiente di rete e le esigenze di distribuzione del contenuto.  
 
@@ -152,16 +152,19 @@ I gruppi di limiti di Configuration Manager consentono di definire e regolamenta
 Ottimizzazione recapito è la tecnologia consigliata per [ottimizzare il recapito degli aggiornamenti di Windows 10](/sccm/sum/deploy-use/optimize-windows-10-update-delivery) dei file di installazione rapida per gli aggiornamenti qualitativi di Windows 10.
 
 
-## <a name="delivery-optimization-in-network-cache"></a>Ottimizzazione recapito nella cache in rete
+## <a name="microsoft-connected-cache"></a>Microsoft Connected Cache
 
 <!--3555764-->
-A partire dalla versione 1906, è possibile installare un server di cache in rete di Ottimizzazione recapito nei punti di distribuzione. Memorizzando nella cache questo contenuto in locale, i client possono trarre vantaggio dalla funzionalità di Ottimizzazione recapito, tuttavia è possibile contribuire a proteggere i collegamenti WAN.
+A partire dalla versione 1906, è possibile installare un server di Microsoft Connected Cache nei punti di distribuzione. Memorizzando nella cache questo contenuto in locale, i client possono trarre vantaggio dalla funzionalità di Ottimizzazione recapito, tuttavia è possibile contribuire a proteggere i collegamenti WAN.
+
+> [!NOTE]
+> A partire dalla versione 1910, questa funzionalità è denominata **Microsoft Connected Cache**. In precedenza era nota come Cache in rete di Ottimizzazione recapito (DOINC).
 
 Questo server di cache agisce come una cache trasparente su richiesta per il contenuto scaricato da Ottimizzazione recapito. Usare le impostazioni client per assicurarsi che il server sia disponibile soltanto ai membri del gruppo di limiti di Configuration Manager locale.
 
 Questa cache è separata dal contenuto del punto di distribuzione di Configuration Manager. Se si sceglie la stessa unità come ruolo del punto di distribuzione, il contenuto viene archiviato separatamente.
 
-Per altre informazioni, vedere [Cache in rete di Ottimizzazione recapito in Configuration Manager](/sccm/core/plan-design/hierarchy/delivery-optimization-in-network-cache).
+Per altre informazioni, vedere [Microsoft Connected Cache in Configuration Manager](/sccm/core/plan-design/hierarchy/microsoft-connected-cache).
 
 
 ## <a name="peer-cache"></a>Peer cache

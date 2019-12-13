@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 74b8f7b099e906856300f5cc76b807daf894e060
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120079"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62237337"
 ---
 # <a name="design-a-hierarchy-of-sites-for-configuration-manager"></a>Progettare una gerarchia di siti per Configuration Manager
 

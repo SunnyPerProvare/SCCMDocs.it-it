@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5a1bf32c77989c11c55723d5edf271e234ccd4ec
-ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58523742"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "62247592"
 ---
 # <a name="accessibility-features-in-configuration-manager"></a>Funzionalità di accessibilità in Configuration Manager
 

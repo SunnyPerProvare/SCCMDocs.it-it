@@ -1,8 +1,8 @@
 ---
 title: Nozioni di base
 titleSuffix: Configuration Manager
-description: Informazioni e concetti di base relativi a System Center Configuration Manager.
-ms.date: 12/30/2016
+description: Informazioni e concetti di base relativi a Configuration Manager.
+ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,36 +11,33 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4bb48ebf1bcf5be503505efd2b84d364e655a6e5
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 04b64768227f6db87d8d8da1e0f83d6864a57121
+ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131184"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74661159"
 ---
-# <a name="fundamentals-of-system-center-configuration-manager"></a>Nozioni fondamentali su System Center Configuration Manager
+# <a name="fundamentals-of-configuration-manager"></a>Nozioni fondamentali di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Se si usa System Center Configuration Manager per la prima volta, leggere gli argomenti fondamentali per apprendere i concetti di base per Configuration Manager prima di eseguire l'installazione del primo sito. Se si ha familiarità con Configuration Manager, è possibile procedere direttamente. È consigliabile iniziare con [Novità di System Center Configuration Manager](/sccm/core/plan-design/changes/what-has-changed-from-configuration-manager-2012).  
+Se non si ha familiarità con Configuration Manager Current Branch, iniziare con le nozioni fondamentali. Prima di eseguire il programma per installare il primo sito, è opportuno acquisire i concetti di base relativi a Configuration Manager. Se si ha già familiarità con System Center 2012 Configuration Manager, iniziare con [Novità rispetto a System Center 2012 Configuration Manager](/sccm/core/plan-design/changes/what-has-changed-from-configuration-manager-2012).
 
- Per informazioni sui sistemi operativi e gli ambienti supportati, sui requisiti hardware e sulla capacità, vedere [Supported configurations for System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md).  
+Per informazioni sui sistemi operativi e gli ambienti supportati, sui requisiti hardware e sulla capacità, vedere [Configurazioni supportate per Configuration Manager](/configmgr/core/plan-design/configs/supported-configurations).  
 
- La distribuzione di Configuration Manager comporta anche la distribuzione di uno o più siti:  
+Per i concetti fondamentali relativi a Configuration Manager, vedere gli articoli seguenti:
 
-- **Quando si distribuiscono più siti**, i siti formano relazioni padre-figlio che vengono chiamate collettivamente gerarchia. Usare una gerarchia per gestire in modo centralizzato un numero elevato di siti e dispositivi.  I dati e le informazioni passano ai livelli inferiori della gerarchia per raggiungere i dispositivi gestiti. Le informazioni sui dispositivi e i risultati delle richieste e delle attività di configurazione passano ai livelli superiori della gerarchia.  
+- [Nozioni fondamentali su siti e gerarchie](/configmgr/core/understand/fundamentals-of-sites-and-hierarchies)  
 
-- **Quando si distribuisce un singolo sito**, anche in questo caso si parla di una gerarchia.  
+- [Informazioni su upgrade, aggiornamento e installazione](/configmgr/core/understand/upgrade-update-install)
 
-  Alcune attività e impostazioni di configurazione si applicano a tutti i siti in una gerarchia, mentre altre si applicano a singoli siti.  
+- [Nozioni fondamentali sulla gestione dei dispositivi](/configmgr/core/understand/fundamentals-of-managing-devices)  
 
-## <a name="fundamental-concepts-for-system-center-configuration-manager"></a>Concetti fondamentali relativi a System Center Configuration Manager
-Visualizzare gli argomenti seguenti per informazioni sui concetti fondamentali relativi a System Center Configuration Manager:  
+- [Nozioni fondamentali sulle attività di gestione client](/configmgr/core/understand/fundamentals-of-client-management-tasks)  
 
--   [Nozioni fondamentali su siti e gerarchie per System Center Configuration Manager](../../core/understand/fundamentals-of-sites-and-hierarchies.md)  
+- [Nozioni fondamentali sulla sicurezza](/configmgr/core/understand/fundamentals-of-security)  
 
--   [Nozioni fondamentali sulla gestione dei dispositivi con System Center Configuration Manager](../../core/understand/fundamentals-of-managing-devices.md)  
+- [Nozioni fondamentali sull'amministrazione basata su ruoli](/configmgr/core/understand/fundamentals-of-role-based-administration)
 
--   [Nozioni fondamentali sulle attività di gestione client per System Center Configuration Manager](../../core/understand/fundamentals-of-client-management-tasks.md)  
-
--   [Nozioni fondamentali sulla sicurezza di System Center Configuration Manager](../../core/understand/fundamentals-of-security.md)  
+- [Concetti di base per la gestione dei contenuti](/configmgr/core/plan-design/hierarchy/fundamental-concepts-for-content-management)
