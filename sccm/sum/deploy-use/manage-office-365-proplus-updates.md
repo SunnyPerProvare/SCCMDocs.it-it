@@ -5,18 +5,18 @@ description: Configuration Manager sincronizza gli aggiornamenti del client di O
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 07/26/2019
+ms.date: 12/06/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 493e9138c5be3bdf396dd7fe0d318e3da71f561d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 083dbbbd14b7364c88abfb6471ea1505657586ae
+ms.sourcegitcommit: 66e7363108e37ea8bb5d36fca0231829d48ac612
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70380310"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74899521"
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Gestire Office 365 ProPlus con Configuration Manager
 
@@ -30,7 +30,7 @@ Configuration Manager consente di gestire le app di Office 365 ProPlus nei modi 
 
 - [Aggiungere lingue per i download di aggiornamento di Office 365](#bkmk_o365_lang): è possibile aggiungere il supporto per Configuration Manager per scaricare gli aggiornamenti in tutte le lingue supportate da Office 365. Non è necessario che Configuration Manager supporti la lingua se è supportata da Office 365. Prima di Configuration Manager versione 1610, è necessario scaricare e distribuire gli aggiornamenti nelle stesse lingue configurate nei client Office 365.
 
-- [Modificare il canale di aggiornamento](#change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager): è possibile usare Criteri di gruppo per distribuire ai client di Office 365 la modifica del valore della chiave del Registro di sistema relativa al canale di aggiornamento.
+- [Modificare il canale di aggiornamento](#bkmk_channel): è possibile usare Criteri di gruppo per distribuire ai client di Office 365 la modifica del valore della chiave del Registro di sistema relativa al canale di aggiornamento.
 
 Per esaminare le informazioni sul client Office 365 e avviare alcune di queste azioni di gestione di Office 365, usare il [dashboard di Gestione client di Office 365](/sccm/sum/deploy-use/office-365-dashboard).
 
@@ -219,37 +219,11 @@ Per assicurarsi che il canale di aggiornamento sia impostato in modo da consenti
     Esempio: `schtasks /run /tn "\Microsoft\Office\Office Automatic Updates 2.0"`
 5. Fare clic su **OK**. 
 
-## <a name="change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager"></a>Modificare il canale di aggiornamento dopo aver abilitato i client di Office 365 alla ricezione degli aggiornamenti da Configuration Manager
-Per modificare il canale di aggiornamento dopo aver abilitato i client di Office 365 alla ricezione degli aggiornamenti da Configuration Manager, usare Criteri di gruppo per distribuire una modifica del valore della chiave del Registro di sistema ai client di Office 365. Modificare la chiave del Registro di sistema **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\CDNBaseUrl** in modo che usi uno dei valori seguenti:
+## <a name="bkmk_channel"></a> Modificare il canale di aggiornamento dopo aver abilitato i client di Office 365 alla ricezione degli aggiornamenti da Configuration Manager
 
-- Canale mensile <br/>
-<i>( in precedenza Current Channel)</i>:  
-  **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60
+Dopo la distribuzione di Office 365 ProPlus, è possibile modificare il canale di aggiornamento con Criteri di gruppo o lo strumento di distribuzione di Office (ODT). Ad esempio, è possibile spostare un dispositivo da un canale semestrale a un canale semestrale (mirato). Quando si modifica il canale, Office viene aggiornato automaticamente senza dover reinstallare o scaricare la versione completa. Per altre informazioni, vedere [modificare il canale di aggiornamento di Office 365 ProPlus per i dispositivi nell'organizzazione](https://docs.microsoft.com//deployoffice/change-update-channels).
 
-- Canale semestrale <br/>
-<i>( in precedenza Deferred Channel</i>:  
-  **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/7ffbc6bf-bc32-4f92-8982-f9dd17fd3114
-
-- Canale mensile (mirato)<Br/>
- <i>(in precedenza First Release per Current Channel</i>:  
-  **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be
-
-- Canale semestrale (mirato) <br/>
-<i>(in precedenza First Release per Deferred Channel</i>:  
-  **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/b8f9b850-328d-4355-9145-c59439a0c4cf
-<!--the channel names changed in Sept 2017- https://docs.microsoft.com/DeployOffice/overview-of-update-channels-for-office-365-proplus?ui=en-US&rs=en-US&ad=US-->
-
-
-<!--- You can create an Office 365 app without using the Office 365 Installation Wizard. To do this, you use the Office 2016 Deployment Tool (ODT) to download Office installation source files to a network share, generate Configure.xml that specifies the correct Office version and channel, and so on. Then, create an app for the files using the normal app management process.
-> [!Note]
-> The Office 365 Installation Wizard was introduced in Configuration Manager version 1702 and provides an easy way to create Office 365 apps.
-
-- [Download the Office 2016 Deployment Tool](https://aka.ms/ODT2016) from the Microsoft Download Center.  
-- Review the [configuration options for the Office Deployment Tool](https://technet.microsoft.com/library/jj219426.aspx).
-
-You can create an application just as you would with any other application in Configuration Manager from **Software Library** > **Overview** > **Application Management** > **Applications**. For details, see [Create and deploy an application](/sccm/apps/get-started/create-and-deploy-an-application).
---->
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Usare il dashboard di Gestione client di Office 365 in Configuration Manager per esaminare le informazioni sul client Office 365 e distribuire app di Office 365. Per altre informazioni, vedere [Dashboard di Gestione client di Office 365](/sccm/sum/deploy-use/office-365-dashboard). --->
+Usare il dashboard di Gestione client di Office 365 in Configuration Manager per esaminare le informazioni sul client Office 365 e distribuire app di Office 365. Per altre informazioni, vedere [Dashboard di Gestione client di Office 365](/sccm/sum/deploy-use/office-365-dashboard).
