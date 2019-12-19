@@ -36,7 +36,7 @@ Personalizzare il portale self-service con il nome dell'organizzazione, l'URL he
 
 1. Espandere **siti**, **sito Web predefinito**e selezionare il nodo **selfservice** . Nel riquadro dei dettagli, **ASP.NET** gruppo, aprire **Impostazioni applicazione**.
 
-    [schermata di esempio ![delle impostazioni dell'applicazione SelfService in Gestione IIS](media/bitlocker-self-service-iis-app-settings.png)](media/bitlocker-self-service-iis-app-settings.png#lightbox)
+    [![schermata di esempio delle impostazioni dell'applicazione SelfService in Gestione IIS](media/bitlocker-self-service-iis-app-settings.png)](media/bitlocker-self-service-iis-app-settings.png#lightbox)
 
 1. Selezionare l'elemento che si desidera modificare e fare clic su **modifica**nel riquadro **azioni** . Modificare il **valore** con il nuovo nome che si desidera utilizzare.
 

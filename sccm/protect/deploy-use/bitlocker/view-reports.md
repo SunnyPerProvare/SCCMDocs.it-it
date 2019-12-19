@@ -50,7 +50,7 @@ Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio
 
 Usare questo report per raccogliere informazioni specifiche su un computer. Fornisce informazioni dettagliate sulla crittografia sull'unità del sistema operativo e sulle unità dati fisse. Per visualizzare i dettagli di ogni unità, espandere la voce Nome computer. Indica anche i criteri applicati a ogni tipo di unità nel computer.
 
-[schermata di esempio ![di report conformità computer BitLocker](media/bitlocker-computer-compliance.png)](media/bitlocker-computer-compliance.png#lightbox)
+[![schermata di esempio di report conformità computer BitLocker](media/bitlocker-computer-compliance.png)](media/bitlocker-computer-compliance.png#lightbox)
 
 È inoltre possibile utilizzare questo report per determinare l'ultimo stato noto di crittografia BitLocker dei computer smarriti o rubati. Configuration Manager determina la conformità del dispositivo in base ai criteri di BitLocker distribuiti. Prima di provare a determinare lo stato di crittografia BitLocker di un dispositivo, verificare i criteri che sono stati distribuiti.
 
@@ -101,7 +101,7 @@ Questo report include i grafici seguenti, che mostrano lo stato di conformità d
 
 - Distribuzione dello stato di conformità per tipo di unità
 
-[schermata di esempio ![di dashboard conformità organizzazione BitLocker](media/bitlocker-enterprise-compliance-dashboard.png)](media/bitlocker-enterprise-compliance-dashboard.png#lightbox)
+[![schermata di esempio di dashboard conformità organizzazione BitLocker](media/bitlocker-enterprise-compliance-dashboard.png)](media/bitlocker-enterprise-compliance-dashboard.png#lightbox)
 
 ### <a name="compliance-status-distribution"></a>Distribuzione dello stato di conformità
 
@@ -149,7 +149,7 @@ Nel grafico a barre viene visualizzato lo stato corrente di conformità BitLocke
 
 Questo report Mostra informazioni sulla conformità BitLocker complessiva all'interno dell'organizzazione per la raccolta di computer in cui sono stati distribuiti i criteri di gestione di BitLocker.
 
-[schermata di esempio ![di dettagli conformità organizzazione BitLocker](media/bitlocker-enterprise-compliance-details.png)](media/bitlocker-enterprise-compliance-details.png#lightbox)
+[![schermata di esempio di dettagli conformità organizzazione BitLocker](media/bitlocker-enterprise-compliance-details.png)](media/bitlocker-enterprise-compliance-details.png#lightbox)
 
 |Nome della colonna|Descrizione|
 |--- |--- |
@@ -181,7 +181,7 @@ Questo report Mostra informazioni sulla conformità BitLocker complessiva all'in
 
 Utilizzare questo report per mostrare la conformità generale di BitLocker nell'organizzazione. Viene inoltre illustrata la conformità per i singoli computer in cui sono stati distribuiti i criteri di gestione di BitLocker.
 
-[schermata di esempio ![di riepilogo conformità organizzazione BitLocker](media/bitlocker-enterprise-compliance-summary.png)](media/bitlocker-enterprise-compliance-summary.png#lightbox)
+[![schermata di esempio di riepilogo conformità organizzazione BitLocker](media/bitlocker-enterprise-compliance-summary.png)](media/bitlocker-enterprise-compliance-summary.png#lightbox)
 
 |Nome della colonna|Descrizione|
 |--- |--- |
@@ -211,7 +211,7 @@ Usare questo report per controllare gli utenti che hanno richiesto l'accesso all
 - Tipo specifico di chiave richiesta: password chiave di ripristino, ID chiave di ripristino o hash password TPM
 - Un intervallo di date durante il quale si è verificato il recupero
 
-[schermata di esempio ![del report controllo ripristino BitLocker](media/bitlocker-recovery-audit-report.png)](media/bitlocker-recovery-audit-report.png#lightbox)
+[![schermata di esempio del report controllo ripristino BitLocker](media/bitlocker-recovery-audit-report.png)](media/bitlocker-recovery-audit-report.png#lightbox)
 
 |Nome&nbsp;colonna|Descrizione|
 |----------------|----|
