@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e8f59e874d89bcb64d3331d40ef044c4c8beb01
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1deab2a7dc77f7bb06d847b47a9d7679e78f236b
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74814278"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198677"
 ---
 # <a name="troubleshoot-the-microsoft-store-for-business-and-education-integration-with-configuration-manager"></a>Risolvere i problemi relativi all'integrazione di Microsoft Store for business e Education con Configuration Manager
 
@@ -44,7 +44,7 @@ Nell'area di lavoro **Raccolta software** della console di Configuration Manager
 
 ## <a name="log-files"></a>File di registro
 
-### <a name="msfbsyncworkerlog"></a>MSfBSyncWorker.log
+### <a name="wsfbsyncworkerlog"></a>WSfBSyncWorker. log
 
 Questo file di log si trova nel punto di connessione del servizio, in `\Logs` nella directory di installazione Configuration Manager. Registra le informazioni sulla comunicazione con il servizio cloud. Queste informazioni includono metadati, icone, pacchetti e recupero di file di licenza.
 
@@ -52,7 +52,7 @@ Per modificare il livello di registrazione, modificare il valore di `LoggingLeve
 
 ### <a name="sms_cloudconnectionlog"></a>SMS_CLOUDCONNECTION.log
 
-Questo file di log si trova nel punto di connessione del servizio, in `\Logs` nella directory di installazione Configuration Manager. Se il servizio MSfBSyncWorker non è avviato o viene avviato e interrotto ripetutamente, rivedere le voci del file di log.
+Questo file di log si trova nel punto di connessione del servizio, in `\Logs` nella directory di installazione Configuration Manager. Se il servizio WSfBSyncWorker non è avviato o viene avviato e interrotto ripetutamente, rivedere le voci del file di log.
 
 > [!NOTE]
 > Questo file di log è condiviso con altre funzionalità.
@@ -74,7 +74,7 @@ Questo file di log si trova nel server del sito per il sito di livello superiore
 
 Quando lo stato dell'ultima sincronizzazione *non è riuscito*, iniziare esaminando i seguenti [file di log](#log-files) per identificare il sintomo:
 
-- MSfBSyncWorker.log
+- WSfBSyncWorker. log
 - SMS_CLOUDCONNECTION.log
 
 Esaminare quindi una delle sezioni seguenti per i problemi comuni:
@@ -148,7 +148,7 @@ Per visualizzare la posizione configurata:
 
 1. Selezionare l'account e aprirne le **Proprietà**.
 
-1. Passare alla scheda **Configurazione**. L'impostazione **località** Mostra il percorso di rete in cui archiviare il contenuto dell'applicazione scaricato dal Microsoft Store per le aziende e la formazione.
+1. Passare alla scheda Configurazione. L'impostazione **località** Mostra il percorso di rete in cui archiviare il contenuto dell'applicazione scaricato dal Microsoft Store per le aziende e la formazione.
 
 #### <a name="workaround"></a>Soluzione alternativa
 

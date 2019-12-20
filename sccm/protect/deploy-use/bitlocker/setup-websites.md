@@ -11,12 +11,12 @@ ms.assetid: 1cd8ac9f-b7ba-4cf4-8cd2-d548b0d6b1df
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e2b0c71dfd93fd264e900b6a42952cf3c80374b1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b48dac5f2cb850db104cc06f342fd6e286911d1f
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74662349"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198745"
 ---
 # <a name="set-up-bitlocker-portals"></a>Configurare i portali di BitLocker
 
@@ -42,7 +42,7 @@ Questo processo usa uno script di PowerShell, MBAMWebSiteInstaller.ps1, per inst
 
 - `-SqlServerName <ServerName>` (obbligatorio): nome di dominio completo del server di database del sito primario.
 
-- `-SqlInstanceName <InstanceName>`: il nome dell'istanza di SQL Server per il database del sito primario. Questo parametro è facoltativo se SQL usa l'istanza predefinita.
+- `-SqlInstanceName <InstanceName>`: il nome dell'istanza di SQL Server per il database del sito primario. Se SQL usa l'istanza predefinita, non includere questo parametro.
 
 - `-SqlDatabaseName <DatabaseName>` (obbligatorio): nome del database del sito primario, ad esempio `CM_ABC`.
 
@@ -89,6 +89,9 @@ Nel server Web di destinazione eseguire le operazioni seguenti:
     ``` PowerShell
     .\MBAMWebSiteInstaller.ps1 -SqlServerName sql.contoso.com -SqlInstanceName instance1 -SqlDatabaseName CM_ABC -ReportWebServiceUrl https://rsp.contoso.com/ReportServer -HelpdeskUsersGroupName "contoso\BitLocker help desk users" -HelpdeskAdminsGroupName "contoso\BitLocker help desk admins" -MbamReportUsersGroupName "contoso\BitLocker report users" -SiteInstall Both
     ```
+
+    > [!IMPORTANT]
+    > Questa riga di comando di esempio usa tutti i parametri possibili per mostrarne l'utilizzo. Regolare l'uso in base ai requisiti dell'ambiente.
 
 Una volta eseguita l'installazione, accedere ai portali tramite gli URL seguenti:
 

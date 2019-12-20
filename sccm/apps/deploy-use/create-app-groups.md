@@ -11,12 +11,12 @@ ms.assetid: e67c691e-62ef-4f43-9cfb-0e957d1e7a5f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4427e406ec2d96499276c49db1d9775b9e1f5e24
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 4a07837952e420b9fe70bef26f998232a8f87d2f
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74658728"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75197997"
 ---
 # <a name="create-application-groups"></a>Creare gruppi di applicazioni
 
@@ -64,5 +64,6 @@ Per risolvere i problemi relativi alla distribuzione di un gruppo di app, usare 
   - *Versione 1906*: impostare il comportamento di installazione del tipo di distribuzione per **installare per il sistema**.
 - Le opzioni di distribuzione seguenti potrebbero non funzionare: avvisi, approvazione, distribuzione in più fasi, ripristino.
 - Non è possibile esportare o importare gruppi di app.
+- Non includere nel gruppo le app che richiedono il riavvio o la distribuzione del gruppo potrebbe non riuscire.
 - *Versione 1906*: non è possibile distribuire il gruppo di app in una raccolta utenti.
 - *Versione 1906*: gli utenti non possono **disinstallare** il gruppo di app in Software Center.

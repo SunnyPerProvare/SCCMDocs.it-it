@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5fab723f5757e4e1b1d444f8d19f0034f63ffa0
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 70f5bdd61d4699ea145bc3b734371d2e20803e84
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892129"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198422"
 ---
 # <a name="checklist-for-installing-update-1610-for-system-center-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1610 di System Center Configuration Manager
 
@@ -33,7 +33,7 @@ Per ottenere l'aggiornamento per la versione 1610, è necessario usare un ruolo 
 
     -   In genere, è anche possibile riavviare il servizio **SMS_Executive** nel server del sito per riavviare il download dei file di ridistribuzione dell'aggiornamento.
 
-    -   Un altro problema di download comune si verifica quando le impostazioni del server proxy impediscono il download da <http://silverlight.dlservice.microsoft.com> e da <http://download.microsoft.com>.
+    -   Un altro problema di download comune si verifica quando le impostazioni del server proxy impediscono il download da `silverlight.dlservice.microsoft.com` e da `download.microsoft.com`.
 
 Per altre informazioni sull'installazione degli aggiornamenti, vedere [Aggiornamenti e manutenzione nella console](/sccm/core/servers/manage/updates#bkmk_inconsole).
 

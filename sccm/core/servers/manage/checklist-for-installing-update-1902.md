@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b3f641e76e9e27b44eb4524f3242ce39aa45f164
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f23dcc95e1b2427ed9ea77a310d83541e2c0a53a
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70377799"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198082"
 ---
 # <a name="checklist-for-installing-update-1902-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1902 di Configuration Manager
 
@@ -32,7 +32,7 @@ Per ottenere l'aggiornamento per la versione 1902, è necessario usare un punto 
 
     -   Il file dmpdownloader.log può indicare che il processo dmpdownloader è in attesa di un intervallo prima di cercare gli aggiornamenti. Per riavviare il download dei file di ridistribuzione dell'aggiornamento, riavviare il servizio **SMS_Executive** nel server del sito.
 
-    -   Un altro problema di download comune si verifica quando le impostazioni del server proxy impediscono il download da http://silverlight.dlservice.microsoft.com, da http://download.microsoft.com/ e/o da http://go.microsoft.com.
+    -   Un altro problema di download comune si verifica quando le impostazioni del server proxy impediscono il download da `silverlight.dlservice.microsoft.com`, `download.microsoft.com` e `go.microsoft.com`.
 
 Per altre informazioni sull'installazione degli aggiornamenti, vedere [Aggiornamenti e manutenzione nella console](/sccm/core/servers/manage/updates#bkmk_inconsole).
 

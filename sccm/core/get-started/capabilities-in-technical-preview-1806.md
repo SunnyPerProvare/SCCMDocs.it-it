@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8499ff11cc7ba53760e541eefb690c69b2f20fcf
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 021f52cfa4404476ecf836b3e2bfaaba8907e5f3
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889718"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198558"
 ---
 # <a name="capabilities-in-technical-preview-1806-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1806 per System Center Configuration Manager
 
@@ -184,7 +184,7 @@ A partire da questa versione, quando si [passa a un altro carico di lavoro co-ge
 È inoltre disponibile una nuova condizione globale che determina se **le applicazioni di Office 365 sono gestite da Intune nel dispositivo**. Questa condizione viene aggiunta per impostazione predefinita come requisito alle nuove applicazioni di Office 365. Durante la transizione di questo carico di lavoro, i client in co-gestione non soddisfano il requisito relativo all'applicazione, quindi non installano Office 365 distribuito da Configuration Manager.
 
 ### <a name="known-issue"></a>Problema noto
-- Questa transizione del carico di lavoro attualmente si applica solo alle distribuzioni di Office 365. Configuration Manager continua a gestire gli aggiornamenti di Office 365.<!--510876--> Per altre informazioni tra cui una possibile soluzione alternativa, vedere la nota sulla versione 1802 di Configuration Manager [La modifica dell'impostazione client di Office 365 non è applicabile](/sccm/core/servers/deploy/install/release-notes#changing-office-365-client-setting-doesnt-apply).
+- Questa transizione del carico di lavoro attualmente si applica solo alle distribuzioni di Office 365. Configuration Manager continua a gestire gli aggiornamenti di Office 365.<!--510876--> Per altre informazioni tra cui una possibile soluzione alternativa, vedere la nota sulla versione 1802 di Configuration Manager [La modifica dell'impostazione client di Office 365 non è applicabile](/sccm/core/servers/deploy/install/release-notes).
 
 
 

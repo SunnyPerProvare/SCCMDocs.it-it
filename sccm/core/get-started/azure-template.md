@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c4c565d3c1754ce60ec8f9b7d5dcd2d487f8db1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: bb64b2f13bd1fe558d90d2c4011f03fb6322b443
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68411489"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198575"
 ---
 # <a name="create-a-configuration-manager-lab-in-azure"></a>Creare un lab di Configuration Manager in Azure
 
@@ -80,7 +80,10 @@ Questo processo richiede una sottoscrizione di Azure in cui è possibile creare 
 
 4. Leggere i termini e le condizioni. Se si accettano, selezionare **Accetto le condizioni riportate sopra**, quindi selezionare **Acquista** per continuare. 
 
-Azure convalida le impostazioni e inizia la distribuzione. Controllare lo stato della distribuzione nel portale di Azure. Il processo può durare 2/4 ore. L'esecuzione degli script di configurazione continua anche quando nel portale di Azure viene specificato che la distribuzione è stata completata. Non riavviare le macchine virtuali durante il processo.
+Azure convalida le impostazioni e inizia la distribuzione. Controllare lo stato della distribuzione nel portale di Azure. 
+
+> [!NOTE]
+> Il processo può durare 2/4 ore. L'esecuzione degli script di configurazione continua anche quando nel portale di Azure viene specificato che la distribuzione è stata completata. Non riavviare le macchine virtuali durante il processo.
 
 Per visualizzare lo stato degli script di configurazione, collegarsi al server `<prefix>PS1` e visualizzare il file`%windir%\TEMP\ProvisionScript\PS1.json` seguente. Se tutti i passaggi sono stati completati, il processo è terminato.
 

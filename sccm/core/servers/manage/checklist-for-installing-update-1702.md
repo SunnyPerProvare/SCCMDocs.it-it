@@ -12,12 +12,12 @@ ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1c6f874f74a7c788860ce3c2650f2407dfb05b01
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f906c0842c692d511c0f1f11f32e88bede8519a7
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70738357"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198388"
 ---
 # <a name="checklist-for-installing-update-1702-for-system-center-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1702 di System Center Configuration Manager
 
@@ -36,7 +36,7 @@ Per ottenere l'aggiornamento per la versione 1702, è necessario usare un ruolo 
 
     -   Se il file dmpdownloader.log indica che il processo dmpdownloader è in stato di sospensione ed è in attesa di un intervallo prima di verificare la disponibilità di aggiornamenti, è possibile riavviare il servizio **SMS_Executive** sul server del sito per riavviare il download dei file di ridistribuzione dell'aggiornamento.
 
-    -   Un altro problema di download comune si verifica quando le impostazioni del server proxy impediscono il download da <http://silverlight.dlservice.microsoft.com> e da <http://download.microsoft.com>.
+    -   Un altro problema di download comune si verifica quando le impostazioni del server proxy impediscono il download da `silverlight.dlservice.microsoft.com` e da `download.microsoft.com`.
 
 Per altre informazioni sull'installazione degli aggiornamenti, vedere [Aggiornamenti e manutenzione nella console](/sccm/core/servers/manage/updates#bkmk_inconsole).
 

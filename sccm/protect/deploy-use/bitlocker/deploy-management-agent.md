@@ -11,12 +11,12 @@ ms.assetid: 39aa0558-742c-4171-81bc-9b1e6707f4ea
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8cb3f8763b0789dcf593c71190e4772ce4b977ac
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f91a1da10584da69dcbdcec2d1afdf2b25e41962
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74662639"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198864"
 ---
 # <a name="deploy-bitlocker-management"></a>Distribuire la gestione di BitLocker
 
@@ -30,7 +30,11 @@ La gestione di BitLocker in Configuration Manager include i componenti seguenti:
 
 - **Servizio di ripristino**: componente server che riceve i dati di ripristino di BitLocker dai client. Per ulteriori informazioni, vedere [servizio di ripristino](#recovery-service).
 
-Prima di creare e distribuire i criteri di gestione di BitLocker, assicurarsi di esaminare i [prerequisiti](/configmgr/protect/plan-design/bitlocker-management#prerequisites).
+Prima di creare e distribuire i criteri di gestione di BitLocker:
+
+- Verificare i [prerequisiti](/configmgr/protect/plan-design/bitlocker-management#prerequisites)
+
+- Se necessario, [crittografare le chiavi di ripristino](/configmgr/protect/deploy-use/bitlocker/encrypt-recovery-data) nel database del sito
 
 ## <a name="create-a-policy"></a>Creare un criterio
 
@@ -181,7 +185,5 @@ Ad esempio, è stato usato MBAM per crittografare l'unità senza la protezione d
 Per risolvere questo problema, disabilitare prima di tutto BitLocker nel dispositivo. Quindi, distribuire un nuovo criterio con le nuove impostazioni.
 
 ## <a name="next-steps"></a>Passaggi successivi
-
-[Crittografare i dati di ripristino](/configmgr/protect/deploy-use/bitlocker/encrypt-recovery-data)
 
 [Configurare i report e i portali di BitLocker](/configmgr/protect/deploy-use/bitlocker/setup-websites)

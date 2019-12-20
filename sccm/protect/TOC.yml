@@ -84,10 +84,10 @@
           href: deploy-use/endpoint-protection-client-faq.md
     - name: Gestione di BitLocker
       items:
-        - name: Distribuire la gestione di BitLocker
-          href: deploy-use/bitlocker/deploy-management-agent.md
         - name: Crittografare i dati di ripristino
           href: deploy-use/bitlocker/encrypt-recovery-data.md
+        - name: Distribuire la gestione di BitLocker
+          href: deploy-use/bitlocker/deploy-management-agent.md
         - name: Configurare i portali di BitLocker
           href: deploy-use/bitlocker/setup-websites.md
         - name: Personalizzare il portale self-service

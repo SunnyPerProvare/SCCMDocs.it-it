@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09357d591bde8c2585291b7de12d1f1f7388a94b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 6c8955e969771cc5e20505875a53d794e4e7ecdd
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660700"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198507"
 ---
 # <a name="whats-new-in-version-1906-of-configuration-manager-current-branch"></a>Novità della versione 1906 di Configuration Manager Current Branch
 
@@ -513,7 +513,7 @@ Per altre informazioni, vedere [Monitorare gli aggiornamenti software](/sccm/sum
 
 Per determinare quali dispositivi sono idonei per l'aggiornamento a Office 365 ProPlus, è disponibile un nuovo dashboard di preparazione. Include il riquadro **Preparazione aggiornamenti di Office 365 ProPlus** rilasciato in Configuration Manager Current Branch versione 1902. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Gestione client di Office 365** e selezionare il nodo **Preparazione aggiornamenti di Office 365 ProPlus**.
 
-Per altre informazioni sul dashboard, sui prerequisiti e sull'uso di questi dati, vedere [Integrazione per l'idoneità per Office 365 ProPlus](/sccm/sum/deploy-use/office-365-dashboard#office-365-proplus-upgrade-readiness-dashboard).
+Per altre informazioni sul dashboard, sui prerequisiti e sull'uso di questi dati, vedere [Integrazione per l'idoneità per Office 365 ProPlus](/configmgr/sum/deploy-use/office-365-dashboard#bkmk_readiness-dash).
 
 
 ## <a name="bkmk_protect"></a> Protezione

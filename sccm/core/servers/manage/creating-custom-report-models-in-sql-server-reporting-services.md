@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab6cb2816096697d4ccff6db17f03e4aac1d4f14
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 2a5ba60644d789d73779828ed1a5437cb1365c5d
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62245273"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198015"
 ---
 # <a name="creating-custom-report-models-for-system-center-configuration-manager-in-sql-server-reporting-services"></a>Creazione di modelli di report personalizzati per System Center Configuration Manager in SQL Server Reporting Services
 
@@ -149,11 +149,11 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 4. Nel file _&lt;Nome modello\>_ **.dsv** individuare la prima riga del file, simile alla seguente:  
 
-    **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
+    `<DataSourceView xmlns="https://schemas.microsoft.com/analysisservices/2003/engine">`
 
     Modificare la riga come segue:  
 
-    **&lt;DataSourceView xmlns="<http://schemas.microsoft.com/analysisservices/2003/engine>" xmlns:xsi="RelationalDataSourceView"\>**  
+    `<DataSourceView xmlns="<https://schemas.microsoft.com/analysisservices/2003/engine>" xmlns:xsi="RelationalDataSourceView">`  
 
 5. Copiare l'intero contenuto del file negli Appunti di Windows.  
 
@@ -392,11 +392,11 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 4. Nel file _&lt;Nome modello\>_ **.dsv** individuare la prima riga del file, simile alla seguente:  
 
-    **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
+    `<DataSourceView xmlns="https://schemas.microsoft.com/analysisservices/2003/engine">`
 
     Modificare la riga come segue:  
 
-    **&lt;DataSourceView xmlns="<http://schemas.microsoft.com/analysisservices/2003/engine>" xmlns:xsi="RelationalDataSourceView"\>**  
+    `<DataSourceView xmlns="<https://schemas.microsoft.com/analysisservices/2003/engine>" xmlns:xsi="RelationalDataSourceView">`
 
 5. Copiare l'intero contenuto del file negli Appunti di Windows.  
 
