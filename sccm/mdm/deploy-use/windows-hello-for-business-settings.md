@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71f853034133e2ec73a4d8e606c2e0c0c94841a4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 68b3e63099fb4043af74cb2be5d049d4a5cefbdc
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62227584"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75197572"
 ---
 # <a name="windows-hello-for-business-settings-in-configuration-manager-hybrid"></a>Impostazioni di Windows Hello for business in Configuration Manager (ibrido)
 
@@ -34,7 +34,7 @@ Configuration Manager si integra con Windows Hello per le aziende in due modi:
 
 - È possibile archiviare i certificati di autenticazione nel provider di archiviazione chiavi (KSP) di Windows Hello for Business. Per altre informazioni, vedere i [profili certificato](create-pfx-certificate-profiles.md).  
 
-- È possibile distribuire i criteri di Windows Hello per le aziende su dispositivi appartenenti a un dominio Windows 10 che eseguono il client di Configuration Manager. Questa configurazione è descritta in [Configurare Windows Hello per le aziende su dispositivi appartenenti a un dominio Windows 10](/sccm/protect/deploy-use/windows-hello-for-business-settings#configure-windows-hello-for-business-on-domain-joined-windows-10-devices). Quando si usa Configuration Manager con Intune (ibrido), è possibile configurare queste impostazioni nei dispositivi Windows 10 e Windows 10 Mobile, ma non su dispositivi appartenenti a un dominio che eseguono il client di Configuration Manager.   
+- È possibile distribuire i criteri di Windows Hello per le aziende su dispositivi appartenenti a un dominio Windows 10 che eseguono il client di Configuration Manager. Questa configurazione è descritta in [Configurare Windows Hello per le aziende su dispositivi appartenenti a un dominio Windows 10](/sccm/protect/deploy-use/windows-hello-for-business-settings#configure-permissions). Quando si usa Configuration Manager con Intune (ibrido), è possibile configurare queste impostazioni nei dispositivi Windows 10 e Windows 10 Mobile, ma non su dispositivi appartenenti a un dominio che eseguono il client di Configuration Manager.   
 
 Per informazioni generali sulla configurazione delle impostazioni di Windows Hello for business, vedere [le impostazioni di Windows Hello for business in Configuration Manager](/sccm/protect/deploy-use/windows-hello-for-business-settings).
 
@@ -44,7 +44,7 @@ Per informazioni generali sulla configurazione delle impostazioni di Windows Hel
 
 1. Nella console di Configuration Manager fare clic su **Amministrazione** > **Servizi cloud** > **Sottoscrizioni a Microsoft Intune**.  
 
-2. Nell'elenco selezionare la sottoscrizione a Microsoft Intune e quindi nel gruppo **Sottoscrizione** della scheda **Home** fare clic su **Configura piattaforme** > **Windows (MDM)** .  
+2. Nell'elenco selezionare la sottoscrizione a Microsoft Intune e quindi nel gruppo **Sottoscrizione** della scheda **Home** fare clic su **Configura piattaforme** > **Windows (MDM)**.  
 
 3. Nella scheda **Windows Hello for Business** della finestra di dialogo **Sottoscrizione a Microsoft Intune - Proprietà** scegliere tra i valori seguenti, che avranno effetto sui tutti i dispositivi Windows 10 e Windows 10 Mobile registrati:  
 
@@ -84,7 +84,7 @@ Per informazioni generali sulla configurazione delle impostazioni di Windows Hel
 
      - **Non consentito** (impostazione predefinita) - Gli utenti non possono usare caratteri speciali nel PIN (questo è anche il comportamento se l'impostazione non è configurata).  
 
-       I caratteri speciali includono: **! " # $ % & ' ( ) \* + , - . / : ; < = > ? @ [ \ ] ^ _ ` { &#124; } ~** .  
+       I caratteri speciali includono: **! " # $ % & ' ( ) \* + , - . / : ; < = > ? @ [ \ ] ^ _ ` { &#124; } ~**.  
 
    - **Richiedi scadenza PIN (giorni)** - Specifica il numero di giorni prima che sia necessario modificare il PIN del dispositivo. L'impostazione predefinita è 41 giorni.  
 

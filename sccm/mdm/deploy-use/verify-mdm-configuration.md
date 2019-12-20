@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9107557d21927df1f648c06805f89db449de2e5d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 846c6a45469a3d3fddf3515b3808f2991679d5bf
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62227756"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75197623"
 ---
 # <a name="verify-mdm-configuration-with-system-center-configuration-manager"></a>Verificare la configurazione MDM con System Center Configuration Manager
 
@@ -28,7 +28,7 @@ ms.locfileid: "62227756"
 
 -   Controllare Sitecomp.log per verificare che il punto di connessione del servizio sia stato creato correttamente.
 
-Per altre informazioni su questi file di log specifici e su come visualizzarli, vedere [File di log in System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md##BKMK_FunctionLogs). 
+Per altre informazioni su questi file di log specifici e su come visualizzarli, vedere [File di log in System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md). 
 
 > [!div class="button"]
 > [< Passaggio precedente](set-up-additional-management.md)
