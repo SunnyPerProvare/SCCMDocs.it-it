@@ -2,7 +2,7 @@
 title: Ottimizzare il recapito degli aggiornamenti di Windows 10
 titleSuffix: Configuration Manager
 description: Informazioni su come usare Configuration Manager per gestire il contenuto di aggiornamento per rimanere aggiornati con Windows 10.
-ms.date: 12/05/2019
+ms.date: 12/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a9885535e0a6ef6b047b55a6b11eeb3bc225340
-ms.sourcegitcommit: 4d3999de1e13d579dd128578cb5dcee46fe3b0d6
+ms.openlocfilehash: 9e730a71f7924e0ac55c9dd142f87abe279b82c4
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74856041"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198711"
 ---
 # <a name="optimize-windows-10-update-delivery-with-configuration-manager"></a>Ottimizzare il recapito degli aggiornamenti di Windows 10 con Configuration Manager
 
@@ -48,13 +48,12 @@ Configuration Manager supporta numerose tecnologie peer-to-peer, incluse le segu
 
 Nelle sezioni successive sono disponibili ulteriori informazioni su queste tecnologie.
 
-
 ### <a name="windows-delivery-optimization"></a>Ottimizzazione recapito di Windows
 
 [Ottimizzazione recapito](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) rappresenta la tecnologia di download e il metodo di distribuzione peer-to-peer principali inclusi in Windows 10. I client Windows 10 possono ottenere il contenuto da altri dispositivi nella propria rete locale che scarica gli stessi aggiornamenti. Usando le [opzioni di Windows disponibili per Ottimizzazione recapito](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference#delivery-optimization-options) è possibile configurare i client in gruppi. Questo raggruppamento consente alle organizzazioni di identificare i dispositivi che sono probabilmente i migliori candidati per soddisfare le richieste peer-to-peer. Ottimizzazione recapito riduce significativamente la larghezza di banda complessiva usata per mantenere aggiornati i dispositivi, velocizzando contemporaneamente i tempi di download.
 
 > [!NOTE]  
-> Ottimizzazione recapito è una soluzione gestita dal cloud. L'accesso a Internet al servizio cloud Ottimizzazione recapito è un requisito per utilizzare le funzionalità peer-to-peer.  
+> Ottimizzazione recapito è una soluzione gestita dal cloud. L'accesso a Internet al servizio cloud Ottimizzazione recapito è un requisito per utilizzare le funzionalità peer-to-peer. Per informazioni sugli endpoint Internet necessari, vedere [domande frequenti sull'ottimizzazione del recapito](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#frequently-asked-questions). 
 
 Per ottenere risultati ottimali, potrebbe essere necessario impostare la [modalità di download](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference#download-mode) di Ottimizzazione recapito su **Gruppo (2)** e definire *ID di gruppo*. In modalità gruppo, il peering può attraversare subnet interne tra i dispositivi che appartengono allo stesso gruppo, inclusi i dispositivi in uffici remoti. Usare l'opzione [ID gruppo](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference#select-the-source-of-group-ids) per creare un gruppo personalizzato indipendentemente da domini e siti di Active Directory Domain Services. La modalità di download di gruppo è l'opzione consigliata per la maggior parte delle organizzazioni che vuole ottenere la massima ottimizzazione della larghezza di banda con Ottimizzazione recapito.
 
@@ -70,7 +69,8 @@ Per utilizzare l'ottimizzazione recapito per tutti i file di installazione di Wi
 - Impostare **Porta usata dai client per ricevere richieste per contenuto differenziale** su 8005 (impostazione predefinita) o un numero di porta personalizzato.
 
 > [!IMPORTANT]
-> - La funzionalità Ottimizzazione del recapito deve essere abilitata (impostazione predefinita) e non ignorata. Per altre informazioni, vedere [Ottimizzazione recapito di Windows](/sccm/sum/deploy-use/optimize-windows-10-update-delivery#windows-delivery-optimization).
+> - La funzionalità Ottimizzazione del recapito deve essere abilitata (impostazione predefinita) e non ignorata. Per altre informazioni, vedere [Ottimizzazione recapito di Windows](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference).
+> - Verificare le [impostazioni del client di ottimizzazione recapito](/sccm/core/clients/deploy/about-client-settings#delivery-optimization) quando si modificano le [Impostazioni client degli aggiornamenti software](/sccm/core/clients/deploy/about-client-settings#software-updates) per il contenuto Delta.
 
 
 

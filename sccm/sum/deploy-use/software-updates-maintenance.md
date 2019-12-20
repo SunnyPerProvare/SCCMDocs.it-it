@@ -3,7 +3,7 @@ title: Manutenzione degli aggiornamenti software
 titleSuffix: Configuration Manager
 description: Per gestire gli aggiornamenti in Configuration Manager, è possibile pianificare l'attività di pulizia di WSUS oppure eseguirla manualmente.
 author: mestew
-ms.date: 10/17/2019
+ms.date: 12/17/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
@@ -11,12 +11,12 @@ ms.assetid: 4b0e2e90-aac7-4d06-a707-512eee6e576c
 manager: dougeby
 ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e2edd794d582c4ab875ac53f095eb65fcd26ba8
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 72554b62203700a3930cb169a8758308364d7eb1
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72347898"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198694"
 ---
 # <a name="software-updates-maintenance"></a>Manutenzione degli aggiornamenti software
 
@@ -144,6 +144,16 @@ Quando il database WSUS è in un server SQL remoto, l'account computer del serve
 
 - Ruoli predefiniti del database `db_datareader` e `db_datawriter`. Per altre informazioni, vedere [Ruoli a livello di database](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-2017#fixed-database-roles).
 - L'autorizzazione del server `CONNECT SQL` deve essere concessa all'account computer del server del sito. Per altre informazioni, vedere [Autorizzazione del server GRANT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/grant-server-permissions-transact-sql?view=sql-server-2017).
+
+#### <a name="wsus-cleanup-wizard"></a>Pulizia guidata WSUS
+
+A partire dalla versione 1906 nei siti CAS, primari e secondari non vengono eseguite le opzioni di **Pulizia server Windows Server Update Services** seguenti:
+
+- Computer non in contatto con il server
+- File di aggiornamento non necessari
+
+  Per altre informazioni e istruzioni, vedere il post di blog [The complete guide to Microsoft WSUS and Configuration Manager SUP maintenance](https://support.microsoft.com/help/4490644/complete-guide-to-microsoft-wsus-and-configuration-manager-sup-maint/) (Guida completa alla manutenzione con Microsoft WSUS e i punti di aggiornamento software di Configuration Manager).
+
 
 ### <a name="known-issues-for-version-1906"></a>Problemi noti per la versione 1906
 

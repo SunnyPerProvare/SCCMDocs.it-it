@@ -239,7 +239,15 @@
         - name: Riferimento tecnico per i controlli crittografici
           href: plan-design/security/cryptographic-controls-technical-reference.md
         - name: Abilitare TLS 1.2
-          href: plan-design/security/enable-tls-1-2.md
+          items:
+            - name: Informazioni sull'abilitazione di TLS 1.2
+              href: plan-design/security/enable-tls-1-2.md
+            - name: Abilitare TLS 1.2 nei client
+              href: plan-design/security/enable-tls-1-2-client.md
+            - name: Abilitare TLS 1.2 nei server del sito e nei sistemi del sito remoti
+              href: plan-design/security/enable-tls-1-2-server.md
+            - name: Problemi comuni durante l'abilitazione di TLS 1.2
+              href: plan-design/security/enable-tls-1-2-troubleshoot.md
 - name: Introduzione
   items:
     - name: Valutare Center Configuration Manager in un lab
@@ -254,16 +262,14 @@
       items:
         - name: Panoramica di Technical Preview
           href: get-started/technical-preview.md
+        - name: Funzionalità della versione 1912
+          href: get-started/2019/technical-preview-1912.md
         - name: Funzionalità della versione 1911
           href: get-started/2019/technical-preview-1911.md
         - name: Funzionalità della versione 1910
           href: get-started/2019/technical-preview-1910.md
         - name: Funzionalità della versione 1909
           href: get-started/2019/technical-preview-1909.md
-        - name: Funzionalità della versione 1908.2
-          href: get-started/2019/technical-preview-1908-2.md
-        - name: Funzionalità della versione 1908
-          href: get-started/2019/technical-preview-1908.md
     - name: Eseguire la migrazione dei dati tra le gerarchie
       items:
         - name: Panoramica sulla migrazione

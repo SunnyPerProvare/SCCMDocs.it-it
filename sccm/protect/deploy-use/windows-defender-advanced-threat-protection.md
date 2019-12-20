@@ -2,7 +2,7 @@
 title: Microsoft Defender Advanced Threat Protection
 titleSuffix: Configuration Manager
 description: Informazioni su come gestire e monitorare Microsoft Defender Advanced Threat Protection, un nuovo servizio che consente alle organizzazioni di rispondere agli attacchi avanzati.
-ms.date: 05/13/2019
+ms.date: 12/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 72ad06228a7ae0dd0fa375ff1152771790b10bbe
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5d9777c2f6d82dd0e2d89437aaa460c65fc37563
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70379978"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198813"
 ---
 # <a name="microsoft-defender-advanced-threat-protection"></a>Microsoft Defender Advanced Threat Protection
 
@@ -34,9 +34,9 @@ Microsoft Defender ATP è un servizio disponibile in [Windows Defender Security 
 
 ## <a name="how-to-create-an-onboarding-configuration-file"></a>Come creare un file di configurazione per il caricamento  
 
- 1.  Accedere al [servizio online di Microsoft Defender ATP](https://securitycenter.windows.com/)   
+ 1. Passare al [servizio online Microsoft Defender ATP](https://securitycenter.windows.com/) ed eseguire l'accesso.
 
- 2.  Fare clic sulla voce di menu **Endpoint Management** (Gestione Endpoint).  
+ 2.  Fare clic sull'elemento **Gestione computer** in **Impostazioni**e quindi selezionare **onboarding**. 
 
  3.  Selezionare **System Center Configuration Manager (current branch) version 1606** (System Center Configuration Manager (Current Branch) versione 1606) e fare clic su **Download package** (Scarica pacchetto).  
 
@@ -45,7 +45,7 @@ Microsoft Defender ATP è un servizio disponibile in [Windows Defender Security 
 > [!IMPORTANT]
 > Il file di configurazione di Microsoft Defender ATP contiene informazioni riservate che devono essere protette.
 
-## <a name="onboard-devices-for-microsoft-defender-atp"></a>Onboarding dei dispositivi per Microsoft Defender ATP  
+## <a name="onboard-devices-for-microsoft-defender-atp"></a>Caricare dispositivi per Microsoft Defender ATP  
 
 1. Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Protezione endpoint** > **Criteri di Windows Defender ATP** e fare clic su **Creare criteri di Windows Defender ATP**. Viene visualizzata la Creazione guidata criteri di Microsoft Defender ATP.  
 
@@ -65,7 +65,7 @@ Microsoft Defender ATP è un servizio disponibile in [Windows Defender Security 
 
 6. È ora possibile distribuire i criteri di Microsoft Defender ATP nei computer client gestiti facendo clic su **Distribuisci**.  
 
-## <a name="monitor-microsoft-defender-atp"></a>Monitora Microsoft Defender ATP  
+## <a name="monitor-microsoft-defender-atp"></a>Monitorare Microsoft Defender ATP  
 
 1.  Nella console di Configuration Manager passare a **Monitoraggio** > **Panoramica** > **Sicurezza** e quindi fare clic su **Windows Defender ATP**.  
 
@@ -86,9 +86,9 @@ Microsoft Defender ATP è un servizio disponibile in [Windows Defender Security 
 
 ## <a name="how-to-create-and-deploy-an-offboarding-configuration-file"></a>Come creare e distribuire un file di configurazione per l'offboarding  
 
-1.  Accedere al [servizio online di Microsoft Defender ATP](https://securitycenter.windows.com/)   
+1.  Accedere al [servizio online Microsoft Defender ATP](https://securitycenter.windows.com/)   
 
-2.  Fare clic sulla voce di menu **Endpoint Management** (Gestione Endpoint).  
+2.  Fare clic sull'elemento **Gestione computer** in **Impostazioni**e quindi selezionare **onboarding**.  
 
 3.  Selezionare **System Center Configuration Manager (current branch) version 1606** (System Center Configuration Manager (Current Branch) versione 1606) e fare clic su **Endpoint offboarding** (Offobarding endpoint).  
 

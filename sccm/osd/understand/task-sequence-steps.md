@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d2763586f7f42ed98a78be277b1fcf702913c55
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 6d94d348f3cee7d55bbbbf6f4a9f791e7b65c768
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74734682"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198881"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-A una sequenza di attività di Configuration Manager è possibile aggiungere i passaggi seguenti. Per ulteriori informazioni, vedere [utilizzare l'editor della sequenza di attività](/configmgr/osd/understand/task-sequence-editor).  
+A una sequenza di attività di Configuration Manager è possibile aggiungere i passaggi seguenti. Per altre informazioni, vedere [Usare l'editor delle sequenze di attività](/configmgr/osd/understand/task-sequence-editor).  
 
 Le impostazioni seguenti sono comuni a tutti i passaggi della sequenza di attività:
 
@@ -367,7 +367,7 @@ A partire dalla versione 1910, controllare la configurazione della lingua durant
 
 Configurare le seguenti impostazioni:
 
-- Impostazioni locali di input (layout predefinito della tastiera)
+- Impostazioni locali per l'input (layout di tastiera predefinito)
 - Impostazioni locali di sistema
 - Lingua dell'interfaccia utente
 - Fallback della lingua dell'interfaccia utente
@@ -878,7 +878,7 @@ Per crittografare un'unità dati specifica, non del sistema operativo, seleziona
 Per impostazione predefinita, questo passaggio consente di crittografare solo lo spazio usato nell'unità. Questo comportamento predefinito è consigliato perché è più veloce ed efficiente. Se l'organizzazione richiede di crittografare l'intera unità durante l'installazione, abilitare questa opzione. Installazione di Windows attende la crittografia dell'intera unità, operazione che richiede molto tempo soprattutto nelle unità di grandi dimensioni.
 
 > [!TIP]
-> A partire dalla versione 1910, è possibile creare e distribuire i criteri di gestione di BitLocker, che usano la crittografia *completa del disco* . Per gestire BitLocker nei dispositivi dopo la distribuzione del sistema operativo da parte della sequenza di attività, abilitare questa opzione. Per ulteriori informazioni, vedere [pianificare la gestione di BitLocker](/configmgr/protect/plan-design/bitlocker-management).
+> A partire dalla versione 1910, è possibile creare e distribuire i criteri di gestione di BitLocker, che usano la crittografia *completa del disco* . Per gestire BitLocker nei dispositivi dopo la distribuzione del sistema operativo da parte della sequenza di attività, abilitare questa opzione. Per altre informazioni, vedere [Pianificare la gestione di BitLocker](/configmgr/protect/plan-design/bitlocker-management).
 
 #### <a name="choose-where-to-create-the-recovery-key"></a>Scegliere dove creare la chiave di ripristino
 
@@ -1721,7 +1721,7 @@ Determinare quali script di PowerShell possono essere eseguiti nel computer. Sce
 A partire dalla versione 1902, è possibile salvare l'output dello script in una variabile personalizzata della sequenza di attività.
 
 > [!Note]  
-> A partire dalla versione 1910, Configuration Manager limita questo output agli ultimi 1000 caratteri.
+> A partire dalla versione 1910 Configuration Manager limita questo output agli ultimi 1000 caratteri.
 
 #### <a name="start-in"></a>Da
 
@@ -1769,7 +1769,7 @@ A partire dalla versione 1902, è possibile includere altri codici di uscita dal
 ## <a name="child-task-sequence"></a> Esegui la sequenza di attività
 
 > [!Note]  
-> Nella versione 1910, Configuration Manager Abilita questa funzionalità per impostazione predefinita. Nella versione 1906 o nelle versioni precedenti Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Abilitare questa funzionalità prima di usarla. Per altre informazioni, vedere [Enable optional features from updates](/configmgr/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).
+> Nella versione 1910 Configuration Manager abilita questa funzionalità per impostazione predefinita. Nella versione 1906 o nelle versioni precedenti Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Abilitare questa funzionalità prima di usarla. Per altre informazioni, vedere [Enable optional features from updates](/configmgr/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).
 
 Questo passaggio esegue un'altra sequenza di attività. Crea una relazione padre-figlio tra le sequenze di attività. Le sequenze di attività figlio consentono di creare sequenze di attività più modulari e riutilizzabili.
 
@@ -1782,7 +1782,7 @@ A partire dalla versione 1906, gestire questo passaggio con i cmdlet di PowerShe
 - **Remove-CMTSStepRunTaskSequence**
 - **Set-CMTSStepRunTaskSequence**
 
-Per altre informazioni, vedere [Note sulla versione 1906-nuovi cmdlet](https://docs.microsoft.com/powershell/configmgr/1906-release-notes?view=sccm-ps#new-cmdlets).
+Per altre informazioni, vedere [Note sulla versione 1906-nuovi cmdlet](https://docs.microsoft.com/powershell/sccm/1906-release-notes?view=sccm-ps#new-cmdlets).
 
 ### <a name="specifications-and-limitations"></a>Specifiche e limitazioni
 

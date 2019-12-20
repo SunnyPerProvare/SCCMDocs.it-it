@@ -11,12 +11,12 @@ ms.assetid: a4d8cda2-bc9b-4fb4-aa0d-23c31b4fc60b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 338f33b80c2405cec6b95c9e6a6cd189f225dbec
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 25f8b13cbf0aa6e505c7fe22980e5bce3a39a2e4
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74814759"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198728"
 ---
 # <a name="plan-for-bitlocker-management"></a>Pianificare la gestione di BitLocker
 
@@ -36,7 +36,7 @@ Per altre informazioni, vedere [Panoramica di BitLocker](https://docs.microsoft.
 
 ## <a name="features"></a>Caratteristiche
 
-Configuration Manager offre le seguenti funzionalità di gestione per Crittografia unità BitLocker:
+Configuration Manager offre le funzionalità di gestione seguenti per Crittografia unità BitLocker:
 
 ### <a name="client-deployment"></a>Distribuzione client
 
@@ -97,6 +97,8 @@ Consentire agli utenti di utilizzare una chiave monouso per sbloccare un disposi
 > [!TIP]
 > Per impostazione predefinita, il passaggio della sequenza di attività **attiva BitLocker** consente di crittografare solo *lo spazio utilizzato* sull'unità. Gestione BitLocker utilizza la crittografia *completa del disco* . Configurare questo passaggio della sequenza di attività per abilitare l'opzione per l' **uso della crittografia completa del disco**. Per ulteriori informazioni, vedere [passaggi della sequenza di attività-Abilita BitLocker](/configmgr/osd/understand/task-sequence-steps#BKMK_EnableBitLocker).
 
-## <a name="next-step"></a>Passaggio successivo
+## <a name="next-steps"></a>Passaggi successivi
+
+[Crittografare i dati di ripristino](/configmgr/protect/deploy-use/bitlocker/encrypt-recovery-data) (un prerequisito facoltativo prima di distribuire i criteri per la prima volta)
 
 [Distribuire il client di gestione di BitLocker](/configmgr/protect/deploy-use/bitlocker/deploy-management-agent)
