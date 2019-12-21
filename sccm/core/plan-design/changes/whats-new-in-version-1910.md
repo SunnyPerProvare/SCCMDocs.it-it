@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9cab46c3bf8511f4dacb85e700241f623ed84dde
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 545b68cd1628bb9652f1e87da96e5fb6e18787f1
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74825591"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198490"
 ---
 # <a name="whats-new-in-version-1910-of-configuration-manager-current-branch"></a>Novità della versione 1910 di Configuration Manager Current Branch
 
@@ -276,7 +276,10 @@ Per altre informazioni, vedere [Abilitare gli aggiornamenti di terze parti](/scc
 <!--4699118-->
 In precedenza, la funzionalità Ottimizzazione recapito era disponibile solo per gli aggiornamenti rapidi. Con Configuration Manager versione 1910 è ora possibile usare Ottimizzazione recapito per la distribuzione di tutti i contenuti di Windows Update per i client che eseguono Windows 10 versione 1709 o successiva.
 
-Per altre informazioni, vedere [Ottimizzare il recapito degli aggiornamenti di Windows 10](/sccm/sum/deploy-use/optimize-windows-10-update-delivery#bkmk_DO-1910) e [Impostazioni client per gli aggiornamenti software](/sccm/core/clients/deploy/about-client-settings#software-updates).
+Per altre informazioni, vedere:
+- [Ottimizzare il recapito degli aggiornamenti di Windows 10](/sccm/sum/deploy-use/optimize-windows-10-update-delivery#bkmk_DO-1910)
+- [Impostazioni client per gli aggiornamenti software](/sccm/core/clients/deploy/about-client-settings#software-updates)
+- [Impostazioni client per Ottimizzazione recapito](/sccm/core/clients/deploy/about-client-settings#delivery-optimization)
 
 ### <a name="additional-software-update-filter-for-adrs"></a>Filtro di aggiornamento software aggiuntivo per le regole di distribuzione automatica
 <!--4852033-->

@@ -2,7 +2,7 @@
 title: Privacy dei dati di Desktop Analytics
 titleSuffix: Configuration Manager
 description: Desktop Analytics si impegna a proteggere la privacy dei dati dei clienti
-ms.date: 10/14/2019
+ms.date: 12/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca2b94b19c4e95da103799e7357063e7253eaa72
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5ef45b216fce2370013afe5309e0843a3429e14c
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72384916"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198099"
 ---
 # <a name="desktop-analytics-data-privacy"></a>Privacy dei dati di Desktop Analytics
 
@@ -32,9 +32,9 @@ Desktop Analytics si impegna a fondo per proteggere la privacy dei dati dei clie
 
 Per altre informazioni, vedere [Servizi di Windows in cui Microsoft è il responsabile del trattamento secondo il GDPR](https://docs.microsoft.com/windows/privacy/gdpr-it-guidance#windows-services-where-microsoft-is-the-processor-under-the-gdpr).<!-- 5353168 -->
 
-## <a name="diagnostic-data-flow"></a>Flusso dei dati di diagnostica
+## <a name="data-flow"></a>Flusso di dati
 
-La figura seguente illustra il flusso dei dati di diagnostica da singoli dispositivi tramite il servizio dati di diagnostica, l'archiviazione di Azure Log Analytics e l'area di lavoro Log Analytics:
+La figura seguente illustra il flusso dei dati di diagnostica da singoli dispositivi tramite il servizio dati di diagnostica, l'archiviazione temporanea e l'area di lavoro Log Analytics:
 
 ![Diagramma che illustra il flusso dei dati di diagnostica dai dispositivi](media/da-data-flow.png)
 
@@ -44,7 +44,12 @@ La figura seguente illustra il flusso dei dati di diagnostica da singoli disposi
 
     1. Configurare il servizio cloud Desktop Analytics in Configuration Manager con i dettagli dell'app Azure AD.  
 
-    2. Entro 15 minuti Configuration Manager sincronizza le raccolte di dispositivi e i piani di distribuzione con Desktop Analytics. Questo processo viene ripetuto ogni ora.  
+    2. Entro 15 minuti Configuration Manager sincronizza i dati seguenti con Desktop Analytics usando l'ID tenant. Questo processo viene ripetuto ogni ora.
+
+      - Informazioni sulle raccolte di dispositivi necessarie per [creare piani di distribuzione](/configmgr/desktop-analytics/create-deployment-plans). Queste informazioni includono l'ID della raccolta, l'ID della gerarchia, il nome della raccolta e il numero di dispositivi. 
+      - Informazioni necessarie per [registrare i dispositivi](/configmgr/desktop-analytics/enroll-devices). Queste informazioni includono l'ID della raccolta, l'identificatore univoco SMS, la versione build del sistema operativo, il nome del dispositivo e il numero di serie.
+      - Informazioni dal dashboard [Monitorare l'integrità della connessione](/configmgr/desktop-analytics/monitor-connection-health). Queste informazioni includono il numero di dispositivi per stato di integrità e le proprietà dei dispositivi.
+      - Informazioni sui piani di distribuzione, che includono l'ID della raccolta, l'ID di distribuzione, il tipo di distribuzione pilota o di produzione e il numero di dispositivi per decisione di aggiornamento.
 
     3. Configuration Manager imposta l'ID commerciale, il livello dei dati di diagnostica e altre impostazioni per i dispositivi nella raccolta di destinazione. Questa configurazione specifica i dispositivi da visualizzare nell'area di lavoro di Desktop Analytics.  
 
@@ -52,11 +57,11 @@ La figura seguente illustra il flusso dei dati di diagnostica da singoli disposi
 
 3. I dispositivi inviano i dati di diagnostica al servizio di gestione dati di diagnostica di Microsoft per Windows. Questo servizio è ospitato negli Stati Uniti.  
 
-4. Ogni giorno, Microsoft crea uno snapshot delle informazioni dettagliate incentrate sull'IT. Questo snapshot combina i dati di diagnostica di Windows con l'input per i dispositivi registrati. Questo processo avviene nell'archiviazione temporanea, che viene usata solo da Desktop Analytics. L'archiviazione temporanea è ospitata nei data center di Microsoft negli Stati Uniti. Gli snapshot vengono separati in base all'ID commerciale.  
+4. Ogni giorno, Microsoft crea uno snapshot delle informazioni dettagliate incentrate sull'IT. Questo snapshot combina i dati di diagnostica di Windows con l'input per i dispositivi registrati. Questo processo avviene nell'archiviazione temporanea, che viene usata solo da Desktop Analytics. L'archiviazione temporanea è ospitata nei data center di Microsoft negli Stati Uniti. Tutti i dati vengono inviati tramite un canale crittografato SSL (HTTPS). Gli snapshot vengono separati in base all'ID commerciale.  
 
-5. Vengono quindi copiati nell'area di lavoro di Azure Log Analytics appropriata.  
+5. Vengono quindi copiati nell'area di lavoro di Azure Log Analytics. Questo trasferimento dei dati avviene tramite HTTPS tramite il protocollo di inserimento del webhook, che è una funzionalità di Log Analytics. Desktop Analytics non ha autorizzazioni di lettura o scrittura per lo spazio di archiviazione di Log Analytics. Desktop Analytics chiama l'API webhook con un URI di firma di accesso condiviso (SAS). Log Analytics ottiene quindi i dati dalle tabelle di archiviazione tramite HTTPS.
 
-6. Desktop Analytics archivia l'input dell'utente nell'archiviazione di Azure Log Analytics. Queste configurazioni includono i piani di distribuzione e le decisioni sulle risorse per l'aggiornamento e l'importanza.  
+6. Desktop Analytics archivia l'input dell'utente nello spazio di archiviazione di Log Analytics. Queste configurazioni includono i piani di distribuzione e le decisioni sulle risorse per l'aggiornamento e l'importanza.  
 
 ## <a name="other-resources"></a>Altre risorse
 
@@ -78,8 +83,12 @@ Per altre informazioni sugli aspetti correlati alla privacy, vedere gli articoli
 
 - [Condizioni di licenza e documentazione](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31)  
 
+- [Sicurezza dei dati di Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/data-security)
+
 - [Sicurezza e privacy nei data center di Microsoft Azure](https://azure.microsoft.com/global-infrastructure/)  
 
 - [Fidati del tuo cloud](https://azure.microsoft.com/overview/trusted-cloud/)  
 
 - [Centro protezione](https://www.microsoft.com/trustcenter)  
+
+Separatamente da Desktop Analytics, Configuration Manager invia dati di diagnostica e di utilizzo a Microsoft. Microsoft usa questi dati per migliorare l'esperienza, la qualità e la sicurezza di installazione delle versioni future di Configuration Manager. Per altre informazioni, vedere [Dati di diagnostica e di utilizzo per Configuration Manager](/configmgr/core/plan-design/diagnostics/diagnostics-and-usage-data).

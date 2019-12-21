@@ -2,7 +2,7 @@
 title: Impostazioni client
 titleSuffix: Configuration Manager
 description: Informazioni sulle impostazioni predefinite e personalizzate per il controllo dei comportamenti client
-ms.date: 11/29/2019
+ms.date: 12/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 194889939601a30234b0d72cf27f73581ce09aab
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8bf3862235e5b9aa78b46b6e181bd51343a4acaa
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74813824"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198592"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -346,13 +346,14 @@ Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le fin
 > In Configuration Manager 1902, in determinate circostanze, la finestra di dialogo non sostituisce le notifiche di tipo avviso popup. Per risolvere questo problema, installare l'[aggiornamento cumulativo per Configuration Manager versione 1902](https://support.microsoft.com/help/4500571/update-rollup-for-configuration-manager-current-branch-1902). <!--4404715-->
 
 
-## <a name="delivery-optimization"></a>Ottimizzazione recapito
+## <a name="delivery-optimization"></a>Ottimizzazione recapito 
 
 <!-- 1324696 -->
 I gruppi di limiti di Configuration Manager consentono di definire e regolamentare la distribuzione del contenuto nella rete aziendale e negli uffici remoti. [Ottimizzazione recapito di Windows](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) è una tecnologia peer-to-peer basata sul cloud per la condivisione di contenuti tra dispositivi Windows 10. Configurare Ottimizzazione recapito in modo che usi i gruppi di limiti per la condivisione di contenuti tra peer.
 
 > [!Note]
-> Ottimizzazione recapito è disponibile solo nei client Windows 10
+> - Ottimizzazione recapito è disponibile solo nei client Windows 10.
+> - L'accesso a Internet al servizio cloud Ottimizzazione recapito è un requisito per utilizzare le funzionalità peer-to-peer. Per informazioni sugli endpoint Internet necessari, vedere [Domande frequenti per Ottimizzazione recapito](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#frequently-asked-questions).
 
 ### <a name="use-configuration-manager-boundary-groups-for-delivery-optimization-group-id"></a>Use Configuration Manager Boundary Groups for Delivery Optimization Group ID (Usare i gruppi di limiti di Configuration Manager per l'ID del gruppo di Ottimizzazione recapito)
 
@@ -880,7 +881,7 @@ Usare questa impostazione per specificare il periodo di tempo per l'impostazione
 
 Impostare questa opzione su **Sì** per consentire ai client di usare file di contenuto differenziale. Questa impostazione consente all'agente di Windows Update sul dispositivo di determinare il contenuto necessario e di scaricarlo in modo selettivo. 
 
-- Prima di abilitare questa impostazione client, verificare che la funzionalità Ottimizzazione recapito sia configurata in modo appropriato per l'ambiente in uso. Per altre informazioni, vedere [Ottimizzazione recapito di Windows](/sccm/sum/deploy-use/optimize-windows-10-update-delivery#windows-delivery-optimization).
+- Prima di abilitare questa impostazione client, verificare che la funzionalità Ottimizzazione recapito sia configurata in modo appropriato per l'ambiente in uso. Per altre informazioni, vedere [Ottimizzazione recapito di Windows](/sccm/sum/deploy-use/optimize-windows-10-update-delivery#windows-delivery-optimization) e l'[impostazione client Ottimizzazione recapito](#delivery-optimization).
  - Questa impostazione client sostituisce **Abilita l'installazione di file per l'installazione rapida nei client**. Impostare questa opzione su **Sì** per consentire ai client di usare file di installazione rapida. Per altre informazioni, vedere [Gestire i file di installazione rapida per gli aggiornamenti di Windows 10](/sccm/sum/deploy-use/manage-express-installation-files-for-windows-10-updates).
  - A partire da Configuration Manager versione 1910, se questa opzione è impostata, il download del contenuto differenziale viene usato per tutti i file di installazione di Windows Update, non solo per i file di installazione rapida.
 

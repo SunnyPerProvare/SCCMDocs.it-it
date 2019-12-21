@@ -2,7 +2,7 @@
 title: Documentazione nella console
 titleSuffix: Configuration Manager
 description: Questo articolo viene visualizzato solo nella console di Configuration Manager.
-ms.date: 11/07/2019
+ms.date: 12/11/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0bf382fc9b6dd5cb176755354bec0445b356306
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 269e8786fe086abb663511da51948ebc3ffb801a
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660768"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198524"
 ---
 <!-- 
 - Feature 1357546
@@ -28,7 +28,7 @@ ms.locfileid: "74660768"
 
 # <a name="microsoft-endpoint-configuration-manager-documentation"></a>Documentazione di Microsoft Endpoint Configuration Manager
 
-*Ultimo aggiornamento: 7 novembre 2019*
+*Ultimo aggiornamento: 11 dicembre 2019*
 
 Questo contenuto offre informazioni utili per l'apprendimento e il supporto di Configuration Manager.
 
@@ -43,36 +43,35 @@ Per altre informazioni, vedere gli articoli seguenti:
 
 Elenco aggiornato di articoli importanti.
 
+- [Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/overview)
 - [Co-gestione per dispositivi Windows 10](https://docs.microsoft.com/configmgr/comanage/overview)  
 - [CMPivot](https://docs.microsoft.com/configmgr/core/servers/manage/cmpivot)  
-- [Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/overview)
-- [Creare ed eseguire script di PowerShell](https://docs.microsoft.com/configmgr/apps/deploy-use/create-deploy-scripts)  
-- [Distribuzioni in più fasi](https://docs.microsoft.com/configmgr/osd/deploy-use/create-phased-deployment-for-task-sequence)  
+- [Pianificare la gestione di BitLocker](https://docs.microsoft.com/configmgr/protect/plan-design/bitlocker-management)  
+- [Gestione di Microsoft Edge](https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge)  
 - [Gestire gli aggiornamenti di Office 365 ProPlus](https://docs.microsoft.com/configmgr/sum/deploy-use/manage-office-365-proplus-updates)  
 - [Fundamentals of Configuration Manager current branch and Windows as a service](https://docs.microsoft.com/configmgr/core/understand/configuration-manager-and-windows-as-service) (Nozioni di base su Configuration Manager Current Branch e Windows distribuito come servizio)
 - [Ottimizzare il recapito degli aggiornamenti di Windows 10 con Configuration Manager](https://docs.microsoft.com/configmgr/sum/deploy-use/optimize-windows-10-update-delivery)
 - [Versioni di Technical Preview](https://docs.microsoft.com/configmgr/core/get-started/technical-preview)
 - [Usare i servizi cloud per integrare l'infrastruttura locale](https://docs.microsoft.com/configmgr/core/understand/use-cloud-services)
-- [Pianificare il gateway di gestione cloud](https://docs.microsoft.com/configmgr/core/clients/manage/plan-cloud-management-gateway)
 
 ## <a name="trending"></a>Di tendenza
 
-Gli articoli più visualizzati tra il 1° e il 31 ottobre 2019.
+Gli articoli più diffusi tra il 1° novembre e il 30 novembre 2019.
 
 | Visualizzazioni pagina | Titolo |
 |------------|-------|
-| 22102 | [Come abilitare TLS 1.2](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2) |
-| 20810 | [Riferimento ai file di log](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/log-files) |
-| 15005 | [Novità della versione 1906](https://docs.microsoft.com/configmgr/core/plan-design/changes/whats-new-in-version-1906) |
-| 14654 | [Porte usate per le connessioni](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/ports) |
-| 13433 | [Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/overview) |
-| 13241 | [Distribuire i client in Windows](https://docs.microsoft.com/configmgr/core/clients/deploy/deploy-clients-to-windows-computers) |
-| 9883 | [Manuale dell'utente di Software Center](https://docs.microsoft.com/configmgr/core/understand/software-center) |
-| 9763 | [Aggiornamenti e manutenzione](https://docs.microsoft.com/configmgr/core/servers/manage/updates) |
-| 9613 | [Impostazioni client](https://docs.microsoft.com/configmgr/core/clients/deploy/about-client-settings) |
-| 9535 | [Supporto per Windows 10](https://docs.microsoft.com/configmgr/core/plan-design/configs/support-for-windows-10) |
+| 20602 | [Come abilitare TLS 1.2](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2) |
+| 15685 | [Riferimento ai file di log](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/log-files) |
+| 13393 | [Porte usate per le connessioni](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/ports) |
+| 13042 | [Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/overview) |
+| 11132 | [Novità della versione 1906](https://docs.microsoft.com/configmgr/core/plan-design/changes/whats-new-in-version-1906) |
+| 10930 | [Distribuire i client in Windows](https://docs.microsoft.com/configmgr/core/clients/deploy/deploy-clients-to-windows-computers) |
+| 10078 | [Co-gestione per dispositivi Windows 10](https://docs.microsoft.com/configmgr/comanage/overview) |
+| 9497 | [Supporto per Windows 10](https://docs.microsoft.com/configmgr/core/plan-design/configs/support-for-windows-10) |
+| 8884 | [Manuale dell'utente di Software Center](https://docs.microsoft.com/configmgr/core/understand/software-center) |
+| 8845 | [Aggiornamenti e manutenzione](https://docs.microsoft.com/configmgr/core/servers/manage/updates) |
 
-La [pagina dell'hub di Configuration Manager](https://docs.microsoft.com/configmgr/) ha avuto 46.344 visualizzazioni in questo periodo di tempo.
+La [pagina dell'hub di Configuration Manager](https://docs.microsoft.com/configmgr/) ha avuto 20.683 visualizzazioni in questo periodo di tempo.
 
 ## <a name="recently-updated"></a>Aggiornata di recente
 
@@ -80,28 +79,31 @@ Articoli con un aggiornamento recente e significativo.
 
 | Ultima revisione | Titolo |
 |---------------|-------|
-| 30/10/2019 | [Registrare i dispositivi in Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/enroll-devices) |
-| 28/10/2019 | [Abilitare la condivisione dei dati](https://docs.microsoft.com/configmgr/desktop-analytics/enable-data-sharing) |
-| 23/10/2019 | [Novità di Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/whats-new) |
-| 23/10/2019 | [Valutazione della compatibilità](https://docs.microsoft.com/configmgr/desktop-analytics/compat-assessment) |
-| 22/10/2019 | [Domande frequenti su prodotto e licenze](https://docs.microsoft.com/configmgr/core/understand/product-and-licensing-faq) |
-| 18/10/2019 | [Technical Preview 1910](https://docs.microsoft.com/configmgr/core/get-started/2019/technical-preview-1910) |
-| 18/10/2019 | [Supporto per Windows 10](https://docs.microsoft.com/configmgr/core/plan-design/configs/support-for-windows-10) |
-| 17/10/2019 | [Manutenzione degli aggiornamenti software](https://docs.microsoft.com/configmgr/sum/deploy-use/software-updates-maintenance) |
-| 14/10/2019 | [Funzionalità deprecate](https://docs.microsoft.com/configmgr/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures) |
-| 14/10/2019 | [Ottenere supporto per Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/get-support) |
+| 29/11/2019 | [Novità della versione 1910](https://docs.microsoft.com/configmgr/core/plan-design/changes/whats-new-in-version-1910) |
+| 29/11/2019 | [Estendere ed eseguire la migrazione di un sito locale in Microsoft Azure](https://docs.microsoft.com/configmgr/core/support/azure-migration-tool) |
+| 29/11/2019 | [Impostazioni di Windows Hello for Business ](https://docs.microsoft.com/configmgr/protect/deploy-use/windows-hello-for-business-settings) |
+| 29/11/2019 | [Domande frequenti per Microsoft Endpoint Configuration Manager](https://docs.microsoft.com/configmgr/core/understand/microsoft-endpoint-manager-faq) |
+| 29/11/2019 | [Distribuire e aggiornare Microsoft Edge versione 77 e successive](https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge) |
+| 29/11/2019 | [Creare linee di base di configurazione](https://docs.microsoft.com/configmgr/compliance/deploy-use/create-configuration-baselines) |
+| 29/11/2019 | [Pianificare la gestione di BitLocker](https://docs.microsoft.com/configmgr/protect/plan-design/bitlocker-management) |
+| 29/11/2019 | [Usare l'editor delle sequenze di attività](https://docs.microsoft.com/configmgr/osd/understand/task-sequence-editor) |
+| 5/11/2019 | [Domande frequenti per Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/faq) |
+| 4/11/2019 | [Guida di riferimento tecnico per la risoluzione dei problemi di distribuzione delle applicazioni](https://docs.microsoft.com/configmgr/apps/understand/app-deployment-technical-reference) |
 
 ## <a name="troubleshooting-articles"></a>Articoli sulla risoluzione dei problemi
 
 Procedure dettagliate guidate che semplificano la risoluzione dei problemi relativi a funzionalità e componenti di Configuration Manager.
 
+- [Risolvere i problemi relativi alla distribuzione di applicazioni](https://docs.microsoft.com/configmgr/apps/understand/app-deployment-technical-reference)
 - [Risoluzione dei problemi di avvio PXE](https://support.microsoft.com/help/4468612)
 - [Informazioni e risoluzione dei problemi di aggiornamento e manutenzione in Configuration Manager](https://support.microsoft.com/help/4490424)
 - [Risoluzione dei problemi di sincronizzazione degli aggiornamenti software](https://support.microsoft.com/help/10059)
 - [Informazioni e risoluzione dei problemi di distribuzione del contenuto](https://support.microsoft.com/help/4482728)
-- [Informazioni e risoluzione dei problemi di integrazione di Microsoft Store per le aziende](https://support.microsoft.com/help/4010214)
+- [Informazioni e risoluzione dei problemi di integrazione di Microsoft Store per le aziende](https://docs.microsoft.com/configmgr/apps/deploy-use/troubleshoot-microsoft-store-for-business-integration)
 - [Risoluzione dei problemi di gestione degli aggiornamenti software](https://support.microsoft.com/help/10680)
 - [Risoluzione dei problemi relativi al passaggio Installa applicazione della sequenza di attività](https://support.microsoft.com/help/18408/)
+- [Risolvere i problemi di Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/troubleshooting)
+- [Risolvere i problemi relativi a Microsoft Connected Cache](https://docs.microsoft.com/configmgr/core/servers/deploy/configure/troubleshoot-microsoft-connected-cache)
 
 ## <a name="new-and-updated-support-articles"></a>Articoli di supporto nuovi e aggiornati
 

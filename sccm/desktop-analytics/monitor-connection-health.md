@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 830d93913ed04a061743feeda98d473aa8032bf9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 82cfcab2add617f21d4d2bbec483ab8532e9b90b
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73623371"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75197945"
 ---
 # <a name="monitor-connection-health"></a>Monitorare l'integrità della connessione
 
@@ -56,7 +56,7 @@ Questo riquadro visualizza le informazioni di base seguenti sulla connessione tr
 
 Questo riquadro mostra quando Configuration Manager esegue la sincronizzazione con il servizio cloud di Desktop Analytics e indica il numero di dispositivi sincronizzati.
 
-- **Dispositivi sincronizzati**: numero di dispositivi univoci che Configuration Manager ha inviato a Desktop Analytics. Il servizio include questi dispositivi nello snapshot visibile.
+- **Dispositivi sincronizzati**: numero di dispositivi idonei che Configuration Manager ha inviato a Desktop Analytics. Il servizio include questi dispositivi nello snapshot visibile.
 
 - **Ultima sincronizzazione del servizio**: stessa indicazione temporale del campo **Ultimo aggiornamento** nel portale Desktop Analytics.
 

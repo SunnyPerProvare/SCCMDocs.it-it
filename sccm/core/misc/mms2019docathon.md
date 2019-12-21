@@ -10,12 +10,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 76970a024e54067aaa6a3059bb95a6c134a2e999
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: cb17e22f7eb525f10a3494f893928a836c847c9d
+ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65214697"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75198456"
 ---
 # <a name="mms-2019-docathon"></a>MMS 2019 Docathon
 
@@ -114,13 +114,13 @@ Il concorso si terrà durante l'intera settimana, dal 6 al 9 maggio. Tutti gli i
 
 Il vincitore del premio speciale riceverà:
 
-- Un pass per [MMS Jazz Edition](https://mmsmoa.com/registration/mms-jazz-edition.html), per gentile concessione della direzione di MMS, del valore di 1799 USD.
-- Un tumbler Yeti Rambler 30oz personalizzato
+- Un pass per [MMS Jazz Edition](https://mmsmoa.com/sessions/jazz-edition.html), per gentile concessione della direzione di MMS, del valore di 1799 USD.
+- Un tumbler Yeti Rambler 30 oz personalizzato
 - Un supporto portatelefono per auto Popsocket personalizzato (con morsa)
 
 #### <a name="first-place-prizes"></a>Primi premi
 
-I riconoscimenti seguenti vengono calcolati in base al numero di contributi idonei ai repository di ambito. Non è necessario che siano stati uniti o pubblicati. È sufficiente che siano stati inviati come richiesta pull entro la fine della conferenza. Microsoft si riserva il diritto di escludere dal Concorso tutti coloro che risultano compiere atti allo scopo di eludere le regole del sistema. Il vincitore in ogni categoria riceverà un tumbler Yeti Rambler 30oz personalizzato e un supporto portatelefono per auto Popsocket personalizzato (con morsa). Verrà selezionato un solo vincitore per ogni categoria.
+I riconoscimenti seguenti vengono calcolati in base al numero di contributi idonei ai repository di ambito. Non è necessario che siano stati uniti o pubblicati. È sufficiente che siano stati inviati come richiesta pull entro la fine della conferenza. Microsoft si riserva il diritto di escludere dal Concorso tutti coloro che risultano compiere atti allo scopo di eludere le regole del sistema. Il vincitore in ogni categoria riceverà un tumbler Yeti Rambler 30 oz personalizzato e un supporto portatelefono per auto Popsocket personalizzato (con morsa). Verrà selezionato un solo vincitore per ogni categoria.
 
 - **Il maggior numero di commit inviati**
 
@@ -180,7 +180,7 @@ Concorso dell'Evento Docathon del Microsoft Cloud + AI Developer Relations Conte
     Per essere idoneo, un contributo deve soddisfare i requisiti di contenuto/tecnici seguenti:
 
     - Il contributo deve essere un'opera originale del Partecipante; e
-    - Il contributo non può essere stato selezionato come vincitore in altri concorsi; e
+    - Il contributo non deve essere stato selezionato come vincitore in altri concorsi; e
     - Il Partecipante deve avere ottenuto tutte le autorizzazioni, le approvazioni o le licenze necessarie per l'invio del contributo; e
     - Nella misura in cui il contributo richieda l'invio di contenuti realizzati da utenti, quali software, foto, video, brani musicali, grafica, saggi e così via, i Partecipanti garantiscono che il contributo è frutto del loro lavoro originale, che non è stato copiato da altri senza autorizzazione o diritti verificabili e che non viola il diritto alla protezione dei dati personali, i diritti di proprietà intellettuale o altri diritti di qualsiasi altra persona o entità. Il Partecipante può includere marchi, logo ed elementi grafici Microsoft, per i quali Microsoft concede una licenza d'uso limitata ai soli fini dell'invio di un contributo per il presente Concorso; e
     - Il contributo NON può contenere, come determinato da Microsoft a sua esclusiva discrezione, contenuti osceni, offensivi, violenti, diffamatori, denigratori o illegali, che promuovano l'uso di alcol, droghe illegali, tabacco o un particolare programma politico o che trasmettano messaggi con possibili effetti negativi sull'avviamento di Microsoft.
@@ -219,14 +219,14 @@ Concorso dell'Evento Docathon del Microsoft Cloud + AI Developer Relations Conte
     Verranno assegnati i premi seguenti:
 
     - Un (1) premio speciale. Il pacchetto del premio include gli elementi seguenti:
-        - Un pass per [MMS Jazz Edition](https://mmsmoa.com/registration/mms-jazz-edition.html), concesso della direzione di MMS. Valore commerciale approssimativo: 1799 USD.
-        - Un tumbler Yeti Rambler 30oz. Valore commerciale approssimativo: 35 USD.
+        - Un pass per [MMS Jazz Edition](https://mmsmoa.com/sessions/jazz-edition.html), concesso della direzione di MMS. Valore commerciale approssimativo: 1799 USD.
+        - Un tumbler Yeti Rambler 30 oz. Valore commerciale approssimativo: 35 USD.
         - Un supporto portatelefono per auto Popsocket (con morsa). Valore commerciale approssimativo: 15 USD.
 
         Il valore commerciale approssimativo totale di questo pacchetto è 1849 USD.
 
     - Tre (3) primi premi. Il pacchetto del premio include gli elementi seguenti:
-        - Un tumbler Yeti Rambler 30oz. Valore commerciale approssimativo: 35 USD.
+        - Un tumbler Yeti Rambler 30 oz. Valore commerciale approssimativo: 35 USD.
         - Un supporto portatelefono per auto Popsocket (con morsa). Valore commerciale approssimativo: 15 USD.
 
         Il valore commerciale approssimativo totale di questo pacchetto è 50 USD.
