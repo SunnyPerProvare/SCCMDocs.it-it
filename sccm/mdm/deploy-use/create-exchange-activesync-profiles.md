@@ -1,7 +1,7 @@
 ---
 title: Creare profili di posta elettronica di Exchange ActiveSync
 titleSuffix: Configuration Manager
-description: Di seguito viene illustrato come creare e configurare i profili di posta elettronica in System Center Configuration Manager che funzionano con Microsoft Intune.
+description: Informazioni su come creare e configurare i profili di posta elettronica in Configuration Manager che funzionano con Microsoft Intune.
 ms.date: 07/28/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9d1b5e96dc8d2a43dfc39b9d1b2cd9678c083c9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 6a32269ddd526f9801202f1ec10fd7e6d50c2cd9
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67159425"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75521120"
 ---
-# <a name="exchange-activesync-email-profiles-in-system-center-configuration-manager"></a>Profili di posta elettronica di Exchange ActiveSync in System Center Configuration Manager
+# <a name="exchange-activesync-email-profiles-in-configuration-manager"></a>Profili di posta elettronica di Exchange ActiveSync in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usando Microsoft Intune ed Exchange ActiveSync è possibile configurare i dispositivi con profili di posta elettronica e restrizioni. In questo modo gli utenti possono accedere alla posta elettronica aziendale dai propri dispositivi dopo aver eseguito pochissime operazioni di configurazione.  
 
@@ -40,7 +40,7 @@ Per distribuire profili di posta elettronica ai dispositivi, è necessario regis
 
  Oltre a configurare un account di posta elettronica sul dispositivo, è possibile configurare le impostazioni di sincronizzazione per i contatti, i calendari e le attività.  
 
- Quando si crea un profilo di posta elettronica, è possibile includere una vasta gamma di impostazioni di protezione. Queste impostazioni includono certificati per l'identità, la crittografia e la firma, che sono stati configurati usando profili certificato in System Center Configuration Manager. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).    
+ Quando si crea un profilo di posta elettronica, è possibile includere una vasta gamma di impostazioni di protezione. Queste impostazioni includono i certificati per l'identità, la crittografia e la firma che sono stati configurati tramite Configuration Manager profili certificato. Per ulteriori informazioni sui profili certificato, vedere [profili certificato](/sccm/protect/deploy-use/introduction-to-certificate-profiles).    
 
 ## <a name="create-an-exchange-activesync-email-profile"></a>Creare un profilo di posta elettronica di Exchange ActiveSync  
 
@@ -96,11 +96,11 @@ Per creare un profilo, usare la Creazione guidata profilo di posta elettronica d
 
    - **Certificato di identità**. Scegliere **Seleziona** e quindi scegliere un certificato da usare per l'identità.  
 
-      I certificati di identità devono essere certificati SCEP. Non è possibile usare un certificato PFX.  Per altre informazioni, vedere [Profili certificato in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
+      I certificati di identità devono essere certificati SCEP. Non è possibile usare un certificato PFX.  Per altre informazioni, vedere [profili certificato](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
       Questa opzione è disponibile solo se in **Metodo di autenticazione** è stata scelta l'opzione **Certificati**.  
 
-   - **Usa S/MIME**. Consente di usare la crittografia S/MIME per inviare posta elettronica in uscita. Questa opzione è applicabile solo ai dispositivi iOS. È possibile scegliere una delle opzioni seguenti:
+   - **Usa S/MIME**. Consente di usare la crittografia S/MIME per inviare posta elettronica in uscita. Questa opzione è applicabile solo ai dispositivi iOS. Scegliere le opzioni seguenti:
 
      - **Certificati di firma**.  Scegliere **Seleziona** e quindi scegliere un profilo certificato da usare per la crittografia.  
 
@@ -110,13 +110,13 @@ Per creare un profilo, usare la Creazione guidata profilo di posta elettronica d
 
      - Per crittografare tutti i messaggi di posta elettronica all'interno di dispositivi iOS, abilitare la casella di controllo **Richiedi crittografia**.    
 
-       Perché sia possibile scegliere profili certificato qui, è necessario crearli.  Per altre informazioni, vedere [Profili certificato in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
+       Perché sia possibile scegliere profili certificato qui, è necessario crearli.  Per altre informazioni, vedere [profili certificato](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
 ## <a name="configure-synchronization-settings-for-the-exchange-activesync-email-profile"></a>Configurare le impostazioni di sincronizzazione per il profilo di posta elettronica di Exchange ActiveSync  
 
 Nella pagina **Configura impostazioni di sincronizzazione** della Creazione guidata profilo di posta elettronica di Exchange ActiveSync specificare le informazioni seguenti:  
 
--   **Pianificazione**. Scegliere la pianificazione in base a cui i dispositivi sincronizzeranno i dati dal server di Exchange. Questa opzione è applicabile solo ai dispositivi Windows Phone. È possibile scegliere tra:  
+-   **Pianificazione**. Scegliere la pianificazione in base a cui i dispositivi sincronizzeranno i dati dal server di Exchange. Questa opzione è applicabile solo ai dispositivi Windows Phone. Scegliere tra:  
 
     -   **Non configurato**. Non viene applicata una pianificazione della sincronizzazione. In questo modo gli utenti possono configurare una pianificazione personalizzata per la sincronizzazione.  
 
@@ -154,7 +154,7 @@ Nella pagina **Configura impostazioni di sincronizzazione** della Creazione guid
 
 -   **Usa SSL**. Scegliere questa opzione per usare la comunicazione Secure Sockets Layer (SSL) per l'invio di messaggi di posta elettronica, la ricezione di messaggi di posta elettronica e la comunicazione con Exchange Server.  
 
--   **Tipo di contenuti da sincronizzare**. Scegliere i tipi di contenuto da sincronizzare nei dispositivi. Questa opzione è applicabile solo ai dispositivi Windows Phone. È possibile scegliere tra:  
+-   **Tipo di contenuti da sincronizzare**. Scegliere i tipi di contenuto da sincronizzare nei dispositivi. Questa opzione è applicabile solo ai dispositivi Windows Phone. Scegliere tra:  
 
     -   **Posta elettronica**  
 
@@ -168,6 +168,6 @@ Nella pagina **Configura impostazioni di sincronizzazione** della Creazione guid
 
 1.  Nella pagina **Piattaforme supportate** della Creazione guidata profilo di posta elettronica di Exchange ActiveSync scegliere i sistemi operativi in cui verrà installato il profilo. In alternativa, scegliere **Seleziona tutto** per installare il profilo di posta elettronica su tutti i sistemi operativi disponibili.  
 
-2.  Completare la procedura guidata.
+2.  Completa la procedura guidata.
 
-Per informazioni su come distribuire i profili di posta elettronica di Exchange ActiveSync, vedere l'argomento sulla [distribuzione dei profili in System Center Configuration Manager](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md).  
+Per informazioni su come distribuire i profili di posta elettronica di Exchange ActiveSync, vedere [How to deploy Profiles](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md).  

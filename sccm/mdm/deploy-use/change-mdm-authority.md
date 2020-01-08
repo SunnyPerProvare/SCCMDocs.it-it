@@ -11,16 +11,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: cc397ab5-125f-4f17-905b-fab980194f49
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0420113feaaf9c9485b8d1e3d488b07878c61b5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a2c98a7f2c5f08b7a3eed446ae3b5eaaef88f1ad
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62233994"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75521290"
 ---
 # <a name="change-your-mdm-authority"></a>Cambiare l'autorità MDM
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile cambiare l'autorità MDM senza dover contattare il supporto tecnico Microsoft e senza che sia necessario annullare la registrazione dei dispositivi gestiti esistenti e quindi eseguirla di nuovo. Questo articolo descrive i passaggi necessari per modificare un tenant esistente di Microsoft Intune configurato dalla console di Configuration Manager (ibrido) alla versione autonoma di Intune. Dopo aver completato i passaggi descritti in questo articolo, i dispositivi vengono gestiti da Microsoft Intune nel [portale di Azure](https://portal.azure.com). 
 
@@ -94,7 +94,7 @@ La procedura per cambiare l'autorità MDM in Intune autonomo include i passaggi 
 
 Una volta completata la modifica dell'autorità MDM, esaminare i passaggi seguenti:  
 
-- Quando il servizio Intune rileva che l'autorità MDM di un tenant è cambiata, invia un messaggio di notifica a tutti i dispositivi registrati per l'archiviazione e la sincronizzazione con il servizio. Questo comportamento si verifica al di fuori delle archiviazioni periodiche pianificate. Di conseguenza, dopo aver cambiato l'autorità MDM per il tenant da ibrida a Intune autonomo, tutti i dispositivi accesi e online si connettono al servizio, ricevono la nuova autorità MDM e vengono gestiti da Intune autonomo. Non ci sono interruzioni per la gestione e protezione di questi dispositivi.  
+- Quando il servizio Intune rileva che l'autorità MDM di un tenant è cambiata, invia un messaggio di notifica a tutti i dispositivi registrati per l'archiviazione e la sincronizzazione con il servizio. Questo comportamento si verifica al di fuori delle archiviazioni periodiche pianificate. Di conseguenza, dopo aver cambiato l'autorità MDM per il tenant da ibrida a Intune autonomo, tutti i dispositivi accesi e online si connettono al servizio, ricevono la nuova autorità MDM e vengono gestiti da Intune autonomo. La gestione e la protezione di questi dispositivi non viene mai interrotta.  
 
 - I dispositivi che sono spenti o non in linea durante (o immediatamente dopo) la modifica dell'autorità MDM si connettono e vengono sincronizzati con il servizio mediante la nuova autorità MDM quando sono nuovamente accesi e online.   
 

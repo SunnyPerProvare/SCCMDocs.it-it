@@ -1,7 +1,7 @@
 ---
 title: Confermare i requisiti del nome di dominio
 titleSuffix: Configuration Manager
-description: Confermare i requisiti del nome di dominio tramite System Center Configuration Manager.
+description: Confermare i requisiti del nome di dominio usando Configuration Manager.
 ms.date: 03/21/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a276ab19267d97526d916fb246facd75314006dd
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9d66b219f9d563637dd6be0215a0a9b6858d450e
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70379623"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75521137"
 ---
-# <a name="confirm-domain-name-requirements-with-system-center-configuration-manager-and-microsoft-intune"></a>Confermare i requisiti del nome di dominio con System Center Configuration Manager e Microsoft Intune
+# <a name="confirm-domain-name-requirements-with-configuration-manager-and-microsoft-intune"></a>Confermare i requisiti del nome di dominio con Configuration Manager e Microsoft Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Se necessario, eseguire i passaggi seguenti per soddisfare le dipendenze esterne a Configuration Manager:
 
@@ -48,4 +48,4 @@ Se necessario, eseguire i passaggi seguenti per soddisfare le dipendenze esterne
     Se non si usa ADFS, è necessario impostare una password di Microsoft Online per ciascun utente.
 
 > [!div class="button"]
-> [< Passaggio precedente](create-mdm-collection.md)  [Passaggio successivo >](configure-intune-subscription.md)
+> [Passaggio successivo](configure-intune-subscription.md) [< passaggio precedente](create-mdm-collection.md)>

@@ -1,7 +1,7 @@
 ---
 title: Creare una raccolta MDM
 titleSuffix: Configuration Manager
-description: Creare una raccolta MDM tramite System Center Configuration Manager.
+description: Creare una raccolta MDM usando Configuration Manager.
 ms.date: 03/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ec7c4cd58fbb717ab586d355ba4f0bf5f91fd06
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8776f6f77e716bdd4b921eb82181f8566ddace24
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62275822"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75521171"
 ---
-# <a name="create-an-mdm-collection-with-system-center-configuration-manager-and-microsoft-intune"></a>Creare una raccolta MDM con System Center Configuration Manager e Microsoft Intune
+# <a name="create-an-mdm-collection-with-configuration-manager-and-microsoft-intune"></a>Creare una raccolta MDM con Configuration Manager e Microsoft Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È necessaria una raccolta utenti di Configuration Manager per specificare gli utenti che possono registrare i dispositivi nella gestione. È possibile usare solo le raccolte utenti (invece delle raccolte di dispositivi) perché le licenze di Intune vengono assegnate agli utenti.
 

@@ -1,7 +1,7 @@
 ---
 title: Creare elementi di configurazione per dispositivi iOS e macOS gestiti con Intune
 titleSuffix: Configuration Manager
-description: Usare l'elemento di configurazione System Center Configuration Manager iOS e macOS per gestire le impostazioni per i dispositivi iOS e macOS.
+description: Usare l'elemento di configurazione Configuration Manager iOS e macOS per gestire le impostazioni per i dispositivi iOS e macOS.
 ms.date: 03/28/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5d1b15f441015ebea7ca00e9fa8bee7e02f168b8
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 4353651472f08bd9a13fa97a92fdd9eabc8fb904
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68859991"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75521256"
 ---
 # <a name="how-to-create-configuration-items-for-ios-and-macos-devices-managed-with-intune"></a>Come creare elementi di configurazione per dispositivi iOS e macOS gestiti con Intune
 
-Usare l'elemento di configurazione System Center Configuration Manager **iOS e MacOS** per gestire le impostazioni per i dispositivi iOS e MacOS registrati in Microsoft Intune o gestiti in locale da Configuration Manager.  
+Usare l'elemento di configurazione Configuration Manager **iOS e MacOS** per gestire le impostazioni per i dispositivi iOS e MacOS registrati in Microsoft Intune o gestiti in locale da Configuration Manager.  
   
 ## <a name="create-an-ios-and-macos-configuration-item"></a>Creare un elemento di configurazione iOS e macOS  
   
@@ -96,7 +96,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
 |**Gioco multiplayer**|Consente di giocare con altri giocatori su Internet.|  
 |**Software portafoglio personale durante il blocco**|Consente l'utilizzo di un software di portafoglio personale come Passbook.|  
 |**Invio dati diagnostici**|Consente l’invio dei file di log dell'app.|  
-|**Notifiche del centro notifiche**|Consente di accedere alla visualizzazione delle notifiche senza sbloccare il dispositivo.|
+|**Notifiche del centro notifiche**|Consente all'utente di accedere alla visualizzazione delle notifiche senza sbloccare il dispositivo.|
 |**Apple Music** (solo supervisione)|Consente l'uso dell'app Apple Music.|
 |**Podcast** (solo supervisione)|Consente l'uso dell'app Podcast.|
 |**App Messages** (solo supervisione)|Consente l'uso dell'app Messages per l'invio di messaggi di testo.|
@@ -104,15 +104,15 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
 |**Ricerca della definizione della parola** (solo supervisione)|Abilita la funzionalità di iOS che consente di evidenziare una parola e cercarne la definizione.|
 |**Rilevamento del polso per Apple Watch associati**|Quando questa opzione è abilitata, l'Apple Watch non visualizza le notifiche quando non è indossato.|
 |**Filtro di Siri per le espressioni volgari** (solo supervisione)|Impedisce a Siri di dettare o parlare usando un linguaggio volgare.|
-|**Modifica del nome dispositivo** (solo supervisione)|Consente all'utente di modificare il nome del dispositivo.|
+|**Modifica del nome dispositivo** (solo supervisione)|Consentire all'utente di modificare il nome del dispositivo.|
 |**Modifica delle impostazioni di invio dei dati di diagnostica** (solo supervisione)|Consente o impedisce al dispositivo di inviare dati di diagnostica ad Apple.|
 |**Game Center** (solo supervisione)|Consente l'uso dell'app Game Center.|
-|**iTunes Radio** (solo supervisione)|Consente l'uso dell'app iTunes.|
+|**iTunes Radio** (solo supervisione)|Consentire l'uso dell'app iTunes Radio.|
 |**Apple News** (solo supervisione)|Consente l'uso dell'app Apple News.|
 |**Associazione di Apple Watch** (solo supervisione)|Consente di associare il dispositivo a un Apple Watch.|
-|**Correzione automatica** (solo supervisione)|Consente al dispositivo di correggere automaticamente le parole errate.|
+|**Correzione automatica** (solo supervisione)|Consentire al dispositivo di correggere automaticamente le parole errate.|
 |**Modifica Bluetooth** (solo supervisione)|Consente all'utente di modificare le impostazioni di Bluetooth nel dispositivo.|
-|**Modifiche alle impostazioni dell'utilizzo della rete dati dell'app** (solo supervisione)|Consente all'utente di controllare quali app possono usare la rete dati.|
+|**Modifiche alle impostazioni dell'utilizzo della rete dati dell'app** (solo supervisione)|Consente all'utente di controllare le app che possono usare la rete dati.|
 |**Scelte rapide da tastiera** (solo supervisione)|Consente l'uso dei tasti di scelta rapida.|
 |**Tastiere predittive** (solo supervisione)|Consente l'uso di tastiere predittive che suggeriscono all'utente le parole che potrebbero essergli utili.|
 |**Controllo ortografico tastiera** (solo supervisione)|Abilita il controllo ortografico nel dispositivo.|
@@ -199,7 +199,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
 |Nome impostazione|Details|  
 |------------------|-------------|  
 |**Accettare certificati TLS non attendibili**|Se **consentito**, permette all'utente di accettare tali certificati. Se **non consentito**, rifiuta automaticamente i certificati non attendibili.|
-|**Consenti blocco attivazione (solo modalità di supervisione)**|Usare questa impostazione per abilitare il blocco attivazione iOS Activation per i dispositivi iOS **con supervisione** gestiti. Per altre informazioni sul blocco attivazione, vedere [Gestire il blocco attivazione iOS con System Center Configuration Manager](../../mdm/deploy-use/manage-ios-activation-lock.md).
+|**Consenti blocco attivazione (solo modalità di supervisione)**|Usare questa impostazione per abilitare il blocco attivazione iOS Activation per i dispositivi iOS **con supervisione** gestiti. Per ulteriori informazioni su Blocco attivazione, vedere [gestire Blocco attivazione iOS con Configuration Manager](../../mdm/deploy-use/manage-ios-activation-lock.md).
 |**Centro di controllo schermata di blocco**|Controlla se l'applicazione di centro di controllo è accessibile quando il dispositivo è bloccato.|  
 |**Visualizzazione notifiche schermata di blocco**|Controlla se è possibile visualizzare le notifiche quando il dispositivo è bloccato.|  
 |**Visualizzazione Oggi schermata di blocco**|Controlla se è possibile visualizzare la vista Today quando il dispositivo è bloccato.|  
@@ -207,8 +207,8 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
 |**Modifica le impostazioni dell'app Find My Friends** (solo supervisione)|Consente all'utente di modificare le impostazioni per l'app Find My Friends.|
 |**Usa l'associazione di host per controllare i dispositivi a cui può essere associato un dispositivo iOS** (solo supervisione)|Abilita l'associazione di host per consentire all'amministratore di controllare i dispositivi a cui può essere associato un dispositivo iOS.|
 |**Elimina tutti i contenuti e tutte le impostazioni** (solo supervisione)|Consente all'utente di eliminare tutti i contenuti e le impostazioni del dispositivo.|
-|**Configura le restrizioni nel dispositivo** (solo supervisione)|Consente all'utente di configurare restrizioni (Controllo genitori) sul dispositivo.|
-|**Installa i profili di configurazione e i certificati** (solo supervisione)|Consente all'utente di installare i certificati e i profili di configurazione.|
+|**Configura le restrizioni nel dispositivo** (solo supervisione)|Consentire all'utente di configurare restrizioni, come il controllo genitori, sul dispositivo.|
+|**Installa i profili di configurazione e i certificati** (solo supervisione)|Consente all'utente di installare profili di configurazione e certificati.|
 |**Password per le richieste in uscita di AirPlay**|Richiede una password di associazione quando l'utente usa AirPlay per trasmettere i contenuti ad altri dispositivi Apple.|
   
 ###  <a name="data-protection"></a>Protezione dati  
@@ -256,7 +256,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
   
 - **Riepilogo degli utenti con app non conformi** : Visualizza informazioni sugli utenti che dispongono di app installate che non sono conformi ai criteri specificati.  
   
-  Per informazioni sull'uso dei report, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+  Per informazioni sull'utilizzo dei report, vedere [creazione](../../core/servers/manage/reporting.md)di report.  
   
 ###  <a name="compliant-and-noncompliant-apps-macos"></a>App conformi e non conformi (macOS)  
  Consente di specificare un elenco di app macOS conformi o non conformi nella società. È quindi possibile usare i report per visualizzare i dispositivi nei quali sono installate app non conformi e gli utenti associati.  
@@ -271,7 +271,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
   
    - **Elenco App conformi**: selezionare questa opzione per specificare un elenco di app che gli utenti sono autorizzati a installare. Tutte le altre app installate verranno segnalate come non conformi.  
   
-   - **Aggiungi** aggiunge un'app all'elenco selezionato. Specificare il nome scelto, l'autore dell'app (facoltativo) e l'ID bundle dell'app.  
+   - **Aggiungi** aggiunge un'app all'elenco selezionato. Specificare un nome, facoltativamente l'autore dell'app, e l'ID bundle dell'app.  
   
      > [!TIP]
      >  Per trovare l'ID bundle di un'app, usare i passaggi seguenti in un computer Mac in cui è installata l'app:  
@@ -297,7 +297,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
   
 - **Riepilogo degli utenti con app non conformi** : Visualizza informazioni sugli utenti che dispongono di app installate che non sono conformi ai criteri specificati.  
   
-  Per informazioni sull'uso dei report, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+  Per informazioni sull'utilizzo dei report, vedere [creazione](../../core/servers/manage/reporting.md)di report.  
   
 ### <a name="ios-and-macos-custom-profile-settings"></a>impostazioni del profilo personalizzato iOS e macOS  
  Usare i **profili personalizzati iOS e MacOS** per distribuire le impostazioni create con lo [strumento Apple Configurator](https://itunes.apple.com/us/app/apple-configurator-2/id1037126344?mt=12) nei dispositivi iOS e MacOS. Questo strumento consente di creare molte impostazioni che controllano il funzionamento di questi dispositivi e di esportarle in un profilo di configurazione. È quindi possibile importare il profilo di configurazione in un profilo personalizzato iOS e macOS e distribuire le impostazioni a utenti e dispositivi nell'organizzazione.  
@@ -348,7 +348,7 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
   
 1. Nella pagina di **Configura impostazioni modalità tutto schermo per dispositivi iOS** della **Creazione guidata dell'elemento di configurazione**specificare le seguenti informazioni:  
   
-   - **Seleziona app**: selezionare l'app che potrà essere eseguita quando il dispositivo è in modalità tutto schermo. Non sarà possibile eseguire altre applicazioni nel dispositivo. È possibile scegliere tra:  
+   - **Seleziona app**: selezionare l'app che potrà essere eseguita quando il dispositivo è in modalità tutto schermo. Non sarà possibile eseguire altre applicazioni nel dispositivo. Scegliere tra:  
   
      - **App gestita e** - fare clic su Sfoglia, quindi selezionare un'app gestita.  
   
@@ -409,4 +409,4 @@ Usare l'elemento di configurazione System Center Configuration Manager **iOS e M
      -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche essere registrato come un evento Windows nel registro eventi dell'applicazione.  
   
 ## <a name="see-also"></a>Vedere anche  
- [Elementi di configurazione per dispositivi gestiti senza il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)
+ [Elementi di configurazione per dispositivi gestiti senza il client di Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

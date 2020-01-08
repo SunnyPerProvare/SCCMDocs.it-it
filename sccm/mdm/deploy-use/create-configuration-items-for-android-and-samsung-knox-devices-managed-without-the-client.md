@@ -1,7 +1,7 @@
 ---
 title: Creare elementi di configurazione per dispositivi Android e Samsung KNOX Standard gestiti con Intune
 titleSuffix: Configuration Manager
-description: Usare l'elemento di configurazione Android e Samsung KNOX Standard di System Center Configuration Manager per gestire le impostazioni dei dispositivi.
+description: Usare l'elemento di configurazione Configuration Manager Android e Samsung KNOX standard per gestire le impostazioni per i dispositivi.
 ms.date: 03/27/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd17461f0db42afcbec821716eaeef83dfddcc98
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a16962c56437fc36bbfe6f61241f262b5e017d50
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67145987"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75521086"
 ---
-# <a name="how-to-create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Android e Samsung KNOX gestiti senza il client System Center Configuration Manager
+# <a name="how-to-create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Android e Samsung KNOX gestiti senza il client Configuration Manager
 
-Usare l'elemento di configurazione **Android e Samsung KNOX** di System Center Configuration Manager per gestire le impostazioni per i dispositivi Android e Samsung KNOX registrati in Microsoft Intune o gestiti in locale da Configuration Manager.  
+Usare l'elemento di configurazione Configuration Manager **Android e Samsung Knox** per gestire le impostazioni per i dispositivi Android e Samsung Knox registrati in Microsoft Intune o gestiti in locale da Configuration Manager.  
 
 ## <a name="create-an-android-and-samsung-knox-configuration-item"></a>Creare un elemento di configurazione Android e Samsung KNOX  
 
@@ -62,7 +62,7 @@ Usare l'elemento di configurazione **Android e Samsung KNOX** di System Center C
     > [!TIP]  
     >  Non viene valutata la conformità delle impostazioni non supportate.  
 
-12. Completare la procedura guidata.  
+12. Completa la procedura guidata.  
 
     È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
 
@@ -87,7 +87,7 @@ Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.
 
 |                 Impostazioni                  |                             Details                             |
 |------------------------------------------|-----------------------------------------------------------------|
-|            **Chiamata vocale**             |  Abilita o disabilita la funzionalità di composizione vocale sul dispositivo.   |
+|            **Chiamata vocale**             |  Attiva o disattiva la funzionalità di composizione vocale sul dispositivo.   |
 |           **Assistente vocale**            |    Consente di usare un assistente vocale sul dispositivo.    |
 |            **Acquisizione schermo**            |     Consente all'utente di acquisire il contenuto dello schermo sotto forma di immagine.      |
 |      **Invio dati diagnostici**      |    Consente al dispositivo di inviare i dati di diagnostica a Google.     |
@@ -107,10 +107,10 @@ Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.
 
 |Impostazioni|Details|  
 |------------------|-------------|  
-|**Consenti browser Web**|Consente di usare il Web browser predefinito del dispositivo.|
+|**Consenti Web browser**|Consente di usare il Web browser predefinito del dispositivo.|
 |**Riempimento automatico**|Specifica se è possibile usare la funzione di riempimento automatico del Web browser.|
 |**Esecuzione script attivo**|Consente al Web browser del dispositivo di eseguire lo script attivo.|
-|**Blocco popup**|Consente l'uso del blocco popup nel Web browser.|
+|**Blocco popup**|Consente di usare un blocco popup nel Web browser.|
 |**Cookie**|Consente l'uso dei cookie nel Web browser.|
 
 ### <a name="cloud"></a>Cloud  
@@ -124,11 +124,11 @@ Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.
 
 |Impostazioni|Details|  
 |-------------|-------------|  
-|**Messaggistica SMS e MMS**|Consente l'uso della messaggistica SMS e MMS sul dispositivo.|
+|**Messaggistica SMS e MMS**|Consente l'uso di messaggi SMS e MMS sul dispositivo.|
 |**Archivi rimovibili**|Consente l'uso di archivi rimovibili, ad esempio una scheda SD, sul dispositivo.|
 |**Fotocamera**|Consente l'uso della fotocamera del dispositivo.<br /><br /> Si applica ai dispositivi Android e Samsung KNOX.|
 |**NFC (Near Field Communication)**|Consente attività che usano Near Field Communication (se supportato dal dispositivo).|
-|**YouTube**|Consente l'uso dell'app YouTube sul dispositivo.<br /><br /> Si applica solo ai dispositivi Samsung KNOX.|  
+|**YouTube**|Consente l'uso dell'app YouTube nel dispositivo.<br /><br /> Si applica solo ai dispositivi Samsung KNOX.|  
 |**Spegnimento**|Consente lo spegnimento del dispositivo.<br /><br /> Si applica solo ai dispositivi Samsung KNOX.|  
 
 ### <a name="roaming"></a>Roaming
@@ -139,7 +139,7 @@ Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.
 |Roaming dati|Consente il roaming dati quando il dispositivo si trova in una rete cellulare.|
 
 
-### <a name="encryption"></a>Crittografia  
+### <a name="encryption"></a>Encryption  
  Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.  
 
 |Impostazioni|Details|  
@@ -151,7 +151,7 @@ Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.
 
 |Impostazioni|Details|  
 |-------------|-------------|  
-|**Connessione rete wireless**|Consente l'uso delle funzionalità Wi-Fi sul dispositivo.|
+|**Connessione rete wireless**|Consente di usare le funzionalità Wi-Fi del dispositivo.|
 |**Tethering Wi-Fi**|Consente l'uso del tethering Wi-Fi sul dispositivo.|
 
 
@@ -172,7 +172,7 @@ Nella pagina **App conformi e non conformi (Android)** specificare le informazio
 |          **Aggiungi**           | Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare dalla [sezione delle app di Google Play](https://play.google.com/store/apps).<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app conformi e non conformi.<br /><br /> **Esempio:** Cerca Google Play per **Microsoft Office Word**. L'URL da usare sarà **<https://play.google.com/store/apps/details?id=com.microsoft.office.word>** . |
 |          **Modifica**          |                                                                                                                                                                                                                                                                                          Consente di modificare il nome, l'autore e l'URL dell'app selezionata.                                                                                                                                                                                                                                                                                          |
 |         **Rimuovi**         |                                                                                                                                                                                                                                                                                                      Elimina l'app selezionata dall'elenco.                                                                                                                                                                                                                                                                                                      |
-|         **Importa**         |                                                                                                                                                                                                                                                 Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.                                                                                                                                                                                                                                                 |
+|         **Importaa**         |                                                                                                                                                                                                                                                 Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.                                                                                                                                                                                                                                                 |
 
 ## <a name="android-for-work-configuration-items"></a>Elementi di configurazione di Android for Work
 Android for Work ha due gruppi di impostazioni per gli elementi di configurazione:
@@ -208,7 +208,7 @@ Per creare un elemento di configurazione nel profilo di lavoro di Android, scegl
 
 - **Riepilogo degli utenti con app non conformi**. Mostra informazioni sugli utenti che hanno installato app non conformi ai criteri specificati.  
 
-Per informazioni sull'uso dei report, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+Per informazioni sull'utilizzo dei report, vedere [creazione](../../core/servers/manage/reporting.md)di report.  
 
 ## <a name="see-also"></a>Vedere anche  
-[Elementi di configurazione per dispositivi gestiti senza il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)
+[Elementi di configurazione per dispositivi gestiti senza il client di Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

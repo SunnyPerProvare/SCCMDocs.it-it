@@ -1,7 +1,7 @@
 ---
 title: Configurare la sottoscrizione di Intune
 titleSuffix: Configuration Manager
-description: Configurare la sottoscrizione di Intune tramite System Center Configuration Manager.
+description: Configurare la sottoscrizione di Intune usando Configuration Manager.
 ms.date: 06/02/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd48ec41114b122d8d00549c1ae8d99d08ba5f1f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 151dbab44aaf02e3c299df02ae771677a90eca38
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70379715"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75521188"
 ---
-# <a name="configure-your-intune-subscription-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la sottoscrizione di Intune con System Center Configuration Manager e Microsoft Intune
+# <a name="configure-your-intune-subscription-with-configuration-manager-and-microsoft-intune"></a>Configurare la sottoscrizione di Intune con Configuration Manager e Microsoft Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 La sottoscrizione di Intune consente di gestire i dispositivi su Internet. Consente anche di specificare quale raccolta utenti può registrare i dispositivi e di definire le informazioni presentate agli utenti. Durante la creazione della sottoscrizione di Intune è anche possibile aggiungere il proprio marchio al portale aziendale Intune con il logo e gli schemi di colori personalizzati della società.
 
@@ -31,7 +31,7 @@ La sottoscrizione di Intune esegue le operazioni seguenti:
 -   Definisce e configura le piattaforme mobili da supportare
 
 > [!IMPORTANT]
->  Quando si crea una sottoscrizione per Microsoft Intune in Configuration Manager, il punto di connessione del servizio del sito passerà in "modalità online". Vedere [Informazioni sul punto di connessione del servizio in System Center Configuration Manager](../../core/servers/deploy/configure/about-the-service-connection-point.md).
+>  Quando si crea una sottoscrizione per Microsoft Intune in Configuration Manager, il punto di connessione del servizio del sito passerà in "modalità online". Vedere [informazioni sul punto di connessione del servizio](../../core/servers/deploy/configure/about-the-service-connection-point.md).
 
 ## <a name="to-create-the-microsoft-intune-subscription"></a>Per creare la sottoscrizione a Microsoft Intune
 
@@ -59,7 +59,7 @@ La sottoscrizione di Intune esegue le operazioni seguenti:
      > [!NOTE]
      >  Se un utente viene rimosso dalla raccolta, il dispositivo dell'utente continuerà a essere gestito per un massimo di 24 ore finché il record utente non verrà rimosso dal database utenti.
 
-   - **Nome società**: specificare il nome della società.
+   - **Nome società**: Specificare il nome della società.
 
    - **URL della documentazione sulla privacy**: se si pubblicano le informazioni sulla privacy della società in un collegamento accessibile tramite Internet, specificare un collegamento a cui gli utenti possono accedere dal portale aziendale, come ad esempio http://www.contoso.com/CP_privacy.html. Le informazioni sulla privacy possono chiarire quali informazioni gli utenti condividono con la società.
 
@@ -77,4 +77,4 @@ La sottoscrizione di Intune esegue le operazioni seguenti:
 10. completare la procedura guidata.
 
 > [!div class="button"]
-> [< Passaggio precedente](confirm-dns.md)  [Passaggio successivo >](terms-and-conditions.md)
+> [Passaggio successivo](terms-and-conditions.md) [< passaggio precedente](confirm-dns.md)>

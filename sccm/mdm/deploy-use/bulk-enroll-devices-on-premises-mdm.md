@@ -1,7 +1,7 @@
 ---
 title: Registrare in blocco i dispositivi per la gestione dii dispositivi mobili locale
 titleSuffix: Configuration Manager
-description: Registrare dispositivi in blocco automaticamente con Gestione dispositivi mobili locali in System Center Configuration Manager.
+description: Registrare in blocco i dispositivi in modo automatico con la gestione dei dispositivi mobili locale in Configuration Manager.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,22 +11,22 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0c007a2414a68701584967ee21e3cf046e42be3
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 79cbcef2e4b503f10cf1ade529678ac370902331
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62217061"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75521307"
 ---
-# <a name="how-to-bulk-enroll-devices-with-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Come registrare in blocco i dispositivi con la gestione di dispositivi mobili locale in System Center Configuration Manager
+# <a name="how-to-bulk-enroll-devices-with-on-premises-mobile-device-management-in-configuration-manager"></a>Come registrare in blocco i dispositivi con la gestione dei dispositivi mobili locale in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
-La registrazione in blocco in Gestione dispositivi mobili locali in System Center Configuration Manager è una modalità di registrazione dei dispositivi più automatizzata rispetto alle registrazione utente, che richiede agli utenti di immettere le credenziali per registrare il dispositivo.  La registrazione in blocco usa un pacchetto di registrazione per autenticare il dispositivo durante la registrazione. Il pacchetto, ovvero un file con estensione ppkg, contiene un profilo del certificato e, facoltativamente, un profilo Wi-Fi se il dispositivo richiede la connettività intranet per supportare la registrazione.  
+La registrazione in blocco in Configuration Manager la gestione dei dispositivi mobili locale è un mezzo più automatizzato per la registrazione dei dispositivi rispetto alla registrazione utente, che richiede agli utenti di immettere le credenziali per registrare il dispositivo.  La registrazione in blocco usa un pacchetto di registrazione per autenticare il dispositivo durante la registrazione. Il pacchetto, ovvero un file con estensione ppkg, contiene un profilo del certificato e, facoltativamente, un profilo Wi-Fi se il dispositivo richiede la connettività intranet per supportare la registrazione.  
 
 > [!NOTE]  
->  Il ramo corrente di Configuration Manager supporta la registrazione in Gestione dispositivi mobili locali per i dispositivi che eseguono i sistemi operativi seguenti:  
+>  Il Current Branch di Configuration Manager supporta la registrazione nella gestione dispositivi mobili locale per i dispositivi che eseguono i sistemi operativi seguenti:  
 >   
 > -  Windows 10 Enterprise  
 > -   Windows 10 Pro  
@@ -54,12 +54,12 @@ Le attività seguenti illustrano come registrare in blocco computer e dispositiv
 
  Come parte della preparazione del sistema per Gestione dispositivi mobili locali, esportare un certificato radice che è possibile usare nel profilo del certificato del pacchetto di registrazione. Per istruzioni su come ottenere il certificato radice attendibile, vedere [Export the certificate with the same root as the web server certificate](../../mdm/get-started/set-up-certificates-on-premises-mdm.md#bkmk_exportCert) (Esportare il certificato con la stessa radice del certificato del server Web).  
 
- Usare il certificato radice esportato per creare un profilo del certificato. Per altre informazioni, vedere [How to create certificate profiles in System Center Configuration Manager](../../protect/deploy-use/create-certificate-profiles.md) (Come creare profili di certificato in System Center Configuration Manager).  
+ Usare il certificato radice esportato per creare un profilo del certificato. Per istruzioni, vedere [How to Create Certificate Profiles](../../protect/deploy-use/create-certificate-profiles.md).  
 
 ##  <a name="CreateWifi"></a> Creare un profilo Wi-Fi  
  L'altro componente del pacchetto usato per la registrazione in blocco è il profilo Wi-Fi. Alcuni dispositivi potrebbero non avere la connettività di rete necessaria per supportare la registrazione fino a quando non viene effettuato il provisioning delle impostazioni di rete. Includere un profilo Wi-Fi nel pacchetto di registrazione consente di stabilire la connettività di rete per il dispositivo.  
 
- Per creare un profilo Wi-Fi in Configuration Manager, seguire le istruzioni in [How to create Wi-Fi profiles in System Center Configuration Manager](../../protect/deploy-use/create-wifi-profiles.md) (Come creare profili Wi-Fi in System Center Configuration Manager).  
+ Per creare un profilo Wi-Fi in Configuration Manager, seguire le istruzioni in [How to create Wi-Fi Profiles](../../protect/deploy-use/create-wifi-profiles.md).  
 
 > [!IMPORTANT]  
 >Quando si crea un profilo Wi-Fi per la registrazione in blocco, tenere presente i seguenti problemi:

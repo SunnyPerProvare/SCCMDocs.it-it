@@ -1,5 +1,5 @@
 ---
-title: Profili VPN
+title: profili VPN
 titleSuffix: Configuration Manager
 description: Informazioni sui profili VPN nei dispositivi mobili in Configuration Manager.
 ms.date: 06/12/2018
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c7312346550860484dc99097963b5fd07783abbd
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ee8e7b3dd4130712eebb82caa4e6519b78991a3d
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68340310"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520984"
 ---
-# <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Profili VPN nei dispositivi mobili in System Center Configuration Manager
+# <a name="vpn-profiles-on-mobile-devices-in-configuration-manager"></a>Profili VPN nei dispositivi mobili in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare profili VPN in Configuration Manager per distribuire impostazioni VPN agli utenti dei dispositivi mobili nell'organizzazione. La distribuzione di queste impostazioni consente di ridurre al minimo le operazioni che l'utente finale deve eseguire per connettersi alle risorse sulla rete aziendale.  
 
@@ -38,17 +38,17 @@ La tabella seguente mostra il tipo di connessione supportato per ogni piattaform
 
 |Tipo di connessione|iOS e MacOS X|Android|Windows 8,1|Windows RT|Windows RT 8.1|Windows Phone 8.1|Windows 10 Desktop e Mobile|  
 |---------------|---------------|-------|-----------|----------|--------------|-----------------|-----------------------------|  
-|Cisco AnyConnect|Sì<sup>1</sup>|Yes|No|No|No|No|No|
+|Cisco AnyConnect|Sì<sup>1</sup>|sì|No|No|No|No|No|
 |Cisco (IPSec)|Solo iOS|No|No|No|No|No|No|  
-|Pulse Secure|Yes|Yes|Yes|No|Yes|Yes|Yes|  
-|F5 Edge Client|Yes|Yes|Yes|No|Yes|Yes|Yes|  
-|Dell SonicWALL Mobile Connect|Yes|Yes|Yes|No|Yes|Yes|Yes|  
-|VPN mobile Check Point|Yes|Yes|Yes|No|Yes|Yes|Yes|  
-|Microsoft SSL (SSTP)|No|No|Yes|Yes|Yes|No|No|  
-|Microsoft Automatico|No|No|Yes|Yes|Yes|No|Yes|  
-|IKEv2|Sì (criteri personalizzati iOS 9 e versioni successive)|No|Yes|Yes|Yes|Yes|Yes|  
-|PPTP|Yes|No|Yes|Yes|Yes|No|Yes|  
-|L2TP|Yes|No|Yes|Yes|Yes|No|Sì (URI OMA)|  
+|Pulse Secure|sì|sì|sì|No|sì|sì|sì|  
+|F5 Edge Client|sì|sì|sì|No|sì|sì|sì|  
+|Dell SonicWALL Mobile Connect|sì|sì|sì|No|sì|sì|sì|  
+|VPN mobile Check Point|sì|sì|sì|No|sì|sì|sì|  
+|Microsoft SSL (SSTP)|No|No|sì|sì|sì|No|No|  
+|Microsoft Automatico|No|No|sì|sì|sì|No|sì|  
+|IKEv2|Sì (criteri personalizzati iOS 9 e versioni successive)|No|sì|sì|sì|sì|sì|  
+|PPTP|sì|No|sì|sì|sì|No|sì|  
+|L2TP|sì|No|sì|sì|sì|No|Sì (URI OMA)|  
 
 <sup>1</sup> a partire dalla versione 1802, l'utilizzo del tipo di connessione Cisco AnyConnect varia.<!--1357393-->  
 - Usare l'opzione **Cisco Legacy AnyConnect** per i profili VPN nelle versioni seguenti:
@@ -151,7 +151,7 @@ Le opzioni seguenti sono disponibili per tutti i tipi di connessione in Windows 
 
 8. Configurare altre impostazioni DNS, se necessario.  
 
-9. Completare la procedura guidata. Il nuovo profilo VPN viene visualizzato nel nodo **Profilo VPN** dell'area di lavoro **Asset e conformità**.  
+9. Completa la procedura guidata. Il nuovo profilo VPN viene visualizzato nel nodo **Profilo VPN** dell'area di lavoro **Asset e conformità**.  
 
 
 

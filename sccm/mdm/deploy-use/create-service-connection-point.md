@@ -1,7 +1,7 @@
 ---
 title: Configurare un punto di connessione del servizio
 titleSuffix: Configuration Manager
-description: Creare un punto di connessione del servizio tramite System Center Configuration Manager.
+description: Creare un punto di connessione del servizio usando Configuration Manager.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0ce47e9ade73d76e99aa5c0d4e5581c713a847a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e620ce639d20b52e106026a88162e6b1ada6a5fb
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62224848"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75521001"
 ---
-# <a name="create-a-service-connection-point-with-system-center-configuration-manager-and-microsoft-intune"></a>Creare un punto di connessione del servizio con System Center Configuration Manager e Microsoft Intune
+# <a name="create-a-service-connection-point-with-configuration-manager-and-microsoft-intune"></a>Creare un punto di connessione del servizio con Configuration Manager e Microsoft Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Dopo avere creato la sottoscrizione, sarà quindi possibile installare il ruolo del sistema del sito del punto di connessione del servizio che consente di connettersi al servizio Intune. Questo ruolo del sistema del sito effettuerà il push delle impostazioni e delle applicazioni al servizio Intune.
 
@@ -55,4 +55,4 @@ Dopo avere creato la sottoscrizione, sarà quindi possibile installare il ruolo 
 2.  Il certificato del passaggio 1 viene installato nel ruolo del sito del punto di connessione del servizio e viene usato per autenticare e autorizzare tutte le ulteriori comunicazioni con il servizio Microsoft Intune.
 
 > [!div class="button"]
-> [< Passaggio precedente](terms-and-conditions.md)  [Passaggio successivo >](enable-platform-enrollment.md)
+> [Passaggio successivo](enable-platform-enrollment.md) [< passaggio precedente](terms-and-conditions.md)>

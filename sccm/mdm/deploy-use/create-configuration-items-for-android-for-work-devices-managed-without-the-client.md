@@ -9,16 +9,16 @@ ms.assetid: ab6784fd-8c57-4be9-858f-50fe39f2ff5f
 author: aczechowski
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ebae22b8536c67fc5c912009b836185be3b17b6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 755d9ee33f46e12bed1f6b545c0b7b6937fcffc2
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "66716248"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75521069"
 ---
 # <a name="how-to-create-configuration-items-for-android-for-work-devices-managed-with-intune"></a>Come creare elementi di configurazione per dispositivi Android for Work gestiti con Intune
 
- Usare l'elemento di configurazione **Android for Work** di System Center Configuration Manager per gestire le impostazioni dei dispositivi Android for Work registrati in Microsoft Intune o gestiti in locale da Configuration Manager.  
+ Usare l'elemento di configurazione Configuration Manager **Android for Work** per gestire le impostazioni per i dispositivi Android for Work registrati in Microsoft Intune o gestiti in locale da Configuration Manager.  
 
 ## <a name="create-an-android-for-work-configuration-item"></a>Creare un elemento di configurazione di Android for Work  
 
@@ -85,9 +85,9 @@ ms.locfileid: "66716248"
 
 |Nome impostazione|Details|  
 |------------------|-------------|  
-|**Consenti la condivisione dei dati tra i profili di lavoro e personali**|È possibile scegliere tra:<br>- **Non configurato**<br>- **Restrizioni di condivisione predefinite**<br>- **Le app nel profilo di lavoro possono gestire una richiesta di condivisione dal profilo personale**<br>- **Le app nel profilo personale possono gestire una richiesta di condivisione dal profilo di lavoro**<br><br>Vedere anche l'uso di URI personalizzati per le [impostazioni di copia e incolla](#copy-paste-configuration-item-settings)|  
+|**Consenti la condivisione dei dati tra i profili di lavoro e personali**|Scegliere tra:<br>- **Non configurato**<br>- **Restrizioni di condivisione predefinite**<br>- **Le app nel profilo di lavoro possono gestire una richiesta di condivisione dal profilo personale**<br>- **Le app nel profilo personale possono gestire una richiesta di condivisione dal profilo di lavoro**<br><br>Vedere anche l'uso di URI personalizzati per le [impostazioni di copia e incolla](#copy-paste-configuration-item-settings)|  
 |**Nascondi le notifiche del profilo di lavoro quando il dispositivo è bloccato (Android 6.0+)**||
-|**Imposta i criteri di autorizzazione predefiniti delle app (Android 6.0+)**|È possibile scegliere tra:<br>- **Non configurato**<br>- **Chiedi sempre conferma**<br>- **Concedi automaticamente**<br>- **Nega automaticamente**|
+|**Imposta i criteri di autorizzazione predefiniti delle app (Android 6.0+)**|Scegliere tra:<br>- **Non configurato**<br>- **Chiedi sempre conferma**<br>- **Concedi automaticamente**<br>- **Nega automaticamente**|
 
 ### <a name="copy-paste-configuration-item-settings"></a>Impostazioni degli elementi di configurazione di copia e incolla
 Nessuna delle opzioni di **Consenti la condivisione dei dati tra i profili di lavoro e personali** impedisce il comportamento di copia e incolla. Usare un'impostazione personalizzata che può essere configurata per impedire le operazioni di copia e incolla. L'impostazione è configurabile tramite un URI personalizzato.
@@ -98,4 +98,4 @@ Nessuna delle opzioni di **Consenti la condivisione dei dati tra i profili di la
 Impostando DisallowCrossProfileCopyPaste su true si impedisce il comportamento di copia e incolla tra Android for Work personale e i profili di lavoro.
 
 ## <a name="see-also"></a>Vedere anche  
- [Elementi di configurazione per dispositivi gestiti senza il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)
+ [Elementi di configurazione per dispositivi gestiti senza il client di Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

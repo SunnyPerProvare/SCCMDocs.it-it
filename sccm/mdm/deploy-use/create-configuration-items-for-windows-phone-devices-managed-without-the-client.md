@@ -10,16 +10,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a205d17835675f804736c0513bc9d6c7706e19b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7a1f76b31b403b3cfcd89fd6380d63af1d135900
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70379594"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75521035"
 ---
-# <a name="how-to-create-configuration-items-for-windows-phone-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows Phone gestiti senza il client System Center Configuration Manager
+# <a name="how-to-create-configuration-items-for-windows-phone-devices-managed-without-the-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows Phone gestiti senza il client Configuration Manager
 
-Usare l'elemento di configurazione **Windows Phone** di System Center Configuration Manager per gestire le impostazioni per i dispositivi Windows Phone registrati in Microsoft Intune o gestiti localmente da Configuration Manager.  
+Usare l'elemento di configurazione Configuration Manager**Windows Phone** per gestire le impostazioni per i dispositivi Windows Phone registrati in Microsoft Intune o gestiti in locale da Configuration Manager.  
   
 ## <a name="create-a-windows-phone-configuration-item"></a>Creare un elemento di configurazione Windows Phone  
   
@@ -84,10 +84,10 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
   
 |Impostazioni|Details|  
 |-------------|-------------|  
-|**Acquisizione schermo**|Consente all'utente di acquisire uno screenshot del display del dispositivo.<br /><br /> Solo Windows Phone 8.1.|  
+|**Acquisizione schermo**|Consente all'utente di acquisire uno screenshot del display del dispositivo.<br /><br /> (solo per Windows Phone 8.1)|  
 |**Invio dati diagnostici**|Consente l’invio dei file di log dell'app.|  
-|**Georilevazione**|Consente al dispositivo di usare le informazioni dei servizi di posizione.<br /><br /> Solo Windows Phone 8.1.|  
-|**Copia e Incolla**|Usare Copia e Incolla per trasferire dati tra app.<br /><br /> Solo Windows Phone 8.1.|  
+|**Georilevazione**|Consente al dispositivo di usare le informazioni dei servizi di posizione.<br /><br /> (solo per Windows Phone 8.1)|  
+|**Copia e Incolla**|Usare Copia e Incolla per trasferire dati tra app.<br /><br /> (solo per Windows Phone 8.1)|  
 |**Bluetooth**|Consente di usare la funzionalità Bluetooth del dispositivo.|  
   
 ### <a name="email-management"></a>Gestione della posta elettronica  
@@ -117,7 +117,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
   
 |Impostazioni|Details|  
 |-------------|-------------|  
-|**Consenti browser Web**|Abilita o disabilita il browser Internet predefinito.|  
+|**Consenti Web browser**|Abilita o disabilita il browser Internet predefinito.|  
 |**Riempimento automatico**|L’utente può modificare le impostazioni di completamento automatico nel browser.|  
 |**Esecuzione script attivo**|Il browser può eseguire script, ad esempio gli script ActiveX.|  
 |**Plug-in**|L’utente può aggiungere plug-in a Internet Explorer.|  
@@ -147,7 +147,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 |-------------|-------------|  
 |**Sincronizzazione impostazioni**|Consente la sincronizzazione delle impostazioni tra i dispositivi.|  
 |**Sincronizzazione credenziali**|Consente la sincronizzazione delle credenziali tra i dispositivi.|  
-|**Account Microsoft**|Consente di usare un account Microsoft sul dispositivo.<br /><br /> Solo Windows Phone 8.1.|  
+|**Account Microsoft**|Consente di usare un account Microsoft sul dispositivo.<br /><br /> (solo per Windows Phone 8.1)|  
 |**Sincronizzazione delle impostazioni con connessione a consumo**|Consente la sincronizzazione delle impostazioni quando la connessione a Internet è a consumo.|  
   
 ### <a name="security"></a>Sicurezza  
@@ -159,7 +159,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 |**Messaggistica SMS e MMS**|Consente la messaggistica SMS e MMS dal dispositivo.|  
 |**Archivi rimovibili**|Consente di utilizzare archivi rimovibili, ad esempio una scheda SD sul dispositivo.|  
 |**Fotocamera**|Consente di utilizzare la fotocamera del dispositivo.|  
-|**NFC (Near Field Communication)**|Consente la comunicazione usando NFD nel dispositivo.<br /><br /> Solo Windows Phone 8.1.|  
+|**NFC (Near Field Communication)**|Consente la comunicazione usando NFD nel dispositivo.<br /><br /> (solo per Windows Phone 8.1)|  
 |**Consenti connessione USB**|Consente alle periferiche di connettersi al dispositivo tramite USB.|
   
 ### <a name="peak-synchronization"></a>Sincronizzazione nelle ore di punta  
@@ -181,7 +181,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 |**Download della posta elettronica durante il roaming**|Consente il download di posta elettronica durante il roaming.|  
 |**Roaming dati**|Consente il roaming tra reti quando si accede a dati.|  
   
-### <a name="encryption"></a>Crittografia  
+### <a name="encryption"></a>Encryption  
  Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
 |Impostazioni|Details|  
@@ -229,7 +229,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
   
 -   **File di certificato** - fare clic su **Sfoglia** , quindi selezionare il file di certificato con estensione **cer** da importare.  
   
--   **Archivio di destinazione** - sceglire uno o più archivi di destinazione da cui sarà aggiunto il certificato importato sul dispositivo mobile:  
+-   **Archivio di destinazione** - Scegliere uno o più archivi di destinazione da cui sarà aggiunto il certificato importato sul dispositivo mobile:  
   
     -   **Radice**  
   
@@ -298,7 +298,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 |**Aggiungi**|Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, nella pagina di Windows Phone Store cercare l'app da usare.<br /><br /> **Esempio:** cercare l'app **Skype** nell'App Store. L'URL da usare sarà https://www.windowsphone.com/en-us/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51.<br /><br /> Nel caso dell'app del portale aziendale o delle app line-of-business, non è necessario specificare un URL completo ma soltanto il GUID dell'app.|  
 |**Modifica**|Consente di modificare il nome, l'autore e l'URL dell'app selezionata.|  
 |**Rimuovi**|Elimina l'app selezionata dall'elenco.|  
-|**Importa**|Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.|  
+|**Importaa**|Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.|  
   
 ## <a name="see-also"></a>Vedere anche  
- [Elementi di configurazione per dispositivi gestiti senza il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)
+ [Elementi di configurazione per dispositivi gestiti senza il client di Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

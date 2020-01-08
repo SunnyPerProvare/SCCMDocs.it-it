@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d6f8c25902be857e0eec3cd4b969d1fb5bda136
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 41de9d51c2c3b3d277005c60effadea09787d5a8
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62288769"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75521222"
 ---
-# <a name="apply-settings-to-android-for-work-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Applicare le impostazioni alle app Android for Work con i criteri di configurazione delle app in System Center Configuration Manager
+# <a name="apply-settings-to-android-for-work-apps-with-app-configuration-policies-in-configuration-manager"></a>Applicare le impostazioni alle app Android for Work con i criteri di configurazione delle app in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-È possibile usare i criteri di configurazione delle app in System Center Configuration Manager per distribuire impostazioni che potrebbero essere necessarie quando un utente esegue un'app. Ad esempio, un'app potrebbe richiedere all'utente di specificare i seguenti dettagli:
+È possibile usare i criteri di configurazione delle app in Configuration Manager per distribuire le impostazioni che potrebbero essere necessarie quando un utente esegue un'app. Ad esempio, un'app potrebbe richiedere all'utente di specificare i seguenti dettagli:
 - Un numero di porta personalizzato
 - Impostazione della lingua
 - Impostazioni di sicurezza

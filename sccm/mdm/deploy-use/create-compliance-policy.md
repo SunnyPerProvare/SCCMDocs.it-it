@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 170725e28d821b8e0df83ecb9b503bdb0227ecbc
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 45286dc95a34dc1ad398bb20d5c2c0b621e62a4b
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660989"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75521103"
 ---
 # <a name="create-and-deploy-a-device-compliance-policy"></a>Creare e distribuire criteri di conformità del dispositivo
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 ## <a name="create-a-compliance-policy"></a>Creare i criteri di conformità
@@ -266,9 +266,9 @@ ms.locfileid: "74660989"
 
     - L' **integrità del codice è abilitata**: l'integrità del codice è una funzionalità che convalida l'integrità di un driver o di un file di sistema ogni volta che viene caricato in memoria. L'integrità del codice rileva se un driver o un file di sistema non firmato viene caricato nel kernel. Rileva anche se un file di sistema è stato modificato da un software dannoso eseguito da un account utente con privilegi di amministratore.  
 
-    - L' **avvio protetto è abilitato**: quando è abilitato l'avvio protetto, il sistema viene forzato ad avviarsi in uno stato attendibile predefinito. È anche necessario che i componenti di base usati per avviare il computer abbiano le firme crittografate corrette ritenute attendibili dall'organizzazione che ha prodotto il dispositivo. Il firmware UEFI verifica questo aspetto prima di permettere l'avvio del computer. Se i file sono stati manomessi, interrotta con la firma, il sistema non viene avviato.  
+    - L' **avvio protetto è abilitato**: quando è abilitato l'avvio protetto, il sistema viene forzato ad avviarsi in uno stato attendibile predefinito. È anche necessario che i componenti di base usati per avviare il computer abbiano le firme crittografate corrette ritenute attendibili dall'organizzazione che ha prodotto il dispositivo. Il firmware UEFI effettua questa verifica prima dell'avvio del computer. Se i file sono stati manomessi, interrotta con la firma, il sistema non viene avviato.  
 
-    - Antimalware ad esecuzione **anticipata è abilitato**: questa impostazione si applica solo ai PC. La funzionalità Antimalware ad esecuzione anticipata offre protezione per i computer in rete quando vengono avviati e prima dell'inizializzazione di driver di terze parti.  
+    - Antimalware ad esecuzione **anticipata è abilitato**: questa impostazione si applica solo ai PC. La funzionalità Antimalware ad esecuzione anticipata fornisce protezione per i computer della rete all'avvio e prima dell'inizializzazione di driver di terze parti.  
 
         Questa regola è disattivata per impostazione predefinita.  
 
@@ -321,11 +321,11 @@ L'ID dell'app è un identificatore che identifica in modo univoco l'app all'inte
 - **Android**: trovare l'ID app nell'URL di Google Play Store usato per creare l'app. Un esempio di ID app è: `...?id=com.companyname.appname&hl=en`  
 
 - **iOS**  
-    1. Trovare il numero ID nell'URL di iTunes Store. Ad esempio: `/id875948587?mt=8`  
+    1. Trovare il numero ID nell'URL di iTunes Store. ad esempio `/id875948587?mt=8`  
 
     2. In un Web browser passare all'URL seguente, sostituendo il numero con il numero ID appena trovato. Ad esempio: `https://itunes.apple.com/lookup?id=875948587`  
 
     3. Scaricare e aprire il file di testo.  
 
-    4. Cercare il testo **bundleId**. Ad esempio: `"bundleId":"com.companyname.appname"`  
+    4. Cercare il testo **bundleId**. ad esempio `"bundleId":"com.companyname.appname"`  
 
