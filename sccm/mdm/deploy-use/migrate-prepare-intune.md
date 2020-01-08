@@ -11,16 +11,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: db97ae9e-34f4-4e10-a282-cd211f612bb4
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68cf60bd5ebcb38e08dd3de6d7cc144752de848c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 0ae9eab3dbf19802e556863182027188977cc04d
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71826167"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520304"
 ---
 # <a name="prepare-intune-for-user-migration"></a>Preparare Intune per la migrazione degli utenti 
 
-*Si applica a: System Center Configuration Manager (Current Branch)*     
+*Si applica a: Configuration Manager (Current Branch)*     
 Prima di eseguire la migrazione degli utenti da MDM ibrido a Intune autonomo, seguire questa procedura per preparare Intune. Questi passaggi consentono di verificare che gli utenti migrati e i relativi dispositivi continuino a essere gestiti. Quando si completano questi passaggi e si avvia la migrazione a Intune, non ci sono effetti signifcant sugli utenti.  
 
 ## <a name="fix-issues-found-during-data-collection-and-import"></a>Correggere i problemi riscontrati durante la raccolta e l'importazione dei dati

@@ -1,5 +1,5 @@
 ---
-title: Manage volume-purchased iOS apps
+title: Gestire le app iOS acquistate con Volume Purchase Program
 titleSuffix: Configuration Manager
 description: Distribuire, gestire e tenere traccia delle licenze per le app acquistate tramite l'App Store iOS Apple.
 ms.date: 03/30/2018
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 21d8666f6c05b540891037cc1917b755ed22fdcc
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: aa5fc58f078c2a0c64230bf7178e8d33e30b11ba
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62281952"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520474"
 ---
-# <a name="manage-volume-purchased-ios-apps-with-system-center-configuration-manager"></a>Gestire le app iOS acquistate tramite Volume Purchase Program con System Center Configuration Manager
+# <a name="manage-volume-purchased-ios-apps-with-configuration-manager"></a>Gestire le app iOS acquistate con volume Purchasers con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 
@@ -63,9 +63,9 @@ ms.locfileid: "62281952"
 
 |Gestione delle licenze dei dispositivi supportata|Tipo di raccolta della distribuzione|Licenza richiesta|
 |---|---|---|
-|Yes|utente|Licenza utente|
+|sì|utente|Licenza utente|
 |No|utente|Licenza utente|
-|Yes|Dispositivo|Licenza dispositivo|
+|sì|Dispositivo|Licenza dispositivo|
 |No|Dispositivo|Licenza utente|
 
 
@@ -123,7 +123,7 @@ Dal nodo **Token di Volume Purchase Program di Apple** è ora possibile visualiz
 
  Questo report visualizza il nome di ogni applicazione, insieme al numero totale di licenze acquistate, il numero di licenze disponibili e altri dati ancora.  
 
- Per informazioni sull'esecuzione dei report di Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+ Per informazioni sull'esecuzione di report Configuration Manager, vedere [Reporting](../../core/servers/manage/reporting.md).  
 
 
 

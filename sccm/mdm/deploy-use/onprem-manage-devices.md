@@ -11,17 +11,17 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 817e1b3a37ea5e40eb8787b23c56ae69bda8bf19
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 96510f4250fa15f59abd41b7f29b4b73f20b8b85
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62227927"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520032"
 ---
 # <a name="manage-devices-for-on-premises-mobile-device-management"></a>Gestire dispositivi per la gestione dei dispositivi mobili locale
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-È possibile gestire computer e dispositivi con la gestione dei dispositivi mobili (Mobile Device Management, MDM) locale di System Center Configuration Manager. A tale scopo, è necessario che i [dispositivi siano registrati](enroll-devices-on-premises-mdm.md) in modo che Configuration Manager possa comunicare con i dispositivi per le attività di gestione.
+È possibile gestire computer e dispositivi con Configuration Manager gestione di dispositivi mobili (MDM) locale. A tale scopo, è necessario che i [dispositivi siano registrati](enroll-devices-on-premises-mdm.md) in modo che Configuration Manager possa comunicare con i dispositivi per le attività di gestione.
 
 La gestione dei dispositivi in una distribuzione MDM locale è identica alla gestione dei dispositivi in un ambiente MDM ibrido. La sezione [Manage devices in hybrid MDM](wipe-lock-reset-devices.md) (Gestire dispositivi in una MDM ibrida) contiene informazioni dettagliate sulla gestione dei dispositivi.

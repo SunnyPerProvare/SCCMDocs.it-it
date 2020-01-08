@@ -1,7 +1,7 @@
 ---
 title: Limitare l'accesso in base ai rischi
 titleSuffix: Configuration Manager
-description: Limitare l'accesso alle risorse aziendali in base ai rischi per dispositivi, rete e applicazioni.
+description: Limitare l'accesso alle risorse aziendali in base al rischio per dispositivi, rete e applicazioni.
 ms.date: 08/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50d79da3ab4e7ace9a682baaa5cfd8d2bdbdce10
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d9ae69ca94d2a196ae46631cb269189f069853d4
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67678881"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520729"
 ---
 # <a name="manage-access-to-company-resource-based-on-device-network-and-application-risk"></a>Gestire l'accesso alle risorse aziendali in base ai rischi per dispositivi, rete e applicazioni
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Controllare l'accesso dai dispositivi mobili alle risorse aziendali in base alla valutazione dei rischi eseguita da Lookout. Lookout è un soluzione di protezione dalle minacce per il dispositivo integrata con Microsoft Intune. Il rischio si basa sui dati raccolti dal servizio Lookout. Raccoglie dai dispositivi i dati relativi a vulnerabilità del sistema operativo, app dannose installate e profili di rete dannosa. 
 
@@ -54,11 +54,11 @@ Per informazioni sulle piattaforme e i linguaggi supportati da Lookout, vedere q
 
 
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 - [Gestione dei dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management)  
 
-- Una sottoscrizione a Microsoft Intune e Azure Active Directory.  
+- Sottoscrizione a Microsoft Intune e Azure Active Directory.  
 
 - Una sottoscrizione aziendale a Lookout Mobile EndPoint Security. Per altre informazioni, vedere [Lookout Mobile Endpoint Security](https://www.lookout.com/products/mobile-endpoint-security).  
 

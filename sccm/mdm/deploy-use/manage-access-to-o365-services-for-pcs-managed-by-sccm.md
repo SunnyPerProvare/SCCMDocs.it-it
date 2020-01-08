@@ -1,7 +1,7 @@
 ---
 title: Gestire l'accesso ai servizi di Office 365
 titleSuffix: Configuration Manager
-description: Informazioni su come configurare l'accesso condizionale ai servizi di Office 365 per i PC gestiti da System Center Configuration Manager.
+description: Informazioni su come configurare l'accesso condizionale ai servizi di Office 365 per i PC gestiti da Configuration Manager.
 ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40e99ccb5cb72b7a1b60ac15d1267d6f7d27e9c9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: caa1d0889ab3ffd35ca6a2bf7c0c7de03f4632e3
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74659511"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520695"
 ---
-# <a name="manage-access-to-office-365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gestire l'accesso ai servizi di Office 365 per i PC gestiti da System Center Configuration Manager
+# <a name="manage-access-to-office-365-services-for-pcs-managed-by-configuration-manager"></a>Gestire l'accesso ai servizi di Office 365 per i PC gestiti da Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!--1191496-->
 Configurare l'accesso condizionale ai servizi di Office 365 per i PC gestiti da Configuration Manager.  
@@ -31,7 +31,7 @@ Configurare l'accesso condizionale ai servizi di Office 365 per i PC gestiti da 
 > Se si usa l'accesso condizionale nei dispositivi gestiti con il client di Configuration Manager, per assicurarsi che siano ancora protetti, abilitare prima di tutto l'accesso condizionale in Intune per tali dispositivi prima della migrazione. Abilitare la co-gestione in Configuration Manager, spostare il carico di lavoro dei criteri di conformità in Intune e quindi completare la migrazione da Intune ibrido a Intune autonomo. Per altre informazioni, vedere [accesso condizionale con la co-gestione](https://docs.microsoft.com/sccm/comanage/quickstart-conditional-access). 
 
 
-Per informazioni sulla configurazione dell'accesso condizionale per dispositivi registrati e gestiti da Microsoft Intune, vedere [Gestire l'accesso ai servizi in System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md). Questo articolo riguarda anche i dispositivi che vengono aggiunti al dominio e la cui conformità non viene valutata.
+Per informazioni sulla configurazione dell'accesso condizionale per i dispositivi registrati e gestiti da Microsoft Intune, vedere [gestire l'accesso ai servizi](../../protect/deploy-use/manage-access-to-services.md). Questo articolo riguarda anche i dispositivi che vengono aggiunti al dominio e la cui conformità non viene valutata.
 
 > [!Note]  
 > Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
@@ -50,9 +50,9 @@ Per informazioni sulla configurazione dell'accesso condizionale per dispositivi 
 
 ## <a name="supported-windows-servers"></a>Versioni supportate di Windows Server
 
--   Windows Server 2008 R2
+-   Windows Server 2008 R2
 -   Windows Server 2012
--   Windows Server 2012 R2
+-   Windows Server 2012 R2
 -   Windows Server 2016
 
     > [!IMPORTANT]
@@ -61,7 +61,7 @@ Per informazioni sulla configurazione dell'accesso condizionale per dispositivi 
 ## <a name="configure-conditional-access"></a>Configurare l'accesso condizionale  
  Per configurare l'accesso condizionale, è prima di tutto necessario creare i criteri di conformità e configurare i criteri di accesso condizionale. Quando si configurano i criteri di accesso condizionale per i PC, è possibile richiedere che i PC siano conformi ai criteri per accedere ai servizi di Exchange Online e SharePoint Online.  
 
-### <a name="prerequisites"></a>Prerequisites  
+### <a name="prerequisites"></a>Prerequisiti  
 
 - ADFS Sync e un abbonamento Office 365. La sottoscrizione di Office 365 è per la configurazione di Exchange Online e SharePoint Online.  
 
@@ -75,7 +75,7 @@ Per informazioni sulla configurazione dell'accesso condizionale per dispositivi 
 
   -   Per i PC Windows 8.1 e Windows 10, è possibile usare un oggetto Criteri di gruppo di Active Directory per configurare i dispositivi per la registrazione automatica con Azure AD.  
 
-  -    Per i PC Windows 7, è necessario distribuire il pacchetto software di registrazione dei dispositivi nel PC Windows 7 con System Center Configuration Manager. L'articolo [Registrazione automatica dei dispositivi con Azure Active Directory per i dispositivi Windows aggiunti a un dominio](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup) offre informazioni più dettagliate.  
+  -    Per i PC Windows 7, è necessario distribuire il pacchetto software di registrazione dei dispositivi nel PC Windows 7 tramite Configuration Manager. L'articolo [Registrazione automatica dei dispositivi con Azure Active Directory per i dispositivi Windows aggiunti a un dominio](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup) offre informazioni più dettagliate.  
 
 - I PC devono usare Office 2013 o Office 2016 con l'autenticazione moderna [abilitata](https://support.office.com/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a).  
 
@@ -104,7 +104,7 @@ Per informazioni sulla configurazione dell'accesso condizionale per dispositivi 
     >
     > - Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
 
-- **Includere le linee di base configurate nella valutazione dei criteri di conformità**: a partire dalla versione Configuration Manager 1910, questa condizione valuta le linee di base di configurazione con l'opzione **valuta questa baseline come parte della valutazione dei criteri di conformità** selezionata. Per altre informazioni, vedere [includere linee di base di configurazione personalizzate come parte della valutazione dei criteri di conformità](/configmgr/compliance/deploy-use/create-configuration-baselines#bkmk_CAbaselines).
+- **Includere le linee di base configurate nella valutazione dei criteri di conformità**: a partire dalla versione Configuration Manager 1910, questa condizione valuta le linee di base di configurazione con l'opzione **valuta questa baseline come parte della valutazione dei criteri di conformità** selezionata. Per altre informazioni, vedere [Includere linee di base di configurazione personalizzate come parte della valutazione dei criteri di conformità](/configmgr/compliance/deploy-use/create-configuration-baselines#bkmk_CAbaselines).
 
 ### <a name="step-2-evaluate-the-effect-of-conditional-access"></a>Passaggio 2: Valutare l'effetto dell'accesso condizionale  
  Eseguire il **report di conformità dell'accesso condizionale**, disponibile nell'area di lavoro **Monitoraggio** in **Report** > **Gestione conformità e impostazioni**. Il report indica lo stato di conformità di tutti i dispositivi. Ai dispositivi segnalati come non conformi viene impedito l'accesso a Exchange Online e SharePoint Online.  
@@ -157,5 +157,5 @@ Le informazioni sulla conformità vengono visualizzate in Software Center. Quand
 
 ## <a name="see-also"></a>Vedere anche
 
-- [Protect data and site infrastructure with System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md) (Proteggere i dati e l'infrastruttura del sito con System Center Configuration Manager)
+- [Proteggere i dati e l'infrastruttura del sito con Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md)
 - [Diagramma di flusso per la risoluzione dei problemi di accesso condizionale di Configuration Manager](https://gallery.technet.microsoft.com/Conditional-access-fd747c1a?redir=0)

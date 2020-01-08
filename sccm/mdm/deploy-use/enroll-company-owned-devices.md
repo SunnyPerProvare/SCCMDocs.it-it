@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3586f51b7112f8667b7e120ea278ceb9adbbe89
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 51ddb56bd3a8afaf09ab0c31ace102fefa5fae2b
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62226558"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520814"
 ---
 # <a name="enroll-company-owned-devices-for-hybrid-deployments-with-configuration-manager"></a>Registrare i dispositivi aziendali per le distribuzioni ibride con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 I dispositive aziendali possono essere gestiti in modi diversi a seconda del dispositivo e di come il dispositivo è stato acquistato.  
 
@@ -31,13 +31,13 @@ I dispositive aziendali possono essere gestiti in modi diversi a seconda del dis
  Per usare questo metodo è necessario che l'amministratore connetti tramite USB il dispositivo iOS a un computer Mac che esegue Apple Configurator per preconfigurare la registrazione. I dispositivi vengono poi consegnati agli utenti che eseguono l'Assistente configurazione, configurano il dispositivo con le proprie credenziali aziendali o dell'istituto di istruzione e completano il processo di registrazione. Vedere [iOS hybrid enrollment using Apple Configurator with Configuration Manager](../../mdm/deploy-use/ios-hybrid-enrollment-using-apple-configurator.md) (Registrazione ibrida di iOS tramite Apple Configurator con Configuration Manager).  
 
 ## <a name="device-enrollment-manager"></a>Manager di registrazione dispositivi  
- Le organizzazioni possono usare Intune per gestire un numero elevato di dispositivi mobili con un unico account utente, vale a dire un account del manager di registrazione dispositivi. Dopo aver creato un account del manager di registrazione dispositivi, è possibile usarlo da un programma di gestione per registrare più dei cinque dispositivi standard consentiti per impostazione predefinita agli utenti normali. Con il manager di registrazione dispositivi è possibile registrare solo quei dispositivi che non sono usati da un utente specifico. Questi dispositivi sono ad esempio ideali per app POS o di utilità, ma non sono consigliati agli utenti che devono poter accedere alla posta elettronica e alle risorse aziendali. Vedere [Registrare i dispositivi usando il manager di registrazione dispositivi con Configuration Manager](../../mdm/deploy-use/enroll-devices-with-device-enrollment-manager.md).  
+ Le organizzazioni possono usare Intune per gestire un numero elevato di dispositivi mobili con un unico account utente, vale a dire un account del manager di registrazione dispositivi. Dopo aver creato un account del manager di registrazione dispositivi, è possibile usarlo da un programma di gestione per registrare più dei cinque dispositivi standard consentiti per impostazione predefinita agli utenti normali. La registrazione di dispositivi con un manager di registrazione dispositivi funziona solo per i dispositivi non usati da un utente specifico. Questi dispositivi sono ad esempio ideali per app POS o di utilità, ma non sono consigliati agli utenti che devono poter accedere alla posta elettronica e alle risorse aziendali. Vedere [Registrare i dispositivi usando il manager di registrazione dispositivi con Configuration Manager](../../mdm/deploy-use/enroll-devices-with-device-enrollment-manager.md).  
 
 ## <a name="user-affinity-for-managed-devices"></a>Affinità utente per dispositivi gestiti  
  Quando si configurano profili per i dispositivi di proprietà dell'azienda, l'amministratore può specificare se i dispositivi gestiti supportano un'*affinità utente* che identifica un utente specifico con il dispositivo. I dispositivi configurati con **user affinity** possono installare ed eseguire l'app Portale aziendale per scaricare le app e gestire i dispositivi. Vedere [User affinity for hybrid managed devices in Configuration Manager](../../mdm/deploy-use/user-affinity-for-hybrid-managed-devices.md) (Affinità utente per i dispositivi gestiti ibridi in Configuration Manager).  
 
 ## <a name="manage-devices-with-activation-lock"></a>Gestire i dispositivi con il blocco attivazione  
- Microsoft Intune consente di gestire il blocco attivazione iOS, una funzionalità dell'app Trova il mio iPhone per dispositivi iOS 7.1 e versioni successive. Blocco attivazione viene abilitato automaticamente quando si usa l'app Trova il mio iPhone in un dispositivo. Vedere [Manage iOS Activation Lock with System Center Configuration Manager](../../mdm/deploy-use/manage-ios-activation-lock.md) (Gestire il blocco attivazione iOS con System Center Configuration Manager).
+ Microsoft Intune consente di gestire il Blocco attivazione di iOS, una funzionalità dell'app Trova il mio iPhone per dispositivi iOS 7.1 e versioni successive. Blocco attivazione viene abilitato automaticamente quando si usa l'app Trova il mio iPhone in un dispositivo. Vedere [gestire Blocco attivazione iOS con Configuration Manager](../../mdm/deploy-use/manage-ios-activation-lock.md).
 
  ## <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare dispositivi con i numeri di serie IMEI o iOS
 

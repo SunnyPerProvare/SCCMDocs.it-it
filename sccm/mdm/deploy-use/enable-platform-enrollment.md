@@ -1,7 +1,7 @@
 ---
 title: Abilitare la registrazione della piattaforma
 titleSuffix: Configuration Manager
-description: Abilitare la registrazione della piattaforma tramite System Center Configuration Manager e Microsoft Intune.
+description: Abilitare la registrazione della piattaforma usando Configuration Manager e Microsoft Intune.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8633770f0bd6beaec8bddb38688a22fc677bfc51
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 66b1c52bb46dff5268ec2306ce6578a5afad7e84
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68338082"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520865"
 ---
-# <a name="enable-platform-enrollment-with-system-center-configuration-manager-and-microsoft-intune"></a>Abilitare la registrazione della piattaforma con System Center Configuration Manager e Microsoft Intune
+# <a name="enable-platform-enrollment-with-configuration-manager-and-microsoft-intune"></a>Abilitare la registrazione della piattaforma con Configuration Manager e Microsoft Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Piattaforme per dispositivi diverse richiedono una configurazione aggiuntiva per abilitare la registrazione dei dispositivi.
 - [Impostazione della registrazione per iOS e Mac](enroll-hybrid-ios-mac.md): ottenere un certificato push MDM Apple

@@ -11,16 +11,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: 1dd696ce-3e46-4dfa-a76d-592fe0f0320e
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3adbb2f7bd75921f45c9c6d5462bdf04deb8c26
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 15469804702f7ee5c9a37a2a985cf2e93f209127
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67678238"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520457"
 ---
 # <a name="migrate-hybrid-mdm-users-and-devices-to-intune-standalone"></a>Eseguire la migrazione di dispositivi e utenti dalla soluzione MDM ibrida alla versione autonoma di Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*    
+*Si applica a: Configuration Manager (Current Branch)*    
 
 Questo articolo illustra la migrazione dalla soluzione MDM ibrida a un'esperienza solo cloud tramite Intune in Azure. 
 

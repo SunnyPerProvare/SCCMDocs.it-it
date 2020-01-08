@@ -1,7 +1,7 @@
 ---
 title: Gestire le applicazioni
 titleSuffix: Configuration Manager
-description: Gestire applicazioni in System Center Configuration Manager.
+description: Gestire le applicazioni in Configuration Manager.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a57beb79bf7e4dc51e72d7254ff0f190c6ca32c4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 563e7fe79658e310fdaf3da1b14f8ff0163691b5
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62228000"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520491"
 ---
-# <a name="manage-applications-in-system-center-configuration-manager"></a>Gestire applicazioni in System Center Configuration Manager
+# <a name="manage-applications-in-configuration-manager"></a>Gestire le applicazioni in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Quando si gestiscono dispositivi tramite la gestione dei dispositivi locale di Microsoft Intune o Configuration Manager, è possibile gestire questi tipi di applicazione aggiuntivi:
 - Pacchetto app Windows Phone (file *.xap)
@@ -33,14 +33,14 @@ Quando si gestiscono dispositivi tramite la gestione dei dispositivi locale di M
 
 Questa sezione contiene informazioni dettagliate sulla creazione e la gestione di applicazioni tramite una MDM ibrida o una MDM locale.
 
-L'articolo [Attività di gestione per applicazioni di System Center Configuration Manager](../../apps/deploy-use/management-tasks-applications.md) contiene informazioni generali sulla gestione delle applicazioni e dei tipi di distribuzione di System Center Configuration Manager.
+Le [attività di gestione per applicazioni Configuration Manager](../../apps/deploy-use/management-tasks-applications.md) forniscono informazioni più generali sulla gestione di Configuration Manager applicazioni e tipi di distribuzione.
 
 ## <a name="deploying-and-monitoring-apps"></a>Distribuzione e monitoraggio di app
 
-I processi di distribuzione e monitoraggio delle applicazioni in System Center Configuration Manager sono identici per i dispositivi mobili e per quelli locali, come computer portatili e desktop. Per informazioni generali sulla distribuzione e il monitoraggio delle applicazioni, vedere gli argomenti seguenti:
+La distribuzione e il monitoraggio delle applicazioni in Configuration Manager sono gli stessi processi per i dispositivi mobili, come per i dispositivi in loco, ad esempio computer portatili e desktop. Per informazioni generali sulla distribuzione e il monitoraggio delle applicazioni, vedere gli argomenti seguenti:
 
-- [Distribuire applicazioni in System Center Configuration Manager](../../apps/deploy-use/deploy-applications.md)
-- [Monitorare applicazioni in System Center Configuration Manager](../../apps/deploy-use/monitor-applications-from-the-console.md)
+- [Distribuire applicazioni](../../apps/deploy-use/deploy-applications.md)
+- [Monitorare le applicazioni](../../apps/deploy-use/monitor-applications-from-the-console.md)
 
 Di seguito sono riportate alcune considerazioni specifiche per la gestione dei dispositivi mobili da tenere presenti durante la distribuzione e il monitoraggio delle applicazioni.
 
@@ -52,4 +52,4 @@ Di seguito sono riportate alcune considerazioni specifiche per la gestione dei d
 
 ### <a name="next-steps"></a>Passaggi successivi
 
-Dopo un certo periodo di tempo, può essere opportuno apportare modifiche a un'applicazione, disinstallarla o sostituire un'applicazione già distribuita con una nuova. Per comprendere queste funzionalità, vedere [Aggiornare e ritirare le applicazioni con System Center Configuration Manager](../../apps/deploy-use/update-and-retire-applications.md).
+Dopo un certo periodo di tempo, può essere opportuno apportare modifiche a un'applicazione, disinstallarla o sostituire un'applicazione già distribuita con una nuova. Leggere [le applicazioni Update e Tire con Configuration Manager](../../apps/deploy-use/update-and-retire-applications.md) per comprendere queste funzionalità.

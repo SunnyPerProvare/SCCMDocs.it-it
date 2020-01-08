@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b6d56309238acc2889ac39ab39d5982fb8d535c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 957461561386c85512c69d77bf92ea7669064c8c
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62282410"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520763"
 ---
 # <a name="enroll-user-owned-devices-for-hybrid-deployments-with-configuration-manager"></a>Registrare i dispositivi di proprietà dell'utente per le distribuzioni ibride con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 I dispositivi di proprietà degli utenti possono essere inseriti nella gestione tramite la registrazione, un processo spesso chiamato "bring your own device" o semplicemente "BYOD". A tale scopo, gli utenti installano l'app del Portale aziendale ed eseguono l'accesso al dispositivo (iOS, macOS e Android) oppure aggiungono un account aziendale o dell'istituto di istruzione al dispositivo e un dominio (Windows). Con questo processo si registra il dispositivo in Intune, assegnando all'utente l'accesso alle risorse gestite da Intune e consentendo a Intune di gestire alcune impostazioni del dispositivo, ad esempio la richiesta di un PIN.
 

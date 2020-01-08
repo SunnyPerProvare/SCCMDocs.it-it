@@ -1,7 +1,7 @@
 ---
 title: Gestire l'accesso a SharePoint Online
 titleSuffix: Configuration Manager
-description: Informazioni su come usare i criteri di accesso condizionale di SharePoint Online in System Center Configuration Manager per gestire l'accesso a OneDrive.
+description: Informazioni su come usare i criteri di accesso condizionale di SharePoint Online Configuration Manager per gestire l'accesso a OneDrive.
 ms.date: 03/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69a160a3c7833f196d50185e551f619d68dc0925
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: dc78d7f25426cb8f72814ffff8a2409be5ccfe5d
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62255595"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520576"
 ---
-# <a name="manage-sharepoint-online-access-in-system-center-configuration-manager"></a>Gestire l'accesso a SharePoint Online in System Center Configuration Manager
+# <a name="manage-sharepoint-online-access-in-configuration-manager"></a>Gestire l'accesso a SharePoint online in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 I criteri di accesso condizionale di Configuration Manager per **SharePoint Online** gestiscono l'accesso ai file di OneDrive for Business, archiviati in SharePoint Online. L'accesso si basa sulle condizioni specificate.
@@ -73,7 +73,7 @@ Le applicazioni desktop di Office possono accedere a SharePoint Online nei PC ch
 
 - Per i dispositivi mobili:
 
-  È possibile limitare l'accesso a SharePoint Online da browser di dispositivi **iOS** e **Android**. L'accesso è consentito solo da browser supportati di dispositivi conformi:  
+  È possibile limitare l'accesso a SharePoint Online da browser di dispositivi **iOS** e **Android**. L'accesso è consentito solo dai browser supportati su dispositivi conformi:  
   - Safari (iOS)
   - Chrome (Android)
   - Managed Browser (iOS e Android)  
@@ -122,7 +122,7 @@ Le applicazioni desktop di Office possono accedere a SharePoint Online nei PC ch
 > [!NOTE]   
 >  Mentre i criteri di conformità vengono distribuiti ai gruppi di Intune o alle raccolte di Configuration Manager, i criteri di accesso condizionale sono destinati ai gruppi di sicurezza di Azure AD.  
 
- Per informazioni dettagliate su come configurare i criteri di conformità, vedere [Gestire i criteri di conformità del dispositivo in System Center Configuration Manager](../../protect/deploy-use/device-compliance-policies.md).  
+ Per informazioni dettagliate su come configurare i criteri di conformità, vedere [Gestire i criteri di conformità del dispositivo](../../protect/deploy-use/device-compliance-policies.md).  
 
 > [!IMPORTANT]  
 >  Se i criteri di conformità non sono stati distribuiti e quindi si abilitano i criteri di SharePoint Online, l'accesso sarà consentito a tutti i dispositivi di destinazione.  
@@ -163,9 +163,9 @@ Le applicazioni desktop di Office possono accedere a SharePoint Online nei PC ch
 4. In **Browser access** (Accesso al browser) per SharePoint Online e OneDrive for Business è possibile scegliere di consentire l'accesso a Exchange Online esclusivamente tramite i browser supportati: Safari (iOS) e Chrome (Android). Non è possibile accedere da altri browser. Vengono applicate anche le restrizioni di piattaforma selezionate per l'accesso all'applicazione per OneDrive.
 
    Per i dispositivi **Android**, gli utenti devono abilitare l'opzione **Abilita l'accesso al browser** nel dispositivo registrato seguendo questa procedura:
-   1.  Avviare l'**app Portale aziendale**.
+   1.  Avviare **l'app Portale aziendale**.
    2.  Passare alla pagina **Impostazioni** facendo clic sui punti di sospensione (...) o sul tasto di menu.
-   3.  Scegliere il pulsante **Abilita l'accesso al browser**.
+   3.  Premere il pulsante **Abilita l'accesso al browser**.
    4.  Nel browser Chrome disconnettersi da Office 365 e riavviare Chrome.
 
    Nelle piattaforme **iOS e Android**, per identificare il dispositivo usato per accedere al servizio, Azure AD rilascia al dispositivo un certificato TLS. Il dispositivo visualizza il certificato richiedendo all'utente finale di selezionare il certificato come illustrato nelle schermate seguenti. Per continuare a usare il browser è necessario che l'utente finale selezioni il certificato.
@@ -182,7 +182,7 @@ Le applicazioni desktop di Office possono accedere a SharePoint Online nei PC ch
 
     Viene visualizzata la console di amministrazione di Intune.  
 
-6. Nella console di [console di amministrazione di Microsoft Intune](https://manage.microsoft.com)fare clic su **Criteri** > **Accesso condizionale** > **SharePoint Online Criteri**.  
+6. Nella [console di amministrazione di Microsoft Intune](https://manage.microsoft.com) fare clic su **Criteri** > **Accesso condizionale** > **Criteri di SharePoint Online**.  
 
 7. Selezionare **Bloccare l'accesso delle app a SharePoint Online se il dispositivo non è conforme**.  
 
@@ -198,4 +198,4 @@ Le applicazioni desktop di Office possono accedere a SharePoint Online nei PC ch
 
 ### <a name="see-also"></a>Vedere anche  
 
- [Gestire l'accesso ai servizi in System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md)
+ [Gestire l'accesso ai servizi](../../protect/deploy-use/manage-access-to-services.md)

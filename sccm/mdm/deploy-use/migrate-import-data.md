@@ -11,16 +11,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: b552391d-abc0-48a2-a429-93605a13a66a
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18c8bab6b072a9df2dea9c9f67d844b8481d314e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 4874d3ac07f1f8740c6594c28b53cf642be3cceb
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67678209"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520440"
 ---
 # <a name="import-configuration-manager-data-to-microsoft-intune"></a>Importare i dati di Configuration Manager in Microsoft Intune 
 
-*Si applica a: System Center Configuration Manager (Current Branch)*    
+*Si applica a: Configuration Manager (Current Branch)*    
 
 La prima fase consigliata nel processo di [migrazione di dispositivi e utenti dalla soluzione MDM ibrida alla versione autonoma di Intune](migrate-hybridmdm-to-intunesa.md) in una configurazione solo cloud prevede l'uso dello strumento di importazione dati di Intune. Se si vuole, è possibile ignorare questa fase e passare alla fase di [preparazione di Intune per la migrazione degli utenti](migrate-prepare-intune.md). Questo strumento esegue però le attività seguenti, che possono consentire di risparmiare molto tempo nella fase successiva:  
 
@@ -40,10 +40,10 @@ Lo strumento di importazione può raccogliere informazioni sui tipi di oggetti s
 - Elementi di configurazione  
 - Profili certificato  
 - Profili di posta elettronica  
-- Profili VPN  
+- profili VPN  
 - Profili Wi-Fi  
 - Criteri di conformità  
-- App  
+- Apps  
 - Distribuzioni  
 
 > [!Note]  
@@ -74,7 +74,7 @@ Lo strumento di importazione può raccogliere informazioni sui tipi di oggetti s
 - Se le app Web (talvolta denominate webclip) sono state assegnate agli utenti, è necessario rimuoverle prima di eseguire la migrazione degli utenti. Quindi riassegnare le app Web al termine della migrazione. Se non si esegue questa operazione, i clip web diventeranno non gestibili dopo la migrazione.  
 
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 
 - Specificare il sito di livello superiore ed eseguire lo strumento con un utente che abbia accesso a tutti gli oggetti nella gerarchia dei siti. Lo strumento individua solo gli oggetti accessibili dall'utente che lo esegue.  
 

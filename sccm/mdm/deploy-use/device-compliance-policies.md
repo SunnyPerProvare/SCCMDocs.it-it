@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e225b7ab54a1061387d1c8ee369641f68bd7889
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 0c90bbbf3c72a7d21e52bb762b653bbda3dc5fd6
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62227150"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520916"
 ---
-# <a name="device-compliance-policies-in-system-center-configuration-manager"></a>Criteri di conformità del dispositivo in System Center Configuration Manager
+# <a name="device-compliance-policies-in-configuration-manager"></a>Criteri di conformità del dispositivo in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 I criteri di conformità in Configuration Manager definiscono le regole e le impostazioni che un dispositivo deve soddisfare per essere considerato conforme ai criteri di accesso condizionale. È anche possibile usare tali criteri per monitorare e correggere i problemi di conformità con i dispositivi, indipendentemente dall'accesso condizionale.  
 
@@ -84,7 +84,7 @@ A partire da luglio 2018, configurare se tutti i dispositivi senza criteri di co
 
      - **Non conforme**: i dispositivi senza criteri di conformità assegnati vengono considerati non conformi. Se l'accesso condizionale è abilitato, questi dispositivi vengono bloccati dalle risorse interne, in base alle condizioni nei criteri di accesso condizionale.  
 
-4. Fare clic su Salva.  
+4. Fare clic su Save (Salva).  
 
 Per ogni piattaforma, è consigliabile distribuire almeno un criterio di conformità a tutti gli utenti nell'ambiente. Impostare l'opzione **Non conforme** per garantire la sicurezza delle risorse interne. Per altre informazioni, vedere il post di blog [Security Enhancements in the Intune Service](https://aka.ms/compliance_policies) (Miglioramenti apportati alla sicurezza nel servizio Intune).
 

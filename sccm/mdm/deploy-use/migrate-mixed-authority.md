@@ -11,16 +11,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: 6f0201d7-5714-4ba0-b2bf-d1acd0203e9a
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ca39be68074213e4bb0a3f667ae69d5257f7a3c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d6ba2ff769ed56b0edf75b7d0d0e63028c71b198
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67818062"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520423"
 ---
 # <a name="change-the-mdm-authority-for-specific-users-mixed-mdm-authority"></a>Modificare l'autorità MDM per utenti specifici (autorità MDM mista)
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile configurare un'autorità MDM mista nello stesso tenant. Gestione di alcuni utenti in Microsoft Intune e altri con MDM ibrida. Questo articolo fornisce informazioni su come iniziare a trasferire gli utenti a Intune autonomo. Si presuppone che siano stati completati i passaggi seguenti:  
 
@@ -53,7 +53,7 @@ Gestire gli utenti migrati e i relativi dispositivi in Intune. Continuare a gest
 
     - [Certificato Apple Push Notification Service (APN)](/sccm/mdm/deploy-use/enroll-hybrid-ios-mac)  
 
-    - [DEP (Device Enrollment Program)](/sccm/mdm/deploy-use/ios-device-enrollment-program-for-hybrid)  
+    - [Programma di registrazione dei dispositivi](/sccm/mdm/deploy-use/ios-device-enrollment-program-for-hybrid)  
 
         > [!Note]  
         > Non è necessario ricreare il token DEP o rimuoverlo dal Configuration Manager. Viene automaticamente eseguita la migrazione a Intune 24 ore dopo la modifica dell'autorità MDM del tenant da Configuration Manager a Intune. Questa modifica è il passaggio finale della migrazione. Se il token DEP non viene migrato entro 24 ore, contattare il supporto tecnico Microsoft per assistenza.  
@@ -179,21 +179,21 @@ Il livello di log usato per determinare i tipi di log che devono essere scritti 
 Di seguito sono elencati i valori possibili per LoggingLevel:
 
 - ActivityTracing
-- All
+- Tutto
 - Critico
-- Errore
+- Errore di
 - Informazioni
-- Disattiva
+- Off
 - Dettagliato
 - Avviso
 
 #### `-Confirm [<SwitchParameter>]`
 
-Richiede la conferma dell'utente prima dell'esecuzione del comando.
+Viene chiesta la conferma prima dell'esecuzione del comando.
 
 #### `-WhatIf [<SwitchParameter>]`
 
-Descrive quali sarebbero le possibili conseguenze di un'eventuale esecuzione del comando, senza che questo venga eseguito effettivamente.
+Viene descritto ciò che accadrebbe se venisse eseguito il comando senza effettivamente eseguirlo.
 
 #### `<CommonParameters>`
 

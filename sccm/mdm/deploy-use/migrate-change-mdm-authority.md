@@ -11,16 +11,16 @@ ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: be503ec9-5324-4f7c-bcf5-77204328e99c
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d6a909be4b1817b9a251046d666839e2e351443
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c7d39a8f9dfc6eee2e5600930208fd0202fb434b
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62282168"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520508"
 ---
 # <a name="change-your-mdm-authority-to-intune-standalone"></a>Cambiare l'autorità MDM in Intune autonomo
 
-*Si applica a: System Center Configuration Manager (Current Branch)*    
+*Si applica a: Configuration Manager (Current Branch)*    
 
 È possibile modificare un tenant esistente di Microsoft Intune configurato dalla console di Configuration Manager (MDM ibrido) a Intune autonomo. L'impostazione di Intune come autorità MDM a livello di tenant è la fase finale del processo di [migrazione degli utenti e dei dispositivi MDM ibridi a Intune autonomo](migrate-hybridmdm-to-intunesa.md) nella configurazione solo cloud.    
 
@@ -46,7 +46,7 @@ Sono già stati migrati molti utenti e sono state testate le funzionalità di In
 
 
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prerequisiti
 Esaminare le informazioni seguenti per preparare il passaggio alla nuova autorità MDM:
 - Perché sia disponibile l'opzione per cambiare l'autorità MDM è necessario disporre di Configuration Manager 1610 o versioni successive.
 - Assicurarsi di assegnare una licenza di Intune/EMS a tutti gli utenti attualmente gestiti dalla soluzione MDM ibrida. La licenza garantisce che l'utente e i relativi dispositivi siano gestiti da Intune autonomo dopo la modifica nell'autorità MDM. Per altre informazioni, vedere [Assign Intune licenses to your user accounts](https://docs.microsoft.com/intune/get-started/start-with-a-paid-subscription-to-microsoft-intune-step-4) (Assegnare licenze di Intune agli account utente).

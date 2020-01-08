@@ -11,20 +11,20 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0d98ec11f7b9003c710b5150732a9137fc1c013
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d222daf111e790c8e71946a2bf08579f4bb4d7b8
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68337910"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520899"
 ---
 # <a name="enable-device-threat-protection-rule-in-the-compliance-policy"></a>Abilitare una regola di protezione dalle minacce per i dispositivi mobili nei criteri di conformità
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Intune con Lookout Mobile Threat Protection offre la possibilità di rilevare le minacce per i dispositivi mobili ed eseguire una valutazione dei rischi sul dispositivo. In Configuration Manager è possibile creare una regola nei criteri di conformità che includa la valutazione dei rischi per determinare se il dispositivo è conforme. È quindi possibile usare i criteri di accesso condizionale per consentire o bloccare l'accesso a Exchange, SharePoint e ad altri servizi sulla base della conformità del dispositivo.
 
-Per consentire a Lookout Mobile Threat Protection di influenzare i criteri di conformità del dispositivo, tenere presente quanto segue:
+Per fare in modo che il rilevamento delle minacce del dispositivo Lookout influenzi i criteri di conformità per il dispositivo:
 
 * Nei criteri di conformità deve essere abilitata la regola **Protezione dalle minacce per il dispositivo**.
 
@@ -40,7 +40,7 @@ Come parte della configurazione di Lookout Mobile Threat Protection, nella [cons
 Nella pagina **Regole** della Creazione guidata criterio di conformità definire una nuova regola con le informazioni seguenti:
 * Condizione: livello di rischio massimo per la protezione dalle minacce per il dispositivo.
 * Valore: il valore può essere uno dei seguenti:
-  * **Nessuno (protetto)** : questa è l'impostazione più sicura e indica che il dispositivo non può avere alcuna minaccia. Se viene individuato un qualsiasi livello di minaccia, il dispositivo viene valutato come non conforme.
+  * **Nessuno (protetto)** : questa è l'impostazione più sicura indica che il dispositivo non può avere minacce. Se viene individuato un qualsiasi livello di minaccia, il dispositivo viene valutato come non conforme.
   * **Basso**: il dispositivo viene valutato come conforme se sono presenti solo minacce di livello Basso. Se sono presenti minacce di livello più alto, lo stato del dispositivo passa a Non conforme.
   * **Medio**: il dispositivo viene valutato come conforme se le minacce individuate sono di livello Basso o Medio. Se vengono rilevate minacce di livello più alto, il dispositivo viene considerato non conforme.
   * **Alto**: questa opzione è la meno sicura. L'opzione consente praticamente tutti i livelli di minaccia e può essere utile se si usa la soluzione soltanto per la creazione di report.

@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ede2563adbd517dbcda0a408fa5b9b166e8e3c12
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: dad04c2b6dac5cd746214365f4d335330e8a94e3
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62255997"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520610"
 ---
-# <a name="manage-internet-access-using-managed-browser-policies-with-system-center-configuration-manager"></a>Gestire l'accesso a Internet mediante criteri di Managed Browser con System Center Configuration Manager
+# <a name="manage-internet-access-using-managed-browser-policies-with-configuration-manager"></a>Gestire l'accesso a Internet mediante criteri di Managed Browser con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-In System Center Configuration Manager è possibile distribuire Intune Managed Browser, un'applicazione Web browser, e associare l'applicazione ai criteri di Managed Browser. I criteri di Managed Browser consentono di configurare un elenco Consenti o Blocca che limita i siti Web che gli utenti di Managed Browser possono visitare.  
+In Configuration Manager, è possibile distribuire il Intune Managed Browser (un'applicazione Web browsing) e associare l'applicazione a un criterio di Managed browser. I criteri di Managed Browser consentono di configurare un elenco Consenti o Blocca che limita i siti Web che gli utenti di Managed Browser possono visitare.  
 
  Poiché questa applicazione è un'applicazione gestita, è possibile anche applicare criteri di gestione delle applicazioni per dispositivi mobili, ad esempio il controllo dell'uso delle funzioni taglia, copia e incolla. Ciò impedisce l'acquisizione di schermate e garantisce anche che i collegamenti al contenuto vengano aperti solo in altre app gestite. Per informazioni dettagliate, vedere [Proteggere le app usando i criteri di gestione delle applicazioni mobili](protect-apps-using-mam-policies.md).  
 
@@ -62,7 +62,7 @@ In System Center Configuration Manager è possibile distribuire Intune Managed B
     > [!NOTE]  
     >  Il tipo di criterio Generale consente di modificare la funzionalità delle app distribuite per adeguarle ai criteri aziendali di conformità e sicurezza. Ad esempio, è possibile limitare le operazioni taglia, copia e incolla in un'app con restrizioni. Per altre informazioni sul tipo di criterio Generale, vedere [Proteggere le app usando i criteri di gestione delle applicazioni mobili](protect-apps-using-mam-policies.md).  
 
-6.  Completare la procedura guidata.  
+6.  Completa la procedura guidata.  
 
 Il nuovo criterio viene visualizzato nel nodo **Criteri di gestione delle applicazioni** dell'area di lavoro **Raccolta software** .  
 
@@ -146,6 +146,6 @@ Utilizzare le seguenti informazioni per ulteriori informazioni sui formati conse
 
 -   Se le modalità in ogni criterio sono diverse ma gli elenchi di URL sono uguali, gli URL non verranno applicati sul dispositivo.  
 
--   Se un dispositivo riceve i criteri di browser gestiti per la prima volta ed il conflitto nei due criteri, le URL non verranno applicate al dispositivo Utilizzare il nodo **conflitti tra criteri** dei **criteri** nell’area di lavoro per visualizzare i conflitti.  
+-   Se un dispositivo riceve i criteri di browser gestiti per la prima volta ed il conflitto nei due criteri, le URL non verranno applicate al dispositivo. Utilizzare il nodo **conflitti tra criteri** dei **criteri** nell’area di lavoro per visualizzare i conflitti.  
 
 -   Se un dispositivo ha già ricevuto un criterio di browser gestiti e un secondo criterio è distribuito con le impostazioni in conflitto, le impostazioni originali rimangono sul dispositivo. Utilizzare il nodo **conflitti tra criteri** dei **criteri** nell’area di lavoro per visualizzare i conflitti.  

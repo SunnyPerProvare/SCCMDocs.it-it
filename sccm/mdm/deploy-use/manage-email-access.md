@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ee4ed8f102507b4d62a1ccbfe1cc38240e85df9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7ec7f7c9818e1155b0593b38dc8e39ee899d633a
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62260554"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520644"
 ---
 # <a name="manage-email-access-in-configuration-manager"></a>Gestire l'accesso alla posta elettronica in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare Configuration Manager accesso condizionale per gestire l'accesso alla posta elettronica di Exchange in base alle condizioni specificate.  
 
@@ -71,7 +71,7 @@ Se si configura l'accesso condizionale, prima che un utente possa connettersi al
 
 #### <a name="for-mobile-devices"></a>Per i dispositivi mobili
 
-È possibile limitare l'accesso a **Outlook Web Access (OWA)** in Exchange Online quando si accede da un browser di dispositivi **iOS** e **Android**. L'accesso verrà consentito solo da browser supportati di dispositivi compatibili:  
+È possibile limitare l'accesso a **Outlook Web Access (OWA)** in Exchange Online quando si accede da un browser in dispositivi **iOS** e **Android**. L'accesso verrà consentito solo dai browser supportati su dispositivi conformi:  
 
 - Safari (iOS)  
 - Chrome (Android)  
@@ -136,7 +136,7 @@ L'accesso ad Exchange da parte dei dispositivi che appartengono a un gruppo di d
 
 |Canale di gestione|AAD registrato|conformi|Attivato da EAS|Azione risultante|  
 |------------------------|--------------------|---------------|-------------------|----------------------|  
-|**Gestito da Microsoft Intune ed Exchange ActiveSync**|Yes|Yes|Viene visualizzato**Sì** o **No**|Accesso alla posta elettronica consentito|  
+|**Gestito da Microsoft Intune ed Exchange ActiveSync**|sì|sì|Viene visualizzato**Sì** o **No**|Accesso alla posta elettronica consentito|  
 |Qualsiasi altro valore|No|No|Non viene visualizzato alcun valore|Accesso alla posta elettronica bloccato|  
 
 È possibile esportare il contenuto del report e usare la colonna **Indirizzo di posta elettronica** per informare gli utenti che verranno bloccati.  
@@ -252,15 +252,15 @@ Il messaggio viene visualizzato sul dispositivo per gli utenti di Exchange Onlin
 
     - **I dispositivi devono essere conformi.** I PC devono essere registrati in Intune e conformi. Se un PC non è registrato, viene visualizzato un messaggio contenente le istruzioni su come eseguire la registrazione.  
 
-7. In **Outlook Web Access (OWA)** è possibile scegliere di consentire l'accesso a Exchange Online esclusivamente attraverso i browser supportati: Safari (iOS) e Chrome (Android). Non sarà possibile accedere da altri browser. Vengono applicate anche le restrizioni di piattaforma selezionate per l'accesso all'applicazione per Outlook.  
+7. In **Outlook Web Access (OWA)** è possibile scegliere di consentire l'accesso a Exchange Online solo dai browser supportati: Safari (iOS) e Chrome (Android). Non sarà possibile accedere da altri browser. Vengono applicate anche le restrizioni di piattaforma selezionate per l'accesso all'applicazione per Outlook.  
 
-    - Nei dispositivi **Android** è necessario che gli utenti abilitino l'accesso al browser. Per eseguire questa azione, l'utente deve abilitare l'opzione "Abilita l'accesso al browser" nel dispositivo registrato come indicato di seguito:  
+    - Nei dispositivi **Android** gli utenti devono abilitare l'accesso al browser. Per eseguire questa azione, l'utente deve abilitare l'opzione "Abilita l'accesso al browser" nel dispositivo registrato come indicato di seguito:  
 
-        1. Avviare l'**app Portale aziendale**.  
+        1. Avviare **l'app Portale aziendale**.  
 
         2. Passare alla pagina **Impostazioni** facendo clic sui punti di sospensione (...) o sul tasto di menu.  
 
-        3. Scegliere il pulsante **Abilita l'accesso al browser**.  
+        3. Premere il pulsante **Abilita l'accesso al browser**.  
 
         4. Nel browser Chrome disconnettersi da Office 365 e riavviare Chrome.  
 
@@ -268,7 +268,7 @@ Il messaggio viene visualizzato sul dispositivo per gli utenti di Exchange Onlin
 
         - **iOS**  
 
-        ![schermata del messaggio di richiesta del certificato in un iPad](media/mdm-browser-ca-ios-cert-prompt_v2.png)  
+        ![schermata del messaggio di richiesta del certificato in un ipad](media/mdm-browser-ca-ios-cert-prompt_v2.png)  
 
         - **Android**  
 

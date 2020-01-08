@@ -1,7 +1,7 @@
 ---
 title: Gestione della conformità nei dispositivi gestiti con Intune
 titleSuffix: Configuration Manager
-description: Informazioni sulle impostazioni di conformità di System Center Configuration Manager in alcuni scenari comuni.
+description: Informazioni sulle impostazioni di conformità di Configuration Manager in alcuni scenari comuni.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78ff2181c3ae4bc7069998bf4a6db526da835037
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ac27d5e994462d3f6e138069764ee505855a26f9
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68337881"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520627"
 ---
 # <a name="managing-compliance-on-devices-managed-with-intune"></a>Gestione della conformità nei dispositivi gestiti con Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questi scenari forniscono un'introduzione all'uso delle impostazioni di conformità di System Center Configuration Manager usando alcuni scenari comuni che potrebbero verificarsi.  
+Questi scenari forniscono un'introduzione all'uso di Configuration Manager impostazioni di conformità grazie ad alcuni scenari comuni che potrebbero verificarsi.  
 
  Se si ha già familiarità con le impostazioni di conformità, la documentazione dettagliata su tutte le funzionalità disponibili è reperibile nella sezione [Elementi di configurazione per i dispositivi gestiti con Intune](#configuration-items-for-devices-managed-with-intune).  
 
@@ -75,7 +75,7 @@ Questi scenari forniscono un'introduzione all'uso delle impostazioni di conformi
 
 6. Completare la procedura guidata per creare l'elemento di configurazione.  
 
-   È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
+   È ora possibile usare le informazioni contenute nelle [attività comuni per la creazione e la distribuzione di linee di base di configurazione con Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) argomento che consentono di distribuire la configurazione creata nei dispositivi.  
 
 ## <a name="scenarios-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Scenari per dispositivi iOS e Mac OS X gestiti con Intune  
 
@@ -94,7 +94,7 @@ Questi scenari forniscono un'introduzione all'uso delle impostazioni di conformi
 
 6. Completare la procedura guidata per creare l'elemento di configurazione.  
 
-   È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
+   È ora possibile usare le informazioni contenute nelle [attività comuni per la creazione e la distribuzione di linee di base di configurazione con Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) argomento che consentono di distribuire la configurazione creata nei dispositivi.  
 
 ## <a name="scenarios-for-android-and-samsung-knox-standard-devices-managed-with-intune"></a>Scenari per dispositivi Android e Samsung KNOX Standard gestiti con Intune  
 
@@ -121,7 +121,7 @@ Questi scenari forniscono un'introduzione all'uso delle impostazioni di conformi
 
 ## <a name="configuration-items-for-devices-managed-with-intune"></a>Elementi di configurazione per i dispositivi gestiti con Intune
 
-I tipi di elementi di configurazione di System Center Configuration Manager elencati di seguito sono disponibili per i dispositivi non gestiti dal client di Configuration Manager, ad esempio i dispositivi registrati con Microsoft Intune.  
+Sono disponibili i seguenti tipi di elementi di configurazione Configuration Manager per i dispositivi non gestiti dal client di Configuration Manager, ad esempio i dispositivi registrati con Microsoft Intune.  
 
 -   [Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti con Intune](create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)  
 

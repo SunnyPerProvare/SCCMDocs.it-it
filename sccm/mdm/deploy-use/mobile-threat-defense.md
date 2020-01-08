@@ -1,7 +1,7 @@
 ---
 title: Limitare l'accesso in base ai rischi
 titleSuffix: Configuration Manager
-description: Limitare l'accesso alle risorse aziendali in base ai rischi per dispositivi, rete e applicazioni.
+description: Limitare l'accesso alle risorse aziendali in base al rischio per dispositivi, rete e applicazioni.
 ms.date: 08/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 90098dc0243e8513fe78692fe91a8390f7936eba
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b770a8d5a424b5c32fb47a69dc429890a914af7e
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62228348"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520168"
 ---
 # <a name="manage-access-to-company-resource-based-on-device-network-and-application-risk"></a>Gestire l'accesso alle risorse aziendali in base ai rischi per dispositivi, rete e applicazioni
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Grazie ai connettori di Mobile Threat Defense è possibile usare il fornitore di Mobile Threat Defense prescelto come fonte di informazioni per i criteri di conformità e per le regole di accesso condizionale. Ciò consente di aggiungere un livello di protezione alle risorse aziendali, come Exchange e SharePoint, in particolare dai dispositivi mobili compromessi.
 
@@ -47,9 +47,9 @@ Un'app Mobile Threat Defense connessa, ad esempio, segnala al fornitore di Mobil
 
 ## <a name="sample-scenarios"></a>Scenari di esempio
 
-Quando un dispositivo è considerato infetto dalla soluzione Mobile Threat Defense:
+Quando un dispositivo è considerato infetto da una soluzione Mobile Threat Defense:
 
-![Dispositivo infetto di Mobile Threat Defense](../media/mtp/MTD-image-1.png)
+![Mobile Threat Defense - Dispositivo infetto](../media/mtp/MTD-image-1.png)
 
 L'accesso è consentito dopo l'intervento di correzione:
 

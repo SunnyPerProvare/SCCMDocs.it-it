@@ -11,22 +11,22 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e884b7c5d7ceca7fcb241a5bfef1832e66562d38
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 30520dbb336c444256ee73c4db1350c0f7aea6e8
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70378911"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520712"
 ---
 # <a name="ios-hybrid-enrollment-using-apple-configurator-with-configuration-manager"></a>Registrazione ibrida di iOS tramite Apple Configurator con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Le aziende che acquistano dispositivi iOS per l'uso da parte dei dipendenti possono gestire questi dispositivi tramite Microsoft Intune. Per preparare i dispositivi iOS di proprietà dell'azienda per la registrazione, configurare un profilo di registrazione nella console di Configuration Manager e quindi esportare l'URL del profilo per l'uso da Apple Configurator. Per preparare il dispositivo iOS per la registrazione, connetterlo a un computer Mac tramite cavo USB e usare Apple Configurator per configurarlo. Apple Configurator ripristina le impostazioni predefinite del dispositivo e aggiunge il profilo di registrazione in modo che il dispositivo possa essere registrato quando l'utente lo accende per la prima volta ed esegue il processo di installazione guidata.
 
 La procedura seguente è consigliata per i dispositivi iOS dedicati, con un solo utente e usati per accedere alla posta elettronica di lavoro e alle risorse aziendali, ad esempio app e dati.  
 
-## <a name="prerequisites"></a>Prerequisites  
+## <a name="prerequisites"></a>Prerequisiti  
 
 -   Accesso fisico ai dispositivi iOS  
 
@@ -48,7 +48,7 @@ La procedura seguente è consigliata per i dispositivi iOS dedicati, con un solo
 
     -   **Affinità utente** : specifica la modalità di registrazione dei dispositivi. Per la maggior parte degli scenari di Assistente configurazione, usare **Richiedi affinità utente**.  
 
-        -   **Richiedi affinità utente**: il dispositivo può essere associato a un utente durante la configurazione iniziale e potrebbe quindi accedere ai dati aziendali e alla posta elettronica come tale utente.  
+        -   **Richiedi affinità utente**: il dispositivo può essere associato a un utente durante la configurazione iniziale e potrebbe quindi accedere ai dati aziendali e alla posta elettronica con questo nome utente.  
 
         -   **Nessuna affinità utente**: il dispositivo non è associato a un utente. Usare questa associazione per i dispositivi che eseguono attività senza accedere ai dati utente locali. Le app che richiedono l'associazione utente non funzioneranno.
 
@@ -72,7 +72,7 @@ Per altre informazioni, vedere [Predichiarare dispositivi con numeri IMEI o di s
 
 3.  Copiare e salvare l'**URL del profilo** in un file modificabile.   
 
-4.  Per supportare Apple Configurator 2, è necessario modificare l'URL del profilo 2.0. Sostituire la parte dell'URL seguente:  
+4.  Per supportare Apple Configurator 2 è necessario modificare l'URL del profilo 2.0. Sostituire la parte dell'URL seguente:  
 
     ```  
     https://manage.microsoft.com/EnrollmentServer/Discovery.svc/iOS/ESProxy?id=  
@@ -109,7 +109,7 @@ Per preparare i dispositivi iOS per la registrazione, collegare ogni dispositivo
    > [!NOTE]
    > Se si riceve un messaggio di avviso sui requisiti del profilo di attendibilità per Apple TV, è possibile disabilitare senza problemi l'opzione **Trust Profile** facendo clic sulla "X" grigia. Anche gli eventuali avvisi sul certificato Anchor possono essere ignorati.
 
-   Per continuare, fare clic su **Avanti** fino al termine della procedura guidata.  
+   Per continuare, fare clic su **Next**  (Avanti) fino a completare la procedura guidata.  
 
 5. Nel riquadro **Server** fare clic su "Modifica" accanto al profilo del nuovo server. Assicurarsi che l'URL di registrazione corrisponda esattamente all'URL immesso in precedenza. Se è diverso, immetterlo nuovamente e fare clic su **Salva**.  
 

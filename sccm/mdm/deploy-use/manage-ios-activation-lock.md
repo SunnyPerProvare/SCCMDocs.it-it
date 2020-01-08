@@ -1,7 +1,7 @@
 ---
 title: Gestire il blocco attivazione iOS
 titleSuffix: Configuration Manager
-description: Gestire il blocco attivazione iOS con System Center Configuration Manager.
+description: Gestire Blocco attivazione iOS con Configuration Manager.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,19 +11,19 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 780abd0702e34dff7a8026fb54e29ccea6f67170
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f89a95fc10518abbe5353e5097d5616740166aae
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67678747"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520542"
 ---
-# <a name="manage-ios-activation-lock-with-system-center-configuration-manager"></a>Gestire il blocco attivazione iOS con System Center Configuration Manager
+# <a name="manage-ios-activation-lock-with-configuration-manager"></a>Gestire Blocco attivazione iOS con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
-System Center Configuration Manager consente di gestire il blocco attivazione iOS, una funzionalità dell'app Trova il mio iPhone per dispositivi iOS 7.1 e versioni successive. Quando il blocco attivazione iOS è abilitato, richiede l'immissione di un ID Apple e una password dell'utente prima che sia possibile:
+Configuration Manager consente di gestire il blocco attivazione iOS, una funzionalità dell'app Trova il mio iPhone per dispositivi iOS 7.1 e versioni successive. Quando il blocco attivazione iOS è abilitato, richiede l'immissione di un ID Apple e una password dell'utente prima che sia possibile:
 
 - Disattivare Trova il mio iPhone
 - Cancellare il dispositivo
@@ -69,7 +69,7 @@ I vantaggi garantiti alle aziende da questa funzionalità sui dispositivi di pro
 
 Per abilitare il blocco attivazione nei dispositivi con supervisione, si usano le impostazioni di conformità di Configuration Manager per creare e distribuire un elemento di configurazione di tipo **iOS e Mac OS X**:
 
-1. Usare le informazioni nell'argomento [Come creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti senza il client System Center Configuration Manager](/sccm/compliance/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client) per creare un elemento di configurazione di tipo **iOS e Mac OS X**.
+1. Usare le informazioni nell'argomento [come creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti senza il client di Configuration Manager](/sccm/compliance/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client) per creare un elemento di configurazione di tipo **iOS e Mac OS X**.
 2. Nella pagina **Protezione del sistema** della Creazione guidata dell'elemento di configurazione configurare l'impostazione **Consenti blocco attivazione (solo modalità di supervisione)** su **Consentito**.
 3. [Aggiungere l'elemento di configurazione a una linea di base di configurazione](/sccm/compliance/deploy-use/create-configuration-baselines).
 4. [Distribuire questa linea di base di configurazione](/sccm/compliance/deploy-use/deploy-configuration-baselines) a una raccolta contenente i dispositivi iOS per i quali si vuole abilitare il blocco di attivazione.

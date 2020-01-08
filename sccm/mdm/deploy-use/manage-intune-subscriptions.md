@@ -1,7 +1,7 @@
 ---
 title: Gestire una sottoscrizione di Intune
 titleSuffix: Configuration Manager
-description: Gestire una sottoscrizione di Intune associata a System Center Configuration Manager.
+description: Gestire una sottoscrizione di Intune associata a Configuration Manager.
 ms.date: 06/02/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b2e63720bf4a5e6b2cf2f7d1a034d916c9ca5338
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9ddd7a35159ab0af1b3faaf0795031a98c201bf1
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62255476"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520593"
 ---
-# <a name="manage-an-intune-subscription-associated-with-system-center-configuration-manager"></a>Gestire una sottoscrizione di Intune associata a System Center Configuration Manager
+# <a name="manage-an-intune-subscription-associated-with-configuration-manager"></a>Gestire una sottoscrizione di Intune associata a Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Se si aggiunge una sottoscrizione di valutazione o a pagamento di Microsoft Intune in Configuration Manager e successivamente è necessario passare a una sottoscrizione di Intune diversa, eliminare sia la **sottoscrizione a Microsoft Intune** che il **punto di connessione del servizio** dalla console di Configuration Manager prima di aggiungere una nuova sottoscrizione.
 

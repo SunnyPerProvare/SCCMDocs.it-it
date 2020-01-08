@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 00907d200bf54a4a1eb13863cf5bb529aa2f9656
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b4cd11608fc515628d0d36bb2929f0ec7dc28994
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62282427"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520831"
 ---
-# <a name="set-up-android-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la gestione di dispositivi mobili ibridi Android con System Center Configuration Manager e Microsoft Intune
+# <a name="set-up-android-hybrid-device-management-with-configuration-manager-and-microsoft-intune"></a>Configurare la gestione di dispositivi ibridi Android con Configuration Manager e Microsoft Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo consente di abilitare più facilmente la registrazione ibrida di dispositivi Android e Android for Work. È quindi possibile usare Configuration Manager per gestire i dispositivi tramite una sottoscrizione a Microsoft Intune configurata. Gli utenti possono scaricare da Google Play l'app Portale aziendale Android che consente di registrare dispositivi Android, inclusi i dispositivi Samsung KNOX Standard, e Android for Work.
 
@@ -81,4 +81,4 @@ Dopo aver abilitato la registrazione di dispositivi Android for Work è possibil
 - [Cancellare in modo selettivo il profilo di lavoro](/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe)
 
 > [!div class="button"]
-> [< Passaggio precedente](create-service-connection-point.md)  [Passaggio successivo >](set-up-additional-management.md)
+> [Passaggio successivo](set-up-additional-management.md) [< passaggio precedente](create-service-connection-point.md)>

@@ -1,7 +1,7 @@
 ---
 title: 'Registrare i dispositivi con il manager di registrazione dispositivi '
 titleSuffix: Configuration Manager
-description: Registrare i dispositivi di proprietà dell'azienda usando l'account del manager di registrazione dispositivi con System Center Configuration Manager.
+description: Registrare i dispositivi di proprietà dell'azienda con l'account del Manager di registrazione dispositivi con Configuration Manager.
 ms.date: 09/08/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,21 +11,21 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 00d6ccd54e7be4021c6dc31d30aedac50b41e3dd
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3aabf376286ae9d5a9391197b45392f050006854
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "69632485"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520797"
 ---
 # <a name="enroll-devices-with-device-enrollment-manager-with-configuration-manager"></a>Registrare i dispositivi usando il manager di registrazione dispositivi con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 > [!Important]  
 > A partire dal 14 agosto 2018, la gestione ibrida dei dispositivi mobili è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
 
-Le organizzazioni possono usare Intune per gestire un numero elevato di dispositivi mobili con un singolo account utente. L'account del *manager di registrazione dispositivi* è un account utente speciale usato per registrare i dispositivi. Aggiungendo utenti esistenti all'account del manager di registrazione dispositivi si assegnano loro particolari funzionalità. Ogni dispositivo registrato usa una singola licenza. È consigliabile usare i dispositivi registrati tramite questo account come dispositivi condivisi senza affinità utente anziché come dispositivi personali dedicati.  
+Le organizzazioni possono usare Intune per gestire un numero elevato di dispositivi mobili con un singolo account utente. L'account del *manager di registrazione dispositivi* è un account utente speciale usato per registrare i dispositivi. Gli utenti esistenti vengono aggiunti all'account del manager di registrazione dispositivi per rendere disponibili le funzionalità DEM. Ogni dispositivo registrato usa una singola licenza. È consigliabile usare i dispositivi registrati tramite questo account come dispositivi condivisi senza affinità utente anziché come dispositivi personali dedicati.  
 
 ## <a name="enroll-corporate-owned-devices-with-the-device-enrollment-manager"></a>Registrare i dispositivi di proprietà dell'azienda con il manager di registrazione dispositivi  
  È possibile assegnare a un responsabile del negozio o a un supervisore, ad esempio, un account utente del Manager di registrazione dispositivi per consentire all'utente di eseguire le operazioni seguenti:  

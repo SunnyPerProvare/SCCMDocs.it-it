@@ -11,25 +11,25 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbd3d765a17d41bfbc2c400a3368cf00784b16c1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 335a122ffb982e21e15fbc834106ce360b76b42d
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62256097"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520661"
 ---
-# <a name="manage-dynamics-crm-online-access-in-system-center-configuration-manager"></a>Gestire l'accesso a Dynamics CRM Online in System Center Configuration Manager
+# <a name="manage-dynamics-crm-online-access-in-configuration-manager"></a>Gestire l'accesso a Dynamics CRM online in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-È possibile controllare l'accesso a Microsoft Dynamics CRM Online da dispositivi iOS e Android con accesso condizionale di Microsoft Intune.  L'accesso condizionale di Intune include due componenti:
+È possibile controllare l'accesso a Microsoft Dynamics CRM Online dai dispositivi iOS e Android con l'accesso condizionale di Microsoft Intune.  L'accesso condizionale di Intune include due componenti:
 * I [criteri di conformità dei dispositivi](../../protect/deploy-use/device-compliance-policies.md) che il dispositivo deve soddisfare per essere considerato conforme.
-* I [criteri di accesso condizionale](../../protect/deploy-use/manage-access-to-services.md) che consentono di specificare le condizioni che il dispositivo deve soddisfare per poter accedere al servizio.
+* [Criteri di accesso condizionale](../../protect/deploy-use/manage-access-to-services.md) in cui si specificano le condizioni che il dispositivo deve soddisfare per poter accedere al servizio.
 
 Per altre informazioni sul funzionamento dell'accesso condizionale, leggere l'articolo [Gestire l'accesso ai servizi](../../protect/deploy-use/manage-access-to-services.md).
 
 
-Quando un utente di destinazione prova a usare l'app Dynamics CRM nel proprio dispositivo, vengono effettuate le valutazioni seguenti:
+Quando un utente di destinazione tenta di usare l'app Dynamics CRM sul proprio dispositivo, si verifica quanto segue:
 
 ![La figura mostra i punti decisionali usati per determinare se consentire a un dispositivo di accedere a un servizio o bloccare l'accesso](media/mdm-ca-dynamics-crm-flow-diagram.png)
 
@@ -50,19 +50,19 @@ Se non viene soddisfatta una condizione, viene visualizzato uno dei due messaggi
 Prima di iniziare configurare i gruppi di sicurezza di Azure Active Directory per i criteri di accesso condizionale. È possibile configurare questi gruppi nel **centro di amministrazione Microsoft 365**. I gruppi verranno usati per applicare o ignorare i criteri per gli utenti. Per poter accedere alle risorse, un utente di destinazione in un criterio deve usare solo dispositivi conformi.
 
 È possibile specificare due tipi di gruppo da usare per i criteri di Dynamics CRM:
-* **Gruppi di destinazione**: contiene i gruppi di utenti per i quali si applicano i criteri.
+* **Gruppi di destinazione**: contiene i gruppi di utenti ai quali si applicano i criteri.
 * **Gruppi esentati**: contiene i gruppi di utenti che sono esentati dai criteri.
 
 Se un utente si trova in entrambi i gruppi, sarà esentato dai criteri.
 
 ### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>Passaggio 2: Configurare e distribuire i criteri di conformità
-[Creare e distribuire](../../protect/deploy-use/device-compliance-policies.md) i criteri di conformità in tutti i dispositivi cui verranno applicati i criteri. Si tratta di tutti i dispositivi usati dagli utenti dei gruppi di destinazione.
+[Creare e distribuire](../../protect/deploy-use/device-compliance-policies.md) i criteri di conformità in tutti i dispositivi cui verranno applicati i criteri. ossia tutti i dispositivi usati dagli utenti nei Gruppi di destinazione.
 
 > [!NOTE]
 > Mentre i criteri di conformità vengono distribuiti nei gruppi di Microsoft Intune, i criteri di accesso condizionale sono destinati ai gruppi di sicurezza di Azure Active Directory.
 
 > [!IMPORTANT]
-> Se non sono stati distribuiti criteri di conformità, i dispositivi verranno considerati conformi.
+> Se i criteri di conformità non sono stati distribuiti, i dispositivi verranno considerati conformi.
 
 Quando si è pronti, continuare con il Passaggio 3.
 ### <a name="step-3-configure-the-dynamics-crm-policy"></a>Passaggio 3: Configurare i criteri di Dynamics CRM
@@ -73,10 +73,10 @@ A questo punto, configurare i criteri in modo che solo i dispositivi gestiti e c
     ![Schermata della pagina dei criteri di accesso condizionale di Dynamics CRM Online](media/mdm-ca-dynamics-crm-policy-configuration.png)
 
 2. Selezionare **Abilitare i criteri di accesso condizionale**.
-3. In **Accesso all'applicazione**è possibile scegliere di applicare i criteri di accesso condizionale a:
+3. In **Accesso all'applicazione** è possibile scegliere di applicare i criteri di accesso condizionale a:
    * **iOS**
    * **Android**
-4. In **Gruppi di destinazione** scegliere **Modifica** per selezionare i gruppi di sicurezza di Azure Active Directory ai quali verranno applicati i criteri. È possibile scegliere applicare questa opzione a tutti gli utenti o solo a un gruppo selezionato di utenti.
+4. In **Gruppi di destinazione** scegliere **Modifica** per selezionare i gruppi di sicurezza di Azure Active Directory ai quali verranno applicati i criteri. È possibile scegliere di applicare questa opzione a tutti gli utenti o solo a un gruppo di utenti selezionato.
 5. Facoltativamente, in **Gruppi esentati** scegliere **Modifica** per selezionare i gruppi di sicurezza di Azure Active Directory esentati da questi criteri.
 6. Al termine, scegliere **Salva**.
 
@@ -88,7 +88,7 @@ Nell'area di lavoro **Gruppi** è possibile visualizzare lo stato dell'accesso c
 Selezionare un gruppo qualsiasi di dispositivi mobili e quindi nella scheda **Dispositivi** selezionare uno dei **Filtri** seguenti:
 * **Dispositivi non registrati con AAD**: si tratta dei dispositivi che non possono accedere a Dynamics CRM.
 * **Dispositivi non conformi**: si tratta dei dispositivi che non possono accedere a Dynamics CRM.
-* **Dispositivi conformi e registrati con AAD**: si tratta dei dispositivi che possono accedere a Dynamics CRM.
+* **Dispositivi conformi e registrati con AAD** : dispositivi che possono accedere a Dynamics CRM.
 
 ###  <a name="see-also"></a>Vedere anche
 [Gestire l'accesso alla posta elettronica](../../protect/deploy-use/manage-email-access.md)

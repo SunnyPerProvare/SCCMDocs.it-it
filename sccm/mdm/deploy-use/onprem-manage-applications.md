@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 335c3036f4af1f5d6ea339557a70469a130dd012
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 35bdb5e2cfe139c20e2c1796f1fb32a284e5a200
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62227957"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520066"
 ---
 # <a name="manage-applications-for-on-premises-mobile-device-management"></a>Gestire applicazioni per la gestione dei dispositivi mobili locale
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Quando si gestiscono dispositivi tramite la funzionalità di gestione dei dispositivi mobili (Mobile Device Management, MDM) locale di Configuration Manager, è possibile gestire determinati tipi di applicazione aggiuntivi. La gestione delle applicazioni in una distribuzione MDM locale è identica alla gestione delle app in un ambiente MDM ibrido.
 
