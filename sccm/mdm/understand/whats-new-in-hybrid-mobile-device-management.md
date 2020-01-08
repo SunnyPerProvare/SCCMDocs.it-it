@@ -11,23 +11,23 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c2b697520dee854f956554dfcca60519f930f15b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d310f60dfebd32b8e01ad2975a69d1802f24ccc6
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67678625"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519352"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con Configuration Manager e Microsoft Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 > [!Important]  
 > Questo documento non è più in fase di aggiornamento. Dal 14 agosto 2018, la funzionalità di gestione dei dispositivi mobili ibrida è stata [deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). È consigliabile eseguire la migrazione dell'ambiente a Intune autonomo appena possibile. Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).
 >
 > Le informazioni importanti relative alla gestione di dispositivi mobili ibridi (MDM) continueranno a essere aggiunte al [centro messaggi di Office 365](https://go.microsoft.com/fwlink/?linkid=2070717) e al [Blog di successo dei clienti di Intune](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/bg-p/IntuneCustomerSuccess) fino a quando il servizio non verrà ritirato il 1 ° settembre 2019. <!--Intune feature 2683117-->  
 
-Questo articolo illustra le nuove funzionalità di gestione dei dispositivi mobili (MDM) disponibili per le distribuzioni ibride con System Center Configuration Manager e Intune. 
+Questo articolo fornisce informazioni dettagliate sulle nuove funzionalità di gestione dei dispositivi mobili (MDM) disponibili per le distribuzioni ibride con Configuration Manager e Microsoft Intune. 
 
 > [!Note]  
 > Intune in Azure è la soluzione MDM consigliata da Microsoft.
@@ -42,7 +42,7 @@ Questo articolo illustra le nuove funzionalità di gestione dei dispositivi mobi
 
 Ogni sezione di questo articolo elenca le funzionalità ibride in tre categorie diverse. Usare le indicazioni che seguono per determinare la compatibilità delle funzionalità di ogni categoria con versioni diverse di Configuration Manager:  
 
-|Categorie di funzionalità|Descrizione|
+|Categorie di funzionalità|Description|
 |-|-|
 |**Novità di Microsoft Intune** | In generale, tutte le funzionalità elencate in questa categoria dovrebbero funzionare con tutte le versioni di Configuration Manager, incluse le versioni di System Center 2012 R2 Configuration Manager, perché richiedono solo il servizio Intune e non richiedono altre funzionalità di Configuration Manager.|
 |**Novità di Configuration Manager Technical Preview**| Tutte le funzionalità elencate in questa categoria funzionano solo con il ramo di Technical Preview specificato. Per provare queste funzionalità, è necessario installare la versione di Technical Preview specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview).|
@@ -61,7 +61,7 @@ Per accedere alla nuova visualizzazione, passare al riquadro di spostamento dell
 
 - Name
 - Digitare
-- Publisher
+- Pubblicazione
 - Ultimo aggiornamento
 - Stato dell'installazione
 
@@ -294,7 +294,7 @@ Microsoft Intune supporta Transport Layer Security (TLS) 1.2+ per offrire la mig
 #### <a name="remove-an-email-profile-from-a-device-even-when-theres-only-one-email-profile"></a>Rimuovere un profilo di posta elettronica da un dispositivo, anche quando è presente un solo profilo di posta elettronica
 
 <!--1818139-->  
-In precedenza, non è stato possibile rimuovere un profilo di posta elettronica da un dispositivo se si tratta dell'unico profilo di posta elettronica. Con questo aggiornamento, questo comportamento viene modificato. Ora è possibile rimuovere un profilo di posta elettronica, anche se è l'unico profilo di posta elettronica presente nel dispositivo.
+In precedenza, non è stato possibile rimuovere un profilo di posta elettronica da un dispositivo se si tratta dell'unico profilo di posta elettronica. Con questo aggiornamento, il comportamento cambia. Ora è possibile rimuovere un profilo di posta elettronica, anche se è l'unico profilo di posta elettronica presente nel dispositivo.
 
 #### <a name="remove-pkcs-and-scep-certificates-from-your-devices"></a>Rimuovere i certificati PKCS e SCEP dai dispositivi
 
@@ -311,16 +311,16 @@ Gli utenti finali possono ora accedere alle proprietà e alle azioni principali 
 #### <a name="pin-prompt-when-you-change-fingerprints-or-face-id-on-an-ios-device"></a>Richiesta del PIN quando si modificano le impronte digitali o l'ID del viso in un dispositivo iOS
 
 <!--2637704-->  
-Agli utenti viene ora richiesto un PIN dopo la modifica dei dati biometrici nel proprio dispositivo iOS. Sono incluse le modifiche alle impronte digitali o all'ID del viso registrati. La durata del messaggio di richiesta dipende dalla configurazione del timeout *Controlla di nuovo i requisiti di accesso dopo (minuti)* .  Se non è impostato alcun PIN, all'utente viene richiesto di impostarne uno.  
+Agli utenti viene ora richiesto un PIN dopo aver apportato modifiche biometriche nel dispositivo iOS. Sono incluse le modifiche alle impronte digitali o all'ID del viso registrati. La durata del messaggio di richiesta dipende dalla configurazione del timeout *Controlla di nuovo i requisiti di accesso dopo (minuti)* .  Se non è impostato alcun PIN, all'utente viene richiesto di configurarne uno.  
 
-Questa funzionalità è disponibile solo per iOS e richiede la partecipazione delle applicazioni che integrano Intune APP SDK per iOS, versione 8.1.1 o versioni successive. L'integrazione dell'SDK è necessaria in modo il comportamento possa essere imposto nelle applicazioni di destinazione. Questa integrazione avviene sistematicamente e dipende dai team delle applicazioni specifiche. Alcune app partecipanti sono WXP, Outlook, Managed Browser e Yammer.
+Questa funzionalità è disponibile solo per iOS e richiede la partecipazione delle applicazioni che integrano Intune APP SDK per iOS, versione 8.1.1 o versioni successive. L'integrazione dell'SDK è necessaria in modo che il comportamento possa essere applicato nelle applicazioni di destinazione. Questa integrazione avviene sistematicamente e dipende dai team delle applicazioni specifiche. Tra le app partecipanti sono inclusi WXP, Outlook, Managed Browser e Yammer.
 
 #### <a name="end-user-device-and-app-content-menu"></a>Dispositivo dell'utente finale e menu di scelta rapida delle app
 
 <!--2771453-->  
 Gli utenti finali possono ora usare il menu di scelta rapida nel dispositivo e nelle app per attivare azioni comuni come la ridenominazione di un dispositivo o il controllo della conformità.
 
-#### <a name="windows-company-portal-keyboard-shortcuts"></a>Tasti di scelta rapida per il portale aziendale di Windows
+#### <a name="windows-company-portal-keyboard-shortcuts"></a>Tasti di scelta rapida del portale aziendale di Windows
 
 <!--2771518-->  
 Gli utenti finali possono ora attivare le azioni per app e dispositivi nel portale aziendale di Windows tramite tasti di scelta rapida.
@@ -374,7 +374,7 @@ Per altre informazioni, vedere gli articoli seguenti:
 #### <a name="updates-to-out-of-compliance-messages-in-company-portal-app"></a>Aggiornamenti per i messaggi di mancata conformità nell'app Portale aziendale
 
 <!--1832222-->  
-È in corso la revisione dei messaggi visualizzati dagli utenti dei dispositivi quando un dispositivo non è conforme. I messaggi conservano il significato originale, ma vengono aggiornati con un linguaggio più descrittivo e un minor uso di terminologia tecnica. Verranno anche aggiornati i collegamenti alla documentazione e alle procedure di correzione per mantenerli aggiornati.  
+È in corso la revisione dei messaggi visualizzati dagli utenti dei dispositivi quando un dispositivo non è conforme. I messaggi conservano il significato originale, ma vengono aggiornati con un linguaggio più descrittivo e un minor uso di terminologia tecnica. È anche in corso l'aggiornamento dei collegamenti alla documentazione e alle procedure di correzione per mantenerli aggiornati.  
 
 Il testo seguente è un esempio dei miglioramenti dei messaggi che verranno introdotti:  
 
@@ -468,17 +468,17 @@ L'app Portale aziendale Intune per Windows 10 è stata aggiornata con la [visual
 #### <a name="improved-device-tiles-in-the-windows-10-company-portal"></a>Riquadri di dispositivo migliorati nel Portale aziendale di Windows 10
 
 <!--2213364-->  
-I riquadri sono stati aggiornati per risultare più accessibili agli utenti con ipovisione e offrire prestazioni migliori per gli strumenti per la lettura su schermo.
+I riquadri sono stati aggiornati per essere più accessibili agli utenti con problemi di ipovisione e per offrire prestazioni migliori per gli strumenti di lettura dello schermo.
 
 #### <a name="test-the-company-portal-for-macos-on-virtual-machines"></a>Testare il Portale aziendale per macOS nelle macchine virtuali
 
 <!--2216679-->  
-Abbiamo pubblicata indicazioni che consentono agli amministratori IT di testare l'app Portale aziendale per macOS nelle macchine virtuali in Parallels Desktop e VMware Fusion. Per altre informazioni, vedere [Registrare le macchine virtuali macOS per i test](/intune/macos-enroll#enroll-virtual-macos-machines-for-testing).
+Sono state pubblicate indicazioni per consentire agli amministratori IT di testare l'app Portale aziendale per macOS su macchine virtuali in Parallels Desktop e VMware Fusion. Per altre informazioni, vedere [Registrare le macchine virtuali macOS per i test](/intune/macos-enroll#enroll-virtual-macos-machines-for-testing).
 
 #### <a name="send-diagnostic-reports-in-company-portal-app-for-macos"></a>Inviare i report di diagnostica nell'app Portale aziendale per macOS
 
 <!--2216677-->  
-L'app Portale aziendale per i dispositivi macOS è stata aggiornata per migliorare il modo in cui gli utenti segnalano gli errori relativi a Intune. Dall'app Portale aziendale gli utenti possono:
+L'app Portale aziendale per i dispositivi macOS è stata aggiornata per migliorare la modalità di segnalazione degli errori correlati a Intune. Dall'app Portale aziendale i dipendenti possono:
 
 - Caricare i report di diagnostica direttamente al team di sviluppo Microsoft.
 - Inviare tramite posta elettronica l'ID dell'evento imprevisto al team di supporto IT dell'azienda.
@@ -496,14 +496,14 @@ L'app Portale aziendale per i dispositivi macOS è stata aggiornata per migliora
 <!--2144597-->  
 Nel portale di Azure all'interno del servizio di Microsoft Intune, verrà eseguito il reindirizzamento temporaneo dall'area **protezione app di Intune** alla sezione app per **dispositivi mobili** . Tutti i criteri di protezione delle app sono già nella sezione **App per dispositivi mobili** in Intune sotto la configurazione delle app. Invece di andare a Protezione app di Intune, si passerà a Intune. Ad aprile 2018 il reindirizzamento verrà interrotto e **Protezione app di Intune** verrà completamente rimossa. Dopo tale data, sarà presente una sola posizione per i criteri di protezione delle app in Intune.
 
-**Quali sono le conseguenze di questa modifica?** Questa modifica avrà effetto sia sui clienti di Intune autonomi che sui clienti ibridi (Intune con Configuration Manager). Questa integrazione consentirà di semplificare l'amministrazione della gestione del cloud.
+**Quali sono le conseguenze di questa modifica?** Questa modifica avrà effetto sia sui clienti di Intune autonomi che sui clienti ibridi (Intune con Configuration Manager). Questa integrazione contribuirà alla semplificazione dell'amministrazione della gestione del cloud.
 
 **Operazioni di preparazione alla modifica** Contrassegnare **Intune** come preferito invece di **Protezione app di Intune**. Acquisire familiarità con il flusso di lavoro dei criteri di protezione dell'app nell'area **App per dispositivi mobili** in Intune. Per un breve periodo di tempo verrà effettuato il reindirizzamento e quindi **Protezione app** verrà rimossa. Tenere presente che tutti i criteri di protezione delle app sono già in Intune ed è possibile modificare qualsiasi criterio di accesso condizionale. Per altre informazioni sulla modifica dei criteri di accesso condizionale, vedere [Accesso condizionale in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal). Per altre informazioni, vedere [Che cosa sono i criteri di protezione delle app?](https://docs.microsoft.com/intune/app-protection-policy).
 
 #### <a name="user-experience-update-for-the-company-portal-app-for-ios"></a>Aggiornamento dell'esperienza utente per l'app Portale aziendale per iOS
 
 <!--1412866-->  
-È stato rilasciato un aggiornamento dell'esperienza utente principale per l'app Portale aziendale per iOS. L'aggiornamento include una riprogettazione visuale completa con un aspetto modernizzato. La funzionalità dell'app è stata mantenuta, ma migliorandone il livello di usabilità e accessibilità.  
+È stato rilasciato un importante aggiornamento dell'esperienza utente per l'app Portale aziendale per iOS. L'aggiornamento include una riprogettazione visuale completa con un aspetto modernizzato. La funzionalità dell'app è stata mantenuta, ma migliorandone il livello di usabilità e accessibilità.  
 
 L'aggiornamento include anche:
 
@@ -599,7 +599,7 @@ Tramite Azure Active Directory (Azure AD) è ora possibile limitare l'accesso ai
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
 
 - **Distribuzioni di applicazioni disponibili ora supportate per Android Enterprise**    
-  È ora possibile distribuire le app Android Enterprise, in precedenza Android for Work, con stato **Disponibile**, oltre che **Richiesto**. Per informazioni dettagliate, vedere [Creare applicazioni Android con System Center Configuration Manager](/sccm/mdm/deploy-use/creating-android-applications).
+  È ora possibile distribuire le app Android Enterprise, in precedenza Android for Work, con stato **Disponibile**, oltre che **Richiesto**. Per informazioni dettagliate, vedere [creare applicazioni Android con Configuration Manager](/sccm/mdm/deploy-use/creating-android-applications).
 
 
 
@@ -616,11 +616,11 @@ Tramite Azure Active Directory (Azure AD) è ora possibile limitare l'accesso ai
   <!--1541700-->   
 
 - **Microsoft Planner fa ora parte dell'elenco di app approvate per la gestione delle app mobili (MAM)**     
-  L'app Microsoft Planner per iOS e Android fa ora parte delle app approvate per la gestione delle app mobili (MAM). Configurare l'app da Protezione app di Intune nel portale di Azure in tutti i tenant. Per informazioni dettagliate, vedere [elenco MAM di app approvate](https://www.microsoft.com/cloud-platform/microsoft-intune-apps).
+  L'app Microsoft Planner per iOS e Android fa ora parte delle app approvate in base ai criteri di gestione delle app mobili. Configurare l'app da Protezione app di Intune nel portale di Azure in tutti i tenant. Per informazioni dettagliate, vedere [elenco MAM di app approvate](https://www.microsoft.com/cloud-platform/microsoft-intune-apps).
   <!-- 1248473 -->    
 
 - **Accesso ai log delle app gestite per iOS**    
-  Gli utenti finali con Managed Browser installato possono ora visualizzare lo stato della gestione di tutte le app Microsoft pubblicate e inviare i log per la risoluzione dei problemi delle app iOS gestite.
+  Gli utenti finali che hanno installato Managed Browser possono ora visualizzare lo stato di gestione di tutte le app pubblicate Microsoft e inviare i log per la risoluzione dei problemi delle app iOS gestite.
   <!-- 1469920 -->    
 
   Per informazioni su come abilitare la modalità di risoluzione dei problemi in Managed Browser in un dispositivo iOS, vedere [How to access to managed app logs using the Managed Browser on iOS](https://docs.microsoft.com/intune/app-configuration-managed-browser#how-to-access-to-managed-app-logs-using-the-managed-browser-on-ios) (Come accedere ai log di app gestite tramite Managed Browser in iOS).
@@ -629,7 +629,7 @@ Tramite Azure Active Directory (Azure AD) è ora possibile limitare l'accesso ai
   È stato migliorato il flusso di lavoro di configurazione dei dispositivi nell'app Portale aziendale per iOS. Il linguaggio è più semplice e sono state inserite schermate dove possibile. Il linguaggio è stato inoltre reso più specifico per ogni azienda, usandone il nome in tutto il testo del programma di installazione. È possibile visualizzare il flusso di lavoro aggiornato nella pagina delle [novità dell'interfaccia utente dell'app](https://docs.microsoft.com/intune/whats-new-app-ui#week-of-november-13-2017).
 
 - **Richiesta di commenti e suggerimenti per l'app Portale aziendale per Android**    
-  L'app Portale aziendale per Android ora richiede commenti e suggerimenti degli utenti finali. I commenti vengono inviati direttamente a Microsoft e offrono agli utenti finali la possibilità di valutare l'app nel Google Play Store pubblico. Non è obbligatorio inviare commenti e suggerimenti e la richiesta può essere facilmente ignorata in modo che gli utenti possano continuare a usare l'app. 
+  L'app Portale aziendale per Android ora richiede commenti e suggerimenti degli utenti finali. I commenti vengono inviati direttamente a Microsoft e offrono agli utenti finali la possibilità di valutare l'app nello store pubblico Google Play. Non è obbligatorio inviare commenti e suggerimenti e la richiesta può essere facilmente ignorata in modo che gli utenti possano continuare a usare l'app. 
   <!--1165249-->    
 
 - **Informazioni per gli utenti finali sul tipo di informazioni sui dispositivi che possono essere visualizzate per Windows 10**    
@@ -697,7 +697,7 @@ Tramite Azure Active Directory (Azure AD) è ora possibile limitare l'accesso ai
   <!--1029830-->   
 
 - **Miglioramenti al flusso di lavoro di configurazione dei dispositivi in Portale aziendale**     
-  È stato migliorato il flusso di lavoro di configurazione dei dispositivi nell'app Portale aziendale per Android. Il linguaggio è più semplice e specifico della società e sono state inserite schermate dove possibile. È possibile visualizzare questi miglioramenti nella pagina delle [novità dell'interfaccia utente dell'app](https://docs.microsoft.com/intune/whats-new-app-ui#week-of-october-2-2017) .
+  È stato migliorato il flusso di lavoro di configurazione dei dispositivi nell'app Portale aziendale per Android. Il linguaggio è più semplice e specifico per l'azienda e sono state inserite schermate dove possibile. È possibile visualizzare questi miglioramenti nella pagina delle [novità dell'interfaccia utente dell'app](https://docs.microsoft.com/intune/whats-new-app-ui#week-of-october-2-2017) .
   <!--1490692-->     
 
 - **Materiale sussidiario migliorato sulla richiesta di accesso ai contatti per i dispositivi Android**     
@@ -804,7 +804,7 @@ A partire da dicembre, gli utenti con dispositivi con macOS 10.11 e versioni pre
 
 MacOS 10.12 e versioni successive sono attualmente supportati in: 
 - MacBook (fine 2009 o più recente)  
-- iMac (fine 2009 o più recente)
+- iMac (fine 2009 o versione successiva)
 - MacBook Air (fine 2010 o più recente)  
 - MacBook Pro (fine 2010 o più recente)  
 - Mac Mini (fine 2010 o più recente)  
@@ -816,7 +816,7 @@ Dopo dicembre gli utenti finali che usano dispositivi diversi da quelli elencati
 
 - Richiedere agli utenti di aggiornare i dispositivi a una versione supportata del sistema operativo prima di dicembre 2018.  
 - Controllare il reporting di Intune nel portale di Azure per vedere quali dispositivi o utenti possono essere interessati. Passare a **Dispositivi** > **Tutti i dispositivi** e filtrare per **sistema operativo**. È possibile aggiungere altre colonne per consentire l'identificazione degli utenti dell'organizzazione che usano dispositivi con macOS 10.11.  
-- Se si usa la gestione ibrida dei dispositivi mobili, nella console di Configuration Manager passare all'area di lavoro **Asset e conformità** e selezionare il nodo **Dispositivi**. Fare clic con il pulsante destro del mouse sulle colonne per aggiungere le colonne **Sistema operativo** e **Versione client**. Quindi ordinare per versione del sistema operativo. Si noti che la gestione ibrida ora è deprecata ed è necessario passare a Intune in Azure non appena possibile. 
+- Se si usa la gestione ibrida dei dispositivi mobili, nella console di Configuration Manager passare all'area di lavoro **Asset e conformità** e selezionare il nodo **Dispositivi**. Fare clic con il pulsante destro del mouse sulle colonne per aggiungere le colonne **Sistema operativo** e **Versione client**. Quindi ordinare per versione del sistema operativo. Si noti che la gestione MDM ibrida è ora deprecata e che è necessario passare a Intune in Azure appena possibile. 
  
 #### <a name="additional-information"></a>Informazioni aggiuntive
 Per altre informazioni, vedere [Registrare il dispositivo macOS in Intune con l'app Portale aziendale](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-macos-cp).
@@ -824,7 +824,7 @@ Per altre informazioni, vedere [Registrare il dispositivo macOS in Intune con l'
 
 ### <a name="plan-for-change-use-intune-on-azure-now-for-your-mdm-management"></a>Modifiche pianificate: usare Intune in Azure per la gestione dei dispositivi mobili 
 <!--1227338-->  
-Oltre un anno fa è stata annunciata l'[anteprima pubblica di Intune in Azure](https://cloudblogs.microsoft.com/enterprisemobility/2016/12/07/public-preview-of-intune-on-azure/) a cui è seguita, sei mesi fa, la [disponibilità generale della nuova esperienza amministrativa](https://cloudblogs.microsoft.com/enterprisemobility/2017/06/08/the-new-intune-and-conditional-access-admin-consoles-are-ga/) per Intune. A partire dal 31 agosto 2018, verrà disattivata la gestione dei dispositivi mobili (MDM) nella console Silverlight classica per i clienti che usano la versione autonoma di Intune. Usare invece [Intune in Azure](https://aka.ms/Intune_on_Azure) per la gestione dei dispositivi mobili. Se si usa ancora la console classica per la gestione dei dispositivi mobili, smettere di usarla e acquisire familiarità con Intune in Azure. Microsoft non prevede alcun impatto di questa modifica sull'utente finale. La gestione dei PC classica con Intune rimane in Silverlight. Per altre informazioni, vedere il [blog del team di supporto di Intune](https://aka.ms/Intune_on_Azure_mdm).
+Oltre un anno fa è stata annunciata l'[anteprima pubblica di Intune in Azure](https://cloudblogs.microsoft.com/enterprisemobility/2016/12/07/public-preview-of-intune-on-azure/) a cui è seguita, sei mesi fa, la [disponibilità generale della nuova esperienza amministrativa](https://cloudblogs.microsoft.com/enterprisemobility/2017/06/08/the-new-intune-and-conditional-access-admin-consoles-are-ga/) per Intune. A partire dal 31 agosto 2018, verrà disattivata la gestione dei dispositivi mobili (MDM) nella console Silverlight classica per i clienti che usano la versione autonoma di Intune. Usare invece [Intune in Azure](https://aka.ms/Intune_on_Azure) per la gestione dei dispositivi mobili. È consigliabile che i clienti che usano ancora la console classica per MDM inizino ad acquisire familiarità con Intune in Azure. Microsoft non prevede alcun impatto di questa modifica sull'utente finale. La gestione dei PC classica con Intune rimane in Silverlight. Per altre informazioni, vedere il [blog del team di supporto di Intune](https://aka.ms/Intune_on_Azure_mdm).
 
 
 ### <a name="plan-for-change-upcoming-macos-and-intune-password-enforcement-change"></a>Modifica prevista: modifica imminente dell'applicazione della password per macOS e Intune
@@ -855,7 +855,7 @@ Se tuttavia si usa uno dei dispositivi inclusi nell'elenco seguente o si vuole r
 - iPad (terza generazione)
 - iPad Mini (prima generazione)
 
-A partire da luglio, nei dispositivi registrati in MDM con iOS 9 e il portale aziendale verrà visualizzato un messaggio di avviso per l'aggiornamento del sistema operativo o del dispositivo. Se si usano criteri di protezione delle app, è anche possibile impostare l'impostazione di accesso "Richiedi sistema operativo iOS minimo (solo avviso)".  
+A partire da luglio, nei dispositivi registrati in MDM con iOS 9 e il Portale aziendale verrà visualizzato un messaggio di avviso per l'aggiornamento del sistema operativo o del dispositivo. Se si usano criteri di protezione delle app, è anche possibile impostare l'impostazione di accesso "Richiedi sistema operativo iOS minimo (solo avviso)".  
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Operazioni di preparazione alla modifica
 

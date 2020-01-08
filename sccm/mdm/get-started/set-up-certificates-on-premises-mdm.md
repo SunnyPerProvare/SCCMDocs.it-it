@@ -1,7 +1,7 @@
 ---
 title: 'Configurare i certificati '
 titleSuffix: Configuration Manager
-description: Configurare i certificati per le comunicazioni attendibili per la gestione dei dispositivi mobili locale in System Center Configuration Manager.
+description: Configurare i certificati per le comunicazioni attendibili per la gestione dei dispositivi mobili locale in Configuration Manager.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e454212b5a70c903471d0bda82611e12b3c8693
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ee9db7fbbe678f6152086c922ea6972824941b99
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70380340"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519539"
 ---
-# <a name="set-up-certificates-for-trusted-communications-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Configurare i certificati per le comunicazioni attendibili per la gestione dei dispositivi mobili locale in System Center Configuration Manager
+# <a name="set-up-certificates-for-trusted-communications-for-on-premises-mobile-device-management-in-configuration-manager"></a>Configurare i certificati per le comunicazioni attendibili per la gestione dei dispositivi mobili locale in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-La gestione dei dispositivi mobili locale di System Center Configuration Manager richiede che i ruoli del sistema del sito punto di registrazione, punto proxy di registrazione, punto di distribuzione e punto di gestione dispositivi siano configurati per le comunicazioni attendibili con i dispositivi gestiti. Qualsiasi server del sistema del sito che ospita uno o più di tali ruoli deve avere un certificato PKI univoco associato al server Web in tale sistema. Per stabilire una connessione attendibile con i dispositivi gestiti, inoltre, è necessario archiviarvi un certificato con la stessa radice del certificato sui server.  
+Configuration Manager nella gestione dei dispositivi mobili\-locale richiede che i ruoli del sistema del sito del punto di registrazione, del punto proxy di registrazione, del punto di distribuzione e del punto di gestione dispositivi siano configurati per le comunicazioni attendibili con i dispositivi gestiti. Qualsiasi server del sistema del sito che ospita uno o più di tali ruoli deve avere un certificato PKI univoco associato al server Web in tale sistema. Per stabilire una connessione attendibile con i dispositivi gestiti, inoltre, è necessario archiviarvi un certificato con la stessa radice del certificato sui server.  
 
  Per i dispositivi aggiunti a un dominio, Servizi certificati Active Directory installa automaticamente il certificato necessario con la radice attendibile su tutti i dispositivi. Per i dispositivi non aggiunti a un dominio, è necessario ottenere un certificato valido con una radice attendibile in altro modo. Se si usa l'autorità di certificazione del sito come radice attendibile (la stessa usata da Active Directory per i dispositivi aggiunti a un dominio), ai server del sistema del sito per il punto di registrazione e per il punto proxy di registrazione deve essere associato un certificato rilasciato dalla stessa autorità di certificazione.  
 

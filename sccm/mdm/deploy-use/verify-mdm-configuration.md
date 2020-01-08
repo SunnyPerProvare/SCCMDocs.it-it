@@ -1,7 +1,7 @@
 ---
 title: Verificare la configurazione MDM
 titleSuffix: Configuration Manager
-description: Verificare la configurazione MDM tramite System Center Configuration Manager.
+description: Verificare la configurazione MDM usando Configuration Manager.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 846c6a45469a3d3fddf3515b3808f2991679d5bf
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: 6f33dafbdcb7b1f345403c72ecd54023df08a9f6
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75197623"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519658"
 ---
-# <a name="verify-mdm-configuration-with-system-center-configuration-manager"></a>Verificare la configurazione MDM con System Center Configuration Manager
+# <a name="verify-mdm-configuration-with-configuration-manager"></a>Verificare la configurazione MDM con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile verificare alcuni componenti di gestione dei dispositivi controllando i file di log seguenti:
 
@@ -28,7 +28,7 @@ ms.locfileid: "75197623"
 
 -   Controllare Sitecomp.log per verificare che il punto di connessione del servizio sia stato creato correttamente.
 
-Per altre informazioni su questi file di log specifici e su come visualizzarli, vedere [File di log in System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md). 
+Per ulteriori informazioni su questi file di log specifici e su come visualizzarli, è possibile esaminare [i file di log](../../core/plan-design/hierarchy/log-files.md) . 
 
 > [!div class="button"]
 > [< Passaggio precedente](set-up-additional-management.md)

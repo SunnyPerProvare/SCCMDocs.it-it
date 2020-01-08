@@ -11,23 +11,23 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f6c25817973dcfacefe8aae31f0db02dcbd5807
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1fa6b9772b11533ce17c80f89814aa5a3780ef73
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71401525"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519386"
 ---
 # <a name="hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>Soluzione MDM ibrida con Configuration Manager e Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 > [!WARNING]
-> L'offerta di servizio MDM ibrido è stata ritirata a partire dal 1 ° settembre 2019. Tutti i dispositivi MDM ibridi rimanenti non riceveranno i criteri, le app o gli aggiornamenti della sicurezza.
+> L'offerta di servizio MDM ibrido è stata ritirata a partire dal 1° settembre 2019. Tutti i dispositivi MDM ibridi rimanenti non riceveranno i criteri, le app o gli aggiornamenti della sicurezza.
 
 ## <a name="remove-hybrid-mdm"></a>Rimuovi MDM ibrida
 
-Se il sito Configuration Manager dispone di una sottoscrizione Microsoft Intune, è necessario rimuoverlo.
+Se il sito di Configuration Manager dispone di una sottoscrizione Microsoft Intune, è necessario rimuoverlo.
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**. Espandere **Servizi cloud** e selezionare il nodo **Sottoscrizione a Microsoft Intune**. Eliminare la sottoscrizione di Intune esistente.
 

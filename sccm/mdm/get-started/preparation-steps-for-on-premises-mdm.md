@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fad5ce96b84b5a6edfafdead64cff0223009ebf8
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: dc67512ac6ec0dc9712402189ac6d02f3552eea3
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62288644"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519556"
 ---
 # <a name="preparation-steps-for-on-premises-mdm-in-configuration-manager"></a>Procedura di preparazione per MDM locale in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Per gestire i dispositivi con Configuration Manager gestione di dispositivi mobili (MDM) locale, configurare prima di tutto l'infrastruttura necessaria. I ruoli del sistema del sito richiesti devono comunicare attraverso un canale attendibile con i dispositivi mobili. Questi ruoli includono il punto proxy di registrazione, il punto di registrazione, il punto di gestione periferiche e il punto di distribuzione.
 

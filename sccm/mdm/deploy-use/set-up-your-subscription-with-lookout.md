@@ -11,22 +11,22 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55279eacbe0cddd62a8776b1ff8321b1168534e9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 56b1ed9f22aeab073bb936ae525c3dec3c422837
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70380402"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519777"
 ---
 # <a name="set-up-your-subscription-for-lookout-mobile-threat-defense"></a>Configurare la sottoscrizione per Lookout Mobile Threat Defense
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Per configurare la sottoscrizione per Lookout Mobile Threat Defense, seguire questa procedura:
 
 | #        |Passaggio  |
 | ------------- |-------------|
-| 1 | [Ottenere le informazioni su Azure AD](#collect-azure-ad-information) |
+| 1 | [Raccogliere le informazioni di Azure AD](#collect-azure-ad-information) |
 | 2 | [Configurare la sottoscrizione](#configure-your-subscription) |
 | 3 | [Configurare i gruppi di registrazione](#configure-enrollment-groups) |
 | 4 | [Configurare la sincronizzazione dello stato](#configure-state-sync) |
@@ -43,7 +43,7 @@ Per configurare la sottoscrizione per Lookout Mobile Threat Defense, seguire que
 
 
 
-## <a name="collect-azure-ad-information"></a>Ottenere le informazioni su Azure AD
+## <a name="collect-azure-ad-information"></a>Raccogliere le informazioni di Azure AD
 Il tenant di Lookout Mobility Endpoint Security verrà associato alla sottoscrizione di Azure AD per l'integrazione di Lookout con Intune. Per abilitare la sottoscrizione al servizio Lookout Mobile Threat Defense, il supporto di Lookout (enterprisesupport@lookout.com) richiede le informazioni seguenti:
 
 - **ID tenant di Azure AD**
@@ -54,9 +54,9 @@ Eseguire i passaggi seguenti per raccogliere le informazioni richieste dal team 
 
 1. Accedere al [portale di Azure](https://portal.azure.com) e selezionare la sottoscrizione. 
 
-2. Quando si sceglie il nome della sottoscrizione, l'URL risultante include l'ID sottoscrizione. In caso di problemi a trovare l'ID sottoscrizione, vedere l'[articolo del supporto tecnico Microsoft](https://support.office.com/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) per suggerimenti su come recuperare l'ID sottoscrizione.
+2. Quando si sceglie il nome della sottoscrizione, l'URL risultante include l'ID sottoscrizione. Se risulta problematico trovare l'ID sottoscrizione, questo [articolo del supporto tecnico Microsoft](https://support.office.com/article/Find-your-Office-365-tenant-ID-6891b561-a52d-4ade-9f39-b492285e2c9b) include suggerimenti per trovare l'ID sottoscrizione.
 
-3. Individuare l'ID gruppo di Azure AD.  
+3. Trovare l'ID gruppo di Azure AD.  
      > [!NOTE]   
      > L'**ID oggetto del gruppo** è indicato nella pagina **Proprietà** del gruppo nel pannello di Azure AD del portale di Azure.  
 

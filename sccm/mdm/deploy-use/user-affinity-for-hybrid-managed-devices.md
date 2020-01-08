@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 54ca57956db37a26e2edad27c6cf6b92aecd1645
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d673a77c8d0e0abb9cf273f0333acbe31aa87ddd
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62227846"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519682"
 ---
 # <a name="user-affinity-for-hybrid-managed-devices-in-configuration-manager"></a>Affinità utente per i dispositivi gestiti ibridi in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Quando si configurano profili per i dispositivi di proprietà dell'azienda, l'amministratore può specificare se i dispositivi gestiti possono avere un'*affinità utente* che identifica un utente specifico con il dispositivo.  
 

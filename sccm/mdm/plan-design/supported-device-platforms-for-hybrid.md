@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ad56362a829f90d17688bfa69ad2a8883fd4fe2
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b572f293fca5250155a5fa5826b75c235890bc45
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62287302"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519471"
 ---
 # <a name="supported-device-platforms-for-hybrid-mdm"></a>Piattaforme per dispositivi supportate per la gestione ibrida dei dispositivi mobili
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 La gestione dei dispositivi mobili con Configuration Manager tramite Microsoft Intune supporta le piattaforme seguenti di dispositivi mobili:
 

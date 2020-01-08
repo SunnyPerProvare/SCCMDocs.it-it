@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aff4fcc67325645387aea1e57354321769a515ca
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8ba45f2f0e031fca5fa41ce735abae8d107c9d62
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62217016"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519512"
 ---
 # <a name="set-up-a-microsoft-intune-subscription-for-on-premises-mdm-in-configuration-manager"></a>Configurare una sottoscrizione di Microsoft Intune per MDM locale in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager gestione di dispositivi mobili (MDM) locale richiede una sottoscrizione Microsoft Intune per tenere traccia delle licenze. Il servizio Intune non viene usato per gestire i dispositivi o per archiviare le informazioni di gestione. Per la gestione di dispositivi mobili locale, tutta la gestione dei dispositivi viene gestita dall'infrastruttura Configuration Manager.  
 

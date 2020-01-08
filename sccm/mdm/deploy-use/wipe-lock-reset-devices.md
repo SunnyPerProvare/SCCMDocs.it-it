@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 358a69af0290cbe7359e07b165ed7f1e805e4db5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 84e4eceef6dbd6dd06026a290c3a54efb599e6e2
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70380345"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519590"
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-configuration-manager"></a>Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager include funzionalità per la cancellazione selettiva, la cancellazione completa, il blocco remoto e la reimpostazione del passcode. I dispositivi mobili possono memorizzare i dati aziendali riservati e consentire l'accesso a numerose risorse aziendali. Per aiutare a proteggere i dispositivi è possibile eseguire:  
 
@@ -124,7 +124,7 @@ Le seguenti impostazioni vengono inoltre rimosse dai dispositivi Windows 10 Mobi
 - **Consenti dispositivo foto/video**
 - **Richiedi crittografia sui dispositivi mobili**  
 - **Consenti archivi rimovibili**  
-- **Consenti browser Web**  
+- **Consenti Web browser**  
 - **Consenti archivio applicazioni**  
 - **Consenti acquisizione schermo**  
 - **Consenti georilevazione**  
@@ -152,7 +152,7 @@ Le seguenti impostazioni vengono inoltre rimosse dai dispositivi Windows 10 Mobi
 
 Windows 8.1 e Windows RT 8.1 supportano la cancellazione selettiva dei contenuti crittografati con EFS. Quanto descritto di seguito si applica alla cancellazione selettiva di contenuti abilitati EFS:  
 
-- Solo le app e i dati protetti da EFS attraverso lo stesso dominio Internet come account Intune vengono cancellati in modo selettivo. Per altre informazioni, vedere [Cancellazione selettiva di Windows per la gestione di dati del dispositivo](https://technet.microsoft.com/library/dn486874.aspx).  
+- Solo le app e i dati protetti da EFS attraverso lo stesso dominio Internet come account Intune vengono cancellati in modo selettivo. Per altre informazioni, vedere l'argomento relativo alla [cancellazione selettiva di Windows per la gestione dei dati dei dispositivi](https://technet.microsoft.com/library/dn486874.aspx).  
 
 - In caso di modifiche al dominio associato con EFS, potranno essere necessarie fino a 48 ore prima che le app e i dati che usano il nuovo dominio siano cancellati in modo selettivo.  
 
@@ -164,7 +164,7 @@ I dati e le app attualmente supportati dalla cancellazione selettiva EFS sono:
 
 - Cartelle di lavoro.
 
-- File e cartelle crittografate con EFS. Per altre informazioni, vedere [Procedure ottimali per la crittografia del file system](https://support.microsoft.com/kb/223316).  
+- File e cartelle crittografate con EFS. Per altre informazioni, vedere le [procedure consigliate per la crittografia del file system](https://support.microsoft.com/kb/223316).  
 
 
 ### <a name="best-practices-for-selective-wipe"></a>Procedure consigliate per la cancellazione selettiva  
@@ -186,14 +186,14 @@ Se un utente dimentica il passcode, è possibile aiutarlo rimuovendo il passcode
 | Piattaforma                              | Reimpostazione del passcode                                                                               |
 |---------------------------------------|----------------------------------------------------------------------------------------------|
 | iOS                                   | Funzionalità supportata per cancellare il passcode da un dispositivo. Non implica la creazione di un nuovo passcode temporaneo. |
-| macOS                                 | Non supportata.                                                                               |
-| Android                               | Supportata nelle versioni precedenti ad Android 7.0. Crea un passcode temporaneo.                |
-| Android for Work                      | Non supportata.                                                                               |
-| PC con Windows 10                        | Non supportata.                                                                               |
+| macOS                                 | Not supported.                                                                               |
+| Android                               | Supportato nelle versioni precedenti alla 7.0. Crea un passcode temporaneo.                |
+| Android for Work                      | Not supported.                                                                               |
+| PC con Windows 10                        | Not supported.                                                                               |
 | Windows 10 Mobile                     | Funzionalità supportata; esclude i dispositivo aggiunti ad Azure AD.  |
 | Windows Phone 8 e Windows Phone 8.1 | Supportata.                                                                                   |
-| Windows RT 8.1                        | Non supportata.                                                                               |
-| PC con Windows 8.1                       | Non supportata.                                                                               |
+| Windows RT 8.1                        | Not supported.                                                                               |
+| PC con Windows 8.1                       | Not supported.                                                                               |
 
 > [!Note]    
 > È necessario eseguire l'operazione di reimpostazione del passcode dal sito di livello superiore nell'ambiente in uso. Ad esempio, se si usa un sito di amministrazione centrale è possibile eseguire l'azione solo in tale sito. Se si usa un sito primario autonomo è possibile eseguire l'azione solo in tale sito.

@@ -1,7 +1,7 @@
 ---
 title: Termini e condizioni
 titleSuffix: Configuration Manager
-description: Distribuire le condizioni a gruppi di utenti in System Center Configuration Manager.
+description: Distribuire i termini e le condizioni ai gruppi di utenti in Configuration Manager.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,20 +11,20 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a836ec8c15e89a7959db9f10d1329c9182f3998c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 861bc930a5be0d1d84b9e72cb19d1156b02f55e0
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62227601"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519709"
 ---
-# <a name="add-terms-and-conditions-with-system-center-configuration-manager"></a>Aggiungere termini e condizioni con System Center Configuration Manager
+# <a name="add-terms-and-conditions-with-configuration-manager"></a>Aggiungere termini e condizioni con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-È possibile distribuire le condizioni di System Center Configuration Manager a gruppi di utenti per spiegare in che modo la registrazione dei dispositivi, l'accesso alle risorse di lavoro e l'uso del Portale aziendale influiscono su dispositivi e utenti. Gli utenti dovranno quindi accettare i termini e le condizioni prima di poter usare il portale aziendale per registrare le app e accedere al lavoro.  
+È possibile distribuire i termini e le condizioni Configuration Manager ai gruppi di utenti per spiegare in che modo la registrazione dei dispositivi, l'accesso alle risorse di lavoro e l'uso di Portale aziendale influiscono su dispositivi e utenti. Gli utenti dovranno quindi accettare i termini e le condizioni prima di poter usare il portale aziendale per registrare le app e accedere al lavoro.  
 
- ## <a name="working-with-terms-and-conditions-policies-in-system-center-configuration-manager"></a>Uso dei criteri di termini e condizioni in System Center Configuration Manager  
+ ## <a name="working-with-terms-and-conditions-policies-in-configuration-manager"></a>Uso dei criteri di termini e condizioni in Configuration Manager  
  È possibile creare e distribuire più set di criteri di termini e condizioni. È anche possibile creare versioni degli stessi termini e condizioni in lingue diverse e distribuirle ai gruppi appropriati.  
 
 ## <a name="to-create-a-terms-and-conditions"></a>Per creare termini e condizioni  
@@ -47,7 +47,7 @@ ms.locfileid: "62227601"
 
    - **Testo per le condizioni** - Termini e condizioni visualizzati agli utenti nel portale aziendale  
 
-   - **Testo in cui vengono spiegate le implicazioni dell'accettazione da parte dell'utente** : etichetta visualizzata agli utenti relativa all'accettazione. **Esempio**: "Accetto le condizioni".  
+   - **Testo in cui vengono spiegate le implicazioni dell'accettazione da parte dell'utente**: etichetta visualizzata dagli utenti relativa all'accettazione. **Esempio**: "Accetto le condizioni".  
 
      Fare clic su **Avanti**.  
 
@@ -76,7 +76,7 @@ ms.locfileid: "62227601"
 
     -   **Conforme**: gli utenti hanno accettato la versione più recente di termini e condizioni  
 
-    -   **Erroree**  
+    -   **Errore**  
 
     -   **Non conforme**: gli utenti hanno accettato una versione precedente di termini e condizioni  
 
@@ -118,4 +118,4 @@ ms.locfileid: "62227601"
      È consigliabile incrementare il numero di versione e richiedere l'accettazione ogni volta che si apportano modifiche significative a termini e condizioni. Non modificare il numero di versione corrente se, ad esempio, si correggono errori di digitazione o si modifica la formattazione.
 
 > [!div class="button"]
-> [< Passaggio precedente](configure-intune-subscription.md)  [Passaggio successivo >](create-service-connection-point.md)
+> [Passaggio successivo](create-service-connection-point.md) [< passaggio precedente](configure-intune-subscription.md)>

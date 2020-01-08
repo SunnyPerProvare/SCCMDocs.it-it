@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a03ee59b5e3e8018e9affb38941a37b259bd34b7
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d9ac277351ae28be8ecf32aaef4df7861cd9981f
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62287101"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519489"
 ---
 # <a name="plan-for-hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>Pianificare la gestione di dispositivi mobili ibrida con Configuration Manager e Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 > [!Important]  

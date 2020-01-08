@@ -11,21 +11,21 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 007674dadd04839c8bba608006166c750b79ad94
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b0f640c12bcf9fb1e1aeb561f09b4098e19e3e8b
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67675838"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519726"
 ---
 # <a name="remotely-synchronize-policy-on-intune-enrolled-devices-from-the-configuration-manager-console"></a>Sincronizzare in remoto i criteri in dispositivi registrati in Intune dalla console di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 È possibile richiedere una sincronizzazione dei criteri per un dispositivo registrato in Intune dalla console di Configuration Manager, senza dover richiedere la sincronizzazione dall'app Portale aziendale sul dispositivo stesso. 
 
-Per eseguire questa operazione:
+A tale scopo, eseguire questa procedura:
 
 1. Selezionare un dispositivo in **Asset e conformità** > **Panoramica** > **Dispositivi**.
 2. Nel menu **Azioni remote dispositivo** selezionare **Send Sync Request** (Invia richiesta di sincronizzazione).

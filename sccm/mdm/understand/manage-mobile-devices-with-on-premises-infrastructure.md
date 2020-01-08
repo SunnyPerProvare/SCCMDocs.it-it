@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 49e07a7ebe6ec53d61ea9e2ee3bc941dd8561094
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c50454b10b9470e0477392c923ff2fbd2cb8117f
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62286986"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519420"
 ---
 # <a name="on-premises-mdm-in-configuration-manager"></a>MDM locale in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager gestione di dispositivi mobili (MDM) locale è una soluzione di gestione dei dispositivi che si basa sulle funzionalità di gestione predefinite del sistema operativo del dispositivo. Questa funzionalità è basata sullo standard Open Mobile Alliance (OMA) Device Management (DM). Usa l'infrastruttura di Configuration Manager dell'organizzazione per gestire e gestire i dispositivi. MDM locale richiede Microsoft Intune per configurare la funzionalità di gestione, ma è necessaria solo per la sottoscrizione. Intune viene usato a volte per aiutare a notificare ai dispositivi di archiviare le modifiche dei criteri, ma non viene usato per gestire i dispositivi o archiviare i dati su di essi.  
 

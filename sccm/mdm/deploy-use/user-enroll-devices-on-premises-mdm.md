@@ -1,7 +1,7 @@
 ---
 title: 'Modalità di registrazione dei dispositivi nella gestione di dispositivi mobili locale '
 titleSuffix: Configuration Manager
-description: Verificare il modo in cui gli utenti registrano i dispositivi con la gestione dei dispositivi mobili locale in System Center Configuration Manager.
+description: Informazioni su come gli utenti registrano i dispositivi con la gestione dei dispositivi mobili locale in Configuration Manager.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,21 +11,21 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dcf12937009a91bb8cc5a8c1c191861fec06ac13
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7d0d6b7b90db85a919959cd264b5261c15a6503a
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62227455"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519641"
 ---
-# <a name="how-users-enroll-devices-with-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Modalità di registrazione dei dispositivi con la gestione di dispositivi mobili locale da parte degli utenti in System Center Configuration Manager
+# <a name="how-users-enroll-devices-with-on-premises-mobile-device-management-in-configuration-manager"></a>Come gli utenti registrano i dispositivi con la gestione dei dispositivi mobili locale in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Con Gestione dei dispositivi mobili locale di System Center Configuration Manager gli utenti possono registrare i dispositivi se hanno ottenuto l'autorizzazione di registrazione (con le impostazioni client aggiornate) e se i dispositivi hanno il certificato radice necessario per stabilire comunicazioni attendibili con i server che ospitano i ruoli del sistema del sito richiesti. Per altre informazioni su come configurare la registrazione, vedere [Impostare la registrazione dei dispositivi per la Gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md).  
+Con Configuration Manager gestione dei dispositivi mobili locale, gli utenti possono registrare i dispositivi se hanno ottenuto l'autorizzazione di registrazione (con le impostazioni client aggiornate) e i relativi dispositivi hanno il certificato radice richiesto installato per l'attendibilità comunicazioni con i server che ospitano i ruoli del sistema del sito richiesti. Per altre informazioni su come configurare la registrazione, vedere [configurare la registrazione dei dispositivi per la gestione dei dispositivi mobili locale](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md).  
 
 > [!NOTE]  
->  Il ramo corrente di Configuration Manager supporta la registrazione in Gestione dispositivi mobili locali per i dispositivi che eseguono i sistemi operativi seguenti:  
+>  Il Current Branch di Configuration Manager supporta la registrazione nella gestione dispositivi mobili locale per i dispositivi che eseguono i sistemi operativi seguenti:  
 >   
 > -  Windows 10 Enterprise  
 > -   Windows 10 Pro  
@@ -66,7 +66,7 @@ Le attività seguenti illustrano come registrare e verificare la registrazione d
 
 4.  Immettere l'indirizzo di posta elettronica dell'ufficio e il nome FQDN del server che ospita il ruolo del sistema del sito del punto proxy di registrazione. Fare clic su **Connetti**.  
 
-5.  Nella schermata successiva immettere la password e l'indirizzo di posta elettronica dell'ufficio e quindi fare clic su **Accedi**. Dopo un breve periodo di tempo il dispositivo è registrato. Fare clic su **Fatto**.  
+5.  Nella schermata successiva immettere la password e l'indirizzo di posta elettronica dell'ufficio e quindi fare clic su **Accedi**. Dopo un breve periodo di tempo il dispositivo è registrato. Fare clic su **Fine**.  
 
 ##  <a name="bkmk_verify"></a> Verificare la registrazione del dispositivo  
  È possibile verificare se i dispositivi sono stati registrati correttamente nella console di Configuration Manager.  

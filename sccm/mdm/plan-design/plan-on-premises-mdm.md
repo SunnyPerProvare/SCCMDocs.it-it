@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb9349a8c3f107f2da139148e4476537fe6aa7ed
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 165d3b5dfb2911ad7ecc3516ebd1dd36a995818f
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62287161"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519437"
 ---
 # <a name="plan-for-on-premises-mdm-in-configuration-manager"></a>Pianificare la gestione dei dispositivi mobili locale in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Gestione di dispositivi mobili (MDM) locale consente di gestire i dispositivi mobili usando le funzionalità di gestione integrate nel sistema operativo del dispositivo. La funzionalità di gestione si basa sullo standard Open Mobile Alliance (OMA) Device Management (DM), usato da molte piattaforme per dispositivi per consentire la gestione dei dispositivi. Questi dispositivi sono detti *dispositivi moderni* nella documentazione e nella console di Configuration Manager. Questo termine li distingue da altri dispositivi che richiedono la gestione Configuration Manager client.  
 
@@ -30,7 +30,7 @@ Considerare i requisiti seguenti prima di preparare l'infrastruttura di Configur
 
 ## <a name="bkmk_devices"></a> Dispositivi supportati  
 
-Il ramo corrente di Configuration Manager supporta la registrazione in Gestione dispositivi mobili locali per i dispositivi che eseguono i sistemi operativi seguenti:  
+Il Current Branch di Configuration Manager supporta la registrazione nella gestione dispositivi mobili locale per i dispositivi che eseguono i sistemi operativi seguenti:  
   
 - Windows 10 Enterprise  
 - Windows 10 Pro  

@@ -1,7 +1,7 @@
 ---
 title: Impostare soluzioni di gestione aggiuntive
 titleSuffix: Configuration Manager
-description: Impostare soluzioni di gestione aggiuntive tramite System Center Configuration Manager.
+description: Configurare la gestione aggiuntiva tramite Configuration Manager.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d866ce901640b6e7fafb13a6c24318f26c5d5feb
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d6b361742cb8b7f4dbf2da2d4b582e645bdd7545
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62227799"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519879"
 ---
-# <a name="set-up-additional-management-with-system-center-configuration-manager"></a>Impostare soluzioni di gestione aggiuntive con System Center Configuration Manager
+# <a name="set-up-additional-management-with-configuration-manager"></a>Configurare la gestione aggiuntiva con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 (Facoltativo) È possibile impostare la gestione aggiuntive prima che i dispositivi vengano registrati. Queste soluzioni di gestione possono essere create e distribuite una volta registrati i dispositivi, anche se molte organizzazioni preferiscono distribuirle nel momento in cui i dispositivi iniziano a essere gestiti.
 
@@ -47,4 +47,4 @@ ms.locfileid: "62227799"
 In precedenza, per impostare Multi-Factor Authentication per le registrazioni di Intune si accedeva alla console di Intune o alla console di Configuration Manager. Ora si accede al [portale di Microsoft Azure](https://manage.windowsazure.com) usando le credenziali di Intune e configurando le impostazioni di Multi-Factor Authentication tramite Azure AD. Per altre informazioni, vedere [Multi-Factor Authentication per Microsoft Intune](https://aka.ms/mfa_ad).
 
 > [!div class="button"]
-> [< Passaggio precedente](enable-platform-enrollment.md)  [Passaggio successivo >](verify-mdm-configuration.md)
+> [Passaggio successivo](verify-mdm-configuration.md) [< passaggio precedente](enable-platform-enrollment.md)>

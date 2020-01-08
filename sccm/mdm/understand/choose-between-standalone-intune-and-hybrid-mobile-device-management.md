@@ -12,16 +12,16 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9dfbec94ac584442f65826d08c6b7abefc16d375
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 53b80a798e9c1d7d68977a2f545516f02a179a89
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62286718"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519403"
 ---
 # <a name="choose-between-microsoft-intune-standalone-and-hybrid-mdm-with-configuration-manager"></a>Scegliere tra la versione autonoma di Microsoft Intune e la gestione di dispositivi mobili ibrida con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 A partire dal 14 agosto 2018, gestione di dispositivi mobili (MDM) ibrida è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Intune in Azure è la soluzione MDM consigliata da Microsoft.  

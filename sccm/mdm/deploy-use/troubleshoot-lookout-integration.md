@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18edb5a18baa7c009638580d9b338d297fb42e76
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 055b5b0499eddc04ceb73363b288a0096418aa35
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70380375"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519624"
 ---
 # <a name="troubleshoot-lookout-integration-with-intune"></a>Risolvere i problemi di integrazione di Lookout con Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-## <a name="troubleshoot-login-errors"></a>Risolvere i problemi di accesso
+## <a name="troubleshoot-login-errors"></a>Risolvere i problemi relativi all'accesso
 ### <a name="403-errors"></a>Errori 403
 Quando si accede alla [console di Lookout MTP](https://aad.lookout.com) può essere visualizzato un errore 403: **You are not authorized to access the service** (Non si dispone dell'autorizzazione per accedere al servizio). Questa situazione può verificarsi quando il nome utente specificato non è membro del gruppo Azure Active Directory (Azure AD) configurato per l'accesso a Lookout MTP.
 
@@ -34,7 +34,7 @@ Lookout MTP consente l'accesso solo agli utenti di un gruppo di Azure AD configu
 * Accedere alla [console di MTP](https://aad.lookout.com) e passare al modulo **Support** (Supporto).
 * Passare a: https://enterprise.support.lookout.com/hc/requests e inoltrare una richiesta di supporto.
 
-### <a name="unable-to-sign-in"></a>L'accesso non è riuscito
+### <a name="unable-to-sign-in"></a>Impossibile accedere
 Il seguente errore può apparire quando l'utente amministratore globale di Azure AD non ha accettato la configurazione iniziale di Lookup.
 
 ![Schermata della pagina di accesso a Lookout con l'errore di accesso](media/lookout-consent-not-accepted-error.png)
@@ -52,7 +52,7 @@ Questo problema può verificarsi in uno dei seguenti scenari:
 
 ### <a name="device-continues-to-be-reported-as-pending"></a>Il dispositivo continua a essere segnalato come **Pending** (In sospeso)
 
-Se un dispositivo risulta **Pending**  (In sospeso), l'utente finale non ha aperto l'app Lookout for Work e non ha toccato il pulsante **Activate** (Attiva). Per informazioni dettagliate sull'attivazione di dispositivi con l'app Lookout for Work, leggere l'argomento seguente:
+Se un dispositivo risulta **Pending**  (In sospeso), l'utente finale non ha aperto l'app Lookout for Work e non ha toccato il pulsante **Activate** (Attiva). Per altri dettagli sull'attivazione del dispositivo con l'app Lookout for Work, leggere l'argomento seguente:
 
 [Richiesta di installare Lookout for Work](https://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
 
@@ -68,17 +68,17 @@ Quando un dispositivo è in questo stato, Lookout continua a notificare all'uten
 Se lo stato il dispositivo è disconnesso, Lookout MTP non ha ricevuto comunicazioni dal dispositivo per un periodo superiore all'intervallo preconfigurato (il valore predefinito è 30 giorni, con un minimo di 7 giorni). Ciò significa che l'app Portale aziendale o l'app Lookout for Work non è installata nel dispositivo o è stata disinstallata. La reinstallazione dell'app dovrebbe risolvere il problema. Quando l'utente apre Lookout for Work e attiva l'app, il dispositivo ripete la sincronizzazione con Lookout MTP e Intune.
 
 ### <a name="forcing-a-resync-on-the-device"></a>Forzare la risincronizzazione del dispositivo
-Dal modulo **Devices** (Dispositivi) della console di Lookout MTP, l'amministratore può selezionare il dispositivo e scegliere di eliminarlo.   Quando il proprietario del dispositivo torna ad aprire l'app Lookout for Work e tocca **Activate** (Attiva), il dispositivo esegue una risincronizzazione completa.
+Dal modulo **Devices** (Dispositivi) della console di Lookout MTP, l'amministratore può selezionare il dispositivo e scegliere di eliminarlo.   Quando il proprietario del dispositivo apre di nuovo l'app Lookout for Work e tocca **Activate** (Attiva), verrà eseguita una risincronizzazione completa dello stato del dispositivo.
 
 ### <a name="the-owner-of-the-device-is-no-longer-using-this-device"></a>Il proprietario del dispositivo non usa più il dispositivo
 È necessario cancellare i dati del dispositivo e richiedere al nuovo utente di eseguire la registrazione come descritto in [questo argomento](https://docs.microsoft.com/sccm/mdm/deploy-use/wipe-lock-reset-devices#full-wipe).
 
 
-È anche possibile scegliere il modulo **Devices** (Dispositivi) della console di Lookout MTP e scegliere **Delete** (Elimina).
+È anche possibile passare al modulo **Devices** (Dispositivi) della console di Lookout MTP e scegliere **Elimina**.
 
 Se il nuovo utente è incluso in uno dei gruppi di registrazione specificati nella console di Lookout MTP, il dispositivo viene visualizzato una volta che Azure AD lo associa al nuovo utente.
 
-## <a name="compliance-remediation-workflows"></a>Flussi di lavoro di correzione basata sulla conformità
+## <a name="compliance-remediation-workflows"></a>Flussi di lavoro per risolvere i problemi di conformità
 [Richiesta di installare Lookout for Work]( https://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
 
 [È necessario risolvere una minaccia trovata da Lookout for Work](https://docs.microsoft.com/intune/enduser/you-need-to-resolve-a-threat-found-by-lookout-for-work-android)

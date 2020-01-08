@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68b3e63099fb4043af74cb2be5d049d4a5cefbdc
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: 6e177eb752becbe020e41b914694e86e3926ca32
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75197572"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519685"
 ---
 # <a name="windows-hello-for-business-settings-in-configuration-manager-hybrid"></a>Impostazioni di Windows Hello for business in Configuration Manager (ibrido)
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager consente l'integrazione con Windows Hello for Business (in precedenza Microsoft Passport per Windows), che rappresenta un metodo di accesso alternativo per i dispositivi Windows 10. Hello for Business usa Active Directory o un account di Azure Active Directory per sostituire una password, una smart card o una smart card virtuale. Hello for Business consente di eseguire l'accesso usando un **movimento dell'utente** anziché una password. Il movimento dell'utente può essere un semplice PIN, un'autenticazione biometrica o un dispositivo esterno come un lettore di impronte digitali.  
 
@@ -44,23 +44,23 @@ Per informazioni generali sulla configurazione delle impostazioni di Windows Hel
 
 1. Nella console di Configuration Manager fare clic su **Amministrazione** > **Servizi cloud** > **Sottoscrizioni a Microsoft Intune**.  
 
-2. Nell'elenco selezionare la sottoscrizione a Microsoft Intune e quindi nel gruppo **Sottoscrizione** della scheda **Home** fare clic su **Configura piattaforme** > **Windows (MDM)**.  
+2. Nell'elenco selezionare la sottoscrizione a Microsoft Intune e quindi nel gruppo **Sottoscrizione** della scheda **Home** fare clic su **Configura piattaforme** > **Windows (MDM)** .  
 
 3. Nella scheda **Windows Hello for Business** della finestra di dialogo **Sottoscrizione a Microsoft Intune - Proprietà** scegliere tra i valori seguenti, che avranno effetto sui tutti i dispositivi Windows 10 e Windows 10 Mobile registrati:  
 
    - **Disabilita Windows Hello for Business per i dispositivi registrati** o **Abilita Windows Hello for Business per i dispositivi registrati** - Abilita o disabilita l'uso di Windows Hello for Business in tutti i dispositivi Windows 10 e Windows 10 Mobile registrati.  
 
-   - **Usa un modulo TPM (Trusted Platform Module)** - Un chip TPM (Trusted Platform Module) offre un livello aggiuntivo di sicurezza dei dati. Scegliere uno dei valori seguenti:  
+   - **Usa un modulo TPM (Trusted Platform Module)** : un chip TPM (Trusted Platform Module) offre un livello aggiuntivo di sicurezza dei dati. Scegliere uno dei valori seguenti:  
 
      -   **Obbligatorio** (impostazione predefinita) - Solo i dispositivi con un modulo TPM accessibile possono eseguire il provisioning di Windows Hello for Business.  
 
-     -   **Preferito** - I dispositivi tentano innanzitutto di usare un modulo TPM. Se questo non è disponibile, possono usare la crittografia software.  
+     -   **Preferito**: i dispositivi provano a usare prima un modulo TPM. Se questo non è disponibile, possono usare la crittografia software.  
 
    - **Richiedi lunghezza minima del PIN** - Specificare il numero minimo di caratteri necessari per il PIN di Windows Hello for Business. È necessario usare almeno 4 caratteri (il valore predefinito è 6 caratteri).  
 
    - **Richiedi lunghezza massima del PIN** - Specificare il numero massimo di caratteri consentiti per il PIN di Windows Hello for Business. È possibile usare fino a 127 caratteri.  
 
-   - **Richiedi lettere minuscole nel PIN** - Specifica se è necessario usare lettere minuscole nel PIN di Windows Hello for Business. È possibile scegliere tra:  
+   - **Richiedi lettere minuscole nel PIN** - Specifica se è necessario usare lettere minuscole nel PIN di Windows Hello for Business. Scegliere tra:  
 
      -   **Consentito** - Gli utenti possono usare caratteri minuscoli nel PIN.  
 
@@ -68,7 +68,7 @@ Per informazioni generali sulla configurazione delle impostazioni di Windows Hel
 
      -   **Non consentito** (impostazione predefinita) - Gli utenti non possono usare caratteri minuscoli nel PIN.  
 
-   - **Richiedi lettere maiuscole nel PIN** - Specifica se è necessario usare lettere maiuscole nel PIN di Windows Hello for Business. È possibile scegliere tra:  
+   - **Richiedi lettere maiuscole nel PIN** - Specifica se è necessario usare lettere maiuscole nel PIN di Windows Hello for Business. Scegliere tra:  
 
      -   **Consentito** - Gli utenti possono usare caratteri maiuscoli nel PIN.  
 
@@ -76,7 +76,7 @@ Per informazioni generali sulla configurazione delle impostazioni di Windows Hel
 
      -   **Non consentito** (impostazione predefinita) - Gli utenti non possono usare caratteri maiuscoli nel PIN.  
 
-   - **Richiedi caratteri speciali** - Specifica l'uso di caratteri speciali nel PIN. È possibile scegliere tra:  
+   - **Richiedi caratteri speciali** - Specifica l'uso di caratteri speciali nel PIN. Scegliere tra:  
 
      - **Consentito** - Gli utenti possono usare caratteri speciali nel PIN.  
 
@@ -84,7 +84,7 @@ Per informazioni generali sulla configurazione delle impostazioni di Windows Hel
 
      - **Non consentito** (impostazione predefinita) - Gli utenti non possono usare caratteri speciali nel PIN (questo è anche il comportamento se l'impostazione non è configurata).  
 
-       I caratteri speciali includono: **! " # $ % & ' ( ) \* + , - . / : ; < = > ? @ [ \ ] ^ _ ` { &#124; } ~**.  
+       I caratteri speciali includono: **! " # $ % & ' ( ) \* + , - . / : ; < = > ? @ [ \ ] ^ _ ` { &#124; } ~** .  
 
    - **Richiedi scadenza PIN (giorni)** - Specifica il numero di giorni prima che sia necessario modificare il PIN del dispositivo. L'impostazione predefinita è 41 giorni.  
 

@@ -1,7 +1,7 @@
 ---
 title: Archivio delle novità della gestione di dispositivi mobili ibrida
 titleSuffix: Configuration Manager
-description: Archivio di funzionalità di gestione dei dispositivi mobili precedenti disponibili per le distribuzioni ibride con System Center Configuration Manager e Intune.
+description: Archivio delle funzionalità di gestione dei dispositivi mobili precedenti disponibili per le distribuzioni ibride con Configuration Manager e Intune.
 ms.date: 03/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -12,18 +12,18 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 006580a7ae4965ab4662ae02bee13ed9796697f8
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 0f71d4cb59e7de2333be4de9d3f712a87149db99
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71826253"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519369"
 ---
-# <a name="past-hybrid-features-with-system-center-configuration-manager-and-microsoft-intune"></a>Funzionalità ibride precedenti con System Center Configuration Manager e Microsoft Intune
+# <a name="past-hybrid-features-with-configuration-manager-and-microsoft-intune"></a>Funzionalità ibride precedenti con Configuration Manager e Microsoft Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo articolo illustra le funzionalità di gestione dei dispositivi mobili (MDM) precedenti disponibili per le distribuzioni ibride con System Center Configuration Manager e Intune.  
+Questo articolo fornisce informazioni dettagliate sulle funzionalità di gestione dei dispositivi mobili (MDM) precedenti disponibili per le distribuzioni ibride con Configuration Manager e Microsoft Intune.  
 
 ##  <a name="compatibility-with-configuration-manager-versions"></a>Compatibilità con le versioni di Configuration Manager  
 
@@ -31,7 +31,7 @@ Questo articolo illustra le funzionalità di gestione dei dispositivi mobili (MD
 
 |Categorie di funzionalità|
 |-|  
-|**Novità di Microsoft Intune**: in generale, tutte le funzionalità elencate in questa categoria devono funzionare con tutte le versioni di Configuration Manager, incluse le versioni di System Center 2012 R2 Configuration Manager, poiché richiedono solo il servizio Intune e non richiedono altre funzionalità di Configuration Manager.<br /><br /> **Novità di Configuration Manager Technical Preview**: tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Technical Preview specificata. Per provare queste funzionalità, è necessario installare la versione di Technical Preview specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager).<br /><br /> **Novità di Configuration Manager (Current Branch)** : tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata, ad esempio la versione 1511 o 1602. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, è necessario eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Upgrade to System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md) (Eseguire l'aggiornamento a System Center Configuration Manager).|  
+|**Novità di Microsoft Intune**: in generale, tutte le funzionalità elencate in questa categoria devono funzionare con tutte le versioni di Configuration Manager, incluse le versioni di System Center 2012 R2 Configuration Manager, poiché richiedono solo il servizio Intune e non richiedono altre funzionalità di Configuration Manager.<br /><br /> **Novità di Configuration Manager Technical Preview**: tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Technical Preview specificata. Per provare queste funzionalità, è necessario installare la versione di Technical Preview specificata nella descrizione della funzionalità. Per ulteriori informazioni, vedere [Technical Preview for Configuration Manager](../../core/get-started/technical-preview.md).<br /><br /> **Novità di Configuration Manager (Current Branch)** : tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata, ad esempio la versione 1511 o 1602. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, è necessario eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Eseguire l'aggiornamento a Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|  
 
 
 
@@ -65,7 +65,7 @@ Questo articolo illustra le funzionalità di gestione dei dispositivi mobili (MD
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
 
 - **Nuova esperienza utente per l'app Portale aziendale per Android**  
-  L'app Portale aziendale per Android offre un'interfaccia utente dall'aspetto più moderno. Gli aggiornamenti più importanti riguardano gli aspetti seguenti:
+  L'app Portale aziendale per Android offre un'interfaccia utente dall'aspetto più moderno. Di seguito sono illustrati gli aggiornamenti più significativi:
 
   - Colori: le intestazioni delle schede dell'app Portale aziendale possono avere un colore personalizzato definito dal personale IT.
   - App: nella scheda **App** i pulsanti **App in evidenza** e **Tutte le app** sono stati aggiornati.
@@ -123,13 +123,13 @@ Nella versione 1702 di Configuration Manager (Current Branch) sono disponibili a
 
     | Versione di Configuration Manager | Gestione delle licenze dei dispositivi supportata | Tipo di raccolta della distribuzione | Licenza richiesta |
     |-|-|-|-|
-    |Precedente la 1702|Yes|utente|Licenza utente|
+    |Precedente la 1702|sì|utente|Licenza utente|
     |Precedente la 1702|No|utente|Licenza utente|
-    |Precedente la 1702|Yes|Dispositivo|Licenza utente|
+    |Precedente la 1702|sì|Dispositivo|Licenza utente|
     |Precedente la 1702|No|Dispositivo|Licenza utente|
-    |1702 e versioni successive|Yes|utente|Licenza utente|
+    |1702 e versioni successive|sì|utente|Licenza utente|
     |1702 e versioni successive|No|utente|Licenza utente|
-    |1702 e versioni successive|Yes|Dispositivo|Licenza dispositivo|
+    |1702 e versioni successive|sì|Dispositivo|Licenza dispositivo|
     |1702 e versioni successive|No|Dispositivo|Licenza utente|
 
   - È ora possibile anche distribuire e tenere traccia delle app acquistate tramite iOS Volume Purchase Program for Education.
@@ -400,7 +400,7 @@ Le seguenti funzionalità di Intune introdotte in agosto 2016 funzionano nelle d
 
   Queste impostazioni possono essere usate solo dai dispositivi con Samsung KNOX Standard. Per informazioni dettagliate, vedere [Usare criteri personalizzati per consentire e bloccare app per dispositivi Samsung KNOX Standard](/intune/deploy-use/custom-policy-to-allow-and-block-samsung-knox-apps).
 
-- **Collegamento per invio del feedback dal Portale aziendale a Microsoft**
+- **Collegamento Commenti e suggerimenti di Microsoft dal portale aziendale**
 
    Il sito Web del portale aziendale consente agli utenti di toccare il nuovo collegamento "Commenti e suggerimenti" nella parte inferiore della pagina, per inviare un feedback a Microsoft sulla propria esperienza con il sito. I commenti, raccolti in forma anonima, consentiranno a Microsoft di migliorare l'esperienza degli utenti con il sito Web del portale aziendale.
 
@@ -426,7 +426,7 @@ Le seguenti funzionalità di Intune introdotte in luglio 2016 funzionano nelle d
 
   Il componente Xamarin SDK per app di Intune consente di abilitare le funzionalità di gestione delle app per dispositivi mobili di Intune nelle app per dispositivi mobili iOS e Android compilate con Xamarin. Il componente è disponibile nell'[archivio Xamarin](https://components.xamarin.com/view/Microsoft.Intune.MAM) o nella [pagina GitHub di Microsoft Intune](https://github.com/msintuneappsdk).
 
-- **Esperienza utente finale migliorata durante la registrazione dei dispositivi Windows**
+- **Esperienza dell'utente finale migliorata durante la registrazione di dispositivi Windows**
 
   Quando si utilizza l'accesso condizionale, la procedura di registrazione per Windows 8.1, Windows 10 Desktop e 10 Windows Mobile è illustrata nel sito Web del portale aziendale. Gli utenti ora vedono passaggi separati per la **registrazione del dispositivo** e l'**aggiunta all'area di lavoro** quindi è più semplice verificare lo stato del dispositivo e completare il processo nel caso in cui l'aggiunta all'area di lavoro abbia esito negativo. Si prevede che la separazione dei passaggi semplifichi anche il processo di risoluzione dei problemi per gli amministratori IT. In precedenza, quando gli utenti finali tentavano di eseguire la registrazione e tutti i passaggi, tranne l'aggiunta all'area di lavoro, venivano completati correttamente, il dispositivo non appariva nell'elenco dei dispositivi per l'identificazione e questo causava confusione per gli utenti.
 
@@ -434,13 +434,13 @@ Le seguenti funzionalità di Intune introdotte in luglio 2016 funzionano nelle d
 
     I computer desktop e portatili Windows 10 registrati come dispositivi mobili possono essere cancellati per ripristinare le impostazioni di fabbrica del dispositivo. Per altre informazioni, vedere le istruzioni per [proteggere i dispositivi con la cancellazione remota](/sccm/mdm/deploy-use/wipe-lock-reset-devices).
 
-- **Modifiche agli account di Manager di registrazione dispositivi nell'app Portale aziendale per iOS**
+- **Modifiche agli account Manager di registrazione dei dispositivi nell'app Portale aziendale per iOS**
 
   Per migliorare le prestazioni e la scalabilità, in Intune non vengono più visualizzati tutti i dispositivi di Manager di registrazione dispositivi (DEM) nel riquadro dei dispositivi personali dell'app Portale aziendale per iOS. Viene visualizzato solo il dispositivo locale che esegue l'app e solo se è stato registrato usando l'app Portale aziendale.
 
-  L'utente di DEM può eseguire azioni sul dispositivo locale, ma la gestione remota di altri dispositivi registrati può essere effettuata solo dalla console di amministrazione di Intune. In Intune verrà anche deprecato l'uso degli account DEM con il programma di registrazione dispositivi di Apple o lo strumento Apple Configurator. Entrambi i metodi di registrazione supportano già la registrazione senza utente per i dispositivi iOS condivisi.
+  L'utente di DEM può eseguire azioni sul dispositivo locale, ma la gestione remota di altri dispositivi registrati può essere effettuata solo dalla console di amministrazione di Intune. Intune deprecherà anche l'uso degli account Manager di registrazione dispositivi con il programma di registrazione del dispositivo mobile di Apple o lo strumento Apple Configurator. Entrambi i metodi di registrazione supportano già la registrazione senza utente per i dispositivi iOS condivisi.
 
-  Usare gli account DEM solo se non è disponibile la registrazione senza utente per i dispositivi condivisi. Per altre informazioni, vedere l'articolo relativo alla [registrazione dei dispositivi di proprietà dell'azienda con Manager di registrazione dispositivi in Microsoft Intune](../deploy-use/enroll-devices-with-device-enrollment-manager.md).
+  Usare gli account DEM solo se non è disponibile la registrazione senza utente per i dispositivi condivisi. Per altre informazioni, vedere [Registrare i dispositivi di proprietà dell'azienda con Manager di registrazione dispositivi in Microsoft Intune](../deploy-use/enroll-devices-with-device-enrollment-manager.md).
 
 - **Modifiche dell'app Portale aziendale per Android**
 
@@ -493,7 +493,7 @@ Le seguenti funzionalità di Intune introdotte in giugno 2016 funzionano nelle d
 
 - **Accesso condizionale per il browser**
 
-  È possibile impostare un criterio di accesso condizionale per Exchange Online e SharePoint Online in modo che siano accessibili solo dai Web browser supportati in dispositivi iOS e Android gestiti e conformi. Agli utenti finali che tentano di accedere a siti di Outlook Web Access (OWA) e SharePoint con dispositivi iOS e Android verrà richiesta la registrazione del dispositivo con Intune nonché la correzione di eventuali problemi di conformità per poter eseguire l'accesso. Per ulteriori informazioni, vedere
+  È possibile impostare un criterio di accesso condizionale per Exchange Online e SharePoint Online in modo che siano accessibili solo dai Web browser supportati in dispositivi iOS e Android gestiti e conformi. Agli utenti finali che tentano di accedere a siti di Outlook Web Access (OWA) e SharePoint con dispositivi iOS e Android verrà richiesta la registrazione del dispositivo con Intune nonché la correzione di eventuali problemi di conformità per poter eseguire l'accesso. Per altre informazioni, vedere
 
   * [Limitare l'accesso alla posta elettronica per Exchange Online e il nuovo ambiente Exchange Online dedicato](https://docs.microsoft.com/intune/deploy-use/restrict-access-to-exchange-online-with-microsoft-intune)
   * [Limitare l'accesso a SharePoint Online con Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/restrict-access-to-sharepoint-online-with-microsoft-intune)
@@ -524,10 +524,10 @@ Le seguenti nuove funzionalità introdotte in giugno 2016 sono disponibili nelle
 
 - **Categorizzazione automatica dei dispositivi in raccolte**
 
-  È possibile creare categorie di dispositivi da usare per inserire automaticamente i dispositivi in raccolte quando si usa Configuration Manager con Intune. Agli utenti verrà quindi richiesto di scegliere una categoria di dispositivo quando eseguono la registrazione di un dispositivo in Intune. È anche possibile modificare la categoria di un dispositivo dalla console di Configuration Manager. Per altre informazioni, vedere [Categorizzazione automatica dei dispositivi in raccolte](/sccm/core/get-started/capabilities-in-technical-preview-1606#dmp_category) in [Funzionalità di Technical Preview 1606 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1606).
+  È possibile creare categorie di dispositivi da usare per inserire automaticamente i dispositivi in raccolte quando si usa Configuration Manager con Intune. Agli utenti verrà quindi richiesto di scegliere una categoria di dispositivi quando eseguono la registrazione di un dispositivo in Intune. È anche possibile modificare la categoria di un dispositivo dalla console di Configuration Manager. Per ulteriori informazioni, vedere [categorizzare automaticamente i dispositivi in raccolte](/sccm/core/get-started/capabilities-in-technical-preview-1606#dmp_category) in [funzionalità della versione Technical Preview 1606 per Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1606).
 
   > [!IMPORTANT]
-  > Questa funzionalità può essere usata con la versione di Microsoft Intune di giugno 2016. Verificare che l'installazione sia aggiornata a questa versione prima di tentare queste procedure.
+  > Questa funzionalità può essere usata con la versione di Microsoft Intune di giugno 2016. Verificare che l'installazione sia aggiornata a questa versione prima di tentare tali procedure.
 
 ### <a name="new-in-configuration-manager-current-branch"></a>Novità di Configuration Manager (Current Branch)
 Non sono state introdotte nuove funzionalità ibride nella versione di giugno 2016 di Configuration Manager (Current Branch).
@@ -563,7 +563,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **VPN attivata dall'app per dispositivi Windows 10**
 
-  Per i dispositivi Windows 10 gestiti usando Configuration Manager con Intune è possibile aggiungere un elenco di app che aprono automaticamente una connessione VPN configurata dalla console di amministrazione di Configuration Manager. Per altre informazioni, vedere la sezione relativa alle [connessioni VPN attivate da app per Windows 10](/sccm/core/get-started/capabilities-in-technical-preview-1605) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605)  
+  Per i dispositivi Windows 10 gestiti usando Configuration Manager con Intune è possibile aggiungere un elenco di app che aprono automaticamente una connessione VPN configurata dalla console di amministrazione di Configuration Manager. Per ulteriori informazioni, vedere la pagina relativa alla [VPN attivata dall'app per dispositivi Windows 10](/sccm/core/get-started/capabilities-in-technical-preview-1605) in [funzionalità della versione Technical Preview 1605 per Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605)  
 
 - **Nuova esperienza per le azioni dei dispositivi remoti**
 
@@ -571,19 +571,19 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
   Azioni comuni come **ritiro/cancellazione**, **reimpostazione passcode**, **blocco remoto** e **blocco attivazione bypass** sono adesso disponibili nel menu **Azioni dispositivo remoto** accessibile dall'area di lavoro **Asset e conformità**
 
-  Per altre informazioni, vedere [Nuova esperienza per le azioni dei dispositivi remoti](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_Remote) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
+  Per ulteriori informazioni, vedere [la pagina relativa alla nuova esperienza per le azioni remote dei dispositivi](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_Remote) nelle [funzionalità della versione Technical Preview 1605 per Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
 
 - **App di Windows Store per le aziende**
 
-  In [Windows Store per le aziende](https://www.microsoft.com/business-store) è possibile trovare e acquistare app per l'organizzazione, singolarmente o con Volume Purchase Program. Connettendo lo Store a Configuration Manager, è possibile gestire le app acquistate con Volume Purchase Program dalla console di Configuration Manager. Per altre informazioni, vedere la sezione sulle [app disponibili in Windows Store per le aziende](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_WSFB) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
+  In [Windows Store per le aziende](https://www.microsoft.com/business-store) è possibile trovare e acquistare app per l'organizzazione, singolarmente o con Volume Purchase Program. Connettendo lo Store a Configuration Manager, è possibile gestire le app acquistate con Volume Purchase Program dalla console di Configuration Manager. Per ulteriori informazioni, vedere la pagina relativa alle [app di Windows Store per le aziende](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_WSFB) in [funzionalità di Technical Preview 1605 per Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
 
 - **Miglioramenti generali per le app acquistate con Volume Purchase Program**
 
-  Le app acquistate con Volume Purchase Program da Windows Store per le aziende e dall'App Store di iOS sono state consolidate nella vista delle **informazioni sulle licenze per le app dello Store**. È stato anche migliorato il modo in cui vengono create le app acquistate con Volume Purchase Program per iOS. Per altre informazioni, vedere [Miglioramenti generali per le app acquistate con Volume Purchase Program](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_VPP2) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
+  Le app acquistate con Volume Purchase Program da Windows Store per le aziende e dall'App Store di iOS sono state consolidate nella vista delle **informazioni sulle licenze per le app dello Store**. È stato anche migliorato il modo in cui vengono create le app acquistate con Volume Purchase Program per iOS. Per ulteriori informazioni, vedere[miglioramenti generali per le app acquistate con volume Purchasers](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_VPP2) in [funzionalità della versione Technical Preview 1605 per Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
 
 - **Predichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS**
 
-  È ora possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity). È possibile caricare un file con valori separati da virgola (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi.  Possono essere importati i numeri di serie anche per i dispositivi iOS.  Per altre informazioni, vedere [Predichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS](../../core/get-started/capabilities-in-technical-preview-1605.md#BKMK_IMEI) in [Funzionalità di Technical Preview 1605 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
+  È ora possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity). È possibile caricare un file con valori separati da virgola (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi.  È possibile importare i numeri di serie anche per i dispositivi iOS.  Per altre informazioni, vedere [pre-dichiarare i dispositivi di proprietà dell'azienda con il numero di serie IMEI o iOS](../../core/get-started/capabilities-in-technical-preview-1605.md#BKMK_IMEI) in [funzionalità della versione Technical Preview 1605 per Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1605).  
 
 - **Windows Information Protection (WIP)**
 
@@ -591,7 +591,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
   -   [Proteggere i dati aziendali con Windows Information Protection (WIP)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip)  
 
-  -   [Creare e distribuire un criterio di Windows Information Protection (WIP) con System Center Configuration Manager](https://technet.microsoft.com/itpro/windows/keep-secure/create-wip-policy-using-sccm)  
+  -   [Creare e distribuire un criterio di Windows Information Protection (WIP) utilizzando Configuration Manager](https://technet.microsoft.com/itpro/windows/keep-secure/create-wip-policy-using-sccm)  
 
 ### <a name="new-in-configuration-manager-current-branch"></a>Novità di Configuration Manager (Current Branch)  
  Non sono state introdotte nuove funzionalità ibride nella versione di maggio 2016 di Configuration Manager (Current Branch).  
@@ -635,11 +635,11 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 - **Trovare, gestire e distribuire app di Windows Store per le aziende per i dispositivi Windows 10 dalla console di Configuration Manager**
 
 
-  In Configuration Manager Technical Preview 1604 è disponibile il supporto per Windows Store per le aziende, che consente di trovare, gestire e distribuire le app ai dispositivi Windows 10 gestiti dall'utente. Per informazioni dettagliate, vedere la sezione [Gestire le app acquistate con Volume Purchase Program da Windows Store per le aziende](/sccm/core/get-started/capabilities-in-technical-preview-1604#BKMK_WindowsVPP) in [Funzionalità di Technical Preview 1604 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1604).  
+  In Configuration Manager Technical Preview 1604 è disponibile il supporto per Windows Store per le aziende, che consente di trovare, gestire e distribuire le app ai dispositivi Windows 10 gestiti dall'utente. Per informazioni dettagliate, vedere [gestire le app acquistate con Volume Purchase Apps da Windows Store per le aziende](/sccm/core/get-started/capabilities-in-technical-preview-1604#BKMK_WindowsVPP) in [funzionalità di Technical Preview 1604 per Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1604).  
 
 - **Impostazione di Smart Lock per dispositivi Android**
 
-  È stata aggiunta all'elemento di configurazione Android e Samsung KNOX Standard una nuova impostazione che consente di controllare la funzionalità Smart Lock sui dispositivi Android compatibili.  È possibile usare questa impostazione per impedire agli utenti finali di configurare Smart Lock. Vedere [Impostazione di SmartLock per dispositivi Android](/sccm/core/get-started/capabilities-in-technical-preview-1604#BKMK_Smart) in [Funzionalità di Technical Preview 1604 per System Center Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1604).  
+  È stata aggiunta all'elemento di configurazione Android e Samsung KNOX Standard una nuova impostazione che consente di controllare la funzionalità Smart Lock sui dispositivi Android compatibili.  È possibile usare questa impostazione per impedire agli utenti finali di configurare Smart Lock. Per Configuration Manager, vedere [impostazione di Smart Lock per dispositivi Android](/sccm/core/get-started/capabilities-in-technical-preview-1604#BKMK_Smart) in [funzionalità nella versione Technical Preview 1604](/sccm/core/get-started/capabilities-in-technical-preview-1604).  
 
 ### <a name="new-in-configuration-manager-current-branch"></a>Novità di Configuration Manager (Current Branch)  
  Non sono state introdotte nuove funzionalità ibride nella versione di aprile 2016 di Configuration Manager (Current Branch).  
@@ -701,11 +701,11 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **Criteri di configurazione delle app iOS**
 
-  Nella versione 1602 di Configuration Manager (Current Branch) è possibile usare i criteri di configurazione delle app per specificare le impostazioni che potrebbero essere necessarie quando l'utente esegue un'app iOS. Per informazioni dettagliate, vedere [Configure iOS apps with app configuration policies in System Center Configuration Manager](/sccm/apps/deploy-use/configure-ios-apps-with-app-configuration-policies) (Configurare le app iOS con i criteri di configurazione in System Center Configuration Manager).  
+  Nella versione 1602 di Configuration Manager (Current Branch) è possibile usare i criteri di configurazione delle app per specificare le impostazioni che potrebbero essere necessarie quando l'utente esegue un'app iOS. Per informazioni dettagliate, vedere [configurare le app iOS con i criteri di configurazione delle app](/sccm/apps/deploy-use/configure-ios-apps-with-app-configuration-policies).  
 
 - **Gestire le app iOS acquistate con Volume Purchase Program**
 
-  Nella versione 1602 di Configuration Manager (Current Branch) è possibile distribuire e gestire le app acquistate con Volume Purchase Program (VPP) di Apple importando le informazioni di licenza dall'App Store e verificando il numero di licenze usate. Per informazioni dettagliate, vedere [Gestire le app iOS acquistate tramite Volume Purchase Program con System Center Configuration Manager](/sccm/apps/deploy-use/manage-volume-purchased-ios-apps).  
+  Nella versione 1602 di Configuration Manager (Current Branch) è possibile distribuire e gestire le app acquistate con Volume Purchase Program (VPP) di Apple importando le informazioni di licenza dall'App Store e verificando il numero di licenze usate. Per informazioni dettagliate, vedere [gestire le app iOS acquistate con volume Purchasers con Configuration Manager](/sccm/apps/deploy-use/manage-volume-purchased-ios-apps).  
 
 - **Creazione automatica di app di Office per dispositivi mobili**
 
@@ -718,15 +718,15 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
   -   Microsoft OneNote (solo iOS)  
   -   Microsoft Outlook  
 
-  Queste app si trovano nel nodo Applicazioni della console di Configuration Manager. Per altre informazioni sulla distribuzione di applicazioni, vedere [Come distribuire le applicazioni con System Center Configuration Manager](../../apps/deploy-use/deploy-applications.md).  
+  Queste app si trovano nel nodo Applicazioni della console di Configuration Manager. Per ulteriori informazioni sulla distribuzione di applicazioni, vedere [How to deploy Applications with Configuration Manager](../../apps/deploy-use/deploy-applications.md).  
 
 - **Impostazioni della modalità tutto schermo per i dispositivi Android Samsung KNOX Standard**
 
-  La modalità tutto schermo consente di bloccare un dispositivo per consentire solo l'uso di alcune funzionalità.  A partire dalla versione 1602 di Configuration Manager (Current Branch) è possibile specificare le impostazioni della modalità tutto schermo per i dispositivi Samsung KNOX Standard. Per informazioni dettagliate, vedere [Creare elementi di configurazione per dispositivi Android e Samsung KNOX Standard gestiti senza il client System Center Configuration Manager](/sccm/compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client).  
+  La modalità tutto schermo consente di bloccare un dispositivo per consentire solo l'uso di alcune funzionalità.  A partire dalla versione 1602 di Configuration Manager (Current Branch) è possibile specificare le impostazioni della modalità tutto schermo per i dispositivi Samsung KNOX Standard. Per informazioni dettagliate, vedere [come creare elementi di configurazione per dispositivi Android e Samsung Knox standard gestiti senza il client Configuration Manager](/sccm/compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client).  
 
 - **Blocco attivazione di iOS**
 
-  A partire dalla versione 1602 di Configuration Manager (Current Branch) è possibile gestire il blocco attivazione iOS, una funzionalità dell'app Trova il mio iPhone per dispositivi iOS 7.1 e versioni successive. Blocco attivazione viene abilitato automaticamente quando si usa l'app Trova il mio iPhone in un dispositivo.  Per informazioni dettagliate, vedere [Gestire il blocco attivazione iOS con System Center Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock#bypass-activation-lock).  
+  A partire dalla versione 1602 di Configuration Manager (Current Branch) è possibile gestire il blocco attivazione iOS, una funzionalità dell'app Trova il mio iPhone per dispositivi iOS 7.1 e versioni successive. Blocco attivazione viene abilitato automaticamente quando si usa l'app Trova il mio iPhone in un dispositivo.  Per informazioni dettagliate, vedere [Manage iOS blocco attivazione bypass for Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock#bypass-activation-lock).  
 
 
 
@@ -740,7 +740,7 @@ Il supporto per System Center 2012 Configuration Manager SP1 e System Center 201
 Se si esegue una distribuzione ibrida con Configuration Manager 2012 SP1 o R2 RTM, è consigliabile eseguire l'aggiornamento a Configuration Manager (Current Branch) o al Service Pack supportato più recente per Configuration Manager 2012 (R2 SP1 o SP2) prima del 10 aprile 2017 per evitare l'interruzione del servizio.
 
 Risorse aggiuntive:
-- [Eseguire l'aggiornamento a System Center Configuration Manager (Current Branch)](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)
+- [Eseguire l'aggiornamento a Configuration Manager (Current Branch)](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)
 - [Pianificazione dell'aggiornamento a System Center 2012 R2 Configuration Manager SP1](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningR2SP1Upgrade)
 - [Pianificazione dell'aggiornamento a System Center 2012 Configuration Manager SP2](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningSP2Upgrade)
 

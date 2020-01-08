@@ -11,21 +11,21 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 571334f94d1fcd3f53219b406185af3015356e3a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: da653db38c8c4271bd4ac7d0b75329535f1545f2
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68338061"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519515"
 ---
 # <a name="overview-of-device-enrollment-methods"></a>Panoramica dei metodi di registrazione dei dispositivi
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Dopo aver esteso Configuration Manager con Intune, è possibile registrare e gestire i dispositivi aziendali o concedere agli utenti l'autorizzazione di registrare i dispositivi personali. È anche possibile gestire i dispositivi aziendali con Intune usando Configuration Manager.
 
 La tabella seguente illustra i metodi di registrazione con le relative funzionalità supportate. Queste funzionalità includono:
-- **Cancellazione**: ripristino delle impostazioni predefinite del dispositivo, con rimozione di tutti i dati. [Ritiro di dispositivi](../deploy-use/wipe-lock-reset-devices.md)
+- **Cancellazione**: ripristino delle impostazioni predefinite del dispositivo, con rimozione di tutti i dati. [Ritirare i dispositivi](../deploy-use/wipe-lock-reset-devices.md)
 - **Affinità**: associazione dei dispositivi agli utenti. Obbligatoria per la gestione di applicazioni per dispositivi mobili (MAM) e l'accesso condizionale ai dati aziendali. [Affinità utente](../deploy-use/user-affinity-for-hybrid-managed-devices.md)
 - **Blocco**: impedisce agli utenti di rimuovere il dispositivo dal sistema di gestione. Per il blocco dei dispositivi iOS è richiesta la modalità con supervisione. [Blocco remoto](../deploy-use/wipe-lock-reset-devices.md#remote-lock)
 
@@ -33,16 +33,16 @@ La tabella seguente illustra i metodi di registrazione con le relative funzional
 
 | **Metodo** | **Cancellazione** | **Affinità** | **Blocco** | **Informazioni dettagliate** |
 |:---:|:---:|:---:|:---:|:---:|
-|**[BYOD](#byod)** | No| Yes | No | [altro](../deploy-use/enable-platform-enrollment.md)|
+|**[BYOD](#byod)** | No| sì | No | [altro](../deploy-use/enable-platform-enrollment.md)|
 |**[DEM](#dem)**| No |No |No | [altro](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
-|**[DEP](#dep)**| Yes | Facoltativo | Facoltativo|[altro](../deploy-use/ios-device-enrollment-program-for-hybrid.md)|
-|**[USB-SA](#usb-sa)**| Yes | Facoltativo | No| [altro](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md)|
+|**[DEP](#dep)**| sì | Facoltativo | Facoltativo|[altro](../deploy-use/ios-device-enrollment-program-for-hybrid.md)|
+|**[USB-SA](#usb-sa)**| sì | Facoltativo | No| [altro](../deploy-use/ios-hybrid-enrollment-using-apple-configurator.md)|
 
 **Metodi di registrazione per Android e Windows**
 
 | **Metodo** | **Cancellazione** | **Affinità** | **Blocco** | **Informazioni dettagliate**|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|**[BYOD](#byod)** | No| Yes | No | [altro](../deploy-use/enroll-hybrid-windows.md)|
+|**[BYOD](#byod)** | No| sì | No | [altro](../deploy-use/enroll-hybrid-windows.md)|
 |**[DEM](#dem)**| No |No |No |[altro](../deploy-use/enroll-devices-with-device-enrollment-manager.md)|
 
 Per una serie di domande e risposte utili per individuare il metodo corretto, vedere [Scegliere come registrare i dispositivi mobili](/intune/get-started/choose-how-to-enroll-devices1).

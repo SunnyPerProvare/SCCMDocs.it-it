@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0efe4dbc80c787591f5c7274dbaa89aa8e326c6c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7ad2d15e952104aa19f0547d57da13d1e5d524fc
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62227661"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75519760"
 ---
 # <a name="set-up-hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>Impostare la gestione dei dispositivi mobili ibrida con Configuration Manager e Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 Prima di poter essere gestiti con Configuration Manager, i dispositivi iOS, Windows e Android devono essere registrati con Intune. Usare i passaggi seguenti per impostare la registrazione ibrida dei dispositivi con Configuration Manager tramite Intune. Una volta completati i passaggi seguenti, la registrazione "bring your own device" (BYOD) per gli utenti sarà abilitata. Questi passaggi sono anche i prerequisiti per la [registrazione di dispositivi di proprietà dell'utente (BYOD)](enroll-hybrid-ios-mac.md) e la [registrazione di dispositivi di proprietà dell'azienda](enroll-company-owned-devices.md).
@@ -34,14 +34,14 @@ Prima di poter essere gestiti con Configuration Manager, i dispositivi iOS, Wind
 
  |Passaggi|Details|  
  |-----------|-------------|  
- |**Passaggio 1:** [Creare una raccolta della gestione dei dispositivi mobili](create-mdm-collection.md)|Creare una raccolta utente di Configuration Manager con gli utenti i cui dispositivi possono essere registrati|  
- |**Passaggio 2:** [Requisiti dei nomi di dominio](confirm-dns.md)|Confermare che il servizio Domain Name Service (DNS) e la gestione utente di Active Directory della propria organizzazione soddisfino i requisiti della gestione dei dispositivi mobili|
- |**Passaggio 3:** [Configurare una sottoscrizione di Intune](configure-intune-subscription.md)|Il servizio Intune consente di gestire i dispositivi su Internet.|  
- |**Passaggio 4:** [Aggiungere termini e condizioni](terms-and-conditions.md)| Creare i termini e le condizioni che devono essere accettate dagli utenti per poter usare l'app Portale aziendale|
- |**Passaggio 5:** [Creare il punto di connessione del servizio](create-service-connection-point.md)|Il punto di connessione del servizio invia le impostazioni e le informazioni di distribuzione del software a Configuration Manager e recupera i messaggi di stato e di inventario dai dispositivi mobili. |  
- |**Passaggio 6:** [Abilitare la registrazione della piattaforma](enable-platform-enrollment.md)|La registrazione di software MDM per dispositivi iOS e Windows richiede passaggi aggiuntivi per la comunicazione tra il servizio e i dispositivi. Per Android non è richiesta alcuna configurazione aggiuntiva.|  
- |**Passaggio 7:** [Impostare la gestione aggiuntiva](set-up-additional-management.md)|(Facoltativo) Impostare gli elementi di configurazione e l'accesso condizionale per i dispositivi registrati|
- |**Passaggio 8:** [Verificare la configurazione della gestione dei dispositivi mobili](verify-mdm-configuration.md)|Visualizzare i file di log per verificare che il punto di connessione del servizio sia stato creato correttamente e che gli account utente siano sincronizzati.|
+ |**Passaggio 1:** [creare una raccolta MDM](create-mdm-collection.md)|Creare una raccolta utente di Configuration Manager con gli utenti i cui dispositivi possono essere registrati|  
+ |**Passaggio 2:** [requisiti dei nomi di dominio](confirm-dns.md)|Confermare che il servizio Domain Name Service (DNS) e la gestione utente di Active Directory della propria organizzazione soddisfino i requisiti della gestione dei dispositivi mobili|
+ |**Passaggio 3:** [configurare la sottoscrizione di Intune](configure-intune-subscription.md)|Il servizio Intune consente di gestire i dispositivi su Internet.|  
+ |**Passaggio 4:** [aggiungere termini e condizioni](terms-and-conditions.md)| Creare i termini e le condizioni che devono essere accettate dagli utenti per poter usare l'app Portale aziendale|
+ |**Passaggio 5:** [creare il punto di connessione del servizio](create-service-connection-point.md)|Il punto di connessione del servizio invia le impostazioni e le informazioni di distribuzione del software a Configuration Manager e recupera i messaggi di stato e di inventario dai dispositivi mobili. |  
+ |**Passaggio 6:** [abilitare la registrazione della piattaforma](enable-platform-enrollment.md)|La registrazione di software MDM per dispositivi iOS e Windows richiede passaggi aggiuntivi per la comunicazione tra il servizio e i dispositivi. Per Android non è richiesta alcuna configurazione aggiuntiva.|  
+ |**Passaggio 7:** [configurare la gestione aggiuntiva](set-up-additional-management.md)|(Facoltativo) Impostare gli elementi di configurazione e l'accesso condizionale per i dispositivi registrati|
+ |**Passaggio 8:** [verificare la configurazione MDM](verify-mdm-configuration.md)|Visualizzare i file di log per verificare che il punto di connessione del servizio sia stato creato correttamente e che gli account utente siano sincronizzati.|
 
 
 
@@ -49,9 +49,9 @@ Prima di poter essere gestiti con Configuration Manager, i dispositivi iOS, Wind
 
 Al termine dell'installazione ibrida è possibile registrare i dispositivi in Configuration Manager in diversi modi:
 
-- **Dispositivi di proprietà dell'azienda (COD):** nell'articolo [Registrare i dispositivi aziendali](enroll-company-owned-devices.md) sono riportate indicazioni su diverse modalità specifiche della piattaforma per la registrazione dei dispositivi di proprietà dell'azienda  
+- **Dispositivi di proprietà dell'azienda (COD):** [registrare i dispositivi di proprietà](enroll-company-owned-devices.md) dell'azienda fornisce indicazioni su diversi modi specifici della piattaforma per registrare i dispositivi di proprietà dell'azienda  
 
-- **Dispositivi di proprietà dell'utente (BYOD):** nell'articolo [Registrare i dispositivi di proprietà dell'utente (BYOD)](enroll-hybrid-ios-mac.md) sono riportate indicazioni sulle modalità di registrazione dei dispositivi di proprietà degli utenti  
+- **Dispositivi di proprietà dell'utente (BYOD):** la registrazione dei dispositivi di [proprietà dell'utente (BYOD)](enroll-hybrid-ios-mac.md) fornisce indicazioni sui modi per registrare i dispositivi di proprietà dell'utente  
 
 
 
