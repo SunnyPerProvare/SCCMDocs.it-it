@@ -10,17 +10,16 @@ ms.assetid: 6143fd47-48ec-4bca-b53b-5b9b9f067bc3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b811d6bb974dce7e71d986f81d3255d61382737
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 6633f496cbec6fa4110037cf2eb2fc86bcc4372e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889921"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823705"
 ---
 # <a name="how-to-upgrade-clients-for-windows-computers-in-configuration-manager"></a>Come aggiornare i client per i computer Windows in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Aggiornare il client Configuration Manager in computer Windows usando i metodi di installazione client o le funzionalità di aggiornamento client automatico. I metodi di installazione client seguenti sono validi per aggiornare il software client nei computer Windows:  
 

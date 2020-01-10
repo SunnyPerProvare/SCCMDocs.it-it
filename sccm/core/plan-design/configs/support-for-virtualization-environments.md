@@ -10,17 +10,16 @@ ms.assetid: 1098e8c5-9676-4c2b-841b-ec88bd04e495
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 313f49804bb526d3a1e8d208b8efdc849d674e2e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 52e5d832a4c729cc292601eb373d7bf5a5fca7ef
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67623372"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75801988"
 ---
 # <a name="support-for-virtualization-environments-with-configuration-manager"></a>Supporto per gli ambienti di virtualizzazione per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager supporta l'installazione di ruoli del sistema del sito e di client in sistemi operativi supportati eseguiti come macchina virtuale negli ambienti di virtualizzazione in questo articolo. Questo supporto è presente anche quando l'host macchina virtuale (ambiente di virtualizzazione) non è supportato come server del sito o del client.  
 
@@ -32,7 +31,7 @@ Ad esempio, si usa Microsoft Hyper-V Server 2012 per ospitare una macchina virtu
 - Windows Server 2019  
 - Windows Server 2016 <sup>[Nota 1](#bkmk_note1)</sup>  
 - Microsoft Hyper-V Server 2016 <sup>[Nota 1](#bkmk_note1)</sup>  
-- Windows Server 2012 R2  
+- R2 per Windows Server 2012  
 - Microsoft Hyper-V Server 2012  
 - Windows Server 2012  
 - Microsoft Hyper-V Server 2008 R2  

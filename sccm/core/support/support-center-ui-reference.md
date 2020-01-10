@@ -10,17 +10,16 @@ ms.assetid: 41cdebfe-b595-40aa-a385-32e0746255ed
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 79d805677b6a2572cb659ad8923717922c82f5d2
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 89224fbcedb8e70a5b4f98671d7b6605a1b4de6f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68340230"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792396"
 ---
 # <a name="support-center-user-interface-reference"></a>Informazioni di riferimento sull'interfaccia utente del Supporto tecnico
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo è un testo di riferimento che descrive le interfacce utente degli strumenti del Supporto tecnico:
 - Support Center
@@ -55,7 +54,7 @@ Consente di stabilire una connessione remota con un altro client di Configuratio
 #### <a name="about"></a>Informazioni su
 Visualizza informazioni sul Supporto tecnico.
 
-#### <a name="options"></a>Opzioni
+#### <a name="options"></a>Options
 Nella finestra di dialogo **Options** è possibile:
 - Ridurre il movimento degli elementi dell'interfaccia utente animati  
 - Cambiare il percorso di salvataggio predefinito per i file di bundle di dati  
@@ -339,14 +338,14 @@ Consente di risolvere alcuni dei problemi più comuni relativi ai client di Conf
 - Configuration Manager   
     - Punti di gestione  
     - Assegnazione di criteri  
-    - Registration  
+    - Registrazione  
 
 
 > [!NOTE]  
 > Questa scheda non è disponibile quando ci si connette a un client di Configuration Manager remoto.
 
 
-#### <a name="start"></a>Inizio
+#### <a name="start"></a>Avvia
 Avvia la risoluzione dei problemi del client
 
 - **Active Directory**: esegue una query in Active Directory per recuperare le informazioni pubblicate nel sito di Configuration Manager  
@@ -411,7 +410,7 @@ Nell'angolo superiore sinistro della finestra del Visualizzatore log del Support
 #### <a name="open-logs"></a>Open logs
 Passare al percorso dei file di log da aprire. 
 
-#### <a name="options"></a>Opzioni
+#### <a name="options"></a>Options
 Nella finestra di dialogo **Options** è possibile:
 - Ridurre il movimento degli elementi dell'interfaccia utente animati  
 - Registrare il Visualizzatore log come app predefinita per i file di log con le estensioni log e lo_  
@@ -443,13 +442,13 @@ Selezionare l'elenco a discesa nella parte inferiore del pulsante **Close and cl
 #### <a name="find"></a>Trova
 Apre la finestra di dialogo**Find** (Trova). Immettere la stringa da cercare. Per evitare corrispondenze di stringhe brevi in altre stringhe, è possibile scegliere di cercare solo parole intere. È anche possibile cercare stringhe con distinzione tra maiuscole e minuscole.
 
-#### <a name="find-next"></a>Find next
+#### <a name="find-next"></a>Trova successivo
 Dopo aver trovato una corrispondenza per la stringa cercata, questa opzione consente di passare alla corrispondenza successiva.
 
-#### <a name="find-previous"></a>Find previous
+#### <a name="find-previous"></a>Trova precedente
 Dopo aver trovato due o più corrispondenze per la stringa cercata, questa opzione consente di passare alla corrispondenza precedente.
 
-#### <a name="options"></a>Opzioni
+#### <a name="options"></a>Options
 
 - **Live updating** (Aggiornamento in tempo reale): consente di monitorare le modifiche a un file di log attualmente aperto. Questa caratteristica non funziona quando sono aperti più file di log. Questa opzione è attivata per impostazione predefinita.  
 
@@ -484,7 +483,7 @@ I filtri avanzati dei file di log consentono di includere, escludere o evidenzia
 
 I filtri avanzati dei file di log prevalgono sui filtri rapidi. È possibile usarli entrambi contemporaneamente, ma i filtri rapidi si applicano solo ai dati di log visualizzati. I filtri avanzati determinano i dati visualizzati inizialmente prima che vengano applicati eventuali filtri rapidi.
 
-Nella finestra di dialogo Advanced filters (Filtri avanzati) è possibile creare set di filtri complessi, che consentono di cercare stringhe all'interno di molti componenti di file di log, ovvero messaggi, thread, livelli di registrazione e componenti. Un set di filtri contiene più istruzioni di filtro per includere, escludere o evidenziare messaggi di file di log. Un filtro definisce una colonna dei file di log all'interno della quale cercare, un operatore e un valore. Il valore può contenere espressioni regolari, ad esempio il *carattere jolly* `*`.
+Nella finestra di dialogo Advanced filters (Filtri avanzati) è possibile creare set di filtri complessi, che consentono di cercare stringhe all'interno di molti componenti di file di log, ovvero messaggi, thread, livelli di registrazione e componenti. Un set di filtri contiene più istruzioni di filtro per includere, escludere o evidenziare messaggi di file di log. Un filtro definisce una colonna dei file di log all'interno della quale cercare, un operatore e un valore. Il valore può contenere espressioni regolari, ad esempio il *carattere jolly*`*`.
 
 
 ### <a name="add-a-filter"></a>Aggiungere un filtro
@@ -554,7 +553,7 @@ Passare al percorso di un bundle di dati creato dal Supporto tecnico.
 #### <a name="about"></a>Informazioni su
 Visualizza informazioni sul Visualizzatore del Supporto tecnico.
 
-#### <a name="options"></a>Opzioni
+#### <a name="options"></a>Options
 Nella finestra di dialogo **Options** è possibile:
 - Ridurre il movimento degli elementi dell'interfaccia utente animati  
 - Cambiare il percorso dei file temporanei    
@@ -616,7 +615,7 @@ Ogni riga di questa scheda fornisce dettagli sui file di dump del debug disponib
 > [!WARNING]  
 > I dump del debug possono contenere informazioni riservate, ad esempio password, segreti di crittografia o dati utente. Raccogliere dump del debug solo dietro indicazione del personale del supporto tecnico Microsoft. I bundle di dati che contengono dump del debug devono essere gestiti con attenzione per garantirne la protezione da accessi non autorizzati.  
 
-#### <a name="export"></a>Esporta
+#### <a name="export"></a>Export
 Consente di salvare una copia del file di dump del debug selezionato.
 
 
@@ -633,7 +632,7 @@ Apre la finestra di dialogo Find (Trova), che include le funzionalità seguenti:
 
 - **Match whole string only** (Solo stringa intera): per impostazione predefinita, vengono cercate le stringhe che contengono la stringa cercata. Selezionare questa casella di controllo per cercare solo le stringhe che corrispondono esattamente alla stringa inserita.  
 
-#### <a name="find-next"></a>Find next
+#### <a name="find-next"></a>Trova successivo
 Apre l'istanza successiva della stringa inserita nella finestra di dialogo di ricerca all'interno del set di dati WMI.
 
 #### <a name="decode-certificate"></a>Decode certificate
@@ -644,7 +643,7 @@ Nella finestra di dialogo **Decode certificate** (Decodifica certificato), incol
 
 Usare la scheda **Registry** (Registro di sistema) per visualizzare i dati del Registro di sistema inclusi nel bundle di dati e per esportarli per un'ulteriore analisi.
 
-#### <a name="export"></a>Esporta
+#### <a name="export"></a>Export
 Consente di salvare una copia della chiave del Registro di sistema e delle sottochiavi selezionate in un file del Registro di sistema (con estensione reg).
 
 #### <a name="find"></a>Trova
@@ -656,7 +655,7 @@ Apre la finestra di dialogo Find (Trova), che include le funzionalità seguenti:
 
 - **Match whole string only** (Solo stringa intera): per impostazione predefinita, vengono cercate le stringhe che contengono la stringa cercata. Selezionare questa casella di controllo per cercare solo le stringhe che corrispondono esattamente alla stringa inserita.  
 
-#### <a name="find-next"></a>Find next
+#### <a name="find-next"></a>Trova successivo
 Apre l'istanza successiva della stringa inserita nella finestra di dialogo di ricerca all'interno del set di dati WMI.
 
 #### <a name="decode-certificate"></a>Decode certificate
@@ -676,7 +675,7 @@ Apre la finestra di dialogo Find (Trova), che include le funzionalità seguenti:
 
 - **Match whole string only** (Solo stringa intera): per impostazione predefinita, vengono cercate le stringhe che contengono la stringa cercata. Selezionare questa casella di controllo per cercare solo le stringhe che corrispondono esattamente alla stringa inserita.  
 
-#### <a name="find-next"></a>Find next
+#### <a name="find-next"></a>Trova successivo
 Apre l'istanza successiva della stringa inserita nella finestra di dialogo di ricerca all'interno del set di dati WMI.
 
 #### <a name="decode-certificate"></a>Decode certificate
@@ -690,7 +689,7 @@ La scheda **Certificates** consente di visualizzare i certificati inclusi nel bu
 #### <a name="view-certificate"></a>View certificate (Visualizza certificato)
 Visualizza informazioni sul certificato selezionato.
 
-#### <a name="export"></a>Esporta
+#### <a name="export"></a>Export
 Apre la finestra di dialogo **Save as** (Salva con nome) per il salvataggio di una copia del certificato selezionato.
 
 

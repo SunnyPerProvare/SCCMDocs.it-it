@@ -10,17 +10,16 @@ ms.assetid: 110b65b3-2202-466f-bb5d-e5ee282506fc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4df97c1e0fd3df1ef6a27eb84134cc1213942451
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 0a358cb0ba47901afae52add613415c3756efbeb
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889891"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824113"
 ---
 # <a name="monitor-and-manage-clients-in-configuration-manager"></a>Monitorare e gestire i client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Dopo aver installato il client nei dispositivi dell'organizzazione, Configuration Manager offre diversi modi per monitorarlo e gestirlo. È possibile monitorare i client per controllarne lo stato e Configuration Manager può risolvere automaticamente alcuni problemi rilevati. Usare la console di Configuration Manager per gestire i client per singoli dispositivi o raccolte di dispositivi.  
 

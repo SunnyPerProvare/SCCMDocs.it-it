@@ -10,17 +10,16 @@ ms.assetid: 15f72f80-9850-40ce-9c3a-443ba04b6a03
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d184118e0e99231a9160322740ab7690488a28a5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: fdcfd48045b4969b561100393a6cdf2a35955d1f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67286757"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824555"
 ---
 # <a name="monitor-cloud-management-gateway"></a>Monitorare il gateway di gestione cloud
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Se il gateway di gestione cloud (CMG) è in esecuzione e i client si connettono attraverso di esso, è possibile monitorare i client e il traffico di rete per controllare le prestazioni del servizio.
 

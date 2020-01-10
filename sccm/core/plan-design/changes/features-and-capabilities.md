@@ -10,13 +10,12 @@ ms.assetid: 5d388399-07ca-431c-a9b2-56c69771aa87
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1df7198895878d5ffea296b24790067545c0e42b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c50efb804787bb8288e6b1f200cee005ed2d0370
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660734"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802838"
 ---
 # <a name="features-and-capabilities-of-configuration-manager"></a>Caratteristiche e funzionalità di Configuration Manager
 
@@ -81,7 +80,7 @@ Sono disponibili funzionalità di sicurezza, antimalware e gestione di Windows F
 
 Per altre informazioni, vedere [Endpoint Protection](/sccm/protect/deploy-use/endpoint-protection).  
 
-## <a name="inventory"></a>Inventario
+## <a name="inventory"></a>Argomento
 
 Consente di identificare e monitorare gli asset.
 

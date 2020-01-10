@@ -10,17 +10,16 @@ ms.assetid: d5ce547d-3b3b-47d3-bcd7-6ff94692c046
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 799de01786debb44450d1ba67c75c14a1762f851
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 861136970db70c145d1ac9951b20b13a2ce76f55
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70176793"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826000"
 ---
 # <a name="send-schedule-tool"></a>Send Schedule Tool
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Send Schedule Tool è uno [strumento di Configuration Manager](/sccm/core/support/tools). Usarlo per attivare una pianificazione in un client o per attivare la valutazione di una linea di base di configurazione specificata. Funziona per il computer locale o è destinato a un client remoto.  
 

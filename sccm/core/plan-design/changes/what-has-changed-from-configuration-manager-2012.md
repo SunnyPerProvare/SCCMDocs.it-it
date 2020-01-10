@@ -10,13 +10,12 @@ ms.assetid: 3ae68fa6-8b30-45dd-9d12-50bb67cb4a9d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a49ef185da45429979b391608af2c36b569177c3
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b6d0ac8b1aebcffa7ce26f0b759c240f50cfaeb3
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660717"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802821"
 ---
 # <a name="whats-changed-from-system-center-2012-configuration-manager"></a>Novità rispetto a System Center 2012 Configuration Manager
 
@@ -31,7 +30,7 @@ La versione del mese di dicembre 2015 (1511) di System Center Configuration Mana
 
 Configuration Manager Current Branch:  
 
-- Non usa un identificatore di anno o prodotto nel nome del prodotto, a differenza delle versioni precedenti come System Center Configuration Manager 2007 o System Center 2012 Configuration Manager.  
+- Non usa un identificatore di anno o prodotto nel nome del prodotto, a differenza delle versioni precedenti come Configuration Manager 2007 o System Center 2012 Configuration Manager.  
 
 - Supporta gli aggiornamenti di prodotto incrementali, definiti anche versioni di aggiornamento. La versione iniziale è la 1511. Le versioni successive vengono rilasciate più volte all'anno come aggiornamenti nella console, ad esempio la versione 1910.  
 

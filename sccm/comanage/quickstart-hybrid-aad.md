@@ -10,13 +10,12 @@ ms.assetid: 2af37410-d04c-4059-801c-9edb8bf72d89
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b773c0bfe8cd0f8253a67ac96f5a0113b7206c0
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3241204a386df3e39523b05926e5cae0c7f70d82
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62193668"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816990"
 ---
 # <a name="use-azure-ad-for-co-management"></a>Usare Azure AD per la co-gestione
 
@@ -100,7 +99,7 @@ Azure AD offre varie opzioni per semplificare i carichi di lavoro, ad esempio:
 
 
 
-## <a name="configure"></a>Configurare
+## <a name="configure"></a>Configura
 
 Se è già disponibile un ambiente Active Directory in locale e si vogliono aggiungere i dispositivi aggiunti a un dominio ad Azure AD, configurare dispositivi aggiunti ad Azure AD ibrido. Per altre informazioni, vedere [Procedura: Pianificare l'implementazione dell'aggiunta ad Azure Active Directory ibrido](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan). 
 

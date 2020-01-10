@@ -10,17 +10,16 @@ ms.assetid: 1012ec24-27d9-4193-8236-918d283c7448
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 297aa9f8756b0c7214381e5e688f26cc21645fc4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 2212b401a205280c159dfddf916be57186575964
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500845"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826034"
 ---
 # <a name="policy-spy"></a>Policy Spy
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Policy Spy è uno [strumento di Configuration Manager](/sccm/core/support/tools). È uno strumento per la visualizzazione e la risoluzione dei problemi del sistema di criteri nei client Configuration Manager. Eseguire **PolicySpy.exe** per aprire l'interfaccia utente. Per altre informazioni sull'utilizzo della riga di comando, vedere [Sintassi della riga di comando](#bkmk_policyspy-syntax).
 

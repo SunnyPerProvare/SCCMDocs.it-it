@@ -10,13 +10,12 @@ ms.assetid: e0db3311-2303-4013-a906-76b408172d3c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce8f76438e38cb9266750da573103296f92a668e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 279da97960866123e109fd8f51d9a6c81353c593
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73704929"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825626"
 ---
 # <a name="desktop-analytics-faq"></a>Domande frequenti su Desktop Analytics
 
@@ -109,7 +108,7 @@ Sì, se si imposta un'area di lavoro Windows Analytics esistente come area di la
 | Windows Analytics | Desktop Analytics |
 |-------------------| ------------------|
 | Numero di installazioni basso | (Non applicabile) <br> Nota: Desktop Analytics esegue la propria euristica per determinare il basso numero di installazioni |
-| Verifica non effettuata | Non revisionato |
+| Non riviste | Non revisionato |
 | Revisione in corso | Non revisionato |
 | Cruciale | Critico |
 | Business Critical | Critico |

@@ -10,17 +10,16 @@ ms.assetid: 828c31d1-3d70-4412-b1a8-c92e7e504d39
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34072fe18bc2d0d751938ff536f6d4ba8e4c378b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7703d7ce8ace9d0eda8cfe5175df7c5c18b9bf71
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500958"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793190"
 ---
 # <a name="unattended-site-recovery-for-configuration-manager"></a>Ripristino automatico del sito per Configuration Manager   
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
  Per eseguire il [ripristino automatico](/sccm/protect/understand/recover-sites#site-recovery-procedures) di un sito di amministrazione centrale o di un sito primario di Configuration Manager, è possibile creare uno script di installazione automatica e quindi usare il programma di installazione con l'opzione di comando **/script**. Lo script specifica lo stesso tipo di informazioni richieste dall'installazione guidata, ma non prevede impostazioni predefinite. Per le chiavi di installazione applicabili al tipo di ripristino che si usa, è necessario specificare tutti i valori.
 

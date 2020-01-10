@@ -10,13 +10,12 @@ ms.topic: overview
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3710cc7178020af1d03bfd02953e2a2f3ed64f26
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ee66cd2714eff036ee62afc7c457b1e81fe78011
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68743611"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817211"
 ---
 # <a name="what-is-co-management"></a>Informazioni sulla co-gestione
 

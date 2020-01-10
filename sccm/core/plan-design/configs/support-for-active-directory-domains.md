@@ -10,17 +10,16 @@ ms.assetid: 8c5a13f8-42d5-4898-b7b6-e594dae8b335
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a04928afc64c16cf5d200abc94008ea29fc73197
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 70beb8b1d8cc76e885ff2ccd3f8a7dcf7324800d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72810776"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802022"
 ---
 # <a name="support-for-active-directory-domains-in-configuration-manager"></a>Supporto per i domini di Active Directory in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Tutti i sistemi del sito di Configuration Manager devono essere membri di un dominio di Active Directory supportato. I computer client Configuration Manager possono essere membri del dominio o membri del gruppo di lavoro.  
 

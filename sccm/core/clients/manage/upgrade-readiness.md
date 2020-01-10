@@ -10,17 +10,16 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11cb935eef2d214cf541142aea81fbe8e12bd06b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: fca73bd1d448f39bd5d25ffeea4047102e80ade1
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72384593"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823773"
 ---
 # <a name="integrate-upgrade-readiness-with-configuration-manager"></a>Integrare Preparazione aggiornamenti con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 > [!Important]  
 > A partire da ottobre 2019, l'integrazione di Preparazione aggiornamenti in Configuration Manager è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Il servizio Windows Analytics verrà ritirato il 31 gennaio 2020.

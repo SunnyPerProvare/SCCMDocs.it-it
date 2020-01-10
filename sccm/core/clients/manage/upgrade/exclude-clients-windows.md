@@ -10,17 +10,16 @@ ms.assetid: 4cd6031f-8844-4d0b-8166-b24d6528a94e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a16bc859006b0253459259d354a68e2ff1dec83
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b8906ec911061b2a72223d5709d9e6f389375fdc
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70110146"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823756"
 ---
 # <a name="how-to-exclude-clients-from-upgrade-in-configuration-manager"></a>Come evitare l'aggiornamento di client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile impedire che una raccolta di client installi automaticamente le versioni di client aggiornate. Questa opzione può essere usata per una raccolta di computer che richiede particolare attenzione durante l'aggiornamento del client. I client che appartengono a una raccolta esclusa ignorano le richieste di aggiornamento del software client.
 

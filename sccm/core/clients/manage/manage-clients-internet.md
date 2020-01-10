@@ -10,17 +10,16 @@ ms.assetid: c667d6af-80c4-485f-910c-896c0171fd00
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a97d05535b55071de6ab836f7fcd66c4c2cb8d0
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 758b953ae06f9e9def1b4da025b700f86ead17c0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68535666"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824147"
 ---
 # <a name="manage-clients-on-the-internet-with-configuration-manager"></a>Gestire i client in Internet con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 In Configuration Manager, la maggior parte dei computer e dei server gestiti si trovano in genere fisicamente nella stessa rete dei server del sistema del sito che eseguono le funzioni di gestione. Tuttavia, è possibile gestire i client esterni alla rete interna, quando sono connessi a internet. Questa possibilità non richiede che i client si connettano tramite VPN per raggiungere i server di sistema del sito.
 

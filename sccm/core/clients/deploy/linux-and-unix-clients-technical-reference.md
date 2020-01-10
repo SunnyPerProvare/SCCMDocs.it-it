@@ -10,17 +10,16 @@ ms.assetid: e5a8c79f-5791-49c5-8055-086d742e5559
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f3538265bdd7de801acf3d8f04c5561364989cf
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: de564595ce51a336b5f11d4050928fa812269601
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62214397"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825048"
 ---
 # <a name="linux-and-unix-clients-component-services-and-commands-for-configuration-manager"></a>Servizi componenti e comandi dei client Linux e UNIX per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 > [!Important]  
 > A partire dalla versione 1902, Configuration Manager non supporta i client Linux o UNIX. 
@@ -30,14 +29,14 @@ ms.locfileid: "62214397"
 
  Nella tabella seguente sono riportati i servizi componenti client del client di Configuration Manager per Linux e UNIX.  
 
-|Nome del file|Altre informazioni|  
+|Nome file|Altre informazioni|  
 |---------------|----------------------|  
 |ccmexec.bin|Questo servizio è simile al servizio ccmexc in un client basato su Windows. È responsabile di tutte le comunicazioni con i ruoli del sistema del sito di Configuration Manager e comunica anche con il servizio omiserver.bin per raccogliere l'inventario hardware dal computer locale.<br /><br /> Per un elenco di argomenti della riga di comando supportati, eseguire `ccmexec -h`|  
 |omiserver.bin|Questo servizio è il server CIM. Il server CIM fornisce un framework per i moduli software plug-in denominati provider. I provider interagiscono con le risorse dei computer Linux e UNIX e raccolgono i dati di inventario hardware. Ad esempio, il **provider process** per Linux computer raccoglie i dati associati ai processi del sistema operativo Linux.|  
 
  I seguenti comandi dell'elenco di tabelle che è possibile utilizzare per avviare, arrestare o riavviare i servizi client (CCMExec e omiserver) in ogni versione di Linux o UNIX. Quando si avvia o arresta il servizio ccmexec, viene avviato o arrestato anche il servizio omiserver.  
 
-|Sistema operativo|Comandi:|  
+|Sistema operativo|Comandi|  
 |----------------------|--------------|  
 |Universal Agent<br /><br /> RHEL 4 e SLES 9|Avvia: `/etc/init d/ccmexecd start`<br /><br /> Arresta: `/etc/init d/ccmexecd stop`<br /><br /> Riavvia: `/etc/init d/ccmexecd restart`|  
 |Solaris 9|Avvia: `/etc/init d/ccmexecd start`<br /><br /> Arresta: `/etc/init d/ccmexecd stop`<br /><br /> Riavvia: `/etc/init d/ccmexecd restart`|  

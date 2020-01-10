@@ -10,17 +10,16 @@ ms.assetid: caad2d93-087c-4dc0-a2a7-6a2fd808b4c8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 48b5abb686171b475233a2c61b80c0819ee26994
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 55d2599654441dcaa86bceb06f7d1c2a49f8f736
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500893"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826102"
 ---
 # <a name="collection-evaluation-viewer"></a>Collection Evaluation Viewer
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Collection Evaluation Viewer è uno [strumento di Configuration Manager](/sccm/core/support/tools). Usarlo per visualizzare e risolvere i problemi del processo di valutazione raccolta nel server del sito primario.
 
@@ -54,7 +53,7 @@ Esistono quattro thread che vengono eseguiti per valutare le raccolte presenti n
 
 
 
-## <a name="requirements"></a>requisiti
+## <a name="requirements"></a>Requisiti
 
 - Eseguire lo strumento nel server del sito  
 

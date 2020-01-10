@@ -10,17 +10,16 @@ ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb7206020ff0a31cbf853ac1513e806c5bc05165
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 625ae5a9a626db7ef7509cd67a7fbfde54a8a9cf
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67251945"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802685"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Novità della versione 1810 di Configuration Manager (Current Branch)
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 L'aggiornamento 1810 per Configuration Manager (Current Branch) è disponibile come aggiornamento nella console. Applicare questo aggiornamento ai siti con la versione 1710, 1802 o 1806. <!-- baseline only statement: When installing a new site, it's also available as a baseline version.--> Questo articolo offre un riepilogo delle modifiche e delle nuove funzionalità di Configuration Manager versione 1810.  
 
@@ -436,7 +435,7 @@ L'aggiornamento cumulativo seguente (4488598) è disponibile nella console a par
 
 Gli hotfix aggiuntivi seguenti sono disponibili per la risoluzione di problemi specifici:
 
-| ID | Titolo | Data | Nella console |
+| ID | Titolo | Date | Nella console |
 |---------|---------|---------|---------|
 | [4487960](https://support.microsoft.com/help/4487960) | Il certificato del connettore Microsoft Intune non viene rinnovato in Configuration Manager | 18 gennaio 2019 | Sì |
 | [4490434](https://support.microsoft.com/help/4490434) | Vengono create colonne di individuazione utente duplicate in Configuration Manager | 22 febbraio 2019 | Sì |

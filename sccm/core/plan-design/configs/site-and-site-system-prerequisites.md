@@ -10,17 +10,16 @@ ms.assetid: 1392797b-76cb-46b4-a3e4-8f349ccaa078
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 201441b4fd00199d5c8730b10dbb8631b69c1ee6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 00197d92e6a6bb928fd2727e55857056bf3839ac
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660581"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802090"
 ---
 # <a name="site-and-site-system-prerequisites-for-configuration-manager"></a>Prerequisiti del sito e del sistema del sito per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 I computer basati su Windows richiedono configurazioni specifiche per supportare l'uso come server del sistema del sito di Configuration Manager.
 
@@ -194,7 +193,7 @@ Quando si installa un nuovo sito, Configuration Manager installa automaticamente
 ## <a name="bkmk_2012acwspreq"></a> Punto per siti Web del catalogo applicazioni  
 
 > [!Important]  
-> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
+> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >
@@ -236,7 +235,7 @@ Per altre informazioni sulle versioni di .NET Framework, vedere gli articoli seg
 
     - Estendibilità .NET 4.5  
 
-- Protezione:  
+- Sicurezza:  
 
     - Autenticazione di Windows  
 
@@ -248,7 +247,7 @@ Per altre informazioni sulle versioni di .NET Framework, vedere gli articoli seg
 ## <a name="bkmk_2012ACwsitepreq"></a> Punto per servizi Web del catalogo applicazioni  
 
 > [!Important]  
-> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
+> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >
@@ -369,7 +368,7 @@ Quando si installa un nuovo sito, Configuration Manager installa automaticamente
 
     - Estensioni ISAPI  
 
-- Protezione:  
+- Sicurezza:  
 
     - Autenticazione di Windows  
 
@@ -519,7 +518,7 @@ Per altre informazioni sulle versioni di .NET Framework, vedere gli articoli seg
 
     - Estendibilità .NET 4.5  
 
-- Protezione:  
+- Sicurezza:  
 
     - Autenticazione di Windows  
 
@@ -570,7 +569,7 @@ Per altre informazioni sulle versioni di .NET Framework, vedere gli articoli seg
 
     - Estensioni ISAPI  
 
-- Protezione:  
+- Sicurezza:  
 
     - Autenticazione di Windows  
 
@@ -735,7 +734,7 @@ Queste versioni del sistema operativo non sono supportate per i server del sito 
 
     - Estensioni ISAPI  
 
-- Protezione:  
+- Sicurezza:  
 
     - Autenticazione di Windows  
 

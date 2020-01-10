@@ -10,17 +10,16 @@ ms.assetid: 435c923c-ea30-4dce-8afd-48962ed85502
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f76cf68cc007a5cefb323828752186ded62ad5f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: da0ed04ea85e48240b38cd4d585a83d46370828b
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70902917"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823994"
 ---
 # <a name="configure-power-management-in-configuration-manager"></a>Configurare il risparmio energia in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo illustra come configurare il risparmio energia in Configuration Manager.
 

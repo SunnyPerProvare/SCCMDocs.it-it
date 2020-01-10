@@ -10,17 +10,16 @@ ms.assetid: 341f0d0b-f907-44cf-9e10-e1b41fc15f82
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86c99fc79f89d94f4a32e34949b91d8633b23a65
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: cb4179efbb0a8ad463a7c7604a0ad7b15d7bef95
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73049475"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825082"
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-configuration-manager"></a>Come distribuire i client nei computer Windows in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo fornisce informazioni dettagliate su come distribuire il client di Configuration Manager in computer Windows. Per altre informazioni su come pianificare e preparare la distribuzione dei client, vedere questi articoli:
 
@@ -532,7 +531,7 @@ Il supporto di installazione di Configuration Manager include un modello amminis
 > Per evitare questo problema:
 >
 > 1. Aprire `ConfigMgrInstallation.adm` nel Blocco note.
-> 2. Per la proprietà `VALUENAME SetupParameters`, modificare il valore `MAXLEN` in un intero più grande. Ad esempio, `MAXLEN 511`.
+> 2. Per la proprietà `VALUENAME SetupParameters`, modificare il valore `MAXLEN` in un intero più grande. Ad esempio, `MAXLEN 511`
 
 ### <a name="configure-and-assign-client-installation-properties-by-using-a-group-policy-object"></a>Configurare e assegnare le proprietà di installazione client tramite un oggetto Criteri di gruppo  
 

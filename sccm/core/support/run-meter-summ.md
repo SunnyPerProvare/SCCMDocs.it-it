@@ -10,17 +10,16 @@ ms.assetid: d27f88fe-817f-4af4-b290-c16f2e46cf31
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b044272663ada4b43536f88c293308c57732e9c4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d54dc914fb6418ff9ad9048736400ee9d403f978
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500811"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792559"
 ---
 # <a name="run-meter-summarization-tool"></a>Run Meter Summarization Tool
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Run Meter Summarization Tool è uno degli [strumenti di Configuration Manager](/sccm/core/support/tools). Usarlo per avviare immediatamente le attività di manutenzione per il riepilogo della misurazione del software nei siti primari. Per impostazione predefinita, queste attività vengono eseguite in base alla pianificazione definita nelle attività di **Manutenzione sito**, che vengono avviate ogni giorno dopo le 12.00. 
 
@@ -37,7 +36,7 @@ Questo strumento esegue le attività di riepilogo dei dati della misurazione del
 `runmetersumm  [sms database name]  <delay in hours for summarization <default=0>>`
 
 
-### <a name="options"></a>Opzioni
+### <a name="options"></a>Options
 
 #### <a name="database-name"></a>Nome del database
 Nome del database del sito nel server SQL.

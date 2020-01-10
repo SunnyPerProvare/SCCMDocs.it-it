@@ -10,17 +10,16 @@ ms.assetid: 395403dc-6997-4415-93fd-6b1eeb6ba31a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80a51140ed356390aeae809912f46c3c512063b3
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 205616f4f91a278218a5943974c6de38914fc8de
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74659680"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792325"
 ---
 # <a name="configuration-manager-tools"></a>Strumenti di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Gli strumenti di Configuration Manager comprendono [strumenti basati su client](#client-tools) e [strumenti basati su server](#server-tools). Questi strumenti consentono di supportare e risolvere i problemi di infrastruttura di Configuration Manager.
 

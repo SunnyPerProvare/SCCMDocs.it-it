@@ -10,13 +10,12 @@ ms.assetid: 8d878443-90e7-46e4-9cd3-99e2a19b2ad0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ed92d6249e4459f1902f639840b142977994df9e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 29d91b7b915a381be1ea26f1f0b4fa4395c99dcb
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62205383"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816939"
 ---
 # <a name="cloud-connecting-with-co-management"></a>Connessione al cloud con la co-gestione
 

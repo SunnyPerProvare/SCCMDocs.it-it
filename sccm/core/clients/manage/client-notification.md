@@ -10,17 +10,16 @@ ms.assetid: deb8aac8-2bd9-4980-a25b-5f8d93051226
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 770b25908512c8a9be475c4276cde8bbddbb85d2
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f616c1cd87fcd0852fe783d5daec51284ef54233
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74658473"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824623"
 ---
 # <a name="client-notification-in-configuration-manager"></a>Notifica del client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Agire immediatamente sui client remoti, inviare un'azione di notifica client dalla console di Configuration Manager. Avviare queste azioni su un singolo dispositivo o su una raccolta di dispositivi.
 

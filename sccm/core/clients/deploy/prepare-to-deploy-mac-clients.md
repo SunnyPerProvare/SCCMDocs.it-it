@@ -10,17 +10,16 @@ ms.assetid: 2285a953-6a86-4ed5-97dd-cd57b02bc1ee
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3718661af1bae7dbf0984e29d95736b9f86104dc
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b70150fe04900b467ea219da68ac674a18f9834d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70378359"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824793"
 ---
 # <a name="prepare-to-deploy-client-software-to-macs"></a>Preparare la distribuzione del software client in computer Mac
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Seguire questa procedura per assicurarsi di essere pronti a [distribuire il client di Configuration Manager in computer Mac](/sccm/core/clients/deploy/deploy-clients-to-macs).
 
@@ -34,7 +33,7 @@ Per l'elenco delle versioni supportate, vedere [Sistemi operativi supportati per
 
 
 
-## <a name="certificate-requirements"></a>Requisiti del certificato
+## <a name="certificate-requirements"></a>Requisiti per i certificati
 
 Per installare e gestire i client per computer Mac sono necessari i certificati di infrastruttura a chiave pubblica (PKI). I certificati PKI proteggono la comunicazione tra i computer Mac e il sito di Configuration Manager usando l'autenticazione manuale e i trasferimenti di dati crittografati. Configuration Manager può richiedere e installare un certificato client utente. La soluzione usa Servizi certificati con un'autorità di certificazione globale (enterprise), nonché il punto di registrazione e il punto proxy di registrazione di Configuration Manager. È anche possibile richiedere e installare un certificato del computer in modo indipendente da Configuration Manager. Il certificato deve soddisfare i requisiti di Configuration Manager relativi ai certificati.  
 

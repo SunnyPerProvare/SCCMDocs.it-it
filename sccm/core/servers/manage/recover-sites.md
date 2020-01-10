@@ -10,17 +10,16 @@ ms.assetid: 19539f4d-1667-4b4c-99a1-9995f12cf5f7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3d72c9404bc8d928619ca4f262304dabc479f808
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 594e5a069edbb742cf4348a9b1ef7d4d4da3cf96
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70021927"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794325"
 ---
 # <a name="recover-a-configuration-manager-site"></a>Ripristinare un sito di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Eseguire un ripristino del sito di Configuration Manager dopo che si verifica un errore nel sito o una perdita di dati nel database del sito. La riparazione e la risincronizzazione dei dati sono le attività principali del ripristino di un sito e sono necessarie per evitare l'interruzione delle operazioni.
 
@@ -421,7 +420,7 @@ Configuration Manager richiede un certificato di gestione di Azure per la comuni
 
 Configuration Manager non supporta il backup del database in un sito secondario, ma supporta il ripristino mediante reinstallazione del sito secondario. Il ripristino del sito secondario è necessario quando si verifica un errore del sito secondario di Configuration Manager.
 
-### <a name="requirements"></a>requisiti
+### <a name="requirements"></a>Requisiti
 
 - Il server deve soddisfare tutti i prerequisiti del sito secondario e deve avere i diritti di sicurezza appropriati configurati.  
 

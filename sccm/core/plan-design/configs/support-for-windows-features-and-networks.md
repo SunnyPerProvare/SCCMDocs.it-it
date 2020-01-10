@@ -10,17 +10,16 @@ ms.assetid: 0cf4bacb-6b6d-4d4f-8640-b13fe15873de
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b2e5573ae4ec74db83dc895641af7b8fbc31a24
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 057858d4a67e1e1641dcde17fde6fc54cf70074a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65499572"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75801733"
 ---
 # <a name="support-for-windows-features-and-networks-in-configuration-manager"></a>Supporto per le funzionalità e le reti Windows in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo illustra il supporto di Configuration Manager per funzionalità comuni di Windows e di rete.  
 
@@ -64,7 +63,7 @@ Per informazioni, vedere [Configurare i client per BranchCache](https://docs.mic
 |Windows Server 2008 con SP2|**Richiede BITS 4.0**: per installare BITS 4.0 nei client di Configuration Manager, usare gli aggiornamenti software o la distribuzione del software. Per altre informazioni, vedere [Windows Management Framework](https://support.microsoft.com/help/968929/windows-management-framework-windows-powershell-2-0-winrm-2-0-and-bits).<br /><br /> In questo sistema operativo, la funzionalità client BranchCache non è supportata per la distribuzione di software eseguita dalla rete o per i trasferimenti di file SMB. Inoltre, questo sistema operativo non può usare la funzionalità BranchCache con punti di distribuzione basati su cloud.|  
 |Windows Server 2008 R2|Supportato per impostazione predefinita|  
 |Windows Server 2012|Supportato per impostazione predefinita|  
-|Windows Server 2012 R2|Supportato per impostazione predefinita|  
+|R2 per Windows Server 2012|Supportato per impostazione predefinita|  
 |Windows Server 2016|Supportato per impostazione predefinita|  
 
 Per altre informazioni, vedere [BranchCache per Windows](https://docs.microsoft.com/windows-server/networking/branchcache/branchcache) nella documentazione di Windows Server.  
@@ -87,7 +86,7 @@ Configuration Manager offre il supporto per i client in gruppi di lavoro.
 Configuration Manager supporta l'uso della deduplicazione dati con punti di distribuzione nei sistemi operativi seguenti:  
 
 -   Windows Server 2016
--   Windows Server 2012 R2  
+-   R2 per Windows Server 2012  
 -   Windows Server 2012  
 
 

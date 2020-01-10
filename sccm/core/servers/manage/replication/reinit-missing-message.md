@@ -6,17 +6,16 @@ ms.date: 08/09/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: 39a3001e-2df5-4b36-bd83-4f1d21dda335
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2307a4bddb3651f0954e479f34b987312a18e12f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d24c35019b7a33fbe1d007817f4121fc1121b8d7
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68957611"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793593"
 ---
 # <a name="reinit-missing-message"></a>Reinizializzazione del messaggio mancante
 

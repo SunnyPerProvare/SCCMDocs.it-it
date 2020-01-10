@@ -10,17 +10,16 @@ ms.assetid: 2c8f57cf-1968-48de-87fb-4897432ed6e0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5dadb6400ad76947ce7ace3228b6f7d95cedc17
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b692fa2024de18c55bc250aa090d1a98c14df5ed
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71311558"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824079"
 ---
 # <a name="how-to-monitor-clients-in-configuration-manager"></a>Come monitorare i client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Dopo aver installato il client Configuration Manager nei dispositivi Windows nel proprio sito, monitorarne l'integrità e l'attività nella console di Configuration Manager.  
 

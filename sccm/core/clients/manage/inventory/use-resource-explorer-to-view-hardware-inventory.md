@@ -10,17 +10,16 @@ ms.assetid: 375912f5-436d-4315-bdbe-d77afee6c9f3
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c55b7b5bc4effdb1bf1f13dbe0248aa56ad2abe1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b2ab72a821f469240d28606a7aa896df0ae6d141
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65499965"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824215"
 ---
 # <a name="how-to-use-resource-explorer-to-view-hardware-inventory-in-configuration-manager"></a>Come usare Esplora inventario risorse per visualizzare l'inventario hardware in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare Esplora inventario risorse in Configuration Manager per visualizzare le informazioni relative all'inventario hardware. Il sito raccoglie le informazioni dai client nella gerarchia.  
 

@@ -10,17 +10,16 @@ ms.assetid: b189a346-8c0d-4870-a876-0719fbb0ab04
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2443f8ddc280e880ffb43a8e82bbc47b49d4395
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 771073b087378a6d53b8315c077d520d2c7f9d5b
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70110206"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806289"
 ---
 # <a name="refresh-an-existing-computer-with-a-new-version-of-windows"></a>Aggiornare un computer esistente con una nuova versione di Windows
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare Configuration Manager per partizionare e formattare un computer esistente e quindi installare un nuovo sistema operativo. Questo processo viene talvolta definito *ricreazione dell'immagine* o *cancellazione e caricamento*. Per questo scenario, scegliere tra i numerosi e diversi metodi di distribuzione disponibili, ad esempio PXE, supporti di avvio o Software Center. È anche possibile usare un punto di migrazione stato per archiviare le impostazioni e quindi ripristinarle nel nuovo sistema operativo.
 

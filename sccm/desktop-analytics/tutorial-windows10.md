@@ -10,13 +10,12 @@ ms.assetid: 3e82cd96-0ce0-474a-a597-d65fceadc95a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c84b5bf720a974bd767db56b9e9da4784caefad1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 26ca3129e152c7dd8c521e39e6bd859fddbe29df
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72384681"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825541"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Esercitazione: Distribuire Windows 10 a un gruppo pilota
 
@@ -209,7 +208,7 @@ Installare l'aggiornamento cumulativo versione 1902 (4500571) di Configuration M
 
     - **Selezionare raccolte specifiche da sincronizzare con Desktop Analytics**: Selezionare **Aggiungi** per includere altre raccolte. Queste raccolte sono disponibili nel portale di Desktop Analytics per il raggruppamento con i piani di distribuzione. Assicurarsi di includere le raccolte pilota e di esclusioni pilota.  
 
-        Queste raccolte continuano a essere sincronizzate quando viene modifica l'appartenenza. Il piano di distribuzione, ad esempio, usa una raccolta con una regola di appartenenza di Windows 7. Quando i dispositivi eseguono l'aggiornamento a Windows 10 e Configuration Manager valuta l'appartenenza alla raccolta, i dispositivi escono dalla raccolta e dal piano di distribuzione.  
+        Queste raccolte continuano a essere sincronizzate quando viene modificata l'appartenenza. Il piano di distribuzione, ad esempio, usa una raccolta con una regola di appartenenza di Windows 7. Quando i dispositivi eseguono l'aggiornamento a Windows 10 e Configuration Manager valuta l'appartenenza alla raccolta, i dispositivi escono dalla raccolta e dal piano di distribuzione.  
 
 8. Completare la procedura guidata.  
 
@@ -218,7 +217,7 @@ Configuration Manager crea criteri di impostazioni per configurare i dispositivi
 > [!Note]  
 > Per altre informazioni su queste impostazioni, vedere [Impostazioni di Windows](/sccm/desktop-analytics/enroll-devices#windows-settings).  
 
-Monitorare la configurazione dei dispositivi per Desktop Analytics. Nella console di Configuration Manager passare all'area di lavoro **Raccolta software**, espandere il nodo **Manutenzione di Desktop Analytics** e selezionare la dashboard **Integrità connessione**.  
+Monitorare la configurazione dei dispositivi per Desktop Analytics. Nella console di Configuration Manager passare all'area di lavoro **Raccolta software**, espandere il nodo **Manutenzione di Desktop Analytics** e selezionare il dashboard **Integrità connessione**.  
 
 Configuration Manager sincronizza le raccolte entro 60 minuti dalla creazione della connessione. Nel portale di Desktop Analytics passare a **Pilota globale** e visualizzare le raccolte di dispositivi di Configuration Manager.
 
@@ -299,7 +298,7 @@ Usare questa procedura per distribuire Windows 10 in Configuration Manager al gr
 
 2. Nella scheda **Home** della barra multifunzione, nel gruppo **Crea** selezionare **Aggiungi pacchetto di aggiornamento del sistema operativo**. Questa azione avvia l'Aggiunta guidata del pacchetto di aggiornamento del sistema operativo.  
 
-3. Nella pagina **Origine dati** specificare il **Percorso** di rete dei file di origine dell'installazione del pacchetto di aggiornamento del sistema operativo. Ad esempio, `\\server\share\path`.  
+3. Nella pagina **Origine dati** specificare il **Percorso** di rete dei file di origine dell'installazione del pacchetto di aggiornamento del sistema operativo. Ad esempio, `\\server\share\path`  
 
     > [!NOTE]  
     > I file di origine dell'installazione contengono Setup.exe e altri file e cartelle per installare il sistema operativo.  
