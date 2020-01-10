@@ -10,13 +10,12 @@ ms.assetid: 2ea18d09-c957-47f7-8e54-c6f2b3c74347
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10535acc49f047876eafb188569e82db7a2bbea9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 6f0b83d695ff3a80bd41973847ca91b654472a77
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73704783"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791569"
 ---
 # <a name="how-to-enroll-devices-in-desktop-analytics"></a>Come registrare i dispositivi in Desktop Analytics
 
@@ -142,7 +141,7 @@ Per modificare le impostazioni, seguire questa procedura:
     - **Selezionare raccolte specifiche da sincronizzare con Desktop Analytics**: Selezionare **Aggiungi** per inserire ulteriori raccolte della gerarchia **Raccolta di destinazione**. Queste raccolte sono disponibili nel portale di Desktop Analytics per il raggruppamento con i piani di distribuzione. Assicurarsi di includere le raccolte pilota e di esclusioni pilota.  <!-- 4097528 -->
 
         > [!Important] 
-        > Queste raccolte continuano a essere sincronizzate quando viene modifica l'appartenenza. Il piano di distribuzione, ad esempio, usa una raccolta con una regola di appartenenza di Windows 7. Quando i dispositivi eseguono l'aggiornamento a Windows 10 e Configuration Manager valuta l'appartenenza alla raccolta, i dispositivi escono dalla raccolta e dal piano di distribuzione.  
+        > Queste raccolte continuano a essere sincronizzate quando viene modificata l'appartenenza. Il piano di distribuzione, ad esempio, usa una raccolta con una regola di appartenenza di Windows 7. Quando i dispositivi eseguono l'aggiornamento a Windows 10 e Configuration Manager valuta l'appartenenza alla raccolta, i dispositivi escono dalla raccolta e dal piano di distribuzione.  
 
 
 ### <a name="windows-settings"></a>Impostazioni di Windows
