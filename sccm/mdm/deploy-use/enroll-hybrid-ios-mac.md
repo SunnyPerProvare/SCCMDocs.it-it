@@ -1,7 +1,7 @@
 ---
 title: Configurare la gestione di dispositivi iOS e Mac ibrida con Microsoft Intune
 titleSuffix: Configuration Manager
-description: Impostare la gestione dei dispositivi iOS con System Center Configuration Manager e Microsoft Intune.
+description: Configurare la gestione dei dispositivi iOS con Configuration Manager e Microsoft Intune.
 ms.date: 08/11/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c6573ce4faf893e30eac070efd963dc7465e20e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
-ms.translationtype: MT
+ms.openlocfilehash: 33ad4aeb220c163d429212990a92eae71f8549a7
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67678842"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520950"
 ---
-# <a name="set-up-ios-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la gestione dei dispositivi iOS ibrido con Microsoft Intune e System Center Configuration Manager
+# <a name="set-up-ios-hybrid-device-management-with-configuration-manager-and-microsoft-intune"></a>Configurare la gestione di dispositivi ibridi iOS con Configuration Manager e Microsoft Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Con Configuration Manager e Intune si abilita la registrazione dei dispositivi iOS e Mac OS affinché gli utenti di iPhone, iPad e Mac possano accedere alla posta elettronica e alle risorse aziendali. Dopo aver installato l'app Portale aziendale di Intune, è possibile assegnare criteri ai relativi dispositivi. Prima di poter gestire i dispositivi iOS e Mac, è necessario importare un certificato del servizio APN (Apple Push Notification Service). Questo certificato consente a Intune di gestire i dispositivi iOS e Mac stabilendo una connessione con il servizio di gestione dei dispositivi di Apple.  
 
@@ -78,4 +78,4 @@ Dopo aver completato la configurazione occorre informare gli utenti su come regi
 3. Scegliere **Blocca dispositivi di proprietà personale** per limitare la registrazione ai dispositivi di proprietà dell'azienda.
 
 > [!div class="button"]
-> [< Passaggio precedente](create-service-connection-point.md)  [Passaggio successivo >](set-up-additional-management.md)
+> [Passaggio successivo](set-up-additional-management.md) [< passaggio precedente](create-service-connection-point.md)>

@@ -1,7 +1,7 @@
 ---
 title: Configurare la gestione di dispositivi Windows ibrida con Microsoft Intune
 titleSuffix: Configuration Manager
-description: Impostare la gestione dei dispositivi Windows con System Center Configuration Manager e Microsoft Intune.
+description: Configurare la gestione dei dispositivi Windows con Configuration Manager e Microsoft Intune.
 ms.date: 03/17/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ce20ac1917640bd9762bafb37c0e22fe39375fa
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
-ms.translationtype: MT
+ms.openlocfilehash: 61ddfa93f4f13f7e648368efe1c611beaa420fdc
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70379576"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75520780"
 ---
-# <a name="set-up-windows-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la gestione di dispositivi ibridi Windows con System Center Configuration Manager e Microsoft Intune
+# <a name="set-up-windows-hybrid-device-management-with-configuration-manager-and-microsoft-intune"></a>Configurare la gestione di dispositivi ibridi Windows con Configuration Manager e Microsoft Intune
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo argomento descrive in che modo gli amministratori IT possono consentire agli utenti di iniziare a gestire i PC Windows e dispositivi mobili usando Configuration Manager e Microsoft Intune.
 
@@ -125,4 +125,4 @@ La propagazione delle modifiche ai record DNS potrebbe richiedere fino a 72 ore.
  Dopo aver completato la configurazione occorre informare gli utenti su come registrare i loro dispositivi. Per informazioni, vedere [Informazioni sull'uso di Microsoft Intune per gli utenti finali](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune). È possibile indirizzare gli utenti a [Uso del dispositivo Windows con Intune](https://docs.microsoft.com/intune/enduser/enroll-your-device-in-intune-windows). Queste informazioni si applicano ai dispositivi mobili gestiti sia con Microsoft Intune che con Configuration Manager.
 
 > [!div class="button"]
-> [< Passaggio precedente](create-service-connection-point.md)  [Passaggio successivo >](set-up-additional-management.md)
+> [Passaggio successivo](set-up-additional-management.md) [< passaggio precedente](create-service-connection-point.md)>
