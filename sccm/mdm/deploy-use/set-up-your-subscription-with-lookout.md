@@ -10,13 +10,12 @@ ms.assetid: 6087b279-ba05-4824-b5e3-3af14f3d3cfe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 56b1ed9f22aeab073bb936ae525c3dec3c422837
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 080d184f09c3ee3dd45fe27b2b5f624fabfcdb91
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75519777"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826629"
 ---
 # <a name="set-up-your-subscription-for-lookout-mobile-threat-defense"></a>Configurare la sottoscrizione per Lookout Mobile Threat Defense
 
@@ -47,7 +46,7 @@ Per configurare la sottoscrizione per Lookout Mobile Threat Defense, seguire que
 Il tenant di Lookout Mobility Endpoint Security verrà associato alla sottoscrizione di Azure AD per l'integrazione di Lookout con Intune. Per abilitare la sottoscrizione al servizio Lookout Mobile Threat Defense, il supporto di Lookout (enterprisesupport@lookout.com) richiede le informazioni seguenti:
 
 - **ID tenant di Azure AD**
-- **ID oggetto gruppo di Azure AD** per accesso *completo* alla console di Lookout
+- **ID oggetto gruppo di Azure AD** per l'accesso *completo* alla console di Lookout
 - **ID oggetto gruppo di Azure AD** per accesso *limitato* alla console di Lookout (facoltativo)
 
 Eseguire i passaggi seguenti per raccogliere le informazioni richieste dal team di supporto di Lookout.

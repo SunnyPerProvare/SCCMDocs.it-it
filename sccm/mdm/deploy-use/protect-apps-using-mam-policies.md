@@ -10,19 +10,18 @@ ms.assetid: 28115475-e563-4e16-bf30-f4c9fe704754
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c63d25e8e75bc0216d2a4cb12a9312e921214938
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 91235bb9db031ad743950e1237f5b9cc306415e4
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73704681"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826612"
 ---
-# <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Proteggere le app usando i criteri di gestione delle applicazioni mobili in System Center Configuration Manager
+# <a name="protect-apps-using-mobile-application-management-policies-in-configuration-manager"></a>Proteggere le app usando i criteri di gestione delle applicazioni mobili in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-I criteri di gestione delle applicazioni di System Center Configuration Manager consentono di modificare le funzionalità delle app distribuite per adeguarle ai criteri aziendali di conformità e sicurezza. Ad esempio, è possibile limitare le operazioni taglia, copia e incolla in un'app con restrizioni oppure configurare un'app per aprire tutti i collegamenti Web in Managed Browser. I criteri di gestione delle app supportano:  
+Configuration Manager i criteri di gestione delle applicazioni consentono di modificare la funzionalità delle app distribuite per adeguarle ai criteri aziendali di conformità e sicurezza. Ad esempio, è possibile limitare le operazioni taglia, copia e incolla in un'app con restrizioni oppure configurare un'app per aprire tutti i collegamenti Web in Managed Browser. I criteri di gestione delle app supportano:  
 
 -   Dispositivi che eseguono Android 4 e versioni successive  
 
@@ -32,11 +31,11 @@ I criteri di gestione delle applicazioni di System Center Configuration Manager 
 
 Per usare questa nuova funzionalità, è necessario usare il portale di anteprima di Azure. Gli argomenti seguenti possono essere utili per iniziare:  
 - [Introduzione ai criteri di gestione delle app mobili nel portale di Azure](https://technet.microsoft.com/library/mt627830.aspx)  
-- [Creare e distribuire i criteri di gestione delle app mobili con Microsoft Intune](https://technet.microsoft.com/library/mt627829.aspx)  
+- [Creare e distribuire i criteri di gestione delle app per dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/library/mt627829.aspx)  
 
   Un criterio di gestione delle applicazioni non viene distribuito direttamente come invece avviene per le linee base e gli elementi di configurazione in Configuration Manager. Al contrario, è possibile associare i criteri al tipo di distribuzione delle applicazioni che si vuole limitare. Le impostazioni specificate diventeranno effettive quando il tipo di distribuzione delle app verrà distribuito e installato nei dispositivi.  
 
-Per applicare le restrizioni a un'app, è necessario che nell'app sia incorporato il Software Development Kit (SDK) dell'app di Microsoft Intune. Esistono due metodi per ottenere questo tipo di app:  
+Per applicare restrizioni a un'app, questa deve includere Microsoft Intune App Software Development Kit (SDK). Esistono due metodi per ottenere questo tipo di app:  
 
 -   **Usare un'app gestita da criteri** (Android e iOS): queste app includono App SDK incorporato. Per aggiungere questo tipo di applicazione, è possibile specificare un collegamento all'app da un archivio di app, ad esempio l'iTunes store o Google Play. Non sono richieste ulteriori elaborazioni per questo tipo di app. Per un elenco delle app gestite da criteri disponibili per dispositivi iOS e Android, vedere [App gestite per criteri di gestione delle applicazioni per dispositivi mobili di Microsoft Intune](https://technet.microsoft.com/library/dn708489.aspx).  
 
@@ -122,7 +121,7 @@ Per applicare le restrizioni a un'app, è necessario che nell'app sia incorporat
 |**Consenti all'app di trasferire i dati ad altre app**|Specifica le app a cui questa app può inviare dati. È possibile scegliere di non consentire il trasferimento dei dati a qualsiasi app, consentire il trasferimento solo ad altre app con restrizioni o consentire il trasferimento a qualsiasi app.<br /><br /> Nei dispositivi iOS, per impedire il trasferimento di documenti tra app gestite e non gestite, è necessario anche configurare e distribuire un criterio di sicurezza dei dispositivi mobili che disabilita l'impostazione **Consenti documenti gestiti in altre app non gestite**.<br /><br /> Se si sceglie di consentire il trasferimento solo ad altre app con restrizioni, vengono usati i visualizzatori Intune di immagini e PDF (se distribuiti) per aprire il contenuto dei rispettivi tipi.|  
 |**Consenti all'app di ricevere i dati da altre app**|Specifica le app da cui questa app può ricevere dati. È possibile scegliere di non consentire il trasferimento dei dati da qualsiasi app, consentire il trasferimento solo da altre app con restrizioni o consentire il trasferimento da qualsiasi app.|  
 |**Impedisci "Salva con nome"**|Disabilita l'uso dell'opzione **Salva con nome** in qualsiasi app che usa questo criterio.|  
-|**Limita le operazioni taglia, copia e incolla con le altre app**|Specifica come è possibile usare le operazioni taglia, copia e incolla con l'app. È possibile scegliere tra:<br /><br /> **Bloccato**: non consente le operazioni taglia, copia e incolla tra questa app e altre app.<br /><br /> **App gestite da criteri**: consente le operazioni taglia, copia e incolla solo tra questa app e altre app con restrizioni.<br /><br /> **App gestite da criteri con Incolla in**: consente di incollare i dati tagliati o copiati da questa app solo in altre app con restrizioni. I dati tagliati o copiati da qualsiasi app possono essere incollati in questa app.<br /><br /> **Qualsiasi app**: nessuna restrizione per le operazioni taglia, copia e incolla in o da questa app.|  
+|**Limita le operazioni taglia, copia e incolla con le altre app**|Specifica come è possibile usare le operazioni taglia, copia e incolla con l'app. Scegliere tra:<br /><br /> **Bloccato**: non consente le operazioni taglia, copia e incolla tra questa app e altre app.<br /><br /> **App gestite da criteri**: consente le operazioni taglia, copia e incolla solo tra questa app e altre app con restrizioni.<br /><br /> **App gestite da criteri con Incolla in**: consente di incollare i dati tagliati o copiati da questa app solo in altre app con restrizioni. I dati tagliati o copiati da qualsiasi app possono essere incollati in questa app.<br /><br /> **Qualsiasi app**: nessuna restrizione per le operazioni taglia, copia e incolla in o da questa app.|  
 |**Richiedi PIN semplice per l'accesso**|Richiede all'utente di immettere un PIN specificato per l'uso dell'app. All'utente viene richiesto di impostare questo numero alla prima esecuzione dell'app.|  
 |**Numero di tentativi prima della reimpostazione del PIN**|Specifica il numero di tentativi di immissione del PIN che è possibile effettuare prima che all'utente venga richiesto di reimpostare il PIN.|  
 |**Richiedi credenziali aziendali per l'accesso**|Richiede all'utente di immettere le informazioni di accesso aziendali per poter accedere all'app.|  

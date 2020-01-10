@@ -10,19 +10,18 @@ ms.assetid: e36b98c7-d0f4-4dd6-bac3-6a6c4b4bf841
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 055b5b0499eddc04ceb73363b288a0096418aa35
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 7bd57e31cdb84a6d7fe750002f61ccdef42d804c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75519624"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826527"
 ---
 # <a name="troubleshoot-lookout-integration-with-intune"></a>Risolvere i problemi di integrazione di Lookout con Intune
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-## <a name="troubleshoot-login-errors"></a>Risolvere i problemi relativi all'accesso
+## <a name="troubleshoot-login-errors"></a>Risolvere i problemi di accesso
 ### <a name="403-errors"></a>Errori 403
 Quando si accede alla [console di Lookout MTP](https://aad.lookout.com) può essere visualizzato un errore 403: **You are not authorized to access the service** (Non si dispone dell'autorizzazione per accedere al servizio). Questa situazione può verificarsi quando il nome utente specificato non è membro del gruppo Azure Active Directory (Azure AD) configurato per l'accesso a Lookout MTP.
 
@@ -39,7 +38,7 @@ Il seguente errore può apparire quando l'utente amministratore globale di Azure
 
 ![Schermata della pagina di accesso a Lookout con l'errore di accesso](media/lookout-consent-not-accepted-error.png)
 
-Per risolvere questo problema, l'utente amministratore globale deve accedere a https://aad.lookout.com/les?action=consent e accettare la richiesta di avviare il programma di installazione. Per altre informazioni, vedere [Set up your subscription with Lookout MTP](set-up-your-subscription-with-lookout.md) (Configurare l'abbonamento a Lookout MTP)
+Per risolvere questo problema, l'utente amministratore globale deve accedere a https://aad.lookout.com/les?action=consent e accettare la richiesta di avviare il programma di installazione. È possibile trovare informazioni più dettagliate nell'argomento [Configurare la sottoscrizione con Lookout MTP](set-up-your-subscription-with-lookout.md)
 
 ## <a name="troubleshoot-device-status-issues"></a>Risolvere i problemi di stato del dispositivo
 

@@ -10,13 +10,12 @@ ms.assetid: e3bb3e13-3037-4122-93bc-504bfd080a4d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6b0867f5f872eacb52d5e0e3faaffdfd7dae761
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e9ebc3993accadca7e17e06b4c27cbd704f58f00
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74659494"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826918"
 ---
 # <a name="import-pfx-certificate-profiles"></a>Importare profili certificato PFX
 
@@ -35,7 +34,7 @@ Usare Configuration Manager per importare le credenziali del certificato e quind
 
 1. Nella console di Configuration Manager passare all'area di lavoro **asset e conformità** , espandere **impostazioni di conformità**, **accesso risorse aziendali**e quindi selezionare **profili certificato**.
 
-1. Nella scheda **Home** della barra multifunzione, nel gruppo **Crea** , selezionare **Crea profilo certificato**.
+1. Nella scheda **Home** della barra multifunzione selezionare **Crea profilo certificato** nel gruppo **Crea**.
 
 1. Nella pagina **generale** della **creazione guidata profilo certificato**specificare le seguenti informazioni:  
 

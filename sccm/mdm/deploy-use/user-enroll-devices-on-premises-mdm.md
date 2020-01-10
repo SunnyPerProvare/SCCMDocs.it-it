@@ -10,13 +10,12 @@ ms.assetid: 59004b34-b64f-4d77-898c-07bf3dc75430
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d0d6b7b90db85a919959cd264b5261c15a6503a
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 6821a439e7ee054216a7ca73be027978ed659ae1
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75519641"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826493"
 ---
 # <a name="how-users-enroll-devices-with-on-premises-mobile-device-management-in-configuration-manager"></a>Come gli utenti registrano i dispositivi con la gestione dei dispositivi mobili locale in Configuration Manager
 

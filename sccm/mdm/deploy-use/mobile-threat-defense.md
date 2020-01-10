@@ -10,13 +10,12 @@ ms.assetid: 9083c571-f4fc-4a78-adc5-8aec84dabcbd
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b770a8d5a424b5c32fb47a69dc429890a914af7e
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 61dbf9f7835a8ca88ae5bf3bbdfb87011d8b8c0a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75520168"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826748"
 ---
 # <a name="manage-access-to-company-resource-based-on-device-network-and-application-risk"></a>Gestire l'accesso alle risorse aziendali in base ai rischi per dispositivi, rete e applicazioni
 
@@ -59,6 +58,6 @@ L'accesso è consentito dopo l'intervento di correzione:
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Informazioni su come proteggere l'accesso alle risorse aziendali in base ai rischi per dispositivi, rete e applicazioni tramite:
+Informazioni sulla protezione dell'accesso alle risorse aziendali in base al rischio di dispositivi, reti e applicazioni con:
 
 - [Lookout](https://docs.microsoft.com/intune/deploy-use/lookout-mobile-threat-defense-connector)

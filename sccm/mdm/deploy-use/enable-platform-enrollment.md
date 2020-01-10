@@ -10,13 +10,12 @@ ms.assetid: a9163b77-a67d-4139-8272-bb1dfdb8707c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66b1c52bb46dff5268ec2306ce6578a5afad7e84
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: ccf2fec4b5a58134ccfc9fb1fe0bc8e83fa30dde
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75520865"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826952"
 ---
 # <a name="enable-platform-enrollment-with-configuration-manager-and-microsoft-intune"></a>Abilitare la registrazione della piattaforma con Configuration Manager e Microsoft Intune
 

@@ -10,13 +10,12 @@ ms.assetid: 8e25e00c-c9a8-473f-bcb7-ea989f6ca3c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: dad04c2b6dac5cd746214365f4d335330e8a94e3
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 81b0722fa597d377edc5e09406e2d15431293366
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75520610"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826867"
 ---
 # <a name="manage-internet-access-using-managed-browser-policies-with-configuration-manager"></a>Gestire l'accesso a Internet mediante criteri di Managed Browser con Configuration Manager
 
@@ -97,7 +96,7 @@ Utilizzare le seguenti informazioni per ulteriori informazioni sui formati conse
 
   - Porta 443 per https  
 
-    Non usare caratteri jolly per il numero di porta, perché non sono supportati. Ad esempio: `http://www.contoso.com:*`   
+    Non usare caratteri jolly per il numero di porta, perché non sono supportati. Ad esempio `http://www.contoso.com:*`.   
 
 - Per ulteriori informazioni sui modelli consentiti che è possibile utilizzare quando si specificano gli URL, utilizzare la tabella seguente:  
 
