@@ -1,5 +1,5 @@
 ---
-title: Distribuire l'app Lookout for Work
+title: Distribuire app Lookout for Work
 titleSuffix: Configuration Manager
 description: Configurare e distribuire l'app Lookout for Work.
 ms.date: 05/31/2018
@@ -10,13 +10,12 @@ ms.assetid: 3f62b763-4347-453d-b0a7-1f4a0d1d4105
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50c334f608086b9176ac3c2f5f3a3215d3f69a48
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 6ecfc5f3f77d7e016f8fd809c768079de53617b2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75521239"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75822107"
 ---
 # <a name="configure-and-deploy-lookout-for-work-apps"></a>Configurare e distribuire l'app Lookout for Work
 
@@ -60,7 +59,7 @@ Questo articolo illustra come configurare e distribuire l'app Lookout for Work p
 
    3.  Per questo URI di reindirizzamento, usare il formato seguente: `lookoutwork://com.lookout.enterprise.<yourcompanyname>`, sostituendo `<yourcompanyname>` con il nome della società. ad esempio `lookoutwork://com.lookout.enterprise.contoso`
    4. Fare clic su **Crea** per creare l'app. 
-   5.  Aprire la nuova app, fare clic su **Impostazioni** e aggiungere un URI di reindirizzamento aggiuntivo. Usare il formato seguente: `companyportal://code/<originalURI>`, dove `<originalURI>` è una versione con codifica URL dell'URI di reindirizzamento originale. Ad esempio: `companyportal://code/lookoutwork%3A%2F%2Fcom.lookout.enterprise.contoso`
+   5.  Aprire la nuova app, fare clic su **Impostazioni** e aggiungere un URI di reindirizzamento aggiuntivo. Usare il formato seguente: `companyportal://code/<originalURI>`, dove `<originalURI>` è una versione con codifica URL dell'URI di reindirizzamento originale. Ad esempio `companyportal://code/lookoutwork%3A%2F%2Fcom.lookout.enterprise.contoso`.
    6.  Nelle impostazioni dell'app passare ad **Autorizzazioni necessarie** e fare clic su **Aggiungi**. Selezionare le autorizzazioni delegate seguenti:  
 
        | API  | Autorizzazione  |
@@ -83,7 +82,7 @@ Questo articolo illustra come configurare e distribuire l'app Lookout for Work p
 
 
 
-## <a name="what-happens-when-the-deployed-app-is-opened-on-the-device"></a>Cosa accade quando viene aperta l'app distribuita nel dispositivo
+## <a name="what-happens-when-the-deployed-app-is-opened-on-the-device"></a>Cosa accade quando l'app distribuita viene aperta sul dispositivo
 
 Quando l'utente apre Lookout for Work nel dispositivo, viene richiesta l'attivazione dell'app. L'utente deve scegliere di accedere con l'opzione Azure AD. Una procedura dettagliata con il flusso di lavoro per l'utente finale è disponibile in questi articoli:
 

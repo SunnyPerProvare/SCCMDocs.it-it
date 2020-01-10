@@ -10,13 +10,12 @@ ms.assetid: 45388103-2410-4c7e-b4cf-73a1bda485fc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee8e7b3dd4130712eebb82caa4e6519b78991a3d
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 253f72191f374f780997b88b183ea4267e8c5494
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75520984"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821971"
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-configuration-manager"></a>Profili VPN nei dispositivi mobili in Configuration Manager
 

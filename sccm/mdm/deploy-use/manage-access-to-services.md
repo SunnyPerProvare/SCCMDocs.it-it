@@ -10,13 +10,12 @@ ms.assetid: 7b04727b-d563-422f-8d59-4dd66215d0b3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 118a2339e4053c02381990309010ed30834a03ab
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 99dc6fa274f875bc7b1f41b435ececc3467821cd
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75520678"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806476"
 ---
 # <a name="manage-access-to-services-in-configuration-manager"></a>Gestire l'accesso ai servizi in Configuration Manager
 
@@ -95,7 +94,7 @@ L'accesso condizionale a Exchange Online supporta i dispositivi che eseguono:
 
 ## <a name="requirements-for-exchange-online-dedicated"></a>Requisiti per Exchange Online dedicato
 L'accesso condizionale di Exchange Online dedicato supporta i dispositivi che eseguono:
-- Windows 8 e versioni successive (se registrati in Intune)
+- Windows 8 e versioni successive (se registrato con Intune)
 - Windows 7.0 o Windows 8.1 (se aggiunto a un dominio)
 
   Accesso condizionale ai PC aggiunti al dominio soltanto per i tenant del nuovo ambiente Exchange Online dedicato.
@@ -110,7 +109,7 @@ L'accesso condizionale di Exchange Online dedicato supporta i dispositivi che es
 
 ## <a name="requirements-for-exchange-on-premises"></a>Requisiti per Exchange locale
 L'accesso condizionale a Exchange locale supporta:
-- Windows 8 e versioni successive (se registrati in Intune)
+- Windows 8 e versioni successive (se registrato con Intune)
 - Windows Phone 8 e versioni successive
 - App di posta elettronica nativa in iOS
 - App di posta elettronica nativa in Android versione 4 o successiva

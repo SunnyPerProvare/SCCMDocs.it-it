@@ -10,13 +10,12 @@ ms.assetid: b36f5e4a-2b57-4d18-83f6-197081ac2a0a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 79cbcef2e4b503f10cf1ade529678ac370902331
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 5a99f9d59e4d881cf027c2175012928c3f1a0425
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75521307"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75822124"
 ---
 # <a name="how-to-bulk-enroll-devices-with-on-premises-mobile-device-management-in-configuration-manager"></a>Come registrare in blocco i dispositivi con la gestione dei dispositivi mobili locale in Configuration Manager
 

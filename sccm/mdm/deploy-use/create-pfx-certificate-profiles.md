@@ -10,13 +10,12 @@ ms.assetid: d240a836-c49b-49ab-a920-784c062d6748
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7290ca74e792a9e7bd17c6ff976e81c6586977f3
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a797bde348654872cae7efe57429cff828828e5c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74659749"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821988"
 ---
 # <a name="create-pfx-certificate-profiles-using-a-certificate-authority"></a>Creare profili certificato PFX usando un'autorità di certificazione
 
@@ -32,7 +31,7 @@ Per importare le credenziali del certificato da file di certificato esistenti, v
 
 1. Nella console di Configuration Manager passare all'area di lavoro **asset e conformità** , espandere **impostazioni di conformità**, **accesso risorse aziendali**e quindi selezionare **profili certificato**.
 
-1. Nella scheda **Home** della barra multifunzione, nel gruppo **Crea** , selezionare **Crea profilo certificato**.
+1. Nella scheda **Home** della barra multifunzione selezionare **Crea profilo certificato** nel gruppo **Crea**.
 
 1. Nella pagina **generale** della **creazione guidata profilo certificato**specificare le seguenti informazioni:  
 

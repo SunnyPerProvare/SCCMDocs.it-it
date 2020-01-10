@@ -10,13 +10,12 @@ ms.assetid: 9b494767-68c1-47b1-9a86-591bff0ad491
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ddd7a35159ab0af1b3faaf0795031a98c201bf1
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 2865fd376dc711be24511b82ed8adb826d0dea18
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75520593"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821767"
 ---
 # <a name="manage-an-intune-subscription-associated-with-configuration-manager"></a>Gestire una sottoscrizione di Intune associata a Configuration Manager
 
@@ -50,4 +49,4 @@ Se si aggiunge una sottoscrizione di valutazione o a pagamento di Microsoft Intu
 È ora possibile creare un nuovo punto di connessione del servizio, aggiungere una nuova sottoscrizione di Intune a Configuration Manager e impostare Configuration Manager come autorità MDM.
 
 ## <a name="how-to-change-mdm-authority-to-intune"></a>Come cambiare l'autorità di gestione dei dispositivi mobili in Intune
-A partire da Configuration Manager versione 1610 e Microsoft Intune versione 1705, è possibile cambiare l'autorità MDM senza dover contattare il supporto Microsoft e senza dover annullare e ripetere la registrazione dei dispositivi gestiti esistenti. Per altre informazioni, vedere [Cambiare l'autorità MDM](/sccm/mdm/deploy-use/change-mdm-authority).
+A partire da Configuration Manager versione 1610 e Microsoft Intune versione 1705 è possibile modificare l'autorità MDM senza dover contattare il supporto Microsoft e senza che sia necessario annullare la registrazione dei dispositivi gestiti esistenti e quindi eseguirla di nuovo. Per altre informazioni, vedere [Cambiare l'autorità MDM](/sccm/mdm/deploy-use/change-mdm-authority).

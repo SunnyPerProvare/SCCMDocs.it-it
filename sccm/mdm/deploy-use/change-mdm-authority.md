@@ -10,13 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: cc397ab5-125f-4f17-905b-fab980194f49
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2c98a7f2c5f08b7a3eed446ae3b5eaaef88f1ad
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: ab327a08e8b79f02fd151b9f442e24a4892fac75
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75521290"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806714"
 ---
 # <a name="change-your-mdm-authority"></a>Cambiare l'autorità MDM
 
@@ -35,7 +34,7 @@ Questo articolo descrive la modifica dell'autorità MDM quando non è stata eseg
 
 Dopo aver cambiato l'autorità MDM, prevedere un tempo di transizione fino a otto ore prima dell'archiviazione del dispositivo e della sua sincronizzazione con il servizio. Per garantire che i dispositivi registrati continuino a essere gestiti e protetti dopo la modifica, configurare le impostazioni direttamente in Intune. Tenere presenti le seguenti considerazioni:
 
-- I dispositivi devono connettersi con il servizio dopo la modifica, in modo che le impostazioni dalla nuova autorità MDM (versione autonoma di Intune) sostituiscano le impostazioni esistenti nel dispositivo.  
+- Dopo la modifica, i dispositivi devono connettersi al servizio, in modo che le impostazioni della nuova autorità MDM (Intune autonomo) sostituiscano le impostazioni esistenti nel dispositivo.  
 
 - Dopo aver cambiato l'autorità MDM, alcune delle impostazioni di base (ad esempio i profili) dell'autorità MDM precedente (ibrido) rimarranno sul dispositivo per un massimo di sette giorni. È consigliabile configurare app e impostazioni (criteri, profili, app e così via) nella nuova autorità MDM non appena possibile. Inoltre, distribuire le impostazioni ai gruppi di utenti che contengono gli utenti con dispositivi registrati esistenti. Quando un dispositivo si connette al servizio dopo la modifica all'autorità MDM, riceve nuove impostazioni dalla nuova autorità MDM. Tutti i nuovi criteri di destinazione sostituiranno i criteri esistenti nel dispositivo.  
 
@@ -94,7 +93,7 @@ La procedura per cambiare l'autorità MDM in Intune autonomo include i passaggi 
 
 Una volta completata la modifica dell'autorità MDM, esaminare i passaggi seguenti:  
 
-- Quando il servizio Intune rileva che l'autorità MDM di un tenant è cambiata, invia un messaggio di notifica a tutti i dispositivi registrati per l'archiviazione e la sincronizzazione con il servizio. Questo comportamento si verifica al di fuori delle archiviazioni periodiche pianificate. Di conseguenza, dopo aver cambiato l'autorità MDM per il tenant da ibrida a Intune autonomo, tutti i dispositivi accesi e online si connettono al servizio, ricevono la nuova autorità MDM e vengono gestiti da Intune autonomo. La gestione e la protezione di questi dispositivi non viene mai interrotta.  
+- Quando il servizio Intune rileva che l'autorità MDM di un tenant è cambiata, invia un messaggio di notifica a tutti i dispositivi registrati per l'archiviazione e la sincronizzazione con il servizio. Questo comportamento si verifica al di fuori delle archiviazioni periodiche pianificate. Di conseguenza, dopo aver cambiato l'autorità MDM per il tenant da ibrida a Intune autonomo, tutti i dispositivi accesi e online si connettono al servizio, ricevono la nuova autorità MDM e vengono gestiti da Intune autonomo. Non ci sono interruzioni per la gestione e protezione di questi dispositivi.  
 
 - I dispositivi che sono spenti o non in linea durante (o immediatamente dopo) la modifica dell'autorità MDM si connettono e vengono sincronizzati con il servizio mediante la nuova autorità MDM quando sono nuovamente accesi e online.   
 

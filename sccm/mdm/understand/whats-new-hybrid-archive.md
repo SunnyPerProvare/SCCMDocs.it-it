@@ -11,13 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f71d4cb59e7de2333be4de9d3f712a87149db99
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: bef01c440677e021e90944cdf09513fa7371af2d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75519369"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821529"
 ---
 # <a name="past-hybrid-features-with-configuration-manager-and-microsoft-intune"></a>Funzionalità ibride precedenti con Configuration Manager e Microsoft Intune
 
@@ -308,7 +307,7 @@ Le seguenti funzionalità di Intune introdotte in ottobre 2016 funzionano nelle 
   - SM-G313MY
   - SM-G313U
 
-  L'utente e gli utenti finali non devono effettuare alcuna operazione. Per altre informazioni, visitare il sito Web di Samsung KNOX.
+  Non sono richieste altre azioni da parte dell'amministratore o degli utenti. Per altre informazioni, visitare il sito Web di Samsung KNOX.
 
 ### <a name="new-in-configuration-manager-technical-preview-1610"></a>Novità di Configuration Manager Technical Preview 1610
 
@@ -343,7 +342,7 @@ Le seguenti funzionalità di Intune introdotte in settembre 2016 funzionano nell
 
 - **Pulsante di invio feedback aggiunto all'app Portale aziendale per Windows Phone 8.1**
 
-  L'app Portale aziendale per Windows Phone 8.1 consente agli utenti finali di inviare commenti e suggerimenti relativi all'app usando un nuovo pulsante di invio feedback. Per trovare il pulsante, gli utenti devono toccare il menu "tre punti" nella parte inferiore destra della schermata dell'app Portale aziendale e quindi toccare **Commenti e suggerimenti**. I commenti, raccolti in forma anonima, consentiranno a Microsoft di migliorare l'esperienza con l'app Portale aziendale degli utenti.
+  L'app Portale aziendale per Windows Phone 8.1 consente agli utenti finali di inviare commenti e suggerimenti relativi all'app usando un nuovo pulsante di invio feedback. Per trovare il pulsante, gli utenti devono toccare il menu "tre punti" nella parte inferiore destra della schermata dell'app Portale aziendale e quindi toccare **Commenti e suggerimenti**. I feedback raccolti in modo anonimo consentiranno a Microsoft di migliorare l'esperienza dell'app del portale aziendale per gli utenti.
 
 ### <a name="new-in-configuration-manager-technical-preview-1609"></a>Novità di Configuration Manager Technical Preview 1609
 
@@ -434,11 +433,11 @@ Le seguenti funzionalità di Intune introdotte in luglio 2016 funzionano nelle d
 
     I computer desktop e portatili Windows 10 registrati come dispositivi mobili possono essere cancellati per ripristinare le impostazioni di fabbrica del dispositivo. Per altre informazioni, vedere le istruzioni per [proteggere i dispositivi con la cancellazione remota](/sccm/mdm/deploy-use/wipe-lock-reset-devices).
 
-- **Modifiche agli account Manager di registrazione dei dispositivi nell'app Portale aziendale per iOS**
+- **Modifiche agli account di Manager di registrazione dispositivi nell'app Portale aziendale per iOS**
 
-  Per migliorare le prestazioni e la scalabilità, in Intune non vengono più visualizzati tutti i dispositivi di Manager di registrazione dispositivi (DEM) nel riquadro dei dispositivi personali dell'app Portale aziendale per iOS. Viene visualizzato solo il dispositivo locale che esegue l'app e solo se è stato registrato usando l'app Portale aziendale.
+  Per migliorare le prestazioni e la scalabilità, in Intune non vengono più visualizzati tutti i dispositivi di Manager di registrazione dispositivi (DEM) nel riquadro dei dispositivi personali dell'app Portale aziendale per iOS. Sarà mostrato solo il dispositivo locale che esegue l'app e solo se viene registrato mediante l'app del Portale aziendale.
 
-  L'utente di DEM può eseguire azioni sul dispositivo locale, ma la gestione remota di altri dispositivi registrati può essere effettuata solo dalla console di amministrazione di Intune. Intune deprecherà anche l'uso degli account Manager di registrazione dispositivi con il programma di registrazione del dispositivo mobile di Apple o lo strumento Apple Configurator. Entrambi i metodi di registrazione supportano già la registrazione senza utente per i dispositivi iOS condivisi.
+  L'utente di DEM può eseguire azioni sul dispositivo locale, ma la gestione remota di altri dispositivi registrati può essere effettuata solo dalla console di amministrazione di Intune. In Intune verrà anche deprecato l'uso degli account DEM con il programma di registrazione dispositivi di Apple o lo strumento Apple Configurator. Entrambi i metodi di registrazione supportano già la registrazione senza utente per i dispositivi iOS condivisi.
 
   Usare gli account DEM solo se non è disponibile la registrazione senza utente per i dispositivi condivisi. Per altre informazioni, vedere [Registrare i dispositivi di proprietà dell'azienda con Manager di registrazione dispositivi in Microsoft Intune](../deploy-use/enroll-devices-with-device-enrollment-manager.md).
 
@@ -448,7 +447,7 @@ Le seguenti funzionalità di Intune introdotte in luglio 2016 funzionano nelle d
 
 - **Limitazione delle installazioni di app sottoposte a sideload nei dispositivi Android registrati**
 
-  I dispositivi Android non sono più in grado di installare applicazioni dal sito Web del portale aziendale, a meno che non siano stati registrati in Intune usando l'app Portale aziendale per Android.
+  Nei dispositivi Android non è più possibile installare applicazioni tramite il sito Web del portale aziendale, a meno che i dispositivi siano stati registrati in Intune tramite l'app Portale aziendale per Android.
 
 
 ### <a name="new-in-configuration-manager-technical-preview"></a>Novità di Configuration Manager Technical Preview
@@ -515,8 +514,8 @@ Le seguenti funzionalità di Intune introdotte in giugno 2016 funzionano nelle d
 
 - **Aggiornamenti dell'app Portale aziendale per iOS**
 
-  * Quando gli utenti finali installano le applicazioni line-of-business, ora usufruiscono di un'esperienza di installazione ottimizzata. Se l'installazione delle app richiede molto tempo, gli utenti possono sincronizzare manualmente il dispositivo per forzare la ripresa del processo di sincronizzazione. Per leggere le istruzioni per l'utente finale, vedere la sezione sulla sincronizzazione manuale dei dispositivi iOS.
-  * L'app Portale aziendale di Microsoft Intune per iOS è stata aggiornata per supportare iOS versione 8.0 e versioni successive. Questo aggiornamento significa che gli utenti finali possono installare l'app Portale aziendale e registrare i nuovi dispositivi per Intune solo se i dispositivi eseguono iOS versione 8.0 o successiva. Gli utenti che hanno già iscritto dispositivi che eseguono una versione non supportata di iOS possono continuare a utilizzare l'app portale aziendale sul dispositivo.
+  * Durante l'installazione delle applicazioni line of business ora gli utenti finali vedranno un'esperienza di installazione delle app migliorata. Se l'installazione delle app richiede molto tempo, gli utenti possono sincronizzare manualmente il dispositivo per forzare la ripresa del processo di sincronizzazione. Per leggere le istruzioni per l'utente finale, vedere la sezione sulla sincronizzazione manuale dei dispositivi iOS.
+  * L'app Portale aziendale di Microsoft Intune per iOS è stata aggiornata per supportare iOS versione 8.0 e successive. Questo aggiornamento significa che gli utenti finali possono installare l'app Portale aziendale e registrare i nuovi dispositivi per Intune solo se i dispositivi eseguono iOS versione 8.0 o successiva. Gli utenti che hanno già iscritto dispositivi che eseguono una versione non supportata di iOS possono continuare a utilizzare l'app portale aziendale sul dispositivo.
 
 
 ### <a name="new-in-1606-technical-preview"></a>Novità in Technical Preview 1606
@@ -547,7 +546,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **Nuove app disponibili per la gestione con i criteri MAM**
 
-  Le app Microsoft Word, Excel e PowerPoint per Android ora possono essere associate a criteri MAM sui dispositivi non registrati per Intune. Per un elenco completo delle app supportate, vedere la raccolta di applicazioni per dispositivi mobili di Microsoft Intune nella pagina dei [partner di applicazioni di Microsoft Intune](https://www.microsoft.com/en-us/server-cloud/products/microsoft-intune/partners.aspx).  
+  Le app Microsoft Word, Excel e PowerPoint per Android possono ora essere associate a criteri MAM su dispositivi non registrati in Intune. Per un elenco completo delle app supportate, vedere la raccolta di applicazioni per dispositivi mobili di Microsoft Intune nella pagina dei [partner di applicazioni di Microsoft Intune](https://www.microsoft.com/en-us/server-cloud/products/microsoft-intune/partners.aspx).  
 
 - **App Portale aziendale Android: notifiche di tipo avviso popup degli utenti finali**
 
@@ -627,7 +626,7 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 
 - **Miglioramenti dell'app Portale aziendale per Windows 10 Mobile e Windows Phone 8.1**
 
-  Quando gli utenti finali installano le applicazioni line-of-business, ora usufruiscono di un'esperienza di installazione ottimizzata. Se l'installazione delle app richiede molto tempo, gli utenti possono sincronizzare manualmente il dispositivo per forzare la ripresa del processo di sincronizzazione. Per esaminare le istruzioni per l'utente finale, vedere l'argomento della libreria di Intune sulla [sincronizzazione manuale del dispositivo per velocizzare l'installazione delle app](/intune/enduser/using-your-windows-device-with-intune).  
+  Durante l'installazione delle applicazioni line of business ora gli utenti finali vedranno un'esperienza di installazione delle app migliorata. Se l'installazione delle app richiede molto tempo, gli utenti possono sincronizzare manualmente il dispositivo per forzare la ripresa del processo di sincronizzazione. Per esaminare le istruzioni per l'utente finale, vedere l'argomento della libreria di Intune sulla [sincronizzazione manuale del dispositivo per velocizzare l'installazione delle app](/intune/enduser/using-your-windows-device-with-intune).  
 
 ###  <a name="new-in-1604-technical-preview"></a>Novità in Technical Preview 1604
  Le seguenti nuove funzionalità introdotte in aprile 2016 sono disponibili nelle distribuzioni ibride con Intune e Configuration Manager Technical Preview 1604. Queste funzionalità richiedono l'uso della console di Configuration Manager per la configurazione e la gestione.  

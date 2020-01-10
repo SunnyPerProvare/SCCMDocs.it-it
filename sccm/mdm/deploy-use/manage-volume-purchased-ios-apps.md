@@ -10,13 +10,12 @@ ms.assetid: 7c3b9316-247b-490b-a363-8f8553821579
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa5fc58f078c2a0c64230bf7178e8d33e30b11ba
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: b6e66520a8c662c4bb7fc59d909c6cae1c19bc97
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75520474"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821716"
 ---
 # <a name="manage-volume-purchased-ios-apps-with-configuration-manager"></a>Gestire le app iOS acquistate con volume Purchasers con Configuration Manager
 
@@ -103,7 +102,7 @@ Dal nodo **Token di Volume Purchase Program di Apple** è ora possibile visualiz
 1. Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Informazioni di licenza per le app dello Store**.  
 
 2. Scegliere l'app che si vuole distribuire e quindi nella scheda **Home** nel gruppo **Crea** scegliere **Crea applicazione**.
-   L'applicazione di Configuration Manager creata contiene l'app di Microsoft Store per le aziende. Sarà quindi possibile distribuire e monitorare l'applicazione come qualsiasi altra applicazione di Configuration Manager.  
+   L'applicazione di Configuration Manager creata contiene l'app di Microsoft Store per le aziende. È quindi possibile distribuire e monitorare l'applicazione come qualsiasi altra applicazione di Configuration Manager.  
 
    > [!IMPORTANT]  
    > È necessario scegliere lo scopo della distribuzione **Richiesto**. Le installazioni disponibili non sono attualmente supportate.

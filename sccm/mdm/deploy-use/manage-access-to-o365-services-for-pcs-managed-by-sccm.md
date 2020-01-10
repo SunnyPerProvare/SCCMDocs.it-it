@@ -10,13 +10,12 @@ ms.assetid: 34024741-edfa-4088-8599-d6bafc331e62
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: caa1d0889ab3ffd35ca6a2bf7c0c7de03f4632e3
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 3dbd4ef7681e4778c1e44a8e796112bfcb29d7b6
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75520695"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821818"
 ---
 # <a name="manage-access-to-office-365-services-for-pcs-managed-by-configuration-manager"></a>Gestire l'accesso ai servizi di Office 365 per i PC gestiti da Configuration Manager
 

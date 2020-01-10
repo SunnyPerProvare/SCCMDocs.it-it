@@ -10,13 +10,12 @@ ms.assetid: 78d44adc-9b1c-4bc6-b72d-e93873916ea6
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa05d553ba5d1f5ce7c0a6f6062f24371d151404
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 8686a605460bd59079449f28b63e01ac2c39e1fe
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75520746"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806527"
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Registrazione al programma DEP (Device Enrollment Program) per iOS per le distribuzioni ibride con Configuration Manager
 
@@ -71,7 +70,7 @@ Le aziende possono acquistare dispositivi iOS tramite il programma DEP (Device E
         -   **Supervisione non eseguita**: capacità di gestione limitate.  
         -   **Supervisione eseguita**: attiva altre opzioni di gestione e disattiva il blocco attivazione per impostazione predefinita  
     - **Bloccare il profilo di registrazione nel dispositivo**: questo stato viene configurato durante l'attivazione e può essere modificato solo ripristinando le impostazioni predefinite.  
-      -   **Disattiva**: consente la rimozione del profilo di gestione dal menu **Impostazioni**.  
+      -   **Disattiva**: consente la rimozione del profilo di gestione dal menu **Impostazioni**  
       -   **Abilita**: richiede **Modalità di preparazione** = **Supervisione eseguita**. Disattiva le impostazioni iOS che potrebbero consentire la rimozione del profilo di gestione  
 
 4. Nella pagina **Assistente configurazione** configurare le impostazioni che consentono di personalizzare l'Assistente installazione iOS che viene avviato quando il dispositivo viene acceso per la prima volta e quindi fare clic su **Avanti**. Le impostazioni includono:  

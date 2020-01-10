@@ -10,13 +10,12 @@ ms.assetid: e2754ce6-1460-4ddd-9050-2cc87e7964f4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51ddb56bd3a8afaf09ab0c31ace102fefa5fae2b
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 454908893cd53abf8b566fe3963f7a3303907a72
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75520814"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821903"
 ---
 # <a name="enroll-company-owned-devices-for-hybrid-deployments-with-configuration-manager"></a>Registrare i dispositivi aziendali per le distribuzioni ibride con Configuration Manager
 

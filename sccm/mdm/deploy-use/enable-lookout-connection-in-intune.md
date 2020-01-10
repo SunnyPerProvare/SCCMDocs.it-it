@@ -9,13 +9,12 @@ ms.assetid: 7e4ada34-63bf-4b9f-8246-31816aa44196
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37098745b3c1714b6573a2b4be2c7c518301bcaf
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 6d2f13e093302174d5f73e04eccc225d64691dbb
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75520848"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821920"
 ---
 # <a name="enable-lookout-mtd-connection-in-the-intune-admin-console"></a>Abilitare la connessione Lookout MTD nella console di amministrazione di Intune
 
@@ -59,7 +58,7 @@ Questo articolo descrive come abilitare la connessione Lookout Mobile Threat Def
 
 
 ## <a name="next-steps"></a>Passaggi successivi
-L'integrazione di Lookout e Intune viene completata. I passaggi successivi per implementare questa soluzione includono la distribuzione dell'[app Lookout for Work](configure-and-deploy-lookout-for-work-apps.md) e la configurazione dei criteri di [conformità](enable-device-threat-protection-rule-compliance-policy.md).
+L'integrazione di Lookout e Intune viene completata. I passaggi successivi dell'implementazione della soluzione includono la distribuzione delle [app Lookout for Work](configure-and-deploy-lookout-for-work-apps.md) e la configurazione dei criteri di [conformità](enable-device-threat-protection-rule-compliance-policy.md).
 
 >[!IMPORTANT]
 > È *necessario* configurare l'app Lookout for Work prima di creare le regole dei criteri di conformità e di configurare l'accesso condizionale. Questa operazione garantisce che l'applicazione sia pronta e disponibile per l'installazione da parte degli utenti finali prima che questi ultimi possano accedere alla posta elettronica o ad altre risorse aziendali.

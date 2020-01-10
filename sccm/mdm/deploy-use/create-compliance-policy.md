@@ -10,13 +10,12 @@ ms.assetid: 0fd76043-d7ee-423d-8c5f-aa7e9ed58ce0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 45286dc95a34dc1ad398bb20d5c2c0b621e62a4b
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 9bdfd3dde3c1ea92779309be8657911d8162d666
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75521103"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806680"
 ---
 # <a name="create-and-deploy-a-device-compliance-policy"></a>Creare e distribuire criteri di conformità del dispositivo
 
@@ -323,7 +322,7 @@ L'ID dell'app è un identificatore che identifica in modo univoco l'app all'inte
 - **iOS**  
     1. Trovare il numero ID nell'URL di iTunes Store. ad esempio `/id875948587?mt=8`  
 
-    2. In un Web browser passare all'URL seguente, sostituendo il numero con il numero ID appena trovato. Ad esempio: `https://itunes.apple.com/lookup?id=875948587`  
+    2. In un Web browser passare all'URL seguente, sostituendo il numero con il numero ID appena trovato. Ad esempio `https://itunes.apple.com/lookup?id=875948587`.  
 
     3. Scaricare e aprire il file di testo.  
 

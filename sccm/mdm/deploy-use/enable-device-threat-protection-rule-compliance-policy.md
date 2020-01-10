@@ -10,13 +10,12 @@ ms.assetid: 99a5b715-f172-46e1-ac27-ad55bde66d0d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d222daf111e790c8e71946a2bf08579f4bb4d7b8
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 485bbfd62f2cdfcb0817ac16e51a34b8196a131d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75520899"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806544"
 ---
 # <a name="enable-device-threat-protection-rule-in-the-compliance-policy"></a>Abilitare una regola di protezione dalle minacce per i dispositivi mobili nei criteri di conformità
 
@@ -24,7 +23,7 @@ ms.locfileid: "75520899"
 
 Intune con Lookout Mobile Threat Protection offre la possibilità di rilevare le minacce per i dispositivi mobili ed eseguire una valutazione dei rischi sul dispositivo. In Configuration Manager è possibile creare una regola nei criteri di conformità che includa la valutazione dei rischi per determinare se il dispositivo è conforme. È quindi possibile usare i criteri di accesso condizionale per consentire o bloccare l'accesso a Exchange, SharePoint e ad altri servizi sulla base della conformità del dispositivo.
 
-Per fare in modo che il rilevamento delle minacce del dispositivo Lookout influenzi i criteri di conformità per il dispositivo:
+Per consentire a Lookout Mobile Threat Protection di influenzare i criteri di conformità del dispositivo, tenere presente quanto segue:
 
 * Nei criteri di conformità deve essere abilitata la regola **Protezione dalle minacce per il dispositivo**.
 

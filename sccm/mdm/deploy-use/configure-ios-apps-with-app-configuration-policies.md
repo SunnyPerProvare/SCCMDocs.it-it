@@ -10,20 +10,19 @@ ms.assetid: f0a78038-ea22-4826-9c07-1771b7dd2e8d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a259e81831c00ad585a0177ac75473eb6d62860
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ef294582ceedc044a634a3423933a3e7a2311f4e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67678592"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806663"
 ---
-# <a name="apply-settings-to-ios-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Applicare le impostazioni alle app iOS con i criteri di configurazione app in System Center Configuration Manager
+# <a name="apply-settings-to-ios-apps-with-app-configuration-policies-in-configuration-manager"></a>Applicare le impostazioni alle app iOS con i criteri di configurazione delle app in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
-È possibile usare i criteri di configurazione delle app in System Center Configuration Manager (Configuration Manager) per distribuire impostazioni che potrebbero essere necessarie quando un utente esegue un'app. Ad esempio, un'app potrebbe richiedere all'utente di specificare i seguenti dettagli:
+È possibile usare i criteri di configurazione delle app in Configuration Manager (Configuration Manager) per distribuire le impostazioni che potrebbero essere necessarie quando un utente esegue un'app. Ad esempio, un'app potrebbe richiedere all'utente di specificare i seguenti dettagli:
 - Un numero di porta personalizzato
 - Impostazione della lingua
 - Impostazioni di sicurezza

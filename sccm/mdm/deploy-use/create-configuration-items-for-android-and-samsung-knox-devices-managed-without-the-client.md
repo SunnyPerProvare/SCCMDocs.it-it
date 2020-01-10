@@ -10,13 +10,12 @@ ms.assetid: 7b66f3c4-e3bb-4f6a-abd5-55be649ff90d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a16962c56437fc36bbfe6f61241f262b5e017d50
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: b8763264389a51850ebc7056d988b470eaeb80b2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75521086"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75822056"
 ---
 # <a name="how-to-create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Android e Samsung KNOX gestiti senza il client Configuration Manager
 
@@ -110,7 +109,7 @@ Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.
 |**Consenti Web browser**|Consente di usare il Web browser predefinito del dispositivo.|
 |**Riempimento automatico**|Specifica se è possibile usare la funzione di riempimento automatico del Web browser.|
 |**Esecuzione script attivo**|Consente al Web browser del dispositivo di eseguire lo script attivo.|
-|**Blocco popup**|Consente di usare un blocco popup nel Web browser.|
+|**Blocco popup**|Consente l'uso del blocco popup nel Web browser.|
 |**Cookie**|Consente l'uso dei cookie nel Web browser.|
 
 ### <a name="cloud"></a>Cloud  
@@ -124,7 +123,7 @@ Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.
 
 |Impostazioni|Details|  
 |-------------|-------------|  
-|**Messaggistica SMS e MMS**|Consente l'uso di messaggi SMS e MMS sul dispositivo.|
+|**Messaggistica SMS e MMS**|Consente l'uso della messaggistica SMS e MMS sul dispositivo.|
 |**Archivi rimovibili**|Consente l'uso di archivi rimovibili, ad esempio una scheda SD, sul dispositivo.|
 |**Fotocamera**|Consente l'uso della fotocamera del dispositivo.<br /><br /> Si applica ai dispositivi Android e Samsung KNOX.|
 |**NFC (Near Field Communication)**|Consente attività che usano Near Field Communication (se supportato dal dispositivo).|

@@ -10,13 +10,12 @@ ms.assetid: 613a48ac-c55d-4c4a-94ea-d3747a1b10cb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4353651472f08bd9a13fa97a92fdd9eabc8fb904
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: 99af3fd6f593b85a359debcc488b94386614bab2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75521256"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75822039"
 ---
 # <a name="how-to-create-configuration-items-for-ios-and-macos-devices-managed-with-intune"></a>Come creare elementi di configurazione per dispositivi iOS e macOS gestiti con Intune
 
@@ -96,7 +95,7 @@ Usare l'elemento di configurazione Configuration Manager **iOS e MacOS** per ges
 |**Gioco multiplayer**|Consente di giocare con altri giocatori su Internet.|  
 |**Software portafoglio personale durante il blocco**|Consente l'utilizzo di un software di portafoglio personale come Passbook.|  
 |**Invio dati diagnostici**|Consente l’invio dei file di log dell'app.|  
-|**Notifiche del centro notifiche**|Consente all'utente di accedere alla visualizzazione delle notifiche senza sbloccare il dispositivo.|
+|**Notifiche del centro notifiche**|Consente di accedere alla visualizzazione delle notifiche senza sbloccare il dispositivo.|
 |**Apple Music** (solo supervisione)|Consente l'uso dell'app Apple Music.|
 |**Podcast** (solo supervisione)|Consente l'uso dell'app Podcast.|
 |**App Messages** (solo supervisione)|Consente l'uso dell'app Messages per l'invio di messaggi di testo.|
@@ -339,7 +338,7 @@ Usare l'elemento di configurazione Configuration Manager **iOS e MacOS** per ges
   
 -   Esportare il file, con estensione **mobileconfig**, dallo strumento Apple Configurator.  
   
--   Creare il file manualmente usando lo schema appropriato dalla pagina delle [informazioni di riferimento sulle chiavi del profilo di configurazione Apple](https://developer.apple.com/library/ios/featuredarticles/iPhoneConfigurationProfileRef/Introduction/Introduction.html).  
+-   Creare il file manualmente usando lo schema appropriato dalla pagina di [riferimento alle chiavi del profilo di configurazione Apple](https://developer.apple.com/library/ios/featuredarticles/iPhoneConfigurationProfileRef/Introduction/Introduction.html).  
   
 ###  <a name="kiosk-mode-ios"></a>Modalità tutto schermo (iOS)  
  La modalità tutto schermo consente di bloccare un dispositivo per consentire solo l'uso di alcune funzionalità. Ad esempio, è possibile consentire a un dispositivo di eseguire solo un'app gestita specificata o disabilitare i pulsanti del volume in un dispositivo. Queste impostazioni potrebbero essere usate per un modello demo di un dispositivo o per un dispositivo dedicato all'esecuzione di una sola funzione, ad esempio un dispositivo POS.  
@@ -360,7 +359,7 @@ Usare l'elemento di configurazione Configuration Manager **iOS e MacOS** per ges
   
      - Copiare l'URL della pagina e usarlo come URL per specificare l'app da eseguire in modalità tutto schermo.  
   
-     - **Esempio:** Cercare **Microsoft Word per iPad**. L'URL da usare sarà **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8** .  
+     - **Esempio:** cercare **Microsoft Word per iPad**. L'URL da usare sarà **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8** .  
   
    - **Tocco**: abilita o disabilita il touchscreen nel dispositivo.  
   

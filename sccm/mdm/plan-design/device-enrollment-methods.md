@@ -10,13 +10,12 @@ ms.assetid: b81d06dc-3844-4117-9937-16732a227994
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: da653db38c8c4271bd4ac7d0b75329535f1545f2
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: a9480898e8af26a0f2cb8b4c8ec50a6f2dfd4f02
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75519515"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821597"
 ---
 # <a name="overview-of-device-enrollment-methods"></a>Panoramica dei metodi di registrazione dei dispositivi
 
@@ -26,7 +25,7 @@ Dopo aver esteso Configuration Manager con Intune, è possibile registrare e ges
 
 La tabella seguente illustra i metodi di registrazione con le relative funzionalità supportate. Queste funzionalità includono:
 - **Cancellazione**: ripristino delle impostazioni predefinite del dispositivo, con rimozione di tutti i dati. [Ritirare i dispositivi](../deploy-use/wipe-lock-reset-devices.md)
-- **Affinità**: associazione dei dispositivi agli utenti. Obbligatoria per la gestione di applicazioni per dispositivi mobili (MAM) e l'accesso condizionale ai dati aziendali. [Affinità utente](../deploy-use/user-affinity-for-hybrid-managed-devices.md)
+- **Affinità** - Associare i dispositivi agli utenti. Obbligatoria per la gestione di applicazioni per dispositivi mobili (MAM) e l'accesso condizionale ai dati aziendali. [Affinità utente](../deploy-use/user-affinity-for-hybrid-managed-devices.md)
 - **Blocco**: impedisce agli utenti di rimuovere il dispositivo dal sistema di gestione. Per il blocco dei dispositivi iOS è richiesta la modalità con supervisione. [Blocco remoto](../deploy-use/wipe-lock-reset-devices.md#remote-lock)
 
 **Metodi di registrazione iOS**
@@ -51,7 +50,7 @@ Per una serie di domande e risposte utili per individuare il metodo corretto, ve
 Gli utenti BYOD (Bring Your Own Device) installano l'app del portale aziendale e registrano il dispositivo di loro proprietà. Ciò consente agli utenti di connettersi alla rete aziendale, entrando a far parte del dominio o di Azure Active Directory. L'attivazione della registrazione BYOD costituisce un prerequisito per molti scenari di dispositivi di proprietà dell'azienda per la maggior parte delle piattaforme. Vedere [Setup hybrid MDM](../deploy-use/setup-hybrid-mdm.md) (Configurare la gestione di dispositivi mobili ibrida). ([Torna alla tabella](#overview-of-device-enrollment-methods))
 
 ## <a name="corporate-owned-devices"></a>Dispositivi di proprietà dell'azienda
-I dispositivi di proprietà dell'azienda possono essere gestiti con la console di Configuration Manager. I dispositivi iOS possono essere registrati direttamente tramite strumenti forniti da Apple. Tutti i tipi di dispositivo possono essere registrati da un amministratore o da un responsabile usando il manager di registrazione dispositivi. È anche possibile identificare e contrassegnare come dispositivi di proprietà dell'azienda i dispositivi con numero IMEI e abilitare questo tipo di registrazione.
+I dispositivi di proprietà dell'azienda possono essere gestiti con la console di Configuration Manager. I dispositivi iOS possono essere registrati direttamente tramite strumenti forniti da Apple. Tutti i tipi di dispositivo possono essere registrati da un amministratore o da un responsabile usando il manager di registrazione dispositivi. È anche possibile identificare e contrassegnare come dispositivo di proprietà dell'azienda i dispositivi con numero IMEI e abilitare questo tipo di registrazione.
 
 [Registrare dispositivi di proprietà dell'azienda](../deploy-use/enroll-company-owned-devices.md)
 
