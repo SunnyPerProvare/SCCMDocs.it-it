@@ -10,17 +10,16 @@ ms.assetid: 49505eb1-d44d-4121-8712-e0f3d8b15bf5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b23c5607cbbf008d7c9e18a2a0ee21146240bae
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d82f14b22bd6c9870c039706b34ef1e93ef86280
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74840633"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798908"
 ---
 # <a name="configure-discovery-methods-for-configuration-manager"></a>Configurare i metodi di individuazione per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configurare i metodi di individuazione per trovare le risorse da gestire dalla rete, Active Directory e Azure Active Directory (Azure AD). Abilitare e configurare i metodi che si vogliono usare per eseguire ricerche nell'ambiente. È anche possibile disabilitare un metodo seguendo la stessa procedura usata per abilitarlo. Le uniche eccezioni a tale procedura sono il metodo di individuazione heartbeat e di individuazione server:  
 
@@ -149,7 +148,7 @@ Anche se ogni metodo di individuazione è indipendente dagli altri, tutti condiv
 
 ### <a name="bkmk_config-adsd"></a> Configurare l'individuazione sistema Active Directory  
 
-1. Nella scheda **Generale** della finestra delle proprietà di individuazione sistema Active Directory selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per specificare un nuovo contenitore Active Directory. Nella finestra di dialogo **Contenitore Active Directory** completare le configurazioni seguenti:  
+1. Nella scheda **Generale** della finestra delle proprietà di individuazione sistema Active Directory selezionare l'icona **Nuovo**![Icona Nuovo](media/Disc_new_Icon.gif) per specificare un nuovo contenitore Active Directory. Nella finestra di dialogo **Contenitore Active Directory** completare le configurazioni seguenti:  
 
     1. Digitare o cercare un percorso in **Percorso**. Questo valore è un percorso LDAP valido di un contenitore o un'unità organizzativa (OU). Il sito esegue query su questo percorso per le risorse. Ad esempio: `LDAP://CN=Computers,DC=contoso,DC=com`  
 
@@ -184,7 +183,7 @@ Anche se ogni metodo di individuazione è indipendente dagli altri, tutti condiv
 
 ### <a name="bkmk_config-adud"></a> Configurare l'individuazione utente Active Directory  
 
-1. Nella scheda **Generale** della finestra delle proprietà di individuazione utente Active Directory selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per specificare un nuovo contenitore Active Directory. Nella finestra di dialogo **Contenitore Active Directory** completare le configurazioni seguenti:  
+1. Nella scheda **Generale** della finestra delle proprietà di individuazione utente Active Directory selezionare l'icona **Nuovo**![Icona Nuovo](media/Disc_new_Icon.gif) per specificare un nuovo contenitore Active Directory. Nella finestra di dialogo **Contenitore Active Directory** completare le configurazioni seguenti:  
 
     1. Specificare uno o più percorsi in cui eseguire la ricerca.  
 
@@ -416,7 +415,7 @@ Utilizzare le seguenti procedure per individuare in primo luogo la topologia di 
     - Nella scheda **Subnet** selezionare l'opzione **Cerca subnet locali**.  
 
       > [!TIP]  
-      > Se si conoscono le subnet specifiche che costituiscono la rete, deselezionare la casella di controllo **Cerca subnet locali**. Selezionare quindi l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) e aggiungere le subnet specifiche in cui eseguire la ricerca. Per reti di grandi dimensioni, eseguire la ricerca solo in una o due subnet alla volta per ridurre al minimo l'uso della larghezza di banda di rete.  
+      > Se si conoscono le subnet specifiche che costituiscono la rete, deselezionare la casella di controllo **Cerca subnet locali**. Selezionare quindi l'icona **Nuovo**![Icona Nuovo](media/Disc_new_Icon.gif) e aggiungere le subnet specifiche in cui eseguire la ricerca. Per reti di grandi dimensioni, eseguire la ricerca solo in una o due subnet alla volta per ridurre al minimo l'uso della larghezza di banda di rete.  
 
     - Nella scheda **Domini** selezionare l'opzione **Cerca dominio locale**.  
 
@@ -425,7 +424,7 @@ Utilizzare le seguenti procedure per individuare in primo luogo la topologia di 
       > [!TIP]  
       > Quando si esegue per la prima volta la topologia di rete, configurare un numero limitato di hop router per ridurre al minimo l'utilizzo della larghezza di banda di rete.  
 
-4. Nella scheda **Pianifica** selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) e impostare una pianificazione per l'esecuzione dell'individuazione.  
+4. Nella scheda **Pianifica** selezionare l'icona **Nuovo**![Icona Nuovo](media/Disc_new_Icon.gif) e impostare una pianificazione per l'esecuzione dell'individuazione.  
 
     > [!NOTE]  
     > Non è possibile assegnare una configurazione di individuazione diversa per separare le varie pianificazioni di individuazione della rete. Ogni volta che viene eseguita l'individuazione di rete, essa utilizza la configurazione di individuazione corrente.  
@@ -452,7 +451,7 @@ Utilizzare le seguenti procedure per individuare in primo luogo la topologia di 
 
     - Per effettuare la ricerca in una subnet specifica, verificare che la subnet sia inclusa nell'elenco in **Subnet da cercare** e che il valore **Cerca** sia impostato su **Attivato**:  
 
-      1. Se la subnet non è presente nell'elenco, selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuova assegnazione subnet** immettere le informazioni in **Subnet** e **Mask** e quindi selezionare **OK**. Per impostazione predefinita, una nuova subnet è abilitata per la ricerca.  
+      1. Se la subnet non è presente nell'elenco, selezionare l'icona **Nuovo**![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuova assegnazione subnet** immettere le informazioni in **Subnet** e **Mask** e quindi selezionare **OK**. Per impostazione predefinita, una nuova subnet è abilitata per la ricerca.  
 
       2. Per modificare il valore di **Cerca** per una subnet nell'elenco, selezionare la subnet. Selezionare quindi l'icona **Mostra/Nascondi** per alternare il valore tra **Disattivato** e **Attivato**.  
 
@@ -462,21 +461,21 @@ Utilizzare le seguenti procedure per individuare in primo luogo la topologia di 
 
     - Per effettuare la ricerca in un dominio specifico, verificare che il dominio sia incluso nell'elenco in **Domini** e che il valore **Cerca** sia impostato su **Attivato**:  
 
-      1. Se il dominio non è presente nell'elenco, selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Proprietà dominio** immettere le informazioni in **Dominio** e quindi selezionare **OK**. Per impostazione predefinita, un nuovo dominio è abilitato per la ricerca.  
+      1. Se il dominio non è presente nell'elenco, selezionare l'icona **Nuovo**![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Proprietà dominio** immettere le informazioni in **Dominio** e quindi selezionare **OK**. Per impostazione predefinita, un nuovo dominio è abilitato per la ricerca.  
 
       2. Per modificare il valore di **Cerca** per un dominio nell'elenco, selezionare il dominio. Selezionare quindi l'icona **Mostra/Nascondi** per alternare il valore tra **Disattivato** e **Attivato**.  
 
 7. Per configurare l'individuazione per la ricerca di nomi community SNMP specifici per i dispositivi SNMP, passare alla scheda **SNMP**. Configurare quindi una o più delle opzioni seguenti:  
 
-    - Per aggiungere un nome community SNMP all'elenco **Nomi comunità SNMP**, selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuovo nome comunità SNMP** specificare un valore per **Nome** per la community SNMP e quindi selezionare **OK**.  
+    - Per aggiungere un nome community SNMP all'elenco **Nomi comunità SNMP**, selezionare l'icona **Nuovo**![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuovo nome comunità SNMP** specificare un valore per **Nome** per la community SNMP e quindi selezionare **OK**.  
 
-    - Per rimuovere un nome community SNMP, selezionare il nome e quindi l'icona **Elimina** ![Icona Elimina](media/Disc_delete_Icon.gif).  
+    - Per rimuovere un nome community SNMP, selezionare il nome e quindi l'icona **Elimina**![Icona Elimina](media/Disc_delete_Icon.gif).  
 
-    - Per modificare l'ordine di ricerca dei nomi community SNMP, selezionare un nome nell'elenco. Selezionare quindi l'icona **Sposta elemento in alto** ![Icona Sposta elemento in alto](media/Disc_moveUp_Icon.gif) o **Sposta elemento in basso** ![Icona Sposta elemento in basso](media/Disc_moveDown_Icon.gif). Quando viene eseguita l'individuazione, viene effettuata la ricerca nei nomi comunità seguendo un ordine dall'alto in basso. 
+    - Per modificare l'ordine di ricerca dei nomi community SNMP, selezionare un nome nell'elenco. Selezionare quindi l'icona **Sposta elemento in alto**![Icona Sposta elemento in alto](media/Disc_moveUp_Icon.gif) o **Sposta elemento in basso**![Icona Sposta elemento in basso](media/Disc_moveDown_Icon.gif). Quando viene eseguita l'individuazione, viene effettuata la ricerca nei nomi comunità seguendo un ordine dall'alto in basso. 
 
     - Per configurare il numero massimo di hop router utilizzabili per le ricerche SNMP, selezionare il numero di hop nell'elenco a discesa **Hop massimi**.  
 
-8. Per configurare un dispositivo SNMP, passare alla scheda **Dispositivi SNMP**. Se il dispositivo non è presente nell'elenco, selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuovo dispositivo SNMP** specificare l'indirizzo IP o il nome del dispositivo SNMP e quindi selezionare **OK**.  
+8. Per configurare un dispositivo SNMP, passare alla scheda **Dispositivi SNMP**. Se il dispositivo non è presente nell'elenco, selezionare l'icona **Nuovo**![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuovo dispositivo SNMP** specificare l'indirizzo IP o il nome del dispositivo SNMP e quindi selezionare **OK**.  
 
     > [!NOTE]  
     > Se si specifica un nome dispositivo, Configuration Manager deve essere in grado di risolvere il nome NetBIOS in un indirizzo IP.  
@@ -488,12 +487,12 @@ Utilizzare le seguenti procedure per individuare in primo luogo la topologia di 
       > [!NOTE]  
       > Per usare questa opzione, il server deve eseguire il lease dell'indirizzo IP da un server DHCP e non può usare un indirizzo IP statico.  
 
-    - Per eseguire query su un server DHCP specifico, selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuovo server DHCP** specificare l'indirizzo IP o il nome del server DHCP e quindi selezionare **OK**.  
+    - Per eseguire query su un server DHCP specifico, selezionare l'icona **Nuovo**![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuovo server DHCP** specificare l'indirizzo IP o il nome del server DHCP e quindi selezionare **OK**.  
 
       > [!NOTE]  
       > Se si specifica un nome server, Configuration Manager deve essere in grado di risolvere il nome NetBIOS in un indirizzo IP.  
 
-10. Per specificare quando viene eseguita l'individuazione, passare alla scheda **Pianifica**. Selezionare quindi l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per impostare una pianificazione per l'esecuzione dell'individuazione di rete. È possibile configurare più pianificazioni ricorrenti e più pianificazioni senza ricorrenza.  
+10. Per specificare quando viene eseguita l'individuazione, passare alla scheda **Pianifica**. Selezionare quindi l'icona **Nuovo**![Icona Nuovo](media/Disc_new_Icon.gif) per impostare una pianificazione per l'esecuzione dell'individuazione di rete. È possibile configurare più pianificazioni ricorrenti e più pianificazioni senza ricorrenza.  
 
     > [!NOTE]  
     > Se nella scheda **Pianifica** sono visualizzate più pianificazioni contemporaneamente, l'individuazione di rete viene eseguita per tutte le pianificazioni come configurata nell'orario indicato nella pianificazione. Questo vale anche per le pianificazioni ricorrenti.  

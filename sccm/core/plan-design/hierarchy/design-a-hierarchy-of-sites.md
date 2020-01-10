@@ -10,17 +10,16 @@ ms.assetid: 07ce872e-1558-42ad-b5ad-582c5b1bdbb4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74b8f7b099e906856300f5cc76b807daf894e060
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f0c719db3c505614099c051f734c67c9c31036f5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62237337"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800305"
 ---
 # <a name="design-a-hierarchy-of-sites-for-configuration-manager"></a>Progettare una gerarchia di siti per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Prima di installare il primo sito di una nuova gerarchia di Configuration Manager, è consigliabile conoscere:  
 

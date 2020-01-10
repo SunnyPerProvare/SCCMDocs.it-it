@@ -10,17 +10,16 @@ ms.assetid: 60575413-44fe-43bb-bcfb-39ec5ed5055b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: adb826a13e96947bba29a3a0928301517d446bc6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 90930e6db69403dd19c595e4b3cf16edba14f0c0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65495790"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793035"
 ---
 # <a name="client-spy"></a>Client Spy
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Client Spy è uno [strumento di Configuration Manager](/sccm/core/support/tools). È uno strumento per la risoluzione dei problemi relativi a distribuzione software, inventario e misurazione del software nei client Configuration Manager. 
 
@@ -55,7 +54,7 @@ Vengono visualizzate anche le regole di misurazione del software.
 
 Nel menu **Strumenti** sono disponibili le azioni seguenti:  
 
-#### <a name="connect"></a>Connetti
+#### <a name="connect"></a>Connessione
 Recuperare informazioni da un computer diverso.  
 
 - Per impostazione predefinita, lo strumento visualizza le informazioni dal computer corrente. 
@@ -71,7 +70,7 @@ Recuperare informazioni da un computer diverso.
 #### <a name="software-distribution"></a>Distribuzione del software
 Visualizza le schede [Distribuzione software](#software-distribution) e nasconde le altre schede. Per impostazione predefinita, Client Spy visualizza le schede Distribuzione software.
 
-#### <a name="inventory"></a>Inventario
+#### <a name="inventory"></a>Argomento
 Visualizza la scheda Inventario e nasconde le altre schede.
 
 #### <a name="software-metering"></a>Controllo software

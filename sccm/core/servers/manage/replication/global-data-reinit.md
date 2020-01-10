@@ -6,17 +6,16 @@ ms.date: 08/09/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: d36622c0-776c-493b-971a-4a586fc394d4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 646a8c93b3bc5f90d711e6985983a41d87c38826
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: bc21d3fbb84629e8ae66ea5498a855c672c9b741
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892099"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794275"
 ---
 # <a name="troubleshoot-global-data-reinit"></a>Risoluzione dei problemi di reinizializzazione dei dati globali
 

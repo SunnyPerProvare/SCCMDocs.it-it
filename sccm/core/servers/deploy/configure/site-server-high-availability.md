@@ -10,17 +10,16 @@ ms.assetid: 6dcef836-c0d1-40af-ad30-cd8d864b09a9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5738be3bd84d7698e7b67128e3aff178d2460e52
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d06cca3e859c6fd910e094b4b431179a3d7a5037
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "66176916"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798398"
 ---
 # <a name="site-server-high-availability-in-configuration-manager"></a>Disponibilità elevata del server del sito in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!--1128774-->
 
@@ -169,7 +168,7 @@ Per altre informazioni sul processo generale di aggiunta dei ruoli, vedere [Inst
 
          - (*Opzione consigliata*) **Utilizza i file di origine nel seguente percorso di rete**: specificare il percorso diretto al contenuto della cartella **CD.Latest** dal server del sito in modalità attiva. Ad esempio, `\\Server\SMS_ABC\CD.Latest`, dove "*Server*" è il nome del server del sito in modalità attiva e "*ABC*" è il codice del sito.  
 
-     - Specificare il percorso locale in cui installare Configuration Manager nel nuovo server del sito. Ad esempio: `C:\Program Files\Configuration Manager`  
+     - Specificare il percorso locale in cui installare Configuration Manager nel nuovo server del sito. ad esempio `C:\Program Files\Configuration Manager`  
 
 5. Completare la procedura guidata. Configuration Manager installa quindi il server del sito in modalità Passivo nel server specificato.
 

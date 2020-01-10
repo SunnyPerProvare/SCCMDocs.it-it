@@ -10,17 +10,16 @@ ms.assetid: 5db2926f-f03e-49c7-b44b-e89b1a5a6779
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 22645b08e3cb5f8b1200ab5c4e77b418ea74c8d8
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 77d736aa8d4e00ce9eada0e0d6f37a00cb8d9d50
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74840590"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798976"
 ---
 # <a name="configure-boundary-groups-for-configuration-manager"></a>Configurare gruppi di limiti per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare i gruppi di limiti in Configuration Manager per organizzare logicamente i percorsi di rete correlati ([limiti](/sccm/core/servers/deploy/configure/boundaries)) e semplificare la gestione dell'infrastruttura. Prima di usare il gruppo di limiti, assegnare i limiti ai gruppi di limiti.
 
@@ -308,7 +307,7 @@ Per consentire ai client di usare questa funzionalità, abilitare l'impostazione
 > [!Note]  
 > I processi di distribuzione dei sistemi operativi non sono a conoscenza dei gruppi di limiti per i punti di gestione.  
 
-### <a name="troubleshooting"></a>Troubleshooting
+### <a name="troubleshooting"></a>Risoluzione dei problemi
 
 Nel log **LocationServices.log** sono presenti nuove voci. L'attributo **Locality** identifica uno degli stati seguenti:
 

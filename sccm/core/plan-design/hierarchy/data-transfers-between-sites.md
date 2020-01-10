@@ -10,17 +10,16 @@ ms.assetid: dc526e8d-fac3-4bb5-b206-03ad29b0ae11
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d9d2a318b6516fef8f5336cd738a3d2517014a4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e3f1d954194397d3e1c64ba108a660c351d9747a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68957911"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800339"
 ---
 # <a name="data-transfers-between-sites"></a>Trasferimenti di dati tra siti
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager usa la *replica basata su file* e la *replica di database* per il trasferimento di tipi di informazioni diversi tra i siti. Informazioni su come Configuration Manager sposta i dati tra i siti e come gestire il trasferimento dei dati in rete.  
 

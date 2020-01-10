@@ -10,17 +10,16 @@ ms.assetid: 6f0e08f8-f2e1-4823-90f6-7b1f4341eb46
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: eebd1aaf72cbd7932a919c0a8ffdef6d6af8389f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 2cb27812ffe97bfd93cfb1eb721ace2a56286ac9
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62217466"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826238"
 ---
 # <a name="site-failure-impacts-in-configuration-manager"></a>Impatto degli errori del sito in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile che si verifichi un errore nel server del sito e in uno degli altri sistemi del sito e che quindi i servizi forniti normalmente non siano più disponibili. Se si installano più sistemi del sito sullo stesso computer e si verifica un errore in questo computer, tutti i servizi forniti con regolarità da questi sistemi del sito non sono più disponibili.
 

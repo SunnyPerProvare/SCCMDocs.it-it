@@ -10,17 +10,16 @@ ms.assetid: 600086d5-bd9e-4ac1-8ace-c7a62de80dc2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bff382c4252eb99f35bad0cca05352e23705104
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 289b4ce6c822c909cf4d68ebdf562522431ede77
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70109891"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792061"
 ---
 # <a name="use-the-configuration-manager-client-software-for-extended-interoperability-with-future-versions-of-a-current-branch-site"></a>Usare il software client del supporto di Configuration Manager per l'interoperabilità estesa con le versioni future di un sito Current Branch
 
-*Si applica a: System Center Configuration Manager (Current Branch)*  
+*Si applica a: Configuration Manager (Current Branch)*  
 
 I requisiti aziendali potrebbero non consentire di aggiornare regolarmente il client di Configuration Manager in alcuni dispositivi. Ad esempio, potrebbe essere necessario rispettare i criteri di gestione delle modifiche oppure potrebbe trattarsi di un dispositivo cruciale. Soddisfare queste esigenze installando un nuovo client per l'uso a lungo termine denominato client di interoperabilità estesa. Usare il client di interoperabilità estesa solo per dispositivi specifici che non possono essere aggiornati di frequente, come dispositivi POS o chiosco multimediale. Continuare a usare l'[aggiornamento client automatico](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#bkmk_autoupdate) per la maggior parte dei client.
 

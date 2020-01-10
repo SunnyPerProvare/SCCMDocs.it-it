@@ -10,17 +10,16 @@ ms.assetid: 753d2681-ea72-4f47-94d1-ac10188d9d5b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 500a59b4af9f1d25a1e0b5e82ba0a75bfa23df88
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 61a32c83aaa9c97a7dd230befa38b7351d8509b3
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500891"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792895"
 ---
 # <a name="content-ownership-tool"></a>Content Ownership Tool
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Content Ownership Tool è uno [strumento di Configuration Manager](/sccm/core/support/tools). Modifica la proprietà dei pacchetti orfani in Configuration Manager. I pacchetti orfani non dispongono di un server del sito proprietario. I pacchetti possono diventare orfani rimuovendo il server del sito, mentre appartengono ancora al server di questo sito.
 

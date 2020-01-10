@@ -10,17 +10,16 @@ ms.assetid: b3d755bd-0870-4f1f-a56d-bfd3c7b492b9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 085f91bfb99bcfabbcdee8083fb3a3089a33057e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 4fe6a0a753c00c6703384d5400210a254a35a8dc
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67285668"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791872"
 ---
 # <a name="how-to-use-the-configuration-manager-docs"></a>Uso della documentazione di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo è suddiviso nelle sezioni elencate di seguito, in cui sono presentati suggerimenti e altre risorse utili per l'uso della libreria di documentazione di Configuration Manager:  
 
@@ -37,7 +36,7 @@ Per informazioni generali sul prodotto, vedere l'argomento sulla [consultazione 
 
 
 ##  <a name="bkmk_searchtips"></a> Ricerca   
- Usare i seguenti suggerimenti per la ricerca per trovare le informazioni necessarie:  
+ Per trovare le informazioni necessarie, usare i seguenti suggerimenti per la ricerca:  
 
 -   Quando si usa il motore di ricerca preferito per individuare il contenuto per Configuration Manager, includere `SCCM` con le parole chiave della ricerca.  
 

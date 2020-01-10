@@ -10,13 +10,12 @@ ms.assetid: 7ed389c3-a9ab-48ce-a5eb-27d52ee4fb94
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 776c79afea87523fb6da5c92d0b50f128af2a515
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 19f2eefca3c3a4148c4e4cd2f80fc5d210428129
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73623409"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825694"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Come connettere Configuration Manager a Desktop Analytics
 

@@ -10,17 +10,16 @@ ms.assetid: 9edc214f-f405-456d-80df-8adcc2a5428d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11d2b1b5d419a9f38b643d981a055b9ed1ea6ab5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ba7039dbfad1dd38541e64e652a63546e6430417
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71311622"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826051"
 ---
 # <a name="deployment-monitoring-tool"></a>Deployment Monitoring Tool
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Deployment Monitoring Tool è uno [strumento di Configuration Manager](/sccm/core/support/tools). È un'interfaccia utente grafica progettata per assistere nella risoluzione dei problemi dell'applicazione, negli aggiornamenti software e nelle distribuzioni della linea di base di configurazione in un client di Configuration Manager. Lo strumento è di sola lettura perché non modifica alcuno stato nel client. È possibile usarlo in modo sicuro per diagnosticare gli scenari di distribuzione comuni.
 

@@ -10,17 +10,16 @@ ms.assetid: 370fc61f-2d8a-45b4-adc7-7b5d5ede2bf4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e43b1768bf49e6c116bcdecaa722059cf28a6c3
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f5b0531ae39f7496c6ce1beaae27231cb0dd3043
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68538057"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800815"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1906"></a>Livelli di raccolta dati di diagnostica e utilizzo per la versione 1906
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager versione 1906 raccoglie tre livelli di dati di diagnostica e utilizzo: **Di base**, **Avanzato** e **Completo**. Per impostazione predefinita, per questa funzionalità è impostato il livello avanzato. Le sezioni seguenti forniscono ulteriori dettagli sui dati raccolti in ogni livello.
 

@@ -10,13 +10,12 @@ ms.assetid: 1f4e26f7-42f2-40c8-80cf-efd405349c6c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82cfcab2add617f21d4d2bbec483ab8532e9b90b
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: a0ef45dfb62bb68dd1d18b8184d647d6b1181e29
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75197945"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791466"
 ---
 # <a name="monitor-connection-health"></a>Monitorare l'integrità della connessione
 
@@ -145,7 +144,7 @@ Per visualizzare un elenco specifico di dispositivi in base allo stato, iniziare
 
 Queste colonne corrispondono ai [prerequisiti](/sccm/desktop-analytics/overview#prerequisites) chiave dei dispositivi per la comunicazione con Desktop Analytics.
 
-![Screenshot dell'elenco dei dispositivi con registrazione completata correttamente](media/sccm-device-list-properly-enrolled.png)
+![Screenshot dell'elenco dei dispositivi con registrazione completata correttamente](media/device-list-properly-enrolled.png)
 
 Selezionare un dispositivo per visualizzare l'elenco completo delle proprietà disponibili nel riquadro dei dettagli. È anche possibile aggiungere queste proprietà come colonne all'elenco dei dispositivi.
 
@@ -292,7 +291,7 @@ In caso contrario, può essere visualizzato uno degli errori seguenti:
 
 I dispositivi verificano la connettività con una richiesta GET all'endpoint seguente in base alla versione del sistema operativo:
 
-| Versione del sistema operativo | Endpoint |
+| Versione sistema operativo | Endpoint |
 |------------|----------|
 | - Windows 10, versione 1809 o successiva<br/>- Windows 10, versione 1803 con aggiornamento cumulativo 2018-09 o successiva | `https://v10c.events.data.microsoft.com/health/keepalive` |
 | Windows 10, versione 1803 *senza* aggiornamento cumulativo 2018-09 o successiva | `https://v10.events.data.microsoft.com/health/keepalive` |

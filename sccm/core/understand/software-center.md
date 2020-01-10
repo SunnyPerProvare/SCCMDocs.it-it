@@ -10,13 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.assetid: 9e68de6e-2b33-442b-b674-a382728d9529
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a662e768cf4657e0b0ef1889d6bd869d62c71efe
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 03e28fe65ad0afc022fd911b8fad1e6f0f080784
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74825640"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791963"
 ---
 # <a name="software-center-user-guide"></a>Manuale dell'utente di Software Center
 
@@ -115,7 +114,7 @@ Selezionare la scheda **Conformità del dispositivo** per visualizzare lo stato 
 Selezionare **Controlla conformità** per confrontare le impostazioni del dispositivo con i criteri di sicurezza definiti dall'amministratore IT.
 
 
-## <a name="options"></a>Opzioni
+## <a name="options"></a>Options
 
 Selezionare la scheda **Opzioni** per visualizzare le impostazioni aggiuntive per questo computer.
 

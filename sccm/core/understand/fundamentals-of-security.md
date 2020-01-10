@@ -10,17 +10,16 @@ ms.assetid: 035b7f73-8b78-4ed1-835e-a31f9a5c4a02
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6c6f931271d8cc8f69e3c65de8c4932f5ab5c95
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c45066b24fb17889a8278b97393e2905fe7d9b02
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67159280"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792115"
 ---
 # <a name="fundamentals-of-security-for-configuration-manager"></a>Nozioni fondamentali sulla sicurezza di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo illustra i componenti di sicurezza fondamentali seguenti di qualsiasi ambiente Configuration Manager:
 - [Livelli di sicurezza](#bkmk_layers)
@@ -67,7 +66,7 @@ Oltre alla sicurezza offerta dall'infrastruttura di rete e server Windows, Confi
 
 Il livello successivo di protezione si basa sull'accesso tramite Windows Management Instrumentation (WMI), in particolare sul provider SMS. Il provider SMS è un componente di Configuration Manager che concede a un utente l'accesso per eseguire query nel database del sito per informazioni. Per impostazione predefinita, l'accesso al provider è limitato ai membri del gruppo SMS Admins locale. Questo gruppo contiene inizialmente solo l'utente che ha installato Configuration Manager. Per concedere altre autorizzazioni account al repository Common Information Model (CIM) e al provider SMS, aggiungere altri account al gruppo SMS Admins.  
 
-A partire dalla versione 1810 è possibile specificare il livello di autenticazione minimo per gli amministratori per l'accesso ai siti di Configuration Manager. Questa funzionalità impone agli amministratori di accedere a Windows con il livello richiesto. <!--1357013-->  
+A partire dalla versione 1810, è possibile specificare il livello di autenticazione minimo per gli amministratori per l'accesso ai siti di Configuration Manager. Questa funzionalità impone agli amministratori di accedere a Windows con il livello richiesto. <!--1357013-->  
 
 Per altre informazioni, vedere [Piano per il provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider).
 

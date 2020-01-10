@@ -10,17 +10,16 @@ ms.assetid: bb83ac87-9914-4a35-b633-ad070031aa6e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 564e24f3c753af3a757001e5c3c6e420d369915f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 00297b4ff9a45cfddc9f7c13948f5418d45a3308
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70922755"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798695"
 ---
 # <a name="install-a-cloud-distribution-point-for-configuration-manager"></a>Installare un punto di distribuzione cloud per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 > [!Important]  
 > È stata modificata l'implementazione per la condivisione del contenuto da Azure. Usare un gateway di gestione cloud abilitato per il contenuto abilitando l'opzione **Consenti il funzionamento di CMG come punto di distribuzione cloud e per la gestione di contenuti da Archiviazione di Azure**. Per altre informazioni, vedere [Modify a CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg) (Modificare un gateway di gestione cloud).
@@ -170,7 +169,7 @@ Per poter usare il punto di distribuzione cloud, i client devono essere in grado
 If you issue the server authentication certificate from your PKI, you may directly specify the Azure **Service name**. For example, `WallaceFalls.cloudapp.net`. When you specify this certificate in the Create Cloud Distribution Point Wizard, both the **Service FQDN** and **Service name** properties are the same. In this scenario, you don't need to configure DNS. The name that clients receive from the management point is the same name as the service in Azure.  
 -->
 
-Il nome comune del certificato di autenticazione server deve includere il nome di dominio. Tale nome è obbligatorio quando si acquista un certificato da un provider pubblico. È consigliato quando il certificato viene rilasciato da PKI, Ad esempio, `WallaceFalls.contoso.com`. Quando si specifica questo certificato in Crea procedura guidata punto di distribuzione cloud, in **FQDN servizio** viene inserito il nome comune (`WallaceFalls.contoso.com`). In **Nome servizio** viene accettato lo stesso nome host (`WallaceFalls`), che viene aggiunto al nome di dominio di Azure `cloudapp.net`. In questo scenario i client devono risolvere la proprietà **FQDN servizio** del dominio (`WallaceFalls.contoso.com`) nella proprietà **Nome servizio** di Azure (`WallaceFalls.cloudapp.net`). Creare un alias CNAME per eseguire il mapping di questi nomi.
+Il nome comune del certificato di autenticazione server deve includere il nome di dominio. Tale nome è obbligatorio quando si acquista un certificato da un provider pubblico. È consigliato quando il certificato viene rilasciato da PKI, Ad esempio, `WallaceFalls.contoso.com` Quando si specifica questo certificato in Crea procedura guidata punto di distribuzione cloud, in **FQDN servizio** viene inserito il nome comune (`WallaceFalls.contoso.com`). In **Nome servizio** viene accettato lo stesso nome host (`WallaceFalls`), che viene aggiunto al nome di dominio di Azure `cloudapp.net`. In questo scenario i client devono risolvere la proprietà **FQDN servizio** del dominio (`WallaceFalls.contoso.com`) nella proprietà **Nome servizio** di Azure (`WallaceFalls.cloudapp.net`). Creare un alias CNAME per eseguire il mapping di questi nomi.
 
 ### <a name="create-cname-alias"></a>Creare l'alias CNAME
 
@@ -180,9 +179,9 @@ Creare un record di nome canonico (CNAME) nel DNS pubblico con connessione Inter
 
 Il processo seguente illustra in che modo un client risolve il nome del punto di distribuzione cloud:  
 
-1. Il client ottiene il valore di **FQDN servizio** del punto di distribuzione cloud nell'elenco delle origini di contenuto, Ad esempio, `WallaceFalls.contoso.com`.  
+1. Il client ottiene il valore di **FQDN servizio** del punto di distribuzione cloud nell'elenco delle origini di contenuto, Ad esempio, `WallaceFalls.contoso.com`  
 
-2. Interroga DNS, che risolve il FQDN servizio usando il nome CNAME nel **Nome servizio**  di Azure, Ad esempio, `WallaceFalls.cloudapp.net`.  
+2. Interroga DNS, che risolve il FQDN servizio usando il nome CNAME nel **Nome servizio**  di Azure, Ad esempio, `WallaceFalls.cloudapp.net`  
 
 3. Interroga di nuovo DNS, che risolve il nome servizio di Azure nell'indirizzo IP pubblico di Azure.  
 

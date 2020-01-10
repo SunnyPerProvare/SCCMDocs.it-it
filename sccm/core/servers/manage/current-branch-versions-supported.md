@@ -10,17 +10,16 @@ ms.assetid: 35b5baec-d313-46aa-9d14-c443aa0d6c09
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e98cf178e7c88ec441bd46cb61e8b5c2a33831bb
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 57f48fd6916294c66d623ec95e7ec5bbd1f6bf2f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74661303"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75795872"
 ---
 # <a name="support-for-configuration-manager-current-branch-versions"></a>Supporto per le versioni Current Branch di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Microsoft prevede di rilasciare diversi aggiornamenti per le versioni Current Branch di Configuration Manager ogni anno. Il supporto di ogni versione aggiornata dura 18 mesi dalla data di rilascio con disponibilità generale. Microsoft fornisce il supporto tecnico per l'intero periodo. Ci sono due fasi di manutenzione distinte che dipendono dalla disponibilità della versione Current Branch più recente:
 

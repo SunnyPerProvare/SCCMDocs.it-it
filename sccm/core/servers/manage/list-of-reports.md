@@ -10,17 +10,16 @@ ms.assetid: b7332ed3-8003-454b-bb12-1fdf8721425c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35aff235d537efd738f29a0794f1fdb51a1fbb74
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e985f3df91d1e749c1baa6b490033237ff4e369c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62216744"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794864"
 ---
 # <a name="list-of-reports-in-configuration-manager"></a>Elenco dei report di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager offre molti report predefiniti relativi a molte delle attività di report che si possono eseguire. È anche possibile usare le istruzioni SQL in questi report che consentono di scrivere propri report.   
 

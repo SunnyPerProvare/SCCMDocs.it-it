@@ -10,17 +10,16 @@ ms.assetid: d09a82c6-bbd1-49ca-8ffe-e3ce87b85d33
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d07005c63f0d69d57d24eac163b67c34529658cf
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: af40e75bdeb49279e942bfdd4311fcdc38124f0a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62215681"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798317"
 ---
 # <a name="use-a-sql-server-cluster-for-the-site-database"></a>Usare un cluster di SQL Server per il database del sito
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile usare un cluster di failover di SQL Server per ospitare il database del sito di Configuration Manager. Un cluster offre il supporto per il failover e migliora l'affidabilità del database del sito. Non offre tuttavia vantaggi aggiuntivi di elaborazione o bilanciamento del carico. Un cluster di failover di SQL Server, inoltre, usa l'archiviazione condivisa e introduce un singolo punto di guasto. Può verificarsi una riduzione delle prestazioni perché il server del sito deve trovare il nodo attivo del cluster di SQL Server prima di connettersi al database del sito.  
 
@@ -79,7 +78,7 @@ Tenere presente le limitazioni seguenti:
 - Quando si specifica un cluster di SQL Server, l'opzione per specificare percorsi file non predefiniti per il database del sito non è disponibile.  
 
 
-### <a name="sms-provider"></a>provider SMS
+### <a name="sms-provider"></a>Provider SMS
 
 Non è possibile installare un'istanza del provider SMS in un cluster di SQL Server. Questa opzione non è supportata nemmeno in un computer che esegue un nodo di SQL Server in cluster.  
 

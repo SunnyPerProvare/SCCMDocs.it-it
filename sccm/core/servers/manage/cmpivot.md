@@ -10,19 +10,18 @@ ms.assetid: 32e2d6b9-148f-45e2-8083-98c656473f82
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 002bb488501bc3ec152f58aa22b08fec61216a9f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 50112b1ed19b23e355bfd64c4320be8d84802359
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74659952"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75796099"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>CMPivot per i dati in tempo reale in Configuration Manager
 
 <!--1358456-->
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager ha sempre fornito un archivio centralizzato di grandi dimensioni per i dati dei dispositivi, usato dai clienti per i report. Il sito in genere raccoglie questi dati su base settimanale. A partire dalla versione 1806, CMPivot è una nuova utilità inclusa nella console che ora consente l'accesso allo stato in tempo reale dei dispositivi nell'ambiente in uso. Esegue immediatamente una query su tutti i dispositivi connessi nella raccolta di destinazione e restituisce i risultati. Filtrare quindi e raggruppare questi dati nello strumento. La disponibilità di dati in tempo reale dai client online consente di rispondere alle domande aziendali, risolvere i problemi e rispondere agli eventi imprevisti di sicurezza in modo più veloce.
 
@@ -41,7 +40,7 @@ Per usare CMPivot sono necessari i componenti seguenti:
 - I client di destinazione richiedono almeno PowerShell versione 4.
 
 - Per raccogliere dati per le entità seguenti, i client di destinazione richiedono PowerShell versione 5.0:  
-  - Amministratori
+  - Administrators
   - Connessioni
   - IPConfig
   - SMBConfig
@@ -181,11 +180,11 @@ La finestra CMPivot presenta gli elementi seguenti:
      - Il numero di client offline (2)  
      - I client che hanno restituito un errore (0)  
 
-       Ad esempio: `Query completed on 3 of 5 clients (2 clients offline and 0 failure)`  
+       ad esempio `Query completed on 3 of 5 clients (2 clients offline and 0 failure)`  
 
-   - L'ID dell'operazione client. Ad esempio: `id(16780221)`  
+   - L'ID dell'operazione client. ad esempio `id(16780221)`  
 
-   - La raccolta corrente. Ad esempio: `PM_Team_Machines`  
+   - La raccolta corrente. ad esempio `PM_Team_Machines`  
 
    - Il numero totale di righe nel riquadro dei risultati. Ad esempio: `1 objects`  
 
@@ -369,7 +368,7 @@ CMPivot include i seguenti operatori scalari:
 |!=|Diverso da|`"abc" != "ABC"`|
 |like|LHS contiene una corrispondenza per RHS|`"FabriKam" like "%Brik%"`|
 |!like|LHS non contiene una corrispondenza per RHS|`"Fabrikam" !like "%xyz%"`|
-|contiene|RHS si verifica come sottosequenza di LHS|`"FabriKam" contains "BRik"`|
+|contains|RHS si verifica come sottosequenza di LHS|`"FabriKam" contains "BRik"`|
 |!contains|RHS non si verifica in LHS|`"Fabrikam" !contains "xyz"`|
 |startswith|RHS è una sottosequenza iniziale di LHS|`"Fabrikam" startswith "fab"`|
 |!startswith|RHS non è una sottosequenza iniziale di LHS|`"Fabrikam" !startswith "kam"`|
@@ -556,7 +555,7 @@ A partire dalla versione 1906, al ruolo **Amministratore della protezione** pred
 ### <a name="bkmk_standalone"></a> Modalità autonoma per CMPivot
 <!--3555890, 4619340, 4683130 -->
 
-A partire dalla versione 1906 è possibile usare CMPivot come app autonoma. La versione autonoma di CMPivot è una [funzionalità di versione non definitiva](/sccm/core/servers/manage/pre-release-features#bkmk_table) ed è disponibile solo in inglese. Eseguire CMPivot all'esterno della console di Configuration Manager per visualizzare in tempo reale lo stato dei dispositivi presenti nell'ambiente. Questa modifica consente di usare CMPivot in un dispositivo senza aver prima installato la console.
+A partire dalla versione 1906 è possibile usare CMPivot come app autonoma. La versione autonoma di CMPivot è una [funzionalità in versione non definitiva](/sccm/core/servers/manage/pre-release-features#bkmk_table) ed è disponibile solo in inglese. Eseguire CMPivot all'esterno della console di Configuration Manager per visualizzare in tempo reale lo stato dei dispositivi presenti nell'ambiente. Questa modifica consente di usare CMPivot in un dispositivo senza aver prima installato la console.
 
 È possibile condividere le funzionalità di CMPivot con altri utenti tipo, ad esempio operatori di help desk o amministratori della sicurezza, che non hanno la console installata nel proprio computer. Queste altre persone possono usare CMPivot per eseguire query su Configuration Manager insieme agli altri strumenti che usano solitamente. Condividendo questi dati di gestione completi, è possibile collaborare per risolvere proattivamente i problemi aziendali che riguardano più ruoli.
 

@@ -10,17 +10,16 @@ ms.assetid: 1cb96666-98bf-49a9-85ca-dbb53f0655e9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a1bf32c77989c11c55723d5edf271e234ccd4ec
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 304db5001503e8cb7bb8334e71c9090e44073d7e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62247592"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825932"
 ---
 # <a name="accessibility-features-in-configuration-manager"></a>Funzionalità di accessibilità in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 Configuration Manager include funzionalità che lo rendono accessibile a tutti.
@@ -90,5 +89,5 @@ Per altre informazioni sui concetti fondamentali relativi allo spostamento nelle
 - [Manuale dell'utente di Software Center](/sccm/core/understand/software-center)
 
 > [!NOTE]  
-> Le informazioni in questo articolo sono valide solo per gli utenti che acquistano una licenza di prodotti Microsoft negli Stati Uniti. Se il prodotto non è stato acquistato negli Stati Uniti, è possibile usare la scheda informativa della filiale inclusa nel pacchetto software oppure visitare il [sito Web Microsoft sull'accessibilità](https://go.microsoft.com/fwlink/?LinkId=8431) per informazioni di contatto per i servizi di supporto Microsoft. È possibile contattare la filiale locale per stabilire se i tipi di prodotti e servizi illustrati in questa sezione sono disponibili nell'area di interesse. Le informazioni sull'accesso facilitato sono disponibili in altre lingue, incluso giapponese e francese.  
+> Le informazioni in questo articolo sono valide solo per gli utenti che acquistano una licenza di prodotti Microsoft negli Stati Uniti. Se il prodotto non è stato acquistato negli Stati Uniti, è possibile usare la scheda informativa della filiale inclusa nel pacchetto software oppure visitare il [sito Web Microsoft sull'accessibilità](https://go.microsoft.com/fwlink/?LinkId=8431) per informazioni di contatto per i servizi di supporto Microsoft. È possibile contattare la filiale locale per stabilire se i tipi di prodotti e servizi illustrati in questa sezione sono disponibili nell'area di interesse. Le informazioni sull'accessibilità sono disponibili anche in altre lingue, compreso il giapponese e il francese.  
 

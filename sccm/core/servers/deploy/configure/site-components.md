@@ -10,17 +10,16 @@ ms.assetid: 5fccbbeb-0faa-4943-83c2-e67db62d392d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70d6480db557fbef31aba91e8bc75f8514215059
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 932d0aa50b02f422ca335c60cac0a9db5357e1d0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65498494"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798425"
 ---
 # <a name="site-components-for-configuration-manager"></a>Componenti del sito per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Per ogni sito di Configuration Manager è possibile configurare i componenti del sito per modificare il comportamento dei ruoli del sistema del sito e la creazione di report sullo stato del sito. Le configurazioni dei componenti del sito si applicano a un sito e a ogni istanza di un ruolo del sistema del sito applicabile nel sito.  
 

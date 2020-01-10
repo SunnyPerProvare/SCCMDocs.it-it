@@ -10,17 +10,16 @@ ms.assetid: CF35CE87-3BA8-4A84-9BC8-ABCEA4666212
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c2530b20d065b3b2bd15c0dc38232687d286b6b0
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3f7d93c5a9a323ee8ebff5c0bae9db17afbcbed2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72384744"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824062"
 ---
 # <a name="use-windows-analytics-with-configuration-manager"></a>Usare Windows Analytics con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 > [!Important]  
 > A partire da ottobre 2019, l'integrazione di Windows Analytics in Configuration Manager è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Il servizio Windows Analytics verrà ritirato il 31 gennaio 2020.

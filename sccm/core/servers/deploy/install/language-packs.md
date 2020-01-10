@@ -10,17 +10,16 @@ ms.assetid: cd74e5f5-33f6-4566-8c9d-d6a93bfe71ed
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 238165dfe6822e05e64b725546837b3b4f0c496b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 45cc845a0a591c462203afabbbdc2ea35e174c6e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65498021"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798175"
 ---
 # <a name="language-packs-in-configuration-manager"></a>Language Pack in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo offre dettagli tecnici sul supporto per le lingue in Configuration Manager. I server e i client del sito di Configuration Manager sono considerati indipendenti dalla lingua. Aggiungere il supporto per le lingue visualizzate installando i **Language Pack server** o i **Language Pack client** in un sito di amministrazione centrale e nei siti primari. Durante il processo di installazione di un sito si selezionano le lingue per server e client da supportare in quel sito scegliendole dai file dei Language Pack disponibili.
  
@@ -74,7 +73,7 @@ Usare la tabella seguente per eseguire il mapping di un ID impostazioni locali c
 
 |Lingua client|ID impostazioni locali (LCID)|Codice di tre lettere|  
 |---------------------|------------------------|-----------------------|  
-|Inglese (predefinito)|0409|ENG|  
+|Inglese (predefinito)|0409|ITA|  
 |Cinese (semplificato)|0804|CHS|  
 |Cinese (tradizionale, Taiwan)|0404|CHT|  
 |Ceco|0405|CSY|  

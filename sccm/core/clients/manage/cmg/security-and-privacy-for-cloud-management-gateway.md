@@ -10,17 +10,16 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 7304730b-b517-4c76-aadd-4cbd157dc971
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a26ed933e94b3d5e4d66ce8006bcf3c4c2936dd8
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f716a0019bacb1ac25082176e81c31d40f3bc437
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68535579"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824538"
 ---
 # <a name="security-and-privacy-for-the-cloud-management-gateway"></a>Sicurezza e privacy per il gateway di gestione cloud
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo contiene informazioni relative alla sicurezza e alla privacy per il gateway di gestione cloud di Configuration Manager (CMG). Per altre informazioni, vedere [Plan for cloud management gateway](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) (Pianificare il gateway di gestione cloud).
 

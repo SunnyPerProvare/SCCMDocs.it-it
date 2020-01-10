@@ -6,17 +6,16 @@ ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: 349b2a69-af46-481f-afb2-24d98774e852
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 65e166d599574f1105f983096a50f34571c85047
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: 1ee89e46f9bd780fe724a5b6092b4b9aa16ecb1c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75197980"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825592"
 ---
 # <a name="desktop-analytics-log-collector"></a>Agente di raccolta log di Desktop Analytics
 
@@ -61,7 +60,7 @@ Specifica un percorso locale o UNC per inserire il log e altri file di output.
 
 - Percorso UNC (lunghezza massima = 130), ad esempio: `\\myserver\myfolder`
 
-**Tipo**: String
+**Tipo**: Stringa
 
 **Posizione**: 1
 

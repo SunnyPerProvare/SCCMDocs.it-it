@@ -10,17 +10,16 @@ ms.assetid: c21eec87-ad1c-4465-8e45-5feb60b92707
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d1d6ba76983041c0c6c8d13147cfae481186f23
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: efcf478037ec224669d1a10da3a15366d3dba566
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70380087"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806172"
 ---
 # <a name="upgrade-windows-to-the-latest-version-with-configuration-manager"></a>Aggiornare Windows all'ultima versione con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo illustra la procedura da eseguire in Configuration Manager per aggiornare il sistema operativo di un computer. Sono disponibili diversi metodi di distribuzione, ad esempio supporti autonomi o Software Center. Lo scenario di aggiornamento sul posto ha le funzionalità seguenti:  
 
@@ -61,7 +60,7 @@ Per ulteriori informazioni, vedere [percorsi di aggiornamento di Windows 10](htt
 #### <a name="windows-server"></a>Windows Server
 
 - Windows Server 2012
-- Windows Server 2012 R2
+- R2 per Windows Server 2012
 - Una versione precedente di Windows Server 2016
 - Una versione precedente di Windows Server 2019
 

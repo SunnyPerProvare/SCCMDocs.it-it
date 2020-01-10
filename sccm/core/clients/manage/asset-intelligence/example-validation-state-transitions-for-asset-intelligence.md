@@ -10,17 +10,16 @@ ms.assetid: 6230a6e5-a1f6-459b-84f1-07fbde0e70f0
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f2fb577fc4799dfb1e9c1d6585df4ed244ebfab5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1891cef51c1400f4cce66e635d351a536f31d413
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70890296"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824742"
 ---
 # <a name="example-validation-state-transitions-for-asset-intelligence"></a>Transizioni dello stato di convalida di esempio per Asset Intelligence
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Gli stati di convalida di Asset Intelligence in Configuration Manager non sono statici e possono essere modificati da azioni di amministrazione eseguite per modificare i dati archiviati nel catalogo di Asset Intelligence. In questo argomento vengono descritti esempi relativi alle possibili transizioni dello stato di convalida.
 

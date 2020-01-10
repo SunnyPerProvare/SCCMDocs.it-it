@@ -10,17 +10,16 @@ ms.assetid: 92b339ef-2723-4322-bec6-077b3e8846b0
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0db2b5aa34034f85c97da0bbfe2f604ff606e753
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 0da6cbc4d05334b54184b41b506d849d544701e2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68712541"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798097"
 ---
 # <a name="prerequisites-for-installing-configuration-manager-sites"></a>Prerequisiti per l'installazione di siti di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Prima di iniziare l'installazione di un sito, informarsi sui prerequisiti per l'installazione di diversi tipi di siti di Configuration Manager.
 

@@ -10,17 +10,16 @@ ms.assetid: 7e4ec207-bb49-401f-af1b-dd705ecb465d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9677c49dfd577e5dc5e02450821ec73bdfb7f3b4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7dff8764acdb0b1b29139dbb894ca7d7b830d970
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74840531"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798942"
 ---
 # <a name="configure-sql-server-always-on-availability-groups-for-configuration-manager"></a>Configurare gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Le informazioni contenute in questo articolo consentono di configurare e gestire i gruppi di disponibilità usati con Configuration Manager.
 
@@ -94,7 +93,7 @@ Dopo aver [creato e configurato il gruppo di disponibilità](#bkmk_create), usar
 
 L'installazione di un nuovo sito con il proprio database in un gruppo di disponibilità non è supportata. Se, ad esempio, si usano i supporti di base, installare il sito usando una singola istanza di SQL Server. Dopo aver completato l'installazione, spostare il database del sito nel gruppo di disponibilità.
 
-1. Eseguire il **programma di installazione di Configuration Manager** `\BIN\X64\setup.exe` dalla cartella di installazione del sito di Configuration Manager.
+1. Eseguire il **programma di installazione di Configuration Manager**`\BIN\X64\setup.exe` dalla cartella di installazione del sito di Configuration Manager.
 
 2. Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito** e quindi scegliere **Avanti**.
 
@@ -173,7 +172,7 @@ Usare la procedura seguente se non si vuole più ospitare il database del sito i
 
 4. Nel server che ospiterà il database del sito, modificare il modello di backup per il database del sito da **FULL** a **SIMPLE**. Per altre informazioni, vedere [Visualizzare o modificare il modello di recupero di un database](https://docs.microsoft.com/sql/relational-databases/backup-restore/view-or-change-the-recovery-model-of-a-database-sql-server).
 
-5. Eseguire il **programma di installazione di Configuration Manager** `\BIN\X64\setup.exe` dalla cartella di installazione del sito di Configuration Manager.
+5. Eseguire il **programma di installazione di Configuration Manager**`\BIN\X64\setup.exe` dalla cartella di installazione del sito di Configuration Manager.
 
 6. Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito** e quindi scegliere **Avanti**.  
 

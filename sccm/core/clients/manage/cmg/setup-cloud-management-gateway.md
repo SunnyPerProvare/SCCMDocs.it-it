@@ -10,17 +10,16 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b57a4c63da20cefb7b247f99a97dbba0ec91d9e8
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 238dcbadd00322dce57bbf06f5a1787f9b148d20
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71343838"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824521"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Configurare il gateway di gestione cloud per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo processo include i passaggi necessari per configurare un Cloud Management Gateway (CMG).
 

@@ -10,17 +10,16 @@ ms.assetid: 3417ff88-7177-4a0d-8967-ab21fe7eba17
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5561d0ee10eb425e582108f032d769195750a6d4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 04af80402877c2f59fe09d17dcbcec8a511614d5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70176752"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799472"
 ---
 # <a name="step-by-step-example-deployment-of-the-pki-certificates-for-configuration-manager-windows-server-2008-certification-authority"></a>Esempio dettagliato di distribuzione dei certificati PKI per Configuration Manager: Autorità di certificazione di Windows Server 2008
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo esempio dettagliato di distribuzione usa un'autorità di certificazione (CA) Windows Server 2008 e contiene procedure che illustrano come creare e distribuire i certificati di infrastruttura a chiave pubblica (PKI) usati in Configuration Manager. Queste procedure utilizzano modelli di certificato e una CA globale (enterprise). I passaggi sono adatti esclusivamente a una rete di test, come un modello di prova.  
 

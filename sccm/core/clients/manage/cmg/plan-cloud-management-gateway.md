@@ -10,17 +10,16 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60532a2692c8e9b25468d6f2cdca32f90aa88a7a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ed86d7d9218de87bacd7c34c6557071a1e2bf219
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73049491"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824572"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!--1101764-->
 Il gateway di gestione cloud (CMG) consente di gestire i client di Configuration Manager in Internet in modo semplice. Distribuendo il gateway di gestione cloud come servizio cloud in Microsoft Azure, è possibile gestire i client tradizionali che effettuano il roaming in Internet senza un'infrastruttura locale aggiuntiva. Inoltre non è necessario esporre l'infrastruttura locale a Internet.
@@ -148,7 +147,7 @@ Quando effettuano il roaming in Internet, i client comunicano con CMG nell'area 
 > [!TIP]
 > Non è necessario distribuire più istanze di CMG ai fini della georilevazione. Il client Configuration Manager non è in genere influenzato dalla latenza minima che si verifica con il servizio cloud, anche se geograficamente distante.
 
-## <a name="requirements"></a>requisiti
+## <a name="requirements"></a>Requisiti
 
 - Una **sottoscrizione di Azure** per l'hosting del gateway di gestione cloud.  
 

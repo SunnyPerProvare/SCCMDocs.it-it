@@ -10,17 +10,16 @@ ms.assetid: 65c88e54-3574-48b0-a127-9cc914a89dca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb4efaf8fb424ee4f6af221ad5316d8fd03f8aa0
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 2147acef5c5a9a2719ee5ee84a36036187960406
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68712584"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799676"
 ---
 # <a name="the-content-library-in-configuration-manager"></a>Raccolta contenuto in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 La raccolta contenuto è un archivio a istanza singola del contenuto in Configuration Manager. Il sito la usa per ridurre le dimensioni complessive del corpo combinato del contenuto distribuito. La raccolta contenuto archivia tutti i file di contenuto per le distribuzioni software, ad esempio: aggiornamenti software, applicazioni, distribuzioni di sistemi operativi.  
 
@@ -97,7 +96,7 @@ Una raccolta contenuto remota è un prerequisito per la [disponibilità elevata 
 
 ### <a name="process-to-manage-the-content-library"></a>Processo per gestire la raccolta contenuto
 
-1. Creare una cartella in una condivisione di rete come la destinazione per la raccolta contenuto. Ad esempio, `\\server\share\folder`.  
+1. Creare una cartella in una condivisione di rete come la destinazione per la raccolta contenuto. Ad esempio, `\\server\share\folder`  
 
     > [!Warning]  
     > Non riusare una cartella esistente con contenuto. Ad esempio, non usare la stessa cartella delle origini del pacchetto. Prima di copiare la raccolta contenuto, Configuration Manager rimuove qualsiasi contenuto esistente dalla posizione specificata.  
@@ -161,7 +160,7 @@ La cartella della raccolta pacchetti, **PkgLib**, include un file per ogni pacch
 
 La cartella della raccolta dati, **DataLib**, include un file e una cartella per ogni contenuto di ciascun pacchetto. Ad esempio, il file e la cartella sono denominati rispettivamente `ABC00001.1.INI` e `ABC00001.1`. Il file include informazioni per la convalida. La cartella ricrea la struttura di cartelle del pacchetto originale.
 
-I file presenti nella raccolta dati vengono sostituiti dai file con estensione INI con il nome del file originale nel pacchetto. Ad esempio, `MyFile.exe.INI`. Questi file contengono informazioni sul file originale, ad esempio le dimensioni, l'ora di modifica e l'hash. Usare i primi quattro caratteri dell'hash per trovare il file originale nella raccolta file. Ad esempio, l'hash in MyFile.exe.INI è **DEF98765** e i primi quattro caratteri sono **DEF9**.
+I file presenti nella raccolta dati vengono sostituiti dai file con estensione INI con il nome del file originale nel pacchetto. Ad esempio, `MyFile.exe.INI` Questi file contengono informazioni sul file originale, ad esempio le dimensioni, l'ora di modifica e l'hash. Usare i primi quattro caratteri dell'hash per trovare il file originale nella raccolta file. Ad esempio, l'hash in MyFile.exe.INI è **DEF98765** e i primi quattro caratteri sono **DEF9**.
 
 ### <a name="file-library"></a>Raccolta file
 
@@ -184,7 +183,7 @@ Se si sceglie l'opzione **Automatico**, Configuration Manager seleziona l'unità
 Non è possibile specificare che un punto di distribuzione deve usare tutte le unità, ad eccezione di un set specifico. In alternativa, è possibile creare un file vuoto nella radice dell'unità denominato `NO_SMS_ON_DRIVE.SMS`. Inserire questo file prima che Configuration Manager selezioni l'unità da usare. Se Configuration Manager rileva questo file nella radice dell'unità, non userà l'unità per la raccolta contenuto.
 
 
-## <a name="troubleshooting"></a>Troubleshooting
+## <a name="troubleshooting"></a>Risoluzione dei problemi
 
 I suggerimenti seguenti consentono di risolvere i problemi con la raccolta contenuto:  
 

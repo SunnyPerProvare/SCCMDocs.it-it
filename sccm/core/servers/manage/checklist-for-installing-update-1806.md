@@ -10,17 +10,16 @@ ms.assetid: bb0a87a6-fd65-440b-90a5-2fef35622c9d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c8b4bdc5839cc7f45ad3c2990cc5c3c1a627faf
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: e7f907381844ade22ac143d8e5fb1b2841cf76ab
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198032"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75796473"
 ---
 # <a name="checklist-for-installing-update-1806-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1806 di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Quando si usa la versione Current Branch di Configuration Manager, è possibile installare l'aggiornamento nella console per la versione 1806 per aggiornare la gerarchia da una versione precedente. <!-- baseline only statement: (Because version 1802 is also available as [baseline media](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions), you can use the installation media to install the first site of a new hierarchy.)-->
 

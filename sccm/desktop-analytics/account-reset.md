@@ -6,17 +6,16 @@ ms.date: 08/16/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: 884d4864-950b-4139-b778-d5368e1f6ef2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 34bb53bf9819149c989996a950f3b13329e4eef3
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5fda61f12bda1637392606848fcf818dfa765d63
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72386794"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825660"
 ---
 # <a name="how-to-reset-your-account"></a>Come reimpostare l'account
 
@@ -34,7 +33,7 @@ Solo un **amministratore globale** può reimpostare l'account nel portale di Azu
 
 - Se si sceglie di aggiungere una nuova area di lavoro, nessuno degli input utente seguenti viene mantenuto nelle risorse:
     - Importanza
-    - Owner
+    - Proprietario
     - Decisione di aggiornamento
     - Note di rimedio
 

@@ -10,17 +10,16 @@ ms.assetid: 8ca970dd-e71c-404f-9435-d36e773a0db2
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8e8273cfd3e99f9085baf6db0590b08c6e0623a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a64db0660deee02264a333b695ef3493421f524c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70379846"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793173"
 ---
 # <a name="upgrade-on-premises-infrastructure-that-supports-configuration-manager"></a>Aggiornare l'infrastruttura locale che supporta Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Le informazioni disponibili in questo articolo consentono di aggiornare l'infrastruttura server che esegue Configuration Manager.  
 

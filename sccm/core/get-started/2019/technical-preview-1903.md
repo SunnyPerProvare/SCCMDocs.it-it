@@ -11,17 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f90d04b82ba75a0a7cee8108a3ebdffbca0d6da9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 4bba35a6b1f34cafadd33c22191b753a8fe15b03
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68833117"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823113"
 ---
 # <a name="features-in-configuration-manager-technical-preview-version-1903"></a>Funzionalità in Configuration Manager Technical Preview versione 1903
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
 Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager, versione 1903. Installare questa versione per aggiornare il sito delle anteprime tecniche aggiungendovi nuove funzionalità.
 

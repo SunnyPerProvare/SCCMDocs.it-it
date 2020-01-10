@@ -10,13 +10,12 @@ ms.assetid: 4cf640b3-610c-4c3c-b966-c62e9f5654ff
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0930e2f02d2a99073944c61cfead6767530accbc
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 172c3d210ca951f372752669a271649b7d2ad3dd
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70738224"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817109"
 ---
 # <a name="conditional-access-with-co-management"></a>Accesso condizionale con la co-gestione
 
@@ -103,7 +102,7 @@ Per altre informazioni sull'integrazione di ATP, vedere il post di blog [Microso
 
 
 
-## <a name="configure"></a>Configurare
+## <a name="configure"></a>Configura
 
 L'accesso condizionale è facile da usare quando si [abilita la co-gestione](/sccm/comanage/how-to-enable). È richiesto lo spostamento del carico di lavoro **Criteri di conformità** in Intune. Per altre informazioni, vedere [Come passare i carichi di lavoro di Configuration Manager a Intune](/sccm/comanage/how-to-switch-workloads). 
 

@@ -10,17 +10,16 @@ ms.assetid: 691896d9-ec0f-461f-a3f2-40378ebd3121
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fbd046115dcd4d13cec7a2bf880740a9dd616cc
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 544c24be388b07b0dd375a423de257bdc6215bb1
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65495771"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792966"
 ---
 # <a name="content-library-explorer"></a>Content Library Explorer
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Content Library Explorer è uno degli [strumenti di Configuration Manager](/sccm/core/support/tools). È possibile usarlo per le attività seguenti:  
 
@@ -36,7 +35,7 @@ Content Library Explorer è uno degli [strumenti di Configuration Manager](/sccm
 
 
 
-## <a name="requirements"></a>requisiti
+## <a name="requirements"></a>Requisiti
 
 - Eseguire lo strumento usando un account dotato di accesso amministrativo per:  
 
@@ -71,7 +70,7 @@ All'avvio di **ContentLibraryExplorer.exe**, immettere il nome di dominio comple
 Nel riquadro a sinistra vengono visualizzati i pacchetti distribuiti a questo punto di distribuzione. Espandere i pacchetti ed esplorare la struttura di cartelle, che corrisponde alla struttura con la quale è stato creato il pacchetto.
 
 Quando si seleziona una cartella, nel riquadro a destra vengono visualizzati tutti i file che questa contiene. La visualizzazione include le informazioni seguenti: 
-- Nome del file
+- Nome file
 - Dimensione del file
 - Unità in cui si trova il file
 - Altri pacchetti che usano lo stesso file nell'unità

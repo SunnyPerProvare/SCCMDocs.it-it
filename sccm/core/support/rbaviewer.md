@@ -10,17 +10,16 @@ ms.assetid: 6372ff17-7f56-4d7b-a21b-87fb8bdd6d3a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 533d055db3a68360c3c18d0e30e0718bf42c2a7c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c9eb586e9d2068f41e7e670fcbb62e8e175c5006
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500797"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826017"
 ---
 # <a name="role-based-administration-and-auditing-tool"></a>Role-based Administration and Auditing Tool
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Role-based Administration and Auditing Tool è uno degli [strumenti di Configuration Manager](/sccm/core/support/tools). Usare questo strumento per le attività seguenti:
 
@@ -30,7 +29,7 @@ Role-based Administration and Auditing Tool è uno degli [strumenti di Configura
 
 
 
-## <a name="requirements"></a>requisiti
+## <a name="requirements"></a>Requisiti
 
 - Eseguirlo nello stesso computer della console di Configuration Manager  
 

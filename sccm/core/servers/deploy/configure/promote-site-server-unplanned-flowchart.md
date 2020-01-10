@@ -10,17 +10,16 @@ ms.assetid: f3df18c2-99eb-4606-a3ef-db31374af602
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 586ded5ad185513360c0087601d1966d9333ef48
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a4da4dbbb4fbec585f80171d929393c868c32478
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62211530"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798523"
 ---
 # <a name="flowchart---promote-site-server-unplanned"></a>Diagramma di flusso - Alzare di livello il server del sito (senza pianificazione)
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo diagramma di flusso illustra il processo mediante il quale un server del sito in modalità passiva viene alzato di livello a server del sito in modalità attiva quando il server del sito in modalità attiva è offline. In questo esempio, il server del sito corrente in modalità attiva non è completamente operativo, ad esempio è disconnesso dalla rete o spento. Per altre informazioni, vedere gli articoli seguenti:  
 - [Disponibilità elevata del server del sito](/sccm/core/servers/deploy/configure/site-server-high-availability)  
