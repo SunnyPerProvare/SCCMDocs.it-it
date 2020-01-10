@@ -10,17 +10,16 @@ ms.assetid: 68dc6acd-5848-47a4-b4c1-ffa40e47890b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e32e96063f6c65a77e398c8434ce6b833c7be890
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: cf3981a7b584653a7ebc4471a7e33e0702bbc5d8
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70379719"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794292"
 ---
 # <a name="reference-for-maintenance-tasks-in-configuration-manager"></a>Informazioni di riferimento per le attività di manutenzione | Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo elenca informazioni dettagliate per ogni attività di manutenzione del sito di Configuration Manager. Ogni voce specifica i tipi di sito in cui l'attività è disponibile e se è abilitata per impostazione predefinita.
 

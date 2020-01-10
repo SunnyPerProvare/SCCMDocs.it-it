@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: b1751e3c-a60c-4ab7-a943-2595df1eb612
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6f0febe5dcfda5f95c695ad347e2d4408a901b25
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 38d4b1dbbe0573529e0f063aaf6774c1d4f28987
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660258"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800594"
 ---
 # <a name="about-log-files-in-configuration-manager"></a>Informazioni sui file di log di Configuration Manager
 
@@ -160,7 +159,7 @@ Configurare questi valori nella seguente chiave del Registro di sistema di Windo
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\Tracing`
 
-|Name  |Valori  |Type  |Descrizione
+|Name  |Valori  |Tipo  |Descrizione
 |---------|---------|---------|---------|
 |SqlEnabled| `1`: abilita la traccia SQL<br> `0`: disabilita la traccia SQL |REG_DWORD|Aggiungere la registrazione della traccia SQL a tutti i log del server del sito.|
 |ArchiveEnabled| `1`: abilita gli archivi log<br> `0`: disabilita gli archivi log | REG_DWORD |Archiviare i log del server del sito in una posizione separata per la conservazione cronologica.|

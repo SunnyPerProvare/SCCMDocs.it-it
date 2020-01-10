@@ -10,17 +10,16 @@ ms.assetid: 21a80050-6452-4b7d-8424-99bddf9fa1f4
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 602dcde75e6efc4b588349edada1f1c49c3c1a5b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9f92eaa87806612dacd4d04b90e007d3afa6c30b
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65499356"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75801682"
 ---
 # <a name="supported-os-versions-for-configuration-manager-consoles"></a>Versioni dei sistemi operativi supportate per le console di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 Per supportare la console di Configuration Manager, le versioni dei sistemi operativi seguenti richiedono almeno .NET Framework versione 4.5.2. L'eccezione è Windows 10, che richiede almeno .NET Framework 4.6.  

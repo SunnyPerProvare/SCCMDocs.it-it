@@ -10,17 +10,16 @@ ms.assetid: 5cb41e2b-4c79-4da9-a432-ff869c0870f8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9124f412b7e22fadf08ddc87668481747d52152
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a64f993be9bce42ef707d7a16a246f788c9326a9
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68339512"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825966"
 ---
 # <a name="support-center-quickstart-guide"></a>Guida introduttiva di Support Center
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Support Center offre funzionalità avanzate, tra cui la risoluzione dei problemi e la visualizzazione di log in tempo reale. Può essere usato per acquisire in pochi minuti lo stato di un computer client di Configuration Manager. Questa funzionalità prevede l'accesso a client remoti.
 

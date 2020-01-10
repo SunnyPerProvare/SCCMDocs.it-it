@@ -10,17 +10,16 @@ ms.assetid: b57acf0b-05b7-46af-ad4c-f3e707bd3861
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 32da0d163ac4fd015537fd1982617b484184bf34
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 547ccb2fe9600f975fba5476fd53a31e5c8440c8
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660598"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802277"
 ---
 # <a name="whats-new-in-configuration-manager-incremental-versions"></a>Novità delle versioni incrementali di System Center Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager usa un processo di [aggiornamenti e manutenzione](/sccm/core/servers/manage/updates) nella console. Questo processo di aggiornamento semplifica l'identificazione e l'installazione degli aggiornamenti di Configuration Manager. Non sono più presenti service pack o versioni di aggiornamento cumulativo di cui tenere traccia e che è necessario installare. Non occorre cercare il download della versione o degli aggiornamenti più recenti.
 

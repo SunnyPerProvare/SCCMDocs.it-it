@@ -10,13 +10,12 @@ ms.assetid: 3986a992-c175-4b6f-922e-fc561e3d7cb7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 690d37d2ce48851ab964011dcc41d94677ea7493
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b3c8306354a6dd31f164fe382be6e33e14192691
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74658405"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824130"
 ---
 # <a name="how-to-manage-clients-in-configuration-manager"></a>Come gestire i client in Configuration Manager
 
@@ -92,7 +91,7 @@ Quando vengono distribuite più impostazioni client allo stesso dispositivo, la 
 
 Per altre informazioni, vedere [Come configurare le impostazioni client](/configmgr/core/clients/deploy/configure-client-settings).
 
-### <a name="start"></a>Inizio
+### <a name="start"></a>Avvia
 
 - Eseguire **Esplora inventario risorse** per visualizzare le informazioni sull'inventario hardware e software da un client Windows. Per altre informazioni, vedere gli articoli seguenti:
 

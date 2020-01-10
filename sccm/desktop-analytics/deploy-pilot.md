@@ -10,13 +10,12 @@ ms.assetid: 637fbd8e-b8ea-4c7e-95ee-a60a323c496e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8cbae87d0dce391ad8ad160f29a598ac044fece
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 63eddcf725a309ed67e74934646dc72785ee0f99
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74190600"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825643"
 ---
 # <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Come eseguire la distribuzione in un progetto pilota con Desktop Analytics
 
@@ -157,7 +156,7 @@ Nella pagina **Stato distribuzione** sono elencati i dispositivi nelle categorie
 
 - Non avviato
 - In corso
-- Operazione completata
+- Completed
 - Richiede attenzione - Dispositivi
 - Richiede attenzione - Problemi
 

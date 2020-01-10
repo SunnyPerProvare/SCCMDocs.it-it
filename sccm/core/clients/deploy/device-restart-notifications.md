@@ -10,17 +10,16 @@ ms.assetid: 5ef1bff8-9733-4b5a-b65f-26b94accd210
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b73d3072883405d1ac2b455f12e1c252244884d1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7e4c0f4c59afceb97cc6e6f9c14f955e9b8f940c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "69999458"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825099"
 ---
 # <a name="device-restart-notifications-in-configuration-manager"></a>Notifiche di riavvio del dispositivo in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Le notifiche ricevute da un utente per un riavvio del dispositivo in sospeso possono variare in base alle [impostazioni client di riavvio del computer](/sccm/core/clients/deploy/about-client-settings#computer-restart) e alla versione di Configuration Manager in uso. Questo articolo consente agli amministratori di determinare qual è l'esperienza utente riguardo alle notifiche di riavvio del dispositivo in sospeso.
 

@@ -10,17 +10,16 @@ ms.assetid: 552e7e3d-e584-4a7c-9155-0f796a14b678
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08027a99f37b31ca0100dd9737819bb2eac1b94c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 4761a67fa23ac2273dc1d034319f70e79054ed36
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68536628"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799319"
 ---
 # <a name="configure-security-in-configuration-manager"></a>Configurare la sicurezza in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare le informazioni contenute in questo articolo per configurare le opzioni relative alla sicurezza per Configuration Manager. L'articolo descrive le opzioni di sicurezza seguenti:
 - [Comunicazione computer client](#BKMK_ConfigureClientPKI) per i certificati PKI dei client  
@@ -43,7 +42,7 @@ Se si desidera utilizzare i certificati di infrastruttura a chiave pubblica (PKI
 2.  Nella barra multifunzione scegliere **Proprietà**. Quindi passare alla scheda **Comunicazione computer client**.  
 
     > [!Note]
-    > A partire dalla versione 1906, questa è la scheda della **sicurezza della comunicazione**.<!-- SCCMDocs#1645 -->  
+    > A partire dalla versione 1906, questa scheda è denominata **Communication Security** (Sicurezza comunicazione).<!-- SCCMDocs#1645 -->  
 
 3.  Selezionare le impostazioni per i sistemi del sito che usano IIS.  
 

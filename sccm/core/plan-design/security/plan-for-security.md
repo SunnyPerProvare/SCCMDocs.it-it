@@ -10,17 +10,16 @@ ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e96c47c23bd17d7b1059bbcab62b3d1568cd92cd
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 2fdc2be05d43999c32ecfbb3f1b6db5df318d31f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68536593"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799183"
 ---
 # <a name="plan-for-security-in-configuration-manager"></a>Pianificare la sicurezza in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo descrive i concetti da tenere in considerazione durante la pianificazione della sicurezza nell'implementazione di Configuration Manager. Include le sezioni seguenti:  
 
@@ -233,7 +232,7 @@ Dato il numero di opzioni e scelte di configurazione in Configuration Manager, l
 2. Configurare la scheda **Comunicazione computer client** nelle proprietà del sito in modo che **Impostazioni sistema del sito** sia **HTTP o HTTPS**, quindi selezionare **Usa certificato client PKI (funzionalità di autenticazione client) quando disponibile**.  Per altre informazioni, vedere [Configurare le impostazioni per i certificati PKI client](/sccm/core/plan-design/security/configure-security#BKMK_ConfigureClientPKI).  
 
     > [!Note]
-    > A partire dalla versione 1906, questa è la scheda della **sicurezza della comunicazione**.<!-- SCCMDocs#1645 -->  
+    > A partire dalla versione 1906, questa scheda è denominata **Communication Security** (Sicurezza comunicazione).<!-- SCCMDocs#1645 -->  
 
 3. Eseguire il progetto pilota di un'implementazione PKI per i certificati client. Per una distribuzione di esempio, vedere [Distribuire il certificato client per computer Windows](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_client2008_cm2012).  
 

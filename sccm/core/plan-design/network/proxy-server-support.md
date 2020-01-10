@@ -10,17 +10,16 @@ ms.assetid: 9123a87a-0b6f-43c7-b5c2-fac5d09686b1
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5c689ff3621477aa84d958e97c2dfebb81dcca1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a6dbca889d0c45e9136ff78405e7bb4f74fde0d6
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65499160"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799387"
 ---
 # <a name="proxy-server-support-in-configuration-manager"></a>Supporto dei server proxy in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Con alcuni server del sistema del sito di Configuration Manager è richiesta la connessione a Internet. Se l'ambiente richiede traffico Internet per usare un server proxy, configurare questi ruoli del sistema del sito per l'uso del proxy.  
 

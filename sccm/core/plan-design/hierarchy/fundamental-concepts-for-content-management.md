@@ -10,13 +10,12 @@ ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f82ba5349af5d37b2a3d8d91f23b3ee8e7cac308
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: 2588a1c009e81766f85f0e9e0c7ebae8fa3b3ea9
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198439"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800186"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Concetti di base per la gestione dei contenuti in Configuration Manager
 
@@ -115,14 +114,14 @@ Usare la tabella seguente per confrontare le funzionalità principali di queste 
 | Limitazione larghezza di banda | Sì (BITS) | Sì (nativa) | Sì (BITS) |
 | Contenuto parziale | Sì | Sì | Sì |
 | Controllo delle dimensioni della cache su disco | Sì | Sì | Sì |
-| Individuazione origine peer | Manuale (impostazione client) | Automatica | Automatica |
+| Individuazione origine peer | Manuale (impostazione client) | Automatico | Automatico |
 | Individuazione peer | Tramite il punto di gestione con gruppi di limiti | Servizio cloud ottimizzazione recapito | Trasmissione |
 | Reporting | Dashboard origini dati del client | Dashboard origini dati del client | Dashboard origini dati del client |
 | Controllo dell'utilizzo WAN | Gruppi di limiti | GroupID ottimizzazione recapito | Solo subnet |
 | Contenuto supportato | Tutto il contenuto di ConfigMgr | Aggiornamenti di Windows, driver, app dello Store | Tutto il contenuto di ConfigMgr |
 | Controllo dei criteri | Impostazioni agente client | Impostazioni agente client (parziali) | Impostazioni agente client |
 
-### <a name="recommendations"></a>Consigli
+### <a name="recommendations"></a>Indicazioni
 
 - Gestione moderna: Se si usano già strumenti moderni, ad esempio Intune, implementare l'ottimizzazione recapito
 
@@ -154,7 +153,7 @@ Ottimizzazione recapito è la tecnologia consigliata per ottimizzare il recapito
 ## <a name="microsoft-connected-cache"></a>Microsoft Connected Cache
 
 <!--3555764-->
-A partire dalla versione 1906, è possibile installare un server di Microsoft Connected Cache nei punti di distribuzione. Memorizzando nella cache questo contenuto in locale, i client possono trarre vantaggio dalla funzionalità di Ottimizzazione recapito, tuttavia è possibile contribuire a proteggere i collegamenti WAN.
+a partire dalla versione 1906, è possibile installare un server di Microsoft Connected Cache nei punti di distribuzione. Memorizzando nella cache questo contenuto in locale, i client possono trarre vantaggio dalla funzionalità di Ottimizzazione recapito, tuttavia è possibile contribuire a proteggere i collegamenti WAN.
 
 > [!NOTE]
 > A partire dalla versione 1910, questa funzionalità è denominata **Microsoft Connected Cache**. In precedenza era nota come Cache in rete di Ottimizzazione recapito (DOINC).
@@ -263,7 +262,7 @@ I punti di distribuzione standard supportano una gamma di configurazioni e funzi
 
 - **BranchCache**, **peer cache** e **Ottimizzazione recapito** sono tecnologie peer-to-peer per ridurre la larghezza di banda di rete usata quando si distribuisce il contenuto.  
 
-- Esistono diverse configurazioni per le distribuzioni del sistema operativo, quali **[PXE](/sccm/osd/get-started/prepare-site-system-roles-for-operating-system-deployments#BKMK_PXEDistributionPoint)** e  **[Multicast](/sccm/osd/get-started/prepare-site-system-roles-for-operating-system-deployments#BKMK_DPMulticast)**  
+- Esistono diverse configurazioni per le distribuzioni del sistema operativo, quali **[PXE](/sccm/osd/get-started/prepare-site-system-roles-for-operating-system-deployments#BKMK_PXEDistributionPoint)** e **[Multicast](/sccm/osd/get-started/prepare-site-system-roles-for-operating-system-deployments#BKMK_DPMulticast)**  
 
 - Opzioni per **dispositivi mobili**  
   

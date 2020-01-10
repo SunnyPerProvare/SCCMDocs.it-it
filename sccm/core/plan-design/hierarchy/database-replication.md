@@ -10,17 +10,16 @@ ms.assetid: 8b495b02-c966-4eb3-92b9-52ebbf5c38ae
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ec1145357b68002d6966c437cf4943de6d5cebb
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f26e40389b37939259394dd9fceb1c91c7cc98b2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68957901"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800322"
 ---
 # <a name="database-replication"></a>replica di database
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 La replica di database di Configuration Manager usa SQL Server per trasferire i dati. Usa questo metodo per unire le modifiche nel database del sito con le informazioni del database in altri siti della gerarchia.
 

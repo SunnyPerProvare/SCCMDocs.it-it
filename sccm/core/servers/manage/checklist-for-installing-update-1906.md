@@ -10,17 +10,16 @@ ms.assetid: e6837956-1f1e-4104-a348-ac2266199f60
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b2c712a3d5b0948f5069fb84d48e5cbf01d27b1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3b357b56f4980b9b066893414954a3b2980edc2c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70110042"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75796337"
 ---
 # <a name="checklist-for-installing-update-1906-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1906 di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Quando si usa la versione Current Branch di Configuration Manager, è possibile installare l'aggiornamento nella console per la versione 1906 per aggiornare la gerarchia da una versione precedente. <!-- baseline only statement:(Because version 1902 is also available as [baseline media](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions), you can use the installation media to install the first site of a new hierarchy.)-->
 

@@ -10,17 +10,16 @@ ms.assetid: f1137ef8-5cf9-4c66-a635-4ac26380414c
 author: aczechowski
 ms.author: aaroncz
 manager: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f1ff72c02d93cf8f33ee2861453fd62bbf3a9a6c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5e6ffe4b3f62b732ce7cc997f817534120d0d140
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62237677"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800033"
 ---
 # <a name="flowchart---manage-content-library"></a>Diagramma di flusso - Gestire la raccolta contenuto
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo diagramma di flusso illustra il processo con cui il sito sposta la raccolta contenuto in una posizione remota. Per altre informazioni, vedere gli articoli seguenti:  
 - [Raccolta contenuto](/sccm/core/plan-design/hierarchy/the-content-library)  

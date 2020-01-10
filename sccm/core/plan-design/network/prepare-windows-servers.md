@@ -10,17 +10,16 @@ ms.assetid: 2aca914f-641e-4bc8-98d4-bbf0a2a5276f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce183f33a022259a5f706a6ec32aab409e0493a0
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 818df92fd64fe97d1cdcc76b63a50283c572df41
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70891264"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799404"
 ---
 # <a name="prepare-windows-servers-to-support-configuration-manager"></a>Preparare i server di Windows per il supporto di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Per poter usare un computer Windows come server di sistema del sito per Configuration Manager, è necessario che il computer soddisfi i prerequisiti per l'uso previsto come server del sito o server di sistema del sito.  
 

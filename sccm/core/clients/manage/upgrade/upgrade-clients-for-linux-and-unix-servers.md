@@ -10,17 +10,16 @@ ms.assetid: 7d2bb377-1005-4a55-bd1f-b80a6d0b22e1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 987014084626e13b09a3c39fe6eff08ecc8fbe6b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f71a36dff92f888d595538ff2fd483d7c212358f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62217079"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823722"
 ---
 # <a name="how-to-upgrade-clients-for-linux-and-unix-servers-in-configuration-manager"></a>Come aggiornare i client per i server Linux e UNIX in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 > [!Important]  
 > A partire dalla versione 1902, Configuration Manager non supporta i client Linux o UNIX. 

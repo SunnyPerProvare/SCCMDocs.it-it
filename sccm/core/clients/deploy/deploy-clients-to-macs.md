@@ -10,17 +10,16 @@ ms.assetid: e46ad501-5d73-44ac-92de-0de14ef72b83
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 066a4095fa5714df3243cc729a1dacccd613fd39
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e60a2bceee5736556164ab27ecb90cc155be8e4e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70890351"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825116"
 ---
 # <a name="how-to-deploy-clients-to-macs"></a>Come distribuire i client in computer Mac
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo descrive come distribuire e gestire il client di Configuration Manager nei computer Mac. Per informazioni sulle configurazioni necessarie prima di distribuire i client nei computer Mac, vedere [Preparare la distribuzione del software client in computer Mac](/sccm/core/clients/deploy/prepare-to-deploy-mac-clients).
 
@@ -120,9 +119,9 @@ Per automatizzare la registrazione per molti client, usare lo [strumento CMEnrol
 
    - **Nome utente**: Il nome utente può essere nei seguenti formati:  
 
-     - `domain\name`. Ad esempio: `contoso\mnorth`  
+     - `domain\name`. ad esempio `contoso\mnorth`  
 
-     - `user@domain`. Ad esempio: `mnorth@contoso.com`  
+     - `user@domain`. ad esempio `mnorth@contoso.com`  
 
          > [!IMPORTANT]  
          >  Quando si usa un indirizzo e-mail per popolare il campo **Nome utente** Configuration Manager popola automaticamente il campo **Nome server**. Usa il nome predefinito del server del punto proxy di registrazione e il nome di dominio dell'indirizzo e-mail. Se questi nomi non corrispondono al nome del server del punto proxy di registrazione, correggere il **nome del server** durante la registrazione.  
@@ -198,7 +197,7 @@ Per verificare che l'installazione client sia avvenuta correttamente, aprire l'e
 
 - Se si hanno più certificati contenenti lo stesso valore soggetto, specificare il numero di serie del certificato da usare per il client di Configuration Manager. Usare il comando seguente: `sudo defaults write com.microsoft.ccmclient SerialNumber -data "<serial number>"`.  
 
-     Ad esempio: `sudo defaults write com.microsoft.ccmclient SerialNumber -data "17D4391A00000003DB"`  
+     ad esempio `sudo defaults write com.microsoft.ccmclient SerialNumber -data "17D4391A00000003DB"`  
 
 
 

@@ -10,17 +10,16 @@ ms.assetid: 7d8f530b-1a39-4a9d-a2f0-675b516da7e4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e658874c9ff5c7bfbf0305b937779d101fefeeb2
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: dfceea40588f533cb2a29992f7236598380e140d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72448007"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799591"
 ---
 # <a name="use-a-pull-distribution-point-with-configuration-manager"></a>Usare un punto di distribuzione pull con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 Quando si distribuisce contenuto in un punto di distribuzione standard nella console di Configuration Manager, il server del sito esegue il push del contenuto al punto di distribuzione. Un punto di distribuzione pull ottiene il contenuto scaricandolo da una posizione di origine, ad esempio un client.  

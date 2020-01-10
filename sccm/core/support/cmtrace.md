@@ -10,17 +10,16 @@ ms.assetid: 6a4a3290-5228-4871-918a-554aa1c20834
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3de8e414f5740eb5a667d342e875f3f00f37123d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 59e271c994a06182be7881df70174c6a4778ddc5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68536112"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826085"
 ---
 # <a name="cmtrace"></a>CMTrace
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 CMTrace è uno [strumento di Configuration Manager](/sccm/core/support/tools). Consente di visualizzare e monitorare i file, inclusi i tipi seguenti:  
 

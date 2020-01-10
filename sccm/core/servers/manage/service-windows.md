@@ -10,17 +10,16 @@ ms.assetid: ca4886d4-7173-46be-8dcd-1657d5b0deb9
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 13085d38a043026e88cfcaceb4353f2c69b08305
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d8d7f0b94de676fe5722a509998a5064445467e9
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73623312"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826255"
 ---
 #  <a name="service-windows-for-site-servers"></a>Intervalli di servizio per i server del sito
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile configurare gli intervalli di servizio nei siti di amministrazione centrale e in quelli primari per controllare quando possono essere installati gli aggiornamenti nella console.  È possibile configurare più intervalli e quello consentito per l'installazione degli aggiornamenti è determinato in base a una combinazione di tutti gli intervalli di servizio per lo specifico server del sito.
 

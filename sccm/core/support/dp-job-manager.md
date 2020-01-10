@@ -10,17 +10,16 @@ ms.assetid: 4b72922a-d11e-4aef-b309-19f5f0716f32
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 720311c9bd4a8ecb9420801881d7c6c142457db3
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 44cdb5584248cd64ced8fff12f13db84d1f3b61d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500859"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792722"
 ---
 # <a name="dp-job-queue-manager"></a>DP Job Queue Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Distribution Point (DP) Job Queue Manager è uno degli [strumenti di Configuration Manager](/sccm/core/support/tools). Usare lo strumento per eseguire la risoluzione dei problemi e la gestione dei processi di distribuzione del contenuto in corso ai punti di distribuzione di Configuration Manager. 
 

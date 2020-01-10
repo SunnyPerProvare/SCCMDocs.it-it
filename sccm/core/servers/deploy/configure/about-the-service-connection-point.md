@@ -10,17 +10,16 @@ ms.assetid: bc2282d5-0571-465b-9528-a555855eaacd
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: af65085590d8b02d6b3a020668566a334de42f13
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 68f6c464b31aed1ee3b99eb6be4fb34e8d9a8c02
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67285562"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799088"
 ---
 # <a name="about-the-service-connection-point-in-configuration-manager"></a>Informazioni sul punto di connessione del servizio in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Il punto di connessione del servizio è un ruolo del sistema del sito che svolge diverse funzioni importanti per la gerarchia. Prima di configurare il punto di connessione del servizio, esaminare e pianificare i diversi usi. La pianificazione dell'utilizzo potrebbe influire sulla modalità di configurazione di questo ruolo del sistema del sito:  
 

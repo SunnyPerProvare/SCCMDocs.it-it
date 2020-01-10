@@ -10,17 +10,16 @@ ms.assetid: e102fd1a-76df-4d8e-b1b0-10ee18318f67
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02161f79270176f2904ae58af5d0dbec9a204ab6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b7047a2e931af73f961d2b2f87360921a3cf762b
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68535421"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824436"
 ---
 # <a name="how-to-manage-collections-in-configuration-manager"></a>Come gestire le raccolte in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare le informazioni generali di questo articolo per eseguire le attività di gestione per le raccolte in Configuration Manager.  
 
@@ -69,19 +68,19 @@ Cancella tutte le distribuzioni di avvio PXE richieste da tutti i membri della r
 Valuta l'appartenenza per la raccolta selezionata. Per le raccolte con molti membri, il completamento di questo aggiornamento potrebbe richiedere tempo. Usare l'azione **Aggiorna** per aggiornare la visualizzazione con i nuovi membri delle raccolte dopo il completamento dell'aggiornamento.
 
 
-#### <a name="add-resources"></a>Aggiunta di risorse
+#### <a name="add-resources"></a>Aggiungi risorse
 Apre la finestra di dialogo **Aggiungi risorse alla raccolta**. Cercare nuove risorse da aggiungere alla raccolta selezionata. L'icona per la raccolta selezionata mostra il simbolo di una clessidra mentre è in corso l'aggiornamento.
 
 
 #### <a name="client-notification"></a>Notifica client
-Per altre informazioni vedere [Client notifications](/sccm/core/clients/manage/client-notification) (Notifiche client).
+Per altre informazioni, vedere [Client notifications](/sccm/core/clients/manage/client-notification) (Notifiche client).
 
 
 #### <a name="endpoint-protection"></a>Endpoint Protection
 Per altre informazioni vedere [Client notifications](/sccm/core/clients/manage/client-notification) (Notifiche client).
 
 
-#### <a name="export"></a>Esporta
+#### <a name="export"></a>Export
 Apre l'**Esportazione guidata raccolte** che consente di esportare questa raccolta in un file MOF (Managed Object Format). Questo file può quindi essere archiviato o importato in un altro sito di Configuration Manager. Quando si esporta una raccolta, non vengono esportate le raccolte di riferimento. La raccolta selezionata fa riferimento a una raccolta di riferimento tramite una regola di **inclusione** o **esclusione**.
 
 
@@ -103,7 +102,7 @@ Non è possibile eliminare le raccolte predefinite di Configuration Manager. Per
 Apre la **Simulazione guidata distribuzione applicazione**. Questa procedura guidata consente di testare i risultati di una distribuzione di applicazione senza installare o disinstallare l'applicazione. Per altre informazioni, vedere [Come simulare distribuzioni di applicazioni](/sccm/apps/deploy-use/simulate-application-deployments).
 
 
-#### <a name="deploy"></a>Distribuire
+#### <a name="deploy"></a>Distribuisci
 Vengono visualizzate le opzioni seguenti:  
 
 - **Applicazione**: apre la **Distribuzione guidata del software**. Selezionare e configurare la distribuzione di un'applicazione nella raccolta selezionata. Per altre informazioni, vedere [Come distribuire le applicazioni](/sccm/apps/deploy-use/deploy-applications).  

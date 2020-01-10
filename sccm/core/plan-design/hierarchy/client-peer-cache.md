@@ -10,17 +10,16 @@ ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57e80fca6c50c16bdde91f3691d8d10b71f88551
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e71a007906b5fb517c169b453a72c7f1f245943f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660156"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800577"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!--1101436-->
 Usare la peer cache per gestire la distribuzione di contenuti ai client in posizioni remote. La peer cache è una soluzione integrata di Configuration Manager che consente ai client di condividere i contenuti con altri client direttamente dalla cache locale.   
@@ -91,7 +90,7 @@ Quando l'origine di peer cache rifiuta una richiesta di contenuto, il client di 
 
 
 
-## <a name="requirements"></a>requisiti
+## <a name="requirements"></a>Requisiti
 
 - La peer cache supporta tutte le versioni di Windows indicate come supportate in [Sistemi operativi supportati per client e dispositivi](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices). I sistemi operativi non Windows non sono supportati come origini di peer cache o client di peer cache.  
 

@@ -10,17 +10,16 @@ ms.assetid: 604ab835-bce3-4fe3-a7f3-3f059cfc0ecf
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8f881b828ba30d1e38e76c96c71709fb0e744f2
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 87950615ec512f57046b206e86bb5b0c5ac2d9a1
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68536917"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802906"
 ---
 # <a name="removed-and-deprecated-items-for-configuration-manager-clients"></a>Elementi rimossi e deprecati per i client di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo descrive i prodotti e i sistemi operativi rimossi dal supporto per i client di Configuration Manager o che verranno rimossi in un aggiornamento futuro (deprecati). Anticipa informazioni sulle future modifiche che potrebbero influire sull'uso di Configuration Manager.  
 

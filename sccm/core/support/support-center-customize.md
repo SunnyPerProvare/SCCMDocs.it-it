@@ -10,17 +10,16 @@ ms.assetid: a6f7f6b7-9ef3-4ffa-a3cf-d877ac55983b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac2290c630393a047c5bdd8677562df6e0f0410d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 90ae389e59c6a8a81d96cb0b353c6e541855dac5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68340240"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825983"
 ---
 # <a name="customize-support-center"></a>Personalizzare Support Center
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 [Support Center](/sccm/core/support/support-center) è uno strumento che include un file di configurazione personalizzabile. Per impostazione predefinita, durante l'installazione di Support Center, questo file si trova nel percorso seguente: `C:\Program Files (x86)\Configuration Manager Support Center\ConfigMgrSupportCenter.exe.config`. Il file di configurazione modifica il comportamento del programma:
 

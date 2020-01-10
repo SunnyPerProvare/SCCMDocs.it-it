@@ -6,21 +6,20 @@ ms.date: 07/03/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: 9aaf466a-3f40-4468-b3cd-f0010f21f05a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 411752ae345b6af255e8fe1e46d5d5e3a93b8900
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 77c3c460a80eebfa469bd77a2745c7fa8e16c026
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70890373"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824640"
 ---
 # <a name="azure-ad-authentication-workflow"></a>Flusso di lavoro di autenticazione di Azure AD
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo contiene informazioni tecniche per il processo di installazione del client Configuration Manager in un dispositivo Windows 10 aggiunto ad Azure Active Directory (Azure AD). Illustra in dettaglio il processo del flusso di lavoro per l'autenticazione del dispositivo e l'installazione del client.  
  

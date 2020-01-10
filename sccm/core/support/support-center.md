@@ -10,17 +10,16 @@ ms.assetid: c631197d-7daa-4faa-9e22-980cd6d604c2
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57762607c64016986ee1544c4b16c3ade9ea34f6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: fd47a417d94ad4a5e00a07726ed4136c98029fe6
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68536088"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825949"
 ---
 # <a name="support-center-for-configuration-manager"></a>Support Center per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!--1357489-->
 A partire dalla versione 1810, è possibile usare il Supporto tecnico per risolvere i problemi dei client, visualizzare i log in tempo reale o acquisire lo stato di un client di Configuration Manager per l'analisi successiva. Support Center è un singolo strumento che consolida numerosi strumenti di risoluzione dei problemi per gli amministratori.

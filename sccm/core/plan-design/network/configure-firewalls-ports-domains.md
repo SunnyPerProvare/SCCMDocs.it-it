@@ -10,17 +10,16 @@ ms.assetid: d6993bba-f6bd-4639-adbf-efc1c638b2f3
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60a24e06d650b0e25007fb8490eb0c7d8c1996a1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 85c7b8ca5064475e1ce2ac1380b9a11f447b8eff
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67285620"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799489"
 ---
 # <a name="network-infrastructure-considerations-for-configuration-manager"></a>Considerazioni sull'infrastruttura di rete per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Per preparare la rete per supportare Configuration Manager, potrebbe essere necessario configurare alcuni componenti dell'infrastruttura. Potrebbe ad esempio essere necessario aprire porte del firewall per passare le comunicazioni usate da Configuration Manager.  
 

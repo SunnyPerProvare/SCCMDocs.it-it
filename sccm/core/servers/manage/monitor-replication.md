@@ -10,17 +10,16 @@ ms.assetid: 69550b35-bcdb-4b47-bbec-b3c8bc92bb7b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8312202b4877ebcd9a30f5dd40858d119a123de
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9c83a539731cb2c3cd5052e309c55a601845240b
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68957841"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794739"
 ---
 # <a name="monitor-database-replication"></a>Monitorare la replica di database
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Monitorare i dettagli della replica di database con il nodo **Replica di database** nell'area di lavoro **Monitoraggio** della console di Configuration Manager. È possibile monitorare lo stato dei collegamenti di replica tra siti. Vengono anche visualizzate l'inizializzazione e la replica dei gruppi di replica per il sito a cui ci si connette.  
 

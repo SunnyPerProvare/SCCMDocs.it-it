@@ -10,17 +10,16 @@ ms.assetid: 72d7b174-f015-498f-a0a7-2161b9929198
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8f403f1798f3bbb80ed75844e2a272d9d8268e4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: bbf74820d10bda727434ea00ec4e816150b2e5de
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73704729"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800560"
 ---
 # <a name="accounts-used-in-configuration-manager"></a>Account usati in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare le informazioni seguenti per identificare i gruppi di Windows, gli account e gli oggetti SQL usati in Configuration Manager, le relative modalità d'uso e gli eventuali requisiti.  
 

@@ -10,17 +10,16 @@ ms.assetid: 55ae86a7-f0ab-4c09-b4da-89cd0e7fa0e0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc84435b36fe413f9eab81ebdc0161b7cd64ab53
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 82e8e5c1e1d4f8d11842a6b625b54e16baafd055
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "69999361"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75795934"
 ---
 # <a name="configure-reporting-in-configuration-manager"></a>Configurare la creazione di report in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Prima di poter creare, modificare ed eseguire report nella console di Configuration Manager, è necessario completare alcune attività di configurazione. Usare questo articolo per configurare la creazione di report nella gerarchia di Configuration Manager.  
 
@@ -113,7 +112,7 @@ Per altre informazioni sulla configurazione dei sistemi del sito, vedere [Instal
 
 1. Nella pagina **Punto di Reporting Services** configurare le seguenti impostazioni:  
 
-    - **Nome server di database del sito**: specificare il nome del server che ospita il database del sito di Configuration Manager. In genere, la procedura guidata recupera il nome di dominio completo (FQDN) del server. Per specificare un'istanza di database, usare il formato &lt;*nome server*>\&lt;*nome istanza*>. Ad esempio, `sqlserver\named1`.
+    - **Nome server di database del sito**: specificare il nome del server che ospita il database del sito di Configuration Manager. In genere, la procedura guidata recupera il nome di dominio completo (FQDN) del server. Per specificare un'istanza di database, usare il formato &lt;*nome server*>\&lt;*nome istanza*>. Ad esempio, `sqlserver\named1`
 
     - **Nome database**: specificare il nome del database del sito di Configuration Manager. Selezionare **Verifica** per verificare che la procedura guidata abbia accesso al database del sito.  
 

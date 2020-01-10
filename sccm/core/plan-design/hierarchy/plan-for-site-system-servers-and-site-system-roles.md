@@ -10,17 +10,16 @@ ms.assetid: 0a7415ba-2c53-4433-983e-780e92aa662f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 13353f6798196b6f096297b8eb016eceda8df70e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f875391c477755c65a40795c014014eacbd7f8da
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660063"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799880"
 ---
 # <a name="plan-for-site-system-servers-and-site-system-roles-in-configuration-manager"></a>Pianificare i server e i ruoli del sistema del sito in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Ogni sito di Configuration Manager installato include un server del sito, ovvero un **server del sistema del sito**. Il sito può includere anche altri server del sistema del sito nei computer remoti rispetto al server del sito. I server del sistema del sito, ovvero il server del sito o un server del sistema del sito remoto, supportano i **ruoli del sistema del sito**.  
 
@@ -61,7 +60,7 @@ Questo ruolo identifica un sistema del sito che esegue un'istanza del servizio *
 
 Il sito assegna questo ruolo ai server di sistema del sito che contengono un'istanza del database del sito. Spostare questo ruolo solo in un nuovo server, eseguendo l'installazione per modificare il sito in modo che usi un'altra istanza di SQL Server per ospitare il database del sito.  
 
-### <a name="sms-provider"></a>provider SMS
+### <a name="sms-provider"></a>Provider SMS
 
 Il sito assegna questo ruolo a ogni computer che ospita un'istanza del provider SMS. Il provider è l'interfaccia tra una console di Configuration Manager e il database del sito. Per impostazione predefinita, questo ruolo viene installato automaticamente nel server del sito di un sito di amministrazione centrale e nei siti primari. Installare istanze aggiuntive in ogni sito per consentire l'accesso ad altri utenti amministratori o per garantire la ridondanza.  
 
@@ -82,7 +81,7 @@ Ruolo del sistema del sito che visualizza informazioni sul software per il sito 
 ### <a name="application-catalog-website-point"></a>Punto per siti Web del catalogo applicazioni
 
 > [!Important]
-> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
+> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >

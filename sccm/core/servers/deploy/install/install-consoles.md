@@ -10,17 +10,16 @@ ms.assetid: d39c201f-d364-4e7b-bde4-faa76d747f33
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ebbbf62bb3cc1e2b96d83ad109064d643544fdb9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1f7948c27ae313541d299a71ae99889c14a21fa9
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65498242"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798219"
 ---
 # <a name="install-the-configuration-manager-console"></a>Installare la console di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Gli amministratori usano la console di Configuration Manager per gestire l'ambiente di Configuration Manager. Ogni console di Configuration Manager può connettersi a un sito di amministrazione centrale o a un sito primario. Non è possibile connettere una console di Configuration Manager a un sito secondario.
 

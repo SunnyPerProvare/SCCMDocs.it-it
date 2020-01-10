@@ -10,17 +10,16 @@ ms.assetid: a0287beb-70a9-4b57-a627-e7bfba27fd3b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30f9143551bc5c8da971267f6b77801758e8d752
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 0b5b96089e0d89477398e6cba0f43ce2a58fb2bb
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68338785"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75801002"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1806"></a>Livelli di raccolta dati di utilizzo e di diagnostica per la versione 1806
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager versione 1806 raccoglie tre livelli di dati di diagnostica e di utilizzo: **Di base**, **Avanzato** e **Completo**. Per impostazione predefinita, per questa funzionalità è impostato il livello avanzato. Le sezioni seguenti forniscono ulteriori dettagli sui dati raccolti in ogni livello.
 
@@ -519,7 +518,7 @@ Per Configuration Manager versione 1806, questo livello include i dati seguenti:
 
 - Impostazioni di conformità: dettagli di configurazione SCEP, VPN, Wi-Fi e del modello dei criteri di conformità
 
-- Utilizzo del pacchetto di configurazione DCM per System Center Configuration Manager
+- Utilizzo del pacchetto di configurazione DCM per Configuration Manager
 
 - Errori di installazione della distribuzione client dettagliati
 

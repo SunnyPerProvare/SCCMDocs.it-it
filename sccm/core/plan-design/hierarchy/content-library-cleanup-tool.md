@@ -10,17 +10,16 @@ ms.assetid: 226cbbb2-9afa-4e2e-a472-be989c0f0e11
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7662ccba7b6f672888ab8d98954fb8cb70631fe4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7efcd8eab0891cd953fe182cc97602a814df1049
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62237455"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800424"
 ---
 # <a name="content-library-cleanup-tool"></a>Strumento di pulizia della raccolta contenuto
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare lo strumento da riga di comando per la pulizia della raccolta contenuto per rimuovere il contenuto non più associato a un pacchetto o a un'applicazione in un punto di distribuzione. Questo tipo di contenuto è detto *contenuto orfano*. Questo strumento sostituisce le versioni precedenti di strumenti simili rilasciati per i prodotti Configuration Manager precedenti.  
 
@@ -30,7 +29,7 @@ Trovare **ContentLibraryCleanup.exe** in `CD.Latest\SMSSETUP\TOOLS\ContentLibrar
 
 
 
-## <a name="requirements"></a>requisiti  
+## <a name="requirements"></a>Requisiti  
 
 - Eseguire lo strumento solo in un singolo punto di distribuzione alla volta.  
 

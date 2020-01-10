@@ -10,17 +10,16 @@ ms.assetid: 68fe0e7e-351e-4222-853a-877475adb589
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ebe37bb97c4a1e231bfaf94f420f7f0471f30f6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e1dc41e9ccee7a59d5014ace4e2db5d9071c5261
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62237730"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800527"
 ---
 # <a name="communications-between-endpoints-in-configuration-manager"></a>Comunicazioni tra gli endpoint in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo illustra le modalità di comunicazione tra i componenti e i sistemi del sito di Configuration Manager in una rete. Include le sezioni seguenti:  
 

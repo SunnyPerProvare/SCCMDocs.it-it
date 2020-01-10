@@ -10,17 +10,16 @@ ms.assetid: 4deac022-e397-4f1f-bc0a-cea6c6c6368d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5634fb611d305fff196b7d6eb0b4ed97ff13d3e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e69487d1e8cbaccd2ed555762a3c9b55a123ce82
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70110074"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800271"
 ---
 # <a name="enhanced-http"></a>HTTP avanzato
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!--1356889,1358460-->
 

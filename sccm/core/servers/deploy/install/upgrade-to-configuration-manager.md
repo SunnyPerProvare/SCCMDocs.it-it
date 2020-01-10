@@ -10,17 +10,16 @@ ms.assetid: c64e7483-b4bb-4738-95f4-ecdaeb6a2ba6
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9d379cc17182e7f0a61492e54a90c49f087e6ae
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9c423439f2909b9a493eb4a5dcf8ea7696d3400c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74661346"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797918"
 ---
 # <a name="upgrade-to-configuration-manager-current-branch"></a>Eseguire l'aggiornamento a Configuration Manager Current Branch
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Eseguire un aggiornamento sul posto a Configuration Manager Current Branch da un sito e da una gerarchia che esegue System Center 2012 Configuration Manager. Prima di eseguire l'aggiornamento da System Center 2012 Configuration Manager, è necessario preparare i siti. La preparazione richiede la rimozione di configurazioni specifiche che possono impedire la corretta esecuzione dell'aggiornamento. Seguire quindi la sequenza di aggiornamento quando sono presenti più siti.  
 

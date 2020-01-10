@@ -10,17 +10,16 @@ ms.assetid: 58d52fdc-bd18-494d-9f3b-ccfc13ea3d35
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74905b9c681b98716447ac40683f4a09f024826b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 78f736fff05207154ab74f1c5a224478015e10df
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70888956"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798344"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparare l'uso di gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare questo articolo per preparare Configuration Manager per l'uso di gruppi di disponibilità Always On di SQL Server. Questa funzionalità fornisce una soluzione di disponibilità elevata e ripristino di emergenza per il database del sito.  
 

@@ -10,13 +10,12 @@ ms.assetid: 463ce307-59dd-4abd-87b8-42ca9db178d7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2a76fd3338e8b15587b90b837af04affc691aa46
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8bc45d802da2e8ca960386ed8f78e6feb0e76055
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74825673"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797820"
 ---
 # <a name="how-to-use-the-configuration-manager-console"></a>Come usare la console di Configuration Manager
 
@@ -138,7 +137,7 @@ A partire dalla versione 1902, è possibile visualizzare le connessioni più rec
 
 - Account con autorizzazione di **lettura** per l'oggetto **SMS_Site**
 - Installare IIS sul server del provider SMS <!---SCCMDocs-pr issue 1326-->
-- Consentire al provider SMS di usare un certificato.<!--SCCMDocs-pr issue 3135--> Usare una delle opzioni seguenti:  
+- Consentire al provider SMS di usare un certificato.<!--SCCMDocs-pr issue 3135--> Usare una delle seguenti opzioni:  
 
     - Abilitare [HTTP avanzato](/configmgr/core/plan-design/hierarchy/enhanced-http) (scelta consigliata)
     - Associare manualmente un certificato basato su PKI alla porta 443 in IIS sul server che ospita il ruolo Provider SMS  

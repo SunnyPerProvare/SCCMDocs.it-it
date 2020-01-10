@@ -10,17 +10,16 @@ ms.assetid: f04c0a71-57bc-4443-a47c-592373050d04
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a83a7100819718dc8bd5fa74f0e4a317b4b47e44
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: df24765a034bce76003376e0e2844d8b8d74d859
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67676731"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799710"
 ---
 # <a name="state-messages-in-configuration-manager"></a>Messaggi di stato in Configuration Manager 
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 I messaggi di stato contengono informazioni sintetiche sulle condizioni nel client di Configuration Manager. Il sistema di messaggistica di stato viene usato da componenti specifici di Configuration Manager, ad esempio aggiornamenti software e impostazioni di configurazione.
 
@@ -36,7 +35,7 @@ Ogni funzionalità di Configuration Manager che usa i messaggi di stato viene id
 |      ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
 | 0 | Stato di conformità sconosciuto|
-| 1 | conformi | 
+| 1 | Conforme | 
 | 2 | Non conformi | 
 
 ## <a name="301-state_topictype_sum_assignment_enforcement"></a>301 STATE_TOPICTYPE_SUM_ASSIGNMENT_ENFORCEMENT
@@ -80,7 +79,7 @@ Ogni funzionalità di Configuration Manager che usa i messaggi di stato viene id
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|
 | 0 | Stato di conformità sconosciuto|
-| 1 |conformi     |
+| 1 |Conforme     |
 | 2 |Non conformi     |
 | 3 |Rilevato conflitto    |
 | 4 |Errore      |

@@ -10,17 +10,16 @@ ms.assetid: a26a653e-17aa-43eb-ab36-0e36c7d29f49
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: deabd60243f1911993c344e995ac0da848adae62
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: bbd6809b29a36f8de7999780d5293a6544ad5b02
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73704950"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799061"
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurare i servizi di Azure da usare con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare la **Procedura guidata per i servizi di Azure** per semplificare il processo di configurazione dei servizi di Azure usati con Configuration Manager. Questa procedura guidata offre un'esperienza di configurazione comune usando le registrazioni di app Web di Azure Active Directory (Azure AD). Queste app specificano dettagli di sottoscrizione e configurazione e autenticano le comunicazioni con Azure AD. L'app evita di dover immettere le stesse informazioni ogni volta che si configura un nuovo componente o servizio di Configuration Manager con Azure.
 
@@ -64,7 +63,7 @@ La tabella seguente elenca informazioni dettagliate sui singoli servizi.
 
 - **Azioni**: indica se è possibile importare o creare queste app nella procedura guidata per i servizi di Azure di Configuration Manager.  
 
-|Service  |Tenant  |Cloud  |App Web  |App nativa  |Azioni  |
+|Servizio  |Tenant  |Cloud  |App Web  |App nativa  |Azioni  |
 |---------|---------|---------|---------|---------|---------|
 |Gestione cloud con<br>individuazione di Azure AD | Più elementi | Pubblico, Privato | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | Importa, Crea |
 |Connettore Log Analytics | Uno | Pubblico, Privato | ![Supportato](media/green_check.png) | ![Non supportato](media/Red_X.png) | Importa |

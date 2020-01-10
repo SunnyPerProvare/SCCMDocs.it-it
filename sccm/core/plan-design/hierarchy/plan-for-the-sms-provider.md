@@ -10,17 +10,16 @@ ms.assetid: 5d5d6273-0d8a-43c7-865a-cdb1736dcae3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 852478c5534c801e116df01461981d0d2851864f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f113599fb25140effc809896ebf6d79772bf7797
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68536649"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799795"
 ---
 # <a name="plan-for-the-sms-provider"></a>Piano per il provider SMS
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Per la gestione di Configuration Manager, usare una console di Configuration Manager che si connette a un'istanza del **provider SMS**. Per impostazione predefinita, quando si installa un sito di amministrazione centrale o un sito primario, nel server del sito viene installato un provider SMS.
 
@@ -276,7 +275,7 @@ Il **provider SMS** viene visualizzato come un ruolo con un'opzione per consenti
 
     - A partire dalla versione 1902, questo prerequisito è la versione .NET 4.5 o successiva.  
 
-- Consentire al provider SMS di usare un certificato. Usare una delle opzioni seguenti:  
+- Consentire al provider SMS di usare un certificato. Usare una delle seguenti opzioni:  
 
     - Abilitare [HTTP avanzato](/sccm/core/plan-design/hierarchy/enhanced-http) (scelta consigliata)  
 

@@ -10,17 +10,16 @@ ms.assetid: c1d71899-308f-49d5-adfa-3a3ec0163ed8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9bd46824a3f953543fa13258b60ff9fd4ecb5997
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5c32f1ea08fbeee900dfd30eef0f7ce446c7546f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67677834"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824844"
 ---
 # <a name="security-and-privacy-for-configuration-manager-clients"></a>Sicurezza e privacy per i client di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo contiene informazioni sulla sicurezza e sulla privacy per i client di Configuration Manager e informazioni sui dispositivi mobili gestiti con il [connettore Exchange Server](/sccm/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync).  
 

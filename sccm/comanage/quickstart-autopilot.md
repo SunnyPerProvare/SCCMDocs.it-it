@@ -10,13 +10,12 @@ ms.assetid: e3e3c97f-5945-49ab-a622-9f6fe6b9737e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28710b925444d681a161eff184b845a1cdd430b1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a94a65161ecdf98b28debca4f89d2257c5d11ca5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62194280"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817177"
 ---
 # <a name="windows-autopilot-with-co-management"></a>Windows Autopilot con la co-gestione
 
@@ -92,7 +91,7 @@ Generare soddisfazione all'interno dell'organizzazione tramite la creazione di u
 
 
 
-## <a name="configure"></a>Configurare
+## <a name="configure"></a>Configura
 
 Per altre informazioni, vedere gli articoli seguenti:
 

@@ -10,17 +10,16 @@ ms.assetid: 54aa20d5-791e-4416-9db4-5aaea472c0b7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d160c6ab64c5ad097bf5986882b65171b0df4651
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 552482a8bf73cd479d28c018fd5916cf1c9ca310
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74840463"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798783"
 ---
 # <a name="define-site-boundaries-and-boundary-groups"></a>Definire i limiti e i gruppi di limiti del sito
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Il termine *limiti* in Configuration Manager definisce percorsi di rete della Intranet. Questi percorsi includono i dispositivi che si vuole gestire. I *gruppi di limiti* sono gruppi logici di limiti che è possibile configurare.
 

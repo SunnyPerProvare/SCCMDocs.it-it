@@ -10,17 +10,16 @@ ms.assetid: aaf43e69-68b4-469a-ad58-9b66deb29057
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43ec12b596755a5c57290d9f567f6c070ad8881a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 2f2a21e01d49c6d6f7513cc8d5f33c706e201e73
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74661278"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75795689"
 ---
 #  <a name="the-data-warehouse-service-point-for-configuration-manager"></a>Punto di servizio del data warehouse per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!--1277922-->
 Usare il punto di servizio del data warehouse per archiviare e creare report di dati cronologici a lungo termine per la distribuzione di Configuration Manager.
@@ -185,7 +184,7 @@ Per spostare il database del data warehouse in un nuovo SQL Server, procedere co
 
 
 
-## <a name="troubleshooting"></a>Troubleshooting 
+## <a name="troubleshooting"></a>Risoluzione dei problemi 
 
 ### <a name="log-files"></a>File di registro 
 

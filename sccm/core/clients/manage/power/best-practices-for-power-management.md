@@ -10,17 +10,16 @@ ms.assetid: 9f7142e1-c972-4384-853b-2da1568cb3e3
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a68dceb82f630720287b5215fbdad15eb5bebf93
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 129dcb4560c8697f018bf05f62e65e74e5869466
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70902581"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824011"
 ---
 # <a name="recommendations-for-power-management-in-configuration-manager"></a>Raccomandazioni per il risparmio energia in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Seguire le raccomandazioni seguenti per il risparmio energia in Configuration Manager.  
 
