@@ -1,5 +1,5 @@
-- name: Gestione degli aggiornamenti software
-  href: understand/software-updates-introduction.md
+- name: Documentazione sulla gestione degli aggiornamenti software
+  href: index.yml
 - name: Comprendere ed esplorare
   items:
     - name: Introduzione agli aggiornamenti software
@@ -16,7 +16,7 @@
       href: plan-design/software-updates-best-practices.md
     - name: Sicurezza e privacy per gli aggiornamenti software
       href: plan-design/security-and-privacy-for-software-updates.md
-- name: Introduzione
+- name: Operazioni preliminari
   items:
     - name: Preparare la gestione degli aggiornamenti software
       href: get-started/prepare-for-software-updates-management.md

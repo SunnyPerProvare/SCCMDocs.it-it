@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: a9ece9e8-37ec-441d-937c-be4941afce7f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 813975c200a281445a6fe24b9036216174acf393
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b8b9328c299b420b0d13d5a65e55a8ff8c24efb5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74662339"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819064"
 ---
 # <a name="bitlocker-event-logs"></a>Registri eventi di BitLocker
 
@@ -39,7 +38,7 @@ Per impostazione predefinita, in ogni nodo vengono visualizzati due canali di lo
 
 ## <a name="log-properties"></a>Proprietà del log
 
-In Visualizzatore eventi di Windows selezionare un log specifico. Ad esempio, **admin**. Scegliere **Proprietà** dal menu **Azione**. Configurare le seguenti impostazioni:
+In Visualizzatore eventi di Windows selezionare un log specifico. Ad esempio, **amministratore**. Passare al menu **azione** e selezionare **Proprietà**. Configurare le seguenti impostazioni:
 
 - **Dimensioni massime log (KB)** : per impostazione predefinita, questa impostazione è `1028` (1 MB) per tutti i log.
 - **Quando viene raggiunta la dimensione massima del registro eventi**: per impostazione predefinita, i log di **Amministrazione** e **operativi** sono impostati per **sovrascrivere gli eventi in base alle esigenze (prima gli eventi meno recenti)** .
