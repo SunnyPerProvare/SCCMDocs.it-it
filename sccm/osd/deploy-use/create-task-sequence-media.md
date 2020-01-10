@@ -10,17 +10,16 @@ ms.assetid: 90498b4b-6a9b-43cd-b465-1d6c9a52df1c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 101cee8ed63cacfc41481b2df69b42e1760d8837
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d3d0634987a369319bf7379edfe9ec827ed09e66
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65082807"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827020"
 ---
 # <a name="create-task-sequence-media"></a>Crea supporto per sequenza di attività
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Si possono usare supporti per acquisire un'immagine del sistema operativo da un computer di riferimento o per distribuire un sistema operativo in un computer di destinazione nell'ambiente di Configuration Manager. Il supporto creato può essere un set di CD/DVD o un'unità flash USB.  
 

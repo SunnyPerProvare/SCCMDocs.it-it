@@ -10,13 +10,12 @@ ms.assetid: fc497a8a-3c54-4529-8403-6f6171a21c64
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a17725ec45ab1938bfb7eff47723739578e6df0b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3910bcb99c0718044f5bb584b8860e00f67be8ad
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74814967"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821172"
 ---
 # <a name="plan-for-automating-tasks-in-configuration-manager"></a>Pianificare l'automazione delle attività in Configuration Manager
 
@@ -246,11 +245,11 @@ Per altre informazioni, vedere [HTTP migliorato](/sccm/core/plan-design/hierarch
 > [!Note]  
 > I seguenti scenari di distribuzione del sistema operativo richiedono ancora l'uso dell'account di accesso alla rete:
 >  
-> - L'[opzione di distribuzione](/sccm/osd/deploy-use/deploy-a-task-sequence) **Accedere al contenuto direttamente da un punto di distribuzione quando necessario eseguendo la sequenza di attività** della sequenza di attività
+> - L'[opzione di distribuzione](/sccm/osd/deploy-use/deploy-a-task-sequence)**Accedere al contenuto direttamente da un punto di distribuzione quando necessario eseguendo la sequenza di attività** della sequenza di attività
 > - L'opzione [Se l'account del computer non riesce a connettersi all'archiviazione stati, utilizzare l'account di accesso di rete](/sccm/osd/understand/task-sequence-steps#BKMK_RequestStateStore) del passaggio **Richiedi archiviazione stati**
 > - Quando si effettua la connessione con un dominio non trusted o in foreste di Active Directory
 > - L'opzione [Accedi al contenuto direttamente dal punto di distribuzione](/sccm/osd/understand/task-sequence-steps#BKMK_ApplyOperatingSystemImage) del passaggio **Applica immagine del sistema operativo**
-> - L'[impostazione avanzata](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#bkmk_prop-advanced) **Esegui prima un altro programma** della sequenza di attività
+> - L'[impostazione avanzata](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#bkmk_prop-advanced)**Esegui prima un altro programma** della sequenza di attività
 > - [Multicast](/sccm/osd/deploy-use/use-multicast-to-deploy-windows-over-the-network)  
 
 ## <a name="BKMK_TSCreateMedia"></a>Creazione di supporti

@@ -10,22 +10,21 @@ ms.assetid: 08f711ba-83bf-4b5f-9520-a0778c6ae7eb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee7527492851a89b013c6f59464c06e73c72b247
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f509380945f18c596b691dfaad4dc93fe70395b5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74661329"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818333"
 ---
 # <a name="introduction-to-application-management-in-configuration-manager"></a>Introduzione alla gestione delle applicazioni in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 In questo argomento verranno fornite le informazioni di base necessarie prima di iniziare a usare le applicazioni di Configuration Manager.  
 
 > [!TIP]  
-> Se si ha già familiarità con la modalità di gestione delle applicazioni in Configuration Manager, ignorare questo articolo. Passare alla creazione di un'applicazione di esempio, illustrata in [Creare e distribuire un'applicazione](/sccm/apps/get-started/create-and-deploy-an-application).  
+> Se si ha già familiarità con la modalità di gestione delle applicazioni in Configuration Manager, ignorare questo articolo. Passare alla creazione di un'applicazione di esempio: [Creare e distribuire un'applicazione](/sccm/apps/get-started/create-and-deploy-an-application).  
 
 ## <a name="what-is-an-application"></a>Che cos'è un'applicazione?
 
@@ -49,7 +48,7 @@ Ad esempio, una società ha un'applicazione line-of-business denominata Astoria.
 
 Per altre informazioni, vedere [Creare tipi di distribuzione per l'applicazione](/sccm/apps/deploy-use/create-applications#bkmk_create-dt).
 
-### <a name="requirements"></a>requisiti
+### <a name="requirements"></a>Requisiti
 
 Nelle versioni precedenti di Configuration Manager è necessario creare una raccolta di dispositivi in cui distribuire un'applicazione. Anche se è comunque possibile creare una raccolta, usare i *requisiti* per specificare criteri più dettagliati per la distribuzione di un'applicazione.
 
@@ -198,7 +197,7 @@ Per altre informazioni, vedere gli articoli seguenti:
 - [Manuale dell'utente di Software Center](/sccm/core/understand/software-center)
 
 > [!Note]  
-> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
+> Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
 ## <a name="packages-and-programs"></a>Pacchetti e programmi  
 

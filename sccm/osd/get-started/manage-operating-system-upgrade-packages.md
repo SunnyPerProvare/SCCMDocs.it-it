@@ -10,13 +10,12 @@ ms.assetid: b9b22655-b8c1-461f-8047-3a7e906f647a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1a57bc986d4f980b7a88e1ebc9f91b8f0301992
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 49c402bcf88bbfde20acb5e52db5a520aa794a4d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74661074"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821291"
 ---
 # <a name="manage-os-upgrade-packages-with-configuration-manager"></a>Gestire i pacchetti di aggiornamento del sistema operativo in Configuration Manager
 
@@ -37,7 +36,7 @@ Prima di poter usare un pacchetto di aggiornamento del sistema operativo, è nec
 
 3. Nella pagina **Origine dati** specificare le impostazioni seguenti:
 
-    - In **Percorso** specificare il percorso di rete dei file di origine per l'installazione del pacchetto di aggiornamento del sistema operativo. Ad esempio, `\\server\share\path`.  
+    - In **Percorso** specificare il percorso di rete dei file di origine per l'installazione del pacchetto di aggiornamento del sistema operativo. Ad esempio, `\\server\share\path`  
 
         > [!NOTE]  
         >  I file di origine dell'installazione contengono Setup.exe e altri file e cartelle per installare il sistema operativo.  
@@ -54,7 +53,7 @@ Prima di poter usare un pacchetto di aggiornamento del sistema operativo, è nec
 
 4. Nella pagina **Generale** specificare le informazioni seguenti. Queste informazioni sono utili per scopi di identificazione quando sono presenti più pacchetti di aggiornamento del sistema operativo.  
 
-    - **Nome**: nome univoco del pacchetto di aggiornamento per il sistema operativo.  
+    - **Nome**: nome univoco del pacchetto di aggiornamento del sistema operativo.  
 
     - **Versione**: identificatore di versione facoltativo. Questa proprietà non deve corrispondere alla versione del sistema operativo del pacchetto di aggiornamento. Si tratta spesso della versione assegnata dall'organizzazione al pacchetto.  
 

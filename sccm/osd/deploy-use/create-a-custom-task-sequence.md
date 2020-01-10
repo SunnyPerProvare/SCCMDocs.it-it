@@ -10,13 +10,12 @@ ms.assetid: b9800a66-7541-47ca-8276-da8ef6cb6d1b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0058c78f9e2eb3546b570d65f8c7c90e283935d0
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8ea942cca00852ae828c7574b0a61b606e4b331d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74659646"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825524"
 ---
 # <a name="create-a-custom-task-sequence-with-configuration-manager"></a>Creare una sequenza di attività personalizzata con Configuration Manager
 

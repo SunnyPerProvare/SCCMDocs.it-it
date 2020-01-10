@@ -10,17 +10,16 @@ ms.assetid: 58a0d2ae-de76-401f-b854-7a5243949033
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 408f8c17150aa6b6ee9330b40d8b8fef09b7eae5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a840636ae1be0d8d38819d0465be1211ff6d2f60
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892522"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821427"
 ---
 # <a name="use-stand-alone-media-to-deploy-windows-without-using-the-network"></a>Usare i supporti autonomi per distribuire Windows senza usare la rete
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 I supporti autonomi in Configuration Manager contengono tutti gli elementi necessari per distribuire un sistema operativo in un computer, tra cui l'immagine d'avvio, l'immagine del sistema operativo e la sequenza di attività per installare il sistema operativo, incluse le applicazioni, i driver e così via. Le distribuzioni autonome avviate da supporti consentono di distribuire i sistemi operativi nelle condizioni seguenti:  
 

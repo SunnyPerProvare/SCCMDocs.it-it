@@ -10,17 +10,16 @@ ms.assetid: da5f8b61-2386-4530-ad54-1a5c51911f07
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f707eb4b4fabf98d6e436f038f932515749c35c4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a041187425fb71111b02c2368a507aed483199cb
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67194455"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821461"
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-configuration-manager"></a>Usare PXE per distribuire Windows in rete con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Le distribuzioni del sistema operativo avviate da Pre-Boot eXecution Environment (PXE) in Configuration Manager consentono ai client di richiedere e distribuire sistemi operativi in rete. In questo scenario di distribuzione, l'immagine del sistema operativo e le immagini d'avvio vengono inviate a un punto di distribuzione avviato da PXE.
 
@@ -85,7 +84,7 @@ Quando si distribuiscono sistemi operativi con PXE, è possibile creare un elenc
 
 1. Creare un file di testo nel punto di distribuzione che supporta PXE. Ad esempio, assegnare al file di testo il nome **pxeExceptions.txt**.  
 
-2. Usare un editor di testo semplice, ad esempio Blocco note, e aggiungere gli indirizzi MAC dei computer che il punto di distribuzione che supporta PXE deve ignorare. Separare i valori degli indirizzi MAC con i due punti e immettere ogni indirizzo in una riga separata. Ad esempio: `01:23:45:67:89:ab`  
+2. Usare un editor di testo semplice, ad esempio Blocco note, e aggiungere gli indirizzi MAC dei computer che il punto di distribuzione che supporta PXE deve ignorare. Separare i valori degli indirizzi MAC con i due punti e immettere ogni indirizzo in una riga separata. ad esempio `01:23:45:67:89:ab`  
 
 3. Salvare il file di testo nel server del sistema del sito del punto distribuzione che supporta PXE. Il file di testo può essere salvato in qualsiasi posizione nel server.  
 
@@ -94,7 +93,7 @@ Quando si distribuiscono sistemi operativi con PXE, è possibile creare un elenc
     `HKLM\Software\Microsoft\SMS\DP`  
 
     > [!WARNING]  
-    > L'uso non corretto dell'editor del Registro di sistema può provocare gravi problemi che potrebbero richiedere la reinstallazione di Windows. La risoluzione dei problemi derivanti dall'uso errato dell'editor del Registro di sistema non è garantita. L'utilizzo dell'editor del Registro di sistema è a rischio dell'utente.  
+    > L'uso non corretto dell'editor del Registro di sistema può provocare gravi problemi che potrebbero richiedere la reinstallazione di Windows. La risoluzione dei problemi derivanti dall'uso errato dell'editor del Registro di sistema non è garantita. L'uso dell'editor del Registro di sistema è di sola responsabilità dell'utente.  
 
 5. Dopo aver apportato questa modifica al Registro di sistema, riavviare il servizio WDS o il servizio risponditore PXE. Non è necessario riavviare il server.<!--512129-->  
 
@@ -124,7 +123,7 @@ Distribuire il sistema operativo in una raccolta di destinazione. Per altre info
 
 - **Distribuzione richiesta**: le distribuzioni richieste usano PXE senza alcun intervento da parte dell'utente. L'utente non può ignorare l'avvio PXE. Tuttavia, se l'utente annulla l'avvio di PXE prima della risposta del punto di distribuzione, il sistema operativo non viene distribuito.
 
-- **Distribuzione disponibile**: le distribuzioni disponibili richiedono la presenza dell'utente al computer di destinazione. L'utente deve premere **F12** per continuare il processo di avvio PXE. Se l'utente non è presente per premere **F12**, il computer esegue l'avvio nel sistema operativo corrente oppure dal successivo dispositivo di avvio disponibile.
+- **Distribuzione disponibile**: le distribuzioni disponibili richiedono la presenza dell'utente nel computer di destinazione. L'utente deve premere **F12** per continuare il processo di avvio PXE. Se l'utente non è presente per premere **F12**, il computer esegue l'avvio nel sistema operativo corrente oppure dal successivo dispositivo di avvio disponibile.
 
 È possibile ridistribuire una distribuzione PXE richiesta cancellando lo stato dell'ultima distribuzione PXE assegnato a una raccolta di Configuration Manager o a un computer. Per altre informazioni sull'azione **Cancella distribuzioni PXE richieste**, vedere [Gestire i client](/sccm/core/clients/manage/manage-clients#BKMK_ManagingClients_DevicesNode) o [Come gestire le raccolte di dispositivi](/sccm/core/clients/manage/collections/manage-collections#bkmk_device). Questa azione consente di reimpostare lo stato di quella distribuzione e reinstalla le distribuzioni richieste più recenti.
 

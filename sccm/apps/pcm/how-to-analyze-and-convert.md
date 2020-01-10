@@ -10,17 +10,16 @@ ms.assetid: f3bf1737-827d-48fa-8bb1-f48fe71afe0c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50ec232c9f5b007ef7a139cbe7894c333b6eed63
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3a7e038ea64e638796dbed3f62444961d9968db8
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62199261"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817466"
 ---
 # <a name="how-to-analyze-and-convert-packages-with-package-conversion-manager"></a>Come analizzare e convertire i pacchetti con Package Conversion Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!--1357861-->
 

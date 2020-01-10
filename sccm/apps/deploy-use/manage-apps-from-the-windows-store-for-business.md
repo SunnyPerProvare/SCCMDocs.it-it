@@ -10,13 +10,12 @@ ms.assetid: 8cdb22a6-72d7-41f5-9bed-c098b1bcf675
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1431e6854786d42194d58e8155e2282445f9e0de
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7b05c714a6ffadeb10a188b8a2bc270e2baff7cc
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74814302"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75815647"
 ---
 # <a name="manage-apps-from-the-microsoft-store-for-business-and-education-with-configuration-manager"></a>Gestire app da Microsoft Store per le aziende e Microsoft Store per la formazione con Configuration Manager
 
@@ -28,7 +27,7 @@ Il Microsoft Store for business e Education supporta due tipi di app:
 
 - **Online**: questo tipo di licenza richiede che gli utenti e i dispositivi si connettano allo Store per ottenere un'app e la relativa licenza. I dispositivi Windows 10 devono essere Azure Active Directory (Azure AD) aggiunti o ibridi Azure AD aggiunti.  
 
-- **Non in linea**: questo tipo consente di memorizzare nella cache le app e le licenze da distribuire direttamente nella rete locale, senza che i dispositivi debbano connettersi allo Store o avere una connessione Internet.
+- **Offline**: questo tipo consente di memorizzare nella cache le app e le licenze da distribuire direttamente nella rete locale, senza che i dispositivi debbano connettersi allo Store o avere una connessione Internet.
 
 Per altre informazioni, vedere [Panoramica di Microsoft Store per le aziende e Microsoft Store per la formazione](https://docs.microsoft.com/microsoft-store/microsoft-store-for-business-overview).
 
@@ -85,7 +84,7 @@ Si verificano quindi i comportamenti seguenti:
 
 - L'utente deve completare l'installazione dallo Store  
 
-- Nella console di Configuration Manager lo stato della distribuzione segnala l'errore specificando "L'app di Windows Store è stata aperta nel computer client ed è in attesa del completamento dell'installazione da parte dell'utente."  
+- Nella console di Configuration Manager, lo stato di distribuzione dell'app segnala l'esito negativo con l'errore seguente: "L'app di Microsoft Store è stata aperta nel computer client ed è in attesa del completamento dell'installazione da parte dell'utente".  
 
 Al successivo ciclo di valutazione dell'applicazione:  
 
@@ -125,9 +124,9 @@ Nella pagina **App** della Procedura guidata per i servizi di Azure configurare 
 
 Nella pagina **Configurazioni** della Procedura guidata per i servizi di Azure specificare le informazioni seguenti:  
 
-- **Percorso per la risorsa di archiviazione dei contenuti dell'app di Microsoft Store per le aziende**: specificare un percorso di rete condiviso, inclusa una cartella. Ad esempio, `\\server\share\folder`. Quando il server del sito si sincronizza con lo Store, memorizza il contenuto nella cache usando questo percorso. Quando si crea un'applicazione in Configuration Manager, il server del sito copia il contenuto dell'app da questa cache locale nella raccolta contenuto del sito.  
+- **Percorso per la risorsa di archiviazione dei contenuti dell'app di Microsoft Store per le aziende**: specificare un percorso di rete condiviso, compresa una cartella. Ad esempio, `\\server\share\folder` Quando il server del sito si sincronizza con lo Store, memorizza il contenuto nella cache usando questo percorso. Quando si crea un'applicazione in Configuration Manager, il server del sito copia il contenuto dell'app da questa cache locale nella raccolta contenuto del sito.  
 
-- **Lingue selezionate**: selezionare le lingue da sincronizzare dallo Store e da visualizzare agli utenti in Software Center. Se ad esempio l'utente configura Windows per il tedesco, Software Center mostra stringhe in tedesco per l'app dello Store. Questo comportamento richiede che tale lingua sia sincronizzata e che sia disponibile per l'applicazione specifica.
+- **Lingue selezionate**: selezionare le lingue da sincronizzare dallo Store e da visualizzare per gli utenti in Software Center. Se ad esempio l'utente configura Windows per il tedesco, Software Center mostra stringhe in tedesco per l'app dello Store. Questo comportamento richiede che tale lingua sia sincronizzata e che sia disponibile per l'applicazione specifica.
 
 - **Lingua predefinita**: se la lingua dell'utente non è disponibile, selezionare una lingua predefinita da usare.  
 

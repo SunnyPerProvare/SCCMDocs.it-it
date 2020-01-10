@@ -11,17 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: dffa07009c253401c2ef15bdd2d3b37722deb450
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 98ed9fff9aafe0a74567d2873326cba321999f92
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62198327"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817313"
 ---
 # <a name="technical-reference-for-the-package-conversion-manager-plug-in-configuration-xml"></a>Informazioni tecniche sul codice XML di configurazione del plug-in Package Conversion Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!--1357861-->
 
@@ -33,11 +32,11 @@ Questo articolo descrive gli elementi XML del file di configurazione di Configur
 
 La tabella seguente descrive gli elementi XML nel file di configurazione di Configuration Manager correlati al plug-in Package Conversion Manager.
 
-|Elemento  |Type  |Descrizione  |
+|Elemento  |Tipo  |Descrizione  |
 |---------|---------|---------|
-|**PcmPlugIn**|String|Nome dello script o del file eseguibile da usare come plug-in Package Conversion Manager.|
-|**PcmPlugInTimeoutMilliseconds**|Integer|Quantità massima di tempo, espressa in millisecondi, di attesa affinché lo script o il file eseguibile del plug-in Package Conversion Manager completi l'elaborazione di un pacchetto.|
-|**PcmPluginExitCode**|Integer|Il codice di uscita previsto dal processo di plug-in. Questo valore indica esito positivo. Tutti gli altri codici sono considerati un errore.|
+|**PcmPlugIn**|Stringa|Nome dello script o del file eseguibile da usare come plug-in Package Conversion Manager.|
+|**PcmPlugInTimeoutMilliseconds**|Intero|Quantità massima di tempo, espressa in millisecondi, di attesa affinché lo script o il file eseguibile del plug-in Package Conversion Manager completi l'elaborazione di un pacchetto.|
+|**PcmPluginExitCode**|Intero|Il codice di uscita previsto dal processo di plug-in. Questo valore indica esito positivo. Tutti gli altri codici sono considerati un errore.|
 |**ForceRequirementsExtraction**|Boolean|Consente alla conversione automatica di usare i requisiti di raccolta associati a un pacchetto. Questo elemento deve essere impostato su True solo quando si usa un plug-in Package Conversion Manager progettato per prendere decisioni sui requisiti da usare.|
 
 

@@ -10,17 +10,16 @@ ms.assetid: 4e62b04d-fe56-42ed-87dc-e673cf061d52
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 608f1442990f5b202cd4449d46a69c1102e99723
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d4a5da90d807601fbbc7d29de225f04cd944df9f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74823361"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825286"
 ---
 # <a name="application-deployment-for-device-collections"></a>Distribuzione di applicazioni per le raccolte di dispositivi
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Quando un'applicazione viene distribuita in una raccolta dispositivi, il criterio è destinato a tutti i dispositivi nella raccolta indipendentemente dallo scopo della distribuzione. Questo articolo illustra il download dei criteri e l'elaborazione della distribuzione nel client.
 

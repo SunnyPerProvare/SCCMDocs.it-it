@@ -10,17 +10,16 @@ ms.assetid: 72d1ccd5-3763-4f88-9273-e1a73e8f4286
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 48cb5d13dc3683a11731937d94d1f84414c3d923
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 2581214b42216a9f099ceee8e8c06201612902ae
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892417"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821138"
 ---
 # <a name="install-software-updates"></a>Installa aggiornamenti software
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Il passaggio **Installa aggiornamenti software** è usato comunemente nelle sequenze di attività di Configuration Manager. Durante l'installazione o l'aggiornamento del sistema operativo, esso attiva i componenti di aggiornamento software per la ricerca e la distribuzione degli aggiornamenti. Questo passaggio può causare problemi per alcuni clienti, ad esempio ritardi di timeout lunghi o la mancata installazione di aggiornamenti. Usare le informazioni in questo articolo per evitare i problemi comuni relativi a questo passaggio e per una migliore risoluzione dei problemi se si verificano problemi.
 
@@ -28,7 +27,7 @@ Per altre informazioni su questo passaggio, vedere [Installa aggiornamenti softw
 
 
 
-## <a name="recommendations"></a>Consigli
+## <a name="recommendations"></a>Indicazioni
 
 Per fare in modo che questo processo abbia esito positivo, tenere conto dei consigli seguenti:
 
@@ -176,7 +175,7 @@ Questo diagramma di flusso illustra il processo quando si include il passaggio I
 7. Processo di distribuzione: il processo di installazione degli aggiornamenti avviene in parallelo con il processo di monitoraggio della distribuzione.
     1. **Installa aggiornamenti**: il motore della sequenza di attività chiama l'agente SUM tramite l'API di distribuzione degli aggiornamenti per installare tutti gli aggiornamenti disponibili o solo quelli obbligatori. Questo comportamento si basa sulla configurazione del passaggio. Se si seleziona **Necessario per l'installazione - Solo aggiornamenti software obbligatori** oppure **Disponibile per l'installazione - Tutti gli aggiornamenti software**. È anche possibile specificare questo comportamento usando la variabile [SMSInstallUpdateTarget](/sccm/osd/understand/task-sequence-variables#SMSInstallUpdateTarget).
         1. **Installazione agente SUM**: processo di installazione normale con l'elenco esistente memorizzato nella cache degli aggiornamenti, con download del contenuto standard. L'aggiornamento viene installato tramite l'agente di Windows Update. (UpdatesDeployment.log, UpdatesHandler.log, WuaHandler.log, WindowsUpdate.log)
-    2. **Avvia timer distribuzione e visualizza stato**: il motore della sequenza di attività avvia un timer per l'installazione, mostra lo stato di avanzamento a intervalli del 10% nell'interfaccia utente dello stato di TS e rimane in attesa.
+    2. **Avvia timer distribuzione e visualizza stato**: il motore della sequenza di attività avvia un timer per l'installazione, mostra lo stato di avanzamento a intervalli del 10% nell'interfaccia utente di stato di TS e rimane in attesa.
         1. **Monitoraggio**: il motore della sequenza di attività esegue il polling dell'agente SUM per ottenere informazioni sullo stato.
         2. *Qual è la risposta dall'agente SUM?*
             - **In corso**: *Il processo di installazione è rimasto inattivo per 8 ore?*
@@ -190,15 +189,15 @@ Questo diagramma di flusso illustra il processo quando si include il passaggio I
 
 Il diagramma include due variabili di timeout che si applicano a questo passaggio. Esistono altri timer standard da altri componenti che possono influire su questo processo.
 
-- Timeout analisi dell'aggiornamento: 1 ora (smsts.log)  
-- Timeout richiesta del percorso: 1 ora (LocationServices.log, CAS.log)  
-- Timeout download del contenuto: 1 ora (DTS.log)  
-- Timeout punto di distribuzione inattivo: 1 ora (LocationServices.log, CAS.log)  
+- Timeout di ricerca degli aggiornamenti: 1 ora (smsts.log)  
+- Timeout della richiesta di posizione: 1 ora (LocationServices.log, CAS.log)  
+- Timeout di download del contenuto: 1 ora (DTS.log)  
+- Timeout di punto di distribuzione inattivo: 1 ora (LocationServices.log, CAS.log)  
 - Timeout installazioni totalmente inattive: 8 ore (smsts.log)  
 
 
 
-## <a name="troubleshooting"></a>Troubleshooting
+## <a name="troubleshooting"></a>Risoluzione dei problemi
 
 Usare le risorse e le informazioni aggiuntive seguenti per risolvere i problemi con questo passaggio:
 

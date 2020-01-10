@@ -10,17 +10,16 @@ ms.assetid: a7f91e63-4750-402e-9970-dd14be7f76a3
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc54cfc55821dc7189680f264c10a4a471979b04
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7eb33b61aa31a2d899e057152c236997249e0264
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892201"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827129"
 ---
 # <a name="manage-certificates-and-security-for-updates-publisher"></a>Gestire certificati e sicurezza per Updates Publisher
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Le procedure seguenti consentono di configurare l'archivio certificati nel server di aggiornamento, configurare un certificato autofirmato nel computer client e configurare Criteri di gruppo per consentire all'agente di Windows Update installato nei computer di analizzare gli aggiornamenti pubblicati.
 
@@ -72,7 +71,7 @@ Di seguito è riportato un esempio di come configurare il certificato di firma n
 
 6. Usare uno dei metodi seguenti per aggiungere il certificato usato per firmare il catalogo di aggiornamenti in ogni computer client che userà l'agente di Windows Update per l'analisi degli aggiornamenti nel catalogo. Aggiungere il certificato al computer client seguendo questa procedura:
 
-   -   Per i certificati autofirmati: aggiungere il certificato alle **Autorità di certificazione radice attendibili** e all'archivio certificati **Autori attendibili**.
+   -   Per i certificati autofirmati: aggiungere il certificato agli archivi certificati **Autorità di certificazione radice disponibile nell'elenco locale** e **Autori attendibili**.
 
    -   Per i certificati emessi dall'autorità di certificazione: aggiungere il certificato all'archivio certificati **Autori attendibili**.
 

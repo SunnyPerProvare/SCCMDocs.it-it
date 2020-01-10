@@ -10,17 +10,16 @@ ms.assetid: fdcee455-22e3-451d-bcf3-e7b62792f04a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96ad29b10052c153aa34a27006b613e0443d68f4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: eba7de1705212bb5cb329282bc407317995b82f3
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65494462"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819778"
 ---
 # <a name="endpoint-protection-client-help"></a>Guida del client Endpoint Protection
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 Questa versione di Windows Defender o Endpoint Protection include le funzionalità seguenti per la protezione del computer da eventuali minacce:  

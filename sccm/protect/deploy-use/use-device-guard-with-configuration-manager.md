@@ -10,17 +10,16 @@ ms.assetid: 5e5d854c-9cc1-4dd8-b33f-0fcac675b395
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: abc5f4c29e1e97cb116905cc9f9af4a033a5bf8f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ee7562ee855cb3e3840aea5c29850a17187622ec
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74474516"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819382"
 ---
 # <a name="windows-defender-application-control-management-with-configuration-manager"></a>Gestione controllo delle applicazioni di Windows Defender con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 ## <a name="introduction"></a>Introduzione
 Il controllo delle applicazioni di Windows Defender è progettato per proteggere i PC dal malware e da altro software non attendibile. Impedisce l'esecuzione di codice dannoso, garantendo che solo il codice approvato e conosciuto possa essere eseguito.

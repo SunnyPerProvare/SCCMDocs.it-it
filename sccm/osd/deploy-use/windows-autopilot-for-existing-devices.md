@@ -6,22 +6,21 @@ ms.date: 03/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: 2e96f847-5b5a-4da9-8e8f-6aa488838508
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4cc806009f9cb02e50a2b023722a2045d4bde655
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 31004429493252ddef4b45621695d2fcd275fa36
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70243719"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821410"
 ---
 # <a name="windows-autopilot-for-existing-devices"></a>Windows Autopilot per dispositivi esistenti
 <!--3607717, fka 1358333-->
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 [Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot) offre alle organizzazioni un modo per distribuire dispositivi Windows 10 aggiornati e intatti direttamente all'utente finale e per definire il flusso di provisioning eseguito dall'utente per ottenere un dispositivo Windows 10 sicuro e produttivo. Il dispositivo viene registrato nel servizio Windows Autopilot, in modo da poter assegnare il profilo di Windows Autopilot necessario. Questo profilo consente di definire l'esperienza di Configurazione guidata per il dispositivo. 
 
@@ -92,7 +91,7 @@ ms.locfileid: "70243719"
 
 4. Nella pagina **Installa Windows** selezionare il **pacchetto dell'immagine** di Windows 10. Configurare quindi le impostazioni seguenti:  
 
-    - **Indice delle immagini**: selezionare Enterprise, Education o Professional, in base ai requisiti dall'organizzazione  
+    - **Indice immagine**: Selezionare Enterprise, Education o Professional, in base ai requisiti dall'organizzazione  
 
     - Abilitare l'opzione **Creare partizioni e formattare il computer di destinazione prima di installare il sistema operativo**  
 
@@ -126,7 +125,7 @@ Se si modifica la sequenza di attività, la procedura è simile a quella per la 
 
 - **Applica la configurazione di Windows Autopilot**: questo passaggio applica il file di configurazione di Autopilot dal pacchetto specificato. Non è un nuovo tipo di passaggio, ma un passaggio **Esegui riga di comando** per copiare il file.  
 
-- **Prepara Windows per l'acquisizione**: questo passaggio esegue Sysprep di Windows con l'impostazione **Arresta il computer dopo l'esecuzione di questa azione**. Per altre informazioni, vedere [Prepara Windows per l'acquisizione](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareWindowsforCapture).  
+- **Prepara Windows per l'acquisizione**: questo passaggio esegue Windows Sysprep e include l'impostazione **Arresta il computer dopo l'esecuzione di questa azione**. Per altre informazioni, vedere [Prepara Windows per l'acquisizione](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareWindowsforCapture).  
 
 Il risultato della sequenza di attività Windows Autopilot per i dispositivi esistenti è l'aggiunta di un dispositivo ad Azure Active Directory (Azure AD). 
 

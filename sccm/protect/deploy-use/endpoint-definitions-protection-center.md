@@ -10,17 +10,16 @@ ms.assetid: eb4ab74b-b605-41dd-930c-ac18d2f40319
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30f7fc9e92d382eb222691fe21474e654bc44d47
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ab00c843f18bcc8e568716de6270cbe12e3e94f7
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892369"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819846"
 ---
 # <a name="use-the-microsoft-malware-protection-center-to-download-definitions"></a>Usare Microsoft Malware Protection Center per scaricare le definizioni
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
  È possibile configurare i client per scaricare gli aggiornamenti delle definizioni da Microsoft Malware Protection Center. Questa opzione è usata dai client di Endpoint Protection per scaricare gli aggiornamenti delle definizioni se non sono riusciti a scaricare gli aggiornamenti da un'altra origine. Questo metodo di aggiornamento può essere utile se si verifica un problema con l'infrastruttura di Configuration Manager che impedisce il recapito degli aggiornamenti.
 

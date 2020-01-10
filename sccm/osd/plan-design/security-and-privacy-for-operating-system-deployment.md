@@ -10,17 +10,16 @@ ms.assetid: 5ee5928f-3d72-4b00-8156-1e0d1030a96c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b37bcf8fc1079ff1eaaa3d70cb3c1c8297a2685
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 154cf2b06fa51fc89efd1d1066307b589c5961eb
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68340359"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821121"
 ---
 # <a name="security-and-privacy-for-os-deployment-in-configuration-manager"></a>Sicurezza e privacy per la distribuzione del sistema operativo in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo contiene informazioni sulla sicurezza e sulla privacy per funzionalità di distribuzione del sistema operativo in Configuration Manager.  
 

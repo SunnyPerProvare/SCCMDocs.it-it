@@ -10,17 +10,16 @@ ms.assetid: 0bdcb018-bac2-4540-b786-6242bac73ff4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3280edbe900e96cf97af8e59578ceab5322ee2a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 82444b5f8612a129dc5b7df3338efdfc4b55e1a9
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62204961"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816191"
 ---
 # <a name="deploy-and-monitor-scap-compliance-in-configuration-manager"></a>Distribuire e monitorare la conformità SCAP in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Dopo aver [convertito e importato](/sccm/compliance/plan-design/scap/install-configure-scap#bkmk_convert-and-import) i file di flusso dei dati SCAP, vedere i passaggi successivi seguenti:  
 

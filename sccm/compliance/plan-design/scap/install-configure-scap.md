@@ -10,17 +10,16 @@ ms.assetid: f53b484b-5123-48f0-be2f-4e30318f3d39
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c36f2380a93d6da27651f1aa3a4894e25b3bce39
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3da7e68f11226957348bd151a14d092096432cea
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70890714"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818248"
 ---
 # <a name="install-and-configure-the-scap-extensions-for-configuration-manager"></a>Installare e configurare le estensioni SCAP per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Dopo aver [preparato l'infrastruttura](/sccm/compliance/plan-design/scap/about-scap#bkmk_prepare), è possibile installare e configurare le estensioni SCAP per Configuration Manager nel computer dal quale si vuole eseguire questo processo.
 

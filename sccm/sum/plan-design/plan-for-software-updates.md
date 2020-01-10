@@ -10,17 +10,16 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6699ccfb2b987c7b454d364547698dc58c9cf7c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5b85263a3a864db6489be3cd074f0182f1681ccc
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72684740"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827248"
 ---
 # <a name="plan-for-software-updates-in-configuration-manager"></a>Pianificare gli aggiornamenti software in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Prima di usare gli aggiornamenti software in un ambiente di produzione di Configuration Manager, è importante eseguire il processo di pianificazione. La definizione di una pianificazione valida per l'infrastruttura del punto di aggiornamento software è fondamentale per un'implementazione corretta di aggiornamenti software. Per informazioni sulla pianificazione della capacità per gli aggiornamenti software, vedere [numeri di ridimensionamento e scalabilità](/sccm/core/plan-design/configs/size-and-scale-numbers#software-update-point).
 
@@ -64,9 +63,9 @@ Configuration Manager offre al client un elenco di punti di aggiornamento softwa
 
 Il client seleziona un punto di aggiornamento software a caso dall'elenco. Assegna la priorità ai punti di aggiornamento software appartenenti alla stessa foresta. Configuration Manager offre ai client un elenco diverso a seconda del tipo di client:  
 
--   **Client basati su intranet**: ricevono un elenco di punti di aggiornamento software che è possibile configurare per consentire solo connessioni dall'intranet oppure un elenco di punti di aggiornamento software che consentono connessioni client su Internet e intranet.  
+-   **Client basati su Intranet**: si riceve un elenco di punti di aggiornamento software che è possibile configurare per consentire solo connessioni dalla Intranet oppure un elenco di punti di aggiornamento software che consentono connessioni client Internet e Intranet.  
 
--   **Client basati su Internet**: ricevono un elenco di punti di aggiornamento software che è possibile configurare per consentire solo le connessioni da Internet oppure un elenco di punti di aggiornamento software che consentono connessioni client su Internet e Intranet.  
+-   **Client basati su Internet**: si riceve un elenco di punti di aggiornamento software che è possibile configurare per consentire solo connessioni da Internet oppure un elenco di punti di aggiornamento software che consentono connessioni client Internet e Intranet.  
 
 
 ###  <a name="BKMK_SUPSwitching"></a> Passaggio a un nuovo punto di aggiornamento software  
@@ -304,7 +303,7 @@ La sincronizzazione degli aggiornamenti software in Configuration Manager scaric
 
 Le impostazioni dell'origine di sincronizzazione per il punto di aggiornamento software specificano il percorso in cui il punto di aggiornamento software recupera i metadati degli aggiornamenti software. Le impostazioni specificano anche se il processo di sincronizzazione crea eventi di reporting WSUS.  
 
--   **Origine sincronizzazione**: per impostazione predefinita, il punto di aggiornamento software nel sito di livello superiore configura l'origine della sincronizzazione per Microsoft Update. È possibile sincronizzare il sito principale con un server WSUS esistente. Il punto di aggiornamento software in un sito primario figlio configura l'origine di sincronizzazione come il punto di aggiornamento software nel sito di amministrazione centrale.  
+-   **Origine di sincronizzazione**: per impostazione predefinita, il punto di aggiornamento software nel sito di livello superiore configura l'origine di sincronizzazione per Microsoft Update. È possibile sincronizzare il sito principale con un server WSUS esistente. Il punto di aggiornamento software in un sito primario figlio configura l'origine di sincronizzazione come il punto di aggiornamento software nel sito di amministrazione centrale.  
 
     -  Il primo punto di aggiornamento software installato in un sito primario, ovvero il punto predefinito, si sincronizza con il sito di amministrazione centrale. I punti di aggiornamento software aggiuntivi nel sito primario si sincronizzano con il punto di aggiornamento software predefinito nel sito primario.  
 
@@ -329,23 +328,23 @@ Ogni aggiornamento software viene definito in base a una classificazione di aggi
 
 Configuration Manager supporta la sincronizzazione delle classificazioni aggiornamenti seguenti:  
 
--   **Aggiornamenti critici**: aggiornamento rilasciato su vasta scala per un problema specifico, che risolve un bug critico, non correlato alla sicurezza.  
+-   **Aggiornamenti critici**: aggiornamento rilasciato su vasta scala per un problema specifico, per un bug critico, non correlato alla sicurezza.  
 
--   **Aggiornamenti delle definizioni**: aggiornamento di file di definizioni antivirus o altri file di definizioni.  
+-   **Aggiornamenti delle definizioni**: aggiornamento per virus o altri file di definizione.  
 
 -   **Feature Pack**: nuove funzionalità del prodotto distribuite al di fuori di una versione del prodotto. In genere sono incluse nella versione successiva del prodotto completo.  
 
--   **Aggiornamenti della sicurezza**: aggiornamento rilasciato su vasta scala per un problema specifico del prodotto e associato alla sicurezza.  
+-   **Aggiornamenti della sicurezza**: aggiornamento rilasciato su vasta scala per un problema specifico del prodotto e correlato alla sicurezza.  
 
--   **Service Pack**: set cumulativo di aggiornamenti rapidi applicati a un sistema operativo o un'applicazione. Questi aggiornamenti rapidi includono aggiornamenti della sicurezza, aggiornamenti critici e aggiornamenti software.  
+-   **Service Pack**: set cumulativo di hotfix applicati a un sistema operativo o a un'applicazione. Questi aggiornamenti rapidi includono aggiornamenti della sicurezza, aggiornamenti critici e aggiornamenti software.  
 
 -   **Strumenti**: utilità o funzionalità che consentono di completare una o più attività.  
 
--   **Aggiornamento cumulativo**: set cumulativo di aggiornamenti rapidi inclusi nello stesso pacchetto per facilitarne la distribuzione. Questi aggiornamenti rapidi includono aggiornamenti della sicurezza, aggiornamenti critici e aggiornamenti software. Un aggiornamento cumulativo è relativo in genere a un'area specifica, ad esempio la sicurezza o un componente del prodotto.  
+-   **Aggiornamenti cumulativi**: set cumulativo di hotfix inclusi nello stesso pacchetto per facilitarne la distribuzione. Questi aggiornamenti rapidi includono aggiornamenti della sicurezza, aggiornamenti critici e aggiornamenti software. Un aggiornamento cumulativo è relativo in genere a un'area specifica, ad esempio la sicurezza o un componente del prodotto.  
 
 -   **Aggiornamenti**: aggiornamento di un'applicazione o di un file attualmente installato.  
 
--   **Aggiornamenti funzionalità**: aggiornamento delle funzionalità a una nuova versione di Windows 10.  
+-   **Aggiornamenti delle funzionalità**: aggiornamento delle funzionalità a una nuova versione di Windows 10.  
 
 Configurare le impostazioni delle classificazioni aggiornamento solo nel sito di livello superiore. Tali impostazioni non vengono configurate nel punto di aggiornamento software dei siti figlio, poiché i metadati degli aggiornamenti software vengono replicati dal sito di livello superiore. Quando si selezionano le classificazioni di aggiornamento, tenere presente che quante più classificazioni vengono selezionate tanto maggiore sarà il tempo richiesto per la sincronizzazione dei metadati degli aggiornamenti software.  
 
@@ -434,7 +433,7 @@ A partire dalla versione 1906, è possibile specificare il tempo di esecuzione m
   - **Aggiornamenti non di funzionalità**: un aggiornamento che non è un aggiornamento della funzionalità e il cui prodotto è elencato come uno dei seguenti:
     - Windows 10 (tutte le versioni)
     - Windows Server 2012
-    - Windows Server 2012 R2
+    - R2 per Windows Server 2012
     - Windows Server 2016
     - Windows Server 2019
     - Office 365

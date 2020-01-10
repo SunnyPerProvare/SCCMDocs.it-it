@@ -6,21 +6,20 @@ ms.date: 05/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: 3e3ff3a4-7a75-41bb-bdf9-33ede9c0e3a3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f0e5a313bb5afd0501f0d6027d42b5a51a7e8946
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 27491803af39e9611a00562eebe32f17e8f8f5f2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "69631946"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821105"
 ---
 # <a name="provisioning-mode"></a>Modalità di provisioning
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Durante una sequenza di attività di distribuzione del sistema operativo, Configuration Manager imposta i client in modalità di provisioning. Una sequenza di attività di distribuzione del sistema operativo include un aggiornamento sul posto a Windows 10. In questo stato, il client non elabora criteri del sito. Questo comportamento consente l'esecuzione della sequenza di attività senza il rischio di esecuzione di altre distribuzioni nel client. Quando la sequenza di attività viene completata,con esito positivo o errore gestito, il client esce dalla modalità di provisioning.
 

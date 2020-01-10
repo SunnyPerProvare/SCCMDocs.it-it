@@ -10,17 +10,16 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d01e01bf8318e5d4016420044a5f2f49c9b6965c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 33a87217c7dc2e2054758fe62388f5fbc9090296
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65673369"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818826"
 ---
 # <a name="deploy-software-updates"></a>Distribuire gli aggiornamenti software  
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 La fase di distribuzione degli aggiornamenti software è il processo di distribuzione degli aggiornamenti software. Indipendentemente dalla modalità di distribuzione degli aggiornamenti software, il sito:
 - Aggiunge gli aggiornamenti software a un gruppo di aggiornamento software

@@ -10,17 +10,16 @@ ms.assetid: de78e8d3-043f-4cd3-97e0-4dfb824fd3fb
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15ed5e56d5284b3014061a5d910dc88903b624db
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 4249345b7412d624e84b472e4fc5d09cacd6a2ce
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500207"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818809"
 ---
 # <a name="download-software-updates"></a>Scaricare gli aggiornamenti software  
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Sono disponibili diversi metodi per scaricare gli aggiornamenti software in Configuration Manager. Quando si crea una regola di distribuzione automatica (ADR) o si distribuiscono manualmente gli aggiornamenti software, gli aggiornamenti software vengono scaricati nella raccolta contenuto nel server del sito. Gli aggiornamenti software vengono quindi copiati nella raccolta contenuto nei punti di distribuzione che sono associati al pacchetto di distribuzione configurato. Se si desidera scaricare gli aggiornamenti software prima di distribuirli, è possibile usare il Download guidato degli aggiornamenti. Eseguendo questa operazione è possibile verificare che gli aggiornamenti software siano disponibili nei punti di distribuzione prima di distribuirli ai computer client.  
 

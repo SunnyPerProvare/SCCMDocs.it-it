@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: c3279b7d-654d-444b-bd17-1262894590c3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 54f6ec4442e729db4dd5c9d4d02f5903babb5f47
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 535f9bbef9900cbdd5d8916b2ac3b7b5fa9777b7
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74662499"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818996"
 ---
 # <a name="server-event-logs"></a>Registri eventi del server
 
@@ -34,7 +33,7 @@ In un server che ospita uno o più di questi componenti, aprire il Visualizzator
 
 Le sezioni seguenti contengono messaggi e informazioni per la risoluzione dei problemi relativi agli ID evento che possono verificarsi con i componenti del server di gestione di BitLocker.
 
-## <a name="admin"></a>Amministrazione
+## <a name="admin"></a>Amministratore
 
 ### <a name="1-webappspnerror"></a>1: WebAppSpnError
 

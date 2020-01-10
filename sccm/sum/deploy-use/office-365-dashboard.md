@@ -10,13 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 69f234a2-b04b-445a-b81f-6b4acfc00eaf
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f59f3fc666fec7fdfaf2eed3eaf2b9e5656a1707
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8e0dd73d038f6dd9eafa67f156cb345402e9f7b7
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74814990"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818740"
 ---
 # <a name="office-365-client-management-dashboard"></a>Dashboard di Gestione client di Office 365
 
@@ -213,7 +212,7 @@ Questo riquadro riepiloga i dispositivi che presentano problemi con componenti a
 ### <a name="add-ins-not-meeting-health-goals"></a>Componenti aggiuntivi che non soddisfano gli obiettivi di integrità
 
 - Errori di caricamento: non è stato possibile avviare il componente aggiuntivo.
-- Arresti anomali: errore del componente aggiuntivo durante l'esecuzione.
+- Arresti anomali del sistema: errore del componente aggiuntivo durante l'esecuzione.
 - Errore: il componente aggiuntivo ha segnalato un errore.
 - Più problemi: il componente aggiuntivo presenta più di uno dei problemi descritti in precedenza.
 
@@ -222,7 +221,7 @@ Questo riquadro riepiloga i dispositivi che presentano problemi con componenti a
 - Errori di caricamento: non è stato possibile caricare il documento.
 - Errori di runtime: si è verificato un errore durante l'esecuzione della macro. Questi errori possono dipendere dagli input e pertanto potrebbero non verificarsi in tutte le circostanze.
 - Errori di compilazione: la macro non è stata compilata correttamente e quindi non tenterà l'esecuzione.
-- Più problemi: la macro ha più di uno dei problemi precedenti.
+- Più problemi: la macro presenta più di uno dei problemi descritti in precedenza.
 
 ### <a name="known-issues"></a>Problemi noti
 

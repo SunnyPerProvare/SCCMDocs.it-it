@@ -10,17 +10,16 @@ ms.assetid: ab7626ae-d4bf-4ca6-ab25-c61f96800a02
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3162a1477fde3996582dfbe4ab011acfa1e0c4b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1f0d8ac635d514e750584126458bfde6b5fc24ee
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74161666"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819914"
 ---
 # <a name="enable-endpoint-protection-malware-definitions-to-download-from-microsoft-updates"></a>Abilitare le definizioni malware di Endpoint Protection da scaricare da Microsoft Updates
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Quando si sceglie di scaricare gli aggiornamenti delle definizioni da Microsoft Update, i client controlleranno il sito Microsoft Update con la frequenza definita nella sezione **Aggiornamenti dell'intelligence per la sicurezza** della finestra di dialogo dei criteri antimalware.
 

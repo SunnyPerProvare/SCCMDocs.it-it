@@ -10,17 +10,16 @@ ms.assetid: 8d27e5ac-4f19-4b3d-85c7-fa34eb5d5e7e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e303a7363e0641210cc7c6e436546d864fe0571
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5d9aff6f96c94593025e0fa7a794b65de7cd331f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62243640"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821257"
 ---
 # <a name="prepare-for-os-deployment-in-configuration-manager"></a>Preparare la distribuzione del sistema operativo in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Prima di poter distribuire i sistemi operativi è necessario eseguire alcune operazioni in Configuration Manager. Fare riferimento agli articoli seguenti per prepararsi per la distribuzione del sistema operativo:  
 

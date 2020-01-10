@@ -10,17 +10,16 @@ ms.assetid: a315489d-5e12-46d6-903e-3a35235b72c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2036b3a9981c1a27b24bff1f1f0f543813267dc7
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c65f8af1f76ed584008f5d477bfa7935296a51e5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70378118"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818214"
 ---
 # <a name="about-the-security-content-automation-protocol-scap-extensions"></a>Informazioni sulle estensioni SCAP (Security Content Automation Protocol)
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Le estensioni SCAP per Configuration Manager consentono di analizzare e valutare la conformità dell'ambiente di rete in uso con il protocollo SCAP (Security Content Automation Protocol). SCAP è definito e gestito dal National Institute of Standards and Technology (NIST). Per altre informazioni, vedere la [panoramica del progetto SCAP](https://csrc.nist.gov/projects/security-content-automation-protocol).
 
@@ -28,7 +27,7 @@ Le estensioni SCAP per Configuration Manager consentono di analizzare e valutare
 > Questa versione dello strumento è una versione non definitiva disponibile solo nella versione 1806. Questa versione non è certificata da NIST. <!--SCCMDocs-pr issue 3323-->
 > 
 > Se è richiesto uno strumento certificato o si usa un'altra versione di Configuration Manager Current Branch, usare la versione seguente delle estensioni SCAP:
-> - [Scaricare le estensioni SCAP per System Center Configuration Manager](https://www.microsoft.com/download/details.aspx?id=48741)
+> - [Scaricare le estensioni SCAP per Configuration Manager](https://www.microsoft.com/download/details.aspx?id=48741)
 > - [Documentazione per la versione 3.0 delle estensioni SCAP](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/mt228311\(v%3dtechnet.10\))
 
 Le estensioni SCAP per Configuration Manager usano la funzionalità Impostazioni di conformità per eseguire una prima analisi dei computer nell'ambiente in uso. Documentano quindi il livello di conformità con quanto previsto dall'iniziativa United States Government Configuration Baseline (USGCB).
@@ -76,11 +75,11 @@ Questa versione delle estensioni SCEP per Configuration Manager include e suppor
 
 ## <a name="terms"></a>Termini
 
-- **ID OVAL:** identificatore di una definizione OVAL specifica conforme al formato per gli ID OVAL.  
+- **ID OVAL**: identificatore di una definizione OVAL specifica conforme al formato per gli ID OVAL.  
 
 - **Flusso dei dati dei risultati SCAP:** aggregazione di componenti SCAP, insieme ai mapping dei riferimenti tra i componenti SCAP, che contiene il contenuto di output (risultati).  
 
-- **Flusso dei dati di origine SCAP:** aggregazione di componenti SCAP, insieme ai mapping dei riferimenti tra i componenti SCAP, che contiene il contenuto di input (origine).
+- **Flusso dei dati di origine SCAP**: aggregazione di componenti SCAP, insieme ai mapping dei riferimenti tra i componenti SCAP, che contiene il contenuto di input (origine).
 
 
 
@@ -137,7 +136,7 @@ I computer per i quali si desidera valutare la conformità SCAP devono disporre 
 - Uno dei sistemi operativi seguenti:  
   - Windows 7 SP1, a 32 bit o a 64 bit
   - Windows 10 a 32 bit o a 64 bit
-  - Windows Server 2012 R2
+  - R2 per Windows Server 2012
 
 ### <a name="hardware-requirements"></a>Requisiti hardware
 

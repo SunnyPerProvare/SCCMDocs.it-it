@@ -10,17 +10,16 @@ ms.assetid: 92aaec8a-8751-442a-b64b-62ab05b5bf50
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3cd923348b3ac6dfd6b2da652efc0a56ad9b787
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 772f807f2d00aa9b69c7b1b0953341c80073ed66
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70888448"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827071"
 ---
 # <a name="create-a-task-sequence-for-non-os-deployments"></a>Creare una sequenza di attività per distribuzioni non di sistema operativo
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Le sequenze di attività in Configuration Manager consentono di automatizzare diversi tipi di attività all'interno dell'ambiente. Queste attività sono progettate e testate principalmente per la distribuzione di sistemi operativi. Configuration Manager ha molte altre funzionalità che deve essere la tecnologia principale in uso per gli scenari seguenti:
 

@@ -10,17 +10,16 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.assetid: 76477b4d-df41-4b25-8318-7d18d46ca2c6
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d97a67dd65dd79ba8b47541d0c7a7cad239dca28
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: eb2d0353da0c81e142c6a6d6e5544e937c619034
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62204423"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816633"
 ---
-# <a name="configure-microsoft-edge-settings-in-system-center-configuration-manager"></a>Configurare le impostazioni per Microsoft Edge in System Center Configuration Manager
+# <a name="configure-microsoft-edge-settings-in-configuration-manager"></a>Configurare le impostazioni di Microsoft Edge in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!-- 1357310 -->
 A partire dalla versione 1802 i clienti che usano il Web browser [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) nei client Windows 10 possono creare un criterio delle impostazioni di conformità di Configuration Manager per definire diverse impostazioni di Microsoft Edge. 
@@ -36,11 +35,11 @@ Questo criterio include attualmente le impostazioni seguenti:
 - **Consenti la cancellazione dei dati di esplorazione all'uscita**: richiede Windows 10 versione 1703 o successiva. Per altre informazioni, vedere [Criterio del browser ClearBrowsingDataOnExit](/windows/client-management/mdm/policy-csp-browser#browser-clearbrowsingdataonexit).
 - **Consenti le intestazioni Do Not Track**: per altre informazioni, vedere [Criterio del browser AllowDoNotTrack](/windows/client-management/mdm/policy-csp-browser#browser-allowdonottrack).
 - **Consenti riempimento automatico**: per altre informazioni, vedere [Criterio del browser AllowAutofill](/windows/client-management/mdm/policy-csp-browser#browser-allowautofill).
-- **Consenti i cookie**: per altre informazioni, vedere [Criterio del browser AllowCookies](/windows/client-management/mdm/policy-csp-browser#browser-allowcookies).
-- **Consenti il blocco popup**: per altre informazioni, vedere [Criterio del browser AllowPopups](/windows/client-management/mdm/policy-csp-browser#browser-allowpopups).
+- **Consenti cookie**: per altre informazioni, vedere [Criterio del browser AllowCookies](/windows/client-management/mdm/policy-csp-browser#browser-allowcookies).
+- **Consenti blocco popup**: per altre informazioni, vedere [Criterio del browser AllowPopups](/windows/client-management/mdm/policy-csp-browser#browser-allowpopups).
 - **Consenti suggerimenti di ricerca nella barra degli indirizzi**: per altre informazioni, vedere [Criterio del browser AllowSearchSuggestionsinAddressBar](/windows/client-management/mdm/policy-csp-browser#browser-allowsearchsuggestionsinaddressbar).
 - **Consenti l'invio di traffico Intranet a Internet Explorer**: per altre informazioni, vedere [Criterio del browser SendIntranetTraffictoInternetExplorer](/windows/client-management/mdm/policy-csp-browser#browser-sendintranettraffictointernetexplorer).
-- **Consenti lo strumento per la gestione delle password**: per altre informazioni, vedere [Criterio del browser AllowPasswordManager](/windows/client-management/mdm/policy-csp-browser#browser-allowpasswordmanager).
+- **Consenti strumento per la gestione delle password**: per altre informazioni, vedere [Criterio del browser AllowPasswordManager](/windows/client-management/mdm/policy-csp-browser#browser-allowpasswordmanager).
 - **Consenti gli Strumenti di sviluppo**: per altre informazioni, vedere [Criterio del browser AllowDeveloperTools](/windows/client-management/mdm/policy-csp-browser#browser-allowdevelopertools).
 - **Consenti le estensioni**: per altre informazioni, vedere [Criterio del browser AllowExtensions](/windows/client-management/mdm/policy-csp-browser#browser-allowextensions).
 
@@ -50,8 +49,8 @@ Questo criterio include attualmente le impostazioni seguenti:
 A partire dalla versione 1806, questi criteri prevedono tre impostazioni aggiuntive per [Windows Defender SmartScreen](/windows/security/threat-protection/windows-defender-smartscreen/windows-defender-smartscreen-overview). I criteri ora includono le seguenti impostazioni aggiuntive nella pagina **Impostazioni di SmartScreen**:
 
 - **Consenti SmartScreen**: specifica se Windows Defender SmartScreen è consentito. Per altre informazioni, vedere il [criterio di browser AllowSmartScreen](/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen).
-- **Gli utenti possono eseguire l'override del prompt di SmartScreen per i siti**: specifica se gli utenti possono ignorare gli avvisi del filtro di SmartScreen Windows Defender relativi ai siti Web potenzialmente dannosi. Per altre informazioni, vedere il [criterio di browser PreventSmartScreenPromptOverride](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride).
-- **Gli utenti possono eseguire l'override del prompt di SmartScreen per i file**: specifica se gli utenti possono ignorare gli avvisi del filtro di SmartScreen Windows Defender relativi al download di file non verificati. Per altre informazioni, vedere il [criterio di browser PreventSmartScreenPromptOverrideForFiles](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles).
+- **Gli utenti possono eseguire l'override del prompt di SmartScreen per i siti**: specifica se gli utenti possono eseguire l'override degli avvisi del filtro Windows Defender SmartScreen su siti Web potenzialmente dannosi. Per altre informazioni, vedere il [criterio di browser PreventSmartScreenPromptOverride](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride).
+- **Gli utenti possono eseguire l'override del prompt di SmartScreen per i file**: specifica se gli utenti possono eseguire l'override degli avvisi del filtro Windows Defender SmartScreen sul download di file non verificati. Per altre informazioni, vedere il [criterio di browser PreventSmartScreenPromptOverrideForFiles](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles).
 
 
 

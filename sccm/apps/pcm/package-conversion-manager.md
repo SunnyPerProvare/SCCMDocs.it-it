@@ -10,17 +10,16 @@ ms.assetid: f053fa73-c553-4522-a6b9-f885f23fe57c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a90dff8b187c28d925daeb9dae02849dd5027bab
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: cd17d220b39251b0f053aca6932006a81decd024
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68339251"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817432"
 ---
 # <a name="package-conversion-manager"></a>Package Conversion Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!--1357861-->
 
@@ -68,9 +67,9 @@ Prima di iniziare a convertire i pacchetti in applicazioni, sviluppare un piano.
 
 Questa sezione descrive due piani di conversione dei pacchetti di esempio:  
 
-- [Ambiente di test con quantità elevata di risorse](#bkmk_define-high): si dispone di un ambiente di test con risorse, autorizzazioni e architettura per replicare l'intero ambiente di produzione.  
+- [Ambiente di test con ampia disponibilità di risorse](#bkmk_define-high): è presente un ambiente di test con risorse, autorizzazioni e architettura sufficienti per replicare l'intero ambiente di produzione.  
 
-- [Ambiente di test con quantità limitata di risorse](#bkmk_define-limited): non si dispone di un ambiente di test che consente di replicare l'intero ambiente di produzione.  
+- [Ambiente di test con quantità limitata di risorse](#bkmk_define-limited): non è presente un ambiente di test che consente di replicare l'intero ambiente di produzione.  
 
 Modificare questi piani in base alle esigenze per altri problemi specifici dell'ambiente in uso.
 
@@ -221,7 +220,7 @@ Sottoporre a test le applicazioni nell'ambiente di testing o in quello di produz
 
 
 
-## <a name="recommendations"></a>Consigli
+## <a name="recommendations"></a>Indicazioni
 
 - Usare il nodo **Stato della conversione pacchetti** nell'area di lavoro **Monitoraggio**. Vengono visualizzate informazioni di riepilogo sui processi di analisi e conversione.  
 

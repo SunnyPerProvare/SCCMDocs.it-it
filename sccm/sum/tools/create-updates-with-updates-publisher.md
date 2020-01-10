@@ -10,13 +10,12 @@ ms.assetid: 46a1a8ac-126c-4ee6-ae09-32dfbdb83368
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74165357238f6ba37b2eef28c2e946448df0d957
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 357cd7b0faacd782a31caa5e7b375e3f6d60c008
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70888594"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827231"
 ---
 # <a name="create--software-updates-and-update-bundles-with-updates-publisher"></a>Creare aggiornamenti software e aggiornare aggregazioni con Updates Publisher
 
@@ -59,7 +58,7 @@ Poiché queste due procedure guidate hanno un flusso di lavoro simile, la proced
 
    - **Titolo**: immettere il nome dell'aggiornamento. Questo nome viene visualizzato nell'area di lavoro Aggiornamenti della console di Updates Publisher.
 
-   - **Descrizione**: una breve descrizione dell'aggiornamento. È possibile includere il contenuto installato dall'aggiornamento e specificare il motivo o le situazioni d'uso.
+   - **Descrizione**: breve descrizione dell'aggiornamento. È possibile includere il contenuto installato dall'aggiornamento e specificare il motivo o le situazioni d'uso.
 
    **Classificazione:** di seguito vengono riportate descrizioni di uso comune per le differenti classificazioni.
 
@@ -71,15 +70,15 @@ Poiché queste due procedure guidate hanno un flusso di lavoro simile, la proced
 
    - **Sicurezza**: aggiornamento rilasciato su vasta scala per un problema specifico del prodotto e correlato alla sicurezza.
 
-   - **Aggiornamento cumulativo**: set cumulativo di aggiornamenti rapidi inclusi nello stesso pacchetto per facilitarne la distribuzione. Questi aggiornamenti rapidi possono includere aggiornamenti della sicurezza, aggiornamenti critici, aggiornamenti e così via. Un aggiornamento cumulativo riguarda in genere un'area specifica, ad esempio la sicurezza o una funzionalità del prodotto.
+   - **Aggiornamento cumulativo**: set cumulativo di hotfix inclusi nello stesso pacchetto per facilitare la distribuzione. Questi aggiornamenti rapidi possono includere aggiornamenti della sicurezza, aggiornamenti critici, aggiornamenti e così via. Un aggiornamento cumulativo riguarda in genere un'area specifica, ad esempio la sicurezza o una funzionalità del prodotto.
 
-   - **Service Pack**: set cumulativo di aggiornamenti rapidi applicati a un'applicazione. Questi aggiornamenti rapidi possono includere aggiornamenti della sicurezza, aggiornamenti critici, aggiornamenti software e così via.
+   - **Service Pack**: set cumulativo di hotfix applicati a un'applicazione. Questi aggiornamenti rapidi possono includere aggiornamenti della sicurezza, aggiornamenti critici, aggiornamenti software e così via.
 
    - **Strumento**: specifica uno strumento o una funzionalità che consente di completare una o più attività.
 
    - **Driver**: aggiornamento del software driver.
 
-   **Fornitore**: specificare un fornitore per l'aggiornamento. Per usare i valori di aggiornamenti disponibili nel repository, è possibile usare l'elenco a discesa. Quando si specifica un fornitore, la procedura guidata crea una cartella con lo stesso nome del fornitore sotto **Tutti gli aggiornamenti software** nell'**area di lavoro Aggiornamenti**, se tale cartella non esiste già. Di seguito sono riportati nomi WSUS (Windows Server Update Services) riservati che non è possibile immettere per gli aggiornamenti creati:
+   **Fornitore:** specificare un fornitore per l'aggiornamento. Per usare i valori di aggiornamenti disponibili nel repository, è possibile usare l'elenco a discesa. Quando si specifica un fornitore, la procedura guidata crea una cartella con lo stesso nome del fornitore sotto **Tutti gli aggiornamenti software** nell'**area di lavoro Aggiornamenti**, se tale cartella non esiste già. Di seguito sono riportati nomi WSUS (Windows Server Update Services) riservati che non è possibile immettere per gli aggiornamenti creati:
    - Microsoft Corporation
    - Microsoft
    - Aggiornamento
@@ -106,20 +105,20 @@ Poiché queste due procedure guidate hanno un flusso di lavoro simile, la proced
 
    -   **ID bollettino**: gli ID bollettino vengono in genere, ma non sempre, specificati dai fornitori degli aggiornamenti.
 
-   -   **ID articolo**: se è disponibile l'ID articolo di un aggiornamento software, gli utenti possono usarlo per cercare altre informazioni sull'aggiornamento in questione.
+   -   **ID articolo**: se è disponibile l'articolo di un aggiornamento software, gli utenti possono usare l'ID articolo per cercare altre informazioni sull'aggiornamento.
 
-   -   **CVE IDs** (ID CVE): elencare uno o più indicatori CVE (Common Vulnerabilities and Exposures) che offrono informazioni sulla sicurezza per l'aggiornamento o l'aggregazione di aggiornamenti. Quando si elencano più ID CVE, separarli con un punto e virgola, come nell'esempio seguente: *CVE1;CVE2.*
+   -   **CVE IDs** (ID CVE): elencare uno o più identificatori CVE (Common Vulnerabilities and Exposures) che offrono informazioni sulla sicurezza per l'aggiornamento o l'aggregazione di aggiornamenti. Quando si elencano più ID CVE, separarli con un punto e virgola, come nell'esempio seguente: *CVE1;CVE2.*
 
-   -   **Support URL** (URL supporto): indicare l'URL in cui sono disponibili informazioni di supporto per l'aggiornamento, se disponibili. Quando si immette l'URL, è necessario usare lettere minuscole per **https** o **http**.
+   -   **URL supporto:** indicare l'URL in cui sono disponibili informazioni di supporto per l'aggiornamento, se disponibili. Quando si immette l'URL, è necessario usare lettere minuscole per **https** o **http**.
 
-   -   **Gravità**: impostare il livello di gravità per l'aggiornamento.
+   -   **Gravità:** impostare il livello di gravità per l'aggiornamento.
 
-   -   **Impatto**: per specificare l'impatto è possibile usare le opzioni seguenti:
+   -   **Impatto:** per specificare l'impatto è possibile usare le opzioni seguenti:
        -   **Normale**: usare questa opzione per indicare che l'aggiornamento richiede procedure di installazione tipiche.
        -   **Minor** (Secondario): usare questa opzione per indicare che l'aggiornamento richiede procedure di installazione minime.
        -   **Requires exclusive handling** (Richiede gestione esclusiva): usare questa opzione per indicare che l'aggiornamento deve essere installato da solo, separato da altri aggiornamenti.   <br /><br />
 
-   -   **Riavvio del sistema**: usare questa opzione per fornire informazioni sul comportamento del riavvio degli aggiornamenti. Questa impostazione non influisce sul comportamento effettivo dell'installazione dell'aggiornamento.
+   -   **Riavvio del sistema:** usare questa opzione per fornire informazioni sul comportamento del riavvio degli aggiornamenti. Questa impostazione non influisce sul comportamento effettivo dell'installazione dell'aggiornamento.
 
        -   **Never reboots** (Non riavviare mai): il computer non esegue mai un riavvio del sistema dopo l'installazione dell'aggiornamento software.
        -   **Always requires reboot** (Richiede sempre il riavvio): il computer esegue sempre un riavvio del sistema dopo l'installazione dell'aggiornamento software.

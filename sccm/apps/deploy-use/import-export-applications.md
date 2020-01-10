@@ -10,21 +10,20 @@ ms.assetid: dba00e54-9d5b-4f6b-916d-ead48c66e288
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02bb394de4f3bb947bdc2669a830167089c42311
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: dde136422f7ecc3a970179188afc16ca369801d3
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "66411010"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75815749"
 ---
 # <a name="import-and-export-applications"></a>Importare ed esportare le applicazioni
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare Configuration Manager per importare ed esportare applicazioni tra due gerarchie. Ad esempio è possibile copiare un'applicazione da un ambiente di test a un ambiente di produzione.
 
-## <a name="export"></a>Esporta
+## <a name="export"></a>Export
 
 1. Nella console di Configuration Manager selezionare il nodo **Applicazioni**. Nel gruppo Crea della barra multifunzione scegliere **Esporta applicazione**.
 1. Nella schermata **Generale** immettere il percorso di un nuovo file con estensione zip nel quale eseguire l'esportazione. Facoltativamente specificare se esportare *dipendenze, relazioni di sostituzione, condizioni e ambienti virtuali*, nonché *contenuto per le applicazioni selezionate e le dipendenze*.  Immettere eventuali commenti dell'amministratore e quindi selezionare **Avanti**.

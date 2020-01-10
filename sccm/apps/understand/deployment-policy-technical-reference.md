@@ -10,17 +10,16 @@ ms.assetid: bf24fb83-521f-4a41-ab8e-df70a6c10e78
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b56a2b5b7ce6e1352bce6323aba0b5f918a2feb0
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 19207faf1bd3ad85fe14adade90524d740475288
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74823331"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825303"
 ---
 # <a name="application-deployment-policy"></a>Criteri di distribuzione delle applicazioni
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 ## <a name="policy-creation"></a>Creazione dei criteri
 

@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: a4d8cda2-bc9b-4fb4-aa0d-23c31b4fc60b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 25f8b13cbf0aa6e505c7fe22980e5bce3a39a2e4
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: 878c5ab003861b2e8942e39a2679be9464ae7b9a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198728"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819268"
 ---
 # <a name="plan-for-bitlocker-management"></a>Pianificare la gestione di BitLocker
 

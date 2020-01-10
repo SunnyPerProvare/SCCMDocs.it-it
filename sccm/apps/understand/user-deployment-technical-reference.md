@@ -10,17 +10,16 @@ ms.assetid: b8e9dbfe-a046-4e06-8dec-cf0bc41ba095
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59a2a1873a712184430cfe6c499b7d8b1067b207
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 6ef441f8fe85f8d88b71eca13455e0cba5271994
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74823341"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817228"
 ---
 # <a name="application-deployment-policy-for-users"></a>Criteri di distribuzione delle applicazioni per gli utenti
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Quando un'applicazione viene distribuita in una raccolta di utenti, i criteri per la distribuzione vengono creati solo per le distribuzioni richieste. Per le distribuzioni disponibili, i criteri vengono creati quando l'utente tenta di installare l'applicazione da software Center. In questo articolo viene illustrato il processo di distribuzione per le distribuzioni richieste e disponibili.
 

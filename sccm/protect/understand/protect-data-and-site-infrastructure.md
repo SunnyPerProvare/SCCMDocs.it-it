@@ -10,13 +10,12 @@ ms.assetid: 2117f786-d521-4790-9e8d-ec096c63c9d7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86eed6ef79a098bb53237890e410747d78788acd
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8a5bf798183f2b33dc9bef0c545d7b0fcfb1c023
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660819"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818911"
 ---
 # <a name="protect-data-and-site-infrastructure"></a>Proteggere dati e infrastruttura e del sito
 
@@ -36,7 +35,7 @@ Si vuole che gli utenti accedano in modo sicuro alle risorse dell'organizzazione
   > [!TIP]
   > Per gestire Endpoint Protection in dispositivi Windows 10 con co-gestione usando il servizio cloud di Microsoft Endpoint Manager, passare il [carico di lavoro **Endpoint Protection** ](/configmgr/comanage/workloads#endpoint-protection) a Intune. Per ulteriori informazioni, vedere [Endpoint Protection per Microsoft Intune](https://docs.microsoft.com/intune/endpoint-protection-windows-10).
 
-- Proteggi i dati archiviati nei client Windows locali con Crittografia unità BitLocker (BDE). Configuration Manager offre una gestione completa del ciclo di vita di BitLocker che può sostituire l'utilizzo di Microsoft BitLocker Administration and Monitoring (MBAM). Per ulteriori informazioni, vedere [pianificare la gestione di BitLocker](/configmgr/protect/plan-design/bitlocker-management).
+- Proteggi i dati archiviati nei client Windows locali con Crittografia unità BitLocker (BDE). Configuration Manager offre una gestione completa del ciclo di vita di BitLocker che può sostituire l'utilizzo di Microsoft BitLocker Administration and Monitoring (MBAM). Per altre informazioni, vedere [Pianificare la gestione di BitLocker](/configmgr/protect/plan-design/bitlocker-management).
 
 - Anziché le password tradizionali, abilitare metodi di accesso alternativi nei dispositivi Windows 10 che usano Windows Hello for business. Per altre informazioni, vedere [Impostazioni di Windows Hello for Business](/configmgr/protect/deploy-use/windows-hello-for-business-settings).
 

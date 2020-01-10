@@ -10,17 +10,16 @@ ms.assetid: 2af4f9c3-16b8-4691-a59d-aea6241d288e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f1ba3702b45594be3047e10ee69f99eaf2391805
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 09d86e57d5bef1fccf3220be1ed79811985fe1fc
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74823371"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818367"
 ---
 # <a name="application-installation"></a>Installazione dell'applicazione
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Prima di continuare, esaminare i [componenti client di distribuzione delle applicazioni](/sccm/apps/understand/client-components-technical-reference) per comprendere l'elaborazione dei processi dell'agente ci e di DCM.
 

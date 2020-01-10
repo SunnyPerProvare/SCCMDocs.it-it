@@ -6,21 +6,20 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: c6826794-aa19-469d-ae47-1a0db68a1ff1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f6cae4772b1335317f9d63edd70ba4e8d189455d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ceac3612c68d49a82a18fe657f7d71e99516ee06
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74659476"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817279"
 ---
 # <a name="plan-for-software-center"></a>Pianificare Software Center
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Gli utenti modificano le impostazioni e cercano e installano applicazioni in Software Center. Quando si installa il client di Configuration Manager in un dispositivo Windows, viene automaticamente installato Software Center.
 
@@ -37,7 +36,7 @@ Di seguito sono elencati i miglioramenti apportati a Software Center:
 >
 > - L'esperienza utente di Silverlight non è supportata a partire dalla versione Current Branch 1806.
 > - A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni.
-> - Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910.  
+> - Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 
 ### <a name="starting-in-version-1802"></a>A partire dalla versione 1802
 
@@ -114,7 +113,7 @@ Alla finestra di dialogo seguente:
 
 ### <a name="restart-required"></a>Riavvio richiesto
 
-Nel gruppo [Riavvio del computer](/sccm/core/clients/deploy/about-client-settings#computer-restart) delle impostazioni client abilitare l'opzione seguente: **Quando una distribuzione richiede un riavvio, mostra una finestra di dialogo all'utente invece di un avviso popup**.  
+Nel gruppo [Riavvio del computer](/sccm/core/clients/deploy/about-client-settings#computer-restart) abilitare l'opzione seguente: **Quando una distribuzione richiede un riavvio, mostra una finestra di dialogo all'utente invece di un avviso popup**.  
 
 La configurazione di questa impostazione client modifica l'esperienza utente per tutte le distribuzioni richieste che necessitano di un riavvio dei tipi seguenti:
 
@@ -158,7 +157,7 @@ Configuration Manager applica la personalizzazione per Software Center in base a
 #### <a name="application-catalog-branding-priorities"></a>Priorità di personalizzazione del catalogo applicazioni
 
 > [!Important]
-> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910.  
+> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 
 Se si usa il Catalogo applicazioni, la personalizzazione segue queste priorità:  
 

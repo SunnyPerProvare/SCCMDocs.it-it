@@ -10,17 +10,16 @@ ms.assetid: ea8698c4-9df5-4cf5-8b62-ab93115b4769
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e89fd9422b6bf6c5abb61e154f38a1f479c7ff7e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3a0b116bf2faafc0ecb29f67392e961c2301703e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70902969"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827265"
 ---
 #  <a name="BKMK_SUMSync"></a> sincronizzare gli aggiornamenti software
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
  La sincronizzazione degli aggiornamenti software in Configuration Manager è il processo di recupero dei metadati degli aggiornamenti software in base ai criteri configurati. Questo include prodotti, classificazioni e lingue specifici. In genere il punto di aggiornamento software nel sito di amministrazione centrale o in un sito primario autonomo recupera i metadati da Microsoft Update. In seguito, il sito di livello superiore invierà una richiesta di sincronizzazione agli altri siti. Quando un sito riceve la richiesta di sincronizzazione da un sito padre, il punto di aggiornamento software per il sito recupera i metadati degli aggiornamenti software dall'[origine sincronizzazione](../plan-design/plan-for-software-updates.md#BKMK_SyncSource) upstream. Per altre informazioni sul processo di sincronizzazione degli aggiornamenti software, vedere [Sincronizzazione degli aggiornamenti software](../understand/software-updates-introduction.md#BKMK_Synchronization).
 

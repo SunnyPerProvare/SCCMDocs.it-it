@@ -10,17 +10,16 @@ ms.technology: configmgr-sum
 ms.assetid: 4b0e2e90-aac7-4d06-a707-512eee6e576c
 manager: dougeby
 ms.author: mstewart
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 72554b62203700a3930cb169a8758308364d7eb1
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: 258c5535623c0824e49f09c556d6ffe943f96414
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198694"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827384"
 ---
 # <a name="software-updates-maintenance"></a>Manutenzione degli aggiornamenti software
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile pianificare ed eseguire attività di pulizia WSUS nella console di Configuration Manager, dalle proprietà del componente del punto di aggiornamento software. Quando si sceglie di eseguire l'attività di pulizia WSUS, questa verrà eseguita dopo la successiva sincronizzazione degli aggiornamenti software.  
 
@@ -35,7 +34,7 @@ Pianificare il processo di pulizia WSUS seguendo questa procedura:
 
 4. Esaminare **Comportamento di sostituzione**. Se necessario, modificare il comportamento.
 
-   ![Screenshot di Comportamento di sostituzione](media/sccm-supersedence-behavior.PNG)
+   ![Screenshot di Comportamento di sostituzione](media/supersedence-behavior.png)
 
 5. Fare clic sulla scheda **Regole di sostituzione** e selezionare **Eseguire pulizia guidata WSUS**. Nella versione 1806, l'opzione è stata rinominata **Esegui la pulizia WSUS dopo la sincronizzazione**.
 

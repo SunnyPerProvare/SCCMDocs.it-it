@@ -10,17 +10,16 @@ ms.assetid: cb616925-bb94-4b7c-a867-b3d95aef4d5e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 475f80dc4d5841eb014b8f1ecb4d23ffdb699944
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a18a41a192845333bc8354516d65f379f0d81e12
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68339191"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817296"
 ---
 # <a name="troubleshoot-package-conversion-manager"></a>Risolvere i problemi di Package Conversion Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!--1357861-->
 
@@ -28,7 +27,7 @@ Usare le informazioni in questo articolo per risolvere i problemi relativi all'u
 
 
 
-## <a name="sms-provider"></a>provider SMS
+## <a name="sms-provider"></a>Provider SMS
 
 Package Conversion Manager usa il provider SMS. Per altre informazioni, vedere [Piano per il provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider).
 
@@ -40,12 +39,12 @@ Se il provider SMS non funziona correttamente, la console di Configuration Manag
 
 Prima di convertire un pacchetto in un'applicazione, analizzare il pacchetto usando la funzione **Analizza** di Package Conversion Manager. Dopo l'analisi, aggiungere la colonna **Conformità** nel nodo **Pacchetti** della console di Configuration Manager. L'elenco di pacchetti indica uno degli stati di conformità seguenti per il pacchetto analizzato:
 
-- **Automatico**: il pacchetto può essere convertito usando la funzione **Converti**.      
+- **Automatico**: il pacchetto può essere convertito direttamente usando la funzione **Converti**.      
 
   > [!NOTE]  
   > Una conversione automatica non converte le query WQL in requisiti dell'applicazione. Per convertire queste query, usare il processo **Correggi e converti**.  
 
-- **Manuale**: il pacchetto necessita di alcune aggiunte o modifiche prima di poterlo convertire usando la funzione **Correggi e converti**.  
+- **Manuale**: il pacchetto richiede aggiunte o modifiche prima di poter essere convertito usando la funzione **Correggi e converti**.  
 
 - **Non applicabile**: il pacchetto non è adatto per la conversione. È possibile risolvere eventuali errori del pacchetto oppure continuare a distribuirlo come pacchetto.  
 

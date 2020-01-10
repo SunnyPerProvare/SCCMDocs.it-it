@@ -1,8 +1,8 @@
 ---
 title: Creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti con Intune
 titleSuffix: Configuration Manager
-description: Usare l'elemento di configurazione Windows 10 in System Center Configuration Manager per gestire le impostazioni dei computer Windows 10.
-ms.date: 07/31/2017
+description: Usare l'elemento di configurazione Configuration Manager Windows 10 per gestire le impostazioni per i computer Windows 10.
+ms.date: 01/06/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,17 +11,17 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f4674921917bb7d087da52f2c8250ca943597f1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
-ms.translationtype: MT
+ms.openlocfilehash: 93cd7b4035f276f4e966a8b64ac63ca40449e7e7
+ms.sourcegitcommit: ecf4e8da78fed5e30c0eb81ea98959bd01354018
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70378886"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75717775"
 ---
-# <a name="how-to-create-configuration-items-for-windows-81-and-windows-10-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client System Center Configuration Manager
+# <a name="how-to-create-configuration-items-for-windows-81-and-windows-10-devices-managed-without-the-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client Configuration Manager
 
 
- Usare l'elemento di configurazione **Windows 8.1 e Windows 10** di System Center Configuration Manager per gestire le impostazioni per i dispositivi Windows 8.1 e Windows 10 registrati in Microsoft Intune o gestiti localmente da Configuration Manager.  
+ Usare l'elemento di configurazione Configuration Manager**Windows 8.1 e Windows 10** per gestire le impostazioni per Windows 8.1 e i dispositivi Windows 10 registrati in Microsoft Intune o gestiti in locale da Configuration Manager.  
 
 ## <a name="create-a-windows-81-and-windows-10-configuration-item"></a>Creare un elemento di configurazione Windows 8.1 e Windows 10  
 
@@ -83,7 +83,7 @@ ms.locfileid: "70378886"
 |**Complessità password**|Scegliere se è possibile specificare un PIN, ad esempio "1234", o se è necessario fornire una password complessa.|  
 |**Qualità password**|Selezionare il livello di complessità delle password necessario e indicare se possono essere usati anche dispositivi biometrici.|  
 |**Invia PIN di ripristino password a Exchange Server**|-|
-|**Crittografia dispositivo**|Abilitare la crittografia nei dispositivi di destinazione.|  
+|**Crittografia dispositivo**|Abilita la crittografia sui dispositivi di destinazione.|  
 
 ###  <a name="device"></a>Dispositivo  
 
@@ -139,7 +139,7 @@ ms.locfileid: "70378886"
 
 |Impostazioni|Details|  
 |-------------|-------------|  
-|**Consenti browser Web**|Consentire l'uso del Web browser nel dispositivo.|  
+|**Consenti Web browser**|Consentire l'uso del Web browser nel dispositivo.|  
 |**Riempimento automatico**|L’utente può modificare le impostazioni di completamento automatico nel browser.|  
 |**Esecuzione script attivo**|Il browser può eseguire script, ad esempio gli script ActiveX.|  
 |**Plug-in**|L’utente può aggiungere plug-in a Internet Explorer.|  
@@ -169,10 +169,10 @@ ms.locfileid: "70378886"
 
 |Nome impostazione|Details|Windows 8,1|Windows 10|  
 |------------------|-------------|-----------------|----------------|  
-|**Sincronizzazione impostazioni**|Consente la sincronizzazione delle impostazioni tra i dispositivi.|Yes|Yes|  
-|**Sincronizzazione credenziali**|Consente la sincronizzazione delle credenziali tra i dispositivi.|Yes|Yes|  
-|**Account Microsoft**|Consente di usare un account Microsoft sul dispositivo.|Yes|Yes|  
-|**Sincronizzazione delle impostazioni con connessione a consumo**|Consente la sincronizzazione delle impostazioni quando la connessione a Internet è a consumo.|Yes|Yes|  
+|**Sincronizzazione impostazioni**|Consente la sincronizzazione delle impostazioni tra i dispositivi.|sì|sì|  
+|**Sincronizzazione credenziali**|Consente la sincronizzazione delle credenziali tra i dispositivi.|sì|sì|  
+|**Account Microsoft**|Consente di usare un account Microsoft sul dispositivo.|sì|sì|  
+|**Sincronizzazione delle impostazioni con connessione a consumo**|Consente la sincronizzazione delle impostazioni quando la connessione a Internet è a consumo.|sì|sì|  
 
 ###  <a name="security"></a>Sicurezza  
 
@@ -210,7 +210,7 @@ ms.locfileid: "70378886"
 |**VPN su rete cellulare**|Consente al dispositivo di accedere a connessioni VPN durante la connessione a una rete cellulare.<br /><br /> (solo Windows 10)|
 |**Roaming VPN su rete cellulare**|Consente al dispositivo di accedere a connessioni VPN durante il roaming su una rete cellulare.<br /><br /> (solo Windows 10)| 
 
-###  <a name="encryption"></a>Crittografia  
+###  <a name="encryption"></a>Encryption  
 
 |Nome impostazione|Details|  
 |------------------|-------------|  
@@ -329,7 +329,7 @@ Nella pagina **Elenco app consentite e bloccate** indicare le informazioni segue
 |        **Aggiungi**        | Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare nel Windows Store.<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app consentite o bloccate.<br /><br /> **Esempio:** cercare l'app **Skype** nell'App Store. L'URL da usare è **<https://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51>** . |
 |       **Modifica**        |                                                                                                                                                                                                                                                 Consente di modificare il nome, l'autore e l'URL dell'app selezionata.                                                                                                                                                                                                                                                 |
 |      **Rimuovi**       |                                                                                                                                                                                                                                                             Elimina l'app selezionata dall'elenco.                                                                                                                                                                                                                                                             |
-|      **Importa**       |                                                                                                                                                                                                          Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.                                                                                                                                                                                                          |
+|      **Importaa**       |                                                                                                                                                                                                          Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.                                                                                                                                                                                                          |
 
 ### <a name="windows-10-team"></a>Windows 10 Team  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 10 Team.  
@@ -341,19 +341,20 @@ Nella pagina **Elenco app consentite e bloccate** indicare le informazioni segue
 |                    **PIN obbligatorio per proiezione wireless**                    |                                                                           Specifica se immettere un PIN prima di usare le funzionalità di proiezione wireless del dispositivo.                                                                            |
 |                             **Finestra di manutenzione**                             |                                                         Configura la finestra durante la quale cui è possibile eseguire gli aggiornamenti del dispositivo. È possibile configurare l'ora di inizio della finestra e la durata (tra 1 e 5 ore).                                                         |
 |                         **Azure Operational Insights**                         |      Azure Operational Insights, parte della suite Microsoft Operations Manager, raccoglie, archivia e analizza i dati dei file di log provenienti da dispositivi Windows 10 Team.<br>Per connettersi ad Azure Operational Insights, è necessario specificare un ID e una chiave dell'area di lavoro.       |
-|                        **Proiezione wireless Miracast**                        |                   Abilitare questa opzione per consentire al dispositivo Windows 10 Team di usare dispositivi abilitati per Miracast per attività di progetto.<br>Se questa opzione è abilitata, selezionare da **Scegli un canale Miracast** il canale Miracast usato per il contenuto del progetto.                    |
-|              **Informazioni sulla riunione visualizzate nella schermata iniziale**               | Se si abilita questa opzione, è possibile scegliere le informazioni da visualizzare nel riquadro **Riunioni** della **schermata iniziale**. È possibile scegliere:<br><br>- **Mostra solo organizzatore e ora**<br>- **Mostra organizzatore, ora e oggetto (l'oggetto è nascosto per le riunioni private)** |
-|                      **URL dell'immagine di sfondo per la schermata di blocco**                       |                            Usare questa impostazione per visualizzare uno sfondo personalizzato nella **schermata iniziale** dei dispositivi Windows 10 Team dall'URL specificato.<br>L'immagine deve essere in formato PNG e l'URL deve iniziare con **https://** .                             |
+|                        **Proiezione wireless Miracast**                        |                   Abilitare questa opzione se si vuole consentire al dispositivo Windows 10 Team di usare i dispositivi abilitati per Miracast per la proiezione.<br>Se si abilita questa opzione, selezionare in **Scegli un canale Miracast** il canale Miracast usato per la proiezione del contenuto.                    |
+|              **Informazioni sulla riunione visualizzate nella schermata iniziale**               | Se si abilita questa opzione, è possibile scegliere le informazioni da visualizzare nel riquadro **Riunioni** della **schermata iniziale**. È possibile scegliere le opzioni seguenti:<br><br>- **Mostra solo organizzatore e ora**<br>- **Mostra organizzatore, ora e oggetto (l'oggetto è nascosto per le riunioni private)** |
+|                      **URL dell'immagine di sfondo per la schermata di blocco**                       |                            Usare questa impostazione per visualizzare uno sfondo personalizzato nella **schermata iniziale** dei dispositivi Windows 10 Team dall'URL specificato.<br>L'immagine deve essere nel formato PNG e l'URL deve iniziare con **https://** .                             |
 
 ### <a name="windows-information-protection"></a>Windows Information Protection  
 
-Con l'aumento dei dispositivi personali nell'organizzazione, aumenta anche il rischio di perdita accidentale dei dati tramite app e servizi, ad esempio posta elettronica, social media e cloud pubblico, non controllati dall'organizzazione. È il caso, ad esempio, di un dipendente che invia le immagini di progettazione più recenti dall'account di posta elettronica personale, copia e incolla le informazioni su un prodotto in un tweet o salva il report di una vendita in corso nell'area di archiviazione nel cloud pubblico.
+Con l'aumento dei dispositivi personali nell'organizzazione, aumenta anche il rischio di perdita accidentale dei dati tramite app e servizi, ad esempio posta elettronica, social media e cloud pubblico, non controllati dall'organizzazione. Ad esempio, quando un dipendente invia le immagini di progettazione più recenti dal proprio account di posta elettronica personale, copia e incolla le informazioni su un prodotto in un tweet o salva il report di una vendita in corso nella propria area di archiviazione nel cloud pubblico.
 
 Windows Information Protection (WIP) offre protezione da questa potenziale perdita di dati senza interferire con l'esperienza del dipendente. Consente anche di proteggere le app e i dati aziendali da perdite di dati accidentali su dispositivi di proprietà dell'azienda e dispositivi personali che i dipendenti portano al lavoro senza richiedere modifiche all'ambiente o ad altre app.
 
  Le impostazioni degli elementi di configurazione WIP gestiscono l'elenco di app protette da EDP, i percorsi di rete aziendali, il livello di protezione e le impostazioni di crittografia.
 
-Per informazioni su come configurare la protezione dati con Configuration Manager, vedere [Proteggere i dati aziendali con Windows Information Protection (WIP)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip).
+Per informazioni su come configurare la protezione dati con Configuration Manager, vedere [Proteggere i dati aziendali con Windows Information Protection (WIP)](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip).
+
 
 
 ### <a name="microsoft-edge"></a>Microsoft Edge  
@@ -369,7 +370,7 @@ Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e vers
 |**Consenti popup**|Consentire o disabilitare i popup del browser.|  
 |**Consenti cookie**|Consentire o disabilitare i cookie.|  
 |**Consenti riempimento automatico**|Consente l'uso della funzionalità di riempimento automatico del browser Microsoft Edge.|  
-|**Consenti strumento per la gestione delle password**|Consentire l'uso della funzionalità dello strumento per la gestione delle password del browser Microsoft Edge.|  
+|**Consenti strumento per la gestione delle password**|Consentire l'uso della funzionalità dello strumento per la gestione delle password del browser Edge.|  
 |**Posizione elenco siti modalità Enterprise**|Specifica dove trovare l'elenco di siti Web che si aprono in modalità Enterprise. L'elenco non è modificabile dagli utenti.|
 |**Blocca l'accesso ai flag Informazioni su**|Impedire l'accesso dell'utente finale alla pagina about:flags in Edge contenente impostazioni sperimentali e per sviluppatori.|
 |**Override del prompt SmartScreen**|Consentire all'utente finale di ignorare gli avvisi del filtro SmartScreen relativi a siti Web potenzialmente dannosi.|
@@ -387,7 +388,7 @@ Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e vers
 |------------------|-------------|  
 |**Consenti il monitoraggio in tempo reale**|Abilita l'analisi in tempo reale per cercare malware, spyware e altro software indesiderato.|
 |**Consenti il monitoraggio del comportamento**|Consente a Defender di controllare particolari modelli noti di attività sospette sui dispositivi.|
-|**Abilita Network Inspection System**|NIS (Network Inspection System) consente di proteggere i dispositivi dagli exploit basati sulla rete mediante firme di vulnerabilità note ottenute da Microsoft Endpoint Protection Center per rilevare e bloccare il traffico dannoso.|
+|**Abilita Network Inspection System**|Network Inspection System (NIS) contribuisce a proteggere i dispositivi dagli exploit basati sulla rete usando le firme di vulnerabilità note di Microsoft Endpoint Protection Center per contribuire a rilevare e bloccare il traffico dannoso.|
 |**Analizza tutti i download**|Controlla se Defender analizza tutti i file scaricati da Internet.|
 |**Consenti l'analisi di script**|Consente a Defender di analizzare gli script usati in Internet Explorer.|
 |**Monitora l'attività di file e programmi**|Consente a Defender di monitorare l'attività di file e programmi sui dispositivi.
@@ -395,7 +396,7 @@ Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e vers
 |**Consenti l'accesso all'interfaccia utente client**|Controlla se l'interfaccia utente di Windows Defender non è visibile agli utenti.<br>Quando questa impostazione viene modificata, le modifiche diventano effettive a partire dal successivo riavvio del PC da parte dell'utente.|
 |**Pianifica un'analisi del sistema**|Consente di pianificare un'analisi del sistema veloce o completa. Tale analisi viene eseguita regolarmente nel giorno e all'ora specificati.|
 |**Pianifica analisi veloce giornaliera**|Consente di pianificare un'analisi veloce che viene eseguita giornalmente all'ora selezionata.
-|**Limita utilizzo CPU durante un'analisi**|Consente di limitare la quantità di CPU che le analisi possono usare (da 1 a 100).|
+|**Limita utilizzo CPU durante un'analisi a**|Consente di limitare la quantità di CPU che le analisi possono usare (da 1 a 100).|
 |**Analizza file di archivio**|Consente a Defender di analizzare i file archiviati con estensione zip o cab.|
 |**Analizza i messaggi di posta elettronica**|Consente a Defender di analizzare i messaggi di posta elettronica nel momento in cui arrivano al dispositivo.|
 |**Analizza unità rimovibili**|Consente a Defender di analizzare le unità rimovibili, ad esempio le chiavi USB.|
@@ -403,12 +404,12 @@ Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e vers
 |**Analizza file aperti da cartelle di rete condivise**|Consente a Defender di analizzare i file nelle unità di rete condivise, ad esempio quelli a cui è possibile accedere da un percorso UNC.<br>Se i file presenti nell'unità sono di sola lettura, Defender non è in grado di rimuovere eventuale malware da questi.|
 |**Intervallo di aggiornamento della firma**|Specifica l'intervallo con cui Defender controlla i nuovi file delle firme.
 |**Consenti protezione cloud**|Consente o impedisce a Microsoft Active Protection Service di ricevere informazioni sull'attività del malware dai dispositivi gestiti. Queste informazioni vengono usate per un futuro miglioramento del servizio.|
-|**Richiedi agli utenti l'invio dei campioni**|Controlla se i file che potrebbero richiedere un'ulteriore analisi devono essere inviati automaticamente a Microsoft per determinarne l'eventuale dannosità.|
-|**Rilevamento di applicazioni potenzialmente indesiderate**|Protegge i dispositivi con Windows desktop registrati dall'esecuzione di software classificato da Windows Defender come potenzialmente indesiderato. È possibile proteggere queste applicazioni dall'esecuzione o usare la modalità di controllo per segnalare l'installazione di un'applicazione potenzialmente indesiderata.|
+|**Richiedi invio dei campioni agli utenti**|Controlla se i file che potrebbero richiedere un'ulteriore analisi devono essere inviati automaticamente a Microsoft per determinarne l'eventuale dannosità.|
+|**Rilevamento di applicazioni potenzialmente indesiderate**|Protegge i dispositivi con Windows desktop registrati dall'esecuzione di software classificato da Windows Defender come potenzialmente indesiderato. È possibile ottenere protezione da tali applicazioni in esecuzione o usare la modalità di controllo per rilevare l'installazione di un'applicazione potenzialmente indesiderata.|
 |**Esclusioni di file e cartelle**|Aggiunge uno o più file e cartelle come C:\Path o %ProgramFiles%\Path\filename.exe all'elenco delle esclusioni. Questi file e cartelle non sono inclusi in alcuna scansione in tempo reale o pianificata.|
-|**Esclusioni di estensioni di file**|Aggiunge una o più estensioni di file, ad esempio jpg o txt, all'elenco delle esclusioni. I file con queste estensioni non vengono inclusi in un'analisi in tempo reale o pianificata.|
+|**Esclusioni di estensioni di file**|Aggiunge una o più estensioni di file, ad esempio jpg o txt, all'elenco delle esclusioni. I file con queste estensioni non sono inclusi nelle analisi in tempo reale o pianificate.|
 |**Esclusioni di processi**|Aggiunge uno o più processi con estensione exe, com o scr all'elenco delle esclusioni. Questi processi non sono inclusi in alcuna scansione in tempo reale o pianificata.|
 
 
 ## <a name="see-also"></a>Vedere anche  
- [Elementi di configurazione per dispositivi gestiti senza il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)
+ [Elementi di configurazione per dispositivi gestiti senza il client di Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

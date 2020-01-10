@@ -10,17 +10,16 @@ ms.assetid: 2486375c-d4a2-4cf2-9124-9bee02bbf173
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 999ace880812c6baa3fd359433e4e929699c8612
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e4078a34aa33a4fccb57fad44aee78194a3dab7f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65499770"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827282"
 ---
 #  <a name="BKMK_RemoveSUP"></a> Rimuovere il ruolo del sistema del sito del punto di aggiornamento software  
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile rimuovere il ruolo di sistema del sito del punto di aggiornamento software in un sito dalla console di Configuration Manager. I criteri client vengono aggiornati per rimuovere il punto di aggiornamento software dall'elenco. Quando si rimuove l'ultimo punto di aggiornamento software nel sito, l'elenco di punti di aggiornamento software non conterrà alcun punto di aggiornamento software e gli aggiornamenti software sono sostanzialmente disabilitati nel sito. Quando sono presenti più punti di aggiornamento software in un sito primario e si rimuove il punto di aggiornamento software configurato come origine della sincronizzazione, è necessario scegliere un altro punto di aggiornamento software nel sito come nuova origine della sincronizzazione.  
 

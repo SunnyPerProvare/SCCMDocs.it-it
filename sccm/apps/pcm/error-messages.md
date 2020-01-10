@@ -10,17 +10,16 @@ ms.assetid: 0d3cf6e1-b295-4b05-821d-e9f57c74ca14
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a10ebaad901181e80a449c5c64274a0d68b53100
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1baaf1a57471d52656b1266f4f580cc9003494e8
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62198802"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817483"
 ---
 # <a name="technical-reference-for-package-conversion-manager-error-messages"></a>Informazioni tecniche sui messaggi di errore di Package Conversion Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!--1357861-->
 

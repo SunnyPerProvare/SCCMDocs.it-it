@@ -10,17 +10,16 @@ ms.assetid: 0ef5f3ce-b0e4-4775-b5c2-b245e45b4194
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c7f54ccda217ebbae543b70aeead37f6c55cf0f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 946cf2fb99e68d38eae12d2fb7fb4e89627c79e1
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62243542"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821223"
 ---
 # <a name="prepare-site-system-roles-for-os-deployments-with-configuration-manager"></a>Preparare i ruoli di sistema del sito per le distribuzioni dei sistemi operativi
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Per distribuire i sistemi operativi in Configuration Manager, è necessario preparare i ruoli del sistema del sito seguenti che richiedono considerazioni e configurazioni specifiche.
 
@@ -68,9 +67,9 @@ Per distribuire i sistemi operativi ai client di Configuration Manager che esegu
 
 È possibile personalizzare le dimensioni della finestra e del blocco TFTP RamDisk per i punti di distribuzione abilitati per PXE. Se la rete è stata personalizzata, il download dell'immagine di avvio potrebbe non riuscire a causa di un errore di timeout, perché le dimensioni del blocco o della finestra sono eccessive. La personalizzazione delle dimensioni della finestra e del blocco TFTP RamDisk consentono di ottimizzare il traffico TFTP quando si usa PXE per soddisfare i requisiti di rete specifici. Per individuare la scelta più efficiente, è necessario testare le impostazioni personalizzate nel proprio ambiente.  
 
--   **Dimensioni blocco TFTP**: le dimensioni del blocco corrispondono alle dimensioni dei pacchetti di dati inviati dal server al client che sta scaricando il file. Dimensioni maggiori del blocco consentono al server di inviare meno pacchetti e di conseguenza si verificano meno ritardi per il round trip tra il server e client. Dimensioni del blocco molto grandi comportano tuttavia la creazione di pacchetti frammentati, che non sono supportati dalla maggior parte delle implementazioni di client PXE.  
+-   **Dimensioni del blocco TFTP**: le dimensioni del blocco corrispondono alle dimensioni dei pacchetti di dati inviati dal server al client che sta scaricando il file. Dimensioni maggiori del blocco consentono al server di inviare meno pacchetti e di conseguenza si verificano meno ritardi per il round trip tra il server e client. Dimensioni del blocco molto grandi comportano tuttavia la creazione di pacchetti frammentati, che non sono supportati dalla maggior parte delle implementazioni di client PXE.  
 
--   **Dimensioni finestra TFTP**: TFTP richiede un pacchetto di acknowledgment (ACK) per ogni blocco di dati inviato. Il server non invia il blocco successivo nella sequenza finché non riceve il pacchetto ACK per il blocco precedente. L'uso di finestre TFTP consente di definire quanti blocchi di dati sono necessari per riempire una finestra. Il server invia i blocchi di dati back-to-back fino a riempire la finestra e quindi il client invia un pacchetto ACK. Se si aumentano le dimensioni di questa finestra si riduce il numero di ritardi per round trip tra il client e il server, nonché il tempo complessivo necessario per scaricare un'immagine di avvio.  
+-   **Dimensioni della finestra TFTP**: TFTP richiede un pacchetto di acknowledgment (ACK) per ogni blocco di dati inviato. Il server non invia il blocco successivo nella sequenza finché non riceve il pacchetto ACK per il blocco precedente. L'uso di finestre TFTP consente di definire quanti blocchi di dati sono necessari per riempire una finestra. Il server invia i blocchi di dati back-to-back fino a riempire la finestra e quindi il client invia un pacchetto ACK. Se si aumentano le dimensioni di questa finestra si riduce il numero di ritardi per round trip tra il client e il server, nonché il tempo complessivo necessario per scaricare un'immagine di avvio.  
   
 
 #### <a name="modify-the-ramdisk-tftp-window-size"></a>Modificare le dimensioni della finestra TFTP RamDisk  

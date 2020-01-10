@@ -10,17 +10,16 @@ ms.assetid: e63f2394-6eb1-4a33-bec5-8377fc62a34e
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: fadbdaf8dc836e2f468aa0f8a82408d718606bc1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 63a8509267f6a16dd272a23ce46ae52696ec2733
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892327"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819761"
 ---
 # <a name="configure-custom-client-settings-for-endpoint-protection"></a>Configurare le impostazioni client personalizzate per Endpoint Protection
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questa procedura consente di configurare impostazioni client personalizzate per Endpoint Protection, distribuibili nelle raccolte di dispositivi nella gerarchia.
 

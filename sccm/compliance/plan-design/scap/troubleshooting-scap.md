@@ -10,17 +10,16 @@ ms.assetid: 27261853-1641-4826-98c6-afbb73a1209d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58a3c69e6206aa651e55f96286f98f64f748de70
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f1dcfe872fceb6163bbe8893062bc8294dc9b2de
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62213971"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818146"
 ---
 # <a name="troubleshoot-the-scap-extensions-for-configuration-manager"></a>Risolvere i problemi delle estensioni SCAP per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Le estensioni SCAP per Configuration Manager sono progettate per funzionare con i flussi dei dati SCAP destinati allo strumento di convalida SCAP con funzionalità di controllo di accesso per il supporto della conformità con l'iniziativa USGCB. In genere, non si verificano problemi con i flussi dei dati SCAP USGCB che vengono scaricati dal sito Web NIST.
 
@@ -69,7 +68,7 @@ Di seguito sono elencati alcuni problemi e soluzioni comuni per facilitare la ri
 
      - È più probabile che le nuove impostazioni non siano ancora diventate effettive. Per impostazione predefinita, i client Active Directory verificano la disponibilità di aggiornamento a Criteri di gruppo ogni 90 minuti. Questo ciclo potrebbe essere uno dei motivi per cui le impostazioni non sembrano essere effettive, anche se i criteri sono stati configurati correttamente.  
 
-     - Molte impostazioni del computer richiedono un riavvio per diventare effettive. L'impostazione denominata **Crittografia di sistema: utilizza algoritmi FIPS compatibili per crittografia, hash e firma**, ad esempio, richiede il riavvio del computer prima che Windows possa usare gli algoritmi di crittografia specificati. È possibile ignorare l'intervallo di aggiornamento di Criteri di gruppo immettendo il comando seguente nel prompt dei comandi con privilegi di amministratore: `gpupdate /force`. Dopo aver completato l'aggiornamento di Criteri di gruppo, riavviare il computer per assicurarsi che tutte le impostazioni vengano applicate. Per altre informazioni, vedere [Descrizione dell'utilità di aggiornamento di Criteri di gruppo](https://support.microsoft.com/help/298444).
+     - Molte impostazioni del computer richiedono un riavvio per diventare effettive. Ad esempio l'impostazione denominata **Crittografia sistema: utilizza algoritmi FIPS compatibili per crittografia, hash e firma** richiede il riavvio del computer prima che Windows possa usare gli algoritmi di crittografia specificati. È possibile ignorare l'intervallo di aggiornamento di Criteri di gruppo immettendo il comando seguente nel prompt dei comandi con privilegi di amministratore: `gpupdate /force`. Dopo aver completato l'aggiornamento di Criteri di gruppo, riavviare il computer per assicurarsi che tutte le impostazioni vengano applicate. Per altre informazioni, vedere [Descrizione dell'utilità di aggiornamento di Criteri di gruppo](https://support.microsoft.com/help/298444).
 
 - Si verifica un problema quando si specifica la connessione di database usando le informazioni aziendali.  
 

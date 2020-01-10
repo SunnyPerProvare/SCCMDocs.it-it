@@ -10,17 +10,16 @@ ms.assetid: 07c3c6d9-f056-4c4d-bc70-ede5ca933807
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: de06556d6fbf785e08e5c14f7e0ee1b09458feaf
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9e205c1f886e9eabcd534a9206ba1199ce1ad2f4
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68340407"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821393"
 ---
 # <a name="associate-users-with-a-destination-computer-in-configuration-manager"></a>Associare gli utenti a un computer di destinazione in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Quando si usa Configuration Manager per la distribuzione dei sistemi operativi, è possibile associare gli utenti al computer di destinazione. Questa opzione è valida indipendentemente dal fatto che un singolo utente o più utenti siano gli utenti primari del computer di destinazione.  
 
