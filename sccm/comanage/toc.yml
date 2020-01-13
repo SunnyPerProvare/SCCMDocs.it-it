@@ -1,5 +1,5 @@
-- name: Co-gestione
-  href: overview.md
+- name: Documentazione sulla co-gestione
+  href: index.yml
 - name: Panoramica
   items:
     - name: Informazioni sulla co-gestione
