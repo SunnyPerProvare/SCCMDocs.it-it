@@ -1,5 +1,5 @@
-- name: Proteggere dati e infrastruttura
-  href: understand\protect-data-and-site-infrastructure.md
+- name: Documentazione dell'infrastruttura e della protezione dei dati
+  href: index.yml
 - name: Comprendere ed esplorare
   items:
     - name: Panoramica
