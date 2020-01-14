@@ -10,13 +10,12 @@ ms.assetid: 5eae4400-58ca-4c71-804c-6a585cd3df5d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 33ad4aeb220c163d429212990a92eae71f8549a7
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
-ms.translationtype: HT
+ms.openlocfilehash: 8c8d88b5f539338c790c18e5973bde1ba3e5b28f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75520950"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821869"
 ---
 # <a name="set-up-ios-hybrid-device-management-with-configuration-manager-and-microsoft-intune"></a>Configurare la gestione di dispositivi ibridi iOS con Configuration Manager e Microsoft Intune
 

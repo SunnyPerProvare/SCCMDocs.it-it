@@ -10,13 +10,12 @@ ms.assetid: dc1f70f5-64ab-42ab-aa91-d3858803e12f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61ddfa93f4f13f7e648368efe1c611beaa420fdc
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
-ms.translationtype: HT
+ms.openlocfilehash: 175348de2309f675cc7fca9ad1236a08b0369e88
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75520780"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806595"
 ---
 # <a name="set-up-windows-hybrid-device-management-with-configuration-manager-and-microsoft-intune"></a>Configurare la gestione di dispositivi ibridi Windows con Configuration Manager e Microsoft Intune
 
@@ -57,7 +56,7 @@ Due fattori determinano in che modo è possibile semplificare la registrazione d
 
 ## <a name="enable-windows-10-automatic-enrollment"></a>Abilitare la registrazione automatica di Windows 10
 
-Con la registrazione automatica è possibile registrare PC Windows 10 e dispositivi mobili Windows 10 aziendali o personali in Intune aggiungendo un account aziendale o dell'istituto di istruzione e accettandone la gestione. Non occorrono altre operazioni. Il dispositivo dell'utente registra e aggiunge Azure Active Directory in background. Dopo essere stato registrato, il dispositivo viene gestito con Intune.
+Con la registrazione automatica è possibile registrare PC Windows 10 e dispositivi mobili Windows 10 aziendali o personali in Intune aggiungendo un account aziendale o dell'istituto di istruzione e accettandone la gestione. Non occorrono altre operazioni. Il dispositivo dell'utente registra e aggiunge Azure Active Directory in background. Dopo la registrazione, il dispositivo viene gestito con Intune.
 
 **Prerequisiti**
 - Sottoscrizione di Azure Active Directory Premium ([sottoscrizione di prova](https://go.microsoft.com/fwlink/?LinkID=816845))
@@ -78,7 +77,7 @@ Con la registrazione automatica è possibile registrare PC Windows 10 e disposit
 
    ![Schermata del portale di Azure](../media/auto-enroll-intune.png)
 
-4. Configurare **Ambito utente MDM**. Specificare i dispositivi utente da gestire con Microsoft Intune. I dispositivi utente Windows 10 vengono registrati automaticamente per essere gestiti con Microsoft Intune.
+4. Configurare **Ambito utente MDM**. Specificare i dispositivi utente da gestire con Microsoft Intune. I dispositivi Windows 10 di questi utenti verranno registrati automaticamente per la gestione con Microsoft Intune.
 
     - **Nessuno**
     - **Alcuni**
@@ -102,15 +101,15 @@ L'autenticazione a due fattori non è abilitata per il servizio per impostazione
 ### <a name="create-cnames-to-simplify-enrollment"></a>Creare record CNAME per semplificare la registrazione
 Creare record di risorse CNAME DNS per il dominio della società. Ad esempio, se il sito Web della società è contoso.com, si creerà un record CNAME in DNS che reindirizzi EnterpriseEnrollment.contoso.com a enterpriseenrollment-s.manage.microsoft.com.
 
-Sebbene la creazione di voci DNS CNAME sia facoltativa, i record CNAME semplificano la registrazione per gli utenti. Se non viene trovato alcun record di registrazione CNAME, agli utenti viene richiesto di immettere manualmente il nome del server MDM, enrollment.manage.microsoft.com.
+Anche se la creazione di record CNAME DNS è facoltativa, i record CNAME semplificano la registrazione per gli utenti. Se non viene trovato alcun record di registrazione CNAME, agli utenti viene richiesto di immettere manualmente il nome del server MDM, enrollment.manage.microsoft.com.
 
-|Type|Nome dell'host|Punta a|TTL|  
+|Digitare|Nome dell'host|Punta a|TTL|  
 |----------|---------------|---------------|---|
 |CNAME|EnterpriseEnrollment.company_domain.com|EnterpriseEnrollment-s.manage.microsoft.com| 1 ora|
 
 Se si dispone di più suffissi UPN, è necessario creare un CNAME per ciascun nome di dominio e puntare ciascuno a EnterpriseEnrollment-s.manage.microsoft.com. Ad esempio, se gli utenti di Contoso usano name@contoso.com, ma usano anche name@us.contoso.com e name@eu.constoso.com come indirizzo di posta elettronica/UPN, l'amministratore DNS Contoso dovrà creare i CNAME seguenti.
 
-|Type|Nome dell'host|Punta a|TTL|  
+|Digitare|Nome dell'host|Punta a|TTL|  
 |----------|---------------|---------------|---|
 |CNAME|EnterpriseEnrollment.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com|1 ora|
 |CNAME|EnterpriseEnrollment.us.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com|1 ora|
