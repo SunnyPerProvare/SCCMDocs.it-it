@@ -16,18 +16,12 @@
           href: plan-design/prerequisites-for-certificate-profiles.md
         - name: Autorizzazioni dei modelli di certificato per i profili di certificato
           href: plan-design/planning-for-certificate-template-permissions.md
-    - name: 'Pianificare i profili di posta elettronica, Wi-Fi e VPN'
-      items:
-        - name: Prerequisiti dei profili di posta elettronica
-          href: plan-design/prerequisites-for-email-profiles.md
-        - name: Prerequisiti per i profili Wi-Fi e VPN
-          href: plan-design/prerequisites-for-wifi-vpn-profiles.md
+    - name: Prerequisiti per i profili Wi-Fi e VPN
+      href: plan-design/prerequisites-for-wifi-vpn-profiles.md
     - name: Sicurezza e privacy
       items:
         - name: Profili Wi-Fi e VPN
           href: plan-design/security-and-privacy-for-wifi-vpn-profiles.md
-        - name: Profili di posta elettronica
-          href: plan-design/security-and-privacy-for-email-profiles.md
         - name: Profili certificato
           href: plan-design/security-and-privacy-for-certificate-profiles.md
 - name: Distribuire e usare

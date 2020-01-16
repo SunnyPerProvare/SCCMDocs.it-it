@@ -28,8 +28,6 @@
           href: quickstart-setup-hybrid-aad.md
         - name: Eseguire l'aggiornamento a Windows 10
           href: quickstart-upgrade-win10.md
-        - name: Eseguire la migrazione da MDM ibrido
-          href: quickstart-migrate-hybrid-mdm.md
         - name: Ottenere assistenza da FastTrack
           href: quickstart-fasttrack.md
 - name: Esercitazioni
