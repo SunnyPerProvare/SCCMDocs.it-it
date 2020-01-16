@@ -10,12 +10,12 @@ ms.assetid: d240a836-c49b-49ab-a920-784c062d6748
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a797bde348654872cae7efe57429cff828828e5c
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: ba54eec13e86b1a21cad2b505484d7b32dfcaaed
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75821988"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76035277"
 ---
 # <a name="create-pfx-certificate-profiles-using-a-certificate-authority"></a>Creare profili certificato PFX usando un'autorità di certificazione
 
@@ -26,6 +26,10 @@ Informazioni su come creare un profilo certificato che usa un'autorità di certi
 Configuration Manager consente di creare un profilo certificato PFX usando le credenziali emesse da un'autorità di certificazione. È possibile scegliere Microsoft o Entrust come autorità di certificazione. Quando vengono distribuiti nei dispositivi utente, i file PFX generano certificati specifici dell'utente per supportare lo scambio di dati crittografati.
 
 Per importare le credenziali del certificato da file di certificato esistenti, vedere [Import PFX certificate](/configmgr/mdm/deploy-use/import-pfx-certificate-profiles)Profiles.
+
+## <a name="prerequisites"></a>Prerequisiti
+
+Prima di iniziare a creare un profilo certificato, verificare che i prerequisiti necessari siano pronti. Per ulteriori informazioni, vedere [prerequisiti per i profili certificato](/configmgr/protect/plan-design/prerequisites-for-certificate-profiles). Per i profili certificato PFX, ad esempio, è necessario un ruolo del sistema del sito del [punto di registrazione certificati](/configmgr/protect/deploy-use/certificate-infrastructure#step-2---install-and-configure-the-certificate-registration-point) .
 
 ## <a name="create-a-profile"></a>Creare un profilo  
 

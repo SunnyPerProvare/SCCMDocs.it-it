@@ -1,8 +1,8 @@
 ---
-title: 'Installare ruoli per la gestione di dispositivi mobili locale '
+title: Installare i ruoli per MDM locale
 titleSuffix: Configuration Manager
-description: Installare i ruoli del sistema del sito per la gestione dei dispositivi mobili locale in Configuration Manager.
-ms.date: 03/05/2017
+description: Installare i ruoli del sistema del sito richiesti per la gestione dei dispositivi mobili (MDM) locale in Configuration Manager.
+ms.date: 01/09/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,60 +10,80 @@ ms.assetid: c3cf9f64-c2b9-4ace-9527-2aba6d4eef04
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3b6421866dc9813fa562e3a8f5662b1c02c776e9
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 25df578e0fed22778b2d670a85cb8d25aa47acfa
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75821648"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76035212"
 ---
-# <a name="install-site-system-roles-for-on-premises-mobile-device-management-in-configuration-manager"></a>Installare i ruoli del sistema del sito per la gestione dei dispositivi mobili locale in Configuration Manager
+# <a name="install-site-system-roles-for-on-premises-mdm-in-configuration-manager"></a>Installare i ruoli del sistema del sito per MDM locale in Configuration Manager
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-Configuration Manager nella gestione dei dispositivi mobili\-locale richiede i seguenti ruoli del sistema del sito nell'infrastruttura del sito di Configuration Manager:  
+Configuration Manager gestione di dispositivi mobili (MDM) locale richiede i seguenti ruoli del sistema del sito nel sito Configuration Manager:
 
-- Punto di registrazione  
+- Punto di registrazione
 
-- Punto proxy di registrazione  
+- Punto proxy di registrazione
 
-- Punto di distribuzione  
+- Punto di distribuzione
 
-- Punto di gestione dei dispositivi  
+- Punto di gestione dei dispositivi, un punto di gestione che è possibile consentire per i dispositivi mobili
 
-- Punto di connessione del servizio  
+## <a name="requirements-and-limitations"></a>Requisiti e limitazioni
 
-  Se si sta aggiungendo la gestione di dispositivi mobili locale a un'organizzazione in cui la maggior parte dei PC e dei dispositivi è gestita tramite il software client di Configuration Manager, la maggior parte dei ruoli del sistema del sito potrebbe essere già installata nell'ambito dell'infrastruttura esistente. In caso contrario, vedere [aggiungere ruoli del sistema del sito per Configuration Manager](../../core/servers/deploy/configure/add-site-system-roles.md) per informazioni complete su come aggiungerli al sito.  
+- MDM locale richiede l'abilitazione dei ruoli del sistema del sito per le comunicazioni HTTPS. Per altre informazioni, vedere [configurare i certificati per le comunicazioni attendibili in MDM locale](/sccm/mdm/get-started/set-up-certificates-on-premises-mdm).
 
-> [!NOTE]  
->  Se si usano le repliche di database con il ruolo di sistema del sito punto gestione periferiche, i nuovi dispositivi registrati non riusciranno inizialmente a connettersi al punto gestione periferiche, fino al completamento della sincronizzazione della replica di database. Questo errore di connessione si verifica perché la replica di database non include le informazioni sul nuovo dispositivo registrato necessarie per attivare correttamente la connessione. Le repliche vengono sincronizzate ogni 5 minuti, quindi i dispositivi non riusciranno a connettersi per i primi 5 minuti dopo la registrazione (in genere 2 tentativi di connessione). Trascorso questo tempo, la connessione verrà attivata correttamente.  
+- Current Branch of Configuration Manager supporta solo le connessioni *Intranet* dai dispositivi ai punti di distribuzione e ai punti di gestione dei dispositivi per MDM locale. Tuttavia, se si gestiscono anche computer macOS, questi client richiedono connessioni *Internet* a tali ruoli. Quando si configura il punto di distribuzione e il punto di gestione dei dispositivi, utilizzare l'opzione per **consentire le connessioni Intranet e Internet**.
 
- Che si stiano usando ruoli del sistema del sito esistenti o aggiungendone di nuovi, è necessario configurarli perché possano essere usati per gestire i dispositivi moderni. Attenersi alla procedura seguente per configurare il punto di distribuzione e il punto di gestione dei dispositivi per il corretto funzionamento della gestione di dispositivi mobili locale:  
+- I punti di distribuzione configurati per le connessioni Intranet richiedono la configurazione dei limiti del sito. Configuration Manager supporta solo i limiti dell'intervallo IPv4 per MDM locale. Per altre informazioni, vedere [Definire i limiti del sito e i gruppi di limiti](/configmgr/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups.md).
 
-> [!NOTE]  
->  Il ramo corrente di Configuration Manager supporta solo le connessioni Intranet dai dispositivi ai punti di distribuzione e di gestione dei dispositivi per la gestione dei dispositivi mobili locale. Se tuttavia si gestiscono anche computer Mac OS X, questi client richiedono connessioni Internet a tali ruoli del sistema del sito. In tal caso, quando si configurano le proprietà del punto di distribuzione e del punto di gestione dei dispositivi, è necessario usare l'impostazione **Consenti connessioni intranet e Internet**.  
+- Se si usano le [repliche di database](/configmgr/core/servers/deploy/configure/database-replicas-for-management-points) con il punto di gestione dei dispositivi, i dispositivi appena registrati non riusciranno inizialmente a connettersi. Questo errore di connessione si verifica perché la replica di database non contiene le informazioni sul dispositivo appena registrato necessario per una connessione corretta. Le repliche vengono sincronizzate ogni cinque minuti. I dispositivi non riusciranno a connettersi per i primi cinque minuti dopo la registrazione, che in genere è costituito da due tentativi di connessione. I dispositivi si connetteranno correttamente.
 
-### <a name="to-configure-site-system-roles-to-manage-modern-devices"></a>Per configurare i ruoli del sistema del sito per la gestione dei dispositivi moderni:  
+## <a name="add-roles"></a>Aggiungere ruoli
 
-1. Nella console di Configuration Manager fare clic su **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Server e ruoli del sistema del sito**.  
+Se si aggiunge MDM locale a un sito con la maggior parte dei dispositivi gestiti con il client di Configuration Manager, è possibile che alcuni di questi ruoli siano già installati nel sito. Ad esempio, il punto di distribuzione è un ruolo comune e il punto di gestione dei dispositivi è necessario per gestire i dispositivi macOS.
 
-2. Selezionare il server del sistema del sito con il punto di distribuzione o il punto di gestione dei dispositivi che si vuole configurare, aprire le proprietà per **Sistema del sito** e verificare che sia specificato un nome FQDN. Fare clic su **OK**.  
+Per ulteriori informazioni su come aggiungere ruoli al sito, vedere [aggiungere ruoli del sistema del sito](/configmgr/core/servers/deploy/configure/install-site-system-roles).
 
-3. Aprire le proprietà per il ruolo del sistema del sito del punto di distribuzione. Nella scheda Generale verificare che sia selezionato **HTTPS** e selezionare **Consenti solo connessioni intranet**.  
+## <a name="configure-roles"></a>Configurare i ruoli
 
-    Se con il client di Configuration Manager si gestiscono separatamente anche computer Mac, usare **Consenti connessioni intranet e Internet**.  
+Configurare ruoli nuovi o esistenti per la gestione dei dispositivi mobili. Attenersi alla procedura seguente per configurare il punto di distribuzione e il punto di gestione dei dispositivi in modo che funzionino correttamente per MDM locale:
 
-   > [!NOTE]  
-   >  I punti di distribuzione configurati per le connessioni Intranet richiedono che i limiti del sito siano configurati per loro. Current Branch di Configuration Manager supporta i limiti degli intervalli IPv4 solo per la gestione di dispositivi mobili locale. Per ulteriori informazioni sulla configurazione dei limiti del sito, vedere [definire i limiti del sito e i gruppi di limiti per Configuration Manager](../../core/servers/deploy/configure/define-site-boundaries-and-boundary-groups.md).  
+1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Configurazione del sito** e selezionare il nodo **Server e ruoli del sistema del sito**.
 
-4. Fare clic sulla casella di controllo accanto a **Consenti ai dispositivi mobili di connettersi a questo punto di distribuzione** e quindi fare clic su **OK**.  
+1. Selezionare il server del sistema del sito con il punto di distribuzione o il punto di gestione dei dispositivi che si desidera configurare. Selezionare il server nell'elenco, quindi selezionare il ruolo del **sistema del sito** nel riquadro dei dettagli ruoli del sistema del sito. Nella scheda **ruolo del sito** della barra multifunzione selezionare **Proprietà**.
 
-5. Aprire le proprietà per il ruolo del sistema del sito del punto di gestione. Nella scheda Generale verificare che sia selezionato **HTTPS** e selezionare **Consenti solo connessioni intranet**.  
+    > [!TIP]
+    > In un sito di grandi dimensioni è possibile definire l'ambito della visualizzazione in modo da visualizzare solo i server con ruoli specifici. Quando si seleziona il nodo **Server e ruoli del sistema del sito** , nella barra multifunzione del tag Home selezionare **server con ruolo**. Selezionare quindi il ruolo desiderato dall'elenco dei ruoli attualmente disponibili nel sito.
 
-    Se con il client di Configuration Manager si gestiscono separatamente anche computer Mac, usare **Consenti connessioni intranet e Internet**.  
+    Nella scheda **generale** delle proprietà del **sistema del sito**, assicurarsi che il **nome** sia un nome di dominio completo (FQDN). Chiudere le proprietà.
 
-6. Fare clic sulla casella di controllo accanto a **Consenti ai dispositivi mobili e ai computer Mac l'utilizzo del punto di gestione**. Fare clic su **OK**.  
+1. Nell'elenco console selezionare un server con un ruolo di punto di distribuzione locale. Selezionare il ruolo del **punto di distribuzione** nel riquadro dei dettagli ruoli del sistema del sito. Nella scheda **ruolo del sito** della barra multifunzione selezionare **Proprietà**. Nella scheda **comunicazione** delle proprietà del **punto di distribuzione**:
 
-    Questo consente di trasformare il punto di gestione in un punto di gestione dei dispositivi.  
+    1. Selezionare **https**e selezionare **Consenti solo connessioni Intranet**.
 
-   Una volta aggiunti e configurati i ruoli del sistema del sito per la gestione dei dispositivi moderni, è necessario configurare i server che ospitano i ruoli come endpoint di tipo trusted per la registrazione e la comunicazione con i dispositivi gestiti. Per altre informazioni, vedere [configurare i certificati per le comunicazioni attendibili per la gestione dei dispositivi mobili locale](../../mdm/get-started/set-up-certificates-on-premises-mdm.md) .  
+        > [!IMPORTANT]
+        > Se si gestiscono anche computer macOS con il client di Configuration Manager, usare invece **Consenti connessioni Intranet e Internet** .
+
+    1. Abilitare l'opzione per **consentire ai dispositivi mobili di connettersi a questo punto di distribuzione**, quindi chiudere le proprietà.
+
+1. Aprire le proprietà per il ruolo del sistema del sito del **punto di gestione** .
+
+    1. Nella scheda **generale** selezionare **https**e selezionare **Consenti solo connessioni Intranet**.
+
+        > [!IMPORTANT]
+        > Se si gestiscono anche computer macOS con il client di Configuration Manager, usare invece **Consenti connessioni Intranet e Internet** .
+
+    1. Abilitare l'opzione per **consentire ai dispositivi mobili e ai computer Mac l'utilizzo del punto di gestione**, quindi chiudere le proprietà.
+
+        > [!NOTE]
+        > Questa opzione consente di trasformare il punto di gestione in un punto di gestione *periferiche* .  
+
+## <a name="next-step"></a>Passaggio successivo
+
+Una volta aggiunti e configurati i ruoli per la gestione dei dispositivi mobili, configurare i server come endpoint attendibili. Questa attendibilità consente ai ruoli di comunicare con e registrare i dispositivi gestiti.
+
+> [!div class="nextstepaction"]
+> [Configurare i certificati per le comunicazioni attendibili](/configmgr/mdm/get-started/set-up-certificates-on-premises-mdm)

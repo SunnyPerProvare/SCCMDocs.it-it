@@ -1,8 +1,8 @@
 ---
-title: 'Gestire i dispositivi mobili '
+title: Gestione di dispositivi con Exchange
 titleSuffix: Configuration Manager
-description: Gestire i dispositivi mobili usando il connettore Exchange Server in Configuration Manager.
-ms.date: 03/05/2017
+description: Gestire i dispositivi mobili con il connettore Exchange Server in Configuration Manager.
+ms.date: 12/31/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,47 +10,69 @@ ms.assetid: aba688d9-fd5b-4c42-8cb4-f7e1b161ef50
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a79da84c0d3b36c1dade793298f54077058832d1
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 426bf16d984f364020362680e3eb7539c7f80ef3
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826850"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76035262"
 ---
-# <a name="manage-mobile-devices-with-configuration-manager-and-exchange"></a>Gestire i dispositivi mobili con Configuration Manager ed Exchange
+# <a name="device-management-with-exchange-and-configuration-manager"></a>Gestione dei dispositivi con Exchange e Configuration Manager
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-Utilizzare il connettore Exchange Server in Configuration Manager quando si desidera gestire i dispositivi mobili che si connettono a Exchange Server (locale o online) utilizzando il protocollo Microsoft Exchange ActiveSync e non è possibile registrarli utilizzando la configurazione di Manager. È possibile configurare le funzionalità di gestione dei dispositivi mobili di Exchange, come la cancellazione remota dati nel dispositivo e il controllo delle impostazioni per più server Exchange, dalla console di Configuration Manager.  
+Se si dispone di dispositivi mobili che si connettono a Exchange Server tramite il protocollo ActiveSync, è possibile utilizzare il connettore Exchange Server in Configuration Manager per gestire tali dispositivi. Il connettore funziona sia con Exchange Server locale che con Exchange Online. Utilizzare la console di Configuration Manager per configurare le funzionalità di gestione dei dispositivi mobili di Exchange. Ad esempio, la cancellazione remota del dispositivo e il controllo delle impostazioni per più server Exchange.
 
- ![ConfigMgr&#45;con&#45;Exchange](../../mdm/deploy-use/media/configmgr-with-exchange.png "ConfigMgr-with-Exchange")  
+![Diagramma logico del connettore Exchange Server con Configuration Manager](media/configmgr-with-exchange.png)  
 
- Quando si gestiscono i dispositivi mobili usando il connettore Exchange Server, il connettore non installa il client di Configuration Manager nei dispositivi mobili. Pertanto, alcune funzioni di gestione sono limitate. È ad esempio impossibile installare il software in questi dispositivi o utilizzare gli elementi di configurazione per configurarli. Per altre informazioni sulle diverse funzionalità di gestione che è possibile usare con Configuration Manager per i dispositivi mobili, vedere [scegliere una soluzione di gestione dei dispositivi per Configuration Manager](../../core/plan-design/choose-a-device-management-solution.md).  
+Quando si gestiscono i dispositivi mobili con questo connettore, non installa il client Configuration Manager o registra i dispositivi tramite MDM. Le funzioni di gestione di Exchange Server sono limitate rispetto a quelle di altre opzioni. Ad esempio, non è possibile installare il software o usare gli elementi di configurazione per configurare questi dispositivi. Per ulteriori informazioni, vedere [scegliere una soluzione di gestione dei dispositivi per Configuration Manager](/configmgr/core/plan-design/choose-a-device-management-solution).  
 
-> [!IMPORTANT]  
->  Prima di installare il connettore Exchange Server, confermare il supporto della versione di Microsoft Exchange usata da parte di Configuration Manager. Per ulteriori informazioni, vedere "connettore Exchange Server" in [sistemi operativi supportati per siti e client per Configuration Manager](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers).  
+## <a name="policies"></a>Criteri
 
- Quando si usa il connettore Exchange Server, i dispositivi mobili possono essere gestiti dalle impostazioni configurate in Configuration Manager invece di essere gestiti dai criteri cassetta postale predefiniti di Exchange ActiveSync. Definire le impostazioni da usare nelle impostazioni del gruppo seguenti: **Generale**, **Password**, **Gestione della posta elettronica**, **Sicurezza**e **Applicazione**. Ad esempio, nell'impostazione del gruppo **Password** , è possibile configurare se i dispositivi mobili richiedono una password, la lunghezza minima della password, la sua complessità e se ne è consentito il ripristino.  
+Quando si usa il connettore, Configuration Manager configura le impostazioni nei dispositivi mobili. I dispositivi non usano i criteri cassetta postale di Exchange ActiveSync predefiniti. Definire le impostazioni che si desidera utilizzare nei gruppi seguenti:
 
- Quando si configura almeno un'impostazione nel gruppo, Configuration Manager gestisce tutte le impostazioni nel gruppo per i dispositivi mobili. Se non si configura alcuna impostazione in un gruppo, Exchange continua a gestire i dispositivi mobili per tali impostazioni. I criteri cassetta postale di Exchange ActiveSync configurati in Exchange Server e assegnati agli utenti verranno comunque applicati.  
+- **Generalee**
+- **Password**
+- **Gestione della posta elettronica**
+- **Security**
+- **Applicazione**
 
- È inoltre possibile configurare il connettore Exchange Server per gestire le regole di accesso di Exchange e consentire, bloccare o mettere in quarantena i dispositivi mobili. È possibile cancellare i dati dei dispositivi mobili da remoto usando la console di Configuration Manager e gli utenti possono cancellare i dati dai loro dispositivi mobili usando il Catalogo applicazioni.  
+Ad esempio, nel gruppo **password** è possibile configurare le impostazioni seguenti:
 
- Un dispositivo mobile dell'utente viene visualizzato automaticamente nel Catalogo applicazioni quando viene gestito dal connettore Exchange Server ed Exchange Server si trova in locale. Quando si configura il connettore Exchange Server per Microsoft Exchange Online, è necessario configurare manualmente l'affinità utente-dispositivo in modo che il dispositivo mobile dell'utente venga visualizzato nel Catalogo applicazioni. Per altre informazioni su come configurare manualmente l'affinità utente dispositivo, vedere [collegare utenti e dispositivi con l'affinità utente dispositivo](../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md).  
+- Se i dispositivi mobili richiedono una password
+- Lunghezza minima della password
+- Complessità password
+- Indica se il ripristino della password è consentito
+
+Quando si configura almeno un'impostazione nel gruppo, Configuration Manager gestisce tutte le impostazioni nel gruppo per i dispositivi mobili. Se non si configura alcuna impostazione in un gruppo, Exchange continua a gestire tali impostazioni per i dispositivi mobili. Tutti i criteri cassetta postale di Exchange ActiveSync configurati in Exchange Server e assegnati agli utenti vengono comunque applicati.
+
+## <a name="access-rules-and-remote-actions"></a>Regole di accesso e azioni remote
+
+È inoltre possibile configurare il connettore Exchange Server per gestire le regole di accesso a Exchange. Queste regole di accesso includono i dispositivi mobili Consenti, blocca o quarantena. È possibile cancellare i dispositivi mobili da remoto utilizzando la console di Configuration Manager e gli utenti possono cancellare i dispositivi mobili da remoto utilizzando il Catalogo applicazioni.
+
+Il dispositivo mobile di un utente viene visualizzato automaticamente nel Catalogo applicazioni quando lo si gestisce e il server Exchange è in locale. Affinché il dispositivo mobile venga visualizzato nel Catalogo applicazioni quando si usa Exchange Online, configurare manualmente l'affinità utente dispositivo. Per altre informazioni, vedere [Collegare utenti e dispositivi mediante l'affinità utente dispositivo](/configmgr/apps/deploy-use/link-users-and-devices-with-user-device-affinity).
 
 > [!TIP]  
->  Se si gestisce un dispositivo mobile utilizzando il connettore Exchange Server e il dispositivo mobile viene trasferito a un altro utente, eliminare il dispositivo mobile dalla console di Configuration Manager prima che il nuovo proprietario del dispositivo configuri l'account di Exchange in Questo dispositivo mobile è stato trasferito.  
+> Quando un dispositivo mobile viene trasferito a un altro utente, prima che il nuovo proprietario configuri l'account di Exchange nel dispositivo, eliminare il dispositivo mobile dalla console di Configuration Manager.
 
-## <a name="required-security-permissions"></a>Autorizzazioni di sicurezza richieste  
- È necessario disporre delle seguenti autorizzazioni di sicurezza per configurare il connettore Exchange Server:  
+## <a name="prerequisites"></a>Prerequisiti
+
+> [!IMPORTANT]  
+> Prima di installare questo connettore, confermare che Configuration Manager supporta la versione di Exchange in uso. Per ulteriori informazioni, vedere [configurazioni supportate-connettore Exchange Server](/configmgr/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#bkmk_ExSrvConOS).  
+
+### <a name="permissions-to-configure-the-connector"></a>Autorizzazioni per configurare il connettore
+
+Per configurare il connettore Exchange Server in Configuration Manager, è necessario disporre delle autorizzazioni di sicurezza seguenti:
 
 - Per aggiungere, modificare ed eliminare il connettore Exchange Server: autorizzazione di **Modifica** per l'oggetto **Sito** .  
 
 - Per configurare le impostazioni del dispositivo mobile: autorizzazione **ModifyConnectorPolicy** per l'oggetto **Sito** .  
 
-  Il ruolo di sicurezza **Amministratore completo** include le autorizzazioni necessarie per configurare il connettore Exchange Server.  
+Il ruolo predefinito **amministratore completo** , ad esempio, include le autorizzazioni necessarie.  
 
-  È necessario disporre delle seguenti autorizzazioni di sicurezza per gestire i dispositivi mobili:  
+### <a name="permissions-to-manage-mobile-devices"></a>Autorizzazioni per la gestione dei dispositivi mobili
+
+Per gestire i dispositivi mobili sono necessarie le autorizzazioni di sicurezza seguenti:  
 
 - Per cancellare un dispositivo mobile: **Elimina risorsa** per l'oggetto **Raccolta** .  
 
@@ -58,84 +80,11 @@ Utilizzare il connettore Exchange Server in Configuration Manager quando si desi
 
 - Per consentire e bloccare i dispositivi mobili: **Modifica risorsa** per l'oggetto **Collection** .  
 
-  Il ruolo di sicurezza **Amministratore operazioni** include le autorizzazioni necessarie per gestire i dispositivi mobili utilizzando il connettore Exchange Server.  
+Il ruolo predefinito **amministratore operazioni** , ad esempio, include le autorizzazioni necessarie.
 
-  Per ulteriori informazioni su come configurare le autorizzazioni di sicurezza, vedere [configurare l'amministrazione basata su ruoli per Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
+Per altre informazioni, vedere [Configurare un'amministrazione basata su ruoli](/configmgr/core/servers/deploy/configure/configure-role-based-administration).
 
-## <a name="installing-and-configuring-an-exchange-server-connector"></a>Installare e configurare un connettore Exchange Server  
- Usare la seguente procedura per installare e configurare un connettore Exchange Server per gestire i dispositivi mobili. Configuration Manager supporta un solo connettore in un'organizzazione Exchange. Dopo aver completato questi passaggi, è possibile monitorare i dispositivi mobili rilevati e gestiti dal connettore quando si visualizzano le raccolte che mostrano i dispositivi mobili e utilizzando i report per dispositivi mobili.  
+## <a name="next-steps"></a>Passaggi successivi
 
-> [!NOTE]  
->  Configuration Manager generata i nomi per i dispositivi mobili rilevati usando il formato *NomeUtente*_*TipoDispositivo*. Se un utente ha più di un dispositivo mobile dello stesso tipo, Configuration Manager visualizzerà lo stesso nome per i dispositivi mobili nella console e nei report.  
-
-#### <a name="to-install-and-configure-an-exchange-server-connector"></a>Per installare e configurare un connettore Exchange Server  
-
-1.  Stabilire quale account verrà connesso al server Accesso client di Exchange per gestire i dispositivi mobili. L'account può essere l'account computer del server del sito o un account utente di Windows. Configurare quindi l'account per eseguire i seguenti cmdlet di Exchange Server:  
-
-    -   **Clear-ActiveSyncDevice**  
-
-    -   **Get-ActiveSyncDevice**  
-
-    -   **Get-ActiveSyncDeviceAccessRule**  
-
-    -   **Get-ActiveSyncDeviceStatistics**  
-
-    -   **Get-ActiveSyncMailboxPolicy**  
-
-    -   **Get-ActiveSyncOrganizationSettings**  
-
-    -   **Get-ExchangeServer**  
-    
-    -   **Get-Mailbox**
-    
-    -   **Get-Recipient**  
-
-    -   **Set-ADServerSettings**  
-
-    -   **Set-ActiveSyncDeviceAccessRule**  
-
-    -   **Set-ActiveSyncMailboxPolicy**  
-
-    -   **Set-CASMailbox**  
-
-    -   **New-ActiveSyncDeviceAccessRule**  
-
-    -   **New-ActiveSyncMailboxPolicy**  
-
-    -   **Remove-ActiveSyncDevice**  
-    
-    -   **Get-CasMailbox**  
-    
-    -   **Get-User**  
-    
-    -   **Set-ActiveSyncOrganizationSettings**  
-
-    > [!NOTE]  
-    >  I ruoli di gestione di Exchange Server seguenti includono questi cmdlet: Gestione destinatari, Gestione organizzazione sola visualizzazione e Gestione server. Per ulteriori informazioni sui gruppi del ruolo di gestione in Microsoft Exchange Server 2010, vedere [Informazioni sui gruppi del ruolo di gestione](https://go.microsoft.com/fwlink/p/?LinkId=212914).  
-
-    > [!TIP]  
-    >  Se si cerca di installare o utilizzare il connettore Exchange Server senza i cmdlet richiesti, verrà visualizzato un errore registrato con un messaggio del tipo `Invoking cmdlet <cmdlet> failed` nel file EasDisc.log sul computer del server del sito.  
-
-2.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
-
-3.  Nell'area di lavoro **Amministrazione** espandere **Configurazione della gerarchia**e quindi fare clic su **Connettori Exchange Server**.  
-
-4.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Aggiungi Exchange Server**.  
-
-5.  Completare l'Aggiunta guidata Exchange Server:  
-
-    -   Se si utilizza un'istanza locale di Exchange Server e si specifica un server Accesso client, è possibile specificare un singolo server o un array del server Accesso client per ciascun sito Active Directory. Se il server o l'array è offline, Configuration Manager cerca di trovare un server Accesso client da usare. Se questa operazione ha esito negativo, Client Access Server tenta di usare un server delle cassette postali per effettuare una connessione a un server Accesso client. I tentativi vengono registrati come avvisi nel file EasDisc.log nel computer del server del sito. Ad esempio, cercare `Failed to open runspace for site <site_name>`.  
-
-    -   Come account connettore Exchange Server, specificare l'account configurato nel passaggio 1.  
-
-    -   Se si registrano anche dispositivi mobili usando Configuration Manager, attivare l'opzione **Gestione dispositivi mobili esterni** per assicurarsi che i dispositivi continuino a ricevere messaggi di posta elettronica da Exchange dopo essere stati registrati da Configuration Manager.  
-
-    -   Nella pagina **Account** della procedura guidata è possibile configurare l'account usato per inviare notifiche tramite posta elettronica ai client che vengono bloccati dall'accesso condizionale di Configuration Manager. L'account specificato deve disporre di una cassetta postale valida nel server Exchange.  
-
-         Per altre informazioni, vedere [Gestire l'accesso ai servizi](../../protect/deploy-use/manage-access-to-services.md).  
-
-6.  È possibile verificare l'installazione del connettore Exchange Server utilizzando i messaggi di stato e riesaminando i file di registro:  
-
-    -   Per confermare che l'installazione del connettore Exchange Server da parte del servizio di gestione dei componenti del sito è avvenuta correttamente, cercare l'ID stato **1015** per il componente **SMS_EXCHANGE_CONNECTOR** . Se non è possibile installare correttamente il connettore, ad esempio perché il computer del server Accesso client specificato non è in linea), Configuration Manager tenterà di installarlo ogni 60 minuti fino alla riuscita dell'installazione o alla rimozione del connettore Exchange Server.  
-
-    -   Sul computer del server del sito, cercare il file Sitecomp.log, e quindi cercare `Component SMS_EXCHANGE_CONNECTOR flagged for installation`all'interno del file di registro. Un'installazione eseguita correttamente viene quindi registrata con il seguente testo: `STATMSG: ID=1015`.  
+> [!div class="nextstepaction"]
+> [Installare e configurare Exchange Connector](/configmgr/mdm/deploy-use/install-configure-exchange-connector)

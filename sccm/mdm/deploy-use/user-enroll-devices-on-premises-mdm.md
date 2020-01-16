@@ -1,8 +1,8 @@
 ---
-title: 'Modalità di registrazione dei dispositivi nella gestione di dispositivi mobili locale '
+title: Modalità di registrazione dei dispositivi da parte degli utenti
 titleSuffix: Configuration Manager
-description: Informazioni su come gli utenti registrano i dispositivi con la gestione dei dispositivi mobili locale in Configuration Manager.
-ms.date: 03/05/2017
+description: Informazioni su come gli utenti registrano i dispositivi con la gestione di dispositivi mobili (MDM) locale in Configuration Manager.
+ms.date: 01/13/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,66 +10,55 @@ ms.assetid: 59004b34-b64f-4d77-898c-07bf3dc75430
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6821a439e7ee054216a7ca73be027978ed659ae1
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e2d1eb0476eec975a458222134eb33ab8469cbb6
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826493"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76035218"
 ---
-# <a name="how-users-enroll-devices-with-on-premises-mobile-device-management-in-configuration-manager"></a>Come gli utenti registrano i dispositivi con la gestione dei dispositivi mobili locale in Configuration Manager
+# <a name="how-users-enroll-devices-with-on-premises-mdm-in-configuration-manager"></a>Come gli utenti registrano i dispositivi con MDM locale in Configuration Manager
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-Con Configuration Manager gestione dei dispositivi mobili locale, gli utenti possono registrare i dispositivi se hanno ottenuto l'autorizzazione di registrazione (con le impostazioni client aggiornate) e i relativi dispositivi hanno il certificato radice richiesto installato per l'attendibilità comunicazioni con i server che ospitano i ruoli del sistema del sito richiesti. Per altre informazioni su come configurare la registrazione, vedere [configurare la registrazione dei dispositivi per la gestione dei dispositivi mobili locale](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md).  
+Con Configuration Manager gestione di dispositivi mobili (MDM) locale, gli utenti possono registrare i propri dispositivi. È necessario disporre di due prerequisiti:
 
-> [!NOTE]  
->  Il Current Branch di Configuration Manager supporta la registrazione nella gestione dispositivi mobili locale per i dispositivi che eseguono i sistemi operativi seguenti:  
->   
-> -  Windows 10 Enterprise  
-> -   Windows 10 Pro  
-> -   Windows 10 Team \(a partire da Configuration Manager versione 1602\)  
-> -   Windows 10 Mobile  
-> -   Windows 10 Mobile Enterprise
-> -   Windows 10 IoT Enterprise   
+- Con le impostazioni client si concede all'utente l'autorizzazione per la registrazione.
 
-Le attività seguenti illustrano come registrare e verificare la registrazione di computer e dispositivi per la gestione dei dispositivi mobili locale:  
+- Installare il certificato radice trusted necessario nel dispositivo.
 
--   [Registrare un computer Windows 10](#bkmk_enrollDesk)  
+Per altre informazioni su come configurare la registrazione, vedere [configurare la registrazione dei dispositivi per MDM locale](/configmgr/mdm/get-started/set-up-device-enrollment-on-premises-mdm).
 
--   [Registrare un dispositivo Windows 10 Mobile](#bkmk_enrollMob)  
+## <a name="bkmk_enrollDesk"></a>Registrare Windows 10
 
--   [Verificare la registrazione del dispositivo](#bkmk_verify)  
+1. In un computer Windows 10, passare a **Impostazioni**.
 
-##  <a name="bkmk_enrollDesk"></a> Registrare un computer Windows 10  
+1. Selezionare **account**, quindi **accedere all'ufficio o all'Istituto di istruzione**.
 
-1.  In un computer Windows 10, passare a **Impostazioni**.  
+1. Selezionare **Connetti**, immettere il nome dell'entità utente (UPN) e selezionare **continua**. Il nome UPN può essere lo stesso dell'indirizzo di posta elettronica, ad esempio jdoe@contoso.com.
 
-2.  Fare clic su **Account**, quindi fare clic su **Accesso società**.  
+1. Immettere il nome di dominio completo (FQDN) del punto proxy di registrazione e selezionare **continua**.
 
-3.  In **Connetti all'azienda o all'istituto di istruzione**di Accesso società fare clic su **Connetti**, immettere l'indirizzo di posta elettronica dell'ufficio e fare clic su **Continua**.  
+1. Immettere la password e selezionare **Accedi**.
 
-4.  Immettere il nome FQDN del server che ospita il ruolo del sistema del sito punto proxy di registrazione e fare clic su **Continua**.  
+1. Non è necessario che Windows memorizzi le informazioni di accesso per questa azione, quindi selezionare **Ignora**.
 
-5.  In Connessione a un servizio immettere la password di posta elettronica dell'ufficio e fare clic su **Accedi**.  
+Dopo un breve periodo di tempo, il dispositivo viene registrato con Configuration Manager.
 
-6.  Fare clic su **Ignora** per ricordare le informazioni di accesso; dopo un breve periodo di tempo il dispositivo è connesso.  
+## <a name="bkmk_enrollMob"></a>Registrazione di Windows 10 Mobile
 
-##  <a name="bkmk_enrollMob"></a> Registrare un dispositivo Windows 10 Mobile  
+1. In un dispositivo Windows 10 Mobile, passare a **Impostazioni**.
 
-1.  In un dispositivo Windows 10 Mobile, passare a **Impostazioni**.  
+1. Selezionare **account**, quindi fare clic su **accesso**società.
 
-2.  Fare clic su **Account**, quindi fare clic su **Accesso società**.  
+1. Selezionare **Connetti**.
 
-3.  Fare clic su **Connetti**.  
+1. Immettere l'UPN e il nome di dominio completo del punto proxy di registrazione. Selezionare quindi **Connetti**.
 
-4.  Immettere l'indirizzo di posta elettronica dell'ufficio e il nome FQDN del server che ospita il ruolo del sistema del sito del punto proxy di registrazione. Fare clic su **Connetti**.  
+1. Nella schermata successiva immettere l'UPN e la password e quindi selezionare **Accedi**.
 
-5.  Nella schermata successiva immettere la password e l'indirizzo di posta elettronica dell'ufficio e quindi fare clic su **Accedi**. Dopo un breve periodo di tempo il dispositivo è registrato. Fare clic su **Fine**.  
+Dopo un breve periodo di tempo, il dispositivo viene registrato con Configuration Manager. Seleziona **Chiudi**.
 
-##  <a name="bkmk_verify"></a> Verificare la registrazione del dispositivo  
- È possibile verificare se i dispositivi sono stati registrati correttamente nella console di Configuration Manager.  
+## <a name="bkmk_verify"></a>Verificare la registrazione
 
-1.  Avviare la console di Configuration Manager.  
-
-2.  Fare clic su **Asset e conformità** > **Panoramica** > **Dispositivi**. Il dispositivo registrato viene visualizzato nell'elenco.  
+Usare la console di Configuration Manager per verificare che i dispositivi siano registrati correttamente. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità** e selezionare **Dispositivi**. Sfogliare o cercare il dispositivo registrato nell'elenco dei dispositivi.

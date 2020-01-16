@@ -1,7 +1,7 @@
 ---
-title: Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode
+title: Gestire i dispositivi con MDM locale
 titleSuffix: Configuration Manager
-description: Proteggere i dati del dispositivo con cancellazione completa, cancellazione selettiva, blocco remoto o reimpostazione passcode usando Configuration Manager.
+description: Proteggere i dati dei dispositivi con cancellazione completa, cancellazione selettiva, blocco remoto o reimpostazione del codice usando Configuration Manager gestione di dispositivi mobili (MDM) locale.
 ms.date: 08/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
@@ -10,104 +10,65 @@ ms.assetid: 770da7bd-02dd-474a-9604-93ff1ea0c1e4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 50d9e6591b2d1b72ac1cc4c5f0c84566cfae8c45
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: feacf91e43404401bae62c5527798c7a56356661
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826459"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76032660"
 ---
-# <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-configuration-manager"></a>Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando Configuration Manager
+# <a name="manage-devices-and-protect-data-with-on-premises-mdm-in-configuration-manager"></a>Gestire i dispositivi e proteggere i dati con MDM locale in Configuration Manager
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-Configuration Manager include funzionalità per la cancellazione selettiva, la cancellazione completa, il blocco remoto e la reimpostazione del passcode. I dispositivi mobili possono memorizzare i dati aziendali riservati e consentire l'accesso a numerose risorse aziendali. Per aiutare a proteggere i dispositivi è possibile eseguire:  
+I dispositivi mobili possono archiviare dati sensibili e fornire un accesso facile a numerose risorse aziendali. Per proteggere i dispositivi e i dati, usare Configuration Manager per le seguenti azioni di gestione dei dispositivi:
 
-- Una cancellazione completa per ripristinare le impostazioni di fabbrica del dispositivo  
+- **Cancellazione completa**: ripristinare le impostazioni di fabbrica del dispositivo
 
-- Una cancellazione selettiva per rimuovere solo i dati aziendali  
+- **Cancellazione selettiva**: rimuovere solo i dati dell'organizzazione
 
-- Un blocco remoto per proteggere un dispositivo che potrebbe andare perso  
+- **Reimpostazione del codice**: rimuovere o reimpostare il codice quando un utente lo dimentica
 
-- Una reimpostazione del passcode del dispositivo  
-
-> [!Important]  
-> A partire dal 14 agosto 2018, la gestione ibrida dei dispositivi mobili è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
-
-
+- **Blocco remoto**: proteggere un dispositivo che potrebbe andare perso
 
 ## <a name="full-wipe"></a>Cancellazione completa  
 
-È possibile eseguire un comando di cancellazione del dispositivo se è necessario proteggere un dispositivo perso o se si ritira un dispositivo.  
+Quando è necessario proteggere un dispositivo perso o quando si ritira un dispositivo dall'uso attivo, è possibile avviare una cancellazione completa su di esso. Questa azione consente di ripristinare le impostazioni predefinite del dispositivo. Vengono rimossi tutti i dati e le impostazioni dell'organizzazione e dell'utente.
 
-Impartire un comando di **cancellazione completa** di un dispositivo per ripristinarne le impostazioni di fabbrica. Questo comando rimuove i dati e le impostazioni aziendali e dell'utente. È possibile eseguire una cancellazione completa nei dispositivi Windows Phone, iOS, Android e Windows 10.  
+1. Nella console di Configuration Manager passare all'area di lavoro **asset e conformità** e scegliere il nodo **dispositivi** . È anche possibile scegliere **Raccolte dispositivi** e selezionare una raccolta di cui il dispositivo è membro.
 
-> [!NOTE]
-> Nei dispositivi di proprietà dell'azienda è possibile eseguire solo una cancellazione completa.
+1. Selezionare il dispositivo che si desidera eliminare.
 
-> [!NOTE]
-> La cancellazione nei dispositivi Windows 10 con versioni precedenti alla versione 1511 di meno di 4 GB di RAM potrebbe determinare la mancata risposta del dispositivo. [Altre informazioni](https://technet.microsoft.com/library/mt592024.aspx#full-wipe-disables-windows-10-devices-with-less-than-4-gb-ram).
+1. Sulla barra multifunzione, nel gruppo dispositivo selezionare **azioni dispositivo remoto**, quindi scegliere **ritira/Cancella**.
 
-#### <a name="to-initiate-a-remote-wipe-from-the-configuration-manager-console"></a>Per avviare una cancellazione remota dalla console di Configuration Manager  
+1. Nella finestra **ritira da Configuration Manager** selezionare l'opzione per **la cancellazione del dispositivo mobile e il ritiro da Configuration Manager**.
 
-1. Nella console di Configuration Manager selezionare **Asset e conformità** e scegliere **Dispositivi**. In alternativa, è possibile scegliere **Raccolte dispositivi** e selezionare una raccolta.  
+## <a name="selective-wipe"></a>Cancellazione selettiva
 
-2. Selezionare il dispositivo che si desidera ritirare/cancellare.  
+Per rimuovere solo i dati aziendali da un dispositivo, avviare una cancellazione selettiva.
 
-3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Disattiva/Cancella**.  
+### <a name="behaviors-by-os-version"></a>Comportamenti in base alla versione del sistema operativo
 
+Le tabelle seguenti descrivono i dati che vengono rimossi e l'effetto sui dati che rimangono nel dispositivo dopo una cancellazione selettiva.
 
+#### <a name="windows-10-windows-81-windows-rt-81-and-windows-rt"></a>Windows 10, Windows 8.1, Windows RT 8,1 e Windows RT
 
-## <a name="selective-wipe"></a>Cancellazione selettiva  
+|Content|Comportamento di cancellazione selettiva|  
+|-------|--------|
+|App e dati associati installati da Configuration Manager|Disinstalla le app e rimuove le chiavi di sideload. Revoca la chiave di crittografia per le app che usano la cancellazione selettiva di Windows e i dati non sono più accessibili.|
+|Profili VPN e Wi-Fi|Rimuove i profili|
+|Certificati|Rimuove e revoca i certificati|
+|Impostazioni|Rimuove i requisiti|
+|Profili di posta elettronica|Rimuove la posta elettronica abilitata per EFS, che include l'app di posta elettronica per i messaggi di posta elettronica e gli allegati di Windows.|
 
-Eseguire una **cancellazione selettiva** per rimuovere solo i dati aziendali presenti sul dispositivo. La tabella seguente descrive i dati che vengono rimossi in base al tipo di piattaforma e l'effetto sui dati che rimangono sul dispositivo dopo la cancellazione selettiva.  
+#### <a name="windows-10-mobile-windows-phone-80-and-windows-phone-81"></a>Windows 10 Mobile, Windows Phone 8,0 e Windows Phone 8,1
 
-**iOS**  
-
-|Contenuti rimossi quando si disattiva un dispositivo|iOS|  
-|--------------------------------------------|---------|  
-|App aziendali e dati associati installati usando Configuration Manager e Intune|Le app vengono disinstallate e vengono rimossi i dati dell'app aziendale.|  
-|Profili VPN e Wi-Fi|Rimosso.|  
-|Certificati|Rimossi e revocati.|  
-|Impostazioni|Rimosse, tranne per: **Consenti chiamate in roaming**, **Consenti roaming dei dati** e **Consenti la sincronizzazione automatica durante il roaming**.|  
-|Agente di gestione|Il profilo di gestione viene rimosso.|  
-|Profili di posta elettronica|Per i profili di posta elettronica configurati da Intune, vengono rimossi l'account e l'indirizzo di posta elettronica.|  
-
-**Android e Android Samsung KNOX Standard**  
-
-|Contenuti rimossi quando si disattiva un dispositivo|Android|Samsung KNOX Standard|  
-|--------------------------------------------|-------------|------------------|  
-|App aziendali e dati associati installati usando Configuration Manager e Intune|Le app e i dati rimangono installati.|Le app vengono disinstallate|  
-|Profili VPN e Wi-Fi|Rimosso.|Rimosso.|  
-|Certificati|Revocati.|Revocati.|  
-|Impostazioni|I requisiti vengono rimossi.|I requisiti vengono rimossi.|  
-|Agente di gestione|Il privilegio di amministratore del dispositivo viene revocato.|Il privilegio di amministratore del dispositivo viene revocato.|  
-|Profili di posta elettronica|Non applicabile.|Per i profili di posta elettronica configurati da Intune, vengono rimossi l'account e l'indirizzo di posta elettronica.|  
-
-**Android for Work**
-
-Quando si esegue la cancellazione selettiva in un dispositivo Android for Work, viene rimosso il profilo di lavoro insieme a tutti i dati, le app e le impostazioni presenti nel profilo di lavoro stesso sul dispositivo in questione. Questo impedisce la gestione del dispositivo con Configuration Manager e Intune. La cancellazione completa non è supportata per Android for Work.
-
- **Windows 10, Windows 8.1, Windows RT 8.1 e Windows RT**  
-
-|Contenuti rimossi quando si disattiva un dispositivo|Windows 10, Windows 8.1 e Windows RT 8.1|  
-|---------------------------------|-------------|
-|App aziendali e dati associati installati usando Configuration Manager e Intune|Le app vengono disinstallate e le chiavi di trasferimento locale vengono rimosse. Alle app che usano la cancellazione selettiva di Windows verrà revocata la chiave di crittografia e i dati non saranno più accessibili.|  
-|Profili VPN e Wi-Fi|Rimosso.|  
-|Certificati|Rimossi e revocati.|  
-|Impostazioni|I requisiti vengono rimossi.|
-|Agente di gestione|Non applicabile. L'agente di gestione è incorporato.|  
-|Profili di posta elettronica|Vengono rimosse le applicazioni di posta elettronica abilitate per EFS, tra cui i messaggi e gli allegati dell'applicazione Windows Mail.|  
-
- **Windows 10 Mobile, Windows Phone 8.0 e Windows Phone 8.1**
-
-|Contenuti rimossi quando si disattiva un dispositivo|Windows 10 Mobile, Windows Phone 8 e Windows Phone 8.1|  
-|-|-|
-|App aziendali e dati associati installati usando Configuration Manager e Intune|Le app vengono disinstallate e vengono rimossi i dati dell'app aziendale.|  
-|Profili VPN e Wi-Fi|Rimossi per Windows 10 Mobile e Windows Phone 8.1.|  
-|Certificati|Rimosso per Windows Phone 8.1.|  
-|Agente di gestione|Non applicabile. L'agente di gestione è incorporato.|  
-|Profili di posta elettronica|Rimossi (ad eccezione di Windows Phone 8.0).|  
+|Content|Comportamento di cancellazione selettiva|  
+|-------|--------|
+|App aziendali e dati associati installati da Configuration Manager|Disinstalla le app e rimuove i dati dell'app aziendale.|
+|Profili VPN e Wi-Fi|Rimuove i profili per Windows 10 mobile e Windows Phone 8,1|
+|Certificati|Rimuove i certificati per Windows Phone 8,1|
+|Profili di posta elettronica|Rimuove i profili (eccetto Windows Phone 8,0)|
 
 Le seguenti impostazioni vengono inoltre rimosse dai dispositivi Windows 10 Mobile e Windows Phone 8.1:  
 
@@ -137,118 +98,79 @@ Le seguenti impostazioni vengono inoltre rimosse dai dispositivi Windows 10 Mobi
 - **Consenti NFC**
 - **Consenti Wi-Fi**
 
-#### <a name="to-initiate-a-remote-wipe-from-the-configuration-manager-console"></a>Per avviare una cancellazione remota dalla console di Configuration Manager  
+### <a name="start-a-selective-wipe"></a>Avviare una cancellazione selettiva
 
-1. Nella console di Configuration Manager selezionare **Asset e conformità** e scegliere **Dispositivi**. In alternativa, è possibile scegliere **Raccolte dispositivi** e selezionare una raccolta.  
+1. Nella console di Configuration Manager passare all'area di lavoro **asset e conformità** e scegliere il nodo **dispositivi** . È anche possibile scegliere **Raccolte dispositivi** e selezionare una raccolta di cui il dispositivo è membro.
 
-2. Selezionare il dispositivo che si desidera ritirare/cancellare.  
+1. Selezionare il dispositivo che si desidera eliminare.
 
-3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Disattiva/Cancella**.  
+1. Sulla barra multifunzione, nel gruppo dispositivo selezionare **azioni dispositivo remoto**, quindi scegliere **ritira/Cancella**.
 
+1. Nella finestra **ritira da Configuration Manager** selezionare la seguente opzione: **Cancella contenuto aziendale e ritira il dispositivo mobile da Configuration Manager**.
 
+### <a name="recommendations-for-selective-wipe"></a>Suggerimenti per la cancellazione selettiva
 
-## <a name="wiping-efs-enabled-content"></a>Cancellazione dei contenuti abilitati EFS  
+- Per una cancellazione corretta della posta elettronica, configurare i profili di posta elettronica per i dispositivi Windows Phone 8,1.
 
-Windows 8.1 e Windows RT 8.1 supportano la cancellazione selettiva dei contenuti crittografati con EFS. Quanto descritto di seguito si applica alla cancellazione selettiva di contenuti abilitati EFS:  
+- Per cancellare correttamente le app, assicurarsi che le app vengano distribuite con la gestione delle app per dispositivi mobili.
 
-- Solo le app e i dati protetti da EFS attraverso lo stesso dominio Internet come account Intune vengono cancellati in modo selettivo. Per altre informazioni, vedere l'argomento relativo alla [cancellazione selettiva di Windows per la gestione dei dati dei dispositivi](https://technet.microsoft.com/library/dn486874.aspx).  
+## <a name="passcode-reset"></a>Reimpostazione del passcode
 
-- In caso di modifiche al dominio associato con EFS, potranno essere necessarie fino a 48 ore prima che le app e i dati che usano il nuovo dominio siano cancellati in modo selettivo.  
+Se un utente dimentica il proprio codice, usare questa azione per forzare un nuovo codice temporaneo nel dispositivo. È anche possibile rimuovere completamente il codice di accesso. La tabella seguente illustra il funzionamento della reimpostazione del passcode su diverse piattaforme per dispositivi mobili.
 
-- Ogni dominio registrato con Intune corrisponde al dominio che verrà cancellato.  
+| Versione sistema operativo | Reimpostazione del passcode |
+|------------|----------------|
+| Windows 10 | Non supportato |
+| Windows 10 Mobile | Supportato, esclusi i dispositivi aggiunti a Azure Active Directory |
+| Windows Phone 8 e Windows Phone 8.1 | Supportato |
+| Windows RT 8.1 | Non supportato |
+| Windows 8,1 | Non supportato |
 
-I dati e le app attualmente supportati dalla cancellazione selettiva EFS sono:  
+> [!Note]
+> Avviare l'azione di reimpostazione del codice dal sito di livello superiore. Se ad esempio si usa un sito di amministrazione centrale, è possibile eseguire l'azione solo in tale sito. Se si usa un sito primario autonomo, è possibile eseguire l'azione solo da tale sito.
 
-- App di posta elettronica per Windows.  
+### <a name="remotely-reset-the-passcode-on-a-mobile-device"></a>Reimpostare in modalità remota il codice di accesso in un dispositivo mobile
 
-- Cartelle di lavoro.
+1. Nella console di Configuration Manager passare all'area di lavoro **asset e conformità** e scegliere il nodo **dispositivi** . È anche possibile scegliere **Raccolte dispositivi** e selezionare una raccolta di cui il dispositivo è membro.
 
-- File e cartelle crittografate con EFS. Per altre informazioni, vedere le [procedure consigliate per la crittografia del file system](https://support.microsoft.com/kb/223316).  
+1. Selezionare il dispositivo o i dispositivi per cui si desidera reimpostare il passcode.
 
+1. Sulla barra multifunzione, nel gruppo dispositivo selezionare **azioni dispositivo remoto**, quindi scegliere **reimpostazione del codice**.  
 
-### <a name="best-practices-for-selective-wipe"></a>Procedure consigliate per la cancellazione selettiva  
+### <a name="show-the-state-of-the-passcode-reset"></a>Mostra lo stato della reimpostazione del codice  
 
-- Per cancellare correttamente i messaggi di posta elettronica, configurare profili di posta elettronica nei dispositivi iOS e Windows Phone 8.1.  
+1. Nella console di Configuration Manager passare all'area di lavoro **asset e conformità** e scegliere il nodo **dispositivi** . È anche possibile scegliere **Raccolte dispositivi** e selezionare una raccolta di cui il dispositivo è membro.
 
-- Per cancellare correttamente le app, assicurarsi che le app vengano distribuite con la gestione delle app per dispositivi mobili.  
+1. Selezionare il dispositivo o i dispositivi per cui si desidera mostrare lo stato della reimpostazione del passcode.
 
-- Per iOS, configurare l'impostazione **Consenti backup in iCloud** su **Non consentire** in modo che gli utenti non possano ripristinare il contenuto con iCloud.  
+1. Sulla barra multifunzione, nel gruppo dispositivo selezionare **azioni dispositivo remoto**, quindi scegliere **Mostra stato di codice**.  
 
-- Se un account è stato disattivato, dopo un anno Intune ritirerà l'account e verrà eseguita una cancellazione selettiva.  
-
-
-
-##  <a name="passcode-reset"></a>Reimpostazione del passcode  
-
-Se un utente dimentica il passcode, è possibile aiutarlo rimuovendo il passcode da un dispositivo oppure forzando l'uso di un nuovo passcode temporaneo su un dispositivo. La tabella seguente illustra il funzionamento della reimpostazione del passcode su diverse piattaforme per dispositivi mobili.  
-
-| Piattaforma                              | Reimpostazione del passcode                                                                               |
-|---------------------------------------|----------------------------------------------------------------------------------------------|
-| iOS                                   | Funzionalità supportata per cancellare il passcode da un dispositivo. Non implica la creazione di un nuovo passcode temporaneo. |
-| macOS                                 | Not supported.                                                                               |
-| Android                               | Supportato nelle versioni precedenti alla 7.0. Crea un passcode temporaneo.                |
-| Android for Work                      | Not supported.                                                                               |
-| PC con Windows 10                        | Not supported.                                                                               |
-| Windows 10 Mobile                     | Funzionalità supportata; esclude i dispositivo aggiunti ad Azure AD.  |
-| Windows Phone 8 e Windows Phone 8.1 | Supportata.                                                                                   |
-| Windows RT 8.1                        | Not supported.                                                                               |
-| PC con Windows 8.1                       | Not supported.                                                                               |
-
-> [!Note]    
-> È necessario eseguire l'operazione di reimpostazione del passcode dal sito di livello superiore nell'ambiente in uso. Ad esempio, se si usa un sito di amministrazione centrale è possibile eseguire l'azione solo in tale sito. Se si usa un sito primario autonomo è possibile eseguire l'azione solo in tale sito.
-
-#### <a name="to-reset-the-passcode-on-a-mobile-device-remotely-in-configuration-manager"></a>Per reimpostare il passcode su un dispositivo mobile in modalità remota in Configuration Manager  
-
-1. Nella console di Configuration Manager selezionare **Asset e conformità** e scegliere **Dispositivi**. In alternativa, è possibile scegliere **Raccolte dispositivi** e selezionare una raccolta.  
-
-2. Selezionare il dispositivo o i dispositivi per cui si desidera reimpostare il passcode.  
-
-3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Reimpostazione del passcode**.  
-
-#### <a name="to-show-the-state-of-the-passcode-reset"></a>Per mostrare lo stato della reimpostazione del passcode  
-
-1. Nella console di Configuration Manager selezionare **Asset e conformità** e scegliere **Dispositivi**. In alternativa, è possibile scegliere **Raccolte dispositivi** e selezionare una raccolta.  
-
-2. Selezionare il dispositivo o i dispositivi per cui si desidera mostrare lo stato della reimpostazione del passcode.  
-
-3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Mostra stato passcode**.  
-
-
-
-## <a name="remote-lock"></a>Blocco remoto  
+## <a name="remote-lock"></a>Blocco remoto
 
 Se un utente perde il dispositivo, è possibile bloccare il dispositivo in modalità remota. Nella tabella seguente è illustrato il funzionamento del blocco remoto su diverse piattaforme per dispositivi mobili.  
 
-|Piattaforma|Blocco remoto|  
-|--------------|-----------------|  
-|iOS|Supportata.|  
-|Android|Supportata.|  
-|Windows 10|Non supportato al momento.|  
-|Windows Phone 8 e Windows Phone 8.1|Supportata.|  
-|Windows RT 8.1 |Funzionalità supportata se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|  
-|Windows 8,1|Funzionalità supportata se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|  
+|Versione sistema operativo|Blocco remoto|
+|----------|-----------|
+|Windows 10|Non supportato|
+|Windows Phone 8 e Windows Phone 8.1|Supportato|
+|Windows RT 8.1|Supportato se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|
+|Windows 8,1|Supportato se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|
 
-> [!Note]    
-> È necessario eseguire l'operazione di blocco remoto dal sito di livello superiore nell'ambiente in uso. Ad esempio, se si usa un sito di amministrazione centrale è possibile eseguire l'azione solo in tale sito. Se si usa un sito primario autonomo è possibile eseguire l'azione solo in tale sito.
+> [!Note]
+> Avviare l'azione di blocco remoto dal sito di livello superiore. Se ad esempio si usa un sito di amministrazione centrale, è possibile eseguire l'azione solo in tale sito. Se si usa un sito primario autonomo, eseguire l'azione da tale sito.
 
-#### <a name="to-lock-a-mobile-device-remotely-through-the-configuration-manager-console"></a>Per bloccare un dispositivo mobile in modalità remota tramite la console di Configuration Manager  
+### <a name="remotely-lock-a-mobile-device"></a>Bloccare in remoto un dispositivo mobile
 
-1. Nella console di Configuration Manager selezionare **Asset e conformità** e scegliere **Dispositivi**. In alternativa, è possibile scegliere **Raccolte dispositivi** e selezionare una raccolta.  
+1. Nella console di Configuration Manager passare all'area di lavoro **asset e conformità** e scegliere il nodo **dispositivi** . È anche possibile scegliere **Raccolte dispositivi** e selezionare una raccolta di cui il dispositivo è membro.
 
-2. Selezionare il dispositivo o i dispositivi da bloccare.  
+1. Selezionare il dispositivo o i dispositivi da bloccare.
 
-3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Blocco remoto**.  
+1. Nel gruppo dispositivo della barra multifunzione selezionare **azioni dispositivo remoto**, quindi scegliere **blocco remoto**. Confermare l'azione.
 
-#### <a name="to-show-the-state-of-the-remote-lock"></a>Per mostrare lo stato del blocco remoto  
+### <a name="show-the-state-of-the-remote-lock"></a>Mostra lo stato del blocco remoto
 
-1. Nella console di Configuration Manager selezionare **Asset e conformità** e scegliere **Dispositivi**. In alternativa, è possibile scegliere **Raccolte dispositivi** e selezionare una raccolta.  
+1. Nella console di Configuration Manager passare all'area di lavoro **asset e conformità** e scegliere il nodo **dispositivi** . È anche possibile scegliere **Raccolte dispositivi** e selezionare una raccolta di cui il dispositivo è membro.
 
-2. Selezionare il dispositivo per cui si desidera mostrare lo stato del blocco remoto.  
+1. Selezionare il dispositivo per cui si desidera mostrare lo stato del blocco remoto.
 
-3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Mostra stato blocco remoto**.  
-
-
-
-## <a name="see-also"></a>Vedere anche  
-
-[Cancellazione selettiva di Windows per la gestione di dati del dispositivo](https://technet.microsoft.com/library/dn486874.aspx)   
+1. Sulla barra multifunzione, nel gruppo dispositivo selezionare **azioni dispositivo remoto**, quindi scegliere **Mostra stato blocco remoto**.

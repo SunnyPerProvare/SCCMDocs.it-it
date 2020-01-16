@@ -1,8 +1,8 @@
 ---
 title: Software MDM locale
 titleSuffix: Configuration Manager
-description: Informazioni sulla gestione dei dispositivi mobili locale, una soluzione di gestione dei dispositivi in Configuration Manager
-ms.date: 03/05/2019
+description: Informazioni sulla gestione di dispositivi mobili (MDM) locale in Configuration Manager
+ms.date: 01/09/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,43 +10,42 @@ ms.assetid: 497c05c7-fe9f-4b88-983b-1c5b3d59308e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ef153708b490fb4111a2070ccdefb933407fa6fc
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 644b55041ca89a7fefa6d0e316529bdc27197df7
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75821546"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76032569"
 ---
 # <a name="on-premises-mdm-in-configuration-manager"></a>MDM locale in Configuration Manager
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-Configuration Manager gestione di dispositivi mobili (MDM) locale è una soluzione di gestione dei dispositivi che si basa sulle funzionalità di gestione predefinite del sistema operativo del dispositivo. Questa funzionalità è basata sullo standard Open Mobile Alliance (OMA) Device Management (DM). Usa l'infrastruttura di Configuration Manager dell'organizzazione per gestire e gestire i dispositivi. MDM locale richiede Microsoft Intune per configurare la funzionalità di gestione, ma è necessaria solo per la sottoscrizione. Intune viene usato a volte per aiutare a notificare ai dispositivi di archiviare le modifiche dei criteri, ma non viene usato per gestire i dispositivi o archiviare i dati su di essi.  
-
-![Gestione locale](media/On-premises-conceptual.png)  
+Configuration Manager gestione di dispositivi mobili (MDM) locale è una soluzione di gestione dei dispositivi che si basa sulle funzionalità di gestione predefinite di Windows. Questa funzionalità è basata sullo standard Open Mobile Alliance (OMA) Device Management (DM). Usa l'infrastruttura di Configuration Manager dell'organizzazione per gestire e gestire i dispositivi. L'organizzazione richiede Microsoft Intune licenze per usare questa funzionalità, ma non richiede alcuna connessione cloud. Configuration Manager archivia tutti i dati sui dispositivi nel database del sito locale.
 
 MDM locale è diverso da Microsoft Intune, che si basa anche sulle funzionalità di DM OMA predefinite. Tutte le funzioni di gestione in Intune vengono fornite tramite i servizi cloud. MDM locale differisce anche dalla soluzione di gestione basata su client tradizionalmente offerta da Configuration Manager. Si basa su un'infrastruttura simile, ma non usa software client installato separatamente nei dispositivi gestiti.  
 
-> [!Note]  
-> A partire dalla versione 1810, una connessione a Intune non è più necessaria per le nuove distribuzioni MDM locali.<!--3607730, fka 1359124--> Per usare questa funzionalità è comunque necessario che l'organizzazione abbia le licenze di Intune. Attualmente non è possibile rimuovere la connessione a Intune dalle distribuzioni MDM locali esistenti. Per altre informazioni, vedere il [post di blog del supporto tecnico di Intune](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150).  
+## <a name="comparison"></a>Confronto
 
-La tabella seguente elenca i vantaggi e gli svantaggi di MDM locale rispetto alla gestione basata su client tradizionale:  
+Le sezioni seguenti elencano i vantaggi e gli svantaggi di MDM locale rispetto alla gestione basata su client tradizionale:  
 
-|Vantaggi|Svantaggi|  
-|----------------|-------------------|  
-|**Infrastruttura semplificata** : sono necessari meno ruoli del sistema del sito.<br /><br /> **Più facile da gestire** : poiché la funzionalità di gestione è integrata nel sistema operativo del dispositivo, non sono necessarie nuove versioni del software client quando le nuove funzionalità di gestione vengono introdotte nel sistema di Configuration Manager.<br /><br /> **Locale** : tutte le attività di gestione e i dati vengono mantenuti in locale.|**Meno funzionalità di gestione client** : nessun supporto di orchestrazione, misurazione del software, integrazione di terze parti, sequenza di attività o Software Center.<br /><br /> **Supporto** dei dispositivi limitato: MDM attualmente locale supporta solo i dispositivi che eseguono Windows 10 e Windows 10 Mobile.|  
+### <a name="advantages"></a>Vantaggi
 
-Gli articoli seguenti forniscono informazioni che è possibile usare per pianificare, preparare e registrare i dispositivi per MDM locale:  
+- **Infrastruttura semplificata**: sono necessari meno ruoli del sistema del sito.
 
-- [Pianificare la gestione dei dispositivi mobili locale](/sccm/mdm/plan-design/plan-on-premises-mdm)  
+- **Più facile da gestire**: poiché la funzionalità di gestione è integrata nel sistema operativo del dispositivo, non sono necessarie nuove versioni del client Configuration Manager quando vengono introdotte nuove funzionalità di gestione per il sito.
 
-    Informazioni sugli elementi da considerare quando si configura l'infrastruttura Configuration Manager e si pianifica la registrazione dei dispositivi in MDM locale.  
+- **Locale**:-tutti i dati e la gestione vengono conservati in locale.
 
-- [Passaggi di preparazione per MDM locale](/sccm/mdm/get-started/preparation-steps-for-on-premises-mdm)  
+### <a name="disadvantages"></a>Svantaggi
 
-    Ottenere Configuration Manager pronto per MDM locale. Configurare la sottoscrizione di Microsoft Intune, configurare i certificati, installare i ruoli del sistema del sito e configurare la registrazione dei dispositivi.  
+**Meno funzionalità di gestione client**: nessuna orchestrazione, misurazione del software, integrazione di terze parti, sequenza di attività o supporto di Software Center.
 
-- [Registrare i dispositivi per la gestione dei dispositivi mobili locale](/sccm/mdm/deploy-use/enroll-devices-on-premises-mdm)  
+- **Supporto limitato**per i dispositivi: MDM locale non supporta il numero di versioni del sistema operativo del client Configuration Manager. Per altre informazioni, vedere [Versioni dei sistemi operativi supportate per client e dispositivi](/configmgr/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#bkmk_OnpremOS).
 
-    Informazioni sulla modalità di registrazione, su come gli utenti possono registrare i propri dispositivi e sulla registrazione in blocco dei dispositivi con un pacchetto di registrazione.  
+## <a name="next-step"></a>Passaggio successivo
 
+Informazioni sugli elementi da considerare quando si configura l'infrastruttura Configuration Manager e si pianifica la registrazione dei dispositivi in MDM locale.
+
+> [!div class="nextstepaction"]
+> [Pianificare la gestione dei dispositivi mobili locale](/configmgr/mdm/plan-design/plan-on-premises-mdm)  

@@ -1,8 +1,8 @@
 ---
-title: 'Impostare la registrazione dei dispositivi '
+title: Configurare la registrazione per MDM locale
 titleSuffix: Configuration Manager
-description: Concedere agli utenti le autorizzazioni per registrare i propri dispositivi per la gestione dei dispositivi mobili locale in Configuration Manager.
-ms.date: 03/05/2017
+description: Concedere agli utenti le autorizzazioni per registrare i propri dispositivi per la gestione di dispositivi mobili (MDM) locale in Configuration Manager.
+ms.date: 01/09/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,77 +10,105 @@ ms.assetid: 9ffaea91-1379-4b86-9953-b25e152f56a9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 79b82517a1ac83a0aaf54198d012fd84b47febe6
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 28a39319acfe7fd75677a9eeb979b2f6b0d6641d
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826425"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76035189"
 ---
-# <a name="set-up-device-enrollment-for-on-premises-mobile-device-management-in-configuration-manager"></a>Configurare la registrazione dei dispositivi per la gestione dei dispositivi mobili locale in Configuration Manager
+# <a name="set-up-device-enrollment-for-on-premises-mdm-in-configuration-manager"></a>Configurare la registrazione dei dispositivi per MDM locale in Configuration Manager
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-Per consentire agli utenti di registrare i propri dispositivi per Configuration Manager nella gestione dei dispositivi mobili\-locale è necessario concedere loro l'autorizzazione. Per concedere agli utenti le autorizzazioni per la registrazione dei dispositivi, eseguire le attività seguenti.
+Il passaggio finale per configurare la gestione di dispositivi mobili (MDM) locale è consentire agli utenti di registrare i propri dispositivi. Usare Configuration Manager impostazioni client per concedere agli utenti l'autorizzazione per registrare i dispositivi in MDM locale.
 
--   [Creare un profilo di registrazione che consenta agli utenti di registrare i dispositivi moderni](#bkmk_createProf)  
+## <a name="bkmk_createProf"></a> Creare un profilo di registrazione
 
--   [Configurare altre impostazioni client per i dispositivi registrati](#bkmk_addClient)  
+Per eseguire il push delle impostazioni necessarie per consentire agli utenti di registrare i dispositivi mobili, aggiungere un nuovo profilo di registrazione alle impostazioni client predefinite. Questo profilo viene quindi applicato a tutti gli utenti nel sito Configuration Manager.
 
--   [Consentire agli utenti di ricevere il profilo di registrazione dei dispositivi moderni](#bkmk_enableUsers)  
+> [!NOTE]
+> Questo processo usa le **Impostazioni client predefinite**, che verranno applicate automaticamente a tutti i dispositivi e gli utenti. In alternativa, è possibile creare impostazioni client personalizzate e quindi distribuirle in raccolte di propria scelta. Questo metodo alternativo richiede almeno due impostazioni client personalizzate, una per le impostazioni del *dispositivo* e una per le impostazioni *utente* . Per altre informazioni, vedere [Come configurare le impostazioni client](/configmgr/core/clients/deploy/configure-client-settings).
 
--   [Archiviare il certificato radice nei dispositivi da registrare](#bkmk_storeCert)  
+1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione** e selezionare il nodo **Impostazioni client**. Aprire **Impostazioni client predefinite** e selezionare il gruppo di **registrazioni** .
 
-##  <a name="bkmk_createProf"></a> Creare un profilo di registrazione che consenta agli utenti di registrare i dispositivi moderni  
- Per eseguire il push delle impostazioni necessarie per consentire agli utenti di registrare i dispositivi moderni, è possibile aggiungere un nuovo profilo di registrazione alle impostazioni client predefinite, che viene applicato a tutti gli utenti individuati nel sito di Configuration Manager.  
+1. In Impostazioni dispositivo specificare l' **intervallo di polling per i dispositivi moderni (minuti)** . Per impostazione predefinita, questo intervallo è di 60 minuti.
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Panoramica** > **Impostazioni client**, aprire **Impostazioni client predefinite** e selezionare **Registrazione**.  
+1. In impostazioni utente abilitare l'opzione per **consentire agli utenti di registrare i dispositivi moderni**.
 
-2.  In Impostazioni dispositivo specificare l'intervallo di polling per i dispositivi moderni.  
+1. Per il **profilo di registrazione del dispositivo moderno**selezionare **Imposta profilo**. Nella finestra profilo di registrazione selezionare **Crea**.
 
-3.  In Impostazioni utente selezionare **Sì** per **Consenti agli utenti di registrare i dispositivi moderni**.  
+1. Nella finestra Crea profilo di registrazione specificare le informazioni seguenti:
 
-4.  Accanto a **Profilo di registrazione per dispositivi moderni**, fare clic su **Imposta profilo** e quindi su **Crea**.  
+    - **Nome** univoco e descrittivo per il profilo di registrazione.
 
-5.  In Crea profilo di registrazione digitare un nome per il profilo di registrazione e scegliere il codice del sito di gestione che gli utenti con il profilo di registrazione dovranno usare. Fare clic su **OK** più volte per uscire dalla pagina Impostazioni predefinite.  
+    - **Descrizione** facoltativa per fornire informazioni aggiuntive sul profilo.
 
-> [!NOTE]  
->  Se si vuole distribuire il profilo di registrazione a un sottoinsieme degli utenti individuati, è possibile usare una raccolta di utenti e creare impostazioni client personalizzate per eseguire la distribuzione in tale raccolta. Per informazioni sulla creazione di impostazioni client personalizzate, vedere [How to configure client Settings](../../core/clients/deploy/configure-client-settings.md)  
+    - Scegliere il **codice del sito di gestione** che contiene il punto di gestione periferiche. Selezionare **OK** per salvare e chiudere.
 
-##  <a name="bkmk_addClient"></a> Configurare altre impostazioni client per i dispositivi registrati  
- Oltre a configurare il profilo di registrazione per dispositivi moderni, è possibile usare altre impostazioni client per configurare i dispositivi quando vengono registrati.  Per informazioni sulla configurazione delle impostazioni client, vedere [How to configure client Settings](../../core/clients/deploy/configure-client-settings.md).  
+## <a name="bkmk_addClient"></a>Configurare impostazioni client aggiuntive
 
- Non tutte le impostazioni client sono disponibili per la gestione dei dispositivi mobili locale. Current Branch di Configuration Manager supporta solo le configurazioni seguenti per la gestione dei dispositivi mobili locale:  
+Sono disponibili altre impostazioni client per configurare i dispositivi dopo la registrazione. Per informazioni generali, vedere [How to configure client Settings](/configmgr/core/clients/deploy/configure-client-settings).
 
--   Registrazione: queste impostazioni specificano il profilo di registrazione per i dispositivi gestiti. Per altre informazioni sull'impostazione di un profilo di registrazione, vedere [Creare un profilo di registrazione che consenta agli utenti di registrare i dispositivi moderni](#bkmk_createProf).  
+Configuration Manager supporta le seguenti impostazioni client per MDM locale:
 
--   Criteri client: queste impostazioni specificano la frequenza di download dei criteri client nel dispositivo. È anche possibile abilitare le impostazioni per l'assegnazione del polling dei criteri agli utenti. Per ulteriori informazioni sulle impostazioni dei criteri client, vedere la sezione criteri client in [informazioni sulle impostazioni client](../../core/clients/deploy/about-client-settings.md).  
+- **Criteri client**: queste impostazioni specificano la frequenza di download dei criteri client nel dispositivo. È anche possibile abilitare le impostazioni per i criteri utente. Per ulteriori informazioni, vedere [About Client Settings-client Policy](/configmgr/core/clients/deploy/about-client-settings#client-policy).
 
--   Distribuzione software: questa impostazione definisce l'intervallo per la valutazione dei dispositivi client per le distribuzioni software. Per ulteriori informazioni sulle impostazioni di distribuzione software, vedere la sezione distribuzione software in [informazioni sulle impostazioni client](../../core/clients/deploy/about-client-settings.md)  
+- **Distribuzione software**: impostare l'intervallo per la valutazione delle distribuzioni software. Per ulteriori informazioni, vedere [About Client Settings-Software Deployment](/configmgr/core/clients/deploy/about-client-settings#software-deployment).
 
-    > [!NOTE]  
-    >  Per la gestione dei dispositivi mobili locale, le impostazioni di distribuzione software possono essere usate solo come impostazioni client predefinite. Le impostazioni di distribuzione software non possono essere usate con le impostazioni client personalizzate in Current Branch di Configuration Manager.  
+    > [!NOTE]
+    > Per MDM locale, le impostazioni di distribuzione software possono essere usate solo come impostazioni client predefinite.
 
-##  <a name="bkmk_enableUsers"></a> Consentire agli utenti di ricevere il profilo di registrazione dei dispositivi moderni  
- Per fare in modo che ricevano le impostazioni client modificate con il profilo di registrazione per la gestione dei dispositivi mobili locale, è necessario che gli utenti vengano individuati tramite il metodo di individuazione Active Directory. Per assicurarsi che il profilo di registrazione venga ottenuto da tutti gli utenti che ne hanno bisogno, eseguire l'individuazione degli utenti di Active Directory. Per istruzioni su come individuare gli utenti, vedere [eseguire l'individuazione per Configuration Manager](../../core/servers/deploy/configure/run-discovery.md).  
+## <a name="bkmk_enableUsers"></a>Individua utenti
 
-##  <a name="bkmk_storeCert"></a> Archiviare il certificato radice nei dispositivi da registrare  
- È probabile che gli utenti con dispositivi appartenenti a un dominio abbiano già il certificato radice richiesto per la comunicazione attendibile con i server che ospitano i ruoli del sistema del sito, perché la radice è stata rilasciata come parte del processo di aggiunta al dominio con Active Directory. Per i dispositivi mobili non appartenenti a un dominio sarà necessario installare manualmente il certificato radice nel dispositivo per consentire la registrazione. Questi dispositivi non avranno automaticamente il certificato radice richiesto.  
+Per consentire agli utenti di ricevere le impostazioni client con il profilo di registrazione per MDM locale, il sito individua il proprio account utente in Active Directory. Per assicurarsi che il profilo di registrazione venga ottenuto da tutti gli utenti che ne hanno bisogno, eseguire l'individuazione degli utenti di Active Directory. Per ulteriori informazioni, vedere [Active Directory individuazione utente](/configmgr/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser).
 
- È necessario fornire al dispositivo il file del certificato esportato per l'installazione manuale. Questa operazione può essere eseguita tramite posta elettronica, OneDrive, una scheda SD, un'unità USB o qualsiasi metodo adatto alle proprie esigenze.  
+## <a name="bkmk_storeCert"></a>Installare il certificato radice attendibile
 
- Il certificato radice da usare nei dispositivi è quello esportato in [Esportare il certificato con la stessa radice del certificato del server Web](../../mdm/get-started/set-up-certificates-on-premises-mdm.md#bkmk_exportCert).  
+I dispositivi aggiunti a un dominio ottengono il certificato radice attendibile per la comunicazione attendibile con i server che ospitano i ruoli del sistema del sito. Active Directory Servizi certificati distribuisce automaticamente il certificato radice attendibile. Per i computer e i dispositivi mobili non appartenenti a un dominio è necessario che questo certificato sia installato con altri mezzi per consentire la registrazione.
 
-1.  Nel dispositivo da registrare individuare il file del certificato radice e fare doppio clic su di esso.  
+> [!NOTE]
+> Se i certificati del server Web vengono rilasciati da un'autorità di certificazione pubblica, la maggior parte dei dispositivi sono già considerati attendibili. Se la progettazione include l'uso di una di queste CA pubbliche, non è necessario eseguire questo passaggio.
 
-2.  Nella finestra Certificato fare clic su **Installa certificato**.  
+Dopo aver [esportato il certificato radice attendibile](/configmgr/mdm/get-started/set-up-certificates-on-premises-mdm#bkmk_exportCert), è necessario installarlo nei dispositivi che dovranno registrarsi. Ad esempio, i dispositivi che non sono stati aggiunti al dominio e non possono ottenerli automaticamente da Active Directory. Il processo che si utilizza dipende dai fattori seguenti:
 
-3.  Nell'Importazione guidata certificati selezionare **Computer locale**e fare clic su **Avanti**.  
+- Tipi di dispositivi specifici e funzionalità tecniche
+- Versione sistema operativo
+- Requisiti aziendali, di sicurezza e dell'esperienza utente
 
-4.  Nella finestra Controllo dell'account utente fare clic su **Sì**.  
+L'elenco seguente include alcuni metodi di esempio per la distribuzione e l'installazione del certificato radice attendibile nei dispositivi:
 
-5.  Selezionare **Colloca tutti i certificati nel seguente archivio**e quindi fare clic su **Sfoglia**.  
+- Condivisione file
 
-6.  Fare clic su **Autorità di certificazione radice attendibili**, fare clic su **OK**e quindi fare clic su **Avanti**.  
+- Allegato e-mail
 
-7.  Fare clic su **Fine**.  
+- Scheda di memoria
+
+- Dispositivo con tethering
+
+- Archiviazione cloud (ad esempio OneDrive)
+
+- Connessione NFC (Near Field Communication)
+
+- Lettore di codice a barre
+
+- Pacchetto di provisioning della Configurazione guidata
+
+### <a name="manually-install-the-trusted-root-certificate-in-windows"></a>Installare manualmente il certificato radice attendibile in Windows
+
+1. Nel dispositivo da registrare, passare a Esplora file al file del certificato radice attendibile (con estensione CER) e **aprirlo** .
+
+1. Nella finestra certificato selezionare **Installa certificato**.
+
+1. Nell'importazione guidata certificati selezionare **computer locale**e quindi fare clic su **Avanti** per continuare come amministratore.
+
+1. Nella pagina archivio certificati selezionare **colloca tutti i certificati nel seguente archivio**e quindi selezionare **Sfoglia**.
+
+1. Nella finestra Seleziona archivio certificati selezionare autorità di **certificazione radice attendibili**e quindi fare clic su **OK**.
+
+1. Completamento e procedura guidata.
+
+## <a name="next-step"></a>Passaggio successivo
+
+> [!div class="nextstepaction"]
+> [Registrare i dispositivi](/configmgr/mdm/deploy-use/enroll-devices-on-premises-mdm)

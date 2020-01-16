@@ -2,7 +2,7 @@
 title: Pianificare MDM locale
 titleSuffix: Configuration Manager
 description: Pianificare la gestione dei dispositivi mobili locale per gestire i dispositivi mobili in Configuration Manager
-ms.date: 03/05/2019
+ms.date: 01/09/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,125 +10,75 @@ ms.assetid: 02979fb8-ea7e-4ec6-b7e0-ecbfda73e52d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5fecf8f2a5da894d5d329d01ee2a45bb12583f9f
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 10a10eb7a437c606bcc6b103af8ae94161bd5d20
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75821580"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76035163"
 ---
 # <a name="plan-for-on-premises-mdm-in-configuration-manager"></a>Pianificare la gestione dei dispositivi mobili locale in Configuration Manager
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-Gestione di dispositivi mobili (MDM) locale consente di gestire i dispositivi mobili usando le funzionalità di gestione integrate nel sistema operativo del dispositivo. La funzionalità di gestione si basa sullo standard Open Mobile Alliance (OMA) Device Management (DM), usato da molte piattaforme per dispositivi per consentire la gestione dei dispositivi. Questi dispositivi sono detti *dispositivi moderni* nella documentazione e nella console di Configuration Manager. Questo termine li distingue da altri dispositivi che richiedono la gestione Configuration Manager client.  
+Quando si prevede di implementare la gestione di dispositivi mobili (MDM) locale in Configuration Manager, è necessario esaminare diverse aree principali:
+
+- Dispositivi supportati e versioni del sistema operativo
+- Ruoli del sistema del sito richiesti
+- Comunicazione protetta
+- Registrazione del dispositivo
+
+> [!IMPORTANT]
+> Mentre il sito o qualsiasi dispositivo mobile non si connette a Microsoft Intune, l'organizzazione richiede ancora le licenze di Intune per usare questa funzionalità. Per ulteriori informazioni, vedere [Microsoft Intune Licensing](https://docs.microsoft.com/intune/fundamentals/licenses).
 
 Considerare i requisiti seguenti prima di preparare l'infrastruttura di Configuration Manager per la gestione di MDM locale.
 
-
-
 ## <a name="bkmk_devices"></a> Dispositivi supportati  
 
-Il Current Branch di Configuration Manager supporta la registrazione nella gestione dispositivi mobili locale per i dispositivi che eseguono i sistemi operativi seguenti:  
-  
-- Windows 10 Enterprise  
-- Windows 10 Pro  
-- Windows 10 Team   
-- Windows 10 Mobile  
-- Windows 10 Mobile Enterprise
-- Windows 10 IoT Enterprise   
+Current Branch of Configuration Manager supporta la registrazione nella gestione dei dispositivi mobili locale per i dispositivi che eseguono Windows 10. Questi tipi di dispositivi includono principalmente computer portatili, Internet e Surface Hub. Per altre informazioni e per l'elenco di edizioni specifiche, vedere [versioni del sistema operativo supportate per client e dispositivi](/configmgr/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#bkmk_OnpremOS).
 
+## <a name="bkmk_roles"></a> Site system roles
 
+MDM locale richiede almeno uno dei seguenti ruoli del sistema del sito:
 
-##  <a name="bkmk_intune"></a>Sottoscrizione di Microsoft Intune  
+- **Punto proxy di registrazione** per supportare le richieste di registrazione.
 
-Per iniziare a usare MDM locale, è necessario un Microsoft Intune sottoscrizione. La sottoscrizione è necessaria solo per tenere traccia delle licenze dei dispositivi e non viene usata per gestire o archiviare le informazioni di gestione per i dispositivi. Tutti i dati di gestione vengono archiviati nell'organizzazione tramite l'infrastruttura di Configuration Manager locale.  
+- **Punto di registrazione** per supportare la registrazione dei dispositivi.
 
-> [!Note]  
-> A partire dalla versione 1810, una connessione a Intune non è più necessaria per le nuove distribuzioni MDM locali.<!--3607730, fka 1359124--> Per usare questa funzionalità è comunque necessario che l'organizzazione abbia le licenze di Intune. Attualmente non è possibile rimuovere la connessione a Intune dalle distribuzioni MDM locali esistenti. Per altre informazioni, vedere il [post di blog del supporto tecnico di Intune](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150).  
+- **Punto gestione periferiche** per la distribuzione dei criteri. Questo ruolo è una variante del punto di gestione, ma consente la gestione dei dispositivi mobili.
 
-Se il sito dispone di dispositivi con connettività Internet, è possibile usare il servizio Intune per notificare ai dispositivi di controllare il punto di gestione dei dispositivi per gli aggiornamenti dei criteri. Questo comportamento USA Intune esclusivamente per la notifica di dispositivi con connessione Internet. I dispositivi senza connessioni Internet e che non possono essere contattati da Intune si basano sull'intervallo di polling configurato per archiviare i ruoli del sistema del sito per le funzioni di gestione.  
+- **Punto di distribuzione** per la distribuzione di contenuti.
 
-> [!TIP]  
-> Prima di configurare i ruoli del sistema del sito richiesti, configurare la sottoscrizione di Intune. Questa azione riduce al minimo il tempo necessario affinché i ruoli diventino funzionali.  
+A seconda delle esigenze dell'organizzazione, è possibile installare questi ruoli nel singolo server o separatamente in server diversi.
 
-Per informazioni su come configurare la sottoscrizione di Intune, vedere [configurare una sottoscrizione di Microsoft Intune per MDM locale](/sccm/mdm/get-started/set-up-intune-subscription-on-premises-mdm).  
+> [!NOTE]
+> È necessario configurare ogni ruolo usato per MDM locale come endpoint HTTPS per comunicare con dispositivi attendibili. Per altre informazioni, vedere [Comunicazioni attendibili richieste](#bkmk_trustedComs).
 
+Per informazioni più generali, vedere [pianificare i server e i ruoli del sistema del sito](/sccm/core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles).
 
+## <a name="bkmk_trustedComs"></a>Comunicazioni attendibili
 
-##  <a name="bkmk_roles"></a> Site system roles  
+MDM locale richiede l'abilitazione dei ruoli del sistema del sito per le comunicazioni HTTPS. A seconda delle esigenze, è possibile usare l'autorità di certificazione (CA) dell'organizzazione per stabilire le connessioni attendibili tra i server e i dispositivi. È anche possibile usare una CA disponibile pubblicamente come autorità attendibile. In entrambi i casi, è necessario configurare i certificati seguenti:
 
-MDM locale richiede almeno uno dei seguenti ruoli del sistema del sito:  
+- Un **certificato del server Web** in IIS nei server che ospitano i ruoli del sistema del sito richiesti. Se un server ospita più ruoli del sistema del sito, è necessario solo un certificato per tale server. Se ogni ruolo si trova in un server separato, per ogni server è necessario un certificato separato.
 
-- **Punto proxy di registrazione** per supportare le richieste di registrazione.  
+- Il **certificato radice attendibile** della CA che rilascia i certificati del server Web. Installare questo certificato radice in tutti i dispositivi che devono connettersi ai ruoli del sistema del sito.
 
-- **Punto di registrazione** per supportare la registrazione dei dispositivi.  
+Per altre informazioni, vedere [configurare i certificati per le comunicazioni attendibili in MDM locale](/sccm/mdm/get-started/set-up-certificates-on-premises-mdm).
 
-- **Punto gestione periferiche** per la distribuzione dei criteri. Questo ruolo del sistema del sito è una variante del ruolo del punto di gestione che è stato configurato per consentire la gestione dei dispositivi mobili.  
+## <a name="bkmk_enrollment"></a>Registrazione del dispositivo
 
-- **Punto di distribuzione** per la distribuzione di contenuti.  
+Per abilitare la registrazione del dispositivo per MDM locale:
 
-- **Punto di connessione del servizio** per la connessione a Intune per le notifiche a dispositivi esterni al firewall.  
+- Concedere agli utenti le autorizzazioni per la registrazione tramite le impostazioni client
 
-Questi ruoli del sistema del sito possono essere installati nel singolo server del sistema del sito oppure possono essere eseguiti separatamente in server diversi a seconda delle esigenze dell'organizzazione. Ogni server del sistema del sito usato per MDM locale deve essere configurato come endpoint HTTPS per la comunicazione con i dispositivi attendibili. Per altre informazioni, vedere [Comunicazioni attendibili richieste](#bkmk_trustedComs).  
+- Configurare i dispositivi per le comunicazioni attendibili con i server del sistema del sito che ospitano i ruoli necessari
 
-Per ulteriori informazioni sulla pianificazione dei ruoli del sistema del sito, vedere [pianificare i ruoli e i server del sistema del sito per Configuration Manager](/sccm/core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles).  
+In alternativa alla registrazione avviata dall'utente, è possibile configurare un pacchetto di registrazione in blocco. Questo pacchetto consente la registrazione del dispositivo senza l'intervento dell'utente. Distribuire il pacchetto al dispositivo prima di eseguirne il provisioning per l'uso o dopo aver eseguito il processo OOBE.
 
-Per ulteriori informazioni su come aggiungere i ruoli del sistema del sito richiesti, vedere [installare i ruoli del sistema del sito per MDM locale](/sccm/mdm/get-started/install-site-system-roles-for-on-premises-mdm).  
+Per altre informazioni, vedere [configurare la registrazione dei dispositivi per MDM locale](/sccm/mdm/get-started/set-up-device-enrollment-on-premises-mdm).
 
+## <a name="next-step"></a>Passaggio successivo
 
-
-##  <a name="bkmk_trustedComs"></a>Comunicazioni attendibili  
-
-MDM locale richiede che i ruoli del sistema del sito siano abilitati per le comunicazioni HTTPS. A seconda delle esigenze, è possibile usare l'autorità di certificazione dell'organizzazione (CA) per stabilire le connessioni attendibili tra i server e i dispositivi. È anche possibile usare una CA disponibile pubblicamente come autorità attendibile. In entrambi i casi, è necessario che un certificato server Web sia configurato in IIS nei server del sistema del sito che ospitano i ruoli del sistema del sito richiesti. È necessario anche il certificato radice della CA installato nei dispositivi che devono connettersi a tali server.  
-
-Se si usa la CA dell'organizzazione per stabilire comunicazioni attendibili, eseguire le attività seguenti:  
-
-- Creare ed emettere il modello di certificato del server Web nella CA.  
-
-- Richiedere un certificato del server web per ogni server del sistema del sito che ospita un ruolo del sistema del sito richiesto.  
-
-- Configurare IIS nel server del sistema del sito per usare il certificato del server Web richiesto.  
-
-Per i dispositivi aggiunti al dominio Active Directory aziendale, il certificato radice della CA aziendale è già disponibile nel dispositivo per le connessioni attendibili. Questo comportamento indica che i dispositivi aggiunti a un dominio vengono automaticamente considerati attendibili per le connessioni HTTPS con i server del sistema del sito. Tuttavia, i dispositivi non aggiunti a un dominio non ottengono automaticamente il certificato radice richiesto installato. Per comunicare correttamente con i server del sistema del sito che supportano MDM locale, i dispositivi non aggiunti a un dominio, ad esempio i dispositivi mobili, richiedono l'installazione manuale del certificato radice su di essi.  
-
-Esportare il certificato radice della CA emittente per l'uso da parte dei singoli dispositivi. Per ottenere il file del certificato radice, è possibile esportarlo usando la CA. Un altro metodo consiste nell'usare il certificato del server Web emesso dalla CA per estrarre la radice e creare un file del certificato radice. Il certificato radice deve quindi essere recapitato al dispositivo. Alcuni metodi di recapito di esempio includono:
-
-- File system  
-
-- Allegato e-mail  
-
-- Scheda di memoria  
-
-- Dispositivo con tethering  
-
-- Archiviazione cloud (ad esempio OneDrive)  
-
-- Connessione NFC (Near Field Communication)  
-
-- Lettore di codice a barre  
-
-- Pacchetto di provisioning della Configurazione guidata  
-
-Per altre informazioni, vedere [configurare i certificati per le comunicazioni attendibili in MDM locale](/sccm/mdm/get-started/set-up-certificates-on-premises-mdm)  
-
-
-
-##  <a name="bkmk_enrollment"></a>Registrazione del dispositivo
-
-Per abilitare la registrazione del dispositivo per MDM locale,
-- Agli utenti deve essere concessa l'autorizzazione per la registrazione 
-- I dispositivi devono essere configurati per le comunicazioni trusted con i server del sistema del sito che ospitano i ruoli necessari  
-
-Concedere agli utenti le autorizzazioni per registrare i dispositivi impostando un profilo di registrazione in Configuration Manager impostazioni client. È possibile usare le impostazioni client predefinite per eseguire il push del profilo di registrazione a tutti gli utenti individuati. È anche possibile configurare il profilo di registrazione nelle impostazioni client personalizzate e inviare le impostazioni a una o più raccolte di utenti.  
-
-Una volta concessa l'autorizzazione, gli utenti possono registrare i propri dispositivi. Per essere registrato, il dispositivo dell'utente deve avere il certificato radice dell'autorità di certificazione (CA) che ha emesso il certificato del server Web usato nei server del sistema del sito che ospitano i ruoli necessari.  
-
-In alternativa alla registrazione avviata dall'utente, è possibile configurare un pacchetto di registrazione in blocco. Questo pacchetto consente la registrazione del dispositivo senza l'intervento dell'utente. Può essere recapitato al dispositivo prima del provisioning per l'uso o dopo il completamento del processo OOBE da parte del dispositivo.  
-
-Per ulteriori informazioni su come configurare e registrare i dispositivi, vedere gli articoli seguenti: 
-
-- [Configurare la registrazione dei dispositivi per MDM locale](/sccm/mdm/get-started/set-up-device-enrollment-on-premises-mdm)  
-
-- [Registrare i dispositivi per la gestione dei dispositivi mobili locale](/sccm/mdm/deploy-use/enroll-devices-on-premises-mdm)  
-
+> [!div class="nextstepaction"]
+> [Installare i ruoli del sistema del sito](/configmgr/mdm/get-started/install-site-system-roles-for-on-premises-mdm)
