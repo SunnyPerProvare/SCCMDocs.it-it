@@ -11,17 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11b970cc93db5edbabec58d18cd6d12b2275fd57
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 6a80bc1662a790d726acd2a19426087a9cdc3146
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65933263"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804725"
 ---
-# <a name="capabilities-in-technical-preview-18062-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1806.2 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-18062-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1806.2 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
 Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager, versione 1806.2. È possibile installare questa versione per aggiornare il sito delle anteprime tecniche aggiungendovi nuove funzionalità. 
 
@@ -339,4 +338,4 @@ Il report include le parti seguenti:
 
 
 ## <a name="next-steps"></a>Passaggi successivi
-Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview).    
+Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview).    

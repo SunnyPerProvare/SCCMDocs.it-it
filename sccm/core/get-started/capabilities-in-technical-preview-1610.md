@@ -1,7 +1,7 @@
 ---
 title: Funzionalità nella Technical Preview 1610
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili in Technical Preview per System Center Configuration Manager, versione 1610.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1610 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,21 +11,20 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ccd6efc583805022bab908a06d908e010b9ec9d9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 2b9c79b133803c09f17bfb6acab94d462332d4b5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67677574"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75805099"
 ---
-# <a name="capabilities-in-technical-preview-1610-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1610 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1610-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1610 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
 
 
-Questo articolo presenta le funzionalità disponibili in Technical Preview per System Center Configuration Manager, versione 1610. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1610. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview per Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
@@ -51,7 +50,7 @@ Per una distribuzione ad alto rischio, ad esempio una sequenza di attività che 
 ![Finestra di dialogo del software richiesto](media/requiredsoftwaredialog.png)
 
 
-Per ulteriori informazioni:
+Per altre informazioni:
 - [Impostazioni per gestire le distribuzioni ad alto rischio](../../protect/understand/settings-to-manage-high-risk-deployments.md)
 - [Come configurare le impostazioni client](../clients/deploy/configure-client-settings.md)
 
@@ -88,7 +87,7 @@ Se una raccolta è configurata per l'esclusione, i membri di tale raccolta posso
 
   Se si tenta di aggiornare manualmente un client che fa parte della raccolta esclusa senza usare questa opzione, il client non installa il nuovo software client. Per altre informazioni, vedere [Come installare manualmente i client di Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual).
 
-Per altre informazioni su questi metodi di installazione del client, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).
+Per altre informazioni su questi metodi di installazione del client, vedere [Come distribuire i client nei computer Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).
 
 ## <a name="windows-defender-configuration-settings"></a>Impostazioni di configurazione di Windows Defender
 
@@ -162,4 +161,4 @@ A queste aree della console di Configuration Manager continua a essere concesso 
 È ora possibile richiedere la conformità dei dispositivi Windows 10 registrati in Azure Active Directory per poter ottenere l'accesso alla rete VPN tramite i profili VPM di Windows 10 creati nella console di Configuration Manager. Per disporre di questa funzionalità, selezionare la casella di controllo **Abilita l'accesso condizionale per questa connessione VPN** nella pagina **Metodo di autenticazione** della procedura di creazione guidata del profilo VPN e nelle proprietà dei profili VPN di Windows 10. Se si abilita l'accesso condizionale per il profilo, è anche possibile specificare un certificato separato per l'autenticazione Single Sign-On.
 
 ## <a name="see-also"></a>Vedere anche
-[Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager)
+[Technical Preview per Configuration Manager](../../core/get-started/technical-preview.md)

@@ -1,7 +1,7 @@
 ---
 title: Elenchi di controllo per la migrazione
 titleSuffix: Configuration Manager
-description: Per pianificare una strategia di migrazione verso System Center Configuration Manager usare gli elenchi di controllo amministratore.
+description: Usare gli elenchi di controllo per gli amministratori per facilitare la pianificazione di una strategia di migrazione verso Configuration Manager Current Branch.
 ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: 295fdf07-93cc-490c-acdd-ce3ee88cb36f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3136c8add4256a646409c4a540da783a04a5b71d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 315bcc18e424d219975619e82266996a4e6b135d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62234786"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75803569"
 ---
-# <a name="administrator-checklists-for-migration-planning-in-system-center-configuration-manager"></a>Elenchi di controllo amministratore per la pianificazione della migrazione in System Center Configuration Manager
+# <a name="administrator-checklists-for-migration-planning-in-configuration-manager"></a>Elenchi di controllo per gli amministratori per la pianificazione della migrazione in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Per pianificare la strategia di migrazione per System Center Configuration Manager usare i seguenti elenchi di controllo amministratore.
+Usare gli elenchi di controllo per gli amministratori seguenti per facilitare la pianificazione di una strategia di migrazione verso Configuration Manager Current Branch.
 
 ##  <a name="Checklist_Migraiton_Planning"></a> Elenco di controllo amministratore per la pianificazione della migrazione  
  Utilizzare il seguente elenco di controllo per la procedura di pianificazione pre-migrazione.  
@@ -33,12 +32,12 @@ Per pianificare la strategia di migrazione per System Center Configuration Manag
 
 -   **Esaminare le funzionalità e le modifiche disponibili con la versione di Configuration Manager in uso e sfruttare tali informazioni per progettare la gerarchia di destinazione:**  
 
-    Per altre informazioni, vedere [Nozioni fondamentali su System Center Configuration Manager](../../core/understand/fundamentals.md) e [Novità di System Center Configuration Manager](../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md).  
+    Per altre informazioni, vedere [Nozioni fondamentali di Configuration Manager](../../core/understand/fundamentals.md) e [Novità](../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md).  
 
 
 -   **Determinare il modello di protezione amministrativa da usare per l'amministrazione basata sui ruoli:**  
 
-    Per altre informazioni, vedere [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md) (Nozioni fondamentali dell'amministrazione basata sui ruoli per System Center Configuration Manager).  
+    Per altre informazioni, vedere [Nozioni fondamentali di amministrazione basata su ruoli per Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
 -   **Valutare la rete e la topologia di Active Directory:** Esaminare la struttura del dominio e la topologia di rete esistenti e valutarne l'effetto sulle attività di migrazione e progettazione della gerarchia.  
 
@@ -52,7 +51,7 @@ Per pianificare la strategia di migrazione per System Center Configuration Manag
 
 -   **Pianificare la strategia di migrazione degli oggetti:**  
 
-    Pianificare l'uso dei processi di migrazione disponibili per eseguire la migrazione di oggetti diversi, tra cui limiti del sito, raccolte, annunci e distribuzioni. Per altre informazioni, vedere [Tipi di processi di migrazione](../../core/migration/planning-a-migration-job-strategy.md#Types_of_Migration) in [Pianificazione di una strategia di processo di migrazione in System Center Configuration Manager](../../core/migration/planning-a-migration-job-strategy.md).  
+    Pianificare l'uso dei processi di migrazione disponibili per eseguire la migrazione di oggetti diversi, tra cui limiti del sito, raccolte, annunci e distribuzioni. Per altre informazioni, vedere [Tipi di processi di migrazione](../../core/migration/planning-a-migration-job-strategy.md#Types_of_Migration) in [Pianificazione di una strategia di processo di migrazione](../../core/migration/planning-a-migration-job-strategy.md)  
 
     Configuration Manager esegue la migrazione solo degli oggetti selezionati. Tutti gli oggetti di cui non viene eseguita la migrazione e che sono necessari nella gerarchia di destinazione devono essere ricreati nella gerarchia di destinazione.  
 
@@ -60,7 +59,7 @@ Per pianificare la strategia di migrazione per System Center Configuration Manag
 
 -   **Pianificare la strategia di migrazione del client:**  
 
-    Pianificare la migrazione di client utilizzando un approccio controllato che limita i requisiti di elaborazione del server e di larghezza di banda quando si esegue la migrazione dei client nella gerarchia di destinazione. Per dettagli sulla pianificazione di una strategia di migrazione dei client, vedere [Pianificazione di una strategia di migrazione client in System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md).  
+    Pianificare la migrazione di client utilizzando un approccio controllato che limita i requisiti di elaborazione del server e di larghezza di banda quando si esegue la migrazione dei client nella gerarchia di destinazione. Per altre informazioni sulla pianificazione di una strategia di migrazione dei client, vedere [Pianificazione di una strategia di migrazione client](../../core/migration/planning-a-client-migration-strategy.md).  
 
 -   **Pianificare i dati di inventario e di conformità:**  
 
@@ -77,13 +76,13 @@ Prima di iniziare la migrazione utilizzare il seguente elenco di controllo per l
 
 -   **Identificare i computer da usare nella gerarchia di destinazione:**  
 
-    Configuration Manager non supporta l'aggiornamento sul posto dall'infrastruttura di Configuration Manager 2007. Si usa invece la migrazione per spostare i dati da Configuration Manager 2007 a System Center Configuration Manager. Per questa operazione è necessario usare una distribuzione side-by-side e installare System Center Configuration Manager nei nuovi computer.  
+    Configuration Manager non supporta l'aggiornamento sul posto dall'infrastruttura di Configuration Manager 2007. Si usa invece la migrazione per spostare i dati da Configuration Manager 2007 a Configuration Manager Current Branch. Per questa operazione è necessario usare una distribuzione side-by-side e installare Configuration Manager nei nuovi computer.  
 
-    Analogamente, quando si esegue la migrazione da un'altra gerarchia di System Center Configuration Manager, è necessario installare una nuova gerarchia di destinazione che sia una distribuzione side-by-side nella gerarchia di origine.  
+    Analogamente, quando si esegue la migrazione da un'altra gerarchia di Configuration Manager, è necessario installare una nuova gerarchia di destinazione che sia una distribuzione side-by-side nella gerarchia di origine.  
 
 -   **Creare una gerarchia di destinazione:**  
 
-    Per preparare la migrazione, installare e configurare una gerarchia di destinazione di System Center Configuration Manager che includa un sito primario. Ad esempio:  
+    Per preparare la migrazione, installare e configurare una gerarchia di destinazione di Configuration Manager che includa un sito primario. Ad esempio:  
 
     -   Installare un sito di amministrazione centrale e almeno un sito primario figlio.  
 
@@ -114,7 +113,7 @@ Utilizzare il seguente elenco di controllo per la migrazione dei dati dalla gera
 
 -   **Abilitare la migrazione nella gerarchia di destinazione:**  
 
-    Configurare una gerarchia di origine specificando il sito di livello superiore della gerarchia di origine. Per dettagli sulla specificazione del sito di origine, vedere [Pianificazione di una strategia per la gerarchia di origine in System Center Configuration Manager](../../core/migration/planning-a-source-hierarchy-strategy.md).  
+    Configurare una gerarchia di origine specificando il sito di livello superiore della gerarchia di origine. Per altre informazioni sulla specificazione del sito di origine, vedere [Pianificazione di una strategia per la gerarchia di origine](../../core/migration/planning-a-source-hierarchy-strategy.md).  
 
 -   **Quando la gerarchia di origine esegue Configuration Manager 2007 SP2, selezionare e configurare ulteriori siti nella gerarchia di origine:**  
 
@@ -127,7 +126,7 @@ Utilizzare il seguente elenco di controllo per la migrazione dei dati dalla gera
 
     È possibile condividere i punti di distribuzione tra due gerarchie per rendere disponibile il contenuto relativo agli oggetti migrati per i client presenti nella gerarchia di destinazione. Ciò garantisce che lo stesso contenuto rimanga disponibile per i client in entrambe le gerarchie e che sia possibile conservare tale contenuto fino all'interruzione della raccolta dei dati e alla fine della migrazione.  
 
-    Per informazioni sui punti di distribuzione condivisi, vedere [Condividere punti di distribuzione tra gerarchie di origine e destinazione](../../core/migration/planning-a-content-deployment-migration-strategy.md#About_Shared_DPs_in_Migration) in [Pianificazione di una strategia di migrazione per la distribuzione del contenuto in System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md).  
+    Per informazioni sui punti di distribuzione condivisi, vedere [Condividere punti di distribuzione tra gerarchie di origine e destinazione](../../core/migration/planning-a-content-deployment-migration-strategy.md#About_Shared_DPs_in_Migration) in [Pianificare una strategia di migrazione per la distribuzione del contenuto](../../core/migration/planning-a-content-deployment-migration-strategy.md).  
 
 -   **Creare ed eseguire i processi di migrazione per la migrazione di oggetti associati ai client nella gerarchia di origine:**  
 
@@ -135,7 +134,7 @@ Utilizzare il seguente elenco di controllo per la migrazione dei dati dalla gera
 
     Ad esempio, quando si esegue la migrazione di contenuto, indipendentemente dal processo di migrazione che si sceglie di utilizzare, è necessario assegnare un sito nella gerarchia di destinazione come responsabile della gestione di tale contenuto. Il sito assegnato potrà accedere al percorso originale del file di origine per tale contenuto ed è responsabile per la distribuzione del contenuto ai punti di distribuzione presenti nella gerarchia di destinazione.  
 
-    Per altre informazioni, vedere [Creare e modificare i processi di migrazione](../../core/migration/operations-for-migration.md#Create_Edit_migration_Jobs) in [Operazioni per la migrazione a System Center Configuration Manager](../../core/migration/operations-for-migration.md).  
+    Per altre informazioni, vedere [Creare e modificare i processi di migrazione per Configuration Manager](../../core/migration/operations-for-migration.md#Create_Edit_migration_Jobs) in [Operazioni per la migrazione a Configuration Manager Current Branch](../../core/migration/operations-for-migration.md).  
 
 -   **Eseguire la migrazione dei client nella gerarchia di destinazione:**  
 
@@ -147,16 +146,16 @@ Utilizzare il seguente elenco di controllo per la migrazione dei dati dalla gera
 
     Quando si esegue la migrazione di un client nella gerarchia di destinazione, il client viene associato ai relativi dati, precedentemente migrati in tale gerarchia di destinazione.  
 
-    Per ulteriori informazioni, vedere [Pianificazione di una strategia di processo di migrazione in System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md).  
+    Per altre informazioni, vedere [Pianificazione di una strategia di migrazione client](../../core/migration/planning-a-client-migration-strategy.md).  
 
 -   **Aggiornare o riassegnare i punti di distribuzione condivisi:**  
 
-    Quando non è più necessario supportare i client nella gerarchia di origine, è possibile aggiornare i punti di distribuzione condivisi da un sito di origine di Configuration Manager 2007 o riassegnare i punti di distribuzione condivisi da un sito di origine di System Center 2012 Configuration Manager o System Center Configuration Manager. Quando si aggiorna o si riassegna un punto di distribuzione, il ruolo del sistema del sito viene trasferito in un sito primario presente nella gerarchia di destinazione e il punto di distribuzione viene rimosso dal sito di origine nella gerarchia di origine. Quando si aggiorna o si riassegna un punto di distribuzione condiviso, il contenuto rimane nel computer del punto di distribuzione e non è necessario ridistribuirlo nei nuovi punti di distribuzione presenti nella gerarchia di destinazione.  
+    Quando non è più necessario supportare i client nella gerarchia di origine, è possibile aggiornare i punti di distribuzione condivisi da un sito di origine di Configuration Manager 2007 o riassegnare i punti di distribuzione condivisi da un sito di origine di System Center 2012 Configuration Manager o Configuration Manager Current Branch. Quando si aggiorna o si riassegna un punto di distribuzione, il ruolo del sistema del sito viene trasferito in un sito primario presente nella gerarchia di destinazione e il punto di distribuzione viene rimosso dal sito di origine nella gerarchia di origine. Quando si aggiorna o si riassegna un punto di distribuzione condiviso, il contenuto rimane nel computer del punto di distribuzione e non è necessario ridistribuirlo nei nuovi punti di distribuzione presenti nella gerarchia di destinazione.  
 
     È inoltre possibile aggiornare un punto di distribuzione di Configuration Manager 2007 con percorso condiviso in un server del sito secondario. Tale operazione comporta la rimozione del sito secondario e la presenza di un solo punto di distribuzione nella gerarchia di destinazione.  
 
-    Per informazioni sui punti di distribuzione condivisi, vedere [Condividere punti di distribuzione tra gerarchie di origine e destinazione](../../core/migration/planning-a-content-deployment-migration-strategy.md#About_Shared_DPs_in_Migration) in [Pianificazione di una strategia di migrazione per la distribuzione del contenuto in System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md).  
+    Per informazioni sui punti di distribuzione condivisi, vedere [Condividere punti di distribuzione tra gerarchie di origine e destinazione](../../core/migration/planning-a-content-deployment-migration-strategy.md#About_Shared_DPs_in_Migration) in [Pianificare una strategia di migrazione per la distribuzione del contenuto](../../core/migration/planning-a-content-deployment-migration-strategy.md).  
 
 -   **Completare la migrazione:**  
 
-    Dopo aver eseguito la migrazione dei dati e dei client da tutti i siti presenti nella gerarchia di origine e dopo aver aggiornato i punti di distribuzione applicabili, è possibile terminare la migrazione. Per terminare la migrazione, è necessario interrompere la raccolta dei dati per ogni sito di origine nella gerarchia di origine. È quindi possibile eliminare le informazioni di migrazione non necessarie e rimuovere le autorizzazioni per l'infrastruttura della gerarchia di origine. Per altre informazioni, vedere [Pianificazione del completamento della migrazione in System Center Configuration Manager](../../core/migration/planning-to-complete-migration.md).  
+    Dopo aver eseguito la migrazione dei dati e dei client da tutti i siti presenti nella gerarchia di origine e dopo aver aggiornato i punti di distribuzione applicabili, è possibile terminare la migrazione. Per terminare la migrazione, è necessario interrompere la raccolta dei dati per ogni sito di origine nella gerarchia di origine. È quindi possibile eliminare le informazioni di migrazione non necessarie e rimuovere le autorizzazioni per l'infrastruttura della gerarchia di origine. Per altre informazioni, vedere [Pianificazione del completamento della migrazione](../../core/migration/planning-to-complete-migration.md).  

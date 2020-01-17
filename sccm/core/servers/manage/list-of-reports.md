@@ -10,12 +10,12 @@ ms.assetid: b7332ed3-8003-454b-bb12-1fdf8721425c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e985f3df91d1e749c1baa6b490033237ff4e369c
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 8474cb1bab82528a94baf3acdc302abb25a61794
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794864"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034259"
 ---
 # <a name="list-of-reports-in-configuration-manager"></a>Elenco dei report di Configuration Manager
 
@@ -178,8 +178,6 @@ I 22 report seguenti sono elencati nella categoria **Gestione conformità e impo
 |-----------------|-----------------|  
 |**Cronologia di conformità di una linea di base configurazione**|Visualizza la cronologia delle modifiche in conformità di una linea di base configurazione per l'intervallo di date specificato.|  
 |**Cronologia di conformità di un elemento di configurazione**|Visualizza la cronologia delle modifiche in conformità di un elemento di configurazione per l'intervallo di date specificato.|  
-|**Conformità dell'accesso condizionale per un utente**|Visualizza la conformità dettagliata dell'accesso condizionale per un utente specifico.|
-|**Report di conformità dell'accesso condizionale**|Report di conformità dell'accesso condizionale per i criteri di conformità usati.|
 |**Dettagli delle regole conformi degli elementi di configurazione in una linea di base configurazione per un asset**|Visualizza informazioni sulle regole valutate come conformi per un elemento di configurazione specifico per un dispositivo o utente specifico.|  
 |**Dettagli delle regole in conflitto degli elementi di configurazione in una linea di base configurazione per un asset**|Visualizza informazioni sulle regole in un elemento di configurazione distribuito in conflitto con altre regole. Include le altre regole nello stesso elemento di configurazione distribuito o in un altro elemento.|  
 |**Dettagli degli errori degli elementi di configurazione in una linea di base configurazione per un asset**|Visualizza le informazioni sugli errori generati da un elemento di configurazione specifico per un dispositivo o un utente specifico.|  
@@ -237,7 +235,6 @@ I 37 report seguenti sono elencati nella categoria **Gestione dispositivi**.
 |**Informazioni di stato dettagliate per i dispositivi mobili gestiti dal client di Configuration Manager per Windows CE**|Visualizza informazioni di stato dettagliate per i dispositivi mobili gestiti dal client di Configuration Manager per Windows CE.|  
 |**Informazioni di riepilogo dello stato per i dispositivi mobili gestiti dal client di Configuration Manager per Windows CE**|Visualizza informazioni di riepilogo dello stato per i dispositivi mobili gestiti dal client di Configuration Manager per Windows CE.|  
 |**Dispositivi mobili inattivi che sono gestiti dal connettore Exchange Server**|Visualizza i dispositivi mobili gestiti dal connettore Exchange Server che non si sono connessi a Exchange Server in un numero di giorni specifico.|  
-|**Elenco dei dispositivi per stato di accesso condizionale**|Visualizza informazioni sulla conformità corrente e sullo stato di accesso condizionale dei dispositivi. È possibile usare questo report con i criteri di accesso condizionale. Questo report è disponibile a partire dalla versione 1602 di Configuration Manager.|  
 |**Elenco di dispositivi in base allo stato dell'attestazione dell'integrità**|Visualizza un elenco di dispositivi con attributi segnalati dal servizio di attestazione dell'integrità.|
 |**Elenco dei dispositivi registrati a Microsoft Intune per utente**|Visualizza tutti i dispositivi iscritti da un utente con Microsoft Intune.|  
 |**Elenco di dispositivi in una categoria di dispositivi specifica**|Visualizza informazioni per tutti i dispositivi all'interno di una categoria di dispositivi specifica.|
@@ -654,10 +651,7 @@ I 10 report seguenti sono elencati nella categoria **Distribuzione software - Mo
 |**Errori infrastruttura applicazione**|Visualizza gli errori di infrastruttura dell'applicazione. Questi errori includono problemi di infrastruttura interna o errori derivanti da regole di requisiti non valide.|  
 |**Stato dettagliato uso applicazione**|Visualizza i dettagli di uso per le applicazioni installate.|  
 |**Stato riepilogo uso applicazione**|Visualizza un riepilogo sull'uso per le applicazioni installate.|  
-|**App per iOS con distribuzioni non riuscite (app già installata)**|Visualizza informazioni sulla conformità per l'app iOS selezionata. L'app è stata distribuita come "Pacchetto app iOS nell'App Store Apple" e associata a criteri di gestione per applicazioni mobili. Questo report viene usato per visualizzare gli utenti e i dispositivi per cui l'installazione dell'app non è riuscita, in quanto l'app era già stata installata manualmente dall'utente.|  
 |**Distribuzioni sequenza attività contenenti l'applicazione**|Visualizza le distribuzioni della sequenza di attività che installano un'applicazione specifica.|  
-|**Richieste utente per applicazione Android**|Visualizza gli utenti che hanno richiesto di installare un'applicazione Android.|  
-
 
 
 ## <a name="software-distribution---collections"></a>Distribuzione software - Raccolte  
@@ -1001,16 +995,6 @@ I sette report seguenti sono elencati nella categoria **Applicazioni virtuali**.
 |**Computer con un pacchetto applicazione virtuale specifico**|Visualizza il riepilogo dei computer con il pacchetto dell'applicazione App-V specificato.|  
 |**Conteggio di tutte le istanze delle applicazioni virtuali**|Visualizza il conteggio dei pacchetti applicazione App-V rilevati.|  
 |**Conteggio di tutte le istanze delle applicazioni virtuali**|Visualizza il conteggio delle applicazioni App-V rilevate.|  
-
-
-
-## <a name="volume-purchase-programs---apple"></a>Volume purchase programs - Apple
-
-Il report seguente è elencato nella categoria **Volume Purchase Program - Apple**.
-
-|Nome report|Descrizione|  
-|-----------------|-----------------|  
-|**App Volume Purchase Program di Apple per iOS con conteggi di licenze**|Visualizza tutte le applicazioni per iPhone, iPad e iPod Touch concesse in licenza tramite il Volume Purchase Program di Apple. Questo report include anche le licenze totali acquistate e le licenze usate per ogni applicazione.|  
 
 
 

@@ -4,22 +4,21 @@ ms.date: 05/06/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: 8fe2ecfc-f5c1-4fa6-8703-245339400723
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: cb17e22f7eb525f10a3494f893928a836c847c9d
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: 9af04678ac35311f35dde991b4aa43d7b6df736f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198456"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802957"
 ---
 # <a name="mms-2019-docathon"></a>MMS 2019 Docathon
 
-In occasione del Midwest Management Summit (MMS) 2019, il Microsoft Content Team per System Center Configuration Manager e Microsoft Intune ha organizzato un docathon. Se si prevede di frequentare il [laboratorio pratico su docs.microsoft.com](https://sched.co/N6fd) che si terrà lunedì 6 maggio, questa è l'occasione giusta per sviluppare nuovi contributi con il supporto degli autori di Microsoft. Il docathon si terrà per tutta la durata della conferenza ed è aperto alla partecipazione di tutti gli iscritti al summit MMS 2019.
+In occasione del Midwest Management Summit (MMS) 2019, il Microsoft Content Team per Configuration Manager e Microsoft Intune ha organizzato un docathon. Se si prevede di frequentare il [laboratorio pratico su docs.microsoft.com](https://sched.co/N6fd) che si terrà lunedì 6 maggio, questa è l'occasione giusta per sviluppare nuovi contributi con il supporto degli autori di Microsoft. Il docathon si terrà per tutta la durata della conferenza ed è aperto alla partecipazione di tutti gli iscritti al summit MMS 2019.
 
 Perché partecipare? Docs.microsoft.com è una piattaforma open source per la documentazione relativa ai prodotti Microsoft, basata su GitHub. Microsoft invita tutti gli utenti a offrire il proprio contributo alla documentazione. Quando un utente offre un proprio contributo, viene riconosciuto dalla piattaforma nell'elenco dei collaboratori per ogni articolo. Questi sono alcuni dei tipi di contributo che possono essere offerti dalla community:
 

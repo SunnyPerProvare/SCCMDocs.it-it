@@ -1,7 +1,7 @@
 ---
 title: Technical Preview 1709
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili in Technical Preview versione 1709 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1709 per Configuration Manager.
 ms.date: 09/28/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a88052e0d799b324ddbed6acbdf0b25a97f4d80c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c16ea4928873a987ff673a44574f9734a08607b2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67677367"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804742"
 ---
-# <a name="capabilities-in-technical-preview-1709-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1709 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1709-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1709 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-L'articolo illustra le funzionalità disponibili nella versione 1709 di Technical Preview per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.     
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1709. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare [Technical Preview per Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.     
 
 
 <!--  Known Issues Template   
@@ -220,4 +219,4 @@ Select the co-management object, and then on the Home tab, click **Properties**.
 After you have enabled co-management, you can monitor which devices are managed by Configuration Manager and which are managed by Intune. You can also see which Configuration Manager workloads are managed by which product.-->
 
 ## <a name="see-also"></a>Vedere anche
-Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview). 
+Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview). 

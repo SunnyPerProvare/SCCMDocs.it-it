@@ -1,7 +1,7 @@
 ---
 title: Privacy e sicurezza per il controllo remoto
 titleSuffix: Configuration Manager
-description: Informazioni sulla sicurezza e la privacy per il controllo remoto in System Center Configuration Manager.
+description: Informazioni sulla sicurezza e la privacy per il controllo remoto in Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,19 +10,18 @@ ms.assetid: 272ee86b-d3d9-4fd9-b5c4-73e490e1a1e4
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5952aaa71aacaa7e1ddd61746423a4bd572c7417
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 83631b331030f9648c3e88a2e101a013cfa0e98f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65499681"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823807"
 ---
-# <a name="security-and-privacy-for-remote-control-in-system-center-configuration-manager"></a>Sicurezza e privacy per il controllo remoto in System Center Configuration Manager
+# <a name="security-and-privacy-for-remote-control-in-configuration-manager"></a>Sicurezza e privacy per il controllo remoto in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo argomento contiene informazioni relative alla sicurezza e alla privacy per il controllo remoto in System Center Configuration Manager.  
+Questo argomento contiene informazioni relative alla sicurezza e alla privacy per il controllo remoto in Configuration Manager.  
 
 ##  <a name="BKMK_Security_HardwareInventory"></a> Procedure di sicurezza consigliate per il controllo remoto  
  Utilizzare le seguenti procedure ottimali di protezione per gestire i computer client utilizzando il controllo remoto.  

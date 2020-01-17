@@ -10,12 +10,12 @@ ms.assetid: deb8aac8-2bd9-4980-a25b-5f8d93051226
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f616c1cd87fcd0852fe783d5daec51284ef54233
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e0a7334e2c4c47a7de3854b736faf480a35caaa2
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75824623"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033991"
 ---
 # <a name="client-notification-in-configuration-manager"></a>Notifica del client in Configuration Manager
 
@@ -124,10 +124,6 @@ Attivare i client per il passaggio al successivo punto di aggiornamento software
 ### <a name="evaluate-device-health-attestation"></a>Valuta l'attestazione dell'integrità del dispositivo
 
 Attivare i client di Windows 10 per il controllo e l'invio dello stato dell'integrità del dispositivo più recente. Per altre informazioni, vedere [Attestazione dell'integrità](/sccm/core/servers/manage/health-attestation).  
-
-### <a name="check-conditional-access-compliance"></a>Controlla la conformità dell'accesso condizionale
-
-Attivare i client per il controllo della conformità dell'accesso condizionale. Per altre informazioni, vedere [Gestire l'accesso ai servizi di Office 365 per i PC](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm).  
 
 ### <a name="wake-up"></a>Riattiva
 

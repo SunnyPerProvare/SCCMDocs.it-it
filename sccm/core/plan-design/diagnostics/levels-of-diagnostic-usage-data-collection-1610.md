@@ -1,7 +1,7 @@
 ---
 title: Dati di diagnostica per la versione 1610
 titleSuffix: Configuration Manager
-description: Informazioni sui livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1610.
+description: Informazioni sui livelli dei dati di diagnostica e di utilizzo raccolti da Configuration Manager versione 1610.
 ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 193ad88be6766c085373185145429d8535655e61
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d82a8d05f440d1e55a4b2ff957745550c07c470c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67677118"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75801206"
 ---
-# <a name="levels-of-diagnostic-usage-data-collection-for-version-1610-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1610
+# <a name="levels-of-diagnostic-usage-data-collection-for-version-1610-of-configuration-manager"></a>Livelli di raccolta di dati per utilizzo diagnostico per la versione 1610 di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-System Center Configuration Manager versione 1610 raccoglie tre livelli di dati di diagnostica e di utilizzo: **Di base**, **Avanzato** e **Completo**. Per impostazione predefinita, per questa funzionalità è impostato il livello avanzato. Le sezioni seguenti forniscono ulteriori dettagli sui dati raccolti in ogni livello.
+Configuration Manager versione 1610 raccoglie tre livelli di dati di diagnostica e utilizzo: **Di base**, **Avanzato** e **Completo**. Per impostazione predefinita, per questa funzionalità è impostato il livello avanzato. Le sezioni seguenti forniscono ulteriori dettagli sui dati raccolti in ogni livello.
 
 Le modifiche rispetto alle versioni precedenti sono contrassegnate da ***[Nuovo]***, ***[Aggiornato]***, ***[Rimosso]*** o ***[Spostato]***.
 
@@ -39,7 +38,7 @@ A partire dalla versione 1610, è possibile modificare il livello di raccolta da
 ##  <a name="bkmk_level1"></a> Livello 1 - Di base
  Il livello di base include i dati sulla gerarchia ed è necessario per consentire il miglioramento dell'esperienza di installazione o aggiornamento, nonché per determinare quali aggiornamenti di Configuration Manager sono applicabili per la gerarchia.
 
- Per System Center Configuration Manager versione 1610, questo livello include:
+ Per Configuration Manager versione 1610, questo livello include quanto segue:
 
 
 - Informazioni sull'installazione:
@@ -100,7 +99,7 @@ Il livello avanzato è quello predefinito dopo l'installazione. Questo livello i
 
 Questo livello è consigliato perché offre a Microsoft i dati minimi necessari per apportare miglioramenti utili nelle versioni future di prodotti e servizi. Con questo livello non vengono raccolti i nomi degli oggetti (siti, utenti, computer o oggetti), dettagli sugli oggetti correlati alla sicurezza o informazioni sulle vulnerabilità come il numero di sistemi che richiedono aggiornamenti software.
 
-Per System Center Configuration Manager versione 1610, questo livello include:
+Per Configuration Manager versione 1610, questo livello include quanto segue:
 
 -   **Gestione delle applicazioni:**  
 
@@ -375,7 +374,7 @@ Per System Center Configuration Manager versione 1610, questo livello include:
 ##  <a name="bkmk_level3"></a> Livello 3 - Completo
 Il livello completo include tutti i dati dei livelli di base e avanzato. Include inoltre informazioni aggiuntive su Endpoint Protection, le percentuali di conformità degli aggiornamenti e informazioni sugli aggiornamenti software.  Questo livello può includere anche informazioni di diagnostica avanzate, come file di sistema e snapshot di memoria, che possono contenere informazioni personali presenti in memoria o nei file di log al momento dell'acquisizione.
 
-Per System Center Configuration Manager versione 1610, questo livello include:
+Per Configuration Manager versione 1610, questo livello include quanto segue:
 
 -   Statistiche di valutazione e aggiornamento delle raccolte
 
@@ -408,7 +407,7 @@ Per System Center Configuration Manager versione 1610, questo livello include:
 
 -   Prime 50 CPU dell'ambiente
 
--   Utilizzo del pacchetto di configurazione DCM per System Center Configuration Manager
+-   Utilizzo del pacchetto di configurazione DCM per Configuration Manager
 
 -   Codice prodotto MSI (app comuni distribuite dai clienti)
 

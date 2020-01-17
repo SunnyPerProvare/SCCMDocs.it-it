@@ -10,16 +10,15 @@ ms.assetid: cf6337a2-700c-47f3-b6f8-5814f9b81e59
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: dbc0800b78023e3813a31d2482a64a913008e306
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 6a4b8e0678cb2fe438159d401852c8caa123659d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889974"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824181"
 ---
 # <a name="maintain-mac-clients"></a>Gestire i client Mac
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Di seguito sono illustrate le procedure per disinstallare i client Mac e rinnovarne i certificati.
 
@@ -131,7 +130,7 @@ Di seguito sono illustrate le procedure per disinstallare i client Mac e rinnova
 
 14. Creare una linea di base di configurazione che contenga l'elemento di configurazione appena creato e distribuirlo nella raccolta di dispositivi creata nel passaggio 1.  
 
-     Per altre informazioni su come creare e distribuire le linee di base della configurazione, vedere [How to create configuration baselines in System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-baselines.md) (Come creare linee di base di configurazione in System Center Configuration Manager) e [How to deploy configuration baselines in System Center Configuration Manager](../../../compliance/deploy-use/deploy-configuration-baselines.md) (Come distribuire linee di base di configurazione in System Center Configuration Manager).  
+     Per altre informazioni su come creare e distribuire le linee di base di configurazione, vedere [Come creare linee di base di configurazione](../../../compliance/deploy-use/create-configuration-baselines.md) e [Come distribuire linee di base di configurazione](../../../compliance/deploy-use/deploy-configuration-baselines.md).  
 
 15. Nei computer Mac con l'SMSID rimosso, eseguire il comando seguente per installare un nuovo certificato:  
 

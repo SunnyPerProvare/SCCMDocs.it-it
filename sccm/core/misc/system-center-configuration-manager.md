@@ -1,5 +1,5 @@
 ---
-title: System Center Configuration Manager
+title: Configuration Manager
 ms.date: 10/06/2016
 ms.topic: conceptual
 ms.prod: configuration-manager
@@ -9,18 +9,17 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2eb20a12e02a133ef391e3f69ec358dc14780a0e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 16be2d118d8529b816862fced43ffe07bff0697c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62240790"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802923"
 ---
-# <a name="system-center-configuration-manager"></a>System Center Configuration Manager
+# <a name="configuration-manager"></a>Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Benvenuti in Microsoft System Center Configuration Manager. È possibile usare Configuration Manager per fornire servizi IT più efficaci grazie a funzionalità per la distribuzione del software sicura e scalabile, la gestione delle impostazioni di conformità e la gestione completa degli asset di server, desktop e dispositivi mobili.  
+Benvenuti in Configuration Manager. È possibile usare Configuration Manager per fornire servizi IT più efficaci grazie a funzionalità per la distribuzione del software sicura e scalabile, la gestione delle impostazioni di conformità e la gestione completa degli asset di server, desktop e dispositivi mobili.  
 
- Il contenuto più aggiornato per questa versione di Configuration Manager è disponibile online nella posizione seguente: [Documentazione online per System Center Configuration Manager](https://go.microsoft.com/fwlink/?LinkID=533344)
+Il contenuto più aggiornato per questa versione di Configuration Manager è disponibile online nella posizione seguente: [Documentazione online per Configuration Manager](https://docs.microsoft.com/configmgr).

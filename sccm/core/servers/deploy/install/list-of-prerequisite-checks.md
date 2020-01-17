@@ -10,17 +10,16 @@ ms.assetid: 6a279624-ffc9-41aa-8132-df1809708dd5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5b2904f7cd6945b6aa447f0404bf67a4caf4279
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3c195922218a11ab4c4cfe4e676656e244707967
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72810789"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798158"
 ---
 # <a name="list-of-prerequisite-checks-for-configuration-manager"></a>Elenco dei controlli dei prerequisiti per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo illustra in dettaglio i controlli dei prerequisiti che vengono eseguiti quando si installa o si aggiorna Configuration Manager. Per altre informazioni, vedere [Controllo prerequisiti](/sccm/core/servers/deploy/install/prerequisite-checker).  
 
@@ -769,7 +768,7 @@ Configuration Manager usa SQL Server Native Client nei seguenti ruoli del sistem
 - Punto di gestione
 - Punto di gestione dei dispositivi
 - Punto di migrazione stato
-- provider SMS
+- Provider SMS
 - Punto di aggiornamento software
 - Punto di distribuzione abilitato per multicast
 - Punto di servizio aggiornamento AI
@@ -832,7 +831,7 @@ Per altre informazioni, vedere [Preparare Active Directory per la pubblicazione 
 
 WinRM 1.1 è installato nel server del sito primario o nel computer della console di Configuration Manager per l'esecuzione della console di gestione fuori banda.
 
-Per altre informazioni su come scaricare WinRM 1.1, vedere l'[articolo del supporto tecnico 936059](https://support.microsoft.com/help/936059).
+WinRM viene installato automaticamente con tutte le versioni di Windows attualmente supportate. Per altre informazioni, vedere [Installazione e configurazione di Gestione remota Windows](https://docs.microsoft.com/windows/win32/winrm/installation-and-configuration-for-windows-remote-management).
 
 ### <a name="wsus-on-site-server"></a>WSUS nel server di sito
 

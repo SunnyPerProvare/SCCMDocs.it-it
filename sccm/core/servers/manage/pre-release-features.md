@@ -10,13 +10,12 @@ ms.assetid: 6bce416b-761d-4b23-bd33-5b7c30edb10d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce75992344dde471cdab682747fbb95e17c1cad5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 0142d8a6dbf2f7cbc23f14972ec5e536e946fc98
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74661227"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794547"
 ---
 # <a name="pre-release-features-in-configuration-manager"></a>Funzionalità di versioni non definitive in Configuration Manager
 
@@ -77,7 +76,7 @@ Quando si abilita una funzionalità non definitiva, gestione gerarchie (HMAN) di
 | [Modalità autonoma per CMPivot](/sccm/core/servers/manage/cmpivot#bkmk_standalone) <!--3555890/4692885,no GUID--> | Versione 1906 | ![Non ancora](media/red_x.png) |
 | [Servizio di amministrazione del provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_admin-service) <!--1359052--> | Versione 1810 | Versione 1906 |
 | [Sistema del sito HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http) <!--1356889,1358228--> | Versione 1806 | Versione 1810 |
-| [App client per dispositivi con co-gestione](/sccm/comanage/workloads#client-apps) <!--1357892,CC3AE625-BF72-49B1-8AB1-AF0DCF2D6F4C--> | Versione 1806 | ![Non ancora](media/red_x.png) |
+| [App client per dispositivi con co-gestione](/sccm/comanage/workloads#client-apps) <br/> (nota in precedenza come *App per dispositivi mobili per dispositivi con co-gestione*) <!--1357892,CC3AE625-BF72-49B1-8AB1-AF0DCF2D6F4C--> | Versione 1806 | ![Non ancora](media/red_x.png) |
 | [Estensioni SCAP](/sccm/compliance/plan-design/scap/about-scap) <!--3607889--> | Versione 1806 | ![Non ancora](media/red_x.png) |
 | [Package Conversion Manager](/sccm/apps/pcm/package-conversion-manager) <!--1357861--> | Versione 1806 | Versione 1810 |
 | [Distribuzioni in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence) <!--1356837--> | Versione 1802 | Versione 1806 |

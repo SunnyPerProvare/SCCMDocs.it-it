@@ -1,7 +1,7 @@
 ---
 title: Technical Preview 1711 | Microsoft Docs
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1711 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1711 per Configuration Manager.
 ms.date: 11/17/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4194472965ea498626921a1277047783251649e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a6e7ec5d7b698486fc43a940424e74770777353b
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68340063"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804691"
 ---
-# <a name="capabilities-in-technical-preview-1711-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1711 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1711-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1711 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1711 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.     
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1711. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare [Technical Preview per Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.     
 
 
 <!--  Known Issues Template   
@@ -78,7 +77,7 @@ Con questa anteprima è possibile consentire a un utente finale di interagire co
 
 Provare a completare le attività seguenti e quindi usare **Commenti e suggerimenti** nella scheda **Home** della barra multifunzione per informare Microsoft sull'andamento della procedura:
 
-1.  Creare o modificare un'applicazione. Per altre informazioni, vedere [Creare applicazioni con System Center Configuration Manager](/sccm/apps/deploy-use/create-applications).
+1.  Creare o modificare un'applicazione. Per altre informazioni, vedere [Creare applicazioni con Configuration Manager](/sccm/apps/deploy-use/create-applications).
 
     a. Scegliere la scheda **Esperienza utente** in **Proprietà Windows Installer (file \*msi)** .
 
@@ -90,7 +89,7 @@ Provare a completare le attività seguenti e quindi usare **Commenti e suggerime
 
     e. Selezionare la casella **Consenti agli utenti di visualizzare e interagire con il programma**.
 
-2.  Creare o modificare una sequenza di attività per installare l'applicazione tramite il passaggio **Installa applicazione**. Per altre informazioni, vedere [Installa applicazione](/sccm/osd/understand/task-sequence-steps#BKMK_InstallApplication) in [Passaggi della sequenza di attività in System Center Configuration Manager](/sccm/osd/understand/task-sequence-steps).
+2.  Creare o modificare una sequenza di attività per installare l'applicazione tramite il passaggio **Installa applicazione**. Per altre informazioni, vedere [Installa applicazione](/sccm/osd/understand/task-sequence-steps#BKMK_InstallApplication) in [Passaggi della sequenza di attività](/sccm/osd/understand/task-sequence-steps).
 
     a. Sequenza di attività di creazione dell'immagine dopo il passaggio Installa Windows e Configuration Manager.
 
@@ -115,4 +114,4 @@ Durante l'avanzamento della sequenza di attività, l'interfaccia di installazion
 <!-- When we have another H2 in this topic, Add this Next Steps section back in.  -->
 
 ## <a name="next-steps"></a>Passaggi successivi
-Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview).    
+Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview).    

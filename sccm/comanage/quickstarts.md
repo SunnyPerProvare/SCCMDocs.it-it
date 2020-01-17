@@ -10,12 +10,12 @@ ms.assetid: 8d878443-90e7-46e4-9cd3-99e2a19b2ad0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 29d91b7b915a381be1ea26f1f0b4fa4395c99dcb
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 84b2795fbf0432496a759da545c47cdc8f0f2ddd
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816939"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034770"
 ---
 # <a name="cloud-connecting-with-co-management"></a>Connessione al cloud con la co-gestione
 
@@ -25,17 +25,13 @@ La co-gestione aggiunge nuove funzionalità per la distribuzione di Configuratio
 
 In questa serie di articoli di avvio rapido sulla co-gestione, si vedrà come ottenere rapidamente vantaggi per la gestione. La co-gestione è progettata per creare funzionalità e strumenti subito disponibili per l'uso.
 
-
 Nel video seguente il vicepresidente di Microsoft Brad Anderson presenta questa serie sulla co-gestione:
 
 > [!VIDEO https://channel9.msdn.com/Series/Endpoint-Zone/Cloud-Connecting-with-Co-Management/player]
 
-
 | Valore immediato | Guida introduttiva |
 |-----------------|-----------------|
-| - [Accesso condizionale](#bkmk_ca)<br> - [Azioni remote da Intune](#bkmk_remote)<br> - [Integrità del client](#bkmk_client-health)<br> - [Azure AD ibrido](#bkmk_hybrid-aad)<br> - [Windows Autopilot](#bkmk_autopilot) | - [Percorsi per la co-gestione](#bkmk_paths)<br> - [Configurare Azure AD ibrido](#bkmk_setup-hybrid-aad)<br> - [Eseguire l'aggiornamento a Windows 10](#bkmk_upgrade-win10)<br> - [Eseguire la migrazione da MDM ibrido](#bkmk_migrate-hybrid-mdm)<br> - [Ottenere assistenza da FastTrack](#bkmk_fasttrack) | 
-
-
+| - [Accesso condizionale](#bkmk_ca)<br> - [Azioni remote da Intune](#bkmk_remote)<br> - [Integrità del client](#bkmk_client-health)<br> - [Azure AD ibrido](#bkmk_hybrid-aad)<br> - [Windows Autopilot](#bkmk_autopilot) | - [Percorsi per la co-gestione](#bkmk_paths)<br> - [Configurare Azure AD ibrido](#bkmk_setup-hybrid-aad)<br> - [Eseguire l'aggiornamento a Windows 10](#bkmk_upgrade-win10)<br> - [Ottenere assistenza da FastTrack](#bkmk_fasttrack) |
 
 ## <a name="immediate-value"></a>Valore immediato
 
@@ -47,8 +43,6 @@ Nel video seguente il vicepresidente di Microsoft Brad Anderson presenta questa 
 | <a name="bkmk_hybrid-aad"></a>**Azure Active Directory (Azure AD)** | Con Azure AD si possono sfruttare i vantaggi a livello di produttività per gli utenti e di sicurezza per le risorse, sia per gli ambienti cloud che locali | [![Anteprima del video su Azure AD ibrido](media/thumbnail-azure-ad.png)](/sccm/comanage/quickstart-hybrid-aad) |
 | <a name="bkmk_autopilot"></a>**Windows Autopilot** | Ridurre il tempo, le risorse e la complessità associati a distribuzione, gestione e ritiro o riciclo dei dispositivi. Autopilot crea inoltre una migliore esperienza per gli utenti finali. | [![Anteprima del video su Windows Autopilot](media/thumbnail-autopilot.png)](/sccm/comanage/quickstart-autopilot) |
 
-
-
 ## <a name="getting-started"></a>Guida introduttiva
 
 Se si vuole abilitare la co-gestione, iniziare da qui per chiarire eventuali preoccupazioni dal punto di vista tecnico.
@@ -58,6 +52,4 @@ Se si vuole abilitare la co-gestione, iniziare da qui per chiarire eventuali pre
 | <a name="bkmk_paths"></a>**Percorsi per la co-gestione** | Esistono due modi principali per configurare la co-gestione ed è importante conoscere i prerequisiti per ogni percorso.  Ogni percorso richiede una combinazione di Azure AD, Configuration Manager, Intune e client Windows. | [![Anteprima della diapositiva sui percorsi di co-gestione](media/thumbnail-paths.png)](/sccm/comanage/quickstart-paths) |
 | <a name="bkmk_setup-hybrid-aad"></a>**Configurare Azure AD ibrido** | Se l'ambiente include attualmente dispositivi Windows 10 aggiunti a un dominio, configurare Azure AD ibrido prima di abilitare la co-gestione | [![Anteprima del video sulla configurazione di Azure AD ibrido](media/thumbnail-setup-azure-ad.png)](/sccm/comanage/quickstart-setup-hybrid-aad) |
 | <a name="bkmk_upgrade-win10"></a>**Eseguire l'aggiornamento a Windows 10** | Per la co-gestione è richiesto Windows 10 versione 1709 o successive | [![Anteprima del video sull'aggiornamento a Windows 10](media/thumbnail-upgrade-win10.png)](/sccm/comanage/quickstart-upgrade-win10) |
-| <a name="bkmk_migrate-hybrid-mdm"></a>**Eseguire la migrazione da MDM ibrido** | La soluzione MDM ibrida (Intune integrato con Configuration Manager) è deprecata. Per la co-gestione è richiesta la versione autonoma di Intune. | [![Anteprima del video sulla migrazione della soluzione MDM ibrida](media/thumbnail-migrate-hybrid-mdm.png)](/sccm/comanage/quickstart-migrate-hybrid-mdm) |
 | <a name="bkmk_fasttrack"></a>**Ottenere assistenza da FastTrack** | L'organizzazione FastTrack è un ampio gruppo di tecnici Microsoft specializzati nell'offrire assistenza a tutti i tipi di organizzazioni per la distribuzione delle app Microsoft 365, inclusa la configurazione della co-gestione. | [![Anteprima del video su FastTrack](media/thumbnail-fasttrack.png)](/sccm/comanage/quickstart-fasttrack) |
-

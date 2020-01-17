@@ -7,18 +7,18 @@ ms.author: aaroncz
 ms.prod: configuration-manager
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 91fc86d10eeb0d898866c63207e4d8af3ce06724
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 06a20a1a2d0f53598db367f3792a74c1d46631c7
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71401683"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75517346"
 ---
-# <a name="system-center-configuration-manager-site-size-and-performance-guidelines"></a>Linee guida sulle dimensioni e le prestazioni del sito System Center Configuration Manager
+# <a name="configuration-manager-site-size-and-performance-guidelines"></a>Linee guida sulle dimensioni e sulle prestazioni dei siti di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-System Center Configuration Manager è la miglior soluzione dl settore per scalabilità e prestazioni. In un'altra documentazione sono descritti i [limiti massimi di scalabilità supportati](size-and-scale-numbers.md) e le [linee guida relative all'hardware](recommended-hardware.md) per i siti in esecuzione in ambienti di grandi dimensioni. Questo articolo offre ulteriori linee guida sulle prestazioni per gli ambienti di qualsiasi dimensione. Queste indicazioni consentono di individuare in modo più preciso l'hardware necessario per la distribuzione di Configuration Manager.
+Configuration Manager è la miglior soluzione del settore per scalabilità e prestazioni. In un'altra documentazione sono descritti i [limiti massimi di scalabilità supportati](size-and-scale-numbers.md) e le [linee guida relative all'hardware](recommended-hardware.md) per i siti in esecuzione in ambienti di grandi dimensioni. Questo articolo offre ulteriori linee guida sulle prestazioni per gli ambienti di qualsiasi dimensione. Queste indicazioni consentono di individuare in modo più preciso l'hardware necessario per la distribuzione di Configuration Manager.
 
 Questo articolo tratta in particolare l'aspetto che più contribuisce alla generazione dei colli di bottiglia per le prestazioni di Configuration Manager: il sottosistema di input/output del disco o le operazioni di I/O al secondo. L'articolo:
 
@@ -211,28 +211,28 @@ Tutti i dischi sono formattati in cluster NTFS a 64 KB e le righe con più disch
 
 | Macchina virtuale Azure| Disco Azure| Numero di dischi | Spazio disponibile | Operazioni di I/O al secondo misurate   | Fattore di limitazione   |
 |--------------------------------------------|-------------------------|---------------------|---------------------------|-------|-----------------|
-| **DS2/DS11**                              | P20                     | 1                   | 512 MB                    | 965   | Dimensioni macchina virtuale Azure   |
-| **DS2/DS11**                              | P20                     | 2                   | 1024 MB                   | 996   | Dimensioni macchina virtuale Azure   |
-| **DS2/DS11**                              | P30                     | 1                   | 1024 MB                   | 996   | Dimensioni macchina virtuale Azure   |
-| **DS2/DS11**                              | P30                     | 2                   | 2048 MB                   | 996   | Dimensioni macchina virtuale Azure   |
-| **DS3/DS12/F4S**                          | P20                     | 1                   | 512 MB                    | 1994  | Dimensioni macchina virtuale Azure   |
-| **DS3/DS12/F4S**                          | P20                     | 2                   | 1024 MB                   | 1992  | Dimensioni macchina virtuale Azure   |
-| **DS3/DS12/F4S**                          | P30                     | 1                   | 1024 MB                   | 1993  | Dimensioni macchina virtuale Azure   |
-| **DS3/DS12/F4S**                          | P30                     | 2                   | 2048 MB                   | 1992  | Dimensioni macchina virtuale Azure   |
+| **DS2/DS11**                              | P20                     | 1                   | 512 MB                    | 965   | Dimensione della macchina virtuale di Azure   |
+| **DS2/DS11**                              | P20                     | 2                   | 1024 MB                   | 996   | Dimensione della macchina virtuale di Azure   |
+| **DS2/DS11**                              | P30                     | 1                   | 1024 MB                   | 996   | Dimensione della macchina virtuale di Azure   |
+| **DS2/DS11**                              | P30                     | 2                   | 2048 MB                   | 996   | Dimensione della macchina virtuale di Azure   |
+| **DS3/DS12/F4S**                          | P20                     | 1                   | 512 MB                    | 1994  | Dimensione della macchina virtuale di Azure   |
+| **DS3/DS12/F4S**                          | P20                     | 2                   | 1024 MB                   | 1992  | Dimensione della macchina virtuale di Azure   |
+| **DS3/DS12/F4S**                          | P30                     | 1                   | 1024 MB                   | 1993  | Dimensione della macchina virtuale di Azure   |
+| **DS3/DS12/F4S**                          | P30                     | 2                   | 2048 MB                   | 1992  | Dimensione della macchina virtuale di Azure   |
 | **DS4/DS13/F8S**                          | P20                     | 1                   | 512 MB                    | 2334  | Disco P20        |
-| **DS4/DS13/F8S**                          | P20                     | 2                   | 1024 MB                   | 3984  | Dimensioni macchina virtuale Azure   |
-| **DS4/DS13/F8S**                          | P20                     | 3                   | 1536 MB                   | 3984  | Dimensioni macchina virtuale Azure   |
+| **DS4/DS13/F8S**                          | P20                     | 2                   | 1024 MB                   | 3984  | Dimensione della macchina virtuale di Azure   |
+| **DS4/DS13/F8S**                          | P20                     | 3                   | 1536 MB                   | 3984  | Dimensione della macchina virtuale di Azure   |
 | **DS4/DS13/F8S**                          | P30                     | 1                   | 1024 MB                   | 3112  | Disco P30        |
-| **DS4/DS13/F8S**                          | P30                     | 2                   | 2048 MB                   | 3984  | Dimensioni macchina virtuale Azure   |
-| **DS4/DS13/F8S**                          | P30                     | 3                   | 3072 MB                   | 3996  | Dimensioni macchina virtuale Azure   |
+| **DS4/DS13/F8S**                          | P30                     | 2                   | 2048 MB                   | 3984  | Dimensione della macchina virtuale di Azure   |
+| **DS4/DS13/F8S**                          | P30                     | 3                   | 3072 MB                   | 3996  | Dimensione della macchina virtuale di Azure   |
 | **DS5/DS14/F16S**                         | P20                     | 1                   | 512 MB                    | 2335  | Disco P20        |
 | **DS5/DS14/F16S**                         | P20                     | 2                   | 1024 MB                   | 4639  | Disco P20        |
 | **DS5/DS14/F16S**                         | P20                     | 3                   | 1536 MB                   | 6913  | Disco P20        |
-| **DS5/DS14/F16S**                         | P20                     | 4                   | 2048 MB                   | 7966  | Dimensioni macchina virtuale Azure   |
+| **DS5/DS14/F16S**                         | P20                     | 4                   | 2048 MB                   | 7966  | Dimensione della macchina virtuale di Azure   |
 | **DS5/DS14/F16S**                         | P30                     | 1                   | 1024 MB                   | 3112  | Disco P30        |
 | **DS5/DS14/F16S**                         | P30                     | 2                   | 2048 MB                   | 6182  | Disco P30        |
-| **DS5/DS14/F16S**                         | P30                     | 3                   | 3072 MB                   | 7963  | Dimensioni macchina virtuale Azure   |
-| **DS5/DS14/F16S**                         | P30                     | 4                   | 4096 MB                   | 7968  | Dimensioni macchina virtuale Azure   |
+| **DS5/DS14/F16S**                         | P30                     | 3                   | 3072 MB                   | 7963  | Dimensione della macchina virtuale di Azure   |
+| **DS5/DS14/F16S**                         | P30                     | 4                   | 4096 MB                   | 7968  | Dimensione della macchina virtuale di Azure   |
 | **DS15**                                  | P30                     | 1                   | 1024 MB                   | 3113  | Disco P30        |
 | **DS15**                                  | P30                     | 2                   | 2048 MB                   | 6184  | Disco P30        |
 | **DS15**                                  | P30                     | 3                   | 3072 MB                   | 9225  | Disco P30        |

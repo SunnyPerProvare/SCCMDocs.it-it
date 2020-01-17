@@ -1,7 +1,7 @@
 ---
 title: Package Transfer Manager
 titleSuffix: Configuration Manager
-description: Informazioni su come Package Transfer Manager in System Center Configuration Manager trasferisce il contenuto da un server del sito ai punti di distribuzione remoti.
+description: Informazioni sul modo in cui Package Transfer Manager in Configuration Manager trasferisce il contenuto da un server del sito ai punti di distribuzione remoti.
 ms.date: 02/8/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: 3359f254-dd48-42b7-9eab-c92a3417e3fb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5994ba2689ba276412012b6bd1c18b65d27c3df
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b2df092295a93e6ba09200a55219879c9d583c2f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889470"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799914"
 ---
-# <a name="package-transfer-manager-in-system-center-configuration-manager"></a>Package Transfer Manager in System Center Configuration Manager
+# <a name="package-transfer-manager-in-configuration-manager"></a>Package Transfer Manager in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-In un sito di System Center Configuration Manager, Package Transfer Manager è un componente del servizio SMS_Executive che gestisce il trasferimento di contenuto da un computer server di un sito ai punti di distribuzione remoti del sito. (Un punto di distribuzione remoto è un punto che non si trova nel computer del server di sito). Package Transfer Manager non supporta le configurazioni impostate dall'amministratore, ma la conoscenza del suo funzionamento è utile per pianificare l'infrastruttura di gestione del contenuto e anche per risolvere i problemi relativi alla distribuzione del contenuto.
+In un sito di Configuration Manager, Package Transfer Manager è un componente del servizio SMS_Executive che gestisce il trasferimento di contenuto da un computer server di un sito ai punti di distribuzione remoti del sito. (Un punto di distribuzione remoto è un punto che non si trova nel computer del server di sito). Package Transfer Manager non supporta le configurazioni impostate dall'amministratore, ma la conoscenza del suo funzionamento è utile per pianificare l'infrastruttura di gestione del contenuto e anche per risolvere i problemi relativi alla distribuzione del contenuto.
 
 
 Quando si distribuisce il contenuto a uno o più punti di distribuzione remoti in un sito, **Distribution Manager** crea un processo di trasferimento del contenuto e quindi comunica a Package Transfer Manager nei server del sito primario e secondario di trasferire il contenuto ai punti di distribuzione remoti.
@@ -30,7 +29,7 @@ Quando si distribuisce il contenuto a uno o più punti di distribuzione remoti i
  Package Transfer Manager registra le sue azioni nel file **pkgxfermgr.log** sul server del sito. Il file di log rappresenta l'unica posizione in cui è possibile visualizzare le attività di Package Transfer Manager.  
 
 > [!NOTE]  
->  Nelle versioni precedenti di Configuration Manager, Distribution Manager gestisce il trasferimento del contenuto a un punto di distribuzione remoto. Distribution Manager gestisce inoltre il trasferimento del contenuto tra i siti. Con System Center Configuration Manager, Distribution Manager continua a gestire il trasferimento del contenuto tra due siti, ma Package Transfer Manager è ora in grado di gestire il trasferimento del contenuto a un numero elevato di punti di distribuzione. Ciò consente di migliorare le prestazioni generali della distribuzione del contenuto tra diversi siti e verso i punti di distribuzione all'interno di un sito.  
+>  Nelle versioni precedenti di Configuration Manager, Distribution Manager gestisce il trasferimento del contenuto a un punto di distribuzione remoto. Distribution Manager gestisce inoltre il trasferimento del contenuto tra i siti. Con Configuration Manager, Distribution Manager continua a gestire il trasferimento del contenuto tra due siti, ma Package Transfer Manager è ora in grado di gestire il trasferimento del contenuto a un numero elevato di punti di distribuzione. Ciò consente di migliorare le prestazioni generali della distribuzione del contenuto tra diversi siti e verso i punti di distribuzione all'interno di un sito.  
 
 Per trasferire il contenuto a un punto di distribuzione standard, Package Transfer Manager usa le stesse funzionalità di Distribution Manager delle versioni precedenti di Configuration Manager. Vale a dire gestisce attivamente il trasferimento di file a ogni punto di distribuzione remoto. Tuttavia, per distribuire il contenuto a un punto di distribuzione pull, Package Transfer Manager comunica a tale punto che il contenuto è disponibile. Il punto di distribuzione pull assume quindi il controllo del processo di trasferimento.  
 
@@ -69,7 +68,7 @@ Le informazioni seguenti descrivono come Package Transfer Manager gestisce il tr
 
         -   Per impostazione predefinita, Package Transfer Manager può elaborare contemporaneamente tre pacchetti univoci e distribuirli ai cinque punti di distribuzione in parallelo. Complessivamente, questi sono definiti **Impostazioni distribuzione simultanea**. Per configurare la distribuzione simultanea, in **Proprietà componente distribuzione software** per ogni sito passare alla scheda **Generale**.  
 
-        -   Package Transfer Manager usa le configurazioni di larghezza di banda di rete e di pianificazione di ogni punto di distribuzione durante il trasferimento del contenuto al punto di distribuzione. Per configurare queste impostazioni, nell'area **Proprietà** di ogni punto di distribuzione remoto passare alle schede **Pianifica** e **Limiti di velocità**. Per altre informazioni, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+        -   Package Transfer Manager usa le configurazioni di larghezza di banda di rete e di pianificazione di ogni punto di distribuzione durante il trasferimento del contenuto al punto di distribuzione. Per configurare queste impostazioni, nell'area **Proprietà** di ogni punto di distribuzione remoto passare alle schede **Pianifica** e **Limiti di velocità**. Per altre informazioni, vedere [Gestire il contenuto e l'infrastruttura del contenuto per Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
     -   **Punto di distribuzione pull**: Quando un punto di distribuzione pull riceve un file di notifica, il punto di distribuzione inizia il processo di trasferimento del contenuto. Il processo di trasferimento viene eseguito in modo indipendente in ogni punto di distribuzione pull:  
 

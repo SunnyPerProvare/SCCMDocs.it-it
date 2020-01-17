@@ -1,7 +1,7 @@
 ---
 title: Elenco di controllo amministratore per il risparmio energia
 titleSuffix: Configuration Manager
-description: Usare l'elenco di controllo amministratore per pianificare e implementare il risparmio energia in System Center Configuration Manager.
+description: Usare l'elenco di controllo per gli amministratori per pianificare e implementare il risparmio energia in Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,19 +10,18 @@ ms.assetid: 94e42cbe-9df8-4228-a04e-0ad7626180ca
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8198669fdf7d0acf3273af2d8a2e83f5b89f520c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 039ebf73fba9850b8479bfabab6ab928b7d6f2df
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62200118"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824028"
 ---
-# <a name="administrator-checklist-for-power-management-in-system-center-configuration-manager"></a>Elenco di controllo amministratore per il risparmio energia in System Center Configuration Manager
+# <a name="administrator-checklist-for-power-management-in-configuration-manager"></a>Elenco di controllo per gli amministratori per il risparmio energia in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo elenco di controllo amministratore fornisce le procedure consigliate per l'uso della funzionalità di risparmio energia di System Center Configuration Manager all'interno dell'organizzazione.  
+Questo elenco di controllo per gli amministratori fornisce le procedure consigliate per l'uso della funzionalità di risparmio energia di Configuration Manager all'interno dell'organizzazione.  
 
 ## <a name="configuring-power-management"></a>Configurazione del risparmio energia  
  Usare questa procedura per configurare la gerarchia per raccogliere le informazioni relative al risparmio energia dai computer client.  

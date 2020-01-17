@@ -10,12 +10,12 @@ ms.assetid: 42e80570-d637-41a4-97b7-ebf1f8975af3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c0aaf7cf0e5ca104f6524c3581f8a9fde1bbddb7
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 146b03b4d6cc9e49c1cbe56b9da3b5da1d194246
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75817007"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034702"
 ---
 # <a name="get-help-from-fasttrack-for-co-management"></a>Ottenere assistenza da FastTrack per la co-gestione
 
@@ -40,7 +40,7 @@ Il sito FastTrack per Microsoft 365 include anche documentazione, consigli, stru
 
 3. Immettere il numero di **licenze EMS** all'interno dell'organizzazione.  
 
-4. Completare il modulo aggiungendo le informazioni di contatto, gli scenari di utilizzo e i prodotti per cui si sta tentando di risolvere i problemi. Ad esempio, se occorre assistenza per la migrazione da Intune ibrido a Intune autonomo, selezionare **Microsoft Intune** nel modulo.  
+4. Completare il modulo aggiungendo le informazioni di contatto, gli scenari di utilizzo e i prodotti per cui si sta tentando di risolvere i problemi.
 
 5. Inviare la richiesta. 
 

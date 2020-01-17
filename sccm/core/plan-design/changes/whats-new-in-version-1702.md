@@ -1,7 +1,7 @@
 ---
 title: Nuova versione 1702
 titleSuffix: Configuration Manager
-description: Ottenere informazioni dettagliate sulle modifiche e le nuove funzionalità introdotte nella versione 1702 di System Center Configuration Manager.
+description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1702 di Configuration Manager.
 ms.date: 05/02/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e41779d7901471e208c26b9050c4db82b678244
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b5e48166ff09d47f7240256fe0ca451d7a14452f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68339815"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802753"
 ---
-# <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novità della versione 1702 di System Center Configuration Manager
+# <a name="what39s-new-in-version-1702-of-configuration-manager"></a>Novità della versione 1702 di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-L'aggiornamento 1702 per System Center Configuration Manager (Current Branch) è disponibile come aggiornamento nella console per siti installati in precedenza che eseguono la versione 1602, 1606 o 1610. È disponibile anche come versione di base da usare durante l'installazione di una nuova distribuzione.
+L'aggiornamento 1702 per Configuration Manager Current Branch è disponibile come aggiornamento nella console per siti precedentemente installati che eseguono la versione 1602, 1606 o 1610. È disponibile anche come versione di base da usare durante l'installazione di una nuova distribuzione.
 
 > [!TIP]  
 > Per installare un nuovo sito, è necessario usare una versione base di Configuration Manager.  
@@ -284,12 +283,12 @@ A partire dalla versione 1702, la gestione ibrida dei dispositivi mobili con Mic
 |||||
 |-|-|-|-|
 |Versione di Configuration Manager|Gestione delle licenze dei dispositivi supportata|Tipo di raccolta della distribuzione|Licenza richiesta|
-|Precedente la 1702|Sì|utente|Licenza utente|
-|Precedente la 1702|No|utente|Licenza utente|
+|Precedente la 1702|Sì|Utente|Licenza utente|
+|Precedente la 1702|No|Utente|Licenza utente|
 |Precedente la 1702|Sì|Dispositivo|Licenza utente|
 |Precedente la 1702|No|Dispositivo|Licenza utente|
-|1702 e versioni successive|Sì|utente|Licenza utente|
-|1702 e versioni successive|No|utente|Licenza utente|
+|1702 e versioni successive|Sì|Utente|Licenza utente|
+|1702 e versioni successive|No|Utente|Licenza utente|
 |1702 e versioni successive|Sì|Dispositivo|Licenza dispositivo|
 |1702 e versioni successive|No|Dispositivo|Licenza utente|
 

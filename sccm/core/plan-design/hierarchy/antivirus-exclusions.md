@@ -10,18 +10,17 @@ ms.assetid: deb470e3-6f6b-4ccf-b3d8-1598d79d3490
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
 ROBOTS: NOINDEX
-ms.openlocfilehash: a0d844c6ee5b40e987ab25f4183e8365d18edac3
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8d01a04e5527d84b2e67040671b255133821fe73
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73145514"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800543"
 ---
 # <a name="recommended-antivirus-exclusions-for-configuration-manager"></a>Esclusioni dell'antivirus consigliate per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo contiene raccomandazioni che consentono a un amministratore di determinare la causa della potenziale instabilità di un computer che esegue una versione supportata dei server del sito di Configuration Manager, dei sistemi del sito e dei client quando viene usato insieme a software antivirus.
 
@@ -97,7 +96,7 @@ Per evitare questi problemi, è consigliabile aggiungere le esclusioni di protez
 
 ### <a name="process-exclusions"></a>Esclusioni dei processi
 
-Le esclusioni dei processi sono necessarie solo se i programmi antivirus aggressivi considerano i file di programma di System Center Configuration Manager (file EXE) come processi ad alto rischio.
+Le esclusioni dei processi sono necessarie solo se i programmi antivirus aggressivi considerano i file di programma di Configuration Manager (file con estensione exe) come processi ad alto rischio.
 
 - *Cartella di installazione di ConfigMgr*\bin\64\Smsexec.exe
 - Uno dei processi seguenti:

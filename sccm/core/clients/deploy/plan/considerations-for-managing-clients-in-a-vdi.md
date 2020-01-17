@@ -10,19 +10,18 @@ ms.assetid: abd45393-d84e-4583-bc80-74bbb3709577
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07df750daf0af7aa82a13c1eef421678d7df8202
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b01348695ac5b3b64ca87a9b42aa52ac235b533d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70890330"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824980"
 ---
 # <a name="manage-configuration-manager-clients-in-a-virtual-desktop-infrastructure-vdi"></a>Gestire i client di Configuration Manager in un'infrastruttura VDI (Virtual Desktop Infrastructure)
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-System Center Configuration Manager supporta l'installazione del client di Configuration Manager nei seguenti scenari di infrastruttura VDI:  
+Configuration Manager supporta l'installazione del client di Configuration Manager nei seguenti scenari di infrastruttura VDI:  
 
 - **Macchine virtuali personali**: le macchine virtuali personali vengono in genere usate quando ci si desidera assicurare che i dati e le impostazioni utente vengano mantenute sulla macchina virtuale tra le sessioni.  
 

@@ -1,7 +1,7 @@
 ---
 title: Gerarchie di origine della migrazione
 titleSuffix: Configuration Manager
-description: Configurare una gerarchia di origine e i siti di origine per eseguire la migrazione dei dati all'ambiente di System Center Configuration Manager.
+description: Configurare una gerarchia di origine e i siti di origine per eseguire la migrazione dei dati all'ambiente di Configuration Manager Current Branch.
 ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: ccce7cb5-e18f-4337-8adf-2018edca3c00
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a2b336173df72a2b54bd92cda4477df58e4dac5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 073639402723cbd836e0ce25dcec1ca056cc7ef1
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62234712"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75803246"
 ---
-# <a name="configure-source-hierarchies-and-source-sites-for-migration-to-system-center-configuration-manager"></a>Configurare gerarchie di origine e siti di origine per la migrazione a System Center Configuration Manager
+# <a name="configure-source-hierarchies-and-source-sites-for-migration-to-configuration-manager-current-branch"></a>Configurare gerarchie di origine e siti di origine per la migrazione a Configuration Manager Current Branch
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Per abilitare la migrazione dei dati nell'ambiente di System Center Configuration Manager, è necessario configurare una gerarchia di origine di Configuration Manager supportata e uno o più siti di origine nella stessa gerarchia che contengono i dati da migrare.  
+Per abilitare la migrazione dei dati nell'ambiente di Configuration Manager Current Branch, è necessario configurare una gerarchia di origine di Configuration Manager supportata e uno o più siti di origine nella stessa gerarchia che contengono i dati da migrare.  
 
 > [!NOTE]  
 >  Le operazioni di migrazione vengono eseguite nel sito di livello superiore della gerarchia di destinazione. Se la migrazione viene configurata durante l'uso di una console di Configuration Manager connessa a un sito figlio primario, è necessario attendere che la configurazione venga replicata nel sito di amministrazione centrale, che venga avviata e che lo stato venga replicato di nuovo nel sito primario a cui l'utente è connesso.  
@@ -34,7 +33,7 @@ Per abilitare la migrazione dei dati nell'ambiente di System Center Configuratio
 -   [Individuare siti di origine aggiuntivi della gerarchia di origine](#BKBM_ConfigSrcSites)  
 
 ##  <a name="BKBM_ConfigSrcHierarchy"></a> Specificare una gerarchia di origine per la migrazione  
- Per migrare i dati nella gerarchia di destinazione, è necessario specificare una gerarchia di origine supportata contenente i dati da migrare. Per impostazione predefinita, il sito di livello superiore di tale gerarchia diventa un sito di origine della gerarchia di origine. Se si esegue la migrazione da una gerarchia di Configuration Manager 2007, è quindi possibile configurare siti di origine aggiuntivi per la migrazione dopo avere raccolto i dati dal sito di origine iniziale. Se si esegue la migrazione da una gerarchia di System Center 2012 Configuration Manager o di System Center Configuration Manager, non è necessario configurare i siti di origine aggiuntivi per la migrazione dei dati dalla gerarchia di origine. Questo è possibile perché le versioni di Configuration Manager usano un database condiviso disponibile nel sito principale della gerarchia di origine. Il database condiviso include tutte le informazioni che è possibile migrare.  
+ Per migrare i dati nella gerarchia di destinazione, è necessario specificare una gerarchia di origine supportata contenente i dati da migrare. Per impostazione predefinita, il sito di livello superiore di tale gerarchia diventa un sito di origine della gerarchia di origine. Se si esegue la migrazione da una gerarchia di Configuration Manager 2007, è quindi possibile configurare siti di origine aggiuntivi per la migrazione dopo avere raccolto i dati dal sito di origine iniziale. Se si esegue la migrazione da una gerarchia di System Center 2012 Configuration Manager o di Configuration Manager Current Branch, non è necessario configurare i siti di origine aggiuntivi per la migrazione dei dati dalla gerarchia di origine. Questo è possibile perché le versioni di Configuration Manager usano un database condiviso disponibile nel sito principale della gerarchia di origine. Il database condiviso include tutte le informazioni che è possibile migrare.  
 
  Usare le procedure seguenti per specificare una gerarchia di origine per la migrazione e per individuare siti di origine aggiuntivi in una gerarchia di Configuration Manager 2007.  
 
@@ -71,7 +70,7 @@ Per abilitare la migrazione dei dati nell'ambiente di System Center Configuratio
 
 -   Per una gerarchia di origine di Configuration Manager 2007, è possibile avviare la migrazione da tale sito di origine iniziale oppure configurare altri siti di origine dalla gerarchia di origine al termine della raccolta dei dati per il sito di origine iniziale. Per migrare i dati disponibili solo da un sito figlio, configurare siti di origine aggiuntivi per una gerarchia di Configuration Manager 2007. Ad esempio, potrebbero essere configurati siti di origine aggiuntivi per raccogliere dati sui contenuti che si vuole migrare quando sono stati creati in un sito figlio nella gerarchia di origine e non sono disponibili nel sito di livello superiore per la gerarchia di origine.  
 
--   Per una gerarchia di origine di System Center 2012 Configuration Manager o System Center Configuration Manager, non è necessario selezionare siti di origine aggiuntivi. Questo è possibile perché le versioni di Configuration Manager usano un database condiviso disponibile nel sito principale della gerarchia di origine. Il database condiviso include tutte le informazioni che è possibile migrare da tutti i siti di tale gerarchia di origine. Ciò rende i dati di cui è possibile eseguire la migrazione disponibili nel sito di livello superiore della gerarchia di origine.  
+-   Per una gerarchia di origine di System Center 2012 Configuration Manager o Configuration Manager Current Branch, non è necessario selezionare siti di origine aggiuntivi. Questo è possibile perché le versioni di Configuration Manager usano un database condiviso disponibile nel sito principale della gerarchia di origine. Il database condiviso include tutte le informazioni che è possibile migrare da tutti i siti di tale gerarchia di origine. Ciò rende i dati di cui è possibile eseguire la migrazione disponibili nel sito di livello superiore della gerarchia di origine.  
 
 Quando si configurano siti di origine aggiuntivi per una gerarchia di origine di Configuration Manager 2007, è necessario configurare i siti di origine aggiuntivi provenienti dalla gerarchia di origine procedendo dall'alto verso il basso. Prima di configurare uno dei siti figlio come sito di origine, è necessario configurare un sito padre come sito di origine.  
 

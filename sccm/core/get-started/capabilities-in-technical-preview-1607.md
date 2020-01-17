@@ -1,7 +1,7 @@
 ---
 title: Funzionalità nella Technical Preview 1607
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili in Technical Preview per System Center Configuration Manager, versione 1607.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1607 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac91fa1e9c4f4a8610ab3a0815ea6437eb29862c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b03a5323d3e871ad7f1f239b271901c6ddbecac3
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67158213"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75805167"
 ---
-# <a name="capabilities-in-technical-preview-1607-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1607 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1607-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1607 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili in Technical Preview per System Center Configuration Manager, versione 1607. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1607. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview per Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  

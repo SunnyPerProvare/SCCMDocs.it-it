@@ -1,7 +1,7 @@
 ---
 title: Completare la migrazione
 titleSuffix: Configuration Manager
-description: Informazioni su come completare la migrazione a una gerarchia di destinazione di System Center Configuration Manager dopo che una gerarchia di origine non contiene più dati.
+description: Informazioni su come completare la migrazione a una gerarchia di destinazione di Configuration Manager Current Branch dopo che una gerarchia di origine non contiene più dati.
 ms.date: 01/12/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: f4854b50-2e8c-414c-a872-9579554dca98
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25cf1473da6bf44792e4037821000b110dc09c37
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 66a61dbd6c5c2a0c438dbe66d6e4409da06e2580
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70891502"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75803059"
 ---
-# <a name="plan-to-complete-migration-in-system-center-configuration-manager"></a>Pianificare il completamento della migrazione in System Center Configuration Manager
+# <a name="plan-to-complete-migration-in-configuration-manager"></a>Pianificare il completamento della migrazione in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Con System Center Configuration Manager, è possibile completare il processo di migrazione quando una gerarchia di origine non contiene più dati per la migrazione alla gerarchia di destinazione. Il completamento della migrazione include i passaggi generali seguenti:  
+Con Configuration Manager è possibile completare il processo di migrazione quando una gerarchia di origine non contiene più dati per la migrazione alla gerarchia di destinazione. Il completamento della migrazione include i passaggi generali seguenti:  
 
 -   Assicurarsi che sia stata eseguita la migrazione dei dati necessari. Prima di completare la migrazione dalla gerarchia di origine, assicurarsi che tutte le risorse richieste siano state migrate correttamente alla gerarchia di destinazione. Tra le risorse sono inclusi dati e client.  
 
@@ -45,11 +44,11 @@ Usare le sezioni seguenti per pianificare il completamento della migrazione da u
 
 -   Nella gerarchia di destinazione, distribuire il contenuto almeno a un punto di distribuzione.  
 
--   Prima di interrompere la raccolta dei dati da un sito di origine, aggiornare o riassegnare i punti di distribuzione condivisi con il contenuto richiesto. Per altre informazioni sull'aggiornamento o sulla riassegnazione dei punti di distribuzione condivisi, vedere le sezioni applicabili in [Pianificazione di una strategia di migrazione per la distribuzione del contenuto in System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md).  
+-   Prima di interrompere la raccolta dei dati da un sito di origine, aggiornare o riassegnare i punti di distribuzione condivisi con il contenuto richiesto. Per altre informazioni sull'aggiornamento o sulla riassegnazione dei punti di distribuzione condivisi, vedere le sezioni applicabili in [Pianificazione di una strategia di migrazione per la distribuzione del contenuto](../../core/migration/planning-a-content-deployment-migration-strategy.md).  
 
 Dopo aver interrotto la raccolta dati da ogni sito di origine nella gerarchia di origine, è possibile pulire i dati di migrazione. Fino a quando non viene completata la pulizia dei dati di migrazione, ogni processo di migrazione eseguito o pianificato rimane accessibile nella console di Configuration Manager.  
 
-Per altre informazioni sui siti di origine e sulla raccolta dati, vedere [Pianificazione di una strategia per la gerarchia di origine in System Center Configuration Manager](../../core/migration/planning-a-source-hierarchy-strategy.md).  
+Per altre informazioni sui siti di origine e sulla raccolta dati, vedere [Pianificazione di una strategia per la gerarchia di origine](../../core/migration/planning-a-source-hierarchy-strategy.md).  
 
 ##  <a name="Plan_to_clean_up"></a> Pianificare la pulizia dei dati di migrazione  
  L'ultimo passaggio necessario per completare la migrazione consiste nella pulizia dei dati di migrazione. È possibile utilizzare il comando **Pulisci dati migrazione** dopo aver interrotto la raccolta dei dati per ogni sito di origine nella gerarchia di origine. Questa azione facoltativa determina la rimozione dei dati sulla gerarchia di origine corrente dal database della gerarchia di destinazione.  

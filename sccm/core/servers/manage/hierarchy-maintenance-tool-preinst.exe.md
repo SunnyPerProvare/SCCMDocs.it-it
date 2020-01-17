@@ -10,19 +10,18 @@ ms.assetid: cead6825-6113-4ba5-a381-ac3598dfee86
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c033b7a48aeaf4821a67a277f23b2f672115d105
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 37abd1044bdbcf8a517b75d1e2e7d9262526ae22
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65497541"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75795234"
 ---
-# <a name="hierarchy-maintenance-tool-preinstexe-for-system-center-configuration-manager"></a>Strumento di manutenzione gerarchia (Preinst.exe) per System Center Configuration Manager
+# <a name="hierarchy-maintenance-tool-preinstexe-for-configuration-manager"></a>Strumento di manutenzione gerarchia (Preinst.exe) per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Lo strumento di manutenzione gerarchia (Preinst.exe) passa i comandi alla gestione gerarchie di System Center Configuration Manager mentre il servizio di gestione gerarchie è in esecuzione. Lo strumento di manutenzione gerarchia viene installato automaticamente durante l'installazione di un sito di Configuration Manager. È possibile trovare Preinst.exe nella cartella condivisa \\&lt;*NomeServerSito*>\SMS_&lt;*CodiceSito*\bin\X64\00000409 del server del sito.  
+Lo strumento di manutenzione gerarchia (Preinst.exe) passa i comandi alla gestione gerarchie di Configuration Manager mentre il servizio di gestione gerarchie è in esecuzione. Lo strumento di manutenzione gerarchia viene installato automaticamente durante l'installazione di un sito di Configuration Manager. È possibile trovare Preinst.exe nella cartella condivisa \\&lt;*NomeServerSito*>\SMS_&lt;*CodiceSito*\bin\X64\00000409 del server del sito.  
 
  È possibile utilizzare lo strumento di manutenzione gerarchia nei seguenti scenari:  
 

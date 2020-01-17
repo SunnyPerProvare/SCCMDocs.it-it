@@ -1,7 +1,7 @@
 ---
 title: Technical Preview 1705
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1705 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1705 per Configuration Manager.
 ms.date: 06/02/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e61489373c7e5c739485f1a5162f203d883a4835
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ff14adadca4024cf480bdf2a138c8781697d1469
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71826113"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804844"
 ---
-# <a name="capabilities-in-technical-preview-1705-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1705 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1705-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1705 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1705 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1705. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare [Technical Preview per Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
 **Problemi noti di questa versione Technical Preview:**
 -   **Il connettore della suite Operations Manager Suite non viene aggiornato**. Quando si esegue l'aggiornamento da una versione Technical Preview precedente nella quale era configurato il connettore OMS, tale connettore non viene aggiornato e non è più disponibile nella console. Dopo l'aggiornamento, è necessario [usare la Procedura guidata per i servizi di Azure](capabilities-in-technical-preview-1705.md#use-azure-services-wizard-to-configure-a-connection-to-oms) e ristabilire la connessione all'area di lavoro OMS.
@@ -60,7 +59,7 @@ Lo strumento viene eseguito nell'aggiornamento specificato. Per impostazione pre
 
 ### <a name="prerequisites"></a>Prerequisiti
 L'account usato per eseguire lo strumento richiede le autorizzazioni seguenti:
--   **Lettura** e **Scrittura** per il database del sito del sito di amministrazione centrale e per ogni sito primario della gerarchia. Per impostare queste autorizzazioni, aggiungere l'account utente come membro dei [ruoli predefiniti del database ](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles)**db_datawriter** e **db_datareader** nel database di Configuration Manager di ogni sito. Lo strumento non interagisce con i siti secondari.
+-   **Lettura** e **Scrittura** per il database del sito del sito di amministrazione centrale e per ogni sito primario della gerarchia. Per impostare queste autorizzazioni, aggiungere l'account utente come membro dei [ruoli predefiniti del database ](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles) **db_datawriter** e **db_datareader** nel database di Configuration Manager di ogni sito. Lo strumento non interagisce con i siti secondari.
 -   **Amministratore locale** nel sito di livello superiore della gerarchia.
 -   **Amministratore locale** nel computer che ospita il punto di connessione del servizio.
 
@@ -89,8 +88,8 @@ Dopo l'esecuzione dello strumento:
 | **-S &lt;FQDN dell'istanza di SQL Server del sito di livello superiore>** | *Richiesto* <br> Specificare il FQDN dell'istanza di SQL Server che ospita il database del sito per il sito di livello superiore della gerarchia. |
 |                **-D &lt;Nome database>**                 |                             *Richiesto* <br> Specificare il nome del database dei siti di livello superiore.                             |
 |                 **-P &lt;GUID pacchetto>**                 |                        *Richiesto* <br> Specificare il GUID del pacchetto di aggiornamento da reimpostare.                        |
-|           **-I &lt;Nome istanza SQL Server>**           |                   *Facoltativa* <br> Identifica l'istanza di SQL Server che ospita il database del sito.                   |
-|                       **-FDELETE**                       |                      *Facoltativa* <br> Consente di forzare l'eliminazione di un pacchetto di aggiornamento scaricato correttamente.                      |
+|           **-I &lt;Nome istanza SQL Server>**           |                   *Facoltativo* <br> Identifica l'istanza di SQL Server che ospita il database del sito.                   |
+|                       **-FDELETE**                       |                      *Facoltativo* <br> Consente di forzare l'eliminazione di un pacchetto di aggiornamento scaricato correttamente.                      |
 
  **Esempi:**  
  In uno scenario tipico, si vuole reimpostare un aggiornamento che presenta problemi di download. L'FQDN di SQL Server è *server1.fabrikam.com*, il database del sito è *CM_XYZ* e il GUID del pacchetto è *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Eseguire: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
@@ -245,7 +244,7 @@ A questo punto il sito di Configuration Manager è connesso ad Azure AD.
 ### <a name="install-the-cm-client-from-the-internet"></a>Installare il client di Configuration Manager da Internet
 
 Prima di iniziare, verificare che i file di origine dell'installazione client vengano archiviati localmente nel dispositivo nel quale viene installato il client.
-Usare le istruzioni in [Come distribuire i client nei computer Windows in System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual) con la riga di comando per l'installazione seguente, sostituendo con valori personalizzati i valori dell'esempio:
+Usare le istruzioni in [Come distribuire i client nei computer Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual) con la riga di comando per l'installazione seguente, sostituendo con valori personalizzati i valori dell'esempio:
 
 **ccmsetup.exe /NoCrlCheck /Source:C:\CLIENT  CCMHOSTNAME=SCCMPROXYCONTOSO.CLOUDAPP.NET/CCM_Proxy_ServerAuth/72457598037527932 SMSSiteCode=HEC AADTENANTID=780433B5-E05E-4B7D-BFD1-E8013911E543 AADTENANTNAME=contoso  AADCLIENTAPPID=\<GUID> AADRESOURCEURI=<https://contososerver>**
 

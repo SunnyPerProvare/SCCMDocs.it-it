@@ -1,7 +1,7 @@
 ---
 title: Sicurezza e privacy delle raccolte
 titleSuffix: Configuration Manager
-description: Informazioni sulle procedure consigliate per la sicurezza e la privacy delle raccolte in System Center Configuration Manager.
+description: Informazioni sulle procedure consigliate per la sicurezza e la privacy delle raccolte in Configuration Manager.
 ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,23 +10,22 @@ ms.assetid: 30bf2451-5415-4be2-ba8d-21759370cd83
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c71df04bab25a07d854ccc582fc92e4da8d1ad40
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 42345ee91baaad7dcc82eab537fbeb697d6cd7ab
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70890149"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824402"
 ---
-# <a name="security-and-privacy-for-collections-in-system-center-configuration-manager"></a>Sicurezza e privacy per le raccolte in System Center Configuration Manager
+# <a name="security-and-privacy-for-collections-in-configuration-manager"></a>Sicurezza e privacy per le raccolte in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-In questo argomento vengono illustrate le procedure consigliate e le informazioni sulla privacy per le raccolte in System Center Configuration Manager.  
+In questo argomento vengono illustrate le procedure consigliate e le informazioni sulla privacy per le raccolte in Configuration Manager.  
 
  In Configuration Manager non sono disponibili informazioni sulla privacy specifiche per le raccolte. Le raccolte sono contenitori di risorse, quali utenti e dispositivi. L'appartenenza a una raccolta dipende spesso dalle informazioni che Configuration Manager raccoglie durante il funzionamento standard. Ad esempio, con le informazioni sulle risorse raccolte tramite individuazione o inventario è possibile configurare una raccolta contenente i dispositivi che soddisfano criteri specifici. Le raccolte possono anche basarsi sulle informazioni sullo stato corrente delle operazioni di gestione client, ad esempio la distribuzione di software e la verifica della conformità. Oltre a queste raccolte basate su query, gli utenti amministrativi anche possono aggiungere risorse a raccolte.  
 
- Per altre informazioni sulle raccolte, vedere [Introduzione alle raccolte in System Center Configuration Manager](../../../../core/clients/manage/collections/introduction-to-collections.md). Per altre informazioni sulle procedure di sicurezza consigliate e le informazioni sulla privacy per le operazioni di Configuration Manager che è possibile usare per configurare l'appartenenza a una raccolta, vedere [Security best practices and privacy information for System Center Configuration Manager](../../../../core/plan-design/security/security-best-practices-and-privacy-information.md) (Procedure consigliate per la sicurezza e informazioni sulla privacy per System Center Configuration Manager).  
+ Per altre informazioni sulle raccolte, vedere [Introduzione alle raccolte](../../../../core/clients/manage/collections/introduction-to-collections.md). Per altre informazioni sulle procedure di sicurezza consigliate e le informazioni sulla privacy per le operazioni di Configuration Manager che è possibile usare per configurare l'appartenenza a una raccolta, vedere [Procedure consigliate per la sicurezza e informazioni sulla privacy per Configuration Manager](../../../../core/plan-design/security/security-best-practices-and-privacy-information.md).  
 
 ## <a name="security-best-practices-for-collections"></a>Procedure di sicurezza consigliate per le raccolte  
  Usare la seguente procedura di sicurezza consigliata per le raccolte.  

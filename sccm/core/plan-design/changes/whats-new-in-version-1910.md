@@ -1,8 +1,8 @@
 ---
 title: Novità della versione 1910
 titleSuffix: Configuration Manager
-description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1906 di Configuration Manager Current Branch.
-ms.date: 12/04/2019
+description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1910 di Configuration Manager Current Branch.
+ms.date: 12/20/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,25 +10,24 @@ ms.assetid: 3e1ddb65-1193-46ce-a7c0-a48dfd9fd833
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 545b68cd1628bb9652f1e87da96e5fb6e18787f1
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: 43bedd7418079c3badb24869b4bde71e781112cc
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198490"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802396"
 ---
 # <a name="whats-new-in-version-1910-of-configuration-manager-current-branch"></a>Novità della versione 1910 di Configuration Manager Current Branch
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-L'aggiornamento 1910 per Configuration Manager Current Branch è disponibile come aggiornamento nella console. Applicare questo aggiornamento ai siti con la versione 1806 o successiva. <!-- baseline only statement:When installing a new site, it's also available as a baseline version.--> Questo articolo offre un riepilogo delle modifiche e delle nuove funzionalità di Configuration Manager versione 1910.  
+L'aggiornamento 1910 per Configuration Manager Current Branch è disponibile come aggiornamento nella console. Applicare questo aggiornamento ai siti con la versione 1806 o successiva. <!-- baseline only statement:When installing a new site, it's also available as a baseline version.--> Questo articolo offre un riepilogo delle modifiche e delle nuove funzionalità di Configuration Manager versione 1910.
 
 Esaminare sempre l'elenco di controllo più recente per installare questo aggiornamento. Per altre informazioni, vedere [Elenco di controllo per l'installazione dell'aggiornamento 1910](/sccm/core/servers/manage/checklist-for-installing-update-1910). Dopo aver aggiornato un sito, vedere anche [Elenco di controllo post-aggiornamento](/sccm/core/servers/manage/checklist-for-installing-update-1910#post-update-checklist).
 
 Per sfruttare i vantaggi delle nuove funzionalità di Configuration Manager, dopo l'aggiornamento del sito aggiornare anche i client alla versione più recente. Anche se le nuove funzionalità vengono visualizzate nella console di Configuration Manager quando si esegue l'aggiornamento del sito e della console, lo scenario completo risulta funzionante solo dopo l'aggiornamento alla versione più recente del client.
 
-> [!Tip]  
+> [!TIP]
 > Per ricevere una notifica quando questa pagina viene aggiornata, copiare e incollare l'URL seguente nel lettore di feed RSS: `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+1910+-+Configuration+Manager%22&locale=en-us`
 
 ## <a name="bkmk_mem"></a> Microsoft Endpoint Configuration Manager
@@ -39,9 +38,9 @@ Configuration Manager è ora incluso in Microsoft Endpoint Manager.
 
 ![Microsoft Endpoint Configuration Manager](media/4960084-endpoint-manager-logo.png)
 
-Microsoft Endpoint Manager è una soluzione integrata per la gestione di tutti i dispositivi. Microsoft riunisce Configuration Manager e Intune con una gestione delle licenze semplificata. L'investimento esistente in Configuration Manager continua a essere valido e consente al contempo di sfruttare i vantaggi offerti dalla potenza del cloud Microsoft.
+Microsoft Endpoint Manager è una soluzione integrata per la gestione di tutti i dispositivi. Microsoft riunisce Configuration Manager e Intune con una gestione delle licenze semplificata. È possibile continuare a sfruttare l'investimento esistente in Configuration Manager avvalendosi anche di alcuni vantaggi offerti dalla potenza del cloud Microsoft in base alle esigenze.
 
-Le soluzioni di gestione Microsoft seguenti fanno ora parte del marchio **Microsoft Endpoint Manager**:
+Le soluzioni di gestione Microsoft seguenti fanno ora parte del marchio Microsoft Endpoint Manager:
 
 - [Configuration Manager](https://docs.microsoft.com/configmgr)
 - [Intune](https://docs.microsoft.com/intune)
@@ -57,7 +56,7 @@ Per altre informazioni, vedere i post seguenti di Brad Anderson, vicepresidente 
 
 ### <a name="what-things-change-in-configuration-manager-with-microsoft-endpoint-manager"></a>Che cosa cambia in Configuration Manager con l'introduzione di Microsoft Endpoint Manager?
 
-Nella versione 1910, a parte il nuovo nome, Configuration Manager funziona allo stesso modo. Alcuni cambiamenti di nome possono avere effetto sull'uso dei componenti seguenti:
+Nella versione 1910, a parte il nuovo nome, Configuration Manager funziona allo stesso modo. Alcune modifiche apportate ai nomi possono avere effetto sull'uso dei componenti seguenti:
 
 - **Console di Configuration Manager**: trovare i collegamenti alla console e al **visualizzatore controllo remoto** nel menu Start di Windows nella cartella **Microsoft Endpoint Manager**.
 
@@ -68,7 +67,7 @@ Nella versione 1910, a parte il nuovo nome, Configuration Manager funziona allo 
 Assicurarsi di aggiornare la documentazione gestita internamente in modo da includere questi nuovi percorsi.
 
 > [!TIP]
-> In Windows 10, quando si apre il menu Start, è sufficiente iniziare a digitare il nome per trovare l'icona. Ad esempio, `config` per la console di Configuration Manager e `software` per Software Center.
+> Quando si apre il menu Start in Windows 10, è sufficiente iniziare a digitare il nome per trovare l'icona. Ad esempio, immettere `Configuration Manager` o `Software Center`.
 
 ## <a name="bkmk_infra"></a> Infrastruttura del sito
 
@@ -83,7 +82,7 @@ Per altre informazioni, vedere [Uso della console di Configuration Manager](/con
 ### <a name="extend-and-migrate-on-premises-site-to-microsoft-azure"></a>Estendere ed eseguire la migrazione di un sito locale in Microsoft Azure
 <!--3556022-->
 
-Questo nuovo strumento consente di creare a livello di codice macchine virtuali di Azure per Configuration Manager. Consente di installare con impostazioni predefinite ruoli del sito come un server del sito passivo, punti di gestione e punti di distribuzione. Dopo aver convalidato i nuovi ruoli, usarli come sistemi del sito aggiuntivi per ottenere una disponibilità elevata. È anche possibile rimuovere il ruolo del sistema del sito locale e mantenere solo il ruolo VM di Azure.
+Questo nuovo strumento consente di creare a livello di codice macchine virtuali di Azure per Configuration Manager. Consente di installare con impostazioni predefinite ruoli del sito come un server del sito passivo, punti di gestione e punti di distribuzione. Dopo aver convalidato i nuovi ruoli, è possibile usarli come sistemi del sito aggiuntivi per la disponibilità elevata. È anche possibile rimuovere il ruolo del sistema del sito locale e mantenere solo il ruolo VM di Azure.
 
 Per altre informazioni, vedere [Estendere ed eseguire la migrazione di un sito locale in Microsoft Azure](/sccm/core/support/azure-migration-tool).
 
@@ -97,7 +96,9 @@ Per altre informazioni sulle modifiche mensili al servizio cloud Desktop Analyti
 
 ### <a name="optimizations-to-the-cmpivot-engine"></a>Ottimizzazioni per il motore CMPivot
 <!--3197353-->
-Sono state aggiunte alcune ottimizzazioni significative al motore CMPivot che consentono di eseguire il push di una parte maggiore dell'elaborazione nel client ConfigMgr. Le ottimizzazioni riducono drasticamente il carico della CPU del server e della rete necessario per eseguire le query CMPivot. Con queste ottimizzazioni, è ora possibile eseguire operazioni su gigabyte di dati client in tempo reale. Per altre informazioni, vedere [Ottimizzazioni per il motore CMPivot](/sccm/core/servers/manage/cmpivot#bkmk_optimization).
+Sono state aggiunte alcune ottimizzazioni significative al motore CMPivot. È ora possibile spostare più operazioni di elaborazione nel client ConfigMgr. Le ottimizzazioni riducono drasticamente il carico della CPU del server e della rete necessario per eseguire le query CMPivot. Grazie a queste ottimizzazioni, è ora possibile analizzare diversi gigabyte di dati del client in tempo reale. 
+
+Per altre informazioni, vedere [Ottimizzazioni per il motore CMPivot](/sccm/core/servers/manage/cmpivot#bkmk_optimization).
 
 ### <a name="additional-cmpivot-entities-and-enhancements"></a>Entità CMPivot aggiuntive e miglioramenti
 <!--5410930-->
@@ -122,18 +123,18 @@ Quando si abilita Microsoft Connected Cache nei punti di distribuzione di Config
 Per altre informazioni, vedere [Microsoft Connected Cache in Configuration Manager](/configmgr/core/plan-design/hierarchy/microsoft-connected-cache#bkmk_intune).
 
 > [!NOTE]
-> Configuration Manager Current Branch versione 1906 includeva [Cache in rete di Ottimizzazione recapito](/configmgr/core/plan-design/hierarchy/microsoft-connected-cache) (DOINC), un'applicazione installata in Windows Server ancora in fase di sviluppo. A partire dalla versione Current Branch 1910, questa funzionalità è denominata **Microsoft Connected Cache**.
+> Configuration Manager Current Branch versione 1906 includeva [Cache in rete di Ottimizzazione recapito](/configmgr/core/plan-design/hierarchy/microsoft-connected-cache) (DOINC), un'applicazione installata in Windows Server ancora in fase di sviluppo. A partire dalla versione Current Branch 1910, questa funzionalità è nota come Microsoft Connected Cache.
 >
-> Quando si installa Connected Cache in un punto di distribuzione di Configuration Manager, il traffico del servizio Ottimizzazione recapito viene scaricato nelle origini locali. Connected Cache esegue questa operazione memorizzando nella cache in modo efficiente il contenuto a livello di intervallo di byte.
+> Quando si installa Connected Cache in un punto di distribuzione di Configuration Manager, il traffico del servizio Ottimizzazione recapito viene scaricato nelle origini locali. Connected Cache esegue questa operazione memorizzando il contenuto nella cache in modo efficiente a livello di intervallo di byte.
 
 ## <a name="bkmk_client"></a> Gestione dei client
 
 ### <a name="include-custom-configuration-baselines-as-part-of-compliance-policy-assessment"></a>Includere linee di base di configurazione personalizzate come parte della valutazione dei criteri di conformità
 <!--3608345-->
 
-È ora possibile aggiungere la valutazione delle linee di base di configurazione personalizzate come regola di valutazione dei criteri di conformità. Quando si crea o si modifica una linea di base di configurazione, è disponibile l'opzione **Valuta questa baseline come parte della valutazione dei criteri di conformità**. Quando si aggiunge o si modifica una regola dei criteri di conformità, è disponibile una nuova condizione denominata **Includi le baseline configurate in una valutazione dei criteri di conformità**.
+È ora possibile aggiungere la valutazione delle linee di base di configurazione personalizzate come regola di valutazione dei criteri di conformità. Quando si crea o si modifica una linea di base di configurazione, è possibile usare l'opzione **Valuta questa baseline come parte della valutazione dei criteri di conformità**. Quando si aggiunge o si modifica una regola dei criteri di conformità, è disponibile una nuova condizione denominata **Includi le baseline configurate in una valutazione dei criteri di conformità**.
 
-Per i dispositivi con co-gestione, e quando si configura Intune per acquisire i risultati della valutazione della conformità di Configuration Manager come parte dello stato di conformità generale, queste informazioni vengono inviate ad Azure Active Directory. È quindi possibile usarlo per l'accesso condizionale alle risorse di Office 365.  
+Per i dispositivi con co-gestione, e quando si configura Intune per acquisire i risultati della valutazione della conformità di Configuration Manager come parte dello stato di conformità generale, queste informazioni vengono inviate ad Azure Active Directory. È quindi possibile usarlo per l'accesso condizionale alle risorse di Office 365.
 
 Per altre informazioni, vedere [Includere linee di base di configurazione personalizzate come parte della valutazione dei criteri di conformità](/sccm/compliance/deploy-use/create-configuration-baselines#bkmk_CAbaselines).
 
@@ -141,9 +142,9 @@ Per altre informazioni, vedere [Includere linee di base di configurazione person
 
 <!--4737447-->
 
-Configuration Manager Current Branch versione 1906 ha introdotto il supporto per [Desktop virtuale Windows](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#windows-virtual-desktop). Questo ambiente di Microsoft Azure supporta diverse versioni del sistema operativo, alcune delle quali consentono più sessioni utente attive simultanee. Ad esempio, Windows 10 Enterprise multisessione.
+Configuration Manager Current Branch versione 1906 ha introdotto il supporto per [Desktop virtuale Windows](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#windows-virtual-desktop). Questo ambiente di Microsoft Azure supporta diverse versioni del sistema operativo, alcune delle quali consentono più sessioni utente attive simultanee. Ad esempio, Windows 10 Enterprise multisessione è una di queste versioni del sistema operativo.
 
-Se in questi dispositivi multisessione è necessario usare criteri utente e si accettano le potenziali conseguenze sulle prestazioni, è ora possibile configurare un'impostazione client per abilitare i criteri utente. Nel gruppo **Criteri client** configurare l'impostazione seguente: **Abilita i criteri utente per più sessioni utente**.
+Se in questi dispositivi multisessione è necessario usare criteri utente e si accettano le potenziali conseguenze sulle prestazioni, è ora possibile configurare un'impostazione client per abilitare i criteri utente. Nel gruppo **Criteri client** configurare l'impostazione **Abilita i criteri utente per più sessioni utente**.
 
 Per altre informazioni, vedere [Come configurare le impostazioni client](/configmgr/core/clients/deploy/configure-client-settings).
 
@@ -155,7 +156,7 @@ Per altre informazioni, vedere [Come configurare le impostazioni client](/config
 
 ### <a name="deploy-microsoft-edge-version-77-and-later"></a>Distribuire Microsoft Edge versione 77 e successive
 <!--4561024-->
-Il nuovo Microsoft Edge è disponibile per le aziende. È ora possibile distribuire Microsoft Edge, versione 77 e successive, agli utenti della propria organizzazione. Gli amministratori possono scegliere il canale Beta o Dev, insieme a una versione del client Microsoft Edge da distribuire.
+Il nuovo Microsoft Edge è disponibile per le aziende. È ora possibile distribuire Microsoft Edge versione 77 e successive nei sistemi degli utenti. Gli amministratori possono scegliere il canale Beta o Dev, insieme a una versione del client Microsoft Edge da distribuire.
 
 Per altre informazioni, vedere [Distribuire Microsoft Edge versione 77 e successive](/sccm/apps/deploy-use/deploy-edge).
 
@@ -165,8 +166,7 @@ Per altre informazioni, vedere [Distribuire Microsoft Edge versione 77 e success
 
 A partire da Current Branch versione 1906, è possibile creare un gruppo di applicazioni da inviare a una raccolta di dispositivi come singola distribuzione. Questa versione introduce un miglioramento a questa funzionalità:
 
-- Gli utenti possono **disinstallare** il gruppo di app in Software Center.
-
+- Gli utenti possono selezionare **Disinstalla** per il gruppo di app in Software Center.
 - È possibile distribuire un gruppo di app in una **raccolta utenti**.
 
 Per altre informazioni di carattere generale, vedere [Creare gruppi di applicazioni](/configmgr/apps/deploy-use/create-app-groups).
@@ -176,13 +176,14 @@ Per altre informazioni di carattere generale, vedere [Creare gruppi di applicazi
 
 ### <a name="improvements-to-the-task-sequence-editor"></a>Miglioramenti all'editor delle sequenze di attività
 
-- **Ricerca nell'editor delle sequenze di attività**<!--4621085-->: Se si ha una sequenza di attività di grandi dimensioni con molti gruppi e passaggi, può essere difficile individuare passaggi specifici. È ora possibile eseguire ricerche nell'editor delle sequenze di attività. Questa azione consente di individuare più rapidamente i passaggi in una sequenza di attività.
+ L'editor delle sequenze di attività include i miglioramenti seguenti:
 
-- **Copiare e incollare le condizioni della sequenza di attività**<!--4621098-->: Se si vogliono riutilizzare le condizioni da un passaggio della sequenza di attività a un altro, è ora possibile copiare e incollare le condizioni nell'editor.
+- **Ricerca nell'editor delle sequenze di attività:**<!--4621085--> Se si ha una sequenza di attività di grandi dimensioni con molti gruppi e passaggi, può essere difficile individuare passaggi specifici. È ora possibile eseguire ricerche nell'editor delle sequenze di attività. Questa azione consente di individuare più rapidamente i passaggi in una sequenza di attività.
+- **Possibilità di copiare e incollare le condizioni della sequenza di attività:**<!--4621098--> Se si vogliono riutilizzare le condizioni da un passaggio della sequenza di attività a un altro, è ora possibile copiare e incollare le condizioni nell'editor.
 
 Per altre informazioni, vedere il nuovo articolo su come [usare l'editor delle sequenze di attività](/configmgr/osd/understand/task-sequence-editor).
 
-### <a name="task-sequence-performance-improvements---power-plans"></a>Miglioramenti delle prestazioni della sequenza delle attività - Combinazioni per il risparmio di energia
+### <a name="task-sequence-performance-improvements-power-plans"></a>Miglioramenti per le prestazioni delle sequenze di attività: Combinazioni per il risparmio di energia
 
 <!--3555926-->
 
@@ -194,7 +195,7 @@ Per altre informazioni, vedere [Miglioramenti delle prestazioni per le combinazi
 
 <!--3601238-->
 
-È ora possibile usare la sequenza di attività per distribuire l'aggiornamento sul posto di Windows 10 tramite Cloud Management Gateway (CMG). Prima di avviare la sequenza di attività, tuttavia, è necessario che la distribuzione scarichi tutto il contenuto in locale.
+È ora possibile usare la sequenza di attività per distribuire un aggiornamento sul posto di Windows 10 tramite Cloud Management Gateway. Prima di avviare la sequenza di attività, tuttavia, è necessario che la distribuzione scarichi tutto il contenuto in locale.
 
 A partire da questa versione, il motore della sequenza di attività può scaricare pacchetti su richiesta da un servizio CMG abilitato per il contenuto o da un punto di distribuzione cloud. Questa modifica offre ulteriore flessibilità con le distribuzioni di aggiornamento sul posto di Windows 10 ai dispositivi basati su Internet.
 
@@ -202,13 +203,13 @@ Per altre informazioni, vedere [Distribuire l'aggiornamento sul posto di Windows
 
 ### <a name="improvements-to-os-deployment"></a>Miglioramenti della distribuzione del sistema operativo
 
-Questa versione include i miglioramenti seguenti alla distribuzione del sistema operativo:
+Questa versione include i miglioramenti seguenti per la distribuzione del sistema operativo.
 
 #### <a name="boot-image-keyboard-layout"></a>Layout della tastiera per l'immagine d'avvio
 
 <!--4910348-->
 
-Configurare il layout predefinito della tastiera per un'immagine d'avvio. Nella scheda **Personalizzazione** di un'immagine di avvio usare la nuova opzione per **impostare il layout predefinito della tastiera in WinPE**. Se si seleziona una lingua diversa da en-US, Configuration Manager include ancora en-US nelle impostazioni locali di input disponibili. Nel dispositivo, il layout iniziale della tastiera corrisponde alle impostazioni locali selezionate, ma l'utente può passare a en-US se necessario.
+Configurare il layout predefinito della tastiera per un'immagine d'avvio. Nella scheda **Personalizzazione** di un'immagine di avvio usare la nuova opzione per **Imposta il layout di tastiera predefinito in WinPE**. Se si seleziona una lingua diversa da en-US, Configuration Manager include ancora en-US nelle impostazioni locali di input disponibili. Nel dispositivo, il layout iniziale della tastiera corrisponde alle impostazioni locali selezionate, ma l'utente può passare a en-US se necessario.
 
 Per altre informazioni, vedere [Manage boot images](/configmgr/osd/get-started/manage-boot-images#customization) (Gestire le immagini d'avvio).
 
@@ -216,7 +217,7 @@ Per altre informazioni, vedere [Manage boot images](/configmgr/osd/get-started/m
 
 <!--4931110-->
 
-Quando si importa un pacchetto di aggiornamento del sistema operativo, è possibile **estrarre un indice dell'immagine specifico dal file install.wim del pacchetto di aggiornamento selezionato**. Questo comportamento è simile a quello delle [immagini del sistema operativo](/configmgr/osd/get-started/manage-operating-system-images#BKMK_AddOSImages), con la differenza che sovrascrive il file install.wim esistente nel pacchetto di aggiornamento del sistema operativo. Estrae l'indice dell'immagine in una posizione temporanea e quindi lo sposta nella directory di origine originale.
+Quando si importa un pacchetto di aggiornamento del sistema operativo, è possibile usare l'opzione **Estrai un indice delle immagini specifico dal file install.wim del pacchetto di aggiornamento selezionato**. Questo comportamento è simile a quello delle [immagini del sistema operativo](/configmgr/osd/get-started/manage-operating-system-images#BKMK_AddOSImages), con la differenza che sovrascrive il file install.wim esistente nel pacchetto di aggiornamento del sistema operativo. Estrae l'indice dell'immagine in una posizione temporanea e quindi lo sposta nella directory di origine originale.
 
 Per altre informazioni, vedere [Gestire i pacchetti di aggiornamento del sistema operativo](/configmgr/osd/get-started/manage-operating-system-upgrade-packages#BKMK_AddOSUpgradePkgs).
 
@@ -224,7 +225,7 @@ Per altre informazioni, vedere [Gestire i pacchetti di aggiornamento del sistema
 
 <!--user story 4977616/bug 4798352-->
 
-Il passaggio **Esegui riga di comando** include ora un'opzione per l'**output in una variabile della sequenza di attività**. Quando si abilita questa opzione, la sequenza di attività salva l'output del comando in una variabile della sequenza di attività personalizzata specificata.
+Il passaggio **Esegui riga di comando** include ora l'opzione **Output nella variabile della sequenza di attività**. Quando si abilita questa opzione, la sequenza di attività salva l'output del comando in una variabile della sequenza di attività personalizzata specificata.
 
 Per altre informazioni, vedere [Esegui riga di comando](/configmgr/osd/understand/task-sequence-steps#BKMK_RunCommandLine).
 
@@ -233,7 +234,6 @@ Per altre informazioni, vedere [Esegui riga di comando](/configmgr/osd/understan
 Questa versione include i miglioramenti seguenti al debugger delle sequenze di attività:
 
 - Usare la nuova variabile della sequenza di attività **TSDebugOnError** per avviare automaticamente il debugger quando la sequenza di attività restituisce un errore.<!-- 5012536 -->
-
 - Se si crea un punto di interruzione nel debugger e quindi la sequenza di attività riavvia il computer, il debugger mantiene i punti di interruzione dopo il riavvio.<!-- 5012509 -->
 
 Per altre informazioni, vedere [Debugger delle sequenze di attività](/configmgr/osd/deploy-use/debug-task-sequence) e [Variabili della sequenza di attività - TSDebugOnError](/configmgr/osd/understand/task-sequence-variables#TSDebugOnError).
@@ -268,13 +268,13 @@ Per altre informazioni, vedere [Variabili della sequenza di attività - SetupCom
 
 ### <a name="additional-options-for-third-party-update-catalogs"></a>Opzioni aggiuntive per i cataloghi di aggiornamenti di terze parti
 <!--4469002-->
-Sono ora disponibili controlli più granulari sulla sincronizzazione dei cataloghi di aggiornamenti di terze parti. A partire da Configuration Manager versione 1910, è possibile configurare la pianificazione della sincronizzazione per ogni catalogo in modo indipendente. Quando si usano cataloghi che includono aggiornamenti suddivisi per categorie, è possibile configurare la sincronizzazione in modo da includere solo determinate categorie di aggiornamenti per evitare di sincronizzare l'intero catalogo. Con i cataloghi suddivisi per categorie, quando si è certi che si distribuirà una categoria, è possibile configurarla per il download e la pubblicazione automatici in WSUS.
+Sono ora disponibili controlli più granulari sulla sincronizzazione dei cataloghi di aggiornamenti di terze parti. A partire da Configuration Manager versione 1910, è possibile configurare la pianificazione della sincronizzazione per ogni catalogo in modo indipendente. Quando si usano cataloghi che includono aggiornamenti suddivisi per categorie, è possibile configurare la sincronizzazione in modo da includere solo determinate categorie di aggiornamenti per evitare di sincronizzare l'intero catalogo. Con i cataloghi suddivisi per categorie, quando si è certi di distribuire una categoria, è possibile configurarla per il download e la pubblicazione automatici in Windows Server Update Services (WSUS).
 
 Per altre informazioni, vedere [Abilitare gli aggiornamenti di terze parti](/sccm/sum/deploy-use/third-party-software-updates#bkmk_1910).
 
 ### <a name="use-delivery-optimization-for-all-windows-updates"></a>Usare Ottimizzazione recapito per tutti gli aggiornamenti di Windows
 <!--4699118-->
-In precedenza, la funzionalità Ottimizzazione recapito era disponibile solo per gli aggiornamenti rapidi. Con Configuration Manager versione 1910 è ora possibile usare Ottimizzazione recapito per la distribuzione di tutti i contenuti di Windows Update per i client che eseguono Windows 10 versione 1709 o successiva.
+Nelle versioni precedenti la funzionalità Ottimizzazione recapito è disponibile solo per gli aggiornamenti rapidi. Con Configuration Manager versione 1910 è ora possibile usare Ottimizzazione recapito per la distribuzione di tutti i contenuti di Windows Update per i client che eseguono Windows 10 versione 1709 o successiva.
 
 Per altre informazioni, vedere:
 - [Ottimizzare il recapito degli aggiornamenti di Windows 10](/sccm/sum/deploy-use/optimize-windows-10-update-delivery#bkmk_DO-1910)
@@ -283,9 +283,9 @@ Per altre informazioni, vedere:
 
 ### <a name="additional-software-update-filter-for-adrs"></a>Filtro di aggiornamento software aggiuntivo per le regole di distribuzione automatica
 <!--4852033-->
-È ora possibile usare **Distribuito** come filtro di aggiornamento per le regole di distribuzione automatica. Questo filtro consente di identificare i nuovi aggiornamenti che potrebbero dover essere distribuiti nelle raccolte pilota o di test.
+È ora possibile usare **Distribuito** come filtro di aggiornamento per le regole di distribuzione automatica. Questo filtro permette di identificare i nuovi aggiornamenti che può essere necessario distribuire nelle raccolte pilota o di test.
 
-Per altre informazioni, vedere [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates#bkmk_adr-process)
+Per altre informazioni, vedere [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates#bkmk_adr-process).
 
 ## <a name="bkmk_o365"></a> Gestione di Office
 
@@ -293,7 +293,9 @@ Per altre informazioni, vedere [Distribuire automaticamente gli aggiornamenti so
 ### <a name="office-365-proplus-pilot-and-health-dashboard"></a>Dashboard sull'integrità e la distribuzione pilota di Office 365 ProPlus
 <!--4488272, 4488301-->
 
-Il **dashboard sull'integrità e la distribuzione pilota di Office 365 ProPlus** consente di pianificare, pilotare e distribuire Office 365 ProPlus. Il dashboard fornisce informazioni dettagliate sull'integrità per i dispositivi con Office 365 ProPlus per identificare i possibili problemi che potrebbero influire sui piani di distribuzione. Il **dashboard sull'integrità e la distribuzione pilota di Office 365 ProPlus** fornisce raccomandazioni per i dispositivi della distribuzione pilota in base all'inventario dei componenti aggiuntivi. Per altre informazioni, vedere [Uso del dashboard sull'integrità e la distribuzione pilota di Office 365 ProPlus](/sccm/sum/deploy-use/office-365-dashboard#bkmk_pilot).
+Il dashboard per l'integrità e la distribuzione pilota di Office 365 ProPlus permette di pianificare e distribuire Office 365 ProPlus o di eseguirne una distribuzione pilota. Il dashboard fornisce informazioni dettagliate sull'integrità per i dispositivi con Office 365 ProPlus per identificare i possibili problemi che possono influire sui piani di distribuzione. Il dashboard per l'integrità e la distribuzione pilota di Office 365 ProPlus fornisce indicazioni per i dispositivi pilota in base all'inventario dei componenti aggiuntivi.
+
+Per altre informazioni, vedere [Uso del dashboard sull'integrità e la distribuzione pilota di Office 365 ProPlus](/sccm/sum/deploy-use/office-365-dashboard#bkmk_pilot).
 
 ## <a name="bkmk_protect"></a> Protezione
 
@@ -303,11 +305,11 @@ Il **dashboard sull'integrità e la distribuzione pilota di Office 365 ProPlus**
 
 Configuration Manager offre ora le funzionalità di gestione seguenti per Crittografia unità BitLocker:
 
-- Distribuzione del client di BitLocker nei dispositivi Windows gestiti
-- Gestione dei criteri di crittografia del dispositivo
-- Report di conformità
-- Sito Web di amministrazione e monitoraggio per il recupero delle chiavi
-- Portale self-service degli utenti
+- Distribuzione del client BitLocker in dispositivi Windows gestiti.
+- Gestione dei criteri di crittografia del dispositivo.
+- Generazione di report di conformità.
+- Uso di un sito Web di amministrazione e monitoraggio per il recupero chiave.
+- Accesso a un portale self-service degli utenti.
 
 Per altre informazioni, vedere [Pianificare la gestione di BitLocker](/configmgr/protect/plan-design/bitlocker-management).
 
@@ -329,8 +331,8 @@ Per altre informazioni, vedere [Visualizzare le console connesse di recente](/sc
 
 Sono disponibili nuove azioni del dispositivo per **Diagnostica client** nella console di Configuration Manager:
 
-- **Abilita la registrazione dettagliata**: modificare il livello di registrazione per il componente CCM da globale a dettagliata e abilitare la registrazione debug.
-- **Disabilita la registrazione dettagliata**: modificare il livello di registrazione da globale a predefinita e disabilitare la registrazione debug.
+- **Abilita la registrazione dettagliata:** modifica il livello di registrazione per il componente CCM da globale a *dettagliata* e abilita la registrazione debug.
+- **Disabilita la registrazione dettagliata:** modifica il livello di registrazione da globale a *predefinita* e disabilita la registrazione debug.
 
 Per altre informazioni, vedere [Diagnostica client](/sccm/core/clients/manage/client-notification#client-diagnostics).
 
@@ -340,19 +342,18 @@ Per altre informazioni, vedere [Diagnostica client](/sccm/core/clients/manage/cl
 Questa versione include i miglioramenti seguenti alla funzionalità di ricerca nella console di Configuration Manager:
 
 - È ora possibile usare l'opzione di ricerca **Tutte le sottocartelle** dai nodi **Pacchetti driver** e **Query**.<!--2841181,5424892-->
-
-- Quando una ricerca restituisce più di 1000 risultati, è ora possibile selezionare il pulsante **OK** sulla barra di notifica per visualizzare altri risultati.<!--4640570-->
+- Quando una ricerca restituisce più di 1.000 risultati, è possibile selezionare il pulsante **OK** sulla barra di notifica per visualizzare altri risultati.<!--4640570-->
 
 ## <a name="other-updates"></a>Altri aggiornamenti
 
 Per altre informazioni sulle modifiche apportate ai cmdlet di Windows PowerShell per Configuration Manager, vedere le [note sulla versione 1910 di PowerShell](https://docs.microsoft.com/powershell/sccm/1910-release-notes?view=sccm-ps).
 
+A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in Configuration Manager Current Branch, versione 1910](https://support.microsoft.com/help/4535776).
+
 <!--
 As of this version, the following features are no longer pre-release:
 - [SMS Provider administration service](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_admin-service)
 - [Device Guard management](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)
-
-Aside from new features, this release also includes additional changes such as bug fixes. For more information, see [Summary of changes in Configuration Manager current branch, version 1906](https://support.microsoft.com/help/4514258).
 
 The following update rollup (4517869) is available in the console starting on October 1, 2019: [Update rollup for Configuration Manager current branch, version 1906](https://support.microsoft.com/help/4517869).
 
@@ -367,24 +368,24 @@ The following additional hotfixes are available to address specific issues:
 |---------|---------|---------|---------|
 | [4487960](https://support.microsoft.com/help/4487960) | Microsoft Intune connector certificate does not renew in Configuration Manager | 18 January 2019 | Yes |
 
-> [!Note]  
+> [!NOTE]  
 > Starting in version 1902, in-console hotfixes now have supersedence relationships. For more information, see [Supersedence for in-console hotfixes](/sccm/core/servers/manage/updates#bkmk_supersede).
 -->
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-La versione 1910 viene attualmente rilasciata per l'anello di aggiornamento anticipato. Per installare questo aggiornamento, è necessario acconsentire esplicitamente. Per altre informazioni, vedere [Anello di aggiornamento anticipato](/sccm/core/servers/manage/checklist-for-installing-update-1910#early-update-ring).
-<!--As of August 16, 2019, version 1906 is globally available for all customers to install.-->
+<!-- At this time, version 1910 is released for the early update ring. To install this update, you need to opt in. For more information, see [Early update ring](/sccm/core/servers/manage/checklist-for-installing-update-1910#early-update-ring). -->
+A partire dal 20 dicembre 2019, la versione 1910 è disponibile a livello globale per l'installazione per tutti i clienti.
 
 Al momento di installare questa versione, vedere [Installazione degli aggiornamenti per Configuration Manager](/sccm/core/servers/manage/updates) ed [Elenco di controllo per l'installazione dell'aggiornamento 1910](/sccm/core/servers/manage/checklist-for-installing-update-1910).
 
-> [!TIP]  
-> Per installare un nuovo sito, usare una versione base di Configuration Manager.  
+> [!TIP]
+> Per installare un nuovo sito, usare una versione base di Configuration Manager.
 >
 > Sono disponibili altre informazioni su:
 >
-> - [Installing new sites](/sccm/core/servers/deploy/install/installing-sites) (Installare nuovi siti)  
-> - [Baseline and update versions](/sccm/core/servers/manage/updates#bkmk_Baselines) (Versioni di base e di aggiornamento)  
+> - [Installing new sites](/sccm/core/servers/deploy/install/installing-sites) (Installare nuovi siti) 
+> - [Baseline and update versions](/sccm/core/servers/manage/updates#bkmk_Baselines) (Versioni di base e di aggiornamento) 
 
 Per problemi noti e importanti, vedere [Note sulla versione](/sccm/core/servers/deploy/install/release-notes).
 

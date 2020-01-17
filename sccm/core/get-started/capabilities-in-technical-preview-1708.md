@@ -1,7 +1,7 @@
 ---
 title: Technical Preview 1708
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili in Technical Preview 1708 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1708 per Configuration Manager.
 ms.date: 08/25/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e3cb09f6220f7a0fd57960a9b46087a25ee81c5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 853edec8e360fe08ee9cd65ffa390cf075fa5108
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67677341"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804777"
 ---
-# <a name="capabilities-in-technical-preview-1708-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1708 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1708-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1708 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili nella versione 1708 di Technical Preview per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.     
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1708. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare [Technical Preview per Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.     
 
 
 <!--  Known Issues Template   
@@ -75,7 +74,7 @@ Quando viene eseguito lo script, verranno usati i valori dei parametri configura
 
 ## <a name="management-insights"></a>Informazioni dettagliate sulla gestione
 <!-- 1353967 -->
-Ora è possibile ottenere informazioni dettagliate sullo stato corrente dell'ambiente in base all'analisi dei dati nel database del sito. Le informazioni dettagliate aiutano a capire meglio l'ambiente e a intervenire di conseguenza. Rivedere le informazioni dettagliate sulla gestione nella console di Configuration Manager in **Amministrazione**  > **Management Insights** (Informazioni dettagliate gestione) > **All Insights** (Tutte le informazioni dettagliate). In questa versione sono disponibili le informazioni dettagliate seguenti:
+Ora è possibile ottenere informazioni dettagliate sullo stato corrente dell'ambiente in base all'analisi dei dati nel database del sito. Le informazioni dettagliate aiutano a capire meglio l'ambiente e a intervenire di conseguenza. Rivedere le informazioni dettagliate sulla gestione nella console di Configuration Manager in **Amministrazione** > **Management Insights** (Informazioni dettagliate gestione) > **All Insights** (Tutte le informazioni dettagliate). In questa versione sono disponibili le informazioni dettagliate seguenti:
 
 - **Applicazioni senza distribuzioni**: elenca le applicazioni dell'ambiente senza distribuzioni attive. Aiuta a individuare ed eliminare le applicazioni non usate per semplificare l'elenco di applicazioni visualizzato nella console.
 - **Raccolte vuote**: un elenco delle raccolte dell'ambiente che non hanno membri. È possibile eliminare queste raccolte ad esempio per semplificare l'elenco delle raccolte visualizzate durante la distribuzione di oggetti.
@@ -127,4 +126,4 @@ Per modificare Software Center:
 
 ### <a name="next-steps"></a>Passaggi successivi
 
-Per altre informazioni sulla gestione delle applicazioni in Configuration Manager, vedere [Introduzione alla gestione delle applicazioni in System Center Configuration Manager](/sccm/apps/understand/introduction-to-application-management).
+Per altre informazioni sulla gestione delle applicazioni in Configuration Manager, vedere [Introduzione alla gestione delle applicazioni](/sccm/apps/understand/introduction-to-application-management).

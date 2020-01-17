@@ -10,19 +10,18 @@ ms.assetid: 0a2d6c3f-a4e4-4c19-b087-3caada480de9
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e68dfe7869a76fe15ca9e65372de7341733cf49
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 2aabe3b4b563ca1f04eb87423a96515c16ada178
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68536049"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825864"
 ---
-# <a name="fundamentals-of-role-based-administration-for-system-center-configuration-manager"></a>Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager
+# <a name="fundamentals-of-role-based-administration-for-configuration-manager"></a>Nozioni fondamentali di amministrazione basata su ruoli per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Con System Center Configuration Manager si usa l'amministrazione basata su ruoli per proteggere l'accesso necessario per amministrare Configuration Manager. È anche possibile proteggere l'accesso agli oggetti gestiti, come raccolte, distribuzioni e siti. Dopo aver compreso i concetti introdotti in questo articolo, è possibile [configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
+Con Configuration Manager si usa l'amministrazione basata su ruoli per proteggere l'accesso necessario per amministrare Configuration Manager. È anche possibile proteggere l'accesso agli oggetti gestiti, come raccolte, distribuzioni e siti. Dopo aver compreso i concetti introdotti in questo articolo, è possibile [configurare l'amministrazione basata su ruoli per Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
  Questo modello di amministrazione basata su ruoli definisce e gestisce centralmente le impostazioni di accesso di sicurezza a livello di gerarchia per tutti i siti e le impostazioni del sito usando gli elementi seguenti:  
 
@@ -54,7 +53,7 @@ Quando si progetta e implementa la protezione amministrativa per Configuration M
  L'ambito amministrativo controlla gli oggetti che un utente amministratore può visualizzare nella console di Configuration Manager e le autorizzazioni dell'utente per tali oggetti. Le configurazione dell'amministrazione basata su ruoli vengono replicate in ogni sito della gerarchia come dati globali e quindi vengono applicate a tutte le connessioni amministrative.  
 
 > [!IMPORTANT]  
-> I ritardi di replica tra siti possono impedire a un sito di ricevere modifiche per l'amministrazione basata su ruoli. Per informazioni sul monitoraggio della replica del database tra siti, vedere l'argomento [Trasferimenti di dati tra siti in System Center Configuration Manager](../../core/servers/manage/data-transfers-between-sites.md).  
+> I ritardi di replica tra siti possono impedire a un sito di ricevere modifiche per l'amministrazione basata su ruoli. Per informazioni sul monitoraggio della replica del database tra siti, vedere l'argomento [Trasferimenti di dati tra siti](../../core/servers/manage/data-transfers-between-sites.md).  
 
 ##  <a name="bkmk_Planroles"></a> ruoli di sicurezza
 
@@ -87,13 +86,13 @@ Quando si progetta e implementa la protezione amministrativa per Configuration M
 
 4. Se le attività identificate non eseguono il mapping ai ruoli di sicurezza incorporati, creare e testare nuovi ruoli di sicurezza.  
 
-Per informazioni su come creare e configurare i ruoli di sicurezza per l'amministrazione basata su ruoli, vedere [Creare ruoli di sicurezza personalizzati](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole) e [Configurare i ruoli di sicurezza](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecRole) nell'articolo [Configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
+Per informazioni su come creare e configurare i ruoli di sicurezza per l'amministrazione basata su ruoli, vedere [Creare ruoli di sicurezza personalizzati](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole) e [Configurare i ruoli di sicurezza](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecRole) nell'articolo [Configurare l'amministrazione basata su ruoli per Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
 ##  <a name="bkmk_planCol"></a> raccolte
 
  Le raccolte specificano utente e risorse del computer che un utente amministratore può visualizzare o gestire. Ad esempio, per poter distribuire applicazioni o eseguire il controllo remoto, agli utenti amministratori deve essere assegnato un ruolo di sicurezza che consente l'accesso a una raccolta che include queste risorse. È possibile selezionare raccolte di utenti o dispositivi.  
 
- Per altre informazioni sulle raccolte, vedere [Introduzione alle raccolte in System Center Configuration Manager](../../core/clients/manage/collections/introduction-to-collections.md).  
+ Per altre informazioni sulle raccolte, vedere [Introduzione alle raccolte](../../core/clients/manage/collections/introduction-to-collections.md).  
 
  Prima di configurare l'amministrazione basata su ruoli, verificare se è necessario creare nuove raccolte per uno dei seguenti motivi:  
 
@@ -102,7 +101,7 @@ Per informazioni su come creare e configurare i ruoli di sicurezza per l'amminis
 - Requisiti di protezione e processi aziendali. Ad esempio, separare raccolte per produzione e computer di prova.  
 - Allineamento dell'organizzazione. Ad esempio, separare le raccolte per ogni Business Unit.  
 
-Per informazioni su come configurare raccolte per l'amministrazione basata su ruoli, vedere [Configurare le raccolte per la gestione della sicurezza](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigColl) nell'articolo [Configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
+Per informazioni su come configurare raccolte per l'amministrazione basata su ruoli, vedere [Configurare le raccolte per la gestione della sicurezza](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigColl) nell'articolo [Configurare l'amministrazione basata su ruoli per Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
 ## <a name="bkmk_PlanScope"></a> ambiti di protezione
 
@@ -167,8 +166,8 @@ Creare ambiti di protezione quando è necessario limitare l'accesso per separare
 
 - Diversi utenti amministratori richiedono un accesso diverso ad alcune istanze di un tipo di oggetto. Ad esempio, un gruppo di utenti amministratori richiede l'autorizzazione Lettura per gruppi di aggiornamenti software specifici e un altro gruppo di utenti amministratori richiede le autorizzazioni Modifica e Elimina per altri gruppi di aggiornamento software. Creare ambiti di protezione diversi per questi gruppi di aggiornamento software.  
 
-Per informazioni su come configurare gli ambiti di protezione per l'amministrazione basata su ruoli, vedere [Configurare gli ambiti di protezione per un oggetto](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecScope) nell'articolo [Configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
+Per informazioni su come configurare gli ambiti di protezione per l'amministrazione basata su ruoli, vedere [Configurare gli ambiti di protezione per un oggetto](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecScope) nell'articolo [Configurare l'amministrazione basata su ruoli per Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-[Configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md)
+[Configurare l'amministrazione basata su ruoli per Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md)

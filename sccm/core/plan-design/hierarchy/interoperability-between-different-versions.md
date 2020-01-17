@@ -10,41 +10,31 @@ ms.assetid: 9b0a7859-747f-4495-a2f4-13fd5991f897
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51243f8df55f2736cfb053f9e38cc7b6716b2158
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e9aa62d03224afe86f688d70f8b17b58bf68edff
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "66354866"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800118"
 ---
-# <a name="interoperability-between-different-versions-of-system-center-configuration-manager"></a>Interoperabilità tra versioni diverse di System Center Configuration Manager
+# <a name="interoperability-between-different-versions-of-configuration-manager"></a>Interoperabilità tra versioni diverse di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-È possibile installare e usare più gerarchie indipendenti di System Center Configuration Manager all'interno della stessa rete. Tuttavia, dal momento che più gerarchie di Configuration Manager non interagiscono al di fuori del processo di migrazione, per ogni gerarchia sono necessarie configurazioni che impediscono eventuali conflitti. È anche possibile creare determinate configurazioni per consentire alle risorse gestite di interagire con i sistemi del sito dalla gerarchia corretta.  
+È possibile installare e usare più gerarchie indipendenti di Configuration Manager all'interno della stessa rete. Tuttavia, dal momento che più gerarchie di Configuration Manager non interagiscono al di fuori del processo di migrazione, per ogni gerarchia sono necessarie configurazioni che impediscono eventuali conflitti. È anche possibile creare determinate configurazioni per consentire alle risorse gestite di interagire con i sistemi del sito dalla gerarchia corretta.  
 
-Nelle seguenti sezioni vengono fornite informazioni sull'utilizzo di diverse versioni di Configuration Manager nella stessa rete:  
-
-- [Interoperabilità tra System Center Configuration Manager e le versioni precedenti del prodotto](#BKMK_SupConfigInterop)  
-
-- [Interoperabilità per la Console di Configuration Manager](#BKMK_ConsoleInterop)  
-
-- [Limitazioni di Configuration Manager in una gerarchia con più versioni](#bkmk_mixed)  
-
-
-## <a name="BKMK_SupConfigInterop"></a> Interoperabilità tra System Center Configuration Manager e le versioni precedenti del prodotto  
+## <a name="BKMK_SupConfigInterop"></a> Interoperabilità tra Current Branch e versioni precedenti  
 
 Siti di versioni diverse non possono coesistere nella stessa gerarchia di Configuration Manager. Le uniche eccezioni si verificano durante il processo degli scenari di aggiornamento seguenti:
 
-- Da System Center Configuration Manager 2012 a System Center Configuration Manager
-- Da una versione di System Center Configuration Manager a una versione più recente tramite aggiornamenti nella console
+- Da System Center 2012 Configuration Manager a Configuration Manager Current Branch
+- Da una versione di Configuration Manager Current Branch a una versione più recente tramite aggiornamenti nella console
 
-È possibile distribuire un sito e una gerarchia di System Center Configuration Manager nella stessa destinazione di un sito o di una gerarchia di System Center Configuration Manager 2012. È necessario impedire ai client delle due versioni di entrare a far parte di un sito dell'altra versione.
+È possibile distribuire un sito e una gerarchia di Configuration Manager Current Branch nella stessa destinazione di un sito o di una gerarchia di System Center 2012 Configuration Manager. È necessario impedire ai client delle due versioni di entrare a far parte di un sito dell'altra versione.
 
 Se, ad esempio, due o più gerarchie di Configuration Manager hanno [limiti sovrapposti](/sccm/core/servers/deploy/configure/boundary-groups#overlapping-boundaries) che includono gli stessi percorsi di rete, assegnare ogni nuovo client a un sito specifico anziché usare l'assegnazione sito automatica. Per altre informazioni, vedere [Come assegnare i client a un sito](/sccm/core/clients/deploy/assign-clients-to-a-site).  
 
-Inoltre, non è possibile installare un client da System Center Configuration Manager 2012 in un computer che ospita un ruolo del sistema del sito da System Center Configuration Manager. Non è neppure possibile installare un client System Center Configuration Manager in un computer che ospita un ruolo del sistema del sito da System Center Configuration Manager 2012.  
+Non è possibile, poi, installare un client da System Center 2012 Configuration Manager in un computer che ospita un ruolo del sistema del sito da Configuration Manager Current Branch. Non è possibile neanche installare un client Configuration Manager Current Branch in un computer che ospita un ruolo del sistema del sito da System Center 2012 Configuration Manager.  
 
 Non sono supportati i client e le connessioni seguenti:  
 
@@ -66,31 +56,31 @@ I client di Configuration Manager possono essere assegnati a un unico sito prima
 
 Se i limiti si sovrappongono in più siti e gerarchie di Configuration Manager, i client potrebbero non essere assegnati al sito previsto o, addirittura, non essere assegnati ad alcun sito.  
 
-I client System Center Configuration Manager controllano la versione del sito prima di completare l'assegnazione sito. Se i limiti dei siti si sovrappongono, non è possibile assegnare i client a un sito con una versione precedente. Tuttavia, i client System Center Configuration Manager 2012 precedenti potrebbero essere assegnati erroneamente a un sito di System Center Configuration Manager successivo.  
+I client Configuration Manager Current Branch controllano la versione del sito prima di completare l'assegnazione del sito. Se i limiti dei siti si sovrappongono, non è possibile assegnare i client a un sito con una versione precedente. I client System Center 2012 Configuration Manager precedenti, tuttavia, potrebbero essere assegnati erroneamente a un sito di Configuration Manager Current Branch successivo.  
 
 Per evitare che i client vengano assegnati involontariamente al sito sbagliato in caso di sovrapposizione dei limiti in due gerarchie, configurare i parametri di installazione dei client per assegnare i client a un sito specifico.  
 
 ## <a name="bkmk_mixed"></a> Limitazioni di Configuration Manager in una gerarchia con più versioni  
 
-Durante l'aggiornamento di una gerarchia di System Center Configuration Manager, in alcuni momenti siti diversi possono avere versioni diverse. Ad esempio, si esegue prima l'aggiornamento del sito di amministrazione centrale. A causa delle finestre di manutenzione del sito, i siti primari vengono aggiornati solo in un secondo momento.  
+Durante l'aggiornamento di una gerarchia di Configuration Manager, in alcuni momenti siti diversi possono avere versioni diverse. Ad esempio, si esegue prima l'aggiornamento del sito di amministrazione centrale. A causa delle finestre di manutenzione del sito, i siti primari vengono aggiornati solo in un secondo momento.  
 
 Quando più siti in un'unica gerarchia eseguono versioni diverse, alcune funzionalità non sono disponibili. Questo comportamento può influire sulla gestione degli oggetti di Configuration Manager nella console di Configuration Manager e sulle funzionalità disponibili per i client. In genere, le funzionalità della versione più recente di Configuration Manager non sono accessibili dai siti o dai client che eseguono una versione precedente del Service Pack.  
 
 ### <a name="network-access-account"></a>Account di accesso alla rete
 
-Si esegue l'aggiornamento del sito di amministrazione centrale a System Center Configuration Manager. Si visualizzano i dettagli dell'account di accesso alla rete da una console di Configuration Manager connessa al sito aggiornato, che tuttavia non visualizza i dettagli dell'account dai siti che eseguono ancora System Center Configuration Manager 2012.
+Si esegue l'aggiornamento del sito di amministrazione centrale a Configuration Manager Current Branch. Si visualizzano i dettagli dell'account di accesso alla rete da una console di Configuration Manager connessa al sito aggiornato, che tuttavia non visualizza i dettagli dell'account dai siti che eseguono ancora System Center Configuration Manager 2012.
 
 Dopo l'aggiornamento del sito primario alla stessa versione del sito di amministrazione centrale, i dettagli dell'account sono visibili nella console.
 
-Lo stesso comportamento si applica quando si esegue l'aggiornamento tra versioni diverse di System Center Configuration Manager.
+Lo stesso comportamento si applica quando si esegue l'aggiornamento tra versioni diverse di Configuration Manager.
 
 ### <a name="boot-images-for-os-deployment"></a>Immagini d'avvio per la distribuzione del sistema operativo
 
-#### <a name="when-upgrading-from-system-center-2012-configuration-manager-to-system-center-configuration-manager"></a>Quando si esegue l'aggiornamento da System Center 2012 Configuration Manager a System Center Configuration Manager
+#### <a name="when-upgrading-from-system-center-2012-configuration-manager-to-configuration-manager-current-branch"></a>Quando si esegue l'aggiornamento da System Center 2012 Configuration Manager a Configuration Manager Current Branch
 
-Quando il sito di livello superiore di una gerarchia viene aggiornato a System Center Configuration Manager, aggiorna automaticamente le immagini d'avvio predefinite per usare Windows Assessment and Deployment Kit (Windows ADK) versione 10. Usare queste immagini d'avvio solo per le distribuzioni ai client di siti di System Center Configuration Manager. Per altre informazioni, vedere [Pianificazione dell'interoperabilità della distribuzione del sistema operativo](/sccm/osd/plan-design/planning-for-operating-system-deployment-interoperability).
+Quando il sito di livello superiore di una gerarchia viene aggiornato a Configuration Manager Current Branch, aggiorna automaticamente le immagini d'avvio predefinite per usare Windows Assessment and Deployment Kit (Windows ADK) versione 10. Usare queste immagini d'avvio solo per le distribuzioni ai client di siti di Configuration Manager Current Branch. Per altre informazioni, vedere [Pianificazione dell'interoperabilità della distribuzione del sistema operativo](/sccm/osd/plan-design/planning-for-operating-system-deployment-interoperability).
 
-#### <a name="when-upgrading-between-system-center-configuration-manager-versions"></a>Quando si esegue l'aggiornamento tra versioni di System Center Configuration Manager
+#### <a name="when-upgrading-between-configuration-manager-current-branch-versions"></a>Quando si esegue l'aggiornamento tra versioni Current Branch di Configuration Manager
 
 se le nuove versioni di Configuration Manager non aggiornano la versione di Windows ADK in uso, non ci sono effetti sulle immagini d'avvio.
 
@@ -104,7 +94,7 @@ Quando si crea una sequenza di attività con un passaggio introdotto in una vers
 
 ### <a name="client-to-down-level-management-point-communications"></a>Comunicazioni tra client e punti di gestione di livello inferiore
 
-Un client di Configuration Manager comunicante con un punto di gestione di un sito che esegue una versione precedente rispetto a quella usata dal client può usare soltanto le funzionalità supportate dalla versione di livello inferiore di Configuration Manager. Se ad esempio si distribuisce contenuto da un sito di System Center Configuration Manager aggiornato di recente a un client che comunica con un punto di gestione non ancora aggiornato a tale versione, il client non riesce a usare le nuove funzionalità dell'ultima versione.
+Un client di Configuration Manager comunicante con un punto di gestione di un sito che esegue una versione precedente rispetto a quella usata dal client può usare soltanto le funzionalità supportate dalla versione di livello inferiore di Configuration Manager. Se ad esempio si distribuisce contenuto da un sito di Configuration Manager Current Branch aggiornato di recente a un client che comunica con un punto di gestione non ancora aggiornato a tale versione, il client non riesce a usare le nuove funzionalità dell'ultima versione.
 
 ### <a name="package-and-task-sequence-deployments-to-legacy-clients"></a>Distribuzioni di sequenze di attività e pacchetti nei client legacy
 
@@ -117,15 +107,15 @@ A partire dalla versione 1902, non è possibile distribuire un pacchetto o una s
 
 Questa sezione contiene informazioni sull'uso della console di Configuration Manager in un ambiente che contiene una combinazione di versioni diverse di Configuration Manager.  
 
-### <a name="an-environment-with-both-system-center-2012-configuration-manager-and-system-center-configuration-manager"></a>Ambiente con System Center Configuration Manager 2012 e System Center Configuration Manager
+### <a name="an-environment-with-both-system-center-2012-configuration-manager-and-configuration-manager-current-branch"></a>Ambiente con System Center 2012 Configuration Manager e Configuration Manager Current Branch
 
-Per gestire un sito di Configuration Manager, sia la console che il sito a cui si connette la console devono eseguire la stessa versione di Configuration Manager. Non è ad esempio possibile usare una console di System Center Configuration Manager 2012 per gestire un sito di System Center Configuration Manager o viceversa.
+Per gestire un sito di Configuration Manager, sia la console che il sito a cui si connette la console devono eseguire la stessa versione di Configuration Manager. Non è ad esempio possibile usare una console di System Center 2012 Configuration Manager per gestire un sito di Configuration Manager Current Branch o viceversa.
 
-L'installazione della console di System Center Configuration Manager 2012 e della console di System Center Configuration Manager nello stesso computer non è supportata.
+L'installazione della console di System Center 2012 Configuration Manager e della console di Configuration Manager Current Branch nello stesso computer non è supportata.
 
-### <a name="an-environment-with-multiple-versions-of-system-center-configuration-manager"></a>Un ambiente con più versioni di System Center Configuration Manager
+### <a name="an-environment-with-multiple-versions-of-configuration-manager"></a>Un ambiente con più versioni di Configuration Manager
 
-System Center Configuration Manager non supporta l'installazione di più console di Configuration Manager in un solo computer. Per usare console di diverse versioni di System Center Configuration Manager, installare le diverse console in computer separati.
+Configuration Manager Current Branch non supporta l'installazione di più console di Configuration Manager in un solo computer. Per usare console di diverse versioni di Configuration Manager, installare le diverse console in computer separati.
 
 Durante il processo di aggiornamento a una nuova versione dei siti in una gerarchia è possibile connettere un console a un sito che esegue una versione più recente e visualizzare le informazioni su altri siti in quella gerarchia. Questa configurazione, tuttavia, non è consigliata. È possibile che le differenze tra la versione della console e la versione del sito di Configuration Manager causino problemi di dati. Alcune funzionalità disponibili nell'ultima versione del prodotto non saranno disponibili nella console.
 

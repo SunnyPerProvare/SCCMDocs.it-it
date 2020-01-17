@@ -10,13 +10,12 @@ ms.assetid: 694bc29f-a7fd-4e06-815a-1a9c5e9ac563
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 54d8efa798f10bff8bb80fea6aaf2b052c4d1419
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 4ce78a04f05b14d56fb7351d82cdb18a3947cfbc
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70109847"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825813"
 ---
 # <a name="introduction-to-the-long-term-servicing-branch-of-configuration-manager"></a>Introduzione a Long Term Servicing Branch di Configuration Manager
 
@@ -67,7 +66,7 @@ Quando si fa riferimento alla documentazione di Current Branch per LTSB, i detta
 
 ## <a name="licensing-overview-for-the-ltsb"></a>Panoramica della gestione delle licenze per LTSB   
 
-I clienti con contratti Software Assurance attivi per le licenze di System Center Configuration Manager, o con diritti di sottoscrizione equivalenti alla data 1 ottobre 2016, hanno diritto a usare la versione 1606 di ottobre 2016 di System Center Configuration Manager. I clienti che il 1° ottobre 2016 o in data successiva sono dotati di diritti per System Center Configuration Manager troveranno al momento dell'installazione due opzioni con licenza: Current Branch e Long-Term Servicing Branch (LTSB).
+I clienti con contratti Software Assurance attivi per le licenze di Configuration Manager, o con diritti di sottoscrizione equivalenti alla data 1 ottobre 2016, hanno diritto a usare la versione 1606 di ottobre 2016 di Configuration Manager. I clienti con diritti per Configuration Manager in data 1 ottobre 2016 o successiva, al momento dell'installazione avranno a disposizione due opzioni con licenza: Current Branch e Long-Term Servicing Branch (LTSB).
 
 I clienti che dispongono di diritti perpetui su System Center Configuration Manager o che dopo il 1° ottobre lasciano scadere la sottoscrizione Software Assurance o equivalente possono installare la versione di System Center Configuration Manager LTSB corrente al momento della scadenza.
 

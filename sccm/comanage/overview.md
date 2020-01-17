@@ -10,12 +10,12 @@ ms.topic: overview
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: ee66cd2714eff036ee62afc7c457b1e81fe78011
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 84cd21453a7df61e0f6abe46c96c9259f5f32ac7
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75817211"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034733"
 ---
 # <a name="what-is-co-management"></a>Informazioni sulla co-gestione
 
@@ -116,11 +116,6 @@ Per abilitare la co-gestione, non è richiesto l'onboarding del sito in Azure AD
 - [Configurare Intune](https://docs.microsoft.com/intune/setup-steps)  
 
 - [Abilitare la registrazione automatica di Windows 10](https://docs.microsoft.com/intune/windows-enroll#enable-windows-10-automatic-enrollment)  
-
-> [!Note]  
-> Se si ha un ambiente MDM ibrido, ovvero Intune integrato con Configuration Manager, non è possibile abilitare la co-gestione. È tuttavia possibile avviare la migrazione degli utenti a Intune autonomo e quindi abilitare i dispositivi Windows 10 ad essi associati per la co-gestione. Per altre informazioni sulla migrazione a Intune autonomo, vedere [Avviare la migrazione da MDM ibrido a Intune autonomo](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).  
->
-> Se si usa l'[autorità mista](/sccm/mdm/deploy-use/migrate-mixed-authority), completare prima la migrazione a Intune autonomo. Impostare quindi l'autorità MDM su Intune prima di configurare la co-gestione.<!--SCCMDocs issue #797-->
 
 
 ### <a name="windows-10"></a>Windows 10

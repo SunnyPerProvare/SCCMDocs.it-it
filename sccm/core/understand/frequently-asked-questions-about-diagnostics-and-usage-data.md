@@ -1,7 +1,7 @@
 ---
 title: Domande frequenti sui dati di diagnostica e di utilizzo
 titleSuffix: Configuration Manager
-description: Sono disponibili le domande frequenti sui dati di diagnostica e di utilizzo per System Center Configuration Manager.
+description: Sono disponibili le domande frequenti sui dati di diagnostica e di utilizzo per Configuration Manager.
 ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,17 +10,16 @@ ms.assetid: 3fe32aa2-d594-4ad0-a291-b8f5395ac50b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17e9ee2b969a9cc6e9258fa698be91fa15f4c2e3
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8180b1eee08f3e0ba0ef58fdd18138d4e1b7ca6d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62252591"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792179"
 ---
-# <a name="frequently-asked-questions-about-diagnostics-and-usage-data-for-system-center-configuration-manager"></a>Domande frequenti sui dati di diagnostica e di utilizzo per System Center Configuration Manager
+# <a name="frequently-asked-questions-about-diagnostics-and-usage-data-for-configuration-manager"></a>Domande frequenti sui dati di diagnostica e di utilizzo per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo fornisce le risposte alle domande frequenti sui dati di diagnostica e di utilizzo in Configuration Manager.
 

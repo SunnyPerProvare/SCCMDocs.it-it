@@ -1,7 +1,7 @@
 ---
 title: Configurare Asset Intelligence
 titleSuffix: Configuration Manager
-description: Configurare Asset Intelligence in System Center Configuration Manager.
+description: Configurare Asset Intelligence in Configuration Manager.
 ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,24 +10,23 @@ ms.assetid: 08e0382d-de05-4a76-ba5c-7223173f7066
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b808535542a5757a9e8b1f6e4d14fc34cc33c3e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d22c98686c95a11f4fd88c6ba81a901e475d143e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70890237"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824776"
 ---
-# <a name="configure-asset-intelligence-in-system-center-configuration-manager"></a>Configurare Asset Intelligence in System Center Configuration Manager
+# <a name="configure-asset-intelligence-in-configuration-manager"></a>Configurare Asset Intelligence in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Asset Intelligence consente di eseguire l'inventario e gestire l'uso delle licenze software.   
 
 ## <a name="steps-to-configure-asset-intelligence"></a>Passaggi per la configurazione di Asset Intelligence  
    
 
-- **Passaggio 1**: per raccogliere i dati di inventario necessari per i report di Asset Intelligence, è necessario abilitare Hardware Inventory Client Agent come descritto in [Come estendere l'inventario hardware in System Center Configuration Manager](../../../../core/clients/manage/inventory/extend-hardware-inventory.md).
+- **Passaggio 1**: per raccogliere i dati di inventario necessari per i report di Asset Intelligence, è necessario abilitare Hardware Inventory Client Agent come descritto in [Come estendere l'inventario hardware](../../../../core/clients/manage/inventory/extend-hardware-inventory.md).
 - **Passaggio 2**: [Abilitare le classi di report per l'inventario hardware di Asset Intelligence](#BKMK_EnableAssetIntelligence).  
 - **Passaggio 3**: [Installare un punto di sincronizzazione di Asset Intelligence](#BKMK_InstallAssetIntelligenceSynchronizationPoint)
 - **Passaggio 4**: [Abilitare il controllo degli eventi di accesso con esito positivo](#BKMK_EnableSuccessLogonEvents)  
@@ -102,7 +101,7 @@ Oltre al download di nuove informazioni per il catalogo di Asset Intelligence, i
     > [!WARNING]  
     >  Se è necessario un server proxy per connettersi a System Center Online, il certificato di connessione potrebbe anche essere eliminato se scade la password dell'account utente configurato per l'autenticazione del server proxy.  
 
-9. Nella pagina **Pianificazione della sincronizzazione** specificare se si vuole usare una pianificazione per sincronizzare il catalogo di Asset Intelligence. Quando si abilita la pianificazione della sincronizzazione, è necessario specificare una pianificazione della sincronizzazione semplice o personalizzata. Durante la sincronizzazione pianificata, il punto di sincronizzazione di Asset Intelligence si connette a System Center Online per recuperare il catalogo di Asset Intelligence più recente. È possibile sincronizzare manualmente il catalogo di Asset Intelligence dal nodo di Asset Intelligence nella console di Configuration Manager. Per i passaggi relativi alla sincronizzazione manuale del catalogo di Asset Intelligence, vedere la sezione [Per sincronizzare manualmente il catalogo di Asset Intelligence](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md#BKMK_ManuallySynchronizeCatalog) in [Operazioni per Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md).  
+9. Nella pagina **Pianificazione della sincronizzazione** specificare se si vuole usare una pianificazione per sincronizzare il catalogo di Asset Intelligence. Quando si abilita la pianificazione della sincronizzazione, è necessario specificare una pianificazione della sincronizzazione semplice o personalizzata. Durante la sincronizzazione pianificata, il punto di sincronizzazione di Asset Intelligence si connette a System Center Online per recuperare il catalogo di Asset Intelligence più recente. È possibile sincronizzare manualmente il catalogo di Asset Intelligence dal nodo di Asset Intelligence nella console di Configuration Manager. Per istruzioni per la sincronizzazione manuale del catalogo di Asset Intelligence, vedere la sezione [Per sincronizzare manualmente il catalogo di Asset Intelligence](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md#BKMK_ManuallySynchronizeCatalog) in [Operazioni per Asset Intelligence](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md).  
 
 10. Completare la procedura guidata 
 
@@ -186,7 +185,7 @@ Asset Intelligence abbina i prodotti specificati nel resoconto delle licenze gen
 7.  Eseguire il report **Licenza 15A - Report di riconciliazione licenza generale** per verificare che le informazioni sulle licenze siano state importate correttamente nel catalogo di Asset Intelligence.  
 
 > [!NOTE]  
->  Per un esempio di un file di licenza software generale che è possibile usare a scopo di test, vedere [File generale di importazione delle licenze di Asset Intelligence di esempio in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/example-asset-intelligence-general-license-import.md).  
+>  Per un esempio di un file di licenza software generale che è possibile usare a scopo di test, vedere [File generale di importazione delle licenze di Asset Intelligence di esempio](../../../../core/clients/manage/asset-intelligence/example-asset-intelligence-general-license-import.md).  
 
 #### <a name="sample-table-to-describe-software-licenses"></a>Tabella di esempio per descrivere le licenze software  
  Quando si crea un file di importazione del resoconto delle licenze generale, è possibile usare le informazioni nella tabella seguente per descrivere le licenze software da importare nel catalogo di Asset Intelligence.  
@@ -198,7 +197,7 @@ Asset Intelligence abbina i prodotti specificati nel resoconto delle licenze gen
 |Version|Fino a 255 caratteri|Sì|Versione del titolo software|  
 |Language|Fino a 255 caratteri|Sì|Lingua del titolo software|  
 |EffectiveQuantity|Valore intero|Sì|Numero di licenze acquistate|  
-|PONumber|Fino a 255 caratteri|No|Informazioni sull'ordine di acquisto|  
+|NumeroOA|Fino a 255 caratteri|No|Informazioni sull'ordine di acquisto|  
 |ResellerName|Fino a 255 caratteri|No|Informazioni sul rivenditore|  
 |DateOfPurchase|Valore di data nel formato seguente: GG/MM/AAAA|No|Data di acquisto della licenza|  
 |SupportPurchased|Valore bit|No|0 o 1: immettere 0 per Sì o 1 per No|  

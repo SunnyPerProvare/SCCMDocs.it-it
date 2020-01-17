@@ -10,19 +10,18 @@ ms.assetid: ff920c84-d5c8-458c-b67f-bc7219b05690
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9920b8b16f076fe9f0ebf807f4231e262fcabf33
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 855f181f44002d9135980729d0a535974b9c1451
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62250388"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794580"
 ---
-# <a name="planning-for-reporting-in-system-center-configuration-manager"></a>Pianificazione per la creazione di report in System Center Configuration Manager
+# <a name="planning-for-reporting-in-configuration-manager"></a>Pianificazione per la creazione di report in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-La creazione di report in System Center Configuration Manager offre un set di strumenti e risorse che consentono di usare le stesse funzionalità avanzate di SQL Server Reporting Services. Usare le sezioni seguenti per la pianificazione della creazione di report in Configuration Manager.  
+La creazione di report in Configuration Manager offre un set di strumenti e risorse che consentono di usare le stesse funzionalità avanzate di SQL Server Reporting Services. Usare le sezioni seguenti per la pianificazione della creazione di report in Configuration Manager.  
 
 ##  <a name="BKMK_InstallReportingServicesPoint"></a> Determinare il percorso di installazione del punto di Reporting Services  
  Quando si eseguono i report di Configuration Manager in un sito, questi hanno accesso alle informazioni incluse nel database del sito a cui si connettono. Utilizzare le seguenti sezioni per determinare il percorso di installazione del punto di Reporting Services e l'origine dati da utilizzare.  
@@ -62,5 +61,5 @@ La creazione di report in System Center Configuration Manager offre un set di st
 ## <a name="next-steps"></a>Passaggi successivi  
  Usare gli argomenti aggiuntivi seguenti per la pianificazione della creazione di report in Configuration Manager:  
 
--   [Prerequisiti per la creazione di report in System Center Configuration Manager](../../../core/servers/manage/prerequisites-for-reporting.md)  
--   [Procedure consigliate per la creazione di report in System Center Configuration Manager](../../../core/servers/manage/best-practices-for-reporting.md)  
+-   [Prerequisiti per la creazione di report](../../../core/servers/manage/prerequisites-for-reporting.md)  
+-   [Procedure consigliate per la creazione di report](../../../core/servers/manage/best-practices-for-reporting.md)  

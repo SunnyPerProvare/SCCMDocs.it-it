@@ -1,7 +1,7 @@
 ---
 title: Gestione client basata su Internet
 titleSuffix: Configuration Manager
-description: Creare una pianificazione per gestire client basati su Internet in System Center Configuration Manager.
+description: Creare una piano per gestire client basati su Internet in Configuration Manager.
 ms.date: 05/16/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,19 +10,18 @@ ms.assetid: 83a7c934-3b11-435d-ba22-cbc274951e83
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d7bb4fd955eb225788e45c3859945bf4b3dee9a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1524c5a42e9014aea9e2640257f8a710052bbed5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74658422"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824045"
 ---
-# <a name="plan-for-internet-based-client-management-in-system-center-configuration-manager"></a>Pianificare la gestione client basata su Internet in System Center Configuration Manager
+# <a name="plan-for-internet-based-client-management-in-configuration-manager"></a>Pianificare la gestione dei client basata su Internet in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-La gestione client basata su Internet consente di gestire i client di System Center Configuration Manager se non sono connessi alla rete aziendale, ma a una connessione Internet standard. Tale disposizione presenta diversi vantaggi che includono la riduzione dei costi associata alla possibilità di non dover eseguire reti private virtuali (VPN) e di poter distribuire aggiornamenti software in modo tempestivo.  
+La gestione dei client basata su Internet consente di gestire i client di Configuration Manager quando non sono connessi alla rete aziendale, ma usano una connessione Internet standard. Tale disposizione presenta diversi vantaggi che includono la riduzione dei costi associata alla possibilità di non dover eseguire reti private virtuali (VPN) e di poter distribuire aggiornamenti software in modo tempestivo.  
 
  Dati i requisiti di protezione più elevati per la gestione di computer client su una rete pubblica, la gestione client basata su Internet richiede che i client e i server del sistema del sito ai quali si collegano usino certificati PKI. Ciò garantisce che le connessioni vengano autenticate da un'autorità indipendente e che i dati provenienti da e diretti a questi sistemi del sito vengano crittografati tramite Secure Sockets Layer (SSL).  
 
@@ -140,7 +139,7 @@ La gestione client basata su Internet consente di gestire i client di System Cen
 
 - È necessario disporre di un'infrastruttura a chiave pubblica (PKI) di supporto che possa distribuire e gestire i certificati richiesti dai client e gestiti su Internet e sui server del sistema del sito basati su Internet.  
 
-   Per altre informazioni sui certificati PKI, vedere [PKI certificate requirements for System Center Configuration Manager](/sccm/core/plan-design/network/pki-certificate-requirements) (Requisiti dei certificati PKI per System Center Configuration Manager).  
+   Per altre informazioni sui certificati PKI, vedere [Requisiti dei certificati PKI per Configuration Manager](/sccm/core/plan-design/network/pki-certificate-requirements).  
 
 - Il nome di dominio completo (FQDN) Internet dei sistemi del sito che supportano la gestione client basata su Internet deve essere registrato come voce host sui server DNS pubblici.  
 

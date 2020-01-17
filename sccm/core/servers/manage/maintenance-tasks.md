@@ -10,21 +10,20 @@ ms.assetid: 625bb787-6d16-47a0-8b0f-b129cd909ca3
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07308fbeed33ee9aea68d08b50825b4467105cdd
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ab2f3e4fa5b04ae427e30af27363381a25f06d42
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68536187"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794883"
 ---
-# <a name="maintenance-tasks-for-system-center-configuration-manager"></a>Attività di manutenzione per System Center Configuration Manager
+# <a name="maintenance-tasks-for-configuration-manager"></a>Attività di manutenzione per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-I siti e le gerarchie di System Center Configuration Manager richiedono manutenzione e monitoraggio regolari per offrire servizi in modo efficace e continuativo. Una regolare manutenzione garantisce che l'hardware, il software e il database di Configuration Manager continuino a funzionare in modo corretto ed efficace. Delle prestazioni ottimali riducono notevolmente il rischio di errore.  
+I siti e le gerarchie di Configuration Manager richiedono manutenzione e monitoraggio regolari per offrire servizi in modo efficace e continuativo. Una regolare manutenzione garantisce che l'hardware, il software e il database di Configuration Manager continuino a funzionare in modo corretto ed efficace. Delle prestazioni ottimali riducono notevolmente il rischio di errore.  
 
- Per impostare gli avvisi e usare il sistema di stato per monitorare l'integrità di Configuration Manager, vedere [Usare gli avvisi e il sistema di stato per System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+ Per impostare gli avvisi e usare il sistema di stato per monitorare l'integrità di Configuration Manager, vedere [Usare gli avvisi e il sistema di stato per Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
 ## <a name="bkmk_MTs"></a> Attività di manutenzione
 
@@ -112,7 +111,7 @@ Dopo l'installazione di un sito di Configuration Manager, rivedere le attività 
 
  Ogni sito di Configuration Manager supporta attività di manutenzione che consentono di gestire l'efficienza operativa del database del sito. Per impostazione predefinita, alcune attività di manutenzione sono abilitate in ogni sito e tutte le attività supportano pianificazioni indipendenti. Le attività di manutenzione vengono impostate singolarmente per ogni sito e sono valide per il database in tale sito. Tuttavia, alcune attività, ad esempio **Elimina dati di individuazione obsoleti**, influiscono sulle informazioni disponibili in tutti i siti di una gerarchia.  
 
- Solo le attività di manutenzione che è possibile impostare in un sito vengono visualizzate nella console di Configuration Manager. Per un elenco completo delle attività di manutenzione di ogni tipo di sito, vedere [Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md).  
+ Solo le attività di manutenzione che è possibile impostare in un sito vengono visualizzate nella console di Configuration Manager. Per un elenco completo delle attività di manutenzione di ogni tipo di sito, vedere [Informazioni di riferimento per le attività di manutenzione per Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md).  
 
  Usare la procedura seguente per specificare le impostazioni comuni delle attività di manutenzione.  
 

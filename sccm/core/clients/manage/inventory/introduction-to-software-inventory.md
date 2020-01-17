@@ -1,7 +1,7 @@
 ---
 title: Inventario software
 titleSuffix: Configuration Manager
-description: Introduzione all'inventario software in System Center Configuration Manager.
+description: Informazioni introduttive sull'inventario software in Configuration Manager.
 ms.date: 04/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,17 +10,16 @@ ms.assetid: 79eb49da-cd2b-4ffc-b355-b595aeba3aea
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0ca25d64f3dd0e86ddbd89e2d86ae13da170891
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: cdd8e0740e4932b4c1c98d18458d5a8bc946cf55
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67550737"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824283"
 ---
-# <a name="introduction-to-software-inventory-in-system-center-configuration-manager"></a>Introduzione all'inventario software in System Center Configuration Manager
+# <a name="introduction-to-software-inventory-in-configuration-manager"></a>Introduzione all'inventario software in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare l'inventario software per raccogliere informazioni sui file nei dispositivi client. L'inventario software consente anche di raccogliere i file dai dispositivi client e archiviarli nel server del sito. L'inventario software viene raccolto quando si seleziona l'impostazione **Abilitare inventario software nei client** nelle impostazioni client. È anche possibile pianificare l'operazione nelle impostazioni client.  
 

@@ -2,7 +2,7 @@
 title: Dashboard del ciclo di vita del prodotto
 titleSuffix: Configuration Manager
 description: Visualizzare i criteri del ciclo di vita Microsoft con il dashboard del ciclo di vita del prodotto in Configuration Manager.
-ms.date: 05/13/2019
+ms.date: 01/09/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,17 +10,16 @@ ms.assetid: 8b5b144a-0e5f-4fcc-87b2-33b9bcdb5655
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8876f00ecb26aabd84f863ee1fcef4f2aac283a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e8375268c495cc6197bfd671814b9912595b051c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65673411"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824674"
 ---
 # <a name="manage-microsoft-lifecycle-policy-with-configuration-manager"></a>Gestire i criteri del ciclo di vita Microsoft con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 A partire dalla versione 1806 è possibile usare il dashboard del ciclo di vita del prodotto di Configuration Manager per visualizzare i criteri del ciclo di vita Microsoft. Il dashboard mostra lo stato dei criteri del ciclo di vita Microsoft per i prodotti Microsoft installati nei dispositivi gestiti con Configuration Manager. Fornisce informazioni sui prodotti Microsoft in uso nell'ambiente, sullo stato del supporto e sulle date di fine del supporto. Usare il dashboard per conoscere la disponibilità del supporto per ogni prodotto. Queste informazioni consentono anche di pianificare l'aggiornamento dei prodotti Microsoft in uso prima del raggiungimento della fine del supporto.  
 
@@ -41,9 +40,8 @@ A partire dalla versione 1810, il dashboard include le informazioni per System C
 - Un punto di Reporting Services è necessario per la funzionalità di collegamento ipertestuale nel dashboard. Il dashboard è collegato ai report di SQL Server Reporting Services (SSRS). Per altre informazioni, vedere [Creazione di report in Configuration Manager](/sccm/core/servers/manage/reporting).  
 
 - Il punto di sincronizzazione di Asset Intelligence deve essere configurato e sincronizzato. Il dashboard usa il catalogo di Asset Intelligence come metadati per i titoli dei prodotti. I metadati vengono confrontati con i dati di inventario nella gerarchia. Per altre informazioni, vedere [Configurare Asset Intelligence in Configuration Manager](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence).  
-
-     > [!NOTE]  
-     > Se si sta configurando il punto di sincronizzazione di Asset Intelligence per la prima volta, assicurarsi di [abilitare le classi di inventario hardware di Asset Intelligence](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence#BKMK_EnableAssetIntelligence). Il dashboard del ciclo di vita dipende da tali classi di inventario hardware di Asset Intelligence. Il dashboard non mostrerà dati fino a quando i client non saranno stati analizzati e non sarà stato restituito l'inventario hardware.  
+  - Se si sta configurando il punto di sincronizzazione di Asset Intelligence per la prima volta, assicurarsi di [abilitare le classi di inventario hardware di Asset Intelligence](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence#BKMK_EnableAssetIntelligence). Il dashboard del ciclo di vita dipende da tali classi di inventario hardware di Asset Intelligence. Il dashboard non mostrerà dati fino a quando i client non saranno stati analizzati e non sarà stato restituito l'inventario hardware.  
+  - Per gli aggiornamenti della sicurezza estesa per Windows 7 e Windows Server 2008 R2 è necessario che sia abilitata la classe di inventario hardware **Prodotto con gestione licenze software - Asset Intelligence (SoftwareLicensingProduct**). Per altre informazioni sull'abilitazione della classe, vedere [Abilitare le classi di inventario hardware di Asset Intelligence](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence#BKMK_EnableAssetIntelligence). <!--4962901-->
 
 
 

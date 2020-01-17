@@ -10,21 +10,20 @@ ms.assetid: e562e2a0-8df8-4952-952f-e8c38461c612
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 456289520e25fe94da7e94f6a795537f68ba069e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1c82b27b367a123471efefb98f9ab32d6152f3d0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67561973"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794766"
 ---
-# <a name="how-to-manage-queries-in-system-center-configuration-manager"></a>Come gestire le query in System Center Configuration Manager
+# <a name="how-to-manage-queries-in-configuration-manager"></a>Come gestire le query in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo articolo è utile per gestire le query in System Center Configuration Manager.  
+Questo articolo è utile per gestire le query in Configuration Manager.  
 
- Per informazioni su come creare le query, vedere [Come creare query in Configuration Manager](../../../core/servers/manage/create-queries.md).  
+ Per informazioni su come creare query, vedere [Come creare query in Configuration Manager](../../../core/servers/manage/create-queries.md).  
 
 ## <a name="manage-queries"></a>Gestire le query
  Nell'area di lavoro **Monitoraggio** selezionare **Query**, selezionare la query da gestire e quindi selezionare un'attività di gestione.  
@@ -39,4 +38,4 @@ Questo articolo è utile per gestire le query in System Center Configuration Man
 |**Sposta**|Apre la finestra di dialogo **Sposta elementi selezionati**. Questa finestra di dialogo consente di spostare la query selezionata in una cartella creata in precedenza nel nodo **Query**.|
 
 ## <a name="next-steps"></a>Passaggi successivi 
- [Creare query in System Center Configuration Manager](../../../core/servers/manage/create-queries.md)
+ [Creare query](../../../core/servers/manage/create-queries.md)

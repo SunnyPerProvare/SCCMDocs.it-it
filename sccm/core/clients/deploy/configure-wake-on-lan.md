@@ -1,7 +1,7 @@
 ---
 title: Configurare la riattivazione LAN
 titleSuffix: Configuration Manager
-description: Selezionare la riattivazione LAN in System Center Configuration Manager.
+description: Selezionare le impostazioni di riattivazione LAN in Configuration Manager.
 ms.date: 08/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,19 +10,18 @@ ms.assetid: b475a0c8-85d6-4cc4-b11f-32c0cc98239e
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d28b4809f3f3c615657a9d4c95af67f97b3d0b66
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 964f2bc2d510fe4e345d8ca2d3b25070c50ba8a0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68859715"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825167"
 ---
-# <a name="how-to-configure-wake-on-lan-in-system-center-configuration-manager"></a>Come configurare la riattivazione LAN in System Center Configuration Manager
+# <a name="how-to-configure-wake-on-lan-in-configuration-manager"></a>Come configurare la riattivazione LAN in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Specificare le impostazioni di Riattivazione LAN per System Center Configuration Manager quando si vogliono riattivare i computer da uno stato di sospensione.
+Specificare le impostazioni di riattivazione LAN per Configuration Manager quando si vogliono riattivare i computer da uno stato di sospensione.
 
 ## <a name="bkmk_wol-1810"></a> Riattivazione LAN a partire dalla versione 1810
 <!--3607710-->
@@ -85,16 +84,16 @@ A partire dalla versione 1902, la notifica client **Riattiva** rispetta l'attual
 
 ## <a name="bkmk_wol-previous"></a> Riattivazione LAN per la versione1806 e precedenti
 
-Specificare le impostazioni di riattivazione LAN per System Center Configuration Manager quando si vuole riattivare i computer da uno stato di sospensione per installare il software necessario, come aggiornamenti software, applicazioni, sequenze di attività e programmi.
+Specificare le impostazioni di riattivazione LAN per Configuration Manager quando si vogliono riattivare i computer da uno stato di sospensione per installare il software necessario, come aggiornamenti software, applicazioni, sequenze di attività e programmi.
 
 È possibile integrare la riattivazione LAN usando le impostazioni client proxy di riattivazione. Prima di utilizzare il proxy di riattivazione è tuttavia necessario attivare la riattivazione LAN per il sito e specificare **Utilizza solo pacchetti di riattivazione** e l'opzione **Unicast** per il metodo di trasmissione riattivazione LAN. Questa soluzione di riattivazione supporta anche connessioni ad hoc, ad esempio una connessione desktop remoto.
 
-Utilizzare la prima procedura per configurare un sito primario per la riattivazione LAN. Usare quindi la seconda procedura per configurare le impostazioni client proxy di riattivazione. Questa seconda procedura consente di configurare le impostazioni client predefinite per le impostazioni proxy di riattivazione da applicare a tutti i computer nella gerarchia. Se si desidera applicare queste impostazioni solo ad alcuni computer, creare un'impostazione dispositivo personalizzata e assegnarla a una raccolta che contenga i computer che si desidera configurare per il proxy di riattivazione. Per ulteriori informazioni su come creare impostazioni client personalizzate, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).
+Utilizzare la prima procedura per configurare un sito primario per la riattivazione LAN. Usare quindi la seconda procedura per configurare le impostazioni client proxy di riattivazione. Questa seconda procedura consente di configurare le impostazioni client predefinite per le impostazioni proxy di riattivazione da applicare a tutti i computer nella gerarchia. Se si desidera applicare queste impostazioni solo ad alcuni computer, creare un'impostazione dispositivo personalizzata e assegnarla a una raccolta che contenga i computer che si desidera configurare per il proxy di riattivazione. Per altre informazioni su come creare impostazioni client personalizzate, vedere [Come configurare le impostazioni client](../../../core/clients/deploy/configure-client-settings.md).
 
 Un computer che riceve le impostazioni client proxy di riattivazione sospenderà probabilmente la connessione di rete per 1-3 secondi. Ciò si verifica perché il client deve reimpostare la scheda di interfaccia di rete per abilitare il driver proxy di riattivazione.
 
 > [!WARNING]
-> Per evitare interruzioni impreviste dei servizi di rete, valutare prima il proxy di riattivazione in un'infrastruttura di rete isolata e rappresentativa. Utilizzare quindi le impostazioni client personalizzate per espandere la verifica a un gruppo selezionato di computer in diverse subnet. Per altre informazioni sul funzionamento dei proxy di riattivazione, vedere [Pianificare la riattivazione dei client in System Center Configuration Manager](../../../core/clients/deploy/plan/plan-wake-up-clients.md).
+> Per evitare interruzioni impreviste dei servizi di rete, valutare prima il proxy di riattivazione in un'infrastruttura di rete isolata e rappresentativa. Utilizzare quindi le impostazioni client personalizzate per espandere la verifica a un gruppo selezionato di computer in diverse subnet. Per altre informazioni sul funzionamento del proxy di riattivazione, vedere [Pianificare la riattivazione dei client](../../../core/clients/deploy/plan/plan-wake-up-clients.md).
 
 
 ### <a name="to-configure-wake-on-lan-for-a-site-for-version-1806-and-earlier"></a>Per configurare Riattivazione LAN per un sito per la versione 1806 e precedenti
@@ -103,7 +102,7 @@ Un computer che riceve le impostazioni client proxy di riattivazione sospenderà
 
 1. Nella console di Configuration Manager passare ad **Amministrazione > Configurazione del sito > Siti**.
 2. Fare clic sul sito primario da configurare, quindi su **Proprietà**.
-3. Fare clic nella scheda **Riattivazione LAN**, quindi configurare le opzioni necessarie per questo sito. Per il supporto del proxy di riattivazione, selezionare **Utilizza solo pacchetti di riattivazione** e **Unicast**. Per altre informazioni, vedere [Pianificare la riattivazione dei client in System Center Configuration Manager](../../../core/clients/deploy/plan/plan-wake-up-clients.md).
+3. Fare clic nella scheda **Riattivazione LAN**, quindi configurare le opzioni necessarie per questo sito. Per il supporto del proxy di riattivazione, selezionare **Utilizza solo pacchetti di riattivazione** e **Unicast**. Per altre informazioni, vedere [Pianificare la riattivazione dei client](../../../core/clients/deploy/plan/plan-wake-up-clients.md).
 4. Fare clic su **OK** e ripetere questa procedura per tutti i siti primari nella gerarchia.
 
 ![Abilitare Riattivazione LAN nelle proprietà del sito](media/wol-site-properties.png)

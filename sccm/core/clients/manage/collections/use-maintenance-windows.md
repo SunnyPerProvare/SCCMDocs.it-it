@@ -1,7 +1,7 @@
 ---
 title: Usare finestre di manutenzione
 titleSuffix: Configuration Manager
-description: Usare le raccolte e le finestre di manutenzione per gestire in modo efficace i client in System Center Configuration Manager.
+description: Usare le raccolte e le finestre di manutenzione per gestire in modo efficace i client in Configuration Manager.
 ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,17 +10,16 @@ ms.assetid: 4564ebcb-41a8-4eb0-afdb-2e1f0795cfa2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc4a984b15af66a5426d30f3fb4f0b68c794ba5f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 6c2128c9e26137c268577e68e5ee12e3a71f8513
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65673333"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824385"
 ---
-# <a name="how-to-use-maintenance-windows-in-system-center-configuration-manager"></a>Come usare le finestre di manutenzione in System Center Configuration Manager
+# <a name="how-to-use-maintenance-windows-in-configuration-manager"></a>Come usare le finestre di manutenzione in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Le finestre di manutenzione consentono di definire un periodo di tempo in cui è possibile eseguire le operazioni di Configuration Manager in una raccolta di dispositivi. È possibile usare le finestre di manutenzione per garantire che le modifiche alla configurazione client vengano eseguite quando non influiscono sulla produttività. A partire da Configuration Manager versione 1806, gli utenti possono visualizzare quando verrà eseguita la finestra di manutenzione successiva nella scheda **Stato dell'installazione** nel **Software Center**. <!--1358131-->
 

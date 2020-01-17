@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 7fb02a5c-e286-46b1-a972-6335c858429a
-ms.openlocfilehash: 3ecf5f7a0f88275c146adf6c040d98af6c41dc31
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 272687ebddcd218ae29730d6506285d2d46898b3
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71712454"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75524051"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Esercitazione: Abilitare la co-gestione per nuovi dispositivi basati su Internet
 
@@ -56,7 +56,7 @@ Usare questa esercitazione in questi casi:
 
 ### <a name="on-premises-infrastructure"></a>Infrastruttura locale
 
-- System Center Configuration Manager Current Branch, versione 1810 o successive.
+- Configuration Manager Current Branch, versione 1810 o successive.
   
   La versione 1810 introduce [HTTP avanzato](/sccm/core/plan-design/hierarchy/enhanced-http), che viene usato in questa esercitazione per evitare requisiti PKI più complessi. Tramite l'uso di HTTP avanzato, il sito primario usato per gestire i client deve essere configurato per l'uso di certificati generati da Configuration Manager per i sistemi del sito HTTP.  
 
@@ -392,7 +392,7 @@ Ad esempio, *C:\Programmi\Microsoft Configuration Manager\bin\i386\ccmsetup.msi*
 4. Selezionare **Informazioni sull'app** e quindi specificare i dettagli seguenti:
    - **Descrizione**: Client di Configuration Manager  
 
-   - **Editore**: Microsoft  
+   - **Autore**: Microsoft  
 
    - **Argomenti della riga di comando**:  *\<specificare la riga di comando **CCMSETUPCMD**. È possibile usare la riga di comando salvata dalla pagina* Abilitazione *della Configurazione guidata della co-gestione. Questa riga di comando include i nomi del servizio cloud e altri valori, che permettono ai dispositivi di installare il software client di Configuration Manager.>*  
 

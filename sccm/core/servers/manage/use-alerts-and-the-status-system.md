@@ -10,19 +10,18 @@ ms.assetid: 7341cc6e-9e08-41e4-bcc6-6c1ff12e85ca
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 52c501c30d2eb4ecea3d7830d0f0c3bb61262137
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f89d646729bd4303ab823864e41d1a20770d96c2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65497223"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826153"
 ---
-# <a name="use-alerts-and-the-status-system-for-system-center-configuration-manager"></a>Usare gli avvisi e il sistema di stato per System Center Configuration Manager
+# <a name="use-alerts-and-the-status-system-for-configuration-manager"></a>Usare gli avvisi e il sistema di stato per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Configurare gli avvisi e usare il sistema di stato predefinito per rimanere aggiornati sullo stato della distribuzione di System Center Configuration Manager.  
+Configurare gli avvisi e usare il sistema di stato predefinito per rimanere aggiornati sullo stato della distribuzione di Configuration Manager.  
 
 
 ##  <a name="bkmk_Status"></a> Sistema di stato  
@@ -115,7 +114,7 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
 
 ##### <a name="to-modify-or-delete-a-status-filter-rule"></a>Per modificare o eliminare una regola di filtro dello stato  
 
-1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Configurazione del sito** >**Siti**, quindi selezionare il sito dove si prevede di configurare il sistema di stato.  
+1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Configurazione del sito** >**Siti**, quindi selezionare il sito dove verrà configurato il sistema di stato.  
 
 2.  Nella scheda **Home** , nel gruppo **Impostazioni** , fare clic su **Regole di filtro dello stato**.  
 
@@ -195,8 +194,8 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
 
 |Action|Altre informazioni|  
 |------------|----------------------|  
-|Configurare gli avvisi di Endpoint Protection per una raccolta|Vedere **Come configurare gli avvisi per Endpoint Protection in Configuration Manager** in [Configurazione di Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/configure-endpoint-protection.md)|  
-|Configurare gli avvisi di stato del client per una raccolta|Vedere [Come configurare lo stato del client in System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).|  
+|Configurare gli avvisi di Endpoint Protection per una raccolta|Vedere **Come configurare gli avvisi per Endpoint Protection in Configuration Manager** in [Configurazione di Endpoint Protection](../../../protect/deploy-use/configure-endpoint-protection.md)|  
+|Configurare gli avvisi di stato del client per una raccolta|Vedere [Come configurare lo stato del client](../../../core/clients/deploy/configure-client-status.md).|  
 |Gestire gli avvisi di Configuration Manager|Vedere la sezione [Management tasks for alerts](#BKMK_Manage) in questo argomento.|  
 |Configurare le sottoscrizioni e-mail agli avvisi|Vedere la sezione [Management tasks for alerts](#BKMK_Manage) in questo argomento.|  
 |Avvisi di monitoraggio|Vedere la sezione [Avvisi di monitoraggio](#BKMK_MonitorAlerts)|  
@@ -296,7 +295,7 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
 
 - **Rimandato**: un utente amministratore ha configurato Configuration Manager per valutare lo stato dell'avviso in un secondo momento.  
 
-- **Disabled**: l'avviso è stato disabilitato da un utente amministratore. Quando un avviso ha questo stato, Configuration Manager non aggiorna l'avviso nemmeno in caso di modifica dello stato.  
+- **Disabilitato**: l'avviso è stato disabilitato da un utente amministratore. Quando un avviso ha questo stato, Configuration Manager non aggiorna l'avviso nemmeno in caso di modifica dello stato.  
 
   Quando Configuration Manager genera un avviso è possibile eseguire una delle seguenti azioni:  
 

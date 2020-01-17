@@ -1,7 +1,7 @@
 ---
 title: Novità della versione 1602
 titleSuffix: Configuration Manager
-description: Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1602 di System Center Configuration Manager.
+description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1602 di Configuration Manager.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,20 +11,19 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0f44dc0886b763e9b4d6fe1f689e241d102f54c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 341be5186a59dde5e32d1414e40d30eca781f4f6
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68338997"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802804"
 ---
-# <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Novità della versione 1602 di System Center Configuration Manager
+# <a name="what39s-new-in-version-1602-of-configuration-manager"></a>Novità della versione 1602 di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
-L'aggiornamento 1602 per System Center Configuration Manager è disponibile solo come aggiornamento nella console per i siti installati in precedenza che eseguono la versione 1511. La versione 1511 è la versione di base iniziale usata per installare nuovi siti di Configuration Manager.  
+L'aggiornamento 1602 per Configuration Manager è disponibile solo come aggiornamento nella console per i siti installati in precedenza che eseguono la versione 1511. La versione 1511 è la versione di base iniziale usata per installare nuovi siti di Configuration Manager.  
 
 
 > [!TIP]  
@@ -50,7 +49,7 @@ L'aggiornamento 1602 per System Center Configuration Manager è disponibile solo
 ###  <a name="bkmk_AOAG"></a> Gruppi di disponibilità SQL Server AlwaysOn  
  È possibile usare i gruppi di disponibilità SQL Server AlwaysOn per ospitare il database del sito nei siti primari e nel sito di amministrazione centrale come soluzione a disponibilità elevata e di ripristino di emergenza.  
 
- Per informazioni dettagliate, vedere [SQL Server AlwaysOn per database del sito a disponibilità elevata per System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).  
+ Per informazioni dettagliate, vedere [SQL Server AlwaysOn per database del sito a disponibilità elevata per Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).  
 
 ## <a name="operating-system-deployment"></a>Distribuzione del sistema operativo  
 
@@ -63,7 +62,7 @@ L'aggiornamento 1602 per System Center Configuration Manager è disponibile solo
 
 -   Gli aggiornamenti disponibili di Windows 10 vengono visualizzati ora solo nel nodo **Manutenzione di Windows 10** \ **Tutti gli aggiornamenti di Windows 10** della console di Configuration Manager. Questi aggiornamenti non vengono più visualizzati nel nodo **Aggiornamenti software** \ **Tutti gli aggiornamenti software** della console.  
 
--   Un piano di manutenzione è considerato una distribuzione ad alto rischio e nella finestra **Seleziona raccolta** vengono visualizzate soltanto le raccolte personalizzate che soddisfano le impostazioni di verifica della distribuzione configurate nelle proprietà del sito. Per altre informazioni, vedere [Impostazioni per gestire le distribuzioni ad alto rischio per System Center Configuration Manager](../../../protect/understand/settings-to-manage-high-risk-deployments.md).  
+-   Un piano di manutenzione è considerato una distribuzione ad alto rischio e nella finestra **Seleziona raccolta** vengono visualizzate soltanto le raccolte personalizzate che soddisfano le impostazioni di verifica della distribuzione configurate nelle proprietà del sito. Per altre informazioni, vedere [Impostazioni per gestire le distribuzioni ad alto rischio per Configuration Manager](../../../protect/understand/settings-to-manage-high-risk-deployments.md).  
 
 -   Gli utenti che avviano un pacchetto di aggiornamento di Windows 10 ricevono ora un messaggio che li informa che stanno per aggiornare il proprio sistema operativo.  
 
@@ -72,12 +71,12 @@ L'aggiornamento 1602 per System Center Configuration Manager è disponibile solo
 ### <a name="ios-app-configuration-policies"></a>Criteri di configurazione delle app iOS  
  Usare i criteri di configurazione delle app di Configuration Manager per specificare le impostazioni che potrebbero essere necessarie quando l'utente esegue un'app iOS. Un'applicazione potrebbe richiedere all'utente di specificare valori personalizzati per un numero di porta, una lingua, impostazioni di sicurezza o impostazioni personalizzazione, ad esempio un logo aziendale. Se queste impostazioni vengono immesse in modo non corretto, si può avere un aumento del carico dell'help desk rallentando inoltre l'adozione di nuove app.  
 
- I criteri di configurazione delle app permettono di evitare questi problemi consentendo di distribuire tali impostazioni agli utenti in un criterio prima dell'esecuzione dell'app. Le impostazioni vengono quindi specificate automaticamente e l'utente non deve intraprendere alcuna azione. Per i dettagli, vedere [Configurare le app iOS con i criteri di configurazione in System Center Configuration Manager](../../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md).  
+ I criteri di configurazione delle app permettono di evitare questi problemi consentendo di distribuire tali impostazioni agli utenti in un criterio prima dell'esecuzione dell'app. Le impostazioni vengono quindi specificate automaticamente e l'utente non deve intraprendere alcuna azione. Per informazioni dettagliate, vedere [Configurare le app iOS con i criteri di configurazione delle app](../../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md).  
 
-### <a name="manage-volume-purchased-ios-apps"></a>Manage volume-purchased iOS apps  
+### <a name="manage-volume-purchased-ios-apps"></a>Gestire le app iOS acquistate con Volume Purchase Program  
  Configuration Manager semplifica la distribuzione e la gestione delle app acquistate con Volume Purchase Program (VPP) di Apple. Configuration Manager importa le informazioni di licenza dall'App Store e tiene traccia del numero di licenze usate.  
 
- Per informazioni dettagliate, vedere [Gestire le app iOS acquistate tramite Volume Purchase Program con System Center Configuration Manager](../../../apps/deploy-use/manage-volume-purchased-ios-apps.md).  
+ Per informazioni dettagliate, vedere [Gestire le app iOS acquistate tramite Volume Purchase Program con Configuration Manager](../../../apps/deploy-use/manage-volume-purchased-ios-apps.md).  
 
 ### <a name="automatic-creation-of-office-mobile-apps"></a>Creazione automatica di app di Office per dispositivi mobili  
  Quando si esegue l'aggiornamento alla versione 1602 dalla versione 1511, Configuration Manager crea automaticamente le seguenti app di Microsoft Office per dispositivi mobili Android e iOS:  
@@ -96,55 +95,55 @@ L'aggiornamento 1602 per System Center Configuration Manager è disponibile solo
 
 Queste app si trovano nel nodo **Applicazioni** della console di Configuration Manager.  
 
- Per altre informazioni sulla distribuzione di applicazioni, vedere [Come distribuire le applicazioni con System Center Configuration Manager](../../../apps/deploy-use/deploy-applications.md).  
+ Per altre informazioni sulla distribuzione di applicazioni, vedere [Come distribuire applicazioni con Configuration Manager](../../../apps/deploy-use/deploy-applications.md).  
 
 ## <a name="software-updates"></a>Aggiornamenti software  
 
 ### <a name="manage-office-365-client-updates"></a>Gestire gli aggiornamenti del client di Office 365  
- System Center Configuration Manager consente di gestire gli aggiornamenti del client di Office 365 usando il flusso di lavoro Gestione aggiornamenti software. Per altre informazioni, vedere [Gestire gli aggiornamenti di Office 365 ProPlus con System Center Configuration Manager](/sccm/sum/deploy-use/manage-office-365-proplus-updates).  
+ Configuration Manager permette di gestire gli aggiornamenti del client di Office 365 usando il flusso di lavoro Gestione aggiornamenti software. Per altre informazioni, vedere [Gestire gli aggiornamenti di Office 365 ProPlus con Configuration Manager](/sccm/sum/deploy-use/manage-office-365-proplus-updates).  
 
 ## <a name="compliance-settings"></a>Impostazioni di conformità  
 
 ### <a name="compliance-settings-for-devices-running-windows-10-team"></a>Impostazioni di conformità per i dispositivi che eseguono Windows 10 Team  
  Sono state aggiunte nuove impostazioni all'elemento di configurazione **Windows 8.1 e Windows 10**. Queste impostazioni consentono di controllare i dispositivi che eseguono Windows 10 Team, ad esempio un dispositivo Surface Hub.  
 
- Per informazioni dettagliate, vedere [Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client di System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
+ Per informazioni dettagliate, vedere [Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
 
 ### <a name="kiosk-mode-settings-for-android-samsung-knox-standard-devices"></a>Impostazioni della modalità tutto schermo per i dispositivi Android Samsung KNOX Standard  
  La modalità tutto schermo consente di bloccare un dispositivo per consentire solo alcune funzionalità. Ad esempio, è possibile consentire a un dispositivo di eseguire solo un'app gestita specificata o disabilitare i pulsanti del volume in un dispositivo. Queste impostazioni potrebbero essere usate per un modello dimostrativo di un dispositivo o per un dispositivo dedicato all'esecuzione di una sola funzione, ad esempio un dispositivo POS. In Configuration Manager è ora possibile specificare le impostazioni della modalità tutto schermo per i dispositivi Samsung KNOX Standard.  
 
- Per informazioni dettagliate, vedere [Creare elementi di configurazione per dispositivi Android e Samsung KNOX Standard gestiti senza il client System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).  
+ Per informazioni dettagliate, vedere [Creare elementi di configurazione per dispositivi Android e Samsung KNOX Standard gestiti senza il client Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).  
 
 ## <a name="conditional-access"></a>Accesso condizionale  
 
-### <a name="conditional-access-for-pcs-managed-by-system-center-configuration-manager"></a>Accesso condizionale per i PC gestiti da System Center Configuration Manager  
- Prima di questa versione, per configurare l'accesso condizionale per un PC era necessario che il PC fosse registrato in Intune o aggiunto a un dominio. A partire dall'aggiornamento 1602 è supportato l'accesso condizionale per i PC gestiti da System Center Configuration Manager. Per i PC gestiti da System Center Configuration Manager, è possibile limitare l'accesso a Exchange Online e SharePoint Online solo ai dispositivi che soddisfano i criteri di conformità impostati.  
+### <a name="conditional-access-for-pcs-managed-by-configuration-manager"></a>Accesso condizionale per i PC gestiti da Configuration Manager  
+ Prima di questa versione, per configurare l'accesso condizionale per un PC era necessario che il PC fosse registrato in Intune o aggiunto a un dominio. A partire dall'aggiornamento 1602, è supportato l'accesso condizionale per i PC gestiti da Configuration Manager. Per i PC gestiti da Configuration Manager, è possibile limitare l'accesso a Exchange Online e SharePoint Online solo ai dispositivi che soddisfano i criteri di conformità impostati.  
 
- Per informazioni dettagliate, vedere [Gestire l'accesso ai servizi di Office 365 per i PC gestiti da System Center Configuration Manager](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
+ Per informazioni dettagliate, vedere [Gestire l'accesso ai servizi di Office 365 per i PC gestiti da Configuration Manager](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
 
 ### <a name="restricting-access-based-on-the-health-of-devices"></a>Limitazione dell'accesso in base allo stato di integrità dei dispositivi  
  È ora possibile limitare l'accesso alla posta elettronica e ai servizi di Office 365 in base all'integrità dei dispositivi, come segnalato dal Servizio di attestazione dell'integrità. Inoltre, i dispositivi gestiti da Intune sono inclusi nei report sull'integrità del dispositivo.  
 
- La console di Configuration Manager offre una nuova regola di conformità che consente di specificare se l'accesso deve essere consentito o negato ai dispositivi in base al loro stato di integrità. Per informazioni dettagliate sul servizio di attestazione dell'integrità e su come viene segnalata l'integrità dei dispositivi in Intune, vedere [Attestazione dell'integrità per System Center Configuration Manager](../../../core/servers/manage/health-attestation.md).  
+ La console di Configuration Manager offre una nuova regola di conformità che consente di specificare se l'accesso deve essere consentito o negato ai dispositivi in base al loro stato di integrità. Per informazioni dettagliate sul servizio di attestazione dell'integrità e su come viene segnalata l'integrità dei dispositivi in Intune, vedere [Attestazione dell'integrità per Configuration Manager](../../../core/servers/manage/health-attestation.md).  
 
 ### <a name="new-compliance-policy-rules"></a>Nuove regole dei criteri di conformità  
  Sono state aggiunte nuove regole dei criteri di conformità, come gli aggiornamenti automatici e la richiesta di una password per sbloccare i dispositivi, per supportare requisiti di sicurezza migliori.
 
- Per maggiori dettagli, vedere [Criteri di conformità del dispositivo in System Center Configuration Manager](../../../protect/deploy-use/device-compliance-policies.md).  
+ Per altre informazioni, vedere [Criteri di conformità del dispositivo](../../../protect/deploy-use/device-compliance-policies.md).  
 
 ### <a name="make-sure-enrolled-and-compliant-devices-always-have-access-to-exchange-on-premises"></a>Assicurarsi che i dispositivi registrati e conformi abbiano sempre accesso a Exchange locale  
  Quando si seleziona l'opzione seguente, i dispositivi registrati in Intune e conformi ai criteri di conformità possono accedere a Exchange locale: **Sostituzione della regola predefinita: consenti sempre l'accesso a Exchange ai dispositivi conformi e registrati in Intune**. Questa regola è disponibile nella pagina **Generale** della **Configurazione guidata dei criteri di accesso condizionale** per Exchange locale.
 
  Questa regola sostituisce la regola predefinita, ossia anche se si definisce per la regola predefinita l'impostazione per la quarantena o il blocco dell'accesso, i dispositivi registrati e conformi potranno comunque accedere a Exchange locale. Usare questa impostazione quando si vuole che i dispositivi registrati e conformi abbiano sempre accesso alla posta elettronica tramite Exchange locale.   
 
- Per la procedura dettagliata, vedere [Gestire l'accesso alla posta elettronica in System Center Configuration Manager](../../../protect/deploy-use/manage-email-access.md).  
+ Per la procedura dettagliata, vedere [Gestire l'accesso alla posta elettronica](../../../protect/deploy-use/manage-email-access.md).  
 
 ## <a name="client-management"></a>Gestione dei client  
 
 ### <a name="client-online-status"></a>Stato online del client  
  È disponibile un nuovo stato per i client per monitorare se un computer è online o meno. Un computer viene considerato online se è connesso al relativo punto di gestione assegnato. Per indicare che il computer è online, il client invia messaggi di tipo ping al punto di gestione. Se il punto di gestione non riceve alcun messaggio per 5 minuti, lo stato del client viene considerato offline.  
 
- Per informazioni dettagliate, vedere [Come monitorare i client in System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md).  
+ Per informazioni dettagliate, vedere [Come monitorare i client](../../../core/clients/manage/monitor-clients.md).  
 
 ### <a name="refresh-pc-machine-and-user-policy-from-software-center"></a>Aggiornare i criteri di computer e utenti da Software Center  
  È stata aggiunta una nuova opzione, **Criteri sincronizzazione**, alla pagina **Opzioni** > **Manutenzione computer** di Software Center che consente al PC di aggiornare i criteri di computer e utenti di Configuration Manager.  
@@ -169,7 +168,7 @@ Queste app si trovano nel nodo **Applicazioni** della console di Configuration M
 
 -   Integrità del codice  
 
-Per informazioni dettagliate, vedere [Attestazione dell'integrità per System Center Configuration Manager](../../../core/servers/manage/health-attestation.md).  
+Per informazioni dettagliate, vedere [Attestazione dell'integrità per Configuration Manager](../../../core/servers/manage/health-attestation.md).  
 
 ### <a name="improvements-to-endpoint-protection-antimalware-settings"></a>Miglioramenti delle impostazioni antimalware di Endpoint Protection  
  Nella versione 1602 sono state aggiunte le nuove impostazioni seguenti nei criteri antimalware di Endpoint Protection per Windows Defender:  
@@ -188,9 +187,9 @@ Per informazioni dettagliate, vedere [Attestazione dell'integrità per System Ce
 
     Inoltre, nella sezione "Impostazioni di esclusione" del criterio antimalware di Endpoint Protection, l'impostazione esistente **Exclude files and folders** (Escludi file e cartelle) ora consente l'esclusione di dispositivi.  
 
-Per informazioni dettagliate, vedere [Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/endpoint-antimalware-policies.md).  
+Per informazioni dettagliate, vedere [Come creare e distribuire criteri antimalware per Endpoint Protection](../../../protect/deploy-use/endpoint-antimalware-policies.md).  
 
-## <a name="mobile-device-management"></a>Gestione dispositivi mobili  
+## <a name="mobile-device-management"></a>Gestione di dispositivi mobili  
 
 ### <a name="ios-activation-lock"></a>Blocco attivazione di iOS  
  Configuration Manager consente di gestire il blocco attivazione iOS, una funzionalità dell'app Trova il mio iPhone per dispositivi iOS 7.1 e versioni successive. Blocco attivazione viene abilitato automaticamente quando si usa l'app Trova il mio iPhone in un dispositivo. Una volta abilitato, richiede l'immissione di un ID Apple e una password dell'utente prima di poter:  
@@ -203,7 +202,7 @@ Per informazioni dettagliate, vedere [Come creare e distribuire criteri antimalw
 
 Configuration Manager può richiedere lo stato del blocco attivazione per i dispositivi con e senza supervisione che eseguono iOS 7.1 e versioni successive. Per i dispositivi con supervisione, Configuration Manager può recuperare il codice del bypass di Blocco attivazione e inviarlo direttamente al dispositivo.  
 
- Per informazioni dettagliate, vedere [Proteggere i dispositivi iOS con il bypass del blocco attivazione in System Center Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock).  
+ Per informazioni dettagliate, vedere [Proteggere i dispositivi iOS con il bypass del blocco attivazione](/sccm/mdm/deploy-use/manage-ios-activation-lock).  
 
 ### <a name="monitor-terms-and-conditions-deployments"></a>Monitorare le distribuzioni di termini e condizioni  
  È possibile monitorare le distribuzioni di termini e condizioni nella console di Configuration Manager.  

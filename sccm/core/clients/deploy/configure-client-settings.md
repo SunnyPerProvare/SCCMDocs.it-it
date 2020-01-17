@@ -1,7 +1,7 @@
 ---
 title: Configurare le impostazioni client
 titleSuffix: Configuration Manager
-description: Selezionare le impostazioni client in System Center Configuration Manager.
+description: Selezionare le impostazioni client in Configuration Manager.
 ms.date: 12/29/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,24 +10,23 @@ ms.assetid: 95e9858a-bad4-4651-9e61-2e31dc5050fa
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8dc3b4d64511e944bd7d03feca7370d1d4b5d8b6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c64895c7945b972821a1dee1702047e61b740026
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62213479"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825184"
 ---
-# <a name="how-to-configure-client-settings-in-system-center-configuration-manager"></a>Come configurare le impostazioni client in System Center Configuration Manager
+# <a name="how-to-configure-client-settings-in-configuration-manager"></a>Come configurare le impostazioni client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-È possibile gestire tutte le impostazioni client in System Center Configuration Manager da **Amministrazione** > **Impostazioni client**. Modificare le impostazioni predefinite quando si desidera configurare le impostazioni per tutti gli utenti e i dispositivi nella gerarchia per cui non sono applicate impostazioni personalizzate. Per applicare impostazioni diverse solo ad alcuni utenti o dispositivi, creare impostazioni personalizzate e distribuirle alle raccolte.  
+È possibile gestire tutte le impostazioni client in Configuration Manager da **Amministrazione** > **Impostazioni client**. Modificare le impostazioni predefinite quando si desidera configurare le impostazioni per tutti gli utenti e i dispositivi nella gerarchia per cui non sono applicate impostazioni personalizzate. Per applicare impostazioni diverse solo ad alcuni utenti o dispositivi, creare impostazioni personalizzate e distribuirle alle raccolte.  
 
-Per informazioni su ogni impostazione client, vedere [Informazioni sulle impostazioni client in Configuration Manager](../../../core/clients/deploy/about-client-settings.md).
+Per informazioni su ciascuna impostazione client, vedere [Informazioni sulle impostazioni client](../../../core/clients/deploy/about-client-settings.md).
 
 > [!NOTE]  
->  È inoltre possibile usare gli elementi di configurazione per gestire i client per la valutazione, il controllo e la correzione della conformità di configurazione dei dispositivi. Per altre informazioni, vedere [Garantire la conformità dei dispositivi con System Center Configuration Manage](../../../compliance/understand/ensure-device-compliance.md).  
+>  È inoltre possibile usare gli elementi di configurazione per gestire i client per la valutazione, il controllo e la correzione della conformità di configurazione dei dispositivi. Per altre informazioni, vedere [Garantire la conformità dei dispositivi con Configuration Manager](../../../compliance/understand/ensure-device-compliance.md).  
 
 ##  <a name="configure-the-default-client-settings"></a>Configurare le impostazioni client predefinite    
 
@@ -37,7 +36,7 @@ Per informazioni su ogni impostazione client, vedere [Informazioni sulle imposta
 
 3. Visualizzare e configurare le impostazioni client per ogni gruppo di impostazioni nel riquadro di spostamento.  
 
-   I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero dei criteri per un singolo client, vedere la sezione [Avviare il recupero criteri per un client di Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) in [Come gestire i client in System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
+   I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero dei criteri per un singolo client, vedere [Avviare il recupero criteri per un client di Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) in [Come gestire i client](../../../core/clients/manage/manage-clients.md).  
 
 ##  <a name="create-and-deploy-custom-client-settings"></a>Creare e distribuire impostazioni client personalizzate  
 Quando queste impostazioni personalizzate vengono distribuite, sostituiscono le impostazioni client predefinite. Prima di iniziare questa procedura, assicurarsi di disporre di una raccolta contenente gli utenti o i dispositivi che richiedono queste impostazioni client personalizzate.  
@@ -62,7 +61,7 @@ Quando queste impostazioni personalizzate vengono distribuite, sostituiscono le 
 
 8. Visualizzare l'ordine dell'impostazione client personalizzata creata. Quando sono presenti più impostazioni client personalizzate, vengono applicate in base al numero d'ordine. Se sono presenti conflitti, l'impostazione con il numero d'ordine più basso sostituisce le altre impostazioni. Per modificare il numero d'ordine, nel gruppo **Impostazioni client** della scheda **Home** scegliere **Sposta elemento in alto** o **Sposta elemento in basso**.  
 
-   I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero dei criteri per un singolo client, vedere la sezione [Avviare il recupero criteri per un client di Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) in [Come gestire i client in System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
+   I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero dei criteri per un singolo client, vedere [Avviare il recupero criteri per un client di Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) in [Come gestire i client](../../../core/clients/manage/manage-clients.md).  
 
 
 

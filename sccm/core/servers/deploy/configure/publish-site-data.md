@@ -10,30 +10,29 @@ ms.assetid: 17cf034f-eaff-43ce-bc8e-917213c1db74
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 016e809e752b54d73550f783c5a16296521121e5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: bc8028f5634b873afcafd3b9c5553c80b48a5516
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70891208"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798486"
 ---
-# <a name="publish-site-data-for-system-center-configuration-manager"></a>Pubblicare i dati del sito per System Center Configuration Manager
+# <a name="publish-site-data-for-configuration-manager"></a>Pubblicare i dati del sito per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Dopo aver esteso lo schema di Active Directory per System Center Configuration Manager, è possibile pubblicare i siti di Configuration Manager in Active Directory Domain Services. I computer di Active Directory possono così recuperare in modo sicuro le informazioni dei siti da una fonte attendibile. Anche se non è necessaria per la funzionalità di base di Configuration Manager, la pubblicazione delle informazioni del sito in Active Directory Domain Services può ridurre il carico amministrativo.  
+Dopo aver esteso lo schema di Active Directory per Configuration Manager, è possibile pubblicare i siti di Configuration Manager in Active Directory Domain Services. I computer di Active Directory possono così recuperare in modo sicuro le informazioni dei siti da una fonte attendibile. Anche se non è necessaria per la funzionalità di base di Configuration Manager, la pubblicazione delle informazioni del sito in Active Directory Domain Services può ridurre il carico amministrativo.  
 
 -   **Quando un sito è configurato per la pubblicazione in Active Directory Domain Services**, i client di Configuration Manager possono trovare automaticamente i punti di gestione tramite la pubblicazione in Active Directory usando una query LDAP in un server di catalogo globale.  
 
 -   **Quando un sito non viene pubblicato per Active Directory Domain Services**, i client devono avere un meccanismo alternativo per trovare il punto di gestione predefinito.  
 
-Per informazioni su come i client trovano un punto di gestione, vedere [Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
+Per informazioni su come i client trovano un punto di gestione, vedere [Informazioni su come i client trovano i servizi e le risorse del sito per Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 
 ## <a name="configure-sites-to-publish-to-ad-ds"></a>Configurare i siti da pubblicare in Active Directory Domain Services  
  Di seguito sono indicati i passaggi generali:  
 
--   È necessario [estendere lo schema di Active Directory per System Center Configuration Manager](../../../../core/plan-design/network/extend-the-active-directory-schema.md) in ogni foresta in cui verranno pubblicati i dati del sito. Assicurarsi inoltre che sia presente il contenitore **System Management**.  
+-   È necessario [estendere lo schema di Active Directory per Configuration Manager](../../../../core/plan-design/network/extend-the-active-directory-schema.md) in ogni foresta in cui verranno pubblicati i dati del sito. Assicurarsi inoltre che sia presente il contenitore **System Management**.  
 
 -   All'account computer di ogni sito primario che pubblicherà i dati è necessario concedere i diritti di tipo **Controllo completo** sul contenitore **System Management** e su tutti i relativi oggetti figlio.  
 

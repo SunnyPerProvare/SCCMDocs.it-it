@@ -10,17 +10,16 @@ ms.assetid: 4a9dc4d9-e114-42ec-ae2b-73bee14ab04f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3853b80c2ba678dfd9b8d03d17a579cdcc82b949
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: bd109fa8451da2bd16e05df22d666df621077794
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889206"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799027"
 ---
-# <a name="define-network-locations-as-boundaries-for-system-center-configuration-manager"></a>Definire percorsi di rete come limiti di System Center Configuration Manager
+# <a name="define-network-locations-as-boundaries-for-configuration-manager"></a>Definire percorsi di rete come limiti di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 I limiti di Configuration Manager sono costituiti dai percorsi di rete in cui sono contenuti i dispositivi da gestire. Il limite di un dispositivo è equivalente al sito di Active Directory o all'indirizzo IP di rete identificato dal client Configuration Manager installato nel dispositivo.
 - È possibile creare manualmente i singoli limiti. Configuration Manager, tuttavia, non supporta l'immissione diretta di una supernet come limite. È possibile, invece, usare il tipo di limite Intervallo di indirizzi IP.

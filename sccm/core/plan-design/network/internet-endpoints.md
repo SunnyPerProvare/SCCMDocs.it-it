@@ -10,12 +10,12 @@ ms.assetid: b34fe701-5d05-42be-b965-e3dccc9363ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f7b52c720f586e50ee2b7cf2f1c62ef8b2b17f68
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 06ff9a0b97478460dc9e76ae263b55536539267f
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799438"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033631"
 ---
 # <a name="internet-access-requirements"></a>Requisiti per l'accesso a Internet
 
@@ -60,16 +60,6 @@ Per altre informazioni su questa funzione, vedere [Aggiornamenti e manutenzione 
 - `sccmconnected-a01.cloudapp.net`  
 
 - `configmgrbits.azureedge.net`  
-
-### <a name="microsoft-intune"></a>Microsoft Intune
-
-Per altre informazioni su questa funzione, vedere [Soluzione MDM ibrida con Configuration Manager e Intune](/sccm/mdm/understand/hybrid-mobile-device-management).
-
-- `*manage.microsoft.com`  
-
-- `https://bspmts.mp.microsoft.com/V`  
-
-- `https://login.microsoftonline.com/{TenantID}`  
 
 ### <a name="windows-10-servicing"></a>Manutenzione di Windows 10
 

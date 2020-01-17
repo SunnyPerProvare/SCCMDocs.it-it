@@ -10,13 +10,12 @@ ms.assetid: f0f818d4-7f45-402f-8758-dc88bc024953
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b71530cbde931c14810ba0e0960e530b56ece04
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 03c79e2079a2e706f63613c670fcff23902a75fa
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70891892"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825779"
 ---
 # <a name="supported-configurations-for-the-long-term-servicing-branch-of-system-center-configuration-manager"></a>Configurazioni supportate per Long-Term Servicing Branch di System Center Configuration Manager
 
@@ -57,13 +56,13 @@ LTSB supporta l'uso dei seguenti sistemi operativi di computer Windows come sist
 - Installazione Server Core di Windows Server 2012
 - Installazione Server Core di Windows Server 2012 R2    
 
-*Nota 1*: Questo sistema operativo non è supportato per i server del sito o ruoli del sistema del sito fatta eccezione per il punto di distribuzione e il punto di distribuzione pull. È possibile continuare a usare questo sistema operativo come punto di distribuzione fino all'annuncio della deprecazione di questo supporto o alla scadenza del periodo di supporto "Extended" di questo sistema operativo. Per altre informazioni, vedere l'argomento relativo ai [problemi di installazione di System Center Configuration Manager CB in Windows Server 2008](https://support.microsoft.com/help/4015095).
+*Nota 1*: Questo sistema operativo non è supportato per i server del sito o ruoli del sistema del sito fatta eccezione per il punto di distribuzione e il punto di distribuzione pull. È possibile continuare a usare questo sistema operativo come punto di distribuzione fino all'annuncio della deprecazione di questo supporto o alla scadenza del periodo di supporto "Extended" di questo sistema operativo. Per altre informazioni, vedere [Installation of Configuration Manager CB and LTSB fails on Windows Server 2008](https://support.microsoft.com/help/4015095) (L'installazione di Configuration Manager CB e LTSB non riesce in Windows Server 2008).
 
 ## <a name="client-management"></a>Gestione dei client
 Le sezioni seguenti identificano i sistemi operativi client che è possibile gestire con LTSB. LTSB non supporta l'aggiunta di nuovi sistemi operativi come client supportati.
 
 ### <a name="windows-computers"></a>Computer Windows
-È possibile usare LTSB per gestire i seguenti sistemi operativi di computer Windows con il software client di Configuration Manager incluso in Configuration Manager. Per altre informazioni, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).
+È possibile usare LTSB per gestire i seguenti sistemi operativi di computer Windows con il software client di Configuration Manager incluso in Configuration Manager. Per altre informazioni, vedere [Come distribuire i client nei computer Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).
 
 **Sistemi operativi supportati:**
 - Windows Server 2016
@@ -87,7 +86,7 @@ Le sezioni seguenti identificano i sistemi operativi client che è possibile ges
 **(Nota 2)** Per supportare l'installazione push client, il computer che esegue questa versione del sistema operativo deve eseguire il servizio ruolo file server per il ruolo del server Servizi file e archiviazione. Per altre informazioni sull'installazione di funzionalità di Windows in un computer Server Core, vedere [Installare i ruoli e le funzionalità server in un server Server Core](https://technet.microsoft.com/library/jj574158(v=ws.11).aspx) nella libreria TechNet per Windows Server 2012.
 
 ### <a name="windows-embedded"></a>Windows Embedded
-È possibile gestire i dispositivi Windows Embedded seguenti con LTSB installando il software client nel dispositivo.  Per altre informazioni, vedere [Planning for client deployment to Windows Embedded devices in System Center Configuration Manager](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices) (Pianificazione della distribuzione client a dispositivi con Windows Embedded in System Center Configuration Manager).
+È possibile gestire i dispositivi Windows Embedded seguenti con LTSB installando il software client nel dispositivo.  Per altre informazioni, vedere [Pianificazione della distribuzione del client in dispositivi con Windows Embedded](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices).
 
 **Requisiti e limitazioni:**  
 
@@ -122,7 +121,7 @@ Le sezioni seguenti identificano i sistemi operativi client che è possibile ges
 
 -   Il client del dispositivo mobile richiede 0,78 MB di spazio di archiviazione per l'installazione. Un dispositivo mobile può richiedere fino a 256 KB di spazio di archiviazione aggiuntivo per eseguire l'accesso.    
 
--   Le funzionalità per questi dispositivi mobili variano a seconda della piattaforma e del tipo di client. Per informazioni sul tipo di funzioni di gestione che Configuration Manager supporta per un client legacy del dispositivo mobile, vedere [Scegliere una soluzione di gestione dei dispositivi per System Center Configuration Manager](/sccm/core/plan-design/choose-a-device-management-solution).  
+-   Le funzionalità per questi dispositivi mobili variano a seconda della piattaforma e del tipo di client. Per informazioni sul tipo di funzioni di gestione che Configuration Manager supporta per un client legacy del dispositivo mobile, vedere [Scegliere una soluzione di gestione dei dispositivi per Configuration Manager](/sccm/core/plan-design/choose-a-device-management-solution).  
 
 **Sistemi operativi supportati:**  
 
@@ -147,7 +146,7 @@ Il pacchetto di installazione del client per Mac non viene fornito con i support
 
 Il supporto per i sistemi operativi Mac è limitato a quelli elencati in questa sezione. Il supporto non include sistemi operativi aggiuntivi che potrebbero essere supportati da un aggiornamento futuro a pacchetti di installazione client Mac per Current Branch.
 
-Per altre informazioni, vedere [How to deploy clients to Macs in System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-macs) (Come distribuire i client per i computer Mac in System Center Configuration Manager).
+Per altre informazioni, vedere [Come distribuire i client in computer Mac](/sccm/core/clients/deploy/deploy-clients-to-macs).
 
 **Versioni supportate:**  
 -   Mac OS X 10.9 (Mavericks)  
@@ -164,9 +163,9 @@ Il supporto per i sistemi operativi Linux e UNIX è limitato a quelli elencati i
 **Requisiti e limitazioni:**  
 
 -   Per informazioni dettagliate sulle dipendenze del file del sistema operativo per il client per Linux e UNIX, vedere [Prerequisites for Client Deployment to Linux and UNIX Servers](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers#BKMK_ClientDeployPrereqforLnU) (Prerequisiti per la distribuzione client a server Linux e UNIX).  
--   Per una panoramica delle funzionalità di gestione supportate per i computer che eseguono Linux o UNIX, vedere [How to deploy clients to UNIX and Linux servers in System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-unix-and-linux-servers) (Come distribuire i client a server UNIX e Linux in System Center Configuration Manager).  
+-   Per una panoramica delle funzionalità di gestione supportate per i computer che eseguono Linux o UNIX, vedere [Come distribuire i client a server UNIX e Linux](/sccm/core/clients/deploy/deploy-clients-to-unix-and-linux-servers).  
 -   Per le versioni supportate di Linux e UNIX, la versione indicata include tutte le versioni secondarie successive. Ad esempio, se la tabella indica il supporto per CentOS versione 6, questo supporto include anche tutte le versioni secondarie successive di CentOS 6, come CentOS 6.3. Analogamente, se la tabella indica il supporto per un sistema operativo che usa Service Pack, ad esempio SUSE Linux Enterprise Server 11 SP1, il supporto include i Service Pack successivi per questo sistema operativo.
--   Per informazioni sui pacchetti di installazione client e su Universal Agent, vedere [How to deploy clients to UNIX and Linux servers in System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-unix-and-linux-servers) (Come distribuire i client a server UNIX e Linux in System Center Configuration Manager).
+-   Per informazioni sui pacchetti di installazione client e su Universal Agent, vedere [Come distribuire i client nei server UNIX e Linux](/sccm/core/clients/deploy/deploy-clients-to-unix-and-linux-servers).
 
 
 **Versioni supportate:**    
@@ -266,13 +265,13 @@ Le versioni seguenti sono supportate tramite l'uso del file TAR indicato.
 |Versione 14.04 LTS x64|ccm-Universalx64.&lt;build\>.tar|  
 
 ### <a name="exchange-server-connector"></a>Connettore Exchange Server
- LTSB supporta la gestione limitata dei dispositivi che si connettono all'istanza di Exchange Server, senza installare software client. Per altre informazioni, vedere [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](/sccm/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync).
+ LTSB supporta la gestione limitata dei dispositivi che si connettono all'istanza di Exchange Server, senza installare software client. Per altre informazioni, vedere [Gestire i dispositivi mobili con Configuration Manager ed Exchange](/sccm/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync).
 
  **Requisiti e limitazioni:**  
 
 -   Configuration Manager offre funzionalità di gestione limitate per i dispositivi mobili. La gestione limitata è disponibile quando si usa il connettore Exchange Server per dispositivi Exchange Active Sync (EAS) che si connettono a un server che esegue Exchange Server o Exchange Online.  
 
--   Per altre informazioni sulle funzioni di gestione supportate da Configuration Manager per i dispositivi mobili gestiti dal connettore Exchange Server, vedere [Scegliere una soluzione di gestione dei dispositivi per System Center Configuration Manager](/sccm/core/plan-design/choose-a-device-management-solution).  
+-   Per altre informazioni sulle funzioni di gestione supportate da Configuration Manager per i dispositivi mobili gestiti dal connettore Exchange Server, vedere [Scegliere una soluzione di gestione dei dispositivi per Configuration Manager](/sccm/core/plan-design/choose-a-device-management-solution).  
 
 **Versioni di Exchange Server supportate:**  
 -   Exchange Server 2010 SP1  
@@ -320,7 +319,7 @@ Tutti i sistemi del sito LTSB devono essere membri di un dominio Windows Active 
 - Windows Server 2008
 - Windows Server 2008 R2
 - Windows Server 2012
-- Windows Server 2012 R2
+- R2 per Windows Server 2012
 
 ## <a name="additional-support-topics-that-apply-to-the-long-term-servicing-branch"></a>Argomenti di supporto aggiuntivo che si applicano a Long-Term Servicing Branch
 Le informazioni negli argomenti Current Branch seguenti sono valide per LTSB:

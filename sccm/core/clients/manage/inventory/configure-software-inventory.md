@@ -10,19 +10,18 @@ ms.assetid: f86559de-092a-4ce8-9b43-5d7530e0b763
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ca174893aab04194b96969375e9d073a4fee7b9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 74436eb95166ae9bc78d7ae22881b709349bf847
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500095"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824351"
 ---
-# <a name="how-to-configure-software-inventory-in-system-center-configuration-manager"></a>Come configurare l'inventario software in System Center Configuration Manager
+# <a name="how-to-configure-software-inventory-in-configuration-manager"></a>Come configurare l'inventario software in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questa procedura consente di configurare le impostazioni client predefinite per l'inventario software e applicarle a tutti i computer nella gerarchia. Per applicare queste impostazioni solo ad alcuni computer, creare un'impostazione client di dispositivo personalizzata e assegnarla a una raccolta. Per altre informazioni su come creare impostazioni dispositivo personalizzate, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md) (Come configurare le impostazioni client in System Center Configuration Manager).   
+Questa procedura consente di configurare le impostazioni client predefinite per l'inventario software e applicarle a tutti i computer nella gerarchia. Per applicare queste impostazioni solo ad alcuni computer, creare un'impostazione client di dispositivo personalizzata e assegnarla a una raccolta. Per altre informazioni su come creare le impostazioni personalizzate del dispositivo, vedere [Come configurare le impostazioni client](../../../../core/clients/deploy/configure-client-settings.md).   
 
 ## <a name="to-configure-software-inventory"></a>Per configurare l'inventario software  
 
@@ -38,9 +37,9 @@ Questa procedura consente di configurare le impostazioni client predefinite per 
 
    -   **Pianificare inventario software e raccolta file**: consente di configurare l'intervallo di raccolta di file e inventario software da parte dei client.   
 
-5. Configurare le impostazioni client necessarie. La sezione [Inventario software](../../../../core/clients/deploy/about-client-settings.md#software-inventory) nell'argomento [Informazioni sulle impostazioni client in System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md) contiene un elenco delle impostazioni client.  
+5. Configurare le impostazioni client necessarie. La sezione [Inventario software](../../../../core/clients/deploy/about-client-settings.md#software-inventory) nell'articolo [Informazioni sulle impostazioni client](../../../../core/clients/deploy/about-client-settings.md) contiene un elenco delle impostazioni client.  
 
-   I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [Come gestire i client in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+   I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per iniziare il recupero dei criteri per un singolo client, vedere [Come gestire i client](../../../../core/clients/manage/manage-clients.md).  
 
    > [!TIP]
    >   Il codice di errore 80041006 in inventoryprovider.log significa che il provider WMI ha esaurito la memoria. Ciò significa che è stato raggiunto il limite di quota di memoria per un provider e il provider di inventario non può continuare.

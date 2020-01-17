@@ -10,17 +10,16 @@ ms.assetid: a7975dc8-46ab-4dae-86b6-dc3e3cf3b2f0
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c228132fe36c516b428cee47417fcc66e0dd221
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9f022c53a54dff266cf25514ebe9124121246632
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73704778"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794641"
 ---
-# <a name="modify-your-system-center-configuration-manager-infrastructure"></a>Modificare l'infrastruttura di System Center Configuration Manager
+# <a name="modify-your-configuration-manager-infrastructure"></a>Modificare l'infrastruttura di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Dopo aver installato uno o più siti, può essere necessario modificare le configurazioni o eseguire azioni che incidono sull'infrastruttura distribuita.  
 
@@ -36,7 +35,7 @@ In ogni sito di Configuration Manager è possibile eseguire nuovamente il progra
 
 È possibile monitorare l'installazione o la rimozione del provider SMS visualizzando **ConfigMgrSetup.log** nella cartella radice del server del sito su cui si esegue il programma di installazione.  
 
-Prima di modificare il provider SMS in un sito, leggere le informazioni contenute in [Plan for the SMS Provider for System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md) (Pianificare per il provider SMS per System Center Configuration Manager).  
+Prima di modificare il provider SMS in un sito, leggere le informazioni contenute in [Pianificare per il provider SMS per Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
 #### <a name="to-manage-the-sms-provider-configuration-for-a-site"></a>Per gestire la configurazione del provider SMS per un sito  
 
@@ -66,7 +65,7 @@ Prima di modificare il provider SMS in un sito, leggere le informazioni contenut
 
 - **Modificare la lingua visualizzata nella console di Configuration Manager**: per modificare le lingue installate, vedere [Gestire la lingua della console di Configuration Manager](#BKMK_ManageConsoleLanguages) in questo argomento.  
 
-- **Installare console aggiuntive**: per installare altre console, vedere [Install System Center Configuration Manager consoles](/sccm/core/servers/deploy/install/install-consoles) (Installare le console di System Center Configuration Manager).  
+- **Installare console aggiuntive**: per installare altre console, vedere [Installare le console di Configuration Manager](/sccm/core/servers/deploy/install/install-consoles).  
 
 - **Configurare DCOM**: per configurare le autorizzazioni DCOM per abilitare la connessione delle console remote rispetto al server del sito, vedere [Configurare le autorizzazioni DCOM per le console remote di Configuration Manager](#BKMK_ConfigDCOMforRemoteConsole) in questo argomento.  
 
@@ -172,7 +171,7 @@ Per altre informazioni sui limiti del supporto, vedere [Criteri di supporto per 
 
 
 > [!IMPORTANT]  
-> Prima di spostare un database contenente una o più repliche di database per i punti di gestione, è necessario rimuovere innanzitutto le repliche di database. Dopo aver completato lo spostamento del database, è possibile riconfigurare le repliche di database. Per altre informazioni, vedere [Repliche di database per i punti di gestione per System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
+> Prima di spostare un database contenente una o più repliche di database per i punti di gestione, è necessario rimuovere innanzitutto le repliche di database. Dopo aver completato lo spostamento del database, è possibile riconfigurare le repliche di database. Per altre informazioni, vedere [Repliche di database per i punti di gestione per Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
 ##  <a name="bkmk_SPN"></a> Gestire il nome dell'entità servizio (SPN) per il server di database del sito  
 È possibile scegliere l'account che esegue i servizi di SQL per il database del sito:  
@@ -329,7 +328,7 @@ Dopo l'installazione di un sito, è possibile gestire i Language Pack di server 
 
   Dopo aver aggiornato i Language Pack client in un sito è necessario installare ogni client che utilizzerà i Language Pack tramite i file origine che includono i Language Pack client.  
 
-Per informazioni sulle lingue di client e server supportate da Configuration Manager, vedere [Language Pack in System Center Configuration Manager](../../../core/servers/deploy/install/language-packs.md)  
+Per informazioni sulle lingue di client e server supportate da Configuration Manager, vedere [Language Pack](../../../core/servers/deploy/install/language-packs.md)  
 
 #### <a name="to-modify-the-language-packs-that-are-supported-at-a-site"></a>Per modificare i Language Pack supportati in un sito  
 

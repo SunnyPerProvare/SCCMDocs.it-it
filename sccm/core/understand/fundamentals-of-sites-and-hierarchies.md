@@ -1,7 +1,7 @@
 ---
 title: Nozioni fondamentali su siti e gerarchie
 titleSuffix: Configuration Manager
-description: Informazioni di base su siti e gerarchie di System Center Configuration Manager.
+description: Informazioni di base su siti e gerarchie di Configuration Manager.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,22 +10,21 @@ ms.assetid: 4db1e15f-e832-4cf9-be33-d3971e635a55
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 00465c431ded49c3833b19a3efd1da05ad1c388d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e187656c5149ff7dbfd3c4a21d023f55c85b2015
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62251533"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825847"
 ---
-# <a name="fundamentals-of-sites-and-hierarchies-for-system-center-configuration-manager"></a>Nozioni fondamentali su siti e gerarchie per System Center Configuration Manager
+# <a name="fundamentals-of-sites-and-hierarchies-for-configuration-manager"></a>Nozioni fondamentali su siti e gerarchie per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Una distribuzione di System Center Configuration Manager deve essere installata in un dominio di Active Directory. La base della distribuzione include uno o più siti di Configuration Manager che formano una gerarchia di siti. Da un singolo sito a una gerarchia a più siti, il tipo e il percorso dei siti installati offrono la possibilità di espandere la distribuzione quando necessario per assicurare i servizi essenziali a utenti e dispositivi gestiti.
+Una distribuzione di Configuration Manager deve essere installata in un dominio di Active Directory. La base della distribuzione include uno o più siti di Configuration Manager che formano una gerarchia di siti. Da un singolo sito a una gerarchia a più siti, il tipo e il percorso dei siti installati offrono la possibilità di espandere la distribuzione quando necessario per assicurare i servizi essenziali a utenti e dispositivi gestiti.
 
 ## <a name="hierarchies-of-sites"></a>Gerarchie di siti
-Quando si installa System Center Configuration Manager per la prima volta, il primo sito di Configuration Manager installato determina l'ambito della gerarchia. Il primo sito di Configuration Manager è la base da cui gestire i dispositivi e gli utenti nell'azienda. Questo primo sito deve essere un sito di amministrazione centrale o un sito primario autonomo.  
+Quando si installa Configuration Manager per la prima volta, il primo sito di Configuration Manager installato determina l'ambito della gerarchia. Il primo sito di Configuration Manager è la base da cui gestire i dispositivi e gli utenti nell'azienda. Questo primo sito deve essere un sito di amministrazione centrale o un sito primario autonomo.  
 
  Un *sito di amministrazione centrale* è ideale per distribuzioni su larga scala e offre un punto centrale di amministrazione, nonché la flessibilità necessaria per supportare i dispositivi distribuiti in un'infrastruttura di rete globale. Dopo aver installato un sito di amministrazione centrale, è necessario installare uno o più siti primari come siti figlio. Questa configurazione è necessaria perché un sito di amministrazione centrale non supporta direttamente la gestione dei dispositivi, che è invece la funzione di un sito primario. Un sito di amministrazione centrale supporta più siti primari figlio. I siti primari figlio vengono usati per gestire direttamente i dispositivi e controllare la larghezza di banda di rete quando i dispositivi gestiti si trovano in località geografiche diverse.  
 
@@ -44,11 +43,11 @@ Quando si installa System Center Configuration Manager per la prima volta, il pr
 
  Per altre informazioni, vedere i seguenti argomenti:  
 
--   [Introduzione a System Center Configuration Manager](../../core/understand/introduction.md)  
+-   [Introduzione a Configuration Manager](../../core/understand/introduction.md)  
 
--   [Progettare una gerarchia di siti per System Center Configuration Manager](../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md)  
+-   [Progettare una gerarchia di siti per Configuration Manager](../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md)  
 
--   [Installare i siti di System Center Configuration Manager](/sccm/core/servers/deploy/install/installing-sites)  
+-   [Installare i siti di Configuration Manager](/sccm/core/servers/deploy/install/installing-sites)  
 
 ## <a name="site-system-servers-and-site-system-roles"></a>Server di sistema del sito e ruoli del sistema del sito  
  Ogni sito di Configuration Manager installa *ruoli del sistema del sito* che supportano operazioni di gestione. Quando si installa un sito, per impostazione predefinita vengono installati i ruoli seguenti:
@@ -61,7 +60,7 @@ Altri ruoli del sistema del sito sono facoltativi e vengono usati solo quando si
 
  Per una distribuzione di dimensioni minori di Configuration Manager , è possibile eseguire inizialmente tutti i ruoli del sistema del sito nel computer server del sito. Con l'aumentare delle esigenze e delle dimensioni dell'ambiente gestito, è quindi possibile installare altri server del sistema del sito per ospitare ulteriori ruoli del sistema del sito e migliorare l'efficienza del sito nel fornire servizi a più dispositivi.  
 
- Per informazioni sui diversi ruoli del sistema del sito, vedere [Ruoli del sistema del sito](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md#bkmk_planroles) in [Pianificare i server e i ruoli del sistema del sito per System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).
+ Per informazioni sui diversi ruoli del sistema del sito, vedere [Ruoli del sistema del sito](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md#bkmk_planroles) in [Pianificare i server e i ruoli del sistema del sito per Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).
 
 ## <a name="publishing-site-information-to-active-directory-domain-services"></a>Pubblicazione di informazioni sul sito in Servizi di dominio Active Directory  
  Per semplificare la gestione di Configuration Manager, è possibile estendere lo schema di Active Directory in modo da supportare i dettagli usati da Configuration Manager e quindi fare in modo che i siti pubblichino le proprie informazioni principali in Active Directory Domain Services. I computer da gestire possono quindi recuperare in modo sicuro le informazioni correlate al sito da un'origine attendibile di Active Directory Domain Services. Le informazioni che possono essere recuperate dai client identificano i siti disponibili, i server del sistema del sito e i servizi forniti dai server del sistema del sito.  

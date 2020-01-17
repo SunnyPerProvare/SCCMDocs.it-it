@@ -1,7 +1,7 @@
 ---
 title: Prerequisiti per la creazione di report
 titleSuffix: Configuration Manager
-description: Individuare le diverse dipendenze che influiscono sull'uso della creazione di report in System Center Configuration Manager.
+description: Individuare le diverse dipendenze che influiscono sull'uso della creazione di report in Configuration Manager.
 ms.date: 01/29/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: 9cc508a5-5023-4833-b776-ae9a6971138f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 226a2632f8aa827975a764f0d22aea0a05ec6d96
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5c5850c19da1cbf33a01a38bcc08052bd94d0f8c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70379759"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794495"
 ---
-# <a name="prerequisites-for-reporting-in-system-center-configuration-manager"></a>Prerequisiti per la creazione di report in System Center Configuration Manager
+# <a name="prerequisites-for-reporting-in-configuration-manager"></a>Prerequisiti per la creazione di report in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-La creazione di report in System Center Configuration Manager ha dipendenze esterne e dipendenze nel prodotto.  
+La creazione di report in Configuration Manager ha dipendenze esterne e dipendenze nel prodotto.  
 
 ## <a name="dependencies-external-to-configuration-manager"></a>Dipendenze esterne a Configuration Manager  
  Nella seguente tabella vengono elencate le dipendenze esterne per la creazione di report.  
@@ -30,14 +29,14 @@ La creazione di report in System Center Configuration Manager ha dipendenze este
 |Prerequisito|Altre informazioni|  
 |------------------|----------------------|  
 |SQL Server Reporting Services|Prima di poter usare la creazione di report in Configuration Manager, è necessario installare e configurare SQL Server Reporting Services.<br /><br /> Per informazioni sulla pianificazione e la distribuzione di Reporting Services nell'ambiente, vedere la sezione [Reporting Services](https://go.microsoft.com/fwlink/p/?LinkId=212032) nella documentazione online di SQL Server 2008.|  
-|Dipendenze del ruolo del sistema del sito per computer che eseguono il punto di Reporting Services.|[Supported configurations for System Center Configuration Manager](../../../core/plan-design/configs/supported-configurations.md) (Configurazioni supportate per System Center Configuration Manager)|  
+|Dipendenze del ruolo del sistema del sito per computer che eseguono il punto di Reporting Services.|[Configurazioni supportate per Configuration Manager](../../../core/plan-design/configs/supported-configurations.md)|  
 
 ## <a name="dependencies-internal-to-configuration-manager"></a>Dipendenze interne a Configuration Manager  
  La tabella seguente elenca le dipendenze per la creazione di report in Configuration Manager.  
 
 |Prerequisito|Altre informazioni|  
 |------------------|----------------------|  
-|Punto di Reporting Services|È necessario configurare il ruolo di sistema del sito del punto di Reporting Services prima di usare la creazione di report in Configuration Manager. Per altre informazioni su come installare e configurare un punto di Reporting Services, vedere [Configurazione della creazione di report in Configuration Manager](../../../core/servers/manage/configuring-reporting.md).|  
+|Punto di Reporting Services|È necessario configurare il ruolo di sistema del sito del punto di Reporting Services prima di usare la creazione di report in Configuration Manager. Per altre informazioni su come installare e configurare un punto di Reporting Services, vedere [Configurazione della creazione di report](../../../core/servers/manage/configuring-reporting.md).|  
 
 ## <a name="supported-sql-server-versions-for-the-reporting-services-point"></a>Versioni di SQL Server supportate per il punto di Reporting Services  
  È possibile installare il database di Reporting Services sia nell'istanza predefinita che in un'istanza denominata di un'installazione di SQL Server a 64 bit. L'istanza di SQL Server può avere un percorso condiviso con il server del sistema del sito oppure risiedere in un computer remoto.  

@@ -1,7 +1,7 @@
 ---
 title: Sicurezza e privacy per il risparmio energia
 titleSuffix: Configuration Manager
-description: Informazioni sulla sicurezza e la privacy per il risparmio di energia in System Center Configuration Manager.
+description: Informazioni sulla sicurezza e la privacy per il risparmio energia in Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,19 +10,18 @@ ms.assetid: 469ff35f-59a1-484d-902b-107dd6070baf
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7bba23bf35d60d83fcff01acb20c8f404b6445d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c019faee1ffa035bde626778bb15b8f5feabc243
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62215446"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823909"
 ---
-# <a name="security-and-privacy-for-power-management-in-system-center-configuration-manager"></a>Sicurezza e privacy per il risparmio energia in System Center Configuration Manager
+# <a name="security-and-privacy-for-power-management-in-configuration-manager"></a>Sicurezza e privacy per il risparmio energia in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questa sezione contiene informazioni sulla sicurezza e la privacy per il risparmio di energia in System Center Configuration Manager.  
+Questa sezione contiene informazioni sulla sicurezza e la privacy per il risparmio energia in Configuration Manager.  
 
 ## <a name="security-best-practices-for-power-management"></a>Procedure di sicurezza consigliate per il risparmio energia  
  Non esistono procedure consigliate correlate alla sicurezza per il risparmio energia.  

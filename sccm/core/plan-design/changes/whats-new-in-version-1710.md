@@ -1,7 +1,7 @@
 ---
 title: Nuova versione 1710 | Microsoft Docs
 titleSuffix: Configuration Manager
-description: Ottenere informazioni dettagliate sulle modifiche e le nuove funzionalità introdotte nella versione 1710 di System Center Configuration Manager.
+description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1710 di Configuration Manager.
 ms.date: 01/08/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,25 +11,24 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f558961ee6f3fe6f20c2ebd4f0b943161156f28
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8e2342ec83e82c0400c370dd469887fc264356ef
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889549"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802583"
 ---
-# <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Novità della versione 1710 di System Center Configuration Manager
+# <a name="what39s-new-in-version-1710-of-configuration-manager"></a>Novità della versione 1710 di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-L'aggiornamento 1710 per System Center Configuration Manager (Current Branch) è disponibile come aggiornamento nella console per siti precedentemente installati che eseguono la versione 1610, 1702 o 1706.
+L'aggiornamento 1710 per Configuration Manager Current Branch è disponibile come aggiornamento nella console per siti precedentemente installati che eseguono la versione 1610, 1702 o 1706.
 
-A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in System Center Configuration Manager Current Branch, versione 1710](https://support.microsoft.com/help/4056470/summary-of-changes-in-system-center-configuration-manager-current-bran).
+A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in Configuration Manager Current Branch, versione 1710](https://support.microsoft.com/help/4056470/summary-of-changes-in-system-center-configuration-manager-current-bran).
 
 Sono ora disponibili anche i seguenti aggiornamenti aggiuntivi per questa versione:
-- [Aggiornamento cumulativo per System Center Configuration Manager Current Branch, versione 1710](https://support.microsoft.com/help/4057517/update-rollup-for-system-center-configuration-manager-current-branch-v)
-- [Aggiornamento cumulativo 2 per System Center Configuration Manager Current Branch, versione 1710](https://support.microsoft.com/en-us/help/4086143/update-rollup-2-for-system-center-configuration-manager-current-branch)
+- [Aggiornamento cumulativo per Configuration Manager Current Branch, versione 1710](https://support.microsoft.com/help/4057517/update-rollup-for-system-center-configuration-manager-current-branch-v)
+- [Aggiornamento cumulativo 2 per Configuration Manager Current Branch, versione 1710](https://support.microsoft.com/en-us/help/4086143/update-rollup-2-for-system-center-configuration-manager-current-branch)
 
 > [!TIP]  
 > Per installare un nuovo sito, è necessario usare una versione base di Configuration Manager.  
@@ -73,7 +72,7 @@ Negli aggiornamenti precedenti di Windows 10 è già possibile aggiungere un dis
 ### <a name="restart-computers-from-the-configuration-manager-console-----1356283---"></a>Riavviare i computer dalla console di Configuration Manager  <!-- 1356283 -->
 A partire da questa versione, è possibile usare la console di Configuration Manager per identificare i dispositivi client che richiedono il riavvio e quindi usare un'azione di notifica client per riavviarli.
 
-Vedere [Come gestire i client in System Center Configuration Manager](/sccm/core/clients/manage/manage-clients#restart-clients)
+Vedere [Come gestire i client](/sccm/core/clients/manage/manage-clients#restart-clients)
 
 
 <!-- ## Compliance settings -->
@@ -119,7 +118,7 @@ Per altre informazioni sulla sequenza di attività figlio, vedere [Sequenza di a
 <!-- 1351224 -->
 È possibile aggiungere elementi di branding aziendale e specificare la visibilità delle schede in Software Center. È possibile aggiungere il nome specifico della società per Software Center, impostare un tema di colori per la configurazione di Software Center, impostare il logo della società e impostare le schede visibili per i dispositivi client.
 
-Per altre informazioni, vedere [Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager](/sccm/apps/plan-design/plan-for-and-configure-application-management).
+Per altre informazioni, vedere [Plan for and configure application management](/sccm/apps/plan-design/plan-for-and-configure-application-management) (Pianificare e configurare la gestione delle applicazioni).
 
 ## <a name="software-updates"></a>Aggiornamenti software
 
@@ -134,7 +133,7 @@ A partire da questa versione, la gestione degli aggiornamenti dei driver di Surf
 
 È ora possibile impostare il livello di raccolta dei dati di telemetria di Windows 10 su **Enhanced (Limited)** (Avanzato - Limitato). Questa impostazione consente di ottenere informazioni utili sui dispositivi presenti nell'ambiente in uso senza che i dispositivi segnalino tutti i dati nel livello di telemetria **Avanzato** con Windows 10 1709 o versione successiva.
 
-Per altre informazioni, vedere [Come configurare le impostazioni client in System Center Configuration Manager](/sccm/core/clients/deploy/configure-client-settings).
+Per altre informazioni, vedere [Come configurare le impostazioni client](/sccm/core/clients/deploy/configure-client-settings).
 
 <!-- ## Inventory  -->
 
@@ -184,7 +183,7 @@ Queste modifiche vengono applicate ai nuovi profili VPN.
 
 Per ridurre al minimo i rischi relativi alla compatibilità, i profili VPN esistenti non vengono modificati.  Quando viene modificato un profilo esistente, le impostazioni vengono visualizzate come quando è stato creato il profilo.  
 
-Per altre informazioni, vedere [Profili VPN nei dispositivi mobili in System Center Configuration Manager](../../../mdm/deploy-use/create-vpn-profiles.md).
+Per altre informazioni, vedere [Profili VPN su dispositivi mobili](../../../mdm/deploy-use/create-vpn-profiles.md).
 
 ### <a name="limited-support-for-cryptography-next-generation-cng-certificates----1356191---"></a>Supporto limitato per certificati (Cryptography: Next Generation) <!-- 1356191 -->
 

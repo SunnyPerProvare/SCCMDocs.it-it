@@ -1,7 +1,7 @@
 ---
 title: Visualizzare i dati di diagnostica
 titleSuffix: Configuration Manager
-description: È possibile visualizzare i dati di diagnostica e di utilizzo per verificare che la gerarchia di System Center Configuration Manager non contenga informazioni riservate.
+description: È possibile visualizzare i dati di diagnostica e di utilizzo per verificare che la gerarchia di Configuration Manager non contenga informazioni riservate.
 ms.date: 09/10/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,17 +10,16 @@ ms.assetid: 594eb284-0d93-4c5d-9ae6-f0f71203682a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68155a31d1d50d1df4c06882416f158f9a71c8d2
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 51cc45b2524895beb1cf3ead5839e4fc3a1b11fb
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889435"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800764"
 ---
 # <a name="how-to-view-diagnostics-and-usage-data-for-configuration-manager"></a>Come visualizzare i dati di diagnostica e utilizzo per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile visualizzare i dati di diagnostica e di utilizzo dalla gerarchia di Configuration Manager per verificare che non siano incluse informazioni sensibili o personali. Il sito riepiloga e archivia i dati di diagnostica nella tabella **TEL_TelemetryResults** del database del sito. Formatta i dati in modo che siano utilizzabili ed efficienti a livello di codice.
 

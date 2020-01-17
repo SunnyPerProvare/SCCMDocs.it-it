@@ -1,7 +1,7 @@
 ---
 title: Funzionalità nella Technical Preview 1703
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1703 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1703 per Configuration Manager.
 ms.date: 03/24/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26933c878a7a57b40ade404b8ef205c18a01f7f6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7c04fa33a0624854e4e05bd3e552c2edb2163195
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70378003"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033790"
 ---
-# <a name="capabilities-in-technical-preview-1703-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1703 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1703-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1703 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1703 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1703. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview per Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
@@ -35,16 +34,15 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 |||||
 |-|-|-|-|
 |Versione di Configuration Manager|Gestione delle licenze dei dispositivi supportata|Tipo di raccolta della distribuzione|Licenza richiesta|
-|Precedente la 1702|Sì|utente|Licenza utente|
-|Precedente la 1702|No|utente|Licenza utente|
+|Precedente la 1702|Sì|Utente|Licenza utente|
+|Precedente la 1702|No|Utente|Licenza utente|
 |Precedente la 1702|Sì|Dispositivo|Licenza utente|
 |Precedente la 1702|No|Dispositivo|Licenza utente|
-|1702 e versioni successive|Sì|utente|Licenza utente|
-|1702 e versioni successive|No|utente|Licenza utente|
+|1702 e versioni successive|Sì|Utente|Licenza utente|
+|1702 e versioni successive|No|Utente|Licenza utente|
 |1702 e versioni successive|Sì|Dispositivo|Licenza dispositivo|
 |1702 e versioni successive|No|Dispositivo|Licenza utente|
 
-Per altre informazioni sulle app iOS acquistate tramite Volume Purchase Program, vedere [Gestire le app iOS acquistate tramite Volume Purchase Program](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
 
 ## <a name="direct-links-to-applications-in-software-center"></a>Collegamenti diretti alle applicazioni in Software Center
 
@@ -83,7 +81,7 @@ La versione Technical Preview 1703 introduce la **Configurazione guidata servizi
 
 Nella versione Technical Preview 1703 solo Windows Store per le aziende Business (WSfB) viene configurato con questa procedura guidata.  Gli altri servizi cloud vengono configurati usando i flussi di lavoro corrispondenti separati.
 
-- Usare le informazioni disponibili in questo argomento di anteprima in sostituzione della procedura di configurazione descritta nella sezione [Configurare la sincronizzazione di Windows Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#bkmk_setup) dell'argomento per la versione Current Branch [Gestire le app da Windows Store per le aziende con System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
+- Usare le informazioni disponibili in questo argomento di anteprima in sostituzione della procedura di configurazione descritta nella sezione [Configurare la sincronizzazione di Windows Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#bkmk_setup) dell'argomento per la versione Current Branch [Gestire le app da Windows Store per le aziende con Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
 
 - Per altre informazioni sulle app Web, vedere [Autenticazione e autorizzazione nel servizio app di Azure](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview) e [Panoramica di App Web](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview).
 

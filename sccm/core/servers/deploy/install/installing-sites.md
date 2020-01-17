@@ -1,7 +1,7 @@
 ---
 title: Risorse per l'installazione di siti
 titleSuffix: Configuration Manager
-description: Esaminare un elenco di argomenti che consentono di installare System Center Configuration Manager o di aggiungere siti alla gerarchia.
+description: Esaminare un elenco di argomenti che consentono di installare Configuration Manager o di aggiungere siti alla gerarchia.
 ms.date: 01/3/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: d0e4ddc3-d9c4-4f5c-8b1f-af098e54f5c8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 54f79af62780cd29705a84ab4b42275a9226e469
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5f6176e19ded11a29892c7cfbc91449e4c86a1ce
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70888866"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798192"
 ---
-# <a name="resources-for-installing-system-center-configuration-manager-sites"></a>Risorse per l'installazione di siti di System Center Configuration Manager
+# <a name="resources-for-installing-configuration-manager-sites"></a>Risorse per l'installazione di siti di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Gli argomenti seguenti forniscono le istruzioni per installare System Center Configuration Manager o aggiungere siti alla gerarchia di Configuration Manager esistente.
+Gli argomenti seguenti forniscono le istruzioni per installare Configuration Manager o aggiungere siti alla gerarchia di Configuration Manager esistente.
 
 - [Preparare l'installazione di siti](prepare-to-install-sites.md)
 

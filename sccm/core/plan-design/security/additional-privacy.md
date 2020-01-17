@@ -10,17 +10,16 @@ ms.assetid: 1fcc921f-085f-4b0b-9c53-1e0707211076
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e5a42249df462be1584a153657a42ae325f1b9a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f2e9302ea51eeb179eca08babefe21374b7bf379
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62235667"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799336"
 ---
 # <a name="additional-information-about-privacy-for-configuration-manager"></a>Altre informazioni sulla privacy per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 ## <a name="updates-and-servicing"></a>Aggiornamenti e manutenzione
@@ -51,7 +50,7 @@ Per altre informazioni sui livelli e sulle impostazioni dei dati di utilizzo, ve
 
 Il programma Analisi utilizzo software raccoglie informazioni di base dalla console di Configuration Manager relative alla configurazione hardware e alla modalità di impiego del software e dei servizi per individuare tendenze e modelli di utilizzo. Vengono inoltre raccolte informazioni sul tipo e sul numero di errori rilevati, sulle prestazioni software e hardware e sulla velocità dei servizi. Non vengono raccolti nomi, indirizzi o altre informazioni che consentono l'identificazione personale degli utenti. Dai computer client non viene raccolta alcuna informazione per Analisi utilizzo software.
 
-Microsoft usa le informazioni raccolte per migliorare la qualità, l'affidabilità e le prestazioni dei propri software e servizi.
+Microsoft utilizza queste informazioni per migliorare la qualità, l'affidabilità e le prestazioni del software e dei servizi Microsoft.
 
 Per dettagli sulle informazioni che vengono raccolte, elaborate o trasmesse dal programma Analisi utilizzo software, vedere la relativa [informativa sulla privacy](https://go.microsoft.com/fwlink/?LinkID=525211).
 
@@ -81,7 +80,7 @@ Asset Intelligence non è abilitato in Configuration Manager per impostazione pr
 
 Microsoft Cloud Protection Service era precedentemente conosciuto come Microsoft Active Protection Service o MAPS.
 
-I prodotti applicabili sono System Center Endpoint Protection e la funzionalità Endpoint Protection di System Center Configuration Manager (per la gestione di System Center Endpoint Protection e Windows Defender per Windows 10). Questa funzionalità non è implementata né per System Center Endpoint Protection per Linux né per System Center Endpoint Protection per Mac.
+I prodotti applicabili sono System Center Endpoint Protection e la funzionalità Endpoint Protection di Configuration Manager (per la gestione di System Center Endpoint Protection e Windows Defender per Windows 10). Questa funzionalità non è implementata né per System Center Endpoint Protection per Linux né per System Center Endpoint Protection per Mac.
 
 La community antimalware Microsoft Cloud Protection Service è una community antimalware online diffusa in tutto il mondo che comprende gli utenti di System Center Endpoint Protection. Se un utente entra a far parte di Microsoft Cloud Protection Service, System Center Endpoint Protection invierà automaticamente informazioni a Microsoft per consentire di individuare il software da analizzare alla ricerca di potenziali minacce e per migliorare l'efficacia di System Center Endpoint Protection. Questa community contribuisce ad arrestare la diffusione di nuove infezioni causate da software dannoso. Se un report di Microsoft Cloud Protection Service include informazioni su malware o software potenzialmente dannoso che il client di Endpoint Protection potrebbe rimuovere, Microsoft Cloud Protection Service esegue il download della firma più recente per risolvere il problema. Microsoft Cloud Protection Service può anche trovare i "falsi positivi" e correggerli. I falsi positivi sono elementi in origine identificati erroneamente come malware. 
 

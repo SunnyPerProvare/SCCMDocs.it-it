@@ -1,7 +1,7 @@
 ---
 title: Funzionalità nella Technical Preview 1604
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1604 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1604 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e41114313a896403368f8b4eb3c4c1fa6f2ebb31
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: aed156d042d57a1420a2c036aeb77066422e6bdf
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70379376"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75805201"
 ---
-# <a name="capabilities-in-technical-preview-1604-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1604 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1604-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1604 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1604 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.  
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1604. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview per Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.  
 
  Di seguito sono riportate le nuove funzionalità disponibili con questa versione.  
 
@@ -146,7 +145,7 @@ Per capire come viene usata la peer cache, è possibile visualizzare il dashboar
     >  Per completare questa attività con la Technical Preview e un singolo punto di distribuzione, configurare il punto di distribuzione in modo che sia lento per il percorso di rete di tutti i client. Distribuire quindi i contenuti in un singolo client.  Dopo che il client ha ottenuto i contenuti, è possibile distribuirli in altri client che devono trovare peer locali da usare come origine contenuto prima di ricorrere al punto di distribuzione considerato lento dal percorso del client.  
 
 ##  <a name="bkmk_passport"></a> Supporto per Passport for Work come provider di archiviazione chiavi  
- System Center Configuration Manager consente di eseguire l'integrazione con Microsoft Passport for Work, un metodo di accesso alternativo che usa Active Directory o un account Azure Active Directory per sostituire una password, una smart card o una smart card virtuale.  
+ Configuration Manager consente di eseguire l'integrazione con Microsoft Passport for Work, un metodo di accesso alternativo che usa Active Directory o un account Azure Active Directory per sostituire una password, una smart card o una smart card virtuale.  
 Passport consente di eseguire l'accesso usando un movimento dell'utente invece di una password. Un movimento dell'utente può essere un PIN semplice, l'autenticazione biometrica come Windows Hello o un dispositivo esterno come un lettore di impronte digitali.  
 
 -   È possibile usare Configuration Manager per controllare i movimenti che gli utenti possono usare o meno per accedere, nonché per configurare i requisiti di complessità dei PIN.  

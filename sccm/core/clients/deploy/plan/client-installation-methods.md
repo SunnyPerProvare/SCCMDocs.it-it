@@ -10,17 +10,16 @@ ms.assetid: 51b5964b-374d-4abc-8619-414a9fffad2d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c206a8045429551f361f640febbcda4a39ef9698
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1ee523825947a24c68ea8c3f72292dff8de53df2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62201324"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824997"
 ---
-# <a name="client-installation-methods-in-system-center-configuration-manager"></a>Metodi di installazione client in System Center Configuration Manager
+# <a name="client-installation-methods-in-configuration-manager"></a>Metodi di installazione client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile usare diversi metodi per installare il software client di Configuration Manager. È possibile usare un metodo o una combinazione di metodi. In questo articolo viene descritto ogni metodo, in modo da acquisire quello che risulta più adatto per l'organizzazione.  
 

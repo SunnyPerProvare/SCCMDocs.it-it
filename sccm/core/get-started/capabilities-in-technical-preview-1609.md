@@ -1,7 +1,7 @@
 ---
 title: Funzionalità nella Technical Preview 1609
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1609 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1609 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,21 +11,20 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: caa916afa1bb254223844e97d9f2299a91d1ec07
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 06b16f8d2952eb8e81962ee6a4f7f906bfd4e04a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67677778"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75805150"
 ---
-# <a name="capabilities-in-technical-preview-1609-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1609 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1609-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1609 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
 
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1609 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager, versione 1609. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview per Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
 **Problemi noti di questa versione Technical Preview:**  
 *  Durante l'aggiornamento a Configuration Manager 1609 Technical Preview, verranno eliminati i criteri di aggiornamento dell'edizione eventualmente distribuiti. Per continuare a usare questi criteri, è necessario ricrearli e distribuirli.
@@ -79,7 +78,7 @@ In questa versione [Integrazione di Windows Store per le aziende](/sccm/apps/dep
 
 #### <a name="create-and-deploy-a-configuration-manager-application-from-the-synchronized-app-data"></a>Creare e distribuire un'applicazione di Configuration Manager dai dati di un'app sincronizzata
 
-La procedura per creare e distribuire un'applicazione di Configuration Manager da un'app dello Store a pagamento è identica a quella usata per la creazione di un'applicazione da un'applicazione gratuita. Vedere la sezione **Create and deploy a Configuration Manager application from a Windows Store for Business app** (Creare e distribuire un'applicazione di Configuration Manager da un'app Windows Store per le aziende) in [Manage apps from the Windows Store for Business with System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business) (Gestire le app Windows Store per le aziende con System Center Configuration Manager).
+La procedura per creare e distribuire un'applicazione di Configuration Manager da un'app dello Store a pagamento è identica a quella usata per la creazione di un'applicazione da un'applicazione gratuita. Vedere la sezione **Creare e distribuire un'applicazione di Configuration Manager da un'app di Windows Store per le aziende** in [Gestire le app Windows Store per le aziende con Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
 
 
 #### <a name="modify-the-client-secret-key-from-azure-active-directory"></a>Modificare la chiave privata del client da Azure Active Directory
@@ -451,4 +450,4 @@ Completare le sezioni seguenti in ordine:
 
 
 ## <a name="see-also"></a>Vedere anche
-[Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager)
+[Technical Preview per Configuration Manager](../../core/get-started/technical-preview.md)

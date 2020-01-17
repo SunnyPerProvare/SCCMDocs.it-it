@@ -10,25 +10,24 @@ ms.assetid: f3058277-c597-4dac-86d1-41b6f7e62b36
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1d5954527fd644b9dbe0ba4aee88170028d511b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 381b9ebafba24c58ea65f29fe5505763457b4451
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70379819"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826170"
 ---
-# <a name="use-the-hotfix-installer-to-install-updates-for-system-center-configuration-manager"></a>Usare il programma di installazione di hotfix per installare gli aggiornamenti per System Center Configuration Manager
+# <a name="use-the-hotfix-installer-to-install-updates-for-configuration-manager"></a>Usare il programma di installazione di hotfix per installare gli aggiornamenti per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Alcuni aggiornamenti per System Center Configuration Manager non sono disponibili dal servizio cloud Microsoft e possono essere ottenuti solo come rilascio fuori programma. Questo si verifica, ad esempio, nel caso di un hotfix a rilascio limitato per la soluzione di un problema specifico.   
+Alcuni aggiornamenti per Configuration Manager non sono disponibili dal servizio cloud Microsoft e possono essere ottenuti solo come rilascio fuori programma. Questo si verifica, ad esempio, nel caso di un hotfix a rilascio limitato per la soluzione di un problema specifico.   
 Quando è necessario installare un aggiornamento (o hotfix) ricevuto da Microsoft e tale aggiornamento ha un nome file che termina con l'estensione **.exe** (non **update.exe**), usare il programma di installazione di hotfix incluso con il download dell'hotfix per installare l'aggiornamento direttamente nel server del sito di Configuration Manager.  
 
-Se il file dell'hotfix ha estensione **.update.exe**, vedere [Usare lo strumento di registrazione dell'aggiornamento per importare hotfix in System Center Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md).  
+Se il file dell'hotfix ha estensione **update.exe**, vedere [Usare lo strumento di registrazione dell'aggiornamento per importare hotfix in Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md).  
 
 > [!NOTE]  
-> Questo argomento fornisce indicazioni generali su come installare gli hotfix che aggiornano System Center Configuration Manager. Per informazioni dettagliate su uno specifico aggiornamento, consultare l'articolo corrispondente della Knowledge Base (KB) nel Supporto tecnico Microsoft.  
+> Questo argomento fornisce indicazioni generali su come installare gli hotfix che aggiornano Configuration Manager. Per informazioni dettagliate su uno specifico aggiornamento, consultare l'articolo corrispondente della Knowledge Base (KB) nel Supporto tecnico Microsoft.  
 
 ##  <a name="bkmk_Overview"></a> Panoramica degli hotfix per Configuration Manager  
 Gli hotfix per Configuration Manager sono simili a quelli per altri prodotti Microsoft, ad esempio SQL Server, contengono una singola correzione o un bundle (un rollup di correzioni) e sono descritti in un articolo della Microsoft Knowledge Base.  
@@ -83,9 +82,9 @@ Ogni bundle di aggiornamenti per Configuration Manager è un file EXE autoestrae
 
 Per impostazione predefinita, il bundle di aggiornamento registra le azioni in un file .log sul server del sito. Il file di log ha lo stesso nome del bundle di aggiornamento e viene scritto nella cartella **%SystemRoot%/Temp** .  
 
-Quando si esegue il pacchetto di aggiornamento, viene estratto un file con lo stesso nome del pacchetto di aggiornamento in una cartella temporanea sul computer, quindi viene eseguito Updatesetup.exe. Updatesetup.exe avvia la procedura guidata di aggiornamento software per la procedura guidata di &lt;versione prodotto\> &lt;numero KB\> di Configuration Manager.  
+Quando si esegue il pacchetto di aggiornamento, viene estratto un file con lo stesso nome del pacchetto di aggiornamento in una cartella temporanea sul computer, quindi viene eseguito Updatesetup.exe. Updatesetup.exe avvia la procedura guidata di aggiornamento software per Configuration Manager &lt;versione prodotto\>&lt;numero KB\>.  
 
-In base a quanto applicabile per l'ambito dell'aggiornamento, la procedura guidata crea una serie di cartelle nella cartella di installazione di System Center Configuration Manager nel server del sito. La struttura di cartelle è simile alla seguente:   
+In base a quanto applicabile per l'ambito dell'aggiornamento, la procedura guidata crea una serie di cartelle nella cartella di installazione di Configuration Manager nel server del sito. La struttura di cartelle è simile alla seguente:   
 **\\\\&lt;Nome del server\>\SMS_&lt;Codice sito\>\HotFix\\&lt;Numero KB\>\\&lt;Tipo di aggiornamento\>\\&lt;Piattaforma\>** .  
 
 La tabella seguente fornisce informazioni dettagliate sulle cartelle nella struttura di cartelle:  
@@ -143,7 +142,7 @@ Quando si installa il bundle di aggiornamento su un server del sito, è possibil
 > Quando si sceglie di aggiornare automaticamente il database del sito, il processo aggiorna un database indipendentemente dal fatto che sia posizionato sul server del sito o su un computer remoto.  
 
 > [!IMPORTANT]  
-> Prima di aggiornare il database del sito, creare un backup del database del sito. Non è possibile disinstallare un aggiornamento nel database del sito. Per informazioni su come creare un backup per Configuration Manager, vedere [Backup e ripristino per System Center Configuration Manager](../../../protect/understand/backup-and-recovery.md).  
+> Prima di aggiornare il database del sito, creare un backup del database del sito. Non è possibile disinstallare un aggiornamento nel database del sito. Per informazioni su come creare un backup per Configuration Manager, vedere [Eseguire il backup e il ripristino per Configuration Manager](../../../protect/understand/backup-and-recovery.md).  
 
 **Aggiornamento manuale del database del sito**  
 
@@ -237,14 +236,14 @@ Per creare un pacchetto di distribuzione software, nella pagina **Configure Soft
 > Il pacchetto per i server contiene aggiornamenti per i seguenti componenti:  
 >   
 > - Server del sito  
-> - provider SMS  
+> - Provider SMS  
 > - Database del sito  
 
 Quindi, nella pagina **Configure Software Update Deployment Method** della procedura guidata selezionare l'opzione **I will use software distribution**. Questa selezione imposta la procedura guidata in modo da creare i pacchetti di distribuzione software.  
 
 Al termine della procedura guidata, è possibile visualizzare i pacchetti creati nella console di Configuration Manager nel nodo **Pacchetti** nell'area di lavoro **Raccolta software**. È quindi possibile usare il processo standard per distribuire i pacchetti software nei client di Configuration Manager. Quando viene eseguito un pacchetto in un client, gli aggiornamenti dei componenti applicabili di Configuration Manager vengono installati nel computer client.  
 
-Per informazioni su come distribuire i pacchetti ai client di Configuration Manager, vedere [Pacchetti e programmi in System Center Configuration Manager](../../../apps/deploy-use/packages-and-programs.md).  
+Per informazioni su come distribuire i pacchetti ai client di Configuration Manager, vedere [Pacchetti e programmi](../../../apps/deploy-use/packages-and-programs.md).  
 
 ###  <a name="BKMK_DeployCollections"></a> Creare raccolte per la distribuzione degli aggiornamenti in Configuration Manager  
 È possibile distribuire aggiornamenti specifici nei client applicabili. Le informazioni seguenti consentono di creare raccolte di dispositivi per i vari componenti per Configuration Manager.  
@@ -262,4 +261,4 @@ Per informazioni su come distribuire i pacchetti ai client di Configuration Mana
 > [!NOTE]  
 > Per aggiornare un database del sito, è necessario distribuire l'aggiornamento nel server del sito per tale sito.  
 
-Per informazioni su come creare raccolte, vedere [Come creare le raccolte in System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md).  
+Per informazioni su come creare le raccolte, vedere [Come creare raccolte](../../../core/clients/manage/collections/create-collections.md).  

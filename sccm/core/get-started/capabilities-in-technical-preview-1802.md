@@ -1,7 +1,7 @@
 ---
 title: Technical Preview 1802 | Microsoft Docs
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1802 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1802 per Configuration Manager.
 ms.date: 02/09/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,21 +11,20 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 49f125ab40b44c9a70f7e53a0c7a8b34d3bc65ed
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 053270e047b46f6811add0ccb918a17b119e46d0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73704743"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804606"
 ---
-# <a name="capabilities-in-technical-preview-1802-for-system-center-configuration-manager"></a>Funzionalità della Technical Preview 1802 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1802-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1802 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili nella Technical Preview per System Center Configuration Manager, versione 1802. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. 
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1802. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. 
 
-Vedere [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview) prima di installare questa versione della Technical Preview. L'articolo consente di acquisire familiarità con i requisiti e le limitazioni generali per l'uso di una Technical Preview, con l'aggiornamento tra le versioni e con l'invio di commenti e suggerimenti.     
+Vedere [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview) prima di installare questa versione della Technical Preview. L'articolo consente di acquisire familiarità con i requisiti e le limitazioni generali per l'uso di una Technical Preview, con l'aggiornamento tra le versioni e con l'invio di commenti e suggerimenti.     
 
 
 <!--  Known Issues Template   
@@ -151,7 +150,7 @@ Provare a completare le attività. Quindi inviare **Commenti e suggerimenti** da
 4. Proseguire con la **Distribuzione guidata del software** selezionando le impostazioni di distribuzione della sequenza di attività. 
 5. Quando si raggiunge la scheda **Riepilogo** della **Distribuzione guidata del software**, fare clic su **Salva come modello**.
 6. Assegnare un nome al modello e selezionare le impostazioni da salvare nel modello. 
-7. Fare clic su **Salva**. Il modello è ora disponibile per l'uso tramite l'opzione **Seleziona modello di distribuzione**.
+7. Fare clic su **Save**. Il modello è ora disponibile per l'uso tramite l'opzione **Seleziona modello di distribuzione**.
 
 
 
@@ -200,7 +199,7 @@ Il comportamento del fallback dei gruppi di limiti dei punti di gestione non cam
 ### <a name="known-issues"></a>Problemi noti
 - I processi di distribuzione dei sistemi operativi non sono a conoscenza dei gruppi di limiti.
 
-### <a name="troubleshooting"></a>Troubleshooting
+### <a name="troubleshooting"></a>Risoluzione dei problemi
 Nel log **LocationServices.log** sono presenti nuove voci. L'attributo **Locality** identifica uno degli stati seguenti:
 - 0: Sconosciuto
 - 1: il punto di gestione specificato si trova solo nel gruppo di limiti predefinito del sito per il fallback
@@ -425,4 +424,4 @@ Le distribuzioni in più fasi automatizzano un'implementazione del software coor
 
 
 ## <a name="next-steps"></a>Passaggi successivi
-Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview).    
+Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview).    

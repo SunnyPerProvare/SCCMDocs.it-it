@@ -10,17 +10,16 @@ ms.assetid: 5d50a8d7-90d2-42da-b9fd-2edc190fa22e
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c2e6e9c03253c505505b0258c5bf658dca034931
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 083d9b55a844c72c9a08e0858016ebdcf3ffd6fa
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65497517"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75795278"
 ---
-# <a name="flowchart---download-updates-for-system-center-configuration-manager"></a>Diagramma di flusso - scaricare gli aggiornamenti per System Center Configuration Manager
+# <a name="flowchart---download-updates-for-configuration-manager"></a>Diagramma di flusso - Scaricare gli aggiornamenti per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo flusso di dati consente di visualizzare il processo con il quale un sito con un punto di connessione del servizio in linea scarica gli aggiornamenti nella console.  
 

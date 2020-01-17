@@ -10,17 +10,16 @@ ms.assetid: 101d7d4d-92db-419d-b2ae-3c1c1dea68e9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39208f0ff2265e2ca9b89647e082224c01cbd731
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 49b2edf7234e53c3fc03542f803933463190e8c1
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70890345"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825269"
 ---
 # <a name="about-client-installation-properties-published-to-active-directory-domain-services"></a>Informazioni sulle proprietà di installazione client pubblicate in Active Directory Domain Services
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Quando si estende lo schema di Active Directory per Configuration Manager e il sito viene pubblicato in Active Directory Domain Services, molte proprietà di installazione client vengono pubblicate in Active Directory Domain Services. Se un computer è in grado di rilevare le proprietà di installazione del client, può usarle durante la distribuzione del client di Configuration Manager.  
 
@@ -31,10 +30,10 @@ Quando si estende lo schema di Active Directory per Configuration Manager e il s
 -   Poiché queste informazioni vengono generate automaticamente, viene eliminato il rischio di errori umani associato all'immissione manuale delle proprietà di installazione.  
 
 > [!NOTE]  
->  Per altre informazioni su come estendere lo schema di Active Directory per Configuration Manager e come pubblicare un sito, vedere [Estensioni dello schema per System Center Configuration Manager](../../plan-design/network/schema-extensions.md).  
+>  Per altre informazioni su come estendere lo schema di Active Directory per Configuration Manager e come pubblicare un sito, vedere [Estensioni dello schema per Configuration Manager](../../plan-design/network/schema-extensions.md).  
 
 ## <a name="client-installation-properties-published-to-active-directory-domain-services"></a>Proprietà di installazione client pubblicate in Active Directory Domain Services  
-Di seguito è riportato un elenco delle proprietà di installazione client. Per altre informazioni sugli elementi elencati di seguito, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
+Di seguito è riportato un elenco delle proprietà di installazione client. Per altre informazioni su ogni elemento elencato di seguito, vedere [Informazioni sui parametri e le proprietà di installazione del client](../../../core/clients/deploy/about-client-installation-properties.md).  
 
 - Codice del sito di Configuration Manager.  
 

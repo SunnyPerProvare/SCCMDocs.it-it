@@ -10,12 +10,12 @@ ms.assetid: 19539f4d-1667-4b4c-99a1-9995f12cf5f7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 594e5a069edbb742cf4348a9b1ef7d4d4da3cf96
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: f9a272133a76fbca1b8363caf3a866b8d3b591d7
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794325"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033271"
 ---
 # <a name="recover-a-configuration-manager-site"></a>Ripristinare un sito di Configuration Manager
 
@@ -353,10 +353,6 @@ Ripetere questo processo per tutte le sequenze di attività.
 Dopo un ripristino del server del sito, immettere nuovamente le chiavi di sideload di Windows specificate per il sito. Queste chiavi vengono reimpostate durante il ripristino sito. Dopo aver immesso nuovamente le chiavi di sideload, il sito reimposta il conteggio nella colonna **Attivazioni usate** per le chiavi di sideload di Windows.
 
 Ad esempio, prima dell'errore del sito il conteggio **Attivazioni totali** è pari a **100**. Il numero di chiavi usate dal dispositivo, indicato in **Attivazioni utilizzate**, è pari a **90**. Dopo il ripristino del sito, il valore **Attivazioni totali** visualizza ancora **100**, ma la colonna **Attivazioni usate** visualizza erroneamente **0**. Successivamente all'uso da parte di 10 nuovi dispositivi di una chiave di sideload, non esistono più chiavi di sideload e per l'undicesimo dispositivo non sarà possibile applicare una chiave di sideload.
-
-### <a name="recreate-the-microsoft-intune-subscription"></a>Ricreare la sottoscrizione di Microsoft Intune
-
-Se si ripristina un server del sito di Configuration Manager dopo aver ricreato l'immagine del server del sito, la sottoscrizione di Microsoft Intune non viene ripristinata. Dopo aver ripristinato il sito, riconnettersi alla sottoscrizione. Non creare una nuova richiesta APN. Caricare invece il file PEM valido corrente. Usare lo stesso file caricato l'ultima volta che è stata configurata o rinnovata la gestione iOS. Per ulteriori informazioni, vedere [Configuring the Microsoft Intune subscription](/sccm/mdm/deploy-use/configure-intune-subscription).
 
 ### <a name="recreate-azure-services"></a>Ricreare i servizi di Azure
 

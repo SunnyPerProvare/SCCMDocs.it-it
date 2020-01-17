@@ -2,7 +2,7 @@
 title: Eseguire il backup di siti
 titleSuffix: Configuration Manager
 description: Informazioni su come eseguire un backup di siti prima di un evento di errore o di perdita di dati in Configuration Manager.
-ms.date: 08/24/2018
+ms.date: 01/08/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,22 +10,27 @@ ms.assetid: f7832d83-9ae2-4530-8a77-790e0845e12f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf20d24b8a1322f1d74c42c66f49fd8026ac075e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d13369027f38092a54db676c91287256869e03c0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67676615"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797701"
 ---
 # <a name="back-up-a-configuration-manager-site"></a>Eseguire il backup di un sito di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Preparare gli approcci di backup e ripristino per evitare la perdita di dati. Per i siti di Configuration Manager un approccio di backup e ripristino consente di ripristinare siti e gerarchie più rapidamente e con la minore perdita di dati.  
 
 Le sezioni di questo articolo illustrano come eseguire un backup dei siti. Per ripristinare un sito, vedere [Ripristino per Configuration Manager](/sccm/core/servers/manage/recover-sites).  
 
+<!--/SCCMdocs/issues/2108-->
+>[!WARNING]
+> I due metodi di backup supportati per il ripristino dei siti di Configuration Manager sono:
+>
+> - Un backup corretto dall'attività di manutenzione **Backup server sito**
+> - Un backup del database del sito ripristinato manualmente
 
 
 ## <a name="considerations-before-creating-a-backup"></a>Considerazioni prima della creazione di un backup  

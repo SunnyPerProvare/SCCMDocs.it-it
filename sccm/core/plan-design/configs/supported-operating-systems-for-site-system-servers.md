@@ -10,17 +10,16 @@ ms.assetid: 17905b4c-3895-4ad4-a69c-5e0d0fc5a8c3
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a83b55726903369677d3daf04f7c879b3660c06
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 02f1127256f3fc36d7c77cb720d9018c6a311e4c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67251658"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75801580"
 ---
 # <a name="supported-operating-systems-for-configuration-manager-site-system-servers"></a>Sistemi operativi supportati per i server dei sistemi del sito di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 L'articolo illustra in dettaglio le versioni di Windows che è possibile usare per ospitare un sito di Configuration Manager o un ruolo del sistema del sito.
@@ -240,7 +239,7 @@ L'installazione dei componenti di base è supportata per l'uso come **punto di d
 - Windows Server, versione 1803 (a partire da Configuration Manager versione 1802)  
 - Windows Server, versione 1709 (a partire da Configuration Manager versione 1710)  
 - Windows Server 2016  
-- Windows Server 2012 R2  
+- R2 per Windows Server 2012  
 - Windows Server 2012  
 
 Questo supporto presenta le limitazioni seguenti:  

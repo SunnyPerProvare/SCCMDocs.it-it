@@ -1,7 +1,7 @@
 ---
 title: Nuova versione 1610
 titleSuffix: Configuration Manager
-description: Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1610 di System Center Configuration Manager.
+description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1610 di Configuration Manager.
 ms.date: 11/23/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 45406eca95511d2380430e4cf4702fb4eca96d5d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 80548a53d00707905f24622ab3713427a41b3095
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68338975"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802770"
 ---
-# <a name="what39s-new-in-version-1610-of-system-center-configuration-manager"></a>Novità della versione 1610 di System Center Configuration Manager
+# <a name="what39s-new-in-version-1610-of-configuration-manager"></a>Novità della versione 1610 di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-L'aggiornamento 1610 per System Center Configuration Manager (Current Branch) è disponibile come aggiornamento nella console per siti installati in precedenza che eseguono la versione 1511, 1602 o 1606.
+L'aggiornamento 1610 per Configuration Manager Current Branch è disponibile come aggiornamento nella console per siti precedentemente installati che eseguono la versione 1511, 1602 o 1606.
 
 
 > [!TIP]  
@@ -95,7 +94,7 @@ Modifiche in questa versione:
 - È ora possibile modificare la chiave privata del client ottenuta da Azure Active Directory.
 - È possibile eliminare una sottoscrizione a Windows Store.
 
-Per informazioni dettagliate, vedere [Gestire le app da Windows Store per le aziende con System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
+Per informazioni dettagliate, vedere [Gestire le app da Windows Store per le aziende con Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
 
 
 ## <a name="policy-sync-for-intune-enrolled-devices"></a>Sincronizzazione criteri per i dispositivi registrati in Intune
@@ -105,7 +104,7 @@ Per informazioni dettagliate, vedere [Sincronizzare in remoto i criteri in dispo
 
 ## <a name="use-compliance-settings-to-configure-windows-defender-settings"></a>Usare le impostazioni di conformità per configurare le impostazioni di Windows Defender
 È ora possibile configurare le impostazioni del client di Windows Defender nei computer Windows 10 registrati in Intune usando gli elementi di configurazione nella console di Configuration Manager.
-Per informazioni dettagliate, vedere la sezione **Windows Defender** dell'argomento [Creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client di System Center Configuration Manager](/sccm/compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client).
+Per informazioni dettagliate, vedere la sezione **Windows Defender** in [Creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client Configuration Manager](/sccm/compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client).
 
 
 
@@ -154,7 +153,7 @@ Per una distribuzione ad alto rischio, ad esempio una sequenza di attività che 
 ![Finestra di dialogo del software richiesto](media/client-toast-notification.png)
 
 
-Per ulteriori informazioni:
+Per altre informazioni:
 - [Impostazioni per gestire le distribuzioni ad alto rischio](../../../protect/understand/settings-to-manage-high-risk-deployments.md)
 - [Come configurare le impostazioni client](../../clients/deploy/configure-client-settings.md)
 
@@ -170,7 +169,7 @@ Dopo avere approvato un'applicazione per l'installazione, è possibile scegliere
 Questa azione non comporta la disinstallazione dell'applicazione dal dispositivo. Tuttavia, impedisce agli utenti di installare nuove copie dell'applicazione da Software Center.
 
 ## <a name="filter-by-content-size-in-automatic-deployment-rules"></a>Filtrare per dimensioni del contenuto nelle regole di distribuzione automatica
-È ora possibile filtrare le dimensioni del contenuto per gli aggiornamenti software nelle regole di distribuzione automatica. Ad esempio, per scaricare solo gli aggiornamenti software inferiori a 2 MB, è possibile impostare il filtro **Dimensioni contenuto (KB)** su **< 2048**. Questo filtro impedisce che vengano scaricati in automatico gli aggiornamenti software di grandi dimensioni, al fine di migliorare il supporto della manutenzione Windows semplificata di livello inferiore quando la larghezza di banda è limitata. Per informazioni, vedere:
+È ora possibile filtrare le dimensioni del contenuto per gli aggiornamenti software nelle regole di distribuzione automatica. Ad esempio, per scaricare solo gli aggiornamenti software inferiori a 2 MB, è possibile impostare il filtro **Dimensioni contenuto (KB)** su **< 2048**. Questo filtro impedisce che vengano scaricati in automatico gli aggiornamenti software di grandi dimensioni, al fine di migliorare il supporto della manutenzione Windows semplificata di livello inferiore quando la larghezza di banda è limitata. Per informazioni dettagliate, vedere:
 - [Configuration Manager and Simplified Windows Servicing on Down Level Operating Systems](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/) (Configuration Manager e manutenzione Windows semplificata su sistemi operativi di versioni precedenti)
 - [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates)
 
@@ -203,7 +202,7 @@ Il passaggio Prepara client ConfigMgr a questo punto rimuove completamente il cl
 
 
 ## <a name="lookout-integration-for-hybrid-implementations-to-protect-ios-and-android-devices"></a>Integrazione di Lookout nelle implementazioni ibride per la protezione di dispositivi iOS e Android
-Microsoft si integra con la soluzione di protezione dalle minacce Lookout per proteggere i dispositivi mobili iOS e Android mediante il rilevamento di malware, app rischiose e altre minacce nei dispositivi. La soluzione Lookout consente di determinare il livello di minaccia, che è configurabile. È possibile creare una regola dei criteri di conformità in System Center Configuration Manager per determinare la conformità del dispositivo in base alla valutazione dei rischi di Lookout. Tramite criteri di accesso condizionale, è possibile consentire o bloccare l'accesso alle risorse aziendali in base allo stato di conformità del dispositivo. Per informazioni sull'integrazione e sul suo funzionamento, vedere [Gestire l'accesso in base a dispositivo, rete e rischio dell'applicazione](/sccm/mdm/deploy-use/mobile-threat-defense).
+Microsoft si integra con la soluzione di protezione dalle minacce Lookout per proteggere i dispositivi mobili iOS e Android mediante il rilevamento di malware, app rischiose e altre minacce nei dispositivi. La soluzione Lookout consente di determinare il livello di minaccia, che è configurabile. È possibile creare una regola dei criteri di conformità in Configuration Manager per determinare la conformità del dispositivo in base alla valutazione dei rischi di Lookout. Tramite criteri di accesso condizionale, è possibile consentire o bloccare l'accesso alle risorse aziendali in base allo stato di conformità del dispositivo. Per informazioni sull'integrazione e sul suo funzionamento, vedere [Gestire l'accesso in base a dispositivo, rete e rischio dell'applicazione](/sccm/mdm/deploy-use/mobile-threat-defense).
 
 Agli utenti dei dispositivi iOS non conformi verrà richiesto di effettuare la registrazione. Verrà inoltre richiesto di installare l'applicazione Lookout for Work, di attivare l'app e di correggere le minacce segnalate da Lookout for Work per poter accedere ai dati aziendali. Vedere le informazioni su come [Configurare e distribuire l'app Lookout for Work](/sccm/protect/deploy-use/configure-and-deploy-lookout-for-work-apps).
 
@@ -211,7 +210,7 @@ Agli utenti dei dispositivi iOS non conformi verrà richiesto di effettuare la r
 
 ## <a name="new-compliance-settings-for-configuration-items"></a>Nuove impostazioni di conformità per gli elementi di configurazione
 Sono disponibili molte nuove impostazioni che è possibile usare negli elementi di configurazione relativi a diverse piattaforme per dispositivi. Si tratta di impostazioni che in precedenza esistevano nella configurazione autonoma di Microsoft Intune, rese ora disponibili per Intune con Configuration Manager.
-Per informazioni dettagliate, vedere [Elementi di configurazione per dispositivi gestiti senza il client di System Center Configuration Manager](/sccm/compliance/deploy-use/configuration-items-for-devices-managed-without-the-client).
+Per informazioni dettagliate, vedere [Elementi di configurazione per dispositivi gestiti senza il client Configuration Manager](/sccm/compliance/deploy-use/configuration-items-for-devices-managed-without-the-client).
 
 ### <a name="new-settings-for-android-devices"></a>Nuove impostazioni per i dispositivi Android
 #### <a name="password-settings"></a>Impostazioni della password

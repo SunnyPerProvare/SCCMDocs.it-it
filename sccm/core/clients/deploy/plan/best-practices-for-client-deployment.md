@@ -1,7 +1,7 @@
 ---
 title: Procedure consigliate per la distribuzione di client
 titleSuffix: Configuration Manager
-description: Apprendere le procedure consigliate per la distribuzione client in System Center Configuration Manager.
+description: Informazioni sulle procedure ottimali per la distribuzione dei client in Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,17 +10,16 @@ ms.assetid: a933d69c-5feb-4b2b-84e8-56b3b64d5947
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3f5be163775e667571d97ef8a9d417ce6256b2d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 28f8bfb2ef012fcd4f19835190b7c042d38fd9e0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62202097"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825014"
 ---
-# <a name="best-practices-for-client-deployment-in-system-center-configuration-manager"></a>Procedure consigliate per la distribuzione di client in System Center Configuration Manager
+# <a name="best-practices-for-client-deployment-in-configuration-manager"></a>Procedure consigliate per la distribuzione dei client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 ## <a name="use-software-update-based-client-installation-for-active-directory-computers"></a>Utilizzare l'installazione client basata su aggiornamento software per i computer Active Directory  
@@ -31,7 +30,7 @@ ms.locfileid: "62202097"
 ## <a name="extend-the-active-directory-schema-and-publish-the-site-so-that-you-can-run-ccmsetup-without-command-line-options"></a>Estendere lo schema di Active Directory e pubblicare il sito in modo che sia possibile eseguire CCMSetup senza opzioni di riga di comando  
  Quando si estende lo schema di Active Directory per Configuration Manager e il sito viene pubblicato su Servizi di dominio Active Directory, molte proprietà di installazione client vengono pubblicate in Servizi di dominio Active Directory. Se un computer è in grado di rilevare le proprietà di installazione del client, può usarle durante la distribuzione del client di Configuration Manager. Poiché queste informazioni vengono generate automaticamente, viene eliminato il rischio di errori umani associato all'immissione manuale delle proprietà di installazione.  
 
- Per altre informazioni, vedere [Informazioni sulle proprietà di installazione client pubblicate in Servizi di dominio Active Directory in System Center Configuration Manager](../../../../core/clients/deploy/about-client-installation-properties-published-to-active-directory-domain-services.md).  
+ Per altre informazioni, vedere [Informazioni sulle proprietà di installazione client pubblicate in Active Directory Domain Services](../../../../core/clients/deploy/about-client-installation-properties-published-to-active-directory-domain-services.md).  
 
 ## <a name="use-a-phased-rollout-to-manage-cpu-usage"></a>Usare un'implementazione graduale per gestire l'utilizzo della CPU  
  Per ridurre al minimo l'impatto dei requisiti di elaborazione della CPU sul server del sito, usare un'implementazione graduale dei client. Distribuire i client fuori dall'orario di ufficio in modo da garantire una maggiore larghezza di banda per altri servizi durante il giorno ed evitare che i computer siano rallentati o che sia necessario un riavvio.  
@@ -48,7 +47,7 @@ ms.locfileid: "62202097"
 
  Utilizzare la proprietà FSP e installare un punto di stato di fallback in modo da poter controllare l'installazione e l'assegnazione di client e identificare eventuali problemi di comunicazione.  
 
- Per altre informazioni su queste opzioni, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](../../../../core/clients/deploy/about-client-installation-properties.md).  
+ Per altre informazioni su queste opzioni, vedere [Informazioni sulle proprietà di installazione del client](../../../../core/clients/deploy/about-client-installation-properties.md).  
 
 ## <a name="install-client-language-packs-before-you-install-the-clients"></a>Installare i Language Pack client prima di installare i client  
 È consigliabile installare i Language Pack client prima di distribuire il client. Se si installano [Language Pack client](../../../../core/servers/deploy/install/language-packs.md) (per abilitare altre lingue) in un sito dopo aver installato i client, è necessario reinstallare i client per consentire l'uso di tali lingue. Per i client di dispositivi mobili, è necessario cancellare il dispositivo e registrarlo nuovamente.  
@@ -56,7 +55,7 @@ ms.locfileid: "62202097"
 ## <a name="prepare-required-pki-certificates-in-advance"></a>Preparare in anticipo i certificati PKI richiesti  
  Per gestire dei dispositivi su Internet, dispositivi mobili registrati e computer Mac è necessario disporre di certificati PKI sui sistemi del sito (punti di gestione e punti di distribuzione) e sui dispositivi client. Sulle reti di produzione potrebbe essere richiesta l'approvazione della gestione delle modifiche per utilizzare i nuovi certificati, il riavvio dei server di sistema del sito oppure la disconnessione e l'accesso per una nuova appartenenza al gruppo. Inoltre, potrebbe essere necessario attendere un tempo sufficiente per la replica delle autorizzazioni di protezione e per i nuovi modelli di certificato.  
 
- Per altre informazioni sui certificati PKI richiesti, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
+ Per altre informazioni sui certificati PKI richiesti, vedere [Requisiti dei certificati PKI per Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
 
 ## <a name="before-you-install-clients-configure-any-required-client-settings-and-maintenance-windows"></a>Prima di installare i client, configurare le impostazioni client richieste e le finestre di manutenzione  
  Sebbene sia possibile [configurare le impostazioni client](../../../../core/clients/deploy/configure-client-settings.md) e le finestre di manutenzione prima o dopo aver installato i client, è meglio configurare le impostazioni richieste prima di installare i client in modo che le impostazioni vengano usate al momento dell'installazione. 
@@ -72,6 +71,6 @@ ms.locfileid: "62202097"
 ## <a name="use-file-based-write-filters-for-windows-embedded-devices"></a>Usare filtri di scrittura basati su file per i dispositivi Windows Embedded 
  I dispositivi incorporati che utilizzano i filtri di scrittura avanzati (EWF) sono soggetti alle risincronizzazioni dei messaggi di stato. Se si dispone solo di pochi dispositivi incorporati che utilizzano filtri di scrittura avanzati, tale evento potrebbe passare inosservato. Tuttavia, in caso di risincronizzazione delle informazioni di numerosi dispositivi integrati, come l'invio dell'inventario completo piuttosto che l'inventario differenziale, potrebbe verificarsi un significativo aumento dei pacchetti di rete e un maggiore carico di elaborazione della CPU sul server del sito.  
 
- Se è possibile scegliere il tipo di filtro di scrittura da abilitare, scegliere i filtri di scrittura basati su file. Configurare quindi le eccezioni per il mantenimento dello stato del client e dei dati di inventario tra riavvii dei dispositivi per la massima efficienza della rete e della CPU nel client di Configuration Manager. Per altre informazioni sui filtri di scrittura, vedere   [Pianificazione della distribuzione del client in dispositivi con Windows Embedded in System Center Configuration Manager](../../../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).  
+ Se è possibile scegliere il tipo di filtro di scrittura da abilitare, scegliere i filtri di scrittura basati su file. Configurare quindi le eccezioni per il mantenimento dello stato del client e dei dati di inventario tra riavvii dei dispositivi per la massima efficienza della rete e della CPU nel client di Configuration Manager. Per altre informazioni sui filtri di scrittura, vedere [Pianificazione della distribuzione del client in dispositivi con Windows Embedded](../../../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).  
 
  Per altre informazioni sul numero massimo di client con Windows Embedded supportati da un sito primario, vedere [Supported operating sysetms for clients and devices](../../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md) (Sistemi operativi supportati per client e dispositivi).  

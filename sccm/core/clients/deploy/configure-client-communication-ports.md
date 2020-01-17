@@ -1,7 +1,7 @@
 ---
 title: Configurare le porte di comunicazione client
 titleSuffix: Configuration Manager
-description: Impostare le porte di comunicazione client in System Center Configuration Manager.
+description: Impostare le porte di comunicazione client in Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,19 +10,18 @@ ms.assetid: 406bbdbf-ab4a-4121-a68b-154f96ea14ec
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8909ce8cc3a7c98c64e227810ff7916a85de7e4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 30b553bbe2a68ec97e4d5200644a88d09ee5967d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62213607"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825235"
 ---
-# <a name="how-to-configure-client-communication-ports-in-system-center-configuration-manager"></a>Come configurare porte di comunicazione client in System Center Configuration Manager
+# <a name="how-to-configure-client-communication-ports-in-configuration-manager"></a>Come configurare le porte di comunicazione client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-È possibile modificare i numeri di porta richiesta usati dai client di System Center Configuration Manager per comunicare con i sistemi del sito che usano HTTP e HTTPS per le comunicazioni. Anche se è più probabile che HTTP o HTTPS sia già stato configurato per i firewall, la notifica client che utilizza HTTP o HTTPS richiede una memoria e un utilizzo di CPU maggiori nel computer del punto di gestione rispetto all'utilizzo di un numero di porta personalizzato. È possibile specificare anche il numero di porta del sito da usare se si riattivano i client con i pacchetti di riattivazione tradizionali.  
+È possibile modificare i numeri di porta richiesti usati dai client di Configuration Manager per comunicare con i sistemi del sito che usano HTTP e HTTPS per le comunicazioni. Anche se è più probabile che HTTP o HTTPS sia già stato configurato per i firewall, la notifica client che utilizza HTTP o HTTPS richiede una memoria e un utilizzo di CPU maggiori nel computer del punto di gestione rispetto all'utilizzo di un numero di porta personalizzato. È possibile specificare anche il numero di porta del sito da usare se si riattivano i client con i pacchetti di riattivazione tradizionali.  
 
  Quando si specificano le porte di richiesta HTTP e HTTPS, è possibile specificare un numero di porta predefinito e un numero di porta alternativo. I client tentano automaticamente di utilizzare la porta alternativa se la comunicazione con la porta predefinita non riesce. È possibile specificare le impostazioni per la comunicazione dati HTTP e HTTPS.  
 
@@ -43,9 +42,9 @@ ms.locfileid: "62213607"
 
 - Reinstallare i client utilizzando l'Installazione push client guidata. L'installazione push client configura automaticamente i client con la configurazione della porta del sito corrente. Per altre informazioni su come usare Installazione guidata push client, vedere [Come installare i client di Configuration Manager usando push client](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush).  
 
-- Reinstallare i client utilizzando le proprietà di installazione CCMSetup.exe e client.msi di CCMHTTPPORT e CCMHTTPSPORT. Per altre informazioni su queste proprietà, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
+- Reinstallare i client utilizzando le proprietà di installazione CCMSetup.exe e client.msi di CCMHTTPPORT e CCMHTTPSPORT. Per altre informazioni su queste proprietà della riga di comando, vedere [Informazioni sulle proprietà di installazione del client](../../../core/clients/deploy/about-client-installation-properties.md).  
 
-- Reinstallare i client utilizzando un metodo che ricerchi le proprietà di installazione client di Configuration Manager in Servizi di dominio Active Directory. Per altre informazioni, vedere [Informazioni sulle proprietà di installazione client pubblicate in Servizi di dominio Active Directory in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties-published-to-active-directory-domain-services.md).  
+- Reinstallare i client utilizzando un metodo che ricerchi le proprietà di installazione client di Configuration Manager in Servizi di dominio Active Directory. Per altre informazioni, vedere [Informazioni sulle proprietà di installazione client pubblicate in Active Directory Domain Services](../../../core/clients/deploy/about-client-installation-properties-published-to-active-directory-domain-services.md).  
 
   Per riconfigurare i numeri di porta per i client esistenti, è inoltre possibile utilizzare lo script PORTSWITCH.VBS fornito con il supporto di installazione nella cartella SMSSETUP\Tools\PortConfiguration.  
 

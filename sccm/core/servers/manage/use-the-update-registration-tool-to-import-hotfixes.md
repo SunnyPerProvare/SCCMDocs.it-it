@@ -10,25 +10,24 @@ ms.assetid: 8cc13635-85d6-4b07-a3ec-c42188bc5c74
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1bd4d86d5ac83062da66c40b596cf86eb3d2bfa9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d547867a0b9b5fe940d7919379c41f9beb8ddbbc
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70891998"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826121"
 ---
-# <a name="use-the-update-registration-tool-to-import-hotfixes-to-system-center-configuration-manager"></a>Usare lo strumento di registrazione dell'aggiornamento per importare hotfix in System Center Configuration Manager
+# <a name="use-the-update-registration-tool-to-import-hotfixes-to-configuration-manager"></a>Usare lo strumento di registrazione dell'aggiornamento per importare hotfix in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Alcuni aggiornamenti per Configuration Manager non sono disponibili dal servizio cloud Microsoft e possono essere ottenuti solo come rilascio fuori programma. Questo si verifica, ad esempio, nel caso di un hotfix a rilascio limitato per la soluzione di un problema specifico.   
 Quando è necessario installare un rilascio fuori programma e il nome file dell'aggiornamento o dell'hotfix termina con l'estensione **update.exe**, si usa lo **strumento di registrazione dell'aggiornamento** per importare manualmente l'aggiornamento nella console di Configuration Manager. Lo strumento consente di estrarre e trasferire il pacchetto di aggiornamento nel server del sito e di registrare l'aggiornamento con la console di Configuration Manager.  
 
- Se il file dell'hotfix ha l'estensione **exe** (non **update.exe**), vedere [Usare il programma di installazione di hotfix per installare gli aggiornamenti per System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md)  
+ Se il file dell'hotfix ha estensione **exe** (non **update.exe**), vedere [Usare il programma di installazione di hotfix per installare gli aggiornamenti per Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md)  
 
 > [!NOTE]  
->  Questo argomento fornisce indicazioni generali su come installare gli hotfix che aggiornano System Center Configuration Manager. Per informazioni dettagliate su un aggiornamento o un hotfix specifico, vedere l'articolo corrispondente della Knowledge Base (KB) nel sito del supporto tecnico Microsoft.  
+>  Questo argomento fornisce indicazioni generali su come installare gli hotfix che aggiornano Configuration Manager. Per informazioni dettagliate su un aggiornamento o un hotfix specifico, vedere l'articolo corrispondente della Knowledge Base (KB) nel sito del supporto tecnico Microsoft.  
 
  **Prerequisiti per l'uso dello strumento di registrazione dell'aggiornamento:**  
 
@@ -66,4 +65,4 @@ Quando è necessario installare un rilascio fuori programma e il nome file dell'
 
 3. Aprire la console di Configuration Manager e passare ad **Amministrazione** > **Aggiornamenti e manutenzione**. Gli hotfix importati sono ora disponibili per l'installazione. Nelle versioni precedenti la 1702, Aggiornamenti e manutenzione si trova in **Amministrazione** > **Servizi cloud**.
 
-   Per informazioni sull'installazione degli aggiornamenti, vedere [Installare gli aggiornamenti nella console per System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md)  
+   Per informazioni sull'installazione degli aggiornamenti, vedere [Installare gli aggiornamenti nella console per Configuration Manager](../../../core/servers/manage/install-in-console-updates.md)  

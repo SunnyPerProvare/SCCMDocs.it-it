@@ -10,17 +10,16 @@ ms.assetid: d827cf91-b18f-4ee7-b538-24ba6f003ab9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47a85ec7dea72f08a0ec48ebb151566b8563ba9a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 50b9ed81ea7c682ed977d40472a42653aacc0b8b
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62201349"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824096"
 ---
 # <a name="how-to-monitor-clients-for-linux-and-unix-servers-in-configuration-manager"></a>Come monitorare i client per i server Linux e UNIX in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 > [!Important]  
 > A partire dalla versione 1902, Configuration Manager non supporta i client Linux o UNIX. 
@@ -45,7 +44,7 @@ ms.locfileid: "62201349"
 
  Ad esempio, è possibile raccogliere l'elenco di tutti i programmi installati in modo nativo presenti nei server Linux e UNIX. Esempi di programmi installati in modo nativo includono **.rpms** in Linux o **.pkgs** in Solaris. Dopo che un inventario è stato inviato da un client Linux o UNIX, è possibile visualizzare l'elenco di tutti i programmi Linux o UNIX installati in modo nativo in Esplora inventario risorse nella console di Configuration Manager.  
 
- Per informazioni su come usare Esplora inventario risorse, vedere [Come usare Esplora inventario risorse per visualizzare l'inventario hardware in System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md).  
+ Per informazioni su come usare Esplora inventario risorse, vedere [Come usare Esplora inventario risorse per visualizzare l'inventario hardware](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md).  
 
 ##  <a name="BKMK_UseReportsforLnU"></a> Come usare i report per visualizzare informazioni per i server Linux e UNIX  
  I report per Configuration Manager includono informazioni dei server Linux e UNIX, insieme a informazioni dei computer basati su Windows. Non sono necessarie configurazioni aggiuntive per integrare i dati di Linux e UNIX nei report.  
@@ -54,4 +53,4 @@ ms.locfileid: "62201349"
 
  È anche possibile creare report personalizzati specifici dei dati dei server Linux e UNIX. La proprietà **Didascalia** della classe di inventario hardware **Sistema operativo** è un attributo utile che è possibile usare per identificare sistemi operativi specifici nella query del report.  
 
- Per informazioni sui report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../../core/servers/manage/reporting.md).  
+ Per informazioni sui report in Configuration Manager, vedere [Creazione di report](../../../core/servers/manage/reporting.md).  

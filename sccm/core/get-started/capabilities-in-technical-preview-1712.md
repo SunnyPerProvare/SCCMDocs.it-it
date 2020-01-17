@@ -1,7 +1,7 @@
 ---
 title: Technical Preview 1712 | Microsoft Docs
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1712 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1712 per Configuration Manager.
 ms.date: 12/15/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,21 +11,20 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 571884ded86bd6c0ef7ce2d9a0d92ec9ac9457f7
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8086f527a82b6b9b9c5125a244daee4ddcdfe33d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70379455"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804657"
 ---
-# <a name="capabilities-in-technical-preview-1712-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1712 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1712-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1712 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1712 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. 
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1712. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. 
 
-Vedere [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview) prima di installare questa versione della Technical Preview. L'articolo consente di acquisire familiarità con i requisiti e le limitazioni generali per l'uso di una Technical Preview, con l'aggiornamento tra le versioni e con l'invio di commenti e suggerimenti sulle funzionalità di una Technical Preview.     
+Vedere [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview) prima di installare questa versione della Technical Preview. L'articolo consente di acquisire familiarità con i requisiti e le limitazioni generali per l'uso di una Technical Preview, con l'aggiornamento tra le versioni e con l'invio di commenti e suggerimenti sulle funzionalità di una Technical Preview.     
 
 
 <!--  Known Issues Template   
@@ -156,4 +155,4 @@ Continuare a usare la [pagina UserVoice](https://configurationmanager.uservoice.
 <!-- When we have another H2 in this topic, Add this Next Steps section back in.  -->
 
 ## <a name="next-steps"></a>Passaggi successivi
-Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview).    
+Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview).    

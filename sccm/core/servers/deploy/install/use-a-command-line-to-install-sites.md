@@ -1,7 +1,7 @@
 ---
 title: Installazione da riga di comando
 titleSuffix: Configuration Manager
-description: Informazioni su come eseguire il programma di installazione di System Center Configuration Manager da un prompt dei comandi per vari tipi di installazione del sito.
+description: Informazioni su come eseguire il programma di installazione di Configuration Manager al prompt dei comandi per vari tipi di installazione di siti.
 ms.date: 03/27/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: e7cdb1a9-140a-436e-ac71-72d083110223
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e24fb163d144d69b11e7ae1aae4a5ebc5e0c38f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d059ca50cd56bc252e70070abee1b862bbed7b03
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70888704"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797901"
 ---
-# <a name="use-a-command-line-to-install-system-center-configuration-manager-sites"></a>Usare una riga di comando per installare i siti di System Center Configuration Manager
+# <a name="use-a-command-line-to-install-configuration-manager-sites"></a>Usare la riga di comando per installare siti di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
- È possibile eseguire il programma di installazione di System Center Configuration Manager da un prompt dei comandi per installare vari tipi di siti.
+ È possibile eseguire il programma di installazione di Configuration Manager al prompt dei comandi per installare vari tipi di siti.
 
 ## <a name="supported-tasks-for-command-line-installations"></a>Attività supportate per le installazioni da riga di comando
  Questo metodo di installazione supporta le seguenti attività di installazione e manutenzione del sito:
@@ -53,7 +52,7 @@ ms.locfileid: "70888704"
     Per un'installazione automatica di un sito di amministrazione centrale o di un sito primario, il file script deve avere le sezioni seguenti:  
 
   - Identification    
-  - Opzioni    
+  - Options    
   - SQLConfigOptions    
     -   HierarchyOptions    
   - CloudConnectorOptions   

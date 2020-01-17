@@ -1,7 +1,7 @@
 ---
 title: Distribuire contenuto
 titleSuffix: Configuration Manager
-description: Ecco come è possibile iniziare a distribuire contenuto ai punti di distribuzione per System Center Configuration Manager dopo averli installati.
+description: Ecco come è possibile iniziare a distribuire contenuto ai punti di distribuzione per Configuration Manager dopo averli installati.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: d50dcca0-4419-449d-a487-73abcadf328f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ce4d2f54163ba4dd891b5b70092de59cac38bcf
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ad5cc86aac61dfd86771b623b6ce51399f0bc714
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74840480"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798749"
 ---
-# <a name="deploy-and-manage-content-for-system-center-configuration-manager"></a>Distribuire e gestire contenuto per System Center Configuration Manager
+# <a name="deploy-and-manage-content-for-configuration-manager"></a>Distribuire e gestire contenuto per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-È possibile iniziare a distribuire contenuto ai punti di distribuzione per System Center Configuration Manager dopo averli installati. In genere, il contenuto viene trasferito ai punti di distribuzione in rete, ma esistono altre opzioni per inviare il contenuto ai punti di distribuzione. Dopo che il contenuto è stato trasferito in un punto di distribuzione, è possibile aggiornare, ridistribuire, rimuovere e convalidare il contenuto nei punti di distribuzione.  
+È possibile iniziare a distribuire contenuto ai punti di distribuzione per Configuration Manager dopo averli installati. In genere, il contenuto viene trasferito ai punti di distribuzione in rete, ma esistono altre opzioni per inviare il contenuto ai punti di distribuzione. Dopo che il contenuto è stato trasferito in un punto di distribuzione, è possibile aggiornare, ridistribuire, rimuovere e convalidare il contenuto nei punti di distribuzione.  
 
 ##  <a name="bkmk_distribute"></a> Distribuire il contenuto  
 In genere, il contenuto viene distribuito ai punti di distribuzione in modo che sia disponibile per i computer client. Un'eccezione a questo comportamento si verifica quando si usa la distribuzione del contenuto su richiesta per una distribuzione specifica.  Quando si distribuisce il contenuto, Configuration Manager archivia i file di contenuto in un pacchetto e distribuisce il pacchetto al punto di distribuzione. È possibile distribuire diversi tipi di contenuto, tra cui:  
@@ -89,7 +88,7 @@ Utilizzare la procedura seguente per distribuire contenuto nei punti di distribu
     - **Raccolte**: selezionare **Raccolte utenti** o **Raccolte dispositivi**, fare clic sulla raccolta associata a uno o più gruppi di punti di distribuzione e quindi fare clic su **OK**.  
 
         > [!NOTE]  
-        > Vengono visualizzate solo le raccolte associate a un gruppo di punti di distribuzione. Per altre informazioni su come associare le raccolte ai gruppi di punti di distribuzione, vedere [Manage distribution point groups](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) (Gestire i gruppi di punti di distribuzione) in [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Installare e configurare i punti di distribuzione per System Center Configuration Manager).  
+        > Vengono visualizzate solo le raccolte associate a un gruppo di punti di distribuzione. Per altre informazioni su come associare le raccolte ai gruppi di punti di distribuzione, vedere [Gestire i gruppi di punti di distribuzione](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) nell'argomento [Installare e configurare punti di distribuzione per Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md).  
 
     - **Punto di distribuzione**: selezionare un punto di distribuzione esistente e quindi fare clic su **OK**. Non vengono visualizzati i punti di distribuzione che hanno ricevuto il contenuto in precedenza.  
 
@@ -101,7 +100,7 @@ Utilizzare la procedura seguente per distribuire contenuto nei punti di distribu
 
 8.  La pagina **Avanzamento** visualizza l'avanzamento della distribuzione.  
 
-9. La pagina **Conferma** visualizza se il contenuto è stato correttamente assegnato ai punti. Per monitorare la distribuzione del contenuto, vedere [Monitor content you have distributed with System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md) (Monitorare il contenuto distribuito con System Center Configuration Manager).  
+9. La pagina **Conferma** visualizza se il contenuto è stato correttamente assegnato ai punti. Per monitorare la distribuzione del contenuto, vedere [Monitorare il contenuto distribuito con Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
 
 ##  <a name="bkmk_prestage"></a> Usare il contenuto pre-installazione  
 È possibile pre-installare i file di contenuto per applicazioni e tipi di pacchetti:  
@@ -222,7 +221,7 @@ Utilizzare le sezioni seguenti per pre-installare il contenuto.
     - **Raccolte**: selezionare **Raccolte utenti** o **Raccolte dispositivi**, fare clic sulla raccolta associata a uno o più gruppi di punti di distribuzione e quindi fare clic su **OK**.  
 
       > [!NOTE]  
-      > Vengono visualizzate solo le raccolte associate a un gruppo di punti di distribuzione.  Per altre informazioni, vedere [Manage distribution point groups](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) (Gestire i gruppi di punti di distribuzione) nell'argomento [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md)(Installare e configurare i punti di distribuzione per System Center Configuration Manager).  
+      > Vengono visualizzate solo le raccolte associate a un gruppo di punti di distribuzione.  Per altre informazioni, vedere [Gestire i gruppi di punti di distribuzione](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) nell'argomento [Installare e configurare punti di distribuzione per Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md).  
 
     - **Punto di distribuzione**: selezionare un punto di distribuzione esistente e quindi fare clic su **OK**. Non vengono visualizzati i punti di distribuzione che hanno ricevuto il contenuto in precedenza.  
 
@@ -234,7 +233,7 @@ Utilizzare le sezioni seguenti per pre-installare il contenuto.
 
 8.  La pagina **Avanzamento** visualizza l'avanzamento della distribuzione.  
 
-9. La pagina **Conferma** visualizza se il contenuto è stato correttamente assegnato ai punti di distribuzione oppure no. Per monitorare la distribuzione del contenuto, vedere [Monitor content you have distributed with System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md) (Monitorare il contenuto distribuito con System Center Configuration Manager).  
+9. La pagina **Conferma** visualizza se il contenuto è stato correttamente assegnato ai punti di distribuzione oppure no. Per monitorare la distribuzione del contenuto, vedere [Monitorare il contenuto distribuito con Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
 
 ###  <a name="BKMK_ExportContentFromPrestagedContentFile"></a> Passaggio 3: Estrarre i contenuti dal file dei contenuti in versione di preproduzione  
 Dopo aver creato il file di contenuto pre-installazione e aver assegnato il contenuto ai punti di distribuzione, è possibile estrarre i file di contenuto nella raccolta contenuto nel server del sito o in un punto di distribuzione. In genere, il file di contenuti in versione di preproduzione viene copiato in un'unità portatile, ad esempio un'unità USB, oppure il contenuto viene masterizzato in un supporto, ad esempio un DVD, ed è disponibile nel percorso del server del sito o nel punto di distribuzione che richiede il contenuto.  
@@ -471,7 +470,7 @@ Il processo di convalida del contenuto consente di verificare l'integrità dei f
 
 Quando il processo di convalida del contenuto viene avviato, Configuration Manager verifica i file di contenuto nei punti di distribuzione e se l'hash del file non è previsto per i file nel punto di distribuzione crea un messaggio di stato che è possibile verificare nell'area di lavoro **Monitoraggio**.  
 
-Per altre informazioni sulla configurazione della pianificazione di convalida del contenuto, vedere [Distribution point configurations](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs) (Configurazioni dei punti di distribuzione) nell'argomento [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Installare e configurare i punti di distribuzione per System Center Configuration Manager).  
+Per altre informazioni sulla configurazione della pianificazione di convalida del contenuto, vedere [Configurazioni dei punti di distribuzione](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs) nell'argomento [Installare e configurare punti di distribuzione per Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md).  
 
 
 #### <a name="to-initiate-content-validation-for-all-content-on-a-distribution-point"></a>Per avviare la convalida del contenuto per tutti i contenuti in un punto di distribuzione  
@@ -484,7 +483,7 @@ Per altre informazioni sulla configurazione della pianificazione di convalida de
 
 4.  Nella scheda **Contenuto** selezionare il pacchetto in cui si desidera convalidare il contenuto, fare clic su **Convalida**, quindi su **OK**e infine di nuovo su **OK**. Il processo di convalida contenuto viene avviato per il pacchetto nel punto di distribuzione.  
 
-5.  Per visualizzare i risultati del processo di convalida contenuto, nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**e fare clic sul nodo **Stato contenuto** . Viene visualizzato il contenuto per ogni tipo di pacchetto (ad esempio, applicazione, pacchetto di aggiornamento software e immagine di avvio). Per altre informazioni sul monitoraggio dello stato del contenuto, vedere [Monitor content you have distributed with System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md) (Monitorare il contenuto distribuito con System Center Configuration Manager).  
+5.  Per visualizzare i risultati del processo di convalida contenuto, nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**e fare clic sul nodo **Stato contenuto** . Viene visualizzato il contenuto per ogni tipo di pacchetto (ad esempio, applicazione, pacchetto di aggiornamento software e immagine di avvio). Per altre informazioni sul monitoraggio dello stato del contenuto, vedere [Monitorare il contenuto distribuito con Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
 
 #### <a name="to-initiate-content-validation-for-a-package"></a>Per avviare la convalida del contenuto per un pacchetto  
 
@@ -510,4 +509,4 @@ Per altre informazioni sulla configurazione della pianificazione di convalida de
 
 4.  Nella scheda **Percorsi contenuto** selezionare il punto di distribuzione o il gruppo di punti di distribuzione in cui si desidera convalidare il contenuto, fare clic su **Convalida**, quindi su **OK**e infine di nuovo su **OK**. Il processo di convalida contenuto viene avviato per il contenuto nel punto di distribuzione selezionato o nel gruppo di punti di distribuzione.  
 
-5.  Per visualizzare i risultati del processo di convalida contenuto, nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**e fare clic sul nodo **Stato contenuto** . Viene visualizzato il contenuto per ogni tipo di pacchetto (ad esempio, applicazione, pacchetto di aggiornamento software e immagine di avvio). Per altre informazioni sul monitoraggio dello stato del contenuto, vedere [Monitor content you have distributed with System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md) (Monitorare il contenuto distribuito con System Center Configuration Manager).  
+5.  Per visualizzare i risultati del processo di convalida contenuto, nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**e fare clic sul nodo **Stato contenuto** . Viene visualizzato il contenuto per ogni tipo di pacchetto (ad esempio, applicazione, pacchetto di aggiornamento software e immagine di avvio). Per altre informazioni sul monitoraggio dello stato del contenuto, vedere [Monitorare il contenuto distribuito con Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  

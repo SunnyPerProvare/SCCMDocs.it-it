@@ -1,7 +1,7 @@
 ---
 title: 'Scenario di esempio: distribuire client Windows Embedded'
 titleSuffix: Configuration Manager
-description: Scenario di esempio per la distribuzione e la gestione dei client di System Center Configuration Manager in dispositivi con Windows Embedded.
+description: Descrizione di uno scenario di esempio per la distribuzione e la gestione dei client di Configuration Manager in dispositivi con Windows Embedded.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,17 +10,16 @@ ms.assetid: 10049c89-b37c-472b-b317-ce4f56cd4be7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f0cc9800931c802d29edd5cacc1f1ed5e95c24e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 0d6e318a9606eb4988d28a363ea40c5eec3a7cde
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65933274"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825065"
 ---
-# <a name="example-scenario-for-deploying-and-managing-system-center-configuration-manager-clients-on-windows-embedded-devices"></a>Scenario di esempio per la distribuzione e la gestione dei client di System Center Configuration Manager in dispositivi con Windows Embedded
+# <a name="example-scenario-for-deploying-and-managing-configuration-manager-clients-on-windows-embedded-devices"></a>Scenario di esempio per la distribuzione e la gestione dei client di Configuration Manager in dispositivi con Windows Embedded
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo scenario illustra come è possibile gestire i dispositivi con Windows Embedded abilitati per i filtri di scrittura con System Center Configuration Manager. Se i dispositivi integrati non supportano i filtri di scrittura, funzionano come client standard di Configuration Manager e queste procedure non sono applicabili.  
 
@@ -32,17 +31,17 @@ Coho Vineyard & Winery sta per aprire un centro visite e deve installare dei chi
 
 1. L'amministratore di Configuration Manager legge in che modo i dispositivi Windows Embedded usano i filtri di scrittura e come Configuration Manager può semplificare questa operazione disabilitando e riabilitando automaticamente i filtri di scrittura per salvare in modo permanente un'installazione software.  
 
-    Per altre informazioni, vedere [Planning for client deployment to Windows Embedded devices in System Center Configuration Manager](../../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md) (Pianificazione della distribuzione client a dispositivi con Windows Embedded in System Center Configuration Manager).  
+    Per altre informazioni, vedere [Pianificazione della distribuzione del client in dispositivi con Windows Embedded](../../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).  
 
 2. Prima di installare il client di Configuration Manager, l'amministratore crea una nuova raccolta dispositivi basata su query per i dispositivi Windows Embedded. Poiché la società usa formati di denominazione standard per identificare i computer, l'amministratore può identificare i dispositivi Windows Embedded con le prime sei lettere del nome computer: **WEMDVC**. Per creare la raccolta, l'amministratore usa la query WQL seguente: **select SMS_R_System.NetbiosName from SMS_R_System where SMS_R_System.NetbiosName like "WEMDVC%"**  
 
     Questa raccolta consente all'amministratore di gestire i dispositivi Windows Embedded con opzioni di configurazione diverse di altri dispositivi. L'amministratore userà questa raccolta per controllare i riavvii, distribuire Endpoint Protection con impostazioni client e distribuire l'applicazione per le presentazioni interattive.  
 
-    Vedere [How to create collections in System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md) (Come creare raccolte in System Center Configuration Manager).  
+    Vedere [Come creare le raccolte](../../../core/clients/manage/collections/create-collections.md).  
 
 3. L'amministratore configura una finestra di manutenzione per la raccolta, per assicurarsi che i riavvii eventualmente richiesti per l'installazione dell'applicazione per le presentazioni e per eventuali aggiornamenti non si verifichino durante gli orari di apertura del centro visite. Gli orari di apertura saranno dalle 9:00 alle 18:00, da lunedì a domenica. L'amministratore configura l'attivazione della finestra di manutenzione ogni giorno, dalle 18:30 alle 06:00.  
 
-4. Per altre informazioni, vedere [Come usare le finestre di manutenzione in System Center Configuration Manager](../../../core/clients/manage/collections/use-maintenance-windows.md).  
+4. Per altre informazioni, vedere [Come usare le finestre di manutenzione](../../../core/clients/manage/collections/use-maintenance-windows.md).  
 
 5. L'amministratore configura quindi un'impostazione personalizzata per il client dei dispositivi che consente di installare il client di Endpoint Protection selezionando **Sì** per le impostazioni che seguono e quindi distribuisce l'impostazione client personalizzata nella raccolta dispositivi Windows Embedded:  
 
@@ -57,7 +56,7 @@ Coho Vineyard & Winery sta per aprire un centro visite e deve installare dei chi
    > [!NOTE]  
    >  I riavvii richiesti per installare il client di Endpoint Protection avvengono solo una volta, che avviene durante l'installazione dei dispositivi e prima che il centro visite sia operativo. Diversamente dalla distribuzione periodica degli aggiornamenti di definizioni per applicazioni o software, il client di Endpoint Protection sarà installato nuovamente nello stesso dispositivo quando l'azienda eseguirà l'aggiornamento alla nuova versione di Configuration Manager.  
 
-    Per altre informazioni, vedere [Configuring Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/configure-endpoint-protection.md) (Configurazione di Endpoint Protection in System Center Configuration Manager).  
+    Per altre informazioni, vedere [Configurazione di Endpoint Protection](../../../protect/deploy-use/configure-endpoint-protection.md).  
 
 6. Dopo aver definito le impostazioni di configurazione per il client, l'amministratore prepara l'installazione dei client di Configuration Manager. Prima di installare i client, l'amministratore deve disabilitare manualmente il filtro di scrittura nei dispositivi Windows Embedded. Legge quindi la documentazione OEM che accompagna i chioschi multimediali e segue le istruzioni per disabilitare i filtri di scrittura.  
 
@@ -73,15 +72,15 @@ Coho Vineyard & Winery sta per aprire un centro visite e deve installare dei chi
 
     Per altre informazioni, vedere:  
 
-   -   [How to deploy clients to Windows computers in System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-windows-computers.md) (Come distribuire i client nei computer Windows in System Center Configuration Manager)  
+   -   [Come distribuire i client nei computer Windows](../../../core/clients/deploy/deploy-clients-to-windows-computers.md)  
 
-   -   [How to assign clients to a site in System Center Configuration Manager](../../../core/clients/deploy/assign-clients-to-a-site.md) (Come assegnare i client a un sito in System Center Configuration Manager)  
+   -   [Come assegnare i client a un sito](../../../core/clients/deploy/assign-clients-to-a-site.md)  
 
 7. Il client di Configuration Manager è ora configurato nei dispositivi Windows Embedded e l'amministratore verifica di poterli gestire nello stesso modo in cui gestisce i client Windows standard. Dalla console di Configuration Manager può, ad esempio, gestire i client in remoto tramite il controllo remoto, avviare criteri client e visualizzare le proprietà dei client e l'inventario hardware.  
 
     Questi dispositivi fanno parte di un dominio di Active Directory. L'amministratore non deve quindi approvarli manualmente come client attendibili e ne conferma l'approvazione dalla console di Configuration Manager.  
 
-    Per altre informazioni, vedere [Come gestire i client in System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
+    Per altre informazioni, vedere [Come gestire i client](../../../core/clients/manage/manage-clients.md).  
 
 8. Per installare il software per le presentazioni interattive, l'amministratore esegue la **Distribuzione guidata del software** e configura un'applicazione richiesta. Nella sezione **Gestione filtri di scrittura per dispositivi con Windows Embedded** della pagina **Esperienza utente** della procedura guidata accetta l'opzione predefinita **Invia modifiche alla scadenza o in una finestra di manutenzione (riavvio necessario)** .  
 
@@ -89,7 +88,7 @@ Coho Vineyard & Winery sta per aprire un centro visite e deve installare dei chi
 
     L'amministratore distribuisce l'applicazione nella raccolta dispositivi Windows Embedded.  
 
-    Per altre informazioni, vedere [How to deploy applications with System Center Configuration Manager](../../../apps/deploy-use/deploy-applications.md)(Come distribuire le applicazioni con System Center Configuration Manager).  
+    Per altre informazioni, vedere [Come distribuire applicazioni in Configuration Manager](../../../apps/deploy-use/deploy-applications.md).  
 
 9. Per configurare gli aggiornamenti delle definizioni per Endpoint Protection, l'amministratore usa gli aggiornamenti software ed esegue la Creazione guidata delle regole di distribuzione automatica. Seleziona il modello **Aggiornamenti della definizione** per il popolamento preliminare della procedura guidata con le impostazioni appropriate per Endpoint Protection.  
 
@@ -107,7 +106,7 @@ Coho Vineyard & Winery sta per aprire un centro visite e deve installare dei chi
      L'amministratore seleziona la raccolta dispositivi Windows Embedded per la regola di distribuzione automatica.  
 
      Per ulteriori informazioni, vedere  
-               Passaggio 3: Configurare gli aggiornamenti software di Configuration Manager per inviare gli aggiornamenti delle definizioni ai computer client in [Configurazione di Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/configure-endpoint-protection.md)  
+               Passaggio 3: Configurare gli aggiornamenti software di Configuration Manager per inviare gli aggiornamenti delle definizioni ai computer client in [Configurazione di Endpoint Protection](../../../protect/deploy-use/configure-endpoint-protection.md)  
 
 10. L'amministratore decide di configurare un'attività di manutenzione che esegue periodicamente il commit di tutte le modifiche alla sovrimpressione. Questa attività serve per supportare le definizioni di aggiornamento software e per ridurre il numero di aggiornamenti che si sono accumulati e che devono essere installati di nuovo ogni volta che il dispositivo si riavvia. Nella sua esperienza, in questo modo i programmi antimalware funzionano in modo più efficiente.  
 
@@ -133,7 +132,7 @@ Coho Vineyard & Winery sta per aprire un centro visite e deve installare dei chi
     7. L'amministratore completa la procedura guidata senza altre modifiche.  
 
        Per ulteriori informazioni, vedere  
-                 [Manage task sequences to automate tasks in System Center Configuration Manager](../../../osd/deploy-use/manage-task-sequences-to-automate-tasks.md) (Gestire le sequenze di attività per automatizzare le attività in System Center Configuration Manager).  
+                 [Gestire le sequenze di attività per automatizzare le attività](../../../osd/deploy-use/manage-task-sequences-to-automate-tasks.md).  
 
 11. Per l'esecuzione automatica dei chioschi multimediali, l'amministratore scrive uno script per configurare i dispositivi con le impostazioni seguenti:  
 
@@ -143,7 +142,7 @@ Coho Vineyard & Winery sta per aprire un centro visite e deve installare dei chi
 
       L'amministratore usa pacchetti e programmi per distribuire questo script nella raccolta dispositivi Windows Embedded. Quando esegue la Distribuzione guidata del software, l'amministratore seleziona di nuovo la casella di controllo **Invia modifiche alla scadenza o in una finestra di manutenzione (riavvio necessario)** per rendere permanenti le modifiche dopo un riavvio.  
 
-      Per altre informazioni, vedere [Pacchetti e programmi in System Center Configuration Manager](../../../apps/deploy-use/packages-and-programs.md).  
+      Per altre informazioni, vedere [Packages and programs](../../../apps/deploy-use/packages-and-programs.md) (Pacchetti e programmi).  
 
 12. Il mattino seguente, l'amministratore controlla i dispositivi Windows Embedded. Verifica quanto segue:  
 
@@ -157,9 +156,9 @@ Coho Vineyard & Winery sta per aprire un centro visite e deve installare dei chi
 
       Per altre informazioni, vedere:  
 
-    - [How to monitor Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/monitor-endpoint-protection.md) (Come monitorare Endpoint Protection in System Center Configuration Manager).  
+    - [Come monitorare Endpoint Protection](../../../protect/deploy-use/monitor-endpoint-protection.md)  
 
-    - [Monitor applications with System Center Configuration Manager](/sccm/apps/deploy-use/monitor-applications-from-the-console) (Monitorare le applicazioni con System Center Configuration Manager)  
+    - [Monitorare le applicazioni con Configuration Manager](/sccm/apps/deploy-use/monitor-applications-from-the-console)  
 
 13. L'amministratore esegue il monitoraggio dei chioschi multimediali e ne segnala la corretta gestione al manager. Di conseguenza, vengono ordinati 20 chioschi per il centro visite.  
 

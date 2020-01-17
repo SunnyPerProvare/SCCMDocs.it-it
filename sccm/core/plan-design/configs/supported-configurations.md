@@ -1,7 +1,7 @@
 ---
 title: Configurazioni supportate
 titleSuffix: Configuration Manager
-description: Identificare le configurazioni e i requisiti principali in modo da pianificare, distribuire e manutenere una distribuzione di System Center Configuration Manager funzionale.
+description: Identificare le configurazioni e i requisiti principali in modo da pianificare, distribuire e manutenere una distribuzione di Configuration Manager funzionale.
 ms.date: 10/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: 45a10878-ff48-4318-9c6d-c014b38a4039
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7fd2805ad886bd0e2f8d6dbcadc8953ae20be24c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 20384ae1705f35fc4b99d4245bbc6a2567428825
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71999009"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75801716"
 ---
-# <a name="supported-configurations-for-system-center-configuration-manager"></a>Configurazioni supportate per System Center Configuration Manager
+# <a name="supported-configurations-for-configuration-manager"></a>Configurazioni supportate per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Come soluzione locale, System Center Configuration Manager usa server, client, configurazioni di rete e altri prodotti quali Microsoft Intune, SQL Server e Azure.
+Come soluzione locale, Configuration Manager usa server, client, configurazioni di rete e altri prodotti quali Microsoft Intune, SQL Server e Azure.
 
 Le informazioni in questo e negli argomenti seguenti sono fondamentali per identificare le configurazioni, i requisiti e limitazioni principali per poter pianificare, distribuire e mantenere una distribuzione di Configuration Manager funzionale.  Queste informazioni sono specifiche per l'infrastruttura per i siti, le gerarchie e i dispositivi gestiti di Configuration Manager.
 
@@ -33,7 +32,7 @@ Quando una funzionalità di Configuration Manager richiede configurazioni più s
 > [!NOTE]  
 >  Per informazioni sui criteri del ciclo di vita del supporto Microsoft, vedere le domande frequenti nel sito [Criteri relativi al ciclo di vita Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=31976).  
 
- I prodotti e le versioni di prodotto non elencati negli argomenti seguenti non sono supportati con System Center Configuration Manager a meno che non siano annunciati nel blog [Enterprise Mobility and Security Blog](https://blogs.technet.microsoft.com/enterprisemobility/).  In alcuni casi è possibile che i contenuti del blog anticipino un aggiornamento alla documentazione.
+ I prodotti e le versioni di prodotto non elencati negli argomenti seguenti non sono supportati con Configuration Manager a meno che non siano annunciati nel blog [Enterprise Mobility and Security Blog](https://blogs.technet.microsoft.com/enterprisemobility/).  In alcuni casi è possibile che i contenuti del blog anticipino un aggiornamento alla documentazione.
 
 
 -  [Numeri di ridimensionamento e scalabilità](../../../core/plan-design/configs/size-and-scale-numbers.md)  

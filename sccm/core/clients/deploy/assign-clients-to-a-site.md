@@ -1,7 +1,7 @@
 ---
 title: Assegnare client a un sito
 titleSuffix: Configuration Manager
-description: Assegnare client a un sito in System Center Configuration Manager.
+description: Assegnare i client a un sito in Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,19 +10,18 @@ ms.assetid: ba9b623f-6e86-4006-93f2-83d563de0cd0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31456cac8ff242c377b441a14503c3766f40cf9f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 32944157759e537c5b01061ab8648f242cfdac57
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62202080"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825252"
 ---
-# <a name="how-to-assign-clients-to-a-site-in-system-center-configuration-manager"></a>Come assegnare i client a un sito in System Center Configuration Manager
+# <a name="how-to-assign-clients-to-a-site-in-configuration-manager"></a>Come assegnare i client a un sito in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Dopo l'installazione di un client di System Center Configuration Manager, è necessario aggiungerlo a un sito primario di Configuration Manager perché possa essere gestito. Il sito a cui si aggiunge il client viene definito come *sito assegnato*. I client non possono essere assegnati a un sito di amministrazione centrale o a un sito secondario.  
+Dopo l'installazione di un client di Configuration Manager, è necessario aggiungerlo a un sito primario di Configuration Manager perché possa essere gestito. Il sito a cui si aggiunge il client viene definito come *sito assegnato*. I client non possono essere assegnati a un sito di amministrazione centrale o a un sito secondario.  
 
 Il processo di assegnazione si verifica dopo che il client è stato installato correttamente e determina il sito che gestisce il computer client. È possibile assegnare il client direttamente a un sito oppure usare l'assegnazione sito automatica in cui il client individua automaticamente un sito appropriato sulla base del suo attuale percorso di rete o un sito di fallback configurato per la gerarchia.
 
@@ -69,7 +68,7 @@ Se non è possibile completare l'assegnazione del client al sito, il software cl
 > [!NOTE]  
 >  Se un client di Configuration Manager ha più schede di rete e di conseguenza più indirizzi IP, l'indirizzo IP usato per l'assegnazione al sito di un client a scopo di valutazione viene assegnato in modo casuale.  
 
- Per informazioni su come configurare gruppi di limiti per l'assegnazione sito e un sito di fallback per l'assegnazione sito automatica, vedere [Definire i limiti del sito e i gruppi di limiti per System Center Configuration Manager](../../../core/servers/deploy/configure/define-site-boundaries-and-boundary-groups.md).  
+ Per informazioni su come configurare gruppi di limiti per l'assegnazione sito e un sito di fallback per l'assegnazione sito automatica, vedere [Definire i limiti del sito e i gruppi di limiti per Configuration Manager](../../../core/servers/deploy/configure/define-site-boundaries-and-boundary-groups.md).  
 
  I client di Configuration Manager che usano l'assegnazione al sito automatica tentano di individuare i gruppi limite del sito pubblicati in Servizi di dominio Active Directory. Se tale metodo ha esito negativo, se ad esempio lo schema Active Directory non è esteso per Configuration Manager oppure i client sono computer di un gruppo di lavoro, i client possono reperire le informazioni sui gruppi di limiti da un punto di gestione.  
 
@@ -91,7 +90,7 @@ Se non è possibile completare l'assegnazione del client al sito, il software cl
  L'assegnazione al sito ha esito negativo se un client che esegue Windows 2000 viene assegnato a un sito di Configuration Manager. Quando si assegna un client di Configuration Manager 2007 o di System Center 2012 Configuration Manager a un sito di Configuration Manager (Current Branch), l'assegnazione ha esito positivo per il supporto dell'aggiornamento automatico del client. Tuttavia, finché i client di generazione precedente non vengono aggiornati a un client di Configuration Manager (ramo corrente), Configuration Manager non riuscirà a gestire questo client usando le impostazioni, le applicazioni o gli aggiornamenti software del client.  
 
 > [!NOTE]  
->  Per supportare l'assegnazione di un client di Configuration Manager 2007 o di System Center 2012 Configuration Manager a un sito di Configuration Manager (ramo corrente), è necessario configurare l'aggiornamento automatico del client per la gerarchia. Per altre informazioni, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
+>  Per supportare l'assegnazione di un client di Configuration Manager 2007 o di System Center 2012 Configuration Manager a un sito di Configuration Manager (ramo corrente), è necessario configurare l'aggiornamento automatico del client per la gerarchia. Per altre informazioni, vedere [Come aggiornare i client per i computer Windows](../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
 
 Configuration Manager controlla anche che il client di Configuration Manager (ramo corrente) sia stato assegnato a un sito che lo supporta. Durante la migrazione da versioni precedenti di Configuration Manager potrebbero verificarsi gli scenari seguenti.  
 
@@ -136,7 +135,7 @@ Una volta scaricati i criteri client da un punto di gestione nel sito, il client
 ##  <a name="downloading-site-settings"></a>Download delle impostazioni del sito  
  Al termine dell'assegnazione del sito e dopo che il client ha rilevato un punto di gestione, un computer client che utilizza Servizi di dominio Active Directory per il relativo controllo di compatibilità del sito scarica le impostazioni del sito relative al client per il sito assegnato. Tali impostazioni includono i criteri di selezione del certificato client, l'opzione per l'utilizzo di un elenco di revoche di certificati e i numeri porta di richiesta client. Il client continuerà a controllare queste impostazioni su base periodica.  
 
- Quando i computer client non sono in grado di ottenere le impostazioni del sito da Servizi di dominio Active Directory, le scaricano dal proprio punto di gestione. I computer client possono ottenere tali impostazioni anche quando vengono installati tramite installazione push client oppure quando vengono specificate manualmente usando le proprietà di installazione client e CCMSetup.exe. Per altre informazioni sulle proprietà di installazione dei client, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
+ Quando i computer client non sono in grado di ottenere le impostazioni del sito da Servizi di dominio Active Directory, le scaricano dal proprio punto di gestione. I computer client possono ottenere tali impostazioni anche quando vengono installati tramite installazione push client oppure quando vengono specificate manualmente usando le proprietà di installazione client e CCMSetup.exe. Per altre informazioni su queste proprietà di installazione del client, vedere [Informazioni sui parametri e le proprietà di installazione del client](../../../core/clients/deploy/about-client-installation-properties.md).  
 
 ##  <a name="downloading-client-settings"></a>Download delle impostazioni client  
  Tutti i client scaricano i criteri delle impostazioni client predefinite nonché qualsiasi criterio delle impostazioni client personalizzate applicabile. Software Center si basa su questi criteri di configurazione client per i computer Windows e comunica agli utenti che non potrà essere eseguito correttamente finché tali informazioni di configurazione non saranno scaricate. A seconda delle impostazioni client configurate, il download iniziale potrebbe richiedere qualche istante e alcune attività di gestione client potrebbero non essere eseguite fino al completamente del processo.  

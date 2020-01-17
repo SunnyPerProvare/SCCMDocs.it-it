@@ -10,28 +10,27 @@ ms.assetid: f4f9a5fd-f573-4b99-ad93-b2c76812e922
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0c3c77175f739ff45364c3c014fee6f11fd662c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 467052e4d22b812a0ed6c7b06f3691560f522453
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68340130"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825830"
 ---
-# <a name="install-and-upgrade-with-the-version-1606-baseline-media-for-system-center-configuration-manager"></a>Eseguire installazioni e aggiornamenti con il supporto di base della versione 1606 per System Center Configuration Manager
+# <a name="install-and-upgrade-with-the-version-1606-baseline-media"></a>Eseguire l'installazione e l'aggiornamento con il supporto di base della versione 1606
 
-*Si applica a:  System Center Configuration Manager (Current Branch), (Long-Term Servicing Branch)*
+*Si applica a: System Center Configuration Manager (Long-Term Servicing Branch)*
 
-Quando si esegue il programma di installazione dal supporto di base della versione 1606 per Configuration Manager, è possibile installare Long-Term Servicing Branch o un sito di Current Branch di System Center Configuration Manager.
+Quando si esegue il programma di installazione dal supporto di base della versione 1606 per Configuration Manager, è possibile installare un sito Long-Term Servicing Branch di System Center Configuration Manager.
 
-Il supporto di base è disponibile su DVD come parte di Microsoft System Center 2016 o in System Center Configuration Manager Current Branch e Long-Term Servicing Branch 1606. Per informazioni sui supporti di base, vedere [Baseline and update versions](../servers/manage/updates.md#bkmk_Baselines) (Versioni base e di aggiornamento).
+Il supporto di base è disponibile su DVD come parte di Microsoft System Center 2016 o in System Center Configuration Manager Long-Term Servicing Branch versione 1606. Per informazioni sui supporti di base, vedere [Baseline and update versions](../servers/manage/updates.md#bkmk_Baselines) (Versioni base e di aggiornamento).
 
 
 Quando si usa il supporto di base della versione 1606, il sito che si installa o a cui si esegue l'aggiornamento è:
 - Un *sito Current Branch* equivalente a un sito installato in precedenza con il supporto di base della versione 1511 e quindi aggiornato alla versione 1606 con l'hotfix rollup 1606 (KB3186654).
 - Un *sito LTSB* equivalente al sito Current Branch che esegue la versione 1606 con l'hotfix rollup 1606 (KB3186654). Il supporto di base include già l'hotfix rollup.  Ma LTSB non supporta tutte le funzionalità e tutte le caratteristiche disponibili con Current Branch, come descritto in dettaglio in [Introduzione a Long-Term Servicing Branch di System Center Configuration Manager](introduction-to-the-ltsb.md).
 
-Se non si ha familiarità con i diversi rami di System Center Configuration Manager, vedere [Which branch of Configuration Manager should I use](which-branch-should-i-use.md) (Scelta del ramo di Configuration Manager da usare).
+Se non si ha familiarità con i diversi rami di Configuration Manager, vedere [Scelta del ramo di Configuration Manager da usare](which-branch-should-i-use.md).
 
 
 
@@ -42,7 +41,7 @@ Il supporto di base della versione 1606 introduce nel programma di installazione
 ### <a name="branch-and-edition"></a>Ramo ed edizione
 Quando si esegue il programma di installazione, viene ora visualizzata una pagina di gestione licenze in cui è possibile selezionare il ramo di Configuration Manager da installare. È possibile scegliere di installare con licenza Current Branch o LTSB oppure è possibile scegliere una copia di valutazione di Current Branch come installazione senza licenza.
 
-Per altre informazioni, vedere [Licensing and branches for System Center Configuration Manager](learn-more-editions.md) (Licenze e branch per System Center Configuration Manager).
+Per altre informazioni, vedere [Licenze e rami per Configuration Manager](learn-more-editions.md).
 
 ### <a name="software-assurance-expiration"></a>Scadenza di Software Assurance
 Durante l'installazione, è possibile immettere il valore della **data di scadenza di Software Assurance**. Questo è un valore facoltativo, che è possibile specificare come utile promemoria.
@@ -50,10 +49,10 @@ Durante l'installazione, è possibile immettere il valore della **data di scaden
 > [!NOTE]
 > Microsoft non convalida la data di scadenza immessa e non userà tale data per la convalida della licenza.  È possibile invece usarla come promemoria della data di scadenza. Configuration Manager infatti verifica periodicamente online la disponibilità di nuovi aggiornamenti software. Per usufruire di questi aggiornamenti aggiuntivi, è necessario che lo stato della licenza di Software Assurance sia regolare.    
 
-- È possibile specificare il valore della data nella pagina **Codice Product Key** dell'Installazione guidata quando si esegue il programma di installazione dal supporto di base di System Center Configuration Manager versione 1606.
+- È possibile specificare il valore della data nella pagina **Codice Product Key** dell'Installazione guidata quando si esegue il programma di installazione dal supporto di base di Configuration Manager versione 1606.
 - È anche possibile specificare la data selezionando **Proprietà delle impostazioni di gerarchia** > **Gestione licenze** nella console di Configuration Manager.
 
-Per altre informazioni, vedere "Contratti Software Assurance" in [Licenze e rami per System Center Configuration Manager](learn-more-editions.md).
+Per altre informazioni, vedere "Contratti Software Assurance" in [Licenze e rami per Configuration Manager](learn-more-editions.md).
 
 
 ### <a name="additional-pre-upgrade-configurations"></a>Configurazioni aggiuntive pre-aggiornamento
@@ -63,7 +62,7 @@ Disinstallare i ruoli del sistema del sito che LTSB non supporta:
 - Connettore Microsoft Intune
 - Punti di distribuzione basati su cloud
 
-Per altre informazioni, vedere l'articolo relativo agli [aggiornamenti a System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).
+Per altre informazioni, vedere [Eseguire l'aggiornamento a Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).
 
 
 ### <a name="new-scripted-installation-options"></a>Nuove opzioni di installazione tramite script
@@ -73,11 +72,11 @@ Quando si usa uno script automatico per installare un ramo con licenza, è neces
 
  **SABranchOptions**
 - **Nome chiave: SAActive**
-  - Valori: 0 o 1.  
+  - Valori possibili: 0 o 1.  
   - Dettagli:  0 installa una copia di valutazione senza licenza di Current Branch, 1 installa una versione con licenza.   
 
 - **CurrentBranch**
-  - Valori: 0 o 1.  
+  - Valori possibili: 0 o 1.  
   - Dettagli:  0 installa Long-Term Servicing Branch, 1 installa Current Branch.  
 
 Ad esempio, per installare una versione con licenza di Current Branch si usa:
@@ -92,11 +91,11 @@ Ad esempio, per installare una versione con licenza di Current Branch si usa:
 >
 > **SABranchOptions** non si applica agli aggiornamenti tramite script da System Center Configuration Manager 2012 e installa sempre Current Branch.
 
-Per altre informazioni, vedere [Use a command line to install System Center Configuration Manager sites](/sccm/core/servers/deploy/install/use-a-command-line-to-install-sites) (Installare siti di System Center Configuration Manager dalla riga di comando).
+Per altre informazioni, vedere [Usare una riga di comando per installare i siti di Configuration Manager](/sccm/core/servers/deploy/install/use-a-command-line-to-install-sites).
 
 
 ## <a name="install-a-new-site"></a>Installare un nuovo sito
-Quando si usa il supporto di base della versione 1606 per installare un nuovo sito di uno dei due rami, usare le procedure di pianificazione, preparazione e installazione del sito documentate nell'argomento [Installare i siti di System Center Configuration Manager](/sccm/core/servers/deploy/install/installing-sites), con l'aggiunta delle considerazioni seguenti per l'installazione:
+Quando si usa il supporto di base della versione 1606 per installare un nuovo sito di uno dei due rami, usare le procedure di pianificazione, preparazione e installazione del sito documentate nell'argomento [Installazione dei siti di Configuration Manager](/sccm/core/servers/deploy/install/installing-sites), con l'aggiunta delle considerazioni seguenti per l'installazione:
 
 - Durante l'installazione è necessario scegliere il ramo di Configuration Manager che si vuole installare specificando i dettagli del contratto Software Assurance.
 - Tutti i siti di una gerarchia devono eseguire lo stesso ramo. Non è supportata una gerarchia con una combinazione di LTSB e Current Branch in siti diversi.
@@ -110,7 +109,7 @@ Quando si usa il supporto di base della versione 1606 per installare un nuovo si
 Per altre informazioni sull'espansione di un sito, vedere "Espandere un sito primario autonomo" in [Usare l'installazione guidata per installare i siti di System Center Configuration Manager](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites).
 
 ## <a name="upgrade-from-system-center-2012-configuration-manager"></a>Eseguire l'aggiornamento da System Center Configuration Manager 2012
-Quando si esegue l'aggiornamento da System Center Configuration Manager 2012, usare le attività di pianificazione e preparazione del sito e le procedure documentate nell'argomento [Eseguire l'aggiornamento a System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager), ma con le modifiche seguenti:
+Quando si esegue l'aggiornamento da Configuration Manager 2012, usare le attività di pianificazione e preparazione del sito e le procedure documentate nell'argomento [Eseguire l'aggiornamento a System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager), ma con le modifiche seguenti:
 
 **Aggiornamento a Current Branch:**
 - Durante l'installazione è necessario scegliere Current Branch, specificando i dettagli del contratto Software Assurance.
@@ -122,7 +121,7 @@ Quando si esegue l'aggiornamento da System Center Configuration Manager 2012, us
 - È possibile aggiornare un sito che esegue System Center 2012 Configuration Manager con Service Pack 1, System Center 2012 Configuration Manager con Service Pack 2, System Center 2012 R2 Configuration Manager con Service Pack 1 o System Center 2012 R2 Configuration Manager senza service pack.
 
 ### <a name="in-place-upgrade-paths-for-the-1606-baseline-media"></a>Percorsi di aggiornamento sul posto per il supporto di base della versione 1606
-È possibile usare il supporto di base della versione 1606 per aggiornare a una versione con licenza di System Center Configuration Manager i prodotti seguenti:
+È possibile usare il supporto di base della versione 1606 per aggiornare a una versione con licenza di Configuration Manager i prodotti seguenti:
 - System Center Configuration Manager 2012 R2 con Service Pack 1
 - System Center 2012 R2 Configuration Manager senza Service Pack (richiede l'uso del supporto di base della versione 1606 rilasciato il 15 dicembre 2016).
 - System Center 2012 Configuration Manager con Service Pack 2
@@ -134,7 +133,7 @@ Quando si esegue l'aggiornamento da System Center Configuration Manager 2012, us
 Questo supporto non supporta l'aggiornamento di:
 - Altre versioni di System Center Configuration Manager 2012.
 - Configuration Manager 2007 o versioni precedenti.
-- L'installazione di una versione finale candidata di System Center Configuration Manager.
+- L'installazione di una versione finale candidata di Configuration Manager.
 
 ## <a name="about-the-cdlatest-folder-and-the-ltsb"></a>Informazioni sulla cartella CD.Latest e su LTSB
 Di seguito sono riportate le limitazioni per l'uso del supporto che Configuration Manager crea nella cartella CD.Latest nel server del sito. Questi limiti si applicano ai siti che eseguono LTSB.
@@ -150,6 +149,6 @@ Il supporto nella cartella CD.Latest non è supportato per:
 Per altre informazioni, vedere [Cartella CD.Latest per System Center Configuration Manager](/sccm/core/servers/manage/the-cd.latest-folder).
 
 ## <a name="backup-recovery-and-site-maintenance-for-the-ltsb"></a>Backup, ripristino e manutenzione del sito per LTSB
-Per eseguire il backup e il ripristino o eseguire la manutenzione di un sito che esegue LTSB, seguire le linee guida e le procedure in [Backup e ripristino per System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery).  
+Per eseguire il backup e il ripristino o eseguire la manutenzione di un sito che esegue LTSB, seguire le linee guida e le procedure in [Backup e ripristino per Configuration Manager](/sccm/protect/understand/backup-and-recovery).  
 
 Usare il programma di installazione di Configuration Manager della cartella CD.Latest del backup del sito LTSB.

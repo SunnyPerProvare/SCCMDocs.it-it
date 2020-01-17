@@ -1,7 +1,7 @@
 ---
 title: Concetti di base della gestione dei client
 titleSuffix: Configuration Manager
-description: Informazioni sulle attività da eseguire per gestire i client di System Center Configuration Manager.
+description: Informazioni sulle attività da eseguire per gestire i client di Configuration Manager.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: 8d4e5641-354e-4439-8b4f-620a760e233d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 468d21123e6a4166957b7dcc8cda614a78d2366e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: eb35071145b0d115e2e139bc6848c6fe7bb66705
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62252647"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825881"
 ---
-# <a name="fundamentals-of-client-management-tasks-for-system-center-configuration-manager"></a>Nozioni fondamentali sulle attività di gestione client per System Center Configuration Manager
+# <a name="fundamentals-of-client-management-tasks-for-configuration-manager"></a>Nozioni fondamentali sulle attività di gestione client per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Dopo aver installato i client di System Center Configuration Manager è possibile eseguire diverse attività per la gestione dei client.  Alcune delle attività vengono eseguite dalla console di Configuration Manager, altre dall'applicazione client di Configuration Manager. L'applicazione client di Configuration Manager viene installata con il software client di Configuration Manager.
+Dopo aver installato i client di Configuration Manager è possibile eseguire diverse attività per la gestione dei client.  Alcune delle attività vengono eseguite dalla console di Configuration Manager, altre dall'applicazione client di Configuration Manager. L'applicazione client di Configuration Manager viene installata con il software client di Configuration Manager.
 
 ## <a name="configuration-manager-console-tasks"></a>Attività dalla console di Configuration Manager
  Nella console di Configuration Manager è possibile eseguire diverse attività di gestione dei client:  
@@ -41,8 +40,8 @@ Dopo aver installato i client di System Center Configuration Manager è possibil
 
 La console di Configuration Manager consente di monitorare le attività precedenti in tempo quasi reale. Le informazioni di notifica e di stato per ogni attività sono disponibili nella console di Configuration Manager. Per acquisire dati e tendenze cronologiche, usare le funzionalità per la creazione di report integrate di SQL Reporting Services. I client inviano i dettagli al sito come stato del client.  Le informazioni sullo stato del client offrono dati sull'integrità e sulle attività del client e possono essere visualizzate nella console o usando i report predefiniti per Configuration Manager. Questi dati consentono di identificare i computer che non rispondono e, in alcuni casi, i problemi vengono risolti automaticamente.  
 
- Per altre informazioni sulle attività di gestione per i client, vedere  [How to manage clients in System Center Configuration Manager](../../core/clients/manage/manage-clients.md) (Come gestire i client in System Center Configuration Manager) e [Come gestire i client per i server Linux e UNIX in System Center Configuration Manager](../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md). Per informazioni sull'uso dei report, vedere   
-            [Introduzione ai report in System Center Configuration Manager](../../core/servers/manage/introduction-to-reporting.md).  
+ Per altre informazioni sulle attività di gestione per i client, vedere [Come gestire i client ](../../core/clients/manage/manage-clients.md) e [Come gestire i client per i server Linux e UNIX](../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md). Per informazioni sull'uso dei report, vedere   
+            [Introduzione alla creazione di report](../../core/servers/manage/introduction-to-reporting.md).  
 
 ## <a name="configuration-manager-client-application"></a>Applicazione client di Configuration Manager  
  Quando si installa il software client di Configuration Manager, viene installata anche l'applicazione client di Configuration Manager. A differenza di Software Center, l'applicazione client di Configuration Manager è progettata per l'help desk piuttosto che per gli utenti finali. Per alcune opzioni di configurazione sono necessarie autorizzazioni amministrative locali e la maggior parte delle opzioni necessita di competenze tecniche relative al funzionamento dell'applicazione client di Configuration Manager. È possibile usare questa applicazione per eseguire le attività seguenti in un client:  

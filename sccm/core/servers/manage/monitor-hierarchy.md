@@ -10,22 +10,21 @@ ms.assetid: 007dbb73-18a7-48a3-a489-97cf9fc4f140
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd15890bf08d9db359f336b3ca68914fa9c2a9c6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 93b2ab22b0503dd673a8f0ad85da91449e327185
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68957851"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794658"
 ---
 # <a name="monitor-the-hierarchy"></a>Monitorare la gerarchia
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Per monitorare la gerarchia in Configuration Manager, usare l'area di lavoro **Monitoraggio** della console di Configuration Manager.  
 
 > [!NOTE]  
-> La migrazione dei siti costituisce un'eccezione. Questo processo viene monitorato nel nodo **Migrazione** dell'area di lavoro **Amministrazione**. Per altre informazioni, vedere [Operazioni per la migrazione a System Center Configuration Manager](/sccm/core/migration/operations-for-migration).  
+> La migrazione dei siti costituisce un'eccezione. Questo processo viene monitorato nel nodo **Migrazione** dell'area di lavoro **Amministrazione**. Per altre informazioni, vedere [Operazioni per la migrazione a Configuration Manager Current Branch](/sccm/core/migration/operations-for-migration).  
 
 Per il monitoraggio, oltre alla console di Configuration Manager, usare le funzionalità seguenti:
 

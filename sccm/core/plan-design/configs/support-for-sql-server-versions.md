@@ -10,19 +10,18 @@ ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9c84044705c014c547291ea70203e16f3eab004
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d0b5d97754bc20c446664fe6b5af110afa7afbc7
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68822473"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75801971"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>Versioni di SQL Server supportate per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Ogni sito di System Center Configuration Manager richiede una versione e una configurazione di SQL Server supportate per ospitare il database del sito.  
+Ogni sito di Configuration Manager richiede una versione e una configurazione di SQL Server supportate per ospitare il database del sito.  
 
 ##  <a name="bkmk_Instances"></a> Istanze e percorsi di SQL Server  
  

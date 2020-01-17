@@ -1,7 +1,7 @@
 ---
 title: Eseguire la migrazione del contenuto
 titleSuffix: Configuration Manager
-description: Usare i punti di distribuzione per gestire il contenuto durante la migrazione dei dati a una gerarchia di destinazione di System Center Configuration Manager.
+description: Usare i punti di distribuzione per gestire il contenuto durante la migrazione dei dati a una gerarchia di destinazione di Configuration Manager Current Branch.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: 66f7759c-6272-4116-aad7-0d05db1d46cd
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1df57ef2d51a9cd525dbd9b8d99a909baf47ef95
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1ad58e113a7cf1c80c59bf09db68a4438222681c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62234605"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75803161"
 ---
-# <a name="plan-a-content-deployment-migration-strategy-in-system-center-configuration-manager"></a>Pianificare una strategia di migrazione per la distribuzione del contenuto in System Center Configuration Manager
+# <a name="plan-a-content-deployment-migration-strategy-in-configuration-manager"></a>Pianificare una strategia di migrazione per la distribuzione del contenuto in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Mentre si esegue la migrazione attiva dei dati in una gerarchia di destinazione di System Center Configuration Manager, i client Configuration Manager in entrambe le gerarchie di origine e destinazione possono mantenere l'accesso al contenuto distribuito nella gerarchia di origine. È anche possibile usare la migrazione per aggiornare o riassegnare i punti di distribuzione dalla gerarchia di origine come punti di distribuzione nella gerarchia di destinazione. Quando si condividono e aggiornano o riassegnano i punti di distribuzione, questa strategia consente di evitare la redistribuzione del contenuto nella gerarchia di destinazione per i client di cui si effettua la migrazione.  
+Mentre si esegue la migrazione attiva dei dati in una gerarchia di destinazione di Configuration Manager Current Branch, i client di Configuration Manager in entrambe le gerarchie di origine e destinazione possono mantenere l'accesso al contenuto distribuito nella gerarchia di origine. È anche possibile usare la migrazione per aggiornare o riassegnare i punti di distribuzione dalla gerarchia di origine come punti di distribuzione nella gerarchia di destinazione. Quando si condividono e aggiornano o riassegnano i punti di distribuzione, questa strategia consente di evitare la redistribuzione del contenuto nella gerarchia di destinazione per i client di cui si effettua la migrazione.  
 
 Sebbene sia possibile ricreare e distribuire il contenuto nella gerarchia di destinazione, è possibile utilizzare anche le seguenti opzioni per la gestione del contenuto:  
 
@@ -30,28 +29,12 @@ Sebbene sia possibile ricreare e distribuire il contenuto nella gerarchia di des
 
 -   Aggiornare i punti di distribuzione autonomi di Configuration Manager 2007 oppure i siti secondari di Configuration Manager 2007 nella gerarchia di origine in modo che diventino punti di distribuzione nella gerarchia di destinazione.  
 
--   Riassegnare i punti di distribuzione da una gerarchia di origine di System Center Configuration Manager a un sito nella gerarchia di destinazione.  
-
-Utilizzare le sezioni seguenti per pianificare la distribuzione del contenuto durante la migrazione:  
-
--   [Condividere punti di distribuzione tra gerarchie di origine e destinazione](#About_Shared_DPs_in_Migration)  
-
--   [Pianificare l'aggiornamento dei punti di distribuzione condivisi di Configuration Manager 2007](#Planning_to_Upgrade_DPs)  
-
-    -   [Processo di aggiornamento del punto di distribuzione](#BKIMK_UpgradeProcess)  
-
-    -   [Pianificare l'aggiornamento dei siti secondari di Configuration Manager 2007](#BKMK_UpgradeSS)  
-
--   [Pianificare la riassegnazione dei punti di distribuzione di System Center Configuration Manager](#BKMK_ReassignDistPoint)  
-
-    -   [Processo di riassegnazione dei punti di distribuzione](#BKMK_ReassignProcess)  
-
--   [Proprietà del contenuto durante la migrazione del contenuto](#About_Migrating_Content)  
+-   Riassegnare i punti di distribuzione da una gerarchia di origine di Configuration Manager a un sito nella gerarchia di destinazione.  
 
 ##  <a name="About_Shared_DPs_in_Migration"></a> Condividere punti di distribuzione tra gerarchie di origine e destinazione  
 Durante la migrazione, è possibile condividere i punti di distribuzione di una gerarchia di origine con la gerarchia di destinazione. È possibile utilizzare punti di distribuzione condivisi per rendere il contenuto di cui si è effettuata la migrazione da una gerarchia di origine immediatamente disponibile ai client della gerarchia di destinazione senza dover ricreare quel contenuto, quindi distribuirlo nei nuovi punti di distribuzione nella gerarchia di destinazione. Quando i client della gerarchia di destinazione richiedono il contenuto che viene distribuito nei punti di distribuzione condivisi, i punti di distribuzione condivisi possono essere forniti ai client come percorsi di contenuto validi.  
 
- Oltre a essere un percorso di contenuto valido per i client nella gerarchia di destinazione mentre la migrazione dalla gerarchia di origine è attiva, è possibile aggiornare o riassegnare un punto di distribuzione alla gerarchia di destinazione. È possibile aggiornare i punti di distribuzione condivisi di Configuration Manager 2007 e riassegnare i punti di distribuzione condivisi di System Center 2012 Configuration Manager. Quando si aggiorna o si riassegna un punto di distribuzione condiviso, il punto di distribuzione viene rimosso dalla gerarchia di origine e diventa un punto di distribuzione nella gerarchia di destinazione. Dopo aver aggiornato o riassegnato un punto di distribuzione condiviso, è possibile continuare a utilizzare il punto di distribuzione nella gerarchia di destinazione dopo che la migrazione dalla gerarchia di origine sia terminata. Per altre informazioni su come aggiornare un punto di distribuzione condiviso, vedere [Pianificare l'aggiornamento dei punti di distribuzione condivisi di Configuration Manager 2007](#Planning_to_Upgrade_DPs). Per altre informazioni su come riassegnare un punto di distribuzione condiviso, vedere [Pianificare la riassegnazione dei punti di distribuzione di System Center Configuration Manager](#BKMK_ReassignDistPoint).  
+ Oltre a essere un percorso di contenuto valido per i client nella gerarchia di destinazione mentre la migrazione dalla gerarchia di origine è attiva, è possibile aggiornare o riassegnare un punto di distribuzione alla gerarchia di destinazione. È possibile aggiornare i punti di distribuzione condivisi di Configuration Manager 2007 e riassegnare i punti di distribuzione condivisi di System Center 2012 Configuration Manager. Quando si aggiorna o si riassegna un punto di distribuzione condiviso, il punto di distribuzione viene rimosso dalla gerarchia di origine e diventa un punto di distribuzione nella gerarchia di destinazione. Dopo aver aggiornato o riassegnato un punto di distribuzione condiviso, è possibile continuare a utilizzare il punto di distribuzione nella gerarchia di destinazione dopo che la migrazione dalla gerarchia di origine sia terminata. Per altre informazioni su come aggiornare un punto di distribuzione condiviso, vedere [Pianificare l'aggiornamento dei punti di distribuzione condivisi di Configuration Manager 2007](#Planning_to_Upgrade_DPs). Per altre informazioni su come riassegnare un punto di distribuzione condiviso, vedere [Pianificare la riassegnazione dei punti di distribuzione di Configuration Manager](#BKMK_ReassignDistPoint).  
 
  È possibile scegliere punti di distribuzione da qualsiasi sito di origine nella gerarchia di origine. Quando si condividono punti di distribuzione per un sito di origine, i siti secondari figlio vengono condivisi in ogni punto di distribuzione valido in tale sito primario e in ogni sito primario. Per poter diventare un punto di distribuzione condiviso, il server del sistema del sito che ospita il punto di distribuzione deve essere configurato con un nome di dominio completo (FQDN). Tutti i punti di distribuzione configurati con un nome NetBIOS vengono ignorati.  
 
@@ -60,7 +43,7 @@ Durante la migrazione, è possibile condividere i punti di distribuzione di una 
 
 Per la pianificazione dei punti di distribuzione condivisi, utilizzare le seguenti informazioni:  
 
--   I punti di distribuzione condivisi devono soddisfare i prerequisiti per i punti di distribuzione condivisi. Per altre informazioni su questi prerequisiti, vedere [Configurazioni necessarie per la migrazione](../../core/migration/prerequisites-for-migration.md#BKMK_Required_Configurations) in [Prerequisiti per la migrazione in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
+-   I punti di distribuzione condivisi devono soddisfare i prerequisiti per i punti di distribuzione condivisi. Per altre informazioni su questi prerequisiti, vedere [Configurazioni necessarie per la migrazione](../../core/migration/prerequisites-for-migration.md#BKMK_Required_Configurations) in [Prerequisiti per la migrazione](../../core/migration/prerequisites-for-migration.md).  
 
 -   L'azione di condivisione del punto di distribuzione è un'impostazione a livello di sito che condivide tutti i punti di distribuzione validi in un sito di origine e in tutti i siti secondari figlio diretti. Non è possibile selezionare singoli punti di distribuzione da condividere quando si abilita la condivisione dei punti di distribuzione.  
 
@@ -76,26 +59,26 @@ Per la pianificazione dei punti di distribuzione condivisi, utilizzare le seguen
 
 -   È possibile visualizzare i punti di distribuzione condivisi e le loro proprietà nel nodo **Gerarchia di origine** dell'area di lavoro **Amministrazione** nella console di Configuration Manager che si connette alla gerarchia di destinazione.  
 
--   Non è possibile usare un punto di distribuzione condiviso da una gerarchia di origine di Configuration Manager 2007 per ospitare pacchetti per Microsoft Application Virtualization (App-V). È necessario migrare i pacchetti App-V e convertirli per essere utilizzati dai client nella gerarchia di destinazione. È possibile tuttavia usare un punto di distribuzione condiviso da una gerarchia di System Center 2012 Configuration Manager o System Center Configuration Manager per ospitare i pacchetti App-V per client in una gerarchia di destinazione.  
+-   Non è possibile usare un punto di distribuzione condiviso da una gerarchia di origine di Configuration Manager 2007 per ospitare pacchetti per Microsoft Application Virtualization (App-V). È necessario migrare i pacchetti App-V e convertirli per essere utilizzati dai client nella gerarchia di destinazione. È possibile tuttavia usare un punto di distribuzione condiviso da una gerarchia di System Center 2012 Configuration Manager o Configuration Manager Current Branch per ospitare i pacchetti App-V per client in una gerarchia di destinazione.  
 
 -   Quando si condivide un punto di distribuzione protetto da una gerarchia di origine di Configuration Manager 2007, la gerarchia di destinazione crea un gruppo di limiti che include i percorsi di rete protetti di tale punto di distribuzione. Non è possibile modificare questo gruppo di limiti nella gerarchia di destinazione. Se si modificano tuttavia le informazioni sui limiti protetti per il punto di distribuzione nella gerarchia di origine di Configuration Manager 2007, tale modifica si riflette nella gerarchia di destinazione dopo il termine del ciclo di raccolta dati successivo.  
 
     > [!NOTE]  
-    >  I siti di System Center 2012 Configuration Manager e System Center Configuration Manager seguono il concetto dei punti di distribuzione preferiti invece che quello dei punti di distribuzione protetti. Tale condizione si applica solo ai punti di distribuzione che vengono condivisi dai siti di origine di Configuration Manager 2007.  
+    >  I siti di System Center 2012 Configuration Manager e Configuration Manager Current Branch seguono il concetto dei punti di distribuzione preferiti invece che quello dei punti di distribuzione protetti. Tale condizione si applica solo ai punti di distribuzione che vengono condivisi dai siti di origine di Configuration Manager 2007.  
 
 I punti di distribuzione idonei non sono visibili nella console di Configuration Manager prima di condividere punti di distribuzione da un sito di origine. Dopo aver condiviso i punti di distribuzione, vengono elencati solo i punti di distribuzione condivisi correttamente.  
 
 Dopo aver condiviso i punti di distribuzione, è possibile modificare la configurazione di tutti i punti di distribuzione condivisi nella gerarchia di origine. Le modifiche apportate alla configurazione di un punto di distribuzione vengono riflesse nella gerarchia di destinazione dopo il ciclo di raccolta dati successivo. I punti di distribuzione aggiornati per la condivisione vengono condivisi automaticamente, mentre quelli che non soddisfano più le condizioni interrompono la condivisione dei punti di distribuzione. Ad esempio, si potrebbe avere un punto di distribuzione che non è configurato con un nome FQDN Intranet e che non veniva inizialmente condiviso con la gerarchia di destinazione. Dopo avere configurato il nome FQDN per tale punto di distribuzione, il ciclo di raccolta dati successivo identifica questa configurazione e il punto di distribuzione viene quindi condiviso con la gerarchia di destinazione.  
 
 ##  <a name="Planning_to_Upgrade_DPs"></a> Pianificare l'aggiornamento dei punti di distribuzione condivisi di Configuration Manager 2007  
-Quando si esegue la migrazione da una gerarchia di origine di Configuration Manager 2007, è possibile aggiornare un punto di distribuzione condiviso per renderlo un punto di distribuzione di System Center Configuration Manager. È possibile aggiornare i punti di distribuzione nei siti primari e nei siti secondari. Il processo di aggiornamento rimuove il punto di distribuzione dalla gerarchia di Configuration Manager 2007 e lo rende come server di sistema del sito nella gerarchia di destinazione. Questo processo copia anche il contenuto esistente che si trova nel punto di distribuzione in un nuovo percorso nel computer del punto di distribuzione. Il processo di aggiornamento quindi modifica la copia del contenuto per creare l'archivio a istanza singola di  da utilizzare con la distribuzione contenuti di nella gerarchia di destinazione. Quando si aggiorna un punto di distribuzione, non è necessario ridistribuire il contenuto di cui è stata eseguita la migrazione ospitato nel punto di distribuzione di Configuration Manager 2007.  
+Quando si esegue la migrazione da una gerarchia di origine di Configuration Manager 2007, è possibile aggiornare un punto di distribuzione condiviso per renderlo un punto di distribuzione di Configuration Manager Current Branch. È possibile aggiornare i punti di distribuzione nei siti primari e nei siti secondari. Il processo di aggiornamento rimuove il punto di distribuzione dalla gerarchia di Configuration Manager 2007 e lo rende come server di sistema del sito nella gerarchia di destinazione. Questo processo copia anche il contenuto esistente che si trova nel punto di distribuzione in un nuovo percorso nel computer del punto di distribuzione. Il processo di aggiornamento quindi modifica la copia del contenuto per creare l'archivio a istanza singola di  da utilizzare con la distribuzione contenuti di nella gerarchia di destinazione. Quando si aggiorna un punto di distribuzione, non è necessario ridistribuire il contenuto di cui è stata eseguita la migrazione ospitato nel punto di distribuzione di Configuration Manager 2007.  
 
 Dopo che Configuration Manager converte il contenuto nel formato Single Instance Store, elimina il contenuto di origine nel computer del punto di distribuzione per liberare spazio su disco. Configuration Manager non usa il percorso del contenuto di origine iniziale.  
 
-Non tutti i punti di distribuzione di Configuration Manager 2007, che è possibile condividere, sono idonei all'aggiornamento a System Center Configuration Manager. Per essere idoneo per l'aggiornamento, un punto di distribuzione di Configuration Manager 2007 deve soddisfare determinate condizioni, che includono il server di sistema del sito in cui è installato il punto di distribuzione e il tipo di punto di distribuzione di Configuration Manager 2007 installato. Ad esempio, non è possibile aggiornare nessun tipo di punto di distribuzione installato sul computer del server del sito su un sito primario, ma è possibile aggiornare un punto di distribuzione standard installato sul computer del server del sito su un sito secondario.  
+Non tutti i punti di distribuzione di Configuration Manager 2007, che è possibile condividere, sono idonei all'aggiornamento a Configuration Manager Current Branch. Per essere idoneo per l'aggiornamento, un punto di distribuzione di Configuration Manager 2007 deve soddisfare determinate condizioni, che includono il server di sistema del sito in cui è installato il punto di distribuzione e il tipo di punto di distribuzione di Configuration Manager 2007 installato. Ad esempio, non è possibile aggiornare nessun tipo di punto di distribuzione installato sul computer del server del sito su un sito primario, ma è possibile aggiornare un punto di distribuzione standard installato sul computer del server del sito su un sito secondario.  
 
 > [!NOTE]  
->  È possibile aggiornare solo quei punti di distribuzione condivisi di Configuration Manager 2007 che sono in un computer con una versione di sistema operativo supportata per i punti di distribuzione nella gerarchia di destinazione. Ad esempio, anche se è possibile condividere un punto di distribuzione di Configuration Manager 2007 che si trova in un computer con Windows Vista, non è possibile aggiornare tale punto di distribuzione condiviso perché il sistema operativo non è supportato da System Center Configuration Manager per l'uso come punto di distribuzione.  
+>  È possibile aggiornare solo quei punti di distribuzione condivisi di Configuration Manager 2007 che sono in un computer con una versione di sistema operativo supportata per i punti di distribuzione nella gerarchia di destinazione. Ad esempio, anche se è possibile condividere un punto di distribuzione di Configuration Manager 2007 che si trova in un computer con Windows Vista, non è possibile aggiornare tale punto di distribuzione condiviso perché il sistema operativo non è supportato da Configuration Manager Current Branch per l'uso come punto di distribuzione.  
 
 La tabella seguente elenca i percorsi supportati per ogni tipo di punto di distribuzione di Configuration Manager 2007 per i quali è possibile eseguire l'aggiornamento.  
 
@@ -105,7 +88,7 @@ La tabella seguente elenca i percorsi supportati per ogni tipo di punto di distr
 |Punto di distribuzione in condivisioni server<sup>1</sup>|Sì|No|No|  
 |Punto di distribuzione secondario|Sì|No|No|  
 
- <sup>1</sup> System Center Configuration Manager non supporta le condivisioni server per i sistemi del sito, ma supporta l'aggiornamento di un punto di distribuzione di Configuration Manager 2007 che si trova in una condivisione server. Quando si esegue l'aggiornamento di un punto di distribuzione di Configuration Manager 2007 che si trova in una condivisione server, il tipo di punto di distribuzione viene automaticamente convertito in un server ed è necessario selezionare l'unità nel computer del punto di distribuzione che memorizzerà l'archivio del contenuto a istanza singola.  
+ <sup>1</sup> Configuration Manager non supporta le condivisioni server per i sistemi del sito, ma supporta l'aggiornamento di un punto di distribuzione di Configuration Manager 2007 che si trova in una condivisione server. Quando si esegue l'aggiornamento di un punto di distribuzione di Configuration Manager 2007 che si trova in una condivisione server, il tipo di punto di distribuzione viene automaticamente convertito in un server ed è necessario selezionare l'unità nel computer del punto di distribuzione che memorizzerà l'archivio del contenuto a istanza singola.  
 
 > [!WARNING]  
 >  Prima di aggiornare un punto di distribuzione secondario, disinstallare il software client di Configuration Manager 2007. Quando si esegue l'aggiornamento di un punto di distribuzione secondario che ha il software client di Configuration Manager 2007 installato, il contenuto precedentemente distribuito nel computer viene rimosso dal computer e l'aggiornamento del punto di distribuzione ha esito negativo.  
@@ -149,7 +132,7 @@ Quando si aggiorna un punto di distribuzione condiviso, questo viene assegnato a
 Se si decide di non aggiornare un punto di distribuzione condiviso, è ancora possibile installare un punto di distribuzione da una gerarchia di destinazione in un punto di distribuzione di Configuration Manager 2007 precedente. Prima di installare il nuovo punto di distribuzione, è necessario disinstallare tutti i ruoli di sistema del sito di Configuration Manager 2007 dal computer del punto di distribuzione. Tale operazione include il sito di Configuration Manager 2007 qualora fosse il computer del server del sito. Se si disinstalla un punto di distribuzione di Configuration Manager 2007, il contenuto che era stato distribuito al punto di distribuzione non viene eliminato dal computer.  
 
 ###  <a name="BKMK_UpgradeSS"></a> Pianificare l'aggiornamento dei siti secondari di Configuration Manager 2007  
- Quando si usa la migrazione per aggiornare un punto di distribuzione condiviso ospitato in un server del sito secondario di Configuration Manager 2007, Configuration Manager aggiorna il ruolo del sistema del sito del punto di distribuzione facendone un punto di distribuzione nella gerarchia di destinazione. Disinstalla anche il sito secondario dalla gerarchia di origine. Il risultato è un punto di distribuzione di System Center Configuration Manager, ma non un sito secondario.  
+ Quando si usa la migrazione per aggiornare un punto di distribuzione condiviso ospitato in un server del sito secondario di Configuration Manager 2007, Configuration Manager aggiorna il ruolo del sistema del sito del punto di distribuzione facendone un punto di distribuzione nella gerarchia di destinazione. Disinstalla anche il sito secondario dalla gerarchia di origine. Il risultato è un punto di distribuzione di Configuration Manager Current Branch, ma non un sito secondario.  
 
  Perché un punto di distribuzione nel computer del server del sito sia idoneo all'aggiornamento, Configuration Manager deve poter disinstallare il sito secondario e tutti i ruoli di sistema del sito in tale computer. In genere, un punto di distribuzione condiviso in una condivisione server di Configuration Manager 2007 è idoneo all'aggiornamento. Tuttavia, in presenza di una condivisione server sul server del sito secondario, il sito secondario e qualsiasi punto di distribuzione condiviso su tale computer non sono idonei per l'aggiornamento. Ciò dipende dal fatto che la condivisione del server viene considerata come un oggetto del sistema del sito aggiuntivo quando il processo prova a disinstallare il sito secondario e il processo non riesce a disinstallare l'oggetto. In questo scenario, è possibile abilitare un punto di distribuzione standard sul server del sito secondario e quindi ridistribuire il contenuto in tal punto. Questo processo non usa la larghezza di banda della rete e, al termine di tale operazione, è possibile disinstallare il punto di distribuzione nella condivisione del server, rimuovere quest'ultima e quindi aggiornare il punto di distribuzione e il sito secondario.  
 
@@ -158,7 +141,7 @@ Se si decide di non aggiornare un punto di distribuzione condiviso, è ancora po
 > [!WARNING]  
 >  Quando si visualizza un punto di distribuzione condiviso nella console di Configuration Manager, non è presente alcuna indicazione visibile che specifichi se un punto di distribuzione condiviso si trova in un server di sistema del sito remoto o nel server del sito secondario.  
 
- In presenza di un sito secondario in un percorso di rete remoto usato principalmente per controllare la distribuzione del contenuto in tale percorso, è consigliabile aggiornare i siti secondari che hanno un punto di distribuzione condiviso. Dal momento che è possibile configurare il controllo della larghezza di banda per lo scenario in cui si distribuisce il contenuto in un punto di distribuzione di System Center Configuration Manager, è spesso possibile aggiornare un sito secondario a un punto di distribuzione, configurare il punto di distribuzione per i controlli della larghezza di banda ed evitare l'installazione di un sito secondario in tale percorso di rete nella gerarchia di destinazione.  
+ In presenza di un sito secondario in un percorso di rete remoto usato principalmente per controllare la distribuzione del contenuto in tale percorso, è consigliabile aggiornare i siti secondari che hanno un punto di distribuzione condiviso. Dal momento che è possibile configurare il controllo della larghezza di banda per lo scenario in cui si distribuisce il contenuto in un punto di distribuzione di Configuration Manager Current Branch, è spesso possibile aggiornare un sito secondario a un punto di distribuzione, configurare il punto di distribuzione per i controlli della larghezza di banda ed evitare l'installazione di un sito secondario in tale percorso di rete nella gerarchia di destinazione.  
 
  Il processo di aggiornamento di un punto di distribuzione condiviso in un server del sito secondario è lo stesso di qualsiasi altro aggiornamento di punto di distribuzione condiviso. Il contenuto viene copiato e convertito nel formato Single Instance Store usato dalla gerarchia di destinazione. Tuttavia, quando si esegue l'aggiornamento di un punto di distribuzione condiviso che si trova in un server del sito secondario, il processo di aggiornamento disinstalla anche il punto di gestione, se presente, e quindi disinstalla il sito secondario dal server. Il risultato è che il sito secondario viene rimosso dalla gerarchia di Configuration Manager 2007. Per disinstallare il sito secondario, Configuration Manager usa l'account configurato per raccogliere i dati dal sito di origine.  
 
@@ -166,7 +149,7 @@ Se si decide di non aggiornare un punto di distribuzione condiviso, è ancora po
 
  Per altre informazioni su come aggiornare un punto di distribuzione condiviso, vedere [Pianificare l'aggiornamento dei punti di distribuzione condivisi di Configuration Manager 2007](#Planning_to_Upgrade_DPs).  
 
-##  <a name="BKMK_ReassignDistPoint"></a>Pianificare la riassegnazione dei punti di distribuzione di System Center Configuration Manager  
+##  <a name="BKMK_ReassignDistPoint"></a> Pianificare la riassegnazione dei punti di distribuzione di Configuration Manager  
  Quando si esegue la migrazione da una versione supportata di System Center 2012 Configuration Manager a una gerarchia della stessa versione, è possibile riassegnare un punto di distribuzione condiviso dalla gerarchia di origine a un sito nella gerarchia di destinazione. Questa attività segue lo stesso concetto di aggiornamento di un punto di distribuzione di Configuration Manager 2007 per diventare un punto di distribuzione nella gerarchia di destinazione. È possibile riassegnare i punti di distribuzione dai siti primari e dai siti secondari. Tale azione determina la rimozione del punto di distribuzione dalla gerarchia di origine e rende il computer, con il relativo punto di distribuzione, un server del sistema del sito per un sito selezionato nella gerarchia di destinazione.  
 
  Quando si riassegna un punto di distribuzione, non è necessario ridistribuire il contenuto migrato che era stato ospitato sul punto di distribuzione del sito di origine. A differenza dell'aggiornamento di un punto di distribuzione di Configuration Manager 2007, la riassegnazione di un punto di distribuzione non richiede spazio su disco aggiuntivo nel computer del punto di distribuzione. Infatti, a partire da System Center 2012 Configuration Manager, i punti di distribuzione usano il formato Single Instance Store per il contenuto. Non è necessario convertire il contenuto nel computer del punto di distribuzione quando il punto di distribuzione viene riassegnato tra le gerarchie.  
@@ -182,14 +165,14 @@ Per identificare i punti di distribuzione idonei alla riassegnazione nella conso
 ###  <a name="BKMK_ReassignProcess"></a> Processo di riassegnazione dei punti di distribuzione  
  È possibile usare la console di Configuration Manager per riassegnare i punti di distribuzione condivisi da una gerarchia di origine attiva. Quando si riassegna un punto di distribuzione condiviso, questo viene disinstallato dal sito di origine, quindi installato come punto di distribuzione collegato a un sito primario o secondario specificato nella gerarchia di destinazione.  
 
- Per riassegnare il punto di distribuzione, la gerarchia di destinazione usa l'account di accesso al sito di origine configurato per raccogliere dati dal provider SMS del sito di origine. Per altre informazioni sulle autorizzazioni e sui prerequisiti aggiuntivi necessari, vedere [Prerequisiti per la migrazione in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
+ Per riassegnare il punto di distribuzione, la gerarchia di destinazione usa l'account di accesso al sito di origine configurato per raccogliere dati dal provider SMS del sito di origine. Per altre informazioni sulle autorizzazioni e sui prerequisiti aggiuntivi necessari, vedere [Prerequisiti per la migrazione](../../core/migration/prerequisites-for-migration.md).  
 
 ## <a name="migrate-multiple-shared-distribution-points-at-the-same-time"></a>Eseguire la migrazione simultanea di più punti di distribuzione condivisi
 A partire dalla versione 1610, è possibile usare **Riassegna punto di distribuzione** in modo che Configuration Manager elabori in parallelo la riassegnazione simultanea di un massimo di 50 punti di distribuzione condivisi. Sono inclusi i punti di distribuzione condivisi dei siti di origine supportati che eseguono:  
 - Configuration Manager 2007
 - System Center 2012 Configuration Manager
 - System Center 2012 R2 Configuration Manager
-- System Center Configuration Manager (Current Branch)
+- Configuration Manager (Current Branch)
 
 Quando i punti di distribuzione vengono riassegnati, per ogni punto di distribuzione è necessario indicare se deve essere aggiornato o riassegnato. Il nome dell'azione e del processo interessato (aggiornamento o riassegnazione) dipende dalla versione di Configuration Manager che il sito di origine esegue. Il risultato finale è lo stesso per entrambe le azioni: il punto di distribuzione viene assegnato a uno dei siti Current Branch con il contenuto disponibile.
 

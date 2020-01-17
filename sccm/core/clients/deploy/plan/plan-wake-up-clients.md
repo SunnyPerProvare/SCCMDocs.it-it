@@ -1,7 +1,7 @@
 ---
 title: Riattivazione dei client
 titleSuffix: Configuration Manager
-description: Pianificare la riattivazione dei client in System Center Configuration Manager con la riattivazione LAN (WOL).
+description: Pianificare la riattivazione dei client in Configuration Manager con la riattivazione LAN (WOL).
 ms.date: 04/23/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,24 +10,23 @@ ms.assetid: 52ee82b2-0b91-4829-89df-80a6abc0e63a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a16d598b80dd18802e42cae51aeba3c91a4d707c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a9caf7f34fbf375d0a5195b5d464d12f8d479ade
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "64669137"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824929"
 ---
-# <a name="plan-how-to-wake-up-clients-in-system-center-configuration-manager"></a>Pianificare la riattivazione dei client in System Center Configuration Manager
+# <a name="plan-how-to-wake-up-clients-in-configuration-manager"></a>Pianificare la riattivazione dei client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
  Configuration Manager supporta i pacchetti di riattivazione tradizionale per riattivare i computer in modalità sospensione quando si vuole installare software richiesto, come aggiornamenti software e applicazioni.
 
 > [!NOTE]
 > Questo articolo descrive il funzionamento di una versione precedente della riattivazione LAN. Questa funzionalità è ancora presente in Configuration Manager versione 1810, che include anche una versione più recente della funzionalità di riattivazione LAN. Le due versioni possono essere abilitate contemporaneamente, come avviene effettivamente in molti casi. Per altre informazioni sul funzionamento della nuova versione della riattivazione LAN a partire dalla versione 1810 e su come abilitare una o entrambe le versioni, vedere [Come configurare la riattivazione LAN in System Center Configuration Manager](/sccm/core/clients/deploy/configure-wake-on-lan).  
 
-## <a name="how-to-wake-up-clients-in-system-center-configuration-manager"></a>Come riattivare i client in System Center Configuration Manager
+## <a name="how-to-wake-up-clients-in-configuration-manager"></a>Come riattivare i client in Configuration Manager
 
  Configuration Manager supporta i pacchetti di riattivazione tradizionale per riattivare i computer in modalità sospensione quando si vuole installare software richiesto, come aggiornamenti software e applicazioni.  
 

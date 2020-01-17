@@ -1,7 +1,7 @@
 ---
 title: Funzionalità nella Technical Preview 1601
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1601 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1601 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 605a95aa96191fab63f7c4a0e0ce2f8b7c6a8778
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 63274efc1bbc4a22c6f3f38d7e00b2d4f1112150
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70902550"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75805269"
 ---
-# <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1601 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1601-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1601 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1601 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.  
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1601. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview per Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.  
 
  **Problemi noti di questa versione Technical Preview:**  
 
@@ -63,9 +62,9 @@ Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità s
 
 ### <a name="improvements-to-conditional-access"></a>Miglioramenti per l'accesso condizionale  
 
--   **Supporto dell'accesso condizionale per i PC gestiti da System Center Configuration Manager**  
+-   **Supporto dell'accesso condizionale per i PC gestiti da Configuration Manager**  
 
-     È ora possibile impostare criteri di accesso condizionale per i PC gestiti da System Center Configuration Manager, che richiedono che i PC siano conformi ai criteri di conformità per accedere ai servizi Exchange Online e SharePoint Online.  Con questa nuova funzionalità, è anche possibile registrare i PC in Azure AD tramite i criteri di conformità, oltre a monitorare la registrazione in Azure AD e generare report corrispondenti.  
+     È ora possibile impostare criteri di accesso condizionale per i PC gestiti da Configuration Manager, che richiedono che i PC siano conformi ai criteri di conformità per accedere ai servizi Exchange Online e SharePoint Online.  Con questa nuova funzionalità, è anche possibile registrare i PC in Azure AD tramite i criteri di conformità, oltre a monitorare la registrazione in Azure AD e generare report corrispondenti.  
 
     > [!NOTE]  
     >  L'accesso condizionale non è ancora supportato in Windows 10.  
@@ -78,7 +77,7 @@ Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità s
 
     -   [Prerequisiti per la registrazione automatica in Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
 
-    Per usare l'opzione, è necessario creare un criterio di conformità in Configuration Manager con le regole specifiche descritte di seguito e impostare un criterio di accesso condizionale nella console di Intune.  Inoltre, per assicurarsi che l'accesso sia consentito solo ai PC conformi, è necessario impostare il requisito PC Windows per l'opzione **I dispositivi devono essere conformi**. Di seguito sono descritte le regole dei criteri di conformità applicabili ai PC gestiti da System Center Configuration Manager.  
+    Per usare l'opzione, è necessario creare un criterio di conformità in Configuration Manager con le regole specifiche descritte di seguito e impostare un criterio di accesso condizionale nella console di Intune.  Inoltre, per assicurarsi che l'accesso sia consentito solo ai PC conformi, è necessario impostare il requisito PC Windows per l'opzione **I dispositivi devono essere conformi**. Di seguito sono descritte le regole dei criteri di conformità applicabili ai PC gestiti da Configuration Manager.  
 
     -   **Richiedi la registrazione in Azure Active Directory:** questa regola controlla se il dispositivo dell'utente è aggiunto all'area di lavoro in Azure AD e in caso contrario il dispositivo viene registrato automaticamente in Azure AD. La registrazione automatica è supportata solo in Windows 8.1. Per i PC con Windows 7, distribuire un file MSI per eseguire la registrazione automatica. Per altre informazioni, vedere [qui](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
 
@@ -167,7 +166,7 @@ Un client è online se è attualmente connesso a un ruolo del sistema del sito d
 
  Per altre informazioni, vedere [Gestire le app acquistate tramite Volume Purchase Program con Configuration Manager](https://technet.microsoft.com/library/mt627954.aspx).  
 
-### <a name="ios---app-configuration-for-applicationsbr-hybrid"></a>iOS - Configurazione delle applicazioni<br />Ibrido  
+### <a name="ios---app-configuration-for-applicationsbr-hybrid"></a>iOS - Configurazione delle applicazioni<br />Strategia ibrida  
  Alcune applicazioni iOS supportano impostazioni di pre-configurazione, come il server o il database a cui deve connettersi l'applicazione. Configuration Manager supporta ora la distribuzione di criteri di configurazione dell'app nel dispositivo che consentono all'utente di usare immediatamente l'app senza dover conoscere queste informazioni. Gli sviluppatori devono abilitare questa funzionalità nelle proprie app.  
 
  Un numero limitato di app rilasciate pubblicamente supporta attualmente le impostazioni di pre-configurazione. È anche possibile che siano disponibili app line-of-business sviluppate internamente che supportano queste impostazioni.  
@@ -201,18 +200,18 @@ Un client è online se è attualmente connesso a un ruolo del sistema del sito d
 
  Per visualizzare le nuove impostazioni, scegliere **Microsoft Edge** nella pagina **Impostazioni dispositivo** dell'elemento di configurazione della **Creazione guidata dell'elemento di configurazione**.  
 
- Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
+ Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
 
 ### <a name="compliance-settings-for-windows-10-team-devices"></a>Impostazioni di conformità per i dispositivi Windows 10 Team  
  Usare le nuove impostazioni di conformità per configurare i dispositivi che eseguono Windows 10 Team, ad esempio dispositivi Surface Hub.  
 
  Per visualizzare le nuove impostazioni, scegliere **Windows 10 Team** nella pagina **Impostazioni dispositivo** dell'elemento di configurazione della **Creazione guidata dell'elemento di configurazione**.  
 
- Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
+ Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
 
-### <a name="android---kiosk-mode-for-samsung-knox-standardbr-hybrid"></a>Android - Modalità tutto schermo per Samsung KNOX Standard<br />Ibrido  
+### <a name="android---kiosk-mode-for-samsung-knox-standardbr-hybrid"></a>Android - Modalità tutto schermo per Samsung KNOX Standard<br />Strategia ibrida  
  La modalità tutto schermo consente di bloccare un dispositivo per consentire solo l'uso di alcune funzionalità. Ad esempio, è possibile consentire a un dispositivo di eseguire solo un'app gestita specificata o disabilitare i pulsanti del volume in un dispositivo. Queste impostazioni potrebbero essere usate per un modello demo di un dispositivo o per un dispositivo dedicato all'esecuzione di una sola funzione, ad esempio un dispositivo POS. Queste impostazioni non sono disponibili per i dispositivi Samsung KNOX Standard nell'elemento di configurazione **Windows 8.1 e Windows 10** (le impostazioni si applicano solo ai dispositivi Windows 10).  
 
  Per visualizzare le nuove impostazioni, scegliere **Modalità tutto schermo - Samsung KNOX** nella pagina **Impostazioni dispositivo** dell'elemento di configurazione della **Creazione guidata dell'elemento di configurazione**.  
 
- Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
+ Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  

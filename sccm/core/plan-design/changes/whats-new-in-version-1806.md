@@ -10,17 +10,16 @@ ms.assetid: 0249dbd3-1e85-4d05-a9e5-420fbe44d850
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad5034ca7475009f2dcd4b50df96d22b2f9428fa
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 85c3612c84baeca85596ff6410d2a1de3338e438
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70110126"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802532"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novità della versione 1806 di Configuration Manager (Current Branch)
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 L'aggiornamento 1806 per Configuration Manager (Current Branch) è disponibile come aggiornamento nella console. Applicare questo aggiornamento ai siti con la versione 1706, 1710 o 1802. <!-- baseline only statement: When installing a new site, it's also available as a baseline version.-->
 
@@ -308,7 +307,7 @@ Per altre informazioni, vedere [Creare applicazioni Windows](/sccm/apps/get-star
 
 ### <a name="uninstall-application-on-approval-revocation"></a>Disinstallare l'applicazione in caso di revoca dell'approvazione
 <!--1357891-->
-Quando si revoca l'approvazione per un'applicazione, il comportamento è stato modificato. Ora, quando si nega la richiesta per l'applicazione, il client disinstalla l'applicazione dal dispositivo dell'utente. Questo comportamento richiede che si abiliti la [funzionalità facoltativa](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_options) **Approva le richieste dell'applicazione per gli utenti per ogni dispositivo**. 
+Quando si revoca l'approvazione per un'applicazione, il comportamento è stato modificato. Ora, quando si nega la richiesta per l'applicazione, il client disinstalla l'applicazione dal dispositivo dell'utente. Questo comportamento richiede l'abilitazione della [funzionalità facoltativa](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_options) **Approva le richieste dell'applicazione per gli utenti per ogni dispositivo**. 
 
 Per altre informazioni, vedere l'argomento relativo alla [distribuzione delle applicazioni](/sccm/apps/deploy-use/deploy-applications#bkmk_approval).
 
@@ -503,7 +502,7 @@ Per altre informazioni, vedere [Report degli aggiornamenti software](/sccm/sum/d
 
 
 
-## <a name="inventory"></a>Inventario
+## <a name="inventory"></a>Argomento
 
 ### <a name="bkmk_bigint"></a> Miglioramento all'inventario hardware per valori interi di grandi dimensioni
 <!--1357880-->
@@ -593,9 +592,9 @@ L'aggiornamento cumulativo seguente (4462978) è disponibile nella console a par
 
 Gli hotfix aggiuntivi seguenti sono disponibili per la risoluzione di problemi specifici:
 
-| ID | Titolo | Data | Nella console |
+| ID | Titolo | Date | Nella console |
 |---------|---------|---------|---------|
-| [4346645](https://support.microsoft.com/help/4346645) | Aggiornamento per System Center Configuration Manager versione 1806, primo gruppo | 31 agosto 2018 | Sì |
+| [4346645](https://support.microsoft.com/help/4346645) | Aggiornamento per Configuration Manager versione 1806, primo gruppo | 31 agosto 2018 | Sì |
 | [4465865](https://support.microsoft.com/help/4465865) | Gli aggiornamenti software non vengono scaricati nell'ambiente Configuration Manager se WSUS è disconnesso<br><br>Questo aggiornamento è incluso anche nell'aggiornamento cumulativo (4462978) | 1º ottobre 2018 | Sì |
 | [4471892](https://support.microsoft.com/help/4471892) | Il risponditore PXE non funziona nelle subnet in Configuration Manager 1806 | 23 novembre 2018 | No |
 | [4487960](https://support.microsoft.com/help/4487960) | Il certificato del connettore Microsoft Intune non viene rinnovato in Configuration Manager | 18 gennaio 2019 | Sì |

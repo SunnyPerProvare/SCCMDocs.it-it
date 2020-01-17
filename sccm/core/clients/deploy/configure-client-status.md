@@ -1,7 +1,7 @@
 ---
 title: Configurare lo stato del client
 titleSuffix: Configuration Manager
-description: Selezionare le impostazioni relative allo stato del client in System Center Configuration Manager.
+description: Selezionare le impostazioni relative allo stato del client in Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,19 +10,18 @@ ms.assetid: a2275ba2-c83d-43e7-90ed-418963a707fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70c213a628c72d415a912f99ae5efd6f07150ebf
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5bb77e1e9f55919a03368d549946ee4dd1cda58a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62213464"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825201"
 ---
-# <a name="how-to-configure-client-status-in-system-center-configuration-manager"></a>Come configurare lo stato del client in System Center Configuration Manager
+# <a name="how-to-configure-client-status-in-configuration-manager"></a>Come configurare lo stato del client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Prima di poter monitorare lo stato del client di System Center Configuration Manager e risolvere i problemi rilevati, è necessario configurare il sito in modo da specificare i parametri usati per contrassegnare i client come inattivi e configurare le opzioni in modo da ricevere un avviso se l'attività del client scende sotto una specifica soglia. È inoltre possibile disattivare l'opzione che consente di monitorare e aggiornare automaticamente gli eventuali problemi nel computer rilevati dallo stato del client.  
+Prima di poter monitorare lo stato del client di Configuration Manager e risolvere i problemi rilevati, è necessario configurare il sito in modo da specificare i parametri usati per contrassegnare i client come inattivi e configurare le opzioni in modo da ricevere un avviso se l'attività del client scende sotto una specifica soglia. È inoltre possibile disattivare l'opzione che consente di monitorare e aggiornare automaticamente gli eventuali problemi nel computer rilevati dallo stato del client.  
 
 ##  <a name="BKMK_1"></a> Per configurare lo stato del client  
 
@@ -88,14 +87,14 @@ Prima di poter monitorare lo stato del client di System Center Configuration Man
 
    -   **Genera avviso**: specificare la percentuale di soglia per l'avviso.  
 
-7. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà** <em>&lt;nome raccolta\></em>.  
+7. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà**<em>&lt;nome raccolta\></em>.  
 
 ##  <a name="BKMK_3"></a> Per escludere i computer da monitoraggio e aggiornamento automatici  
 
 1. Aprire l'editor del Registro di sistema nel computer client per il quale si desidera disattivare il monitoraggio e aggiornamento automatico.  
 
    > [!WARNING]  
-   >  L'errato utilizzo dell'editor del Registro di sistema può provocare gravi problemi che potrebbero richiedere la reinstallazione del sistema operativo. La risoluzione dei problemi derivanti dall'errato utilizzo dell'editor del Registro di sistema non è garantita. L'utilizzo dell'editor del Registro di sistema è a rischio dell'utente.  
+   >  L'errato utilizzo dell'editor del Registro di sistema può provocare gravi problemi che potrebbero richiedere la reinstallazione del sistema operativo. Microsoft non garantisce che sia possibile risolvere i problemi derivanti da un uso non corretto dell'editor del Registro di sistema. L'uso dell'editor del Registro di sistema è di sola responsabilità dell'utente.  
 
 2. Passare a **HKEY_LOCAL_MACHINE\Software\Microsoft\CCM\CcmEval\NotifyOnly**.  
 
@@ -107,4 +106,4 @@ Prima di poter monitorare lo stato del client di System Center Configuration Man
 
 4. Chiudere l'editor del Registro di sistema.  
 
-   È inoltre possibile installare i client utilizzando la proprietà di installazione **NotifyOnly** di CCMSetup per escluderli dal monitoraggio e aggiornamento automatico. Per altre informazioni sulla proprietà di installazione dei client, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
+   È inoltre possibile installare i client utilizzando la proprietà di installazione **NotifyOnly** di CCMSetup per escluderli dal monitoraggio e aggiornamento automatico. Per altre informazioni su questa proprietà di installazione del client, vedere [Informazioni sui parametri e le proprietà di installazione del client](../../../core/clients/deploy/about-client-installation-properties.md).  

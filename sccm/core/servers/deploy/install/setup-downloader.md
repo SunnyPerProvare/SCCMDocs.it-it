@@ -10,19 +10,18 @@ ms.assetid: bda87fc5-2e4c-4992-98a4-01770365038c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: fcf41ada4d8fd2d6e4c185a485d94c64cd55b541
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 34879344395a1cd3ecebc3b357d5c3856dad9160
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70888804"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798026"
 ---
-# <a name="setup-downloader-for-system-center-configuration-manager"></a>Downloader di installazione per System Center Configuration Manager
+# <a name="setup-downloader-for-configuration-manager"></a>Downloader di installazione per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Prima di eseguire il programma di installazione per installare o aggiornare un sito di System Center Configuration Manager, è possibile usare l'applicazione autonoma downloader di installazione dalla versione di Configuration Manager che si vuole installare per scaricare i file di installazione aggiornati.  
+Prima di eseguire il programma di installazione per installare o aggiornare un sito di Configuration Manager, è possibile usare l'applicazione autonoma downloader di installazione dalla versione di Configuration Manager che si vuole installare per scaricare i file di installazione aggiornati.  
 
 L'uso di file di installazione aggiornati assicura che l'installazione del sito usi le versioni correnti dei file di installazione principali. Panoramica:   
 -   Quando si usa il Downloader di installazione per scaricare i file prima di avviare il programma di installazione, specificare la cartella che contiene i file.  

@@ -10,17 +10,16 @@ ms.assetid: 97e23075-549c-4e45-ab1e-0671027edacf
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c8955e969771cc5e20505875a53d794e4e7ecdd
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: 8f6d144cc52e0baa790462b1eff9a7a6d15d5b4e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198507"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802515"
 ---
 # <a name="whats-new-in-version-1906-of-configuration-manager-current-branch"></a>Novità della versione 1906 di Configuration Manager Current Branch
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 L'aggiornamento 1906 per Configuration Manager Current Branch è disponibile come aggiornamento nella console. Applicare questo aggiornamento ai siti con la versione 1802 o versioni successive. <!-- baseline only statement:When installing a new site, it's also available as a baseline version.--> Questo articolo offre un riepilogo delle modifiche e delle nuove funzionalità di Configuration Manager versione 1906.  
 
@@ -442,7 +441,7 @@ Ad esempio, digitare l'URL seguente nella finestra **Esegui** di Windows.
 |`OSD`|Sistemi operativi|
 |`InstallationStatus`|Stato installazione|
 |`Compliance`|Conformità del dispositivo|
-|`Options`|Opzioni|
+|`Options`|Options|
 
 Per altre informazioni, vedere [Visibilità delle schede di Software Center](/sccm/core/clients/deploy/about-client-settings#software-center-tab-visibility).
 

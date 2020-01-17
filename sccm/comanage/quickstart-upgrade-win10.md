@@ -10,13 +10,12 @@ ms.assetid: 561eb5b6-f90c-485a-91c2-e45bb0ce7877
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe3f5e35fcec9bfc9bf0746ecfd118e10487f78c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 12d72b4b7c355b86ef5e67fe3bc65fd699681064
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68533842"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816837"
 ---
 # <a name="upgrade-windows-10-for-co-management"></a>Eseguire l'aggiornamento a Windows 10 per la co-gestione
 
@@ -45,7 +44,7 @@ Di seguito sono riportati alcuni suggerimenti raccolti da Microsoft aiutando mig
 
 - Usare il modello di sequenza di attività di aggiornamento sul posto predefinito. Configurare quindi i passaggi specifici pre e post-aggiornamento e le azioni in caso di errore. Per altre informazioni, vedere [Passaggi della sequenza di attività consigliati per la post-elaborazione](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#recommended-task-sequence-steps-for-post-processing).  
 
-- In ambienti con una forza lavoro molto mobile, Configuration Manager supporta l'aggiornamento sul posto tramite Cloud Management Gateway (CMG). Questa funzionalità consente di aggiornare i client Windows 10 basati su Internet. Per altre informazioni su CMG, vedere [](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway).  
+- In ambienti con una forza lavoro molto mobile, Configuration Manager supporta l'aggiornamento sul posto tramite Cloud Management Gateway (CMG). Questa funzionalità consente di aggiornare i client Windows 10 basati su Internet. Per altre informazioni su CMG, vedere [Distribuire l'aggiornamento sul posto di Windows 10 mediante Cloud Management Gateway](/configmgr/osd/deploy-use/deploy-a-task-sequence#deploy-windows-10-in-place-upgrade-via-cmg).  
 
 - Offrire la possibilità di scegliere la co-gestione agli utenti che vogliono essere early adopter. Questo approccio accelera l'adozione iniziale. Identificando queste persone in anticipo, è possibile assicurarsi una buona copertura già nelle fasi iniziali di un'implementazione. Sarà anche possibile ottenere la convalida e commenti e suggerimenti di utenti che apprezzano i cambiamenti e sono interessati a ricevere nuove versioni più di frequente. I programmi per early adopter generano interesse per le nuove tecnologie e sono destinati ad ampliarsi nel corso del tempo.  
 

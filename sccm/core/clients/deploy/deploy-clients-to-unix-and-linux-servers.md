@@ -10,17 +10,16 @@ ms.assetid: 15a4e323-9f42-4fea-bb14-f2b905d1f77c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 013228fc3df9d899d92767ef50a69a4894be07e2
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 0b42b68920fa1830d4e316d2058ef5a630c57e78
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70378097"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825133"
 ---
 # <a name="how-to-deploy-clients-to-unix-and-linux-servers-in-configuration-manager"></a>Come distribuire i client in server UNIX e Linux in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 > [!Important]  
 > A partire dalla versione 1902, Configuration Manager non supporta i client Linux o UNIX. 
@@ -220,7 +219,7 @@ Ogni pacchetto di installazione client contiene tutti i file necessari per compl
 
  Dopo aver installato il client, non è possibile modificare la configurazione delle porte di richiesta. Per modificare la configurazione della porta è invece necessario reinstallare il client e specificare la nuova configurazione della porta. Quando si reinstalla il client per modificare i numeri delle porte di richiesta, eseguire il comando **install** in modo analogo all'installazione di un nuovo client, ma usare la proprietà della riga di comando aggiuntiva **-keepdb**. Questa opzione indica che l'installazione deve mantenere i file e il database client, inclusi l'archivio certificati e il GUID del client.  
 
- Per altre informazioni sui numeri di porta di comunicazione client, vedere [Come configurare porte di comunicazione client in System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md).  
+ Per altre informazioni sui numeri di porta di comunicazione client, vedere [Come configurare porte di comunicazione client](../../../core/clients/deploy/configure-client-communication-ports.md).  
 
 ##  <a name="BKMK_ConfigClientMP"></a> Configurare il Client per Linux e UNIX individuare i punti di gestione  
  Quando si installa il client di Configuration Manager per Linux e UNIX, è necessario specificare un punto di gestione da usare come punto iniziale del contatto.  

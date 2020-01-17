@@ -1,7 +1,7 @@
 ---
 title: Pianificazione della distribuzione client per computer Mac
 titleSuffix: Configuration Manager
-description: Pianificazione della distribuzione del client in computer Mac in System Center Configuration Manager.
+description: Pianificare la distribuzione del client in computer Mac in Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,23 +10,22 @@ ms.assetid: 8d15ae3f-de42-461f-a907-c43873da22d2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe9c5a22f1c3a17737ccfb452b3cd4dd418bf9a9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f231e0681b2a202696b6c719966abf818a9c8e27
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62213279"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824878"
 ---
-# <a name="planning-for-client-deployment-to-mac-computers-in-system-center-configuration-manager"></a>Pianificazione della distribuzione del client in computer Mac in System Center Configuration Manager
+# <a name="planning-for-client-deployment-to-mac-computers-in-configuration-manager"></a>Pianificazione della distribuzione del client in computer Mac in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile installare il client di Configuration Manager su computer Mac con sistema operativo Mac OS X e usare le funzionalità di gestione seguenti:  
 
 - **Inventario hardware**  
 
-   È possibile usare l'inventario hardware di Configuration Manager per raccogliere informazioni sull'hardware e sulle applicazioni installate sui computer Mac. Tali informazioni possono essere visualizzate in Esplora inventario risorse nella console di Configuration Manager e usate per creare raccolte, query e report. Per altre informazioni, vedere [Come usare Esplora inventario risorse per visualizzare l'inventario hardware in Configuration Manager](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md).  
+   È possibile usare l'inventario hardware di Configuration Manager per raccogliere informazioni sull'hardware e sulle applicazioni installate sui computer Mac. Tali informazioni possono essere visualizzate in Esplora inventario risorse nella console di Configuration Manager e usate per creare raccolte, query e report. Per altre informazioni, vedere [Come usare Esplora inventario risorse per visualizzare l'inventario hardware](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md).  
 
    Configuration Manager raccoglie le informazioni hardware seguenti dai computer Mac:  
 
@@ -42,7 +41,7 @@ ms.locfileid: "62213279"
 
   -   Sistema operativo  
 
-  -   Service  
+  -   Servizio  
 
   -   Processo  
 
@@ -104,4 +103,4 @@ ms.locfileid: "62213279"
 
 - Controllo e correzione client dello stato client  
 
-  Per altre informazioni su come installare e configurare il client Mac di Configuration Manager, vedere [Come distribuire i client a computer Mac in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-macs.md).
+  Per altre informazioni su come installare e configurare il client Mac di Configuration Manager, vedere [Come distribuire i client a computer Mac](../../../../core/clients/deploy/deploy-clients-to-macs.md).

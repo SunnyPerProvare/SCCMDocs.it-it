@@ -1,7 +1,7 @@
 ---
 title: Monitorare e pianificare il risparmio energia
 titleSuffix: Configuration Manager
-description: Informazioni su come monitorare e pianificare il risparmio energia in System Center Configuration Manager.
+description: Informazioni su come monitorare e pianificare il risparmio energia in Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,24 +10,23 @@ ms.assetid: 507bf676-2679-4e4d-8831-3ffc9cf8557e
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1bfd0dd70c350196ff3e6e4a66da9fb04863b8b8
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: cc0b4903033d8df9f45c1c0629f2c2037f0dba1f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62203163"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823943"
 ---
-# <a name="how-to-monitor-and-plan-for-power-management-in-system-center-configuration-manager"></a>Come monitorare e pianificare il risparmio energia in System Center Configuration Manager
+# <a name="how-to-monitor-and-plan-for-power-management-in-configuration-manager"></a>Come monitorare e pianificare il risparmio energia in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Informazioni su come monitorare e pianificare il risparmio energia in System Center Configuration Manager.  
+Usare le informazioni seguenti per facilitare il monitoraggio e la pianificazione del risparmio energia in Configuration Manager.  
 
 ##  <a name="BKMK_How_to_use_reports"></a> Come usare i report per il risparmio energia  
  La funzionalità di risparmio energia in Configuration Manager include diversi report per agevolare l'analisi dei consumi e delle impostazioni di risparmio energia per i computer nell'organizzazione. I report possono anche essere usati per facilitare la risoluzione dei problemi.  
 
- Prima di poter usare i report di risparmio energia, è necessario configurare i report per la gerarchia. Per altre informazioni sulla creazione dei report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
+ Prima di poter usare i report di risparmio energia, è necessario configurare i report per la gerarchia. Per altre informazioni sui report in Configuration Manager, vedere [Creazione di report](../../../../core/servers/manage/reporting.md).  
 
 > [!NOTE]  
 >  Le informazioni relative al risparmio energia usate per i report giornalieri vengono conservate nel database del sito di Configuration Manager per 31 giorni.  
@@ -111,7 +110,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 |**Dettagli computer**|Fare clic sul collegamento **Fare clic per ulteriori informazioni** per visualizzare informazioni su capacità di risparmio energia, impostazioni di risparmio energia e combinazioni per il risparmio di energia applicate per il computer selezionato.|  
 
 ###  <a name="BKMK_Activity_Details"></a> Computer Activity Details report  
- Il report **Dettagli attività computer** visualizza un elenco dei computer attivi o inattivi con le relative funzionalità di sospensione e riattivazione. Questo report viene chiamato dal [Computer Activity Report](#BKMK_Activity) e non è progettato per essere eseguito direttamente dall'amministratore del sito.  
+ Il report **Dettagli attività computer** visualizza un elenco dei computer attivi o inattivi con le relative funzionalità di sospensione e riattivazione. Questo report viene chiamato il [Computer Activity Report](#BKMK_Activity) e non è progettato per essere eseguito direttamente dall'amministratore del sito.  
 
  Usare i parametri seguenti per configurare questo report.  
 
@@ -603,7 +602,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 |Nome parametro|Descrizione|  
 |--------------------|-----------------|  
 |**Raccolta**|Nell'elenco a discesa selezionare una raccolta da usare per il report.|  
-|**GUID impostazione per il risparmio di energia**|Dall'elenco a discesa, selezionare del GUID in cui desidera ottenere un report. Per un elenco di tutte le impostazioni di risparmio energia e il relativo utilizzo, vedere [Impostazioni disponibili per le combinazioni per il risparmio di energia](../../../../core/clients/manage/power/create-and-apply-power-plans.md#BKMK_Plans) nell'argomento [Come creare e applicare combinazioni per il risparmio di energia in System Center Configuration Manager](../../../../core/clients/manage/power/create-and-apply-power-plans.md).|  
+|**GUID impostazione per il risparmio di energia**|Dall'elenco a discesa, selezionare del GUID in cui desidera ottenere un report. Per un elenco di tutte le impostazioni di risparmio energia e il relativo uso, vedere [Impostazioni disponibili per le combinazioni per il risparmio di energia](../../../../core/clients/manage/power/create-and-apply-power-plans.md#BKMK_Plans) nell'argomento [Come creare e applicare combinazioni per il risparmio di energia](../../../../core/clients/manage/power/create-and-apply-power-plans.md).|  
 |**Power Mode**|Nell'elenco a discesa selezionare il tipo di impostazioni di risparmio energia da visualizzare nei risultati del report. Selezionare **Alimentazione da rete elettrica** per visualizzare le impostazioni di risparmio energia configurate per quando il computer è collegato alla rete elettrica e **A batteria** per visualizzare le impostazioni di risparmio energia configurate per quando il computer è alimentato a batteria.|  
 |**Indice impostazione**|Nell'elenco a discesa selezionare il valore per il nome dell'impostazione di risparmio energia selezionata per cui creare il report. Ad esempio, per visualizzare tutti i computer con l'opzione **Disattiva disco rigido dopo** impostata su **10** minuti, selezionare **Disattiva disco rigido dopo** in **Nome impostazione per il risparmio di energia** e **10** in **Indice impostazione**.|  
 

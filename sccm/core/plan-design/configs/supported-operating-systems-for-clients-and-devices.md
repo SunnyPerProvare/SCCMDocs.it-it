@@ -10,12 +10,12 @@ ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 4e34f94b39984111f91b39cbd4eeaedb89bd07df
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: fda54091063cd95538c9d4b6353339224dc22fd7
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75801614"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034856"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versioni dei sistemi operativi per client e dispositivi supportate da Configuration Manager
 
@@ -345,10 +345,6 @@ Le versioni seguenti sono supportate tramite l'uso del file TAR indicato.
 ## <a name="bkmk_OnpremOS"></a> Software MDM locale
 
 Configuration Manager include funzionalità predefinite per la gestione dei dispositivi mobili locali senza installare software client. Per altre informazioni, vedere [Gestire i dispositivi mobili con l'infrastruttura locale](/sccm/mdm/understand/manage-mobile-devices-with-on-premises-infrastructure).  
-
-### <a name="requirements-and-limitations"></a>Requisiti e limitazioni
-
-- Configurare il **punto di connessione del servizio** nel sito di livello superiore della gerarchia.  
 
 ### <a name="supported-operating-systems"></a>Sistemi operativi supportati
 

@@ -1,7 +1,7 @@
 ---
 title: Funzionalità nella Technical Preview 1605
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1605 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1605 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0726f08d5c0e0e31e8a49cb792ac36954e47ae46
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 0d1c669c8ce5b57eaa1cc391d50d7fab90adbe4c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65612618"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75805218"
 ---
-# <a name="capabilities-in-technical-preview-1605-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1605 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1605-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1605 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1605 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.  
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1605. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview per Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.  
 
  **Problemi noti di questa versione Technical Preview:**  
 
@@ -173,10 +172,10 @@ Azioni comuni come **Ritira/cancella dati**, **Reimpostazione passcode**, **Bloc
 
 -   [Proteggere i dati aziendali tramite EDP (Enterprise Data Protection)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-edp)  
 
--   [Creare e distribuire un criterio di protezione dei dati aziendali (EDP) tramite System Center Configuration Manager](https://technet.microsoft.com/itpro/windows/keep-secure/create-edp-policy-using-sccm)  
+-   [Creare e distribuire un criterio di protezione dei dati aziendali (EDP) tramite Configuration Manager](https://technet.microsoft.com/itpro/windows/keep-secure/create-edp-policy-using-sccm)  
 
 ##  <a name="BKMK_End"></a> Gli utenti finali possono installare le app dal portale aziendale  
- MDM locale è stato introdotto nella versione 1511 di System Center Configuration Manager. Nelle versioni precedenti era possibile distribuire applicazioni per dispositivi Windows 10 gestiti da MDM che avevano installazione **Richiesta** come scopo di distribuzione per dispositivi locali gestiti da MDM.  
+ MDM locale è stato introdotto nella versione 1511 di Configuration Manager. Nelle versioni precedenti era possibile distribuire applicazioni per dispositivi Windows 10 gestiti da MDM che avevano installazione **Richiesta** come scopo di distribuzione per dispositivi locali gestiti da MDM.  
 
  In questa versione è possibile distribuire applicazioni con lo scopo di distribuzione **Disponibile** a utenti di computer Windows 10 locali gestiti da MDM e gli utenti possono installare queste applicazioni autonomamente dal portale aziendale.
 In questa versione Technical Preview se il portale aziendale rimane aperto per più di 15 minuti all'utente finale verrà visualizzato un messaggio di errore. Per risolvere il problema riavviare il portale aziendale.  
@@ -264,7 +263,7 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 
 2.  Gli utenti possono quindi cercare e installare le app dal portale aziendale.  
 
-     Dopo aver aperto il portale aziendale, verrà visualizzata una finestra di dialogo di autenticazione denominata **System Center Configuration Manager**. Specificare le credenziali Active Directory dell'utente (nella forma user@domain o dominio\utente) per effettuare l'accesso.  
+     Dopo aver aperto il portale aziendale, verrà visualizzata una finestra di dialogo di autenticazione denominata **Configuration Manager**. Specificare le credenziali Active Directory dell'utente (nella forma user@domain o dominio\utente) per effettuare l'accesso.  
 
 ##  <a name="BKMK_SW1"></a> Nuove schede per gli aggiornamenti e i sistemi operativi in Software Center  
  In questa versione sono state apportate le seguenti modifiche per migliorare il layout dell'applicazione Software Center:  
@@ -272,9 +271,9 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 -   La scheda **Applicazioni** è stata suddivisa in tre schede separate: **Aggiornamenti**, **Sistemi operativi** (disponibili in precedenza nell'elenco **Filtri**) e **Applicazioni**.  
 
 ##  <a name="BKMK_ServerGroups"></a> Eseguire la manutenzione di un gruppo di server  
- La versione Technical Preview 1511 per System Center Configuration Manager includeva la possibilità di creare una raccolta in cui tutti i dispositivi della raccolta formavano un gruppo di server. Quindi si poteva configurare le impostazioni del gruppo di server da usare per la distribuzione di aggiornamenti software al gruppo di server, controllare la percentuale di computer che venivano aggiornati in qualsiasi momento e configurare gli script di PowerShell di pre-distribuzione e post-distribuzione per eseguire azioni personalizzate.  
+ La versione Technical Preview 1511 per Configuration Manager includeva la possibilità di creare una raccolta in cui tutti i dispositivi della raccolta formavano un gruppo di server. Quindi si poteva configurare le impostazioni del gruppo di server da usare per la distribuzione di aggiornamenti software al gruppo di server, controllare la percentuale di computer che venivano aggiornati in qualsiasi momento e configurare gli script di PowerShell di pre-distribuzione e post-distribuzione per eseguire azioni personalizzate.  
 
- La versione Technical Preview 1605 per System Center Configuration Manager aggiunge la possibilità di aggiornare i computer del gruppo di server in un ordine specifico definito dall'utente, aggiunge il monitoraggio avanzato per visualizzare lo stato per i computer del gruppo di server e offre la possibilità di cancellare i blocchi di distribuzione, che si rivela utile quando i client non sono riusciti a installare gli aggiornamenti software e impediscono ad altri client di installare i loro aggiornamenti software.  
+ La versione Technical Preview 1605 per Configuration Manager aggiunge la possibilità di aggiornare i computer del gruppo di server in un ordine specifico definito dall'utente, aggiunge il monitoraggio avanzato per visualizzare lo stato per i computer del gruppo di server e offre la possibilità di cancellare i blocchi di distribuzione, che si rivela utile quando i client non sono riusciti a installare gli aggiornamenti software e impediscono ad altri client di installare i loro aggiornamenti software.  
 
 ### <a name="try-it-out"></a>Verifica  
  Provare a completare le operazioni seguenti e inviare le informazioni sul funzionamento della procedura utilizzando il modulo di feedback disponibile alla pagina del [programma dei commenti e suggerimenti di Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) sul sito Microsoft Connect:  
@@ -362,7 +361,7 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 
   2.  Fare clic sulla voce di menu **Client On-boarding** (Caricamento client)  
 
-  3.  Selezionare **System Center Configuration Manager** e fare clic su **Scarica pacchetto**.  
+  3.  Selezionare **Configuration Manager** e fare clic su **Scarica pacchetto**.  
 
   4.  Scaricare il file di archivio compresso (zip) ed estrarre il contenuto.  
 

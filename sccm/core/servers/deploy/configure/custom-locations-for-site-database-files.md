@@ -10,19 +10,18 @@ ms.assetid: 500a9aa6-68aa-44eb-bf49-350c1314a697
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2341eb013b5ca03a9b4aa0a3e548facd01395121
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: beddc89ea1925c192e275fc2768eb17c8b47c7ed
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74840565"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798837"
 ---
-# <a name="custom-locations-for-system-center-configuration-manager-site-database-files"></a>Percorsi personalizzati per i file di database del sito di System Center Configuration Manager
+# <a name="custom-locations-for-configuration-manager-site-database-files"></a>Percorsi personalizzati per i file di database del sito di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
- System Center Configuration Manager supporta percorsi personalizzati per i file di database di SQL Server.  
+ Configuration Manager supporta percorsi personalizzati per i file di database di SQL Server.  
 
 > [!NOTE]  
 >  L'opzione per specificare percorsi file non predefiniti non è disponibile quando si usa un cluster SQL Server.  

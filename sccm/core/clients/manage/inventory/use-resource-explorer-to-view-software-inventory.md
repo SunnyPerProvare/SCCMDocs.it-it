@@ -1,7 +1,7 @@
 ---
 title: Visualizzare l'inventario software con Esplora inventario risorse
 titleSuffix: Configuration Manager
-description: Usare Esplora inventario software per visualizzare l'inventario software in System Center Configuration Manager.
+description: Usare Esplora risorse per visualizzare l'inventario software in Configuration Manager.
 ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,19 +10,18 @@ ms.assetid: 4b7aa5f6-5ebd-49be-b7f3-4206caadc187
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: eba3e3757a325576222636ca0113bc667639c538
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 794d52440f1fcf441af74e42be9c5dff34f37016
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70890060"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824198"
 ---
-# <a name="how-to-use-resource-explorer-to-view-software-inventory-in-system-center-configuration-manager"></a>Come usare Esplora inventario software per visualizzare l'inventario software in System Center Configuration Manager
+# <a name="how-to-use-resource-explorer-to-view-software-inventory-in-configuration-manager"></a>Come usare Esplora risorse per visualizzare l'inventario software in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-È possibile usare Esplora inventario risorse in System Center Configuration Manager per visualizzare informazioni relative all'inventario software raccolto dai computer nella gerarchia.  
+È possibile usare Esplora inventario risorse in Configuration Manager per visualizzare informazioni relative all'inventario software raccolto dai computer nella gerarchia.  
 
 > [!NOTE]  
 >  Esplora inventario risorse non visualizzerà dati di inventario fino al completamento dell'esecuzione di un ciclo di inventario software nel client.  

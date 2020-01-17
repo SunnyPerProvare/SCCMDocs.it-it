@@ -10,17 +10,16 @@ ms.assetid: 44153689-70e8-42ad-9ae8-17ae35f6a2e3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: cfa2a2412744046ca1a16aad2721fcb9efcff38e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 176cf780259cf5511face8b236d85af4052f2bd9
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62202297"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824895"
 ---
 # <a name="planning-for-client-deployment-to-linux-and-unix-computers-in-configuration-manager"></a>Pianificazione della distribuzione del client in computer Linux e UNIX in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 > [!Important]  
 > A partire dalla versione 1902, Configuration Manager non supporta i client Linux o UNIX. 
@@ -43,7 +42,7 @@ ms.locfileid: "62202297"
 >   -   Controllo e correzione client dello stato client  
 >   -   Gestione client basata su Internet  
 
- Per informazioni sulle distribuzioni Linux e UNIX e per l'hardware necessario per supportare il client per Linux e UNIX, vedere [Hardware consigliato per System Center Configuration Manager](../../../../core/plan-design/configs/recommended-hardware.md).  
+ Per informazioni sulle distribuzioni Linux e UNIX supportate e sull'hardware necessario per supportare il client per Linux e UNIX, vedere [Hardware consigliato per Configuration Manager](../../../../core/plan-design/configs/recommended-hardware.md).  
 
  Usare le informazioni contenute in questo articolo per pianificare la distribuzione del client di Configuration Manager per Linux e UNIX.  
 
@@ -87,7 +86,7 @@ ms.locfileid: "62202297"
 |SUNWlibmsr|Math & Microtasking Libraries (Root) (sparc)|5.10, REV=2004.11.23|  
 |SUNWcslr|Core Solaris Libraries (Root) (sparc)|11.10.0, REV=2005.01.21.15.53|  
 |SUNWcsl|Core Solaris Libraries (Root) (sparc)|11.10.0, REV=2005.01.21.15.53|  
-|Openssl|SUNopenssl-librararies (Usr)<br /><br /> Sun fornisce le librerie OpenSSL per Solaris 10 SPARC, che vengono aggregate al sistema operativo.|11.10.0,REV=2005.01.21.15.53|  
+|OpenSSL|SUNopenssl-librararies (Usr)<br /><br /> Sun fornisce le librerie OpenSSL per Solaris 10 SPARC, che vengono aggregate al sistema operativo.|11.10.0,REV=2005.01.21.15.53|  
 |PAM|Moduli di autenticazione plug-in<br /><br /> SUNWcsr, Core Solaris, (Root) (sparc)|11.10.0, REV=2005.01.21.15.53|  
 
  **Solaris 10 x86**  
@@ -99,7 +98,7 @@ ms.locfileid: "62202297"
 |SUNWlibmsr|Math & Microtasking Libraries (Root) (i386)|5.10, REV=2004.12.18|  
 |SUNWcsl|Core Solaris, (Shared Libs) (i386)|11.10.0, REV=2005.01.21.16.34|  
 |SUNWcslr|Core Solaris Libraries (Root) (i386)|11.10.0, REV=2005.01.21.16.34|  
-|Openssl|SUNWopenssl-libraries; OpenSSL Libraries (Usr) (i386)|11.10.0, REV=2005.01.21.16.34|  
+|OpenSSL|SUNWopenssl-libraries; OpenSSL Libraries (Usr) (i386)|11.10.0, REV=2005.01.21.16.34|  
 |PAM|Moduli di autenticazione plug-in<br /><br /> SUNWcsr Core Solaris, (Root)(i386)|11.10.0, REV=2005.01.21.16.34|  
 
  **Solaris 11 SPARC**  
@@ -145,7 +144,7 @@ ms.locfileid: "62202297"
 |Pacchetto necessario|Descrizione|Versione minima|  
 |----------------------|-----------------|---------------------|  
 |libc6|Libreria condivisa standard C|2.3.6|  
-|Openssl|Librerie OpenSSL; Secure Network Communications Protocol|0.9.8 o 1.0|  
+|OpenSSL|Librerie OpenSSL; Secure Network Communications Protocol|0.9.8 o 1.0|  
 |PAM|Moduli di autenticazione plug-in|0.79-3|  
 
  **Universal Linux (pacchetto RPM) CentOS, Oracle Linux**  
@@ -161,7 +160,7 @@ ms.locfileid: "62202297"
 
 |Pacchetto necessario|Descrizione|Versione minima|  
 |----------------------|-----------------|---------------------|  
-|Versione del sistema operativo|Versione del sistema operativo|AIX 6.1: qualsiasi Technology Level e Service Pack|  
+|Versione sistema operativo|Versione del sistema operativo|AIX 6.1: qualsiasi Technology Level e Service Pack|  
 |xlC.rte|XL C/C++ Runtime|9.0.0.5|  
 |OpenSSL/openssl.base|Librerie OpenSSL; Secure Network Communications Protocol|0.9.8.4|  
 
@@ -169,7 +168,7 @@ ms.locfileid: "62202297"
 
 |Pacchetto necessario|Descrizione|Versione minima|  
 |----------------------|-----------------|---------------------|  
-|Versione del sistema operativo|Versione del sistema operativo|AIX 7.1: qualsiasi Technology Level e Service Pack|  
+|Versione sistema operativo|Versione del sistema operativo|AIX 7.1: qualsiasi Technology Level e Service Pack|  
 |xlC.rte|XL C/C++ Runtime||  
 |OpenSSL/openssl.base|Librerie OpenSSL; Secure Network Communications Protocol||  
 
@@ -184,7 +183,7 @@ ms.locfileid: "62202297"
 |SysMgmtMin.openssl|Librerie OpenSSL; Secure Network Communications Protocol|A.00.09.08d.002|  
 |PAM|Moduli di autenticazione plug-in|PAM fa parte dei componenti principali del sistema operativo di HP-UX. Non ci sono altre dipendenze.|  
 
- **Dipendenze di Configuration Manager:** la tabella seguente elenca i ruoli di sistema del sito che supportano client Linux e UNIX. Per altre informazioni su questi ruoli del sistema del sito, vedere [Determinare i ruoli del sistema del sito per System Center Configuration Manager](../../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md).  
+ **Dipendenze di Configuration Manager:** la tabella seguente elenca i ruoli di sistema del sito che supportano client Linux e UNIX. Per altre informazioni su questi ruoli del sistema del sito, vedere [Determinare i ruoli del sistema del sito per i client di Configuration Manager](../../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md).  
 
 |Sistema del sito di Configuration Manager|Altre informazioni|  
 |---------------------------------------|----------------------|  

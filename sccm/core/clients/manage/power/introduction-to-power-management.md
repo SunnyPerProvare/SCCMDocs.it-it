@@ -1,7 +1,7 @@
 ---
 title: Introduzione al risparmio energia
 titleSuffix: Configuration Manager
-description: Introduzione al risparmio energia in System Center Configuration Manager.
+description: Informazioni introduttive sul risparmio energia in Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,23 +10,22 @@ ms.assetid: 3ddff2a7-99eb-4ef8-b969-f3f7f24053db
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a86b430849945a01093a2eb136afd6d1aa363aaf
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 400fe3113207217504317eeb8ef8bbce4ab6a298
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62199842"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823960"
 ---
-# <a name="introduction-to-power-management-in-system-center-configuration-manager"></a>Introduzione al risparmio energia in System Center Configuration Manager
+# <a name="introduction-to-power-management-in-configuration-manager"></a>Introduzione al risparmio energia in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Il risparmio energia in System Center Configuration Manager soddisfa l'esigenza di molte organizzazioni di monitorare e ridurre il consumo di energia dei computer. Questa funzione per applica impostazioni pertinenti e coerenti ai computer dell'organizzazione sfruttando le funzionalità di risparmio energia di Windows. È possibile applicare ai computer impostazioni di risparmio energia diverse durante le ore lavorative e le ore non lavorative. È possibile, ad esempio, applicare una combinazione per il risparmio di energia più restrittiva durante l'orario non lavorativo. Nei casi in cui i computer devono rimanere sempre accesi, è possibile evitare l'attivazione delle impostazioni di risparmio energia.  
+Il risparmio energia in Configuration Manager soddisfa l'esigenza di molte organizzazioni di monitorare e ridurre il consumo di energia dei computer. Questa funzione per applica impostazioni pertinenti e coerenti ai computer dell'organizzazione sfruttando le funzionalità di risparmio energia di Windows. È possibile applicare ai computer impostazioni di risparmio energia diverse durante le ore lavorative e le ore non lavorative. È possibile, ad esempio, applicare una combinazione per il risparmio di energia più restrittiva durante l'orario non lavorativo. Nei casi in cui i computer devono rimanere sempre accesi, è possibile evitare l'attivazione delle impostazioni di risparmio energia.  
 
  La funzionalità di risparmio energia in Configuration Manager include diversi report per agevolare l'analisi dei consumi e delle impostazioni di risparmio energia per i computer nell'organizzazione. È anche possibile usare i report per risolvere i problemi relativi al risparmio energia.  
 
- Per un flusso di lavoro dettagliato della configurazione e dell'uso del risparmio energia, vedere [Administrator checklist for power management in System Center Configuration Manager](../../../../core/clients/manage/power/administrator-checklist-for-power-management.md) (Elenco di controllo amministratore per il risparmio energia in System Center Configuration Manager).  
+ Per un flusso di lavoro dettagliato della configurazione e dell'uso del risparmio energia, vedere [Elenco di controllo per gli amministratori per il risparmio energia](../../../../core/clients/manage/power/administrator-checklist-for-power-management.md).  
 
 > [!IMPORTANT]  
 >  Il risparmio energia di Configuration Manager non è supportato per le macchine virtuali. Non è possibile applicare combinazioni per il risparmio di energia alle macchine virtuali, né ottenere da queste dati o report relativi al risparmio energia.  
@@ -41,7 +40,7 @@ Il risparmio energia in System Center Configuration Manager soddisfa l'esigenza 
 >  Per applicare combinazioni per il risparmio di energia ai computer del sito attendere di aver raccolto e analizzato i dati relativi al risparmio energia dei computer client. Se si applicano nuove impostazioni di risparmio energia ai computer senza prima esaminare le impostazioni esistenti, si potrebbe riscontrare un aumento del consumo di energia.  
 
 ### <a name="enforcement-phase"></a>Fase di imposizione  
- Il risparmio energia consente di creare combinazioni per il risparmio di energia che sarà possibile applicare alle raccolte di computer del sito. Queste combinazioni eseguono la configurazione delle impostazioni di risparmio energia di Windows nei computer. È possibile usare le combinazioni per il risparmio di energia incluse in Configuration Manager oppure è possibile configurare combinazioni personalizzate. È possibile usare i dati relativi al risparmio energia raccolti durante la fase di monitoraggio e pianificazione come linea di base per la valutazione del risparmio energia dopo l'applicazione di una combinazione per il risparmio di energia ai computer. Per altre informazioni, vedere [Administrator checklist for power management in System Center Configuration Manager](../../../../core/clients/manage/power/administrator-checklist-for-power-management.md) (Elenco di controllo amministratore per il risparmio energia in System Center Configuration Manager).  
+ Il risparmio energia consente di creare combinazioni per il risparmio di energia che sarà possibile applicare alle raccolte di computer del sito. Queste combinazioni eseguono la configurazione delle impostazioni di risparmio energia di Windows nei computer. È possibile usare le combinazioni per il risparmio di energia incluse in Configuration Manager oppure è possibile configurare combinazioni personalizzate. È possibile usare i dati relativi al risparmio energia raccolti durante la fase di monitoraggio e pianificazione come linea di base per la valutazione del risparmio energia dopo l'applicazione di una combinazione per il risparmio di energia ai computer. Per altre informazioni, vedere [Elenco di controllo per gli amministratori per il risparmio energia](../../../../core/clients/manage/power/administrator-checklist-for-power-management.md).  
 
 ### <a name="compliance-phase"></a>Fase di verifica della conformità  
  Nella fase di verifica della conformità è possibile eseguire report che consentono di valutare il consumo di energia e il risparmio sui costi dell'energia all'interno dell'organizzazione. È anche possibile eseguire report che descrivono i miglioramenti relativi alla quantità di CO2 generata dai computer. Sono disponibili anche report che consentono di verificare la corretta applicazione delle impostazioni del risparmio energia ai computer e di risolvere i problemi della funzionalità di risparmio energia.  

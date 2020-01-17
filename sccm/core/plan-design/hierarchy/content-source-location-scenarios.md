@@ -1,7 +1,7 @@
 ---
 title: Percorso di origine del contenuto
 titleSuffix: Configuration Manager
-description: Informazioni sulle impostazioni di System Center Configuration Manager che consentono ai client di individuare il contenuto in una rete lenta.
+description: Informazioni sulle impostazioni di Configuration Manager che consentono ai client di individuare contenuto in una rete lenta.
 ms.date: 01/3/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,24 +11,23 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3414fb15f3a303b443aa615a45440e1b0636e5b4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a8168c8fcc1645c620287d15ce11a733731af8d5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70891383"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800407"
 ---
-# <a name="content-source-location-scenarios-in-system-center-configuration-manager"></a>Scenari del percorso di origine del contenuto in System Center Configuration Manager
+# <a name="content-source-location-scenarios-in-configuration-manager"></a>Scenari del percorso di origine del contenuto in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Nelle versioni precedenti alla versione 1610, System Center Configuration Manager supporta diverse impostazioni che è possibile combinare per definire come e dove i client possono trovare il contenuto quando sono connessi a una rete lenta. Le combinazioni possibili influiscono sui percorsi del contenuto usati dai client e sulla possibilità di usare correttamente un percorso di fallback quando l'origine preferita del contenuto non è disponibile.  
+Nelle versioni precedenti alla versione 1610, Configuration Manager supportava diverse impostazioni che era possibile combinare per definire come e dove i client potessero trovare contenuto in caso di connessione a una rete lenta. Le combinazioni possibili influiscono sui percorsi del contenuto usati dai client e sulla possibilità di usare correttamente un percorso di fallback quando l'origine preferita del contenuto non è disponibile.  
 
 > [!IMPORTANT]  
 > **Se i siti eseguono la versione 1511, 1602 o 1606**, le informazioni contenute in questo argomento sono valide per l'infrastruttura in uso. Vedere anche [Gruppi di limiti per System Center Configuration Manager versioni 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606) per informazioni specifiche per i gruppi di limiti con queste versioni di Configuration Manager.
 >
-> **Se i siti eseguono la versione 1610 o versioni successive**, usare le informazioni contenute in [Definire i limiti del sito e i gruppi di limiti per System Center Configuration Manager](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups) per comprendere in che modo i client individuano i punti di distribuzione con contenuto disponibile.
+> **Se i siti eseguono la versione 1610 o versioni successive**, usare le informazioni contenute in [Definire i limiti del sito e i gruppi di limiti per Configuration Manager](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups) per comprendere in che modo i client individuano i punti di distribuzione con contenuto disponibile.
 
 
 

@@ -1,8 +1,8 @@
 ---
 title: Controllo prerequisiti
 titleSuffix: Configuration Manager
-description: Informazioni sull'uso del Controllo prerequisiti per identificare e risolvere i problemi che possono bloccare un sito o l'installazione del ruolo di sistema del sito.
-ms.date: 03/1/2017
+description: Informazioni sull'uso del controllo prerequisiti per identificare e risolvere i problemi che possono bloccare un sito o l'installazione del ruolo di sistema del sito.
+ms.date: 01/08/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,19 +10,18 @@ ms.assetid: aaf13bb8-4ba2-4bd7-9fac-d36a9d88a1b6
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19167ee3b25d838ad6d2268d2b67230968394ef5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8c5764c9ad502abc9ef791c4db32e8080a08a7e2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70888798"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798114"
 ---
-# <a name="prerequisite-checker-for-system-center-configuration-manager"></a>Controllo prerequisiti per System Center Configuration Manager
+# <a name="prerequisite-checker-for-configuration-manager"></a>Controllo prerequisiti per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
- Prima di eseguire il programma di installazione per installare o aggiornare un sito di System Center Configuration Manager oppure prima di installare un ruolo di sistema del sito in un nuovo server, è possibile usare questa applicazione autonoma (**Prereqchk.exe**) dalla versione di Configuration Manager che si vuole usare per verificare la disponibilità del server. Informazioni sull'uso di Controllo prerequisiti per identificare e risolvere i problemi che possono bloccare un sito o l'installazione del ruolo di sistema del sito.  
+ Prima di eseguire il programma di installazione per installare o aggiornare un sito di Configuration Manager oppure prima di installare un ruolo di sistema del sito in un nuovo server, è possibile usare questa applicazione autonoma (**Prereqchk.exe**) dalla versione di Configuration Manager che si vuole usare per verificare la disponibilità del server. Informazioni sull'uso di Controllo prerequisiti per identificare e risolvere i problemi che possono bloccare un sito o l'installazione del ruolo di sistema del sito.  
 
 > [!NOTE]  
 >  Il Controllo prerequisiti viene sempre eseguito come parte del programma di installazione.  
@@ -40,7 +39,7 @@ Quando si esegue il Controllo prerequisiti in un prompt dei comandi e si specifi
 -   Il Controllo prerequisiti esegue solo i controlli associati al server del sito o ai sistemi del sito specificati nella riga di comando.  
 -   Per controllare un computer remoto, l'account utente deve avere diritti amministrativi per il computer remoto.  
 
-Per altre informazioni sui controlli eseguiti dal Controllo prerequisiti, vedere [Elenco dei controlli dei prerequisiti per System Center Configuration Manager](../../../../core/servers/deploy/install/list-of-prerequisite-checks.md).  
+Per altre informazioni sui controlli eseguiti dal Controllo prerequisiti, vedere [Elenco dei controlli dei prerequisiti per Configuration Manager](../../../../core/servers/deploy/install/list-of-prerequisite-checks.md).  
 
 ## <a name="copy-prerequisite-checker-files-to-another-computer"></a>Copiare i file del Controllo prerequisiti in un altro computer  
 
@@ -51,11 +50,12 @@ Per altre informazioni sui controlli eseguiti dal Controllo prerequisiti, vedere
 
 2.  Copiare i seguenti file nella cartella di destinazione su un altro computer:  
 
-    -   Prereqchk.exe  
-    -   Prereqcore.dll  
-    -   Basesql.dll  
-    -   Basesvr.dll  
-    -   Baseutil.dll  
+    - prereqchk.exe
+    - prereqcore.dll
+    - prereqchkres.dll
+    - basesql.dll
+    - basesvr.dll
+    - baseutil.dll
 
 ##  <a name="run-prerequisite-checker-with-default-checks"></a>Eseguire il Controllo prerequisiti con i controlli predefiniti  
 

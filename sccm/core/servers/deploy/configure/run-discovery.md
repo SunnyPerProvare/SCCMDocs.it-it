@@ -10,19 +10,18 @@ ms.assetid: 30844519-ce14-456f-bfb8-4318b578e9f6
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 760ea21d2badc6e58acf10c78aec4a3437ed3c1a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f999de35ac684d2a17f9179f41df8a616b3d3eb7
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70890694"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798459"
 ---
-# <a name="run-discovery-for-system-center-configuration-manager"></a>Eseguire l'individuazione per System Center Configuration Manager
+# <a name="run-discovery-for-configuration-manager"></a>Eseguire l'individuazione per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Usare uno o più metodi di individuazione in System Center Configuration Manager per trovare le risorse del computer e dell'utente che è possibile gestire. I metodi di individuazione consentono anche di identificare l'infrastruttura di rete nell'ambiente in uso. Esistono diversi metodi che è possibile usare per trovare componenti differenti e ciascuno di essi presenta configurazioni e limitazioni specifiche.  
+Usare uno o più metodi di individuazione in Configuration Manager per trovare le risorse del computer e dell'utente che è possibile gestire. I metodi di individuazione consentono anche di identificare l'infrastruttura di rete nell'ambiente in uso. Esistono diversi metodi che è possibile usare per trovare componenti differenti e ciascuno di essi presenta configurazioni e limitazioni specifiche.  
 
 ## <a name="overview-of-discovery"></a>Panoramica dell'individuazione  
  L'individuazione è il processo con cui Configuration Manager rileva ciò che è possibile gestire. Di seguito sono indicati i metodi di individuazione disponibili:  
@@ -42,9 +41,9 @@ Usare uno o più metodi di individuazione in System Center Configuration Manager
 -   Individuazione server  
 
 > [!TIP]  
->  Informazioni sui singoli metodi di individuazione sono disponibili nell'argomento [Informazioni sui metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/about-discovery-methods.md).  
+>  Informazioni sui singoli metodi di individuazione sono disponibili nell'argomento [Informazioni sui metodi di individuazione per Configuration Manager](../../../../core/servers/deploy/configure/about-discovery-methods.md).  
 >   
->  Per assistenza nella scelta dei metodi da usare e dei siti della gerarchia, vedere l'argomento [Selezionare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md).  
+>  Per assistenza nella scelta dei metodi da usare e dei siti della gerarchia, vedere l'argomento [Selezionare i metodi di individuazione per Configuration Manager](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md).  
 
  Per la maggior parte dei metodi di individuazione, è necessario abilitare il metodo scelto in un sito e quindi impostarlo per la ricerca in specifici percorsi di rete o di Active Directory. Durante l'esecuzione, vengono eseguite query nel percorso specificato per ottenere informazioni sui dispositivi o sugli utenti che Configuration Manager può gestire. Quando un metodo di individuazione rileva correttamente un'informazione su una risorsa, questa viene inserita in un file denominato record dei dati di individuazione. Tale file viene quindi elaborato da un sito di amministrazione centrale o primario. L'elaborazione di un record dei dati di individuazione crea un nuovo record nel database del sito per le risorse appena individuate oppure aggiorna i record esistenti con le nuove informazioni.  
 
@@ -78,8 +77,8 @@ I file dei record dei dati di individuazione si distinguono mediante l'estension
 
 Gli argomenti seguenti offrono informazioni basilari per l'uso corretto dei metodi di individuazione:  
 
--   [Informazioni sui metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/about-discovery-methods.md)  
+-   [Informazioni sui metodi di individuazione per Configuration Manager](../../../../core/servers/deploy/configure/about-discovery-methods.md)  
 
--   [Selezionare i metodi di individuazione da usare per System Center Configuration Manager](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md)  
+-   [Selezionare i metodi di individuazione da usare per Configuration Manager](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md)  
 
-Quindi, dopo aver stabilito quali metodi usare, vedere le informazioni relative all'impostazione di ogni metodo nell'argomento [Configurare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  
+Quindi, dopo aver stabilito quali metodi usare, vedere le informazioni relative all'impostazione di ogni metodo nell'argomento [Configurare i metodi di individuazione per Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  

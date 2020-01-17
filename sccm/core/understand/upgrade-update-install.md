@@ -10,31 +10,31 @@ ms.assetid: 17fab17f-304d-4f6a-87c7-30ab4f5521ed
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 263ec638afa62cee4f8fce86a9f7b9e35b37f0bb
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 512755ab8eae8a5bbfbc1b2a0eb39b69216d8ae9
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67676033"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791919"
 ---
 # <a name="about-upgrade-update-and-install-for-site-and-hierarchy-infrastructure"></a>Informazioni su upgrade, aggiornamento e installazione per l'infrastruttura del sito e della gerarchia
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-
-Quando si gestisce l'infrastruttura del sito e della gerarchia di System Center Configuration Manager, i termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti distinti.
+Quando si gestisce l'infrastruttura della gerarchia e dei siti di Configuration Manager, i termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti distinti.
 
 ## <a name="upgrade"></a>Upgrade
-Il termine *upgrade* o *upgrade sul posto* viene usato per indicare la conversione del sito o della gerarchia di Configuration Manager 2012 in un sito o una gerarchia che esegue System Center Configuration Manager.
-Quando si esegue l'upgrade di System Center 2012 Configuration Manager a System Center Configuration Manager, si continua a usare gli stessi server per ospitare i siti e i server dei siti e si mantengono i dati e le configurazioni esistenti per Configuration Manager.  Questo comportamento è diverso dalla [migrazione](/sccm/core/migration/migrate-data-between-hierarchies), che è un modo per mantenere le configurazioni e i dati sui dispositivi gestiti usando però i nuovi siti di System Center Configuration Manager installati nel nuovo hardware.
 
-Per altre informazioni, vedere l'articolo [Eseguire l'aggiornamento a System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).
+Il termine *upgrade* o *upgrade sul posto* viene usato per indicare la conversione del sito o della gerarchia di Configuration Manager 2012 in un sito o una gerarchia che esegue Configuration Manager Current Branch.
+
+Quando si esegue l'upgrade di System Center 2012 Configuration Manager a Configuration Manager Current Branch, si continuano a usare gli stessi server per ospitare i siti e i server dei siti e si mantengono i dati e le configurazioni esistenti per Configuration Manager.  Questo comportamento è diverso dalla [migrazione](/sccm/core/migration/migrate-data-between-hierarchies), che è un modo per mantenere le configurazioni e i dati sui dispositivi gestiti usando però i nuovi siti di Configuration Manager Current Branch installati nel nuovo hardware.
+
+Per altre informazioni, vedere [Eseguire l'aggiornamento a Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).
 
 
 
 ## <a name="update"></a>Aggiornamento
-Il termine *aggiornamento* viene usato per indicare l'installazione di aggiornamenti nella console per System Center Configuration Manager e gli aggiornamenti fuori banda che non possono essere distribuiti dall'interno della console di Configuration Manager. Gli aggiornamenti nella console possono modificare la versione del sito Current Branch (o Technical Preview) in modo da eseguire una versione successiva. Se ad esempio il sito esegue una versione 1806, è possibile installare un aggiornamento per la versione 1810. Gli aggiornamenti possono inoltre installare correzioni per un problema noto, senza modificare la versione dei siti.      
+Il termine *aggiornamento* viene usato per indicare l'installazione di aggiornamenti nella console per Configuration Manager e gli aggiornamenti fuori banda che non possono essere distribuiti dall'interno della console di Configuration Manager. Gli aggiornamenti nella console possono modificare la versione del sito Current Branch (o Technical Preview) in modo da eseguire una versione successiva. Se ad esempio il sito esegue una versione 1806, è possibile installare un aggiornamento per la versione 1810. Gli aggiornamenti possono inoltre installare correzioni per un problema noto, senza modificare la versione dei siti.      
 
 In genere, gli aggiornamenti aggiungono correzioni per la sicurezza, miglioramenti della qualità e nuove funzionalità alla distribuzione esistente. Se si usa il ramo Technical Preview, un aggiornamento può installare una versione più recente della Technical Preview.
 - È l'utente stesso a scegliere quando installare l'aggiornamento nella console, a partire dal sito di livello superiore della gerarchia.
@@ -42,7 +42,7 @@ In genere, gli aggiornamenti aggiungono correzioni per la sicurezza, miglioramen
 - Al termine dell'installazione di un nuovo aggiornamento nel sito di livello superiore, i siti primari figlio avviano automaticamente il processo di aggiornamento. È tuttavia possibile impostare [intervalli di servizio](/sccm/core/servers/manage/service-windows) per controllare i tempi di esecuzione degli aggiornamenti.
 - I siti secondari non installano gli aggiornamenti automaticamente. Spetta all'utente avviare manualmente l'aggiornamento dall'interno della console di Configuration Manager.
 
-Per altre informazioni, vedere [Aggiornamenti per System Center Configuration Manager](/sccm/core/servers/manage/updates) e [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview).
+Per altre informazioni, vedere [Aggiornamenti per Configuration Manager](/sccm/core/servers/manage/updates) e [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview).
 
 
 

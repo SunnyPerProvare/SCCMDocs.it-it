@@ -11,13 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 269e8786fe086abb663511da51948ebc3ffb801a
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: 9dae4dd75398c84f465d411b2eb6b4a7d2ae953e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198524"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802974"
 ---
 <!-- 
 - Feature 1357546
@@ -107,11 +106,14 @@ Procedure dettagliate guidate che semplificano la risoluzione dei problemi relat
 
 ## <a name="new-and-updated-support-articles"></a>Articoli di supporto nuovi e aggiornati
 
-Articoli di supporto nuovi o aggiornati tra il 25 ottobre e il 27 novembre 2019.
+Articoli di supporto nuovi o aggiornati tra il 25 ottobre e il 23 dicembre 2019.
 
 - [KB 4528414: Console di Configuration Manager visualizza la versione della definizione di Endpoint Protection non aggiornata e l'ora dell'ultimo aggiornamento](https://support.microsoft.com/help/4528414/)
 - [KB 4529905: Ritardi nella distribuzione del contenuto in Configuration Manager Current Branch, versione 1906](https://support.microsoft.com/help/4529905)
 - [KB 4529827: I client di Configuration Manager rilevano erroneamente lo stato di co-gestione](https://support.microsoft.com/help/4529827)
+- [KB 4529824: Aggiornamento del motore di elaborazione dei messaggi per Configuration Manager Current Branch, versione 1906](https://support.microsoft.com/help/4529824)
+- [KB 4535819: Aggiornamento per Microsoft Endpoint Configuration Manager versione 1910, anello di aggiornamento anticipato](https://support.microsoft.com/help/4535819)
+- [KB 4535776: Riepilogo delle modifiche in Microsoft Endpoint Configuration Manager Current Branch, versione 1910](https://support.microsoft.com/help/4535776)
 
 
 Per sottoscrivere la notifica Atom o RSS dei nuovi articoli di supporto di Configuration Manager, vedere [Aggiornamenti dei contenuti del supporto](https://support.microsoft.com/help/4089498/) e selezionare **Microsoft Endpoint Configuration Manager**.  

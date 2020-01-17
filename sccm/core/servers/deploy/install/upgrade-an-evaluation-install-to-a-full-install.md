@@ -1,7 +1,7 @@
 ---
 title: Aggiornare installazioni di valutazione
 titleSuffix: Configuration Manager
-description: Informazioni su come eseguire l'aggiornamento di un'installazione di valutazione a installazione completa di System Center Configuration Manager.
+description: Informazioni su come eseguire l'aggiornamento di un'installazione di valutazione a installazione completa di Configuration Manager.
 ms.date: 02/7/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: 9a32f5a3-9917-434f-9811-106170f404be
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 29c1aee34669ac65ae3175895bc1061e851182d1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f9c669829fe965352e036383e672d1d44942f5ef
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70888876"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797955"
 ---
-# <a name="upgrade-an-evaluation-installation-of-system-center-configuration-manager-to-a-full-installation"></a>Aggiornare un'installazione di valutazione di System Center Configuration Manager a un'installazione completa
+# <a name="upgrade-an-evaluation-installation-of-configuration-manager-to-a-full-installation"></a>Aggiornare un'installazione di valutazione di Configuration Manager a un'installazione completa
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Se System Center Configuration Manager è stato installato come versione di valutazione, dopo 180 giorni la console di Configuration Manager passerà alla modalità di sola lettura fino a quando il prodotto non sarà attivato nella pagina **Manutenzione sito** del programma di installazione. In qualsiasi momento prima o dopo il periodo di 180 giorni, è possibile eseguire l'aggiornamento di un'installazione di valutazione a un'installazione completa.  
+Se Configuration Manager è stato installato come versione di valutazione, dopo 180 giorni la console di Configuration Manager passerà alla modalità di sola lettura fino a quando il prodotto non sarà attivato nella pagina **Manutenzione sito** del programma di installazione. In qualsiasi momento prima o dopo il periodo di 180 giorni, è possibile eseguire l'aggiornamento di un'installazione di valutazione a un'installazione completa.  
 
 > [!NOTE]  
 >  Quando si connette una console di Configuration Manager a un'installazione di valutazione di Configuration Manager, sulla barra del titolo della console viene visualizzato il numero di giorni restanti prima della scadenza dell'installazione di valutazione. Il numero di giorni non viene aggiornato automaticamente, ma solo quando si stabilisce una nuova connessione a un sito.  

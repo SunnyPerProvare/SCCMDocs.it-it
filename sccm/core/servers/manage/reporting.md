@@ -9,19 +9,18 @@ ms.assetid: 78c1f344-4d72-4718-aad9-3a3834b64dbd
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a7819963246762bff7f1ac58a6b43c6a0687c2d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 91257ec12d765b9faf13c2e1f9fc507f85701931
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62249611"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793505"
 ---
-# <a name="reporting-in-system-center-configuration-manager"></a>Creazione di report in System Center Configuration Manager
+# <a name="reporting-in-configuration-manager"></a>Reporting di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-La creazione di report in System Center Configuration Manager offre un set di strumenti e risorse che consentono di usare le stesse funzionalità avanzate di SQL Server Reporting Services.  
+La creazione di report in Configuration Manager offre un set di strumenti e risorse che consentono di usare le stesse funzionalità avanzate di Microsoft SQL Server Reporting Services nella console di Configuration Manager.  
 
 ## <a name="reporting-topics"></a>Argomenti sulla creazione di report  
  Gli argomenti seguenti consentono di gestire la creazione di report in Configuration Manager:  

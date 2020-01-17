@@ -1,7 +1,7 @@
 ---
 title: Creare e applicare combinazioni per il risparmio di energia
 titleSuffix: Configuration Manager
-description: Creare e applicare combinazioni per il risparmio di energia in System Center Configuration Manager.
+description: Creare e applicare combinazioni per il risparmio di energia in Configuration Manager.
 ms.date: 04/17/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,19 +10,18 @@ ms.assetid: 738eddaa-52e2-467f-b453-821ef2884d47
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 22ee6cb6cba41baf66e471e32635e30fa9f88bc1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: aca0f3078c046bbc988a289f548ac11e26747088
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62200294"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823977"
 ---
-# <a name="how-to-create-and-apply-power-plans-in-system-center-configuration-manager"></a>Come creare e applicare combinazioni per il risparmio di energia in System Center Configuration Manager
+# <a name="how-to-create-and-apply-power-plans-in-configuration-manager"></a>Come creare e applicare combinazioni per il risparmio di energia in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Le funzionalità di risparmio energia in System Center Configuration Manager consentono di applicare le combinazioni per il risparmio di energia fornite con Configuration Manager a raccolte di computer nella gerarchia oppure di creare combinazioni per il risparmio di energia personalizzate. Usare la procedura in questo argomento per applicare una combinazione per il risparmio di energia predefinita o personalizzata ai computer.  
+Le funzionalità di risparmio energia in Configuration Manager consentono di applicare le combinazioni per il risparmio di energia fornite con Configuration Manager a raccolte di computer nella gerarchia oppure di creare combinazioni per il risparmio di energia personalizzate. Usare la procedura in questo argomento per applicare una combinazione per il risparmio di energia predefinita o personalizzata ai computer.  
 
 > [!IMPORTANT]  
 >  È possibile applicare le combinazioni per il risparmio di energia di Configuration Manager solo a raccolte di dispositivi.  
@@ -33,7 +32,7 @@ Le funzionalità di risparmio energia in System Center Configuration Manager con
 
 - Ora riattivazione: se a un computer desktop vengono applicate più ore di riattivazione, viene usata l'ora più vicina alla mezzanotte.  
 
-  Usare il report **Computer con più combinazioni per il risparmio di energia** per visualizzare tutti i computer a cui sono applicate più combinazioni di risparmio di energia. In questo modo è più facile individuare i computer con conflitti. Per ulteriori informazioni sui report relativi al risparmio di energia, vedere [Come monitorare e pianificare il risparmio energia in System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
+  Usare il report **Computer con più combinazioni per il risparmio di energia** per visualizzare tutti i computer a cui sono applicate più combinazioni di risparmio di energia. In questo modo è più facile individuare i computer con conflitti. Per altre informazioni sui report di risparmio energia, vedere [Come monitorare e pianificare il risparmio energia in Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
 
 > [!IMPORTANT]  
 >  Le impostazioni di risparmio energia configurate tramite Criteri di gruppo di Windows avranno la priorità sulle impostazioni configurate dalle funzionalità di risparmio energia di Configuration Manager.  
@@ -63,7 +62,7 @@ Le funzionalità di risparmio energia in System Center Configuration Manager con
 7. Se si vuole configurare una combinazione per il risparmio di energia personalizzata per le ore di punta (o lavorative), selezionare **Personalizzazione ore di punta (Configuration Manager)** nell'elenco a discesa **Piano ore di punta** e quindi fare clic su **Modifica**. Se si vuole configurare una combinazione per il risparmio di energia personalizzata per le ore non di punta (o non lavorative), selezionare **Personalizzazione fuori ore di punta (Configuration Manager)** nell'elenco a discesa **Piano fuori ore di punta** e quindi fare clic su **Modifica**.  
 
    > [!NOTE]  
-   >  È possibile usare il report **Attività computer** per decidere le pianificazioni da usare per le ore di punta e non di punta quando si applicano combinazioni per il risparmio di energia a raccolte di computer. Per altre informazioni, vedere [Come monitorare e pianificare il risparmio energia in System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
+   >  È possibile usare il report **Attività computer** per decidere le pianificazioni da usare per le ore di punta e non di punta quando si applicano combinazioni per il risparmio di energia a raccolte di computer. Per altre informazioni, vedere [How to monitor and plan for power management](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md) (Come monitorare e pianificare il risparmio energia ).  
 
     È anche possibile selezionare le combinazioni per il risparmio di energia predefinite, **Bilanciamento (Configuration Manager)** , **Prestazioni elevate (Configuration Manager)** e **Risparmio di energia (Configuration Manager)** , quindi fare clic su **Visualizza** per visualizzare le proprietà di ogni combinazione.  
 

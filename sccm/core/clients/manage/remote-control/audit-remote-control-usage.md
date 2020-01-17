@@ -1,7 +1,7 @@
 ---
 title: Controllare l'uso del controllo remoto
 titleSuffix: Configuration Manager
-description: Controllare l'uso di controllo remoto in System Center Configuration Manager.
+description: Controllare l'uso del controllo remoto in Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,21 +10,20 @@ ms.assetid: 5c975e69-0cc0-4afd-b7fb-b7182162a933
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88dfdb9ed5279b981b20946385aa948fcad67814
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e88753245b65276be989bd3850a116c9ec6fd74e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65499637"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823892"
 ---
-# <a name="how-to-audit-remote-control-usage-in-system-center-configuration-manager"></a>Come controllare l'uso di controllo remoto in System Center Configuration Manager
+# <a name="how-to-audit-remote-control-usage-in-configuration-manager"></a>Come controllare l'utilizzo del controllo remoto in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-È possibile usare i report di System Center Configuration Manager per visualizzare le informazioni di controllo per il controllo remoto.  
+È possibile usare i report di Configuration Manager per visualizzare le informazioni di controllo per il controllo remoto.  
 
- Per altre informazioni sulle modalità di configurazione dei report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
+ Per altre informazioni sulle modalità di configurazione della creazione di report in Configuration Manager, vedere [Creazione di report](../../../../core/servers/manage/reporting.md).  
 
  I due report seguenti sono disponibili con la categoria **Messaggi di stato - Controllo**:  
 

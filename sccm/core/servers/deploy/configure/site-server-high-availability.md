@@ -10,12 +10,12 @@ ms.assetid: 6dcef836-c0d1-40af-ad30-cd8d864b09a9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d06cca3e859c6fd910e094b4b431179a3d7a5037
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 555895f2b4c437320995d742b1abcfd0e84c957f
+ms.sourcegitcommit: 9901ed9219916b6f185b53c0f62e69fc4dbd6692
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798398"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124158"
 ---
 # <a name="site-server-high-availability-in-configuration-manager"></a>Disponibilità elevata del server del sito in Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "75798398"
 
 <!--1128774-->
 
-In passato, era possibile aggiungere ridondanza per la maggior parte dei ruoli in Configuration Manager definendo più istanze di questi ruoli nell'ambiente in uso. Fatta eccezione per il server del sito stesso. A partire da Configuration Manager versione 1806, la disponibilità elevata per il ruolo del server del sito è una soluzione basata su Configuration Manager per installare un server del sito aggiuntivo in modalità  *passiva*. La versione 1810 aggiunge il supporto della gerarchia, quindi anche i siti di amministrazione centrale e i siti primari figlio possono avere un altro server del sito in modalità passiva. Il server del sito in modalità passiva può essere locale o basato sul cloud in Azure.
+In passato, era possibile aggiungere ridondanza per la maggior parte dei ruoli in Configuration Manager definendo più istanze di questi ruoli nell'ambiente in uso. Fatta eccezione per il server del sito stesso. A partire da Configuration Manager versione 1806, la disponibilità elevata per il ruolo del server del sito è una soluzione di base di Configuration Manager per installare un server del sito aggiuntivo in modalità *passiva*. La versione 1810 aggiunge il supporto della gerarchia, quindi anche i siti di amministrazione centrale e i siti primari figlio possono avere un altro server del sito in modalità passiva. Il server del sito in modalità passiva può essere locale o basato sul cloud in Azure.
 
 Questa funzionalità offre i vantaggi seguenti 
 - Ridondanza e disponibilità elevata per il ruolo del server del sito  

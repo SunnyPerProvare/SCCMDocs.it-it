@@ -10,19 +10,18 @@ ms.assetid: ec976930-7467-4d3c-b33c-991bf408a74a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81073cc22d7bb59188cf881590d07deb0c20158c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 691d89aff2d7e4880f316d03ceb68a89f6d88473
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70891466"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75803042"
 ---
-# <a name="prerequisites-for-migration-in-system-center-configuration-manager"></a>Prerequisiti per la migrazione in System Center Configuration Manager
+# <a name="prerequisites-for-migration-in-configuration-manager"></a>Prerequisiti per la migrazione in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Per eseguire la migrazione da una gerarchia di origine supportata, è necessario avere accesso a ogni sito di origine applicabile di Configuration Manager e le autorizzazioni per la configurazione e l'esecuzione delle operazioni di migrazione all'interno del sito di destinazione di System Center Configuration Manager.  
+Per eseguire la migrazione da una gerarchia di origine supportata, è necessario avere accesso a ogni sito di origine applicabile di Configuration Manager e le autorizzazioni per la configurazione e l'esecuzione delle operazioni di migrazione all'interno del sito di destinazione di Configuration Manager.  
 
  Usare le informazioni contenute nelle sezioni seguenti per individuare le versioni di Configuration Manager supportate per la migrazione e le configurazioni necessarie.  
 
@@ -35,20 +34,20 @@ Per eseguire la migrazione da una gerarchia di origine supportata, è necessario
 ##  <a name="BKMK_SupportedMigrationVersions"></a> Versioni di Configuration Manager supportate per la migrazione  
  È possibile eseguire la migrazione di dati da una gerarchia di origine che esegue una delle versioni seguenti di Configuration Manager:  
 
-- Configuration Manager 2007 SP2  (ai fini della migrazione, le versioni di Configuration Manager 2007 R2 o R3 nel sito di origine non sono prese in considerazione. Se il sito di origine esegue SP2, i siti in cui è installato il componente aggiuntivo R2 o R3 sono supportati per la migrazione a System Center Configuration Manager).  
+- Configuration Manager 2007 SP2  (ai fini della migrazione, le versioni di Configuration Manager 2007 R2 o R3 nel sito di origine non sono prese in considerazione. Se il sito di origine esegue SP2, i siti in cui è installato il componente aggiuntivo R2 o R3 sono supportati per la migrazione a Configuration Manager Current Branch).  
 
 - System Center 2012 Configuration Manager SP2 o System Center 2012 R2 Configuration Manager SP1.  
 
   > [!TIP]  
-  >  Oltre alla migrazione, è possibile usare un aggiornamento sul posto di siti che eseguono System Center 2012 Configuration Manager per System Center Configuration Manager.  
+  >  Oltre alla migrazione, è possibile usare un aggiornamento sul posto dei siti che eseguono System Center 2012 Configuration Manager a Configuration Manager Current Branch.  
 
-- Gerarchia di System Center Configuration Manager della stessa versione o di una versione precedente di System Center Configuration Manager.  
+- Gerarchia di Configuration Manager della stessa versione o di una versione precedente di Configuration Manager.  
 
-  Se, ad esempio, è presente una gerarchia di destinazione che esegue System Center Configuration Manager 1606, è possibile usare la migrazione per copiare dati da una gerarchia di origine che esegue la versione 1606 o 1602. Non è tuttavia possibile copiare dati da una gerarchia di origine che esegue la versione 1610.  
+  Ad esempio, se è presente una gerarchia di destinazione che esegue Configuration Manager Current Branch 1606, è possibile usare la migrazione per copiare dati da una gerarchia di origine che esegue la versione 1606 o 1602. Non è tuttavia possibile copiare dati da una gerarchia di origine che esegue la versione 1610.  
 
 
 ##  <a name="BKMK_SorceSiteLanguage"></a> Lingue del sito di origine supportate per la migrazione  
- Durante la migrazione dei dati da una gerarchia all'altra di Configuration Manager, i dati vengono archiviati nella gerarchia di destinazione nel formato indipendente dalla lingua per System Center Configuration Manager. Dal momento che Configuration Manager 2007 non archivia i dati in un formato indipendente dalla lingua, il processo di migrazione deve convertire gli oggetti in questo formato durante la migrazione da Configuration Manager 2007. Di conseguenza, per la migrazione sono supportati solo i siti di origine di Configuration Manager 2007 installati con le seguenti lingue:  
+ Durante la migrazione dei dati da una gerarchia all'altra di Configuration Manager, i dati vengono archiviati nella gerarchia di destinazione nel formato indipendente dalla lingua per Configuration Manager. Dal momento che Configuration Manager 2007 non archivia i dati in un formato indipendente dalla lingua, il processo di migrazione deve convertire gli oggetti in questo formato durante la migrazione da Configuration Manager 2007. Di conseguenza, per la migrazione sono supportati solo i siti di origine di Configuration Manager 2007 installati con le seguenti lingue:  
 
 -   Inglese  
 
@@ -66,7 +65,7 @@ Per eseguire la migrazione da una gerarchia di origine supportata, è necessario
 
 -   Cinese tradizionale  
 
-Quando si esegue la migrazione di dati da una gerarchia di System Center 2012 Configuration Manager o di System Center Configuration Manager, non ci sono limiti per le lingue del sito di origine. Gli oggetti nel database del sito di origine sono già in un formato indipendente dalla lingua.  
+Quando si esegue la migrazione di dati da una gerarchia di System Center 2012 Configuration Manager o di Configuration Manager Current Branch, non ci sono limiti per le lingue del sito di origine. Gli oggetti nel database del sito di origine sono già in un formato indipendente dalla lingua.  
 
 ##  <a name="BKMK_Required_Configurations"></a> Configurazioni necessarie per la migrazione  
 Di seguito sono elencate le configurazioni necessarie per l'uso della migrazione e delle operazioni di migrazione:  
@@ -83,7 +82,7 @@ Di seguito sono elencate le configurazioni necessarie per l'uso della migrazione
 
       -   Per un sito di origine di Configuration Manager 2007 SP2, questo account richiede l'autorizzazione **Lettura** per tutti gli oggetti del sito di origine.  
 
-      -   Per un sito di origine di System Center 2012 Configuration Manager o System Center Configuration Manager, questo account richiede l'autorizzazione **Lettura** per tutti gli oggetti del sito di origine. L'autorizzazione all'account viene concessa tramite l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
+      -   Per un sito di origine di System Center 2012 Configuration Manager o Configuration Manager Current Branch, questo account richiede l'autorizzazione **Lettura** per tutti gli oggetti del sito di origine. L'autorizzazione all'account viene concessa tramite l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
   -   **Account del database del sito di origine:** questo account viene usato per l'accesso al database SQL Server del sito di origine e richiede le autorizzazioni **Connect**, **Execute**e **Select** per il database del sito di origine.  
 
@@ -106,11 +105,11 @@ Di seguito sono elencate le configurazioni necessarie per l'uso della migrazione
 
 - **Condividere i punti di distribuzione:**  
 
-   Per condividere correttamente i punti di distribuzione da un sito di origine, è necessario che almeno un sito primario o il sito di amministrazione centrale nella gerarchia di destinazione utilizzi gli stessi numeri di porta per le richieste client del sito di origine. Per informazioni sulle porte di richiesta client, vedere [Come configurare porte di comunicazione client in System Center Configuration Manager](../../core/clients/deploy/configure-client-communication-ports.md)  
+   Per condividere correttamente i punti di distribuzione da un sito di origine, è necessario che almeno un sito primario o il sito di amministrazione centrale nella gerarchia di destinazione utilizzi gli stessi numeri di porta per le richieste client del sito di origine. Per informazioni sulle porte di richiesta client, vedere [Come configurare porte di comunicazione client](../../core/clients/deploy/configure-client-communication-ports.md)  
 
    Per ogni sito di origine, vengono condivisi solo i punti di distribuzione installati nei server di sistema del sito configurati con un FQDN.  
 
-   Per condividere un punto di distribuzione da un sito di origine di System Center 2012 Configuration Manager o di System Center Configuration Manager, l'**account del sito di origine** (che accede al provider SMS per il server del sito di origine) deve avere anche l'autorizzazione **Modifica** per l'oggetto **Sito** nel sito di origine. È possibile concedere questa autorizzazione all'account utilizzando l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
+   Per condividere un punto di distribuzione da un sito di origine di System Center 2012 Configuration Manager o di Configuration Manager Current Branch, l'**account del sito di origine** (che accede al provider SMS per il server del sito di origine) deve avere anche l'autorizzazione **Modifica** per l'oggetto **Sito** nel sito di origine. È possibile concedere questa autorizzazione all'account utilizzando l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
 
 - **Aggiornare o riassegnare i punti di distribuzione:**  
@@ -119,6 +118,6 @@ Di seguito sono elencate le configurazioni necessarie per l'uso della migrazione
 
   - Per aggiornare un punto di distribuzione di Configuration Manager 2007, l'account richiede le autorizzazioni **Lettura**, **Esecuzione** ed **Eliminazione** per la classe **Sito** nel server del sito di Configuration Manager 2007 per rimuovere correttamente il punto di distribuzione dal sito di origine di Configuration Manager 2007.  
 
-  - Per riassegnare un punto di distribuzione di System Center 2012 Configuration Manager o System Center Configuration Manager, l'account deve avere l'autorizzazione **Modifica** per l'oggetto **sito** nel sito di origine. È possibile concedere questa autorizzazione all'account utilizzando l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
+  - Per riassegnare un punto di distribuzione di System Center 2012 Configuration Manager o Configuration Manager Current Branch, l'account deve avere l'autorizzazione **Modifica** per l'oggetto **Sito** nel sito di origine. È possibile concedere questa autorizzazione all'account utilizzando l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
-    Per aggiornare o riassegnare correttamente un punto di distribuzione a una nuova gerarchia, le porte configurate per le richieste client nel sito che gestisce il punto di distribuzione nella gerarchia di origine devono corrispondere alla porte configurate per richieste client nel sito di destinazione che gestirà il punto di distribuzione. Per informazioni sulle porte di richiesta client, vedere [Come configurare porte di comunicazione client in System Center Configuration Manager](../../core/clients/deploy/configure-client-communication-ports.md).  
+    Per aggiornare o riassegnare correttamente un punto di distribuzione a una nuova gerarchia, le porte configurate per le richieste client nel sito che gestisce il punto di distribuzione nella gerarchia di origine devono corrispondere alla porte configurate per richieste client nel sito di destinazione che gestirà il punto di distribuzione. Per informazioni sulle porte di richiesta client, vedere [Come configurare porte di comunicazione client](../../core/clients/deploy/configure-client-communication-ports.md).  

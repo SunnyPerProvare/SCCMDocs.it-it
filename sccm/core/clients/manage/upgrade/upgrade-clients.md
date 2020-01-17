@@ -10,19 +10,18 @@ ms.assetid: 446c83b5-c292-4e74-ba19-0792ac6b3472
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50212a84185396e53c92bff46dd3b369ad811928
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 40fc094d6c1a1acbd31f1d26e6fe6617972f8da5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70890206"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823671"
 ---
 # <a name="upgrade-clients-in-configuration-manager"></a>Aggiornare i client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-È possibile usare diversi metodi per aggiornare il software client di System Center Configuration Manager in computer Windows, server UNIX e Linux e computer Mac. Di seguito sono elencati i principali vantaggi e svantaggi di ogni metodo.  
+È possibile usare diversi metodi per aggiornare il software client di Configuration Manager in computer Windows, server UNIX e Linux e computer Mac. Di seguito sono elencati i principali vantaggi e svantaggi di ogni metodo.  
 
 > [!TIP]  
 >  Se si esegue l'aggiornamento dell'infrastruttura di server da una versione precedente di Configuration Manager \(ad esempio Configuration Manager 2007 o System Center 2012 Configuration Manager\), è consigliabile completare gli aggiornamenti dei server, tra cui l'installazione di tutti gli aggiornamenti del ramo corrente, prima dell'aggiornamento dei client di Configuration Manager. In questo modo si disporrà anche della versione più recente del software client.  
@@ -85,9 +84,9 @@ ms.locfileid: "70890206"
 
 - [Come installare manualmente i client di Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Manual)  
 
-- [Come aggiornare i client per i server Linux e UNIX in System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-linux-and-unix-servers.md)  
+- [Come aggiornare i client per i server Linux e UNIX](../../../../core/clients/manage/upgrade/upgrade-clients-for-linux-and-unix-servers.md)  
 
-- [Come aggiornare i client di System Center Configuration Manager in computer Mac](../../../../core/clients/manage/upgrade/upgrade-clients-on-mac-computers.md)  
+- [Come aggiornare i client in computer Mac](../../../../core/clients/manage/upgrade/upgrade-clients-on-mac-computers.md)  
 
 ## <a name="upgrade-installation-application-management"></a>Installazione aggiornamento (gestione applicazioni)  
  **Piattaforma client supportata:** Windows  
@@ -110,7 +109,7 @@ ms.locfileid: "70890206"
 ## <a name="automatic-client-upgrade"></a>Aggiornamento automatico del client  
 
 > [!NOTE]  
->  È possibile usare l'aggiornamento automatico per aggiornare i client di Configuration Manager 2007 a client di System Center Configuration Manager. Un client di Configuration Manager 2007 può eseguire l'assegnazione a un sito di Configuration Manager. Non può tuttavia eseguire altre azioni oltre all'aggiornamento automatico del client.  
+> È possibile usare l'aggiornamento automatico per aggiornare i client di Configuration Manager 2007 a client di Configuration Manager Current Branch. Un client di Configuration Manager 2007 può eseguire l'assegnazione a un sito di Configuration Manager. Non può tuttavia eseguire altre azioni oltre all'aggiornamento automatico del client.  
 
  **Piattaforma client supportata:** Windows  
 
@@ -147,4 +146,4 @@ ms.locfileid: "70890206"
 
 - Può essere utilizzato solo per aggiornare il software client e non per installare un nuovo client.  
 
-  [Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager](../../../../core/clients/manage/upgrade/test-client-upgrades.md)  
+  [Come testare gli aggiornamenti client in una raccolta di pre-produzione](../../../../core/clients/manage/upgrade/test-client-upgrades.md)  

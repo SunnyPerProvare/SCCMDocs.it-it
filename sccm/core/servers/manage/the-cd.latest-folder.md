@@ -10,17 +10,16 @@ ms.assetid: 8db92d67-5d9c-4e9c-80d0-ae6fa0dd4817
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b4f69d686a48af3c6e710c6aff592d71de1dbff1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 0711ede4beaa57b9382c30e8187cab40671b59a7
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65496999"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826204"
 ---
 # <a name="the-cdlatest-folder-for-configuration-manager"></a>Cartella CD.Latest per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager include un processo che fornisce aggiornamenti per il prodotto dalla console di Configuration Manager. Per supportare questo nuovo metodo di aggiornamento di Configuration Manager viene creata una nuova cartella denominata **CD.Latest**. Questa cartella contiene una copia dei file di installazione di Configuration Manager per la versione aggiornata del sito.  
 
@@ -71,9 +70,8 @@ Per altre informazioni, vedere [Installare un sito secondario](/sccm/core/server
 ## <a name="unsupported-scenarios"></a>Scenari non supportati
 
 I file di origine della cartella CD.Latest aggiornati non sono supportati per:  
-   
+
 - Installazione di un nuovo sito per una nuova gerarchia  
-- Aggiornamento da un sito di Microsoft System Center 2012 Configuration Manager a System Center Configuration Manager, Current Branch
+- Aggiornamento da un sito di Microsoft System Center 2012 Configuration Manager a Configuration Manager Current Branch
 - Installazione dei client di Configuration Manager
 - Installazione delle console di Configuration Manager
-

@@ -1,7 +1,7 @@
 ---
 title: Uso dei dati di diagnostica
 titleSuffix: Configuration Manager
-description: Informazioni su come Microsoft usa i dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager.
+description: Informazioni sulla modalità di impiego presso Microsoft dei dati di diagnostica e di utilizzo raccolti da Configuration Manager.
 ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: a8021bc8-2799-41f4-83c2-e27d1242028c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 404c68f954828dffe2bb9aed9dc59800aff83110
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 2f46475a467d969ceedbcc094dce0a907e946e4d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62238718"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75801410"
 ---
-# <a name="how-diagnostics-and-usage-data-is-used-for-system-center-configuration-manager"></a>Come vengono usati i dati di diagnostica e di utilizzo per System Center Configuration Manager
+# <a name="how-diagnostics-and-usage-data-is-used-for-configuration-manager"></a>Come vengono usati i dati di utilizzo e di diagnostica per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-I dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager offrono un feedback quasi immediato a Microsoft sul funzionamento del prodotto e vengono usati per adeguare gli aggiornamenti futuri. Microsoft può inoltre vedere dati di configurazione utili per progettare e testare le configurazioni in produzione. Ad esempio:  
+I dati di diagnostica e di utilizzo raccolti da Configuration Manager offrono un feedback quasi immediato a Microsoft sul funzionamento del prodotto e vengono usati per adeguare gli aggiornamenti futuri. Microsoft può inoltre vedere dati di configurazione utili per progettare e testare le configurazioni in produzione. Ad esempio:  
 
 -   Versioni dei server Windows usate dai server del sito  
 
@@ -45,7 +44,7 @@ Microsoft usa i dati disponibili per migliorare il prodotto. Di seguito sono ind
 
 -   **Revisione del supporto per i sistemi operativi del server:**  
 
-     Il supporto iniziale offerto da System Center Configuration Manager Current Branch limitava la tempistica di supporto per Windows Server 2008 R2. Dopo aver esaminato i dati di utilizzo dei clienti che hanno eseguito l'aggiornamento a Configuration Manager Current Branch, è emersa la necessità di modificare ed estendere i tempi previsti per supportare i clienti che ancora usano questo sistema operativo server per ospitare i server del sito e i ruoli del sistema del sito.  
+     Il supporto iniziale offerto da Configuration Manager Current Branch limitava la tempistica di supporto per Windows Server 2008 R2. Dopo aver esaminato i dati di utilizzo dei clienti che hanno eseguito l'aggiornamento a Configuration Manager Current Branch, è emersa la necessità di modificare ed estendere i tempi previsti per supportare i clienti che ancora usano questo sistema operativo server per ospitare i server del sito e i ruoli del sistema del sito.  
 
 -   **Controlli dei prerequisiti migliorati:**  
 

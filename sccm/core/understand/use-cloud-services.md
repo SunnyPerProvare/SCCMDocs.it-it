@@ -10,17 +10,16 @@ ms.assetid: 24fca61e-9cdb-447a-ad7a-f4d2e4fd6704
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2828443de3833f2b98665fc4d87dcb63eb795b4d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ac97418e58bf311903895371f2eb197f207736ca
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70891840"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825762"
 ---
 # <a name="use-cloud-services-with-configuration-manager"></a>Usare i servizi cloud con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager supporta varie opzioni basate su cloud. Queste opzioni possono integrare l'infrastruttura locale e consentono di risolvere problemi aziendali quali:  
 
@@ -55,7 +54,7 @@ Gli stessi requisiti per reti, sistemi operativi e requisiti hardware che si app
 I siti e i client di Configuration Manager eseguiti in macchine virtuali di Azure sono soggetti agli stessi requisiti di licenza delle installazioni locali.  
 
 ### <a name="azure-services-for-cloud-based-distribution-points"></a>Servizi di Azure per i punti di distribuzione basati su cloud  
- È possibile usare un servizio di Azure per ospitare un punto di distribuzione di Configuration Manager, definito punto di distribuzione basato su cloud. È possibile [usare i punti di distribuzione basati su cloud con System Center Configuration Manager](../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md) insieme ai punti di distribuzione locali e ai punti di distribuzione distribuiti nelle macchine virtuali di Azure.  
+ È possibile usare un servizio di Azure per ospitare un punto di distribuzione di Configuration Manager, definito punto di distribuzione basato su cloud. È possibile [usare i punti di distribuzione basati su cloud con Configuration Manager](../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md) insieme ai punti di distribuzione locali e ai punti di distribuzione distribuiti nelle macchine virtuali di Azure.  
 
  Questa situazione è diversa rispetto all'uso di una macchina virtuale di Azure, in cui si distribuisce un ruolo del sistema del sito. Punti di distribuzione basati su cloud:  
 

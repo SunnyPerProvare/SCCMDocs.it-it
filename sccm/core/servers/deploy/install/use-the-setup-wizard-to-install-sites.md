@@ -9,17 +9,16 @@ ms.assetid: 1f703376-5f2c-4fd2-8209-7028c931ddc7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81130d513ff4f0a412c1774e50d3ac7058504c99
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e4325b5bfeff07768abb41462b9a737b955eb216
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70377871"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797874"
 ---
 # <a name="use-the-setup-wizard-to-install-configuration-manager-sites"></a>Usare l'installazione guidata per installare i siti di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Per installare un nuovo sito di Configuration Manager tramite un'interfaccia utente guidata, usare l'installazione guidata di Configuration Manager (setup.exe). La procedura guidata supporta l'installazione di un sito primario o un sito di amministrazione centrale. È anche possibile usare la procedura guidata per [eseguire l'aggiornamento da un'installazione di valutazione](/sccm/core/servers/deploy/install/upgrade-an-evaluation-install-to-a-full-install) di Configuration Manager a un'installazione con licenza completa. Se non si vuole usare la procedura guidata, è possibile usare uno [script di installazione](/sccm/core/servers/deploy/install/use-a-command-line-to-install-sites) ed eseguire un'installazione automatica dalla riga di comando.
 
@@ -55,7 +54,7 @@ Se si installa un sito di amministrazione centrale come parte di uno scenario di
 
 ### <a name="bkmk_installpri"></a> Processo di installazione di un sito primario o di amministrazione centrale
 
-1. Nel computer in cui si vuole installare il sito, eseguire `<InstallationMedia>\SMSSETUP\BIN\X64\Setup.exe` per avviare l'**Installazione guidata di System Center Configuration Manager**.  
+1. Nel computer in cui si vuole installare il sito, eseguire `<InstallationMedia>\SMSSETUP\BIN\X64\Setup.exe` per avviare l'**Installazione guidata di Configuration Manager**.  
 
     > [!NOTE]  
     > Quando si installa un sito di amministrazione centrale per espandere un sito primario autonomo o si installa un nuovo sito primario figlio in una gerarchia esistente, usare supporti di installazione (file di origine) corrispondenti alla versione del sito o dei siti esistenti. Se sono stati installati gli aggiornamenti nella console che hanno modificato la versione di siti installati in precedenza, non usare i supporti di installazione originale. Usare invece i file di origine dalla [cartella CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder) di un sito aggiornato. Configuration Manager richiede l'uso di file di origine corrispondenti alla versione del sito esistente a cui si connetterà il nuovo sito.  
@@ -359,7 +358,7 @@ Usare la console di Configuration Manager per installare un sito secondario.
         - **Porta di SQL Server Service Broker**: specificare la porta di SQL Server Service Broker (SSB) usata da SQL Server. Specificare una porta valida che non sia usata da nessun altro sito o servizio e che non sia soggetta ad alcuna restrizione del firewall.  
 
     > [!TIP]  
-    > Per un elenco delle versioni di SQL Server supportate da System Center Configuration Manager, vedere [Versioni di SQL Server supportate](/sccm/core/plan-design/configs/support-for-sql-server-versions).  
+    > Per un elenco delle versioni di SQL Server supportate da Configuration Manager, vedere [Versioni di SQL Server supportate](/sccm/core/plan-design/configs/support-for-sql-server-versions).  
 
 7. Nella pagina **Punto di distribuzione** configurare le impostazioni per il punto di distribuzione che verranno installate sul server del sito secondario.  
 

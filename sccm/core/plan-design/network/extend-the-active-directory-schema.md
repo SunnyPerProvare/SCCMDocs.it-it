@@ -1,7 +1,7 @@
 ---
 title: Pubblicazione e schema di Active Directory
 titleSuffix: Configuration Manager
-description: Estendere lo schema di Active Directory per System Center Configuration Manager per semplificare il processo di distribuzione e configurazione dei client.
+description: Estendere lo schema di Active Directory per Configuration Manager per semplificare il processo di distribuzione e configurazione dei client.
 ms.date: 09/22/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,25 +10,24 @@ ms.assetid: bc15ee7e-4d0a-4463-ae2c-f72d8d45d65d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 094cef520a2c5f1f4da06b8eefdafb4d3d58f3ac
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 523c79586f29ca2fcf0bb283de1d3f5e5373b588
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71311599"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799455"
 ---
 # <a name="prepare-active-directory-for-site-publishing"></a>Preparare Active Directory per la pubblicazione di siti
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Quando si estende lo schema di Active Directory per System Center Configuration Manager, si introducono nuove strutture in Active Directory usate dai siti di System Center Configuration Manager per pubblicare le informazioni chiave in una posizione sicura facilmente accessibile ai client.  
+Quando si estende lo schema di Active Directory per Configuration Manager, si introducono nuove strutture in Active Directory usate dai siti di Configuration Manager per pubblicare le informazioni chiave in una posizione sicura facilmente accessibile ai client.  
 
 Quando si gestiscono client locali, è consigliabile usare Configuration Manager con uno schema di Active Directory esteso. Uno schema esteso può infatti semplificare il processo di distribuzione e configurazione dei client e consente ai client di individuare in modo efficiente le risorse, ad esempio server di contenuto e altri servizi forniti dai diversi ruoli del sistema del sito di Configuration Manager.  
 
--   Se non si sa quale schema esteso offra una distribuzione di Configuration Manager, vedere [Estensioni dello schema per System Center Configuration Manager](../../../core/plan-design/network/schema-extensions.md).  
+-   Se non si sa quale schema esteso offra una distribuzione di Configuration Manager, vedere [Estensioni dello schema per Configuration Manager](../../../core/plan-design/network/schema-extensions.md).  
 
--   Se non si usa uno schema esteso, è possibile rilevare i servizi e i server del sistema del sito configurando altri metodi, ad esempio DNS e WINS. Questi metodi di individuazione de della posizione del servizio richiedono configurazioni aggiuntive e non sono il metodo preferito per l'individuazione della posizione del servizio da parte dei client. Per altre informazioni, vedere [Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager](../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
+-   Se non si usa uno schema esteso, è possibile rilevare i servizi e i server del sistema del sito configurando altri metodi, ad esempio DNS e WINS. Questi metodi di individuazione de della posizione del servizio richiedono configurazioni aggiuntive e non sono il metodo preferito per l'individuazione della posizione del servizio da parte dei client. Per altre informazioni, vedere [Informazioni su come i client trovano i servizi e le risorse del sito per Configuration Manager](../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 
 -   Se lo schema di Active Directory è stato esteso per Configuration Manager 2007 o System Center Configuration Manager 2012, non è necessario eseguire altre operazioni. Le estensioni dello schema sono invariate e risultano già applicate.  
 
@@ -105,4 +104,4 @@ Per estendere lo schema per Configuration Manager:
 ## <a name="step-3-set-up-sites-to-publish-to-active-directory-domain-services"></a>Passaggio 3. Configurare i siti per la pubblicazione in Active Directory Domain Services  
  Dopo avere configurato il contenitore, avere ottenuto le autorizzazioni e avere installato un sito primario di Configuration Manager, è possibile configurare il sito per la pubblicazione di dati in Active Directory.  
 
- Per altre informazioni sulla pubblicazione, vedere [Pubblicare i dati del sito per System Center Configuration Manager](../../../core/servers/deploy/configure/publish-site-data.md).  
+ Per altre informazioni sulla pubblicazione, vedere [Pubblicare i dati del sito per Configuration Manager](../../../core/servers/deploy/configure/publish-site-data.md).  

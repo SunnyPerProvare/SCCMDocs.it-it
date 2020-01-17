@@ -10,17 +10,16 @@ ms.assetid: 0da167f1-52cf-4dfd-8f73-833ca3eb8478
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b49f05708f824c16dd90cbb9c872f49ab484de8
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e85b883a70d9848a697872fc1e546279b2d69d5e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "69974718"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798300"
 ---
 # <a name="command-line-options-for-configuration-manager-setup"></a>Opzioni della riga di comando per la configurazione di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare le informazioni seguenti per configurare gli script o installare Configuration Manager dalla riga di comando.  
 
@@ -122,7 +121,7 @@ Consente di gestire le lingue installate in un sito installato precedentemente. 
 
     - **Dettagli:** Gestisce il supporto lingua di client per dispositivi mobili, client e server in un sito.  
 
-### <a name="options"></a>Opzioni
+### <a name="options"></a>Options
 
 - **Nome chiave:** AddServerLanguages  
 
@@ -224,7 +223,7 @@ Usare i dettagli seguenti per installare un sito di amministrazione centrale usa
 
     - **Dettagli:** Quando si installa o si ripristina un sito primario o un sito di amministrazione centrale e si esegue il programma di installazione dalla cartella CD.Latest, includere questa chiave e il valore. Questo valore indica al programma di installazione che si usano supporti dalla cartella CD.Latest.
 
-#### <a name="options"></a>Opzioni
+#### <a name="options"></a>Options
 
 - **Nome chiave:** ProductID  
 
@@ -510,7 +509,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     - **Dettagli:** Quando si installa o si ripristina un sito primario o un sito di amministrazione centrale e si esegue il programma di installazione dalla cartella CD.Latest, includere questa chiave e il valore. Questo valore indica al programma di installazione che si usano supporti dalla cartella CD.Latest.
 
-#### <a name="options"></a>Opzioni
+#### <a name="options"></a>Options
 
 - **Nome chiave:** ProductID  
 
@@ -912,7 +911,7 @@ Usare i dettagli seguenti per ripristinare un sito di amministrazione centrale u
 
 - **Nome chiave:** ReferenceSite  
 
-    - **Richiesto:** Questa chiave è richiesta quando l'impostazione DatabaseRecoveryOptions ha il valore **40**.  
+    - **Richiesto:** Questa chiave è richiesta quando l'impostazione **DatabaseRecoveryOptions** ha il valore **40**.  
 
     - **Valori:**  <*FQDN del sito di riferimento*>  
 
@@ -938,7 +937,7 @@ Usare i dettagli seguenti per ripristinare un sito di amministrazione centrale u
 
     - **Dettagli:** Specifica il percorso del set di backup del database del sito.  
 
-#### <a name="options"></a>Opzioni
+#### <a name="options"></a>Options
 
 - **Nome chiave:** ProductID  
 
@@ -1008,7 +1007,7 @@ Usare i dettagli seguenti per ripristinare un sito di amministrazione centrale u
 
 - **Nome chiave:** AdminConsole  
 
-    - **Richiesto:** Questa chiave è necessaria tranne quando l'impostazione ServerRecoveryOptions ha valore **4**.  
+    - **Richiesto:** Questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha valore **4**.  
 
     - **Valori:**
 
@@ -1206,7 +1205,7 @@ Usare i dettagli seguenti per recuperare un sito primario usando un file script 
 
     - **Dettagli:** Specifica il percorso del set di backup del database del sito.  
 
-#### <a name="options"></a>Opzioni
+#### <a name="options"></a>Options
 
 - **Nome chiave:** ProductID  
 
@@ -1274,7 +1273,7 @@ Usare i dettagli seguenti per recuperare un sito primario usando un file script 
 
 - **Nome chiave:** AdminConsole  
 
-    - **Richiesto:** Questa chiave è necessaria tranne quando l'impostazione ServerRecoveryOptions ha valore **4**.  
+    - **Richiesto:** Questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha valore **4**.  
 
     - **Valori:**
 

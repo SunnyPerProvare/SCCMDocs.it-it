@@ -1,22 +1,22 @@
 ---
 title: Domande frequenti su dimensioni e prestazioni del sito
 titleSuffix: Configuration Manager
-description: Risposte alle domande frequenti sulle dimensioni e le prestazioni di System Center Configuration Manager.
+description: Risposte a domande frequenti sulla definizione delle dimensioni e sulle prestazioni in Configuration Manager.
 author: aczechowski
 ms.author: aaroncz
 ms.prod: configuration-manager
 ms.topic: conceptual
 ms.date: 04/19/2019
-ms.openlocfilehash: 93ddf18f78667058b137368a4948ac3d4dc38288
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5332655696cc9213eca00a77c4638c125d08cee5
+ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73912964"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75507401"
 ---
-# <a name="system-center-configuration-manager-site-sizing-and-performance-faq"></a>Domande frequenti sulle dimensioni e le prestazioni del sito di System Center Configuration Manager
+# <a name="configuration-manager-site-sizing-and-performance-faq"></a>Domande frequenti sulla definizione delle dimensioni e sulle prestazioni dei siti di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo documento tratta le domande frequenti sulle linee guida relative alle dimensioni del sito di Configuration Manager e su problemi di prestazioni comuni.
 
@@ -46,7 +46,7 @@ Le [linee guida per dimensioni](../plan-design/configs/site-size-performance-gui
 
 La configurazione del disco risultante potrebbe essere simile alla seguente:
 
-| Unità<sup>1</sup> | RAID | Formato | Contenuto del volume | N. minimo di operazioni di I/O al secondo richiesto| N. approssimativo di operazioni fornito<sup>2</sup>  |
+| Unità<sup>1</sup> | RAID | Format | Contenuto del volume | N. minimo di operazioni di I/O al secondo richiesto| N. approssimativo di operazioni fornito<sup>2</sup>  |
 |----------------|-----------|-------------|----------------------|---------------------|------------------|
 | 2x10k          | 1         | -           | Windows              |                     | -                |
 | 6x15k          | 10        | NTFS 8k     | Cartelle posta in arrivo di ConfigMgr    |     1700            | 1751             |
@@ -101,7 +101,7 @@ Le [linee guida per dimensioni](../plan-design/configs/site-size-performance-gui
 
 La macchina di Azure ottenuta potrebbe essere di tipo DS13v2 (8 core, 56 GB) con la configurazione del disco seguente:
 
-| Unità | Formato | Contiene | N. minimo di operazioni di I/O al secondo richiesto| N. approssimativo di operazioni fornito<sup>1</sup>  |
+| Unità | Format | Contiene | N. minimo di operazioni di I/O al secondo richiesto| N. approssimativo di operazioni fornito<sup>1</sup>  |
 |------------------|---------------|--------------------|----------------------|------------------|
 | &lt;standard&gt; | -             | Sistema operativo server del sito     | -                    | -                |
 | 1xP20 (512 GB)    | NTFS 8k       | Cartelle posta in arrivo di ConfigMgr  | 1200                 | 2334             |
@@ -118,7 +118,7 @@ Modificare i dischi nell'esempio di Azure precedente per vedere come cambia il n
 
 **DS13v2** 
 
-| Unità<sup>1</sup> | Formato | Contiene | N. minimo di operazioni di I/O al secondo richiesto| N. approssimativo di operazioni fornito<sup>2</sup>  |
+| Unità<sup>1</sup> | Format | Contiene | N. minimo di operazioni di I/O al secondo richiesto| N. approssimativo di operazioni fornito<sup>2</sup>  |
 |------------------|---------------|--------------------|----------------------|------------------|
 | &lt;standard&gt; | -             | Sistema operativo server del sito     | -                    | -                |
 | 2xP20 (1024 GB)   | NTFS 8k       | Cartelle posta in arrivo di ConfigMgr  | 1200                 | 3984             |
@@ -132,7 +132,7 @@ Se sono necessarie prestazioni superiori in futuro, sarà possibile eseguire l'u
 
 **DS14v2**
 
-| Unità<sup>1</sup> | RAID | Formato | Contiene | N. minimo di operazioni di I/O al secondo richiesto| N. approssimativo di operazioni fornito<sup>2</sup>  |
+| Unità<sup>1</sup> | RAID | Format | Contiene | N. minimo di operazioni di I/O al secondo richiesto| N. approssimativo di operazioni fornito<sup>2</sup>  |
 |------------------|---------------|--------------------|----------------------|------------------|
 | &lt;standard&gt; | -             | Sistema operativo server del sito     | -                    | -                |
 | 2xP20 (1024 GB)   | NTFS 8k       | Cartelle posta in arrivo di ConfigMgr  | 1200                 | 4639             |

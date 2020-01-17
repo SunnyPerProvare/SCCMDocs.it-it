@@ -1,7 +1,7 @@
 ---
 title: Privacy e sicurezza per l'inventario hardware
 titleSuffix: Configuration Manager
-description: Informazioni sulla sicurezza e la privacy per l'inventario hardware in System Center Configuration Manager.
+description: Informazioni sulla sicurezza e la privacy per l'inventario hardware in Configuration Manager.
 ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,19 +10,18 @@ ms.assetid: 62e20d86-db6d-4a1f-b14a-905a9de31698
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93983affd1da571a63f2f1bd68c0e436fba53382
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a5989c80818ac45bb8dd6a4f768595dbd56b846d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70890117"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824249"
 ---
-# <a name="security-and-privacy-for-hardware-inventory-in-system-center-configuration-manager"></a>Sicurezza e privacy per l'inventario hardware in System Center Configuration Manager
+# <a name="security-and-privacy-for-hardware-inventory-in-configuration-manager"></a>Sicurezza e privacy per l'inventario hardware in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo argomento contiene informazioni sulla sicurezza e la privacy per l'inventario hardware in System Center Configuration Manager.  
+Questo argomento contiene informazioni sulla sicurezza e la privacy per l'inventario hardware in Configuration Manager.  
 
 ##  <a name="BKMK_Security_HardwareInventory"></a> Procedure consigliate di sicurezza per l'inventario hardware  
  Usare le procedure consigliate di sicurezza seguenti quando vengono raccolti i dati dell'inventario hardware dai client:  

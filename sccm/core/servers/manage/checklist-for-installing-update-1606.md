@@ -1,7 +1,7 @@
 ---
 title: Elenco di controllo per la versione 1606
 titleSuffix: Configuration Manager
-description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di System Center Configuration Manager dalla versione 1511 o 1602 alla versione 1606.
+description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager dalla versione 1511 o 1602 alla versione 1606.
 ms.date: 06/6/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,23 +11,22 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5639e66b52d7ea3f7257e495d445a93dd058fe8e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c39b7a524234e3cc3ae37bae9e435c682454cde8
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892136"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797389"
 ---
-# <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Elenco di controllo per installare l'aggiornamento 1606 di System Center Configuration Manager
+# <a name="checklist-for-installing-update-1606-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1606 di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-La versione 1606 di System Center Configuration Manager Current Branch è disponibile come aggiornamento per la versione 1511 o 1602.
+La versione 1606 di Configuration Manager (Current Branch) è disponibile come aggiornamento per la versione 1511 o 1602.
 
 Prima di installare la versione 1606 come aggiornamento, consultare le informazioni seguenti e l'elenco di controllo per le azioni da eseguire prima di avviare l'aggiornamento.
 
-Per informazioni sulle versioni di base, vedere [Versioni di base e di aggiornamento](../../../core/servers/manage/updates.md#bkmk_Baselines) in [Aggiornamenti per System Center Configuration Manager](../../../core/servers/manage/updates.md).
+Per informazioni sulle versioni di base, vedere [Versioni di base e di aggiornamento](../../../core/servers/manage/updates.md#bkmk_Baselines) in [Aggiornamenti per Configuration Manager](../../../core/servers/manage/updates.md).
 
 ## <a name="about-installing-update-1606"></a>Informazioni sull'installazione dell'aggiornamento 1606
 
@@ -49,7 +48,7 @@ Quando si visualizza lo stato di installazione del pacchetto di aggiornamento, s
 
 ## <a name="checklist"></a>Elenco di controllo  
 
-**Verificare che tutti i siti eseguano una versione supportata di System Center Configuration Manager:**  prima di iniziare l'installazione dell'aggiornamento 1606, ogni server del sito nella gerarchia deve eseguire la stessa versione di System Center Configuration Manager, ovvero la versione 1511 o 1602.
+**Verificare che tutti i siti eseguano una versione supportata di Configuration Manager:**  prima di iniziare l'installazione dell'aggiornamento 1606, è necessario che ogni server del sito nella gerarchia esegua la stessa versione di Configuration Manager, ovvero la versione 1511 o 1602.
 
 **Controllare le versioni di Microsoft .NET installate nei server del sistema del sito:** quando l'aggiornamento 1606 viene installato in un sito, Configuration Manager esegue in automatico l'installazione di .NET Framework 4.5.2 in ogni computer che ospita uno dei ruoli del sistema del sito seguenti (se .NET Framework 4.5 o versione successiva non è già installato):  
 
@@ -67,7 +66,7 @@ Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](..
 
 **Esaminare lo stato del sito e della gerarchia e verificare che non siano presenti problemi non risolti:** Prima di aggiornare un sito, risolvere tutti i problemi operativi per il server del sito, il server del database del sito e i ruoli del sistema del sito installati nei computer remoti. Un aggiornamento del sito può avere esito negativo a causa di problemi operativi esistenti.
 
-Per ulteriori informazioni, vedere [Usare gli avvisi e il sistema di stato per System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+Per altre informazioni, vedere [Usare gli avvisi e il sistema di stato per Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
 **Esaminare la replica di file e dati tra siti:**  verificare che la replica di file e database tra siti sia funzionante e aggiornata. Eventuali ritardi o backlog in uno dei due ambiti possono complicare o compromettere l'aggiornamento.    
 
@@ -78,7 +77,7 @@ Per la replica di database è possibile usare Replication Link Analyzer per riso
 
 **Disabilitare le repliche di database per i punti di gestione nei siti primari:** Configuration Manager non può aggiornare un sito primario per il quale esista una replica del database per i punti di gestione abilitati. Prima di installare un aggiornamento per Configuration Manager, disabilitare la replica di database.  
 
-Per altre informazioni, vedere [Repliche di database per i punti di gestione per System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
+Per altre informazioni, vedere [Repliche di database per i punti di gestione per Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
 **Impostare i gruppi di disponibilità SQL Server AlwaysOn per eseguire il failover manuale:**  
 Prima di installare gli aggiornamenti, ad esempio la versione 1606, verificare che il gruppo di disponibilità sia impostato sul failover manuale. Dopo l'aggiornamento del sito, è possibile ripristinare la modalità di failover automatico. Per altre informazioni, vedere [Server AlwaysOn per database del sito](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).
@@ -87,7 +86,7 @@ Prima di installare gli aggiornamenti, ad esempio la versione 1606, verificare c
 
 Se si usano cluster NLB per i punti di aggiornamento software, usare Windows PowerShell per rimuovere il cluster NLB.    
 
-Per altre informazioni, vedere [Pianificare gli aggiornamenti software in System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md).  
+Per altre informazioni, vedere [Pianificare gli aggiornamenti software](../../../sum/plan-design/plan-for-software-updates.md).  
 
 **Disabilitare tutte le attività di manutenzione del sito in ogni sito per la durata dell'aggiornamento del sito in questione:** prima di installare l'aggiornamento, disabilitare le eventuali attività di manutenzione che potrebbero essere eseguite mentre è in corso il processo di aggiornamento. Queste comprendono, ma non sono limitate alle seguenti attività:  
 
@@ -99,16 +98,16 @@ Per altre informazioni, vedere [Pianificare gli aggiornamenti software in System
 
 Quando un'attività di manutenzione del database del sito viene eseguita durante l'installazione dell'aggiornamento, quest'ultima potrebbe avere esito negativo. Prima di disabilitare un'attività, registrarne la pianificazione per poter ripristinare la sua configurazione dopo l'installazione dell'aggiornamento.  
 
-Per altre informazioni, vedere [Attività di manutenzione per System Center Configuration Manager](../../../core/servers/manage/maintenance-tasks.md) e [Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md). 
+Per altre informazioni, vedere [Attività di manutenzione per Configuration Manager](../../../core/servers/manage/maintenance-tasks.md) e [Informazioni di riferimento per le attività di manutenzione per Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md). 
 
-**Arrestare temporaneamente il software antivirus sui server System Center Configuration Manager:** prima di aggiornare un sito, assicurarsi di aver arrestato il software antivirus sui server Configuration Manager. <!--SMS.503481--> 
+**Arrestare temporaneamente il software antivirus nei server di Configuration Manager:** prima di aggiornare un sito, assicurarsi di aver arrestato il software antivirus sui server Configuration Manager. <!--SMS.503481--> 
 
 **Creare un backup del database del sito nel sito di amministrazione centrale e nei siti primari:** prima di aggiornare un sito, eseguire il backup del database del sito per assicurarsi di disporre di un backup effettuato correttamente da usare in caso di ripristino di emergenza.   
 
-Per altre informazioni, vedere [Backup e ripristino per System Center Configuration Manager](../../../protect/understand/backup-and-recovery.md).  
+Per altre informazioni, vedere [Eseguire il backup e il ripristino per Configuration Manager](../../../protect/understand/backup-and-recovery.md).  
 
 <!-- Removed from update guidance 6/6/2017
-**Test the database upgrade on a copy of the most recent site database backup:** Before you update a System Center Configuration Manager central administration site or primary site, test the site database upgrade process on a copy of the site database.  
+**Test the database upgrade on a copy of the most recent site database backup:** Before you update a Configuration Manager central administration site or primary site, test the site database upgrade process on a copy of the site database.  
 
 - You should test the site database upgrade process because when you upgrade a site, the site database might be modified.  
 
@@ -127,8 +126,8 @@ Do not run a test database upgrade on the production site database. Doing so upd
 
 **Pianificare la distribuzione pilota del client:** Quando si installa un aggiornamento per il client, è possibile testare quest'ultimo in un ambiente di pre-produzione prima della distribuzione e dell'aggiornamento di tutti i client attivi.   
 
-Per sfruttare i vantaggi di questa opzione, prima di iniziare l'installazione dell'aggiornamento è necessario configurare il sito in modo da supportare gli aggiornamenti automatici di pre-produzione. Per altre informazioni, vedere [Aggiornare i client in System Center Configuration Manager](../../../core/clients/manage/upgrade/upgrade-clients.md) e   
-[Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).  
+Per sfruttare i vantaggi di questa opzione, prima di iniziare l'installazione dell'aggiornamento è necessario configurare il sito in modo da supportare gli aggiornamenti automatici di pre-produzione. Per altre informazioni, vedere [Aggiornare i client](../../../core/clients/manage/upgrade/upgrade-clients.md) e   
+[Come testare gli aggiornamenti client in una raccolta di pre-produzione](../../../core/clients/manage/upgrade/test-client-upgrades.md).  
 
 **Pianificare l'uso di intervalli di servizio per controllare quando i server del sito installano gli aggiornamenti:** È possibile usare gli intervalli di servizio per definire un periodo durante il quale possono essere installati gli aggiornamenti a un server del sito.
 
@@ -137,7 +136,7 @@ Prima della versione 1606 gli intervalli di servizio si chiamavano finestre di m
 
 **Eseguire il controllo dei prerequisiti di installazione:**  prima di installare l'aggiornamento 1606, è possibile eseguire il controllo dei prerequisiti in modo indipendente dall'installazione dell'aggiornamento. Quando si installa l'aggiornamento nel sito, il controllo dei prerequisiti viene eseguito nuovamente.  
 
-Per altre informazioni, vedere **Passaggio 3: Eseguire il controllo dei prerequisiti prima di installare un aggiornamento** nell'argomento [Aggiornamenti per System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
+Per altre informazioni, vedere **Passaggio 3: Eseguire il controllo dei prerequisiti prima di installare un aggiornamento** nell'argomento [Aggiornamenti per Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
 
 > [!IMPORTANT]  
 > Quando viene eseguito il controllo dei prerequisiti in modo indipendente o nel contesto dell'installazione di un aggiornamento, il processo aggiorna alcuni file di origine del prodotto usati per le attività di manutenzione del sito. Di conseguenza, dopo aver eseguito il controllo dei prerequisiti ma prima di installare l'aggiornamento 1606, se si deve svolgere un'attività di manutenzione del sito, eseguire **Setupwfe.exe** (il programma di installazione di Configuration Manager) dalla cartella CD.Latest nel server del sito.  
@@ -145,4 +144,4 @@ Per altre informazioni, vedere **Passaggio 3: Eseguire il controllo dei prerequi
 **Aggiornare i siti:** A questo punto è possibile avviare l'installazione dell'aggiornamento per la gerarchia.  
 È consigliabile pianificare l'installazione dell'aggiornamento per ogni sito al di fuori del normale orario di ufficio in modo che il processo di installazione dell'aggiornamento e le azioni per reinstallare i componenti del sito e i ruoli del sistema del sito abbiano un impatto minimo sulle operazioni aziendali.
 
-Per altre informazioni, vedere [Aggiornamenti per System Center Configuration Manager](../../../core/servers/manage/updates.md).  
+Per altre informazioni, vedere [Aggiornamenti per Configuration Manager](../../../core/servers/manage/updates.md).  

@@ -2,7 +2,7 @@
 title: Elenco di controllo per la versione 1910
 titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da eseguire prima dell'aggiornamento di Configuration Manager alla versione 1910.
-ms.date: 11/29/2019
+ms.date: 12/20/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,13 +10,12 @@ ms.assetid: 9afb4452-9e58-40eb-bfd8-cbf9042a2790
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70f4e3feac8d40981dad16d72d98710bf77630f9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 43781ec676957b46e193c6e2763e385d38dc1c57
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74662829"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75796235"
 ---
 # <a name="checklist-for-installing-update-1910-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1910 di Configuration Manager
 
@@ -70,33 +69,36 @@ La prima volta che si usa una console di Configuration Manager dopo l'aggiorname
 
 <!-- SCCMDocs#1397 -->
 
-<!--As of August 16, 2019, version 1906 is globally available for all customers to install. If you previously opted in to the early update ring, watch for an update to this current branch version. -->
+A partire dal 20 dicembre 2019, la versione 1910 è disponibile a livello globale per l'installazione per tutti i clienti. Se in precedenza è stato scelto l'anello di aggiornamento anticipato, controllare la presenza di un aggiornamento a questa versione Current Branch.
 
-La versione 1910 viene attualmente rilasciata per l'anello di aggiornamento anticipato. Per installare questo aggiornamento, è necessario acconsentire esplicitamente. Lo script di PowerShell seguente aggiunge la gerarchia o il sito primario autonomo all'anello di aggiornamento anticipato per la versione 1910:
+<!--
 
-[Script di consenso esplicito per la versione 1910](https://go.microsoft.com/fwlink/?linkid=2099733) <!-- This fwlink points to the script package on the Download Center, don't change the link here! Make any changes to the fwlink target -->
+At this time, version 1910 is released for the early update ring. To install this update, you need to opt-in. The following PowerShell script adds your hierarchy or standalone primary site to the early update ring for version 1910:
 
-Microsoft firma digitalmente lo script e lo aggrega all'interno di un file eseguibile autoestraente firmato.
+[Version 1910 opt-in script](https://go.microsoft.com/fwlink/?linkid=2099733) <!-- This fwlink points to the script package on the Download Center, don't change the link here! Make any changes to the fwlink target -->
+
+<!--
+Microsoft digitally signs the script, and bundles it inside a signed self-extracting executable.
 
 > [!Note]  
-> L'aggiornamento della versione 1910 è applicabile solo ai siti che eseguono la versione 1806 o successiva.
+> The version 1910 update is only applicable to sites running version 1806 or later.
 
-Per acconsentire esplicitamente all'anello di aggiornamento anticipato:
+To opt-in to the early update ring:
 
-1. Aprire Windows PowerShell e scegliere **Esegui come amministratore**
-1. Eseguire lo script **EnableEarlyUpdateRing1910.ps1** usando la sintassi seguente:
+1. Open Windows PowerShell and **Run as administrator**
+1. Run the **EnableEarlyUpdateRing1910.ps1** script, using the following syntax:
 
     `EnableEarlyUpdateRing1910.ps1 <SiteServer_Name> | SiteServer_IP>`
 
-    Dove `SiteServer` fa riferimento al sito di amministrazione centrale o a un sito primario autonomo. Ad esempio: `EnableEarlyUpdateRing1910.ps1 cmprimary01`
+    Where `SiteServer` refers to the central administration site or standalone primary site server. For example, `EnableEarlyUpdateRing1910.ps1 cmprimary01`
 
-1. Verificare la disponibilità di aggiornamenti. Per altre informazioni, vedere [Ottenere gli aggiornamenti disponibili](/sccm/core/servers/manage/install-in-console-updates#get-available-updates).
+1. Check for updates. For more information, see [Get available updates](/sccm/core/servers/manage/install-in-console-updates#get-available-updates).
 
-L'aggiornamento della versione 1910 dovrebbe essere ora disponibile nella console.
+The version 1910 update should now be available in the console.
 
 > [!Important]  
-> Questo script si limita ad aggiungere il sito all'anello di aggiornamento anticipato per la versione 1910. Non si tratta di una modifica permanente.
-
+> This script only adds your site to the early update ring for version 1910. It's not a permanent change.
+-->
 
 ## <a name="checklist"></a>Elenco di controllo
 

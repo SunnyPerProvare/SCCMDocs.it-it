@@ -1,7 +1,7 @@
 ---
 title: Funzionalità nella Technical Preview 1603
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1603 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1603 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a15bbe09d40889adbd06c044cdb66fc7b48b26a7
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f80c0ca348eb97526aeb571f9f7e1f99cdaa93eb
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62219114"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75805235"
 ---
-# <a name="capabilities-in-technical-preview-1603-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1603 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1603-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1603 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1603 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. In alternativa, quando si usa System Center Technical Preview 5, questa versione viene installata come una versione di base di System Center Configuration Manager Technical Preview. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.  
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1603. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. In alternativa, quando si usa System Center Technical Preview 5, questa versione viene installata come una versione di base di Configuration Manager Technical Preview. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview per Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.  
 
  **Problemi noti di questa versione Technical Preview:**  
 
@@ -69,7 +68,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
 - Aggiungere la chiave del Registro di sistema seguente nei punti di distribuzione abilitati per PXE per personalizzare le dimensioni della finestra TFTP RamDisk:  
 
-   **Percorso**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
+   **Location** (Percorso): HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
   Nome: RamDiskTFTPWindowSize  
 
    **Tipo**: REG_DWORD  
@@ -82,7 +81,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
 - Aggiungere la chiave del Registro di sistema seguente nei punti di distribuzione abilitati per PXE per personalizzare le dimensioni della finestra TFTP RamDisk:  
 
-   **Percorso**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
+   **Location** (Percorso): HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
   Nome: RamDiskTFTPBlockSize  
 
    **Tipo**: REG_DWORD  

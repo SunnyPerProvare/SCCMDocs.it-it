@@ -11,17 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c21f85271b0fd1f96b3e5397d2f2fb7a3e3798d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 135700601abcd0652323891347e21e8266377786
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68339881"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804470"
 ---
-# <a name="capabilities-in-technical-preview-1804-for-system-center-configuration-manager"></a>Funzionalità della Technical Preview 1804 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1804-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1804 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
 Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager, versione 1804. È possibile installare questa versione per aggiornare il sito delle anteprime tecniche aggiungendovi nuove funzionalità. 
 
@@ -315,4 +314,4 @@ Sono stati apportati i miglioramenti seguenti alla distribuzione del sistema ope
 
 
 ## <a name="next-steps"></a>Passaggi successivi
-Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview).    
+Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview).    

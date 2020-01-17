@@ -10,17 +10,16 @@ ms.assetid: c6777fb0-0754-4abf-8a1b-7639d23e9391
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7fb5a451c460ccc1bf47315c63a523380fc85d2b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 772c38bbfd471378235a52b14a1d6c29f851db14
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74190649"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799761"
 ---
 # <a name="ports-used-in-configuration-manager"></a>Porte usate in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 In questo articolo sono elencate le porte di rete usate da Configuration Manager. Alcune connessioni usano porte non configurabili e altre supportano porte personalizzate specificate dall'utente. Se si usa una tecnologia di filtro delle porte, verificare che le porte richieste siano disponibili. Queste tecnologie di filtro delle porte includono firewall, router, server proxy o IPsec.   
 
@@ -812,7 +811,7 @@ I ruoli del sistema del sito seguenti comunicano direttamente con il database di
 
 - Punto di Reporting Services  
 
-- provider SMS  
+- Provider SMS  
 
 - SQL Server --> SQL Server  
 

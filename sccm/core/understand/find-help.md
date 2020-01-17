@@ -10,17 +10,16 @@ ms.assetid: 86810629-cf2a-43e8-86a2-847444119fc1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: be9fd76105685a283931bc298e534a6a8f6683d8
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5853bf9850b96ff886217efc00c24a70f40b5e73
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68340272"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825898"
 ---
 # <a name="find-help-for-using-configuration-manager"></a>Reperire informazioni sull'uso di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo include le sezioni seguenti con diverse risorse per reperire informazioni sull'uso di Configuration Manager:  
 
@@ -163,11 +162,11 @@ I team di progettazione e i team associati di Configuration Manager usano il blo
 
 ##  <a name="BKMK_SupportOptions"></a> Opzioni di supporto e risorse per la community  
 
-I seguenti collegamenti forniscono informazioni sulle opzioni di supporto e sulle risorse per la community:  
+I seguenti collegamenti consentono di accedere a informazioni sulle opzioni di supporto e le risorse per la community:  
 
 -   [Supporto tecnico Microsoft](https://aka.ms/cmcbsupport)  
 
--   [Community di Configuration Manager: System Center Configuration Manager (Current Branch) Survival Guide](https://social.technet.microsoft.com/wiki/contents/articles/33035.system-center-configuration-manager-current-branch-survival-guide.aspx ) (Guida essenziale di System Center Configuration Manager Current Branch)  
+-   [Community di Configuration Manager: Guida essenziale di Configuration Manager Current Branch](https://social.technet.microsoft.com/wiki/contents/articles/33035.system-center-configuration-manager-current-branch-survival-guide.aspx )  
 
 -   [Pagina dei forum di Configuration Manager](https://social.technet.microsoft.com/Forums/en-US/home?category=ConfigMgrCB)  
     <!-- NOTE: the above URL requires "en-US" for the category to work -->

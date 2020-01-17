@@ -1,7 +1,7 @@
 ---
 title: Gestire computer Windows in remoto
 titleSuffix: Configuration Manager
-description: Amministrare un computer client Windows da posizione remota tramite System Center Configuration Manager.
+description: Amministrare un computer client Windows da posizione remota tramite Configuration Manager.
 ms.date: 11/02/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,21 +10,20 @@ ms.assetid: 3c9648c4-645e-4e47-ae10-2da817b8c83b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8223577eb5ca5daf70a1eaefe815b386ea2934cf
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d0da79c61c447f193be0b284c89e9559ba518e3d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73623446"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823824"
 ---
-# <a name="how-to-remotely-administer-a-windows-client-computer-by-using-system-center-configuration-manager"></a>Come amministrare un computer client Windows in remoto mediante System Center Configuration Manager
+# <a name="how-to-remotely-administer-a-windows-client-computer-by-using-configuration-manager"></a>Come amministrare in remoto un computer client Windows tramite Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)* Configuration Manager consente di connettersi ai computer client che usano **Controllo remoto di Configuration Manager**. Prima di iniziare a usare il controllo remoto, assicurarsi di aver letto le informazioni negli articoli seguenti:  
+*Si applica a: Configuration Manager (Current Branch)* Configuration Manager consente di connettersi ai computer client che usano **Controllo remoto di Configuration Manager**. Prima di iniziare a usare il controllo remoto, assicurarsi di aver letto le informazioni negli articoli seguenti:  
 
--   [Prerequisiti per il controllo remoto in System Center Configuration Manager](/sccm/core/clients/manage/remote-control/prerequisites-for-remote-control)  
+-   [Prerequisiti per il controllo remoto](/sccm/core/clients/manage/remote-control/prerequisites-for-remote-control)  
 
--   [Configurazione del controllo remoto in System Center Configuration Manager](/sccm/core/clients/manage/remote-control/configuring-remote-control)  
+-   [Configurazione del controllo remoto](/sccm/core/clients/manage/remote-control/configuring-remote-control)  
 
 Di seguito vengono elencati tre modi per avviare il visualizzatore controllo remoto:  
 
@@ -41,7 +40,7 @@ Di seguito vengono elencati tre modi per avviare il visualizzatore controllo rem
 3.  Selezionare il computer che si vuole gestire in remoto e quindi nel gruppo **Dispositivo** della scheda **Home** selezionare **Avvia** > **Controllo remoto**.  
 
     > [!IMPORTANT]  
-    >  Se l'impostazione client **Richiedere all'utente l'autorizzazione di controllo remoto** è impostata su **True**, la connessione si avvia solo quando l'utente del computer remoto risponde affermativamente alla richiesta del controllo remoto. Per altre informazioni, vedere [Configurazione del controllo remoto in System Center Configuration Manager](/sccm/core/clients/manage/remote-control/configuring-remote-control).  
+    >  Se l'impostazione client **Richiedere all'utente l'autorizzazione di controllo remoto** è impostata su **True**, la connessione si avvia solo quando l'utente del computer remoto risponde affermativamente alla richiesta del controllo remoto. Per altre informazioni, vedere [Configurazione del controllo remoto](/sccm/core/clients/manage/remote-control/configuring-remote-control).  
 
 4.  Quando la finestra **Controllo remoto di Configuration Manager** si apre, è possibile amministrare il computer client in remoto. Per configurare la connessione, usare le opzioni seguenti.  
 
@@ -89,13 +88,13 @@ Di seguito vengono elencati tre modi per avviare il visualizzatore controllo rem
 CmRcViewer.exe supporta le opzioni da riga di comando seguenti:  
 
 - *Indirizzo*: specifica il nome NetBIOS, il nome di dominio completo (FQDN) o l'indirizzo IP del computer client a cui ci si vuole connettere.
-- *Nome del server del sito*: specifica il nome del server del sito di System Center Configuration Manager al quale si vogliono inviare messaggi di stato relativi alla sessione di controllo remoto.
+- *Nome del server del sito*: specifica il nome del server del sito di Configuration Manager al quale si vogliono inviare messaggi di stato relativi alla sessione di controllo remoto.
 - **/?** : visualizza le opzioni da riga di comando per il visualizzatore controllo remoto.  
      
 **Esempio: CmRcViewer.exe** *<Indirizzo\>* *<\\\Nome del server del sito>* 
 
 > [!NOTE]  
-> Il visualizzatore controllo remoto è supportato in tutti i sistemi operativi supportati per la console di Configuration Manager. Per altre informazioni, vedere [Versioni dei sistemi operativi supportate per le console di Configuration Manager](/sccm/core/plan-design/configs/supported-operating-systems-consoles) e [Prerequisiti per il controllo remoto in System Center Configuration Manager](/sccm/core/clients/manage/remote-control/prerequisites-for-remote-control).
+> Il visualizzatore controllo remoto è supportato in tutti i sistemi operativi supportati per la console di Configuration Manager. Per altre informazioni, vedere [Configurazioni supportate per le console di Configuration Manager](/sccm/core/plan-design/configs/supported-operating-systems-consoles) e [Prerequisiti per il controllo remoto](/sccm/core/clients/manage/remote-control/prerequisites-for-remote-control).
 
 ## <a name="next-steps"></a>Passaggi successivi
 

@@ -1,7 +1,7 @@
 ---
 title: Funzionalità nella Technical Preview 1704
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1704 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1704 per Configuration Manager.
 ms.date: 04/21/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,25 +11,24 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9a7c8b9aab94e9b56d2d421be94a523116f35c9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c02dd687adf32c080a9788b5f9fc0ff707537390
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889678"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804946"
 ---
-# <a name="capabilities-in-technical-preview-1704-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1704 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1704-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1704 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1704 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1704. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview per Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
 ## <a name="configure-android-apps-with-app-configuration-policies"></a>Configurare le app Android con i criteri di configurazione delle app
-È possibile usare i criteri di configurazione delle app in System Center Configuration Manager (Configuration Manager) per distribuire impostazioni che potrebbero essere necessarie quando un utente esegue un'app in un dispositivo Android for Work. I criteri di configurazione delle app per Android sono disponibili solo nei dispositivi che eseguono Android for Work e riguardano le applicazioni approvate per lo store Play for Work.
+È possibile usare i criteri di configurazione delle app in Configuration Manager per distribuire impostazioni che potrebbero essere necessarie quando un utente esegue un'app in dispositivi Android for Work. I criteri di configurazione delle app per Android sono disponibili solo nei dispositivi che eseguono Android for Work e riguardano le applicazioni approvate per lo store Play for Work.
 
 ### <a name="try-it-out"></a>Procedura                 
 

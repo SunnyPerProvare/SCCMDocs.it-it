@@ -1,7 +1,7 @@
 ---
 title: Privacy e sicurezza per Asset Intelligence
 titleSuffix: Configuration Manager
-description: Informazioni sulla sicurezza e la privacy per Asset Intelligence in System Center Configuration Manager.
+description: Informazioni sulla sicurezza e la privacy per Asset Intelligence in Configuration Manager.
 ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: d0c6f7a0-dcae-4e6d-aa28-35d464d97ff7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 283a60145047da5c593ab287c83fc2a9d06783aa
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1bbfe35e9a35b87dfebab78391d53b538684e3f8
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70890277"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824657"
 ---
-# <a name="security-and-privacy-for-asset-intelligence-in-system-center-configuration-manager"></a>Sicurezza e privacy per Asset Intelligence in System Center Configuration Manager
+# <a name="security-and-privacy-for-asset-intelligence-in-configuration-manager"></a>Sicurezza e privacy per Asset Intelligence in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy per Asset Intelligence in System Center Configuration Manager.  
+Questo argomento contiene informazioni sulla sicurezza e la privacy per Asset Intelligence in Configuration Manager.  
 
 ##  <a name="BKMK_Security_AI"></a> Procedura consigliate per la sicurezza per Asset Intelligence  
  Usare le procedure consigliate per la sicurezza seguenti per i casi in cui si usa Asset Intelligence.  
@@ -33,7 +32,7 @@ In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy
 |Usare il principio di autorizzazione con privilegi minimi per importare i file di licenza.|Usare l'amministrazione basata su ruoli per concedere l'autorizzazione Gestisci Asset Intelligence all'utente amministratore che importa i file di licenza. Il ruolo predefinito di Gestione asset include questa autorizzazione.|  
 
 ##  <a name="BKMK_Privacy_HardwareInventory"></a> Informazioni sulla privacy per Asset Intelligence  
- Asset Intelligence estende le funzionalità di inventario di Configuration Manager in modo da offrire un livello maggiore di visibilità delle risorse nell'azienda. La raccolta di informazioni di Asset Intelligence non è abilitata automaticamente. È possibile modificare il tipo di informazioni raccolte abilitando le classi di report di inventario hardware. Per altre informazioni, vedere [Configurazione di Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md).  
+ Asset Intelligence estende le funzionalità di inventario di Configuration Manager in modo da offrire un livello maggiore di visibilità delle risorse nell'azienda. La raccolta di informazioni di Asset Intelligence non è abilitata automaticamente. È possibile modificare il tipo di informazioni raccolte abilitando le classi di report di inventario hardware. Per altre informazioni, vedere [Configurazione di Asset Intelligence](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md).  
 
  Le informazioni di Asset Intelligence vengono archiviate nel database di Configuration Manager analogamente alle informazioni relative all'inventario. Quando i client si connettono ai punti di gestione tramite HTTPS, i dati vengono sempre crittografati durante il trasferimento al punto di gestione. Quando i client si connettono tramite HTTP, è possibile configurare il trasferimento dei dati di inventario in modo che i dati siano firmati e crittografati. I dati di inventario non vengono archiviati in formato crittografato nel database. Le informazioni vengono mantenute nel database fino a quando non vengono eliminate, ogni 90 giorni, dall'attività di manutenzione del sito **Elimina cronologia inventario obsoleta** . È possibile configurare l'intervallo di eliminazione.  
 

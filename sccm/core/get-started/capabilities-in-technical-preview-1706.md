@@ -1,7 +1,7 @@
 ---
 title: Technical Preview 1706
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1706 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1706 per Configuration Manager.
 ms.date: 09/15/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e7a13e53e4054593310378b5f667fd91c597448
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 99a9774f9c2d4217da6e6aedd7d1075a63923c3f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67677440"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804827"
 ---
-# <a name="capabilities-in-technical-preview-1706-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1706 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1706-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1706 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1706 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.     
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager, versione 1706. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare [Technical Preview per Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.     
 
 
 <!--  Known Issues Template   
@@ -558,8 +557,8 @@ Sono state aggiornate le descrizioni delle impostazioni per Android per gli elem
 |Prima della Technical Preview 1706 | Nuovo nome dell'opzione | Comportamento|
 |-|-|-|
 |Impedire qualsiasi condivisione tra i limiti| Restrizioni di condivisione predefinite| Dall'ambito di lavoro a quello personale: predefinito (dovrà essere bloccato in tutte le versioni) <br>Dall'ambito personale a quello di lavoro: predefinito (consentito in 6.x+, bloccato in 5.x)|
-|Nessuna restrizione| Le app nel profilo personale possono gestire richieste di condivisione dal profilo di lavoro| Dall'ambito di lavoro a quello personale: È consentito  <br>Dall'ambito personale a quello di lavoro: È consentito|
-|Le app nel profilo di lavoro possono gestire richieste di condivisione dal profilo personale |Le app nel profilo di lavoro possono gestire richieste di condivisione dal profilo personale |Dall'ambito di lavoro a quello personale: Predefinito<br>Dall'ambito personale a quello di lavoro: È consentito<br>(utile solamente su 5.x dove l'opzione dall'ambito personale a quello di lavoro è bloccata)|
+|Nessuna restrizione| Le app nel profilo personale possono gestire richieste di condivisione dal profilo di lavoro| Dall'ambito di lavoro a quello personale: Consentito  <br>Dall'ambito personale a quello di lavoro: Consentito|
+|Le app nel profilo di lavoro possono gestire richieste di condivisione dal profilo personale |Le app nel profilo di lavoro possono gestire richieste di condivisione dal profilo personale |Dall'ambito di lavoro a quello personale: Predefinito<br>Dall'ambito personale a quello di lavoro: Consentito<br>(utile solamente su 5.x dove l'opzione dall'ambito personale a quello di lavoro è bloccata)|
 
 Nessuna di queste opzioni impedisce direttamente il comportamento di copia e incolla. È stata aggiunta un'impostazione personalizzata al servizio e all'app del Portale aziendale in 1704 che può essere configurata per evitare di copiare e incollare. L'impostazione è configurabile tramite un URI personalizzato.
 

@@ -10,19 +10,18 @@ ms.assetid: b06f781b-ab25-4d9a-b128-02cbd7cbcffe
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3520217cde80b080676d23dc49a16974c11823a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 31562587bfd84a4845ffaa4eb1d4f419d995d9d0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889139"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798810"
 ---
-# <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>Repliche di database per i punti di gestione per System Center Configuration Manager
+# <a name="database-replicas-for-management-points-for-configuration-manager"></a>Repliche di database per i punti di gestione per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-I siti primari di System Center Configuration Manager possono usare una replica di database per ridurre sul server di database del sito il carico della CPU dovuto ai punti di gestione che gestiscono le richieste provenienti dai client.  
+I siti primari di Configuration Manager possono usare una replica di database per ridurre sul server di database del sito il carico della CPU dovuto ai punti di gestione che gestiscono le richieste provenienti dai client.  
 
 -   Quando un punto di gestione usa una replica di database, tale punto di gestione richiede dati dal computer di SQL Server che ospita la replica di database anziché dal server di database del sito.  
 
@@ -50,7 +49,7 @@ I siti primari di System Center Configuration Manager possono usare una replica 
 
 -   **Requisiti di SQL Server:**  
 
-    -   L'istanza di SQL Server che ospita la replica di database deve soddisfare gli stessi requisiti del server di database del sito. Non è invece necessario che la versione o edizione di SQL Server eseguita dal server di replica sia la stessa eseguita del server di database del sito, ma è sufficiente che si tratti di una versione o edizione di SQL Server supportata. Per informazioni, vedere [Support for SQL Server versions for System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md) (Supporto per le versioni di SQL Server per System Center Configuration Manager)  
+    -   L'istanza di SQL Server che ospita la replica di database deve soddisfare gli stessi requisiti del server di database del sito. Non è invece necessario che la versione o edizione di SQL Server eseguita dal server di replica sia la stessa eseguita del server di database del sito, ma è sufficiente che si tratti di una versione o edizione di SQL Server supportata. Per informazioni, vedere [Supporto per le versioni di SQL Server per Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md)  
 
     -   Il servizio SQL Server nel computer che ospita il database di replica deve essere eseguito come account di **sistema** .  
 
@@ -80,7 +79,7 @@ I siti primari di System Center Configuration Manager possono usare una replica 
 
     -   [Spostare un database del server del sito che pubblica una replica di database](#BKMK_DBReplicaOps_Move)  
 
--   **Aggiornamenti a System Center Configuration Manager**: prima di aggiornare un sito da System Center 2012 Configuration Manager a System Center Configuration Manager Current Branch oppure prima di aggiornare Configuration Manager Current Branch all'ultima versione, è necessario disabilitare le repliche di database per i punti di gestione.  Dopo l'aggiornamento del sito, è possibile riconfigurare le repliche di database per i punti di gestione.  
+-   **Aggiornamenti a Configuration Manager Current Branch**: prima di aggiornare un sito da System Center 2012 Configuration Manager a Configuration Manager Current Branch oppure prima di aggiornare Configuration Manager Current Branch all'ultima versione, è necessario disabilitare le repliche di database per i punti di gestione.  Dopo l'aggiornamento del sito, è possibile riconfigurare le repliche di database per i punti di gestione.  
 
 -   **Più repliche in un'unica istanza di SQL Server**:  se si configura un server di replica di database per ospitare più repliche di database per i punti di gestione (ogni replica deve trovarsi in un'istanza separata), è necessario usare uno script di configurazione modificato (dal passaggio 4 della sezione successiva) per evitare di sovrascrivere il certificato autofirmato usato dalle repliche di database configurate in precedenza in tale server.  
 
@@ -132,7 +131,7 @@ Al termine della stored procedure, il server di database del sito è configurato
 ###  <a name="BKMK_DBReplica_ConfigSrv"></a> Passaggio 2: Configurare il server di replica di database  
 Il server di replica di database è un computer che esegue SQL Server e ospita una replica del database del sito che verrà usata dai punti gestione. In base a una pianificazione fissa, il server di replica di database sincronizza la propria copia del database con la replica di database pubblicata dal server di database del sito.  
 
-Il server di replica di database deve soddisfare gli stessi requisiti del server di database del sito. Tuttavia, il server di replica di database può eseguire una versione o un'edizione diversa di SQL Server rispetto a quella usata dal server di database del sito. Per informazioni sulle versioni di SQL Server supportate, vedere l'argomento [Support for SQL Server versions for System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md) (Supporto per le versioni di SQL Server per System Center Configuration Manager).  
+Il server di replica di database deve soddisfare gli stessi requisiti del server di database del sito. Tuttavia, il server di replica di database può eseguire una versione o un'edizione diversa di SQL Server rispetto a quella usata dal server di database del sito. Per informazioni sulle versioni di SQL Server supportate, vedere l'argomento [Supporto per le versioni di SQL Server per Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md).  
 
 > [!IMPORTANT]  
 >  Il servizio SQL Server nel computer che ospita il database di replica deve essere eseguito come account di sistema.  
@@ -502,7 +501,7 @@ Per supportare la notifica client con una replica di database per un punto di ge
 
 2.  Usare **SQL Server Management Studio** per eliminare la sottoscrizione della replica di database da ogni server di replica di database per questo sito.  
 
-3.  Spostare il database nel nuovo computer SQL Server. Per ulteriori informazioni, vedere la sezione [Modify the site database configuration](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_dbconfig) nell'argomento [Modify your System Center Configuration Manager infrastructure](../../../../core/servers/manage/modify-your-infrastructure.md) .  
+3.  Spostare il database nel nuovo computer SQL Server. Per altre informazioni, vedere la sezione [Modificare la configurazione del database del sito](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_dbconfig) nell'argomento [Modificare l'infrastruttura di Configuration Manager](../../../../core/servers/manage/modify-your-infrastructure.md).  
 
 4.  Ricreare la pubblicazione per la replica di database nel server di database del sito. Per altre informazioni, vedere la sezione [Passaggio 1: Configurare il server di database del sito per la pubblicazione della replica di database](#BKMK_DBReplica_ConfigSiteDB) in questo argomento.  
 

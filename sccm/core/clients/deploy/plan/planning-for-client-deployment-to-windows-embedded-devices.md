@@ -1,7 +1,7 @@
 ---
 title: Pianificazione della distribuzione dei client in dispositivi con Windows Embedded
 titleSuffix: Configuration Manager
-description: Pianificazione della distribuzione del client a dispositivi con Windows Embedded in System Center Configuration Manager.
+description: Pianificare la distribuzione dei client in dispositivi con Windows Embedded in Configuration Manager.
 ms.date: 06/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,23 +10,22 @@ ms.assetid: 038e61f9-f49d-41d1-9a9f-87bec9e00d5d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b96e7f77dae283d31ba3d2f0955c2910ea499dd5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 623125ad64c7ed421ea209137eb68f17891d7a81
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70378667"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824861"
 ---
-# <a name="planning-for-client-deployment-to-windows-embedded-devices-in-system-center-configuration-manager"></a>Pianificazione della distribuzione del client in dispositivi con Windows Embedded in System Center Configuration Manager
+# <a name="planning-for-client-deployment-to-windows-embedded-devices-in-configuration-manager"></a>Pianificazione della distribuzione dei client in dispositivi con Windows Embedded in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-<a name="BKMK_DeployClientEmbedded"></a> Se il dispositivo con Windows Embedded non include il client di System Center Configuration Manager, è possibile usare qualsiasi metodo di installazione client se il dispositivo soddisfa le dipendenze obbligatorie. Se il dispositivo incorporato supporta filtri di scrittura, è necessario disabilitare tali filtri prima di installare il client, quindi riabilitarli al termine dell'installazione del client e dell'assegnazione a un sito.  
+<a name="BKMK_DeployClientEmbedded"></a> Se il dispositivo con Windows Embedded non include il client di Configuration Manager, è possibile usare qualsiasi metodo di installazione client se il dispositivo soddisfa le dipendenze obbligatorie. Se il dispositivo incorporato supporta filtri di scrittura, è necessario disabilitare tali filtri prima di installare il client, quindi riabilitarli al termine dell'installazione del client e dell'assegnazione a un sito.  
 
  Se si disabilitano i filtri, prestare attenzione a non disabilitare i driver di filtro. In genere questi driver vengono eseguiti automaticamente all'avvio del computer. La disabilitazione dei driver impedisce l'installazione del client o interferisce con l'orchestrazione dei filtri di scrittura che provoca l'errore delle operazioni dei client. I servizi associati a ogni tipo di filtro di scrittura che deve rimanere in esecuzione sono:  
 
-|Tipo di filtro di scrittura|Driver|Type|Descrizione|  
+|Tipo di filtro di scrittura|Driver|Tipo|Descrizione|  
 |-----------------------|------------|----------|-----------------|  
 |EWF|ewf|Kernel|Impementa il reindirizzamento I/O a livello di settore nei volumi protetti.|  
 |FBWF|fbwf|File system|Impementa il reindirizzamento I/O a livello di file nei volumi protetti.|  
@@ -85,7 +84,7 @@ ms.locfileid: "70378667"
 > [!NOTE]
 > Non sono richieste altre eccezioni dal client Configuration Manager diverse da quelle documentate nella casella **Importante** riportata sopra. L'aggiunta di altre eccezioni correlate a Configuration Manager o WMI (WBEM) possono causare errori di Configuration Manager, tra cui il blocco dei dispositivi in modalità di manutenzione o i cicli di riavvio dei dispositivi. Le eccezioni non necessarie includono la directory del client Configuration Manager, la directory CCMcache, la directory CCMSetup, la directory della cache della sequenza di attività, la directory WBEM e le chiavi del Registro di sistema correlate di Configuration Manager.
 
- Per uno scenario di esempio su come distribuire e gestire dispositivi con Windows Embedded abilitati per il filtro di scrittura in Configuration Manager, vedere [Scenario di esempio per la distribuzione e gestione dei client di System Center Configuration Manager nei dispositivi con Windows Embedded](../../../../core/clients/deploy/example-scenario-for-deploying-and-managing-clients-on-windows-embedded-devices.md).  
+ Per uno scenario di esempio su come distribuire e gestire dispositivi con Windows Embedded abilitati per il filtro di scrittura in Configuration Manager, vedere [Scenario di esempio per la distribuzione e gestione dei client di Configuration Manager nei dispositivi con Windows Embedded](../../../../core/clients/deploy/example-scenario-for-deploying-and-managing-clients-on-windows-embedded-devices.md).  
 
  Per altre informazioni su come costruire immagini per i dispositivi con Windows Embedded e configurare i filtri di scrittura, vedere la documentazione su Windows Embedded oppure contattare il proprio OEM.  
 

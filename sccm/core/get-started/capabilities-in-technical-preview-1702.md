@@ -1,7 +1,7 @@
 ---
 title: Funzionalità nella Technical Preview 1702
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1702 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1702 per Configuration Manager.
 ms.date: 02/24/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ed8434086a7f1515cc538c3b265cb4e8f54780e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1b424e98753ffc056a26321c341a13d65460f79c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68340101"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75805133"
 ---
-# <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1702 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1702-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1702 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1702 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1702. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview per Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
@@ -59,7 +58,7 @@ A partire da questa versione, il computer di origine della peer cache rifiuta le
 -  L'I/O disco ha un valore di *AvgDiskQueueLength* superiore a 10.
 -  Non vi sono più connessioni disponibili al computer.   
 
-È possibile configurare queste impostazioni tramite la classe di configurazione dell'agente client per la funzionalità di origine peer (*SMS_WinPEPeerCacheConfig*) quando si usa l'SDK di System Center Configuration Manager.
+È possibile configurare queste impostazioni tramite la classe di configurazione dell'agente client per la funzionalità di origine peer (*SMS_WinPEPeerCacheConfig*) quando si usa l'SDK di Configuration Manager.
 
 Quando il computer rifiuta una richiesta di contenuto, il computer richiedente continuerà a cercare il contenuto da origini alternative nel pool dei percorsi di origine del contenuto disponibili.   
 
@@ -230,7 +229,7 @@ Se l'applicazione è stata distribuita come **Richiesta** e l'opzione **Chiudi a
 
 Per i dispositivi iOS, è possibile associare un profilo di certificato PFX a un profilo di posta elettronica e abilitare la crittografia S/MIME.  Questo abilita S/MIME nel client di posta elettronica nativo in iOS e vi associa il certificato di crittografia S/MIME corretto.
 
-Per altre informazioni sui certificati in Configuration Manager, vedere [Introduzione ai profili certificato in System Center Configuration Manager]( https://docs.microsoft.com/sccm/protect/deploy-use/introduction-to-certificate-profiles).
+Per altre informazioni sui certificati in Configuration Manager, vedere [Introduzione ai profili certificato]( https://docs.microsoft.com/sccm/protect/deploy-use/introduction-to-certificate-profiles).
 
 
 ## <a name="new-compliance-settings-for-ios-devices"></a>Nuove impostazioni di conformità per i dispositivi iOS
@@ -309,7 +308,7 @@ Le sezioni seguenti descrivono la gestione di Android for Work.
    7. Nella pagina di accesso di Google immettere le credenziali Google dal passaggio 1 e quindi specificare le informazioni aziendali.
 3. Quando si torna al portale di Intune, Android for Work è attivato e sono disponibili tre opzioni di registrazione per i dispositivi Android for Work:
    - **Gestisci tutti i dispositivi come Android**: (disabilitata) tutti i dispositivi Android, inclusi i dispositivi Android for Work, verranno registrati come dispositivi Android convenzionali
-   - **Gestisci i dispositivi supportati come Android for Work**: (abilitata) tutti i dispositivi che supportano Android for Work vengano registrati come dispositivi Android for Work. I dispositivi Android che non supportano Android for Work vengono registrati come dispositivi Android convenzionali.
+   - **Gestisci i dispositivi supportati come Android for Work**: (abilitata) tutti i dispositivi che supportano Android for Work vengano registrati come dispositivi Android for Work. Tutti i dispositivi che non supportano Android for Work vengono registrati come dispositivi Android convenzionali.
    - **Gestisci i dispositivi supportati per gli utenti solo in questi gruppi come Android for Work**: (test) consente di usare la gestione Android for Work per un insieme di utenti limitato. Solo i membri dei gruppi selezionati che registrano un dispositivo che supporta Android for Work vengono registrati come dispositivi Android for Work. Tutti gli altri vengono registrati come dispositivi Android.
   
 > [!NOTE]

@@ -10,17 +10,16 @@ ms.assetid: 1b931c9d-ffae-4d8e-baa7-c330a152674f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c9f8b65180c4255c5c279d75f012db766163fd6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 46482876d328a19da9328a4a32b78421328bafc5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500769"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792542"
 ---
 # <a name="accessibility-features-in-support-center"></a>Funzionalità di accessibilità in Support Center
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Support Center offre molte utili funzionalità di accessibilità che facilitano l'uso dello strumento. 
 
@@ -64,7 +63,7 @@ Usare i tasti di scelta rapida per accedere a tutti i menu della barra multifunz
 |Cercare un codice di errore<br>(nella scheda **Logs** (Log) e nella finestra **Log Viewer** (Visualizzatore log))|**CTRL** + **L** |
 |Copiare da un file di log| - **CTRL** + **C**: copia il testo del file di log<br> - **CTRL** + **MAIUSC** + **C**: copia la voce di log senza formattazione|
 |Filtrare rapidamente usando testo del file di log<br>(nella scheda **Logs** (Log) e nella finestra **Log Viewer** (Visualizzatore log))|**CTRL** + **MAIUSC** + **C** |
-|Inserire annotazioni in un file di log<br>(nella scheda **Logs** (Log) e nella finestra **Log Viewer** (Visualizzatore log))|**CTRL** + **MAIUSC** + **N** <sup>[Note 1](#bkmk_note1)</sup>|
+|Inserire annotazioni in un file di log<br>(nella scheda **Logs** (Log) e nella finestra **Log Viewer** (Visualizzatore log))|**CTRL** + **MAIUSC** + **N** <sup>[Nota 1](#bkmk_note1)</sup>|
 |Aprire la Guida|**F1**|
 
 

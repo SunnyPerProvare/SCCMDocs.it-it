@@ -10,17 +10,16 @@ ms.assetid: a3be4f8f-3d44-4e3c-9fa1-e85f30a36e72
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d06098eba14209be3e73ff3bdb4fd7f8bb0487a6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 0d7949741ae9092e8f12b01c03ea864fb7075942
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74661023"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75791845"
 ---
 # <a name="which-branch-of-configuration-manager-should-i-use"></a>Scelta del ramo di Configuration Manager da usare
 
-*Si applica a: System Center Configuration Manager (Current Branch, Long-Term Servicing Branch e Technical Preview)*
+*Si applica a: Configuration Manager (Current Branch e Technical Preview Branch) e System Center Configuration Manager (Long-Term Servicing Branch)*
 
 Sono disponibili tre rami di Configuration Manager:
 

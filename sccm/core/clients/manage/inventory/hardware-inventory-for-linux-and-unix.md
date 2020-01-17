@@ -10,17 +10,16 @@ ms.assetid: 1026d616-2a20-4fb2-8604-d331763937f8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cd6a1626557c4410ac58dfb82f84554052e9220
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1bdfb8c6d528c12581f05f86111a1a76d2259faa
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70378201"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824317"
 ---
 # <a name="hardware-inventory-for-linux-and-unix-in-configuration-manager"></a>Inventario hardware per Linux e UNIX in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 > [!Important]  
 > A partire dalla versione 1902, Configuration Manager non supporta i client Linux o UNIX. 
@@ -125,4 +124,4 @@ Le azioni per l'inventario hardware vengono immesse nel file di log client **scx
 ###  <a name="BKMK_AddLinuxProvidertoCM"></a> Abilitare la nuova classe di inventario in Configuration Manager:  
  Affinché Configuration Manager possa elaborare l'inventario fornito dal nuovo provider nei computer Linux e UNIX, è necessario importare il file MOF (Managed Object Format) che definisce lo schema del provider personalizzato.  
 
- Per importare un file MOF personalizzato in Configuration Manager, vedere [Come configurare l'inventario hardware in System Center Configuration Manager](../../../../core/clients/manage/inventory/configure-hardware-inventory.md).  
+ Per importare un file MOF personalizzato in Configuration Manager, vedere [Come configurare l'inventario hardware](../../../../core/clients/manage/inventory/configure-hardware-inventory.md).  

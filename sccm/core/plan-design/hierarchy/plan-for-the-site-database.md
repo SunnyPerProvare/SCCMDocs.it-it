@@ -1,7 +1,7 @@
 ---
 title: Pianificare il database del sito
 titleSuffix: Configuration Manager
-description: Prendere in considerazione il database del sito e il ruolo del server del database del sito quando si pianifica la gerarchia di System Center Configuration Manager.
+description: Prendere in considerazione il database del sito e il ruolo del server del database del sito quando si pianifica la gerarchia di Configuration Manager.
 ms.date: 03/08/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,17 +10,16 @@ ms.assetid: 104fb4cc-6e83-40a3-8e6b-ac909fb9ec7d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c9134fa0bbabf5425ce17d21b143d71437aea36
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 66f742dab8e222c620ddc6079c9a63340f40cda5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62241617"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799829"
 ---
-# <a name="plan-for-the-site-database-for-system-center-configuration-manager"></a>Pianificare per il database del sito per System Center Configuration Manager
+# <a name="plan-for-the-site-database-for-configuration-manager"></a>Pianificare il database del sito per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Il server di database del sito è un computer in cui viene eseguita una versione supportata di Microsoft SQL Server. SQL Server viene usato per archiviare le informazioni per i siti di Configuration Manager. Ogni sito in una gerarchia di Configuration Manager contiene un database e un server del sito a cui è assegnato il ruolo del server del database del sito.  
 
@@ -42,10 +41,10 @@ Per ospitare il database del sito è possibile usare le configurazioni di SQL Se
 
 -   Un'istanza denominata in un'istanza in cluster di SQL Server  
 
--   Un gruppo di disponibilità AlwaysOn di SQL Server (a partire dalla versione 1602 di System Center Configuration Manager)
+-   Un gruppo di disponibilità AlwaysOn di SQL Server (a partire dalla versione 1602 di Configuration Manager)
 
 
-Per ospitare il database del sito, SQL Server deve soddisfare i requisiti descritti in [Supporto per le versioni di SQL Server per System Center Configuration Manager](../../../core/plan-design/configs/support-for-sql-server-versions.md).  
+Per ospitare il database del sito, SQL Server deve soddisfare i requisiti descritti in [Supporto per le versioni di SQL Server per Configuration Manager](../../../core/plan-design/configs/support-for-sql-server-versions.md).  
 
 
 

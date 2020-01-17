@@ -1,7 +1,7 @@
 ---
 title: Impostazioni di Windows Firewall e delle porte per i client
 titleSuffix: Configuration Manager
-description: Selezionare le impostazioni della porta e di Windows Firewall per i client in System Center Configuration Manager.
+description: Selezionare le impostazioni di Windows Firewall e delle porte per i client in Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,19 +10,18 @@ ms.assetid: dce4b640-c92f-401a-9873-ce9aa9262014
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b53f55a47a77848840493fa7fe08b599a4db2111
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 2290899c0159221c5f45ce6c34332b766984e4c1
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62200834"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824810"
 ---
-# <a name="windows-firewall-and-port-settings-for-clients-in-system-center-configuration-manager"></a>Impostazioni di Windows Firewall e delle porte per i client in System Center Configuration Manager
+# <a name="windows-firewall-and-port-settings-for-clients-in-configuration-manager"></a>Impostazioni di Windows Firewall e delle porte per i client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-I computer client in System Center Configuration Manager che eseguono Windows Firewall richiedono spesso la configurazione delle eccezioni per consentire la comunicazione con il sito. Le eccezioni da configurare dipendono dalle funzionalità di gestione usate con il client di Configuration Manager.  
+I computer client in Configuration Manager che eseguono Windows Firewall richiedono spesso la configurazione delle eccezioni per consentire la comunicazione con il sito. Le eccezioni da configurare dipendono dalle funzionalità di gestione usate con il client di Configuration Manager.  
 
  Utilizzare le seguenti sezioni per identificare queste funzionalità di gestione e per ulteriori informazioni su come configurare Windows Firewall per le eccezioni.  
 
@@ -61,7 +60,7 @@ I computer client in System Center Configuration Manager che eseguono Windows Fi
  In uscita: Porta TCP **443** (per la comunicazione HTTPS)  
 
 > [!IMPORTANT]  
->  Questi numeri di porta predefiniti possono essere modificati in Configuration Manager. Per altre informazioni, vedere [How to configure client communication ports in System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md) (Come configurare i numeri di porta di comunicazione client in System Center Configuration Manager). Se queste porte sono state modificate rispetto ai valori predefiniti, è necessario configurare anche le eccezioni corrispondenti in Windows Firewall.  
+>  Questi numeri di porta predefiniti possono essere modificati in Configuration Manager. Per altre informazioni, vedere [Come configurare le porte di comunicazione client](../../../core/clients/deploy/configure-client-communication-ports.md). Se queste porte sono state modificate rispetto ai valori predefiniti, è necessario configurare anche le eccezioni corrispondenti in Windows Firewall.  
 
 ### <a name="client-notification"></a>Notifica client  
  Per fare in modo che il punto di gestione invii una notifica ai computer client sull'azione da eseguire quando un utente amministratore seleziona un'azione client nella console di Configuration Manager, ad esempio scaricare criteri computer o avviare una scansione malware, aggiungere la seguente eccezione a Windows Firewall:  
@@ -75,7 +74,7 @@ I computer client in System Center Configuration Manager che eseguono Windows Fi
  In uscita: Porta TCP **443** (per la comunicazione HTTPS)  
 
 > [!IMPORTANT]  
->  Questi numeri di porta predefiniti possono essere modificati in Configuration Manager. Per altre informazioni, vedere [How to configure client communication ports in System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md) (Come configurare i numeri di porta di comunicazione client in System Center Configuration Manager). Se queste porte sono state modificate rispetto ai valori predefiniti, è necessario configurare anche le eccezioni corrispondenti in Windows Firewall.  
+>  Questi numeri di porta predefiniti possono essere modificati in Configuration Manager. Per altre informazioni, vedere [Come configurare le porte di comunicazione client](../../../core/clients/deploy/configure-client-communication-ports.md). Se queste porte sono state modificate rispetto ai valori predefiniti, è necessario configurare anche le eccezioni corrispondenti in Windows Firewall.  
 
 ### <a name="remote-control"></a>Controllo remoto  
  Per usare il controllo remoto di Configuration Manager, consentire la seguente porta:  
@@ -96,7 +95,7 @@ I computer client in System Center Configuration Manager che eseguono Windows Fi
 
  Oltre a queste porte, il proxy di riattivazione utilizza i messaggi di richiesta echo di Internet Control Message Protocol (ICMP) da un computer client all'altro. Questo tipo di comunicazione viene usata per verificare se l'altro computer è attivo nella rete. ICMP viene talvolta indicato come comandi ping TCP/IP.  
 
- Per altre informazioni sul proxy di riattivazione, vedere [Plan how to wake up clients in System Center Configuration Manager](../../../core/clients/deploy/plan/plan-wake-up-clients.md) (Pianificare la riattivazione dei client in System Center Configuration Manager).  
+ Per altre informazioni sul proxy di riattivazione, vedere [Pianificare la riattivazione dei client](../../../core/clients/deploy/plan/plan-wake-up-clients.md).  
 
 ### <a name="windows-event-viewer-windows-performance-monitor-and-windows-diagnostics"></a>Visualizzatore eventi di Windows, Monitoraggio prestazioni di Windows e Diagnostica Windows  
  Per accedere a Visualizzatore eventi di Windows, Monitoraggio prestazioni di Windows e Diagnostica Windows dalla console di Configuration Manager, attivare **Condivisione file e stampanti** come eccezione in Windows Firewall.  

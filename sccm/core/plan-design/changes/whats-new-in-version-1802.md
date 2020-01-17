@@ -10,25 +10,24 @@ ms.assetid: 5bd637b1-d7a1-411b-877a-c7aae9741173
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
 ROBOTS: NOINDEX
-ms.openlocfilehash: 98a3443963ce14d2b0a4593bda541b1971a06bc1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 833d7e3a673a3638150b2107889636de749df2af
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660683"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802600"
 ---
-# <a name="whats-new-in-version-1802-of-system-center-configuration-manager"></a>Novità della versione 1802 di System Center Configuration Manager
+# <a name="whats-new-in-version-1802-of-configuration-manager"></a>Novità della versione 1802 di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 L'aggiornamento 1802 per Configuration Manager current branch è disponibile come aggiornamento nella console. Applicare questo aggiornamento ai siti con la versione 1702, 1706 o 1710. <!-- baseline only statement: -->Quando si installa un nuovo sito, è disponibile anche come versione di base.
 
-A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in System Center Configuration Manager Current Branch, versione 1802](https://support.microsoft.com/help/4101375).
+A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in Configuration Manager Current Branch, versione 1802](https://support.microsoft.com/help/4101375).
 
 Sono ora disponibili anche i seguenti aggiornamenti aggiuntivi per questa versione:
-- [Aggiornamento cumulativo per System Center Configuration Manager Current Branch, versione 1802](https://support.microsoft.com/help/4163547)
+- [Aggiornamento cumulativo per Configuration Manager Current Branch, versione 1802](https://support.microsoft.com/help/4163547)
 
 > [!TIP]  
 > Per installare un nuovo sito, è necessario usare una versione base di Configuration Manager.  
@@ -87,7 +86,7 @@ Con l'affinità del sito del punto di distribuzione cloud, un client basato su I
 
 ## <a name="management-insights"></a>Informazioni dettagliate sulla gestione
 <!-- 1353967 -->
-Informazioni dettagliate sulla gestione in System Center Configuration Manager offre informazioni sullo stato attuale dell'ambiente. Le informazioni si basano sull'analisi dei dati presenti nel database del sito. Le informazioni dettagliate aiutano a capire meglio l'ambiente e a intervenire di conseguenza. Per i dettagli, vedere [Informazioni dettagliate sulla gestione](/sccm/core/servers/manage/management-insights)
+La funzionalità Informazioni dettagliate sulla gestione in Configuration Manager offre indicazioni utili sullo stato corrente dell'ambiente. Le informazioni si basano sull'analisi dei dati presenti nel database del sito. Le informazioni dettagliate aiutano a capire meglio l'ambiente e a intervenire di conseguenza. Per i dettagli, vedere [Informazioni dettagliate sulla gestione](/sccm/core/servers/manage/management-insights)
 
 In Configuration Manager 1802 sono disponibili le informazioni dettagliate seguenti:
 - Applicazioni:
@@ -140,7 +139,7 @@ Per le proprietà dell'inventario hardware è possibile configurare la lunghezza
 
  ### <a name="deprecation-announcement-for-linux-and-unix-client-support"></a>Annuncio di supporto deprecato per i client Linux e Unix
  <!--510139-->
-Tra circa un anno, Microsoft intende deprecare il supporto per i client Linux e UNIX in System Center Configuration Manager in modo da non includerli nella versione 1902 agli inizi del 2019. La versione 1810 di Configuration Manager, in programma per la fine del 2018, sarà l'ultima versione a includere i client Linux e UNIX che saranno supportati per l'intero ciclo di vita di Configuration Manager 1810. Dopo Configuration Manager 1810, i clienti dovranno prendere in considerazione la gestione di Microsoft Azure per gestire i server Linux. Le soluzioni di Azure includono un ampio supporto per Linux che nella maggior parte dei casi supera le funzionalità di Configuration Manager, inclusa la gestione end-to-end delle patch per Linux.
+Microsoft intende deprecare il supporto per i client Linux e UNIX in Configuration Manager entro circa un anno, in modo da non includerli nella versione 1902 all'inizio del 2019. La versione 1810 di Configuration Manager, in programma per la fine del 2018, sarà l'ultima versione a includere i client Linux e UNIX che saranno supportati per l'intero ciclo di vita di Configuration Manager 1810. Dopo Configuration Manager 1810, i clienti dovranno prendere in considerazione la gestione di Microsoft Azure per gestire i server Linux. Le soluzioni di Azure includono un ampio supporto per Linux che nella maggior parte dei casi supera le funzionalità di Configuration Manager, inclusa la gestione end-to-end delle patch per Linux.
 
 ### <a name="surface-device-dashboard"></a>Dashboard dei dispositivi Surface
 <!--1355788-->
@@ -161,7 +160,7 @@ A partire da questa versione, Silverlight non viene più installato automaticame
 <!-- 1357365 -->
  Dopo aver abilitato la co-gestione, è possibile eseguire la transizione del carico di lavoro di Endpoint Protection a Intune. Per eseguire questa transizione, passare alla pagina delle proprietà di co-gestione e spostare la barra del dispositivo di scorrimento da Configuration Manager a **Pilota** o **Tutto**. Per informazioni dettagliate sui carichi di lavoro, vedere [Co-management workloads](/sccm/comanage/workloads) (Carichi di lavoro di co-gestione). Per altre informazioni sulla co-gestione, vedere [Co-gestione per dispositivi Windows 10](/sccm/comanage/overview).
  
-### <a name="co-management-dashboard-in-system-center-configuration-manager"></a>Dashboard di co-gestione in System Center Configuration Manager
+### <a name="co-management-dashboard-in-configuration-manager"></a>Dashboard di co-gestione in Configuration Manager
 <!--1356648-->
 A partire da questa versione, è possibile visualizzare un dashboard con informazioni sulla co-gestione. Il dashboard consente di esaminare i computer co-gestiti presenti nell'ambiente. I grafici consentono di identificare i dispositivi che potrebbero richiedere attenzione. Per informazioni dettagliate, vedere l'articolo [Dashboard di co-gestione](/sccm/comanage/how-to-monitor#co-management-dashboard). 
 

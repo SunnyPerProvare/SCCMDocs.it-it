@@ -10,17 +10,16 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 7397fc17-3ae8-4525-8386-aea8a9cffa06
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e131f8c76b03c36557f3f1161729d523e4e7f946
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 28fe6b7a7cc3030456df47b95820a1d91e4a4db8
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68339849"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823790"
 ---
-# <a name="surface-device-dashboard-in-system-center-configuration-manager"></a>Dashboard dei dispositivi Surface in System Center Configuration Manager
+# <a name="surface-device-dashboard-in-configuration-manager"></a>Dashboard dei dispositivi Surface in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 A partire dalla versione 1802, il dashboard dei dispositivi Surface visualizza informazioni a colpo d'occhio sui dispositivi Surface rilevati nell'ambiente in uso. <!--1355788-->
 

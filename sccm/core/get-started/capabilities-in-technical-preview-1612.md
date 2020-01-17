@@ -1,7 +1,7 @@
 ---
 title: Funzionalità nella Technical Preview 1612
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1612 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1612 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,21 +11,20 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b425103d4d7455a6453f6415f911e01defdc0d6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 67ced156211acad8ce27b3f043cbab7aa0adc2f6
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68340103"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75805048"
 ---
-# <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1612 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1612-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1612 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
 
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1612 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1612. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview per Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
@@ -154,7 +153,7 @@ Dopo aver installato la versione Technical Preview 1612, è possibile trovare il
 
 Lo strumento rilasciato con questa versione Technical Preview è destinato a sostituire le versioni precedenti di strumenti simili rilasciati per i prodotti Configuration Manager precedenti. Questa versione dello strumento smetterà di funzionare dopo il 1° marzo 2017. Fino a quel momento, tuttavia, verranno rilasciate nuove versioni Technical Preview, dato che questo strumento viene rilasciato nell'ambito di Current Branch o di un rilascio fuori programma pronto per la produzione.
 
-### <a name="requirements"></a>requisiti  
+### <a name="requirements"></a>Requisiti  
 - È possibile eseguire lo strumento direttamente nel computer che ospita il punto di distribuzione oppure in remoto da un altro server. Lo strumento può essere eseguito solo per un unico punto di distribuzione alla volta.
 - Per la gerarchia di Configuration Manager l'account utente che esegue lo strumento deve disporre direttamente di autorizzazioni di amministrazione basate sui ruoli equivalenti a quelle di un amministratore completo.  Lo strumento non funziona se all'account utente sono state concesse autorizzazioni in quanto membro di un gruppo di sicurezza di Windows con autorizzazioni di amministratore completo.
 
@@ -197,12 +196,12 @@ Per eseguire lo strumento:
 
 |Opzione|Dettagli|
 |---------|-------|
-|**/delete**  |**Facoltativa** </br> Usare questa opzione se si desidera eliminare contenuto dal punto di distribuzione. Prima dell'eliminazione viene richiesta la conferma. </br></br> Se questa opzione non viene utilizzata, lo strumento registra i risultati relativi al contenuto da eliminare, ma non elimina alcun contenuto dal punto di distribuzione. </br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com /delete*** |
+|**/delete**  |**Facoltativo** </br> Usare questa opzione se si desidera eliminare contenuto dal punto di distribuzione. Prima dell'eliminazione viene richiesta la conferma. </br></br> Se questa opzione non viene utilizzata, lo strumento registra i risultati relativi al contenuto da eliminare, ma non elimina alcun contenuto dal punto di distribuzione. </br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com /delete*** |
 | **/q**       |**Facoltativa** </br> Eseguire lo strumento in modalità non interattiva. Tutte le richieste di conferma (ad esempio in caso di eliminazione di contenuto) vengono soppresse e il file di log non viene aperto automaticamente. </br></br> Esempio: ***ContentLibraryCleanup.exe /q /dp server1.contoso.com*** |
 | **/dp &lt;FQDN punto di distribuzione>**  | **Richiesto** </br> Specificare il nome di dominio completo (FQDN) del punto di distribuzione che si desidera pulire. </br></br> Esempio:  ***ContentLibraryCleanup.exe /dp server1.contoso.com***|
 | **/ps &lt;FQDN sito primario>**       | **Facoltativa** per la pulizia del contenuto di un punto di distribuzione in un sito primario.</br>**Obbligatoria** per la pulizia del contenuto di un punto di distribuzione in un sito secondario. </br></br> Specificare il nome FQDN del sito primario a cui appartiene il punto di distribuzione o del padre primario se il punto di distribuzione si trova in un sito secondario. </br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com*** |
 | **/sc &lt;codice del sito primario>**  | **Facoltativa** per la pulizia del contenuto di un punto di distribuzione in un sito primario.</br>**Obbligatoria** per la pulizia del contenuto di un punto di distribuzione in un sito secondario. </br></br> Specificare il codice del sito primario a cui appartiene il punto di distribuzione o del sito primario padre se il punto di distribuzione si trova in un sito secondario.</br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com /sc ABC*** |
-| **/log\<directory file di log>**       |**Facoltativa** </br> Specificare la directory in cui salvare i file di log. Può essere un'unità locale o una condivisione di rete.</br></br> Se questa opzione non viene usata, i file di log vengono salvati automaticamente nella cartella Temp dell'utente.</br></br> Esempio di unità locale: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop*** </br></br>Esempio di condivisione di rete: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log \\&lt;condivisione>\&lt;cartella>***|
+| **/log\<directory file di log>**       |**Facoltativo** </br> Specificare la directory in cui salvare i file di log. Può essere un'unità locale o una condivisione di rete.</br></br> Se questa opzione non viene usata, i file di log vengono salvati automaticamente nella cartella Temp dell'utente.</br></br> Esempio di unità locale: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop*** </br></br>Esempio di condivisione di rete: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log \\&lt;condivisione>\&lt;cartella>***|
 
 
 ## <a name="improvements-for-in-console-search"></a>Miglioramenti per la ricerca nella console
@@ -234,7 +233,7 @@ Una nuova notifica di Windows 10 informa gli utenti che sono necessarie azioni a
 ## <a name="windows-store-for-business-support-in-configuration-manager"></a>Supporto di Windows Store for Business in Configuration Manager
 
 È ora possibile distribuire app con licenza online con scopo della distribuzione **Disponibile** da Windows Store per le aziende a PC che eseguono il client di Configuration Manager.
-Per altri dettagli, vedere [Gestire le app da Windows Store per le aziende con System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
+Per altri dettagli, vedere [Gestire le app da Windows Store per le aziende con Configuration Manager](https://docs.microsoft.com/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
 
 Il supporto per questa funzionalità è attualmente disponibile solo per i PC che eseguono la versione di anteprima di Windows 10 RS2.
 

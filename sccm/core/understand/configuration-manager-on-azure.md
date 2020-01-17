@@ -10,23 +10,22 @@ ms.assetid: d24257d8-8136-47f4-8e0d-34021356dc37
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71588dbd541c9d42c37b182b3ef420f3e68f3c3a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 18f4f85ebf51e9baad7d003ca97ec74f2fca9efa
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70891969"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825915"
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager in Azure: domande frequenti
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Le domande e le risposte seguenti possono aiutare a capire quando usare e come configurare Configuration Manager in Microsoft Azure.
 
 ## <a name="general-questions"></a>Domande generali
 ### <a name="my-company-is-trying-to-move-as-many-physical-servers-as-possible-to-microsoft-azure-can-i-move-configuration-manager-servers-to-azure"></a>L'azienda sta cercando di trasferire il maggior numero possibile di server fisici in Microsoft Azure; è possibile trasferire i server di Configuration Manager in Azure?
-Questo scenario è ovviamente supportato.  Vedere [Supporto per gli ambienti di virtualizzazione per System Center Configuration Manager](/sccm/core/plan-design/configs/support-for-virtualization-environments).
+Questo scenario è ovviamente supportato.  Vedere [Supporto per gli ambienti di virtualizzazione per Configuration Manager](/sccm/core/plan-design/configs/support-for-virtualization-environments).
 
 ### <a name="great-my-environment-requires-multiple-sites-should-all-child-primary-sites-be-in-azure-with-the-central-administration-site-or-on-premises-what-about-secondary-sites"></a>Ottimo. L'ambiente richiede più siti. Tutti i siti primari figlio devono essere presenti in Azure con il sito di amministrazione centrale o locale? Qual è l'approccio da seguire per i siti secondari?
 Le comunicazioni da sito a sito (replica di database e basata su file) traggono vantaggio dalla prossimità dei siti ospitati in Azure. Tuttavia, tutto il traffico correlato ai client sarebbe remoto dai server del sito e dai sistemi del sito. Se si usa una connessione di rete veloce e affidabile tra Azure e la rete Intranet con un piano dati illimitato, un'opzione possibile è l'hosting dell'intera infrastruttura in Azure.
@@ -42,7 +41,7 @@ Ottima domanda. Di seguito sono indicate le aree più importanti nell'ottica di 
 2. Disponibilità
 3. Prestazioni
 4. Costi
-5. Esperienza utente
+5. Esperienza dell'utente
 
 ## <a name="networking"></a>Rete
 ### <a name="what-about-networking-requirements-should-i-use-expressroute-or-an-azure-vpn-gateway"></a>Per quanto riguarda i requisiti di rete, è opportuno usare un Gateway VPN di Azure o ExpressRoute?
@@ -88,7 +87,7 @@ Anche se Configuration Manager non è stato testato con i servizi di bilanciamen
 [Tipo e dimensioni della VM di Azure](https://azure.microsoft.com/documentation/articles/virtual-machines-size-specs), i dischi della VM di Azure (è consigliabile l'archiviazione Premium, in particolare per SQL Server), la latenza e le velocità di rete sono le aree più importanti.
 
 ### <a name="so-tell-me-more-about-azure-virtual-machines-what-size-vms-should-i-use"></a>Sono disponibili altre informazioni sulle macchine virtuali di Azure, in particolare quali dimensioni di VM è consigliabile usare?
-In generale, la potenza di calcolo (CPU e memoria) deve soddisfare l'[hardware consigliato per System Center Configuration Manager](/sccm/core/plan-design/configs/recommended-hardware). Esistono tuttavia alcune differenze tra l'hardware del computer standard e le VM di Azure, soprattutto in relazione ai dischi usati da queste VM.  Le dimensioni di VM usate dipendono dalle dimensioni dell'ambiente. Ecco alcuni consigli:
+In generale, la potenza di calcolo (CPU e memoria) deve soddisfare l'[hardware consigliato per Configuration Manager](/sccm/core/plan-design/configs/recommended-hardware). Esistono tuttavia alcune differenze tra l'hardware del computer standard e le VM di Azure, soprattutto in relazione ai dischi usati da queste VM.  Le dimensioni di VM usate dipendono dalle dimensioni dell'ambiente. Ecco alcuni consigli:
 - Per le distribuzioni di produzione di dimensioni significative è consigliabile usare VM di Azure di classe "**S**" perché possono sfruttare i dischi di archiviazione Premium.  Le VM di classe "S" usano l'archiviazione BLOB e in generale non soddisfano i requisiti di prestazioni necessari per un'esperienza di produzione accettabile.
 - È opportuno usare più dischi di archiviazione Premium per assicurare maggiore scalabilità, con striping nella console di Gestione disco di Windows per ottimizzare il numero di IOPS (operazioni di input/output al secondo).  
 - È consigliabile usare più dischi Premium o di qualità migliore durante la distribuzione iniziale del sito (P30 anziché P20) e 2 x P30 anziché 1 x P30 in un volume con striping. Se in seguito è necessario ampliare le dimensioni della VM del sito per soddisfare carichi aggiuntivi, è possibile sfruttare la capacità aggiuntiva di CPU e memoria fornita da una VM di dimensioni maggiori. I dischi che possono sfruttare la velocità effettiva di IOPS (operazioni di input/output al secondo) aggiuntiva consentita da queste dimensioni della VM sono quindi già installati.
@@ -118,7 +117,7 @@ Di seguito è riportato un esempio di configurazione per un numero di client com
 
 
 
-## <a name="user-experience"></a>Esperienza utente
+## <a name="user-experience"></a>Esperienza dell'utente
 ### <a name="you-mention-that-user-experience-is-one-of-the-main-areas-of-importance-why-is-that"></a>L'esperienza utente è stata citata come una delle aree di maggiore importanza. Perché?
 Le decisioni adottate relative a rete, disponibilità, prestazioni e punto in cui inserire i server del sito di Configuration Manager possono avere effetti direttamente sugli utenti. È opportuno che il trasferimento in Azure sia trasparente agli utenti in modo che non riscontrino modifiche alle proprie interazioni quotidiane con Configuration Manager.
 
@@ -155,7 +154,7 @@ Sì, è completamente diversa. [Peer cache](/sccm/core/plan-design/hierarchy/cli
 È difficile da stabilire poiché ogni ambiente è diverso. L'approccio migliore è quello di calcolare il prezzo per il proprio ambiente mediante il calcolatore prezzi di Microsoft Azure: https://azure.microsoft.com/pricing/calculator/
 
 ## <a name="additional-resources"></a>Risorse aggiuntive
-**Nozioni di base:** https://azure.microsoft.com/documentation/articles/fundamentals-introduction-to-azure/
+**Nozioni fondamentali:** https://azure.microsoft.com/documentation/articles/fundamentals-introduction-to-azure/
 
 **Tipi di VM di Azure:**
 - Dimensioni delle macchine virtuali di Azure: https://azure.microsoft.com/documentation/articles/virtual-machines-size-specs/  

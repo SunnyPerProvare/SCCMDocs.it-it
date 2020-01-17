@@ -10,17 +10,16 @@ ms.assetid: 91f9de33-b277-4500-acd6-e7d90a2947c9
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61ca3c68f1d0c193bf81dfce5591fc69fc22b828
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c15a6aa2084d9ed296909cbc9c5a1b9b9fd5b9fd
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65501105"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033394"
 ---
-# <a name="health-attestation-for-system-center-configuration-manager"></a>Attestazione dell'integrità per System Center Configuration Manager
+# <a name="health-attestation-for-configuration-manager"></a>Attestazione dell'integrità per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Gli amministratori possono visualizzare l'[attestazione dell'integrità del dispositivo di Windows 10](https://technet.microsoft.com/library/mt592023.aspx) nella console di Configuration Manager.  L'attestazione dell'integrità dei dispositivi consente all'amministratore di assicurare che nei computer client siano abilitate le seguenti configurazioni attendibili di BIOS, TPM e software di avvio:  
 
@@ -77,5 +76,3 @@ L'attestazione dell'integrità del dispositivo di Configuration Manager visualiz
 -   **Dispositivi che generano report di attestazione dell'integrità** : mostra la percentuale dei dispositivi che segnalano lo stato di attestazione dell'integrità  
 -   **Dispositivi non conformi per tipo di client** : mostra la quota di dispositivi mobili e computer che non sono conformi  
 -   **Impostazioni principali per l'attestazione dell'integrità mancante** : mostra il numero di dispositivi in cui manca l'impostazione per l'attestazione dell'integrità, elencati per impostazione
-
-Lo stato dell'attestazione dell'integrità del dispositivo client può essere usato per definire le regole per l'accesso condizionale nei criteri di conformità per i dispositivi gestiti da Configuration Manager con Microsoft Intune. Per maggiori dettagli, vedere [Gestire i criteri di conformità del dispositivo in System Center Configuration Manager](/sccm/protect/deploy-use/device-compliance-policies).  

@@ -1,7 +1,7 @@
 ---
 title: Monitorare lo stato di distribuzione dei client
 titleSuffix: Configuration Manager
-description: Monitorare lo stato di distribuzione dei client in System Center Configuration Manager.
+description: Monitorare lo stato di distribuzione dei client in Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,26 +10,25 @@ ms.assetid: 20a573b3-53cb-4ed5-bae1-7542f533ed20
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55fea1e8453837538c5e7059dc5257037dd3eb38
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: bae915b83a5c1bec71da34738f6aa2c3ca282d04
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62201474"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825031"
 ---
-# <a name="how-to-monitor-client-deployment-status-in-system-center-configuration-manager"></a>Come monitorare lo stato di distribuzione dei client in System Center Configuration Manager
+# <a name="how-to-monitor-client-deployment-status-in-configuration-manager"></a>Come monitorare lo stato di distribuzione dei client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-La distribuzione client nel sito richiede tempo e alcune installazioni non riescono la prima volta. La console di System Center Configuration Manager offre un modo per tenere d'occhio le distribuzioni client in una raccolta attraverso la segnalazione dello stato di distribuzione client in tempo reale.  
+La distribuzione client nel sito richiede tempo e alcune installazioni non riescono la prima volta. La console di Configuration Manager offre un modo per tenere sotto controllo le distribuzioni dei client in una raccolta attraverso la segnalazione dello stato di distribuzione dei client in tempo reale.  
 
 > [!NOTE]  
 >  Il modo migliore e più affidabile per monitorare la distribuzione client consiste nell'usare la console di Configuration Manager, come descritto in questo articolo. La sezione **Stato del client** dell'area di lavoro **Monitoraggio** nella console indica lo stato di distribuzione del client con precisione e in tempo reale. È possibile monitorare le distribuzioni client con altri strumenti, ad esempio Server Manager in Windows Server o System Center Operations Manager, ma è possibile ricevere avvisi da normali attività di installazione del client. A causa della modalità di esecuzione del programma di installazione del client (CCMSetup.exe) in vari ambienti, gli altri strumenti potrebbero generare falsi allarmi e avvisi che non riflettono accuratamente lo stato delle distribuzioni client.  
 
  Nell'area di lavoro **Monitoraggio** della console è possibile monitorare i seguenti stati delle distribuzioni client che avvengono all'interno di una raccolta specificata:  
 
-- conformi  
+- Conforme  
 
 - In corso  
 
@@ -51,11 +50,11 @@ La distribuzione client nel sito richiede tempo e alcune installazioni non riesc
 
 - Per modificare l'ambito del report, fare clic su **Sfoglia…** e scegliere una raccolta diversa.  
 
-  Per altre informazioni sulle distribuzioni client di pre-produzione, vedere [Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).
+  Per altre informazioni sulle distribuzioni dei client di pre-produzione, vedere [Come testare gli aggiornamenti client in una raccolta di pre-produzione](../../../core/clients/manage/upgrade/test-client-upgrades.md).
 
   > [!NOTE]
   > Lo stato della distribuzione nei computer che ospitano i ruoli del sistema del sito in una raccolta di pre-produzione può essere indicato come **Non conforme** anche quando il client è stato distribuito correttamente. Quando si promuove il client al livello di produzione, lo stato della distribuzione è segnalato in modo corretto.   
 
-  Per monitorare lo stato dei client distribuiti, vedere [Come monitorare i client in System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md)  
+  Per monitorare lo stato dei client distribuiti, vedere [Come monitorare i client](../../../core/clients/manage/monitor-clients.md)  
 
-  È possibile usare i report di Configuration Manager per ottenere altre informazioni sullo stato dei client nel proprio sito. Per altre informazioni sull'esecuzione dei report, vedere [Creazione di report in System Center Configuration Manager](../../../core/servers/manage/reporting.md).  
+  È possibile usare i report di Configuration Manager per ottenere altre informazioni sullo stato dei client nel proprio sito. Per altre informazioni su come eseguire i report, vedere [Creazione di report](../../../core/servers/manage/reporting.md).  

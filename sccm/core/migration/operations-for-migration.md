@@ -1,7 +1,7 @@
 ---
 title: Operazioni di migrazione
 titleSuffix: Configuration Manager
-description: Creare ed eseguire processi per la migrazione di dati e client a System Center Configuration Manager.
+description: Creare ed eseguire processi per la migrazione di dati e client a Configuration Manager Current Branch.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: c28e3492-851a-40fc-ba13-67ebc2d8b41a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b59ff47ace87e4c7e8a345402616de44342ea9c1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 2d60dd0b6d8feaa0501910c45129eb05c7c1c95a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62236310"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75803195"
 ---
-# <a name="operations-for-migrating-to-system-center-configuration-manager"></a>Operazioni per la migrazione a System Center Configuration Manager
+# <a name="operations-for-migrating-to-configuration-manager-current-branch"></a>Operazioni per la migrazione a Configuration Manager Current Branch
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Per la migrazione in System Center Configuration Manager, è possibile eseguire la migrazione di dati e client dopo aver raccolto correttamente i dati da un sito di origine in una gerarchia di origine supportata. Usare le informazioni nelle sezioni seguenti per creare ed eseguire i processi di migrazione per la migrazione di dati, client e quindi completare il processo di migrazione.  
+Per la migrazione in Configuration Manager, è possibile eseguire la migrazione di dati e client dopo aver raccolto correttamente i dati da un sito di origine in una gerarchia di origine supportata. Usare le informazioni nelle sezioni seguenti per creare ed eseguire i processi di migrazione per la migrazione di dati, client e quindi completare il processo di migrazione.  
 
 -   [Creare e modificare i processi di migrazione](#Create_Edit_migration_Jobs)  
 
@@ -40,7 +39,7 @@ Per la migrazione in System Center Configuration Manager, è possibile eseguire 
  Usare le procedure seguenti per creare processi di migrazione dei dati, modificare l'elenco di esclusione per i processi di migrazione basati su raccolte, configurare i punti di distribuzione condivisi e modificare le pianificazioni dei processi di migrazione.  
 
 > [!NOTE]  
->  La procedura seguente per la creazione di un processo di migrazione, che esegue la migrazione per raccolte, è applicabile solo alle gerarchie di origine che eseguono una versione supportata di Configuration Manager 2007. Il tipo di processo di migrazione basato su raccolte non è disponibile quando si esegue la migrazione da una gerarchia di origine di System Center 2012 Configuration Manager o System Center Configuration Manager.  
+>  La procedura seguente per la creazione di un processo di migrazione, che esegue la migrazione per raccolte, è applicabile solo alle gerarchie di origine che eseguono una versione supportata di Configuration Manager 2007. Il tipo di processo di migrazione basato su raccolte non è disponibile quando si esegue la migrazione da una gerarchia di origine di System Center 2012 Configuration Manager o Configuration Manager Current Branch.  
 
 #### <a name="create-a-migration-job-to-migrate-by-collections"></a>Creare un processo di migrazione per eseguire la migrazione per raccolte  
 
@@ -126,7 +125,7 @@ Per la migrazione in System Center Configuration Manager, è possibile eseguire 
 
 8.  Nella pagina **Riesamina informazioni** scegliere **Salva nel file** per salvare le informazioni per poterle visualizzare in seguito. Quando si è pronti per continuare scegliere **Avanti**.  
 
-9. Nella pagina **Impostazioni** configurare il momento in cui eseguire il processo di migrazione ed eventuali impostazioni aggiuntive necessarie per questo processo di migrazione. Diversamente dagli altri tipi di processi di migrazione, questo processo deve sovrascrivere gli oggetti migrati in precedenza nel database di System Center Configuration Manager. Scegliere **Avanti**.  
+9. Nella pagina **Impostazioni** configurare il momento in cui eseguire il processo di migrazione ed eventuali impostazioni aggiuntive necessarie per questo processo di migrazione. Diversamente dagli altri tipi di processi di migrazione, questo processo deve sovrascrivere gli oggetti migrati in precedenza nel database di Configuration Manager. Scegliere **Avanti**.  
 
 10. Confermare le impostazioni e quindi completare la procedura guidata.  
 
@@ -177,7 +176,7 @@ Per la migrazione in System Center Configuration Manager, è possibile eseguire 
 4.  Scegliere **Sì** per avviare il processo di migrazione.  
 
 ##  <a name="BKMK_ProcUpgrdSS"></a> Aggiornare o riassegnare un punto di distribuzione condiviso  
- È possibile aggiornare un punto di distribuzione supportato condiviso da un sito di origine di Configuration Manager 2007 oppure riassegnare un punto di distribuzione supportato condiviso da un sito di origine di System Center Configuration Manager in modo che diventi un punto di distribuzione nella gerarchia di destinazione.  
+ È possibile aggiornare un punto di distribuzione supportato condiviso da un sito di origine di Configuration Manager 2007 oppure riassegnare un punto di distribuzione supportato condiviso da un sito di origine di Configuration Manager in modo che diventi un punto di distribuzione nella gerarchia di destinazione.  
 
 > [!IMPORTANT]  
 >  Prima di aggiornare un punto di distribuzione secondario di Configuration Manager 2007, è necessario disinstallare il software client di Configuration Manager 2007 dal computer del punto di distribuzione secondario. Se il software client di Configuration Manager 2007 viene installato durante il tentativo di aggiornamento del punto di distribuzione, l'aggiornamento ha esito negativo e il contenuto precedentemente distribuito a un punto di distribuzione secondario viene rimosso dal computer.  
@@ -213,7 +212,7 @@ Per la migrazione in System Center Configuration Manager, è possibile eseguire 
 4.  Visualizzare i dettagli e lo stato relativi al processo di migrazione selezionato nelle schede **Riepilogo** e **Oggetti nel processo**.  
 
 ##  <a name="BKMK_MigrateClients"></a> Eseguire la migrazione dei client  
- Dopo aver eseguito la migrazione dei dati per i client da una gerarchia all'altra, ma prima di completare tale operazione, pianificare la migrazione dei client nella gerarchia di destinazione. La migrazione di client da una gerarchia all'altra comporta la disinstallazione del software client di Configuration Manager dai computer assegnati alla gerarchia di origine e l'installazione del software client di Configuration Manager dalla gerarchia di destinazione. Quando si installa il client dalla gerarchia di destinazione si assegna anche il client a un sito primario in tale gerarchia. Per altre informazioni sulla migrazione dei client, vedere [Pianificazione di una strategia di migrazione client in System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md).  
+ Dopo aver eseguito la migrazione dei dati per i client da una gerarchia all'altra, ma prima di completare tale operazione, pianificare la migrazione dei client nella gerarchia di destinazione. La migrazione di client da una gerarchia all'altra comporta la disinstallazione del software client di Configuration Manager dai computer assegnati alla gerarchia di origine e l'installazione del software client di Configuration Manager dalla gerarchia di destinazione. Quando si installa il client dalla gerarchia di destinazione si assegna anche il client a un sito primario in tale gerarchia. Per altre informazioni sulla migrazione dei client, vedere [Pianificazione di una strategia di migrazione client](../../core/migration/planning-a-client-migration-strategy.md).  
 
 ##  <a name="Complete_Migration"></a> Completare la migrazione  
  Usare questa procedura per completare la migrazione dalla gerarchia di origine.  
@@ -222,13 +221,13 @@ Per la migrazione in System Center Configuration Manager, è possibile eseguire 
 
 2.  Nell'area di lavoro **Amministrazione** espandere **Migrazione** e quindi scegliere **Gerarchia di origine**.  
 
-3.  Per una gerarchia di origine di Configuration Manager 2007, selezionare un sito di origine nel livello inferiore della gerarchia di origine. Per una gerarchia di origine di System Center 2012 Configuration Manager o System Center Configuration Manager, selezionare il sito di origine disponibile.  
+3.  Per una gerarchia di origine di Configuration Manager 2007, selezionare un sito di origine nel livello inferiore della gerarchia di origine. Per una gerarchia di origine di System Center 2012 Configuration Manager o Configuration Manager Current Branch, selezionare il sito di origine disponibile.  
 
 4.  Nella scheda **Home**, nel gruppo **Pulisci**, scegliere **Interrompi raccolta dati**.  
 
 5.  Scegliere **Sì** per confermare l'azione.  
 
-6.  Per una gerarchia di origine di Configuration Manager 2007, ripetere i passaggi 3, 4 e 5 prima di passare al passaggio successivo. Eseguire questi passaggi in ogni sito della gerarchia, dal livello inferiore a quello superiore. Per una gerarchia di origine di System Center 2012 Configuration Manager o System Center Configuration Manager, continuare con il passaggio successivo.  
+6.  Per una gerarchia di origine di Configuration Manager 2007, ripetere i passaggi 3, 4 e 5 prima di passare al passaggio successivo. Eseguire questi passaggi in ogni sito della gerarchia, dal livello inferiore a quello superiore. Per una gerarchia di origine di System Center 2012 Configuration Manager o Configuration Manager Current Branch, continuare con il passaggio successivo.  
 
 7.  Nella scheda **Home**, nel gruppo **Pulisci**, scegliere **Pulisci dati migrazione**.  
 

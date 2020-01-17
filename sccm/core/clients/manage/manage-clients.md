@@ -10,12 +10,12 @@ ms.assetid: 3986a992-c175-4b6f-922e-fc561e3d7cb7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b3c8306354a6dd31f164fe382be6e33e14192691
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 53ee871a712290c4e74398fd467064aee5f56a9b
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75824130"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033943"
 ---
 # <a name="how-to-manage-clients-in-configuration-manager"></a>Come gestire i client in Configuration Manager
 
@@ -171,8 +171,6 @@ Se un dispositivo non è aggiunto a un dominio e non dispone del client di Confi
 È possibile usare questo valore nei requisiti applicazione per controllare le distribuzioni e per controllare il volume dell'inventario raccolto dai dispositivi degli utenti.  
 
 Può essere necessario aggiungere la colonna **Proprietario dispositivo** alla visualizzazione facendo clic con il pulsante destro del mouse su un'intestazione di colonna e scegliendo l'elemento corrispondente.
-
-Per altre informazioni, vedere [Soluzione MDM ibrida con Configuration Manager e Intune](/configmgr/mdm/understand/hybrid-mobile-device-management).
 
 ### <a name="delete"></a>Elimina
 

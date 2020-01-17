@@ -1,7 +1,7 @@
 ---
 title: Novità della versione 1606
 titleSuffix: Configuration Manager
-description: Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1606 di System Center Configuration Manager.
+description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1606 di Configuration Manager.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64cb1be506f958363b1ebfeef66bff1ad865c113
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5401e8465d31857219a78309ca901683408b8668
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68339847"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802787"
 ---
-# <a name="what39s-new-in-version-1606-of-system-center-configuration-manager"></a>Novità della versione 1606 di System Center Configuration Manager
+# <a name="what39s-new-in-version-1606-of-configuration-manager"></a>Novità della versione 1606 di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-L'aggiornamento 1606 per System Center Configuration Manager è disponibile come aggiornamento nella console per i siti installati in precedenza che eseguono la versione 1511 o 1602. La versione 1511 è la versione di base iniziale usata per installare nuovi siti di Configuration Manager.
+L'aggiornamento 1606 per Configuration Manager è disponibile solo come aggiornamento nella console per i siti installati in precedenza che eseguono la versione 1511 o 1602. La versione 1511 è la versione di base iniziale usata per installare nuovi siti di Configuration Manager.
 > [!TIP]  
 > Sono disponibili altre informazioni su:  
 >   
@@ -81,7 +80,7 @@ Dopo l'installazione dell'aggiornamento 1606, quando nel sito verrà installato 
 
 
 ## <a name="accessibility"></a> Accessibilità
-Per spostarsi tra i vari nodi di un'area di lavoro, è ora possibile immettere la prima lettera del nome di un nodo. Quando si preme il tasto, il cursore si sposta sul nodo successivo che inizia con tale lettera. Se si usa un'utilità per la lettura dello schermo, verrà letto il nome del nodo. Per altre informazioni sulle opzioni di accessibilità, vedere [Funzionalità di accessibilità di System Center Configuration Manager](../../../core/understand/accessibility-features.md).
+Per spostarsi tra i vari nodi di un'area di lavoro, è ora possibile immettere la prima lettera del nome di un nodo. Quando si preme il tasto, il cursore si sposta sul nodo successivo che inizia con tale lettera. Se si usa un'utilità per la lettura dello schermo, verrà letto il nome del nodo. Per altre informazioni sulle opzioni di accessibilità, vedere [Funzionalità di accessibilità](../../../core/understand/accessibility-features.md).
 
 ## <a name="administration"></a>Amministrazione
 Di seguito sono riportate le modifiche del nodo Amministrazione nella console di Configuration Manager:
@@ -108,13 +107,13 @@ Il sistema di gestione dei dispositivi mobili (MDM) locale supporta ora una nuov
 
 In [Windows Store per le aziende](https://www.microsoft.com/business-store) è possibile trovare e acquistare app Windows per l'organizzazione, singolarmente o con Volume Purchase Program. Collegando lo Store a Configuration Manager, è possibile sincronizzare l'elenco delle app acquistate, visualizzarle nella console di Configuration Manager e distribuirle come qualsiasi altra app.
 
-Per informazioni dettagliate, vedere [Gestire le app da Windows Store per le aziende con System Center Configuration Manager](../../../apps/deploy-use/manage-apps-from-the-windows-store-for-business.md).
+Per informazioni dettagliate, vedere [Gestire le app da Windows Store per le aziende con Configuration Manager](../../../apps/deploy-use/manage-apps-from-the-windows-store-for-business.md).
 
 ### <a name="manage-ios-volume-purchased-apps"></a>Gestione delle app iOS acquistate con Volume Purchase Program
 
 Il flusso di lavoro per la gestione delle app iOS acquistate con Volume Purchase Program e per la loro distribuzione con Configuration Manager è stato migliorato.
 
-Per informazioni dettagliate, vedere [Gestire le app iOS acquistate tramite Volume Purchase Program con System Center Configuration Manager](../../../apps/deploy-use/manage-volume-purchased-ios-apps.md).
+Per informazioni dettagliate, vedere [Gestire le app iOS acquistate tramite Volume Purchase Program con Configuration Manager](../../../apps/deploy-use/manage-volume-purchased-ios-apps.md).
 
 ### <a name="software-center-user-interface"></a>Interfaccia utente di Software Center
 
@@ -141,7 +140,7 @@ Per informazioni dettagliate, vedere [Pianificare gli aggiornamenti software in 
 ### <a name="restart-options-for-windows-10-clients-after-software-update-installation"></a>Opzioni di riavvio per i client Windows 10 dopo l'installazione degli aggiornamenti software
 Quando un aggiornamento software che richiede il riavvio viene distribuito tramite Configuration Manager e viene installato in un computer, viene pianificato un riavvio in sospeso. Viene anche visualizzata una finestra di dialogo di riavvio. A partire da Configuration Manager versione 1606, ogni volta che è presente un riavvio in sospeso per un aggiornamento software di Configuration Manager, sono disponibili le opzioni **Aggiorna e riavvia**e **Aggiorna e arresta** . Queste opzioni sono incluse nelle opzioni di risparmio energia di Windows dei computer Windows 10. Dopo aver usato una di queste opzioni, la finestra di dialogo di riavvio non verrà visualizzata dopo il riavvio del computer.
 
-Per informazioni dettagliate, vedere [Pianificare gli aggiornamenti software in System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md#BKMK_RestartOptions).
+Per informazioni dettagliate, vedere [Pianificare gli aggiornamenti software](../../../sum/plan-design/plan-for-software-updates.md#BKMK_RestartOptions).
 
 ### <a name="run-software-updates-compliance-scan-immediately-after-a-client-installs-software-updates-and-restarts"></a>Eseguire l'analisi conformità degli aggiornamenti software subito dopo l'installazione degli aggiornamenti e il riavvio di un client
 È ora possibile eseguire un'analisi conformità degli aggiornamenti software subito dopo l'installazione degli aggiornamenti e il riavvio di un client. Per configurare questo comportamento per una distribuzione, nella pagina **Esperienza utente** della Distribuzione guidata degli aggiornamenti software selezionare **Se un aggiornamento di questa distribuzione richiede un riavvio del sistema, eseguire un ciclo di valutazione della distribuzione degli aggiornamenti dopo il riavvio**. In questo modo, il client controlla la presenza di aggiornamenti software aggiuntivi che diventano applicabili dopo il riavvio e che possono quindi essere installati (e resi conformi) durante la stessa finestra di manutenzione. Per informazioni dettagliate, vedere [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates) o [Distribuire manualmente gli aggiornamenti software](/sccm/sum/deploy-use/manually-deploy-software-updates).
@@ -149,19 +148,19 @@ Per informazioni dettagliate, vedere [Pianificare gli aggiornamenti software in 
 ## <a name="operating-system-deployment"></a>Distribuzione del sistema operativo
 
 ### <a name="improvements-to-the-task-sequence-step-install-software-updates"></a>Miglioramenti al passaggio della sequenza di attività: Installa aggiornamenti software
-Una nuova impostazione, **Valuta gli aggiornamenti software dai risultati di analisi memorizzati nella cache**, consente di eseguire un'analisi completa degli aggiornamenti software invece di usare i risultati dell'analisi memorizzati nella cache. Per informazioni dettagliate, vedere [Passaggi della sequenza di attività in System Center Configuration Manager](../../../osd/understand/task-sequence-steps.md#BKMK_InstallSoftwareUpdates).
+Una nuova impostazione, **Valuta gli aggiornamenti software dai risultati di analisi memorizzati nella cache**, consente di eseguire un'analisi completa degli aggiornamenti software invece di usare i risultati dell'analisi memorizzati nella cache. Per informazioni dettagliate, vedere [Passaggi della sequenza di attività](../../../osd/understand/task-sequence-steps.md#BKMK_InstallSoftwareUpdates).
 
-È anche disponibile la nuova variabile della sequenza di attività **SMSTSSoftwareUpdateScanTimeout**. Questa variabile consente di controllare il timeout per l'analisi degli aggiornamenti software durante il passaggio della sequenza di attività Installa aggiornamenti software. Il valore predefinito è 30 minuti. Per informazioni dettagliate, vedere [Variabili predefinite della sequenza di attività in System Center Configuration Manager](../../../osd/understand/task-sequence-built-in-variables.md).
+È anche disponibile la nuova variabile della sequenza di attività **SMSTSSoftwareUpdateScanTimeout**. Questa variabile consente di controllare il timeout per l'analisi degli aggiornamenti software durante il passaggio della sequenza di attività Installa aggiornamenti software. Il valore predefinito è 30 minuti. Per informazioni dettagliate, vedere [Variabili della sequenza di attività](../../../osd/understand/task-sequence-built-in-variables.md).
 
 ### <a name="osdpreservedriveletter-task-sequence-variable-has-been-deprecated"></a>La variabile della sequenza di attività OSDPreserveDriveLetter è stata deprecata
 La variabile della sequenza di attività OSDPreserveDriveLetter è stata deprecata. A partire dalla versione 1606 di Configuration Manager, durante la distribuzione del sistema operativo, per impostazione predefinita l'installazione di Windows stabilisce qual è la lettera di unità migliore da usare (in genere C:).
 
-Per informazioni dettagliate, vedere [Variabili predefinite della sequenza di attività in System Center Configuration Manager](../../../osd/understand/task-sequence-built-in-variables.md).
+Per informazioni dettagliate, vedere [Variabili della sequenza di attività](../../../osd/understand/task-sequence-built-in-variables.md).
 
 ### <a name="customize-the-ramdisk-tftp-window-size-for-pxe-enabled-distribution-points"></a>Personalizzazione delle dimensioni della finestra TFTP RamDisk nei punti di distribuzione abilitati per PXE
 È ora possibile personalizzare le dimensioni della finestra nei punti di distribuzione abilitati per PXE. Se la rete è stata personalizzata, il download dell'immagine di avvio potrebbe non riuscire a causa di un errore di timeout perché le dimensioni della finestra sono troppo grandi. La personalizzazione delle dimensioni della finestra TFTP (Trivial File Transfer Protocol) RamDisk consente di ottimizzare il traffico TFTP quando si usa PXE per soddisfare requisiti di rete specifici.
 
-Per informazioni dettagliate, vedere [Preparare i ruoli del sistema del sito per le distribuzioni del sistema operativo con System Center Configuration Manager](../../../osd/get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_RamDiskTFTP).
+Per informazioni dettagliate, vedere [Preparare i ruoli del sistema del sito per le distribuzioni del sistema operativo con Configuration Manager](../../../osd/get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_RamDiskTFTP).
 
 ## <a name="compliance-settings"></a>Impostazioni di conformità
 
@@ -170,7 +169,7 @@ La nuova impostazione **Consenti Smart Lock e altri agenti di attendibilità** �
 
 L'impostazione consente di controllare la funzionalità Smart Lock su dispositivi compatibili con Android. Questa funzionalità del telefono, talvolta nota anche come "agenti di attendibilità", consente di disabilitare o ignorare la password della schermata di blocco del dispositivo se il dispositivo si trova in una posizione attendibile, ad esempio quando è connesso a un dispositivo Bluetooth specifico oppure quando è nelle vicinanze di un tag NFC. È possibile usare questa impostazione per impedire agli utenti di configurare Smart Lock.
 
-Per informazioni dettagliate, vedere [Creare elementi di configurazione per dispositivi Android e Samsung KNOX Standard gestiti senza il client System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).
+Per informazioni dettagliate, vedere [Creare elementi di configurazione per dispositivi Android e Samsung KNOX Standard gestiti senza il client Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).
 
 ## <a name="device-configuration-and-protection"></a>Configurazione e protezione del dispositivo
 
@@ -196,7 +195,7 @@ Configuration Manager consente di gestire il blocco attivazione in due modi:
 - Abilitando il blocco attivazione nei dispositivi con supervisione.
 - Effettuando il bypass del blocco attivazione nei dispositivi con supervisione.
 
-Per informazioni dettagliate, vedere [Gestire il blocco attivazione iOS con System Center Configuration Manager](../../../mdm/deploy-use/manage-ios-activation-lock.md).
+Per informazioni dettagliate, vedere [Gestire il blocco attivazione iOS con Configuration Manager](../../../mdm/deploy-use/manage-ios-activation-lock.md).
 
 
 ### <a name="microsoft-defender-advanced-threat-protection"></a>Microsoft Defender Advanced Threat Protection
@@ -208,9 +207,9 @@ Per informazioni dettagliate, vedere [Microsoft Defender Advanced Threat Protect
 ### <a name="device-categories"></a>Categorie di dispositivi
 È possibile creare categorie di dispositivi da usare per inserire automaticamente i dispositivi nelle raccolte di dispositivi quando si usa Configuration Manager con Microsoft Intune. Agli utenti verrà quindi richiesto di scegliere una categoria di dispositivi quando eseguono la registrazione di un dispositivo in Intune. È anche possibile modificare la categoria di un dispositivo dalla console di Configuration Manager.
 
-Per informazioni dettagliate, vedere [Come classificare automaticamente i dispositivi in raccolte con System Center Configuration Manager](../../../core/clients/manage/collections/automatically-categorize-devices-into-collections.md).
+Per informazioni dettagliate, vedere [Come classificare automaticamente i dispositivi in raccolte con Configuration Manager](../../../core/clients/manage/collections/automatically-categorize-devices-into-collections.md).
 
-### <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare dispositivi con i numeri di serie IMEI o iOS
+### <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare i dispositivi con i numeri di serie IMEI o iOS
 
 È possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity) o i numeri di serie iOS. È possibile caricare un file con valori delimitati da virgole (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi. Le informazioni importate impostano la proprietà dei dispositivi registrati come "Corporate" negli elenchi di dispositivi. È tuttavia necessaria una licenza di Intune per ogni utente che accede al servizio.
 
@@ -220,7 +219,7 @@ Per informazioni dettagliate, vedere [Predichiarare dispositivi con i numeri di 
 
 È ora possibile abilitare il monitoraggio dei servizi di Attestazione dell'integrità per i PC Windows 10 usando solo l'infrastruttura locale, in modo che i computer senza accesso a Internet possano creare report di attestazione dell'integrità dei dispositivi.
 
-Per informazioni dettagliate, vedere [Attestazione dell'integrità per System Center Configuration Manager](../../../core/servers/manage/health-attestation.md#how-to-enable-health-attestation-service-communication-on-configuration-manager-client-computers).  
+Per informazioni dettagliate, vedere [Attestazione dell'integrità per Configuration Manager](../../../core/servers/manage/health-attestation.md#how-to-enable-health-attestation-service-communication-on-configuration-manager-client-computers).  
 
 ## <a name="remote-control"></a>Controllo remoto
 Offre agli utenti la possibilità di accettare o rifiutare il trasferimento di file prima di trasferire il contenuto dagli Appunti condivisi in una sessione di controllo remoto. Gli utenti devono solo concedere l'autorizzazione una sola volta per sessione e il visualizzatore non ha la possibilità di concedere l'autorizzazione per procedere con il trasferimento dei file. È possibile trovare questa nuova impostazione nell'area di lavoro **Amministrazione**. Passare a **Impostazioni client** e quindi aprire il pannello **Strumenti remoti** in **Impostazioni predefinite**.

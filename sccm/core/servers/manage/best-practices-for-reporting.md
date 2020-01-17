@@ -1,7 +1,7 @@
 ---
 title: Procedure consigliate per la creazione di report
 titleSuffix: Configuration Manager
-description: Suggerimenti utili sull'uso delle funzionalità per la creazione di report di System Center Configuration Manager.
+description: Suggerimenti utili sull'uso delle funzionalità per la creazione di report di Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -9,19 +9,18 @@ ms.topic: conceptual
 ms.assetid: 64f9d931-33f1-456f-a4e4-0ec077465bd0
 author: mestew
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f17e8ede7185892e226d576c532ad460d7cd4f32
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: b5ba34b3b4fa6c38ce904ab6786ba2b1587ca723
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198405"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797504"
 ---
-# <a name="best-practices-for-reporting-in-system-center-configuration-manager"></a>Procedure consigliate per la creazione di report in System Center Configuration Manager
+# <a name="best-practices-for-reporting-in-configuration-manager"></a>Procedure consigliate per la creazione di report in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Usare le seguenti procedure consigliate per la creazione di report in System Center Configuration Manager:  
+Usare le seguenti procedure consigliate per la creazione di report in Configuration Manager:  
 
 ## <a name="for-best-performance-install-the-reporting-services-point-on-a-remote-site-system-server"></a>Per ottenere prestazioni ottimali, installare il punto di Reporting Services in un server di sistema del sito remoto  
 Benché sia possibile installare il punto di Reporting Services nel server del sito o in un sistema del sito remoto, l'installazione del punto di Reporting Services in un server di sistema del sito remoto garantisce prestazioni migliori.  

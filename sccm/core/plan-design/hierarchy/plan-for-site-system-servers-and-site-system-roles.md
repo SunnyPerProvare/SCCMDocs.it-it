@@ -10,12 +10,12 @@ ms.assetid: 0a7415ba-2c53-4433-983e-780e92aa662f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f875391c477755c65a40795c014014eacbd7f8da
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 145a9e7efbf903b0a410f447ab3e4d223f3b7831
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799880"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034367"
 ---
 # <a name="plan-for-site-system-servers-and-site-system-roles-in-configuration-manager"></a>Pianificare i server e i ruoli del sistema del sito in Configuration Manager
 
@@ -162,7 +162,7 @@ Ruolo del sistema del sito che si integra con SQL Server Reporting Services per 
 
 ### <a name="service-connection-point"></a>punto di connessione del servizio
 
-Ruolo del sistema del sito che carica i dati d'uso dal sito ed è necessario per rendere disponibili gli aggiornamenti per Configuration Manager nella console. Questo ruolo consente anche di gestire i dispositivi mobili con Microsoft Intune e MDM locale. Una gerarchia supporta solo un'istanza di questo ruolo, che deve trovarsi nel sito di livello superiore della gerarchia stessa. Se si espande un sito primario autonomo in una gerarchia più ampia, disinstallare questo ruolo dal sito primario e quindi installarlo nel sito di amministrazione centrale. Per altre informazioni, vedere [Informazioni sul punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point).  
+Ruolo del sistema del sito che carica i dati d'uso dal sito ed è necessario per rendere disponibili gli aggiornamenti per Configuration Manager nella console. Una gerarchia supporta solo un'istanza di questo ruolo, che deve trovarsi nel sito di livello superiore della gerarchia stessa. Se si espande un sito primario autonomo in una gerarchia più ampia, disinstallare questo ruolo dal sito primario e quindi installarlo nel sito di amministrazione centrale. Per altre informazioni, vedere [Informazioni sul punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point).  
 
 ### <a name="software-update-point"></a>Punto di aggiornamento software
 

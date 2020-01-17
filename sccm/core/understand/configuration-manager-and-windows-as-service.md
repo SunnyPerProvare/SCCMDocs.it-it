@@ -10,19 +10,18 @@ ms.assetid: c8534a1e-57b8-4688-b6e6-299d82cfcec9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ea9e2ef8da09d0ab344d56fe0ad4f1b3fb9d94b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f99f29ecb9ab66c4cb762854bebf71fe7e4eb5ad
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62250700"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792223"
 ---
 # <a name="configuration-manager-and-windows-as-a-service"></a>Configuration Manager e Windows as a Service
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-System Center Configuration Manager offre un controllo completo sugli aggiornamenti delle funzionalità per Windows 10. Per adottare interamente il modello Windows come servizio, è necessario usare anche il modello Configuration Manager Current Branch. Perché Windows 10 sia aggiornato, è necessario che lo sia anche Configuration Manager per garantire un'ottima esperienza. Per poter sfruttare al meglio le straordinarie funzionalità aziendali di Windows 10, sono necessarie le nuove versioni di Configuration Manager. Questo articolo è considerato una pagina di destinazione per gli articoli principali relativi all'adozione di Configuration Manager Current Branch. Configuration Manager Current Branch consente di implementare Windows come servizio.
+Configuration Manager offre un controllo completo sugli aggiornamenti delle funzionalità per Windows 10. Per adottare interamente il modello Windows come servizio, è necessario usare anche il modello Configuration Manager Current Branch. Perché Windows 10 sia aggiornato, è necessario che lo sia anche Configuration Manager per garantire un'ottima esperienza. Per poter sfruttare al meglio le straordinarie funzionalità aziendali di Windows 10, sono necessarie le nuove versioni di Configuration Manager. Questo articolo è considerato una pagina di destinazione per gli articoli principali relativi all'adozione di Configuration Manager Current Branch. Configuration Manager Current Branch consente di implementare Windows come servizio.
 
 ## <a name="key-articles-about-adopting-configuration-manager-current-branch"></a>Articoli principali sull'adozione di Configuration Manager Current Branch
 
@@ -54,5 +53,5 @@ System Center Configuration Manager offre un controllo completo sugli aggiorname
 
 ## <a name="related-articles"></a>Articoli correlati
 
-- [Eseguire l'aggiornamento a System Center Configuration Manager (Current Branch) da Configuration 2012](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)
-- [Pianificare la migrazione a System Center Configuration Manager (Current Branch) da Configuration 2007](/sccm/core/migration/planning-for-migration)
+- [Aggiornamento sul posto a Configuration Manager Current Branch da System Center 2012 Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)
+- [Pianificare la migrazione a Configuration Manager Current Branch](/sccm/core/migration/planning-for-migration)

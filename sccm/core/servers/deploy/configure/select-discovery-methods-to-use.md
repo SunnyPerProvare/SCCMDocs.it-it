@@ -10,23 +10,22 @@ ms.assetid: 127ce713-d085-430f-ac7b-2701637fe126
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3965f0df55e16fa87d259532fdc4f2f580d1253
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 19266daaad0c1e068cfd332bb02eb8643b59b43d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65501415"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798442"
 ---
-# <a name="select-discovery-methods-to-use-for-system-center-configuration-manager"></a>Selezionare i metodi di individuazione per System Center Configuration Manager
+# <a name="select-discovery-methods-to-use-for-configuration-manager"></a>Selezionare i metodi di individuazione da usare per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Per usare in modo efficace l'individuazione di System Center Configuration Manager, è necessario analizzare i metodi da usare e i siti in cui eseguirli.  
+Per usare in modo efficace l'individuazione di Configuration Manager, è necessario analizzare i metodi da usare e i siti in cui eseguirli.  
 
  Poiché l'individuazione può generare un ampio volume di traffico sulla rete e i record dei dati di individuazione risultanti possono causare un uso significativo di risorse della CPU durante l'elaborazione, è consigliabile usare solo i metodi di individuazione necessari per soddisfare gli obiettivi. Si potrebbe iniziare a usare solo uno o due metodi di individuazione, quindi abilitare in seguito metodi aggiuntivi in modo controllato per estendere il livello di individuazione nel relativo ambiente. Le informazioni contenute in questo argomento consentono di prendere decisioni informate.  
 
- Per informazioni sui vari metodi di individuazione, vedere [About discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/about-discovery-methods.md) (Informazioni sui metodi di individuazione per System Center Configuration Manager).  
+ Per informazioni sui vari metodi di individuazione, vedere [Informazioni sui metodi di individuazione per Configuration Manager](../../../../core/servers/deploy/configure/about-discovery-methods.md).  
 
 ## <a name="select-methods-to-discover-different-things"></a>Selezionare i metodi per individuare elementi diversi  
  Per individuare computer client o risorse utente potenziali di Configuration Manager, è necessario abilitare i metodi di individuazione appropriati. È possibile usare diverse combinazioni di metodi di individuazione per individuare risorse diverse e per ottenere informazioni aggiuntive su tali risorse. I metodi di individuazione usati determinano il tipo di risorse che viene individuato e i servizi e gli agenti di Configuration Manager usati nel processo di individuazione. È inoltre possibile determinare il tipo di informazioni sulle risorse che è possibile individuare.  

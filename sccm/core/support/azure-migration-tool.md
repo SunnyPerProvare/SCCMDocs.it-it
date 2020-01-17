@@ -10,13 +10,12 @@ ms.assetid: 1c975c5e-efd1-4d47-a315-39ccb32633dc
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e40e20fab31a505e59941a786ee3c8e7b4db63c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d801f892fcee56e9c6b5184e18370392b43ff080
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74813385"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793122"
 ---
 # <a name="extend-and-migrate-on-premises-site-to-microsoft-azure"></a>Estendere ed eseguire la migrazione di un sito locale in Microsoft Azure
 
@@ -100,7 +99,7 @@ Per altre informazioni sulle autorizzazioni e sull'assegnazione di ruoli, vedere
     |---|---|
     |**Sottoscrizione**|Sola lettura. Indica il nome e l'ID della sottoscrizione.|
     |**Gruppo di risorse**| Elenca i gruppi di risorse disponibili. Se è necessario creare un nuovo gruppo di risorse, usare il [portale di Azure](https://portal.azure.com) e quindi eseguire di nuovo lo strumento.|
-    |**Percorso**| Sola lettura. Determinato dalla posizione della rete virtuale|
+    |**Posizione**| Sola lettura. Determinato dalla posizione della rete virtuale|
     |**Dimensioni macchina virtuale**|Scegliere una dimensione che sia adatta al carico di lavoro. Microsoft consiglia **Standard_DS3_v2**.|
     |**Sistema operativo**|Sola lettura. Lo strumento usa Windows Server 2019.|
     |**Tipo di disco**|Sola lettura. Lo strumento usa SSD Premium per ottenere prestazioni ottimali.|

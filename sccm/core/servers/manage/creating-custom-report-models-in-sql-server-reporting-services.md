@@ -10,17 +10,16 @@ ms.assetid: f2df88b4-c348-4dcf-854a-54fd6eedf485
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2a5ba60644d789d73779828ed1a5437cb1365c5d
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: a53a52a7224fb6ff9598aed3904cf64818149cf7
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198015"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75795794"
 ---
-# <a name="creating-custom-report-models-for-system-center-configuration-manager-in-sql-server-reporting-services"></a>Creazione di modelli di report personalizzati per System Center Configuration Manager in SQL Server Reporting Services
+# <a name="creating-custom-report-models-for-configuration-manager-in-sql-server-reporting-services"></a>Creazione di modelli di report personalizzati per Configuration Manager in SQL Server Reporting Services
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 In Configuration Manager sono inclusi modelli di report di esempio, ma è possibile definire anche modelli di report che soddisfino requisiti aziendali specifici e quindi distribuire i modelli di report in Configuration Manager per usarli quando si creano nuovi report basati su modelli. Nella seguente tabella vengono illustrati i passaggi per creare e distribuire un modello di report di base.  
 

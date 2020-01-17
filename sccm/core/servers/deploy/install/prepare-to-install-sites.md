@@ -10,22 +10,21 @@ ms.assetid: 9089e1b5-cba4-42bd-a2de-126ef882a3af
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5d530540ba83fbe03752aab6943b8bf4fa02404b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f93d12774240599d5f0584c2f45b8aad6463037c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71062141"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798141"
 ---
-# <a name="prepare-to-install-system-center-configuration-manager-sites"></a>Preparare l'installazione di siti di System Center Configuration Manager
+# <a name="prepare-to-install-configuration-manager-sites"></a>Preparare l'installazione di siti di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Per prepararsi a una corretta distribuzione di uno o più siti di System Center Configuration Manager, acquisire familiarità con i dettagli in questo articolo. Questi passaggi possono aiutare a risparmiare tempo durante l'installazione di più siti ed evitare errori che potrebbero richiedere una nuova installazione di uno o più siti.
+Per prepararsi a una corretta distribuzione di uno o più siti di Configuration Manager, acquisire familiarità con i dettagli in questo articolo. Questi passaggi possono aiutare a risparmiare tempo durante l'installazione di più siti ed evitare errori che potrebbero richiedere una nuova installazione di uno o più siti.
 
 > [!TIP]
-> Quando si gestisce l'infrastruttura del sito e della gerarchia di System Center Configuration Manager, i termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti distinti. Per informazioni su come viene usato ogni termine, vedere [Informazioni su upgrade, aggiornamento e installazione](/sccm/core/understand/upgrade-update-install).
+> Quando si gestisce l'infrastruttura della gerarchia e dei siti di Configuration Manager, i termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti distinti. Per informazioni su come viene usato ogni termine, vedere [Informazioni su upgrade, aggiornamento e installazione](/sccm/core/understand/upgrade-update-install).
 
 ## <a name="bkmk_options"></a> Opzioni per l'installazione di diversi tipi di siti
 Quando si installa un nuovo sito di Configuration Manager, la versione dei file di origine che è possibile usare dipende dalla versione dei siti che si trovano già nella gerarchia, se presenti. I metodi di installazione disponibili dipendono dal tipo di sito che si vuole installare.  
@@ -64,13 +63,13 @@ Un sito secondario deve essere installato dalla console di Configuration Manager
 
 ## <a name="bkmk_tasks"></a> Attività comuni da completare prima di avviare un'installazione
 - **Esaminare la topologia della gerarchia che verrà usata per la distribuzione**    
-Per altre informazioni, vedere [Progettare una gerarchia di siti per System Center Configuration Manager](../../../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md).  
+Per altre informazioni, vedere [Progettare una gerarchia di siti per Configuration Manager](../../../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md).  
 
 - **Preparare e configurare singoli server per soddisfare i prerequisiti e le configurazioni supportate per l'uso con Configuration Manager**         
 Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](../../../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
 
 - **Installare e configurare SQL Server per ospitare il database del sito**     
-Per altre informazioni, vedere [Versioni di SQL Server supportate per System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md).  
+Per altre informazioni, vedere [Supporto per le versioni di SQL Server per Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md).  
 
 - **Preparare l'ambiente di rete per supportare Configuration Manager**      
 Per altre informazioni, vedere [Configurare firewall, porte e domini per System Center Configuration Manager](../../../../core/plan-design/network/configure-firewalls-ports-domains.md).  
@@ -135,4 +134,4 @@ Per identificare e correggere i problemi prima di eseguire il programma di insta
 - Per impostazione predefinita, i client e i sistemi del sito usano porte predefinite per la comunicazione.
 - Durante l'installazione è possibile configurare porte alternative.
 
-Per altre informazioni, vedere [Porte usate in System Center Configuration Manager](../../../../core/plan-design/hierarchy/ports.md).
+Per altre informazioni, vedere [Porte usate](../../../../core/plan-design/hierarchy/ports.md).

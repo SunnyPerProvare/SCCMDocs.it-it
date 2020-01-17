@@ -1,7 +1,7 @@
 ---
 title: Privacy e sicurezza per l'inventario software
 titleSuffix: Configuration Manager
-description: Informazioni sulla sicurezza e la privacy per l'inventario software in System Center Configuration Manager.
+description: Informazioni sulla sicurezza e la privacy per l'inventario software in Configuration Manager.
 ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,19 +10,18 @@ ms.assetid: 8e68e1fb-a8ec-4543-bb8a-cbbaf184a418
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 717f6c3a086a74772aaea98fe8a90cf573258f43
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d64fd2ac98996a6a1ccadae78e5f9cc576b55444
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889979"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824232"
 ---
-# <a name="security-and-privacy-for-software-inventory-in-system-center-configuration-manager"></a>Sicurezza e privacy per l'inventario software in System Center Configuration Manager
+# <a name="security-and-privacy-for-software-inventory-in-configuration-manager"></a>Sicurezza e privacy per l'inventario software in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo argomento contiene informazioni sulla sicurezza e la privacy per l'inventario software in System Center Configuration Manager.  
+Questo argomento contiene informazioni sulla sicurezza e la privacy per l'inventario software in Configuration Manager.  
 
 ##  <a name="BKMK_Security_HardwareInventory"></a> Procedure ottimali di protezione per l'inventario software  
  Usare le procedure ottimali di protezione seguenti quando vengono raccolti i dati dell'inventario software dai client:  

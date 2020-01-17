@@ -1,7 +1,7 @@
 ---
 title: Nuova versione 1706
 titleSuffix: Configuration Manager
-description: Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1706 di System Center Configuration Manager.
+description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1706 di Configuration Manager.
 ms.date: 08/11/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f4c0bc6710f6978eb4ed95b11de6be6845d72e8e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 2bc287f11db08d8cdf533465d188966a33e79bfb
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68338761"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802736"
 ---
-# <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Novità della versione 1706 di System Center Configuration Manager
+# <a name="what39s-new-in-version-1706-of-configuration-manager"></a>Novità della versione 1706 di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-L'aggiornamento 1706 per System Center Configuration Manager (Current Branch) è disponibile come aggiornamento nella console per siti installati in precedenza che eseguono la versione 1606, 1610 o 1702.
+L'aggiornamento 1706 per Configuration Manager Current Branch è disponibile come aggiornamento nella console per siti precedentemente installati che eseguono la versione 1606, 1610 o 1702.
 
 > [!TIP]  
 > Per installare un nuovo sito, è necessario usare una versione base di Configuration Manager.  
@@ -139,7 +138,7 @@ In questa versione sono state aggiunte nuove impostazioni degli elementi di conf
   - URL XML OpenSearch
   - Homepages (desktop only) (Home page - solo desktop)
 
-Per informazioni dettagliate su tutte le impostazioni per Windows 10, vedere [Come creare elementi di configurazione per dispositivi Windows 10 e Windows 8.1 gestiti senza il client di System Center Configuration Manager](/sccm/mdm/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client).
+Per informazioni dettagliate su tutte le impostazioni di Windows 10, vedere [Come creare elementi di configurazione per dispositivi Windows 10 e Windows 8.1 gestiti senza il client Configuration Manager](/sccm/mdm/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client).
 
 ### <a name="new-device-compliance-policy-rules"></a>Nuove regole per i criteri di conformità dei dispositivi
 

@@ -10,18 +10,17 @@ ms.assetid: 29dd51b8-6576-4010-81ba-3129ed2c3421
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
 ROBOTS: NOINDEX
-ms.openlocfilehash: 730c44ff71816b8fe99ccfac61d2efafad2c1650
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8b8a3a40e88d9873c80d19c7f0e802aa2c19845c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660462"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75801070"
 ---
-# <a name="levels-of-diagnostic-usage-data-collection-for-version-1802-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1802
+# <a name="levels-of-diagnostic-usage-data-collection-for-version-1802-of-configuration-manager"></a>Livelli di raccolta di dati per utilizzo diagnostico per la versione 1802 di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager versione 1802 raccoglie tre livelli di dati di diagnostica e di utilizzo: **Di base**, **Avanzato** e **Completo**. Per impostazione predefinita, per questa funzionalità è impostato il livello avanzato. Le sezioni seguenti forniscono ulteriori dettagli sui dati raccolti in ogni livello.
 
@@ -471,7 +470,7 @@ Per Configuration Manager versione 1802, questo livello include i dati seguenti:
 
 - Impostazioni di conformità: dettagli di configurazione SCEP, VPN, Wi-Fi e del modello dei criteri di conformità
 
-- Utilizzo del pacchetto di configurazione DCM per System Center Configuration Manager
+- Utilizzo del pacchetto di configurazione DCM per Configuration Manager
 
 - Errori di installazione della distribuzione client dettagliati
 

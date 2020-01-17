@@ -10,17 +10,16 @@ ms.assetid: 6e4964c5-43cb-4372-9a89-b62ae6a4775c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab44233756a237513298391a59951919ac4412d5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 06eb21125408f15aa8ecf738f87e7442cfc32019
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70380114"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826136"
 ---
-# <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usare lo strumento di connessione del servizio per System Center Configuration Manager
+# <a name="use-the-service-connection-tool-for-configuration-manager"></a>Usare lo strumento di connessione del servizio per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare lo **strumento di connessione del servizio** quando il punto di connessione del servizio è in modalità offline oppure quando i server del sistema del sito di Configuration Manager non sono connessi a Internet. Lo strumento consente di mantenere il sito aggiornato con gli aggiornamenti più recenti di Configuration Manager.  
 
@@ -72,7 +71,7 @@ Nel computer che ospita il punto di connessione del servizio:
 
   Per impostazione predefinita, questo strumento è disponibile nel supporto di installazione di Configuration Manager nella cartella **%path%\smssetup\tools\ServiceConnectionTool**. Per il funzionamento dello strumento di connessione del servizio, tutti i file devono essere nella stessa cartella.  
 
-Quando si esegue il comando seguente, lo strumento prepara un file CAB che contiene informazioni sull'utilizzo e lo copia in una posizione specificata. I dati nel file CAB si basano sul livello dei dati di diagnostica e di utilizzo che il sito è configurato per raccogliere. Vedere [Dati di diagnostica e di utilizzo per System Center Configuration Manager](../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md).  Eseguire questo comando per creare il file CAB:  
+Quando si esegue il comando seguente, lo strumento prepara un file CAB che contiene informazioni sull'utilizzo e lo copia in una posizione specificata. I dati nel file CAB si basano sul livello dei dati di diagnostica e di utilizzo che il sito è configurato per raccogliere. Vedere [Dati di diagnostica e utilizzo per Configuration Manager](../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md).  Eseguire questo comando per creare il file CAB:  
 
 - **serviceconnectiontool.exe -prepare -usagedatadest D:\USB\UsageData.cab**  
 
@@ -166,7 +165,7 @@ Riga di comando di esempio che utilizza *- downloadsiteversion*:
 
 9. Aprire la console di Configuration Manager e passare ad **Amministrazione** > **Aggiornamenti e manutenzione**. Gli aggiornamenti importati sono ora pronti per l'installazione. Nelle versioni precedenti la 1702, Aggiornamenti e manutenzione si trova in **Amministrazione** > **Servizi cloud**.
 
-   Per informazioni sull'installazione degli aggiornamenti, vedere  [Installare gli aggiornamenti nella console per System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
+   Per informazioni sull'installazione degli aggiornamenti, vedere [Installare gli aggiornamenti nella console per Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
 
 ## <a name="bkmk_cmd"></a> File di log
 

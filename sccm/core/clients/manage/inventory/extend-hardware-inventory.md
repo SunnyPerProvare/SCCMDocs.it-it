@@ -1,7 +1,7 @@
 ---
 title: Estendere l'inventario hardware
 titleSuffix: Configuration Manager
-description: Informazioni su come estendere l'inventario hardware in System Center Configuration Manager.
+description: Informazioni su come estendere l'inventario hardware in Configuration Manager.
 ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,17 +10,16 @@ ms.assetid: d5bfab4f-c55e-4545-877c-5c8db8bc1891
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 719620b3903cd85dc387794f8fbbe6b2bffe0aef
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 380ba550a6edb0f639644280df74c500663e19f4
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500059"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824334"
 ---
-# <a name="how-to-extend-hardware-inventory-in-system-center-configuration-manager"></a>Come estendere l'inventario hardware in System Center Configuration Manager
+# <a name="how-to-extend-hardware-inventory-in-configuration-manager"></a>Come estendere l'inventario hardware in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 L'inventario hardware legge le informazioni dai PC Windows usando Strumentazione gestione Windows (WMI). WMI è l'implementazione Microsoft di Web-Based Enterprise Management (WBEM), uno standard del settore per l'accesso alle informazioni di gestione in ambiente aziendale. Nelle versioni precedenti di Configuration Manager, per estendere l'inventario hardware si modificava il file sms_def.mof nel server del sito. Questo file contiene un elenco di classi WMI che può essere letto dall'inventario hardware. Modificando questo file, è possibile abilitare e disabilitare classi esistenti e creare anche nuove classi nell'inventario.  
 
@@ -46,7 +45,7 @@ Il file Configuration.mof, usato per definire le classi di dati da inserire nell
 |Creare i file IDMIF|Usare i file IDMIF per raccogliere informazioni sulle risorse dell'organizzazione non associate a un client di Configuration Manager, ad esempio proiettori, fotocopiatrici e stampanti di rete. Vedere [Per creare file IDMIF](#BKMK_IDMIF) in questo articolo.|  
 
 ## <a name="procedures-to-extend-hardware-inventory"></a>Procedure per estendere l'inventario hardware  
-Queste procedure consentono di configurare le impostazioni client predefinite per l'inventario hardware e si applicano a tutti i client nella gerarchia. Per applicare queste impostazioni solo ad alcuni client, creare un'impostazione di dispositivo client personalizzata e assegnarla a una raccolta di client specifici. Vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
+Queste procedure consentono di configurare le impostazioni client predefinite per l'inventario hardware e si applicano a tutti i client nella gerarchia. Per applicare queste impostazioni solo ad alcuni client, creare un'impostazione di dispositivo client personalizzata e assegnarla a una raccolta di client specifici. Vedere [Come configurare le impostazioni client](../../../../core/clients/deploy/configure-client-settings.md).  
 
 ###  <a name="BKMK_Enable"></a> Per abilitare o disabilitare classi di inventario esistenti  
 
@@ -167,4 +166,4 @@ A partire da Configuration Manager 1802, per le proprietà dell'inventario hardw
  Dopo aver creato un file IDMIF, archiviarlo nella cartella _%Windir%_ **\CCM\Inventory\Idmifs** dei computer client. Configuration Manager raccoglierà informazioni da questo file durante il successivo ciclo di inventario hardware pianificato. È necessario dichiarare nuove classi per le informazioni contenute nel file aggiungendo o importarli.  
 
 > [!NOTE]
-> I file MIF potrebbero contenere grandi quantità di dati e la raccolta di tali dati potrebbe influire negativamente sulle prestazioni del sito. Abilitare la raccolta di file MIF solo quando necessario e configurare l'opzione **Dimensioni massime file MIF personalizzate (KB)** nelle impostazioni relative all'inventario hardware. Per altre informazioni, vedere [Introduzione all'inventario hardware in System Center Configuration Manager](introduction-to-hardware-inventory.md).
+> I file MIF potrebbero contenere grandi quantità di dati e la raccolta di tali dati potrebbe influire negativamente sulle prestazioni del sito. Abilitare la raccolta di file MIF solo quando necessario e configurare l'opzione **Dimensioni massime file MIF personalizzate (KB)** nelle impostazioni relative all'inventario hardware. Per altre informazioni, vedere [Introduzione all'inventario hardware](introduction-to-hardware-inventory.md).

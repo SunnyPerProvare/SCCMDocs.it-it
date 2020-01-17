@@ -1,7 +1,7 @@
 ---
 title: Strumento di reimpostazione dell'aggiornamento
 titleSuffix: Configuration Manager
-description: Usare lo strumento di reimpostazione dell'aggiornamento per gli aggiornamenti nella console per System Center Configuration Manager.
+description: Usare lo strumento di reimpostazione dell'aggiornamento per gli aggiornamenti nella console per Configuration Manager.
 ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,17 +10,16 @@ ms.assetid: 25fa89d6-7e47-45a6-8f4e-70b77560fba6
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: dbd5f382a50baecf53c3925e2d903b2abb1948ec
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c9a8fdc083d5c1fae16b5077dd25daa14353e1e5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892021"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793207"
 ---
 # <a name="update-reset-tool"></a>Strumento di reimpostazione dell'aggiornamento
 
-*Si applica a: System Center Configuration Manager (Current Branch)*  
+*Si applica a: Configuration Manager (Current Branch)*  
 
 
 A partire dalla versione 1706, i siti primari e i siti di amministrazione centrale di Configuration Manager includono lo strumento di reimpostazione dell'aggiornamento di Configuration Manager, **CMUpdateReset.exe**. Usare lo strumento per correggere gli errori quando gli aggiornamenti nella console presentano problemi durante il download o la replica. Lo strumento si trova nella cartella ***\cd.latest\SMSSETUP\TOOLS*** del server del sito.
@@ -33,7 +32,7 @@ Lo strumento viene eseguito nell'aggiornamento specificato. Per impostazione pre
 
 ### <a name="prerequisites"></a>Prerequisiti
 L'account usato per eseguire lo strumento richiede le autorizzazioni seguenti:
-- **Lettura** e **Scrittura** per il database del sito di amministrazione centrale e per ogni sito primario della gerarchia. Per impostare queste autorizzazioni, aggiungere l'account utente come membro dei [ruoli predefiniti del database ](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles)**db_datawriter** e **db_datareader** nel database di Configuration Manager di ogni sito. Lo strumento non interagisce con i siti secondari.
+- **Lettura** e **Scrittura** per il database del sito di amministrazione centrale e per ogni sito primario della gerarchia. Per impostare queste autorizzazioni, è possibile aggiungere l'account utente come membro dei [ruoli predefiniti del database](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles) **db_datawriter** e **db_datareader** nel database di Configuration Manager di ogni sito. Lo strumento non interagisce con i siti secondari.
 - **Amministratore locale** nel sito di livello superiore della gerarchia.
 - **Amministratore locale** nel computer che ospita il punto di connessione del servizio.
 
@@ -69,8 +68,8 @@ Dopo l'esecuzione dello strumento:
 | **-S &lt;FQDN dell'istanza di SQL Server del sito di livello superiore>** | *Richiesto* <br> Specificare il nome di dominio completo dell'istanza di SQL Server che ospita il database del sito per il sito di livello superiore della gerarchia. |
 |                **-D &lt;Nome database>**                 |                          *Richiesto* <br> Specificare il nome del database nel sito di livello superiore.                          |
 |                 **-P &lt;GUID pacchetto>**                 |                        *Richiesto* <br> Specificare il GUID dell'aggiornamento da reimpostare.                        |
-|           **-I &lt;Nome istanza SQL Server>**           |                    *Facoltativa* <br> Identifica l'istanza di SQL Server che ospita il database del sito.                     |
-|                       **-FDELETE**                       |                       *Facoltativa* <br> Forza l'eliminazione di un aggiornamento scaricato correttamente.                        |
+|           **-I &lt;Nome istanza SQL Server>**           |                    *Facoltativo* <br> Identifica l'istanza di SQL Server che ospita il database del sito.                     |
+|                       **-FDELETE**                       |                       *Facoltativo* <br> Forza l'eliminazione di un aggiornamento scaricato correttamente.                        |
 
 **Esempi:**  
 In uno scenario tipico, si vuole reimpostare un aggiornamento che presenta problemi di download. L'FQDN di SQL Server è *server1.fabrikam.com*, il database del sito è *CM_XYZ* e il GUID del pacchetto è *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Eseguire: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***

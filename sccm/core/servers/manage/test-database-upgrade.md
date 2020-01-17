@@ -10,27 +10,26 @@ ms.assetid: abb696f3-a816-4f12-a9f1-0503a81e1976
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c25e2d2aac1c1763df4282e92114257ee34065ac
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: cd0b0a2b8529b555b5aad48ef4dd1a11b723824a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67194146"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793234"
 ---
 # <a name="test-the-database-upgrade-when-installing-an-update"></a>Testare l'aggiornamento del database quando si installa un aggiornamento
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo argomento descrive come eseguire il test dell'aggiornamento del database prima di installare un aggiornamento nella console per il Current Branch di Configuration Manager. Tuttavia, questo passaggio non è più necessario o consigliabile, a meno che la condizione del database sia sospetta o che il database sia stato modificato da personalizzazioni non supportate in modo esplicito da Configuration Manager.
 
 ## <a name="do-i-need-to-run-a-test-upgrade"></a>È necessario eseguire un test dell'aggiornamento?
-La deprecazione di questo test dell'aggiornamento è stata possibile grazie alle modifiche introdotte con System Center Configuration Manager. Queste modifiche semplificano il processo e la velocità con cui è possibile aggiornare un ambiente di produzione a versioni più recenti. Questa riprogettazione consente ora ai clienti di rimanere aggiornati con meno rischi e minori costi operativi durante l'installazione di ogni nuovo aggiornamento.
+La deprecazione di questo test dell'aggiornamento è stata possibile grazie alle modifiche introdotte con Configuration Manager. Queste modifiche semplificano il processo e la velocità con cui è possibile aggiornare un ambiente di produzione a versioni più recenti. Questa riprogettazione consente ora ai clienti di rimanere aggiornati con meno rischi e minori costi operativi durante l'installazione di ogni nuovo aggiornamento.
 
 Le modifiche interessano la modalità di installazione degli aggiornamenti, inclusa la logica che esegue automaticamente il rollback di un aggiornamento non riuscito senza la necessità di eseguire un ripristino del sito. Queste modifiche consentono l'uso della console per gestire le installazioni degli aggiornamenti e includono un'opzione per [ripetere l'installazione di un aggiornamento non riuscito](/sccm/core/servers/manage/install-in-console-updates#bkmk_retry).
 
 > [!TIP]
-> Quando si esegue l'aggiornamento a System Center Configuration Manager da una versione precedente, ad esempio System Center 2012 Configuration Manager, l'[esecuzione del test degli aggiornamenti del database è ancora un'operazione consigliata](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager#bkmk_test).
+> Quando si esegue l'aggiornamento a Configuration Manager Current Branch da una versione precedente, ad esempio System Center 2012 Configuration Manager, l'[esecuzione del test degli aggiornamenti del database è ancora un'operazione consigliata](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager#bkmk_test).
 
 Se si intende testare l'aggiornamento di un database del sito quando si installa un aggiornamento nella console, le informazioni seguenti integrano il [materiale sussidiario sull'installazione di un aggiornamento nella console](/sccm/core/servers/manage/install-in-console-updates#bkmk_install).
 
@@ -56,7 +55,7 @@ Se si verifica un errore in fase di aggiornamento, non è consigliabile ripristi
 
    Ad esempio, si dispone di un database del sito con il nome database *SMS_ABC*. Si ripristina una copia di questo database del sito in un'istanza supportata di SQL Server con il nome istanza *DBTest*. Per testare un aggiornamento di questa copia del database del sito, usare la riga di comando seguente: **Setup.exe /TESTDBUPGRADE DBtest\CM_ABC**.  
 
-   È possibile trovare Setup.exe nel percorso seguente del supporto di origine per System Center Configuration Manager: **SMSSETUP\BIN\X64**.  
+   È possibile trovare Setup.exe nel percorso seguente del supporto di origine per Configuration Manager: **SMSSETUP\BIN\X64**.  
 
 5. Nell'istanza di SQL Server in cui si esegue il test di aggiornamento, monitorare *ConfigMgrSetup.log* nella radice dell'unità di sistema per l'avanzamento e il completamento.  
 

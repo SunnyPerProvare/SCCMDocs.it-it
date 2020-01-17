@@ -1,7 +1,7 @@
 ---
 title: Configurare il controllo remoto
 titleSuffix: Configuration Manager
-description: Configurare il controllo remoto in System Center Configuration Manager.
+description: Configurare il controllo remoto in Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,19 +10,18 @@ ms.assetid: 45affc27-aa11-4249-9493-082ac23a3a3d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3802a7e9059f0c578178a967dcc04f0afd5f5dbf
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1362f44c510fd34aebc6af77efc63e881c27688c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65499691"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75823875"
 ---
-# <a name="configuring-remote-control-in-system-center-configuration-manager"></a>Configurazione del controllo remoto in System Center Configuration Manager
+# <a name="configuring-remote-control-in-configuration-manager"></a>Configurazione del controllo remoto in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
- Questa procedura descrive la configurazione delle impostazioni client predefinite per il controllo remoto. Queste impostazioni si applicano a tutti i computer nella gerarchia. Per applicare queste impostazioni solo ad alcuni computer, assegnare un'impostazione client di dispositivo personalizzata a una raccolta contenente i computer. Per altre informazioni, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md). 
+ Questa procedura descrive la configurazione delle impostazioni client predefinite per il controllo remoto. Queste impostazioni si applicano a tutti i computer nella gerarchia. Per applicare queste impostazioni solo ad alcuni computer, assegnare un'impostazione client di dispositivo personalizzata a una raccolta contenente i computer. Per altre informazioni, vedere [Come configurare le impostazioni client](../../../../core/clients/deploy/configure-client-settings.md). 
 
 Per usare Assistenza remota o Desktop remoto è necessario installare e configurare questi programmi nel computer che esegue la console di Configuration Manager. Per altre informazioni su come installare e configurare Assistenza remota o Desktop remoto, vedere la documentazione di Windows.  
 
@@ -38,7 +37,7 @@ Per usare Assistenza remota o Desktop remoto è necessario installare e configur
 
    È possibile modificare il nome della società visualizzato nella finestra di dialogo **Controllo remoto di Configuration Manager** configurando un valore per **Nome organizzazione visualizzato in Software Center** nelle impostazioni client **Agente computer** .  
 
-   I computer client vengono configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [Come gestire i client in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+   I computer client vengono configurati con queste impostazioni al successivo download dei criteri client. Per iniziare il recupero dei criteri per un singolo client, vedere [Come gestire i client](../../../../core/clients/manage/manage-clients.md).  
 
 #### <a name="enable-keyboard-translation"></a>Abilitare la traduzione della tastiera
 

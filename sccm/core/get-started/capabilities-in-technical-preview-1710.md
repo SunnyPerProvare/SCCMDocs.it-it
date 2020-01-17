@@ -1,7 +1,7 @@
 ---
 title: Technical Preview 1710 | Microsoft Docs
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella Technical Preview versione 1710 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1710 per Configuration Manager.
 ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e668baafac94dfc7da5008c37556c017c5e01c9d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3ea9521e310aac48db15f6d063b3558d00f0c574
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67286115"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804708"
 ---
-# <a name="capabilities-in-technical-preview-1710-for-system-center-configuration-manager"></a>Funzionalità nella Technical Preview 1710 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1710-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1710 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-L'articolo illustra le funzionalità disponibili nella Technical Preview versione 1710 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.     
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1710. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare [Technical Preview per Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.     
 
 
 <!--  Known Issues Template   
@@ -54,7 +53,7 @@ L'articolo illustra le funzionalità disponibili nella Technical Preview version
 
 ## <a name="improvements-for-deploying-powershell-scripts-from-configuration-manager"></a>Miglioramenti per la distribuzione di script di PowerShell da Configuration Manager
 Con questa versione gli script di PowerShell distribuiti supportano ora i miglioramenti seguenti: 
-- **Ambiti di protezione**.  Vengono ora usati ambiti di protezione per controllare la creazione e l'esecuzione degli script. Questo avviene tramite l'assegnazione di tag che rappresentano gruppi di utenti. Per altre informazioni sull'uso degli ambiti di protezione, vedere [Configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).
+- **Ambiti di protezione**.  Vengono ora usati ambiti di protezione per controllare la creazione e l'esecuzione degli script. Questo avviene tramite l'assegnazione di tag che rappresentano gruppi di utenti. Per altre informazioni sull'uso degli ambiti di protezione, vedere [Configurare l'amministrazione basata su ruoli per Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).
 - **Monitoraggio in tempo reale**. Il monitoraggio dell'esecuzione di uno script avviene ora in tempo reale, durante l'esecuzione dello script.
 - **Convalida dei parametri**. Ogni parametro nello script ha una finestra di dialogo **Proprietà parametri script**, in cui è possibile aggiungere la convalida per il parametro. Dopo aver aggiunto la convalida, verranno restituiti errori quando si immette un valore che non soddisfa i requisiti di convalida per il parametro.
 
@@ -223,4 +222,4 @@ Per creare un criterio e per individuare le impostazioni disponibili:
 Per altre informazioni su Windows Defender Application Guard, vedere [questo post di blog](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#BmJGKPfSjHHzsMmI.97). Per altre informazioni sulla modalità autonoma di Windows Defender Application Guard vedere [questo post di blog](https://techcommunity.microsoft.com/t5/Windows-Insider-Program/Windows-Defender-Application-Guard-Standalone-mode/td-p/66903).
 
 ## <a name="next-steps"></a>Passaggi successivi
-Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview).    
+Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview).    

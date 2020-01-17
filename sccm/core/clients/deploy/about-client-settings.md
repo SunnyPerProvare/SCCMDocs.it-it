@@ -10,13 +10,12 @@ ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8bf3862235e5b9aa78b46b6e181bd51343a4acaa
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: c8209db04dfb9b00bc86a93544d6ca6e23b02f53
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198592"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816055"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -200,7 +199,7 @@ Per altre informazioni sulle tre impostazioni seguenti, vedere [Notifiche utente
 ### <a name="default-application-catalog-website-point"></a>Punto per siti Web del Catalogo applicazioni predefinito
 
 > [!Important]  
-> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
+> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >
@@ -212,7 +211,7 @@ Configuration Manager usa questa impostazione per connettere gli utenti al Catal
 ### <a name="add-default-application-catalog-website-to-internet-explorer-trusted-sites-zone"></a>Aggiungere il sito Web del Catalogo applicazioni predefinito all'area siti attendibili di Internet Explorer
 
 > [!Important]  
-> L'esperienza utente di Silverlight per il Catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
+> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >

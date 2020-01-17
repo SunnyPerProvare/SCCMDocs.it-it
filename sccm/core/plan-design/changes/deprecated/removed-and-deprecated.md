@@ -1,7 +1,7 @@
 ---
 title: Elementi deprecati
 titleSuffix: Configuration Manager
-description: Informazioni su funzionalità, prodotti e sistemi operativi che System Center Configuration Manager non supporta più.
+description: Informazioni su funzionalità, prodotti e sistemi operativi che Configuration Manager non supporta più.
 ms.date: 01/25/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: b0adf873-2ff4-4a7b-b5e7-6047f146511f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 300d3763ba877bcd05817e40f4a8a86a1e899ce5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d65b27dbd010e514a977478c9bde8b85fbf1118a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68339696"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802872"
 ---
-# <a name="removed-and-deprecated-items-for-system-center-configuration-manager"></a>Elementi rimossi e deprecati per System Center Configuration Manager
+# <a name="removed-and-deprecated-items-for-configuration-manager"></a>Elementi rimossi e deprecati per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo articolo descrive come usare le informazioni sulle funzionalità, i prodotti e i sistemi operativi rimossi dal supporto per System Center Configuration Manager o che verranno rimossi in un aggiornamento futuro (deprecati). Lo scopo è quello di informare in maniera anticipata gli utenti sulle future modifiche che potrebbero influire sull'uso di Configuration Manager.  
+Questo articolo descrive come usare le informazioni sulle funzionalità, i prodotti e i sistemi operativi rimossi dal supporto per Configuration Manager o che verranno rimossi in un aggiornamento futuro (deprecati). Lo scopo è quello di informare in maniera anticipata gli utenti sulle future modifiche che potrebbero influire sull'uso di Configuration Manager.  
 
 Queste informazioni sono soggette a modifiche nelle versioni future e potrebbero non includere tutte le funzionalità, tutti i prodotti o i sistemi operativi deprecati.  
 

@@ -1,7 +1,7 @@
 ---
 title: Sicurezza e privacy per la migrazione
 titleSuffix: Configuration Manager
-description: Procedure consigliate per la sicurezza e informazioni sulla privacy per la migrazione all'ambiente System Center Configuration Manager.
+description: Procedure consigliate per la sicurezza e informazioni sulla privacy per la migrazione all'ambiente Configuration Manager Current Branch.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: 6893fce1-7ad5-4151-9ba9-3096871e8e4a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: fdfbd5ae0e72cf258e92e9504a955f39e6ced52b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e267403e9d79a3e537a326dacf4d9f618ac7e267
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70379304"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75803008"
 ---
-# <a name="security-and-privacy-for-migration-to-system-center-configuration-manager"></a>Sicurezza e privacy per la migrazione a System Center Configuration Manager
+# <a name="security-and-privacy-for-migration-to-configuration-manager-current-branch"></a>Sicurezza e privacy per la migrazione a Configuration Manager Current Branch
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-In questo argomento vengono illustrate le procedure consigliate per la sicurezza e le informazioni sulla privacy per la migrazione all'ambiente System Center Configuration Manager.  
+In questo argomento vengono illustrate le procedure consigliate per la sicurezza e le informazioni sulla privacy per la migrazione all'ambiente Configuration Manager Current Branch.  
 
 ## <a name="security-best-practices-for-migration"></a>Procedure di protezione consigliate per la migrazione  
  Utilizzare la seguente procedura di protezione consigliata per la migrazione.  
@@ -45,7 +44,7 @@ La migrazione presenta i seguenti problemi di protezione:
 Quando si esegue la migrazione di dati da un sito di origine a un sito di destinazione, vengono perse le informazioni di controllo dalla gerarchia di origine.  
 
 ## <a name="privacy-information-for-migration"></a>Informazioni sulla privacy per la migrazione  
- Durante la migrazione vengono individuate delle informazioni dai database del sito identificate in un'infrastruttura di origine che vengono archiviate nel database della gerarchia di destinazione. Le informazioni che System Center Configuration Manager è in grado di individuare da una gerarchia o un sito di origine dipendono dalle funzionalità abilitate nell'ambiente di origine e dalle operazioni di gestione eseguite in tale ambiente.  
+ Durante la migrazione vengono individuate delle informazioni dai database del sito identificate in un'infrastruttura di origine che vengono archiviate nel database della gerarchia di destinazione. Le informazioni che Configuration Manager è in grado di individuare da una gerarchia o un sito di origine dipendono dalle funzionalità abilitate nell'ambiente di origine e dalle operazioni di gestione eseguite in tale ambiente.  
 
  Per ulteriori informazioni sulla protezione e privacy, vedere uno degli argomenti seguenti:  
 
@@ -53,7 +52,7 @@ Quando si esegue la migrazione di dati da un sito di origine a un sito di destin
 
 -   Per altre informazioni sulla privacy per System Center 2012 Configuration Manager, vedere [Protezione e privacy per System Center 2012 Configuration Manager](https://technet.microsoft.com/library/gg682033.aspx) nella libreria della documentazione di System Center 2012 Configuration Manager.  
 
--   Per altre informazioni sulla privacy per System Center Configuration Manager, vedere [Protezione e privacy per System Center Configuration Manager](../../core/plan-design/security/security-and-privacy.md).  
+-   Per altre informazioni sulla privacy per Configuration Manager, vedere [Sicurezza e privacy per Configuration Manager](../../core/plan-design/security/security-and-privacy.md).  
 
 È possibile migrare solo alcuni o tutti i dati supportati da un sito di origine a una gerarchia di destinazione.  
 

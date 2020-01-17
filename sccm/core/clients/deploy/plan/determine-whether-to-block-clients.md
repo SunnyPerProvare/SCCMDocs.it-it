@@ -1,7 +1,7 @@
 ---
 title: Blocco dei client
 titleSuffix: Configuration Manager
-description: Bloccare l'accesso client per la protezione del sistema tramite System Center Configuration Manager.
+description: Bloccare l'accesso client per la sicurezza del sistema tramite Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,17 +10,16 @@ ms.assetid: 54ef5fbb-521d-4ca5-a1c5-61e6f538d71e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a90e100c242514eb2526e16bb68e379a2326572f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b01fd7944d8a6ab726712f6ebeb4cb5374896072
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62201023"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824946"
 ---
-# <a name="determine-whether-to-block-clients-in-system-center-configuration-manager"></a>Determinare se bloccare o meno i client in System Center Configuration Manager
+# <a name="determine-whether-to-block-clients-in-configuration-manager"></a>Determinare se bloccare o meno i client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Se un computer client o un dispositivo mobile client non è più considerato attendibile, è possibile bloccare il client nella console di System Center 2012 Configuration Manager. I client bloccati vengono rifiutati dall'infrastruttura di Configuration Manager e non potranno pertanto comunicare con i sistemi del sito per scaricare criteri, caricare dati di inventario o inviare messaggi di stato.  
 
@@ -29,7 +28,7 @@ Se un computer client o un dispositivo mobile client non è più considerato att
 > [!IMPORTANT]  
 >  Anche se il blocco in Configuration Manager consente di proteggere il sito di Configuration Manager, non fare affidamento su questa funzionalità per proteggere il sito da computer o dispositivi mobili non attendibili se si consente ai client di comunicare con sistemi del sito tramite HTTP, poiché un client bloccato potrebbe accedere nuovamente al sito con un ID hardware e un certificato autofirmato nuovi. In alternativa, utilizzare la funzionalità di blocco per bloccare i supporti di avvio persi o compromessi usati per distribuire i sistemi operativi e quando i sistemi del sito accettano connessioni client HTTPS.  
 
- Non è possibile bloccare i client che accedono al sito usando il certificato proxy ISV. Per altre informazioni sul certificato proxy ISV, vedere il Software Development Kit (SDK) di System Center Configuration Manager.  
+ Non è possibile bloccare i client che accedono al sito usando il certificato proxy ISV. Per altre informazioni sul certificato proxy ISV, vedere Configuration Manager Software Development Kit (SDK).  
 
  Se i sistemi del sito accettano connessioni client HTTPS e l'infrastruttura a chiave pubblica (PKI) supporta un elenco di revoche di certificati (CRL), considerare sempre la revoca del certificato come prima linea di difesa contro certificati potenzialmente compromessi. Il blocco dei client in Configuration Manager offre una seconda linea di difesa per la protezione della gerarchia.  
 

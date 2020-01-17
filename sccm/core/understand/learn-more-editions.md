@@ -10,19 +10,18 @@ ms.assetid: 495b87ae-41a4-49ba-abe2-d4f7d22ac0d4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02c0839bf7587fa9ee1421bf7035e31a3ca59cd1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: cff7f8b696066f20a312b68e34c3c268d4eebd68
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "66748097"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792017"
 ---
-# <a name="licensing-and-branches-for-system-center-configuration-manager"></a>Licenze e rami per System Center Configuration Manager
+# <a name="licensing-and-branches-for-configuration-manager"></a>Licenze e rami per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch), (Long-Term Servicing Branch)*
+*Si applica a: Configuration Manager (Current Branch) e System Center Configuration Manager (Long-Term Servicing Branch)*
 
-Questo articolo illustra i requisiti di licenza per le opzioni di installazione disponibili con System Center Configuration Manager. Queste opzioni di installazione includono i rami seguenti:
+Questo articolo illustra i requisiti di licenza per le opzioni di installazione disponibili con Configuration Manager. Queste opzioni di installazione includono i rami seguenti:
 
 - Current Branch
 - Long-Term Servicing Branch (LTSB)
@@ -31,7 +30,7 @@ Questo articolo illustra i requisiti di licenza per le opzioni di installazione 
 
 ## <a name="licensing-overview"></a>Panoramica delle licenze
 
-I clienti con Software Assurance o sottoscrizione equivalente attiva per le licenze di System Center Configuration Manager a partire dal 1° ottobre 2016 hanno diritto a usare la versione 1606 (ottobre 2016) di System Center Configuration Manager. I clienti che il 1° ottobre 2016 o in data successiva sono dotati di diritti per System Center Configuration Manager troveranno al momento dell'installazione due opzioni con licenza: Current Branch e Long-Term Servicing Branch (LTSB).
+I clienti con contratti Software Assurance attivi per le licenze di Configuration Manager, o con diritti di sottoscrizione equivalenti alla data 1 ottobre 2016, hanno diritto a usare la versione 1606 di ottobre 2016 di Configuration Manager. I clienti con diritti per Configuration Manager in data 1 ottobre 2016 o successiva, al momento dell'installazione avranno a disposizione due opzioni con licenza: Current Branch e Long-Term Servicing Branch (LTSB).
 
 Per i termini e le condizioni relativi ai prodotti acquistati tramite i programmi multilicenza Microsoft, vedere [Condizioni di licenza e documentazione](https://go.microsoft.com/fwlink/?LinkId=800052).
 
@@ -46,7 +45,7 @@ Current Branch richiede un contratto Software Assurance attivo o diritti equival
 
 Questo ramo è supportato per l'uso in ambienti di produzione per cui si vogliono ottenere regolarmente aggiornamenti qualitativi e funzionali da Microsoft. Consente di usare tutte le funzionalità e tutti i miglioramenti.
 
-A partire dalla versione 1710, ogni versione di aggiornamento continua a essere supportata per 18 mesi dalla data in cui viene resa disponibile a livello generale. Per altre informazioni, vedere [Support for System Center Configuration Manager current branch versions](/sccm/core/servers/manage/current-branch-versions-supported).(Supporto per le versioni di System Center Configuration Manager Current Branch).
+A partire dalla versione 1710, ogni versione di aggiornamento continua a essere supportata per 18 mesi dalla data in cui viene resa disponibile a livello generale. Per altre informazioni, vedere [Supporto per le versioni di System Center Configuration Manager Current Branch](/sccm/core/servers/manage/current-branch-versions-supported).
 
 ### <a name="long-term-servicing-branch-ltsb"></a>Long-Term Servicing Branch (LTSB)
 
@@ -69,7 +68,7 @@ La versione di valutazione non richiede un contratto Software Assurance con Micr
 
 ## <a name="software-assurance-agreements"></a>Contratti Software Assurance
 
-Lo stato di Software Assurance per le licenze di System Center Configuration Manager o diritti di sottoscrizione equivalenti, il 1° ottobre 2016 o in data successiva, determina il ramo che è possibile installare e usare.
+Lo stato di Software Assurance per le licenze di Configuration Manager o diritti di sottoscrizione equivalenti, il 1° ottobre 2016 o in data successiva, determina il ramo che è possibile installare e usare.
 
 ### <a name="software-assurance-and-the-current-branch"></a>Software Assurance e Current Branch
 
@@ -77,18 +76,18 @@ I diritti per l'uso di Configuration Manager Current Branch sono forniti da:
 
 - **System Center:** i clienti con sottoscrizione Software Assurance attiva per licenze System Center Standard o Datacenter possono installare e usare l'opzione Current Branch di Configuration Manager.
 
-- **System Center Configuration Manager:** i clienti con sottoscrizione Software Assurance attiva per licenze di System Center Configuration Manager o con diritti di sottoscrizione equivalenti possono installare e usare l'opzione Current Branch di Configuration Manager.
+- **System Center Configuration Manager:** i clienti con sottoscrizione Software Assurance attiva per licenze di Configuration Manager o con diritti di sottoscrizione equivalenti possono installare e usare l'opzione Current Branch di Configuration Manager.
 
-Se si ha una sottoscrizione Software Assurance attiva per le licenze di System Center Configuration Manager o diritti di sottoscrizione equivalenti il 1° ottobre 2016 o in data successiva:
+Se si ha una sottoscrizione Software Assurance attiva per le licenze di Configuration Manager o diritti di sottoscrizione equivalenti il 1° ottobre 2016 o in data successiva:
 
 - È possibile installare e usare Current Branch.
 - Se si lascia scadere la sottoscrizione Software Assurance, è necessario disinstallare Current Branch.
 
 ### <a name="software-assurance-and-the-ltsb"></a>Software Assurance e LTSB
 
-Se si ha una sottoscrizione Software Assurance attiva per le licenze di System Center Configuration Manager o diritti di sottoscrizione equivalenti il 1° ottobre 2016 o in data successiva:
+Se si ha una sottoscrizione Software Assurance attiva per le licenze di Configuration Manager o diritti di sottoscrizione equivalenti il 1° ottobre 2016 o in data successiva:
 
-- È possibile installare e usare LTSB. I clienti che hanno diritti perpetui su System Center Configuration Manager o lasciano scadere la sottoscrizione Software Assurance o equivalente possono installare la versione di Configuration Manager LTSB corrente al momento della scadenza.
+- È possibile installare e usare LTSB. I clienti che hanno diritti perpetui su Configuration Manager o lasciano scadere la sottoscrizione Software Assurance o equivalente possono installare la versione di Configuration Manager LTSB corrente al momento della scadenza.
 
 LTSB si basa sulla versione Current Branch 1606, con le limitazioni seguenti:
 

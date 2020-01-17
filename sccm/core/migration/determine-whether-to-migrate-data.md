@@ -1,7 +1,7 @@
 ---
 title: Scegliere di che cosa eseguire la migrazione
 titleSuffix: Configuration Manager
-description: Informazioni su quali dati possono e non possono essere migrati a System Center Configuration Manager.
+description: Informazioni su quali dati possono e non possono essere migrati a Configuration Manager Current Branch.
 ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,25 +10,24 @@ ms.assetid: 99222dc8-0e1e-4513-8302-7a1acf671e9b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b260a9e3deeb8668d736c3ed5ec2c2519e3ed50
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e0031652aba7e31a5a152c7f4834cb2d56d5c9d0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62234683"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75803229"
 ---
-# <a name="determine-whether-to-migrate-data-to-system-center-configuration-manager"></a>Stabilire se eseguire la migrazione dei dati a System Center Configuration Manager
+# <a name="determine-whether-to-migrate-data-to-configuration-manager-current-branch"></a>Determinare se eseguire la migrazione dei dati a Configuration Manager Current Branch
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-La migrazione in System Center Configuration Manager offre un processo per trasferire i dati e le configurazioni creati dalle versioni supportate di Configuration Manager alla nuova gerarchia.  È possibile usare questo processo per:  
+In Configuration Manager Current Branch la migrazione offre un processo per trasferire i dati e le configurazioni creati dalle versioni supportate di Configuration Manager alla nuova gerarchia.  È possibile usare questo processo per:  
 
 -   Combinare più gerarchie in una.  
 
 -   Spostare dati e configurazioni da una distribuzione lab alla distribuzione di produzione.
 
--   Spostare i dati e la configurazione da una versione precedente di Configuration Manager, ad esempio Configuration Manager 2007 che non dispone di alcun percorso di aggiornamento per System Center Configuration Manager, o da System Center 2012 Configuration Manager, che supporta un percorso di aggiornamento a System Center Configuration Manager.  
+-   Spostare i dati e la configurazione da una versione precedente di Configuration Manager, ad esempio Configuration Manager 2007 che non dispone di alcun percorso di aggiornamento per Configuration Manager Current Branch, o da System Center 2012 Configuration Manager, che supporta un percorso di aggiornamento a Configuration Manager Current Branch.  
 
 A eccezione del ruolo di sistema del sito del punto di distribuzione e dei computer che ospitano i punti di distribuzione, nessuna infrastruttura (compresi siti, ruoli di sistema del sito o computer che ospitano un ruolo di sistema del sito) può eseguire migrazioni, trasferimenti o essere condivisa tra le gerarchie.  
 
@@ -36,24 +35,19 @@ A eccezione del ruolo di sistema del sito del punto di distribuzione e dei compu
 
 Dopo l'installazione di un client nella nuova gerarchia e l'invio dei dati da parte del client, l'ID univoco di Configuration Manager consente a Configuration Manager di associare i dati precedentemente migrati a ogni computer client.  
 
- La funzionalità offerta dalla migrazione consente di gestire gli investimenti nelle configurazioni e nelle distribuzioni, nonché di usufruire pienamente delle principali modifiche apportate al prodotto introdotte per la prima volta in System Center 2012 Configuration Manager e proseguite in System Center Configuration Manager. Queste modifiche comprendono una gerarchia di Configuration Manager semplificata che usa un numero inferiore di siti e risorse, nonché una migliore elaborazione grazie all'uso di codice nativo a 64 bit eseguito su hardware a 64 bit.  
+ La funzionalità offerta dalla migrazione consente di gestire gli investimenti nelle configurazioni e nelle distribuzioni, nonché di usufruire pienamente delle principali modifiche apportate al prodotto introdotte per la prima volta in System Center 2012 Configuration Manager e proseguite in Configuration Manager. Queste modifiche comprendono una gerarchia di Configuration Manager semplificata che usa un numero inferiore di siti e risorse, nonché una migliore elaborazione grazie all'uso di codice nativo a 64 bit eseguito su hardware a 64 bit.  
 
- Per informazioni sulle versioni di Configuration Manager supportate dalla migrazione, vedere [Prerequisites for migration in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md) (Prerequisiti per la migrazione in System Center Configuration Manager).  
+ Per informazioni sulle versioni di Configuration Manager supportate dalla migrazione, vedere [Prerequisiti per la migrazione](../../core/migration/prerequisites-for-migration.md).  
 
- Le sezioni seguenti possono essere utili per pianificare i dati di cui è possibile o non è possibile eseguire la migrazione:  
+## <a name="Can_Migrate"></a> Dati di cui è possibile eseguire la migrazione a Configuration Manager Current Branch
 
--   [Dati di cui è possibile eseguire la migrazione a System Center Configuration Manager](#Can_Migrate)  
+La migrazione può essere applicata alla maggior parte degli oggetti delle gerarchie di Configuration Manager supportate. Le istanze migrate di alcuni oggetti di una versione supportata di Configuration Manager 2007 devono essere modificate per essere conformi al formato oggetti e allo schema di System Center 2012 Configuration Manager.
 
--   [Dati di cui non è possibile eseguire la migrazione a System Center Configuration Manager](#Cannot_migrate)  
+Queste modifiche non interessano i dati contenuti nel database del sito di origine. Gli oggetti di cui viene eseguita la migrazione da una versione supportata di System Center 2012 Configuration Manager o Configuration Manager Current Branch non richiedono alcuna modifica.  
 
-##  <a name="Can_Migrate"></a> Dati di cui è possibile eseguire la migrazione a System Center Configuration Manager  
- La migrazione può essere applicata alla maggior parte degli oggetti delle gerarchie di Configuration Manager supportate. Le istanze migrate di alcuni oggetti di una versione supportata di Configuration Manager 2007 devono essere modificate per essere conformi al formato oggetti e allo schema di System Center 2012 Configuration Manager.
+Di seguito sono elencati gli oggetti di cui è possibile eseguire la migrazione in base alla versione di Configuration Manager nella gerarchia di origine. Alcuni oggetti, ad esempio le query, non possono essere migrati. Per continuare a usare questi oggetti che non vengono migrati, è necessario ricrearli nella nuova gerarchia. Altri oggetti, tra cui alcuni dati client, vengono ricreati automaticamente nella nuova gerarchia durante la gestione dei client in tale gerarchia.  
 
-Queste modifiche non interessano i dati contenuti nel database del sito di origine. Gli oggetti migrati da una versione supportata di System Center 2012 Configuration Manager o System Center Configuration Manager non richiedono alcuna modifica.  
-
- Di seguito sono elencati gli oggetti di cui è possibile eseguire la migrazione in base alla versione di Configuration Manager nella gerarchia di origine. Alcuni oggetti, ad esempio le query, non possono essere migrati. Per continuare a usare questi oggetti che non vengono migrati, è necessario ricrearli nella nuova gerarchia. Altri oggetti, tra cui alcuni dati client, vengono ricreati automaticamente nella nuova gerarchia durante la gestione dei client in tale gerarchia.  
-
-### <a name="objects-that-you-can-migrate-from-system-center-2012-configuration-manager-or-system-center-configuration-manager-current-branch"></a>Oggetti di cui è possibile eseguire la migrazione da System Center 2012 Configuration Manager o System Center Configuration Manager Current Branch
+### <a name="objects-that-you-can-migrate-from-system-center-2012-configuration-manager-or-configuration-manager-current-branch"></a>Oggetti di cui è possibile eseguire la migrazione da System Center 2012 Configuration Manager o Configuration Manager Current Branch
 
 -   Applicazioni per System Center 2012 Configuration Manager e versioni successive  
 
@@ -63,7 +57,7 @@ Queste modifiche non interessano i dati contenuti nel database del sito di origi
 
 -   Limiti  
 
--   Raccolte: per eseguire la migrazione delle raccolte da una versione supportata di System Center 2012 Configuration Manager o System Center Configuration Manager, usare un processo di migrazione oggetti.  
+-   Raccolte: per eseguire la migrazione delle raccolte da una versione supportata di System Center 2012 Configuration Manager o Configuration Manager Current Branch, usare un processo di migrazione oggetti.  
 
 -   Impostazioni di conformità:  
 
@@ -157,8 +151,9 @@ Queste modifiche non interessano i dati contenuti nel database del sito di origi
 
 -   Pacchetti di applicazioni virtuali  
 
-##  <a name="Cannot_migrate"></a> Dati di cui non è possibile eseguire la migrazione a System Center Configuration Manager  
- Non è possibile migrare i seguenti tipi di oggetti:  
+## <a name="Cannot_migrate"></a> Dati di cui non è possibile eseguire la migrazione a Configuration Manager Current Branch
+
+Non è possibile migrare i seguenti tipi di oggetti:  
 
 -   Informazioni di provisioning client AMT  
 
@@ -176,9 +171,9 @@ Queste modifiche non interessano i dati contenuti nel database del sito di origi
 
 -   Report Web di Configuration Manager 2007  
 
--   Report di System Center 2012 Configuration Manager e System Center Configuration Manager  
+-   Report di System Center 2012 Configuration Manager e Configuration Manager Current Branch  
 
--   Amministrazione basata su ruoli di System Center 2012 Configuration Manager e System Center Configuration Manager:  
+-   Amministrazione basata su ruoli di System Center 2012 Configuration Manager e Configuration Manager Current Branch:  
 
     -   ruoli di sicurezza  
 

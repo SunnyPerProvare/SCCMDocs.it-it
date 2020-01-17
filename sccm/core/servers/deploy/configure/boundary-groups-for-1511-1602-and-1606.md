@@ -10,20 +10,19 @@ ms.assetid: dec1e0d7-5864-43a8-9f56-413923b3914e
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb769a4a48bdc6627d89cf710605cadd86376e57
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f42437987c9aaf71b09537430f042b7712e0e3f2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889161"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798993"
 ---
-# <a name="boundary-groups-for-system-center-configuration-manager-version-1511-1602-and-1606"></a>Gruppi di limiti per System Center Configuration Manager versioni 1511, 1602 e 1606
+# <a name="boundary-groups-for-configuration-manager-version-1511-1602-and-1606"></a>Gruppi di limiti per Configuration Manager versioni 1511, 1602 e 1606
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 <!-- This topic drops from TOC with the release of version 1706 -->
 
-Le informazioni contenute in questo argomento si riferiscono specificamente all'uso di gruppi di limiti con le versioni 1511, 1602 e 1606 di System Center Configuration Manager.
+Le informazioni contenute in questo argomento si riferiscono specificamente all'uso di gruppi di limiti con le versioni 1511, 1602 e 1606 di Configuration Manager.
 Se si usa la versione 1610 o successiva, vedere [Configurare gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups) per informazioni sull'uso di gruppi di limiti riprogettati.  
 
 
@@ -133,7 +132,7 @@ Quando si configurano i gruppi di limiti, uno o più limiti vengono aggiunti al 
 
 -   Le modifiche a un sito assegnato del gruppo di limiti si applicano solo alle nuove azioni di assegnazione sito. I client assegnati in precedenza a un sito non valutano nuovamente l'assegnazione in base alle modifiche apportate alla configurazione di un gruppo di limiti (o al proprio percorso di rete).  
 
-Per altre informazioni sull'assegnazione di client a un sito, vedere [Utilizzo dell'assegnazione automatica del sito per i computer](../../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_AutomaticAssignment) in [Come assegnare i client a un sito in System Center Configuration Manager](../../../../core/clients/deploy/assign-clients-to-a-site.md).  
+Per altre informazioni sull'assegnazione di client a un sito, vedere [Utilizzo dell'assegnazione automatica del sito per i computer](../../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_AutomaticAssignment) in [Come assegnare i client a un sito](../../../../core/clients/deploy/assign-clients-to-a-site.md).  
 
 ###  <a name="BKMK_BoundaryContentLocation"></a> Informazioni sul percorso del contenuto  
  È possibile configurare ogni gruppo di limiti con uno o più punti di distribuzione e punti di migrazione stato e associare questi stessi punti a più gruppi di limiti.  
@@ -154,7 +153,7 @@ Questo comportamento consente al client di selezionare il server più vicino da 
 -   Se sono configurati punti di gestione preferiti e un client organizza l'elenco dei punti di gestione, i punti di gestione preferiti vengono inseriti all'inizio dell'elenco dei punti di gestione assegnati, che include tutti i punti di gestione del sito assegnato del client.  
 
 > [!NOTE]  
->  Quando un client si sposta, come nel caso di un computer portatile spostato in una postazione remota con un nuovo percorso di rete, può usare un punto di gestione (o un punto di gestione proxy) dal sito locale nella nuova posizione prima di provare a usare un punto di gestione dal sito assegnato (che include i punti di gestione preferiti).  Per altre informazioni, vedere [Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
+>  Quando un client si sposta, come nel caso di un computer portatile spostato in una postazione remota con un nuovo percorso di rete, può usare un punto di gestione (o un punto di gestione proxy) dal sito locale nella nuova posizione prima di provare a usare un punto di gestione dal sito assegnato (che include i punti di gestione preferiti).  Per altre informazioni, vedere [Informazioni su come i client trovano i servizi e le risorse del sito per Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 
 ###  <a name="BKMK_BoundaryOverlap"></a> Informazioni sui limiti sovrapposti  
  Configuration Manager supporta le configurazioni con sovrapposizione dei limiti per il percorso del contenuto:  

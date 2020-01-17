@@ -1,7 +1,7 @@
 ---
 title: Riferimento tecnico per i controlli crittografici
 titleSuffix: Configuration Manager
-description: Questo argomento illustra come la firma e la crittografia consentono di impedire agli autori di attacchi la lettura dei dati in System Center Configuration Manager.
+description: Questo argomento illustra come la firma e la crittografia consentono di impedire agli autori di attacchi la lettura dei dati in Configuration Manager.
 ms.date: 12/08/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
@@ -9,20 +9,19 @@ ms.topic: conceptual
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: da9ec9265d8929860fa6d15d2ba3efb3eb215343
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 47acde9e784e9fd342c2a31f664e83f38b8cc080
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889276"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799285"
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Riferimento tecnico per i controlli crittografici
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
-System Center Configuration Manager usa la firma e la crittografia per proteggere la gestione dei dispositivi nella gerarchia di Configuration Manager. Con la firma, se i dati sono stati modificati in transito vengono scartati. La crittografia consente di impedire a un utente malintenzionato di leggere i dati usando uno strumento di analisi dei protocolli di rete.  
+Configuration Manager usa la firma e la crittografia per proteggere la gestione dei dispositivi nella gerarchia di Configuration Manager. Con la firma, se i dati sono stati modificati in transito vengono scartati. La crittografia consente di impedire a un utente malintenzionato di leggere i dati usando uno strumento di analisi dei protocolli di rete.  
 
  L'algoritmo hash primario usato da Configuration Manager per la firma è SHA-256. Quando due siti di Configuration Manager comunicano tra loro, firmano le comunicazioni con SHA-256. L'algoritmo di crittografia primario implementato in Configuration Manager è 3DES. Questo algoritmo viene usato per archiviare dati nel database di Configuration Manager e per la comunicazione HTTP del client. Quando si usa la comunicazione client in HTTPS, è possibile configurare l'infrastruttura a chiave pubblica (PKI) per usare i certificati RSA con gli algoritmi hash e le lunghezze di chiave massimi documentati in [Requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements).  
 

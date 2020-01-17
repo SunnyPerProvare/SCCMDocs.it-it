@@ -1,7 +1,7 @@
 ---
 title: 'Inventario hardware '
 titleSuffix: Configuration Manager
-description: Introduzione all'inventario hardware in System Center Configuration Manager
+description: Informazioni introduttive sull'inventario hardware in Configuration Manager.
 ms.date: 05/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,19 +10,18 @@ ms.assetid: 3969952e-9d05-49c9-82a2-e7e90ccef511
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ebe3414ad8db1a76761954579a7668179ee1fd74
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e5770a3b12e7b0e3d0c28d59cb27a14a7a8f7a5e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67550716"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824300"
 ---
-# <a name="introduction-to-hardware-inventory-in-system-center-configuration-manager"></a>Introduzione all'inventario hardware in System Center Configuration Manager
+# <a name="introduction-to-hardware-inventory-in-configuration-manager"></a>Introduzione all'inventario hardware in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Usare l'inventario hardware in System Center Configuration Manager per raccogliere informazioni relative alla configurazione hardware dei dispositivi client nell'organizzazione. Per raccogliere l'inventario hardware, è necessario selezionare l'impostazione **Abilitare inventario hardware nei client** nelle impostazioni client.  
+Usare l'inventario hardware in Configuration Manager per raccogliere informazioni relative alla configurazione hardware dei dispositivi client nell'organizzazione. Per raccogliere l'inventario hardware, è necessario selezionare l'impostazione **Abilitare inventario hardware nei client** nelle impostazioni client.  
 
  Dopo che l'inventario hardware è stato abilitato e il client ha eseguito un ciclo di inventario hardware, il client invia le informazioni di inventario a un punto di gestione nel sito del client. Il punto di gestione inoltra quindi le informazioni di inventario al server del sito di Configuration Manager, che archivia tali informazioni nel database del sito stesso. L'inventario hardware nei client viene eseguito in base alla pianificazione specificata nelle impostazioni client.  
 ## <a name="view-hardware-inventory"></a>Visualizzare l'inventario hardware 
@@ -42,7 +41,7 @@ Quando si esegue l'inventario hardware in un dispositivo client, i primi dati di
  Configuration Manager offre un supporto limitato per i computer ad avvio doppio. Configuration Manager può individuare i computer ad avvio doppio ma restituisce solo le informazioni di inventario relative al sistema operativo attivo al momento dell'esecuzione del ciclo di inventario.  
 
 > [!NOTE]  
->  Per informazioni su come usare l'inventario hardware con i client che eseguono Linux e UNIX, vedere [Inventario hardware per Linux e UNIX in Configuration Manager](../../../../core/clients/manage/inventory/hardware-inventory-for-linux-and-unix.md).  
+>  Per informazioni su come usare l'inventario hardware con i client che eseguono Linux e UNIX, vedere [Inventario hardware per Linux e UNIX](../../../../core/clients/manage/inventory/hardware-inventory-for-linux-and-unix.md).  
 
 ## <a name="extending-configuration-manager-hardware-inventory"></a>Estensione dell'inventario hardware di Configuration Manager  
  Oltre all'inventario hardware predefinito in Configuration Manager è possibile usare uno di questi metodi per estendere l'inventario hardware e raccogliere altre informazioni:  
@@ -53,4 +52,4 @@ Quando si esegue l'inventario hardware in un dispositivo client, i primi dati di
 
 
 ## <a name="next-steps"></a>Passaggi successivi
-Per informazioni su come usare questi metodi per estendere l'inventario hardware di Configuration Manager, vedere [How to configure hardware inventory in System Center Configuration Manager](../../../../core/clients/manage/inventory/configure-hardware-inventory.md) (Come configurare l'inventario hardware in System Center Configuration Manager).  
+Per informazioni su come usare questi metodi per estendere l'inventario hardware di Configuration Manager, vedere [Come configurare l'inventario hardware](../../../../core/clients/manage/inventory/configure-hardware-inventory.md).  

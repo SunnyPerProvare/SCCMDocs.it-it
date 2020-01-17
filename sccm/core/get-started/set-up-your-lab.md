@@ -10,17 +10,16 @@ ms.assetid: b1970688-0cd2-404f-a17f-9e2aa4a78758
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb1a527a96bcf068253f7832d67a4ee650330e49
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f633b0e62056bd1e5733a9e8c58abad4d331bb50
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71311576"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75803349"
 ---
 # <a name="set-up-a-configuration-manager-lab"></a>Configurare un lab di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Le linee guida disponibili in questo argomento consentono di configurare un ambiente lab per la valutazione di Configuration Manager tramite la simulazione di attività reali.  
 
@@ -28,9 +27,9 @@ Le linee guida disponibili in questo argomento consentono di configurare un ambi
 > Microsoft offre una versione preconfigurata di questo lab con una versione di valutazione di Configuration Manager. Per altre informazioni, vedere [Lab Kit di distribuzione di Windows e Office](https://docs.microsoft.com/microsoft-365/enterprise/modern-desktop-deployment-and-management-lab). 
 
 ##  <a name="BKMK_LabCore"></a> Componenti di base  
- L'impostazione dell'ambiente per System Center Configuration Manager richiede alcuni componenti di base per supportare l'installazione di Configuration Manager.    
+ L'impostazione dell'ambiente per Configuration Manager richiede alcuni componenti di base per supportare l'installazione di Configuration Manager.    
 
--   **L'ambiente lab usa Windows Server 2012 R2**, in cui verrà installato System Center Configuration Manager.  
+-   **L'ambiente lab usa Windows Server 2012 R2**, in cui verrà installato Configuration Manager.  
 
      È possibile scaricare una versione di valutazione di Windows Server 2012 R2 da [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012).  
 
@@ -40,7 +39,7 @@ Le linee guida disponibili in questo argomento consentono di configurare un ambi
 
      È possibile scaricare una versione di valutazione di SQL Server 2012 dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=29066).  
 
-     SQL Server ha requisiti in merito alle [versioni supportate di SQL Server](../../core/plan-design/configs/support-for-sql-server-versions.md#bkmk_SQLVersions) che devono essere soddisfatti per l'uso con System Center Configuration Manager.  
+     SQL Server ha requisiti in merito alle [versioni supportate di SQL Server](../../core/plan-design/configs/support-for-sql-server-versions.md#bkmk_SQLVersions) che devono essere soddisfatti per l'uso con Configuration Manager.  
 
     -   Configuration Manager richiede una versione a 64 bit di SQL Server per ospitare il database del sito.  
 
@@ -76,7 +75,7 @@ Le linee guida disponibili in questo argomento consentono di configurare un ambi
 
     -   Le macchine virtuali richiedono autorizzazioni locali nelle macchine stesse  
 
-Sebbene non sia necessario per questa esercitazione, è possibile esaminare [Supported configurations for System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md) (Configurazioni supportate per System Center Configuration Manager) per altre informazioni sui requisiti per l'implementazione di System Center Configuration Manager. Vedere la documentazione per le versioni di software diverse da quelle riportate di seguito.  
+Sebbene non sia necessario per questa esercitazione, è possibile vedere [Configurazioni supportate per Configuration Manager](../../core/plan-design/configs/supported-configurations.md) per altre informazioni sui requisiti per l'implementazione di Configuration Manager. Vedere la documentazione per le versioni di software diverse da quelle riportate di seguito.  
 
 Dopo aver installato tutti questi componenti, sono necessari passaggi aggiuntivi da eseguire per configurare l'ambiente di Windows per Configuration Manager:  
 
@@ -130,7 +129,7 @@ Nelle procedure successive sono elencati gli altri passaggi necessari per consen
 
 5.  Fare clic su **OK** per chiudere la console di **ADSI Edit** e completare la procedura.  
 
-     Per altre informazioni su questa procedura, vedere [Extend the Active Directory schema for System Center Configuration Manager](../../core/plan-design/network/extend-the-active-directory-schema.md) (Estendere lo schema di Active Directory per System Center Configuration Manager)  
+     Per altre informazioni su questa procedura, vedere [Estendere lo schema di Active Directory per Configuration Manager](../../core/plan-design/network/extend-the-active-directory-schema.md).  
 
 ##  <a name="BKMK_ExtADSchLab"></a> Estendere lo schema di Active Directory usando extadsch.exe  
  Per questo ambiente lab verrà esteso lo schema di Active Directory in quanto ciò consente di usare tutte le caratteristiche e le funzionalità di Configuration Manager con il minimo carico amministrativo. L'estensione dello schema di Active Directory è una configurazione a livello di foresta eseguita solo una volta per foresta. L'estensione dello schema in modo permanente modifica il set di classi e attributi nella configurazione di Active Directory di base. Questa azione è irreversibile. L'estensione dello schema consente a Configuration Manager di accedere ai componenti che ne consentono un funzionamento efficiente all'interno dell'ambiente lab.  
@@ -148,7 +147,7 @@ Nelle procedure successive sono elencati gli altri passaggi necessari per consen
 
 4.  Verificare l'esito positivo dell'estensione dello schema esaminando il file **extadsch.log** disponibile nella radice dell'unità di sistema.  
 
-     Per altre informazioni su questa procedura, vedere [Extend the Active Directory schema for System Center Configuration Manager](../../core/plan-design/network/extend-the-active-directory-schema.md) (Estendere lo schema di Active Directory per System Center Configuration Manager).  
+     Per altre informazioni su questa procedura, vedere [Estendere lo schema di Active Directory per Configuration Manager](../../core/plan-design/network/extend-the-active-directory-schema.md).  
 
 ##  <a name="BKMK_OtherTasksLab"></a> Altre attività necessarie  
  È inoltre necessario completare le attività seguenti prima dell'installazione.  
@@ -217,7 +216,7 @@ Il [Servizio trasferimento intelligente in background (BITS)](https://technet.mi
 
 Sarà necessario installare BITS per questo ambiente lab perché il server del sito verrà usato anche come punto di gestione.  
 
-Internet Information Services (IIS) è un server Web flessibile e scalabile che può essere usato per ospitare qualsiasi elemento sul Web. Viene usato da Configuration Manager per alcuni ruoli del sistema del sito. Per altre informazioni su IIS, vedere [Websites for site system servers in System Center Configuration Manager](../../core/plan-design/network/websites-for-site-system-servers.md) (Siti Web per i server di sistema del sito in System Center Configuration Manager).  
+Internet Information Services (IIS) è un server Web flessibile e scalabile che può essere usato per ospitare qualsiasi elemento sul Web. Viene usato da Configuration Manager per alcuni ruoli del sistema del sito. Per altre informazioni su IIS, vedere [Siti Web per i server del sistema del sito](../../core/plan-design/network/websites-for-site-system-servers.md).  
 
 [Compressione differenziale remota (RDC)](https://technet.microsoft.com/library/cc754372.aspx) è un set di API utilizzabili dalle applicazioni per determinare se sono state apportate modifiche a un set di file. RDC consente all'applicazione di replicare solo le parti modificate di un file, riducendo al minimo il traffico di rete.  
 
@@ -351,11 +350,11 @@ Prima di iniziare l'installazione, avviare il [controllo dei prerequisiti](/sccm
 
 #### <a name="to-download-and-install-configuration-manager"></a>Per scaricare e installare Configuration Manager:  
 
-1.  Passare alla pagina [System Center Valutazioni](https://www.microsoft.com/evalcenter/evaluate-system-center-2012-configuration-manager-and-endpoint-protection) per scaricare l'ultima versione di valutazione di System Center Configuration Manager.  
+1.  Passare alla pagina [System Center Valutazioni](https://www.microsoft.com/evalcenter/evaluate-system-center-2012-configuration-manager-and-endpoint-protection) per scaricare l'ultima versione di valutazione di Configuration Manager.  
 
 2.  Decomprimere il supporto di download nel percorso predefinito.  
 
-3.  Seguire la procedura di installazione descritta in [Install a site using the System Center Configuration Manager Setup Wizard](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites) (Installare un sito usando la configurazione guidata di System Center Configuration Manager). In questa procedura è necessario immettere quanto segue:  
+3.  Seguire la procedura di installazione descritta in [Installare un sito usando la configurazione guidata di Configuration Manager](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites). In questa procedura è necessario immettere quanto segue:  
 
     |Passaggio nella procedura di installazione del sito|Selezione|  
     |-----------------------------------------|---------------|  

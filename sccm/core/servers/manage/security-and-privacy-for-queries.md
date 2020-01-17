@@ -10,21 +10,20 @@ ms.assetid: 30080620-20d3-4c38-b8dd-db5516e1acae
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0315124b44af4359528b590bf0a6b325bfd14eb1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3bb2647f8914ed45d77c1d6718ee258f8d8f373d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67561977"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75793461"
 ---
-# <a name="security-and-privacy-for-queries-in-system-center-configuration-manager"></a>Sicurezza e privacy per le query in System Center Configuration Manager
+# <a name="security-and-privacy-for-queries-in-configuration-manager"></a>Sicurezza e privacy per le query in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-In System Center Configuration Manager le query consentono di recuperare informazioni dal database del sito in base ai criteri specificati. Configuration Manager raccoglie le informazioni del database del sito durante il funzionamento standard. Ad esempio, usando le informazioni raccolte durante l'individuazione o l'inventario, è possibile configurare una query per identificare i dispositivi che soddisfano i criteri specificati.  
+In Configuration Manager le query consentono di recuperare informazioni dal database del sito in base ai criteri specificati. Configuration Manager raccoglie le informazioni del database del sito durante il funzionamento standard. Ad esempio, usando le informazioni raccolte durante l'individuazione o l'inventario, è possibile configurare una query per identificare i dispositivi che soddisfano i criteri specificati.  
 
- Per altre informazioni sulle query, vedere [Introduzione alle query in System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md). Per informazioni sulle procedure di sicurezza consigliate e sulla privacy per le operazioni di Configuration Manager che raccolgono i dati recuperabili tramite query, vedere [Protezione e privacy per System Center Configuration Manager](../../../core/plan-design/security/security-and-privacy.md).  
+ Per altre informazioni sulle query, vedere [Introduzione alle query](../../../core/servers/manage/introduction-to-queries.md). Per informazioni sulle procedure consigliate per la sicurezza e per informazioni sulla privacy per le operazioni di Configuration Manager che raccolgono i dati recuperabili tramite query, vedere [Sicurezza e privacy per Configuration Manager](../../../core/plan-design/security/security-and-privacy.md).  
 
 ## <a name="security-best-practices-for-queries"></a>Procedure di sicurezza consigliate per le query
 
@@ -36,4 +35,4 @@ In System Center Configuration Manager le query consentono di recuperare informa
 
 ## <a name="next-steps"></a>Passaggi successivi
   
-[Sicurezza e privacy per System Center Configuration Manager](../../../core/plan-design/security/security-and-privacy.md)
+[Sicurezza e privacy per Configuration Manager](../../../core/plan-design/security/security-and-privacy.md)

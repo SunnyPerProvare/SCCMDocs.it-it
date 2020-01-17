@@ -11,17 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8f03013a7f040d9c0dacac3ac8d94bcaa37dd62
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 830f83abffac84f74fdbfaa36281a3475f8959e5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67677284"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804623"
 ---
-# <a name="capabilities-in-technical-preview-1803-for-system-center-configuration-manager"></a>Funzionalità della Technical Preview 1803 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1803-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1803 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
 Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager, versione 1803. È possibile installare questa versione per aggiornare il sito delle anteprime tecniche aggiungendovi nuove funzionalità. 
 
@@ -149,4 +148,4 @@ La versione non definitiva delle estensioni SCAP è disponibile nella cartella C
 
 
 ## <a name="next-steps"></a>Passaggi successivi
-Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview).    
+Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview).    

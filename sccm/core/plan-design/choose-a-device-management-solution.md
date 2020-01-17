@@ -10,17 +10,16 @@ ms.assetid: 24633725-791a-4df7-8dce-2c24c1a19a03
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1aec1447207d20393b0b8454851755ec85f5020
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8afe860e37f7b882f9511aaf888238206b12180d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "66264370"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802260"
 ---
 # <a name="choose-a-device-management-solution-for-configuration-manager"></a>Scegliere una soluzione di gestione dei dispositivi per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager offre diverse soluzioni per la gestione di PC, server e dispositivi. Scegliere la soluzione adatta all'organizzazione. Basare la decisione sulle piattaforme di dispositivi da gestire e sulle funzionalità di gestione necessarie.  
 
@@ -91,7 +90,7 @@ Per altre informazioni, vedere [Gestire i dispositivi mobili con Configuration M
 |Windows Embedded|Sì| | |  
 |Windows Mobile| | |Sì|  
 
-Per un elenco completo delle piattaforme supportate, vedere [Supported operating systems for clients and devices for System Center Configuration Manager](configs/supported-operating-systems-for-clients-and-devices.md) (Sistemi operativi supportati per client e dispositivi per System Center Configuration Manager).
+Per un elenco completo delle piattaforme supportate, vedere [Sistemi operativi supportati per client e dispositivi per Configuration Manager](configs/supported-operating-systems-for-clients-and-devices.md).
 
 Microsoft consiglia di usare Intune per gestire i dispositivi mobili Android, iOS e Windows 10. Per altre informazioni, vedere [Informazioni su Microsoft Intune](https://docs.microsoft.com/intune/what-is-intune).
 

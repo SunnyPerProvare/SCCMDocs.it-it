@@ -10,19 +10,18 @@ ms.assetid: fc731d3f-edd7-4049-b17b-653d6693a564
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5588afeb02ead302201cc99c8c2ad7558ec4b32e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3658a6f828a0ce79e8cc2be2a6c263873f5f7c30
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62234330"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75803076"
 ---
-# <a name="planning-to-monitor-migration-activity-in-system-center-configuration-manager"></a>Pianificazione del monitoraggio dell'attività di migrazione in System Center Configuration Manager
+# <a name="planning-to-monitor-migration-activity-in-configuration-manager"></a>Pianificazione del monitoraggio dell'attività di migrazione in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Con System Center Configuration Manager, è possibile monitorare la migrazione nella console di Configuration Manager che si connette alla gerarchia di destinazione. Nell'area di lavoro **Amministrazione** della console di Configuration Manager, è possibile usare il nodo **Migrazione** per monitorare l'avanzamento e il completamento dei processi di migrazione. È possibile visualizzare le informazioni di riepilogo per ciascun processo di migrazione in cui vengono individuati gli oggetti migrati, gli oggetti non ancora migrati e il numero di oggetti esclusi da un processo di migrazione. Verranno inoltre visualizzati dettagli relativi a eventuali problemi di migrazione.  
+Con Configuration Manager è possibile monitorare la migrazione nella console di Configuration Manager che si connette alla gerarchia di destinazione. Nell'area di lavoro **Amministrazione** della console di Configuration Manager, è possibile usare il nodo **Migrazione** per monitorare l'avanzamento e il completamento dei processi di migrazione. È possibile visualizzare le informazioni di riepilogo per ciascun processo di migrazione in cui vengono individuati gli oggetti migrati, gli oggetti non ancora migrati e il numero di oggetti esclusi da un processo di migrazione. Verranno inoltre visualizzati dettagli relativi a eventuali problemi di migrazione.  
 
 ## <a name="view-migration-progress"></a>Visualizza avanzamento della migrazione  
  Per visualizzare l'avanzamento di un processo di migrazione, eseguire una delle seguenti azioni:  
@@ -34,4 +33,4 @@ Con System Center Configuration Manager, è possibile monitorare la migrazione n
     > [!NOTE]  
     >  Se un processo di migrazione non riesce, esaminare quanto prima i dettagli nel file migmctrl.log. Le voci del registro migrazione vengono continuamente aggiunte al file e sovrascrivono le informazioni precedenti. Se le voci vengono sovrascritte, potrebbe non essere possibile individuare se eventuali problemi relativi agli oggetti migrati dipendono da problemi di migrazione. L'attività di migrazione viene registrata nel sito principale della gerarchia, indipendentemente dal sito a cui si connette la console di Configuration Manager durante la configurazione della migrazione.  
 
--   Usare la creazione di report di Configuration Manager. Configuration Manager offre vari report predefiniti per la migrazione che possono essere usati direttamente o modificati per adattarli a specifiche esigenze. Per altre informazioni sui report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+-   Usare la creazione di report di Configuration Manager. Configuration Manager offre vari report predefiniti per la migrazione che possono essere usati direttamente o modificati per adattarli a specifiche esigenze. Per altre informazioni sui report di Configuration Manager, vedere [Creazione di report](../../core/servers/manage/reporting.md).  

@@ -1,7 +1,7 @@
 ---
 title: Siti di disinstallazione
 titleSuffix: Configuration Manager
-description: Leggere queste informazioni per disinstallare un sito di System Center Configuration Manager.
+description: Usare queste informazioni dettagliate come guida per la disinstallazione di un sito di Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: d466edd2-97f0-44c1-a73e-d71abbdbf4a8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7d67657581f385d22f87ef4fd41a7b0564f66d7
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7157c2f346c4697f52df7f0c30efb25a62392213
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65501285"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75797972"
 ---
-# <a name="uninstall-sites-and-hierarchies-in-system-center-configuration-manager"></a>Disinstallare siti e gerarchie in System Center Configuration Manager
+# <a name="uninstall-sites-and-hierarchies-in-configuration-manager"></a>Disinstallare siti e gerarchie in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Leggere le informazioni dettagliate seguenti per disinstallare un sito di System Center Configuration Manager.  
+Usare queste informazioni dettagliate come guida se è necessario disinstallare un sito di Configuration Manager.  
 
 Per rimuovere le autorizzazioni da una gerarchia con più siti, la sequenza di rimozione è importante. Iniziare dalla disinstallazione dei siti dai livelli bassi della gerarchia e procedere verso i livelli alti:  
 
@@ -44,7 +43,7 @@ Non è possibile spostare o riassegnare un sito secondario a un nuovo sito prima
     Questa opzione consente di eliminare tutte le informazioni sul sito e sulle relative risorse dalla gerarchia di Configuration Manager, lasciando tuttavia installato Configuration Manager sul server del sito secondario.  
 
     > [!NOTE]  
-    >  È anche possibile usare lo strumento di manutenzione gerarchia e l'opzione **/DELSITE** per eliminare un sito secondario. Per altre informazioni, vedere [Strumento di manutenzione gerarchia (Preinst.exe) per System Center Configuration Manager](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md).  
+    >  È anche possibile usare lo strumento di manutenzione gerarchia e l'opzione **/DELSITE** per eliminare un sito secondario. Per altre informazioni, vedere [Strumento di manutenzione gerarchia (Preinst.exe) per Configuration Manager](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md).  
 
 #### <a name="to-uninstall-or-delete-a-secondary-site"></a>Per disinstallare o eliminare un sito secondario  
 
@@ -67,7 +66,7 @@ Non è possibile spostare o riassegnare un sito secondario a un nuovo sito prima
 È possibile eseguire il programma di installazione di Configuration Manager per disinstallare un sito primario che non ha un sito secondario associato. Prima di disinstallare un sito primario, tenere in considerazione quanto segue:  
 
 -   Quando i client di Configuration Manager si trovano all'interno dei limiti configurati del sito e il sito primario fa parte di una gerarchia di Configuration Manager, aggiungere tali limiti a un sito primario diverso all'interno della gerarchia prima di disinstallare il sito primario.  
--   Quando il server del sito primario non è più disponibile, è necessario usare lo strumento di manutenzione gerarchia nel sito di amministrazione centrale per eliminare il sito primario dal database del sito. Per altre informazioni, vedere [Strumento di manutenzione gerarchia (Preinst.exe) per System Center Configuration Manager](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md).  
+-   Quando il server del sito primario non è più disponibile, è necessario usare lo strumento di manutenzione gerarchia nel sito di amministrazione centrale per eliminare il sito primario dal database del sito. Per altre informazioni, vedere [Strumento di manutenzione gerarchia (Preinst.exe) per Configuration Manager](../../../../core/servers/manage/hierarchy-maintenance-tool-preinst.exe.md).  
 
 Usare la procedura seguente per disinstallare un sito primario.  
 

@@ -1,7 +1,7 @@
 ---
 title: 'Operazioni e manutenzione per la creazione di report '
 titleSuffix: Configuration Manager
-description: Informazioni dettagliate sulla gestione di report e sottoscrizioni report in System Center Configuration Manager.
+description: Informazioni dettagliate sulla gestione di report e sottoscrizioni report in Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: b89bcfbf-f5b6-4fb1-bb5e-a5cc18ec0c78
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11c9bbbab40ec593ae6455a9018502a754402385
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e0b49c234ca55b515df16c5bfd6d9324a20f20b6
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70377858"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75794614"
 ---
-# <a name="operations-and-maintenance-for-reporting-in-system-center-configuration-manager"></a>Operazioni e manutenzione per la creazione di report in System Center Configuration Manager
+# <a name="operations-and-maintenance-for-reporting-in-configuration-manager"></a>Operazioni e manutenzione per la creazione di report in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Dopo aver definito l'infrastruttura per la creazione di report in System Center Configuration Manager, è in genere necessario eseguire alcune operazioni per la gestione di report e di sottoscrizioni report.  
+Dopo aver definito l'infrastruttura per la creazione di report in Configuration Manager, è in genere necessario eseguire alcune operazioni per la gestione di report e di sottoscrizioni report.  
 
 ##  <a name="BKMK_ManageReports"></a> Gestire i report di Configuration Manager  
  Configuration Manager offre oltre 400 report predefiniti che consentono di raccogliere, organizzare e presentare informazioni su utenti, inventario software e hardware, aggiornamenti software, applicazioni, stato del sito e altre operazioni di Configuration Manager all'interno dell'azienda. È possibile utilizzare i report predefiniti come sono oppure è possibile modificare un report in base alle proprie esigenze. È anche possibile creare report personalizzati \-basati su modello e basati su SQL\- secondo le necessità. Usare le sezioni seguenti per gestire i report in Configuration Manager.  
@@ -116,7 +115,7 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 4.  Modificare le impostazioni di report appropriate in Generatore report, quindi fare clic su **Salva** per salvare il report nel server di report.  
 
 ###  <a name="BKMK_CreateModelBasedReport"></a> Creare un report basato su modello  
- Un report basato su modello consente di selezionare in modo interattivo gli elementi da includere nel report. Per altre informazioni su come creare modelli di report personalizzati, vedere [Creazione di modelli di report personalizzati per System Center Configuration Manager in SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md).  
+ Un report basato su modello consente di selezionare in modo interattivo gli elementi da includere nel report. Per altre informazioni sulla creazione di modelli di report personalizzati, vedere [Creazione di modelli di report personalizzati per Configuration Manager in SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md).  
 
 > [!IMPORTANT]  
 >  Per creare un nuovo report, l'account utente deve disporre di autorizzazioni di **modifica del sito** . L'utente può creare un report solo nelle cartelle per cui dispone di autorizzazioni di tipo **Modifica report** .  

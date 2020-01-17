@@ -1,7 +1,7 @@
 ---
 title: Nozioni fondamentali sulla gestione dei dispositivi
 titleSuffix: Configuration Manager
-description: Informazioni su come usare System Center Configuration Manager per gestire i dispositivi.
+description: Informazioni su come usare Configuration Manager per gestire i dispositivi.
 ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,17 +10,16 @@ ms.assetid: 2bca3db9-115a-451d-8c93-f073ceefe0c7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f12e2b8ac59fa30370a2c4640d8cac295a6eda74
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1002b3b822cde70970b8b533d4cd1552cd081f10
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68956281"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75792162"
 ---
 # <a name="fundamentals-of-managing-devices-with-configuration-manager"></a>Nozioni fondamentali sulla gestione dei dispositivi con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager è in grado di gestire due ampie categorie di dispositivi:
 

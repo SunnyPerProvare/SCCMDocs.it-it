@@ -2,7 +2,7 @@
 title: Note sulla versione
 titleSuffix: Configuration Manager
 description: Informazioni su problemi urgenti non ancora risolti nel prodotto o trattati in un articolo della Knowledge Base del supporto tecnico Microsoft.
-ms.date: 12/03/2019
+ms.date: 12/20/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,13 +10,12 @@ ms.assetid: 030947fd-f5e0-4185-8513-2397fb2ec96f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 48decd20e6a77657e4ba6ac1e074e3068b69ef12
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f6eaebf71fb9f03c5ed27157ed23a67cf10dc715
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74813482"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75798070"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Note sulla versione per Configuration Manager
 
@@ -200,7 +199,7 @@ Questi dispositivi **non definiti** sono **aggiornati** con la versione di desti
 
 <!-- 5771680 -->
 
-*Si applica alla versione 1906, 1910*
+*Si applica alle versioni 1906, 1910 anello di aggiornamento anticipato*
 
 Se si abilita un gateway di gestione cloud in modo che **funzioni come punto di distribuzione cloud e gestisca i contenuti di Archiviazione di Azure** ed **Enforce TLS 1.2**, è possibile che il download dei contenuti non riesca.
 
@@ -220,4 +219,8 @@ Nel file CMGContentService.log del server verranno riportati gli errori seguenti
 ERROR: Exception processing request. Microsoft.WindowsAzure.Storage.StorageException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.ComponentModel.Win32Exception: The client and server cannot communicate, because they do not possess a common algorithm...
 ```
 
-Per ovviare a questo problema, usare un [punto di distribuzione cloud](/configmgr/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) tradizionale. Tale ruolo non impone l'uso di TLS 1.2, ma è compatibile con i client che richiedono TLS 1.2.
+Come soluzione alternativa a questo problema:
+
+- Aggiornare il sito alla versione disponibile a livello globale 1910, rilasciata il 20 dicembre 2019. Se in precedenza è stato eseguito l'aggiornamento all'anello di aggiornamento anticipato della versione 1910, è necessario eseguire l'aggiornamento a questa build quando è disponibile.
+
+- In alternativa, usare un [punto di distribuzione cloud](/configmgr/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) tradizionale. Tale ruolo non impone l'uso di TLS 1.2, ma è compatibile con i client che richiedono TLS 1.2.

@@ -1,7 +1,7 @@
 ---
 title: Trovare risorse del sito
 titleSuffix: Configuration Manager
-description: Informazioni su come e quando i client di System Center Configuration Manager usano la posizione del servizio per trovare le risorse del sito.
+description: Informazioni su come e quando i client di Configuration Manager usano la posizione del servizio per trovare le risorse del sito.
 ms.date: 02/7/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: ae72df4b-5f5d-4e19-9052-bda28edfbace
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e24460cb7acaaa715d21d49bd1e1f37fe270253c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d5269460d26819a1f901a5c1d7ea892af2872600
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70891183"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799625"
 ---
-# <a name="learn-how-clients-find-site-resources-and-services-for-system-center-configuration-manager"></a>Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager
+# <a name="learn-how-clients-find-site-resources-and-services-for-configuration-manager"></a>Informazioni su come i client trovano i servizi e le risorse del sito per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-I client di System Center Configuration Manager usano un processo denominato *posizione del servizio* per individuare i server del sistema del sito con cui possono comunicare e che offrono i servizi che i client devono usare. Se si comprende come e quando i client usano la posizione del servizio per trovare le risorse del sito, è possibile configurare i siti in modo da supportare correttamente le attività client. Queste configurazioni possono richiedere l'interazione del sito con configurazioni di rete e di dominio come Active Directory Domain Services e DNS. In alternativa possono richiedere la configurazione di soluzioni alternative più complesse.  
+I client di Configuration Manager usano un processo denominato *posizione del servizio* per individuare i server del sistema del sito con cui possono comunicare e che offrono i servizi che i client devono usare. Se si comprende come e quando i client usano la posizione del servizio per trovare le risorse del sito, è possibile configurare i siti in modo da supportare correttamente le attività client. Queste configurazioni possono richiedere l'interazione del sito con configurazioni di rete e di dominio come Active Directory Domain Services e DNS. In alternativa possono richiedere la configurazione di soluzioni alternative più complesse.  
 
 Ecco alcuni esempi di ruoli del sistema del sito che forniscono servizi:
 
@@ -49,9 +48,9 @@ Ecco alcuni esempi di ruoli del sistema del sito che forniscono servizi:
 
 **Quando un client tenta di individuare i server che ospitano i ruoli del sistema del sito**, usa la posizione del servizio per individuare un ruolo del sistema del sito che supporta il protocollo del client (HTTP o HTTPS). Per impostazione predefinita, i client utilizzano il metodo più sicuro a loro disposizione. Considerare quanto segue:  
 
-- Per usare HTTPS, è necessario disporre di un'infrastruttura a chiave pubblica (PKI) e installare i certificati PKI sui client e sui server. Per informazioni sull'uso dei certificati, vedere [PKI certificate requirements for System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md) (Requisiti dei certificati PKI per System Center Configuration Manager).  
+- Per usare HTTPS, è necessario disporre di un'infrastruttura a chiave pubblica (PKI) e installare i certificati PKI sui client e sui server. Per informazioni sulle modalità di utilizzo dei certificati, vedere [Requisiti dei certificati PKI per Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
 
-- Quando si distribuisce un ruolo del sistema del sito che usa Internet Information Services (IIS) e supporta le comunicazioni dai client, è necessario specificare se i client si connettono al sistema del sito tramite HTTP o HTTPS. Se si usa HTTP, è necessario considerare anche le opzioni di firma e crittografia. Per altre informazioni, vedere [Pianificazione di firma e crittografia](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForSigningEncryption) in [Pianificare la sicurezza in System Center Configuration Manager](../../../core/plan-design/security/plan-for-security.md).  
+- Quando si distribuisce un ruolo del sistema del sito che usa Internet Information Services (IIS) e supporta le comunicazioni dai client, è necessario specificare se i client si connettono al sistema del sito tramite HTTP o HTTPS. Se si usa HTTP, è necessario considerare anche le opzioni di firma e crittografia. Per altre informazioni, vedere [Pianificazione di firma e crittografia](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForSigningEncryption) in [Pianificare la sicurezza](../../../core/plan-design/security/plan-for-security.md).  
 
 ##  <a name="BKMK_Plan_Service_Location"></a> Posizione del servizio e modo in cui i client determinano il relativo punto di gestione assegnato  
 Quando un client viene assegnato per la prima volta a un sito primario, seleziona un punto di gestione predefinito per tale sito. I siti primari supportano più punti di gestione e ogni client identifica in modo indipendente un punto di gestione come proprio punto di gestione predefinito. Questo punto di gestione predefinito diventa quindi il punto di gestione assegnato di tale client. È anche possibile usare i comandi di installazione client per impostare il punto di gestione assegnato per un client al momento dell'installazione.  
@@ -158,7 +157,7 @@ Quando un sito pubblica i record di individuazione del servizio per i punti di g
 
 Per impostazione predefinita, i client aggiunti a un dominio cercano in DNS i record dei punti di gestione provenienti dal dominio locale del client. È possibile configurare una proprietà client che specifica un suffisso di dominio per un dominio in cui le informazioni relative ai punti di gestione vengono pubblicate in DNS.  
 
-Per altre informazioni su come configurare la proprietà client del suffisso DNS, vedere [How to configure client computers to find management points by using DNS publishing in System Center Configuration Manager](../../../core/clients/deploy/configure-client-computers-to-find-management-points-by-using-dns-publishing.md) (Come configurare i computer client per individuare i punti di gestione tramite la pubblicazione DNS in System Center Configuration Manager).  
+Per altre informazioni su come configurare la proprietà client del suffisso DNS, vedere [Come configurare i computer client per trovare i punti di gestione usando la pubblicazione DNS](../../../core/clients/deploy/configure-client-computers-to-find-management-points-by-using-dns-publishing.md).  
 
 Se un client non trova un punto di gestione da usare per la posizione del servizio in DNS, tenta di usare WINS.  
 
@@ -171,7 +170,7 @@ Per pubblicare punti di gestione in DNS, devono verificarsi le due condizioni se
 > [!IMPORTANT]  
 > La pubblicazione DNS in Configuration Manager non supporta uno spazio dei nomi indipendente. Se si ha uno spazio dei nomi indipendente, è possibile pubblicare manualmente i punti di gestione in DNS o usare uno degli altri metodi alternativi di individuazione del servizio documentati in questa sezione.  
 
-**Quando i server DNS supportano gli aggiornamenti automatici**, è possibile configurare Configuration Manager per la pubblicazione automatica dei punti di gestione della Intranet in DNS oppure per la pubblicazione manuale di tali record in DNS. Quando i punti di gestione vengono pubblicati in DNS, il nome FQDN Intranet e il numero di porta corrispondenti sono pubblicati nel record di individuazione del servizio (SRV). La pubblicazione DNS in un sito viene configurata nelle proprietà del componente del punto di gestione dei siti. Per altre informazioni, vedere [Site components for System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md) (Componenti del sito per System Center Configuration Manager).  
+**Quando i server DNS supportano gli aggiornamenti automatici**, è possibile configurare Configuration Manager per la pubblicazione automatica dei punti di gestione della Intranet in DNS oppure per la pubblicazione manuale di tali record in DNS. Quando i punti di gestione vengono pubblicati in DNS, il nome FQDN Intranet e il numero di porta corrispondenti sono pubblicati nel record di individuazione del servizio (SRV). La pubblicazione DNS in un sito viene configurata nelle proprietà del componente del punto di gestione dei siti. Per altre informazioni, vedere [Componenti del sito per Configuration Manager](../../../core/servers/deploy/configure/site-components.md).  
 
 **Quando la zona DNS è impostata su "Secure only" (Solo protetti) per gli aggiornamenti dinamici**, solo il primo punto di gestione da pubblicare in DNS riesce a eseguire correttamente l'operazione con le autorizzazioni predefinite.
 

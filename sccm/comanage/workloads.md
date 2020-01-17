@@ -10,13 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 4c90befe-9c4e-4c27-a947-625887e15052
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99ef87c6317cd1284cf692196fa50ffdae3aca52
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 345d0be107a2ea68cf4d7e662b43e41181031be5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74658830"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816667"
 ---
 # <a name="co-management-workloads"></a>Carichi di lavoro con co-gestione
 
@@ -118,7 +117,7 @@ Usare Intune per gestire le app client e gli script di PowerShell in dispositivi
 Per altre informazioni sulla funzionalità Intune, vedere [Informazioni sulla gestione delle app in Microsoft Intune](https://docs.microsoft.com/intune/app-management).
 
 > [!Note]  
-> Il carico di lavoro delle app client è una funzionalità non definitiva. Per abilitarla, vedere [Funzionalità di versioni non definitive in System Center Configuration Manager](/sccm/core/servers/manage/pre-release-features).  
+> Il carico di lavoro delle app client è una funzionalità non definitiva. Per abilitarla, vedere [Funzionalità di versioni non definitive in System Center Configuration Manager](/sccm/core/servers/manage/pre-release-features). Questa funzionalità può essere visualizzata nell'elenco di funzionalità come **App per dispositivi mobili per dispositivi con co-gestione**.<!-- 5849669 -->
 
 A partire dalla versione 1910, quando si abilita Microsoft Connected Cache nei punti di distribuzione di Configuration Manager, questi possono essere usati per gestire le app Win32 di Microsoft Intune nei client con co-gestione. Per altre informazioni, vedere [Microsoft Connected Cache in Configuration Manager](/configmgr/core/plan-design/hierarchy/microsoft-connected-cache#bkmk_intune).
 

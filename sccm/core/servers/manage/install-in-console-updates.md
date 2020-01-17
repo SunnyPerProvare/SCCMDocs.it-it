@@ -10,13 +10,12 @@ ms.assetid: c14a3607-253b-41fb-8381-ae2d534a9022
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 944b502c2c4ae258cef693f7bc3f59ed22917fd9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a1abddbd886d3bf4374219b7a6174d67d4ff8b81
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74661244"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033377"
 ---
 # <a name="install-in-console-updates-for-configuration-manager"></a>Installare gli aggiornamenti nella console per Configuration Manager
 
@@ -46,8 +45,6 @@ Al termine della sincronizzazione degli aggiornamenti, visualizzarli nella conso
 Prima di configurare il punto di connessione del servizio, esaminare e pianificare i relativi usi aggiuntivi. Gli usi riportati di seguito possono influire sulla modalità di configurazione di questo ruolo del sistema del sito:  
 
 - Il sito usa il punto di connessione del servizio per caricare le informazioni di utilizzo relative al sito. Queste informazioni consentono al servizio cloud di Microsoft di identificare gli aggiornamenti disponibili per la versione corrente dell'infrastruttura. Per altre informazioni, vedere [Diagnostica e dati di utilizzo](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data).  
-
-- Il sito usa il punto di connessione del servizio per gestire i dispositivi con Microsoft Intune e con la gestione dei dispositivi mobili locale di Configuration Manager. Per altre informazioni, vedere l'articolo relativo alla [gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).  
 
 Per comprendere meglio ciò che accade quando vengono scaricati gli aggiornamenti, vedere i diagrammi di flusso seguenti:  
 
@@ -407,10 +404,9 @@ Le funzionalità seguenti sono facoltative nella versione più recente di Config
 - [Gruppi di applicazioni](/sccm/apps/deploy-use/create-app-groups) <!--3555907,EE16A1D8-EF1B-4094-845F-AC107E7C621D-->
 - [Debugger di sequenze di attività](/sccm/osd/deploy-use/debug-task-sequence) <!--3612274,C3F37661-69E4-4D53-A39C-5D02F97E0E71-->
 - [Package Conversion Manager](/sccm/apps/pcm/package-conversion-manager) <!--1357861,4E0C09AF-7FC1-4412-A8BB-166D9BCD0093-->
-- [App client per dispositivi con co-gestione](/sccm/comanage/workloads#client-apps) <!--1357892,CC3AE625-BF72-49B1-8AB1-AF0DCF2D6F4C-->
+- [App client per dispositivi con co-gestione](/sccm/comanage/workloads#client-apps) (precedentemente note come *App per dispositivi mobili per dispositivi con co-gestione*) <!--1357892,CC3AE625-BF72-49B1-8AB1-AF0DCF2D6F4C-->
 - [Aggiornamenti software di terze parti ](/sccm/sum/deploy-use/third-party-software-updates)<!--1357605,1352101,1358714;B5E192AE-C81F-4348-9EF9-07A3C0FBE597-->
 - [Approva le richieste dell'applicazione per gli utenti per ogni dispositivo](/sccm/apps/deploy-use/deploy-applications#bkmk_deploy-settings) <!--1357015,4BA987C9-08FC-48E2-BFFE-C9DCF35B496A-->  
-- [Valutazione Attestazione dell'integrità del dispositivo per i criteri di conformità per l'accesso condizionale](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) <!--1235616,0E986DC1-D20A-4386-9EB5-108D9D5118EB-->
 - [Crea ed esegui script](/sccm/apps/deploy-use/create-deploy-scripts) <!--1236459,566F8720-F415-4E10-9A51-CDE682BA2B2E-->
 - [Aggiornamenti driver di Surface](/sccm/sum/get-started/configure-classifications-and-products) <!--1098490,82AD973A-7CDF-4B67-A665-72875D6E099A-->
 - [Gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) <!--1101764,DD043119-789C-4158-AC79-725E999F385A-->
@@ -420,7 +416,6 @@ Le funzionalità seguenti sono facoltative nella versione più recente di Config
 - [VPN per Windows 10](/sccm/protect/deploy-use/vpn-profiles) <!--1283610,EDBEBA3D-3A4D-4465-84D9-D71EB811E7F6-->
 - [Manutenzione di una raccolta compatibile con cluster (gruppi di server)](/sccm/sum/deploy-use/service-a-server-group) <!--1081776,290B66D8-C735-4895-B59A-DD732D84A697-->
 - [Windows Hello for Business](/sccm/protect/deploy-use/windows-hello-for-business-settings) (noto in precedenza come *Passport for Work*) <!--1245704,8BCA2642-3719-4862-A355-9D39C979E1B4-->
-- [Accesso condizionale per i computer gestiti](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)  <!--1191496,1CD5B9FC-022E-4A78-89F5-DEA58B6F5050-->
 
 > [!Tip]  
 > Per altre informazioni sulle funzionalità che richiedono il consenso per l'abilitazione, vedere [Funzionalità di versioni non definitive](/sccm/core/servers/manage/pre-release-features).  

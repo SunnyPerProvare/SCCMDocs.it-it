@@ -11,17 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 021f52cfa4404476ecf836b3e2bfaaba8907e5f3
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: e8487e2d73ad6fc85cb675ee01db05adf11e16d8
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198558"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75804419"
 ---
-# <a name="capabilities-in-technical-preview-1806-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1806 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1806-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1806 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
 Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager, versione 1806. È possibile installare questa versione per aggiornare il sito delle anteprime tecniche aggiungendovi nuove funzionalità. 
 
@@ -69,7 +68,7 @@ Questa versione esegue un'ulteriore iterazione sul supporto per gli aggiornament
 
 I seguenti cataloghi di aggiornamento software di terze parti sono disponibili in questa versione:
 
- | Publisher | Nome catalogo |
+ | Pubblicazione | Nome catalogo |
  |--------|---------------------|
  | HP | Catalogo degli aggiornamenti client di HP |
 
@@ -359,4 +358,4 @@ In [Configuration Manager versione 1710](/sccm/core/plan-design/changes/whats-ne
 
 
 ## <a name="next-steps"></a>Passaggi successivi
-Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview).    
+Per informazioni sull'installazione o l'aggiornamento del ramo Technical Preview, vedere [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview).    

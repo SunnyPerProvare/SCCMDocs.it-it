@@ -10,17 +10,16 @@ ms.assetid: ed931751-18f2-4230-a09e-a0a329fbfa1c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 21183b620b8161056377bb7fc6e86bde79f31767
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 91936216304dd3da8c30bb11137536edc82823d4
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68860087"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799115"
 ---
-# <a name="about-discovery-methods-for-system-center-configuration-manager"></a>Informazioni sui metodi di individuazione per System Center Configuration Manager
+# <a name="about-discovery-methods-for-configuration-manager"></a>Informazioni sui metodi di individuazione per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 I metodi di individuazione di Configuration Manager consentono di individuare vari dispositivi nella rete, dispositivi e utenti in Active Directory o utenti in Azure Active Directory (Azure AD). Per usare un metodo di individuazione in modo efficiente, è importante conoscere le configurazioni disponibili e le rispettive limitazioni.  
 
@@ -359,7 +358,7 @@ Specificare ciascun server DHCP in cui si desidera che Individuazione di rete es
 
 -   Quando Individuazione di rete enumera un server DHCP, non vengono sempre rilevati indirizzi IP statici. Individuazione di rete non individua né indirizzi IP appartenenti a un intervallo di indirizzi IP escluso nel server DHCP né indirizzi IP riservati all'assegnazione manuale.  
 
-#### <a name="domains"></a>Domini  
+#### <a name="domains"></a>Domains  
 
 Specificare ciascun dominio in cui si desidera che Individuazione di rete esegua le query.  
 

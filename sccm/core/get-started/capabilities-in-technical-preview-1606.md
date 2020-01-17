@@ -1,7 +1,7 @@
 ---
 title: Funzionalità nella Technical Preview 1606
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1606 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1606 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 135589a924e62cf4eed592fe339780cf138c410d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 10ce7ff5a95a1e931a1d5b3d048e9e841b8abf6f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889689"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75805184"
 ---
-# <a name="capabilities-in-technical-preview-1606-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1606 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1606-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1606 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1606 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1606. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview per Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
 **Problemi noti di questa versione Technical Preview:**  
 *  Quando si esegue l'aggiornamento dalla versione Technical Preview 1604 alla 1605 e quindi alla 1606, l'aggiornamento potrebbe non riuscire e si potrebbe ottenere la registrazione di un errore simile al seguente in **cmupdate.log**:
@@ -111,7 +110,7 @@ Letture di approfondimento:
 
 2.  Registrare un dispositivo Windows 10 Anniversary Update per Gestione dispositivi mobili locali.  
 
-Per informazioni su come preparare il sito e registrare i dispositivi per Gestione dispositivi mobili locali, vedere [Manage mobile devices with on-premises infrastructure in System Center Configuration Manager](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md) (Gestione dei dispositivi mobili con infrastruttura locale in System Center Configuration Manager).  
+Per informazioni su come preparare il sito e registrare i dispositivi per Gestione dispositivi mobili locali, vedere [Gestire i dispositivi mobili con infrastruttura locale](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md).  
 
 ## <a name="cloud_proxy"></a>Servizio proxy cloud per la gestione dei client su Internet
 
@@ -201,7 +200,7 @@ Assicurarsi di copiare l'ID sottoscrizione associato al certificato di gestione.
 
 #### <a name="add-the-cloud-proxy-connector-point"></a>Aggiungere il punto di connessione del proxy cloud
 
-Il punto di connessione del proxy cloud è un nuovo ruolo del sistema del sito per la comunicazione con il servizio proxy cloud. Per aggiungere il punto di connessione del proxy cloud seguire le istruzioni in [Add site system roles for System Center Configuration Manager](../../core/servers/deploy/configure/add-site-system-roles.md) (Aggiungere ruoli del sistema del sito per System Center Configuration Manager).
+Il punto di connessione del proxy cloud è un nuovo ruolo del sistema del sito per la comunicazione con il servizio proxy cloud. Per aggiungere il punto di connessione del proxy cloud seguire le istruzioni in [Aggiungere ruoli del sistema del sito per Configuration Manager](../../core/servers/deploy/configure/add-site-system-roles.md).
 
 #### <a name="configure-roles-for-cloud-proxy-traffic"></a>Configurare i ruoli per il traffico del proxy cloud
 
@@ -226,7 +225,7 @@ Per altre informazioni, vedere [Manage Office 365 ProPlus updates](https://techn
 
 ### <a name="set-the-configuration-manager-client-setting-to-manage-the-office-365-client-agent"></a>Definire l'impostazione del client di Configuration Manager per gestire l'agente client di Office 365
 1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Panoramica** > **Impostazioni client**.
-2. Aprire le impostazioni del dispositivo appropriato per abilitare l'agente client. Per altre informazioni sulle impostazioni client predefinite e personalizzate, vedere [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md) (Come configurare le impostazioni client in System Center Configuration Manager).
+2. Aprire le impostazioni del dispositivo appropriato per abilitare l'agente client. Per altre informazioni su come configurare le impostazioni client predefinite e personalizzate, vedere [Come configurare le impostazioni client](../../core/clients/deploy/configure-client-settings.md).
 3. Fare clic su **Aggiornamenti software** e selezionare **Sì** per l'impostazione **Abilita la gestione dell'agente client di Office 365**.  
 
 

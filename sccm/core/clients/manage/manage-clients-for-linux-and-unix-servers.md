@@ -10,17 +10,16 @@ ms.assetid: 948664f2-239d-47a8-92fc-f8efeebd5796
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 32e7a643c98fc8a6bd4baccda703146816930367
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 716441bd146e9172b3f183c497fcaa4036ad0084
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62214570"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824164"
 ---
 # <a name="how-to-manage-clients-for-linux-and-unix-servers-in-configuration-manager"></a>Come gestire i client per i server Linux e UNIX in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 > [!Important]  
 > A partire dalla versione 1902, Configuration Manager non supporta i client Linux o UNIX. 
@@ -46,7 +45,7 @@ Quando si gestiscono server Linux e UNIX con Configuration Manager, è possibile
 
   Per impostazione predefinita i server Linux e UNIX sono membri della raccolta **Tutti i sistemi** . È consigliabile creare raccolte personalizzate che includono solo i server Linux e UNIX o un loro subset. Le raccolte personalizzate consentono di gestire operazioni quali la distribuzione del software o l'assegnazione di impostazioni client ai gruppi di computer applicabili, in modo da poter misurare con precisione l'esito di una distribuzione.   
 
-  Quando si crea una raccolta personalizzata per server Linux e UNIX, includere le query relative alle regole di appartenenza contenenti l'attributo Didascalia per l'attributo Sistema operativo. Per informazioni sulla creazione delle raccolte, vedere [Come creare le raccolte in System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md).  
+  Quando si crea una raccolta personalizzata per server Linux e UNIX, includere le query relative alle regole di appartenenza contenenti l'attributo Didascalia per l'attributo Sistema operativo. Per informazioni sulla creazione delle raccolte, vedere [Come creare le raccolte](../../../core/clients/manage/collections/create-collections.md).  
 
 ##  <a name="BKMK_MaintenanceWindowsforLnU"></a> Finestre di manutenzione per server Linux e UNIX  
  Il client di Configuration Manager per i server Linux e UNIX supporta l'uso di [finestre di manutenzione](../../../core/clients/manage/collections/use-maintenance-windows.md). Questo supporto è lo stesso dei client basati su Windows.  

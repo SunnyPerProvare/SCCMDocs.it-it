@@ -1,7 +1,7 @@
 ---
 title: Gestire la larghezza di banda della rete per il contenuto
 titleSuffix: Configuration Manager
-description: Configurare la pianificazione, la limitazione della larghezza di banda della rete e il contenuto pre-installato per System Center Configuration Manager.
+description: Configurare la pianificazione, la limitazione della larghezza di banda della rete e il contenuto pre-installato per Configuration Manager.
 ms.date: 02/6/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,16 +10,15 @@ ms.assetid: e80d1151-91db-4a27-8411-a957297b67d0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15dfd5d1ba7f19832f3a25faf4a8bd0bb6c9fd34
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: a3016e2bd513ec19e16a185283e5d871ee2b040e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70891175"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75800016"
 ---
 # <a name="manage-network-bandwidth-for-content"></a>Gestire la larghezza di banda della rete per il contenuto
-Per gestire più facilmente la larghezza di banda della rete usata per il processo di gestione del contenuto di System Center Configuration Manager, è possibile usare i controlli predefiniti per la pianificazione e la limitazione della larghezza di banda della rete. È inoltre possibile usare contenuto pre-installato. Le sezioni seguenti includono informazioni più dettagliate su queste opzioni.
+Per gestire più facilmente la larghezza di banda della rete usata per il processo di gestione del contenuto di Configuration Manager, è possibile usare i controlli predefiniti per la pianificazione e la limitazione della larghezza di banda della rete. È inoltre possibile usare contenuto pre-installato. Le sezioni seguenti includono informazioni più dettagliate su queste opzioni.
 
 ##  <a name="BKMK_PlanningForThrottling"></a>Pianificazione e limitazione della larghezza di banda della rete  
 
@@ -34,7 +33,7 @@ Per gestire più facilmente la larghezza di banda della rete usata per il proces
 > [!IMPORTANT]  
 >  Le schede **Limiti di velocità** e **Pianifica** vengono visualizzate solo nelle proprietà dei punti di distribuzione che non sono installati in un server del sito.  
 
-Per altre informazioni, vedere [Installare e configurare punti di distribuzione per System Center Configuration Manager](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points).  
+Per altre informazioni, vedere [Installare e configurare punti di distribuzione per Configuration Manager](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points).  
 
 ##  <a name="BKMK_PrestagingContent"></a>Contenuto pre-installato  
  Prima di distribuire il contenuto, è possibile pre-installarlo in modo da aggiungere i file alla raccolta contenuto in un server del sito o in un punto di distribuzione. Poiché si trovano già nella raccolta, i file di contenuto non vengono trasferiti attraverso la rete quando si distribuisce il contenuto. È possibile pre-installare i file di contenuto per applicazioni e pacchetti.  
@@ -69,4 +68,4 @@ Facoltativamente, è possibile configurare il punto di distribuzione come **pre-
     > [!IMPORTANT]  
     >  Le opzioni precedenti sono applicabili in base al pacchetto e vengono usate solo quando un punto di distribuzione è identificato come pre-installato. I punti di distribuzione che non sono stati identificati come pre-installati ignorano queste impostazioni. In questo caso, il contenuto sempre viene distribuito in rete dal server del sito ai punti di distribuzione.  
 
--   **Ripristinare la raccolta contenuto in un server del sito.** Quando un server del sito restituisce un errore, le informazioni sui pacchetti e le applicazioni contenute nella raccolta contenuto vengono ripristinate nel database del sito come parte del processo di ripristino, ma i file della raccolta contenuto non vengono ripristinati come parte del processo. Se non si ha un backup del file system per ripristinare la raccolta contenuto, è possibile creare un file di contenuto pre-installato da un altro sito che contiene i pacchetti e le applicazioni necessari. È quindi possibile estrarre il file di contenuto pre-installato sul server del sito ripristinato. Per altre informazioni sul backup e il ripristino del server del sito, vedere [Backup e ripristino per System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery).  
+-   **Ripristinare la raccolta contenuto in un server del sito.** Quando un server del sito restituisce un errore, le informazioni sui pacchetti e le applicazioni contenute nella raccolta contenuto vengono ripristinate nel database del sito come parte del processo di ripristino, ma i file della raccolta contenuto non vengono ripristinati come parte del processo. Se non si ha un backup del file system per ripristinare la raccolta contenuto, è possibile creare un file di contenuto pre-installato da un altro sito che contiene i pacchetti e le applicazioni necessari. È quindi possibile estrarre il file di contenuto pre-installato sul server del sito ripristinato. Per altre informazioni sul backup e il ripristino del server del sito, vedere [Backup e ripristino per Configuration Manager](/sccm/protect/understand/backup-and-recovery).  

@@ -10,17 +10,16 @@ ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: af59b3ea1dfefcf0ae0e4919229b77b633819657
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8ddaf7be7d5e769f36b9b5a547bf683909b278f2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71401663"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802549"
 ---
 # <a name="whats-new-in-version-1902-of-configuration-manager-current-branch"></a>Novità della versione 1902 di Configuration Manager Current Branch
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 L'aggiornamento 1902 per Configuration Manager Current Branch è disponibile come aggiornamento nella console. Applicare questo aggiornamento ai siti con la versione 1802, 1806 o 1810. <!-- baseline only statement:-->Quando si installa un nuovo sito, è disponibile anche come versione di base. Questo articolo offre un riepilogo delle modifiche e delle nuove funzionalità di Configuration Manager versione 1902.  
 
@@ -352,7 +351,7 @@ Usare Configuration Manager per spostare le cartelle note di Windows in OneDrive
 
 Per altre informazioni su questa funzionalità di OneDrive for Business, vedere [Reindirizzare e spostare le cartelle note di Windows su OneDrive](https://docs.microsoft.com/onedrive/redirect-known-folders).
 
-Prima di tutto, [trovare l'ID tenant di Office 365](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id). Distribuire quindi il client di sincronizzazione di OneDrive versione 18.111.0603.0004 o successiva. Per altre informazioni, vedere [Distribuire le app OneDrive mediante System Center Configuration Manager](https://docs.microsoft.com/onedrive/deploy-on-windows).  
+Prima di tutto, [trovare l'ID tenant di Office 365](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id). Distribuire quindi il client di sincronizzazione di OneDrive versione 18.111.0603.0004 o successiva. Per altre informazioni, vedere [Distribuire le app OneDrive mediante Configuration Manager](https://docs.microsoft.com/onedrive/deploy-on-windows).  
 
 Per creare e distribuire un profilo di OneDrive for Business, nella console di Configuration Manager passare all'area di lavoro **Asset e conformità**. Espandere **Impostazioni di conformità** e selezionare il nodo **Profili di OneDrive for Business**.  
 

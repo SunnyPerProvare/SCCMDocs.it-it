@@ -1,7 +1,7 @@
 ---
 title: Funzionalità nella Technical Preview 1511
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1511 per System Center Configuration Manager.
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1511 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,19 +11,18 @@ author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a24f33e9cef10df9ba329958e4cf93db838b5969
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f6b58acab889d9986b183988f9821a0bd91723c0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70378035"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75805303"
 ---
-# <a name="capabilities-in-technical-preview-1511-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1511 per System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1511-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1511 per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Technical Preview)*
+*Si applica a: Configuration Manager (Technical Preview Branch)*
 
-Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1511 per System Center Configuration Manager. Questa versione è un'installazione di base per la Technical Preview che è possibile usare per installare un nuovo sito Technical Preview o per eseguire l'aggiornamento da una Technical Preview precedente.   Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](/sccm/core/get-started/technical-preview) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.  
+Questo articolo presenta le funzionalità disponibili nella Technical Preview per Configuration Manager versione 1511. Questa versione è un'installazione di base per la Technical Preview che è possibile usare per installare un nuovo sito Technical Preview o per eseguire l'aggiornamento da una Technical Preview precedente.   Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview per Center Configuration Manager](/sccm/core/get-started/technical-preview) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire commenti e suggerimenti sulle funzionalità di una versione Technical Preview.  
 
 Di seguito sono riportate le nuove funzionalità disponibili con questa versione.  
 
@@ -51,7 +50,7 @@ Per i computer connessi tramite WUfB, Configuration Manager non potrà segnalare
 
 5.  Lo stato di conformità dei computer gestiti tramite WUfB sarà **Sconosciuto** e quindi questi non verranno conteggiati come parte della percentuale di conformità complessiva.  
 
-##  <a name="BKMK_Office365ProPlus"></a> Gestione dell'aggiornamento del client Office 365 ProPlus tramite System Center Configuration Manager  
+##  <a name="BKMK_Office365ProPlus"></a> Gestione dell'aggiornamento del client Office 365 ProPlus tramite Configuration Manager  
  Configuration Manager ora consente di gestire gli aggiornamenti dei client per desktop di Office 365 usando il flusso di lavoro Gestione aggiornamenti software di Configuration Manager.    
 Quando Microsoft pubblica un nuovo aggiornamento dei client per desktop di Office 365 in Windows Server Updates Services (WSUS), Configuration Manager potrà sincronizzare l'aggiornamento con il relativo catalogo se l'aggiornamento di Office 365 è configurato come parte della sincronizzazione del catalogo.  Il server del sito di Configuration Manager scaricherà gli aggiornamenti del client di Office 365 e distribuirà il pacchetto ai punti di distribuzione di Configuration Manager.  Il client di Configuration Manager indicherà quindi ai client per desktop di Office 365 dove ottenere gli aggiornamenti e quando avviarne il processo di installazione.  
 
@@ -68,7 +67,7 @@ Quando Microsoft pubblica un nuovo aggiornamento dei client per desktop di Offic
 
 4. È possibile verificare la conformità degli aggiornamenti di Office 365 usando il monitoraggio integrato nella console o i report.  
 
-   Per informazioni dettagliate sui passaggi da eseguire, vedere l'articolo relativo alla [gestione degli aggiornamenti client di Office 365 con System Center Configuration Manager Technical Preview](https://technet.microsoft.com/library/mt628083.aspx).  
+   Per istruzioni dettagliate, vedere [Gestire gli aggiornamenti del client di Office 365 con Configuration Manager Technical Preview](https://technet.microsoft.com/library/mt628083.aspx).  
 
 ##  <a name="BKMK_AlwasyOn"></a> Supporto per SQL Server AlwaysOn per database a disponibilità elevata  
  Configuration Manager ora supporta l'utilizzo di un gruppo di disponibilità SQL Server AlwaysOn per ospitare il database del sito.  Quando si installa un nuovo sito, è possibile indirizzare il programma di installazione all'uso del gruppo di disponibilità anziché una normale istanza di SQL Server.  

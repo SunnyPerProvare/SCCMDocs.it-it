@@ -1,7 +1,7 @@
 ---
 title: Siti Web per i sistemi del sito
 titleSuffix: Configuration Manager
-description: Questa sezione contiene informazioni sui siti Web predefiniti e personalizzati per i server del sistema del sito in System Center Configuration Manager.
+description: Questa sezione contiene informazioni sui siti Web predefiniti e personalizzati per i server del sistema del sito in Configuration Manager.
 ms.date: 02/8/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,17 +10,16 @@ ms.assetid: 681f0893-e83b-476e-9ec0-a5dc7c9deeb6
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e70c78161db4d7c97829f48348b547a0e1c7e85f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 12299a3e822286e9115efc0fe468d5154dcf9372
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889297"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799353"
 ---
-# <a name="websites-for-site-system-servers-in-system-center-configuration-manager"></a>Siti Web per i server del sistema del sito in System Center Configuration Manager
+# <a name="websites-for-site-system-servers-in-configuration-manager"></a>Siti Web per i server del sistema del sito in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Alcuni ruoli del sistema del sito di Configuration Manager richiedono Microsoft Internet Information Services (IIS) e usano il sito Web IIS predefinito per ospitare i servizi del sistema del sito. Quando è necessario eseguire altre applicazioni Web nello stesso server e le impostazioni non sono compatibili con Configuration Manager, provare a usare un sito Web personalizzato per Configuration Manager.  
 
@@ -112,7 +111,7 @@ Inoltre:
 
 -   Quando si passa dall'uso del sito Web predefinito all'uso di un sito Web personalizzato, Configuration Manager non rimuove le vecchie directory virtuali. Se si decide di rimuovere i file usati da Configuration Manager, è necessario eliminare manualmente le directory virtuali create nel sito Web predefinito.  
 
--   Se si modifica il sito per l'uso di siti Web personalizzati, è necessario riconfigurare i client già assegnati al sito in modo da usare le nuove porte di richiesta client per i siti Web personalizzati. Vedere [Come configurare porte di comunicazione client in System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md).  
+-   Se si modifica il sito per l'uso di siti Web personalizzati, è necessario riconfigurare i client già assegnati al sito in modo da usare le nuove porte di richiesta client per i siti Web personalizzati. Vedere [Come configurare le porte di comunicazione client](../../../core/clients/deploy/configure-client-communication-ports.md).  
 
 ## <a name="set-up-custom-websites"></a>Configurare siti Web personalizzati  
 Dal momento che la procedura per creare un sito Web personalizzato varia a seconda delle diverse versioni del sistema operativo, vedere la documentazione relativa alla versione del sistema operativo per la procedura esatta, ma usare le seguenti informazioni quando applicabile:  

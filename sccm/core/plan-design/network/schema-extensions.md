@@ -1,7 +1,7 @@
 ---
 title: Estensioni dello schema
 titleSuffix: Configuration Manager
-description: Estendere lo schema di Active Directory per supportare System Center Configuration Manager.
+description: Estendere lo schema di Active Directory per supportare Configuration Manager.
 ms.date: 02/7/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,17 +10,16 @@ ms.assetid: 95c13c00-909f-4fbb-bbaa-1eba9d54d8c5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5390dfaeb9a9a45b96e35f2a5b4e988479f0a492
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9af7a0209eaa84aa4029339f6fa2507dc1fe1d36
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70889313"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75799370"
 ---
-# <a name="schema-extensions-for-system-center-configuration-manager"></a>Estensioni dello schema per System Center Configuration Manager
+# <a name="schema-extensions-for-configuration-manager"></a>Estensioni dello schema per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile estendere lo schema di Active Directory per supportare Configuration Manager. In questo modo si modifica lo schema di Active Directory di una foresta per aggiungere un nuovo contenitore e vari attributi usati dai siti di Configuration Manager per pubblicare informazioni importanti in Active Directory, dove possono essere usate dai client in modo sicuro. Queste informazioni possono semplificare la distribuzione e la configurazione dei client e consentono loro di trovare facilmente risorse del sito come server con contenuto distribuito o che forniscono vari servizi ai client.  
 
@@ -30,7 +29,7 @@ Prima di [estendere lo schema di Active Directory](https://docs.microsoft.com/sc
 
 ## <a name="considerations-for-extending-the-active-directory-schema-for-configuration-manager"></a>Considerazioni relative all'estensione dello schema di Active Directory per Configuration Manager  
 
--   Le estensioni dello schema di Active Directory per System Center Configuration Manager sono identiche a quelle usate da Configuration Manager 2007 e Configuration Manager 2012. Se in precedenza si è esteso lo schema per una di queste versioni, non è necessario estendere nuovamente lo schema.  
+-   Le estensioni dello schema di Active Directory per Configuration Manager sono identiche a quelle usate da Configuration Manager 2007 e Configuration Manager 2012. Se in precedenza si è esteso lo schema per una di queste versioni, non è necessario estendere nuovamente lo schema.  
 
 -   L'estensione dello schema di Active Directory è un'azione irreversibile a livello di foresta, che può essere eseguita una sola volta.  
 
@@ -92,7 +91,7 @@ Prima di [estendere lo schema di Active Directory](https://docs.microsoft.com/sc
      Se ad esempio si prevede di creare il contenuto in un sito primario e di distribuirlo in un sito secondario all'interno di un altro sito primario, è necessario estendere lo schema di Active Directory per consentire al sito secondario di ottenere la chiave pubblica per il sito primario di origine oppure usare preinst.exe per condividere direttamente le chiavi tra i due siti.  
 
 ## <a name="active-directory-attributes-and-classes"></a>Classi e attributi di Active Directory  
-Quando si estende lo schema per System Center Configuration Manager, le classi e gli attributi seguenti vengono aggiunti allo schema e resi disponibili a tutti i siti di Configuration Manager nella foresta Active Directory.  
+Quando si estende lo schema per Configuration Manager, le classi e gli attributi seguenti vengono aggiunti allo schema e resi disponibili a tutti i siti di Configuration Manager nella foresta Active Directory.  
 
 -   Attributi:  
 
@@ -137,10 +136,10 @@ Quando si estende lo schema per System Center Configuration Manager, le classi e
 
 > [!NOTE]
 > 
->  Le estensioni dello schema possono includere attributi e classi ereditati da versioni precedenti del prodotto, ma non usati da System Center Configuration Manager. Ad esempio:  
+>  Le estensioni dello schema possono includere attributi e classi ereditati da versioni precedenti del prodotto, ma non usati da Configuration Manager. Ad esempio:  
 > 
 > 
 > - Attributo: cn=MS-SMS-Site-Boundaries  
 >   -   Classe: cn=MS-SMS-Server-Locator-Point  
 
-Per assicurarsi che gli elenchi precedenti siano aggiornati, esaminare il file **ConfigMgr_ad_schema.LDF** nella cartella **\SMSSETUP\BIN\x64** del supporto di installazione di System Center Configuration Manager.  
+Per assicurarsi che gli elenchi precedenti siano aggiornati, esaminare il file **ConfigMgr_ad_schema.LDF** nella cartella **\SMSSETUP\BIN\x64** del supporto di installazione di Configuration Manager.  

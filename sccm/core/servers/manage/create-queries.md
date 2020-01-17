@@ -1,7 +1,7 @@
 ---
 title: Creare query
 titleSuffix: Configuration Manager
-description: Questo argomento illustra come creare e importare query in System Center Configuration Manager. Include query di esempio e suggerimenti.
+description: Questo argomento illustra come creare e importare query in Configuration Manager. Include query di esempio e suggerimenti.
 ms.date: 05/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: 868049d3-3209-47ec-b34a-9cc26941893a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e6c5d99860d8897e34038319c5c16417985132cf
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 6430614c9b3cd82ee6b0b18c99625ade48e422bb
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892081"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75795855"
 ---
-# <a name="create-queries-in-system-center-configuration-manager"></a>Creare query in System Center Configuration Manager
+# <a name="create-queries-in-configuration-manager"></a>Creare query in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo articolo descrive come creare e importare query in System Center Configuration Manager.  
+Questo articolo descrive come creare e importare query in Configuration Manager.  
 
 ##  <a name="BKMK_Create"></a> Creare una query  
  Usare questa procedura per creare una query in Configuration Manager.  
@@ -45,7 +44,7 @@ Questo articolo descrive come creare e importare query in System Center Configur
 
 6.  Selezionare **Modifica istruzione query** per aprire la finestra di dialogo &lt;Nome query\> **Proprietà istruzione**.  
 
-7.  Nella scheda **Generale** della finestra di dialogo &lt;Nome query\>  **Proprietà istruzione** specificare gli attributi restituiti dalla query e la relativa modalità di visualizzazione. Selezionare l'icona **Nuovo** per aggiungere un nuovo attributo. È anche possibile selezionare **Mostra linguaggio query** per immettere o modificare la query direttamente in WMI Query Language (WQL). Per esempi di query WMI, vedere la sezione [Query WQL di esempio](#BKMK_Example) in questo articolo.  
+7.  Nella scheda **Generale** della finestra di dialogo &lt;Nome query\> **Proprietà istruzione** specificare gli attributi restituiti dalla query e la relativa modalità di visualizzazione. Selezionare l'icona **Nuovo** per aggiungere un nuovo attributo. È anche possibile selezionare **Mostra linguaggio query** per immettere o modificare la query direttamente in WMI Query Language (WQL). Per esempi di query WMI, vedere la sezione [Query WQL di esempio](#BKMK_Example) in questo articolo.  
 
     > [!TIP]  
     > È possibile usare la documentazione di riferimento seguente per costruire le query WQL:  
@@ -54,7 +53,7 @@ Questo articolo descrive come creare e importare query in System Center Configur
     > -   [Clausola WHERE](https://go.microsoft.com/fwlink/p/?LinkId=256654)  
     > -   [Operatori WQL](https://go.microsoft.com/fwlink/p/?LinkId=256655)  
 
-8.  Nella scheda **Criteri** della finestra di dialogo &lt;Nome query\> **Proprietà istruzione** specificare i criteri usati per definire i risultati della query. Ad esempio, è possibile restituire solo le risorse con un codice di sito **XYZ**. È possibile configurare più criteri per una query.  
+8.  Nella scheda **Criteri** della finestra di dialogo **Proprietà istruzione** &lt;nome query\> specificare i criteri usati per definire i risultati della query. Ad esempio, è possibile restituire solo le risorse con un codice di sito **XYZ**. È possibile configurare più criteri per una query.  
 
     > [!IMPORTANT]  
     > Se si crea una query che non contiene alcun criterio, verranno restituiti tutti i dispositivi presenti nella raccolta **Tutti i sistemi** .  
@@ -70,14 +69,14 @@ Questo articolo descrive come creare e importare query in System Center Configur
 
      Per altre informazioni su come usare le operazioni di join, vedere la documentazione di SQL Server.  
 
-10. Selezionare **OK** per chiudere la finestra di dialogo &lt;Nome query\> **Proprietà istruzione**.  
+10. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà istruzione** &lt;nome query\>.  
 
 11. Nella scheda **Generale** della **Creazione guidata query** specificare se i risultati della query non sono limitati ai membri di una raccolta, sono limitati ai membri di una raccolta specificata oppure se viene richiesta una raccolta ogni volta che viene eseguita la query.  
 
 12. Completare la procedura guidata per creare la query. La nuova query viene visualizzata nel nodo **Query** nell'area di lavoro **Monitoraggio**.  
 
 ##  <a name="BKMK_Import"></a> Importare una query  
- Usare questa procedura per importare una query in Configuration Manager. Per informazioni su come esportare le query, vedere [Come gestire le query in System Center Configuration Manager](../../../core/servers/manage/manage-queries.md).  
+ Usare questa procedura per importare una query in Configuration Manager. Per informazioni su come esportare le query, vedere [Come gestire le query](../../../core/servers/manage/manage-queries.md).  
 
 1.  Nella console di Configuration Manager selezionare **Monitoraggio**.  
 

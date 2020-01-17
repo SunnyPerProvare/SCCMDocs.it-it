@@ -10,13 +10,12 @@ ms.assetid: be680198-4cea-4378-a686-d52f382ba483
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8b21f1fcc702190322c97ed36333bd612ae3984
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e6ca37194ea8cd166f1f77418fdcadf5873c63a5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74734614"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825728"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Abilitare la condivisione dei dati per Desktop Analytics
 

@@ -1,7 +1,7 @@
 ---
 title: Hardware consigliato
 titleSuffix: Configuration Manager
-description: Ottenere consigli su hardware per ridimensionare l'ambiente di System Center Configuration Manager, oltre una distribuzione di base.
+description: Ottenere consigli su hardware per ridimensionare l'ambiente di Configuration Manager, oltre una distribuzione di base.
 ms.date: 05/23/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: 5267f0af-34d3-47a0-9ab8-986c41276e6c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: af69076b4a1f1e8d18cced225ff2373d8172051d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 321be3e111f82000602f2bf4325e481fa8417433
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68536869"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75802141"
 ---
-# <a name="recommended-hardware-for-system-center-configuration-manager"></a>Hardware consigliato per System Center Configuration Manager
+# <a name="recommended-hardware-for-configuration-manager"></a>Hardware consigliato per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-I consigli seguenti sono linee guida che consentono di ridimensionare l'ambiente di System Center Configuration Manager per supportare una distribuzione più avanzata di siti, sistemi del sito e client. Queste raccomandazioni non intendono coprire tutte le possibili configurazioni di siti e gerarchie.  
+I consigli seguenti sono linee guida che consentono di ridimensionare l'ambiente di Configuration Manager per supportare una distribuzione più avanzata di siti, sistemi del sito e client. Queste raccomandazioni non intendono coprire tutte le possibili configurazioni di siti e gerarchie.  
 
 Usare le informazioni delle sezioni seguenti come guida per la pianificazione dell'hardware che può soddisfare i carichi di elaborazione per i client e i siti che usano le funzionalità di Configuration Manager disponibili con le configurazioni predefinite.  
 
@@ -54,7 +53,7 @@ Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità da
 |Server di database remoto per un sito primario figlio|16|72|90|  
 |Server del sito secondario|8|16|-|  
 
-<sup>1</sup> Quando il server del sito e SQL Server sono installati nello stesso computer, la distribuzione supporta i valori massimi di [ridimensionamento](/sccm/core/plan-design/configs/size-and-scale-numbers) per siti e client. Questa configurazione può però limitare le [opzioni di disponibilità elevata per System Center Configuration Manager](/sccm/protect/understand/high-availability-options) come l'uso di un cluster di SQL Server. A causa dei più elevati requisiti di I/O necessari per supportare SQL Server e il server del sito di Configuration Manager durante l'esecuzione di entrambi i server nello stesso computer, si consiglia ai clienti con grandi distribuzioni di usare una configurazione con un computer SQL Server remoto.  
+<sup>1</sup> Quando il server del sito e SQL Server sono installati nello stesso computer, la distribuzione supporta i valori massimi di [ridimensionamento](/sccm/core/plan-design/configs/size-and-scale-numbers) per siti e client. Questa configurazione può però limitare le [opzioni di disponibilità elevata per Configuration Manager](/sccm/protect/understand/high-availability-options) come l'uso di un cluster di SQL Server. A causa dei più elevati requisiti di I/O necessari per supportare SQL Server e il server del sito di Configuration Manager durante l'esecuzione di entrambi i server nello stesso computer, si consiglia ai clienti con grandi distribuzioni di usare una configurazione con un computer SQL Server remoto.  
 
 ###  <a name="bkmk_RemoteSiteSystem"></a> Server di sistema del sito remoti  
 Le indicazioni seguenti sono destinate ai computer che contengono un solo ruolo del sistema del sito. Pianificare delle modifiche quando si installano più ruoli del sistema del sito nello stesso computer.  

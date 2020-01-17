@@ -10,12 +10,12 @@ ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b81b227b55b97ef5b8f1bdc87a14dc564075c88a
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 8b424c995114eab266bcf9a133791e4eac70d119
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75800067"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034789"
 ---
 # <a name="log-file-reference"></a>Riferimento ai file di log
 
@@ -68,8 +68,6 @@ Nelle sezioni seguenti vengono fornite informazioni dettagliate sui diversi file
     - [Gateway di gestione cloud](#cloud-management-gateway)
 
     - [Impostazioni di conformità e accesso alle risorse aziendali](#BKMK_CompSettingsLog)  
-
-    - [Accesso condizionale](#BKMK_CA)
 
     - [Console di Configuration Manager](#BKMK_ConsoleLog)  
 
@@ -584,20 +582,6 @@ Nella tabella seguente sono elencati i file di registro contenenti informazioni 
 |DCMAgent.log|Registra le informazioni di alto livello su valutazione, segnalazione dei conflitti e monitoraggio e aggiornamento di applicazioni ed elementi di configurazione.|Client|  
 |DCMReporting.log|Registra le informazioni relative al reporting dei risultati della piattaforma criteri in messaggi di stato per gli elementi di configurazione.|Client|  
 |DcmWmiProvider.log|Registra le informazioni sulla lettura dei synclet degli elementi di configurazione da WMI.|Client|  
-
-### <a name="BKMK_CA"></a> Accesso condizionale
-
-Nella tabella seguente sono elencati i file di log contenenti informazioni correlate all'accesso condizionale.  
-
-|Nome registro|Descrizione|Computer con file di log|  
-|--------------|-----------------|----------------------------|  
-|ADALOperationProvider.log|Registra informazioni dettagliate sull'acquisizione del token AAD.|Client|  
-|cloudusersync.log|Registra l'attivazione della licenza per gli utenti.|Computer con il punto di connessione del servizio|  
-|ComplRelayAgent.log|Riceve lo stato di conformità generale da DCM, acquisisce il token MP e il token AAD e invia di nuovo un report sulla conformità a Intune (il servizio di inoltro di CA).|Client|  
-|DcmWmiProvider.log|Registra le informazioni sulla lettura dei synclet degli elementi di configurazione da WMI.|Client|  
-|dmpdownloader.log|Registra informazioni dettagliate sui download da Microsoft Intune.|Computer con il punto di connessione del servizio|
-|dmpuploader.log|Registra informazioni dettagliate sul caricamento delle modifiche del database in Microsoft Intune.|Computer con il punto di connessione del servizio|
-|MP_Token.log|Registra le richieste di token dai client.|Server del sistema del sito|  
 
 ### <a name="BKMK_ConsoleLog"></a> Console di Configuration Manager
 

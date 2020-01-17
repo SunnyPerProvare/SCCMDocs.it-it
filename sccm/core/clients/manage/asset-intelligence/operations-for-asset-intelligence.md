@@ -1,7 +1,7 @@
 ---
 title: Usare Asset Intelligence
 titleSuffix: Configuration Manager
-description: Eseguire attività con Asset Intelligence in System Center Configuration Manager.
+description: Eseguire attività comuni con Asset Intelligence in Configuration Manager.
 ms.date: 08/30/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: e8159bd9-5c2b-4d25-82f9-78fcfd732ba9
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: fde63b3400441815b227fe8fae78c354bc156c2a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d2e575b799a4f7c0b63610dbe13c0c8a50c29215
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70176553"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75824708"
 ---
-# <a name="how-to-use-asset-intelligence-in-system-center-configuration-manager"></a>Come usare Asset Intelligence in System Center Configuration Manager
+# <a name="how-to-use-asset-intelligence-in-configuration-manager"></a>Come usare Asset Intelligence in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo argomento contiene informazioni che consentono di gestire le attività tipiche di Asset Intelligence nella gerarchia di System Center Configuration Manager:  
+Questo argomento contiene informazioni che consentono di gestire le attività tipiche di Asset Intelligence nella gerarchia di Configuration Manager:  
 
 ##  <a name="BKMK_ViewInformation"></a> Visualizzare le informazioni di Asset Intelligence  
  È possibile visualizzare le informazioni di Asset Intelligence nella home page e nei report di **Asset Intelligence** .  
@@ -46,7 +45,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**. Verranno visualizzati i report di Asset Intelligence.  
 
 ###  <a name="BKMK_AssetIntelligenceReports"></a> Report di Asset Intelligence  
- Sono disponibili oltre 60 report di Asset Intelligence che mostrano le informazioni raccolte da Asset Intelligence. Molti di questi report sono collegati a report più specifici in cui è possibile eseguire una query per informazioni generali e il drill-down per informazioni più dettagliate. I report di Asset Intelligence si trovano nella console di Configuration Manager, nell'area di lavoro **Monitoraggio** del nodo **Report**. I report forniscono informazioni su hardware, gestione delle licenze e software. Per altre informazioni sui report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
+ Sono disponibili oltre 60 report di Asset Intelligence che mostrano le informazioni raccolte da Asset Intelligence. Molti di questi report sono collegati a report più specifici in cui è possibile eseguire una query per informazioni generali e il drill-down per informazioni più dettagliate. I report di Asset Intelligence si trovano nella console di Configuration Manager, nell'area di lavoro **Monitoraggio** del nodo **Report**. I report forniscono informazioni su hardware, gestione delle licenze e software. Per altre informazioni sui report in Configuration Manager, vedere [Creazione di report](../../../../core/servers/manage/reporting.md).  
 
 > [!NOTE]  
 >  La precisione delle informazioni su licenze e quantità dei titoli software installati visualizzate nei report di Asset Intelligence può variare rispetto al numero effettivo di titoli software installati o licenze in uso nell'ambiente a causa delle complesse dipendenze e limitazioni associate all'esecuzione dell'inventario delle informazioni sulle licenze per i titoli software installati in ambienti aziendali. I report di Asset Intelligence non devono essere usati come unica fonte per determinare la conformità delle licenze software acquistate.  
@@ -60,7 +59,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 2.  Nell'area di lavoro **Monitoraggio** espandere **Report**, espandere **Report**e fare clic su **Asset Intelligence**. Verranno visualizzati i report di Asset Intelligence.  
 
     > [!WARNING]  
-    >  Se nel nodo **Report** non c'è alcuna cartella di report, verificare di aver configurato la creazione di report. Per altre informazioni, vedere [Configurazione della creazione di report in System Center Configuration Manager](../../../../core/servers/manage/configuring-reporting.md).  
+    >  Se nel nodo **Report** non c'è alcuna cartella di report, verificare di aver configurato la creazione di report. Per altre informazioni, vedere [Configurazione della creazione di report](../../../../core/servers/manage/configuring-reporting.md).  
 
 3.  Selezionare il report di Asset Intelligence che si vuole eseguire e quindi nel gruppo **Gruppo Report** della scheda **Home** fare clic su **Esegui**.  
 
@@ -68,7 +67,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
  È possibile sincronizzare il catalogo di Asset Intelligence locale con System Center Online per recuperare la categorizzazione più recente dei titoli software. Quando si richiede manualmente la sincronizzazione del catalogo con System Center Online, potrebbero essere necessari 15 minuti o più per completare il processo di sincronizzazione con System Center Online. Configuration Manager aggiorna l'impostazione **Ultimo aggiornamento** nella home page di **Asset Intelligence** con l'ora attuale in cui la sincronizzazione è stata completata correttamente.  
 
 > [!NOTE]  
->  È prima necessario installare un ruolo del sistema del sito del punto di sincronizzazione di Asset Intelligence usando le procedure. Per informazioni sull'installazione di un punto di sincronizzazione di Asset Intelligence, vedere[Configurazione di Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md).  
+>  È prima necessario installare un ruolo del sistema del sito del punto di sincronizzazione di Asset Intelligence usando le procedure. Per informazioni sull'installazione di un punto di sincronizzazione di Asset Intelligence, vedere [Configurazione di Asset Intelligence](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md).  
 
  Attenersi alla procedura seguente per creare una pianificazione della sincronizzazione per il catalogo di Asset Intelligence.  
 
@@ -275,7 +274,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 -   L'origine del titolo software non viene archiviata nel catalogo di System Center Online. Tuttavia, i titoli di applicazioni che contengono informazioni riservate o proprietarie non devono essere inviati per la categorizzazione in System Center Online.  
 
 > [!NOTE]  
->  Per altre informazioni sulla privacy di Asset Intelligence, vedere [Sicurezza e privacy per Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/security-and-privacy-for-asset-intelligence.md).  
+>  Per altre informazioni sulla privacy di Asset Intelligence, vedere [Sicurezza e privacy per Asset Intelligence](../../../../core/clients/manage/asset-intelligence/security-and-privacy-for-asset-intelligence.md).  
 
  Attenersi alla procedura seguente per richiedere la categorizzazione di titoli software del catalogo di Asset Intelligence in System Center Online.  
 

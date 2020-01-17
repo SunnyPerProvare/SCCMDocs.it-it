@@ -1,7 +1,7 @@
 ---
 title: Pianificazione dei processi di migrazione
 titleSuffix: Configuration Manager
-description: Usare i processi di migrazione per configurare i dati di cui si vuole eseguire la migrazione nell'ambiente di System Center Configuration Manager.
+description: Usare i processi di migrazione per configurare i dati di cui si vuole eseguire la migrazione nell'ambiente di Configuration Manager Current Branch.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,19 +10,18 @@ ms.assetid: a70bfbd4-757a-4468-9312-1c3b373ef9fc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7acec3488d016a309fe2f159d81087d28b795f7
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9395757084b575e508739d7570a3a472b50dfdfa
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67677241"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75803144"
 ---
-# <a name="plan-a-migration-job-strategy-in-system-center-configuration-manager"></a>Pianificare una strategia di processo di migrazione in System Center Configuration Manager
+# <a name="plan-a-migration-job-strategy-in-configuration-manager"></a>Pianificare una strategia di processo di migrazione in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Usare i processi di migrazione per configurare i dati specifici di cui si vuole eseguire la migrazione nell'ambiente di System Center Configuration Manager. I processi di migrazione identificano gli oggetti che si prevede di migrare e vengono eseguiti nel sito di livello superiore nella gerarchia di destinazione. È possibile configurare uno o più processi di migrazione per ogni sito di origine. In questo modo è possibile eseguire la migrazione di tutti gli oggetti in una sola volta o di limitati sottogruppi di dati in ogni processo.  
+Usare i processi di migrazione per configurare i dati specifici di cui si vuole eseguire la migrazione nell'ambiente di Configuration Manager Current Branch. I processi di migrazione identificano gli oggetti che si prevede di migrare e vengono eseguiti nel sito di livello superiore nella gerarchia di destinazione. È possibile configurare uno o più processi di migrazione per ogni sito di origine. In questo modo è possibile eseguire la migrazione di tutti gli oggetti in una sola volta o di limitati sottogruppi di dati in ogni processo.  
 
  È possibile creare i processi di migrazione dopo che Configuration Manager ha raccolto i dati da uno o più siti nella gerarchia di origine. È possibile migrare i dati in qualsiasi sequenza dai siti di origine da cui sono stati raccolti i dati. Con un sito di origine di Configuration Manager 2007 è possibile eseguire la migrazione dei dati solo dal sito in cui è stato creato l'oggetto. Con i siti di origine che eseguono System Center 2012 Configuration Manager o versioni successive, tutti i dati di cui è possibile eseguire la migrazione sono disponibili nel sito principale della gerarchia di origine.  
 
@@ -215,16 +214,16 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
 ### <a name="site-ownership-for-migrated-content"></a>Proprietà del sito per i contenuti di cui viene eseguita la migrazione  
  Quando si esegue la migrazione dei contenuti per le distribuzioni, è necessario assegnare l'oggetto contenuto a un sito nella gerarchia di destinazione. Il sito diventa quindi il proprietario di tale contenuto nella gerarchia di destinazione. Benché il sito di livello superiore della gerarchia di destinazione sia il sito che esegue la migrazione dei metadati per il contenuto, è il sito assegnato che accede ai file di origine per il contenuto nella rete.  
 
- Per ridurre al minimo la larghezza di banda di rete utilizzata durante la migrazione, si consiglia di trasferire la proprietà del contenuto al sito disponibile più vicino. Poiché le informazioni sul contenuto vengono condivise globalmente in System Center Configuration Manager, saranno disponibili in ogni sito.  
+ Per ridurre al minimo la larghezza di banda di rete utilizzata durante la migrazione, si consiglia di trasferire la proprietà del contenuto al sito disponibile più vicino. Poiché le informazioni sul contenuto vengono condivise globalmente in Configuration Manager, saranno disponibili in ogni sito.  
 
  Le informazioni sul contenuto vengono condivise in tutti i siti della gerarchia di destinazione usando la replica di database. I contenuti assegnati a un sito primario e quindi distribuiti nei punti di distribuzione in altri siti primari vengono tuttavia trasferiti usando la replica basata su file. Il trasferimento viene instradato attraverso il sito di amministrazione centrale e quindi a ciascun sito primario aggiuntivo. Centralizzando i pacchetti che si prevede di distribuire in più siti primari prima o durante la migrazione quando si assegna un sito come proprietario del contenuto, è possibile ridurre i trasferimenti di dati in reti a larghezza di banda ridotta.  
 
 ### <a name="role-based-administration-security-scopes-for-migrated-data"></a>Ambiti di protezione dell'amministrazione basata su ruoli per i dati di cui è stata eseguita la migrazione  
  Quando si esegue la migrazione dei dati in una gerarchia di destinazione, è necessario assegnare uno o più ambiti di protezione dell'amministrazione basata su ruoli agli oggetti di cui si esegue la migrazione dei dati. In questo modo solo gli utenti amministrativi appropriati hanno accesso ai dati dopo che viene eseguita la migrazione. Gli ambiti di protezione specificati vengono definiti dal processo di migrazione e vengono applicati a tutti gli oggetti migrati da quel processo. Se è necessario applicare ambiti di protezione diversi a set di oggetti diversi e si vogliono assegnare gli ambiti durante la migrazione, è necessario eseguire la migrazione dei diversi set di oggetti usando diversi processi di migrazione.  
 
- Prima di configurare un processo di migrazione, verificare come funziona l'amministrazione basata su ruoli in System Center Configuration Manager. Se necessario, configurare uno o più ambiti di protezione per i dati di cui si esegue la migrazione per controllare chi avrà accesso agli oggetti di cui si esegue la migrazione nella gerarchia di destinazione.  
+ Prima di configurare un processo di migrazione, verificare come funziona l'amministrazione basata su ruoli in Configuration Manager. Se necessario, configurare uno o più ambiti di protezione per i dati di cui si esegue la migrazione per controllare chi avrà accesso agli oggetti di cui si esegue la migrazione nella gerarchia di destinazione.  
 
- Per altre informazioni sugli ambiti di protezione e sull'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
+ Per altre informazioni sugli ambiti di protezione e sull'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
 ### <a name="review-migration-actions"></a>Verificare le azioni di migrazione  
  Quando si configura un processo di migrazione, la Creazione guidata del processo di migrazione visualizza un elenco di azioni da eseguire per completare una migrazione in modo corretto e un elenco di azioni che Configuration Manager esegue durante la migrazione dei dati selezionati. Leggere attentamente queste informazioni per controllare il risultato previsto.  
@@ -244,7 +243,7 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
 ##  <a name="About_Collection_Migration"></a> Pianificare processi di migrazione raccolta  
  I processi di migrazione raccolta sono disponibili solo quando si esegue la migrazione di dati da una gerarchia di origine che esegue una versione supportata di Configuration Manager 2007. Quando si esegue la migrazione per raccolta, è necessario specificare una o più raccolte di cui eseguire la migrazione. Per ogni raccolta specificata, il processo di migrazione seleziona automaticamente tutti gli oggetti correlati per la migrazione. Ad esempio, se si seleziona una raccolta specifica di utenti, vengono identificati i membri della raccolta e sarà possibile eseguire la migrazione delle distribuzioni associate a tale raccolta. Facoltativamente, è possibile selezionare altri oggetti di distribuzione associati a tali membri per eseguirne la migrazione. Tutti questi elementi selezionati vengono aggiunti all'elenco di oggetti di cui può essere eseguita la migrazione.  
 
- Quando viene eseguita la migrazione di una raccolta, System Center Configuration Manager esegue anche la migrazione delle impostazioni della raccolta, incluse finestre di manutenzione e variabili di raccolta, ma non può eseguire la migrazione delle impostazioni della raccolta per il provisioning del client AMT.  
+ Quando viene eseguita la migrazione di una raccolta, Configuration Manager esegue anche la migrazione delle impostazioni della raccolta, incluse finestre di manutenzione e variabili di raccolta, ma non può eseguire la migrazione delle impostazioni della raccolta per il provisioning del client AMT.  
 
  Usare le informazioni nelle sezioni riportate di seguito per comprendere altre configurazioni che possono essere applicabili ai processi di migrazione basati sulle raccolte.  
 
@@ -276,9 +275,9 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
  Ad esempio: si seleziona una raccolta per i dispositivi che eseguono Windows 7 denominata **Win_7**. Questa raccolta è limitata a una raccolta contenente tutti i sistemi operativi client e denominata **All_Clients**. La raccolta **All_Clients** verrà selezionata automaticamente per la migrazione.  
 
 ### <a name="collection-limiting"></a>Limitazione della raccolta  
- Con System Center Configuration Manager, le raccolte sono dati globali e vengono valutate in ogni sito nella gerarchia. Pianificare quindi come limitare l'ambito di una raccolta dopo la migrazione. Durante la migrazione è possibile identificare una raccolta della gerarchia di destinazione da utilizzare per limitare l'ambito della raccolta di cui si esegue la migrazione, in modo che la raccolta di cui è stata eseguita la migrazione non includa membri imprevisti.  
+ Con Configuration Manager Current Branch le raccolte sono dati globali e vengono valutate in ogni sito nella gerarchia. Pianificare quindi come limitare l'ambito di una raccolta dopo la migrazione. Durante la migrazione è possibile identificare una raccolta della gerarchia di destinazione da utilizzare per limitare l'ambito della raccolta di cui si esegue la migrazione, in modo che la raccolta di cui è stata eseguita la migrazione non includa membri imprevisti.  
 
- Ad esempio, in Configuration Manager 2007 le raccolte vengono valutate nel sito in cui vengono create e nei siti figlio. È possibile distribuire un annuncio solo nel sito figlio, in modo da limitare l'ambito di tale annuncio a tale sito figlio. Con System Center Configuration Manager, invece, le raccolte e gli annunci associati vengono valutati in ogni sito. La limitazione della raccolta consente di specificare i membri della raccolta in base a un'altra raccolta, in modo da evitare l'aggiunta di membri di raccolta imprevisti.  
+ Ad esempio, in Configuration Manager 2007 le raccolte vengono valutate nel sito in cui vengono create e nei siti figlio. È possibile distribuire un annuncio solo nel sito figlio, in modo da limitare l'ambito di tale annuncio a tale sito figlio. Con Configuration Manager Current Branch, invece, le raccolte e gli annunci associati vengono valutati per ogni sito. La limitazione della raccolta consente di specificare i membri della raccolta in base a un'altra raccolta, in modo da evitare l'aggiunta di membri di raccolta imprevisti.  
 
 ### <a name="site-code-replacement"></a>Sostituzione del codice del sito  
  Quando si esegue la migrazione di una raccolta contenente criteri che identificano un sito di Configuration Manager 2007, è necessario definire un sito specifico nella gerarchia di destinazione. Ciò assicura il funzionamento corretto della raccolta di cui è stata eseguita la migrazione nella gerarchia di destinazione, senza incrementi dell'ambito.  
@@ -292,7 +291,7 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
  Per abilitare un programma dopo la migrazione, deselezionare **Disattiva il programma nei computer in cui è distribuito** nella scheda **Avanzate** delle proprietà del programma.  
 
 ##  <a name="About_Object_Migration"></a> Pianificare processi di migrazione oggetto  
- A differenza di migrazione di raccolte, è necessario selezionare ogni oggetto e l'istanza dell'oggetto di cui si desidera eseguire la migrazione. È possibile selezionare i singoli oggetti (ad esempio, annunci da una gerarchia di Configuration Manager 2007 o una pubblicazione da una gerarchia di System Center 2012 Configuration Manager o System Center Configuration Manager) da aggiungere all'elenco di oggetti di cui eseguire la migrazione per un determinato processo di migrazione. Il processo di migrazione oggetti non eseguirà la migrazione nel sito di destinazione di eventuali oggetti non aggiungi all'elenco di migrazione.  
+ A differenza di migrazione di raccolte, è necessario selezionare ogni oggetto e l'istanza dell'oggetto di cui si desidera eseguire la migrazione. È possibile selezionare i singoli oggetti (ad esempio, annunci da una gerarchia di Configuration Manager 2007 o una pubblicazione da una gerarchia di System Center 2012 Configuration Manager o Configuration Manager Current Branch) da aggiungere all'elenco di oggetti di cui eseguire la migrazione per un determinato processo di migrazione. Il processo di migrazione oggetti non eseguirà la migrazione nel sito di destinazione di eventuali oggetti non aggiungi all'elenco di migrazione.  
 
  I processi di migrazione basati su oggetti non richiedono configurazione aggiuntiva rispetto alle configurazione applicabili a tutti i processi di migrazione.  
 

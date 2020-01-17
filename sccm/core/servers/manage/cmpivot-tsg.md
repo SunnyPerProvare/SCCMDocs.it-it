@@ -10,13 +10,12 @@ ms.assetid: 36385bea-f05e-4300-947f-cb3927b3bac5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ea58a234c6de90b57bee0de6ad04b92b32e6263
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9e8ffbd2a73a19204d7e408510a1da7eff970dc2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72303878"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75796005"
 ---
 # <a name="troubleshoot-cmpivot"></a>Risoluzione dei problemi di CMPivot
 
@@ -26,7 +25,7 @@ Occasionalmente, potrebbe essere necessario risolvere problemi di CMPivot. Ad es
 
 ## <a name="bkmk_CMPivot-1902"></a> Risoluzione dei problemi di CMPivot nelle versioni 1902 e successive
 
-In System Center Configuration Manager versioni 1902 e successive è possibile eseguire CMPivot dal sito di amministrazione centrale in una gerarchia. Il sito primario gestisce ancora la comunicazione con il client.
+In Configuration Manager versioni 1902 e successive è possibile eseguire CMPivot dal sito di amministrazione centrale in una gerarchia. Il sito primario gestisce ancora la comunicazione con il client.
 
 Quando si esegue CMPivot dal sito di amministrazione centrale, viene usato il canale di sottoscrizione dei messaggi ad alta velocità per comunicare con il sito primario. CMPivot non usa la replica SQL standard tra siti. Se l'istanza di SQL Server o il provider è remoto oppure se si usa SQL Server Always On, sarà presente uno scenario a doppio hop per CMPivot. Per informazioni su come definire la delega vincolata per uno scenario a doppio hop, vedere [CMPivot a partire dalla versione 1902](/sccm/core/servers/manage/cmpivot#bkmk_cmpivot1902).
 
@@ -74,7 +73,7 @@ In `CcmNotificationAgent.log` cercare le voci di log che hanno un aspetto simile
 Send Task response message &ltBgbResponseMessage TimeStamp="2019-09-13T17:29:09Z"><b>&ltPushID>5</b>&lt/PushID>&ltTaskID>4&lt/TaskID>&ltReturnCode>1&lt/ReturnCode>&lt/BgbResponseMessage> successfuly.
  </code></pre>
 
-Cercare `TaskID` in `Scripts.log`. Nell'esempio seguente è visualizzato `Task ID`  `{9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}`:
+Cercare `TaskID` in `Scripts.log`. Nell'esempio seguente è visualizzato `Task ID` `{9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}`:
 
 <pre><code lang="Log">Sending script state message (fast): <b>{9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}</b>
 Result are sent for ScriptGuid: 7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14 and <b>TaskID: {9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}</b>
