@@ -10,13 +10,12 @@ ms.assetid: 4e620080-5400-45bb-87c2-fbdbc8aeacac
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8fc420db7e793b3fa0a1b71132bb902a23de43d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 6ad57ab81fe6de80a70e6c239c0fd2146a1bee33
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892233"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818486"
 ---
 # <a name="configure-options-for-updates-publisher"></a>Configurare opzioni per Updates Publisher
 
@@ -26,7 +25,7 @@ Rivedere e configurare le opzioni e le impostazioni correlate che influiscono su
 
 Per accedere alle opzioni di Updates Publisher, nell'angolo superiore sinistro della console fare clic sulla scheda **Updates Publisher** **Proprietà** e quindi scegliere **Opzioni**.
 
-![Opzioni](media/properties1.png)   
+![Options](media/properties1.png)   
 
 
 Le opzioni sono divise nelle categorie seguenti:
@@ -109,9 +108,9 @@ Le opzioni avanzate includono le seguenti:
 
 -   **Certificate revocation** (Revoca certificati): scegliere questa opzione per abilitare i controlli di revoca dei certificati.
 
--   **Local source publishing** (Pubblicazione origine locale: Updates Publisher può usare una copia locale di un aggiornamento in fase di pubblicazione prima del download di tale aggiornamento da Internet. La posizione deve essere una cartella sul computer che esegue Updates Publisher. Per impostazione predefinita, il percorso è **Documenti\LocalSourcePublishing.** Usare questo percorso quando in precedenza sono stati scaricati uno o più aggiornamenti o sono state apportate modifiche a un aggiornamento che si vuole distribuire.
+-   **Local source publishing** (Pubblicazione origine locale): Updates Publisher può usare una copia locale di un aggiornamento in fase di pubblicazione prima del download di tale aggiornamento da Internet. La posizione deve essere una cartella sul computer che esegue Updates Publisher. Per impostazione predefinita, il percorso è **Documenti\LocalSourcePublishing.** Usare questo percorso quando in precedenza sono stati scaricati uno o più aggiornamenti o sono state apportate modifiche a un aggiornamento che si vuole distribuire.
 
--   **Pulizia guidata aggiornamenti software**: avviare la Pulizia guidata aggiornamenti software. La procedura guidata imposta come scaduti gli aggiornamenti che si trovano sul server di aggiornamento ma non nel repository di Updates Publisher. Per altri dettagli vedere [Impostare come scaduti gli aggiornamenti senza riferimenti](#expire-unreferenced-software-updates).
+-   **Pulizia guidata aggiornamenti software**: avvia la Pulizia guidata aggiornamenti software. La procedura guidata imposta come scaduti gli aggiornamenti che si trovano sul server di aggiornamento ma non nel repository di Updates Publisher. Per altri dettagli vedere [Impostare come scaduti gli aggiornamenti senza riferimenti](#expire-unreferenced-software-updates).
 
 ## <a name="updates"></a>Aggiornamenti
  A ogni avvio, Updates Publisher può verificare automaticamente la presenza di nuovi aggiornamenti. È inoltre possibile scegliere di ricevere versioni di anteprima di Updates Publisher.

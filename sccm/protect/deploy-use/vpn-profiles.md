@@ -1,7 +1,7 @@
 ---
 title: Profili VPN
 titleSuffix: Configuration Manager
-description: Di seguito viene illustrato come usare i profili VPN in System Center Configuration Manager per distribuire impostazioni VPN agli utenti dell'organizzazione.
+description: Di seguito viene illustrato come usare i profili VPN in Configuration Manager per distribuire impostazioni VPN agli utenti dell'organizzazione.
 ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
@@ -10,17 +10,16 @@ ms.assetid: c0f094f1-852e-4606-91db-97846d8f0772
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 505a4f3c00bc69e115b4130d422e11d8dec3fe30
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
-ms.translationtype: MTE75
+ms.openlocfilehash: bf3aed14665588d5d6638491c61df4a6b62a6ee4
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500390"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819376"
 ---
-# <a name="vpn-profiles-in-system-center-configuration-manager"></a>Profili VPN in System Center Configuration Manager
+# <a name="vpn-profiles-in-configuration-manager"></a>Profili VPN in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!--1283610-->
 Per distribuire impostazioni VPN agli utenti dell'organizzazione, usare i profili VPN in Configuration Manager. La distribuzione di queste impostazioni consente di ridurre al minimo le operazioni che l'utente finale deve eseguire per connettersi alle risorse nella rete aziendale.  
@@ -54,6 +53,6 @@ Per distribuire impostazioni VPN agli utenti dell'organizzazione, usare i profil
 ### <a name="next-steps"></a>Passaggi successivi  
  Usare gli argomenti seguenti per pianificare, configurare, far funzionare e gestire i profili VPN in Configuration Manager.  
 
--   [Prerequisiti per i profili VPN in System Center Configuration Manager](../plan-design/prerequisites-for-wifi-vpn-profiles.md)  
+-   [Prerequisiti per i profili VPN](../plan-design/prerequisites-for-wifi-vpn-profiles.md)  
 
--   [Sicurezza e privacy per i profili VPN in System Center Configuration Manager](../plan-design/security-and-privacy-for-wifi-vpn-profiles.md)
+-   [Sicurezza e privacy per i profili VPN](../plan-design/security-and-privacy-for-wifi-vpn-profiles.md)

@@ -10,17 +10,16 @@ ms.assetid: 20493c86-6454-4b35-8f22-0d049b68b8bb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a650fd5517fb86108d230cc997c8586520826e7
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 81128d74214c77a973624df2b4a78510d838e7fe
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68743586"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806442"
 ---
 # <a name="approve-applications-in-configuration-manager"></a>Approvare le applicazioni in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Quando si [distribuiscono applicazioni](/sccm/apps/deploy-use/deploy-applications) in Configuration Manager, è possibile richiedere l'approvazione prima dell'installazione. Gli utenti richiedono l'applicazione in Software Center e quindi la richiesta viene esaminata nella console di Configuration Manager. La richiesta può essere approvata o rifiutata.
 
@@ -115,7 +114,7 @@ Con questi prerequisiti, i destinatari ricevono una notifica della richiesta tra
 
 - Configurare la [notifica tramite posta elettronica per gli avvisi](/sccm/core/servers/manage/use-alerts-and-the-status-system#to-configure-email-notification-for-alerts).  
 
-- Consentire al provider SMS di usare un certificato.<!--SCCMDocs-pr issue 3135--> Usare una delle opzioni seguenti:  
+- Consentire al provider SMS di usare un certificato.<!--SCCMDocs-pr issue 3135--> Usare una delle seguenti opzioni:  
 
     - Abilitare [HTTP avanzato](/sccm/core/plan-design/hierarchy/enhanced-http) (scelta consigliata)  
 
@@ -182,4 +181,4 @@ Rivedere il file **NotiCtrl.log** nel server del sito per la risoluzione dei pro
 
 ## <a name="maintenance"></a>Manutenzione
 
-Configuration Manager memorizza le informazioni relative alla richiesta di approvazione per l'applicazione nel database del sito. La cronologia delle richieste annullate o rifiutate viene eliminata dal sito dopo 30 giorni. È possibile configurare il comportamento di eliminazione con l'[attività di manutenzione del sito](/sccm/core/servers/manage/maintenance-tasks) **Elimina dati richiesta applicazione obsoleti**. Il sito non elimina mai le richieste applicazione approvate o in attesa.
+Configuration Manager memorizza le informazioni relative alla richiesta di approvazione per l'applicazione nel database del sito. La cronologia delle richieste annullate o rifiutate viene eliminata dal sito dopo 30 giorni. È possibile configurare il comportamento di eliminazione con l'**attività di manutenzione del sito** [Elimina dati richiesta applicazione obsoleti](/sccm/core/servers/manage/maintenance-tasks). Il sito non elimina mai le richieste applicazione approvate o in attesa.

@@ -10,13 +10,12 @@ ms.assetid: 9d1e8252-99e3-48aa-bfa5-0cf4cd6637b2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1f62f3a0c22d57563a984dc453cf8c41ca1977e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 643431c69fb8ea99d88cf84dc5ad71c618434967
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74661057"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825354"
 ---
 # <a name="configure-pre-cache-content-for-task-sequences"></a>Configurare il contenuto pre-cache per le sequenze di attività
 
@@ -26,7 +25,7 @@ ms.locfileid: "74661057"
 La funzionalità pre-cache per le distribuzioni di sequenze di attività disponibili consente ai client di scaricare il contenuto pertinente prima che un utente installi la sequenza di attività. Il client può eseguire il pre-cache del contenuto per le sequenze di attività che [aggiornano un sistema operativo](/configmgr/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system) o [installano un'immagine del sistema operativo](/configmgr/osd/deploy-use/create-a-task-sequence-to-install-an-operating-system).
 
 > [!Note]  
-> Nella versione 1910, Configuration Manager Abilita questa funzionalità per impostazione predefinita. Nella versione 1906 o nelle versioni precedenti Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/configmgr/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
+> Nella versione 1910 Configuration Manager abilita questa funzionalità per impostazione predefinita. Nella versione 1906 o nelle versioni precedenti Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/configmgr/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
 
 Si supponga, ad esempio, di volere una sola sequenza di attività di aggiornamento sul posto per tutti gli utenti, pur avendo molte architetture e lingue diverse. Nelle versioni precedenti il download del contenuto inizia quando l'utente installa una distribuzione di sequenze di attività disponibile da Software Center. Questo ritardo aggiunge ulteriore tempo prima che l'installazione sia pronta per essere avviata. Tutto il contenuto a cui viene fatto riferimento nella sequenza di attività viene scaricato. Questo contenuto include il pacchetto di aggiornamento del sistema operativo per tutte le lingue e tutte le architetture. Se ogni pacchetto di aggiornamento è circa 3 GB, il contenuto totale è molto elevato.
 
@@ -50,7 +49,7 @@ Per configurare la funzionalità pre-cache sono necessari tre passaggi:
 3. [Distribuire la sequenza di attività e abilitare la pre-memorizzazione nella cache](#bkmk_deploy)
 
 
-### <a name="bkmk_createpkg"></a>-1 Creare e configurare i pacchetti
+### <a name="bkmk_createpkg"></a> 1. Creare e configurare i pacchetti
 
 Il client valuta gli attributi dei pacchetti per determinare il contenuto scaricato durante la pre-memorizzazione nella cache.  
 

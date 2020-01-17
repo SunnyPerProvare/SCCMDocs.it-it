@@ -10,24 +10,23 @@ ms.assetid: 784c295c-b8b8-4202-ab9f-665908d49d6d
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8dea33a78229387f4aa3a1bbbd139d14aa560c1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8ae250411b9d57bf763f2a1e18d8e9c283d21350
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62198819"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818095"
 ---
-# <a name="monitor-applications-from-the-system-center-configuration-manager-console"></a>Monitorare le applicazioni dalla console di System Center Configuration Manager
+# <a name="monitor-applications-from-the-configuration-manager-console"></a>Monitorare le applicazioni dalla console di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
-In System Center Configuration Manager è possibile monitorare la distribuzione di tutti i software, inclusi gli aggiornamenti software, le impostazioni di conformità, le applicazioni, le sequenze di attività, i pacchetti e i programmi. È possibile monitorare le distribuzioni usando l'area di lavoro **Monitoraggio** nella console di Configuration Manager o usando i report.  
+In Configuration Manager è possibile monitorare la distribuzione di tutti i software, inclusi gli aggiornamenti software, le impostazioni di conformità, le applicazioni, le sequenze di attività, i pacchetti e i programmi. È possibile monitorare le distribuzioni usando l'area di lavoro **Monitoraggio** nella console di Configuration Manager o usando i report.  
 
  Le applicazioni in Configuration Manager supportano il monitoraggio basato sugli stati, che consente di tenere traccia dell'ultimo stato di distribuzione dell'applicazione per utenti e dispositivi. Questi messaggi di stato visualizzano informazioni sui singoli dispositivi. Ad esempio, se un'applicazione viene distribuita a una raccolta di utenti, è possibile visualizzare lo stato di conformità e lo scopo della distribuzione nella console di Configuration Manager.  
 
-## <a name="learn-about-compliance-states-in-system-center-configuration-manager"></a>Informazioni sugli stati di conformità in System Center Configuration Manager
+## <a name="learn-about-compliance-states"></a>Informazioni sugli stati di conformità
  Uno stato di distribuzione dell'applicazione presenta uno dei seguenti stati di conformità:  
 
 -   **Operazione riuscita** : la distribuzione dell'applicazione è stata completata oppure l'applicazione risulta già installata.  
@@ -60,7 +59,7 @@ Lo stato di distribuzione per le distribuzioni del pacchetto e del programma non
 
  La gestione di applicazioni in Configuration Manager offre vari report predefiniti che consentono di monitorare le informazioni su applicazioni e distribuzioni. Tali report dispongono della categoria report di **Distribuzione software - Monitoraggio applicazione**.  
 
- Per altre informazioni sulle modalità di configurazione dei report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+ Per altre informazioni sulle modalità di configurazione della creazione di report in Configuration Manager, vedere [Creazione di report](../../core/servers/manage/reporting.md).  
 
 ## <a name="monitor-the-state-of-an-application-in-the-configuration-manager-console"></a>Monitorare lo stato di un'applicazione nella console di Configuration Manager  
 

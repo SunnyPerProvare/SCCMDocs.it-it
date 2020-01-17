@@ -10,17 +10,16 @@ ms.assetid: b0c9db74-841e-46eb-8924-957cde968bf7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 643ba6189743d4e3d465fa369811867ebcd32e83
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f98870239be1f9018d6fce79ca2a2110fd6a68ed
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70243606"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818316"
 ---
 # <a name="upgrade-windows-devices-to-a-new-edition-with-configuration-manager"></a>Aggiornare i dispositivi Windows a una nuova edizione con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 I **criteri di aggiornamento edizione** consentono di aggiornare automaticamente i dispositivi Windows 10 a un'edizione diversa.
 
@@ -102,4 +101,4 @@ Se viene visualizzato l'errore seguente in **DcmWmiProvider.log** nel client, ve
 
 - [Aggiornamento edizione di Windows 10](https://docs.microsoft.com/windows/deployment/upgrade/windows-10-edition-upgrades)
 
-- [Aggiornare le edizioni di Windows 10 o disattivare la modalità S nei dispositivi con Microsoft Intune](https://docs.microsoft.com/intune/edition-upgrade-configure-windows-10)
+- [Aggiornare le edizioni Windows 10 o disattivare la modalità S nei dispositivi con Microsoft Intune](https://docs.microsoft.com/intune/edition-upgrade-configure-windows-10)

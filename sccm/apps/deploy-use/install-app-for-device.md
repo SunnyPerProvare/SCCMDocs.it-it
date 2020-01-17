@@ -6,17 +6,16 @@ ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: c2a71fca-8744-4d72-abf9-9d8c5d2afb00
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ba68dc78f289b779a157398e9487b637318788c6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1e74823b0a548974482b4a387c6079b5a18c0ee8
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68537689"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75815783"
 ---
 # <a name="install-applications-for-a-device"></a>Installare le applicazioni per un dispositivo
 

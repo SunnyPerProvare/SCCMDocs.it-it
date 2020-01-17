@@ -10,19 +10,18 @@ ms.assetid: 537dd2a7-4e44-4877-b8dd-5e1499407f8d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: af004cb6a2ed00472abbc784608f897868f45d22
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ce11ba0cbe4298d32a11de409910ebc3e14c097b
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74161623"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820016"
 ---
 # <a name="configure-definition-updates-for-endpoint-protection"></a>Configurare gli aggiornamenti delle definizioni per Endpoint Protection  
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
- Con Endpoint Protection in System Center Configuration Manager è possibile usare uno dei vari metodi disponibili per mantenere aggiornate le definizioni antimalware nei computer client della gerarchia. Le informazioni in questo argomento possono essere utili per scegliere questi metodi e configurarli.
+ Con Endpoint Protection in Configuration Manager è possibile usare uno dei vari metodi disponibili per mantenere aggiornate le definizioni antimalware nei computer client della gerarchia. Le informazioni in questo argomento possono essere utili per scegliere questi metodi e configurarli.
 
  Per aggiornare le definizioni antimalware, è possibile usare uno o più dei metodi seguenti:
 
@@ -48,7 +47,7 @@ ms.locfileid: "74161623"
 
 2.  Nell'area di lavoro **Asset e conformità** espandere **Endpoint Protection**e quindi fare clic su **Criteri antimalware**.
 
-3.  Aprire la pagina delle proprietà relativa a **Criterio antimalware predefinito** o creare un nuovo criterio antimalware. Per altre informazioni su come creare criteri antimalware, vedere [Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager](endpoint-antimalware-policies.md).
+3.  Aprire la pagina delle proprietà relativa a **Criterio antimalware predefinito** o creare un nuovo criterio antimalware. Per altre informazioni su come creare criteri antimalware, vedere [Come creare e distribuire criteri antimalware per Endpoint Protection](endpoint-antimalware-policies.md).
 
 4.  Nella sezione **aggiornamenti di intelligence** per la sicurezza della finestra di dialogo Proprietà Antimalware fare clic su **Imposta origine**.
     - La sezione relativa agli **aggiornamenti delle definizioni** è stata rinominata in aggiornamenti di intelligence per la **sicurezza** a partire dalla versione Configuration Manager 1902.

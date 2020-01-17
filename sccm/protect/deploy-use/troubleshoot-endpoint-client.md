@@ -10,17 +10,16 @@ ms.assetid: d837253e-fcc2-422a-9e2c-c78b938dfd8c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d55335eb8e55381cfa5481edf027a54a18f6bda
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c28fb1d8bad62f4aa84bb0d459579d97e4e0d28d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71826163"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819404"
 ---
 # <a name="troubleshoot-windows-defender-or-endpoint-protection-client"></a>Risolvere i problemi di Windows Defender o del client Endpoint Protection
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 In caso di problemi con Windows Defender o Endpoint Protection, usare questo articolo per risolvere i problemi seguenti:  
 

@@ -10,17 +10,16 @@ ms.assetid: c6b9ccd2-78d9-4f0e-b25a-70d0866300ba
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37143372acdadb6a340c2ee556901f5133683c5f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5dbebcb59897510e537b247484c0cfe12f5bb244
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71401564"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827037"
 ---
 # <a name="create-stand-alone-media"></a>Creare supporti autonomi
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Il supporto autonomo in Configuration Manager contiene tutto il necessario per distribuire il sistema operativo in un computer senza connessione di rete.
 
@@ -113,16 +112,16 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
         > [!IMPORTANT]  
         > Quando si seleziona questa opzione, all'utente non vengono richieste informazioni sulla configurazione di rete o su sequenze di attività facoltative. Se tuttavia si configura il supporto per la protezione con password, all'utente viene richiesta una password.  
 
-4. Nella pagina **Tipo di supporto** specificare se il supporto è un'**unità USB rimovibile** o un **set di CD/DVD**. Configurare quindi le opzioni seguenti:  
+4. Nella pagina **Tipo di supporto** specificare se il supporto è **un'unità USB rimovibile** o un **set di CD/DVD**. Configurare quindi le opzioni seguenti:  
 
     > [!IMPORTANT]  
     > Il supporto usa il file system FAT32. Non è possibile creare supporti in un'unità USB il cui contenuto include un file di oltre 4 GB.  
 
     - Se si seleziona **Unità USB rimovibile**, è necessario selezionare l'unità in cui archiviare il contenuto.  
 
-        - **Formatta unità USB rimovibile (FAT32) e consenti l'avvio**: per impostazione predefinita, consentire a Configuration Manager di preparare l'unità USB. Molti dispositivi UEFI più recenti richiedono una partizione FAT32 di avvio. Questo formato tuttavia limita anche le dimensioni dei file e la capacità complessiva dell'unità. Se l'unità rimovibile è già stata formattata e configurata, disabilitare questa opzione.
+        - **Formatta unità USB rimovibile (FAT32) e consenti l'avvio**: per impostazione predefinita, consente a Configuration Manager di preparare l’unità USB. Molti dispositivi UEFI più recenti richiedono una partizione FAT32 di avvio. Questo formato tuttavia limita anche le dimensioni dei file e la capacità complessiva dell'unità. Se l'unità rimovibile è già stata formattata e configurata, disabilitare questa opzione.
 
-    - Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto (**Dimensione supporto**) e il nome e il percorso dei file di output (**File supporto**). La procedura guidata scrive i file di output in questa posizione. Ad esempio: `\\servername\folder\outputfile.iso`  
+    - Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto (**Dimensione supporto**) e il nome e il percorso dei file di output (**File supporto**). La procedura guidata scrive i file di output in questa posizione. ad esempio `\\servername\folder\outputfile.iso`  
 
         Se la capacità del supporto non è sufficiente per archiviare l'intero contenuto, vengono creati più file. È quindi necessario archiviare il contenuto in più CD o DVD. Quando sono necessari più supporti, Configuration Manager aggiunge un numero di sequenza al nome di ogni file di output creato.  
 
@@ -133,7 +132,7 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
     - **Cartella di gestione temporanea**<!--1359388-->: il processo di creazione del supporto può richiedere molto spazio temporaneo sul disco. Per impostazione predefinita questo percorso è simile al seguente: `%UserProfile%\AppData\Local\Temp`. A partire dalla versione 1902, per offrire maggiore flessibilità dal punto di vista del percorso di archiviazione dei file temporanei, modificare questo valore con un'altra unità e un altro percorso.  
 
-    - **Etichetta supporto**<!--1359388-->: a partire dalla versione 1902, è possibile aggiungere un'etichetta al supporto per la sequenza di attività. Questa etichetta consente di identificare più facilmente il supporto creato. Il valore predefinito è `Configuration Manager`. Questo campo di testo viene visualizzato nelle posizioni seguenti:  
+    - **Etichetta supporto**<!--1359388-->: a partire dalla versione 1902, è possibile aggiungere un'etichetta al supporto della sequenza di attività. Questa etichetta consente di identificare più facilmente il supporto creato. Il valore predefinito è `Configuration Manager`. Questo campo di testo viene visualizzato nelle posizioni seguenti:  
 
         - Se si monta un file ISO, Windows visualizza questa etichetta come nome dell'unità montata  
 
@@ -145,18 +144,18 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
 5. Nella pagina **Sicurezza** specificare le opzioni seguenti:
 
-    - **Proteggi supporto con password**: immettere una password complessa per proteggere il supporto da accessi non autorizzati. Quando si specifica una password, l'utente deve immetterla per usare il supporto.  
+    - **Proteggi supporto con password**: immettere una password complessa per proteggere il supporto dall'accesso non autorizzato. Quando si specifica una password, l'utente deve immetterla per usare il supporto.  
 
         > [!IMPORTANT]  
         > Come procedura consigliata di sicurezza, assegnare sempre una password per proteggere il supporto.  
         >
         > In un supporto autonomo vengono crittografati solo i passaggi delle sequenze di attività e le relative variabili. Il contenuto rimanente del supporto non viene crittografato. Non includere informazioni riservate negli script di sequenza di attività. Archiviare e implementare tutte le informazioni riservate usando variabili della sequenza di attività.  
 
-    - **Seleziona l'intervallo di date di validità per il supporto autonomo**: facoltativamente, impostare le date di inizio e di scadenza nel supporto. Per impostazione predefinita, questa impostazione è disabilitata. Le date vengono confrontate con l'ora di sistema nel computer prima che il supporto autonomo venga eseguito. Quando l'ora di sistema è precedente all'ora di inizio o successiva all'ora di scadenza, il supporto autonomo non si avvia. Queste opzioni sono disponibili anche tramite il cmdlet PowerShell [New-CMStandaloneMedia](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmstandalonemedia?view=sccm-ps).  
+    - **Seleziona l'intervallo di date di validità per il supporto autonomo**: impostare le date di inizio e di scadenza facoltative per il supporto. Per impostazione predefinita, questa impostazione è disabilitata. Le date vengono confrontate con l'ora di sistema nel computer prima che il supporto autonomo venga eseguito. Quando l'ora di sistema è precedente all'ora di inizio o successiva all'ora di scadenza, il supporto autonomo non si avvia. Queste opzioni sono disponibili anche tramite il cmdlet PowerShell [New-CMStandaloneMedia](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmstandalonemedia?view=sccm-ps).  
 
 6. Nella pagina **CD/DVD autonomo** selezionare la sequenza di attività per la distribuzione del sistema operativo. È possibile selezionare solo le sequenze di attività associate a un'immagine d'avvio. Verificare l'elenco di contenuti a cui si fa riferimento nella sequenza di attività.  
 
-    - **Rileva le dipendenze dell'applicazione associata e aggiungile a questo contenuto multimediale**: consente di aggiungere contenuto al supporto per le dipendenze dell'applicazione.  
+    - **Rileva le dipendenze dell'applicazione associata e aggiungile a questo contenuto multimediale**: aggiungere anche contenuto al supporto per le dipendenze dell'applicazione.  
 
         > [!TIP]  
         > Se le dipendenze dell'applicazione previste non vengono visualizzate, deselezionare e selezionare nuovamente questa opzione per aggiornare l'elenco.  
@@ -175,7 +174,7 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
     - Aggiungere eventuali variabili usate dalla sequenza di attività.  
 
-    - **Attiva comando di preavvio**: specificare i comandi di preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio sono costituiti da uno script o da un eseguibile che può interagire con l'utente in Windows PE prima che venga eseguita la sequenza di attività. Per altre informazioni vedere [Comandi di preavvio del supporto per sequenza attività](/sccm/osd/understand/prestart-commands-for-task-sequence-media).  
+    - **Attiva comando di preavvio**: Specificare i comandi preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio sono costituiti da uno script o da un eseguibile che può interagire con l'utente in Windows PE prima che venga eseguita la sequenza di attività. Per altre informazioni vedere [Comandi di preavvio del supporto per sequenza attività](/sccm/osd/understand/prestart-commands-for-task-sequence-media).  
 
         > [!TIP]  
         > Durante la creazione del supporto, tale sequenza scrive l'ID del pacchetto e la riga di comando di preavvio, incluso il valore per eventuali variabili della sequenza di attività, nel file **CreateTSMedia.log** nel computer che esegue la console di Configuration Manager. È possibile rivedere questo file di registro per verificare il valore per le variabili della sequenza di attività.  

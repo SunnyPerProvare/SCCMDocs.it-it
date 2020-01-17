@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: 0bae9477-0500-41cf-8aa3-5e6efadd0554
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 177d5f025690b64581873023d4db02a414d88531
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 89895afe2e90aae6af90667aee19121d25c2c9d2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74662519"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820662"
 ---
 # <a name="view-bitlocker-reports"></a>Visualizzare i report di BitLocker
 
@@ -74,8 +73,8 @@ Usare questo report per raccogliere informazioni specifiche su un computer. Forn
 |Data esenzione|Data in cui è stata concessa l'esenzione.|
 |Dettagli dello stato di conformità|Messaggi di errore e di stato sullo stato di conformità del computer in base ai criteri specificati.|
 |Criterio: Livello di codifica|Livello di codifica selezionato nei criteri di gestione di BitLocker.|
-|Criterio: Unità del sistema operativo|Indica se la crittografia è necessaria per l'unità del sistema operativo e viene visualizzato il tipo di protezione appropriato.|
-|Criterio: Unità dati fissa|Indica se la crittografia è necessaria per l'unità dati fissa.|
+|Criteri: unità del sistema operativo|Indica se la crittografia è necessaria per l'unità del sistema operativo e viene visualizzato il tipo di protezione appropriato.|
+|Criteri: unità dati fissa|Indica se la crittografia è necessaria per l'unità dati fissa.|
 |Produttore|Nome del produttore del computer così come appare nel BIOS del computer.|
 |Modello|Nome del modello del produttore del computer così come appare nel BIOS del computer.|
 |Utenti del dispositivo|Utenti noti del computer.|
@@ -109,7 +108,7 @@ Questo grafico a torta mostra lo stato di conformità per i computer dell'organi
 
 Il grafico a torta mostra i seguenti stati di conformità:
 
-- conformi
+- Conforme
 
 - Non conformi
 
@@ -159,9 +158,9 @@ Questo report Mostra informazioni sulla conformità BitLocker complessiva all'in
 |% conformità sconosciuta|Percentuale di computer il cui stato di conformità non è noto.|
 |% con esenzione|Percentuale di computer esenti dal requisito di crittografia BitLocker.|
 |% non esente|Percentuale di computer non esenti dal requisito di crittografia BitLocker.|
-|conformi|Conteggio dei computer conformi nell'organizzazione.|
-|Non conforme|Numero di computer non conformi nell'organizzazione.|
-|Conformità sconosciuta|Conteggio dei computer con uno stato di conformità non noto.|
+|Conforme|Numero di computer conformi all'interno dell'organizzazione.|
+|Non conforme|Numero di computer non conformi all'interno dell'organizzazione.|
+|Conformità sconosciuta|Numero di computer il cui stato di conformità non è noto.|
 |Esente|Numero di computer esenti dal requisito di crittografia BitLocker.|
 |Non esente|Numero di computer non esenti dal requisito di crittografia BitLocker.|
 
@@ -186,14 +185,14 @@ Utilizzare questo report per mostrare la conformità generale di BitLocker nell'
 |Nome della colonna|Descrizione|
 |--- |--- |
 |Computer gestiti|Numero di computer gestiti con i criteri di BitLocker.|
-|Percentuale conformità|Percentuale di computer conformi nell'organizzazione.|
-|Percentuale non conformità|Percentuale di computer non conformi nell'organizzazione.|
+|Percentuale conformità|Percentuale di computer conformi all'interno dell'organizzazione.|
+|Percentuale non conformità|Percentuale di computer non conformi all'interno dell'organizzazione.|
 |% conformità sconosciuta|Percentuale di computer il cui stato di conformità non è noto.|
 |% con esenzione|Percentuale di computer esenti dal requisito di crittografia BitLocker.|
 |% non esente|Percentuale di computer non esenti dal requisito di crittografia BitLocker.|
-|conformi|Conteggio dei computer conformi nell'organizzazione.|
+|Conforme|Conteggio dei computer conformi nell'organizzazione.|
 |Non conformi|Numero di computer non conformi nell'organizzazione.|
-|Conformità sconosciuta|Conteggio dei computer con uno stato di conformità non noto.|
+|Conformità sconosciuta|Numero di computer il cui stato di conformità non è noto.|
 |Esente|Numero di computer esenti dal requisito di crittografia BitLocker.|
 |Non esente|Numero di computer non esenti dal requisito di crittografia BitLocker.|
 

@@ -10,13 +10,12 @@ ms.assetid: e217699a-28b2-471a-b421-8fbd1d1fd638
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 22fcc8704651d75b4123e7942d14b861b3f6c099
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b49d09b37373eae3fc9f5489870c485bbf4b7fda
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62215193"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816293"
 ---
 # <a name="onedrive-for-business-profiles"></a>Profili di OneDrive for Business
 
@@ -26,7 +25,7 @@ A partire da Configuration Manager versione 1902, è possibile creare profili di
 
 - [Trovare l'ID del tenant Office 365](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id)  
 
-- Distribuire la versione 18.111.0603.0004 del client di sincronizzazione di OneDrive o una versione successiva. Per altre informazioni, vedere [Distribuire le app OneDrive mediante System Center Configuration Manager](https://docs.microsoft.com/onedrive/deploy-on-windows).  
+- Distribuire la versione 18.111.0603.0004 del client di sincronizzazione di OneDrive o una versione successiva. Per altre informazioni, vedere [Distribuire le app OneDrive mediante Configuration Manager](https://docs.microsoft.com/onedrive/deploy-on-windows).  
 
 ## <a name="bkmk_odfb"></a> Spostare cartelle note di Windows in OneDrive
 <!--3556021-->
@@ -49,13 +48,13 @@ Usare Configuration Manager per spostare le cartelle note di Windows in OneDrive
 
     2. Selezionare una delle opzioni seguenti per spostare le cartelle note in OneDrive:  
 
-        - **Richiedi agli utenti di spostare le cartelle note di Windows in OneDrive**: con questa opzione, l'utente visualizza una procedura guidata per lo spostamento dei file. Se si sceglie di posticipare o rifiutare lo spostamento delle cartelle, OneDrive visualizza periodicamente un promemoria.  
+        - **Prompt users to move Windows known folders to OneDrive** (Richiedi agli utenti di spostare le cartelle note di Windows in OneDrive): con questa opzione viene visualizzata una procedura guidata per spostare i file. Se si sceglie di posticipare o rifiutare lo spostamento delle cartelle, OneDrive visualizza periodicamente un promemoria.  
 
-        - **Sposta automaticamente le cartelle note di Windows in OneDrive**: quando questo criterio viene applicato al dispositivo, il client di OneDrive reindirizza automaticamente le cartelle note a OneDrive for Business.  
+        - **Silently move Windows known folders to OneDrive** (Sposta automaticamente le cartelle note di Windows in OneDrive): Quando questo criterio viene applicato al dispositivo, il client di OneDrive reindirizza automaticamente le cartelle note a OneDrive for Business.  
 
-            - **Mostra una notifica agli utenti dopo il reindirizzamento delle cartelle**: se si abilita questa opzione, il client di OneDrive invia una notifica all'utente dopo lo spostamento delle cartelle.  
+            - **Show notification to users after folders have been redirected** (Mostra notifica agli utenti dopo il reindirizzamento delle cartelle): se si abilita questa opzione, il client di OneDrive invia una notifica all'utente dopo lo spostamento delle cartelle.  
 
-    3. **Impedisci agli utenti di reindirizzare le rispettive cartelle note di Windows al proprio computer**: disabilita l'opzione in OneDrive for Business nel client che consente agli utenti di spostare di nuovo queste cartelle nel dispositivo personale.  
+    3. **Prevent users from redirecting their Windows known folders back to their PC** (Impedisci agli utenti di reindirizzare le cartelle note di Windows al PC personale): disabilita l'opzione in OneDrive for Business nel client che consente agli utenti di spostare di nuovo queste cartelle nel dispositivo personale.  
 
        ![Impostazioni per lo spostamento di cartelle note di OneDrive for Business](media/onedrive-for-business-profile-move-folder-settings.png)
 
@@ -71,16 +70,16 @@ Usare Configuration Manager per spostare le cartelle note di Windows in OneDrive
 
 3. Specificare le impostazioni seguenti per la distribuzione:
 
-   1. **Raccolta**: fare clic su **Sfoglia...** e quindi selezionare la raccolta per la quale si vuole distribuire il profilo.  
+   1. **Raccolta**: Fare clic su **Sfoglia...** e quindi selezionare la raccolta per la quale si vuole distribuire il profilo.  
    1. **Genera un avviso**:
 
-      - **Quando la conformità è inferiore a**: percentuale minima di conformità del client da mantenere. In caso contrario, viene generato un avviso.
-      -  **Data e ora**: la data in cui deve iniziare la generazione degli avvisi in base alla conformità del profilo.
-      - **Genera avviso di System Center Operations Manager**: consente di inviare un avviso di conformità a System Center Operations Manager.
+      - **Quando la conformità è inferiore a**: Percentuale minima di conformità del client da mantenere. In caso contrario, viene generato un avviso.
+      -  **Data e ora**: La data in cui deve iniziare la generazione degli avvisi in base alla conformità del profilo.
+      - **Genera avviso di System Center Operations Manager**: Viene avviato un avviso di conformità a System Center Operations Manager.
    1. **Pianificazione**:
 
-      - **Pianificazione semplice**: per impostazione predefinita, questa impostazione usa una pianificazione semplice per avviare la valutazione della conformità ogni sette giorni.
-      - **Pianificazione personalizzata**: consente di definire i casi in cui eseguire la valutazione della conformità. L'ora di avvio si basa sull'ora locale del computer che esegue la Console di Configuration Manager al momento della creazione della pianificazione. In alternativa, è possibile usare l'ora UTC.
+      - **Pianificazione semplice**: Per impostazione predefinita, questa impostazione usa una pianificazione semplice per avviare la valutazione della conformità ogni sette giorni.
+      - **Pianificazione personalizzata**: Consente di definire i casi in cui eseguire la valutazione della conformità. L'ora di avvio si basa sull'ora locale del computer che esegue la Console di Configuration Manager al momento della creazione della pianificazione. In alternativa, è possibile usare l'ora UTC.
  
       ![Distribuire il profilo di OneDrive for Business](media/onedrive-for-business-deploy-profile.png)
 

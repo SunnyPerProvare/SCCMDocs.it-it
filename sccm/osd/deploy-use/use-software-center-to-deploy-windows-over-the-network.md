@@ -10,19 +10,18 @@ ms.assetid: 919e3636-53fe-4119-ad14-2d03702b391b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c8f360d864c0ff8c17e4833a7cb6384a06f373c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3f6cc4366346d32934d8f69fe240f023d74ff49e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70888528"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821444"
 ---
-# <a name="use-software-center-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Usare Software Center per distribuire Windows in rete con System Center Configuration Manager
+# <a name="use-software-center-to-deploy-windows-over-the-network-with-configuration-manager"></a>Usare Software Center per distribuire Windows in rete con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-La sequenza di attività per installare un sistema operativo in System Center Configuration Manager può essere resa disponibile in Software Center. È possibile distribuire un sistema operativo in Software Center negli scenari di distribuzione del sistema operativo seguenti:
+La sequenza di attività per installare un sistema operativo in Configuration Manager può essere resa disponibile in Software Center. È possibile distribuire un sistema operativo in Software Center negli scenari di distribuzione del sistema operativo seguenti:
 
 -   [Aggiornare un computer esistente con una nuova versione di Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)
 
@@ -36,6 +35,6 @@ Per rendere disponibile la distribuzione del sistema operativo in Software Cente
 ##  <a name="BKMK_Deploy"></a> Distribuire la sequenza di attività nei computer  
 Distribuire il sistema operativo in una raccolta di destinazione. Per altre informazioni, vedere [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence). Quando si distribuiscono sistemi operativi per Software Center, è possibile specificare se la distribuzione è obbligatoria o disponibile.
 
--   **Distribuzione obbligatoria**: le distribuzioni obbligatorie renderanno disponibile il sistema operativo in Software Center, ma questo verrà avviato automaticamente in base alla pianificazione di assegnazione configurata.
+-   **Distribuzione richiesta**: le distribuzioni obbligatorie renderanno disponibile il sistema operativo in Software Center, ma questo verrà avviato automaticamente in base alla pianificazione di assegnazione configurata.
 
 -   **Distribuzione disponibile**: il sistema operativo sarà disponibile in Software Center e l'utente potrà installarlo su richiesta.

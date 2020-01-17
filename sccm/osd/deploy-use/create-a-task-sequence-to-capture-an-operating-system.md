@@ -10,13 +10,12 @@ ms.assetid: 25e4ac68-0e78-4bbe-b8fc-3898b372c4e8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee008f256dbdb728d2f31b6a6dfa2828798bd38a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1b6b6f9c4bf17196821c21b9677215df83eeaed6
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74659374"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825507"
 ---
 # <a name="create-a-task-sequence-to-capture-an-os"></a>Creare una sequenza di attività per acquisire un sistema operativo
 
@@ -67,7 +66,7 @@ Usare la procedura seguente per usare una sequenza di attività per creare un co
 
 1. Nella pagina **Informazioni sequenza di attività** specificare le impostazioni seguenti:  
 
-    - **Nome sequenza di attività**: specificare un nome che identifica la sequenza di attività.  
+    - **Nome sequenza di attività**: Specificare un nome che identifica la sequenza di attività.  
 
     - **Descrizione**: specificare una descrizione facoltativa per la sequenza di attività. Ad esempio, descrivere il sistema operativo creato dalla sequenza di attività.
 
@@ -82,9 +81,9 @@ Usare la procedura seguente per usare una sequenza di attività per creare un co
 
     - **Image index**: specifica l'indice del sistema operativo da installare nell'immagine. Se l'immagine del sistema operativo contiene più versioni, selezionare la versione da installare.  
 
-    - **Codice Product Key**: se necessario, specificare il codice Product Key per il sistema operativo Windows da installare. È possibile specificare i codici Product Key per contratti multilicenza codificati e i codici Product Key standard. Se si usa un codice Product Key non codificato, separare ogni gruppo di cinque caratteri con un trattino (`-`). Ad esempio: `XXXXX-XXXXX-XXXXX-XXXXX-XXXXX`  
+    - **Codice Product Key**: se necessario, specificare il codice Product Key per il sistema operativo Windows da installare. È possibile specificare i codici Product Key per contratti multilicenza codificati e i codici Product Key standard. Se si usa un codice Product Key non codificato, separare ogni gruppo di cinque caratteri con un trattino (`-`). ad esempio `XXXXX-XXXXX-XXXXX-XXXXX-XXXXX`  
 
-    - **Modalità di gestione licenze del server**: se necessario, specificare che la licenza del server è **Per postazione**, **Per server**o che non è specificata alcuna licenza. Se la licenza del server è **Per server**, specificare anche il numero massimo di connessioni al server.  
+    - **Modalità di gestione licenze del server**: Se necessario, indicare che la licenza del server è **Per postazione**, **Per server** o che non è specificata alcuna licenza. Se la licenza del server è **Per server**, specificare anche il numero massimo di connessioni al server.  
 
     - Specificare come configurare l'account amministratore per il sistema operativo distribuito:  
 
@@ -94,16 +93,16 @@ Usare la procedura seguente per usare una sequenza di attività per creare un co
 
 1. Nella pagina **Configura rete** specificare le impostazioni seguenti:
 
-    - **Aggiunta a un gruppo di lavoro**: specificare se aggiungere il computer di destinazione a un gruppo di lavoro quando viene distribuito il sistema operativo.  
+    - **Aggiunta a un gruppo di lavoro**: Specificare se aggiungere il computer di destinazione a un gruppo di lavoro quando viene distribuito il sistema operativo.  
 
-    - **Aggiunta a un dominio**: specificare se aggiungere il computer di destinazione a un dominio quando viene distribuito il sistema operativo. In **Dominio**specificare il nome del dominio.  
+    - **Aggiunta a un dominio**: Specificare se aggiungere il computer di destinazione a un dominio quando viene distribuito il sistema operativo. In **Dominio**specificare il nome del dominio.  
 
         > [!IMPORTANT]  
         > È possibile sfogliare la foresta locale per individuare i domini locali. Specificare il nome di dominio per una foresta remota.
 
         È inoltre possibile specificare un'unità organizzativa. Questa impostazione è facoltativa e specifica il nome distinto LDAP X.500 dell'unità organizzativa in cui creare l'account computer se non esiste già.  
 
-    - **Account**: specificare il nome utente e la password per l'account con le autorizzazioni per l'aggiunta al dominio specificato. Ad esempio: `domain\user` o `%variable%`.  
+    - **Account**: Specificare il nome utente e la password per l'account che dispone delle autorizzazioni per l'aggiunta al dominio specificato. Ad esempio: `domain\user` o `%variable%`.  
 
         > [!IMPORTANT]  
         > Se si prevede di eseguire la migrazione delle impostazioni del dominio o del gruppo di lavoro durante la distribuzione, assicurarsi di immettere le credenziali di dominio appropriate qui.  
@@ -131,7 +130,7 @@ Usare la procedura seguente per usare una sequenza di attività per creare un co
 
     - **Percorso**: specificare una cartella di rete condivisa in cui Configuration Manager deve archiviare il file di immagine di output (con estensione wim). Questo file contiene l'immagine del sistema operativo basata sulle impostazioni specificate in questa procedura guidata. Se si specifica una cartella che contiene un oggetto esistente. Il file WIM viene sovrascritto.  
 
-    - **Account**: specificare l'account di Windows con le autorizzazioni per la condivisione di rete in cui viene archiviata l'immagine.  
+    - **Account**: Specificare l'account Windows con le autorizzazioni per la condivisione di rete in cui viene archiviata l'immagine.  
 
 1. Completare la procedura guidata.  
 
@@ -178,11 +177,11 @@ Usare la procedura seguente per acquisire un'immagine del sistema operativo da u
 
     - **Nome** e **Descrizione**: facoltativamente, è possibile modificare il nome del passaggio della sequenza di attività e fornire una descrizione.  
 
-    - **Destinazione**: specificare una cartella di rete condivisa in cui è archiviato il file WIM di output. Questo file contiene l'immagine del sistema operativo basata sulle impostazioni specificate tramite questa procedura guidata. Se si specifica una cartella che contiene un oggetto esistente. Il file WIM viene sovrascritto.  
+    - **Destinazione**: Specificare una cartella di rete condivisa in cui è archiviato il file WIM di output. Questo file contiene l'immagine del sistema operativo basata sulle impostazioni specificate tramite questa procedura guidata. Se si specifica una cartella che contiene un oggetto esistente. Il file WIM viene sovrascritto.  
 
-    - **Descrizione**, **Versione**e **Creato da**: facoltativamente, fornire i dettagli relativi all'immagine da acquisire.  
+    - **Descrizione**, **Versione** e **Creato da**: Facoltativamente, specificare i dettagli relativi all'immagine da acquisire.  
 
-    - **Account**: specificare l'account di Windows con le autorizzazioni per la condivisione di rete specificata. Selezionare **Imposta** per specificare il nome dell'account di Windows.  
+    - **Account di acquisizione dell'immagine del sistema operativo**: specificare l'account di Windows con autorizzazioni per la condivisione di rete specificata. Selezionare **Imposta** per specificare il nome dell'account di Windows.  
 
 Selezionare **OK** per salvare le modifiche e chiudere l'editor della sequenza di attività.  
 

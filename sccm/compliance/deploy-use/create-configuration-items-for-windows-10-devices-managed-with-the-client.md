@@ -2,7 +2,7 @@
 title: Creare elementi di configurazione per Windows 10
 titleSuffix: Configuration Manager
 description: Per gestire le impostazioni dei computer Windows 10 gestiti dal client di Configuration Manager, usare l'elemento di configurazione di Windows 10.
-ms.date: 05/08/2019
+ms.date: 01/06/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
@@ -10,13 +10,12 @@ ms.assetid: 14226fbe-dd07-4432-910b-130790624a4e
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f49820ed0436fe38ce774bf24268fa2ebb363cc
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8050850582ca8e98e153966155b693075bd35949
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70890667"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816548"
 ---
 # <a name="create-configuration-items-for-windows-10-devices"></a>Creare elementi di configurazione per dispositivi Windows 10
 
@@ -54,13 +53,13 @@ Usare l'elemento di configurazione **Windows 10** in Configuration Manager per g
   
     -   **Nessuno**: i dispositivi che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
   
-    -   **Informazioni**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Informazioni** per i report di Configuration Manager.  
+    -   **Informazioni**: I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Informazioni** per i report di Configuration Manager.  
   
-    -   **Avviso**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Avviso** per i report di Configuration Manager.  
+    -   **Avviso**: I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Avviso** per i report di Configuration Manager.  
   
-    -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
+    -   **Errore critico**: I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
   
-    -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
+    -   **Errore critico con evento**: I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
   
 11. Nella pagina **Applicabilità piattaforma** della creazione guidata, verificare le eventuali impostazioni non compatibili con le piattaforme supportate selezionate in precedenza. È possibile tornare indietro e rimuovere queste impostazioni oppure continuare.  
   
@@ -140,7 +139,10 @@ Configuration Manager gli elementi di configurazione di Windows Information Prot
 - Impostazioni di crittografia
   
 
-Per informazioni su come configurare WIP con Configuration Manager, vedere [Proteggere i dati aziendali con Windows Information Protection (WIP)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip).
-  
+Per informazioni su come configurare WIP con Configuration Manager, vedere:
+- [Proteggere i dati aziendali con Windows Information Protection (WIP)](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)
+- [Creare e distribuire un criterio di Windows Information Protection (WIP) con System Center Configuration Manager](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/create-wip-policy-using-sccm#related-topics)
+- [Limitazioni durante l'utilizzo di Windows Information Protection (WIP)](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/limitations-with-wip)
+
 ## <a name="see-also"></a>Vedere anche  
-[Elementi di configurazione per dispositivi gestiti con il client di System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items.md)
+[Elementi di configurazione per dispositivi gestiti con il client di Configuration Manager](../../compliance/deploy-use/create-configuration-items.md)

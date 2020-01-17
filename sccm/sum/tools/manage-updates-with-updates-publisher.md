@@ -10,13 +10,12 @@ ms.assetid: cd64994c-b426-4465-96cd-54b0edc2778d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5b9292359f3451c9c39bef3510b3d5621ec4278
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7c144b3330237decc8a3b9309698672066575a8d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70888487"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818537"
 ---
 # <a name="manage-software-updates-in-updates-publisher"></a>Distribuire e gestire gli aggiornamenti software
 

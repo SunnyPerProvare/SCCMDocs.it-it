@@ -10,17 +10,16 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b099a645-6434-498f-a408-1d438e394396
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 618dd44a32e624a67f03bb18ea01169dd80daeb7
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c46e20e2a74e18edc7fdc5a10a2103a52785cc44
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67194675"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827299"
 ---
 # <a name="install-and-configure-a-software-update-point"></a>installare e configurare un punto di aggiornamento software  
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 > [!IMPORTANT]  
@@ -51,7 +50,7 @@ ms.locfileid: "67194675"
         >  L'impostazione **Utilizzare un server proxy quando si scaricano contenuti tramite le regole di distribuzione automatica** è disponibile ma non viene utilizzata per un punto di aggiornamento software in un sito secondario. Solo il punto di aggiornamento software nel sito di amministrazione centrale e nel sito primario scarica i contenuti dalla pagina di Microsoft Update.  
 
 > [!IMPORTANT]  
->  Per impostazione predefinita, l'account **Sistema locale** per il server in cui è stata creata una regola di distribuzione automatica viene utilizzato per connettersi a Internet e scaricare gli aggiornamenti software quando sono in esecuzione le regole di distribuzione automatica. Quando l'account non ha accesso a Internet, non è possibile scaricare gli aggiornamenti software e in ruleengine.log viene registrata la voce seguente: **Impossibile scaricare l'aggiornamento da Internet. Errore = 12007**. Configurare le credenziali per la connessione al server proxy quando l'account di sistema locale non dispone di accesso a Internet.  
+>  Per impostazione predefinita, l'account **Sistema locale** per il server in cui è stata creata una regola di distribuzione automatica viene utilizzato per connettersi a Internet e scaricare gli aggiornamenti software quando sono in esecuzione le regole di distribuzione automatica. Quando questo account non dispone di accesso a Internet, non è possibile scaricare gli aggiornamenti software e in ruleengine.log viene registrata la seguente voce: **Impossibile scaricare l'aggiornamento da Internet. Errore = 12007**. Configurare le credenziali per la connessione al server proxy quando l'account di sistema locale non dispone di accesso a Internet.  
 
 
 ## <a name="wsus-settings"></a>Impostazioni di WSUS  
@@ -75,7 +74,7 @@ ms.locfileid: "67194675"
 ### <a name="wsus-server-connection-account"></a>Account di connessione al server WSUS  
  È possibile configurare un account che il server del sito utilizzerà per connettersi a WSUS in esecuzione nel punto di aggiornamento software. Se non si configura questo account, Configuration Manager si connette a WSUS tramite l'account computer del server del sito. Configurare l'account di connessione al server WSUS nella pagina **Impostazioni proxy e account** della procedura guidata o nella scheda **Impostazioni proxy e account** nelle proprietà del punto di aggiornamento software.  È possibile configurare l'account nelle pagine della procedura guidata a seconda della versione di Configuration Manager in uso.  
 
- Per altre informazioni sugli account di Configuration Manager, vedere [Accounts used in System Center Configuration Manager](../../core/plan-design/hierarchy/accounts.md) (Account usati in System Center Configuration Manager).  
+ Per ulteriori informazioni sugli account Configuration Manager, vedere [account utilizzati](../../core/plan-design/hierarchy/accounts.md).  
 
 ## <a name="synchronization-source"></a>Origine di sincronizzazione  
  È possibile configurare l'origine sincronizzazione upstream per la sincronizzazione degli aggiornamenti software nella pagina **Origine sincronizzazione** della procedura guidata oppure nella scheda **Impostazioni di sincronizzazione** in Proprietà del componente del punto di aggiornamento software. Le opzioni per l'origine di sincronizzazione variano a seconda del sito.  
@@ -89,14 +88,14 @@ ms.locfileid: "67194675"
 
  Nell'elenco seguente vengono fornite ulteriori informazioni su ciascuna opzione utilizzabile come origine di sincronizzazione:  
 
--   **Sincronizza da Microsoft Update**: usare questa impostazione per sincronizzare i metadati degli aggiornamenti software da Microsoft Update. Il sito di amministrazione centrale deve avere accesso a Internet; in caso contrario, la sincronizzazione avrà esito negativo. Questa impostazione è disponibile solo quando si configura il punto di aggiornamento software nel sito di livello superiore.  
+-   **Sincronizza da Microsoft Update**: Utilizzare questa impostazione per sincronizzare i metadati degli aggiornamenti software da Microsoft Update. Il sito di amministrazione centrale deve avere accesso a Internet; in caso contrario, la sincronizzazione avrà esito negativo. Questa impostazione è disponibile solo quando si configura il punto di aggiornamento software nel sito di livello superiore.  
 
     > [!NOTE]  
     >  Se è presente un firewall tra il punto di aggiornamento software e Internet, potrebbe essere necessario configurarlo per accettare le porte HTTP e HTTPS usate per il sito Web WSUS. È inoltre possibile limitare l'accesso al firewall a determinati domini. Per altre informazioni sulla pianificazione di un firewall che supporta aggiornamenti software, vedere [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls).  
 
--   **<a name="BKMK_wsussync"></a>Sincronizza da un percorso di origine dati upstream**: usare questa impostazione per sincronizzare i metadati degli aggiornamenti software dall'origine sincronizzazione upstream. I siti primari figlio e i siti secondari vengono configurati automaticamente per l'utilizzo dell'URL del sito padre per questa impostazione. È possibile sincronizzare gli aggiornamenti software da un server WSUS esistente. Specificare un URL, ad esempio https://WSUSServer:8531, dove 8531 è la porta usata per connettersi al server WSUS.  
+-   **<a name="BKMK_wsussync"></a>Sincronizza da un percorso di origine dati upstream**: utilizzare questa impostazione per sincronizzare i metadati degli aggiornamenti software dall'origine sincronizzazione upstream. I siti primari figlio e i siti secondari vengono configurati automaticamente per l'utilizzo dell'URL del sito padre per questa impostazione. È possibile sincronizzare gli aggiornamenti software da un server WSUS esistente. Specificare un URL, ad esempio https://WSUSServer:8531, dove 8531 è la porta usata per connettersi al server WSUS.  
 
--   **Non sincronizzare da Microsoft Update o da origine dati upstream**: usare questa impostazione per sincronizzare manualmente gli aggiornamenti software quando il punto di aggiornamento software nel sito di livello superiore viene disconnesso da Internet. Per altre informazioni, vedere [Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso](synchronize-software-updates-disconnected.md).  
+-   **Non eseguire la sincronizzazione da Microsoft Update o origine dati upstream**: utilizzare questa impostazione per sincronizzare manualmente gli aggiornamenti software quando il punto di aggiornamento software nel sito di livello superiore viene disconnesso da Internet. Per altre informazioni, vedere [Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso](synchronize-software-updates-disconnected.md).  
 
 > [!NOTE]  
 >  Se è presente un firewall tra il punto di aggiornamento software e Internet, potrebbe essere necessario configurarlo per accettare le porte HTTP e HTTPS usate per il sito Web WSUS. È inoltre possibile limitare l'accesso al firewall a determinati domini. Per altre informazioni sulla pianificazione di un firewall che supporta aggiornamenti software, vedere [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls).  

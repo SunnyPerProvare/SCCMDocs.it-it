@@ -1,7 +1,7 @@
 ---
 title: Creare linee di base di configurazione
 titleSuffix: Configuration Manager
-description: Creare linee di base di configurazione in System Center Configuration Manager da distribuire in una raccolta.
+description: Creare linee di base di configurazione in Configuration Manager da distribuire in una raccolta.
 ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
@@ -10,20 +10,19 @@ ms.assetid: 678c9622-c61b-47d1-ba25-690616e431c7
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb5d237ed4338c5a9c197bc749c557c542b0b6c4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
-ms.translationtype: MTE75
+ms.openlocfilehash: 0c63e26a082b07580230d01e9485a8c31a977742
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74825548"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816650"
 ---
-# <a name="create-configuration-baselines-in-system-center-configuration-manager"></a>Creare linee di base di configurazione in System Center Configuration Manager
+# <a name="create-configuration-baselines-in-configuration-manager"></a>Creare linee di base di configurazione in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
-Le linee di base di configurazioni in System Center Configuration Manager contengono elementi di configurazione predefiniti e, facoltativamente, altre linee di base di configurazione. Dopo aver creato una linea di base di configurazione, è possibile distribuirla in una raccolta in modo che i dispositivi in tale raccolta la scarichino e valutino la propria conformità in base a essa.  
+Le linee di base di configurazione in Configuration Manager contengono elementi di configurazione predefiniti e, facoltativamente, altre linee di base di configurazione. Dopo aver creato una linea di base di configurazione, è possibile distribuirla in una raccolta in modo che i dispositivi in tale raccolta la scarichino e valutino la propria conformità in base a essa.  
 
 ## <a name="configuration-baselines"></a>Linee di base di configurazione
 
@@ -58,7 +57,7 @@ Per creare una linea di base di configurazione mediante la finestra di dialogo *
 
    -   **Richiesto**: la linea di base di configurazione viene valutata come non conforme se l'elemento di configurazione non viene rilevato in un dispositivo client. Se viene rilevato, viene valutata come conforme  
 
-   -   **Facoltativo**: l'elemento di configurazione viene valutato solo a livello di conformità se l'applicazione a cui fa riferimento viene individuata nei computer client. Se l'applicazione non viene trovata, la linea di base di configurazione non viene contrassegnata come non conforme (applicabile solo agli elementi di configurazione dell'applicazione).  
+   -   **Facoltativo**: l'elemento di configurazione viene valutato solo a livello di conformità se l'applicazione a cui fa riferimento viene trovata nei computer client. Se l'applicazione non viene trovata, la linea di base di configurazione non viene contrassegnata come non conforme (applicabile solo agli elementi di configurazione dell'applicazione).  
 
    -   **Non consentito**: la linea di base di configurazione viene valutata come non conforme se l'elemento di configurazione viene rilevato nei computer client (applicabile solo agli elementi di configurazione dell'applicazione).  
 
@@ -82,7 +81,7 @@ Per creare una linea di base di configurazione mediante la finestra di dialogo *
 <!--3608345-->
 *(Funzionalità introdotta nella versione 1910)*
 
-A partire dalla versione 1910 è possibile aggiungere la valutazione delle linee di base di configurazione personalizzate come regola di valutazione dei criteri di conformità. Quando si crea o si modifica una linea di base di configurazione, è disponibile l'opzione, **Valuta questa baseline come parte della valutazione dei criteri di conformità**. Quando si aggiunge o si modifica una regola dei criteri di conformità, è disponibile una nuova condizione denominata **Includi le baseline configurate in una valutazione dei criteri di conformità**. Per i dispositivi con co-gestione e quando si configura Intune per eseguire Configuration Manager risultati della valutazione della conformità come parte dello stato di conformità generale, queste informazioni vengono inviate al Azure AD. È quindi possibile usarlo per [l'accesso condizionale alle risorse di Office 365](/configmgr/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm#configure-conditional-access).  
+A partire dalla versione 1910 è possibile aggiungere la valutazione delle linee di base di configurazione personalizzate come regola di valutazione dei criteri di conformità. Quando si crea o si modifica una linea di base di configurazione, è disponibile l'opzione, **Valuta questa baseline come parte della valutazione dei criteri di conformità**. Quando si aggiunge o si modifica una regola dei criteri di conformità, è disponibile una nuova condizione denominata **Includi le baseline configurate in una valutazione dei criteri di conformità**. Per i dispositivi con co-gestione, e quando si configura Intune per acquisire i risultati della valutazione della conformità di Configuration Manager come parte dello stato di conformità generale, queste informazioni vengono inviate ad Azure AD. È quindi possibile usarle per l'[accesso condizionale alle risorse di Office 365](/configmgr/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm#configure-conditional-access).  
 
 Per includere linee di base di configurazione personalizzate come parte della valutazione dei criteri di conformità, eseguire le operazioni seguenti:
 

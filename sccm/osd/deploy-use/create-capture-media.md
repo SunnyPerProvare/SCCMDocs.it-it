@@ -10,17 +10,16 @@ ms.assetid: 10eb8958-3848-49d7-95c0-16119b624580
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdd6ca5b2ab0c26caf0f558eff39fc8f01bc9d15
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5a6e76fea130329dcf812f9d18c7575c019da36a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71401559"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825456"
 ---
 # <a name="create-capture-media"></a>Creare supporti di acquisizione
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Il supporto di acquisizione in Configuration Manager consente di acquisire un'immagine del sistema operativo da un computer di riferimento. Contiene l'immagine d'avvio che avvia il computer di riferimento e la sequenza di attività che acquisisce l'immagine del sistema operativo. Usare i supporti di acquisizione per lo scenario per [Creare una sequenza di attività per acquisire un sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-capture-an-operating-system).  
 
@@ -66,9 +65,9 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
     - Se si seleziona **Unità USB rimovibile**, è necessario selezionare l'unità in cui archiviare il contenuto.  
 
-        - **Formatta unità USB rimovibile (FAT32) e consenti l'avvio**: per impostazione predefinita, consentire a Configuration Manager di preparare l'unità USB. Molti dispositivi UEFI più recenti richiedono una partizione FAT32 di avvio. Questo formato tuttavia limita anche le dimensioni dei file e la capacità complessiva dell'unità. Se l'unità rimovibile è già stata formattata e configurata, disabilitare questa opzione.
+        - **Formatta unità USB rimovibile (FAT32) e consenti l'avvio**: per impostazione predefinita, consente a Configuration Manager di preparare l’unità USB. Molti dispositivi UEFI più recenti richiedono una partizione FAT32 di avvio. Questo formato tuttavia limita anche le dimensioni dei file e la capacità complessiva dell'unità. Se l'unità rimovibile è già stata formattata e configurata, disabilitare questa opzione.
 
-    - Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto (**Dimensione supporto**) e il nome e il percorso dei file di output (**File supporto**). La procedura guidata scrive i file di output in questa posizione. Ad esempio: `\\servername\folder\outputfile.iso`  
+    - Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto (**Dimensione supporto**) e il nome e il percorso dei file di output (**File supporto**). La procedura guidata scrive i file di output in questa posizione. ad esempio `\\servername\folder\outputfile.iso`  
 
         Se la capacità del supporto non è sufficiente per archiviare l'intero contenuto, vengono creati più file. È quindi necessario archiviare il contenuto in più CD o DVD. Quando sono necessari più supporti, Configuration Manager aggiunge un numero di sequenza al nome di ogni file di output creato.  
 
@@ -77,7 +76,7 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
     - **Cartella di gestione temporanea**<!--1359388-->: il processo di creazione del supporto può richiedere molto spazio temporaneo sul disco. Per impostazione predefinita questo percorso è simile al seguente: `%UserProfile%\AppData\Local\Temp`. A partire dalla versione 1902, per offrire maggiore flessibilità dal punto di vista del percorso di archiviazione dei file temporanei, modificare questo valore con un'altra unità e un altro percorso.  
 
-    - **Etichetta supporto**<!--1359388-->: a partire dalla versione 1902, è possibile aggiungere un'etichetta al supporto per la sequenza di attività. Questa etichetta consente di identificare più facilmente il supporto creato. Il valore predefinito è `Configuration Manager`. Questo campo di testo viene visualizzato nelle posizioni seguenti:  
+    - **Etichetta supporto**<!--1359388-->: a partire dalla versione 1902, è possibile aggiungere un'etichetta al supporto della sequenza di attività. Questa etichetta consente di identificare più facilmente il supporto creato. Il valore predefinito è `Configuration Manager`. Questo campo di testo viene visualizzato nelle posizioni seguenti:  
 
         - Se si monta un file ISO, Windows visualizza questa etichetta come nome dell'unità montata  
 
@@ -92,7 +91,7 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
     > [!IMPORTANT]  
     > L'architettura dell'immagine d'avvio distribuita deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.  
 
-    - **Immagine d'avvio**: selezionare l'immagine d'avvio per l'avvio del computer di destinazione.  
+    - **Immagine d'avvio**: selezionare l'immagine di avvio per avviare il computer di destinazione.  
 
     - **Punto di distribuzione**: selezionare il punto di distribuzione che ospita l'immagine d'avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
 

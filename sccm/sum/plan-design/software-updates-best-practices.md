@@ -10,17 +10,16 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 6d20389a-9de2-4a64-bced-9fc4fa519174
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 579ecbfc5c085ebca2fe7e8402da9b5cb1507ff1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e079c78a40b307d9db6d4158fea7a8aee5b8cf8f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65496174"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827197"
 ---
 # <a name="best-practices-for-software-updates-in-configuration-manager"></a>Procedure consigliate per aggiornamenti software in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Questo articolo include le procedure consigliate per aggiornamenti software in Configuration Manager. Le informazioni sono suddivise in procedure consigliate per l'installazione iniziale e procedure consigliate per le operazioni in corso.  
 
@@ -42,7 +41,7 @@ Per altre informazioni sulla condivisione del database WSUS, vedere i post di bl
 
 - [Come implementare un database SUSDB condiviso per i punti di aggiornamento software di Configuration Manager](https://techcommunity.microsoft.com/t5/Configuration-Manager-Archive/How-to-implement-a-shared-SUSDB-for-Configuration-Manager/ba-p/274103)  
 
-- [Considerazioni per più istanze WSUS che condividono un database del contenuto quando si usa System Center Configuration Manager](https://blogs.technet.microsoft.com/wsus/2014/03/22/considerations-for-multiple-wsus-instances-sharing-a-content-database-when-using-system-center-configuration-manager-but-without-network-load-balancing-nlb/)  
+- [Considerazioni per più istanze WSUS che condividono un database del contenuto quando si usa Configuration Manager](https://blogs.technet.microsoft.com/wsus/2014/03/22/considerations-for-multiple-wsus-instances-sharing-a-content-database-when-using-system-center-configuration-manager-but-without-network-load-balancing-nlb/)  
 
 
 ### <a name="bkmk_sql-instance"></a> Se Configuration Manager e WSUS usano la stessa istanza di SQL Server, configurarne una per l'utilizzo di un'istanza denominata e l'altra per l'utilizzo dell'istanza predefinita  

@@ -10,17 +10,16 @@ ms.assetid: d9a1c545-8301-492c-832f-2c108ff93c77
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69df6eaa9d7ca164b5d855840eeca2f2c6f72ffc
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d53ab2221e3ee936f9b09592a7c7b383b200c928
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62243423"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821053"
 ---
-# <a name="introduction-to-operating-system-deployment-in-system-center-configuration-manager"></a>Introduzione alla distribuzione del sistema operativo in System Center Configuration Manager
+# <a name="introduction-to-operating-system-deployment-in-configuration-manager"></a>Introduzione alla distribuzione del sistema operativo in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile usare Configuration Manager per distribuire i sistemi operativi in molti modi diversi. Usare le informazioni in questa sezione per comprendere come distribuire sistemi operativi e automatizzare le attività. 
 
@@ -55,15 +54,15 @@ ms.locfileid: "62243423"
 ##  <a name="BKMK_OSDMethods"></a> Metodi per distribuire i sistemi operativi  
  Esistono diversi metodi con cui è possibile distribuire sistemi operativi nei computer client di Configuration Manager.  
 
-- **Distribuzioni avviate da PXE**: le distribuzioni avviate da PXE consentono ai computer client di richiedere una distribuzione in rete. In questo metodo di distribuzione l'immagine del sistema operativo e l'immagine di avvio di Windows PE vengono inviate a un punto di distribuzione configurato per accettare le richieste di avvio da PXE. Per altre informazioni, vedere [Usare PXE per distribuire Windows in rete con System Center Configuration Manager](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+- **Distribuzioni avviate da PXE**: le distribuzioni avviate da PXE consentono ai computer client di richiedere una distribuzione in rete. In questo metodo di distribuzione l'immagine del sistema operativo e l'immagine di avvio di Windows PE vengono inviate a un punto di distribuzione configurato per accettare le richieste di avvio da PXE. Per altre informazioni, vedere [Usare PXE per distribuire Windows in rete con Configuration Manager](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
 - **Rendere disponibili i sistemi operativi in Software Center**: è possibile distribuire un sistema operativo e renderlo disponibile in Software Center. I client di Configuration Manager possono avviare l'installazione del sistema operativo da Software Center. Per altre informazioni, vedere [Sostituire un computer esistente e trasferire le impostazioni](../deploy-use/replace-an-existing-computer-and-transfer-settings.md)  
 
-- **Distribuzioni multicast**: le distribuzioni multicast consentono di risparmiare larghezza di banda con l'invio simultaneo di dati a più client anziché inviare una copia dei dati a ogni client su una connessione separata. In questo metodo di distribuzione l'immagine del sistema operativo viene inviata a un punto di distribuzione. L'immagine verrà a sua volta distribuita quando i computer client richiedono la distribuzione. Per altre informazioni, vedere [Usare il multicast per distribuire Windows in rete](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
+- **Distribuzioni di multicast**: Le distribuzioni di multicast risparmiano larghezza di banda inviando contemporaneamente i dati a più client anziché inviare una copia dei dati a ogni client in una connessione separata. In questo metodo di distribuzione l'immagine del sistema operativo viene inviata a un punto di distribuzione. L'immagine verrà a sua volta distribuita quando i computer client richiedono la distribuzione. Per altre informazioni, vedere [Usare il multicast per distribuire Windows in rete](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
 
-- **Distribuzioni con supporti di avvio**: le distribuzioni con supporti di avvio consentono di distribuire il sistema operativo all'avvio del computer di destinazione. All'avvio del computer di destinazione, viene recuperata la sequenza di attività, l'immagine del sistema operativo e qualsiasi altro contenuto richiesto dalla rete. Poiché tale contenuto non è incluso nel supporto, è possibile aggiornare il contenuto senza dover ricreare il supporto. Per altre informazioni, vedere [Creare supporti di avvio](../deploy-use/create-bootable-media.md).  
+- **Distribuzioni dei supporti di avvio**: Le distribuzioni dei supporti di avvio consentono di distribuire il sistema operativo all'avvio del computer di destinazione. All'avvio del computer di destinazione, viene recuperata la sequenza di attività, l'immagine del sistema operativo e qualsiasi altro contenuto richiesto dalla rete. Poiché tale contenuto non è incluso nel supporto, è possibile aggiornare il contenuto senza dover ricreare il supporto. Per altre informazioni, vedere [Creare supporti di avvio](../deploy-use/create-bootable-media.md).  
 
-- **Distribuzioni con supporti autonomi**: le distribuzioni con supporti autonomi consentono di distribuire i sistemi operativi nelle condizioni seguenti:  
+- **Distribuzioni autonome avviate da supporti**: Le distribuzioni autonome avviate da supporti consentono di distribuire i sistemi operativi nelle condizioni seguenti:  
 
   - In ambienti dove non è semplice copiare un'immagine del sistema operativo o altri pacchetti di grandi dimensioni sulla rete.  
 
@@ -71,12 +70,12 @@ ms.locfileid: "62243423"
 
     Per altre informazioni, vedere [Creare supporti autonomi](../deploy-use/create-stand-alone-media.md).  
 
-- **Distribuzioni con supporti pre-installati**: le distribuzioni con supporti preinstallati consentono di distribuire un sistema operativo in un computer di cui non è stato effettuato il provisioning completo. Il supporto preinstallato è un file WIM (Windows Imaging Format) che può essere installato in un computer bare metal dal produttore o in un centro di gestione temporanea aziendale non connesso all'ambiente di Configuration Manager.  
+- **Distribuzioni di supporti pre-installati**: Le distribuzioni di supporti pre-installati consentono di distribuire un sistema operativo in un computer in cui non è stato effettuato il provisioning. Il supporto preinstallato è un file WIM (Windows Imaging Format) che può essere installato in un computer bare metal dal produttore o in un centro di gestione temporanea aziendale non connesso all'ambiente di Configuration Manager.  
 
    Successivamente nell'ambiente di Configuration Manager il computer viene avviato usando l'immagine d'avvio fornita dal supporto, quindi il computer si collega al punto di gestione del sito per le sequenze di attività che completano il processo di download. Questo metodo di distribuzione può ridurre il traffico di rete perché l'immagine di avvio e l'immagine del sistema operativo sono già nel computer di destinazione. È possibile specificare applicazioni, pacchetti e pacchetti driver da includere nel supporto pre-installato. Per altre informazioni, vedere [Creare supporti preinstallati](../deploy-use/create-prestaged-media.md).  
 
 ##  <a name="BKMK_BootImages"></a> Immagini d'avvio  
- Un'immagine d'avvio in Configuration Manager è un'immagine Windows PE (WinPE) usata durante la distribuzione di un sistema operativo. Le immagini d'avvio vengono usate per avviare un computer in Windows PE, un sistema operativo minimo con componenti e servizi limitati che prepara il computer di destinazione per l'installazione di Windows. Configuration Manager offre due immagini di avvio: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste sono considerate immagini d'avvio predefinite. Le immagini d'avvio create e aggiunte a Configuration Manager dall'utente sono considerate immagini personalizzate. Le immagini d'avvio predefinite possono essere sostituite automaticamente quando si aggiorna Configuration Manager. Per altre informazioni sulle immagini d'avvio, vedere [Gestire le immagini d'avvio con System Center Configuration Manager](../get-started/manage-boot-images.md).  
+ Un'immagine d'avvio in Configuration Manager è un'immagine Windows PE (WinPE) usata durante la distribuzione di un sistema operativo. Le immagini d'avvio vengono usate per avviare un computer in Windows PE, un sistema operativo minimo con componenti e servizi limitati che prepara il computer di destinazione per l'installazione di Windows. In Configuration Manager sono disponibili due immagini d'avvio: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste sono considerate immagini d'avvio predefinite. Le immagini d'avvio create e aggiunte a Configuration Manager dall'utente sono considerate immagini personalizzate. Le immagini d'avvio predefinite possono essere sostituite automaticamente quando si aggiorna Configuration Manager. Per altre informazioni sulle immagini d'avvio, vedere [Gestire le immagini d'avvio con System Center Configuration Manager](../get-started/manage-boot-images.md).  
 
 ##  <a name="BKMK_OSImages"></a> Immagini del sistema operativo  
  Le immagini del sistema operativo in Configuration Manager vengono archiviate in file in formato Windows Imaging (WIM) e rappresentano una raccolta compressa dei file e delle cartelle di riferimento necessari per installare e configurare correttamente un sistema operativo in un computer. Per tutti gli scenari di distribuzione del sistema operativo, è necessario selezionare un'immagine del sistema operativo. È possibile usare l'immagine del sistema operativo predefinita o crearla da un computer di riferimento configurato dall'utente. Per altre informazioni, vedere [Manage operating system images](../get-started/manage-operating-system-images.md) (Gestire le immagini del sistema operativo).  

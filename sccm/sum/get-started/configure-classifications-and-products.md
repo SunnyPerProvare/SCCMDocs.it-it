@@ -10,17 +10,16 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4250f4286c042176d6700eecbe6a65fcc60656af
-ms.sourcegitcommit: a02a4e1a3c034bca00aaf05924a63b08b92201fb
+ms.openlocfilehash: 8d8373a060e3ee798c43b5b5defc8e4de2262f41
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74946496"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827316"
 ---
 # <a name="configure-classifications-and-products-to-synchronize"></a>configurare le classificazioni e i prodotti per la sincronizzazione  
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 I metadati degli aggiornamenti software vengono recuperati durante il processo di sincronizzazione in Configuration Manager in base alle impostazioni specificate nelle proprietà del componente punto di aggiornamento software. Dopo la sincronizzazione degli aggiornamenti software per la prima volta o al rilascio di nuovi prodotti e classificazioni, è necessario passare alle proprietà per selezionare i nuovi elementi. Utilizzare la procedura seguente per configurare le classificazioni e i prodotti per la sincronizzazione.  
 
@@ -39,13 +38,13 @@ I metadati degli aggiornamenti software vengono recuperati durante il processo d
 
     Ogni aggiornamento software viene definito in base a una classificazione di aggiornamento che consente di organizzare i diversi tipi di aggiornamenti. Durante il processo di sincronizzazione, verranno sincronizzati i metadati degli aggiornamenti software per le classificazioni selezionate. Configuration Manager consente di sincronizzare gli aggiornamenti software con le classificazioni di aggiornamento seguenti:  
 
-     - **Aggiornamenti critici**: specifica un aggiornamento rilasciato pubblicamente per un problema specifico che risolve un bug critico non correlato alla sicurezza.  
-     - **Aggiornamenti delle definizioni**: specifica un aggiornamento software frequente rilasciato pubblicamente che contiene aggiunte al database delle definizioni di un prodotto.  
-     - **Feature Pack**: specifica le nuove funzionalità del prodotto distribuite prima al di fuori di una versione del prodotto e che in genere sono incluse nella successiva versione completa del prodotto.  
-     - **Aggiornamenti della sicurezza**: specifica un aggiornamento rilasciato pubblicamente per una vulnerabilità specifica del prodotto correlata alla sicurezza.  
-     - **Service Pack**: specifica un set cumulativo e testato di tutti gli hotfix, gli aggiornamenti della sicurezza, gli aggiornamenti critici e gli aggiornamenti applicati a un prodotto. I Service Pack possono contenere anche aggiornamenti aggiuntivi per problemi rilevati internamente dopo il rilascio del prodotto.  
-     - **Strumenti:** specifica un'utilità o una funzionalità che consente di completare una o più attività.  
-     - **Aggiornamenti cumulativi**: specifica un set cumulativo e testato di hotfix, aggiornamenti della sicurezza, aggiornamenti critici e aggiornamenti riuniti in un unico pacchetto per semplificarne la distribuzione. Un aggiornamento cumulativo interessa in genere un'area specifica, ad esempio la sicurezza o un componente del prodotto.  
+     - **Aggiornamenti critici**: specifica un aggiornamento rilasciato pubblicamente per un problema specifico, per un bug critico, non correlato alla sicurezza.  
+     - **Aggiornamenti delle definizioni**: specifica un aggiornamento software frequente rilasciato pubblicamente che contiene aggiunte al database che contiene la definizione del prodotto.  
+     - **Feature Pack**: specifica le nuove funzionalità del prodotto che vengono distribuite prima al di fuori del rilascio di un prodotto e che in genere sono incluse nella successiva versione completa del prodotto.  
+     - **Aggiornamenti della sicurezza**: specifica un aggiornamento rilasciato pubblicamente per un problema specifico del prodotto, correlato alla sicurezza.  
+     - **Service Pack**: specifica un insieme cumulativo e testato di tutti gli aggiornamenti rapidi, gli aggiornamenti della sicurezza, gli aggiornamenti critici e gli aggiornamenti che vengono applicati a un prodotto. I Service Pack possono contenere anche aggiornamenti aggiuntivi per problemi rilevati internamente dopo il rilascio del prodotto.  
+     - **Strumenti**: specifica un'utilità o una funzionalità che consente di completare una o più attività.  
+     - **Aggiornamenti cumulativi**: specifica un insieme cumulativo e testato di aggiornamenti rapidi, aggiornamenti della sicurezza, aggiornamenti critici e aggiornamenti riuniti in un unico pacchetto per semplificarne la distribuzione. Un aggiornamento cumulativo interessa in genere un'area specifica, ad esempio la sicurezza o un componente del prodotto.  
      - **Aggiornamenti**: specifica un aggiornamento rilasciato pubblicamente per un problema specifico. Un aggiornamento risolve un bug non critico, non correlato alla sicurezza.  
      - **Aggiornamento**: specifica un aggiornamento per le caratteristiche e le funzionalità di Windows 10. Per ottenere la classificazione di [aggiornamento](https://support.microsoft.com/kb/3095113), i punti di aggiornamento software e i siti devono eseguire WSUS 6.2 con l'**hotfix 3095113**. Per ulteriori informazioni sull'installazione di questo aggiornamento e altri **aggiornamenti** per gli aggiornamenti, vedere [prerequisiti per gli aggiornamenti software](/sccm/sum/plan-design/prerequisites-for-software-updates#BKMK_wsus2012).
 

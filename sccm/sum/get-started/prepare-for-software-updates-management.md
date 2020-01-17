@@ -1,7 +1,7 @@
 ---
 title: Preparare la gestione degli aggiornamenti software
 titleSuffix: Configuration Manager
-description: Per preparare la gestione degli aggiornamenti, completare queste attività per visualizzare i dati di valutazione di conformità nella console di System Center Configuration Manager.
+description: Per preparare la gestione degli aggiornamenti, completare queste attività per visualizzare i dati di valutazione di conformità nella console di Configuration Manager.
 ms.date: 10/06/2016
 ms.topic: conceptual
 ms.prod: configuration-manager
@@ -10,19 +10,18 @@ ms.assetid: 01907900-e28b-4cd7-9479-42906416707b
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8381a9a5195982a2defa347934c28286e9082ce7
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ab22fdcacf7574884f7cfd21859cb4b1aeb8e23f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65493962"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818588"
 ---
 # <a name="prepare-for-software-updates-management"></a>Preparare la gestione degli aggiornamenti software
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Prima che i dati di valutazione della conformità dell'aggiornamento software siano visualizzati nella console di System Center Configuration Manager e prima di poter distribuire gli aggiornamenti software nei computer client, è necessario completare i passaggi seguenti.
+Prima che i dati di valutazione della conformità dell'aggiornamento software siano visualizzati nella console di Configuration Manager e prima di poter distribuire gli aggiornamenti software nei computer client, è necessario completare i passaggi seguenti.
 
 ## <a name="step-1-install-a-software-update-point"></a>Passaggio 1: Installare un punto di aggiornamento software  
 Il punto di aggiornamento software è necessario nel sito di amministrazione centrale e nei siti primari autonomi per abilitare la valutazione della conformità degli aggiornamenti software e per distribuire gli aggiornamenti software ai client. Il punto di aggiornamento software è facoltativo nei siti secondari. Per informazioni dettagliate, vedere[Installare un punto di aggiornamento software](install-a-software-update-point.md)  
@@ -30,7 +29,7 @@ Il punto di aggiornamento software è necessario nel sito di amministrazione cen
 ## <a name="step-2-synchronize-software-updates"></a>Passaggio 2: Sincronizzare gli aggiornamenti software
 La sincronizzazione degli aggiornamenti software è il processo di recupero dei metadati degli aggiornamenti software che soddisfano i criteri configurati. Gli aggiornamenti software non vengono visualizzati nella console di Configuration Manager finché non verranno sincronizzati. Per informazioni dettagliate, vedere [Sincronizzare gli aggiornamenti software](synchronize-software-updates.md).   
 
-## <a name="step-3-configure-classifications-and-products-to-synchronize"></a>Passaggio 3: Configurare le classificazioni e i prodotti da sincronizzare
+## <a name="step-3-configure-classifications-and-products-to-synchronize"></a>Passaggio 3: configurare le classificazioni e i prodotti per la sincronizzazione
 Eseguire questa configurazione nel sito di amministrazione centrale o nel sito primario autonomo. Dopo aver sincronizzato gli aggiornamenti software per la prima volta, Configuration Manager recupera un elenco aggiornato di classificazioni e prodotti. A questo punto, è possibile eseguire selezioni dalle nuove opzioni delle proprietà del componente punto di aggiornamento software. Dopo aver configurato le nuove classificazioni e i prodotti, ripetere il passaggio 2 per avviare la sincronizzazione degli aggiornamenti software per recuperare i metadati degli aggiornamenti software per i nuovi criteri. Per informazioni dettagliate, vedere [Configurare le classificazioni e i prodotti per la sincronizzazione](configure-classifications-and-products.md).
 
 ## <a name="step-4-manage-settings-for-software-updates"></a>Passaggio 4: Gestire le impostazioni per gli aggiornamenti software

@@ -10,17 +10,16 @@ ms.assetid: 946b0f74-0794-4e8f-a6af-9737d877179b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c975580f3902a2cf468ea5f31ed0710508ef681b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 678b6a15bb1d80df4c320801b98438f75bebc7c7
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74658982"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827401"
 ---
 # <a name="enable-third-party-updates"></a>Abilitare gli aggiornamenti di terze parti 
 
-*Si applica a: System Center Configuration Manager*
+*Si applica a: Configuration Manager (Current Branch)*
 
 A partire dalla versione 1806, il nodo **Cataloghi di aggiornamenti software di terze parti** nella console di Configuration Manager consente di sottoscrivere i cataloghi di terze parti, pubblicarne gli aggiornamenti nel punto di aggiornamento software e quindi implementare i cataloghi nei client.  <!--1357605, 1352101, 1358714-->
 
@@ -114,7 +113,7 @@ I *cataloghi partner* sono cataloghi di fornitori di software le cui informazion
     - **URL di download**: un indirizzo HTTPS valido del catalogo personalizzato.
     - **Editore**: nome dell'organizzazione che pubblica il catalogo. 
     - **Nome**: nome del catalogo da visualizzare nella console di Configuration Manager. 
-    - **Descrizione**: descrizione del catalogo. 
+    - **Descrizione**: una descrizione del catalogo. 
     - **URL supporto tecnico** (facoltativo): indirizzo HTTPS valido di un sito Web per ottenere assistenza con il catalogo. 
     - **Contatto supporto tecnico** (facoltativo): informazioni di contatto per ottenere assistenza con il catalogo. 
 2. Fare clic su **Avanti** per esaminare il riepilogo del catalogo e continuare per completare gli **Aggiornamenti software guidati di terze parti per i cataloghi personalizzati**.
@@ -159,7 +158,7 @@ Quando gli aggiornamenti di terze parti sono nel nodo **Tutti gli aggiornamenti*
 
 ## <a name="bkmk_1910"></a>Miglioramenti per gli aggiornamenti di terze parti a partire da 1910
 <!--4469002-->
-Sono ora disponibili controlli più granulari sulla sincronizzazione dei cataloghi degli aggiornamenti di terze parti. A partire da Configuration Manager versione 1910, è possibile configurare la pianificazione della sincronizzazione per ogni catalogo in modo indipendente. Quando si utilizzano cataloghi che includono aggiornamenti categorizzati, è possibile configurare la sincronizzazione in modo da includere solo categorie specifiche di aggiornamenti per evitare di sincronizzare l'intero catalogo. Con i cataloghi categorizzati, quando si è certi che si distribuirà una categoria, è possibile configurarla in modo che venga scaricata e pubblicata automaticamente in WSUS.
+Sono ora disponibili controlli più granulari sulla sincronizzazione dei cataloghi di aggiornamenti di terze parti. A partire da Configuration Manager versione 1910, è possibile configurare la pianificazione della sincronizzazione per ogni catalogo in modo indipendente. Quando si usano cataloghi che includono aggiornamenti suddivisi per categorie, è possibile configurare la sincronizzazione in modo da includere solo determinate categorie di aggiornamenti per evitare di sincronizzare l'intero catalogo. Con i cataloghi suddivisi per categorie, quando si è certi che si distribuirà una categoria, è possibile configurarla per il download e la pubblicazione automatici in WSUS.
 
 ### <a name="set-the-schedule-for-a-catalog-in-a-new-catalog-subscription"></a>Impostare la pianificazione per un catalogo in una nuova sottoscrizione del catalogo
 

@@ -10,13 +10,12 @@ ms.assetid: 41dcc259-f147-4420-bff2-b65bdf8cff77
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 65cba26a0d1a90fb152f269259e737e2446141f1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1b3afee0219b93b120748c1078cfa0944b71946d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74659170"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819574"
 ---
 # <a name="introduction-to-certificate-profiles-in-configuration-manager"></a>Introduzione ai profili certificato in Configuration Manager
 
@@ -36,19 +35,19 @@ I profili di certificato forniscono le seguenti funzionalità di gestione:
 
 **Esempio 1**: tutti i dipendenti devono connettersi agli hotspot Wi-Fi in più sedi di uffici. Per consentire agli utenti di connettersi con facilità, distribuire per prima cosa i certificati necessari per la connessione Wi-Fi, quindi distribuire i profili Wi-Fi che fanno riferimento al certificato.  
 
-**Esempio 2:** è disponibile un'infrastruttura a chiave pubblica (PKI). e si vuole passare a un metodo più flessibile e sicuro di distribuzione dei certificati. Gli utenti devono accedere alle risorse aziendali dai loro dispositivi personali senza compromettere la sicurezza. Configurare i profili certificato con le impostazioni e i protocolli supportati per la piattaforma per dispositivi specifica. I dispositivi possono quindi richiedere automaticamente questi certificati a un server di registrazione con connessione Internet. Configurare quindi i profili VPN per usare questi certificati, in modo che il dispositivo possa accedere alle risorse dell'organizzazione.  
+**Esempio 2**: è disponibile un'infrastruttura a chiave pubblica (PKI). e si vuole passare a un metodo più flessibile e sicuro di distribuzione dei certificati. Gli utenti devono accedere alle risorse aziendali dai loro dispositivi personali senza compromettere la sicurezza. Configurare i profili certificato con le impostazioni e i protocolli supportati per la piattaforma per dispositivi specifica. I dispositivi possono quindi richiedere automaticamente questi certificati a un server di registrazione con connessione Internet. Configurare quindi i profili VPN per usare questi certificati, in modo che il dispositivo possa accedere alle risorse dell'organizzazione.  
 
 ## <a name="types"></a>Tipi
 
 Esistono tre tipi di profilo certificato:  
 
-- **Certificato CA attendibile**: consente di distribuire un certificato della CA radice attendibile o un certificato della CA intermedio. Questi certificati formano una catena di certificati quando il dispositivo deve eseguire l'autenticazione a un server.  
+- **Certificato CA attendibile**: Consente di distribuire un certificato della CA radice attendibile o un certificato della CA intermedio. Questi certificati formano una catena di certificati quando il dispositivo deve eseguire l'autenticazione a un server.  
 
-- **Simple Certificate Enrollment Protocol (SCEP)** : consente di richiedere un certificato per un dispositivo o un utente usando il protocollo SCEP. Questo tipo richiede il ruolo del servizio Registrazione dispositivi di rete (NDES) in un server che esegue Windows Server 2012 R2 o versione successiva.
+- **Simple Certificate Enrollment Protocol (SCEP)** : Consente di richiedere un certificato per un dispositivo o un utente usando il protocollo SCEP. Questo tipo richiede il ruolo del servizio Registrazione dispositivi di rete (NDES) in un server che esegue Windows Server 2012 R2 o versione successiva.
 
     Per creare un profilo certificato di tipo **Simple Certificate Enrollment Protocol (SCEP)** , creare prima un profilo **Certificato CA attendibile**.
 
-- **Scambio informazioni personali (.pfx)** : consente di richiedere un certificato con estensione pfx (noto anche come PKCS #12) per un dispositivo o un utente.<!--1321368--> Esistono due metodi per creare profili certificato PFX:
+- **Scambio informazioni personali (.pfx)** : Consente di richiedere un certificato PFX (noto anche come PKCS #12) per un dispositivo o un utente.<!--1321368--> Esistono due metodi per creare profili certificato PFX:
 
   - [Importa credenziali](/configmgr/mdm/deploy-use/import-pfx-certificate-profiles) da certificati esistenti
   - [Definire un'](/configmgr/mdm/deploy-use/create-pfx-certificate-profiles) autorità di certificazione per elaborare le richieste
@@ -58,7 +57,7 @@ Esistono tre tipi di profilo certificato:
 
   È possibile usare Microsoft o Entrust come CA per i certificati di **scambio di informazioni personali (PFX)** .
 
-## <a name="requirements"></a>requisiti
+## <a name="requirements"></a>Requisiti
 
 Per distribuire i profili certificato che usano SCEP, installare il punto di registrazione certificati in un server del sistema del sito. Installare anche un modulo criteri per il servizio Registrazione dispositivi di rete (NDES), il Modulo criteri di Configuration Manager, in un server che esegue Windows Server 2012 R2 o versione successiva. Questo server richiede il ruolo Servizi certificati Active Directory. Richiede anche un registrazione dispositivi funzionante accessibile ai dispositivi che richiedono i certificati. Se i dispositivi devono registrarsi per i certificati da Internet, il server di registrazione dispositivi deve essere accessibile da Internet. Ad esempio, per abilitare in modo sicuro il traffico verso il server registrazione dispositivi da Internet, è possibile usare [applicazione Azure proxy](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy).
 
@@ -77,7 +76,7 @@ A seconda dei requisiti, Configuration Manager supporta la distribuzione dei cer
 - Windows Phone 8.1  
 
 > [!NOTE]  
-> Usare Configuration Manager MDM locale per gestire Windows Phone 8,1 e Windows 10 Mobile. Per altre informazioni, vedere [MDM locale](/configmgr/mdm/understand/manage-mobile-devices-with-on-premises-infrastructure).
+> Usare Configuration Manager MDM locale per gestire Windows Phone 8,1 e Windows 10 Mobile. Per altre informazioni, vedere [Software MDM locale](/configmgr/mdm/understand/manage-mobile-devices-with-on-premises-infrastructure).
 
 Uno scenario tipico per Configuration Manager consiste nell'installare i certificati CA radice attendibili per autenticare i server Wi-Fi e VPN. Le connessioni tipiche utilizzano i protocolli seguenti:
 
@@ -88,7 +87,7 @@ Un certificato della CA radice aziendale deve essere installato nel dispositivo 
 
 È possibile specificare le impostazioni in un profilo certificato SCEP per richiedere certificati personalizzati per diversi ambienti o requisiti di connettività. La **Creazione guidata profilo certificato** ha due pagine per i parametri di registrazione. La prima, **Registrazione SCEP**, include le impostazioni per la richiesta di registrazione e la posizione in cui installare il certificato. Il secondo, **Proprietà certificato**, descrive il certificato richiesto stesso.  
 
-## <a name="deploy"></a>Distribuire
+## <a name="deploy"></a>Distribuisci
 
 Quando si distribuisce un profilo certificato SCEP, il client Configuration Manager elabora i criteri. Richiede quindi una password di richiesta SCEP dal punto di gestione. Il dispositivo crea una coppia di chiavi pubblica/privata e genera una richiesta di firma del certificato (CSR). Invia la richiesta al server registrazione dispositivi. Il server registrazione dispositivi Invia la richiesta al sistema del sito del punto di registrazione certificati tramite il modulo criteri Registrazione dispositivi. Il punto di registrazione certificati convalida la richiesta, verifica la password di SCEP Challenge e verifica che la richiesta non sia stata manomessa. Viene quindi approvata o negata la richiesta. Se approvata, il server registrazione dispositivi Invia la richiesta di firma all'autorità di certificazione (CA) connessa per la firma. La CA firma la richiesta e quindi restituisce il certificato al dispositivo richiedente.
 

@@ -10,17 +10,16 @@ ms.assetid: 0d484c1a-e903-4bff-9e9b-e452c62e38a8
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e96bf2cf8218c16a9862c5777a36aed7515a86d9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c8ee9d843a73600d179a711f37ec54b4881d8a51
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70379921"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818639"
 ---
 #  <a name="BKMK_ManageSUSettings"></a> Gestire le impostazioni per gli aggiornamenti software  
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Dopo aver sincronizzato gli aggiornamenti software in Configuration Manager, configurare e verificare le impostazioni nelle sezioni seguenti.
 
@@ -69,7 +68,7 @@ Nelle proprietà degli aggiornamenti software, è possibile verificare le inform
 ####  <a name="BKMK_SoftwareUpdateDetails"></a> Dettagli sugli aggiornamenti software  
 Nella scheda **Dettagli aggiornamento** è possibile visualizzare le seguenti informazioni di riepilogo relative all'aggiornamento software selezionato:  
 
-- **ID bollettino**: specifica l'ID bollettino associato agli aggiornamenti software di sicurezza. È possibile trovare i dettagli relativi al bollettino sulla sicurezza cercando l'ID bollettino nella pagina Web [Microsoft Security Response Center](https://portal.msrc.microsoft.com/).  
+- **ID bollettino**: specifica l'ID bollettino associato agli aggiornamenti software di protezione. È possibile trovare i dettagli relativi al bollettino sulla sicurezza cercando l'ID bollettino nella pagina Web [Microsoft Security Response Center](https://portal.msrc.microsoft.com/).  
 
 > [!NOTE]
 > Il modo in cui Microsoft documenta gli aggiornamenti della sicurezza sta cambiando. Il modello precedente usava le pagine Web dei bollettini sulla sicurezza e includeva i numeri ID dei bollettini sulla sicurezza (ad esempio, MS16-XXX) come riferimento. Questa formato della documentazione degli aggiornamenti della sicurezza, inclusi i numeri ID dei bollettini, è in fase di ritiro e verrà sostituito con la guida agli aggiornamenti della sicurezza. Invece che sugli ID dei bollettini, la nuova guida si basa sui numeri ID delle vulnerabilità e sui numeri ID degli articoli della KB. Per altre informazioni, vedere le [domande frequenti sulla guida agli aggiornamenti della sicurezza](https://www.microsoft.com/msrc/faqs-security-update-guide).
@@ -96,7 +95,7 @@ Nella scheda **Informazioni sul contenuto** , esaminare le seguenti informazioni
 
 -   **Lingua**: specifica le lingue per l'aggiornamento software.  
 
--   **Percorso di origine**: specifica il percorso dei file di origine dell'aggiornamento software.  
+-   **Percorso di origine**: specifica il percorso ai file di origine dell'aggiornamento software.  
 
 -   **Dimensione (MB)** : specifica le dimensioni dei file di origine dell'aggiornamento software.  
 
@@ -116,7 +115,7 @@ Nella proprietà, è possibile configurare le impostazioni degli aggiornamenti s
 ####  <a name="BKMK_SetMaxRunTime"></a> Impostare il tempo di esecuzione massimo  
 Nella scheda **Tempo di esecuzione massimo** , impostare la quantità massima di tempo assegnata per completare un aggiornamento software nei computer client. Se l'aggiornamento richiede più tempo del valore del tempo di esecuzione massimo, Configuration Manager crea un messaggio di stato e interrompe il monitoraggio della distribuzione per l'installazione degli aggiornamenti software. È possibile configurare questa impostazione solo nel sito di amministrazione centrale o in un sito primario autonomo.  
 
-Configuration Manager usa inoltre questa impostazione per stabilire se avviare l'installazione dell'aggiornamento software all'interno di una finestra di manutenzione configurata. Se il valore del tempo di esecuzione massimo è maggiore del tempo rimanente disponibile nella finestra di manutenzione, l'installazione degli aggiornamenti software viene rimandata fino all'avvio della nuova finestra di manutenzione. Quando più aggiornamenti software devono essere installati su un computer client con una finestra di manutenzione configurata (intervallo di tempo), l'aggiornamento software con il tempo di esecuzione massimo più basso viene installato per primo, poi viene installato quello con il secondo tempo di esecuzione massimo più basso e così via. Prima dell'installazione di ogni aggiornamento software, il client verifica che la finestra di manutenzione disponibile fornirà un tempo sufficiente per installare l'aggiornamento software. Dopo l'avvio dell'installazione di un aggiornamento software, l'installazione continuerà anche se va oltre la fine della finestra di manutenzione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione in System Center Configuration Manager](../../core/clients/manage/collections/use-maintenance-windows.md).  
+Configuration Manager usa inoltre questa impostazione per stabilire se avviare l'installazione dell'aggiornamento software all'interno di una finestra di manutenzione configurata. Se il valore del tempo di esecuzione massimo è maggiore del tempo rimanente disponibile nella finestra di manutenzione, l'installazione degli aggiornamenti software viene rimandata fino all'avvio della nuova finestra di manutenzione. Quando più aggiornamenti software devono essere installati su un computer client con una finestra di manutenzione configurata (intervallo di tempo), l'aggiornamento software con il tempo di esecuzione massimo più basso viene installato per primo, poi viene installato quello con il secondo tempo di esecuzione massimo più basso e così via. Prima dell'installazione di ogni aggiornamento software, il client verifica che la finestra di manutenzione disponibile fornirà un tempo sufficiente per installare l'aggiornamento software. Dopo l'avvio dell'installazione di un aggiornamento software, l'installazione continuerà anche se va oltre la fine della finestra di manutenzione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
 Nella scheda **Tempo di esecuzione massimo** , è possibile visualizzare e configurare le seguenti impostazioni:  
 
@@ -133,7 +132,7 @@ Nelle proprietà dell'aggiornamento software, è possibile usare la scheda **Gra
 - **Gravità personalizzata**: imposta un valore di gravità personalizzato per gli aggiornamenti software. Selezionare **Errore critico**, **Importante**, **Medio**o **Basso** dall'elenco. Per impostazione predefinita, il valore di gravità personalizzato è vuoto.
 
 ## <a name="crl-checking-for-software-updates"></a>Controllo CRL per aggiornamenti software
-Per impostazione predefinita, l'elenco di revoche di certificati (CRL) non viene controllato durante la verifica della firma negli aggiornamenti software di System Center Configuration Manager. Il controllo dell'elenco CRL a ogni utilizzo del certificato offre una maggiore protezione dall'utilizzo di un certificato revocato, ma introduce un ritardo nella connessione e genera un'ulteriore elaborazione nel computer che esegue il controllo CRL.  
+Per impostazione predefinita, l'elenco di revoche di certificati (CRL) non viene controllato durante la verifica della firma negli aggiornamenti software di Configuration Manager. Il controllo dell'elenco CRL a ogni utilizzo del certificato offre una maggiore protezione dall'utilizzo di un certificato revocato, ma introduce un ritardo nella connessione e genera un'ulteriore elaborazione nel computer che esegue il controllo CRL.  
 
 Se usato, è necessario attivare il controllo CRL nelle console di Configuration Manager che elaborano gli aggiornamenti software.  
 

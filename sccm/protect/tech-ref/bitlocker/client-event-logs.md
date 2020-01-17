@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: c38b6963-cb1f-40ed-a888-e19d401ec3fc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 63b0ae248fe3126e6a2ce62de75062df3ddda93d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 228d96ad71b81d4e544e1f8906dbcf6bb032858b
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74662699"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819030"
 ---
 # <a name="client-event-logs"></a>Registri eventi del client
 
@@ -26,7 +25,7 @@ ms.locfileid: "74662699"
 
 In un client Configuration Manager in cui si distribuisce un criterio di gestione di BitLocker, utilizzare Windows Visualizzatore eventi per visualizzare i registri eventi del client BitLocker. Passare a **registri applicazioni e servizi**, **Microsoft**, **Windows**, **mbam** per i registri eventi [operativi](#operational) e [amministrativi](#admin) .
 
-## <a name="admin"></a>Amministrazione
+## <a name="admin"></a>Amministratore
 
 ### <a name="2-volumeenactmentfailed"></a>2: VolumeEnactmentFailed
 

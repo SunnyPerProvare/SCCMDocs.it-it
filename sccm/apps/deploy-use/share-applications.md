@@ -1,7 +1,7 @@
 ---
 title: Condividere le applicazioni nel Software Center
 titleSuffix: Configuration Manager
-description: Condividere un collegamento a un'applicazione in Software Center in System Center Configuration Manager.
+description: Condividere un collegamento a un'applicazione in Software Center in Configuration Manager.
 ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-app
@@ -10,19 +10,18 @@ ms.assetid: 2629c376-ec43-4f0e-a78b-4223cc9302bf
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7a700482dad9f1ab2e41456596423fa23c15434
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b7ec7fa8ef5fae89f8d1ac2c2535b3c67612a032
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62198754"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817959"
 ---
 # <a name="share-an-application-from-software-center"></a>Condividere un'applicazione da Software Center
 
-*Si applica a: System Center Configuration Manager (Current Branch)* <!-- 1706 -->
+*Si applica a: Configuration Manager (Current Branch)* <!-- 1706 -->
 
-È possibile copiare un collegamento ipertestuale in un'applicazione in Software Center tramite il pulsante ![Condividi](media/share15.png) **Condividi** nella vista Dettagli applicazione. È possibile condividere collegamenti ipertestuali solo per le applicazioni. Se un'applicazione non è più disponibile, il collegamento ipertestuale apre una finestra con un messaggio che informa dell'indisponibilità dell'applicazione.
+È possibile copiare un collegamento ipertestuale in un'applicazione in Software Center usando il pulsante ![Condividi](media/share15.png)  **Condividi** nella vista Dettagli applicazione. È possibile condividere collegamenti ipertestuali solo per le applicazioni. Se un'applicazione non è più disponibile, il collegamento ipertestuale apre una finestra con un messaggio che informa dell'indisponibilità dell'applicazione.
 
 1. Scegliere **Applicazioni** e quindi scegliere l'applicazione.
 2. Fare clic sul pulsante ![Condividi](media/share15.png) **Condividi**.

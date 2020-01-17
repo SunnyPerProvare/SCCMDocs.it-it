@@ -10,17 +10,16 @@ ms.assetid: 79cd131a-1a24-4751-87c8-7f275e45d847
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35765aa804bf0e6d303caf2c395d3d44d5027951
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 969a39e2f5dc043b0332ee4a523ad4027e406684
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62198293"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817772"
 ---
 # <a name="create-linux-and-unix-server-applications-with-configuration-manager"></a>Creare applicazioni server Linux e UNIX con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 > [!Important]  
 > A partire dalla versione 1902, Configuration Manager non supporta i client Linux o UNIX. 
@@ -59,7 +58,7 @@ Di seguito sono illustrate le principali differenze tra la distribuzione di pacc
 |-------------------|-------------|  
 |Usare solo le configurazioni destinate ai computer. Non usare le configurazioni destinate agli utenti.|Il client di Configuration Manager per Linux e UNIX non supporta le configurazioni destinate agli utenti.|  
 |Configurare i programmi per scaricare il software dal punto di distribuzione ed eseguire i programmi dalla cache del client locale.|Il client di Configuration Manager per Linux e UNIX non supporta l'esecuzione di software dal punto di distribuzione. Al contrario, è necessario configurare il software per scaricare il client e quindi eseguire l'installazione.<br /><br /> Per impostazione predefinita, dopo che il client per Linux e UNIX installa il software, tale software viene eliminato dalla cache del client. Tuttavia, i pacchetti configurati con l'opzione **Rendi permanente il contenuto nella cache client** non vengono eliminati dal client e rimangono nella cache dopo l'installazione del software.<br /><br /> Il client per Linux e UNIX non supporta le configurazioni per la cache del client e la dimensione massima di tale cache viene limitata solo dallo spazio libero su disco nel computer client.|  
-|Configurare l'account di accesso alla rete per l'accesso del punto di distribuzione|I computer Linux e UNIX sono progettati per essere utilizzati come computer del gruppo di lavoro. Per accedere ai pacchetti dal punto di distribuzione nel dominio del server del sito di Configuration Manager, è necessario configurare l'account di accesso alla rete per il sito. È necessario specificare questo account come una proprietà del componente di distribuzione software e configurare l'account prima di distribuire il software.<br /><br /> È possibile configurare più account di accesso alla rete in ogni sito. Il client per Linux e UNIX può utilizzare tutti gli account configurati come account di accesso alla rete.<br /><br /> Per altre informazioni, vedere [Site components for System Center Configuration Manager](../../core/servers/deploy/configure/site-components.md).|  
+|Configurare l'account di accesso alla rete per l'accesso del punto di distribuzione|I computer Linux e UNIX sono progettati per essere utilizzati come computer del gruppo di lavoro. Per accedere ai pacchetti dal punto di distribuzione nel dominio del server del sito di Configuration Manager, è necessario configurare l'account di accesso alla rete per il sito. È necessario specificare questo account come una proprietà del componente di distribuzione software e configurare l'account prima di distribuire il software.<br /><br /> È possibile configurare più account di accesso alla rete in ogni sito. Il client per Linux e UNIX può utilizzare tutti gli account configurati come account di accesso alla rete.<br /><br /> Per altre informazioni, vedere [Componenti del sito per Configuration Manager](../../core/servers/deploy/configure/site-components.md).|  
 
  È possibile distribuire pacchetti e programmi nelle raccolte che contengono solo client Linux o UNIX o distribuirli in raccolte che contengono un insieme di tipi di client, ad esempio la **raccolta Tutti i sistemi**. I client non Linux e non UNIX, tuttavia, non installeranno il software o segnaleranno un errore.  
 
@@ -126,7 +125,7 @@ Nella seguente tabella vengono elencate le proprietà non supportate per i pacch
 |Opzione di distribuzione per reti veloci (LAN):<br /><br /> - Esegui programma dal punto di distribuzione|Viene generato un errore e l'installazione del software non viene completata|Il client non è in grado di eseguire il software dal punto di distribuzione ed è necessario che scarichi il programma prima di poterlo eseguire.|  
 |Opzione di distribuzione per l'utilizzo entro i limiti di una rete lenta o non affidabile o l'utilizzo di un percorso di origine di fallback per il contenuto:<br /><br /> - Consenti ai client di condividere il contenuto con altri client nella stessa subnet|Le impostazioni vengono ignorate|Il client non supporta la condivisione del contenuto tra peer.|  
 
- Per altre informazioni sul percorso del contenuto, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+ Per altre informazioni sul percorso del contenuto, vedere [Gestire il contenuto e l'infrastruttura del contenuto per Configuration Manager](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
  Per altre informazioni sulla creazione di una distribuzione, vedere l'argomento relativo alla [distribuzione delle applicazioni](../../apps/deploy-use/deploy-applications.md).  
 

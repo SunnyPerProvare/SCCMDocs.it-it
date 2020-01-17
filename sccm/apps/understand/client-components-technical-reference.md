@@ -10,17 +10,16 @@ ms.assetid: 701a3456-9dd6-4aaa-9c5a-37c1e1773216
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f866859c785a6cfa14496948b92d9bac138bc64
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 692b705f7e24bf71aa05111cafce68647dfeef9f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74823461"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75782048"
 ---
 # <a name="understanding-application-deployment-client-components"></a>Informazioni sui componenti client di distribuzione delle applicazioni
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Le operazioni di valutazione e applicazione della distribuzione dell'applicazione vengono gestite dai componenti dell'agente DCM e dell'agente CI nel client. Questo articolo illustra il funzionamento di un tipico processo dell'agente CI e di DCM.
 
@@ -108,6 +107,6 @@ Sebbene il processo dell'agente CI attraversi tutte le fasi, ignora la fase se n
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-- [Valutazione dell'applicazione](/sccm/apps/understand/deployment-evaluation-technical-reference)
-- [Download dell'applicazione](/sccm/apps/understand/deployment-download-technical-reference)
+- [Valutazione delle applicazioni](/sccm/apps/understand/deployment-evaluation-technical-reference)
+- [Download delle applicazioni](/sccm/apps/understand/deployment-download-technical-reference)
 - [Installazione delle applicazioni](/sccm/apps/understand/deployment-install-technical-reference)

@@ -10,19 +10,18 @@ ms.assetid: 2d5f871a-19dc-4bd3-a3ad-4230c7a69f1b
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b92c88ae4a88ff674110fdae2dd0bd3f5470f48
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ae27e50e5093d7443c35df33b1757caec6086627
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62193814"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75815919"
 ---
-# <a name="how-to-create-global-conditions-in-system-center-configuration-manager"></a>Come creare condizioni globali in System Center Configuration Manager
+# <a name="how-to-create-global-conditions-in-configuration-manager"></a>Come creare condizioni globali in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-In System Center Configuration Manager le condizioni globali sono regole che rappresentano le condizioni tecniche o aziendali che l'utente può usare per specificare il modo in cui un'applicazione viene distribuita e resa disponibile per i dispositivi client. Le condizioni globali sono accessibili dalla pagina **Requisiti** della Creazione guidata tipo di distribuzione.  
+In Configuration Manager le condizioni globali sono regole che rappresentano le condizioni tecniche o aziendali che l'utente può usare per specificare il modo in cui un'applicazione viene distribuita e resa disponibile per i dispositivi client. Le condizioni globali sono accessibili dalla pagina **Requisiti** della Creazione guidata tipo di distribuzione.  
 
 > [!NOTE]  
 >  È possibile modificare le condizioni globali solo dal sito in cui sono state create.  

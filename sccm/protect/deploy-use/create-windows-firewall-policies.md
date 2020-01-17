@@ -10,19 +10,18 @@ ms.assetid: 6ecdfad1-6305-45a8-ae75-3f33b967cb8f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b42e8f06cfc5dffb04854f2296837f921eb86c5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b1e8ab5b0e6c45d86a0973093e8b405aa7762f87
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70380260"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820237"
 ---
-# <a name="create-and-deploy-windows-firewall-policies-for-endpoint-protection-in-system-center-configuration-manager"></a>Creare e distribuire criteri di Windows Firewall per Endpoint Protection in System Center Configuration Manager
+# <a name="create-and-deploy-windows-firewall-policies-for-endpoint-protection-in-configuration-manager"></a>Creare e distribuire criteri di Windows Firewall per Endpoint Protection in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-I criteri di Windows Firewall per Endpoint Protection in System Center Configuration Manager consentono di eseguire le attività di configurazione e manutenzione di base di Windows Firewall nei computer client della gerarchia. È possibile usare i criteri di Windows Firewall per le attività seguenti:  
+I criteri di Windows Firewall per Endpoint Protection in Configuration Manager consentono di eseguire le attività di configurazione e manutenzione di base di Windows Firewall nei computer client della gerarchia. È possibile usare i criteri di Windows Firewall per le attività seguenti:  
 
 -   Controllare se Windows Firewall è attivato o disattivato.  
 

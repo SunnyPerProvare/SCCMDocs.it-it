@@ -10,17 +10,16 @@ ms.assetid: a2742d52-851e-4abc-b623-d12d91684c0b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 656411ccf6c949237bf2fa68500520a8f7932137
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
-ms.translationtype: MTE75
+ms.openlocfilehash: 7e963b7e2e6e333db8ccc1820ad27fb53cd06df1
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68339110"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816259"
 ---
-# <a name="get-started-with-compliance-settings-in-system-center-configuration-manager"></a>Introduzione alle impostazioni di conformità in System Center Configuration Manager
+# <a name="get-started-with-compliance-settings-in-configuration-manager"></a>Introduzione alle impostazioni di conformità in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Prima di creare le impostazioni di conformità di Configuration Manager, è necessario apprendere i concetti di base e comprenderne il funzionamento.  
 

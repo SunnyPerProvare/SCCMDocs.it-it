@@ -10,17 +10,16 @@ ms.assetid: ab1aecdd-d943-44f5-b0a9-e8fe7439e5d6
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41ec97899d8f959298b3f62ff4a86837b04af461
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 080de1729f37431356ddf12fbcaac1873fbcdc3c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62198661"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817738"
 ---
-# <a name="create-mac-computer-applications-with-system-center-configuration-manager"></a>Creare applicazioni per computer Mac con System Center Configuration Manager
+# <a name="create-mac-computer-applications-with-configuration-manager"></a>Creare applicazioni per computer Mac con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Tenere presenti le seguenti considerazioni quando si creano e si distribuiscono applicazioni per i computer Mac.  
 
@@ -28,7 +27,7 @@ Tenere presenti le seguenti considerazioni quando si creano e si distribuiscono 
 >  Le procedure descritte in questo argomento offrono informazioni sulla distribuzione di applicazioni in computer Mac in cui è installato il client di Configuration Manager. I computer Mac registrati con Microsoft Intune non supportano la distribuzione di applicazioni.  
 
 ## <a name="general-considerations"></a>Considerazioni generali  
- È possibile usare System Center Configuration Manager per distribuire applicazioni nei computer Mac che eseguono il client Mac di Configuration Manager. I passaggi per distribuire software nei computer Mac sono simili a quelli per distribuire software nei computer Windows. Tuttavia, prima di creare e distribuire applicazioni nei computer Mac gestiti da Configuration Manager, prendere in considerazione quanto segue:  
+ È possibile usare Configuration Manager per distribuire applicazioni nei computer Mac che eseguono il client Mac di Configuration Manager. I passaggi per distribuire software nei computer Mac sono simili a quelli per distribuire software nei computer Windows. Tuttavia, prima di creare e distribuire applicazioni nei computer Mac gestiti da Configuration Manager, prendere in considerazione quanto segue:  
 
 -   Prima di distribuire pacchetti di applicazioni Mac nei computer Mac, è necessario usare lo strumento **CMAppUtil** in un computer Mac per convertire tali applicazioni in un formato che possa essere letto da Configuration Manager.  
 
@@ -112,7 +111,7 @@ Usare la procedura che segue per creare e distribuire un'applicazione per comput
 4.  Nella pagina **Generale** della **Creazione guidata applicazione**selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**.  
 
     > [!NOTE]  
-    >  Se si vogliono specificare informazioni sull'applicazione manualmente, selezionare **Specifica manualmente le informazioni dell'applicazione**. Per altre informazioni su come specificare manualmente le informazioni, vedere [Come creare applicazioni con System Center Configuration Manager](../../apps/deploy-use/create-applications.md).  
+    >  Se si vogliono specificare informazioni sull'applicazione manualmente, selezionare **Specifica manualmente le informazioni dell'applicazione**. Per altre informazioni su come specificare manualmente le informazioni, vedere [Come creare applicazioni con Configuration Manager](../../apps/deploy-use/create-applications.md).  
 
 5.  Nell'elenco a discesa **Tipo** , selezionare **Mac OS X**.  
 
@@ -145,7 +144,7 @@ Usare la procedura che segue per creare e distribuire un'applicazione per comput
 3.  Selezionare un'applicazione. Quindi, nel gruppo **Applicazione** della scheda **Home** scegliere **Crea tipo di distribuzione** per creare un nuovo tipo di distribuzione per questa applicazione.  
 
     > [!NOTE]  
-    >  È anche possibile avviare la **Creazione guidata tipo di distribuzione** dalla **Creazione guidata applicazione** e dalla scheda **Tipi di distribuzione** della finestra di dialogo *Proprietà\>* **<nome applicazione**.  
+    >  È anche possibile avviare la **Creazione guidata tipo di distribuzione** dalla **Creazione guidata applicazione** e dalla scheda **Tipi di distribuzione** della finestra di dialogo **Proprietà** di *<nome applicazione\>* .  
 
 4.  Nella pagina **Generale** della **Creazione guidata tipo di distribuzione**, nell'elenco a discesa **Tipo**, selezionare **Mac OS X**.  
 
@@ -170,7 +169,7 @@ Usare la procedura che segue per creare e distribuire un'applicazione per comput
 11. Scegliere **Aggiungi** per aprire la finestra di dialogo **Creazione requisito** e aggiungere un nuovo requisito.  
 
     > [!NOTE]  
-    >  È anche possibile aggiungere nuovi requisiti nella scheda **Requisiti** della finestra di dialogo *Proprietà di\>* **<nome del tipo di distribuzione**.  
+    >  È anche possibile aggiungere nuovi requisiti nella scheda **Requisiti** della finestra di dialogo **Proprietà** di *<nome del tipo di distribuzione\>* .  
 
 12. Dall'elenco a discesa **Categoria** , selezionare che questo requisito riguarda un dispositivo.  
 

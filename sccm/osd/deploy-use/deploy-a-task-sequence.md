@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: b2abcdb0-72e0-4c70-a4b8-7827480ba5b2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 10316c74ebe7469df5db7c7d30394eabbc41eb83
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f3ff204e1908446cde9b0a4906c33b02ebb5a3bf
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660955"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827003"
 ---
 # <a name="deploy-a-task-sequence"></a>Distribuire una sequenza di attività
 
@@ -53,11 +52,11 @@ Usare la seguente procedura per distribuire una sequenza di attività ai compute
 
         Per altre informazioni sulle distribuzioni ad alto rischio, vedere [Distribuzioni ad alto rischio](#bkmk_high-risk).
 
-    - **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: archiviare il contenuto della sequenza di attività nel gruppo di punti di distribuzione predefinito della raccolta. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione è disattivata.  
+    - **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: archivia il contenuto della sequenza di attività nel gruppo di punti di distribuzione predefinito della raccolta. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione è disattivata.  
 
     - **Distribuisci automaticamente contenuto per dipendenze**: se uno dei contenuti di riferimento ha dipendenze, il sito invia anche il contenuto dipendente ai punti di distribuzione.  
 
-    - **Pre-download del contenuto per questa sequenza di attività**: per altre informazioni, vedere [Configurare la pre-cache del contenuto](/configmgr/osd/deploy-use/configure-precache-content).  
+    - **Pre-download del contenuto per questa sequenza di attività**: Per altre informazioni, vedere [Configurare la pre-cache del contenuto](/configmgr/osd/deploy-use/configure-precache-content).  
 
     - **Selezionare il modello di distribuzione**: salvare e specificare un modello di distribuzione per una sequenza di attività.<!--1357391-->  
 
@@ -68,11 +67,11 @@ Usare la seguente procedura per distribuire una sequenza di attività ai compute
         > - Pianificazione
         > - Download anticipato del contenuto
 
-    - **Commenti (facoltativo):** : specificare informazioni aggiuntive che descrivono la distribuzione della sequenza di attività.  
+    - **Commenti (facoltativo)**: Specificare informazioni aggiuntive che descrivono la distribuzione della sequenza di attività.  
 
 5. Nella pagina **Impostazioni distribuzione** specificare le informazioni seguenti:  
 
-    - **Scopo**: dall'elenco a discesa scegliere una delle opzioni seguenti:  
+    - **Scopo**: dall'elenco a discesa scegliere una delle seguenti opzioni:  
 
         - **Disponibile**: l'utente visualizza la sequenza di attività in Software Center e può installarla su richiesta.  
 
@@ -93,7 +92,7 @@ Usare la seguente procedura per distribuire una sequenza di attività ai compute
 
     - **Invia pacchetti di riattivazione**: se la distribuzione è impostata su **Richiesto** e si seleziona questa opzione, il sito invia un pacchetto di riattivazione ai computer prima che il client esegua la distribuzione. Il pacchetto riattiva il computer dalla sospensione nel momento in cui scade l'installazione. Prima di usare questa opzione, i computer e le reti devono essere configurati per la riattivazione LAN. Per altre informazioni, vedere [Pianificare la riattivazione dei client](/configmgr/core/clients/deploy/plan/plan-wake-up-clients).  
 
-    - **Consente a tutti i client che utilizzano una connessione di rete a consumo di scaricare il contenuto una volta raggiunta la scadenza dell'installazione. Se si abilita questa opzione, potrebbe essere addebitato un costo aggiuntivo**: questa opzione è disponibile solo per le distribuzioni **richieste**. Quando una sequenza di attività personalizzata installa un'applicazione ma non distribuisce un sistema operativo, è possibile specificare se consentire ai client di scaricare il contenuto dopo la scadenza dell'installazione se usano una connessione Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati usati quando si usa una connessione Internet a consumo.  
+    - **Consente a tutti i client che utilizzano una connessione di rete a consumo di scaricare il contenuto una volta raggiunta la scadenza dell'installazione. Se si abilita questa opzione, potrebbe essere addebitato un costo aggiuntivo**: questa opzione è disponibile solo quando la distribuzione è impostata su **Richiesto**. Quando una sequenza di attività personalizzata installa un'applicazione ma non distribuisce un sistema operativo, è possibile specificare se consentire ai client di scaricare il contenuto dopo la scadenza dell'installazione se usano una connessione Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati usati quando si usa una connessione Internet a consumo.  
 
         > [!NOTE]  
         > Anche se potrebbe funzionare per le sequenze di attività che non distribuiscono un sistema operativo, l'uso di una connessione Internet a consumo non è supportato.  
@@ -103,13 +102,13 @@ Usare la seguente procedura per distribuire una sequenza di attività ai compute
     > [!IMPORTANT]  
     > Quando un client di Windows PE viene avviato da PXE o da supporti di avvio, il client non valuta le pianificazioni della distribuzione. Queste pianificazioni includono avvio, scadenza e date di scadenza. Configurare le pianificazioni solo nelle distribuzioni ai client che vengono avviati dal sistema operativo Windows completo. Considerare la possibilità di usare altri metodi, ad esempio le finestre di manutenzione, per controllare le sequenze di attività attive distribuite ai client che vengono avviati da Windows PE.  
 
-    - **Pianifica quando questa distribuzione diventerà disponibile**: specificare la data e l'ora in cui la sequenza di attività può essere eseguita nel computer di destinazione. Quando si seleziona l'opzione **UTC**, la sequenza di attività è disponibile per più computer contemporaneamente. In caso contrario, la distribuzione è disponibile a orari diversi, in base all'ora locale di ogni computer.  
+    - **Pianifica quando questa distribuzione diventerà disponibile**: Specificare la data e l'ora in cui la sequenza di attività è disponibile per l'esecuzione nel computer di destinazione. Quando si seleziona l'opzione **UTC**, la sequenza di attività è disponibile per più computer contemporaneamente. In caso contrario, la distribuzione è disponibile a orari diversi, in base all'ora locale di ogni computer.  
 
         Se l'ora di avvio è precedente rispetto al tempo necessario, il client scarica il contenuto della sequenza di attività all'ora di avvio.  
 
-    - **Pianifica alla scadenza di questa assegnazione**: specificare la data e l'ora di scadenza della sequenza di attività nel computer di destinazione. Quando si seleziona l'opzione **UTC**, la sequenza di attività scade in più computer contemporaneamente. In caso contrario, la distribuzione scade a orari diversi, in base all'ora locale di ogni computer.  
+    - **Pianifica alla scadenza di questa assegnazione**: Specificare la data e l'ora di scadenza della sequenza di attività nel computer di destinazione. Quando si seleziona l'opzione **UTC**, la sequenza di attività scade in più computer contemporaneamente. In caso contrario, la distribuzione scade a orari diversi, in base all'ora locale di ogni computer.  
 
-    - **Pianificazione assegnazione**: per una distribuzione **richiesta**, specificare quando il client esegue la sequenza di attività. È possibile aggiungere più pianificazioni. La pianificazione dell'assegnazione può avere una delle configurazioni seguenti:  
+    - **Pianificazione assegnazione**: per una distribuzione di tipo **Richiesto**, specificare quando il client esegue la sequenza di attività. È possibile aggiungere più pianificazioni. La pianificazione dell'assegnazione può avere una delle configurazioni seguenti:  
 
         - Data e ora specifiche  
         - Criterio di ricorrenza mensile, settimanale o personalizzato  
@@ -137,17 +136,17 @@ Usare la seguente procedura per distribuire una sequenza di attività ai compute
 
 7. Nella pagina **Esperienza utente** specificare le informazioni seguenti:  
 
-    - **Consenti agli utenti di eseguire il programma indipendentemente dalle assegnazioni**: specificare se un utente può eseguire una distribuzione richiesta al di fuori della pianificazione delle assegnazioni. Questa opzione è sempre abilitata per le distribuzioni disponibili.  
+    - **Consenti agli utenti di eseguire il programma indipendentemente dalle assegnazioni**: specificare se un utente può eseguire una distribuzione richiesta al di fuori della pianificazione di assegnazione. Questa opzione è sempre abilitata per le distribuzioni disponibili.  
 
     - **Mostra stato sequenza di attività**: specificare se il client di Configuration Manager visualizza lo stato di avanzamento della sequenza di attività.  
 
     - **Installazione software**: specificare se l'utente è autorizzato a installare il software al di fuori di una finestra di manutenzione configurata dopo l'orario pianificato.  
 
-    - **Riavvio del sistema (se necessario per completare l'installazione)** : specificare se l'utente è autorizzato a riavviare il computer dopo l'installazione software al di fuori di una finestra di manutenzione configurata dopo il periodo di assegnazione.  
+    - **Riavvio del sistema (se necessario per completare l'installazione)**: Specificare se l'utente è autorizzato a riavviare il computer dopo l'installazione software all'esterno di una finestra di manutenzione configurata dopo il periodo di assegnazione.  
 
     - **Gestione filtri di scrittura per dispositivi con Windows Embedded**: questa impostazione controlla il comportamento di installazione nei dispositivi con Windows Embedded in cui è abilitato un filtro di scrittura. Scegliere l'opzione per eseguire il commit delle modifiche alla scadenza dell'installazione o durante una finestra di manutenzione. Quando si seleziona questa opzione, è necessario un riavvio e la modifica viene salvata in modo permanente nel dispositivo. In caso contrario, l'applicazione viene installata nell'overlay temporaneo e il commit viene eseguito successivamente. Quando si distribuisce una sequenza di attività in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta con una finestra di manutenzione configurata.  
 
-    - **Consenti l'esecuzione della sequenza di attività per il client in Internet:** specificare se la sequenza di attività può essere eseguita in un client basato su Internet. Le operazioni che richiedono un supporto di avvio, ad esempio l'installazione di un sistema operativo, non sono supportate con questa impostazione. Usare questa opzione solo per installazioni software o sequenze di attività generiche basate su script che eseguono operazioni nel sistema operativo standard.  
+    - **Consenti l'esecuzione della sequenza di attività per il client in Internet**: specificare se la sequenza attività può essere eseguita in un client basato su Internet. Le operazioni che richiedono un supporto di avvio, ad esempio l'installazione di un sistema operativo, non sono supportate con questa impostazione. Usare questa opzione solo per installazioni software o sequenze di attività generiche basate su script che eseguono operazioni nel sistema operativo standard.  
 
         - Questa impostazione è supportata per le distribuzioni di una sequenza di attività di aggiornamento sul posto di Windows 10 in client basati su Internet mediante Cloud Management Gateway. Per altre informazioni, vedere [Distribuire l'aggiornamento sul posto di Windows 10 mediante Cloud Management Gateway](#deploy-windows-10-in-place-upgrade-via-cmg).  
 
@@ -155,23 +154,23 @@ Usare la seguente procedura per distribuire una sequenza di attività ai compute
 
 9. Nella pagina **Punti di distribuzione** specificare le informazioni seguenti:  
 
-    - **Opzioni di distribuzione:** specificare una delle opzioni seguenti:  
+    - **Opzioni di distribuzione**: Specificare una delle opzioni seguenti:  
 
         > [!NOTE]  
         > Quando si usa il multicast per distribuire un sistema operativo, scaricare il contenuto nei computer quando necessario oppure prima dell'esecuzione della sequenza di attività.  
 
-        - **Scaricare il contenuto localmente quando necessario eseguendo la sequenza di attività**: specificare che i client scaricano il contenuto dal punto di distribuzione in base alle necessità della sequenza di attività. Il client avvia la sequenza di attività. Quando un passaggio della sequenza di attività richiede il contenuto, il download viene eseguito prima dell'esecuzione del passaggio.  
+        - **Scaricare il contenuto localmente quando necessario eseguendo la sequenza di attività**: specificare che i client scaricano contenuto dal punto di distribuzione nel computer di destinazione come richiesto dalla sequenza di attività. Il client avvia la sequenza di attività. Quando un passaggio della sequenza di attività richiede il contenuto, il download viene eseguito prima dell'esecuzione del passaggio.  
 
-        - **Scaricare tutto il contenuto localmente prima di avviare la sequenza di attività**: specificare che i client scaricano tutto il contenuto dal punto di distribuzione prima che la sequenza di attività venga eseguita. Se si è resa la sequenza di attività disponibile nelle distribuzioni PXE e dei supporti di avvio nella pagina **Impostazioni distribuzione**, questa opzione non viene visualizzata.  
+        - **Scaricare tutto il contenuto localmente prima di avviare la sequenza di attività**: specificare che i client scaricano tutto il contenuto dal punto di distribuzione prima dell'esecuzione della sequenza di attività. Se si è resa la sequenza di attività disponibile nelle distribuzioni PXE e dei supporti di avvio nella pagina **Impostazioni distribuzione**, questa opzione non viene visualizzata.  
 
-        - **Accedere al contenuto direttamente da un punto di distribuzione quando necessario eseguendo la sequenza di attività**: specificare che i client eseguono il contenuto dal punto di distribuzione. Questa opzione è disponibile solo quando si abilitano tutti i pacchetti associati con la sequenza di attività all'uso di una condivisione pacchetto nel punto di distribuzione. Per abilitare il contenuto all'utilizzo di una condivisione pacchetto, vedere la scheda **Accesso dati** nelle **Proprietà** di ciascun pacchetto.  
+        - **Accedere al contenuto direttamente da un punto di distribuzione quando necessario eseguendo la sequenza di attività**: Specificare che i client eseguono il contenuto dal punto di distribuzione. Questa opzione è disponibile solo quando si abilitano tutti i pacchetti associati con la sequenza di attività all'uso di una condivisione pacchetto nel punto di distribuzione. Per abilitare il contenuto all'utilizzo di una condivisione pacchetto, vedere la scheda **Accesso dati** nelle **Proprietà** di ciascun pacchetto.  
 
             > [!IMPORTANT]  
             > Per maggior sicurezza, selezionare le opzioni che consentono di **scaricare il contenuto localmente quando necessario eseguendo la sequenza di attività** o di **scaricare tutto il contenuto localmente prima di avviare la sequenza di attività**. Quando si seleziona una di queste opzioni, Configuration Manager genera un hash del pacchetto in modo da garantire l'integrità del pacchetto. Quando si seleziona l'opzione che consente di **accedere al contenuto direttamente da un punto di distribuzione quando necessario eseguendo la sequenza di attività**, Configuration Manager non verifica l'hash del pacchetto prima di eseguire il programma specificato. Poiché il sito non può garantire l'integrità del pacchetto, gli utenti con diritti amministrativi possono modificare o alterare i contenuti del pacchetto.  
 
-    - **Utilizzare un punto di distribuzione remoto quando non sono disponibili punti di distribuzione locali**: specifica se i client possono scaricare il contenuto necessario per la sequenza di attività da punti di distribuzione di un gruppo di limiti vicino.  
+    - **Usare un punto di distribuzione remoto quando non sono disponibili punti di distribuzione locali**: specificare se i client possono usare punti di distribuzione remoti da un gruppo di limiti vicino per scaricare il contenuto necessario per la sequenza di attività.  
 
-    - **Consenti ai client di usare punti di distribuzione dal gruppo di limiti del sito predefinito**: specificare se i client devono scaricare il contenuto da un punto di distribuzione nel gruppo di limiti del sito predefinito quando non è disponibile da un punto di distribuzione nel gruppo di limiti corrente o nei gruppi di limiti vicini.  
+    - **Consenti ai client di usare punti di distribuzione dal gruppo di limiti del sito predefinito**: specificare se i clienti devono scaricare il contenuto da un punto di distribuzione nel gruppo di limiti del sito predefinito quando il contenuto non è disponibile in un punto di distribuzione nel gruppo di limiti corrente o nei gruppi di limiti vicini.  
 
         > [!Note]  
         > A partire dalla versione 1810, quando un dispositivo esegue una sequenza di attività e deve acquisire il contenuto, il dispositivo usa comportamenti dei gruppi di limiti simili al client Configuration Manager. Per altre informazioni, vedere [Supporto della sequenza di attività per i gruppi di limiti](/configmgr/core/servers/deploy/configure/boundary-groups#bkmk_bgr-osd).<!--1359025-->  
@@ -185,7 +184,7 @@ Usare la seguente procedura per distribuire una sequenza di attività ai compute
 <!-- 1357149 -->
 La sequenza di attività di aggiornamento sul posto di Windows 10 supporta la distribuzione nei client basati su Internet gestiti tramite [Cloud Management Gateway](/configmgr/core/clients/manage/plan-cloud-management-gateway) (CMG). Ciò consente agli utenti remoti di eseguire più facilmente l'aggiornamento a Windows 10 senza doversi connettere a Internet.
 
-Verificare che tutto il contenuto a cui fa riferimento la sequenza di attività di aggiornamento sul posto sia distribuito a un CMG abilitato per il contenuto. (Abilitare l'impostazione [CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#settings): **Consenti il funzionamento di CMG come punto di distribuzione cloud e per la gestione di contenuti da Archiviazione di Azure**.) È anche possibile usare un [punto di distribuzione cloud](/configmgr/core/plan-design/hierarchy/use-a-cloud-based-distribution-point). In caso contrario i dispositivi non potranno eseguire la sequenza di attività.
+Verificare che tutto il contenuto a cui fa riferimento la sequenza di attività di aggiornamento sul posto sia distribuito a un CMG abilitato per il contenuto. [Consenti il funzionamento di CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#settings) **come punto di distribuzione cloud e per la gestione di contenuti da Archiviazione di Azure**: È anche possibile usare un [punto di distribuzione cloud](/configmgr/core/plan-design/hierarchy/use-a-cloud-based-distribution-point). In caso contrario i dispositivi non potranno eseguire la sequenza di attività.
 
 Per distribuire una sequenza di attività di aggiornamento sul posto usare le impostazioni seguenti:
 

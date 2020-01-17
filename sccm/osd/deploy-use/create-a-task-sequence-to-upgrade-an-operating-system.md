@@ -10,17 +10,16 @@ ms.assetid: 7591e386-a9ab-4640-8643-332dce5aa006
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31f253c0a1aaa2e1268d80a79a4960d2c4da3ad7
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ee1a392510d8c34b1f053837f9bba5334398fe3f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117628"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825439"
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-os-in-configuration-manager"></a>Creare una sequenza di attività per aggiornare un sistema operativo in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare le sequenze di attività in Configuration Manager per aggiornare automaticamente un sistema operativo in un computer di destinazione. L'aggiornamento può essere eseguito da Windows 7 o versione successiva fino a Windows 10 o da Windows Server 2012 o versione successiva fino a Windows Server 2016. Creare una sequenza di attività che faccia riferimento al pacchetto di aggiornamento del sistema operativo e a eventuali altri contenuti da installare, ad esempio applicazioni o aggiornamenti software. La sequenza di attività per aggiornare un sistema operativo fa parte dello scenario [Aggiornare Windows alla versione più recente](upgrade-windows-to-the-latest-version.md).  
 
@@ -54,7 +53,7 @@ Per aggiornare il sistema operativo nei client, è possibile creare una sequenza
 
 4. Nella pagina **Informazioni sequenza di attività** specificare le impostazioni seguenti:  
 
-    - **Nome sequenza di attività**: specificare un nome che identifica la sequenza di attività.  
+    - **Nome sequenza di attività**: Specificare un nome che identifica la sequenza di attività.  
 
     - **Descrizione**: specificare una descrizione (facoltativo).  
 
@@ -62,7 +61,7 @@ Per aggiornare il sistema operativo nei client, è possibile creare una sequenza
 
     - **Pacchetto di aggiornamento**: specificare il pacchetto di aggiornamento che contiene i file di origine per l'aggiornamento del sistema operativo. Verificare di avere selezionato il pacchetto di aggiornamento corretto esaminando le informazioni nel riquadro **Proprietà**. Per altre informazioni, vedere [Gestire i pacchetti di aggiornamento del sistema operativo](/sccm/osd/get-started/manage-operating-system-upgrade-packages).  
 
-    - **Indice edizione**: se sono presenti più indici edizione del sistema operativo nel pacchetto, selezionare l'indice edizione desiderato. Per impostazione predefinita, la procedura guidata seleziona il primo indice.  
+    - **Indice dell'edizione**: se nel pacchetto sono disponibili più indici dell'edizione del sistema operativo, selezionare l'indice dell'edizione desiderato. Per impostazione predefinita, la procedura guidata seleziona il primo indice.  
 
     - **Codice Product Key**: specificare il codice Product Key Windows per il sistema operativo da installare. Specificare i codici Product Key per contratti multilicenza codificati o i codici Product Key standard. Se si usa un codice Product Key standard, separare ogni gruppo di cinque caratteri con un trattino (`-`). Ad esempio: `XXXXX-XXXXX-XXXXX-XXXXX-XXXXX`. Se l'aggiornamento è per un'edizione per contratti multilicenza, il codice Product Key potrebbe non essere obbligatorio.  
 
@@ -137,7 +136,7 @@ consente di aggiungere passaggi in questo gruppo per rimuovere eventuali driver 
 
 consente di aggiungere passaggi in questo gruppo per rimuovere o sospendere programmi di sicurezza di terze parti, ad esempio l'antivirus.  
 
-Se si usa un programma di crittografia dischi di terze parti, fornire il relativo driver di crittografia al programma di installazione di Windows con l'[opzione della riga di comando](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#23) `/ReflectDrivers`. Aggiungere un passaggio [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) alla sequenza di attività in questo gruppo. Impostare la variabile della sequenza di attività su **OSDSetupAdditionalUpgradeOptions**. Impostare il valore su `/ReflectDrivers` con il percorso del driver. Questa [variabile della sequenza di attività](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions) accoda la riga di comando di Installazione di Windows usata dalla sequenza di attività. Per ulteriori indicazioni su questo processo, contattare il fornitore del software in uso.  
+Se si usa un programma di crittografia dischi di terze parti, specificare il relativo driver di crittografia al programma di installazione di Windows con `/ReflectDrivers`, [opzione della riga di comando](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#23). Aggiungere un passaggio [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) alla sequenza di attività in questo gruppo. Impostare la variabile della sequenza di attività su **OSDSetupAdditionalUpgradeOptions**. Impostare il valore su `/ReflectDrivers` con il percorso del driver. Questa [variabile della sequenza di attività](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions) accoda la riga di comando di Installazione di Windows usata dalla sequenza di attività. Per ulteriori indicazioni su questo processo, contattare il fornitore del software in uso.  
 
 ### <a name="download-package-content-task-sequence-step"></a>Passaggio della sequenza di attività Scaricare il contenuto del pacchetto  
 
@@ -238,7 +237,7 @@ Nel passaggio predefinito **Verifica conformità** abilitare **Verifica lo spazi
 
 ### <a name="retry-downloading-policy"></a>Tentativi di download dei criteri
 
-Usare la [variabile della sequenza di attività](/sccm/osd/understand/task-sequence-variables#SMSTSDownloadRetryCount) **SMSTSDownloadRetryCount** per riprovare a scaricare i criteri. Per impostazione predefinita, attualmente il client esegue due tentativi; questa variabile è impostata su due (2). Se i client non sono su una connessione di rete Intranet cablata, ulteriori tentativi possono aiutare a ottenere i criteri per tali client. L'uso di questa variabile non ha effetti collaterali negativi, se non un errore ritardato nel caso in cui il download dei criteri non riesca.<!--501016--> Aumentare inoltre il valore della variabile **SMSTSDownloadRetryDelay** dai 15 secondi predefiniti.  
+Usare la **variabile della sequenza di attività** [SMSTSDownloadRetryCount](/sccm/osd/understand/task-sequence-variables#SMSTSDownloadRetryCount) per riprovare a scaricare i criteri. Per impostazione predefinita, attualmente il client esegue due tentativi; questa variabile è impostata su due (2). Se i client non sono su una connessione di rete Intranet cablata, ulteriori tentativi possono aiutare a ottenere i criteri per tali client. L'uso di questa variabile non ha effetti collaterali negativi, se non un errore ritardato nel caso in cui il download dei criteri non riesca.<!--501016--> Aumentare inoltre il valore della variabile **SMSTSDownloadRetryDelay** dai 15 secondi predefiniti.  
 
 ### <a name="perform-an-inline-compatibility-assessment"></a>Eseguire una valutazione della compatibilità inline
 
@@ -267,7 +266,7 @@ Se si vuole modificare il dispositivo da BIOS a UEFI durante questa sequenza di 
 ### <a name="manage-bitlocker"></a>Gestire BitLocker
 
 <!--SCCMDocs issue #494-->
-Se si usa la crittografia dischi BitLocker, per impostazione predefinita il programma di installazione di Windows la sospenderà automaticamente durante l'aggiornamento. A partire da Windows 10 versione 1803, il programma di installazione di Windows include il parametro della riga di comando `/BitLocker` per controllare questo comportamento. Se i requisiti di sicurezza richiedono di mantenere sempre attiva la crittografia dischi, usare la [variabile della sequenza di attività](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions) **OSDSetupAdditionalUpgradeOptions** nel gruppo **Preparazione dell'aggiornamento** per includere `/BitLocker TryKeepActive`. Per altre informazioni, vedere [Opzioni della riga di comando di Installazione di Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#33).
+Se si usa la crittografia dischi BitLocker, per impostazione predefinita il programma di installazione di Windows la sospenderà automaticamente durante l'aggiornamento. A partire da Windows 10 versione 1803, il programma di installazione di Windows include il parametro della riga di comando `/BitLocker` per controllare questo comportamento. Se i requisiti di sicurezza richiedono di mantenere sempre attiva la crittografia dischi, usare la **variabile della sequenza di attività** [OSDSetupAdditionalUpgradeOptions](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions) nel gruppo **Preparazione dell'aggiornamento** per includere `/BitLocker TryKeepActive`. Per altre informazioni, vedere [Opzioni della riga di comando di Installazione di Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#33).
 
 ### <a name="remove-default-apps"></a>Rimuovi app predefinite
 

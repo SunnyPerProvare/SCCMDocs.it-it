@@ -10,17 +10,16 @@ ms.assetid: 1a997c30-8e71-4be5-89ee-41efb2c8d199
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67b284e369268b184067e33d2a505585618795e5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 6f415e1871409cece5462b4d57ad3285fe7a22d0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65493990"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818571"
 ---
 # <a name="synchronize-software-updates-from-a-disconnected-software-update-point"></a>Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso  
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
  Quando il punto di aggiornamento software nel sito di livello superiore viene disconnesso da Internet, è necessario utilizzare le funzioni di esportazione e importazione dello strumento WSUSUtil per sincronizzare i metadati degli aggiornamenti software. Come origine della sincronizzazione è possibile scegliere un server WSUS esistente che non si trovi nella gerarchia di Configuration Manager. In questo argomento vengono specificate informazioni su come usare le funzioni di esportazione e importazione dello strumento WSUSUtil.  
 
@@ -71,7 +70,7 @@ ms.locfileid: "65493990"
 
      **wsusutil.exe export export.cab export.log**  
 
-     Il formato può essere riepilogato come segue: WSUSutil.exe è seguito dall'opzione di esportazione, dal nome del file CAB di esportazione creato durante l'operazione di esportazione e dal nome di un file di log. WSUSutil.exe esporta i metadati dal server di esportazione e crea un file di log dell'operazione.  
+     Il formato può essere riepilogato come riportato di seguito: WSUSutil.exe è seguito dall'opzione di esportazione, il nome dell'esportazione del file CAB creato durante l'operazione di esportazione e il nome di un file di log. WSUSutil.exe esporta i metadati dal server di esportazione e crea un file di log dell'operazione.  
 
     > [!NOTE]  
     >  Il pacchetto (file CAB) e il nome del file di log devono essere univoci nella cartella corrente.  
@@ -99,7 +98,7 @@ ms.locfileid: "65493990"
 
      **wsusutil.exe import export.cab import.log**  
 
-     Il formato può essere riepilogato come segue: WSUSutil.exe è seguito dal comando di importazione, dal nome del file CAB del pacchetto creato durante l'operazione di esportazione, dal percorso del file del pacchetto se si trova in un'altra cartella e dal nome di un file di log. WSUSutil.exe importa i metadati dal server di esportazione e crea un file di log dell'operazione.  
+     Il formato può essere riepilogato come riportato di seguito: WSUSutil.exe è seguito dal comando di importazione, il nome del file CAB del pacchetto creato durante l'operazione di esportazione e il percorso al file del pacchetto se si trova in un'altra cartella e il nome di un file di log. WSUSutil.exe importa i metadati dal server di esportazione e crea un file di log dell'operazione.  
 
 ## <a name="next-steps"></a>Passaggi successivi
 Dopo aver sincronizzato gli aggiornamenti software per la prima volta o dopo che sono stati resi disponibili nuovi prodotti o classificazioni, è necessario [configurare le classificazioni e i prodotti nuovi](configure-classifications-and-products.md) per sincronizzare gli aggiornamenti software con i nuovi criteri.

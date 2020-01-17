@@ -10,19 +10,18 @@ ms.technology: configmgr-sum
 ms.assetid: 41d6d5d8-ba84-4efb-b105-4d1eed239824
 author: mestew
 ms.author: mstewart
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 437710d32d979a687a4075761bb1ce3b76dcda51
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5c7a1ac5e88aa669ae1d5e6bb9333e1f54fb5980
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65493584"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827214"
 ---
-# <a name="security-and-privacy-for-software-updates-in-system-center-configuration-manager"></a>Sicurezza e privacy per gli aggiornamenti software in System Center Configuration Manager
+# <a name="security-and-privacy-for-software-updates-in-configuration-manager"></a>Sicurezza e privacy per gli aggiornamenti software in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy per gli aggiornamenti software in System Center Configuration Manager.  
+Questo argomento contiene informazioni sulla sicurezza e la privacy per gli aggiornamenti software in Configuration Manager.  
 
 ##  <a name="BKMK_Security_HardwareInventory"></a> Procedure di sicurezza consigliate per gli aggiornamenti software  
  Quando si distribuiscono gli aggiornamenti software ai client, utilizzare le seguenti procedure ottimali di protezione:  
@@ -52,7 +51,7 @@ In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy
 
      Per impostazione predefinita, Configuration Manager non controlla l'elenco di revoche di certificati (CRL) per verificare la firma degli aggiornamenti software prima della distribuzione nei computer. Il controllo dell'elenco CRL a ogni utilizzo del certificato offre una maggiore protezione dall'utilizzo di un certificato revocato, ma introduce un ritardo nella connessione e genera un'ulteriore elaborazione nel computer che esegue il controllo CRL.  
 
-     Per altre informazioni su come attivare il controllo CRL per gli aggiornamenti software, vedere [How to Enable CRL Checking for Software Updates](../get-started/manage-settings-for-software-updates.md#crl-checking-for-software-updates) (Come abilitare il controllo CRL per gli aggiornamenti software).  
+     Per altre informazioni su come attivare il controllo CRL per gli aggiornamenti software, vedere [Come abilitare il controllo CRL per gli aggiornamenti software](../get-started/manage-settings-for-software-updates.md#crl-checking-for-software-updates).  
 
 -   Configurare WSUS per l'utilizzo di un sito Web personalizzato.  
 
@@ -65,7 +64,7 @@ In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy
 
  Configuration Manager mantiene le informazioni sullo stato relative al processo di distribuzione del software. Le informazioni sullo stato non vengono crittografate durante la trasmissione o l'archiviazione. Le informazioni sullo stato vengono archiviate nel database di Configuration Manager ed eliminate dalle attività di manutenzione del database stesso. Nessuna informazione sullo stato viene inviata a Microsoft.  
 
- L'uso degli aggiornamenti software di Configuration Manager per installare gli aggiornamenti software nei computer client può essere soggetto alle condizioni di licenza software per tali aggiornamenti, che si distinguono dalle condizioni di licenza software per System Center Configuration Manager. Esaminare sempre e accettare le condizioni di licenza software prima di installare gli aggiornamenti software tramite Configuration Manager.  
+ L'uso degli aggiornamenti software di Configuration Manager per installare gli aggiornamenti software nei computer client può essere soggetto alle condizioni di licenza software per tali aggiornamenti, che si distinguono dalle condizioni di licenza software per Configuration Manager. Esaminare sempre e accettare le condizioni di licenza software prima di installare gli aggiornamenti software tramite Configuration Manager.  
 
  Per impostazione predefinita, Configuration Manager non implementa gli aggiornamenti software e richiede di eseguire diversi passaggi di configurazione prima di raccogliere le informazioni.  
 

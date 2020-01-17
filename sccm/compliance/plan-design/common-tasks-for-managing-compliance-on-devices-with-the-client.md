@@ -10,21 +10,20 @@ ms.assetid: 4e345791-74db-41ad-b472-024ce6521daf
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: da92506d291ca24af807db7b4f4b73473359e12f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8f5a4eeb1e9dadbb191c4d6efb45270c4dff8148
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70890654"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816225"
 ---
 # <a name="common-tasks-for-managing-compliance-on-devices-with-the-configuration-manager-client"></a>Attività comuni per la gestione della conformità nei dispositivi con il client di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo articolo fornisce un'introduzione all'uso di System Center Configuration Manager impostazioni di conformità grazie ad alcuni scenari comuni che è possibile riscontrare.  
+Questo articolo fornisce un'introduzione all'uso di Configuration Manager impostazioni di conformità grazie ad alcuni scenari comuni che è possibile riscontrare.  
 
- Se si ha già familiarità con le impostazioni di conformità, è possibile trovare informazioni dettagliate su tutte le funzionalità usate in [Elementi di configurazione per dispositivi gestiti con il client di System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items.md).  
+ Se si ha già familiarità con le impostazioni di conformità, è possibile trovare informazioni dettagliate su tutte le funzionalità usate in [Elementi di configurazione per dispositivi gestiti con il client di Configuration Manager](../../compliance/deploy-use/create-configuration-items.md).  
 
  Prima di iniziare, vedere [Introduzione alle impostazioni di conformità](../../compliance/get-started/get-started-with-compliance-settings.md) per apprendere alcune nozioni di base sulle impostazioni di conformità. Per informazioni sui prerequisiti necessari, vedere [pianificare e configurare le impostazioni di conformità](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) .  
 
@@ -55,7 +54,7 @@ Questo articolo fornisce un'introduzione all'uso di System Center Configuration 
 
 6. Completare la procedura guidata per creare l'elemento di configurazione.  
 
- È ora possibile usare le informazioni contenute nell'articolo [Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
+ È ora possibile usare le informazioni contenute nell'articolo [Attività comuni per la creazione e la distribuzione di linee base di configurazione con Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
 
 ## <a name="scenario-remediate-an-incorrect-registry-value-on-windows-desktop-computers"></a>Scenario: Correggere un valore non corretto del Registro di sistema nei computer desktop Windows
 
@@ -64,7 +63,7 @@ Questo articolo fornisce un'introduzione all'uso di System Center Configuration 
 > - Valutare un file di preferenze (plist) di Mac OS X.
 > - Usare uno script personalizzato e valutare i risultati restituiti dallo script.  
 >
->Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md).  
+>Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md).  
 
  In questo scenario si scopre che un'importante app line-of-business non viene eseguita correttamente in alcuni computer Windows 8.1 gestiti. Si scopre che il problema è causato da una chiave del Registro di sistema denominata **HKEY_LOCAL_MACHINE\SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1**, che in alcuni computer è impostata sul valore **0**. Affinché l'app line-of-business venga eseguita correttamente, questo valore deve essere impostato su **1**.  
 

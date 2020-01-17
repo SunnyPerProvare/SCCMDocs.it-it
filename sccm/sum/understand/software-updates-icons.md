@@ -10,17 +10,16 @@ ms.technology: configmgr-sum
 ms.assetid: 63c5ef72-5715-4d86-85a2-71beba469fab
 author: mestew
 ms.author: mstewart
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f096f9ff9baaff2411289c27282ab53eb697b0b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 220280239a73cd4b64f21a503eb35c84acfb432c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "66354974"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827095"
 ---
-# <a name="icons-used-for-software-updates-in-system-center-configuration-manager"></a>Icone usate per gli aggiornamenti software in System Center Configuration Manager
+# <a name="icons-used-for-software-updates-in-configuration-manager"></a>Icone usate per gli aggiornamenti software in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Gli aggiornamenti software sincronizzati vengono visualizzati nella console di Configuration Manager e la prima colonna per ogni aggiornamento software contiene un'icona che indica uno stato specifico. I gruppi di aggiornamenti software sono rappresentati anche con un'icona che fornisce informazioni sullo stato degli aggiornamenti software contenuti nel gruppo. Questa sezione fornisce informazioni sulle icone di aggiornamento software e sul significato di ogni icona.  
 

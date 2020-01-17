@@ -10,17 +10,16 @@ ms.assetid: b634ff68-b909-48d2-9e2c-0933486673c5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 028d515efa2e685becec0790b0a7d7b64445e9cc
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7a4acf706d84eacbf39c672f3c1d9afc77de7ffa
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65494748"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825422"
 ---
 # <a name="create-phased-deployments-with-configuration-manager"></a>Creare distribuzioni in più fasi con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Le distribuzioni in più fasi automatizzano un'implementazione del software coordinata e in sequenza in più raccolte. È possibile, ad esempio, distribuire il software in una raccolta pilota e quindi continuare automaticamente l'implementazione in base ai criteri di superamento. È possibile creare distribuzioni in più fasi con l'impostazione predefinita di due fasi oppure configurare manualmente più fasi. 
 
@@ -60,12 +59,12 @@ Queste impostazioni sono univoche per le distribuzioni in più fasi. Configurare
 #### <a name="criteria-for-success-of-the-first-phase"></a>Criteri per l'esito positivo della prima fase  
 
 - **Percentuale di esiti positivi della distribuzione**: specificare la percentuale di dispositivi che devono completare la distribuzione per la riuscita della prima fase. Per impostazione predefinita, questo valore è impostato su 95%. In altre parole, il sito considera la prima fase riuscita quando lo stato di conformità del 95% dei dispositivi è **Riuscito** per questa distribuzione. Il sito procede quindi alla seconda fase e crea una distribuzione del software nella raccolta successiva.  
-- **Numero di dispositivi distribuiti correttamente**: aggiunto in Configuration Manager versione 1902. Specificare il numero di dispositivi che devono completare la distribuzione per la riuscita della prima fase. Questa opzione è utile quando le dimensioni della raccolta sono variabili ed è necessario verificare l'esito positivo per un numero specifico di dispositivi prima di passare alla fase successiva. <!--3555946-->
+- **Numero di dispositivi distribuiti correttamente**: Aggiunto in Configuration Manager versione 1902. Specificare il numero di dispositivi che devono completare la distribuzione per la riuscita della prima fase. Questa opzione è utile quando le dimensioni della raccolta sono variabili ed è necessario verificare l'esito positivo per un numero specifico di dispositivi prima di passare alla fase successiva. <!--3555946-->
 
 
 #### <a name="conditions-for-beginning-second-phase-of-deployment-after-success-of-the-first-phase"></a>Condizioni per l'inizio della seconda fase della distribuzione dopo la riuscita della prima fase  
 
-- **Inizia automaticamente questa fase dopo un periodo di differimento (in giorni)** : scegliere il numero di giorni di attesa prima di iniziare la seconda fase dopo la riuscita della prima. Per impostazione predefinita, questo valore è un giorno.  
+- **Inizia automaticamente questa fase dopo un periodo di differimento (in giorni)** : scegliere il numero di giorni di attesa prima di iniziare la seconda fase dopo l'esito positivo della prima. Per impostazione predefinita, questo valore è un giorno.  
 
 - **Inizia manualmente la seconda fase della distribuzione**: il sito non inizia automaticamente la seconda fase dopo la riuscita della prima fase. Questa opzione richiede l'avvio manuale della seconda fase. Per altre informazioni, vedere [Passare alla fase successiva](/sccm/osd/deploy-use/manage-monitor-phased-deployments#bkmk_move).  
 
@@ -81,9 +80,9 @@ A partire dalla versione 1806, configurare questa impostazione affinché l'imple
 
 #### <a name="configure-the-deadline-behavior-relative-to-when-the-software-is-made-available"></a>Configurare il comportamento della scadenza rispetto al momento in cui viene reso disponibile il software  
 
-- **L'installazione è obbligatoria non appena possibile**: impostare come scadenza per l'installazione nel dispositivo il momento in cui il dispositivo viene incluso.  
+- **L'installazione è obbligatoria non appena possibile**: imposta come scadenza per l'installazione nel dispositivo il momento in cui il dispositivo viene incluso.  
 
-- **L'installazione è obbligatoria dopo questo periodo di tempo**: impostare come scadenza per l'installazione un numero di giorni specifico dopo che il dispositivo è stato incluso. Per impostazione predefinita, questo valore è 7 giorni.   
+- **L'installazione è obbligatoria dopo questo periodo di tempo**: imposta la scadenza per l'installazione su un determinato numero di giorni dopo l'inclusione del dispositivo. Per impostazione predefinita, questo valore è 7 giorni.   
 
 
 <!--### Examples
@@ -157,7 +156,7 @@ A partire dalla versione 1806, creare una distribuzione in più fasi con fasi co
 
         4. Controllare le impostazioni nella pagina **Riepilogo** e quindi completare l'Aggiunta guidata fasi.  
 
-    - **Modifica**: questa azione apre la finestra Proprietà della fase selezionata in cui le schede sono uguali alle pagine dell'Aggiunta guidata fasi.  
+    - **Modifica**: questa azione apre la finestra Proprietà della fase selezionata, le cui schede sono uguali alle pagine dell'Aggiunta guidata fasi.  
 
     - **Rimuovi**: questa azione elimina la fase selezionata.  
 

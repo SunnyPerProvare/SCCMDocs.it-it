@@ -10,17 +10,16 @@ ms.assetid: 0a9dc0fe-a942-40a2-bab1-7eeee4d95380
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c1cdbbd1c4ede5c5f2e58bd6c42c982ebaa86fe
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5a8714f5bacf97e440bae07834ee6df5430a3d37
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68340337"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819642"
 ---
 # <a name="create-an-endpoint-protection-point-site-system-role"></a>Creare un ruolo del sistema del sito del punto di Endpoint Protection
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Prima di poter usare Endpoint Protection, è necessario installare il ruolo del sistema del sito Punto di Endpoint Protection. Il ruolo deve essere installato in un solo server di sistema del sito, al livello superiore della gerarchia in un sito di amministrazione centrale o un sito primario autonomo.
 
@@ -51,7 +50,7 @@ Usare una delle procedure seguenti a seconda che si voglia installare un nuovo s
 7.  Nella pagina **Cloud Protection Service** selezionare il livello di informazioni da inviare a Microsoft per supportare lo sviluppo di nuove definizioni e quindi fare clic su **Avanti**.
 
     > [!NOTE]
-    >  Questa opzione consente di configurare le impostazioni di Cloud Protection Service (precedentemente denominato Microsoft Active Protection Service o MAPS) usate per impostazione predefinita. È quindi possibile configurare le impostazioni personalizzate per ogni criterio antimalware creato. Cloud Protection Service consente di mantenere i computer più sicuri offrendo a Microsoft esempi di malware in modo che possa mantenere le definizioni antimalware il più aggiornate possibile. Se si usa Cloud Protection Service, il client di Endpoint Protection può usare Dynamic Signature Service per scaricare le nuove definizioni prima che vengano pubblicate in Windows Update. Per altre informazioni, vedere [How to Create and Deploy Antimalware Policies for Endpoint Protection in Configuration Manager](endpoint-antimalware-policies.md) (Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager).
+    >  Questa opzione consente di configurare le impostazioni di Cloud Protection Service (precedentemente denominato Microsoft Active Protection Service o MAPS) usate per impostazione predefinita. È quindi possibile configurare le impostazioni personalizzate per ogni criterio antimalware creato. Cloud Protection Service consente di mantenere i computer più sicuri offrendo a Microsoft esempi di malware in modo che possa mantenere le definizioni antimalware il più aggiornate possibile. Se si usa Cloud Protection Service, il client di Endpoint Protection può usare Dynamic Signature Service per scaricare le nuove definizioni prima che vengano pubblicate in Windows Update. Per altre informazioni, vedere [Come creare e distribuire criteri antimalware per Endpoint Protection](endpoint-antimalware-policies.md).
 
 8.  Completare la procedura guidata.
 
@@ -76,6 +75,6 @@ Usare una delle procedure seguenti a seconda che si voglia installare un nuovo s
 7.  Nella pagina **Cloud Protection Service** selezionare il livello di informazioni da inviare a Microsoft per supportare lo sviluppo di nuove definizioni e quindi fare clic su **Avanti**.
 
     > [!NOTE]
-    >  Questa opzione consente di configurare le impostazioni di Cloud Protection Service, precedentemente denominato MAPS, usate per impostazione predefinita. È possibile definire impostazioni personalizzate per ogni criterio antimalware configurato. Per altre informazioni, vedere [How to Create and Deploy Antimalware Policies for Endpoint Protection in Configuration Manager](endpoint-antimalware-policies.md) (Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager).
+    >  Questa opzione consente di configurare le impostazioni di Cloud Protection Service, precedentemente denominato MAPS, usate per impostazione predefinita. È possibile definire impostazioni personalizzate per ogni criterio antimalware configurato. Per altre informazioni, vedere [Come creare e distribuire criteri antimalware per Endpoint Protection](endpoint-antimalware-policies.md).
 
 8.  Completare la procedura guidata.

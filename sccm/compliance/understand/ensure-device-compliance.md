@@ -1,7 +1,7 @@
 ---
 title: Garantire la conformità dei dispositivi
 titleSuffix: Configuration Manager
-description: Gestire la configurazione e la conformità dei dispositivi nell'organizzazione usando System Center Configuration Manager.
+description: Gestire la configurazione e la conformità dei dispositivi nell'organizzazione usando Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
@@ -10,19 +10,18 @@ ms.assetid: 7568c9aa-b99e-4466-bfc8-0301aa376930
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ac27cfd7bccc55da891707878fccd8829c43d93
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b3512c9d784f529952d3e6358950acf5bc08f24e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62213811"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818129"
 ---
-# <a name="ensure-device-compliance-with-system-center-configuration-manager"></a>Garantire la conformità dei dispositivi con System Center Configuration Manager
+# <a name="ensure-device-compliance-with-configuration-manager"></a>Garantire la conformità di dispositivi con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Le impostazioni di conformità di System Center Configuration Manager offrono gli strumenti e le risorse necessari per gestire la configurazione e la conformità dei dispositivi nell'organizzazione. Questo semplifica il supporto dei requisiti aziendali seguenti:  
+Le impostazioni di conformità di Configuration Manager offrono gli strumenti e le risorse necessari per gestire la configurazione e la conformità dei dispositivi nell'organizzazione. Questo semplifica il supporto dei requisiti aziendali seguenti:  
 
 -   Confrontare la configurazione di PC Windows, computer Mac, server e dispositivi mobili gestiti con le configurazioni consigliate create internamente oppure ottenute da altri fornitori.  
 
@@ -39,7 +38,7 @@ Le impostazioni di conformità di System Center Configuration Manager offrono gl
 -   Correggere la mancata conformità con la distribuzione di applicazioni, pacchetti e programmi o script in una raccolta che viene automaticamente popolata con i dispositivi non conformi  
 
 
-## <a name="get-started"></a>Introduzione  
+## <a name="get-started"></a>Operazioni preliminari  
  Informazioni sulle nozioni fondamentali relative alle impostazioni di conformità e alle attività che è possibile eseguire con esse.  
 
  [Introduzione alle impostazioni di conformità](../../compliance/get-started/get-started-with-compliance-settings.md)  

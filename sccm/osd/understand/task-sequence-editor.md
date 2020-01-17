@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: a4e8bb56-ee85-49fd-8b1c-c8f513cec671
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2c4053419fc45dce352d527a73a79b96416a5d02
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 95357792fb838ca054f3d7b7496aa3a993c59188
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74662419"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821036"
 ---
 # <a name="use-the-task-sequence-editor"></a>Usare l'editor delle sequenze di attività
 
@@ -73,7 +72,7 @@ Nell'editor della sequenza di attività sono inclusi i componenti seguenti:
     - Espande o comprime un gruppo.
     - Quando si disabilita un passaggio o un gruppo sulle relative **Opzioni**, questo viene disattivato nella sequenza.
     - L'icona di un passaggio viene modificata in un errore rosso se si verifica un problema con il passaggio. Ad esempio, manca un valore obbligatorio.
-10. **OK**: salvare e chiudere
+10. **OK**: Salva e chiudi
 11. **Annulla**: Chiudi senza salvare le modifiche
 12. **Applica**: Salva modifiche e Mantieni aperto
 
@@ -90,7 +89,7 @@ Nell'editor della sequenza di attività sono inclusi i componenti seguenti:
     > [!TIP]
     > Questa azione è l'impostazione predefinita. Se si fa doppio clic su una sequenza di attività, **verrà visualizzata la sequenza di attività** .
 
-Questa azione consente di aprire l'editor della sequenza di attività in modalità di sola lettura. In questa modalità è possibile eseguire le azioni seguenti:
+Questa azione consente di aprire l'editor della sequenza di attività in modalità di sola lettura. In questa modalità è possibile eseguire le operazioni seguenti:
 
 - Visualizza tutti i gruppi, i passaggi, le proprietà e le opzioni
 - Espandere e comprimere i gruppi
@@ -112,7 +111,7 @@ Usare la procedura seguente per modificare una sequenza di attività esistente:
 
 2. Nell'elenco **Sequenza di attività** selezionare la sequenza di attività da modificare.  
 
-3. Nella scheda **Home** della barra multifunzione selezionare **Modifica** nel gruppo **Sequenza di attività**. Eseguire quindi una delle operazioni seguenti:  
+3. Nella scheda **Home** della barra multifunzione selezionare **Modifica** nel gruppo **Sequenza di attività**. Effettuare quindi una delle azioni seguenti:  
 
     - **Aggiungere un passaggio**: selezionare **Aggiungi**, selezionare una categoria e quindi selezionare il passaggio da aggiungere. Ad esempio, per aggiungere il passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine), selezionare **Aggiungi**, scegliere la categoria **Generale** e quindi selezionare **Esegui riga di comando**. Questa azione aggiunge il passaggio dopo il passaggio attualmente selezionato.
 
@@ -126,7 +125,7 @@ Usare la procedura seguente per modificare una sequenza di attività esistente:
         - Copia: **CTRL** + **C**
         - Incolla: **CTRL** + **V**
 
-    - **Rimuovere un passaggio o un gruppo**: selezionare il passaggio o il gruppo e scegliere **Rimuovi**.  
+    - **Rimuovere un passaggio o un gruppo**: Selezionare il passaggio o il gruppo e scegliere **Rimuovi**.  
 
 4. Selezionare **OK** per salvare le modifiche e chiudere la finestra. Selezionare **Annulla** per annullare le modifiche e chiudere la finestra. Selezionare **Applica** per salvare le modifiche e mantenere aperto l'editor della sequenza di attività.  
 
@@ -189,7 +188,7 @@ Sono anche disponibili nuove opzioni per spostare le condizioni verso l'alto o v
 > [!Note]  
 > È possibile copiare e incollare le condizioni tra i passaggi in una sequenza di attività. Questa azione non è supportata tra sequenze di attività diverse.
 
-## <a name="bkmk_sedo"></a>Recupera blocco per la modifica
+## <a name="bkmk_sedo"></a> Richiamare il blocco per la modifica
 
 <!--3699337-->
 Se la console di Configuration Manager non risponde, può essere bloccata la possibilità di apportare ulteriori modifiche fino al termine del blocco, dopo 30 minuti. Questo blocco fa parte del sistema di Configuration Manager SEDO (modifica serializzata di Distributed Objects). Per altre informazioni, vedere [Configuration Manager SEDO](/sccm/develop/core/understand/sedo).

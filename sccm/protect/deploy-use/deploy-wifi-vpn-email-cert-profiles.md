@@ -10,13 +10,12 @@ ms.assetid: 3753608d-b539-44dc-8e3f-b631319e7687
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 75c9dd3dccd9ac65a540eb65f2eb802beda1b6c4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
-ms.translationtype: MTE75
+ms.openlocfilehash: dadb2a79636bcbfe006453c782cf16211f63b043
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660887"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820135"
 ---
 # <a name="deploy-resource-access-profiles-in-configuration-manager"></a>Distribuire i profili di accesso alle risorse in Configuration Manager
 
@@ -35,15 +34,15 @@ Quando si distribuiscono questi profili, è necessario specificare la raccolta d
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità**. Espandere **impostazioni di conformità**, **accesso risorse aziendali**, quindi scegliere il nodo del profilo appropriato. Ad esempio, i **profili Wi-Fi**.
 
-1. Nell'elenco dei profili selezionare il profilo che si desidera distribuire. Nella scheda **Home** della barra multifunzione selezionare quindi **Distribuisci** nel gruppo **Distribuzione**.  
+1. Nell'elenco dei profili selezionare il profilo da distribuire. Nella scheda **Home** della barra multifunzione selezionare quindi **Distribuisci** nel gruppo **Distribuzione**.  
 
 1. Nella finestra di distribuzione del profilo specificare le informazioni seguenti:  
 
-    - **Raccolta**: selezionare la raccolta in cui si vuole distribuire il profilo.
+    - **Raccolta**: Selezionare la raccolta in cui si vuole distribuire il profilo.
 
     - **Genera un avviso**: abilitare questa opzione per configurare un avviso. Il sito genera questo avviso se la conformità del profilo è inferiore alla percentuale specificata in base alla data e all'ora specificate. È anche possibile specificare se si vuole che un avviso venga inviato a System Center Operations Manager.
 
-    - **Ritardo casuale (ore)** : per i profili certificato che contengono le impostazioni Simple Certificate Enrollment Protocol (SCEP) specificare una finestra di ritardo in modo da evitare un'elaborazione eccessiva nel servizio Registrazione dispositivi di rete (NDES). Il valore predefinito è `64` ore.  
+    - **Ritardo casuale (ore)** : Per i profili certificato che contengono le impostazioni Simple Certificate Enrollment Protocol (SCEP) specificare una finestra di ritardo in modo da evitare un'elaborazione eccessiva nel servizio Registrazione dispositivi di rete (NDES). Il valore predefinito è `64` ore.  
 
     - **Specificare la pianificazione per la valutazione della conformità per questo... profilo**: specificare la frequenza con cui il client valuta la conformità per questo profilo. Selezionare una **pianificazione semplice** o configurare una **pianificazione personalizzata**. Per impostazione predefinita, la pianificazione semplice è ogni `12` ore.
 

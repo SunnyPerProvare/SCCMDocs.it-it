@@ -1,7 +1,7 @@
 ---
 title: Assistenza a un gruppo di server
 titleSuffix: Configuration Manager
-description: La console di System Center Configuration Manager invia avvisi e stati per monitorare gli aggiornamenti e la conformità.
+description: La console di Configuration Manager invia avvisi e stati per monitorare gli aggiornamenti e la conformità.
 author: mestew
 ms.author: mstewart
 manager: dougeby
@@ -10,22 +10,21 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 304a83ea-0f72-437d-9688-2e6e0c7526dd
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68e4ed043e4a3c0efb77ef69d8bf294d63a0b7fa
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 4b49635451a320d7620c4948a7dc6f6abdaa73fe
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500061"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827333"
 ---
 # <a name="service-a-server-group"></a>Assistenza a un gruppo di server
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 >[!IMPORTANT]
 >Le funzionalità di versioni non definitive sono incluse nel Current Branch a scopo di test preliminare in un ambiente di produzione. Queste funzionalità sono completamente supportate ma sono ancora in fase di sviluppo e, fino a quando non vengono spostate dalla categoria Versioni non definitive, possono essere soggette a modifiche. Per rendere disponibile questa funzionalità è necessario attivarla. Per altre informazioni, vedere la sezione relativa all'[abilitazione delle funzionalità facoltative dagli aggiornamenti](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
-A partire da System Center Configuration Manager versione 1606, è possibile configurare le impostazioni di un gruppo di server per una raccolta per definire il numero, la percentuale o l'ordine con cui i computer nella raccolta installeranno gli aggiornamenti software. È anche possibile configurare gli script pre e post distribuzione di PowerShell per eseguire azioni personalizzate.
+A partire da Configuration Manager versione 1606, è possibile configurare le impostazioni di un gruppo di server per una raccolta per definire il numero, la percentuale o l'ordine con cui i computer nella raccolta installeranno gli aggiornamenti software. È anche possibile configurare gli script pre e post distribuzione di PowerShell per eseguire azioni personalizzate.
 
 Quando si distribuiscono gli aggiornamenti software in una raccolta in cui sono state configurate le impostazioni del gruppo di server, Configuration Manager determina il numero dei computer nella raccolta che possono installare gli aggiornamenti software in qualsiasi momento e rende disponibile lo stesso numero di blocchi di distribuzione. Solo i computer che ottengono un blocco di distribuzione potranno avviare l'installazione dell'aggiornamento software. Quando un blocco di distribuzione è disponibile, un computer ottiene il blocco di distribuzione, installa gli aggiornamenti software e quindi rilascia il blocco di distribuzione quando l'installazione degli aggiornamenti software viene completata correttamente. In seguito, il blocco di distribuzione diventa disponibile per altri computer. Se un computer non può rilasciare un blocco di distribuzione, è possibile rilasciare manualmente tutti i blocchi di distribuzione del gruppo server per la raccolta.
 
@@ -42,9 +41,9 @@ Le impostazioni del gruppo di server vengono configurate nelle proprietà di una
 
 4.  Nella pagina **Impostazioni gruppo di server** specificare una delle impostazioni seguenti:  
 
-    -   **Consentire a una percentuale di computer di essere aggiornati contemporaneamente**: specifica che solo una determinata percentuale di client vengono aggiornati in qualsiasi momento. Se, ad esempio, l'insieme ha 10 client e la raccolta viene configurata per aggiornare il 30% dei client allo stesso tempo, solo 3 client installeranno gli aggiornamenti software in qualsiasi momento.  
+    -   **Consentire a una percentuale di computer di essere aggiornati contemporaneamente**: specifica che viene aggiornata solo una determinata percentuale di client alla volta. Se, ad esempio, l'insieme ha 10 client e la raccolta viene configurata per aggiornare il 30% dei client allo stesso tempo, solo 3 client installeranno gli aggiornamenti software in qualsiasi momento.  
 
-    -   **Consentire a un numero di computer di essere aggiornati contemporaneamente**: specifica che solo un certo numero di client possono essere aggiornati in un determinato momento.  
+    -   **Consentire a un numero di computer di essere aggiornati contemporaneamente**: specifica che viene aggiornato solo un determinato numero di client alla volta.  
 
     -   **Specifica la sequenza di manutenzione**: specifica che i client nella raccolta saranno aggiornati uno alla volta nella sequenza che viene configurata. Un client installerà gli aggiornamenti software solo dopo che il client che lo precede nell'elenco avrà completato l'installazione degli aggiornamenti.  
 

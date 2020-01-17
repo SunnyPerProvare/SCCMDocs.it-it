@@ -10,13 +10,12 @@ ms.assetid: 62f15230-d3a6-4afc-abd4-1e07e7ba6c97
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ff08588390e42705596cb0be40e7640a42d7989
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e32e574a183e23c6d5b6eb8d846536b865592e55
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74659545"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820985"
 ---
 # <a name="task-sequence-variables"></a>Variabili della sequenza di attività
 
@@ -152,11 +151,11 @@ Specifica che la sequenza di attività è stata avviata tramite uno dei metodi s
 
 - **SMS**: il client di Configuration Manager, ad esempio quando un utente la avvia da Software Center
 - **UFD**: supporti USB legacy
-- **UFD+FORMAT**: supporti USB più recenti
+- **UFD + FORMAT**: supporti USB più recenti
 - **CD**: un CD di avvio
 - **DVD**: un DVD di avvio
 - **PXE**: avvio di rete con PXE
-- **HD**: supporti pre-installati su un disco rigido
+- **HD**: supporti pre-installati in un disco rigido
 
 ### <a name="SMSTSLogPath"></a> _SMSTSLogPath
 
@@ -303,13 +302,13 @@ specifica se il computer è in esecuzione come dispositivo Windows To Go.
 
 La sequenza di attività imposta questa variabile con lo stato di installazione dell'applicazione durante il passaggio [Installa applicazione](task-sequence-steps.md#BKMK_InstallApplication). Imposta uno dei valori seguenti:  
 
-- **Non definita**: il passaggio Installa applicazione non è stato eseguito.  
+- **Non definito**: il passaggio Installa applicazione non è stato eseguito.  
 
-- **Errore**: non è possibile eseguire almeno un'applicazione a causa di un errore durante il passaggio Installa applicazione.  
+- **Errore**: non è stato possibile eseguire almeno un'applicazione a causa di un errore durante il passaggio Installa applicazione.  
 
 - **Avviso**: non si sono verificati errori durante il passaggio Installa applicazione. Una o più applicazioni oppure una dipendenza necessaria non sono state installate perché un requisito non è stato soddisfatto.  
 
-- **Riuscita**: impostato quando non vengono rilevati errori o avvisi durante il passaggio Installa applicazione.  
+- **Operazione riuscita**: impostato quando non vengono rilevati errori o avvisi durante il passaggio Installa applicazione.  
 
 ### <a name="OSDAdapter"></a> OSDAdapter
 
@@ -776,8 +775,8 @@ Specifica se il computer di destinazione viene aggiunto a un gruppo di lavoro o 
 
 #### <a name="valid-values"></a>Valori validi
 
-- `0`: aggiungere il computer di destinazione a un dominio Windows  
-- `1`: aggiungere il computer di destinazione a un gruppo di lavoro  
+- `0`: aggiunge il computer di destinazione a un dominio Windows  
+- `1`: aggiunge il computer di destinazione a un gruppo di lavoro  
 
 ### <a name="OSDJoinWorkgroupName"></a> OSDJoinWorkgroupName
 
@@ -1020,7 +1019,7 @@ Specifica se il computer di destinazione viene aggiunto a un dominio o a un grup
 #### <a name="value-values"></a>Valori validi
 
 - `0`: aggiunta a un dominio di Active Directory  
-- `1`: aggiunta a un gruppo di lavoro
+- `1`: Aggiunta a un gruppo di lavoro
 
 ### <a name="OSDPartitions"></a> OSDPartitions
 
@@ -1077,7 +1076,7 @@ Specifica lo stile di partizione da usare per il partizionamento del disco.
 #### <a name="valid-values"></a>Valori validi
 
 - `GPT`: usa lo stile di tabella delle partizioni GUID
-- `MBR`: usa lo stile di partizione MBR (record di avvio principale)
+- `MBR`: usa lo stile di partizione MBR (Master Boot Record, record di avvio principale)
 
 ### <a name="OSDProductKey"></a> OSDProductKey
 
@@ -1097,9 +1096,9 @@ Specifica una password generata in modo casuale per l'account amministratore loc
 
 #### <a name="valid-values"></a>Valori validi
 
-- `true` (impostazione predefinita): Installazione di Windows disabilita l'account amministratore locale nel computer di destinazione  
+- `true` (impostazione predefinita): Installazione di Windows disabilita l'account Administrator locale nel computer di destinazione  
 
-- `false`: Installazione di Windows abilita l'account amministratore locale nel computer di destinazione e imposta la password dell'account sul valore di [OSDLocalAdminPassword](#OSDLocalAdminPassword)  
+- `false`: Installazione di Windows abilita l'account Administrator locale nel computer di destinazione e imposta la password dell'account sul valore di [OSDLocalAdminPassword](#OSDLocalAdminPassword)  
 
 ### <a name="OSDRegisteredOrgName-input"></a> OSDRegisteredOrgName (input)
 
@@ -1242,7 +1241,7 @@ Per altre informazioni sul valore del file di risposte dell'installazione di Win
 
 *Si applica al passaggio [Applica impostazioni Windows](task-sequence-steps.md#BKMK_ApplyWindowsSettings).*
 
-Specifica le impostazioni locali predefinite del sistema usate nel nuovo sistema operativo.
+Specifica le impostazioni locali del sistema predefinite usate nel nuovo sistema operativo.
 
 Per altre informazioni sul valore del file di risposte dell'installazione di Windows, vedere [Microsoft-Windows-International-Core - SystemLocale](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-international-core-systemlocale).
 
@@ -1427,11 +1426,11 @@ Numero di tentativi di download dei criteri da parte del client dopo che non è 
 
 Specifica in che modo una sequenza di attività associa gli utenti al computer di destinazione. Impostare la variabile su uno dei seguenti valori:  
 
-- **Automatica**: la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
+- **Auto**: la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
 
-- **In sospeso**: la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione. Un amministratore deve approvare la relazione per impostarla.  
+- **Pending**: la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione. Un amministratore deve approvare la relazione per impostarla.  
 
-- **Disattivata**: la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.
+- **Disabilitato**: la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.
 
 ### <a name="SMSTSDisableStatusRetry"></a> SMSTSDisableStatusRetry
 
@@ -1625,7 +1624,7 @@ Specifica la password per l'account specificato dalla variabile [SMSTSRunCommand
 
 (input)
 
-Specifica l'account con cui viene eseguito lo script di PowerShell. Il valore è una stringa nel formato nomeutente o dominio\nome utente. Specificare la password dell'account con la variabile [SMSTSRunPowerShellUserPassword](#SMSTSRunPowerShellUserPassword) .
+Specifica l'account con cui viene eseguito lo script di PowerShell. Il valore è una stringa nel formato nomeutente o dominio\nome utente. Specificare la password dell'account con la variabile [SMSTSRunPowerShellUserPassword](#SMSTSRunPowerShellUserPassword).
 
 > [!NOTE]
 > Per usare queste variabili, configurare il passaggio **Esegui script PowerShell** con l'impostazione per **eseguire questo passaggio come account seguente**. Quando si abilita questa opzione, se si imposta il nome utente e la password con le variabili, specificare un valore per l'account.
@@ -1687,14 +1686,14 @@ Impostare questa variabile utilizzando:
 
 - Il passaggio [Imposta variabile della sequenza di attività](/configmgr/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable)
 
-- Variabile di raccolta. Per altre informazioni, vedere [Come impostare le variabili](/configmgr/osd/understand/using-task-sequence-variables#bkmk_set).
+- Una variabile raccolta. Per altre informazioni, vedere [Come impostare le variabili](/configmgr/osd/understand/using-task-sequence-variables#bkmk_set).
 
 ### <a name="TSDisableProgressUI"></a> TSDisableProgressUI
 
 <!-- 1354291 -->
 Usare questa variabile per controllare la visualizzazione, da parte degli utenti finali, dello stato della sequenza di attività. Per nascondere o visualizzare lo stato in momenti diversi, impostare questa variabile più volte in una sequenza di attività.  
 
-- `true`: nascondere l'avanzamento della sequenza di attività  
+- `true`: Nascondere l'avanzamento della sequenza di attività  
 
 - `false`: visualizzare lo stato della sequenza di attività  
 
@@ -1728,7 +1727,7 @@ Le variabili seguenti sono deprecate:
 - **OSDBuildStorageDriverList**: si applica solo a Windows XP e Windows Server 2003
 - **OSDDiskpartBiosCompatibilityMode**: necessaria solo durante la distribuzione di Windows XP o Windows Server 2003
 - **OSDInstallEditionIndex**: non necessaria dopo Windows Vista
-- **OSDPreserveDriveLetter**: per altre informazioni, vedere [OSDPreserveDriveLetter](#osdpreservedriveletter)
+- **OSDPreserveDriveLetter**: Per altre informazioni, vedere [OSDPreserveDriveLetter](#osdpreservedriveletter)
 
 ### <a name="osdpreservedriveletter"></a>OSDPreserveDriveLetter
 

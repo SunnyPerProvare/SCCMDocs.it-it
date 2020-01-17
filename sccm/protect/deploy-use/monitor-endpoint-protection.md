@@ -1,7 +1,7 @@
 ---
 title: Monitorare lo stato di Endpoint Protection
 titleSuffix: Configuration Manager
-description: Informazioni su come monitorare Endpoint Protection nella gerarchia di System Center Configuration Manager.
+description: Informazioni su come monitorare Endpoint Protection nella gerarchia di Configuration Manager.
 ms.date: 03/13/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
@@ -10,19 +10,18 @@ ms.assetid: f4a1335c-bb3d-493e-a124-83a32a107dc8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b05f80eac2b7dfe8cf1a1eee7a37a29a8148a580
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c1890eb3cb6f201483c21ad4da85b83658d3081f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500410"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819506"
 ---
 # <a name="how-to-monitor-endpoint-protection-status"></a>Come monitorare lo stato di Endpoint Protection
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-È possibile monitorare Endpoint Protection nella gerarchia di Microsoft System Center Configuration Manager usando il nodo **Stato Endpoint Protection** di **Sicurezza** nell'area di lavoro **Monitoraggio**, il nodo **Endpoint Protection** nell'area di lavoro **Asset e conformità** e usando i report.  
+È possibile monitorare Endpoint Protection nella gerarchia di Microsoft Configuration Manager usando il nodo **Stato Endpoint Protection** di **Sicurezza** nell'area di lavoro **Monitoraggio**, il nodo **Endpoint Protection** nell'area di lavoro **Asset e conformità** e usando i report.  
 
 ##  <a name="BKMK_1"></a> Come monitorare Endpoint Protection usando il nodo Stato Endpoint Protection  
 
@@ -57,7 +56,7 @@ ms.locfileid: "65500410"
 3.  Nell'elenco *<nome raccolta\>* selezionare un computer e quindi fare clic sulla scheda **Dettagli malware**.  
 
 ##  <a name="BKMK_3"></a> Come monitorare Endpoint Protection usando i report  
- Usare i report seguenti per visualizzare le informazioni su Endpoint Protection nella gerarchia. È anche possibile usare questi report per risolvere eventuali problemi di Endpoint Protection. Per altre informazioni su come configurare la creazione di report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md) e [File di log in System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md). I report di Endpoint Protection sono nella cartella di Endpoint Protection.  
+ Usare i report seguenti per visualizzare le informazioni su Endpoint Protection nella gerarchia. È anche possibile usare questi report per risolvere eventuali problemi di Endpoint Protection. Per altre informazioni sulle modalità di configurazione della creazione di report in Configuration Manager, vedere [Creazione di report](../../core/servers/manage/reporting.md) e [File di log](../../core/plan-design/hierarchy/log-files.md). I report di Endpoint Protection sono nella cartella di Endpoint Protection.  
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -71,7 +70,7 @@ ms.locfileid: "65500410"
 
 |Livello di avviso|Descrizione|  
 |-----------------|-----------------|  
-|**Operazione non riuscita**|Endpoint Protection non è riuscito a correggere il malware. Controllare i registri per i dettagli dell'errore.<br /><br /> **Nota:** per un elenco dei file di log di Configuration Manager ed Endpoint Protection, vedere la sezione "Endpoint Protection" nell'argomento [File di log in System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md).|  
+|**Operazione non riuscita**|Endpoint Protection non è riuscito a correggere il malware. Controllare i registri per i dettagli dell'errore.<br /><br /> **Nota:** Per un elenco dei file di log Configuration Manager e Endpoint Protection, vedere la sezione "Endpoint Protection" nell'argomento [file di log](../../core/plan-design/hierarchy/log-files.md) .|  
 |**Rimosso**|Endpoint Protection ha rimosso il malware.|  
 |**In quarantena**|Endpoint Protection ha spostato il malware in una posizione sicura e ne ha impedito l'esecuzione fino a quando l'utente non l'ha rimosso o ne ha consentito l'esecuzione.|  
 |**Pulito**|Il malware è stato eliminato dal file infetto.|  

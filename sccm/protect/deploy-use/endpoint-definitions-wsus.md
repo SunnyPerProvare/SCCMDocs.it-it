@@ -10,17 +10,16 @@ author: mestew
 ms.author: mstewart
 description: Informazioni su come configurare Windows Server Update Services per l'approvazione automatica degli aggiornamenti delle definizioni.
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e868945cf3d87df17dbe8197ec99497f1478d973
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 301a3f318e836f2501a25ae65ebb61173b8e6231
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70380249"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827452"
 ---
 # <a name="enable-endpoint-protection-malware-definitions-to-download-from-windows-server-update-services-wsus-for-configuration-manager"></a>Abilitare le definizioni malware di Endpoint Protection da scaricare da Windows Server Update Services (WSUS) per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
  Se si usa WSUS per mantenere aggiornate le definizioni antimalware, è possibile configurarlo per l'approvazione automatica degli aggiornamenti delle definizioni. Anche se l'uso degli aggiornamenti software di Configuration Manager è il metodo consigliato per mantenere aggiornate le definizioni, è anche possibile configurare WSUS come metodo per consentire agli utenti di avviare manualmente l'aggiornamento delle definizioni. Usare le procedure seguenti per configurare WSUS come origine degli aggiornamenti delle definizioni.
 
@@ -75,19 +74,19 @@ ms.locfileid: "70380249"
 
 2.  Nella scheda **Regole di aggiornamento** fare clic su **Nuova regola**.
 
-3.  Nella finestra di dialogo **Aggiungi regola** , in **Passaggio 1: selezionare le proprietà**selezionare la casella di controllo **Se l'aggiornamento è in una classificazione specifica** .
+3.  Nella finestra di dialogo **Aggiungi regola** in **Passaggio 1: Selezionare le proprietà** selezionare la casella di controllo **Se l'aggiornamento è in una classificazione specifica**.
 
-4.  In **Passaggio 2: modificare le proprietà**fare clic su **qualsiasi classificazione**.
+4.  In **Passaggio 2: Modificare le proprietà** fare clic su **qualsiasi classificazione**.
 
 5.  Deselezionare tutte le caselle di controllo ad eccezione di **Aggiornamenti delle definizioni**e quindi fare clic su **OK**.
 
-6.  Nella finestra di dialogo **Aggiungi regola** , in **Passaggio 1: selezionare le proprietà**selezionare la casella di controllo **Se l'aggiornamento è in un prodotto specifico** .
+6.  Nella finestra di dialogo **Aggiungi regola** in **Passaggio 1: Selezionare le proprietà** selezionare la casella di controllo **Se l'aggiornamento è in un prodotto specifico**.
 
-7.  In **Passaggio 2: modificare le proprietà**fare clic su **qualsiasi prodotto**.
+7.  In **Passaggio 2: Modificare le proprietà** fare clic su **qualsiasi prodotto**.
 
 8.  Deselezionare tutte le caselle di controllo ad eccezione di **Forefront Endpoint Protection** per Windows 8.1 e versioni precedenti o **Windows Defender** per Windows 10 e versioni successive e quindi fare clic su **OK**.
 
-9. In **Passaggio 3: specificare un nome**immettere un nome per la regola e quindi fare clic su **OK**.
+9. In **Passaggio 3: Specificare un nome** immettere un nome per la regola e quindi fare clic su **OK**.
 
 10. Nella finestra di dialogo **Approvazioni automatiche** selezionare la casella di controllo per la regola appena creata e quindi fare clic su **Esegui regola**.
 

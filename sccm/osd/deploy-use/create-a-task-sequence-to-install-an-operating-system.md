@@ -10,17 +10,16 @@ ms.assetid: 217c8a0e-5112-420e-a325-2a6d75326290
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96a99759d67f01253117356a2d293020379cca5e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 80631fa3b44cfae5637adbf035439f1fd740773a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68536955"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825490"
 ---
 # <a name="create-a-task-sequence-to-install-an-os"></a>Creare una sequenza di attività per installare un sistema operativo
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare le sequenze di attività in Configuration Manager per installare automaticamente un'immagine del sistema operativo in un computer di destinazione. Creare una sequenza di attività che faccia riferimento a un'immagine di avvio usata per avviare il computer di destinazione, all'immagine del sistema operativo da installare nel computer di destinazione e qualsiasi altro contenuto aggiuntivo, ad esempio altre applicazioni o aggiornamenti software, che si vuole installare. Distribuire quindi la sequenza di attività in una raccolta che contiene il computer di destinazione.  
 
@@ -54,9 +53,9 @@ Prima di creare una sequenza di attività per installare un sistema operativo, d
 
 4. Nella pagina **Informazioni sequenza di attività** specificare le impostazioni seguenti:  
 
-    - **Nome sequenza di attività**: specificare un nome che identifica la sequenza di attività.  
+    - **Nome sequenza di attività**: Specificare un nome che identifica la sequenza di attività.  
 
-    - **Descrizione**: specificare una descrizione delle operazioni eseguite dalla sequenza di attività.  
+    - **Descrizione**: Specificare una descrizione delle operazioni eseguite dalla sequenza di attività.  
 
     - **Immagine d'avvio**: specificare l'immagine di avvio utilizzata dalla sequenza di attività per installare il sistema operativo nel computer di destinazione. L'immagine di avvio contiene una versione di Windows PE, oltre a eventuali driver di dispositivo aggiuntivi necessari. Per altre informazioni, vedere [Manage boot images](/sccm/osd/get-started/manage-boot-images) (Gestire le immagini d'avvio).  
 
@@ -65,15 +64,15 @@ Prima di creare una sequenza di attività per installare un sistema operativo, d
 
 5. Nella pagina **installa Windows** specificare le impostazioni seguenti:  
 
-    - **Pacchetto immagine**: specificare il pacchetto che contiene l'immagine del sistema operativo da installare. Per altre informazioni, vedere [Gestire le immagini del sistema operativo](/sccm/osd/get-started/manage-operating-system-images).  
+    - **Pacchetto immagine**: Specificare il pacchetto che contiene l'immagine del sistema operativo da installare. Per altre informazioni, vedere [Gestire le immagini del sistema operativo](/sccm/osd/get-started/manage-operating-system-images).  
 
     - **Immagine**: se il pacchetto dell'immagine del sistema operativo contiene più immagini, specificare l'indice dell'immagine del sistema operativo da installare.  
 
-    - **Creare partizioni e formattare il computer di destinazione prima di installare il sistema operativo**: specificare se si vuole che la sequenza di attività partizioni e formatti il computer di destinazione prima dell'installazione del sistema operativo.  
+    - **Creare partizioni e formattare il computer di destinazione prima di installare il sistema operativo**: Specificare se la sequenza di attività deve eseguire una partizione e una formattazione del computer di destinazione prima di installare il sistema operativo.  
 
     - **Codice Product Key**: specificare il codice Product Key di Windows, se necessario. È possibile specificare i codici Product Key per contratti multilicenza codificati e i codici Product Key standard. Se si usa un codice Product Key non codificato, ogni gruppo di cinque caratteri deve essere separato da un trattino (`-`). Ad esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
 
-    - **Modalità di gestione licenze del server**: specificare che la licenza del server è **Per postazione**, **Per server**o che non è specificata alcuna licenza. Se la licenza del server è **Per server**, specificare anche il numero massimo di connessioni al server.  
+    - **Modalità di gestione licenze del server**: specificare che la licenza del server è **Per postazione**, **Per server** o che non è specificata alcuna licenza. Se la licenza del server è **Per server**, specificare anche il numero massimo di connessioni al server.  
 
     - Specificare come gestire l'account amministratore per il nuovo sistema operativo:  
 
@@ -92,7 +91,7 @@ Prima di creare una sequenza di attività per installare un sistema operativo, d
 
         È inoltre possibile specificare un'unità organizzativa (OU) nel campo **unità organizzativa dominio** . Questa impostazione è facoltativa e specifica il nome distinto LDAP X. 500 dell'unità organizzativa. Se non esiste già, Windows crea l'account computer in questa OU.  
 
-    - **Account**: nome utente e password per l'account con le autorizzazioni per l'aggiunta al dominio specificato. Ad esempio: *dominio\utente* o *%variabile%* .  
+    - **Account**: Nome utente e password per l'account con le autorizzazioni per l'aggiunta al dominio specificato. Ad esempio: *dominio\utente* o *%variabile%*.  
 
         > [!IMPORTANT]  
         > Se si prevede di migrare le impostazioni del dominio o le impostazioni del gruppo di lavoro, immettere le credenziali di dominio appropriate.  
@@ -101,9 +100,9 @@ Prima di creare una sequenza di attività per installare un sistema operativo, d
 
 8. Nella pagina **Migrazione stato** specificare le informazioni seguenti:  
 
-    - **Acquisisci impostazioni utente**: la sequenza di attività acquisisce lo stato utente. Per altre informazioni su come acquisire e ripristinare lo stato utente, vedere [Gestire lo stato utente](/sccm/osd/get-started/manage-user-state).  
+    - **Acquisisci impostazioni utente**: La sequenza di attività acquisisce lo stato utente. Per altre informazioni su come acquisire e ripristinare lo stato utente, vedere [Gestire lo stato utente](/sccm/osd/get-started/manage-user-state).  
 
-    - **Acquisisci impostazioni di rete**: la sequenza di attività acquisisce le impostazioni di rete dal computer di destinazione. Acquisisce l'appartenenza del dominio o del gruppo di lavoro, anche le impostazioni della scheda di rete.  
+    - **Acquisisci impostazioni di rete**: Specificare se la sequenza di attività acquisisce le impostazioni di rete dal computer di destinazione. Acquisisce l'appartenenza del dominio o del gruppo di lavoro, anche le impostazioni della scheda di rete.  
 
     - **Acquisisci impostazioni di Microsoft Windows**: la sequenza di attività acquisisce le impostazioni di Windows dal computer di destinazione prima di installare l'immagine del sistema operativo. Acquisisce il nome del computer, il nome dell'utente registrato e dell'organizzazione e le impostazioni di fuso orario.  
 
@@ -139,7 +138,7 @@ Usare la tabella seguente come guida durante la creazione di una sequenza di att
 |Acquisisci impostazioni Windows|Usare questo passaggio della sequenza di attività per identificare le impostazioni di Microsoft Windows per l'acquisizione dal computer di riferimento. È possibile acquisire il nome del computer, utente e informazioni sull'organizzazione e le impostazioni di fuso orario.|  
 |Acquisisci impostazioni di rete|Usare questo passaggio della sequenza di attività per acquisire le impostazioni di rete dal computer di riferimento. È possibile acquisire l'appartenenza al gruppo di lavoro o dominio del computer di riferimento e impostazione delle informazioni relative alla scheda di rete.|  
 |Acquisisci file utente e impostazioni - **(Nuovo sottogruppo di sequenze di attività)**|Creare un gruppo di sequenze di attività all'interno di un gruppo di sequenze di attività. Questo sottogruppo contiene i passaggi necessari per acquisire dati sullo stato utente. Analogamente al gruppo iniziale aggiunto, questo sottogruppo tiene uniti i passaggi delle sequenze di attività per una migliore organizzazione e un maggiore controllo degli errori.|  
-|Richiedi archiviazione stato utente|Usare questo passaggio della sequenza di attività per richiedere l'accesso a un punto di migrazione stato in cui sono archiviati i dati dello stato utente. È possibile configurare questo passaggio della sequenza di attività per acquisire o ripristinare le informazioni sullo stato utente.|  
+|Archiviazione dello stato utente richiesta|Usare questo passaggio della sequenza di attività per richiedere l'accesso a un punto di migrazione stato in cui sono archiviati i dati dello stato utente. È possibile configurare questo passaggio della sequenza di attività per acquisire o ripristinare le informazioni sullo stato utente.|  
 |Acquisisci file utente e impostazioni|Usare questo passaggio della sequenza di attività per usare l'Utilità di migrazione stato utente per acquisire lo stato utente e le impostazioni dal computer di riferimento che riceve la sequenza di attività associata a questo passaggio. È possibile acquisire le opzioni standard o configurare le opzioni da acquisire.|  
 |Rilascia archiviazione stato utente|Utilizzare questo passaggio della sequenza attività per notificare lo stato punto di migrazione che l'azione di ripristino o acquisizione è stata completata.|  
 |Installa il sistema operativo - **(Nuovo gruppo di sequenze di attività)**|Creare un altro sottogruppo di sequenze di attività. Questo sottogruppo contiene i passaggi necessari per installare e configurare l'ambiente Windows PE.|  
@@ -154,6 +153,6 @@ Usare la tabella seguente come guida durante la creazione di una sequenza di att
 |Imposta Windows e ConfigMgr|Usare questo passaggio della sequenza di attività per installare il software client di Configuration Manager. Configuration Manager installa e registra il GUID del client di Configuration Manager. È possibile assegnare i parametri di installazione necessari nella finestra **Proprietà di installazione** .|  
 |Installa aggiornamenti|Usare questo passaggio della sequenza di attività per specificare in che modo gli aggiornamenti software vengono installati nel computer di destinazione. Il computer di destinazione viene valutato alla ricerca di aggiornamenti software applicabili solo in corrispondenza con l'esecuzione di questo passaggio della sequenza di attività, quando il computer di destinazione viene valutato alla ricerca di aggiornamenti software applicabili in modo simile agli altri client gestiti da Configuration Manager.<br /><br /> Questo passaggio usa la variabile della sequenza di attività **_SMSTSMediaType** di sola lettura. Questo passaggio della sequenza di attività viene eseguito solo se il valore della variabile è diverso da **FullMedia**.|  
 |Ripristina file utente e impostazioni - **(Nuovo gruppo di sequenze di attività)**|Creare un altro sottogruppo di sequenze di attività. Questo sottogruppo contiene i passaggi necessari per ripristinare i file utente e le impostazioni.|  
-|Richiedi archiviazione stato utente|Utilizzare questo passaggio della sequenza attività per richiedere l'accesso a un punto di migrazione stato archiviazione i dati dello stato utente.|  
+|Archiviazione dello stato utente richiesta|Utilizzare questo passaggio della sequenza attività per richiedere l'accesso a un punto di migrazione stato archiviazione i dati dello stato utente.|  
 |Ripristina file utente e impostazioni|Usare questo passaggio della sequenza di attività per eseguire l'Utilità di migrazione stato utente e ripristinare lo stato utente e le impostazioni in un computer di destinazione.|  
 |Rilascia archiviazione stato utente|Usare questo passaggio della sequenza di attività per segnalare al punto di migrazione stato che i dati dello stato utente non sono più necessari.|  

@@ -10,13 +10,12 @@ ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d1b7a629d8976fa961acaeb5bc2860cb6f4769b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9f97de0ef5945b02aadf5d46d4db50f49aaafd3c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660972"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806374"
 ---
 # <a name="manage-task-sequences-to-automate-tasks"></a>Gestire le sequenze di attività per automatizzare le attività
 
@@ -32,15 +31,15 @@ Creare sequenze attività usando la Creazione guidata della sequenza di attivit�
 
 - [Sequenza di attività per aggiornare un sistema operativo](/configmgr/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system): creare i passaggi per aggiornare un sistema operativo. Include anche le opzioni per includere gli aggiornamenti software e installare le applicazioni.
 
-- [Sequenza di attività per acquisire un sistema operativo](/configmgr/osd/deploy-use/create-a-task-sequence-to-capture-an-operating-system): crea i passaggi per compilare e acquisire un sistema operativo da un computer di riferimento. È possibile includere gli aggiornamenti software e installare le applicazioni nel computer di riferimento prima dell'acquisizione dell'immagine.
+- [Sequenza di attività per acquisire un sistema operativo](/configmgr/osd/deploy-use/create-a-task-sequence-to-capture-an-operating-system): Crea i passaggi per compilare e acquisire un sistema operativo da un computer di riferimento. È possibile includere gli aggiornamenti software e installare le applicazioni nel computer di riferimento prima dell'acquisizione dell'immagine.
 
 - [Sequenza di attività per acquisire e ripristinare lo stato utente](/configmgr/osd/deploy-use/create-a-task-sequence-to-capture-and-restore-user-state): aggiungere i passaggi a una sequenza di attività esistente per acquisire e ripristinare i dati dello stato utente.
 
-- [Sequenza di attività personalizzata](/configmgr/osd/deploy-use/create-a-custom-task-sequence): questo tipo di sequenza di attività non aggiunge alcun passaggio alla sequenza di attività. Dopo aver creato questa sequenza di attività, modificarla e aggiungere i passaggi.
+- [Sequenza di attività personalizzata](/configmgr/osd/deploy-use/create-a-custom-task-sequence): Questo tipo non aggiunge alcun passaggio alla sequenza di attività. Dopo aver creato questa sequenza di attività, modificarla e aggiungere i passaggi.
 
 ## <a name="BKMK_ModifyTaskSequence"></a> Modifica  
 
-Modificare una sequenza di attività aggiungendo o rimuovendo passaggi, aggiungendo o rimuovendo gruppi oppure modificando l'ordine dei passaggi. Per ulteriori informazioni, vedere [utilizzare l'editor della sequenza di attività](/configmgr/osd/understand/task-sequence-editor).
+Modificare una sequenza di attività aggiungendo o rimuovendo passaggi, aggiungendo o rimuovendo gruppi oppure modificando l'ordine dei passaggi. Per altre informazioni, vedere [Usare l'editor delle sequenze di attività](/configmgr/osd/understand/task-sequence-editor).
 
 ## <a name="bkmk_prop-general"></a>Proprietà di Software Center
 
@@ -80,9 +79,9 @@ Usare la procedura seguente per configurare il comportamento della sequenza di a
         > [!NOTE]  
         > Se l'esecuzione su in client del programma selezionato non riesce, la sequenza di attività non viene eseguita. Se l'esecuzione del programma selezionato avviene correttamente, il programma non viene eseguito nuovamente, anche se la sequenza di attività viene rieseguita nello stesso client.  
 
-    - **Elimina notifiche della sequenza di attività**: selezionare questa opzione per nascondere l'avviso popup **È disponibile nuovo software**. Viene ancora visualizzata l'icona **Nuovo software** di Software Center nell'area di notifica. Questa opzione è disabilitata per impostazione predefinita.  
+    - **Elimina notifiche della sequenza di attività**: Selezionare questa opzione per nascondere l'avviso popup **È disponibile nuovo software**. Viene ancora visualizzata l'icona **Nuovo software** di Software Center nell'area di notifica. Questa opzione è disabilitata per impostazione predefinita.  
 
-    - **Disattiva questa sequenza di attività nei computer in cui è distribuita**: se si seleziona questa opzione, Configuration Manager disabilita temporaneamente tutte le distribuzioni contenenti questa sequenza di attività. La sequenza di attività viene anche rimossa dall'elenco di distribuzioni disponibili per l'esecuzione. La sequenza di attività viene eseguita solo dopo averla abilitata. Questa opzione è disabilitata per impostazione predefinita.  
+    - **Disattiva questa sequenza di attività nei computer in cui è distribuita**: se si seleziona questa opzione, Configuration Manager disabilita temporaneamente tutte le distribuzioni che contengono questa sequenza di attività. La sequenza di attività viene anche rimossa dall'elenco di distribuzioni disponibili per l'esecuzione. La sequenza di attività viene eseguita solo dopo averla abilitata. Questa opzione è disabilitata per impostazione predefinita.  
 
     - **Tempo di esecuzione massimo consentito**: specifica il tempo massimo, in minuti, previsto per l'esecuzione della sequenza di attività nel computer di destinazione. Usare un numero intero uguale o maggiore di zero. Per impostazione predefinita, questo valore è impostato su 120 minuti.  
 
@@ -96,9 +95,9 @@ Usare la procedura seguente per configurare il comportamento della sequenza di a
 
     - **Utilizza un'immagine d'avvio**: usare l'immagine d'avvio selezionata quando viene eseguita la sequenza di attività. Selezionare **Sfoglia** per selezionare un'altra immagine d'avvio. Deselezionare questa opzione per disabilitare l'uso dell'immagine d'avvio selezionata quando viene eseguita la sequenza di attività.  
 
-    - **Questa sequenza di attività può essere eseguita in qualsiasi piattaforma**: se si seleziona questa opzione, Configuration Manager non verifica il tipo di piattaforma del computer di destinazione quando la sequenza di attività viene eseguita. Questa opzione è selezionata per impostazione predefinita.  
+    - **Questa sequenza di attività può essere eseguita in qualsiasi piattaforma**: se questa opzione è selezionata, quando viene eseguita la sequenza di attività Configuration Manager non verifica il tipo di piattaforma del computer di destinazione. Questa opzione è selezionata per impostazione predefinita.  
 
-    - **Questa sequenza di attività può essere eseguita solo in piattaforme specifiche**: questa opzione specifica i processori, le versioni dei sistemi operativi e i Service Pack per i quali può essere eseguita la sequenza di attività. Se questa opzione è selezionata, selezionare almeno una piattaforma dall'elenco. Per impostazione predefinita non è selezionata alcuna piattaforma. Configuration Manager usa queste informazioni quando valuta quali computer di destinazione di una raccolta ricevono la sequenza di attività distribuita.  
+    - **Questa sequenza di attività può essere eseguita solo in piattaforme specifiche**: L'opzione specifica i processori, le versioni dei sistemi operativi e i Service Pack per i quali può essere eseguita la sequenza di attività. Se questa opzione è selezionata, selezionare almeno una piattaforma dall'elenco. Per impostazione predefinita non è selezionata alcuna piattaforma. Configuration Manager usa queste informazioni quando valuta quali computer di destinazione di una raccolta ricevono la sequenza di attività distribuita.  
 
         > [!NOTE]  
         > Quando si esegue una sequenza di attività dal supporto di avvio o da PXE, Configuration Manager ignora questa opzione. La sequenza di attività viene eseguita come se l'opzione **Questo programma può essere eseguito in qualsiasi piattaforma** fosse selezionata.  
@@ -162,7 +161,7 @@ Viene visualizzato il messaggio di notifica seguente quando l'utente finale apre
 
 <!--3555926-->
 
-A partire dalla versione 1910, è ora possibile eseguire una sequenza di attività con la combinazione per il risparmio di energia a prestazioni elevate. Questa opzione migliora la velocità complessiva della sequenza di attività. Configura Windows in modo da usare la combinazione per il risparmio di energia per prestazioni elevate predefinita, che offre prestazioni massime a scapito di un consumo di energia superiore. Questa opzione è abilitata per impostazione predefinita per le nuove sequenze attività.
+A partire dalla versione 1910, è ora possibile eseguire una sequenza di attività con la combinazione per il risparmio di energia per prestazioni elevate. Questa opzione migliora la velocità complessiva della sequenza di attività. Configura Windows in modo da usare la combinazione per il risparmio di energia per prestazioni elevate predefinita, che offre prestazioni massime a scapito di un consumo di energia superiore. Questa opzione è abilitata per impostazione predefinita per le nuove sequenze attività.
 
 Nella maggior parte degli scenari, all'avvio la sequenza di attività registra la combinazione per il risparmio di energia attualmente abilitata. Imposta quindi come combinazione per il risparmio di energia attiva la combinazione **Prestazioni elevate** predefinita di Windows. Se la sequenza di attività riavvia il computer, questo processo viene ripetuto. Alla fine della sequenza di attività, la combinazione per il risparmio di energia viene reimpostata sul valore archiviato. Questa funzionalità è disponibile sia in Windows che in Windows PE, ma non ha alcun effetto sulle macchine virtuali.
 
@@ -251,13 +250,13 @@ Considerare i punti seguenti quando si esportano e importano sequenze di attivit
 
 4. Nella pagina **Generale** specificare le impostazioni seguenti:  
 
-    - **File**: specificare il percorso e il nome del file di esportazione. Se si immette direttamente il nome del file, assicurarsi di includere l'estensione .zip nel nome del file. Se si seleziona il file di esportazione, la procedura guidata aggiunge automaticamente questa estensione del nome del file.  
+    - **File**: Specificare il percorso e il nome del file di esportazione. Se si immette direttamente il nome del file, assicurarsi di includere l'estensione .zip nel nome del file. Se si seleziona il file di esportazione, la procedura guidata aggiunge automaticamente questa estensione del nome del file.  
 
     - Per non esportare le dipendenze della sequenza di attività, deselezionare l'opzione **Esporta tutte le dipendenze della sequenza di attività**. Per impostazione predefinita, la procedura guidata esegue la scansione di tutti gli oggetti correlati e li esporta con la sequenza di attività. Tali dipendenze includono tutti i tipi di applicazione.  
 
     - Per non copiare il contenuto dall'origine del pacchetto al percorso di esportazione, deselezionare l'opzione **Esporta tutti i contenuti per le sequenze di attività selezionate e le dipendenze**. Se si seleziona questa opzione, l'Importazione guidata della sequenza di attività usa il percorso di importazione come nuovo percorso di origine del pacchetto.  
 
-    - **Commenti amministratore**: aggiungere una descrizione delle sequenze attività da esportare.  
+    - **Commenti amministratore**: Aggiungere una descrizione della sequenza di attività da esportare.  
 
 5. Completare la procedura guidata.  
 
@@ -283,9 +282,9 @@ Se si include del contenuto quando si esporta una sequenza di attività, assicur
 
     - Se l'oggetto è stato importato in precedenza, selezionare una delle seguenti azioni:  
 
-        - **Ignora duplicato** (predefinito): questa azione non importa l'oggetto. Al contrario, la procedura guidata collega l'oggetto esistente alla sequenza di attività.  
+        - **Ignora duplicato** (impostazione predefinita): questa azione non importa l'oggetto. Al contrario, la procedura guidata collega l'oggetto esistente alla sequenza di attività.  
 
-        - **Sovrascrivi**: questa azione sovrascrive l'oggetto esistente con l'oggetto importato. Per le applicazioni, è possibile aggiungere una revisione per aggiornare l'applicazione esistente o creare una nuova applicazione.  
+        - **Sovrascrivi**: Questa azione sovrascrive l'oggetto esistente con l'oggetto importato. Per le applicazioni, è possibile aggiungere una revisione per aggiornare l'applicazione esistente o creare una nuova applicazione.  
 
 5. Completare la procedura guidata.  
 
@@ -309,7 +308,7 @@ Quando si esegue una sequenza di attività e si verifica un errore, è possibile
 
 ### <a name="edit"></a>Modifica
 
-Per ulteriori informazioni, vedere [utilizzare l'editor della sequenza di attività](/configmgr/osd/understand/task-sequence-editor#bkmk_edit).
+Per altre informazioni, vedere [Usare l'editor delle sequenze di attività](/configmgr/osd/understand/task-sequence-editor#bkmk_edit).
 
 ### <a name="enable"></a>Abilitare
 
@@ -319,7 +318,7 @@ Attiva la sequenza di attività in modo che i client possano eseguirla. Dopo l'a
 
 Disattiva la sequenza di attività in modo che non possa essere eseguita nei computer. Le sequenze attività disattivate possono essere distribuite ai computer, ma questi non le eseguono finché non vengono attivate.  
 
-### <a name="export"></a>Esporta
+### <a name="export"></a>Export
 
 Per altre informazioni, vedere [Esportare e importare sequenze di attività](#BKMK_ExportImport).
 
@@ -341,7 +340,7 @@ Elimina la sequenza di attività selezionata.
 
 Per altre informazioni, vedere [Creare distribuzioni in più fasi](/configmgr/osd/deploy-use/create-phased-deployment-for-task-sequence).
 
-### <a name="deploy"></a>Distribuire
+### <a name="deploy"></a>Distribuisci
 
 Per altre informazioni, vedere [Deploy a task sequence](/configmgr/osd/deploy-use/deploy-a-task-sequence).
 
@@ -368,7 +367,7 @@ Per altre informazioni, vedere [Configurare le proprietà di Software Center](#b
 ### <a name="view"></a>Visualizza
 
 <!--3633146-->
-A partire dalla versione 1902, l'azione **Visualizza** è il valore predefinito per le sequenze di attività. Questa azione consente di vedere i passaggi della sequenza di attività senza bloccarla per la modifica. Per ulteriori informazioni, vedere [utilizzare l'editor della sequenza di attività](/configmgr/osd/understand/task-sequence-editor#bkmk_view).
+A partire dalla versione 1902, l'azione **Visualizza** è il valore predefinito per le sequenze di attività. Questa azione consente di vedere i passaggi della sequenza di attività senza bloccarla per la modifica. Per altre informazioni, vedere [Usare l'editor delle sequenze di attività](/configmgr/osd/understand/task-sequence-editor#bkmk_view).
 
 ## <a name="see-also"></a>Vedere anche
 

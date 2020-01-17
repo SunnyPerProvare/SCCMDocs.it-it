@@ -1,7 +1,7 @@
 ---
 title: Gestire i dati di configurazione
 titleSuffix: Configuration Manager
-description: Dopo aver creato gli elementi e le linee di base di configurazione in System Center Configuration Manager è possibile usare altri comandi per eseguire diverse azioni.
+description: Dopo aver creato gli elementi e le linee di base di configurazione in Configuration Manager è possibile usare altri comandi per eseguire diverse azioni.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
@@ -10,19 +10,18 @@ ms.assetid: b48c693c-d2b0-4707-a5dd-fe92172c49fe
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1eb13beac2882121b2e083ad3e29eef6918eeaa
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: de8168d7d699998117eff8821929c654815f1a49
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62214464"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816327"
 ---
-# <a name="manage-configuration-data-in-system-center-configuration-manager"></a>Gestire i dati di configurazione in System Center Configuration Manager
+# <a name="manage-configuration-data-in-configuration-manager"></a>Gestire i dati di configurazione in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Dopo aver creato gli elementi e le linee di base di configurazione in System Center Configuration Manager è possibile usare altri comandi per eseguire diverse azioni.  
+Dopo aver creato gli elementi e le linee di base di configurazione in Configuration Manager è possibile usare altri comandi per eseguire diverse azioni.  
 
 ## <a name="manage-configuration-items"></a>Gestire gli elementi di configurazione  
 

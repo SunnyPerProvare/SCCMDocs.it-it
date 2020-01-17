@@ -1,7 +1,7 @@
 ---
 title: Introduzione agli aggiornamenti software
 titleSuffix: Configuration Manager
-description: Informazioni di base sugli aggiornamenti software in System Center Configuration Manager.
+description: Informazioni di base sugli aggiornamenti software in Configuration Manager.
 author: mestew
 ms.author: mstewart
 manager: dougeby
@@ -10,19 +10,18 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce8b194ffe0a7efccd112b8f69e60636db5e2721
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: c857997bdbeed51286e874dcbecf00b414dfe6a0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70378661"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818469"
 ---
-# <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>Introduzione agli aggiornamenti software in System Center Configuration Manager
+# <a name="introduction-to-software-updates-in-configuration-manager"></a>Introduzione agli aggiornamenti software in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Gli aggiornamenti software in System Center Configuration Manager offrono un set di strumenti e risorse che consentono di gestire la complessa attività di monitoraggio e applicazione degli aggiornamenti software ai computer client dell'azienda. Un processo di gestione efficiente degli aggiornamenti software è necessario per mantenere l'efficienza operativa, risolvere i problemi di sicurezza e mantenere la stabilità dell'infrastruttura di rete. Tuttavia, a causa della natura mutevole della tecnologia e della continua comparsa di nuove minacce per la sicurezza, una gestione efficiente degli aggiornamenti software richiede un'attenzione costante e ininterrotta.  
+Gli aggiornamenti software in Configuration Manager offrono un set di strumenti e risorse che consentono di gestire la complessa attività di monitoraggio e applicazione degli aggiornamenti software ai computer client dell'azienda. Un processo di gestione efficiente degli aggiornamenti software è necessario per mantenere l'efficienza operativa, risolvere i problemi di sicurezza e mantenere la stabilità dell'infrastruttura di rete. Tuttavia, a causa della natura mutevole della tecnologia e della continua comparsa di nuove minacce per la sicurezza, una gestione efficiente degli aggiornamenti software richiede un'attenzione costante e ininterrotta.  
 
 Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiornamenti software nell'ambiente, vedere [Example scenario to deploy security software updates](../deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md) (Scenario di esempio per distribuire aggiornamenti di sicurezza del software).  
 
@@ -130,19 +129,19 @@ Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiorn
 
  L'analisi per la conformità degli aggiornamenti software, inclusa la relativa pianificazione, può iniziare nei modi seguenti:  
 
--   **Pianificazione dell'analisi degli aggiornamenti software**: l'analisi per la conformità degli aggiornamenti software inizia in base alla pianificazione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
+-   **Pianificazione analisi aggiornamenti software**: l'analisi per la conformità degli aggiornamenti software inizia in base alla pianificazione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
 
 -   **Azione Proprietà di Configuration Manager**: l'utente può avviare l'azione **Ciclo di analisi per aggiornamenti software** o **Ciclo di valutazione distribuzione aggiornamenti software** nella scheda **Azione** della finestra di dialogo **Proprietà di Configuration Manager** nel computer client.  
 
 -   **Pianificazione della rivalutazione della distribuzione**: la valutazione della distribuzione e l'analisi per la conformità degli aggiornamenti software iniziano in base alla pianificazione della rivalutazione della distribuzione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
 
--   **Prima del download dei file di aggiornamento**: quando un computer client riceve un criterio di assegnazione per una nuova distribuzione richiesta, Agente client aggiornamenti software scarica i file di aggiornamento software nella cache del client locale. Prima di scaricare i file di aggiornamento software, l'agente client avvia un'analisi per verificare che l'aggiornamento software sia ancora necessario.  
+-   **Prima di scaricare i file di aggiornamento**: quando un computer client riceve un criterio di assegnazione per una nuova distribuzione richiesta, l'Agente client aggiornamenti software scarica i file di aggiornamento software nella cache del client locale. Prima di scaricare i file di aggiornamento software, l'agente client avvia un'analisi per verificare che l'aggiornamento software sia ancora necessario.  
 
--   **Prima dell'installazione dell'aggiornamento software**: prima dell'installazione dell'aggiornamento software, Agente client aggiornamenti software avvia un'analisi per verificare che gli aggiornamenti software siano ancora necessari.  
+-   **Prima dell'installazione dell'aggiornamento software**: prima dell'installazione dell'aggiornamento software, l'Agente client aggiornamenti software avvia un'analisi per verificare che gli aggiornamenti software siano ancora necessari.  
 
--   **Dopo l'installazione dell'aggiornamento software**: dopo il completamento dell'installazione di un aggiornamento software, Agente client aggiornamenti software avvia un'analisi per verificare che non siano più necessari aggiornamenti software e crea un nuovo messaggio di stato che indica che l'aggiornamento software è installato. Quando l'installazione è terminata, ma è necessario un riavvio, il messaggio di stato indica che il computer client è in attesa di un riavvio.  
+-   **Dopo l'installazione dell'aggiornamento software**: dopo il completamento dell'installazione dell'aggiornamento software, l'Agente client aggiornamenti software avvia un'analisi per verificare che gli aggiornamenti software non siano più necessari e crea un nuovo messaggio di stato che indica che l'aggiornamento software è installato. Quando l'installazione è terminata, ma è necessario un riavvio, il messaggio di stato indica che il computer client è in attesa di un riavvio.  
 
--   **Dopo il riavvio del sistema**: quando un computer client è in attesa di un riavvio del sistema per completare l'installazione dell'aggiornamento software, Agente client aggiornamenti software avvia un'analisi dopo il riavvio per verificare che l'aggiornamento software non sia più richiesto e crea un messaggio di stato che indica che l'aggiornamento software è installato.  
+-   **Dopo il riavvio del sistema**: quando un computer client è in attesa di un riavvio del sistema per completare l'installazione dell'aggiornamento software, l'Agente client aggiornamenti software avvia un'analisi dopo il riavvio per verificare che l'aggiornamento software non sia più richiesto e crea un messaggio di stato che indica che l'aggiornamento software è installato.  
 
 #### <a name="time-to-live-value"></a>Valore di durata  
  I metadati degli aggiornamenti software richiesti per l'analisi della conformità degli aggiornamenti software vengono memorizzati nel computer client locale e, per impostazione predefinita, sono rilevanti per un massimo di 24 ore. Questo valore è noto come Durata (TTL).  

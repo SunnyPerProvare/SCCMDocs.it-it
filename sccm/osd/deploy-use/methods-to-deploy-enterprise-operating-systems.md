@@ -1,7 +1,7 @@
 ---
 title: Metodi per distribuire sistemi operativi aziendali
 titleSuffix: Configuration Manager
-description: Informazioni sui metodi che è possibile usare per distribuire i sistemi operativi aziendali nell'ambiente System Center Configuration Manager.
+description: Informazioni sui metodi che è possibile usare per distribuire i sistemi operativi aziendali nell'ambiente Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
@@ -10,19 +10,18 @@ ms.assetid: 3646d62d-355a-43fc-8569-c08dc2257ee5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f7dd3ffa5f58be387b229224f31a57965871241f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f236729e7aa4a19b71f5c68a41a99781790b5d3f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62270620"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806340"
 ---
-# <a name="methods-to-deploy-enterprise-operating-systems-using-system-center-configuration-manager"></a>Metodi per distribuire i sistemi operativi aziendali con System Center Configuration Manager
+# <a name="methods-to-deploy-enterprise-operating-systems-using-configuration-manager"></a>Metodi per distribuire i sistemi operativi aziendali con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Sono disponibili diversi metodi che è possibile usare per distribuire un sistema operativo nell'ambiente System Center Configuration Manager.
+È possibile usare diversi metodi per distribuire un sistema operativo nell'ambiente Configuration Manager.
 
 -   [Usare PXE per distribuire Windows in rete](use-pxe-to-deploy-windows-over-the-network.md)  
 

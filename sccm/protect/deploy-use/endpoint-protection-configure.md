@@ -10,17 +10,16 @@ ms.assetid: e63f2394-6eb1-4a33-bec5-8377fc62a34e
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2dc054ffd18953e1f0b21b6e3ea0d56baf637db6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e48f20dd56f445a10faa485b8bb7e86dbb05f75a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892425"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819659"
 ---
 # <a name="configure-endpoint-protection"></a>Configurare Endpoint Protection
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Prima di poter usare Endpoint Protection per gestire la sicurezza e i malware nei computer client di Configuration Manager, è necessario eseguire i passaggi di configurazione descritti in questo articolo.  
 
@@ -40,4 +39,4 @@ Prima di poter usare Endpoint Protection per gestire la sicurezza e i malware ne
 |**Passaggio 2:** [Configurare gli avvisi per Endpoint Protection](endpoint-configure-alerts.md)|Gli avvisi informano l'amministratore quando si verificano eventi specifici, ad esempio un'infezione causata da un malware. Gli avvisi vengono visualizzati nel nodo **Avvisi** dell'area di lavoro **Monitoraggio** oppure possono essere inviati via posta elettronica a utenti specifici. |  
 |**Passaggio 3:** [Configurare le origini degli aggiornamenti delle definizioni per i client di Endpoint Protection](endpoint-definition-updates.md)|È possibile configurare Endpoint Protection per usare più origini per il download degli aggiornamenti delle definizioni. |  
 |**Passaggio 4:** [Configurare il criterio antimalware predefinito e creare criteri antimalware personalizzati](endpoint-antimalware-policies.md)|Il criterio antimalware predefinito viene applicato quando viene installato il client di Endpoint Protection. Eventuali criteri personalizzati distribuiti vengono applicati per impostazione predefinita, entro 60 minuti dalla distribuzione del client. Verificare di aver configurato i criteri antimalware prima di distribuire il client Endpoint Protection. |  
-|**Passaggio 5:** [Configurare impostazioni client personalizzate per Endpoint Protection](endpoint-protection-configure-client.md)|Usare impostazioni client personalizzate per configurare le impostazioni di Endpoint Protection per le raccolte di computer nella gerarchia.<br /><br /> Nota: configurare le impostazioni client predefinite per Endpoint Protection solo se si è certi di voler applicare tali impostazioni a tutti i computer nella gerarchia. |  
+|**Passaggio 5:** [Configurare le impostazioni client personalizzate per Endpoint Protection](endpoint-protection-configure-client.md)|Usare impostazioni client personalizzate per configurare le impostazioni di Endpoint Protection per le raccolte di computer nella gerarchia.<br /><br /> Nota: configurare le impostazioni client predefinite per Endpoint Protection solo se si è certi di voler applicare tali impostazioni a tutti i computer nella gerarchia. |  

@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: 81f03922-90f6-4e8f-be65-da64ccb21cf2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0f6ec7cc76066fa4e2cb9ce8bcabe6e4f5b0dfd6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f7285d51353ed273858d2dada110ea6fed08e37f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74662629"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820781"
 ---
 # <a name="bitlocker-administration-and-monitoring-website"></a>Sito Web di amministrazione e monitoraggio BitLocker
 
@@ -33,7 +32,7 @@ Prima di poterlo usare, installare questo componente in un server Web. Per ulter
 Accedere al sito Web di Administration and Monitoring tramite l'URL seguente: `https://webserver.contoso.com/HelpDesk`
 
 > [!NOTE]
-> È possibile visualizzare il **report controllo ripristino** nel sito Web di Administration and Monitoring. Aggiungere altri report di Gestione BitLocker al punto di Reporting Services. Per altre informazioni, vedere [visualizzare i report di BitLocker](/configmgr/protect/deploy-use/bitlocker/view-reports).
+> È possibile visualizzare il **report Controllo ripristino** dal sito Web di amministrazione e monitoraggio. Aggiungere altri report di Gestione BitLocker al punto di Reporting Services. Per altre informazioni, vedere [visualizzare i report di BitLocker](/configmgr/protect/deploy-use/bitlocker/view-reports).
 
 ## <a name="groups"></a>Gruppi
 
@@ -158,7 +157,7 @@ Per ripristinare un'unità spostata, usare l'area **Drive recovery** (Ripristino
 
 1. Utilizzare l'ID chiave di ripristino per ottenere la password di ripristino dal sito Web di Administration and Monitoring. Per altre informazioni, vedere [ripristinare un'unità in modalità di ripristino](#bkmk_recovery).
 
-Se l'unità spostata è stata configurata per l'utilizzo di un chip TPM nel computer originale, completare i passaggi seguenti. In caso contrario, il processo di ripristino è terminato.
+Se l'unità spostata è stata configurata per l'uso di un chip TPM nel computer originale, attenersi alla procedura seguente. In caso contrario, il processo di ripristino è terminato.
 
 1. Dopo aver sbloccato l'unità, avviare il computer in modalità WinRE. Aprire un prompt dei comandi in WinRE e usare il comando `manage-bde` per decrittografare l'unità. Questo strumento costituisce l'unico modo per rimuovere la protezione **TPM più PIN** senza il chip TPM originale. Per altre informazioni su questo comando, vedere [Manage-bde](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-use-bitlocker-drive-encryption-tools-to-manage-bitlocker#bkmk-managebde).
 

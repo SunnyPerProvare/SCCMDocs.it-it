@@ -10,17 +10,16 @@ ms.assetid: 9cbfc406-d009-446d-8fee-4938de48c919
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: dad3906732a237cad94ae94f9974d94fd72292c2
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1e486ddd8652529000c6ec02266f677e45669111
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70380316"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821376"
 ---
-# <a name="customize-boot-images-with-system-center-configuration-manager"></a>Personalizzare le immagini d'avvio con System Center Configuration Manager
+# <a name="customize-boot-images-with-configuration-manager"></a>Personalizzare le immagini d'avvio con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Ogni versione di Configuration Manager supporta una versione specifica di Windows Assessment and Deployment Kit (Windows ADK). È possibile aggiornare o personalizzare le immagini d'avvio dalla console di Configuration Manager quando sono basate su una versione di Windows PE dalla versione supportata di Windows ADK. Per altre immagini di avvio, è necessario personalizzarle usando un altro metodo, come ad esempio usando lo strumento della riga di comando Deployment Image Servicing and Management (DISM) che fa parte di Windows AIK e Windows ADK.  
 
@@ -46,13 +45,13 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
 - **WinPE-WMI**: aggiunge il supporto di Strumentazione gestione Windows (WMI).  
 
-- **WinPE-Scripting**: aggiunge il supporto Windows Script Host (WSH).  
+- **WinPE-Scripting**: aggiunge il supporto di Windows Script Host (WSH).  
 
-- **WinPE-WDS-Tools**: installa gli strumenti dei servizi di distribuzione Windows.  
+- **WinPE-WDS-Tools**: installa gli strumenti dei Servizi di distribuzione Windows.  
 
   È possibile aggiungere altri pacchetti Windows PE. Le seguenti risorse forniscono più informazioni sui componenti facoltativi che è possibile aggiungere all'immagine di avvio.  
 
-- Per Windows PE 5, vedere [WinPE: aggiungere pacchetti (informazioni di riferimento sui componenti facoltativi)](https://msdn.microsoft.com/library/windows/hardware/dn938382\(v=vs.85\).aspx)  
+- Per Windows PE 5, vedere [WinPE: aggiungere pacchetti (informazioni di riferimento sui componenti facoltativi)](https://msdn.microsoft.com/library/windows/hardware/dn938382\(v=vs.85\).aspx).  
 
 - Per Windows PE 3.1, vedere l'argomento [Aggiungi un pacchetto a un'immagine Windows PE](https://technet.microsoft.com/library/dd799312\(v=WS.10\).aspx) nella libreria della documentazione TechNet per Windows 7.  
 
@@ -82,7 +81,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 5. Dopo avere montato l'immagine di avvio, usare DISM per aggiungere componenti facoltativi all'immagine di avvio. In Windows PE 5 i componenti facoltativi a 64 bit si trovano in <*Percorso di installazione*>\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs.  
 
    > [!NOTE]
-   >  Questa procedura usa il seguente percorso per i componenti facoltativi: C:\Programmi (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Ambiente preinstallazione di Windows\amd64\WinPE_OCs. Il percorso da usare potrebbe essere diverso a seconda della versione e delle opzioni di installazione scelte per Windows ADK.  
+   >  Questa procedura usa il percorso seguente per i componenti facoltativi: C:\Programmi (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Ambiente preinstallazione di Windows\amd64\WinPE_OCs. Il percorso da usare potrebbe essere diverso a seconda della versione e delle opzioni di installazione scelte per Windows ADK.  
 
     Digitare quanto segue per installare i componenti facoltativi:  
 
@@ -94,13 +93,13 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Programmi (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\WinPE-SecureStartup.cab"**  
 
-    **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\\** *<locale\>* **\WinPE-SecureStartup_** *<locale\>* **.cab"**  
+    **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Programmi (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Ambiente preinstallazione di Windows\amd64\WinPE_OCs\\** *<locale\>* **\WinPE-SecureStartup_** *<locale\>* **.cab"**  
 
-    **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\\** *<locale\>* **\WinPE-WMI_** *<locale\>* **.cab"**  
+    **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Programmi (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Ambiente preinstallazione di Windows\amd64\WinPE_OCs\\** *<locale\>* **\WinPE-WMI_** *<locale\>* **.cab"**  
 
-    **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\\** *<locale\>* **\WinPE-Scripting** *<locale\>* **.cab"**  
+    **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Programmi (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Ambiente preinstallazione di Windows\amd64\WinPE_OCs\\** *<locale\>* **\WinPE-Scripting** *<locale\>* **.cab"**  
 
-    **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\\** *<locale\>* **\WinPE-WDS-Tools_** *<locale\>* **.cab"**  
+    **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Programmi (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Ambiente preinstallazione di Windows\amd64\WinPE_OCs\\** *<locale\>* **\WinPE-WDS-Tools_** *<locale\>* **.cab"**  
 
     Dove C:\WinPEMount è la cartella montata e impostazioni locali sono le impostazioni locali per i componenti. Ad esempio, per l'impostazione locale **en-us** , digitare:  
 
@@ -117,7 +116,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
 6. Usare DISM per aggiungere specifici driver all'immagine di avvio, se necessario. Digitare quanto segue per aggiungere driver all'immagine di avvio:  
 
-    **dism.exe /image:C:\WinPEMount /add-driver /driver:&lt;** *percorso file .inf del driver* **>**  
+    **dism.exe /image:C:\WinPEMount /add-driver /driver:<** *path to driver .inf file* **>**  
 
     Dove C:\WinPEMount è la cartella montata.  
 
@@ -204,7 +203,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 5. Dopo avere montato l'immagine di avvio, usare DISM per aggiungere componenti facoltativi all'immagine di avvio. In Windows PE 3.1, ad esempio, i componenti facoltativi si trovano in <*PercorsoInstallazione*>\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\.  
 
    > [!NOTE]
-   >  Questa procedura utilizza il seguente percorso per i componenti facoltativi: C:\Programmi\Windows AIK\Strumenti\StrumentiPE\amd64\WinPE_FPs. Il percorso da usare potrebbe essere diverso a seconda delle opzioni di installazione e della versione scelte per Windows AIK.  
+   >  Questa procedura usa il percorso seguente per i componenti facoltativi: C:\Programmi\Windows AIK\Tools\PETools\amd64\WinPE_FPs. Il percorso da usare potrebbe essere diverso a seconda delle opzioni di installazione e della versione scelte per Windows AIK.  
 
     Digitare quanto segue per installare i componenti facoltativi:  
 
@@ -214,11 +213,11 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Programmi\Windows AIK\Tools\PETools\amd64\WinPE_FPs\winpe-wds-tools.cab"**  
 
-    **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\** *<locale\>* **\winpe-wmi_** *<locale\>* **.cab"**  
+    **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Programmi\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\** *<locale\>* **\winpe-wmi_** *<locale\>* **.cab"**  
 
-    **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\** *<locale\>* **\winpe-scripting_** *<locale\>* **.cab"**  
+    **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Programmi\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\** *<locale\>* **\winpe-scripting_** *<locale\>* **.cab"**  
 
-    **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\** *<locale\>* **\winpe-wds-tools_** *<locale\>* **.cab"**  
+    **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Programmi\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\** *<locale\>* **\winpe-wds-tools_** *<locale\>* **.cab"**  
 
     Dove C:\WinPEMount è la cartella montata e impostazioni locali sono le impostazioni locali per i componenti. Ad esempio, per l'impostazione locale **en-us** , digitare:  
 
@@ -233,7 +232,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
 6. Usare DISM per aggiungere specifici driver all'immagine di avvio, se necessario. Se necessario, digitare quanto segue per aggiungere driver all'immagine di avvio:  
 
-    **dism.exe /image:C:\WinPEMount /add-driver /driver:&lt;** *percorso file .inf del driver* **>**  
+    **dism.exe /image:C:\WinPEMount /add-driver /driver:<** *path to driver .inf file* **>**  
 
     Dove C:\WinPEMount è la cartella montata.  
 

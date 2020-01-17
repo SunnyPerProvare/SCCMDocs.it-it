@@ -10,19 +10,18 @@ ms.assetid: 92c1ccca-a748-44cd-a52e-e41d34bf981d
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07b766db6b80f92eba8d401b3c751ca1d4766b38
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9823922eeeed5f55fadc39adb59652f1ee86ab67
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62206301"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816310"
 ---
-# <a name="monitor-compliance-settings-in-system-center-configuration-manager"></a>Monitorare le impostazioni di conformità in System Center Configuration Manager
+# <a name="monitor-compliance-settings-in-configuration-manager"></a>Monitorare le impostazioni di conformità in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Dopo aver distribuito le linee di base di configurazione di System Center Configuration Manager nei dispositivi della gerarchia, è possibile usare una o più delle procedure di questo argomento per visualizzare lo stato di conformità della linea di base di configurazione:
+Dopo aver distribuito le linee di base di configurazione di Configuration Manager nei dispositivi della gerarchia, è possibile usare una o più delle procedure di questo argomento per visualizzare lo stato di conformità della linea di base di configurazione:
 
 > [!NOTE]  
 >  I campi dei criteri di convalida nei report delle impostazioni di conformità (l'equivalente del report sul lato client è **Vincoli**) visualizzano il linguaggio SML (Service Modeling Language) sottostante. Ciò può rendere difficile la comprensione dei criteri di convalida per gli amministratori che hanno creato l'elemento di configurazione nella console di Configuration Manager e non conoscono il linguaggio SML. In questo caso usare l'area di lavoro **Monitoraggio** nella console di Configuration Manager per visualizzare le proprietà dell'elemento di configurazione e i relativi criteri di convalida.  
@@ -49,7 +48,7 @@ Dopo aver distribuito le linee di base di configurazione di System Center Config
 
     -   **Non conforme**: visualizza un elenco di tutte le regole non conformi all'interno della linea di base di configurazione, in base al numero di asset interessati. È possibile fare clic su una regola per creare un nodo temporaneo nel nodo **Utenti** o **Dispositivi** dell'area di lavoro **Asset e conformità** che contiene tutti gli utenti o i dispositivi non conformi a questa regola. Quando si seleziona un utente o un dispositivo, il riquadro **Dettagli asset** visualizza gli utenti o i dispositivi interessati dal problema selezionato. Fare doppio clic su un utente o su un dispositivo presente nell'elenco per visualizzare informazioni aggiuntive sul problema.  
 
-    -   **Sconosciuto**: visualizza un elenco di tutti gli utenti o di tutti i dispositivi che non sono conformi alla distribuzione della linea di base di configurazione selezionata e lo stato del client dei dispositivi.  
+    -   **Sconosciuto**: visualizza un elenco di tutti gli utenti e di tutti i dispositivi che non sono conformi alla distribuzione della linea di base di configurazione selezionata e lo stato del client dei dispositivi.  
 
 5.  Nella pagina **Stato distribuzione** è possibile esaminare le informazioni dettagliate sulla conformità della linea di base di configurazione distribuita. Viene creato un nodo temporaneo nel nodo **Distribuzioni** che consente di ritrovare rapidamente queste informazioni.  
 
@@ -59,7 +58,7 @@ Dopo aver distribuito le linee di base di configurazione di System Center Config
 > [!IMPORTANT]  
 >  È necessario usare un carattere jolly ( **%** ) quando si usano i parametri **Filtro dispositivo** e Filtro utente nei report delle impostazioni di conformità.  
 
- Per altre informazioni sulle modalità di configurazione dei report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md)  
+ Per altre informazioni sulle modalità di configurazione della creazione di report in Configuration Manager, vedere [Creazione di report](../../core/servers/manage/reporting.md).  
 
 ##  <a name="view-compliance-results-on-a-configuration-manager-windows-client-computer"></a>Visualizzare i risultati di conformità in un computer client Windows di Configuration Manager
 

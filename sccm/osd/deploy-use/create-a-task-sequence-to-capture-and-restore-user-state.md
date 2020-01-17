@@ -10,17 +10,16 @@ ms.assetid: d566d85c-bf7a-40e7-8239-57640a1db5f4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c82de88250a7faa44747fc897fcfee09bed45823
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 2010289276b86ec55356972650c95e8910bbc065
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67678797"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825473"
 ---
 # <a name="create-a-task-sequence-to-capture-and-restore-user-state-in-configuration-manager"></a>Creare una sequenza di attività per acquisire e ripristinare lo stato utente in Configuration Manager
 
- *Si applica a: System Center Configuration Manager (Current Branch)*
+ *Si applica a: Configuration Manager (Current Branch)*
 
  Usare le sequenze di attività di Configuration Manager per acquisire e ripristinare i dati dello stato utente in scenari di distribuzione del sistema operativo. In questi scenari, si vuole mantenere lo stato utente del sistema operativo corrente. A seconda del tipo di sequenza di attività che si crea, è possibile aggiungervi automaticamente i passaggi di acquisizione e ripristino. In altri scenari potrebbe essere necessario aggiungere manualmente i passaggi di acquisizione e ripristino alla sequenza di attività. Questo articolo descrive i passaggi che è necessario aggiungere a una sequenza di attività esistente per acquisire e ripristinare i dati dello stato utente.  
 
@@ -34,7 +33,7 @@ Per acquisire e ripristinare lo stato utente, aggiungere i passaggi seguenti all
 
 - [Acquisisci stato utente](/sccm/osd/understand/task-sequence-steps#BKMK_CaptureUserState): questo passaggio consente di acquisire i dati dello stato utente. Archivia quindi i dati nel punto di migrazione stato o nel disco locale usando collegamenti reali.  
 
-- [Ripristina stato utente](/sccm/osd/understand/task-sequence-steps#BKMK_RestoreUserState): questo passaggio consente di ripristinare i dati dello stato utente nel computer di destinazione. Consente di recuperare i dati da un punto di migrazione stato utente o nel disco locale nel caso di collegamenti reali.  
+- [Ripristina stato utente](/sccm/osd/understand/task-sequence-steps#BKMK_RestoreUserState): Questo passaggio consente di ripristinare i dati dello stato utente nel computer di destinazione. Consente di recuperare i dati da un punto di migrazione stato utente o nel disco locale nel caso di collegamenti reali.  
 
 - [Rilascia archiviazione stati](/sccm/osd/understand/task-sequence-steps#BKMK_ReleaseStateStore): questo passaggio è necessario se si archivia lo stato utente nel punto di migrazione stato. Questo passaggio consente di rimuovere i dati dal punto di migrazione stato.  
 

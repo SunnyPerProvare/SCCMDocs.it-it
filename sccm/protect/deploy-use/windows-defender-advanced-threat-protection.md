@@ -10,17 +10,16 @@ ms.assetid: a5fc033e-828e-4e45-9097-bbbd0697ebdf
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5d9777c2f6d82dd0e2d89437aaa460c65fc37563
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
-ms.translationtype: MTE75
+ms.openlocfilehash: 7ffa07dff0e84b0277710d718f86f9d6039d05eb
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198813"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819336"
 ---
 # <a name="microsoft-defender-advanced-threat-protection"></a>Microsoft Defender Advanced Threat Protection
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 A partire dalla versione 1606 di Configuration Manager (Current Branch), Endpoint Protection consente di gestire e monitorare [Microsoft Defender Advanced Threat Protection (ATP)](https://aka.ms/technet-wdatp), noto in precedenza come Windows Defender ATP. Microsoft Defender ATP consente alle aziende di rilevare e analizzare attacchi avanzati alle loro reti e di reagire in modo efficace.  I criteri di Configuration Manager o di Microsoft Intune semplificano il caricamento e il monitoraggio di Windows 10, versione 1607 (build 14328) o successiva.
 
@@ -36,9 +35,9 @@ Microsoft Defender ATP è un servizio disponibile in [Windows Defender Security 
 
  1. Passare al [servizio online Microsoft Defender ATP](https://securitycenter.windows.com/) ed eseguire l'accesso.
 
- 2.  Fare clic sull'elemento **Gestione computer** in **Impostazioni**e quindi selezionare **onboarding**. 
+ 2.  Fare clic sull'elemento **Gestione computer** in **Impostazioni** e quindi selezionare **Onboarding**. 
 
- 3.  Selezionare **System Center Configuration Manager (current branch) version 1606** (System Center Configuration Manager (Current Branch) versione 1606) e fare clic su **Download package** (Scarica pacchetto).  
+ 3.  Selezionare **Configuration Manager (current branch) version 1606** e fare clic su **Scarica pacchetto**.  
 
  4.  Scaricare il file di archivio compresso (zip) ed estrarre il contenuto.
 
@@ -88,9 +87,9 @@ Microsoft Defender ATP è un servizio disponibile in [Windows Defender Security 
 
 1.  Accedere al [servizio online Microsoft Defender ATP](https://securitycenter.windows.com/)   
 
-2.  Fare clic sull'elemento **Gestione computer** in **Impostazioni**e quindi selezionare **onboarding**.  
+2.  Fare clic sull'elemento **Gestione computer** in **Impostazioni** e quindi selezionare **Onboarding**.  
 
-3.  Selezionare **System Center Configuration Manager (current branch) version 1606** (System Center Configuration Manager (Current Branch) versione 1606) e fare clic su **Endpoint offboarding** (Offobarding endpoint).  
+3.  Selezionare **Configuration Manager (current branch) version 1606** e fare clic su **Endpoint offboarding** (Offboarding endpoint).  
 
 4.  Scaricare il file di archivio compresso (zip) ed estrarre il contenuto. I file per l'offboarding sono validi per 30 giorni.
 

@@ -10,19 +10,18 @@ ms.assetid: d28f4363-9e8a-4c54-9cb7-0594fabfff26
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 769794f98a14b5d8bf27b46c6fb2408d0b0ebe18
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8b494fd5d9623af9de16d68e3d30e0e78a4ef338
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62270640"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806272"
 ---
-# <a name="replace-an-existing-computer-and-transfer-settings-with-system-center-configuration-manager"></a>Sostituire un computer esistente e trasferire le impostazioni con System Center Configuration Manager
+# <a name="replace-an-existing-computer-and-transfer-settings-with-configuration-manager"></a>Sostituire un computer esistente e trasferire le impostazioni con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo argomento illustra la procedura generale di System Center Configuration Manager per sostituire un computer esistente con uno nuovo. Per questo scenario è possibile scegliere tra i numerosi e diversi metodi di distribuzione disponibili, ad esempio supporti di avvio, multicast o Software Center. È anche possibile scegliere di installare un punto di migrazione stato per archiviare le impostazioni e quindi ripristinarle nel nuovo sistema operativo dopo l'installazione. Se non si è sicuri che questo sia lo scenario di distribuzione del sistema operativo più adatto alle esigenze, vedere [Scenari per distribuire sistemi operativi aziendali](scenarios-to-deploy-enterprise-operating-systems.md).  
+Questo argomento illustra la procedura generale di Configuration Manager per sostituire un computer esistente con uno nuovo. Per questo scenario è possibile scegliere tra i numerosi e diversi metodi di distribuzione disponibili, ad esempio supporti di avvio, multicast o Software Center. È anche possibile scegliere di installare un punto di migrazione stato per archiviare le impostazioni e quindi ripristinarle nel nuovo sistema operativo dopo l'installazione. Se non si è sicuri che questo sia lo scenario di distribuzione del sistema operativo più adatto alle esigenze, vedere [Scenari per distribuire sistemi operativi aziendali](scenarios-to-deploy-enterprise-operating-systems.md).  
 
  Per informazioni su come aggiornare un computer esistente con una nuova versione di Windows, vedere le sezioni seguenti.  
 

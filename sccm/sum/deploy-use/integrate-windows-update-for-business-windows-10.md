@@ -10,23 +10,22 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 183315fe-27bd-456f-b2c5-e8d25e05229b
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 504ace282988ef8b52863184f0685ea5a6958a27
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
-ms.translationtype: MTE75
+ms.openlocfilehash: 2556b983f9ba2fd646ee9cd5401442e9ce166ee4
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892284"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827435"
 ---
 # <a name="integrate-with-windows-update-for-business"></a>Integrare Windows Update per le aziende
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Windows Update for Business (WUfB) consente di mantenere i dispositivi basati su Windows 10 nell'organizzazione sempre aggiornati con le difese per la sicurezza e le funzionalità di Windows più recenti, quando questi dispositivi si connettono direttamente al servizio Windows Update (WU). Configuration Manager è in grado di distinguere tra i computer Windows 10 che ricevono gli aggiornamenti software da Windows Update for Business e i computer che li ricevono da WSUS.  
 
 >[!WARNING]
 > Se si usa la co-gestione per i dispositivi e si sono spostati i [criteri di Windows Update](/sccm/comanage/workloads#windows-update-policies) in Intune, i dispositivi otterranno i [criteri di Windows Update for Business da Intune](https://docs.microsoft.com/intune/windows-update-for-business-configure).
-> - Se il client di Configuration Manager è ancora installato nel dispositivo co-gestito, le impostazioni per gli aggiornamenti cumulativi e gli aggiornamenti delle funzionalità sono gestiti da Intune. Tuttavia, l'applicazione di patch di terze parti, se abilitata nelle [ **Impostazioni client**](/sccm/core/clients/deploy/about-client-settings#enable-third-party-software-updates), è ancora gestita da Configuration Manager.  
+> - Se il client di Configuration Manager è ancora installato nel dispositivo co-gestito, le impostazioni per gli aggiornamenti cumulativi e gli aggiornamenti delle funzionalità sono gestiti da Intune. Tuttavia, l'applicazione di patch di terze parti, se abilitata nelle [**Impostazioni client**](/sccm/core/clients/deploy/about-client-settings#enable-third-party-software-updates), è ancora gestita da Configuration Manager.  
 
  Alcune funzionalità di Configuration Manager non sono disponibili per i client di Configuration Manager configurati per ricevere gli aggiornamenti da Windows Update. Tra queste, Windows Update for Business e Windows Insider:  
 
@@ -91,11 +90,11 @@ A partire da Configuration Manager versione 1706, è possibile configurare i cri
 3. Nella pagina **Generale** specificare un nome e una descrizione per il criterio.
 4. Nella pagina **Criteri di differimento** configurare se si desidera differire o sospendere gli aggiornamenti delle funzionalità. Gli aggiornamenti delle funzionalità sono generalmente nuove funzionalità per Windows. Dopo aver configurato l'impostazione **Livello di conformità con Branch**, è possibile definire se e per quanto tempo si desidera rinviare la ricezione di aggiornamenti delle funzionalità in base alla disponibilità da Microsoft.
     - **Livello di conformità con Branch**: impostare il branch per il quale il dispositivo riceverà gli aggiornamenti di Windows (Current Branch o Current Branch for Business).
-    - **Periodo di differimento (giorni):** specificare il numero di giorni per cui verranno posticipati gli aggiornamenti delle funzionalità. È possibile differire la ricezione di questi aggiornamenti delle funzionalità per massimo 365 giorni dopo il rilascio.
-    - **Pause Features Updates starting** (Sospendi avvio degli aggiornamenti delle funzionalità): selezionare se sospendere la ricezione da parte dei dispositivi degli aggiornamenti delle funzionalità per massimo 60 giorni a partire dal momento in cui si sospendono gli aggiornamenti. Una volta trascorso il numero massimo di giorni, la sospensione della funzionalità scadrà automaticamente e il dispositivo analizzerà Windows Updates per gli aggiornamenti applicabili. Dopo questa analisi, è possibile sospendere nuovamente gli aggiornamenti. È possibile riprendere gli aggiornamenti delle funzionalità deselezionando la casella di controllo.   
+    - **Periodo di differimento (giorni)** :  specificare il numero di giorni per cui verranno posticipati gli aggiornamenti delle funzionalità. È possibile differire la ricezione di questi aggiornamenti delle funzionalità per massimo 365 giorni dopo il rilascio.
+    - **Sospendi gli aggiornamenti delle funzionalità a partire da**: scegliere se sospendere la ricezione da parte dei dispositivi degli aggiornamenti delle funzionalità per un massimo di 60 giorni a partire dal momento in cui si sospendono gli aggiornamenti. Una volta trascorso il numero massimo di giorni, la sospensione della funzionalità scadrà automaticamente e il dispositivo analizzerà Windows Updates per gli aggiornamenti applicabili. Dopo questa analisi, è possibile sospendere nuovamente gli aggiornamenti. È possibile riprendere gli aggiornamenti delle funzionalità deselezionando la casella di controllo.   
 5. Scegliere se rinviare o sospendere gli aggiornamenti di qualità. Gli aggiornamenti di qualità sono in genere correzioni e miglioramenti alle funzionalità esistenti di Windows e vengono generalmente pubblicati il primo martedì di ogni mese, sebbene possano essere rilasciati in qualsiasi momento da Microsoft. È possibile definire se e per quanto tempo si desidera rinviare la ricezione degli aggiornamenti di qualità dopo la loro disponibilità.
-    - **Periodo di differimento (giorni):** specificare il numero di giorni per cui gli aggiornamenti qualitativi verranno differiti. È possibile differire la ricezione di questi aggiornamenti qualitativi per massimo 30 giorni dopo il rilascio.
-    - **Pause Quality Updates starting** (Sospendi avvio degli aggiornamenti di qualità): selezionare se sospendere la ricezione da parte dei dispositivi degli aggiornamenti di qualità per massimo 35 giorni a partire dal momento in cui si sospendono gli aggiornamenti. Una volta trascorso il numero massimo di giorni, la sospensione della funzionalità scadrà automaticamente e il dispositivo analizzerà Windows Updates per gli aggiornamenti applicabili. Dopo questa analisi, è possibile sospendere nuovamente gli aggiornamenti. È possibile riprendere gli aggiornamenti di qualità deselezionando la casella di controllo.
+    - **Periodo di differimento (giorni)** : specificare il numero di giorni di rinvio degli aggiornamenti qualitativi. È possibile differire la ricezione di questi aggiornamenti qualitativi per massimo 30 giorni dopo il rilascio.
+    - **Sospendi gli aggiornamenti qualitativi a partire da**: scegliere se sospendere la ricezione da parte dei dispositivi degli aggiornamenti di qualità per un massimo di 35 giorni a partire dal momento in cui si sospendono gli aggiornamenti. Una volta trascorso il numero massimo di giorni, la sospensione della funzionalità scadrà automaticamente e il dispositivo analizzerà Windows Updates per gli aggiornamenti applicabili. Dopo questa analisi, è possibile sospendere nuovamente gli aggiornamenti. È possibile riprendere gli aggiornamenti di qualità deselezionando la casella di controllo.
 6. Selezionare **Installa gli aggiornamenti per altri prodotti Microsoft** per abilitare l'impostazione dei criteri di gruppo che rendono le impostazioni di rinvio applicabili a Microsoft Update, oltre agli aggiornamenti di Windows.
 7. Selezionare **Include drivers with Windows Update** (Includi i driver con Windows Update) per aggiornare automaticamente i driver da Windows Update. Se si deseleziona questa impostazione, gli aggiornamenti dei driver non vengono scaricati da Windows Update.
 8. Completare la procedura guidata per creare i nuovi criteri di rinvio.
@@ -104,9 +103,9 @@ A partire da Configuration Manager versione 1706, è possibile configurare i cri
 1. In **Libreria Software** > **Manutenzione pacchetti di Windows 10** > **Criteri di Windows Update for Business**
 2. Nella scheda **Home**, nel gruppo **Distribuzione** selezionare **Distribuisci il criterio di Windows Update for Business**.
 3. Configurare le seguenti impostazioni:
-    - **Criteri di configurazione da distribuire**: selezionare il criterio Windows Update for Business che si desidera distribuire.
-    - **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta in cui si desidera distribuire i criteri.
-    - **Monitora e aggiorna le regole non conformi, se supportato**: selezionare per correggere automaticamente tutte le regole non conformi per Strumentazione gestione Windows (WMI), il registro di sistema, gli script e tutte le impostazioni per i dispositivi mobili registrati da Configuration Manager.
+    - **Criteri di configurazione da distribuire**: selezionare il criterio di Windows Update per le aziende che si vuole distribuire.
+    - **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta in cui si vogliono distribuire i criteri.
+    - **Monitora e aggiorna le regole non conformi, se supportato**: selezionare per correggere automaticamente tutte le regole non conformi per Strumentazione gestione Windows (WMI), il Registro di sistema, gli script e tutte le impostazioni per i dispositivi mobili registrati da Configuration Manager.
     - **Consenti monitoraggio e aggiornamento fuori dalla finestra di manutenzione**: se è stata configurata una finestra di manutenzione per la raccolta in cui si distribuiscono i criteri, abilitare questa opzione per consentire alle impostazioni di conformità di monitorare e aggiornare il valore fuori dalla finestra di manutenzione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).
     - **Genera un avviso**: configura un avviso che viene generato se la conformità della linea di base di configurazione è inferiore a una percentuale specificata in base a una data e un orario specifici. È inoltre possibile specificare se si desidera che un avviso venga inviato a System Center Operations Manager.
     - **Ritardo casuale (ore)** : specifica una finestra di ritardo per evitare un'elaborazione eccessiva nel servizio Registrazione dispositivi di rete. Il valore predefinito è 64 ore.

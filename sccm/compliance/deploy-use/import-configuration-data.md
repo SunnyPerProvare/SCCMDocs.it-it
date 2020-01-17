@@ -10,19 +10,18 @@ ms.assetid: 309b9a09-a611-4ba2-90ab-dde51582cf87
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1292e2af9a88c1e93252fe080b6b34f2d5702aa3
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 4f70a956051858fce5b4ba5f519c7e1035600793
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70378131"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818350"
 ---
-# <a name="import-configuration-data-with-system-center-configuration-manager"></a>Importare i dati di configurazione con System Center Configuration Manager
+# <a name="import-configuration-data-with-configuration-manager"></a>Importare i dati di configurazione con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Oltre a creare linee base ed elementi di configurazione nella console di System Center Configuration Manager, è possibile importare dati di configurazione se questi si trovano all'interno di file in formato CAB (con estensione cab) e sono conformi allo schema SML (Service Modeling Language) supportato. È possibile importare i dati di configurazione da:  
+Oltre a creare linee base ed elementi di configurazione nella console di Configuration Manager, è possibile importare dati di configurazione se questi si trovano all'interno di file in formato CAB (con estensione cab) e sono conformi allo schema SML (Service Modeling Language) supportato. È possibile importare i dati di configurazione da:  
 
 - Dati di configurazione di procedure consigliate (pacchetti di configurazione) scaricati dal sito Microsoft o da altri siti di fornitori di software.  
 

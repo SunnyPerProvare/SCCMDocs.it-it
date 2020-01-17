@@ -1,7 +1,7 @@
 ---
 title: Prerequisiti per gli aggiornamenti software
 titleSuffix: Configuration Manager
-description: Informazioni sui prerequisiti per gli aggiornamenti software in System Center Configuration Manager.
+description: Informazioni sui prerequisiti per aggiornamenti software in Configuration Manager.
 author: mestew
 ms.author: mstewart
 manager: dougeby
@@ -10,19 +10,18 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 334854072e5c724f2c76432e7a7372c02cab3d54
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 1885fdb11786cce5ae65aaeb4d407fb226b6a670
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892258"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818554"
 ---
-# <a name="prerequisites-for-software-updates-in-system-center-configuration-manager"></a>Prerequisiti per gli aggiornamenti software in System Center Configuration Manager
+# <a name="prerequisites-for-software-updates-in-configuration-manager"></a>Prerequisiti per aggiornamenti software in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo articolo elenca i prerequisiti per gli aggiornamenti software in System Center Configuration Manager. Per ogni prerequisito, le dipendenze esterne e interne sono elencate in tabelle separate.  
+Questo articolo elenca i prerequisiti per gli aggiornamenti software in Configuration Manager. Per ogni prerequisito, le dipendenze esterne e interne sono elencate in tabelle separate.  
 
 ## <a name="software-update-dependencies-that-are-external-to-configuration-manager"></a>Dipendenze aggiornamenti software esterne a Configuration Manager  
  Le sezioni seguenti elencano le dipendenze esterne per gli aggiornamenti software.  

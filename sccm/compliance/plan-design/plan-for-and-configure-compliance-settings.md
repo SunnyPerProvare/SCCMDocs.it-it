@@ -1,7 +1,7 @@
 ---
 title: Pianificare e configurare le impostazioni di conformità
 titleSuffix: Configuration Manager
-description: Informazioni sui prerequisiti e sulle attività di configurazione per l'uso delle impostazioni di conformità in System Center Configuration Manager.
+description: Informazioni sui prerequisiti e sulle attività di configurazione per l'uso delle impostazioni di conformità in Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
@@ -10,26 +10,25 @@ ms.assetid: 9ea20b01-676a-4cc2-b328-0098a41b202e
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d728dae6dc67a4c66403bdb2299e50dcd6e3557
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e98b2963b81f58262524daafb5921b6c5ead23d6
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67677938"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816242"
 ---
-# <a name="plan-for-and-configure-compliance-settings-in-system-center-configuration-manager"></a>Pianificare e configurare le impostazioni di conformità in System Center Configuration Manager
+# <a name="plan-for-and-configure-compliance-settings-in-configuration-manager"></a>Pianificare e configurare le impostazioni di conformità in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Prima di usare le impostazioni di conformità di System Center Configuration Manager, è necessario conoscere alcuni prerequisiti ed eseguire alcune attività di configurazione.  
+Prima di usare le impostazioni di conformità di Configuration Manager, è necessario conoscere alcuni prerequisiti ed eseguire alcune attività di configurazione.  
 
 ## <a name="prerequisites-for-compliance-settings"></a>Prerequisiti per le impostazioni di conformità  
 
 |Prerequisito|Altre informazioni|  
 |------------------|----------------------|  
 |I client Windows di Configuration Manager devono essere abilitati e configurati per la valutazione della conformità.|Vedere di seguito|  
-|Se si vogliono eseguire report, è necessario configurare la creazione di report per il sito.|[Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md)|  
+|Se si vogliono eseguire report, è necessario configurare la creazione di report per il sito.|[Creazione di report](../../core/servers/manage/reporting.md)|  
 |Autorizzazioni di sicurezza obbligatorie.|Il ruolo di sicurezza **Gestione impostazioni di conformità** include le autorizzazioni necessarie per gestire le impostazioni di conformità, gli elementi di configurazione di profili e dati utente e i profili di connessione remota.<br /><br /> [Configurare un'amministrazione basata su ruoli](../../core/servers/deploy/configure/configure-role-based-administration.md)|  
 
 ##  <a name="enable-and-configure-compliance-settings-for-windows-pcs-only"></a>Abilitare e configurare le impostazioni di conformità (solo per PC Windows)  

@@ -10,19 +10,18 @@ ms.assetid: 9be8aaf3-075e-4acd-abd2-7459254e16e2
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf818fdb7b1ff87b53277bf9313aa94663163e64
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b9dbec123ba1a29f4389c5efeb680f6173675a28
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62214338"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816344"
 ---
-# <a name="how-to-deploy-configuration-baselines-in-system-center-configuration-manager"></a>Come distribuire linee di base di configurazione in System Center Configuration Manager
+# <a name="how-to-deploy-configuration-baselines-in-configuration-manager"></a>Come distribuire linee di base di configurazione in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Le linee di base di configurazione in System Center Configuration Manager devono essere distribuite in una o più raccolte di utenti o dispositivi prima che i dispositivi client in tali raccolte possano valutare la relativa conformità in base alla linea di base di configurazione.  
+Le linee di base di configurazione in Configuration Manager devono essere distribuite in una o più raccolte di utenti o dispositivi prima che i dispositivi client in tali raccolte possano valutare la relativa conformità in base alla linea di base di configurazione.  
 
 Usare la finestra di dialogo **Distribuisci linee di base di configurazione** per definire le distribuzioni delle linee di base di configurazione, ad esempio aggiungendo o rimuovendo le linee di base di configurazione dalle distribuzioni e specificando la pianificazione di valutazione.  
 

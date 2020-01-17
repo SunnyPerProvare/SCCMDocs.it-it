@@ -10,13 +10,12 @@ ms.assetid: e6c1df1d-7728-4980-9199-bc32cde5439e
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61228a84c642693f38122c06b060bfc638ad01e3
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b13a574d424aa17e3f0390dd76d97751b2f764c0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70888413"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827146"
 ---
 # <a name="manage-publications-in-updates-publisher"></a>Gestire le pubblicazioni in Updates Publisher
 

@@ -10,13 +10,12 @@ ms.assetid: 09929057-ecf2-4d49-aee0-709916932b14
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1deab2a7dc77f7bb06d847b47a9d7679e78f236b
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: a5c4594f89ce0f699ee24612b0ac306f7e7151b7
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198677"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817840"
 ---
 # <a name="troubleshoot-the-microsoft-store-for-business-and-education-integration-with-configuration-manager"></a>Risolvere i problemi relativi all'integrazione di Microsoft Store for business e Education con Configuration Manager
 
@@ -74,7 +73,7 @@ Questo file di log si trova nel server del sito per il sito di livello superiore
 
 Quando lo stato dell'ultima sincronizzazione *non è riuscito*, iniziare esaminando i seguenti [file di log](#log-files) per identificare il sintomo:
 
-- WSfBSyncWorker. log
+- WSfbSyncWorker. log
 - SMS_CLOUDCONNECTION.log
 
 Esaminare quindi una delle sezioni seguenti per i problemi comuni:
@@ -113,7 +112,7 @@ Questo problema può verificarsi se l'applicazione di Azure Active Directory (Az
 
 Questo problema può verificarsi se la chiave privata è scaduta nell'app Azure AD per la configurazione Microsoft Store for business e Education.
 
-#### <a name="resolution"></a>Risoluzione
+#### <a name="resolution"></a>Soluzione
 
 Rinnovare la chiave privata per l'applicazione Azure AD. Per altre informazioni, vedere [Rinnovare la chiave privata](/sccm/core/servers/deploy/configure/azure-services-wizard#bkmk_renew).
 
@@ -123,7 +122,7 @@ Rinnovare la chiave privata per l'applicazione Azure AD. Per altre informazioni,
 
 Questo problema può verificarsi se l'app connessa non esiste più nel Azure AD.
 
-#### <a name="resolution"></a>Risoluzione
+#### <a name="resolution"></a>Soluzione
 
 Eliminare e ricreare la connessione al Microsoft Store per le aziende e la formazione.
 
@@ -131,7 +130,7 @@ Eliminare e ricreare la connessione al Microsoft Store per le aziende e la forma
 1. Consente di selezionare la connessione esistente.
 1. Selezionare **Elimina** nella barra multifunzione.
 
-Quindi ricreare la connessione. Per altre informazioni, vedere gli articoli seguenti:
+Creare nuovamente la connessione. Per altre informazioni, vedere gli articoli seguenti:
 
 - [Configurare i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard)
 - [Configurare Microsoft Store per la sincronizzazione aziendale e dell'istruzione](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#bkmk_setup)
@@ -148,7 +147,7 @@ Per visualizzare la posizione configurata:
 
 1. Selezionare l'account e aprirne le **Proprietà**.
 
-1. Passare alla scheda Configurazione. L'impostazione **località** Mostra il percorso di rete in cui archiviare il contenuto dell'applicazione scaricato dal Microsoft Store per le aziende e la formazione.
+1. Passare alla scheda **Configurazione**. L'impostazione **località** Mostra il percorso di rete in cui archiviare il contenuto dell'applicazione scaricato dal Microsoft Store per le aziende e la formazione.
 
 #### <a name="workaround"></a>Soluzione alternativa
 
@@ -189,7 +188,7 @@ Questo problema può verificarsi se il pacchetto dell'applicazione è superiore 
 
 Non è possibile sincronizzare automaticamente queste app, ma è possibile scaricare il contenuto e creare manualmente l'applicazione:
 
-1. Ottenere l'ID applicazione che ha avuto esito negativo dalla riga seguente in **MSfBSynWorker. log**:
+1. Ottenere l'ID applicazione che ha avuto esito negativo dalla riga seguente in **WSfbSynWorker. log**:
 
     `Error(s) syncing or downloading application <ApplicationID> from the Microsoft Store for Business.`
 
@@ -235,7 +234,7 @@ Per identificare il sintomo, iniziare esaminando i [file di log](#log-files) seg
 
 - BusinessAppProcessWorker.log
 - SMS_BUSINESS_APP_PROCESS_MANAGER.log
-- MSfBSyncWorker.log
+- WsfbSyncWorker. log
 - SMS_CLOUDCONNECTION.log
 
 Esaminare quindi una delle sezioni seguenti per i problemi comuni:
@@ -249,7 +248,7 @@ Esaminare quindi una delle sezioni seguenti per i problemi comuni:
 
 Questo problema può verificarsi se si avvia una sincronizzazione inferiore a 10 minuti dopo la sincronizzazione precedente. Non è possibile sincronizzare con frequenza superiore a ogni 10 minuti.
 
-#### <a name="resolution"></a>Risoluzione
+#### <a name="resolution"></a>Soluzione
 
 Attendere almeno 10 minuti prima di avviare un'altra sincronizzazione.
 
@@ -257,11 +256,11 @@ Attendere almeno 10 minuti prima di avviare un'altra sincronizzazione.
 
 #### <a name="cause"></a>Causa
 
-Questo problema può verificarsi se il componente SMS_BUSINESS_APP_PROCESS_MANAGER interrompe il thread MSfBSyncWorker. L'errore può specificare `2` o `4` i ruoli di lavoro.
+Questo problema può verificarsi se il componente SMS_BUSINESS_APP_PROCESS_MANAGER interrompe il thread WsfbSyncWorker. L'errore può specificare `2` o `4` i ruoli di lavoro.
 
 #### <a name="workaround"></a>Soluzione alternativa
 
-Riavviare il servizio **SMS_EXECUTIVE** .
+Riavviare il servizio **SMS_EXECUTIVE**.
 
 Se non si è in grado di riavviare il servizio principale, arrestare entrambi i componenti con MSfB Worker e quindi avviare entrambi:
 
@@ -335,7 +334,7 @@ Avviare una nuova sincronizzazione. Al termine della sincronizzazione, è necess
 
 Questo problema può verificarsi se si distribuisce l'applicazione in un client che esegue una versione di Windows 10 precedente alla versione 1511. Le app con licenza offline di Microsoft Store for business e Education sono supportate solo in Windows 10 versione 1511 e successive.
 
-#### <a name="resolution"></a>Risoluzione
+#### <a name="resolution"></a>Soluzione
 
 Installare l'ultima versione di Windows 10.
 

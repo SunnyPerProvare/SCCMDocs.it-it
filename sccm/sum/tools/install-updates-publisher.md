@@ -10,22 +10,21 @@ ms.assetid: ab5cda93-b67c-4aa5-904d-7b63ce790aa0
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7194d77d7d1fd2c4f9cd143bcf3b69446f394c08
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 979243fe992cf5e0087c013d8a75737193dcf9a9
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "69974673"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827163"
 ---
 # <a name="install-updates-publisher"></a>Installare Updates Publisher
 
 *Si applica a: System Center Updates Publisher*
 
-Le informazioni contenute in questi articoli consentono di scaricare, installare e configurare Updates Publisher per l'uso nell'ambiente di System Center Configuration Manager.
+Le informazioni contenute in questi articoli consentono di scaricare, installare e configurare Updates Publisher per l'uso nell'ambiente di Configuration Manager.
 
 ## <a name="prerequisites-and-limitations"></a>Prerequisiti e limiti
-System Center Updates Publisher può essere usato solo con System Center Configuration Manager. Non è destinato all'uso con gerarchie WSUS autonome.
+System Center Updates Publisher può essere usato solo con Configuration Manager. Non è destinato all'uso con gerarchie WSUS autonome.
 
 Le sezioni seguenti riportano requisiti dettagliati per l'installazione e l'uso di Updates Publisher, nonché informazioni sulle limitazioni o i problemi noti.  
 
@@ -40,14 +39,14 @@ Installare ed eseguire Updates Publisher su edizioni a 64 bit dei sistemi operat
 ### <a name="prerequisites"></a>Prerequisiti
 Di seguito sono riportati i requisiti per il computer che esegue Updates Publisher.
 
--   **Sistema operativo a 64 bit**: il sistema in cui viene installato Updates Publisher deve eseguire un sistema operativo a 64 bit.
+-   **Sistema operativo a 64 bit**: il computer in cui viene installato Updates Publisher deve eseguire un sistema operativo a 64 bit.
 -   **WSUS 6.2 o versione successiva**:
     -   per soddisfare questo requisito, in Windows Server installare la console di amministrazione predefinita.
     -   Per Windows 10 e Windows 8.1, installare [Strumenti di amministrazione remota del server per sistemi operativi Windows](https://support.microsoft.com/help/2693643/remote-server-administration-tools-rsat-for-windows-operating-systems). Questo consente di installare il supporto necessario per l'uso di Updates Publisher (*API e cmdlet PowerShell* e *Console di gestione interfaccia utente*).
 -   **Autorizzazioni**:
-    -   Installazione: Amministratore locale
+    -   Installazione: amministratore locale
     -   Maggior parte delle operazioni: utente locale
-    -   Per la pubblicazione o per operazioni che coinvolgono WSUS: membro del gruppo WSUS Administrators nel server WSUS.
+    -   Pubblicazione o operazioni che interessano Windows Server Update Services (WSUS): membro del gruppo Amministratori WSUS nel server WSUS.
 
 ### <a name="supported-languages"></a>Lingue supportate
 Updates Publisher è disponibile solo in lingua inglese, ma può gestire aggiornamenti per altre lingue. Il supporto per le lingue dipende dall'attività, ad esempio pubblicazione, creazione o modifica di aggiornamenti.

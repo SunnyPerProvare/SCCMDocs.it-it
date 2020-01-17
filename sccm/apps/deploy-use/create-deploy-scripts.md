@@ -10,28 +10,27 @@ ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c76a635144d2cac945eb6c7cf0544891b65c0ce9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5c841824229de43fd53625db041085c72a0c2e68
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74658881"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75815953"
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire gli script di PowerShell dalla console di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 <!--1236459-->
-La funzionalità di esecuzione degli script di Powershell è integrata in System Center Configuration Manager. Il vantaggio di PowerShell è che consente di creare script automatici sofisticati, intuitivi e condivisi con una vasta community. Gli script semplificano la creazione di strumenti personalizzati per amministrare il software e consentono di eseguire rapidamente attività pratiche, anche impegnative, in modo più semplice e coerente.  
+La funzionalità di esecuzione degli script di Powershell è integrata in Configuration Manager. Il vantaggio di PowerShell è che consente di creare script automatici sofisticati, intuitivi e condivisi con una vasta community. Gli script semplificano la creazione di strumenti personalizzati per amministrare il software e consentono di eseguire rapidamente attività pratiche, anche impegnative, in modo più semplice e coerente.  
 
 > [!Note]  
 > Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
 
 
-Grazie a questa integrazione in System Center Configuration Manager, è possibile usare la funzionalità *Esegui script* per:
+Grazie a questa integrazione in Configuration Manager, è possibile usare la funzionalità *Esegui script* per:
 
-- Creare e modificare script da usare con System Center Configuration Manager.
+- Creare e modificare script da usare con Configuration Manager.
 - Gestire l'utilizzo degli script tramite ruoli e ambiti di protezione. 
 - Eseguire gli script in raccolte o singoli PC Windows gestiti in locale.
 - Ottenere rapidi risultati degli script aggregati dai dispositivi client.
@@ -99,7 +98,7 @@ Questa approvazione viene usata principalmente per la fase di test dello svilupp
 
 ## <a name="security-scopes"></a>ambiti di protezione
 *Introdotti con la versione 1710*  
-La funzionalità Esegui script usa gli ambiti di protezione, una caratteristica esistente di Configuration Manager, per controllare la creazione e l'esecuzione di script tramite l'assegnazione di tag che rappresentano gruppi di utenti. Per altre informazioni sull'uso degli ambiti di protezione, vedere [Configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).
+La funzionalità Esegui script usa gli ambiti di protezione, una caratteristica esistente di Configuration Manager, per controllare la creazione e l'esecuzione di script tramite l'assegnazione di tag che rappresentano gruppi di utenti. Per altre informazioni sull'uso degli ambiti di protezione, vedere [Configurare l'amministrazione basata su ruoli per Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).
 
 ## <a name="bkmk_ScriptRoles"></a> Creare ruoli di sicurezza per gli script
 I tre ruoli di sicurezza usati per l'esecuzione di script non vengono creati per impostazione predefinita in Configuration Manager. Per creare i ruoli di esecutori di script, autori di script e responsabili dell'approvazione di script seguire i passaggi descritti.
@@ -111,7 +110,7 @@ I tre ruoli di sicurezza usati per l'esecuzione di script non vengono creati per
 
 ### <a name="security-role-permissions"></a>Autorizzazioni del ruolo di sicurezza  
 
-**Nome del ruolo**: esecutori di script  
+**Nome ruolo**: Esecutori di script  
 - **Descrizione**: queste autorizzazioni consentono a questo ruolo solo di eseguire script precedentemente creati e approvati da altri ruoli.  
 - **Autorizzazioni:** verificare che le autorizzazioni seguenti siano impostate su **Sì**.  
 
@@ -122,7 +121,7 @@ I tre ruoli di sicurezza usati per l'esecuzione di script non vengono creati per
 |Script SMS|Lettura|Sì|
 
 
-**Nome del ruolo**: autori di script  
+**Nome ruolo**: Autori di script  
 - **Descrizione**: queste autorizzazioni consentono a questo ruolo di creare script, ma non di approvarli o eseguirli.  
 - **Autorizzazioni**: verificare che siano impostate le autorizzazioni seguenti.
  
@@ -136,7 +135,7 @@ I tre ruoli di sicurezza usati per l'esecuzione di script non vengono creati per
 |Script SMS|Modifica|Sì|
 
 
-**Nome ruolo**: responsabile approvazione di script  
+**Nome ruolo**: Responsabili approvazione di script  
 - **Descrizione**: queste autorizzazioni consentono a questo ruolo di approvare script, ma non di crearli o eseguirli.  
 - **Autorizzazioni:** verificare che siano impostate le autorizzazioni seguenti.  
 
@@ -348,5 +347,5 @@ A partire dalla versione 1810, la registrazione è stata estesa per agevolare la
 
 ## <a name="see-also"></a>Vedere anche
 
-- [Configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md)
+- [Configurare l'amministrazione basata su ruoli per Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md)
 - [Nozioni fondamentali sull'amministrazione basata su ruoli](/sccm/core/understand/fundamentals-of-role-based-administration)

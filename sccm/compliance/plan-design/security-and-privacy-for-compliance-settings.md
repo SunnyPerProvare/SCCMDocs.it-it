@@ -1,7 +1,7 @@
 ---
 title: Sicurezza e privacy per le impostazioni di conformità
 titleSuffix: Configuration Manager
-description: Informazioni sulle procedure di sicurezza consigliate per le impostazioni di conformità in System Center Configuration Manager.
+description: Informazioni sulle procedure di sicurezza consigliate per le impostazioni di conformità in Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
@@ -10,17 +10,16 @@ ms.assetid: 1c409244-6778-4970-a99c-d2508c9cf62b
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3dca22dde775be00a1a9b15acc4977f582cc1579
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: eae705b97add7515403549eb668e68f1489d6756
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62201685"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816106"
 ---
-# <a name="security-and-privacy-for-compliance-settings-in-system-center-configuration-manager"></a>Sicurezza e privacy per le impostazioni di conformità in System Center Configuration Manager
+# <a name="security-and-privacy-for-compliance-settings-in-configuration-manager"></a>Sicurezza e privacy per le impostazioni di conformità in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 ## <a name="security-best-practices-for-compliance-settings"></a>Procedure di sicurezza consigliate per le impostazioni di conformità  

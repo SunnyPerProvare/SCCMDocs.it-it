@@ -1,7 +1,7 @@
 ---
 title: Configurare l'infrastruttura di certificazione
 titleSuffix: Configuration Manager
-description: Informazioni su come configurare la registrazione dei certificati in System Center Configuration Manager.
+description: Informazioni sulla configurazione della registrazione dei certificati in Configuration Manager.
 ms.date: 07/25/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
@@ -10,19 +10,18 @@ ms.assetid: 29ae59b7-2695-4a0f-a9ff-4f29222f28b3
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b597773cda5e36ea56a34ff1c6d7e793fc1f1e0b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 66723229e642229d4e7edd196e8ed0017f1d146e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70380292"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820611"
 ---
 # <a name="configure-certificate-infrastructure"></a>Configurare l'infrastruttura di certificazione
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Informazioni su come configurare l'infrastruttura di certificazione in System Center Configuration Manager. Prima di iniziare, verificare gli eventuali prerequisiti elencati in [Prerequisiti per i profili certificato in System Center Configuration Manager](../../protect/plan-design/prerequisites-for-certificate-profiles.md).  
+Informazioni sulla configurazione dell'infrastruttura di certificazione in Configuration Manager. Prima di iniziare, verificare gli eventuali prerequisiti riportati in [Prerequisiti per i profili certificato](../../protect/plan-design/prerequisites-for-certificate-profiles.md).  
 
 Usare questi passaggi per configurare l'infrastruttura per i certificati SCEP o PFX.
 
@@ -31,7 +30,7 @@ Usare questi passaggi per configurare l'infrastruttura per i certificati SCEP o 
  È necessario installare e configurare il servizio del ruolo Servizio di registrazione dispositivi di rete per Servizi certificati Active Directory (AD CS), modificare le autorizzazioni di sicurezza nei modelli del certificato, distribuire un certificato di autenticazione client PKI (Public Key Infrastructure) e modificare il registro per aumentare il limite della dimensione predefinita di IIS (Internet Information Services). Se necessario, occorre configurare anche l'autorità di certificazione (CA) emittente per consentire un periodo di validità personalizzato.  
 
 > [!IMPORTANT]  
->  Prima di configurare System Center Configuration Manager per usare il servizio Registrazione dispositivi di rete, verificare l'installazione e la configurazione del servizio stesso. Se queste dipendenze non funzionano correttamente, sarà difficile risolvere problemi di registrazione dei certificati usando System Center Configuration Manager.  
+>  Prima di configurare Configuration Manager per usare il servizio Registrazione dispositivi di rete, verificare l'installazione e la configurazione del servizio stesso. Se queste dipendenze non funzionano correttamente, sarà difficile risolvere problemi di registrazione dei certificati usando Configuration Manager.  
 
 ### <a name="to-install-and-configure-the-network-device-enrollment-service-and-dependencies"></a>Per installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze  
 
@@ -39,28 +38,28 @@ Usare questi passaggi per configurare l'infrastruttura per i certificati SCEP o 
 
 2. Controllare e, se necessario, modificare le autorizzazioni di sicurezza per i modelli di certificato usati dal servizio Registrazione dispositivi di rete:  
 
-   -   Per l'account che esegue la console di System Center Configuration Manager: autorizzazione **Lettura**.  
+   -   Per l'account che esegue la console di Configuration Manager: autorizzazione **Lettura**.  
 
         Questa autorizzazione è richiesta in modo che durante l'esecuzione di Creazione guidata profilo di certificato è possibile selezionare il modello di certificato che si desidera usare quando si crea profilo delle impostazioni SCEP. La selezione di un modello di certificato implica che alcune impostazioni nella procedura guidata vengano popolate automaticamente. Questo semplifica la configurazione ed evita la selezione di impostazioni che non sono compatibili con i modelli di certificato usati dal servizio Registrazione dispositivi di rete.  
 
-   -   Per l'account del servizio SCEP usato dal pool di applicazioni del servizio Registrazione dispositivi di rete: autorizzazioni **Lettura** e **Registrazione** .  
+   -   Per l'account del servizio SCEP usato dal pool di applicazioni del servizio Registrazione dispositivi di rete: autorizzazioni **Lettura** e **Registrazione**.  
 
-        Questo non è un requisito specifico di System Center Configuration Manager ma è parte della configurazione del servizio Registrazione dispositivi di rete. Per altre informazioni, vedere [Informazioni aggiuntive sul servizio Registrazione dispositivi di rete](https://go.microsoft.com/fwlink/p/?LinkId=309016) nella libreria Servizi certificati Active Directory in TechNet.  
+        Questo non è un requisito specifico di Configuration Manager ma è parte della configurazione del servizio Registrazione dispositivi di rete. Per altre informazioni, vedere [Informazioni aggiuntive sul servizio Registrazione dispositivi di rete](https://go.microsoft.com/fwlink/p/?LinkId=309016) nella libreria Servizi certificati Active Directory in TechNet.  
 
    > [!TIP]  
    >  Per identificare i modelli di certificato usati dal servizio Registrazione dispositivi di rete, visualizzare la seguente chiave del Registro di sistema sul server che esegue il servizio Registrazione dispositivi di rete: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP.  
 
    > [!NOTE]  
-   >  Queste sono le autorizzazioni di sicurezza predefinite appropriate per la maggior parte degli ambienti. Tuttavia, è possibile usare una configurazione di protezione alternativa. Per altre informazioni, vedere [Pianificazione delle autorizzazioni dei modelli di certificato per i profili di certificato in System Center Configuration Manager](../../protect/plan-design/planning-for-certificate-template-permissions.md).  
+   >  Queste sono le autorizzazioni di sicurezza predefinite appropriate per la maggior parte degli ambienti. Tuttavia, è possibile usare una configurazione di protezione alternativa. Per altre informazioni, vedere l'articolo sulla [pianificazione delle autorizzazioni dei modelli di certificato per i profili certificato](../../protect/plan-design/planning-for-certificate-template-permissions.md).  
 
-3. Distribuire a questo server un certificato PKI che supporta l'autenticazione client. Un certificato adatto potrebbe essere già disponibile sul computer in uso oppure potrebbe essere necessario o preferibile distribuire un certificato in modo specifico per questo scopo. Per altre informazioni sui requisiti richiesti per questo certificato, fare riferimento alle informazioni per "Server su cui è in esecuzione il modulo criteri di Configuration Manager con il servizio ruolo del servizio Registrazione dispositivi di rete" nella sezione **Certificati PKI per i server** nell'argomento [Requisiti dei certificati PKI per System Center Configuration Manager](../../core/plan-design/network/pki-certificate-requirements.md).  
+3. Distribuire a questo server un certificato PKI che supporta l'autenticazione client. Un certificato adatto potrebbe essere già disponibile sul computer in uso oppure potrebbe essere necessario o preferibile distribuire un certificato in modo specifico per questo scopo. Per altre informazioni sui requisiti richiesti per questo certificato, fare riferimento alle informazioni per i server su cui è in esecuzione il modulo criteri di Configuration Manager con il servizio ruolo del servizio Registrazione dispositivi di rete nella sezione **Certificati PKI per i server** dell'argomento [Requisiti dei certificati PKI per Configuration Manager](../../core/plan-design/network/pki-certificate-requirements.md).  
 
    > [!TIP]
    >  Per consentire la distribuzione di questo certificato, è possibile usare le istruzioni relative a [Distribuzione del certificato client per punti di distribuzione](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clientdistributionpoint2008_cm2012), perché i requisiti del certificato sono gli stessi con un'unica eccezione:  
    > 
    > - Non selezionare la casella di controllo **Rendi la chiave privata esportabile** nella scheda **Gestione richiesta** delle proprietà dei modelli di certificato.  
    > 
-   >   Non è necessario esportare questo certificato con la chiave privata perché sarà possibile accedere all'archivio del computer locale e selezionarlo quando si configura il modulo criteri di System Center Configuration Manager.  
+   >   Non è necessario esportare questo certificato con la chiave privata perché sarà possibile accedere all'archivio del computer locale e selezionarlo quando si configura il modulo criteri di Configuration Manager.  
 
 4. Individuare il certificato principale a cui è collegato il certificato di autenticazione client. Quindi esportare questo certificato CA radice in un file di certificato (.cer). Salvare questo file in un percorso protetto a cui sarà possibile accedere in modo sicuro quando si installa e si configura il server di sistema del sito per il punto di registrazione certificati.  
 
@@ -74,11 +73,11 @@ Usare questi passaggi per configurare l'infrastruttura per i certificati SCEP o 
 
 6. Sullo stesso server, in Gestione Internet Information Services (IIS), modificare le impostazioni del filtro richieste per l'applicazione /certsrv/mscep, quindi riavviare il server. Nella finestra di dialogo **Modifica impostazioni di filtro richieste** , verificare che le impostazioni **Limiti richiesta** corrispondano alle seguenti:  
 
-   - **Lunghezza contenuto massima consentita (byte)** : **30000000**  
+   - **Lunghezza contenuto massima consentita (byte)**: **30000000**  
 
-   - **Lunghezza massima URL (byte)** : **65534**  
+   - **Lunghezza massima URL (byte)**: **65534**  
 
-   - **Lunghezza massima stringa di query in (byte)** : **65534**  
+   - **Lunghezza massima stringa di query in (byte)**: **65534**  
 
      Per altre informazioni su queste impostazioni e sulla loro configurazione, vedere [Limiti richiesta](https://go.microsoft.com/fwlink/?LinkId=309014) nella Raccolta informazioni di riferimento IIS.  
 
@@ -92,21 +91,21 @@ Usare questi passaggi per configurare l'infrastruttura per i certificati SCEP o 
 
       Per altre informazioni, vedere [Strumenti e impostazioni servizi certificati](https://go.microsoft.com/fwlink/p/?LinkId=309015) nella libreria PKI Technologies in TechNet.  
 
-8. Verificare che il servizio Registrazione dispositivi di rete sia in funzione usando il collegamento seguente come esempio: **https://server.contoso.com/certsrv/mscep/mscep.dll** . Verrà visualizzata la pagina Web incorporata del servizio Registrazione dispositivi di rete. Questa pagina Web illustra il servizio e spiega che i dispositivi di rete usano l'URL per inviare richieste di certificati.  
+8. Verificare che il servizio Registrazione dispositivi di rete sia in funzione usando il collegamento seguente come esempio: **https://server.contoso.com/certsrv/mscep/mscep.dll**. Verrà visualizzata la pagina Web incorporata del servizio Registrazione dispositivi di rete. Questa pagina Web illustra il servizio e spiega che i dispositivi di rete usano l'URL per inviare richieste di certificati.  
 
    Ora che il servizio Registrazione dispositivi di rete e le dipendenze sono configurate, è possibile installare e configurare il punto di registrazione certificati.
 
 
 ## <a name="step-2---install-and-configure-the-certificate-registration-point"></a>Passaggio 2: installare e configurare il punto di registrazione certificati.
 
-È necessario installare e configurare almeno un punto di registrazione certificato nella gerarchia di System Center Configuration Manager ed è possibile installare questo ruolo del sistema del sito nel sito dell'amministrazione centrale oppure in un sito primario.  
+È necessario installare e configurare almeno un punto di registrazione certificati nella gerarchia di Configuration Manager ed è possibile installare questo ruolo del sistema del sito nel sito dell'amministrazione centrale oppure in un sito primario.  
 
 > [!IMPORTANT]  
->  Prima di installare il punto di registrazione del certificato, fare riferimento alla sezione **Requisiti del sistema del sito** nell'argomento [Supported configurations for System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md) per i requisiti del sistema operativo e le dipendenze per il punto di registrazione certificati.  
+>  Prima di installare il punto di registrazione certificati, fare riferimento alla sezione dei **requisiti del sistema del sito** nell'argomento relativo alle [configurazioni supportate per Configuration Manager](../../core/plan-design/configs/supported-configurations.md) per i requisiti del sistema operativo e le dipendenze per il punto di registrazione certificati.  
 
 ##### <a name="to-install-and-configure-the-certificate-registration-point"></a>Per installare e configurare il punto di registrazione certificati  
 
-1. Nella console di System Center Configuration Manager fare clic su **Amministrazione**.  
+1. Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
 2. Nell'area di lavoro **Amministrazione** espandere **Configurazione del sito**, fare clic su **Server e ruoli del sistema del sito**, quindi selezionare il server che si desidera usare per il punto di registrazione certificati.  
 
@@ -126,8 +125,8 @@ Usare questi passaggi per configurare l'infrastruttura per i certificati SCEP o 
    - Se si è selezionata l'opzione **Elabora le richieste di certificati SCEP**, configurare quanto segue:
      -   **Nome sito Web**, **Numero porta HTTPS** e **Nome dell'applicazione virtuale** per il punto di registrazione certificati. In questi campi vengono inseriti automaticamente i valori predefiniti. 
      -   **URL per il servizio di registrazione dispositivi di rete e il certificato CA radice**: fare clic su **Aggiungi** e nella finestra di dialogo **Aggiungi URL e certificato CA radice** specificare quanto segue:
-         - **URL per il servizio di registrazione dispositivi di rete**: specificare l'URL nel formato seguente: https:// *<FQDN_server>* /certsrv/mscep/mscep.dll. Ad esempio, se il nome FQDN del server che esegue il servizio Registrazione dispositivi di rete è server1.contoso.com, digitare **https://server1.contoso.com/certsrv/mscep/mscep.dll** .
-         - **Certificato CA radice**: Individuare e selezionare il file del certificato (con estensione cer) creato e salvato nel **Passaggio 1: Installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze**. Questo certificato CA radice consente al punto di registrazione certificati di convalidare il certificato di autenticazione client che verrà usato dal modulo criteri di System Center Configuration Manager.  
+         - **URL per il servizio di registrazione dispositivi di rete**: Specificare l'URL nel formato seguente: https://*<FQDN_server>*/certsrv/mscep/mscep.dll. Ad esempio, se il nome FQDN del server che esegue il servizio Registrazione dispositivi di rete è server1.contoso.com, digitare **https://server1.contoso.com/certsrv/mscep/mscep.dll**.
+         - **Certificato CA radice**: Individuare e selezionare il file del certificato (CER) creato e salvato nel **passaggio 1: Installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze**. Questo certificato CA radice consente al punto di registrazione certificati di convalidare il certificato di autenticazione client che verrà usato dal modulo criteri di Configuration Manager.  
 
    - Se l'opzione **Elabora le richieste di certificati PFX** è selezionata, configurare i dettagli e le credenziali di connessione per la CA selezionata.
 
@@ -160,19 +159,19 @@ Usare questi passaggi per configurare l'infrastruttura per i certificati SCEP o 
 
     -   Usando un browser, verificare che sia possibile connettersi all'URL del punto di registrazione certificati, ad esempio https://server1.contoso.com/CMCertificateRegistration. Accertarsi che venga visualizzata una pagina di **Errore server** per il nome dell'applicazione con una descrizione HTTP 404.  
 
-11. Individuare il file del certificato esportato per la CA radice che il punto di registrazione certificati ha creato automaticamente nella seguente cartella del computer del server del sito primario: *<Percorso di installazione di ConfigMgr\>* \inboxes\certmgr.box. Salvare questo file in un percorso protetto a cui sarà possibile accedere in modo sicuro quando si installerà il modulo criteri di System Center Configuration Manager sul server che esegue il servizio Registrazione dispositivi di rete.  
+11. Individuare il file del certificato esportato per la CA radice che il punto di registrazione certificati ha creato automaticamente nella seguente cartella del computer del server del sito primario: *<Percorso di installazione di ConfigMgr\>* \inboxes\certmgr.box. Salvare questo file in un percorso protetto a cui sarà possibile accedere in modo sicuro quando si installerà il modulo criteri di Configuration Manager nel server che esegue il servizio Registrazione dispositivi di rete.  
 
     > [!TIP]  
-    >  Questo certificato non è immediatamente disponibile in questa cartella. Potrebbe essere necessario attendere (ad esempio, mezz'ora) prima che System Center Configuration Manager copi il file in questo percorso.  
+    >  Questo certificato non è immediatamente disponibile in questa cartella. Potrebbe essere necessario attendere (ad esempio, mezz'ora) prima che Configuration Manager copi il file in questo percorso.  
 
 
-## <a name="step-3----install-the-system-center-configuration-manager-policy-module-for-scep-certificates-only"></a>Passaggio 3: installare il modulo criteri di System Center Configuration Manager (solo per certificati SCEP).
+## <a name="step-3----install-the-configuration-manager-policy-module-for-scep-certificates-only"></a>Passaggio 3: Installare il modulo criteri di Configuration Manager (solo per certificati SCEP).
 
-È necessario installare e configurare il modulo criteri di System Center Configuration Manager in ogni server specificato in **Passaggio 2: installare e configurare il punto di registrazione certificati** come **URL per il servizio Registrazione dispositivi di rete** nelle proprietà del punto di registrazione certificati.  
+È necessario installare e configurare il modulo criteri di Configuration Manager in ogni server specificato nel **passaggio 2: Installare e configurare il punto di registrazione certificati** come **URL per il servizio Registrazione dispositivi di rete** nelle proprietà del punto di registrazione certificati.  
 
 ##### <a name="to-install-the-policy-module"></a>Per installare il modulo criteri  
 
-1. Nel server che esegue il servizio Registrazione dispositivi di rete accedere come amministratore di dominio e copiare i seguenti file dalla cartella <ConfigMgrInstallationMedia\>\SMSSETUP\POLICYMODULE\X64 nei supporti di installazione di System Center Configuration Manager in una cartella temporanea:  
+1. Nel server che esegue il servizio Registrazione dispositivi di rete accedere come amministratore di dominio e copiare i seguenti file dalla cartella <ConfigMgrInstallationMedia\>\SMSSETUP\POLICYMODULE\X64 nei supporti di installazione di Configuration Manager in una cartella temporanea:  
 
    -   PolicyModule.msi  
 
@@ -180,17 +179,17 @@ Usare questi passaggi per configurare l'infrastruttura per i certificati SCEP o 
 
    Inoltre, se si dispone di una cartella LanguagePack sul supporto di installazione, copiare questa cartella e il relativo contenuto.  
 
-2. Dalla cartella temporanea, eseguire PolicyModuleSetup.exe per avviare Installazione guidata del modulo criteri di System Center Configuration Manager.  
+2. Dalla cartella temporanea, eseguire PolicyModuleSetup.exe per avviare l'Installazione guidata del modulo criteri di Configuration Manager.  
 
 3. Nella pagina iniziale della configurazione guidata, fare clic su **Avanti**, accettare le condizioni di licenza, quindi fare clic su **Avanti**.  
 
 4. Nella pagina **Cartella di installazione** accettare la cartella di installazione predefinita per il modulo criteri o specificare una cartella alternativa, quindi fare clic su **Avanti**.  
 
-5. Nella pagina **Punto di registrazione certificati** , specificare l'URL del punto di registrazione certificati usando l'FQDN del server del sistema del sito e il nome dell'applicazione virtuale specificato nelle proprietà del punto di registrazione certificati. Il nome dell'applicazione virtuale predefinito è CMCertificateRegistration. Ad esempio, se il nome FQDN del server del sistema del sito è server1.contoso.com e si è usato il nome dell'applicazione virtuale predefinito, specificare **https://server1.contoso.com/CMCertificateRegistration** .  
+5. Nella pagina **Punto di registrazione certificati** , specificare l'URL del punto di registrazione certificati usando l'FQDN del server del sistema del sito e il nome dell'applicazione virtuale specificato nelle proprietà del punto di registrazione certificati. Il nome dell'applicazione virtuale predefinito è CMCertificateRegistration. Ad esempio, se il nome FQDN del server del sistema del sito è server1.contoso.com e si è usato il nome dell'applicazione virtuale predefinito, specificare **https://server1.contoso.com/CMCertificateRegistration**.  
 
 6. Accettare la porta predefinita **443** o specificare un numero di porta alternativo usato dal punto di registrazione certificati, quindi fare clic su **Avanti**.  
 
-7. Nella pagina **Certificato client per il modulo criteri**individuare e specificare il certificato di autenticazione client distribuito nel **Passaggio 1: Installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze**e quindi fare clic su **Avanti**.  
+7. Nella pagina **Certificato client per il modulo criteri** individuare e specificare il certificato di autenticazione client distribuito nel **Passaggio 1: Installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze** e quindi fare clic su **Avanti**.  
 
 8. Nella pagina **Certificato punto di registrazione certificati** fare clic su **Sfoglia** per selezionare il file del certificato esportato per la CA radice individuata e salvata alla fine del **Passaggio 2: Installare e configurare il punto di registrazione certificati**.  
 
@@ -199,7 +198,7 @@ Usare questi passaggi per configurare l'infrastruttura per i certificati SCEP o 
 
 9. Fare clic su **Avanti** e completare la procedura guidata.  
 
-   Se si desidera disinstallare il modulo criteri di System Center Configuration Manager, usare **Programmi e funzionalità** nel Pannello di controllo. 
+   Per disinstallare il modulo criteri di Configuration Manager, usare **Programmi e funzionalità** nel Pannello di controllo. 
 
  
-Ora che sono stati completati i passaggi di configurazione, si è pronti a distribuire i certificati a utenti e dispositivi creando e distribuendo profili certificato. Per altre informazioni su come creare profili certificato, vedere [Come creare profili certificato in System Center Configuration Manager](../../protect/deploy-use/create-certificate-profiles.md).  
+Ora che sono stati completati i passaggi di configurazione, si è pronti a distribuire i certificati a utenti e dispositivi creando e distribuendo profili certificato. Per altre informazioni su come creare profili certificato, vedere [Come creare profili certificato in Configuration Manager](../../protect/deploy-use/create-certificate-profiles.md).  

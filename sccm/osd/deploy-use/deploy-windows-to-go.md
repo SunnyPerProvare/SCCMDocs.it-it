@@ -1,7 +1,7 @@
 ---
 title: Distribuire Windows to Go
 titleSuffix: Configuration Manager
-description: Informazioni su come eseguire il provisioning di Windows To Go in System Center Configuration Manager per creare un'area di lavoro Windows To Go avviata da un'unità esterna.
+description: Informazioni su come eseguire il provisioning di Windows To Go in Configuration Manager per creare un'area di lavoro Windows To Go avviata da un'unità esterna.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
@@ -10,19 +10,18 @@ ms.assetid: 8eed50f5-80a4-422e-8aa6-a7ccb2171475
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2de5d0c6b0c5f2cb2a01052514228b7955896f64
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8d60fdb024a5104b568b4e98d09f69080d53e122
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70379013"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806425"
 ---
-# <a name="deploy-windows-to-go-with-system-center-configuration-manager"></a>Distribuire Windows to Go con System Center Configuration Manager
+# <a name="deploy-windows-to-go-with-configuration-manager"></a>Distribuire Windows to go con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-In questo argomento viene illustrato come eseguire il provisioning di Windows To Go in System Center Configuration Manager. Windows To Go è una funzionalità aziendale di Windows 8 che permette di creare un'area di lavoro di Windows To Go che può essere avviata da un'unità esterna connessa tramite USB nei computer che soddisfano i requisiti di certificato di Windows 7 o Windows 8, indipendentemente dal sistema operativo in esecuzione nel computer. Le aree di lavoro di Windows To Go possono utilizzare la stessa immagine che utilizzano le organizzazioni per i desktop e laptop e possono essere gestite allo stesso modo.  
+In questo argomento viene illustrato come eseguire il provisioning di Windows To Go in Configuration Manager. Windows To Go è una funzionalità aziendale di Windows 8 che permette di creare un'area di lavoro di Windows To Go che può essere avviata da un'unità esterna connessa tramite USB nei computer che soddisfano i requisiti di certificato di Windows 7 o Windows 8, indipendentemente dal sistema operativo in esecuzione nel computer. Le aree di lavoro di Windows To Go possono utilizzare la stessa immagine che utilizzano le organizzazioni per i desktop e laptop e possono essere gestite allo stesso modo.  
 
  Per altre informazioni su Windows To Go, vedere [Windows To Go: panoramica della funzionalità](https://go.microsoft.com/fwlink/p/?LinkId=263433).  
 
@@ -55,7 +54,7 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
      prima di creare supporti pre-installati, è necessario distribuire l'immagine di avvio in un punto di distribuzione.  
 
     > [!NOTE]  
-    >  Le immagini di avvio vengono usate per installare il sistema operativo nei computer di destinazione nell'ambiente di Configuration Manager. Queste immagini contengono una versione di Windows PE che installa il sistema operativo e i driver di dispositivo aggiuntivi richiesti. Configuration Manager offre due immagini di avvio: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. È inoltre possibile creare le proprie immagini di avvio. Per altre informazioni, vedere [Manage boot images](../get-started/manage-boot-images.md) (Gestire le immagini d'avvio).  
+    >  Le immagini di avvio vengono usate per installare il sistema operativo nei computer di destinazione nell'ambiente di Configuration Manager. Queste immagini contengono una versione di Windows PE che installa il sistema operativo e i driver di dispositivo aggiuntivi richiesti. In Configuration Manager sono disponibili due immagini d'avvio: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. È inoltre possibile creare le proprie immagini di avvio. Per altre informazioni, vedere [Manage boot images](../get-started/manage-boot-images.md) (Gestire le immagini d'avvio).  
 
 -   **Distribuire l'immagine del sistema operativo Windows 8 in un punto di distribuzione**  
 
@@ -147,9 +146,9 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
     > [!IMPORTANT]  
     >  L'architettura dell'immagine di avvio distribuita deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86. Per i computer certificati Windows 8 in modalità EFI, è necessario utilizzare un'immagine di avvio x64.  
 
-    -   **Immagine d'avvio**: specificare l'immagine d'avvio per l'avvio del computer di destinazione.  
+    -   **Immagine d'avvio**: specificare l'immagine di avvio per l'avvio del computer di destinazione.  
 
-    -   **Punto di distribuzione**: specificare il punto di distribuzione che ospita l'immagine d'avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
+    -   **Punto di distribuzione**: specificare il punto di distribuzione che ospita l'immagine di avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
 
         > [!NOTE]  
         >  L'utente amministratore deve disporre dei diritti di accesso di **Lettura** per il contenuto dell'immagine di avvio nel punto di distribuzione. Per altre informazioni, vedere [Account di accesso al pacchetto](/sccm/core/plan-design/hierarchy/accounts#package-access-account).  
@@ -179,21 +178,21 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
 15. Nella pagina **Personalizzazione** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
-    - **Variabili**: specificare le variabili usate dalla sequenza di attività per distribuire il sistema operativo. Per Windows To Go, utilizzare la variabile SMSTSPreferredAdvertID per selezionare automaticamente la distribuzione di Windows To Go utilizzando il seguente formato:  
+    - **Variabili**: Specificare le variabili usate dalla sequenza di attività per distribuire il sistema operativo. Per Windows To Go, utilizzare la variabile SMSTSPreferredAdvertID per selezionare automaticamente la distribuzione di Windows To Go utilizzando il seguente formato:  
 
        SMSTSPreferredAdvertID = {*IDDistribuzione*}, dove IDDistribuzione è l'ID distribuzione associato alla sequenza attività che verrà utilizzata dal processo di provisioning per l'unità di Windows To Go.  
 
       > [!TIP]  
       >  Quando si utilizza questa variabile con una sequenza attività impostata per l'esecuzione automatica (impostazione configurata in precedenza nella procedura), non è necessario l'intervento dell'utente e il computer avvierà automaticamente la distribuzione di Windows To Go quando rileverà l'unità di Windows To Go. Tuttavia, all'utente viene richiesta una password se il supporto è configurato per la protezione con password.  
 
-    - **Comando di preavvio**: specificare i comandi di preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio possono essere uno script o un eseguibile che possono interagire con l'utente in Windows PE prima che venga eseguita la sequenza attività per l'installazione del sistema operativo. Configurare quanto segue per la distribuzione di Windows To Go:  
+    - **Comando di preavvio**: Specificare i comandi preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio possono essere uno script o un eseguibile che possono interagire con l'utente in Windows PE prima che venga eseguita la sequenza attività per l'installazione del sistema operativo. Configurare quanto segue per la distribuzione di Windows To Go:  
 
       - **OSDBitLockerPIN**: BitLocker per Windows To Go richiede una passphrase. Impostare la variabile di **OSDBitLockerPIN** come parte di un comando di preavvio per l'impostazione della passphrase di BitLocker per l'unità di Windows To Go.  
 
         > [!WARNING]  
         >  Dopo aver attivato BitLocker per la passphrase, l'utente deve immettere la passphrase a ogni riavvio del computer per l'unità di Windows To Go.  
 
-      - **SMSTSUDAUsers**: specifica l'utente primario del computer di destinazione. Utilizzare questa variabile per raccogliere il nome utente, che quindi può essere utilizzato per associare l'utente al dispositivo. Per altre informazioni, vedere [Associate users with a destination computer](../get-started/associate-users-with-a-destination-computer.md) (Associare gli utenti a un computer di destinazione).  
+      - **SMSTSUDAUsers**: Specifica l'utente primario del computer di destinazione. Utilizzare questa variabile per raccogliere il nome utente, che quindi può essere utilizzato per associare l'utente al dispositivo. Per altre informazioni, vedere [Associate users with a destination computer](../get-started/associate-users-with-a-destination-computer.md) (Associare gli utenti a un computer di destinazione).  
 
         > [!TIP]  
         >  Per recuperare il nome utente, è possibile creare una casella di immissione come parte del comando di preavvio, far immettere all'utente il relativo nome utente e quindi impostare la variabile con il valore. Ad esempio, è possibile aggiungere le seguenti righe al file script del comando di preavvio:  
@@ -231,7 +230,7 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
 7. Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea pacchetto**.  
 
-8. Nella pagina **Pacchetto** specificare il nome e la descrizione del pacchetto. Ad esempio, immettere **Windows To Go** per il nome del pacchetto e specificare **Package to configure a Windows To Go drive using System Center Configuration Manager** per la descrizione del pacchetto.  
+8. Nella pagina **Pacchetto** specificare il nome e la descrizione del pacchetto. Ad esempio, immettere **Windows To Go** per il nome del pacchetto e specificare **Package to configure a Windows To Go drive using Configuration Manager** per la descrizione del pacchetto.  
 
 9. Selezionare **Questo pacchetto contiene file di origine**, specificare il percorso della cartella di origine del pacchetto creato nel passaggio 1, e quindi fare clic su **Avanti**.  
 
@@ -239,15 +238,15 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
 11. Nella **Programma standard** specificare quanto segue:  
 
-    -   **Nome**: specificare il nome del programma. Ad esempio, digitare **Creator** per il nome del programma.  
+    -   **Nome**: Specificare il nome del programma. Ad esempio, digitare **Creator** per il nome del programma.  
 
-    -   **Riga di comando**: digitare **WTGCreator.exe /wim:PrestageName.wim**, dove PrestageName è il nome del file pre-installato che è stato creato e copiato nella cartella di origine del pacchetto per il pacchetto di Windows To Go Creator.  
+    -   **Riga di comando**: Digitare **WTGCreator.exe /wim:PrestageName.wim**, dove PrestageName è il nome del file pre-installato che è stato creato e copiato nella cartella di origine del pacchetto per il pacchetto di Windows To Go Creator.  
 
          Facoltativamente, è possibile aggiungere le seguenti opzioni:  
 
         -   **enableBootRedirect**: opzione della riga di comando per la modifica delle opzioni di avvio di Windows Go per consentire il reindirizzamento di avvio. Quando si utilizza questa opzione, il computer si avvierà da USB senza che sia necessario modificare l'ordine di avvio nel firmware del computer o che l'utente debba selezionare da un elenco di opzioni di avvio durante l'avvio. Se viene rilevata un'unità di Windows To Go, il computer avvia tale unità.  
 
-    -   **Esegui**: specificare **Normale** per eseguire il programma in base alle impostazioni predefinite del sistema e del programma.  
+    -   **Esegui**: Specificare **Normale** per eseguire il programma in base alle impostazioni predefinite del sistema e del programma.  
 
     -   **Requisiti per esecuzione programma**: specificare se il programma può essere eseguito solo quando un utente è connesso.  
 
@@ -259,9 +258,9 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
     - **Requisiti di piattaforma**: selezionare le piattaforme Windows 8 applicabili per consentire il provisioning.  
 
-    - **Spazio su disco stimato**: specificare le dimensioni della cartella di origine del pacchetto per Windows To Go Creator.  
+    - **Spazio su disco stimato**: specificare la dimensione della cartella di origine del pacchetto per Windows To Go Creator.  
 
-    - **Tempo di esecuzione massimo consentito (minuti)** : specifica la durata massima di esecuzione prevista per il programma nel computer client. Per impostazione predefinita, il valore è impostato su 120 minuti.  
+    - **Tempo di esecuzione massimo consentito (minuti)** : specifica il tempo massimo che il programma prevede per l'esecuzione nel computer client. Per impostazione predefinita, il valore è impostato su 120 minuti.  
 
       > [!IMPORTANT]  
       >  Se si utilizzano finestre di manutenzione per la raccolta in cui viene eseguito il programma, è possibile che si verifichi un conflitto se il **Tempo di esecuzione massimo consentito** è superiore alla finestra di manutenzione pianificata. Se il tempo di esecuzione massimo è impostato su **Sconosciuto**, l'avvio avverrà all'interno della finestra di manutenzione, ma l'esecuzione proseguirà fino al completamento oppure non riuscirà se si chiude la finestra di manutenzione. Se si imposta il tempo di esecuzione massimo viene impostato su un periodo specifico (non su Sconosciuto) con durata superiore a quella di tutte le finestre di manutenzione disponibili, il programma non verrà eseguito.  
@@ -310,7 +309,7 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
 13. Nella scheda **Proprietà** per il passaggio **Esegui riga di comando** aggiungere quanto segue:  
 
-    1.  **Nome**: specificare un nome per la riga di comando, ad esempio **Enable BitLocker for Windows To Go**.  
+    1.  **Nome**: specificare un nome per la riga di comando, ad esempio **Attiva BitLocker per Windows To Go**.  
 
     2.  **Riga di comando**: i386\osdbitlocker_wtg.exe /Enable /pwd:< *None&#124;AD*>  
 
@@ -352,11 +351,11 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
 5.  Nella pagina **Generale** specificare le impostazioni seguenti:  
 
-    1.  **Software**: verificare che il pacchetto di Windows To Go sia selezionato.  
+    1.  **Software**: verificare che il pacchetto di Windows To Go sia stato selezionato.  
 
-    2.  **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta in cui si vuole distribuire il pacchetto di Windows To Go.  
+    2.  **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta in cui si desidera distribuire il pacchetto di Windows To Go.  
 
-    3.  **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: selezionare questa opzione se si vuole archiviare il contenuto del pacchetto nel gruppo di punti di distribuzione predefinito della raccolta. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione non sarà disponibile.  
+    3.  **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: selezionare questa opzione se si vuole archiviare il contenuto del pacchetto nel gruppo di punti di distribuzione predefiniti delle raccolte. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione non sarà disponibile.  
 
 6.  Nella pagina **Contenuto** fare clic su **Aggiungi** e quindi selezionare i punti di distribuzione o i gruppi di punti di distribuzione in cui si desidera distribuire il contenuto associato a questo programma e pacchetto.  
 
@@ -370,21 +369,21 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
     1.  **Pianifica quando questa distribuzione diventerà disponibile**: specificare la data e l'ora in cui pacchetto e programma saranno disponibili per l'esecuzione nel computer di destinazione. Quando si seleziona **UTC**questa impostazione assicura che pacchetto e programma siano disponibile per più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
 
-    2.  **Pianifica alla scadenza di questa assegnazione**: specificare la data e l'ora di scadenza di pacchetto e programma nel computer di destinazione. Quando si seleziona **UTC**, questa impostazione assicura che la sequenza attività scada in più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
+    2.  **Pianifica alla scadenza di questa distribuzione**: specificare la data e l'ora di scadenza di pacchetto e programma nel computer di destinazione. Quando si seleziona **UTC**, questa impostazione assicura che la sequenza attività scada in più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
 
 10. Nella pagina **Esperienza utente** della procedura guidata specificare le seguenti informazioni:  
 
-    -   **Installazione software**: permette l'installazione del software al di fuori di qualsiasi finestra di manutenzione configurata.  
+    -   **Installazione software**: consente l'installazione del software al di fuori di tutte le finestre di manutenzione configurate.  
 
-    -   **Riavvio del sistema (se richiesto per completare l'installazione)** : consente il riavvio di un dispositivo al di fuori di una finestra di manutenzione configurata quando necessario per l'installazione del software.  
+    -   **Riavvio del sistema (se necessario per completare l'installazione)** : consente il riavvio di un dispositivo al di fuori di una finestra di manutenzione configurata quando è necessario per l'installazione del software.  
 
-    -   **Dispositivi integrati**: quando si distribuiscono pacchetti e programmi in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare i pacchetti e i programmi nella sovrapposizione temporanea e confermare le modifiche in seguito oppure confermare le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
+    -   **Dispositivi integrati**: quando si distribuiscono pacchetti e programmi in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare i pacchetti e programmi nella sovrapposizione temporanea e confermare le modifiche in seguito oppure confermarle alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
 
 11. Nella pagina **Punti di distribuzione** specificare le informazioni seguenti:  
 
-    -   **Opzioni di distribuzione** : specificare **Scarica il contenuto dal punto di distribuzione ed esegui in locale**.  
+    -   **Opzioni di distribuzione**: specificare **Scarica il contenuto dal punto di distribuzione ed esegui in locale**.  
 
-    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: selezionare questa opzione per ridurre il carico sulla rete permettendo ai client di scaricare il contenuto da altri client nella rete che hanno già scaricato e memorizzato nella cache il contenuto. Questa opzione utilizza Windows BranchCache e può essere utilizzata in computer che eseguono Windows Vista SP2 e versioni successive.  
+    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: selezionare questa opzione per ridurre il carico sulla rete, consentendo ai client di scaricare contenuto da altri client della rete che lo hanno già scaricato e memorizzato nella cache. Questa opzione utilizza Windows BranchCache e può essere utilizzata in computer che eseguono Windows Vista SP2 e versioni successive.  
 
     -   **Consenti ai client di utilizzare un percorso origine di fallback per il contenuto**: specificare se consentire ai client di eseguire il fallback e usare un punto di distribuzione non preferito come percorso di origine del contenuto quando il contenuto non è disponibile presso un punto di distribuzione preferito.  
 
@@ -404,12 +403,12 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
     1.  **Sequenza di attività**: verificare che sia selezionata la sequenza di attività per Windows 8.  
 
-    2.  **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta che include tutti i dispositivi per cui un utente potrebbe eseguire il provisioning di Windows To Go.  
+    2.  **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta che include tutti i dispositivi per i quali un utente potrebbe eseguire il provisioning di Windows To Go.  
 
         > [!IMPORTANT]  
-        >  Se il supporto preinstallato creato nella sezione [Create prestaged media](#BKMK_CreatePrestagedMedia) utilizza la variabile SMSTSPreferredAdvertID, è possibile distribuire la sequenza attività nella raccolta **Tutti i sistemi** e specificare l'impostazione **Solo Windows PE (nascosto)** nella pagina **Contenuto** . Poiché la sequenza attività è nascosta, sarà disponibile solo per il supporto.  
+        >  Se il supporto preinstallato creato nella sezione [Creare supporti pre-installati](#BKMK_CreatePrestagedMedia) utilizza la variabile SMSTSPreferredAdvertID, è possibile distribuire la sequenza attività nella raccolta **Tutti i sistemi** e specificare l'impostazione **Solo Windows PE (nascosto)** nella pagina **Contenuto** . Poiché la sequenza attività è nascosta, sarà disponibile solo per il supporto.  
 
-    3.  **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: selezionare questa opzione se si vuole archiviare il contenuto del pacchetto nel gruppo di punti di distribuzione predefinito della raccolta. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione non sarà disponibile.  
+    3.  **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: selezionare questa opzione se si vuole archiviare il contenuto del pacchetto nel gruppo di punti di distribuzione predefiniti delle raccolte. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione non sarà disponibile.  
 
 6.  Nella pagina **Impostazioni distribuzione** configurare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
@@ -422,9 +421,9 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
 7.  Nella pagina **Pianificazione** configurare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
-    1.  **Pianifica quando questa distribuzione diventerà disponibile**: specificare la data e l'ora in cui la sequenza di attività può essere eseguita nel computer di destinazione. Quando si seleziona **UTC**, questa impostazione assicura che la sequenza attività sia disponibile per più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
+    1.  **Pianifica quando questa distribuzione diventerà disponibile**: specificare la data e l'ora in cui la sequenza di attività è disponibile per l'esecuzione nel computer di destinazione. Quando si seleziona **UTC**, questa impostazione assicura che la sequenza attività sia disponibile per più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
 
-    2.  **Pianifica alla scadenza di questa assegnazione**: specificare la data e l'ora di scadenza della sequenza di attività nel computer di destinazione. Quando si seleziona **UTC**, questa impostazione assicura che la sequenza attività scada in più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
+    2.  **Pianifica alla scadenza di questa distribuzione**: specificare la data e l'ora di scadenza della sequenza di attività nel computer di destinazione. Quando si seleziona **UTC**, questa impostazione assicura che la sequenza attività scada in più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
 
 8.  Nella pagina **Esperienza utente** specificare le informazioni seguenti:  
 
@@ -432,19 +431,19 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
     -   **Installazione software**: specificare se l'utente è autorizzato a installare il software al di fuori di una finestra di manutenzione configurata dopo l'orario pianificato.  
 
-    -   **Riavvio del sistema (se richiesto per completare l'installazione)** : consente il riavvio di un dispositivo al di fuori di una finestra di manutenzione configurata quando necessario per l'installazione del software.  
+    -   **Riavvio del sistema (se necessario per completare l'installazione)** : consente il riavvio di un dispositivo al di fuori di una finestra di manutenzione configurata quando è necessario per l'installazione del software.  
 
-    -   **Dispositivi integrati**: quando si distribuiscono pacchetti e programmi in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare i pacchetti e i programmi nella sovrapposizione temporanea e confermare le modifiche in seguito oppure confermare le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
+    -   **Dispositivi integrati**: quando si distribuiscono pacchetti e programmi in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare i pacchetti e programmi nella sovrapposizione temporanea e confermare le modifiche in seguito oppure confermarle alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
 
-    -   **Client basati su Internet**: specificare se la sequenza di attività può essere eseguita in un client basato su Internet. Le operazioni di installazione di software, quale un sistema operativo, non sono supportate con questa impostazione. Usare questa opzione solo per le sequenze attività generiche basate su script che eseguono operazioni nel sistema operativo standard.  
+    -   **Client basati su Internet**: specificare se la sequenza attività può essere eseguita in un client basato su Internet. Le operazioni di installazione di software, quale un sistema operativo, non sono supportate con questa impostazione. Usare questa opzione solo per le sequenze attività generiche basate su script che eseguono operazioni nel sistema operativo standard.  
 
 9. Nella pagina **Avvisi** specificare le impostazioni di avviso desiderate per la distribuzione di questa sequenza di attività e quindi fare clic su **Avanti**.  
 
 10. Nella pagina **Punti di distribuzione** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **Opzioni di distribuzione**: selezionare **Scaricare il contenuto localmente quando necessario eseguendo la sequenza di attività**.  
+    -   **Opzioni di distribuzione**: selezionare **Scaricare il contenuto localmente quando necessario eseguendo la sequenza attività**.  
 
-    -   **Utilizzare un punto di distribuzione remoto quando non sono disponibili punti di distribuzione locali**: specificare se i client possono scaricare il contenuto necessario per la sequenza di attività da punti di distribuzione disponibili in reti lente e inaffidabili.  
+    -   **Usare un punto di distribuzione remoto quando non sono disponibili punti di distribuzione locali**: specificare se i client possono scaricare il contenuto necessario per la sequenza di attività da punti di distribuzione disponibili in reti lente e inaffidabili.  
 
     -   **Consenti ai client di utilizzare un percorso origine di fallback per il contenuto**:
         - *Nelle versioni precedenti alla 1610* è possibile selezionare la casella di controllo Consenti percorso origine di fallback per il contenuto per consentire ai client esterni a questi gruppi di limiti di eseguire il fallback e usare il punto di distribuzione come percorso di origine per il contenuto in assenza di altri punti di distribuzione disponibili.
@@ -456,7 +455,7 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
  Dopo la distribuzione del pacchetto Windows To Go e della sequenza attività per Windows 8, Windows To Go Creator sarà disponibile all'utente. L'utente può accedere al catalogo del software (o al Software Center, se Windows To Go Creator è stato distribuito nei dispositivi) ed eseguire il programma Windows To Go Creator. Al termine del download del pacchetto di Creator, viene visualizzata un'icona lampeggiante sulla barra delle applicazioni. Quando l'utente fa clic sull'icona, viene visualizzata una finestra di dialogo in cui è possibile selezionare l'unità Windows To Go di cui eseguire il provisioning (a meno che non venga utilizzata l'opzione della riga di comando /drive). Se l'unità non soddisfa i requisiti per Windows To Go o se l'unità non dispone di spazio sufficiente per l'installazione dell'immagine, verrà visualizzato un messaggio di errore. Nella pagina di conferma l'utente può verificare l'unità e l'immagine che verranno applicate. Durante la configurazione e la pre-installazione del contenuto nell'unità Windows To Go, viene visualizzata una finestra di dialogo di avanzamento. Al termine della pre-installazione, viene chiesto di riavviare il computer dall'unità Windows To Go.  
 
 > [!NOTE]  
->  Se nella sezione [Create a Windows To Go Creator package](#BKMK_CreatePackage) non è stato abilitato il reindirizzamento dell'avvio nella riga di comando del programma di creazione nella sezione, è possibile che l'utente debba eseguire manualmente l'avvio dall'unità Windows To Go ad ogni riavvio del sistema.  
+>  Se nella sezione [Creare un pacchetto Windows To Go Creator](#BKMK_CreatePackage) non è stato abilitato il reindirizzamento dell'avvio nella riga di comando del programma di creazione nella sezione, è possibile che l'utente debba eseguire manualmente l'avvio dall'unità Windows To Go ad ogni riavvio del sistema.  
 
 ###  <a name="BKMK_ConfigureStageDrive"></a> Configuration Manager consente di configurare e preparare l'unità Windows To Go  
  Quando il computer viene riavviato dall'unità Windows To Go, l'unità esegue il riavvio in Windows PE ed esegue la connessione al punto di gestione per ottenere i criteri necessari per il completamento della distribuzione del sistema operativo. Configuration Manager configura e prepara l'unità Windows To Go. Quando Configuration Manager completa la preparazione dell'unità, l'utente può riavviare il computer per finalizzare il processo di provisioning, ad esempio mediante l'unione a un dominio o l'installazione di applicazioni. Questo processo è lo stesso per tutti i supporti preinstallati.  

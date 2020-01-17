@@ -10,17 +10,16 @@ ms.assetid: 1dc74219-7ff5-4e3b-b4f6-5aad663bb75b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9115fb3e0d36e4664541c70b29929dfe3ef8b6d9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 41a690aa8233f2812934d58b69bbb9461da675fd
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67572732"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821189"
 ---
 # <a name="infrastructure-requirements-for-os-deployment-in-configuration-manager"></a>Requisiti dell'infrastruttura per la distribuzione del sistema operativo in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 La distribuzione del sistema operativo in Configuration Manager ha dipendenze esterne e dipendenze all'interno del prodotto. Usare questo articolo per agevolare la preparazione dell'infrastruttura per la distribuzione del sistema operativo.  
 
@@ -187,9 +186,9 @@ Per usare i report di Configuration Manager per le distribuzioni del sistema ope
 
 Il ruolo di sicurezza **Gestione distribuzione del sistema operativo** è un ruolo predefinito che non può essere modificato. Tuttavia, è possibile copiare il ruolo, apportare modifiche e quindi salvare tali modifiche come un nuovo ruolo di sicurezza personalizzato. Di seguito vengono riportate alcune delle autorizzazioni che si applicano direttamente alle distribuzioni del sistema operativo:  
 
-- **Pacchetto immagine d'avvio**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
+- **Pacchetto di immagine di avvio**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
 
-- **Driver dispositivo**: Crea, Elimina, Modifica, Modifica cartella, Modifica report, Sposta oggetto, Lettura, Esegui report  
+- **Driver di dispositivo**: Crea, Elimina, Modifica, Modifica cartella, Modificare report, Sposta oggetto, Lettura, Esegui report  
 
 - **Pacchetto driver**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
 
@@ -197,7 +196,7 @@ Il ruolo di sicurezza **Gestione distribuzione del sistema operativo** è un ruo
 
 - **Pacchetto di aggiornamento del sistema operativo**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
 
-- **Pacchetto sequenza di attività**: Crea, Crea supporto per sequenza di attività, Elimina, Modifica, Modifica cartella, Modifica report, Sposta oggetto, Lettura, Esegui report, Imposta ambito di protezione  
+- **Pacchetto sequenza attività**: Crea, Crea supporto per sequenza attività, Elimina, Modifica, Modifica cartella, Modifica report, Sposta oggetto, Lettura, Esegui report, Imposta ambito di protezione  
 
 Per altre informazioni, vedere [Creare ruoli di sicurezza personalizzati](/sccm/core/servers/deploy/configure/configure-role-based-administration#BKMK_CreateSecRole).  
 

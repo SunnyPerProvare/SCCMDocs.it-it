@@ -10,19 +10,18 @@ ms.assetid: 95033a9b-ff13-4b70-b1de-bcb25bcb6024
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd7f84e097ddfbc36d3c595a28e0cb31b968ce57
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9a1dcd3528f4dbaacec81837150d6f8a1ad6c455
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70380059"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821359"
 ---
-# <a name="customize-operating-system-images-with-system-center-configuration-manager"></a>Personalizzare le immagini del sistema operativo con System Center Configuration Manager
+# <a name="customize-operating-system-images-with-configuration-manager"></a>Personalizzare le immagini del sistema operativo con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Le immagini di sistema operativo in System Center Configuration Manager sono file WIM e rappresentano una raccolta compressa di cartelle e file di riferimento necessari per installare e configurare un sistema operativo in un computer. Un'immagine personalizzata del sistema operativo viene creata e acquisita da un computer di riferimento configurato con tutti gli strumenti, gli aggiornamenti software, i file di supporto, i file di sistema del sistema operativo necessari e altre applicazioni software. Il livello di configurazione manuale del computer di riferimento dipende dall'utente. È possibile automatizzare completamente la configurazione del computer di riferimento usando una sequenza di attività di creazione e acquisizione, configurare manualmente determinati aspetti del computer di riferimento e quindi automatizzare gli aspetti rimanenti usando sequenze di attività, oppure configurare manualmente il computer di riferimento senza usare le sequenze di attività. Usare le sezioni seguenti per personalizzare un sistema operativo.
+Le immagini del sistema operativo in Configuration Manager sono file WIM e rappresentano una raccolta compressa di cartelle e file di riferimento necessari per installare e configurare un sistema operativo in un computer. Un'immagine personalizzata del sistema operativo viene creata e acquisita da un computer di riferimento configurato con tutti gli strumenti, gli aggiornamenti software, i file di supporto, i file di sistema del sistema operativo necessari e altre applicazioni software. Il livello di configurazione manuale del computer di riferimento dipende dall'utente. È possibile automatizzare completamente la configurazione del computer di riferimento usando una sequenza di attività di creazione e acquisizione, configurare manualmente determinati aspetti del computer di riferimento e quindi automatizzare gli aspetti rimanenti usando sequenze di attività, oppure configurare manualmente il computer di riferimento senza usare le sequenze di attività. Usare le sezioni seguenti per personalizzare un sistema operativo.
 
 ##  <a name="BKMK_PrepareReferenceComputer"></a> Preparare il computer di riferimento  
  Prima di acquisire un'immagine del sistema operativo da un computer di riferimento occorre considerare vari aspetti.  

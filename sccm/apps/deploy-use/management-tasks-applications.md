@@ -1,7 +1,7 @@
 ---
 title: Attività di gestione per le applicazioni
 titleSuffix: Configuration Manager
-description: Gestire le applicazioni e i tipi di distribuzione di System Center Configuration Manager.
+description: Gestire le applicazioni e i tipi di distribuzione di Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-app
@@ -10,19 +10,18 @@ ms.assetid: c4041e21-21ff-4d95-ab05-14007e0047cf
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39548117fb7e03614af32fa330fb86bf6de4151e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 0896204fa994643064676b55b20d63d349c4098b
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70378057"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75815630"
 ---
-# <a name="management-tasks-for-system-center-configuration-manager-applications"></a>Attività di gestione per applicazioni di System Center Configuration Manager
+# <a name="management-tasks-for-configuration-manager-applications"></a>Attività di gestione per applicazioni di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Usare le informazioni in questo articolo per gestire le applicazioni e i tipi di distribuzione di System Center Configuration Manager.  
+Usare le informazioni in questo articolo per gestire le applicazioni e i tipi di distribuzione di Configuration Manager.  
 
 Per altre informazioni sulla creazione di applicazioni e tipi di distribuzione, vedere [Create applications](../../apps/deploy-use/create-applications.md) (Creare le applicazioni).  
 
@@ -38,7 +37,7 @@ Per altre informazioni sulla creazione di applicazioni e tipi di distribuzione, 
 |**Crea file di contenuto di pre-installazione**|Apre la **Creazione guidata file di contenuto pre-installazione** che consente di gestire la distribuzione di contenuto nei punti di distribuzione remoti. Quando pianificazione e limitazione non rappresentano una valida soluzione per il punto di distribuzione remoto, è possibile pre-installare il contenuto nel punto di distribuzione<br /><br /> Vedere [Gestire il contenuto e l'infrastruttura del contenuto](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
 |**Cronologia revisioni**|Apre la finestra di dialogo **Cronologia revisione applicazione** che consente di visualizzare le proprietà delle revisioni effettuate su questa applicazione, eliminare le precedenti revisioni dell'applicazione e ripristinare le versioni precedenti dell'applicazione.<br /><br /> Vedere [Come rivedere e sostituire le applicazioni](../../apps/deploy-use/revise-and-supersede-applications.md).|  
 |**Crea tipo di distribuzione**|Apre la **Creazione guidata tipo di distribuzione** che consente di aggiungere un nuovo tipo di distribuzione all'applicazione selezionata.<br /><br /> Vedere [Creare applicazioni](../../apps/deploy-use/create-applications.md).|  
-|**Aggiorna statistiche**|Aggiorna le informazioni visualizzate nel nodo **Distribuzioni** dell'area di lavoro **Monitoraggio** relativo alle applicazioni di questa applicazione.<br /><br /> Vedere [Monitorare le applicazioni dalla console di System Center Configuration Manager](../../apps/deploy-use/monitor-applications-from-the-console.md).|  
+|**Aggiorna statistiche**|Aggiorna le informazioni visualizzate nel nodo **Distribuzioni** dell'area di lavoro **Monitoraggio** relativo alle applicazioni di questa applicazione.<br /><br /> Vedere [Monitorare le applicazioni dalla console di Configuration Manager](../../apps/deploy-use/monitor-applications-from-the-console.md).|  
 |**Ripristina**|Questa opzione ripristina un'applicazione ritirata tramite l'attività di gestione **Ritira**.|  
 |**Ritira**|Quando si ritira un'applicazione, questa non risulta più disponibile per la distribuzione ma non vengono eliminati né l'applicazione né le distribuzioni dell'applicazione. Le copie esistenti di questa applicazione che sono state installate nei computer client non verranno rimosse. Eventuali revisioni dell'applicazione verranno eliminate da Configuration Manager dopo 60 giorni. Le copie installate dell'applicazione non vengono tuttavia rimosse.<br /><br /> Per eliminare un'applicazione, è necessario prima ritirare l'applicazione, rimuovere tutte le distribuzioni, rimuovere i riferimenti all'applicazione da parte di altre distribuzioni e quindi eliminare tutte le revisioni dell'applicazione.<br /><br /> Vedere [Come rivedere e sostituire le applicazioni](../../apps/deploy-use/revise-and-supersede-applications.md).|  
 |**Export**|Apre l'**Esportazione guidata applicazione** che consente di esportare le applicazioni selezionate in un file con estensione zip che è possibile archiviare o installare in un altro sito. Se si sceglie di esportare il contenuto dell'applicazione, verrà creata una cartella con il contenuto.<br /><br /> È anche possibile esportare le dipendenze dell'applicazione, le relazioni e le condizioni di sostituzione, il contenuto per l'applicazione e le relative dipendenze.<br /><br /> Il cmdlet di Windows PowerShell, **Export-CMApplication**, esegue la stessa funzione. Per altre informazioni, vedere [Export-CMApplication](https://go.microsoft.com/fwlink/p/?LinkID=258880) nella documentazione di riferimento dei cmdlet di System Center 2012 Configuration Manager SP1.|  

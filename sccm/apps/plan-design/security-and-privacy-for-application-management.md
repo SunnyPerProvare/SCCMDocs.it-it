@@ -10,17 +10,16 @@ ms.assetid: 4d26deed-3b16-4116-b640-f618f2c20f5a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 004cc8e723008a79fcc336731f461ff35564c2f2
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
-ms.translationtype: MTE75
+ms.openlocfilehash: 54f38d0aa982213f06565dd343f0ec07e9057125
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74661380"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817245"
 ---
 # <a name="security-and-privacy-for-application-management-in-configuration-manager"></a>Sicurezza e privacy per la gestione delle applicazioni in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 ## <a name="security-guidance-for-application-management"></a>Indicazioni sulla sicurezza per la gestione delle applicazioni  
 
@@ -30,7 +29,7 @@ ms.locfileid: "74661380"
 
 L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. Questa configurazione consente di ridurre l'infrastruttura server necessaria per distribuire le applicazioni agli utenti.
 
-A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Riducendo l'infrastruttura server si riduce anche la superficie di attacco.
+A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Riducendo l'infrastruttura server si riduce anche la superficie di attacco.
 
 Per offrire un'esperienza dell'applicazione coerente e sicura per i client basati su Internet, usare Azure Active Directory e il gateway di gestione cloud.
 
@@ -39,7 +38,7 @@ Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-des
 ### <a name="use-https-with-the-application-catalog"></a>Usare HTTPS con il Catalogo applicazioni
 
 > [!Important]  
-> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
+> Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
 Configurare il punto per siti Web del Catalogo applicazioni e il punto per servizi Web del Catalogo applicazioni per accettare le connessioni HTTPS. Con questa configurazione, il server viene autenticato agli utenti. I dati trasmessi sono protetti da manomissioni e visualizzazioni.
 
@@ -51,14 +50,14 @@ Quando non si usa HTTPS, non usare le opzioni di configurazione della personaliz
 ### <a name="use-role-separation"></a>Usare la separazione dei ruoli
 
 > [!Important]  
-> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
+> Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
 Installare il punto per siti Web del Catalogo applicazioni e il punto per servizi Web del Catalogo applicazioni in server separati. Se il punto del sito Web è compromesso, viene separato dal punto di servizio Web. In questo modo si proteggono i client e l'infrastruttura. Questa configurazione è particolarmente importante se il punto per siti Web accetta connessioni client da Internet, rendendo così il server più vulnerabile agli attacchi.  
 
 ### <a name="close-browser-windows"></a>Chiudere le finestre del browser
 
 > [!Important]  
-> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
+> Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
 Istruire gli utenti a chiudere la finestra del browser dopo aver usato il Catalogo applicazioni. Se gli utenti navigano in un sito Web esterno nella stessa finestra del browser usata per il Catalogo applicazioni, il browser continua a usare le impostazioni di sicurezza adatte per i siti attendibili nell'Intranet.  
 
@@ -176,7 +175,7 @@ Se si configura un tipo di distribuzione delle applicazioni Web, usare HTTPS per
 ## <a name="BKMK_CertificatesSilverlight5"></a> Certificati per Microsoft Silverlight 5 e modalità di attendibilità elevata richiesta per il Catalogo applicazioni  
 
 > [!Important]  
-> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
+> Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
 I client di Configuration Manager versione 1710 e precedenti richiedono Microsoft Silverlight 5 che deve essere eseguito in modalità di attendibilità elevata perché gli utenti installino il software dal Catalogo applicazioni. Per impostazione predefinita, le applicazioni Silverlight vengono eseguite in modalità di attendibilità parziale per evitare l'accesso ai dati utente. Se non è già installato, Configuration Manager installa automaticamente Microsoft Silverlight 5 nei client. Per impostazione predefinita, Configuration Manager imposta su **Sì** l'impostazione client **Consentire alle applicazioni di Silverlight di essere eseguite in modalità attendibilità elevata**. Questa impostazione consente alle applicazioni Silverlight firmate e attendibili di richiedere la modalità attendibilità elevata.  
 
@@ -196,7 +195,7 @@ La gestione delle applicazioni consente l'esecuzione di qualsiasi applicazione, 
 
 Configuration Manager conserva le informazioni sullo stato relative al processo di distribuzione del software. Le informazioni sullo stato di distribuzione del software non vengono crittografate durante la trasmissione, a meno che il client non comunichi tramite HTTPS. Le informazioni sullo stato non vengono memorizzate in forma crittografata nel database.  
 
-L'uso delle funzionalità di installazione delle applicazioni di Configuration Manager per installare in remoto, in modo interattivo o automatico il software nei client può essere soggetto alle condizioni di licenza software per tali software, distinte dalle Condizioni di licenza software per System Center Configuration Manager. Rivedere sempre e accettare le Condizioni di licenza software prima di distribuire il software usando Configuration Manager.  
+L'uso delle funzionalità di installazione delle applicazioni di Configuration Manager per installare in remoto, in modo interattivo o automatico il software nei client può essere soggetto alle condizioni di licenza software per tali software, distinte dalle Condizioni di licenza software per Configuration Manager. Rivedere sempre e accettare le Condizioni di licenza software prima di distribuire il software usando Configuration Manager.  
 
 Configuration Manager raccoglie dati di utilizzo e di diagnostica sulle applicazioni, che vengono usati da Microsoft per migliorare le versioni future. Per altre informazioni, vedere [Diagnostica e dati di utilizzo](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data).
 
@@ -211,7 +210,7 @@ Le funzionalità seguenti consentono di distribuire il software in modo efficien
 - Il **Catalogo applicazioni** è un sito Web che consente agli utenti di richiedere software da installare.  
 
     > [!Important]  
-    > Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
+    > Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
 ### <a name="bkmk_privacy-uda"></a>Informazioni sulla privacy dell'affinità utente dispositivo
 
@@ -238,7 +237,7 @@ Le funzionalità seguenti consentono di distribuire il software in modo efficien
 ### <a name="application-catalog-privacy-information"></a>Informazioni sulla privacy del catalogo applicazioni
 
 > [!Important]  
-> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
+> Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
 - Il Catalogo applicazioni non viene installato per impostazione predefinita. Questa installazione richiede diversi passaggi di configurazione.  
 

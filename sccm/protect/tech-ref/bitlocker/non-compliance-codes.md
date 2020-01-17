@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: 6c28fa29-fc97-49ef-9fc3-cb062bdba908
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ace4481f680a9d05d7df599e124df991b273f398
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7e8b94a66cce2a6e8b4c5cc14e23ce8b8cdd655c
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74662329"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818979"
 ---
 # <a name="non-compliance-codes"></a>Codici di non conformità
 
@@ -26,7 +25,7 @@ ms.locfileid: "74662329"
 
 WMI sul client fornisce i codici non di conformità seguenti. Vengono inoltre descritti i motivi per cui un determinato dispositivo segnala come non conforme.
 
-Sono disponibili diversi metodi per la visualizzazione di WMI. Ad esempio, usare il comando di PowerShell seguente:
+Sono disponibili diversi metodi per la visualizzazione di WMI. Ad esempio, usare il seguente comando di PowerShell:
 
 ``` PowerShell
 (Get-WmiObject -Class mbam_Volume -Namespace root\microsoft\mbam).ReasonsForNoncompliance

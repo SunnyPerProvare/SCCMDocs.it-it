@@ -1,7 +1,7 @@
 ---
 title: 'Gestire lo stato utente '
 titleSuffix: Configuration Manager
-description: System Center Configuration Manager usa l'Utilità di migrazione stato utente per acquisire e ripristinare i dati sullo stato utente negli scenari di distribuzione del sistema operativo.
+description: Configuration Manager usa l'Utilità di migrazione stato utente per acquisire e ripristinare i dati sullo stato utente negli scenari di distribuzione del sistema operativo.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
@@ -10,19 +10,18 @@ ms.assetid: d8d5c345-1e91-410b-b8a9-0170dcfa846e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef5cfc38ea6c91653964e057396c47c11eab97b3
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ca567691cbacd79c54a76f5c108d6072354ff274
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73142944"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821274"
 ---
-# <a name="manage-user-state-in-system-center-configuration-manager"></a>Gestire lo stato utente in System Center Configuration Manager
+# <a name="manage-user-state-in-configuration-manager"></a>Gestire lo stato utente in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-È possibile usare le sequenze di attività di System Center Configuration Manager per acquisire e ripristinare i dati sullo stato utente in scenari di distribuzione del sistema operativo in cui si desidera mantenere lo stato utente del sistema operativo corrente. Ad esempio:  
+È possibile usare le sequenze attività di Configuration Manager per acquisire e ripristinare i dati sullo stato utente in scenari di distribuzione del sistema operativo in cui si desidera mantenere lo stato utente del sistema operativo corrente. Ad esempio:  
 
 - Distribuzioni in cui si vuole acquisire lo stato utente da un computer per ripristinarlo in un altro computer.  
 
@@ -57,7 +56,7 @@ ms.locfileid: "73142944"
 
 2.  [Create a computer association](#BKMK_ComputerAssociation) tra il computer di origine e il computer di destinazione. Prima di acquisire lo stato utente nel computer di origine, è necessario creare questa associazione.  
 
-3.  [Creare una sequenza di attività per acquisire e ripristinare lo stato utente in System Center Configuration Manager](../deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md). In particolare, è necessario aggiungere i passaggi della sequenza di attività seguenti per acquisire dati utente da un computer, archiviarli in un punto di migrazione stato e ripristinarli in un computer:  
+3.  [Creare una sequenza di attività per acquisire e ripristinare lo stato utente](../deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md). In particolare, è necessario aggiungere i passaggi della sequenza di attività seguenti per acquisire dati utente da un computer, archiviarli in un punto di migrazione stato e ripristinarli in un computer:  
 
     -   [Richiedi archiviazione stati](../understand/task-sequence-steps.md#BKMK_RequestStateStore) per richiedere l'accesso a un punto di migrazione stato durante l'acquisizione dello stato da un computer o il ripristino dello stato in un computer.  
 

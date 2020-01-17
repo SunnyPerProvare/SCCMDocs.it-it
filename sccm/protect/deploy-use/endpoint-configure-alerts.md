@@ -1,7 +1,7 @@
 ---
 title: Configurare gli avvisi di Endpoint Protection
 titleSuffix: Configuration Manager
-description: Informazioni su come configurare gli avvisi di Endpoint Protection in System Center Configuration Manager.
+description: Informazioni su come configurare gli avvisi di Endpoint Protection in Configuration Manager.
 ms.date: 03/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
@@ -10,19 +10,18 @@ ms.assetid: f504de3e-4caf-455c-80d7-a63f13f4c5d9
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee1bf48298c3c21388267c4975d6d59383157593
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 55877923ae2e9a7aa47b3ebe774f7dc0e4ea21a4
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65494751"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820050"
 ---
 #  <a name="configure-alerts-for-endpoint-protection-in-configuration-manager"></a>Configurare gli avvisi di Endpoint Protection in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
- È possibile configurare gli avvisi di Endpoint Protection in Microsoft System Center Configuration Manager per notificare agli utenti amministratori se si verificano eventi specifici nella gerarchia, ad esempio un'infezione da malware. Le notifiche vengono visualizzate nel dashboard di Endpoint Protection della console di Configuration Manager nel nodo **Avvisi** dell'area di lavoro **Monitoraggio** o possono essere inviate tramite posta elettronica agli utenti specificati.
+ È possibile configurare gli avvisi di Endpoint Protection in Microsoft Configuration Manager per notificare agli utenti amministratori se si verificano eventi specifici nella gerarchia, ad esempio un'infezione da malware. Le notifiche vengono visualizzate nel dashboard di Endpoint Protection della console di Configuration Manager nel nodo **Avvisi** dell'area di lavoro **Monitoraggio** o possono essere inviate tramite posta elettronica agli utenti specificati.
 
  Seguire i passaggi e le procedure supplementari seguenti di questo argomento per configurare gli avvisi per Endpoint Protection in Configuration Manager.
 
@@ -45,7 +44,7 @@ ms.locfileid: "65494751"
     > [!NOTE]
     >  Questa opzione non è disponibile per la raccolta **Tutti i sistemi** .
 
-5.  Nella scheda **Avvisi** della finestra di dialogo **Proprietà** _<Nome raccolta\>_ fare clic su **Aggiungi**.
+5.  Nella scheda **Avvisi** della finestra di dialogo **Proprietà** _\>Nome raccolta_ fare clic su **Aggiungi**.
 
 6.  Nella sezione **Genera un avviso quando si applicano queste condizioni** della finestra di dialogo **Aggiungi avvisi nuova raccolta**, selezionare gli avvisi che devono essere generati da Configuration Manager se si verificano gli eventi di Endpoint Protection specificati e fare clic su **OK**.
 
@@ -76,15 +75,15 @@ ms.locfileid: "65494751"
 
         -   **Numero di rilevamenti malware** : l'avviso viene generato quando lo stesso malware viene rilevato nei computer nella raccolta per un numero di volte maggiore di quello specificato. Specificare un numero compreso tra **2** e **32**.
 
-        -   **Intervallo per rilevamento (ore)** : specificare l'intervallo di rilevamento (in ore) in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
+        -   **Intervallo per rilevamento (ore):** specificare l'intervallo di rilevamento (in ore) in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
 
     -   **Rilevamento di più malware**: questo avviso viene generato se più di un numero specificato di tipi di malware viene rilevato durante un numero determinato di ore nei computer della raccolta monitorata. Per configurare questo avviso, specificare le informazioni seguenti:
 
-        -   **Numero di tipi di malware rilevati** : l'avviso viene generato quando viene rilevato il numero specificato di tipi diversi di malware nei computer nella raccolta. Specificare un numero compreso tra **2** e **32**.
+        -   **Numero di tipi di malware rilevato:** l'avviso viene generato quando viene rilevato il numero specificato di tipi diversi di malware nei computer nella raccolta. Specificare un numero compreso tra **2** e **32**.
 
-        -   **Intervallo per rilevamento (ore)** : specificare l'intervallo di rilevamento, in ore, in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
+        -   **Intervallo per rilevamento (ore):** specificare l'intervallo di rilevamento (in ore) in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
 
-9. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà** _<Nome raccolta\>_ .  
+9. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà** _\>Nome raccolta_.  
 
 ## <a name="alert-for-outdated-malware-client"></a>Avviso per client malware obsoleto
 

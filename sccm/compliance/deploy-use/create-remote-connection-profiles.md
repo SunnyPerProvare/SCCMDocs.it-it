@@ -1,7 +1,7 @@
 ---
 title: Creare profili di connessione remota
 titleSuffix: Configuration Manager
-description: Usare i profili di connessione remota di System Center Configuration Manager per consentire agli utenti di connettersi in modalità remota ai computer aziendali.
+description: Usare i profili di connessione remota di Configuration Manager per consentire agli utenti di connettersi in modalità remota ai computer aziendali.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
@@ -10,19 +10,18 @@ ms.assetid: 8c6eabc4-5dda-4682-b03e-3a450e6ef65a
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5cdb08070c13feed573a947ba1f5ccf6a47b3e1
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
-ms.translationtype: MTE75
+ms.openlocfilehash: e853fcaa5fc20baec1726f91eed14e2d07f5d57e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62214550"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816412"
 ---
-# <a name="remote-connection-profiles-in-system-center-configuration-manager"></a>Profili di connessione remota in System Center Configuration Manager
+# <a name="remote-connection-profiles-in-configuration-manager"></a>Profili di connessione remota in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Usare i profili di connessione remota in System Center Configuration Manager per consentire agli utenti di connettersi in modalità remota ai computer aziendali quando non sono connessi al dominio o se i loro PC sono connessi tramite Internet.  
+Usare i profili di connessione remota in Configuration Manager per consentire agli utenti di connettersi in modalità remota ai computer aziendali quando non sono connessi al dominio o se i loro PC sono connessi tramite Internet.  
 
  Gli utenti possono connettersi al PC di lavoro dai seguenti tipi di dispositivo:  
 
@@ -158,16 +157,16 @@ Distribuire un profilo di connessione remota
 
      La pagina **Stato distribuzione** contiene le seguenti schede:  
 
-    -   **Conforme** : visualizza la conformità del profilo di connessione remota in base al numero degli asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che sono conformi al profilo di connessione remota. Il riquadro **Dettagli asset** visualizza anche i dispositivi che sono conformi a questo profilo. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive.  
+    -   **Conforme:** Viene visualizzata la conformità del profilo di connessione remota in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che sono conformi al profilo di connessione remota. Il riquadro **Dettagli asset** visualizza anche i dispositivi che sono conformi a questo profilo. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive.  
 
         > [!IMPORTANT]  
         >  Un profilo di connessione remota non viene valutato se non è applicabile a un dispositivo client. Tuttavia, viene restituito come conforme.  
 
-    -   **Errore** : visualizza un elenco di tutti gli errori per la distribuzione del profilo di connessione remota selezionata in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che hanno generato errori con questo profilo. Quando si seleziona un dispositivo, il riquadro **Dettagli asset** visualizza i dispositivi interessati dal problema selezionato. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive sul problema.  
+    -   **Errore:** Viene visualizzato un elenco di tutti gli errori per la distribuzione del profilo di connessione remota selezionato in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che hanno generato errori con questo profilo. Quando si seleziona un dispositivo, il riquadro **Dettagli asset** visualizza i dispositivi interessati dal problema selezionato. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive sul problema.  
 
-    -   **Non conforme** : visualizza un elenco di tutte le regole non conformi nel profilo di connessione remota in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che non sono conformi a questo profilo. Quando si seleziona un dispositivo, il riquadro **Dettagli asset** visualizza i dispositivi interessati dal problema selezionato. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive sul problema.  
+    -   **Non conforme:** Viene visualizzato un elenco di tutte le regole non conformi nel profilo di connessione remota in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che non sono conformi a questo profilo. Quando si seleziona un dispositivo, il riquadro **Dettagli asset** visualizza i dispositivi interessati dal problema selezionato. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive sul problema.  
 
-    -   **Sconosciuto** : visualizza un elenco di tutti i dispositivi che non sono conformi alla distribuzione del profilo di connessione remota selezionata insieme allo stato client corrente dei dispositivi.  
+    -   **Sconosciuto:** Viene visualizzato un elenco di tutti i dispositivi che non sono conformi alla distribuzione del profilo di connessione remota selezionato insieme allo stato del client corrente dei dispositivi.  
 
 5.  Nella pagina **Stato distribuzione** è possibile esaminare le informazioni dettagliate sulla conformità del profilo di connessione remota distribuito. Viene creato un nodo temporaneo nel nodo **Distribuzioni** che consente di ritrovare rapidamente queste informazioni.  
 
@@ -177,4 +176,4 @@ Distribuire un profilo di connessione remota
 > [!IMPORTANT]  
 >  È necessario utilizzare un carattere jolly (%) quando si utilizzano i parametri **Filtro dispositivo** e **Filtro utente** nei report per le impostazioni di conformità.  
 
- Per altre informazioni sulle modalità di configurazione dei report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](/sccm/core/servers/manage/reporting).  
+ Per altre informazioni sulle modalità di configurazione della creazione di report in Configuration Manager, vedere [Creazione di report](/sccm/core/servers/manage/reporting).  

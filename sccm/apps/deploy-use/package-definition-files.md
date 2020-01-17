@@ -10,17 +10,16 @@ ms.assetid: 2de963d7-ffb9-43c3-9e1d-fc992b67bebd
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba927286e79d88a6e034fd7eb14f5190cb1f34d6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 0cf106028cdf61ca8138f22752de9eed2c5869f4
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68537679"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818399"
 ---
 # <a name="package-definition-files"></a>File di definizione del pacchetto
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 I file di definizione del pacchetto sono script che consentono di automatizzare la creazione di [pacchetti e programmi](/sccm/apps/deploy-use/packages-and-programs) in Configuration Manager. Specificano tutte le informazioni necessarie a Configuration Manager per creare un pacchetto e un programma, ad eccezione del percorso dei file origine del pacchetto.
 
@@ -38,15 +37,15 @@ Questa sezione identifica il file come file di definizione del pacchetto. Contie
 
 Specificare le proprietà del pacchetto e del programma. Contiene le informazioni seguenti:  
 
-- **Nome**: Il nome del pacchetto, fino a 50 caratteri.  
+- **Nome**: nome del pacchetto, con un massimo di 50 caratteri.  
 
-- **Versione** (facoltativo): la versione del pacchetto, con un massimo di 32 caratteri.  
+- **Versione** (facoltativo): versione del pacchetto, con un massimo di 32 caratteri.  
 
-- **Icona** (facoltativo): il file contenente l'icona da usare per il pacchetto. Se specificata, questa icona sostituisce quella del pacchetto predefinita nella console di Configuration Manager.
+- **Icona** (facoltativo): file contenente l'icona da usare per il pacchetto. Se specificata, questa icona sostituisce quella del pacchetto predefinita nella console di Configuration Manager.
 
-- **Publisher**: Il server di pubblicazione del pacchetto, un massimo di 32 caratteri.
+- **Server di pubblicazione**: server di pubblicazione del pacchetto, con un massimo di 32 caratteri.
 
-- **Lingua**: La versione della lingua del pacchetto, un massimo di 32 caratteri.
+- **Lingua**: versione della lingua del pacchetto, con un massimo di 32 caratteri.
 
 - **Commento** (facoltativo): commento sul pacchetto, con un massimo di 127 caratteri.
 
@@ -58,19 +57,19 @@ Specificare le proprietà del pacchetto e del programma. Contiene le informazion
 
     `Programs=Typical, Custom, Uninstall`  
 
-- **MIFFileName**: Il nome del file di formato MIF (Management Information) che contiene lo stato del pacchetto, fino a 50 caratteri.  
+- **MIFFileName**: nome del file MIF (Management Information) che contiene lo stato del pacchetto, con un massimo di 50 caratteri.  
 
-- **MIFName**: nome del pacchetto per la corrispondenza MIF, fino a 50 caratteri.  
+- **MIFName**: nome del pacchetto (per la corrispondenza MIF), con un massimo di 50 caratteri.  
 
-- **MIFVersion**: numero di versione del pacchetto per la corrispondenza MIF, fino a 32 caratteri.  
+- **MIFVersion**: numero di versione del pacchetto (per la corrispondenza MIF), con un massimo di 32 caratteri.  
 
-- **MIFPublisher**: autore del software del pacchetto per la corrispondenza MIF, fino a 32 caratteri.  
+- **MIFPublisher**: autore del software del pacchetto (per la corrispondenza MIF), con un massimo di 32 caratteri.  
 
 ### <a name="program"></a>[Program]
 
 Includere una sezione [Program] per ogni programma specificato nella voce **Programs** nella sezione **[Package Definition]** . In questa sezione viene definito ogni programma. Ogni sezione Program offre le informazioni seguenti:  
 
-- **Nome**: Il nome del programma, fino a 50 caratteri. Questa voce deve essere univoca all'interno di un pacchetto.  
+- **Nome**: nome del programma, con un massimo di 50 caratteri. Questa voce deve essere univoca all'interno di un pacchetto.  
 
 - **Icona** (facoltativo): specificare il file contenente l'icona da usare per il programma. Questa icona sostituisce l'icona di programma predefinita nella console di Configuration Manager. Il client visualizza anche questa icona quando si distribuisce il programma in una raccolta.
 
@@ -82,7 +81,7 @@ Includere una sezione [Program] per ogni programma specificato nella voce **Prog
 
 - **Esegui**: specificare la modalità in cui viene eseguito il programma. È possibile specificare **ridotta a icona**, **ingrandita**, o **Hidden**. Se non si include questa voce, il programma viene eseguito in modalità normale.  
 
-- **AfterRunning**: specificare qualsiasi azione speciale che si verifica dopo il completamento del programma. Le opzioni disponibili sono **SMSRestart**, **ProgramRestart**, o **SMSLogoff**. Se non si include questa voce, il programma non esegue un'azione speciale.  
+- **AfterRunning**: specificare qualsiasi azione speciale da eseguire dopo che il programma è stato completato correttamente. Le opzioni disponibili sono **SMSRestart**, **ProgramRestart**, o **SMSLogoff**. Se non si include questa voce, il programma non esegue un'azione speciale.  
 
 - **EstimatedDiskSpace**: specificare la quantità di spazio su disco necessaria per l'esecuzione del programma software nel computer. Il valore predefinito è **Unknown**. È possibile impostare il valore su un numero intero maggiore o uguale a zero. Se si specifica un valore, includere anche le unità per il valore.  
 
@@ -98,7 +97,7 @@ Includere una sezione [Program] per ogni programma specificato nella voce **Prog
 
 - **SupportedClients**: specificare i processori e i sistemi operativi in cui viene eseguito il programma. Separare le piattaforme per virgole. Se non si include questa voce, il client non controlla le piattaforme supportate per questo programma.  
 
-- **SupportedClientMinVersionX**, **SupportedClientMaxVersionX**: specificare l'intervallo tra i numeri di versione iniziali e quelli finali per i sistemi operativi specificati alla voce **SupportedClients**.  
+- **SupportedClientMinVersionX**, **SupportedClientMaxVersionX**: specificare l'intervallo tra numero di versione iniziale e finale per i sistemi operativi specificati alla voce **SupportedClients**.  
 
     Esempio:  
 
@@ -134,22 +133,22 @@ Includere una sezione [Program] per ogni programma specificato nella voce **Prog
 
 - **AdminRightsRequired**: specificare se per l'esecuzione del programma è necessario immettere credenziali amministrative nel computer. I valori disponibili sono **True** o **False**. Il valore predefinito è **False**. Questa voce è impostata su **True** se **CanRunWhen** non è impostato su **UserLoggedOn**.  
 
-- **UseInstallAccount**: specificare se il programma usa l'account di installazione del software client durante l'esecuzione nei computer client. Per impostazione predefinita, questo valore è **False**. Questo valore corrisponde anche **False** se **CanRunWhen** è impostato su **UserLoggedOn**.  
+- **UseInstallAccount**: specificare se il programma usa l'account di installazione software client per l'esecuzione nei computer client. Per impostazione predefinita, questo valore è **False**. Questo valore corrisponde anche **False** se **CanRunWhen** è impostato su **UserLoggedOn**.  
 
-- **DriveLetterConnection**: specificare se il programma richiede la connessione di una lettera di unità ai file del pacchetto nel punto di distribuzione. È possibile specificare **True** o **False**. Il valore predefinito è **False**, che consente al programma di usare una connessione UNC (Universal Naming Convention). Quando questo valore è impostato su **True**, il client usa la lettera di unità successiva disponibile, a partire da Z: e andando a ritroso.  
+- **DriveLetterConnection**: specificare se il programma richiede una connessione con lettera di unità per i file del pacchetto che si trovano nel punto di distribuzione. È possibile specificare **True** o **False**. Il valore predefinito è **False**, che consente al programma di usare una connessione UNC (Universal Naming Convention). Quando questo valore è impostato su **True**, il client usa la lettera di unità successiva disponibile, a partire da Z: e andando a ritroso.  
 
-- **DriveLetterConnection**: specificare una lettera di unità necessaria al programma per connettersi ai file del pacchetto nel punto di distribuzione. Questa impostazione forza l'uso della lettera di unità specificata per le connessioni client ai punti di distribuzione.
+- **SpecifyDrive** (facoltativo): specificare una lettera di unità necessaria al programma per connettersi ai file del pacchetto nel punto di distribuzione. Questa impostazione forza l'uso della lettera di unità specificata per le connessioni client ai punti di distribuzione.
 
 - **ReconnectDriveAtLogon**: specificare se il computer si riconnette al punto di distribuzione quando l'utente esegue l'accesso. I valori disponibili sono **True** o **False**. Il valore predefinito è **False**.  
 
-- **DependentProgram**: specificare un programma nel pacchetto che deve essere eseguito prima del programma corrente. Questa voce usa il formato `DependentProgram=<ProgramName>`, dove `<ProgramName>` è la voce di **nome** per il programma nel file di definizione del pacchetto. Se non sono presenti programmi dipendenti, lasciare vuota questa voce.  
+- **DependentProgram**: specificare un programma in questo pacchetto che deve essere eseguito prima del programma corrente. Questa voce usa il formato `DependentProgram=<ProgramName>`, dove `<ProgramName>` è la voce di **nome** per il programma nel file di definizione del pacchetto. Se non sono presenti programmi dipendenti, lasciare vuota questa voce.  
 
     Esempi:  
 
     `DependentProgram=Admin`  
     `DependentProgram=`  
 
-- **Assignment**: specificare il modo in cui il programma viene assegnato agli utenti. Questo valore può essere:
+- **Assignment**: specificare come il programma viene assegnato agli utenti. Questo valore può essere:
 
     - **FirstUser**: solo il primo utente che accede al client esegue il programma
     - **EveryUser**: ogni utente che accede esegue il programma

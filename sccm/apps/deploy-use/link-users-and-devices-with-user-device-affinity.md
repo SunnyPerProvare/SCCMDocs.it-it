@@ -10,17 +10,16 @@ ms.assetid: 5b30b0d5-722d-4d4b-9ed7-5a43de315461
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c91aeb94067a6b61c5a96bc9176a0825634225f8
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 40468a161145a858c72e305326bf4fa0460de549
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74658711"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75815681"
 ---
 # <a name="link-users-and-devices-with-user-device-affinity-in-configuration-manager"></a>Collegare utenti e dispositivi con l'affinità utente-dispositivo in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 L'affinità utente-dispositivo in Configuration Manager associa un utente a uno o più dispositivi. Questo comportamento può eliminare la necessità di conoscere i nomi dei dispositivi di un utente per poter distribuire un'applicazione all'utente. Anziché distribuire l'applicazione a ogni dispositivo dell'utente, è possibile distribuire l'applicazione all'utente. L'affinità utente-dispositivo garantisce quindi automaticamente l'installazione dell'applicazione in tutti i dispositivi associati all'utente.  
 
@@ -77,7 +76,7 @@ Per configurare queste impostazioni, usare i criteri di gruppo di Windows.
 
     - Soglia di utilizzo di **affinità utente dispositivo (minuti)** : impostare il numero di minuti di utilizzo del dispositivo prima che il sito crei un'affinità utente dispositivo.  
 
-    - **Soglia di utilizzo di affinità utente dispositivo (giorni)** : impostare il numero di giorni per cui il sito misura la soglia di affinità basata sull'utilizzo.  
+    - **Soglia di utilizzo di affinità utente dispositivo (giorni)** : impostare il numero di giorni in cui il sito misura la soglia di affinità in base all'utilizzo.  
 
     - **Configurare automaticamente l'affinità utente dispositivo dai dati di utilizzo**: selezionare **true** per consentire al sito di creare automaticamente le affinità utente dispositivo. Se si seleziona **False**, è necessario approvare manualmente tutte le assegnazioni di affinità utente-dispositivo.  
 
@@ -134,7 +133,7 @@ A partire dalla versione 1902, usare software Center per impostare l'affinità.
 ### <a name="set-up-a-user-device-affinity-in-the-application-catalog"></a>Configurare un'affinità utente dispositivo nel Catalogo applicazioni
 
 > [!Important]
-> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910.  
+> L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >

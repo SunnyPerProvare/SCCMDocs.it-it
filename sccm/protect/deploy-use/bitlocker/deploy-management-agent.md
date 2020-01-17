@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: 39aa0558-742c-4171-81bc-9b1e6707f4ea
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f91a1da10584da69dcbdcec2d1afdf2b25e41962
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: 398b85c1dd7aa871027fb71196c3c027c9bf4f75
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198864"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820866"
 ---
 # <a name="deploy-bitlocker-management"></a>Distribuire la gestione di BitLocker
 
@@ -32,7 +31,7 @@ La gestione di BitLocker in Configuration Manager include i componenti seguenti:
 
 Prima di creare e distribuire i criteri di gestione di BitLocker:
 
-- Verificare i [prerequisiti](/configmgr/protect/plan-design/bitlocker-management#prerequisites)
+- Esaminare i [prerequisiti](/configmgr/protect/plan-design/bitlocker-management#prerequisites)
 
 - Se necessario, [crittografare le chiavi di ripristino](/configmgr/protect/deploy-use/bitlocker/encrypt-recovery-data) nel database del sito
 
@@ -49,7 +48,7 @@ Quando si crea e si distribuisce questo criterio, il client Configuration Manage
 
 1. Nella pagina **Generale** specificare un nome e una descrizione facoltativa. Selezionare i componenti da attivare nei client con questi criteri:  
 
-    - **Gestione client**: gestire il backup del servizio di recupero chiave per le informazioni di ripristino di Crittografia unità BitLocker  
+    - **Gestione dei client**: Gestire il backup del servizio di recupero chiave per le informazioni di ripristino di Crittografia unità BitLocker  
 
     - **Unità del sistema operativo**: gestire se l'unità del sistema operativo è crittografata
 

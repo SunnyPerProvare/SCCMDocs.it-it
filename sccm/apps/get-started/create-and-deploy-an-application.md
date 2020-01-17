@@ -10,19 +10,18 @@ ms.assetid: 3bd1e487-ea18-43c1-b7c3-acbd9b86d429
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c754486bd1026ccea3dc3b85f8412420c3c66a40
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
-ms.translationtype: MTE75
+ms.openlocfilehash: 3b3c138b2f84d5101957c3f0e0afe29350506d2d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68535389"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817806"
 ---
-# <a name="create-and-deploy-an-application-with-system-center-configuration-manager"></a>Creare e distribuire un'applicazione con System Center Configuration Manager
+# <a name="create-and-deploy-an-application-with-configuration-manager"></a>Creare e distribuire un'applicazione con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo argomento fornisce informazioni che consentono di creare subito un'applicazione con System Center Configuration Manager. In questo esempio viene creata e distribuita un'applicazione contenente una riga per un'app aziendale per PC Windows denominata **Contoso.msi** che deve essere installata in tutti i PC che eseguono Windows 10 all'interno dell'azienda. Durante questo processo verranno fornite informazioni su gran parte delle operazioni che è possibile eseguire per gestire le applicazioni in modo efficace.  
+Questo argomento include informazioni che consentono di creare subito un'applicazione con Configuration Manager. In questo esempio viene creata e distribuita un'applicazione contenente una riga per un'app aziendale per PC Windows denominata **Contoso.msi** che deve essere installata in tutti i PC che eseguono Windows 10 all'interno dell'azienda. Durante questo processo verranno fornite informazioni su gran parte delle operazioni che è possibile eseguire per gestire le applicazioni in modo efficace.  
 
  Questa procedura è progettata per offrire una panoramica su come creare e distribuire le applicazioni di Configuration Manager. Tuttavia, non copre tutte le opzioni di configurazione e non fornisce tutte le informazioni su come creare e distribuire applicazioni per altre piattaforme.  
 
@@ -57,7 +56,7 @@ Assicurarsi di aver esaminato le informazioni contenute in [Introduzione alla ge
 
    - **Tipo**: scegliere **Windows Installer (file \*.msi)** .  
 
-   - **Percorso**: immettere il percorso del file di installazione **Contoso.msi** o fare clic su **Sfoglia**per selezionare il percorso. Per trovare i file di installazione con Configuration Manager, il percorso deve essere specificato nel formato *\\\Server\Share\File*.  
+   - **Percorso**: immettere il percorso del file di installazione **Contoso.msi** o fare clic su **Sfoglia** per selezionare il percorso. Per trovare i file di installazione con Configuration Manager, il percorso deve essere specificato nel formato *\\\Server\Share\File*.  
 
    Al termine, verrà visualizzata una schermata simile alla seguente:  
 

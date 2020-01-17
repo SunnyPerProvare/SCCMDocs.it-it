@@ -1,5 +1,5 @@
 ---
-title: Guida di riferimento tecnico per la distribuzione di applicazioni
+title: Guida di riferimento tecnico per la risoluzione dei problemi di distribuzione delle applicazioni
 titleSuffix: Configuration Manager
 description: Riferimento tecnico per la risoluzione dei problemi di distribuzione delle applicazioni in Configuration Manager.
 ms.date: 11/04/2019
@@ -10,21 +10,20 @@ ms.assetid: a4eb09c8-e570-4369-9adb-ded9c8ad3400
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a436c7acd254d9b07289eb0f5ddce6f75d93fa43
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d8e996adffadc87e74e88bef684ed97a9371146a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74823441"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75782065"
 ---
 # <a name="technical-reference-for-application-deployment-in-configuration-manager"></a>Riferimento tecnico per la distribuzione delle applicazioni in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 In questo articolo si apprenderà come funzionano le distribuzioni dell'applicazione.
 
-## <a name="before-you-begin"></a>Prima di iniziare
+## <a name="before-you-begin"></a>Operazioni preliminari
 
 Per la risoluzione dei problemi relativi alle distribuzioni dell'applicazione, sono disponibili più elementi che possono essere utili quando si esaminano i log del client. Questi elementi includono:
 

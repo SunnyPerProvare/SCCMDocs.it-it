@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: 4b60b0e1-ffa4-4fd5-864e-70a0546c8b3b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 75b6a22bf19db09e3070e7cd7cea0f685484359f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3c04a106e7be35bff1ebaee97f7373ad777f7c73
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74661040"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827054"
 ---
 # <a name="debug-a-task-sequence"></a>Eseguire il debug di una sequenza di attività
 
@@ -63,19 +62,19 @@ Quando la sequenza di attività viene eseguita nel dispositivo, viene visualizza
 
 Il debugger include i controlli seguenti:
 
-- **Passaggio**: dalla posizione *corrente* eseguire solo il passaggio successivo della sequenza di attività.  
+- **Step** (Passaggio): Dalla posizione *corrente* eseguire solo il passaggio successivo nella sequenza di attività.  
 
     > [!Note]  
     > Quando la sequenza di attività è in modalità di debug, se un passaggio restituisce un errore irreversibile, la sequenza di attività non ha esito negativo come di consueto. Questo comportamento consente di ripetere un passaggio dopo avere apportato una modifica esterna.
 
-- **Esegui**: dalla posizione *corrente* eseguire normalmente la sequenza di attività fino alla fine o al punto di *interruzione* successivo oppure se un passaggio non viene eseguito. Prima di usare questa azione, assicurarsi di impostare eventuali punti di rottura con l'azione **imposta interruzioni** .
+- **Esegui**: Dalla posizione *corrente* eseguire normalmente la sequenza di attività fino alla fine o al punto di *interruzione* successivo oppure se un passaggio non viene eseguito. Prima di usare questa azione, assicurarsi di impostare eventuali punti di rottura con l'azione **imposta interruzioni** .
 
-- **Imposta corrente**: selezionare un passaggio nel debugger e quindi selezionare **Imposta corrente**. Questa azione sposta il puntatore *corrente* su quel passaggio. Questa azione consente di saltare passaggi o spostarsi all'indietro.  
+- **Set Current** (Imposta corrente): Selezionare un passaggio nel debugger, quindi selezionare **Set Current** (Imposta corrente). Questa azione sposta il puntatore *corrente* su quel passaggio. Questa azione consente di saltare passaggi o spostarsi all'indietro.  
 
     > [!Warning]  
     > Il debugger non considera il tipo di passaggio quando si modifica la posizione corrente nella sequenza. Alcuni passaggi possono impostare le variabili della sequenza di attività necessarie per la valutazione della condizione nei passaggi successivi. Se l'ordine di esecuzione non è corretto, alcuni passaggi possono non riuscire o causare danni significativi a un dispositivo. Usare questa opzione a proprio rischio.  
 
-- **Imposta interruzione**: selezionare un passaggio nel debugger e quindi selezionare **Imposta interruzione**. Questa azione aggiunge un punto di *interruzione* nel debugger. Durante l'**esecuzione** la sequenza di attività si ferma in corrispondenza di un'*interruzione*.  
+- **Set Break** (Imposta interruzione): Selezionare un passaggio nel debugger, quindi selezionare **Set Break** (Imposta interruzione). Questa azione aggiunge un punto di *interruzione* nel debugger. Durante l'**esecuzione** la sequenza di attività si ferma in corrispondenza di un'*interruzione*.  
 
     - Prima di usare l'azione **Esegui** , impostare i punti di rottura.
 

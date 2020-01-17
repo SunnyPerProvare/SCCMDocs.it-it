@@ -1,7 +1,7 @@
 ---
 title: Operazioni preliminari alle distribuzioni in computer sconosciuti
 titleSuffix: Configuration Manager
-description: Informazioni su come distribuire i sistemi operativi ai computer che non sono gestiti da Configuration Manager nell'ambiente di System Center Configuration Manager.
+description: Informazioni su come distribuire i sistemi operativi ai computer che non sono gestiti da Configuration Manager nell'ambiente di Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
@@ -10,19 +10,18 @@ ms.assetid: 9e447e34-0943-49ed-b6ba-3efebf3566c1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c64ae61e2ff31a14b6c4b094eafa5feac197e21
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 6e79e2ec1d42c7ed0e520b5e117fbac73817511a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62243623"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821240"
 ---
-# <a name="prepare-for-unknown-computer-deployments-in-system-center-configuration-manager"></a>Operazioni preliminari alle distribuzioni in computer sconosciuti in System Center Configuration Manager
+# <a name="prepare-for-unknown-computer-deployments-in-configuration-manager"></a>Preparare le distribuzioni in computer sconosciuti in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Usare le informazioni di questo argomento per distribuire sistemi operativi a computer sconosciuti nell'ambiente di System Center Configuration Manager. Un computer sconosciuto è un computer che non è gestito da Configuration Manager. Ciò vuol dire che non ci sono record di questi computer nel database di Configuration Manager. I computer sconosciuti includono i seguenti:  
+Usare le informazioni di questo argomento per distribuire sistemi operativi a computer sconosciuti nell'ambiente di Configuration Manager. Un computer sconosciuto è un computer che non è gestito da Configuration Manager. Ciò vuol dire che non ci sono record di questi computer nel database di Configuration Manager. I computer sconosciuti includono i seguenti:  
 
 - Computer in cui non è installato il client di Configuration Manager  
 
@@ -75,8 +74,8 @@ Usare le informazioni di questo argomento per distribuire sistemi operativi a co
 
 -   **Supporto di avvio**  
 
-     Selezionare la casella di controllo **Abilita supporto per computer sconosciuti** nella pagina **Protezione** della Creazione guidata del supporto per la sequenza attività. Per altre informazioni, vedere [Configurazione dei punti di distribuzione per accettare le richieste PXE](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint) e [Usare PXE per distribuire Windows in rete con System Center Configuration Manager](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+     Selezionare la casella di controllo **Abilita supporto per computer sconosciuti** nella pagina **Protezione** della Creazione guidata del supporto per la sequenza attività. Per altre informazioni, vedere [Configurazione dei punti di distribuzione per accettare le richieste PXE](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint) e [Usare PXE per distribuire Windows in rete con Configuration Manager](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
 -   **Supporto pre-installato**  
 
-     Selezionare la casella di controllo **Abilita supporto per computer sconosciuti** nella pagina **Protezione** della Creazione guidata del supporto per la sequenza attività. Per ulteriori informazioni, vedere [Creare supporti pre-installati con System Center Configuration Manager](../deploy-use/create-prestaged-media.md).  
+     Selezionare la casella di controllo **Abilita supporto per computer sconosciuti** nella pagina **Protezione** della Creazione guidata del supporto per la sequenza attività. Per altre informazioni, vedere [Creare supporti pre-installati con Configuration Manager](../deploy-use/create-prestaged-media.md).  

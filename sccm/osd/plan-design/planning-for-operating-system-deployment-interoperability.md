@@ -1,7 +1,7 @@
 ---
 title: Interoperabilità della distribuzione del sistema operativo
 titleSuffix: Configuration Manager
-description: Conoscere i problemi di interoperabilità quando siti diversi di System Center Configuration Manager in un'unica gerarchia usano versioni diverse.
+description: Conoscere i problemi di interoperabilità quando siti diversi di Configuration Manager in un'unica gerarchia usano versioni diverse.
 ms.date: 05/28/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
@@ -10,19 +10,18 @@ ms.assetid: e327ce38-6c07-4a27-b6eb-7e5bf74ed04b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d4f6275ede2a751acb8ca14d7b8b6ad307e78bd
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 08b838792904c4de5a3c691e6b362d13c3cdc872
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "66355002"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821155"
 ---
 # <a name="plan-for-os-deployment-interoperability"></a>Pianificare l'interoperabilità della distribuzione del sistema operativo
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Quando siti diversi di System Center Configuration Manager in un'unica gerarchia usano versioni diverse, alcune funzionalità di Configuration Manager non sono disponibili. In genere, le funzionalità della versione più recente di Configuration Manager non sono accessibili in siti o da client che eseguono una versione precedente. Per ulteriori informazioni, vedere [Interoperabilità tra versioni diverse di System Center Configuration Manager](/sccm/core/plan-design/hierarchy/interoperability-between-different-versions).  
+Quando siti diversi di Configuration Manager in un'unica gerarchia usano versioni diverse, alcune funzionalità di Configuration Manager non sono disponibili. In genere, le funzionalità della versione più recente di Configuration Manager non sono accessibili in siti o da client che eseguono una versione precedente. Per altre informazioni, vedere [Interoperabilità tra versioni diverse di Configuration Manager](/sccm/core/plan-design/hierarchy/interoperability-between-different-versions).  
 
 
 ## <a name="objects"></a>Oggetti

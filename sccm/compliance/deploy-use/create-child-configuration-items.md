@@ -1,7 +1,7 @@
 ---
 title: Creare elementi di configurazione figlio
 titleSuffix: Configuration Manager
-description: Creare elementi di configurazione figlio in System Center Configuration Manager.Come creare elementi di configurazione figlio in System Center Configuration Manager.
+description: Creare elementi di configurazione figlio in Configuration Manager
 ms.date: 05/07/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
@@ -10,19 +10,18 @@ ms.assetid: 113984fa-6150-41a1-89ed-d2a83b979732
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b88ee7eaac8df8ffce93937f3a3f2616b9e085b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: d194d9e80c037a13dde3d694793b695dfa5902e8
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65443167"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816616"
 ---
-# <a name="how-to-create-child-configuration-items-in-system-center-configuration-manager"></a>Come creare elementi di configurazione figlio in System Center Configuration Manager
+# <a name="how-to-create-child-configuration-items-in-configuration-manager"></a>Come creare elementi di configurazione figlio in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Gli elementi di configurazione figlio in System Center Configuration Manager sono copie di elementi di configurazione che mantengono una relazione con l'elemento di configurazione originale e che quindi ereditano la configurazione originale dall'elemento di configurazione padre.  
+Gli elementi di configurazione figlio in Configuration Manager sono copie di elementi di configurazione che mantengono una relazione con l'elemento di configurazione originale e che quindi ereditano la configurazione originale dall'elemento di configurazione padre.  
 
 Quando si visualizzano le proprietà di un elemento di configurazione figlio nella console di Configuration Manager, non è possibile modificare le impostazioni e gli oggetti ereditati con i relativi criteri di convalida. Tuttavia, è possibile aggiungere e quindi modificare criteri di convalida aggiuntivi per l'elemento di configurazione figlio, al quale è anche possibile aggiungere nuovi oggetti e impostazioni.
 Un esempio della creazione e della modifica di un elemento di configurazione figlio è di solito quello di ottimizzare l'elemento di configurazione originale per soddisfare i requisiti aziendali.  

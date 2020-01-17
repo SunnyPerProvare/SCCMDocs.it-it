@@ -10,13 +10,12 @@ ms.assetid: 887f8029-1a3a-423c-a9c1-31dc0d693386
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83e0f9d4f84a93d057701a3aab521d4650d66472
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 95a67435fb292ed2b592256694f525a53cf4f50a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70888480"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827180"
 ---
 # <a name="manage-software-update-catalogs-in-updates-publisher"></a>Gestire cataloghi di aggiornamenti software in Updates Publisher
 
@@ -54,10 +53,10 @@ Oltre all'aggiunta di cataloghi e alla visualizzazione di informazioni sui catal
 
     -   Nella console passare all'**area di lavoro Cataloghi** > **My Catalogs** (Cataloghi personali). Scegliere quindi **Add Catalogs** (Aggiungi cataloghi) dalla barra multifunzione.
 
--   **Aggiungere un catalogo utente:** nella console passare all'**area di lavoro Cataloghi** > **My Catalogs** (Cataloghi personali). Scegliere quindi **Add Catalogs** (Aggiungi cataloghi) dalla barra multifunzione. Oltre al percorso del file con estensione cab, è necessario specificare un fornitore, un nome e una descrizione per identificare il catalogo.
+-   **Aggiungere un catalogo utente:** Nella console passare all'**area di lavoro Cataloghi** > **My Catalogs** (Cataloghi personali). Scegliere quindi **Add Catalogs** (Aggiungi cataloghi) dalla barra multifunzione. Oltre al percorso del file con estensione cab, è necessario specificare un fornitore, un nome e una descrizione per identificare il catalogo.
 
 
--   **Verificare la presenza di aggiornamenti dei cataloghi:** selezionare uno o più cataloghi, quindi scegliere **Aggiorna** dalla barra multifunzione.
+-   **Verificare la presenza di aggiornamenti dei cataloghi:** selezionare uno o più cataloghi e quindi scegliere **Aggiorna** dalla barra multifunzione.
 
 -   **Modificare un catalogo utente:** selezionare un catalogo *utente* e quindi scegliere **Modifica** dalla barra multifunzione. È quindi possibile modificare le proprietà definite dall'utente.
 

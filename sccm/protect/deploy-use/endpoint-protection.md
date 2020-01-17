@@ -10,17 +10,16 @@ ms.assetid: 76c90f64-d729-456b-8304-01852cd66fb6
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce48f468154357a0032d737c6d77a6b6b29d9565
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 018bd22e56a5646e09861108600a64885392e8bf
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67678826"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819625"
 ---
 # <a name="endpoint-protection"></a>Endpoint Protection
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Endpoint Protection gestisce i criteri antimalware e la sicurezza di Windows Firewall per i computer client nella gerarchia di Configuration Manager.  
 
@@ -46,7 +45,7 @@ A partire da Windows 10 e Windows Server 2016, Windows Defender è già installa
 
  Con Endpoint Protection nella console di Configuration Manager si gestiscono anche le impostazioni di Windows Firewall.  
 
- [Example scenario: Using System Center Endpoint Protection to protect computers from malware in System Center Configuration Manager](scenarios-endpoint-protection.md) (Scenario di esempio: uso di Endpoint Protection in System Center per proteggere i computer da malware in System Center Configuration Manager) Endpoint Protection e Windows Firewall.  
+ [Example scenario: uso di Endpoint Protection in System Center per proteggere i computer da malware](scenarios-endpoint-protection.md) Endpoint Protection e Windows Firewall.  
 
 
 ## <a name="managing-malware-with-endpoint-protection"></a>Gestione del malware con Endpoint Protection  
@@ -54,11 +53,11 @@ A partire da Windows 10 e Windows Server 2016, Windows Defender è già installa
 
  Altre informazioni:  
 
--   [How to create and deploy antimalware policies for Endpoint Protection in System Center Configuration Manager](endpoint-antimalware-policies.md) (Creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager): creare, distribuire e monitorare criteri antimalware con un elenco di impostazioni da configurare  
+-   [Come creare e distribuire criteri antimalware per Endpoint Protection](endpoint-antimalware-policies.md): creare, distribuire e monitorare criteri antimalware con un elenco di impostazioni da configurare  
 
--   [How to monitor Endpoint Protection in System Center Configuration Manager](monitor-endpoint-protection.md) (Monitorare Endpoint Protection in System Center Configuration Manager): monitoraggio dei report sull'attività, dei computer client infetti e altro.  
+-   [Come monitorare](monitor-endpoint-protection.md) i report delle attività di monitoraggio Endpoint Protection, i computer client infetti e altro ancora.  
 
--   [How to manage antimalware policies and firewall settings for Endpoint Protection in System Center Configuration Manager](endpoint-antimalware-firewall.md) (Come gestire i criteri antimalware e le impostazioni del firewall per Endpoint Protection in System Center Configuration Manager)  
+-   [Come gestire i criteri antimalware e le impostazioni del firewall per Endpoint Protection](endpoint-antimalware-firewall.md) -correggere malware trovati nei computer client  
 
 
 ## <a name="managing-windows-firewall-with-endpoint-protection"></a>Gestione di Windows Firewall con Endpoint Protection  

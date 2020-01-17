@@ -1,7 +1,7 @@
 ---
 title: Rivedere e sostituire le applicazioni
 titleSuffix: Configuration Manager
-description: Informazioni su come usare le versioni delle applicazioni in System Center Configuration Manager e sostituire le applicazioni.
+description: Informazioni su come usare le versioni delle applicazioni in Configuration Manager e sostituire le applicazioni.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-app
@@ -10,19 +10,18 @@ ms.assetid: 30170d70-489f-47f7-bebf-9ed0115db26b
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1330eafb50d7a855d60b86e427f9cf4f3cb8790e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 87804ee2a76dea918cebb964a3672ab61bf6de8d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62198374"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818044"
 ---
-# <a name="revise-and-supersede-applications-in-system-center-configuration-manager"></a>Rivedere e sostituire le applicazioni in System Center Configuration Manager
+# <a name="revise-and-supersede-applications-in-configuration-manager"></a>Rivedere e sostituire le applicazioni in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-In questo argomento verrà illustrato come rivedere le versioni delle applicazioni di System Center Configuration Manager e come sostituire le applicazioni con una nuova versione.  
+In questo argomento verrà illustrato come rivedere le versioni delle applicazioni di Configuration Manager e come sostituire le applicazioni con una nuova versione.  
 
 ##  <a name="application-revisions"></a>Revisioni delle applicazioni  
  Quando si eseguono revisioni a un'applicazione o a un tipo di distribuzione incluso in un'applicazione, Configuration Manager crea una nuova revisione dell'applicazione. È possibile visualizzare la cronologia delle revisioni di ciascuna applicazione. È possibile inoltre visualizzarne le proprietà, ripristinare una revisione precedente di un'applicazione oppure eliminare una revisione precedente.  
@@ -99,7 +98,7 @@ In questo argomento verrà illustrato come rivedere le versioni delle applicazio
 
 3.  Nel gruppo **Proprietà** della scheda **Home** scegliere **Proprietà** per aprire la finestra di dialogo **Proprietà** <nome applicazione>.  
 
-4.  Nella scheda **Sostituzione** della finestra di dialogo **Proprietà** *<nome applicazione\>* scegliere **Aggiungi**.  
+4.  Nella scheda **Sostituzione** della finestra di dialogo **Proprietà** *<Nome applicazione\>* scegliere **Aggiungi**.  
 
 5.  Nella finestra di dialogo **Specificare la relazione di sostituzione** fare clic su **Sfoglia**.  
 
@@ -112,7 +111,7 @@ In questo argomento verrà illustrato come rivedere le versioni delle applicazio
 
 8.  Scegliere **OK** per chiudere la finestra di dialogo **Specificare la relazione di sostituzione** .  
 
-9. Scegliere **OK** per chiudere la finestra di dialogo **Proprietà** *<nome applicazione\>* .  
+9. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà** *<Nome applicazione\>* .  
 
 ### <a name="to-display-applications-that-supersede-the-current-application"></a>Per visualizzare le applicazioni che sostituiscono l'applicazione corrente  
 
@@ -120,8 +119,8 @@ In questo argomento verrà illustrato come rivedere le versioni delle applicazio
 
 2.  Nell'area di lavoro **Raccolta software** espandere **Gestione applicazioni**, scegliere **Applicazioni** e quindi scegliere l'applicazione.  
 
-3.  Nel gruppo **Proprietà** della scheda **Home** scegliere **Proprietà** per aprire la finestra di dialogo **Proprietà** *<nome applicazione\>* .  
+3.  Nel gruppo **Proprietà** della scheda **Home** scegliere **Proprietà** per aprire la finestra di dialogo **Proprietà** *<Nome applicazione\>* .  
 
-4.  Nella scheda **Riferimenti** della finestra di dialogo **Proprietà** *<nome applicazione\>* scegliere **Applicazioni che sostituiscono l'applicazione** nell'elenco a discesa **Tipo di relazione**.  
+4.  Nella scheda **Riferimenti** della finestra di dialogo **Proprietà** *<Nome applicazione\>* scegliere **Applicazioni che sostituiscono l'applicazione** nell'elenco a discesa **Tipo di relazione**.  
 
-5.  Riesaminare l'elenco delle applicazioni che sostituiscono l'applicazione selezionata e quindi scegliere **OK** per chiudere la finestra di dialogo **Proprietà** *<nome applicazione\>* .  
+5.  Riesaminare l'elenco delle applicazioni che sostituiscono l'applicazione selezionata e quindi scegliere **OK** per chiudere la finestra di dialogo **Proprietà** *<Nome applicazione\>* .  

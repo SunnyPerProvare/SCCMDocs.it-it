@@ -10,13 +10,12 @@ ms.assetid: 634d612c-92d7-4c03-873a-b2e730c9a72d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb0d0d2597dfb0eb2fa06c40db744d4cd5246a50
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: fe0be3f57f5842405f614b7227a534f27b39b115
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660904"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820577"
 ---
 # <a name="create-certificate-profiles"></a>Creare i profili certificato
 
@@ -49,21 +48,21 @@ Per avviare la Creazione guidata profilo certificato:
 
 Nella pagina **Generale** della Creazione guidata profilo certificato specificare le informazioni seguenti:  
 
-- **Nome**: immettere un nome univoco per il profilo certificato. È possibile usare un massimo di 256 caratteri.  
+- **Nome**: Immettere un nome univoco per il profilo certificato. È possibile usare un massimo di 256 caratteri.  
 
 - **Descrizione**: specificare una descrizione che fornisca una panoramica del profilo certificato. Includere anche altre informazioni rilevanti per facilitarne l'identificazione nella console di Configuration Manager. È possibile usare un massimo di 256 caratteri.  
 
 - Specificare il tipo di profilo certificato che si vuole creare:
 
-  - **Certificato CA attendibile**: selezionare questo tipo di profilo certificato se si vuole distribuire un certificato CA radice attendibile o un certificato CA intermedio per formare una catena di certificati quando l'utente o il dispositivo deve autenticare un altro dispositivo. Ad esempio, il dispositivo può essere un server RADIUS (Remote Authentication Dial-In User Service) o un server di rete privata virtuale (VPN).
+  - **Certificato CA attendibile**: Selezionare questo tipo di profilo certificato se si vuole distribuire un certificato CA radice attendibile o un certificato CA intermedio per formare una catena di certificati quando l'utente o il dispositivo deve autenticare un altro dispositivo. Ad esempio, il dispositivo può essere un server RADIUS (Remote Authentication Dial-In User Service) o un server di rete privata virtuale (VPN).
   
     Configurare anche un profilo certificato CA attendibile prima di creare un profilo certificato SCEP. In questo caso, il certificato CA attendibile deve essere per la CA che rilascia il certificato all'utente o al dispositivo.  
 
-  - **Impostazioni di Simple Certificate Enrollment Protocol (SCEP)** : selezionare questo tipo per richiedere un certificato per un utente o un dispositivo con il protocollo SCEP (Simple Certificate Enrollment Protocol) e il servizio del ruolo del servizio Registrazione dispositivi di rete (NDES).
+  - **Impostazioni di Simple Certificate Enrollment Protocol (SCEP)** : Selezionare questo tipo per richiedere un certificato per un utente o un dispositivo con il protocollo SCEP (Simple Certificate Enrollment Protocol) e il servizio del ruolo del servizio Registrazione dispositivi di rete (NDES).
 
-  - **Scambio informazioni personali - Impostazioni PKCS #12 (PFX) - Importa**: selezionare questa opzione per importare un certificato PFX. Per altre informazioni, vedere [Import PFX certificate Profiles](/configmgr/mdm/deploy-use/import-pfx-certificate-profiles).
+  - **Scambio informazioni personali -- Impostazioni PKCS #12 (PFX) -- Importa**: Selezionare questa opzione per importare un certificato PFX. Per altre informazioni, vedere [Importare profili certificato PFX](/configmgr/mdm/deploy-use/import-pfx-certificate-profiles).
 
-  - **Personal Information Exchange - Impostazioni PKCS #12 (PFX) - Crea**: selezionare questa opzione per elaborare i certificati PFX usando un'autorità di certificazione. Per altre informazioni, vedere [Creare profili certificato PFX](/configmgr/mdm/deploy-use/create-pfx-certificate-profiles).
+  - **Scambio informazioni personali -- Impostazioni PKCS #12 (PFX) -- Crea**: Selezionare questa opzione per elaborare i certificati PFX usando un'autorità di certificazione. Per altre informazioni, vedere [Creare profili certificato PFX](/configmgr/mdm/deploy-use/create-pfx-certificate-profiles).
 
 ## <a name="trusted-ca-certificate"></a>Certificato CA attendibile  
 
@@ -87,7 +86,7 @@ Nella pagina **Generale** della Creazione guidata profilo certificato specificar
 
     - **File di certificato**: selezionare **Importa**, quindi passare al file del certificato.  
 
-    - **Archivio di destinazione**: per i dispositivi che dispongono di più archivi di certificati, selezionare dove archiviare il certificato. Per i dispositivi con un solo archivio, questa impostazione viene ignorata.  
+    - **Archivio di destinazione**: per i dispositivi con più archivi certificati consente di selezionare il percorso in cui archiviare il certificato. Per i dispositivi con un solo archivio, questa impostazione viene ignorata.  
 
 2. Usare il valore **Identificazione personale certificato** per accertarsi di aver importato il certificato corretto.  
 
@@ -103,24 +102,24 @@ Completare la pagina **Registrazione SCEP** della Creazione guidata profilo cert
 
 - **Tentativi**: specificare il numero di volte in cui il dispositivo ritenta automaticamente la richiesta di certificato al server registrazione dispositivi. Questa impostazione supporta lo scenario in cui un CA Manager deve approvare una richiesta di certificato prima dell'accettazione. Questa impostazione viene in genere usata per gli ambienti ad alta protezione o se si dispone di una CA emittente autonoma invece di una CA globale (enterprise). È anche possibile usare questa impostazione a scopo di test, in modo da poter ispezionare le opzioni di richiesta certificato prima che la richiesta certificato venga elaborata dalla CA emittente. Usare questa impostazione con l'opzione **Intervallo tra tentativi (minuti)** .  
 
-- **Intervallo tra tentativi (minuti)** : specificare l'intervallo in minuti tra ogni tentativo di registrazione quando si utilizza l'approvazione del responsabile CA prima che la richiesta certificato venga elaborata dalla CA emittente. Se si usa l'approvazione del responsabile a scopo di test, specificare un valore basso. Non è quindi necessario attendere molto tempo prima che il dispositivo ritenti la richiesta di certificato dopo l'approvazione della richiesta.
+- **Intervallo tra tentativi (minuti)** : Specificare l'intervallo in minuti tra ogni tentativo di registrazione quando si usa l'approvazione del responsabile CA prima che la richiesta di certificato venga elaborata dalla CA emittente. Se si usa l'approvazione del responsabile a scopo di test, specificare un valore basso. Non è quindi necessario attendere molto tempo prima che il dispositivo ritenti la richiesta di certificato dopo l'approvazione della richiesta.
 
     Se si utilizza l'approvazione del responsabile in una rete di produzione, specificare un valore più elevato. Questo comportamento consente all'amministratore della CA un tempo sufficiente per approvare o negare le approvazioni in sospeso.  
 
-- **Soglia rinnovo (%)** : specificare la percentuale di durata residua del certificato prima che il dispositivo richieda il rinnovo del certificato.  
+- **Soglia di rinnovo (%)** : specificare la percentuale di durata residua del certificato prima che il dispositivo richieda il rinnovo del certificato.  
 
-- **Provider di archiviazione chiavi (KSP)** : specificare dove è archiviata la chiave per il certificato. Scegliere tra uno dei seguenti valori:  
+- **Provider di archiviazione chiavi (KSP)** : Specificare dove viene archiviata la chiave per il certificato. Scegliere tra uno dei seguenti valori:  
 
-  - **Installa in TPM (Trusted Platform Module) se presente**: installa la chiave nel modulo TPM. Se il TPM non è presente, la chiave viene installata nel provider di archiviazione per la chiave software.  
+  - **Installa in TPM (Trusted Platform Module) se presente**: Installa la chiave in TPM. Se il TPM non è presente, la chiave viene installata nel provider di archiviazione per la chiave software.  
 
-  - **Installa in TPM (Trusted Platform Module) in caso di errore**: installa la chiave nel modulo TPM. Se il modulo TPM non è presente, l'installazione non riesce.  
+  - **Installa in TPM (Trusted Platform Module) in caso di errore**: Installa la chiave nel TPM. Se il modulo TPM non è presente, l'installazione non riesce.  
 
-  - **Installa in Windows Hello for Business oppure genera errore**: questa opzione è disponibile per i dispositivi Windows 10. Consente di archiviare il certificato nell'archivio Windows Hello for business, che è protetto da autenticazione a più fattori. Per altre informazioni, vedere [Windows Hello for Business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification).
+  - **Installa in Windows Hello for Business oppure genera errore**: Questa opzione è disponibile per i dispositivi Windows 10. Consente di archiviare il certificato nell'archivio Windows Hello for business, che è protetto da autenticazione a più fattori. Per altre informazioni, vedere [Windows Hello for Business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification).
 
     > [!NOTE]  
     > Questa opzione non supporta l'accesso con smart card per l'utilizzo chiavi avanzato nella pagina Proprietà certificato.
 
-  - **Installa nel provider di archiviazione chiavi software**: installa la chiave nel provider di archiviazione per la chiave software.  
+  - **Installa nel provider di archiviazione chiavi software**: Installa la chiave nel provider di archiviazione per la chiave software.  
 
 - **Dispositivi per la registrazione del certificato**: se il profilo certificato viene distribuito in una raccolta utenti, consentire la registrazione dei certificati solo sul dispositivo primario dell'utente o su qualsiasi dispositivo a cui l'utente accede.
 
@@ -148,12 +147,12 @@ Nella pagina **Proprietà certificato** della Creazione guidata profilo certific
 
 - **Tipo di certificato**: selezionare se il certificato verrà distribuito a un dispositivo o a un utente.  
 
-- **Formato nome soggetto**: selezionare in che modo Configuration Manager crea automaticamente il nome del soggetto nella richiesta di certificato. Se il certificato è per un utente, è anche possibile includere l'indirizzo di posta elettronica dell'utente nel nome del soggetto.
+- **Formato nome soggetto**: Selezionare in che modo Configuration Manager crea automaticamente il nome del soggetto nella richiesta di certificato. Se il certificato è per un utente, è anche possibile includere l'indirizzo di posta elettronica dell'utente nel nome del soggetto.
 
     > [!NOTE]  
     > Se si seleziona **Codice IMEI**  o **Numero di serie**, è possibile distinguere i diversi dispositivi appartenenti allo stesso utente. Tali dispositivi, ad esempio, potrebbero condividere il nome comune, ma non il codice IMEI o il numero di serie. Se il dispositivo non ha un codice IMEI o un numero di serie, il certificato viene emesso con il nome comune.
 
-- **Nome alternativo soggetto**: specificare in che modo Configuration Manager crea automaticamente i valori per il nome alternativo del soggetto nella richiesta di certificato. Ad esempio, se si seleziona un tipo di certificato utente, è possibile includere il nome dell'entità utente (UPN) nel nome alternativo oggetto. Se il certificato client verrà usato per eseguire l'autenticazione in un server dei criteri di rete, impostare il nome alternativo oggetto sul nome dell'entità utente.  
+- **Nome alternativo soggetto**: Specificare in che modo Configuration Manager crea automaticamente i valori per il nome alternativo oggetto (SAN) nella richiesta certificato. Ad esempio, se si seleziona un tipo di certificato utente, è possibile includere il nome dell'entità utente (UPN) nel nome alternativo oggetto. Se il certificato client verrà usato per eseguire l'autenticazione in un server dei criteri di rete, impostare il nome alternativo oggetto sul nome dell'entità utente.  
 
 - **Periodo di validità del certificato**: se si imposta un periodo di validità personalizzato sulla CA emittente, specificare la quantità di tempo rimanente prima della scadenza del certificato.
 
@@ -163,26 +162,26 @@ Nella pagina **Proprietà certificato** della Creazione guidata profilo certific
 
     È possibile specificare un valore inferiore, ma non superiore rispetto al periodo di validità nel modello di certificato indicato. Ad esempio, se il periodo di validità del certificato nel modello di certificato è di due anni, è possibile specificare un valore di un anno ma non un valore di cinque anni. Inoltre, il valore deve essere inferiore rispetto al periodo di validità rimanente del certificato della CA emittente.  
 
-- **Utilizzo chiave**: specificare le opzioni di utilizzo della chiave per il certificato. È possibile scegliere una delle opzioni seguenti:  
+- **Utilizzo chiavi**: specificare le opzioni di uso delle chiavi per il certificato. È possibile scegliere una delle opzioni seguenti:  
 
-  - **Crittografia chiave**: consentire lo scambio di chiavi solo quando la chiave viene crittografata.  
+  - **Crittografia chiave**: consentire lo scambio di chiavi solo quando la chiave è crittografata.  
 
-  - **Firma digitale**: consentire lo scambio di chiavi soltanto se una firma digitale consente di proteggere la chiave.  
+  - **Firma digitale**: consentire lo scambio di chiavi solo se viene usata una firma digitale per proteggere la chiave.  
 
   Se è stato visualizzato un modello di certificato, non è possibile modificare queste impostazioni, a meno che non si selezioni un modello di certificato diverso.  
 
   Configurare il modello di certificato selezionato con una o entrambe le due opzioni di utilizzo della chiave sopra riportate. In caso contrario, verrà visualizzato il messaggio seguente nel file di registro del punto di registrazione certificati **Crp.log**: **Utilizzo chiave in CSR e richiesta di verifica non corrispondono**  
 
-- **Dimensione chiave (bits)** : selezionare la dimensione della chiave in bit.  
+- **Dimensioni chiave (bit)** : Selezionare le dimensioni della chiave in bit.  
 
-- **Utilizzo chiave esteso**: aggiungere valori per lo scopo designato del certificato. Nella maggior parte dei casi il certificato richiede l'**Autenticazione Client** in modo che l'utente o il dispositivo possa eseguire l'autenticazione a un server. È possibile aggiungere altri utilizzi di chiavi secondo necessità.  
+- **Utilizzo chiavi avanzato**: aggiungere valori per lo scopo designato del certificato. Nella maggior parte dei casi il certificato richiede l'**Autenticazione Client** in modo che l'utente o il dispositivo possa eseguire l'autenticazione a un server. È possibile aggiungere altri utilizzi di chiavi secondo necessità.  
 
-- **Algoritmo hash**: selezionare uno dei tipi di algoritmo hash disponibili da utilizzare con il certificato. Selezionare il livello di sicurezza più avanzato supportato dai dispositivi che verranno connessi.  
+- **Algoritmo hash**: selezionare uno dei tipi di algoritmo hash disponibili da usare con questo certificato. Selezionare il livello di sicurezza più avanzato supportato dai dispositivi che verranno connessi.  
 
   > [!NOTE]  
   > **SHA-2** supporta SHA-256, SHA-384 e SHA-512. **SHA-1** supporta solo SHA-3.  
 
-- **Certificato CA radice**: scegliere un profilo del certificato della CA radice già configurato e distribuito all'utente o al dispositivo. Questo certificato CA deve essere il certificato radice per l'autorità di certificazione che rilascerà il certificato che si sta configurando in questo profilo certificato.  
+- **Certificato CA radice**: Scegliere un profilo del certificato della CA radice già configurato e distribuito all'utente o al dispositivo. Questo certificato CA deve essere il certificato radice per l'autorità di certificazione che rilascerà il certificato che si sta configurando in questo profilo certificato.  
 
   > [!IMPORTANT]  
   > Se si specifica un certificato CA radice non distribuito all'utente o al dispositivo, Configuration Manager non avvierà la richiesta di certificato in fase di configurazione in questo profilo certificato.  

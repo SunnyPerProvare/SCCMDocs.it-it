@@ -10,17 +10,16 @@ ms.assetid: b670cfaf-96a4-4fcb-9caa-0f2e8c2c6198
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e730a71f7924e0ac55c9dd142f87abe279b82c4
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: 1c6a2c20685703e9d47016b8e5ba914438064b28
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198711"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827350"
 ---
 # <a name="optimize-windows-10-update-delivery-with-configuration-manager"></a>Ottimizzare il recapito degli aggiornamenti di Windows 10 con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Per molti clienti, un percorso appropriato per ottenere gli aggiornamenti mensili di Windows 10 e rimanere aggiornati inizia dalla definizione di una strategia di distribuzione del contenuto valida con Configuration Manager. Le dimensioni degli aggiornamenti qualitativi mensili possono essere fonte di preoccupazione per le organizzazioni di grandi dimensioni. Esistono alcune tecnologie che consentono di ridurre il carico sulla rete e la larghezza di banda per ottimizzare il recapito degli aggiornamenti. Questo articolo illustra queste tecnologie, le confronta e fornisce indicazioni per prendere più facilmente decisioni su quella da usare.  
  
@@ -53,7 +52,7 @@ Nelle sezioni successive sono disponibili ulteriori informazioni su queste tecno
 [Ottimizzazione recapito](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) rappresenta la tecnologia di download e il metodo di distribuzione peer-to-peer principali inclusi in Windows 10. I client Windows 10 possono ottenere il contenuto da altri dispositivi nella propria rete locale che scarica gli stessi aggiornamenti. Usando le [opzioni di Windows disponibili per Ottimizzazione recapito](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference#delivery-optimization-options) è possibile configurare i client in gruppi. Questo raggruppamento consente alle organizzazioni di identificare i dispositivi che sono probabilmente i migliori candidati per soddisfare le richieste peer-to-peer. Ottimizzazione recapito riduce significativamente la larghezza di banda complessiva usata per mantenere aggiornati i dispositivi, velocizzando contemporaneamente i tempi di download.
 
 > [!NOTE]  
-> Ottimizzazione recapito è una soluzione gestita dal cloud. L'accesso a Internet al servizio cloud Ottimizzazione recapito è un requisito per utilizzare le funzionalità peer-to-peer. Per informazioni sugli endpoint Internet necessari, vedere [domande frequenti sull'ottimizzazione del recapito](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#frequently-asked-questions). 
+> Ottimizzazione recapito è una soluzione gestita dal cloud. L'accesso a Internet al servizio cloud Ottimizzazione recapito è un requisito per utilizzare le funzionalità peer-to-peer. Per informazioni sugli endpoint Internet necessari, vedere [Domande frequenti per Ottimizzazione recapito](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#frequently-asked-questions). 
 
 Per ottenere risultati ottimali, potrebbe essere necessario impostare la [modalità di download](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference#download-mode) di Ottimizzazione recapito su **Gruppo (2)** e definire *ID di gruppo*. In modalità gruppo, il peering può attraversare subnet interne tra i dispositivi che appartengono allo stesso gruppo, inclusi i dispositivi in uffici remoti. Usare l'opzione [ID gruppo](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference#select-the-source-of-group-ids) per creare un gruppo personalizzato indipendentemente da domini e siti di Active Directory Domain Services. La modalità di download di gruppo è l'opzione consigliata per la maggior parte delle organizzazioni che vuole ottenere la massima ottimizzazione della larghezza di banda con Ottimizzazione recapito.
 
@@ -101,7 +100,7 @@ La selezione della tecnologia di peer caching appropriata per i file di installa
 | Supporto del contenuto parziale | Sì, per tutti i tipi di contenuto supportati elencati nella riga successiva della colonna. | Solo per Office 365 e gli aggiornamenti rapidi | Sì, per tutti i tipi di contenuto supportati elencati nella riga successiva della colonna. |
 | Tipi di contenuto supportati | **Tramite ConfigMgr:** </br> -Aggiornamenti rapidi </br> -Tutti gli aggiornamenti di Windows (a partire dalla versione 1910). Questa operazione non include gli aggiornamenti di Office.</br> </br> **Tramite Microsoft Cloud:**</br> - Windows e aggiornamenti della sicurezza</br> - Driver</br> - App di Windows Store</br> - App di Windows Store per le aziende | Tutti i tipi di contenuto ConfigMgr, incluse le immagini scaricate in [Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic) | Tutti i tipi di contenuto di ConfigMgr, ad eccezione delle immagini |
 | Controllo delle dimensioni della cache su disco | Sì | Sì | Sì |
-| Individuazione di un'origine peer | Automatica | Manuale (impostazione agente client) | Automatica |
+| Individuazione di un'origine peer | Automatico | Manuale (impostazione agente client) | Automatico |
 | Individuazione peer | Tramite il servizio cloud Ottimizzazione recapito (richiede l'accesso a Internet) | Tramite il punto di gestione (basato su gruppi di limiti client) | Multicast |
 | Reporting | Sì (con Windows Analytics) | Dashboard Origini dati del client di ConfigMgr | Dashboard Origini dati del client di ConfigMgr |
 | Controllo dell'utilizzo WAN | Sì (nativa e controllabile tramite impostazioni di Criteri di gruppo) | Gruppi di limiti | Solo supporto subnet |
@@ -162,7 +161,7 @@ Le modifiche diventano effettive solo per gli eventuali nuovi aggiornamenti sinc
 
 
 #### <a name="is-there-any-way-to-see-how-much-content-is-downloaded-from-peers-using-delivery-optimization"></a>È disponibile un modo per visualizzare la quantità di contenuto scaricato dai peer con Ottimizzazione recapito?
-Windows 10, versione 1703 (e versioni successive) include due nuovi cmdlet di PowerShell, **Get-DeliveryOptimizationPerfSnap** e **Get-DeliveryOptimizationStatus**. Questi cmdlet forniscono informazioni dettagliate su Ottimizzazione recapito e l'utilizzo della cache. Per altre informazioni, vedere [ottimizzazione del recapito per gli aggiornamenti di Windows 10](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#the-cloud-service-doesnt-see-other-peers-on-the-network)
+Windows 10, versione 1703 (e versioni successive) include due nuovi cmdlet di PowerShell, **Get-DeliveryOptimizationPerfSnap** e **Get-DeliveryOptimizationStatus**. Questi cmdlet forniscono informazioni dettagliate su Ottimizzazione recapito e l'utilizzo della cache. Per altre informazioni, vedere [Ottimizzazione recapito per aggiornamenti Windows 10](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#the-cloud-service-doesnt-see-other-peers-on-the-network)
 
 
 #### <a name="how-do-clients-communicate-with-delivery-optimization-over-the-network"></a>In quale modo i client comunicano con Ottimizzazione recapito in rete?

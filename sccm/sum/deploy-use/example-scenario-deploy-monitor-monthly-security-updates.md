@@ -10,19 +10,18 @@ ms.assetid: c32f757a-02da-43f2-b055-5cfd097d8c43
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d98e89770eb59a83400896d4cd52b46e2470a36
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: ea654c4ec13b95b78a65c85d9d36ce576619854e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72684785"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818724"
 ---
 # <a name="example-scenario-to-deploy-and-monitor-monthly-software-updates"></a>Scenario di esempio per la distribuzione e il monitoraggio degli aggiornamenti software mensili
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo argomento illustra uno scenario di esempio sull'uso degli aggiornamenti software in System Center Configuration Manager per la distribuzione e il monitoraggio degli aggiornamenti software di sicurezza rilasciati ogni mese da Microsoft.  
+Questo argomento illustra uno scenario di esempio sull'uso degli aggiornamenti software in Configuration Manager per la distribuzione e il monitoraggio degli aggiornamenti software di sicurezza rilasciati ogni mese da Microsoft.  
 
  In questo scenario si seguono le azioni dell'amministratore di Configuration Manager presso Woodgrove Bank. L'amministratore deve creare una strategia di distribuzione degli aggiornamenti software con i requisiti e le condizioni seguenti:  
 
@@ -42,29 +41,29 @@ Questo argomento illustra uno scenario di esempio sull'uso degli aggiornamenti s
 
  Le sezioni seguenti di questo argomento includono procedure di esempio che consentono di distribuire e monitorare gli aggiornamenti software di sicurezza di Configuration Manager all'interno dell'organizzazione.
 
-##  <a name="BKMK_Step1"></a> Passaggio 1: Creare un gruppo di aggiornamento software per la conformità annuale  
+##  <a name="BKMK_Step1"></a> Passaggio 1: creare un gruppo di aggiornamento software per conformità annuale  
  L'amministratore di Configuration Manager crea un gruppo di aggiornamenti software che può essere usato per monitorare la conformità per tutti gli aggiornamenti software di protezione rilasciati in 2016. L'amministratore esegue quindi i passaggi indicati nella tabella seguente.  
 
 |Processo|Riferimento|  
 |-------------|---------------|  
-|Dal nodo **Tutti gli aggiornamenti software** nella console di Configuration Manager l'amministratore di System Center Configuration Manager aggiunge i criteri per visualizzare solo gli aggiornamenti software di sicurezza rilasciati o rivisti nel corso del 2015 che soddisfano i requisiti seguenti:<br /><br /><ul><li>**Criteri**: Data rilascio o revisione</li><li>**Condizione**: è maggiore o uguale a una data specifica<br />**Valore**: 1/1/2015</li><li>**Criteri**: Classificazione aggiornamento<br />**Valore**: Aggiornamenti della sicurezza</li><li>**Criteri**: Scaduto <br />**Valore**: No</li></ul>|Nessuna informazione aggiuntiva|
+|Dal nodo **Tutti gli aggiornamenti software** nella console di Configuration Manager l'amministratore di Configuration Manager aggiunge i criteri per visualizzare solo gli aggiornamenti software di sicurezza rilasciati o rivisti nel corso del 2015 che soddisfano i requisiti seguenti:<br /><br /><ul><li>**Criteri**: Data rilascio o revisione</li><li>**Condizione**: è maggiore o uguale a una data specifica<br />**Valore**: 1/1/2015</li><li>**Criteri**: Classificazione aggiornamento<br />**Valore**: Aggiornamenti della sicurezza</li><li>**Criteri**: Scaduto <br />**Valore**: No</li></ul>|Nessuna informazione aggiuntiva|
 |L'amministratore di Configuration Manager aggiunge tutti gli aggiornamenti software filtrati in un nuovo gruppo di aggiornamento software con i requisiti seguenti:<br /><br /><ul><li>**Nome**: Gruppo di conformità - Aggiornamenti della sicurezza Microsoft 2015</li><li>**Descrizione**: Aggiornamenti software|[Aggiungere aggiornamenti software a un gruppo di aggiornamento](add-software-updates-to-an-update-group.md)|  
 
-##  <a name="BKMK_Step2"></a> Passaggio 2: Creare una regola di distribuzione automatica per il mese corrente  
+##  <a name="BKMK_Step2"></a> Passaggio 2: creare una regola di distribuzione automatica per il mese corrente  
  L'amministratore di Configuration Manager crea una regola di distribuzione automatica per gli aggiornamenti software di protezione rilasciati da Microsoft per il mese corrente. L'amministratore esegue quindi i passaggi indicati nella tabella seguente.  
 
 |Processo|Riferimento|  
 |-------------|---------------|  
 |L'amministratore di Configuration Manager crea una regola di distribuzione automatica con i requisiti seguenti:<br /><br /><ol><li>Nella scheda **generale** l'amministratore di ConfigMgr configura quanto segue:<br /> <ul><li>Specifica **Aggiornamenti mensili della sicurezza** come nome.</li><li>Seleziona una raccolta di test con client limitati.</li><li>Seleziona **Crea un nuovo gruppo di aggiornamento software**.</li><li>Verifica che l'opzione **Abilita la distribuzione dopo l'esecuzione della regola** non sia selezionata.</li></ul></li><li>Nella scheda **impostazioni di distribuzione** l'amministratore di ConfigMgr seleziona le impostazioni predefinite.</li><li>Nella pagina **Aggiornamenti software** l'amministratore di Configuration Manager configura i filtri proprietà e i criteri di ricerca seguenti:<br /><ul><li>Data rilascio o revisione: **Ultimo mese**.</li><li>Classificazione aggiornamento: **Aggiornamenti della sicurezza**.</li></ul></li><li>Nella pagina **Valutazione** l'amministratore di Configuration Manager abilita la regola in modo che venga eseguita secondo pianificazione il **secondo giovedì** di ogni **mese**.  L'amministratore di Configuration Manager verifica anche che la pianificazione della sincronizzazione sia impostata per essere eseguita il **secondo mercoledì** di ogni **mese**.</li><li>L'amministratore di Configuration Manager usa le impostazioni predefinite nelle pagine Pianificazione della distribuzione, Esperienza utente, Avvisi e Impostazioni download.</li><li>Nella pagina **pacchetto di distribuzione** , l'amministratore di ConfigMgr specifica un nuovo pacchetto di distribuzione.</li><li>L'amministratore di Configuration Manager usa le impostazioni predefinite nelle pagine Percorso download e Selezione lingua.</li></ol>|[Distribuire automaticamente gli aggiornamenti software](automatically-deploy-software-updates.md)|  
 
-##  <a name="BKMK_Step3"></a> Passaggio 3: Verificare che gli aggiornamenti software siano pronti per la distribuzione  
+##  <a name="BKMK_Step3"></a> Passaggio 3: verificare che gli aggiornamenti software siano pronti per la distribuzione  
  Il secondo giovedì di ogni mese l'amministratore di Configuration Manager verifica che gli aggiornamenti software siano pronti per la distribuzione. L'amministratore esegue il passaggio seguente.  
 
 |Processo|Riferimento|  
 |-------------|---------------|  
 |L'amministratore di Configuration Manager verifica che la sincronizzazione degli aggiornamenti software sia stata completata correttamente.|[Software updates synchronization status](monitor-software-updates.md#BKMK_SUSyncStatus) (Stato di sincronizzazione degli aggiornamenti software)|  
 
-##  <a name="BKMK_Step4"></a> Passaggio 4: Distribuire il gruppo di aggiornamenti software  
+##  <a name="BKMK_Step4"></a> Passaggio 4: distribuire il gruppo di aggiornamenti software  
  Dopo aver verificato che gli aggiornamenti software siano pronti per la distribuzione, l'amministratore di ConfigMgr distribuisce gli aggiornamenti software. L'amministratore esegue quindi i passaggi indicati nella tabella seguente.  
 
 |Processo|Riferimento|  
@@ -73,14 +72,14 @@ Questo argomento illustra uno scenario di esempio sull'uso degli aggiornamenti s
 |L'amministratore di Configuration Manager verifica che le distribuzioni di prova siano state distribuite correttamente.|[Software updates deployment status](monitor-software-updates.md#BKMK_SUDeployStatus) (Stato di distribuzione degli aggiornamenti software)|  
 |L'amministratore di Configuration Manager aggiorna le due distribuzioni con nuove raccolte che includono i server e le workstation di produzione.|Nessuna informazione aggiuntiva|  
 
-##  <a name="BKMK_Step5"></a> Passaggio 5: Monitorare la conformità per gli aggiornamenti software distribuiti  
+##  <a name="BKMK_Step5"></a> Passaggio 5: monitorare la conformità per gli aggiornamenti del software distribuito  
  L'amministratore di ConfigMgr monitora la conformità delle distribuzioni degli aggiornamenti software. L'amministratore esegue quindi il passaggio indicato nella tabella seguente.  
 
 |Processo|Riferimento|  
 |-------------|---------------|  
-|L'amministratore di Configuration Manager esegue il monitoraggio dello stato della distribuzione degli aggiornamenti software nella console di Configuration Manager e controlla i relativi report disponibili nella console.|[Monitor software updates in System Center Configuration Manager](../../sum/deploy-use/monitor-software-updates.md) (Monitorare gli aggiornamenti software in System Center Configuration Manager)|  
+|L'amministratore di Configuration Manager esegue il monitoraggio dello stato della distribuzione degli aggiornamenti software nella console di Configuration Manager e controlla i relativi report disponibili nella console.|[Monitorare gli aggiornamenti software](../../sum/deploy-use/monitor-software-updates.md)|  
 
-##  <a name="BKMK_Step6"></a> Passaggio 6: Aggiungere aggiornamenti software mensili al gruppo di aggiornamento annuale  
+##  <a name="BKMK_Step6"></a> Passaggio 6: aggiungere gli aggiornamenti software mensili al gruppo di aggiornamento annuale  
  L'amministratore di Configuration Manager aggiunge gli aggiornamenti software dal gruppo di aggiornamento software mensile al gruppo di aggiornamento software annuale. L'amministratore esegue quindi il passaggio indicato nella tabella seguente.  
 
 |Processo|Riferimento|  

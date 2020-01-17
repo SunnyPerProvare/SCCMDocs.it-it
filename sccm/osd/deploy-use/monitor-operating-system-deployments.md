@@ -10,17 +10,16 @@ ms.assetid: 08085d94-295c-432f-b5e3-9736bce0193b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47bc9f00a64614e2483feb2ce3171fc8b245a0ba
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9d0a430a1010611bc6a7e0871e8c59ca3d1f8de7
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62270612"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806323"
 ---
-# <a name="monitor-operating-system-deployments-in-system-center-configuration-manager"></a>Monitorare le distribuzioni del sistema operativo in System Center Configuration Manager
+# <a name="monitor-operating-system-deployments-in-configuration-manager"></a>Monitorare le distribuzioni del sistema operativo in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Per monitorare gli oggetti di distribuzione del sistema operativo, la console di Configuration Manager offre i metodi descritti di seguito.  
 

@@ -1,7 +1,7 @@
 ---
 title: Monitorare i profili certificato
 titleSuffix: Configuration Manager
-description: Informazioni su come monitorare lo stato di conformità dei profili certificato di System Center Configuration Manager.
+description: Informazioni su come monitorare lo stato di conformità dei profili certificato di Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
@@ -10,17 +10,16 @@ ms.assetid: 98feaa06-64b1-4e86-a122-93017c97cd4f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a4ea6d12a41de37325cb64e0a702d6842f9508a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 00673616fdf0a2658e1bf742812f52f20bd95461
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68340509"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819557"
 ---
-# <a name="how-to-monitor-certificate-profiles-in-system-center-configuration-manager"></a>Come monitorare i profili certificato in System Center Configuration Manager
+# <a name="how-to-monitor-certificate-profiles-in-configuration-manager"></a>Come monitorare i profili certificato in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 ##  <a name="view-compliance-results-in-the-configuration-manager-console"></a>Visualizzare i risultati di conformità nella console di Configuration Manager  
@@ -35,16 +34,16 @@ Per monitorare la conformità dei certificati SCEP, usare i [report](#view-compl
 
     La pagina **Stato distribuzione** contiene le seguenti schede:  
 
-   -   **Conforme**: visualizza la conformità del profilo certificato in base al numero degli asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti gli utenti che sono conformi al profilo del certificato. Il riquadro **Dettagli asset** visualizza anche gli utenti che sono conformi a questo profilo. Fare doppio clic su un utente nell'elenco per visualizzare altre informazioni.  
+   -   **Conforme**: Visualizza la conformità del profilo certificato in base al numero degli asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti gli utenti che sono conformi al profilo del certificato. Il riquadro **Dettagli asset** visualizza anche gli utenti che sono conformi a questo profilo. Fare doppio clic su un utente nell'elenco per visualizzare altre informazioni.  
 
        > [!IMPORTANT]  
        >  Un profilo certificato non viene valutato se non è applicabile a un dispositivo client. Tuttavia, viene restituito come conforme.  
 
-   -   **Errore**: visualizza un elenco di tutti gli errori per la distribuzione del profilo certificato selezionata in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti gli utenti che hanno generato errori con questo profilo. Quando si seleziona un utente, il riquadro **Dettagli asset** visualizza gli utenti interessati dal problema selezionato. Fare doppio clic su un utente nell'elenco per visualizzare altre informazioni.  
+   -   **Errore**: Visualizza un elenco di tutti gli errori per la distribuzione del profilo certificato selezionata in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti gli utenti che hanno generato errori con questo profilo. Quando si seleziona un utente, il riquadro **Dettagli asset** visualizza gli utenti interessati dal problema selezionato. Fare doppio clic su un utente nell'elenco per visualizzare altre informazioni.  
 
-   -   **Non conforme**: visualizza un elenco di tutte le regole non conformi nel profilo certificato in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti gli utenti che non sono conformi a questo profilo. Quando si seleziona un utente, il riquadro **Dettagli asset** visualizza gli utenti interessati dal problema selezionato. Fare doppio clic su un utente nell'elenco per visualizzare informazioni aggiuntive sul problema.  
+   -   **Non conforme**: Visualizza un elenco di tutte le regole non conformi nel profilo certificato in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti gli utenti che non sono conformi a questo profilo. Quando si seleziona un utente, il riquadro **Dettagli asset** visualizza gli utenti interessati dal problema selezionato. Fare doppio clic su un utente nell'elenco per visualizzare informazioni aggiuntive sul problema.  
 
-   -   **Sconosciuto**: visualizza un elenco di tutti gli utenti che non sono conformi alla distribuzione del profilo certificato selezionata insieme allo stato client corrente dei dispositivi.  
+   -   **Sconosciuto**: Visualizza un elenco di tutti gli utenti che non sono conformi alla distribuzione del profilo certificato selezionata insieme allo stato client corrente dei dispositivi.  
 
 4. Nella pagina **Stato distribuzione** esaminare le informazioni dettagliate sulla conformità del profilo certificato distribuito. Viene creato un nodo temporaneo nel nodo **Distribuzioni** che consente di ritrovare rapidamente queste informazioni.  
 
@@ -63,7 +62,7 @@ Per monitorare la conformità dei certificati SCEP, usare i [report](#view-compl
 
 ##  <a name="view-compliance-results-by-using-reports"></a>Visualizzare i risultati di conformità usando i report
 
-Le impostazioni di conformità in System Center Configuration Manager includono report incorporati che è possibile usare per monitorare le informazioni sui profili certificato. Tali report dispongono della categoria report di **Gestione conformità e impostazioni**.  
+Le impostazioni di conformità in Configuration Manager includono report incorporati che è possibile usare per monitorare le informazioni sui profili certificato. Tali report dispongono della categoria report di **Gestione conformità e impostazioni**.  
 
 > [!IMPORTANT]  
 >  È necessario utilizzare un carattere jolly (%) quando si utilizzano i parametri **Filtro dispositivo** e **Filtro utente** nei report per le impostazioni di conformità.  
@@ -76,4 +75,4 @@ Per monitorare la conformità dei certificati SCEP, usare questi report sui cert
 
 
 
- Per altre informazioni sulle modalità di configurazione dei report in System Center Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+ Per altre informazioni sulle modalità di configurazione della creazione di report in Configuration Manager, vedere [Creazione di report](../../core/servers/manage/reporting.md).  

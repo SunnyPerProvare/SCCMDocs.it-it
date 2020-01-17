@@ -10,13 +10,12 @@ ms.assetid: dc245916-bc11-4983-9c4d-015f655007c1
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f378fd399a874b0db3844bbf02528dfe92981db5
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 6c62880f70639ddbd395e5675e950178c86d73b0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500656"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806391"
 ---
 # <a name="manage-and-monitor-phased-deployments"></a>Gestire e monitorare le distribuzioni in più fasi
 
@@ -94,11 +93,11 @@ In Configuration Manager 1806 e 1810 è possibile visualizzare l'esperienza di m
 
 Questo dashboard visualizza le informazioni seguenti per ogni fase della distribuzione:  
 
-- **Totale dispositivi** o **Risorse totali**: numero di dispositivi interessati da questa fase.  
+- **Dispositivi totali** or **Risorse totali**: numero di dispositivi interessati da questa fase.  
 
-- **Stato**: stato corrente della fase. Ogni fase può trovarsi in uno degli stati seguenti:  
+- **Status** (Stato): stato corrente della fase. Ogni fase può trovarsi in uno degli stati seguenti:  
 
-    - **Distribuzione creata**: la distribuzione in più fasi ha creato una distribuzione del software nella raccolta per questa fase. Ai client viene assegnato in modo attivo questo software.  
+    - **La distribuzione è stata creata**: la distribuzione in più fasi ha creato una distribuzione del software nella raccolta per questa fase. Ai client viene assegnato in modo attivo questo software.  
 
     - **In attesa**: la fase precedente non ha ancora raggiunto i criteri di esito positivo per consentire la continuazione della distribuzione verso questa fase.  
 

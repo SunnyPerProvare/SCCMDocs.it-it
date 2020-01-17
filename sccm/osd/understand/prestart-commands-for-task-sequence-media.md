@@ -10,19 +10,18 @@ ms.assetid: ccc9f652-2953-4c38-8a90-c799484105ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8519d0e93116115dcd6ca223b62af67b4d7a89a4
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9dd921d58e6ef777017af3e2eb24dbf4bd611fab
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892493"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821070"
 ---
-# <a name="prestart-commands-for-task-sequence-media-in-system-center-configuration-manager"></a>Comandi di preavvio per supporti per sequenza di attività in System Center Configuration Manager
+# <a name="prestart-commands-for-task-sequence-media-in-configuration-manager"></a>Comandi di preavvio del supporto per sequenza attività in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-È possibile creare un comando di preavvio in System Center Configuration Manager da usare con i supporti di avvio, i supporti autonomi e i supporti preinstallati. Il comando di preavvio è uno script o un eseguibile che viene eseguito prima che la sequenza attività venga selezionata e possa interagire con l'utente in Windows PE. Il comando di preavvio può richiedere informazioni a un utente e salvarle nell'ambiente della sequenza attività oppure eseguire una query di una variabile della sequenza attività per le informazioni. All'avvio del computer di destinazione, la riga di comando viene eseguita prima che il criterio venga scaricato dal punto di gestione. Utilizzare le procedure seguenti per creare uno script da utilizzare per il comando di preavvio, distribuire il contenuto associato al comando di preavvio e configurare il comando di preavvio nei supporti.  
+È possibile creare un comando di preavvio in Configuration Manager da usare con i supporti di avvio, i supporti autonomi e i supporti preinstallati. Il comando di preavvio è uno script o un eseguibile che viene eseguito prima che la sequenza attività venga selezionata e possa interagire con l'utente in Windows PE. Il comando di preavvio può richiedere informazioni a un utente e salvarle nell'ambiente della sequenza attività oppure eseguire una query di una variabile della sequenza attività per le informazioni. All'avvio del computer di destinazione, la riga di comando viene eseguita prima che il criterio venga scaricato dal punto di gestione. Utilizzare le procedure seguenti per creare uno script da utilizzare per il comando di preavvio, distribuire il contenuto associato al comando di preavvio e configurare il comando di preavvio nei supporti.  
 
 ## <a name="create-a-script-file-to-use-for-the-prestart-command"></a>Creare un file di script da usare per il comando di preavvio  
  Le variabili della sequenza di attività possono essere lette e scritte usando l'oggetto COM Microsoft.SMS.TSEnvironment durante l'esecuzione della sequenza di attività. Nell'esempio che segue viene illustrato un file di script Visual Basic che esegue la query della variabile della sequenza attività _SMSTSLogPath per ottenere la posizione corrente del registro. Lo script imposta inoltre una variabile personalizzata.  

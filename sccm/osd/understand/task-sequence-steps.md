@@ -10,13 +10,12 @@ ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d94d348f3cee7d55bbbbf6f4a9f791e7b65c768
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: ee87fcbfa1b8661e645156d2a2b6afe08e59493b
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198881"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821002"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
@@ -38,7 +37,7 @@ La parte restante di questo articolo descrive le altre impostazioni della scheda
 
 - **Disattiva questo passaggio**: la sequenza di attività ignora questo passaggio quando viene eseguita in un computer. L'icona del passaggio è disattivata nell'editor della sequenza di attività.  
 
-- **Continua in caso di errori**: in caso di errore durante l'esecuzione del passaggio la sequenza di attività continua. Per altre informazioni, vedere [Considerazioni sulla pianificazione per l'automazione delle attività](/configmgr/osd/plan-design/planning-considerations-for-automating-tasks#BKMK_TSGroups).  
+- **Continua in caso di errore**: in caso di errore durante l'esecuzione del passaggio, la sequenza di attività continua. Per altre informazioni, vedere [Considerazioni sulla pianificazione per l'automazione delle attività](/configmgr/osd/plan-design/planning-considerations-for-automating-tasks#BKMK_TSGroups).  
 
 - **Aggiungi condizione**: la sequenza di attività valuta queste istruzioni condizionali per determinare se il passaggio viene eseguito. Per un esempio dell'uso di una variabile della sequenza di attività come condizione, vedere [Come usare le variabili della sequenza di attività](/configmgr/osd/understand/using-task-sequence-variables#bkmk_access-condition). Per altre informazioni sulle condizioni, vedere [Editor della sequenza di attività-condizioni](/configmgr/osd/understand/task-sequence-editor#bkmk_conditions).
 
@@ -70,11 +69,11 @@ Selezionare **Sfoglia** per specificare il **Pacchetto immagine** usato da quest
 > [!NOTE]  
 > Questa azione della sequenza di attività considera l'immagine come un file di dati. Questa azione non esegue nessuna configurazione per avviare l'immagine come un sistema operativo.  
 
-#### <a name="destination"></a>Destinazione
+#### <a name="destination"></a>Destination
 
 Configurare una delle opzioni seguenti:
 
-- **Next available partition** (Partizione disponibile successiva): usare la partizione sequenziale successiva non ancora sottoposta a un passaggio **Applica sistema operativo** o **Applica immagine dei dati** in questa sequenza di attività.  
+- **Next available partition** (Partizione successiva disponibile): usare la partizione sequenziale successiva non ancora sottoposta a un passaggio **Applica sistema operativo** o **Applica immagine dei dati** in questa sequenza di attività.  
 
 - **Disco e partizione specifici**: selezionare un numero per **Disco** (a partire da 0) e per **Partizione** (a partire da 1).  
 
@@ -266,11 +265,11 @@ Usare questa opzione per fornire un file di risposte del programma di installazi
 
 Se non si specifica un file di risposte del programma di installazione di Windows, la sequenza di attività genera automaticamente un file di risposte.  
 
-#### <a name="destination"></a>Destinazione
+#### <a name="destination"></a>Destination
 
 Configurare una delle opzioni seguenti:  
 
-- **Next available partition** (Partizione disponibile successiva): usare la partizione sequenziale successiva non ancora sottoposta a un passaggio **Applica sistema operativo** o **Applica immagine dei dati** in questa sequenza di attività.  
+- **Next available partition** (Partizione successiva disponibile): usare la partizione sequenziale successiva non ancora sottoposta a un passaggio **Applica sistema operativo** o **Applica immagine dei dati** in questa sequenza di attività.  
 
 - **Disco e partizione specifici**: selezionare un numero per **Disco** (a partire da 0) e per **Partizione** (a partire da 1).  
 
@@ -278,7 +277,7 @@ Configurare una delle opzioni seguenti:
 
 - **Lettera unità logica archiviata in una variabile**: specificare la variabile della sequenza di attività contenente la lettera di unità assegnata alla partizione da Windows PE. Questa variabile viene in genere impostata nella sezione Avanzate della finestra di dialogo **Proprietà della partizione** per il passaggio **Formato e disco partizione** della sequenza di attività.  
 
-### <a name="options"></a>Opzioni  
+### <a name="options"></a>Options  
 
 Oltre alle opzioni predefinite, nella scheda **Opzioni** di questo passaggio della sequenza di attività configurare le impostazioni aggiuntive seguenti:  
 
@@ -593,7 +592,7 @@ Abilitare questa opzione per specificare una delle impostazioni seguenti:
 
 - **Continua se non è possibile acquisire alcuni file**: abilitare questa impostazione per continuare il processo di migrazione, anche se non è possibile acquisire alcuni file. Se si disabilita questa opzione e non è possibile acquisire un file, il passaggio ha esito negativo. Questa opzione è attivata per impostazione predefinita.  
 
-- **Esegui acquisizione localmente utilizzando i collegamenti invece di copiare i file**: abilitare questa impostazione per usare i collegamenti reali NTFS per acquisire i file.  
+- **Esegui acquisizione localmente utilizzando i collegamenti invece di copiare i file**: Abilitare questa impostazione per usare i collegamenti reali NTFS per l'acquisizione dei file.  
 
     Per altre informazioni sulla migrazione di dati tramite i collegamenti reali, vedere [Archivio delle migrazioni con collegamento reale](https://docs.microsoft.com/windows/deployment/usmt/usmt-hard-link-migration-store).  
 
@@ -666,7 +665,7 @@ Verificare che la quantità di spazio su disco disponibile in megabyte (MB) sia 
 
 Verificare che il sistema operativo installato nel computer client soddisfi i requisiti specificati. Il passaggio imposta questo valore su **CLIENT** per impostazione predefinita.  
 
-### <a name="options"></a>Opzioni
+### <a name="options"></a>Options
 
 > [!NOTE]  
 > Se si abilita l'impostazione **Continua in caso di errore** della scheda **Opzioni**, il passaggio si limita a registrare i risultati del controllo di conformità. Se un controllo ha esito negativo, la sequenza di attività non viene arrestata.  
@@ -786,7 +785,7 @@ Scegliere di salvare il pacchetto in una delle posizioni seguenti:
 
 - **Cache del client di Configuration Manager**: usare questa opzione per archiviare il contenuto nella cache del client. Per impostazione predefinita, il percorso è `%WinDir%\ccmcache`.  
 
-- **Percorso personalizzato**: il motore di esecuzione della sequenza di attività scarica prima di tutto il pacchetto nella directory di lavoro della sequenza di attività e quindi lo sposta nel percorso specificato con questa opzione. Il motore di esecuzione della sequenza di attività aggiunge il percorso con l'ID pacchetto.  
+- **Percorso personalizzato**: il motore della sequenza di attività scarica prima di tutto il pacchetto nella directory di lavoro della sequenza di attività e quindi lo sposta nel percorso specificato con questa opzione. Il motore di esecuzione della sequenza di attività aggiunge il percorso con l'ID pacchetto.  
 
 #### <a name="save-path-as-a-variable"></a>Salvare il percorso come variabile
 
@@ -862,11 +861,11 @@ Nella scheda **Proprietà** per questo passaggio, configurare le impostazioni de
 
 Specifica l'unità da crittografare Per crittografare l'unità del sistema operativo corrente, selezionare **Unità del sistema operativo corrente**. Configurare quindi una delle opzioni seguenti per la gestione delle chiavi:  
 
-- **Solo TPM**: selezionare questa opzione per usare solo TPM (Trusted Platform Module).  
+- **Solo TPM**: Selezionare questa opzione per usare solo Trusted Platform Module (TPM).  
 
-- **Chiave di avvio solo su USB**: selezionare questa opzione per usare una chiave di avvio archiviata in un'unità flash USB. Quando si seleziona questa opzione, BitLocker blocca il normale processo di avvio fino al collegamento di un dispositivo USB contenente una chiave di avvio BitLocker al computer.  
+- **Chiave di avvio solo su USB**: Selezionare questa opzione per usare una chiave di avvio archiviata in un'unità flash USB. Quando si seleziona questa opzione, BitLocker blocca il normale processo di avvio fino al collegamento di un dispositivo USB contenente una chiave di avvio BitLocker al computer.  
 
-- **TPM e chiave di avvio su USB**: selezionare questa opzione per usare TPM e una chiave di avvio archiviata in un'unità flash USB. Quando si seleziona questa opzione, BitLocker blocca il normale processo di avvio fino al collegamento di un dispositivo USB contenente una chiave di avvio BitLocker al computer.  
+- **TPM e chiave di avvio su USB**: Selezionare questa opzione per usare TPM e una chiave di avvio archiviata in un'unità flash USB. Quando si seleziona questa opzione, BitLocker blocca il normale processo di avvio fino al collegamento di un dispositivo USB contenente una chiave di avvio BitLocker al computer.  
 
 - **TPM e PIN**: selezionare questa opzione per usare TPM e un codice PIN. Quando si seleziona questa opzione, BitLocker blocca il normale processo di avvio fino a quando l'utente fornisce il codice PIN.  
 
@@ -1016,7 +1015,7 @@ Queste applicazioni non vengono visualizzate nella finestra di dialogo **Selezio
 
 La sequenza di attività installa le applicazioni usando questo nome variabile di base. Il nome variabile di base indica un set di variabili della sequenza di attività definite per una raccolta o un computer. Queste variabili specificano le applicazioni che vengono installate dalla sequenza di attività per tale raccolta o computer. Ogni nome di variabile comprende il nome base comune e un suffisso numerico che inizia con 01. Il valore di ogni variabili deve contenere soltanto il nome dell'applicazione.  
 
-Per consentire alla sequenza di attività di installare applicazioni usando un elenco di variabili dinamiche, abilitare l'impostazione seguente nella scheda **Generale** della finestra di dialogo **Proprietà** dell'applicazione: **Consenti l'installazione dell'applicazione dall'operazione sequenza di attività Installazione applicazione senza distribuzione**.  
+Per consentire alla sequenza di attività di installare applicazioni usando un elenco di variabili dinamiche, abilitare l'impostazione seguente nella scheda **Generale** della finestra **Proprietà** dell'applicazione: **Consenti l'installazione dell'applicazione dall'operazione sequenza di attività Installazione applicazione senza distribuzione**.  
 
 > [!NOTE]  
 > Non è possibile installare le applicazioni usando un elenco dinamico di variabili per distribuzioni con supporti autonomi.  
@@ -1053,7 +1052,7 @@ Questa impostazione specifica che il passaggio continua in caso di errore di ins
 A partire dalla versione 1906, eliminare il contenuto dell'app dalla cache del client dopo l'esecuzione del passaggio. Questo comportamento è utile per i dispositivi con unità disco di piccole dimensioni o durante l'installazione di un numero elevato di app di grandi dimensioni in successione.
 
 
-### <a name="options"></a>Opzioni
+### <a name="options"></a>Options
 
 > [!NOTE]  
 > Quando si seleziona **Continua in caso di errore** nella scheda **Opzioni** di questo passaggio, la sequenza di attività continua in caso di errore di installazione di un'applicazione. Quando non si abilita questa opzione, la sequenza di attività ha esito negativo e non installa le applicazioni rimanenti.  
@@ -1117,7 +1116,7 @@ Questa impostazione specifica un pacchetto software di Configuration Manager. Il
 
 La sequenza di attività installa i pacchetti usando questo nome variabile di base. Il nome variabile di base indica un set di variabili della sequenza di attività definite per una raccolta o un computer. Queste variabili specificano i pacchetti che vengono installati dalla sequenza di attività per la raccolta o il computer. Ogni nome di variabile comprende il nome base comune e un suffisso numerico che inizia con 001. Il valore di ogni variabile deve includere un ID pacchetto e il nome del software separati da due punti.  
 
-Per far sì che la sequenza di attività installi un software tramite un elenco di variabili dinamiche, abilitare l'impostazione seguente nella scheda **Avanzate** in **Proprietà** del pacchetto: **Consenti l'installazione di questo programma dalla sequenza di attività Installa pacchetto senza che venga distribuito**.  
+Per consentire alla sequenza di attività di installare un software usando un elenco di variabili dinamiche, abilitare l'impostazione seguente nella scheda **Avanzate** della finestra **Proprietà** del pacchetto: **Consenti l'installazione di questo programma dalla sequenza di attività Installa pacchetto senza che venga distribuito**.  
 
 > [!NOTE]  
 > Non è possibile installare pacchetti software usando un elenco dinamico di variabili per distribuzioni con supporti autonomi.  
@@ -1206,7 +1205,7 @@ Nella maggior parte dei casi, usare l'impostazione predefinita per usare i risul
 
 La variabile **SMSTSSoftwareUpdateScanTimeout** controlla il timeout dell'analisi degli aggiornamenti software durante questo passaggio. Il valore predefinito è 60 minuti. Per altre informazioni, vedere [Variabili della sequenza di attività](/configmgr/osd/understand/task-sequence-variables#SMSTSSoftwareUpdateScanTimeout).
 
-### <a name="options"></a>Opzioni  
+### <a name="options"></a>Options  
 
 Oltre alle opzioni predefinite, nella scheda **Opzioni** di questo passaggio della sequenza di attività configurare le impostazioni aggiuntive seguenti:  
 
@@ -1619,7 +1618,7 @@ Specifica l'account utente di Windows usato da questo passaggio per eseguire la 
 > [!IMPORTANT]  
 > Se questo passaggio specifica un account utente e viene eseguito in Windows PE, l'azione ha esito negativo. Non è possibile aggiungere Windows PE a un dominio. Questo errore viene registrato nel file **smsts.log**.  
 
-### <a name="options"></a>Opzioni  
+### <a name="options"></a>Options  
 
 Oltre alle opzioni predefinite, nella scheda **Opzioni** di questo passaggio della sequenza di attività configurare le impostazioni aggiuntive seguenti:  
 
@@ -1700,15 +1699,15 @@ L'esempio seguente include parametri non validi: I primi due elementi sono param
 <!-- SCCMDocs-pr issue 3561 -->
 Se il valore di un parametro include un carattere speciale, racchiudere il valore tra virgolette singole (`'`). L'uso delle virgolette doppie (`"`) può determinare l'elaborazione non corretta del parametro nel passaggio della sequenza di attività.
 
-Ad esempio: `-Arg1 '%TSVar1%' -Arg2 '%TSVar2%'`
+ad esempio `-Arg1 '%TSVar1%' -Arg2 '%TSVar2%'`
 
 #### <a name="powershell-execution-policy"></a>Criteri di esecuzione di PowerShell
 
 Determinare quali script di PowerShell possono essere eseguiti nel computer. Scegliere uno dei criteri di esecuzione seguenti:  
 
-- **Tutti firmati**: vengono eseguiti solo gli script firmati da un editore attendibile.  
+- **AllSigned**: vengono eseguiti solo gli script firmati da un editore attendibile  
 
-- **Non definito**: non viene definito alcun criterio di esecuzione.  
+- **Non definito**: non viene definito alcun criterio di esecuzione  
 
 - **Ignora**: vengono caricati tutti i file di configurazione e vengono eseguiti tutti gli script. Se si scarica uno script non firmato da Internet, Windows PowerShell non richiede l'autorizzazione prima di eseguire tale script.  
 
@@ -1755,7 +1754,7 @@ A partire dalla versione 1902, è possibile specificare l'account utente Windows
 > [!IMPORTANT]  
 > Se questo passaggio specifica un account utente e viene eseguito in Windows PE, l'azione ha esito negativo. Non è possibile aggiungere Windows PE a un dominio. Questo errore viene registrato nel file **smsts.log**.  
 
-### <a name="options"></a>Opzioni  
+### <a name="options"></a>Options  
 
 Oltre alle opzioni predefinite, nella scheda **Opzioni** di questo passaggio della sequenza di attività configurare le impostazioni aggiuntive seguenti:  
 
@@ -1857,7 +1856,7 @@ Per impostare una variabile dinamica da usare nella sequenza di attività, aggiu
 
     `IF Serial Number = 5892087 OR MAC address = 26-78-13-5A-A4-22 THEN`  
 
-- **Percorso**: valutare i valori per il gateway di rete predefinito.  
+- **Location** (Percorso): valutare i valori per il gateway di rete predefinito  
 
 - **Marca e modello**: valutare i valori relativi a marca e modello di un computer. La regola restituisce true solo se entrambi i valori restituiscono true.
 
@@ -1867,7 +1866,7 @@ Per impostare una variabile dinamica da usare nella sequenza di attività, aggiu
 
     Specificare una o più variabili da impostare per una regola che restituisce true oppure impostare variabili senza usare una regola. Selezionare una variabile esistente o creare una variabile personalizzata.  
 
-    - **Existing task sequence variables** (Variabili esistenti della sequenza di attività): selezionare una o più variabili esistenti da un elenco di variabili della sequenza di attività. Le variabili di matrice non sono disponibili per la selezione.  
+    - **Existing task sequence variables** (Variabili esistenti della sequenza di attività): selezionare una o più variabili da un elenco di variabili esistenti della sequenza di attività. Le variabili di matrice non sono disponibili per la selezione.  
 
     - **Custom task sequence variables** (Variabili personalizzate della sequenza di attività): definire una variabile personalizzata della sequenza di attività. È anche possibile specificare una variabile esistente della sequenza di attività. Questa impostazione è utile per specificare una matrice di variabili esistenti, ad esempio **OSDAdapter**, perché le matrici di variabili non sono incluse nell'elenco di variabili esistenti della sequenza di attività.  
 
@@ -2007,7 +2006,7 @@ Il passaggio della sequenza di attività specifica automaticamente l'assegnazion
 
 Specificare le opzioni della riga di comando da usare durante l'installazione del client. Ad esempio, immettere `/skipprereq: silverlight.exe` per segnalare a CCMSetup.exe di non installare i prerequisiti di Microsoft Silverlight. Per altre informazioni sulle opzioni della riga di comando disponibili per CCMSetup.exe, vedere [About client installation properties](/configmgr/core/clients/deploy/about-client-installation-properties) (Informazioni sulle proprietà di installazione del client).  
 
-### <a name="options"></a>Opzioni
+### <a name="options"></a>Options
 
 > [!NOTE]  
 > Non abilitare **Continua in caso di errore** nella scheda **Opzioni**. Sia che questa opzione sia abilitata o meno, se si verifica un errore durante questo passaggio la sequenza di attività ha esito negativo.  
@@ -2057,9 +2056,9 @@ Specificare il codice Product Key da applicare al processo di aggiornamento.
 
 Aggiungere driver al computer di destinazione durante il processo di aggiornamento. Questa impostazione corrisponde all'opzione della riga di comando `/InstallDriver` di Installazione di Windows. I driver devono essere compatibili con Windows 10. Specificare una delle opzioni seguenti:  
 
-- **Pacchetto driver**: selezionare **Sfoglia** e scegliere un pacchetto di driver esistente nell'elenco.  
+- **Pacchetto driver**: selezionare **Sfoglia** e scegliere un pacchetto driver esistente nell'elenco.  
 
-- **Contenuto preconfigurato**: selezionare questa opzione per specificare il percorso per il pacchetto di driver. È possibile specificare una cartella locale, un percorso di rete o una variabile della sequenza di attività. Quando si usa una variabile per il percorso di origine, impostarne il valore prima nella sequenza di attività. Ad esempio, usando il passaggio [Scarica contenuto pacchetto](/configmgr/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent).  
+- **Contenuto preconfigurato**:  selezionare questa opzione per specificare il percorso per il pacchetto di driver. È possibile specificare una cartella locale, un percorso di rete o una variabile della sequenza di attività. Quando si usa una variabile per il percorso di origine, impostarne il valore prima nella sequenza di attività. Ad esempio, usando il passaggio [Scarica contenuto pacchetto](/configmgr/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent).  
 
 #### <a name="time-out-minutes"></a>Timeout (minuti)
 

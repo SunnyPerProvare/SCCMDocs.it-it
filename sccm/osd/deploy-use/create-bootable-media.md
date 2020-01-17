@@ -10,17 +10,16 @@ ms.assetid: ead79e64-1b63-4d0d-8bd5-addff8919820
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d77b817dd19f728ce79aa901591a70acde27cf67
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: fe810543c14010de42990f7b849b2d66042af3c0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71401596"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825320"
 ---
 # <a name="create-bootable-media"></a>Creare supporti di avvio
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 I supporti di avvio in Configuration Manager contengono l'immagine d'avvio, i comandi di preavvio opzionali e i rispettivi file associati e i file di Configuration Manager. Usare i supporti preinstallati per gli scenari di distribuzione del sistema operativo seguenti:  
 
@@ -93,18 +92,18 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
     - **Supporto dinamico**: consente a un punto di gestione di reindirizzare il supporto a un altro punto di gestione, in base al percorso del client nei limiti del sito.  
 
-    - **Supporto basato su sito**: tramite il supporto viene contattato il punto di gestione specificato.  
+    - **Supporto basato su sito**: Il supporto contatta solo il punto di gestione specificato.  
 
-5. Nella pagina **Tipo di supporto** specificare se il supporto è un'**unità USB rimovibile** o un **set di CD/DVD**. Configurare quindi le opzioni seguenti:  
+5. Nella pagina **Tipo di supporto** specificare se il supporto è **un'unità USB rimovibile** o un **set di CD/DVD**. Configurare quindi le opzioni seguenti:  
 
     > [!IMPORTANT]  
     > Il supporto usa il file system FAT32. Non è possibile creare supporti in un'unità USB il cui contenuto include un file di oltre 4 GB.  
 
     - Se si seleziona **Unità USB rimovibile**, è necessario selezionare l'unità in cui archiviare il contenuto.  
 
-        - **Formatta unità USB rimovibile (FAT32) e consenti l'avvio**: per impostazione predefinita, consentire a Configuration Manager di preparare l'unità USB. Molti dispositivi UEFI più recenti richiedono una partizione FAT32 di avvio. Questo formato tuttavia limita anche le dimensioni dei file e la capacità complessiva dell'unità. Se l'unità rimovibile è già stata formattata e configurata, disabilitare questa opzione.
+        - **Formatta unità USB rimovibile (FAT32) e consenti l'avvio**: per impostazione predefinita, consente a Configuration Manager di preparare l’unità USB. Molti dispositivi UEFI più recenti richiedono una partizione FAT32 di avvio. Questo formato tuttavia limita anche le dimensioni dei file e la capacità complessiva dell'unità. Se l'unità rimovibile è già stata formattata e configurata, disabilitare questa opzione.
 
-    - Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto (**Dimensione supporto**) e il nome e il percorso dei file di output (**File supporto**). La procedura guidata scrive i file di output in questa posizione. Ad esempio: `\\servername\folder\outputfile.iso`  
+    - Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto (**Dimensione supporto**) e il nome e il percorso dei file di output (**File supporto**). La procedura guidata scrive i file di output in questa posizione. ad esempio `\\servername\folder\outputfile.iso`  
 
         Se la capacità del supporto non è sufficiente per archiviare l'intero contenuto, vengono creati più file. È quindi necessario archiviare il contenuto in più CD o DVD. Quando sono necessari più supporti, Configuration Manager aggiunge un numero di sequenza al nome di ogni file di output creato.  
 
@@ -113,7 +112,7 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
     - **Cartella di gestione temporanea**<!--1359388-->: il processo di creazione del supporto può richiedere molto spazio temporaneo sul disco. Per impostazione predefinita questo percorso è simile al seguente: `%UserProfile%\AppData\Local\Temp`. A partire dalla versione 1902, per offrire maggiore flessibilità dal punto di vista del percorso di archiviazione dei file temporanei, modificare questo valore con un'altra unità e un altro percorso.  
 
-    - **Etichetta supporto**<!--1359388-->: a partire dalla versione 1902, è possibile aggiungere un'etichetta al supporto per la sequenza di attività. Questa etichetta consente di identificare più facilmente il supporto creato. Il valore predefinito è `Configuration Manager`. Questo campo di testo viene visualizzato nelle posizioni seguenti:  
+    - **Etichetta supporto**<!--1359388-->: a partire dalla versione 1902, è possibile aggiungere un'etichetta al supporto della sequenza di attività. Questa etichetta consente di identificare più facilmente il supporto creato. Il valore predefinito è `Configuration Manager`. Questo campo di testo viene visualizzato nelle posizioni seguenti:  
 
         - Se si monta un file ISO, Windows visualizza questa etichetta come nome dell'unità montata  
 
@@ -127,7 +126,7 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
     - **Abilita supporto per computer sconosciuti**: consente al supporto di distribuire un sistema operativo a un computer non gestito da Configuration Manager. Non sono presenti record di questi computer nel database di Configuration Manager. Per altre informazioni, vedere [Operazioni preliminari alle distribuzioni in computer sconosciuti](/sccm/osd/get-started/prepare-for-unknown-computer-deployments).  
 
-    - **Proteggi supporto con password**: immettere una password complessa per proteggere il supporto da accessi non autorizzati. Quando si specifica una password, l'utente deve immettere la password per usare il supporto di avvio.  
+    - **Proteggi supporto con password**: immettere una password complessa per proteggere il supporto dall'accesso non autorizzato. Quando si specifica una password, l'utente deve immettere la password per usare il supporto di avvio.  
 
         > [!IMPORTANT]  
         > Come procedura consigliata di sicurezza, assegnare sempre una password per proteggere il supporto di avvio.  
@@ -138,27 +137,27 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
         Per altre informazioni su questo certificato client usato dalle immagini d'avvio, vedere [Requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements).  
 
-    - **Affinità utente-dispositivo**: per supportare la gestione incentrata sull'utente in Configuration Manager, specificare come si vuole che il supporto associ gli utenti al computer di destinazione. Per altre informazioni su come la distribuzione del sistema operativo supporti l'affinità utente-dispositivo, vedere [Associare gli utenti a un computer di destinazione](/sccm/osd/get-started/associate-users-with-a-destination-computer).  
+    - **Affinità utente dispositivo**: per supportare la gestione basata sugli utenti in Configuration Manager, specificare come si vuole che il supporto associ gli utenti al computer di destinazione. Per altre informazioni su come la distribuzione del sistema operativo supporti l'affinità utente-dispositivo, vedere [Associare gli utenti a un computer di destinazione](/sccm/osd/get-started/associate-users-with-a-destination-computer).  
 
-        - **Consenti affinità utente dispositivo con approvazione automatica**: il supporto associa automaticamente gli utenti al computer di destinazione. Questa funzionalità si basa sulle azioni della sequenza di attività che distribuisce il sistema operativo. In questo scenario la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
+        - **Consenti affinità utente dispositivo con approvazione automatica**: Il supporto associa automaticamente gli utenti al computer di destinazione. Questa funzionalità si basa sulle azioni della sequenza di attività che distribuisce il sistema operativo. In questo scenario la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
 
-        - **Consenti approvazione amministratore in sospeso per affinità utente dispositivo**: il supporto associa gli utenti al computer di destinazione dopo la concessione dell'approvazione. Questa funzionalità si basa sull'ambito della sequenza di attività che distribuisce il sistema operativo. In questo scenario la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione, ma attende l'approvazione di un utente amministratore prima di distribuire il sistema operativo.  
+        - **Consenti approvazione amministratore in sospeso per affinità utente dispositivo**: Il supporto associa gli utenti al computer di destinazione dopo la concessione dell'approvazione. Questa funzionalità si basa sull'ambito della sequenza di attività che distribuisce il sistema operativo. In questo scenario la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione, ma attende l'approvazione di un utente amministratore prima di distribuire il sistema operativo.  
 
-        - **Non consentire affinità utente dispositivo**: il supporto non associa gli utenti al computer di destinazione. In questo scenario, la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.  
+        - **Non consentire affinità utente dispositivo**: il supporto non associa gli utenti al computer di destinazione. In questo scenario la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.  
 
 7. Nella pagina **Immagine d'avvio** specificare le opzioni seguenti:  
 
     > [!IMPORTANT]  
     > L'architettura dell'immagine d'avvio distribuita deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.  
 
-    - **Immagine d'avvio**: selezionare l'immagine d'avvio per l'avvio del computer di destinazione.  
+    - **Immagine d'avvio**: selezionare l'immagine di avvio per avviare il computer di destinazione.  
 
     - **Punto di distribuzione**: selezionare il punto di distribuzione che ospita l'immagine d'avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
 
         > [!NOTE]  
         > L'account utente usato deve avere almeno autorizzazioni di **lettura** per la raccolta contenuto nel punto di distribuzione.  
 
-    - **Punto di gestione**: solo per *supporti basati su sito*, selezionare un punto di gestione da un sito primario.  
+    - **Punto di gestione**: solo per *supporto basato su sito*, selezionare un punto di gestione da un sito primario.  
 
     - **Punti di gestione associati**: solo per *supporti dinamici*, selezionare i punti di gestione del sito primario da usare e l'ordine di priorità per la comunicazione iniziale.  
 
@@ -166,7 +165,7 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 
     - Aggiungere eventuali variabili usate dalla sequenza di attività.  
 
-    - **Attiva comando di preavvio**: specificare i comandi di preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio sono costituiti da uno script o da un eseguibile che può interagire con l'utente in Windows PE prima che venga eseguita la sequenza di attività. Per altre informazioni vedere [Comandi di preavvio del supporto per sequenza attività](/sccm/osd/understand/prestart-commands-for-task-sequence-media).  
+    - **Attiva comando di preavvio**: Specificare i comandi preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio sono costituiti da uno script o da un eseguibile che può interagire con l'utente in Windows PE prima che venga eseguita la sequenza di attività. Per altre informazioni vedere [Comandi di preavvio del supporto per sequenza attività](/sccm/osd/understand/prestart-commands-for-task-sequence-media).  
 
         > [!TIP]  
         > Durante la creazione del supporto, tale sequenza scrive l'ID del pacchetto e la riga di comando di preavvio, incluso il valore per eventuali variabili della sequenza di attività, nel file **CreateTSMedia.log** nel computer che esegue la console di Configuration Manager. È possibile rivedere questo file di registro per verificare il valore per le variabili della sequenza di attività.  

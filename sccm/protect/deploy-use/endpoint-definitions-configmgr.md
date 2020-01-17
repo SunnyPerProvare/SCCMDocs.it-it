@@ -10,20 +10,19 @@ ms.assetid: 3b9c4027-a98b-406b-935c-ccabcfe713df
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 976a6b149175b817ea7039faf1f909a73f2b514d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9c521da00e18f2af63388793bbe7353353eda1de
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65500534"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819982"
 ---
 #  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>Utilizzo degli aggiornamenti Software di Configuration Manager per distribuire gli aggiornamenti delle definizioni
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
- È possibile configurare gli aggiornamenti software di Configuration Manager per recapitare gli aggiornamenti delle definizioni ai computer client. A tale scopo, è necessario configurare regole di distribuzione automatica. Prima di iniziare a creare regole di distribuzione automatica, assicurarsi di aver configurato gli aggiornamenti software di Configuration Manager. Per altre informazioni, vedere [Introduzione agli aggiornamenti software in System Center Configuration Manager](/sccm/sum/understand/software-updates-introduction).
+ È possibile configurare gli aggiornamenti software di Configuration Manager per recapitare gli aggiornamenti delle definizioni ai computer client. A tale scopo, è necessario configurare regole di distribuzione automatica. Prima di iniziare a creare regole di distribuzione automatica, assicurarsi di aver configurato gli aggiornamenti software di Configuration Manager. Per altre informazioni, vedere [Introduzione agli aggiornamenti software](/sccm/sum/understand/software-updates-introduction).
 
 > [!NOTE]
 >  Questa procedura si applica solo agli elementi che devono essere configurati specificatamente per Endpoint Protection. Per altre informazioni sulla Creazione guidata delle regole di distribuzione automatica, vedere [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates).
@@ -80,7 +79,7 @@ ms.locfileid: "65500534"
 
     -   **Tempo disponibile software**: specificare il tempo disponibile per la distribuzione creata da questa regola. Il tempo specificato deve essere almeno un'ora dopo l'esecuzione della regola di distribuzione automatica. Ciò consente di assicurarsi che il contenuto abbia tempo sufficiente per la replica nei punti di distribuzione nella gerarchia. Alcuni aggiornamenti delle definizioni possono includere anche aggiornamenti del motore antimalware, che potrebbero richiedere più tempo per raggiungere i punti di distribuzione.
 
-    -   **Scadenza installazione**: selezionare **Appena possibile**.
+    -   **Scadenza installazione**: Selezionare **Appena possibile**.
 
         > [!NOTE]
         >  Le scadenze degli aggiornamenti software variano all'interno di un periodo di due ore, per impedire che tutti i client richiedano un aggiornamento contemporaneamente.

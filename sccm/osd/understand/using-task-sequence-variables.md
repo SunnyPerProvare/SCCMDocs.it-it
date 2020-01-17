@@ -10,17 +10,16 @@ ms.assetid: bc7de742-9e5c-4a70-945c-df4153a61cc3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: bad851316d0922a62c2c06a718ef879678e67f9b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 25cdde1aae4b27cf37ec8852d78413fba9a57944
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660921"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820951"
 ---
 # <a name="how-to-use-task-sequence-variables-in-configuration-manager"></a>Come usare le variabili della sequenza di attività in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
  Il motore di esecuzione della sequenza di attività nella funzionalità di distribuzione del sistema operativo di Configuration Manager usa numerose variabili per controllarne i comportamenti. Usare queste variabili per:
 
@@ -249,11 +248,11 @@ Per aggiungere una condizione che valuti un valore della variabile, eseguire i p
 
 3. Nella finestra di dialogo **Variabile della sequenza di attività** specificare le impostazioni seguenti:  
 
-    - **Variabile**: nome della variabile. Ad esempio, `_SMSTSInWinPE`.  
+    - **Variabile**: nome della variabile. Ad esempio, `_SMSTSInWinPE`  
 
-    - **Condizione**: condizione in base a cui valutare il valore della variabile. Ad esempio, **uguale a**.  
+    - **Condizione**: condizione in base alla quale valutare il valore della variabile. Ad esempio, **uguale a**.  
 
-    - **Valore**: valore della variabile da controllare. Ad esempio, `false`.  
+    - **Valore**: valore della variabile da controllare. Ad esempio, `false`  
 
 I tre esempi riportati sopra formano una condizione in base a cui verificare se la sequenza di attività è in esecuzione da un'immagine d'avvio in Windows PE:
 
@@ -301,4 +300,4 @@ Per altre informazioni, vedere [Impostare Windows e Configuration Manager](/sccm
 
 - [Considerazioni sulla pianificazione dell'automazione delle attività](/sccm/osd/plan-design/planning-considerations-for-automating-tasks)
 
-- [Editor della sequenza di attività](/sccm/osd/understand/task-sequence-editor)
+- [Editor delle sequenze di attività](/sccm/osd/understand/task-sequence-editor)

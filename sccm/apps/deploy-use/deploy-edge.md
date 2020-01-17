@@ -1,5 +1,5 @@
 ---
-title: Distribuire e aggiornare Microsoft Edge, versione 77 e successive
+title: Distribuire e aggiornare Microsoft Edge versione 77 e successive
 titleSuffix: Configuration Manager
 description: Come distribuire e aggiornare Microsoft Edge, versione 77 e successive con Configuration Manager
 ms.date: 11/29/2019
@@ -10,13 +10,12 @@ ms.assetid: 73b420be-5d6a-483a-be66-c4d274437508
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 65488348507a434f324d1e239b790d5c06323c38
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
-ms.translationtype: MTE75
+ms.openlocfilehash: 25ff9d97fb0079373ae8ac8fe75e2d31d2f2e662
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74662259"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75815868"
 ---
 # <a name="microsoft-edge-management"></a>Gestione di Microsoft Edge
 
@@ -37,7 +36,7 @@ Per i client destinati a una distribuzione di Microsoft Edge versione 77 e succe
   
 Il dispositivo che esegue la console di Configuration Manager richiede l'accesso agli endpoint seguenti:
 
-|Percorso|Utilizzare|
+|Percorso|Uso|
 |---|---|
 |`https://edgeupdates.azurewebsites.net/api/products?view=enterprise`|Informazioni sulle versioni di Microsoft Edge versione 77 e successive|
 |`http://dl.delivery.mp.microsoft.com`|Contenuto per le versioni di Microsoft Edge versione 77 e successive|
@@ -66,7 +65,7 @@ Creare un'applicazione Microsoft Edge versione 77 e successive usando l'esperien
 
 ### <a name="log-files-for-deployment"></a>File di log per la distribuzione
 
-|Percorso|Registro|Utilizzare|
+|Percorso|Registro|Uso|
 |---|---|---|
 | Server del sito|SMSProv.log|Mostra i dettagli se la creazione dell'app o della distribuzione ha esito negativo.|
 | [Varia](/sccm/core/plan-design/hierarchy/log-files)|PatchDownloader.log| Mostra i dettagli se il download del contenuto ha esito negativo.|

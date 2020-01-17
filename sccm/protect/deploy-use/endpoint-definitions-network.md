@@ -10,17 +10,16 @@ ms.assetid: ddef4d2a-f481-4020-9ddd-9cca5f9795cb
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: da691b4b9f9fdb34bd0bbba0a9090be9e78aae39
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9afeee7f7111994f0ae3891c7ecd99a11d7edd7d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74161676"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819863"
 ---
 # <a name="enable-endpoint-protection-malware-definitions-to-download-from-a-network-share"></a>Abilitare le definizioni malware di Endpoint Protection da scaricare da una condivisione di rete
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
  È possibile scaricare manualmente gli aggiornamenti delle definizioni più recenti da Microsoft e quindi configurare i client per scaricare le definizioni da una cartella condivisa in rete. Quando si usa questa origine degli aggiornamenti, gli utenti possono anche avviare gli aggiornamenti delle definizioni.
 
@@ -35,7 +34,7 @@ ms.locfileid: "74161676"
 
 2.  Nell'area di lavoro **Asset e conformità** espandere **Endpoint Protection**e quindi fare clic su **Criteri antimalware**.
 
-3.  Aprire la pagina delle proprietà relativa a **Criterio antimalware predefinito** o creare un nuovo criterio antimalware. Per altre informazioni su come creare criteri antimalware, vedere [Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager](endpoint-antimalware-policies.md).
+3.  Aprire la pagina delle proprietà relativa a **Criterio antimalware predefinito** o creare un nuovo criterio antimalware. Per altre informazioni su come creare criteri antimalware, vedere [Come creare e distribuire criteri antimalware per Endpoint Protection](endpoint-antimalware-policies.md).
 
 4.  Nella sezione **aggiornamenti di intelligence** per la sicurezza della finestra di dialogo Proprietà Antimalware fare clic su **Imposta origine**.
     - La sezione relativa agli **aggiornamenti delle definizioni** è stata rinominata in aggiornamenti di intelligence per la **sicurezza** a partire dalla versione Configuration Manager 1902.

@@ -10,19 +10,18 @@ ms.assetid: b6b86078-fcc4-46cf-87d6-4b52b914b712
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2becf31d807f0854bf6ab9d4eb58adf84d8ab7e6
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 2280218d3d237f91f0db3150dbc2031bad3e1816
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62193929"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816004"
 ---
-# <a name="create-app-v-virtual-environments-in-system-center-configuration-manager"></a>Creare ambienti virtuali App-V con System Center Configuration Manager
+# <a name="create-app-v-virtual-environments-in-configuration-manager"></a>Creare ambienti virtuali App-V in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-In un ambiente virtuale Microsoft Application Virtualization (App-V) in System Center Configuration Manager (Configuration Manager) le applicazioni virtuali distribuite possono condividere lo stesso file system e lo stesso Registro di sistema nei PC Windows. A differenza delle applicazioni virtuali standard, queste applicazioni possono condividere dati tra loro. Gli ambienti virtuali vengono creati o modificati nei PC client quando viene installata l'applicazione o quando i client valutano le applicazioni installate. È possibile ordinare queste applicazioni in modo che quando più applicazioni tentano di modificare un valore del Registro di sistema o di file system, la priorità viene assegnata all'applicazione con l'ordine più elevato.  
+In un ambiente virtuale Microsoft Application Virtualization (App-V) in Configuration Manager le applicazioni virtuali distribuite possono condividere lo stesso file system e lo stesso Registro di sistema nei PC Windows. A differenza delle applicazioni virtuali standard, queste applicazioni possono condividere dati tra loro. Gli ambienti virtuali vengono creati o modificati nei PC client quando viene installata l'applicazione o quando i client valutano le applicazioni installate. È possibile ordinare queste applicazioni in modo che quando più applicazioni tentano di modificare un valore del Registro di sistema o di file system, la priorità viene assegnata all'applicazione con l'ordine più elevato.  
 
 > [!IMPORTANT]  
 >  Non fare affidamento su ambienti virtuali App-V per la protezione, ad esempio, da malware.  

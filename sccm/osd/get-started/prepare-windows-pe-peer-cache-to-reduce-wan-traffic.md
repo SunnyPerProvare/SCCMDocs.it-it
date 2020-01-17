@@ -10,19 +10,18 @@ ms.assetid: 6c64f276-b88c-4b1e-8073-331876a03038
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80dffb04d7f6ef097ad5b629690e704d1c9a263f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 562d14edff2b56ba42ec41655657cb7cad393035
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67286577"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821206"
 ---
-# <a name="prepare-windows-pe-peer-cache-to-reduce-wan-traffic-in-system-center-configuration-manager"></a>Preparare la peer cache di Windows PE per ridurre il traffico della rete WAN in System Center Configuration Manager
+# <a name="prepare-windows-pe-peer-cache-to-reduce-wan-traffic-in-configuration-manager"></a>Preparare la peer cache di Windows PE per ridurre il traffico della rete WAN in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Quando si distribuisce un nuovo sistema operativo in System Center Configuration Manager, i computer che eseguono la sequenza di attività possono usare la peer cache di Windows PE per ottenere contenuto da un peer locale (un'origine peer cache) anziché scaricarlo da un punto di distribuzione. In tal modo il traffico WAN viene ridotto al minimo negli scenari con le filiali, in cui non esiste un punto di distribuzione locale.  
+Quando si distribuisce un nuovo sistema operativo in Configuration Manager, i computer che eseguono la sequenza di attività possono usare la peer cache di Windows PE per ottenere contenuto da un peer locale (un'origine peer cache) anziché scaricarlo da un punto di distribuzione. In tal modo il traffico WAN viene ridotto al minimo negli scenari con le filiali, in cui non esiste un punto di distribuzione locale.  
 
  La peer cache di Windows PE è simile a [Windows BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#bkmk_branchcache), ma funziona in Ambiente preinstallazione di Windows (Windows PE). Per descrivere i client che usano la peer cache di Windows PE vengono usati i termini seguenti:  
 
@@ -116,7 +115,7 @@ Usare le sezioni seguenti per gestire la peer cache.
 
 - **SMSTSPeerDownload**  
 
-   Valore: TRUE  
+   Valore:  TRUE  
 
    Consente al client di utilizzare Peer cache di Windows PE.  
 

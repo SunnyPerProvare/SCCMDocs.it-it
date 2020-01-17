@@ -10,17 +10,16 @@ ms.assetid: 2be84a1d-ebb9-47ae-8982-c66d5b92a52a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 978e8e68a1f9ee64596ad4e40ca43281dce0dd3d
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3ade6307e97a6de267243162f3f8cb02bdbaffe5
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74659697"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817262"
 ---
 # <a name="plan-for-and-configure-application-management-in-configuration-manager"></a>Pianificare e configurare la gestione delle applicazioni in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare le informazioni incluse in questo articolo per implementare le dipendenze necessarie per la distribuzione di applicazioni in Configuration Manager.  
 
@@ -39,7 +38,7 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
 Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).  
 
 > [!Note]  
-> Il Catalogo applicazioni richiede anche IIS. Tuttavia, l'esperienza utente di Silverlight non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910.  
+> Il Catalogo applicazioni richiede anche IIS. Tuttavia, l'esperienza utente di Silverlight non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 >
 > Per altre informazioni, vedere gli articoli seguenti:
 >
@@ -83,7 +82,7 @@ Nella versione 1902 e versioni precedenti, i client usano il punto di gestione p
 > [!Note]  
 > A partire dalla versione 1806, i ruoli del Catalogo applicazioni non sono più necessari per visualizzare le applicazioni disponibili per gli utenti in Software Center. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-software-center#bkmk_userex).<!--1358309-->  
 >
-> A partire dalla versione 1906, non è possibile installare nuovi ruoli del catalogo applicazioni. Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910.  
+> A partire dalla versione 1906, non è possibile installare nuovi ruoli del catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
   
 
 ### <a name="distribution-point"></a>Punto di distribuzione
@@ -137,7 +136,7 @@ Prima di distribuire applicazioni virtuali, aggiornare anche il client App-V con
 ### <a name="application-catalog"></a>Catalogo applicazioni
 
 > [!Important]  
-> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](#bkmk_remove-appcat).  
+> Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](#bkmk_remove-appcat).  
 
 #### <a name="application-catalog-web-service-point"></a>Punto per servizi Web del catalogo applicazioni
 
@@ -166,13 +165,13 @@ Per altre informazioni sulla configurazione e personalizzazione di Software Cent
 
 <!-- SCCMDocs-pr issue 3051 -->
 
-Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). L'elenco seguente riepiloga le modifiche:
+Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). L'elenco seguente riepiloga le modifiche:
 
 - A partire dalla versione 1806, l'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato.<!--1358309--> Il ruolo Punto per servizi Web del Catalogo applicazioni non è più *necessario*, ma è ancora *supportato*.
 
 - A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni.
 
-- Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910.  
+- Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
 
 Questi miglioramenti iterativi di Software Center e il punto di gestione sono pensati per semplificare l'infrastruttura e rimuovere la necessità del catalogo applicazioni per le distribuzioni disponibili per gli utenti. Software Center consente di distribuire tutte le distribuzioni di app senza il catalogo applicazioni. Se si abilita TLS 1.2 e si usa HTTP con il catalogo applicazioni, inoltre, gli utenti non possono vedere le distribuzioni disponibili destinate agli utenti. Aggiornare Configuration Manager alla versione 1906 o successiva per trarre vantaggio da questi miglioramenti.
 
@@ -194,7 +193,7 @@ Dopo aver rimosso i ruoli del catalogo applicazioni, Software Center viene avvia
 ## <a name="bkmk_appcat"></a> Installare e configurare il catalogo applicazioni  
 
 > [!Important]  
-> Termina il supporto per i ruoli del catalogo applicazioni con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](#bkmk_remove-appcat).  
+> Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](#bkmk_remove-appcat).  
 
 ### <a name="step-1-web-server-certificate-for-https"></a>Passaggio 1: Certificato del server Web per HTTPS
 
@@ -236,7 +235,7 @@ Installare il Catalogo applicazioni in nuovo server di sistema del sito o in un 
 
 #### <a name="verify-the-installation-of-these-site-system-roles"></a>Verificare l'installazione di questi ruoli del sistema del sito  
 
-- Messaggi di stato: Utilizzare i componenti **SMS_PORTALWEB_CONTROL_MANAGER** e **SMS_AWEBSVC_CONTROL_MANAGER**.  
+- Messaggi di stato: usare i componenti **SMS_PORTALWEB_CONTROL_MANAGER** e **SMS_AWEBSVC_CONTROL_MANAGER**.  
 
     Ad esempio, l'ID stato **1015** per **SMS_PORTALWEB_CONTROL_MANAGER** conferma che Gestione componenti del sito ha completato l'installazione del punto per siti Web del catalogo applicazioni.  
 
@@ -272,7 +271,7 @@ Usare le procedure seguenti per verificare che il catalogo applicazioni sia oper
 > [!TIP]  
 > La non aderenza ai prerequisiti è una delle più comuni cause di malfunzionamento del catalogo applicazioni dopo l'installazione. Verificare i prerequisiti per i ruoli del sistema del sito del catalogo applicazioni. Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).  
 
-In un browser immettere l'indirizzo del sito Web del catalogo applicazioni. Verificare che nella pagina Web siano presenti tre schede: **Catalogo applicazioni**, **Richieste di applicazioni** e **Dispositivi personali**.  
+In un browser immettere l'indirizzo del sito Web del catalogo applicazioni. Verificare che nella pagina Web siano visualizzate tre schede: **Catalogo applicazioni**, **Richieste di applicazioni** e **Dispositivi personali**.  
 
 Usare gli indirizzi appropriati per il catalogo applicazioni tra quelli dell'elenco seguente, tenendo presente che `<server>` è il nome del computer, il nome di dominio completo Intranet o il nome di dominio completo Internet:  
 

@@ -1,7 +1,7 @@
 ---
 title: Sicurezza e privacy per i profili Wi-Fi e VPN
 titleSuffix: Configuration Manager
-description: Informazioni sulle procedure di sicurezza consigliate per gestire i profili Wi-Fi e VPN per i dispositivi in System Center Configuration Manager.
+description: Informazioni sulle procedure di sicurezza consigliate per gestire i profili Wi-Fi e VPN per i dispositivi in Configuration Manager.
 ms.date: 12/28/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
@@ -10,17 +10,16 @@ ms.assetid: ef3ab519-9cf7-47fc-8831-d400e0e96df8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae2b5825948b8f25491a111e62de9fd6e3534062
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
-ms.translationtype: MTE75
+ms.openlocfilehash: 1d582679009b90d7d8806c98a1598e040f80390d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65496295"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819081"
 ---
-# <a name="security-and-privacy-for-wi-fi-and-vpn-profiles-in-system-center-configuration-manager"></a>Sicurezza e privacy per i profili Wi-Fi e VPN in System Center Configuration Manager
+# <a name="security-and-privacy-for-wi-fi-and-vpn-profiles-in-configuration-manager"></a>Protezione e privacy per i profili Wi-Fi e VPN in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 ##  <a name="security-best-practices-for-wi-fi--and-vpn-profiles"></a>Procedure di sicurezza consigliate per i profili Wi-Fi e VPN  
  Usare le procedure di sicurezza consigliate seguenti per gestire i profili Wi-Fi e VPN per i dispositivi.  

@@ -1,7 +1,7 @@
 ---
 title: 'Come creare profili VPN '
 titleSuffix: Configuration Manager
-description: Di seguito viene illustrato come si creano i profili VPN in System Center Configuration Manager.
+description: Informazioni sulla creazione dei profili VPN in Configuration Manager.
 ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
@@ -10,21 +10,20 @@ ms.assetid: f338e4db-73b5-45ff-92f4-1b89a8ded989
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 677a3ef2086f20d94bd0ee6fca983a2cc429d329
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
-ms.translationtype: MTE75
+ms.openlocfilehash: 7fc4329518808b0ab8bfe1dfd9dda7220081c21b
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65494854"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820356"
 ---
-# <a name="how-to-create-vpn-profiles-in-system-center-configuration-manager"></a>Come creare profili VPN in System Center Configuration Manager
+# <a name="how-to-create-vpn-profiles-in-configuration-manager"></a>Come creare i profili VPN in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-I tipi di connessione disponibili per le diverse piattaforme dei dispositivi sono descritti in [Profili VPN in System Center Configuration Manager](../../protect/deploy-use/vpn-profiles.md).  
+I tipi di connessione disponibili per le diverse piattaforme dei dispositivi sono descritti in [profili VPN](../../protect/deploy-use/vpn-profiles.md).  
 
-Per le connessioni VPN di terze parti, distribuire l'app VPN prima di distribuire il profilo VPN. Se si non distribuisce l'app, verrà richiesto agli utenti di farlo quando tentano di connettersi alla VPN. Per informazioni sulla distribuzione delle app, vedere [Distribuire le applicazioni con System Center Configuration Manager](../../apps/deploy-use/deploy-applications.md).
+Per le connessioni VPN di terze parti, distribuire l'app VPN prima di distribuire il profilo VPN. Se si non distribuisce l'app, verrà richiesto agli utenti di farlo quando tentano di connettersi alla VPN. Per informazioni sulla distribuzione delle app, vedere [Distribuire le applicazioni con Configuration Manager](../../apps/deploy-use/deploy-applications.md).
 
 ### <a name="create-a-vpn-profile"></a>Creare un profilo VPN   
 
@@ -44,7 +43,7 @@ Per le connessioni VPN di terze parti, distribuire l'app VPN prima di distribuir
 
 4. Nella pagina **Connessione** specificare:  
 
-   - **Tipo di connessione**: scegliere il tipo di connessione VPN. È possibile scegliere tra i tipi di connessione nella tabella seguente.  
+   - **Tipo di connessione**: Selezionare il tipo di connessione VPN. È possibile scegliere tra i tipi di connessione nella tabella seguente.  
 
    - **Elenco server**: aggiungere un nuovo server da usare per la connessione VPN. In base al tipo di connessione è possibile aggiungere uno o più server VPN e specificare il server predefinito.  
 
@@ -59,7 +58,7 @@ Per le connessioni VPN di terze parti, distribuire l'app VPN prima di distribuir
 |**Ruolo**        |Il ruolo utente che ha accesso a questa connessione. |Pulse Secure|  
 |**Gruppo o dominio di accesso** |Il nome del gruppo di accesso o del dominio a cui connettersi.|Dell SonicWALL Mobile Connect|  
 |**Impronta digitale**  |Una stringa, ad esempio "Codice impronta digitale Contoso", che verrà usata per verificare l'attendibilità del server VPN.<br /><br /> Un'impronta digitale può essere:<br /><br /> - Inviata al client in modo da informarlo che può considerare attendibile un server che presenta la stessa impronta digitale durante la connessione.<br /><br /> - Se il dispositivo non ha ancora l'impronta digitale, richiederà all'utente di considerare attendibile il server VPN usato per la connessione durante la visualizzazione dell'impronta digitale (l'utente verifica manualmente l'impronta digitale e sceglie **Attendibilità** per connettersi).|VPN mobile Check Point|  
-|**Invia tutto il traffico di rete tramite la connessione VPN** |Se questa opzione non è selezionata, è possibile specificare route aggiuntive per la connessione (per i tipi di connessione **Microsoft SSL (SSTP)** , **Microsoft Automatico**, **IKEv2**, **PPTP** e **L2TP** ), caratteristica nota come split o tunneling VPN.<br /><br /> Solo le connessioni alla rete aziendale vengono inviate tramite un tunnel VPN. Il tunneling VPN non viene usato quando si esegue la connessione alle risorse su Internet. |All|  
+|**Invia tutto il traffico di rete tramite la connessione VPN** |Se questa opzione non è selezionata, è possibile specificare route aggiuntive per la connessione (per i tipi di connessione **Microsoft SSL (SSTP)**, **Microsoft Automatico**, **IKEv2**, **PPTP** e **L2TP** ), caratteristica nota come split o tunneling VPN.<br /><br /> Solo le connessioni alla rete aziendale vengono inviate tramite un tunnel VPN. Il tunneling VPN non viene usato quando si esegue la connessione alle risorse su Internet. |All|  
 |**Suffisso DNS specifico della connessione** |Il suffisso DNS (Domain Name System) specifico per la connessione.|- Microsoft SSL (SSTP)<br /><br /> - Microsoft Automatico<br /><br /> - IKEv2<br /><br /> - PPTP<br /><br /> - L2TP|  
 |**Disabilita VPN quando il dispositivo è connesso alla rete Wi-Fi aziendale**  |La connessione VPN non verrà usata quando il dispositivo è connesso alla rete Wi-Fi aziendale.|- Cisco AnyConnect<br /><br /> - Pulse Secure<br /><br /> - F5 Edge Client<br /><br /> - Dell SonicWALL Mobile Connect<br /><br /> - Check Point Mobile VPN<br /><br /> - Microsoft SSL (SSTP)<br /><br /> - Microsoft Automatico<br /><br /> - IKEv2<br /><br /> - L2TP|  
 |**Disabilita VPN quando il dispositivo è connesso alla rete Wi-Fi domestica**  |La connessione VPN non verrà usata quando il dispositivo è connesso a una rete Wi-Fi domestica.|All|  
@@ -73,6 +72,6 @@ Completare la procedura guidata. Il nuovo profilo VPN viene visualizzato nel nod
 
 ### <a name="next-steps"></a>Passaggi successivi
 
-- Per le connessioni VPN di terze parti, distribuire l'app VPN prima di distribuire il profilo VPN. Se si non distribuisce l'app, verrà richiesto agli utenti di farlo quando tentano di connettersi alla VPN. Per informazioni sulla distribuzione delle app, vedere [Distribuire le applicazioni con System Center Configuration Manager](../../apps/deploy-use/deploy-applications.md).
+- Per le connessioni VPN di terze parti, distribuire l'app VPN prima di distribuire il profilo VPN. Se si non distribuisce l'app, verrà richiesto agli utenti di farlo quando tentano di connettersi alla VPN. Per informazioni sulla distribuzione delle app, vedere [Distribuire le applicazioni con Configuration Manager](../../apps/deploy-use/deploy-applications.md).
 
-- Distribuire il profilo VPN seguendo la procedura descritta in [Come distribuire profili VPN in System Center Configuration Manager](deploy-wifi-vpn-email-cert-profiles.md).  
+- Distribuire il profilo VPN come descritto in [come distribuire i profili](deploy-wifi-vpn-email-cert-profiles.md).  

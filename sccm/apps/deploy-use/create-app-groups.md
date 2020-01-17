@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: e67c691e-62ef-4f43-9cfb-0e957d1e7a5f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4a07837952e420b9fe70bef26f998232a8f87d2f
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: b3538a679886e41d047146b36ef79a48440ee215
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75197997"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75815987"
 ---
 # <a name="create-application-groups"></a>Creare gruppi di applicazioni
 
@@ -66,4 +65,4 @@ Per risolvere i problemi relativi alla distribuzione di un gruppo di app, usare 
 - Non è possibile esportare o importare gruppi di app.
 - Non includere nel gruppo le app che richiedono il riavvio o la distribuzione del gruppo potrebbe non riuscire.
 - *Versione 1906*: non è possibile distribuire il gruppo di app in una raccolta utenti.
-- *Versione 1906*: gli utenti non possono **disinstallare** il gruppo di app in Software Center.
+- *Versione 1906*: Gli utenti non possono **disinstallare** il gruppo di app in Software Center.

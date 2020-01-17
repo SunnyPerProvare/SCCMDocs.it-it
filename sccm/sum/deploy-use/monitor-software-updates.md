@@ -1,7 +1,7 @@
 ---
 title: Monitorare gli aggiornamenti software
 titleSuffix: Configuration Manager
-description: La console di System Center Configuration Manager invia avvisi e stati per monitorare gli aggiornamenti e la conformità.
+description: La console di Configuration Manager invia avvisi e stati per monitorare gli aggiornamenti e la conformità.
 author: mestew
 ms.author: mstewart
 manager: dougeby
@@ -10,19 +10,18 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 9afd7b0f-5c8e-48bc-9a65-1f7d74103688
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0933346884c0bad9fcc6923629228391b707a710
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7d84f91c33506e4fc35446e922a5ce16ab0b49d1
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68537183"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827367"
 ---
-# <a name="monitor-software-updates-in-system-center-configuration-manager"></a>Monitorare gli aggiornamenti software in System Center Configuration Manager
+# <a name="monitor-software-updates-in-configuration-manager"></a>Monitorare gli aggiornamenti software in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-System Center Configuration Manager offre vari modi per monitorare aggiornamenti software, processi e informazioni sulla conformità. Usare le sezioni seguenti per monitorare gli aggiornamenti software.
+Configuration Manager offre vari modi per monitorare aggiornamenti software, processi e informazioni sulla conformità. Usare le sezioni seguenti per monitorare gli aggiornamenti software.
 
 ## <a name="software-updates-dashboard"></a>Dashboard Aggiornamenti software
 
@@ -85,8 +84,8 @@ Di seguito sono riportati alcuni dei report utili per identificare potenziali pr
 #### <a name="compliance-9---overall-health-and-compliance-starting-in-version-1806"></a>Conformità 9 - Dati complessivi su integrità e conformità (a partire dalla versione 1806)
 Il report include le parti seguenti:
 
-- **Healthy Clients vs Total Clients** (Client integri rispetto a totale client): questo grafico a barre confronta i client "integri" che hanno comunicato con il sito nel periodo di tempo specificato rispetto al numero totale di client nella raccolta specificata.
-- **Compliance Overview** (Panoramica conformità): grafico a torta che mostra lo stato di conformità generale per il gruppo di aggiornamenti software specifico nei client attivi nella raccolta specificata.
+- **Clienti integri rispetto a client totali**: questo grafico a barre confronta i client "integri" che hanno comunicato con il sito nel periodo di tempo specificato rispetto al numero totale di client nella raccolta specificata.
+- **Panoramica conformità**: grafico a torta che visualizza lo stato di conformità generale per il gruppo di aggiornamenti software specifico nei client attivi nella raccolta specificata.
 - **Top 5 Non-Compliant by Article ID** (Primi 5 non conformi in base a ID articolo): questo grafico a barre visualizza i primi cinque aggiornamenti software nel gruppo specificato che non sono conformi nei client attivi nella raccolta specificata.
 - La parte inferiore del report è una tabella con altri dettagli, in cui sono elencati gli aggiornamenti software nel gruppo specificato.
 

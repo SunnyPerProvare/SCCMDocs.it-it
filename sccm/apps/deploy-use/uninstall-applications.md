@@ -1,7 +1,7 @@
 ---
 title: Disinstallare applicazioni
 titleSuffix: Configuration Manager
-description: Disinstallare le applicazioni usando System Center Configuration Manager
+description: Disinstallare un'applicazione utilizzando Configuration Manager
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-app
@@ -10,17 +10,16 @@ ms.assetid: 0ea3edaa-27c6-4391-9896-cd97d9c5d06d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0626b94d4ffe97b34a6c8376d6ebaa621d91d44
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: dc8268ede9ecf43329cf37f789a7fe99e13635b8
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62199316"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817857"
 ---
-# <a name="uninstall-applications-with-system-center-configuration-manager"></a>Disinstallare le applicazioni con System Center Configuration Manager
+# <a name="uninstall-applications-with-configuration-manager"></a>Disinstallare le applicazioni con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 Eseguire le azioni seguenti per disinstallare un'applicazione distribuita in precedenza.
@@ -34,7 +33,7 @@ Eseguire le azioni seguenti per disinstallare un'applicazione distribuita in pre
 
  Questo elenco include altre informazioni sulle modalità di disinstallazione delle applicazioni:  
 
--   Quando si disinstalla un'applicazione di System Center Configuration Manager (Configuration Manager), le eventuali applicazioni dipendenti non vengono disinstallate automaticamente.  
+-   Quando si disinstalla un'applicazione di Configuration Manager (Configuration Manager), le eventuali applicazioni dipendenti non vengono disinstallate automaticamente.  
 
 -   Se si distribuisce un'applicazione che usa un'azione **Disinstalla** per un utente e l'applicazione è stata installata per tutti gli utenti del computer, la disinstallazione potrebbe non riuscire se l'account dell'utente non ha le autorizzazioni per la disinstallazione dell'applicazione.  
 

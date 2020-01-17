@@ -10,19 +10,18 @@ ms.assetid: a7d3df90-062d-4d57-9e9d-e137d3e7cd7f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 56ac5353052fdba2884b6caee8f56d0835028e3e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5c4d445d18b9e239ace673199f6a7d0f26d10a42
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62268853"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75825405"
 ---
-# <a name="create-an-image-for-an-oem-in-factory-or-a-local-depot-with-system-center-configuration-manager"></a>Creare un'immagine per un OEM in modalità produttore computer o per un rivenditore locale con System Center Configuration Manager
+# <a name="create-an-image-for-an-oem-in-factory-or-a-local-depot-with-configuration-manager"></a>Creare un'immagine per un OEM in modalità produttore computer o per un rivenditore locale con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Le distribuzioni con supporti pre-installati in System Center Configuration Manager consentono di distribuire un sistema operativo in un computer di cui non è stato effettuato il provisioning completo. Il supporto preinstallato è un file WIM (Windows Imaging Format) che può essere installato in un computer bare metal dal produttore (OEM) o in un centro di gestione temporanea aziendale non connesso all'ambiente di Configuration Manager. Successivamente, nell'ambiente di Configuration Manager il computer viene avviato usando l'immagine d'avvio fornita dal supporto, viene eseguito un controllo hash nel supporto pre-installato per verificare che sia valido e quindi il computer si connette al punto di gestione del sito per le sequenze di attività disponibili che completano il processo di download.
+Le distribuzioni con supporti pre-installati in Configuration Manager consentono di distribuire un sistema operativo in un computer di cui non è stato effettuato il provisioning completo. Il supporto preinstallato è un file WIM (Windows Imaging Format) che può essere installato in un computer bare metal dal produttore (OEM) o in un centro di gestione temporanea aziendale non connesso all'ambiente di Configuration Manager. Successivamente, nell'ambiente di Configuration Manager il computer viene avviato usando l'immagine d'avvio fornita dal supporto, viene eseguito un controllo hash nel supporto pre-installato per verificare che sia valido e quindi il computer si connette al punto di gestione del sito per le sequenze di attività disponibili che completano il processo di download.
 
 
 Questo metodo di distribuzione può ridurre il traffico di rete perché l'immagine di avvio e l'immagine del sistema operativo sono già nel computer di destinazione. È possibile specificare applicazioni, pacchetti e pacchetti driver da includere nel supporto pre-installato. Dopo l'installazione del sistema operativo nel computer, vengono innanzitutto ricercati nella cache della sequenza di attività applicazioni, pacchetti o pacchetti di driver. Se il contenuto non viene trovato o è stato modificato, viene scaricato da un punto di distribuzione configurato nei supporti preinstallati e quindi installato.  
@@ -45,7 +44,7 @@ Questo metodo di distribuzione può ridurre il traffico di rete perché l'immagi
 -   **Solo supporti e PXE (nascosto)**  
 
 ## <a name="create-the-prestaged-media"></a>Creare supporti pre-installati  
- Creare il file del supporto pre-installato da inviare all'OEM o al rivenditore locale. Per ulteriori informazioni, vedere [Creare supporti pre-installati con System Center Configuration Manager](create-prestaged-media.md).  
+ Creare il file del supporto pre-installato da inviare all'OEM o al rivenditore locale. Per altre informazioni, vedere [Creare supporti pre-installati con Configuration Manager](create-prestaged-media.md).  
 
 ## <a name="send-the-prestaged-media-file-to-the-oem-or-local-depot"></a>Inviare il file del supporto pre-installato all'OEM o al rivenditore locale  
  Inviare i supporti all'OEM o al rivenditore locale per pre-installare i computer. Il file del supporto pre-installato viene applicato a un disco rigido formattato nel computer.  

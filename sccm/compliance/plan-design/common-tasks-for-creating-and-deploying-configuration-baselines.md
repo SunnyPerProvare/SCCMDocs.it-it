@@ -1,7 +1,7 @@
 ---
 title: 'Attività comuni per le linee di base di configurazione '
 titleSuffix: Configuration Manager
-description: Informazioni su come creare e distribuire linee di base di configurazione in System Center Configuration Manager.
+description: Informazioni su come creare e distribuire linee di base di configurazione in Configuration Manager.
 ms.date: 07/12/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
@@ -10,23 +10,22 @@ ms.assetid: 4bb6afeb-d267-4f9b-ade2-26e5400c223b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: acccaf1994d758fbb089aebe16d22dc10e09e765
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 52e83639029db9eeb4ef64657e70e3dc11aab8f2
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62204457"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818282"
 ---
-# <a name="common-tasks-for-creating-and-deploying-configuration-baselines-with-system-center-configuration-manager"></a>Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager
+# <a name="common-tasks-for-creating-and-deploying-configuration-baselines-with-configuration-manager"></a>Attività comuni per la creazione e la distribuzione di linee base di configurazione con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo argomento descrive alcuni scenari comuni per scoprire come creare e distribuire le linee di base di configurazione di System Center Configuration Manager.  
+Questo argomento descrive alcuni scenari comuni per scoprire come creare e distribuire le linee di base di configurazione di Configuration Manager.  
 
  Gli utenti che hanno già familiarità con le impostazioni di conformità possono trovare la documentazione dettagliata su tutte le funzionalità usate negli argomenti [Creare linee di base di configurazione](../../compliance/deploy-use/create-configuration-baselines.md) e [Distribuire linee di base di configurazione](../../compliance/deploy-use/deploy-configuration-baselines.md).  
 
- Prima di iniziare, leggere [Get started with compliance settings in System Center Configuration Manager](../../compliance/get-started/get-started-with-compliance-settings.md) (Introduzione alle impostazioni di conformità in System Center Configuration Manager) per apprendere alcune nozioni sulle impostazioni di conformità e [Plan for and configure compliance settings](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) (Pianificare e configurare le impostazioni di conformità) per implementare i prerequisiti necessari.  
+ Prima di iniziare, leggere [Get started with compliance settings](../../compliance/get-started/get-started-with-compliance-settings.md) (Introduzione alle impostazioni di conformità) per apprendere alcune nozioni sulle impostazioni di conformità e [Plan for and configure compliance settings](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) (Pianificare e configurare le impostazioni di conformità) per implementare i prerequisiti necessari.  
 
 ## <a name="create-a-configuration-baseline"></a>Creare una linea di base di configurazione  
  In questo esempio è stato creato un elemento di configurazione solo per i PC con Windows 10 che eseguono il client di Configuration Manager.  

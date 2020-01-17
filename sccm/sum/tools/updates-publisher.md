@@ -10,13 +10,12 @@ ms.assetid: 2200b02b-e76b-4aa7-a77a-6dc5e70f1333
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 878e69ffb3f4b5a1c823b1b98a1e53305382ac7b
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 173b1589eff40daa76ccb7e9d6f811e6096f8390
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73710523"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827112"
 ---
 # <a name="system-center-updates-publisher"></a>System Center Updates Publisher
 
@@ -31,7 +30,7 @@ Updates Publisher consente di effettuare le operazioni seguenti:
 -   Esportare aggiornamenti in cataloghi esterni.
 -   Pubblicare aggiornamenti in un server di aggiornamento.
 
-Dopo aver pubblicato aggiornamenti in un server di aggiornamento, è possibile usare System Center Configuration Manager per rilevare e distribuire tali aggiornamenti ai dispositivi gestiti.
+Dopo aver pubblicato aggiornamenti in un server di aggiornamento, è possibile usare Configuration Manager per rilevare e distribuire tali aggiornamenti ai dispositivi gestiti.
 
 ## <a name="workspaces"></a>Aree di lavoro
 Quando si apre Updates Publisher, per impostazione predefinita viene visualizzato automaticamente il nodo Panoramica dell'*area di lavoro Aggiornamenti*.
@@ -42,18 +41,18 @@ Quando si apre Updates Publisher, per impostazione predefinita viene visualizzat
 Per organizzare Updates Publisher sono disponibili quattro aree di lavoro.
 
 
-**Area di lavoro Aggiornamenti:** usare quest'area di lavoro per [creare](/sccm/sum/tools/create-updates-with-updates-publisher) e [gestire](/sccm/sum/tools/manage-updates-with-updates-publisher) aggiornamenti software e aggregazioni di aggiornamenti. Questa area di lavoro include l'assegnazione di aggiornamenti e aggregazioni a una pubblicazione, nonché la pubblicazione e l'esportazione degli stessi in un altro repository di Updates Publisher.
+**Updates Workspace** (Area di lavoro Aggiornamenti): usare quest'area di lavoro per [creare](/sccm/sum/tools/create-updates-with-updates-publisher) e [gestire](/sccm/sum/tools/manage-updates-with-updates-publisher) aggiornamenti software e pacchetti di aggiornamenti. Questa area di lavoro include l'assegnazione di aggiornamenti e aggregazioni a una pubblicazione, nonché la pubblicazione e l'esportazione degli stessi in un altro repository di Updates Publisher.
 
-**Area di lavoro Pubblicazioni:** usare quest'area di lavoro per [gestire le pubblicazioni](/sccm/sum/tools/updates-publisher-publications). Una pubblicazione è gruppo di aggiornamenti creato per semplificare l'esportazione e la pubblicazione degli aggiornamenti stessi.
+**Publications Workspace** (Area di lavoro Pubblicazioni): usare quest'area di lavoro per [gestire le pubblicazioni](/sccm/sum/tools/updates-publisher-publications). Una pubblicazione è gruppo di aggiornamenti creato per semplificare l'esportazione e la pubblicazione degli aggiornamenti stessi.
 
 La gestione delle pubblicazioni include la pubblicazione di aggiornamenti in un server in modo che i client possano trovarli e installarli, l'esportazione di aggiornamenti e aggregazioni per l'uso da parte di altre installazioni di Updates Publisher e la modifica del contenuto o dei dettagli di una pubblicazione.
 
-**Area di lavoro Regole:** usare quest'area per [gestire le regole di applicabilità](/sccm/sum/tools/updates-publisher-applicability-rules) che è possibile salvare e quindi usare con gli aggiornamenti distribuiti. Esistono due tipi di regole:
+**Rules Workspace** (Area di lavoro Regole): usare quest'area per [gestire le regole di applicabilità](/sccm/sum/tools/updates-publisher-applicability-rules) che è possibile salvare e quindi usare con gli aggiornamenti distribuiti. Esistono due tipi di regole:
 
 -   Regole installabili: queste regole consentono di determinare se un client deve installare un aggiornamento.
 -   Regole installate: queste regole verificano se un aggiornamento è già installato.
 
-**Area di lavoro Cataloghi:** usare quest'area di lavoro per aggiungere e [gestire cataloghi di aggiornamenti software](/sccm/sum/tools/updates-publisher-catalogs). Questa area di lavoro include l'importazione di aggiornamenti software da tali cataloghi nel repository di Updates Publisher.
+**Catalogs Workspace** (Area di lavoro Cataloghi): usare quest'area di lavoro per aggiungere e [gestire cataloghi di aggiornamenti software](/sccm/sum/tools/updates-publisher-catalogs). Questa area di lavoro include l'importazione di aggiornamenti software da tali cataloghi nel repository di Updates Publisher.
 
 ## <a name="whats-new-in-system-center-updates-publisher"></a>Novità di System Center Updates Publisher
 

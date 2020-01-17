@@ -1,7 +1,7 @@
 ---
 title: Usare i supporti di avvio per distribuire Windows in rete
 titleSuffix: Configuration Manager
-description: Le distribuzioni dei supporti di avvio in System Center Configuration Manager consentono di distribuire il sistema operativo all'avvio del computer di destinazione.
+description: Le distribuzioni dei supporti di avvio in Configuration Manager consentono di distribuire il sistema operativo all'avvio del computer di destinazione.
 ms.date: 06/16/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
@@ -10,17 +10,16 @@ ms.assetid: 999b5409-7e72-48d2-8554-4d44427ce383
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98aa69cc0a80b12ca5caabb2c5b7167310ea2c83
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 22a3219cdf0bb09061e57f34e52ca7a061f55a2f
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892527"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806153"
 ---
-# <a name="use-bootable-media-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Usare i supporti di avvio per distribuire Windows in rete con System Center Configuration Manager
+# <a name="use-bootable-media-to-deploy-windows-over-the-network-with-configuration-manager"></a>Usare i supporti di avvio per distribuire Windows in rete con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 È possibile distribuire il sistema operativo all'avvio del computer di destinazione usando una distribuzione dei supporti di avvio. Il supporto contiene un puntatore alla sequenza di attività, all'immagine del sistema operativo e ad altri contenuti richiesti dalla rete. All'avvio del computer di destinazione, il computer recupera gli elementi a cui fa riferimento il puntatore del mouse. Con il supporto di avvio senza contenuto, è possibile aggiornare la destinazione senza sostituirlo nel supporto.
 

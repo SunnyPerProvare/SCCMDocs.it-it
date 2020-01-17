@@ -10,13 +10,12 @@ ms.assetid: a95bc292-af10-4beb-ab56-2a815fc69304
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2fa638c292755dafbb03262680a240103e082ad9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 134f5e718fc72eddc2264ef5864c93bd519378c0
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660861"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75819302"
 ---
 # <a name="windows-hello-for-business-settings-in-configuration-manager"></a>Impostazioni di Windows Hello for Business in Configuration Manager
 
@@ -59,11 +58,11 @@ Configuration Manager si integra con Windows Hello for Business nei modi seguent
 
     - **Configurare Windows Hello for business**: specificare se questo profilo Abilita, Disabilita o non configura Hello for business.
 
-    - **Usa un modulo TPM (Trusted Platform Module)** : un modulo TPM offre un livello aggiuntivo di sicurezza dei dati. Scegliere uno dei valori seguenti:  
+    - **Usa un modulo TPM (Trusted Platform Module)** : Un TPM (Trusted Platform Module) fornisce un livello aggiuntivo di sicurezza dei dati. Scegliere uno dei valori seguenti:  
 
-      - **Obbligatorio**: solo i dispositivi con un modulo TPM accessibile possono eseguire il provisioning di Windows Hello for Business.  
+      - **Richiesto**: Solo i dispositivi con un modulo TPM accessibile possono eseguire il provisioning di Windows Hello for Business.  
 
-      - **Preferito**: i dispositivi tentano innanzitutto di usare un modulo TPM. Se non è disponibile, possono usare la crittografia software.
+      - **Preferito**: I dispositivi provano a usare prima un modulo TPM. Se non è disponibile, possono usare la crittografia software.
 
     - **Metodo di autenticazione**: impostare questa opzione su **non configurato** o **basato su chiave**.
 
@@ -74,27 +73,27 @@ Configuration Manager si integra con Windows Hello for Business nei modi seguent
 
     - **Configurare la lunghezza massima del pin**: se si desidera richiedere una lunghezza massima per il PIN dell'utente, abilitare questa opzione e specificare un valore. Quando è abilitata, il valore predefinito è `127`.
 
-    - **Richiedi scadenza PIN (giorni)** : specifica il numero di giorni prima che l'utente debba modificare il PIN del dispositivo.
+    - **Richiedi scadenza PIN (giorni)** : Specifica il numero di giorni prima che l'utente debba modificare il PIN del dispositivo.
 
     - **Impedisci riutilizzo dei PIN precedenti**: non consentire agli utenti di usare pin usati in precedenza.
 
-    - **Richiedi lettere maiuscole nel PIN**: specifica se gli utenti devono includere lettere maiuscole nel PIN di Windows Hello for Business. È possibile scegliere tra:  
+    - **Richiedi lettere maiuscole nel PIN**: specifica se gli utenti devono includere lettere maiuscole nel PIN di Windows Hello for Business. Scegliere tra:  
 
       - **Consentito**: gli utenti possono usare caratteri maiuscoli nel PIN, ma non è obbligatorio.
 
-      - **Obbligatorio**: gli utenti devono includere almeno un carattere maiuscolo nel PIN.  
+      - **Richiesto**: gli utenti devono includere almeno un carattere maiuscolo nel PIN.  
 
       - **Non consentito**: gli utenti non possono usare caratteri maiuscoli nel PIN.  
 
-    - **Richiedi lettere minuscole nel PIN**: specifica se gli utenti devono includere lettere minuscole nel PIN di Windows Hello for Business. È possibile scegliere tra:  
+    - **Richiedi lettere minuscole nel PIN**: specifica se gli utenti devono includere lettere minuscole nel PIN di Windows Hello for Business. Scegliere tra:  
 
       - **Consentito**: gli utenti possono usare caratteri minuscoli nel PIN, ma non è obbligatorio.
 
-      - **Obbligatorio**: gli utenti devono includere almeno un carattere minuscolo nel PIN.  
+      - **Richiesto**: gli utenti devono includere almeno un carattere minuscolo nel PIN.  
 
       - **Non consentito**: gli utenti possono usare caratteri minuscoli nel PIN.  
 
-    - **Configurare i caratteri speciali**: specifica l'uso di caratteri speciali nel PIN. È possibile scegliere tra:  
+    - **Configurare i caratteri speciali**: Specifica l'uso di caratteri speciali nel PIN. Scegliere tra:  
 
         > [!NOTE]
         > I caratteri speciali includono il seguente set:
@@ -103,13 +102,13 @@ Configuration Manager si integra con Windows Hello for Business nei modi seguent
         > ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
         > ```
 
-      - **Consentito**: gli utenti possono usare caratteri speciali nel pin, ma non è necessario.  
+      - **Consentito**: gli utenti possono usare caratteri speciali nel PIN, ma non è obbligatorio.  
 
-      - **Obbligatorio**: gli utenti devono includere almeno un carattere speciale nel PIN.  
+      - **Richiesto**: gli utenti devono includere almeno un carattere speciale nel PIN.  
 
       - **Non consentito**: gli utenti non possono usare caratteri speciali nel PIN. Questo comportamento è anche se l'impostazione **non è configurata**.  
 
-    - **Configurare l'uso delle cifre nel pin**: specifica l'uso dei numeri nel pin. È possibile scegliere tra:
+    - **Configurare l'uso delle cifre nel pin**: specifica l'uso dei numeri nel pin. Scegliere tra:
 
       - **Consentito**: gli utenti possono usare numeri nel pin, ma non è necessario.  
 

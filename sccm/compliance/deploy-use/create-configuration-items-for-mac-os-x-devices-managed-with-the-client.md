@@ -1,7 +1,7 @@
 ---
 title: 'Creare elementi di configurazione per i computer Mac gestiti tramite client '
 titleSuffix: Configuration Manager
-description: Usare l'elemento di configurazione Mac OS X di System Center Configuration Manager per gestire le impostazioni dei dispositivi Mac OS X.
+description: Usare l'elemento di configurazione Mac OS X di Configuration Manager per gestire le impostazioni dei dispositivi Mac OS X.
 ms.date: 05/08/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
@@ -10,16 +10,15 @@ ms.assetid: 722d5bf5-bedc-4dfc-b324-6eeb773874e9
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 346848bf3cd8b69b3bcecb479fb82250943dfd49
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 219ddd4c828cdabd022deb9fe372718184a4c024
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67726151"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816599"
 ---
 # <a name="create-configuration-items-for-mac-os-x-devices"></a>Creare elementi di configurazione per dispositivi Mac OS X
-Usare l'elemento di configurazione **Mac OS X (personalizzato)** di System Center Configuration Manager per gestire le impostazioni dei dispositivi Mac OS X gestiti dal client di Configuration Manager.  
+Usare l'elemento di configurazione **Mac OS X (personalizzato)** di Configuration Manager per gestire le impostazioni dei dispositivi Mac OS X gestiti dal client di Configuration Manager.  
   
 Il sistema operativo Mac OS X usa i file elenco delle proprietà (con estensione plist) per archiviare le impostazioni dell'applicazione. Usare le impostazioni di conformità per valutare e correggere le impostazioni in un file elenco delle proprietà. È anche possibile gestire le impostazioni di Mac OS X scrivendo uno script della shell che restituisce un valore che è possibile valutare e correggere in modo da renderlo conforme.  
   
@@ -90,9 +89,9 @@ Il sistema operativo Mac OS X usa i file elenco delle proprietà (con estensione
         > [!TIP]  
         >  È anche possibile selezionare **Proprietà** per visualizzare informazioni sull'impostazione attualmente selezionata.  
   
-    -   **Tipo di regola**: Selezionare il tipo di regola di conformità che si desidera utilizzare:  
+    -   **Tipo di regola**: selezionare il tipo di regola di conformità che si vuole usare:  
   
-        -   **Valore**: creare una regola che confronta il valore restituito dall'elemento di configurazione con un valore specificato.  
+        -   **Valore**: creare una regola che confronta il valore restituito dall'elemento di configurazione con un valore specificato dall'utente.  
   
         -   **Esistenziale**: creare una regola che valuta l'impostazione a seconda che esista o meno in un dispositivo.  
   
@@ -114,28 +113,28 @@ Il sistema operativo Mac OS X usa i file elenco delle proprietà (con estensione
   
             -   **Minore o uguale a**  
   
-            -   **Uno**: nella casella di testo specificare una voce per ogni riga.  
+            -   **Uno**: Nella casella di testo, specificare una voce per ogni riga.  
   
-            -   **Nessuno**: nella casella di testo specificare una voce per ogni riga.  
+            -   **Nessuno**: Nella casella di testo, specificare una voce per ogni riga.  
   
-        -   **Monitora e aggiorna le regole non conformi, se supportato**: selezionare questa opzione se si vuole monitorare e aggiornare automaticamente le regole non conformi mediante Configuration Manager.  
+        -   **Monitora e aggiorna le regole non conformi, se supportato**: selezionare questa opzione se si vuole monitorare e aggiornare automaticamente le regole non conformi tramite Configuration Manager.  
   
             > [!IMPORTANT]  
             >  È possibile correggere le regole non conformi solo quando l'operatore per la regola è impostato su **Uguale a**.  
   
         -   **Segnalare la non conformità se questa istanza dell'impostazione non viene trovata**: l'elemento di configurazione segnala la mancata conformità se questa impostazione non viene trovata nel computer Mac.  
   
-        -   **Gravità della non conformità per i report**: specificare il livello di gravità segnalato nel caso la regola di conformità non venga soddisfatta. I livelli di gravità disponibili sono i seguenti:  
+        -   **Gravità della non conformità per i report:** specificare il livello di gravità segnalato quando la regola di conformità non viene soddisfatta. I livelli di gravità disponibili sono i seguenti:  
   
             -   **Nessuno**: i computer che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
   
-            -   **Informazioni**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Informazioni** per i report di Configuration Manager.  
+            -   **Informazioni**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Informazioni** per i report di Configuration Manager.  
   
             -   **Avviso**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Avviso** per i report di Configuration Manager.  
   
-            -   **Errore critico**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico** per i report di Configuration Manager.  
+            -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
   
-            -   **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico** per i report di Configuration Manager. Il computer client Mac registra anche questo livello di gravità.  
+            -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il computer client Mac registra anche questo livello di gravità.  
   
     -   Per il tipo di regola **Esistenziale**specificare le informazioni seguenti:  
   
@@ -149,13 +148,13 @@ Il sistema operativo Mac OS X usa i file elenco delle proprietà (con estensione
   
             -   **Nessuno**: i computer che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
   
-            -   **Informazioni**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Informazioni** per i report di Configuration Manager.  
+            -   **Informazioni**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Informazioni** per i report di Configuration Manager.  
   
             -   **Avviso**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Avviso** per i report di Configuration Manager.  
   
-            -   **Errore critico**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico** per i report di Configuration Manager.  
+            -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
   
-            -   **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico** per i report di Configuration Manager. Il computer client Mac registra anche questo livello di gravità.  
+            -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il computer client Mac registra anche questo livello di gravità.  
   
         > [!NOTE]  
         >  Le opzioni visualizzate potrebbero variare a seconda del tipo di impostazione per cui si sta configurando una regola.  
@@ -166,8 +165,8 @@ Il sistema operativo Mac OS X usa i file elenco delle proprietà (con estensione
   
 È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità**.  
   
-Se si vuole aggiungere l'elemento di configurazione a una linea di base di configurazione, vedere [Come creare linee di base di configurazione in System Center Configuration Manager](../../compliance/deploy-use/create-configuration-baselines.md).  
+Se ora si vuole aggiungere questo elemento di configurazione a una linea di base di configurazione, vedere [Come creare linee di base di configurazione](../../compliance/deploy-use/create-configuration-baselines.md).  
   
 ## <a name="next-steps"></a>Passaggi successivi
 
- [Elementi di configurazione per dispositivi gestiti con il client di System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items.md)
+ [Elementi di configurazione per dispositivi gestiti con il client di Configuration Manager](../../compliance/deploy-use/create-configuration-items.md)

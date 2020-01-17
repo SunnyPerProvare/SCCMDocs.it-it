@@ -10,17 +10,16 @@ ms.assetid: 33a6c1d9-4dd8-411c-a748-693a5bd2ea5a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9567dc53a204d639b3da5920cf1fc452426a11f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: e6b7340f69aa859db227363008b0f4703f982b78
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70892480"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820492"
 ---
 # <a name="create-and-deploy-windows-defender-application-guard-policy"></a>Creare e distribuire criteri di Windows Defender Application Guard
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 <!-- 1351960 -->  
 È possibile creare e distribuire criteri di [Windows Defender Application Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview) usando Configuration Manager Endpoint Protection. Questi criteri consentono di proteggere gli utenti aprendo i siti Web non attendibili in un contenitore isolato protetto non accessibile da altre parti del sistema operativo.
 
@@ -82,9 +81,9 @@ Consentono di configurare il comportamento delle applicazioni all'interno della 
 A partire da Configuration Manager versione 1906, è disponibile un'impostazione dei criteri che consente agli utenti di considerare attendibili i file che normalmente si aprono in Application Guard. Al termine dell'esecuzione, i file vengono aperti nel dispositivo host anziché in Application Guard. Per altre informazioni sui criteri di Application Guard, vedere [Configurare le impostazioni dei criteri di Windows Defender Application Guard](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-guard/configure-wd-app-guard).
 
 - **Consenti agli utenti di considerare attendibili i file aperti in Windows Defender Application Guard** : consente all'utente di contrassegnare i file come attendibili. Quando un file è attendibile, viene aperto nell'host anziché in Application Guard. Si applica ai client Windows 10 versione 1809 o versioni successive.
-  - **Non consentito:** Impedisce agli utenti di contrassegnare i file come attendibili (impostazione predefinita).
+  - **Non consentito:** non consente agli utenti di contrassegnare i file come attendibili (impostazione predefinita).
   - **File controllato da antivirus:** Consente agli utenti di contrassegnare i file come attendibili dopo un controllo antivirus.
-  - **Tutti i file:** Consente agli utenti di contrassegnare qualsiasi file come attendibile.
+  - **Tutti i file:** consente agli utenti di contrassegnare qualsiasi file come attendibile.
 
 Quando si Abilita la gestione dei file, è possibile che vengano visualizzati errori registrati nel DCMReporting. log del client. Gli errori riportati di seguito in genere non hanno effetto sulle funzionalità: <!--4619457-->
 
@@ -99,5 +98,5 @@ Per modificare le impostazioni di Application Guard, espandere **Endpoint Protec
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Per altre informazioni su Windows Defender Application Guard: [Windows Defender Application Guard Overview](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-guard/wd-app-guard-overview) (Panoramica di Windows Defender Application Guard).
+Per altre informazioni su Windows Defender Application Guard: [Windows Defender Application Guard FAQ](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-guard/wd-app-guard-overview) (Domande frequenti su Windows Defender Application Guard).
 [Windows Defender Application Guard FAQ](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-guard/faq-wd-app-guard) (Domande frequenti su Windows Defender Application Guard).

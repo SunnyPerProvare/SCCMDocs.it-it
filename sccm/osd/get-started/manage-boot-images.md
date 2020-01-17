@@ -10,13 +10,12 @@ ms.assetid: 97f2d81a-2c58-442c-88bc-defd5a1cd48f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0d71a752396d22d9eadcc0ffa4ca63a3b0424a9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 9a2294502fe1550ef1f895544037c344a3a2f883
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74659562"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821342"
 ---
 # <a name="manage-boot-images-with-configuration-manager"></a>Gestire le immagini d'avvio con Configuration Manager
 
@@ -26,7 +25,7 @@ Un'immagine d'avvio in Configuration Manager è un'immagine [Windows PE](https:/
 
 ## <a name="BKMK_BootImageDefault"></a> Immagini d'avvio predefinite
 
-Configuration Manager offre due immagini d'avvio predefinite: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste immagini sono archiviate nelle cartelle *x64* o *i386* nella condivisione seguente nel server del sito: `\\<SiteServerName>\SMS_<sitecode>\osd\boot\`. Le immagini di avvio predefinite vengono aggiornate o rigenerate in base all'azione eseguita.
+In Configuration Manager sono disponibili due immagini d'avvio predefinite: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste immagini sono archiviate nelle cartelle *x64* o *i386* nella condivisione seguente nel server del sito: `\\<SiteServerName>\SMS_<sitecode>\osd\boot\`. Le immagini di avvio predefinite vengono aggiornate o rigenerate in base all'azione eseguita.
 
 Tenere presente i comportamenti seguenti per le azioni descritte per le immagini d'avvio predefinite:
 
@@ -96,7 +95,7 @@ Ad esempio, usare la console di Configuration Manager per personalizzare le imma
 <a name="bkmk_note1"></a>
 
 > [!NOTE]
-> **Nota 1: supporto per Windows PE 3.1**
+> **Nota 1: Supporto per Windows PE 3.1**
 >
 > Aggiungere un'immagine d'avvio a Configuration Manager solo se è basata su Windows PE *versione 3.1*. Aggiornare Windows AIK per Windows 7 (basato su Windows PE 3.0) con il supplemento Windows AIK per Windows 7 SP1 (basato su Windows PE 3.1). Scaricare il supplemento Windows AIK per Windows 7 SP1 dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=5188).  
 
@@ -106,7 +105,7 @@ Ad esempio, usare la console di Configuration Manager per personalizzare le imma
 
 3. Nella pagina **Origine dati** specificare le opzioni seguenti:  
 
-    - Nella casella **Percorso** specificare il percorso del file WIM dell'immagine di avvio. Il percorso specificato deve essere un percorso di rete valido in formato UNC. Ad esempio: `\\ServerName\ShareName\BootImageName.wim`
+    - Nella casella **Percorso** specificare il percorso del file WIM dell'immagine di avvio. Il percorso specificato deve essere un percorso di rete valido in formato UNC. ad esempio `\\ServerName\ShareName\BootImageName.wim`
 
     - Selezionare l'immagine di avvio dall'elenco a discesa **Immagine di avvio** . Se il file WIM contiene più immagini d'avvio, selezionare l'immagine appropriata.  
 
@@ -212,7 +211,7 @@ Nella scheda **Personalizzazione** selezionare una delle seguenti impostazioni:
 
 #### <a name="optional-components"></a>Componenti facoltativi
 
-Nella scheda **Componenti facoltativi** specificare i componenti aggiunti a Windows PE per l'utilizzo con Configuration Manager. Per altre informazioni sui componenti facoltativi disponibili, vedere [WinPE: aggiungere pacchetti (informazioni di riferimento sui componenti facoltativi)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).  
+Nella scheda **Componenti facoltativi** specificare i componenti aggiunti a Windows PE per l'utilizzo con Configuration Manager. Per altre informazioni sui componenti facoltativi, vedere [WinPE: aggiungere pacchetti (informazioni di riferimento sui componenti facoltativi)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).  
 
 I componenti seguenti sono richiesti da Configuration Manager e vengono sempre aggiunti alle immagini d'avvio:
 
@@ -227,7 +226,7 @@ I componenti seguenti vengono usati comunemente dai clienti:
 
 - Microsoft .NET (WinPE-NetFX): questo componente è un prerequisito per PowerShell. È uno dei componenti facoltativi più grandi.  
 - Windows PowerShell (WinPE-PowerShell): questo componente richiede .NET e aggiunge un supporto limitato per PowerShell. Se si eseguono gli script di PowerShell personalizzati durante la fase WinPE della sequenza di attività, aggiungere questo componente. Esistono altri componenti che potrebbero essere necessari per altri cmdlet di PowerShell.
-- Se si eseguono applicazioni HTML personalizzate durante la fase WinPE della sequenza di attività, aggiungere questo componente.
+- HTML (WinPE-HTA): se si eseguono applicazioni HTML personalizzate durante la fase WinPE della sequenza di attività, aggiungere questo componente.
 
 Per altre informazioni sull'aggiunta di ulteriori lingue, vedere [Configurare più lingue](#BKMK_BootImageLanguage).
 
@@ -265,7 +264,7 @@ Nella scheda **Percorsi contenuto** selezionare il punto di distribuzione o il g
 
 - **Convalida**: controllare l'integrità del pacchetto di immagini d'avvio nel punto di distribuzione o nel gruppo di punti di distribuzione selezionato.  
 
-- **Ridistribuisci**: distribuire nuovamente l'immagine di avvio nel punto di distribuzione o nel gruppo di punti di distribuzione selezionato.  
+- **Ridistribuisci**: distribuire nuovamente l'immagine d'avvio nel punto di distribuzione o nel gruppo di punti di distribuzione selezionato.  
 
 - **Rimuovi**: eliminare l'immagine d'avvio dal punto di distribuzione o dal gruppo di punti di distribuzione selezionato.  
 

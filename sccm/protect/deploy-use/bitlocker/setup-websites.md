@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: 1cd8ac9f-b7ba-4cf4-8cd2-d548b0d6b1df
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b48dac5f2cb850db104cc06f342fd6e286911d1f
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
+ms.openlocfilehash: 4c2237fc7266c7aa6ab9be073eb2c205aa2f9bec
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198745"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820730"
 ---
 # <a name="set-up-bitlocker-portals"></a>Configurare i portali di BitLocker
 
@@ -51,11 +50,11 @@ Questo processo usa uno script di PowerShell, MBAMWebSiteInstaller.ps1, per inst
     > [!NOTE]
     > Questo parametro consente di installare il **report controllo ripristino** collegato dal sito Web di Administration and Monitoring. Per impostazione predefinita Configuration Manager include gli altri report di gestione di BitLocker.
 
-- `-HelpdeskUsersGroupName <DomainUserGroup>`: ad esempio, `contoso\BitLocker help desk users`. Gruppo utenti di dominio i cui membri hanno accesso alle aree **Manage TPM** (Gestisci TPM) e **Drive Recovery** (Ripristino unità) nel sito Web di amministrazione e monitoraggio. Quando si usano queste opzioni, questo ruolo deve compilare tutti i campi, inclusi il dominio e il nome dell'account dell'utente.
+- `-HelpdeskUsersGroupName <DomainUserGroup>`: Ad esempio, `contoso\BitLocker help desk users` Gruppo utenti di dominio i cui membri hanno accesso alle aree **Manage TPM** (Gestisci TPM) e **Drive Recovery** (Ripristino unità) nel sito Web di amministrazione e monitoraggio. Quando si usano queste opzioni, questo ruolo deve compilare tutti i campi, inclusi il dominio e il nome dell'account dell'utente.
 
-- `-HelpdeskAdminsGroupName <DomainUserGroup>`: ad esempio, `contoso\BitLocker help desk admins`. Gruppo utenti di dominio i cui membri hanno accesso alle aree di ripristino del sito Web di amministrazione e monitoraggio. Per consentire agli utenti di ripristinare le unità, questo ruolo deve solo immettere la chiave di ripristino.
+- `-HelpdeskAdminsGroupName <DomainUserGroup>`: Ad esempio, `contoso\BitLocker help desk admins` Gruppo utenti di dominio i cui membri hanno accesso alle aree di ripristino del sito Web di amministrazione e monitoraggio. Per consentire agli utenti di ripristinare le unità, questo ruolo deve solo immettere la chiave di ripristino.
 
-- `-MbamReportUsersGroupName <DomainUserGroup>`: ad esempio, `contoso\BitLocker report users`. Gruppo utenti di dominio i cui membri hanno accesso in sola lettura all'area **Report** del sito Web di amministrazione e monitoraggio.
+- `-MbamReportUsersGroupName <DomainUserGroup>`: Ad esempio, `contoso\BitLocker report users` Gruppo utenti di dominio i cui membri hanno accesso in sola lettura all'area **Report** del sito Web di amministrazione e monitoraggio.
 
 - `-SiteInstall Both`: specificare quale componente installare. Le opzioni valide includono:
   - `Both`: installare entrambi i componenti
@@ -84,7 +83,7 @@ Nel server Web di destinazione eseguire le operazioni seguenti:
     .\MBAMWebSiteInstaller.ps1 -SqlServerName <ServerName> -SqlInstanceName <InstanceName> -SqlDatabaseName <DatabaseName> -ReportWebServiceUrl <ReportWebServiceUrl> -HelpdeskUsersGroupName <DomainUserGroup> -HelpdeskAdminsGroupName <DomainUserGroup> -MbamReportUsersGroupName <DomainUserGroup> -SiteInstall Both
     ```
 
-    Ad esempio,
+    Ad esempio:
 
     ``` PowerShell
     .\MBAMWebSiteInstaller.ps1 -SqlServerName sql.contoso.com -SqlInstanceName instance1 -SqlDatabaseName CM_ABC -ReportWebServiceUrl https://rsp.contoso.com/ReportServer -HelpdeskUsersGroupName "contoso\BitLocker help desk users" -HelpdeskAdminsGroupName "contoso\BitLocker help desk admins" -MbamReportUsersGroupName "contoso\BitLocker report users" -SiteInstall Both

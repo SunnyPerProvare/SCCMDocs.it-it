@@ -10,19 +10,18 @@ ms.assetid: c7c94ba0-d709-4129-8077-075a8abaea1c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: edab13fb95f62a994036e1fdb8ecacdec3755cfa
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 8d032cdd55296affc919c5e039de9444c96979d9
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62253916"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806306"
 ---
-# <a name="preprovision-bitlocker-in-windows-pe-with-system-center-configuration-manager"></a>Effettuare il pre-provisioning di BitLocker in Windows PE con System Center Configuration Manager
+# <a name="preprovision-bitlocker-in-windows-pe-with-configuration-manager"></a>Esecuzione del pre-provisioning di BitLocker in Windows PE con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Il passaggio della sequenza di attività **pre-provisioning di BitLocker** in System Center Configuration Manager consente di attivare BitLocker dall'ambiente preinstallazione di Windows (Windows PE) prima della distribuzione del sistema operativo. Solo lo spazio su disco usato viene crittografato e pertanto i tempi di crittografia sono molto più veloci. Questa operazione viene eseguita applicando una protezione in chiaro generata in modo casuale al volume formattato e crittografando il volume prima di eseguire il processo di installazione di Windows. La possibilità di eseguire il pre-provisioning di BitLocker è stata introdotta in Windows 8 e Windows Server 2012. Tuttavia, è possibile eseguire il pre-provisioning di BitLocker su un disco rigido e installare Windows 7, purché si segua la procedura specifica. Dopo aver completato l'installazione di Windows 7, è necessario impostare una protezione con chiave di BitLocker in quanto il pannello di controllo Windows 7 BitLocker non supporta BitLocker con una protezione in chiaro. È necessario aggiungere una protezione con chiave utilizzando il passaggio **Attiva BitLocker** oppure utilizzando lo strumento della riga di comando manage-bde.exe.  
+Il passaggio della sequenza di attività **pre-provisioning di BitLocker** in Configuration Manager consente di attivare BitLocker dall'ambiente preinstallazione di Windows (Windows PE) prima della distribuzione del sistema operativo. Solo lo spazio su disco usato viene crittografato e pertanto i tempi di crittografia sono molto più veloci. Questa operazione viene eseguita applicando una protezione in chiaro generata in modo casuale al volume formattato e crittografando il volume prima di eseguire il processo di installazione di Windows. La possibilità di eseguire il pre-provisioning di BitLocker è stata introdotta in Windows 8 e Windows Server 2012. Tuttavia, è possibile eseguire il pre-provisioning di BitLocker su un disco rigido e installare Windows 7, purché si segua la procedura specifica. Dopo aver completato l'installazione di Windows 7, è necessario impostare una protezione con chiave di BitLocker in quanto il pannello di controllo Windows 7 BitLocker non supporta BitLocker con una protezione in chiaro. È necessario aggiungere una protezione con chiave utilizzando il passaggio **Attiva BitLocker** oppure utilizzando lo strumento della riga di comando manage-bde.exe.  
 
  In generale, è necessario effettuare le seguenti operazioni per eseguire correttamente il pre-provisioning di BitLocker in un computer su cui verrà installato Windows 7:  
 

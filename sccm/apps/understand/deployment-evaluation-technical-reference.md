@@ -10,17 +10,16 @@ ms.assetid: a7035223-d7bd-47b4-896f-08de3416a4eb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 32035f05c9bea47aa240e7b928e3171697aa07f7
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: fff63f58ebc261f4d9aef42be7c9cbe24450938a
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74823321"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821512"
 ---
 # <a name="application-deployment-evaluation"></a>Valutazione della distribuzione delle applicazioni
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Prima di continuare, esaminare i [componenti client di distribuzione delle applicazioni](/sccm/apps/understand/client-components-technical-reference) per comprendere l'elaborazione dei processi dell'agente ci e di DCM.
 
@@ -60,4 +59,4 @@ Nella voce di log precedente lo **stato corrente** indica se l'applicazione è a
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-- [Download dell'applicazione](/sccm/apps/understand/deployment-download-technical-reference)
+- [Download delle applicazioni](/sccm/apps/understand/deployment-download-technical-reference)

@@ -11,13 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a83dde537a847f562422a1a972ebc65244435b9
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: bf72755de71d9e044f79f92f148c6c3842d93bc6
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74660785"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75818707"
 ---
 # <a name="uup-private-preview-instructions"></a>Istruzioni per l'anteprima privata di UUP
 
@@ -28,7 +27,7 @@ ms.locfileid: "74660785"
 
 La piattaforma di aggiornamento unificata (UUP) è la piattaforma per la creazione di pacchetti e la pubblicazione che i dispositivi consumer e aziendali usano per ricevere gli aggiornamenti da Windows Update for business. Il programma di anteprima privata UUP è per i clienti che hanno accettato di consentire a Microsoft di convalidare l'uso degli aggiornamenti di UUP in Configuration Manager per risolvere i problemi che i clienti segnalano attualmente le finestre di manutenzione. Questi aggiornamenti non sono attualmente disponibili pubblicamente.
 
-Per altre informazioni su UUP, vedere il post del blog di Windows [An update on our Unified Update Platform (UUP)](https://blogs.windows.com/windowsexperience/2017/03/02/an-update-on-our-unified-update-platform-uup/) (Un aggiornamento su Unified Update Platform).
+Per altre informazioni su UUP, vedere il post di blog di Windows seguente: [Aggiornamento su Unified Update Platform (UUP)](https://blogs.windows.com/windowsexperience/2017/03/02/an-update-on-our-unified-update-platform-uup/).
 
 ## <a name="benefits"></a>Vantaggi
 

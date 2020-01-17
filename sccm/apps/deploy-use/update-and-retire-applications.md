@@ -1,7 +1,7 @@
 ---
 title: Aggiornare e ritirare applicazioni
 titleSuffix: Configuration Manager
-description: Rivedere, sostituire o disinstallare le applicazioni distribuite tramite System Center Configuration Manager.
+description: Rivedere, sostituire o disinstallare le applicazioni distribuite con Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-app
@@ -10,20 +10,19 @@ ms.assetid: 68ac8a07-8e54-4a3c-91e3-e50dc1cabf5d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 767d6b54d19158a33b582dc3ab605d780914b18e
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 7770f1db0e311186a908890dc339401ed3cbeb4b
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62198310"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817823"
 ---
-# <a name="update-and-retire-applications-with-system-center-configuration-manager"></a>Aggiornare e ritirare le applicazioni con System Center Configuration Manager
+# <a name="update-and-retire-applications-with-configuration-manager"></a>Aggiornare e ritirare applicazioni con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
-È possibile che in un determinato momento si voglia apportare modifiche a un'applicazione, disinstallarla o sostituire un'applicazione già distribuita con un'applicazione nuova. System Center Configuration Manager offre queste funzionalità, che consentono di aggiornare e ritirare le applicazioni:  
+È possibile che in un determinato momento si voglia apportare modifiche a un'applicazione, disinstallarla o sostituire un'applicazione già distribuita con un'applicazione nuova. Configuration Manager offre queste funzionalità, che consentono di aggiornare e ritirare le applicazioni:  
 
 - **Modificare applicazioni**. Quando si apportano modifiche a un'applicazione o a un tipo di distribuzione, Configuration Manager mantiene una cronologia delle modifiche. È possibile ripristinare l'applicazione a una revisione precedente in qualsiasi momento. È anche possibile visualizzarne le proprietà, ripristinare una revisione precedente o eliminare una revisione precedente di un'applicazione.  
 

@@ -10,17 +10,16 @@ ms.assetid: 1eb2fcaf-acac-4388-9b31-6cccafacaabe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4253fdd94985a8a9adbc9e782f8397c2f76f5f2c
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 5c875c27698c02dff552c499b2c8ef63b5be209d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62206426"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75816497"
 ---
 # <a name="create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-configuration-manager-client"></a>Creare elementi di configurazione personalizzati per computer desktop e server Windows gestiti con il client di Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 
 Usare l'elemento di configurazione **personalizzato per computer desktop e server Windows** di Configuration Manager per gestire le impostazioni per i computer e server Windows gestiti dal client di Configuration Manager.  
@@ -113,7 +112,7 @@ Le impostazioni rappresentano le condizioni aziendali o tecniche usate per valut
 
     - **Descrizione**: immettere una descrizione per l'impostazione. È possibile usare un massimo di 256 caratteri.  
 
-    - **Tipo di impostazione**: nell'elenco scegliere e configurare uno dei tipi di impostazione seguenti da usare per questa impostazione:  
+    - **Tipo di impostazione**: scegliere dall'elenco e configurare uno dei seguenti tipi di impostazione da usare per questa impostazione:  
         - [Query Active Directory](#bkmk_adquery)
         - [Assembly](#bkmk_assembly)
         - [File system](#bkmk_file)
@@ -137,7 +136,7 @@ Le impostazioni rappresentano le condizioni aziendali o tecniche usate per valut
 
 ### <a name="bkmk_adquery"></a> Query Active Directory
 
-- **Prefisso LDAP**: specificare un prefisso valido per la query di Servizi di dominio Active Directory per valutare la conformità nei computer client. Per eseguire una ricerca nel catalogo globale, usare `LDAP://` o `GC://`.  
+- **Prefisso LDAP**: specificare un prefisso valido per la query di Active Directory Domain Services per valutare la conformità nei computer client. Per eseguire una ricerca nel catalogo globale, usare `LDAP://` o `GC://`.  
 
 - **Nome distinto (DN)** : specificare il nome distinto dell'oggetto Active Directory Domain Services che viene valutato per la conformità nei computer client.  
 
@@ -155,19 +154,19 @@ Le impostazioni rappresentano le condizioni aziendali o tecniche usate per valut
 
     Ad esempio, se si vuole eseguire una query per la proprietà di Active Directory che archivia il numero di volte in cui un utente digita una password in modo non corretto, immettere `badPwdCount` in questo campo.  
 
-- **Query**: visualizza la query creata dalle voci in **Prefisso LDAP**, **Nome distinto (DN)** , **Filtro di ricerca** (se specificati) e **Proprietà**.  
+- **Query**: visualizza la query creata dalle voci in **Prefisso LDAP**, **Nome distinto (DN)** , **Filtro di ricerca** (se specificato) e **Proprietà**.  
 
 
 ### <a name="bkmk_assembly"></a> Assembly
 
 Un assembly è una porzione di codice che può essere condivisa tra applicazioni. Le assembly possono avere come estensione del nome file .dll o .exe. Il Global Assembly Cache è la cartella `%SystemRoot%\Assembly` nei computer client. Questa cache è il punto in cui Windows archivia tutti gli assembly condivisi.  
 
-- **Nome dell'assembly:** Specifica il nome dell'oggetto assembly che si desidera cercare. Il nome non può essere uguale ad altri oggetti assembly dello stesso tipo. Prima di tutto, registrarlo nel Global Assembly Cache. Il nome dell'assembly può essere composto al massimo da 256 caratteri.  
+- **Nome dell'assembly:** specifica il nome dell'oggetto assembly che si vuole cercare. Il nome non può essere uguale ad altri oggetti assembly dello stesso tipo. Prima di tutto, registrarlo nel Global Assembly Cache. Il nome dell'assembly può essere composto al massimo da 256 caratteri.  
 
 
 ### <a name="bkmk_file"></a> File system
 
-- **Tipo**: nell'elenco selezionare se si vuole effettuare la ricerca di un **File** o di una **Cartella**.  
+- **Tipo**: nell'elenco selezionare se si vuole eseguire la ricerca di un **File** o di una **Cartella**.  
 
 - **Percorso**: specificare il percorso del file o della cartella specificati nei computer client. È possibile specificare le variabili di ambiente relative al sistema e la variabile di ambiente `%USERPROFILE%` nel percorso.  
 
@@ -196,7 +195,7 @@ Un assembly è una porzione di codice che può essere condivisa tra applicazioni
 
 ### <a name="bkmk_iis"></a> Metabase IIS
 
-- **Percorso metabase**: specificare un percorso valido per la metabase di Internet Information Services (IIS). Ad esempio, `/LM/W3SVC/`.  
+- **Percorso metabase**: specificare un percorso valido per la metabase di Internet Information Services (IIS). Ad esempio, `/LM/W3SVC/`  
 
 - **ID proprietà**: specificare la proprietà numerica dell'impostazione della metabase IIS.  
 
@@ -210,7 +209,7 @@ Un assembly è una porzione di codice che può essere condivisa tra applicazioni
 
 - **Chiave**: specificare il nome della chiave del Registro di sistema che si vuole cercare. Usare il formato `key\subkey`.  
 
-- **Questa chiave del Registro di sistema è associata a un'applicazione a 64 bit**: consente di effettuare la ricerca anche tra le chiavi del Registro di sistema a 64 bit, oltre alle chiavi del Registro di sistema a 32 bit nei client che eseguono una versione a 64 bit di Windows.  
+- **Questa chiave del Registro di sistema è associata a un'applicazione a 64 bit**: consente di eseguire la ricerca anche nelle chiavi del Registro di sistema a 64 bit, oltre che nelle chiavi del Registro di sistema a 32 bit, nei client che eseguono una versione a 64 bit di Windows.  
 
     > [!NOTE]  
     > Se la stessa chiave del Registro di sistema esiste nei percorsi dei Registri di sistema a 64 e 32 bit sullo stesso computer a 64 bit, la condizione globale individua entrambe le chiavi.  
@@ -225,9 +224,9 @@ Un assembly è una porzione di codice che può essere condivisa tra applicazioni
 
 - **Chiave**: specificare il nome della chiave del registro di sistema da cercare. Usare il formato `key\subkey`.  
 
-- **Valore**: specificare il valore che deve essere contenuto all'interno della chiave del Registro di sistema specificata.  
+- **Valore**: specificare il valore che deve essere contenuto nella chiave del Registro di sistema specificata.  
 
-- **Questa chiave del Registro di sistema è associata a un'applicazione a 64 bit**: consente di effettuare la ricerca anche tra le chiavi del Registro di sistema a 64 bit, oltre alle chiavi del Registro di sistema a 32 bit nei client che eseguono una versione a 64 bit di Windows.  
+- **Questa chiave del Registro di sistema è associata a un'applicazione a 64 bit**: consente di eseguire la ricerca anche tra le chiavi del Registro di sistema a 64 bit, oltre alle chiavi del Registro di sistema a 32 bit, nei client che eseguono una versione a 64 bit di Windows.  
 
     > [!NOTE]  
     > Se la stessa chiave del Registro di sistema esiste nei percorsi dei Registri di sistema a 64 e 32 bit sullo stesso computer a 64 bit, la condizione globale individua entrambe le chiavi.  
@@ -254,9 +253,9 @@ Il valore restituito dallo script viene usato per valutare la conformità della 
     > [!NOTE]  
     > Il nome dell'istanza deve fare riferimento a un'istanza locale di SQL Server. Per fare riferimento a un'istanza di SQL server del cluster, è necessario utilizzare un'impostazione script.  
 
-- **Database**: specificare il nome del database Microsoft SQL Server in cui si desidera eseguire la query SQL.  
+- **Database**: specificare il nome del database Microsoft SQL Server in cui si vuole eseguire la query SQL.  
 
-- **Colonna**: specificare il nome della colonna restituito dall'istruzione Transact-SQL usata per valutare la conformità della condizione globale.  
+- **Column** (Colonna): specificare il nome della colonna restituito dall'istruzione Transact-SQL usata per valutare la conformità della condizione globale.  
 
 - **Istruzione Transact-SQL**: specificare la query SQL completa da usare per la condizione globale. Per usare una query SQL esistente, selezionare **Apri**.  
 
@@ -281,7 +280,7 @@ Il valore restituito dallo script viene usato per valutare la conformità della 
 
 - **Nome file XML**: specificare il nome file contenente la query XML nel percorso precedente.  
 
-- **Includi sottocartelle**: abilitare questa opzione per effettuare la ricerca anche nelle eventuali sottocartelle nel percorso specificato.  
+- **Includi sottocartelle**: abilitare questa opzione per eseguire la ricerca anche nelle eventuali sottocartelle nel percorso specificato.  
 
 - **Questo file è associato a un'applicazione a 64 bit**: eseguire una ricerca nel percorso dei file di sistema a 64 bit `%Windir%\System32` oltre al percorso dei file del sistema a 32 bit `%Windir%\Syswow64` nei client Configuration Manager che eseguono una versione di Windows a 64 bit.  
 
@@ -315,9 +314,9 @@ Le regole di conformità consentono di specificare le condizioni che definiscono
         > [!Tip]  
         > Per visualizzare informazioni sull'impostazione attualmente selezionata, selezionare **Proprietà**.  
 
-    - **Tipo di regola**: Selezionare il tipo di regola di conformità che si desidera utilizzare:  
+    - **Tipo di regola**: selezionare il tipo di regola di conformità che si vuole usare:  
 
-        - **Valore**: creare una regola che confronta il valore restituito dall'elemento di configurazione con un valore specificato. Per ulteriori informazioni sulle impostazioni aggiuntive, vedere [regole relative ai valori](#bkmk_value).  
+        - **Valore**: creare una regola che confronta il valore restituito dall'elemento di configurazione con un valore specificato dall'utente. Per ulteriori informazioni sulle impostazioni aggiuntive, vedere [regole relative ai valori](#bkmk_value).  
 
         - **Esistenziale**: creare una regola che valuta l'impostazione a seconda che esista in un dispositivo client oppure a seconda del numero di occorrenze trovate. Per ulteriori informazioni sulle impostazioni aggiuntive, vedere [regole esistenziali](#bkmk_exist).  
 
@@ -332,7 +331,7 @@ Le regole di conformità consentono di specificare le condizioni che definiscono
 
 - **L'impostazione deve essere conforme alle seguenti...** : le regole o le autorizzazioni disponibili variano in base al tipo di impostazione.
 
-- **Monitora e aggiorna le regole non conformi, se supportato** : selezionare questa opzione se si vuole che Configuration Manager esegua il monitoraggio e l'aggiornamento delle regole non conformi. Configuration Manager supporta questa azione con i tipi di regole seguenti:  
+- **Monitora e aggiorna le regole non conformi, se supportato**: selezionare questa opzione se si vuole monitorare e aggiornare automaticamente le regole non conformi tramite Configuration Manager. Configuration Manager supporta questa azione con i tipi di regole seguenti:  
 
     - **Valore del registro di sistema**: se non è conforme, il client imposta il valore del registro di sistema. Se non esiste, il client crea il valore.  
 
@@ -350,7 +349,7 @@ Le regole di conformità consentono di specificare le condizioni che definiscono
     - **Informazioni**  
     - **Avviso**  
     - **Errore critico**  
-    - **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico**. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
+    - **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità errore del tipo **Critico**. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
 
 
 ### <a name="bkmk_exist"></a>Regole esistenziali 
@@ -369,7 +368,7 @@ Le regole di conformità consentono di specificare le condizioni che definiscono
     - **Informazioni**  
     - **Avviso**  
     - **Errore critico**  
-    - **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico**. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
+    - **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità errore del tipo **Critico**. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
 
 
 

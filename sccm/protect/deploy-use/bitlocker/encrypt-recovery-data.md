@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: 1ee6541a-e243-43ea-be16-d0349f7f0c6e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1a7845db0115f35d5b2fc7472013c9061e270aee
-ms.sourcegitcommit: 3a0eaf3378632f312b46b2b8a524e286f9c4cd8e
-ms.translationtype: MTE75
+ms.openlocfilehash: 2d1bf84178c5b130d6fe1aa7d7b7e7cb9fd66878
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75198847"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820832"
 ---
 # <a name="encrypt-recovery-data"></a>Crittografare i dati di ripristino
 
@@ -37,7 +36,7 @@ Se non si desidera creare un certificato di crittografia di Gestione BitLocker, 
 >
 > Applicare la crittografia con cautela, soprattutto in ambienti di grandi dimensioni. A seconda delle tabelle crittografate e della versione di SQL, è possibile riscontrare un calo delle prestazioni del 25%. Aggiornare i piani di backup e ripristino in modo da poter ripristinare correttamente i dati crittografati.
 
-## <a name="certificate-requirements"></a>Requisiti del certificato
+## <a name="certificate-requirements"></a>Requisiti per i certificati
 
 È possibile utilizzare il processo personalizzato per creare e distribuire il certificato di crittografia di Gestione BitLocker, purché soddisfi i requisiti seguenti:
 
@@ -120,7 +119,7 @@ Questo script di esempio ripristina un certificato da un file. Usare questo proc
 Prima di usare questo script in un ambiente di produzione, modificare i valori seguenti:
 
 - Nome database sito (`CM_ABC`)
-- Password della chiave master (`MyMasterKeyPassword`)
+- Password chiave master (`MyMasterKeyPassword`)
 - Percorso file e nome (`C:\BitLockerManagement_CERT_KEY`)
 - Password di esportazione chiave (`MyExportKeyPassword`)
 

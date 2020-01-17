@@ -10,19 +10,18 @@ ms.assetid: f5ad22d5-7df1-49c6-8a0f-db1c3f0cda19
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e565363bbee5852338d730e39bdead6aa5d8457
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: f3363e120d901c4572a0a503293b2f26362c5254
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62246595"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75806408"
 ---
-# <a name="install-a-new-version-of-windows-on-a-new-computer-bare-metal-with-system-center-configuration-manager"></a>Installare una nuova versione di Windows in un nuovo computer (bare metal) con System Center Configuration Manager
+# <a name="install-a-new-version-of-windows-on-a-new-computer-bare-metal-with-configuration-manager"></a>Installare una nuova versione di Windows in un nuovo computer (bare metal) con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo argomento specifica i passaggi generali di System Center Configuration Manager per installare un sistema operativo in un nuovo computer. Per questo scenario è possibile scegliere tra vari metodi di distribuzione diversi, ad esempio PXE, OEM o supporti autonomi. Se non si è sicuri che questo sia lo scenario di distribuzione del sistema operativo più adatto alle proprie esigenze, vedere [Scenari di distribuzione di sistemi operativi aziendali](scenarios-to-deploy-enterprise-operating-systems.md).  
+Questo argomento specifica i passaggi generali di Configuration Manager per installare un sistema operativo in un nuovo computer. Per questo scenario è possibile scegliere tra vari metodi di distribuzione diversi, ad esempio PXE, OEM o supporti autonomi. Se non si è sicuri che questo sia lo scenario di distribuzione del sistema operativo più adatto alle proprie esigenze, vedere [Scenari di distribuzione di sistemi operativi aziendali](scenarios-to-deploy-enterprise-operating-systems.md).  
 
 Per informazioni su come aggiornare un computer esistente con una nuova versione di Windows, vedere le sezioni seguenti.  
 

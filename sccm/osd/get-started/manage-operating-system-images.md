@@ -10,17 +10,16 @@ ms.assetid: fab13949-371c-4a4c-978e-471db1e54966
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ecee342fb65cde6a210a4f2d13d4d75a5f30f19a
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: eb245d5c3178c9b0a5690fc662add1d89e5213aa
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "68536999"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75821325"
 ---
 # <a name="manage-os-images-with-configuration-manager"></a>Gestire le immagini del sistema operativo con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Le immagini del sistema operativo in Configuration Manager sono archiviate nel formato file di immagine di Windows (WIM). Queste immagini sono una raccolta compressa dei file e delle cartelle di riferimento usati per installare e configurare un nuovo sistema operativo in un computer. Molti scenari di distribuzione del sistema operativo richiedono un'immagine del sistema operativo.
 
@@ -69,7 +68,7 @@ Prima di poter usare un'immagine del sistema operativo, è necessario aggiungerl
 
 3. Nella pagina **Origine dati** specificare le informazioni seguenti:
 
-    - **Percorso** di rete al file di immagine del sistema operativo. Ad esempio, `\\server\share\path\image.wim`.
+    - **Percorso** di rete al file di immagine del sistema operativo. Ad esempio, `\\server\share\path\image.wim`
 
     - **Estrai un indice delle immagini specifico dal file WIM specificato** e selezionare un indice delle immagini dall'elenco.<!--3719699--> A partire dalla versione 1902, questa opzione importa automaticamente un solo indice anziché tutti gli indici delle immagini nel file. L'uso di questa opzione genera un file di immagine più piccolo e un'installazione offline più rapida. Supporta anche il processo [Servizio immagini ottimizzato](#bkmk_resetbase) che genera un file di immagine più piccolo dopo l'applicazione degli aggiornamenti software.  
 
@@ -117,9 +116,9 @@ Usare le distribuzioni multicast per consentire a più computer di scaricare sim
 
     - **Consenti trasferimento del pacchetto via multicast (solo WinPE)** : selezionare questa opzione per abilitare la distribuzione simultanea delle immagini del sistema operativo da parte di Configuration Manager tramite multicast.  
 
-    - **Crittografa pacchetti multicast**: specifica se il sito crittografa l'immagine prima di inviarla al punto di distribuzione. Usare questa opzione se l'immagine contiene informazioni riservate. Se l'immagine non è crittografata, il relativo contenuto è visibile in rete come testo non crittografato. Un utente non autorizzato può intercettare e visualizzare il contenuto dell'immagine.  
+    - **Crittografa pacchetti multicast**: specificare se il sito deve crittografare l'immagine prima di inviarla al punto di distribuzione. Usare questa opzione se l'immagine contiene informazioni riservate. Se l'immagine non è crittografata, il relativo contenuto è visibile in rete come testo non crittografato. Un utente non autorizzato può intercettare e visualizzare il contenuto dell'immagine.  
 
-    - **Trasferisci il pacchetto solo via multicast**: Specificare se si desidera che il punto di distribuzione distribuisca l'immagine solo durante una sessione multicast.  
+    - **Trasferisci il pacchetto solo via multicast**: Specificare se si vuole che il punto di distribuzione distribuisca l'immagine solo durante una sessione multicast.  
 
          Se si seleziona l'opzione **Trasferisci il pacchetto solo via multicast**, è necessario specificare anche l'opzione di distribuzione della sequenza attività **Scaricare il contenuto localmente quando necessario eseguendo la sequenza attività**. Per altre informazioni, vedere [Deploy a task sequence](/sccm/osd/deploy-use/deploy-a-task-sequence).  
 

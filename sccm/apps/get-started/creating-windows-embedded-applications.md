@@ -10,19 +10,18 @@ ms.assetid: 16acfd63-0c40-424c-82f4-8c63f7f1c30b
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a76ce199b84db200ed023d610f40dbf6f9f989c2
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: bec9765e5152863bb8b55a0b75f1e5c2fc580550
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62198545"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75817602"
 ---
-# <a name="create-windows-embedded-applications-with-system-center-configuration-manager"></a>Creare applicazioni Windows Embedded con System Center Configuration Manager
+# <a name="create-windows-embedded-applications-with-configuration-manager"></a>Creare applicazioni Windows Embedded con Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Oltre agli altri requisiti e alle procedure di System Center Configuration Manager per la creazione di un'applicazione, quando si creano e si distribuiscono applicazioni per i dispositivi Windows Embedded è necessario tenere presente quanto segue.  
+Oltre agli altri requisiti e alle procedure di Configuration Manager per la creazione di un'applicazione, quando si creano e si distribuiscono applicazioni per i dispositivi Windows Embedded è necessario tenere presente quanto segue.  
 
 ## <a name="general-considerations"></a>Considerazioni generali  
 

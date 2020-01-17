@@ -1,7 +1,7 @@
 ---
 title: Monitorare l'utilizzo delle app con la misurazione del software
 titleSuffix: Configuration Manager
-description: Informazioni sulle operazioni disponibili per la misurazione del software in System Center Configuration Manager.
+description: Informazioni sulle operazioni disponibili per la misurazione del software in Configuration Manager.
 ms.date: 09/20/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-app
@@ -10,19 +10,18 @@ ms.assetid: b1fdaee2-2816-4447-94cd-609f6948f215
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 652c10cfcb4d53b32409dd5af83e7d55f2676463
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 3b317a915d4a1b0dd0e65a93ab6882869eb36862
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "65933472"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75815596"
 ---
-# <a name="software-metering-in-system-center-configuration-manager"></a>Controllo del software in System Center Configuration Manager
+# <a name="software-metering-in-configuration-manager"></a>Misurazione del software in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
-Questo argomento contiene informazioni di riferimento per tutte le operazioni eseguibili quando si usa il controllo del software di System Center Configuration Manager.
+Questo argomento contiene informazioni di riferimento per tutte le operazioni eseguibili quando si usa la misurazione del software di Configuration Manager.
 
 > [!IMPORTANT]
 >  Il controllo del software viene usato per monitorare le app desktop in PC Windows con un nome di file che termina con **.exe**. La misurazione del software non consente di monitorare app di Windows moderne, come quelle usate da Windows 8.
@@ -33,7 +32,7 @@ Il controllo del software non ha dipendenze esterne, ma solo dipendenze all'inte
 |Dipendenza|Altre informazioni|
 |----------------|----------------------|
 |Impostazioni client per il controllo del software|Per usare il controllo del software, l'impostazione client **Abilitare controllo software nei client** deve essere abilitata e distribuita nei computer. È possibile distribuire le impostazioni di controllo del software a tutti i computer nella gerarchia oppure distribuire impostazioni personalizzate a gruppi di computer. Vedere **Configurare il controllo del software** in questo argomento.|
-|Punto di Reporting Services.|Prima di poter visualizzare i report di controllo del software, è necessario configurare un punto di Reporting Services. Per altre informazioni, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).|
+|Punto di Reporting Services.|Prima di poter visualizzare i report di controllo del software, è necessario configurare un punto di Reporting Services. Per altre informazioni, vedere [Reporting](../../core/servers/manage/reporting.md) (Creazione di report).|
 
 ##  <a name="configure-software-metering"></a>Configurare il controllo del software
  Questa procedura consente di configurare le impostazioni client predefinite per il controllo del software e applicarle a tutti i computer nella gerarchia. Per applicare queste impostazioni solo ad alcuni computer, creare un'impostazione client di dispositivo personalizzata e distribuirla in una raccolta contenente i computer in cui si vuole usare il controllo del software. Per altre informazioni su come creare le impostazioni personalizzate del dispositivo, vedere [Configurare le impostazioni client](../../core/clients/deploy/configure-client-settings.md).
@@ -46,9 +45,9 @@ Il controllo del software non ha dipendenze esterne, ma solo dipendenze all'inte
 
 4. Nell'elenco **Impostazioni dispositivo** configurare le impostazioni seguenti:
 
-   -   **Abilitare controllo software nei client**: selezionare **True** per abilitare il controllo del software.
+   -   **Abilitare controllo software nei client**: selezionare **True** per abilitare la misurazione del software.
 
-   -   **Pianifica raccolta dati**: configurare la frequenza con cui verranno raccolti i dati dal controllo del software nei computer client. Usare il valore predefinito **7 giorni** oppure fare clic su **Pianifica** per configurare una pianificazione personalizzata.
+   -   **Pianifica raccolta dati**: configurare la frequenza con cui verranno raccolti i dati dalla misurazione del software nei computer client. Usare il valore predefinito **7 giorni** oppure fare clic su **Pianifica** per configurare una pianificazione personalizzata.
 
 5. Fare clic su **OK** per chiudere la finestra di dialogo **Impostazioni dispositivo** .
 
@@ -128,7 +127,7 @@ Il controllo del software non ha dipendenze esterne, ma solo dipendenze all'inte
 ##  <a name="monitor-software-metering"></a>Monitorare il controllo del software
  Il controllo del software in Configuration Manager include vari report incorporati che consentono di monitorare le informazioni sulle operazioni di controllo del software. Tali report dispongono della categoria report di **Controllo del software**.
 
- Per altre informazioni sulle modalità di configurazione dei report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).
+ Per altre informazioni sulle modalità di configurazione della creazione di report in Configuration Manager, vedere [Creazione di report](../../core/servers/manage/reporting.md).
 
  È anche possibile creare query e raccolte in base ai dati archiviati nel database di Configuration Manager dal controllo del software.
 
