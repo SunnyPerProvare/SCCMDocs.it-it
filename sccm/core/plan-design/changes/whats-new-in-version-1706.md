@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2bc287f11db08d8cdf533465d188966a33e79bfb
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: ee55930802e6757589331eefbdbc5a076c14707e
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802736"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034480"
 ---
 # <a name="what39s-new-in-version-1706-of-configuration-manager"></a>Novità della versione 1706 di Configuration Manager
 
@@ -167,7 +167,6 @@ Per informazioni dettagliate su tutte le impostazioni di Windows 10, vedere [Com
   * Android da 4.2 a 4.4
   * Samsung KNOX Standard 4.0+
 
-Vedere [Creare e distribuire criteri di conformità del dispositivo](https://docs.microsoft.com/sccm/mdm/deploy-use/create-compliance-policy) per provare le nuove regole di conformità del dispositivo
 
 ## <a name="application-management"></a>Gestione delle applicazioni
 
@@ -189,8 +188,6 @@ Per altre informazioni, vedere [Creare ed eseguire script di PowerShell dalla co
 A partire da questa versione, è possibile usare tre nuove impostazioni di criteri di gestione delle applicazioni per dispositivi mobili (MAM):
 
 - **Blocca acquisizione schermo (solo per dispositivi Android):** Specifica che le funzionalità di acquisizione schermo del dispositivo vengono bloccate quando si usa questa app.
-
-Vedere [Proteggere le app usando i criteri di gestione delle applicazioni mobili in System Center Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) per provare le nuove impostazioni dei criteri di protezione dell'app.
 
 
 ## <a name="operating-system-deployment"></a>Distribuzione del sistema operativo
@@ -250,13 +247,10 @@ Per altre informazioni, vedere [Usare Windows Analytics con Configuration Manage
 <!-- 1338403 -->
 In questa versione sono stati aggiornati i valori per l'impostazione **Consenti la condivisione dei dati tra i profili di lavoro e personali** nel gruppo di impostazioni **Profilo di lavoro**. È anche stata aggiunta un'impostazione personalizzata per bloccare il copia e incolla tra i profili di lavoro e personali.
 
-Per altre informazioni, vedere [Elementi di configurazione per dispositivi Android for Work](/sccm/mdm/deploy-use/create-configuration-items-for-android-for-work-devices-managed-without-the-client).
 
 ### <a name="android-and-ios-enrollment-restrictions"></a>Restrizioni di registrazione di Android e iOS
 <!-- 1290826 -->
 Con questa versione, è ora specificare che gli utenti non possono registrare dispositivi Android o iOS personali. Le nuove impostazioni per la restrizione dei dispositivi permettono di limitare la registrazione dei dispositivi Android ai soli dispositivi predichiarati. Per i dispositivi iOS, è possibile bloccare la registrazione di tutti i dispositivi tranne quelli registrati tramite Device Enrollment Program di Apple, Apple Configurator o l'account del manager di registrazione dispositivi di Intune.
-- Per altre informazioni sulle restrizioni di registrazione per Android, vedere [Configurare la gestione dei dispositivi Android](/sccm/mdm/deploy-use/enroll-hybrid-android).
-- Per altre informazioni sulle restrizioni di registrazione per iOS, vedere [Configurare le restrizioni di registrazione per iOS](/sccm/mdm/deploy-use/enroll-hybrid-ios-mac#configure-enrollment-restrictions).
 
 ## <a name="protect-devices"></a>Proteggere i dispositivi
 

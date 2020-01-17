@@ -10,12 +10,12 @@ ms.assetid: 79eb49da-cd2b-4ffc-b355-b595aeba3aea
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: cdd8e0740e4932b4c1c98d18458d5a8bc946cf55
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 71ca3ab9a2bcb3233bcf134ad82117838f9f0208
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75824283"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033972"
 ---
 # <a name="introduction-to-software-inventory-in-configuration-manager"></a>Introduzione all'inventario software in Configuration Manager
 
@@ -38,5 +38,3 @@ Dopo aver abilitato l'inventario software e completato l'esecuzione di un ciclo 
  Quando si esegue l'inventario software in un dispositivo client, il primo report è un inventario completo. I report successivi contengono solo informazioni di inventario differenziale. Il server del sito elabora le informazioni differenziali in ordine di ricezione. Se mancano le informazioni differenziali per un client, il server del sito rifiuta informazioni differenziali aggiuntive e indica al client di eseguire un ciclo di inventario completo.  
 
  Configuration Manager può individuare i computer ad avvio doppio ma restituisce solo le informazioni di inventario relative al sistema operativo attivo nel momento in cui è stato eseguito l'inventario.  
-
-**Dispositivi mobili:** per informazioni sulla raccolta delle informazioni di inventario per le app installate nei dispositivi mobili, vedere [Inventario software per dispositivi mobili registrati con Microsoft Intune](../../../../mdm/deploy-use/software-inventory-mobile-devices.md).

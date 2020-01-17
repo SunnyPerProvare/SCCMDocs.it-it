@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: b5e48166ff09d47f7240256fe0ca451d7a14452f
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 54e144ec8ddd785c49ecfe55a43c2de7057cc960
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802753"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034947"
 ---
 # <a name="what39s-new-in-version-1702-of-configuration-manager"></a>Novità della versione 1702 di Configuration Manager
 
@@ -133,7 +133,6 @@ A partire dalla versione 1702, i client usano i gruppi di limiti per trovare un 
 ### <a name="new-compliance-settings-for-ios"></a>Nuove impostazioni di conformità per iOS
 
 Sono state aggiunte diverse nuove impostazioni per dispositivi iOS, corrispondenti a quelle disponibili con Microsoft Intune.
-Per un elenco di tutte le impostazioni disponibili, vedere [Creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti con Intune](/sccm/mdm/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client).
 
 
 ## <a name="application-management"></a>Gestione delle applicazioni
@@ -266,15 +265,7 @@ Per evitare problemi durante l'aggiornamento da versioni precedenti di Configura
 > - **Tutti i dispositivi iPad iOS 10 e versioni successive**
 
 ### <a name="android-for-work-support"></a>Supporto per Android for Work
-A partire dalla versione 1702, la gestione ibrida dei dispositivi mobili con Microsoft Intune supporta ora la registrazione e la gestione del dispositivo in Android for Work. Linee guida per i dispositivi Android for Work gestiti:
-
-- [Registrare dispositivi Android for Work](/sccm/mdm/deploy-use/enroll-hybrid-android#enable-android-enrollment)
-- [Approvare e distribuire app Android for Work](/sccm/mdm/deploy-use/creating-android-applications#approve-and-deploy-android-for-work-apps)
-- [Creare elementi di configurazione per Android for Work](/sccm/mdm/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client#android-for-work-configuration-items)
-- [Cancellazione selettiva nei dispositivi Android for Work](/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe)
-- [Profili di posta elettronica per Android for Work](/sccm/mdm/deploy-use/create-exchange-activesync-profiles)
-- [Criteri di conformità per Android for Work](/sccm/mdm/deploy-use/create-compliance-policy)
-
+A partire dalla versione 1702, la gestione ibrida dei dispositivi mobili con Microsoft Intune supporta ora la registrazione e la gestione del dispositivo in Android for Work.
 
 ### <a name="deploy-volume-purchased-ios-apps-to-device-collections"></a>Distribuire app iOS acquistate con Volume Purchase Program a raccolte di dispositivi
 
@@ -292,17 +283,13 @@ A partire dalla versione 1702, la gestione ibrida dei dispositivi mobili con Mic
 |1702 e versioni successive|Sì|Dispositivo|Licenza dispositivo|
 |1702 e versioni successive|No|Dispositivo|Licenza utente|
 
-Per altre informazioni sulle app iOS acquistate tramite Volume Purchase Program, vedere [Gestire le app iOS acquistate tramite Volume Purchase Program](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
-
 ### <a name="support-for-ios-volume-purchase-program-for-education"></a>Supporto per iOS Volume Purchase Program for Education
 
 È ora possibile anche distribuire e tenere traccia delle app acquistate tramite iOS Volume Purchase Program for Education.
-Per altre informazioni sulle app iOS acquistate tramite Volume Purchase Program, vedere [Gestire le app iOS acquistate tramite Volume Purchase Program](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
 
 ### <a name="support-for-multiple-volume-purchase-program-tokens"></a>Supporto per più token di Volume Purchase Program
 
 È ora possibile associare a Configuration Manager più token di Volume Purchase Program di Apple.
-Per altre informazioni sulle app iOS acquistate tramite Volume Purchase Program, vedere [Gestire le app iOS acquistate tramite Volume Purchase Program](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
 
 ### <a name="support-for-line-of-business-apps-in-windows-store-for-business"></a>Supporto per app line-of-business in Windows Store per le aziende
 
@@ -314,14 +301,11 @@ Per altre informazioni sulle app iOS acquistate tramite Volume Purchase Program,
 
 Ciò consente alle organizzazioni di ridurre la perdita di dati da app non protette e di impedire l'uso eccessivo di dati in alcune applicazioni.
 
-- Altre informazioni [sul funzionamento dei criteri di conformità dei dispositivi](/sccm/mdm/deploy-use/device-compliance-policies).
-- Altre informazioni [sulla creazione di criteri di conformità dei dispositivi](/sccm/mdm/deploy-use/create-compliance-policy).
 
 ### <a name="new-mobile-threat-defense-monitoring-tools"></a>Nuovi strumenti di monitoraggio Mobile Threat Defense
 
 A partire dalla versione 1702, sono disponibili nuovi strumenti per il monitoraggio dello stato di conformità con il provider di servizi Mobile Threat Defense.
 
-- Per altre informazioni, vedere [Monitorare la conformità a Mobile Threat Defense](https://docs.microsoft.com/sccm/mdm/deploy-use/monitor-mobile-threat-defense-compliance).
 
 ## <a name="protect-devices"></a>Proteggere i dispositivi
 

@@ -10,12 +10,12 @@ ms.assetid: 694bc29f-a7fd-4e06-815a-1a9c5e9ac563
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4ce78a04f05b14d56fb7351d82cdb18a3947cfbc
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: d58015ae8540a52bb2d99e776eaee6f5f0c74bca
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825813"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034656"
 ---
 # <a name="introduction-to-the-long-term-servicing-branch-of-configuration-manager"></a>Introduzione a Long Term Servicing Branch di Configuration Manager
 
@@ -34,9 +34,7 @@ Current Branch di Configuration Manager supporta le funzionalità seguenti, non 
 
 - Aggiornamenti nella console che aggiungono nuove funzionalità e miglioramenti.
 - Supporto per sistemi operativi rilasciati di recente da usare come client e server del sito.
-- Uso di una sottoscrizione di Microsoft Intune per supportare quanto segue:
-  - Intune in una configurazione ibrida di gestione dei dispositivi mobili (MDM)
-  - Software MDM locale
+- Software MDM locale
 - Dashboard di manutenzione di Windows 10 e i piani di manutenzione, incluso il supporto per le versioni recenti di Windows 10.  
 - Supporto per versioni future di Windows Server e Windows 10 LTSB
 - Asset Intelligence

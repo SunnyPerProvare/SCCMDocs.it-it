@@ -10,12 +10,12 @@ ms.assetid: 1fcc921f-085f-4b0b-9c53-1e0707211076
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f2e9302ea51eeb179eca08babefe21374b7bf379
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 3f9a3f89881fd96261ac7723a879bd1d075d1290
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799336"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033609"
 ---
 # <a name="additional-information-about-privacy-for-configuration-manager"></a>Altre informazioni sulla privacy per Configuration Manager
 
@@ -107,15 +107,3 @@ Nella console di Configuration Manager andare all'area di lavoro **Monitoraggio*
 Microsoft usa le informazioni per il funzionamento e il miglioramento delle mappe di Microsoft Bing Maps e di altri siti e servizi Microsoft. Per altre informazioni, vedere l'[Informativa sulla privacy Microsoft](https://go.microsoft.com/fwlink/?LinkId=823548).
 
 È possibile scegliere di non usare la visualizzazione geografica per la gerarchia dei siti. La vista Diagramma gerarchia predefinita consente di visualizzare la gerarchia e non usa il servizio Bing Maps.
-
-
-
-## <a name="microsoft-intune-subscription"></a>Sottoscrizione di Microsoft Intune
-
-I clienti che hanno acquistato una sottoscrizione a Microsoft Intune possono usare Configuration Manager per gestire i propri dispositivi mobili connessi tramite Microsoft Intune. L'[Informativa sulla privacy dei Microsoft Online Services](https://go.microsoft.com/fwlink/?LinkId=262214) si applica ai servizi online Microsoft, incluso Microsoft Intune. Se i clienti dispongono anche di una sottoscrizione Microsoft Intune, è necessario leggere l'[informativa sulla privacy di Microsoft Online Services](https://go.microsoft.com/fwlink/?LinkId=262214) insieme alla presente informativa sulla privacy.
-
-Tutte le comunicazioni con Microsoft utilizzano HTTPS. Per configurare la sottoscrizione a Microsoft Intune e scaricare la richiesta di firma del certificato (CSR) necessaria per la configurazione del supporto iOS, l'amministratore deve accedere a Microsoft Intune usando l'account e la password aziendali. Queste credenziali non vengono memorizzate in Configuration Manager. Tutte le altre comunicazioni con Microsoft Intune vengono autenticate mediante certificati PKI generati automaticamente da Microsoft Intune.
-
-Per gestire i dispositivi collegati a Microsoft Intune, vengono scambiate alcune informazioni con Microsoft Intune. Queste informazioni includono il nome dell'entità utente (UPN) per tutti gli utenti assegnati al servizio e le informazioni di inventario per i dispositivi gestiti da Microsoft Intune. I metadati, come il nome dell'applicazione, l'editore e la versione, dei contenuti assegnati ai punti di distribuzione Manage.Microsoft.com vengono inviati a Microsoft Intune. Il contenuto binario effettivo assegnato a un punto di distribuzione Manage.Microsoft.com viene crittografato prima di essere caricato in Microsoft Intune.
-
-Questa funzionalità non è configurata per impostazione predefinita. Gli amministratori controllano i contenuti che vengono trasferiti al punto di distribuzione Manage.Microsoft.com e gli utenti assegnati al servizio. La funzionalità può essere rimossa in qualsiasi momento.

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: c16ea4928873a987ff673a44574f9734a08607b2
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 3822f8951b97348fce73c163c777482534a79b5f
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75804742"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033733"
 ---
 # <a name="capabilities-in-technical-preview-1709-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1709 per Configuration Manager
 
@@ -96,7 +96,7 @@ Di seguito sono elencati i prerequisiti generali per abilitare la co-gestione:
 - Sottoscrizione a Intune &#40; Autorità MDM impostata su **Intune**&#41;
 
    > [!Note]  
-   > Se si ha un ambiente MDM ibrido, ovvero Intune integrato con Configuration Manager, non è possibile abilitare la co-gestione. Se si vuole eseguire la migrazione a Intune autonomo, vedere [Avviare la migrazione da MDM ibrido a Intune autonomo](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).
+   > Se si ha un ambiente MDM ibrido, ovvero Intune integrato con Configuration Manager, non è possibile abilitare la co-gestione.
 
 #### <a name="additional-prerequisites-for-existing-configuration-manager-clients"></a>Prerequisiti aggiuntivi per client di Configuration Manager esistenti
 - Windows 10, versione 1709 (Fall Creators Update) e versioni successive
@@ -110,7 +110,7 @@ Di seguito sono elencati i prerequisiti generali per abilitare la co-gestione:
 Dopo aver abilitato la co-gestione, Configuration Manager continua a gestire tutti i carichi di lavoro. Quando si è pronti, impostare Intune perché inizi a gestire i carichi di lavoro disponibili. In questa versione Intune può gestire i carichi di lavoro seguenti.   
 
 #### <a name="compliance-policies"></a>Criteri di conformità
-I criteri di conformità definiscono le regole e le impostazioni che un dispositivo deve avere per essere considerato conforme ai criteri di accesso condizionale. È anche possibile usare tali criteri per monitorare e correggere i problemi di conformità con i dispositivi, indipendentemente dall'accesso condizionale. Per altre informazioni, vedere [Criteri di conformità del dispositivo in System Center Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/device-compliance-policies).  
+I criteri di conformità definiscono le regole e le impostazioni che un dispositivo deve avere per essere considerato conforme ai criteri di accesso condizionale. È anche possibile usare tali criteri per monitorare e correggere i problemi di conformità con i dispositivi, indipendentemente dall'accesso condizionale.
 
 #### <a name="windows-update-for-business-policies"></a>Criteri di Windows Update per le aziende
 I criteri di Windows Update per le aziende consentono di configurare i criteri di rinvio per gli aggiornamenti delle funzionalità di Windows 10 o gli aggiornamenti di qualità dei dispositivi Windows 10 gestiti direttamente da Windows Update per le aziende. Per altre informazioni, vedere [Configurare i criteri di rinvio di Windows Update per le aziende](https://docs.microsoft.com/sccm/sum/deploy-use/integrate-windows-update-for-business-windows-10#configure-windows-update-for-business-deferral-policies).  

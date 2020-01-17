@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 5401e8465d31857219a78309ca901683408b8668
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 2db2c56cdefe4a7088d4b6e6908786f855ed82cf
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802787"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034936"
 ---
 # <a name="what39s-new-in-version-1606-of-configuration-manager"></a>Novità della versione 1606 di Configuration Manager
 
@@ -113,7 +113,6 @@ Per informazioni dettagliate, vedere [Gestire le app da Windows Store per le azi
 
 Il flusso di lavoro per la gestione delle app iOS acquistate con Volume Purchase Program e per la loro distribuzione con Configuration Manager è stato migliorato.
 
-Per informazioni dettagliate, vedere [Gestire le app iOS acquistate tramite Volume Purchase Program con Configuration Manager](../../../apps/deploy-use/manage-volume-purchased-ios-apps.md).
 
 ### <a name="software-center-user-interface"></a>Interfaccia utente di Software Center
 
@@ -169,7 +168,6 @@ La nuova impostazione **Consenti Smart Lock e altri agenti di attendibilità** �
 
 L'impostazione consente di controllare la funzionalità Smart Lock su dispositivi compatibili con Android. Questa funzionalità del telefono, talvolta nota anche come "agenti di attendibilità", consente di disabilitare o ignorare la password della schermata di blocco del dispositivo se il dispositivo si trova in una posizione attendibile, ad esempio quando è connesso a un dispositivo Bluetooth specifico oppure quando è nelle vicinanze di un tag NFC. È possibile usare questa impostazione per impedire agli utenti di configurare Smart Lock.
 
-Per informazioni dettagliate, vedere [Creare elementi di configurazione per dispositivi Android e Samsung KNOX Standard gestiti senza il client Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).
 
 ## <a name="device-configuration-and-protection"></a>Configurazione e protezione del dispositivo
 
@@ -195,8 +193,6 @@ Configuration Manager consente di gestire il blocco attivazione in due modi:
 - Abilitando il blocco attivazione nei dispositivi con supervisione.
 - Effettuando il bypass del blocco attivazione nei dispositivi con supervisione.
 
-Per informazioni dettagliate, vedere [Gestire il blocco attivazione iOS con Configuration Manager](../../../mdm/deploy-use/manage-ios-activation-lock.md).
-
 
 ### <a name="microsoft-defender-advanced-threat-protection"></a>Microsoft Defender Advanced Threat Protection
 
@@ -212,8 +208,6 @@ Per informazioni dettagliate, vedere [Come classificare automaticamente i dispos
 ### <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare i dispositivi con i numeri di serie IMEI o iOS
 
 È possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity) o i numeri di serie iOS. È possibile caricare un file con valori delimitati da virgole (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi. Le informazioni importate impostano la proprietà dei dispositivi registrati come "Corporate" negli elenchi di dispositivi. È tuttavia necessaria una licenza di Intune per ogni utente che accede al servizio.
-
-Per informazioni dettagliate, vedere [Predichiarare dispositivi con i numeri di serie IMEI o iOS](../../../mdm/deploy-use/predeclare-devices-with-hardware-id.md).
 
 ### <a name="on-premises-health-attestation-service-communication"></a>Comunicazione del servizio di attestazione dell'integrità locale
 

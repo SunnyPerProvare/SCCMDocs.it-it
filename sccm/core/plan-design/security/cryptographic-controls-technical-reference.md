@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 47acde9e784e9fd342c2a31f664e83f38b8cc080
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: d600297aa51a1d5e5332f64159205407a65c378d
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799285"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033480"
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Riferimento tecnico per i controlli crittografici
 
@@ -57,12 +57,6 @@ Configuration Manager usa la firma e la crittografia per proteggere la gestione 
 -   Client Windows Phone, anche se questi client verificano la firma di un'applicazione firmata da una fonte attendibile.  
 
 -   Client Windows RT, anche se questi client verificano la firma di un'applicazione firmata da una fonte attendibile e usano anche la convalida del nome completo del pacchetto.  
-
--   iOS, anche se questi dispositivi verificano la firma di un'applicazione firmata da un certificato dello sviluppatore proveniente da una fonte attendibile.  
-
--   Client Nokia, anche se questi client verificano la firma di un'applicazione che usa un certificato autofirmato. In alternativa, la firma di un certificato proveniente da una fonte attendibile e il certificato possono firmare applicazioni Nokia SIS (Symbian Installation Source).  
-
--   Android. Questi dispositivi, inoltre, non usano la convalida della firma per l'installazione applicazioni.  
 
 -   Client eseguiti su versioni di Linux e UNIX che non supportano SHA-256. Per altre informazioni, vedere [Pianificazione della distribuzione client per computer Linux e UNIX](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers).  
 

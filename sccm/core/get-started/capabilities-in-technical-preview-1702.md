@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 1b424e98753ffc056a26321c341a13d65460f79c
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 8062136a9a6a753dabadffa111bf09d9e9396a56
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75805133"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034597"
 ---
 # <a name="capabilities-in-technical-preview-1702-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1702 per Configuration Manager
 
@@ -108,9 +108,6 @@ Per altre informazioni su Azure AD, vedere gli argomenti seguenti:
 È ora disponibile una nuova regola di criteri di conformità dei dispositivi per impedire l'accesso alle risorse aziendali che supportano l'accesso condizionale, quando gli utenti usano applicazioni incluse in un elenco di app non conformi. L'elenco di app non conformi può essere definito dall'amministratore quando si aggiunge la nuova regola conforme **App che non possono essere installate**. Questa regola richiede che l'amministratore immetta **Nome app**, **ID app** e **Autore app** (facoltativo) quando si aggiunge un'app all'elenco di app non conformi. Questa impostazione si applica solo a dispositivi iOS e Android.
 
 Ciò consente alle organizzazioni di ridurre la perdita di dati da app non protette e di impedire l'uso eccessivo di dati in alcune applicazioni.
-
-- Altre informazioni [sul funzionamento dei criteri di conformità dei dispositivi](https://docs.microsoft.com/sccm/protect/deploy-use/device-compliance-policies).
-- Altre informazioni [sulla creazione di criteri di conformità dei dispositivi](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy).
 
 ### <a name="try-it-out"></a>Procedura
 

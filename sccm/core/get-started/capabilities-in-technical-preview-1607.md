@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: b03a5323d3e871ad7f1f239b271901c6ddbecac3
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c40d86db0a5140e196d7c9bfae39218b8505e1e0
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75805167"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033848"
 ---
 # <a name="capabilities-in-technical-preview-1607-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1607 per Configuration Manager
 
@@ -57,7 +57,7 @@ In Software Center la personalizzazione viene applicata secondo le regole seguen
 
 2. Se il ruolo del server del sito punto per siti Web del Catalogo applicazioni è installato, Software Center visualizzerà il nome dell'organizzazione e il colore specificati nelle proprietà del ruolo del server del sito punto per siti Web del Catalogo applicazioni. Per altre informazioni, vedere [Configuration options for Application Catalog website point](../../core/servers/deploy/configure/configuration-options-for-site-system-roles.md#BKMK_ApplicationCatalog_Website) (Opzioni di configurazione per il punto per siti Web del Catalogo applicazioni).
 
-3. Se una sottoscrizione di Microsoft Intune è configurata e connessa all'ambiente Configuration Manager, Software Center visualizzerà il nome dell'organizzazione, il colore e il logo aziendale specificati nelle proprietà della sottoscrizione di Intune. Per altre informazioni, vedere [Configurare la sottoscrizione di Microsoft Intune](/sccm/mdm/deploy-use/configure-intune-subscription).
+3. Se una sottoscrizione di Microsoft Intune è configurata e connessa all'ambiente Configuration Manager, Software Center visualizzerà il nome dell'organizzazione, il colore e il logo aziendale specificati nelle proprietà della sottoscrizione di Intune.
 
 ## <a name="use-the-same-network-adapter-for-multiple-pxe-initiated-deployments"></a>Usare la stessa scheda di rete per più distribuzioni avviate da PXE
 In Technical Preview versione 1607, se si usa una scheda ethernet per creare un'immagine di più dispositivi (ad esempio una scheda ethernet USB usata su più dispositivi), è possibile abilitare una nuova impostazione che consente di immettere gli identificatori hardware per le schede ethernet. Configuration Manager ignora gli identificatori hardware nell'elenco quando si esegue un'installazione di PXE e per la registrazione del client.

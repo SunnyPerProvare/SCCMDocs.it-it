@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 99a9774f9c2d4217da6e6aedd7d1075a63923c3f
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 047bf97b538eb33e6f6210a524f63eb306d641f9
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75804827"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034992"
 ---
 # <a name="capabilities-in-technical-preview-1706-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1706 per Configuration Manager
 
@@ -529,7 +529,6 @@ Per altre informazioni sulle impostazioni di conformità, vedere [Garantire la c
   * Android da 4.2 a 4.4
   * Samsung KNOX Standard 4.0+
 
-Vedere [Creare e distribuire criteri di conformità del dispositivo](https://docs.microsoft.com/sccm/mdm/deploy-use/create-compliance-policy) per provare le nuove regole di conformità del dispositivo.
 
 ## <a name="new-mobile-application-management-policy-settings"></a>Nuove impostazioni dei criteri di gestione delle applicazioni mobili
 A partire da questa versione, è possibile usare tre nuove impostazioni di criteri di gestione delle applicazioni per dispositivi mobili (MAM):
@@ -539,8 +538,6 @@ A partire da questa versione, è possibile usare tre nuove impostazioni di crite
 - **Disabilita la sincronizzazione dei contatti:** impedisce all'app di salvare i dati nell'app dei contatti nativa del dispositivo.
 
 - **Disabilita stampa:** impedisce all'app di stampare dati aziendali o dell'istituto di istruzione.
-
-Vedere [Proteggere le app usando i criteri di gestione delle applicazioni mobili in System Center Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) per provare le nuove impostazioni dei criteri di protezione dell'app.
 
 ## <a name="android-and-ios-enrollment-restrictions"></a>Restrizioni di registrazione di Android e iOS
 <!-- 1290826 -->

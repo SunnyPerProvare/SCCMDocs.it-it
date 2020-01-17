@@ -10,17 +10,16 @@ ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3758e7aa996a47b78e1d17864843cf0be70bdd8f
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: b18fbc2e3f6745578bd773079abe431683914b1d
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "70176512"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75826323"
 ---
-# <a name="about-client-installation-parameters-and-properties-in-system-center-configuration-manager"></a>Informazioni sui parametri e le proprietà di installazione del client in System Center Configuration Manager
+# <a name="about-client-installation-parameters-and-properties-in-configuration-manager"></a>Informazioni sui parametri e le proprietà di installazione del client in Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
+*Si applica a: Configuration Manager (Current Branch)*
 
 Usare il comando CCMSetup.exe per disinstallare il client di Configuration Manager. I parametri di installazione client specificati nella riga di comando consentono di modificare il comportamento dell'installazione, mentre le proprietà modificano la configurazione iniziale dell'agente client installato.
 
@@ -413,7 +412,7 @@ Questa proprietà può specificare l'indirizzo di un gateway di gestione cloud. 
 - Eseguire il comando seguente: `(Get-WmiObject -Namespace Root\Ccm\LocationServices -Class SMS_ActiveMPCandidate | Where-Object {$_.Type -eq "Internet"}).MP`
 - Con la proprietà **CCMHOSTNAME** usare il valore restituito senza modificarlo.
 
-Ad esempio: `ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
+ad esempio `ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
 
  > [!Important]
  > Quando si specifica l'indirizzo di un gateway di gestione cloud per la proprietà **CCMHOSTNAME**, *non* aggiungere un prefisso come **https://** . Questo prefisso viene usato solo con l'URL **/mp** di un gateway di gestione cloud.

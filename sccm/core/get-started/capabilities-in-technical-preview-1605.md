@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: 0d1c669c8ce5b57eaa1cc391d50d7fab90adbe4c
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 57326e074e314def7a954cc897427a90fc4c8b5c
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75805218"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033925"
 ---
 # <a name="capabilities-in-technical-preview-1605-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1605 per Configuration Manager
 
@@ -81,8 +81,6 @@ Azioni comuni come **Ritira/cancella dati**, **Reimpostazione passcode**, **Bloc
 - Nella pagina **Proprietà** per un dispositivo.  
 
 - Nella pagina principale del nodo **Dispositivi** (non tutte le colonne potrebbero essere visibili per impostazione predefinita).  
-
-  Per altre informazioni sul bypass del blocco attivazione iOS, vedere [Proteggere i dispositivi iOS con il bypass del blocco attivazione per Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock), in particolare la sezione **Problemi noti correnti relativi al bypass del blocco attivazione in Configuration Manager Technical Preview**.  
 
 ##  <a name="BKMK_WSFB"></a> Windows Store per le app aziendali  
  In [Windows Store per le aziende](https://www.microsoft.com/business-store) è possibile trovare e acquistare app per l'organizzazione, singolarmente o con Volume Purchase Program. Connettendo lo Store a Configuration Manager, è possibile gestire le app acquistate con Volume Purchase Program dalla console di Configuration Manager, ad esempio:  

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 341be5186a59dde5e32d1414e40d30eca781f4f6
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 5171beaccc43a1f894a21ac10af44fa808c0a1f4
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802804"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034512"
 ---
 # <a name="what39s-new-in-version-1602-of-configuration-manager"></a>Novità della versione 1602 di Configuration Manager
 
@@ -71,12 +71,11 @@ L'aggiornamento 1602 per Configuration Manager è disponibile solo come aggiorna
 ### <a name="ios-app-configuration-policies"></a>Criteri di configurazione delle app iOS  
  Usare i criteri di configurazione delle app di Configuration Manager per specificare le impostazioni che potrebbero essere necessarie quando l'utente esegue un'app iOS. Un'applicazione potrebbe richiedere all'utente di specificare valori personalizzati per un numero di porta, una lingua, impostazioni di sicurezza o impostazioni personalizzazione, ad esempio un logo aziendale. Se queste impostazioni vengono immesse in modo non corretto, si può avere un aumento del carico dell'help desk rallentando inoltre l'adozione di nuove app.  
 
- I criteri di configurazione delle app permettono di evitare questi problemi consentendo di distribuire tali impostazioni agli utenti in un criterio prima dell'esecuzione dell'app. Le impostazioni vengono quindi specificate automaticamente e l'utente non deve intraprendere alcuna azione. Per informazioni dettagliate, vedere [Configurare le app iOS con i criteri di configurazione delle app](../../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md).  
+ I criteri di configurazione delle app permettono di evitare questi problemi consentendo di distribuire tali impostazioni agli utenti in un criterio prima dell'esecuzione dell'app. Le impostazioni vengono quindi specificate automaticamente e l'utente non deve intraprendere alcuna azione.
 
 ### <a name="manage-volume-purchased-ios-apps"></a>Gestire le app iOS acquistate con Volume Purchase Program  
  Configuration Manager semplifica la distribuzione e la gestione delle app acquistate con Volume Purchase Program (VPP) di Apple. Configuration Manager importa le informazioni di licenza dall'App Store e tiene traccia del numero di licenze usate.  
 
- Per informazioni dettagliate, vedere [Gestire le app iOS acquistate tramite Volume Purchase Program con Configuration Manager](../../../apps/deploy-use/manage-volume-purchased-ios-apps.md).  
 
 ### <a name="automatic-creation-of-office-mobile-apps"></a>Creazione automatica di app di Office per dispositivi mobili  
  Quando si esegue l'aggiornamento alla versione 1602 dalla versione 1511, Configuration Manager crea automaticamente le seguenti app di Microsoft Office per dispositivi mobili Android e iOS:  
@@ -112,14 +111,12 @@ Queste app si trovano nel nodo **Applicazioni** della console di Configuration M
 ### <a name="kiosk-mode-settings-for-android-samsung-knox-standard-devices"></a>Impostazioni della modalità tutto schermo per i dispositivi Android Samsung KNOX Standard  
  La modalità tutto schermo consente di bloccare un dispositivo per consentire solo alcune funzionalità. Ad esempio, è possibile consentire a un dispositivo di eseguire solo un'app gestita specificata o disabilitare i pulsanti del volume in un dispositivo. Queste impostazioni potrebbero essere usate per un modello dimostrativo di un dispositivo o per un dispositivo dedicato all'esecuzione di una sola funzione, ad esempio un dispositivo POS. In Configuration Manager è ora possibile specificare le impostazioni della modalità tutto schermo per i dispositivi Samsung KNOX Standard.  
 
- Per informazioni dettagliate, vedere [Creare elementi di configurazione per dispositivi Android e Samsung KNOX Standard gestiti senza il client Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).  
 
 ## <a name="conditional-access"></a>Accesso condizionale  
 
 ### <a name="conditional-access-for-pcs-managed-by-configuration-manager"></a>Accesso condizionale per i PC gestiti da Configuration Manager  
  Prima di questa versione, per configurare l'accesso condizionale per un PC era necessario che il PC fosse registrato in Intune o aggiunto a un dominio. A partire dall'aggiornamento 1602, è supportato l'accesso condizionale per i PC gestiti da Configuration Manager. Per i PC gestiti da Configuration Manager, è possibile limitare l'accesso a Exchange Online e SharePoint Online solo ai dispositivi che soddisfano i criteri di conformità impostati.  
 
- Per informazioni dettagliate, vedere [Gestire l'accesso ai servizi di Office 365 per i PC gestiti da Configuration Manager](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
 
 ### <a name="restricting-access-based-on-the-health-of-devices"></a>Limitazione dell'accesso in base allo stato di integrità dei dispositivi  
  È ora possibile limitare l'accesso alla posta elettronica e ai servizi di Office 365 in base all'integrità dei dispositivi, come segnalato dal Servizio di attestazione dell'integrità. Inoltre, i dispositivi gestiti da Intune sono inclusi nei report sull'integrità del dispositivo.  
@@ -129,7 +126,6 @@ Queste app si trovano nel nodo **Applicazioni** della console di Configuration M
 ### <a name="new-compliance-policy-rules"></a>Nuove regole dei criteri di conformità  
  Sono state aggiunte nuove regole dei criteri di conformità, come gli aggiornamenti automatici e la richiesta di una password per sbloccare i dispositivi, per supportare requisiti di sicurezza migliori.
 
- Per altre informazioni, vedere [Criteri di conformità del dispositivo](../../../protect/deploy-use/device-compliance-policies.md).  
 
 ### <a name="make-sure-enrolled-and-compliant-devices-always-have-access-to-exchange-on-premises"></a>Assicurarsi che i dispositivi registrati e conformi abbiano sempre accesso a Exchange locale  
  Quando si seleziona l'opzione seguente, i dispositivi registrati in Intune e conformi ai criteri di conformità possono accedere a Exchange locale: **Sostituzione della regola predefinita: consenti sempre l'accesso a Exchange ai dispositivi conformi e registrati in Intune**. Questa regola è disponibile nella pagina **Generale** della **Configurazione guidata dei criteri di accesso condizionale** per Exchange locale.
@@ -201,8 +197,6 @@ Per informazioni dettagliate, vedere [Come creare e distribuire criteri antimalw
 -   Riattivare il dispositivo.  
 
 Configuration Manager può richiedere lo stato del blocco attivazione per i dispositivi con e senza supervisione che eseguono iOS 7.1 e versioni successive. Per i dispositivi con supervisione, Configuration Manager può recuperare il codice del bypass di Blocco attivazione e inviarlo direttamente al dispositivo.  
-
- Per informazioni dettagliate, vedere [Proteggere i dispositivi iOS con il bypass del blocco attivazione](/sccm/mdm/deploy-use/manage-ios-activation-lock).  
 
 ### <a name="monitor-terms-and-conditions-deployments"></a>Monitorare le distribuzioni di termini e condizioni  
  È possibile monitorare le distribuzioni di termini e condizioni nella console di Configuration Manager.  

@@ -10,25 +10,18 @@ ms.assetid: 24633725-791a-4df7-8dce-2c24c1a19a03
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8afe860e37f7b882f9511aaf888238206b12180d
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e021a55ede1b65afaa1e260f770f3890d840fb66
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802260"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034878"
 ---
 # <a name="choose-a-device-management-solution-for-configuration-manager"></a>Scegliere una soluzione di gestione dei dispositivi per Configuration Manager
 
 *Si applica a: Configuration Manager (Current Branch)*
 
 Configuration Manager offre diverse soluzioni per la gestione di PC, server e dispositivi. Scegliere la soluzione adatta all'organizzazione. Basare la decisione sulle piattaforme di dispositivi da gestire e sulle funzionalità di gestione necessarie.  
-
-
-> [!Important]  
-> A partire dal 14 agosto 2018, la gestione ibrida dei dispositivi mobili è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
-<!-- SCCMDocs issue 1197 -->
-
-
 
 ## <a name="overview"></a>Panoramica
 

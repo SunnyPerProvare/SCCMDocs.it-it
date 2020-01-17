@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 80548a53d00707905f24622ab3713427a41b3095
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 54373c35717307d97be66363265e0395d47d53ee
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802770"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034544"
 ---
 # <a name="what39s-new-in-version-1610-of-configuration-manager"></a>Novità della versione 1610 di Configuration Manager
 
@@ -99,7 +99,6 @@ Per informazioni dettagliate, vedere [Gestire le app da Windows Store per le azi
 
 ## <a name="policy-sync-for-intune-enrolled-devices"></a>Sincronizzazione criteri per i dispositivi registrati in Intune
 È ora possibile richiedere una sincronizzazione dei criteri per un dispositivo registrato in Intune dalla console di Configuration Manager, senza dover richiedere la sincronizzazione dall'app Portale aziendale sul dispositivo stesso. Le informazioni sullo stato della richiesta di sincronizzazione sono disponibili nelle visualizzazioni del dispositivo come nuova colonna, denominata **Remote Sync State** (Stato sincronizzazione remota). Queste informazioni sono disponibili anche nella sezione Dati di individuazione della finestra di dialogo **Proprietà** di ogni dispositivo.
-Per informazioni dettagliate, vedere [Sincronizzare in remoto i criteri in dispositivi registrati in Intune dalla console di Configuration Manager](/sccm/mdm/deploy-use/sync-intune-device).
 
 
 ## <a name="use-compliance-settings-to-configure-windows-defender-settings"></a>Usare le impostazioni di conformità per configurare le impostazioni di Windows Defender
@@ -114,7 +113,6 @@ Per informazioni dettagliate, vedere la sezione **Windows Defender** in [Creare 
 
 ## <a name="new-columns-in-device-collection-views"></a>Nuove colonne nelle visualizzazioni raccolta dispositivi
 Ora è possibile visualizzare le colonne **IMEI** e **Numero di serie** (per i dispositivi iOS) nelle visualizzazioni raccolta dispositivi.
-Per informazioni dettagliate, vedere [Predichiarare dispositivi con i numeri di serie IMEI o iOS](https://docs.microsoft.com/sccm/mdm/deploy-use/predeclare-devices-with-hardware-id).
 
 ## <a name="customizable-branding-for-software-center-dialogs"></a>Personalizzazione delle finestre di dialogo di Software Center
 In Configuration Manager versione 1602 è stata introdotta la personalizzazione per Software Center. Nella versione 1610 la personalizzazione viene ora estesa a tutte le finestre di dialogo associate, in modo da offrire agli utenti di Software Center un'esperienza più uniforme.
@@ -125,7 +123,7 @@ In Software Center la personalizzazione viene applicata secondo le regole seguen
 
 - Se il ruolo del server del sito punto per siti Web del Catalogo applicazioni è installato, Software Center visualizza il nome dell'organizzazione e il colore specificati nelle proprietà del ruolo del server del sito punto per siti Web del Catalogo applicazioni. Per altre informazioni, vedere [Configuration options for Application Catalog website point](/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#BKMK_ApplicationCatalog_Website) (Opzioni di configurazione per il punto per siti Web del Catalogo applicazioni).
 
-- Se una sottoscrizione di Microsoft Intune è configurata e connessa all'ambiente Configuration Manager, Software Center visualizza il nome dell'organizzazione, il colore e il logo aziendale specificati nelle proprietà della sottoscrizione di Intune. Per ulteriori informazioni, vedere [Configuring the Microsoft Intune subscription](/sccm/mdm/deploy-use/configure-intune-subscription).
+- Se una sottoscrizione di Microsoft Intune è configurata e connessa all'ambiente Configuration Manager, Software Center visualizza il nome dell'organizzazione, il colore e il logo aziendale specificati nelle proprietà della sottoscrizione di Intune.
 
 
 ## <a name="enforcement-grace-period-for-required-application-and-software-update-deployments"></a>Periodo di tolleranza per l'imposizione delle distribuzioni di applicazioni e aggiornamenti software obbligatorie
@@ -202,10 +200,9 @@ Il passaggio Prepara client ConfigMgr a questo punto rimuove completamente il cl
 
 
 ## <a name="lookout-integration-for-hybrid-implementations-to-protect-ios-and-android-devices"></a>Integrazione di Lookout nelle implementazioni ibride per la protezione di dispositivi iOS e Android
-Microsoft si integra con la soluzione di protezione dalle minacce Lookout per proteggere i dispositivi mobili iOS e Android mediante il rilevamento di malware, app rischiose e altre minacce nei dispositivi. La soluzione Lookout consente di determinare il livello di minaccia, che è configurabile. È possibile creare una regola dei criteri di conformità in Configuration Manager per determinare la conformità del dispositivo in base alla valutazione dei rischi di Lookout. Tramite criteri di accesso condizionale, è possibile consentire o bloccare l'accesso alle risorse aziendali in base allo stato di conformità del dispositivo. Per informazioni sull'integrazione e sul suo funzionamento, vedere [Gestire l'accesso in base a dispositivo, rete e rischio dell'applicazione](/sccm/mdm/deploy-use/mobile-threat-defense).
+Microsoft si integra con la soluzione di protezione dalle minacce Lookout per proteggere i dispositivi mobili iOS e Android mediante il rilevamento di malware, app rischiose e altre minacce nei dispositivi. La soluzione Lookout consente di determinare il livello di minaccia, che è configurabile. È possibile creare una regola dei criteri di conformità in Configuration Manager per determinare la conformità del dispositivo in base alla valutazione dei rischi di Lookout. Tramite criteri di accesso condizionale, è possibile consentire o bloccare l'accesso alle risorse aziendali in base allo stato di conformità del dispositivo.
 
-Agli utenti dei dispositivi iOS non conformi verrà richiesto di effettuare la registrazione. Verrà inoltre richiesto di installare l'applicazione Lookout for Work, di attivare l'app e di correggere le minacce segnalate da Lookout for Work per poter accedere ai dati aziendali. Vedere le informazioni su come [Configurare e distribuire l'app Lookout for Work](/sccm/protect/deploy-use/configure-and-deploy-lookout-for-work-apps).
-
+Agli utenti dei dispositivi iOS non conformi verrà richiesto di effettuare la registrazione. Verrà inoltre richiesto di installare l'applicazione Lookout for Work, di attivare l'app e di correggere le minacce segnalate da Lookout for Work per poter accedere ai dati aziendali.
 
 
 ## <a name="new-compliance-settings-for-configuration-items"></a>Nuove impostazioni di conformità per gli elementi di configurazione

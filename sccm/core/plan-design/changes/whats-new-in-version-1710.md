@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 8e2342ec83e82c0400c370dd469887fc264356ef
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 47941e43a2e2125aa466ddbf16df975ae0d271e8
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802583"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034909"
 ---
 # <a name="what39s-new-in-version-1710-of-configuration-manager"></a>Novità della versione 1710 di Configuration Manager
 
@@ -142,29 +142,12 @@ Per altre informazioni, vedere [Come configurare le impostazioni client](/sccm/c
 
 ### <a name="actions-for-non-compliance"></a>Azioni per la mancata conformità 
 <!--1321366 -->    
-Ora è possibile configurare una sequenza in ordine temporale delle azioni applicate ai dispositivi che non soddisfano la conformità. Ad esempio, è possibile segnalare agli utenti i dispositivi non conformi inviando notifiche via posta elettronica o contrassegnando tali dispositivi come non conformi. Per informazioni dettagliate, vedere [Configurare azioni per la mancata conformità](/sccm/mdm/deploy-use/actions-for-noncompliance).
+Ora è possibile configurare una sequenza in ordine temporale delle azioni applicate ai dispositivi che non soddisfano la conformità. Ad esempio, è possibile segnalare agli utenti i dispositivi non conformi inviando notifiche via posta elettronica o contrassegnando tali dispositivi come non conformi.
 
 ### <a name="windows-10-arm64-device-support"></a>Supporto per dispositivi ARM64 Windows 10
 <!-- 1355000 -->
 
 Nei dispositivi ARM64 che eseguono Windows 10 sarà supportata la gestione ibrida dei dispositivi mobili quando questi dispositivi saranno disponibili.
-
-Gli scenari supportati includono le operazioni seguenti:
-
-- [Registrare i dispositivi](../../../mdm/deploy-use/enroll-hybrid-windows.md)
-- [Eseguire azioni di cancellazione remota complete e selettive](../../../mdm/deploy-use/wipe-lock-reset-devices.md)
-- [Gestire le impostazioni tramite linee di base ed elementi di configurazione](../../../mdm/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)
-- [Gestire i criteri di conformità](../../../mdm/deploy-use/device-compliance-policies.md) e [l'accesso condizionale](../../../protect/deploy-use/manage-access-to-services.md)
-- Gestire l'accesso alle risorse aziendali tramite:
-   - [Profili certificato](../../../mdm/deploy-use/create-pfx-certificate-profiles.md)
-   - [Profili VPN in Configuration Manager](../../../mdm/deploy-use/create-vpn-profiles.md)
-   - [Profili Wi-Fi](../../../mdm/deploy-use/create-wifi-profiles.md)
-   - [Profili di posta elettronica](../../../mdm/deploy-use/create-exchange-activesync-profiles.md)
-- [Configurare Windows Hello per criteri aziendali](../../../mdm/deploy-use/windows-hello-for-business-settings.md)
-- [Gestire le applicazioni](../../../mdm/deploy-use/management-tasks-applications.md)
-
-> [!NOTE]
-> La distribuzione delle applicazioni .appxbundle compilate per architetture multiple potrebbe non funzionare in questi dispositivi, e questo scenario non è supportato al momento.
 
 ### <a name="improved-vpn-profile-experience-in-configuration-manager-console"></a>Esperienza del profilo VPN migliorata nella console di Configuration Manager 
 <!-- 1318232 -->

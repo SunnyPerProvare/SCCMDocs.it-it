@@ -11,12 +11,12 @@ author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: c32636de631c92ff1ce8046e69272e20ec4b9b55
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 40148c2656c4b73775ee994a90d144aa94c98745
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75805252"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76035008"
 ---
 # <a name="capabilities-in-technical-preview-1602-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1602 per Configuration Manager
 
@@ -38,8 +38,6 @@ Questo articolo presenta le funzionalità disponibili nella Technical Preview pe
 - Riattivare il dispositivo  
 
   Configuration Manager può richiedere lo stato del blocco attivazione per i dispositivi con e senza supervisione che eseguono iOS 7.1 e versioni successive. Per i dispositivi con supervisione, Intune può recuperare il codice del bypass del blocco attivazione e inviarlo direttamente al dispositivo.  
-
-  Per altre informazioni, vedere [Proteggere i dispositivi iOS con il bypass del blocco attivazione per Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock)  
 
 ##  <a name="BKMK_SC1601"></a> Miglioramenti di Software Center nella versione 1602  
 
