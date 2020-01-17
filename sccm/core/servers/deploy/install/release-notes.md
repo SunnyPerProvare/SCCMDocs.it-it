@@ -2,7 +2,7 @@
 title: Note sulla versione
 titleSuffix: Configuration Manager
 description: Informazioni su problemi urgenti non ancora risolti nel prodotto o trattati in un articolo della Knowledge Base del supporto tecnico Microsoft.
-ms.date: 12/20/2019
+ms.date: 01/14/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 030947fd-f5e0-4185-8513-2397fb2ec96f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f6eaebf71fb9f03c5ed27157ed23a67cf10dc715
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: bc899b6732d3fca21e35f82906001f25a942a4d6
+ms.sourcegitcommit: cf978bfea545ed9116dacadfac830cbb08aaa649
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798070"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75951612"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Note sulla versione per Configuration Manager
 
@@ -39,6 +39,16 @@ Per informazioni sulle nuove funzionalità introdotte con le diverse versioni, v
 
 
 ## <a name="set-up-and-upgrade"></a>Configurazione e aggiornamento  
+
+### <a name="client-automatic-upgrade-happens-immediately-for-all-clients"></a>L'aggiornamento automatico del client avviene immediatamente per tutti i client
+
+<!-- 6040412 -->
+
+*Si applica alla versione 1910*
+
+Se il sito usa l'[aggiornamento automatico del client](/configmgr/core/clients/manage/upgrade/upgrade-clients#automatic-client-upgrade), quando si aggiorna il sito alla versione 1910, tutti i client vengono immediatamente aggiornati dopo che il sito è stato aggiornato correttamente. L'unica impostazione casuale è quando i client ricevono i criteri, cosa che per impostazione predefinita avviene ogni ora. Per un sito di grandi dimensioni con molti client, questo comportamento può comportare l'utilizzo di una quantità significativa di traffico di rete e un sovraccarico dei punti di distribuzione.
+
+Per risolvere questo problema, disabilitare temporaneamente l'aggiornamento automatico del client. Usare altri [metodi di aggiornamento del client](/configmgr/core/clients/manage/upgrade/upgrade-clients). Microsoft rilascerà presto un hotfix per questo problema per consentire di continuare a usare l'aggiornamento automatico del client.
 
 ### <a name="site-server-in-passive-mode-doesnt-update-configurationmof"></a>Il server del sito in modalità passiva non aggiorna configuration.mof
 

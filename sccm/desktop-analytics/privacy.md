@@ -10,12 +10,12 @@ ms.assetid: b5606f15-f589-485c-a599-cdabf1a9e7ac
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2db3403960e52ee5329d506189be77b7e3f1e292
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: b3ac5b3b9f91fbbb426a5314f72f3bb6d9b608db
+ms.sourcegitcommit: cf978bfea545ed9116dacadfac830cbb08aaa649
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791515"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75951652"
 ---
 # <a name="desktop-analytics-data-privacy"></a>Privacy dei dati di Desktop Analytics
 
@@ -89,5 +89,7 @@ Per altre informazioni sugli aspetti correlati alla privacy, vedere gli articoli
 - [Fidati del tuo cloud](https://azure.microsoft.com/overview/trusted-cloud/)  
 
 - [Centro protezione](https://www.microsoft.com/trustcenter)  
+
+- [Privacy Shield](https://www.privacyshield.gov/)  
 
 Separatamente da Desktop Analytics, Configuration Manager invia dati di diagnostica e di utilizzo a Microsoft. Microsoft usa questi dati per migliorare l'esperienza, la qualità e la sicurezza di installazione delle versioni future di Configuration Manager. Per altre informazioni, vedere [Dati di diagnostica e di utilizzo per Configuration Manager](/configmgr/core/plan-design/diagnostics/diagnostics-and-usage-data).

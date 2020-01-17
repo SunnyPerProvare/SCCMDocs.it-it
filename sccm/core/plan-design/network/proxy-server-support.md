@@ -10,12 +10,12 @@ ms.assetid: 9123a87a-0b6f-43c7-b5c2-fac5d09686b1
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: a6dbca889d0c45e9136ff78405e7bb4f74fde0d6
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 3bc1c0b26a9d5799978dc56ef24fa98132e5d6e9
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799387"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034285"
 ---
 # <a name="proxy-server-support-in-configuration-manager"></a>Supporto dei server proxy in Configuration Manager
 
@@ -59,7 +59,7 @@ Questo ruolo del sistema del sito si connette a un'istanza di Exchange Server. U
 
 
 #### <a name="service-connection-point"></a>punto di connessione del servizio
-Questo ruolo del sistema del sito si connette al servizio cloud di Configuration Manager per scaricare gli aggiornamenti di versione per Configuration Manager e si connette a Microsoft Intune in una configurazione ibrida. Usa un server proxy configurato nel computer che ospita il punto di connessione del servizio.  
+Questo ruolo del sistema del sito si connette al servizio cloud di Configuration Manager per scaricare gli aggiornamenti di versione per Configuration Manager. Usa un server proxy configurato nel computer che ospita il punto di connessione del servizio.  
 
 
 #### <a name="software-update-point"></a>Punto di aggiornamento software

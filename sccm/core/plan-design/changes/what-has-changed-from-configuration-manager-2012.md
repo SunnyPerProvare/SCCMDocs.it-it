@@ -10,12 +10,12 @@ ms.assetid: 3ae68fa6-8b30-45dd-9d12-50bb67cb4a9d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: b6d0ac8b1aebcffa7ce26f0b759c240f50cfaeb3
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 10fd2507ac89f14764afcb4847b7f41f4a69ee9e
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802821"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034974"
 ---
 # <a name="whats-changed-from-system-center-2012-configuration-manager"></a>Novità rispetto a System Center 2012 Configuration Manager
 
@@ -142,7 +142,7 @@ Tenere presente le seguenti modifiche apportate alle impostazioni di conformità
 
     Per altre informazioni, vedere [Come creare elementi di configurazione ](/sccm/compliance/deploy-use/create-configuration-items).  
 
-- Supporto per la gestione delle impostazioni nei computer Mac OS X che vengono gestiti con il client di Configuration Manager. Vedere [Come creare elementi di configurazione per dispositivi Mac OS X senza il client di Configuration Manager](/sccm/compliance/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client).  
+- Supporto per la gestione delle impostazioni nei computer Mac OS X che vengono gestiti senza il client di Configuration Manager.
 
 ### <a name="on-premises-mobile-device-management"></a>Gestione di dispositivi mobili locale  
 

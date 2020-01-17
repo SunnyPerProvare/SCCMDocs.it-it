@@ -10,12 +10,12 @@ ms.assetid: 9afb4452-9e58-40eb-bfd8-cbf9042a2790
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 43781ec676957b46e193c6e2763e385d38dc1c57
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c14e662dc9f24e050221d25dff4b99f1bc35c32a
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75796235"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034277"
 ---
 # <a name="checklist-for-installing-update-1910-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1910 di Configuration Manager
 
@@ -230,7 +230,7 @@ Se si estende Configuration Manager con altri prodotti Microsoft o di partner Mi
 ### <a name="remove-intune-subscription-hybrid-mdm"></a>Rimuovere la sottoscrizione di Intune (MDM ibrida)
 
 <!-- SCCMDocs-pr#4253 -->
-L'offerta di servizio MDM ibrido è stata ritirata a partire dal 1° settembre 2019. Se il sito di Configuration Manager dispone di una sottoscrizione Microsoft Intune, è necessario rimuoverlo. Per altre informazioni, vedere [Rimuovere la soluzione MDM ibrida](/configmgr/mdm/understand/hybrid-mobile-device-management#remove-hybrid-mdm).
+L'offerta di servizio MDM ibrido è stata ritirata a partire dal 1° settembre 2019. Se il sito di Configuration Manager dispone di una sottoscrizione Microsoft Intune, è necessario rimuoverlo. Per altre informazioni, vedere [Rimuovere la soluzione MDM ibrida](/configmgr/mdm/understand/what-happened-to-hybrid#remove-hybrid-mdm).
 
 ### <a name="run-the-setup-prerequisite-checker"></a>Eseguire il controllo dei prerequisiti di installazione
 

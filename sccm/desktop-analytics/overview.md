@@ -10,12 +10,12 @@ ms.assetid: 38b2bed2-20dd-4ce1-abc0-219343d2c4b8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d0e82bc7eddb16f4b98e99a5c55081d15e0982be
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 1f078f62dbfd076dc56b0d1a9fcc6da1a9fbe112
+ms.sourcegitcommit: cf978bfea545ed9116dacadfac830cbb08aaa649
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825558"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75951650"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Desktop Analytics?
 
@@ -124,14 +124,7 @@ e
 
 - Accesso a Desktop virtuale Windows E3 o E5  
 
-Oltre al costo delle sottoscrizioni delle licenze, non sono previsti costi aggiuntivi per l'uso di Desktop Analytics. In Log Analytics di Azure Desktop Analytics è un servizio con tariffa zero. Ciò significa che è escluso da limiti di dati e costi, indipendentemente dal piano tariffario scelto in Log Analytics di Azure. Per altre informazioni sui piani tariffari di Log Analytics di Azure, vedere [Prezzi - Log Analytics](https://azure.microsoft.com/pricing/details/monitor/).
-
-- Se si usa il livello gratuito che prevede un limite sulla quantità di dati raccolti ogni giorno, i dati di Desktop Analytics non vengono conteggiati per questo limite. È possibile raccogliere tutti i dati di Desktop Analytics dai dispositivi e avere ancora l'intero limite a disposizione per raccogliere dati aggiuntivi da altre origini.
-
-- Se si usa un livello a pagamento che addebita i costi a seconda dei GB di dati raccolti, non vengono addebitati i costi per i dati di Desktop Analytics. È possibile raccogliere tutti i dati di Desktop Analytics dai dispositivi senza sostenere alcun costo.
-
-> [!Note]  
-> I vari piani di Log Analytics di Azure hanno periodi di conservazione dei dati diversi. Desktop Analytics eredita i criteri di conservazione dei dati dell'area di lavoro. Se l'area di lavoro rientra nel piano gratuito, Desktop Analytics conserva gli ultimi 30 giorni di "snapshot giornalieri" raccolti nell'area di lavoro.
+Oltre al costo di queste sottoscrizioni delle licenze, non sono previsti costi aggiuntivi per l'uso di Desktop Analytics con Azure Log Analytics. I tipi di dati inseriti da Desktop Analytics non sono soggetti ai costi di inserimento dati e conservazione di Log Analytics. Trattandosi di tipi di dati non fatturabili, questi dati non sono soggetti al limite di inserimento dati giornaliero di Log Analytics. Altre informazioni sull'[utilizzo e i costi di Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage).
 
 
 ## <a name="next-steps"></a>Passaggi successivi

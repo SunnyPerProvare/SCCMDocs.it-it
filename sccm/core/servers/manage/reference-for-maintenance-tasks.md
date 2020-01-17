@@ -10,12 +10,12 @@ ms.assetid: 68dc6acd-5848-47a4-b4c1-ffa40e47890b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: cf3981a7b584653a7ebc4471a7e33e0702bbc5d8
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 9d651d0278f750090bfbc2ba3068b84c35ded4a7
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794292"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034241"
 ---
 # <a name="reference-for-maintenance-tasks-in-configuration-manager"></a>Informazioni di riferimento per le attività di manutenzione | Configuration Manager
 
@@ -315,7 +315,7 @@ Usare questa attività per eliminare dal database del sito le informazioni sulle
 
 ### <a name="delete-aged-passcode-records"></a>Elimina record passcode obsoleti
 
-usare questa attività nel sito principale della gerarchia per eliminare i dati obsoleti di reimpostazione dei passcode per i dispositivi Android e Windows Phone. I dati di reimpostazione dei passcode sono crittografati ma non includono il PIN per i dispositivi. Per impostazione predefinita, questa attività è abilitata ed elimina i dati che hanno più di un giorno.  
+Usare questa attività nel sito principale della gerarchia per eliminare i dati obsoleti di reimpostazione dei passcode per i dispositivi Windows Phone. I dati di reimpostazione dei passcode sono crittografati ma non includono il PIN per i dispositivi. Per impostazione predefinita, questa attività è abilitata ed elimina i dati che hanno più di un giorno.  
 
 |||
 |---------|---------|

@@ -10,12 +10,12 @@ ms.assetid: 14ae894c-26fb-4fe3-b51d-e80700122df4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4ac628641cc6b8c07bb0c603929397bd96fffda7
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 100c6d392fd9602277b00857aba3426f5f7f2bab
+ms.sourcegitcommit: cf978bfea545ed9116dacadfac830cbb08aaa649
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825677"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75951674"
 ---
 # <a name="updates-in-desktop-analytics"></a>Aggiornamenti in Desktop Analytics
 
@@ -71,7 +71,7 @@ I dispositivi eseguono un aggiornamento delle funzionalità entro 90 giorni dall
 
 #### <a name="end-of-service"></a>Fine del servizio
 
-I dispositivi eseguono un aggiornamento delle funzionalità successivo alla data di fine del servizio. Per informazioni dettagliate sulle date di fine del servizio, vedere [Date importanti nel ciclo di vita di Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
+I dispositivi eseguono un aggiornamento delle funzionalità successivo alla data di fine del servizio. Queste date sono specifiche per le edizioni Enterprise ed Education di Windows. Non si applicano alle edizioni Home, Pro, Pro Education o Pro for Workstations. Per altre informazioni, vedere [Date importanti nel ciclo di vita di Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
 
 #### <a name="not-measured"></a>Not measured (Non misurato)
 

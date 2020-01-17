@@ -10,12 +10,12 @@ ms.assetid: b3ce6b9a-7d54-4374-9b7a-f017f872bd6f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2d72ec6511498375efa94c466be8946d661f7705
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: ffe0a51e2f02a09a14c06f533e88e63a48006ec7
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75800696"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034833"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1910"></a>Livelli di raccolta dati di diagnostica e utilizzo per la versione 1910
 
@@ -384,7 +384,7 @@ Per Configuration Manager versione 1910, questo livello include i dati seguenti:
 
 - Numero di criteri per dispositivi mobili  
 
-- Numero di dispositivi mobili di Configuration Manager, gestioni di Microsoft Intune e modalità di registrazione (in blocco, basata sull'utente)  
+- Numero di dispositivi mobili gestiti da Configuration Manager e modalità di registrazione (in blocco, basata sull'utente)  
 
 - Numero di utenti con più dispositivi mobili registrati  
 

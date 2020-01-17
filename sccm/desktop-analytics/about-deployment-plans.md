@@ -2,7 +2,7 @@
 title: Piani di distribuzione in Desktop Analytics
 titleSuffix: Configuration Manager
 description: Informazioni sui piani di distribuzione in Desktop Analytics.
-ms.date: 08/14/2019
+ms.date: 01/14/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 0f369f3a-f251-4f34-9302-1bdc6ea5d139
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0813f1be53691aa4fa3fef2beb888312408d36d4
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 412c61dccf895e1f09f998df14038091415e202d
+ms.sourcegitcommit: 21a750f700257202b035fbfb0cd8598709580fdc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791805"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75914487"
 ---
 # <a name="about-deployment-plans-in-desktop-analytics"></a>Informazioni sui pani di distribuzione in Desktop Analytics
 
@@ -84,6 +84,12 @@ La decisione di aggiornamento di Windows di **sostituire il dispositivo** può e
 - Un componente di rete con una connessione attiva perderà il driver. In altre parole, dopo l'aggiornamento potrebbe verificarsi una perdita di connettività di rete.
 
 La scelta dell'opzione **Reinstalla** indica che per Windows sarà necessaria una reinstallazione rispetto a un aggiornamento sul posto. 
+
+Una decisione di aggiornamento di Windows **Bloccata** può essere causata dai motivi seguenti:
+
+- La decisione di aggiornamento di uno o più asset è stata impostata su **Non possibile**.
+
+- I dati di inventario per il dispositivo sono incompleti e Desktop Analytics non può eseguire una valutazione della compatibilità completa.
 
 ### <a name="apps"></a>App
 

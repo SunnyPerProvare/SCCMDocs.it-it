@@ -10,12 +10,12 @@ ms.assetid: 140c522f-d09a-40b6-a4b0-e0d14742834a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 816d1aeb2ba7fca8379e9c9de369776d88fbf8d8
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 118ab300877060c78ba4eed253671e381efb3da2
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816803"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033225"
 ---
 # <a name="tutorial-enable-co-management-for-existing-configuration-manager-clients"></a>Esercitazione: Abilitare la co-gestione per i client di Configuration Manager esistenti
 
@@ -57,7 +57,7 @@ Se le configurazioni non sono già presenti nell'ambiente, in questa esercitazio
 ### <a name="on-premises-infrastructure"></a>Infrastruttura locale
 
 - Una [versione supportata](https://docs.microsoft.com/sccm/core/servers/manage/updates#supported-versions) della console di Configuration Manager Current Branch
-- È necessario impostare l'[autorità di gestione dei dispositivi mobili (MDM)](https://docs.microsoft.com/sccm/mdm/deploy-use/change-mdm-authority) su Intune.  
+- È necessario impostare l'autorità di gestione di dispositivi mobili (MDM) su Intune.  
 
 ### <a name="permissions"></a>Autorizzazioni
 

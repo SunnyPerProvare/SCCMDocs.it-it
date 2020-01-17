@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 7fb02a5c-e286-46b1-a972-6335c858429a
-ms.openlocfilehash: 272687ebddcd218ae29730d6506285d2d46898b3
-ms.sourcegitcommit: 7f64c5fb3e9fa3dba006af618b1f1ceaf61a99f0
+ms.openlocfilehash: c9bf9b668ba8d4922ffb6b6afe2e33fb2ac7dbe3
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75524051"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034775"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Esercitazione: Abilitare la co-gestione per nuovi dispositivi basati su Internet
 
@@ -62,7 +62,7 @@ Usare questa esercitazione in questi casi:
 
   La versione 1810 introduce anche una riga di comando più semplice per l'installazione basata su Internet del client di Configuration Manager.
 
-- L'[autorità MDM](https://docs.microsoft.com/sccm/mdm/deploy-use/change-mdm-authority) deve essere impostata su Intune  
+- L'autorità MDM deve essere impostata su Intune  
 
 ### <a name="external-certificates"></a>Certificati esterni
 

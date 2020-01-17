@@ -10,12 +10,12 @@ ms.assetid: 7ed389c3-a9ab-48ce-a5eb-27d52ee4fb94
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 19f2eefca3c3a4148c4e4cd2f80fc5d210428129
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: fffa2c3d1e17796427aaac3110a57321c8becd0f
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825694"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034574"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Come connettere Configuration Manager a Desktop Analytics
 
@@ -128,11 +128,12 @@ Configuration Manager crea criteri di impostazioni per configurare i dispositivi
 
 Monitorare la configurazione dei dispositivi per Desktop Analytics. Nella console di Configuration Manager passare all'area di lavoro **Raccolta software**, espandere il nodo **Manutenzione di Desktop Analytics** e selezionare la dashboard **Integrità connessione**.  
 
-Per altre informazioni, vedere [Monitorare l'integrità della connessione](/sccm/desktop-analytics/troubleshooting#monitor-connection-health).
+Per altre informazioni, vedere [Monitorare l'integrità della connessione](/sccm/desktop-analytics/monitor-connection-health).
 
 Configuration Manager sincronizza le raccolte entro 60 minuti dalla creazione della connessione. Nel portale di Desktop Analytics passare a **Pilota globale** e visualizzare le raccolte di dispositivi di Configuration Manager.
 
-
+> [!NOTE]
+> La connessione di Configuration Manager a Desktop Analytics si basa sul punto di connessione del servizio. Eventuali modifiche apportate a questo ruolo del sistema del sito possono avere effetto sulla sincronizzazione con il servizio cloud. Per altre informazioni, vedere [Informazioni sul punto di connessione del servizio](/configmgr/core/servers/deploy/configure/about-the-service-connection-point#bkmk_move).
 
 ## <a name="next-steps"></a>Passaggi successivi
 

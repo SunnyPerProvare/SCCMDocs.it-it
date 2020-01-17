@@ -2,7 +2,7 @@
 title: Documentazione nella console
 titleSuffix: Configuration Manager
 description: Questo articolo viene visualizzato solo nella console di Configuration Manager.
-ms.date: 12/11/2019
+ms.date: 01/13/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9dae4dd75398c84f465d411b2eb6b4a7d2ae953e
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 009662cc74c5cbbbc973b3a7f5ce184be0397b0e
+ms.sourcegitcommit: cf978bfea545ed9116dacadfac830cbb08aaa649
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802974"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75951620"
 ---
 <!-- 
 - Feature 1357546
@@ -27,7 +27,7 @@ ms.locfileid: "75802974"
 
 # <a name="microsoft-endpoint-configuration-manager-documentation"></a>Documentazione di Microsoft Endpoint Configuration Manager
 
-*Ultimo aggiornamento: 11 dicembre 2019*
+*Ultimo aggiornamento: 13 gennaio 2020*
 
 Questo contenuto offre informazioni utili per l'apprendimento e il supporto di Configuration Manager.
 
@@ -55,22 +55,22 @@ Elenco aggiornato di articoli importanti.
 
 ## <a name="trending"></a>Di tendenza
 
-Gli articoli più diffusi tra il 1° novembre e il 30 novembre 2019.
+Gli articoli più diffusi tra il 1° dicembre e il 31 dicembre 2019.
 
 | Visualizzazioni pagina | Titolo |
 |------------|-------|
-| 20602 | [Come abilitare TLS 1.2](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2) |
-| 15685 | [Riferimento ai file di log](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/log-files) |
-| 13393 | [Porte usate per le connessioni](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/ports) |
-| 13042 | [Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/overview) |
-| 11132 | [Novità della versione 1906](https://docs.microsoft.com/configmgr/core/plan-design/changes/whats-new-in-version-1906) |
-| 10930 | [Distribuire i client in Windows](https://docs.microsoft.com/configmgr/core/clients/deploy/deploy-clients-to-windows-computers) |
-| 10078 | [Co-gestione per dispositivi Windows 10](https://docs.microsoft.com/configmgr/comanage/overview) |
-| 9497 | [Supporto per Windows 10](https://docs.microsoft.com/configmgr/core/plan-design/configs/support-for-windows-10) |
-| 8884 | [Manuale dell'utente di Software Center](https://docs.microsoft.com/configmgr/core/understand/software-center) |
-| 8845 | [Aggiornamenti e manutenzione](https://docs.microsoft.com/configmgr/core/servers/manage/updates) |
+| 20311 | [Novità della versione 1910](https://docs.microsoft.com/configmgr/core/plan-design/changes/whats-new-in-version-1910) |
+| 14109 | [Riferimento ai file di log](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/log-files) |
+| 12971 | [Come abilitare TLS 1.2](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2) |
+| 11896 | [Aggiornamenti e manutenzione](https://docs.microsoft.com/configmgr/core/servers/manage/updates) |
+| 11848 | [Porte usate per le connessioni](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/ports) |
+| 10420 | [Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/overview) |
+| 10044 | [Distribuire i client in Windows](https://docs.microsoft.com/configmgr/core/clients/deploy/deploy-clients-to-windows-computers) |
+| 8726 | [Supporto per Windows 10](https://docs.microsoft.com/configmgr/core/plan-design/configs/support-for-windows-10) |
+| 8282 | [Co-gestione per dispositivi Windows 10](https://docs.microsoft.com/configmgr/comanage/overview) |
+| 8081 | [Manuale dell'utente di Software Center](https://docs.microsoft.com/configmgr/core/understand/software-center) |
 
-La [pagina dell'hub di Configuration Manager](https://docs.microsoft.com/configmgr/) ha avuto 20.683 visualizzazioni in questo periodo di tempo.
+La [pagina dell'hub di Configuration Manager](https://docs.microsoft.com/configmgr/) ha avuto 23.792 visualizzazioni in questo periodo di tempo.
 
 ## <a name="recently-updated"></a>Aggiornata di recente
 
@@ -78,16 +78,16 @@ Articoli con un aggiornamento recente e significativo.
 
 | Ultima revisione | Titolo |
 |---------------|-------|
-| 29/11/2019 | [Novità della versione 1910](https://docs.microsoft.com/configmgr/core/plan-design/changes/whats-new-in-version-1910) |
-| 29/11/2019 | [Estendere ed eseguire la migrazione di un sito locale in Microsoft Azure](https://docs.microsoft.com/configmgr/core/support/azure-migration-tool) |
-| 29/11/2019 | [Impostazioni di Windows Hello for Business ](https://docs.microsoft.com/configmgr/protect/deploy-use/windows-hello-for-business-settings) |
-| 29/11/2019 | [Domande frequenti per Microsoft Endpoint Configuration Manager](https://docs.microsoft.com/configmgr/core/understand/microsoft-endpoint-manager-faq) |
-| 29/11/2019 | [Distribuire e aggiornare Microsoft Edge versione 77 e successive](https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge) |
-| 29/11/2019 | [Creare linee di base di configurazione](https://docs.microsoft.com/configmgr/compliance/deploy-use/create-configuration-baselines) |
-| 29/11/2019 | [Pianificare la gestione di BitLocker](https://docs.microsoft.com/configmgr/protect/plan-design/bitlocker-management) |
-| 29/11/2019 | [Usare l'editor delle sequenze di attività](https://docs.microsoft.com/configmgr/osd/understand/task-sequence-editor) |
-| 5/11/2019 | [Domande frequenti per Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/faq) |
-| 4/11/2019 | [Guida di riferimento tecnico per la risoluzione dei problemi di distribuzione delle applicazioni](https://docs.microsoft.com/configmgr/apps/understand/app-deployment-technical-reference) |
+| 20/12/2019 | [Note sulla versione](https://docs.microsoft.com/configmgr/core/servers/deploy/install/release-notes) |
+| 20/12/2019 | [Elenco di controllo per la versione 1910](https://docs.microsoft.com/configmgr/core/servers/manage/checklist-for-installing-update-1910) |
+| 17/12/2019 | [Ottimizzare il recapito degli aggiornamenti di Windows 10](https://docs.microsoft.com/configmgr/sum/deploy-use/optimize-windows-10-update-delivery) |
+| 13/12/2019 | [Come abilitare Transport Layer Security (TLS) 1.2 nei client](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2-client) |
+| 13/12/2019 | [Abilitare Transport Layer Security (TLS) 1.2 nei server del sito e nei sistemi del sito remoti](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2-server) |
+| 13/12/2019 | [Problemi comuni relativi all'abilitazione di Transport Layer Security (TLS) 1.2](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2-troubleshoot) |
+| 13/12/2019 | [Panoramica dell'abilitazione di Transport Layer Security (TLS) 1.2](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2) |
+| 12/12/2019 | [Privacy dei dati di Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/privacy) |
+| 12/12/2019 | [Technical Preview 1912](https://docs.microsoft.com/configmgr/core/get-started/2019/technical-preview-1912) |
+| 6/12/2019 | [Gestire gli aggiornamenti di Office 365 ProPlus](https://docs.microsoft.com/configmgr/sum/deploy-use/manage-office-365-proplus-updates) |
 
 ## <a name="troubleshooting-articles"></a>Articoli sulla risoluzione dei problemi
 
@@ -114,6 +114,5 @@ Articoli di supporto nuovi o aggiornati tra il 25 ottobre e il 23 dicembre 2019.
 - [KB 4529824: Aggiornamento del motore di elaborazione dei messaggi per Configuration Manager Current Branch, versione 1906](https://support.microsoft.com/help/4529824)
 - [KB 4535819: Aggiornamento per Microsoft Endpoint Configuration Manager versione 1910, anello di aggiornamento anticipato](https://support.microsoft.com/help/4535819)
 - [KB 4535776: Riepilogo delle modifiche in Microsoft Endpoint Configuration Manager Current Branch, versione 1910](https://support.microsoft.com/help/4535776)
-
 
 Per sottoscrivere la notifica Atom o RSS dei nuovi articoli di supporto di Configuration Manager, vedere [Aggiornamenti dei contenuti del supporto](https://support.microsoft.com/help/4089498/) e selezionare **Microsoft Endpoint Configuration Manager**.  

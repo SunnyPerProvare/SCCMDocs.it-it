@@ -10,12 +10,12 @@ ms.assetid: c5a42100-2f60-4952-b495-918025ea6559
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: b9ab1fe53f5d86fa3427e4637ffe1013e48171ce
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: f211f8b7a75070feecf221bcdc27a550fd4cc3f0
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802039"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034862"
 ---
 # <a name="size-and-scale-numbers-for-configuration-manager"></a>Numeri di ridimensionamento e scalabilità per Configuration Manager
 
@@ -181,13 +181,9 @@ Un sito di amministrazione centrale supporta un numero totale di dispositivi che
 
 - 25.000 dispositivi che eseguono Mac e Windows CE 7.0  
 
-- Uno dei gruppi seguenti, a seconda del modo in cui la distribuzione supporta la gestione di dispositivi mobili (MDM):  
+- 100.000 dispositivi gestiti con software di gestione di dispositivi mobili (MDM) locale
 
-    - 100.000 dispositivi gestiti con software MDM locale  
-
-    - 300.000 dispositivi basati sul cloud  
-
-Ad esempio, in una gerarchia è possibile supportare 700.000 desktop, fino a 25.000 dispositivi Mac e Windows CE 7.0 e fino a 300.000 dispositivi basati su cloud quando si integra Microsoft Intune. Questa gerarchia supporta un totale di 1.025.000 dispositivi. Se si supportano dispositivi gestiti tramite software MDM locale, il totale per questa gerarchia è 825.000 dispositivi.  
+Ad esempio, in una gerarchia è possibile supportare 700.000 desktop, fino a 25.000 dispositivi Mac e Windows CE 7.0 e fino a 100.000 dispositivi gestiti con software MDM locale. Questa gerarchia supporta un totale di 825.000 dispositivi.
 
 > [!IMPORTANT]  
 > In una gerarchia in cui il sito di amministrazione centrale usa un'edizione Standard di SQL Server, la gerarchia supporta un massimo di 50.000 desktop e dispositivi. Per supportare più di 50.000 desktop e dispositivi è necessario usare un'edizione Enterprise di SQL Server. Questo requisito si applica solo a un sito di amministrazione centrale. Non si applica a un sito primario autonomo o un sito primario figlio. L'edizione di SQL Server in uso per un sito primario non limita la sua capacità di supportare il numero dichiarato di client.
@@ -212,13 +208,9 @@ Un sito primario autonomo supporta il numero seguente di dispositivi:
 
     - 25.000 dispositivi che eseguono Mac e Windows CE 7.0
 
-    - Uno dei gruppi seguenti, a seconda del modo in cui la distribuzione supporta la gestione dei dispositivi mobili:  
+    - 50.000 dispositivi gestiti con software MDM locale  
 
-        - 50.000 dispositivi gestiti con software MDM locale  
-
-        - 150.000 dispositivi basati sul cloud  
-
-Ad esempio, un sito primario autonomo che supporta 150.000 desktop e 10.000 Mac o Windows CE 7.0 può supportare solo 15.000 dispositivi aggiuntivi. Questi dispositivi possono essere basati sul cloud o gestiti con software MDM locale.  
+Ad esempio, un sito primario autonomo che supporta 150.000 desktop e 10.000 dispositivi Mac può supportare solo altri 15.000 dispositivi mobili gestiti con software MDM locale.
 
 ### <a name="embedded"></a> Siti primari e dispositivi con Windows Embedded
 

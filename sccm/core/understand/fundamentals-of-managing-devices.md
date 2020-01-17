@@ -10,12 +10,12 @@ ms.assetid: 2bca3db9-115a-451d-8c93-f073ceefe0c7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1002b3b822cde70970b8b533d4cd1552cd081f10
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: a6b225ce10c77b1fa876dbd98f220b4b847f8846
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792162"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76035027"
 ---
 # <a name="fundamentals-of-managing-devices-with-configuration-manager"></a>Nozioni fondamentali sulla gestione dei dispositivi con Configuration Manager
 
@@ -25,10 +25,7 @@ Configuration Manager è in grado di gestire due ampie categorie di dispositivi:
 
 - I *client* sono i dispositivi, ad esempio workstation, portatili, server e dispositivi mobili, in cui viene installato il software client di Configuration Manager. Questo software client è necessario per alcune funzioni di gestione, come l'inventario hardware.  
 
-- I *dispositivi gestiti* possono includere i *client*, ma in genere si tratta di dispositivi mobili in cui non è installato il software client di Configuration Manager. Per gestire questo tipo di dispositivi è possibile usare Intune oppure la gestione locale dei dispositivi mobili predefinita in Configuration Manager.
-
-    > [!Important]  
-    > La gestione dei dispositivi mobili ibridi è una [funzionalità deprecata](/sccm/mdm/understand/hybrid-mobile-device-management).
+- I *dispositivi gestiti* possono includere i *client*, ma in genere si tratta di dispositivi mobili in cui non è installato il software client di Configuration Manager. Per gestire questo tipo di dispositivi è possibile usare la gestione di dispositivi mobili locale predefinita in Configuration Manager.
 
 È anche possibile raggruppare e identificare i dispositivi in base all'utente e non solo in base al tipo di client.
 

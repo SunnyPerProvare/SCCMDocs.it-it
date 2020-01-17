@@ -10,12 +10,12 @@ ms.assetid: 868049d3-3209-47ec-b34a-9cc26941893a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6430614c9b3cd82ee6b0b18c99625ade48e422bb
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 2bdd7762c929324fd712b8655a0fcd839d6f7d2b
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75795855"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033446"
 ---
 # <a name="create-queries-in-configuration-manager"></a>Creare query in Configuration Manager
 
@@ -163,18 +163,24 @@ Usare uno di questi valori per &lt;ID dispositivo\>:
 |Computer Mac|5|  
 |Windows CE|6|  
 |Windows Embedded|7|  
+|Intel System On Chip (SOC)|12|  
+|Server UNIX e Linux|13|  
+|Microsoft HoloLens (MDM)|15|
+|Microsoft Surface Hub (MDM)|16|
+
+> [!NOTE]
+> I valori non elencati in questa tabella sono associati a dispositivi che non sono più supportati.
+
+<!-- removed with hybrid EOL
 |iOS|8|  
 |iPad|9|  
 |iPod touch|10|  
 |Android|11|  
-|Intel System On Chip (SOC)|12|  
-|Server UNIX e Linux|13|  
 |Apple macOS (MDM)|14|
-|Microsoft HoloLens (MDM)|15|
-|Microsoft Surface Hub (MDM)|16|
 |Android for Work|17|
+ -->
 
- Ad esempio, se si vuole restituire solo i computer Mac, usare questa query:  
+Ad esempio, se si vuole restituire solo i computer Mac, usare questa query:  
 
 ``` WQL
 Select SMS_R_System.ClientEdition from SMS_R_System where SMS_R_System.ClientEdition = 5  

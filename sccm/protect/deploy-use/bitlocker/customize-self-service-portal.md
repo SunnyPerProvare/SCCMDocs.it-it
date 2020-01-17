@@ -6,17 +6,16 @@ ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
-ms.collection: M365-identity-device-management
 ms.assetid: 6bc26e36-9914-4606-ae8d-f7b23218942f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c35641e809092b832a081dbcba6ad7b5006beb70
-ms.sourcegitcommit: 1bccb61bf3c7c69d51e0e224d0619c8f608e8777
+ms.openlocfilehash: 448b2550506266801ad968b8fa9b52bad1b2619e
+ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74662409"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75820917"
 ---
 # <a name="customize-the-self-service-portal"></a>Personalizzare il portale self-service
 
@@ -47,7 +46,7 @@ Le modifiche hanno effetto immediato.
 
 ### <a name="supported-branding-values"></a>Valori di personalizzazione supportati
 
-Per i valori che è possibile impostare, vedere la tabella seguente:
+I valori che è possibile impostare sono riportati nella tabella seguente:
 
 |Name|Descrizione|Valore&nbsp;predefinito|
 |--- |--- |--- |
@@ -79,7 +78,7 @@ Per far scadere la sessione dell'utente dopo un periodo di inattività specifica
 
 1. Nel gruppo **Impostazioni cookie** , modificare il valore **di timeout (in minuti)** . Il numero di minuti trascorsi i quali la sessione dell'utente scade. Il valore predefinito è `5`. Per disabilitare questa impostazione in modo da disattivare il timeout, impostare il valore su `0`.
 
-1. Nel riquadro **azioni** selezionare **applica**.
+1. Nel riquadro **Azioni** selezionare **Applica**.
 
 ## <a name="bkmk_localize"></a>Localizzare il testo e l'URL del supporto tecnico
 
@@ -91,7 +90,7 @@ Per far scadere la sessione dell'utente dopo un periodo di inattività specifica
 
 1. Espandere **siti**, **sito Web predefinito**e selezionare il nodo **selfservice** . Nel riquadro dei dettagli, **ASP.NET** gruppo, aprire **Impostazioni applicazione**.
 
-1. Nel riquadro **azioni** selezionare **Aggiungi**.
+1. Nel riquadro **Azioni** selezionare **Aggiungi**.
 
 1. Nella finestra **Aggiungi impostazione applicazione** configurare i valori seguenti:
 
@@ -132,7 +131,7 @@ Il portale self-service Visualizza il testo di avviso in base alle regole seguen
     Per un elenco dei codici lingua validi che è possibile usare, vedere [National Language Support (NLS) API Reference](https://docs.microsoft.com/windows/win32/intl/locale-identifiers#predefined-locale-identifiers) (Riferimento API NLS).
 
     > [!TIP]
-    > Il nome della cartella della lingua può essere anche il nome indipendente dalla lingua. Ad esempio, **es** per spagnolo, anziché **es-es** per spagnolo (Spagna) ed **es-AR** per spagnolo (Argentina). Se l'utente imposta il browser su **es-es**e la cartella della lingua non esiste, il server Web controlla in modo ricorsivo la cartella delle impostazioni locali padre (**es**). Le impostazioni locali padre sono definite in .NET. `Self Service Website\es\Notice.txt` Ad esempio: Questo fallback ricorsivo simula le regole di caricamento delle risorse .NET.
+    > Il nome della cartella della lingua può essere anche il nome indipendente dalla lingua. Ad esempio, **es** per spagnolo, anziché **es-es** per spagnolo (Spagna) ed **es-AR** per spagnolo (Argentina). Se l'utente imposta il browser su **es-es**e la cartella della lingua non esiste, il server Web controlla in modo ricorsivo la cartella delle impostazioni locali **padre**. Le impostazioni locali padre sono definite in .NET. Esempio: `Self Service Website\es\Notice.txt` Questo fallback ricorsivo simula le regole di caricamento delle risorse .NET.
 
 1. Creare una copia del file di avviso predefinito con il testo localizzato. Salvarlo nella cartella per il codice della lingua. Ad esempio, per lo spagnolo (Spagna), per impostazione predefinita il percorso completo è `C:\inetpub\Microsoft BitLocker Management Solution\Self Service Website\es-es\Notice.txt`.
 

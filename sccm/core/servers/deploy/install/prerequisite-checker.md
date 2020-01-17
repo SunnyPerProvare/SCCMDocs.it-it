@@ -2,7 +2,7 @@
 title: Controllo prerequisiti
 titleSuffix: Configuration Manager
 description: Informazioni sull'uso del controllo prerequisiti per identificare e risolvere i problemi che possono bloccare un sito o l'installazione del ruolo di sistema del sito.
-ms.date: 01/08/2020
+ms.date: 01/13/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: aaf13bb8-4ba2-4bd7-9fac-d36a9d88a1b6
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 8c5764c9ad502abc9ef791c4db32e8080a08a7e2
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 88371c561e8c0d4e2abd70533592725e6d8cb97d
+ms.sourcegitcommit: 21a750f700257202b035fbfb0cd8598709580fdc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798114"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75914450"
 ---
 # <a name="prerequisite-checker-for-configuration-manager"></a>Controllo prerequisiti per Configuration Manager
 
@@ -53,6 +53,7 @@ Per altre informazioni sui controlli eseguiti dal Controllo prerequisiti, vedere
     - prereqchk.exe
     - prereqcore.dll
     - prereqchkres.dll
+      - Questo file si trova nella sottocartella per la lingua di installazione. Ad esempio, l'inglese si trova nella sottocartella `00000409`. <!--586808-->
     - basesql.dll
     - basesvr.dll
     - baseutil.dll

@@ -10,12 +10,12 @@ ms.assetid: 72d7b174-f015-498f-a0a7-2161b9929198
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bbf74820d10bda727434ea00ec4e816150b2e5de
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 4dcd68408f489b32aa6901de09fba199f69affd4
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75800560"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034822"
 ---
 # <a name="accounts-used-in-configuration-manager"></a>Account usati in Configuration Manager
 
@@ -348,7 +348,7 @@ Per altre informazioni, vedere [Installare i ruoli del sistema del sito per la g
 
 ### <a name="exchange-server-connection-account"></a>Account di connessione a Exchange Server  
 
-Il server del sito usa l'**account di connessione a Exchange Server** per connettersi all'Exchange Server specificato. Usa questa connessione per l'individuazione e la gestione dei dispositivi mobili che si connettono a Exchange Server. Questo account richiede i cmdlet di Exchange PowerShell che forniscono le autorizzazioni necessarie per il computer Exchange Server. Per altre informazioni sui cmdlet, vedere [Gestire i dispositivi mobili con Configuration Manager ed Exchange](/sccm/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync).  
+Il server del sito usa l'**account di connessione a Exchange Server** per connettersi all'Exchange Server specificato. Usa questa connessione per l'individuazione e la gestione dei dispositivi mobili che si connettono a Exchange Server. Questo account richiede i cmdlet di Exchange PowerShell che forniscono le autorizzazioni necessarie per il computer Exchange Server. Per altre informazioni sui cmdlet, vedere [Installare e configurare Exchange Connector](/configmgr/mdm/deploy-use/install-configure-exchange-connector).  
 
 
 ### <a name="management-point-connection-account"></a>Account di connessione al punto di gestione  

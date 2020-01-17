@@ -2,7 +2,7 @@
 title: punto di connessione del servizio
 titleSuffix: Configuration Manager
 description: Informazioni sul ruolo di sistema del sito di Configuration Manager e pianificazione della gamma di usi.
-ms.date: 06/19/2019
+ms.date: 01/08/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,92 +10,99 @@ ms.assetid: bc2282d5-0571-465b-9528-a555855eaacd
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 68f6c464b31aed1ee3b99eb6be4fb34e8d9a8c02
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: da9fa173ea298ba7565b709532be180f60baff73
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799088"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033477"
 ---
 # <a name="about-the-service-connection-point-in-configuration-manager"></a>Informazioni sul punto di connessione del servizio in Configuration Manager
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-Il punto di connessione del servizio è un ruolo del sistema del sito che svolge diverse funzioni importanti per la gerarchia. Prima di configurare il punto di connessione del servizio, esaminare e pianificare i diversi usi. La pianificazione dell'utilizzo potrebbe influire sulla modalità di configurazione di questo ruolo del sistema del sito:  
+Il punto di connessione del servizio è un ruolo del sistema del sito che svolge diverse funzioni importanti per la gerarchia. Prima di configurare il punto di connessione del servizio, esaminare e pianificare i diversi usi. La pianificazione dell'utilizzo potrebbe influire sulla modalità di configurazione di questo ruolo del sistema del sito:
 
-- **Gestire i dispositivi mobili con Microsoft Intune**: questo ruolo sostituisce il connettore Microsoft Intune usato dalle versioni precedenti di Configuration Manager e può essere configurato con i dettagli della sottoscrizione di Intune. Per altre informazioni, vedere l'articolo relativo alla [gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).  
+- Scaricare gli aggiornamenti applicabili all'infrastruttura di Configuration Manager: vengono resi disponibili solo gli aggiornamenti rilevanti per l'infrastruttura, in base ai dati di utilizzo caricati.
 
-- **Gestire i dispositivi mobili con MDM locale**: questo ruolo offre il supporto per i dispositivi locali gestiti che non si connettono a Internet. Per altre informazioni, vedere [Gestire i dispositivi mobili con l'infrastruttura locale](/sccm/mdm/understand/manage-mobile-devices-with-on-premises-infrastructure).  
+- Caricare i dati di utilizzo dall'infrastruttura di Configuration Manager: è possibile controllare il livello di dettaglio dei dati caricati. Per altre informazioni, vedere [Impostazioni e livelli per i dati di utilizzo](/configmgr/core/servers/deploy/install/setup-reference#bkmk_usage).
 
-- **Caricare i dati di utilizzo dall'infrastruttura di Configuration Manager**: è possibile controllare il livello di dettaglio dei dati caricati. I dati caricati consentono di:  
+- Distribuire un'istanza di [Cloud Management Gateway](/configmgr/core/clients/manage/cmg/plan-cloud-management-gateway) in Azure
 
-    - Identificare e risolvere i problemi in modo proattivo  
+- Sincronizzare le app da [Microsoft Store per le aziende e la formazione](/configmgr/apps/deploy-use/manage-apps-from-the-windows-store-for-business)
 
-    - Migliorare i prodotti e il servizio  
+- Individuare utenti e gruppi in [Azure Active Directory (Azure AD)](/configmgr/core/servers/deploy/configure/about-discovery-methods#azureaddisc)
 
-    - Identificare gli aggiornamenti per Configuration Manager applicabili alla versione in uso  
+- Usare [Desktop Analytics](/configmgr/desktop-analytics/overview) per ottenere informazioni dettagliate sull'aggiornamento e l'idoneità delle app per Windows 10
 
-    Per altre informazioni sui dati raccolti da ogni livello e su come modificare il livello di raccolta dopo l'installazione del ruolo, vedere [Dati di diagnostica e di utilizzo](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data). Selezionare quindi il collegamento corrispondente alla versione di Configuration Manager in uso.  
+Ogni gerarchia supporta una sola istanza di questo ruolo. Può essere installato solo nel sito di livello più alto della gerarchia, ovvero in un sito di amministrazione centrale (CAS) o in un sito primario autonomo. Se si espande un sito primario autonomo in una gerarchia più ampia, disinstallare questo ruolo dal sito primario e quindi installarlo nel CAS.
 
-    Per altre informazioni, vedere [Impostazioni e livelli per i dati di utilizzo](/sccm/core/servers/deploy/install/setup-reference#bkmk_usage).  
+## <a name="bkmk_modes"></a> Modalità di funzionamento
 
-- **Scaricare gli aggiornamenti applicabili all'infrastruttura di Configuration Manager**: vengono resi disponibili solo gli aggiornamenti rilevanti per l'infrastruttura, in base ai dati di utilizzo caricati.  
+Il punto di connessione del servizio supporta due modalità di funzionamento:
 
-- **Ogni gerarchia supporta una sola istanza di questo ruolo:**  
+- **Online**: il punto di connessione del servizio controlla automaticamente ogni 24 ore se sono presenti aggiornamenti. Scarica quindi i nuovi aggiornamenti disponibili per la versione corrente del prodotto e dell'infrastruttura, rendendoli disponibili nella console di Configuration Manager.
 
-    - Il ruolo del sistema del sito può essere installato solo nel sito di livello più alto della gerarchia, ovvero in un sito di amministrazione centrale o in un sito primario autonomo.  
+- **Offline**: il punto di connessione del servizio non si connette al servizio cloud Microsoft. Per importare manualmente gli aggiornamenti disponibili, usare lo [strumento di connessione del servizio](/configmgr/core/servers/manage/use-the-service-connection-tool).
 
-    - Se si espande un sito primario autonomo in una gerarchia più ampia, è necessario disinstallare questo ruolo dal sito primario per poterlo quindi installare nel sito di amministrazione centrale.  
+### <a name="change-mode"></a>Cambia modalità
 
+Se si passa dalla modalità online a quella offline o viceversa dopo aver installato il punto di connessione del servizio, riavviare il thread **SMS_DMP_DOWNLOADER** del servizio SMS_Executive. Il riavvio di questo thread rende effettiva la modifica. Per riavviare questo thread, usare Configuration Manager Service Manager.
 
-##  <a name="bkmk_modes"></a> Modalità di funzionamento  
-Il punto di connessione del servizio supporta due modalità di funzionamento:  
+> [!TIP]
+> È anche possibile riavviare il servizio SMS_Executive per Configuration Manager che riavvia la maggior parte dei componenti del sito. In alternativa, attendere l'esecuzione di un'attività pianificata, ad esempio un backup del sito che arresta e riavvia il servizio SMS_Executive.
 
-- In **modalità online** il punto di connessione del servizio controlla automaticamente ogni 24 ore se sono presenti aggiornamenti. Scarica quindi i nuovi aggiornamenti disponibili per la versione corrente del prodotto e dell'infrastruttura, rendendoli disponibili nella console di Configuration Manager.  
+Per usare Configuration Manager Service Manager per riavviare il thread SMS_DMP_DOWNLOADER:
 
-- In **modalità offline**, il punto di connessione del servizio non si connette al servizio cloud Microsoft. Per importare manualmente gli aggiornamenti disponibili, usare lo [strumento di connessione del servizio](/sccm/core/servers/manage/use-the-service-connection-tool).  
+1. Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio**, espandere **Stato del sistema** e selezionare il nodo **Stato componente**. Nella barra multifunzione scegliere **Avvia** e quindi selezionare **Configuration Manager Service Manager**.
 
-Se si passa dalla modalità online a quella offline o viceversa dopo aver installato il punto di connessione del servizio, è necessario riavviare il thread SMS_DMP_DOWNLOADER del servizio SMS_Executive di Configuration Manager per rendere effettiva la modifica. È possibile usare Configuration Manager Service Manager per riavviare solo il thread SMS_DMP_DOWNLOADER del servizio SMS_Executive. È anche possibile riavviare il servizio SMS_Executive per Configuration Manager che riavvia la maggior parte dei componenti del sito. In alternativa, è possibile attendere l'esecuzione di un'attività pianificata, ad esempio un backup del sito che arresta e riavvia il servizio SMS_Executive.  
+1. Nel riquadro di spostamento di Service Manager espandere il sito, quindi espandere **Componenti** e infine scegliere il componente da riavviare: **SMS_DMP_DOWNLOADER**.
 
-Per usare Configuration Manager Service Manager, nella console passare a **Monitoraggio** > **Stato sistema** > **Stato componente**, scegliere **Avvia** e quindi **Configuration Manager Service Manager**. In Service Manager:  
+1. Passare al menu **Componente** e scegliere **Query**.
 
-- Nel riquadro di spostamento espandere il sito, quindi espandere **Componenti** e infine scegliere il componente da riavviare.  
+1. Confermare lo stato corrente del componente. Passare quindi al menu **Componente** e scegliere **Arresta**.  
 
-- Nel riquadro dei dettagli fare clic con il pulsante destro del mouse sul componente e scegliere **Query**.  
+1. Ripetere la **query** sul componente per verificare che sia stato arrestato. Scegliere quindi l'azione del componente **Avvia** per riavviarlo.
 
-- Dopo aver verificato lo stato del componente, fare di nuovo clic con il pulsante destro del mouse sul componente e quindi scegliere **Arresta**.  
+## <a name="remote-site-system-requirements"></a>Requisiti del sistema del sito remoto
 
-- Ripetere la **query** sul componente per verificare che sia stato arrestato. Fare quindi di nuovo clic con il pulsante destro del mouse sul componente e scegliere **Avvia**.  
+Quando si installa il punto di connessione del servizio in un server del sistema del sito remoto rispetto al server del sito, configurare i requisiti seguenti:
 
-> [!IMPORTANT]  
-> Il processo che aggiunge una sottoscrizione di Microsoft Intune al punto di connessione del servizio imposta automaticamente il ruolo del sistema del sito sulla modalità online. Il punto di connessione del servizio non supporta la modalità offline se è configurato con una sottoscrizione di Intune.  
+- L'account computer del server del sito deve essere un amministratore locale sul computer che ospita un punto di connessione del servizio remoto.
 
-**Quando il ruolo viene installato in un computer remoto rispetto al server del sito:**  
+- Configurare il server del sistema del sito che ospita questo ruolo con un [account di installazione del sistema del sito](/configmgr/core/plan-design/hierarchy/accounts#site-system-installation-account). Il responsabile della distribuzione nel server del sito usa l'account di installazione del sistema del sito per trasferire gli aggiornamenti dal punto di connessione del servizio.
 
-- L'account computer del server del sito deve essere un amministratore locale sul computer che ospita una connessione al servizio remoto.
-
-- È necessario configurare il server del sistema del sito che ospita il ruolo con un account di installazione del sistema del sito.  
-
-- Il responsabile della distribuzione nel server del sito usa l'account di installazione del sistema del sito per trasferire gli aggiornamenti dal punto di connessione del servizio.
-
-
-## <a name="bkmk_urls"></a> Requisiti per l'accesso a Internet  
+## <a name="bkmk_urls"></a> Requisiti per l'accesso a Internet
 
 Se l'organizzazione limita le comunicazioni della rete con Internet tramite un firewall o un dispositivo proxy, è necessario consentire al punto di connessione del servizio di accedere agli endpoint Internet.
 
-Per altre informazioni, vedere i [requisiti di accesso Internet](/sccm/core/plan-design/network/internet-endpoints#bkmk_scp).
+Per altre informazioni, vedere i [requisiti di accesso Internet](/configmgr/core/plan-design/network/internet-endpoints#bkmk_scp).
 
+## <a name="install"></a>Installazione
 
-## <a name="install-the-service-connection-point"></a>Installare il punto di connessione del servizio
-Quando si esegue il **programma di installazione** per installare il sito di livello superiore di una gerarchia, viene offerta la possibilità di installare il punto di connessione del servizio.
+Quando si esegue il **programma di installazione** per installare il sito di livello superiore di una gerarchia, è possibile installare il punto di connessione del servizio.
 
-Dopo l'esecuzione del programma di installazione, o se si reinstalla il ruolo del sistema del sito, usare l'**Aggiunta guidata ruoli del sistema del sito** o la **Creazione guidata server del sistema sito** per installare il sistema del sito in un server nel sito di livello più alto della gerarchia, ovvero il sito di amministrazione centrale o un sito primario autonomo. Entrambe le procedure guidate sono disponibili nella scheda **Home** della console, in **Amministrazione** > **Configurazione del sito** > **Server e ruoli del sistema del sito**.
+Al termine dell'installazione o se si reinstalla il ruolo, usare l'**Aggiunta guidata ruoli del sistema del sito** o la **Creazione guidata server del sistema sito** (installare solo il punto di connessione del servizio nel sito di livello superiore della gerarchia). Per altre informazioni, vedere [Installare i ruoli del sistema del sito](/configmgr/core/servers/deploy/configure/install-site-system-roles).
 
+## <a name="bkmk_move"></a> Spostare il ruolo
 
+<!-- SCCMDocs#922 -->
+Esistono diversi scenari in cui potrebbe essere necessario spostare il punto di connessione del servizio in un altro server:
 
-## <a name="log-files-used-by-the-service-connection-point"></a>File di log usati dal punto di connessione del servizio
-Per visualizzare informazioni sui caricamenti in Microsoft, visualizzare **Dmpuploader.log** nel computer che esegue il punto di connessione del servizio.  Per i download, incluso lo stato di avanzamento dei download degli aggiornamenti, visualizzare **Dmpdownloader.log**. Per l'elenco completo dei log correlati al punto di connessione del servizio, vedere [Punto di connessione del servizio](/sccm/core/plan-design/hierarchy/log-files#BKMK_WITLog) nell'articolo relativo ai file di log di Configuration Manager.
+- [Ripristino](/configmgr/core/servers/manage/recover-sites)
+- [Disponibilità elevata del server del sito](/configmgr/core/servers/deploy/configure/site-server-high-availability)
+- [Espansione del sito](/configmgr/core/servers/deploy/install/use-the-setup-wizard-to-install-sites#bkmk_expand)
 
-È inoltre possibile usare i diagrammi di flusso seguenti per comprendere il flusso del processo e le voci di log chiave per i download degli aggiornamenti e la replica degli aggiornamenti in altri siti:
-- [Diagramma di flusso - scaricare gli aggiornamenti](/sccm/core/servers/manage/download-updates-flowchart)
-- [Diagramma di flusso - replica di aggiornamento](/sccm/core/servers/manage/update-replication-flowchart)
+Dopo aver spostato il punto di connessione del servizio, verificare il funzionamento del sito. Ad esempio, potrebbe essere necessario rinnovare la chiave privata per le connessioni ai tenant di Azure Active Directory (Azure AD). Per altre informazioni, vedere [Rinnovare la chiave privata](/sccm/core/servers/deploy/configure/azure-services-wizard#bkmk_renew).
+
+## <a name="log-files"></a>File di registro
+
+Per visualizzare informazioni sui caricamenti in Microsoft, visualizzare **Dmpuploader.log** nel server che esegue il punto di connessione del servizio. Per lo stato di avanzamento dei download degli aggiornamenti, visualizzare **Dmpdownloader.log**. Per l'elenco completo dei log correlati al punto di connessione del servizio, vedere [File di log - Punto di connessione del servizio](/configmgr/core/plan-design/hierarchy/log-files#BKMK_WITLog).
+
+## <a name="next-steps"></a>Passaggi successivi
+
+Usare i diagrammi di flusso seguenti per comprendere il flusso del processo e le voci di log chiave. Questo processo include i download degli aggiornamenti e la replica degli aggiornamenti in altri siti.
+
+- [Diagramma di flusso - scaricare gli aggiornamenti](/configmgr/core/servers/manage/download-updates-flowchart)
+
+- [Diagramma di flusso - replica di aggiornamento](/configmgr/core/servers/manage/update-replication-flowchart)

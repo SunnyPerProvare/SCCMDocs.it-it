@@ -10,12 +10,12 @@ ms.assetid: 63e08f3f-9558-4ed7-9bf3-3a185ddaac5c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d88e674281c00f5516c21312ba1e2d01ce19f8d2
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: d45a1e4fb29393a03836b8bef5b43952fcbfd2af
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791360"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034623"
 ---
 # <a name="troubleshoot-desktop-analytics"></a>Risolvere i problemi di Desktop Analytics
 
@@ -46,6 +46,9 @@ Molti problemi comuni sono dovuti a prerequisiti mancanti. Per prima cosa confer
 Usare il dashboard **Integrità connessione** in Configuration Manager per eseguire il drill-down delle categorie in base all'integrità del dispositivo. Nella console di Configuration Manager passare all'area di lavoro **Raccolta software**, espandere il nodo **Manutenzione di Desktop Analytics** e selezionare il dashboard **Integrità connessione**.  
 
 Per altre informazioni, vedere [Monitorare l'integrità della connessione](/sccm/desktop-analytics/monitor-connection-health).
+
+> [!NOTE]
+> La connessione di Configuration Manager a Desktop Analytics si basa sul punto di connessione del servizio. Eventuali modifiche apportate a questo ruolo del sistema del sito possono avere effetto sulla sincronizzazione con il servizio cloud. Per altre informazioni, vedere [Informazioni sul punto di connessione del servizio](/configmgr/core/servers/deploy/configure/about-the-service-connection-point#bkmk_move).
 
 
 ## <a name="log-files"></a>File di registro
