@@ -10,12 +10,12 @@ ms.assetid: a2742d52-851e-4abc-b623-d12d91684c0b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7e963b7e2e6e333db8ccc1820ad27fb53cd06df1
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: HT
+ms.openlocfilehash: 8f8f970438d86d8b1b9e3f87b1b07c3fc70735e1
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816259"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76035014"
 ---
 # <a name="get-started-with-compliance-settings-in-configuration-manager"></a>Introduzione alle impostazioni di conformità in Configuration Manager
 
@@ -41,12 +41,9 @@ Gli elementi di configurazione rientrano in due categorie principali:
 | Tipo di dispositivo | Altre informazioni |  
 |------------|----------------------|  
 | PC Windows con il client di Configuration Manager | Creare elementi di configurazione personalizzati per valutare oggetti come chiavi del Registro di sistema, file e attributi di Active Directory.<br /><br /> Quando si usa il tipo di elemento di configurazione Windows 10, è possibile selezionare le impostazioni da un elenco predefinito. |  
-| PC Windows registrati con Microsoft Intune | Selezionare le impostazioni da un elenco predefinito. |  
-| Dispositivi iOS registrati con Microsoft Intune | Selezionare le impostazioni da un elenco predefinito. |  
-| Dispositivi Android registrati con Microsoft Intune | Selezionare le impostazioni da un elenco predefinito. |  
-| Dispositivi Windows Phone registrati con Microsoft Intune | Selezionare le impostazioni da un elenco predefinito. |  
+| PC Windows (registrati con MDM in locale) | Selezionare le impostazioni da un elenco predefinito. |  
+| Dispositivi Windows Phone (registrati con MDM in locale) | Selezionare le impostazioni da un elenco predefinito. |  
 | Computer Mac con il client di Configuration Manager | Creare elementi di configurazione personalizzati per valutare oggetti, ad esempio le preferenze di macOS e i risultati restituiti da uno script. |  
-| Computer Mac registrati con Microsoft Intune | Selezionare le impostazioni da un elenco predefinito. |  
 
 
 

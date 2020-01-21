@@ -10,12 +10,12 @@ ms.assetid: 08f711ba-83bf-4b5f-9520-a0778c6ae7eb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f509380945f18c596b691dfaad4dc93fe70395b5
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 63523355c2a75a82982d7755d392fc89460b0dd0
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75818333"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033156"
 ---
 # <a name="introduction-to-application-management-in-configuration-manager"></a>Introduzione alla gestione delle applicazioni in Configuration Manager
 
@@ -42,7 +42,7 @@ Ad esempio, una società ha un'applicazione line-of-business denominata Astoria.
 
 - Pacchetto di Windows Installer per offrire funzionalità complete nei dispositivi Windows 10
 - Pacchetto App-V da usare nella server farm
-- Pacchetto app Android per utenti di dispositivi mobili  
+- App Web per utenti mobili  
 
 È possibile creare una singola applicazione per Astoria in Configuration Manager. L'applicazione definisce i metadati generali relativi all'app che risultano comuni in tutti i metodi di installazione e in tutte le piattaforme. È quindi possibile creare tre tipi di distribuzione per i metodi di installazione disponibili e distribuire l'applicazione a tutti gli utenti. In base ai requisiti e ad altre configurazioni nei tipi di distribuzione, Configuration Manager determina il metodo corretto in ogni caso d'uso.
 
@@ -144,19 +144,11 @@ Configuration Manager consente di distribuire i tipi di app seguenti:
 
 - macOS  
 
-Quando poi si gestiscono dispositivi tramite la gestione di dispositivi locale di Microsoft Intune o Configuration Manager, è possibile gestire anche questi tipi di applicazione:  
+Inoltre, quando si gestiscono dispositivi tramite la [gestione di dispositivi locale](/configmgr/mdm/understand/manage-mobile-devices-with-on-premises-infrastructure) di Configuration Manager, è possibile gestire anche questi altri tipi di applicazione:  
 
 - Pacchetto app per Windows Phone (xap)  
 
 - Pacchetto app Windows Phone in Microsoft Store  
-
-- Pacchetto app per iOS (ipa)  
-
-- Pacchetto app iOS nell'App Store  
-
-- Pacchetto app per Android (apk)  
-
-- Pacchetto app Android in Google Play  
 
 - Windows Installer tramite MDM (msi)  
 

@@ -10,12 +10,12 @@ ms.technology: configmgr-sum
 ms.assetid: 4b0e2e90-aac7-4d06-a707-512eee6e576c
 manager: dougeby
 ms.author: mstewart
-ms.openlocfilehash: 258c5535623c0824e49f09c556d6ffe943f96414
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: cbad055d3a50b015a99e831dc6a1d5715af44310
+ms.sourcegitcommit: d8fdeb1e70f44ccbed675af73f75a00c35b8380f
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75827384"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75869787"
 ---
 # <a name="software-updates-maintenance"></a>Manutenzione degli aggiornamenti software
 
@@ -100,14 +100,14 @@ Nei siti CAS, primari e secondari non vengono eseguite le opzioni di **Pulizia s
 
   Per altre informazioni e istruzioni, vedere il post di blog [The complete guide to Microsoft WSUS and Configuration Manager SUP maintenance](https://support.microsoft.com/help/4490644/complete-guide-to-microsoft-wsus-and-configuration-manager-sup-maint/) (Guida completa alla manutenzione con Microsoft WSUS e i punti di aggiornamento software di Configuration Manager).
 
-## <a name="wsus-cleanup-starting-in-version-1906"></a>Pulizia WSUS a partire dalla versione 1906
+## <a name="wsus-cleanup-starting-in-version-1906"></a>Pulizia di WSUS a partire dalla versione 1906
 <!--41101009-->
 
- Sono disponibili attività di manutenzione di WSUS aggiuntive che possono essere eseguite da Configuration Manager per mantenere l'integrità dei punti di aggiornamento software. Oltre a rifiutare gli aggiornamenti scaduti in WSUS, Configuration Manager possibile aggiungere indici non cluster ai database WSUS e rimuovere gli aggiornamenti obsoleti dai database WSUS. La manutenzione di WSUS avviene dopo ogni sincronizzazione.
+ Sono disponibili attività di manutenzione di WSUS aggiuntive che possono essere eseguite da Configuration Manager per mantenere l'integrità dei punti di aggiornamento software. Oltre a rifiutare gli aggiornamenti scaduti in WSUS, Configuration Manager può aggiungere indici non cluster ai database WSUS e rimuovere gli aggiornamenti obsoleti dai database WSUS. La manutenzione di WSUS avviene dopo ogni sincronizzazione.
 
 ### <a name="add-non-clustered-indexes-to-the-wsus-database-to-improve-wsus-cleanup-performance"></a>Aggiungere indici non cluster al database di WSUS per migliorare le prestazioni di pulizia di WSUS
 
-L'aggiunta di indici non cluster consente di migliorare le prestazioni di pulizia di WSUS che Configuration Manager.
+L'aggiunta di indici non cluster consente di migliorare le prestazioni della pulizia di WSUS eseguita da Configuration Manager.
 
 1. Nella console di Configuration Manager passare a **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Siti**.
 2. Selezionare il sito al livello superiore della gerarchia di Configuration Manager.
@@ -119,17 +119,17 @@ L'aggiunta di indici non cluster consente di migliorare le prestazioni di pulizi
 
 #### <a name="sql-permissions-for-creating-indexes"></a>Autorizzazioni SQL per la creazione di indici
 
-Quando il database WSUS è in un server SQL remoto, l'account computer del server del sito richiede le autorizzazioni di SQL seguenti:
+Quando il database WSUS si trova in un server SQL remoto, può essere necessario aggiungere autorizzazioni in SQL per creare gli indici. L'account usato per la connessione al database WSUS e la creazione di indici può variare. Se si specifica un [account di connessione al server WSUS nelle proprietà del punto di aggiornamento software](/sccm/sum/get-started/install-a-software-update-point#wsus-server-connection-account), verificare che l'account disponga delle autorizzazioni SQL. Se non si specifica un account di connessione al server WSUS, l'account computer del server del sito deve disporre delle autorizzazioni SQL.
 
-- Per la creazione di un indice è richiesta l'autorizzazione `ALTER` per la tabella o vista. L'account computer del server del sito deve essere un membro del ruolo predefinito del server`sysadmin` o dei ruoli predefiniti del database `db_ddladmin` e `db_owner`. Per altre informazioni sulla creazione dell'indice e le autorizzazioni, vedere [CREATE INDEX (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-index-transact-sql?view=sql-server-2017#permissions).
-- L'autorizzazione del server `CONNECT SQL` deve essere concessa all'account computer del server del sito. Per altre informazioni, vedere [Autorizzazione del server GRANT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/grant-server-permissions-transact-sql?view=sql-server-2017). 
+- Per la creazione di un indice è richiesta l'autorizzazione `ALTER` per la tabella o vista. L'account deve essere un membro del ruolo predefinito del server`sysadmin` o dei ruoli predefiniti del database `db_ddladmin` e `db_owner`. Per altre informazioni sulla creazione dell'indice e le autorizzazioni, vedere [CREATE INDEX (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-index-transact-sql?view=sql-server-2017#permissions).
+- È necessario concedere all'account l'autorizzazione del server `CONNECT SQL`. Per altre informazioni, vedere [Autorizzazione del server GRANT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/grant-server-permissions-transact-sql?view=sql-server-2017).
 
 > [!NOTE]  
 >  Se il database WSUS si trova in un server SQL remoto tramite una porta non predefinita, non è possibile aggiungere gli indici. Per questo scenario, è possibile creare un [alias del server usando Gestione configurazione SQL Server](https://docs.microsoft.com/sql/database-engine/configure-windows/create-or-delete-a-server-alias-for-use-by-a-client?view=sql-server-2017). Dopo l'aggiunta dell'alias e quando Configuration Manager può stabilire una connessione con il database, gli indici verranno aggiunti.
 
 ### <a name="remove-obsolete-updates-from-the-wsus-database"></a>Rimuovere gli aggiornamenti obsoleti dal database di WSUS
 
-Gli aggiornamenti obsoleti sono aggiornamenti inutilizzati e revisioni di aggiornamento nel database WSUS. In generale, un aggiornamento viene considerato obsoleto quando non è più incluso nel [catalogo Microsoft Update](https://www.catalog.update.microsoft.com/) e non è necessario per altri aggiornamenti come prerequisito o dipendenza.
+Gli aggiornamenti obsoleti sono aggiornamenti inutilizzati e revisioni di aggiornamento nel database WSUS. In generale, un aggiornamento viene considerato obsoleto quando non è più incluso in [Microsoft Update Catalog](https://www.catalog.update.microsoft.com/) e non è necessario per altri aggiornamenti come prerequisito o dipendenza.
 
 1. Nella console di Configuration Manager passare a **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Siti**.
 2. Selezionare il sito al livello superiore della gerarchia di Configuration Manager.
@@ -159,12 +159,12 @@ A partire dalla versione 1906 nei siti CAS, primari e secondari non vengono eseg
 Considerare lo scenario seguente:
 <!--5418148-->
 - Si sta usando Configuration Manager versione 1906
-- Si dispone di punti di aggiornamento software remoto usando un database interno di Windows
-- Nelle **proprietà del componente del punto di aggiornamento software**è presente una delle seguenti opzioni selezionate nella scheda **manutenzione WSUS** :
-   - Aggiungere indici non cluster al database WSUS
+- Sono presenti punti di aggiornamento software remoti che usano un database interno di Windows
+- Nelle **proprietà del componente punto di aggiornamento software** una delle opzioni seguenti è selezionata nella scheda **Manutenzione WSUS**:
+   - Aggiungi indici non cluster al database di WSUS
    - Rimuovere gli aggiornamenti obsoleti dal database di WSUS
 
-In questo scenario, Configuration Manager non è in grado di eseguire le attività di manutenzione WSUS precedenti per i punti di aggiornamento software remoto usando un database interno di Windows. Questo problema si verifica perché il database interno di Windows non consente le connessioni remote. Nel `WSyncMgr.log` nel server del sito verranno visualizzati gli errori seguenti:
+In questo scenario, Configuration Manager non è in grado di eseguire le attività di manutenzione WSUS precedenti per i punti di aggiornamento software remoti usando un database interno di Windows. Questo problema si verifica perché il database interno di Windows non consente le connessioni remote. In `WSyncMgr.log` nel server del sito verranno visualizzati gli errori seguenti:
 
 ```text
 Indexing Failed. Could not connect to SUSDB.
@@ -173,7 +173,7 @@ SqlException thrown while connect to SUSDB in Server: <SUP.CONTOSO.COM>. Error M
 Could not Delete Obselete Updates because ConfigManager could not connect to SUSDB: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) UpdateServer: <SUP.CONTOSO.COM>
 ```
 
-Per risolvere il problema, è possibile automatizzare la manutenzione WSUS per i punti di aggiornamento software remoto utilizzando un database interno di Windows. Per altre informazioni e procedure dettagliate, vedere la [Guida completa alla manutenzione di Microsoft WSUS e dei punti di aggiornamento software di Configuration Manager](https://support.microsoft.com/help/4490644/complete-guide-to-microsoft-wsus-and-configuration-manager-sup-maint).
+Per risolvere il problema, è possibile automatizzare la manutenzione WSUS per i punti di aggiornamento software remoti usando un database interno di Windows. Per altre informazioni e procedure dettagliate, vedere la [Guida completa alla manutenzione di Microsoft WSUS e dei punti di aggiornamento software di Configuration Manager](https://support.microsoft.com/help/4490644/complete-guide-to-microsoft-wsus-and-configuration-manager-sup-maint).
 
 ## <a name="updates-cleanup-log-entries"></a>Voci di log per la pulizia degli aggiornamenti
 

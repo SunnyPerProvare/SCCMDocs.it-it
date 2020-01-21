@@ -10,12 +10,12 @@ ms.assetid: 4d26deed-3b16-4116-b640-f618f2c20f5a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 54f38d0aa982213f06565dd343f0ec07e9057125
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: HT
+ms.openlocfilehash: c630878ba9946c2d061f112b31f6423baee8c02f
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75817245"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034182"
 ---
 # <a name="security-and-privacy-for-application-management-in-configuration-manager"></a>Sicurezza e privacy per la gestione delle applicazioni in Configuration Manager
 
@@ -52,7 +52,7 @@ Quando non si usa HTTPS, non usare le opzioni di configurazione della personaliz
 > [!Important]  
 > Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
-Installare il punto per siti Web del Catalogo applicazioni e il punto per servizi Web del Catalogo applicazioni in server separati. Se il punto del sito Web è compromesso, viene separato dal punto di servizio Web. In questo modo si proteggono i client e l'infrastruttura. Questa configurazione è particolarmente importante se il punto per siti Web accetta connessioni client da Internet, rendendo così il server più vulnerabile agli attacchi.  
+Installare il punto per siti Web del Catalogo applicazioni e il punto per servizi Web del Catalogo applicazioni in server separati. Se il punto per siti Web è compromesso, viene separato dal punto per servizi Web. In questo modo si proteggono i client e l'infrastruttura. Questa configurazione è particolarmente importante se il punto per siti Web accetta connessioni client da Internet, rendendo così il server più vulnerabile agli attacchi.  
 
 ### <a name="close-browser-windows"></a>Chiudere le finestre del browser
 
@@ -167,10 +167,6 @@ Se si configura un tipo di distribuzione delle applicazioni Web, usare HTTPS per
 
      Quando un'applicazione App-V viene pubblicata in un computer, tutti gli utenti che accedono a tale computer possono installare l'applicazione. Non è possibile limitare gli utenti che possono installare l'applicazione dopo la pubblicazione.  
 
-- Non è possibile limitare le autorizzazioni di installazione per il portale aziendale nei dispositivi mobili.  
-
-     Anche se è possibile configurare un'impostazione client per limitare le autorizzazioni di installazione, questa impostazione non funziona per il portale aziendale. Questo problema può causare un'elevazione dei privilegi. Gli utenti possono installare un'app che non dovrebbero invece poter installare.  
-
 
 ## <a name="BKMK_CertificatesSilverlight5"></a> Certificati per Microsoft Silverlight 5 e modalità di attendibilità elevata richiesta per il Catalogo applicazioni  
 
@@ -205,14 +201,14 @@ Le funzionalità seguenti consentono di distribuire il software in modo efficien
 
 - L'**affinità utente-dispositivo** esegue il mapping di un utente ai dispositivi. Un amministratore di Configuration Manager distribuisce il software a un utente. Il client installa automaticamente il software in uno o più computer che l'utente usa più di frequente.  
 
-- **Software Center** viene automaticamente installato in un dispositivo quando si installa il client di Configuration Manager. Gli utenti cambiano le impostazioni, Cerca e installa il software da software Center.  
+- **Software Center** viene automaticamente installato in un dispositivo quando si installa il client di Configuration Manager. Gli utenti modificano le impostazioni e selezionano e installano il software da Software Center.  
 
 - Il **Catalogo applicazioni** è un sito Web che consente agli utenti di richiedere software da installare.  
 
     > [!Important]  
     > Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  
 
-### <a name="bkmk_privacy-uda"></a>Informazioni sulla privacy dell'affinità utente dispositivo
+### <a name="bkmk_privacy-uda"></a>Informazioni sulla privacy relative all'affinità utente-dispositivo
 
 - È possibile che Configuration Manager trasmetta informazioni tra i client e i sistemi del sito del punto di gestione, che identificano il computer e l'account di accesso, nonché dati di utilizzo aggregati relativi agli account di accesso.  
 
@@ -224,7 +220,7 @@ Le funzionalità seguenti consentono di distribuire il software in modo efficien
 
 - Le informazioni sul computer e sull'utilizzo dell'account di accesso, usate per stabilire l'affinità utente-dispositivo, sono sempre abilitate. Gli utenti e gli utenti amministrativi possono fornire informazioni sull'affinità utente-dispositivo.  
 
-### <a name="bkmk_privacy-userex"></a>Informazioni sulla privacy di Software Center
+### <a name="bkmk_privacy-userex"></a>Informazioni sulla privacy relative a Software Center
 
 - Software Center consente all'amministratore di Configuration Manager di pubblicare tutte le applicazioni, i programmi o gli script che gli utenti dovranno eseguire. Configuration Manager non ha alcun controllo sui tipi di programmi o script che vengono pubblicati nel catalogo, né sul tipo di informazioni trasmesse.  
 
@@ -234,7 +230,7 @@ Le funzionalità seguenti consentono di distribuire il software in modo efficien
 
 - Software Center viene automaticamente installato quando si installa il client di Configuration Manager in un dispositivo.  
 
-### <a name="application-catalog-privacy-information"></a>Informazioni sulla privacy del catalogo applicazioni
+### <a name="application-catalog-privacy-information"></a>Informazioni sulla privacy relative al Catalogo applicazioni
 
 > [!Important]  
 > Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910. Per altre informazioni, vedere [Rimuovere il catalogo applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_remove-appcat).  

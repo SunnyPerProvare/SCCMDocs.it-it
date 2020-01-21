@@ -10,12 +10,12 @@ ms.assetid: 678c9622-c61b-47d1-ba25-690616e431c7
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 0c63e26a082b07580230d01e9485a8c31a977742
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: HT
+ms.openlocfilehash: 2b4de4eee35358dd93d134d29d40651c4711ee26
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816650"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76034173"
 ---
 # <a name="create-configuration-baselines-in-configuration-manager"></a>Creare linee di base di configurazione in Configuration Manager
 
@@ -81,15 +81,15 @@ Per creare una linea di base di configurazione mediante la finestra di dialogo *
 <!--3608345-->
 *(Funzionalità introdotta nella versione 1910)*
 
-A partire dalla versione 1910 è possibile aggiungere la valutazione delle linee di base di configurazione personalizzate come regola di valutazione dei criteri di conformità. Quando si crea o si modifica una linea di base di configurazione, è disponibile l'opzione, **Valuta questa baseline come parte della valutazione dei criteri di conformità**. Quando si aggiunge o si modifica una regola dei criteri di conformità, è disponibile una nuova condizione denominata **Includi le baseline configurate in una valutazione dei criteri di conformità**. Per i dispositivi con co-gestione, e quando si configura Intune per acquisire i risultati della valutazione della conformità di Configuration Manager come parte dello stato di conformità generale, queste informazioni vengono inviate ad Azure AD. È quindi possibile usarle per l'[accesso condizionale alle risorse di Office 365](/configmgr/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm#configure-conditional-access).  
+A partire dalla versione 1910 è possibile aggiungere la valutazione delle linee di base di configurazione personalizzate come regola di valutazione dei criteri di conformità. Quando si crea o si modifica una linea di base di configurazione, è disponibile l'opzione, **Valuta questa baseline come parte della valutazione dei criteri di conformità**. Quando si aggiunge o si modifica una regola dei criteri di conformità, è disponibile una nuova condizione denominata **Includi le baseline configurate in una valutazione dei criteri di conformità**. Per i dispositivi con co-gestione, e quando si configura Intune per acquisire i risultati della valutazione della conformità di Configuration Manager come parte dello stato di conformità generale, queste informazioni vengono inviate ad Azure AD. È quindi possibile usarlo per l'accesso condizionale alle risorse di Office 365. Per altre informazioni, vedere [Accesso condizionale con la co-gestione](/configmgr/comanage/quickstart-conditional-access).
 
 Per includere linee di base di configurazione personalizzate come parte della valutazione dei criteri di conformità, eseguire le operazioni seguenti:
 
-- Creare e distribuire i criteri di conformità a una raccolta di utenti con una regola per [**includere le linee di base configurate nella valutazione dei criteri di conformità**](#bkmk_CA).
-- Selezionare [**valuta questa linea di base come parte della valutazione dei criteri di conformità**](#bkmk_eval-baseline) in una linea di base di configurazione distribuita in una raccolta di dispositivi.
+- Creare e distribuire criteri di conformità in una raccolta di utenti con la regola [**Includi le baseline configurate in una valutazione dei criteri di conformità**](#bkmk_CA).
+- Selezionare [**Valuta questa baseline come parte della valutazione dei criteri di conformità**](#bkmk_eval-baseline) in una linea di base di configurazione distribuita in una raccolta di dispositivi.
 
 > [!IMPORTANT]
-> Quando si fa riferimento a dispositivi che sono co-gestiti, assicurarsi di soddisfare i [prerequisiti di co-gestione](/configmgr/comanage/overview#prerequisites).
+> Quando la destinazione è costituita da dispositivi che sono co-gestiti, assicurarsi di soddisfare i [prerequisiti di co-gestione](/configmgr/comanage/overview#prerequisites).
 
 ### <a name="example-evaluation-scenario"></a>Scenario di valutazione di esempio
 
@@ -116,7 +116,7 @@ Quando `User1` usa `Device2`, viene valutata solo `Configuration Baseline 2` qua
 ### <a name="bkmk_CA"></a> Creare e distribuire un criterio di conformità con una regola per la valutazione dei criteri di conformità della linea di base
 
 1. Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità** e quindi selezionare il nodo **Criteri di conformità**.
-1. Fare clic su **Crea criteri di conformità** nella barra multifunzione per visualizzare la **Creazione guidata criteri di conformità**. Per altre informazioni, vedere [Creare e distribuire criteri di conformità del dispositivo](/sccm/mdm/deploy-use/create-compliance-policy).
+1. Fare clic su **Crea criteri di conformità** nella barra multifunzione per visualizzare la **Creazione guidata criteri di conformità**. <!-- For more information, see [Create and deploy a device compliance policy](/sccm/mdm/deploy-use/create-compliance-policy). -->
 1. Nella pagina **Generale** selezionare **Regole di conformità per i dispositivi gestiti con il client di Configuration Manager**.
    - I dispositivi devono essere gestiti con il client di Configuration Manager per includere linee di base di configurazione personalizzate come parte della valutazione dei criteri di conformità.
 1. Selezionare le piattaforme in uso nelle pagine **Piattaforme supportate**.
@@ -133,10 +133,10 @@ Quando `User1` usa `Device2`, viene valutata solo `Configuration Baseline 2` qua
 ### <a name="bkmk_eval-baseline"></a>Selezionare una linea di base di configurazione e selezionare l'opzione "Valuta questa baseline come parte della valutazione dei criteri di conformità"
 
 1. Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità** e quindi selezionare il nodo **Linee di base di configurazione**.
-1. Fare clic con il pulsante destro del mouse su una linea di base esistente distribuita in una raccolta di dispositivi e quindi selezionare **Proprietà**. Se necessario, è possibile creare una nuova baseline.
+1. Fare clic con il pulsante destro del mouse su una linea di base esistente distribuita in una raccolta di dispositivi e quindi selezionare **Proprietà**. Se necessario, è possibile creare una nuova linea di base.
    - La linea di base deve essere distribuita in una raccolta di dispositivi, non in una raccolta utenti.
 1. Abilitare l'impostazione **Evaluate this baseline as part of compliance policy assessment** (Valuta questa linea di base come parte della valutazione dei criteri di conformità).
-   - Per i dispositivi con co-gestione con Intune come autorità di **configurazione del dispositivo** , assicurarsi di **applicare sempre questa baseline anche per i client co-gestiti** .
+   - Per i dispositivi con co-gestione per cui Intune è l'autorità di **configurazione del dispositivo**, assicurarsi che sia selezionata anche l'opzione **Applica sempre questa baseline anche per client con co-gestione**.
 1. Fare clic su **OK** per salvare le modifiche apportate alla linea di base di configurazione.
 
    ![Finestra di dialogo Proprietà linea di base di configurazione](./media/3608345-configuration-baseline-properties.png)

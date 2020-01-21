@@ -10,12 +10,12 @@ ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6c159dd2318c07eb678ae20320e07e46dbba2c68
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: HT
+ms.openlocfilehash: 4cc9c8b5246903ba3400117846356f80b53a6665
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75815936"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033134"
 ---
 # <a name="create-applications-in-configuration-manager"></a>Creare applicazioni in Configuration Manager
 
@@ -116,7 +116,7 @@ Per aggiungere altri tipi di distribuzione o configurare altre impostazioni, ved
 3. Nella pagina **Software Center** della Creazione guidata applicazione specificare le informazioni seguenti:  
 
     > [!Note]  
-    > Nella versione 1902 e nelle versioni precedenti, questa pagina era denominata **Catalogo applicazioni**.
+    > Nella versione 1902 e in quelle precedenti questa pagina è denominata **Catalogo applicazioni**.
 
     - **Lingua selezionata**: dall'elenco a discesa, selezionare la versione della lingua dell'applicazione che si vuole configurare. Scegliere **Aggiungi/Rimuovi** per configurare più lingue per l'applicazione.  
 
@@ -128,15 +128,15 @@ Per aggiungere altri tipi di distribuzione o configurare altre impostazioni, ved
     - **Categorie utente**: scegliere **Modifica** per specificare le categorie dell'applicazione nella lingua selezionata. Gli utenti di Software Center usano queste categorie per filtrare e ordinare le applicazioni.  
 
         > [!Note]  
-        > Nella versione 1902 e nelle versioni precedenti, le categorie utente sono valide solo per le distribuzioni disponibili per le raccolte utenti. Se un'applicazione viene distribuita a una raccolta di computer, le categorie utente vengono ignorate.
+        > Nella versione 1902 e in quelle precedenti, le categorie utente sono valide solo per le distribuzioni disponibili nelle raccolte utenti. Se un'applicazione viene distribuita a una raccolta di computer, le categorie utente vengono ignorate.
         >
         > A partire dalla versione 1906, le categorie utente per le distribuzioni di applicazioni destinate a dispositivi vengono visualizzate come filtri in Software Center. Queste distribuzioni possono essere disponibili o obbligatorie.
         >
-        > <!-- 4726793 -->La ridenominazione o l'eliminazione di una categoria non viene applicata automaticamente alle app con questa categoria. Queste modifiche si applicano alla revisione successiva dell'app. Per risolvere questo problema per la ridenominazione o l'eliminazione:
+        > <!-- 4726793 -->La ridenominazione o l'eliminazione di una categoria non viene applicata automaticamente alle app con questa categoria. Queste modifiche vengono applicate alla versione successiva dell'app. Per risolvere questo problema per la ridenominazione o l'eliminazione:
         >
-        > - Per prima cosa deselezionare la casella di controllo relativa alla categoria in tutte le app che vi fanno riferimento. Quindi applicare la modifica, che consente di rivedere l'app.
-        >     - Al posto dell'azione Rinomina, successivamente, creare una nuova categoria con il nuovo nome e aggiungere la nuova categoria alle app pertinenti.
-        >     - È possibile eliminare la categoria dopo la modifica delle app.
+        > - Prima di tutto, deselezionare la casella di controllo accanto alla categoria in tutte le app che vi fanno riferimento. Quindi applicare la modifica, che consente di esaminare l'app.
+        >     - Al posto dell'operazione di ridenominazione, creare quindi una nuova categoria con il nuovo nome e aggiungere la nuova categoria alle app pertinenti.
+        >     - È possibile eliminare la categoria dopo aver esaminato l'app.
 
     - **Documentazione utente**: specificare il percorso di un file da cui gli utenti di Software Center possono ottenere altre informazioni su questa applicazione. Questo percorso è un indirizzo di sito Web o un percorso di rete con un nome file. Assicurarsi che gli utenti possano accedere a questo percorso.  
 
@@ -149,8 +149,6 @@ Per aggiungere altri tipi di distribuzione o configurare altre impostazioni, ved
     - **Parole chiave**: immettere un elenco di parole chiave nella lingua selezionata. Queste parole chiave consentono agli utenti di Software Center di cercare l'applicazione.  
 
     - **Icona**: Selezionare **Sfoglia** per selezionare un'icona per questa applicazione. Se non si specifica un'icona, Configuration Manager usa un'icona predefinita. Le icone possono avere dimensioni massime pari a 512x512 pixel.  
-
-    - **Visualizza come app in primo piano ed evidenziala nel portale aziendale**: questa opzione visualizza chiaramente l'app Portale aziendale nei dispositivi mobili.  
 
 4. Nella pagina **Tipi di distribuzione** della Creazione guidata applicazione scegliere **Aggiungi** per creare un nuovo tipo di distribuzione. Per altre informazioni, vedere [Creare tipi di distribuzione per l'applicazione](#bkmk_create-dt).  
 
@@ -275,7 +273,7 @@ Quando si visualizzano le proprietà di un tipo di distribuzione, le opzioni seg
 
 - **Opzioni di distribuzione**: specificare se i client devono scaricare l'applicazione quando usano un punto di distribuzione da un gruppo di limiti vicino o dai gruppi di limiti del sito predefiniti.  
 
-- **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: Specificare se consentire l'uso di BranchCache per i download del contenuto. Per altre informazioni, vedere [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). BranchCache è sempre abilitato nei client. Questa impostazione è stata rimossa nella versione 1802 poiché i client usano BranchCache, se supportato dal punto di distribuzione.  
+- **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per i download del contenuto. Per altre informazioni, vedere [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). BranchCache è sempre abilitato nei client. Questa impostazione è stata rimossa nella versione 1802 poiché i client usano BranchCache, se supportato dal punto di distribuzione.  
 
 ### <a name="bkmk_dt-detect"></a> Opzioni del **Metodo di rilevamento** per il tipo di distribuzione
 
@@ -288,7 +286,7 @@ Questa procedura configura un metodo di rilevamento che indica la presenza del t
 
 1. Nella pagina **Metodo di rilevamento** l'opzione **Configura le regole per rilevare la presenza di questo tipo di distribuzione** è selezionata per impostazione predefinita. Selezionare **Aggiungi clausola**.  
 
-2. Nella finestra di dialogo **regola di rilevamento** selezionare un **tipo di impostazione** per rilevare la presenza del tipo di distribuzione:  
+2. Nella finestra di dialogo **Regola di rilevamento** selezionare un tipo in **Tipo di impostazione** per rilevare la presenza del tipo di distribuzione:  
 
     - **File System**: consente di rilevare se un file o una cartella specifica è presente in un dispositivo. In caso affermativo, l'applicazione è installata. Specificare i dettagli aggiuntivi seguenti:  
 
@@ -338,9 +336,9 @@ Quando si crea più di un metodo di rilevamento per un tipo di distribuzione, è
 
 #### <a name="bkmk_detect-script"></a> Usare uno script personalizzato per rilevare la presenza di questo tipo di distribuzione  
 
-1. Nella pagina **Metodo di rilevamento** selezionare la casella **Usa uno script personalizzato per rilevare la presenza di questo tipo di distribuzione**. Selezionare quindi **modifica**.  
+1. Nella pagina **Metodo di rilevamento** selezionare la casella **Usa uno script personalizzato per rilevare la presenza di questo tipo di distribuzione**. Selezionare quindi **Modifica**.  
 
-2. Nella finestra di dialogo **Editor script** selezionare un **tipo di script** per rilevare il tipo di distribuzione: PowerShell, VBScript o JScript.  
+2. Nella finestra di dialogo **Editor dello script** selezionare un tipo in **Tipo di script** per rilevare il tipo di distribuzione: PowerShell, VBScript o JScript.  
 
     > [!Note]  
     > A partire dalla versione 1810, quando si esegue uno script di Windows PowerShell come metodo di rilevamento app, il client di Configuration Manager chiama PowerShell con il parametro `-NoProfile`. Questa opzione avvia PowerShell senza i profili. Un profilo di PowerShell è uno script che viene eseguito all'avvio di PowerShell. <!--3607762-->  
@@ -543,7 +541,7 @@ Le dipendenze definiscono uno o più tipi di distribuzione da un'altra applicazi
 > [!IMPORTANT]  
 > In alcuni casi, un tipo di distribuzione dipende dal tipo di distribuzione che contiene anche le dipendenze. Il numero massimo di dipendenze supportate nella catena è cinque.  
 
-1. Nella pagina **dipendenze** selezionare **Aggiungi**.  
+1. Nella pagina **Dipendenze** selezionare **Aggiungi**.  
 
 2. Nella finestra Aggiungi dipendenza immettere il **Nome gruppo di dipendenze**. Questo nome fa riferimento al gruppo di dipendenze dell'applicazione.  
 
@@ -697,13 +695,12 @@ Configuration Manager supporta i tipi di distribuzione seguenti per le applicazi
 | **Microsoft Application Virtualization 5** | Un file del pacchetto Microsoft App-V v5. |  
 | **Pacchetto app Windows Phone (file \*.xap)** | Un file del pacchetto app Windows Phone. |  
 | **Pacchetto app Windows Phone (in Windows Phone Store)** | Consente di specificare un collegamento per l'app in Windows Store. |  
-| **Pacchetto app per iOS (file \*.ipa)** | Un file del pacchetto app Apple iOS. |  
-| **Pacchetto app per iOS nell'App Store** | Consente di specificare un collegamento per l'app iOS in Apple Store. |  
-| **Pacchetto app per Android (file \*.apk)** | Un file del pacchetto app Android. |  
-| **Pacchetto app Android in Google Play** | Consente di specificare un collegamento per l'app in Google Play Store. |  
 | **Mac OS X** | Per computer macOS che eseguono il client di Configuration Manager. Creare un file con estensione cmmac con lo strumento **CMAppUtil**. |  
-| **Applicazione Web** | Consente di specificare un collegamento a un'applicazione Web. Questo tipo di distribuzione installa un collegamento all'applicazione Web sul dispositivo dell'utente.<sup>[Nota 2](#bkmk_note2)</sup> |  
+| **Applicazione Web** | Consente di specificare un collegamento a un'applicazione Web. Il tipo di distribuzione installa un collegamento all'applicazione Web sul dispositivo dell'utente. |  
 | **Windows Installer tramite MDM (\*.msi)** | Consente di creare e distribuire app basate su Windows Installer in dispositivi Windows 10. Per altre informazioni, vedere [Distribuire app Windows Installer nei PC Windows 10 registrati](/sccm/apps/get-started/creating-windows-applications#bkmk_mdm-msi). |  
+
+> [!NOTE]
+> La console di Configuration Manager può elencare altri tipi di distribuzione, ma si tratta di piattaforme che non sono più supportate. Per altre informazioni, vedere [Che cosa è successo alla MDM ibrida?](/configmgr/mdm/understand/what-happened-to-hybrid).
 
 ### <a name="bkmk_note1"></a> Nota 1: Pacchetto app Windows (in Windows Store)
 
@@ -712,19 +709,7 @@ Per distribuire l'app come collegamento a Windows Store, configurare l'impostazi
 I client Windows valutano sempre i tipi di distribuzione che usano un collegamento a uno Store prima di altri tipi di distribuzione. Il client valuta quindi i tipi di distribuzione in base alla priorità.
 
 > [!TIP]
-> Alcuni collegamenti all'archivio possono causare l'errore seguente nella creazione guidata applicazione: "collegamento applicazione non valido". Ad esempio, alcune *app in primo piano* possono provocare questo errore. È comunque possibile selezionare **Avanti** nella pagina **generale** della procedura guidata. Configuration Manager crea correttamente l'app ed è possibile distribuirla correttamente.<!-- SCCMDocs-pr #4716 -->
-
-### <a name="bkmk_note2"></a> Nota 2: Applicazione Web
-
-Se è stata installata l'applicazione Microsoft Intune Managed Browser in dispositivi iOS o Android, assicurarsi che gli utenti possano usare Managed Browser solo per aprire l'app. Nell'indirizzo del sito Web sostituire **http** con **http-intunemam** o **https** con **https-intunemam**. Ad esempio:
-
-- `http-intunemam://<path to web app>`
-- `https-intunemam://<path to web app>`
-
-Usare i [requisiti dell'applicazione](#bkmk_dt-require) di Configuration Manager per assicurarsi che le app Web che usano Managed Browser vengano installate solo nei dispositivi iOS e Android.
-
-Per altre informazioni su Intune Managed Browser, vedere [Gestire l'accesso a Internet mediante criteri di Managed Browser](/sccm/apps/deploy-use/manage-internet-access-using-managed-browser-policies).
-
+> Alcuni collegamenti allo store possono generare un errore simile a questo nella Creazione guidata applicazione: "Collegamento applicazione non valido". Ad esempio, alcune *App in evidenza* dello store possono provocare questo errore. È comunque possibile selezionare **Avanti** nella pagina **Generale** della procedura guidata. Configuration Manager crea correttamente l'app, che può quindi essere distribuita.<!-- SCCMDocs-pr #4716 -->
 
 ## <a name="next-steps"></a>Passaggi successivi
 
@@ -735,7 +720,6 @@ A partire dalla versione 1906, creare un gruppo di applicazioni che è possibile
 Per altre informazioni sulla creazione di applicazioni in piattaforme del sistema operativo diverse, vedere gli articoli seguenti:  
 
 - [Creare applicazioni Windows](/sccm/apps/get-started/creating-windows-applications)
-- [Creare applicazioni per dispositivi mobili](/sccm/mdm/deploy-use/create-applications) (iOS, Windows Mobile e Android)  
 - [Creare applicazioni Mac](/sccm/apps/get-started/creating-mac-computer-applications)
 - [Creazione di applicazioni server Linux e UNIX](/sccm/apps/get-started/creating-linux-and-unix-server-applications)
 - [Creazione di applicazioni Windows Embedded](/sccm/apps/get-started/creating-windows-embedded-applications)

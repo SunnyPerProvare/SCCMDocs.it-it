@@ -1,7 +1,7 @@
 ---
 title: Integrare Windows Update per le aziende
 titleSuffix: Configuration Manager
-description: Usare Windows Update for business (WUfB) per lasciare Windows 10 aggiornato per i dispositivi connessi al servizio Windows Update.
+description: Usare Windows Update per le aziende (WUfB) per mantenere aggiornato Windows 10 per i dispositivi connessi al servizio Windows Update.
 author: mestew
 ms.author: mstewart
 manager: dougeby
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 183315fe-27bd-456f-b2c5-e8d25e05229b
-ms.openlocfilehash: 2556b983f9ba2fd646ee9cd5401442e9ce166ee4
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: HT
+ms.openlocfilehash: be718c70af8673b0ec92897430d56b4ad14651e0
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75827435"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76035054"
 ---
 # <a name="integrate-with-windows-update-for-business"></a>Integrare Windows Update per le aziende
 
@@ -35,9 +35,7 @@ Windows Update for Business (WUfB) consente di mantenere i dispositivi basati su
 
     -   La risoluzione dei problemi relativi allo stato di conformità generale risulta difficile, perché lo stato **sconosciuto** era riservato solo ai client per cui non veniva segnalato lo stato di analisi da WSUS. Questo stato include ora anche i client di Configuration Manager che ricevono gli aggiornamenti da Windows Update.  
 
-    -   L'accesso condizionale (per le risorse aziendali) basato sullo stato di conformità di aggiornamento non funzionerà come previsto per i client che ricevono gli aggiornamenti da Windows Update, perché non risulterebbero mai conformi per Configuration Manager.  
-
-    -   La conformità degli aggiornamenti delle definizioni fa parte dei report di verifica aggiornamenti generale e anche questo aspetto non funzionerà come previsto.  La conformità degli aggiornamenti delle definizioni fa anche parte della valutazione di accesso condizionale.  
+    -   La conformità degli aggiornamenti delle definizioni fa parte dei report di verifica aggiornamenti generale e anche questo aspetto non funzionerà come previsto.
 
 -   Nel complesso, i report di Endpoint Protection per Defender basati sullo stato di conformità degli aggiornamenti non restituiscono risultati precisi a causa della mancanza dei dati di analisi.  
 
@@ -58,12 +56,12 @@ Windows Update for Business (WUfB) consente di mantenere i dispositivi basati su
 
 #### <a name="to-identify-clients-that-use-wufb"></a>Per identificare i client che usano WUfB  
 
-1.  Verificare che l'agente di Windows Update non stia eseguendo l'analisi rispetto a WSUS, se è stato precedentemente abilitato. Per indicare se il computer esegue l'analisi rispetto a Windows Update o a WSUS, è possibile impostare la chiave del Registro di sistema seguente. Se la chiave del registro di sistema non esiste, l'analisi non viene eseguita rispetto a WSUS.
+1.  Verificare che l'agente di Windows Update non stia eseguendo l'analisi rispetto a WSUS, se questa opzione è stata precedentemente abilitata. Per indicare se il computer esegue l'analisi rispetto a Windows Update o a WSUS, è possibile impostare la chiave del Registro di sistema seguente. Se la chiave del Registro di sistema non esiste, l'analisi non viene eseguita rispetto a WSUS.
     - **HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU\UseWUServer**
 
 2.  Esiste un nuovo attributo, **UseWUServer**, nel nodo **Windows Update** di Esplora inventario risorse di Configuration Manager.  
 
-3.  Creare una raccolta sulla base dell'attributo **UseWUServer** per tutti i computer connessi tramite WUfB per gli aggiornamenti. È possibile creare una raccolta in base a una query simile a quella riportata di seguito:  
+3.  Creare una raccolta sulla base dell'attributo **UseWUServer** per tutti i computer connessi tramite WUfB per gli aggiornamenti. È possibile creare una raccolta in base a una query simile alla seguente:  
 
     ``` WQL
     Select sr.* from SMS_R_System as sr join SMS_G_System_WINDOWSUPDATE as su on sr.ResourceID=su.ResourceID where su.UseWUServer is null

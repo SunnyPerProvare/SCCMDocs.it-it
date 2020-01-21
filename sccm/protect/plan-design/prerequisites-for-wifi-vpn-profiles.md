@@ -1,8 +1,8 @@
 ---
 title: Prerequisiti per i profili Wi-Fi e VPN
 titleSuffix: Configuration Manager
-description: Informazioni sulle autorizzazioni di sicurezza necessarie per gestire i profili di certificato, i profili Wi-Fi e VPN in Configuration Manager.
-ms.date: 11/23/2016
+description: Informazioni sui prerequisiti per gestire i profili Wi-Fi e VPN in Configuration Manager
+ms.date: 01/14/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
@@ -10,20 +10,20 @@ ms.assetid: d2dacb2d-ab3b-42a2-8dc8-94da31f993c2
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 4255b3f1e177979087c7d529f8fbca0263f74792
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: HT
+ms.openlocfilehash: 66047bb63f0a5f26dcbc0ad91d4f4e5ae05ab68d
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75819149"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76035096"
 ---
 # <a name="prerequisites-for-wi-fi-and-vpn-profiles-in-configuration-manager"></a>Prerequisiti per i profili Wi-Fi e VPN in Configuration Manager
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-I profili Wi-Fi e VPN in Configuration Manager hanno solo dipendenze nel prodotto.  
+I profili Wi-Fi e VPN in Configuration Manager hanno solo dipendenze nel prodotto.
 
- È necessario disporre delle seguenti autorizzazioni di protezione per gestire le impostazioni di accesso alle risorse aziendali, quali profili certificato, Wi-Fi e VPN:  
+Per gestire le impostazioni di accesso alle risorse aziendali, quali profili certificato, Wi-Fi e VPN, sono necessarie le autorizzazioni di sicurezza seguenti:  
 
 - Per visualizzare e gestire avvisi e report per i profili Wi-Fi e VPN: **Crea**, **Elimina**, **Modifica**, **Modifica report**, **Lettura** ed **Esegui report** per l'oggetto **Avvisi**.  
 
@@ -45,4 +45,4 @@ I profili Wi-Fi e VPN in Configuration Manager hanno solo dipendenze nel prodott
 
 - Per creare e gestire i profili Wi-Fi: **Criteri autore**, **Modifica report**, **Lettura** ed **Esegui report** per l'oggetto **Profilo Wi-Fi**.  
 
-  Il ruolo di sicurezza **Gestione accesso risorse aziendali** include queste autorizzazioni necessarie per gestire i profili Wi-Fi in Configuration Manager. Per altre informazioni, vedere [Configurare la sicurezza](../../core/plan-design/security/configure-security.md).
+Il ruolo di sicurezza predefinito **Gestione accesso risorse aziendali** include queste autorizzazioni necessarie per gestire i profili Wi-Fi in Configuration Manager. Per altre informazioni, vedere [Configurare la sicurezza](/configmgr/core/plan-design/security/configure-security).

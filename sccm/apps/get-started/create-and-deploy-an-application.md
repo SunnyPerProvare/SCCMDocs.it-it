@@ -10,12 +10,12 @@ ms.assetid: 3bd1e487-ea18-43c1-b7c3-acbd9b86d429
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 3b3c138b2f84d5101957c3f0e0afe29350506d2d
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: HT
+ms.openlocfilehash: 59eba57edbed0eb281074345dfa13e869fffe793
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75817806"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76033188"
 ---
 # <a name="create-and-deploy-an-application-with-configuration-manager"></a>Creare e distribuire un'applicazione con Configuration Manager
 
@@ -27,13 +27,11 @@ Questo argomento include informazioni che consentono di creare subito un'applica
 
  Per informazioni specifiche su ogni piattaforma, vedere uno degli argomenti seguenti:  
 
-- [Creare applicazioni Windows](../../apps/get-started/creating-windows-applications.md)  
-- [Creazione di applicazioni iOS](../../apps/get-started/creating-ios-applications.md)  
-- [Creazione di applicazioni Android](../../apps/get-started/creating-android-applications.md)  
-- [Creazione di applicazioni Windows Phone](../../apps/get-started/creating-windows-phone-applications.md)  
-- [Creazione di applicazioni per computer Mac](../../apps/get-started/creating-mac-computer-applications.md)  
-- [Creazione di applicazioni server Linux e UNIX](../../apps/get-started/creating-linux-and-unix-server-applications.md)
-- [Creazione di applicazioni Windows Embedded](../../apps/get-started/creating-windows-embedded-applications.md)
+- [Creare applicazioni Windows](/configmgr/apps/get-started/creating-windows-applications)
+- [Creazione di applicazioni Windows Phone](/configmgr/mdm/deploy-use/management-tasks-applications#bkmk_winphone)
+- [Creazione di applicazioni per computer Mac](/configmgr/apps/get-started/creating-mac-computer-applications)
+- [Creazione di applicazioni server Linux e UNIX](/configmgr/apps/get-started/creating-linux-and-unix-server-applications)
+- [Creazione di applicazioni Windows Embedded](/configmgr/apps/get-started/creating-windows-embedded-applications)
 
 
 Se si ha già familiarità con le applicazioni di Configuration Manager, è possibile ignorare questo argomento. Tuttavia, è consigliabile rivedere l'argomento [Create applications](../../apps/deploy-use/create-applications.md) (Creazione di applicazioni) per scoprire tutte le opzioni disponibili quando si creano e si distribuiscono le applicazioni.  
@@ -204,7 +202,7 @@ Usare le informazioni della sezione seguente **Monitorare l'applicazione** per v
 
 Gli utenti con PC gestiti da Configuration Manager che eseguono Windows 10 visualizzano un messaggio che informa della necessità di installare l'applicazione Contoso. Una volta accettata l'installazione, l'applicazione viene installata.  
 
-A partire da Configuration Manager versione 1906, il **nuovo software è disponibile** la notifica verrà visualizzata una sola volta per un utente per una determinata applicazione e revisione. L'utente non visualizzerà più la notifica a ogni accesso. Gli utenti visualizzeranno un'altra notifica solo se l'applicazione è stata modificata o ridistribuita.
+A partire da Configuration Manager versione 1906, la notifica **È disponibile nuovo software** viene visualizzata una sola volta per un utente per un'applicazione e una versione specifiche. L'utente non visualizzerà più la notifica a ogni accesso. Gli utenti visualizzeranno un'altra notifica solo se l'applicazione è stata modificata o ridistribuita.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

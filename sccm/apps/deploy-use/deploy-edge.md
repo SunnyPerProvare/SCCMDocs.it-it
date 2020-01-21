@@ -1,8 +1,8 @@
 ---
 title: Distribuire e aggiornare Microsoft Edge versione 77 e successive
 titleSuffix: Configuration Manager
-description: Come distribuire e aggiornare Microsoft Edge, versione 77 e successive con Configuration Manager
-ms.date: 11/29/2019
+description: Come distribuire e aggiornare Microsoft Edge versione 77 e successive con Configuration Manager
+ms.date: 01/16/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,26 +10,26 @@ ms.assetid: 73b420be-5d6a-483a-be66-c4d274437508
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 25ff9d97fb0079373ae8ac8fe75e2d31d2f2e662
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: HT
+ms.openlocfilehash: f7622f8a99c130f1e590f3c95e334b6cbef55e15
+ms.sourcegitcommit: 9901ed9219916b6f185b53c0f62e69fc4dbd6692
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75815868"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124088"
 ---
 # <a name="microsoft-edge-management"></a>Gestione di Microsoft Edge
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-Il nuovo Microsoft Edge è disponibile per le aziende. A partire da Configuration Manager versione 1910, è ora possibile distribuire [Microsoft Edge, versione 77 e successive](https://docs.microsoft.com/deployedge/) agli utenti.
+Il nuovo Microsoft Edge è disponibile per le aziende. A partire da Configuration Manager versione 1910, è ora possibile distribuire [Microsoft Edge versione 77 e successive](https://docs.microsoft.com/deployedge/) agli utenti.
 
-## <a name="bkmk_Microsoft_Edge"></a> Distribuire Microsoft Edge versione 77 e successive
+## <a name="bkmk_Microsoft_Edge"></a>Distribuire Microsoft Edge
 <!--4561024-->
-Gli amministratori possono scegliere il canale Beta o Dev, insieme a una versione del client Microsoft Edge da distribuire. Ogni versione incorpora informazioni e miglioramenti da parte dei clienti e della community.
+Gli amministratori possono scegliere tra il canale Beta, Dev e stabile, insieme a una versione del client Microsoft Edge da distribuire. Ogni versione incorpora informazioni e miglioramenti da parte dei clienti e della community.
 
 ### <a name="prerequisites-for-deploying"></a>Prerequisiti per la distribuzione
 
-Per i client destinati a una distribuzione di Microsoft Edge versione 77 e successive:
+Per i client in cui verrà distribuito Microsoft Edge:
 
 - I [criteri di esecuzione](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies) di PowerShell non possono essere impostati su Con restrizioni.
   - PowerShell viene eseguito per eseguire l'installazione.
@@ -38,15 +38,13 @@ Il dispositivo che esegue la console di Configuration Manager richiede l'accesso
 
 |Percorso|Uso|
 |---|---|
-|`https://edgeupdates.azurewebsites.net/api/products?view=enterprise`|Informazioni sulle versioni di Microsoft Edge versione 77 e successive|
-|`http://dl.delivery.mp.microsoft.com`|Contenuto per le versioni di Microsoft Edge versione 77 e successive|
-
-
+|`https://edgeupdates.microsoft.com/api/products?view=enterprise`|Informazioni sulle versioni di Microsoft Edge|
+|`http://dl.delivery.mp.microsoft.com`|Contenuto per le versioni di Microsoft Edge|
 
 
 ### <a name="create-a-deployment"></a>Creare una distribuzione
 
-Creare un'applicazione Microsoft Edge versione 77 e successive usando l'esperienza dell'applicazione predefinita, che semplifica la gestione di Microsoft Edge:
+Creare un'applicazione Microsoft Edge usando l'esperienza dell'applicazione predefinita, che semplifica la gestione di Microsoft Edge:
 
 1. Nella console, in **Raccolta software**, è disponibile un nuovo nodo denominato **Gestione di Microsoft Edge**.
 1. Selezionare **Crea un'applicazione di Microsoft Edge** dalla barra multifunzione o facendo clic con il pulsante destro del mouse sul nodo **Gestione di Microsoft Edge**.
@@ -58,7 +56,7 @@ Creare un'applicazione Microsoft Edge versione 77 e successive usando l'esperien
 
    ![Pagina Impostazioni di Microsoft Edge della distribuzione guidata](./media/4561024-edge-settings-wizard.png)
 
-1. Nella pagina **Distribuzione** decidere se si vuole distribuire l'applicazione. Se si seleziona **Sì**, è possibile specificare le impostazioni di distribuzione per l'applicazione. Per ulteriori informazioni sulle impostazioni di distribuzione, vedere [deploy Applications](/configmgr/apps/deploy-use/deploy-applications#bkmk_deploy-general).
+1. Nella pagina **Distribuzione** decidere se si vuole distribuire l'applicazione. Se si seleziona **Sì**, è possibile specificare le impostazioni di distribuzione per l'applicazione. Per altre informazioni sulle impostazioni di distribuzione, vedere [Distribuire applicazioni](/configmgr/apps/deploy-use/deploy-applications#bkmk_deploy-general).
 1. In **Software Center** nel dispositivo client l'utente può visualizzare e installare l'applicazione.
 
    ![Pagina Impostazioni di Microsoft Edge della distribuzione guidata](./media/4561024-software-center-install-edge.png)
@@ -71,13 +69,31 @@ Creare un'applicazione Microsoft Edge versione 77 e successive usando l'esperien
 | [Varia](/sccm/core/plan-design/hierarchy/log-files)|PatchDownloader.log| Mostra i dettagli se il download del contenuto ha esito negativo.|
 | Client|  AppEnforce.log|Mostra le informazioni di installazione.|
 
-## <a name="update-microsoft-edge-version-77-and-later"></a>Aggiornare Microsoft Edge versione 77 e successive
+## <a name="update-microsoft-edge"></a>Aggiornare Microsoft Edge
 <!--4831871-->
 
-A partire da Configuration Manager versione 1910, è possibile notare che è presente un nodo denominato **tutti gli aggiornamenti Microsoft Edge** in **gestione Microsoft Edge**. Sebbene non sia ancora possibile visualizzare gli aggiornamenti in questo nodo, è necessario sapere che Configuration Manager è pronto.
+A partire da Configuration Manager versione 1910, è presente un nodo denominato **Tutti gli aggiornamenti di Microsoft Edge** in **Gestione di Microsoft Edge**. Questo nodo consente di gestire gli aggiornamenti per tutti i canali di Microsoft Edge.<!--initial edge updates released Jan 15,2020-->
+
+1. Per ottenere gli aggiornamenti per Microsoft Edge, assicurarsi che la classificazione **Aggiornamenti** e il prodotto **Microsoft Edge** siano [selezionati per la sincronizzazione](/configmgr/sum/get-started/configure-classifications-and-products).
+
+   [![Selezionare Microsoft Edge come prodotto in Proprietà punto di aggiornamento software](./media/4831871-microsoft-edge-product-sup.png)](./media/4831871-microsoft-edge-product-sup.png#lightbox)
+
+1. Nell'area di lavoro **Raccolta software** espandere **Gestione di Microsoft Edge** e fare clic sul nodo **Tutti gli aggiornamenti di Microsoft Edge**.
+
+1. Se necessario, fare clic su **Sincronizza aggiornamenti software** sulla barra multifunzione per avviare una sincronizzazione. Per altre informazioni, vedere [Sincronizzare gli aggiornamenti software](/configmgr/sum/get-started/synchronize-software-updates).
 
    ![Nodo Tutti gli aggiornamenti di Microsoft Edge](./media/4831871-all-microsoft-edge-updates.png)
+
+1. Gestire e distribuire gli aggiornamenti di Microsoft Edge come qualsiasi altro aggiornamento, ad esempio aggiungendoli alla [regola di distribuzione automatica](/configmgr/sum/deploy-use/automatically-deploy-software-updates). Di seguito sono riportate alcune delle attività di aggiornamento comuni che è possibile eseguire dal nodo **Tutti gli aggiornamenti di Microsoft Edge**:
+
+   - [Creare una distribuzione in più fasi](/configmgr/osd/deploy-use/create-phased-deployment-for-task-sequence)
+   - [Distribuire manualmente gli aggiornamenti software](/configmgr/sum/deploy-use/manually-deploy-software-updates)
+   - [Scaricare gli aggiornamenti software](/configmgr/sum/deploy-use/download-software-updates)
 
 ## <a name="next-steps"></a>Passaggi successivi
 
 [Monitorare le applicazioni](/configmgr/apps/deploy-use/monitor-applications-from-the-console)
+
+[Monitorare gli aggiornamenti software](/configmgr/sum/deploy-use/monitor-software-updates)
+
+[Gestire e monitorare le distribuzioni in più fasi](/configmgr/osd/deploy-use/manage-monitor-phased-deployments)

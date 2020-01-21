@@ -10,12 +10,12 @@ ms.assetid: 0317fd02-3721-4634-b18b-7c976a4e92bf
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 6f925679ade6a5256fcb1b6c610bf19b044b4f9c
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: HT
+ms.openlocfilehash: 396738fb854f859b1553bae02dd3709ef96b69ff
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75819166"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76032715"
 ---
 # <a name="prerequisites-for-certificate-profiles-in-configuration-manager"></a>Prerequisiti per i profili certificato in Configuration Manager
 
@@ -33,7 +33,7 @@ I profili certificato in Configuration Manager hanno dipendenze esterne e dipend
 |Il servizio ruolo del servizio Registrazione dispositivi di rete per Servizi certificati Active Directory, in esecuzione su Windows Server 2012 R2.<br /><br /> Inoltre:<br /><br /> Numeri di porta diversi da TCP 443 (per HTTPS) o TCP 80 (HTTP) non sono supportati per la comunicazione tra il client e il servizio Registrazione dispositivi di rete.<br /><br /> Il server che esegue il servizio Registrazione dispositivi di rete deve essere in un server diverso dalla CA emittente.|Configuration Manager comunica con il servizio Registrazione dispositivi di rete in Windows Server 2012 R2 per generare e verificare richieste Simple Certificate Enrollment Protocol (SCEP).<br /><br /> Se vengono emessi certificati a utenti o dispositivi che si collegano da Internet, ad esempio dispositivi mobili gestiti da Microsoft Intune, questi dispositivi devono essere in grado di accedere al server che esegue il servizio Registrazione dispositivi di rete da Internet. Ad esempio, installare il server in una rete perimetrale (nota anche come subnet schermata).<br /><br /> Se tra il server che esegue il servizio Registrazione dispositivi di rete e la CA emittente è presente un firewall, configurarlo per consentire il traffico di comunicazione (DCOM) tra i due server. Questo requisito firewall si applica anche al server che esegue il sito del server di Configuration Manager e la CA emittente, in modo che Configuration Manager possa revocare i certificati.<br /><br /> Se il servizio Registrazione dispositivi di rete è configurato per richiedere SSL, come procedura di sicurezza è opportuno accertarsi che i dispositivi di connessione siano in grado di accedere all'elenco di revoche di certificati (CRL) per convalidare il certificato del server.<br /><br /> Per altre informazioni sul servizio Registrazione dispositivi di rete in Windows Server 2012 R2, vedere [Utilizzo di un Modulo criteri con il servizio Registrazione dispositivi di rete](https://go.microsoft.com/fwlink/p/?LinkId=328657).|  
 |Se la CA emittente esegue Windows Server 2008 R2, questo server richiede un hotfix per le richieste di rinnovo SCEP.|Se l'hotfix non è già installato sul computer della CA emittente, installarlo. Per altre informazioni, vedere l'articolo [2483564: Impossibile rinnovare richiesta per un certificato SCEP in Windows Server 2008 R2 se il certificato viene gestito usando NDES](https://go.microsoft.com/fwlink/?LinkId=311945) nella Microsoft Knowledge Base.|  
 |Un certificato di autenticazione client PKI e un certificato CA radice esportato.|Questo certificato autentica il server che esegue il servizio Registrazione dispositivi di rete in Configuration Manager.<br /><br /> Per altre informazioni, vedere [Requisiti dei certificati PKI per Configuration Manager](../../core/plan-design/network/pki-certificate-requirements.md).|  
-|Sistemi operativi per i dispositivi supportati.|È possibile distribuire i profili certificato in dispositivi che eseguono sistemi operativi iOS, Windows 8.1, Windows RT 8.1, Windows 10 e Android.|  
+|Sistemi operativi per i dispositivi supportati.|È possibile distribuire i profili certificato in dispositivi che eseguono Windows 8.1, Windows RT 8.1 e Windows 10.|  
 
 ## <a name="configuration-manager-dependencies"></a>Dipendenze di Configuration Manager  
 

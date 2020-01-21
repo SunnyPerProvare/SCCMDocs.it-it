@@ -10,12 +10,12 @@ ms.assetid: 2629c376-ec43-4f0e-a78b-4223cc9302bf
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3aedb49bfc98ccf800d6141394372ab72ed30796
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: HT
+ms.openlocfilehash: c564d8a14c57ffdc64d014480cf4819b0f39a42f
+ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75815902"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76032786"
 ---
 # <a name="deploy-applications-with-configuration-manager"></a>Distribuire applicazioni con Configuration Manager
 
@@ -40,7 +40,7 @@ A partire dalla versione 1906, è possibile creare un gruppo di applicazioni da 
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Raccolta software**, espandere **Gestione applicazioni** e selezionare il nodo **Applicazioni** o **Gruppi di applicazioni**.
 
-2. Selezionare un'applicazione o un gruppo di applicazioni dall'elenco da distribuire. Sulla barra multifunzione fare clic su **Distribuisci**.  
+2. Selezionare un'applicazione o un gruppo di applicazioni nell'elenco da distribuire. Sulla barra multifunzione fare clic su **Distribuisci**.  
 
 > [!Note]  
 > Quando si visualizzano le proprietà di una distribuzione esistente, le sezioni seguenti corrispondono alle schede della finestra delle proprietà della distribuzione:  
@@ -51,7 +51,6 @@ A partire dalla versione 1906, è possibile creare un gruppo di applicazioni da 
 > - [Pianificazione](#bkmk_deploy-sched)
 > - [Esperienza utente](#bkmk_deploy-ux)
 > - [Avvisi](#bkmk_deploy-alerts)
-> - [iOS: Criteri di configurazione dell'app](#bkmk_deploy-ios)
 
 
 ### <a name="bkmk_deploy-general"></a> Informazioni della scheda **Generale** della distribuzione
@@ -119,7 +118,7 @@ Nella pagina **Impostazioni distribuzione** specificare le informazioni seguenti
 
 #### <a name="bkmk_approval"></a> Impostazioni di approvazione
 
-Il comportamento di approvazione dell'applicazione dipende dal fatto che la funzionalità facoltativa consigliata venga abilitata, **approvare le richieste dell'applicazione per gli utenti per dispositivo**.
+Il comportamento di approvazione applicazione dipende dall'abilitazione o meno della funzionalità facoltativa consigliata **Approva le richieste dell'applicazione per gli utenti per ogni dispositivo**.
 
 - **Un amministratore deve approvare una richiesta per questa applicazione nel dispositivo**: Se si attiva la funzionalità facoltativa, l'amministratore deve approvare qualsiasi richiesta utente per l'applicazione prima che l'utente possa installarla nel dispositivo desiderato. Se l'amministratore approva la richiesta, l'utente può installare l'applicazione solo su quel dispositivo. Per installare l'applicazione in un altro dispositivo dovrà inviare un'altra richiesta. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi.
 
@@ -184,12 +183,6 @@ Nella pagina **Esperienza utente** specificare le informazioni sulle modalità d
 ### <a name="bkmk_deploy-alerts"></a>**Avvisi** della distribuzione
 
 Nella pagina **Avvisi** configurare la modalità di generazione di avvisi per questa distribuzione da parte di Configuration Manager. Se si usa anche System Center Operations Manager, configurare i rispettivi avvisi. È possibile configurare solo alcuni avvisi per le distribuzioni obbligatorie. 
-
-
-### <a name="bkmk_deploy-ios"></a> iOS: **Criteri di configurazione dell'app**
-
-Quando si esegue un tipo di distribuzione iOS, verrà visualizzata anche la pagina **Criteri di configurazione dell'app**. Se è già stato creato un criterio di configurazione dell'app iOS, fare clic su **Nuovo** per associare la distribuzione al criterio. Per altre informazioni su questo tipo di criteri, vedere [Configure iOS apps with app configuration policies](/sccm/apps/deploy-use/configure-ios-apps-with-app-configuration-policies) (Configurare le app iOS con i criteri di configurazione delle app).
-
 
 
 ## <a name="bkmk_phased"></a> Creare una distribuzione in più fasi
@@ -260,7 +253,7 @@ Configurare una distribuzione in modo da verificare se alcuni file eseguibili so
 5. Quando si distribuisce l'applicazione, selezionare l'opzione **Chiudi automaticamente eventuali file eseguibili in esecuzione specificati nella scheda Comportamento di installazione della finestra di dialogo relativa alle proprietà del tipo di distribuzione**. Questa opzione è disponibile nella scheda **Impostazioni distribuzione** delle proprietà della distribuzione.  
 
 > [!Note]
-> Se si configura un'applicazione per verificare l'esecuzione dei file eseguibili e lo si include nel passaggio [Installa applicazione](/sccm/osd/understand/task-sequence-steps#BKMK_InstallApplication) della sequenza di attività, la sequenza di attività non riuscirà a installarla. Se non si configura questo passaggio della sequenza di attività per continuare in caso di errore, l'intera sequenza di attività avrà esito negativo.
+> Se si configura un'applicazione per verificare l'esecuzione dei file eseguibili e la si include nel passaggio [Installa applicazione](/sccm/osd/understand/task-sequence-steps#BKMK_InstallApplication) della sequenza di attività, la sequenza di attività non riuscirà a installarla. Se non si configura questo passaggio della sequenza di attività in modo da continuare in caso di errore, l'intera sequenza di attività non riuscirà.
 
 ### <a name="client-behaviors-and-user-notifications"></a>Comportamenti dei client e notifiche utente
 
