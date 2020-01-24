@@ -2,7 +2,7 @@
 title: Novità della versione 1910
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1910 di Configuration Manager Current Branch.
-ms.date: 12/20/2019
+ms.date: 01/22/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 3e1ddb65-1193-46ce-a7c0-a48dfd9fd833
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 43bedd7418079c3badb24869b4bde71e781112cc
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c573710ae8ded624281cbca040c6036214fc233c
+ms.sourcegitcommit: d1c6f3f2fa6821f15041e73d411cc4e1de0850ba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802396"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519903"
 ---
 # <a name="whats-new-in-version-1910-of-configuration-manager-current-branch"></a>Novità della versione 1910 di Configuration Manager Current Branch
 
@@ -156,7 +156,7 @@ Per altre informazioni, vedere [Come configurare le impostazioni client](/config
 
 ### <a name="deploy-microsoft-edge-version-77-and-later"></a>Distribuire Microsoft Edge versione 77 e successive
 <!--4561024-->
-Il nuovo Microsoft Edge è disponibile per le aziende. È ora possibile distribuire Microsoft Edge versione 77 e successive nei sistemi degli utenti. Gli amministratori possono scegliere il canale Beta o Dev, insieme a una versione del client Microsoft Edge da distribuire.
+Il nuovo Microsoft Edge è disponibile per le aziende. È ora possibile distribuire Microsoft Edge versione 77 e successive nei sistemi degli utenti. Gli amministratori possono scegliere tra il canale Beta, Dev e stabile, insieme a una versione del client Microsoft Edge da distribuire.
 
 Per altre informazioni, vedere [Distribuire Microsoft Edge versione 77 e successive](/sccm/apps/deploy-use/deploy-edge).
 
