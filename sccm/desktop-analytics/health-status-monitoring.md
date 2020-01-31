@@ -2,7 +2,7 @@
 title: Monitoraggio dello stato di integrità
 titleSuffix: Configuration Manager
 description: Informazioni sul funzionamento del monitoraggio dello stato di integrità in Desktop Analytics.
-ms.date: 04/22/2019
+ms.date: 01/16/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 343dbe2a-597c-4719-b7ac-45b1f39b49ee
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e02c168a95aa7fb1eccefa773c8347764f43b955
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 5687d8eb2033365f9d13593f685f2d4f70d60549
+ms.sourcegitcommit: 73b30a26db1c1566195c109eeb6e709707ca9c5a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825609"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76309404"
 ---
 # <a name="health-status-monitoring-in-desktop-analytics"></a>Monitoraggio dello stato di integrità in Desktop Analytics
 
@@ -30,9 +30,9 @@ Per altre informazioni su come usare questa funzionalità, vedere [Monitorare l'
 
 Per visualizzare altre informazioni su un'app specifica, selezionarla nell'elenco.
 
-
-
 ## <a name="apps"></a>App
+
+### <a name="health-status-factors"></a>Fattori relativi allo stato di integrità
 
 ![Fattori dello stato di integrità per un'app in Desktop Analytics](media/monitor-health-status-factors.png)
 
@@ -40,15 +40,25 @@ Desktop Analytics esegue il monitoraggio dei fattori dello stato di integrità s
 
 - **% dispositivi con arresti anomali**: per le ultime due settimane, rapporto tra il numero di dispositivi in cui l'app specificata si è arrestata in modo anomalo e il numero di dispositivi in cui l'app è stata usata. Questa visualizzazione consente di verificare se la stabilità dell'app è aumentata o diminuita nella nuova versione del sistema operativo. Desktop Analytics calcola questa percentuale per i set seguenti:  
 
-    - **Dopo l'aggiornamento**: dispositivi aggiornati alla versione del sistema operativo di destinazione specificata nel piano di distribuzione. Per ridurre il numero di risorse con dati insufficienti, Desktop Analytics raccoglie questi dati per tutti i dispositivi aggiornati. Questo set include i dispositivi non inclusi nel piano di distribuzione.  
+  - **Dopo l'aggiornamento**: dispositivi aggiornati alla versione del sistema operativo di destinazione specificata nel piano di distribuzione. Per ridurre il numero di risorse con dati insufficienti, Desktop Analytics raccoglie questi dati per tutti i dispositivi aggiornati. Questo set include i dispositivi non inclusi nel piano di distribuzione.  
 
-    - **Prima dell'aggiornamento**: dispositivi con una versione del sistema operativo precedente a quanto specificato nel piano di distribuzione. Questo elenco non include i dispositivi che eseguono Windows 7.  
+  - **Prima dell'aggiornamento**: dispositivi con una versione del sistema operativo precedente a quanto specificato nel piano di distribuzione. Questo elenco non include i dispositivi che eseguono Windows 7.  
 
-    - **Media commerciale**: percentuale media di arresti anomali per tutti i dispositivi commerciali. Questa media viene calcolata per *tutte* le versioni dell'app. Se per la versione in uso la percentuale di arresti anomali è superiore alla media commerciale, può essere disponibile una versione più stabile.  
+  - **Media commerciale**: percentuale media di arresti anomali per tutti i dispositivi commerciali. Questa media viene calcolata per *tutte* le versioni dell'app. Se per la versione in uso la percentuale di arresti anomali è superiore alla media commerciale, può essere disponibile una versione più stabile.  
 
 - **% sessioni con arresti anomali**: simile al precedente, ma calcola la percentuale di sessioni con arresti anomali nelle ultime due settimane.  
 
 Per determinare lo stato di integrità di un'app, Desktop Analytics ha bisogno dei dati di almeno 20 dispositivi. In caso contrario, segnala **Dati insufficienti** per l'app. Il servizio calcola lo stato di integrità in base alla *frequenza degli arresti anomali di sessione* in questi dispositivi. La frequenza degli arresti anomali di dispositivo viene indicata solo a scopo informativo e non viene usata nel calcolo dello stato di integrità.
+
+### <a name="usage"></a>Utilizzo
+
+<!-- 5533890 -->
+
+- **Dispositivi attivi**: questo valore corrisponde al numero di dispositivi in cui un utente ha avviato l'app selezionata nelle ultime due settimane. Si basa sui dispositivi nel piano di distribuzione selezionato che eseguono la versione di destinazione di Windows 10.
+
+- **Sessioni**: questo valore indica il numero totale di volte in cui un utente ha avviato l'app selezionata nella versione di destinazione di Windows.
+
+### <a name="additional-tabs"></a>Schede aggiuntive
 
 Nella parte inferiore della pagina dei dettagli dell'app, le tre schede seguenti possono essere utili per la risoluzione dei problemi:
 
@@ -61,7 +71,6 @@ Nella parte inferiore della pagina dei dettagli dell'app, le tre schede seguenti
 - **Arresti anomali recenti**:  elenco di dispositivi in cui l'app si è recentemente arrestata in modo anomalo. È possibile filtrare l'elenco per ID errore e altri criteri. Usare queste informazioni per risolvere il problema raccogliendo log o provando correzioni su dispositivi specifici prima di provare una distribuzione più ampia.  
 
 Se si rileva una grave regressione dell'integrità che non è possibile correggere, modificare la **Decisione di aggiornamento** dell'app in **Non possibile**. Questa azione evita in futuro la distribuzione dell'aggiornamento ai dispositivi con questa risorsa.
-
 
 ## <a name="see-also"></a>Vedere anche
 

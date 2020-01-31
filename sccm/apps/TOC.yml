@@ -1,10 +1,10 @@
-- name: Gestione delle applicazioni
-  href: understand/introduction-to-application-management.md
+- name: Documentazione sulla gestione delle app
+  href: index.yml
 - name: Comprendere ed esplorare
   items:
     - name: Introduzione
       href: understand/introduction-to-application-management.md
-- name: Introduzione
+- name: Operazioni preliminari
   items:
     - name: Creare e distribuire un'applicazione
       href: get-started/create-and-deploy-an-application.md

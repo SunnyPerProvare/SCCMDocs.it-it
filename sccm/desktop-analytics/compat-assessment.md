@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 217851c3e9059925ce96fbda50e906d027344369
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: f2543eeb84dd81b3ed138316918a5e9085b8aa1c
+ms.sourcegitcommit: d1c6f3f2fa6821f15041e73d411cc4e1de0850ba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791738"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520005"
 ---
 # <a name="compatibility-assessment-in-desktop-analytics"></a>Valutazione della compatibilità in Desktop Analytics
 
@@ -69,8 +69,8 @@ In entrambi i casi, dopo l'aggiornamento di Windows l'utente non potrà usare l'
 Per vedere questo consiglio nel portale di Desktop Analytics:
 
 1. In un piano di distribuzione selezionare **Preparare il gruppo pilota**.
-1. Selezionare una risorsa dall'elenco.
-1. Visualizzare i fattori di rischio di compatibilità e i consigli nel riquadro laterale.
+1. Selezionare la scheda **App**.
+1. Selezionare un'app e quindi visualizzare i fattori di rischio di compatibilità e i consigli nel riquadro laterale.
 
 ![Screenshot del consiglio sulla risorsa nel portale di Desktop Analytics](media/3594545-app-removed.png)
 

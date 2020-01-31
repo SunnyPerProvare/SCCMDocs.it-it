@@ -10,12 +10,12 @@ ms.assetid: 38b2bed2-20dd-4ce1-abc0-219343d2c4b8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1f078f62dbfd076dc56b0d1a9fcc6da1a9fbe112
-ms.sourcegitcommit: cf978bfea545ed9116dacadfac830cbb08aaa649
+ms.openlocfilehash: 570ce9983740656304827c941972544efac95f89
+ms.sourcegitcommit: 87a051434ddc9510d9e790814e76050362d6c0ba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75951650"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256428"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Desktop Analytics?
 
@@ -65,7 +65,7 @@ Per usare Desktop Analytics, verificare che l'ambiente soddisfi i prerequisiti s
 
 ### <a name="technical"></a>Prerequisiti tecnici
 
-- Una sottoscrizione di Azure attiva con autorizzazioni di [Amministratore globale](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator-permissions). Gli [account Microsoft](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts) non sono supportati.  
+- Una sottoscrizione di Azure globale attiva con autorizzazioni di [Amministratore globale](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator-permissions). Gli [account Microsoft](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts) non sono supportati.  
 
     > [!Important]  
     > Desktop Analytics richiede attualmente la distribuzione di un servizio di Office 365 nel tenant di Azure AD. Non sarà un requisito in futuro.

@@ -1,5 +1,5 @@
-- name: Distribuzione del sistema operativo
-  href: understand/introduction-to-operating-system-deployment.md
+- name: Documentazione sulla distribuzione del sistema operativo
+  href: index.yml
 - name: Informazioni generali
   items:
     - name: Introduzione alla distribuzione del sistema operativo
@@ -14,7 +14,7 @@
       href: plan-design/security-and-privacy-for-operating-system-deployment.md
     - name: Pianificazione dell'interoperabilità della distribuzione del sistema operativo
       href: plan-design/planning-for-operating-system-deployment-interoperability.md
-- name: Introduzione
+- name: Operazioni preliminari
   items:
     - name: Preparare i ruoli del sistema del sito per le distribuzioni del sistema operativo
       href: get-started/prepare-site-system-roles-for-operating-system-deployments.md

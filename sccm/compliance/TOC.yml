@@ -1,10 +1,10 @@
-- name: Conformità del dispositivo
-  href: understand/ensure-device-compliance.md
+- name: Documentazione sulla conformità dei dispositivi
+  href: index.yml
 - name: Comprendere ed esplorare
   items:
     - name: Garantire la conformità dei dispositivi
       href: understand/ensure-device-compliance.md
-- name: Introduzione
+- name: Operazioni preliminari
   items:
     - name: Introduzione alle impostazioni di conformità
       href: get-started/get-started-with-compliance-settings.md

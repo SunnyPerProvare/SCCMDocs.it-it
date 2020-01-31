@@ -10,12 +10,12 @@ ms.assetid: 7ed389c3-a9ab-48ce-a5eb-27d52ee4fb94
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fffa2c3d1e17796427aaac3110a57321c8becd0f
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 3414c6b91831d67002a2dd85e0b523ab6de118ee
+ms.sourcegitcommit: d1c6f3f2fa6821f15041e73d411cc4e1de0850ba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034574"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519971"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Come connettere Configuration Manager a Desktop Analytics
 
@@ -94,6 +94,8 @@ Usare questa procedura per connettere Configuration Manager a Desktop Analytics 
 
     ![Pagina Funzionalità disponibile di esempio nella Procedura guidata per i servizi di Azure](media/available-functionality.png)
 
+<a name="bkmk_Collections"></a> 
+
 8. Nella pagina **Raccolte** configurare le impostazioni seguenti:  
 
     - **Nome visualizzato**: Il portale di Desktop Analytics visualizza questa connessione a Configuration Manager usando questo nome. Usare il nome per distinguere le diverse gerarchie. Ad esempio, *lab di test* o *produzione*.  
@@ -113,9 +115,11 @@ Usare questa procedura per connettere Configuration Manager a Desktop Analytics 
         >     - CollectionB: limitata da CollectionA
         >         - CollectionC: limitata da CollectionB
         > - CollectionD: limitata dalla raccolta **Tutti i sistemi**
-
+        >
+        > Per gestire le raccolte disponibili nel portale di Desktop Analytics per il raggruppamento con i piani di distribuzione, nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Servizi cloud** e selezionare il nodo **Servizi di Azure**. Selezionare la voce associata al servizio di Azure **Desktop Analytics** e aggiornare le impostazioni nella pagina **Desktop Analytics Collection** (Raccolta di Desktop Analytics).
+        
         > [!Important]  
-        > Queste raccolte continuano a essere sincronizzate quando viene modifica l'appartenenza. Il piano di distribuzione, ad esempio, usa una raccolta con una regola di appartenenza di Windows 7. Quando i dispositivi eseguono l'aggiornamento a Windows 10 e Configuration Manager valuta l'appartenenza alla raccolta, i dispositivi escono dalla raccolta e dal piano di distribuzione.  
+        > Queste raccolte continuano a essere sincronizzate quando viene modificata l'appartenenza. La raccolta di destinazione, ad esempio, usa una raccolta con una regola di appartenenza di Windows 7. Quando i dispositivi eseguono l'aggiornamento a Windows 10 e Configuration Manager valuta l'appartenenza alla raccolta, i dispositivi escono dalla raccolta e da Desktop Analytics.  
 
 
 9. Completare la procedura guidata.  

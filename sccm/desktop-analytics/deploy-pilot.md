@@ -10,12 +10,12 @@ ms.assetid: 637fbd8e-b8ea-4c7e-95ee-a60a323c496e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 63eddcf725a309ed67e74934646dc72785ee0f99
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: f595630598192032ecffe3f8aeb408876b484383
+ms.sourcegitcommit: d1c6f3f2fa6821f15041e73d411cc4e1de0850ba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825643"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519988"
 ---
 # <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Come eseguire la distribuzione in un progetto pilota con Desktop Analytics
 
@@ -43,7 +43,9 @@ Eseguire le azioni seguenti per l'elenco dei dispositivi consigliati aggiuntivi:
 - **Sostituire** i dispositivi specifici del progetto pilota
 - **Ricalcolare** dopo aver apportato le modifiche
 
-## <a name="global-pilot"></a>Progetto pilota globale
+Quando si aggiungono dispositivi dall'elenco **consigliati** all'elenco **inclusi** della distribuzione pilota, migliorano la copertura e la ridondanza per gli asset critici e importanti nel progetto pilota. Una ridondanza maggiore significa che gli asset con copertura includono un numero statisticamente significativo di dispositivi nel progetto pilota. 
+
+## <a name="bkmk_GlobalPilot"></a>Progetto pilota globale
 
 È anche possibile prendere decisioni a livello di sistema relativamente alle raccolte di Configuration Manager da includere o escludere dai progetti pilota. Nel menu principale di Desktop Analytics selezionare **Dispositivo pilota globale** nel gruppo Impostazioni globali.
 

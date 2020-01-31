@@ -1,5 +1,5 @@
-- name: Desktop Analytics
-  href: overview.md
+- name: Documentazione di Desktop Analytics
+  href: index.yml
 - name: Panoramica
   items:
     - name: Che cos'è Desktop Analytics?

@@ -10,12 +10,12 @@ ms.assetid: 8e0e8496-136b-461f-8239-cc19c6b78c3b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 18bb8d2431e096969d193f32747249b6b84ed37f
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 577b74425cc3293c7bf55fa13513877bad3c3960
+ms.sourcegitcommit: d1c6f3f2fa6821f15041e73d411cc4e1de0850ba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791678"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519954"
 ---
 # <a name="how-to-create-deployment-plans-in-desktop-analytics"></a>Come creare i piani di distribuzione in Desktop Analytics
 
@@ -37,7 +37,7 @@ Seguire la procedura descritta in questa sezione per usare Desktop Analytics per
 
     - **Prodotti e versioni**: scegliere la versione di Windows 10 da distribuire. Microsoft consiglia di creare piani di distribuzione che usano la versione più recente.  
 
-    - **Gruppi di dispositivi**: selezionare uno o più gruppi, quindi selezionare **Imposta come gruppi di destinazione**. I gruppi con **SCCM** come origine sono raccolte sincronizzate da Configuration Manager.  
+    - **Gruppi di dispositivi**: selezionare uno o più gruppi dalla stessa gerarchia. Questi gruppi sono [raccolte di dispositivi](/configmgr/desktop-analytics/connect-configmgr#bkmk_Collections) sincronizzate da Configuration Manager.  
 
     - **Regole di idoneità**: queste regole consentono di individuare i dispositivi idonei per l'aggiornamento. Per altre informazioni, vedere [Regole di idoneità](#readiness-rules).  
 
