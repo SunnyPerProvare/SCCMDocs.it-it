@@ -10,12 +10,12 @@ ms.assetid: 74c60941-5eae-4905-9e58-252bdb39df96
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 412a2528e25e732f28146e9a5f82f8e7b7e7201e
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: be93688ec3433ba95b04fc8bbc287234602b9a31
+ms.sourcegitcommit: 4d49103722654f12ffe8df4d5848def44b7e1eb3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75823688"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76891580"
 ---
 # <a name="how-to-upgrade-clients-on-mac-computers-in-configuration-manager"></a>Come aggiornare i client nei computer Mac in Configuration Manager
 
@@ -28,11 +28,11 @@ Seguire la procedura dettagliata descritta in questo articolo per aggiornare il 
 
 ## <a name="download-the-latest-mac-client"></a>Scaricare il client Mac più recente
 
-Il client Mac per Configuration Manager non è incluso nel supporto di installazione di Configuration Manager. Scaricarlo dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=47719). I file di installazione del client Mac sono contenuti in un file di Windows Installer denominato **ConfigmgrMacClient.msi**.  
+Il client Mac per Configuration Manager non è incluso nel supporto di installazione di Configuration Manager. Scaricarlo dall'Area download Microsoft, [Microsoft Endpoint Configuration Manager - macOS Client (64-bit)](https://www.microsoft.com/download/details.aspx?id=100850). I file di installazione del client Mac sono contenuti in un file di Windows Installer denominato **ConfigmgrMacClient.msi**.  
 
 ## <a name="create-the-mac-client-installation-file"></a>Creare il file di installazione del client Mac
 
-In un computer Windows eseguire **ConfigmgrMacClient.msi**. Questo programma di installazione decomprime il file di installazione del client Mac, denominato **Macclient.dmg**. Questo file è disponibile nella cartella seguente per impostazione predefinita: **C:\Programmi (x86)\Microsoft\System Center 2012 Configuration Manager Mac Client**.  
+In un computer Windows eseguire **ConfigmgrMacClient.msi**. Questo programma di installazione decomprime il file di installazione del client Mac, denominato **Macclient.dmg**. Questo file è disponibile nella cartella seguente per impostazione predefinita: **C:\Programmi\Microsoft\System Center Configuration Manager for Mac client**.  
 
 ## <a name="extract-the-client-installation-files"></a>estrarre i file di installazione client
 

@@ -2,7 +2,7 @@
 title: Domande frequenti su prodotto e licenze
 titleSuffix: Configuration Manager
 description: Risposte alle domande frequenti sul prodotto e le licenze per Configuration Manager.
-ms.date: 11/29/2019
+ms.date: 01/24/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: ee8d611f-aa0c-4efd-b0ad-dbd14d0a0623
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0cf5cca3093b5975cbb04b284de6740f977fc3fb
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: fc6eb9c4e932fd98eeb2e7b41eb87b320704d648
+ms.sourcegitcommit: d2b6450fbc75e9937b090ab7d8a5e1d524c92f87
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034616"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813927"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Domande frequenti relative ai rami e alle licenze di Configuration Manager
 
@@ -70,9 +70,9 @@ https://www.microsoft.com/microsoft-365/enterprise-mobility-security/compare-pla
 
 ### <a name="bkmk_mem"></a> È cambiato qualcosa con il passaggio al marchio Microsoft Endpoint Manager?
 
-Sì. Se si dispone già di una licenza per Configuration Manager, viene anche assegnata automaticamente una licenza per Intune per la registrazione dei PC Windows in [co-gestione](/configmgr/comanage/overview). Questa modifica consente di gestire più facilmente i dispositivi Windows con Microsoft Endpoint Manager.
+Sì. Dal 1° dicembre 2019, se si ha già una licenza per Configuration Manager viene anche assegnata automaticamente una licenza per Intune per la registrazione dei PC Windows in [co-gestione](/configmgr/comanage/overview). Questa modifica consente di gestire più facilmente i dispositivi Windows con Microsoft Endpoint Manager.
 
-È ora disponibile una nuova licenza che consente ai clienti di Configuration Manager con Software Assurance di ottenere i diritti di gestione dei PC Intune senza dover acquistare una licenza di Intune aggiuntiva per la co-gestione. Non è più necessario assegnare singole licenze di Intune o EMS ai propri utenti.
+È ora disponibile una nuova licenza che consente ai clienti di Configuration Manager con Software Assurance di ottenere i diritti di gestione dei PC Intune senza dover acquistare una licenza di Intune aggiuntiva per la co-gestione. Non è più necessario acquistare e assegnare singole licenze di Intune o EMS ai propri utenti.
 
 - I dispositivi gestiti da Configuration Manager e registrati in co-gestione hanno quasi gli stessi diritti di un PC gestito autonomamente da Intune. Tuttavia, dopo la reimpostazione non è possibile eseguire di nuovo il provisioning tramite AutoPilot.
 
@@ -81,7 +81,6 @@ Sì. Se si dispone già di una licenza per Configuration Manager, viene anche as
 - Se si vuole usare Intune per la gestione di dispositivi iOS, Android o macOS, è necessario ottenere una sottoscrizione di Intune appropriata tramite una licenza autonoma di Intune, Enterprise Mobility + Security (EMS) o Microsoft 365.
 
 - Le licenze precedentemente disponibili per System Center Configuration Manager sono ancora applicabili a Microsoft Endpoint Configuration Manager. Se si installa un nuovo sito, usare i codici Product Key esistenti.
-
 
 ### <a name="bkmk_ems-expires"></a> Possiedo Enterprise Mobility + Security ed è scaduto, cosa devo fare?  
 

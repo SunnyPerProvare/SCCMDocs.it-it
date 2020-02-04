@@ -2,7 +2,7 @@
 title: Note sulla versione
 titleSuffix: Configuration Manager
 description: Informazioni su problemi urgenti non ancora risolti nel prodotto o trattati in un articolo della Knowledge Base del supporto tecnico Microsoft.
-ms.date: 01/14/2020
+ms.date: 01/27/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 030947fd-f5e0-4185-8513-2397fb2ec96f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: bc899b6732d3fca21e35f82906001f25a942a4d6
-ms.sourcegitcommit: cf978bfea545ed9116dacadfac830cbb08aaa649
+ms.openlocfilehash: 5a03df7bb4e9860b34e7d2064e1006206c1d8f89
+ms.sourcegitcommit: d2b6450fbc75e9937b090ab7d8a5e1d524c92f87
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75951612"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813825"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Note sulla versione per Configuration Manager
 
@@ -48,7 +48,7 @@ Per informazioni sulle nuove funzionalità introdotte con le diverse versioni, v
 
 Se il sito usa l'[aggiornamento automatico del client](/configmgr/core/clients/manage/upgrade/upgrade-clients#automatic-client-upgrade), quando si aggiorna il sito alla versione 1910, tutti i client vengono immediatamente aggiornati dopo che il sito è stato aggiornato correttamente. L'unica impostazione casuale è quando i client ricevono i criteri, cosa che per impostazione predefinita avviene ogni ora. Per un sito di grandi dimensioni con molti client, questo comportamento può comportare l'utilizzo di una quantità significativa di traffico di rete e un sovraccarico dei punti di distribuzione.
 
-Per risolvere questo problema, disabilitare temporaneamente l'aggiornamento automatico del client. Usare altri [metodi di aggiornamento del client](/configmgr/core/clients/manage/upgrade/upgrade-clients). Microsoft rilascerà presto un hotfix per questo problema per consentire di continuare a usare l'aggiornamento automatico del client.
+Per altre informazioni sulle versioni interessate, vedere [Aggiornamento client per Configuration Manager Current Branch, versione 1910](https://support.microsoft.com/help/4538166).
 
 ### <a name="site-server-in-passive-mode-doesnt-update-configurationmof"></a>Il server del sito in modalità passiva non aggiorna configuration.mof
 
@@ -205,6 +205,20 @@ Questi dispositivi **non definiti** sono **aggiornati** con la versione di desti
 
 ## <a name="cloud-services"></a>Servizi cloud
 
+### <a name="azure-service-for-us-government-cloud-shows-as-public-cloud"></a>Il servizio di Azure per il cloud per enti pubblici degli Stati Uniti viene visualizzato come cloud pubblico
+
+<!-- 6036748 -->
+
+*Si applica alla versione 1910*
+
+Se si crea una connessione a un servizio di Azure e si imposta l'**ambiente Azure** sul cloud per enti pubblici, le proprietà della connessione visualizzano l'ambiente come cloud pubblico di Azure. Si tratta solo di un problema di visualizzazione nella console, il servizio si trova nel cloud per enti pubblici. Per confermare la configurazione, eseguire la query SQL seguente nel database del sito:
+
+```SQL
+Select Environment, Name, TenantID From AAD_Tenant_Ex
+```
+
+Per il cloud per enti pubblici, il risultato di questa query è `2` per il tenant specifico.
+
 ### <a name="cant-download-content-from-a-cloud-management-gateway-enabled-for-tls-12"></a>Non è possibile scaricare contenuti da un gateway di gestione cloud abilitato per TLS 1.2
 
 <!-- 5771680 -->
@@ -234,3 +248,15 @@ Come soluzione alternativa a questo problema:
 - Aggiornare il sito alla versione disponibile a livello globale 1910, rilasciata il 20 dicembre 2019. Se in precedenza è stato eseguito l'aggiornamento all'anello di aggiornamento anticipato della versione 1910, è necessario eseguire l'aggiornamento a questa build quando è disponibile.
 
 - In alternativa, usare un [punto di distribuzione cloud](/configmgr/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) tradizionale. Tale ruolo non impone l'uso di TLS 1.2, ma è compatibile con i client che richiedono TLS 1.2.
+
+## <a name="protection"></a>Protezione
+
+### <a name="bitlocker-management-appears-in-version-1906"></a>La gestione di BitLocker viene visualizzata nella versione 1906
+
+*Si applica alla versione 1906*
+
+<!-- 5984688 -->
+
+Dopo il 21 novembre 2019, se si esegue l'aggiornamento alla versione 1906 dalla versione 1902 o precedente la funzionalità di gestione di BitLocker sarà attivata e disponibile. Si tratta di una funzionalità facoltativa a partire dalla versione 1910. Non è supportata nella versione 1906. Se si tenta di usarla nella versione 1906, potrebbero verificarsi risultati imprevisti. Se non si usa la funzionalità, non vi è alcun impatto.
+
+Per usare la [funzionalità di gestione di BitLocker](/configmgr/protect/plan-design/bitlocker-management), eseguire l'aggiornamento alla versione 1910.

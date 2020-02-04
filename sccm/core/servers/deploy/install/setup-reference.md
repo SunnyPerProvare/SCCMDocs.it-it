@@ -10,12 +10,12 @@ ms.assetid: cdb9fb0c-0912-41e4-b427-f40620971763
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 3fdcce193c7f586c731d25d9b5c374a84a4fb7fc
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 68dc0e0540eccabd07249b3b418b760d736f5be9
+ms.sourcegitcommit: 4d49103722654f12ffe8df4d5848def44b7e1eb3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798009"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76891637"
 ---
 # <a name="reference-for-configuration-manager-setup"></a>Informazioni di riferimento per l'installazione di Configuration Manager
 
@@ -40,13 +40,15 @@ Prima di iniziare l'installazione di un nuovo sito, verificare che il server del
 ##  <a name="bkmk_Addclients"></a> Client per altri sistemi operativi  
 È possibile scaricare il software client per Configuration Manager dall'Area download Microsoft per i sistemi operativi seguenti:  
 
--   Mac   (Apple)  
--   UNIX  
--   Linux  
+- macOS (Apple)
+- UNIX
+- Linux
 
 Per scaricare i client per la versione di Configuration Manager in uso, usare i collegamenti seguenti:  
 
--   Vedere [Microsoft Configuration Manager - Client per altri sistemi operativi](https://www.microsoft.com/download/details.aspx?id=47719)  
+- [Microsoft Endpoint Configuration Manager - macOS Client (64-bit)](https://www.microsoft.com/download/details.aspx?id=100850)
+
+- [Microsoft Configuration Manager - Client per altri sistemi operativi](https://www.microsoft.com/download/details.aspx?id=47719)
 
 ##  <a name="bkmk_usage"></a> Impostazioni e livelli per i dati di utilizzo  
 Quando si installa il primo sito di Configuration Manager, nel server del sito viene installato e configurato automaticamente un nuovo ruolo del sistema del sito, ovvero il **punto di connessione del servizio**, con le impostazioni predefinite seguenti:  

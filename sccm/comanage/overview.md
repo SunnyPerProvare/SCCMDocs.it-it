@@ -5,17 +5,17 @@ description: Informazioni su come gestire dispositivi Windows 10 contemporaneame
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 08/01/2019
+ms.date: 01/24/2020
 ms.topic: overview
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: 84cd21453a7df61e0f6abe46c96c9259f5f32ac7
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: e904ab93ffe07b972cace6f81f12da29c24cc84f
+ms.sourcegitcommit: d2b6450fbc75e9937b090ab7d8a5e1d524c92f87
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034733"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813910"
 ---
 # <a name="what-is-co-management"></a>Informazioni sulla co-gestione
 
@@ -35,7 +35,6 @@ Quando un dispositivo Windows 10 ha il client di Configuration Manager ed è reg
 > [!Note]  
 > Quando si gestiscono i dispositivi Windows 10 contemporaneamente tramite Configuration Manager e Microsoft Intune, questa configurazione è detta *co-gestione*. Quando si gestiscono i dispositivi con Configuration Manager e ci si iscrive a un servizio MDM di terze parti, questa configurazione è detta *coesistenza*. La disponibilità di due autorità di gestione per un singolo dispositivo può essere problematica se non si implementa la corretta orchestrazione tra le due. Con la co-gestione, Configuration Manager e Intune bilanciano i [carichi di lavoro](#workloads) per assicurare che non si verifichino conflitti. Questa interazione non esiste con i servizi di terze parti, quindi le funzionalità di gestione della coesistenza presentano limitazioni. Per altre informazioni, vedere [Coesistenza di servizi MDM di terze parti con Configuration Manager](/sccm/comanage/coexistence).
 
-
 ## <a name="paths-to-co-management"></a>Percorsi per la co-gestione
 
 I percorsi principali per realizzare la co-gestione sono due:  
@@ -45,8 +44,6 @@ I percorsi principali per realizzare la co-gestione sono due:
 - **Nuovi dispositivi basati su Internet**: nuovi dispositivi Windows 10 che vengono aggiunti ad Azure AD e automaticamente registrati in Intune. Per raggiungere uno stato di co-gestione, è necessario installare il client di Configuration Manager.  
 
 Per altre informazioni sui percorsi, vedere [Percorsi per la co-gestione](/sccm/comanage/quickstart-paths).
-
-
 
 ## <a name="benefits"></a>Vantaggi
 
@@ -68,8 +65,6 @@ Per altre informazioni sul valore immediato offerto dalla co-gestione, vedere la
 
 La co-gestione supporta anche l'orchestrazione con Intune per diversi carichi di lavoro. Per altre informazioni, vedere la sezione [Carichi di lavoro](#workloads).
 
-
-
 ## <a name="prerequisites"></a>Prerequisiti
 
 La co-gestione presenta questi prerequisiti nelle aree seguenti:
@@ -84,14 +79,16 @@ La co-gestione presenta questi prerequisiti nelle aree seguenti:
 ### <a name="licensing"></a>Licenza
 
 - Azure AD Premium
-- Licenza di EMS o Intune per tutti gli utenti  
 
     > [!Note]  
     > Una sottoscrizione di Enterprise Mobility + Security (EMS) include sia Azure Active Directory Premium sia Microsoft Intune.
 
-> [!Tip]  
-> Assicurarsi di assegnare una licenza di Intune all'account usato per accedere al tenant. In caso contrario, l'accesso avrà esito negativo con il messaggio di errore "Utente non riconosciuto".  
+- Almeno una licenza di Intune come amministratore per accedere al portale di Intune.
 
+    > [!Tip]
+    > Assicurarsi di assegnare una licenza di Intune all'account usato per accedere al tenant. In caso contrario, l'accesso avrà esito negativo con il messaggio di errore "Utente non riconosciuto".
+    >
+    > Non è più necessario acquistare e assegnare singole licenze di Intune o EMS ai propri utenti. Per altre informazioni, vedere [Domande frequenti su prodotto e licenze](/configmgr/core/understand/product-and-licensing-faq#bkmk_mem).
 
 ### <a name="configuration-manager"></a>Configuration Manager
 
@@ -99,17 +96,15 @@ La co-gestione richiede Configuration Manager versione 1710 o successive.
 
 A partire da Configuration Manager versione 1806, è possibile connettere più istanze di Configuration Manager a un singolo tenant di Intune. <!--1357944-->  
 
-Per abilitare la co-gestione, non è richiesto l'onboarding del sito in Azure AD. Per [lo scenario del secondo percorso](#paths-to-co-management), i client di Configuration Manager basati su Internet richiedono [Cloud Management Gateway](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway). Cloud Management Gateway richiede l'[onboarding del sito in Azure AD per la gestione del cloud](/sccm/core/servers/deploy/configure/azure-services-wizard). 
-
+Per abilitare la co-gestione, non è richiesto l'onboarding del sito in Azure AD. Per [lo scenario del secondo percorso](#paths-to-co-management), i client di Configuration Manager basati su Internet richiedono [Cloud Management Gateway](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway). Cloud Management Gateway richiede l'[onboarding del sito in Azure AD per la gestione del cloud](/sccm/core/servers/deploy/configure/azure-services-wizard).
 
 ### <a name="azure-ad"></a>Azure AD
 
 - I dispositivi Windows 10 devono essere aggiunti ad Azure AD. Possono essere di uno dei due tipi seguenti:  
 
-    - [Aggiunto ad Azure AD ibrido](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan), il dispositivo è aggiunto ad Active Directory locale e registrato in Azure Active Directory.  
+  - [Aggiunto ad Azure AD ibrido](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan), il dispositivo è aggiunto ad Active Directory locale e registrato in Azure Active Directory.  
 
-    - [Aggiunto solo ad Azure AD](https://docs.microsoft.com/azure/active-directory/devices/azureadjoin-plan). Questo tipo è anche noto come "aggiunto a un dominio cloud".<!--SCCMDocs issue 605-->  
-
+  - [Aggiunto solo ad Azure AD](https://docs.microsoft.com/azure/active-directory/devices/azureadjoin-plan). Questo tipo è anche noto come "aggiunto a un dominio cloud".<!--SCCMDocs issue 605-->  
 
 ### <a name="intune"></a>Intune
 
@@ -117,14 +112,12 @@ Per abilitare la co-gestione, non è richiesto l'onboarding del sito in Azure AD
 
 - [Abilitare la registrazione automatica di Windows 10](https://docs.microsoft.com/intune/windows-enroll#enable-windows-10-automatic-enrollment)  
 
-
 ### <a name="windows-10"></a>Windows 10
 
 Aggiornare i dispositivi a Windows 10, versione 1709 o successive. Per altre informazioni, vedere [Adozione di Windows distribuito come servizio](/sccm/core/understand/configuration-manager-and-windows-as-service#key-articles-about-adopting-windows-as-a-service).
 
 > [!IMPORTANT]
 > I dispositivi mobili Windows 10 non supportano la co-gestione.
-
 
 ### <a name="permissions-and-roles"></a>Ruoli e autorizzazioni
 
@@ -139,7 +132,6 @@ Aggiornare i dispositivi a Windows 10, versione 1709 o successive. Per altre inf
 Per altre informazioni sui ruoli di Azure, vedere [Informazioni sui diversi ruoli](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles).
 
 Per altre informazioni sui ruoli di Configuration Manager, vedere [Nozioni fondamentali di amministrazione basata su ruoli](/sccm/core/understand/fundamentals-of-role-based-administration).
-
 
 ## <a name="workloads"></a>Carichi di lavoro
 
@@ -163,8 +155,6 @@ La co-gestione supporta i carichi di lavoro seguenti:
 
 Per altre informazioni, vedere [Carichi di lavoro](/sccm/comanage/workloads).
 
-
-
 ## <a name="monitor-co-management"></a>Monitorare la co-gestione
 
 Il dashboard di co-gestione consente di esaminare i computer con co-gestione presenti nell'ambiente. I grafici consentono di identificare i dispositivi che potrebbero richiedere attenzione.
@@ -172,8 +162,6 @@ Il dashboard di co-gestione consente di esaminare i computer con co-gestione pre
 ![Screenshot del dashboard di co-gestione](media/co-management-dashboard.png)
 
 Per altre informazioni, vedere [Come monitorare la co-gestione](/sccm/comanage/how-to-monitor).
-
-
 
 ## <a name="next-steps"></a>Passaggi successivi
 

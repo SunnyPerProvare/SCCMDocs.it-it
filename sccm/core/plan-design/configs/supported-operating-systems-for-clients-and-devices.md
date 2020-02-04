@@ -2,7 +2,7 @@
 title: Client e dispositivi supportati
 titleSuffix: Configuration Manager
 description: Informazioni sulle versioni dei sistemi operativi supportate da Configuration Manager per client e dispositivi.
-ms.date: 11/29/2019
+ms.date: 01/23/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: fda54091063cd95538c9d4b6353339224dc22fd7
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: ca3f26091f5bfbb8153f0fdf4cf58c108e987d21
+ms.sourcegitcommit: 4d49103722654f12ffe8df4d5848def44b7e1eb3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034856"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76891603"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versioni dei sistemi operativi per client e dispositivi supportate da Configuration Manager
 
@@ -203,7 +203,7 @@ Le funzionalità di gestione client che non sono correlate alla gestione degli a
 
 È possibile gestire i computer Apple Mac con il client di Configuration Manager per macOS.  
 
-Il pacchetto di installazione del client macOS non viene fornito con i supporti di Configuration Manager. Scaricare i **client per altri sistemi operativi** dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=47719).  
+Il pacchetto di installazione del client macOS non viene fornito con i supporti di Configuration Manager. Scaricarlo dall'Area download Microsoft, [Microsoft Endpoint Configuration Manager - macOS Client (64-bit)](https://www.microsoft.com/download/details.aspx?id=100850).  
 
 Per altre informazioni, vedere [Come distribuire i client in computer Mac](/sccm/core/clients/deploy/deploy-clients-to-macs).  
 
@@ -213,24 +213,11 @@ Per altre informazioni, vedere [Come distribuire i client in computer Mac](/sccm
 
 ### <a name="supported-versions"></a>Versioni supportate
 
+- **macOS Catalina (10.15)** (richiede la versione del sito di Configuration Manager 1910 o successiva e il client di Configuration Manager per macOS versione 5.0.8742.1000 o successiva)
+
 - **macOS Mojave (10.14)**
 
 - **macOS High Sierra (10.13)**
-
-- **macOS Sierra (10.12)**
-
-- **macOS 10.11** (El Capitan)  
-
-- **macOS 10.10** (Yosemite)  
-
-- **macOS 10.9** (Mavericks)
-
-- **macOS 10.8** (Mountain Lion)
-
-- **macOS 10.7** (Lion)
-
-- **macOS 10.6** (Snow Leopard)
-
 
 ## <a name="linux-and-unix-servers"></a>Server Linux e UNIX  
 

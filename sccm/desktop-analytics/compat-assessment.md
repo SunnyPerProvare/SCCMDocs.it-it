@@ -10,13 +10,12 @@ ms.assetid: ea78f726-b1b3-49b0-8141-d916be48c458
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ROBOTS: NOINDEX
-ms.openlocfilehash: f2543eeb84dd81b3ed138316918a5e9085b8aa1c
-ms.sourcegitcommit: d1c6f3f2fa6821f15041e73d411cc4e1de0850ba
+ms.openlocfilehash: 6f63860d2d38740ea637c01e0ab543f4e0ab1e8c
+ms.sourcegitcommit: c49470c6b9b5a39fdf69d0125349b5c82d08b078
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520005"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76726169"
 ---
 # <a name="compatibility-assessment-in-desktop-analytics"></a>Valutazione della compatibilità in Desktop Analytics
 
@@ -146,7 +145,7 @@ Desktop Analytics può anche rilevare problemi usando i dati analitici supplemen
 
 ### <a name="adopted-version-available"></a>Versione adottata disponibile
 
-È disponibile un'altra versione dell'app ampiamente adottata da altri clienti. Questo segnale usa i dati di Ready for Windows. Nel caso la versione corrente determinasse il blocco dell'aggiornamento, valutare la possibilità di distribuire la versione alternativa.
+È disponibile un'altra versione dell'app ampiamente adottata da altri clienti. Questo segnale usa i dati di adozione dell'ecosistema Windows. Nel caso la versione corrente determinasse il blocco dell'aggiornamento, valutare la possibilità di distribuire la versione alternativa. Per trovare le versioni alternative dell'applicazione adottate, vedere l'integrità dell'applicazione nella pagina "Prepara produzione".
 
 ### <a name="driver-dependency"></a>Dipendenza da driver
 

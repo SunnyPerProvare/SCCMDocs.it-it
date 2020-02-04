@@ -10,12 +10,12 @@ ms.assetid: e46ad501-5d73-44ac-92de-0de14ef72b83
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e60a2bceee5736556164ab27ecb90cc155be8e4e
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: ad3d8fbc0b424778e71375eb4201339db1934428
+ms.sourcegitcommit: 4d49103722654f12ffe8df4d5848def44b7e1eb3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825116"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76891543"
 ---
 # <a name="how-to-deploy-clients-to-macs"></a>Come distribuire i client in computer Mac
 
@@ -80,11 +80,11 @@ Per altre informazioni, vedere [Come configurare le impostazioni client](/sccm/c
 
 
 
-## <a name="bkmk_download"></a> Scarica il client Mac  
+## <a name="bkmk_download"></a> Scaricare il client per macOS
 
-1. Scaricare il pacchetto di file del client Mac OS X dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=47719). Salvare **ConfigmgrMacClient.msi** in un computer che esegue Windows. Questo file non è incluso nel supporto di installazione di Configuration Manager.  
+1. Scaricare il pacchetto file del client macOS [Microsoft Endpoint Configuration Manager - macOS Client (64-bit)](https://www.microsoft.com/download/details.aspx?id=100850). Salvare **ConfigmgrMacClient.msi** in un computer che esegue Windows. Questo file non è incluso nel supporto di installazione di Configuration Manager.  
 
-2. Eseguire il programma di installazione nel computer Windows. Estrarre il pacchetto del client Mac, **Macclient.dmg**, in una cartella sul disco locale. Il percorso predefinito è `C:\Program Files (x86)\Microsoft\System Center 2012 Configuration Manager Mac Client`.  
+2. Eseguire il programma di installazione nel computer Windows. Estrarre il pacchetto del client Mac, **Macclient.dmg**, in una cartella sul disco locale. Il percorso predefinito è `C:\Program Files\Microsoft\System Center Configuration Manager for Mac client`.  
 
 3. Copiare il file **Macclient.dmg** in una cartella nel computer Mac.  
 

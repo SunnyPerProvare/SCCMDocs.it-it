@@ -10,12 +10,12 @@ ms.assetid: e0db3311-2303-4013-a906-76b408172d3c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 279da97960866123e109fd8f51d9a6c81353c593
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 5b93b2ae2d8c92e796909b04b2c1a237106b99b9
+ms.sourcegitcommit: c49470c6b9b5a39fdf69d0125349b5c82d08b078
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825626"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76726153"
 ---
 # <a name="desktop-analytics-faq"></a>Domande frequenti su Desktop Analytics
 
@@ -63,7 +63,7 @@ Sì. Per altre informazioni, vedere [Conversione da BIOS a UEFI durante un aggio
 
 ### <a name="can-i-use-desktop-analytics-with-windows-10-ltsc"></a>È possibile usare Desktop Analytics con Windows 10 LTSC?
 
-Anche se è possibile usare Desktop Analytics per agevolare l'aggiornamento dei dispositivi da Windows 10 Long-Term Servicing Channel (LTSC) al canale semestrale di Windows 10, Desktop Analytics non supporta gli aggiornamenti a Windows 10 LTSC. Questo canale di Windows 10 non è destinato a un ampio uso e non riceve gli aggiornamenti delle funzionalità, quindi non è una destinazione supportata in Desktop Analytics. Per altre informazioni, vedere [Panoramica di Windows as a Service](https://docs.microsoft.com/windows/deployment/update/waas-overview#long-term-servicing-channel).
+Desktop Analytics non supporta i dispositivi Windows 10 Long-Term Servicing Channel (LTSC). Per altre informazioni, vedere [Panoramica di Windows as a Service](https://docs.microsoft.com/windows/deployment/update/waas-overview#long-term-servicing-channel).
 
 ### <a name="can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal"></a>È possibile ridurre la quantità di tempo necessaria per l'aggiornamento dei dati nel portale di Desktop Analytics?
 
