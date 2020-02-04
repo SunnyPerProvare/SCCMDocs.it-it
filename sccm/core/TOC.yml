@@ -1,5 +1,5 @@
 - name: Infrastruttura principale
-  href: understand/introduction.md
+  href: index.yml
 - name: Comprendere ed esplorare
   items:
     - name: Che cos'è Configuration Manager?
@@ -46,8 +46,6 @@
           href: understand/configuration-manager-on-azure.md
     - name: Domande frequenti per dimensioni e prestazioni del sito
       href: understand/site-size-performance-faq.md
-    - name: Domande frequenti sui dati di diagnostica e di utilizzo
-      href: understand/frequently-asked-questions-about-diagnostics-and-usage-data.md
     - name: Domande frequenti su prodotto e licenze
       href: understand/product-and-licensing-faq.md
     - name: Scelta del ramo di Configuration Manager da usare
@@ -204,24 +202,28 @@
       items:
         - name: Panoramica dei dati di diagnostica e di utilizzo
           href: plan-design/diagnostics/diagnostics-and-usage-data.md
-        - name: Come vengono usati i dati di diagnostica e di utilizzo
+        - name: Come Microsoft usa i dati di diagnostica e di utilizzo
           href: plan-design/diagnostics/how-diagnostics-and-usage-data-is-used.md
-        - name: Dati di diagnostica per la versione 1910
-          href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1910.md
-        - name: Dati di diagnostica per la versione 1906
-          href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1906.md
-        - name: Dati di diagnostica per la versione 1902
-          href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1902.md
-        - name: Dati di diagnostica per la versione 1810
-          href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1810.md
-        - name: Dati di diagnostica per la versione 1806
-          href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1806.md
-        - name: Come vengono raccolti i dati di diagnostica e di utilizzo
+        - name: Come Configuration Manager raccoglie i dati
           href: plan-design/diagnostics/how-diagnostics-and-usage-data-is-collected.md
         - name: Come visualizzare dati di diagnostica e di utilizzo
           href: plan-design/diagnostics/view-diagnostics-and-usage-data.md
-        - name: Analisi utilizzo software
-          href: plan-design/diagnostics/customer-experience-improvement-program-ceip.md
+        - name: Livelli di diagnostica e dati di utilizzo
+          items:
+            - name: Panoramica dei livelli
+              href: plan-design/diagnostics/levels-overview.md
+            - name: Dati per la versione 1910
+              href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1910.md
+            - name: Dati per la versione 1906
+              href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1906.md
+            - name: Dati per la versione 1902
+              href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1902.md
+            - name: Dati per la versione 1810
+              href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1810.md
+            - name: Dati per la versione 1806
+              href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1806.md
+        - name: Domande frequenti
+          href: plan-design/diagnostics/frequently-asked-questions.md
     - name: Sicurezza e privacy per Configuration Manager
       items:
         - name: Panoramica di sicurezza e privacy
@@ -723,10 +725,6 @@
       items:
         - name: Come monitorare i client
           href: clients/manage/monitor-clients.md
-        - name: Usare Windows Analytics
-          href: clients/manage/monitor-windows-analytics.md
-        - name: Preparazione aggiornamenti
-          href: clients/manage/upgrade-readiness.md
         - name: Come monitorare i client Linux e UNIX
           href: clients/manage/monitor-clients-for-linux-and-unix-servers.md
         - name: Come gestire i client
