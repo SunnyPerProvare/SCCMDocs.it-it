@@ -10,12 +10,12 @@ ms.assetid: c3cf9f64-c2b9-4ace-9527-2aba6d4eef04
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 25df578e0fed22778b2d670a85cb8d25aa47acfa
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 3768d5930c2523fbc9a5be3e68788206915ec73e
+ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76035212"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035233"
 ---
 # <a name="install-site-system-roles-for-on-premises-mdm-in-configuration-manager"></a>Installare i ruoli del sistema del sito per MDM locale in Configuration Manager
 
@@ -37,7 +37,7 @@ Configuration Manager gestione di dispositivi mobili (MDM) locale richiede i seg
 
 - Current Branch of Configuration Manager supporta solo le connessioni *Intranet* dai dispositivi ai punti di distribuzione e ai punti di gestione dei dispositivi per MDM locale. Tuttavia, se si gestiscono anche computer macOS, questi client richiedono connessioni *Internet* a tali ruoli. Quando si configura il punto di distribuzione e il punto di gestione dei dispositivi, utilizzare l'opzione per **consentire le connessioni Intranet e Internet**.
 
-- I punti di distribuzione configurati per le connessioni Intranet richiedono la configurazione dei limiti del sito. Configuration Manager supporta solo i limiti dell'intervallo IPv4 per MDM locale. Per altre informazioni, vedere [Definire i limiti del sito e i gruppi di limiti](/configmgr/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups.md).
+- I punti di distribuzione configurati per le connessioni Intranet richiedono la configurazione dei limiti del sito. Configuration Manager supporta solo i limiti dell'intervallo IPv4 per MDM locale. Per altre informazioni, vedere [Definire i limiti del sito e i gruppi di limiti](/configmgr/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups).
 
 - Se si usano le [repliche di database](/configmgr/core/servers/deploy/configure/database-replicas-for-management-points) con il punto di gestione dei dispositivi, i dispositivi appena registrati non riusciranno inizialmente a connettersi. Questo errore di connessione si verifica perché la replica di database non contiene le informazioni sul dispositivo appena registrato necessario per una connessione corretta. Le repliche vengono sincronizzate ogni cinque minuti. I dispositivi non riusciranno a connettersi per i primi cinque minuti dopo la registrazione, che in genere è costituito da due tentativi di connessione. I dispositivi si connetteranno correttamente.
 
