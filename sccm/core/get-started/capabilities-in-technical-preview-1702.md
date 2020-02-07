@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 8062136a9a6a753dabadffa111bf09d9e9396a56
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 3f5abd4dcd762cedc7159f81ce25dd441ed9586c
+ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034597"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035284"
 ---
 # <a name="capabilities-in-technical-preview-1702-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1702 per Configuration Manager
 
@@ -148,7 +148,7 @@ Il nuovo criterio viene visualizzato nel nodo **Criteri di conformità** dell'ar
 4. Al termine, fare clic su **OK**.
 
 ### <a name="monitor-the-compliance-policy"></a>Monitorare i criteri di conformità
-Dopo aver creato i criteri di conformità, è possibile monitorare i risultati di conformità nella console di Configuration Manager. Per informazioni dettagliate, vedere [Monitorare i criteri di conformità](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy).
+Dopo aver creato i criteri di conformità, è possibile monitorare i risultati di conformità nella console di Configuration Manager. Per informazioni dettagliate, vedere [Monitorare i criteri di conformità](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy).
 
 
 ## <a name="improvements-to-software-center-settings-and-notification-messages-for-high-impact-task-sequences"></a>Miglioramenti alle impostazioni e ai messaggi di notifica di Software Center per le sequenze di attività a impatto elevato

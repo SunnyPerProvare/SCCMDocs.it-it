@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: c5dcda08e66ad2b11d62c4d14a8ebbcf411dfdc8
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: d60b99bc17c40e20e6472b367a67b06f9f22a15f
+ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75804436"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035267"
 ---
 # <a name="capabilities-in-technical-preview-1805-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1805 per Configuration Manager
 
@@ -227,7 +227,7 @@ Configuration Manager ha sempre fornito un archivio centralizzato di grandi dime
 
 CMPivot è una nuova utilità inclusa nella console che consente l'accesso allo stato in tempo reale dei dispositivi nell'ambiente in uso. Esegue immediatamente una query su tutti i dispositivi connessi nella raccolta di destinazione e restituisce i risultati. È quindi possibile filtrare e raggruppare questi dati nello strumento. La disponibilità di dati in tempo reale dai client online consente di rispondere alle domande aziendali, risolvere i problemi e rispondere agli eventi imprevisti di sicurezza in modo più veloce.
 
-Ad esempio, perla [mitigazione delle vulnerabilità del canale laterale di esecuzione speculativa](https://blogs.technet.microsoft.com/configurationmgr/2018/01/08/additional-guidance-to-mitigate-speculative-execution-side-channel-vulnerabilities/), uno dei requisiti prevede l'aggiornamento del BIOS di sistema. È possibile usare CMPivot per eseguire rapidamente query sulle informazioni del BIOS di sistema e individuare i client non conformi. 
+Ad esempio, perla [mitigazione delle vulnerabilità del canale laterale di esecuzione speculativa](https://techcommunity.microsoft.com/t5/configuration-manager-blog/additional-guidance-to-mitigate-speculative-execution-side/ba-p/274974), uno dei requisiti prevede l'aggiornamento del BIOS di sistema. È possibile usare CMPivot per eseguire rapidamente query sulle informazioni del BIOS di sistema e individuare i client non conformi. 
 
 In questo screenshot, CMPivot visualizza due versioni del BIOS separate con un dispositivo ognuna. È possibile usare questa query di esempio per provare CMPivot:  
 `Registry('hklm:\\Hardware\\Description\\System\\BIOS') | where (Property == 'BIOSVersion') | summarize dcount( Device ) by Value`  

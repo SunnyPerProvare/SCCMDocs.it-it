@@ -10,12 +10,12 @@ ms.assetid: ec4f18de-861b-4198-935f-44d7ca4de41c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: dbf46368f03feeefbf6d7732fc7f5d0101a2a49e
-ms.sourcegitcommit: d1c6f3f2fa6821f15041e73d411cc4e1de0850ba
+ms.openlocfilehash: 9dc874269463c49efb693f5078cbc33c4da37a4c
+ms.sourcegitcommit: 36920d640a322ed44e34fb5bbc5027c66633bd72
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520642"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76975813"
 ---
 # <a name="features-in-configuration-manager-technical-preview-version-2001"></a>Funzionalità in Configuration Manager Technical Preview versione 2001
 
@@ -36,8 +36,9 @@ Le sezioni seguenti descrivono le nuove funzionalità da provare in questa versi
 [!INCLUDE [OneTrace log groups](includes/2001/5559993.md)]
 [!INCLUDE [Improvements to administration service](includes/2001/5728365.md)]
 [!INCLUDE [Wake up a device from the central administration site](includes/2001/6030715.md)]
-[!INCLUDE [Improvements to task sequence progress](includes/2001/2356386.md)]
 
+[!INCLUDE [Improvements to task sequence progress](includes/2001/2356386.md)]
+<!-- 5932692, fka 2356386 -->
 
 <!--
 ## General known issues

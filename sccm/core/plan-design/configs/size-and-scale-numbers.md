@@ -10,12 +10,12 @@ ms.assetid: c5a42100-2f60-4952-b495-918025ea6559
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f211f8b7a75070feecf221bcdc27a550fd4cc3f0
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 552ac6d1f974b41fa97e7343e72a187c99c9b44f
+ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034862"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035165"
 ---
 # <a name="size-and-scale-numbers-for-configuration-manager"></a>Numeri di ridimensionamento e scalabilità per Configuration Manager
 
@@ -153,7 +153,7 @@ Il numero di client supportati dipende dalla versione di Windows Server Update S
 
     Pool di applicazioni IIS:
     - Aumentare la lunghezza della coda WsusPool a 2000
-    - Aumentare il limite di memoria privata WsusPool di 4 volte oppure impostarlo su 0 (illimitato). Se ad esempio il limite predefinito è 1.843.200 kB, aumentarlo a 7.372.800. Per altre informazioni su questo problema, vedere questo [post del blog del team di supporto di Configuration Manager](https://blogs.technet.microsoft.com/configurationmgr/2015/03/23/configmgr-2012-support-tip-wsus-sync-fails-with-http-503-errors/).  
+    - Aumentare il limite di memoria privata WsusPool di 4 volte oppure impostarlo su 0 (illimitato). Se ad esempio il limite predefinito è 1.843.200 kB, aumentarlo a 7.372.800. Per altre informazioni su questo problema, vedere questo [post del blog del team di supporto di Configuration Manager](https://www.phoenixtekk.com/configmgr-2012-support-tip-wsus-sync-fails-with-http-503-errors/).  
 
     Per altre informazioni sui requisiti hardware per il punto di aggiornamento software, vedere [Recommended hardware for site systems](/sccm/core/plan-design/configs/recommended-hardware#bkmk_ScaleSieSystems) (Hardware consigliato per i sistemi del sito).  
 

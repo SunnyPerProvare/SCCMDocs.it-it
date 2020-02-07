@@ -10,12 +10,12 @@ ms.assetid: 32e2d6b9-148f-45e2-8083-98c656473f82
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 50112b1ed19b23e355bfd64c4320be8d84802359
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e7d9062d45d553eb2aa8b83621cecda46a17aa9b
+ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75796099"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035318"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>CMPivot per i dati in tempo reale in Configuration Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "75796099"
 
 Configuration Manager ha sempre fornito un archivio centralizzato di grandi dimensioni per i dati dei dispositivi, usato dai clienti per i report. Il sito in genere raccoglie questi dati su base settimanale. A partire dalla versione 1806, CMPivot è una nuova utilità inclusa nella console che ora consente l'accesso allo stato in tempo reale dei dispositivi nell'ambiente in uso. Esegue immediatamente una query su tutti i dispositivi connessi nella raccolta di destinazione e restituisce i risultati. Filtrare quindi e raggruppare questi dati nello strumento. La disponibilità di dati in tempo reale dai client online consente di rispondere alle domande aziendali, risolvere i problemi e rispondere agli eventi imprevisti di sicurezza in modo più veloce.
 
-Ad esempio, perla [mitigazione delle vulnerabilità del canale laterale di esecuzione speculativa](https://blogs.technet.microsoft.com/configurationmgr/2018/01/08/additional-guidance-to-mitigate-speculative-execution-side-channel-vulnerabilities/), uno dei requisiti prevede l'aggiornamento del BIOS di sistema. È possibile usare CMPivot per eseguire rapidamente query sulle informazioni del BIOS di sistema e trovare i client non conformi.
+Ad esempio, perla [mitigazione delle vulnerabilità del canale laterale di esecuzione speculativa](https://techcommunity.microsoft.com/t5/configuration-manager-blog/additional-guidance-to-mitigate-speculative-execution-side/ba-p/274974), uno dei requisiti prevede l'aggiornamento del BIOS di sistema. È possibile usare CMPivot per eseguire rapidamente query sulle informazioni del BIOS di sistema e trovare i client non conformi.
 
  > [!Tip]  
  > Alcuni software di sicurezza possono bloccare gli script in esecuzione da c:\windows\ccm\scriptstore. Ciò può impedire la corretta esecuzione delle query CMPivot. Alcuni software di sicurezza possono anche generare avvisi o eventi di controllo quando si esegue CMPivot con PowerShell.
@@ -221,7 +221,7 @@ Per assicurare reazioni proattive con la manutenzione operativa, una volta alla 
 
 ### <a name="example-3-bios-version"></a>Esempio 3: Versione BIOS
 
-Per [mitigare le vulnerabilità del canale laterale di esecuzione speculativa](https://blogs.technet.microsoft.com/configurationmgr/2018/01/08/additional-guidance-to-mitigate-speculative-execution-side-channel-vulnerabilities/), uno dei requisiti prevede l'aggiornamento del BIOS di sistema. Si inizia con una query dell'entità **BIOS**, quindi si **raggruppa in base alla** proprietà **Version**. Si fa quindi clic con il pulsante destro del mouse su un valore specifico, ad esempio "LENOVO - 1140", e si sceglie **Mostra dispositivi con**.  
+Per [mitigare le vulnerabilità del canale laterale di esecuzione speculativa](https://techcommunity.microsoft.com/t5/configuration-manager-blog/additional-guidance-to-mitigate-speculative-execution-side/ba-p/274974), uno dei requisiti prevede l'aggiornamento del BIOS di sistema. Si inizia con una query dell'entità **BIOS**, quindi si **raggruppa in base alla** proprietà **Version**. Si fa quindi clic con il pulsante destro del mouse su un valore specifico, ad esempio "LENOVO - 1140", e si sceglie **Mostra dispositivi con**.  
 
 `Bios | summarize countif( (Version == 'LENOVO - 1140') ) by Device | where (countif_ > 0)`
 

@@ -10,12 +10,12 @@ ms.assetid: 1fcc921f-085f-4b0b-9c53-1e0707211076
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3f9a3f89881fd96261ac7723a879bd1d075d1290
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: c7908ce69984e7bf1c9c4efa98aef4229110fc09
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76033609"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76917263"
 ---
 # <a name="additional-information-about-privacy-for-configuration-manager"></a>Altre informazioni sulla privacy per Configuration Manager
 
@@ -40,19 +40,6 @@ Configuration Manager raccoglie i dati solo dal database di SQL Server del sito 
 Gli amministratori possono modificare il livello dei dati raccolti andando alla sezione **Dati di utilizzo** della console di Configuration Manager.
 
 Per altre informazioni sui livelli e sulle impostazioni dei dati di utilizzo, vedere [Dati di diagnostica e di utilizzo](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data).
-
-
-
-## <a name="customer-experience-improvement-program"></a>Analisi utilizzo software
-
-> [!Note]  
-> A partire da Configuration Manager versione 1802, la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
-
-Il programma Analisi utilizzo software raccoglie informazioni di base dalla console di Configuration Manager relative alla configurazione hardware e alla modalità di impiego del software e dei servizi per individuare tendenze e modelli di utilizzo. Vengono inoltre raccolte informazioni sul tipo e sul numero di errori rilevati, sulle prestazioni software e hardware e sulla velocità dei servizi. Non vengono raccolti nomi, indirizzi o altre informazioni che consentono l'identificazione personale degli utenti. Dai computer client non viene raccolta alcuna informazione per Analisi utilizzo software.
-
-Microsoft utilizza queste informazioni per migliorare la qualità, l'affidabilità e le prestazioni del software e dei servizi Microsoft.
-
-Per dettagli sulle informazioni che vengono raccolte, elaborate o trasmesse dal programma Analisi utilizzo software, vedere la relativa [informativa sulla privacy](https://go.microsoft.com/fwlink/?LinkID=525211).
 
 
 

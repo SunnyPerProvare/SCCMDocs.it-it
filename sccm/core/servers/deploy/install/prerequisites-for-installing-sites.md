@@ -10,12 +10,12 @@ ms.assetid: 92b339ef-2723-4322-bec6-077b3e8846b0
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 0da6cbc4d05334b54184b41b506d849d544701e2
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 3158c55ad7e0ba62f4607eaf69560bc87badfe06
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798097"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76917183"
 ---
 # <a name="prerequisites-for-installing-configuration-manager-sites"></a>Prerequisiti per l'installazione di siti di Configuration Manager
 
@@ -131,7 +131,6 @@ Per replicare correttamente i dati tra un sito di amministrazione centrale e un 
 Dopo aver espanso il sito è necessario riconfigurare i servizi di Azure seguenti con Configuration Manager:
 
 - [Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics)  
-- [Upgrade Readiness](/sccm/core/clients/manage/upgrade-readiness)  
 - [Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)  
 - [Gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway)
 

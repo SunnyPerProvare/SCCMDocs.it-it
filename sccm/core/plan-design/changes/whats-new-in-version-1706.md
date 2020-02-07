@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: ee55930802e6757589331eefbdbc5a076c14707e
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: e43e3e110809dd00ce11d8ac5e5003e1c3c8861a
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034480"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76917421"
 ---
 # <a name="what39s-new-in-version-1706-of-configuration-manager"></a>Novità della versione 1706 di Configuration Manager
 
@@ -235,8 +235,6 @@ Sono stati apportati miglioramenti per usare l'esperienza utente a portata di cl
 ### <a name="use-windows-analytics-with-configuration-manager"></a>Usare Windows Analytics con Configuration Manager
 <!-- 1318608 -->
 Windows Analytics è un set di soluzioni che consentono di ottenere indicazioni sullo stato corrente dell'ambiente. I dispositivi dell'ambiente segnalano i dati di telemetria di Windows. I dati sono accessibili tramite il portale di Azure. Nel caso di Preparazione aggiornamenti i dati sono direttamente disponibili nel nodo di monitoraggio della console di Configuration Manager.
-
-Per altre informazioni, vedere [Usare Windows Analytics con Configuration Manager](/sccm/core/clients/manage/monitor-windows-analytics).
 
 
 <!-- ## Inventory  -->

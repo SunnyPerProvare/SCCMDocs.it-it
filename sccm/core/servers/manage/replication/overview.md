@@ -2,7 +2,7 @@
 title: Risolvere i problemi di replica SQL
 titleSuffix: Configuration Manager
 description: Usare questi diagrammi per semplificare la comprensione e la risoluzione dei problemi di replica SQL tra siti di Configuration Manager
-ms.date: 08/09/2019
+ms.date: 02/05/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 71d7430e-c5aa-485b-8dc0-c80fd8f29f17
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 26bba05d2d19758a9e1d7bb0f605c272b2a1b0b5
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e8c2e6cc42e8945cf1cfc20f26f3c6dae6c6c989
+ms.sourcegitcommit: 5ffa00d961b5b166cd723e732e4f0fd5325d584b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826289"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77051367"
 ---
 # <a name="troubleshoot-sql-replication"></a>Risolvere i problemi di replica SQL
 
@@ -39,8 +39,8 @@ Questi diagrammi per la risoluzione dei problemi sono interconnessi. Usare il di
 
 Per altre informazioni, vedere la serie seguente di blog del supporto tecnico Microsoft:
 
-- [ConfigMgr DRS Synchronization Internals](https://blogs.technet.microsoft.com/umairkhan/2019/06/01/configmgr-drs-synchronization-internals/) (Elementi interni della sincronizzazione di ConfigMgr DRS)
-- [ConfigMgr 2012 Data Replication Service (DRS) Unleashed](https://blogs.technet.microsoft.com/umairkhan/2014/02/17/configmgr-2012-data-replication-service-drs-unleashed/) (ConfigMgr 2012 Data Replication Service (DRS) al massimo)
-- [ConfigMgr 2012 DRS – Troubleshooting FAQs](https://blogs.technet.microsoft.com/umairkhan/2014/03/24/configmgr-2012-drs-troubleshooting-faqs/) (ConfigMgr 2012 DRS - Domande frequenti sulla risoluzione dei problemi)
-- [ConfigMgr 2012 DRS Initialization Internals](https://blogs.technet.microsoft.com/umairkhan/2015/01/21/configmgr-2012-drs-initialization-internals/) (Elementi interni dell'inizializzazione di ConfigMgr 2012 DRS)
-- [ConfigMgr 2012: DRS and SQL service broker certificate issues](https://blogs.technet.microsoft.com/umairkhan/2013/12/12/configmgr-2012-drs-and-sql-service-broker-certificate-issues/) (ConfigMgr 2012: DRS e problemi dei certificati SQL Service Broker)
+- [ConfigMgr DRS Synchronization Internals](https://techcommunity.microsoft.com/t5/configuration-manager-archive/configmgr-drs-synchronization-internals/ba-p/1154317) (Elementi interni della sincronizzazione di ConfigMgr DRS)
+- [ConfigMgr 2012 Data Replication Service (DRS) Unleashed](https://techcommunity.microsoft.com/t5/configuration-manager-archive/configmgr-2012-data-replication-service-drs-unleashed/ba-p/339916) (ConfigMgr 2012 Data Replication Service (DRS) al massimo)
+- [ConfigMgr 2012 DRS – Troubleshooting FAQs](https://techcommunity.microsoft.com/t5/configuration-manager-archive/configmgr-2012-drs-troubleshooting-faqs/ba-p/339934) (ConfigMgr 2012 DRS - Domande frequenti sulla risoluzione dei problemi)
+- [ConfigMgr 2012 DRS Initialization Internals](https://techcommunity.microsoft.com/t5/configuration-manager-archive/configmgr-2012-drs-initialization-internals/ba-p/339948) (Elementi interni dell'inizializzazione di ConfigMgr 2012 DRS)
+- [ConfigMgr 2012: DRS and SQL service broker certificate issues](https://techcommunity.microsoft.com/t5/configuration-manager-archive/configmgr-2012-drs-and-sql-service-broker-certificate-issues/ba-p/339910) (ConfigMgr 2012: DRS e problemi dei certificati SQL Service Broker)

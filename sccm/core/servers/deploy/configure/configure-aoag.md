@@ -10,12 +10,12 @@ ms.assetid: 7e4ec207-bb49-401f-af1b-dd705ecb465d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 7dff8764acdb0b1b29139dbb894ca7d7b830d970
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: ec8ff67f131d065eda98152925aa7a6f4a949b20
+ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798942"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035216"
 ---
 # <a name="configure-sql-server-always-on-availability-groups-for-configuration-manager"></a>Configurare gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -131,7 +131,7 @@ A partire dalla versione 1906, eseguire l'installazione di Configuration Manager
 
 L'installazione di Configuration Manager usa l'operazione di spostamento del database SQL e verifica che i nodi siano configurati correttamente.
 
-Per altre informazioni sull'esecuzione manuale di questo processo nella versione 1902 o precedenti, vedere [ConfigMgr 1702: Adding a new node (Secondary Replica) to an existing SQL AO AG](https://blogs.technet.microsoft.com/umairkhan/2017/07/17/configmgr-1702-adding-a-new-node-secondary-replica-to-an-existing-sql-ao-ag/) (ConfigMgr 1702: Aggiungere un nuovo nodo (replica secondaria) a un gruppo di disponibilità SQL AlwaysOn esistente).
+Per altre informazioni sull'esecuzione manuale di questo processo nella versione 1902 o precedenti, vedere [ConfigMgr 1702: Adding a new node (Secondary Replica) to an existing SQL AO AG](https://techcommunity.microsoft.com/t5/configuration-manager-archive/configmgr-1702-adding-a-new-node-secondary-replica-to-an/ba-p/339960) (ConfigMgr 1702: Aggiungere un nuovo nodo (replica secondaria) a un gruppo di disponibilità SQL AlwaysOn esistente).
 
 ### <a name="remove-a-replica-member"></a>Rimuovere un membro di replica
 

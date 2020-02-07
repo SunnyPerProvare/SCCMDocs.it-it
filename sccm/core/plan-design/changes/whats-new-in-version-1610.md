@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 54373c35717307d97be66363265e0395d47d53ee
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 5333c6f6cbed0f8d13ab90a559ebf5500dfafaf7
+ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034544"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035369"
 ---
 # <a name="what39s-new-in-version-1610-of-configuration-manager"></a>Novità della versione 1610 di Configuration Manager
 
@@ -196,7 +196,7 @@ Il passaggio Prepara client ConfigMgr a questo punto rimuove completamente il cl
 
 
 ## <a name="intune-compliance-policy-charts"></a>Grafici dei criteri di conformità di Intune
-È ora possibile ottenere una panoramica della conformità generale dei dispositivi e dei motivi principali della non conformità grazie a nuovi grafici, disponibili nell'area di lavoro **Monitoraggio** della console di Configuration Manager. È possibile fare clic su una sezione del grafico per eseguire il drill-down in un elenco dei dispositivi della categoria corrispondente. Per informazioni dettagliate, vedere [Monitorare i criteri di conformità](/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy).
+È ora possibile ottenere una panoramica della conformità generale dei dispositivi e dei motivi principali della non conformità grazie a nuovi grafici, disponibili nell'area di lavoro **Monitoraggio** della console di Configuration Manager. È possibile fare clic su una sezione del grafico per eseguire il drill-down in un elenco dei dispositivi della categoria corrispondente. Per informazioni dettagliate, vedere [Monitorare i criteri di conformità](/sccm/protect/deploy-use/create-compliance-policy).
 
 
 ## <a name="lookout-integration-for-hybrid-implementations-to-protect-ios-and-android-devices"></a>Integrazione di Lookout nelle implementazioni ibride per la protezione di dispositivi iOS e Android

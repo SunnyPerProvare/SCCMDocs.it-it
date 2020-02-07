@@ -10,12 +10,12 @@ ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2fdc2be05d43999c32ecfbb3f1b6db5df318d31f
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: fee4caf29b78db39d5b5b9d4c880495da3db43f5
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799183"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76917434"
 ---
 # <a name="plan-for-security-in-configuration-manager"></a>Pianificare la sicurezza in Configuration Manager
 
@@ -397,9 +397,7 @@ Configuration Manager si integra con Azure Active Directory (Azure AD) per conse
 
 **Server**  
 
-- [Upgrade Readiness](/sccm/core/clients/manage/upgrade-readiness)  
-
-- [Windows Analytics](/sccm/core/clients/manage/monitor-windows-analytics)  
+- [Desktop Analytics](/sccm/desktop-analytics/overview)  
 
 - [Azure Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics)  
 

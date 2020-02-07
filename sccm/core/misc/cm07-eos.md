@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 8c3abca9caec6c0e59d43bb9b2f871d45a13c867
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: d85343adc0a4a450e1a2247cc6932c7b7c3be195
+ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75803025"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035335"
 ---
 # <a name="product-end-of-support"></a>Fine del supporto per il prodotto
 
@@ -42,7 +42,7 @@ Microsoft consiglia il piano di migrazione seguente:
 Per altre informazioni, vedere gli articoli seguenti:
 
 - [Articolo del supporto tecnico Microsoft](https://support.microsoft.com/help/4096323)  
-- [Post di blog del supporto tecnico di Configuration Manager](https://blogs.technet.microsoft.com/configurationmgr/2018/03/30/configuration-manager-2007-approaching-end-of-support-what-you-need-to-know/)  
+- [Post di blog del supporto tecnico di Configuration Manager](https://techcommunity.microsoft.com/t5/configuration-manager-blog/configuration-manager-2007-approaching-end-of-support-what-you/ba-p/274995)  
 - [Introduzione a Configuration Manager Current Branch](/sccm/core/understand/introduction)  
 - [Documentazione su come eseguire la migrazione a Configuration Manager Current Branch](/sccm/core/migration/migrate-data-between-hierarchies)  
     Questo articolo include anche un video che descrive e illustra scenari di migrazione comuni.
