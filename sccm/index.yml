@@ -3,12 +3,12 @@ title: Documentazione di Microsoft Endpoint Configuration Manager
 summary: 'Documentazione del prodotto ufficiale per i componenti seguenti di Microsoft Endpoint Manager: Configuration Manager, co-gestione e Desktop Analytics'
 metadata:
   ms.topic: hub-page
-  ms.openlocfilehash: b7bb0dccb8930987d79158b705a33bfecca3649e
-  ms.sourcegitcommit: 2f34d9457d95a9bd25603699fcf0e26cac77ad30
+  ms.openlocfilehash: deed7e7893e921c2672bd33489dfd8f08c7a7e15
+  ms.sourcegitcommit: be37256f98120ad30d5f7925bc32f05a07f15984
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 11/29/2019
-  ms.locfileid: "74661006"
+  ms.lasthandoff: 02/07/2020
+  ms.locfileid: "77071919"
 highlightedContent:
   items:
   - title: Novità
@@ -55,7 +55,7 @@ conceptualContent:
       itemType: overview
     footerLink:
       text: Altre informazioni
-      url: ./comanage/overview.md
+      url: ./comanage/index.yml
   - title: Gestione in tempo reale
     links:
     - text: CMPivot
@@ -80,7 +80,7 @@ conceptualContent:
       itemType: learn
     footerLink:
       text: Altre informazioni
-      url: ./desktop-analytics/overview.md
+      url: ./desktop-analytics/index.yml
   - title: Semplificazione dell'infrastruttura
     links:
     - text: Disponibilità elevata del server del sito
@@ -92,7 +92,7 @@ conceptualContent:
     - text: Configuration Manager in Azure
       url: ./core/understand/configuration-manager-on-azure.md
       itemType: learn
-  - title: Infrastruttura di base
+  - title: Infrastruttura principale
     links:
     - text: Uso della console
       url: ./core/servers/manage/admin-console.md
@@ -105,7 +105,7 @@ conceptualContent:
       itemType: learn
     footerLink:
       text: Altre informazioni
-      url: ./core/understand/introduction.md
+      url: ./core/index.yml
   - title: Gestione delle app
     links:
     - text: Creare app
@@ -122,7 +122,7 @@ conceptualContent:
       itemType: how-to-guide
     footerLink:
       text: Altre informazioni
-      url: ./apps/understand/introduction-to-application-management.md
+      url: ./apps/index.yml
   - title: Distribuzione del sistema operativo
     links:
     - text: Eseguire l'aggiornamento a Windows 10
@@ -136,7 +136,7 @@ conceptualContent:
       itemType: learn
     footerLink:
       text: Altre informazioni
-      url: ./osd/understand/introduction-to-operating-system-deployment.md
+      url: ./osd/index.yml
   - title: Aggiornamenti software
     links:
     - text: Pianificare gli aggiornamenti software
@@ -153,7 +153,7 @@ conceptualContent:
       itemType: how-to-guide
     footerLink:
       text: Altre informazioni
-      url: ./sum/understand/software-updates-introduction.md
+      url: ./sum/index.yml
   - title: Conformità del dispositivo
     links:
     - text: Creazione di elementi di configurazione
@@ -167,7 +167,7 @@ conceptualContent:
       itemType: how-to-guide
     footerLink:
       text: Altre informazioni
-      url: ./compliance/understand/ensure-device-compliance.md
+      url: ./compliance/index.yml
   - title: Protezione
     links:
     - text: Windows Defender
@@ -181,7 +181,7 @@ conceptualContent:
       itemType: overview
     footerLink:
       text: Altre informazioni
-      url: ./protect/understand/protect-data-and-site-infrastructure.md
+      url: ./protect/index.yml
 additionalContent:
   sections:
   - title: Community e supporto per Configuration Manager
@@ -210,7 +210,7 @@ additionalContent:
       links:
       - url: https://docs.microsoft.com/powershell/sccm/overview?view=sccm-ps
         text: PowerShell
-      - url: ./develop/core/misc/system-center-configuration-manager-sdk.md
+      - url: ./develop/index.yml
         text: Concetti relativi all'SDK
       - url: ./develop/reference/configuration-manager-reference.md
         text: Informazioni di riferimento per l'SDK

@@ -2,7 +2,8 @@
 title: Documentazione della gestione di dispositivi mobili (MDM)
 summary: Usare Microsoft Endpoint Manager per gestire i dispositivi mobili nell'organizzazione, sia in locale che basati sul cloud
 metadata:
-  title: Gestione di dispositivi mobili con Configuration Manager
+  title: Gestione di dispositivi mobili
+  titleSuffix: Configuration Manager
   description: Usare Microsoft Endpoint Manager per gestire i dispositivi mobili nell'organizzazione, sia in locale che basati sul cloud
   ms.prod: configuration-manager
   ms.technology: configmgr-hybrid
@@ -10,12 +11,12 @@ metadata:
   author: aczechowski
   ms.author: aaroncz
   ms.date: 12/31/2019
-  ms.openlocfilehash: c936f187dd10d4cbbe825c6b1146f1dd57e162c8
-  ms.sourcegitcommit: 4d49103722654f12ffe8df4d5848def44b7e1eb3
+  ms.openlocfilehash: d4417954b02a29292e8cce4d3f498bd8aa6c7a66
+  ms.sourcegitcommit: be37256f98120ad30d5f7925bc32f05a07f15984
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 01/30/2020
-  ms.locfileid: "76891688"
+  ms.lasthandoff: 02/07/2020
+  ms.locfileid: "77071487"
 landingContent:
 - title: Informazioni su MDM locale
   linkLists:
