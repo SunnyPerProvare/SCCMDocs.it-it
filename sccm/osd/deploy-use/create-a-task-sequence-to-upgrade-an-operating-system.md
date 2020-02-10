@@ -10,12 +10,12 @@ ms.assetid: 7591e386-a9ab-4640-8643-332dce5aa006
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ee1a392510d8c34b1f053837f9bba5334398fe3f
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 0a844574c9044d77f4c7ecfe3186cae1178720d9
+ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825439"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035352"
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-os-in-configuration-manager"></a>Creare una sequenza di attività per aggiornare un sistema operativo in Configuration Manager
 
@@ -94,15 +94,15 @@ Per altre informazioni, vedere [Configurare la pre-cache del contenuto](/sccm/os
 
 ## <a name="recommended-task-sequence-steps-to-prepare-for-upgrade"></a>Passaggi della sequenza di attività consigliati per la preparazione dell'aggiornamento
 
-Il modello di sequenza di attività predefinita per l'aggiornamento sul posto di Windows 10 include gruppi aggiuntivi con azioni consigliate da aggiungere prima del processo di aggiornamento. Queste azioni nel gruppo **Preparazione dell'aggiornamento** sono comuni tra numerosi clienti che stanno aggiornando i propri dispositivi a Windows 10. Se è presente una sequenza di attività che non dispone già di queste azioni, aggiungerle manualmente alla sequenza di attività nel gruppo **prepara per l'aggiornamento** .  
+Il modello di sequenza di attività predefinita per l'aggiornamento sul posto di Windows 10 include gruppi aggiuntivi con azioni consigliate da aggiungere prima del processo di aggiornamento. Queste azioni nel gruppo **Preparazione dell'aggiornamento** sono comuni tra numerosi clienti che stanno aggiornando i propri dispositivi a Windows 10. Se in una sequenza di attività queste azioni non sono già presenti, aggiungerle manualmente ad essa nel gruppo **Preparazione dell'aggiornamento**.  
 
 ### <a name="battery-checks"></a>Verifiche della batteria
 
 consente di aggiungere passaggi in questo gruppo per verificare se il computer usa la batteria o l'alimentazione tramite cavo. Per eseguire questo controllo serve un'utilità o uno script personalizzato.
 
-#### <a name="battery-check-example"></a>Esempio di controllo della batteria
+#### <a name="battery-check-example"></a>Esempio: controllo della batteria
 
-Utilizzare WbemTest e connettersi allo spazio dei nomi `root\cimv2`. Eseguire quindi la query seguente:
+Usando WbemTest, connettersi allo spazio dei nomi `root\cimv2`. Eseguire quindi la query seguente:
 
 `Select BatteryStatus From Win32_Battery where BatteryStatus != 2`
 
@@ -112,9 +112,9 @@ Se restituisce un risultato, il dispositivo è alimentato a batteria. In caso co
 
 consente di aggiungere passaggi in questo gruppo per verificare se il computer è connesso a una rete e non usa una connessione wireless. Per eseguire questo controllo serve un'utilità o uno script personalizzato.
 
-#### <a name="network-check-example"></a>Esempio di controllo di rete
+#### <a name="network-check-example"></a>Esempio: controllo della rete
 
-Utilizzare WbemTest e connettersi allo spazio dei nomi `root\cimv2`. Eseguire quindi la query seguente:
+Usando WbemTest, connettersi allo spazio dei nomi `root\cimv2`. Eseguire quindi la query seguente:
 
 `Select * From Win32_NetworkAdapter Where NetConnectionStatus = 2 and PhysicalAdapter = 'True' and NetConnectionID = 'Wi-Fi'`
 
@@ -136,7 +136,7 @@ consente di aggiungere passaggi in questo gruppo per rimuovere eventuali driver 
 
 consente di aggiungere passaggi in questo gruppo per rimuovere o sospendere programmi di sicurezza di terze parti, ad esempio l'antivirus.  
 
-Se si usa un programma di crittografia dischi di terze parti, specificare il relativo driver di crittografia al programma di installazione di Windows con `/ReflectDrivers`, [opzione della riga di comando](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#23). Aggiungere un passaggio [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) alla sequenza di attività in questo gruppo. Impostare la variabile della sequenza di attività su **OSDSetupAdditionalUpgradeOptions**. Impostare il valore su `/ReflectDrivers` con il percorso del driver. Questa [variabile della sequenza di attività](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions) accoda la riga di comando di Installazione di Windows usata dalla sequenza di attività. Per ulteriori indicazioni su questo processo, contattare il fornitore del software in uso.  
+Se si usa un programma di crittografia dischi di terze parti, specificare il relativo driver di crittografia al programma di installazione di Windows con `/ReflectDrivers`, [opzione della riga di comando](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#reflectdrivers). Aggiungere un passaggio [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) alla sequenza di attività in questo gruppo. Impostare la variabile della sequenza di attività su **OSDSetupAdditionalUpgradeOptions**. Impostare il valore su `/ReflectDrivers` con il percorso del driver. Questa [variabile della sequenza di attività](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions) accoda la riga di comando di Installazione di Windows usata dalla sequenza di attività. Per ulteriori indicazioni su questo processo, contattare il fornitore del software in uso.  
 
 ### <a name="download-package-content-task-sequence-step"></a>Passaggio della sequenza di attività Scaricare il contenuto del pacchetto  
 
@@ -157,7 +157,7 @@ Dopo aver creato la sequenza di attività, aggiungere questi passaggi nel gruppo
 > [!NOTE]  
 > Questa sequenza di attività non è lineare. I passaggi sono soggetti a condizioni che possono influire sui risultati della sequenza di attività. Questo comportamento varia a seconda che l'aggiornamento del sistema operativo del computer client venga completato o che venga eseguito il rollback del computer client al sistema operativo originale.  
 
-Il modello di sequenza di attività predefinita per l'aggiornamento sul posto di Windows 10 include gruppi aggiuntivi con azioni consigliate da aggiungere dopo il processo di aggiornamento. Queste azioni nel gruppo **Post-elaborazione** sono comuni tra numerosi clienti che stanno aggiornando i propri dispositivi a Windows 10. Se è presente una sequenza di attività che non dispone già di queste azioni, aggiungerle manualmente alla sequenza di attività nel gruppo di **post-elaborazione** .  
+Il modello di sequenza di attività predefinita per l'aggiornamento sul posto di Windows 10 include gruppi aggiuntivi con azioni consigliate da aggiungere dopo il processo di aggiornamento. Queste azioni nel gruppo **Post-elaborazione** sono comuni tra numerosi clienti che stanno aggiornando i propri dispositivi a Windows 10. Se in una sequenza di attività queste azioni non sono già presenti, aggiungerle manualmente ad essa nel gruppo **Post-elaborazione**.  
 
 ### <a name="apply-setup-based-drivers"></a>Applica driver basati su installazione
 
@@ -259,16 +259,16 @@ Questo codice restituito è l'equivalente in formato decimale di MOSETUP_E_COMPA
 
 Per altre informazioni, vedere [Aggiorna sistema operativo](/sccm/osd/understand/task-sequence-steps#BKMK_UpgradeOS).  
 
-### <a name="convert-from-bios-to-uefi"></a>Conversione da BIOS a UEFI
+### <a name="convert-from-bios-to-uefi"></a>Eseguire la conversione da BIOS a UEFI
 
 Se si vuole modificare il dispositivo da BIOS a UEFI durante questa sequenza di attività, vedere [Conversione da BIOS a UEFI durante un aggiornamento sul posto](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).  
 
 ### <a name="manage-bitlocker"></a>Gestire BitLocker
 
 <!--SCCMDocs issue #494-->
-Se si usa la crittografia dischi BitLocker, per impostazione predefinita il programma di installazione di Windows la sospenderà automaticamente durante l'aggiornamento. A partire da Windows 10 versione 1803, il programma di installazione di Windows include il parametro della riga di comando `/BitLocker` per controllare questo comportamento. Se i requisiti di sicurezza richiedono di mantenere sempre attiva la crittografia dischi, usare la **variabile della sequenza di attività** [OSDSetupAdditionalUpgradeOptions](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions) nel gruppo **Preparazione dell'aggiornamento** per includere `/BitLocker TryKeepActive`. Per altre informazioni, vedere [Opzioni della riga di comando di Installazione di Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#33).
+Se si usa la crittografia dischi BitLocker, per impostazione predefinita il programma di installazione di Windows la sospenderà automaticamente durante l'aggiornamento. A partire da Windows 10 versione 1803, il programma di installazione di Windows include il parametro della riga di comando `/BitLocker` per controllare questo comportamento. Se i requisiti di sicurezza richiedono di mantenere sempre attiva la crittografia dischi, usare la **variabile della sequenza di attività** [OSDSetupAdditionalUpgradeOptions](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions) nel gruppo **Preparazione dell'aggiornamento** per includere `/BitLocker TryKeepActive`. Per altre informazioni, vedere [Opzioni della riga di comando di Installazione di Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#bitlocker).
 
-### <a name="remove-default-apps"></a>Rimuovi app predefinite
+### <a name="remove-default-apps"></a>Rimuovere le app predefinite
 
 <!--SCCMDocs issue #526-->
 Alcuni clienti rimuovono le app predefinite di cui è stato effettuato il provisioning in Windows 10. Ad esempio, l'app Bing Meteo o Microsoft Solitaire Collection. In alcune situazioni, queste app ritornano dopo l'aggiornamento di Windows 10. Per altre informazioni, vedere l'articolo su [come mantenere le app rimosse da Windows 10](https://docs.microsoft.com/windows/application-management/remove-provisioned-apps-during-update).

@@ -10,12 +10,12 @@ ms.assetid: b670cfaf-96a4-4fcb-9caa-0f2e8c2c6198
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 1c6a2c20685703e9d47016b8e5ba914438064b28
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 540001ed045a849dab65eeb26ca1fa7d2cb94b55
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75827350"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76917567"
 ---
 # <a name="optimize-windows-10-update-delivery-with-configuration-manager"></a>Ottimizzare il recapito degli aggiornamenti di Windows 10 con Configuration Manager
 
@@ -60,16 +60,16 @@ La configurazione manuale di questi ID di gruppo è difficile in caso di roaming
 
 ### <a name="bkmk_DO-1910"></a> Ottimizzazione recapito a partire dalla versione 1910
 <!--4699118-->
-A partire da Configuration Manager versione 1910, è possibile usare l'ottimizzazione del recapito per la distribuzione di tutti i contenuti di Windows Update per i client che eseguono Windows 10 versione 1709 o successiva, non solo per i file di installazione rapida.
+A partire da Configuration Manager versione 1910, è possibile usare Ottimizzazione recapito per la distribuzione di tutti i contenuti di Windows Update, non solo dei file di installazione rapida, per i client che eseguono Windows 10 versione 1709 o successiva.
 
-Per utilizzare l'ottimizzazione recapito per tutti i file di installazione di Windows Update, abilitare le seguenti [Impostazioni client per gli aggiornamenti software](/sccm/core/clients/deploy/about-client-settings#software-updates):
+Per usare Ottimizzazione recapito per tutti i file di installazione di Windows Update, abilitare le [impostazioni client per gli aggiornamenti software](/sccm/core/clients/deploy/about-client-settings#software-updates) seguenti:
 
 - Impostare **Consenti ai client di scaricare contenuto differenziale quando disponibile** su **Sì**.
 - Impostare **Porta usata dai client per ricevere richieste per contenuto differenziale** su 8005 (impostazione predefinita) o un numero di porta personalizzato.
 
 > [!IMPORTANT]
 > - La funzionalità Ottimizzazione del recapito deve essere abilitata (impostazione predefinita) e non ignorata. Per altre informazioni, vedere [Ottimizzazione recapito di Windows](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference).
-> - Verificare le [impostazioni del client di ottimizzazione recapito](/sccm/core/clients/deploy/about-client-settings#delivery-optimization) quando si modificano le [Impostazioni client degli aggiornamenti software](/sccm/core/clients/deploy/about-client-settings#software-updates) per il contenuto Delta.
+> - Verificare le [impostazioni client di Ottimizzazione recapito](/sccm/core/clients/deploy/about-client-settings#delivery-optimization) quando si modificano le [impostazioni client degli aggiornamenti software](/sccm/core/clients/deploy/about-client-settings#software-updates) per il contenuto delta.
 
 
 
@@ -97,12 +97,12 @@ La selezione della tecnologia di peer caching appropriata per i file di installa
 |---------|---------|---------|---------|
 | Supportata tra subnet diverse | Sì | Sì | No |
 | Limitazione larghezza di banda | Sì (nativa) | Sì (tramite BITS) | Sì (tramite BITS) |
-| Supporto del contenuto parziale | Sì, per tutti i tipi di contenuto supportati elencati nella riga successiva della colonna. | Solo per Office 365 e gli aggiornamenti rapidi | Sì, per tutti i tipi di contenuto supportati elencati nella riga successiva della colonna. |
-| Tipi di contenuto supportati | **Tramite ConfigMgr:** </br> -Aggiornamenti rapidi </br> -Tutti gli aggiornamenti di Windows (a partire dalla versione 1910). Questa operazione non include gli aggiornamenti di Office.</br> </br> **Tramite Microsoft Cloud:**</br> - Windows e aggiornamenti della sicurezza</br> - Driver</br> - App di Windows Store</br> - App di Windows Store per le aziende | Tutti i tipi di contenuto ConfigMgr, incluse le immagini scaricate in [Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic) | Tutti i tipi di contenuto di ConfigMgr, ad eccezione delle immagini |
+| Supporto del contenuto parziale | Sì, per tutti i tipi di contenuto supportati elencati nella riga successiva di questa colonna. | Solo per Office 365 e gli aggiornamenti rapidi | Sì, per tutti i tipi di contenuto supportati elencati nella riga successiva di questa colonna. |
+| Tipi di contenuto supportati | **Tramite ConfigMgr:** </br> - Aggiornamenti rapidi </br> - Tutti gli aggiornamenti di Windows (a partire dalla versione 1910) Non sono inclusi gli aggiornamenti di Office.</br> </br> **Tramite Microsoft Cloud:**</br> - Windows e aggiornamenti della sicurezza</br> - Driver</br> - App di Windows Store</br> - App di Windows Store per le aziende | Tutti i tipi di contenuto ConfigMgr, incluse le immagini scaricate in [Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic) | Tutti i tipi di contenuto di ConfigMgr, ad eccezione delle immagini |
 | Controllo delle dimensioni della cache su disco | Sì | Sì | Sì |
 | Individuazione di un'origine peer | Automatico | Manuale (impostazione agente client) | Automatico |
 | Individuazione peer | Tramite il servizio cloud Ottimizzazione recapito (richiede l'accesso a Internet) | Tramite il punto di gestione (basato su gruppi di limiti client) | Multicast |
-| Reporting | Sì (con Windows Analytics) | Dashboard Origini dati del client di ConfigMgr | Dashboard Origini dati del client di ConfigMgr |
+| Reporting | Sì (tramite Desktop Analytics) | Dashboard Origini dati del client di ConfigMgr | Dashboard Origini dati del client di ConfigMgr |
 | Controllo dell'utilizzo WAN | Sì (nativa e controllabile tramite impostazioni di Criteri di gruppo) | Gruppi di limiti | Solo supporto subnet |
 | Gestione tramite ConfigMgr | Parziale (impostazione agente client) | Sì (impostazione agente client) | Sì (impostazione agente client) |
 
@@ -112,7 +112,7 @@ La selezione della tecnologia di peer caching appropriata per i file di installa
 
 Microsoft consiglia di ottimizzare il recapito degli aggiornamenti qualitativi di Windows 10 usando Configuration Manager con file di installazione rapida e una tecnologia di peer caching, a seconda delle esigenze. Questo approccio dovrebbe risolvere le problematiche associate al download nei dispositivi Windows 10 di contenuto di grandi dimensioni per l'installazione degli aggiornamenti qualitativi. È anche consigliabile mantenere i dispositivi Windows 10 aggiornati tramite la distribuzione degli aggiornamenti qualitativi ogni mese. Questa pratica riduce il delta del contenuto degli aggiornamenti qualitativi necessari per i dispositivi ogni mese. Con la riduzione del delta del contenuto si ottengono download di dimensioni più piccole dai punti di distribuzioni o dalle origini peer. 
 
-A causa della natura dei file di installazione rapida, le dimensioni del contenuto sono decisamente superiori rispetto al contenuto tradizionale dei file completi. Queste dimensioni comportano tempi più lunghi per il download degli aggiornamenti dal servizio Windows Update al server del sito di Configuration Manager. Aumenta anche la quantità di spazio su disco necessaria sia per il server del sito che per i punti di distribuzione. Il tempo totale necessario per scaricare e distribuire gli aggiornamenti qualitativi potrebbe essere più lungo. Tuttavia, i vantaggi a livello dei dispositivi dovrebbero essere notevoli durante il download e l'installazione degli aggiornamenti qualitativi per i dispositivi Windows 10. Per altre informazioni, vedere [uso di file di installazione rapida](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708456(v=ws.10)?#using-express-installation-files).
+A causa della natura dei file di installazione rapida, le dimensioni del contenuto sono decisamente superiori rispetto al contenuto tradizionale dei file completi. Queste dimensioni comportano tempi più lunghi per il download degli aggiornamenti dal servizio Windows Update al server del sito di Configuration Manager. Aumenta anche la quantità di spazio su disco necessaria sia per il server del sito che per i punti di distribuzione. Il tempo totale necessario per scaricare e distribuire gli aggiornamenti qualitativi potrebbe essere più lungo. Tuttavia, i vantaggi a livello dei dispositivi dovrebbero essere notevoli durante il download e l'installazione degli aggiornamenti qualitativi per i dispositivi Windows 10. Per altre informazioni, vedere [Uso di file di installazione rapida](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708456(v=ws.10)?#using-express-installation-files).
 
 Se il maggiore carico a livello di server per gli aggiornamenti di dimensioni maggiori non è sostenibile per l'adozione del supporto dell'installazione rapida, ma i vantaggi a livello di dispositivi sono cruciali per le attività aziendali e l'ambiente, Microsoft consiglia di usare [Windows Update for Business](/sccm/sum/deploy-use/integrate-windows-update-for-business-windows-10) con Configuration Manager. Windows Update for Business offre tutti i vantaggi dell'installazione rapida senza la necessità di scaricare, archiviare e distribuire i file di installazione rapida in tutto l'ambiente. I client scaricano il contenuto direttamente dal servizio Windows Update e in questo modo possono comunque usare Ottimizzazione recapito.
 
@@ -169,7 +169,7 @@ Per altre informazioni su porte di rete, requisiti proxy e nomi host per i firew
 
 ## <a name="log-files"></a>File di registro
 
-Usare i file di log seguenti per monitorare i download Delta:
+Per monitorare i download delta, usare i file di registro seguenti:
 
 - WUAHandler.log
 - DeltaDownload.log

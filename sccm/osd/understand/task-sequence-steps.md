@@ -10,12 +10,12 @@ ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ee87fcbfa1b8661e645156d2a2b6afe08e59493b
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 66e7fe54a3f1390cdab9020059686fa81da120f5
+ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75821002"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035199"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
@@ -39,7 +39,7 @@ La parte restante di questo articolo descrive le altre impostazioni della scheda
 
 - **Continua in caso di errore**: in caso di errore durante l'esecuzione del passaggio, la sequenza di attività continua. Per altre informazioni, vedere [Considerazioni sulla pianificazione per l'automazione delle attività](/configmgr/osd/plan-design/planning-considerations-for-automating-tasks#BKMK_TSGroups).  
 
-- **Aggiungi condizione**: la sequenza di attività valuta queste istruzioni condizionali per determinare se il passaggio viene eseguito. Per un esempio dell'uso di una variabile della sequenza di attività come condizione, vedere [Come usare le variabili della sequenza di attività](/configmgr/osd/understand/using-task-sequence-variables#bkmk_access-condition). Per altre informazioni sulle condizioni, vedere [Editor della sequenza di attività-condizioni](/configmgr/osd/understand/task-sequence-editor#bkmk_conditions).
+- **Aggiungi condizione**: la sequenza di attività valuta queste istruzioni condizionali per determinare se il passaggio viene eseguito. Per un esempio dell'uso di una variabile della sequenza di attività come condizione, vedere [Come usare le variabili della sequenza di attività](/configmgr/osd/understand/using-task-sequence-variables#bkmk_access-condition). Per altre informazioni sulle condizioni, vedere [Editor delle sequenze di attività - Condizioni](/configmgr/osd/understand/task-sequence-editor#bkmk_conditions).
 
 Le sezioni seguenti relative a passaggi specifici della sequenza di attività descrivono altre impostazioni possibili della scheda **Opzioni**.
 
@@ -375,7 +375,7 @@ Configurare le seguenti impostazioni:
 Per altre informazioni sui valori dei file di risposte dell'installazione di Windows, vedere [Microsoft-Windows-International-Core](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-international-core).
 
 > [!NOTE]
-> Se si crea un file di risposte personalizzato per l'installazione di Windows (Unattend. Xml), questo passaggio sovrascrive tutti i valori esistenti. Per automatizzare un processo dinamico per queste impostazioni, usare le variabili della sequenza di attività correlate. Ad esempio, [OSDWindowsSettingsInputLocale](/configmgr/osd/understand/task-sequence-variables#OSDWindowsSettingsInputLocale). 
+> Se si crea un file di risposte personalizzato per l'installazione di Windows (unattend.xml), questo passaggio sovrascrive tutti i valori esistenti. Per automatizzare un processo dinamico per queste impostazioni, usare le variabili della sequenza di attività correlate, ad esempio, [OSDWindowsSettingsInputLocale](/configmgr/osd/understand/task-sequence-variables#OSDWindowsSettingsInputLocale). 
 
 ## <a name="BKMK_AutoApplyDrivers"></a> Applica automaticamente i driver  
 
@@ -716,7 +716,7 @@ Se sono disponibili più unità crittografate, disabilitare BitLocker in qualsia
 
 Questo passaggio può essere eseguito solo nel sistema operativo completo. Non viene eseguito in Windows PE.  
 
-A partire dalla versione 1906, usare le seguenti variabili della sequenza di attività con questo passaggio:  
+A partire dalla versione 1906, con questo passaggio usare le variabili della sequenza di attività seguenti:  
 
 - [OSDBitLockerRebootCount](/configmgr/osd/understand/task-sequence-variables#OSDBitLockerRebootCount)  
 - [OSDBitLockerRebootCountOverride](/configmgr/osd/understand/task-sequence-variables#OSDBitLockerRebootCountOverride)  
@@ -735,7 +735,7 @@ Disabilita BitLocker nell'unità del sistema operativo corrente.
 
 Disabilita BitLocker in un'unità specifica. Usare l'elenco a discesa per specificare l'unità in cui BitLocker è disabilitato.  
 
-#### <a name="resume-protection-after-windows-has-been-restarted-the-specified-number-of-times"></a>Riprendere la protezione dopo che Windows è stato riavviato il numero di volte specificato
+#### <a name="resume-protection-after-windows-has-been-restarted-the-specified-number-of-times"></a>Riprendi la protezione dopo che Windows è stato riavviato per il numero specificato di volte
 
 <!-- 4512937 -->
 A partire dalla versione 1906, usare questa opzione per specificare il numero di riavvii per mantenere BitLocker disabilitato. Anziché aggiungere più istanze di questo passaggio, impostare un valore compreso tra 1 (valore predefinito) e 15.
@@ -765,7 +765,7 @@ Questo passaggio funziona bene in una sequenza di attività per eseguire l'aggio
 Questo passaggio viene eseguito nel sistema operativo completo o in Windows PE. L'opzione relativa al salvataggio del pacchetto nella cache del client di Configuration Manager non è supportata in Windows PE.
 
 > [!NOTE]  
-> L'attività **Scarica contenuto pacchetto** non è supportata per l'uso con supporti autonomi. Per ulteriori informazioni, vedere [azioni non supportate per i supporti](/configmgr/osd/deploy-use/create-stand-alone-media#unsupported-actions-for-stand-alone-media)autonomi.  
+> L'attività **Scarica contenuto pacchetto** non è supportata per l'uso con supporti autonomi. Per altre informazioni, vedere [Azioni non supportate per i supporti autonomi](/configmgr/osd/deploy-use/create-stand-alone-media#unsupported-actions-for-stand-alone-media).  
 
 Per aggiungere questo passaggio nell'editor della sequenza di attività, selezionare **Aggiungi**, selezionare **Software** e quindi selezionare **Scarica contenuto pacchetto**.
 
@@ -797,24 +797,24 @@ Configuration Manager aggiunge un suffisso numerico al nome della variabile. Ad 
 
 Se la sequenza di attività non riesce a scaricare un pacchetto, inizia a scaricare il pacchetto successivo nell'elenco.  
 
-### <a name="bkmk_note1"></a>Nota 1: uso delle immagini d'avvio nel passaggio Scarica contenuto pacchetto
+### <a name="bkmk_note1"></a> Nota 1: uso delle immagini d'avvio nel passaggio Scarica contenuto pacchetto
 
 *Si applica alla versione 1910 e successive*<!-- SCCMDocs-pr #4202 -->
 
-Se si configurano le [proprietà della sequenza di attività](/configmgr/osd/deploy-use/manage-task-sequences-to-automate-tasks#bkmk_prop-advanced) per l'uso di **un'immagine di avvio**, l'aggiunta di un'immagine di avvio a questo passaggio è ridondante. Aggiungere un'immagine di avvio a questo passaggio solo se non è specificata nelle proprietà della sequenza di attività.
+Se si configurano le [proprietà della sequenza di attività](/configmgr/osd/deploy-use/manage-task-sequences-to-automate-tasks#bkmk_prop-advanced) su **Usa un'immagine d'avvio**, l'aggiunta di un'immagine di avvio a questo passaggio è ridondante. Aggiungere un'immagine d'avvio a questo passaggio solo se non è specificata nelle proprietà della sequenza di attività.
 
 #### <a name="example-use-case"></a>Esempio di caso d'uso
 
-- Una singola sequenza di attività per il pre-download del contenuto:
-  - Nessuna immagine di avvio associata.
-  - Viene eseguita solo nel sistema operativo completo, probabilmente senza interazione dell'utente.
-  - USA più passaggi per **scaricare il contenuto del pacchetto** con le condizioni. A seconda della lingua e dell'architettura specifiche, Scarica il contenuto nella cache del client per prepararsi alla sequenza di attività di distribuzione del sistema operativo.
-  - Esiste solo un'istanza di questa sequenza di attività, con tutte le possibili opzioni di contenuto.
+- Sequenza di attività singola per il pre-download del contenuto:
+  - Nessuna immagine d'avvio associata.
+  - Esecuzione solo nel sistema operativo completo, probabilmente senza interazione dell'utente.
+  - Uso di più passaggi **Scarica contenuto pacchetto** con condizioni. A seconda della lingua e dell'architettura specifiche, scarica il contenuto nella cache del client in preparazione alla sequenza di attività di distribuzione del sistema operativo.
+  - Unica istanza della sequenza di attività, con tutte le opzioni di contenuto possibili.
 
 - Più sequenze di attività di distribuzione del sistema operativo:
   - Una normale sequenza di attività di distribuzione del sistema operativo.
-  - Dispone di un'immagine di avvio a cui viene fatto riferimento nelle relative proprietà.
-  - Sono presenti più istanze di questa sequenza di attività, con immagini di avvio diverse in base alle esigenze di architettura e lingua
+  - Un'immagine di avvio a cui viene fatto riferimento nelle proprietà.
+  - Più istanze della sequenza di attività, con immagini di avvio diverse in base alle esigenze di architettura e lingua
 
 ## <a name="BKMK_EnableBitLocker"></a> Attiva BitLocker  
 
@@ -877,7 +877,7 @@ Per crittografare un'unità dati specifica, non del sistema operativo, seleziona
 Per impostazione predefinita, questo passaggio consente di crittografare solo lo spazio usato nell'unità. Questo comportamento predefinito è consigliato perché è più veloce ed efficiente. Se l'organizzazione richiede di crittografare l'intera unità durante l'installazione, abilitare questa opzione. Installazione di Windows attende la crittografia dell'intera unità, operazione che richiede molto tempo soprattutto nelle unità di grandi dimensioni.
 
 > [!TIP]
-> A partire dalla versione 1910, è possibile creare e distribuire i criteri di gestione di BitLocker, che usano la crittografia *completa del disco* . Per gestire BitLocker nei dispositivi dopo la distribuzione del sistema operativo da parte della sequenza di attività, abilitare questa opzione. Per altre informazioni, vedere [Pianificare la gestione di BitLocker](/configmgr/protect/plan-design/bitlocker-management).
+> A partire dalla versione 1910, è possibile creare e distribuire criteri di gestione di BitLocker, che usano la crittografia *del disco completo*. Per gestire BitLocker nei dispositivi dopo la distribuzione del sistema operativo da parte della sequenza di attività, abilitare questa opzione. Per altre informazioni, vedere [Pianificare la gestione di BitLocker](/configmgr/protect/plan-design/bitlocker-management).
 
 #### <a name="choose-where-to-create-the-recovery-key"></a>Scegliere dove creare la chiave di ripristino
 
@@ -965,15 +965,15 @@ Le applicazioni devono soddisfare i criteri seguenti:
 - Non deve dare inizio autonomamente a un riavvio. L'applicazione deve richiedere un riavvio usando il codice di riavvio standard, ovvero 3010. Questo comportamento garantisce che questo passaggio gestisca correttamente il riavvio. Se l'applicazione restituisce un codice di uscita 3010, il motore della sequenza di attività riavvia il computer. Dopo il riavvio, la sequenza di attività continua automaticamente.  
 
 > [!Note]
-> Se l'applicazione [Controlla l'esecuzione dei file eseguibili](/configmgr/apps/deploy-use/deploy-applications#bkmk_exe-check), la sequenza di attività non riuscirà a installarla. Se questo passaggio non viene configurato per continuare in caso di errore, l'intera sequenza di attività avrà esito negativo.
+> Se l'applicazione [controlla se alcuni file eseguibili sono in esecuzione](/configmgr/apps/deploy-use/deploy-applications#bkmk_exe-check), la sequenza di attività non riuscirà a installarla. La sequenza di attività verrà eseguita correttamente solo se si configura questo passaggio in modo che continui in caso di errore.
 
 Quando si esegue questo passaggio, l'applicazione verifica l'applicabilità delle regole dei requisiti e del metodo di rilevamento nei tipi di distribuzione dell'applicazione stessa. In base ai risultati di questa verifica, l'applicazione installa il tipo di distribuzione applicabile. Se il tipo di distribuzione contiene dipendenze, il tipo di distribuzione dipendente viene valutato e installato come parte di questo passaggio. Le dipendenze delle applicazioni non sono supportate per i supporti autonomi.  
 
 > [!NOTE]  
 > Per installare un'applicazione che sostituisce un'altra applicazione è necessario che i file di contenuto per l'applicazione sostituita siano disponibili. In caso contrario questo passaggio della sequenza di attività ha esito negativo. Ad esempio, Microsoft Visio 2010 viene installato in un client o in un'immagine acquisita. Quando il passaggio **Installa applicazione** installa Microsoft Visio 2013, i file di contenuto per Microsoft Visio 2010 (l'applicazione sostituita) devono essere disponibili in un punto di distribuzione. Se Microsoft Visio non è installato in un client o in un'immagine acquisita, la sequenza di attività installa Microsoft Visio 2013 senza verificare i file di contenuto di Microsoft Visio 2010.  
 >
-> Se si ritira un'app sostituita e si fa riferimento alla nuova app in una sequenza di attività, la sequenza di attività non viene avviata.
-Questo comportamento è da progettazione: la sequenza di attività richiede tutti i riferimenti alle app.<!-- SCCMDocs 1711 -->  
+> Se si ritira un'app sostituita e si fa riferimento alla nuova app in una sequenza di attività, quest'ultima non si avvia.
+Questo comportamento è previsto dalla progettazione: la sequenza di attività richiede tutti i riferimenti alle app.<!-- SCCMDocs 1711 -->  
 
 Questo passaggio della sequenza di attività viene eseguito solo nel sistema operativo completo. Non viene eseguito in Windows PE.  
 
@@ -1749,7 +1749,7 @@ A partire dalla versione 1902, è possibile specificare che lo script di PowerSh
 #### <a name="account"></a>Account
 
 <!-- 3556028 -->
-A partire dalla versione 1902, è possibile specificare l'account utente Windows usato in questo passaggio per eseguire lo script di PowerShell. L'account specificato deve essere un amministratore locale del sistema e lo script viene eseguito con le autorizzazioni di questo account. Selezionare **Imposta** per specificare l'utente locale o l'account di dominio. Per altre informazioni sull'account Esegui come per la sequenza di attività, vedere [Account](/configmgr/core/plan-design/hierarchy/accounts#task-sequence-run-as-account).
+A partire dalla versione 1902, è possibile specificare l'account utente Windows usato in questo passaggio per eseguire lo script di PowerShell. L'account specificato deve corrispondere a un amministratore locale del sistema. Lo script viene eseguito con le autorizzazioni di questo account. Selezionare **Imposta** per specificare l'utente locale o l'account di dominio. Per altre informazioni sull'account Esegui come per la sequenza di attività, vedere [Account](/configmgr/core/plan-design/hierarchy/accounts#task-sequence-run-as-account).
 
 > [!IMPORTANT]  
 > Se questo passaggio specifica un account utente e viene eseguito in Windows PE, l'azione ha esito negativo. Non è possibile aggiungere Windows PE a un dominio. Questo errore viene registrato nel file **smsts.log**.  
@@ -1781,7 +1781,7 @@ A partire dalla versione 1906, gestire questo passaggio con i cmdlet di PowerShe
 - **Remove-CMTSStepRunTaskSequence**
 - **Set-CMTSStepRunTaskSequence**
 
-Per altre informazioni, vedere [Note sulla versione 1906-nuovi cmdlet](https://docs.microsoft.com/powershell/sccm/1906-release-notes?view=sccm-ps#new-cmdlets).
+Per altre informazioni, vedere [Note sulla versione 1906 - Nuovi cmdlet](https://docs.microsoft.com/powershell/sccm/1906-release-notes?view=sccm-ps#new-cmdlets).
 
 ### <a name="specifications-and-limitations"></a>Specifiche e limitazioni
 
@@ -1923,7 +1923,7 @@ La sequenza di attività imposta la variabile su questo valore. Impostare questa
 
 Usare questo passaggio per eseguire la transizione da Windows PE al nuovo sistema operativo. Questo passaggio della sequenza di attività è una parte necessaria di qualsiasi distribuzione del sistema operativo. Installa il client di Configuration Manager nel nuovo sistema operativo e prepara la sequenza di attività per continuare l'esecuzione nel nuovo sistema operativo.  
 
-Questo passaggio è responsabile della transizione della sequenza di attività da Windows PE al sistema operativo completo. Il passaggio viene eseguito sia in Windows PE che nel sistema operativo completo a causa di questa transizione. Tuttavia, poiché la transizione viene avviata in Windows PE, può essere aggiunta solo durante la parte di Windows PE della sequenza di attività.  
+Questo passaggio è responsabile della transizione della sequenza di attività da Windows PE al sistema operativo completo. A causa di questa transizione, il passaggio viene eseguito sia in Windows PE che nel sistema operativo completo. Poiché la transizione viene avviata in Windows PE, tuttavia, può essere aggiunto solo durante la parte relativa a Windows PE della sequenza di attività.  
 
 Usare le variabili della sequenza di attività seguenti con questo passaggio:  
 
@@ -1972,7 +1972,7 @@ Questo passaggio esegue le azioni seguenti:
 
 #### <a name="set-up-the-configuration-manager-client"></a>Impostazione del client di Configuration Manager  
 
-1. Al termine dell'installazione minima di Windows, verrà ripresa la sequenza di attività usando setupcomplete.cmd. Per altre informazioni, vedere [eseguire uno script al termine dell'installazione (Setupcomplete. cmd)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/add-a-custom-script-to-windows-setup#run-a-script-after-setup-is-complete-setupcompletecmd).  
+1. Al termine dell'installazione minima di Windows, verrà ripresa la sequenza di attività usando setupcomplete.cmd. Per altre informazioni, vedere [Eseguire uno script al termine dell'installazione (SetupComplete. cmd)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/add-a-custom-script-to-windows-setup#run-a-script-after-setup-is-complete-setupcompletecmd).  
 
 2. Abilitare o disabilitare l'account Administrator locale, in base all'opzione selezionata nel passaggio **Applica impostazioni Windows**.  
 
@@ -1985,7 +1985,7 @@ Questo passaggio esegue le azioni seguenti:
 L'esecuzione della sequenza di attività continua con il passaggio successivo.  
 
 > [!Note]  
-> Criteri di gruppo di Windows viene in genere eseguito dopo il completamento della sequenza di attività. Questo comportamento è coerente nelle diverse versioni di Windows. Altre azioni personalizzate durante la sequenza di attività possono attivare la valutazione di Criteri di gruppo. Per ulteriori informazioni sull'ordine delle operazioni, vedere [eseguire uno script al termine dell'installazione (Setupcomplete. cmd)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/add-a-custom-script-to-windows-setup#run-a-script-after-setup-is-complete-setupcompletecmd). <!-- 2841304 -->
+> Criteri di gruppo di Windows viene in genere eseguito dopo il completamento della sequenza di attività. Questo comportamento è coerente nelle diverse versioni di Windows. Altre azioni personalizzate durante la sequenza di attività possono attivare la valutazione di Criteri di gruppo. Per altre informazioni sull'ordine delle operazioni, vedere [Eseguire uno script al termine dell'installazione (SetupComplete. cmd)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/add-a-custom-script-to-windows-setup#run-a-script-after-setup-is-complete-setupcompletecmd). <!-- 2841304 -->
 
 
 ### <a name="properties"></a>Proprietà  
@@ -2081,7 +2081,7 @@ Il programma di installazione restituisce un codice di uscita come risultato del
 |MOSETUP_E_COMPAT_SYSREQ_BLOCK (0xC1900200)|Non idoneo per Windows 10.|  
 |MOSETUP_E_COMPAT_INSTALLDISKSPACE_BLOCK (0xC190020E)|Spazio libero su disco insufficiente.|  
 
-Per altre informazioni su questo parametro, vedere [Opzioni della riga di comando di Installazione di Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#6).  
+Per altre informazioni su questo parametro, vedere [Opzioni della riga di comando di Installazione di Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#compat).  
 
 #### <a name="ignore-any-dismissible-compatibility-messages"></a>Ignora tutti i messaggi sulla compatibilità non rilevanti
 
