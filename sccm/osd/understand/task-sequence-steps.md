@@ -797,7 +797,7 @@ Configuration Manager aggiunge un suffisso numerico al nome della variabile. Ad 
 
 Se la sequenza di attività non riesce a scaricare un pacchetto, inizia a scaricare il pacchetto successivo nell'elenco.  
 
-### <a name="bkmk_note1"></a> Nota 1: uso delle immagini d'avvio nel passaggio Scarica contenuto pacchetto
+### <a name="bkmk_note1"></a> Nota 1: Usare le immagini d'avvio nel passaggio Scarica contenuto pacchetto
 
 *Si applica alla versione 1910 e successive*<!-- SCCMDocs-pr #4202 -->
 
