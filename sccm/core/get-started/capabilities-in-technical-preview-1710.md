@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 3ea9521e310aac48db15f6d063b3558d00f0c574
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 66886ab0fe82fcecda71704b6ba70bc2aa8653f6
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75804708"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76917039"
 ---
 # <a name="capabilities-in-technical-preview-1710-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1710 per Configuration Manager
 
@@ -66,15 +66,12 @@ Per provare la funzionalità Esegui script, vedere [Creare ed eseguire script](.
 
 
 
-## <a name="limit-windows-10-enhanced-telemetry-to-only-send-data-relevant-to-windows-analytics-device-health"></a>Limitare la telemetria avanzata di Windows 10 al solo invio dei dati pertinenti a Integrità del dispositivo di Windows Analytics
+## <a name="limit-windows-10-enhanced-data-to-only-send-data-relevant-to-windows-analytics-device-health"></a>Limitare i dati avanzati di Windows 10 al solo invio dei dati pertinenti per Integrità dispositivi di Windows Analytics
 <!-- 1356148 -->
 
-Con questa versione è ora possibile impostare il livello della raccolta dei dati di telemetria di Windows 10 su **Enhanced (Limited)** (Avanzato - Limitato). Questa impostazione consente di ottenere informazioni utili sui dispositivi presenti nell'ambiente in uso senza che i dispositivi segnalino tutti i dati nel livello di telemetria **Avanzato** con Windows 10 1709 o versione successiva.
+Con questa versione è ora possibile impostare il livello della raccolta dei dati di diagnostica di Windows 10 su **Avanzata (con limitazioni)** . Questa impostazione consente di ottenere informazioni utili sui dispositivi presenti nell'ambiente in uso senza che i dispositivi segnalino tutti i dati nel livello **avanzato** con Windows 10 1709 o versione successiva.
 
-Il livello di telemetria Enhanced (Limited) (Avanzato - Limitato) include metriche del livello di base e un subset di dati raccolti dal livello **Avanzato** pertinenti per Windows Analytics. Per altre informazioni sui livelli di telemetria, vedere [Livelli di telemetria](/windows/privacy/configure-windows-diagnostic-data-in-your-organization#use-group-policy-to-set-the-diagnostic-data-level).
-
-### <a name="try-it-out"></a>Verifica
-Per configurare la raccolta di dati di telemetria di Windows 10 nei client, vedere [Come configurare le impostazioni client](/sccm/core/clients/deploy/configure-client-settings). Aprire la finestra **Servizi cloud** e impostare i dati di telemetria di Windows 10 su **Avanzato**.
+Il livello Avanzata (con limitazioni) include metriche del livello di base e un subset di dati raccolti dal livello **Avanzato** pertinenti per Windows Analytics.
 
 
 ## <a name="software-center-no-longer-distorts-icons-larger-than-250x250"></a>Software Center non deforma più le icone maggiori di 250x250 pixel  
@@ -194,7 +191,7 @@ Per consentire a un dispositivo con Windows Defender SmartScreen l'esecuzione di
 
 ## <a name="configure-and-deploy-windows-defender-application-guard-policies----1351960---"></a>Configurare e distribuire i criteri di Windows Defender Application Guard <!-- 1351960 -->
 
-[Windows Defender Application Guard](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) è una nuova funzionalità di Windows che consente di proteggere gli utenti con l'apertura di siti Web non attendibili in un contenitore protetto isolato non è accessibile da altre parti del sistema operativo. In questa versione Technical Preview, è stato aggiunto il supporto per configurare questa funzionalità usando le impostazioni di conformità di Configuration Manager configurate dall'utente e quindi distribuite in una raccolta. Questa funzionalità verrà rilasciata in anteprima per la versione a 64 bit di Windows 10 Creators Update (nome in codice: RS2). Per provare ora questa funzionalità è necessario usare una versione di anteprima dell'aggiornamento.
+[Windows Defender Application Guard](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) è una nuova funzionalità di Windows che consente di proteggere gli utenti con l'apertura di siti Web non attendibili in un contenitore protetto isolato non è accessibile da altre parti del sistema operativo. In questa versione Technical Preview, è stato aggiunto il supporto per configurare questa funzionalità usando le impostazioni di conformità di Configuration Manager configurate dall'utente e quindi distribuite in una raccolta. Questa funzionalità verrà rilasciata in anteprima per la versione a 64 bit di Windows 10 Creators Update. Per provare ora questa funzionalità è necessario usare una versione di anteprima dell'aggiornamento.
 
 ### <a name="before-you-start"></a>Prima di iniziare
 Per creare e distribuire i criteri di Windows Defender Application Guard, configurare i dispositivi Windows 10 in cui vengono distribuiti i criteri con un criterio di isolamento rete. Per altre informazioni, vedere il post di blog indicato più avanti. Questa funzionalità funziona solo con le build correnti di Windows 10 Insider. Per provarla, i client devono eseguire una build recente di Windows 10 Insider.

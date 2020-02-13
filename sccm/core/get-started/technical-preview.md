@@ -2,7 +2,7 @@
 title: Versioni di Technical Preview
 titleSuffix: Configuration Manager
 description: Informazioni sulla versione Technical Preview che consente di testare nuove funzionalità e capacità in Configuration Manager.
-ms.date: 01/17/2020
+ms.date: 02/03/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7b1ae37ea51b49dd74c625976bc08f9dce2f43a2
-ms.sourcegitcommit: d1c6f3f2fa6821f15041e73d411cc4e1de0850ba
+ms.openlocfilehash: 126013152b778b6240a7b03bc2f5e1ada7b8d270
+ms.sourcegitcommit: 36920d640a322ed44e34fb5bbc5027c66633bd72
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519937"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76975737"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Technical Preview per Configuration Manager
 
@@ -119,22 +119,23 @@ Enable this section if needed to include any broad change to the tech preview br
 
 <!-- (explanatory comment)
 This is the full list of new features in the latest TP release
--->
+
+bullet format:
+<!-- - [title](/sccm/core/get-started/2020/technical-preview-2001-2#bkmk_anchor) <!--ID-->
 
 Le funzionalità seguenti sono disponibili con la versione Technical Preview di Configuration Manager più recente:
 
-### <a name="technical-preview-version-2001"></a>Technical Preview versione 2001
+### <a name="technical-preview-version-20012"></a>Technical Preview versione 2001.2
 
-<!-- - [title](/sccm/core/get-started/2020/technical-preview-2001#bkmk_anchor) <!--ID-->
-
-- [Dashboard Gestione di Microsoft Edge](/sccm/core/get-started/2020/technical-preview-2001#bkmk_edge-dash) <!--3871913-->
-- [Miglioramenti ai gruppi di orchestrazione](/sccm/core/get-started/2020/technical-preview-2001#bkmk_orch) <!--3098816-->
-- [Miglioramenti al passaggio della sequenza di attività Verifica conformità](/sccm/core/get-started/2020/technical-preview-2001#bkmk_tsready) <!--6005561-->
-- [Integrare il server di report di Power BI](/sccm/core/get-started/2020/technical-preview-2001#bkmk_powerbi) <!--3721603-->
-- [Gruppi di log di OneTrace](/sccm/core/get-started/2020/technical-preview-2001#bkmk_onetrace) <!--5559993-->
-- [Miglioramenti al servizio di amministrazione](/sccm/core/get-started/2020/technical-preview-2001#bkmk_rest) <!--5728365-->
-- [Attivare un dispositivo dal sito di amministrazione centrale](/sccm/core/get-started/2020/technical-preview-2001#bkmk_wake) <!--6030715-->
-- [Miglioramenti per lo stato delle sequenze di attività](/sccm/core/get-started/2020/technical-preview-2001#bkmk_tsprogress) <!--2356386-->
+- [Autenticazione basata su token per Cloud Management Gateway](/sccm/core/get-started/2020/technical-preview-2001-2#bkmk_cmg) <!--5686290-->
+- [Miglioramenti ai gruppi di orchestrazione](/sccm/core/get-started/2020/technical-preview-2001-2#bkmk_orch) <!--3098816-->
+- [Nuovi cmdlet per le distribuzioni in più fasi](/sccm/core/get-started/2020/technical-preview-2001-2#bkmk_pod-psh) <!--6104290-->
+- [Escludere determinate subnet per il download del contenuto peer](/sccm/core/get-started/2020/technical-preview-2001-2#bkmk_subnet) <!--3555777-->
+- [Miglioramenti per Invia smile](/sccm/core/get-started/2020/technical-preview-2001-2#bkmk_sendsmile) <!--5891852-->
+- [Miglioramenti per la sequenza di attività come tipo di distribuzione](/sccm/core/get-started/2020/technical-preview-2001-2#bkmk_tsdt) <!--3555953-->
+- [Miglioramenti al dashboard Gestione di Microsoft Edge](/sccm/core/get-started/2020/technical-preview-2001-2#bkmk_edge) <!--3871913-->
+- [Miglioramenti per i servizi connessi al cloud](/sccm/core/get-started/2020/technical-preview-2001-2#bkmk_cloud) <!--4963230, 4963383, 5566763-->
+- [Miglioramento aggiuntivo per lo stato delle sequenze di attività](/sccm/core/get-started/2020/technical-preview-2001-2#bkmk_tsprogress) <!--2356386, 5932692-->
 
 > [!NOTE]  
 > Le funzionalità disponibili in una versione precedente della Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità aggiunte alla versione Current Branch di Configuration Manager rimangono disponibili nel ramo Technical Preview.  
@@ -148,6 +149,17 @@ When there's a new CB, add any features not in that CB to the table in H2 "Featu
 -->
 
 Le funzionalità seguenti sono state rilasciate in versioni precedenti del ramo Configuration Manager Technical Preview dopo la versione Current Branch 1910:
+
+### <a name="technical-preview-version-2001"></a>Technical Preview versione 2001
+
+- [Dashboard Gestione di Microsoft Edge](/sccm/core/get-started/2020/technical-preview-2001#bkmk_edge-dash) <!--3871913-->
+- [Miglioramenti ai gruppi di orchestrazione](/sccm/core/get-started/2020/technical-preview-2001#bkmk_orch) <!--3098816-->
+- [Miglioramenti al passaggio della sequenza di attività Verifica conformità](/sccm/core/get-started/2020/technical-preview-2001#bkmk_tsready) <!--6005561-->
+- [Integrare il server di report di Power BI](/sccm/core/get-started/2020/technical-preview-2001#bkmk_powerbi) <!--3721603-->
+- [Gruppi di log di OneTrace](/sccm/core/get-started/2020/technical-preview-2001#bkmk_onetrace) <!--5559993-->
+- [Miglioramenti al servizio di amministrazione](/sccm/core/get-started/2020/technical-preview-2001#bkmk_rest) <!--5728365-->
+- [Attivare un dispositivo dal sito di amministrazione centrale](/sccm/core/get-started/2020/technical-preview-2001#bkmk_wake) <!--6030715-->
+- [Miglioramenti per lo stato delle sequenze di attività](/sccm/core/get-started/2020/technical-preview-2001#bkmk_tsprogress) <!--5932692, fka 2356386-->
 
 ### <a name="technical-preview-version-1912"></a>Technical Preview versione 1912
 

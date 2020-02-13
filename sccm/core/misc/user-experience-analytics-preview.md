@@ -2,7 +2,7 @@
 title: Anteprima dell'analisi dell'esperienza utente
 titleSuffix: Configuration Manager
 description: Istruzioni per l'anteprima dell'analisi dell'esperienza utente.
-ms.date: 01/29/2020
+ms.date: 02/05/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: b8231ba0b97b9c4f87d35ab753e01644b254df94
-ms.sourcegitcommit: 4d49103722654f12ffe8df4d5848def44b7e1eb3
+ms.openlocfilehash: 87c0cdfbeedc347eedb31c5788cada32b0745e7a
+ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76891662"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035301"
 ---
 # <a name="bkmk_uea"></a> Anteprima privata dell'analisi dell'esperienza utente
 
@@ -52,10 +52,13 @@ Per iniziare a usare l'analisi dell'esperienza utente, verificare i prerequisiti
 La versione di anteprima corrente richiede:
 - Dispositivi registrati in Intune che eseguono Windows 10
 - Le informazioni dettagliate sulle prestazioni di avvio sono disponibili solo per i dispositivi che eseguono la versione 1903 o successiva di Windows 10.
+- Connettività di rete dai dispositivi al cloud pubblico Microsoft. Per altre informazioni, vedere [Endpoint](#bkmk_uea_endpoints).
+- Il [ruolo di amministratore del servizio Intune](https://docs.microsoft.com/intune/fundamentals/role-based-access-control) è necessario per [iniziare a raccogliere i dati](#bkmk_uea_start).
+   - Dopo aver fatto clic su **Avvia** per la raccolta dei dati, altri ruoli di sola lettura possono visualizzare i dati.
 
 I dispositivi Configuration Manager e i dispositivi registrati in Intune con versioni precedenti di Windows 10 non sono attualmente supportati per questa anteprima.
 
-### <a name="start-gathering-data"></a>Iniziare a raccogliere i dati
+### <a name="bkmk_uea_start"></a> Iniziare a raccogliere i dati
 
 1. Passare a `https://devicemanagement.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu`
 1. Fare clic su **Avvia**. Il popolamento dei dati sulle prestazioni di avvio nei dispositivi registrati in Intune può richiedere fino a 24 ore.
@@ -218,7 +221,7 @@ La pagina **Generale** in **Impostazioni** consente di verificare se è stata ab
 
 Per registrare i dispositivi per l'analisi dell'esperienza utente, è necessario inviare i dati funzionali richiesti a Microsoft. Se l'ambiente usa un server proxy, usare queste informazioni per configurare il proxy.
 
-### <a name="endpoints"></a>Endpoint
+### <a name="bkmk_uea_endpoints"></a> Endpoint
 
 Per abilitare la condivisione dei dati funzionali, configurare il server proxy in modo che consenta gli endpoint seguenti:
 
@@ -227,7 +230,7 @@ Per abilitare la condivisione dei dati funzionali, configurare il server proxy i
 
 | Endpoint  | Funzione  |
 |-----------|-----------|
-| `https://v10c.events.data.microsoft.com` | Esperienza utente connessa ed endpoint componente di diagnostica. |
+| `https://*.events.data.microsoft.com` | Usato per inviare i [dati funzionali richiesti](#bkmk_uea_datacollection) all'endpoint di raccolta dati di Intune. |
 | `https://graph.windows.net` | Usato per recuperare automaticamente le impostazioni quando si connette la gerarchia all'analisi dell'esperienza utente (per il ruolo del server di Configuration Manager). Per altre informazioni, vedere [Configurare il proxy per un server del sistema del sito](/sccm/core/plan-design/network/proxy-server-support#configure-the-proxy-for-a-site-system-server). |
 | `https://*.manage.microsoft.com` | Usato per sincronizzare la raccolta di dispositivi e i dispositivi con l'analisi dell'esperienza utente (solo per il ruolo del server di Configuration Manager). Per altre informazioni, vedere [Configurare il proxy per un server del sistema del sito](/sccm/core/plan-design/network/proxy-server-support#configure-the-proxy-for-a-site-system-server). |
 
@@ -612,17 +615,50 @@ catch{
 
 La figura seguente illustra il flusso dei dati funzionali richiesti dai singoli dispositivi attraverso i servizi dati e l'archiviazione temporanea fino al tenant. I dati passano attraverso le pipeline aziendali esistenti senza affidarsi ai dati di diagnostica di Windows.
 
-
 [![Diagramma del flusso di dati dell'esperienza utente](media/uea-dataflow.png)](media/uea-dataflow.png#lightbox)
 
-1. Configurare i criteri di **raccolta dati di Intune** per i dispositivi registrati.
+1. Configurare i criteri di **raccolta dati di Intune** per i dispositivi registrati. Per impostazione predefinita, questi criteri vengono assegnati a "Tutti i dispositivi" quando si **avvia** l'analisi dell'esperienza utente. Tuttavia, è possibile [modificare l'assegnazione](#bkmk_uea_set) in qualsiasi momento per un subset di dispositivi o nessun dispositivo.
 
 2. I dispositivi inviano i dati funzionali richiesti.
 
-    - Per i dispositivi Intune, i dati vengono inviati dall'estensione di gestione di Intune.
+    - Per i dispositivi Intune con i criteri assegnati, i dati vengono inviati dall'estensione di gestione di Intune. Per altre informazioni, vedere [Requisiti](#bkmk_uea_prereq).
     - Per i dispositivi gestiti da Configuration Manager, i dati possono essere propagati a Microsoft Endpoint Management anche attraverso il connettore ConfigMgr. Il connettore ConfigMgr è collegato al cloud. Richiede solo la connessione a un tenant di Intune, non l'attivazione della co-gestione.
 
-3. I dati passano alla console di amministrazione via Microsoft Graph.
+> [!Note]  
+> I dati necessari per calcolare il punteggio di avvio per un dispositivo vengono generati in fase di avvio. A seconda delle impostazioni di risparmio energia e del comportamento dell'utente, potrebbero trascorrere settimane dopo l'assegnazione corretta dei criteri a un dispositivo prima che venga visualizzato il punteggio di avvio nella console di amministrazione.  
+
+3. Il servizio di gestione degli endpoint Microsoft elabora i dati per ogni dispositivo e pubblica i risultati per i singoli dispositivi e per le aggregazioni organizzative nella console di amministrazione usando le API di MS Graph.
+
+La latenza media end-to-end è di circa 12 ore ed è vincolata dal tempo necessario per l'elaborazione giornaliera. Tutte le altre parti del flusso di dati sono quasi in tempo reale.
+
+### <a name="bkmk_uea_datacollection"></a>Raccolta dati
+
+Attualmente, la funzionalità di base di analisi dell'esperienza utente raccoglie le informazioni associate ai record delle prestazioni di avvio. Con l'aggiunta di altre funzionalità nel tempo, i dati raccolti varieranno in base alle esigenze. I punti dati principali attualmente raccolti:
+
+- **id:** ID dispositivo univoco usato da Windows Update
+- **localId:** ID univoco definito localmente per il dispositivo. Questo non è il nome del dispositivo leggibile. Probabilmente uguale al valore archiviato in HKLM\Software\Microsoft\SQMClient\MachineId.
+- **aaddeviceid:** ID dispositivo di Azure Active Directory
+- **orgId:** GUID univoco che rappresenta il tenant di Microsoft O365
+- **authIdEnt**
+- **make:** produttore del dispositivo
+- **model:** modello del dispositivo
+- **deviceClass:** classificazione del dispositivo. Ad esempio, Desktop, Server o Mobile.
+- **Country:** impostazione dell'area del dispositivo
+- **logOnId**
+- **bootId:** ID di avvio del sistema
+- **coreBootTimeInMilliseconds:** tempo per l'avvio core
+- **totalBootTimeInMilliseconds:** tempo di avvio totale
+- **updateTimeInMilliseconds:** tempo per il completamento degli aggiornamenti del sistema operativo
+- **gpLogonDurationInMilliseconds**: tempo per l'elaborazione dei Criteri di gruppo
+- **desktopShownDurationInMilliseconds:** tempo per il caricamento del desktop (explorer.exe)
+- **desktopUsableDurationInMilliseconds:** tempo per rendere utilizzabile il desktop (explorer.exe)
+- **name:** Windows
+- **ver:** versione del sistema operativo corrente.
+- **topProcesses:** elenco dei processi caricati durante l'avvio con il nome, con le statistiche di utilizzo della CPU e i dettagli dell'app (nome, editore, versione). Ad esempio *{\"ProcessName\":\"svchost\",\"CpuUsage\":43,\"ProcessFullPath\":\"C:\\\\Windows\\\\System32\\\\svchost.exe\",\"ProductName\":\"Microsoft® Windows® Operating System\",\"Publisher\":\"Microsoft Corporation\",\"ProductVersion\":\"10.0.18362.1\"}*
+
+> [!Important]  
+> I criteri di gestione dei dati sono descritti nell'[informativa sulla privacy di Microsoft Intune] (https://docs.microsoft.com/legal/intune/microsoft-intune-privacy-statement). I dati dei clienti vengono usati solo per fornire i servizi per i quali si è iscritti. Come descritto durante il processo di onboarding, i punteggi da tutte le organizzazioni registrate vengono anonimizzati e aggregati per mantenere aggiornate le baseline.
+
 
 ### <a name="resources"></a>Risorse
 
@@ -634,4 +670,3 @@ Per altre informazioni sugli aspetti correlati alla privacy, vedere gli articoli
 - [Sicurezza e privacy nei data center di Microsoft Azure](https://azure.microsoft.com/global-infrastructure/)  
 - [Fidati del tuo cloud](https://azure.microsoft.com/overview/trusted-cloud/)  
 - [Centro protezione](https://www.microsoft.com/trustcenter)  
-

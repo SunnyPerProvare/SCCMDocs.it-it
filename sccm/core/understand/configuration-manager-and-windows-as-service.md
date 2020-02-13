@@ -10,12 +10,12 @@ ms.assetid: c8534a1e-57b8-4688-b6e6-299d82cfcec9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f99f29ecb9ab66c4cb762854bebf71fe7e4eb5ad
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: ee26f0ccd0e68a980f2a0f569beb0ef67187d6a7
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792223"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76917539"
 ---
 # <a name="configuration-manager-and-windows-as-a-service"></a>Configuration Manager e Windows as a Service
 
@@ -40,15 +40,15 @@ Configuration Manager offre un controllo completo sugli aggiornamenti delle funz
 
 ## <a name="key-articles-about-adopting-windows-as-a-service"></a>Articoli principali sull'adozione di Windows as a Service
 
-| Articolo        | Descrizione          | 
+| Articolo        | Descrizione          |
 | ------------- |-------------|
 |[Gestire Windows come servizio](/sccm/osd/deploy-use/manage-windows-as-a-service)|Spiega come usare i piani di manutenzione per distribuire gli aggiornamenti delle funzionalità di Windows 10.|
 |[Aggiornare Windows 10 tramite la sequenza di attività](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system)|Dettagli di creazione di una sequenza di attività per aggiornare Windows 10 con elementi consigliati aggiuntivi.|
 |[Distribuzioni in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence)|Le distribuzioni in più fasi automatizzano un'implementazione coordinata e in sequenza di una sequenza di attività in più raccolte.|  
 |[Ottimizzare il recapito degli aggiornamenti di Windows 10](/sccm/sum/deploy-use/optimize-windows-10-update-delivery)|Usare Configuration Manager per gestire il contenuto di aggiornamento per rimanere aggiornati con Windows 10.|
-|[Integrare con Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics)|Preparazione aggiornamenti consente di valutare e analizzare l'idoneità dei dispositivi nell'ambiente per un aggiornamento a Windows 10.| 
+|[Usare Desktop Analytics](/configmgr/desktop-analytics/overview)|Desktop Analytics consente di valutare e analizzare l'idoneità dei dispositivi nell'ambiente per un aggiornamento a Windows 10.|
 |[Integrazione con Windows Update for Business in Windows 10](/sccm/sum/deploy-use/integrate-windows-update-for-business-windows-10)|Spiega come definire e distribuire i criteri di Windows Update per le aziende tramite Configuration Manager.|
-|[Usare la co-gestione con Microsoft Intune e Windows Update per le aziende (facoltativo)](/sccm/comanage/overview)|Offre una panoramica sulla co-gestione| 
+|[Usare la co-gestione con Microsoft Intune e Windows Update per le aziende (facoltativo)](/sccm/comanage/overview)|Offre una panoramica sulla co-gestione|
 
 
 ## <a name="related-articles"></a>Articoli correlati

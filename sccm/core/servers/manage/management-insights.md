@@ -10,12 +10,12 @@ ms.assetid: a79f83be-884c-48e6-94d6-ed0a68c22e2f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 92e6e7bdc4f9686ab2330e93fed91be0091fcce1
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 5f2f7e8c274930d5517ffab1b8d8bb7477127865
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826306"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76917163"
 ---
 # <a name="management-insights-in-configuration-manager"></a>Informazioni dettagliate sulla gestione in Configuration Manager
 
@@ -206,9 +206,7 @@ Informazioni dettagliate per la gestione di Software Center.
 
 Informazioni dettagliate correlate alla distribuzione e alla manutenzione di Windows 10. Il gruppo di informazioni dettagliate sulla gestione di Windows 10 è disponibile solo quando in più della metà dei client è in esecuzione Windows 7, Windows 8 o Windows 8.1.
 
-- **Configura la telemetria di Windows e la chiave ID commerciale**: per usare i dati di Preparazione aggiornamenti, configurare i dispositivi con una chiave ID commerciale e abilitare la raccolta dei dati di diagnostica. Impostare i dispositivi Windows 10 sul livello **Avanzata (con limitazioni)** o superiore. Per altre informazioni, vedere [Configurare i client per segnalare i dati a Windows Analytics](/sccm/core/clients/manage/monitor-windows-analytics#configure-clients-to-report-data-to-windows-analytics).  
-
-- **Connettere Configuration Manager a Preparazione aggiornamenti**: usare Preparazione aggiornamenti per le distribuzioni di Windows 10 prima dell'interruzione del supporto per Windows 7. Per altre informazioni, vedere [Integrare Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics).  
+- **Configurare i dati di diagnostica di Windows e la chiave ID commerciale**: per usare i dati da Desktop Analytics, configurare i dispositivi con una chiave ID commerciale e abilitare la raccolta dei dati di diagnostica. Impostare i dispositivi Windows 10 sul livello **Avanzata (con limitazioni)** o superiore. Per altre informazioni, vedere [Abilitare la condivisione dei dati per Desktop Analytics](/configmgr/desktop-analytics/enable-data-sharing).
 
 #### <a name="windows-10-management-insights-rules"></a>Regole di Informazioni dettagliate sulla gestione di Windows 10
 

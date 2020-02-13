@@ -2,7 +2,7 @@
 title: Desktop Analytics
 titleSuffix: Configuration Manager
 description: Panoramica del servizio Desktop Analytics integrato con Configuration Manager.
-ms.date: 12/03/2019
+ms.date: 01/31/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: overview
@@ -10,12 +10,12 @@ ms.assetid: 38b2bed2-20dd-4ce1-abc0-219343d2c4b8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 570ce9983740656304827c941972544efac95f89
-ms.sourcegitcommit: 87a051434ddc9510d9e790814e76050362d6c0ba
+ms.openlocfilehash: 831704f59f5533de23ca0594cb991b50aa41b913
+ms.sourcegitcommit: 36920d640a322ed44e34fb5bbc5027c66633bd72
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256428"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76975788"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Desktop Analytics?
 
@@ -36,11 +36,9 @@ Usare Desktop Analytics con Configuration Manager per eseguire le operazioni seg
 ![Screenshot della home page di Desktop Analytics nel portale di Azure](media/portal-home.png)
 
 > [!Note]  
-> Desktop Analytics è l'evoluzione di Windows Analytics. Il servizio *Windows Analytics* include Preparazione aggiornamenti, Conformità aggiornamenti e Integrità dispositivi.
+> Desktop Analytics è un successore di Windows Analytics, che è stato ritirato il 31 gennaio 2020.
 >
-> Tutte queste funzionalità vengono combinate nel servizio *Desktop Analytics*. Desktop Analytics è ancora più strettamente integrato con Configuration Manager.
-
-
+> Le funzionalità di Windows Analytics sono combinate nel servizio Desktop Analytics. Desktop Analytics è anche ancora più strettamente integrato in Configuration Manager. Per altre informazioni, vedere [Domande frequenti per i clienti di Windows Analytics](/configmgr/desktop-analytics/faq#existing-windows-analytics-customers).
 
 ## <a name="benefits"></a>Vantaggi
 
@@ -112,11 +110,9 @@ Per usare Desktop Analytics, verificare che l'ambiente soddisfi i prerequisiti s
 
 ### <a name="licensing-and-costs"></a>Licenze e costi
 
-I dispositivi registrati in Desktop Analytics possono essere usati solo dagli utenti che hanno una licenza per i prodotti seguenti:
+I dispositivi registrati in Desktop Analytics necessitano di una licenza di Configuration Manager valida. Per altre informazioni, vedere [Gestione delle licenze di Configuration Manager](/configmgr/core/understand/product-and-licensing-faq).
 
-- Configuration Manager. Per altre informazioni, vedere [Gestione delle licenze di Configuration Manager](/configmgr/core/understand/product-and-licensing-faq)
-
-e 
+Per gli utenti del dispositivo è necessaria una delle licenze seguenti:
 
 - Windows 10 Enterprise E3 o E5 (incluso in Microsoft 365 F1, E3 o E5)
 
@@ -124,7 +120,7 @@ e
 
 - Accesso a Desktop virtuale Windows E3 o E5  
 
-Oltre al costo di queste sottoscrizioni delle licenze, non sono previsti costi aggiuntivi per l'uso di Desktop Analytics con Azure Log Analytics. I tipi di dati inseriti da Desktop Analytics non sono soggetti ai costi di inserimento dati e conservazione di Log Analytics. Trattandosi di tipi di dati non fatturabili, questi dati non sono soggetti al limite di inserimento dati giornaliero di Log Analytics. Altre informazioni sull'[utilizzo e i costi di Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage).
+Oltre al costo di queste sottoscrizioni delle licenze, non sono previsti costi aggiuntivi per l'uso di Desktop Analytics con Azure Log Analytics. I tipi di dati inseriti da Desktop Analytics non sono soggetti ai costi di inserimento dati e conservazione di Log Analytics. Trattandosi di tipi di dati non fatturabili, questi dati non sono soggetti al limite di inserimento dati giornaliero di Log Analytics. Per altre informazioni, vedere [Utilizzo e costi di Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage).
 
 
 ## <a name="next-steps"></a>Passaggi successivi

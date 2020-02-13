@@ -1,7 +1,7 @@
 ---
 title: Dati di diagnostica e utilizzo per la versione 1910
 titleSuffix: Configuration Manager
-description: Informazioni sui livelli dei dati di diagnostica e utilizzo raccolti nella versione 1910.
+description: Informazioni sui dati specifici raccolti da Configuration Manager a ogni livello nella versione 1910.
 ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,31 +10,25 @@ ms.assetid: b3ce6b9a-7d54-4374-9b7a-f017f872bd6f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ffe0a51e2f02a09a14c06f533e88e63a48006ec7
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 5c5ddc6926561960863d687eede99c54cd932a67
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034833"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76917317"
 ---
-# <a name="levels-of-diagnostic-usage-data-collection-for-version-1910"></a>Livelli di raccolta dati di diagnostica e utilizzo per la versione 1910
+# <a name="diagnostic-and-usage-data-for-version-1910"></a>Dati di diagnostica e utilizzo per la versione 1910
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-Configuration Manager versione 1910 raccoglie tre livelli di dati di diagnostica e utilizzo: **Di base**, **Avanzato** e **Completo**. Per impostazione predefinita, per questa funzionalità è impostato il livello avanzato. Le sezioni seguenti forniscono ulteriori dettagli sui dati raccolti in ogni livello.
+Le sezioni seguenti forniscono ulteriori dettagli sui dati raccolti in ogni livello. Per altre informazioni sui livelli e su come modificarli, vedere [Livelli dei dati di diagnostica e utilizzo](/configmgr/core/plan-design/diagnostics/levels-overview).
 
 Le modifiche rispetto alle versioni precedenti sono contrassegnate da ***[Nuovo]***, ***[Aggiornato]***, ***[Rimosso]*** o ***[Spostato]***.
 
 > [!IMPORTANT]
 > Configuration Manager non raccoglie codici del sito, nomi di siti, indirizzi IP, nomi utente, nomi di computer, indirizzi fisici o indirizzi di posta elettronica per i livelli di base e avanzato. Qualsiasi raccolta di queste informazioni al livello Completo non è intenzionale. Tali informazioni sono infatti potenzialmente incluse nelle informazioni diagnostiche avanzate quali i file di log o gli snapshot di memoria. Le informazioni eventualmente raccolte non vengono usate da Microsoft per identificare l'utente, contattare l'utente o per fini pubblicitari.
 
-## <a name="bkmk_change"></a> Come cambiare il livello
-
-Per modificare il livello di raccolta dati, è necessario disporre di autorizzazioni **Modifica** per la classe oggetto **Site**. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Configurazione del sito** e selezionare **Siti**. Selezionare **Impostazioni gerarchia** nella barra multifunzione, quindi scegliere il livello di dati in Impostazioni per dati di utilizzo e di diagnostica.  
-
 ## <a name="bkmk_level1"></a> Livello 1 - Di base
-
-Il livello Di base include i dati sulla gerarchia. È necessario per migliorare l'esperienza di installazione o aggiornamento. Questi dati consentono inoltre di determinare gli aggiornamenti di Configuration Manager applicabili per la gerarchia.
 
 Per Configuration Manager versione 1910, questo livello include i dati seguenti:
 
@@ -133,10 +127,6 @@ Per Configuration Manager versione 1910, questo livello include i dati seguenti:
 - ***[Nuovo]*** Numero di installazioni Microsoft Edge
 
 ## <a name="bkmk_level2"></a> Livello 2 - Avanzato
-
-Il livello avanzato è quello predefinito dopo l'installazione. Questo livello include dati raccolti nel livello Di base e dati specifici delle funzionalità. Mostra la frequenza e la durata di utilizzo delle diverse funzionalità. Include anche i dati delle impostazioni client di Configuration Manager: nome del componente, stato e alcune impostazioni come intervalli di polling. Le informazioni sugli aggiornamenti software sono basilari circa l'utilizzo, non sono presenti dati relativi alla conformità dell'aggiornamento.
-
-Microsoft consiglia di adottare questo livello, perché contiene la quantità minima di dati considerata necessaria per migliorare prodotti e servizi. Con questo livello non vengono raccolti i nomi degli oggetti (siti, utenti, computer o oggetti), dettagli sugli oggetti correlati alla sicurezza o informazioni sulle vulnerabilità come il numero di sistemi che richiedono aggiornamenti software.
 
 Per Configuration Manager versione 1910, questo livello include i dati seguenti:
 
@@ -561,8 +551,6 @@ Per Configuration Manager versione 1910, questo livello include i dati seguenti:
 - ***[New]*** Uso dello strumento di migrazione di Azure
 
 ## <a name="bkmk_level3"></a> Livello 3 - Completo
-
-Il livello completo include tutti i dati dei livelli di base e avanzato. Include inoltre informazioni aggiuntive su Endpoint Protection, le percentuali di conformità degli aggiornamenti e informazioni sugli aggiornamenti software. Questo livello può includere anche informazioni di diagnostica avanzate, ad esempio file di sistema e snapshot di memoria. Questi dati avanzati possono contenere informazioni personali presenti in memoria o file di registro esistenti al momento dell'acquisizione.
 
 Per Configuration Manager versione 1910, questo livello include i dati seguenti:
 

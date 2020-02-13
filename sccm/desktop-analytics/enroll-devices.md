@@ -10,12 +10,12 @@ ms.assetid: 2ea18d09-c957-47f7-8e54-c6f2b3c74347
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6f0b83d695ff3a80bd41973847ca91b654472a77
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 415bf6d6dcc1194081bd73403b2eec1e2522930e
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791569"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76916714"
 ---
 # <a name="how-to-enroll-devices-in-desktop-analytics"></a>Come registrare i dispositivi in Desktop Analytics
 
@@ -108,7 +108,7 @@ Installare il rollup mensile di ottobre 2018, [KB4462923](https://support.micros
 Il servizio Desktop Analytics non ha agenti da installare. Per la registrazione del dispositivo è necessario configurare le impostazioni nei dispositivi che si vuole monitorare. Queste impostazioni controllano l'istanza di Desktop Analytics a cui il dispositivo deve inviare i dati e altre opzioni di configurazione.
 
 > [!Note]  
-> Se si sta già usando Windows Analytics, usare la stessa area di lavoro per Desktop Analytics. È necessario registrare nuovamente in Desktop Analytics i dispositivi che sono stati precedentemente registrati in Windows Analytics.
+> Se in precedenza si usava Windows Analytics, usare la stessa area di lavoro per Desktop Analytics. È necessario registrare nuovamente in Desktop Analytics i dispositivi che sono stati precedentemente registrati in Windows Analytics.
 >
 > È possibile avere solo un'area di lavoro di Desktop Analytics per ogni tenant di Azure AD. I dispositivi possono inviare i dati di diagnostica solo a un'area di lavoro.  
 
@@ -183,8 +183,6 @@ In generale, usare le raccolte di Configuration Manager per le impostazioni e la
 Configuration Manager configura le impostazioni di Windows solo se un valore non esiste già. Se è necessario configurare impostazioni diverse per un unico gruppo di dispositivi, è possibile usare i [criteri di gruppo](#windows-settings). 
 
 Visualizzare queste impostazioni nell'editor dei criteri di gruppo nel percorso seguente: **Configurazione computer** > **Modelli amministrativi** > **Componenti di Windows** > **Raccolta dati e versioni di anteprima**. Le impostazioni di destinazione dei criteri di gruppo hanno la precedenza sulle impostazioni di Configuration Manager.
-
-Se si hanno come destinazione i client Configuration Manager con le impostazioni di Windows Analytics e di Desktop Analytics, le impostazioni di Desktop Analytics hanno la precedenza.
 
 Quando si configura il livello dei dati di diagnostica, è necessario impostare il limite superiore per il dispositivo. Per impostazione predefinita, in Windows 10 versione 1803 e successive gli utenti possono scegliere di impostare un livello inferiore. È possibile controllare questo comportamento usando l'impostazione dei criteri di gruppo, **Configurare l'interfaccia utente dell'impostazione del consenso esplicito per la telemetria**. Per altre informazioni, vedere [Configure Windows diagnostic data in your organization](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enterprise-management) (Configurare i dati di diagnostica di Windows nell'organizzazione).
 

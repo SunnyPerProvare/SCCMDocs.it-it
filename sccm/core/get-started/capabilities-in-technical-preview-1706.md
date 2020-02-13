@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 047bf97b538eb33e6f6210a524f63eb306d641f9
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 6c0cd0da1c52a003f7cee4a9fa9ae5bbd3690991
+ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034992"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77035182"
 ---
 # <a name="capabilities-in-technical-preview-1706-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1706 per Configuration Manager
 
@@ -252,18 +252,18 @@ Questa versione di anteprima introduce diversi miglioramenti alle [funzionalità
 
 ## <a name="changes-to-the-azure-services-wizard-to-support-upgrade-readiness"></a>Modifiche alla procedura guidata dei servizi di Azure per il supporto della Preparazione aggiornamenti
 <!-- 1353331 -->
-A partire da questa versione, usare la procedura guidata per i servizi di Azure per configurare una connessione da Configuration Manager a [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics). L'uso della procedura guidata semplifica la configurazione del connettore tramite una procedura guidata comune per i servizi di Azure correlati.   
+A partire da questa versione, usare la procedura guidata per i servizi di Azure per configurare una connessione da Configuration Manager a Preparazione aggiornamenti. L'uso della procedura guidata semplifica la configurazione del connettore tramite una procedura guidata comune per i servizi di Azure correlati.   
 
 Anche se il metodo per configurare la connessione è stato modificato, i prerequisiti per la connessione e le modalità d'uso di Preparazione aggiornamenti restano invariati.   
 
 ### <a name="prerequisites-for-upgrade-readiness"></a>Prerequisiti per Preparazione aggiornamenti
-I prerequisiti per la [connessione a Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade-readiness#connect-configuration-manager-to-upgrade-readiness) sono identici a quelli dettagliate per il Current Branch di Configuration Manager. Ne riportiamo un pratico riepilogo:  
+I prerequisiti per la connessione a Preparazione aggiornamenti sono identici a quelli dettagliati per Configuration Manager Current Branch. Ne riportiamo un pratico riepilogo:  
 
 **Prerequisiti**
 - Per l'aggiunta della connessione, è necessario che nell'ambiente di Configuration Manager sia stato configurato un [punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point) in [modalità online](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_modes). Quando si aggiunge la connessione all'ambiente, viene installato anche Microsoft Monitoring Agent nel computer che esegue questo ruolo del sistema del sito.
 - Registrare Configuration Manager come strumento di gestione "Applicazione Web e/o API Web" e ottenere l'[ID client della registrazione](https://azure.microsoft.com/documentation/articles/active-directory-integrating-applications/).
 - Creare una chiave client per lo strumento di gestione registrato in Azure Active Directory.
-- Nel portale di gestione di Azure specificare l'autorizzazione di accesso OMS per l'app Web registrata, come descritto in [Fornire a Configuration Manager le autorizzazioni per accedere a OMS](https://azure.microsoft.com/documentation/articles/log-analytics-sccm/#provide-configuration-manager-with-permissions-to-oms).
+- Nel portale di Azure fornire all'app Web registrata l'autorizzazione per accedere a OMS.
 
 > [!IMPORTANT]       
 > Quando si configura l'autorizzazione per accedere a OMS, assicurarsi di scegliere il ruolo **Collaboratore** e di assegnare a tale ruolo le autorizzazioni per il gruppo di risorse dell'app registrata.
@@ -463,7 +463,7 @@ Quando si aggiunge un ruolo di punto di registrazione certificato in Configurati
 ## <a name="cisco-ipsec-support-for-ios-vpn-profiles"></a>Supporto Cisco (IPSec) per i profili VPN iOS
 <!-- 1321367 -->
 
-È possibile creare un profilo VPN iOS con Cisco (IPSec) come tipo di connessione. Per altre informazioni, vedere [Creare profili VPN](https://docs.microsoft.com/sccm/mdm/deploy-use/create-vpn-profiles#create-vpn-profiles).
+È possibile creare un profilo VPN iOS con Cisco (IPSec) come tipo di connessione. Per altre informazioni, vedere [Creare profili VPN](https://docs.microsoft.com/configmgr/protect/deploy-use/create-vpn-profiles#create-a-vpn-profile).
 
 
 ## <a name="new-windows-configuration-item-settings"></a>Nuove impostazioni degli elementi di configurazione di Windows

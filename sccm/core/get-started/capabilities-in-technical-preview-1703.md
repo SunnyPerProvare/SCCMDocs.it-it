@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7c04fa33a0624854e4e05bd3e552c2edb2163195
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 4f3f0994ee9299a23dbe86a246fcc4f93894de67
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76033790"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76916921"
 ---
 # <a name="capabilities-in-technical-preview-1703-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1703 per Configuration Manager
 
@@ -137,24 +137,20 @@ Questa versione introduce la possibilità di espandere e comprimere i gruppi di 
 
 
 ## <a name="client-settings-to-configure-windows-analytics-for-upgrade-readiness"></a>Impostazioni client per configurare Windows Analytics per Upgrade Readiness
-A partire da questa versione, è possibile usare le impostazioni client dei dispositivi per semplificare la configurazione della telemetria di Windows necessaria per usare soluzioni [Windows Analytics](https://www.microsoft.com/WindowsForBusiness/windows-analytics) come [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics) con Configuration Manager. Configuration Manager è in grado di recuperare da Windows Analytics dati che possono fornire informazioni utili sullo stato corrente dell'ambiente in base ai dati di telemetria di Windows riportati dai computer client. I dati di telemetria di Windows vengono inoltrati dal computer client al servizio di telemetria di Windows. I dati rilevanti vengono quindi trasferiti alle soluzioni Windows Analytics ospitate in una delle aree di lavoro OMS dell'organizzazione. Upgrade Readiness è una soluzione Windows Analytics che consente di definire le priorità per prendere decisioni oculate in merito agli aggiornamenti di Windows per i dispositivi gestiti.
-
-Per informazioni sulle impostazioni di telemetria di Windows, vedere [Configurare la telemetria di Windows nell'organizzazione](https://technet.microsoft.com/itpro/windows/manage/configure-windows-telemetry-in-your-organization).
+A partire da questa versione, è possibile usare le impostazioni client dei dispositivi per semplificare la configurazione dei dati di diagnostica di Windows necessari per usare soluzioni Windows Analytics come Preparazione aggiornamenti con Configuration Manager. Configuration Manager è in grado di recuperare da Windows Analytics dati che possono fornire informazioni dettagliate utili sullo stato corrente dell'ambiente in base ai dati di diagnostica di Windows riportati dai computer client. I dati di diagnostica di Windows vengono inoltrati dai computer client al servizio di diagnostica di Windows. I dati rilevanti vengono quindi trasferiti alle soluzioni Windows Analytics ospitate in una delle aree di lavoro OMS dell'organizzazione. Upgrade Readiness è una soluzione Windows Analytics che consente di definire le priorità per prendere decisioni oculate in merito agli aggiornamenti di Windows per i dispositivi gestiti.
 
 ### <a name="prerequisites"></a>Prerequisiti
-- È necessario aver configurato il sito per l'uso del servizio cloud Upgrade Readiness. Per altre informazioni, vedere [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics)
+- È necessario aver configurato il sito per l'uso del servizio cloud Upgrade Readiness.
 
 ### <a name="configure-windows-analytics-client-settings"></a>Configurare le impostazioni client di Windows Analytics
 Per configurare Windows Analytics, nella console di Configuration Manager passare ad **Amministrazione** > **Impostazioni client**, fare doppio clic su **Create Custom Device Client Settings** (Crea impostazioni client del dispositivo personalizzate), quindi selezionare **Windows Analytics**.  
 
 Dopo l'accesso alla scheda delle impostazioni di **Windows Analytics**, configurare quanto segue:
 - **ID commerciale**  
-L'ID commerciale consente di associare le informazioni dai dispositivi gestiti all'area di lavoro OMS che ospita i dati Windows Analytics dell'organizzazione. Se è già stata configurata una chiave ID commerciale per l'uso con Upgrade Readiness, usare tale ID. Se non è ancora disponibile una chiave ID commerciale, vedere [Generate your commercial ID key]( https://technet.microsoft.com /itpro/windows/deploy/upgrade-readiness-get-started#generate-your-commercial-id-key) (Generare l'ID commerciale).
+L'ID commerciale consente di associare le informazioni dai dispositivi gestiti all'area di lavoro OMS che ospita i dati Windows Analytics dell'organizzazione. Se è già stata configurata una chiave ID commerciale per l'uso con Upgrade Readiness, usare tale ID. Se non è ancora disponibile una chiave ID commerciale, generarla.
 
-- Impostare un **livello di telemetria per i dispositivi Windows 10**   
-Per informazioni sulle informazioni raccolte da ogni livello di telemetria di Windows 10, vedere [Configure Windows telemetry in your organization]( https://technet.microsoft.com/itpro/windows/manage/configure-windows-telemetry-in-your-organization#telemetry-levels) (Configurare i livelli di telemetria dell'organizzazione).
+- Impostare un **livello di dati di diagnostica per i dispositivi Windows 10**
 
-- **Acconsentire esplicitamente alla raccolta di dati commerciali nei dispositivi Windows 7, 8 e 8.1**   
-Per informazioni sui dati raccolti da questi sistemi operativi dopo il consenso esplicito, scaricare il file PDF sui [campi e gli eventi di telemetria per la valutazione di Windows 7, Windows 8 e Windows 8.1](https://go.microsoft.com/fwlink/?LinkID=822965) da Microsoft.
+- Scegliere di **acconsentire esplicitamente alla raccolta di dati commerciali nei dispositivi Windows 7, 8 e 8.1**   
 
-- **Configurare la raccolta dati di Internet Explorer** Nei dispositivi che eseguono Windows 8.1 o versioni precedenti, la raccolta dati di Internet Explorer consente ad Upgrade Readiness di rilevare incompatibilità di app Web che potrebbero impedire un aggiornamento semplice e rapido a Windows 10. La raccolta dati di Internet Explorer può essere abilitata per ogni area Internet. Per altre informazioni sulle aree Internet, vedere [About URL Security Zones](https://msdn.microsoft.com/library/ms537183(v=vs.85).aspx) (Informazioni sulle aree di sicurezza degli URL).
+- **Configurare la raccolta dati di Internet Explorer** Nei dispositivi che eseguono Windows 8.1 o versioni precedenti, la raccolta dati di Internet Explorer consente ad Upgrade Readiness di rilevare incompatibilità di app Web che potrebbero impedire un aggiornamento semplice e rapido a Windows 10. La raccolta dati di Internet Explorer può essere abilitata per ogni area Internet.

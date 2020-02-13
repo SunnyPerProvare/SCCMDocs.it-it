@@ -10,12 +10,12 @@ ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c8209db04dfb9b00bc86a93544d6ca6e23b02f53
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e85fe1e91ed046b08e2e879d17143fc700e0c931
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816055"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76916893"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -983,4 +983,9 @@ Se questa opzione è impostata su **Sì**, gli utenti possono identificare i pro
 
 ## <a name="windows-analytics"></a>Windows Analytics
 
-Per altre informazioni su queste impostazioni, vedere [Configurare i client per segnalare i dati a Windows Analytics](/sccm/core/clients/manage/monitor-windows-analytics#configure-clients-to-report-data-to-windows-analytics).
+> [!Important]  
+> Il servizio Windows Analytics è stato ritirato il 31 gennaio 2020.
+>
+> [Desktop Analytics ](/sccm/desktop-analytics/overview) è l'evoluzione di Windows Analytics. I clienti esistenti di Windows Analytics possono [eseguire la migrazione a Desktop Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
+>
+> Per altre informazioni, vedere [KB 4521815: Ritiro di Windows Analytics il 31 gennaio 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement).

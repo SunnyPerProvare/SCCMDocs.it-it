@@ -10,12 +10,12 @@ ms.assetid: 63e08f3f-9558-4ed7-9bf3-3a185ddaac5c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d45a1e4fb29393a03836b8bef5b43952fcbfd2af
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 2626f93f656e1f43813840600a000071ff56211e
+ms.sourcegitcommit: 437da062069e48d350694500d768e1544e510257
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034623"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76967189"
 ---
 # <a name="troubleshoot-desktop-analytics"></a>Risolvere i problemi di Desktop Analytics
 
@@ -69,7 +69,9 @@ Desktop Analytics aggiunge le applicazioni seguenti ad Azure AD:
 
 - **Microservizio Configuration Manager**: consente di connettere Configuration Manager con Desktop Analytics. Questa app non presenta requisiti di accesso.  
 
-- **MALogAnalyticsReader**: recupera i gruppi e i dispositivi OMS creati in Log Analytics. Per altre informazioni, vedere [Ruolo applicazione MALogAnalyticsReader](#bkmk_MALogAnalyticsReader).  
+- **MALogAnalyticsReader**: consente di monitorare l'area di lavoro di Azure Log Analytics per assicurarsi che lo snapshot giornaliero venga copiato correttamente. Per altre informazioni, vedere [Ruolo applicazione MALogAnalyticsReader](#bkmk_MALogAnalyticsReader).  
+
+- **Amministratore client Office365**: consente a Configuration Manager il recupero delle informazioni sul piano di distribuzione e dello stato di idoneità dei dispositivi Desktop Analytics. 
 
 Se è necessario effettuare il provisioning di queste app dopo aver completato l'installazione, andare al riquadro **Servizi connessi**. Selezionare **Configurare l'accesso a utenti e applicazioni** ed effettuare il provisioning delle app.  
 

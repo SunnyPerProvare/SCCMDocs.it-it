@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 47941e43a2e2125aa466ddbf16df975ae0d271e8
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: efacf9ebd2c5e1680f7b947bd04b4e1ef584b346
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034909"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76917400"
 ---
 # <a name="what39s-new-in-version-1710-of-configuration-manager"></a>Novità della versione 1710 di Configuration Manager
 
@@ -128,12 +128,10 @@ A partire da questa versione, la gestione degli aggiornamenti dei driver di Surf
 
 ## <a name="reporting"></a>Reporting
 
-### <a name="limit-windows-10-enhanced-telemetry-to-only-send-data-relevant-to-windows-analytics-device-health"></a>Limitare la telemetria avanzata di Windows 10 al solo invio dei dati pertinenti a Integrità del dispositivo di Windows Analytics
+### <a name="limit-windows-10-enhanced-data-to-only-send-data-relevant-to-windows-analytics-device-health"></a>Limitare i dati avanzati di Windows 10 al solo invio dei dati pertinenti per Integrità dispositivi di Windows Analytics
 <!-- 1356148 -->
 
-È ora possibile impostare il livello di raccolta dei dati di telemetria di Windows 10 su **Enhanced (Limited)** (Avanzato - Limitato). Questa impostazione consente di ottenere informazioni utili sui dispositivi presenti nell'ambiente in uso senza che i dispositivi segnalino tutti i dati nel livello di telemetria **Avanzato** con Windows 10 1709 o versione successiva.
-
-Per altre informazioni, vedere [Come configurare le impostazioni client](/sccm/core/clients/deploy/configure-client-settings).
+È ora possibile impostare il livello di raccolta dei dati di diagnostica di Windows 10 su **Avanzata (con limitazioni)** . Questa impostazione consente di ottenere informazioni utili sui dispositivi presenti nell'ambiente in uso senza che i dispositivi segnalino tutti i dati nel livello **avanzato** con Windows 10 1709 o versione successiva.
 
 <!-- ## Inventory  -->
 

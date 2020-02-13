@@ -10,12 +10,12 @@ ms.assetid: 6e7d2850-b0af-497e-bbc1-bfc2a7420a7a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 115cb317e7e84798eb3f0387b6b0c224df63c4b8
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e83ac7bc05237618a9f013f88cbdfa91379651b3
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791778"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76916700"
 ---
 # <a name="how-to-close-your-account"></a>Come chiudere l'account
 
@@ -58,7 +58,7 @@ Un amministratore globale può riattivare l'account entro 90 giorni. Per riprist
 I dati di Desktop Analytics diventano obsoleti in base ai criteri di conservazione dei dati per l'area di lavoro. È possibile continuare a usare qualsiasi altra soluzione nella stessa area di lavoro.
 
 > [!Important]  
-> Se si usa l'area di lavoro Log Analytics con altre soluzioni come Windows Analytics, non eliminare l'area di lavoro.
+> Se si usa l'area di lavoro Log Analytics con altre soluzioni, non eliminare l'area di lavoro.
 
 ## <a name="remove-user-and-app-access"></a>Rimuovere l'accesso di utenti e app
 

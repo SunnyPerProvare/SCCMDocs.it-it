@@ -10,12 +10,12 @@ ms.assetid: 7ff8d453-f24d-4230-a116-585190a663fc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 90a77bb9901f3c8516e2dfd3dfdcfe475b62c43b
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 9bacb406d9deddd32784a0f51af8991bac6b1264
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791377"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76916548"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Come configurare Desktop Analytics
 
@@ -52,7 +52,7 @@ Usare questa procedura per accedere a Desktop Analytics e configurarlo nell'abbo
         > [!Note]  
         > È possibile avere solo un'area di lavoro di Desktop Analytics per ogni tenant di Azure AD. I dispositivi possono inviare i dati di diagnostica solo a un'area di lavoro.  
 
-        Se si sta già usando Windows Analytics, selezionare la stessa area di lavoro. È necessario registrare nuovamente in Desktop Analytics i dispositivi che sono stati precedentemente registrati in Windows Analytics.
+        Se in precedenza è stato usato Windows Analytics, selezionare la stessa area di lavoro. È necessario registrare nuovamente in Desktop Analytics i dispositivi che sono stati precedentemente registrati in Windows Analytics.
 
         Per eseguire la migrazione degli input dall'area di lavoro di Windows Analytics selezionata, impostare **Si desidera visualizzare gli input di Windows Analytics?** su **Sì**. Se non si vuole eseguire la migrazione, impostare questa impostazione su **No**. Per altre informazioni, vedere le domande frequenti per [Clienti esistenti di Windows Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
 

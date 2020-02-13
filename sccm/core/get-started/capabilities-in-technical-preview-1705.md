@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: ff14adadca4024cf480bdf2a138c8781697d1469
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c60bb35cb8cf760bb1f289ed53a65aca456c3263
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75804844"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76916923"
 ---
 # <a name="capabilities-in-technical-preview-1705-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1705 per Configuration Manager
 
@@ -155,7 +155,7 @@ Provare a completare le attività seguenti e quindi inviare **Feedback** dalla s
 ## <a name="configure-and-deploy-windows-defender-application-guard-policies"></a>Configurare e distribuire i criteri di Windows Defender Application Guard
 
 [Windows Defender Application Guard](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) è una nuova funzionalità di Windows che consente di proteggere gli utenti con l'apertura di siti Web non attendibili in un contenitore protetto isolato non è accessibile da altre parti del sistema operativo. In questa versione Technical Preview, è stato aggiunto il supporto per configurare questa funzionalità usando le impostazioni di conformità di Configuration Manager configurate dall'utente e quindi distribuite in una raccolta.
-Questa funzionalità verrà rilasciata in anteprima per la versione a 64 bit di Windows 10 Creators Update (nome in codice: RS2). Per provare ora questa funzionalità è necessario usare una versione di anteprima dell'aggiornamento.
+Questa funzionalità verrà rilasciata in anteprima per la versione a 64 bit di Windows 10 Creators Update. Per provare ora questa funzionalità è necessario usare una versione di anteprima dell'aggiornamento.
 
 
 ### <a name="before-you-start"></a>Prima di iniziare
@@ -230,7 +230,7 @@ In questo modo il sito di Configuration Manager viene connesso ad Azure AD; si t
 5. Nella pagina **App** della procedura guidata selezionare l'ambiente di Azure dall'elenco, quindi fare clic su **Sfoglia** per selezionare le applicazioni server e client da usare per configurare il servizio di Azure:
    - Nella finestra **Server App** (App server) selezionare l'app server che si vuole usare e quindi fare clic su **OK**. Le app server sono app Web di Azure che contengono le configurazioni per l'account Azure, inclusi ID del tenant, ID client e una chiave privata per i client. Se non è disponibile un'app server, usare una delle opzioni seguenti:
        - **Crea**: per creare una nuova app server, fare clic su **Crea**. Specificare un nome descrittivo per l'app e il tenant. Quindi, dopo avere effettuato l'accesso ad Azure, Configuration Manager crea l'app Web in Azure, inclusi l'ID Client e la chiave privata da usare con l'app Web. In un secondo momento, è possibile visualizzare queste informazioni dal portale di Azure.
-       - **Importa**: per usare un'app Web già esistente nella sottoscrizione di Azure, fare clic su **Importa**. Specificare un nome descrittivo per l'app e il tenant, quindi specificare ID tenant, ID client e chiave privata per l'app Web di Azure che si vuole rendere disponibile per l'uso con Configuration Manager. Dopo aver verificato le informazioni, fare clic su **OK** per continuare. Al momento questo opzione non è disponibile in questa versione Technical Preview.
+       - **Importa**: per usare un'app Web già esistente nella sottoscrizione di Azure, fare clic su **Importa**. Specificare un nome descrittivo per l'app e il tenant, quindi specificare ID tenant, ID client e chiave privata per l'app Web di Azure che si vuole rendere disponibile per l'uso con Configuration Manager. Dopo aver verificato le informazioni, fare clic su **OK** per continuare. Questa opzione non è attualmente disponibile in questa versione Technical Preview.
    - Ripetere la procedura per l'applicazione client.
 
    È necessario concedere all'applicazione l'autorizzazione *Lettura dati directory* quando si importa l'applicazione, per impostare le autorizzazioni corrette nel portale. Se si usa la creazione dell'applicazione, le autorizzazioni vengono create automaticamente con l'applicazione, ma è necessario concedere il consenso all'applicazione nel portale di Azure.
@@ -262,7 +262,7 @@ A partire dalla versione Technical Preview 1705, la **Procedura guidata Servizi 
 
 -   Viene usata per configurare i servizi cloud per Configuration Manager, ad esempio OMS, Windows Store per le aziende (WSfB) e Azure Active Directory (Azure AD).  
 
--   Configuration Manager si connette a OMS per funzionalità quali [Log Analytics](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) o [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics).
+-   Configuration Manager si connette a OMS per funzionalità quali Log Analytics o Preparazione aggiornamenti.
 
 ### <a name="prerequisites-for-the-oms-connector"></a>Prerequisiti per il connettore OMS
 I prerequisiti per configurare una connessione a OMS sono identici a quelli [indicati per la versione Current Branch 1702](/sccm/core/clients/manage/sync-data-log-analytics). Tali informazioni viene ripetute di seguito:  

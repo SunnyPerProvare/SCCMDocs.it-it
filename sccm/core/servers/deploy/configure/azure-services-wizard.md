@@ -1,7 +1,7 @@
 ---
 title: Configurare i servizi di Azure
 titleSuffix: Configuration Manager
-description: Connettere l'ambiente di Configuration Manager con i servizi di Azure per la gestione del cloud, Preparazione aggiornamenti, Microsoft Store per le aziende e Log Analytics.
+description: Connettere l'ambiente di Configuration Manager con i servizi di Azure per la gestione del cloud, Microsoft Store per le aziende e Log Analytics.
 ms.date: 07/31/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -10,12 +10,12 @@ ms.assetid: a26a653e-17aa-43eb-ab36-0e36c7d29f49
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: bbd6809b29a36f8de7999780d5293a6544ad5b02
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 621c4e443a3b9a16250b7992546ed8d204860f5e
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799061"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76917343"
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurare i servizi di Azure da usare con Configuration Manager
 
@@ -45,8 +45,6 @@ Configurare i seguenti servizi di Azure tramite questa procedura guidata:
     > [!Note]  
     > Questo articolo si riferisce al *connettore Log Analytics*, che era in precedenza denominato *OMS Connector*. Non esistono differenze funzionali. Per altre informazioni, vedere [Gestione di Azure - Monitoraggio](https://docs.microsoft.com/azure/azure-monitor/terminology#log-analytics).  
 
-- **Connettore di Preparazione aggiornamenti**: connettersi a [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics) di Windows Analytics. Consente di visualizzare i dati di compatibilità degli aggiornamenti del client.  
-
 - **Microsoft Store per le aziende**: connettersi a [Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business). Consente di ottenere da Microsoft Store le app distribuibili con Configuration Manager.  
 
 ### <a name="service-details"></a>Dettagli dei servizi
@@ -67,7 +65,6 @@ La tabella seguente elenca informazioni dettagliate sui singoli servizi.
 |---------|---------|---------|---------|---------|---------|
 |Gestione cloud con<br>individuazione di Azure AD | Più elementi | Pubblico, Privato | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | Importa, Crea |
 |Connettore Log Analytics | Uno | Pubblico, Privato | ![Supportato](media/green_check.png) | ![Non supportato](media/Red_X.png) | Importa |
-|Preparazione aggiornamenti | Uno | Pubblico | ![Supportato](media/green_check.png) | ![Non supportato](media/Red_X.png) | Importa |
 |Microsoft Store per<br>Business | Uno | Pubblico | ![Supportato](media/green_check.png) | ![Non supportato](media/Red_X.png) | Importa, Crea |
 
 ### <a name="about-azure-ad-apps"></a>Informazioni sulle app di Azure AD
@@ -98,7 +95,7 @@ Dopo aver scelto il servizio al quale connettersi, fare riferimento alla tabella
 
 Alcuni servizi richiedono che le app di Azure AD dispongano di autorizzazioni specifiche. Esaminare le informazioni per ogni servizio per determinare le autorizzazioni necessarie. Ad esempio, prima di poter importare un'app Web è necessario che un amministratore di Azure crei l'app nel [portale di Azure](https://portal.azure.com).
 
-Quando si configura Preparazione aggiornamenti o il connettore Log Analytics, concedere alla nuova app Web registrata l'autorizzazione *Collaboratore* per il gruppo di risorse che contiene l'area di lavoro appropriata. Questa autorizzazione consente a Configuration Manager di accedere all'area di lavoro. Durante l'assegnazione dell'autorizzazione cercare il nome della registrazione dell'app nell'area **Aggiungi utenti** del portale di Azure. Questo processo è analogo a quello che [aggiunge a Configuration Manager le autorizzazioni per Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#grant-configuration-manager-with-permissions-to-log-analytics). Queste autorizzazioni devono essere assegnate da un amministratore prima dell'importazione dell'app in Configuration Manager.
+Quando si configura il connettore Log Analytics, concedere alla nuova app Web registrata l'autorizzazione *Collaboratore* per il gruppo di risorse che contiene l'area di lavoro appropriata. Questa autorizzazione consente a Configuration Manager di accedere all'area di lavoro. Durante l'assegnazione dell'autorizzazione cercare il nome della registrazione dell'app nell'area **Aggiungi utenti** del portale di Azure. Questo processo è analogo a quello che [aggiunge a Configuration Manager le autorizzazioni per Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#grant-configuration-manager-with-permissions-to-log-analytics). Queste autorizzazioni devono essere assegnate da un amministratore prima dell'importazione dell'app in Configuration Manager.
 
 
 ## <a name="start-the-azure-services-wizard"></a>Avviare la procedura guidata per i servizi di Azure
@@ -225,8 +222,6 @@ Dopo aver specificato l'app Web e l'app nativa nella pagina App, la procedura gu
 - Servizio **Gestione cloud**, pagina **Individuazione**: [Configurare l'individuazione utente di Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc)  
 
 - Servizio **Connettore Log Analytics**, pagina **Configurazione**: [Configurare la connessione a Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics#grant-configuration-manager-with-permissions-to-log-analytics)  
-
-- Servizio **Connettore di Preparazione aggiornamenti**, pagina **Configurazione**: [Usare la procedura guidata per Azure per creare la connessione](/sccm/core/clients/manage/upgrade/upgrade-analytics#use-the-azure-wizard-to-create-the-connection)  
 
 - Servizio **Microsoft Store per le aziende**, pagina **Configurazioni**: [Configurare la sincronizzazione di Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#bkmk_config)  
 

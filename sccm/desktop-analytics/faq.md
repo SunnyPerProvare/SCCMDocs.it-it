@@ -2,7 +2,7 @@
 title: Domande frequenti per Desktop Analytics
 titleSuffix: Configuration Manager
 description: Domande frequenti per Desktop Analytics.
-ms.date: 11/05/2019
+ms.date: 02/03/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,22 +10,24 @@ ms.assetid: e0db3311-2303-4013-a906-76b408172d3c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5b93b2ae2d8c92e796909b04b2c1a237106b99b9
-ms.sourcegitcommit: c49470c6b9b5a39fdf69d0125349b5c82d08b078
+ms.openlocfilehash: 7b580ef5d48e223e293d4224388374325922a086
+ms.sourcegitcommit: 36920d640a322ed44e34fb5bbc5027c66633bd72
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76726153"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76975771"
 ---
 # <a name="desktop-analytics-faq"></a>Domande frequenti su Desktop Analytics
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-### <a name="bkmk_intune"></a> È possibile usare Desktop Analytics con i dispositivi gestiti da Intune? 
+### <a name="bkmk_intune"></a> È possibile usare l'analisi abilitata per il cloud con i dispositivi gestiti da Intune?
 
-La maggior parte dei clienti che possono trarre vantaggio dal flusso di lavoro di Desktop Analytics usa Configuration Manager per distribuire Windows. I clienti di Intune apprezzano le informazioni aggiuntive offerte dai dati di Analytics e Microsoft sta lavorando per individuare il modo di condividere i dati analitici anche con questi clienti.
+Non attualmente, ma vedere l'annuncio di Microsoft Ignite 2019 sulla [gestione dei dispositivi basata su dati analitici](https://myignite.techcommunity.microsoft.com/sessions/81690?source=sessions). Questa soluzione pianificata è un successore di Integrità dispositivi e Preparazione aggiornamenti.
 
-### <a name="its-been-over-72-hours-and-the-portal-is-still-processing-data-what-next"></a>Il portale sta elaborando i dati da più di 72 ore. Cosa si può fare? 
+La maggior parte dei clienti che possono trarre vantaggio dal flusso di lavoro di Desktop Analytics usa Configuration Manager per distribuire Windows. I clienti di Intune apprezzano le informazioni aggiuntive offerte dai dati analitici e Microsoft sta lavorando per individuare il modo di condividere i dati analitici anche con questi clienti.
+
+### <a name="its-been-over-72-hours-and-the-portal-is-still-processing-data-what-next"></a>Il portale sta elaborando i dati da più di 72 ore. Cosa si può fare?
 
 Quando si configura Desktop Analytics per la prima volta, è possibile che i report in Configuration Manager e nel portale di Desktop Analytics non visualizzino immediatamente i dati completi. L'elaborazione dei dati da parte del servizio può richiedere 2-3 giorni di tempo. Se il portale sta elaborando i dati da più di 72 ore, seguire questa procedura:
 
@@ -89,52 +91,10 @@ I dati di diagnostica di Windows provenienti dai computer del cliente vengono cr
 
 ## <a name="existing-windows-analytics-customers"></a>Clienti esistenti di Windows Analytics
 
-### <a name="can-i-migrate-inputs-from-windows-analytics"></a>È possibile eseguire la migrazione degli input da Windows Analytics?
-
-Sì, se si imposta un'area di lavoro Windows Analytics esistente come area di lavoro Desktop Analytics durante l'[onboarding iniziale](/sccm/desktop-analytics/set-up#initial-onboarding). Se si crea una nuova area di lavoro o se ne seleziona una che non è un'area di lavoro Windows Analytics, Desktop Analytics non eseguirà la migrazione degli input.
-
-#### <a name="migration-scope"></a>Ambito di migrazione
-
-| Tipo di input | Migrazione |
-|------------|---------------|
-| Importanza | Sì |
-| Proprietario dell'app | Sì |
-| Decisione di aggiornamento | No |
-| Piano di test | No |
-| Risultato del test | No |
-
-#### <a name="importance-mapping"></a>Mapping importanza
-
-| Windows Analytics | Desktop Analytics |
-|-------------------| ------------------|
-| Numero di installazioni basso | (Non applicabile) <br> Nota: Desktop Analytics esegue la propria euristica per determinare il basso numero di installazioni |
-| Non riviste | Non revisionato |
-| Revisione in corso | Non revisionato |
-| Cruciale | Critico |
-| Business Critical | Critico |
-| Importante | Importante |
-| Massimo sforzo | Importante |
-| Ignora | Non importante |
-
-### <a name="can-i-migrate-from-multiple-windows-analytics-workspaces"></a>È possibile eseguire la migrazione da più aree di lavoro Windows Analytics?
-
-No, è possibile selezionare una sola area di lavoro Windows Analytics da cui eseguire la migrazione degli input. Se si è proprietari di più aree di lavoro Windows Analytics, selezionare quella più vantaggiosa per l'organizzazione.
-
-### <a name="ive-chosen-to-migrate-where-can-i-find-the-inputs-on-desktop-analytics"></a>Si è scelto di eseguire la migrazione. Dove sono gli input in Desktop Analytics?
-
-Dopo la registrazione dei dispositivi, per vedere gli input di cui è stata eseguita la migrazione nel portale di Desktop Analytics selezionare **Gestisci > Risorse > App**.
-
-### <a name="when-can-i-see-my-migrated-inputs"></a>Quando saranno visibili gli input di cui è stata eseguita la migrazione?
-
-Il processo di migrazione è transazionale. Saranno visibili tutti gli input di cui è stata eseguita la migrazione senza danneggiamento oppure nessun input. Se gli input non risultano visibili entro 24 ore, contattare il supporto tecnico Microsoft. Iniziare a contrassegnare le app non appena gli input di cui è stata eseguita la migrazione risultano visibili. Se alcune app sono già state contrassegnate, Desktop Analytics conserva questi input in caso risultino in conflitto con gli input di Windows Analytics.
-
-### <a name="how-long-do-i-have-to-migrate-my-data"></a>Per quanto tempo è necessario eseguire la migrazione dei dati?
-
-La soluzione Preparazione aggiornamenti di Windows Analytics verrà [ritirata il 31 gennaio 2020](https://aka.ms/waretirement). Dopo il ritiro, in base ai criteri di conservazione dell'area di lavoro Log Analytics, i dati verranno con il tempo eliminati. I clienti che vogliono mantenere i dati devono eseguirne la migrazione o esportarli prima dell'eliminazione.
-
-### <a name="can-i-migrate-after-the-initial-onboarding"></a>È possibile eseguire la migrazione dopo l'onboarding iniziale?
-
-Sì.<!-- 5202803 --> I clienti esistenti di Windows Analytics possono ora eseguire la migrazione dei dati dopo l'onboarding iniziale a condizione che un'area di lavoro Windows Analytics esistente sia stata impostata come area di lavoro Desktop Analytics durante l'[onboarding iniziale](/sccm/desktop-analytics/set-up#initial-onboarding). Nel portale di Desktop Analytics passare a **Servizi connessi** e selezionare l'opzione per eseguire la migrazione dei dati da Windows Analytics.
+> [!Important]  
+> Il servizio Windows Analytics è stato ritirato il 31 gennaio 2020.
+>
+> Per altre informazioni, vedere [KB 4521815: Ritiro di Windows Analytics il 31 gennaio 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement).
 
 ### <a name="can-i-use-update-compliance-together-with-desktop-analytics"></a>È possibile usare Conformità aggiornamenti insieme a Desktop Analytics?
 
@@ -145,7 +105,7 @@ Per altre informazioni, vedere [KB 4521815: Ritiro di Windows Analytics il 31 ge
 ### <a name="are-there-any-windows-analytics-features-that-arent-available-in-desktop-analytics"></a>Ci sono funzionalità di Windows Analytics che non sono disponibili in Desktop Analytics?
 
 <!-- 3616924 -->
-Sì, le funzionalità di Windows Analytics seguenti verranno ritirate o non sono ancora disponibili in Desktop Analytics:
+Sì, le funzionalità di Windows Analytics seguenti sono state ritirate o non sono ancora disponibili in Desktop Analytics:
 
 #### <a name="general"></a>Generale
 

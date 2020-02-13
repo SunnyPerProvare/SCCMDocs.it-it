@@ -2,7 +2,7 @@
 title: Visualizzare i dati di diagnostica
 titleSuffix: Configuration Manager
 description: È possibile visualizzare i dati di diagnostica e di utilizzo per verificare che la gerarchia di Configuration Manager non contenga informazioni riservate.
-ms.date: 09/10/2019
+ms.date: 12/23/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 594eb284-0d93-4c5d-9ae6-f0f71203682a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 51cc45b2524895beb1cf3ead5839e4fc3a1b11fb
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 41b43c975b973d53683031fb4c1849d6e3ce822e
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75800764"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76917285"
 ---
 # <a name="how-to-view-diagnostics-and-usage-data-for-configuration-manager"></a>Come visualizzare i dati di diagnostica e utilizzo per Configuration Manager
 
@@ -37,7 +37,7 @@ SELECT * FROM TEL_TelemetryResults
 
 Quando il punto di connessione del servizio è in modalità offline, usare lo strumento di connessione del servizio per esportare i dati correnti in un file con valori delimitati da virgole (CSV). Eseguire lo strumento di connessione del servizio per il punto di connessione del servizio con il parametro **-Export**.
 
-Per altre informazioni, vedere [Usare lo strumento di connessione del servizio](/sccm/core/servers/manage/use-the-service-connection-tool).
+Per altre informazioni, vedere [Usare lo strumento di connessione del servizio](/configmgr/core/servers/manage/use-the-service-connection-tool).
 
 ## <a name="bkmk_hashes"></a> Hash unidirezionali
 
@@ -78,3 +78,8 @@ Quando si visualizzano i dati non elaborati, viene visualizzato un valore con ha
     ```
 
 3. Confrontare l'output dello script con il GUID nei dati non elaborati. Questo processo mostra come vengono oscurati i dati.
+
+## <a name="next-steps"></a>Passaggi successivi
+
+> [!div class="nextstepaction"]
+> [Livelli dei dati di diagnostica e utilizzo](/configmgr/core/plan-design/diagnostics/levels-overview)

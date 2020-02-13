@@ -10,16 +10,16 @@ ms.assetid: ea78f726-b1b3-49b0-8141-d916be48c458
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6f63860d2d38740ea637c01e0ab543f4e0ab1e8c
-ms.sourcegitcommit: c49470c6b9b5a39fdf69d0125349b5c82d08b078
+ms.openlocfilehash: f40e9c88eac096c43252044c6aef3696264c3831
+ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76726169"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76916773"
 ---
 # <a name="compatibility-assessment-in-desktop-analytics"></a>Valutazione della compatibilità in Desktop Analytics
 
-Le valutazioni aggiornamento in Windows Analytics erano generiche, ad esempio: Intervento necessario o Correzione disponibile. Non viene offerto alcun indicatore visivo su come classificare in ordine di priorità app o driver con problemi, né vengono offerte informazioni sull'aggiornamento. Desktop Analytics sostituisce questa funzionalità con **Rischio di compatibilità**. Desktop Analytics visualizza la valutazione per le app solo nella visualizzazione distribuzione per uno scenario di pre-aggiornamento. Classifica le app in base ai dati analitici che Microsoft ottiene dai computer inclusi in un piano di distribuzione corrente.
+Le valutazioni dell'aggiornamento nelle soluzioni precedenti erano generiche, ad esempio: Intervento necessario o Correzione disponibile. Non viene offerto alcun indicatore visivo su come classificare in ordine di priorità app o driver con problemi, né vengono offerte informazioni sull'aggiornamento. Desktop Analytics sostituisce questa funzionalità con **Rischio di compatibilità**. Desktop Analytics visualizza la valutazione per le app solo nella visualizzazione distribuzione per uno scenario di pre-aggiornamento. Classifica le app in base ai dati analitici che Microsoft ottiene dai computer inclusi in un piano di distribuzione corrente.
 
 Desktop Analytics usa le categorie di valutazione della compatibilità seguenti:
 
