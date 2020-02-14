@@ -2,7 +2,7 @@
 title: Configurare Desktop Analytics
 titleSuffix: Configuration Manager
 description: Guida pratica per la configurazione e l'onboarding in Desktop Analytics.
-ms.date: 09/03/2019
+ms.date: 02/06/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,17 +10,16 @@ ms.assetid: 7ff8d453-f24d-4230-a116-585190a663fc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9bacb406d9deddd32784a0f51af8991bac6b1264
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.openlocfilehash: 91438d9ad43884239db6e8995c983abda6f0c106
+ms.sourcegitcommit: be37256f98120ad30d5f7925bc32f05a07f15984
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76916548"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071202"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Come configurare Desktop Analytics
 
 Usare questa procedura per accedere a Desktop Analytics e configurarlo nell'abbonamento. L'organizzazione deve configurare Desktop Analytics una sola volta.  
-
 
 > [!Important]  
 > Per informazioni sui prerequisiti generali per Desktop Analytics con Configuration Manager, vedere[Prerequisiti](/sccm/desktop-analytics/overview#prerequisites).  
@@ -37,28 +36,27 @@ Usare questa procedura per accedere a Desktop Analytics e configurarlo nell'abbo
 
     - **Consentire a Desktop Analytics di gestire i ruoli della directory per conto dell'utente**: Desktop Analytics assegna automaticamente ai **Proprietari dell'area di lavoro** il ruolo **Amministratore di Desktop Analytics**. Se ai gruppi è già assegnato un **Amministratore globale**, non vengono apportate modifiche.
 
-        Se non si seleziona questa opzione, Desktop Analytics aggiunge comunque gli utenti come membri del gruppo di sicurezza. Un **Amministratore globale** deve assegnare manualmente il ruolo **Amministratore di Desktop Analytics** per gli utenti.   
+        Se non si seleziona questa opzione, Desktop Analytics aggiunge comunque gli utenti come membri del gruppo di sicurezza. Un **Amministratore globale** deve assegnare manualmente il ruolo **Amministratore di Desktop Analytics** per gli utenti.
 
         Per altre informazioni sull'assegnazione delle autorizzazioni del ruolo di amministratore in Azure Active Directory e sulle autorizzazioni assegnate agli **Amministratori di Desktop Analytics**, vedere [Autorizzazioni del ruolo Amministratore in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
 
-    - Desktop Analytics preconfigura il gruppo di sicurezza **Proprietari dell'area di lavoro** in Azure Active Directory per creare e gestire aree di lavoro e piani di distribuzione. 
+    - Desktop Analytics preconfigura il gruppo di sicurezza **Proprietari dell'area di lavoro** in Azure Active Directory per creare e gestire aree di lavoro e piani di distribuzione.
 
         Per aggiungere un utente al gruppo, digitarne il nome o l'indirizzo di posta elettronica nella sezione **Immettere il nome o l'indirizzo di posta elettronica**. Al termine, selezionare **Avanti**.
 
 5. Nella pagina **Configura la tua area di lavoro**:  
 
+    > [!NOTE]  
+    > Per completare questo passaggio, l'utente deve avere le autorizzazioni **Proprietario dell'area di lavoro** e l'accesso aggiuntivo alla sottoscrizione di Azure e al gruppo di risorse. Per altre informazioni, vedere i [prerequisiti](/sccm/desktop-analytics/overview#prerequisites).  
+
     - Per usare un'area di lavoro esistente per Desktop Analytics, selezionarla e continuare con il passaggio successivo.  
 
-        > [!Note]  
+        > [!TIP]  
         > È possibile avere solo un'area di lavoro di Desktop Analytics per ogni tenant di Azure AD. I dispositivi possono inviare i dati di diagnostica solo a un'area di lavoro.  
-
-        Se in precedenza è stato usato Windows Analytics, selezionare la stessa area di lavoro. È necessario registrare nuovamente in Desktop Analytics i dispositivi che sono stati precedentemente registrati in Windows Analytics.
-
-        Per eseguire la migrazione degli input dall'area di lavoro di Windows Analytics selezionata, impostare **Si desidera visualizzare gli input di Windows Analytics?** su **Sì**. Se non si vuole eseguire la migrazione, impostare questa impostazione su **No**. Per altre informazioni, vedere le domande frequenti per [Clienti esistenti di Windows Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
 
     - Per creare un'area di lavoro per Desktop Analytics, selezionare **Aggiungi area di lavoro**.  
 
-        1. Immettere un **nome dell'area di lavoro** univoco globale.<!--do we have any guidance for this name?-->  
+        1. Immettere un **nome dell'area di lavoro** univoco globale.
 
         2. Selezionare l'elenco a discesa per **selezionare il nome dell'abbonamento di Azure per l'area di lavoro** e scegliere l'abbonamento di Azure per l'area di lavoro.  
 
@@ -78,7 +76,6 @@ Usare questa procedura per accedere a Desktop Analytics e configurarlo nell'abbo
 9. Nella pagina **Last steps** (Ultimi passaggi) selezionare **Vai a Desktop Analytics**.
 
 Nel portale di Azure viene visualizzata la pagina **Home page** di Desktop Analytics.
-
 
 ## <a name="next-steps"></a>Passaggi successivi
 

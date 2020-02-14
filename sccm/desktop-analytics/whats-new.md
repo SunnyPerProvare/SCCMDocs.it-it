@@ -10,12 +10,12 @@ ms.assetid: fa300181-86cb-4afe-8fbf-895a7572378d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e5ce07df62baf5966cb438eb308b497becd8ecc3
-ms.sourcegitcommit: 73b30a26db1c1566195c109eeb6e709707ca9c5a
+ms.openlocfilehash: d87d422ddc2f3ed76934af08bb89f42d65783338
+ms.sourcegitcommit: be37256f98120ad30d5f7925bc32f05a07f15984
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76309336"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071504"
 ---
 # <a name="whats-new-in-desktop-analytics"></a>Novità di Desktop Analytics
 
@@ -53,7 +53,7 @@ Desktop Analytics offre ora maggiori dettagli quando rileva che l'aggiornamento 
 
 <!-- 5202803 -->
 
-È ora possibile migrare gli input da un'area di lavoro di Windows Analytics esistente dopo l'onboarding in Desktop Analytics. Per altre informazioni, vedere le domande frequenti per [Clienti esistenti di Windows Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
+È ora possibile migrare gli input da un'area di lavoro di Windows Analytics esistente dopo l'onboarding in Desktop Analytics.
 
 ## <a name="september-2019"></a>Settembre 2019
 
@@ -61,7 +61,7 @@ Desktop Analytics offre ora maggiori dettagli quando rileva che l'aggiornamento 
 
 <!-- 4252663 -->
 
-Durante l'onboarding è ora possibile eseguire la migrazione degli input da un'area di lavoro di Windows Analytics esistente. Per altre informazioni, vedere le domande frequenti per [Clienti esistenti di Windows Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
+Durante l'onboarding è ora possibile eseguire la migrazione degli input da un'area di lavoro di Windows Analytics esistente.
 
 ### <a name="offboard-from-desktop-analytics"></a>Eseguire l'offboarding da Desktop Analytics
 

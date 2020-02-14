@@ -10,12 +10,12 @@ ms.assetid: 58d52fdc-bd18-494d-9f3b-ccfc13ea3d35
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 78f736fff05207154ab74f1c5a224478015e10df
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e21d30ca2d003819c10662d73fa6484ba32837b6
+ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798344"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77178538"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparare l'uso di gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -153,7 +153,7 @@ Eseguire lo script SQL seguente per verificare le configurazioni di database per
     SELECT @dbname = sd.name FROM sys.sysdatabases sd WHERE sd.dbid = DB_ID()
 
     IF (@dbname = N'master' OR @dbname = N'model' OR @dbname = N'msdb' OR @dbname = N'tempdb' OR @dbname = N'distribution' ) BEGIN
-    RAISERROR(N'ERROR: Script is targetting a system database.  It should be targeting the DB you created instead.', 0, 1)
+    RAISERROR(N'ERROR: Script is targeting a system database.  It should be targeting the DB you created instead.', 0, 1)
     GOTO Branch_Exit;
     END ELSE
     PRINT N'INFO: Targeted database is ' + @dbname + N'.'
