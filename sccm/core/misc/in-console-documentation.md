@@ -2,7 +2,7 @@
 title: Documentazione nella console
 titleSuffix: Configuration Manager
 description: Questo articolo viene visualizzato solo nella console di Configuration Manager.
-ms.date: 01/13/2020
+ms.date: 02/10/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 009662cc74c5cbbbc973b3a7f5ce184be0397b0e
-ms.sourcegitcommit: cf978bfea545ed9116dacadfac830cbb08aaa649
+ms.openlocfilehash: 0b4e7a8b380d2eaec55b740dc8c6773829a6d716
+ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75951620"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77178623"
 ---
 <!-- 
 - Feature 1357546
@@ -27,7 +27,7 @@ ms.locfileid: "75951620"
 
 # <a name="microsoft-endpoint-configuration-manager-documentation"></a>Documentazione di Microsoft Endpoint Configuration Manager
 
-*Ultimo aggiornamento: 13 gennaio 2020*
+*Ultimo aggiornamento: 10 febbraio 2020*
 
 Questo contenuto offre informazioni utili per l'apprendimento e il supporto di Configuration Manager.
 
@@ -55,22 +55,22 @@ Elenco aggiornato di articoli importanti.
 
 ## <a name="trending"></a>Di tendenza
 
-Gli articoli più diffusi tra il 1° dicembre e il 31 dicembre 2019.
+Gli articoli più visualizzati tra il 1° e il 31 gennaio 2020.
 
 | Visualizzazioni pagina | Titolo |
 |------------|-------|
-| 20311 | [Novità della versione 1910](https://docs.microsoft.com/configmgr/core/plan-design/changes/whats-new-in-version-1910) |
-| 14109 | [Riferimento ai file di log](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/log-files) |
-| 12971 | [Come abilitare TLS 1.2](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2) |
-| 11896 | [Aggiornamenti e manutenzione](https://docs.microsoft.com/configmgr/core/servers/manage/updates) |
-| 11848 | [Porte usate per le connessioni](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/ports) |
-| 10420 | [Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/overview) |
-| 10044 | [Distribuire i client in Windows](https://docs.microsoft.com/configmgr/core/clients/deploy/deploy-clients-to-windows-computers) |
-| 8726 | [Supporto per Windows 10](https://docs.microsoft.com/configmgr/core/plan-design/configs/support-for-windows-10) |
-| 8282 | [Co-gestione per dispositivi Windows 10](https://docs.microsoft.com/configmgr/comanage/overview) |
-| 8081 | [Manuale dell'utente di Software Center](https://docs.microsoft.com/configmgr/core/understand/software-center) |
+| 24389 | [Novità della versione 1910](https://docs.microsoft.com/configmgr/core/plan-design/changes/whats-new-in-version-1910) |
+| 18683 | [Panoramica dell'abilitazione di Transport Layer Security (TLS) 1.2](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2) |
+| 18160 | [Riferimento ai file di log](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/log-files) |
+| 16392 | [Aggiornamenti e manutenzione](https://docs.microsoft.com/configmgr/core/servers/manage/updates) |
+| 14575 | [Porte usate per le connessioni](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/ports) |
+| 13404 | [Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/overview) |
+| 12933 | [Distribuire e aggiornare Microsoft Edge versione 77 e successive](https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge) |
+| 12017 | [Distribuire i client in Windows](https://docs.microsoft.com/configmgr/core/clients/deploy/deploy-clients-to-windows-computers) |
+| 11385 | [Supporto per Windows 10](https://docs.microsoft.com/configmgr/core/plan-design/configs/support-for-windows-10) |
+| 10688 | [Che cos'è Configuration Manager?](https://docs.microsoft.com/configmgr/core/understand/introduction) |
 
-La [pagina dell'hub di Configuration Manager](https://docs.microsoft.com/configmgr/) ha avuto 23.792 visualizzazioni in questo periodo di tempo.
+La [pagina dell'hub di Configuration Manager](https://docs.microsoft.com/configmgr/) ha avuto 30.626 visualizzazioni in questo periodo di tempo.
 
 ## <a name="recently-updated"></a>Aggiornata di recente
 
@@ -78,16 +78,16 @@ Articoli con un aggiornamento recente e significativo.
 
 | Ultima revisione | Titolo |
 |---------------|-------|
-| 20/12/2019 | [Note sulla versione](https://docs.microsoft.com/configmgr/core/servers/deploy/install/release-notes) |
-| 20/12/2019 | [Elenco di controllo per la versione 1910](https://docs.microsoft.com/configmgr/core/servers/manage/checklist-for-installing-update-1910) |
-| 17/12/2019 | [Ottimizzare il recapito degli aggiornamenti di Windows 10](https://docs.microsoft.com/configmgr/sum/deploy-use/optimize-windows-10-update-delivery) |
-| 13/12/2019 | [Come abilitare Transport Layer Security (TLS) 1.2 nei client](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2-client) |
-| 13/12/2019 | [Abilitare Transport Layer Security (TLS) 1.2 nei server del sito e nei sistemi del sito remoti](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2-server) |
-| 13/12/2019 | [Problemi comuni relativi all'abilitazione di Transport Layer Security (TLS) 1.2](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2-troubleshoot) |
-| 13/12/2019 | [Panoramica dell'abilitazione di Transport Layer Security (TLS) 1.2](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2) |
-| 12/12/2019 | [Privacy dei dati di Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/privacy) |
-| 12/12/2019 | [Technical Preview 1912](https://docs.microsoft.com/configmgr/core/get-started/2019/technical-preview-1912) |
-| 6/12/2019 | [Gestire gli aggiornamenti di Office 365 ProPlus](https://docs.microsoft.com/configmgr/sum/deploy-use/manage-office-365-proplus-updates) |
+| 31/01/2020 | [Upgrade Readiness](https://docs.microsoft.com/configmgr/core/clients/manage/upgrade-readiness) |
+| 31/01/2020 | [Domande frequenti per Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/faq) |
+| 30/01/2020 | [Domande frequenti sui dati di diagnostica e di utilizzo](https://docs.microsoft.com/configmgr/core/plan-design/diagnostics/frequently-asked-questions) |
+| 27/01/2020 | [Note sulla versione](https://docs.microsoft.com/configmgr/core/servers/deploy/install/release-notes) |
+| 24/01/2020 | [Domande frequenti su prodotto e licenze](https://docs.microsoft.com/configmgr/core/understand/product-and-licensing-faq) |
+| 17/01/2020 | [Technical Preview 2001](https://docs.microsoft.com/configmgr/core/get-started/2020/technical-preview-2001) |
+| 16/01/2020 | [Novità di Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/whats-new) |
+| 16/01/2020 | [Distribuire e aggiornare Microsoft Edge versione 77 e successive](https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge) |
+| 09/01/2020 | [Gestione dei dispositivi mobili locale](https://docs.microsoft.com/configmgr/mdm/understand/manage-mobile-devices-with-on-premises-infrastructure) |
+| 07/01/2020 | [Microsoft Defender Advanced Threat Protection](https://docs.microsoft.com/configmgr/protect/deploy-use/windows-defender-advanced-threat-protection) |
 
 ## <a name="troubleshooting-articles"></a>Articoli sulla risoluzione dei problemi
 

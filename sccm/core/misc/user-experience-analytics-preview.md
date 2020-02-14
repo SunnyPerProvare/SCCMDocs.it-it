@@ -2,7 +2,7 @@
 title: Anteprima dell'analisi dell'esperienza utente
 titleSuffix: Configuration Manager
 description: Istruzioni per l'anteprima dell'analisi dell'esperienza utente.
-ms.date: 02/05/2020
+ms.date: 02/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 87c0cdfbeedc347eedb31c5788cada32b0745e7a
-ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
+ms.openlocfilehash: f3ea2a677791ccd9864659b605a252f1bab98f52
+ms.sourcegitcommit: 524f08ccae92756288c2d73491d4da0d3bb2900f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77035301"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77145183"
 ---
 # <a name="bkmk_uea"></a> Anteprima privata dell'analisi dell'esperienza utente
 
@@ -47,7 +47,7 @@ Questa versione è solo l'inizio. Verranno implementate rapidamente nuove inform
 
 Per iniziare a usare l'analisi dell'esperienza utente, verificare i prerequisiti e quindi iniziare a raccogliere i dati. 
 
-### <a name="prerequisites"></a>Prerequisiti
+### <a name="technical-prerequisites"></a>Prerequisiti tecnici
 
 La versione di anteprima corrente richiede:
 - Dispositivi registrati in Intune che eseguono Windows 10
@@ -58,10 +58,22 @@ La versione di anteprima corrente richiede:
 
 I dispositivi Configuration Manager e i dispositivi registrati in Intune con versioni precedenti di Windows 10 non sono attualmente supportati per questa anteprima.
 
+### <a name="licensing-prerequisites"></a>Prerequisiti per le licenze
+
+L'analisi dell'esperienza utente è inclusa nei piani seguenti: 
+
+- [Enterprise Mobility + Security E3](https://www.microsoftvolumelicensing.com/ProductResults.aspx?doc=Product%20Terms,OST&fid=51) o superiore
+- [Microsoft 365 Enterprise E3](https://www.microsoft.com/en-us/microsoft-365/enterprise?rtc=1) o superiore. 
+
+Per le correzioni proattive, gli utenti del dispositivo devono avere una delle licenze seguenti:
+- Windows 10 Enterprise E3 o E5 (incluso in Microsoft 365 F1, E3 o E5)
+- Windows 10 Education A3 o A5 (incluso in Microsoft 365 A3 o A5)
+- Accesso a Desktop virtuale Windows E3 o E5
+
 ### <a name="bkmk_uea_start"></a> Iniziare a raccogliere i dati
 
 1. Passare a `https://devicemanagement.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu`
-1. Fare clic su **Avvia**. Il popolamento dei dati sulle prestazioni di avvio nei dispositivi registrati in Intune può richiedere fino a 24 ore.
+1. Fare clic su **Avvia**. Verrà assegnato automaticamente un profilo di configurazione per raccogliere i dati sulle prestazioni di avvio da tutti i dispositivi idonei. È possibile [modificare i dispositivi assegnati](#bkmk_uea_profile) in un secondo momento. Il popolamento dei dati sulle prestazioni di avvio nei dispositivi registrati in Intune dopo il riavvio può richiedere fino a 24 ore.
 
 ## <a name="overview-page"></a>Pagina di panoramica
 
@@ -123,6 +135,9 @@ L'azione di correzione consigliata per i dispositivi gestiti da Configuration Ma
 La linea di base predefinita **Mediana commerciale** attualmente non ha metriche per i punteggi parziali indicati nelle sezioni precedenti.
 
 ## <a name="bkmk_uea_bp"></a> Prestazioni di avvio
+
+> [!NOTE]
+> I dati necessari per calcolare il punteggio di avvio per un dispositivo vengono generati in fase di avvio. A seconda delle impostazioni di risparmio energia e del comportamento dell'utente, potrebbero trascorrere settimane dopo l'assegnazione corretta dei criteri a un dispositivo prima che venga visualizzato il punteggio di avvio nella console di amministrazione.  
 
 Il punteggio delle prestazioni di avvio consente all'IT di guidare rapidamente gli utenti dall'accensione alla produttività, senza lunghi ritardi nelle procedure di avvio e accesso. Il **punteggio di avvio** è un numero compreso tra 0 e 100. Questo punteggio è una media ponderata del **punteggio di avvio** e del punteggio di **accesso**, che vengono calcolati come segue:
 
@@ -202,7 +217,29 @@ Dalla pagina delle impostazioni è possibile selezionare **Generale** o **Linea 
 
 La pagina **Generale** in **Impostazioni** consente di verificare se è stata abilitata la raccolta dei dati sulle prestazioni di avvio di Intune. Per impostazione predefinita, viene abilitata automaticamente per tutti i dispositivi quando si fa clic su **Avvia** per abilitare l'analisi dell'esperienza utente. È possibile scegliere di passare al nodo Criteri di raccolta dati di Intune per modificare il set di dispositivi per cui vengono raccolti i record di avvio e di accesso.
 
-> [NOTA!] È disponibile un segnaposto per le istruzioni per la configurazione del connettore dati di Configuration Manager. Questa funzionalità, tuttavia, non è stata implementata in questa anteprima privata iniziale.
+
+#### <a name="bkmk_uea_profile"></a> Criteri di raccolta dati di Intune
+
+Per assegnare questa impostazione a un subset di dispositivi, [creare un profilo](/intune/configuration/device-profile-create#create-the-profile) con le informazioni seguenti: 
+
+  - **Nome**: immettere un nome descrittivo per il profilo, ad esempio **Criteri di raccolta dati di Intune**
+   
+  - **Descrizione**: Immettere una descrizione del profilo. Questa impostazione è facoltativa ma consigliata.
+    
+  - **Piattaforma**: selezionare **Windows 10 e versioni successive**
+   
+  - **Tipo di profilo**: selezionare **Monitoraggio dello stato di Windows**
+   
+  - Configurare le **impostazioni**:
+   
+    - **Monitoraggio dello stato di integrità**: selezionare **Abilita** per raccogliere informazioni sugli eventi dai dispositivi Windows 10
+    
+    - **Ambito**: Selezionare **Prestazioni di avvio** 
+
+  - Usare i [tag di ambito](/intune/configuration/device-profile-create#scope-tags) e le [regole di applicabilità](/intune/configuration/device-profile-create#applicability-rules) per filtrare il profilo in base a gruppi IT o dispositivi specifici in un gruppo che soddisfano criteri specifici.
+
+> [!NOTE]
+> È disponibile un segnaposto per le istruzioni per la configurazione del connettore dati di Configuration Manager. Questa funzionalità, tuttavia, non è stata implementata in questa anteprima privata iniziale.
 
   [![Pagina delle impostazioni generali di Analisi dell'esperienza utente](media/uea-settings-general.png)](media/uea-settings-general.png#lightbox)
 

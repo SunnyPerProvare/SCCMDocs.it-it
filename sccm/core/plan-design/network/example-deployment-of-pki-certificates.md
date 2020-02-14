@@ -10,12 +10,12 @@ ms.assetid: 3417ff88-7177-4a0d-8967-ab21fe7eba17
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 04af80402877c2f59fe09d17dcbcec8a511614d5
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: be39094879cb47cedd573608177ad3c565aa1141
+ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799472"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77178606"
 ---
 # <a name="step-by-step-example-deployment-of-the-pki-certificates-for-configuration-manager-windows-server-2008-certification-authority"></a>Esempio dettagliato di distribuzione dei certificati PKI per Configuration Manager: Autorità di certificazione di Windows Server 2008
 
@@ -223,16 +223,15 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 9. Selezionare l'autorizzazione **Registrazione** per questo gruppo e non cancellare l'autorizzazione **Lettura** .  
 
-    > [!NOTE]
-    > Assicurarsi che l'opzione **Dimensioni minime chiave** nella scheda **Crittografia** sia stata impostata su **2048**
+10. Scegliere la scheda **Crittografia** e assicurarsi che l'opzione **Dimensioni minime chiave** sia impostata su **2048**.
 
-10. Scegliere **OK** e quindi chiudere la console **Modelli di certificato**.  
+11. Scegliere **OK** e quindi chiudere la console **Modelli di certificato**.  
 
-11. Nella console Autorità di certificazione fare clic con il pulsante destro del mouse su **Modelli di certificato**, scegliere **Nuovo** e quindi **Modello di certificato da emettere**.  
+12. Nella console Autorità di certificazione fare clic con il pulsante destro del mouse su **Modelli di certificato**, scegliere **Nuovo** e quindi **Modello di certificato da emettere**.  
 
-12. Nella finestra di dialogo **Attivazione modelli di certificato** scegliere il nuovo modello appena creato, **Certificato del punto di distribuzione basato su cloud di ConfigMgr**, quindi scegliere **OK**.  
+13. Nella finestra di dialogo **Attivazione modelli di certificato** scegliere il nuovo modello appena creato, **Certificato del punto di distribuzione basato su cloud di ConfigMgr**, quindi scegliere **OK**.  
 
-13. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
+14. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
 
 ###  <a name="BKMK_clouddprequesting2008"></a> Richiedere il certificato del server Web  
  Questa procedura richiede e installa il certificato del server Web personalizzato nel server membro in cui sarà in esecuzione il server del sito.  

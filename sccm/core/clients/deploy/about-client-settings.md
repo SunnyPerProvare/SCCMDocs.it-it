@@ -10,12 +10,12 @@ ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e85fe1e91ed046b08e2e879d17143fc700e0c931
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.openlocfilehash: 697f49af0c0563c2da42e11a05f4a5ed1d43da9a
+ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76916893"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77178453"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -979,13 +979,9 @@ Scegliere **Sì** per creare automaticamente affinità utente-dispositivo in bas
 <!--3485366-->
 Se questa opzione è impostata su **Sì**, gli utenti possono identificare i propri dispositivi primari in Software Center. Per altre informazioni, vedere il [Manuale dell'utente di Software Center](/sccm/core/understand/software-center#work-information).
 
-
-
 ## <a name="windows-analytics"></a>Windows Analytics
 
 > [!Important]  
-> Il servizio Windows Analytics è stato ritirato il 31 gennaio 2020.
+> Il servizio Windows Analytics è stato ritirato il 31 gennaio 2020. Per altre informazioni, vedere [KB 4521815: Ritiro di Windows Analytics il 31 gennaio 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement).
 >
-> [Desktop Analytics ](/sccm/desktop-analytics/overview) è l'evoluzione di Windows Analytics. I clienti esistenti di Windows Analytics possono [eseguire la migrazione a Desktop Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
->
-> Per altre informazioni, vedere [KB 4521815: Ritiro di Windows Analytics il 31 gennaio 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement).
+> Desktop Analytics è l'evoluzione di Windows Analytics. Per altre informazioni, vedere [Che cos'è Desktop Analytics](/sccm/desktop-analytics/overview).

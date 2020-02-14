@@ -10,12 +10,12 @@ ms.assetid: 343dbe2a-597c-4719-b7ac-45b1f39b49ee
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5687d8eb2033365f9d13593f685f2d4f70d60549
-ms.sourcegitcommit: 73b30a26db1c1566195c109eeb6e709707ca9c5a
+ms.openlocfilehash: a9b1e229a4ba85734a5d22ca104596ef10b23a41
+ms.sourcegitcommit: 524f08ccae92756288c2d73491d4da0d3bb2900f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76309404"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77145074"
 ---
 # <a name="health-status-monitoring-in-desktop-analytics"></a>Monitoraggio dello stato di integrità in Desktop Analytics
 
@@ -64,7 +64,7 @@ Nella parte inferiore della pagina dei dettagli dell'app, le tre schede seguenti
 
 - **Altre versioni**: elenco di versioni alternative dell'app. Per ogni versione, sono visualizzate le variazioni relative alla frequenza degli arresti anomali all'interno dell'organizzazione e alla media commerciale. Se si trova una versione più recente dell'app con una frequenza degli arresti anomali inferiore, può essere utile aggiornare l'app.  
 
-    È anche indicato se la versione ha un segnale **Ready for Windows**. Per altre informazioni, vedere [Valutazione della compatibilità](compat-assessment.md#driver-risk-assessment).  
+    Viene anche indicato se la versione ha informazioni dettagliate avanzate. Per altre informazioni, vedere [Valutazione della compatibilità](/sccm/desktop-analytics/compat-assessment).  
 
 - **Problemi principali**: elenco degli ID errore più frequenti per numero di istanze. Un ID errore identifica l'analisi dello stack associata all'arresto anomalo. È possibile usare questo ID quando si chiama il fornitore dell'app per supporto.  
 

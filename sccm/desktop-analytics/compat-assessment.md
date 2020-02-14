@@ -2,7 +2,7 @@
 title: Valutazione della compatibilità
 titleSuffix: Configuration Manager
 description: Informazioni sulla valutazione della compatibilità per le app e i driver di Windows in Desktop Analytics.
-ms.date: 10/23/2019
+ms.date: 02/07/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: ea78f726-b1b3-49b0-8141-d916be48c458
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f40e9c88eac096c43252044c6aef3696264c3831
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.openlocfilehash: 193c914b6bb4f6f53cddeba6e33fdb2fe4e36de8
+ms.sourcegitcommit: 524f08ccae92756288c2d73491d4da0d3bb2900f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76916773"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77145129"
 ---
 # <a name="compatibility-assessment-in-desktop-analytics"></a>Valutazione della compatibilità in Desktop Analytics
 
@@ -23,16 +23,15 @@ Le valutazioni dell'aggiornamento nelle soluzioni precedenti erano generiche, ad
 
 Desktop Analytics usa le categorie di valutazione della compatibilità seguenti:
 
-- **Bassa**: il servizio non ha rilevato segnali che inducano a ritenere che l'app sia a rischio in un aggiornamento di Windows. È probabile che funzioni nel sistema operativo di destinazione così com'è.  
+- **Bassa**: il servizio non ha rilevato segnali che inducano a ritenere che l'app sia a rischio in un aggiornamento di Windows. È probabile che funzioni nel sistema operativo di destinazione così com'è.
 
-- **Media**: Analytics indica la possibilità che la funzionalità dell'applicazione risulti compromessa, anche se la correzione è probabilmente possibile.  
+- **Media**: Analytics indica la possibilità che la funzionalità dell'applicazione risulti compromessa, anche se la correzione è probabilmente possibile.
 
-- **Alta**: è quasi certo che l'applicazione non funzionerà durante o dopo l'aggiornamento. Potrebbe essere necessaria una correzione.  
+- **Alta**: è quasi certo che l'applicazione non funzionerà durante o dopo l'aggiornamento. Potrebbe essere necessaria una correzione.
 
-- **Sconosciuto**: l'app non è stata valutata. Non sono disponibili altre informazioni, ad esempio *Problemi noti di MS* o *Ready for Windows*.  
+- **Sconosciuto**: l'app non è stata valutata. Non sono disponibili altre informazioni dettagliate, ad esempio *Problemi noti di MS*.
 
 Nell'elenco di risorse app o driver in un piano di distribuzione questo valore viene visualizzato per ogni risorsa nella colonna **Rischio di compatibilità**.
-
 
 ## <a name="app-risk-assessment"></a>Valutazione del rischio per le app
 
@@ -41,11 +40,9 @@ Nell'elenco di risorse app o driver in un piano di distribuzione questo valore v
 Desktop Analytics usa diverse origini per generare la classificazione della valutazione per le applicazioni:
 
 - [Problemi noti di Microsoft](#microsoft-known-issues)
-- [Catalogo Ready for Windows](#ready-for-windows)
 - [Dati analitici avanzati](#advanced-insights)
 
 È possibile trovare la valutazione per ogni origine nell'app in Desktop Analytics. Nell'elenco di risorse app in un piano di distribuzione selezionare una singola app per aprirne il riquadro a comparsa delle proprietà. Si vedrà un consiglio complessivo e un livello di valutazione. La sezione **Fattori di rischio di compatibilità** visualizza i dettagli di queste valutazioni.
-
 
 ## <a name="microsoft-known-issues"></a>Problemi noti di Microsoft
 
@@ -112,32 +109,6 @@ L'applicazione è interessata da molteplici problemi. Selezionare **Query** per 
 ### <a name="reinstall-application-after-upgrading"></a>Reinstallare l'applicazione dopo l'aggiornamento
 
 L'applicazione è compatibile con la nuova versione del sistema operativo, ma è necessario reinstallarla dopo l'aggiornamento di Windows. Il processo di aggiornamento rimuove l'applicazione. Per continuare l'aggiornamento, non è necessaria alcuna azione. Reinstallare l'applicazione nella nuova versione del sistema operativo.
-
-
-## <a name="ready-for-windows"></a>Ready for Windows
-
-Il Catalogo applicazioni [Ready for Windows](https://www.readyforwindows.com) mette in correlazione le origini dati seguenti:
-
-- Dati di diagnostica di altri clienti che segnalano le stesse app
-- Controlli aggiuntivi di Microsoft come i blocchi di compatibilità in un dispositivo
-
-Le categorie possibili sono:
-
-- **Ampiamente adottato**: almeno 100.000 dispositivi commerciali Windows 10 hanno installato l'app.  
-
-- **Adottato**: almeno 10.000 dispositivi commerciali Windows 10 hanno installato l'app.  
-
-- **Dati insufficienti**: il numero di dispositivi commerciali Windows 10 che stanno condividendo informazioni sull'app è troppo ridotto perché Microsoft possa classificarne l'adozione.
-
-- **Contattare lo sviluppatore**: è possibile che si verifichino problemi di compatibilità con questa versione dell'app. Microsoft consiglia di contattare il provider del software per ottenere altre informazioni. Per altre informazioni, vedere [Ready for Windows](https://www.readyforwindows.com/).  
-
-- **Sconosciuto**: non sono disponibili informazioni Ready for Windows per questa versione dell'applicazione. In [Ready for Windows](https://www.readyforwindows.com/) potrebbero essere disponibili informazioni per altre versioni dell'applicazione.  
-
-### <a name="support-statement"></a>Informativa sul supporto
-
-Se il provider del software supporta una o più versioni di questa applicazione in Windows 10, questa informativa verrà visualizzata nel riquadro delle proprietà dell'app. Nella sezione Fattori di rischio di compatibilità vedere l'**Informativa sul supporto**.
-
-
 
 ## <a name="advanced-insights"></a>Dati analitici avanzati
 
@@ -211,7 +182,6 @@ Se nell'app non vengono usate funzionalità di accessibilità, impostare il flag
 
 Desktop Analytics consiglia di sottoporre l'app a test pilota per individuare eventuali regressioni.
 
-
 ## <a name="driver-risk-assessment"></a>Valutazione del rischio per i driver
 
 Desktop Analytics elenca e raggruppa in base alla disponibilità anche tutti i driver di cui non verrà eseguita la migrazione alla versione del sistema operativo.
@@ -224,7 +194,6 @@ Desktop Analytics elenca e raggruppa in base alla disponibilità anche tutti i d
 | Importazione da Windows Update | Sì | La migrazione della versione attualmente installata di un driver alla nuova versione del sistema operativo non verrà eseguita. Una versione compatibile è disponibile in Windows Update. | Se il computer riceve automaticamente gli aggiornamenti da Windows Update, non è necessaria alcuna azione. In caso contrario, importare un nuovo driver da Windows Update dopo l'aggiornamento di Windows. |
 | Disponibile nel prodotto e in Windows Update | Sì | La migrazione della versione attualmente installata di un driver alla nuova versione del sistema operativo non verrà eseguita. Anche se durante l'aggiornamento viene installato un nuovo driver, una versione più recente è disponibile in Windows Update. | Se il computer riceve automaticamente gli aggiornamenti da Windows Update, non è necessaria alcuna azione. In caso contrario, importare un nuovo driver da Windows Update dopo l'aggiornamento di Windows. |
 | Contattare il fornitore | Sì | La migrazione del driver alla nuova versione del sistema operativo non verrà eseguita e Desktop Analytics non riesce a individuare una versione compatibile. | Per una soluzione, contattare il fornitore di hardware indipendente che produce il driver oppure l'OEM (Original Equipment Manufacturer) che ha fornito il dispositivo. |
-
 
 ## <a name="see-also"></a>Vedere anche
 

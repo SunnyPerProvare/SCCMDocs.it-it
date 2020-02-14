@@ -10,23 +10,21 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
-ms.openlocfilehash: 889b480c6988ca908179a36752a40ad7577d131f
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.openlocfilehash: 8f4a60c2c55a66567c58d19f397e6b84a4d62326
+ms.sourcegitcommit: be37256f98120ad30d5f7925bc32f05a07f15984
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76916871"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071402"
 ---
 # <a name="integrate-upgrade-readiness-with-configuration-manager"></a>Integrare Preparazione aggiornamenti con Configuration Manager
 
 *Si applica a: Configuration Manager (Current Branch)*
 
 > [!Important]  
-> Il servizio Windows Analytics è stato ritirato il 31 gennaio 2020.
+> Il servizio Windows Analytics è stato ritirato il 31 gennaio 2020. Per altre informazioni, vedere [KB 4521815: Ritiro di Windows Analytics il 31 gennaio 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement).
 >
-> [Desktop Analytics ](/sccm/desktop-analytics/overview) è l'evoluzione di Windows Analytics. I clienti esistenti di Windows Analytics possono [eseguire la migrazione a Desktop Analytics](/sccm/desktop-analytics/faq#existing-windows-analytics-customers).
->
-> Per altre informazioni, vedere [KB 4521815: Ritiro di Windows Analytics il 31 gennaio 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement).
+> Desktop Analytics è l'evoluzione di Windows Analytics. Per altre informazioni, vedere [Che cos'è Desktop Analytics](/sccm/desktop-analytics/overview).
 
 Se il sito di Configuration Manager aveva una connessione a Preparazione aggiornamenti, è necessario rimuoverla e riconfigurare i client.
 

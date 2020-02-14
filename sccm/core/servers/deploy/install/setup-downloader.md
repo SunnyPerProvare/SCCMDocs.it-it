@@ -2,7 +2,7 @@
 title: Downloader di installazione
 titleSuffix: Configuration Manager
 description: Leggere le informazioni su questa applicazione autonoma progettata per assicurare che l'installazione del sito usi le versioni correnti dei file di installazione principali.
-ms.date: 03/1/2017
+ms.date: 01/22/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: bda87fc5-2e4c-4992-98a4-01770365038c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 34879344395a1cd3ecebc3b357d5c3856dad9160
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 05dd433e6cdd0d3a0dba14269dacb52b966c4bda
+ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798026"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77178487"
 ---
 # <a name="setup-downloader-for-configuration-manager"></a>Downloader di installazione per Configuration Manager
 
@@ -39,7 +39,7 @@ Sono disponibili due opzioni per l'esecuzione del downloader di installazione:
 - Per le opzioni della riga di comando, eseguire l'applicazione al prompt dei comandi
 
 
-## <a name="run-setup-downloader-with-the-user-interface"></a>Eseguire il Downloader di installazione con l'interfaccia utente  
+## <a name="bkmk_ui"></a> Eseguire il Downloader di installazione con l'interfaccia utente  
 
 1.  In un computer con accesso a Internet, aprire Esplora risorse e passare a **&lt;ConfigMgrInstallationMedia\>\SMSSETUP\BIN\X64**.  
 
@@ -49,7 +49,7 @@ Sono disponibili due opzioni per l'esecuzione del downloader di installazione:
 
 4.  Per rivedere i risultati del download, aprire il file **ConfigMgrSetup.log** nella directory radice dell'unità C.  
 
-## <a name="run-setup-downloader-from-a-command-prompt"></a>Eseguire il Downloader di installazione da un prompt dei comandi  
+## <a name="bkmk_cmd"></a> Eseguire il Downloader di installazione da un prompt dei comandi  
 
 1.  In una finestra del prompt dei comandi passare a **&lt;*Supporti di installazione di Configuration Manager*\>\SMSSETUP\BIN\X64**.   
 
@@ -90,3 +90,22 @@ Sono disponibili due opzioni per l'esecuzione del downloader di installazione:
         -   Il Downloader di installazione viene avviato e quindi è necessario specificare il percorso alla cartella di download. Dopo aver fatto clic su **Verifica**, il downloader di installazione verifica i file nella cartella di download.  
 
 3.  Per rivedere i risultati del download, aprire il file **ConfigMgrSetup.log** nella directory radice dell'unità C.
+
+## <a name="bkmk_cp-files"></a> Copiare i file del Downloader di installazione in un altro computer
+
+1. In Esplora risorse passare a una delle posizioni seguenti:
+
+    - **&lt;Supporto di installazione di Configuration Manager>\SMSSETUP\BIN\X64**
+    - **&lt;Percorso di installazione di Configuration Manager>\BIN\X64**
+    
+1. Copiare i file seguenti nella cartella di destinazione in un altro computer:
+    
+    - **setupdl.exe**
+    - **.\\&lt;lingua>\\setupdlres.dll**
+      - Questo file si trova nella sottocartella per la lingua di installazione. Ad esempio, l'inglese si trova nella sottocartella `00000409`.
+
+    Ad esempio, le cartelle di destinazione nel dispositivo dovrebbero avere un aspetto simile al seguente:
+    - C:\ConfigManInstall\setupdl.exe
+    - C:\ConfigManInstall\00000409\setupdlres.dll
+
+1. Avviare il Downloader di installazione dal computer usando l'[interfaccia utente](#bkmk_ui) o il [prompt dei comandi](#bkmk_cmd), descritto nelle sezioni precedenti.
