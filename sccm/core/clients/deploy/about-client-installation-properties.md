@@ -10,12 +10,12 @@ ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b18fbc2e3f6745578bd773079abe431683914b1d
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 62d0202d8404af17720a59fe6240636d8d3b1cf2
+ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826323"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77178470"
 ---
 # <a name="about-client-installation-parameters-and-properties-in-configuration-manager"></a>Informazioni sui parametri e le proprietà di installazione del client in Configuration Manager
 
@@ -39,7 +39,7 @@ Usare il comando CCMSetup.exe per disinstallare il client di Configuration Manag
 > [!NOTE]  
 >  Non è possibile eseguire il file Client.msi direttamente in Configuration Manager.  
 
- CCMSetup.exe specifica i [parametri della riga di comando](#ccmsetupexe-command-line-parameters) per personalizzare l'installazione. I parametri sono preceduti da una barra rovesciata e per convenzione sono in lettere minuscole. È possibile specificare il valore di un parametro quando necessario, usando due punti seguiti dal valore desiderato. È anche possibile specificare proprietà per modificare il comportamento di client.msi nella riga di comando CCMSetup.exe. Le proprietà vengono specificate per convenzione in lettere maiuscole. Specificare un valore per una proprietà con un segno di uguale seguito immediatamente dal valore desiderato.  
+ CCMSetup.exe specifica i [parametri della riga di comando](#ccmsetupexe-command-line-parameters) per personalizzare l'installazione. I parametri sono preceduti da una barra e per convenzione sono in lettere minuscole. È possibile specificare il valore di un parametro quando necessario, usando due punti seguiti dal valore desiderato. È anche possibile specificare proprietà per modificare il comportamento di client.msi nella riga di comando CCMSetup.exe. Le proprietà vengono specificate per convenzione in lettere maiuscole. Specificare un valore per una proprietà con un segno di uguale seguito immediatamente dal valore desiderato.  
 
 > [!IMPORTANT]  
 >  Specificare le proprietà di CCMSetup prima di specificare le proprietà per client.msi.  
@@ -113,10 +113,10 @@ Questo parametro può specificare l'URL di un gateway di gestione cloud. Usare q
 - Eseguire il comando seguente: `(Get-WmiObject -Namespace Root\Ccm\LocationServices -Class SMS_ActiveMPCandidate | Where-Object {$_.Type -eq "Internet"}).MP`
 - Aggiungere il prefisso "https://" da usare con il parametro **/mp**.
 
-Esempio per l'uso dell'URL del gateway di gestione cloud: `ccmsetup.exe /mp: https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
+Esempio per l'uso dell'URL del gateway di gestione cloud: `ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
 
  > [!Important]
- > Quando si specifica l'URL di un gateway di gestione cloud per il parametro **/mp**, l'URL deve iniziare con **https://** .
+ > Quando si specifica l'URL di un gateway di gestione cloud per il parametro **/mp**, l'URL deve iniziare con **https://**.
 
 
 ### <a name="retryltminutes"></a>/retry:&lt;minuti\>
@@ -252,7 +252,7 @@ Esempio: `CCMSetup.exe /ExcludeFeatures:ClientUI` non installa Software Center n
 
 Specifica i parametri e le proprietà della riga di comando che vengono passati a ccmsetup.exe dopo l'installazione tramite ccmsetup.msi. Racchiudere altre proprietà tra virgolette. Usare questa proprietà quando si esegue il bootstrap del client di Configuration Manager tramite il metodo di installazione della gestione dei dispositivi mobili ibrida di Intune. 
 
-Esempio: `ccmsetup.msi CCMSETUPCMD="/mp: https://mp.contoso.com CCMHOSTNAME=mp.contoso.com"`
+Esempio: `ccmsetup.msi CCMSETUPCMD="/mp:https://mp.contoso.com CCMHOSTNAME=mp.contoso.com"`
 
  > [!Tip]
  > Microsoft Intune limita la riga di comando a 1024 caratteri. 
@@ -344,7 +344,7 @@ Esempio: **CCMSetup.exe  CCMALLOWSILENTREBOOT**
 
  Specifica i criteri di selezione del certificato se il client dispone di più di un certificato per la comunicazione HTTPS. Questo certificato è un certificato valido che include la capacità di autenticazione client.  
 
- È possibile cercare una corrispondenza esatta (usare **Subject:** ) o una corrispondenza parziale (usare **SubjectStr:)** in Nome soggetto o Nome alternativo soggetto. Esempi:  
+ È possibile cercare una corrispondenza esatta (usare **Subject:**) o una corrispondenza parziale (usare **SubjectStr:)** in Nome soggetto o Nome alternativo soggetto. Esempi:  
 
  `CCMCERTSEL="Subject:computer1.contoso.com"` esegue la ricerca di un certificato con una corrispondenza esatta al nome computer "computer1.contoso.com" in Nome soggetto o in Nome alternativo soggetto.  
 
@@ -415,7 +415,7 @@ Questa proprietà può specificare l'indirizzo di un gateway di gestione cloud. 
 ad esempio `ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
 
  > [!Important]
- > Quando si specifica l'indirizzo di un gateway di gestione cloud per la proprietà **CCMHOSTNAME**, *non* aggiungere un prefisso come **https://** . Questo prefisso viene usato solo con l'URL **/mp** di un gateway di gestione cloud.
+ > Quando si specifica l'indirizzo di un gateway di gestione cloud per la proprietà **CCMHOSTNAME**, *non* aggiungere un prefisso come **https://**. Questo prefisso viene usato solo con l'URL **/mp** di un gateway di gestione cloud.
 
 
 
