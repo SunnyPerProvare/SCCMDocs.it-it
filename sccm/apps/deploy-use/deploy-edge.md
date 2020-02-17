@@ -2,7 +2,7 @@
 title: Distribuire e aggiornare Microsoft Edge versione 77 e successive
 titleSuffix: Configuration Manager
 description: Come distribuire e aggiornare Microsoft Edge versione 77 e successive con Configuration Manager
-ms.date: 01/16/2020
+ms.date: 01/23/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,18 +10,18 @@ ms.assetid: 73b420be-5d6a-483a-be66-c4d274437508
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f7622f8a99c130f1e590f3c95e334b6cbef55e15
-ms.sourcegitcommit: 9901ed9219916b6f185b53c0f62e69fc4dbd6692
+ms.openlocfilehash: 8a669a17cf714231007f9bd1685786f406db2acf
+ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76124088"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77178572"
 ---
 # <a name="microsoft-edge-management"></a>Gestione di Microsoft Edge
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-Il nuovo Microsoft Edge è disponibile per le aziende. A partire da Configuration Manager versione 1910, è ora possibile distribuire [Microsoft Edge versione 77 e successive](https://docs.microsoft.com/deployedge/) agli utenti.
+Il nuovo Microsoft Edge è disponibile per le aziende. A partire da Configuration Manager versione 1910, è ora possibile distribuire [Microsoft Edge versione 77 e successive](https://docs.microsoft.com/deployedge/) agli utenti. Per installare la compilazione Edge selezionata, viene usato uno script di PowerShell. Lo script disattiva anche gli aggiornamenti automatici per Edge in modo che possano essere gestiti con Configuration Manager.
 
 ## <a name="bkmk_Microsoft_Edge"></a>Distribuire Microsoft Edge
 <!--4561024-->

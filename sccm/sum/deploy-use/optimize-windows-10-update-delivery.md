@@ -2,7 +2,7 @@
 title: Ottimizzare il recapito degli aggiornamenti di Windows 10
 titleSuffix: Configuration Manager
 description: Informazioni su come usare Configuration Manager per gestire il contenuto di aggiornamento per rimanere aggiornati con Windows 10.
-ms.date: 12/17/2019
+ms.date: 01/29/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: b670cfaf-96a4-4fcb-9caa-0f2e8c2c6198
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 540001ed045a849dab65eeb26ca1fa7d2cb94b55
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.openlocfilehash: 7d402021f67906538acedce02b6e8a46a49125f1
+ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76917567"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77178640"
 ---
 # <a name="optimize-windows-10-update-delivery-with-configuration-manager"></a>Ottimizzare il recapito degli aggiornamenti di Windows 10 con Configuration Manager
 
@@ -70,7 +70,7 @@ Per usare Ottimizzazione recapito per tutti i file di installazione di Windows U
 > [!IMPORTANT]
 > - La funzionalità Ottimizzazione del recapito deve essere abilitata (impostazione predefinita) e non ignorata. Per altre informazioni, vedere [Ottimizzazione recapito di Windows](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference).
 > - Verificare le [impostazioni client di Ottimizzazione recapito](/sccm/core/clients/deploy/about-client-settings#delivery-optimization) quando si modificano le [impostazioni client degli aggiornamenti software](/sccm/core/clients/deploy/about-client-settings#software-updates) per il contenuto delta.
-
+> - Non è possibile usare Ottimizzazione recapito per gli aggiornamenti del client di Office 365 se è abilitato Office COM. Office COM viene usato da Configuration Manager per gestire gli aggiornamenti per i client di Office 365. È possibile annullare la registrazione di Office COM per consentire l'uso di Ottimizzazione recapito per gli aggiornamenti di Office 365. Quando Office COM è disabilitato, gli aggiornamenti software per Office 365 vengono gestiti dall'attività pianificata predefinita di Aggiornamenti automatici di Office 2.0. Ciò significa che Configuration Manager non impone né monitora il processo di installazione per gli aggiornamenti di Office 365. Configuration Manager continuerà a raccogliere informazioni dall'inventario hardware per popolare il dashboard di gestione client di Office 365 nella console. Per informazioni su come annullare la registrazione di Office COM, vedere l'argomento sull'[abilitazione dei client di Office 365 al ricevimento di aggiornamenti dalla rete CDN di Office anziché da Configuration Manager](https://docs.microsoft.com/deployoffice/manage-office-365-proplus-updates-with-configuration-manager#enable-office-365-clients-to-receive-updates-from-the-office-cdn-instead-of-configuration-manager).
 
 
 ### <a name="configuration-manager-peer-cache"></a>Peer cache di Configuration Manager

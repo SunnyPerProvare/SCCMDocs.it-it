@@ -10,12 +10,12 @@ ms.assetid: f5ad22d5-7df1-49c6-8a0f-db1c3f0cda19
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f3363e120d901c4572a0a503293b2f26362c5254
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 6a70269839b4a550fbef4dc5cab1b7ff3d426d87
+ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75806408"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77178504"
 ---
 # <a name="install-a-new-version-of-windows-on-a-new-computer-bare-metal-with-configuration-manager"></a>Installare una nuova versione di Windows in un nuovo computer (bare metal) con Configuration Manager
 
@@ -54,7 +54,7 @@ Per informazioni su come aggiornare un computer esistente con una nuova versione
     > [!NOTE]
     > Le nuove installazioni di Windows possono essere eseguite anche da file di origine di installazione tramite pacchetti di aggiornamento del sistema operativo, ma usano invece immagini del sistema operativo come **install.wim**.
     >
-    > La distribuzione di nuove installazioni di Windows tramite pacchetti di aggiornamento del sistema operativo è ancora supportata, ma dipende dalla compatibilità dei driver con questo metodo. Quando si installa Windows da un pacchetto di aggiornamento del sistema operativo, i driver vengono installati quando si trovano ancora in Windows PE, anziché essere semplicemente inseriti mentre sono in Windows PE. Alcuni driver non sono compatibili con l'installazione da Windows PE. Se i driver non sono compatibili per l'installazione mentre sono in Windows PE, usare invece un'immagine del sistema operativo.  
+    > La distribuzione di nuove installazioni di Windows con i pacchetti di aggiornamento del sistema operativo è ancora supportata, ma dipende dalla compatibilità dei driver con questo metodo. Quando si installa Windows da un pacchetto di aggiornamento del sistema operativo, i driver vengono installati quando si trovano ancora in Windows PE, anziché essere semplicemente inseriti mentre sono in Windows PE. Alcuni driver non sono compatibili con l'installazione da Windows PE. Se i driver non sono compatibili per l'installazione mentre sono in Windows PE, usare invece un'immagine del sistema operativo.  
 
 3.  **Creare una sequenza di attività per distribuire sistemi operativi nella rete**  
 

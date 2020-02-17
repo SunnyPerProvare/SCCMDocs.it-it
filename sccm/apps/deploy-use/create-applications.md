@@ -10,12 +10,12 @@ ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4cc9c8b5246903ba3400117846356f80b53a6665
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 6a17e32c5fda1a2f6b954c263c816437eb7a658e
+ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76033134"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77178395"
 ---
 # <a name="create-applications-in-configuration-manager"></a>Creare applicazioni in Configuration Manager
 
@@ -140,7 +140,7 @@ Per aggiungere altri tipi di distribuzione o configurare altre impostazioni, ved
 
     - **Documentazione utente**: specificare il percorso di un file da cui gli utenti di Software Center possono ottenere altre informazioni su questa applicazione. Questo percorso è un indirizzo di sito Web o un percorso di rete con un nome file. Assicurarsi che gli utenti possano accedere a questo percorso.  
 
-    - **Testo del collegamento**: specificare il testo da visualizzare al posto dell'URL dell'applicazione.  
+    - **Testo del collegamento**: specificare il testo visualizzato al posto di "Informazioni aggiuntive" quando viene specificata la documentazione dell'utente.  
 
     - **URL privacy**: specificare un indirizzo di sito Web per l'informativa sulla privacy per l'applicazione.  
 
@@ -338,7 +338,7 @@ Quando si crea più di un metodo di rilevamento per un tipo di distribuzione, è
 
 1. Nella pagina **Metodo di rilevamento** selezionare la casella **Usa uno script personalizzato per rilevare la presenza di questo tipo di distribuzione**. Selezionare quindi **Modifica**.  
 
-2. Nella finestra di dialogo **Editor dello script** selezionare un tipo in **Tipo di script** per rilevare il tipo di distribuzione: PowerShell, VBScript o JScript.  
+2. Nella finestra di dialogo **Editor dello script** selezionare un **tipo di script** per rilevare il tipo di distribuzione: PowerShell, VBScript o JScript.  
 
     > [!Note]  
     > A partire dalla versione 1810, quando si esegue uno script di Windows PowerShell come metodo di rilevamento app, il client di Configuration Manager chiama PowerShell con il parametro `-NoProfile`. Questa opzione avvia PowerShell senza i profili. Un profilo di PowerShell è uno script che viene eseguito all'avvio di PowerShell. <!--3607762-->  
@@ -709,7 +709,7 @@ Per distribuire l'app come collegamento a Windows Store, configurare l'impostazi
 I client Windows valutano sempre i tipi di distribuzione che usano un collegamento a uno Store prima di altri tipi di distribuzione. Il client valuta quindi i tipi di distribuzione in base alla priorità.
 
 > [!TIP]
-> Alcuni collegamenti allo store possono generare un errore simile a questo nella Creazione guidata applicazione: "Collegamento applicazione non valido". Ad esempio, alcune *App in evidenza* dello store possono provocare questo errore. È comunque possibile selezionare **Avanti** nella pagina **Generale** della procedura guidata. Configuration Manager crea correttamente l'app, che può quindi essere distribuita.<!-- SCCMDocs-pr #4716 -->
+> Alcuni collegamenti allo store possono generare questo errore nella Creazione guidata applicazione: "Collegamento applicazione non valido". Ad esempio, alcune *App in evidenza* dello store possono provocare questo errore. È comunque possibile selezionare **Avanti** nella pagina **Generale** della procedura guidata. Configuration Manager crea correttamente l'app, che può quindi essere distribuita.<!-- SCCMDocs-pr #4716 -->
 
 ## <a name="next-steps"></a>Passaggi successivi
 

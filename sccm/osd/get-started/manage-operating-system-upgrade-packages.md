@@ -10,12 +10,12 @@ ms.assetid: b9b22655-b8c1-461f-8047-3a7e906f647a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 49c402bcf88bbfde20acb5e52db5a520aa794a4d
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: a6b423030026dac5de5cb0f6a64671a58fe0e2d1
+ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75821291"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77178674"
 ---
 # <a name="manage-os-upgrade-packages-with-configuration-manager"></a>Gestire i pacchetti di aggiornamento del sistema operativo in Configuration Manager
 
@@ -44,10 +44,10 @@ Prima di poter usare un pacchetto di aggiornamento del sistema operativo, è nec
         > [!IMPORTANT]  
         >  Limitare l'accesso a questi file di origine dell'installazione per impedire manomissioni indesiderate.  
 
-    - **Estrarre un indice di immagine specifico dal file Install. wim del pacchetto di aggiornamento selezionato** e quindi selezionare un indice di immagine dall'elenco.<!--4931110--> A partire dalla versione 1910, questa opzione importa automaticamente un solo indice anziché tutti gli indici delle immagini nel file. L'uso di questa opzione genera un file di immagine più piccolo e un'installazione offline più rapida. Supporta anche il processo [Servizio immagini ottimizzato](#bkmk_resetbase) che genera un file di immagine più piccolo dopo l'applicazione degli aggiornamenti software.  
+    - **Estrarre un indice di immagine specifico dal file install.wim del pacchetto di aggiornamento selezionato** e quindi selezionare un indice di immagine dall'elenco.<!--4931110--> A partire dalla versione 1910, questa opzione importa automaticamente un solo indice anziché tutti gli indici delle immagini nel file. L'uso di questa opzione genera un file di immagine più piccolo e un'installazione offline più rapida. Supporta anche il processo [Servizio immagini ottimizzato](#bkmk_resetbase) che genera un file di immagine più piccolo dopo l'applicazione degli aggiornamenti software.  
 
         > [!IMPORTANT]  
-        > Configuration Manager sovrascrive il file Install. wim esistente nel pacchetto di aggiornamento del sistema operativo. Estrae l'indice dell'immagine in una posizione temporanea e quindi lo sposta nella directory di origine originale. Prima di importare un pacchetto di aggiornamento del sistema operativo e abilitare questa opzione, assicurarsi di eseguire il backup dei file di origine originali.
+        > Configuration Manager sovrascrive il file install.wim esistente nel pacchetto di aggiornamento del sistema operativo. Estrae l'indice dell'immagine in una posizione temporanea e quindi lo sposta nella directory di origine originale. Prima di importare un pacchetto di aggiornamento del sistema operativo e abilitare questa opzione, assicurarsi di eseguire il backup dei file di origine originali.
 
     - Se si desidera memorizzare in anteprima contenuto nella cache in un client, specificare **Architettura** e **Lingua** dell'immagine. Per altre informazioni, vedere [Configurare la pre-cache del contenuto](/configmgr/osd/deploy-use/configure-precache-content).  
 

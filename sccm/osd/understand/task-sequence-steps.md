@@ -10,12 +10,12 @@ ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 66e7fe54a3f1390cdab9020059686fa81da120f5
-ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
+ms.openlocfilehash: ec3b4f225756b9342973177c4824e712658fcf61
+ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77035199"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77178657"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
@@ -252,7 +252,7 @@ Installa un sistema operativo usando un pacchetto di aggiornamento del sistema o
 > [!NOTE]  
 > I **pacchetti di aggiornamento del sistema operativo** sono pensati principalmente per l'uso con gli aggiornamenti sul posto e non per le nuove installazioni di Windows. Quando si distribuiscono nuove installazioni di Windows, usare l'opzione **Applica sistema operativo da un'immagine acquisita** e **install.wim** dai file dell'origine di installazione.
 >
-> La distribuzione di nuove installazioni di Windows tramite **pacchetti di aggiornamento del sistema operativo** è ancora supportata, ma dipende dalla compatibilità dei driver con questo metodo. Quando si installa Windows da un pacchetto di aggiornamento del sistema operativo, i driver vengono installati quando si trovano ancora in Windows PE, anziché essere semplicemente inseriti mentre sono in Windows PE. Alcuni driver non sono compatibili con l'installazione da Windows PE.
+> La distribuzione di nuove installazioni di Windows effettuata con i **pacchetti di aggiornamento del sistema operativo** è ancora supportata, ma dipende dalla compatibilità dei driver con questo metodo. Quando si installa Windows da un pacchetto di aggiornamento del sistema operativo, i driver vengono installati quando si trovano ancora in Windows PE, anziché essere semplicemente inseriti mentre sono in Windows PE. Alcuni driver non sono compatibili con l'installazione da Windows PE.
 >
 > Se i driver non sono compatibili con l'installazione da Windows PE, creare un'**immagine del sistema operativo** con il file **install.wim** dai file dell'origine di installazione originale. Eseguire quindi la distribuzione usando in alternativa l'opzione **Applica sistema operativo da un'immagine acquisita**.
 

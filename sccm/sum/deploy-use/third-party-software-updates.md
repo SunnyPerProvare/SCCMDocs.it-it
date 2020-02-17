@@ -10,12 +10,12 @@ ms.assetid: 946b0f74-0794-4e8f-a6af-9737d877179b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 678b6a15bb1d80df4c320801b98438f75bebc7c7
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: f7ff17ced7c3353ab862014fce697c715cd6171b
+ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75827401"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77178691"
 ---
 # <a name="enable-third-party-updates"></a>Abilitare gli aggiornamenti di terze parti 
 
@@ -24,7 +24,7 @@ ms.locfileid: "75827401"
 A partire dalla versione 1806, il nodo **Cataloghi di aggiornamenti software di terze parti** nella console di Configuration Manager consente di sottoscrivere i cataloghi di terze parti, pubblicarne gli aggiornamenti nel punto di aggiornamento software e quindi implementare i cataloghi nei client.  <!--1357605, 1352101, 1358714-->
 
 > [!Note]  
-> Configuration Manager non abilita questa funzionalità per impostazione predefinita. Prima di usarlo, abilitare la funzionalità facoltativa **Abilita supporto per gli aggiornamenti di terze parti nei client**. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).
+> Configuration Manager non abilita questa funzionalità per impostazione predefinita. Prima di usarlo, abilitare la funzionalità facoltativa **Abilita il supporto per gli aggiornamenti di terze parti sui client**. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).
 
 
 ## <a name="prerequisites"></a>Prerequisiti 
@@ -45,7 +45,7 @@ A partire dalla versione 1806, il nodo **Cataloghi di aggiornamenti software di 
         - Configuration Manager scarica il contenuto di terze parti per gli aggiornamenti software dalla directory del contenuto WSUS tramite HTTP.   
     - [Configurare SSL nel punto di aggiornamento software](../get-started/install-a-software-update-point.md#configure-ssl-communications-to-wsus)
 
-2. Quando si imposta la configurazione del certificato di firma WSUS degli aggiornamenti di terze parti sulla **gestione degli aggiornamenti di Configuration Manager**  nelle proprietà del componente punto di aggiornamento software, sono necessarie le seguenti configurazioni per consentire la creazione del certificato di firma WSUS autofirmato: 
+2. Quando si imposta la configurazione del certificato di firma WSUS degli aggiornamenti di terze parti su **Configuration Manager gestisce il certificato** nelle proprietà del componente del punto di aggiornamento software, sono necessarie le seguenti configurazioni per consentire la creazione del certificato di firma WSUS autofirmato: 
    - Il Registro di sistema remoto deve essere abilitato nel server del punto di aggiornamento software.
    -  L'**account di connessione al server WSUS** deve avere le autorizzazioni del Registro di sistema per il server del punto di aggiornamento software/WSUS. 
 
@@ -156,7 +156,7 @@ Quando gli aggiornamenti di terze parti sono nel nodo **Tutti gli aggiornamenti*
 8. Per poter visualizzare i risultati di conformità, i client dovranno eseguire un'analisi e valutare gli aggiornamenti.  È possibile attivare manualmente questo ciclo dal pannello di controllo di Configuration Manager in un client eseguendo l'azione **Ciclo di analisi per aggiornamenti software**.
 
 
-## <a name="bkmk_1910"></a>Miglioramenti per gli aggiornamenti di terze parti a partire da 1910
+## <a name="bkmk_1910"></a> Miglioramenti per gli aggiornamenti di terze parti a partire da 1910
 <!--4469002-->
 Sono ora disponibili controlli più granulari sulla sincronizzazione dei cataloghi di aggiornamenti di terze parti. A partire da Configuration Manager versione 1910, è possibile configurare la pianificazione della sincronizzazione per ogni catalogo in modo indipendente. Quando si usano cataloghi che includono aggiornamenti suddivisi per categorie, è possibile configurare la sincronizzazione in modo da includere solo determinate categorie di aggiornamenti per evitare di sincronizzare l'intero catalogo. Con i cataloghi suddivisi per categorie, quando si è certi che si distribuirà una categoria, è possibile configurarla per il download e la pubblicazione automatici in WSUS.
 
@@ -164,16 +164,16 @@ Sono ora disponibili controlli più granulari sulla sincronizzazione dei catalog
 
 1. Passare all'area di lavoro **Raccolta software**, espandere **Aggiornamenti software** e quindi selezionare il nodo **Cataloghi di aggiornamenti software di terze parti**.
 1. Selezionare il catalogo per cui eseguire la sottoscrizione e fare clic su **Sottoscrivi il catalogo** nella barra multifunzione.
-1. Scegliere le opzioni disponibili nella pagina **pianificazione** se si desidera eseguire l'override della pianificazione della sincronizzazione predefinita:
-   - **Pianificazione semplice**: scegliere l'intervallo di ora, giorno o mese.
+1. Scegliere le opzioni disponibili nella pagina **Pianificazione** per eseguire l'override della pianificazione predefinita della sincronizzazione:
+   - **Pianificazione semplice**: scegliere l'intervallo di ore, giorni o mesi.
    - **Pianificazione personalizzata**: impostare una pianificazione complessa.
 
 ### <a name="update-the-schedule-per-catalog"></a>Aggiornare la pianificazione per catalogo
 
 1. Passare all'area di lavoro **Raccolta software**, espandere **Aggiornamenti software** e quindi selezionare il nodo **Cataloghi di aggiornamenti software di terze parti**.
 1. Fare clic con il pulsante destro del mouse sul catalogo e scegliere **Proprietà**.
-1. Scegliere le opzioni disponibili nella scheda pianificazione: 
-   - **Pianificazione semplice**: scegliere l'intervallo di ora, giorno o mese.
+1. Scegliere le opzioni nella scheda Pianificazione: 
+   - **Pianificazione semplice**: scegliere l'intervallo di ore, giorni o mesi.
    - **Pianificazione personalizzata**: impostare una pianificazione complessa.
 
 ### <a name="new-subscription-to-a-third-party-v3-catalog"></a>Nuova sottoscrizione a un catalogo v3 di terze parti
