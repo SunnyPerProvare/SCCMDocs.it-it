@@ -10,12 +10,12 @@ ms.assetid: 1ee6541a-e243-43ea-be16-d0349f7f0c6e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 11d4ef15124cd79cacee91a0525b0faaee616964
-ms.sourcegitcommit: 9901ed9219916b6f185b53c0f62e69fc4dbd6692
+ms.openlocfilehash: df068d134af1d122ebcca453e08addb64c1e6a9d
+ms.sourcegitcommit: 1991263194a5cd6dfbd3dd9a5f5c7f179c1bfeac
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76124175"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77218387"
 ---
 # <a name="encrypt-recovery-data"></a>Crittografare i dati di ripristino
 
@@ -77,7 +77,7 @@ Prima di usare questo script in un ambiente di produzione, modificare i valori s
 USE CM_ABC
 IF NOT EXISTS (SELECT name FROM sys.symmetric_keys WHERE name = '##MS_DatabaseMasterKey##')
 BEGIN
-    CREATE MASTER KEY ENCRYPTION BY PASSWORD = MyMasterKeyPassword
+    CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'MyMasterKeyPassword'
 END
 
 IF NOT EXISTS (SELECT name from sys.certificates WHERE name = 'BitLockerManagement_CERT')
@@ -105,7 +105,7 @@ Prima di usare questo script in un ambiente di produzione, modificare i valori s
 USE CM_ABC
 BACKUP CERTIFICATE BitLockerManagement_CERT TO FILE = 'C:\BitLockerManagement_CERT'
     WITH PRIVATE KEY ( FILE = 'C:\BitLockerManagement_CERT_KEY',
-        ENCRYPTION BY PASSWORD = MyExportKeyPassword)
+        ENCRYPTION BY PASSWORD = 'MyExportKeyPassword')
 ```
 
 > [!IMPORTANT]
@@ -126,7 +126,7 @@ Prima di usare questo script in un ambiente di produzione, modificare i valori s
 USE CM_ABC
 IF NOT EXISTS (SELECT name FROM sys.symmetric_keys WHERE name = '##MS_DatabaseMasterKey##')
 BEGIN
-    CREATE MASTER KEY ENCRYPTION BY PASSWORD = MyMasterKeyPassword
+    CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'MyMasterKeyPassword'
 END
 
 IF NOT EXISTS (SELECT name from sys.certificates WHERE name = 'BitLockerManagement_CERT')
@@ -135,7 +135,7 @@ BEGIN
 CREATE CERTIFICATE BitLockerManagement_CERT AUTHORIZATION RecoveryAndHardwareCore
 FROM FILE  = 'C:\BitLockerManagement_CERT'
     WITH PRIVATE KEY ( FILE = 'C:\BitLockerManagement_CERT_KEY',
-        DECRYPTION BY PASSWORD = MyExportKeyPassword)
+        DECRYPTION BY PASSWORD = 'MyExportKeyPassword')
 
 GRANT CONTROL ON CERTIFICATE ::BitLockerManagement_CERT TO RecoveryAndHardwareRead
 GRANT CONTROL ON CERTIFICATE ::BitLockerManagement_CERT TO RecoveryAndHardwareWrite

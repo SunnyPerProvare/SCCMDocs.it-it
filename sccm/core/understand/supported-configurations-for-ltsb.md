@@ -10,12 +10,12 @@ ms.assetid: f0f818d4-7f45-402f-8758-dc88bc024953
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 03c79e2079a2e706f63613c670fcff23902a75fa
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 67ad9c5a12dcd1067b1212a3d49cbf6c07965140
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825779"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515637"
 ---
 # <a name="supported-configurations-for-the-long-term-servicing-branch-of-system-center-configuration-manager"></a>Configurazioni supportate per Long-Term Servicing Branch di System Center Configuration Manager
 
@@ -47,16 +47,11 @@ LTSB supporta l'uso dei seguenti sistemi operativi di computer Windows come sist
 - Windows Server 2016
 - Windows Server 2012 R2 (x64): Standard, Datacenter
 - Windows Server 2012 (x64): Standard, Datacenter
-- Windows Server 2008 R2 con SP1 (x64): Standard, Enterprise, Datacenter
-- Windows Server 2008 con SP2 (x86, x64): Standard, Enterprise, Datacenter  *(Vedere nota 1)*
 - Windows 10 Enterprise 2015 LTSB (x86, x64)
 - Windows 10 Enterprise 2016 LTSB (x86, x64)
 - Windows 8.1 (x86, x64): Professional, Enterprise
-- Windows 7 con SP1 (x86, x64): Professional, Enterprise, Ultimate
 - Installazione Server Core di Windows Server 2012
-- Installazione Server Core di Windows Server 2012 R2    
-
-*Nota 1*: Questo sistema operativo non è supportato per i server del sito o ruoli del sistema del sito fatta eccezione per il punto di distribuzione e il punto di distribuzione pull. È possibile continuare a usare questo sistema operativo come punto di distribuzione fino all'annuncio della deprecazione di questo supporto o alla scadenza del periodo di supporto "Extended" di questo sistema operativo. Per altre informazioni, vedere [Installation of Configuration Manager CB and LTSB fails on Windows Server 2008](https://support.microsoft.com/help/4015095) (L'installazione di Configuration Manager CB e LTSB non riesce in Windows Server 2008).
+- Installazione Server Core di Windows Server 2012 R2
 
 ## <a name="client-management"></a>Gestione dei client
 Le sezioni seguenti identificano i sistemi operativi client che è possibile gestire con LTSB. LTSB non supporta l'aggiunta di nuovi sistemi operativi come client supportati.
@@ -70,17 +65,11 @@ Le sezioni seguenti identificano i sistemi operativi client che è possibile ges
 - Windows Server 2012 (x64): Standard, Datacenter (Nota 1)
 - Windows Storage Server 2012 R2 (x64)
 - Windows Storage Server 2012 (x64)
-- Windows Server 2008 R2 con SP1 (x64): Standard, Enterprise, Datacenter (Nota 1)
-- Windows Storage Server 2008 R2 (x86, x64): Workgroup, Standard, Enterprise
-- Windows Server 2008 con SP2 (x86, x64): Standard, Enterprise, Datacenter (Nota 1)
 - Windows 10 Enterprise 2015 LTSB (x86, x64)
 - Windows 10 Enterprise 2016 LTSB (x86, x64)
 - Windows 8.1 (x86, x64): Professional, Enterprise
-- Windows 7 con SP1 (x86, x64): Professional, Enterprise, Ultimate
 - Installazione Server Core di Windows Server 2012 R2 (x64) (Nota 2)
 - Installazione Server Core di Windows Server 2012 (x64) (Nota 2)
-- Installazione Server Core di Windows Server 2008 R2 SP1 (x64)
-- Installazione Server Core di Windows Server 2008 SP2 (x86, x64)
 
 **(Nota 1)** Le versioni Datacenter sono supportate, ma non certificate per Configuration Manager.  
 **(Nota 2)** Per supportare l'installazione push client, il computer che esegue questa versione del sistema operativo deve eseguire il servizio ruolo file server per il ruolo del server Servizi file e archiviazione. Per altre informazioni sull'installazione di funzionalità di Windows in un computer Server Core, vedere [Installare i ruoli e le funzionalità server in un server Server Core](https://technet.microsoft.com/library/jj574158(v=ws.11).aspx) nella libreria TechNet per Windows Server 2012.
@@ -289,12 +278,9 @@ LTSB supporta i sistemi operativi seguenti per eseguire la console di Configurat
 - Windows Server 2016
 - Windows Server 2012 R2 (x64): Standard, Datacenter
 - Windows Server 2012 (x64): Standard, Datacenter
-- Windows Server 2008 R2 con SP1 (x64): Standard, Enterprise, Datacenter
-- Windows Server 2008 con SP2 (x86, x64): Standard, Enterprise, Datacenter
 - Windows 10 Enterprise 2016 LTSB (x86, x64)
 - Windows 10 Enterprise 2015 LTSB (x86, x64)
 - Windows 8.1 (x86, x64): Professional, Enterprise
-- Windows 7 con SP1 (x86, x64): Professional, Enterprise, Ultimate
 
 
 ## <a name="sql-server-versions-supported-for-the-site-database-and-reporting-point"></a>Versioni di SQL Server supportate per il database del sito e il punto di reporting

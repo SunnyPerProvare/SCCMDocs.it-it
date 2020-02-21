@@ -2,7 +2,7 @@
 title: Prerequisiti del sito
 titleSuffix: Configuration Manager
 description: Informazioni su come configurare un computer Windows come un server di sistema del sito di Configuration Manager.
-ms.date: 11/29/2019
+ms.date: 02/19/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,20 +10,18 @@ ms.assetid: 1392797b-76cb-46b4-a3e4-8f349ccaa078
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 00197d92e6a6bb928fd2727e55857056bf3839ac
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e0d4fe217269e626243e5df4685f136daf012612
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802090"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77516164"
 ---
 # <a name="site-and-site-system-prerequisites-for-configuration-manager"></a>Prerequisiti del sito e del sistema del sito per Configuration Manager
 
 *Si applica a: Configuration Manager (Current Branch)*
 
 I computer basati su Windows richiedono configurazioni specifiche per supportare l'uso come server del sistema del sito di Configuration Manager.
-
-Questo articolo riguarda principalmente [Windows Server 2012 e versioni successive](#bkmk_2012Prereq). [Windows Server 2008 R2 and Windows Server 2008](#bkmk_2008) sono supportati per il ruolo del sistema del sito del punto di distribuzione. Per altre informazioni, vedere [Sistemi operativi supportati per i server dei sistemi del sito](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers).
 
 Per alcuni prodotti, come Windows Server Update Services (WSUS) per il punto di aggiornamento software, è necessario fare riferimento alla documentazione dei prodotti per identificare altri prerequisiti e limitazioni per l'uso. Qui sono incluse solo le configurazioni che si applicano direttamente all'uso con Configuration Manager.
 
@@ -717,62 +715,3 @@ Per altre informazioni sulle versioni di .NET Framework, vedere gli articoli seg
 
 Quando si installa un nuovo sito, Configuration Manager installa automaticamente SQL Server Native Client come componente ridistribuibile. Dopo l'installazione del sito, Configuration Manager non aggiorna SQL Server Native Client. Verificare che il componente sia aggiornato. Per altre informazioni, vedere i [controlli dei prerequisiti per SQL Server Native Client](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-server-native-client).
 
-
-## <a name="bkmk_2008"></a> Prerequisiti per Windows Server 2008 R2 e Windows Server 2008  
-
-Windows Server 2008 e Windows Server 2008 R2 sono ora in modalità di supporto "Extended" e non più in modalità di supporto Mainstream, come descritto nel sito Web del [ciclo di vita del supporto Microsoft](https://support.microsoft.com/lifecycle). Per altre informazioni sul supporto disponibile in futuro per questi sistemi operativi come server di sistema del sito con Configuration Manager, vedere [Sistemi operativi del server rimossi e deprecati](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#server-os).  
-
-Queste versioni del sistema operativo non sono supportate per i server del sito o per la maggior parte dei ruoli del sistema del sito. Sono ancora supportate per il ruolo del sistema del sito dei punti di distribuzione, inclusi i punti di distribuzione pull, e per PXE e il multicast.
-
-### <a name="bkmk_2008dppreq"></a> Punto di distribuzione  
-
-### <a name="iis-configuration"></a>Configurazione di IIS
-
-È possibile usare la configurazione predefinita di IIS o una configurazione personalizzata. Per usare una configurazione personalizzata di IIS, è necessario abilitare le opzioni seguenti per IIS:  
-
-- Sviluppo di applicazioni:  
-
-    - Estensioni ISAPI  
-
-- Sicurezza:  
-
-    - Autenticazione di Windows  
-
-- Compatibilità Gestione IIS 6:  
-
-    - Compatibilità Metabase IIS 6  
-
-    - Compatibilità WMI IIS 6  
-
-Quando si usa una configurazione personalizzata di IIS, è possibile rimuovere le opzioni non necessarie, ad esempio:  
-
-- Funzionalità HTTP comuni:  
-
-    - Reindirizzamento HTTP  
-
-- Strumenti e script di gestione IIS  
-
-### <a name="windows-feature"></a>Funzionalità di Windows  
-
-- Compressione differenziale remota  
-
-### <a name="visual-c-redistributable"></a>Visual C++ Redistributable
-
-- Configuration Manager installa Microsoft Visual C++ 2013 Redistributable Package in ogni computer che ospita un punto di distribuzione.  
-
-- La versione installata dipende dalla piattaforma del computer (x86 o x64).  
-
-### <a name="to-support-pxe-or-multicast"></a>Per il supporto di PXE o del multicast  
-
-- Abilitare un risponditore PXE in un punto di distribuzione senza Servizi di distribuzione Windows.  
-
-- Installare e configurare il ruolo Servizi di distribuzione Windows di Windows Server.  
-
-    > [!NOTE]  
-    > Servizi di distribuzione Windows viene installato e configurato automaticamente quando si configura un punto di distribuzione per il supporto di PXE o del multicast in un server che esegue Windows Server 2012 o versioni successive.  
-
-Per altre informazioni, vedere [Installare e configurare i punti di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_config-pxe).
-
-<!--sms.503672 -Clarified BITS use-->
-> [!NOTE]  
-> Quando il punto di distribuzione trasferisce il contenuto, il trasferimento viene eseguito tramite il **Servizio trasferimento intelligente in background** (BITS) incluso nel sistema operativo Windows. Il ruolo di punto di distribuzione non richiede l'installazione della funzionalità facoltativa di estensione del server IIS BITS, perché il client non carica informazioni in tale server.

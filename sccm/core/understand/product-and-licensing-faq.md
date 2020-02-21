@@ -2,7 +2,7 @@
 title: Domande frequenti su prodotto e licenze
 titleSuffix: Configuration Manager
 description: Risposte alle domande frequenti sul prodotto e le licenze per Configuration Manager.
-ms.date: 01/24/2020
+ms.date: 02/12/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: ee8d611f-aa0c-4efd-b0ad-dbd14d0a0623
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fc6eb9c4e932fd98eeb2e7b41eb87b320704d648
-ms.sourcegitcommit: d2b6450fbc75e9937b090ab7d8a5e1d524c92f87
+ms.openlocfilehash: a6cd83b99b2936ebc44bb171795f7c8da4c8b17a
+ms.sourcegitcommit: 1991263194a5cd6dfbd3dd9a5f5c7f179c1bfeac
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813927"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77218413"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Domande frequenti relative ai rami e alle licenze di Configuration Manager
 
@@ -139,7 +139,6 @@ I diritti di utilizzo approvati per le funzionalità SQL con Configuration Manag
 - SQL Server Reporting Services (SSRS) per il ruolo Punto di reporting
 - Ruolo Punto di servizio del data warehouse
 - Ruolo Repliche di database per i punti di gestione
-- SQL Server Always On
 
 La licenza di SQL Server inclusa con Configuration Manager supporta ogni istanza di SQL Server installata per ospitare un database per Configuration Manager. Tuttavia, solo i database per Configuration Manager nell'elenco precedente possono essere eseguiti in tale sistema SQL Server quando si usa questa licenza. Se un database per un'applicazione Microsoft aggiuntiva o un prodotto di terze parti condivide il sistema SQL Server, è necessaria una licenza distinta per tale istanza di SQL Server.
  <!-- sms500967 -->

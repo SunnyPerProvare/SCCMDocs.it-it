@@ -10,12 +10,12 @@ ms.assetid: 6ecdfad1-6305-45a8-ae75-3f33b967cb8f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: b1e8ab5b0e6c45d86a0973093e8b405aa7762f87
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 7c017e750e175e09a67deb4651cf7e8eb98f1bc1
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75820237"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77516368"
 ---
 # <a name="create-and-deploy-windows-firewall-policies-for-endpoint-protection-in-configuration-manager"></a>Creare e distribuire criteri di Windows Firewall per Endpoint Protection in Configuration Manager
 
@@ -38,9 +38,6 @@ I criteri di Windows Firewall per Endpoint Protection in Configuration Manager c
 4.  Nella pagina **Generale** di **Creazione guidata criteri di Windows Firewall**specificare un nome e una descrizione facoltativa per il criterio firewall e quindi fare clic su **Avanti**.  
 
 5.  Nella pagina **Impostazioni profilo** della procedura guidata configurare le impostazioni seguenti per ogni profilo di connessione remota:  
-
-    > [!IMPORTANT]  
-    >  Se si vogliono distribuire i criteri di Windows Firewall in computer che eseguono Windows Server 2008 e Windows Vista Service Pack 1, è necessario prima di tutto installare l' [hotfix KB971800](https://go.microsoft.com/fwlink/p/?LinkId=231239) in tali computer.  
 
     > [!NOTE]  
     >  Per altre informazioni sui profili di rete, vedere la documentazione di Windows.  

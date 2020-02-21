@@ -10,12 +10,12 @@ ms.assetid: aebafaf9-b3d5-4a0f-9ee5-685758c037a1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f9a10c8ad70c078a29abefa3056b5cbc5c1b728a
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: ba7dd40d1b52f46e0d63b8028b9d8f726a590d4e
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798712"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515756"
 ---
 # <a name="install-and-configure-distribution-points-in-configuration-manager"></a>Installare e configurare punti di distribuzione per Configuration Manager
 
@@ -331,12 +331,14 @@ Le impostazioni seguenti si trovano nella pagina **Comunicazioni** della Creazio
 
 - **Consenti connessione anonima dei client**: questa impostazione permette di specificare se il punto di distribuzione consentirà connessioni anonime dai client di Configuration Manager alla raccolta contenuto.  
 
+<!-- I don't think this applies any more, but commenting instead of removing just in case.
     > [!Important]  
-    > Se questa impostazione non viene usata, applicare le modifiche descritte nell'articolo della Microsoft Knowledge Base [2619572](https://support.microsoft.com/help/2619572/) sui client Windows 7. In caso contrario il ripristino delle applicazioni Windows Installer può non riuscire.  
+    > If you don't use this setting, apply the changes described in Microsoft Knowledge Base article [2619572](https://support.microsoft.com/help/2619572/) on Windows 7 clients. Otherwise repair of Windows Installer applications can fail.  
     >
-    > Quando viene distribuita un'applicazione Windows Installer, il client di Configuration Manager scarica il file nella propria cache locale. Al termine dell'installazione i file vengono rimossi dal client, che quindi aggiorna l'elenco delle origini di Windows Installer per l'applicazione e imposta il percorso del contenuto nella raccolta contenuto sui punti di distribuzione associati. Se successivamente si prova a ripristinare l'applicazione nel dispositivo, MSIExec prova ad accedere al percorso del contenuto usando un utente anonimo.  
+    > When you deploy a Windows Installer application, the Configuration Manager client downloads the file to its local cache. The client eventually removes the files after the installation finishes. The Configuration Manager client updates the Windows Installer source list for the application. It sets the content path to the content library on associated distribution points. Later, if you try to repair the application on the device, MSIExec attempts to access the content path by using an anonymous user.  
     >
-    > Dopo aver installato l'aggiornamento nei client e modificato la chiave del Registro di sistema documentata, MSIExec accede al percorso del contenuto usando l'account utente connesso.  
+    > After you install the update on clients and modify the documented registry key, MSIExec accesses the content path by using the signed-in user account.  
+ -->
 
 - **Creare un certificato autofirmato o importare un certificato client PKI**: Configuration Manager usa questo certificato per gli scopi seguenti:  
 

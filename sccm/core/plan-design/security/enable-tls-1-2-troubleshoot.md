@@ -10,12 +10,12 @@ ms.assetid: 15083f28-8ff2-4e23-9f5e-b5dbd0859839
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 3822b90111cc5720ae59de9e237814f037032ac9
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 7d18b06910c58258dd9f478ec46fd1736b44809b
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799217"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515773"
 ---
 # <a name="common-issues-when-enabling-tls-12"></a>Problemi comuni relativi all'abilitazione di TLS 1.2
 
@@ -25,7 +25,6 @@ Questo articolo fornisce consigli per i problemi comuni che si verificano quando
 
 Le piattaforme client seguenti sono supportate da Configuration Manager, ma non sono supportate in un ambiente TLS 1.2:
 
-- Windows Server 2008
 - Windows CE
 - Apple OS X
 - Dispositivi Windows 10 gestiti con MDM locale

@@ -2,7 +2,7 @@
 title: Supporto della virtualizzazione
 titleSuffix: Configuration Manager
 description: Requisiti per l'installazione di ruoli del sistema del sito e dei client di Configuration Manager in un ambiente di virtualizzazione.
-ms.date: 01/09/2019
+ms.date: 02/19/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 1098e8c5-9676-4c2b-841b-ec88bd04e495
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 52e5d832a4c729cc292601eb373d7bf5a5fca7ef
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: caff64eb1a4be508ce0486e9180fb9c72fd77805
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75801988"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77516147"
 ---
 # <a name="support-for-virtualization-environments-with-configuration-manager"></a>Supporto per gli ambienti di virtualizzazione per Configuration Manager
 
@@ -25,7 +25,6 @@ Configuration Manager supporta l'installazione di ruoli del sistema del sito e d
 
 Ad esempio, si usa Microsoft Hyper-V Server 2012 per ospitare una macchina virtuale che esegue Windows Server 2012. È possibile installare i ruoli del sistema del sito o client nella macchina virtuale che esegue Windows Server 2012. È possibile installare il client nell'host che esegue Microsoft Hyper-V Server 2012.  
 
-
 ## <a name="virtualization-environments"></a>Ambienti di virtualizzazione
 
 - Windows Server 2019  
@@ -34,12 +33,10 @@ Ad esempio, si usa Microsoft Hyper-V Server 2012 per ospitare una macchina virtu
 - R2 per Windows Server 2012  
 - Microsoft Hyper-V Server 2012  
 - Windows Server 2012  
-- Microsoft Hyper-V Server 2008 R2  
-- Windows Server 2008 R2  
 
-#### <a name="bkmk_note1"></a> Nota 1: Virtualizzazione annidata
-Configuration Manager non supporta la [virtualizzazione annidata](/windows-server/virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows#nested-virtualization-new), introdotta con Windows Server 2016.
+### <a name="bkmk_note1"></a> Nota 1: Virtualizzazione annidata
 
+Configuration Manager non supporta la [virtualizzazione annidata](https://docs.microsoft.com/windows-server/virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows#nested-virtualization-new), introdotta con Windows Server 2016.
 
 ### <a name="virtualization-environment-support"></a>Supporto dell'ambiente di virtualizzazione
 
@@ -53,8 +50,6 @@ Per verificare che l'ambiente di virtualizzazione sia supportato per Configurati
 Configuration Manager non può gestire macchine virtuali se sono offline. Non è possibile aggiornare un'immagine di macchina virtuale offline né raccogliere un inventario tramite il client di Configuration Manager nel computer host.  
 
 Nessuna considerazione speciale è attribuita alle macchine virtuali. Ad esempio, Configuration Manager potrebbe non riuscire a determinare se un aggiornamento deve essere nuovamente applicato a un'immagine di macchina virtuale se la macchina virtuale è stata arrestata e riavviata senza salvare lo stato della macchina virtuale a cui è stato applicato l'aggiornamento.  
-
-
 
 ##  <a name="bkmk_Azure"></a> Macchine virtuali di Microsoft Azure  
 
@@ -72,3 +67,7 @@ Per altre informazioni, vedere [Configuration Manager in Azure](/sccm/core/under
 
 > [!IMPORTANT]  
 > I siti e i client di Configuration Manager in esecuzione in macchine virtuali di Azure sono soggetti anche agli stessi requisiti di licenza delle installazioni locali.  
+
+## <a name="windows-virtual-desktop"></a>Desktop virtuale Windows
+
+[Desktop virtuale Windows](https://docs.microsoft.com/azure/virtual-desktop/) è una funzionalità di anteprima di Microsoft Azure e Microsoft 365. A partire dalla versione 1906, usare Configuration Manager per gestire questi dispositivi virtuali che eseguono Windows in Azure. Per altre informazioni, vedere [Sistemi operativi supportati per client e dispositivi](/configmgr/core/plan-design/configs/supported-operating-systems-for-clients-and-devices).

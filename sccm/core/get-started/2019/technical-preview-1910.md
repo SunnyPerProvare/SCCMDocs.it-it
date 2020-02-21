@@ -10,12 +10,13 @@ ms.assetid: f5255c5c-7c79-4ae7-83a8-1ea8a0b32b71
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 2391d7f6c73624ea959e23184cf8c2bf29db97c3
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ROBOTS: NOINDEX
+ms.openlocfilehash: 9169ed0d86c20c85063c0c26ff0e5857a8cb8620
+ms.sourcegitcommit: 982394e762589a5aa855a0ee5875ba5ed9e0c377
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75805897"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77481188"
 ---
 # <a name="features-in-configuration-manager-technical-preview-version-1910"></a>Funzionalità in Configuration Manager Technical Preview versione 1910
 
