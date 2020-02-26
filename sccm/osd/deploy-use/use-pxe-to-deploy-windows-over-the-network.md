@@ -10,12 +10,12 @@ ms.assetid: da5f8b61-2386-4530-ad54-1a5c51911f07
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a041187425fb71111b02c2368a507aed483199cb
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 46b7f97c004c548deb556e9fd6c0673741cb95f4
+ms.sourcegitcommit: 1991263194a5cd6dfbd3dd9a5f5c7f179c1bfeac
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75821461"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77218480"
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-configuration-manager"></a>Usare PXE per distribuire Windows in rete con Configuration Manager
 
@@ -147,6 +147,6 @@ L'elenco seguente contiene informazioni dettagliate sulle modalità di selezione
 
 3. Nell'elenco di sequenze di attività trovato nel passaggio 2, Configuration Manager cerca un'immagine d'avvio corrispondente all'architettura del client che sta tentando di eseguire l'avvio. Se viene trovata un'immagine di avvio con la stessa architettura, verrà usata quell'immagine.  
 
-    Se viene rilevata più di un'immagine d'avvio, viene usato l'ID distribuzione *massimo* o il più recente. Nel caso di una gerarchia a più siti, il sito con la lettera *più alta* avrà la precedenza nel confronto tra stringhe. Se ad esempio entrambi hanno un'altra corrispondenza, viene scelta una distribuzione dal sito ZZZ di un anno prima rispetto a una distribuzione dal sito AAA del giorno prima.<!-- SCCMDocs issue 877 -->  
+    Se viene rilevata più di un'immagine d'avvio, viene usato l'ID distribuzione della sequenza di attività *massimo* o il più recente. Nel caso di una gerarchia a più siti, il sito con la lettera *più alta* avrà la precedenza nel confronto tra stringhe. Se ad esempio entrambi hanno un'altra corrispondenza, viene scelta una distribuzione dal sito ZZZ di un anno prima rispetto a una distribuzione dal sito AAA del giorno prima.<!-- SCCMDocs issue 877 -->  
 
 4. Se non viene trovata un'immagine d'avvio con la stessa architettura, Configuration Manager cerca un'immagine d'avvio compatibile con l'architettura del client. Esegue la ricerca nell'elenco di sequenze di attività indicato nel passaggio 2. Ad esempio, un client BIOS/MBR a 64 bit è compatibile con immagini di avvio a 32 bit e 64 bit. Un client BIOS/MBR a 32 bit è compatibile solo con le immagini di avvio a 32 bit. I client UEFI sono compatibili solo con l'architettura corrispondente. Un client UEFI a 64 bit è compatibile solo con le immagini d'avvio a 64 bit e un client UEFI a 32 bit è compatibile solo con le immagini d'avvio a 32 bit.

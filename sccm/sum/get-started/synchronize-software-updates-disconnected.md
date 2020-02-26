@@ -2,7 +2,7 @@
 title: 'Sincronizzare gli aggiornamenti senza una connessione Internet '
 titleSuffix: Configuration Manager
 description: Eseguire la sincronizzazione degli aggiornamenti software nel punto di aggiornamento software di livello superiore disconnesso da Internet.
-ms.date: 01/23/2017
+ms.date: 02/13/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
@@ -10,18 +10,18 @@ ms.assetid: 1a997c30-8e71-4be5-89ee-41efb2c8d199
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 6f415e1871409cece5462b4d57ad3285fe7a22d0
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c2fd85ea9d72e0986f56e24c7ccb66826829079b
+ms.sourcegitcommit: 982394e762589a5aa855a0ee5875ba5ed9e0c377
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75818571"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77480899"
 ---
 # <a name="synchronize-software-updates-from-a-disconnected-software-update-point"></a>Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso  
 
 *Si applica a: Configuration Manager (Current Branch)*
 
- Quando il punto di aggiornamento software nel sito di livello superiore viene disconnesso da Internet, è necessario utilizzare le funzioni di esportazione e importazione dello strumento WSUSUtil per sincronizzare i metadati degli aggiornamenti software. Come origine della sincronizzazione è possibile scegliere un server WSUS esistente che non si trovi nella gerarchia di Configuration Manager. In questo argomento vengono specificate informazioni su come usare le funzioni di esportazione e importazione dello strumento WSUSUtil.  
+ Quando il punto di aggiornamento software nel sito di livello superiore viene disconnesso da Internet, è necessario utilizzare le funzioni di esportazione e importazione dello strumento WSUSUtil per sincronizzare i metadati degli aggiornamenti software. Come origine della sincronizzazione è possibile scegliere un server WSUS esistente che non si trovi nella gerarchia di Configuration Manager. In questo articolo vengono specificate informazioni su come usare le funzioni di esportazione e importazione dello strumento WSUSUtil.  
 
  Per esportare e importare i metadati degli aggiornamenti software è necessario esportare i metadati degli aggiornamenti software dal database di WAUS in un server di esportazione specifico, quindi copiare i file con le condizioni di licenza archiviate in locale nel punto di aggiornamento software disconnesso e infine importare i metadati degli aggiornamenti software nel database di WSUS nel punto di aggiornamento software disconnesso.  
 
@@ -43,7 +43,8 @@ ms.locfileid: "75818571"
 3.  Nel riquadro dei risultati cercare i tentativi di sincronizzazione degli aggiornamenti software più recenti e verificare che siano stati completati.  
 
 > [!IMPORTANT]  
->  Lo strumento WSUSUtil deve essere eseguito in locale nel server di esportazione per esportare i metadati degli aggiornamenti software e deve inoltre essere eseguito nel server del punto di aggiornamento software disconnesso per importare i metadati degli aggiornamenti software. Inoltre, l'utente che esegue lo strumento WSUSUtil deve essere un membro del gruppo di amministratori locali in ogni server.  
+> - Lo strumento WSUSUtil deve essere eseguito in locale nel server di esportazione per esportare i metadati degli aggiornamenti software e deve inoltre essere eseguito nel server del punto di aggiornamento software disconnesso per importare i metadati degli aggiornamenti software. Inoltre, l'utente che esegue lo strumento WSUSUtil deve essere un membro del gruppo di amministratori locali in ogni server.  
+> - Se si usa Windows Server 2012, verificare che l'aggiornamento [KB2819484](https://support.microsoft.com/help/2819484/cab-file-that-is-exported-by-using-the-wsusutil-exe-command-is-display) sia installato nei server WSUS.
 
 ## <a name="export-process-for-software-updates"></a>Processo di esportazione per gli aggiornamenti software  
  Il processo di esportazione degli aggiornamenti software consiste in due passaggi principali: uno per copiare i file con le condizioni di licenza archiviate in locale nel punto di aggiornamento software disconnesso e uno per esportare i metadati degli aggiornamenti software dal database WSUS nel server di esportazione.  
@@ -65,15 +66,15 @@ ms.locfileid: "75818571"
 2.  Digitare quanto segue per esportare i metadati degli aggiornamenti software in un file del pacchetto:  
 
      **wsusutil.exe export**  *nomepacchetto*  *filelog*  
-
+ 
      Ad esempio:  
 
-     **wsusutil.exe export export.cab export.log**  
+     **wsusutil.exe export export.xml.gz export.log**  
 
-     Il formato può essere riepilogato come riportato di seguito: WSUSutil.exe è seguito dall'opzione di esportazione, il nome dell'esportazione del file CAB creato durante l'operazione di esportazione e il nome di un file di log. WSUSutil.exe esporta i metadati dal server di esportazione e crea un file di log dell'operazione.  
+     Il formato può essere riepilogato come riportato di seguito: WSUSutil.exe è seguito dall'opzione di esportazione, il nome dell'esportazione del file export.xml.gz creato durante l'operazione di esportazione e il nome di un file di log. WSUSutil.exe esporta i metadati dal server di esportazione e crea un file di log dell'operazione.  
 
     > [!NOTE]  
-    >  Il pacchetto (file CAB) e il nome del file di log devono essere univoci nella cartella corrente.  
+    >  Il pacchetto (file con estensione xml.gz) e il nome del file di log devono essere univoci nella cartella corrente.  
 
 3.  Spostare il pacchetto di esportazione nella cartella che contiene WSUSutil.exe nel server di WSUS.  
 
@@ -96,11 +97,11 @@ ms.locfileid: "75818571"
 
      Ad esempio:  
 
-     **wsusutil.exe import export.cab import.log**  
+     **wsusutil.exe import export.xml.gz import.log**  
 
-     Il formato può essere riepilogato come riportato di seguito: WSUSutil.exe è seguito dal comando di importazione, il nome del file CAB del pacchetto creato durante l'operazione di esportazione e il percorso al file del pacchetto se si trova in un'altra cartella e il nome di un file di log. WSUSutil.exe importa i metadati dal server di esportazione e crea un file di log dell'operazione.  
+     Il formato può essere riepilogato come riportato di seguito: WSUSutil.exe è seguito dal comando di importazione, il nome del file (.xml.gz) del pacchetto creato durante l'operazione di esportazione e il percorso del file del pacchetto se si trova in un'altra cartella e il nome di un file di log. WSUSutil.exe importa i metadati dal server di esportazione e crea un file di log dell'operazione.  
 
 ## <a name="next-steps"></a>Passaggi successivi
 Dopo aver sincronizzato gli aggiornamenti software per la prima volta o dopo che sono stati resi disponibili nuovi prodotti o classificazioni, è necessario [configurare le classificazioni e i prodotti nuovi](configure-classifications-and-products.md) per sincronizzare gli aggiornamenti software con i nuovi criteri.
 
-Dopo aver sincronizzato gli aggiornamenti software con i criteri appropriati, [gestire le impostazioni per gli aggiornamenti software](manage-settings-for-software-updates.md).  
+Dopo aver sincronizzato gli aggiornamenti software con i criteri necessari, [gestire le impostazioni per gli aggiornamenti software](manage-settings-for-software-updates.md).   

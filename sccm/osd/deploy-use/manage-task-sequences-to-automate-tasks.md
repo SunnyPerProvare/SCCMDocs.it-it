@@ -10,12 +10,12 @@ ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9f97de0ef5945b02aadf5d46d4db50f49aaafd3c
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 91647e726d168d6415cd7ea96c5916853fdf32f4
+ms.sourcegitcommit: 1991263194a5cd6dfbd3dd9a5f5c7f179c1bfeac
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75806374"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77218492"
 ---
 # <a name="manage-task-sequences-to-automate-tasks"></a>Gestire le sequenze di attività per automatizzare le attività
 
@@ -41,7 +41,7 @@ Creare sequenze attività usando la Creazione guidata della sequenza di attivit�
 
 Modificare una sequenza di attività aggiungendo o rimuovendo passaggi, aggiungendo o rimuovendo gruppi oppure modificando l'ordine dei passaggi. Per altre informazioni, vedere [Usare l'editor delle sequenze di attività](/configmgr/osd/understand/task-sequence-editor).
 
-## <a name="bkmk_prop-general"></a>Proprietà di Software Center
+## <a name="bkmk_prop-general"></a> Proprietà di Software Center
 
 Attenersi alla procedura seguente per configurare i dettagli per la sequenza di attività visualizzata in Software Center. Tali dettagli sono solo a scopo informativo.  
 
@@ -102,7 +102,7 @@ Usare la procedura seguente per configurare il comportamento della sequenza di a
         > [!NOTE]  
         > Quando si esegue una sequenza di attività dal supporto di avvio o da PXE, Configuration Manager ignora questa opzione. La sequenza di attività viene eseguita come se l'opzione **Questo programma può essere eseguito in qualsiasi piattaforma** fosse selezionata.  
 
-## <a name="high-impact-settings"></a>Impostazioni a elevato effetto
+## <a name="high-impact-settings"></a>Impostazioni ad alto impatto
 
 Configurare una sequenza di attività come "ad alto impatto" e personalizzare i messaggi ricevuti dagli utenti quando eseguono la sequenza.
 
@@ -157,17 +157,17 @@ Viene visualizzato il messaggio di notifica seguente quando l'utente finale apre
 
 ![Notifica di sequenza di attività personalizzata per l'utente finale da Software Center](../media/user-notification-enduser.png)
 
-## <a name="bkmk_perf"></a>Miglioramenti delle prestazioni per le combinazioni per il risparmio di energia
+## <a name="bkmk_perf"></a> Miglioramenti delle prestazioni per le combinazioni per il risparmio di energia
 
 <!--3555926-->
 
-A partire dalla versione 1910, è ora possibile eseguire una sequenza di attività con la combinazione per il risparmio di energia per prestazioni elevate. Questa opzione migliora la velocità complessiva della sequenza di attività. Configura Windows in modo da usare la combinazione per il risparmio di energia per prestazioni elevate predefinita, che offre prestazioni massime a scapito di un consumo di energia superiore. Questa opzione è abilitata per impostazione predefinita per le nuove sequenze attività.
+A partire dalla versione 1910, è ora possibile eseguire una sequenza di attività con la combinazione per il risparmio di energia per prestazioni elevate. Questa opzione migliora la velocità complessiva della sequenza di attività. Configura Windows in modo da usare la combinazione per il risparmio di energia per prestazioni elevate predefinita, che offre prestazioni massime a scapito di un consumo di energia superiore. Questa opzione è abilitata per impostazione predefinita per le nuove sequenze di attività.
 
 Nella maggior parte degli scenari, all'avvio la sequenza di attività registra la combinazione per il risparmio di energia attualmente abilitata. Imposta quindi come combinazione per il risparmio di energia attiva la combinazione **Prestazioni elevate** predefinita di Windows. Se la sequenza di attività riavvia il computer, questo processo viene ripetuto. Alla fine della sequenza di attività, la combinazione per il risparmio di energia viene reimpostata sul valore archiviato. Questa funzionalità è disponibile sia in Windows che in Windows PE, ma non ha alcun effetto sulle macchine virtuali.
 
 - Se la sequenza di attività viene avviata in Windows PE, la sequenza di attività non registra la combinazione per il risparmio di energia attualmente abilitata per un successivo riutilizzo
 
-- Una sequenza di attività di distribuzione del sistema operativo che ricrea l'immagine del computer (cancellazione e caricamento) non mantiene l'impostazione della combinazione per il risparmio di energia del sistema operativo precedente. Alla fine della sequenza di attività, viene ripristinata la combinazione per il risparmio di energia predefinita **bilanciata** .
+- Una sequenza di attività di distribuzione del sistema operativo che ricrea l'immagine del computer (cancellazione e caricamento) non mantiene l'impostazione della combinazione per il risparmio di energia del sistema operativo precedente. Alla fine della sequenza di attività, viene ripristinata la combinazione per il risparmio di energia predefinita **Bilanciata**.
 
 > [!Important]
 > Per sfruttare i vantaggi di questa nuova funzionalità di Configuration Manager, dopo l'aggiornamento del sito aggiornare i client alla versione più recente. Aggiornare anche le immagini d'avvio per includere i componenti client più recenti. Anche se le nuove funzionalità vengono visualizzate nella console di Configuration Manager quando si esegue l'aggiornamento del sito e della console, lo scenario completo risulta funzionante solo dopo l'aggiornamento alla versione più recente del client.
@@ -187,7 +187,7 @@ Nella maggior parte degli scenari, all'avvio la sequenza di attività registra l
 
 <!-- 5554928 -->
 
-Si distribuisce una sequenza di attività configurata per prestazioni elevate. La sequenza di attività distribuita viene sempre eseguita come prestazioni elevate, anche se si disabilita l'opzione prestazioni elevate. Per modificare questa impostazione, creare una nuova distribuzione per la sequenza di attività.
+È necessario creare una nuova distribuzione della sequenza di attività per abilitare o disabilitare questa impostazione per prestazioni elevate. La nuova impostazione viene visualizzata nelle distribuzioni esistenti, ma non è applicabile.<!-- SCCMDocs#2107 -->
 
 ## <a name="BKMK_DistributeTS"></a> Distribuire il contenuto di riferimento  
 
@@ -290,7 +290,7 @@ Se si include del contenuto quando si esporta una sequenza di attività, assicur
 
 Dopo aver importato la sequenza di attività, modificarla per specificare le password che erano presenti nella sequenza di attività originale. Per motivi di sicurezza, le password non vengono esportate.  
 
-## <a name="return-to-previous-page-on-failure"></a>Torna alla pagina precedente in caso di errore
+## <a name="return-to-previous-page-on-failure"></a>Tornare alla pagina precedente in caso di errore
 
 Quando si esegue una sequenza di attività e si verifica un errore, è possibile tornare a una pagina precedente della creazione guidata della sequenza di attività. Nelle versioni precedenti di Configuration Manager se si verificava un errore era necessario riavviare la sequenza di attività. Usare il pulsante **Precedente** negli scenari seguenti:
 
@@ -300,7 +300,7 @@ Quando si esegue una sequenza di attività e si verifica un errore, è possibile
 
 ## <a name="BKMK_CreateTSVariables"></a> Variabili di raccolta e dispositivo
 
-È possibile definire variabili della sequenza di attività personalizzate per computer e insiemi. Le variabili definite per un computer vengono definite variabili della sequenza di attività con ambito computer. Le variabili definite per una raccolta vengono definite variabili della sequenza di attività con ambito raccolta. Per altre informazioni, vedere [variabili della raccolta e del dispositivo](/configmgr/osd/understand/using-task-sequence-variables#bkmk_set-coll-var).
+È possibile definire variabili della sequenza di attività personalizzate per computer e insiemi. Le variabili definite per un computer vengono definite variabili della sequenza di attività con ambito computer. Le variabili definite per una raccolta vengono definite variabili della sequenza di attività con ambito raccolta. Per altre informazioni, vedere [Variabili di raccolta e dispositivo](/configmgr/osd/understand/using-task-sequence-variables#bkmk_set-coll-var).
 
 ## <a name="BKMK_AdditionalActionsTS"></a> Azioni aggiuntive  
 

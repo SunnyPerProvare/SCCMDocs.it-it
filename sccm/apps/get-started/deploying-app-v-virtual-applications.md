@@ -10,12 +10,12 @@ ms.assetid: ddcad9f2-a542-4079-83ca-007d7cb44995
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c6c7aff755dea033cc9debf90680ea7f4d6dd183
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 8a48b4ffc4388a90f664fb144e09132c1681e7f2
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75817619"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515501"
 ---
 # <a name="deploy-app-v-virtual-applications-with-configuration-manager"></a>Distribuire applicazioni virtuali App-V con Configuration Manager
 
@@ -120,7 +120,7 @@ Usare la tabella seguente per pianificare una migrazione da un'infrastruttura Ap
 |Configuration Manager comincia a gestire applicazioni virtuali su un client dopo la prima distribuzione di un'applicazione virtuale. Successivamente, tutte le applicazioni App-V nel computer devono essere gestite da Configuration Manager.|Nessuna informazione aggiuntiva.|  
 |Distribuire il contenuto nei punti di distribuzione appropriati per consentire il recapito locale delle applicazioni.|Vedere [Gestire il contenuto e l'infrastruttura del contenuto](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
 |Distribuire l'applicazione ai client di Configuration Manager.<br /><br /> Se l'applicazione App-V è stata creata con una versione precedente del sequencer che non crea un file XML manifesto, è possibile aprirla e salvarla in una versione più recente del sequencer per creare il file. Questo file è necessario per distribuire le applicazioni virtuali con Configuration Manager.<br /><br /> App-V supporta i pacchetti di applicazioni virtuali creati con SoftGrid 4.1 SP1 o le versioni 4.2 del sequencer.<br /><br /> Se le applicazioni sono state precedentemente installate in locale, è necessario disinstallarle prima di distribuire una versione virtuale dell'applicazione.|Vedere [Come distribuire le applicazioni](../../apps/deploy-use/deploy-applications.md).|  
-|Configuration Manager non supporta più l'uso di pacchetti e programmi che contengono applicazioni virtuali. Quando esegue la migrazione da Configuration Manager 2007 a Configuration Manager Current Branch, Configuration Manager converte questi pacchetti in applicazioni.<br /><br /> Gli annunci di Configuration Manager 2007 vengono convertiti nei tipi di distribuzione seguenti:<br /><br /> - Migrazione di pacchetti App-V con nessun annuncio:  un tipo di distribuzione che usa le impostazioni predefinite del tipo di distribuzione.<br /><br /> - Migrazione di pacchetti App-V con un annuncio: un tipo di distribuzione che usa le stesse impostazioni dell'annuncio di <br />                Configuration Manager 2007.<br /><br /> - Migrazione di pacchetti App-V con più annunci: un tipo di distribuzione, per ogni <br />                annuncio di Configuration Manager 2007 che usa le impostazioni per tale annuncio.|Vedere [pianificazione per la migrazione di oggetti a Configuration Manager Current Branch](../../core/migration/planning-for-the-migration-of-objects.md).|  
+|Configuration Manager non supporta più l'uso di pacchetti e programmi che contengono applicazioni virtuali. Quando esegue la migrazione da Configuration Manager 2007 a Configuration Manager Current Branch, Configuration Manager converte questi pacchetti in applicazioni.<br /><br /> Gli annunci di Configuration Manager 2007 vengono convertiti nei tipi di distribuzione seguenti:<br /><br /> - Migrazione di pacchetti App-V con nessun annuncio:  un tipo di distribuzione che usa le impostazioni predefinite del tipo di distribuzione.<br /><br /> - Migrazione di pacchetti App-V con un annuncio: un tipo di distribuzione che usa le stesse impostazioni dell'annuncio di <br />                Configuration Manager 2007.<br /><br /> - Migrazione di pacchetti App-V con più annunci: un tipo di distribuzione, per ogni <br />                annuncio di Configuration Manager 2007 che usa le impostazioni per tale annuncio.|Vedere [Pianificare la migrazione degli oggetti a Configuration Manager Current Branch](../../core/migration/planning-for-the-migration-of-objects.md).|  
 
 ##  <a name="migrating-app-v-5-connection-groups-to-configuration-manager-virtual-environments"></a>Migrazione di gruppi di connessione App-V 5 in ambienti virtuali di Configuration Manager  
 Gli ambienti virtuali App-V in Configuration Manager consentono alle applicazioni virtuali distribuite di condividere lo stesso file system e Registro di sistema nei computer client. Ciò significa che, a differenza delle applicazioni virtuali standard, queste applicazioni possono condividere dati tra loro. Gli ambienti virtuali vengono creati o modificati nei computer client quando viene installata l'applicazione o quando i client valutano le applicazioni installate. Gli ambienti virtuali sono simili ai gruppi di connessione in App-V 5 autonoma.  
@@ -206,4 +206,4 @@ Configuration Manager supporta la funzionalità SCS (Shared Content Store) di Ap
 ### <a name="log-files"></a>File di registro  
 Configuration Manager registra le informazioni sulla distribuzione di applicazioni virtuali nei file di log. Per informazioni sui file di log usati dalle applicazioni virtuali e per la gestione di applicazioni di Configuration Manager, vedere [File di log](../../core/plan-design/hierarchy/log-files.md).  
 
-Per Windows Vista, Windows 7 e Windows 8, i log per il client App-V sono disponibili in C:\ProgramData\Microsoft\Application Virtualization Client.  
+Per Windows 8.1, i log per il client App-V sono disponibili in C:\ProgramData\Microsoft\Application Virtualization Client.  

@@ -10,12 +10,12 @@ ms.assetid: f3bf1737-827d-48fa-8bb1-f48fe71afe0c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3a7e038ea64e638796dbed3f62444961d9968db8
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e0e38ea06b7fdc67182d4b72cf19e1c3d64114fa
+ms.sourcegitcommit: 1991263194a5cd6dfbd3dd9a5f5c7f179c1bfeac
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75817466"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77218183"
 ---
 # <a name="how-to-analyze-and-convert-packages-with-package-conversion-manager"></a>Come analizzare e convertire i pacchetti con Package Conversion Manager
 
@@ -51,7 +51,7 @@ Prima di convertire un pacchetto, è necessario analizzarlo. In base ai risultat
 
     - **Non applicabile**: un programma o il contenuto richiesto non è presente nel pacchetto. Aggiungere eventuali contenuti o programmi mancanti e ripetere l'analisi. In alternativa, lasciare il pacchetto in uno stato non convertito e continuare a distribuirlo come pacchetto.  
 
-
+    - **Sconosciuto**: eseguire prima l'attività **Analizza** oppure attendere la successiva analisi pianificata. Se lo stato non cambia, vedere [Risolvere i problemi di Package Conversion Manager](/configmgr/apps/pcm/troubleshoot-pcm).<!-- SCCMDocs#2044 -->
 
 ## <a name="bkmk_convert"></a> Come convertire i pacchetti
 

@@ -10,12 +10,12 @@ ms.assetid: a0bd093d-67a5-4f74-bf79-dd604889f5ba
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0c2f2f13d20f1148e85f06ade8c0410c0c48b132
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c287338091969f80614425b54775390216bcacca
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75815698"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515518"
 ---
 # <a name="learn-more-about-powershell-script-security"></a>Informazioni sulla sicurezza degli script PowerShell
 
@@ -66,7 +66,7 @@ Il passaggio dei parametri garantisce flessibilità agli script e consente di ri
 
 ## <a name="environment-recommendations"></a>Consigli relativi all'ambiente
 Consigli generali per gli amministratori di PowerShell.
-1. Distribuire la versione più recente di PowerShell, ad esempio la versione 5 o successiva, inclusa in Windows 10. In alternativa, è possibile distribuire [Windows Management Framework ](https://www.microsoft.com/download/details.aspx?id=54616), disponibile per le versioni precedenti, compresi Windows 7 e Windows Server 2008 R2. 
+1. Distribuire la versione più recente di PowerShell, ad esempio la versione 5 o successiva, inclusa in Windows 10. In alternativa, è possibile distribuire [Windows Management Framework](https://www.microsoft.com/download/details.aspx?id=54616). 
 2. Abilitare e raccogliere log PowerShell, includendo facoltativamente la registrazione eventi protetti. Incorporare questi log nelle firme e nei flussi di lavoro di ricerca e di risposta a eventi imprevisti.
 3. Implementare Just Enough Administration in sistemi importanti per eliminare o ridurre l'accesso senza vincoli come amministratore a questi sistemi.
 4. Distribuire i criteri di Controllo di applicazioni di Windows Defender per consentire alle attività amministrative pre-approvate di usare tutte le funzionalità del linguaggio PowerShell, limitando al tempo stesso l'uso interattivo e non approvato a un sottoinsieme limitato del linguaggio PowerShell.
