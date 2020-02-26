@@ -2,7 +2,7 @@
 title: Estendere ed eseguire la migrazione di un sito locale in Microsoft Azure
 titleSuffix: Configuration Manager
 description: Informazioni su come usare lo strumento di migrazione per creare a livello di codice macchine virtuali di Azure per Configuration Manager.
-ms.date: 11/29/2019
+ms.date: 02/14/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 1c975c5e-efd1-4d47-a315-39ccb32633dc
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: d801f892fcee56e9c6b5184e18370392b43ff080
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 3322639f31c1a3a895bda46882a00eb3b7a1ed0a
+ms.sourcegitcommit: 982394e762589a5aa855a0ee5875ba5ed9e0c377
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75793122"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77480814"
 ---
 # <a name="extend-and-migrate-on-premises-site-to-microsoft-azure"></a>Estendere ed eseguire la migrazione di un sito locale in Microsoft Azure
 
@@ -113,7 +113,10 @@ Per altre informazioni sulle autorizzazioni e sull'assegnazione di ruoli, vedere
     |**Password del dominio**|La password dell'utente del dominio usata per l'aggiunta al dominio. Lo strumento la verifica dopo aver selezionato **Avvio**. Per proteggere la password durante la distribuzione di Azure, archiviarla come segreto in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview). Usare quindi il riferimento qui. Se necessario, crearne una nuova dal [portale di Azure](https://portal.azure.com).|
     |**Domain DNS IP** (IP DNS dominio)|Usato per l'aggiunta al dominio. Per impostazione predefinita, lo strumento usa il DNS del computer in uso.|
     |**Tipo**|Sola lettura. Visualizza *Server del sito passivo* come tipo.|
-    
+
+    > [!IMPORTANT]
+    > Per impostazione predefinita, le macchine virtuali sono impostate su **No** per **Usa licenza di Windows Server esistente**. Se si vuole usare le licenze di Windows Server locali con Software Assurance, configurare questa impostazione nel [portale di Azure](https://portal.azure.com) dopo il provisioning delle macchine virtuali. Per altre informazioni, vedere [Vantaggio Azure Hybrid per Windows Server](https://docs.microsoft.com/windows-server/get-started/azure-hybrid-benefit).
+
 1. Per avviare il provisioning della macchina virtuale di Azure, selezionare **Avvio**. Per monitorare lo stato della distribuzione, passare alla scheda delle **distribuzioni in Azure** nello strumento. Per ottenere lo stato più recente, selezionare **Refresh Deployment Status** (Aggiorna stato distribuzione).
 
     > [!TIP]

@@ -10,12 +10,12 @@ ms.assetid: 8b5b144a-0e5f-4fcc-87b2-33b9bcdb5655
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: e8375268c495cc6197bfd671814b9912595b051c
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 9eaad7a5659df97988eaadcb808b688203891d6b
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75824674"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77516300"
 ---
 # <a name="manage-microsoft-lifecycle-policy-with-configuration-manager"></a>Gestire i criteri del ciclo di vita Microsoft con Configuration Manager
 
@@ -41,7 +41,7 @@ A partire dalla versione 1810, il dashboard include le informazioni per System C
 
 - Il punto di sincronizzazione di Asset Intelligence deve essere configurato e sincronizzato. Il dashboard usa il catalogo di Asset Intelligence come metadati per i titoli dei prodotti. I metadati vengono confrontati con i dati di inventario nella gerarchia. Per altre informazioni, vedere [Configurare Asset Intelligence in Configuration Manager](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence).  
   - Se si sta configurando il punto di sincronizzazione di Asset Intelligence per la prima volta, assicurarsi di [abilitare le classi di inventario hardware di Asset Intelligence](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence#BKMK_EnableAssetIntelligence). Il dashboard del ciclo di vita dipende da tali classi di inventario hardware di Asset Intelligence. Il dashboard non mostrerà dati fino a quando i client non saranno stati analizzati e non sarà stato restituito l'inventario hardware.  
-  - Per gli aggiornamenti della sicurezza estesa per Windows 7 e Windows Server 2008 R2 è necessario che sia abilitata la classe di inventario hardware **Prodotto con gestione licenze software - Asset Intelligence (SoftwareLicensingProduct**). Per altre informazioni sull'abilitazione della classe, vedere [Abilitare le classi di inventario hardware di Asset Intelligence](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence#BKMK_EnableAssetIntelligence). <!--4962901-->
+  - Per visualizzare informazioni sugli aggiornamenti della sicurezza estesa nel dashboard, abilitare la classe di inventario hardware **Prodotto con gestione licenze software - Asset Intelligence (SoftwareLicensingProduct)**. Per altre informazioni, vedere [Abilitare le classi di report per l'inventario hardware di Asset Intelligence](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence#BKMK_EnableAssetIntelligence). <!--4962901-->
 
 
 

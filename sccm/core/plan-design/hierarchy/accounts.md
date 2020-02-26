@@ -10,12 +10,12 @@ ms.assetid: 72d7b174-f015-498f-a0a7-2161b9929198
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4dcd68408f489b32aa6901de09fba199f69affd4
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 227bfc6d68849cd8bf712ce5cf5133b41628331e
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034822"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515824"
 ---
 # <a name="accounts-used-in-configuration-manager"></a>Account usati in Configuration Manager
 
@@ -385,7 +385,7 @@ Un client di Configuration Manager tenta, in prima battuta, di usare il proprio 
 A partire dalla versione 1806, un gruppo di lavoro o un client associato ad Azure AD può accedere in modo sicuro al contenuto dai punti di distribuzione senza la necessità di un account di accesso alla rete. Questo comportamento comprende gli scenari di distribuzione del sistema operativo con una sequenza di attività eseguita da supporti di avvio, PXE o Software Center. Per altre informazioni, vedere [HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http).<!--1358228,1358278-->
 
 > [!Note]  
-> Se si configura **HTTP avanzato** in modo che non richieda l'account di accesso alla rete, il punto di distribuzione deve eseguire Windows Server 2008 R2 SP1 o una versione successiva. <!--SCCMDocs-pr issue #2696-->
+> Se si abilita **HTTP avanzato** in modo che non richieda l'account di accesso alla rete, il punto di distribuzione deve eseguire Windows Server 2012 o versione successiva. <!--SCCMDocs-pr issue #2696-->
 >  
 > Aggiornare i client almeno alla versione 1806 prima di abilitare questa funzionalità. Se si consentono solo le connessioni **HTTP avanzato**, non sarà possibile eseguire l'autenticazione con questo metodo nei client meno recenti, che non potranno quindi scaricare il pacchetto di aggiornamento del client da un punto di distribuzione. <!--vso2841213-->   
 
@@ -456,6 +456,9 @@ SQL Server Reporting Services usa l'**account punto di Reporting Services** per 
 
 > [!NOTE]  
 > L'account specificato deve disporre delle autorizzazioni di **Accesso locale** nel computer che ospita il database SQL di Reporting Services.
+
+> [!NOTE]  
+> All'account vengono concessi automaticamente tutti i diritti necessari tramite l'aggiunta al ruolo smsschm_users del database SQL nel database ConfigMgr.
 
 Per altre informazioni, vedere [Introduzione ai report](/sccm/core/servers/manage/introduction-to-reporting).
 

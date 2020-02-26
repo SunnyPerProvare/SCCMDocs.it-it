@@ -10,12 +10,12 @@ ms.assetid: 1a2a9b48-a95b-4643-b00c-b3079584ae2e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 070fae940fc73aa1695668d78bf50076e34aef68
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: cd1887b0d9d148c585b79c70fcbaedcac0ba13fa
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034008"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515705"
 ---
 # <a name="prerequisites-for-deploying-clients-to-windows-computers-in-configuration-manager"></a>Prerequisiti per la distribuzione dei client nei computer Windows in Configuration Manager
 
@@ -45,13 +45,7 @@ Usare le informazioni seguenti per determinare i prerequisiti quando si installa
 #### <a name="bkmk_sha2"></a> Supporto per la firma del codice SHA-2
 
 <!--SCCMDocs-pr#3404-->
-A causa dei punti di debolezza dell'algoritmo SHA-1 e per allinearsi agli standard del settore, Microsoft ora firma solo i file binari di Configuration Manager usando l'algoritmo SHA-2 più sicuro. Per le versioni seguenti del sistema operativo Windows è necessario un aggiornamento per il supporto per la firma del codice SHA-2:
-
-- Windows 7 SP1
-- Windows Server 2008 R2 SP1
-- Windows Server 2008 SP2
-
-Per altre informazioni, vedere [Requisito per il supporto di firma del codice SHA-2 2019 per Windows e Windows Server Update Services](https://support.microsoft.com/en-us/help/4472027/2019-sha-2-code-signing-support-requirement-for-windows-and-wsus).
+A causa dei punti di debolezza dell'algoritmo SHA-1 e per allinearsi agli standard del settore, Microsoft ora firma solo i file binari di Configuration Manager usando l'algoritmo SHA-2 più sicuro. Per le versioni del sistema operativo Windows legacy è necessario un aggiornamento per il supporto della firma del codice SHA-2. Per altre informazioni, vedere [Requisito per il supporto di firma del codice SHA-2 2019 per Windows e Windows Server Update Services](https://support.microsoft.com/help/4472027/2019-sha-2-code-signing-support-requirement-for-windows-and-wsus).
 
 Se non si aggiornano queste versioni del sistema operativo, non è possibile installare la versione client di Configuration Manager 1906. Questo comportamento si applica a una nuova installazione del client o all'aggiornamento da una versione precedente.
 

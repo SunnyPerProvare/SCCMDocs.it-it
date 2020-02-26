@@ -10,12 +10,12 @@ ms.assetid: 868049d3-3209-47ec-b34a-9cc26941893a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2bdd7762c929324fd712b8655a0fcd839d6f7d2b
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 8da5c143d362ad90c1b1247467e644a9dc5efdaa
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76033446"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515722"
 ---
 # <a name="create-queries-in-configuration-manager"></a>Creare query in Configuration Manager
 
@@ -93,18 +93,15 @@ Questa sezione contiene query WQL di esempio che è possibile usare nella gerarc
 > [!TIP]  
 > Usare il carattere jolly `%` per indicare qualsiasi stringa di caratteri. Ad esempio, `%Visio%` restituisce Microsoft Office Visio 2010.  
 
-### <a name="computers-that-run-windows-7"></a>Computer che eseguono Windows 7
+### <a name="computers-that-run-windows-10"></a>Computer che eseguono Windows 10
 
 Usare la query seguente per restituire il nome NetBIOS e la versione del sistema operativo di tutti i computer che eseguono Windows 7.  
-
-> [!TIP]  
-> Per restituire i computer che eseguono Windows Server 2008 R2, modificare `%Workstation 6.1%` in `%Server 6.1%`.  
 
 ``` WQL
 select SMS_R_System.NetbiosName,  
 SMS_R_System.OperatingSystemNameandVersion from
 SMS_R_System where
-SMS_R_System.OperatingSystemNameandVersion like "%Workstation 6.1%"  
+SMS_R_System.OperatingSystemNameandVersion like "%Workstation 10%"  
 ```  
 
 ### <a name="computers-with-a-specific-software-package-installed"></a>Computer con uno specifico pacchetto software installato  

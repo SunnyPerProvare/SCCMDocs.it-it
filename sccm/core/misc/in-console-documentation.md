@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 0b4e7a8b380d2eaec55b740dc8c6773829a6d716
-ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
+ms.openlocfilehash: 0bdb7a2bcfa8442ce49caf03a37eac1db391e95c
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77178623"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77516215"
 ---
 <!-- 
 - Feature 1357546
@@ -106,13 +106,15 @@ Procedure dettagliate guidate che semplificano la risoluzione dei problemi relat
 
 ## <a name="new-and-updated-support-articles"></a>Articoli di supporto nuovi e aggiornati
 
-Articoli di supporto nuovi o aggiornati tra il 25 ottobre e il 23 dicembre 2019.
+Articoli di supporto nuovi o aggiornati tra il 24 dicembre 2019 e il 20 febbraio 2020.
 
-- [KB 4528414: Console di Configuration Manager visualizza la versione della definizione di Endpoint Protection non aggiornata e l'ora dell'ultimo aggiornamento](https://support.microsoft.com/help/4528414/)
-- [KB 4529905: Ritardi nella distribuzione del contenuto in Configuration Manager Current Branch, versione 1906](https://support.microsoft.com/help/4529905)
-- [KB 4529827: I client di Configuration Manager rilevano erroneamente lo stato di co-gestione](https://support.microsoft.com/help/4529827)
-- [KB 4529824: Aggiornamento del motore di elaborazione dei messaggi per Configuration Manager Current Branch, versione 1906](https://support.microsoft.com/help/4529824)
-- [KB 4535819: Aggiornamento per Microsoft Endpoint Configuration Manager versione 1910, anello di aggiornamento anticipato](https://support.microsoft.com/help/4535819)
-- [KB 4535776: Riepilogo delle modifiche in Microsoft Endpoint Configuration Manager Current Branch, versione 1910](https://support.microsoft.com/help/4535776)
+- [KB 4537079 Aggiornamento cumulativo per Microsoft Endpoint Configuration Manager Current Branch, versione 1910](https://support.microsoft.com/help/4537079)
+- [KB 4535819 Aggiornamento per Microsoft Endpoint Configuration Manager versione 1910, anello di aggiornamento anticipato](https://support.microsoft.com/help/4535819)
+- [KB 4538488 I client vengono aggiornamenti immediatamente dopo l'aggiornamento a Configuration Manager Current Branch, versione 1910](https://support.microsoft.com/help/4538488)
+- [KB 4538166 Aggiornamento dei client per Configuration Manager Current Branch, versione 1910](https://support.microsoft.com/help/4538166)
+- [KB 4537369 L'attività Elimina dati di individuazione obsoleti rimuove erroneamente i record attivi in Configuration Manager](https://support.microsoft.com/help/4537369)
+- [KB 4542722 Il livello di compatibilità del database SQL viene modificato dopo l'applicazione degli aggiornamenti di Configuration Manager](https://support.microsoft.com/help/4537079)
+- [KB 4095539 I client di Configuration Manager non ricevono i dati dei criteri dopo avere ripristinato un sito primario da un server Accesso client](https://support.microsoft.com/help/4095539)
+- [KB 4527297 La sincronizzazione con Microsoft Store per le aziende non usa il proxy in Configuration Manager](https://support.microsoft.com/help/4527297)
 
 Per sottoscrivere la notifica Atom o RSS dei nuovi articoli di supporto di Configuration Manager, vedere [Aggiornamenti dei contenuti del supporto](https://support.microsoft.com/help/4089498/) e selezionare **Microsoft Endpoint Configuration Manager**.  

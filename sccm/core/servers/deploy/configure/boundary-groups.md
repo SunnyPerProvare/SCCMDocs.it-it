@@ -10,12 +10,12 @@ ms.assetid: 5db2926f-f03e-49c7-b44b-e89b1a5a6779
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 77d736aa8d4e00ce9eada0e0d6f37a00cb8d9d50
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 228dc618202b2315225b1502a1e52f7bffc03399
+ms.sourcegitcommit: 1991263194a5cd6dfbd3dd9a5f5c7f179c1bfeac
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798976"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77218471"
 ---
 # <a name="configure-boundary-groups-for-configuration-manager"></a>Configurare gruppi di limiti per Configuration Manager
 
@@ -36,11 +36,17 @@ I client usano un gruppo di limiti per gli scopi seguenti:
     - Punti di distribuzione per il percorso del contenuto  
     - Punti di aggiornamento software  
     - Punti di migrazione dello stato  
+
+        > [!NOTE]
+        > Il punto di migrazione stato non usa relazioni di fallback. Per altre informazioni, vedere [Fallback](#fallback).
+
     - Punti di gestione preferiti  
+
+        > [!NOTE]  
+        > Se si usano i punti di gestione preferiti, è necessario abilitare questa opzione per la gerarchia e non dall'interno della configurazione del gruppo di limiti. Per altre informazioni, vedere [Abilitare l'uso dei punti di gestione preferiti](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_proc-prefer).  
+
     - Cloud Management Gateway (a partire dalla versione 1902)
 
-        > [!Note]  
-        > Se si usano i punti di gestione preferiti, è necessario abilitare questa opzione per la gerarchia e non dall'interno della configurazione del gruppo di limiti. Per altre informazioni, vedere [Abilitare l'uso dei punti di gestione preferiti](/sccm/core/servers/deploy/configure/boundary-group-procedures#bkmk_proc-prefer).  
 
 
 ## <a name="boundary-groups-and-relationships"></a>Gruppi di limiti e relazioni
@@ -78,6 +84,9 @@ Se un client non riesce a trovare un sistema del sito disponibile, inizia la ric
 - I client eseguono il fallback solo in un gruppo di limiti direttamente adiacente al loro gruppo di limiti corrente.  
 
 - Se un client fa parte di più gruppi di limiti, il relativo gruppo di limiti corrente è definito come l'unione di tutti i gruppi di limiti. Il client esegue il fallback ai gruppi adiacenti di uno dei gruppi di limiti originali.  
+
+> [!NOTE]
+> Il ruolo del punto di migrazione stato non usa relazioni di fallback. Se si aggiungono sia i ruoli del punto di migrazione stato che i ruoli del punto di distribuzione allo stesso server del sistema del sito, non configurare il fallback per il gruppo di limiti. Se è necessario usare il fallback del gruppo di limiti per il punto di distribuzione, aggiungere il ruolo del punto di migrazione stato in un altro server del sistema del sito.<!-- 2838807 -->
 
 ### <a name="the-default-site-boundary-group"></a>Gruppo di limiti predefinito del sito
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
-ms.openlocfilehash: 304898b2028045d118ec3e4785847efb790fbd27
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 6fc1470c64df8b17d54ae73a549198313f28b406
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75824606"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77516283"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificati per il gateway di gestione cloud
 
@@ -130,7 +130,7 @@ Creare un certificato SSL personalizzato per il gateway di gestione cloud identi
 
 ## <a name="bkmk_clientauth"></a> Certificato di autenticazione client
 
-*Questo certificato è necessario per i client basati su Internet che eseguono Windows 7, Windows 8.1 e dispositivi Windows 10 che non fanno parte di Azure Active Directory (Azure AD). È necessario anche per il punto di connessione del gateway di gestione cloud. Non è richiesto per i client Windows 10 aggiunti ad Azure AD.*
+*Questo certificato è necessario per i client basati su Internet che eseguono Windows 8.1 e i dispositivi Windows 10 che non fanno parte di Azure Active Directory (Azure AD). È necessario anche per il punto di connessione del gateway di gestione cloud. Non è richiesto per i client Windows 10 aggiunti ad Azure AD.*
 
 I client usano questo certificato per l'autenticazione con il gateway di gestione cloud. I dispositivi Windows 10 ibridi o aggiunti a un dominio cloud non richiedono questo certificato perché usano Azure AD per l'autenticazione.
 
@@ -179,7 +179,7 @@ Dopo aver emesso un certificato di autenticazione client per un computer, usare 
 
 6. Nella nuova finestra di dialogo Certificato passare alla scheda **Dettagli**. Selezionare **Copia su file**.  
 
-7. Completare l'Esportazione guidata certificati usando il formato di certificato predefinito, **DER encoded binary X.509 (.CER)** . Prendere nota del nome e del percorso del certificato esportato.  
+7. Completare l'Esportazione guidata certificati usando il formato di certificato predefinito, **DER encoded binary X.509 (.CER)**. Prendere nota del nome e del percorso del certificato esportato.  
 
 8. Esportare tutti i certificati presenti nel percorso di certificazione del certificato di autenticazione client originale. Prendere nota dei certificati esportati che rappresentano autorità di certificazione intermedie e di quelli che rappresentano autorità radice attendibili.  
 

@@ -10,12 +10,12 @@ ms.assetid: 58d52fdc-bd18-494d-9f3b-ccfc13ea3d35
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e21d30ca2d003819c10662d73fa6484ba32837b6
-ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
+ms.openlocfilehash: 4ad93534e06c67b648253ae83d08a0b8e4547ae1
+ms.sourcegitcommit: 1991263194a5cd6dfbd3dd9a5f5c7f179c1bfeac
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77178538"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77218381"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparare l'uso di gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -293,10 +293,11 @@ Prendere ad esempio in considerazione i seguenti scenari:
 #### <a name="multi-subnet-failover"></a>Failover su più subnet
 
 <!-- SCCMDocs-pr#3734 -->
-A partire dalla versione 1906, è possibile abilitare la [parola chiave della stringa di connessione MultiSubnetFailover](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server#MultiSubnetFailover) in SQL Server. È anche necessario aggiungere manualmente il seguente valore al Registro di sistema di Windows nel server del sito:
+A partire dalla versione 1906, è possibile abilitare la [parola chiave della stringa di connessione MultiSubnetFailover](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server#MultiSubnetFailover) in SQL Server. È anche necessario aggiungere manualmente i valori seguenti al Registro di sistema di Windows nel server del sito:
 
 ``` Registry
 HKLM:\SOFTWARE\Microsoft\SMS\Identification
+HKLM:\SOFTWARE\Microsoft\SMS\SQL Server
 
 MSF Enabled : 1 (DWORD)
 ```
@@ -385,11 +386,11 @@ Impostare il modello di recupero del database del sito su **Completo**. Questa c
 
 ## <a name="changes-for-site-recovery"></a>Modifiche per il ripristino del sito
 
-Se almeno uno dei nodi del gruppo di disponibilità continua a funzionare, usare l'opzione di ripristino del sito **Ignora ripristino database (utilizzare questa opzione se non si sono verificati errori nel database del sito)** .
+Se almeno uno dei nodi del gruppo di disponibilità continua a funzionare, usare l'opzione di ripristino del sito **Ignora ripristino database (utilizzare questa opzione se non si sono verificati errori nel database del sito)**.
 
 A partire dalla versione 1906, con il ripristino del sito è possibile ricreare il database in un gruppo SQL Always On. Questo processo funziona con il seeding sia manuale che automatico.<!-- SCCMDocs-pr#3846 -->
 
-Nella versione 1902 e nelle versioni precedenti se tutti i nodi di un gruppo di disponibilità sono andati perduti, prima di poter ripristinare il sito è necessario ricreare il gruppo di disponibilità. Configuration Manager non è in grado di ricompilare o ripristinare il nodo di disponibilità. Ricreare il gruppo, ripristinare il backup e riconfigurare SQL. Quindi usare l'opzione di ripristino sito **Ignora ripristino database (utilizzare questa opzione se non si sono verificati errori nel database del sito)** .
+Nella versione 1902 e nelle versioni precedenti se tutti i nodi di un gruppo di disponibilità sono andati perduti, prima di poter ripristinare il sito è necessario ricreare il gruppo di disponibilità. Configuration Manager non è in grado di ricompilare o ripristinare il nodo di disponibilità. Ricreare il gruppo, ripristinare il backup e riconfigurare SQL. Quindi usare l'opzione di ripristino sito **Ignora ripristino database (utilizzare questa opzione se non si sono verificati errori nel database del sito)**.
 
 Per altre informazioni, vedere [Backup e ripristino](/sccm/core/servers/manage/backup-and-recovery).
 

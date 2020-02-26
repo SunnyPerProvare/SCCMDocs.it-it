@@ -10,12 +10,12 @@ ms.assetid: a1626a65-da22-49e0-9564-d2f752ea3f4b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: e88d5f8a1744fcaf1e71cc9552fc01b14797b7fe
-ms.sourcegitcommit: 524f08ccae92756288c2d73491d4da0d3bb2900f
+ms.openlocfilehash: c33f9ca2bdf0533b83cb310f0c0af505a41a575b
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77145177"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77516080"
 ---
 # <a name="support-for-windows-10-in-configuration-manager"></a>Supporto per Windows 10 in Configuration Manager  
 
@@ -108,7 +108,7 @@ La tabella seguente elenca le versioni di Windows ADK 10 che è possibile usare 
 
 |Chiave|
 |--|
-| ![Supportato](media/green_check.png) = **Supportato** <br/> Questa tabella mostra solo il supporto di Windows ADK in relazione alla versione di Configuration Manager. Microsoft consiglia l'uso della versione di Windows ADK corrispondente alla versione di Windows che si vuole distribuire. Quando si distribuisce la versione più recente di Windows 10, usare la versione più recente di Windows ADK. La versione più recente di Windows ADK può supportare la distribuzione di versioni del sistema operativo meno recenti, ad esempio Windows 7.<!-- SCCMDocs issue 1229 --> Per altre informazioni sul supporto del componente Windows ADK, vedere [Piattaforme supportate di Gestione e manutenzione immagini distribuzione](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-supported-platforms) e [Requisiti USMT](https://docs.microsoft.com/windows/deployment/usmt/usmt-requirements#bkmk-1). |
+| ![Supportato](media/green_check.png) = **Supportato** <br/> Questa tabella mostra solo il supporto di Windows ADK in relazione alla versione di Configuration Manager. Microsoft consiglia l'uso della versione di Windows ADK corrispondente alla versione di Windows che si vuole distribuire. Quando si distribuisce la versione più recente di Windows 10, usare la versione più recente di Windows ADK. La versione più recente di Windows ADK può supportare la distribuzione di versioni del sistema operativo meno recenti, ad esempio Windows 8.1.<!-- SCCMDocs issue 1229 --> Per altre informazioni sul supporto del componente Windows ADK, vedere [Piattaforme supportate di Gestione e manutenzione immagini distribuzione](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-supported-platforms) e [Requisiti USMT](https://docs.microsoft.com/windows/deployment/usmt/usmt-requirements#bkmk-1). |
 | ![Compatibile con le versioni precedenti](media/blue_compat.png)  = **Compatibile con le versioni precedenti** <br/> Questa combinazione non è stata testata ma dovrebbe funzionare. Verranno documentati eventuali problemi noti o avvertenze. |
 | ![Non supportato](media/Red_X.png) = **Non supportato** |
 

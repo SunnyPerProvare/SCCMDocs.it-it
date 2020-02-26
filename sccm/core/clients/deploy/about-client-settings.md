@@ -10,12 +10,12 @@ ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 697f49af0c0563c2da42e11a05f4a5ed1d43da9a
-ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
+ms.openlocfilehash: 890142c02acb1494500eef17f472e6f246e5267e
+ms.sourcegitcommit: 1991263194a5cd6dfbd3dd9a5f5c7f179c1bfeac
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77178453"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77218433"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -64,6 +64,11 @@ Configura il computer client per [Windows BranchCache](/sccm/core/plan-design/co
 - **Abilita BranchCache**: Abilita BranchCache nei computer client.
 
 - **Dimensioni massime della cache BranchCache (percentuale del disco)** : Percentuale del disco consentita dall'utente per l'uso da parte di BranchCache.
+
+> [!TIP]
+> Se si imposta **Configura BranchCache** su **No**, Configuration Manager non configura le impostazioni di BranchCache.
+>
+> Per disabilitare BranchCache, impostare **Configura BranchCache** su **Sì** e quindi impostare **Abilita BranchCache** su **No**.<!-- 6244852 -->
 
 ### <a name="configure-client-cache-size"></a>Configurare la dimensione della cache del client
 
@@ -901,10 +906,14 @@ Impostare questa opzione su **Sì** per consentire la configurazione delle impos
 
 ### <a name="bkmk_SUMMaint"></a> Consenti l'installazione degli aggiornamenti software nella finestra di manutenzione "Tutte le distribuzioni" quando la finestra di manutenzione "Aggiornamento software" è disponibile
 
-Quando si imposta questa opzione su **Sì** e per il client è stata definita almeno una finestra di manutenzione "Aggiornamento software", gli aggiornamenti software verranno installati durante una finestra di manutenzione "Tutte le distribuzioni". Per impostazione predefinita, questa impostazione è impostata su **No**. Questa impostazione client è stata aggiunta in Configuration Manager versione 1810. <!--2839307-->
+A partire dalla versione 1810, quando si imposta questa opzione su **Sì** e per il client è stata definita almeno una finestra di manutenzione "Aggiornamento software", gli aggiornamenti software verranno installati durante una finestra di manutenzione "Tutte le distribuzioni".
+
+Per impostazione predefinita, questa impostazione è impostata su **No**. Questo valore applica il comportamento precedente: se esistono entrambi i tipi, ignorerà la finestra. <!--2839307-->
 
 > [!NOTE]
 > Questa impostazione si applica anche alle finestre di manutenzione configurate per l'applicazione a **Sequenze di attività**.<!-- SCCMDocs-pr #4596 -->
+>
+> Se ha una sola finestra **Tutte le distribuzioni** disponibile, il client installa comunque gli aggiornamenti software o le sequenze di attività nella finestra.
 
 #### <a name="maintenance-window-example"></a>Esempio di finestre di manutenzione
 

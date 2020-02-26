@@ -10,12 +10,12 @@ ms.assetid: 38b2bed2-20dd-4ce1-abc0-219343d2c4b8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 09772fbb4b191de3f18b3000e5c540cc4216fd32
-ms.sourcegitcommit: be37256f98120ad30d5f7925bc32f05a07f15984
+ms.openlocfilehash: 3ed741b6e43ebfc24c8c1b785782f7f1f499c6d8
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071219"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515739"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Desktop Analytics?
 
@@ -65,13 +65,17 @@ Per usare Desktop Analytics, verificare che l'ambiente soddisfi i prerequisiti s
     > [!Important]  
     > Desktop Analytics richiede attualmente la distribuzione di un servizio di Office 365 nel tenant di Azure AD. Non sarà un requisito in futuro.
 
-    - Autorizzazioni di **Proprietario dell'area di lavoro** o di **Collaboratore** per **configurare l'area di lavoro** e i ruoli seguenti:  
+    - Autorizzazioni di **Proprietario dell'area di lavoro** per **configurare l'area di lavoro** e i ruoli seguenti:  
 
       - Ruolo [**Amministratore di Desktop Analytics**](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#desktop-analytics-administrator-permissions).
 
       - [**Collaboratore di Log Analytics**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-contributor) e [**Amministratore Accesso utenti**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) nel gruppo di risorse per usare un'area di lavoro esistente o crearne una nuova in un gruppo di risorse esistente.
 
       - Autorizzazioni di [**Proprietario**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) o [**Collaboratore**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) e [**Amministratore Accesso utenti**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) nella sottoscrizione per creare un'area di lavoro in un nuovo gruppo di risorse.  
+
+    - Per accedere al portale dopo l'onboarding, sono necessari: 
+    
+      - Il ruolo [**Amministratore Desktop Analytics**](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#desktop-analytics-administrator-permissions) e le autorizzazioni [**Proprietario**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) o [**Collaboratore**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) per il gruppo di risorse in cui è stata creata l'area di lavoro.
 
 - Configuration Manager versione 1902 con aggiornamento cumulativo (4500571) o versione successiva. Per altre informazioni, vedere [Aggiornare Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
 

@@ -10,12 +10,12 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ed86d7d9218de87bacd7c34c6557071a1e2bf219
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 2abba43462fd7aed8f5922a8550c32d6137dda0c
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75824572"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515688"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
@@ -41,7 +41,7 @@ Questo articolo offre le nozioni fondamentali sul gateway di gestione cloud, sul
 
 Un gateway di gestione cloud può essere utile in scenari diversi. Gli scenari seguenti sono alcuni degli scenari più comuni:  
 
-- Gestire client Windows tradizionali con identità appartenente al dominio di Active Directory. Questi client includono Windows 7, Windows 8.1 e Windows 10. Per la protezione del canale di comunicazione vengono usati certificati PKI. Le attività di gestione includono:  
+- Gestire client Windows tradizionali con identità appartenente al dominio di Active Directory. Questi client includono Windows 8.1 e Windows 10. Per la protezione del canale di comunicazione vengono usati certificati PKI. Le attività di gestione includono:  
     - Aggiornamenti software e protezione degli endpoint
     - Inventario e stato del client
     - Impostazioni di conformità

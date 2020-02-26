@@ -2,7 +2,7 @@
 title: Console di Configuration Manager
 titleSuffix: Configuration Manager
 description: Informazioni sull'esplorazione tramite la console di Configuration Manager.
-ms.date: 11/29/2019
+ms.date: 02/19/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 463ce307-59dd-4abd-87b8-42ca9db178d7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 8bc45d802da2e8ca960386ed8f78e6feb0e76055
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 8fd38697689fd8aef2fdb4e40d95d02ae22cb1c0
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75797820"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515969"
 ---
 # <a name="how-to-use-the-configuration-manager-console"></a>Come usare la console di Configuration Manager
 
@@ -160,28 +160,27 @@ A partire dalla versione 1902, è possibile visualizzare le connessioni più rec
        - Una console aperta in primo piano invia un heartbeat ogni 10 minuti.
 
 ![Visualizzare le connessioni della console di Configuration Manager](media/console-connections.png) 
-## <a name="bkmk_message"></a> Inviare messaggi agli amministratori da Connessioni di console
+
+## <a name="bkmk_message"></a> Avviare la chat di Microsoft Teams da connessioni della console
 <!--4923997-->
 *(Funzionalità introdotta nella versione 1910)*
 
-A partire dalla versione 1910, è possibile inviare messaggi agli altri amministratori di Configuration Manager dal nodo **Connessioni di console**. Quando si sceglie di inviare un messaggio a un amministratore, viene avviato Microsoft Teams e viene aperta una chat con l'utente.
+A partire dalla versione 1910, è possibile inviare messaggi agli altri amministratori di Configuration Manager dal nodo **Connessioni di console** usando Microsoft Teams. Quando si sceglie **Avvia la chat di Microsoft Teams** per avviare una chat con un amministratore, viene avviato Microsoft Teams e viene aperta una chat con l'utente.
 
-### <a name="prerequisites-for-messaging-administrators"></a>Prerequisiti per l'invio di messaggi agli amministratori
+### <a name="prerequisites"></a>Prerequisiti
 
-- Per gli amministratori della messaggistica, è necessario che l'account destinatario del messaggio sia stato individuato con [Azure AD o individuazione dell'utente AD](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser).
+- Per avviare una chat con un amministratore, è necessario che l'account con cui si vuole chattare sia stato individuato con [Azure AD o l'individuazione dell'utente AD](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser).
 - Nel dispositivo da cui viene eseguita la console deve essere installato Microsoft Teams.
 nota
 - Tutti i [prerequisiti per visualizzare le console connesse](#bkmk_connections-prereq)
 
-### <a name="message-administrators"></a>Inviare messaggi agli amministratori
+### <a name="start-microsoft-teams-chat"></a>Avviare la chat di Microsoft Teams
 
 1. Passare ad **Amministrazione** > **Sicurezza** > **Connessioni di console**.
-1. Fare clic con il pulsante destro del mouse sulla connessione di console di un utente e scegliere **Message Administrator** (Amministratore messaggi).
-    - Se il nome dell'entità utente non viene trovato per l'amministratore selezionato, l'opzione **Message Administrator** (Amministratore messaggi) è disattivata.
+1. Fare clic con il pulsante destro del mouse sulla connessione di console di un utente e selezionare **Avvia la chat di Microsoft Teams**.
+    - Se il nome dell'entità utente non viene trovato per l'amministratore selezionato, l'opzione **Avvia la chat di Microsoft Teams** è disattivata.
     - Viene visualizzato un messaggio di errore, incluso un collegamento per il download, se Microsoft Teams non è installato nel dispositivo da cui viene eseguita la console.
     - Se Microsoft Teams è installato nel dispositivo da cui viene eseguita la console, verrà aperta una chat con l'utente.
-
-![Screenshot degli amministratori dei messaggi con Microsoft Teams](media/4923997-message-administrator.png)
 
 ### <a name="known-issues"></a>Problemi noti
 
@@ -272,6 +271,25 @@ La console di Configuration Manager include le seguenti opzioni della riga di co
 ## <a name="tips"></a>Suggerimenti
 
 ### <a name="general"></a>Generale
+
+#### <a name="bkmk_search"></a> Miglioramenti alla ricerca nella console
+<!--4640570-->
+*(Funzionalità introdotta nella versione 1910)*
+
+- È possibile usare l'opzione di ricerca **Tutte le sottocartelle** dai nodi **Pacchetti driver** e **Query**.<!--2841181,5424892-->
+
+- Quando una ricerca restituisce più di 1000 risultati, è possibile selezionare il pulsante **OK** sulla barra di notifica per visualizzare altri risultati.<!--4640570-->
+
+    ![Screenshot della barra di notifica per un numero eccessivo di risultati della ricerca](./media/4640570-search-too-many-results.png)
+
+    > [!TIP]
+    > Il limite predefinito per i risultati della ricerca è 1000. È possibile modificare questo valore predefinito. Nella console di Configuration Manager passare alla scheda **Ricerca** della barra multifunzione. Nel gruppo **Opzioni** selezionare **Impostazioni di ricerca**. Modificare il valore di **Risultati della ricerca**. Un numero maggiore di risultati della ricerca potrebbe richiedere più tempo per la visualizzazione.
+    >
+    > Per impostazione predefinita, il limite massimo superiore è 100.000. Per modificare questo limite, impostare il valore DWORD **QueryResultCountMaximum** nella chiave del Registro di sistema seguente:
+    >
+    > `HKEY_CURRENT_USER\Software\Microsoft\ConfigMgr10\AdminUI`
+    >
+    > L'impostazione nella console corrisponde al valore **QueryResultCountLimit** nella stessa chiave. Un amministratore può configurare questi valori nell'hive HKLM per tutti gli utenti del dispositivo. Il valore HKCU sostituisce l'impostazione HKLM.
 
 #### <a name="role-based-administration-for-folders"></a>Amministrazione basata sui ruoli per le cartelle
 <!--3600867-->

@@ -10,12 +10,12 @@ ms.assetid: a70bfbd4-757a-4468-9312-1c3b373ef9fc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9395757084b575e508739d7570a3a472b50dfdfa
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 776ccdc7472b7bc34d26d34e49632e91d2374d85
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75803144"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77516249"
 ---
 # <a name="plan-a-migration-job-strategy-in-configuration-manager"></a>Pianificare una strategia di processo di migrazione in Configuration Manager
 
@@ -272,7 +272,7 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
 ### <a name="collection-dependencies-and-include-objects"></a>Dipendenze della raccolta e inclusione di oggetti  
  Quando si specifica una raccolta di cui eseguire la migrazione nella Creazione guidata del processo di migrazione, eventuali raccolte dipendenti verranno selezionate automaticamente per l'inclusione nel processo. Questo comportamento assicura che tutte le risorse necessarie siano disponibili dopo la migrazione.  
 
- Ad esempio: si seleziona una raccolta per i dispositivi che eseguono Windows 7 denominata **Win_7**. Questa raccolta è limitata a una raccolta contenente tutti i sistemi operativi client e denominata **All_Clients**. La raccolta **All_Clients** verrà selezionata automaticamente per la migrazione.  
+ Ad esempio: si seleziona una raccolta per i dispositivi che eseguono Windows 10 denominata **Win_10**. Questa raccolta è limitata a una raccolta contenente tutti i sistemi operativi client e denominata **All_Clients**. La raccolta **All_Clients** verrà selezionata automaticamente per la migrazione.  
 
 ### <a name="collection-limiting"></a>Limitazione della raccolta  
  Con Configuration Manager Current Branch le raccolte sono dati globali e vengono valutate in ogni sito nella gerarchia. Pianificare quindi come limitare l'ambito di una raccolta dopo la migrazione. Durante la migrazione è possibile identificare una raccolta della gerarchia di destinazione da utilizzare per limitare l'ambito della raccolta di cui si esegue la migrazione, in modo che la raccolta di cui è stata eseguita la migrazione non includa membri imprevisti.  

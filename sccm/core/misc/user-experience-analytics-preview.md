@@ -2,7 +2,7 @@
 title: Anteprima dell'analisi dell'esperienza utente
 titleSuffix: Configuration Manager
 description: Istruzioni per l'anteprima dell'analisi dell'esperienza utente.
-ms.date: 02/11/2020
+ms.date: 02/20/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: f3ea2a677791ccd9864659b605a252f1bab98f52
-ms.sourcegitcommit: 524f08ccae92756288c2d73491d4da0d3bb2900f
+ms.openlocfilehash: 9d2ece6f137b80bda04f8e73d16167dd0a3b58fc
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77145183"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77516232"
 ---
 # <a name="bkmk_uea"></a> Anteprima privata dell'analisi dell'esperienza utente
 
@@ -54,6 +54,7 @@ La versione di anteprima corrente richiede:
 - Le informazioni dettagliate sulle prestazioni di avvio sono disponibili solo per i dispositivi che eseguono la versione 1903 o successiva di Windows 10.
 - Connettività di rete dai dispositivi al cloud pubblico Microsoft. Per altre informazioni, vedere [Endpoint](#bkmk_uea_endpoints).
 - Il [ruolo di amministratore del servizio Intune](https://docs.microsoft.com/intune/fundamentals/role-based-access-control) è necessario per [iniziare a raccogliere i dati](#bkmk_uea_start).
+   - Facendo clic su **Avvia**, l'utente accetta e conferma che i dati dei clienti possono essere archiviati al di fuori del percorso selezionato durante il provisioning del tenant di Microsoft Intune.
    - Dopo aver fatto clic su **Avvia** per la raccolta dei dati, altri ruoli di sola lettura possono visualizzare i dati.
 
 I dispositivi Configuration Manager e i dispositivi registrati in Intune con versioni precedenti di Windows 10 non sono attualmente supportati per questa anteprima.
@@ -694,7 +695,7 @@ Attualmente, la funzionalità di base di analisi dell'esperienza utente raccogli
 - **topProcesses:** elenco dei processi caricati durante l'avvio con il nome, con le statistiche di utilizzo della CPU e i dettagli dell'app (nome, editore, versione). Ad esempio *{\"ProcessName\":\"svchost\",\"CpuUsage\":43,\"ProcessFullPath\":\"C:\\\\Windows\\\\System32\\\\svchost.exe\",\"ProductName\":\"Microsoft® Windows® Operating System\",\"Publisher\":\"Microsoft Corporation\",\"ProductVersion\":\"10.0.18362.1\"}*
 
 > [!Important]  
-> I criteri di gestione dei dati sono descritti nell'[informativa sulla privacy di Microsoft Intune] (https://docs.microsoft.com/legal/intune/microsoft-intune-privacy-statement). I dati dei clienti vengono usati solo per fornire i servizi per i quali si è iscritti. Come descritto durante il processo di onboarding, i punteggi da tutte le organizzazioni registrate vengono anonimizzati e aggregati per mantenere aggiornate le baseline.
+> I criteri di gestione dei dati sono descritti nell'[informativa sulla privacy di Microsoft Intune](https://docs.microsoft.com/legal/intune/microsoft-intune-privacy-statement). I dati dei clienti vengono usati solo per fornire i servizi per i quali si è iscritti. Come descritto durante il processo di onboarding, i punteggi da tutte le organizzazioni registrate vengono anonimizzati e aggregati per mantenere aggiornate le baseline.
 
 
 ### <a name="resources"></a>Risorse

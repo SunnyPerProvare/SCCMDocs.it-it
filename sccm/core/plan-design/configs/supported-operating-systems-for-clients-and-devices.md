@@ -2,7 +2,7 @@
 title: Client e dispositivi supportati
 titleSuffix: Configuration Manager
 description: Informazioni sulle versioni dei sistemi operativi supportate da Configuration Manager per client e dispositivi.
-ms.date: 01/23/2020
+ms.date: 02/19/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: ca3f26091f5bfbb8153f0fdf4cf58c108e987d21
-ms.sourcegitcommit: 4d49103722654f12ffe8df4d5848def44b7e1eb3
+ms.openlocfilehash: f31805a3d9541742419b398a954005358701836c
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76891603"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77515994"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versioni dei sistemi operativi per client e dispositivi supportate da Configuration Manager
 
@@ -29,7 +29,6 @@ Rivedere i requisiti e le limitazioni seguenti per tutti i client:
 
 - La modifica delle impostazioni del tipo di avvio o di **accesso per tutti** i servizi di Configuration Manager non è supportata. Se vengono apportate modifiche, i servizi principali potrebbero non funzionare correttamente.
 
-
 ## <a name="windows-computers"></a>Computer Windows  
 
 Per gestire le versioni dei sistemi operativi Windows seguenti, usare il client incluso in Configuration Manager. Per altre informazioni, vedere [Come distribuire i client nei computer Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).  
@@ -41,8 +40,6 @@ Per gestire le versioni dei sistemi operativi Windows seguenti, usare il client 
     Per altre informazioni dettagliate, vedere [Supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10).  
 
 - **Windows 8.1** (x86, x64): Professional, Enterprise
-
-- **Windows 7 con SP1** (x86, x64): Professional, Enterprise e Ultimate
 
 #### <a name="windows-virtual-desktop"></a>Desktop virtuale Windows
 
@@ -79,12 +76,6 @@ Se in questo scenario è necessario usare criteri utente e si accettano le poten
 
 - **Windows Storage Server 2012** (x64)
 
-- **Windows Server 2008 R2 con SP1** (x64): Standard, Enterprise, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>
-
-- **Windows Storage Server 2008 R2** (x86, x64): Workgroup, Standard, Enterprise
-
-- **Windows Server 2008 con SP2** (x86, x64): Standard, Enterprise, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>
-
 #### <a name="server-core"></a>Server Core
 
 Le versioni seguenti fanno riferimento in modo specifico all'installazione Server Core del sistema operativo. <sup>[Nota 3](#bkmk_note3)</sup>  
@@ -99,10 +90,6 @@ Le versioni del canale semestrale di Windows Server sono installazioni Server Co
 
 - **Windows Server 2012** (x64) <sup>[Nota 2](#bkmk_note2)</sup>
 
-- **Windows Server 2008 R2** senza Service Pack o con SP1 (x64)
-
-- **Windows Server 2008 SP2** (x86, x64)
-
 #### <a name="bkmk_note1"></a> Nota 1
 
 Configuration Manager verifica e supporta le edizioni di Windows Server Datacenter, ma non è ufficialmente certificato per Windows Server. Il supporto hotfix di Configuration Manager non è disponibile per problemi specifici di Windows Server Datacenter Edition. Per altre informazioni sul programma di certificazione di Windows Server, vedere [Catalogo di Windows Server](https://www.windowsservercatalog.com/).
@@ -115,7 +102,6 @@ Per supportare l'[installazione push client](/sccm/core/clients/deploy/plan/clie
 
 La nuova app Software Center non è supportata in alcuna versione di Windows Server Core.<!--SCCMDocs issue 683-->
 
-
 ## <a name="windows-embedded-computers"></a>Computer Windows Embedded  
 
 È possibile gestire i dispositivi Windows Embedded installando il client di Configuration Manager nel dispositivo. Per altre informazioni, vedere [Pianificazione della distribuzione del client in dispositivi con Windows Embedded](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices).  
@@ -126,11 +112,11 @@ La nuova app Software Center non è supportata in alcuna versione di Windows Ser
 
 - I client che usano uno dei tipi di filtro seguenti sono supportati per tutte le funzionalità tranne che per il risparmio energia:  
 
-    - Filtri di scrittura avanzati
+  - Filtri di scrittura avanzati
 
-    - Filtri di scrittura basati su file RAM
+  - Filtri di scrittura basati su file RAM
 
-    - Filtri di scrittura unificati  
+  - Filtri di scrittura unificati  
 
 - Il Catalogo applicazioni non è supportato per alcun dispositivo Windows Embedded.  
 
@@ -150,7 +136,6 @@ La nuova app Software Center non è supportata in alcuna versione di Windows Ser
 - **Windows Embedded POSReady 7** (x86, x64)
 
 - **Windows Embedded Standard 7 con SP1** (x86, x64)
-
 
 ## <a name="windows-ce-computers"></a>Computer Windows CE
 
@@ -193,11 +178,11 @@ La nuova app Software Center non è supportata in alcuna versione di Windows Ser
 
 ## <a name="bkmk_ESU"></a> Aggiornamenti della sicurezza estesa e Configuration Manager
 
-Gli [aggiornamenti della sicurezza estesa (ESU, Extended Security Updates) ](https://support.microsoft.com/help/4497181/lifecycle-faq-extended-security-updates) sono un'ultima soluzione per i clienti che devono eseguire alcuni prodotti Microsoft legacy oltre la fine del supporto. Il programma ESU include aggiornamenti della sicurezza critici e/o importanti definiti dal [Microsoft Security Response Center (MSRC) ](https://www.microsoft.com/msrc) per un massimo di tre anni dopo la data di fine del supporto "Extended" del prodotto.
+Gli [aggiornamenti della sicurezza estesa (ESU, Extended Security Updates) ](https://support.microsoft.com/help/4497181/lifecycle-faq-extended-security-updates) sono un'ultima soluzione per i clienti che devono eseguire alcuni prodotti Microsoft legacy oltre la fine del supporto. Ad esempio Windows 7. Il programma ESU include aggiornamenti della sicurezza critici e/o importanti definiti dal [Microsoft Security Response Center (MSRC) ](https://www.microsoft.com/msrc) per un massimo di tre anni dopo la data di fine del supporto "Extended" del prodotto.
 
-I prodotti che non rientrano nel ciclo di vita del supporto non sono supportati per l'uso con Configuration Manager. Sono inclusi tutti i prodotti coperti dal programma ESU. Gli aggiornamenti della sicurezza rilasciati nel programma ESU verranno pubblicati in Windows Server Update Services (WSUS). Gli aggiornamenti saranno visualizzati nella console di Configuration Manager. Mentre i prodotti coperti dal programma ESU non sono più supportati per l'uso con Configuration Manager, è possibile usare la [versione più recente di Configuration Manager (Current Branch)](/sccm/core/servers/manage/updates#version-details) per distribuire e installare gli aggiornamenti della sicurezza di Windows rilasciati nel programma. La versione più recente può essere usata anche per distribuire i sistemi operativi supportati tramite la distribuzione del sistema operativo.
+I prodotti che non rientrano nel ciclo di vita del supporto non sono supportati per l'uso con Configuration Manager. Sono inclusi tutti i prodotti coperti dal programma ESU. Gli aggiornamenti della sicurezza rilasciati nel programma ESU verranno pubblicati in Windows Server Update Services (WSUS). Gli aggiornamenti saranno visualizzati nella console di Configuration Manager. Mentre i prodotti coperti dal programma ESU non sono più supportati per l'uso con Configuration Manager, è possibile usare la [versione più recente di Configuration Manager (Current Branch)](/sccm/core/servers/manage/updates#version-details) per distribuire e installare gli aggiornamenti della sicurezza di Windows rilasciati nel programma. La versione rilasciata più recente può essere usata anche per distribuire Windows 10 nei dispositivi che eseguono Windows 7.
 
-Le funzionalità di gestione client che non sono correlate alla gestione degli aggiornamenti software Windows o alla distribuzione del sistema operativo non verranno più testate nei sistemi operativi coperti dal programma ESU e non si garantisce che continueranno a funzionare. È consigliabile eseguire l'aggiornamento o la migrazione a una versione corrente dei sistemi operativi appena possibile per ricevere supporto per la gestione dei client.
+Le funzionalità di gestione client che non sono correlate alla gestione degli aggiornamenti software Windows o alla distribuzione del sistema operativo non vengono più testate nei sistemi operativi coperti dal programma ESU e non si garantisce che continueranno a funzionare. È consigliabile eseguire l'aggiornamento o la migrazione a una versione corrente dei sistemi operativi appena possibile per ricevere supporto per la gestione dei client.
 
 ## <a name="mac-computers"></a>Computer Mac  
 
@@ -360,7 +345,7 @@ Configuration Manager supporta la gestione limitata dei dispositivi che si conne
 
 ### <a name="supported-versions-of-exchange-server"></a>Versioni di Exchange Server supportate
 
-- **Exchange Online (Office 365)** : questa versione include Business Productivity Online Standard Suite  
+- **Exchange Online (Office 365)**: questa versione include Business Productivity Online Standard Suite  
 
 - **Exchange Server 2016**  
 

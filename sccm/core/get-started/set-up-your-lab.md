@@ -10,12 +10,12 @@ ms.assetid: b1970688-0cd2-404f-a17f-9e2aa4a78758
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: f633b0e62056bd1e5733a9e8c58abad4d331bb50
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 518e0f9ae5f7966ab48d420161b1a93e52663886
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75803349"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77516266"
 ---
 # <a name="set-up-a-configuration-manager-lab"></a>Configurare un lab di Configuration Manager
 
@@ -63,7 +63,7 @@ Le linee guida disponibili in questo argomento consentono di configurare un ambi
 
      Per altre informazioni vedere la [panoramica su Active Directory Domain Services](https://technet.microsoft.com/library/hh831484).  
 
--   **Hyper-V viene usato con alcune macchine virtuali** per verificare che le fasi di gestione in questi esercizi funzionino come previsto. È consigliabile avere a disposizione un minimo di tre macchine virtuali, con installato Windows 7 o versione successiva.  
+-   **Hyper-V viene usato con alcune macchine virtuali** per verificare che le fasi di gestione in questi esercizi funzionino come previsto. È consigliabile avere a disposizione un minimo di tre macchine virtuali con installato Windows 10.  
 
      Per altre informazioni, vedere la [panoramica di Hyper-V](https://technet.microsoft.com/library/hh831531.aspx).  
 
@@ -103,7 +103,7 @@ Nelle procedure successive sono elencati gli altri passaggi necessari per consen
 
 1.  Eseguire **ADSI Edit**e connettersi al dominio in cui risiede il server del sito.  
 
-2.  Espandere **Dominio&lt;nome di dominio completo del computer\>** , espandere **<nome distinto\>** , fare clic con il tasto destro del mouse su **CN=System**, fare clic su **Nuovo** e quindi su **Oggetto**.  
+2.  Espandere **Dominio&lt;nome di dominio completo del computer\>**, espandere **<nome distinto\>**, fare clic con il tasto destro del mouse su **CN=System**, fare clic su **Nuovo** e quindi su **Oggetto**.  
 
 3.  Nella finestra di dialogo **Crea oggetto** , selezionare **Contenitore**, quindi fare clic su **Avanti**.  
 

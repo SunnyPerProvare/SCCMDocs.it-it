@@ -2,7 +2,7 @@
 title: Elementi deprecati per i client
 titleSuffix: Configuration Manager
 description: Informazioni sui sistemi operativi client che Configuration Manager non supporta più.
-ms.date: 07/26/2019
+ms.date: 02/19/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 604ab835-bce3-4fe3-a7f3-3f059cfc0ecf
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 87950615ec512f57046b206e86bb5b0c5ac2d9a1
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c4d3b2c1c42cade3622fffc0b3d1c198d838c60e
+ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802906"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77516198"
 ---
 # <a name="removed-and-deprecated-items-for-configuration-manager-clients"></a>Elementi rimossi e deprecati per i client di Configuration Manager
 
@@ -25,13 +25,15 @@ Questo articolo descrive i prodotti e i sistemi operativi rimossi dal supporto p
 
 Queste informazioni possono cambiare in futuro. Potrebbero non includere tutte le funzionalità, i prodotti o i sistemi operativi deprecati.  
 
-
 ## <a name="deprecated-client-operating-systems"></a>Sistemi operativi client deprecati  
 
 Se non specificato diversamente, ogni sistema operativo supportato è supportato come client di Configuration Manager è supportato fino alla *data di fine del supporto "Extended"* di quella versione del sistema operativo. Per altre informazioni sulle date di fine del supporto "Extended", vedere il sito Web del [ciclo di vita del supporto Microsoft](https://support.microsoft.com/lifecycle). Se il supporto di Configuration Manager per un sistema operativo termina prima della data finale del supporto "Extended", questo articolo contiene una data di deprecazione e una data di rimozione del supporto per il sistema operativo specificato.  
 
 |**Sistemi operativi**|**Primo avviso funzionalità deprecata**|**Supporto rimosso**|  
 |-|-|-|
+|Windows 7||14 gennaio 2020|
+|Windows Server 2008||14 gennaio 2020|
+|Windows Server 2008 R2||14 gennaio 2020|
 |Windows CE 7.0|19 luglio 2019|Prima versione rilasciata dopo il 30 giugno 2020|
 |Windows 10 Mobile|19 luglio 2019|Prima versione rilasciata dopo il 30 giugno 2020|
 |Windows 10 Mobile Enterprise|19 luglio 2019|Prima versione rilasciata dopo il 30 giugno 2020|
@@ -48,7 +50,6 @@ Se non specificato diversamente, ogni sistema operativo supportato è supportato
 |Windows Mobile 6.0 - 6.5|10 luglio 2015|Versione 1511|  
 |Nokia Symbian Belle|10 luglio 2015|Versione 1511|  
 |Windows CE 5.0 - 6.0|10 luglio 2015|Versione 1511|  
-
 
 ## <a name="see-also"></a>Vedere anche
 
