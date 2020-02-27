@@ -31,7 +31,7 @@ Non è insolito per gli utenti finali riscontrare tempi di avvio lunghi o interr
 - Configurazioni software non ottimizzate per l'esperienza dell'utente finale
 - Problemi causati da aggiornamenti e modifiche della configurazione
 
-Questi problemi e altri problemi relativi all'esperienza dell'utente finale persistono perché l'IT non ha molta visibilità nell'esperienza dell'utente finale. In genere, l'unica visibilità su questi problemi proviene da un canale di supporto lento e costoso che in genere non offre informazioni chiare su ciò che deve essere ottimizzato. Non è solo il supporto IT a sopportare il peso di questi problemi. Anche il tempo che gli information worker dedicano alla gestione dei problemi è costoso. Le prestazioni, l'affidabilità e i problemi di supporto che riducono la produttività degli utenti possono avere un impatto notevole anche sul bilancio di un'azienda.
+Questi e altri problemi relativi all'esperienza dell'utente finale persistono perché l'IT non ha molta visibilità sull'esperienza dell'utente finale. In genere, l'unica visibilità su questi problemi proviene da un canale di supporto lento e costoso che di solito non offre informazioni chiare su ciò che deve essere ottimizzato. Non è solo il supporto IT a sopportare il peso di questi problemi. Anche il tempo che gli information worker dedicano alla gestione dei problemi è costoso. Le prestazioni, l'affidabilità e i problemi di supporto che riducono la produttività degli utenti possono avere un impatto notevole anche sul bilancio di un'azienda.
 
 L'**analisi dell'esperienza utente** mira a migliorare la produttività dell'utente e a ridurre i costi del supporto IT mettendo a disposizione informazioni approfondite sull'esperienza utente. Tali informazioni consentono al reparto IT di ottimizzare l'esperienza utente con il supporto proattivo e di rilevare eventuali regressioni valutando l'impatto delle modifiche apportate alla configurazione sull'esperienza utente.
 
@@ -95,7 +95,7 @@ Quando i dati sono pronti, si noteranno alcune informazioni nella pagina di **pa
 
 ## <a name="bkmk_uea_rs"></a> Software consigliato
 
-Alcuni software sono noti per migliorare l'esperienza dell'utente finale, indipendentemente dalle metriche di integrità di livello inferiore. Windows 10, ad esempio, ha un punteggio Net Promoter molto più elevato rispetto a Windows 7. Il punteggio di **adozione del software** è un numero compreso tra 0 e 100 che rappresenta una media ponderata della percentuale di dispositivi in cui sono stati distribuiti diversi software consigliati. La ponderazione corrente è superiore per Office 365 e Windows rispetto alle altre metriche poiché gli utenti interagiscono con esse più di frequente. Le metriche sono descritte di seguito: 
+Alcuni software sono noti per migliorare l'esperienza dell'utente finale, indipendentemente dalle metriche di integrità di livello inferiore. Windows 10, ad esempio, ha un punteggio Net Promoter molto più elevato rispetto a Windows 7. Il punteggio di **adozione del software** è un numero compreso tra 0 e 100 che rappresenta una media ponderata della percentuale di dispositivi in cui sono stati distribuiti diversi software consigliati. La ponderazione corrente è superiore per Office 365 e Windows rispetto alle altre metriche poiché gli utenti interagiscono con essi più di frequente. Le metriche sono descritte di seguito: 
 
 [![Pagina Software consigliato di Analisi dell'esperienza utente](media/uea-recommended-software.png)](media/uea-recommended-software.png#lightbox)
 
@@ -113,7 +113,7 @@ L'azione di correzione consigliata per il passaggio dei dispositivi da versioni 
 
 ### <a name="bkmk_uea_ap"></a> Autopilot
 
-Autopilot offre agli utenti un'esperienza ottimale che registrano nuovi dispositivi per la gestione aziendale. Questa metrica misura la percentuale di dispositivi registrati per Autopilot.
+Autopilot offre un'esperienza ottimale agli utenti che registrano nuovi dispositivi per la gestione aziendale. Questa metrica misura la percentuale di dispositivi registrati per Autopilot.
 
 L'azione di correzione consigliata è registrare i dispositivi esistenti in Autopilot usando [Microsoft Intune](https://docs.microsoft.com/intune/enrollment-autopilot). Autopilot offre un'esperienza utente ottimale per:
 - Eseguire di nuovo il provisioning se il dispositivo viene reimpostato.
@@ -127,7 +127,7 @@ I dispositivi gestiti in Microsoft Intune sono già registrati in Azure AD. L'az
 
 ### <a name="bkmk_uea_intune"></a> Gestione cloud
 
-Microsoft Intune elimina la necessità di usare Criteri di gruppo, quindi il relativo sovraccarico a livello di prestazioni, offrendo una migliore esperienza all'utente finale. Questa metrica misura la percentuale di PC registrati in Microsoft Intune.
+Microsoft Intune elimina la necessità di usare Criteri di gruppo, e il sovraccarico che ne deriva a livello di prestazioni, offrendo una migliore esperienza all'utente finale. Questa metrica misura la percentuale di PC registrati in Microsoft Intune.
 
 L'azione di correzione consigliata per i dispositivi gestiti da Configuration Manager non ancora registrati in Intune è [co-gestirli](/sccm/comanage/overview).
 
