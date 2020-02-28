@@ -10,12 +10,12 @@ ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 62d0202d8404af17720a59fe6240636d8d3b1cf2
-ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
+ms.openlocfilehash: 3fd9c18923c1240e041227507e83431b9601e2af
+ms.sourcegitcommit: c3e5c23ea253a7521be796938af98728d1aea779
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77178470"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77552700"
 ---
 # <a name="about-client-installation-parameters-and-properties-in-configuration-manager"></a>Informazioni sui parametri e le proprietà di installazione del client in Configuration Manager
 
@@ -116,7 +116,7 @@ Questo parametro può specificare l'URL di un gateway di gestione cloud. Usare q
 Esempio per l'uso dell'URL del gateway di gestione cloud: `ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
 
  > [!Important]
- > Quando si specifica l'URL di un gateway di gestione cloud per il parametro **/mp**, l'URL deve iniziare con **https://**.
+ > Quando si specifica l'URL di un gateway di gestione cloud per il parametro **/mp**, l'URL deve iniziare con **https://** .
 
 
 ### <a name="retryltminutes"></a>/retry:&lt;minuti\>
@@ -203,7 +203,7 @@ Specificare il nome di un file di testo che elenca le proprietà di installazion
 - Se non si specifica il parametro **/noservice** di CCMSetup, questo file deve trovarsi nella cartella CCMSetup, ovvero %Windir%\\Ccmsetup per i sistemi operativi a 32 e a 64 bit.
 - Se si specifica il parametro **/noservice**, questo file deve essere posizionato nella stessa cartella da cui si esegue CCMSetup.exe.  
 
-Esempio: `CCMSetup.exe /config:&lt;Configuration File Name.txt\>`  
+Esempio: `CCMSetup.exe /config:"Configuration File Name.txt"`
 
 Per specificare il formato corretto del file, usare il file mobileclienttemplate.tcf nella cartella &lt;directory di Configuration Manager\>\\bin\\&lt;piattaforma\> del server del sito. Questo file contiene anche commenti relativi alle sezioni e alle modalità d'uso. Specificare le proprietà di installazione client nella sezione [Client Install] dopo il testo seguente: **Install=INSTALL=ALL**.  
 
@@ -344,7 +344,7 @@ Esempio: **CCMSetup.exe  CCMALLOWSILENTREBOOT**
 
  Specifica i criteri di selezione del certificato se il client dispone di più di un certificato per la comunicazione HTTPS. Questo certificato è un certificato valido che include la capacità di autenticazione client.  
 
- È possibile cercare una corrispondenza esatta (usare **Subject:**) o una corrispondenza parziale (usare **SubjectStr:)** in Nome soggetto o Nome alternativo soggetto. Esempi:  
+ È possibile cercare una corrispondenza esatta (usare **Subject:** ) o una corrispondenza parziale (usare **SubjectStr:)** in Nome soggetto o Nome alternativo soggetto. Esempi:  
 
  `CCMCERTSEL="Subject:computer1.contoso.com"` esegue la ricerca di un certificato con una corrispondenza esatta al nome computer "computer1.contoso.com" in Nome soggetto o in Nome alternativo soggetto.  
 
@@ -415,7 +415,7 @@ Questa proprietà può specificare l'indirizzo di un gateway di gestione cloud. 
 ad esempio `ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
 
  > [!Important]
- > Quando si specifica l'indirizzo di un gateway di gestione cloud per la proprietà **CCMHOSTNAME**, *non* aggiungere un prefisso come **https://**. Questo prefisso viene usato solo con l'URL **/mp** di un gateway di gestione cloud.
+ > Quando si specifica l'indirizzo di un gateway di gestione cloud per la proprietà **CCMHOSTNAME**, *non* aggiungere un prefisso come **https://** . Questo prefisso viene usato solo con l'URL **/mp** di un gateway di gestione cloud.
 
 
 
