@@ -22,16 +22,6 @@
           href: plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md
     - name: Sicurezza e privacy
       href: plan-design/security-and-privacy-for-compliance-settings.md
-    - name: Estensioni SCAP (Security Content Automation Protocol)
-      items:
-        - name: Informazioni sulle estensioni SCAP
-          href: plan-design/scap/about-scap.md
-        - name: Installare e configurare le estensioni SCAP
-          href: plan-design/scap/install-configure-scap.md
-        - name: Distribuire e monitorare la conformità SCAP
-          href: plan-design/scap/deploy-monitor-export.md
-        - name: Risoluzione dei problemi delle estensioni SCAP
-          href: plan-design/scap/troubleshooting-scap.md
 - name: Distribuire e usare
   items:
     - name: Creazione di elementi di configurazione
