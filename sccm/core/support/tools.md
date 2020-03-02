@@ -10,12 +10,12 @@ ms.assetid: 395403dc-6997-4415-93fd-6b1eeb6ba31a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 205616f4f91a278218a5943974c6de38914fc8de
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e1313efce6809d0b2372c5cf0dedebbc6cf1df2e
+ms.sourcegitcommit: c3e5c23ea253a7521be796938af98728d1aea779
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792325"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77552725"
 ---
 # <a name="configuration-manager-tools"></a>Strumenti di Configuration Manager
 
@@ -33,6 +33,8 @@ Tutti i sistemi operativi Windows indicati come client supportati in [Sistemi op
 
 ## <a name="client-tools"></a>Strumenti client
 
+Questi strumenti si trovano nella sottocartella `ClientTools`:
+
 - [CMTrace](/sccm/core/support/cmtrace): consente di visualizzare, monitorare e analizzare i file di log di Configuration Manager  
 
 - [Client Spy](/sccm/core/support/clispy): consente di risolvere i problemi relativi alla distribuzione del software, all'inventario e alla misurazione
@@ -46,10 +48,12 @@ Tutti i sistemi operativi Windows indicati come client supportati in [Sistemi op
 - [Send Schedule Tool](/sccm/core/support/send-schedule-tool): consente di attivare pianificazioni e valutazioni delle linee di base di configurazione  
 
 > [!Note]  
-> La cartella ClientTools include anche il file Microsoft.Diagnostics.Tracing.EventSource.dll. Diversi strumenti client richiedono questa libreria. Non è possibile utilizzarla direttamente.  
+> La cartella `ClientTools` include anche il file Microsoft.Diagnostics.Tracing.EventSource.dll. Diversi strumenti client richiedono questa libreria. Non è possibile utilizzarla direttamente.  
 
 
 ## <a name="server-tools"></a>Strumenti server
+
+Questi strumenti si trovano nella sottocartella `ServerTools`:
 
 - [DP Job Queue Manager](/sccm/core/support/dp-job-manager): consente di risolvere i problemi dei processi di distribuzione del contenuto ai punti di distribuzione  
 
@@ -73,7 +77,6 @@ Tutti i sistemi operativi Windows indicati come client supportati in [Sistemi op
 > - Microsoft.Diagnostics.Tracing.EventSource.dll
 >
 > Diversi strumenti server richiedono queste librerie. Non è possibile utilizzarli direttamente.  
-
 
 ## <a name="other-tools-and-toolkits"></a>Altri strumenti e toolkit
 

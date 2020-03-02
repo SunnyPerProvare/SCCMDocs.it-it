@@ -10,12 +10,12 @@ ms.assetid: 3e1ddb65-1193-46ce-a7c0-a48dfd9fd833
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: c573710ae8ded624281cbca040c6036214fc233c
-ms.sourcegitcommit: d1c6f3f2fa6821f15041e73d411cc4e1de0850ba
+ms.openlocfilehash: e894fefbc840cb4f23f9ef83b039c69b15d0efd4
+ms.sourcegitcommit: c3e5c23ea253a7521be796938af98728d1aea779
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519903"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77552736"
 ---
 # <a name="whats-new-in-version-1910-of-configuration-manager-current-branch"></a>Novità della versione 1910 di Configuration Manager Current Branch
 
@@ -354,10 +354,10 @@ A parte le nuove funzionalità, questa versione include anche ulteriori modifich
 As of this version, the following features are no longer pre-release:
 - [SMS Provider administration service](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_admin-service)
 - [Device Guard management](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)
-
-The following update rollup (4517869) is available in the console starting on October 1, 2019: [Update rollup for Configuration Manager current branch, version 1906](https://support.microsoft.com/help/4517869).
-
 -->
+L'aggiornamento cumulativo seguente (4537079) è disponibile nella console a partire dal 18 febbraio 2020: [Aggiornamento cumulativo per Microsoft Endpoint Configuration Manager Current Branch, versione 1910](https://support.microsoft.com/help/4537079).
+
+
 
 <!--
 ### Hotfixes
