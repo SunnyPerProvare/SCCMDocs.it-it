@@ -11,10 +11,10 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: 7b580ef5d48e223e293d4224388374325922a086
-ms.sourcegitcommit: 36920d640a322ed44e34fb5bbc5027c66633bd72
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 03/05/2020
 ms.locfileid: "76975771"
 ---
 # <a name="desktop-analytics-faq"></a>Domande frequenti su Desktop Analytics

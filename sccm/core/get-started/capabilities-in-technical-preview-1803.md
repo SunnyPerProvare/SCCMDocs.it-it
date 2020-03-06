@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 830f83abffac84f74fdbfaa36281a3475f8959e5
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: b1598be5a1138b76668bdc7e4037a29c9886cdd9
+ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75804623"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78167372"
 ---
 # <a name="capabilities-in-technical-preview-1803-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1803 per Configuration Manager
 
@@ -143,7 +143,7 @@ Se si seleziona **Enable third party software updates** (Abilita aggiornamenti s
 A seguito di [commenti e suggerimenti forniti in UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/20234866-allow-us-to-copy-information-out-of-the-asset-det), è ora possibile abilitare la funzionalità copia/incolla nel riquadro Dettagli asset nelle visualizzazioni di monitoraggio dello stato della distribuzione e dell'implementazione.  <!--1357552-->
 
 ## <a name="scap-extensions"></a>Estensioni SCAP
-La versione non definitiva delle estensioni SCAP è disponibile nella cartella Cd.latest in SMSSETUP\TOOLS\ConfigMgrSCAPExtension\ConfigMgrExtensionsForSCAP.msi. Questa versione non definitiva delle estensioni SCAP può essere installata in qualsiasi versione attualmente supportata di Configuration Manager Current Branch e LTSB 1606. Per altre informazioni, vedere [About the Security Content Automation Protocol (SCAP) extensions](/sccm/compliance/plan-design/scap/about-scap) (Informazioni sulle estensioni SCAP - Security Content Automation Protocol).
+La versione non definitiva delle estensioni SCAP è disponibile nella cartella Cd.latest in SMSSETUP\TOOLS\ConfigMgrSCAPExtension\ConfigMgrExtensionsForSCAP.msi. Questa versione non definitiva delle estensioni SCAP può essere installata in qualsiasi versione attualmente supportata di Configuration Manager Current Branch e LTSB 1606.
 
 
 

@@ -11,10 +11,10 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: 68dc0e0540eccabd07249b3b418b760d736f5be9
-ms.sourcegitcommit: 4d49103722654f12ffe8df4d5848def44b7e1eb3
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/30/2020
+ms.lasthandoff: 03/05/2020
 ms.locfileid: "76891637"
 ---
 # <a name="reference-for-configuration-manager-setup"></a>Informazioni di riferimento per l'installazione di Configuration Manager

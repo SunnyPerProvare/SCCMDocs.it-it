@@ -11,10 +11,10 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: a6cd83b99b2936ebc44bb171795f7c8da4c8b17a
-ms.sourcegitcommit: 1991263194a5cd6dfbd3dd9a5f5c7f179c1bfeac
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 03/05/2020
 ms.locfileid: "77218413"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Domande frequenti relative ai rami e alle licenze di Configuration Manager

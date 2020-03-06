@@ -10,12 +10,12 @@ ms.assetid: b1970688-0cd2-404f-a17f-9e2aa4a78758
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 518e0f9ae5f7966ab48d420161b1a93e52663886
-ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
+ms.openlocfilehash: f905b5287a9ebab2e2b41e2003e34798254a36b5
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77516266"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78290073"
 ---
 # <a name="set-up-a-configuration-manager-lab"></a>Configurare un lab di Configuration Manager
 
@@ -37,7 +37,7 @@ Le linee guida disponibili in questo argomento consentono di configurare un ambi
 
 -   **Nell'ambiente lab viene usato SQL Server 2012 SP2** per il database del sito.  
 
-     È possibile scaricare una versione di valutazione di SQL Server 2012 dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=29066).  
+     È possibile scaricare una versione di valutazione di SQL Server 2012 dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=43340).  
 
      SQL Server ha requisiti in merito alle [versioni supportate di SQL Server](../../core/plan-design/configs/support-for-sql-server-versions.md#bkmk_SQLVersions) che devono essere soddisfatti per l'uso con Configuration Manager.  
 
@@ -103,7 +103,7 @@ Nelle procedure successive sono elencati gli altri passaggi necessari per consen
 
 1.  Eseguire **ADSI Edit**e connettersi al dominio in cui risiede il server del sito.  
 
-2.  Espandere **Dominio&lt;nome di dominio completo del computer\>**, espandere **<nome distinto\>**, fare clic con il tasto destro del mouse su **CN=System**, fare clic su **Nuovo** e quindi su **Oggetto**.  
+2.  Espandere **Dominio&lt;nome di dominio completo del computer\>** , espandere **<nome distinto\>** , fare clic con il tasto destro del mouse su **CN=System**, fare clic su **Nuovo** e quindi su **Oggetto**.  
 
 3.  Nella finestra di dialogo **Crea oggetto** , selezionare **Contenitore**, quindi fare clic su **Avanti**.  
 

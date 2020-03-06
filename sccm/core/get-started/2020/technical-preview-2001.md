@@ -11,10 +11,10 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: 9dc874269463c49efb693f5078cbc33c4da37a4c
-ms.sourcegitcommit: 36920d640a322ed44e34fb5bbc5027c66633bd72
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 03/05/2020
 ms.locfileid: "76975813"
 ---
 # <a name="features-in-configuration-manager-technical-preview-version-2001"></a>Funzionalità in Configuration Manager Technical Preview versione 2001

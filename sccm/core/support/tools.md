@@ -10,12 +10,12 @@ ms.assetid: 395403dc-6997-4415-93fd-6b1eeb6ba31a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: e1313efce6809d0b2372c5cf0dedebbc6cf1df2e
-ms.sourcegitcommit: c3e5c23ea253a7521be796938af98728d1aea779
+ms.openlocfilehash: f4036e0b54ff66be6990edf5196115bbeb290ea8
+ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77552725"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78167236"
 ---
 # <a name="configuration-manager-tools"></a>Strumenti di Configuration Manager
 
@@ -97,7 +97,5 @@ Questi strumenti si trovano nella sottocartella `ServerTools`:
 - [Microsoft Deployment Toolkit (MDT)](/sccm/mdt/): Raccolta unificata di strumenti, processi e linee guida per l'automazione delle distribuzioni dei sistemi operativi desktop e server.
 
 - [System Center Updates Publisher (SCUP)](/sccm/sum/tools/updates-publisher): Strumento autonomo per gestire e importare aggiornamenti software personalizzati.
-
-- [Estensioni SCAP (Security Content Automation Protocol)](/sccm/compliance/plan-design/scap/about-scap): Analizzare e valutare la conformità dell'ambiente con le baseline NIST.
 
 - [Package Conversion Manager](/sccm/apps/pcm/package-conversion-manager): Convertire i pacchetti in applicazioni.

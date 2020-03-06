@@ -11,10 +11,10 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: 193c914b6bb4f6f53cddeba6e33fdb2fe4e36de8
-ms.sourcegitcommit: 524f08ccae92756288c2d73491d4da0d3bb2900f
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 03/05/2020
 ms.locfileid: "77145129"
 ---
 # <a name="compatibility-assessment-in-desktop-analytics"></a>Valutazione della compatibilità in Desktop Analytics

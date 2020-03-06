@@ -10,12 +10,12 @@ ms.assetid: 6bce416b-761d-4b23-bd33-5b7c30edb10d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 0142d8a6dbf2f7cbc23f14972ec5e536e946fc98
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 3aae5870363864d0d7c106dcb3fa4cc9fba65ab3
+ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794547"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78167321"
 ---
 # <a name="pre-release-features-in-configuration-manager"></a>Funzionalità di versioni non definitive in Configuration Manager
 
@@ -77,7 +77,6 @@ Quando si abilita una funzionalità non definitiva, gestione gerarchie (HMAN) di
 | [Servizio di amministrazione del provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_admin-service) <!--1359052--> | Versione 1810 | Versione 1906 |
 | [Sistema del sito HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http) <!--1356889,1358228--> | Versione 1806 | Versione 1810 |
 | [App client per dispositivi con co-gestione](/sccm/comanage/workloads#client-apps) <br/> (nota in precedenza come *App per dispositivi mobili per dispositivi con co-gestione*) <!--1357892,CC3AE625-BF72-49B1-8AB1-AF0DCF2D6F4C--> | Versione 1806 | ![Non ancora](media/red_x.png) |
-| [Estensioni SCAP](/sccm/compliance/plan-design/scap/about-scap) <!--3607889--> | Versione 1806 | ![Non ancora](media/red_x.png) |
 | [Package Conversion Manager](/sccm/apps/pcm/package-conversion-manager) <!--1357861--> | Versione 1806 | Versione 1810 |
 | [Distribuzioni in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence) <!--1356837--> | Versione 1802 | Versione 1806 |
 | [Gestione di Controllo di applicazioni di Windows Defender](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager) <!--3600958 (fka 1355092 & 1319346)--> | Versione 1702 | Versione 1906 |

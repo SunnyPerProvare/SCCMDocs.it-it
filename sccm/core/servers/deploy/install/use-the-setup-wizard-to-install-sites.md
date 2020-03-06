@@ -10,10 +10,10 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: 82e78e3c670b60a567ff7f9950b53071ca655305
-ms.sourcegitcommit: 4d49103722654f12ffe8df4d5848def44b7e1eb3
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/30/2020
+ms.lasthandoff: 03/05/2020
 ms.locfileid: "76891621"
 ---
 # <a name="use-the-setup-wizard-to-install-configuration-manager-sites"></a>Usare l'installazione guidata per installare i siti di Configuration Manager

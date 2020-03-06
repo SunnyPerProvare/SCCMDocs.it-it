@@ -11,10 +11,10 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: be93688ec3433ba95b04fc8bbc287234602b9a31
-ms.sourcegitcommit: 4d49103722654f12ffe8df4d5848def44b7e1eb3
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/30/2020
+ms.lasthandoff: 03/05/2020
 ms.locfileid: "76891580"
 ---
 # <a name="how-to-upgrade-clients-on-mac-computers-in-configuration-manager"></a>Come aggiornare i client nei computer Mac in Configuration Manager

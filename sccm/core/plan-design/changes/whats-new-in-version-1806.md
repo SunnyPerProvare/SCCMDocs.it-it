@@ -10,12 +10,12 @@ ms.assetid: 0249dbd3-1e85-4d05-a9e5-420fbe44d850
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: ca11c8d0bee58f2e3bf85729d78e5f139774c04d
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: ccbfbd043c8ac4e648857ebcea726ad41e7c7538
+ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034899"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78167218"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novità della versione 1806 di Configuration Manager (Current Branch)
 
@@ -267,7 +267,7 @@ Per altre informazioni, vedere [Configurare le impostazioni di Microsoft Edge](/
 <!--1357552-->
 Convertire il contenuto del protocollo SCAP (Security Content Automation Protocol) in baseline di impostazioni di conformità e generare rapporti SCAP tramite un'estensione della console. Questa funzione include anche un nuovo dashboard per la visualizzazione della conformità dei client e della conformità alla regola XCCDF. 
 
-Per altre informazioni, vedere [Informazioni sulle estensioni SCAP (Security Content Automation Protocol)](/sccm/compliance/plan-design/scap/about-scap).
+
 
 
 

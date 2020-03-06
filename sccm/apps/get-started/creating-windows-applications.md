@@ -10,12 +10,12 @@ ms.assetid: 9181c84e-d74f-44ea-9bb9-f7805eb465fc
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: efc3c6248974990d194158ffaad2791a4be8a5bd
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.openlocfilehash: 97b28f59308bf807bfaea577138fee4e4c17e8fb
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75817721"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78289971"
 ---
 # <a name="create-windows-applications-in-configuration-manager"></a>Creare applicazioni Windows in Configuration Manager
 
@@ -83,7 +83,7 @@ A partire dalla versione 1810, convertire le applicazioni Windows Installer (con
 
     - Installare [MSIX Packaging Tool](https://www.microsoft.com/store/productId/9N5LW3JBCXKF) da Microsoft Store  
 
-    - Installare il [driver dello strumento di creazione di pacchetti MSIX](https://docs.microsoft.com/windows/msix/packaging-tool/mpt-known-issues#msix-packaging-tool-driver-considerations)<!--SCCMDocs-pr issue #3091-->  
+    - Installare il [driver dello strumento di creazione di pacchetti MSIX](/windows/msix/packaging-tool/tool-known-issues#frameworks-and-drivers)<!--SCCMDocs-pr issue #3091-->  
 
 Non installare altri servizi o app in questo dispositivo. È il sistema di riferimento. 
 

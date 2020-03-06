@@ -10,12 +10,12 @@ ms.assetid: b3d755bd-0870-4f1f-a56d-bfd3c7b492b9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4fe6a0a753c00c6703384d5400210a254a35a8dc
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 633827a8d4173c70f0d6180c8b2341c16246cb1b
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791872"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78290022"
 ---
 # <a name="how-to-use-the-configuration-manager-docs"></a>Uso della documentazione di Configuration Manager
 
@@ -110,7 +110,7 @@ La libreria di documentazione di Configuration Manager, analogamente alla maggio
 
 2. Per modificare il file di origine, fare clic sull'icona a forma di matita.  
 
-3. Apportare le modifiche nel markdown. Per altre informazioni, vedere [How to use Markdown for writing Docs](https://docs.microsoft.com/contribute/how-to-write-use-markdown) (Come usare il markdown per scrivere documenti).  
+3. Apportare le modifiche nel markdown. Per altre informazioni, vedere [How to use Markdown for writing Docs](https://docs.microsoft.com/contribute/markdown-reference) (Come usare il markdown per scrivere documenti).  
 
 4. Nella sezione di modifica del file immettere un commento di commit pubblico che descriva *cosa* è stato modificato. Quindi fare clic su **Propose file change** (Proponi modifica file).  
 

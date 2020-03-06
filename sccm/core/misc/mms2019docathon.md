@@ -9,12 +9,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9af04678ac35311f35dde991b4aa43d7b6df736f
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 4a03f04969820358dd600640920d2a383e515325
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802957"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78290056"
 ---
 # <a name="mms-2019-docathon"></a>MMS 2019 Docathon
 
@@ -140,7 +140,7 @@ I riconoscimenti seguenti vengono calcolati in base al numero di contributi idon
 
 - [Guida per i collaboratori](https://docs.microsoft.com/contribute)
 
-- [Come usare Markdown per scrivere articoli di Docs](https://docs.microsoft.com/contribute/how-to-write-use-markdown)
+- [Come usare Markdown per scrivere articoli di Docs](https://docs.microsoft.com/contribute/markdown-reference)
 
 ## <a name="official-rules"></a>Regolamento ufficiale
 

@@ -11,10 +11,10 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: 5a03df7bb4e9860b34e7d2064e1006206c1d8f89
-ms.sourcegitcommit: d2b6450fbc75e9937b090ab7d8a5e1d524c92f87
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 03/05/2020
 ms.locfileid: "76813825"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Note sulla versione per Configuration Manager

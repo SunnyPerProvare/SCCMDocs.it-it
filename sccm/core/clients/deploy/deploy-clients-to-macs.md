@@ -11,10 +11,10 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: ad3d8fbc0b424778e71375eb4201339db1934428
-ms.sourcegitcommit: 4d49103722654f12ffe8df4d5848def44b7e1eb3
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/30/2020
+ms.lasthandoff: 03/05/2020
 ms.locfileid: "76891543"
 ---
 # <a name="how-to-deploy-clients-to-macs"></a>Come distribuire i client in computer Mac

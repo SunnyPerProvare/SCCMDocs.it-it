@@ -10,12 +10,12 @@ ms.assetid: 24633725-791a-4df7-8dce-2c24c1a19a03
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9617db39604d76676efc8b3407721b870b3f09f8
-ms.sourcegitcommit: c3e5c23ea253a7521be796938af98728d1aea779
+ms.openlocfilehash: 090ad25be0b4bb8fc961e2eb976b50942db7851a
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77552680"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78290039"
 ---
 # <a name="choose-a-device-management-solution"></a>Scegliere una soluzione di gestione dei dispositivi
 
@@ -47,7 +47,7 @@ Per altre informazioni, vedere gli articoli seguenti:
 - [Che cos'è Azure Stack?](https://docs.microsoft.com/azure-stack/operator/azure-stack-overview)
 - [Che cos'è Windows Admin Center?](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/what-is)
 - [Descrizione di Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/overview)
-- [Prodotti di gestione Azure](https://docs.microsoft.com/azure/#pivot=products&panel=mgmt)
+- [Prodotti di gestione Azure](https://docs.microsoft.com/azure/)
 - [Informazioni su Desktop virtuale Windows](https://docs.microsoft.com/azure/virtual-desktop/overview)
 
 Per altre informazioni sulle soluzioni Configuration Manager e Intune, passare alla sezione successiva.

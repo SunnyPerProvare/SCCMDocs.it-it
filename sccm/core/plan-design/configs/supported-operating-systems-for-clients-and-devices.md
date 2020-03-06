@@ -11,10 +11,10 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: f31805a3d9541742419b398a954005358701836c
-ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/05/2020
 ms.locfileid: "77515994"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versioni dei sistemi operativi per client e dispositivi supportate da Configuration Manager
@@ -345,7 +345,7 @@ Configuration Manager supporta la gestione limitata dei dispositivi che si conne
 
 ### <a name="supported-versions-of-exchange-server"></a>Versioni di Exchange Server supportate
 
-- **Exchange Online (Office 365)**: questa versione include Business Productivity Online Standard Suite  
+- **Exchange Online (Office 365)** : questa versione include Business Productivity Online Standard Suite  
 
 - **Exchange Server 2016**  
 
