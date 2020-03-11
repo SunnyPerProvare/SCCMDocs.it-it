@@ -1,8 +1,8 @@
 ---
 title: Gestire le distribuzioni ad alto rischio
 titleSuffix: Configuration Manager
-description: Informazioni su come configurare le impostazioni del sito di verifica della distribuzione in Configuration Manager per avvisare gli amministratori nel caso in cui creino una distribuzione ad alto rischio.
-ms.date: 07/30/2018
+description: Configurare le impostazioni del sito di verifica della distribuzione in Configuration Manager per avvisare gli amministratori nel caso in cui creino una distribuzione ad alto rischio.
+ms.date: 02/26/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,25 +10,29 @@ ms.assetid: 8d37b983-a964-402c-819d-2512ed2d463b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2becba96dd96e8235bfa52d67edb42785fdecc31
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 979d9ca0aca0d61dbd3cd8e049af9d59b8726dd7
+ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75793261"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78167270"
 ---
 # <a name="settings-to-manage-high-risk-deployments-for-configuration-manager"></a>Impostazioni per gestire le distribuzioni ad alto rischio per Configuration Manager
 
 *Si applica a: Configuration Manager (Current Branch)*
 
+Con Configuration Manager è possibile configurare le impostazioni del sito di *verifica della distribuzione*. Queste impostazioni avvisano gli amministratori se creano una distribuzione di sequenza di attività ad alto rischio. Una distribuzione ad alto rischio è:  
 
-Con Configuration Manager è possibile configurare le impostazioni del sito di verifica della distribuzione. Queste impostazioni avvisano gli amministratori se creano una distribuzione di sequenza di attività ad alto rischio. Una distribuzione ad alto rischio è:  
+- Una distribuzione che viene installata automaticamente  
 
--   Una distribuzione che viene installata automaticamente  
-
--   Una distribuzione che può causare potenzialmente risultati indesiderati  
+- Una distribuzione che può causare potenzialmente risultati indesiderati  
 
 Ad esempio, una sequenza di attività con scopo impostato su **Obbligatorio** che distribuisce un sistema operativo viene considerata come distribuzione ad alto rischio.  
+
+> [!WARNING]
+> Se si usano distribuzioni PXE e si configura l'hardware dei dispositivi con la scheda di rete come primo dispositivo di avvio, questi dispositivi possono avviare automaticamente una sequenza di attività di distribuzione del sistema operativo senza l'intervento dell'utente. Questa configurazione non viene gestita dalla procedura di verifica della distribuzione. Se da un lato questa configurazione può semplificare il processo e ridurre l'interazione dell'utente, dall'altro aumenta il rischio di ricreazione accidentale dell'immagine del dispositivo.
+
+## <a name="bkmk_settings"></a> Impostazioni di verifica della distribuzione
 
 Per ridurre l'incidenza di distribuzioni ad alto rischio indesiderate, è possibile configurare limiti di dimensioni nelle impostazioni di verifica della distribuzione seguenti:  
 
@@ -42,17 +46,19 @@ Per ridurre l'incidenza di distribuzioni ad alto rischio indesiderate, è possib
 
 - **Raccolte con i server del sistema del sito**: quando la raccolta di destinazione contiene un computer con un ruolo del sistema del sito, bloccare le distribuzioni o richiedere la verifica prima della creazione della distribuzione. Quando viene bloccata una distribuzione, selezionare una raccolta diversa che soddisfi i criteri di verifica della distribuzione per continuare a creare la distribuzione.  
 
-> [!NOTE]  
->  Le distribuzioni ad alto rischio sono sempre limitate alle raccolte personalizzate (quelle create dall'utente) e alla racconta predefinita **Computer sconosciuti** . Quando si crea una distribuzione ad alto rischio, non è possibile selezionare una raccolta predefinita quale **Tutti i sistemi**.  
+> [!NOTE]
+> Le distribuzioni ad alto rischio sono sempre limitate alle raccolte personalizzate (quelle create dall'utente) e alla racconta predefinita **Computer sconosciuti** . Quando si crea una distribuzione ad alto rischio, non è possibile selezionare una raccolta predefinita quale **Tutti i sistemi**.  
 
-### <a name="configure-deployment-verification-for-a-site"></a>Configurare la verifica della distribuzione per un sito  
+## <a name="configure-deployment-verification"></a>Configurare la verifica della distribuzione
 
-1.  Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Configurazione del sito**, selezionare **Siti** e quindi selezionare il sito primario da configurare.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Configurazione del sito**, selezionare **Siti** e quindi selezionare il sito primario da configurare.
 
-2.  Fare clic su **Proprietà** nella barra multifunzione e quindi passare alla scheda **Verifica della distribuzione**.  
+2. Nella barra multifunzione selezionare **Proprietà** e quindi passare alla scheda **Verifica della distribuzione**.
 
-3.  Dopo aver impostato le configurazioni da usare, fare clic su **OK** per salvare la configurazione.  
+3. Configurare le [impostazioni](#bkmk_settings) che si vuole usare e quindi scegliere **OK** per salvare la configurazione e chiudere le proprietà.
 
+## <a name="next-steps"></a>Passaggi successivi
 
-### <a name="see-also"></a>Vedere anche  
- [Configurare siti e gerarchie](/sccm/core/servers/deploy/configure/configure-sites-and-hierarchies)
+[Gestire le sequenze di attività: impostazioni ad alto impatto](/configmgr/osd/deploy-use/manage-task-sequences-to-automate-tasks#high-impact-settings)
+
+[Configurare siti e gerarchie](/sccm/core/servers/deploy/configure/configure-sites-and-hierarchies)

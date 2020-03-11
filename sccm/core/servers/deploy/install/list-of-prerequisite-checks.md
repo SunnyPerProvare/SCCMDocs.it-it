@@ -2,7 +2,7 @@
 title: Controlli dei prerequisiti
 titleSuffix: Configuration Manager
 description: Informazioni di riferimento sugli specifici controlli dei prerequisiti per gli aggiornamenti di Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 02/26/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 6a279624-ffc9-41aa-8132-df1809708dd5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 3c195922218a11ab4c4cfe4e676656e244707967
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 446ebda23b4f16a69e6175be8a1a4c2d38177de4
+ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798158"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78167287"
 ---
 # <a name="list-of-prerequisite-checks-for-configuration-manager"></a>Elenco dei controlli dei prerequisiti per Configuration Manager
 
@@ -636,6 +636,12 @@ Windows Firewall è disattivato o è stata generata un'eccezione rilevante di Wi
 Binding del sito Web IIS per il protocollo di comunicazione HTTPS.
 
 Quando si installano ruoli del sito che richiedono HTTPS, configurare i binding del sito IIS nel server specificato con un certificato di infrastruttura a chiave pubblica (PKI) valido.
+
+### <a name="invalid-discovery-records"></a>Record di individuazione non validi
+
+*Si applica a: sito di amministrazione centrale*
+
+Sono presenti record di individuazione non più validi, che verranno contrassegnati per l'eliminazione.
 
 ### <a name="microsoft-xml-core-services-60-msxml60"></a>Microsoft XML Core Services 6.0 (MSXML60)
 

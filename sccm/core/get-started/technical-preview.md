@@ -2,7 +2,7 @@
 title: Versioni di Technical Preview
 titleSuffix: Configuration Manager
 description: Informazioni sulla versione Technical Preview che consente di testare nuove funzionalità e capacità in Configuration Manager.
-ms.date: 02/13/2020
+ms.date: 02/28/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 661690e0e40de13bd89495be1859673481df4904
-ms.sourcegitcommit: 982394e762589a5aa855a0ee5875ba5ed9e0c377
+ms.openlocfilehash: ed36b375f1d59d62460021d62003376826dbcd58
+ms.sourcegitcommit: c5176cf04d1c20eed05b38a9a6fe2b275c9d2627
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77480848"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78181229"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Technical Preview per Configuration Manager
 
@@ -121,9 +121,32 @@ Enable this section if needed to include any broad change to the tech preview br
 This is the full list of new features in the latest TP release
 
 bullet format:
-<!-- - [title](/sccm/core/get-started/2020/technical-preview-2002#bkmk_anchor) <!--ID-->
+<!-- - [title](/sccm/core/get-started/2020/technical-preview-2002-2#bkmk_anchor) <!--ID-->
 
 Le funzionalità seguenti sono disponibili con la versione Technical Preview di Configuration Manager più recente:
+
+### <a name="technical-preview-version-20022"></a>Technical Preview versione 2002.2
+
+- [Regole delle informazioni dettagliate per una configurazione HTTPS appropriata](/sccm/core/get-started/2020/technical-preview-2002-2#bkmk_insight) <!--6268489-->
+- [Miglioramenti alla gestione di BitLocker](/sccm/core/get-started/2020/technical-preview-2002-2#bkmk_bitlocker) <!--5925660-->
+- [Miglioramenti al supporto per dispositivi ARM64](/sccm/core/get-started/2020/technical-preview-2002-2#bkmk_arm) <!--5954175-->
+- [Ricerca di Tutte le sottocartelle per Elementi di configurazione e Linee di base di configurazione](/sccm/core/get-started/2020/technical-preview-2002-2#bkmk_search) <!--5891241-->
+- [Supporto per macOS Catalina a 64 bit](/sccm/core/get-started/2020/technical-preview-2002-2#bkmk_mac) <!--3696246-->
+- [Miglioramenti per estendere ed eseguire la migrazione di un sito locale in Microsoft Azure](/sccm/core/get-started/2020/technical-preview-2002-2#bkmk_extend) <!--6307931-->
+- [Funzionalità cloud di Microsoft Endpoint Configuration Manager](/sccm/core/get-started/2020/technical-preview-2002-2#bkmk_cloud) <!--5834830-->
+
+> [!NOTE]
+> Le funzionalità disponibili in una versione precedente della Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità aggiunte alla versione Current Branch di Configuration Manager rimangono disponibili nel ramo Technical Preview.
+
+## <a name="features-in-recent-technical-previews"></a>Funzionalità nelle anteprime tecniche recenti
+
+<!-- (explanatory comment)
+This is the full list of new features in the past TP releases since the last CB release.
+Each month, add features from the list above to a new H3 section at the top of this section.
+When there's a new CB, add any features not in that CB to the table in H2 "Features in previous technical previews"
+-->
+
+Le funzionalità seguenti sono state rilasciate in versioni precedenti del ramo Configuration Manager Technical Preview dopo la versione Current Branch 1910:
 
 ### <a name="technical-preview-version-2002"></a>Technical Preview versione 2002
 
@@ -135,19 +158,6 @@ Le funzionalità seguenti sono disponibili con la versione Technical Preview di 
 - [Miglioramenti alla gestione di BitLocker](/sccm/core/get-started/2020/technical-preview-2002#bkmk_bitlocker) <!--5925683-->
 - [Miglioramenti aggiuntivi per lo stato delle sequenze di attività](/sccm/core/get-started/2020/technical-preview-2002#bkmk_tsprogress) <!--5932692-->
 - [Miglioramenti al risponditore PXE di ConfigMgr](/sccm/core/get-started/2020/technical-preview-2002#bkmk_pxe) <!--5568051 & 5528656-->
-
-> [!NOTE]  
-> Le funzionalità disponibili in una versione precedente della Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità aggiunte alla versione Current Branch di Configuration Manager rimangono disponibili nel ramo Technical Preview.  
-
-## <a name="features-in-recent-technical-previews"></a>Funzionalità nelle anteprime tecniche recenti
-
-<!-- (explanatory comment)
-This is the full list of new features in the past TP releases since the last CB release.
-Each month, add features from the list above to a new H3 section at the top of this section.
-When there's a new CB, add any features not in that CB to the table in H2 "Features in previous technical previews"
--->
-
-Le funzionalità seguenti sono state rilasciate in versioni precedenti del ramo Configuration Manager Technical Preview dopo la versione Current Branch 1910:
 
 ### <a name="technical-preview-version-20012"></a>Technical Preview versione 2001.2
 

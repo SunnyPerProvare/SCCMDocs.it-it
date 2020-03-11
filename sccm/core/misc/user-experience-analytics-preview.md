@@ -2,7 +2,7 @@
 title: Anteprima dell'analisi dell'esperienza utente
 titleSuffix: Configuration Manager
 description: Istruzioni per l'anteprima dell'analisi dell'esperienza utente.
-ms.date: 02/20/2020
+ms.date: 03/02/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 9d2ece6f137b80bda04f8e73d16167dd0a3b58fc
-ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
+ms.openlocfilehash: 4758a4ef36896c2d4cfa08e261cef48fec2910bb
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77516232"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78287731"
 ---
 # <a name="bkmk_uea"></a> Anteprima privata dell'analisi dell'esperienza utente
 
@@ -31,7 +31,7 @@ Non è insolito per gli utenti finali riscontrare tempi di avvio lunghi o interr
 - Configurazioni software non ottimizzate per l'esperienza dell'utente finale
 - Problemi causati da aggiornamenti e modifiche della configurazione
 
-Questi e altri problemi relativi all'esperienza dell'utente finale persistono perché l'IT non ha molta visibilità sull'esperienza dell'utente finale. In genere, l'unica visibilità su questi problemi proviene da un canale di supporto lento e costoso che di solito non offre informazioni chiare su ciò che deve essere ottimizzato. Non è solo il supporto IT a sopportare il peso di questi problemi. Anche il tempo che gli information worker dedicano alla gestione dei problemi è costoso. Le prestazioni, l'affidabilità e i problemi di supporto che riducono la produttività degli utenti possono avere un impatto notevole anche sul bilancio di un'azienda.
+Questi problemi e altri problemi relativi all'esperienza dell'utente finale persistono perché l'IT non ha molta visibilità nell'esperienza dell'utente finale. In genere, l'unica visibilità su questi problemi proviene da un canale di supporto lento e costoso che in genere non offre informazioni chiare su ciò che deve essere ottimizzato. Non è solo il supporto IT a sopportare il peso di questi problemi. Anche il tempo che gli information worker dedicano alla gestione dei problemi è costoso. Le prestazioni, l'affidabilità e i problemi di supporto che riducono la produttività degli utenti possono avere un impatto notevole anche sul bilancio di un'azienda.
 
 L'**analisi dell'esperienza utente** mira a migliorare la produttività dell'utente e a ridurre i costi del supporto IT mettendo a disposizione informazioni approfondite sull'esperienza utente. Tali informazioni consentono al reparto IT di ottimizzare l'esperienza utente con il supporto proattivo e di rilevare eventuali regressioni valutando l'impatto delle modifiche apportate alla configurazione sull'esperienza utente.
 
@@ -95,39 +95,37 @@ Quando i dati sono pronti, si noteranno alcune informazioni nella pagina di **pa
 
 ## <a name="bkmk_uea_rs"></a> Software consigliato
 
-Alcuni software sono noti per migliorare l'esperienza dell'utente finale, indipendentemente dalle metriche di integrità di livello inferiore. Windows 10, ad esempio, ha un punteggio Net Promoter molto più elevato rispetto a Windows 7. Il punteggio di **adozione del software** è un numero compreso tra 0 e 100 che rappresenta una media ponderata della percentuale di dispositivi in cui sono stati distribuiti diversi software consigliati. La ponderazione corrente è superiore per Office 365 e Windows rispetto alle altre metriche poiché gli utenti interagiscono con essi più di frequente. Le metriche sono descritte di seguito: 
+Alcuni software sono noti per migliorare l'esperienza dell'utente finale, indipendentemente dalle metriche di integrità di livello inferiore. Windows 10, ad esempio, ha un punteggio Net Promoter molto più elevato rispetto a Windows 7. Il punteggio di **adozione del software** è un numero compreso tra 0 e 100 che rappresenta una media ponderata della percentuale di dispositivi in cui sono stati distribuiti diversi software consigliati. La ponderazione corrente è superiore per Windows rispetto alle altre metriche poiché gli utenti interagiscono con essi più di frequente. Le metriche sono descritte di seguito: 
 
 [![Pagina Software consigliato di Analisi dell'esperienza utente](media/uea-recommended-software.png)](media/uea-recommended-software.png#lightbox)
 
 ### <a name="bkmk_uea_win10"></a> Windows 10
 
-Windows 10 offre un'esperienza utente migliore rispetto alle versioni precedenti di Windows. Questa metrica misura la percentuale di dispositivi in Windows 10 rispetto a una versione precedente di Windows.
+Windows 10 offre un'esperienza utente migliore rispetto alle versioni precedenti di Windows. Per altre informazioni, vedere il [white paper TEI](https://vc2prod.blob.core.windows.net/vc-resources/TEIStudies/TEI%20of%20Windows%2010.pdf).
+
+Questa metrica misura la percentuale di dispositivi in Windows 10 rispetto a una versione precedente di Windows.
 
 L'azione di correzione consigliata per il passaggio dei dispositivi dalle versioni precedenti di Windows è creare un piano di distribuzione usando [Desktop Analytics](/sccm/desktop-analytics/overview).
 
-### <a name="bkmk_uea_opp"></a> Office 365
-
-Office 365 offre un'esperienza utente migliore e una collaborazione ottimizzata rispetto alle versioni precedenti di Office. Questa metrica misura la percentuale di dispositivi in cui è installato Office 365 rispetto a una versione precedente.
-
-L'azione di correzione consigliata per il passaggio dei dispositivi da versioni precedenti di Office a Office 365 è l'aggiornamento usando [Microsoft Intune](https://techcommunity.microsoft.com/t5/Enterprise-Mobility-Security/Deploying-Office-365-ProPlus-with-Microsoft-Intune/ba-p/250292) o [Configuration Manager](https://docs.microsoft.com/deployoffice/deploy-office-365-proplus-with-configuration-manager).
-
 ### <a name="bkmk_uea_ap"></a> Autopilot
 
-Autopilot offre un'esperienza ottimale agli utenti che registrano nuovi dispositivi per la gestione aziendale. Questa metrica misura la percentuale di dispositivi registrati per Autopilot.
+Microsoft Autopilot offre un'esperienza di provisioning iniziale dei PC Windows 10 più semplice rispetto all'esperienza nativa; presenta infatti un numero di schermate inferiore nella configurazione guidata e fornisce le impostazioni predefinite per assicurarsi che venga correttamente eseguito il provisioning dei dispositivi dei dipendenti sia dalla factory che in fase di reimpostazione.
 
-L'azione di correzione consigliata è registrare i dispositivi esistenti in Autopilot usando [Microsoft Intune](https://docs.microsoft.com/intune/enrollment-autopilot). Autopilot offre un'esperienza utente ottimale per:
-- Eseguire di nuovo il provisioning se il dispositivo viene reimpostato.
-- L'esperienza di provisioning iniziale per i nuovi dispositivi pre-registrati in Autopilot.
+Questa metrica misura la percentuale di dispositivi Windows 10 registrati per Autopilot.
+
+L'azione di correzione consigliata è registrare i dispositivi esistenti in Autopilot usando [Microsoft Intune](https://docs.microsoft.com/intune/enrollment-autopilot).
 
 ### <a name="bkmk_uea_aad"></a> Azure Active Directory
 
-Azure Active Directory (Azure AD) offre agli utenti l'accesso Single Sign-On alle app e ai servizi di cui hanno bisogno. Questa metrica misura la percentuale di dispositivi registrati in Azure AD.
+Azure Active Directory (Azure AD) offre agli utenti numerosi vantaggi di produttività, tra cui l'accesso Single Sign-On a livello di dispositivo per app e servizi, l'accesso a Windows Hello, il ripristino self-service della chiave BitLocker e il roaming dei dati aziendali.
+
+Questa metrica misura la percentuale di dispositivi registrati in Azure AD.
 
 I dispositivi gestiti in Microsoft Intune sono già registrati in Azure AD. L'azione di correzione consigliata per i dispositivi gestiti da Configuration Manager è [registrarli in Azure AD](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-managed-domains) o [co-gestirli](/sccm/comanage/overview). La co-gestione dei dispositivi migliora anche il punteggio della gestione cloud.
 
 ### <a name="bkmk_uea_intune"></a> Gestione cloud
 
-Microsoft Intune elimina la necessità di usare Criteri di gruppo, e il sovraccarico che ne deriva a livello di prestazioni, offrendo una migliore esperienza all'utente finale. Questa metrica misura la percentuale di PC registrati in Microsoft Intune.
+Microsoft Intune offre agli utenti diversi vantaggi per la produttività, tra cui l'abilitazione dell'accesso alle risorse aziendali anche quando si trovano fuori dalla rete aziendale, oltre ad eliminare la necessità di usare Criteri di gruppo, evitando così un sovraccarico di prestazioni e garantendo una migliore esperienza dell'utente finale. Questa metrica misura la percentuale di PC registrati in Microsoft Intune. Informazioni su come [Microsoft sta abilitando questa funzionalità per i propri dipendenti](https://www.microsoft.com/en-us/itshowcase/managing-windows-10-devices-with-microsoft-intune).
 
 L'azione di correzione consigliata per i dispositivi gestiti da Configuration Manager non ancora registrati in Intune è [co-gestirli](/sccm/comanage/overview).
 
@@ -189,6 +187,7 @@ Ogni pacchetto di script è costituito da uno script di rilevamento, uno script 
 
 
 ### <a name="bkmk_uea_prs_deploy"></a> Distribuzione e monitoraggio di script
+Il servizio **Microsoft Intune Management Extension** ottiene gli script da Intune e li esegue. Gli script vengono rieseguiti ogni 24 ore. Per distribuire e monitorare gli script, seguire questa procedura:
 
 1. Passare al nodo **Correzioni proattive** nella console.
 1. Fare clic sul pulsante **Crea** per creare un pacchetto di script.

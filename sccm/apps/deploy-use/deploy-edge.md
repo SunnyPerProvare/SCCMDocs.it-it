@@ -2,7 +2,7 @@
 title: Distribuire e aggiornare Microsoft Edge versione 77 e successive
 titleSuffix: Configuration Manager
 description: Come distribuire e aggiornare Microsoft Edge versione 77 e successive con Configuration Manager
-ms.date: 01/23/2020
+ms.date: 03/03/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 73b420be-5d6a-483a-be66-c4d274437508
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 8a669a17cf714231007f9bd1685786f406db2acf
-ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
-ms.translationtype: MTE75
+ms.openlocfilehash: 8fca1a1125b3856ecbfc0dd91439c93500e7c555
+ms.sourcegitcommit: 0250a75670f231283b31fd87032cfffb6f34fe18
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77178572"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78287704"
 ---
 # <a name="microsoft-edge-management"></a>Gestione di Microsoft Edge
 
@@ -33,13 +33,17 @@ Per i client in cui verrà distribuito Microsoft Edge:
 
 - I [criteri di esecuzione](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies) di PowerShell non possono essere impostati su Con restrizioni.
   - PowerShell viene eseguito per eseguire l'installazione.
-  
+
 Il dispositivo che esegue la console di Configuration Manager richiede l'accesso agli endpoint seguenti:
 
 |Percorso|Uso|
 |---|---|
 |`https://edgeupdates.microsoft.com/api/products?view=enterprise`|Informazioni sulle versioni di Microsoft Edge|
 |`http://dl.delivery.mp.microsoft.com`|Contenuto per le versioni di Microsoft Edge|
+
+### <a name="verify-microsoft-edge-update-policies"></a>Verificare i criteri di aggiornamento di Microsoft Edge
+
+Nella versione 1910, quando viene distribuito Microsoft Edge, lo script di installazione disattiva gli aggiornamenti automatici per Microsoft Edge in modo che possano essere gestiti con Configuration Manager. È possibile modificare questo comportamento ricorrendo a Criteri di gruppo. Per altre informazioni, vedere [Pianificare la distribuzione di Microsoft Edge](https://docs.microsoft.com/deployedge/deploy-edge-plan-deployment#define-and-configure-policies) e [Criteri di aggiornamento di Microsoft Edge](https://docs.microsoft.com/DeployEdge/microsoft-edge-update-policies).
 
 
 ### <a name="create-a-deployment"></a>Creare una distribuzione
@@ -51,7 +55,7 @@ Creare un'applicazione Microsoft Edge usando l'esperienza dell'applicazione pred
 
    ![Azione di clic con il pulsante destro del mouse sul nodo Gestione di Microsoft Edge](./media/4561024-create-microsoft-edge-application.png)
 
-1. Nella pagina **Impostazioni applicazione** della creazione guidata specificare un nome, una descrizione e un percorso per il contenuto dell'app.
+1. Nella pagina **Impostazioni applicazione** della creazione guidata specificare un nome, una descrizione e un percorso per il contenuto dell'app. Verificare che la cartella del percorso del contenuto specificata sia vuota.
 1. Nella pagina **Impostazioni di Microsoft Edge** selezionare un canale e una versione da distribuire. Il collegamento Altre informazioni consente di visualizzare la [pagina Microsoft Edge Insider](https://www.microsoftedgeinsider.com/).
 
    ![Pagina Impostazioni di Microsoft Edge della distribuzione guidata](./media/4561024-edge-settings-wizard.png)

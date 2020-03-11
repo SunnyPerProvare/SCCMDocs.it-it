@@ -1,8 +1,8 @@
 ---
 title: Configurare la pre-cache del contenuto
 titleSuffix: Configuration Manager
-description: Informazioni su come i client possono scaricare il contenuto della distribuzione del sistema operativo prima di installare la sequenza di attività.
-ms.date: 11/29/2019
+description: Informazioni su come i client possono scaricare il contenuto della distribuzione di un sistema operativo prima che venga installata la sequenza di attività.
+ms.date: 02/26/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,19 +10,19 @@ ms.assetid: 9d1e8252-99e3-48aa-bfa5-0cf4cd6637b2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 643431c69fb8ea99d88cf84dc5ad71c618434967
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.openlocfilehash: 9ec1365edbd63eaa08adcaa52a5a69a0c88b1703
+ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825354"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78167406"
 ---
-# <a name="configure-pre-cache-content-for-task-sequences"></a>Configurare il contenuto pre-cache per le sequenze di attività
+# <a name="configure-pre-cache-content-for-task-sequences"></a>Configurare la pre-cache del contenuto per sequenze di attività
 
 *Si applica a: Configuration Manager (Current Branch)*
 
 <!--1021244-->
-La funzionalità pre-cache per le distribuzioni di sequenze di attività disponibili consente ai client di scaricare il contenuto pertinente prima che un utente installi la sequenza di attività. Il client può eseguire il pre-cache del contenuto per le sequenze di attività che [aggiornano un sistema operativo](/configmgr/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system) o [installano un'immagine del sistema operativo](/configmgr/osd/deploy-use/create-a-task-sequence-to-install-an-operating-system).
+La funzionalità pre-cache per le distribuzioni di sequenze di attività disponibili consente ai client di scaricare il contenuto pertinente prima che un utente installi la sequenza di attività. Il client può usare la funzionalità di pre-cache del contenuto per le sequenze di attività che [aggiornano un sistema operativo](/configmgr/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system) o [installano un'immagine del sistema operativo](/configmgr/osd/deploy-use/create-a-task-sequence-to-install-an-operating-system).
 
 > [!Note]  
 > Nella versione 1910 Configuration Manager abilita questa funzionalità per impostazione predefinita. Nella versione 1906 o nelle versioni precedenti Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/configmgr/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
@@ -31,27 +31,27 @@ Si supponga, ad esempio, di volere una sola sequenza di attività di aggiornamen
 
 Con la funzionalità pre-cache del contenuto è possibile consentire al client di scaricare solo il contenuto applicabile e tutto il contenuto a cui si fa riferimento non appena riceve la distribuzione. Quando l'utente fa clic su **Installa** in Software Center, il contenuto è pronto. L'installazione inizia rapidamente, dato che il contenuto si trova nel disco rigido locale.
 
-In Configuration Manager versione 1902 e versioni precedenti questo comportamento si applica solo al *pacchetto di aggiornamento del sistema operativo*. Tale pacchetto è il solo il contenuto per il quale si specifica la lingua o l'architettura corrispondente. Ad esempio, se la sequenza di attività fa riferimento anche a più pacchetti driver, il client li scarica tutti. Il motore della sequenza di attività valuta le condizioni per i passaggi quando la sequenza di attività viene eseguita, non prima. Il client usa i tag nelle proprietà del pacchetto per determinare per quale contenuto eseguire la funzione pre-cache.
+In Configuration Manager versione 1902 e precedenti, questo comportamento si applica solo al *pacchetto di aggiornamento del sistema operativo*. Tale pacchetto è il solo il contenuto per il quale si specifica la lingua o l'architettura corrispondente. Ad esempio, se la sequenza di attività fa riferimento anche a più pacchetti driver, il client li scarica tutti. Il motore della sequenza di attività valuta le condizioni per i passaggi quando la sequenza di attività viene eseguita, non prima. Il client usa i tag nelle proprietà del pacchetto per determinare per quale contenuto eseguire la funzione pre-cache.
 
-A partire dalla versione 1906,<!--4224642--> è possibile usare la pre-caching per ridurre l'utilizzo della larghezza di banda dei tipi di contenuto seguenti:
+A partire dalla versione 1906,<!--4224642--> è ora possibile usarla per ridurre il consumo di larghezza di banda dei tipi di contenuto seguenti:
 
 - Pacchetti di aggiornamento del sistema operativo
 - Immagini dei sistemi operativi
 - Pacchetti driver
 - Pacchetti
 
-## <a name="configure-pre-caching"></a>Configurare la pre-memorizzazione nella cache
+## <a name="configure-pre-caching"></a>Configurare la funzionalità di pre-cache
 
-Per configurare la funzionalità pre-cache sono necessari tre passaggi:
+La configurazione della funzionalità di pre-cache prevede tre passaggi:
 
 1. [Creare e configurare i pacchetti](#bkmk_createpkg)
-2. [Creare una sequenza di attività con i passaggi condizionali](#bkmk_createts)
-3. [Distribuire la sequenza di attività e abilitare la pre-memorizzazione nella cache](#bkmk_deploy)
+2. [Creare una sequenza di attività con passaggi condizionali](#bkmk_createts)
+3. [Distribuire la sequenza di attività e abilitare la funzionalità di pre-cache](#bkmk_deploy)
 
 
 ### <a name="bkmk_createpkg"></a> 1. Creare e configurare i pacchetti
 
-Il client valuta gli attributi dei pacchetti per determinare il contenuto scaricato durante la pre-memorizzazione nella cache.  
+Il client valuta gli attributi dei pacchetti per determinare per quale contenuto eseguire la funzione pre-cache.  
 
 #### <a name="os-upgrade-package"></a>Pacchetto di aggiornamento del sistema operativo
 
@@ -63,9 +63,12 @@ Creare [immagini del sistema operativo](/configmgr/osd/get-started/manage-operat
 
 #### <a name="driver-package"></a>Pacchetto driver
 
-Creare [pacchetti driver](/configmgr/osd/get-started/manage-drivers#BKMK_ManagingDriverPackages) per modelli di hardware specifici. Specificare il **modello** nella scheda **generale** delle relative proprietà.
+Creare [pacchetti driver](/configmgr/osd/get-started/manage-drivers#BKMK_ManagingDriverPackages) per modelli di hardware specifici. Specificare il **Modello** nella scheda **Generale** delle rispettive proprietà.
 
-Per determinare quale pacchetto di driver scaricare durante la memorizzazione anticipata nella cache, il client valuta il modello rispetto alla proprietà **Name** della classe WMI **Win32_ComputerSystemProduct**.  
+Per determinare quale pacchetto di driver scaricare durante la memorizzazione anticipata nella cache, il client valuta il modello rispetto alla proprietà **Name** della classe WMI **Win32_ComputerSystemProduct**.
+
+> [!TIP]
+> La query effettiva usa un'istruzione `LIKE` con caratteri jolly: `select * from win32_computersystemproduct where name like "%yourstring%"`. Se, ad esempio, si specifica `Surface` come modello, la query corrisponde a tutti i modelli che includono questa stringa.<!-- 6315551 -->
 
 #### <a name="package"></a>Pacchetto
 
@@ -74,12 +77,12 @@ Creare [pacchetti](/configmgr/apps/deploy-use/packages-and-programs) per lingue 
 
 ### <a name="bkmk_createts"></a> 2. Creare una sequenza di attività
 
-Creare una sequenza di attività con i passaggi condizionali per le diverse lingue e architetture oppure modelli hardware diversi per i pacchetti driver.
+Creare una sequenza di attività con passaggi condizionali per le diverse lingue e architetture o per i diversi modelli di hardware per i pacchetti di driver.
 
 |Content|Passaggio|
 |---------|---------|
 |Pacchetto di aggiornamento del sistema operativo|[Aggiornare il sistema operativo](/configmgr/osd/understand/task-sequence-steps#BKMK_UpgradeOS)|
-|Immagine del sistema operativo|[Applica immagine del sistema operativo](/configmgr/osd/understand/task-sequence-steps#BKMK_ApplyOperatingSystemImage)|
+|Immagine del sistema operativo|[Applicare un'immagine del sistema operativo](/configmgr/osd/understand/task-sequence-steps#BKMK_ApplyOperatingSystemImage)|
 |Pacchetto driver|[Applica pacchetto di driver](/configmgr/osd/understand/task-sequence-steps#BKMK_ApplyDriverPackage)|
 |Pacchetto|[Installa pacchetto](/configmgr/osd/understand/task-sequence-steps#BKMK_InstallPackage)|
 
@@ -90,13 +93,13 @@ Ad esempio, il passaggio di **aggiornamento del sistema operativo** seguente usa
 ![Editor delle sequenze di attività, scheda Opzioni, in cui è visualizzata la query WQL WMI per Locale e OSArchitecture](../media/precacheoptions2.png)  
 
 > [!Tip]
-> La query WMI seguente è consigliata per il sistema operativo in lingua inglese (Stati Uniti) e l'architettura a 64 bit:
+> La query WMI seguente è consigliata per il sistema operativo in lingua inglese (Stati Uniti) e un'architettura a 64 bit:
 >
 > ```WMI
 > SELECT * FROM Win32_OperatingSystem WHERE OSArchitecture LIKE '%64%' AND OSLanguage='1033'
 > ```
 >
-> Per prima cosa, aggiungere la lingua selezionando la condizione della **lingua del sistema operativo** . Modificare quindi la query WMI per includere la clausola Architecture.
+> Per prima cosa, aggiungere la lingua selezionando la condizione **Lingua del sistema operativo**. Modificare quindi la query WMI in modo da includere la clausola Architecture.
 
 
 ### <a name="bkmk_deploy"></a> 3. Distribuire la sequenza di attività
@@ -112,7 +115,7 @@ Ad esempio, il passaggio di **aggiornamento del sistema operativo** seguente usa
 - Nella scheda **Punti di distribuzione** configurare le impostazioni **Opzioni di distribuzione**. Se non viene eseguita la funzione pre-cache prima che l'utente avvii l'installazione, il client usa queste impostazioni.  
 
     > [!Important]  
-    > Per una sequenza di attività che installa un'immagine del sistema operativo, non usare l'opzione di distribuzione per **scaricare il contenuto localmente quando necessario per la sequenza di attività in esecuzione**. Quando la sequenza di attività cancella il disco prima di applicare l'immagine del sistema operativo, viene rimossa la cache del client. Poiché il contenuto è andato perso, la sequenza di attività ha esito negativo.<!-- SCCMDocs-PR #1338 -->
+    > Per una sequenza di attività che installa un'immagine del sistema operativo, non usare l'opzione di distribuzione per **Scaricare il contenuto localmente quando necessario eseguendo la sequenza di attività**. Se la sequenza di attività cancella il disco prima di applicare l'immagine del sistema operativo, la cache del client viene rimossa. Poiché il contenuto è andato perso, la sequenza di attività avrà esito negativo.<!-- SCCMDocs-PR #1338 -->
 
 
 ## <a name="user-experience"></a>Esperienza utente

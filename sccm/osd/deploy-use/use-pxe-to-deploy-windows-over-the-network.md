@@ -2,7 +2,7 @@
 title: Usare PXE per le distribuzioni del sistema operativo in rete
 titleSuffix: Configuration Manager
 description: Usare le distribuzioni del sistema operativo avviate da PXE per aggiornare il sistema operativo di un computer o per installare una nuova versione di Windows in un nuovo computer.
-ms.date: 05/28/2019
+ms.date: 02/26/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: da5f8b61-2386-4530-ad54-1a5c51911f07
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 46b7f97c004c548deb556e9fd6c0673741cb95f4
-ms.sourcegitcommit: 1991263194a5cd6dfbd3dd9a5f5c7f179c1bfeac
-ms.translationtype: MTE75
+ms.openlocfilehash: 6e9aa1a00bf91a2cf9d928c6b6f9aabdc7748530
+ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77218480"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78167389"
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-configuration-manager"></a>Usare PXE per distribuire Windows in rete con Configuration Manager
 
@@ -34,24 +34,23 @@ Le distribuzioni del sistema operativo avviate da Pre-Boot eXecution Environment
 
 Eseguire i passaggi di uno degli scenari di distribuzione del sistema operativo e quindi usare le sezioni di questo articolo per preparare le distribuzioni avviate da PXE.
 
-
+> [!WARNING]
+> Se si usano distribuzioni PXE e si configura l'hardware dei dispositivi con la scheda di rete come primo dispositivo di avvio, questi dispositivi possono avviare automaticamente una sequenza di attività di distribuzione del sistema operativo senza l'intervento dell'utente. Questa configurazione non viene gestita dalla procedura di verifica della distribuzione. Se da un lato questa configurazione può semplificare il processo e ridurre l'interazione dell'utente, dall'altro aumenta il rischio di ricreazione accidentale dell'immagine del dispositivo.
 
 ## <a name="BKMK_Configure"></a> Configurare almeno un punto di distribuzione per accettare le richieste PXE
 
 Per distribuire i sistemi operativi ai client di Configuration Manager che eseguono richieste di avvio PXE, è necessario configurare uno o più punti di distribuzioni per accettare le richieste PXE. Dopo la configurazione, il punto di distribuzione risponde alle richieste di avvio PXE e stabilisce l'azione appropriata da eseguire per la distribuzione. Per altre informazioni, vedere [Install or modify a distribution point](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_config-pxe) (Installare o modificare un punto di distribuzione).  
 
 > [!NOTE]  
-> Quando si configura un singolo punto di distribuzione che supporta PXE per più subnet, non è supportato per l'uso delle opzioni DHCP. Configurare gli helper IP sui router per consentire l'inoltro delle richieste PXE ai punti di distribuzione che supportano PXE.
-
-> [!Note]  
-> Nella versione 1810 e precedenti non è supportato l'uso del risponditore PXE senza WDS nei server che eseguono anche un server DHCP.
+> Se si configura un singolo punto di distribuzione che supporta PXE per più subnet, questo non può essere usato per l'applicazione delle opzioni DHCP. Configurare gli helper IP sui router per consentire l'inoltro delle richieste PXE ai punti di distribuzione che supportano PXE.
+>
+> Nella versione 1810 non è supportato l'uso del risponditore PXE senza WDS nei server che eseguono anche un server DHCP.
 >
 > A partire dalla versione 1902, quando si abilita un risponditore PXE in un punto di distribuzione senza i Servizi di distribuzione Windows, è ora possibile abilitarlo sullo stesso server del servizio DHCP.<!--3734270, SCCMDocs-pr #3416--> Aggiungere le impostazioni seguenti per supportare questa configurazione:  
 >
 > - Impostare il valore DWord **DoNotListenOnDhcpPort** su `1` nella chiave del Registro di sistema seguente: `HKLM\Software\Microsoft\SMS\DP`.
 > - Impostare l'opzione DHCP 60 su `PXEClient`.  
 > - Riavviare i servizi SCCMPXE e DHCP nel server.  
-
 
 ## <a name="prepare-a-pxe-enabled-boot-image"></a>Preparare un'immagine d'avvio che supporta PXE
 
@@ -61,13 +60,9 @@ Per usare PXE per distribuire un sistema operativo, è necessario avere immagini
 
 - Se si modificano le proprietà per l'immagine d'avvio, aggiornarla e ridistribuirla nei punti di distribuzione. Per altre informazioni, vedere [Distribuire il contenuto](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_distribute).
 
-
-
 ## <a name="manage-duplicate-hardware-identifiers"></a>Gestire gli identificatori di hardware duplicati
 
 Configuration Manager potrebbe riconoscere più computer come un unico dispositivo se presentano attributi SMBIOS duplicati o si usa una scheda di rete condivisa. Attenuare questi problemi gestendo gli identificatori di hardware duplicati nelle impostazioni della gerarchia. Per altre informazioni, vedere [Gestire gli identificatori di hardware duplicati](/sccm/core/clients/manage/manage-clients#manage-duplicate-hardware-identifiers).
-
-
 
 ## <a name="BKMK_PXEExclusionList"></a> Creare un elenco di esclusione per le distribuzioni PXE
 
@@ -97,13 +92,9 @@ Quando si distribuiscono sistemi operativi con PXE, è possibile creare un elenc
 
 5. Dopo aver apportato questa modifica al Registro di sistema, riavviare il servizio WDS o il servizio risponditore PXE. Non è necessario riavviare il server.<!--512129-->  
 
-
-
 ## <a name="BKMK_RamDiskTFTP"></a> Dimensioni del blocco e della finestra TFTP RamDisk
 
 È possibile personalizzare le dimensioni della finestra e del blocco TFTP RamDisk per i punti di distribuzione abilitati per PXE. Se la rete è stata personalizzata, il download dell'immagine di avvio potrebbe non riuscire a causa di un errore di timeout, perché le dimensioni del blocco o della finestra sono eccessive. La personalizzazione delle dimensioni della finestra e del blocco TFTP RamDisk consentono di ottimizzare il traffico TFTP quando si usa PXE per soddisfare i requisiti di rete specifici. Per individuare la scelta più efficiente, è necessario testare le impostazioni personalizzate nel proprio ambiente. Per altre informazioni, vedere [Personalizzare le dimensioni della finestra e del blocco TFTP RamDisk nei punti di distribuzione abilitati per PXE](/sccm/osd/get-started/prepare-site-system-roles-for-operating-system-deployments#BKMK_RamDiskTFTP).
-
-
 
 ## <a name="configure-deployment-settings"></a>Configurare le impostazioni di distribuzione
 
@@ -114,8 +105,6 @@ Per usare la distribuzione del sistema operativo avviata da PXE, configurarla pe
 - Solo supporti e PXE
 
 - Solo supporti e PXE (nascosto)
-
-
 
 ## <a name="BKMK_Deploy"></a> Distribuire la sequenza di attività
 
@@ -129,8 +118,6 @@ Distribuire il sistema operativo in una raccolta di destinazione. Per altre info
 
 > [!IMPORTANT]  
 > Il protocollo PXE non è sicuro. Assicurarsi che il server PXE e il client PXE si trovino in una rete fisicamente sicura, come ad esempio in un data center, per evitare l'accesso non autorizzato al sito.
-
-
 
 ## <a name="how-the-boot-image-is-selected-for-pxe"></a>Come viene selezionata l'immagine d'avvio per PXE
 

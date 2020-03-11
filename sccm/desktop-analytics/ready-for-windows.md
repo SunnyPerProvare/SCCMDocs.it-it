@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2e5ead90769d8fdacc28502852dccead7c2dbd52
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 8639485e8fe989109d9bcf77711dc70ebae26569
+ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825575"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78290005"
 ---
 # <a name="ready-for-modern-desktop-retirement-faq"></a>Domande frequenti sul ritiro di Ready for modern desktop
 
@@ -36,23 +36,23 @@ Il feedback dei responsabili IT è che vorrebbero che questi dati analitici si i
 
 [Desktop Analytics](https://aka.ms/dadocs) è un servizio basato su cloud che si integra con Configuration Manager. Il servizio offre dati analitici e intelligence per consentire agli utenti di prendere decisioni più informate sull'adozione degli aggiornamenti degli endpoint di Windows. Combina i dati specifici dell'organizzazione con dati analitici aggregati provenienti dai milioni di dispositivi Windows connessi ai servizi cloud Microsoft.
 
--   Consente di ottenere una vista completa degli endpoint, delle applicazioni e dei driver gestiti nella propria organizzazione.
+-    Consente di ottenere una vista completa degli endpoint, delle applicazioni e dei driver gestiti nella propria organizzazione.
 
--   Consente la valutazione della compatibilità di applicazioni e driver con gli aggiornamenti delle funzionalità Windows più recenti. Consente di ricevere consigli di mitigazione per i problemi noti, nonché dati analitici avanzati per le app line-of-business.
+-    Consente la valutazione della compatibilità di applicazioni e driver con gli aggiornamenti delle funzionalità Windows più recenti. Consente di ricevere consigli di mitigazione per i problemi noti, nonché dati analitici avanzati per le app line-of-business.
 
--   Usa l'intelligenza artificiale (IA) di Microsoft Cloud per ottimizzare il set di dispositivi pilota che rappresentano in modo adeguato l'ambiente globale dell'organizzazione.
+-    Usa l'intelligenza artificiale (IA) di Microsoft Cloud per ottimizzare il set di dispositivi pilota che rappresentano in modo adeguato l'ambiente globale dell'organizzazione.
 
 ### <a name="why-should-i-use-desktop-analytics-for-my-windows-deployment-plans"></a>Perché usare Desktop Analytics per i piani di distribuzione di Windows?
 
 Desktop Analytics offre i vantaggi seguenti:
 
--   **Inventario di dispositivi e software**: Inventario dei fattori chiave, ad esempio le app e le versioni di Windows.
+-    **Inventario di dispositivi e software**: Inventario dei fattori chiave, ad esempio le app e le versioni di Windows.
 
--   **Identificazione del progetto pilota**: Identificazione dell'insieme minimo di dispositivi che consentono la più ampia copertura di fattori. Vengono identificati i fattori ritenuti più importanti per un progetto pilota di aggiornamenti Windows. Assicurarsi che il progetto pilota sia ottimale consente di procedere in modo più rapido e sicuro a distribuzioni di grandi dimensioni in ambiente di produzione.
+-    **Identificazione del progetto pilota**: Identificazione dell'insieme minimo di dispositivi che consentono la più ampia copertura di fattori. Vengono identificati i fattori ritenuti più importanti per un progetto pilota di aggiornamenti Windows. Assicurarsi che il progetto pilota sia ottimale consente di procedere in modo più rapido e sicuro a distribuzioni di grandi dimensioni in ambiente di produzione.
 
--   **Identificazione dei problemi**: Usando congiuntamente i dati di mercato aggregati e i dati dell'ambiente, il servizio esegue una previsione dei potenziali problemi per ottenere Windows e mantenerlo aggiornato. Suggerisce quindi eventuali mitigazioni.
+-    **Identificazione dei problemi**: Usando congiuntamente i dati di mercato aggregati e i dati dell'ambiente, il servizio esegue una previsione dei potenziali problemi per ottenere Windows e mantenerlo aggiornato. Suggerisce quindi eventuali mitigazioni.
 
--   **Integrazione di Configuration Manager**: Consente di abilitare l'infrastruttura locale esistente nel cloud. Usare questi dati e queste analisi per distribuire e gestire Windows nei dispositivi.
+-    **Integrazione di Configuration Manager**: Consente di abilitare l'infrastruttura locale esistente nel cloud. Usare questi dati e queste analisi per distribuire e gestire Windows nei dispositivi.
 
 ### <a name="what-does-the-ready-for-windows-status-mean-in-desktop-analytics"></a>Cosa significa lo stato *Ready for Windows* in Desktop Analytics?
 
@@ -60,15 +60,15 @@ Lo **Stato adozione**  si basa sulle informazioni provenienti da dispositivi com
 
 Desktop Analytics specifica lo stato di adozione per ogni versione di una risorsa presente nei dispositivi commerciali. Questo stato non include i dati di dispositivi consumer o dispositivi che non condividono dati. Lo stato potrebbe non essere rappresentativo della velocità di adozione in tutti i dispositivi Windows 10.
 
-Per altre informazioni, vedere [Valutazione della compatibilità](/sccm/desktop-analytics/compat-assessment#ready-for-windows).
+Per altre informazioni, vedere [Valutazione della compatibilità](/sccm/desktop-analytics/compat-assessment).
 
 ### <a name="what-assets-get-the-ready-for-windows-status-in-desktop-analytics"></a>Quali risorse hanno lo stato *Ready for Windows* in Desktop Analytics? 
 
 Le risorse hanno lo stato *Ready for Windows* in Desktop Analytics se:
 
--   Il provider del software dichiara il supporto della soluzione.
--   I clienti l'hanno distribuita su un numero significativo di dispositivi commerciali Windows 10 che condividono informazioni con Microsoft.
--   La risorsa è rilevante per gli utenti commerciali.
+-    Il provider del software dichiara il supporto della soluzione.
+-    I clienti l'hanno distribuita su un numero significativo di dispositivi commerciali Windows 10 che condividono informazioni con Microsoft.
+-    La risorsa è rilevante per gli utenti commerciali.
 
 ### <a name="what-additional-insights-do-i-get-in-desktop-analytics"></a>Quali sono i dati analitici supplementari disponibili in Desktop Analytics?
 

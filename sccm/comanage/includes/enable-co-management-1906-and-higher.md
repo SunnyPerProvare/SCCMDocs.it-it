@@ -3,13 +3,13 @@ author: mestew
 ms.author: mstewart
 ms.prod: configuration-manager
 ms.topic: include
-ms.date: 08/23/2019
-ms.openlocfilehash: 00b29d929e6b54d251e6d0afb492290431681f26
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.date: 02/25/2020
+ms.openlocfilehash: 53ce0fd56581320d3c6f59d0a973803f08eb8905
+ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75815546"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78167347"
 ---
 <!--3555750 FKA 1357954 --Don't apply H2/H3 in this include file since they are context driven by article-->
 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Servizi cloud** e selezionare il nodo **Co-gestione**. Fare clic su **Configura la co-gestione** nella barra multifunzione per aprire la **procedura guidata di configurazione della co-gestione**.
@@ -18,7 +18,10 @@ ms.locfileid: "75815546"
 
     - **Ambiente Azure** da usare. Ad esempio il cloud pubblico di Azure o il cloud di Azure Governo degli Stati Uniti.<!--4075452-->  
 
-    - Selezionare **Accedi**. Accedere al tenant di Intune e quindi selezionare **Avanti**.  
+    - Selezionare **Accedi**. Accedere come amministratore globale di Azure e quindi scegliere **Avanti**.  
+
+        > [!TIP]
+        > È sufficiente accedere una sola volta per poter eseguire questa procedura guidata. Le credenziali non vengono archiviate o riusate altrove.
 
 3. Nella pagina **Enablement** (Abilitazione) scegliere le impostazioni seguenti:
 

@@ -5,17 +5,17 @@ description: Informazioni su come configurare la co-gestione per i nuovi disposi
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 07/26/2019
+ms.date: 02/25/2020
 ms.topic: tutorial
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 7fb02a5c-e286-46b1-a972-6335c858429a
-ms.openlocfilehash: c9bf9b668ba8d4922ffb6b6afe2e33fb2ac7dbe3
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 3199524066dd9fc5a46f6dd0316f52ad646d5236
+ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034775"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78167346"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Esercitazione: Abilitare la co-gestione per nuovi dispositivi basati su Internet
 
@@ -39,7 +39,6 @@ Usare questa esercitazione in questi casi:
 > * Configurare il punto di gestione e i client per usare Cloud Management Gateway
 > * Abilitare la co-gestione in Configuration Manager
 > * Configurare Intune per installare il client di Configuration Manager
-> * Assegnare la licenza per i servizi cloud
 
 ## <a name="prerequisites"></a>Prerequisiti  
 
@@ -51,8 +50,10 @@ Usare questa esercitazione in questi casi:
   > [!TIP]  
   > Una sottoscrizione di Enterprise Mobility + Security (EMS) include sia Azure Active Directory Premium sia Microsoft Intune. Sottoscrizione di EMS ([versione di valutazione gratuita](https://www.microsoft.com/cloud-platform/enterprise-mobility-security-trial)).  
 
-- Agli utenti devono essere [assegnate le licenze](tutorial-co-manage-clients.md#assign-intune-licenses-to-users) per *Intune* e *Azure Active Directory Premium*
 - Intune è configurato per la [registrazione automatica dei dispositivi](tutorial-co-manage-clients.md#configure-auto-enrollment-of-devices-to-intune)  
+
+> [!TIP]
+> Non è più necessario acquistare e assegnare singole licenze di Intune o EMS ai propri utenti. Per altre informazioni, vedere [Domande frequenti su prodotto e licenze](/configmgr/core/understand/product-and-licensing-faq#bkmk_mem).
 
 ### <a name="on-premises-infrastructure"></a>Infrastruttura locale
 
@@ -418,37 +419,9 @@ La procedura seguente distribuisce l'app per l'installazione del client di Confi
 3. Selezionare **OK** e quindi **Salva** per salvare la configurazione.
 L'app viene ora richiesta dagli utenti e dai dispositivi cui è stata assegnata. Dopo che l'app installa il client di Configuration Manager in un dispositivo, questo viene gestito tramite la co-gestione.
 
-## <a name="assign-intune-licenses-to-users"></a>Assegnare le licenze di Intune agli utenti
-
-Un'azione in genere trascurata ma cruciale è l'assegnazione di una licenza di Intune a ogni utente che usa un dispositivo co-gestito.  
-
-Per assegnare licenze a gruppi di utenti, usare Azure Active Directory.  
-
-1. Accedere al [portale di Azure](https://portal.azure.com/) con un account amministratore. Per gestire le licenze, l'account deve essere un ruolo Amministratore globale o un amministratore account utente.  
-
-2. Selezionare **Tutti i servizi** nel riquadro di spostamento a sinistra e quindi selezionare **Azure Active Directory**.  
-
-3. Nel riquadro **Azure Active Directory** selezionare **Licenze** per aprire un riquadro in cui è possibile visualizzare e gestire tutti i prodotti soggetti a licenza nel tenant.  
-
-4. In **Tutti i prodotti** selezionare l'opzione di prodotto che include la licenza di Intune e quindi selezionare **Assegna** nella parte superiore del riquadro.  
-
-   Ad esempio, è possibile selezionare **Enterprise Mobility + Security E5** se è questo lo strumento tramite cui si ottiene Intune.  
-
-5. Nel riquadro **Assegna licenza** fare clic su **Utenti e gruppi** per aprire il riquadro **Utenti e gruppi**. Selezionare i gruppi e i singoli utenti cui si vuole assegnare una licenza.  Fare quindi clic su **Seleziona** nella parte inferiore del riquadro per confermare la selezione.  
-
-6. Nel riquadro **Assegna licenza** fare clic su **Opzioni di assegnazione** per visualizzare tutti i piani di servizio inclusi nel prodotto selezionato in precedenza. Se è stato selezionato un singolo prodotto come Intune, viene visualizzato solo tale prodotto.  
-   - Impostare **Microsoft Intune** su **Attivato**.  
-   - Assegnare a ogni utente una licenza per **Azure Active Directory Premium**.  
-
-   Una volta assegnate le licenze applicabili, selezionare **OK**.  
-
-7. Per completare l'assegnazione, nel riquadro **Assegna licenza** fare clic su **Assegna** nella parte inferiore del riquadro.  
-
-8. Viene visualizzata una notifica nell'angolo superiore destro che mostra lo stato e il risultato del processo. Se non è stato possibile completare l'assegnazione al gruppo (ad esempio a causa di licenze già esistenti nel gruppo), fare clic sulla notifica per visualizzare i dettagli dell'errore. 
-
 ## <a name="summary"></a>Riepilogo
 
-Dopo aver completato i passaggi di configurazione di questa esercitazione, inclusa l'ultima operazione per garantire l'assegnazione delle licenze, i dispositivi possono essere co-gestiti.
+Dopo aver completato i passaggi di configurazione di questa esercitazione, è possibile avviare la co-gestione dei dispositivi.
 
 ## <a name="next-steps"></a>Passaggi successivi
 
