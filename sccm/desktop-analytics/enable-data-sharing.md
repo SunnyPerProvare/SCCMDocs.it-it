@@ -2,7 +2,7 @@
 title: Abilitare la condivisione dei dati
 titleSuffix: Configuration Manager
 description: Guida di riferimento per la condivisione dei dati di diagnostica con Desktop Analytics.
-ms.date: 02/28/2020
+ms.date: 03/12/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: be680198-4cea-4378-a686-d52f382ba483
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9d1b303bb73adf17c76da693bc56d40352f4227d
-ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
+ms.openlocfilehash: ef0835bd98940289824f049bdb870ef470d33372
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78167304"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79191540"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Abilitare la condivisione dei dati per Desktop Analytics
 
@@ -93,7 +93,6 @@ I dispositivi client devono comunicare con gli endpoint seguenti:
 | `https://v10.events.data.microsoft.com` | Esperienza utente connessa ed endpoint componente di diagnostica. Usato dai dispositivi che eseguono Windows 10 versione 1803 _senza_ l'aggiornamento cumulativo 2018-09 installato. |
 | `https://v10.vortex-win.data.microsoft.com` | Esperienza utente connessa ed endpoint componente di diagnostica. Usato dai dispositivi che eseguono Windows 10 versione 1709 o versioni precedenti. |
 | `https://vortex-win.data.microsoft.com` | Esperienza utente connessa ed endpoint componente di diagnostica. Usato dai dispositivi che eseguono Windows 7 e Windows 8.1 |
-| `https://v20.events.data.microsoft.com` | Esperienza utente connessa ed endpoint componente di diagnostica. |
 
 ### <a name="client-connectivity-endpoints"></a>Endpoint di connettività client
 
@@ -114,6 +113,7 @@ I dispositivi client devono comunicare con gli endpoint seguenti:
 | 11 | `https://kmwatsonc.events.data.microsoft.com` | [OCA (Online Crash Analysis)](https://docs.microsoft.com/windows/win32/dxtecharts/crash-dump-analysis). Necessaria per i report sull'integrità dei dispositivi in Windows 10 versione 1809 o successiva. |
 | 12 | `https://oca.telemetry.microsoft.com`  | [OCA (Online Crash Analysis)](https://docs.microsoft.com/windows/win32/dxtecharts/crash-dump-analysis). Necessaria per monitorare lo stato di distribuzione in Windows 10 versione 1803 o versioni precedenti. |
 | 13 | `https://login.live.com` | Necessaria per offrire un'identità del dispositivo più affidabile per Desktop Analytics. <br> <br>Per disabilitare l'accesso dell'account Microsoft dell'utente finale, usare le impostazioni dei criteri anziché bloccare l'endpoint. Per altre informazioni, vedere [Account Microsoft nell'organizzazione](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts#block-all-consumer-microsoft-account-user-authentication). |
+| 14 | `https://v20.events.data.microsoft.com` | Esperienza utente connessa ed endpoint componente di diagnostica. |
 
 ## <a name="proxy-server-authentication"></a>Autenticazione del server proxy
 
