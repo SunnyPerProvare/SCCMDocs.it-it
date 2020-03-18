@@ -10,12 +10,12 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2abba43462fd7aed8f5922a8550c32d6137dda0c
-ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
+ms.openlocfilehash: 2e99620ed7acb0beed886411c0480e58724ad06e
+ms.sourcegitcommit: 7287806334e30431232c71df63747c01c42235e8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77515688"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79090320"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
@@ -207,6 +207,7 @@ La tabella seguente elenca il supporto di Cloud Management Gateway (CMG) per le 
 | Distribuzione del software (indirizzata a utenti, disponibile)<br>([tutti i requisiti](/sccm/apps/deploy-use/deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices)) | ![Supportato](media/green_check.png) |
 | Sequenza di attività di aggiornamento sul posto di Windows 10      | ![Supportato](media/green_check.png) |
 | Sequenze di attività che non usano le immagini d'avvio e vengono distribuite con un'opzione: **Scaricare tutto il contenuto in locale prima di avviare la sequenza di attività**      | ![Supportato](media/green_check.png) |
+| Sequenze di attività che non usano immagini d'avvio  | ![Supportato](media/green_check.png) (1910)|
 | CMPivot     | ![Supportato](media/green_check.png)  (1806) |
 | Qualsiasi altro scenario di sequenza di attività     | ![Non supportato](media/Red_X.png) |
 | Push client     | ![Non supportato](media/Red_X.png) |

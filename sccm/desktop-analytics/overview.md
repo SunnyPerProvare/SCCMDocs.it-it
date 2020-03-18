@@ -2,7 +2,7 @@
 title: Desktop Analytics
 titleSuffix: Configuration Manager
 description: Panoramica del servizio Desktop Analytics integrato con Configuration Manager.
-ms.date: 02/06/2020
+ms.date: 03/03/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: overview
@@ -10,12 +10,12 @@ ms.assetid: 38b2bed2-20dd-4ce1-abc0-219343d2c4b8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3ed741b6e43ebfc24c8c1b785782f7f1f499c6d8
-ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
+ms.openlocfilehash: 455ab854b4a80ce07d68c2b56efc1b4808389d8f
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77515739"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79191498"
 ---
 # <a name="what-is-desktop-analytics"></a>Che cos'è Desktop Analytics?
 
@@ -34,6 +34,14 @@ Usare Desktop Analytics con Configuration Manager per eseguire le operazioni seg
 - Distribuire Windows 10 a dispositivi pilota e gestiti dalla produzione  
 
 ![Screenshot della home page di Desktop Analytics nel portale di Azure](media/portal-home.png)
+
+Il video seguente è una sessione di Ignite 2019, che include altre informazioni su Desktop Analytics:
+
+<!-- [Using Desktop Analytics and Configuration Manager to reduce Windows TCO through data-driven insights for management, servicing, and support](https://myignite.techcommunity.microsoft.com/sessions/81689?source=sessions)-->
+
+> [!VIDEO https://medius.studios.ms/Embed/Video-nc/IG19-BRK3085]
+
+passare al minuto 10:00 per una demo approfondita.
 
 > [!Note]  
 > Desktop Analytics è un successore di Windows Analytics, che è stato ritirato il 31 gennaio 2020.
@@ -73,16 +81,19 @@ Per usare Desktop Analytics, verificare che l'ambiente soddisfi i prerequisiti s
 
       - Autorizzazioni di [**Proprietario**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) o [**Collaboratore**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) e [**Amministratore Accesso utenti**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) nella sottoscrizione per creare un'area di lavoro in un nuovo gruppo di risorse.  
 
-    - Per accedere al portale dopo l'onboarding, sono necessari: 
-    
+    - Per accedere al portale dopo l'onboarding, sono necessari:
+
       - Il ruolo [**Amministratore Desktop Analytics**](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#desktop-analytics-administrator-permissions) e le autorizzazioni [**Proprietario**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) o [**Collaboratore**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) per il gruppo di risorse in cui è stata creata l'area di lavoro.
 
 - Configuration Manager versione 1902 con aggiornamento cumulativo (4500571) o versione successiva. Per altre informazioni, vedere [Aggiornare Configuration Manager](/sccm/desktop-analytics/connect-configmgr#bkmk_hotfix).  
 
     - Ruolo [**Amministratore completo**](/sccm/core/understand/fundamentals-of-role-based-administration#bkmk_Planroles) in Configuration Manager  
 
-    > [!Note]  
-    > Desktop Analytics supporta un ID commerciale per ogni tenant di Azure Active Directory (Azure AD) e gerarchia di Configuration Manager. Se nell'ambiente sono presenti più gerarchie, usare ID commerciali e tenant di Azure AD diversi.<!-- 4958160 -->
+    > [!NOTE]
+    > Desktop Analytics supporta più gerarchie di Configuration Manager che dipendono da un singolo tenant di Azure AD.<!-- 4814075 --> Se nell'ambiente sono presenti più gerarchie, sono disponibili le opzioni seguenti:
+    >
+    > - Usare ID commerciali e tenant di Azure AD diversi.
+    > - Configurare entrambe le gerarchie in modo da usare lo stesso ID commerciale per condividere il tenant di Azure AD e l'istanza di Desktop Analytics.
 
 - Dispositivi che eseguono Windows 7, Windows 8.1 o Windows 10  
 

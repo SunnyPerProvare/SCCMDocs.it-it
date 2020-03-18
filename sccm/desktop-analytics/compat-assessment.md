@@ -2,7 +2,7 @@
 title: Valutazione della compatibilità
 titleSuffix: Configuration Manager
 description: Informazioni sulla valutazione della compatibilità per le app e i driver di Windows in Desktop Analytics.
-ms.date: 02/07/2020
+ms.date: 03/03/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: ea78f726-b1b3-49b0-8141-d916be48c458
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 193c914b6bb4f6f53cddeba6e33fdb2fe4e36de8
-ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
+ms.openlocfilehash: d47687f27bc6d4bbefd3dea5db7fe50601a7799a
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "77145129"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79191574"
 ---
 # <a name="compatibility-assessment-in-desktop-analytics"></a>Valutazione della compatibilità in Desktop Analytics
 
@@ -68,7 +68,7 @@ Per vedere questo consiglio nel portale di Desktop Analytics:
 1. Selezionare la scheda **App**.
 1. Selezionare un'app e quindi visualizzare i fattori di rischio di compatibilità e i consigli nel riquadro laterale.
 
-![Screenshot del consiglio sulla risorsa nel portale di Desktop Analytics](media/3594545-app-removed.png)
+[![Screenshot del consiglio sulla risorsa nel portale di Desktop Analytics](media/3594545-app-removed.png)](media/3594545-app-removed.png#lightbox)
 
 ### <a name="blocking-upgrade"></a>Blocco dell'aggiornamento
 
@@ -109,6 +109,27 @@ L'applicazione è interessata da molteplici problemi. Selezionare **Query** per 
 ### <a name="reinstall-application-after-upgrading"></a>Reinstallare l'applicazione dopo l'aggiornamento
 
 L'applicazione è compatibile con la nuova versione del sistema operativo, ma è necessario reinstallarla dopo l'aggiornamento di Windows. Il processo di aggiornamento rimuove l'applicazione. Per continuare l'aggiornamento, non è necessaria alcuna azione. Reinstallare l'applicazione nella nuova versione del sistema operativo.
+
+### <a name="safeguards"></a>Misure di sicurezza
+
+<!-- 5746559 -->
+
+I dati di compatibilità di Windows classificano alcune app e driver con una *misura di sicurezza*, che può causare l'esito negativo o il rollback dell'aggiornamento a Windows 10. Windows può anche eseguire l'aggiornamento, ma rimuove l'app o il driver. Desktop Analytics consente ora di identificare queste misure di sicurezza in anticipo, in modo da poter correggere la risorsa prima di distribuire l'aggiornamento.
+
+1. Nel portale di Desktop Analytics selezionare un piano di distribuzione.
+
+1. Selezionare **Risorse del piano** nel menu e passare alla scheda **App**.
+
+1. Filtrare la colonna del nome per visualizzare gli elementi con valori che contengono la parola `Safeguard`. Selezionare il risultato per visualizzare altre informazioni.
+
+    > [!NOTE]
+    > Questa voce non è una vera app realmente installata nei dispositivi ma un segnaposto che consente di identificare le app o i driver nell'ambiente in uso con il tag di compatibilità della misura di sicurezza.
+
+1. Nella sezione dei consigli selezionare il collegamento *Altre informazioni*. Questo collegamento apre il sito Web Windows con l'elenco corrente di app o driver con il tag della misura di sicurezza.
+
+1. Confrontare l'elenco pubblicato corrente con l'elenco di risorse nell'ambiente in uso. Correggere eventuali app o driver con potenziali problemi aggiornandoli a una versione compatibile.
+
+[![Screenshot dell'app Safeguard in Desktop Analytics](media/5746559-safeguards.png)](media/5746559-safeguards.png#lightbox)
 
 ## <a name="advanced-insights"></a>Dati analitici avanzati
 

@@ -2,7 +2,7 @@
 title: Come eseguire la distribuzione in un progetto pilota
 titleSuffix: Configuration Manager
 description: Guida pratica per eseguire la distribuzione in un gruppo pilota di Desktop Analytics.
-ms.date: 06/14/2019
+ms.date: 03/12/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,19 +10,18 @@ ms.assetid: 637fbd8e-b8ea-4c7e-95ee-a60a323c496e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f595630598192032ecffe3f8aeb408876b484383
-ms.sourcegitcommit: d1c6f3f2fa6821f15041e73d411cc4e1de0850ba
+ms.openlocfilehash: 76f795252a21f904c9a4152e5148f58066b75144
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519988"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79191557"
 ---
 # <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Come eseguire la distribuzione in un progetto pilota con Desktop Analytics
 
 Uno dei vantaggi di Desktop Analytics è quello di poter identificare l'insieme minimo di dispositivi che consentono la più ampia copertura di fattori. Identifica i fattori ritenuti più importanti per un progetto pilota di aggiornamenti Windows. Assicurarsi che il progetto pilota sia ottimale per poter procedere in modo più rapido e sicuro a distribuzioni di grandi dimensioni in ambiente di produzione.  
 
 [!INCLUDE [Definition of pilot and production](includes/define-pilot-prod.md)]
-
 
 ## <a name="identify-devices"></a>Identificare i dispositivi
 
@@ -41,26 +40,38 @@ Eseguire le azioni seguenti per l'elenco dei dispositivi consigliati aggiuntivi:
 - **Aggiungere tutti i dispositivi alla distribuzione pilota**: tutti i dispositivi consigliati vengono aggiunti al gruppo pilota
 - **Aggiungere al gruppo pilota**: vengono aggiunti solo singoli dispositivi
 - **Sostituire** i dispositivi specifici del progetto pilota
-- **Ricalcolare** dopo aver apportato le modifiche
 
-Quando si aggiungono dispositivi dall'elenco **consigliati** all'elenco **inclusi** della distribuzione pilota, migliorano la copertura e la ridondanza per gli asset critici e importanti nel progetto pilota. Una ridondanza maggiore significa che gli asset con copertura includono un numero statisticamente significativo di dispositivi nel progetto pilota. 
+Quando si aggiungono dispositivi dall'elenco **consigliati** all'elenco **inclusi** della distribuzione pilota, migliorano la copertura e la ridondanza per gli asset critici e importanti nel progetto pilota. Una ridondanza maggiore significa che gli asset con copertura includono un numero statisticamente significativo di dispositivi nel progetto pilota.
 
 ## <a name="bkmk_GlobalPilot"></a>Progetto pilota globale
 
 È anche possibile prendere decisioni a livello di sistema relativamente alle raccolte di Configuration Manager da includere o escludere dai progetti pilota. Nel menu principale di Desktop Analytics selezionare **Dispositivo pilota globale** nel gruppo Impostazioni globali.
 
+Se si connettono più gerarchie di Configuration Manager alla stessa istanza di Desktop Analytics, viene aggiunto un nome visualizzato per la gerarchia come prefisso al nome della raccolta nella configurazione pilota globale. Si tratta della proprietà **Nome visualizzato** nella connessione di Desktop Analytics nella console di Configuration Manager.<!-- 4814075 -->
+
+- Non includere raccolte che contengono più del 20% del totale dei dispositivi registrati a Desktop Analytics. Se si include una raccolta di grandi dimensioni, nel portale viene visualizzato un avviso. È possibile includere più collezioni piccole senza preavviso, ma occorre essere comunque prudenti riguardo al numero di dispositivi nella propria distribuzione pilota. <!-- 6079184 -->
+
+- Per ottenere consigli pilota accurati per i piani di distribuzione in una gerarchia di Configuration Manager specifica, includere solo le raccolte di tale gerarchia.
+
 ### <a name="example"></a>Esempio
 
 - Configurare la connessione di Desktop Analytics in Configuration Manager per fare riferimento alla raccolta **Tutti i sistemi**. Questa azione consente di registrare tutti i client nel servizio.
-- Configurare anche raccolte aggiuntive per eseguire la sincronizzazione con Desktop Analytics:
-    - Tutti i client Windows 10
-    - Tutti i dispositivi IT
-    - Ufficio amministratore delegato
-- Nelle impostazioni **Dispositivo pilota globale** includere la raccolta **Tutti i dispositivi IT**. Escludere la raccolta **Ufficio amministratore delegato**.
-- Creare un piano di distribuzione e selezionare la raccolta **Tutti i client Windows 10** come **Gruppo di destinazione**.
-- L'elenco **Dispositivi pilota inclusi** include il subset di dispositivi nel **Gruppo di destinazione**: **Tutti i client Windows 10** che si trovano anche nell'elenco di inclusione di *Dispositivo pilota globale*: **Tutti i dispositivi IT**  
-- L'elenco **Altri dispositivi consigliati** include un insieme di dispositivi del **Gruppo di destinazione** che offrono massima copertura e ridondanza per le risorse importanti.  Desktop Analytics esclude da questo elenco tutti i dispositivi indicati nell'elenco di *esclusione* del progetto pilota globale: **Ufficio amministratore delegato**
 
+- Configurare anche raccolte aggiuntive per eseguire la sincronizzazione con Desktop Analytics:
+
+  - Tutti i client Windows 10 (3.000 dispositivi)
+
+  - Tutti i dispositivi IT (200 dispositivi totali, 150 che eseguono Windows 10)
+
+  - Ufficio CEO (20 dispositivi)
+
+- Nelle impostazioni **Dispositivo pilota globale** includere le raccolte **Tutti i client Windows 10**. Escludere la raccolta **Ufficio amministratore delegato**.
+
+- Creare un piano di distribuzione e selezionare la raccolta **Tutti i dispositivi IT** come **Gruppo di destinazione**. Questo piano di distribuzione è destinato solo ai dispositivi del reparto IT.
+
+- L'elenco **Dispositivi pilota inclusi** comprende il subset di dispositivi presenti sia nel **Gruppo di destinazione**: **Tutti i dispositivi IT** che nell'elenco di *inclusione* del Progetto pilota globale: **Tutti i client Windows 10**. Questo elenco comprende 150 dispositivi, perché solo 150 dispositivi della raccolta **Tutti i dispositivi IT** eseguono Windows 10.
+
+- L'elenco **Altri dispositivi consigliati** include un insieme di dispositivi del **Gruppo di destinazione** che offrono massima copertura e ridondanza per le risorse importanti. Desktop Analytics esclude da questo elenco tutti i dispositivi indicati nell'elenco di *esclusione* del progetto pilota globale: **Ufficio amministratore delegato**.
 
 ## <a name="address-issues"></a>Risolvere i problemi
 
@@ -78,11 +89,11 @@ Usare il portale di Desktop Analytics per esaminare eventuali problemi segnalati
 
 6. Ripetere questa verifica per le altre risorse.  
 
+Per ulteriori informazioni su questo processo di revisione, vedere [Valutazione della compatibilità](/configmgr/desktop-analytics/compat-assessment).
 
 ## <a name="create-software"></a>Creare software
 
 Per poter distribuire Windows, è prima necessario creare gli oggetti software in Configuration Manager. Per altre informazioni, vedere [Sequenza di attività per aggiornare Windows 10 sul posto](https://docs.microsoft.com/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system).
-
 
 ## <a name="deploy-to-pilot-devices"></a>Distribuire nei dispositivi pilota
 
@@ -120,7 +131,6 @@ Configuration Manager usa i dati di Desktop Analytics per creare raccolte per le
 > [!Important]  
 > Queste raccolte continuano a essere sincronizzate quando viene modificata l'appartenenza. Ad esempio, se si identifica un problema con una risorsa e lo si contrassegna con **Non possibile**, i dispositivi con la risorsa interessata non soddisfano più i criteri *Pronto*. Questi dispositivi verranno eliminati dalla raccolta di distribuzioni in ambiente di produzione.
 
-
 ## <a name="monitor"></a>Monitoraggio
 
 ### <a name="configuration-manager-console"></a>Console di Configuration Manager
@@ -130,8 +140,10 @@ Aprire il piano di distribuzione. Il riquadro **Preparazione delle decisioni di 
 - **Aggiornato**: i dispositivi sono stati aggiornati alla versione di destinazione di Windows per questo piano di distribuzione
 
 - **La decisione di aggiornamento è stata completata**: viene visualizzato uno degli stati seguenti:
-    - Dispositivi con risorse importanti contrassegnati con **Pronto** o **Pronto (con correzione)**
-    - Lo stato del dispositivo è **Bloccato**, [**Sostituire il dispositivo**](/sccm/desktop-analytics/about-deployment-plans#plan-assets) o **Reinstalla il dispositivo**
+
+  - Dispositivi con risorse importanti contrassegnati con **Pronto** o **Pronto (con correzione)**
+
+  - Lo stato del dispositivo è **Bloccato**, [**Sostituire il dispositivo**](/sccm/desktop-analytics/about-deployment-plans#plan-assets) o **Reinstalla il dispositivo**
 
 - **Non rivisto**: dispositivi con risorse contrassegnate con **Non riviste** o **Revisione in corso**
 
@@ -142,7 +154,6 @@ Lo stato del dispositivo viene aggiornato nei riquadri **Stato della distribuzio
 - La distribuzione è in stato di avanzamento
 
 È anche possibile usare il monitoraggio della distribuzione di Configuration Manager come una qualsiasi altra distribuzione della sequenza di attività. Per altre informazioni, vedere [Monitorare le distribuzioni del sistema operativo](/sccm/osd/deploy-use/monitor-operating-system-deployments).
-
 
 ### <a name="desktop-analytics-portal"></a>Portale di Desktop Analytics
 
@@ -167,7 +178,6 @@ Le categorie **Richiede attenzione** visualizzano le stesse informazioni, ma con
 Selezionare un elenco specifico in una delle due visualizzazioni per ottenere più dettagli sul problema rilevato.
 
 Quando si risolvono questi problemi di distribuzione, il dashboard continua a visualizzare lo stato dei dispositivi. Si aggiorna man mano che i dispositivi passano da **Richiede attenzione** a **Operazione completata**.
-
 
 ## <a name="next-steps"></a>Passaggi successivi
 

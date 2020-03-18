@@ -2,7 +2,7 @@
 title: Anteprima dell'analisi dell'esperienza utente
 titleSuffix: Configuration Manager
 description: Istruzioni per l'anteprima dell'analisi dell'esperienza utente.
-ms.date: 03/02/2020
+ms.date: 03/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 4758a4ef36896c2d4cfa08e261cef48fec2910bb
-ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
+ms.openlocfilehash: ff4726b153805e0a574b24c202d7c81660182cc2
+ms.sourcegitcommit: 7287806334e30431232c71df63747c01c42235e8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78287731"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79090364"
 ---
 # <a name="bkmk_uea"></a> Anteprima privata dell'analisi dell'esperienza utente
 
@@ -173,9 +173,9 @@ Microsoft sta lavorando ad altre informazioni dettagliate sulle prestazioni di a
 
 ## <a name="bkmk_uea_prs"></a> Correzioni proattive
 
-Le correzioni proattive sono pacchetti di script che consentono di rilevare e risolvere problemi di supporto comuni in un dispositivo prima che l'utente si renda conto che si è verificato un problema. Queste correzioni consentono di ridurre le chiamate al supporto tecnico. È possibile creare un pacchetto di script personalizzato o distribuire uno degli script scritti e usati nell'ambiente per ridurre i ticket di supporto.
+Le correzioni proattive sono pacchetti di script che consentono di rilevare e risolvere problemi di supporto comuni in un dispositivo prima che l'utente si renda conto che si è verificato un problema. Queste correzioni consentono di ridurre le chiamate al supporto tecnico. È possibile creare un pacchetto di script personalizzato o distribuire uno dei pacchetti di script scritti e usati nell'ambiente per ridurre i ticket di supporto.
 
-Ogni pacchetto di script è costituito da uno script di rilevamento, uno script di correzione e metadati. Con Intune sarà possibile distribuire questi pacchetti di script e visualizzare i report sulla loro efficacia. Microsoft sta sviluppando attivamente nuovi script e invita gli utenti a condividere le proprie esperienze. Rivolgersi al proprio contatto per l'anteprima dell'analisi dell'esperienza utente per condividere commenti e suggerimenti sui pacchetti di script.
+Ogni pacchetto di script è costituito da uno script di rilevamento, uno script di correzione e metadati. Con Intune sarà possibile distribuire questi pacchetti di script e visualizzare i report sulla loro efficacia. Microsoft sta sviluppando attivamente nuovi pacchetti di script e invita gli utenti a condividere le proprie esperienze. Rivolgersi al proprio contatto per l'anteprima dell'analisi dell'esperienza utente per condividere commenti e suggerimenti sui pacchetti di script.
 
 ### <a name="bkmk_uea_prs_ps1"></a> Ricevere gli script di rilevamento e correzione
 
@@ -232,7 +232,7 @@ Per assegnare questa impostazione a un subset di dispositivi, [creare un profilo
    
   - Configurare le **impostazioni**:
    
-    - **Monitoraggio dello stato di integrità**: selezionare **Abilita** per raccogliere informazioni sugli eventi dai dispositivi Windows 10
+       - **Monitoraggio dello stato di integrità**: selezionare **Abilita** per raccogliere informazioni sugli eventi dai dispositivi Windows 10
     
     - **Ambito**: Selezionare **Prestazioni di avvio** 
 
@@ -341,7 +341,7 @@ In questa tabella sono riportati i nomi degli script, le descrizioni, i rilevame
 $numDays = 7
 
 try {
-    $gpResult = gpresult /R | Select-String -pattern “Last time Group Policy was applied:” | Select-Object -last 1
+    $gpResult = gpresult /R | Select-String -pattern "Last time Group Policy was applied:" | Select-Object -last 1
 
     if ($gpResult){
     [int]$lastGPUpdateDays = (New-TimeSpan -Start $lastGPUpdateDate -End (Get-Date)).Days
@@ -691,7 +691,7 @@ Attualmente, la funzionalità di base di analisi dell'esperienza utente raccogli
 - **desktopUsableDurationInMilliseconds:** tempo per rendere utilizzabile il desktop (explorer.exe)
 - **name:** Windows
 - **ver:** versione del sistema operativo corrente.
-- **topProcesses:** elenco dei processi caricati durante l'avvio con il nome, con le statistiche di utilizzo della CPU e i dettagli dell'app (nome, editore, versione). Ad esempio *{\"ProcessName\":\"svchost\",\"CpuUsage\":43,\"ProcessFullPath\":\"C:\\\\Windows\\\\System32\\\\svchost.exe\",\"ProductName\":\"Microsoft® Windows® Operating System\",\"Publisher\":\"Microsoft Corporation\",\"ProductVersion\":\"10.0.18362.1\"}*
+- **topProcesses:** elenco dei processi caricati durante l'avvio con il nome, con le statistiche di utilizzo della CPU e i dettagli dell'app (nome, editore, versione). Ad esempio *{\"ProcessName\":\"svchost\",\"CpuUsage\":43,\"ProcessFullPath\":\"C:\\\\Windows\\\\System32\\\\svchost.exe\",\"ProductName\":\"Microsoft&reg; Windows&reg; Operating System\",\"Publisher\":\"Microsoft Corporation\",\"ProductVersion\":\"10.0.18362.1\"}*
 
 > [!Important]  
 > I criteri di gestione dei dati sono descritti nell'[informativa sulla privacy di Microsoft Intune](https://docs.microsoft.com/legal/intune/microsoft-intune-privacy-statement). I dati dei clienti vengono usati solo per fornire i servizi per i quali si è iscritti. Come descritto durante il processo di onboarding, i punteggi da tutte le organizzazioni registrate vengono anonimizzati e aggregati per mantenere aggiornate le baseline.

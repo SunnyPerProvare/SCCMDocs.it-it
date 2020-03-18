@@ -2,7 +2,7 @@
 title: Come creare i piani di distribuzione
 titleSuffix: Configuration Manager
 description: Guida pratica per la creazione di piani di distribuzione in Desktop Analytics.
-ms.date: 06/13/2019
+ms.date: 03/12/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 8e0e8496-136b-461f-8239-cc19c6b78c3b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 577b74425cc3293c7bf55fa13513877bad3c3960
-ms.sourcegitcommit: d1c6f3f2fa6821f15041e73d411cc4e1de0850ba
+ms.openlocfilehash: 3a1a4397d0a02f28d4b2946294b6c854e79e6478
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519954"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79191477"
 ---
 # <a name="how-to-create-deployment-plans-in-desktop-analytics"></a>Come creare i piani di distribuzione in Desktop Analytics
 
@@ -37,7 +37,12 @@ Seguire la procedura descritta in questa sezione per usare Desktop Analytics per
 
     - **Prodotti e versioni**: scegliere la versione di Windows 10 da distribuire. Microsoft consiglia di creare piani di distribuzione che usano la versione più recente.  
 
-    - **Gruppi di dispositivi**: selezionare uno o più gruppi dalla stessa gerarchia. Questi gruppi sono [raccolte di dispositivi](/configmgr/desktop-analytics/connect-configmgr#bkmk_Collections) sincronizzate da Configuration Manager.  
+    - **Gruppi di dispositivi**: selezionare uno o più gruppi dalla stessa gerarchia. Questi gruppi sono [raccolte di dispositivi](/configmgr/desktop-analytics/connect-configmgr#bkmk_Collections) sincronizzate da Configuration Manager.
+
+        Se si connettono più gerarchie di Configuration Manager alla stessa istanza di Desktop Analytics, viene aggiunto un nome visualizzato per la gerarchia come prefisso al nome della raccolta nella configurazione pilota globale. Si tratta della proprietà **Nome visualizzato** nella connessione di Desktop Analytics nella console di Configuration Manager.<!-- 4814075 -->
+
+        > [!NOTE]
+        > Se si selezionano raccolte per più gerarchie, nel portale viene visualizzato un avviso. Non è possibile creare il piano di distribuzione con raccolte da più gerarchie.<!-- 4814075 -->
 
     - **Regole di idoneità**: queste regole consentono di individuare i dispositivi idonei per l'aggiornamento. Per altre informazioni, vedere [Regole di idoneità](#readiness-rules).  
 

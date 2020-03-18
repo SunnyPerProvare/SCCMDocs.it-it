@@ -2,7 +2,7 @@
 title: Novità di Desktop Analytics
 titleSuffix: Configuration Manager
 description: Riepilogo delle nuove funzionalità della versione mensile più recente del servizio cloud Desktop Analytics.
-ms.date: 01/16/2020
+ms.date: 03/12/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: fa300181-86cb-4afe-8fbf-895a7572378d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d87d422ddc2f3ed76934af08bb89f42d65783338
-ms.sourcegitcommit: be37256f98120ad30d5f7925bc32f05a07f15984
+ms.openlocfilehash: e07493fdfc5a7b8497704f80323e13ac59d735dc
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071504"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79191459"
 ---
 # <a name="whats-new-in-desktop-analytics"></a>Novità di Desktop Analytics
 
@@ -26,6 +26,28 @@ Informazioni sulle novità mensili di Desktop Analytics.
 
 Per ricevere una notifica quando questa pagina viene aggiornata, copiare e incollare l'URL seguente nel lettore di feed RSS: `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+desktop+analytics+-+Configuration+Manager%22&locale=en-us`
 <!-- a locale is required for the RSS search string -->
+
+## <a name="march-2020"></a>Marzo 2020
+
+### <a name="support-for-multiple-hierarchies"></a>Supporto di più gerarchie
+
+<!-- 4814075, 6079184 -->
+
+È ora possibile connettere più gerarchie di Configuration Manager a un singolo tenant di Azure Active Directory con un unico ID commerciale per Desktop Analytics. Il portale categorizza i dispositivi da diverse gerarchie e migliora le esperienze per i progetti pilota globali e i piani di distribuzione.
+
+- Quando si configura il progetto pilota globale, se si includono raccolte che contengono più del 20% dei dispositivi registrati totali, nel portale viene visualizzato un avviso.
+- Quando si crea un piano di distribuzione, se si selezionano raccolte per più gerarchie, nel portale viene visualizzato un avviso.
+
+Per altre informazioni, vedere gli articoli seguenti:
+
+- [Progetto pilota globale](/configmgr/desktop-analytics/deploy-pilot#bkmk_GlobalPilot)
+- [Come creare i piani di distribuzione](/configmgr/desktop-analytics/create-deployment-plans)
+
+### <a name="identify-compatibility-safeguards"></a>Identificare le misure di sicurezza per la compatibilità
+
+<!-- 5746559 -->
+
+I dati di compatibilità di Windows classificano alcune app e driver con una *misura di sicurezza*, che può causare l'esito negativo o il rollback dell'aggiornamento a Windows 10. Desktop Analytics consente ora di identificare queste misure di sicurezza in anticipo, in modo da poter correggere la risorsa prima di distribuire l'aggiornamento. Per altre informazioni, vedere [Valutazione della compatibilità - Misure di sicurezza](/configmgr/desktop-analytics/compat-assessment#safeguards).
 
 ## <a name="january-2020"></a>Gennaio 2020
 

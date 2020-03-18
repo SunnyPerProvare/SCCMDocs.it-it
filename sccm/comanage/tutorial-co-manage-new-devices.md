@@ -5,17 +5,17 @@ description: Informazioni su come configurare la co-gestione per i nuovi disposi
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 02/25/2020
+ms.date: 03/12/2020
 ms.topic: tutorial
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 7fb02a5c-e286-46b1-a972-6335c858429a
-ms.openlocfilehash: 3199524066dd9fc5a46f6dd0316f52ad646d5236
-ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
+ms.openlocfilehash: 8348f5ab8387c27a1b234d0c7fb227e92466af95
+ms.sourcegitcommit: 8ebac65a0126a5bfd7f8a0869172547d765d4b31
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78167346"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79138176"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Esercitazione: Abilitare la co-gestione per nuovi dispositivi basati su Internet
 
@@ -75,7 +75,7 @@ Usare questa esercitazione in questi casi:
 
 In questa esercitazione usare le autorizzazioni seguenti per completare le attività:
 
-- Un account che sia un *amministratore globale* in Azure
+- Un account che sia *amministratore globale* per Azure Active Directory (Azure AD)
 - Un account che sia un *amministratore di dominio* nell'infrastruttura locale  
 - Un account che sia un *amministratore completo* per *tutti* gli ambiti in Configuration Manager
 
@@ -172,7 +172,7 @@ Esportare il *certificato di autenticazione server di Cloud Management Gateway* 
 
 3. Nell'Esportazione guidata certificati selezionare **Avanti**, selezionare **Sì, esporta la chiave privata** e quindi scegliere **Avanti**.  
 
-4. Nella pagina Formato file di esportazione selezionare **Personal Information Exchange - PKCS #12 (.PFX)** , selezionare **Avanti** e specificare una password. Per il nome del file specificare un nome simile a **C:\ConfigMgrCloudMGServer**. Si farà riferimento a questo file quando si creerà il servizio Cloud Management Gateway in Azure.  
+4. Nella pagina Formato file di esportazione selezionare **Personal Information Exchange - PKCS #12 (.PFX)** , selezionare **Avanti** e specificare una password. Per il nome del file specificare un nome simile a **C:\ConfigMgrCloudMGServer**. Verrà fatto riferimento a questo file quando si creerà il servizio Cloud Management Gateway in Azure.  
 
 5. Selezionare **Avanti** e quindi verificare le impostazioni seguenti prima di selezionare **Fine** per completare l'esportazione:  
 
@@ -195,7 +195,7 @@ Completare la procedura seguente dal server del sito primario.
 
 1. Dal server del sito primario aprire la console di Configuration Manager e passare a **Amministrazione > Servizi cloud > Servizi di Azure** e quindi selezionare **Configura i servizi di Azure**.  
 
-   Nella pagina Configura i servizi di Azure specificare un nome descrittivo per il servizio di gestione cloud che si sta configurando. Ad esempio: *Servizio di gestione cloud*.
+   Nella pagina di configurazione dei servizi di Azure specificare un nome descrittivo per il servizio di gestione cloud che si sta configurando. Ad esempio: *Servizio di gestione cloud*.
 
    Selezionare **Gestione cloud** e quindi **Avanti**.  
 
@@ -210,7 +210,7 @@ Completare la procedura seguente dal server del sito primario.
 
    - **URI ID app**: questo valore deve essere univoco nel tenant di Azure AD. È incluso nel token di accesso usato dal client Configuration Manager per richiedere l'accesso al servizio. Per impostazione predefinita, questo valore è `https://ConfigMgrService`.  
 
-   Selezionare quindi **Accedi** e specificare un account amministratore globale di Azure. Queste credenziali non vengono memorizzate in Configuration Manager. Questo utente tipo non richiede autorizzazioni in Configuration Manager e non deve necessariamente essere lo stesso account che esegue la procedura guidata per i servizi di Azure.
+   Selezionare quindi **Accedi** e specificare un account amministratore globale di Azure AD. Queste credenziali non vengono memorizzate in Configuration Manager. Questo utente tipo non richiede autorizzazioni in Configuration Manager e non deve necessariamente essere lo stesso account che esegue la procedura guidata per i servizi di Azure.
 
    Dopo l'accesso, vengono visualizzati i risultati. Selezionare **OK** per chiudere la finestra di dialogo Crea un'applicazione server e tornare alla pagina Proprietà dell'app.
 
@@ -221,7 +221,7 @@ Completare la procedura seguente dal server del sito primario.
    - **Nome applicazione**: Specificare un nome descrittivo per l'app, ad esempio *App client nativa di gestione*.
 
    - **URL di risposta**: questo valore non viene usato da Configuration Manager, ma è richiesto da Azure AD. Per impostazione predefinita, questo valore è `https://ConfigMgrClient`.
-   Selezionare quindi **Accedi** e specificare un account amministratore globale di Azure. Come per l'app Web, queste credenziali non vengono salvate e non richiedono autorizzazioni in Configuration Manager.
+   Selezionare quindi **Accedi** e specificare un account amministratore globale di Azure AD. Come per l'app Web, queste credenziali non vengono salvate e non richiedono autorizzazioni in Configuration Manager.
 
    Dopo l'accesso, vengono visualizzati i risultati. Selezionare **OK** per chiudere la finestra di dialogo Crea un'applicazione client e tornare alla pagina Proprietà dell'app. Selezionare quindi **Avanti** per continuare.
 
@@ -278,7 +278,7 @@ Usare questa procedura per installare Cloud Management Gateway come servizio in 
 
 5. Per **Gruppo di risorse** usare un gruppo di risorse esistente o crearne uno nuovo con un nome descrittivo privo di spazi, ad esempio **ServiziCloudConfigMgr**. Se si sceglie di creare un gruppo, il gruppo viene aggiunto come gruppo di risorse in Azure.  
 
-6. A meno che non si sia pronti per una configurazione su larga scala, usare uno (1) come numero di **istanze di macchina virtuale**. Il numero di istanze di macchina virtuale permette a un singolo servizio cloud Cloud Management Gateway di ampliare un livello di servizio per supportare più connessioni client. In seguito, sarà possibile usare la console di Configuration Manager per modificare il numero di istanze di macchina virtuale usate.  
+6. A meno che non si sia pronti per una configurazione su larga scala, usare uno (1) come numero di **istanze di macchina virtuale**. Il numero di istanze di macchina virtuale permette a un singolo servizio cloud Cloud Management Gateway di aumentare un livello di servizio per supportare più connessioni client. In seguito, sarà possibile usare la console di Configuration Manager per modificare il numero di istanze di macchina virtuale usate.  
 
 7. Selezionare la casella di controllo **Verifica la revoca del certificato client**.
 
