@@ -3,13 +3,13 @@ author: mestew
 ms.author: mstewart
 ms.prod: configuration-manager
 ms.topic: include
-ms.date: 02/25/2020
-ms.openlocfilehash: 53ce0fd56581320d3c6f59d0a973803f08eb8905
-ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
+ms.date: 03/12/2020
+ms.openlocfilehash: 43b3173e2ee22005c10c45c6c3ed67bdd0cd9a3d
+ms.sourcegitcommit: 8ebac65a0126a5bfd7f8a0869172547d765d4b31
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78167347"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79138142"
 ---
 <!--3555750 FKA 1357954 --Don't apply H2/H3 in this include file since they are context driven by article-->
 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Servizi cloud** e selezionare il nodo **Co-gestione**. Fare clic su **Configura la co-gestione** nella barra multifunzione per aprire la **procedura guidata di configurazione della co-gestione**.
@@ -18,7 +18,7 @@ ms.locfileid: "78167347"
 
     - **Ambiente Azure** da usare. Ad esempio il cloud pubblico di Azure o il cloud di Azure Governo degli Stati Uniti.<!--4075452-->  
 
-    - Selezionare **Accedi**. Accedere come amministratore globale di Azure e quindi scegliere **Avanti**.  
+    - Selezionare **Accedi**. Accedere come amministratore globale di Azure AD e quindi scegliere **Avanti**.  
 
         > [!TIP]
         > È sufficiente accedere una sola volta per poter eseguire questa procedura guidata. Le credenziali non vengono archiviate o riusate altrove.
