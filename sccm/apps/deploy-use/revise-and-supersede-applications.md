@@ -11,11 +11,11 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.openlocfilehash: 87804ee2a76dea918cebb964a3672ab61bf6de8d
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75818044"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79406064"
 ---
 # <a name="revise-and-supersede-applications-in-configuration-manager"></a>Rivedere e sostituire le applicazioni in Configuration Manager
 

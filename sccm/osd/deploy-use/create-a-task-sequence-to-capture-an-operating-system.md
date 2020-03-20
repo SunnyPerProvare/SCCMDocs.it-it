@@ -11,34 +11,34 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: 1b6b6f9c4bf17196821c21b9677215df83eeaed6
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825507"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405364"
 ---
 # <a name="create-a-task-sequence-to-capture-an-os"></a>Creare una sequenza di attività per acquisire un sistema operativo
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-Quando si usa una sequenza di attività per distribuire un sistema operativo in un computer in Configuration Manager, il computer installa l'immagine del sistema operativo specificata nella sequenza di attività. È possibile personalizzare l'immagine del sistema operativo in modo da includere driver, applicazioni e aggiornamenti software specifici. Usare prima di tutto una sequenza di attività di creazione e acquisizione per creare un computer di riferimento. Quindi acquisire l'immagine del sistema operativo dal computer di riferimento. Se un computer di riferimento è già disponibile per l'acquisizione, creare una sequenza di attività personalizzata per acquisire il sistema operativo.
+Quando si usa una sequenza di attività per distribuire un sistema operativo in un computer in Configuration Manager, il computer installa l'immagine del sistema operativo specificata nella sequenza di attività. È possibile personalizzare l'immagine del sistema operativo in modo da includere driver, applicazioni e aggiornamenti software specifici. Usare prima di tutto una sequenza di attività di creazione e acquisizione per creare un computer di riferimento. Acquisire quindi l'immagine del sistema operativo dal computer di riferimento. Se un computer di riferimento è già disponibile per l'acquisizione, creare una sequenza di attività personalizzata per acquisire il sistema operativo.
 
-## <a name="BKMK_BuildCaptureTS"></a> Informazioni sulla sequenza di attività di creazione e acquisizione
+## <a name="about-the-build-and-capture-task-sequence"></a><a name="BKMK_BuildCaptureTS"></a> Informazioni sulla sequenza di attività di creazione e acquisizione
 
 La sequenza di attività di creazione e acquisizione:
 
 - Partiziona e formatta il computer di riferimento
 - Installa il sistema operativo
 - Installa il client di Configuration Manager
-- Installa applicazioni
+- Installa le applicazioni
 - Applica gli aggiornamenti software
 - Acquisisce il sistema operativo dal computer di riferimento
 
 I pacchetti associati alla sequenza di attività, ad esempio le applicazioni, devono essere disponibili nei punti di distribuzione prima di distribuire la sequenza di attività di creazione e acquisizione.
 
-## <a name="BKMK_CreatePackages"></a> Requisiti
+## <a name="requirements"></a><a name="BKMK_CreatePackages"></a> Requisiti
 
-Prima di creare una sequenza di attività per installare un sistema operativo, verificare che siano presenti i componenti seguenti:  
+Prima di creare una sequenza di attività per installare un sistema operativo, verificare che siano disponibili i componenti seguenti:  
 
 ### <a name="required"></a>Richiesto
 
@@ -54,7 +54,7 @@ Prima di creare una sequenza di attività per installare un sistema operativo, v
 
 - [Applicazioni](/sccm/apps/deploy-use/create-applications)
 
-## <a name="BKMK_CreateBuildCaptureTS"></a> Creare una sequenza di attività di creazione e acquisizione
+## <a name="create-a-build-and-capture-task-sequence"></a><a name="BKMK_CreateBuildCaptureTS"></a> Creare una sequenza di attività di creazione e acquisizione
 
 Usare la procedura seguente per usare una sequenza di attività per creare un computer di riferimento e acquisire il sistema operativo.
 
@@ -75,21 +75,21 @@ Usare la procedura seguente per usare una sequenza di attività per creare un co
         > [!IMPORTANT]  
         > L'architettura dell'immagine di avvio deve essere compatibile con l'architettura hardware del computer di destinazione.  
 
-1. Nella pagina **installa Windows** specificare le impostazioni seguenti:  
+1. Nella pagina **Installa Windows** specificare le impostazioni seguenti:  
 
-    - **Pacchetto immagine**: specificare il pacchetto immagine del sistema operativo, che contiene i file necessari per installare il sistema operativo.  
+    - **Pacchetto immagine**: specificare il pacchetto dell'immagine del sistema operativo, che contiene i file necessari per installare il sistema operativo.  
 
-    - **Image index**: specifica l'indice del sistema operativo da installare nell'immagine. Se l'immagine del sistema operativo contiene più versioni, selezionare la versione da installare.  
+    - **Indice immagine**: specificare l'indice del sistema operativo da installare nell'immagine. Se l'immagine del sistema operativo contiene più versioni, selezionare la versione da installare.  
 
-    - **Codice Product Key**: se necessario, specificare il codice Product Key per il sistema operativo Windows da installare. È possibile specificare i codici Product Key per contratti multilicenza codificati e i codici Product Key standard. Se si usa un codice Product Key non codificato, separare ogni gruppo di cinque caratteri con un trattino (`-`). ad esempio `XXXXX-XXXXX-XXXXX-XXXXX-XXXXX`  
+    - **Codice Product Key**: specificare il codice Product Key per il sistema operativo Windows da installare. È possibile specificare i codici Product Key per contratti multilicenza codificati e i codici Product Key standard. Se si usa un codice Product Key non codificato, separare ogni gruppo di cinque caratteri con un trattino (`-`). ad esempio `XXXXX-XXXXX-XXXXX-XXXXX-XXXXX`  
 
     - **Modalità di gestione licenze del server**: Se necessario, indicare che la licenza del server è **Per postazione**, **Per server** o che non è specificata alcuna licenza. Se la licenza del server è **Per server**, specificare anche il numero massimo di connessioni al server.  
 
     - Specificare come configurare l'account amministratore per il sistema operativo distribuito:  
 
-        - **Genera in modo casuale la password dell'amministratore locale e disattiva l'account su tutte le piattaforme supportate**: creare una password casuale per l'account amministratore locale. Disabilitare l'account quando la finestra è configurata.
+        - **Genera in modo casuale la password dell'amministratore locale e disattiva l'account su tutte le piattaforme supportate**: creare una password casuale per l'account amministratore locale. Disabilitare l'account dopo aver installato Windows.
 
-        - **Abilitare l'account e specificare la password dell'amministratore locale**: usare la stessa password per l'account amministratore locale in tutti i computer in cui viene distribuito il sistema operativo.
+        - **Attiva l'account e specifica la password dell'amministratore locale**: usare la stessa password per l'account amministratore locale in tutti i computer in cui viene distribuito il sistema operativo.
 
 1. Nella pagina **Configura rete** specificare le impostazioni seguenti:
 
@@ -105,9 +105,9 @@ Usare la procedura seguente per usare una sequenza di attività per creare un co
     - **Account**: Specificare il nome utente e la password per l'account che dispone delle autorizzazioni per l'aggiunta al dominio specificato. Ad esempio: `domain\user` o `%variable%`.  
 
         > [!IMPORTANT]  
-        > Se si prevede di eseguire la migrazione delle impostazioni del dominio o del gruppo di lavoro durante la distribuzione, assicurarsi di immettere le credenziali di dominio appropriate qui.  
+        > Se si prevede di eseguire la migrazione delle impostazioni del dominio o delle impostazioni del gruppo di lavoro durante la distribuzione, immettere qui le credenziali di dominio appropriate.  
 
-1. Nella pagina **installa Configuration Manager** specificare il pacchetto client Configuration Manager. Questo pacchetto contiene i file di origine per installare il client di Configuration Manager. Specificare anche eventuali proprietà aggiuntive necessarie per installare il client.  
+1. Nella pagina **Installa Configuration Manager** specificare il pacchetto client di Configuration Manager. Questo pacchetto contiene i file di origine per installare il client di Configuration Manager. Specificare anche eventuali proprietà aggiuntive necessarie per installare il client.  
 
     Per altre informazioni, vedere [Proprietà di installazione client](/sccm/core/clients/deploy/about-client-installation-properties).
 
@@ -116,9 +116,9 @@ Usare la procedura seguente per usare una sequenza di attività per creare un co
 1. Nella pagina **Installa applicazioni** specificare le applicazioni da installare nel computer di destinazione. Se si specificano più applicazioni, è possibile specificare che la sequenza di attività continui anche se l'installazione di un'applicazione specifica non riesce.  
 
     > [!NOTE]
-    > La pagina **preparazione sistema** viene visualizzata successivamente nella procedura guidata, ma non viene più utilizzata. Selezionare **Avanti** per continuare.
+    > Viene poi visualizzata la pagina **Preparazione sistema** nella procedura guidata, ma non è più usata. Selezionare **Avanti** per continuare.
 
-1. Nella pagina **Proprietà immagini** specificare le seguenti impostazioni per l'immagine del sistema operativo:
+1. Nella pagina **Proprietà immagini** specificare le impostazioni seguenti per l'immagine del sistema operativo:
 
     - **Creato da**: specificare il nome dell'utente da considerare come autore dell'immagine del sistema operativo.  
 
@@ -128,13 +128,13 @@ Usare la procedura seguente per usare una sequenza di attività per creare un co
 
 1. Nella pagina **Acquisisci immagine** specificare le impostazioni seguenti:
 
-    - **Percorso**: specificare una cartella di rete condivisa in cui Configuration Manager deve archiviare il file di immagine di output (con estensione wim). Questo file contiene l'immagine del sistema operativo basata sulle impostazioni specificate in questa procedura guidata. Se si specifica una cartella che contiene un oggetto esistente. Il file WIM viene sovrascritto.  
+    - **Percorso**: specificare una cartella di rete condivisa in cui Configuration Manager deve archiviare il file di immagine di output (con estensione wim). Questo file contiene l'immagine del sistema operativo basata sulle impostazioni specificate in questa procedura guidata. Se si specifica una cartella che contiene un file con estensione wim esistente, il file esistente viene sovrascritto.  
 
     - **Account**: Specificare l'account Windows con le autorizzazioni per la condivisione di rete in cui viene archiviata l'immagine.  
 
 1. Completare la procedura guidata.  
 
-Per aggiungere ulteriori passaggi alla sequenza di attività, selezionarla e scegliere **modifica**. Per altre informazioni su come modificare una sequenza di attività, vedere [Usare l'editor delle sequenze di attività](/sccm/osd/understand/task-sequence-editor).  
+Per aggiungere ulteriori passaggi alla sequenza di attività, selezionarla e scegliere **Modifica**. Per altre informazioni su come modificare una sequenza di attività, vedere [Usare l'editor delle sequenze di attività](/sccm/osd/understand/task-sequence-editor).  
 
 Distribuire la sequenza di attività in un computer di riferimento in uno dei modi seguenti:  
 
@@ -142,9 +142,9 @@ Distribuire la sequenza di attività in un computer di riferimento in uno dei mo
 
 - Se il computer di riferimento non è un client di Configuration Manager o si vuole eseguire manualmente la sequenza di attività nel computer di riferimento, usare la **Creazione guidata del supporto per la sequenza di attività** per creare il supporto di avvio. Per altre informazioni, vedere [Creare supporti di avvio](/sccm/osd/deploy-use/create-bootable-media).  
 
-Una volta acquisita l'immagine, è possibile distribuirla in altri computer. Per altre informazioni su come distribuire l'immagine del sistema operativo acquisita, vedere [creare una sequenza di attività per installare un sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-install-an-operating-system).  
+Dopo aver acquisito l'immagine, è possibile distribuirla in altri computer. Per altre informazioni su come distribuire l'immagine del sistema operativo acquisita, vedere [Creare una sequenza di attività per installare un sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-install-an-operating-system).  
 
-## <a name="BKMK_CaptureExistingRefComputer"></a>Acquisisci da un computer di riferimento esistente
+## <a name="capture-from-an-existing-reference-computer"></a><a name="BKMK_CaptureExistingRefComputer"></a> Acquisizione da un computer di riferimento esistente
 
 Se è già disponibile un computer di riferimento pronto per l'acquisizione, creare una sequenza di attività che acquisisce solo il sistema operativo dal computer di riferimento. Usare il passaggio **Acquisisci immagine del sistema operativo** della sequenza di attività per acquisire una o più immagini da un computer di riferimento e archiviarle in un file di immagine (con estensione wim) nella condivisione di rete specificata. Avviare il computer di riferimento in Windows PE con un'immagine di avvio. La sequenza di attività acquisisce ogni disco rigido nel computer di riferimento come immagine separata all'interno del file con estensione wim. Se il computer a cui si fa riferimento include più unità, il file con estensione wim risultante contiene un'immagine distinta per ogni volume. Acquisisce solo i volumi con formattazione NTFS o FAT32. I volumi con formati diversi o i volumi USB vengono ignorati.  
 
@@ -156,28 +156,28 @@ Usare la procedura seguente per acquisire un'immagine del sistema operativo da u
 
 1. Nella pagina **Crea una nuova sequenza di attività** selezionare **Crea una nuova sequenza di attività personalizzata**.  
 
-1. Nella pagina **informazioni sequenza di attività** specificare un nome per la sequenza di attività. Facoltativamente, aggiungere una descrizione per la sequenza di attività.  
+1. Nella pagina **Informazioni sequenza di attività** specificare un nome per la sequenza di attività. Facoltativamente, aggiungere una descrizione per la sequenza di attività.  
 
 1. Specificare un'immagine di avvio per la sequenza di attività. Configuration Manager usa questa immagine di avvio per avviare il computer di riferimento con Windows PE. Per altre informazioni, vedere [Manage boot images](/sccm/osd/get-started/manage-boot-images) (Gestire le immagini d'avvio).  
 
 1. Completare la procedura guidata.  
 
-1. Nel nodo **sequenze attività** selezionare la nuova sequenza di attività. Nella scheda **Home** della barra multifunzione selezionare quindi **Modifica** nel gruppo **Sequenza di attività**. Questa azione consente di aprire l'editor della sequenza di attività.  
+1. Nel nodo **Sequenze di attività** selezionare la nuova sequenza di attività. Nella scheda **Home** della barra multifunzione selezionare quindi **Modifica** nel gruppo **Sequenza di attività**. Questa azione consente di aprire l'editor della sequenza di attività.  
 
 1. Se il client di Configuration Manager è installato nel computer di riferimento:
 
-    Scegliere **Immagini**dal menu **Aggiungi** , quindi [preparare il client ConfigMgr per l'acquisizione](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareConfigMgrClientforCapture). Questo passaggio generalizza il client di Configuration Manager nel computer di riferimento.
+    Passare al menu **Aggiungi**, selezionare **Immagini** e quindi scegliere [Prepara client ConfigMgr per l'acquisizione](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareConfigMgrClientforCapture). Questo passaggio generalizza il client di Configuration Manager nel computer di riferimento.
 
     > [!Note]  
     > La sequenza di attività non supporta la disinstallazione del client di Configuration Manager.
 
-1. Passare al menu **Aggiungi** , selezionare **Immagini**e scegliere [prepara Windows per l'acquisizione](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareWindowsforCapture). Questo passaggio esegue Sysprep e quindi riavvia il computer nell'immagine di avvio di Windows PE specificata per la sequenza di attività. Per completare correttamente questa azione, non aggiungere il computer di riferimento a un dominio.
+1. Passare al menu **Aggiungi**, selezionare **Immagini** e scegliere [Prepara Windows per l'acquisizione](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareWindowsforCapture). Questo passaggio esegue Sysprep e quindi riavvia il computer nell'immagine di avvio di Windows PE specificata per la sequenza di attività. Per completare correttamente questa azione, non aggiungere il computer di riferimento a un dominio.
 
-1. Passare al menu **Aggiungi** , selezionare **Immagini**e scegliere [Acquisisci immagine del sistema operativo](/sccm/osd/understand/task-sequence-steps#BKMK_CaptureOperatingSystemImage). Questo passaggio viene eseguito solo da Windows PE per acquisire le unità disco rigido nel computer di riferimento. Configurare le seguenti impostazioni:
+1. Passare al menu **Aggiungi**, selezionare **Immagini**e scegliere [Acquisisci immagine del sistema operativo](/sccm/osd/understand/task-sequence-steps#BKMK_CaptureOperatingSystemImage). Questo passaggio viene eseguito solo da Windows PE per acquisire le unità disco rigido nel computer di riferimento. Configurare le seguenti impostazioni:
 
     - **Nome** e **Descrizione**: facoltativamente, è possibile modificare il nome del passaggio della sequenza di attività e fornire una descrizione.  
 
-    - **Destinazione**: Specificare una cartella di rete condivisa in cui è archiviato il file WIM di output. Questo file contiene l'immagine del sistema operativo basata sulle impostazioni specificate tramite questa procedura guidata. Se si specifica una cartella che contiene un oggetto esistente. Il file WIM viene sovrascritto.  
+    - **Destinazione**: Specificare una cartella di rete condivisa in cui è archiviato il file WIM di output. Questo file contiene l'immagine del sistema operativo basata sulle impostazioni specificate usando questa procedura guidata. Se si specifica una cartella che contiene un file con estensione wim esistente, il file esistente viene sovrascritto.  
 
     - **Descrizione**, **Versione** e **Creato da**: Facoltativamente, specificare i dettagli relativi all'immagine da acquisire.  
 
@@ -191,16 +191,16 @@ Distribuire la sequenza di attività in un computer di riferimento in uno dei mo
 
 - Se il computer di riferimento non è un client di Configuration Manager o si vuole eseguire manualmente la sequenza di attività nel computer di riferimento, usare la **Creazione guidata del supporto per la sequenza di attività** per creare il supporto di acquisizione. Per altre informazioni, vedere [Creare supporti di acquisizione](/sccm/osd/deploy-use/create-capture-media).  
 
-Una volta acquisita l'immagine, è possibile distribuirla in altri computer. Per altre informazioni su come distribuire l'immagine del sistema operativo acquisita, vedere [creare una sequenza di attività per installare un sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-install-an-operating-system).
+Dopo aver acquisito l'immagine, è possibile distribuirla in altri computer. Per altre informazioni su come distribuire l'immagine del sistema operativo acquisita, vedere [Creare una sequenza di attività per installare un sistema operativo](/sccm/osd/deploy-use/create-a-task-sequence-to-install-an-operating-system).
 
-## <a name="BKMK_BuildandCaptureTSExample"></a>Sequenza di attività di esempio
+## <a name="example-task-sequence"></a><a name="BKMK_BuildandCaptureTSExample"></a> Sequenza di attività di esempio
 
 Usare la tabella seguente come guida durante la creazione di una sequenza di attività che crea e acquisisce un'immagine del sistema operativo. La tabella è utile per decidere la sequenza generale per i passaggi della sequenza di attività e come organizzare e strutturare i passaggi in gruppi logici. La sequenza di attività creata può variare rispetto a questo esempio. Può contenere più o meno passaggi e gruppi.
 
 > [!NOTE]  
 > Usare sempre la Creazione guidata della sequenza attività per creare questo tipo di sequenza di attività.
 >
-> La procedura guidata aggiunge i passaggi alla sequenza di attività con nomi leggermente diversi che verrebbero visualizzati se si aggiungono manualmente gli stessi passaggi.
+> La procedura guidata aggiunge i passaggi alla sequenza di attività con nomi leggermente diversi da quelli che verrebbero visualizzati se si aggiungessero manualmente gli stessi passaggi.
 
 ### <a name="group-build-the-reference-machine"></a>Gruppo: Crea computer di riferimento
 
@@ -208,15 +208,15 @@ Questo gruppo contiene le azioni necessarie per creare un computer di riferiment
 
 |Passaggio della sequenza di attività|Descrizione|  
 |-------------------------------|---------------|  
-|**Riavvia in Windows PE**|Riavviare il computer di destinazione per l'immagine di avvio assegnata alla sequenza di attività. Questo passaggio visualizza un messaggio all'utente per informarlo che il computer verrà riavviato in modo da poter continuare l'installazione.<br /><br />Questo passaggio usa la variabile della sequenza di attività `_SMSTSInWinPE` di sola lettura. Se il valore associato è uguale a `false`, il passaggio della sequenza di attività continua.|
-|**Disco di partizione 0 - BIOS**|Partizionare e formattare il disco rigido nel computer di destinazione in modalità BIOS. Il numero di disco predefinito è `0`.<br /><br />Questo passaggio usa diverse variabili della sequenza di attività di sola lettura. Ad esempio, viene eseguito solo se la cache del client Configuration Manager non esiste e non viene eseguita se il computer è configurato per UEFI.|
-|**Disco di partizione 0 - UEFI**|Partizionare e formattare il disco rigido nel computer di destinazione in modalità UEFI. Il numero di disco predefinito è `0`.<br /><br />Questo passaggio usa diverse variabili della sequenza di attività di sola lettura. Ad esempio, viene eseguito solo se la cache del client Configuration Manager non esiste e viene eseguita solo se il computer è configurato per UEFI.|
+|**Riavvia in Windows PE**|Riavviare il computer di destinazione con l'immagine di avvio assegnata alla sequenza di attività. Questo passaggio visualizza un messaggio all'utente per informarlo che il computer verrà riavviato in modo da poter continuare l'installazione.<br /><br />Questo passaggio usa la variabile della sequenza attività di sola lettura `_SMSTSInWinPE`. Se il valore associato è uguale a `false`, il passaggio della sequenza di attività continua.|
+|**Disco di partizione 0 - BIOS**|Partizionare e formattare il disco rigido nel computer di destinazione in modalità BIOS. Il numero di disco predefinito è `0`.<br /><br />Questo passaggio usa diverse variabili della sequenza di attività di sola lettura. Ad esempio, viene eseguito solo se la cache del client Configuration Manager non esiste e non viene eseguito se il computer è configurato per UEFI.|
+|**Disco di partizione 0 - UEFI**|Partizionare e formattare il disco rigido nel computer di destinazione in modalità UEFI. Il numero di disco predefinito è `0`.<br /><br />Questo passaggio usa diverse variabili della sequenza di attività di sola lettura. Ad esempio, viene eseguito solo se la cache del client Configuration Manager non esiste e viene eseguito solo se il computer è configurato per UEFI.|
 |**Applica sistema operativo**|Installare l'immagine del sistema operativo specificata nel computer di destinazione. Questo passaggio elimina prima di tutto tutti i file nel volume, ad eccezione dei file di controllo specifici di Configuration Manager. Applica quindi tutte le immagini del volume contenute nel file WIM al volume del disco sequenziale corrispondente nel computer di destinazione.|
 |**Applica impostazioni Windows**|Configurare le impostazioni di Windows per il computer di destinazione.|
 |**Applica impostazioni di rete**|Specificare le informazioni di configurazione di rete o del gruppo di lavoro per il computer di destinazione.|
-|**Applica driver dispositivo**|Abbinare e installare i driver come parte della distribuzione del sistema operativo. Per altre informazioni, vedere [Applica automaticamente i driver](/sccm/osd/understand/task-sequence-steps#BKMK_AutoApplyDrivers).<br /><br />Questo passaggio usa la variabile della sequenza di attività `_SMSTSMediaType` di sola lettura. Se il valore associato non è uguale `FullMedia`, questo passaggio non viene eseguito.|
-|**Installa Windows e Configuration Manager**|Installare il software client di Configuration Manager. Configuration Manager installa e registra il GUID del client di Configuration Manager. Includere tutte le **proprietà di installazione**necessarie.|
-|**Installa aggiornamenti**|Specificare il modo in cui gli aggiornamenti software vengono installati nel computer di destinazione. Il computer di destinazione viene valutato alla ricerca di aggiornamenti software applicabili solo in corrispondenza con l'esecuzione di questo passaggio. A questo punto, la valutazione è simile a qualsiasi altro client gestito da Configuration Manager. Per altre informazioni, vedere [Installa aggiornamenti software](/sccm/osd/understand/install-software-updates).<br /><br />Questo passaggio usa la variabile della sequenza di attività `_SMSTSMediaType` di sola lettura. Se il valore associato non è uguale `FullMedia`, questo passaggio non viene eseguito.|
+|**Applica driver dispositivo**|Associare e installare i driver come parte della distribuzione del sistema operativo. Per altre informazioni, vedere [Applica automaticamente i driver](/sccm/osd/understand/task-sequence-steps#BKMK_AutoApplyDrivers).<br /><br />Questo passaggio usa la variabile della sequenza attività di sola lettura `_SMSTSMediaType`. Se il valore associato non è uguale a `FullMedia`, questo passaggio non viene eseguito.|
+|**Installa Windows e Configuration Manager**|Installare il software client di Configuration Manager. Configuration Manager installa e registra il GUID del client di Configuration Manager. Includere le eventuali **proprietà di installazione** necessarie.|
+|**Installa aggiornamenti**|Specificare il modo in cui gli aggiornamenti software vengono installati nel computer di destinazione. Il computer di destinazione viene valutato alla ricerca di aggiornamenti software applicabili solo in corrispondenza con l'esecuzione di questo passaggio. A questo punto, la valutazione è simile a qualsiasi altro client gestito da Configuration Manager. Per altre informazioni, vedere [Installa aggiornamenti software](/sccm/osd/understand/install-software-updates).<br /><br />Questo passaggio usa la variabile della sequenza attività di sola lettura `_SMSTSMediaType`. Se il valore associato non è uguale a `FullMedia`, questo passaggio non viene eseguito.|
 |**Installa applicazioni**|Specifica le applicazioni da installare nel computer di riferimento.|
 
 ### <a name="group-capture-the-reference-machine"></a>Gruppo: Acquisisci computer di riferimento
@@ -225,12 +225,12 @@ Questo gruppo contiene i passaggi necessari per preparare e acquisire un compute
 
 |Passaggio della sequenza di attività|Descrizione|  
 |-------------------------------|---------------|  
-|**Prepara client di Configuration Manager**|Generalizzare il client di Configuration Manager nel computer di riferimento.|
-|**Prepara sistema operativo**|Esegue Sysprep per generalizzare le finestre. Riavvia quindi il computer nell'immagine di avvio di Windows PE specificata per la sequenza di attività.|
-|**Acquisisci computer di riferimento**|Acquisisce l'immagine nella condivisione di rete specificata e. File WIM.|
+|**Prepara client di Configuration Manager**|Generalizza il client di Configuration Manager nel computer di riferimento.|
+|**Prepara sistema operativo**|Esegue Sysprep per generalizzare Windows. Riavvia quindi il computer nell'immagine di avvio di Windows PE specificata per la sequenza di attività.|
+|**Acquisisci computer di riferimento**|Acquisisce l'immagine nella condivisione di rete e nel file con estensione wim specificati.|
 
 > [!IMPORTANT]
-> Una volta acquisita un'immagine da un computer di riferimento, non acquisire un'altra immagine del sistema operativo dal computer di riferimento. Le voci del registro di sistema vengono create durante la configurazione iniziale. Creare un nuovo computer di riferimento ogni volta che si acquisisce l'immagine del sistema operativo. Se si prevede di usare lo stesso computer di riferimento per creare immagini del sistema operativo future, disinstallare e reinstallare il client di Configuration Manager.
+> Dopo aver acquisito un'immagine da un computer di riferimento, non acquisire un'altra immagine del sistema operativo dal computer di riferimento. Le voci del Registro di sistema vengono create durante la configurazione iniziale. Creare un nuovo computer di riferimento ogni volta che si acquisisce l'immagine del sistema operativo. Se si prevede di usare lo stesso computer di riferimento per creare immagini del sistema operativo future, disinstallare e reinstallare il client di Configuration Manager.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

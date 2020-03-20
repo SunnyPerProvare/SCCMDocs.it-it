@@ -11,20 +11,20 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
 ms.openlocfilehash: 5b85263a3a864db6489be3cd074f0182f1681ccc
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75827248"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405184"
 ---
 # <a name="plan-for-software-updates-in-configuration-manager"></a>Pianificare gli aggiornamenti software in Configuration Manager
 
 *Si applica a: Configuration Manager (Current Branch)*
 
-Prima di usare gli aggiornamenti software in un ambiente di produzione di Configuration Manager, è importante eseguire il processo di pianificazione. La definizione di una pianificazione valida per l'infrastruttura del punto di aggiornamento software è fondamentale per un'implementazione corretta di aggiornamenti software. Per informazioni sulla pianificazione della capacità per gli aggiornamenti software, vedere [numeri di ridimensionamento e scalabilità](/sccm/core/plan-design/configs/size-and-scale-numbers#software-update-point).
+Prima di usare gli aggiornamenti software in un ambiente di produzione di Configuration Manager, è importante eseguire il processo di pianificazione. La definizione di una pianificazione valida per l'infrastruttura del punto di aggiornamento software è fondamentale per un'implementazione corretta di aggiornamenti software. Per informazioni sulla pianificazione della capacità per gli aggiornamenti software, vedere [Numeri di ridimensionamento e scalabilità](/sccm/core/plan-design/configs/size-and-scale-numbers#software-update-point).
 
 
-##  <a name="BKMK_SUPInfrastructure"></a> Determinare l'infrastruttura del punto di aggiornamento software  
+##  <a name="determine-the-software-update-point-infrastructure"></a><a name="BKMK_SUPInfrastructure"></a> Determinare l'infrastruttura del punto di aggiornamento software  
 
 Questa sezione include i seguenti argomenti secondari:    
 - [Elenco dei punti di aggiornamento software](#BKMK_SUPList)
@@ -53,7 +53,7 @@ Il primo punto di aggiornamento software installato su un sito primario è l'ori
 Quando si verifica un errore del punto di aggiornamento software configurato come origine di sincronizzazione per il sito, rimuovere manualmente il ruolo che origina l'errore. Quindi selezionare un nuovo punto di aggiornamento software da usare come origine di sincronizzazione. Per altre informazioni, vedere [Rimuovere il ruolo del sistema del sito del punto di aggiornamento software](../get-started/remove-a-software-update-point.md).  
 
 
-###  <a name="BKMK_SUPList"></a> Elenco dei punti di aggiornamento software  
+###  <a name="software-update-point-list"></a><a name="BKMK_SUPList"></a> Elenco dei punti di aggiornamento software  
 
 Configuration Manager offre al client un elenco di punti di aggiornamento software nei seguenti scenari:  
 
@@ -68,7 +68,7 @@ Il client seleziona un punto di aggiornamento software a caso dall'elenco. Asseg
 -   **Client basati su Internet**: si riceve un elenco di punti di aggiornamento software che è possibile configurare per consentire solo connessioni da Internet oppure un elenco di punti di aggiornamento software che consentono connessioni client Internet e Intranet.  
 
 
-###  <a name="BKMK_SUPSwitching"></a> Passaggio a un nuovo punto di aggiornamento software  
+###  <a name="software-update-point-switching"></a><a name="BKMK_SUPSwitching"></a> Passaggio a un nuovo punto di aggiornamento software  
 
 > [!NOTE]  
 > I client usano i gruppi di limiti per trovare un nuovo punto di aggiornamento software. Se il loro punto di aggiornamento software corrente non è più accessibile, usano anche i gruppi di limiti per eseguire il fallback e trovare un nuovo punto. Aggiungere singoli punti di aggiornamento software a diversi gruppi di limiti per controllare quali server possono essere trovati da un client. Per altre informazioni, vedere [Punti di aggiornamento software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points).  
@@ -104,7 +104,7 @@ Se l'agente di Windows Update invia a Configuration Manager uno dei codici di er
 Per conoscere il significato di un codice di errore, convertire il codice di errore decimale in formato esadecimale e cercare il valore esadecimale in un sito, ad esempio [Windows Update Agent - Error Codes Wiki](https://social.technet.microsoft.com/wiki/contents/articles/15260.windows-update-agent-error-codes.aspx) (Agente di Windows Update: wiki codici di errore). Ad esempio il codice di errore decimale 2149842970 corrisponde a 8024001A esadecimale, ovvero WU_E_POLICY_NOT_SET - Un valore dei criteri non è stato impostato.  
 
 
-###  <a name="BKMK_ManuallySwitchSUPs"></a> Passare manualmente i client a un nuovo punto di aggiornamento software
+###  <a name="manually-switch-clients-to-a-new-software-update-point"></a><a name="BKMK_ManuallySwitchSUPs"></a> Passare manualmente i client a un nuovo punto di aggiornamento software
 
 È possibile commutare i client di Configuration Manager a un nuovo punto di aggiornamento software quando si verificano problemi con il punto di aggiornamento software attivo. Questa modifica avviene solo quando un client riceve più punti di aggiornamento software da un punto di gestione.
 
@@ -123,7 +123,7 @@ Avviare questa modifica in una raccolta di dispositivi. Dopo che l'opzione è st
 2.  Selezionare la raccolta di destinazione. Nel gruppo **Raccolta** della scheda **Home** della barra multifunzione, fare clic su **Notifica client** e quindi su **Passare al punto di aggiornamento software successivo**.  
 
 
-###  <a name="BKMK_SUP_CrossForest"></a> Punti di aggiornamento software in una foresta non trusted  
+###  <a name="software-update-points-in-an-untrusted-forest"></a><a name="BKMK_SUP_CrossForest"></a> Punti di aggiornamento software in una foresta non trusted  
 
 È possibile creare uno o più punti di aggiornamento software in un sito per supportare client in una foresta non trusted. Per aggiungere un punto di aggiornamento software in un'altra foresta, prima installare e configurare un server WSUS nella foresta. Avviare quindi la procedura guidata per aggiungere un server del sito di Configuration Manager con il ruolo di sistema del sito del punto di aggiornamento software. Nella procedura guidata, configurare le seguenti impostazioni per connettersi al server WSUS nella foresta non trusted:  
 
@@ -134,17 +134,17 @@ Avviare questa modifica in una raccolta di dispositivi. Dopo che l'opzione è st
 Ad esempio, si dispone di un sito primario nella foresta A con due punti di aggiornamento software (SUP01 e SUP02). Per lo stesso sito primario vi sono anche due punti di aggiornamento software (SUP03 e SUP04) nella foresta B. Quando si verifica la commutazione al punto di aggiornamento software successivo, i client danno la priorità ai server appartenenti alla stessa foresta.  
 
 
-###  <a name="BKMK_WSUSSyncSource"></a> Usare un server WSUS esistente come origine di sincronizzazione nel sito principale  
+###  <a name="use-an-existing-wsus-server-as-the-synchronization-source-at-the-top-level-site"></a><a name="BKMK_WSUSSyncSource"></a> Usare un server WSUS esistente come origine di sincronizzazione nel sito principale  
 
 In genere, il sito di livello superiore della gerarchia è configurato per sincronizzare i metadati degli aggiornamenti software con Microsoft Update. Quando i criteri di protezione dell'organizzazione non consentono l'accesso a Internet al sito di livello superiore, configurare l'origine di sincronizzazione per il sito di livello superiore per l'uso di un server WSUS. Questo server WSUS non è incluso nella gerarchia di Configuration Manager dell'organizzazione. Ad esempio è presente un server WSUS in una rete connessa a Internet (rete perimetrale), ma il sito di livello superiore si trova in una rete interna senza accesso a Internet. Configurare il server WSUS nella rete perimetrale come origine di sincronizzazione per i metadati degli aggiornamenti software. Configurare il server WSUS nella rete perimetrale per la sincronizzazione degli aggiornamenti software con gli stessi criteri necessari in Configuration Manager. In caso contrario, il sito di livello superiore potrebbe non essere in grado di sincronizzare gli aggiornamenti software previsti. Quando si installa il punto di aggiornamento software, configurare un account di connessione server WSUS. Questo account deve avere accesso al server WSUS nella rete perimetrale. Verificare anche che il firewall consenta il traffico sulle porte appropriate. Per altre informazioni, vedere le [porte usate dal punto di aggiornamento software per l'origine di sincronizzazione](/sccm/core/plan-design/hierarchy/ports#BKMK_PortsSUP-WSUS).  
 
 
-###  <a name="BKMK_SUPSecSite"></a> Punto di aggiornamento software in un sito secondario  
+###  <a name="software-update-point-on-a-secondary-site"></a><a name="BKMK_SUPSecSite"></a> Punto di aggiornamento software in un sito secondario  
 
 Il punto di aggiornamento software è facoltativo in un sito secondario. Installare un solo punto di aggiornamento software in un sito secondario. Quando un punto di aggiornamento software non è installato nel sito secondario, i dispositivi inclusi nei limiti di un sito secondario usano un punto di aggiornamento software nel sito primario assegnato. In genere un punto di aggiornamento software viene installato in un sito secondario in caso di larghezza di banda di rete limitata tra i dispositivi del sito secondario e i punti di aggiornamento software nel sito primario padre. È possibile usare questa configurazione anche quando il punto di aggiornamento software nel sito primario si avvicina al limite di capacità. Dopo l'installazione e la configurazione di un punto di aggiornamento software nel sito secondario, vengono aggiornati criteri a livello di sito per i client e tali client iniziano a usare il nuovo punto di aggiornamento software.  
 
 
-### <a name="bkmk_internet-clients"></a> Pianificare client basati su Internet
+### <a name="plan-for-internet-based-clients"></a><a name="bkmk_internet-clients"></a> Pianificare client basati su Internet
 
 Se è necessario gestire dispositivi che si spostano fuori dalla rete e su Internet, è possibile sviluppare un piano per la gestione di aggiornamenti software in questi dispositivi. Configuration Manager supporta varie tecnologie per questo scenario. Usare una tecnologia o una combinazione di tecnologie in base alle esigenze, per soddisfare i requisiti dell'organizzazione.
 
@@ -164,7 +164,7 @@ Windows Update for Business consente di tenere sempre aggiornati i dispositivi W
 Per altre informazioni, vedere [Integrazione con Windows Update for Business](/sccm/sum/deploy-use/integrate-windows-update-for-business-windows-10).
 
 
-### <a name="bkmk_content"></a> Pianificare il contenuto degli aggiornamenti software
+### <a name="plan-software-update-content"></a><a name="bkmk_content"></a> Pianificare il contenuto degli aggiornamenti software
 
 I client devono scaricare i file di contenuto degli aggiornamenti software per installarli. Configuration Manager offre numerose tecnologie per supportare la gestione e il recapito di questo contenuto. In alternativa è possibile configurare distribuzioni di aggiornamenti software per consentire o richiedere ai client di ottenere il contenuto direttamente dal servizio cloud Microsoft Update.
 
@@ -186,7 +186,7 @@ A partire dalla versione 1806 non è necessario creare un pacchetto di distribuz
 I client basati su Internet scaricano sempre il contenuto dal servizio cloud Microsoft Update. Evitare di distribuire pacchetti di distribuzione di aggiornamenti software a un punto di distribuzione cloud. L'archiviazione nel punto di distribuzione cloud comporta dei costi, ma i client non scaricano i pacchetti. 
 
 
-### <a name="bkmk_thirdparty"></a> Pianificare gli aggiornamenti di terze parti
+### <a name="plan-for-third-party-updates"></a><a name="bkmk_thirdparty"></a> Pianificare gli aggiornamenti di terze parti
 Configuration Manager è integrato con WSUS, che supporta in modo nativo gli aggiornamenti software pubblicati da Microsoft. La maggior parte dei clienti usa altre applicazioni di terze parti che a loro volta richiedono aggiornamenti. Per l'aggiornamento costante delle applicazioni di terze parti è possibile considerare varie opzioni.
 
 #### <a name="supersede-applications-to-update"></a>Sostituire applicazioni le applicazioni da aggiornare
@@ -206,7 +206,7 @@ Per altre informazioni, vedere [System Center Updates Publisher](/sccm/sum/tools
 
 
 
-##  <a name="BKMK_SUPInstallation"></a> Pianificare l'installazione del punto di aggiornamento software  
+##  <a name="plan-for-software-update-point-installation"></a><a name="BKMK_SUPInstallation"></a> Pianificare l'installazione del punto di aggiornamento software  
 
 Questa sezione include i seguenti argomenti secondari:  
 - [Requisiti per il punto di aggiornamento software](#BKMK_SUPSystemRequirements)
@@ -216,7 +216,7 @@ Questa sezione include i seguenti argomenti secondari:
 
 Questa sezione include informazioni sulle procedure per pianificare e preparare l'installazione del punto di aggiornamento software. Prima di creare un ruolo del sistema del sito per il punto di aggiornamento software in Configuration Manager, è necessario considerare diversi requisiti. I requisiti specifici variano a seconda dell'infrastruttura di Configuration Manager. Quando si configura il punto di aggiornamento software per le comunicazioni tramite HTTPS, è particolarmente importante esaminare questa sezione. Per funzionare correttamente, i server abilitati per HTTPS richiedono passaggi aggiuntivi.  
 
-###  <a name="BKMK_SUPSystemRequirements"></a> Requisiti per il punto di aggiornamento software  
+###  <a name="requirements-for-the-software-update-point"></a><a name="BKMK_SUPSystemRequirements"></a> Requisiti per il punto di aggiornamento software  
 
 Installare il ruolo del punto di aggiornamento software in un sistema del sito conforme ai requisiti minimi per WSUS e alle configurazioni supportate per i sistemi del sito di Configuration Manager.  
 
@@ -225,7 +225,7 @@ Installare il ruolo del punto di aggiornamento software in un sistema del sito c
 -   Per altre informazioni sulle configurazioni supportate per i sistemi del sito di Configuration Manager, vedere [Prerequisiti del sito e di sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).  
 
 
-###  <a name="BKMK_PlanningForWSUS"></a> Pianificare l'installazione di WSUS  
+###  <a name="plan-for-wsus-installation"></a><a name="BKMK_PlanningForWSUS"></a> Pianificare l'installazione di WSUS  
 
 Installare su tutti i server del sistema del sito una versione supportata di WSUS, configurata per il ruolo punto di aggiornamento software. Quando non si installa un punto di aggiornamento software nel server del sito, installare la console di amministrazione WSUS nel server del sito. Questo componente consente al server del sito di comunicare con WSUS in esecuzione nel punto di aggiornamento software.  
 
@@ -239,15 +239,15 @@ Per altre informazioni sull'installazione di WSUS in Windows Server, vedere [Ins
 
 In caso di installazione di più di un punto di aggiornamento software in un sito primario, utilizzare lo stesso database WSUS per ciascun punto di aggiornamento software nella stessa foresta Active Directory. La condivisione dello stesso database migliora le prestazioni quando i client passano a un nuovo punto di aggiornamento software. Per altre informazioni, vedere [Usare un database WSUS condiviso per punti di aggiornamento software](/sccm/sum/plan-design/software-updates-best-practices#bkmk_shared-susdb).  
 
-#### <a name="configuring-the-wsus-content-directory-path"></a>Configurazione del percorso della directory di contenuto WSUS
+#### <a name="configuring-the-wsus-content-directory-path"></a>Configurazione del percorso della directory del contenuto WSUS
 
-Quando si installa WSUS, è necessario specificare un percorso di directory contenuto. La directory del contenuto WSUS viene utilizzata principalmente per archiviare i file delle condizioni di licenza software Microsoft richiesti dai client durante l'analisi. Il Configuration Manager la directory del contenuto WSUS non dovrebbe sovrapporsi alla directory di origine del contenuto per Configuration Manager pacchetti di distribuzione software. Se si sovrappone la directory del contenuto WSUS e l'origine del pacchetto Configuration Manager, i file non corretti saranno rimossi dalla directory del contenuto WSUS.
+Quando si installa WSUS è necessario specificare un percorso per la directory del contenuto. La directory del contenuto WSUS viene usata principalmente per archiviare i file delle condizioni di licenza software Microsoft richiesti dai client durante l'analisi. La directory del contenuto WSUS non dovrebbe sovrapporsi alla directory di origine del contenuto per i pacchetti di distribuzione software di Configuration Manager. In caso di sovrapposizione della directory del contenuto WSUS e dell'origine dei pacchetti di Configuration Manager, verranno rimossi file non corretti dalla directory del contenuto WSUS.
 
-####  <a name="BKMK_CustomWebSite"></a> Configurare WSUS per l'uso di un sito Web personalizzato  
+####  <a name="configure-wsus-to-use-a-custom-website"></a><a name="BKMK_CustomWebSite"></a> Configurare WSUS per l'uso di un sito Web personalizzato  
 Quando si installa WSUS, è possibile utilizzare il sito Web predefinito IIS esistente o creare un sito Web di WSUS personalizzato. Creare un sito Web personalizzato per WSUS, in modo che IIS ospiti i servizi WSUS in un sito Web virtuale dedicato. In caso contrario condividerà il sito Web usato dagli altri sistemi del sito o dalle altre applicazioni Configuration Manager. Questa configurazione è particolarmente importante quando si installa il ruolo del punto di aggiornamento software sul server del sito. Quando si esegue WSUS in Windows Server 2012 o versioni successive, per impostazione predefinita WSUS viene configurato con l'uso della porta 8530 per HTTP e della porta 8531 per HTTPS. Specificare queste porte al momento della creazione del punto di aggiornamento software in un sito.  
 
 
-####  <a name="BKMK_WSUSInfrastructure"></a> Uso di un'infrastruttura WSUS esistente  
+####  <a name="use-an-existing-wsus-infrastructure"></a><a name="BKMK_WSUSInfrastructure"></a> Uso di un'infrastruttura WSUS esistente  
 Selezionare un server WSUS che era attivo nell'ambiente prima dell'installazione di Configuration Manager come punto di aggiornamento software. Quando il punto di aggiornamento software è configurato, specificare le impostazioni di sincronizzazione. Configuration Manager si connette al server WSUS eseguito nel punto di aggiornamento software e lo configura con le stesse impostazioni. 
 
 Prima di configurare il server come punto di aggiornamento software, confrontare la configurazione di prodotti e classificazioni con le impostazioni di Configuration Manager. Se il server WSUS esistente è stato sincronizzato prima di configurarlo come punto di aggiornamento software e gli elenchi di prodotti e classificazioni sono diversi, il server sincronizza i metadati degli aggiornamenti software indipendentemente dalle impostazioni configurate. Questo comportamento produce metadati degli aggiornamenti software imprevisti nel database del sito. 
@@ -256,16 +256,16 @@ Lo stesso comportamento viene registrato in caso di aggiunta di prodotti o class
 
 Quando un server WSUS è configurato come punto di aggiornamento software, non è più possibile usarlo come server WSUS autonomo. Se è necessario un server WSUS autonomo separato non gestito da Configuration Manager, configurarlo in un altro server.  
 
-####  <a name="BKMK_WSUSAsReplica"></a> Configurare WSUS come server di replica  
+####  <a name="configure-wsus-as-a-replica-server"></a><a name="BKMK_WSUSAsReplica"></a> Configurare WSUS come server di replica  
 Quando si aggiunge il ruolo punto di aggiornamento software in un server del sito primario, non è possibile usare un server WSUS configurato come una replica. Se il server WSUS viene configurato come server di replica, Configuration Manager non riesce a configurarlo e non è possibile completare la sincronizzazione di WSUS. Il primo punto di aggiornamento software installato in un sito primario è il punto predefinito. I punti di aggiornamento software aggiuntivi nel sito sono configurati come repliche del punto di aggiornamento software predefinito.  
 
-####  <a name="BKMK_WSUSandSSL"></a> Decidere se configurare WSUS per l'uso di SSL  
+####  <a name="decide-whether-to-configure-wsus-to-use-ssl"></a><a name="BKMK_WSUSandSSL"></a> Decidere se configurare WSUS per l'uso di SSL  
 Usare il protocollo SSL per proteggere il punto di aggiornamento software. WSUS utilizza SSL per l'autenticazione tra computer client e server WSUS downstream e il server WSUS. WSUS utilizza inoltre SSL per crittografare i metadati dell'aggiornamento software. Se si sceglie di proteggere WSUS con SSL, preparare il server WSUS prima di installare il punto di aggiornamento software. Per altre informazioni, vedere l'articolo [Configure SSL on the WSUS server](/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#25-secure-wsus-with-the-secure-sockets-layer-protocol) (Configurare SSL nel server WSUS) nella documentazione di WSUS. 
 
 Quando si installa e si configura il punto di aggiornamento software, selezionare l'impostazione **Abilita le comunicazioni SSL per il server WSUS**. In caso contrario, Configuration Manager configura WSUS in modo che non usi SSL. Quando si abilita SSL in un punto di aggiornamento software, configurare anche tutti i punti di aggiornamento software nei siti figlio per l'uso di SSL.  
 
 
-###  <a name="BKMK_ConfigureFirewalls"></a> Configurare i firewall  
+###  <a name="configure-firewalls"></a><a name="BKMK_ConfigureFirewalls"></a> Configurare i firewall  
 
 Il punto di aggiornamento software in un sito di amministrazione centrale di Configuration Manager comunica con WSUS nel punto di aggiornamento software. WSUS comunica con l'origine di sincronizzazione per sincronizzare i metadati degli aggiornamenti software. I punti di aggiornamento software in un sito figlio comunicano con il punto di aggiornamento software nel sito padre. Quando è presente più di un punto di aggiornamento software in un sito primario, i punti di aggiornamento software aggiuntivi comunicano con il punto di aggiornamento software predefinito. Il ruolo predefinito corrisponde al primo punto di aggiornamento software installato nel sito.  
 
@@ -284,7 +284,7 @@ Se l'organizzazione limita le comunicazioni della rete con Internet tramite un f
 Per altre informazioni, vedere i [requisiti di accesso Internet](/sccm/core/plan-design/network/internet-endpoints#bkmk_sum).
 
 
-##  <a name="BKMK_SyncSettings"></a> Pianificare le impostazioni di sincronizzazione  
+##  <a name="plan-for-synchronization-settings"></a><a name="BKMK_SyncSettings"></a> Pianificare le impostazioni di sincronizzazione  
 
 Questa sezione include i seguenti argomenti secondari:  
 - [Origine di sincronizzazione](#BKMK_SyncSource)
@@ -299,7 +299,7 @@ Questa sezione include i seguenti argomenti secondari:
 La sincronizzazione degli aggiornamenti software in Configuration Manager scarica i metadati degli aggiornamenti software in base ai criteri configurati. Il sito di livello superiore nella gerarchia sincronizza gli aggiornamenti software da Microsoft Update. È possibile scegliere di configurare il punto di aggiornamento software nel sito principale per la sincronizzazione con un server WSUS esistente, non nella gerarchia di Configuration Manager. I siti primari figlio sincronizzano i metadati degli aggiornamenti software dal punto di aggiornamento software nel sito di amministrazione centrale. Prima di installare e configurare un punto di aggiornamento software, utilizzare questa sezione per pianificare le impostazioni di sincronizzazione.  
 
 
-###  <a name="BKMK_SyncSource"></a> Origine di sincronizzazione  
+###  <a name="synchronization-source"></a><a name="BKMK_SyncSource"></a> Origine di sincronizzazione  
 
 Le impostazioni dell'origine di sincronizzazione per il punto di aggiornamento software specificano il percorso in cui il punto di aggiornamento software recupera i metadati degli aggiornamenti software. Le impostazioni specificano anche se il processo di sincronizzazione crea eventi di reporting WSUS.  
 
@@ -312,7 +312,7 @@ Le impostazioni dell'origine di sincronizzazione per il punto di aggiornamento s
 -   **Eventi di reporting WSUS:** l'agente di Windows Update nei computer client è in grado di creare messaggi di eventi per il reporting WSUS. Questi eventi non vengono usati da Configuration Manager. Di conseguenza l'opzione **Non creare eventi di reporting WSUS** è selezionata per impostazione predefinita. Quando questi eventi non vengono creati, il client deve connettersi al server WSUS solo durante la valutazione dell'aggiornamento software e le analisi di conformità. Se questi eventi sono necessari per il reporting al di fuori di Configuration Manager, è necessario modificare questa impostazione in modo da creare gli eventi di reporting WSUS.  
 
 
-###  <a name="BKMK_SyncSchedule"></a> Pianificazione della sincronizzazione  
+###  <a name="synchronization-schedule"></a><a name="BKMK_SyncSchedule"></a> Pianificazione della sincronizzazione  
 
 Configurare la pianificazione della sincronizzazione solo nel punto di aggiornamento software del sito principale della gerarchia di Configuration Manager. Quando si configura la pianificazione della sincronizzazione, il punto di aggiornamento software si sincronizza con l'origine di sincronizzazione alla data e all'ora specificata. La pianificazione personalizzata consente di sincronizzare gli aggiornamenti software per l'ottimizzazione dell'ambiente. Prendere in considerazione le esigenze di prestazioni del server WSUS, del server del sito e della rete. Un orario di esempio possono essere le 2:00 una volta alla settimana. In alternativa, avviare manualmente la sincronizzazione nel sito principale usando l'azione **Sincronizzazione degli aggiornamenti software** dal nodo **Tutti gli aggiornamenti software** o **Gruppi di aggiornamenti software** nella console di Configuration Manager.  
 
@@ -322,7 +322,7 @@ Configurare la pianificazione della sincronizzazione solo nel punto di aggiornam
 Dopo il completamento della sincronizzazione del punto di aggiornamento software, questo invia una richiesta di sincronizzazione ai siti figlio. Se sono disponibili punti di aggiornamento software aggiuntivi in un sito primario, il sito invia la richiesta di sincronizzazione a ogni punto di aggiornamento software. Questo processo viene ripetuto in ogni sito nella gerarchia.  
 
 
-###  <a name="BKMK_UpdateClassifications"></a> Classificazioni degli aggiornamenti  
+###  <a name="update-classifications"></a><a name="BKMK_UpdateClassifications"></a> Classificazioni degli aggiornamenti  
 
 Ogni aggiornamento software viene definito in base a una classificazione di aggiornamento che consente di organizzare i diversi tipi di aggiornamenti. Durante il processo di sincronizzazione il sito sincronizza i metadati per le classificazioni selezionate. 
 
@@ -352,7 +352,7 @@ Configurare le impostazioni delle classificazioni aggiornamento solo nel sito di
 >  Prima di sincronizzare per la prima volta è consigliabile deselezionare tutte le classificazioni. Dopo la sincronizzazione iniziale selezionare le classificazioni desiderate, quindi eseguire nuovamente la sincronizzazione.  
 
 
-###  <a name="BKMK_UpdateProducts"></a> Prodotti  
+###  <a name="products"></a><a name="BKMK_UpdateProducts"></a> Prodotti  
 
 I metadati per ogni aggiornamento software definiscono uno o più prodotti ai quali è applicabile l'aggiornamento. Un prodotto è un'edizione specifica di un sistema operativo o di un'applicazione. Un esempio di prodotto è Microsoft Windows 10. Una famiglia di prodotti è il sistema operativo o l'applicazione di base da cui derivano i singoli prodotti. Un esempio di famiglia di prodotti è Microsoft Windows, alla quale appartengono Windows 10 e Windows Server 2016. Selezionare una famiglia di prodotti o singoli prodotti all'interno di una famiglia di prodotti.  
 
@@ -364,7 +364,7 @@ Configurare le impostazioni del prodotto solo nel sito di livello superiore. Tal
 >  Configuration Manager archivia un elenco di prodotti e famiglie di prodotti che è possibile scegliere quando si installa per la prima volta il punto di aggiornamento software. I prodotti e le famiglie di prodotti rilasciate dopo il rilascio di Configuration Manager potrebbero non essere disponibili per la selezione finché non si completa la sincronizzazione. Il processo di sincronizzazione aggiorna l'elenco dei prodotti e delle famiglie di prodotti disponibili e selezionabili. Deselezionare tutti i prodotti prima di sincronizzare gli aggiornamenti software per la prima volta. Dopo la sincronizzazione iniziale selezionare i prodotti desiderati, quindi eseguire nuovamente la sincronizzazione.  
 
 
-###  <a name="BKMK_SupersedenceRules"></a> Regole di sostituzione  
+###  <a name="supersedence-rules"></a><a name="BKMK_SupersedenceRules"></a> Regole di sostituzione  
 
 In genere, un aggiornamento software che sostituisce un altro aggiornamento software consente di effettuare una o più delle seguenti azioni:  
 
@@ -386,9 +386,9 @@ Prendere in considerazione i seguenti scenari in cui potrebbe essere necessario 
 
     > [!NOTE]  
     > - Prima di Configuration Manager versione 1806, quando Configuration Manager imposta un aggiornamento software sostituito su **Scaduto**, non imposta l'aggiornamento su **Rifiutato** in WSUS. I client continuano a eseguire l'analisi dell'aggiornamento scaduto finché l'aggiornamento non viene rifiutato manualmente o tramite uno script personalizzato.  Dopo Configuration Manager versione 1806, Configuration Manager rifiuterà anche gli aggiornamenti sostituiti in WSUS. Per altre informazioni sull'attività di pulizia di WSUS, vedere [Manutenzione degli aggiornamenti software](/sccm/sum/deploy-use/software-updates-maintenance).
-    > - A partire da Configuration Manager versione 1810, è possibile specificare il comportamento delle regole sostituzione per **gli aggiornamenti delle funzionalità** separatamente dagli **aggiornamenti non delle funzionalità**.
+    > - A partire dalla versione 1810 è possibile specificare il comportamento delle regole di sostituzione per gli **aggiornamenti delle funzionalità** separatamente dagli **aggiornamenti non delle funzionalità**.
 
-###  <a name="BKMK_UpdateLanguages"></a> Lingue  
+###  <a name="languages"></a><a name="BKMK_UpdateLanguages"></a> Lingue  
 
 Le impostazioni della lingua per il punto di aggiornamento software consentono di configurare: 
 - Le lingue per cui i dettagli di riepilogo (metadati degli aggiornamenti software) vengono sincronizzati per gli aggiornamenti software  
@@ -417,7 +417,7 @@ Configurare le impostazioni dei dettagli di riepilogo solo nel sito di livello s
 >  Selezionare tutte le lingue necessarie per i dettagli di riepilogo. Quando il punto di aggiornamento software nel sito di livello superiore viene sincronizzato con l'origine di sincronizzazione, le lingue dei dettagli di riepilogo selezionate determinano i metadati degli aggiornamenti software recuperati. Se si modificano le lingue dei dettagli di riepilogo dopo che la sincronizzazione è stata eseguita almeno una volta, i metadati degli aggiornamenti software vengono recuperati solo per aggiornamenti software nuovi o modificati. Gli aggiornamenti software che sono già stati sincronizzati non vengono aggiornati con i nuovi metadati per le lingue modificate, a meno che non sia presente una modifica all'aggiornamento software nell'origine di sincronizzazione.
 
 
-###  <a name="bkmk_maxruntime"></a> Tempo di esecuzione massimo
+###  <a name="maximum-run-time"></a><a name="bkmk_maxruntime"></a> Tempo di esecuzione massimo
 <!--3734426-->
 *(Funzionalità introdotta nella versione 1906)*
 
@@ -442,22 +442,22 @@ A partire dalla versione 1906, è possibile specificare il tempo di esecuzione m
 - Tutti gli altri prodotti e classificazioni non sono configurabili con questa impostazione. Se è necessario modificare il tempo di esecuzione massimo di uno di questi aggiornamenti, [configurare le impostazioni di aggiornamento software](/sccm/sum/get-started/manage-settings-for-software-updates#BKMK_SoftwareUpdatesSettings)
 
 > [!NOTE]
-> Nella versione 1906, il runtime massimo non è disponibile quando si installa il punto di aggiornamento software di livello superiore. Al termine dell'installazione, modificare il tempo di esecuzione massimo nel punto di aggiornamento software di livello superiore.
+> Nella versione 1906 il tempo di esecuzione massimo non è disponibile quando si installa il punto di aggiornamento software principale. Al termine dell'installazione, modificare il tempo di esecuzione massimo nel punto di aggiornamento software principale.
 
-##  <a name="BKMK_MaintenanceWindow"></a> Piano per una finestra di manutenzione di aggiornamenti software  
+##  <a name="plan-for-a-software-updates-maintenance-window"></a><a name="BKMK_MaintenanceWindow"></a> Piano per una finestra di manutenzione di aggiornamenti software  
 
 Aggiungere una finestra di manutenzione dedicata per l'installazione di aggiornamenti software. Questa azione consente di configurare una finestra di manutenzione generale e una finestra di manutenzione diversa per gli aggiornamenti software. Quando si configura sia una finestra di manutenzione generale sia una finestra di manutenzione degli aggiornamenti software, i client installano aggiornamenti software solo nella finestra di manutenzione degli aggiornamenti software. 
 
-A partire da Configuration Manager versione 1810, è possibile modificare questo comportamento e consentire l'installazione degli aggiornamenti software durante una finestra di manutenzione generale. Per altre informazioni su questa impostazione client, vedere [Impostazioni client degli aggiornamenti software](/sccm/core/clients/deploy/about-client-settings#bkmk_SUMMaint).
+A partire da Configuration Manager versione 1810 è possibile modificare questo comportamento e consentire l'installazione degli aggiornamenti software durante una finestra di manutenzione generale. Per altre informazioni su questa impostazione client, vedere [Impostazioni client degli aggiornamenti software](/sccm/core/clients/deploy/about-client-settings#bkmk_SUMMaint).
 
 Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
 
-##  <a name="BKMK_RestartOptions"></a> Opzioni di riavvio per i client Windows 10 dopo l'installazione degli aggiornamenti software
+##  <a name="restart-options-for-windows-10-clients-after-software-update-installation"></a><a name="BKMK_RestartOptions"></a> Opzioni di riavvio per i client Windows 10 dopo l'installazione degli aggiornamenti software
 
 Quando un aggiornamento software che richiede il riavvio viene distribuito e installato tramite Configuration Manager, il client pianifica un riavvio in sospeso e visualizza una finestra di dialogo di riavvio.
 
-Quando è presente un riavvio in sospeso per un aggiornamento software di Configuration Manager, tra le opzioni di risparmio energia di Windows nei computer Windows 10 sono disponibili **Aggiorna e riavvia** e **Aggiorna e arresta**. Dopo che una di queste opzioni è stata usata e il computer è stato riavviato, la finestra di dialogo di riavvio non viene visualizzata. In alcuni casi, il sistema operativo può rimuovere le opzioni di riavvio in sospeso. Questo problema può verificarsi se è abilitata la funzionalità avvio rapido di Windows 10. Per ulteriori informazioni, vedere [gli aggiornamenti potrebbero non essere installati con avvio rapido in Windows 10](https://support.microsoft.com/help/4011287/windows-updates-not-install-with-fast-startup).
+Quando è presente un riavvio in sospeso per un aggiornamento software di Configuration Manager, tra le opzioni di risparmio energia di Windows nei computer Windows 10 sono disponibili **Aggiorna e riavvia** e **Aggiorna e arresta**. Dopo che una di queste opzioni è stata usata e il computer è stato riavviato, la finestra di dialogo di riavvio non viene visualizzata. In alcuni casi, il sistema operativo può rimuovere le opzioni di riavvio in sospeso. Ciò può verificarsi se è abilitata la funzionalità Avvio rapido di Windows 10. Per altre informazioni, vedere [Gli aggiornamenti potrebbero non essere installati con Avvio rapido in Windows 10](https://support.microsoft.com/help/4011287/windows-updates-not-install-with-fast-startup).
 
 
 

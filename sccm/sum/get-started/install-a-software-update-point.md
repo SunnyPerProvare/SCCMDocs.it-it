@@ -11,11 +11,11 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b099a645-6434-498f-a408-1d438e394396
 ms.openlocfilehash: c46e20e2a74e18edc7fdc5a10a2103a52785cc44
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75827299"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405154"
 ---
 # <a name="install-and-configure-a-software-update-point"></a>installare e configurare un punto di aggiornamento software  
 
@@ -56,7 +56,7 @@ ms.locfileid: "75827299"
 ## <a name="wsus-settings"></a>Impostazioni di WSUS  
  È necessario configurare le impostazioni WSUS in diverse pagine della **Creazione guidata server del sistema sito** o dell'**Aggiunta guidata ruoli del sistema del sito** in base alla versione di Configuration Manager in uso e, in alcuni casi, solo nelle proprietà per il punto di aggiornamento software, note anche come Proprietà del componente del punto di aggiornamento software. Utilizzare le informazioni nelle sezioni riportate di seguito per configurare le impostazioni WSUS.  
 
-### <a name="BKMK_wsusport"></a>Impostazioni della porta WSUS  
+### <a name="wsus-port-settings"></a><a name="BKMK_wsusport"></a>Impostazioni della porta WSUS  
  È necessario configurare le impostazioni della porta di WSUS nella pagina Punto di aggiornamento software della procedura guidata o nelle proprietà del punto di aggiornamento software. Usare la procedura seguente per determinare le impostazioni della porta usate da Windows Server Update Services.  
 
 #### <a name="to-determine-the-port-settings-used-in-iis"></a>Per determinare le impostazioni della porta usate in IIS  
@@ -74,7 +74,7 @@ ms.locfileid: "75827299"
 ### <a name="wsus-server-connection-account"></a>Account di connessione al server WSUS  
  È possibile configurare un account che il server del sito utilizzerà per connettersi a WSUS in esecuzione nel punto di aggiornamento software. Se non si configura questo account, Configuration Manager si connette a WSUS tramite l'account computer del server del sito. Configurare l'account di connessione al server WSUS nella pagina **Impostazioni proxy e account** della procedura guidata o nella scheda **Impostazioni proxy e account** nelle proprietà del punto di aggiornamento software.  È possibile configurare l'account nelle pagine della procedura guidata a seconda della versione di Configuration Manager in uso.  
 
- Per ulteriori informazioni sugli account Configuration Manager, vedere [account utilizzati](../../core/plan-design/hierarchy/accounts.md).  
+ Per altre informazioni sugli account di Configuration Manager, vedere [Account usati](../../core/plan-design/hierarchy/accounts.md).  
 
 ## <a name="synchronization-source"></a>Origine di sincronizzazione  
  È possibile configurare l'origine sincronizzazione upstream per la sincronizzazione degli aggiornamenti software nella pagina **Origine sincronizzazione** della procedura guidata oppure nella scheda **Impostazioni di sincronizzazione** in Proprietà del componente del punto di aggiornamento software. Le opzioni per l'origine di sincronizzazione variano a seconda del sito.  
@@ -114,7 +114,7 @@ ms.locfileid: "75827299"
 >  Quando si sceglie di non abilitare la sincronizzazione degli aggiornamenti software su una pianificazione, è possibile sincronizzare manualmente tali aggiornamenti dal nodo **Tutti gli aggiornamenti software** o **Gruppi di aggiornamenti software** nell'area di lavoro Raccolta software. Per altre informazioni, vedere [Synchronize software updates from a disconnected software update point](synchronize-software-updates.md) (Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso).  
 
 ## <a name="supersedence-rules"></a>Regole di sostituzione  
- Configurare le impostazioni di sostituzione nella pagina **Regole di sostituzione** della procedura guidata o nella scheda **Regole di sostituzione** in Proprietà del componente del punto di aggiornamento software. È possibile configurare le regole di sostituzione solo nel sito di livello superiore. A partire da Configuration Manager versione 1810, è possibile specificare il comportamento delle regole sostituzione per **gli aggiornamenti delle funzionalità** separatamente dagli **aggiornamenti non delle funzionalità**. <!--3098809, 2977644-->
+ Configurare le impostazioni di sostituzione nella pagina **Regole di sostituzione** della procedura guidata o nella scheda **Regole di sostituzione** in Proprietà del componente del punto di aggiornamento software. È possibile configurare le regole di sostituzione solo nel sito di livello superiore. A partire dalla versione 1810 è possibile specificare il comportamento delle regole di sostituzione per gli **aggiornamenti delle funzionalità** separatamente dagli **aggiornamenti non delle funzionalità**. <!--3098809, 2977644-->
 
  In questa pagina è possibile specificare di applicare immediatamente la scadenza agli aggiornamenti software sostituiti, impedendo in tal modo che siano inclusi nelle nuove distribuzioni e contrassegnando le distribuzioni esistenti per indicare che gli aggiornamenti software sostituiti contengono uno o più aggiornamenti scaduti. In alternativa, è possibile specificare un periodo di tempo prima della scadenza degli aggiornamenti software sostituiti, che consente di continuare a distribuirli. Per altre informazioni, vedere [Supersedence rules](../plan-design/plan-for-software-updates.md#BKMK_SupersedenceRules).  
 
