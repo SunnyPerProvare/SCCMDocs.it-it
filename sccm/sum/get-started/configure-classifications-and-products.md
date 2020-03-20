@@ -11,11 +11,11 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
 ms.openlocfilehash: 6ba9501ffda5f4dc41b969bb302640fc7e59ebe6
-ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
-ms.translationtype: MTE75
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77516334"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405144"
 ---
 # <a name="configure-classifications-and-products-to-synchronize"></a>configurare le classificazioni e i prodotti per la sincronizzazione  
 
@@ -67,7 +67,7 @@ I metadati degli aggiornamenti software vengono recuperati durante il processo d
     > - Le [regole di distribuzione automatica](/sccm/sum/deploy-use/automatically-deploy-software-updates#bkmk_adr-process) contenenti il prodotto **Windows 10** verranno aggiornate in modo da includere **Windows 10 versione 1903 e successive**.
     > - I [piani di manutenzione](/sccm/osd/deploy-use/manage-windows-as-a-service#servicing-plan-workflow) vengono aggiornati in modo che includano il prodotto **Windows 10 versione 1903 e successive**.
 
-## <a name="bkmk_Surface"></a> Includere i driver di Microsoft Surface e gli aggiornamenti del firmware
+## <a name="include-microsoft-surface-drivers-and-firmware-updates"></a><a name="bkmk_Surface"></a> Includere i driver di Microsoft Surface e gli aggiornamenti del firmware
 
 Per sincronizzare i driver di Microsoft Surface, è possibile selezionare la casella di controllo **Includi i driver di Microsoft Surface e gli aggiornamenti del firmware**.<!--1098490--> Tutti i punti di aggiornamento software devono eseguire Windows Server 2016 con installato l'aggiornamento cumulativo [KB4025339](https://support.microsoft.com/help/4025339) o versione successiva per sincronizzare correttamente i driver di Surface. Se si abilita un punto di aggiornamento software in un computer che esegue Windows Server 2012 dopo aver abilitato i driver per Surface, i risultati dell'analisi per gli aggiornamenti dei driver non saranno accurati. Questo comportamento causa la visualizzazione di dati di conformità non corretti nella console di Configuration Manager e nei report di Configuration Manager.  
 
@@ -127,7 +127,7 @@ Se si usa Configuration Manager 1902 con i client Windows 10, versione 1903, sar
 - Aggiornare eventuali [regole di distribuzione automatica](/sccm/sum/deploy-use/automatically-deploy-software-updates#bkmk_adr-process) per i client Windows 10, versione 1903.
 - Aggiornare i [piani di manutenzione](/sccm/osd/deploy-use/manage-windows-as-a-service#servicing-plan-workflow) per i client Windows 10, versione 1903.
 
-## <a name="bkmk_WIfB"></a> Programma Windows Insider
+## <a name="windows-insider-program"></a><a name="bkmk_WIfB"></a> Programma Windows Insider
 <!--3556023-->
 A partire da settembre 2019 è possibile eseguire la manutenzione e l'aggiornamento dei dispositivi che eseguono build di Windows Insider Preview con Configuration Manager. Questa modifica significa che è possibile gestire questi dispositivi senza modificare i normali processi o abilitare Windows Update per le aziende. È possibile scaricare gli aggiornamenti delle funzionalità e gli aggiornamenti cumulativi per le build di Windows Insider Preview in Configuration Manager esattamente come qualsiasi altro aggiornamento di Windows 10. Per altre informazioni, vedere il post di blog [Publishing pre-release Windows 10 Feature Updates to WSUS](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Publishing-pre-release-Windows-10-feature-updates-to-WSUS/ba-p/845054) (Pubblicazione di aggiornamenti delle funzionalità di Windows 10 in WSUS).
 
@@ -177,7 +177,7 @@ Per altre informazioni su come distribuire gli aggiornamenti, vedere [Gestire Wi
 
 Gli aggiornamenti cumulativi per Windows Insider saranno disponibili per WSUS e per estensione per Configuration Manager. Questi aggiornamenti cumulativi verranno rilasciati con una frequenza simile a quella degli aggiornamenti cumulativi di Windows 10 versione 1903. Gli aggiornamenti cumulativi per Windows Insider sono disponibili nella categoria di prodotto **Versione preliminare di Windows Insider** e vengono classificati come **Aggiornamenti della sicurezza** o **Aggiornamenti**. È possibile distribuire gli aggiornamenti cumulativi per Windows Insider usando il normale processo di aggiornamento software con le [regole di distribuzione automatica](/sccm/sum/deploy-use/automatically-deploy-software-updates) o le [distribuzioni in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json).
 
-## <a name="bkmk_ESU"></a> Aggiornamenti della sicurezza estesa e Configuration Manager
+## <a name="extended-security-updates-and-configuration-manager"></a><a name="bkmk_ESU"></a> Aggiornamenti della sicurezza estesa e Configuration Manager
 
 Gli [aggiornamenti della sicurezza estesa (ESU, Extended Security Updates) ](https://support.microsoft.com/help/4497181/lifecycle-faq-extended-security-updates) sono un'ultima soluzione per i clienti che devono eseguire alcuni prodotti Microsoft legacy oltre la fine del supporto. Il programma ESU include aggiornamenti della sicurezza critici e/o importanti definiti dal [Microsoft Security Response Center (MSRC) ](https://www.microsoft.com/msrc) per un massimo di tre anni dopo la data di fine del supporto "Extended" del prodotto.
 

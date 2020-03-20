@@ -11,11 +11,11 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: a1abddbd886d3bf4374219b7a6174d67d4ff8b81
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76033377"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405744"
 ---
 # <a name="install-in-console-updates-for-configuration-manager"></a>Installare gli aggiornamenti nella console per Configuration Manager
 
@@ -90,11 +90,11 @@ Per impostazione predefinita, la classe **Pacchetti di aggiornamento** (SMS_CM_U
 - Assegnare l'account all'ambito **Tutto**.  
 
 
-## <a name="bkmk_beforeinstall"></a> Prima di installare un aggiornamento nella console  
+## <a name="before-you-install-an-in-console-update"></a><a name="bkmk_beforeinstall"></a> Prima di installare un aggiornamento nella console  
 
 Esaminare i passaggi seguenti prima di installare un aggiornamento dalla console di Configuration Manager.  
 
-### <a name="bkmk_step1"></a> Passaggio 1: Esaminare l'elenco di controllo dell'aggiornamento  
+### <a name="step-1-review-the-update-checklist"></a><a name="bkmk_step1"></a> Passaggio 1: Esaminare l'elenco di controllo dell'aggiornamento  
 
 Esaminare l'elenco di controllo dell'aggiornamento valido per le azioni da eseguire prima di iniziare l'aggiornamento:
 
@@ -106,7 +106,7 @@ Esaminare l'elenco di controllo dell'aggiornamento valido per le azioni da esegu
 
 - [Elenco di controllo per l'installazione dell'aggiornamento 1810](/sccm/core/servers/manage/checklist-for-installing-update-1810)  
 
-### <a name="bkmk_step2"></a> Passaggio 2: Eseguire il controllo dei prerequisiti prima di installare un aggiornamento  
+### <a name="step-2-run-the-prerequisite-checker-before-installing-an-update"></a><a name="bkmk_step2"></a> Passaggio 2: Eseguire il controllo dei prerequisiti prima di installare un aggiornamento  
 
 Prima di installare un aggiornamento, si consiglia di eseguire il controllo dei prerequisiti per l'aggiornamento. Se si esegue il prerequisito prima di installare un aggiornamento:  
 
@@ -138,7 +138,7 @@ Successivamente, quando si installa l'aggiornamento, è possibile configurarlo i
     3. Per altre informazioni, visualizzare **ConfigMgrPrereq.log** nel server del sito.  
 
 
-## <a name="bkmk_install"></a> Installare gli aggiornamenti nella console  
+## <a name="install-in-console-updates"></a><a name="bkmk_install"></a> Installare gli aggiornamenti nella console  
 
 Quando si è pronti per installare gli aggiornamenti dalla console di Configuration Manager, iniziare con il sito principale della gerarchia. Questo è il sito di amministrazione centrale o un sito primario autonomo.  
 
@@ -152,7 +152,7 @@ Installare l'aggiornamento fuori dal normale orario di ufficio per ogni sito per
 
 - Dopo che il server del sito ha completato correttamente l'installazione di un aggiornamento, aggiorna automaticamente tutti i ruoli del sistema del sito applicabili. La reinstallazione e la disconnessione per l'aggiornamento, tuttavia, non vengono eseguite contemporaneamente in tutti i punti di distribuzione. Il server del sito usa le impostazioni di distribuzione del contenuto del sito stesso per distribuire l'aggiornamento a un subset di punti di distribuzione alla volta. Ne consegue che solo alcuni punti di distribuzione saranno offline per consentire l'installazione dell'aggiornamento. I punti di distribuzione in cui non è stato avviato l'aggiornamento o in cui è stato completato restano online e possono continuare a fornire contenuto ai client.
 
-### <a name="bkmk_overview"></a> Panoramica dell'installazione degli aggiornamenti nella console  
+### <a name="overview-of-in-console-update-installation"></a><a name="bkmk_overview"></a> Panoramica dell'installazione degli aggiornamenti nella console  
 
 #### <a name="1-when-the-update-installation-starts"></a>1. Quando viene avviata l'installazione dell'aggiornamento
 
@@ -238,11 +238,11 @@ Dopo aver completato l'aggiornamento della console, verificare che le versioni d
 > [!Note]  
 > La versione della console è leggermente diversa da quella del sito. La versione secondaria della console corrisponde alla versione finale di Configuration Manager. Ad esempio, in Configuration Manager versione 1802 la versione iniziale del sito è 5.0.8634.1000 e la versione iniziale della console è 5.**1802**.1082.1700. Con i futuri hotfix è possibile che i numeri di build (1082) e revisione (1700) cambino.
 
-### <a name="bkmk_toptier"></a> Per avviare l'installazione dell'aggiornamento nel sito principale  
+### <a name="to-start-the-update-installation-at-the-top-level-site"></a><a name="bkmk_toptier"></a> Per avviare l'installazione dell'aggiornamento nel sito principale  
 
 Nel sito principale della gerarchia passare all'area di lavoro **Amministrazione** nella console di Configuration Manager e selezionare il nodo **Aggiornamenti e manutenzione**. Selezionare un aggiornamento con lo stato **Disponibile** e quindi scegliere **Installa pacchetto di aggiornamento** sulla barra multifunzione.  
 
-### <a name="bkmk_secondary"></a> Per avviare l'installazione dell'aggiornamento in un sito secondario  
+### <a name="to-start-the-update-installation-at-a-secondary-site"></a><a name="bkmk_secondary"></a> Per avviare l'installazione dell'aggiornamento in un sito secondario  
 
 Dopo l'aggiornamento del sito primario padre di un sito secondario, aggiornare il sito secondario dalla console di Configuration Manager. A tale scopo, usare l' **aggiornamento guidato per i siti secondari**.  
 
@@ -319,7 +319,7 @@ Le attività di post-installazione includono:
     - Non vengono visualizzate le singole funzionalità.
 
 
-## <a name="bkmk_retry"></a> Ripetere l'installazione di un aggiornamento non riuscito  
+## <a name="retry-installation-of-a-failed-update"></a><a name="bkmk_retry"></a> Ripetere l'installazione di un aggiornamento non riuscito  
 
 Quando l'installazione di un aggiornamento non riesce, esaminare i commenti nella console per individuare le possibili soluzioni per gli errori e gli avvisi. Per altri dettagli, visualizzare **ConfigMgrPrereq.log** nel server del sito. Prima di riprovare l'installazione di un aggiornamento, è necessario correggere gli errori ed è consigliabile correggere anche gli avvisi.  
 
@@ -362,7 +362,7 @@ Passare all'area di lavoro **Monitoraggio** e selezionare il nodo **Site Servici
 
 - **Ignora avvisi dei prerequisiti**: se l'installazione dell'aggiornamento si interrompe a causa di un avviso, è quindi possibile selezionare **Ignora avvisi dei prerequisiti**. Questa azione consente di continuare l'installazione dell'aggiornamento dopo alcuni minuti, usando l'opzione per ignorare gli avvisi relativi ai prerequisiti.  
 
-## <a name="bkmk_after"></a> Dopo l'installazione di un aggiornamento in un sito  
+## <a name="after-a-site-installs-an-update"></a><a name="bkmk_after"></a> Dopo l'installazione di un aggiornamento in un sito  
 
 Dopo l'aggiornamento del sito, esaminare l'elenco di controllo post-aggiornamento per la versione applicabile:  
 
@@ -374,7 +374,7 @@ Dopo l'aggiornamento del sito, esaminare l'elenco di controllo post-aggiornament
 
 - [Elenco di controllo post-aggiornamento per la versione 1810](/sccm/core/servers/manage/checklist-for-installing-update-1810#post-update-checklist)  
 
-## <a name="bkmk_options"></a> Abilitare le funzionalità facoltative degli aggiornamenti  
+## <a name="enable-optional-features-from-updates"></a><a name="bkmk_options"></a> Abilitare le funzionalità facoltative degli aggiornamenti  
 
 Quando un aggiornamento include una o più funzionalità facoltative, è possibile abilitare queste funzionalità nella gerarchia. Abilitare le funzionalità durante l'installazione dell'aggiornamento oppure tornare nella console in un secondo momento per abilitare le funzionalità facoltative.
 
@@ -423,12 +423,12 @@ Le funzionalità seguenti sono facoltative nella versione più recente di Config
 > Per altre informazioni sulle funzionalità disponibili solo nel ramo Technical Preview, vedere [Technical Preview](/sccm/core/get-started/technical-preview).
 
 
-## <a name="bkmk_prerelease"></a> Usare le funzionalità di versioni non definitive degli aggiornamenti
+## <a name="use-pre-release-features-from-updates"></a><a name="bkmk_prerelease"></a> Usare le funzionalità di versioni non definitive degli aggiornamenti
 
 La versione Current Branch include le funzionalità di versioni non definitive a scopo di test preliminare in un ambiente di produzione. Per altre informazioni, vedere [Funzionalità di versioni non definitive](/sccm/core/servers/manage/pre-release-features).
 
 
-## <a name="bkmk_faq"></a> Domande frequenti
+## <a name="frequently-asked-questions"></a><a name="bkmk_faq"></a> Domande frequenti
 
 ### <a name="why-dont-i-see-certain-updates-in-my-console"></a>Perché alcuni aggiornamenti non vengono visualizzati nella console?
 

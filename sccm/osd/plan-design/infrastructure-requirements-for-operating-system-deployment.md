@@ -11,11 +11,11 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: 41a690aa8233f2812934d58b69bbb9461da675fd
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75821189"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405264"
 ---
 # <a name="infrastructure-requirements-for-os-deployment-in-configuration-manager"></a>Requisiti dell'infrastruttura per la distribuzione del sistema operativo in Configuration Manager
 
@@ -25,7 +25,7 @@ La distribuzione del sistema operativo in Configuration Manager ha dipendenze es
 
 
 
-##  <a name="BKMK_ExternalDependencies"></a> Dipendenze esterne a Configuration Manager  
+##  <a name="dependencies-external-to-configuration-manager"></a><a name="BKMK_ExternalDependencies"></a> Dipendenze esterne a Configuration Manager  
 
 Questa sezione offre informazioni su strumenti esterni, kit di installazione e versioni di sistemi operativi richiesti per distribuire sistemi operativi in Configuration Manager.  
 
@@ -133,7 +133,7 @@ Quando si installa Windows nel computer di destinazione, è possibile usare i dr
 
 
 
-##  <a name="BKMK_InternalDependencies"></a> Dipendenze di Configuration Manager  
+##  <a name="configuration-manager-dependencies"></a><a name="BKMK_InternalDependencies"></a> Dipendenze di Configuration Manager  
 
 Questa sezione offre informazioni sui prerequisiti di distribuzione del sistema operativo di Configuration Manager.  
 
@@ -207,7 +207,7 @@ Usare gli ambiti di protezione per consentire agli utenti amministratori di acce
 
 
 
-##  <a name="BKMK_WDS"></a> Servizi di distribuzione Windows  
+##  <a name="windows-deployment-services"></a><a name="BKMK_WDS"></a> Servizi di distribuzione Windows  
 
 Fino alla versione 1802 è necessario installare Servizi di distribuzione Windows (WDS) nello stesso server dei punti di distribuzione configurati per il supporto di multicast o PXE. WDS è incluso nel sistema operativo server. Per le distribuzioni PXE, WDS è il servizio che esegue l'avvio PXE. Quando il punto di distribuzione viene installato e attivato per PXE, Configuration Manager installa un provider in WDS che usa le funzioni di avvio PXE di WDS.  
 
@@ -227,7 +227,7 @@ A partire dalla versione 1806 è possibile abilitare PXE in un punto di distribu
 -   Se il provider è installato in un server remoto, installare WDS nel server del sito e nel provider remoto.  
 
 
-###  <a name="BKMK_WDSandDHCP"></a> Considerazioni in presenza di Servizi di distribuzione Windows e DHCP nello stesso server  
+###  <a name="considerations-when-you-have-wds-and-dhcp-on-the-same-server"></a><a name="BKMK_WDSandDHCP"></a> Considerazioni in presenza di Servizi di distribuzione Windows e DHCP nello stesso server  
 
 Se si prevede di co-ospitare il punto di distribuzione in un server che esegue DHCP, valutare i problemi di configurazione seguenti:  
 
@@ -266,13 +266,13 @@ Se si prevede di co-ospitare il punto di distribuzione in un server che esegue D
 > A partire dalla versione 1902, quando si abilita un risponditore PXE in un punto di distribuzione senza i Servizi di distribuzione Windows, è ora possibile abilitarlo sullo stesso server del servizio DHCP. Per altre informazioni, vedere [Configurare almeno un punto di distribuzione per accettare le richieste PXE](/sccm/osd/deploy-use/use-pxe-to-deploy-windows-over-the-network#BKMK_Configure).
 
 
-##  <a name="BKMK_SupportedOS"></a> Sistemi operativi supportati  
+##  <a name="supported-operating-systems"></a><a name="BKMK_SupportedOS"></a> Sistemi operativi supportati  
 
 Tutti i sistemi operativi Windows indicati come client supportati in [Sistemi operativi supportati per client e dispositivi](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices) sono supportati per la distribuzione del sistema operativo.  
 
 
 
-##  <a name="BKMK_SupportedDiskConfig"></a> Configurazioni supportate per i dischi  
+##  <a name="supported-disk-configurations"></a><a name="BKMK_SupportedDiskConfig"></a> Configurazioni supportate per i dischi  
 
 Le combinazioni di configurazioni di dischi rigidi nei computer di riferimento e di destinazione supportate per la distribuzione del sistema operativo con Configuration Manager sono visualizzate nella tabella seguente:  
 

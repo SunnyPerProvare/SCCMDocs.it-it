@@ -11,11 +11,11 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: 3158c55ad7e0ba62f4607eaf69560bc87badfe06
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76917183"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405794"
 ---
 # <a name="prerequisites-for-installing-configuration-manager-sites"></a>Prerequisiti per l'installazione di siti di Configuration Manager
 
@@ -34,7 +34,7 @@ I prerequisiti seguenti si applicano all'installazione di uno dei tipi seguenti:
 
 Se si installa un sito di amministrazione centrale come parte di un'espansione della gerarchia, vedere [Espansione di un sito primario autonomo](#bkmk_expand).
 
-### <a name="bkmk_PrereqPri"></a> Prerequisiti per l'installazione di un sito primario o un sito di amministrazione centrale  
+### <a name="prerequisites-for-installing-a-primary-site-or-a-central-administration-site"></a><a name="bkmk_PrereqPri"></a> Prerequisiti per l'installazione di un sito primario o un sito di amministrazione centrale  
 
 - Installare i ruoli, le funzionalità e i componenti di Windows Server necessari. Per altre informazioni, vedere [Prerequisiti del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites#bkmk_2012sspreq)  
 
@@ -70,7 +70,7 @@ Se si installa un sito di amministrazione centrale come parte di un'espansione d
 
 - Il server del sito e i server di database del sito devono soddisfare tutte le configurazioni dei prerequisiti. Prima di avviare il programma di installazione di Configuration Manager, [eseguire manualmente Controllo prerequisiti](/sccm/core/servers/deploy/install/prerequisite-checker) per identificare e risolvere eventuali problemi.  
 
-### <a name="bkmk_expand"></a> Prerequisiti per l'espansione di un sito primario autonomo
+### <a name="prerequisites-to-expand-a-stand-alone-primary-site"></a><a name="bkmk_expand"></a> Prerequisiti per l'espansione di un sito primario autonomo
 
 Un sito primario autonomo deve soddisfare i seguenti prerequisiti ai fini dell'espansione in una gerarchia con un sito di amministrazione centrale:
 
@@ -145,7 +145,7 @@ In alternativa, rimuovere e quindi ricreare la connessione al servizio:
 3. Riconfigurare la connessione al servizio di Azure per l'uso con Configuration Manager.  
 
 
-## <a name="bkmk_secondary"></a> Siti secondari
+## <a name="secondary-sites"></a><a name="bkmk_secondary"></a> Siti secondari
 
 Di seguito vengono elencati i prerequisiti per l'installazione di siti secondari:  
 

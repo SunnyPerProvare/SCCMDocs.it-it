@@ -11,19 +11,19 @@ manager: dougeby
 author: mestew
 ms.author: mstewart
 ms.openlocfilehash: c8ee9d843a73600d179a711f37ec54b4881d8a51
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75818639"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405124"
 ---
-#  <a name="BKMK_ManageSUSettings"></a> Gestire le impostazioni per gli aggiornamenti software  
+#  <a name="manage-settings-for-software-updates"></a><a name="BKMK_ManageSUSettings"></a> Gestire le impostazioni per gli aggiornamenti software  
 
 *Si applica a: Configuration Manager (Current Branch)*
 
 Dopo aver sincronizzato gli aggiornamenti software in Configuration Manager, configurare e verificare le impostazioni nelle sezioni seguenti.
 
-##  <a name="BKMK_ClientSettings"></a> Impostazioni client per gli aggiornamenti software  
+##  <a name="client-settings-for-software-updates"></a><a name="BKMK_ClientSettings"></a> Impostazioni client per gli aggiornamenti software  
 Dopo aver installato il punto di aggiornamento software, gli aggiornamenti software vengono abilitati sui client per impostazione predefinita e le impostazioni della pagina **Aggiornamenti software** nelle impostazioni client hanno valori predefiniti. Le impostazioni client sono usate a livello di sito e influiscono sui tempi di esecuzione dell'analisi degli aggiornamenti software ai fini della conformità e su come e quando gli aggiornamenti software vengono installati nei computer client. Prima di distribuire gli aggiornamenti software, verificare che le impostazioni client siano appropriate per gli aggiornamenti software del sito.  
 
 > [!IMPORTANT]  
@@ -33,7 +33,7 @@ Per informazioni su come configurare le impostazioni client, vedere [Come config
 
 Per altre informazioni sulle impostazioni client, vedere [Informazioni sulle impostazioni client](../../core/clients/deploy/about-client-settings.md).  
 
-##  <a name="BKMK_GroupPolicy"></a> Impostazioni di Criteri di gruppo per gli aggiornamenti software  
+##  <a name="group-policy-settings-for-software-updates"></a><a name="BKMK_GroupPolicy"></a> Impostazioni di Criteri di gruppo per gli aggiornamenti software  
 Esistono impostazioni di Criteri di gruppo specifiche usate dall'agente di Windows Update (WUA) nei computer client per connettersi a WSUS in esecuzione nel punto di aggiornamento software. Queste impostazioni di Criteri di gruppo vengono usate anche per analizzare la conformità dell'aggiornamento software e per aggiornare automaticamente gli aggiornamenti software e l'agente WUA.
 
 ### <a name="specify-intranet-microsoft-update-service-location-local-policy"></a>Criteri locali Specifica il percorso del servizio di aggiornamento Microsoft nella rete Intranet  
@@ -62,10 +62,10 @@ Usare la seguente procedura per aprire le proprietà degli aggiornamenti softwar
    > [!NOTE]  
    >  Nel nodo **Tutti gli aggiornamenti software** Configuration Manager visualizza solo gli aggiornamenti software con classificazione **Errore critico** e **Sicurezza** rilasciati negli ultimi 30 giorni.  
 
-###  <a name="BKMK_SoftwareUpdatesInformation"></a> Verificare le informazioni sugli aggiornamenti software  
+###  <a name="review-software-updates-information"></a><a name="BKMK_SoftwareUpdatesInformation"></a> Verificare le informazioni sugli aggiornamenti software  
 Nelle proprietà degli aggiornamenti software, è possibile verificare le informazioni dettagliate su un aggiornamento software. Le informazioni dettagliate non vengono visualizzate quando si seleziona più di un aggiornamento software. Nelle seguenti sezioni vengono descritte le informazioni disponibili per un aggiornamento software selezionato.  
 
-####  <a name="BKMK_SoftwareUpdateDetails"></a> Dettagli sugli aggiornamenti software  
+####  <a name="software-update-details"></a><a name="BKMK_SoftwareUpdateDetails"></a> Dettagli sugli aggiornamenti software  
 Nella scheda **Dettagli aggiornamento** è possibile visualizzare le seguenti informazioni di riepilogo relative all'aggiornamento software selezionato:  
 
 - **ID bollettino**: specifica l'ID bollettino associato agli aggiornamenti software di protezione. È possibile trovare i dettagli relativi al bollettino sulla sicurezza cercando l'ID bollettino nella pagina Web [Microsoft Security Response Center](https://portal.msrc.microsoft.com/).  
@@ -86,7 +86,7 @@ Nella scheda **Dettagli aggiornamento** è possibile visualizzare le seguenti in
 
 - **Prodotti interessati**: elenca i prodotti per cui è applicabile l'aggiornamento software.  
 
-####  <a name="BKMK_ContentInformation"></a> Informazioni sul contenuto  
+####  <a name="content-information"></a><a name="BKMK_ContentInformation"></a> Informazioni sul contenuto  
 Nella scheda **Informazioni sul contenuto** , esaminare le seguenti informazioni sul contenuto che è associato con l'aggiornamento software selezionato:  
 
 -   **ID contenuto**: specifica l'ID contenuto per l'aggiornamento software.  
@@ -99,20 +99,20 @@ Nella scheda **Informazioni sul contenuto** , esaminare le seguenti informazioni
 
 -   **Dimensione (MB)** : specifica le dimensioni dei file di origine dell'aggiornamento software.  
 
-####  <a name="BKMK_CustomBundleInformation"></a> Informazioni sul bundle personalizzato  
+####  <a name="custom-bundle-information"></a><a name="BKMK_CustomBundleInformation"></a> Informazioni sul bundle personalizzato  
 Nella scheda **Informazioni sul bundle personalizzato** , esaminare le informazioni sul bundle personalizzato per l'aggiornamento software. Quando l'aggiornamento software selezionato contiene aggiornamenti software in bundle contenuti nel file di aggiornamento software, essi vengono visualizzati nella sezione **Informazioni sul bundle** . Questa scheda non visualizza gli aggiornamenti software in bundle che sono visualizzati nella scheda **Informazioni sul contenuto** , come i file di aggiornamento per le diverse lingue.  
 
-####  <a name="BKMK_SupersedenceInformation"></a> Informazioni di sostituzione  
+####  <a name="supersedence-information"></a><a name="BKMK_SupersedenceInformation"></a> Informazioni di sostituzione  
 Nella scheda **Informazioni di sostituzione** , è possibile visualizzare le seguenti informazioni sulla sostituzione dell'aggiornamento software:  
 
 - **Questo aggiornamento è stato sostituito dai seguenti aggiornamenti**: specifica gli aggiornamenti software che sostituiscono questo aggiornamento, il che significa che gli aggiornamenti elencati sono più recenti. Nella maggior parte dei casi, si distribuirà uno degli aggiornamenti software che sostituisce l'aggiornamento software in questione. Gli aggiornamenti software che vengono visualizzati nell'elenco contengono collegamenti ipertestuali a pagine Web che forniscono ulteriori informazioni sugli aggiornamenti software. Quando questo aggiornamento non viene sostituito, viene visualizzato **Nessuno** .  
 
 - **Questo aggiornamento sostituisce i seguenti aggiornamenti**: specifica gli aggiornamenti software che sono sostituiti da questo aggiornamento software, il che significa che questo aggiornamento software è più recente. Nella maggior parte dei casi, si distribuirà questo aggiornamento software per sostituire gli aggiornamenti software sostituiti. Gli aggiornamenti software che vengono visualizzati nell'elenco contengono collegamenti ipertestuali a pagine Web che forniscono ulteriori informazioni sugli aggiornamenti software. Quando questo aggiornamento non sostituisce eventuali altri aggiornamenti, viene visualizzato **Nessuno** .  
 
-###  <a name="BKMK_SoftwareUpdatesSettings"></a> Configurare le impostazioni degli aggiornamenti software  
+###  <a name="configure-software-updates-settings"></a><a name="BKMK_SoftwareUpdatesSettings"></a> Configurare le impostazioni degli aggiornamenti software  
 Nella proprietà, è possibile configurare le impostazioni degli aggiornamenti software per uno o più aggiornamenti software. È possibile configurare la maggior parte delle impostazioni degli aggiornamenti software solo nel sito di amministrazione centrale o nel sito primario autonomo. Le sezioni seguenti consentono di configurare le impostazioni per gli aggiornamenti software.  
 
-####  <a name="BKMK_SetMaxRunTime"></a> Impostare il tempo di esecuzione massimo  
+####  <a name="set-maximum-run-time"></a><a name="BKMK_SetMaxRunTime"></a> Impostare il tempo di esecuzione massimo  
 Nella scheda **Tempo di esecuzione massimo** , impostare la quantità massima di tempo assegnata per completare un aggiornamento software nei computer client. Se l'aggiornamento richiede più tempo del valore del tempo di esecuzione massimo, Configuration Manager crea un messaggio di stato e interrompe il monitoraggio della distribuzione per l'installazione degli aggiornamenti software. È possibile configurare questa impostazione solo nel sito di amministrazione centrale o in un sito primario autonomo.  
 
 Configuration Manager usa inoltre questa impostazione per stabilire se avviare l'installazione dell'aggiornamento software all'interno di una finestra di manutenzione configurata. Se il valore del tempo di esecuzione massimo è maggiore del tempo rimanente disponibile nella finestra di manutenzione, l'installazione degli aggiornamenti software viene rimandata fino all'avvio della nuova finestra di manutenzione. Quando più aggiornamenti software devono essere installati su un computer client con una finestra di manutenzione configurata (intervallo di tempo), l'aggiornamento software con il tempo di esecuzione massimo più basso viene installato per primo, poi viene installato quello con il secondo tempo di esecuzione massimo più basso e così via. Prima dell'installazione di ogni aggiornamento software, il client verifica che la finestra di manutenzione disponibile fornirà un tempo sufficiente per installare l'aggiornamento software. Dopo l'avvio dell'installazione di un aggiornamento software, l'installazione continuerà anche se va oltre la fine della finestra di manutenzione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](../../core/clients/manage/collections/use-maintenance-windows.md).  
@@ -124,7 +124,7 @@ Nella scheda **Tempo di esecuzione massimo** , è possibile visualizzare e confi
 > [!IMPORTANT]  
 >  Assicurarsi di impostare un valore del tempo di esecuzione massimo inferiore al tempo della finestra di manutenzione configurata. In caso contrario, l'installazione dell'aggiornamento software non verrà mai avviata.  
 
-####  <a name="BKMK_SetCustomSeverity"></a> Impostare la gravità personalizzata  
+####  <a name="set-custom-severity"></a><a name="BKMK_SetCustomSeverity"></a> Impostare la gravità personalizzata  
 Nelle proprietà dell'aggiornamento software, è possibile usare la scheda **Gravità personalizzata** per configurare i valori di gravità personalizzata per gli aggiornamenti software. Ciò può rivelarsi necessario se i valori di gravità predefiniti non soddisfano le relative esigenze. I valori personalizzati sono elencati nella colonna **Gravità personalizzata** nella console di Configuration Manager. È possibile filtrare gli aggiornamenti software per valori di gravità personalizzata definiti ed è possibile inoltre creare query e rapporti per filtrare questi valori. È possibile configurare questa impostazione solo nel sito di amministrazione centrale o in un sito primario autonomo.  
 
 È possibile configurare le seguenti impostazioni nella scheda **Gravità personalizzata** .  

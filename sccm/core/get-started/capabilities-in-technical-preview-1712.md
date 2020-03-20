@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.openlocfilehash: 8086f527a82b6b9b9c5125a244daee4ddcdfe33d
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75804657"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405564"
 ---
 # <a name="capabilities-in-technical-preview-1712-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1712 per Configuration Manager
 

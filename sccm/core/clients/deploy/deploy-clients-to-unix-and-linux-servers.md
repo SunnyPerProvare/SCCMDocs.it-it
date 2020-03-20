@@ -11,11 +11,11 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: 0b42b68920fa1830d4e316d2058ef5a630c57e78
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825133"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79406044"
 ---
 # <a name="how-to-deploy-clients-to-unix-and-linux-servers-in-configuration-manager"></a>Come distribuire i client in server UNIX e Linux in Configuration Manager
 
@@ -35,14 +35,14 @@ Prima di poter gestire un server Linux o UNIX con Configuration Manager, è nece
 
  Dopo aver installato il client, specificare le impostazioni client nella console di Configuration Manager per configurare l'agente client in modo analogo ai client basati su Windows. Per altre informazioni, vedere  [Impostazioni client per server Linux e UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ClientSettingsforLnU).  
 
-##  <a name="BKMK_AboutInstallPackages"></a> Informazioni sui pacchetti di installazione client e sull'agente universale  
+##  <a name="about-client-installation-packages-and-the-universal-agent"></a><a name="BKMK_AboutInstallPackages"></a> Informazioni sui pacchetti di installazione client e sull'agente universale  
  Per installare il client per Linux e UNIX in una piattaforma specifica, è necessario usare il pacchetto di installazione client applicabile al computer in cui si installa il client. I pacchetti di installazione client applicabili sono inclusi in ogni download del client eseguito dall' [Area download Microsoft](https://go.microsoft.com/fwlink/?LinkID=525184). Oltre ai pacchetti di installazione client, il download del client include lo script di **install** che gestisce l'installazione del client in ogni computer.  
 
  Quando si installa un client, è possibile usare lo stesso processo e le stesse proprietà della riga di comando indipendentemente dal pacchetto di installazione client usato.  
 
  Per informazioni su sistemi operativi, piattaforme e pacchetti di installazione client supportati per ogni versione del client di Configuration Manager per Linux e UNIX, vedere [Linux and UNIX servers](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#linux-and-unix-servers) (Server Linux e UNIX).  
 
-##  <a name="BKMK_InstallLnUClient"></a> Installare il client nei server Linux e UNIX  
+##  <a name="install-the-client-on-linux-and-unix-servers"></a><a name="BKMK_InstallLnUClient"></a> Installare il client nei server Linux e UNIX  
  Per installare il client per Linux e UNIX, si esegue uno script in ogni computer Linux o UNIX. Lo script è denominato **install** e supporta le proprietà della riga di comando che modificano il comportamento di installazione e fanno riferimento al pacchetto di installazione client. Il pacchetto di installazione client e script di installazione deve trovarsi sul client. Il pacchetto di installazione client contiene i file del client di Configuration Manager per una specifica piattaforma e sistema operativo Linux o UNIX.
 Ogni pacchetto di installazione client contiene tutti i file necessari per completare l'installazione del client e, a differenza dei computer basati su Windows, non scarica file aggiuntivi da un punto di gestione o un altro percorso di origine.  
 
@@ -67,7 +67,7 @@ Ogni pacchetto di installazione client contiene tutti i file necessari per compl
 
 -   **Pacchetto installazione client** è il nome del pacchetto TAR di installazione client per il sistema operativo del computer, la versione e l'architettura della CPU. Il file. tar installazione del client deve essere specificato per ultimo. Esempio: `ccm-Universal-x64.<build>.tar`  
 
-###  <a name="BKMK_ToInstallLnUClinent"></a> Per installare il client di Configuration Manager nei server Linux e UNIX  
+###  <a name="to-install-the-configuration-manager-client-on-linux-and-unix-servers"></a><a name="BKMK_ToInstallLnUClinent"></a> Per installare il client di Configuration Manager nei server Linux e UNIX  
 
 1.  In un computer Windows [scaricare il file client appropriato per il server Linux o UNIX](https://go.microsoft.com/fwlink/?LinkID=525184) che si vuole gestire.  
 
@@ -86,7 +86,7 @@ Ogni pacchetto di installazione client contiene tutti i file necessari per compl
 
 6.  Dopo l'esecuzione dello script, convalidare l'installazione esaminando il file **/var/opt/microsoft/scxcm.log** . È anche possibile verificare che il client sia installato e in comunicazione con il sito visualizzando i dettagli per il client nel nodo **Dispositivi** dell'area di lavoro **Asset e conformità** della console di Configuration Manager.  
 
-###  <a name="BKMK_CmdLineInstallLnUClient"></a> Proprietà della riga di comando per l'installazione del client nei server Linux e UNIX  
+###  <a name="command-line-properties-for-installing-the-client-on-linux-and-unix-servers"></a><a name="BKMK_CmdLineInstallLnUClient"></a> Proprietà della riga di comando per l'installazione del client nei server Linux e UNIX  
  Per modificare il comportamento dello script di installazione sono disponibili le proprietà seguenti:  
 
 > [!NOTE]  
@@ -205,14 +205,14 @@ Ogni pacchetto di installazione client contiene tutti i file necessari per compl
 
      Esempio: `-rootcerts <full path and file name>,<full path and file name>`  
 
-###  <a name="BKMK_UninstallLnUClient"></a> Disinstallazione del client da server Linux e UNIX  
+###  <a name="uninstalling-the-client-from-linux-and-unix-servers"></a><a name="BKMK_UninstallLnUClient"></a> Disinstallazione del client da server Linux e UNIX  
  Per disinstallare il client di Configuration Manager per Linux e UNIX, usare l'utilità di disinstallazione, **uninstall**. Per impostazione predefinita, questo file si trova nel **/rifiutare/microsoft/configmgr/bin/** cartella nel computer client. Questo comando di disinstallazione non supporta alcun parametro della riga di comando e rimuove tutti i file correlati al software client dal server.  
 
  Per disinstallare il client, utilizzare la seguente riga di comando: **/opt/microsoft/configmgr/bin/uninstall**  
 
  Non è necessario riavviare il computer dopo la disinstallazione del client di Configuration Manager per Linux e UNIX.  
 
-##  <a name="BKMK_ConfigLnUClientCommuincations"></a> Configurare le porte richieste per il Client per Linux e UNIX  
+##  <a name="configure-request-ports-for-the-client-for-linux-and-unix"></a><a name="BKMK_ConfigLnUClientCommuincations"></a> Configurare le porte richieste per il Client per Linux e UNIX  
  Come per i client basati su Windows, anche il client di Configuration Manager per Linux e UNIX usa HTTP e HTTPS per comunicare con i sistemi del sito di Configuration Manager. Le porte che il client di Configuration Manager usa per comunicare vengono definite porte di richiesta.  
 
  Quando si installa il client di Configuration Manager per Linux e UNIX, è possibile modificare le porte di richiesta predefinite del client specificando le proprietà di installazione **-httpport** e **-httpsport**. Quando non si specificano la proprietà di installazione e un valore personalizzato, il client usa i valori predefiniti. I valori predefiniti sono **80** per il traffico HTTP e **443** per il traffico HTTPS.  
@@ -221,7 +221,7 @@ Ogni pacchetto di installazione client contiene tutti i file necessari per compl
 
  Per altre informazioni sui numeri di porta di comunicazione client, vedere [Come configurare porte di comunicazione client](../../../core/clients/deploy/configure-client-communication-ports.md).  
 
-##  <a name="BKMK_ConfigClientMP"></a> Configurare il Client per Linux e UNIX individuare i punti di gestione  
+##  <a name="configure-the-client-for-linux-and-unix-to-locate-management-points"></a><a name="BKMK_ConfigClientMP"></a> Configurare il Client per Linux e UNIX individuare i punti di gestione  
  Quando si installa il client di Configuration Manager per Linux e UNIX, è necessario specificare un punto di gestione da usare come punto iniziale del contatto.  
 
  Il client di Configuration Manager per Linux e UNIX contatta il punto di gestione nel momento in cui viene installato il client. Se il client non riesce a contattare il punto di gestione, il software client continuerà a provare fino a quando non riesce.  

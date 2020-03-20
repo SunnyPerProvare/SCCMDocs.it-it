@@ -11,11 +11,11 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: 4571634ff204ac882abb9dcca9f75291d3dbcf50
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798925"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405874"
 ---
 # <a name="configuration-options-for-site-system-roles-in-configuration-manager"></a>Opzioni di configurazione per i ruoli del sistema del sito in Configuration Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "75798925"
 La maggior parte delle opzioni di configurazione per i ruoli del sistema del sito di Configuration Manager è di chiara comprensione o descritta nelle finestre di dialogo o nella procedura guidata durante la configurazione. Le sezioni seguenti illustrano i ruoli del sistema del sito le cui impostazioni possono richiedere informazioni aggiuntive.  
 
 
-## <a name="BKMK_ApplicationCatalog_Website"></a> Punto per siti Web del Catalogo applicazioni  
+## <a name="application-catalog-website-point"></a><a name="BKMK_ApplicationCatalog_Website"></a> Punto per siti Web del Catalogo applicazioni  
 
 > [!Important]
 > L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
@@ -37,7 +37,7 @@ La maggior parte delle opzioni di configurazione per i ruoli del sistema del sit
 Per altre informazioni su come configurare il punto per siti Web del Catalogo applicazioni, vedere [Pianificare e configurare la gestione delle applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management).  
 
 
-## <a name="BKMK_ApplicationCatalog_WebService"></a> Punto per servizi Web del Catalogo applicazioni  
+## <a name="application-catalog-web-service-point"></a><a name="BKMK_ApplicationCatalog_WebService"></a> Punto per servizi Web del Catalogo applicazioni  
 
 > [!Important]
 > L'esperienza utente di Silverlight per il catalogo applicazioni non è supportata a partire dalla versione Current Branch 1806. A partire dalla versione 1906, i client aggiornati usano automaticamente il punto di gestione per le distribuzioni di applicazioni disponibili per gli utenti. Non è inoltre possibile installare nuovi ruoli del Catalogo applicazioni. Il supporto per i ruoli del Catalogo applicazioni termina con la versione 1910.  
@@ -50,12 +50,12 @@ Per altre informazioni su come configurare il punto per siti Web del Catalogo ap
 Per altre informazioni su come configurare il punto per servizi Web del Catalogo applicazioni, vedere [Pianificare e configurare la gestione delle applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management).  
 
 
-## <a name="BKMK_CertificateRegistrationPoint"></a> Punto di registrazione certificati  
+## <a name="certificate-registration-point"></a><a name="BKMK_CertificateRegistrationPoint"></a> Punto di registrazione certificati  
 
 Per altre informazioni su come configurare il punto di registrazione certificati, vedere [Introduzione ai profili certificato](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
 
-## <a name="BKMK_Distribution_Point"></a> Punto di distribuzione  
+## <a name="distribution-point"></a><a name="BKMK_Distribution_Point"></a> Punto di distribuzione  
 
 Per altre informazioni su come configurare il punto di distribuzione per la distribuzione del contenuto, vedere [Gestire il contenuto e l'infrastruttura del contenuto](/sccm/core/servers/deploy/configure/manage-content-and-content-infrastructure).  
 
@@ -72,7 +72,7 @@ Selezionare questa opzione per consentire a Configuration Manager di installare 
 Per i punti di distribuzione installati in un server del sito, solo l'account del computer del server del sito viene supportato per l'uso come account di installazione del sistema del sito. Per altre informazioni, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#site-system-installation-account).  
 
 
-## <a name="BKMK_Enrollment_Point"></a> Punto di registrazione  
+## <a name="enrollment-point"></a><a name="BKMK_Enrollment_Point"></a> Punto di registrazione  
 
 I punti di registrazione vengono usati per installare i computer macOS e registrare i dispositivi gestiti con la funzionalità di gestione dei dispositivi mobili in locale. Per altre informazioni, vedere gli articoli seguenti:  
 
@@ -87,7 +87,7 @@ L'impostazione HTTPS viene selezionata automaticamente e richiede un certificato
 Per un esempio di distribuzione del certificato del server e per informazioni sulla relativa configurazione in IIS, vedere [Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).  
 
 
-## <a name="BKMK_Enrollment_Proxy_Point"></a> Punto proxy di registrazione  
+## <a name="enrollment-proxy-point"></a><a name="BKMK_Enrollment_Proxy_Point"></a> Punto proxy di registrazione  
 
 Per altre informazioni su come configurare un punto proxy di registrazione per i dispositivi mobili, vedere [Modalità di registrazione dei dispositivi nella gestione di dispositivi mobili locale](/sccm/mdm/deploy-use/user-enroll-devices-on-premises-mdm).  
 
@@ -103,7 +103,7 @@ Per altre informazioni sui requisiti dei certificati, vedere [Requisiti dei cert
 Per un esempio di distribuzione del certificato del server e per informazioni sulla relativa configurazione in IIS, vedere [Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).  
 
 
-## <a name="BKMK_Fallback_Status_Point"></a> Punto di stato di fallback  
+## <a name="fallback-status-point"></a><a name="BKMK_Fallback_Status_Point"></a> Punto di stato di fallback  
 
 ### <a name="number-of-state-messages-and-throttle-interval-in-seconds"></a>Numero di messaggi di stato e Intervallo di limitazione (in secondi)
 

@@ -11,11 +11,11 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: eb245d5c3178c9b0a5690fc662add1d89e5213aa
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75821325"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405314"
 ---
 # <a name="manage-os-images-with-configuration-manager"></a>Gestire le immagini del sistema operativo con Configuration Manager
 
@@ -43,7 +43,7 @@ I file di installazione di Windows includono l'immagine del sistema operativo pr
 - L'installazione del sistema operativo può richiedere più tempo. L'installazione delle applicazioni e altre configurazioni si verificano al termine dell'installazione del sistema operativo.  
 
 
-### <a name="bkmk_capture"></a> Immagine acquisita da un computer di riferimento
+### <a name="captured-image-from-a-reference-computer"></a><a name="bkmk_capture"></a> Immagine acquisita da un computer di riferimento
 
 Per creare un'immagine del sistema operativo personalizzata, creare un computer di riferimento con il sistema operativo desiderato. Quindi installare le applicazioni e configurare le impostazioni desiderate. Acquisire l'immagine del sistema operativo dal computer di riferimento per creare il file con estensione wim. Creare manualmente il computer di riferimento oppure usare una sequenza di attività per automatizzare alcune o tutte le istruzioni di creazione. Per altre informazioni, vedere [Customize OS images](/sccm/osd/get-started/customize-operating-system-images) (Personalizzare le immagini del sistema operativo).  
 
@@ -58,7 +58,7 @@ Per creare un'immagine del sistema operativo personalizzata, creare un computer 
 - Se sono necessari aggiornamenti per le applicazioni e gli strumenti, sarà necessario creare una nuova immagine.  
 
 
-## <a name="BKMK_AddOSImages"></a> Aggiungere un'immagine del sistema operativo  
+## <a name="add-an-os-image"></a><a name="BKMK_AddOSImages"></a> Aggiungere un'immagine del sistema operativo  
 
 Prima di poter usare un'immagine del sistema operativo, è necessario aggiungerla al sito di Configuration Manager.
 
@@ -94,7 +94,7 @@ Per il cmdlet di PowerShell equivalente a questa procedura guidata della console
 Quindi distribuire l'immagine del sistema operativo ai punti di distribuzione.  
 
 
-## <a name="BKMK_DistributeBootImages"></a> Distribuire contenuti ai punti di distribuzione  
+## <a name="distribute-content-to-distribution-points"></a><a name="BKMK_DistributeBootImages"></a> Distribuire contenuti ai punti di distribuzione  
 
 Distribuire le immagini del sistema operativo nei punti di distribuzione, con le stesse modalità usate per altri contenuti. Prima di distribuire la sequenza di attività, distribuire l'immagine del sistema operativo ad almeno un punto di distribuzione. Per altre informazioni, vedere [Distribuire il contenuto](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_distribute).  
 
@@ -102,7 +102,7 @@ Distribuire le immagini del sistema operativo nei punti di distribuzione, con le
 [!INCLUDE [Apply software updates to an image](includes/wim-apply-updates.md)]
 
 
-## <a name="BKMK_OSImageMulticast"></a> Preparare l'immagine del sistema operativo per le distribuzioni multicast  
+## <a name="prepare-the-os-image-for-multicast-deployments"></a><a name="BKMK_OSImageMulticast"></a> Preparare l'immagine del sistema operativo per le distribuzioni multicast  
 
 Usare le distribuzioni multicast per consentire a più computer di scaricare simultaneamente un'immagine del sistema operativo. Il punto di distribuzione esegue il multicast dell'immagine nei client e, evitando che ogni client scarichi una copia dell'immagine dal punto di distribuzione con una connessione separata. Quando si sceglie come metodo di distribuzione del sistema operativo l'[uso del multicast per distribuire Windows in rete](/sccm/osd/deploy-use/use-multicast-to-deploy-windows-over-the-network), configurare l'immagine del sistema operativo in modo che supporti il multicast. Quindi distribuire l'immagine ai punti di distribuzione abilitati per il multicast.
 

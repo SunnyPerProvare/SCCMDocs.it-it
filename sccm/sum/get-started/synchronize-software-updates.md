@@ -11,13 +11,13 @@ manager: dougeby
 author: mestew
 ms.author: mstewart
 ms.openlocfilehash: 3a0b116bf2faafc0ecb29f67392e961c2301703e
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75827265"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405134"
 ---
-#  <a name="BKMK_SUMSync"></a> sincronizzare gli aggiornamenti software
+#  <a name="synchronize-software-updates"></a><a name="BKMK_SUMSync"></a> sincronizzare gli aggiornamenti software
 
 *Si applica a: Configuration Manager (Current Branch)*
 

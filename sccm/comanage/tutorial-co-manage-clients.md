@@ -2,7 +2,7 @@
 title: Esercitazione&#58; Abilitare la co-gestione per i client esistenti
 titleSuffix: Configuration Manager
 description: Configurare la co-gestione con Microsoft Intune quando si gestiscono già dispositivi Windows 10 con Configuration Manager.
-ms.date: 07/26/2019
+ms.date: 03/12/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: tutorial
@@ -10,12 +10,12 @@ ms.assetid: 140c522f-d09a-40b6-a4b0-e0d14742834a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 118ab300877060c78ba4eed253671e381efb3da2
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: f03a690bc7ec0c33d68e48913639e97fd6acd67c
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76033225"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405684"
 ---
 # <a name="tutorial-enable-co-management-for-existing-configuration-manager-clients"></a>Esercitazione: Abilitare la co-gestione per i client di Configuration Manager esistenti
 
@@ -36,7 +36,6 @@ Usare questa esercitazione in questi casi:
 > * Configurare Azure AD ibrido  
 > * Configurare agenti client di Configuration Manager per la registrazione con Azure AD  
 > * Configurare Intune per la registrazione automatica dei dispositivi  
-> * Assegnare le licenze di Intune agli utenti  
 > * Abilitare la co-gestione in Configuration Manager  
 
 ## <a name="prerequisites"></a>Prerequisiti  
@@ -51,8 +50,10 @@ Usare questa esercitazione in questi casi:
 
 Se le configurazioni non sono già presenti nell'ambiente, in questa esercitazione verranno eseguite le operazioni seguenti:
 
-- Assegnare agli utenti una licenza per *Intune* e per *Azure Active Directory Premium*.
 - Configurare [Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-select-installation) tra l'istanza di Active Directory locale e il tenant di Azure Active Directory (AD).
+
+> [!TIP]
+> Non è più necessario acquistare e assegnare singole licenze di Intune o EMS ai propri utenti. Per altre informazioni, vedere [Domande frequenti su prodotto e licenze](/configmgr/core/understand/product-and-licensing-faq#bkmk_mem).
 
 ### <a name="on-premises-infrastructure"></a>Infrastruttura locale
 
@@ -63,7 +64,7 @@ Se le configurazioni non sono già presenti nell'ambiente, in questa esercitazio
 
 In questa esercitazione usare le autorizzazioni seguenti per completare le attività:
 
-- Un account che sia un *amministratore globale* in Azure  
+- Un account che sia *amministratore globale* in Azure Active Directory (Azure AD) 
 - Un account che sia un *amministratore di dominio* nell'infrastruttura locale  
 - Un account che sia un *amministratore completo* per *tutti* gli ambiti in Configuration Manager
 
@@ -87,7 +88,7 @@ Azure AD ibrido richiede la configurazione di Azure AD Connect per mantenere sin
 
 A partire dalla versione 1.1.819.0, Azure AD Connect offre una procedura guidata per configurare l'aggiunta ad Azure AD ibrido. L'uso della procedura guidata semplifica il processo di configurazione.  
 
-Per configurare Azure AD Connect, sono necessarie le credenziali di amministratore globale per il tenant di Azure AD.  
+Per configurare Azure AD Connect, sono necessarie le credenziali di amministratore globale per Azure AD.  
 
 > [!TIP]  
 > La procedura seguente non deve essere considerata obbligatoria per la configurazione di Azure AD Connect, ma viene illustrata per semplificare la configurazione della co-gestione tra Intune e Configuration Manager. Per contenuto autorevole su questa procedura e sulle procedure correlate per la configurazione di Azure AD, vedere [Configurare l'aggiunta ad Azure AD ibrido per i domini gestiti](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-managed-domains) nella documentazione di Azure AD.  
@@ -98,7 +99,7 @@ Per configurare Azure AD Connect, sono necessarie le credenziali di amministrato
 2. Avviare Azure AD Connect e quindi selezionare **Configura**.
 3. Nella pagina **Attività aggiuntive** selezionare **Configura le opzioni del dispositivo** e quindi **Avanti**.
 4. Nella pagina **Panoramica** selezionare **Avanti**.
-5. Nella pagina **Connessione ad Azure AD** immettere le credenziali di un amministratore globale per il tenant di Azure AD.
+5. Nella pagina **Connessione ad Azure AD** immettere le credenziali di un amministratore globale per Azure AD.
 6. Nella pagina **Opzioni dispositivo** selezionare **Configura l'aggiunta ad Azure AD ibrido** e quindi **Avanti**.
 7. Nella pagina **Sistemi operativi del dispositivo** selezionare i sistemi operativi usati dai dispositivi nell'ambiente Active Directory e quindi selezionare **Avanti**.  
 
@@ -115,7 +116,7 @@ Per configurare Azure AD Connect, sono necessarie le credenziali di amministrato
 
 Se si verificano problemi con il completamento dell'aggiunta ad Azure AD ibrido per i dispositivi Windows aggiunti al dominio, vedere [Risolvere i problemi dei dispositivi Windows correnti aggiunti ad Azure AD ibrido](https://docs.microsoft.com/azure/active-directory/devices/troubleshoot-hybrid-join-windows-current).
 
-## <a name="configure-client-settings-to-direct-clients-register-with-azure-ad"></a>Configurare le impostazioni client per fare in modo che i client eseguano la registrazione con Azure AD
+## <a name="configure-client-settings-to-direct-clients-to-register-with-azure-ad"></a>Configurare le impostazioni client per fare in modo che i client eseguano la registrazione con Azure AD
 
 Usare le impostazioni client per configurare i client di Configuration Manager per la registrazione automatica con Azure AD.  
 
@@ -137,9 +138,11 @@ La registrazione automatica consente inoltre agli utenti di registrare i propri 
 
 2. Configurare **Ambito utente MDM**. Specificare una delle opzioni seguenti per configurare quali dispositivi degli utenti sono gestiti da Microsoft Intune e accettare le impostazioni predefinite per i valori di URL.  
 
-   - **In parte** - In **Gruppi** selezionare i gruppi che possono registrare automaticamente i propri dispositivi Windows 10  
+   - **In parte**: in **Gruppi** selezionare i gruppi che possono registrare automaticamente i propri dispositivi Windows 10  
 
-   - **Tutti** - Tutti gli utenti possono registrare automaticamente i propri dispositivi Windows 10. Quando l'impostazione è **Nessuno**, la registrazione automatica di Gestione di dispositivi mobili (MDM, Mobile Device Management) è disabilitata
+   - **Tutti**: tutti gli utenti possono registrare automaticamente i dispositivi Windows 10
+
+   - **Nessuno**: disabilitare la registrazione automatica MDM in Azure.
 
    > [!IMPORTANT]  
    > Se per un gruppo sono abilitati sia **Ambito utente MAM** che la registrazione automatica di Gestione di dispositivi mobili (**Ambito utente MDM**) solo MAM è abilitato. Per gli utenti in tale gruppo viene aggiunto solo il servizio Gestione di applicazioni mobili (MAM, Mobile Application Management) quando aggiungono alla rete aziendale il proprio dispositivo personale. I dispositivi non vengono registrati automaticamente in MDM.  
@@ -148,41 +151,16 @@ La registrazione automatica consente inoltre agli utenti di registrare i propri 
 
 4. Tornare a **Servizi Mobility (MDM e MAM)** e quindi selezionare **Microsoft Intune Enrollment** (Registrazione di Microsoft Intune).  
 
+    > [!NOTE]
+    > È possibile che in alcuni tenant queste opzioni non siano disponibili per la configurazione.<!-- SCCMDocs#1230 -->
+    >
+    > **Microsoft Intune** definisce la modalità di configurazione dell'app MDM per Azure AD. **Registrazione di Microsoft Intune** è un'app specifica di Azure AD che viene creata quando si applicano i criteri di autenticazione a più fattori per la registrazione in iOS e Android. Per altre informazioni, vedere [Richiedere l'autenticazione a più fattori per le registrazioni di dispositivi Intune](https://docs.microsoft.com/intune/enrollment/multi-factor-authentication).
+
 5. Per l'ambito utente MDM selezionare **Tutti** e quindi fare clic su **Salva**.  
-
-## <a name="assign-intune-licenses-to-users"></a>Assegnare le licenze di Intune agli utenti
-
-Un'azione in genere trascurata ma cruciale è l'assegnazione di una licenza di Intune a ogni utente che userà un dispositivo co-gestito.  
-
-Per assegnare licenze a gruppi di utenti, usare Azure Active Directory.  
-
-1. Accedere al [portale di Azure](https://portal.azure.com/) con un account amministratore. Per gestire le licenze, l'account deve essere un ruolo Amministratore globale o un amministratore account utente.  
-
-2. Selezionare **Tutti i servizi** nel riquadro di spostamento a sinistra e quindi selezionare **Azure Active Directory**.  
-
-3. Nel riquadro **Azure Active Directory** selezionare **Licenze** per aprire un riquadro in cui è possibile visualizzare e gestire tutti i prodotti soggetti a licenza nel tenant.  
-
-4. In **Tutti i prodotti** selezionare l'opzione di prodotto che include la licenza di Intune e quindi selezionare **Assegna** nella parte superiore del riquadro.  
-
-   Ad esempio, è possibile selezionare **Enterprise Mobility + Security E5** se è questo lo strumento tramite cui si ottiene Intune.  
-
-5. Nel riquadro **Assegna licenza** fare clic su **Utenti e gruppi** per aprire il riquadro **Utenti e gruppi**. Selezionare i gruppi e i singoli utenti cui si vuole assegnare una licenza.  Fare quindi clic su **Seleziona** nella parte inferiore del riquadro per confermare la selezione.  
-
-6. Nel riquadro **Assegna licenza** fare clic su **Opzioni di assegnazione** per visualizzare tutti i piani di servizio inclusi nel prodotto selezionato in precedenza. Se è stato selezionato un singolo prodotto come Intune, viene visualizzato solo tale prodotto.  
-   - Impostare **Microsoft Intune** su **Attivato**.  
-   - Assegnare a ogni utente una licenza per **Azure Active Directory Premium**.  
-
-   Una volta assegnate le licenze applicabili, selezionare **OK**.  
-
-7. Per completare l'assegnazione, nel riquadro **Assegna licenza** fare clic su **Assegna** nella parte inferiore del riquadro.
-
-8. Viene visualizzata una notifica nell'angolo superiore destro che mostra lo stato e il risultato del processo. Se non è stato possibile completare l'assegnazione al gruppo (ad esempio a causa di licenze già esistenti nel gruppo), fare clic sulla notifica per visualizzare i dettagli dell'errore.
-
-Per altre informazioni sull'assegnazione delle licenze di Intune agli utenti, vedere [Assegnare licenze](https://docs.microsoft.com/intune/licenses-assign).
 
 ## <a name="enable-co-management-in-configuration-manager"></a>Abilitare la co-gestione in Configuration Manager
 
-Dopo aver completato la configurazione di Azure AD ibrido e le configurazioni dei client di Configuration Manager e aver assegnato le licenze di prodotto agli utenti, è possibile abilitare la co-gestione dei dispositivi Windows 10.  
+Dopo aver completato la configurazione di Azure AD ibrido e le configurazioni dei client di Configuration Manager, è possibile abilitare la co-gestione dei dispositivi Windows 10.  
 
 > [!TIP]
 > - Quando si abilita la co-gestione, si assegna una raccolta come *gruppo pilota*. Si tratta di un gruppo che contiene un numero ridotto di client per testare le configurazioni di co-gestione. È consigliabile creare una raccolta appropriata prima di avviare la procedura. È quindi possibile selezionare la raccolta senza chiudere la procedura a questo scopo.

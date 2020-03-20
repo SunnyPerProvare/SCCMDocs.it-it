@@ -11,11 +11,11 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: fee4caf29b78db39d5b5b9d4c880495da3db43f5
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76917434"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405924"
 ---
 # <a name="plan-for-security-in-configuration-manager"></a>Pianificare la sicurezza in Configuration Manager
 
@@ -45,7 +45,7 @@ Questo articolo descrive i concetti da tenere in considerazione durante la piani
 
 
 
-##  <a name="BKMK_PlanningForCertificates"></a> Pianificare certificati (autofirmati e PKI)  
+##  <a name="plan-for-certificates-self-signed-and-pki"></a><a name="BKMK_PlanningForCertificates"></a> Pianificare certificati (autofirmati e PKI)  
 
 Configuration Manager usa una combinazione di certificati autofirmati e certificati di infrastruttura a chiave pubblica (PKI).  
 
@@ -58,24 +58,24 @@ Quando si usa una PKI, è possibile usare anche IPsec per proteggere la comunica
 Quando i certificati PKI non sono disponibili, Configuration Manager genera automaticamente certificati autofirmati. Alcuni certificati in Configuration Manager sono sempre autofirmati. Nella maggior parte dei casi, Configuration Manager gestisce automaticamente i certificati autofirmati e non sono necessarie azioni aggiuntive. Un esempio è il certificato di firma del server del sito. Questo certificato è sempre autofirmato. Garantisce che i criteri che i client scaricano dal punto di gestione siano stati inviati dal server del sito e non siano stati manomessi.  
 
 
-### <a name="bkmk_plan-cng"></a> Certificati CNG (Cryptography: Next Generation)  
+### <a name="cryptography-next-generation-cng-certificates"></a><a name="bkmk_plan-cng"></a> Certificati CNG (Cryptography: Next Generation)  
 
 Configuration Manager supporta i certificati CNG (Cryptography: Next Generation). I client di Configuration Manager possono usare certificati di autenticazione client con chiave privata nel provider di archiviazione chiavi (KSP) CNG. Con il supporto per i provider di archiviazione chiavi, i client di Configuration Manager supportano chiavi private basate sull'hardware, ad esempio TPM KSP per i certificati di autenticazione client PKI. Per altre informazioni, vedere [Panoramica dei certificati CNG](/sccm/core/plan-design/network/cng-certificates-overview).
 
 
-### <a name="bkmk_plan-ehttp"></a> HTTP avanzato  
+### <a name="enhanced-http"></a><a name="bkmk_plan-ehttp"></a> HTTP avanzato  
 
 L'uso di comunicazioni HTTPS è consigliato per tutti i percorsi di comunicazione di Configuration Manager, ma risulta difficile per alcuni clienti a causa del sovraccarico di lavoro derivante dalla gestione dei certificati PKI. L'introduzione dell'integrazione di Azure Active Directory (Azure AD) riduce alcuni ma non tutti i requisiti per i certificati. A partire dalla versione 1806 si può consentire al sito di usare la funzionalità **HTTP avanzato**. Questa configurazione supporta HTTPS nei sistemi del sito tramite una combinazione di certificati autofirmati e Azure AD. Non sono necessari certificati PKI. Per altre informazioni, vedere [Enhanced HTTP](/sccm/core/plan-design/hierarchy/enhanced-http) (HTTP avanzato).  
 
 
-### <a name="bkmk_plan-cmgcdp"></a> Certificati per CMG e CDP
+### <a name="certificates-for-cmg-and-cdp"></a><a name="bkmk_plan-cmgcdp"></a> Certificati per CMG e CDP
 
 La gestione dei client in Internet tramite il gateway di gestione cloud (CMG) e il punto di distribuzione cloud (CDP) richiede l'uso di certificati. Il numero e il tipo di certificati variano a seconda degli scenari specifici. Per altre informazioni, vedere gli articoli seguenti:
 - [Certificati per il gateway di gestione cloud](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway)  
 - [Certificati per il punto di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#bkmk_certs)  
 
 
-### <a name="bkmk_plansitesign"></a> Pianificare il certificato di firma del server del sito (autofirmato)  
+### <a name="plan-for-the-site-server-signing-certificate-self-signed"></a><a name="bkmk_plansitesign"></a> Pianificare il certificato di firma del server del sito (autofirmato)  
 
 I client possono ottenere in modo sicuro una copia del certificato di firma del server del sito da Active Directory Domain Services e dall'installazione push client. Se i client non riescono a ottenere una copia del certificato tramite uno di questi meccanismi, installarlo durante l'installazione del client. Questo processo è particolarmente importante se la prima comunicazione del client con il sito avviene in un punto di gestione basato su Internet. Dal momento che questo server è connesso a una rete non attendibile, esso risulta più vulnerabile agli attacchi. Se non si adotta questa misura aggiuntiva, i client scaricano automaticamente una copia del certificato di firma del server del sito dal punto di gestione.  
 
@@ -100,7 +100,7 @@ I client non riescono a ottenere in modo sicuro una copia del certificato del se
 3.  Installare il client usando la proprietà client.msi seguente: `SMSSIGNCERT=<full path and file name>`  
 
 
-###  <a name="BKMK_PlanningForCRLs"></a> Pianificare revoche di certificati PKI  
+###  <a name="plan-for-pki-certificate-revocation"></a><a name="BKMK_PlanningForCRLs"></a> Pianificare revoche di certificati PKI  
 
 Quando si usano i certificati PKI con Configuration Manager, pianificare l'uso di un elenco di revoche di certificati (CRL). I dispositivi usano l'elenco di revoche di certificati per verificare il certificato presente nel computer che si connette. L'elenco di revoche di certificati è un file creato e firmato da un'autorità di certificazione. Contiene un elenco di certificati rilasciati dall'autorità di certificazione, ma revocati. Quando un amministratore revoca i certificati, la relativa identificazione personale viene aggiunta all'elenco di revoche di certificati. Ad esempio, in caso di sospetta o accertata compromissione di un certificato rilasciato.
 
@@ -123,7 +123,7 @@ Consultare gli amministratori PKI prima di decidere se i client di Configuration
   - Rischio che i client non possano connettersi ai server se non è possibile individuare l'elenco di revoche di certificati  
 
 
-###  <a name="BKMK_PlanningForRootCAs"></a> Pianificare certificati radice trusted PKI e l'elenco di autorità di certificazione  
+###  <a name="plan-for-the-pki-trusted-root-certificates-and-the-certificate-issuers-list"></a><a name="BKMK_PlanningForRootCAs"></a> Pianificare certificati radice trusted PKI e l'elenco di autorità di certificazione  
 
 Se i sistemi del sito IIS usano certificati client PKI per l'autenticazione dei client su HTTP o per l'autenticazione e la crittografia dei client su HTTPS, potrebbe essere necessario importare i certificati CA radice come proprietà del sito. Ecco i due scenari:  
 
@@ -145,7 +145,7 @@ Questi certificati CA radice importati e il certificato CA radice di ogni punto 
 - In presenza di un elenco di autorità emittenti di certificati, i client selezionano un certificato PKI concatenato a un certificato radice trusted presente nell'elenco. In assenza di una corrispondenza, il client non seleziona un certificato PKI. Per altre informazioni, vedere [Pianificare la selezione del certificato client PKI](#BKMK_PlanningForClientCertificateSelection).  
 
 
-###  <a name="BKMK_PlanningForClientCertificateSelection"></a> Pianificare la selezione del certificato client PKI  
+###  <a name="plan-for-pki-client-certificate-selection"></a><a name="BKMK_PlanningForClientCertificateSelection"></a> Pianificare la selezione del certificato client PKI  
 
 Se i sistemi del sito IIS usano certificati client PKI per l'autenticazione dei client su HTTP o per l'autenticazione e la crittografia dei client su HTTPS, pianificare la modalità con cui i client Windows selezionano il certificato da usare per Configuration Manager.  
 
@@ -221,7 +221,7 @@ Per identificare un certificato client PKI univoco, è anche possibile specifica
 Per altre informazioni, vedere [Configurare le impostazioni per i certificati PKI client](/sccm/core/plan-design/security/configure-security#BKMK_ConfigureClientPKI).  
 
 
-###  <a name="BKMK_PlanningForPKITransition"></a> Pianificare una strategia di transizione per certificati PKI e gestione client basata su Internet  
+###  <a name="plan-a-transition-strategy-for-pki-certificates-and-internet-based-client-management"></a><a name="BKMK_PlanningForPKITransition"></a> Pianificare una strategia di transizione per certificati PKI e gestione client basata su Internet  
 
 Le opzioni di configurazione flessibile in Configuration Manager consentono di eseguire una transizione graduale dei client e del sito all'uso dei certificati PKI per garantire la sicurezza degli endpoint dei client. I certificati PKI offrono maggiore sicurezza e consentono di gestire i client Internet.  
 
@@ -273,7 +273,7 @@ Dato il numero di opzioni e scelte di configurazione in Configuration Manager, l
 
     Questo piano introduce prima i certificati PKI solo per l'autenticazione su HTTP e successivamente per l'autenticazione e la crittografia su HTTPS. Adottando questo piano per introdurre gradualmente questi certificati si riduce il rischio di avere client non gestiti e si beneficerà della massima sicurezza supportata da Configuration Manager.  
 
-##  <a name="BKMK_PlanningForRTK"></a> Pianificare la chiave radice attendibile  
+##  <a name="plan-for-the-trusted-root-key"></a><a name="BKMK_PlanningForRTK"></a> Pianificare la chiave radice attendibile  
 
 La chiave radice attendibile di Configuration Manager offre un meccanismo che consente ai client di Configuration Manager di verificare che i sistemi del sito appartengano alla propria gerarchia. Ogni server del sito genera una chiave di scambio per comunicare con altri siti. La chiave di scambio dal sito di livello superiore nella gerarchia viene chiamata chiave radice attendibile.  
 
@@ -305,7 +305,7 @@ Seguire le procedure seguenti per eseguire il pre-provisioning e verificare la c
   > Quando i client usano la comunicazione HTTPS ai punti di gestione, il pre-provisioning della chiave radice attendibile non è necessario. Questi client stabiliscono relazioni di trust tramite i certificati PKI.  
 
 
-### <a name="bkmk_trk-provision-file"></a> Effettuare il pre-provisioning di un client con la chiave radice attendibile usando un file  
+### <a name="pre-provision-a-client-with-the-trusted-root-key-by-using-a-file"></a><a name="bkmk_trk-provision-file"></a> Effettuare il pre-provisioning di un client con la chiave radice attendibile usando un file  
 
 1.  Nel server del sito aprire il file seguente in un editor di testo: `<Configuration Manager install directory>\bin\mobileclient.tcf`  
 
@@ -321,7 +321,7 @@ Seguire le procedure seguenti per eseguire il pre-provisioning e verificare la c
     > Quando si specifica la chiave radice attendibile durante l'installazione del client specificare anche il codice del sito. Usare la proprietà client.msi seguente: `SMSSITECODE=<site code>`   
 
 
-### <a name="bkmk_trk-provision-nofile"></a> Effettuare il pre-provisioning di un client con la chiave radice attendibile senza usare un file  
+### <a name="pre-provision-a-client-with-the-trusted-root-key-without-using-a-file"></a><a name="bkmk_trk-provision-nofile"></a> Effettuare il pre-provisioning di un client con la chiave radice attendibile senza usare un file  
 
 1.  Nel server del sito aprire il file seguente in un editor di testo: `<Configuration Manager install directory>\bin\mobileclient.tcf`  
 
@@ -333,7 +333,7 @@ Seguire le procedure seguenti per eseguire il pre-provisioning e verificare la c
     >  Quando si specifica la chiave radice attendibile durante l'installazione del client specificare anche il codice del sito. Usare la proprietà client.msi seguente: `SMSSITECODE=<site code>`   
 
 
-### <a name="bkmk_trk-verify"></a> Verificare la chiave radice attendibile in un client  
+### <a name="verify-the-trusted-root-key-on-a-client"></a><a name="bkmk_trk-verify"></a> Verificare la chiave radice attendibile in un client  
 
 1. Aprire la console di Windows PowerShell come amministratore.  
 
@@ -346,7 +346,7 @@ Seguire le procedure seguenti per eseguire il pre-provisioning e verificare la c
 La stringa restituita è la chiave radice attendibile. Verificare che corrisponda al valore **SMSPublicRootKey** presente nel file mobileclient.tcf nel server del sito.  
 
 
-### <a name="bkmk_trk-reset"></a> Rimuovere o sostituire la chiave radice attendibile  
+### <a name="remove-or-replace-the-trusted-root-key"></a><a name="bkmk_trk-reset"></a> Rimuovere o sostituire la chiave radice attendibile  
 
 Rimuovere la chiave radice attendibile da un client usando la proprietà client.msi **RESETKEYINFORMATION = TRUE**. 
 
@@ -356,7 +356,7 @@ Per altre informazioni su queste proprietà di installazione, vedere [Informazio
 
 
 
-##  <a name="BKMK_PlanningForSigningEncryption"></a> Pianificare firma e crittografia  
+##  <a name="plan-for-signing-and-encryption"></a><a name="BKMK_PlanningForSigningEncryption"></a> Pianificare firma e crittografia  
  
 Quando si usano i certificati PKI per tutte le comunicazioni client, non è necessario pianificare la firma e la crittografia per proteggere la comunicazione dei dati dei client. Se si configura qualsiasi sistema del sito che esegue IIS per consentire le connessioni client HTTP, decidere la modalità di protezione della comunicazione client per il sito.  
 
@@ -368,13 +368,13 @@ Per altre informazioni su come configurare le impostazioni per la firma e la cri
 
 
 
-##  <a name="BKMK_PlanningForRBA"></a> Pianificare l'amministrazione basata su ruoli  
+##  <a name="plan-for-role-based-administration"></a><a name="BKMK_PlanningForRBA"></a> Pianificare l'amministrazione basata su ruoli  
 
 Per altre informazioni, vedere [Nozioni fondamentali sull'amministrazione basata su ruoli](/sccm/core/understand/fundamentals-of-role-based-administration).  
 
 
 
-## <a name="bkmk_planazuread"></a> Pianificare Azure Active Directory
+## <a name="plan-for-azure-active-directory"></a><a name="bkmk_planazuread"></a> Pianificare Azure Active Directory
 
 Configuration Manager si integra con Azure Active Directory (Azure AD) per consentire al sito e ai client di usare l'autenticazione moderna. L'onboarding del sito in Azure AD supporta gli scenari di Configuration Manager seguenti:
 
@@ -415,7 +415,7 @@ Per altre informazioni su Azure AD, vedere la [documentazione di Azure Active Di
 
 
 
-## <a name="bkmk_auth"></a> Pianificare l'autenticazione del provider SMS
+## <a name="plan-for-sms-provider-authentication"></a><a name="bkmk_auth"></a> Pianificare l'autenticazione del provider SMS
 <!--1357013--> 
 
 A partire dalla versione 1810, è possibile specificare il livello di autenticazione minimo per gli amministratori per l'accesso ai siti di Configuration Manager. Questa funzionalità impone agli amministratori di accedere a Windows con il livello richiesto. Si applica a tutti i componenti che accedono al provider SMS. Ad esempio, la console di Configuration Manager, i metodi dell'SDK e i cmdlet di Windows PowerShell. 

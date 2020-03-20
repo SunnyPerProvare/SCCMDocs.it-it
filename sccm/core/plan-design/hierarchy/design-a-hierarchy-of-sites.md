@@ -11,11 +11,11 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: f0c719db3c505614099c051f734c67c9c31036f5
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75800305"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405384"
 ---
 # <a name="design-a-hierarchy-of-sites-for-configuration-manager"></a>Progettare una gerarchia di siti per Configuration Manager
 
@@ -49,7 +49,7 @@ Durante la pianificazione, tenere presenti le limitazioni sull'aggiunta di siti 
 
 
 
-##  <a name="bkmk_topology"></a> Topologia di gerarchia  
+##  <a name="hierarchy-topology"></a><a name="bkmk_topology"></a> Topologia di gerarchia  
 
 Le topologie di gerarchia vanno da:  
 
@@ -86,7 +86,7 @@ Questa topologia offre i vantaggi seguenti:
 
 
 
-##  <a name="BKMK_ChooseCAS"></a> Determinare quando usare un sito di amministrazione centrale  
+##  <a name="determine-when-to-use-a-central-administration-site"></a><a name="BKMK_ChooseCAS"></a> Determinare quando usare un sito di amministrazione centrale  
 
 Usare un sito di amministrazione centrale per configurare le impostazioni a livello di gerarchia e per monitorare tutti i siti e gli oggetti nella gerarchia. Questo tipo di sito non gestisce i client direttamente ma coordina la replica dei dati tra i siti, che include la configurazione di siti e client in tutta la gerarchia.  
 
@@ -118,7 +118,7 @@ Le informazioni seguenti possono essere utili per decidere quando installare un 
 
 
 
-##  <a name="BKMK_ChoosePriimary"></a> Determinare quando usare un sito primario  
+##  <a name="determine-when-to-use-a-primary-site"></a><a name="BKMK_ChoosePriimary"></a> Determinare quando usare un sito primario  
 
 Utilizzare i siti primari per gestire i client. Installare un sito primario come sito figlio al di sotto di un sito di amministrazione centrale oppure come primo sito di una nuova gerarchia. Un sito primario che è il primo sito di una gerarchia crea un sito primario autonomo. Sia i siti primari figlio che i siti primari autonomi supportano siti secondari.  
 
@@ -145,7 +145,7 @@ Le informazioni seguenti possono essere utili per decidere quando installare un 
 
 
 
-##  <a name="BKMK_ChooseSecondary"></a> Determinare quando usare un sito secondario  
+##  <a name="determine-when-to-use-a-secondary-site"></a><a name="BKMK_ChooseSecondary"></a> Determinare quando usare un sito secondario  
 
 Utilizzare i siti secondari per gestire il trasferimento dei dati client e del contenuto di distribuzione su reti a larghezza di banda ridotta.  
 
@@ -184,7 +184,7 @@ Le informazioni seguenti possono essere utili per decidere quando installare un 
 
 
 
-##  <a name="BKMK_ChooseSecondaryorDP"></a> Determinare quando usare le opzioni di gestione dei contenuti  
+##  <a name="determine-when-to-use-content-management-options"></a><a name="BKMK_ChooseSecondaryorDP"></a> Determinare quando usare le opzioni di gestione dei contenuti  
 
 Se si dispone di client in percorsi di rete remoti, considerare l'utilizzo di una o più opzioni di gestione dei contenuti piuttosto che di un sito primario o secondario. Le opzioni seguenti spesso eliminano la necessità di installare un sito:  
 
@@ -209,7 +209,7 @@ Per altre informazioni sulle opzioni di gestione dei contenuti in Configuration 
 
 
 
-##  <a name="bkmk_beyond"></a> Oltre la topologia di gerarchia  
+##  <a name="beyond-hierarchy-topology"></a><a name="bkmk_beyond"></a> Oltre la topologia di gerarchia  
 
 Oltre alla topologia di gerarchia iniziale, considerare anche le domande seguenti:  
 

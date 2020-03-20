@@ -11,11 +11,11 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: d0b5d97754bc20c446664fe6b5af110afa7afbc7
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75801971"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405464"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>Versioni di SQL Server supportate per Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "75801971"
 
 Ogni sito di Configuration Manager richiede una versione e una configurazione di SQL Server supportate per ospitare il database del sito.  
 
-##  <a name="bkmk_Instances"></a> Istanze e percorsi di SQL Server  
+##  <a name="sql-server-instances-and-locations"></a><a name="bkmk_Instances"></a> Istanze e percorsi di SQL Server  
  
 ### <a name="central-administration-site-and-primary-sites"></a>Sito di amministrazione centrale e siti primari
  
@@ -57,7 +57,7 @@ Le configurazioni seguenti non sono supportate:
 
 La replica transazionale di SQL Server è supportata solo per la replica di oggetti ai punti di gestione configurati per l'uso delle [repliche di database](/sccm/core/servers/deploy/configure/database-replicas-for-management-points).  
 
-##  <a name="bkmk_SQLVersions"></a> Versioni supportate di SQL Server
+##  <a name="supported-versions-of-sql-server"></a><a name="bkmk_SQLVersions"></a> Versioni supportate di SQL Server
 
 In una gerarchia con più siti, diversi siti possono usare versioni diverse di SQL Server per ospitare il database del sito, purché siano vere le condizioni seguenti:
 
@@ -131,7 +131,7 @@ Se non specificato diversamente, le versioni seguenti di SQL Server sono support
 
 - sito secondario  
 
-## <a name="bkmk_SQLConfig"></a> Configurazioni necessarie per SQL Server
+## <a name="required-configurations-for-sql-server"></a><a name="bkmk_SQLConfig"></a> Configurazioni necessarie per SQL Server
 
 Le configurazioni seguenti sono necessarie per tutte le installazioni di SQL Server usate per un database del sito, incluso SQL Server Express. Quando Configuration Manager installa SQL Server Express come parte dell'installazione di un sito secondario, crea automaticamente queste configurazioni.  
 
@@ -194,7 +194,7 @@ SQL Server Service Broker è necessario sia per la replica tra siti che per un s
 Configuration Manager abilita automaticamente la [proprietà TRUSTWORTHY del database](https://docs.microsoft.com/sql/relational-databases/security/trustworthy-database-property). Questa proprietà è obbligatoria per l'**attivazione di Configuration Manager**.
 
 
-##  <a name="bkmk_optional"></a> Configurazioni facoltative per SQL Server  
+##  <a name="optional-configurations-for-sql-server"></a><a name="bkmk_optional"></a> Configurazioni facoltative per SQL Server  
 Le configurazioni seguenti sono facoltative per ogni database che usa un'installazione completa di SQL Server.  
 
 ### <a name="sql-server-service"></a>Servizio SQL Server  

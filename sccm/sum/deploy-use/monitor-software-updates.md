@@ -11,11 +11,11 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 9afd7b0f-5c8e-48bc-9a65-1f7d74103688
 ms.openlocfilehash: 7d84f91c33506e4fc35446e922a5ce16ab0b49d1
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75827367"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405164"
 ---
 # <a name="monitor-software-updates-in-configuration-manager"></a>Monitorare gli aggiornamenti software in Configuration Manager
 
@@ -42,7 +42,7 @@ A partire da Configuration Manager versione 1610, è possibile usare il nuovo da
 1. Questa azione consente di visualizzare un nodo temporaneo in **Dispositivi** dove è possibile visualizzare i dispositivi che richiedono l'aggiornamento. È anche possibile eseguire azioni per il nodo, come creare una nuova raccolta dall'elenco.
 
 
-##  <a name="BKMK_SUAlerts"></a> Avvisi per gli aggiornamenti software  
+##  <a name="alerts-for-software-updates"></a><a name="BKMK_SUAlerts"></a> Avvisi per gli aggiornamenti software  
  È possibile configurare avvisi per gli aggiornamenti software per inviare notifiche agli utenti amministratori quando i livelli di conformità per le distribuzioni degli aggiornamenti software sono al di sotto della percentuale configurata. È possibile configurare avvisi per gli aggiornamenti software nei seguenti punti:  
 
 -   Impostazione ADR: è possibile configurare le impostazioni degli avvisi nella Creazione guidata delle regole di distribuzione automatica e nelle proprietà per ADR.  
@@ -55,7 +55,7 @@ Dopo aver configurato le impostazioni degli avvisi, Configuration Manager genera
 
 2.  Gli avvisi configurati possono essere gestiti nel nodo **Avvisi** dell'area di lavoro **Monitoraggio** .  
 
-##  <a name="BKMK_SUSyncStatus"></a> Stato di sincronizzazione degli aggiornamenti software  
+##  <a name="software-updates-synchronization-status"></a><a name="BKMK_SUSyncStatus"></a> Stato di sincronizzazione degli aggiornamenti software  
  Dopo aver avviato il processo di sincronizzazione, è possibile monitorarlo dalla console di Configuration Manager per tutti i punti di aggiornamento software della gerarchia. Usare la seguente procedura per monitorare il processo di sincronizzazione degli aggiornamenti software.  
 
 #### <a name="to-monitor-the-software-updates-synchronization-process"></a>Per monitorare il processo di sincronizzazione degli aggiornamenti software  
@@ -64,7 +64,7 @@ Dopo aver configurato le impostazioni degli avvisi, Configuration Manager genera
 
     I punti di aggiornamento software nella gerarchia di Configuration Manager vengono visualizzati nel riquadro dei risultati. In questa vista è possibile monitorare lo stato di sincronizzazione per tutti i punti di aggiornamento software. Per visualizzare informazioni più dettagliate sul processo di sincronizzazione, è possibile esaminare il file wsyncmgr.log disponibile in <*PercorsoInstallazioneConfigurationManager*>\Logs di ogni server del sito.  
 
-##  <a name="BKMK_SUDeployStatus"></a> Stato di distribuzione degli aggiornamenti software  
+##  <a name="software-update-deployment-status"></a><a name="BKMK_SUDeployStatus"></a> Stato di distribuzione degli aggiornamenti software  
  Dopo aver distribuito un aggiornamento software singolo o un gruppo di aggiornamenti software, è possibile monitorare lo stato della distribuzione. Usare la procedura seguente per monitorare lo stato della distribuzione di un aggiornamento software o di un gruppo di aggiornamenti software.  
 
 #### <a name="to-monitor-deployment-status"></a>Per monitorare lo stato di distribuzione  
@@ -75,7 +75,7 @@ Dopo aver configurato le impostazioni degli avvisi, Configuration Manager genera
 
 3.  Nella scheda **Home** fare clic su **Visualizza stato** nel gruppo **Distribuzione**.  
 
-##  <a name="BKMK_SUReports"></a> Report degli aggiornamenti software  
+##  <a name="software-updates-reports"></a><a name="BKMK_SUReports"></a> Report degli aggiornamenti software  
  I messaggi di stato per gli aggiornamenti software offrono informazioni sulla conformità degli aggiornamenti software e sullo stato di valutazione e applicazione delle distribuzioni di aggiornamenti software. Per visualizzare tali messaggi di stato, è possibile eseguire i report degli aggiornamenti software. Sono disponibili oltre 30 report degli aggiornamenti software predefiniti. Sono organizzati in diverse categorie e offrono informazioni specifiche sugli aggiornamenti e le distribuzioni di software. Oltre a usare i report preconfigurati, è anche possibile creare report degli aggiornamenti software personalizzati in base alle esigenze dell'azienda. Per altre informazioni, vedere [Operazioni e manutenzione per la creazione di report](../../core/servers/manage/operations-and-maintenance-for-reporting.md).  
 
 ### <a name="recommended-software-updates-reports"></a>Report degli aggiornamenti software consigliati
@@ -98,10 +98,10 @@ Questo report mostra gli aggiornamenti software specifici del fornitore in una d
 Questo report restituisce gli errori di distribuzione nel sito e un conteggio dei computer in cui ogni errore viene riscontrato. 
 
 
-##  <a name="BKMK_MonitorContent"></a> Monitoraggio del contenuto  
+##  <a name="monitor-content"></a><a name="BKMK_MonitorContent"></a> Monitoraggio del contenuto  
  È possibile monitorare il contenuto nella console di Configuration Manager per verificare lo stato di tutti i tipi di pacchetti in relazione ai punti di distribuzione associati. Sono inclusi lo stato di convalida del contenuto del pacchetto, lo stato del contenuto assegnato a un gruppo di punti di distribuzione specifico, lo stato del contenuto assegnato a un punto di distribuzione e lo stato di funzionalità facoltative per ogni punto di distribuzione (convalida contenuto, PXE e multicast).  
 
-###  <a name="BKMK_ContentStatus"></a> Monitoraggio dello stato del contenuto  
+###  <a name="content-status-monitoring"></a><a name="BKMK_ContentStatus"></a> Monitoraggio dello stato del contenuto  
  Il nodo **Stato componente** dell'area di lavoro **Monitoraggio** fornisce informazioni sui pacchetti contenuto. È possibile esaminare le informazioni generali sul pacchetto, lo stato di distribuzione del pacchetto e informazioni dettagliate sullo stato del pacchetto. Usare la procedura seguente per visualizzare lo stato del contenuto.  
 
 #### <a name="to-monitor-content-status"></a>Per monitorare lo stato del contenuto  
@@ -112,7 +112,7 @@ Questo report restituisce gli errori di distribuzione nel sito e un conteggio de
 
 3.  Nella scheda **Home** fare clic su **Visualizza stato**. Vengono visualizzate informazioni dettagliate sullo stato per il pacchetto.  
 
-###  <a name="BKMK_DPGroupStatus"></a> Stato del gruppo di punti di distribuzione  
+###  <a name="distribution-point-group-status"></a><a name="BKMK_DPGroupStatus"></a> Stato del gruppo di punti di distribuzione  
  Il nodo **Stato gruppo di punti di distribuzione** nell'area di lavoro **Monitoraggio** fornisce informazioni sui gruppi di punti di distribuzione. È possibile esaminare informazioni generali sul gruppo di punti di distribuzione, quali lo stato, il grado di conformità e le informazioni dettagliate sullo stato. Usare la procedura seguente per visualizzare lo stato del gruppo di punti di distribuzione.  
 
 #### <a name="to-monitor-distribution-point-group-status"></a>Per monitorare lo stato del gruppo di punti di distribuzione  
@@ -123,7 +123,7 @@ Questo report restituisce gli errori di distribuzione nel sito e un conteggio de
 
 3.  Nella scheda **Home** fare clic su **Visualizza stato**. Vengono visualizzate le informazioni dettagliate sullo stato per il gruppo di punti di distribuzione.  
 
-###  <a name="BKMK_DPConfigStatus"></a> Stato di configurazione dei punti di distribuzione  
+###  <a name="distribution-point-configuration-status"></a><a name="BKMK_DPConfigStatus"></a> Stato di configurazione dei punti di distribuzione  
  Il nodo **Stato di configurazione dei punti di distribuzione** nell'area di lavoro **Monitoraggio** fornisce informazioni sul punto di distribuzione. È possibile esaminare gli attributi abilitati per il punto di distribuzione, come PXE, Multicast e convalida del contenuto. È inoltre possibile visualizzare informazioni dettagliate sullo stato per il punto di distribuzione. Usare la procedura seguente per visualizzare lo stato di configurazione del punto di distribuzione.  
 
 #### <a name="to-monitor-distribution-point-configuration-status"></a>Per monitorare lo stato di configurazione del punto di distribuzione  

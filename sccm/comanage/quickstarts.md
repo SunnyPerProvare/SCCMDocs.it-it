@@ -11,11 +11,11 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: 84b2795fbf0432496a759da545c47cdc8f0f2ddd
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034770"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405674"
 ---
 # <a name="cloud-connecting-with-co-management"></a>Connessione al cloud con la co-gestione
 

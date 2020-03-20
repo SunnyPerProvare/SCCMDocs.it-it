@@ -11,11 +11,11 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
 ms.openlocfilehash: c857997bdbeed51286e874dcbecf00b414dfe6a0
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75818469"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79406104"
 ---
 # <a name="introduction-to-software-updates-in-configuration-manager"></a>Introduzione agli aggiornamenti software in Configuration Manager
 
@@ -25,7 +25,7 @@ Gli aggiornamenti software in Configuration Manager offrono un set di strumenti 
 
 Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiornamenti software nell'ambiente, vedere [Example scenario to deploy security software updates](../deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md) (Scenario di esempio per distribuire aggiornamenti di sicurezza del software).  
 
-##  <a name="BKMK_Synchronization"></a> Sincronizzazione degli aggiornamenti software  
+##  <a name="software-updates-synchronization"></a><a name="BKMK_Synchronization"></a> Sincronizzazione degli aggiornamenti software  
  La sincronizzazione degli aggiornamenti software in Configuration Manager avviene mediante la connessione a Microsoft Update per recuperare i metadati degli aggiornamenti software. Il sito di livello superiore, un sito di amministrazione centrale o un sito primario autonomo, vengono sincronizzati con Microsoft Update in base a una pianificazione o quando si avvia manualmente la sincronizzazione dalla console di Configuration Manager. Quando Configuration Manager termina la sincronizzazione degli aggiornamenti software nel sito di livello superiore, la sincronizzazione degli aggiornamenti software viene avviata nei siti figlio, se esistenti. Dopo che la sincronizzazione è stata completata in ogni sito primario o secondario, vengono creati criteri a livello di sito che forniscono ai computer client la posizione dei punti di aggiornamento software.  
 
 > [!NOTE]  
@@ -79,7 +79,7 @@ Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiorn
 
 7.  Gestione sincronizzazione WSUS invia una richiesta alla volta per WSUS in esecuzione su altri punti di aggiornamento software nel sito. I server WSUS negli altri punti di aggiornamento software vengono configurati come repliche di WSUS in esecuzione sul punto di aggiornamento software predefinito nel sito.  
 
-##  <a name="BKMK_SUMCompliance"></a> Software updates compliance assessment  
+##  <a name="software-updates-compliance-assessment"></a><a name="BKMK_SUMCompliance"></a> Software updates compliance assessment  
  Prima di distribuire gli aggiornamenti software nei computer client in Configuration Manager, avviare un'analisi della conformità degli aggiornamenti software nei computer client. Per ogni aggiornamento software, viene creato un messaggio di stato contenente lo stato di conformità per l'aggiornamento. I messaggi di stato vengono inviati in blocco al punto di gestione e quindi al server del sito, dove lo stato di conformità viene inserito nel database del sito. Lo stato di conformità per gli aggiornamenti software viene visualizzato nella console di Configuration Manager. È possibile distribuire e installare gli aggiornamenti software nei computer che richiedono gli aggiornamenti. Nelle sezioni seguenti vengono fornite informazioni sugli stati di conformità e viene descritto il processo di analisi della conformità degli aggiornamenti software.  
 
 ### <a name="software-updates-compliance-states"></a>Stati di conformità degli aggiornamenti software  
@@ -177,7 +177,7 @@ Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiorn
 
      Dopo aver installato un aggiornamento software e riavviato il computer, l'Agente client aggiornamenti software avvia un'analisi usando i metadati locali. Il client non si connette mai a WSUS in esecuzione sul punto di aggiornamento software per recuperare i metadati degli aggiornamenti software.  
 
-##  <a name="BKMK_DeploymentPackages"></a> Pacchetti di distribuzione degli aggiornamenti software  
+##  <a name="software-update-deployment-packages"></a><a name="BKMK_DeploymentPackages"></a> Pacchetti di distribuzione degli aggiornamenti software  
  Un pacchetto di distribuzione degli aggiornamenti software rappresenta il mezzo usato per scaricare tali aggiornamenti in una cartella di rete condivisa nonché copiare i file di origine aggiornamento software nella raccolta contenuto nei server del sito e nei punti di distribuzione definiti nella distribuzione. Usando il Download guidato degli aggiornamenti, è possibile scaricare gli aggiornamenti software e aggiungerli ai pacchetti di distribuzione prima di distribuirli. La procedura guidata consente di effettuare il provisioning degli aggiornamenti software nei punti di distribuzione e di verificare che questa parte del processo di distribuzione sia eseguita correttamente prima di distribuire gli aggiornamenti software nei client.  
 
  Quando vengono distribuiti gli aggiornamenti software scaricati tramite la Distribuzione guidata degli aggiornamenti software, la distribuzione usa automaticamente il pacchetto di distribuzione contenente gli aggiornamenti software. Quando vengono distribuiti aggiornamenti software che non sono stati scaricati, è necessario specificare un pacchetto di distribuzione nuovo o esistente nella Distribuzione guidata degli aggiornamenti software e gli aggiornamenti software vengono scaricati al termine della procedura.  
@@ -192,10 +192,10 @@ Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiorn
 
  I client installano gli aggiornamenti software in una distribuzione tramite un punto di distribuzione con aggiornamenti software disponibili, indipendentemente dal pacchetto di distribuzione. Anche se un pacchetto di distribuzione viene eliminato per una distribuzione attiva, i client sono ancora in grado di installare gli aggiornamenti software nella distribuzione finché ciascun aggiornamento non è stato scaricato in almeno un altro pacchetto di distribuzione ed è disponibile in un punto di distribuzione accessibile dal client. Quando l'ultimo pacchetto di distribuzione contenente un aggiornamento software viene eliminato, i computer client non sono in grado di recuperare l'aggiornamento software finché non viene scaricato nuovamente in un pacchetto di distribuzione. Gli aggiornamenti software vengono visualizzati con una freccia rossa nella console di Configuration Manager quando i file di aggiornamento non si trovano in alcun pacchetto di distribuzione. Le distribuzioni vengono visualizzate con una doppia freccia rossa se contengono aggiornamenti in questa condizione.  
 
-##  <a name="BKMK_DeploymentWorkflows"></a> Flussi di lavoro di distribuzione degli aggiornamenti software  
+##  <a name="software-update-deployment-workflows"></a><a name="BKMK_DeploymentWorkflows"></a> Flussi di lavoro di distribuzione degli aggiornamenti software  
  Esistono due scenari principali per la distribuzione di aggiornamenti software nell'ambiente, la distribuzione manuale e la distribuzione automatica. In genere, si effettuerà la distribuzione manuale degli aggiornamenti software per creare una linea di base per i computer client, quindi si gestiranno gli aggiornamenti software nei client usando la distribuzione automatica. Le sezioni seguenti forniscono un riepilogo del flusso di lavoro per la distribuzione manuale e automatica degli aggiornamenti software.  
 
-###  <a name="BKMK_ManualDeployment"></a> Distribuzione manuale degli aggiornamenti software  
+###  <a name="manual-deployment-of-software-updates"></a><a name="BKMK_ManualDeployment"></a> Distribuzione manuale degli aggiornamenti software  
  La distribuzione manuale degli aggiornamenti software consiste nel processo di selezione di aggiornamenti software nella console di Configuration Manager e di avvio manuale del processo di distribuzione. In genere si utilizzerà questo metodo di distribuzione per mantenere aggiornati i computer client con gli aggiornamenti software richiesti prima di creare regole di distribuzione automatica che gestiranno le distribuzioni degli aggiornamenti software in corso a cadenza mensile e per distribuire i requisiti di aggiornamento software fuori banda. Il seguente elenco descrive il flusso di lavoro generale per la distribuzione manuale degli aggiornamenti software:  
 
 1.  Filtrare gli aggiornamenti software che usano requisiti specifici. Ad esempio, è possibile fornire criteri per il recupero di tutti gli aggiornamenti software critici o della sicurezza necessari su più di 50 computer client.  
@@ -206,7 +206,7 @@ Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiorn
 
 4.  Distribuire manualmente il gruppo di aggiornamenti software.  
 
-###  <a name="BKMK_AutomaticDeployment"></a> Distribuzione automatica degli aggiornamenti software  
+###  <a name="automatic-deployment-of-software-updates"></a><a name="BKMK_AutomaticDeployment"></a> Distribuzione automatica degli aggiornamenti software  
  La distribuzione automatica degli aggiornamenti software viene configurata con una regola di distribuzione automatica. Questo metodo di distribuzione viene in genere usato per gli aggiornamenti software mensili (comunemente noti come Patch martedì) e per la gestione degli aggiornamenti delle definizioni. Quando si esegue la regola, gli aggiornamenti software vengono rimossi dal gruppo di aggiornamenti software (se si usa un gruppo esistente), gli aggiornamenti software che soddisfano un criterio specificato (ad esempio, tutti gli aggiornamenti software della sicurezza rilasciati la settimana precedente) vengono aggiunti a un gruppo di aggiornamenti software, i file di contenuto per gli aggiornamenti software vengono scaricati e copiati nei punti di distribuzione e gli aggiornamenti software vengono distribuiti nei computer client nella raccolta di destinazione. Il seguente elenco descrive il flusso di lavoro generale per la distribuzione automatica degli aggiornamenti software:  
 
 1. Creare una regola di distribuzione automatica che specifica le impostazioni di distribuzione, tra cui:  
@@ -251,7 +251,7 @@ Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiorn
 
   -   Avvisi separati per questa distribuzione  
 
-##  <a name="BKMK_DeploymentProcess"></a> Processo di distribuzione degli aggiornamenti software  
+##  <a name="software-update-deployment-process"></a><a name="BKMK_DeploymentProcess"></a> Processo di distribuzione degli aggiornamenti software  
  Dopo aver distribuito gli aggiornamenti software oppure quando viene eseguita una regola di distribuzione automatica e vengono distribuiti gli aggiornamenti software, viene aggiunto un criterio di assegnazione distribuzione ai criteri del computer per il sito. Gli aggiornamenti software vengono scaricati dal percorso download, Internet o dalla cartella di rete condivisa nell'origine del pacchetto. Gli aggiornamenti software vengono copiati dall'origine del pacchetto nella raccolta contenuto nel server del sito, quindi nella raccolta contenuto nel punto di distribuzione.  
 
  Quando un computer client nella raccolta di destinazione per la distribuzione riceve dei criteri del computer, l'Agente client aggiornamenti software avvia un'analisi di valutazione. L'agente client scarica il contenuto per gli aggiornamenti software richiesti da un punto di distribuzione nella cache del client locale in base all'impostazione **Tempo disponibile software** per la distribuzione e quindi gli aggiornamenti software sono disponibili per l'installazione. Gli aggiornamenti software nelle distribuzioni facoltative (distribuzioni che non hanno una scadenza dell'installazione) non vengono scaricati fino a quando un utente non avvia manualmente l'installazione.  
@@ -264,7 +264,7 @@ Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiorn
 ### <a name="deployment-reevaluation-cycle"></a>Ciclo di rivalutazione della distribuzione  
  Per impostazione predefinita, i computer client avviano un ciclo di rivalutazione della distribuzione ogni 7 giorni. Durante tale ciclo, il computer client analizza di aggiornamenti software precedentemente distribuiti e installati. Se degli aggiornamenti software risultano mancanti, vengono reinstallati dalla cache locale. Se un aggiornamento software non è più disponibile nella cache locale, viene scaricato da un punto di distribuzione e quindi installato. È possibile configurare la pianificazione di rivalutazione nella pagina **Aggiornamenti software** nelle impostazioni client per il sito.  
 
-##  <a name="BKMK_EmbeddedDevices"></a> Supporto per dispositivi con Windows Embedded che usano filtri di scrittura  
+##  <a name="support-for-windows-embedded-devices-that-use-write-filters"></a><a name="BKMK_EmbeddedDevices"></a> Supporto per dispositivi con Windows Embedded che usano filtri di scrittura  
  Quando si distribuiscono aggiornamenti software a dispositivi con Windows Embedded abilitati ai filtri di scrittura, è possibile specificare se disabilitare il filtro sul dispositivo durante la distribuzione, riavviando il dispositivo al termine di tale operazione. Se il filtro di scrittura non è disabilitato, il software viene distribuito in una sovrapposizione temporanea e non sarà più installato al riavvio del dispositivo, a meno che un'altra distribuzione forzi le modifiche per renderle permanenti.  
 
 > [!NOTE]  
@@ -274,7 +274,7 @@ Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiorn
 
  Per altre informazioni sul modo in cui Configuration Manager gestisce dispositivi Windows Embedded che usano filtri di scrittura, vedere [Planning for client deployment to Windows Embedded devices in System Center Configuration Manager](../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md) (Pianificazione della distribuzione di client in dispositivi Windows Embedded in System Center Configuration Manager).  
 
-##  <a name="BKMK_ExtendSoftwareUpdates"></a> Estendere gli aggiornamenti software in Configuration Manager  
+##  <a name="extend-software-updates-in-configuration-manager"></a><a name="BKMK_ExtendSoftwareUpdates"></a> Estendere gli aggiornamenti software in Configuration Manager  
  Usare System Center Updates Publisher per gestire gli aggiornamenti software che non sono disponibili da Microsoft Update. Dopo aver pubblicato gli aggiornamenti software nel server di aggiornamento e averli sincronizzati in Configuration Manager, è possibile distribuire gli aggiornamenti software nei client di Configuration Manager. Per altre informazioni su System Center Updates Publisher, vedere [Updates Publisher 2011](https://go.microsoft.com/fwlink/p/?LinkId=252947).  
 
 ## <a name="next-steps"></a>Passaggi successivi

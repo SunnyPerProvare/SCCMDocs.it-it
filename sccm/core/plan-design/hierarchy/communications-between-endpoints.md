@@ -11,11 +11,11 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: e1dc41e9ccee7a59d5014ace4e2db5d9071c5261
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75800527"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405444"
 ---
 # <a name="communications-between-endpoints-in-configuration-manager"></a>Comunicazioni tra gli endpoint in Configuration Manager
 
@@ -39,7 +39,7 @@ Questo articolo illustra le modalità di comunicazione tra i componenti e i sist
 
 
 
-##  <a name="Planning_Intra-site_Com"></a> Comunicazioni tra sistemi del sito in un sito  
+##  <a name="communications-between-site-systems-in-a-site"></a><a name="Planning_Intra-site_Com"></a> Comunicazioni tra sistemi del sito in un sito  
 
  Quando i sistemi o componenti del sito di Configuration Manager comunicano in rete con altri sistemi del sito o componenti nel sito, usano uno dei protocolli seguenti, a seconda della configurazione del sito:  
 
@@ -52,7 +52,7 @@ Questo articolo illustra le modalità di comunicazione tra i componenti e i sist
 Con l'eccezione della comunicazione dal server del sito a un punto di distribuzione, le comunicazioni tra server in un sito possono verificarsi in qualsiasi momento. Queste comunicazioni non usano meccanismi per controllare la larghezza di banda di rete. Poiché non è possibile controllare la comunicazione tra sistemi del sito, assicurarsi di installare i server del sistema del sito in posizioni che dispongono di reti veloci e ben connesse.  
 
 
-### <a name="bkmk_site2dp"></a> Dal server del sito al punto di distribuzione 
+### <a name="site-server-to-distribution-point"></a><a name="bkmk_site2dp"></a> Dal server del sito al punto di distribuzione 
 
 Per gestire il trasferimento di contenuto dal server del sito ai punti di distribuzione, adottare le strategie seguenti:  
 
@@ -64,7 +64,7 @@ Per altre informazioni, vedere [Gestire la larghezza di banda di rete per la ges
 
 
 
-##  <a name="Planning_Client_to_Site_System"></a> Comunicazioni da client a sistemi e servizi del sito  
+##  <a name="communications-from-clients-to-site-systems-and-services"></a><a name="Planning_Client_to_Site_System"></a> Comunicazioni da client a sistemi e servizi del sito  
 
 I client avviano le comunicazioni con i ruoli del sistema del sito, Active Directory Domain Services e servizi online. Per abilitare queste comunicazioni, i firewall devono consentire il traffico di rete tra i client e gli endpoint delle comunicazioni. Per altre informazioni sulle porte e i protocolli usati dai client per la comunicazione con questi endpoint, vedere [Porte usate in Configuration Manager](/sccm/core/plan-design/hierarchy/ports).  
 
@@ -79,7 +79,7 @@ Per utilizzare HTTPS, configurare una delle opzioni seguenti:
 Quando si distribuisce un ruolo del sistema del sito che usa Internet Information Services (IIS) e supporta le comunicazioni dai client, è necessario specificare se i client si connettono al sistema del sito tramite HTTP o HTTPS. Se si usa HTTP, è necessario considerare anche le opzioni di firma e crittografia. Per altre informazioni, vedere [Pianificazione di firma e crittografia](/sccm/core/plan-design/security/plan-for-security#BKMK_PlanningForSigningEncryption).  
 
 
-### <a name="bkmk_client2mp"></a> Comunicazioni tra client e punti di gestione
+### <a name="client-to-management-point-communication"></a><a name="bkmk_client2mp"></a> Comunicazioni tra client e punti di gestione
 
 La comunicazione tra un client e un punto di gestione avviene in due fasi: autenticazione (trasporto) e autorizzazione (messaggio). Questo processo varia a seconda dei fattori seguenti: 
 - Configurazione del sito: HTTP, HTTPS o HTTP avanzato
@@ -98,7 +98,7 @@ Usare la tabella seguente per comprendere il funzionamento del processo:
 > Per altre informazioni sulla configurazione del punto di gestione per i diversi tipi di identità del dispositivo e con il Cloud Management Gateway, vedere [Abilitare i punti di gestione per HTTPS](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_mphttps).  
 
 
-### <a name="bkmk_client2dp"></a> Comunicazioni tra client e punti di distribuzione
+### <a name="client-to-distribution-point-communication"></a><a name="bkmk_client2dp"></a> Comunicazioni tra client e punti di distribuzione
 
 Quando un client comunica con un punto di distribuzione, deve solo eseguire l'autenticazione prima di scaricare il contenuto. Usare la tabella seguente per comprendere il funzionamento del processo:
 
@@ -109,7 +109,7 @@ Quando un client comunica con un punto di distribuzione, deve solo eseguire l'au
 | HTTPS    | - Certificato PKI<br> - Autenticazione integrata Windows con account del computer o account di accesso alla rete<br> - Token di accesso al contenuto |
 
 
-###  <a name="BKMK_clientspan"></a> Considerazioni per le comunicazioni client da Internet o da una foresta non attendibile  
+###  <a name="considerations-for-client-communications-from-the-internet-or-an-untrusted-forest"></a><a name="BKMK_clientspan"></a> Considerazioni per le comunicazioni client da Internet o da una foresta non attendibile  
 
 I seguenti ruoli del sistema del sito installati nei siti primari supportano connessioni da client che si trovano in percorsi non attendibili, come Internet o una foresta non attendibile. I siti secondari non supportano le connessioni client da percorsi non attendibili. 
 
@@ -132,7 +132,7 @@ I seguenti ruoli del sistema del sito installati nei siti primari supportano con
 -   Gateway di gestione cloud (richiede HTTPS)
 
 
-### <a name="bkmk_internetfacing"></a> Informazioni sui sistemi del sito con connessione a Internet
+### <a name="about-internet-facing-site-systems"></a><a name="bkmk_internetfacing"></a> Informazioni sui sistemi del sito con connessione a Internet
 
 > [!Note]  
 > La sezione seguente riguarda gli scenari di gestione di client basata su Internet. Non è applicabile agli scenari di gateway di gestione cloud. Per altre informazioni, vedere [Gestire i client su Internet](/sccm/core/clients/manage/manage-clients-internet).  
@@ -162,12 +162,12 @@ Come visualizzato nell'esempio precedente, è possibile posizionare i sistemi de
 
 
 
-##  <a name="Plan_Com_X-Forest"></a> Comunicazioni tra foreste Active Directory  
+##  <a name="communications-across-active-directory-forests"></a><a name="Plan_Com_X-Forest"></a> Comunicazioni tra foreste Active Directory  
 
 Configuration Manager supporta siti e gerarchie che si estendono su foreste Active Directory. Supporta anche computer del dominio che non si trovano nella stessa foresta Active Directory del server del sito e computer che appartengono a gruppi di lavoro.  
 
 
-### <a name="bkmk_noforesttrust"></a> Supportare i computer di dominio in una foresta considerata non attendibile dalla foresta del server del sito 
+### <a name="support-domain-computers-in-a-forest-thats-not-trusted-by-your-site-servers-forest"></a><a name="bkmk_noforesttrust"></a> Supportare i computer di dominio in una foresta considerata non attendibile dalla foresta del server del sito 
 
 -   Installare i ruoli del sistema del sito in tale foresta non trusted, con la possibilità di pubblicare le informazioni sul sito in tale foresta di Active Directory  
 
@@ -179,7 +179,7 @@ Quando si installano i server del sistema del sito in una foresta Active Directo
 >  Se si vuole gestire i dispositivi su Internet, è possibile installare ruoli del sistema del sito basati su Internet nella rete perimetrale quando i server del sistema del sito si trovano nella foresta Active Directory. In questo scenario non è richiesto un trust bidirezionale tra la rete perimetrale e la foresta del server del sito.  
 
 
-### <a name="bkmk_workgroup"></a> Supportare i computer in un gruppo di lavoro  
+### <a name="support-computers-in-a-workgroup"></a><a name="bkmk_workgroup"></a> Supportare i computer in un gruppo di lavoro  
 
 -   Approvare manualmente i computer del gruppo di lavoro quando questi usano connessioni client HTTP ai ruoli del sistema del sito. Configuration Manager non può autenticare questi computer usando Kerberos.  
 
@@ -196,7 +196,7 @@ Per altre informazioni, vedere gli articoli seguenti:
 -   [Come installare i client di Configuration Manager sui computer del gruppo di lavoro](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_ClientWorkgroup)  
 
 
-###  <a name="bkmk_span"></a> Scenari di supporto di un sito o una gerarchia che si estende su più domini e foreste  
+###  <a name="scenarios-to-support-a-site-or-hierarchy-that-spans-multiple-domains-and-forests"></a><a name="bkmk_span"></a> Scenari di supporto di un sito o una gerarchia che si estende su più domini e foreste  
 
 #### <a name="scenario-1-communication-between-sites-in-a-hierarchy-that-spans-forests"></a>Scenario 1: Comunicazione tra siti in una gerarchia che si estende su più foreste  
 Questo scenario richiede un trust tra foreste bidirezionale che supporti l'autenticazione Kerberos.  Se non è presente un trust tra foreste bidirezionale che supporta l'autenticazione Kerberos, Configuration Manager non supporterà il sito figlio nella foresta remota.  
@@ -295,7 +295,7 @@ Per pubblicare le informazioni di un sito in un'altra foresta Active Directory:
 -   Configurare ogni sito per la pubblicazione dei relativi dati in Servizi di dominio Active Directory. Questa configurazione consente ai client di tale foresta di recuperare le informazioni del sito e trovare punti di gestione. Per i client che non possono usare Active Directory Domain Services per la posizione del servizio è possibile usare DNS, WINS o il punto di gestione client assegnato.  
 
 
-####  <a name="bkmk_xchange"></a> Scenario 4: Inserire il connettore Exchange Server in una foresta remota  
+####  <a name="scenario-4-put-the-exchange-server-connector-in-a-remote-forest"></a><a name="bkmk_xchange"></a> Scenario 4: Inserire il connettore Exchange Server in una foresta remota  
 
 Per il supporto di questo scenario, assicurarsi che la risoluzione dei nomi funzioni correttamente tra le foreste. Ad esempio, configurare gli inoltri DNS. Quando si configura il connettore Exchange Server, specificare il FQDN intranet di Exchange Server. Per altre informazioni, vedere [Gestire i dispositivi mobili con Configuration Manager ed Exchange](/sccm/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync).  
 

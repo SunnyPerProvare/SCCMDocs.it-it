@@ -11,11 +11,11 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: 53ee871a712290c4e74398fd467064aee5f56a9b
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76033943"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405944"
 ---
 # <a name="how-to-manage-clients-in-configuration-manager"></a>Come gestire i client in Configuration Manager
 
@@ -32,7 +32,7 @@ Quando un client di Configuration Manager viene installato e assegnato correttam
 >
 > Per gestire un dispositivo dalla console, usare la colonna **Client** nel nodo **Dispositivi** per determinare se il client è installato.  
 
-## <a name="BKMK_ManagingClients_DevicesNode"></a> Gestire i client dal nodo **Dispositivi**  
+## <a name="manage-clients-from-the-devices-node"></a><a name="BKMK_ManagingClients_DevicesNode"></a> Gestire i client dal nodo **Dispositivi**  
 
 A seconda del tipo di dispositivo, alcune di queste opzioni potrebbero non essere disponibili.  
 
@@ -200,7 +200,7 @@ Visualizzare i dati di individuazione e le distribuzioni usate come destinazione
 È anche possibile configurare le variabili usate dalle sequenze di attività per distribuire un sistema operativo nel dispositivo. Per altre informazioni, vedere [Creare le variabili della sequenza di attività per dispositivi e raccolte](/configmgr/osd/understand/using-task-sequence-variables#bkmk_set-coll-var).
 
 
-## <a name="BKMK_ManagingClients_DeviceCollectionsNode"></a> Gestire i client dal nodo **Raccolte di dispositivi**
+## <a name="manage-clients-from-the-device-collections-node"></a><a name="BKMK_ManagingClients_DeviceCollectionsNode"></a> Gestire i client dal nodo **Raccolte di dispositivi**
 
 Molte delle attività disponibili per i dispositivi nel nodo **Dispositivi** sono presenti anche nelle raccolte. La console applica automaticamente l'operazione a tutti i dispositivi idonei della raccolta. Questa azione eseguita in un'intera raccolta genera pacchetti di rete aggiuntivi e aumenta l'utilizzo della CPU nel server del sito.  
 
@@ -236,7 +236,7 @@ Per identificare i dispositivi che sono in attesa di riavvio, passare all'area d
 Quando la notifica viene ricevuta da un client, viene visualizzata una finestra di notifica di **Software Center** per informare l'utente del riavvio. Per impostazione predefinita, il riavvio viene eseguito dopo 90 minuti. È possibile modificare il tempo di riavvio configurando le [impostazioni client](/configmgr/core/clients/deploy/configure-client-settings). Le impostazioni per il comportamento del riavvio sono disponibili nella scheda [Riavvio del computer](/configmgr/core/clients/deploy/about-client-settings#computer-restart) delle impostazioni predefinite.
 
 
-## <a name="BKMK_ClientCache"></a> Configurare la cache del client
+## <a name="configure-the-client-cache"></a><a name="BKMK_ClientCache"></a> Configurare la cache del client
 
 La cache client archivia i file temporanei per l'installazione di applicazioni e programmi nei client. Anche gli aggiornamenti software usano la cache del client, tentando di eseguire sempre il download nella cache indipendentemente dall'impostazione delle dimensioni. Configurare le impostazioni della cache client, ad esempio dimensioni e percorso, quando si installa manualmente il client, quando si usa l'installazione push client oppure dopo l'installazione.
 
@@ -319,7 +319,7 @@ Per altre informazioni sull'uso delle proprietà della riga di comando di CCMSet
 È possibile modificare le dimensioni della cache del client senza dover reinstallare il client. Usare le impostazioni delle dimensioni della cache disponibili in **Impostazioni client** nella console di Configuration Manager. Per altre informazioni vedere [Impostazioni della cache dei client](/configmgr/core/clients/deploy/about-client-settings#client-cache-settings).
 
 
-## <a name="BKMK_UninstalClient"></a> Disinstallare il client
+## <a name="uninstall-the-client"></a><a name="BKMK_UninstalClient"></a> Disinstallare il client
 
 È possibile disinstallare il software client di Configuration Manager da un computer usando **CCMSetup.exe** con la proprietà **/Uninstall**. Eseguire CCMSetup.exe in un singolo computer dal prompt dei comandi oppure distribuire un pacchetto per disinstallare il client da una raccolta di computer.  
 
@@ -336,7 +336,7 @@ Per altre informazioni sull'uso delle proprietà della riga di comando di CCMSet
 > Se è necessario attendere il completamento del processo di disinstallazione prima di eseguire un'altra operazione, eseguire `Wait-Process CCMSetup` in PowerShell. Questo comando consente di sospendere uno script fino al completamento del processo CCMSetup.
 
 
-## <a name="BKMK_ConflictingRecords"></a> Gestire i record in conflitto
+## <a name="manage-conflicting-records"></a><a name="BKMK_ConflictingRecords"></a> Gestire i record in conflitto
 
 Configuration Manager usa l'identificatore hardware per tentare di identificare i client che potrebbero essere dei duplicati e avvertire l'utente dei record in conflitto. Ad esempio, se si reinstalla un computer, l'identificatore hardware rimane lo stesso mentre il GUID usato da Configuration Manager potrebbe cambiare.  
 
@@ -393,7 +393,7 @@ Usare questa procedura per aggiungere identificatori hardware che Configuration 
 > - Remove-CMDuplicateHardwareIdMacAddress
 
 
-## <a name="BKMK_PolicyRetrieval"></a> Avviare il recupero dei criteri
+## <a name="start-policy-retrieval"></a><a name="BKMK_PolicyRetrieval"></a> Avviare il recupero dei criteri
 
 Un client di Configuration Manager scarica i relativi criteri client in base a una pianificazione configurata come impostazione client. È anche possibile avviare il recupero dei criteri su richiesta dal client. Ad esempio, per la risoluzione dei problemi o esigenze di test.  
 
@@ -402,7 +402,7 @@ Un client di Configuration Manager scarica i relativi criteri client in base a u
 - [Support Center](#bkmk_policy-support)
 - [Uno script](#bkmk_policy-script)
 
-### <a name="bkmk_policy-notify"></a> Avviare il recupero dei criteri client con la notifica client  
+### <a name="start-client-policy-retrieval-with-client-notification"></a><a name="bkmk_policy-notify"></a> Avviare il recupero dei criteri client con la notifica client  
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità** e selezionare **Dispositivi**.  
 
@@ -411,7 +411,7 @@ Un client di Configuration Manager scarica i relativi criteri client in base a u
     > [!NOTE]  
     > È anche possibile usare la notifica client per avviare il recupero dei criteri per tutti i dispositivi in una raccolta.  
 
-### <a name="bkmk_policy-manual"></a> Avviare il recupero dei criteri client dal pannello di controllo del client di Configuration Manager
+### <a name="start-client-policy-retrieval-from-the-configuration-manager-client-control-panel"></a><a name="bkmk_policy-manual"></a> Avviare il recupero dei criteri client dal pannello di controllo del client di Configuration Manager
 
 1. Aprire il pannello di controllo di **Configuration Manager** nel computer.  
 
@@ -421,11 +421,11 @@ Un client di Configuration Manager scarica i relativi criteri client in base a u
 
 4. Ripetere i passaggi precedenti per tutte le altre azioni. Ad esempio, **Ciclo di recupero e valutazione criteri utente** per le impostazioni client degli utenti.  
 
-### <a name="bkmk_policy-support"></a> Avviare il recupero dei criteri client con Supporto tecnico
+### <a name="start-client-policy-retrieval-with-support-center"></a><a name="bkmk_policy-support"></a> Avviare il recupero dei criteri client con Supporto tecnico
 
 Usare Supporto tecnico per richiedere e visualizzare i criteri client. Per altre informazioni, vedere [Informazioni di riferimento sull'interfaccia utente del Supporto tecnico](/configmgr/core/support/support-center-ui-reference#bkmk_support-policy).
 
-### <a name="bkmk_policy-script"></a> Avviare il recupero dei criteri client tramite uno script  
+### <a name="start-client-policy-retrieval-by-script"></a><a name="bkmk_policy-script"></a> Avviare il recupero dei criteri client tramite uno script  
 
 1. Aprire un editor di script, ad esempio il Blocco note o Windows PowerShell ISE.  
 

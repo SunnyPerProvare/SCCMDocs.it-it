@@ -11,11 +11,11 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: d1d761630646c5a801388f9ec9e7178989aeb82b
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826187"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405734"
 ---
 # <a name="updates-and-servicing-for-configuration-manager"></a>Aggiornamenti e manutenzione per Configuration Manager
 
@@ -27,7 +27,7 @@ Configuration Manager usa un metodo di manutenzione nella console denominato **A
 > I termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti separati in Configuration Manager. Per altre informazioni su come viene usato ogni termine, vedere [Informazioni su upgrade, aggiornamento e installazione](/sccm/core/understand/upgrade-update-install).  
 
 
-## <a name="bkmk_Baselines"></a> Versioni di base e di aggiornamento  
+## <a name="baseline-and-update-versions"></a><a name="bkmk_Baselines"></a> Versioni di base e di aggiornamento  
 
 Usare la versione di base più recente quando si installa un nuovo sito in una nuova gerarchia.
 
@@ -102,7 +102,7 @@ Per controllare la versione del sito di Configuration Manager, nella console pas
 > La versione della console è leggermente diversa da quella del sito. La versione secondaria della console corrisponde alla versione finale di Configuration Manager. Ad esempio, in Configuration Manager versione 1802 la versione iniziale del sito è 5.0.8634.1000 e la versione iniziale della console è 5.**1802**.1082.1700. Con i futuri hotfix è possibile che i numeri di build (1082) e revisione (1700) cambino.
 
 
-## <a name="bkmk_inconsole"></a> Aggiornamenti e manutenzione nella console  
+## <a name="in-console-updates-and-servicing"></a><a name="bkmk_inconsole"></a> Aggiornamenti e manutenzione nella console  
 
 Quando si usa un'installazione di Configuration Manager Current Branch pronta per l'ambiente di produzione, la maggior parte degli aggiornamenti è disponibile mediante il canale **Aggiornamenti e manutenzione**. Questo metodo identifica, scarica e rende disponibili gli aggiornamenti applicabili alla versione e alla configurazione correnti dell'infrastruttura. Include solo gli aggiornamenti consigliati da Microsoft a tutti i clienti.
 
@@ -156,7 +156,7 @@ Quando si installa un aggiornamento nella console, si verifica quanto segue:
 > [!NOTE]  
 > Configuration Manager Current Branch, Long-Term Servicing Branch e Technical Preview Branch sono rilasci diversi. Gli aggiornamenti relativi a un ramo non sono disponibili come aggiornamenti nella console per gli altri rami. Per altre informazioni sui rami disponibili, vedere [Scelta del ramo di Configuration Manager da usare](/sccm/core/understand/which-branch-should-i-use).
 
-### <a name="bkmk_supersede"></a> Sostituzione per gli hotfix nella console
+### <a name="supersedence-for-in-console-hotfixes"></a><a name="bkmk_supersede"></a> Sostituzione per gli hotfix nella console
 
 <!-- 3229613 -->
 A partire dalla versione 1902, gli hotfix nella console hanno ora relazioni di sostituzione. Quando Microsoft pubblica un nuovo hotfix per Configuration Manager, la console non visualizza gli hotfix sostituiti dal nuovo hotfix. Questo nuovo comportamento consente di individuare meglio gli hotfix da installare.
@@ -172,7 +172,7 @@ Sono disponibili tre hotfix: Hotfix-A, Hotfix-B e Hotfix-C. Hotfix-A è sostitui
 |Non installato|Non installato|Installato|Hotfix-C è visualizzato come installato|
 
 
-## <a name="bkmk_outofband"></a> Hotfix fuori programma  
+## <a name="out-of-band-hotfixes"></a><a name="bkmk_outofband"></a> Hotfix fuori programma  
 
 Alcuni rilasci di hotfix con disponibilità limitata per risolvere problemi specifici. Altri hotfix sono applicabili a tutti i clienti, ma non possono essere installati usando il metodo nella console. Questi aggiornamenti sono rilasciati fuori programma e non vengono individuati dal servizio cloud Microsoft.  
 

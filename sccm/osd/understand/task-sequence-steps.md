@@ -11,11 +11,11 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: ec3b4f225756b9342973177c4824e712658fcf61
-ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
-ms.translationtype: MTE75
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77178657"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405284"
 ---
 # <a name="task-sequence-steps"></a>Passaggi della sequenza di attività
 
@@ -45,7 +45,7 @@ Le sezioni seguenti relative a passaggi specifici della sequenza di attività de
 
 
 
-## <a name="BKMK_ApplyDataImage"></a> Applica immagine dei dati
+## <a name="apply-data-image"></a><a name="BKMK_ApplyDataImage"></a> Applica immagine dei dati
 
 Usare questo passaggio per copiare l'immagine dei dati nella partizione di destinazione specificata.  
 
@@ -87,7 +87,7 @@ Specifica che la sequenza di attività elimina tutti i file nella partizione di 
 
 
 
-## <a name="BKMK_ApplyDriverPackage"></a> Applica pacchetto di driver  
+## <a name="apply-driver-package"></a><a name="BKMK_ApplyDriverPackage"></a> Applica pacchetto di driver  
 
 Usare questo passaggio per scaricare tutti i driver del pacchetto di driver e installarli nel sistema operativo Windows.
 
@@ -135,7 +135,7 @@ Questa opzione consente a Windows di installare driver senza firma digitale.
 
 
 
-## <a name="BKMK_ApplyNetworkSettings"></a> Applica impostazioni di rete  
+## <a name="apply-network-settings"></a><a name="BKMK_ApplyNetworkSettings"></a> Applica impostazioni di rete  
 
 Usare questo passaggio per specificare le informazioni di configurazione della rete o del gruppo di lavoro per il computer di destinazione. La sequenza di attività archivia questi valori nel file di risposte appropriato. Installazione di Windows usa questo file di risposte durante l'azione **Imposta Windows e ConfigMgr**.  
 
@@ -183,7 +183,7 @@ Specificare le configurazioni di rete per ogni scheda di rete nel computer. Sele
 
 
 
-## <a name="BKMK_ApplyOperatingSystemImage"></a> Applica immagine del sistema operativo  
+## <a name="apply-operating-system-image"></a><a name="BKMK_ApplyOperatingSystemImage"></a> Applica immagine del sistema operativo  
 
 > [!TIP]  
 > A partire da Windows 10 versione 1709 il supporto include più edizioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento del sistema operativo o di un'immagine del sistema operativo, verificare di selezionare un'[edizione supportata](/configmgr/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).  
@@ -293,7 +293,7 @@ Configurare la sequenza di attività in modo che acceda all'immagine del sistema
 
 
 
-## <a name="BKMK_ApplyWindowsSettings"></a> Applica impostazioni Windows  
+## <a name="apply-windows-settings"></a><a name="BKMK_ApplyWindowsSettings"></a> Applica impostazioni Windows  
 
 Usare questa attività per configurare le impostazioni di Windows per il computer di destinazione. La sequenza di attività archivia questi valori nel file di risposte appropriato. Installazione di Windows usa questo file di risposte durante il passaggio **Imposta Windows e ConfigMgr**.  
 
@@ -377,7 +377,7 @@ Per altre informazioni sui valori dei file di risposte dell'installazione di Win
 > [!NOTE]
 > Se si crea un file di risposte personalizzato per l'installazione di Windows (unattend.xml), questo passaggio sovrascrive tutti i valori esistenti. Per automatizzare un processo dinamico per queste impostazioni, usare le variabili della sequenza di attività correlate, ad esempio, [OSDWindowsSettingsInputLocale](/configmgr/osd/understand/task-sequence-variables#OSDWindowsSettingsInputLocale). 
 
-## <a name="BKMK_AutoApplyDrivers"></a> Applica automaticamente i driver  
+## <a name="auto-apply-drivers"></a><a name="BKMK_AutoApplyDrivers"></a> Applica automaticamente i driver  
 
 Usare questo passaggio per associare e installare i driver come parte della distribuzione del sistema operativo.  
 
@@ -444,7 +444,7 @@ Questa opzione consente a Windows di installare driver senza firma digitale.
 
 
 
-## <a name="BKMK_CaptureNetworkSettings"></a> Acquisisci impostazioni di rete  
+## <a name="capture-network-settings"></a><a name="BKMK_CaptureNetworkSettings"></a> Acquisisci impostazioni di rete  
 
 Usare questo passaggio per acquisire le impostazioni di rete Microsoft dal computer che esegue la sequenza di attività. La sequenza di attività salva queste impostazioni nelle variabili della sequenza di attività. Queste impostazioni sostituiscono le impostazioni predefinite configurate nel passaggio **Applica impostazioni di rete**.  
 
@@ -475,7 +475,7 @@ Acquisisce la configurazione della scheda di rete del computer di destinazione. 
 
 
 
-## <a name="BKMK_CaptureOperatingSystemImage"></a> Acquisisci immagine del sistema operativo  
+## <a name="capture-operating-system-image"></a><a name="BKMK_CaptureOperatingSystemImage"></a> Acquisisci immagine del sistema operativo  
 
 Questo passaggio consente di acquisire una o più immagini da un computer di riferimento. La sequenza di attività crea un file immagine di Windows con estensione wim nella condivisione di rete specificata. Usare quindi la procedura guidata **Aggiungi pacchetto immagine sistema operativo** per importare l'immagine in Configuration Manager per le distribuzioni del sistema operativo basate su immagine.  
 
@@ -525,7 +525,7 @@ Immettere l'account di Windows con autorizzazioni per la condivisione di rete sp
 
 
 
-## <a name="BKMK_CaptureUserState"></a> Acquisisci stato utente  
+## <a name="capture-user-state"></a><a name="BKMK_CaptureUserState"></a> Acquisisci stato utente  
 
 Eseguire questo passaggio per usare l'Utilità di migrazione stato utente (USMT, User State Migration Tool) per acquisire lo stato utente e le impostazioni dal computer che esegue la sequenza di attività. Questo passaggio della sequenza di attività viene usato insieme al passaggio **Ripristina stato utente** . Questo passaggio crittografa sempre l'archivio degli stati USMT usando una chiave di crittografia generata e gestita da Configuration Manager.  
 
@@ -604,7 +604,7 @@ Questa opzione consente di acquisire file anche se sono bloccati per la modifica
 
 
 
-## <a name="BKMK_CaptureWindowsSettings"></a> Acquisisci impostazioni Windows  
+## <a name="capture-windows-settings"></a><a name="BKMK_CaptureWindowsSettings"></a> Acquisisci impostazioni Windows  
 
 Usare questo passaggio per acquisire le impostazioni di Windows dal computer che esegue la sequenza di attività. La sequenza di attività salva queste impostazioni nelle variabili della sequenza di attività. Queste impostazioni acquisite sostituiscono le impostazioni predefinite configurate nel passaggio **Applica impostazioni Windows**.  
 
@@ -639,7 +639,7 @@ Acquisire l'impostazione relativa al fuso orario nel computer.
 
 
 
-## <a name="BKMK_CheckReadiness"></a> Verifica conformità  
+## <a name="check-readiness"></a><a name="BKMK_CheckReadiness"></a> Verifica conformità  
 
 Usare questo passaggio per verificare se il computer di destinazione soddisfa le condizioni dei prerequisiti di distribuzione specificate.  
 
@@ -672,7 +672,7 @@ Verificare che il sistema operativo installato nel computer client soddisfi i re
 
 
 
-## <a name="BKMK_ConnectToNetworkFolder"></a> Connetti alla cartella di rete  
+## <a name="connect-to-network-folder"></a><a name="BKMK_ConnectToNetworkFolder"></a> Connetti alla cartella di rete  
 
 Usare questo passaggio per creare una connessione a una cartella di rete condivisa.  
 
@@ -705,7 +705,7 @@ Selezionare **Imposta** per specificare l'account utente con le autorizzazioni p
 
 
 
-## <a name="BKMK_DisableBitLocker"></a> Disattiva BitLocker  
+## <a name="disable-bitlocker"></a><a name="BKMK_DisableBitLocker"></a> Disattiva BitLocker  
 
 Usare questo passaggio per disabilitare la crittografia BitLocker nell'unità del sistema operativo corrente o in un'unità specifica. Questa azione lascia che le protezioni con chiave visibili siano visibili in testo non crittografato nel disco rigido, ma non decrittografa il contenuto dell'unità. Questa azione viene completata quasi istantaneamente.  
 
@@ -743,7 +743,7 @@ A partire dalla versione 1906, usare questa opzione per specificare il numero di
 È possibile impostare e modificare questo comportamento con le variabili della sequenza di attività [OSDBitLockerRebootCount](/configmgr/osd/understand/task-sequence-variables#OSDBitLockerRebootCount) e [OSDBitLockerRebootCountOverride](/configmgr/osd/understand/task-sequence-variables#OSDBitLockerRebootCountOverride).
 
 
-## <a name="BKMK_DownloadPackageContent"></a> Scarica contenuto pacchetto  
+## <a name="download-package-content"></a><a name="BKMK_DownloadPackageContent"></a> Scarica contenuto pacchetto  
 
 Usare questo passaggio per scaricare uno dei tipi di pacchetto seguenti:  
 
@@ -797,7 +797,7 @@ Configuration Manager aggiunge un suffisso numerico al nome della variabile. Ad 
 
 Se la sequenza di attività non riesce a scaricare un pacchetto, inizia a scaricare il pacchetto successivo nell'elenco.  
 
-### <a name="bkmk_note1"></a> Nota 1: Usare le immagini d'avvio nel passaggio Scarica contenuto pacchetto
+### <a name="note-1-use-of-boot-images-in-the-download-package-content-step"></a><a name="bkmk_note1"></a> Nota 1: Usare le immagini d'avvio nel passaggio Scarica contenuto pacchetto
 
 *Si applica alla versione 1910 e successive*<!-- SCCMDocs-pr #4202 -->
 
@@ -816,7 +816,7 @@ Se si configurano le [proprietà della sequenza di attività](/configmgr/osd/dep
   - Un'immagine di avvio a cui viene fatto riferimento nelle proprietà.
   - Più istanze della sequenza di attività, con immagini di avvio diverse in base alle esigenze di architettura e lingua
 
-## <a name="BKMK_EnableBitLocker"></a> Attiva BitLocker  
+## <a name="enable-bitlocker"></a><a name="BKMK_EnableBitLocker"></a> Attiva BitLocker  
 
 Usare questo passaggio per attivare la crittografia BitLocker in almeno due partizioni nel disco rigido. La prima partizione attiva include il codice bootstrap di Windows. Un'altra partizione contiene il sistema operativo. La partizione bootstrap deve rimanere non crittografata.  
 
@@ -891,7 +891,7 @@ In caso di dischi rigidi di grandi dimensioni il processo di crittografia può r
 
 
 
-## <a name="BKMK_FormatandPartitionDisk"></a> Formato e disco partizione  
+## <a name="format-and-partition-disk"></a><a name="BKMK_FormatandPartitionDisk"></a> Formato e disco partizione  
 
 Usare questo passaggio per formattare e partizionare un disco specificato nel computer di destinazione.  
 
@@ -950,7 +950,7 @@ Per eliminare una partizione, scegliere la partizione e quindi selezionare **Eli
 
 
 
-## <a name="BKMK_InstallApplication"></a> Installa applicazione  
+## <a name="install-application"></a><a name="BKMK_InstallApplication"></a> Installa applicazione  
 
 Questo passaggio consente di installare le applicazioni specificate o un set di applicazioni definito da un elenco dinamico di variabili della sequenza di attività. Quando la sequenza di attività esegue questo passaggio, l'installazione dell'applicazione inizia immediatamente, senza attendere il termine dell'intervallo di polling dei criteri.  
 
@@ -1065,7 +1065,7 @@ Se l'installazione di una delle applicazioni riavvia il computer in modo imprevi
 
 
 
-## <a name="BKMK_InstallPackage"></a> Installa pacchetto
+## <a name="install-package"></a><a name="BKMK_InstallPackage"></a> Installa pacchetto
 
 Usare questo passaggio per installare un pacchetto software come parte della sequenza di attività. Quando si esegue questo passaggio, l'installazione inizia immediatamente, senza attendere un intervallo di polling dei criteri.  
 
@@ -1152,7 +1152,7 @@ Questa impostazione specifica che il passaggio procederà in caso di errore di i
 
 
 
-## <a name="BKMK_InstallSoftwareUpdates"></a> Installa aggiornamenti software  
+## <a name="install-software-updates"></a><a name="BKMK_InstallSoftwareUpdates"></a> Installa aggiornamenti software  
 
 Usare questo passaggio per installare gli aggiornamenti software nel computer di destinazione. Il computer di destinazione viene valutato alla ricerca di aggiornamenti software applicabili solo in corrispondenza con l'esecuzione di questo passaggio della sequenza di attività, quando il computer di destinazione viene valutato per gli aggiornamenti software come qualsiasi altro client gestito da Configuration Manager. Per far sì che questo passaggio installi gli aggiornamenti software, distribuire prima di tutto gli aggiornamenti a una raccolta di cui è membro il computer di destinazione.  
 
@@ -1218,7 +1218,7 @@ Se uno degli aggiornamenti riavvia il computer in modo imprevisto, ripetere ques
 
 
 
-## <a name="BKMK_JoinDomainorWorkgroup"></a> Aggiunta a dominio o gruppo di lavoro  
+## <a name="join-domain-or-workgroup"></a><a name="BKMK_JoinDomainorWorkgroup"></a> Aggiunta a dominio o gruppo di lavoro  
 
 Usare questo passaggio per aggiungere il computer di destinazione a un dominio o un gruppo di lavoro.  
 
@@ -1256,7 +1256,7 @@ Selezionare **Imposta** per immettere il nome utente e la password di un account
 
 
 
-## <a name="BKMK_PrepareConfigMgrClientforCapture"></a> Prepara client ConfigMgr per l'acquisizione  
+## <a name="prepare-configmgr-client-for-capture"></a><a name="BKMK_PrepareConfigMgrClientforCapture"></a> Prepara client ConfigMgr per l'acquisizione  
 
 Usare questo passaggio per rimuovere o configurare il client di Configuration Manager nel computer di riferimento. Questa azione prepara il computer per l'acquisizione come parte del processo di creazione immagine.
 
@@ -1275,7 +1275,7 @@ Questo passaggio non richiede alcuna impostazione nella scheda **Proprietà**.
 
 
 
-## <a name="BKMK_PrepareWindowsforCapture"></a> Prepara Windows per l'acquisizione  
+## <a name="prepare-windows-for-capture"></a><a name="BKMK_PrepareWindowsforCapture"></a> Prepara Windows per l'acquisizione  
 
 Usare questo passaggio per specificare le opzioni di Sysprep per l'acquisizione di un'immagine del sistema operativo nel computer di riferimento. Questo passaggio esegue Sysprep e quindi riavvia il computer nell'immagine di avvio di Windows PE specificata per la sequenza di attività. Questa operazione non riesce se il computer di riferimento fa parte di un dominio.  
 
@@ -1313,7 +1313,7 @@ A partire dalla versione 1810, questo passaggio viene usato nella sequenza di at
 
 
 
-## <a name="BKMK_PreProvisionBitLocker"></a> Eseguire il pre-provisioning di BitLocker  
+## <a name="pre-provision-bitlocker"></a><a name="BKMK_PreProvisionBitLocker"></a> Eseguire il pre-provisioning di BitLocker  
 
 Usare questo passaggio per attivare BitLocker in un'unità mentre si trova in Windows PE. Per impostazione predefinita, viene crittografato solo lo spazio su disco usato e pertanto i tempi di crittografia sono molto più veloci. È possibile applicare le opzioni di gestione delle chiavi usando il passaggio [Attiva BitLocker](#BKMK_EnableBitLocker) dopo l'installazione del sistema operativo.
 
@@ -1343,7 +1343,7 @@ Selezionare questa opzione per ignorare la crittografia delle unità in un compu
 
 
 
-## <a name="BKMK_ReleaseStateStore"></a> Rilascia archiviazione stati  
+## <a name="release-state-store"></a><a name="BKMK_ReleaseStateStore"></a> Rilascia archiviazione stati  
 
 Usare questo passaggio per notificare al punto di migrazione stato il completamento dell'azione di acquisizione o ripristino. Usare questo passaggio insieme ai passaggi **Richiedi archiviazione stati**, **Acquisisci stato utente** e **Ripristina stato utente**. Usare questi passaggi per eseguire la migrazione di dati dello stato utente mediante un punto di migrazione stato e l'Utilità di migrazione stato utente (USMT).  
 
@@ -1370,7 +1370,7 @@ Questo passaggio non richiede alcuna impostazione nella scheda **Proprietà**.
 
 
 
-## <a name="BKMK_RequestStateStore"></a> Richiedi archiviazione stati  
+## <a name="request-state-store"></a><a name="BKMK_RequestStateStore"></a> Richiedi archiviazione stati  
 
 Usare questo passaggio per richiedere l'accesso a un punto di migrazione stato durante l'acquisizione o il ripristino dello stato.  
 
@@ -1422,7 +1422,7 @@ Se la sequenza di attività non può accedere al punto di migrazione stato trami
 
 
 
-## <a name="BKMK_RestartComputer"></a> Riavvia computer  
+## <a name="restart-computer"></a><a name="BKMK_RestartComputer"></a> Riavvia computer  
 
 Usare questo passaggio per riavviare il computer che esegue la sequenza di attività. Dopo il riavvio il computer continua automaticamente con il passaggio successivo della sequenza di attività.  
 
@@ -1468,7 +1468,7 @@ Specificare la quantità di tempo in secondi prima del riavvio del computer di d
 
 
 
-## <a name="BKMK_RestoreUserState"></a> Ripristina stato utente  
+## <a name="restore-user-state"></a><a name="BKMK_RestoreUserState"></a> Ripristina stato utente  
 
 Usare questo passaggio per avviare l'Utilità di migrazione stato utente (USMT) e ripristinare lo stato utente e le impostazioni nel computer di destinazione. Usare questo passaggio in combinazione con il passaggio **Acquisisci stato utente**.  
 
@@ -1525,7 +1525,7 @@ Abilitare questa opzione per generare informazioni di file di log più dettaglia
 
 
 
-## <a name="BKMK_RunCommandLine"></a> Esegui riga di comando  
+## <a name="run-command-line"></a><a name="BKMK_RunCommandLine"></a> Esegui riga di comando  
 
 Usare questo passaggio per eseguire la riga di comando specificata.  
 
@@ -1628,7 +1628,7 @@ Includere altri codici di uscita dallo script che devono essere valutati come es
 
 
 
-## <a name="BKMK_RunPowerShellScript"></a> Esegui script PowerShell  
+## <a name="run-powershell-script"></a><a name="BKMK_RunPowerShellScript"></a> Esegui script PowerShell  
 
 Usare questo passaggio per eseguire lo script di Windows PowerShell specificato.  
 
@@ -1765,7 +1765,7 @@ A partire dalla versione 1902, è possibile includere altri codici di uscita dal
 
 
 
-## <a name="child-task-sequence"></a> Esegui la sequenza di attività
+## <a name="run-task-sequence"></a><a name="child-task-sequence"></a> Esegui la sequenza di attività
 
 > [!Note]  
 > Nella versione 1910 Configuration Manager abilita questa funzionalità per impostazione predefinita. Nella versione 1906 o nelle versioni precedenti Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Abilitare questa funzionalità prima di usarla. Per altre informazioni, vedere [Enable optional features from updates](/configmgr/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).
@@ -1815,7 +1815,7 @@ Selezionare **Sfoglia** per selezionare la sequenza di attività figlio. La fine
 
 
 
-## <a name="BKMK_SetDynamicVariables"></a> Imposta variabili dinamiche  
+## <a name="set-dynamic-variables"></a><a name="BKMK_SetDynamicVariables"></a> Imposta variabili dinamiche  
 
 Usare questo passaggio per eseguire le azioni seguenti:  
 
@@ -1877,7 +1877,7 @@ Dopo aver selezionato le variabili per una regola, specificare un valore per ogn
 
 
 
-## <a name="BKMK_SetTaskSequenceVariable"></a> Imposta variabile della sequenza di attività  
+## <a name="set-task-sequence-variable"></a><a name="BKMK_SetTaskSequenceVariable"></a> Imposta variabile della sequenza di attività  
 
 Usare questo passaggio per configurare il valore di una variabile usata con la sequenza di attività.  
 
@@ -1919,7 +1919,7 @@ La sequenza di attività imposta la variabile su questo valore. Impostare questa
 
 
 
-## <a name="BKMK_SetupWindowsandConfigMgr"></a> Imposta Windows e ConfigMgr  
+## <a name="setup-windows-and-configmgr"></a><a name="BKMK_SetupWindowsandConfigMgr"></a> Imposta Windows e ConfigMgr  
 
 Usare questo passaggio per eseguire la transizione da Windows PE al nuovo sistema operativo. Questo passaggio della sequenza di attività è una parte necessaria di qualsiasi distribuzione del sistema operativo. Installa il client di Configuration Manager nel nuovo sistema operativo e prepara la sequenza di attività per continuare l'esecuzione nel nuovo sistema operativo.  
 
@@ -2013,7 +2013,7 @@ Specificare le opzioni della riga di comando da usare durante l'installazione de
 
 
 
-## <a name="BKMK_UpgradeOS"></a> Aggiorna sistema operativo  
+## <a name="upgrade-operating-system"></a><a name="BKMK_UpgradeOS"></a> Aggiorna sistema operativo  
 
 > [!TIP]  
 > A partire da Windows 10 versione 1709 il supporto include più edizioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento del sistema operativo o di un'immagine del sistema operativo, verificare di selezionare un'[edizione supportata](/configmgr/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).  

@@ -11,11 +11,11 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: 3bc1c0b26a9d5799978dc56ef24fa98132e5d6e9
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034285"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405334"
 ---
 # <a name="proxy-server-support-in-configuration-manager"></a>Supporto dei server proxy in Configuration Manager
 

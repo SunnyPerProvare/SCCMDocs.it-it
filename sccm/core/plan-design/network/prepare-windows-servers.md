@@ -11,11 +11,11 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: 818df92fd64fe97d1cdcc76b63a50283c572df41
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799404"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405344"
 ---
 # <a name="prepare-windows-servers-to-support-configuration-manager"></a>Preparare i server di Windows per il supporto di Configuration Manager
 
@@ -29,7 +29,7 @@ Per poter usare un computer Windows come server di sistema del sito per Configur
 
 Le informazioni contenute in questo articolo offrono una panoramica dei tipi di configurazioni Windows necessari per il supporto dei sistemi del sito Configuration Manager. Per informazioni dettagliate sulla configurazione dei ruoli di sistema del sito specifico, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).
 
-##  <a name="BKMK_WinFeatures"></a> Ruoli e funzionalità di Windows  
+##  <a name="windows-features-and-roles"></a><a name="BKMK_WinFeatures"></a> Ruoli e funzionalità di Windows  
 Quando si configurano i ruoli e le funzionalità di Windows in un computer, potrebbe essere necessario riavviare il computer per completare la configurazione. È quindi consigliabile identificare i computer che ospiteranno i ruoli del sistema del sito prima di installare un sito di Configuration Manager o un server del sistema del sito.
 
 ### <a name="features"></a>Caratteristiche  
@@ -95,7 +95,7 @@ I ruoli di Windows seguenti sono necessari per supportare specifiche funzionalit
 - **Windows Server Update Services**: questo ruolo è richiesto per gli aggiornamenti software.  
 
 
-##  <a name="BKMK_IISFiltering"></a> Filtro richieste IIS per i punti di distribuzione  
+##  <a name="iis-request-filtering-for-distribution-points"></a><a name="BKMK_IISFiltering"></a> Filtro richieste IIS per i punti di distribuzione  
 Per impostazione predefinita, IIS usa il filtro richieste per bloccare l'accesso di diverse estensioni di file e percorsi di cartelle con la comunicazione HTTP o HTTPS. In un punto di distribuzione questo impedisce ai client di scaricare i pacchetti con estensioni o percorsi di cartelle bloccati.  
 
 Quando i file origine pacchetto contengono estensioni bloccate in IIS dalla configurazione del filtro richieste, è necessario configurare il filtro richieste per abilitarle. Per farlo, [modificare la funzionalità del filtro richieste](https://technet.microsoft.com/library/hh831621.aspx) in Gestione IIS nei computer del punto di distribuzione.  

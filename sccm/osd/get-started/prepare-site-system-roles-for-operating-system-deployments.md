@@ -11,11 +11,11 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: 946cf2fb99e68d38eae12d2fb7fb4e89627c79e1
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75821223"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405254"
 ---
 # <a name="prepare-site-system-roles-for-os-deployments-with-configuration-manager"></a>Preparare i ruoli di sistema del sito per le distribuzioni dei sistemi operativi
 
@@ -25,14 +25,14 @@ Per distribuire i sistemi operativi in Configuration Manager, è necessario prep
 
 
 
-##  <a name="BKMK_DistributionPoints"></a> Punti di distribuzione  
+##  <a name="distribution-points"></a><a name="BKMK_DistributionPoints"></a> Punti di distribuzione  
 
 Il ruolo di sistema del sito punto di distribuzione contiene i file di origine da scaricare per i client. Questo contenuto è relativo ad applicazioni, aggiornamenti software, immagini del sistema operativo, immagini di avvio e pacchetti di driver. È possibile controllare la distribuzione del contenuto usando le opzioni della larghezza di banda, della limitazione e della pianificazione.  
 
 È importante avere sufficienti punti di distribuzione per supportare la distribuzione dei sistemi operativi nei computer. È anche importante pianificare la posizione di questi punti di distribuzione nella gerarchia. Per altre informazioni, vedere [Manage content and content infrastructure](/sccm/core/servers/deploy/configure/manage-content-and-content-infrastructure) (Gestire il contenuto e l'infrastruttura del contenuto). Questo articolo include altre considerazioni sulla pianificazione dei punti di distribuzione, specifiche per la distribuzione del sistema operativo.  
 
 
-###  <a name="BKMK_AdditionalPlanning"></a> Considerazioni aggiuntive sulla pianificazione per i punti di distribuzione  
+###  <a name="additional-planning-considerations-for-distribution-points"></a><a name="BKMK_AdditionalPlanning"></a> Considerazioni aggiuntive sulla pianificazione per i punti di distribuzione  
 
 Di seguito sono descritti altri aspetti della pianificazione da considerare per i punti di distribuzione:  
 
@@ -58,12 +58,12 @@ Per eseguire la distribuzione di un sistema operativo a un numero determinato di
 È possibile distribuire un sistema operativo in un punto di distribuzione, ma l'immagine del sistema operativo deve essere ricevuta da un punto di distribuzione diverso.  
 
 
-###  <a name="BKMK_PXEDistributionPoint"></a> Configurazione dei punti di distribuzione per accettare le richieste PXE  
+###  <a name="configuring-distribution-points-to-accept-pxe-requests"></a><a name="BKMK_PXEDistributionPoint"></a> Configurazione dei punti di distribuzione per accettare le richieste PXE  
 
 Per distribuire i sistemi operativi ai client di Configuration Manager che eseguono richieste di avvio PXE, è necessario configurare uno o più punti di distribuzioni per accettare le richieste PXE. Dopo la configurazione, il punto di distribuzione risponde alle richieste di avvio PXE e stabilisce l'azione appropriata da eseguire per la distribuzione. Per altre informazioni, vedere [Install or modify a distribution point](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_config-pxe) (Installare o modificare un punto di distribuzione).  
 
 
-###  <a name="BKMK_RamDiskTFTP"></a> Personalizzare le dimensioni della finestra e del blocco TFTP RamDisk nei punti di distribuzione abilitati per PXE  
+###  <a name="customize-the-ramdisk-tftp-block-and-window-sizes-on-pxe-enabled-distribution-points"></a><a name="BKMK_RamDiskTFTP"></a> Personalizzare le dimensioni della finestra e del blocco TFTP RamDisk nei punti di distribuzione abilitati per PXE  
 
 È possibile personalizzare le dimensioni della finestra e del blocco TFTP RamDisk per i punti di distribuzione abilitati per PXE. Se la rete è stata personalizzata, il download dell'immagine di avvio potrebbe non riuscire a causa di un errore di timeout, perché le dimensioni del blocco o della finestra sono eccessive. La personalizzazione delle dimensioni della finestra e del blocco TFTP RamDisk consentono di ottimizzare il traffico TFTP quando si usa PXE per soddisfare i requisiti di rete specifici. Per individuare la scelta più efficiente, è necessario testare le impostazioni personalizzate nel proprio ambiente.  
 
@@ -94,7 +94,7 @@ Per personalizzare le dimensioni della finestra TFTP RamDisk, aggiungere la chia
 > Sia i Servizi di distribuzione Windows sia il servizio risponditore PXE di Configuration Manager supportano queste configurazioni TFTP.  
 
 
-###  <a name="BKMK_DPMulticast"></a> Configurare i punti di distribuzione per il supporto del multicast  
+###  <a name="configure-distribution-points-to-support-multicast"></a><a name="BKMK_DPMulticast"></a> Configurare i punti di distribuzione per il supporto del multicast  
 
 Il multicast è un metodo di ottimizzazione della rete. È possibile usarlo nei punti di distribuzione quando più client potrebbero scaricare la stessa immagine del sistema operativo nello stesso momento. Quando si usa il multicast, più computer possono scaricare contemporaneamente l'immagine del sistema operativo, perché il punto di distribuzione usa la distribuzione multicast. Senza multicast, il punto di distribuzione invia una copia dei dati a ogni client in una connessione separata. Per altre informazioni, vedere [Usare il multicast per distribuire Windows in rete](/sccm/osd/deploy-use/use-multicast-to-deploy-windows-over-the-network).  
 
@@ -102,7 +102,7 @@ Prima di distribuire il sistema operativo, configurare un punto di distribuzione
 
 
 
-##  <a name="BKMK_StateMigrationPoints"></a> Punto di migrazione stato  
+##  <a name="state-migration-point"></a><a name="BKMK_StateMigrationPoints"></a> Punto di migrazione stato  
 
 Il punto di migrazione stato archivia i dati sullo stato dell'utente acquisiti da USMT in un computer e quindi li ripristina in un altro computer. Tuttavia, quando si acquisiscono le impostazioni utente per una distribuzione del sistema operativo nello stesso computer, ad esempio una distribuzione in cui Windows viene aggiornato nel computer di destinazione, è possibile scegliere se archiviare i dati nello stesso computer con collegamenti reali o se usare un punto di migrazione stato. Per alcune distribuzioni ai computer, quando viene creata l'archiviazione stati, Configuration Manager crea automaticamente un'associazione tra l'archiviazione stati e il computer di destinazione. Durante la pianificazione del punto di migrazione stato tenere presenti i seguenti fattori:    
 

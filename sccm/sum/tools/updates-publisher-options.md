@@ -11,11 +11,11 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: 6ad57ab81fe6de80a70e6c239c0fd2146a1bee33
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75818486"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405114"
 ---
 # <a name="configure-options-for-updates-publisher"></a>Configurare opzioni per Updates Publisher
 

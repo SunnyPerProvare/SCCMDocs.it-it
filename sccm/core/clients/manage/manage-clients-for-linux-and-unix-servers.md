@@ -11,11 +11,11 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: 716441bd146e9172b3f183c497fcaa4036ad0084
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75824164"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405974"
 ---
 # <a name="how-to-manage-clients-for-linux-and-unix-servers-in-configuration-manager"></a>Come gestire i client per i server Linux e UNIX in Configuration Manager
 
@@ -28,7 +28,7 @@ ms.locfileid: "75824164"
 
 Quando si gestiscono server Linux e UNIX con Configuration Manager, è possibile configurare raccolte, finestre di manutenzione e impostazioni client per semplificare la gestione dei server. Inoltre, anche se il client di Configuration Manager per Linux e UNIX non ha un'interfaccia utente, è possibile forzare manualmente il polling dei criteri client.
 
-##  <a name="BKMK_CollectionsforLnU"></a> Raccolte di server Linux e UNIX  
+##  <a name="collections-of-linux-and-unix-servers"></a><a name="BKMK_CollectionsforLnU"></a> Raccolte di server Linux e UNIX  
  Usare le raccolte per gestire i gruppi di server Linux e UNIX in modo analogo all'uso delle raccolte per gestire altri tipi di client. Le raccolte possono essere raccolte di appartenenza diretta o raccolte basate su query. Le raccolte basate su query identificano i sistemi operativi client, le configurazioni hardware o altri dettagli relativi ai client archiviati nel database del sito. Ad esempio, è possibile usare le raccolte che includono server Linux e UNIX per gestire le impostazioni seguenti:  
 
 - Impostazioni client  
@@ -47,10 +47,10 @@ Quando si gestiscono server Linux e UNIX con Configuration Manager, è possibile
 
   Quando si crea una raccolta personalizzata per server Linux e UNIX, includere le query relative alle regole di appartenenza contenenti l'attributo Didascalia per l'attributo Sistema operativo. Per informazioni sulla creazione delle raccolte, vedere [Come creare le raccolte](../../../core/clients/manage/collections/create-collections.md).  
 
-##  <a name="BKMK_MaintenanceWindowsforLnU"></a> Finestre di manutenzione per server Linux e UNIX  
+##  <a name="maintenance-windows-for-linux-and-unix-servers"></a><a name="BKMK_MaintenanceWindowsforLnU"></a> Finestre di manutenzione per server Linux e UNIX  
  Il client di Configuration Manager per i server Linux e UNIX supporta l'uso di [finestre di manutenzione](../../../core/clients/manage/collections/use-maintenance-windows.md). Questo supporto è lo stesso dei client basati su Windows.  
 
-##  <a name="BKMK_ClientSettingsforLnU"></a> Impostazioni client per server Linux e UNIX  
+##  <a name="client-settings-for-linux-and-unix-servers"></a><a name="BKMK_ClientSettingsforLnU"></a> Impostazioni client per server Linux e UNIX  
  È possibile [configurare le impostazioni client](../../../core/clients/deploy/configure-client-settings.md) che si applicano a server Linux e UNIX in modo analogo alla configurazione delle impostazioni per gli altri client.  
 
  Per impostazione predefinita l'opzione **Impostazioni agente client predefinite** si applica a server Linux e UNIX. È anche possibile creare impostazioni client personalizzate e distribuirle alle raccolte di client specifici.  
@@ -59,7 +59,7 @@ Quando si gestiscono server Linux e UNIX con Configuration Manager, è possibile
 
  Ad esempio, un'impostazione del dispositivo client personalizzata che abilita e configura le impostazioni di controllo remoto viene ignorata dai server Linux e UNIX, perché il client per Linux e UNIX non supporta il controllo remoto.  
 
-##  <a name="BKMK_PolicyforLnU"></a> Criteri del computer per server Linux e UNIX  
+##  <a name="computer-policy-for-linux-and-unix-servers"></a><a name="BKMK_PolicyforLnU"></a> Criteri del computer per server Linux e UNIX  
  Il client per i server Linux e UNIX esegue periodicamente il polling dei criteri del computer nel relativo sito per recuperare informazioni sulle configurazioni richieste e per controllare le distribuzioni.  
 
  È anche possibile imporre il client a un server Linux o UNIX per eseguire il polling immediato dei criteri del computer. A tale scopo, usare le credenziali **root** nel server per eseguire il comando seguente: **/opt/microsoft/configmgr/bin/ccmexec -rs policy**  
@@ -69,7 +69,7 @@ Quando si gestiscono server Linux e UNIX con Configuration Manager, è possibile
 > [!NOTE]  
 >  Il client di Configuration Manager per Linux e UNIX non richiede né elabora mai i criteri utente.  
 
-##  <a name="BKMK_ManageLinuxCerts"></a> Come gestire i certificati sul client per Linux e UNIX  
+##  <a name="how-to-manage-certificates-on-the-client-for-linux-and-unix"></a><a name="BKMK_ManageLinuxCerts"></a> Come gestire i certificati sul client per Linux e UNIX  
  Dopo aver installato il client per Linux e UNIX, è possibile usare lo strumento **certutil** per aggiornare il client con un nuovo certificato PKI e per importare un nuovo elenco di revoche di certificati (CRL). Quando si installa il client per Linux e UNIX, questo strumento viene inserito in `/opt/microsoft/configmgr/bin/certutil`. 
 
  Per gestire i certificati, in ogni client eseguire lo strumento certutil con una delle opzioni seguenti:  

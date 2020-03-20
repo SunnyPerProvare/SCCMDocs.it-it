@@ -11,11 +11,11 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: d2e575b799a4f7c0b63610dbe13c0c8a50c29215
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75824708"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405994"
 ---
 # <a name="how-to-use-asset-intelligence-in-configuration-manager"></a>Come usare Asset Intelligence in Configuration Manager
 
@@ -23,10 +23,10 @@ ms.locfileid: "75824708"
 
 Questo argomento contiene informazioni che consentono di gestire le attività tipiche di Asset Intelligence nella gerarchia di Configuration Manager:  
 
-##  <a name="BKMK_ViewInformation"></a> Visualizzare le informazioni di Asset Intelligence  
+##  <a name="view-asset-intelligence-information"></a><a name="BKMK_ViewInformation"></a> Visualizzare le informazioni di Asset Intelligence  
  È possibile visualizzare le informazioni di Asset Intelligence nella home page e nei report di **Asset Intelligence** .  
 
-###  <a name="BKMK_AssetIntelligenceHomePage"></a> Home page di Asset Intelligence  
+###  <a name="asset-intelligence-home-page"></a><a name="BKMK_AssetIntelligenceHomePage"></a> Home page di Asset Intelligence  
  La home page di **Asset Intelligence** visualizza un dashboard di riepilogo delle informazioni del catalogo di Asset Intelligence. Nella home page è possibile visualizzare informazioni sulla sincronizzazione del catalogo e sullo stato del software di inventario. La home page di **Asset Intelligence** è divisa nelle sezioni seguenti:  
 
 - **Sincronizzazione catalogo**: presenta informazioni sullo stato di abilitazione di Asset Intelligence, sullo stato corrente del punto di sincronizzazione di Asset Intelligence, sulla pianificazione della sincronizzazione, sul fatto che il resoconto delle licenze cliente sia stato o meno importato, sulla data dell'ultimo aggiornamento dello stato e sull'ora per il successivo aggiornamento pianificato, nonché sul numero di modifiche apportate dopo l'installazione del sistema del sito del punto di sincronizzazione di Asset Intelligence.  
@@ -44,7 +44,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 
 2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**. Verranno visualizzati i report di Asset Intelligence.  
 
-###  <a name="BKMK_AssetIntelligenceReports"></a> Report di Asset Intelligence  
+###  <a name="asset-intelligence-reports"></a><a name="BKMK_AssetIntelligenceReports"></a> Report di Asset Intelligence  
  Sono disponibili oltre 60 report di Asset Intelligence che mostrano le informazioni raccolte da Asset Intelligence. Molti di questi report sono collegati a report più specifici in cui è possibile eseguire una query per informazioni generali e il drill-down per informazioni più dettagliate. I report di Asset Intelligence si trovano nella console di Configuration Manager, nell'area di lavoro **Monitoraggio** del nodo **Report**. I report forniscono informazioni su hardware, gestione delle licenze e software. Per altre informazioni sui report in Configuration Manager, vedere [Creazione di report](../../../../core/servers/manage/reporting.md).  
 
 > [!NOTE]  
@@ -63,7 +63,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 
 3.  Selezionare il report di Asset Intelligence che si vuole eseguire e quindi nel gruppo **Gruppo Report** della scheda **Home** fare clic su **Esegui**.  
 
-##  <a name="BKMK_SynchronizeTheCatalog"></a> Sincronizzare il catalogo di Asset Intelligence  
+##  <a name="synchronize-the-asset-intelligence-catalog"></a><a name="BKMK_SynchronizeTheCatalog"></a> Sincronizzare il catalogo di Asset Intelligence  
  È possibile sincronizzare il catalogo di Asset Intelligence locale con System Center Online per recuperare la categorizzazione più recente dei titoli software. Quando si richiede manualmente la sincronizzazione del catalogo con System Center Online, potrebbero essere necessari 15 minuti o più per completare il processo di sincronizzazione con System Center Online. Configuration Manager aggiorna l'impostazione **Ultimo aggiornamento** nella home page di **Asset Intelligence** con l'ora attuale in cui la sincronizzazione è stata completata correttamente.  
 
 > [!NOTE]  
@@ -91,7 +91,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 > [!WARNING]  
 >  System Center Online accetta solo una richiesta di sincronizzazione manuale in un periodo di 12 ore.  
 
-###  <a name="BKMK_ManuallySynchronizeCatalog"></a> Per sincronizzare manualmente il catalogo di Asset Intelligence  
+###  <a name="to-manually-synchronize-the-asset-intelligence-catalog"></a><a name="BKMK_ManuallySynchronizeCatalog"></a> Per sincronizzare manualmente il catalogo di Asset Intelligence  
 
 1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 
@@ -99,10 +99,10 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 
 3.  Nel gruppo **Crea** della scheda **Home** fare clic su **Sincronizza**, quindi su **Sincronizza catalogo di Asset Intelligence**e infine su **OK**.  
 
-##  <a name="BKMK_CustomizeCatalog"></a> Personalizzare il catalogo di Asset Intelligence  
+##  <a name="customize-the-asset-intelligence-catalog"></a><a name="BKMK_CustomizeCatalog"></a> Personalizzare il catalogo di Asset Intelligence  
  Le informazioni di categorizzazione del catalogo di Asset Intelligence ricevute da System Center Online vengono archiviate nel database del sito con autorizzazioni di sola lettura e non possono essere modificate o eliminate. Tuttavia, è possibile creare, modificare ed eliminare categorie software, famiglie software, etichette software e informazioni del catalogo sui requisiti hardware personalizzate. È quindi possibile usare dati di categorizzazione personalizzati invece delle informazioni fornite da System Center Online per le informazioni sui titoli software esistenti o definite dall'utente. Quando si modificano o si aggiungono informazioni di categorizzazione, le informazioni del catalogo vengono considerate definite dall'utente. Le informazioni di categorizzazione definite dall'utente vengono archiviate in tabelle di database diverse rispetto alle informazioni del catalogo convalidate.  
 
-###  <a name="BKMK_SoftwareCategories"></a> Categorie software  
+###  <a name="software-categories"></a><a name="BKMK_SoftwareCategories"></a> Categorie software  
  Le categorie software di Asset Intelligence vengono usate per categorizzare in modo generale i titoli software di inventario e anche come raggruppamenti generali di famiglie software più specifiche. Un esempio di categoria software potrebbe essere "aziende del settore energetico" e una famiglia software all'interno di tale categoria software potrebbe essere "petrolio e gas" o "energia idroelettrica". Molte categorie software sono predefinite nel catalogo di Asset Intelligence ed è possibile creare altre categorie definite dall'utente per definire ulteriormente il software di inventario. Lo stato di convalida di tutte le categorie software predefinite è sempre **Convalidato**, mentre per le informazioni sulle categorie software personalizzate aggiunte al catalogo di Asset Intelligence lo stato è **Definito da utente**.  
 
  Attenersi alla procedura seguente per creare una categoria software definita dall'utente.  
@@ -126,7 +126,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 
 6.  Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata.  
 
-###  <a name="BKMK_SoftwareFamilies"></a> Famiglie software  
+###  <a name="software-families"></a><a name="BKMK_SoftwareFamilies"></a> Famiglie software  
  Le famiglie software di Asset Intelligence vengono usate per definire ulteriormente i titoli software di inventario all'interno delle categorie software. Un esempio di categoria software potrebbe essere "aziende del settore energetico" e una famiglia software all'interno di tale categoria software potrebbe essere "petrolio e gas" o "energia idroelettrica". Molte famiglie software sono predefinite nel catalogo di Asset Intelligence ed è possibile creare altre famiglie definite dall'utente per definire il software di inventario. Lo stato di convalida di tutte le famiglie software predefinite è sempre **Convalidato**, mentre per le informazioni sulle famiglie software personalizzate aggiunte al catalogo di Asset Intelligence lo stato è **Definito da utente**.  
 
  Attenersi alla procedura seguente per creare una famiglia software definita dall'utente.  
@@ -148,7 +148,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 
 6.  Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata.  
 
-###  <a name="BKMK_SoftwareLabels"></a> Etichette software  
+###  <a name="software-labels"></a><a name="BKMK_SoftwareLabels"></a> Etichette software  
  Le etichette di Asset Intelligence software personalizzati consentono di creare filtri che è possibile utilizzare per raggruppare i titoli di software e visualizzarli utilizzando i report di Asset Intelligence. Ad esempio, è possibile creare un'etichetta software denominata shareware, associarla a diverse applicazioni e quindi eseguire un report che mostra tutti i titoli con l'etichetta software shareware. Lo stato di convalida è **Definito da utente** per tutte le etichette software personalizzate aggiunte al catalogo di Asset Intelligence.  
 
  Attenersi alla procedura seguente per creare un'etichetta personalizzata definita dall'utente.  
@@ -170,7 +170,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 
 6.  Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata.  
 
-###  <a name="BKMK_HardwareRequirements"></a> Requisiti hardware  
+###  <a name="hardware-requirements"></a><a name="BKMK_HardwareRequirements"></a> Requisiti hardware  
  Le informazioni sui requisiti hardware consentono di verificare che i computer soddisfino i requisiti hardware per i titoli software prima di sceglierli come destinazione per le distribuzioni di software. Molti requisiti hardware sono predefiniti nel catalogo di Asset Intelligence ed è possibile creare nuove informazioni per requisiti hardware definiti dall'utente per soddisfare requisiti personalizzati. Lo stato di convalida di tutti i requisiti hardware predefiniti è sempre **Convalidato**, mentre per le informazioni sui requisiti hardware definiti dall'utente aggiunti al catalogo di Asset Intelligence lo stato è **Definito da utente**.  
 
 > [!IMPORTANT]  
@@ -206,7 +206,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 
 6. Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata.  
 
-###  <a name="BKMK_ModifyCategorization"></a> Modificare le informazioni di categorizzazione per il software di inventario  
+###  <a name="modify-categorization-information-for-inventoried-software"></a><a name="BKMK_ModifyCategorization"></a> Modificare le informazioni di categorizzazione per il software di inventario  
  Il software predefinito nel catalogo di Asset Intelligence è configurato con informazioni di categorizzazione specifiche, ad esempio nome del prodotto, fornitore, categoria software e famiglia software. Quando le informazioni di categorizzazione predefinite non soddisfano i requisiti, è possibile modificarle nelle proprietà del titolo software. Quando si modificano le informazioni di categorizzazione per software predefiniti, lo stato di convalida per le modifiche software cambia da **Convalidato** a **Definito da utente**.  
 
 > [!IMPORTANT]  
@@ -260,7 +260,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 
 6.  Quando si ripristinano le informazioni di categorizzazione per software incluso nel catalogo di Asset Intelligence, lo stato di convalida cambia da **Definito da utente** a **Convalidato**. Quando si ripristina software non incluso nel catalogo, lo stato di convalida cambia da **Definito da utente** a **Senza categoria**.  
 
-##  <a name="BKMK_RequestCatalogUpdate"></a> Richiedere un aggiornamento del catalogo per i titoli software senza categoria  
+##  <a name="request-a-catalog-update-for-uncategorized-software-titles"></a><a name="BKMK_RequestCatalogUpdate"></a> Richiedere un aggiornamento del catalogo per i titoli software senza categoria  
  Per la ricerca e la categorizzazione, è possibile inviare informazioni di titolo di software senza categoria per System Center Online. Dopo l'invio di un titolo software senza categoria, quando ci sono almeno 4 richieste di categorizzazione dei clienti per lo stesso titolo software, i ricercatori identificano, categorizzano e quindi rendono disponibili le informazioni di categorizzazione del titolo software per tutti i clienti che usano il servizio System Center Online. Microsoft assegna la massima priorità ai titoli di software con il maggior numero di richieste di categorizzazione. È improbabile che al software personalizzato e alle applicazioni line-of-business venga assegnata una categoria e la procedura consigliata prevede di non inviare questi titoli software a Microsoft per la categorizzazione.  
 
  Quando le informazioni sui titoli software vengono inviate a System Center Online per la categorizzazione, si applicano le condizioni seguenti:  
@@ -303,7 +303,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
     > [!NOTE]  
     >  Il software che viene inviato a System Center Online per la categorizzazione ha uno stato di convalida **In attesa** in un sito di amministrazione centrale, ma viene ancora visualizzato con uno stato di convalida **Senza categoria** nei siti primari figlio.  
 
-##  <a name="BKMK_ResolveSoftwareDetails"></a> Risolvere i conflitti dei dettagli software  
+##  <a name="resolve-software-details-conflicts"></a><a name="BKMK_ResolveSoftwareDetails"></a> Risolvere i conflitti dei dettagli software  
  Dopo la categorizzazione software appena aggiornato dettagli sono stati ricevuti da System Center Online che creano conflitti con informazioni software esistente, è possibile scegliere come risolvere il conflitto. Il software che presenta un conflitto corrente ha uno stato di convalida **Aggiornabile**. Dopo la risoluzione dei conflitti dei dettagli software, le informazioni di categorizzazione software vengono conservate nel catalogo di Asset Intelligence in base all'impostazione specificata. Un conflitto dei dettagli software non si verifica di nuovo per lo stesso valore di categorizzazione software a meno che il valore di System Center Online non cambi dopo la risoluzione del conflitto.  
 
  Attenersi alla procedura seguente per risolvere un conflitto dei dettagli software.  

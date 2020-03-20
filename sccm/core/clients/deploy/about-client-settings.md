@@ -11,11 +11,11 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: 890142c02acb1494500eef17f472e6f246e5267e
-ms.sourcegitcommit: 1991263194a5cd6dfbd3dd9a5f5c7f179c1bfeac
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77218433"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79406084"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -661,15 +661,15 @@ Impostare questa opzione su **Sì** e quindi specificare le impostazioni seguent
 
 - **Seleziona un logo per il Software Center**: Fare clic su **Sfoglia** per scegliere un'immagine da visualizzare in Software Center. Il logo deve essere un file JPEG, PNG o BMP di 400 x 100 pixel, con una dimensione massima di 750 KB. Il nome del file del logo non deve contenere spazi.  
 
-### <a name="bkmk_HideUnapproved"></a> Nascondi le applicazioni non approvate nel Software Center
+### <a name="hide-unapproved-applications-in-software-center"></a><a name="bkmk_HideUnapproved"></a> Nascondi le applicazioni non approvate nel Software Center
 
 Quando si abilita questa opzione, le applicazioni disponibili per l'utente che richiedono l'approvazione sono nascoste in Software Center.<!--1355146-->
 
-### <a name="bkmk_HideInstalled"></a> Nascondi le applicazioni installate in Software Center
+### <a name="hide-installed-applications-in-software-center"></a><a name="bkmk_HideInstalled"></a> Nascondi le applicazioni installate in Software Center
 
 Quando si abilita questa opzione, le applicazioni che sono già installate non compaiono più nella scheda Applicazioni. L'opzione abilitata è l'impostazione predefinita quando si installa o si esegue l'aggiornamento a Configuration Manager 1802. Le applicazioni installate sono ancora visualizzabili nella scheda Stato installazione. <!--1357592-->
 
-### <a name="bkmk_HideAppCat"></a> Nascondi il collegamento al Catalogo applicazioni in Software Center
+### <a name="hide-application-catalog-link-in-software-center"></a><a name="bkmk_HideAppCat"></a> Nascondi il collegamento al Catalogo applicazioni in Software Center
 
 Specifica la visibilità del collegamento al sito Web del Catalogo applicazioni in Software Center. Quando questa opzione è impostata, gli utenti non possono visualizzare il collegamento al sito Web del Catalogo applicazioni nel nodo Stato dell'installazione di Software Center. <!--1358214-->
 
@@ -719,7 +719,7 @@ Configurare le impostazioni aggiuntive di questo gruppo su **Sì** per rendere v
 
 Se ad esempio l'organizzazione non usa criteri di conformità e si vuole nascondere la scheda Conformità del dispositivo in Software Center, impostare **Abilita la scheda Conformità del dispositivo** su **No**.
 
-### <a name="bkmk_swctr_defaults"></a> Configurazione delle visualizzazioni predefinite in Software Center
+### <a name="configure-default-views-in-software-center"></a><a name="bkmk_swctr_defaults"></a> Configurazione delle visualizzazioni predefinite in Software Center
 <!--3612112-->
 *(Funzionalità introdotta nella versione 1902)*
 
@@ -904,7 +904,7 @@ Questa impostazione consente di configurare la porta locale per il listener HTTP
 
 Impostare questa opzione su **Sì** per consentire la configurazione delle impostazioni di installazione di Office 365. Questa opzione consente anche il download di file dalle reti per la distribuzione di contenuti (CDN) di Office e la distribuzione dei file come applicazione in Configuration Manager. Per altre informazioni, vedere [Gestire gli aggiornamenti di Office 365 ProPlus](/sccm/sum/deploy-use/manage-office-365-proplus-updates).
 
-### <a name="bkmk_SUMMaint"></a> Consenti l'installazione degli aggiornamenti software nella finestra di manutenzione "Tutte le distribuzioni" quando la finestra di manutenzione "Aggiornamento software" è disponibile
+### <a name="enable-installation-of-software-updates-in-all-deployments-maintenance-window-when-software-update-maintenance-window-is-available"></a><a name="bkmk_SUMMaint"></a> Consenti l'installazione degli aggiornamenti software nella finestra di manutenzione "Tutte le distribuzioni" quando la finestra di manutenzione "Aggiornamento software" è disponibile
 
 A partire dalla versione 1810, quando si imposta questa opzione su **Sì** e per il client è stata definita almeno una finestra di manutenzione "Aggiornamento software", gli aggiornamenti software verranno installati durante una finestra di manutenzione "Tutte le distribuzioni".
 
@@ -925,7 +925,7 @@ Per impostazione predefinita, questa impostazione è impostata su **No**. Questo
 Per impostazione predefinita, il client installa gli aggiornamenti software solo durante la seconda finestra di manutenzione. Ignora la finestra di manutenzione per tutte le distribuzioni in questo scenario. Quando si imposta questa opzione su **Sì**, il client installa gli aggiornamenti software nell'intervallo di tempo compreso tra le 02.00 e le 06.00.
 
 
-### <a name="bkmk_thread-priority"></a> Specificare la priorità del thread per gli aggiornamenti delle funzionalità
+### <a name="specify-thread-priority-for-feature-updates"></a><a name="bkmk_thread-priority"></a> Specificare la priorità del thread per gli aggiornamenti delle funzionalità
 
 <!--3734525-->
 A partire da Configuration Manager versione 1902, è possibile modificare la priorità con cui i client Windows 10 versione 1709 o versioni successive installano un aggiornamento di funzionalità tramite [pacchetti di manutenzione di Windows 10](/sccm/osd/deploy-use/manage-windows-as-a-service). Questa impostazione non influisce sulle sequenze di attività di aggiornamento sul posto di Windows 10.
@@ -947,7 +947,7 @@ Questa impostazione client include le opzioni seguenti:
 
 Se questa opzione è impostata su **Sì**, vengono impostati i criteri per **Consenti aggiornamenti firmati da un percorso del servizio di aggiornamento Microsoft nella rete Intranet** e il certificato di firma viene installato nell'archivio degli autori attendibili nel client.
 
-### <a name="bkmk_du"></a>Abilitare l'aggiornamento dinamico per gli aggiornamenti delle funzionalità
+### <a name="enable-dynamic-update-for-feature-updates"></a><a name="bkmk_du"></a>Abilitare l'aggiornamento dinamico per gli aggiornamenti delle funzionalità
 <!--4062619-->
 A partire da Configuration Manager versione 1906, è possibile configurare l'[aggiornamento dinamico per Windows 10](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/The-benefits-of-Windows-10-Dynamic-Update/ba-p/467847). L'aggiornamento dinamico installa i language pack, le funzionalità su richiesta, i driver e gli aggiornamenti cumulativi durante l'installazione di Windows indicando al client di scaricare questi aggiornamenti da Internet. Quando questa impostazione è impostata su **Sì** o **No**, Configuration Manager modifica il file [setupconfig](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options) usato durante l'installazione dell'aggiornamento delle funzionalità.
 

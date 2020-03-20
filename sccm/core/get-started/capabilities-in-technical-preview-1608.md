@@ -12,11 +12,11 @@ manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
 ms.openlocfilehash: 8ea43f36351ac461396b84c248ca8084b3da9774
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75805116"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405634"
 ---
 # <a name="capabilities-in-technical-preview-1608-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1608 per Configuration Manager
 

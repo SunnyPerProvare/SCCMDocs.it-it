@@ -11,11 +11,11 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: ad5cc86aac61dfd86771b623b6ce51399f0bc714
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798749"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405844"
 ---
 # <a name="deploy-and-manage-content-for-configuration-manager"></a>Distribuire e gestire contenuto per Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "75798749"
 
 È possibile iniziare a distribuire contenuto ai punti di distribuzione per Configuration Manager dopo averli installati. In genere, il contenuto viene trasferito ai punti di distribuzione in rete, ma esistono altre opzioni per inviare il contenuto ai punti di distribuzione. Dopo che il contenuto è stato trasferito in un punto di distribuzione, è possibile aggiornare, ridistribuire, rimuovere e convalidare il contenuto nei punti di distribuzione.  
 
-##  <a name="bkmk_distribute"></a> Distribuire il contenuto  
+##  <a name="distribute-content"></a><a name="bkmk_distribute"></a> Distribuire il contenuto  
 In genere, il contenuto viene distribuito ai punti di distribuzione in modo che sia disponibile per i computer client. Un'eccezione a questo comportamento si verifica quando si usa la distribuzione del contenuto su richiesta per una distribuzione specifica.  Quando si distribuisce il contenuto, Configuration Manager archivia i file di contenuto in un pacchetto e distribuisce il pacchetto al punto di distribuzione. È possibile distribuire diversi tipi di contenuto, tra cui:  
 
 - Tipi di distribuzioni delle applicazioni  
@@ -102,7 +102,7 @@ Utilizzare la procedura seguente per distribuire contenuto nei punti di distribu
 
 9. La pagina **Conferma** visualizza se il contenuto è stato correttamente assegnato ai punti. Per monitorare la distribuzione del contenuto, vedere [Monitorare il contenuto distribuito con Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
 
-##  <a name="bkmk_prestage"></a> Usare il contenuto pre-installazione  
+##  <a name="use-prestaged-content"></a><a name="bkmk_prestage"></a> Usare il contenuto pre-installazione  
 È possibile pre-installare i file di contenuto per applicazioni e tipi di pacchetti:  
 
 - Nella console di Configuration Manager si seleziona il contenuto necessario e si usa la **Creazione guidata file di contenuto pre-installazione** per creare un file di contenuto pre-installazione compresso che contiene i file e i metadati associati per il contenuto selezionato.  
@@ -127,7 +127,7 @@ Per informazioni sugli scenari di pre-installazione dei file di contenuto, veder
 
 Utilizzare le sezioni seguenti per pre-installare il contenuto.  
 
-###  <a name="BKMK_CreatePrestagedContentFile"></a> Passaggio 1: Creare un file di contenuti in versione di preproduzione  
+###  <a name="step-1-create-a-prestaged-content-file"></a><a name="BKMK_CreatePrestagedContentFile"></a> Passaggio 1: Creare un file di contenuti in versione di preproduzione  
 È possibile creare un file di contenuto pre-installazione compresso contenente i file e i metadati associati per il contenuto selezionato nella console di Configuration Manager. Utilizzare la procedura seguente per creare un file di contenuto pre-installato.  
 
 ##### <a name="to-create-a-prestaged-content-file"></a>Per creare un file di contenuto pre-installato  
@@ -173,7 +173,7 @@ Utilizzare le sezioni seguenti per pre-installare il contenuto.
 
 11. Nella pagina **Completamento** verificare che il file di contenuto pre-installato sia stato creato correttamente, quindi fare clic su **Chiudi**.  
 
-###  <a name="BKMK_AssignContentToDistributionPoint"></a> Passaggio 2: Assegnare i contenuti ai punti di distribuzione  
+###  <a name="step-2-assign-the-content-to-distribution-points"></a><a name="BKMK_AssignContentToDistributionPoint"></a> Passaggio 2: Assegnare i contenuti ai punti di distribuzione  
  Dopo aver pre-installato il file di contenuto, assegnare il contenuto ai punti di distribuzione.  
 
 > [!NOTE]  
@@ -235,7 +235,7 @@ Utilizzare le sezioni seguenti per pre-installare il contenuto.
 
 9. La pagina **Conferma** visualizza se il contenuto è stato correttamente assegnato ai punti di distribuzione oppure no. Per monitorare la distribuzione del contenuto, vedere [Monitorare il contenuto distribuito con Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
 
-###  <a name="BKMK_ExportContentFromPrestagedContentFile"></a> Passaggio 3: Estrarre i contenuti dal file dei contenuti in versione di preproduzione  
+###  <a name="step-3-extract-the-content-from-the-prestaged-content-file"></a><a name="BKMK_ExportContentFromPrestagedContentFile"></a> Passaggio 3: Estrarre i contenuti dal file dei contenuti in versione di preproduzione  
 Dopo aver creato il file di contenuto pre-installazione e aver assegnato il contenuto ai punti di distribuzione, è possibile estrarre i file di contenuto nella raccolta contenuto nel server del sito o in un punto di distribuzione. In genere, il file di contenuti in versione di preproduzione viene copiato in un'unità portatile, ad esempio un'unità USB, oppure il contenuto viene masterizzato in un supporto, ad esempio un DVD, ed è disponibile nel percorso del server del sito o nel punto di distribuzione che richiede il contenuto.  
 
 Utilizzare la procedura seguente per esportare manualmente i file di contenuto dal file di contenuto pre-installazione utilizzando lo strumento della riga di comando Estrai contenuto.  
@@ -276,7 +276,7 @@ Utilizzare la procedura seguente per esportare manualmente i file di contenuto d
     >   
     > Configuration Manager non distribuisce automaticamente il pacchetto versione 2 nel punto di distribuzione. È necessario creare un nuovo file di contenuto pre-installazione che contiene la nuova versione file e quindi estrarre il contenuto, aggiornare il punto di distribuzione per distribuire i file che sono stati modificati o ridistribuire tutti i file nel pacchetto.  
 
-###  <a name="bkmk_dpsiteserver"></a> Come pre-installare il contenuto in un punto di distribuzione situato in un server del sito  
+###  <a name="how-to-prestage-content-on-a-distribution-point-on-a-site-server"></a><a name="bkmk_dpsiteserver"></a> Come pre-installare il contenuto in un punto di distribuzione situato in un server del sito  
 Quando viene installato un punto di distribuzione in un server del sito, è necessario utilizzare la seguente procedura per pre-installare correttamente il contenuto. Questa situazione si verifica perché i file di contenuto sono già nella raccolta contenuto.  
 
 Quando il punto di distribuzione non è abilitato per la pre-installazione del contenuto o quando non si trova su un server del sito, vedere la sezione [Usare il contenuto pre-installazione](#bkmk_prestage) in questo argomento.  
@@ -302,7 +302,7 @@ Quando il punto di distribuzione non è abilitato per la pre-installazione del c
     > [!NOTE]  
     > Quando il punto di distribuzione si trova su un sito secondario, attendere almeno 10 minuti e assegnare il contenuto al punto di distribuzione nel sito secondario usando una console di Configuration Manager connessa al sito primario padre.  
 
-##  <a name="bkmk_manage"></a> Gestire il contenuto distribuito  
+##  <a name="manage-the-content-you-have-distributed"></a><a name="bkmk_manage"></a> Gestire il contenuto distribuito  
 Per gestire il contenuto sono disponibili le opzioni seguenti:  
 - [Aggiornare il contenuto](#update-content)
 - [Ridistribuire il contenuto](#redistribute-content)

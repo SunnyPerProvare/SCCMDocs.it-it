@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.openlocfilehash: 658c820944f13ef828849c7579c057dee139328c
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75804351"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405524"
 ---
 # <a name="capabilities-in-configuration-manager-technical-preview-version-1807"></a>Funzionalità in Configuration Manager Technical Preview versione 1807 
 
@@ -42,7 +42,7 @@ Steps to workaround, if any.
 
 ## <a name="known-issues"></a>Problemi noti 
 
-### <a name="ki_o365"></a> Problemi con gli aggiornamenti software di Office 365
+### <a name="issues-with-office-365-software-updates"></a><a name="ki_o365"></a> Problemi con gli aggiornamenti software di Office 365
 <!--521365-->
 Se si gestiscono gli aggiornamenti di Office 365 con le versioni Technical Preview 1806 e 1806.2, l'installazione nei client potrebbe non riuscire. 
 
@@ -58,7 +58,7 @@ Se si gestiscono gli aggiornamenti di Office 365 con le versioni Technical Previ
 **Le sezioni seguenti descrivono le nuove funzionalità da provare in questa versione:**  
 
 
-## <a name="bkmk_hub"></a> Hub della community
+## <a name="community-hub"></a><a name="bkmk_hub"></a> Hub della community
 <!--1357766-->
 
 L'Hub della community è una posizione centralizzata per la condivisione di oggetti utili di Configuration Manager con altri utenti. Vedere la nuova area di lavoro **Community** nella console di Configuration Manager e selezionare il nodo **Hub**. Usare l'Hub della community per scaricare i seguenti tipi di oggetti di Configuration Manager: 
@@ -96,7 +96,7 @@ Il contributo di elementi nell'hub non è attualmente disponibile in questa vers
 
 
 
-## <a name="bkmk_osd"></a> Specificare l'unità per la manutenzione di immagini del sistema operativo offline  
+## <a name="specify-the-drive-for-offline-os-image-servicing"></a><a name="bkmk_osd"></a> Specificare l'unità per la manutenzione di immagini del sistema operativo offline  
 <!--1358924-->
 
 In base ai [commenti e suggerimenti do UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/33506009-gui-option-for-offline-os-image-servicing-drive), è ora possibile specificare l'unità usata da Configuration Manager durante la manutenzione offline delle immagini del sistema operativo. Questo processo può utilizzare una grande quantità di spazio su disco con i file temporanei, pertanto questa opzione offre la flessibilità di selezionare l'unità da usare. 
@@ -118,7 +118,7 @@ Vedere il file di log **OfflineServicingMgr.log**.
 
 
 
-## <a name="bkmk_comgmt"></a> Attività di sincronizzazione dei dispositivi con co-gestione con Intune
+## <a name="co-managed-device-sync-activity-from-intune"></a><a name="bkmk_comgmt"></a> Attività di sincronizzazione dei dispositivi con co-gestione con Intune
 <!--1358565-->
 
 Consente di indicare nella console di Configuration Manager se un dispositivo con co-gestione è attivo con Microsoft Intune. Questo stato si basa sui dati provenienti dal [data warehouse di Intune](https://docs.microsoft.com/intune/reports-nav-create-intune-reports). Il dashboard **Stato client** nella console di Configuration Manager mostra i **Clienti inattivi che usano Intune**. Questa nuova categoria è destinata ai dispositivi con co-gestione inattivi con Configuration Manager, ma sincronizzati con il servizio di Intune nell'ultima settimana.
@@ -140,7 +140,7 @@ Per altre informazioni sulla co-gestione, vedere [Co-gestione per dispositivi Wi
 
 
 
-## <a name="bkmk_app-repair"></a> Ripristinare le applicazioni
+## <a name="repair-applications"></a><a name="bkmk_app-repair"></a> Ripristinare le applicazioni
 <!--1357866-->
 
 In risposta ai [commenti e suggerimenti di UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8365071-force-reinstall-of-application), è ora possibile specificare una riga di comando di ripristino per i tipi di distribuzione Windows Installer e Programma di installazione dello script. 
@@ -163,7 +163,7 @@ Il nuovo pulsante **Ripristina** in Software Center, che consente agli utenti di
 
 
 
-## <a name="bkmk_email-approve"></a> Approvare le richieste dell'applicazione tramite posta elettronica
+## <a name="approve-application-requests-via-email"></a><a name="bkmk_email-approve"></a> Approvare le richieste dell'applicazione tramite posta elettronica
 <!--1321550-->
 
 È possibile configurare le notifiche tramite posta elettronica per le richieste di approvazione dell'applicazione. Quando un utente richiede un'applicazione, si riceve un messaggio di posta elettronica. Fare clic sui collegamenti nel messaggio di posta elettronica per approvare o rifiutare la richiesta, senza che sia necessario usare la console di Configuration Manager.
@@ -216,7 +216,7 @@ Provare a completare le attività. Inviare quindi [commenti e suggerimenti](capa
 
 
 
-## <a name="bkmk_script"></a> Miglioramento dell'output degli script
+## <a name="improvement-to-script-output"></a><a name="bkmk_script"></a> Miglioramento dell'output degli script
 <!--1236459-->
 
 È ora possibile visualizzare l'output degli script dettagliato in formato JSON non elaborato o strutturato. Questo tipo di formattazione rende più facile leggere e analizzare l'output. Se lo script restituisce testo in formato JSON valido, è possibile visualizzare l'output dettagliato come **Output JSON** oppure **Output non elaborato**. In caso contrario, l'unica opzione è **Output dello script**. 
@@ -252,7 +252,7 @@ Provare a completare le attività. Inviare quindi [commenti e suggerimenti](capa
 
 
 
-## <a name="bkmk_3pupdate"></a> Miglioramento degli aggiornamenti software di terze parti
+## <a name="improvement-to-third-party-software-updates"></a><a name="bkmk_3pupdate"></a> Miglioramento degli aggiornamenti software di terze parti
 <!--1358714-->
 
 È ora possibile modificare le proprietà di cataloghi personalizzati.

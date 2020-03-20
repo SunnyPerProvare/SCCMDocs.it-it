@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.openlocfilehash: 3f5abd4dcd762cedc7159f81ce25dd441ed9586c
-ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77035284"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405584"
 ---
 # <a name="capabilities-in-technical-preview-1702-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1702 per Configuration Manager
 
@@ -62,7 +62,7 @@ A partire da questa versione, il computer di origine della peer cache rifiuta le
 
 Quando il computer rifiuta una richiesta di contenuto, il computer richiedente continuerà a cercare il contenuto da origini alternative nel pool dei percorsi di origine del contenuto disponibili.   
 
-## <a name="azurediscovery"></a>Usare Azure Active Directory Domain Services per gestire dispositivi, utenti e gruppi
+## <a name="use-azure-active-directory-domain-services-to-manage-devices-users-and-groups"></a><a name="azurediscovery"></a>Usare Azure Active Directory Domain Services per gestire dispositivi, utenti e gruppi
 
 Con questa versione di Technical Preview è possibile gestire i dispositivi aggiunti a un dominio gestito di servizi di Azure Active Directory (AD) Domain Services. È anche possibile individuare dispositivi, utenti e gruppi nel dominio con vari metodi di individuazione di Configuration Manager.
 

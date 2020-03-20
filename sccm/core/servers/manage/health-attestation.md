@@ -11,11 +11,11 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: c15a6aa2084d9ed296909cbc9c5a1b9b9fd5b9fd
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76033394"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405774"
 ---
 # <a name="health-attestation-for-configuration-manager"></a>Attestazione dell'integrità per Configuration Manager
 

@@ -11,11 +11,11 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: 633827a8d4173c70f0d6180c8b2341c16246cb1b
-ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78290022"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405714"
 ---
 # <a name="how-to-use-the-configuration-manager-docs"></a>Uso della documentazione di Configuration Manager
 
@@ -35,7 +35,7 @@ Questo articolo è suddiviso nelle sezioni elencate di seguito, in cui sono pres
 Per informazioni generali sul prodotto, vedere l'argomento sulla [consultazione della Guida](/sccm/core/understand/find-help).
 
 
-##  <a name="bkmk_searchtips"></a> Ricerca   
+##  <a name="search"></a><a name="bkmk_searchtips"></a> Ricerca   
  Per trovare le informazioni necessarie, usare i seguenti suggerimenti per la ricerca:  
 
 -   Quando si usa il motore di ricerca preferito per individuare il contenuto per Configuration Manager, includere `SCCM` con le parole chiave della ricerca.  
@@ -59,7 +59,7 @@ Per informazioni generali sul prodotto, vedere l'argomento sulla [consultazione 
 > [!TIP] 
 > A partire da Configuration Manager versione 1902, è disponibile il nodo **Documentazione** nella nuova area di lavoro **Community**. Questo nodo contiene informazioni aggiornate sulla documentazione di Configuration Manager e gli articoli del supporto tecnico. Per altre informazioni, vedere [Uso della console di Configuration Manager](/sccm/core/servers/manage/admin-console#bkmk_doc-dashboard)
 
-## <a name="bkmk_docfeedback"></a> Commenti e suggerimenti
+## <a name="feedback"></a><a name="bkmk_docfeedback"></a> Commenti e suggerimenti
 
 Per passare alla sezione Commenti e suggerimenti nella parte inferiore, fare clic sul collegamento **Commenti e suggerimenti** in alto a destra nell'articolo. Questa sezione è integrata con Problemi di GitHub. Per altre informazioni sull'integrazione con Problemi di GitHub, vedere il [post di blog sulla piattaforma di documentazione](https://docs.microsoft.com/teamblog/a-new-feedback-system-is-coming-to-docs).
 
@@ -85,7 +85,7 @@ Per condividere commenti e suggerimenti sulla piattaforma docs.microsoft.com, ve
 
 
 
-## <a name="bkmk_notifications"></a> Notifiche
+## <a name="notifications"></a><a name="bkmk_notifications"></a> Notifiche
 
 Per ricevere notifiche quando viene modificato il contenuto nella libreria della documentazione, procedere come segue:
 
@@ -101,7 +101,7 @@ Per ricevere notifiche quando viene modificato il contenuto nella libreria della
 
 
 
-## <a name="bkmk_contribute"></a> Collaborazione
+## <a name="contribute"></a><a name="bkmk_contribute"></a> Collaborazione
 
 La libreria di documentazione di Configuration Manager, analogamente alla maggior parte del contenuto su docs.microsoft.com, è open source su GitHub. Questa raccolta accetta e incoraggia i contributi della community. Per altre informazioni su come iniziare, vedere la [guida per i collaboratori](https://docs.microsoft.com/contribute). Creare un [account GitHub](https://github.com/join) è l'unico prerequisito.
 

@@ -12,11 +12,11 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.openlocfilehash: 135700601abcd0652323891347e21e8266377786
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75804470"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405544"
 ---
 # <a name="capabilities-in-technical-preview-1804-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1804 per Configuration Manager
 
@@ -30,7 +30,7 @@ Prima di installare questo aggiornamento, vedere l'articolo [Technical Preview](
 <!--  Known Issues Template   -->
 ## <a name="known-issues-in-this-technical-preview"></a>Problemi noti di questa versione Technical Preview
 
-### <a name="bkmk_ki-prereqs"></a> Il collegamento di installazione per scaricare gli aggiornamenti non funziona
+### <a name="setup-link-to-download-updates-not-working"></a><a name="bkmk_ki-prereqs"></a> Il collegamento di installazione per scaricare gli aggiornamenti non funziona
 <!--514334-->
 Se si esegue l'installazione dal supporto, la pagina iniziale include il collegamento **Get the latest Configuration Manager updates** (Ottieni gli ultimi aggiornamenti di Configuration Manager) che non funziona in questa versione. Questo collegamento consente di scaricare i file necessari per l'installazione.
 
@@ -38,7 +38,7 @@ Se si esegue l'installazione dal supporto, la pagina iniziale include il collega
 Per scaricare i file necessari per l'installazione, eseguire l'installazione guidata. Nella pagina Download prerequisiti usare l'opzione **Scarica file richiesti**. 
 
 
-### <a name="bkmk_appcathttps"></a> Il punto per servizi Web del Catalogo applicazioni non può essere abilitato per HTTPS
+### <a name="the-application-catalog-web-service-point-cant-be-https-enabled"></a><a name="bkmk_appcathttps"></a> Il punto per servizi Web del Catalogo applicazioni non può essere abilitato per HTTPS
 <!--512637-->
 Se il punto per servizi Web del Catalogo applicazioni è abilitato per HTTPS:
 
@@ -89,7 +89,7 @@ Se è necessario spostare nuovamente la raccolta contenuto nel server del sito, 
 
 
 
-## <a name="bkmk_feedback"></a> Inviare commenti e suggerimenti dalla console di Configuration Manager  
+## <a name="submit-feedback-from-the-configuration-manager-console"></a><a name="bkmk_feedback"></a> Inviare commenti e suggerimenti dalla console di Configuration Manager  
 <!--1357542-->
 
 Commenti e suggerimenti Ora è possibile comunicare direttamente al team di Configuration Manager le proprie esperienze. Inviare commenti e suggerimenti dalla console di Configuration Manager è molto semplice. Siamo interessati a ogni tipo di feedback: apprezzamenti, problemi e suggerimenti.  

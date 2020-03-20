@@ -11,11 +11,11 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.openlocfilehash: f999de35ac684d2a17f9179f41df8a616b3d3eb7
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798459"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79405814"
 ---
 # <a name="run-discovery-for-configuration-manager"></a>Eseguire l'individuazione per Configuration Manager
 
@@ -59,7 +59,7 @@ Usare uno o più metodi di individuazione in Configuration Manager per trovare l
 
 -   Distribuzione delle impostazioni client e delle configurazioni associate.
 
-##  <a name="BKMK_DDRs"></a> Informazioni sui record dei dati di individuazione  
+##  <a name="about-discovery-data-records"></a><a name="BKMK_DDRs"></a> Informazioni sui record dei dati di individuazione  
  I record dei dati di individuazione sono file creati da un metodo di individuazione. Tali file contengono informazioni su una risorsa che è possibile gestire in Configuration Manager, ad esempio computer, utenti e, in alcuni casi, l'infrastruttura di rete. Questi vengono elaborati nei siti primari o nei siti di amministrazione centrale. Dopo l'immissione nel database delle informazioni sulle risorse contenute nel record dei dati di individuazione, questo viene eliminato e le informazioni vengono replicate come dati globali in tutti i siti della gerarchia.  
 
  Il sito in cui viene elaborato un record dei dati di individuazione dipende dalle informazioni contenute:  
