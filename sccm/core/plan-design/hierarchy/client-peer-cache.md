@@ -10,12 +10,12 @@ ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e71a007906b5fb517c169b453a72c7f1f245943f
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 99598c20f9be0fba61e1afb16ee5ee5704266d23
+ms.sourcegitcommit: 8c10745cb4e2baabba2af4821cb207a2f91d2eb3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75800577"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80138082"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 
@@ -68,7 +68,7 @@ A partire dalla versione 1806, sono disponibili impostazioni aggiuntive per i gr
 > [!NOTE]  
 > Se il client esegue il fallback a un gruppo di limiti vicino per il contenuto, il punto di gestione non aggiunge le origini di peer cache del gruppo di limiti vicino all'elenco di possibili percorsi di origine del contenuto.  
 
-Scegliere solo i client più adatti come origini di peer cache. Valutare l'idoneità dei client in base ad attributi come il tipo di chassis, lo spazio su disco e la connettività di rete. Per altre informazioni utili per scegliere i client più adatti da usare per la peer cache, vedere [questo blog scritto da un consulente Microsoft](https://blogs.technet.microsoft.com/askpfeplat/2018/11/21/configuration-manager-peer-cache-custom-reporting-examples/).
+Scegliere solo i client più adatti come origini di peer cache. Valutare l'idoneità dei client in base ad attributi come il tipo di chassis, lo spazio su disco e la connettività di rete. Per altre informazioni utili per scegliere i client più adatti da usare per la peer cache, vedere [questo blog scritto da un consulente Microsoft](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/configuration-manager-peer-cache-custom-reporting-examples/ba-p/570801).
 
 
 ### <a name="limited-access-to-a-peer-cache-source"></a>Accesso limitato a un'origine di peer cache  
@@ -116,7 +116,7 @@ Quando l'origine di peer cache rifiuta una richiesta di contenuto, il client di 
 
 
 
-## <a name="bkmk_settings"></a> Impostazioni del client di peer cache
+## <a name="peer-cache-client-settings"></a><a name="bkmk_settings"></a> Impostazioni del client di peer cache
 
 Per altre informazioni sulle impostazioni del client di peer cache, vedere [Impostazioni della cache del client](/sccm/core/clients/deploy/about-client-settings#client-cache-settings). 
 
@@ -126,7 +126,7 @@ Nei client con peer cache abilitata che usano Windows Firewall, Configuration Ma
 
 
 
-## <a name="bkmk_parts"></a> Supporto per download parziale
+## <a name="partial-download-support"></a><a name="bkmk_parts"></a> Supporto per download parziale
 <!--1357346-->
 A partire dalla versione 1806, le origini di peer cache dei client sono in grado di dividere il contenuto in parti, grazie alle quali è possibile ridurre al minimo il trasferimento in rete, riducendo l'utilizzo della rete WAN. Il punto di gestione consente una traccia più dettagliata delle parti del contenuto e tenta di eliminare più download dello stesso contenuto per ogni gruppo di limiti. 
 

@@ -2,7 +2,7 @@
 title: Creare raccolte
 titleSuffix: Configuration Manager
 description: Creare raccolte in Configuration Manager per gestire più facilmente gruppi di utenti e dispositivi.
-ms.date: 07/26/2019
+ms.date: 03/20/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 1401a35e-4312-4d3b-8ceb-0abbb10d4f05
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3fabbb774b1bf4d6144b59dea75a61207304557f
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 021342cc3212d5c42292013a8066baf881e12075
+ms.sourcegitcommit: 8c10745cb4e2baabba2af4821cb207a2f91d2eb3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75824470"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80138009"
 ---
 # <a name="how-to-create-collections-in-configuration-manager"></a>Come creare raccolte in Configuration Manager
 
@@ -72,7 +72,7 @@ si crea una raccolta con una regola di inclusione raccolte e una di esclusione r
 
 
 
-## <a name="bkmk_create"></a> Creare una raccolta  
+## <a name="create-a-collection"></a><a name="bkmk_create"></a> Creare una raccolta  
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità**.  
 
@@ -132,7 +132,7 @@ si crea una raccolta con una regola di inclusione raccolte e una di esclusione r
 > È necessario aggiornare o ricaricare la console di Configuration Manager per visualizzare i membri della raccolta. I membri non vengono visualizzati nella raccolta fino a quando non viene eseguito il primo aggiornamento pianificato. È anche possibile selezionare manualmente il comando **Aggiorna appartenenza** per la raccolta. L'aggiornamento della raccolta potrebbe richiedere alcuni minuti.  
 
         
-### <a name="bkmk-direct"></a> Configurare una regola diretta  
+### <a name="configure-a-direct-rule"></a><a name="bkmk-direct"></a> Configurare una regola diretta  
 
 1. Nella pagina **Cerca risorse** della **Creazione guidata regola di appartenenza diretta** specificare le informazioni seguenti.  
 
@@ -159,7 +159,7 @@ si crea una raccolta con una regola di inclusione raccolte e una di esclusione r
 2. Nella pagina **Seleziona risorse** selezionare le risorse da aggiungere alla raccolta nell'elenco **Risorse** e quindi selezionare **Avanti**.  
 
 
-### <a name="bkmk-query"></a> Configurare una regola di query  
+### <a name="configure-a-query-rule"></a><a name="bkmk-query"></a> Configurare una regola di query  
 
 Nella finestra di dialogo **Proprietà regola di query** specificare le informazioni seguenti.  
 
@@ -171,8 +171,11 @@ Nella finestra di dialogo **Proprietà regola di query** specificare le informaz
 
 - **Modifica istruzione query**: apre la finestra di dialogo **Proprietà istruzione query**, dove è possibile scrivere una query da usare come regola per la raccolta. Per altre informazioni sulle query, vedere [Introduzione alle query](/sccm/core/servers/manage/introduction-to-queries).  
 
+        
+        > [!TIP]  
+        > On the General tab, selecting the checkbox to **Omit duplicate rows (select distinct)** may result in less rows returned and potentially quicker results. 
 
-### <a name="bkmk-category"></a> Regola categoria di dispositivi
+### <a name="device-category-rule"></a><a name="bkmk-category"></a> Regola categoria di dispositivi
 
 Nella finestra **Selezionare le categorie di dispositivi** sono disponibili le azioni seguenti.
 
@@ -183,18 +186,18 @@ Nella finestra **Selezionare le categorie di dispositivi** sono disponibili le a
 Per altre informazioni, vedere [Classificare automaticamente i dispositivi in raccolte](/sccm/core/clients/manage/collections/automatically-categorize-devices-into-collections).<!-- SCCMDocs issue 552 -->
 
 
-### <a name="bkmk-include"></a> Configurare una regola di inclusione raccolte  
+### <a name="configure-an-include-collection-rule"></a><a name="bkmk-include"></a> Configurare una regola di inclusione raccolte  
 
 Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da includere nella nuova raccolta e quindi selezionare **OK**.  
 
 
-### <a name="bkmk-exclude"></a> Configurare una regola di esclusione raccolte  
+### <a name="configure-an-exclude-collection-rule"></a><a name="bkmk-exclude"></a> Configurare una regola di esclusione raccolte  
 
 Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da escludere dalla nuova raccolta e quindi selezionare **OK**.  
 
 
 
-## <a name="bkmk_import"></a> Importare una raccolta  
+## <a name="import-a-collection"></a><a name="bkmk_import"></a> Importare una raccolta  
 
 Quando si esporta una raccolta da un sito, Configuration Manager la salva come file MOF (Managed Object Format). Usare questa procedura per importare il file nel database del sito. Per completare questa procedura, sono necessarie le autorizzazioni di **creazione** per la classe delle raccolte.
 
@@ -216,7 +219,7 @@ Per altre informazioni sull'esportazione di raccolte, vedere [Come gestire le ra
 
 5. Completare la procedura guidata per importare la raccolta. La nuova raccolta viene visualizzata nel nodo **Raccolte utenti** o **Raccolte dispositivi** dell'area di lavoro **Asset e conformità** . Aggiornare o ricaricare la console di Configuration Manager per visualizzare i membri della raccolta appena importata.  
 
-## <a name="bkmk_aadcollsync"></a> Sincronizzare i risultati di appartenenza alla raccolta con i gruppi di Azure Active Directory
+## <a name="synchronize-collection-membership-results-to-azure-active-directory-groups"></a><a name="bkmk_aadcollsync"></a> Sincronizzare i risultati di appartenenza alla raccolta con i gruppi di Azure Active Directory
 *Introdotta come funzionalità di versione non definitiva nella versione 1906*
 <!--3607475-->
 > [!NOTE]
@@ -272,7 +275,7 @@ La sincronizzazione con Azure AD viene eseguita ogni cinque minuti. Si tratta di
 
 ![Sincronizzare le raccolte in Azure AD](media/3607475-sync-collection-to-azuread.png)
 
-## <a name="bkmk_powershell"></a> Uso di PowerShell
+## <a name="using-powershell"></a><a name="bkmk_powershell"></a> Uso di PowerShell
 
 È possibile usare PowerShell per creare e importare raccolte. Per altre informazioni, vedere:
 

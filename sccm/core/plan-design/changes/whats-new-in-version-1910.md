@@ -10,12 +10,12 @@ ms.assetid: 3e1ddb65-1193-46ce-a7c0-a48dfd9fd833
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: e894fefbc840cb4f23f9ef83b039c69b15d0efd4
-ms.sourcegitcommit: c3e5c23ea253a7521be796938af98728d1aea779
+ms.openlocfilehash: 2d0eed9a4e33be40c62d4809cca09c5d0a722330
+ms.sourcegitcommit: 8c10745cb4e2baabba2af4821cb207a2f91d2eb3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77552736"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80138103"
 ---
 # <a name="whats-new-in-version-1910-of-configuration-manager-current-branch"></a>Novità della versione 1910 di Configuration Manager Current Branch
 
@@ -30,7 +30,7 @@ Per sfruttare i vantaggi delle nuove funzionalità di Configuration Manager, dop
 > [!TIP]
 > Per ricevere una notifica quando questa pagina viene aggiornata, copiare e incollare l'URL seguente nel lettore di feed RSS: `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+1910+-+Configuration+Manager%22&locale=en-us`
 
-## <a name="bkmk_mem"></a> Microsoft Endpoint Configuration Manager
+## <a name="microsoft-endpoint-configuration-manager"></a><a name="bkmk_mem"></a> Microsoft Endpoint Configuration Manager
 
 <!--4960084-->
 
@@ -69,7 +69,7 @@ Assicurarsi di aggiornare la documentazione gestita internamente in modo da incl
 > [!TIP]
 > Quando si apre il menu Start in Windows 10, è sufficiente iniziare a digitare il nome per trovare l'icona. Ad esempio, immettere `Configuration Manager` o `Software Center`.
 
-## <a name="bkmk_infra"></a> Infrastruttura del sito
+## <a name="site-infrastructure"></a><a name="bkmk_infra"></a> Infrastruttura del sito
 
 ### <a name="reclaim-sedo-lock"></a>Richiamare il blocco SEDO
 
@@ -88,11 +88,11 @@ Per altre informazioni, vedere [Estendere ed eseguire la migrazione di un sito l
 
 <!-- ## <a name="bkmk_cloud"></a> Cloud-attached management -->
 
-## <a name="bkmk_da"></a> Desktop Analytics
+## <a name="desktop-analytics"></a><a name="bkmk_da"></a> Desktop Analytics
 
 Per altre informazioni sulle modifiche mensili al servizio cloud Desktop Analytics, vedere [Novità di Desktop Analytics](/configmgr/desktop-analytics/whats-new).
 
-## <a name="bkmk_real"></a> Gestione in tempo reale
+## <a name="real-time-management"></a><a name="bkmk_real"></a> Gestione in tempo reale
 
 ### <a name="optimizations-to-the-cmpivot-engine"></a>Ottimizzazioni per il motore CMPivot
 <!--3197353-->
@@ -112,7 +112,7 @@ Per altre informazioni, vedere [Ottimizzazioni per il motore CMPivot](/sccm/core
 
 Questa versione include anche diversi [altri miglioramenti](/sccm/core/servers/manage/cmpivot#bkmk_Other) a CMPivot. Per altre informazioni, vedere l'articolo su [CMPivot a partire dalla versione 1910](/sccm/core/servers/manage/cmpivot#bkmk_cmpivot1910).
 
-## <a name="bkmk_content"></a> Gestione dei contenuti
+## <a name="content-management"></a><a name="bkmk_content"></a> Gestione dei contenuti
 
 ### <a name="microsoft-connected-cache-support-for-intune-win32-apps"></a>Supporto di Microsoft Connected Cache per le app Win32 di Intune
 
@@ -127,7 +127,7 @@ Per altre informazioni, vedere [Microsoft Connected Cache in Configuration Manag
 >
 > Quando si installa Connected Cache in un punto di distribuzione di Configuration Manager, il traffico del servizio Ottimizzazione recapito viene scaricato nelle origini locali. Connected Cache esegue questa operazione memorizzando il contenuto nella cache in modo efficiente a livello di intervallo di byte.
 
-## <a name="bkmk_client"></a> Gestione dei client
+## <a name="client-management"></a><a name="bkmk_client"></a> Gestione dei client
 
 ### <a name="include-custom-configuration-baselines-as-part-of-compliance-policy-assessment"></a>Includere linee di base di configurazione personalizzate come parte della valutazione dei criteri di conformità
 <!--3608345-->
@@ -152,7 +152,7 @@ Per altre informazioni, vedere [Come configurare le impostazioni client](/config
 <!-- ## <a name="bkmk_comgmt"></a> Co-management -->
 
 
-## <a name="bkmk_app"></a> Gestione delle applicazioni
+## <a name="application-management"></a><a name="bkmk_app"></a> Gestione delle applicazioni
 
 ### <a name="deploy-microsoft-edge-version-77-and-later"></a>Distribuire Microsoft Edge versione 77 e successive
 <!--4561024-->
@@ -172,7 +172,7 @@ A partire da Current Branch versione 1906, è possibile creare un gruppo di appl
 Per altre informazioni di carattere generale, vedere [Creare gruppi di applicazioni](/configmgr/apps/deploy-use/create-app-groups).
 
 
-## <a name="bkmk_osd"></a> Distribuzione del sistema operativo
+## <a name="os-deployment"></a><a name="bkmk_osd"></a> Distribuzione del sistema operativo
 
 ### <a name="improvements-to-the-task-sequence-editor"></a>Miglioramenti all'editor delle sequenze di attività
 
@@ -264,7 +264,7 @@ Per altre informazioni, vedere [Variabili della sequenza di attività - SetupCom
 
 <!-- ## <a name="bkmk_userxp"></a> Software Center -->
 
-## <a name="bkmk_sum"></a> Aggiornamenti software
+## <a name="software-updates"></a><a name="bkmk_sum"></a> Aggiornamenti software
 
 ### <a name="additional-options-for-third-party-update-catalogs"></a>Opzioni aggiuntive per i cataloghi di aggiornamenti di terze parti
 <!--4469002-->
@@ -287,7 +287,7 @@ Per altre informazioni, vedere:
 
 Per altre informazioni, vedere [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates#bkmk_adr-process).
 
-## <a name="bkmk_o365"></a> Gestione di Office
+## <a name="office-management"></a><a name="bkmk_o365"></a> Gestione di Office
 
 
 ### <a name="office-365-proplus-pilot-and-health-dashboard"></a>Dashboard sull'integrità e la distribuzione pilota di Office 365 ProPlus
@@ -297,7 +297,7 @@ Il dashboard per l'integrità e la distribuzione pilota di Office 365 ProPlus pe
 
 Per altre informazioni, vedere [Uso del dashboard sull'integrità e la distribuzione pilota di Office 365 ProPlus](/sccm/sum/deploy-use/office-365-dashboard#bkmk_pilot).
 
-## <a name="bkmk_protect"></a> Protezione
+## <a name="protection"></a><a name="bkmk_protect"></a> Protezione
 
 ### <a name="bitlocker-management"></a>Gestione di BitLocker
 
@@ -313,7 +313,7 @@ Configuration Manager offre ora le funzionalità di gestione seguenti per Critto
 
 Per altre informazioni, vedere [Pianificare la gestione di BitLocker](/configmgr/protect/plan-design/bitlocker-management).
 
-## <a name="bkmk_admin"></a> Console di Configuration Manager
+## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a> Console di Configuration Manager
 
 ### <a name="view-active-consoles-and-message-administrators-through-console-connections"></a>Visualizzare le console attive e inviare un messaggio agli amministratori tramite Connessioni di console
 <!--4923997-->
@@ -366,7 +366,8 @@ The following additional hotfixes are available to address specific issues:
 
 | ID | Title | Date | In-console |
 |---------|---------|---------|---------|
-| [4487960](https://support.microsoft.com/help/4487960) | Microsoft Intune connector certificate does not renew in Configuration Manager | 18 January 2019 | Yes |
+| [4552181](https://support.microsoft.com/help/4552181) | Content distribution stalls in Configuration Manager current branch, version 1910 | 16 March 2020 | No |
+| [4552430](https://support.microsoft.com/help/4552430) | Third-party update category synchronization resets to default in Configuration Manager | 18 March 2020 | No |
 
 > [!NOTE]  
 > Starting in version 1902, in-console hotfixes now have supersedence relationships. For more information, see [Supersedence for in-console hotfixes](/sccm/core/servers/manage/updates#bkmk_supersede).
