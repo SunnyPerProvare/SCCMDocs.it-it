@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 07f9c1b14337876a5f5bafe23479d44072d8969d
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: 5a7cc1446622773f0462758873d4b6b79a64c2f6
+ms.sourcegitcommit: 8c10745cb4e2baabba2af4821cb207a2f91d2eb3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79191489"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80138035"
 ---
 <!-- 
 - Feature 1357546
@@ -106,15 +106,11 @@ Procedure dettagliate guidate che semplificano la risoluzione dei problemi relat
 
 ## <a name="new-and-updated-support-articles"></a>Articoli di supporto nuovi e aggiornati
 
-Articoli di supporto nuovi o aggiornati tra il 24 dicembre 2019 e il 20 febbraio 2020.
+Articoli di supporto nuovi o aggiornati tra il 21 febbraio e il 19 marzo 2020.
 
-- [KB 4537079 Aggiornamento cumulativo per Microsoft Endpoint Configuration Manager Current Branch, versione 1910](https://support.microsoft.com/help/4537079)
-- [KB 4535819 Aggiornamento per Microsoft Endpoint Configuration Manager versione 1910, anello di aggiornamento anticipato](https://support.microsoft.com/help/4535819)
-- [KB 4538488 I client vengono aggiornamenti immediatamente dopo l'aggiornamento a Configuration Manager Current Branch, versione 1910](https://support.microsoft.com/help/4538488)
-- [KB 4538166 Aggiornamento dei client per Configuration Manager Current Branch, versione 1910](https://support.microsoft.com/help/4538166)
-- [KB 4537369 L'attività Elimina dati di individuazione obsoleti rimuove erroneamente i record attivi in Configuration Manager](https://support.microsoft.com/help/4537369)
-- [KB 4542722 Il livello di compatibilità del database SQL viene modificato dopo l'applicazione degli aggiornamenti di Configuration Manager](https://support.microsoft.com/help/4537079)
-- [KB 4095539 I client di Configuration Manager non ricevono i dati dei criteri dopo avere ripristinato un sito primario da un server Accesso client](https://support.microsoft.com/help/4095539)
-- [KB 4527297 La sincronizzazione con Microsoft Store per le aziende non usa il proxy in Configuration Manager](https://support.microsoft.com/help/4527297)
+- [KB 4552430 La sincronizzazione della categoria di aggiornamento di terze parti viene reimpostata sul valore predefinito in Configuration Manager](https://support.microsoft.com/help/4552430)
+- [KB 4551013 Gli aggiornamenti di terze parti modificati non vengono scaricati in Configuration Manager](https://support.microsoft.com/help/4551013)
+- [KB 4552181 Ritardi nella distribuzione del contenuto in Configuration Manager Current Branch versione 1910](https://support.microsoft.com/help/4552181)
+- [KB 4550023 Una sequenza di attività di aggiornamento sul posto di Configuration Manager non continua dopo un rollback dell'aggiornamento sul posto di Windows 10](https://support.microsoft.com/help/4550023)
 
 Per sottoscrivere la notifica Atom o RSS dei nuovi articoli di supporto di Configuration Manager, vedere [Aggiornamenti dei contenuti del supporto](https://support.microsoft.com/help/4089498/) e selezionare **Microsoft Endpoint Configuration Manager**.  

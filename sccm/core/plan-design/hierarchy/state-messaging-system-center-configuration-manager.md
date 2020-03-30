@@ -2,7 +2,7 @@
 title: Messaggi di stato
 titleSuffix: Configuration Manager
 description: Descrizioni dei messaggi di stato nelle versioni supportate di Configuration Manager.
-ms.date: 02/26/2019
+ms.date: 03/21/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: f04c0a71-57bc-4443-a47c-592373050d04
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: df24765a034bce76003376e0e2844d8b8d74d859
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 7b75d7a710c84dc946c9661a03e774e6fa387a00
+ms.sourcegitcommit: 13bdc08cfb52309f1e14875f17cd320c7c1b15ce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799710"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112670"
 ---
 # <a name="state-messages-in-configuration-manager"></a>Messaggi di stato in Configuration Manager 
 
@@ -107,7 +107,7 @@ Ogni funzionalità di Configuration Manager che usa i messaggi di stato viene id
 | 13 | Aggiornamento scaricato        |
 | 14 |Impossibile scaricare l'aggiornamento        |
 
-## <a name="500-state_toptctype_sum_update_detection"></a>500 STATE_TOPTCTYPE_SUM_UPDATE_DETECTION
+## <a name="500-state_topictype_sum_update_detection"></a>500 STATE_TOPICTYPE_SUM_UPDATE_DETECTION
 
 |     ID del messaggio di stato     |  Descrizione del messaggio di stato |
 |:-------------|:------|

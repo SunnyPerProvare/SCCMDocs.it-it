@@ -2,7 +2,7 @@
 title: Endpoint Protection
 titleSuffix: Configuration Manager
 description: Informazioni su come gestire i criteri antimalware e la sicurezza di Windows Firewall per i client.
-ms.date: 05/13/2019
+ms.date: 03/18/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 76c90f64-d729-456b-8304-01852cd66fb6
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 018bd22e56a5646e09861108600a64885392e8bf
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.openlocfilehash: e0b3822f38f24ea7f4410722fa5d654b0f10a8ca
+ms.sourcegitcommit: 8c10745cb4e2baabba2af4821cb207a2f91d2eb3
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75819625"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80137898"
 ---
 # <a name="endpoint-protection"></a>Endpoint Protection
 
@@ -55,9 +55,11 @@ A partire da Windows 10 e Windows Server 2016, Windows Defender è già installa
 
 -   [Come creare e distribuire criteri antimalware per Endpoint Protection](endpoint-antimalware-policies.md): creare, distribuire e monitorare criteri antimalware con un elenco di impostazioni da configurare  
 
--   [Come monitorare](monitor-endpoint-protection.md) i report delle attività di monitoraggio Endpoint Protection, i computer client infetti e altro ancora.  
+-   [Come monitorare Endpoint Protection](monitor-endpoint-protection.md): monitoraggio dei report sull'attività, dei computer client infetti e altro.  
 
--   [Come gestire i criteri antimalware e le impostazioni del firewall per Endpoint Protection](endpoint-antimalware-firewall.md) -correggere malware trovati nei computer client  
+-   [Come gestire i criteri antimalware e le impostazioni del firewall per Endpoint Protection in System Center Configuration Manager](endpoint-antimalware-firewall.md): riparazione di malware rilevato nei computer client  
+
+-   [File di log per Endpoint Protection](/configmgr/core/plan-design/hierarchy/log-files#BKMK_EPLog)  
 
 
 ## <a name="managing-windows-firewall-with-endpoint-protection"></a>Gestione di Windows Firewall con Endpoint Protection  
@@ -78,7 +80,7 @@ A partire da Windows 10 e Windows Server 2016, Windows Defender è già installa
 
 ## <a name="microsoft-defender-advanced-threat-protection"></a>Microsoft Defender Advanced Threat Protection
 
-Endpoint Protection gestisce e monitora Microsoft Defender Advanced Threat Protection (ATP), noto in precedenza come Windows Defender ATP. Il servizio Microsoft Defender ATP consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti aziendali. Per altre informazioni, vedere [Microsoft Defender Advanced Threat Protection](windows-defender-advanced-threat-protection.md).
+Endpoint Protection esegue la gestione e il monitoraggio di Microsoft Defender Advanced Threat Protection (ATP), denominato in precedenza Windows Defender ATP. Il servizio Microsoft Defender ATP consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti aziendali. Per altre informazioni, vedere [Microsoft Defender Advanced Threat Protection](windows-defender-advanced-threat-protection.md).
 
 ## <a name="endpoint-protection-workflow"></a>Flusso di lavoro di Endpoint Protection  
  Vedere il diagramma seguente per capire il flusso di lavoro per l'implementazione di Endpoint Protection nella gerarchia di Configuration Manager.  

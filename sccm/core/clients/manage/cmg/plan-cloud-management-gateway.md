@@ -10,12 +10,12 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2e99620ed7acb0beed886411c0480e58724ad06e
-ms.sourcegitcommit: 7287806334e30431232c71df63747c01c42235e8
+ms.openlocfilehash: 6bf459474c00348f1da01a1a3958772376adbb01
+ms.sourcegitcommit: 8c10745cb4e2baabba2af4821cb207a2f91d2eb3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79090320"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80138087"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
@@ -276,6 +276,8 @@ Cloud Management Gateway (CMG) usa i componenti di Azure seguenti, che implicano
 - Per altre informazioni, vedere i costi d'uso dei [punti di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#bkmk_cost).  
 
 - A partire dalla versione 1806, un CMG può anche essere un punto di distribuzione cloud per distribuire contenuti ai client. Questa funzionalità riduce i certificati necessari e i costi delle macchine virtuali di Azure. Per altre informazioni, vedere [Modify a CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg) (Modificare un gateway di gestione cloud).<!--1358651-->  
+
+- A partire dalla versione 1810 CMG usa l'archiviazione con ridondanza locale di Azure. Per altre informazioni, vedere [Archiviazione con ridondanza locale](https://docs.microsoft.com/azure/storage/common/storage-redundancy-lrs).  
 
 ### <a name="other-costs"></a>Altri costi
 

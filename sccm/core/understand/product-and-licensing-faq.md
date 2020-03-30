@@ -10,12 +10,12 @@ ms.assetid: ee8d611f-aa0c-4efd-b0ad-dbd14d0a0623
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a6cd83b99b2936ebc44bb171795f7c8da4c8b17a
-ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
+ms.openlocfilehash: 3591348033b7dda06f7719e88daac6326b136ccb
+ms.sourcegitcommit: d20267336c0059f40c3250d4479ceb10ae1c8974
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "77218413"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80220354"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Domande frequenti relative ai rami e alle licenze di Configuration Manager
 
@@ -23,15 +23,15 @@ ms.locfileid: "77218413"
 
 Queste domande frequenti includono domande comuni sulle licenze in relazione alle versioni Current Branch e Long-Term Servicing Branch (LTSB) di Configuration Manager, disponibili tramite programmi Microsoft Volume Licensing. Questo articolo ha finalità puramente informative e non sostituisce la documentazione relativa alla gestione delle licenze di Configuration Manager. Per altre informazioni, vedere le [condizioni di licenza del prodotto](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=53). I termini per i prodotti descrivono le condizioni per l'utilizzo di tutti i prodotti Microsoft nell'ambito dei programmi per i contratti multilicenza.
 
-### <a name="bkmk_cb"></a> Che cos'è Current Branch?
+### <a name="whats-current-branch"></a><a name="bkmk_cb"></a> Che cos'è Current Branch?
 
 Current Branch è la build pronta per la produzione di Configuration Manager che offre un modello di servizio attivo. Questo modello di servizio è simile all'esperienza con Windows 10. Questo metodo supporta i clienti che si muovono al ritmo del cloud e vogliono un'innovazione più rapida. Con il modello di servizio Current Branch, è possibile continuare a ricevere nuove caratteristiche e funzionalità. Per questo motivo, solo i clienti con una sottoscrizione Software Assurance attiva per le licenze di Configuration Manager o con diritti di sottoscrizione equivalenti possono installare e usare la versione Current Branch di Configuration Manager.
 
-### <a name="bkmk_ltsb"></a> Che cos'è Long Term Servicing Branch (LTSB)?  
+### <a name="whats-the-long-term-servicing-branch-ltsb"></a><a name="bkmk_ltsb"></a> Che cos'è Long Term Servicing Branch (LTSB)?  
 
 LTSB è una build pronta per la produzione di Configuration Manager. È destinata ai clienti che lasciano scadere la sottoscrizione Software Assurance o diritti di sottoscrizione equivalenti. Rispetto a Current Branch, LTSB include [funzionalità ridotte](/sccm/core/understand/introduction-to-the-ltsb#features-that-arent-available). I clienti che lasciano scadere una sottoscrizione Software Assurance o diritti di sottoscrizione equivalenti devono disinstallare la versione Current Branch di Configuration Manager. I clienti che dispongono di diritti di licenza perpetui per Configuration Manager possono quindi installare e usare la build LTSB della versione di Configuration Manager corrente al momento della scadenza.
 
-### <a name="bkmk_licensing-acronyms"></a> Che cosa significano gli acronimi *SA* e *L&SA* in relazione a Configuration Manager?
+### <a name="what-do-the-acronyms-sa-and-lsa-mean-in-regard-to-configuration-manager"></a><a name="bkmk_licensing-acronyms"></a> Che cosa significano gli acronimi *SA* e *L&SA* in relazione a Configuration Manager?
 
 **Software Assurance** (SA) e **Licenza e Software Assurance** (L&SA) sono opzioni di licenza che concedono i diritti necessari per usare Configuration Manager. SA è un'opzione per un cliente che rinnova la copertura SA da un contratto precedente. L&SA è un'opzione per il cliente che acquista una nuova licenza e la copertura Software Assurance.
 
@@ -47,7 +47,7 @@ LTSB è una build pronta per la produzione di Configuration Manager. È destinat
 
 Per altre informazioni sulle offerte di licenze, vedere [Modalità di acquisto](https://www.microsoft.com/Licensing/licensing-programs/licensing-programs) e le [condizioni di licenza del prodotto](https://www.microsoftvolumelicensing.com/ProductResults.aspx?doc=Product%20Terms,OST&fid=64).  
 
-### <a name="bkmk_equiv-sub"></a> Che cosa sono le *sottoscrizioni equivalenti*?
+### <a name="what-are-equivalent-subscriptions"></a><a name="bkmk_equiv-sub"></a> Che cosa sono le *sottoscrizioni equivalenti*?
 
 Le sottoscrizioni equivalenti si riferiscono a programmi come [Enterprise Mobility + Security](https://www.microsoftvolumelicensing.com/ProductResults.aspx?doc=Product%20Terms,OST&fid=51) (EMS) o [Microsoft 365 Enterprise](https://www.microsoft.com/microsoft-365/enterprise). Esistono anche altri programmi, ma questi sono i più comuni. Nei termini per i contratti multilicenza Microsoft questi programmi sono denominati licenze equivalenti a licenze di gestione.
 
@@ -68,11 +68,11 @@ https://www.microsoft.com/microsoft-365/enterprise-mobility-security/compare-pla
 > [!IMPORTANT]
 > Configuration Manager non è incluso nel piano di [Microsoft 365 Business](https://www.microsoft.com/microsoft-365/business).
 
-### <a name="bkmk_mem"></a> È cambiato qualcosa con il passaggio al marchio Microsoft Endpoint Manager?
+### <a name="does-anything-change-with-the-rebrand-to-microsoft-endpoint-manager"></a><a name="bkmk_mem"></a> È cambiato qualcosa con il passaggio al marchio Microsoft Endpoint Manager?
 
 Sì. Dal 1° dicembre 2019, se si ha già una licenza per Configuration Manager viene anche assegnata automaticamente una licenza per Intune per la registrazione dei PC Windows in [co-gestione](/configmgr/comanage/overview). Questa modifica consente di gestire più facilmente i dispositivi Windows con Microsoft Endpoint Manager.
 
-È ora disponibile una nuova licenza che consente ai clienti di Configuration Manager con Software Assurance di ottenere i diritti di gestione dei PC Intune senza dover acquistare una licenza di Intune aggiuntiva per la co-gestione. Non è più necessario acquistare e assegnare singole licenze di Intune o EMS ai propri utenti.
+È ora disponibile una nuova licenza che consente ai clienti di Configuration Manager con Software Assurance di ottenere i diritti di gestione dei PC Intune senza dover acquistare una licenza di Intune aggiuntiva per la co-gestione. Non è più necessario acquistare e assegnare singole licenze di Intune ai propri utenti.
 
 - I dispositivi gestiti da Configuration Manager e registrati in co-gestione hanno quasi gli stessi diritti di un PC gestito autonomamente da Intune. Tuttavia, dopo la reimpostazione non è possibile eseguire di nuovo il provisioning tramite AutoPilot.
 
@@ -82,11 +82,11 @@ Sì. Dal 1° dicembre 2019, se si ha già una licenza per Configuration Manager 
 
 - Le licenze precedentemente disponibili per System Center Configuration Manager sono ancora applicabili a Microsoft Endpoint Configuration Manager. Se si installa un nuovo sito, usare i codici Product Key esistenti.
 
-### <a name="bkmk_ems-expires"></a> Possiedo Enterprise Mobility + Security ed è scaduto, cosa devo fare?  
+### <a name="i-have-enterprise-mobility--security-and-it-expired-what-must-i-do-now"></a><a name="bkmk_ems-expires"></a> Possiedo Enterprise Mobility + Security ed è scaduto, cosa devo fare?  
 
 EMS concede i diritti di utilizzo di Configuration Manager Current Branch e Long-Term Service Branch. Alla scadenza di questi diritti, non è più possibile usare nessuno dei due rami ed è necessario disinstallarli.  
 
-### <a name="bkmk_sa-expires"></a> Che cosa ricevo se la mia copertura SA scade e ho una L&SA?
+### <a name="if-my-sa-expires-and-i-had-lsa-what-do-i-get"></a><a name="bkmk_sa-expires"></a> Che cosa ricevo se la mia copertura SA scade e ho una L&SA?
 
 Se la sottoscrizione SA è scaduta dopo il 1° ottobre 2016, a seconda del programma nell'ambito del quale è stata acquisita la sottoscrizione L&SA, è possibile mantenere una licenza perpetua per l'uso di Long-Term Servicing Branch (LTSB). Se attualmente si usa la versione Current Branch, è necessario disinstallarla e quindi installare LTSB. Non è previsto alcun supporto per la migrazione o la conversione in LTSB da Current Branch.
 
@@ -94,15 +94,15 @@ Se la sottoscrizione SA è scaduta prima del 1° ottobre 2016 e si è mantenuta 
 
 Se si usa System Center Endpoint Protection e la sottoscrizione SA scade, è necessario disinstallarlo. System Center Endpoint Protection non offre diritti *L (Licenza)* né diritti perpetui.<!--506238-->
 
-### <a name="bkmk_owncb"></a> Ogni utente è "proprietario" di Current Branch?
+### <a name="do-i-own-the-current-branch"></a><a name="bkmk_owncb"></a> Ogni utente è "proprietario" di Current Branch?
 
 No. Current Branch viene concesso in licenza d'uso per il periodo durante il quale si è in possesso di una sottoscrizione SA attiva. Ad esempio, alla scadenza della sottoscrizione *SA*, tramite *L&SA* si possiedono solo i diritti *L (licenza)* , che non includono i diritti di utilizzo di Current Branch. Se la licenza offre diritti perpetui, è possibile usare Configuration Manager LTSB al posto di Current Branch. Se la sottoscrizione SA è scaduta prima del 1° ottobre 2016, è anche possibile usare System Center 2012 R2 Configuration Manager.
 
-### <a name="bkmk_standalone"></a> È possibile acquistare Configuration Manager in modo autonomo senza SA?
+### <a name="can-i-purchase-configuration-manager-standalone-without-sa"></a><a name="bkmk_standalone"></a> È possibile acquistare Configuration Manager in modo autonomo senza SA?
 
 No. L'unico modo per ottenere i diritti di utilizzo di Configuration Manager è attraverso l'acquisto di una licenza con SA o tramite una sottoscrizione equivalente. Sono disponibili programmi per sviluppatori come MSDN, in cui Configuration Manager viene offerto per scopi di sviluppo e test, ma non per l'uso in ambienti di produzione.
 
-### <a name="bkmk_lab"></a> Un ambiente non di produzione per il test o lo sviluppo richiede una licenza esplicita?
+### <a name="does-a-non-production-environment-for-testing-or-development-require-an-explicit-license"></a><a name="bkmk_lab"></a> Un ambiente non di produzione per il test o lo sviluppo richiede una licenza esplicita?
 
 <!-- SCCMDocs#1848 -->
 
@@ -114,21 +114,21 @@ No. L'unico modo per ottenere i diritti di utilizzo di Configuration Manager è 
 
 - Per un ambiente lab, è possibile usare [Technical Preview Branch](/sccm/core/get-started/technical-preview). Technical Preview ha la stessa funzionalità di Current Branch, ma presenta alcune limitazioni in termini di scalabilità e piattaforme supportate.
 
-### <a name="bkmk_update-rights"></a> Ho i diritti necessari per l'installazione degli aggiornamenti nella console di Configuration Manager?
+### <a name="do-i-have-rights-to-install-any-update-in-the-configuration-manager-console"></a><a name="bkmk_update-rights"></a> Ho i diritti necessari per l'installazione degli aggiornamenti nella console di Configuration Manager?
 
 Se si è in possesso di una sottoscrizione *SA* attiva, la risposta è sì.
 
 In caso contrario, disinstallare Current Branch e quindi installare la build LTSB di Configuration Manager. LTSB non riceve aggiornamenti per le versioni incrementali di Configuration Manager, ma riceve gli aggiornamenti della sicurezza in base al ciclo di vita del supporto.
 
-### <a name="bkmk_csp"></a> Se si è acquistato EMS o Microsoft 365 tramite un Cloud Solution Provider, si possiedono i diritti necessari per usare Configuration Manager?
+### <a name="i-have-purchased-ems-or-microsoft-365-through-a-cloud-solution-provider-csp-do-i-have-rights-to-use-configuration-manager"></a><a name="bkmk_csp"></a> Se si è acquistato EMS o Microsoft 365 tramite un Cloud Solution Provider, si possiedono i diritti necessari per usare Configuration Manager?
 
 Sì, si possiedono i diritti necessari per usare Configuration Manager per gestire i client coperti dalla licenza EMS. Scaricare e installare innanzitutto il [software di valutazione](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection). Quindi contattare il supporto tecnico Microsoft per ottenere il codice di licenza.<!--issue472--> Quando si parla con il supporto tecnico Microsoft, chiedere di fare riferimento all'ID articolo interno 4033838.<!-- SCCMDocs issue 493 -->
 
-### <a name="bkmk_expiration-date"></a> La data di fine sottoscrizione corrisponde alla data di scadenza della SA?
+### <a name="is-my-subscription-end-date-the-same-as-an-sa-expiration-date"></a><a name="bkmk_expiration-date"></a> La data di fine sottoscrizione corrisponde alla data di scadenza della SA?
 
 Se *SA* o la sottoscrizione è attiva, si dispone dei diritti di utilizzo per Configuration Manager Current Branch. Una sottoscrizione attiva equivale a una *SA* attiva, ma non a una *"L" (licenza)* perpetua. Quando la sottoscrizione termina, disinstallare Current Branch. A questo punto, non si dispone più dei diritti necessari per usare LTSB.  
 
-### <a name="bkmk_sql"></a> Quali sono i diritti di utilizzo associati alla tecnologia SQL inclusa in Configuration Manager?
+### <a name="what-are-the-use-rights-associated-with-the-sql-technology-provided-with-configuration-manager"></a><a name="bkmk_sql"></a> Quali sono i diritti di utilizzo associati alla tecnologia SQL inclusa in Configuration Manager?
 
 Configuration Manager include la tecnologia SQL Server. Le condizioni di licenza di Microsoft per questo prodotto consentono l'uso della tecnologia SQL Server solo per il supporto dei componenti di Configuration Manager. Non sono necessarie Licenze CAL (Client Access License) di SQL Server per tale uso.
 
@@ -143,7 +143,7 @@ I diritti di utilizzo approvati per le funzionalità SQL con Configuration Manag
 La licenza di SQL Server inclusa con Configuration Manager supporta ogni istanza di SQL Server installata per ospitare un database per Configuration Manager. Tuttavia, solo i database per Configuration Manager nell'elenco precedente possono essere eseguiti in tale sistema SQL Server quando si usa questa licenza. Se un database per un'applicazione Microsoft aggiuntiva o un prodotto di terze parti condivide il sistema SQL Server, è necessaria una licenza distinta per tale istanza di SQL Server.
  <!-- sms500967 -->
 
-### <a name="bkmk_opmdm"></a> Per la gestione di dispositivi mobili (MDM) in locale è necessaria una sottoscrizione di Intune?
+### <a name="does-on-premises-mobile-device-management-mdm-require-an-intune-subscription"></a><a name="bkmk_opmdm"></a> Per la gestione di dispositivi mobili (MDM) in locale è necessaria una sottoscrizione di Intune?
 
 Per iniziare a usare MDM in locale nella versione 1806 e precedenti, è necessaria una sottoscrizione di Microsoft Intune. La sottoscrizione è necessaria solo per tenere traccia delle licenze dei dispositivi e non viene usata per gestire o archiviare le informazioni di gestione per i dispositivi. Tutti i dati di gestione vengono archiviati nell'organizzazione tramite l'infrastruttura di Configuration Manager locale.  
 

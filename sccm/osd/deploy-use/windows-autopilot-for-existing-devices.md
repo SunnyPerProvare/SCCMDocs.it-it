@@ -2,7 +2,7 @@
 title: Windows Autopilot per dispositivi esistenti
 titleSuffix: Configuration Manager
 description: Usare una sequenza di attività di Configuration Manager per ricreare l'immagine ed eseguire il provisioning di un dispositivo Windows 7 per la modalità definita dall'utente di Windows Autopilot
-ms.date: 03/05/2019
+ms.date: 03/23/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 2e96f847-5b5a-4da9-8e8f-6aa488838508
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 31004429493252ddef4b45621695d2fcd275fa36
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.openlocfilehash: 98f973551edd154c7bddf270cfdd5a2eda1fdb8b
+ms.sourcegitcommit: d20267336c0059f40c3250d4479ceb10ae1c8974
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75821410"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80220388"
 ---
 # <a name="windows-autopilot-for-existing-devices"></a>Windows Autopilot per dispositivi esistenti
 <!--3607717, fka 1358333-->
@@ -34,7 +34,7 @@ ms.locfileid: "75821410"
 
 - In Microsoft Intune, creare i profili per Windows Autopilot. Per altre informazioni, vedere [Registrare dispositivi Windows in Intune con Windows Autopilot](https://docs.microsoft.com/intune/enrollment-autopilot).
 
-- Un dispositivo che non sia già registrato con il servizio Windows Autopilot. Se il dispositivo è già registrato, il profilo assegnato ha la precedenza. Il profilo di Autopilot per i dispositivi esistenti si applica solo se si verifica il timeout del profilo online.
+- Un dispositivo che non sia già registrato con il servizio Windows Autopilot. Se il dispositivo è già registrato, il profilo assegnato ha la precedenza. Il profilo Autopilot per dispositivi esistenti si applica solo nel caso di un timeout del profilo online.
 
 
 
@@ -95,7 +95,7 @@ ms.locfileid: "75821410"
 
     - Abilitare l'opzione **Creare partizioni e formattare il computer di destinazione prima di installare il sistema operativo**  
 
-    - **Configurare la sequenza di attività per l'utilizzo con BitLocker**: se si abilita questa opzione, la sequenza di attività include i passaggi necessari per abilitare BitLocker  
+    - **Configura sequenza di attività da utilizzare con BitLocker**: se si abilita questa opzione, la sequenza di attività include i passaggi necessari per abilitare Bitlocker  
 
     - **Codice Product Key**: se è necessario specificare un codice Product Key per l'attivazione di Windows, immetterlo qui  
 
@@ -128,6 +128,14 @@ Se si modifica la sequenza di attività, la procedura è simile a quella per la 
 - **Prepara Windows per l'acquisizione**: questo passaggio esegue Windows Sysprep e include l'impostazione **Arresta il computer dopo l'esecuzione di questa azione**. Per altre informazioni, vedere [Prepara Windows per l'acquisizione](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareWindowsforCapture).  
 
 Il risultato della sequenza di attività Windows Autopilot per i dispositivi esistenti è l'aggiunta di un dispositivo ad Azure Active Directory (Azure AD). 
+
+> [!NOTE]  
+> Con Windows 10 versione 1903 e versione 1909, Autopilot presenta un problema noto per cui Sysprep elimina il file **AutopilotConfigurationFile.json**. Se si usa questo metodo per distribuire Windows 10 versione 1903 o 1909, modificare questa sequenza di attività e apportare le modifiche seguenti:
+>
+> 1. Disabilitare il passaggio **Prepara Windows per l'acquisizione**.
+> 2. Subito dopo il passaggio **Prepara Windows per l'acquisizione** disabilitato, aggiungere un nuovo passaggio **Esegui riga di comando**. Configurarlo per l'esecuzione della riga di comando seguente: `c:\windows\system32\sysprep\sysprep.exe /oobe /reboot`
+>
+> Per altre informazioni, vedere [Problemi noti di Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/known-issues).
 
 Usare la funzionalità di [spostamento delle cartelle note](https://docs.microsoft.com/onedrive/redirect-known-folders) di OneDrive for Business per assicurarsi che venga eseguito un backup dei dati dell'utente prima dell'aggiornamento di Windows 10.
 

@@ -10,12 +10,12 @@ ms.assetid: ff6e7267-302a-4563-815e-cdc0d1a4b60f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8385ecb454a7b155a2684acfab7ba99ed63b1328
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.openlocfilehash: 8d310c164a6d8e82e8e6ec6d18ae4b534c1ca472
+ms.sourcegitcommit: 8c10745cb4e2baabba2af4821cb207a2f91d2eb3
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825388"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80137974"
 ---
 # <a name="create-prestaged-media"></a>Creare supporti pre-installati
 
@@ -67,6 +67,9 @@ L'account utente usato deve avere almeno diritti di accesso in **lettura** per l
 
 
 ## <a name="process"></a>Processo
+
+ > [!NOTE]  
+ > Per gli ambienti PKI, dato che la CA radice viene specificata nel sito primario, verificare che il supporto pre-installato venga creato nel sito primario. Il sito CAS non contiene le informazioni sulla CA radice sufficienti per creare correttamente il supporto pre-installato.
 
 1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Sistemi operativi** e selezionare il nodo **Sequenze di attività**.  
 

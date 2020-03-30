@@ -10,12 +10,12 @@ ms.assetid: 68dc6acd-5848-47a4-b4c1-ffa40e47890b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 9d651d0278f750090bfbc2ba3068b84c35ded4a7
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 1470eb2be082c5809c5e89786a98fc2ab7fb48e5
+ms.sourcegitcommit: 13bdc08cfb52309f1e14875f17cd320c7c1b15ce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034241"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112653"
 ---
 # <a name="reference-for-maintenance-tasks-in-configuration-manager"></a>Informazioni di riferimento per le attività di manutenzione | Configuration Manager
 
@@ -511,7 +511,7 @@ Per riepilogare i dati di controllo software contenendo lo spazio occupato nel d
 
 ### <a name="summarize-installed-software-data"></a>Riepiloga dati software installato
 
-Usare questa attività per riepilogare in un unico record generale i dati di più record sul software installato. L'attività di riepilogo dei dati può ridurre la quantità di dati archiviati nel database di Configuration Manager. Per altre informazioni, vedere [Introduzione all'inventario software](/sccm/core/clients/manage/inventory/introduction-to-software-inventory).
+Usare questa attività per riepilogare le informazioni sul software di asset intelligence raccolte tramite l'inventario hardware per unire più record in un unico record generale. L'attività di riepilogo dei dati può ridurre la quantità di dati archiviati nel database di Configuration Manager. Per altre informazioni, vedere [Introduzione all'inventario hardware](/sccm/core/clients/manage/inventory/introduction-to-hardware-inventory).
 
 |||
 |---------|---------|

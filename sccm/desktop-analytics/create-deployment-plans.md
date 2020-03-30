@@ -10,12 +10,12 @@ ms.assetid: 8e0e8496-136b-461f-8239-cc19c6b78c3b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3a1a4397d0a02f28d4b2946294b6c854e79e6478
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: 6420dbf290c40b503c89a33f520d812bdd4a7c96
+ms.sourcegitcommit: 888d695cd30cdc2a65e1ef486cfa0588575ea560
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79191477"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80250846"
 ---
 # <a name="how-to-create-deployment-plans-in-desktop-analytics"></a>Come creare i piani di distribuzione in Desktop Analytics
 
@@ -42,6 +42,8 @@ Seguire la procedura descritta in questa sezione per usare Desktop Analytics per
         Se si connettono più gerarchie di Configuration Manager alla stessa istanza di Desktop Analytics, viene aggiunto un nome visualizzato per la gerarchia come prefisso al nome della raccolta nella configurazione pilota globale. Si tratta della proprietà **Nome visualizzato** nella connessione di Desktop Analytics nella console di Configuration Manager.<!-- 4814075 -->
 
         > [!NOTE]
+        > Il supporto di più gerarchie richiede Configuration Manager versione 1910 o successiva.
+        >
         > Se si selezionano raccolte per più gerarchie, nel portale viene visualizzato un avviso. Non è possibile creare il piano di distribuzione con raccolte da più gerarchie.<!-- 4814075 -->
 
     - **Regole di idoneità**: queste regole consentono di individuare i dispositivi idonei per l'aggiornamento. Per altre informazioni, vedere [Regole di idoneità](#readiness-rules).  

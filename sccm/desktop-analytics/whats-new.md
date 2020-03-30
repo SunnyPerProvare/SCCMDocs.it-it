@@ -10,12 +10,12 @@ ms.assetid: fa300181-86cb-4afe-8fbf-895a7572378d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e07493fdfc5a7b8497704f80323e13ac59d735dc
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: 3c3ab1e6628a9d109cd90177085b70d597ca6856
+ms.sourcegitcommit: 888d695cd30cdc2a65e1ef486cfa0588575ea560
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79191459"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80250829"
 ---
 # <a name="whats-new-in-desktop-analytics"></a>Novità di Desktop Analytics
 
@@ -37,6 +37,9 @@ Per ricevere una notifica quando questa pagina viene aggiornata, copiare e incol
 
 - Quando si configura il progetto pilota globale, se si includono raccolte che contengono più del 20% dei dispositivi registrati totali, nel portale viene visualizzato un avviso.
 - Quando si crea un piano di distribuzione, se si selezionano raccolte per più gerarchie, nel portale viene visualizzato un avviso.
+
+> [!NOTE]
+> Il supporto di più gerarchie richiede Configuration Manager versione 1910 o successiva.
 
 Per altre informazioni, vedere gli articoli seguenti:
 

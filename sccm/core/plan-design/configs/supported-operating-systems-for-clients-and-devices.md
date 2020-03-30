@@ -10,12 +10,12 @@ ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f31805a3d9541742419b398a954005358701836c
-ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
+ms.openlocfilehash: 03e29b4eb5111565fad2d3c6fa0ca07517859605
+ms.sourcegitcommit: d20267336c0059f40c3250d4479ceb10ae1c8974
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "77515994"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80220371"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versioni dei sistemi operativi per client e dispositivi supportate da Configuration Manager
 
@@ -44,7 +44,7 @@ Per gestire le versioni dei sistemi operativi Windows seguenti, usare il client 
 #### <a name="windows-virtual-desktop"></a>Desktop virtuale Windows
 
 <!--3556025-->
-[Desktop virtuale Windows](https://docs.microsoft.com/azure/virtual-desktop/) è una funzionalità di anteprima di Microsoft Azure e Microsoft 365. A partire dalla versione 1906, usare Configuration Manager per gestire questi dispositivi virtuali che eseguono Windows in Azure.
+[Desktop virtuale Windows](https://docs.microsoft.com/azure/virtual-desktop/) è un servizio di virtualizzazione di desktop e app eseguito su Microsoft Azure. A partire dalla versione 1906, usare Configuration Manager per gestire questi dispositivi virtuali che eseguono Windows in Azure.
 
 Analogamente a un server terminal, alcuni di questi dispositivi virtuali consentono l'esecuzione di più sessioni utente attive simultanee. Per migliorare le prestazioni dei client, Configuration Manager disabilita ora i criteri utente su tutti i dispositivi che consentono l'esecuzione di più sessioni utente. Anche se si abilitano i criteri utente, il client li disabilita per impostazione predefinita in questi dispositivi, che includono server terminal e Windows 10 Enterprise multisessione.
 
@@ -90,15 +90,15 @@ Le versioni del canale semestrale di Windows Server sono installazioni Server Co
 
 - **Windows Server 2012** (x64) <sup>[Nota 2](#bkmk_note2)</sup>
 
-#### <a name="bkmk_note1"></a> Nota 1
+#### <a name="note-1"></a><a name="bkmk_note1"></a> Nota 1
 
 Configuration Manager verifica e supporta le edizioni di Windows Server Datacenter, ma non è ufficialmente certificato per Windows Server. Il supporto hotfix di Configuration Manager non è disponibile per problemi specifici di Windows Server Datacenter Edition. Per altre informazioni sul programma di certificazione di Windows Server, vedere [Catalogo di Windows Server](https://www.windowsservercatalog.com/).
 
-#### <a name="bkmk_note2"></a> Nota 2
+#### <a name="note-2"></a><a name="bkmk_note2"></a> Nota 2
 
 Per supportare l'[installazione push client](/sccm/core/clients/deploy/plan/client-installation-methods#client-push-installation), aggiungere il servizio File server del ruolo del server Servizi file e archiviazione. Per altre informazioni sull'installazione di funzionalità di Windows in Server Core, vedere [Install roles, role services, and features by using Windows PowerShell cmdlets](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#install-roles-role-services-and-features-by-using-windows-powershell-cmdlets) (Installare ruoli, servizi ruolo e funzionalità tramite cmdlet di Windows PowerShell).  
 
-#### <a name="bkmk_note3"></a> Nota 3
+#### <a name="note-3"></a><a name="bkmk_note3"></a> Nota 3
 
 La nuova app Software Center non è supportata in alcuna versione di Windows Server Core.<!--SCCMDocs issue 683-->
 
@@ -176,7 +176,7 @@ La nuova app Software Center non è supportata in alcuna versione di Windows Ser
 
 - Spagnolo (Spagna)  
 
-## <a name="bkmk_ESU"></a> Aggiornamenti della sicurezza estesa e Configuration Manager
+## <a name="extended-security-updates-and-configuration-manager"></a><a name="bkmk_ESU"></a> Aggiornamenti della sicurezza estesa e Configuration Manager
 
 Gli [aggiornamenti della sicurezza estesa (ESU, Extended Security Updates) ](https://support.microsoft.com/help/4497181/lifecycle-faq-extended-security-updates) sono un'ultima soluzione per i clienti che devono eseguire alcuni prodotti Microsoft legacy oltre la fine del supporto. Ad esempio Windows 7. Il programma ESU include aggiornamenti della sicurezza critici e/o importanti definiti dal [Microsoft Security Response Center (MSRC) ](https://www.microsoft.com/msrc) per un massimo di tre anni dopo la data di fine del supporto "Extended" del prodotto.
 
@@ -314,7 +314,7 @@ Le versioni seguenti sono supportate tramite l'uso del file TAR indicato.
 |Versione 16.04 LTS x64|ccm-Universalx64.&lt;build\>.tar|  
 
 
-## <a name="bkmk_OnpremOS"></a> Software MDM locale
+## <a name="on-premises-mdm"></a><a name="bkmk_OnpremOS"></a> Software MDM locale
 
 Configuration Manager include funzionalità predefinite per la gestione dei dispositivi mobili locali senza installare software client. Per altre informazioni, vedere [Gestire i dispositivi mobili con l'infrastruttura locale](/sccm/mdm/understand/manage-mobile-devices-with-on-premises-infrastructure).  
 
@@ -339,7 +339,7 @@ Configuration Manager include funzionalità predefinite per la gestione dei disp
     > Il supporto è deprecato per Windows 10 Mobile e Windows 10 Mobile Enterprise in Configuration Manager. Per altre informazioni, vedere [Elementi rimossi e deprecati per i client di Configuration Manager](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-client).
 
 
-## <a name="bkmk_ExSrvConOS"></a> Connettore Exchange Server  
+## <a name="exchange-server-connector"></a><a name="bkmk_ExSrvConOS"></a> Connettore Exchange Server  
 
 Configuration Manager supporta la gestione limitata dei dispositivi che si connettono a Exchange Server, senza installare il client di Configuration Manager. Per altre informazioni, vedere [Gestire i dispositivi mobili con Configuration Manager ed Exchange](/sccm/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync).  
 

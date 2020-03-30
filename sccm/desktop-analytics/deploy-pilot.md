@@ -10,12 +10,12 @@ ms.assetid: 637fbd8e-b8ea-4c7e-95ee-a60a323c496e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 76f795252a21f904c9a4152e5148f58066b75144
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: f236125f3ba66b8dc11b3107ca37ad0ce4db0fd9
+ms.sourcegitcommit: 888d695cd30cdc2a65e1ef486cfa0588575ea560
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79191557"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80250863"
 ---
 # <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Come eseguire la distribuzione in un progetto pilota con Desktop Analytics
 
@@ -43,11 +43,14 @@ Eseguire le azioni seguenti per l'elenco dei dispositivi consigliati aggiuntivi:
 
 Quando si aggiungono dispositivi dall'elenco **consigliati** all'elenco **inclusi** della distribuzione pilota, migliorano la copertura e la ridondanza per gli asset critici e importanti nel progetto pilota. Una ridondanza maggiore significa che gli asset con copertura includono un numero statisticamente significativo di dispositivi nel progetto pilota.
 
-## <a name="bkmk_GlobalPilot"></a>Progetto pilota globale
+## <a name="global-pilot"></a><a name="bkmk_GlobalPilot"></a>Progetto pilota globale
 
 È anche possibile prendere decisioni a livello di sistema relativamente alle raccolte di Configuration Manager da includere o escludere dai progetti pilota. Nel menu principale di Desktop Analytics selezionare **Dispositivo pilota globale** nel gruppo Impostazioni globali.
 
 Se si connettono più gerarchie di Configuration Manager alla stessa istanza di Desktop Analytics, viene aggiunto un nome visualizzato per la gerarchia come prefisso al nome della raccolta nella configurazione pilota globale. Si tratta della proprietà **Nome visualizzato** nella connessione di Desktop Analytics nella console di Configuration Manager.<!-- 4814075 -->
+
+> [!NOTE]
+> Il supporto di più gerarchie richiede Configuration Manager versione 1910 o successiva.
 
 - Non includere raccolte che contengono più del 20% del totale dei dispositivi registrati a Desktop Analytics. Se si include una raccolta di grandi dimensioni, nel portale viene visualizzato un avviso. È possibile includere più collezioni piccole senza preavviso, ma occorre essere comunque prudenti riguardo al numero di dispositivi nella propria distribuzione pilota. <!-- 6079184 -->
 

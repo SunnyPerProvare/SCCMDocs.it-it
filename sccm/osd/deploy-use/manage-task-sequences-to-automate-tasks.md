@@ -10,12 +10,12 @@ ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7720c0ef0bb535daf6ab3e4a65ebfbf729083c13
-ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
+ms.openlocfilehash: 71dc0a8a4040f7963b1c6208e56449081ca2b7df
+ms.sourcegitcommit: d20267336c0059f40c3250d4479ceb10ae1c8974
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78167440"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80220405"
 ---
 # <a name="manage-task-sequences-to-automate-tasks"></a>Gestire le sequenze di attività per automatizzare le attività
 
@@ -23,7 +23,7 @@ ms.locfileid: "78167440"
 
 Usare le sequenze di attività per automatizzare i passaggi nell'ambiente di Configuration Manager. Questi passaggi consentono di distribuire un'immagine del sistema operativo in un computer di destinazione, di compilare e acquisire un'immagine del sistema operativo da un set di file di installazione del sistema operativo e di acquisire e ripristinare le informazioni sullo stato utente. Le sequenze di attività si trovano nella console di Configuration Manager. Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi** e selezionare **Sequenze di attività**. Il nodo **Sequenze di attività**, che include le sottocartelle create, viene replicato in tutta la gerarchia di Configuration Manager. Per informazioni sulla pianificazione, vedere [Considerazioni sulla pianificazione per l'automazione delle attività](/configmgr/osd/plan-design/planning-considerations-for-automating-tasks).  
 
-## <a name="BKMK_CreateTaskSequence"></a> Creare
+## <a name="create"></a><a name="BKMK_CreateTaskSequence"></a> Creare
 
 Creare sequenze attività usando la Creazione guidata della sequenza di attività. Questa procedura guidata consente di creare i seguenti tipi di sequenze attività:  
 
@@ -37,11 +37,11 @@ Creare sequenze attività usando la Creazione guidata della sequenza di attivit�
 
 - [Sequenza di attività personalizzata](/configmgr/osd/deploy-use/create-a-custom-task-sequence): Questo tipo non aggiunge alcun passaggio alla sequenza di attività. Dopo aver creato questa sequenza di attività, modificarla e aggiungere i passaggi.
 
-## <a name="BKMK_ModifyTaskSequence"></a> Modifica  
+## <a name="edit"></a><a name="BKMK_ModifyTaskSequence"></a> Modifica  
 
 Modificare una sequenza di attività aggiungendo o rimuovendo passaggi, aggiungendo o rimuovendo gruppi oppure modificando l'ordine dei passaggi. Per altre informazioni, vedere [Usare l'editor delle sequenze di attività](/configmgr/osd/understand/task-sequence-editor).
 
-## <a name="bkmk_prop-general"></a> Proprietà di Software Center
+## <a name="software-center-properties"></a><a name="bkmk_prop-general"></a> Proprietà di Software Center
 
 Attenersi alla procedura seguente per configurare i dettagli per la sequenza di attività visualizzata in Software Center. Tali dettagli sono solo a scopo informativo.  
 
@@ -57,7 +57,7 @@ Attenersi alla procedura seguente per configurare i dettagli per la sequenza di 
 
     - **Tempo di esecuzione stimato (minuti)** : specifica il tempo di esecuzione stimato in minuti che viene visualizzato in Software Center per la sequenza di attività.  
 
-## <a name="bkmk_prop-advanced"></a> Impostazioni avanzate
+## <a name="advanced-settings"></a><a name="bkmk_prop-advanced"></a> Impostazioni avanzate
 
 Usare la procedura seguente per configurare il comportamento della sequenza di attività nel client di Configuration Manager.  
 
@@ -90,8 +90,8 @@ Usare la procedura seguente per configurare il comportamento della sequenza di a
 
         Se si imposta il valore su **0**, Configuration Manager valuta il tempo di esecuzione massimo consentito in **12** ore (720 minuti) per il controllo dello stato. Tuttavia, la sequenza di attività viene avviata a condizione che la durata del conto alla rovescia non superi il valore specificato per la finestra di manutenzione.  
 
-        > [!NOTE]  
-        > Quando raggiunge il tempo di esecuzione massimo, se si imposta l'opzione su **Esegui con diritti amministrativi** e non si imposta l'opzione su **Consentire agli utenti di interagire con il programma**, Configuration Manager arresta la sequenza di attività. Se la sequenza di attività non viene arrestata, Configuration Manager arresta il monitoraggio dopo il raggiungimento del tempo di esecuzione massimo consentito.  
+        > [!NOTE]
+        > Quando raggiunge il tempo massimo di esecuzione, se non si consente agli utenti di interagire con una distribuzione richiesta, Configuration Manager interrompe la sequenza di attività. Se la sequenza di attività non viene arrestata, Configuration Manager arresta il monitoraggio dopo il raggiungimento del tempo di esecuzione massimo consentito.
 
     - **Utilizza un'immagine d'avvio**: usare l'immagine d'avvio selezionata quando viene eseguita la sequenza di attività. Selezionare **Sfoglia** per selezionare un'altra immagine d'avvio. Deselezionare questa opzione per disabilitare l'uso dell'immagine d'avvio selezionata quando viene eseguita la sequenza di attività.  
 
@@ -160,7 +160,7 @@ Viene visualizzato il messaggio di notifica seguente quando l'utente finale apre
 
 ![Notifica di sequenza di attività personalizzata per l'utente finale da Software Center](../media/user-notification-enduser.png)
 
-## <a name="bkmk_perf"></a> Miglioramenti delle prestazioni per le combinazioni per il risparmio di energia
+## <a name="performance-improvements-for-power-plans"></a><a name="bkmk_perf"></a> Miglioramenti delle prestazioni per le combinazioni per il risparmio di energia
 
 <!--3555926-->
 
@@ -192,7 +192,7 @@ Nella maggior parte degli scenari, all'avvio la sequenza di attività registra l
 
 È necessario creare una nuova distribuzione della sequenza di attività per abilitare o disabilitare questa impostazione per prestazioni elevate. La nuova impostazione viene visualizzata nelle distribuzioni esistenti, ma non è applicabile.<!-- SCCMDocs#2107 -->
 
-## <a name="BKMK_DistributeTS"></a> Distribuire il contenuto di riferimento  
+## <a name="distribute-referenced-content"></a><a name="BKMK_DistributeTS"></a> Distribuire il contenuto di riferimento  
 
 Prima che i client eseguano una sequenza di attività che fa riferimento al contenuto, distribuire tale contenuto ai punti di distribuzione. In qualsiasi momento, è possibile selezionare la sequenza di attività e distribuire il relativo contenuto per creare un nuovo elenco di pacchetti di riferimento per la distribuzione. Se si apportano modifiche alla sequenza di attività con contenuto aggiornato, ridistribuire il contenuto prima che diventi disponibile per i client. Usare la seguente procedura per distribuire il contenuto a cui fa riferimento una sequenza di attività.  
 
@@ -217,11 +217,11 @@ Prima che i client eseguano una sequenza di attività che fa riferimento al cont
 
 È anche possibile pre-installare il contenuto a cui viene fatto riferimento nella sequenza di attività. Configuration Manager crea un file di contenuto pre-installato e compresso, contenente i file, le relative dipendenze e i metadati associati per il contenuto selezionato. Si importa quindi manualmente il contenuto in un server del sito, in un sito secondario o in un punto di distribuzione. Per altre informazioni su come pre-installare i file di contenuto, vedere [Prestage content](/configmgr/core/servers/deploy/configure/deploy-and-manage-content#bkmk_prestage) (Pre-installare il contenuto).  
 
-## <a name="BKMK_DeployTS"></a> Distribuisci  
+## <a name="deploy"></a><a name="BKMK_DeployTS"></a> Distribuisci  
 
 Per altre informazioni, vedere [Deploy a task sequence](/configmgr/osd/deploy-use/deploy-a-task-sequence).
 
-## <a name="BKMK_ExportImport"></a> Esportazione e importazione  
+## <a name="export-and-import"></a><a name="BKMK_ExportImport"></a> Esportazione e importazione  
 
 Esportare e importare sequenze di attività con o senza i relativi oggetti. Questo contenuto di riferimento include gli oggetti seguenti:  
 
@@ -301,11 +301,11 @@ Quando si esegue una sequenza di attività e si verifica un errore, è possibile
 
 - Quando si esegue una sequenza di attività ma i pacchetti di contenuto dipendenti non sono ancora disponibili nei punti di distribuzione, la sequenza di attività ha esito negativo. Distribuire il contenuto mancante non ancora distribuito. In alternativa, attendere che il contenuto sia disponibile nei punti di distribuzione. Quindi selezionare **Precedente** per fare in modo che la sequenza di attività cerchi nuovamente il contenuto.
 
-## <a name="BKMK_CreateTSVariables"></a> Variabili di raccolta e dispositivo
+## <a name="collection-and-device-variables"></a><a name="BKMK_CreateTSVariables"></a> Variabili di raccolta e dispositivo
 
 È possibile definire variabili della sequenza di attività personalizzate per computer e insiemi. Le variabili definite per un computer vengono definite variabili della sequenza di attività con ambito computer. Le variabili definite per una raccolta vengono definite variabili della sequenza di attività con ambito raccolta. Per altre informazioni, vedere [Variabili di raccolta e dispositivo](/configmgr/osd/understand/using-task-sequence-variables#bkmk_set-coll-var).
 
-## <a name="BKMK_AdditionalActionsTS"></a> Azioni aggiuntive  
+## <a name="additional-actions"></a><a name="BKMK_AdditionalActionsTS"></a> Azioni aggiuntive  
 
 È possibile gestire le sequenze di attività usando le azioni aggiuntive disponibili quando si seleziona la sequenza di attività.  
 

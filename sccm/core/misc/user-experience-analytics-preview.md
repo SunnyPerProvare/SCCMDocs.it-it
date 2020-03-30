@@ -2,7 +2,7 @@
 title: Anteprima dell'analisi dell'esperienza utente
 titleSuffix: Configuration Manager
 description: Istruzioni per l'anteprima dell'analisi dell'esperienza utente.
-ms.date: 03/11/2020
+ms.date: 03/23/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,14 +11,14 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: ff4726b153805e0a574b24c202d7c81660182cc2
-ms.sourcegitcommit: 7287806334e30431232c71df63747c01c42235e8
+ms.openlocfilehash: 495fd926440d6a7eaead89741358442f929eb40b
+ms.sourcegitcommit: d20267336c0059f40c3250d4479ceb10ae1c8974
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79090364"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80220422"
 ---
-# <a name="bkmk_uea"></a> Anteprima privata dell'analisi dell'esperienza utente
+# <a name="user-experience-analytics-private-preview"></a><a name="bkmk_uea"></a> Anteprima privata dell'analisi dell'esperienza utente
 
 > [!Note]  
 > Queste informazioni fanno riferimento a una funzionalità di anteprima che può essere modificata sostanzialmente prima del rilascio della versione commerciale. Microsoft non offre alcuna garanzia, espressa o implicita, relativamente alle informazioni fornite in questo articolo.  
@@ -43,7 +43,7 @@ Questa versione iniziale si concentra su tre elementi:
 
 Questa versione è solo l'inizio. Verranno implementate rapidamente nuove informazioni per le altre esperienze utente principali subito dopo la versione iniziale.
 
-## <a name="bkmk_uea_prereq"></a> Guida introduttiva
+## <a name="getting-started"></a><a name="bkmk_uea_prereq"></a> Guida introduttiva
 
 Per iniziare a usare l'analisi dell'esperienza utente, verificare i prerequisiti e quindi iniziare a raccogliere i dati. 
 
@@ -51,7 +51,7 @@ Per iniziare a usare l'analisi dell'esperienza utente, verificare i prerequisiti
 
 La versione di anteprima corrente richiede:
 - Dispositivi registrati in Intune che eseguono Windows 10
-- Le informazioni dettagliate sulle prestazioni di avvio sono disponibili solo per i dispositivi che eseguono la versione 1903 o successiva di Windows 10.
+- Le informazioni dettagliate sulle prestazioni di avvio sono disponibili solo per i dispositivi che eseguono la versione 1903 o successiva di Windows 10 Enterprise.
 - Connettività di rete dai dispositivi al cloud pubblico Microsoft. Per altre informazioni, vedere [Endpoint](#bkmk_uea_endpoints).
 - Il [ruolo di amministratore del servizio Intune](https://docs.microsoft.com/intune/fundamentals/role-based-access-control) è necessario per [iniziare a raccogliere i dati](#bkmk_uea_start).
    - Facendo clic su **Avvia**, l'utente accetta e conferma che i dati dei clienti possono essere archiviati al di fuori del percorso selezionato durante il provisioning del tenant di Microsoft Intune.
@@ -71,7 +71,7 @@ Per le correzioni proattive, gli utenti del dispositivo devono avere una delle l
 - Windows 10 Education A3 o A5 (incluso in Microsoft 365 A3 o A5)
 - Accesso a Desktop virtuale Windows E3 o E5
 
-### <a name="bkmk_uea_start"></a> Iniziare a raccogliere i dati
+### <a name="start-gathering-data"></a><a name="bkmk_uea_start"></a> Iniziare a raccogliere i dati
 
 1. Passare a `https://devicemanagement.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu`
 1. Fare clic su **Avvia**. Verrà assegnato automaticamente un profilo di configurazione per raccogliere i dati sulle prestazioni di avvio da tutti i dispositivi idonei. È possibile [modificare i dispositivi assegnati](#bkmk_uea_profile) in un secondo momento. Il popolamento dei dati sulle prestazioni di avvio nei dispositivi registrati in Intune dopo il riavvio può richiedere fino a 24 ore.
@@ -93,13 +93,16 @@ Quando i dati sono pronti, si noteranno alcune informazioni nella pagina di **pa
 
 [![Pagina di panoramica di Analisi dell'esperienza utente](media/uea-overview-page.png)](media/uea-overview-page.png#lightbox)
 
-## <a name="bkmk_uea_rs"></a> Software consigliato
+## <a name="recommended-software"></a><a name="bkmk_uea_rs"></a> Software consigliato
+
+> [!Important]  
+> Analisi degli endpoint calcola il **Punteggio di adozione del software** per tutti i dispositivi gestiti da Intune, indipendentemente dal fatto che siano stati registrati o meno in Analisi degli endpoint.
 
 Alcuni software sono noti per migliorare l'esperienza dell'utente finale, indipendentemente dalle metriche di integrità di livello inferiore. Windows 10, ad esempio, ha un punteggio Net Promoter molto più elevato rispetto a Windows 7. Il punteggio di **adozione del software** è un numero compreso tra 0 e 100 che rappresenta una media ponderata della percentuale di dispositivi in cui sono stati distribuiti diversi software consigliati. La ponderazione corrente è superiore per Windows rispetto alle altre metriche poiché gli utenti interagiscono con essi più di frequente. Le metriche sono descritte di seguito: 
 
 [![Pagina Software consigliato di Analisi dell'esperienza utente](media/uea-recommended-software.png)](media/uea-recommended-software.png#lightbox)
 
-### <a name="bkmk_uea_win10"></a> Windows 10
+### <a name="windows-10"></a><a name="bkmk_uea_win10"></a> Windows 10
 
 Windows 10 offre un'esperienza utente migliore rispetto alle versioni precedenti di Windows. Per altre informazioni, vedere il [white paper TEI](https://vc2prod.blob.core.windows.net/vc-resources/TEIStudies/TEI%20of%20Windows%2010.pdf).
 
@@ -107,7 +110,7 @@ Questa metrica misura la percentuale di dispositivi in Windows 10 rispetto a una
 
 L'azione di correzione consigliata per il passaggio dei dispositivi dalle versioni precedenti di Windows è creare un piano di distribuzione usando [Desktop Analytics](/sccm/desktop-analytics/overview).
 
-### <a name="bkmk_uea_ap"></a> Autopilot
+### <a name="autopilot"></a><a name="bkmk_uea_ap"></a> Autopilot
 
 Microsoft Autopilot offre un'esperienza di provisioning iniziale dei PC Windows 10 più semplice rispetto all'esperienza nativa; presenta infatti un numero di schermate inferiore nella configurazione guidata e fornisce le impostazioni predefinite per assicurarsi che venga correttamente eseguito il provisioning dei dispositivi dei dipendenti sia dalla factory che in fase di reimpostazione.
 
@@ -115,7 +118,7 @@ Questa metrica misura la percentuale di dispositivi Windows 10 registrati per Au
 
 L'azione di correzione consigliata è registrare i dispositivi esistenti in Autopilot usando [Microsoft Intune](https://docs.microsoft.com/intune/enrollment-autopilot).
 
-### <a name="bkmk_uea_aad"></a> Azure Active Directory
+### <a name="azure-active-directory"></a><a name="bkmk_uea_aad"></a> Azure Active Directory
 
 Azure Active Directory (Azure AD) offre agli utenti numerosi vantaggi di produttività, tra cui l'accesso Single Sign-On a livello di dispositivo per app e servizi, l'accesso a Windows Hello, il ripristino self-service della chiave BitLocker e il roaming dei dati aziendali.
 
@@ -123,17 +126,17 @@ Questa metrica misura la percentuale di dispositivi registrati in Azure AD.
 
 I dispositivi gestiti in Microsoft Intune sono già registrati in Azure AD. L'azione di correzione consigliata per i dispositivi gestiti da Configuration Manager è [registrarli in Azure AD](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-managed-domains) o [co-gestirli](/sccm/comanage/overview). La co-gestione dei dispositivi migliora anche il punteggio della gestione cloud.
 
-### <a name="bkmk_uea_intune"></a> Gestione cloud
+### <a name="cloud-management"></a><a name="bkmk_uea_intune"></a> Gestione cloud
 
 Microsoft Intune offre agli utenti diversi vantaggi per la produttività, tra cui l'abilitazione dell'accesso alle risorse aziendali anche quando si trovano fuori dalla rete aziendale, oltre ad eliminare la necessità di usare Criteri di gruppo, evitando così un sovraccarico di prestazioni e garantendo una migliore esperienza dell'utente finale. Questa metrica misura la percentuale di PC registrati in Microsoft Intune. Informazioni su come [Microsoft sta abilitando questa funzionalità per i propri dipendenti](https://www.microsoft.com/en-us/itshowcase/managing-windows-10-devices-with-microsoft-intune).
 
 L'azione di correzione consigliata per i dispositivi gestiti da Configuration Manager non ancora registrati in Intune è [co-gestirli](/sccm/comanage/overview).
 
-### <a name="bkmk_uea_np"></a> Nessuna mediana commerciale
+### <a name="no-commercial-median"></a><a name="bkmk_uea_np"></a> Nessuna mediana commerciale
 
 La linea di base predefinita **Mediana commerciale** attualmente non ha metriche per i punteggi parziali indicati nelle sezioni precedenti.
 
-## <a name="bkmk_uea_bp"></a> Prestazioni di avvio
+## <a name="startup-performance"></a><a name="bkmk_uea_bp"></a> Prestazioni di avvio
 
 > [!NOTE]
 > I dati necessari per calcolare il punteggio di avvio per un dispositivo vengono generati in fase di avvio. A seconda delle impostazioni di risparmio energia e del comportamento dell'utente, potrebbero trascorrere settimane dopo l'assegnazione corretta dei criteri a un dispositivo prima che venga visualizzato il punteggio di avvio nella console di amministrazione.  
@@ -147,13 +150,13 @@ Il punteggio delle prestazioni di avvio consente all'IT di guidare rapidamente g
 
 La pagina **Prestazioni di avvio** contiene anche un elenco di **informazioni dettagliate e raccomandazioni**, ordinate in base alla priorità, descritte nelle sezioni seguenti:
 
-### <a name="bkmk_uea_hdd"></a> Unità disco rigido
+### <a name="hard-disk-drives"></a><a name="bkmk_uea_hdd"></a> Unità disco rigido
 
 Le prestazioni di avvio offrono informazioni dettagliate sul numero di dispositivi in cui l'unità di avvio è un disco rigido. Le unità disco rigido per l'avvio in genere richiedono tempi da tre a quattro volte più lunghi rispetto alle unità SSD. È anche previsto un miglioramento delle prestazioni di avvio se si passa alle unità SSD.
 
 Fare clic per visualizzare l'elenco dei dispositivi con unità disco rigido. L'azione consigliata è aggiornare questi dispositivi alle unità SSD.
 
-### <a name="bkmk_uea_gp"></a> Criteri di gruppo
+### <a name="group-policy"></a><a name="bkmk_uea_gp"></a> Criteri di gruppo
 
 Le prestazioni di avvio offrono informazioni dettagliate sul numero di dispositivi che presentano ritardi nell'avvio e nell'accesso a causa di Criteri di gruppo. Fare clic per visualizzare i dispositivi. La visualizzazione è ordinata in base al tempo di Criteri di gruppo, quindi è possibile vedere quali sono i dispositivi interessati per ulteriori procedure di risoluzione dei problemi.
 
@@ -161,7 +164,7 @@ Se si fa clic su un dispositivo specifico, è possibile visualizzarne la cronolo
 
 Sebbene esistano molti articoli su come ottimizzare le prestazioni di Criteri di gruppo, è possibile scegliere di eseguire la migrazione alla gestione cloud. La migrazione alla gestione cloud consente di usare le [linee di base di sicurezza di Intune](https://docs.microsoft.com/intune/protect/security-baselines) e lo strumento di analisi dei criteri presto disponibile.
 
-### <a name="bkmk_uea_sb"></a> Tempi di avvio e accesso lenti
+### <a name="slow-boot-and-sign-in-times"></a><a name="bkmk_uea_sb"></a> Tempi di avvio e accesso lenti
 
 Le prestazioni di avvio offrono informazioni dettagliate sul numero di dispositivi con tempi di avvio o accesso lenti. Un punteggio di avvio o di accesso pari a "0" significa lento. Fare clic per visualizzare i dispositivi. I dispositivi sono ordinati rispettivamente in base al tempo di avvio core o al tempo di accesso di base, quindi è possibile visualizzare i dispositivi interessati per ulteriori procedure di risoluzione dei problemi.
 
@@ -171,13 +174,13 @@ Se si fa clic su un dispositivo specifico, è possibile visualizzarne la cronolo
 
 Microsoft sta lavorando ad altre informazioni dettagliate sulle prestazioni di avvio, che saranno disponibili nelle future versioni di anteprima.
 
-## <a name="bkmk_uea_prs"></a> Correzioni proattive
+## <a name="proactive-remediations"></a><a name="bkmk_uea_prs"></a> Correzioni proattive
 
 Le correzioni proattive sono pacchetti di script che consentono di rilevare e risolvere problemi di supporto comuni in un dispositivo prima che l'utente si renda conto che si è verificato un problema. Queste correzioni consentono di ridurre le chiamate al supporto tecnico. È possibile creare un pacchetto di script personalizzato o distribuire uno dei pacchetti di script scritti e usati nell'ambiente per ridurre i ticket di supporto.
 
 Ogni pacchetto di script è costituito da uno script di rilevamento, uno script di correzione e metadati. Con Intune sarà possibile distribuire questi pacchetti di script e visualizzare i report sulla loro efficacia. Microsoft sta sviluppando attivamente nuovi pacchetti di script e invita gli utenti a condividere le proprie esperienze. Rivolgersi al proprio contatto per l'anteprima dell'analisi dell'esperienza utente per condividere commenti e suggerimenti sui pacchetti di script.
 
-### <a name="bkmk_uea_prs_ps1"></a> Ricevere gli script di rilevamento e correzione
+### <a name="get-the-detection-and-remediation-scripts"></a><a name="bkmk_uea_prs_ps1"></a> Ricevere gli script di rilevamento e correzione
 
 1. Copiare gli script riportati in fondo a questo articolo nella sezione [Script di PowerShell](#bkmk_uea_ps_scripts).
     - I file di script i cui nomi iniziano con `det` sono script di rilevamento. Gli script di correzione iniziano con `rem`.
@@ -186,7 +189,7 @@ Ogni pacchetto di script è costituito da uno script di rilevamento, uno script 
     - È possibile usare un altro nome di script, ma non corrisponderà al nome indicato nella sezione [Descrizioni degli script](#bkmk_uea_scripts).
 
 
-### <a name="bkmk_uea_prs_deploy"></a> Distribuzione e monitoraggio di script
+### <a name="deploying-and-monitoring-scripts"></a><a name="bkmk_uea_prs_deploy"></a> Distribuzione e monitoraggio di script
 Il servizio **Microsoft Intune Management Extension** ottiene gli script da Intune e li esegue. Gli script vengono rieseguiti ogni 24 ore. Per distribuire e monitorare gli script, seguire questa procedura:
 
 1. Passare al nodo **Correzioni proattive** nella console.
@@ -209,16 +212,16 @@ Il servizio **Microsoft Intune Management Extension** ottiene gli script da Intu
        [![Stato dispositivo in Correzioni proattive di Analisi dell'esperienza utente.](media/uea-proactive-remediations-device-status.png)](media/uea-proactive-remediations-device-status.png#lightbox)
 
 
-## <a name="bkmk_uea_set"></a> Impostazioni dell'analisi dell'esperienza utente
+## <a name="user-experience-analytics-settings"></a><a name="bkmk_uea_set"></a> Impostazioni dell'analisi dell'esperienza utente
 
 Dalla pagina delle impostazioni è possibile selezionare **Generale** o **Linea di base**. Di seguito sono descritte entrambe le impostazioni.
 
-### <a name="bkmk_uea_gen"></a> Generale
+### <a name="general"></a><a name="bkmk_uea_gen"></a> Generale
 
 La pagina **Generale** in **Impostazioni** consente di verificare se è stata abilitata la raccolta dei dati sulle prestazioni di avvio di Intune. Per impostazione predefinita, viene abilitata automaticamente per tutti i dispositivi quando si fa clic su **Avvia** per abilitare l'analisi dell'esperienza utente. È possibile scegliere di passare al nodo Criteri di raccolta dati di Intune per modificare il set di dispositivi per cui vengono raccolti i record di avvio e di accesso.
 
 
-#### <a name="bkmk_uea_profile"></a> Criteri di raccolta dati di Intune
+#### <a name="intune-data-collection-policy"></a><a name="bkmk_uea_profile"></a> Criteri di raccolta dati di Intune
 
 Per assegnare questa impostazione a un subset di dispositivi, [creare un profilo](/intune/configuration/device-profile-create#create-the-profile) con le informazioni seguenti: 
 
@@ -243,7 +246,7 @@ Per assegnare questa impostazione a un subset di dispositivi, [creare un profilo
 
   [![Pagina delle impostazioni generali di Analisi dell'esperienza utente](media/uea-settings-general.png)](media/uea-settings-general.png#lightbox)
 
-### <a name="bkmk_uea_baselines"></a> Gestione della linea di base
+### <a name="baseline-management"></a><a name="bkmk_uea_baselines"></a> Gestione della linea di base
 
 È possibile confrontare i punteggi totali e parziali correnti con altri punteggi impostando una linea di base.
 
@@ -254,11 +257,11 @@ Per assegnare questa impostazione a un subset di dispositivi, [creare un profilo
 
    [![Pagina delle impostazioni della linea di base di Analisi dell'esperienza utente](media/uea-settings-baseline.png)](media/uea-settings-baseline.png#lightbox)
 
-## <a name="bkmk_uea_tshoot"></a> Risoluzione dei problemi
+## <a name="troubleshooting"></a><a name="bkmk_uea_tshoot"></a> Risoluzione dei problemi
 
 Per registrare i dispositivi per l'analisi dell'esperienza utente, è necessario inviare i dati funzionali richiesti a Microsoft. Se l'ambiente usa un server proxy, usare queste informazioni per configurare il proxy.
 
-### <a name="bkmk_uea_endpoints"></a> Endpoint
+### <a name="endpoints"></a><a name="bkmk_uea_endpoints"></a> Endpoint
 
 Per abilitare la condivisione dei dati funzionali, configurare il server proxy in modo che consenta gli endpoint seguenti:
 
@@ -303,7 +306,7 @@ Questo approccio è il più complesso poiché richiede le configurazioni seguent
 
 - Configurare i server proxy per consentire agli account del computer in Active Directory di accedere agli endpoint dei dati di diagnostica. Questa configurazione richiede che i server proxy supportino l'autenticazione integrata di Windows.  
 
-## <a name="bkmk_uea_faq"></a> Domande frequenti
+## <a name="frequently-asked-questions"></a><a name="bkmk_uea_faq"></a> Domande frequenti
 
 ### <a name="why-are-the-scripts-exiting-with-a-code-of-1"></a>Perché gli script si chiudono con codice 1?
 
@@ -313,7 +316,7 @@ Gli script si chiudono con codice 1 per segnalare a Intune che è necessaria una
 
 0x87D00321 è un errore di timeout esecuzione dello script. Questo errore si verifica in genere con i computer connessi in remoto. Una possibile mitigazione potrebbe essere effettuare la distribuzione solo in una raccolta dinamica di computer con connettività di rete interna.
 
-## <a name="bkmk_uea_scripts"></a> Descrizioni degli script
+## <a name="script-descriptions"></a><a name="bkmk_uea_scripts"></a> Descrizioni degli script
 
 In questa tabella sono riportati i nomi degli script, le descrizioni, i rilevamenti, le correzioni e gli elementi configurabili. I file di script i cui nomi iniziano con `det` sono script di rilevamento. Gli script di correzione iniziano con `rem`. Questi script possono essere copiati dalla sezione successiva di questo articolo.
 
@@ -324,7 +327,7 @@ In questa tabella sono riportati i nomi degli script, le descrizioni, i rilevame
 |**Check network certificates** (Verifica certificati di rete) </br>`DetExpIssuerCerts.ps1` </br>`RemExpIssuerCerts.ps1`|Rileva i certificati emessi da un'autorità di certificazione scaduti o prossimi alla scadenza nell'archivio personale del computer o dell'utente. </br> Per specificare l'autorità di certificazione, modificare il valore per `$strMatch` nello script di rilevamento. Specificare 0 per `$expiringDays` per trovare i certificati scaduti o specificare un altro numero di giorni per trovare i certificati prossimi alla scadenza.  </br></br>Le correzioni vengono applicate generando una notifica di tipo avviso popup per l'utente. </br> Specificare i valori `$Title` e `$msgText` con il titolo e il testo del messaggio che verrà visualizzato dagli utenti. </br> </br> Notifica agli utenti i certificati scaduti che potrebbero dover essere rinnovati. </br> </br> **Esegui lo script con le credenziali dell'utente connesso**: No|
 |**Clear stale certificates** (Cancella certificati non aggiornati) </br>`DetExpUserCerts.ps1` </br> `RemExpUserCerts.ps1`| Rileva i certificati scaduti emessi da un'autorità di certificazione nell'archivio personale dell'utente corrente. </br> Per specificare l'autorità di certificazione, modificare il valore per `$certCN` nello script di rilevamento. </br> </br> Per applicare la correzione, rileva nell'archivio personale dell'utente corrente i certificati scaduti emessi da un'autorità di certificazione. </br> Per specificare l'autorità di certificazione, modificare il valore per `$certCN` nello script di correzione. </br> </br> Rileva ed elimina i certificati scaduti emessi da un'autorità di certificazione nell'archivio personale dell'utente corrente. </br> </br> **Esegui lo script con le credenziali dell'utente connesso**: Sì|
 
-## <a name="bkmk_uea_ps_scripts"></a> Script di PowerShell
+## <a name="powershell-scripts"></a><a name="bkmk_uea_ps_scripts"></a> Script di PowerShell
 
 ### <a name="detgplastupdps1"></a>DetGPLastUpd.ps1
 
@@ -646,7 +649,7 @@ catch{
 }
 ```
 
-## <a name="bkmk_uea_privacy"></a> Privacy dei dati nell'analisi dell'esperienza utente
+## <a name="user-experience-analytics-data-privacy"></a><a name="bkmk_uea_privacy"></a> Privacy dei dati nell'analisi dell'esperienza utente
 
 ### <a name="data-flow"></a>Flusso di dati
 
@@ -668,31 +671,39 @@ La figura seguente illustra il flusso dei dati funzionali richiesti dai singoli 
 
 La latenza media end-to-end è di circa 12 ore ed è vincolata dal tempo necessario per l'elaborazione giornaliera. Tutte le altre parti del flusso di dati sono quasi in tempo reale.
 
-### <a name="bkmk_uea_datacollection"></a>Raccolta dati
+### <a name="data-collection"></a><a name="bkmk_uea_datacollection"></a>Raccolta dati
 
-Attualmente, la funzionalità di base di analisi dell'esperienza utente raccoglie le informazioni associate ai record delle prestazioni di avvio. Con l'aggiunta di altre funzionalità nel tempo, i dati raccolti varieranno in base alle esigenze. I punti dati principali attualmente raccolti:
+Attualmente, la funzionalità di base di analisi dell'esperienza utente raccoglie le informazioni associate ai record delle prestazioni di avvio appartenenti alle categorie [identified](https://docs.microsoft.com/mem/intune/protect/privacy-data-collect#identified-data) e [pseudonymized](https://docs.microsoft.com/mem/intune/protect/privacy-data-collect#pseudonymized-data). Con l'aggiunta di altre funzionalità nel tempo, i dati raccolti varieranno in base alle esigenze. I punti dati principali attualmente raccolti:
 
-- **id:** ID dispositivo univoco usato da Windows Update
-- **localId:** ID univoco definito localmente per il dispositivo. Questo non è il nome del dispositivo leggibile. Probabilmente uguale al valore archiviato in HKLM\Software\Microsoft\SQMClient\MachineId.
-- **aaddeviceid:** ID dispositivo di Azure Active Directory
-- **orgId:** GUID univoco che rappresenta il tenant di Microsoft O365
-- **authIdEnt**
-- **make:** produttore del dispositivo
-- **model:** modello del dispositivo
-- **deviceClass:** classificazione del dispositivo. Ad esempio, Desktop, Server o Mobile.
-- **Country:** impostazione dell'area del dispositivo
-- **logOnId**
-- **bootId:** ID di avvio del sistema
-- **coreBootTimeInMilliseconds:** tempo per l'avvio core
-- **totalBootTimeInMilliseconds:** tempo di avvio totale
-- **updateTimeInMilliseconds:** tempo per il completamento degli aggiornamenti del sistema operativo
-- **gpLogonDurationInMilliseconds**: tempo per l'elaborazione dei Criteri di gruppo
-- **desktopShownDurationInMilliseconds:** tempo per il caricamento del desktop (explorer.exe)
-- **desktopUsableDurationInMilliseconds:** tempo per rendere utilizzabile il desktop (explorer.exe)
-- **name:** Windows
-- **ver:** versione del sistema operativo corrente.
-- **topProcesses:** elenco dei processi caricati durante l'avvio con il nome, con le statistiche di utilizzo della CPU e i dettagli dell'app (nome, editore, versione). Ad esempio *{\"ProcessName\":\"svchost\",\"CpuUsage\":43,\"ProcessFullPath\":\"C:\\\\Windows\\\\System32\\\\svchost.exe\",\"ProductName\":\"Microsoft&reg; Windows&reg; Operating System\",\"Publisher\":\"Microsoft Corporation\",\"ProductVersion\":\"10.0.18362.1\"}*
+#### <a name="identified-data"></a>Dati identificati
 
+- Informazioni sull'inventario hardware
+  - **make:** produttore del dispositivo
+  - **model:** modello del dispositivo
+  - **deviceClass:** classificazione del dispositivo. Ad esempio, Desktop, Server o Mobile.
+  - **Country:** impostazione dell'area del dispositivo
+- Inventario delle applicazioni, ad esempio
+  - **name:** Windows
+  - **ver:** versione del sistema operativo corrente.
+  
+#### <a name="pseudonymized-data"></a>Dati pseudonimizzati
+
+- Dati di diagnostica, sulle prestazioni e sull'utilizzo associati a un utente e/o a un dispositivo
+  - **logOnId**
+  - **bootId:** ID di avvio del sistema
+  - **coreBootTimeInMilliseconds:** tempo per l'avvio core
+  - **totalBootTimeInMilliseconds:** tempo di avvio totale
+  - **updateTimeInMilliseconds:** tempo per il completamento degli aggiornamenti del sistema operativo
+  - **gpLogonDurationInMilliseconds**: tempo per l'elaborazione dei Criteri di gruppo
+  - **desktopShownDurationInMilliseconds:** tempo per il caricamento del desktop (explorer.exe)
+  - **desktopUsableDurationInMilliseconds:** tempo per rendere utilizzabile il desktop (explorer.exe)
+  - **topProcesses:** elenco dei processi caricati durante l'avvio con il nome, con le statistiche di utilizzo della CPU e i dettagli dell'app (nome, editore, versione). Ad esempio *{\"ProcessName\":\"svchost\",\"CpuUsage\":43,\"ProcessFullPath\":\"C:\\\\Windows\\\\System32\\\\svchost.exe\",\"ProductName\":\"Microsoft&reg; Windows&reg; Operating System\",\"Publisher\":\"Microsoft Corporation\",\"ProductVersion\":\"10.0.18362.1\"}*
+- I dati dei dispositivi non associati a un dispositivo o utente (se questi dati sono associati a un dispositivo o un utente, Intune li considera dati identificati)
+  - **id:** ID dispositivo univoco usato da Windows Update
+  - **localId:** ID univoco definito localmente per il dispositivo. Questo non è il nome del dispositivo leggibile. Probabilmente uguale al valore archiviato in HKLM\Software\Microsoft\SQMClient\MachineId.
+  - **aaddeviceid:** ID dispositivo di Azure Active Directory
+  - **orgId:** GUID univoco che rappresenta il tenant di Microsoft O365
+  
 > [!Important]  
 > I criteri di gestione dei dati sono descritti nell'[informativa sulla privacy di Microsoft Intune](https://docs.microsoft.com/legal/intune/microsoft-intune-privacy-statement). I dati dei clienti vengono usati solo per fornire i servizi per i quali si è iscritti. Come descritto durante il processo di onboarding, i punteggi da tutte le organizzazioni registrate vengono anonimizzati e aggregati per mantenere aggiornate le baseline.
 

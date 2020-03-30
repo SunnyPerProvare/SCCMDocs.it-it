@@ -1,7 +1,7 @@
 ---
 title: Configurare i portali di BitLocker
 titleSuffix: Configuration Manager
-description: Installare i componenti di gestione di BitLocker per il portale self-service e il sito Web di Administration and Monitoring
+description: Installare i componenti di gestione BitLocker per il portale self-service e il sito Web di amministrazione e monitoraggio
 ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
@@ -10,12 +10,12 @@ ms.assetid: 1cd8ac9f-b7ba-4cf4-8cd2-d548b0d6b1df
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4c2237fc7266c7aa6ab9be073eb2c205aa2f9bec
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
-ms.translationtype: MTE75
+ms.openlocfilehash: 0328aa16cccf31d6225cedeba5166627657edff9
+ms.sourcegitcommit: 8c10745cb4e2baabba2af4821cb207a2f91d2eb3
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75820730"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80138061"
 ---
 # <a name="set-up-bitlocker-portals"></a>Configurare i portali di BitLocker
 
@@ -23,15 +23,15 @@ ms.locfileid: "75820730"
 
 <!--3601034-->
 
-Per utilizzare i componenti di gestione di BitLocker seguenti in Configuration Manager, è necessario prima installarli:
+Per usare i componenti di gestione di BitLocker seguenti in Configuration Manager, è prima necessario installarli:
 
 - Portale self-service degli utenti
-- Sito Web di Administration and Monitoring (portale helpdesk)
+- Account del sito Web di amministrazione e monitoraggio (portale supporto tecnico)
 
 È possibile installare i portali in un server del sito esistente con IIS oppure usare un server Web autonomo per ospitarli.
 
 > [!NOTE]
-> Nella versione 1910, installare solo il portale self-service e il sito Web di Administration and Monitoring con un database del sito primario. In una gerarchia installare questi siti Web per ogni sito primario.
+> Nella versione 1910 installare solo il portale self-service e il sito Web di amministrazione e monitoraggio con un database del sito primario. In una gerarchia installare questi siti Web per ogni sito primario.
 
 Prima di iniziare, verificare i [prerequisiti](/configmgr/protect/plan-design/bitlocker-management#prerequisites) per questi componenti.
 
@@ -48,7 +48,7 @@ Questo processo usa uno script di PowerShell, MBAMWebSiteInstaller.ps1, per inst
 - `-ReportWebServiceUrl <ReportWebServiceUrl>`: URL del servizio Web del punto di Reporting Services del sito primario. Si tratta del valore **URL servizio Web** in **Gestione configurazione Reporting Services**.
 
     > [!NOTE]
-    > Questo parametro consente di installare il **report controllo ripristino** collegato dal sito Web di Administration and Monitoring. Per impostazione predefinita Configuration Manager include gli altri report di gestione di BitLocker.
+    > Questo parametro consente di installare il **Report controllo del ripristino** collegato dal sito Web Amministrazione e monitoraggio. Per impostazione predefinita Configuration Manager include gli altri report di gestione di BitLocker.
 
 - `-HelpdeskUsersGroupName <DomainUserGroup>`: Ad esempio, `contoso\BitLocker help desk users` Gruppo utenti di dominio i cui membri hanno accesso alle aree **Manage TPM** (Gestisci TPM) e **Drive Recovery** (Ripristino unità) nel sito Web di amministrazione e monitoraggio. Quando si usano queste opzioni, questo ruolo deve compilare tutti i campi, inclusi il dominio e il nome dell'account dell'utente.
 
@@ -56,23 +56,31 @@ Questo processo usa uno script di PowerShell, MBAMWebSiteInstaller.ps1, per inst
 
 - `-MbamReportUsersGroupName <DomainUserGroup>`: Ad esempio, `contoso\BitLocker report users` Gruppo utenti di dominio i cui membri hanno accesso in sola lettura all'area **Report** del sito Web di amministrazione e monitoraggio.
 
+    > [!NOTE]
+    > Lo script del programma di installazione non crea i gruppi di utenti di dominio specificati nei parametri **-HelpdeskUsersGroupName**, **-HelpdeskAdminsGroupName** e **-MbamReportUsersGroupName**. Prima di eseguire lo script, assicurarsi di creare questi gruppi.
+    >
+    > Quando si specificano i parametri **-HelpdeskUsersGroupName**, **-HelpdeskAdminsGroupName** e **-MbamReportUsersGroupName** assicurarsi di specificare sia il nome di dominio sia il nome di gruppo. Usare il formato `"domain\user_group"`. Non escludere il nome di dominio. Se il nome di dominio o il nome di gruppo contiene spazi o caratteri speciali, racchiudere il parametro tra virgolette (`"`).
+
 - `-SiteInstall Both`: specificare quale componente installare. Le opzioni valide includono:
   - `Both`: installare entrambi i componenti
   - `HelpDesk`: installare solo il sito Web di amministrazione e monitoraggio
   - `SSP`: installare solo il portale self-service
 
-- `IISWebSite`: il sito Web in cui lo script installa le applicazioni Web di MBAM. Per impostazione predefinita, usa il sito Web IIS predefinito.
+- `-IISWebSite`: il sito Web in cui lo script installa le applicazioni Web di MBAM. Per impostazione predefinita, usa il sito Web IIS predefinito.
 
 - `InstallDirectory`: il percorso in cui lo script installa i file dell'applicazione Web. Per impostazione predefinita, il percorso è `C:\inetpub`.
+
+- `-Uninstall`: disinstalla i siti del portale Web help desk/self-service di Gestione di BitLocker da un server Web in cui sono stati installati in precedenza.
+
 
 ## <a name="run-the-script"></a>Eseguire lo script
 
 Nel server Web di destinazione eseguire le operazioni seguenti:
 
 > [!NOTE]
-> A seconda della progettazione del sito, potrebbe essere necessario eseguire lo script più volte. Ad esempio, eseguire lo script nel punto di gestione per installare il sito Web di Administration and Monitoring. Quindi eseguirlo di nuovo in un server Web autonomo per installare il portale self-service.
+> A seconda della progettazione del sito, potrebbe essere necessario eseguire più volte lo script. Ad esempio, eseguire lo script nel punto di gestione per installare il sito Web di Amministrazione e monitoraggio. Quindi eseguirlo di nuovo in un server Web autonomo per installare il portale self-service.
 
-1. Copiare i file seguenti da `SMSSETUP\BIN\X64` nella cartella di installazione Configuration Manager sul server del sito in una cartella locale nel server di destinazione:
+1. Copiare i file seguenti da `SMSSETUP\BIN\X64` nella cartella di installazione Configuration Manager del server del sito a una cartella locale nel server di destinazione:
 
     - `MBAMWebSite.cab`
     - `MBAMWebSiteInstaller.ps1`
@@ -90,7 +98,7 @@ Nel server Web di destinazione eseguire le operazioni seguenti:
     ```
 
     > [!IMPORTANT]
-    > Questa riga di comando di esempio usa tutti i parametri possibili per mostrarne l'utilizzo. Regolare l'uso in base ai requisiti dell'ambiente.
+    > Questa riga di comando di esempio usa tutti i parametri possibili per illustrarne l'uso. Adattare l'uso ai requisiti dell'ambiente.
 
 Una volta eseguita l'installazione, accedere ai portali tramite gli URL seguenti:
 
@@ -104,21 +112,21 @@ Una volta eseguita l'installazione, accedere ai portali tramite gli URL seguenti
 
 Per eseguire monitoraggio e risoluzione dei problemi usare i registri seguenti:
 
-- Registri eventi di Windows in **Microsoft-Windows-mbam-Web**. Per ulteriori informazioni, vedere [informazioni sui registri eventi di BitLocker e sui](/configmgr/protect/tech-ref/bitlocker/about-event-logs) [registri eventi del server](/configmgr/protect/tech-ref/bitlocker/server-event-logs).
+- Registri eventi di Windows in **Microsoft-Windows-MBAM-Web**. Per altre informazioni, vedere [Informazioni sui registri eventi di BitLocker](/configmgr/protect/tech-ref/bitlocker/about-event-logs) e [Registri eventi del server](/configmgr/protect/tech-ref/bitlocker/server-event-logs).
 
-- I log di traccia per ogni componente si trovano nei percorsi predefiniti seguenti:
+- I log di analisi per ogni componente si trovano nei percorsi predefiniti seguenti:
 
   - Portale self-service: `C:\inetpub\Microsoft BitLocker Management Solution\Logs\Self Service Website`
 
   - Sito Web di amministrazione e monitoraggio: `C:\inetpub\Microsoft BitLocker Management Solution\Logs\Help Desk Website`
 
-Per ulteriori informazioni sulla risoluzione dei problemi, vedere [Troubleshoot BitLocker](/configmgr/protect/tech-ref/bitlocker/troubleshoot).
+Per altre informazioni sulla risoluzione dei problemi, vedere [Risolvere i problemi relativi a BitLocker](/configmgr/protect/tech-ref/bitlocker/troubleshoot).
 
 ## <a name="next-steps"></a>Passaggi successivi
 
 [Personalizzare il portale self-service](/configmgr/protect/deploy-use/bitlocker/customize-self-service-portal)
 
-Per ulteriori informazioni sull'utilizzo dei componenti installati, vedere gli articoli seguenti:
+Per altre informazioni sull'uso dei componenti installati, vedere gli articoli seguenti:
 
 - [Sito Web di amministrazione e monitoraggio BitLocker](/configmgr/protect/deploy-use/bitlocker/helpdesk-portal)
-- [Portale self-service BitLocker](/configmgr/protect/deploy-use/bitlocker/self-service-portal)
+- [Portale self-service di BitLocker](/configmgr/protect/deploy-use/bitlocker/self-service-portal)
