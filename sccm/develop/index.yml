@@ -10,13 +10,13 @@ metadata:
   ms.topic: landing-page
   author: aczechowski
   ms.author: aaroncz
-  ms.date: 02/06/2020
-  ms.openlocfilehash: d0c55a767874246aa47ac06489d5ea02b97dd1f5
-  ms.sourcegitcommit: be37256f98120ad30d5f7925bc32f05a07f15984
+  ms.date: 04/01/2020
+  ms.openlocfilehash: 11269ed955f1ccce3dbd0ff9c998400b2fdd69e3
+  ms.sourcegitcommit: 6ed22f0aa4a0a66428cfa27de13f6b950e79f7ec
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 02/07/2020
-  ms.locfileid: "77072098"
+  ms.lasthandoff: 04/02/2020
+  ms.locfileid: "80543369"
 landingContent:
 - title: Informazioni su Configuration Manager SDK
   linkLists:
@@ -32,6 +32,8 @@ landingContent:
     links:
     - text: Informazioni di riferimento sulle API di Configuration Manager
       url: reference/configuration-manager-reference.md
+    - text: API REST del servizio di amministrazione
+      url: adminservice/index.yml
 - title: Operazioni preliminari
   linkLists:
   - linkListType: architecture

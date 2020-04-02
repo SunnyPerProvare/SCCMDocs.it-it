@@ -24,14 +24,16 @@
       href: get-started/install-a-software-update-point.md
     - name: sincronizzare gli aggiornamenti software
       href: get-started/synchronize-software-updates.md
-    - name: Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso
-      href: get-started/synchronize-software-updates-disconnected.md
     - name: Configurare classificazioni e prodotti
       href: get-started/configure-classifications-and-products.md
     - name: Gestire le impostazioni per gli aggiornamenti software
       href: get-started/manage-settings-for-software-updates.md
-    - name: Rimuovere un punto di aggiornamento software
-      href: get-started/remove-a-software-update-point.md
+    - name: Sincronizzare gli aggiornamenti software in ambienti disconnessi
+      items:
+        - name: Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso
+          href: get-started/synchronize-software-updates-disconnected.md
+        - name: Sincronizzare gli aggiornamenti di Office 365 da un punto di aggiornamento software disconnesso
+          href: get-started/synchronize-office-updates-disconnected.md
 - name: Distribuire e usare
   items:
     - name: Scaricare gli aggiornamenti software
@@ -54,6 +56,8 @@
           href: ../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json
     - name: Manutenzione degli aggiornamenti software
       href: deploy-use/software-updates-maintenance.md
+    - name: Gruppi di orchestrazione
+      href: deploy-use/orchestration-groups.md
     - name: Assistenza a un gruppo di server
       href: deploy-use/service-a-server-group.md
     - name: Dashboard di Gestione client di Office 365

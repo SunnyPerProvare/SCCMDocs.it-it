@@ -74,10 +74,10 @@
       items:
         - name: Caratteristiche e funzionalità
           href: plan-design/changes/features-and-capabilities.md
-        - name: Novità rispetto a Configuration Manager 2012
-          href: plan-design/changes/what-has-changed-from-configuration-manager-2012.md
         - name: Novità delle versioni incrementali
           href: plan-design/changes/whats-new-incremental-versions.md
+        - name: Novità della versione 2002
+          href: plan-design/changes/whats-new-in-version-2002.md
         - name: Novità della versione 1910
           href: plan-design/changes/whats-new-in-version-1910.md
         - name: Novità della versione 1906
@@ -86,8 +86,8 @@
           href: plan-design/changes/whats-new-in-version-1902.md
         - name: Novità della versione 1810
           href: plan-design/changes/whats-new-in-version-1810.md
-        - name: Novità della versione 1806
-          href: plan-design/changes/whats-new-in-version-1806.md
+        - name: Novità rispetto a Configuration Manager 2012
+          href: plan-design/changes/what-has-changed-from-configuration-manager-2012.md
         - name: Elementi rimossi e deprecati
           items:
             - name: Panoramica degli elementi rimossi e deprecati
@@ -212,6 +212,8 @@
           items:
             - name: Panoramica dei livelli
               href: plan-design/diagnostics/levels-overview.md
+            - name: Dati per la versione 2002
+              href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-2002.md
             - name: Dati per la versione 1910
               href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1910.md
             - name: Dati per la versione 1906
@@ -220,8 +222,6 @@
               href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1902.md
             - name: Dati per la versione 1810
               href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1810.md
-            - name: Dati per la versione 1806
-              href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1806.md
         - name: Domande frequenti
           href: plan-design/diagnostics/frequently-asked-questions.md
     - name: Sicurezza e privacy per Configuration Manager
@@ -352,8 +352,6 @@
               href: servers/deploy/install/upgrade-to-configuration-manager.md
             - name: Scenari per semplificare l'installazione
               href: servers/deploy/install/scenarios-to-streamline-your-installation.md
-            - name: Disinstallazione di siti e gerarchie
-              href: servers/deploy/install/uninstall-sites-and-hierarchies.md
     - name: Configurare siti e gerarchie
       items:
         - name: Panoramica della configurazione di siti e gerarchie
@@ -434,6 +432,12 @@
           href: servers/deploy/configure/configure-role-based-administration.md
         - name: Configurare i servizi di Azure
           href: servers/deploy/configure/azure-services-wizard.md
+    - name: Disinstallare e rimuovere
+      items:
+        - name: 'Disinstallare ruoli, siti e gerarchie'
+          href: servers/deploy/install/uninstall-sites-and-hierarchies.md
+        - name: Rimuovere il sito di amministrazione centrale
+          href: servers/deploy/install/remove-central-administration-site.md
     - name: Informazioni di riferimento tecnico
       items:
         - name: Account
@@ -510,6 +514,8 @@
           href: servers/manage/use-the-update-registration-tool-to-import-hotfixes.md
         - name: Usare il programma di installazione di hotfix
           href: servers/manage/use-the-hotfix-installer-to-install-updates.md
+        - name: Elenco di controllo per l'installazione dell'aggiornamento 2002
+          href: servers/manage/checklist-for-installing-update-2002.md
         - name: Elenco di controllo per l'installazione dell'aggiornamento 1910
           href: servers/manage/checklist-for-installing-update-1910.md
         - name: Elenco di controllo per l'installazione dell'aggiornamento 1906
@@ -518,8 +524,6 @@
           href: servers/manage/checklist-for-installing-update-1902.md
         - name: Elenco di controllo per l'installazione dell'aggiornamento 1810
           href: servers/manage/checklist-for-installing-update-1810.md
-        - name: Elenco di controllo per l'installazione dell'aggiornamento 1806
-          href: servers/manage/checklist-for-installing-update-1806.md
         - name: Supporto per le versioni Current Branch
           href: servers/manage/current-branch-versions-supported.md
     - name: Backup e ripristino
@@ -576,24 +580,22 @@
           items:
             - name: Introduzione ai report
               href: servers/manage/introduction-to-reporting.md
-            - name: Pianificazione per la creazione di report
+            - name: Integrare il server di report di Power BI
+              href: servers/manage/powerbi-report-server.md
+            - name: Pianificare la creazione di report
               items:
                 - name: Pianificare la creazione di report
                   href: servers/manage/planning-for-reporting.md
                 - name: Prerequisiti per la creazione di report
                   href: servers/manage/prerequisites-for-reporting.md
-                - name: Procedure consigliate per la creazione di report
-                  href: servers/manage/best-practices-for-reporting.md
                 - name: Elenco dei report
                   href: servers/manage/list-of-reports.md
             - name: Configurare la creazione di report
               href: servers/manage/configuring-reporting.md
             - name: Operazioni e manutenzione per la creazione di report
               href: servers/manage/operations-and-maintenance-for-reporting.md
-            - name: Creazione di modelli di report personalizzati
+            - name: Creare modelli di report personalizzati
               href: servers/manage/creating-custom-report-models-in-sql-server-reporting-services.md
-            - name: Sicurezza e privacy per la creazione di report
-              href: servers/manage/security-and-privacy-for-reporting.md
         - name: Data warehouse
           href: servers/manage/data-warehouse.md
     - name: Support Center
@@ -701,6 +703,8 @@
               href: clients/deploy/deploy-clients-to-windows-computers.md
             - name: Installare i client con Azure AD
               href: clients/deploy/deploy-clients-cmg-azure.md
+            - name: Autenticazione basata su token per CMG
+              href: clients/deploy/deploy-clients-cmg-token.md
             - name: Proprietà di installazione del client
               href: clients/deploy/about-client-installation-properties.md
             - name: Proprietà di installazione del client pubblicate in AD

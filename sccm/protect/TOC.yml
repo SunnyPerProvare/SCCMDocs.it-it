@@ -130,6 +130,8 @@
   items:
     - name: Gestione di BitLocker
       items:
+        - name: Informazioni di riferimento sulle impostazioni
+          href: tech-ref/bitlocker/settings.md
         - name: Risolvere i problemi relativi a BitLocker
           href: tech-ref/bitlocker/troubleshoot.md
         - name: Registri eventi di BitLocker
