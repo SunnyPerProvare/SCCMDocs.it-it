@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager alla versione 1710.
 ms.date: 12/19/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 7e8ab8ca-41ef-467a-943b-a115d88cafe0
 author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: ad1ce7e87131359c3cf345d898237921ef68126e
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 317e169bce7ef41e3aed856e0c4b3adc7eed9280
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75796737"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80591972"
 ---
 # <a name="checklist-for-installing-update-1710-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1710 di Configuration Manager
 
@@ -95,7 +95,7 @@ Per altre informazioni, vedere [Usare gli avvisi e il sistema di stato per Confi
 verificare che la replica di file e database tra siti sia funzionante e aggiornata. Eventuali ritardi o backlog in uno dei due ambiti possono complicare o compromettere l'aggiornamento.
 Per la replica di database è possibile usare Replication Link Analyzer per risolvere i problemi prima di avviare l'aggiornamento.
 
-Per altre informazioni, vedere [Replication Link Analyzer](/sccm/core/servers/manage/monitor-replication#BKMK_RLA) nell'argomento  [Monitorare la replica di database](/sccm/core/servers/manage/monitor-replication#BKMK_RLA).
+Per altre informazioni, vedere [Replication Link Analyzer](/sccm/core/servers/manage/monitor-replication#BKMK_RLA) nell'argomento  [Monitorare la replica di database](/sccm/core/servers/manage/monitor-replication#BKMK_RLA) .
 
 **Installare tutti gli aggiornamenti critici disponibili per i sistemi operativi dei computer che ospitano il sito, il server di database del sito e i ruoli del sistema del sito remoto:** prima di installare un aggiornamento per Configuration Manager, installare gli aggiornamenti critici del sistema operativo per ogni sistema del sito applicabile. Se un aggiornamento installato richiede un riavvio, riavviare i computer interessati prima di iniziare l'aggiornamento.
 

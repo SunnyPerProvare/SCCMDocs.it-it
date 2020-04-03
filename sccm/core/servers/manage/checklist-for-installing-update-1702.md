@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager alla versione 1702.
 ms.date: 06/06/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: b587779e-1bd3-4ee3-8146-8e31f53499bd
 author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: d9c6db6886ef515887933a78498eaa2da07b6e3d
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 55f2233f058cacdc603047d83f76f9ecc0f6fa53
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75797056"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80592111"
 ---
 # <a name="checklist-for-installing-update-1702-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1702 di Configuration Manager
 

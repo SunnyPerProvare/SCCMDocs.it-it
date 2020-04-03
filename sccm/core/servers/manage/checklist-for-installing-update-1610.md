@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager alla versione 1610.
 ms.date: 06/6/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 7b411cb0-4fd1-41f2-a2f6-33738a5bde96
 author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7c629a336fdc32b69931a9be2669ff5398235582
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: d04c031c1c744b7ec1bed5229aa0ad3384c594dc
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75797124"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80592123"
 ---
 # <a name="checklist-for-installing-update-1610-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1610 di Configuration Manager
 

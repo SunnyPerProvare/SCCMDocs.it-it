@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager alla versione 1706.
 ms.date: 12/19/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 7def067e-845c-4db3-9d56-fa1dcf2fd7c7
 author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2380525984e214809b9dc4eea41abaeec9a7684c
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: b343c46fd189d083e7849facf711299a391897d7
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75796910"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80592096"
 ---
 # <a name="checklist-for-installing-update-1706-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1706 di Configuration Manager
 

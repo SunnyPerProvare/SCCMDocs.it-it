@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Creare script di automazione per installare Configuration Manager dalla riga di comando.
 ms.date: 08/21/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 0da167f1-52cf-4dfd-8f73-833ca3eb8478
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: e85b883a70d9848a697872fc1e546279b2d69d5e
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 8a10ec0e4f5426031fa7d9a2e93a60069cbccc92
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798300"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605964"
 ---
 # <a name="command-line-options-for-configuration-manager-setup"></a>Opzioni della riga di comando per la configurazione di Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "75798300"
 
 Usare le informazioni seguenti per configurare gli script o installare Configuration Manager dalla riga di comando.  
 
-## <a name="bkmk_setup"></a> Opzioni della riga di comando per l'installazione
+## <a name="command-line-options-for-setup"></a><a name="bkmk_setup"></a> Opzioni della riga di comando per l'installazione
 
 Eseguire il programma di installazione dalla directory `\BIN\X64` del percorso di installazione di Configuration Manager nel server del sito.
 
@@ -109,7 +109,7 @@ Consente di gestire le lingue installate in un sito installato precedentemente. 
 `/MANAGELANGS <Language script path>`
 
 
-## <a name="bkmk_Lang"></a> Opzioni della riga di comando per la gestione delle lingue
+## <a name="command-line-options-to-manage-languages"></a><a name="bkmk_Lang"></a> Opzioni della riga di comando per la gestione delle lingue
 
 ### <a name="identification"></a>Identification
 
@@ -188,7 +188,7 @@ Consente di gestire le lingue installate in un sito installato precedentemente. 
     - **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
 
 
-## <a name="bkmk_Unattended"></a> Chiavi di file script di installazione automatica
+## <a name="unattended-setup-script-file-keys"></a><a name="bkmk_Unattended"></a> Chiavi di file script di installazione automatica
 
 Usare le sezioni seguenti per facilitare la creazione dello script per l'installazione automatica. Gli elenchi mostrano quanto segue:
 
