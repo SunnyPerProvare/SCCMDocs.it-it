@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sui metodi per registrare i dispositivi per la gestione di dispositivi mobili (MDM) locale in Configuration Manager.
 ms.date: 01/13/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-hybrid
+ms.technology: configmgr-mdm
 ms.topic: conceptual
 ms.assetid: b58472e3-31a5-4305-8eb6-2522befebe02
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 647cb65a078c5bd8a7b3b90667ecbfe3f69a33db
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: c295d0ad7b264e744c121ec5b7941d46a0391be8
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76033002"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605488"
 ---
 # <a name="enroll-devices-for-on-premises-mdm-in-configuration-manager"></a>Registrare i dispositivi per MDM locale in Configuration Manager
 

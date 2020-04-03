@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come usare Configuration Manager per gestire i dispositivi.
 ms.date: 07/26/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 2bca3db9-115a-451d-8c93-f073ceefe0c7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a6b225ce10c77b1fa876dbd98f220b4b847f8846
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: c7224ac934d6e7e07912f92acafcc2950fa09e97
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76035027"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598357"
 ---
 # <a name="fundamentals-of-managing-devices-with-configuration-manager"></a>Nozioni fondamentali sulla gestione dei dispositivi con Configuration Manager
 

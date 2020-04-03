@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come trasferire i dati da una gerarchia di origine a una gerarchia di destinazione di Configuration Manager.
 ms.date: 11/05/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: cf014eb0-f8c2-4d37-b8d7-368d63a10b89
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e0c9cf9d0e1be301f43d9f48a396e7f673396e26
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 636f69401f7989953761e9e6ab344614efc4af4d
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75803212"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605182"
 ---
 # <a name="migrate-data-between-hierarchies-in-configuration-manager"></a>Eseguire la migrazione dei dati da una gerarchia all'altra in Configuration Manager
 
@@ -43,7 +43,7 @@ Il video seguente descrive e illustra due [scenari di migrazione](#BKMK_Migratio
 
 
 
-##  <a name="BKMK_MigrationConcepts"></a> Concetti  
+##  <a name="concepts"></a><a name="BKMK_MigrationConcepts"></a> Concetti  
 
  Durante la migrazione Configuration Manager usa i concetti e i termini seguenti.  
 
@@ -119,7 +119,7 @@ Dopo aver eseguito la migrazione dei dati, quando la gerarchia di origine non è
 
 
 
-##  <a name="BKMK_MigrationScenarios"></a> Scenari  
+##  <a name="scenarios"></a><a name="BKMK_MigrationScenarios"></a> Scenari  
 
  Configuration Manager supporta gli scenari di migrazione seguenti:
 - [Migrazione da gerarchie di Configuration Manager 2007](#bkmk_2007)  
@@ -129,7 +129,7 @@ Dopo aver eseguito la migrazione dei dati, quando la gerarchia di origine non è
 >  L'espansione di una gerarchia con sito autonomo in una gerarchia con sito di amministrazione centrale non viene classificata come migrazione. Per informazioni sull'espansione delle gerarchie, vedere [Espandere un sito primario autonomo](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites#bkmk_expand).  
 
 
-### <a name="bkmk_2007"></a> Migrazione da gerarchie di Configuration Manager 2007  
+### <a name="migration-from-configuration-manager-2007-hierarchies"></a><a name="bkmk_2007"></a> Migrazione da gerarchie di Configuration Manager 2007  
 
  Quando si usa la migrazione per migrare i dati da Configuration Manager 2007 è possibile mantenere l'investimento nell'infrastruttura del sito esistente e ottenere i vantaggi seguenti:  
 
@@ -152,7 +152,7 @@ Questo modello di sicurezza centrale in Configuration Manager (Current Branch) o
 >  A causa delle modifiche alla progettazione introdotte in System Center 2012 Configuration Manager, non è possibile aggiornare Configuration Manager 2007 a Configuration Manager (Current Branch). L'aggiornamento sul posto è supportato da System Center 2012 Configuration Manager a Configuration Manager (Current Branch).  
 
 
-### <a name="bkmk_2012"></a> Migrazione da Configuration Manager 2012 o un'altra gerarchia di Configuration Manager  
+### <a name="migration-from-configuration-manager-2012-or-another-configuration-manager-hierarchy"></a><a name="bkmk_2012"></a> Migrazione da Configuration Manager 2012 o un'altra gerarchia di Configuration Manager  
  Il processo di migrazione dei dati da una gerarchia di System Center 2012 Configuration Manager o di Configuration Manager è uguale. Il processo include la migrazione dei dati da più gerarchie di origine a una singola gerarchia di destinazione. È possibile usare questo processo quando la società acquisisce risorse aggiuntive già gestite da Configuration Manager. È anche possibile eseguire la migrazione dei dati da un ambiente di test all'ambiente di produzione di Configuration Manager. Questo processo consente di preservare gli investimenti effettuati per l'ambiente di test di Configuration Manager.  
 
 

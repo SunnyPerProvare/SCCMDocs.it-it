@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sul ruolo di sistema del sito di Configuration Manager e pianificazione della gamma di usi.
 ms.date: 01/08/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: bc2282d5-0571-465b-9528-a555855eaacd
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: da9fa173ea298ba7565b709532be180f60baff73
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: d9e5e9c887d07b43a92b52283ff57d21d4091247
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76033477"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606331"
 ---
 # <a name="about-the-service-connection-point-in-configuration-manager"></a>Informazioni sul punto di connessione del servizio in Configuration Manager
 
@@ -37,7 +37,7 @@ Il punto di connessione del servizio è un ruolo del sistema del sito che svolge
 
 Ogni gerarchia supporta una sola istanza di questo ruolo. Può essere installato solo nel sito di livello più alto della gerarchia, ovvero in un sito di amministrazione centrale (CAS) o in un sito primario autonomo. Se si espande un sito primario autonomo in una gerarchia più ampia, disinstallare questo ruolo dal sito primario e quindi installarlo nel CAS.
 
-## <a name="bkmk_modes"></a> Modalità di funzionamento
+## <a name="modes-of-operation"></a><a name="bkmk_modes"></a> Modalità di funzionamento
 
 Il punto di connessione del servizio supporta due modalità di funzionamento:
 
@@ -72,7 +72,7 @@ Quando si installa il punto di connessione del servizio in un server del sistema
 
 - Configurare il server del sistema del sito che ospita questo ruolo con un [account di installazione del sistema del sito](/configmgr/core/plan-design/hierarchy/accounts#site-system-installation-account). Il responsabile della distribuzione nel server del sito usa l'account di installazione del sistema del sito per trasferire gli aggiornamenti dal punto di connessione del servizio.
 
-## <a name="bkmk_urls"></a> Requisiti per l'accesso a Internet
+## <a name="internet-access-requirements"></a><a name="bkmk_urls"></a> Requisiti per l'accesso a Internet
 
 Se l'organizzazione limita le comunicazioni della rete con Internet tramite un firewall o un dispositivo proxy, è necessario consentire al punto di connessione del servizio di accedere agli endpoint Internet.
 
@@ -84,7 +84,7 @@ Quando si esegue il **programma di installazione** per installare il sito di liv
 
 Al termine dell'installazione o se si reinstalla il ruolo, usare l'**Aggiunta guidata ruoli del sistema del sito** o la **Creazione guidata server del sistema sito** (installare solo il punto di connessione del servizio nel sito di livello superiore della gerarchia). Per altre informazioni, vedere [Installare i ruoli del sistema del sito](/configmgr/core/servers/deploy/configure/install-site-system-roles).
 
-## <a name="bkmk_move"></a> Spostare il ruolo
+## <a name="move-the-role"></a><a name="bkmk_move"></a> Spostare il ruolo
 
 <!-- SCCMDocs#922 -->
 Esistono diversi scenari in cui potrebbe essere necessario spostare il punto di connessione del servizio in un altro server:

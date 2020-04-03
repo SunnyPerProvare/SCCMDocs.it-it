@@ -8,14 +8,14 @@ manager: dougeby
 ms.date: 11/29/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.assetid: 9e68de6e-2b33-442b-b674-a382728d9529
-ms.openlocfilehash: 03e28fe65ad0afc022fd911b8fad1e6f0f080784
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c2639b0ae6713d1428c71ba0177e07c0a4a39dfe
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791963"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598065"
 ---
 # <a name="software-center-user-guide"></a>Manuale dell'utente di Software Center
 
@@ -31,7 +31,7 @@ Note generali sulle funzionalità di Software Center:
 
 <!-- - Your IT admin may change the color of Software Center, and add your organization's logo. The images in this article show the default experience. -->
 
-## <a name="bkmk_open"></a> Come aprire Software Center
+## <a name="how-to-open-software-center"></a><a name="bkmk_open"></a> Come aprire Software Center
 
 Il metodo più semplice per avviare Software Center in un computer Windows 10 consiste nel premere **Start** e digitare `Software Center`. Può non essere necessario digitare l'intera stringa per consentire a Windows di trovare la migliore corrispondenza.
 

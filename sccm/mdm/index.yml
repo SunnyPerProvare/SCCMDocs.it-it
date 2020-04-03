@@ -6,17 +6,17 @@ metadata:
   titleSuffix: Configuration Manager
   description: Usare Microsoft Endpoint Manager per gestire i dispositivi mobili nell'organizzazione, sia in locale che basati sul cloud
   ms.prod: configuration-manager
-  ms.technology: configmgr-hybrid
+  ms.technology: configmgr-mdm
   ms.topic: landing-page
   author: aczechowski
   ms.author: aaroncz
   ms.date: 12/31/2019
-  ms.openlocfilehash: d4417954b02a29292e8cce4d3f498bd8aa6c7a66
-  ms.sourcegitcommit: be37256f98120ad30d5f7925bc32f05a07f15984
+  ms.openlocfilehash: 039e6fa4cda3c9a0c8b2267853b658ebf630aa5b
+  ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 02/07/2020
-  ms.locfileid: "77071487"
+  ms.lasthandoff: 04/02/2020
+  ms.locfileid: "80605342"
 landingContent:
 - title: Informazioni su MDM locale
   linkLists:

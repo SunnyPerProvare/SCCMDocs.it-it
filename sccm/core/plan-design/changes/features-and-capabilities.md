@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità di gestione principali di Configuration Manager.
 ms.date: 11/29/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 5d388399-07ca-431c-a9b2-56c69771aa87
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: c50efb804787bb8288e6b1f200cee005ed2d0370
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: ec6500b0ee2237c97626d8a9c1aa962b0f0a0c4f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802838"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605125"
 ---
 # <a name="features-and-capabilities-of-configuration-manager"></a>Caratteristiche e funzionalità di Configuration Manager
 

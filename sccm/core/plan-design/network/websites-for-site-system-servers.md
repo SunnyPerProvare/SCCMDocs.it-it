@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Questa sezione contiene informazioni sui siti Web predefiniti e personalizzati per i server del sistema del sito in Configuration Manager.
 ms.date: 02/8/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 681f0893-e83b-476e-9ec0-a5dc7c9deeb6
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 12299a3e822286e9115efc0fe468d5154dcf9372
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 344ba7f6a6b0ee7683c3ac7661338f01be601a10
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799353"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599542"
 ---
 # <a name="websites-for-site-system-servers-in-configuration-manager"></a>Siti Web per i server del sistema del sito in Configuration Manager
 
@@ -29,7 +29,7 @@ Alcuni ruoli del sistema del sito di Configuration Manager richiedono Microsoft 
 
 
 
-##  <a name="BKMK_What2Know"></a> Cosa è necessario sapere prima di scegliere di usare i siti Web personalizzati  
+##  <a name="what-to-know-before-choosing-to-use-custom-websites"></a><a name="BKMK_What2Know"></a> Cosa è necessario sapere prima di scegliere di usare i siti Web personalizzati  
  Per impostazione predefinita, i ruoli del sistema del sito usano il **sito Web predefinito** in IIS. Questa configurazione viene definita automaticamente quando si installa il ruolo del sistema del sito. Tuttavia, nei siti primari è possibile scegliere di usare i siti Web personalizzati. Quando si usano siti Web personalizzati:  
 
 -   I siti Web personalizzati sono abilitati per l'intero sito, non per i singoli server o ruoli del sistema del sito.  

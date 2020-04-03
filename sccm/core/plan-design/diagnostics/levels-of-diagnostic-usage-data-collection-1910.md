@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sui dati specifici raccolti da Configuration Manager a ogni livello nella versione 1910.
 ms.date: 11/29/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: b3ce6b9a-7d54-4374-9b7a-f017f872bd6f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5c5ddc6926561960863d687eede99c54cd932a67
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.openlocfilehash: a47df1af06a7a7b605ce8da164ee38bebea69e65
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76917317"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604433"
 ---
 # <a name="diagnostic-and-usage-data-for-version-1910"></a>Dati di diagnostica e utilizzo per la versione 1910
 
@@ -28,7 +28,7 @@ Le modifiche rispetto alle versioni precedenti sono contrassegnate da ***[Nuovo]
 > [!IMPORTANT]
 > Configuration Manager non raccoglie codici del sito, nomi di siti, indirizzi IP, nomi utente, nomi di computer, indirizzi fisici o indirizzi di posta elettronica per i livelli di base e avanzato. Qualsiasi raccolta di queste informazioni al livello Completo non è intenzionale. Tali informazioni sono infatti potenzialmente incluse nelle informazioni diagnostiche avanzate quali i file di log o gli snapshot di memoria. Le informazioni eventualmente raccolte non vengono usate da Microsoft per identificare l'utente, contattare l'utente o per fini pubblicitari.
 
-## <a name="bkmk_level1"></a> Livello 1 - Di base
+## <a name="level-1---basic"></a><a name="bkmk_level1"></a> Livello 1 - Di base
 
 Per Configuration Manager versione 1910, questo livello include i dati seguenti:
 
@@ -126,7 +126,7 @@ Per Configuration Manager versione 1910, questo livello include i dati seguenti:
 
 - ***[Nuovo]*** Numero di installazioni Microsoft Edge
 
-## <a name="bkmk_level2"></a> Livello 2 - Avanzato
+## <a name="level-2---enhanced"></a><a name="bkmk_level2"></a> Livello 2 - Avanzato
 
 Per Configuration Manager versione 1910, questo livello include i dati seguenti:
 
@@ -550,7 +550,7 @@ Per Configuration Manager versione 1910, questo livello include i dati seguenti:
 
 - ***[New]*** Uso dello strumento di migrazione di Azure
 
-## <a name="bkmk_level3"></a> Livello 3 - Completo
+## <a name="level-3---full"></a><a name="bkmk_level3"></a> Livello 3 - Completo
 
 Per Configuration Manager versione 1910, questo livello include i dati seguenti:
 

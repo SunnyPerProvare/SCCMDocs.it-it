@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Eseguire azioni remote da Intune per i dispositivi con co-gestione
 ms.date: 01/14/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology: configmgr-comanage
 ms.topic: conceptual
 ms.assetid: 4a877bed-f6c4-4048-9421-507dc848af5c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ae58a62849097b556fa4ed63325c0d8d17e9f5d5
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 46aeb89df47e8b0140b21931a0d8e03a82353e3a
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816888"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80595769"
 ---
 # <a name="remote-actions-with-co-management"></a>Azioni remote con la co-gestione
 

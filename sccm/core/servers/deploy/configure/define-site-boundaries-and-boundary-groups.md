@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare i limiti e i gruppi di limiti per definire percorsi di rete e sistemi del sito accessibili per i dispositivi gestiti.
 ms.date: 06/18/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 54aa20d5-791e-4416-9db4-5aaea472c0b7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 552482a8bf73cd479d28c018fd5916cf1c9ca310
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 3226710b1f9cafb266e53fa5823da195966de493
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798783"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606071"
 ---
 # <a name="define-site-boundaries-and-boundary-groups"></a>Definire i limiti e i gruppi di limiti del sito
 
@@ -43,7 +43,7 @@ I client in Internet o configurati come client solo per Internet non usano le in
 A partire dalla versione 1902 è possibile associare un Cloud Management Gateway (CMG) a un gruppo di limiti. Per altre informazioni, vedere [Progettazione della gerarchia CMG](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#hierarchy-design).<!--3640932-->
 
 
-## <a name="BKMK_BoundaryBestPractices"></a> Consigli
+## <a name="recommendations"></a><a name="BKMK_BoundaryBestPractices"></a> Consigli
 
 ### <a name="use-a-mix-of-the-fewest-boundaries-that-meet-your-needs"></a>Usare una combinazione del numero minimo di limiti che soddisfano le esigenze
 

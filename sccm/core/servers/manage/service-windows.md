@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare gli intervalli di servizio per controllare quando i siti Configuration Manager installano gli aggiornamenti.
 ms.date: 01/11/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: ca4886d4-7173-46be-8dcd-1657d5b0deb9
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: d8d7f0b94de676fe5722a509998a5064445467e9
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 669da2a04fe4e94b08fc426c32e0dbcc804a21d1
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826255"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605703"
 ---
 #  <a name="service-windows-for-site-servers"></a>Intervalli di servizio per i server del sito
 

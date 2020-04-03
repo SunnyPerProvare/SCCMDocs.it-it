@@ -4,23 +4,23 @@ titleSuffix: Configuration Manager
 description: Configurare la pianificazione, la limitazione della larghezza di banda della rete e il contenuto pre-installato per Configuration Manager.
 ms.date: 02/6/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: e80d1151-91db-4a27-8411-a957297b67d0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a3016e2bd513ec19e16a185283e5d871ee2b040e
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 85b2dc9e9fe4c2f15e925ba3086dd5a429fd9816
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75800016"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600409"
 ---
 # <a name="manage-network-bandwidth-for-content"></a>Gestire la larghezza di banda della rete per il contenuto
 Per gestire più facilmente la larghezza di banda della rete usata per il processo di gestione del contenuto di Configuration Manager, è possibile usare i controlli predefiniti per la pianificazione e la limitazione della larghezza di banda della rete. È inoltre possibile usare contenuto pre-installato. Le sezioni seguenti includono informazioni più dettagliate su queste opzioni.
 
-##  <a name="BKMK_PlanningForThrottling"></a>Pianificazione e limitazione della larghezza di banda della rete  
+##  <a name="scheduling-and-throttling"></a><a name="BKMK_PlanningForThrottling"></a>Pianificazione e limitazione della larghezza di banda della rete  
 
  Quando si crea un pacchetto, cambiare il percorso di origine del contenuto oppure aggiornare il contenuto nel punto di distribuzione; i file vengono copiati dal percorso di origine sulla raccolta contenuto nel server del sito. Quindi, il contenuto viene copiato dalla raccolta contenuto nel server del sito alla raccolta contenuto nei punti di distribuzione. Quando i file origine di contenuto vengono aggiornati e i file di origine sono già stati distribuiti, Configuration Manager recupera solo i file nuovi o aggiornati e li invia al punto di distribuzione.
 
@@ -35,7 +35,7 @@ Per gestire più facilmente la larghezza di banda della rete usata per il proces
 
 Per altre informazioni, vedere [Installare e configurare punti di distribuzione per Configuration Manager](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points).  
 
-##  <a name="BKMK_PrestagingContent"></a>Contenuto pre-installato  
+##  <a name="prestaged-content"></a><a name="BKMK_PrestagingContent"></a>Contenuto pre-installato  
  Prima di distribuire il contenuto, è possibile pre-installarlo in modo da aggiungere i file alla raccolta contenuto in un server del sito o in un punto di distribuzione. Poiché si trovano già nella raccolta, i file di contenuto non vengono trasferiti attraverso la rete quando si distribuisce il contenuto. È possibile pre-installare i file di contenuto per applicazioni e pacchetti.  
 
 Nella console di Configuration Manager selezionare il contenuto che si vuole pre-installare e quindi usare la **Creazione guidata file di contenuto pre-installazione**. In questo modo, viene creato un file di contenuto pre-installato e compresso, che contiene i file e i metadati associati per il contenuto. Quindi, è possibile importare manualmente il contenuto in un server del sito o in punto di distribuzione. Tenere presente quanto segue:  
@@ -52,7 +52,7 @@ Facoltativamente, è possibile configurare il punto di distribuzione come **pre-
 
 -   Usare sempre il processo standard di distribuzione per il contenuto nel pacchetto.  
 
-###  <a name="BKMK_DetermineToPrestageContent"></a>Determinare se pre-installare il contenuto  
+###  <a name="determine-whether-to-prestage-content"></a><a name="BKMK_DetermineToPrestageContent"></a>Determinare se pre-installare il contenuto  
  Prendere in considerazione la pre-installazione di contenuto per applicazioni e pacchetti nei seguenti scenari:  
 
 -   **Per risolvere il problema relativo alla limitazione della larghezza di banda della rete dal server del sito a un punto di distribuzione.** Se la pianificazione e la limitazione della larghezza di banda della rete non sono sufficienti per soddisfare le esigenze di larghezza di banda, valutare l'opportunità di pre-installare il contenuto nel punto di distribuzione. Per ogni punto di distribuzione è disponibile l'impostazione **Abilita questo punto di distribuzione per il contenuto pre-installato** che è possibile configurare nelle proprietà del punto di distribuzione. Quando si abilita questa opzione, il punto di distribuzione viene individuato come punto di distribuzione pre-installato ed è possibile scegliere come gestire il contenuto in base al pacchetto.  

@@ -2,17 +2,17 @@
 author: mestew
 ms.author: mstewart
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: include
 ms.date: 02/13/2020
-ms.openlocfilehash: 085f2fd595bfd8356263d7a490a1db86810fd0bc
-ms.sourcegitcommit: 982394e762589a5aa855a0ee5875ba5ed9e0c377
+ms.openlocfilehash: 1ceb0ac19799c04eeddedb999aaf3c5cd37a2fae
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77481120"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80602990"
 ---
-### <a name="ki_coll"></a> Impossibile eliminare le raccolte
+### <a name="cant-delete-collections"></a><a name="ki_coll"></a> Impossibile eliminare le raccolte
 
 <!--6245446-->
 In questa versione di Technical Preview Branch non è possibile eliminare le raccolte.

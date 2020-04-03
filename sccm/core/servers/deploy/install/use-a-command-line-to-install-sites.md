@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come eseguire il programma di installazione di Configuration Manager al prompt dei comandi per vari tipi di installazione di siti.
 ms.date: 03/27/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: e7cdb1a9-140a-436e-ac71-72d083110223
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: d059ca50cd56bc252e70070abee1b862bbed7b03
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 99a431719a4331050051c9a81aba3df32164a2a0
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75797901"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605794"
 ---
 # <a name="use-a-command-line-to-install-configuration-manager-sites"></a>Usare la riga di comando per installare siti di Configuration Manager
 

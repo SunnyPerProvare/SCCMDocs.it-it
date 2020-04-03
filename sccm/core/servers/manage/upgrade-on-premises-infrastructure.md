@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come aggiornare l'infrastruttura, ad esempio SQL Server e il sistema operativo dei sistemi del sito.
 ms.date: 08/09/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 8ca970dd-e71c-404f-9435-d36e773a0db2
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: a64db0660deee02264a333b695ef3493421f524c
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 8e85ae376e4c3fa7f19fa7990ce6dfdb2b149aa6
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75793173"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605010"
 ---
 # <a name="upgrade-on-premises-infrastructure-that-supports-configuration-manager"></a>Aggiornare l'infrastruttura locale che supporta Configuration Manager
 
@@ -28,7 +28,7 @@ Le informazioni disponibili in questo articolo consentono di aggiornare l'infras
 - Per *aggiornare* l'infrastruttura di Configuration Manager Current Branch a una versione più recente, vedere [Aggiornamenti per Configuration Manager](/sccm/core/servers/manage/updates).  
 
 
-## <a name="BKMK_SupConfigUpgradeSiteSrv"></a> Aggiornare il sistema operativo dei sistemi del sito  
+## <a name="upgrade-the-os-of-site-systems"></a><a name="BKMK_SupConfigUpgradeSiteSrv"></a> Aggiornare il sistema operativo dei sistemi del sito  
 
 Configuration Manager supporta l'aggiornamento sul posto del sistema operativo server che ospita un server del sito e un ruolo qualsiasi del sistema del sito, nelle situazioni seguenti:  
 
@@ -56,7 +56,7 @@ Per aggiornare un server, eseguire la procedura di aggiornamento indicata dal si
 
 - [Upgrade Options for Windows Server 2012 R2](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303416(v=ws.11)) (Opzioni di aggiornamento per Windows Server 2012 R2)  
 
-### <a name="bkmk_2016-2019"></a> Eseguire l'aggiornamento a Windows Server 2016 o 2019
+### <a name="upgrade-to-windows-server-2016-or-2019"></a><a name="bkmk_2016-2019"></a> Eseguire l'aggiornamento a Windows Server 2016 o 2019
 
 Seguire la procedura descritta in questa sezione per uno degli scenari di aggiornamento seguenti:  
 
@@ -132,7 +132,7 @@ Dopo aver aggiornato un server che ospita un ruolo del sistema del sito, il valo
 
 Se questo valore non è presente dopo l'aggiornamento di Windows nel server, aggiungerlo manualmente. In caso contrario, i ruoli del sistema del sito possono avere problemi di caricamento dei file in arrivo nel server del sito.
 
-### <a name="bkmk_2012r2"></a> Eseguire l'aggiornamento a Windows Server 2012 R2
+### <a name="upgrade-to-windows-server-2012-r2"></a><a name="bkmk_2012r2"></a> Eseguire l'aggiornamento a Windows Server 2012 R2
 
 Quando si esegue l'aggiornamento da Windows Server 2008 R2 o da Windows Server 2012 a Windows Server 2012 R2, si applicano le condizioni seguenti:
 
@@ -181,7 +181,7 @@ Sono solitamente richiesti, ma non sono supportati da Configuration Manager gli 
 - Da Windows Server 2008 R2 a Windows Server 2012  
 
 
-## <a name="BKMK_SupConfigUpgradeClient"></a> Aggiornare il sistema operativo dei client  
+## <a name="upgrade-the-os-of-clients"></a><a name="BKMK_SupConfigUpgradeClient"></a> Aggiornare il sistema operativo dei client  
 
 Configuration Manager supporta un aggiornamento sul posto del sistema operativo per client di Configuration Manager nelle situazioni seguenti:  
 
@@ -192,7 +192,7 @@ Configuration Manager supporta un aggiornamento sul posto del sistema operativo 
 - Aggiornamenti di manutenzione da build a build di Windows 10. Per altre informazioni, vedere [Gestire Windows come servizio](/sccm/osd/deploy-use/manage-windows-as-a-service).  
 
 
-## <a name="BKMK_SupConfigUpgradeDBSrv"></a> Aggiornare SQL Server  
+## <a name="upgrade-sql-server"></a><a name="BKMK_SupConfigUpgradeDBSrv"></a> Aggiornare SQL Server  
 
 Configuration Manager supporta l'aggiornamento sul posto di SQL Server nel server di database del sito.
 

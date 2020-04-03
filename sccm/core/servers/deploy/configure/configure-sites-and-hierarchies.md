@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Consultare questo elenco di controllo per verificare di aver tenuto in considerazione le configurazioni più comuni che interessano sia i siti che le gerarchie.
 ms.date: 07/30/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 9efb4061-f642-48bd-8332-3357ff5b3118
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 45219f7bb7e46f407a9ffe900b7d5cf2c4f3788d
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c37e7671e5299f4d4f08687cf3c6c347df518be8
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798854"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606135"
 ---
 # <a name="configure-sites-and-hierarchies-for-configuration-manager"></a>Configurare siti e gerarchie per Configuration Manager
 

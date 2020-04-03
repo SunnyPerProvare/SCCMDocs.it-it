@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Configurare firewall, porte e domini per la prepararsi per le comunicazioni di Configuration Manager.
 ms.date: 06/19/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: d6993bba-f6bd-4639-adbf-efc1c638b2f3
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 85c7b8ca5064475e1ce2ac1380b9a11f447b8eff
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 51cb627df5fe963c8948abb55083bb3d3e810714
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799489"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599724"
 ---
 # <a name="network-infrastructure-considerations-for-configuration-manager"></a>Considerazioni sull'infrastruttura di rete per Configuration Manager
 

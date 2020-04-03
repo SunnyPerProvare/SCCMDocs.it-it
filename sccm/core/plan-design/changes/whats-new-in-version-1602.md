@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1602 di Configuration Manager.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 4021eca1-adfb-4e5a-adee-159263c29637
 author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 5171beaccc43a1f894a21ac10af44fa808c0a1f4
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 6a50d8846680676fad9fbd9dc153d6edb17fcccd
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034512"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605087"
 ---
 # <a name="what39s-new-in-version-1602-of-configuration-manager"></a>Novità della versione 1602 di Configuration Manager
 
@@ -36,7 +36,7 @@ L'aggiornamento 1602 per Configuration Manager è disponibile solo come aggiorna
 
 ## <a name="site-infrastructure"></a>Infrastruttura del sito  
 
-###  <a name="bkmk_UpgradeOS"></a>Aggiornamento sul posto del sistema operativo dei server del sito che eseguono Windows Server 2008 R2  
+###  <a name="in-place-upgrade-the-operating-system-of-site-servers-that-run-windows-server-2008-r2"></a><a name="bkmk_UpgradeOS"></a>Aggiornamento sul posto del sistema operativo dei server del sito che eseguono Windows Server 2008 R2  
  I siti di Configuration Manager che eseguono la versione 1602 o versioni successive supportano l'aggiornamento sul posto del sistema operativo dei server del sito da Windows Server 2008 R2 a Windows Server 2012 R2.  
 
 > [!WARNING]  
@@ -46,7 +46,7 @@ L'aggiornamento 1602 per Configuration Manager è disponibile solo come aggiorna
 
  Per aggiornare un server, usare le procedure di aggiornamento di Windows Server 2012 R2. Non è necessario eseguire un ripristino del server del sito di Configuration Manager dopo l'aggiornamento. Per le procedure di aggiornamento, vedere [Opzioni di aggiornamento per Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) nella documentazione di Windows Server.  
 
-###  <a name="bkmk_AOAG"></a> Gruppi di disponibilità SQL Server AlwaysOn  
+###  <a name="sql-server-alwayson-availability-groups"></a><a name="bkmk_AOAG"></a> Gruppi di disponibilità SQL Server AlwaysOn  
  È possibile usare i gruppi di disponibilità SQL Server AlwaysOn per ospitare il database del sito nei siti primari e nel sito di amministrazione centrale come soluzione a disponibilità elevata e di ripristino di emergenza.  
 
  Per informazioni dettagliate, vedere [SQL Server AlwaysOn per database del sito a disponibilità elevata per Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).  

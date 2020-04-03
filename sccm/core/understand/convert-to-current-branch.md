@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come convertire un sito LTSB (Long-Term Servicing Branch) in un sito Current Branch.
 ms.date: 02/8/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: ec5b54cf-62b7-4ed1-9bb3-e8c63b9641c8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 07439a9acc3134d52f162ce2c2ca440d6e91fa5b
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 73f4a88717f0ea69ba7a0242019d14455738481b
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792206"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598572"
 ---
 # <a name="upgrade-the-long-term-servicing-branch-to-the-current-branch"></a>Aggiornare Long-Term Servicing Branch a Current Branch
 

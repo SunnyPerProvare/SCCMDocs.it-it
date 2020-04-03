@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sull'uso di Configuration Manager in un ambiente Azure.
 ms.date: 03/27/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: d24257d8-8136-47f4-8e0d-34021356dc37
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 18f4f85ebf51e9baad7d003ca97ec74f2fca9efa
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: f6db105aa63548b71a4ca892de373992639972f6
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825915"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598586"
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager in Azure: domande frequenti
 

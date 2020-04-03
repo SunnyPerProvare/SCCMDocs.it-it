@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sui requisiti di licenza per le opzioni di installazione disponibili con Configuration Manager
 ms.date: 06/04/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 495b87ae-41a4-49ba-abe2-d4f7d22ac0d4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cff7f8b696066f20a312b68e34c3c268d4eebd68
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: b392c8077a2944989e753422d8e025196dba3fdf
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792017"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598163"
 ---
 # <a name="licensing-and-branches-for-configuration-manager"></a>Licenze e rami per Configuration Manager
 

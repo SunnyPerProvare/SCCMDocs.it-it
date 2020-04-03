@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Configurare le impostazioni del sito di verifica della distribuzione in Configuration Manager per avvisare gli amministratori nel caso in cui creino una distribuzione ad alto rischio.
 ms.date: 02/26/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 8d37b983-a964-402c-819d-2512ed2d463b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 979d9ca0aca0d61dbd3cd8e049af9d59b8726dd7
-ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
+ms.openlocfilehash: a73cdb2f8092fec00ee9642ac9170687db4a3685
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78167270"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605659"
 ---
 # <a name="settings-to-manage-high-risk-deployments-for-configuration-manager"></a>Impostazioni per gestire le distribuzioni ad alto rischio per Configuration Manager
 
@@ -32,7 +32,7 @@ Ad esempio, una sequenza di attività con scopo impostato su **Obbligatorio** ch
 > [!WARNING]
 > Se si usano distribuzioni PXE e si configura l'hardware dei dispositivi con la scheda di rete come primo dispositivo di avvio, questi dispositivi possono avviare automaticamente una sequenza di attività di distribuzione del sistema operativo senza l'intervento dell'utente. Questa configurazione non viene gestita dalla procedura di verifica della distribuzione. Se da un lato questa configurazione può semplificare il processo e ridurre l'interazione dell'utente, dall'altro aumenta il rischio di ricreazione accidentale dell'immagine del dispositivo.
 
-## <a name="bkmk_settings"></a> Impostazioni di verifica della distribuzione
+## <a name="deployment-verification-settings"></a><a name="bkmk_settings"></a> Impostazioni di verifica della distribuzione
 
 Per ridurre l'incidenza di distribuzioni ad alto rischio indesiderate, è possibile configurare limiti di dimensioni nelle impostazioni di verifica della distribuzione seguenti:  
 

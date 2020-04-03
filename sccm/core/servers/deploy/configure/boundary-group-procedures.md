@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Configurare i gruppi di limiti per organizzare logicamente i percorsi di rete correlati chiamati limiti.
 ms.date: 11/27/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: a1fe22d0-4695-4de0-8bf0-e3475b03cf0e
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 68e8aa886a56ab2b788a18e562dbe3f7492b0c4d
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 9e6544075ea0fc6b90d445e226a3de02e870b3e8
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799010"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606261"
 ---
 # <a name="how-to-configure-boundary-groups-for-configuration-manager"></a>Come configurare gruppi di limiti per Configuration Manager
 
@@ -25,7 +25,7 @@ Questo articolo include procedure su come configurare i gruppi di limiti. Prima 
 
 
 
-## <a name="bkmk_create"></a> Creare un gruppo di limiti  
+## <a name="create-a-boundary-group"></a><a name="bkmk_create"></a> Creare un gruppo di limiti  
 
 1.  Nella console di Configuration Manager accedere all'area di lavoro **Amministrazione**, espandere **Configurazione della gerarchia** e selezionare il nodo **Gruppi limite**.  
 
@@ -36,7 +36,7 @@ Questo articolo include procedure su come configurare i gruppi di limiti. Prima 
 4.  Selezionare **OK** per salvare il nuovo gruppo di limiti o passare alla sezione successiva per configurare il gruppo di limiti.  
 
 
-## <a name="bkmk_config"></a> Configurare un gruppo di limiti  
+## <a name="configure-a-boundary-group"></a><a name="bkmk_config"></a> Configurare un gruppo di limiti  
 
 1.  Nella console di Configuration Manager accedere all'area di lavoro **Amministrazione**, espandere **Configurazione della gerarchia** e selezionare il nodo **Gruppi limite**.  
 
@@ -49,7 +49,7 @@ Configurare le seguenti impostazioni:
 - [Configurare le opzioni del gruppo di limiti](#bkmk_options)  
 
 
-### <a name="bkmk_add"></a> Aggiungere o rimuovere limiti
+### <a name="add-or-remove-boundaries"></a><a name="bkmk_add"></a> Aggiungere o rimuovere limiti
 
 Nella finestra di dialogo delle proprietà del gruppo di limiti usare la scheda **Generale** per modificare i limiti che fanno parte del gruppo:  
 
@@ -58,7 +58,7 @@ Nella finestra di dialogo delle proprietà del gruppo di limiti usare la scheda 
 - Per rimuovere i limiti, selezionare il limite nell'elenco e quindi selezionare **Rimuovi**.  
 
 
-### <a name="bkmk_references"></a> Configurare l'assegnazione sito e selezionare i server del sistema del sito
+### <a name="configure-site-assignment-and-select-site-system-servers"></a><a name="bkmk_references"></a> Configurare l'assegnazione sito e selezionare i server del sistema del sito
 
 Per modificare l'assegnazione sito e la configurazione del server del sistema del sito associata, passare alla scheda **Riferimenti** nella finestra delle proprietà del gruppo di limiti.  
 
@@ -75,7 +75,7 @@ Per modificare l'assegnazione sito e la configurazione del server del sistema de
     >  Per interrompere l'uso di questo gruppo di limiti per i sistemi del sito in fase di associazione, rimuovere tutti i server elencati come server del sistema del sito associati.  
 
 
-### <a name="bkmk_bg-fallback"></a> Configurare il comportamento di fallback
+### <a name="configure-fallback-behavior"></a><a name="bkmk_bg-fallback"></a> Configurare il comportamento di fallback
 
 Per configurare il comportamento di fallback, passare alla scheda **Relazioni** nella finestra delle proprietà del gruppo di limiti.  
 
@@ -100,7 +100,7 @@ Per configurare il comportamento di fallback, passare alla scheda **Relazioni** 
 Per altre informazioni, vedere [Fallback](/sccm/core/servers/deploy/configure/boundary-groups#fallback). 
 
 
-### <a name="bkmk_options"></a> Configurare le opzioni del gruppo di limiti
+### <a name="configure-boundary-group-options"></a><a name="bkmk_options"></a> Configurare le opzioni del gruppo di limiti
 <!--1356193-->
 A partire dalla versione 1806, per configurare opzioni aggiuntive per i client in questo gruppo di limiti, passare alla scheda **Opzioni**. Per altre informazioni, vedere [Opzioni del gruppo di limiti per download peer](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).
 
@@ -109,7 +109,7 @@ A partire dalla versione 1806, per configurare opzioni aggiuntive per i client i
     - **Durante i download peer, usa solo i peer entro la stessa subnet**: Questa impostazione dipende da quella precedente. Se si abilita questa opzione, il punto di gestione include nell'elenco delle posizioni del contenuto solo le origini peer incluse nella stessa subnet del client.  
 
 
-## <a name="bkmk_site-fallback"></a> Configurare un sito di fallback per l'assegnazione sito automatica  
+## <a name="configure-a-fallback-site-for-automatic-site-assignment"></a><a name="bkmk_site-fallback"></a> Configurare un sito di fallback per l'assegnazione sito automatica  
 
 Se i client non si trovano in un gruppo di limiti con un sito assegnato, assegnarli al sito durante l'installazione.
 
@@ -124,7 +124,7 @@ Se i client non si trovano in un gruppo di limiti con un sito assegnato, assegna
 Per altre informazioni, vedere [Assegnazione sito](/sccm/core/servers/deploy/configure/boundary-groups#site-assignment).
 
 
-## <a name="bkmk_proc-prefer"></a> Abilitare l'uso dei punti di gestione preferiti  
+## <a name="enable-use-of-preferred-management-points"></a><a name="bkmk_proc-prefer"></a> Abilitare l'uso dei punti di gestione preferiti  
 
 Per altre informazioni, vedere [Punti di gestione preferiti](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_preferred).
 

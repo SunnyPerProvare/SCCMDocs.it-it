@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare i punti di distribuzione per ospitare il contenuto distribuito a utenti e dispositivi.
 ms.date: 12/03/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: aebafaf9-b3d5-4a0f-9ee5-685758c037a1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ba7dd40d1b52f46e0d63b8028b9d8f726a590d4e
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: 759efb84a7e6531d96c39546d69c456c55356bda
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79405784"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599401"
 ---
 # <a name="install-and-configure-distribution-points-in-configuration-manager"></a>Installare e configurare punti di distribuzione per Configuration Manager
 

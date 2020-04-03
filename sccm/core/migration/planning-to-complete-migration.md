@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come completare la migrazione a una gerarchia di destinazione di Configuration Manager Current Branch dopo che una gerarchia di origine non contiene più dati.
 ms.date: 01/12/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: f4854b50-2e8c-414c-a872-9579554dca98
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 66a61dbd6c5c2a0c438dbe66d6e4409da06e2580
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 76cf6b57a4bc1439f2aa9c2e0484271987f85748
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75803059"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604714"
 ---
 # <a name="plan-to-complete-migration-in-configuration-manager"></a>Pianificare il completamento della migrazione in Configuration Manager
 
@@ -37,7 +37,7 @@ Usare le sezioni seguenti per pianificare il completamento della migrazione da u
 
 -   [Pianificare la pulizia dei dati di migrazione](#Plan_to_clean_up)  
 
-##  <a name="Plan_to_Stop_Data_Gath"></a> Pianificare l'arresto della raccolta dati  
+##  <a name="plan-to-stop-gathering-data"></a><a name="Plan_to_Stop_Data_Gath"></a> Pianificare l'arresto della raccolta dati  
  Prima di completare la migrazione ed eseguire la pulizia dei dati di migrazione, è necessario interrompere la raccolta dei dati da ciascun sito di origine nella gerarchia di origine. Per interrompere la raccolta dati da ciascun sito di origine, è necessario eseguire il comando **Interrompi raccolta dati** sui siti di origine di livello inferiore, quindi ripetere il processo su ciascun sito padre. L'interruzione della raccolta dati nel sito principale della gerarchia di origine deve rappresentare l'ultimo passaggio. È necessario interrompere la raccolta dati in ogni sito figlio prima di eseguire questo comando su un sito padre. In genere, si interrompe la raccolta dati solo quando si è pronti a completare il processo di migrazione.  
 
  Dopo aver interrotto la raccolta dati da un sito di origine, i punti di distribuzione condivisi da quel sito non sono più disponibili come percorsi del contenuto per i client nella gerarchia di destinazione. Pertanto, assicurarsi che qualsiasi contenuto migrato, per cui i client nella gerarchia di destinazione richiedono l'accesso, rimanga disponibile tramite una delle seguenti opzioni:  
@@ -50,7 +50,7 @@ Dopo aver interrotto la raccolta dati da ogni sito di origine nella gerarchia di
 
 Per altre informazioni sui siti di origine e sulla raccolta dati, vedere [Pianificazione di una strategia per la gerarchia di origine](../../core/migration/planning-a-source-hierarchy-strategy.md).  
 
-##  <a name="Plan_to_clean_up"></a> Pianificare la pulizia dei dati di migrazione  
+##  <a name="plan-to-clean-up-migration-data"></a><a name="Plan_to_clean_up"></a> Pianificare la pulizia dei dati di migrazione  
  L'ultimo passaggio necessario per completare la migrazione consiste nella pulizia dei dati di migrazione. È possibile utilizzare il comando **Pulisci dati migrazione** dopo aver interrotto la raccolta dei dati per ogni sito di origine nella gerarchia di origine. Questa azione facoltativa determina la rimozione dei dati sulla gerarchia di origine corrente dal database della gerarchia di destinazione.  
 
  Durante la pulizia, la maggior parte dei dati sulla migrazione viene rimossa dal database della gerarchia di destinazione. Tuttavia, vengono conservati i dettagli sugli oggetti migrati. Con questi dettagli è possibile usare l'area di lavoro **Migrazione** per riconfigurare la gerarchia di origine che contiene i dati di cui è stata eseguita la migrazione per riprendere la migrazione dalla gerarchia di origine o rivedere gli oggetti e la proprietà sito degli oggetti di cui prima è stata eseguita la migrazione.  

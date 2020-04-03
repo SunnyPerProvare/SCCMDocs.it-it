@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare un cluster di SQL Server per ospitare il database del sito di Configuration Manager
 ms.date: 03/06/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: d09a82c6-bbd1-49ca-8ffe-e3ce87b85d33
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: af40e75bdeb49279e942bfdd4311fcdc38124f0a
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 1aa71498b33b197a438c99e4622247822ffaf84a
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798317"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605976"
 ---
 # <a name="use-a-sql-server-cluster-for-the-site-database"></a>Usare un cluster di SQL Server per il database del sito
 
@@ -94,7 +94,7 @@ Configuration Manager non supporta il backup di Data Protection Manager (DPM) pe
 
 
 
-## <a name="bkmk_prepare"></a> Preparare un'istanza di SQL Server in cluster  
+## <a name="prepare-a-clustered-sql-server-instance"></a><a name="bkmk_prepare"></a> Preparare un'istanza di SQL Server in cluster  
 
 Ecco le attività principali da completare per preparare il database del sito:
 

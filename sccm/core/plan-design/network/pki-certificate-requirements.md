@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Cercare i requisiti dei certificati PKI che potrebbero essere necessari per Configuration Manager.
 ms.date: 11/20/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: d6a73e68-57d8-4786-842b-36669541d8ff
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: dfb75389bb82bf54e247b428c0748aedc7f138e3
-ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
+ms.openlocfilehash: cdd5247587f4b300bf80530a53457c5b65272c38
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77178521"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599563"
 ---
 # <a name="pki-certificate-requirements-for-configuration-manager"></a>Requisiti dei certificati PKI per Configuration Manager
 
@@ -50,7 +50,7 @@ Quando si usano Servizi certificati Active Directory e i modelli di certificato,
 
  Usare le seguenti sezioni per visualizzare i requisiti del certificato.  
 
-##  <a name="BKMK_PKIcertificates_for_servers"></a> Certificati PKI per server  
+##  <a name="pki-certificates-for-servers"></a><a name="BKMK_PKIcertificates_for_servers"></a> Certificati PKI per server  
 
 |Componente di Configuration Manager|Scopo del certificato|Modello di certificato Microsoft da usare|Informazioni specifiche del certificato|Uso del certificato in Configuration Manager|  
 |-------------------------------------|-------------------------|-------------------------------------------|---------------------------------------------|----------------------------------------------------------|  
@@ -63,7 +63,7 @@ Quando si usano Servizi certificati Active Directory e i modelli di certificato,
 |Sistemi del sito in cui è installato un punto di distribuzione|Autenticazione client|**Autenticazione workstation**|**Il valore Utilizzo chiavi avanzato** deve contenere **Autenticazione client (1(Distribuzione dettagliata di esempio dei certificati PKI per Configuration Manager: Autorità di certificazione di Windows Server 2008).3(Distribuzione dettagliata di esempio dei certificati PKI per Configuration Manager: Autorità di certificazione di Windows Server 2008).6(Distribuzione dettagliata di esempio dei certificati PKI per Configuration Manager: Autorità di certificazione di Windows Server 2008).1(Distribuzione dettagliata di esempio dei certificati PKI per Configuration Manager: Autorità di certificazione di Windows Server 2008).5(Distribuzione dettagliata di esempio dei certificati PKI per Configuration Manager: Autorità di certificazione di Windows Server 2008).5(Distribuzione dettagliata di esempio dei certificati PKI per Configuration Manager: Autorità di certificazione di Windows Server 2008).7(Distribuzione dettagliata di esempio dei certificati PKI per Configuration Manager: Autorità di certificazione di Windows Server 2008).3(Distribuzione dettagliata di esempio dei certificati PKI per Configuration Manager: Autorità di certificazione di Windows Server 2008).2)** (Distribuzione dettagliata di esempio dei certificati PKI per Configuration Manager: Autorità di certificazione di Windows Server 2008).<br /><br /> Non sono previsti requisiti specifici per l'oggetto certificato o il nome alternativo oggetto (SAN). È possibile usare lo stesso certificato per più punti di distribuzione. È tuttavia buona norma usare un certificato diverso per ogni punto di distribuzione.<br /><br /> La chiave privata deve essere esportabile.<br /><br /> L'algoritmo hash SHA-2 è supportato.<br /><br /> La lunghezza massima supportata per la chiave è 2,048 bit.|Questo certificato ha due scopi:<br /><br /><ul><li>Consente l'autenticazione del punto di distribuzione in un punto di gestione abilitato per HTTPS prima che il punto di distribuzione invii messaggi di stato.</li><li>Quando si sceglie l'opzione **Abilita supporto PXE per i client** del punto di distribuzione, il certificato viene inviato ai computer. Se le sequenze attività del processo di distribuzione del sistema operativo includono azioni client, come il recupero dei criteri per un client o l'invio delle informazioni di inventario, i computer client possano connettersi a un punto di gestione abilitato HTTPS durante la distribuzione del sistema operativo.</li></ul> Questo certificato viene usato solo per la durata del processo di distribuzione del sistema operativo e non viene installato nel client. Per via dell'utilizzo temporaneo, lo stesso certificato può essere usato per tutte le distribuzioni del sistema operativo se si sceglie di non usare più certificati client.<br /><br /> Questo certificato deve essere esportato in formato PKCS #12 (Public Key Certificate Standard). La password deve essere nota, per poterla importare nelle proprietà del punto di distribuzione.<br /><br /> **Nota:** i requisiti per il certificato corrispondono ai requisiti del certificato client per le immagini di avvio che distribuiscono i sistemi operativi. Poiché i requisiti sono identici, è possibile usare lo stesso file di certificato.|  
 |Server di sistema del sito che esegue il connettore di Microsoft Intune|Autenticazione client|Non applicabile: Intune crea automaticamente il certificato.|Il valore **Utilizzo chiavi avanzato** include **Autenticazione client (1.3.6.1.5.5.7.3.2)** .<br /><br /> Tre estensioni personalizzate identificano in modo univoco la sottoscrizione a Intune del cliente.<br /><br /> La chiave ha una dimensione di 2,048 bit e usa l'algoritmo hash SHA-1.<br /><br /> **Nota:** non è possibile modificare queste impostazioni. Queste informazioni vengono fornite esclusivamente a scopo informativo.|Questo certificato viene automaticamente richiesto e installato nel database di Configuration Manager quando si esegue la sottoscrizione a Microsoft Intune. Quando viene installato il connettore di Microsoft Intune, il certificato viene installato nel server di sistema del sito che esegue il connettore di Microsoft Intune. L'installazione viene eseguita nell'archivio certificati del computer.<br /><br /> Questo certificato viene usato per autenticare la gerarchia di Configuration Manager in Microsoft Intune tramite il connettore di Microsoft Intune. Tutti i dati trasferiti usano Secure Sockets Layer (SSL).|  
 
-###  <a name="BKMK_PKIcertificates_for_proxyservers"></a> Server Web proxy per la gestione client basata su Internet  
+###  <a name="proxy-web-servers-for-internet-based-client-management"></a><a name="BKMK_PKIcertificates_for_proxyservers"></a> Server Web proxy per la gestione client basata su Internet  
  Se il sito supporta la gestione client basata su Internet e si sta usando un server Web proxy con una terminazione SSL (bridging) per le connessioni Internet in entrata, il server Web proxy dispone dei requisiti del certificato elencati nella seguente tabella.  
 
 > [!NOTE]  
@@ -73,7 +73,7 @@ Quando si usano Servizi certificati Active Directory e i modelli di certificato,
 |--------------------------------------|-------------------------|-------------------------------------------|---------------------------------------------|----------------------------------------------------------|  
 |Server Web proxy che accetta connessioni client in Internet|Autenticazione server e autenticazione client|1. <br />                        **Server Web**<br /><br /> 2. <br />                        **Autenticazione workstation**|FQDN Internet nel campo Nome soggetto o nel campo Nome alternativo soggetto. Se si usano i modelli di certificato Microsoft, il Nome alternativo oggetto è disponibile solo con il modello per workstation.<br /><br /> L'algoritmo hash SHA-2 è supportato.|Questo certificato viene usato per autenticare i seguenti server nei client Internet, nonché per crittografare tutti i dati trasferiti tra il client e i server usando SSL:<br /><br /><ul><li>Punto di gestione basato su Internet</li><li>Punto di distribuzione basato su Internet</li><li>Punto di aggiornamento software basato su Internet</li></ul> L'autenticazione client viene usata per creare il bridge delle connessioni client tra i client di Configuration Manager e i sistemi del sito basati su Internet.|  
 
-##  <a name="BKMK_PKIcertificates_for_clients"></a> Certificati PKI per i client  
+##  <a name="pki-certificates-for-clients"></a><a name="BKMK_PKIcertificates_for_clients"></a> Certificati PKI per i client  
 
 |Componente di Configuration Manager|Scopo del certificato|Modello di certificato Microsoft da usare|Informazioni specifiche del certificato|Uso del certificato in Configuration Manager|  
 |-------------------------------------|-------------------------|-------------------------------------------|---------------------------------------------|----------------------------------------------------------|  

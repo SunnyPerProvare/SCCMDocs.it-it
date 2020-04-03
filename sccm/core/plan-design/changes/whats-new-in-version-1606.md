@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1606 di Configuration Manager.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: df2e57b9-6445-4067-98e7-ace85d4e6aa6
 author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2db2c56cdefe4a7088d4b6e6908786f855ed82cf
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 906c7c21608038ea925fcc2a60d1d37d3641cf5f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034936"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605041"
 ---
 # <a name="what39s-new-in-version-1606-of-configuration-manager"></a>Novità della versione 1606 di Configuration Manager
 
@@ -33,7 +33,7 @@ L'aggiornamento 1606 per Configuration Manager è disponibile solo come aggiorna
 
 
 
-## <a name="updatesandservicing"></a>Aggiornamenti e manutenzione
+## <a name="updates-and-servicing"></a><a name="updatesandservicing"></a>Aggiornamenti e manutenzione
 
 ### <a name="changes-for-the-updates-and-servicing-node"></a>Modifiche per il nodo Aggiornamenti e manutenzione
 Di seguito sono riportate le modifiche del nodo Aggiornamenti e manutenzione nella console di Configuration Manager:
@@ -79,10 +79,10 @@ Dopo l'installazione dell'aggiornamento 1606, quando nel sito verrà installato 
 
 
 
-## <a name="accessibility"></a> Accessibilità
+## <a name="accessibility"></a><a name="accessibility"></a> Accessibilità
 Per spostarsi tra i vari nodi di un'area di lavoro, è ora possibile immettere la prima lettera del nome di un nodo. Quando si preme il tasto, il cursore si sposta sul nodo successivo che inizia con tale lettera. Se si usa un'utilità per la lettura dello schermo, verrà letto il nome del nodo. Per altre informazioni sulle opzioni di accessibilità, vedere [Funzionalità di accessibilità](../../../core/understand/accessibility-features.md).
 
-## <a name="administration"></a>Amministrazione
+## <a name="administration"></a><a name="administration"></a>Amministrazione
 Di seguito sono riportate le modifiche del nodo Amministrazione nella console di Configuration Manager:
 ### <a name="oms-connector"></a>Connettore OMS
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sul supporto di caratteri Unicode e ASCII in oggetti di Configuration Manager.
 ms.date: 08/21/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 2bdec799-905f-48bc-aed5-2d92134739e8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 64ad092270afd66782d5dd992f8d45fbaf1d5778
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 7bd3dad5f0ef24074ac8c8e6d2edf01d5641b541
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799563"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599978"
 ---
 # <a name="unicode-and-ascii-support-in-configuration-manager"></a>Supporto di Unicode e ASCII in Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "75799563"
 
 Configuration Manager crea la maggior parte degli oggetti usando caratteri Unicode. Tuttavia, numerosi oggetti supportano solo caratteri ASCII o hanno altre limitazioni.  
 
-## <a name="BKMK_ASCIIchar"></a> Oggetti che usano i caratteri ASCII
+## <a name="objects-that-use-ascii-characters"></a><a name="BKMK_ASCIIchar"></a> Oggetti che usano i caratteri ASCII
 
 Configuration Manager supporta solo il set di caratteri ASCII quando vengono creati gli oggetti seguenti:  
 
@@ -96,7 +96,7 @@ Configuration Manager supporta solo il set di caratteri ASCII quando vengono cre
 - Nomi file ISO dei supporti di avvio  
 
 
-## <a name="BKMK_OtherCharLimitations"></a> Limitazioni aggiuntive
+## <a name="additional-limitations"></a><a name="BKMK_OtherCharLimitations"></a> Limitazioni aggiuntive
 
 Di seguito vengono riportate ulteriori limitazioni per i set di caratteri e le versioni delle lingue supportati:  
 
@@ -105,7 +105,7 @@ Di seguito vengono riportate ulteriori limitazioni per i set di caratteri e le v
 - Un'autorità di certificazione dell'organizzazione (enterprise) non supporta i nomi dei computer client che usano set di caratteri DBCS. I nomi dei computer client che è possibile utilizzare sono limitati dalla limitazione PKI del set di caratteri IA5. Configuration Manager non supporta i nomi di autorità di certificazione (CA) o i valori del nome soggetto che usano DBCS.  
 
 
-## <a name="BKMK_LangNonLocalize"></a> Oggetti che non sono localizzati
+## <a name="objects-that-arent-localized"></a><a name="BKMK_LangNonLocalize"></a> Oggetti che non sono localizzati
 
 Il database di Configuration Manager supporta Unicode per la maggior parte degli oggetti archiviati. Quando possibile, visualizza queste informazioni nella lingua del sistema operativo che corrisponde alle impostazioni locali di un computer. Affinché l'interfaccia client o la console di Configuration Manager visualizzi le informazioni nella lingua del sistema operativo del computer, le impostazioni locali del computer devono corrispondere alla lingua di un client o di un server installato in un sito.  
 

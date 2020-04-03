@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità che rendono Configuration Manager accessibile a tutti.
 ms.date: 03/27/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 1cb96666-98bf-49a9-85ca-dbb53f0655e9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 304db5001503e8cb7bb8334e71c9090e44073d7e
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 0971139b6b5de6869105af697f2b097a1a06d0da
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825932"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598608"
 ---
 # <a name="accessibility-features-in-configuration-manager"></a>Funzionalità di accessibilità in Configuration Manager
 

@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1711 per Configuration Manager.
 ms.date: 11/17/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 2e68dc12-6776-437a-9138-45cd7d4bf9cf
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: a6e7ec5d7b698486fc43a940424e74770777353b
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: f8055a30d01bce7d16ac359a5ef597a8269a2152
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75804691"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80602452"
 ---
 # <a name="capabilities-in-technical-preview-1711-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1711 per Configuration Manager
 

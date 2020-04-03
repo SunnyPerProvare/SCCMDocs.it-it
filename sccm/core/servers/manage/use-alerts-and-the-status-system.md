@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Configurare gli avvisi e usare il sistema di stato per rimanere aggiornati sullo stato della distribuzione di Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 7341cc6e-9e08-41e4-bcc6-6c1ff12e85ca
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f89d646729bd4303ab823864e41d1a20770d96c2
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: df328436122a84f6a50582fe726e56ec6f369d4e
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826153"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605620"
 ---
 # <a name="use-alerts-and-the-status-system-for-configuration-manager"></a>Usare gli avvisi e il sistema di stato per Configuration Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "75826153"
 Configurare gli avvisi e usare il sistema di stato predefinito per rimanere aggiornati sullo stato della distribuzione di Configuration Manager.  
 
 
-##  <a name="bkmk_Status"></a> Sistema di stato  
+##  <a name="status-system"></a><a name="bkmk_Status"></a> Sistema di stato  
  Tutti i componenti principali del sito generano messaggi di stato che forniscono feedback e suggerimenti sulle operazioni del sito e della gerarchia.    Queste informazioni consentono di restare informati sull'integrità dei vari processi del sito. È possibile ottimizzare il sistema di avvisi per ignorare il disturbo prodotto da problemi noti, aumentando allo stesso tempo la visibilità tempestiva per altri problemi che potrebbero richiedere attenzione.  
 
  Per impostazione predefinita, il sistema di stato di Configuration Manager funziona senza configurazione usando impostazioni adatte alla maggior parte degli ambienti. Tuttavia, è possibile configurare quanto segue:  
@@ -51,7 +51,7 @@ Configurare gli avvisi e usare il sistema di stato predefinito per rimanere aggi
 
 Poiché il sistema di stato mantiene configurazioni separate per ogni sito è necessario modificare ogni singolo sito.  
 
-###  <a name="bkmk_configstatus"></a> Procedure per la configurazione del sistema di stato  
+###  <a name="procedures-for-configuring-the-status-system"></a><a name="bkmk_configstatus"></a> Procedure per la configurazione del sistema di stato  
 
 ##### <a name="to-configure-status-summarizers"></a>Per configurare i generatori di riepilogo dello stato  
 
@@ -150,7 +150,7 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
 
 4.  Fare clic su **OK**.  
 
-###  <a name="BKMK_MonitorSystemStatus"></a> Configurare il sistema di stato di Configuration Manager  
+###  <a name="monitor-the-status-system-of-configuration-manager"></a><a name="BKMK_MonitorSystemStatus"></a> Configurare il sistema di stato di Configuration Manager  
  Lo **stato del sistema** in Configuration Manager offre una panoramica delle operazioni generali dei siti e delle operazioni del server del sito della gerarchia. Consente di rilevare problemi operativi per i componenti o i server di sistema del sito, nonché di esaminare dettagli specifici per diverse operazioni di Configuration Manager. È possibile monitorare lo stato del sistema dal nodo **Stato del sistema** dell'area di lavoro **Monitoraggio** nella console di Configuration Manager.  
 
  La maggior parte dei componenti e dei ruoli del sistema del sito di Configuration Manager generano messaggi di stato. I dettagli relativi ai messaggi di stato vengono registrati nel log operativo di ciascun componente e vengono inviati al database del sito, in cui vengono riepilogati e presentati in un rollup generale sull'integrità di ciascun sistema del sito o componente. I rollup dei messaggi di stato forniscono informazioni dettagliate su avvisi e operazioni regolari, nonché dettagli sugli errori. È possibile configurare le soglie di avvio di avvisi o errori e mettere a punto il sistema affinché le informazioni di rollup ignorino i problemi noti non rilevanti per l'utente e segnalino i problemi effettivi nei server o le operazioni del componente che è consigliabile esaminare.  
@@ -166,19 +166,19 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
 |Record in conflitto|Utilizzare questo nodo per visualizzare i messaggi di stato relativi ai client che potrebbero avere record in conflitto.<br /><br /> Configuration Manager usa l'ID hardware per tentare di identificare i client che potrebbero essere dei duplicati e avvertire l'utente dei record in conflitto. In caso di reinstallazione di un computer, ad esempio, l'ID hardware rimarrebbe lo stesso, mentre il GUID usato da Configuration Manager potrebbe cambiare.|  
 |Query messaggi di stato|Utilizzare questo nodo per eseguire query nei messaggi di stato per eventi specifici e relativi dettagli. È possibile utilizzare le query messaggi di stato per individuare i messaggi di stato relativi a eventi specifici.<br /><br /> Spesso è possibile usare le query messaggi di stato per individuare il momento in cui uno specifico componente, operazione o oggetto di Configuration Manager è stato modificato, nonché l'account utilizzato per eseguire la modifica. È ad esempio possibile eseguire la query incorporata per **Raccolte create, modificate o eliminate** al fine di individuare il momento in cui una specifica raccolta è stata creata, nonché l'account utente utilizzato per creare la raccolta.|  
 
-####  <a name="bkmk_managestatus"></a> Gestire lo stato del sito e lo stato componente  
+####  <a name="manage-site-status-and-component-status"></a><a name="bkmk_managestatus"></a> Gestire lo stato del sito e lo stato componente  
  Per gestire lo stato del sito e lo stato componente, utilizzare le seguenti informazioni:  
 
 -   Per configurare le soglie per il sistema di stato, vedere [Procedure per la configurazione del sistema di stato](#bkmk_configstatus).  
 
 -   Per gestire singoli componenti in Configuration Manager, usare **Configuration Manager Service Manager**.  
 
-####  <a name="bkmk_view"></a> Visualizzare i messaggi di stato  
+####  <a name="view-status-messages"></a><a name="bkmk_view"></a> Visualizzare i messaggi di stato  
  È possibile visualizzare i messaggi di stato per i singoli componenti e server di sistema del sito.  
 
  Per visualizzare i messaggi di stato nella console di Configuration Manager, selezionare un componente o un server di sistema del sito specifico e fare clic su **Mostra messaggi**. Per la visualizzazione dei messaggi, è possibile scegliere di visualizzare tipi di messaggi specifici o messaggi relativi a un periodo di tempo specifico, nonché filtrare i risultati n base ai dettagli dei messaggi di stato.  
 
-##  <a name="bkmk_Alerts"></a> Avvisi  
+##  <a name="alerts"></a><a name="bkmk_Alerts"></a> Avvisi  
  Gli avvisi di Configuration Manager vengono generati da alcune operazioni quando si verifica una condizione specifica.  
 
 - In genere, gli avvisi vengono generati quando si verifica un errore che è necessario risolvere  
@@ -200,7 +200,7 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
 |Configurare le sottoscrizioni e-mail agli avvisi|Vedere la sezione [Management tasks for alerts](#BKMK_Manage) in questo argomento.|  
 |Avvisi di monitoraggio|Vedere la sezione [Avvisi di monitoraggio](#BKMK_MonitorAlerts)|  
 
-###  <a name="BKMK_Manage"></a> Management tasks for alerts  
+###  <a name="management-tasks-for-alerts"></a><a name="BKMK_Manage"></a> Management tasks for alerts  
 
 ##### <a name="to-manage-general-alerts"></a>Per gestire gli avvisi generali  
 
@@ -284,7 +284,7 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
     > [!NOTE]  
     >  È possibile eliminare e modificare le sottoscrizioni nell'area di lavoro **Monitoraggio** quando si espande il nodo **Avvisi** e quindi fare clic sul nodo **Sottoscrizioni** .  
 
-###  <a name="BKMK_MonitorAlerts"></a> Avvisi di monitoraggio  
+###  <a name="monitor-alerts"></a><a name="BKMK_MonitorAlerts"></a> Avvisi di monitoraggio  
  È possibile visualizzare gli avvisi nel nodo **Avvisi** dell'area di lavoro **Monitoraggio** . Gli avvisi hanno uno degli stati di avviso seguenti:  
 
 - **Mai attivato**: la condizione dell'avviso non è stata soddisfatta.  

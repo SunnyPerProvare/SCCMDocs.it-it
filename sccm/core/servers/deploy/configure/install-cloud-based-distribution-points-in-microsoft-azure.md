@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare questa procedura per configurare un punto di distribuzione cloud in Configuration Manager.
 ms.date: 09/06/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: bb83ac87-9914-4a35-b633-ad070031aa6e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 00297b4ff9a45cfddc9f7c13948f5418d45a3308
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c4d7843cb6b9cc00434c31a5ff9d4433b3bcb91d
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798695"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599282"
 ---
 # <a name="install-a-cloud-distribution-point-for-configuration-manager"></a>Installare un punto di distribuzione cloud per Configuration Manager
 
@@ -38,7 +38,7 @@ In questo articolo è illustrata in dettaglio la procedura per installare un pun
 - [Risoluzione dei problemi avanzata](#bkmk_tshoot)
 
 
-## <a name="bkmk_before"></a> Prima di iniziare
+## <a name="before-you-begin"></a><a name="bkmk_before"></a> Prima di iniziare
 
 Per iniziare, leggere l'articolo [Usare un punto di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point), in cui viene descritto come pianificare e progettare i punti di distribuzione cloud.
 
@@ -98,7 +98,7 @@ Se è già stato distribuito contenuto a un punto di distribuzione cloud e quind
 > [!NOTE]  
 > In Configuration Manager versione 1810 e versioni precedenti, in presenza di più di un punto di distribuzione cloud, è necessario impostare manualmente la passphrase della chiave BranchCache. Per altre informazioni, vedere l'[articolo del supporto tecnico Microsoft KB 4458143](https://support.microsoft.com/help/4458143).
 
-## <a name="bkmk_setup"></a> Configurare  
+## <a name="set-up"></a><a name="bkmk_setup"></a> Configurare  
 
 Eseguire questa procedura nel sito per ospitare il punto di distribuzione cloud, come stabilito nella [progettazione](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#bkmk_topology).  
 
@@ -158,7 +158,7 @@ Usare i metodi seguenti per verificare il completamento dell'installazione del p
 - Se necessario, passare al portale di Azure. Nel portale di Azure lo stato visualizzato della **Distribuzione** per il punto di distribuzione cloud è **Pronto**.  
 
 
-## <a name="bkmk_dns"></a> Configurare DNS  
+## <a name="configure-dns"></a><a name="bkmk_dns"></a> Configurare DNS  
 
 Per poter usare il punto di distribuzione cloud, i client devono essere in grado di risolverne il nome in un indirizzo IP gestito da Azure. Il punto di gestione fornisce ai client il **FQDN servizio** del punto di distribuzione cloud. Il punto di distribuzione cloud è presente in Azure come **Nome servizio**. Visualizzare questi valori nella scheda **Impostazioni** delle proprietà del punto di distribuzione cloud.
 
@@ -190,14 +190,14 @@ Il processo seguente illustra in che modo un client risolve il nome del punto di
 5. Il punto di distribuzione cloud presenta il certificato di autenticazione server al client. Il client usa la catena di certificati del certificato da convalidare.  
 
 
-## <a name="bkmk_proxy"></a> Configurare il proxy server  
+## <a name="set-up-site-server-proxy"></a><a name="bkmk_proxy"></a> Configurare il proxy server  
 
 Il server del sito primario che gestisce il punto di distribuzione cloud deve comunicare con Azure. Se l'organizzazione usa un server proxy per controllare l'accesso a Internet, configurare il server del sito primario per l'uso di questo proxy.  
 
 Per altre informazioni, vedere [Supporto dei server proxy](/sccm/core/plan-design/network/proxy-server-support).  
 
 
-## <a name="bkmk_client"></a> Distribuire il contenuto e configurare i client
+## <a name="distribute-content-and-configure-clients"></a><a name="bkmk_client"></a> Distribuire il contenuto e configurare i client
 
 Distribuire il contenuto nel punto di distribuzione cloud in modo analogo a qualsiasi altro punto di distribuzione locale. Il punto di gestione non include il punto di distribuzione cloud nell'elenco dei percorsi di contenuto a meno che non includa il contenuto richiesto dai client. Per altre informazioni, vedere [Distribuire e gestire contenuto](/sccm/core/servers/deploy/configure/deploy-and-manage-content).
 
@@ -212,11 +212,11 @@ Con le impostazioni client predefinite i client vengono abilitati automaticament
     - Modificare e distribuire questa impostazione per utenti e dispositivi.  
 
 
-## <a name="bkmk_monitor"></a> Gestire e monitorare  
+## <a name="manage-and-monitor"></a><a name="bkmk_monitor"></a> Gestire e monitorare  
 
 Monitorare il contenuto distribuito in un punto di distribuzione cloud in modo analogo a qualsiasi altro punto di distribuzione locale. Per altre informazioni, vedere [Monitorare il contenuto distribuito](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed).
 
-### <a name="bkmk_alerts"></a> Avvisi  
+### <a name="alerts"></a><a name="bkmk_alerts"></a> Avvisi  
 
 Configuration Manager controlla periodicamente il servizio di Azure. Se il servizio non è attivo o se sono presenti problemi relativi al certificato o alla sottoscrizione, Configuration Manager genera un avviso.
 
@@ -240,7 +240,7 @@ In un ciclo orario il sito primario che monitora il punto di distribuzione cloud
 > Dal momento che il sito scarica le informazioni sui trasferimenti dei dati da Azure ogni ora, l'utilizzo di tali dati potrebbe superare una soglia di avviso o critica prima che Configuration Manager possa accedere ai dati e generare un avviso.  
 
 
-## <a name="bkmk_modify"></a> Modificare
+## <a name="modify"></a><a name="bkmk_modify"></a> Modificare
 
 È possibile visualizzare informazioni di carattere generale sul punto di distribuzione nel nodo **Punti di distribuzione del cloud** in **Servizi cloud** nell'area di lavoro **Amministrazione** della console di Configuration Manager. Selezionare un punto di distribuzione e scegliere **Proprietà** per visualizzare maggiori dettagli.  
 
@@ -317,7 +317,7 @@ Quando un punto di distribuzione cloud viene eliminato da una gerarchia, Configu
 La rimozione manuale di componenti in Azure crea incoerenze nel sistema. Questo stato produce dati orfani e può dare origine a comportamenti imprevisti.
 
 
-## <a name="bkmk_tshoot"></a> Risoluzione dei problemi avanzata
+## <a name="advanced-troubleshooting"></a><a name="bkmk_tshoot"></a> Risoluzione dei problemi avanzata
 
 Se è necessario raccogliere la registrazione diagnostica dalle macchine virtuali di Azure per facilitare la risoluzione dei problemi relativi al punto di distribuzione cloud, usare l'esempio di PowerShell seguente per abilitare l'estensione di diagnostica del servizio per la sottoscrizione:<!--514275-->  
 

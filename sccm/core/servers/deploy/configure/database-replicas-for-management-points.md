@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare una replica di database per ridurre il carico della CPU dovuto ai punti di gestione nel server di database del sito.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: b06f781b-ab25-4d9a-b128-02cbd7cbcffe
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 31562587bfd84a4845ffaa4eb1d4f419d995d9d0
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 8d413221f7dc4ea905844ad3b2dbe08826314a54
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798810"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606111"
 ---
 # <a name="database-replicas-for-management-points-for-configuration-manager"></a>Repliche di database per i punti di gestione per Configuration Manager
 
@@ -28,7 +28,7 @@ I siti primari di Configuration Manager possono usare una replica di database pe
 -   Questo può ridurre i requisiti di elaborazione della CPU nel server di database del sito grazie all'offload delle attività di elaborazione frequenti correlate ai client.  Un esempio di attività di elaborazione frequenti per i client include i siti in cui sono presenti moltissimi client che richiedono spesso criteri client  
 
 
-##  <a name="bkmk_Prepare"></a> Predisporre l'uso delle repliche di database  
+##  <a name="prepare-to-use-database-replicas"></a><a name="bkmk_Prepare"></a> Predisporre l'uso delle repliche di database  
 **Informazioni sulle repliche di database per i punti di gestione:**  
 
 -   Le repliche sono una copia parziale del database del sito che viene replicato in un'istanza separata di SQL Server:  
@@ -83,7 +83,7 @@ I siti primari di Configuration Manager possono usare una replica di database pe
 
 -   **Più repliche in un'unica istanza di SQL Server**:  se si configura un server di replica di database per ospitare più repliche di database per i punti di gestione (ogni replica deve trovarsi in un'istanza separata), è necessario usare uno script di configurazione modificato (dal passaggio 4 della sezione successiva) per evitare di sovrascrivere il certificato autofirmato usato dalle repliche di database configurate in precedenza in tale server.  
 
-##  <a name="BKMK_DBReplica_Config"></a> Configurare le repliche di database  
+##  <a name="configure-database-replicas"></a><a name="BKMK_DBReplica_Config"></a> Configurare le repliche di database  
 La configurazione di una replica di database prevede i passaggi seguenti:  
 
 -   [Passaggio 1: Configurare il server di database del sito per la pubblicazione della replica di database](#BKMK_DBReplica_ConfigSiteDB)  
@@ -96,7 +96,7 @@ La configurazione di una replica di database prevede i passaggi seguenti:
 
 -   [Passaggio 5: Configurare SQL Server Service Broker per il server di replica di database](#BKMK_DBreplica_SSB)  
 
-###  <a name="BKMK_DBReplica_ConfigSiteDB"></a> Passaggio 1: Configurare il server di database del sito per la pubblicazione della replica di database  
+###  <a name="step-1---configure-the-site-database-server-to-publish-the-database-replica"></a><a name="BKMK_DBReplica_ConfigSiteDB"></a> Passaggio 1: Configurare il server di database del sito per la pubblicazione della replica di database  
  Usare la seguente procedura come esempio di configurazione del server di database del sito in un computer Windows Server 2008 R2 per la pubblicazione della replica di database. Se si dispone di una versione diversa del sistema operativo, fare riferimento alla documentazione del sistema operativo e modificare di conseguenza i passaggi di questa procedura.  
 
 ##### <a name="to-configure-the-site-database-server"></a>Per configurare il server di database del sito  
@@ -128,7 +128,7 @@ La configurazione di una replica di database prevede i passaggi seguenti:
 
 Al termine della stored procedure, il server di database del sito è configurato per la pubblicazione della replica di database.  
 
-###  <a name="BKMK_DBReplica_ConfigSrv"></a> Passaggio 2: Configurare il server di replica di database  
+###  <a name="step-2---configuring-the-database-replica-server"></a><a name="BKMK_DBReplica_ConfigSrv"></a> Passaggio 2: Configurare il server di replica di database  
 Il server di replica di database è un computer che esegue SQL Server e ospita una replica del database del sito che verrà usata dai punti gestione. In base a una pianificazione fissa, il server di replica di database sincronizza la propria copia del database con la replica di database pubblicata dal server di database del sito.  
 
 Il server di replica di database deve soddisfare gli stessi requisiti del server di database del sito. Tuttavia, il server di replica di database può eseguire una versione o un'edizione diversa di SQL Server rispetto a quella usata dal server di database del sito. Per informazioni sulle versioni di SQL Server supportate, vedere l'argomento [Supporto per le versioni di SQL Server per Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md).  
@@ -209,7 +209,7 @@ Usare la seguente procedura come esempio di configurazione di un server di repli
 
    La replica di database ora può essere usata da un punto di gestione.  
 
-###  <a name="BKMK_DBReplica_ConfigMP"></a> Passaggio 3: Configurare i punti di gestione per l'uso della replica di database  
+###  <a name="step-3---configure-management-points-to-use-the-database-replica"></a><a name="BKMK_DBReplica_ConfigMP"></a> Passaggio 3: Configurare i punti di gestione per l'uso della replica di database  
  È possibile configurare un punto di gestione in un sito primario per l'utilizzo di una replica di database durante l'installazione del ruolo del punto di gestione, oppure è possibile riconfigurare un punto di gestione esistente per l'utilizzo di una replica di database.  
 
  Per configurare un punto di gestione per l'utilizzo di una replica di database, usare le seguenti informazioni:  
@@ -228,7 +228,7 @@ Oltre a configurare il punto di gestione per l'utilizzo del server di replica di
 
 3.  Impostare **Autenticazione Windows** su **Attivato**, quindi chiudere **Gestione Internet Information Services (IIS)** .  
 
-###  <a name="BKMK_DBReplica_Cert"></a> Passaggio 4: Configurare un certificato autofirmato per il server di replica di database  
+###  <a name="step-4--configure-a-self-signed-certificate-for-the-database-replica-server"></a><a name="BKMK_DBReplica_Cert"></a> Passaggio 4: Configurare un certificato autofirmato per il server di replica di database  
  È necessario creare un certificato autofirmato nel server di replica di database e renderlo disponibile per ogni punto di gestione che utilizzerà il server di replica di database.  
 
  Il certificato è automaticamente disponibile per un punto di gestione installato nel server di replica di database. Tuttavia, per rendere il certificato disponibile ai punti di gestione remoti, è necessario esportare il certificato e quindi aggiungerlo all'archivio certificati Persone attendibili del punto di gestione remoto.  
@@ -409,7 +409,7 @@ Oltre a configurare il punto di gestione per l'utilizzo del server di replica di
 
     5.  Fare clic su **Fine** per chiudere la procedura guidata e completare la configurazione dei certificati nel punto di gestione.  
 
-###  <a name="BKMK_DBreplica_SSB"></a> Passaggio 5: Configurare SQL Server Service Broker per il server di replica di database  
+###  <a name="step-5---configure-the-sql-server-service-broker-for-the-database-replica-server"></a><a name="BKMK_DBreplica_SSB"></a> Passaggio 5: Configurare SQL Server Service Broker per il server di replica di database  
 Per supportare la notifica client con una replica di database per un punto di gestione, è necessario configurare la comunicazione tra il server di database del sito e il server di replica di database per SQL Server Service Broker. A tale scopo, è necessario configurare ogni database con le informazioni sull'altro database e scambiare i certificati tra i due database per una comunicazione protetta.  
 
 > [!NOTE]  
@@ -449,20 +449,20 @@ Per supportare la notifica client con una replica di database per un punto di ge
 
    Alcuni minuti dopo aver completato la configurazione del database del sito e del database della replica di database, Notification Manager imposta la conversazione di Service Broker nel sito primario per la notifica client dal database del sito primario alla replica di database.  
 
-###  <a name="bkmk_supscript"></a> Script supplementari per ulteriori repliche di database in un'unica istanza di SQL Server  
+###  <a name="supplemental-script-for-additional-database-replicas-on-a-single-sql-server"></a><a name="bkmk_supscript"></a> Script supplementari per ulteriori repliche di database in un'unica istanza di SQL Server  
  Quando si usa lo script del passaggio 4 per configurare un certificato autofirmato per il server di replica di database in un'istanza di Server SQL in cui è già presente una replica di database che si intende continuare a usare, è necessario usare una versione modificata dello script originale. Le modifiche seguenti impediscono allo script di eliminare un certificato esistente nel server e creano i certificati successivi con nomi descrittivi univoci.  Modificare lo script originale nel modo seguente:  
 
 -   Impostare come commento (impedire l'esecuzione) ogni riga tra le voci di script **# Delete existing cert if one exists** e **# Create the new cert**. A questo scopo, aggiungere il carattere  **#**  all'inizio di tutte le righe interessate.  
 
 -   Per ogni replica di database successiva in cui si usa questo script di configurazione, aggiornare il nome descrittivo per il certificato.  A questo scopo, modificare la riga **$enrollment.CertificateFriendlyName = "ConfigMgr SQL Server Identification Certificate"** e sostituire **ConfigMgr SQL Server Identification Certificate** con un nuovo nome, ad esempio  **ConfigMgr SQL Server Identification Certificate1**.  
 
-##  <a name="BKMK_DBReplicaOps"></a> Gestire le configurazioni di replica di database  
+##  <a name="manage-database-replica-configurations"></a><a name="BKMK_DBReplicaOps"></a> Gestire le configurazioni di replica di database  
  Quando si usa una replica di database in un sito, usare le informazioni nelle seguenti sezioni per integrare i processi di disinstallazione di un replica di database, disinstallazione di un sito che usa una replica di database oppure spostamento del database del sito in una nuova installazione di SQL Server. Quando si usano le informazioni delle seguenti sezioni per eliminare delle pubblicazioni, usare le informazioni disponibili per l'eliminazione di repliche transazionali per la versione di SQL Server usata per la replica di database. Se ad esempio si usa SQL Server 2008 R2, vedere [Procedura: Eliminare una pubblicazione (programmazione Transact-SQL della replica)](https://go.microsoft.com/fwlink/p/?LinkId=273934).  
 
 > [!NOTE]  
 >  Dopo aver ripristinato il database di un sito che era stato configurato per le repliche di database, prima di poter usare le repliche è necessario riconfigurare ciascuna replica del database, ricreando sia le pubblicazioni sia le sottoscrizioni.  
 
-###  <a name="BKMK_UninstallDbReplica"></a> Disinstallare una replica di database  
+###  <a name="uninstall-a-database-replica"></a><a name="BKMK_UninstallDbReplica"></a> Disinstallare una replica di database  
  Quando si usa una replica di database per un punto di gestione, potrebbe essere necessario disinstallare la replica di database per un periodo di tempo e quindi riconfigurarla per l'utilizzo. Ad esempio, è necessario rimuovere le repliche di database prima di aggiornare un sito di Configuration Manager a un nuovo Service Pack. Dopo aver completato l'aggiornamento del sito, è possibile ripristinare la replica di database per l'utilizzo.  
 
  Usare i seguenti passaggi per disinstallare una replica di database.  
@@ -485,7 +485,7 @@ Per supportare la notifica client con una replica di database per un punto di ge
 
 5.  Dopo aver eliminato la pubblicazione, la sottoscrizione e la replica di database e aver disattivato la pubblicazione nel server di database del sito, la replica di database verrà disinstallata.  
 
-###  <a name="BKMK_DBReplicaOps_Uninstall"></a> Disinstallare un server del sito che pubblica una replica di database  
+###  <a name="uninstall-a-site-server-that-publishes-a-database-replica"></a><a name="BKMK_DBReplicaOps_Uninstall"></a> Disinstallare un server del sito che pubblica una replica di database  
  Prima di disinstallare un sito che pubblica una replica di database, usare i seguenti passaggi per eseguire la pulizia della pubblicazione e delle sottoscrizioni.  
 
 1.  Usare **SQL Server Management Studio** per eliminare la pubblicazione della replica di database dal database del server del sito.  
@@ -494,7 +494,7 @@ Per supportare la notifica client con una replica di database per un punto di ge
 
 3.  Disinstallare il sito.  
 
-###  <a name="BKMK_DBReplicaOps_Move"></a> Spostare un database del server del sito che pubblica una replica di database  
+###  <a name="move-a-site-server-database-that-publishes-a-database-replica"></a><a name="BKMK_DBReplicaOps_Move"></a> Spostare un database del server del sito che pubblica una replica di database  
  Quando si sposta il database del sito in un nuovo computer, usare i seguenti passaggi:  
 
 1.  Usare **SQL Server Management Studio** per eliminare la pubblicazione della replica di database dal database del server del sito.  

@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle esclusioni dell'antivirus consigliate da usare per la risoluzione dei problemi.
 ms.date: 10/31/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: deb470e3-6f6b-4ccf-b3d8-1598d79d3490
 author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 8d01a04e5527d84b2e67040671b255133821fe73
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 62d58f571415853c01b9147780cd72df1c4c91ca
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75800543"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604314"
 ---
 # <a name="recommended-antivirus-exclusions-for-configuration-manager"></a>Esclusioni dell'antivirus consigliate per Configuration Manager
 

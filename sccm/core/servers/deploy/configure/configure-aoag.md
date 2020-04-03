@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Configurare e gestire i gruppi di disponibilità Always On di SQL Server con Configuration Manager
 ms.date: 09/05/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 7e4ec207-bb49-401f-af1b-dd705ecb465d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: ec8ff67f131d065eda98152925aa7a6f4a949b20
-ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
+ms.openlocfilehash: d61fe4faa122045ac457c2ba3c54f459561759de
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77035216"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606174"
 ---
 # <a name="configure-sql-server-always-on-availability-groups-for-configuration-manager"></a>Configurare gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -29,7 +29,7 @@ Prima di iniziare:
 - Acquisire familiarità con la documentazione di SQL Server relativa all'uso dei gruppi di disponibilità e alle procedure correlate. Tali informazioni sono necessarie per completare gli scenari seguenti.
 
 
-## <a name="bkmk_create"></a> Creare e configurare un gruppo di disponibilità
+## <a name="create-and-configure-an-availability-group"></a><a name="bkmk_create"></a> Creare e configurare un gruppo di disponibilità
 
 Adottare la procedura seguente per creare un gruppo di disponibilità e quindi spostare una copia del database del sito nel gruppo di disponibilità creato.
 
@@ -87,7 +87,7 @@ Adottare la procedura seguente per creare un gruppo di disponibilità e quindi s
 6. Quando tutte le repliche soddisfano i requisiti, il gruppo di disponibilità è pronto per essere usato con Configuration Manager.
 
 
-## <a name="bkmk_configure"></a> Configurare un sito per l'uso del gruppo di disponibilità
+## <a name="configure-a-site-to-use-the-availability-group"></a><a name="bkmk_configure"></a> Configurare un sito per l'uso del gruppo di disponibilità
 
 Dopo aver [creato e configurato il gruppo di disponibilità](#bkmk_create), usare la funzione di manutenzione del sito di Configuration Manager per configurare il sito affinché usi il database ospitato dal gruppo di disponibilità.
 
@@ -110,11 +110,11 @@ L'installazione di un nuovo sito con il proprio database in un gruppo di disponi
 5. Dopo aver specificato le informazioni per il nuovo percorso del database, completare l'installazione con il processo e le configurazioni normali.
 
 
-## <a name="bkmk_sync"></a> Membri di replica sincrona  
+## <a name="synchronous-replica-members"></a><a name="bkmk_sync"></a> Membri di replica sincrona  
 
 Se il database del sito è ospitato in un gruppo di disponibilità, usare le procedure seguenti per aggiungere o rimuovere membri di replica sincrona. Per altre informazioni sul tipo e sul numero di repliche supportate, vedere [Configurazioni dei gruppi di disponibilità](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#availability-group-configurations).
 
-### <a name="bkmk_sync-add"></a> Aggiungere un nuovo membro di replica sincrona
+### <a name="add-a-new-synchronous-replica-member"></a><a name="bkmk_sync-add"></a> Aggiungere un nuovo membro di replica sincrona
 
 <!--3127336-->
 A partire dalla versione 1906, eseguire l'installazione di Configuration Manager per aggiungere un nuovo membro di replica sincrona.
@@ -140,7 +140,7 @@ A partire dalla versione 1906 è possibile usare l'installazione di Configuratio
 Per altre informazioni sull'esecuzione manuale di questo processo nella versione 1902 o precedenti, vedere [Rimuovere una replica secondaria da un gruppo di disponibilità](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/remove-a-secondary-replica-from-an-availability-group-sql-server).  
 
 
-## <a name="bkmk_async"></a> Repliche asincrone
+## <a name="asynchronous-replicas"></a><a name="bkmk_async"></a> Repliche asincrone
 
 Nel gruppo di disponibilità usato con Configuration Manager è possibile usare una replica asincrona. Non è necessario eseguire gli script di configurazione richiesti per configurare una replica sincrona perché la replica asincrona non è supportata per il database del sito.
 
@@ -157,7 +157,7 @@ Usare la replica asincrona per il ripristino del database del sito.
 1. Dopo aver arrestato il sito, usare la replica asincrona anziché un [database ripristinato manualmente](/sccm/core/servers/manage/recover-sites#use-a-site-database-that-has-been-manually-recovered).
 
 
-## <a name="bkmk_stop"></a> Interrompere l'uso di un gruppo di disponibilità
+## <a name="stop-using-an-availability-group"></a><a name="bkmk_stop"></a> Interrompere l'uso di un gruppo di disponibilità
 
 Usare la procedura seguente se non si vuole più ospitare il database del sito in un gruppo di disponibilità. Con questo processo, il database del sito viene riportato in una istanza singola di SQL Server.
 

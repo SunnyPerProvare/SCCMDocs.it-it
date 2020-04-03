@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Proteggere i dati dei dispositivi con cancellazione completa, cancellazione selettiva, blocco remoto o reimpostazione del codice usando Configuration Manager gestione di dispositivi mobili (MDM) locale.
 ms.date: 08/14/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-hybrid
+ms.technology: configmgr-mdm
 ms.topic: conceptual
 ms.assetid: 770da7bd-02dd-474a-9604-93ff1ea0c1e4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: feacf91e43404401bae62c5527798c7a56356661
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: e9849f3bef5aa67dcc45b00f64487242230edc2e
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76032660"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605403"
 ---
 # <a name="manage-devices-and-protect-data-with-on-premises-mdm-in-configuration-manager"></a>Gestire i dispositivi e proteggere i dati con MDM locale in Configuration Manager
 
@@ -53,7 +53,7 @@ Le tabelle seguenti descrivono i dati che vengono rimossi e l'effetto sui dati c
 
 #### <a name="windows-10-windows-81-windows-rt-81-and-windows-rt"></a>Windows 10, Windows 8.1, Windows RT 8,1 e Windows RT
 
-|Content|Comportamento di cancellazione selettiva|  
+|Contenuto|Comportamento di cancellazione selettiva|  
 |-------|--------|
 |App e dati associati installati da Configuration Manager|Disinstalla le app e rimuove le chiavi di sideload. Revoca la chiave di crittografia per le app che usano la cancellazione selettiva di Windows e i dati non sono più accessibili.|
 |Profili VPN e Wi-Fi|Rimuove i profili|
@@ -63,7 +63,7 @@ Le tabelle seguenti descrivono i dati che vengono rimossi e l'effetto sui dati c
 
 #### <a name="windows-10-mobile-windows-phone-80-and-windows-phone-81"></a>Windows 10 Mobile, Windows Phone 8,0 e Windows Phone 8,1
 
-|Content|Comportamento di cancellazione selettiva|  
+|Contenuto|Comportamento di cancellazione selettiva|  
 |-------|--------|
 |App aziendali e dati associati installati da Configuration Manager|Disinstalla le app e rimuove i dati dell'app aziendale.|
 |Profili VPN e Wi-Fi|Rimuove i profili per Windows 10 mobile e Windows Phone 8,1|
@@ -81,10 +81,10 @@ Le seguenti impostazioni vengono inoltre rimosse dai dispositivi Windows 10 Mobi
 - **Numero di errori di accesso ripetuti consentiti prima della cancellazione del dispositivo**  
 - **Minuti di inattività prima che venga richiesta la password**  
 - **Tipo di password richiesto - numero minimo di set di caratteri**  
-- **Consenti dispositivo foto/video**
+- **Consenti la fotocamera**
 - **Richiedi crittografia sui dispositivi mobili**  
 - **Consenti archivi rimovibili**  
-- **Consenti Web browser**  
+- **Consenti browser Web**  
 - **Consenti archivio applicazioni**  
 - **Consenti acquisizione schermo**  
 - **Consenti georilevazione**  
@@ -118,13 +118,13 @@ Le seguenti impostazioni vengono inoltre rimosse dai dispositivi Windows 10 Mobi
 
 Se un utente dimentica il proprio codice, usare questa azione per forzare un nuovo codice temporaneo nel dispositivo. È anche possibile rimuovere completamente il codice di accesso. La tabella seguente illustra il funzionamento della reimpostazione del passcode su diverse piattaforme per dispositivi mobili.
 
-| Versione sistema operativo | Reimpostazione del passcode |
+| Versione del sistema operativo | Reimpostazione del passcode |
 |------------|----------------|
 | Windows 10 | Non supportato |
 | Windows 10 Mobile | Supportato, esclusi i dispositivi aggiunti a Azure Active Directory |
 | Windows Phone 8 e Windows Phone 8.1 | Supportato |
 | Windows RT 8.1 | Non supportato |
-| Windows 8,1 | Non supportato |
+| Windows 8.1 | Non supportato |
 
 > [!Note]
 > Avviare l'azione di reimpostazione del codice dal sito di livello superiore. Se ad esempio si usa un sito di amministrazione centrale, è possibile eseguire l'azione solo in tale sito. Se si usa un sito primario autonomo, è possibile eseguire l'azione solo da tale sito.
@@ -149,12 +149,12 @@ Se un utente dimentica il proprio codice, usare questa azione per forzare un nuo
 
 Se un utente perde il dispositivo, è possibile bloccare il dispositivo in modalità remota. Nella tabella seguente è illustrato il funzionamento del blocco remoto su diverse piattaforme per dispositivi mobili.  
 
-|Versione sistema operativo|Blocco remoto|
+|Versione del sistema operativo|Blocco remoto|
 |----------|-----------|
 |Windows 10|Non supportato|
 |Windows Phone 8 e Windows Phone 8.1|Supportato|
 |Windows RT 8.1|Supportato se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|
-|Windows 8,1|Supportato se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|
+|Windows 8.1|Supportato se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|
 
 > [!Note]
 > Avviare l'azione di blocco remoto dal sito di livello superiore. Se ad esempio si usa un sito di amministrazione centrale, è possibile eseguire l'azione solo in tale sito. Se si usa un sito primario autonomo, eseguire l'azione da tale sito.

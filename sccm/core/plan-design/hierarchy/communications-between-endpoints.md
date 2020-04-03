@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle modalità di comunicazione tra i componenti e i sistemi del sito di Configuration Manager in una rete.
 ms.date: 10/25/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 68fe0e7e-351e-4222-853a-877475adb589
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e1dc41e9ccee7a59d5014ace4e2db5d9071c5261
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: a588ff859038b672929fa3e13cb16510353754bc
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79405444"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600727"
 ---
 # <a name="communications-between-endpoints-in-configuration-manager"></a>Comunicazioni tra gli endpoint in Configuration Manager
 

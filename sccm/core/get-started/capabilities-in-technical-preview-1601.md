@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1601 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: aae1cf2f-2c04-4f68-a03a-f4a925433c09
 author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 63274efc1bbc4a22c6f3f38d7e00b2d4f1112150
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 91c5751fd8bcd480d05ef5a7c27675f5d3a74ef6
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75805269"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80602911"
 ---
 # <a name="capabilities-in-technical-preview-1601-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1601 per Configuration Manager
 
@@ -57,7 +57,7 @@ Questo articolo presenta le funzionalità disponibili nella Technical Preview pe
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
-##  <a name="bkmk_hybrid1"></a> Miglioramenti dell'integrazione di Microsoft Intune  
+##  <a name="improvements-to-microsoft-intune-integration"></a><a name="bkmk_hybrid1"></a> Miglioramenti dell'integrazione di Microsoft Intune  
 Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità seguenti:  
 
 ### <a name="improvements-to-conditional-access"></a>Miglioramenti per l'accesso condizionale  
@@ -123,7 +123,7 @@ Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità s
 
      Per usare questa opzione, vedere la pagina **Generale** della **Configurazione guidata dei criteri di accesso condizionale** per Exchange locale.  
 
-##  <a name="bkmk_clientStatus"></a> Stato online del client  
+##  <a name="client-online-status"></a><a name="bkmk_clientStatus"></a> Stato online del client  
 A partire dalla versione Technical Preview 1601, è possibile appurare rapidamente se un client è online o offline nella console di Configuration Manager. Grazie alle icone e alle colonne aggiornate negli elenchi di dispositivi della console, è possibile valutare lo stato dei client nell'ambiente in uso per identificare aree problematiche e altri problemi che richiedono attenzione.  
 
 Un client è online se è attualmente connesso a un ruolo del sistema del sito del punto di gestione di Configuration Manager. Fino a quando il punto di gestione riceve messaggi di tipo ping dal client, il relativo stato è online. Se il punto di gestione non riceve un messaggio per circa 5 minuti, lo stato del client diventa offline.  
@@ -156,7 +156,7 @@ Un client è online se è attualmente connesso a un ruolo del sistema del sito d
 
    Per visualizzare le modifiche più recenti allo stato del client, aggiornare la console.  
 
-##  <a name="bkmk_appmgmt1601"></a> Miglioramenti per la gestione delle applicazioni  
+##  <a name="improvements-to-application-management"></a><a name="bkmk_appmgmt1601"></a> Miglioramenti per la gestione delle applicazioni  
  Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità seguenti:  
 
 ### <a name="manage-volume-purchased-apps-for-ios-devices"></a>Gestione delle app acquistate tramite Volume Purchase Program per dispositivi iOS  
@@ -192,7 +192,7 @@ Un client è online se è attualmente connesso a un ruolo del sistema del sito d
 
 -   Nella **Distribuzione guidata del software**, nella pagina **Criteri di configurazione dell'app**, associare i criteri di configurazione dell'app creati a un tipo di distribuzione compatibile dall'applicazione.  
 
-##  <a name="bkmk_compliance1601"></a> Miglioramenti per le impostazioni di conformità  
+##  <a name="improvements-to-compliance-settings"></a><a name="bkmk_compliance1601"></a> Miglioramenti per le impostazioni di conformità  
  Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità seguenti:  
 
 ### <a name="microsoft-edge-browser-settings"></a>Impostazioni del browser Microsoft Edge  

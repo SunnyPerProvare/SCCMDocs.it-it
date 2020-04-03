@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Estendere lo schema di Active Directory per Configuration Manager per semplificare il processo di distribuzione e configurazione dei client.
 ms.date: 09/22/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: bc15ee7e-4d0a-4463-ae2c-f72d8d45d65d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 523c79586f29ca2fcf0bb283de1d3f5e5373b588
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 3595273d55bf01158691fb46587ac264af16bffa
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799455"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604278"
 ---
 # <a name="prepare-active-directory-for-site-publishing"></a>Preparare Active Directory per la pubblicazione di siti
 

@@ -4,18 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1806 di Configuration Manager (Current Branch).
 ms.date: 10/26/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 0249dbd3-1e85-4d05-a9e5-420fbe44d850
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: ccbfbd043c8ac4e648857ebcea726ad41e7c7538
-ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
+ROBOTS: NOINDEX
+ms.openlocfilehash: 0a6122b550480bc4c0f3eed462c095189caa1b6f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78167218"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604531"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novità della versione 1806 di Configuration Manager (Current Branch)
 
@@ -164,7 +165,7 @@ Quando si usa il metodo di installazione push client per il client di Configurat
 Per altre informazioni , vedere [Come installare i client con l'installazione push client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_ClientPush).
 
 
-### <a name="bkmk_ehttp"></a>Sistema del sito HTTP migliorato
+### <a name="enhanced-http-site-system"></a><a name="bkmk_ehttp"></a>Sistema del sito HTTP migliorato
 <!--1356889,1358228-->
 L'uso delle comunicazioni HTTPS è consigliato per tutti i percorsi di comunicazione di Configuration Manager, ma può essere difficile per alcuni clienti a causa del sovraccarico di gestione dei certificati PKI.
 
@@ -504,7 +505,7 @@ Per altre informazioni, vedere [Report degli aggiornamenti software](/sccm/sum/d
 
 ## <a name="inventory"></a>Argomento
 
-### <a name="bkmk_bigint"></a> Miglioramento all'inventario hardware per valori interi di grandi dimensioni
+### <a name="improvement-to-hardware-inventory-for-large-integer-values"></a><a name="bkmk_bigint"></a> Miglioramento all'inventario hardware per valori interi di grandi dimensioni
 <!--1357880-->
 L'inventario hardware aveva in precedenza un limite per numeri interi maggiori di 4.294.967.296 (2^32). Questo limite può essere raggiunto per attributi come le dimensioni delle unità disco rigido in byte. Il punto di gestione non elaborava valori interi oltre questo limite e quindi nessun valore veniva archiviato nel database. In questa versione, il limite è stato aumentato a 18.446.744.073.709.551.616 (2^64). 
 

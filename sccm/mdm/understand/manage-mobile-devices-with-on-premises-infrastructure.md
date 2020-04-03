@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulla gestione di dispositivi mobili (MDM) locale in Configuration Manager
 ms.date: 01/09/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-hybrid
+ms.technology: configmgr-mdm
 ms.topic: conceptual
 ms.assetid: 497c05c7-fe9f-4b88-983b-1c5b3d59308e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 644b55041ca89a7fefa6d0e316529bdc27197df7
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: ef3c956697c5ab1dc33705a8c48a939bdd5040cb
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76032569"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605298"
 ---
 # <a name="on-premises-mdm-in-configuration-manager"></a>MDM locale in Configuration Manager
 

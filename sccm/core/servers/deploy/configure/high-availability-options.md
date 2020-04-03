@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come distribuire Configuration Manager usando opzioni che consentono di mantenere un livello elevato di disponibilità dei servizi.
 ms.date: 11/29/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 1a38421d-24c1-4fef-bf6c-42fce53109ac
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 54f60c22d8042c6f0e4818044f9863046854a5e7
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 5223ba909c4d5204a0e55abbbef0ec4ad4b80593
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798766"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606049"
 ---
 # <a name="high-availability-options-for-configuration-manager"></a>Opzioni di disponibilità elevata per Configuration Manager
 
@@ -64,7 +64,7 @@ Ad esempio, i client di Configuration Manager in genere funzionano in maniera au
 - I report predefiniti forniscono informazioni su operazioni in corso, operazioni storiche e tendenze correnti. Configuration Manager supporta anche messaggi basati sullo stato che forniscono informazioni quasi in tempo reale sulle operazioni in corso.  
 
 
-## <a name="bkmk_snh"></a> Disponibilità elevata per siti e gerarchie  
+## <a name="high-availability-for-sites-and-hierarchies"></a><a name="bkmk_snh"></a> Disponibilità elevata per siti e gerarchie  
 
 ### <a name="use-a-site-server-in-passive-mode"></a>Usare un server del sito in modalità passiva
 
@@ -105,7 +105,7 @@ Quando si installano più istanze dei ruoli del sistema del sito critici, si for
 Il provider SMS fornisce il punto di contatto amministrativo per una o più console di Configuration Manager. Per fornire ridondanza per i punti di contatto per l'amministrazione del sito e della gerarchia, installare più provider SMS.  
 
 
-## <a name="bkmk_ssr"></a> Disponibilità elevata per ruoli del sistema del sito
+## <a name="high-availability-for-site-system-roles"></a><a name="bkmk_ssr"></a> Disponibilità elevata per ruoli del sistema del sito
 
 In ogni sito, si distribuiscono i ruoli del sistema del sito per fornire i servizi che si desidera che i client utilizzino in tale sito. Il database del sito contiene le informazioni di configurazione per il sito e per tutti i client. Utilizzare una o più delle opzioni disponibili per fornire elevata disponibilità al database del sito, nonché il ripristino del sito e del database del sito se necessario.  
 
@@ -181,7 +181,7 @@ Ogni ruolo di sistema del sito del catalogo applicazioni fornisce le stesse info
 Per altre informazioni su questa impostazione client e sul funzionamento del rilevamento automatico, vedere le impostazioni client [Agente computer](/sccm/core/clients/deploy/about-client-settings#computer-agent).  
 
 
-## <a name="bkmk_client"></a> Disponibilità elevata per i client  
+## <a name="high-availability-for-clients"></a><a name="bkmk_client"></a> Disponibilità elevata per i client  
 
 ### <a name="client-operations-are-autonomous"></a>Le operazioni dei client sono autonome
 
@@ -228,7 +228,7 @@ Il database del sito, anziché il client singolo, mantiene informazioni importan
 - Eventuali errori di un computer client non compromettono l'integrità delle informazioni archiviate nel database. Queste informazioni possono rimanere disponibili per la creazione di report.  
 
 
-## <a name="bkmk_nonHAoptions"></a> Opzioni per siti e ruoli del sistema del sito non a disponibilità elevata
+## <a name="options-for-sites-and-site-system-roles-that-arent-highly-available"></a><a name="bkmk_nonHAoptions"></a> Opzioni per siti e ruoli del sistema del sito non a disponibilità elevata
 
 Alcuni sistemi del sito non supportano istanze multiple in un sito o nella gerarchia. Queste informazioni consentono di prepararsi per i casi in cui i sistemi del sito passino in modalità offline.  
 

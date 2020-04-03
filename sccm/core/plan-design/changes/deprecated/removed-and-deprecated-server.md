@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su prodotti e sistemi operativi che Configuration Manager non supporta più per i server del sito.
 ms.date: 02/19/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: d53ac075-438b-41da-ab85-42f33982da0c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 0d49a9678f68cfd2120c1a1c6e6c32036a201408
-ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
+ms.openlocfilehash: 296a577bbda796fe536e401cc4a109e05fe5093a
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77516181"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605145"
 ---
 # <a name="removed-and-deprecated-for-configuration-manager-site-servers"></a>Elementi rimossi e deprecati per i server del sito di Configuration Manager
 

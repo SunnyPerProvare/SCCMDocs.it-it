@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Configurare i certificati per le comunicazioni attendibili con la gestione di dispositivi mobili (MDM) locale in Configuration Manager.
 ms.date: 01/09/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-hybrid
+ms.technology: configmgr-mdm
 ms.topic: conceptual
 ms.assetid: 2a7d7170-1933-40e9-96d6-74a6eb7278e2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: db78534fa58498c3b356033bac9a9a90ea1ffd05
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: a45351b0c88ebaebfcdfb1ecd71338f3c8dbaf41
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76032709"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605380"
 ---
 # <a name="set-up-certificates-for-trusted-communications-with-on-premises-mdm"></a>Configurare i certificati per le comunicazioni attendibili con MDM locale
 
@@ -34,9 +34,9 @@ Per i dispositivi registrati in blocco, è possibile includere il certificato ne
 Se si usa una CA pubblica nota, ad esempio VeriSign o GoDaddy, per emettere i certificati del server, è possibile evitare di dover installare manualmente il certificato radice attendibile in ogni dispositivo. La maggior parte dei dispositivi considera attendibili in modo nativo queste autorità pubbliche. Questo metodo è un'alternativa utile per i dispositivi registrati dall'utente, invece di installare il certificato in altri modi.
 
 > [!IMPORTANT]  
-> Esistono diversi modi per configurare i certificati per le comunicazioni attendibili tra i dispositivi e i server del sistema del sito per MDM locale. Le informazioni contenute in questo articolo sono un esempio di un modo per eseguire questa operazione. Questo metodo richiede Active Directory Servizi certificati, con un'autorità di certificazione e il ruolo registrazione Web autorità di certificazione. Per ulteriori informazioni, vedere [Servizi certificati Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740\(v=ws.11\)).
+> Esistono diversi modi per configurare i certificati per le comunicazioni attendibili tra i dispositivi e i server del sistema del sito per MDM locale. Le informazioni contenute in questo articolo sono un esempio di un modo per eseguire questa operazione. Questo metodo richiede Active Directory Servizi certificati, con un'autorità di certificazione e il ruolo registrazione Web autorità di certificazione. Per ulteriori informazioni, vedere [Active Directory Servizi certificati](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740\(v=ws.11\)).
 
-## <a name="bkmk_configCa"></a>Pubblicare il CRL
+## <a name="publish-the-crl"></a><a name="bkmk_configCa"></a>Pubblicare il CRL
 
 Per impostazione predefinita, l'autorità di certificazione Active Directory (CA) USA gli elenchi di revoche di certificati (CRL) basati su LDAP. Consente le connessioni al CRL per i dispositivi aggiunti a un dominio. Per consentire ai dispositivi non aggiunti a un dominio di considerare attendibili i certificati emessi dall'autorità di certificazione, aggiungere un CRL basato su HTTP.
 
@@ -60,7 +60,7 @@ Per impostazione predefinita, l'autorità di certificazione Active Directory (CA
 
 1. Nella finestra Publish CRL selezionare **solo Delta CRL**e quindi fare clic su **OK** per chiudere la finestra.
 
-## <a name="bkmk_certTempl"></a>Creare il modello di certificato
+## <a name="create-the-certificate-template"></a><a name="bkmk_certTempl"></a>Creare il modello di certificato
 
 La CA USA il modello di certificato del server Web per rilasciare i certificati per i server che ospitano i ruoli del sistema del sito. Questi server saranno endpoint SSL per le comunicazioni attendibili tra i ruoli del sistema del sito e i dispositivi registrati.
 
@@ -95,7 +95,7 @@ La CA USA il modello di certificato del server Web per rilasciare i certificati 
 
 1. Nella finestra **Abilita modelli di certificato** selezionare il nuovo modello. Ad esempio, il **server Web MDM ConfigMgr**. Fare quindi clic su **OK** per salvare e chiudere la finestra.
 
-## <a name="bkmk_requestCert"></a>Richiedere il certificato
+## <a name="request-the-certificate"></a><a name="bkmk_requestCert"></a>Richiedere il certificato
 
 Questo processo descrive come richiedere il certificato del server Web per IIS. Eseguire questo processo per ogni server del sistema del sito che ospita uno dei ruoli per MDM locale.
 
@@ -121,7 +121,7 @@ Questo processo descrive come richiedere il certificato del server Web per IIS. 
 
 Ogni server necessita di un certificato server Web univoco. Ripetere questo processo per ogni server che ospita uno dei ruoli del sistema del sito richiesti. Se un server ospita tutti i ruoli del sistema del sito, è sufficiente richiedere un certificato del server Web.
 
-## <a name="bkmk_bindCert"></a>Associare il certificato
+## <a name="bind-the-certificate"></a><a name="bkmk_bindCert"></a>Associare il certificato
 
 Il passaggio successivo consiste nell'associare il nuovo certificato al server Web. Seguire questa procedura per ogni server che ospita i ruoli del sistema del sito del punto di *registrazione* e del *punto proxy di registrazione* . Se un server ospita tutti i ruoli del sistema del sito, è necessario eseguire questo processo una sola volta.
 
@@ -138,7 +138,7 @@ Il passaggio successivo consiste nell'associare il nuovo certificato al server W
 
 1. Nell'elenco delle connessioni della console Gestione IIS selezionare il server Web. Nel pannello azione sul lato destro selezionare **Riavvia**. Questa azione riavvia il servizio server Web.
 
-## <a name="bkmk_exportCert"></a>Esportare il certificato radice attendibile
+## <a name="export-the-trusted-root-certificate"></a><a name="bkmk_exportCert"></a>Esportare il certificato radice attendibile
 
 Active Directory Servizi certificati installa automaticamente il certificato richiesto dalla CA in tutti i dispositivi aggiunti a un dominio. Per ottenere il certificato necessario per i dispositivi non aggiunti a un dominio per comunicare con i ruoli del sistema del sito, esportarlo dal certificato associato al server Web.
 

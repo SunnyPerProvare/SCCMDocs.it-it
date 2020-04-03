@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come eseguire l'aggiornamento di un'installazione di valutazione a installazione completa di Configuration Manager.
 ms.date: 02/7/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 9a32f5a3-9917-434f-9811-106170f404be
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f9c669829fe965352e036383e672d1d44942f5ef
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: a8a42b2538ff1baaceb6895d371081ac2a444c5f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75797955"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605840"
 ---
 # <a name="upgrade-an-evaluation-installation-of-configuration-manager-to-a-full-installation"></a>Aggiornare un'installazione di valutazione di Configuration Manager a un'installazione completa
 

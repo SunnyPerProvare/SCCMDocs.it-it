@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare i processi di migrazione per configurare i dati di cui si vuole eseguire la migrazione nell'ambiente di Configuration Manager Current Branch.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: a70bfbd4-757a-4468-9312-1c3b373ef9fc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 776ccdc7472b7bc34d26d34e49632e91d2374d85
-ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
+ms.openlocfilehash: 87aac20a2ac70e843bf17982375c92804de2b20e
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77516249"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604802"
 ---
 # <a name="plan-a-migration-job-strategy-in-configuration-manager"></a>Pianificare una strategia di processo di migrazione in Configuration Manager
 
@@ -29,7 +29,7 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
 
  Alcuni oggetti richiedono altro oltre alla migrazione dei dati dalla gerarchia di origine nella gerarchia di destinazione. Ad esempio, per eseguire la migrazione degli aggiornamenti software dai client alla gerarchia di destinazione, è necessario distribuire un punto di aggiornamento software attivo, configurare il catalogo dei prodotti e sincronizzare il punto di aggiornamento software con Windows Server Update Services (WSUS) nella gerarchia di destinazione.  
 
-##  <a name="Types_of_Migration"></a> Tipi di processi di migrazione  
+##  <a name="types-of-migration-jobs"></a><a name="Types_of_Migration"></a> Tipi di processi di migrazione  
  Configuration Manager supporta i tipi seguenti di processi di migrazione. Ogni tipo di processo è progettato per definire gli oggetti che è possibile includere nel processo.  
 
  **Migrazione raccolta** (supportata solo durante la migrazione da Configuration Manager 2007 SP2): Eseguire la migrazione di oggetti relative alle raccolte selezionate. Per impostazione predefinita, la migrazione di una raccolta include tutti gli oggetti che sono associati ai membri della raccolta. Quando si utilizza un processo di migrazione raccolta, è possibile escludere le istanze specifiche di oggetti.  
@@ -38,7 +38,7 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
 
  **Migrazione di oggetti di cui è già stata eseguita la migrazione**: Eseguire la migrazione degli oggetti di cui era già stata eseguita la migrazione quando questi sono stati aggiornati nella gerarchia di origine dopo l'ultima migrazione.  
 
-###  <a name="Objects_that_can_migrate"></a> Oggetti di cui è possibile eseguire la migrazione  
+###  <a name="objects-that-you-can-migrate"></a><a name="Objects_that_can_migrate"></a> Oggetti di cui è possibile eseguire la migrazione  
  Non tutti gli oggetti possono essere migrati da un tipo specifico di processo di migrazione. L'elenco seguente identifica il tipo di oggetti di cui è possibile eseguire la migrazione con ciascun tipo di processo di migrazione.  
 
 > [!NOTE]  
@@ -194,7 +194,7 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
     > [!IMPORTANT]  
     >  Sebbene sia possibile eseguire la migrazione di un pacchetto di applicazioni virtuali utilizzando la migrazione oggetto, non è possibile seguire la migrazione dei pacchetti utilizzando il tipo di processo di migrazione di **Migrazione di oggetti di cui è già stata eseguita la migrazione**. Al contrario, è necessario eliminare il pacchetto di applicazioni virtuali di cui è stata eseguita la migrazione dal sito di destinazione e quindi creare un nuovo processo di migrazione per eseguire la migrazione dell'applicazione virtuale.  
 
-##  <a name="About_Migration_Jobs"></a> Pianificazione generale di tutti i processi di migrazione  
+##  <a name="general-planning-for-all-migration-jobs"></a><a name="About_Migration_Jobs"></a> Pianificazione generale di tutti i processi di migrazione  
  Usare la Creazione guidata del processo di migrazione per creare un processo di migrazione per la migrazione degli oggetti nella gerarchia di destinazione. Il tipo di processo di migrazione creato determina quali oggetti sono disponibili per la migrazione. È possibile creare e usare più processi di migrazione per trasferire i dati dallo stesso sito di origine o da più siti di origine. L'utilizzo di un tipo di processo di migrazione non blocca l'utilizzo di un altro tipo di processo di migrazione.  
 
  Dopo che è stato eseguito il processo di migrazione, lo stato viene elencato come **Completato** e non può essere eseguito di nuovo. Tuttavia, è possibile creare un nuovo processo di migrazione per eseguire la migrazione degli oggetti che sono stati trasferiti dal processo originario. Il nuovo processo di migrazione può includere anche oggetti aggiuntivi. Quando si creano altri processi di migrazione, gli oggetti che sono stati trasferiti prima, presentano lo stato **Migrato**. È possibile selezionare gli oggetti per eseguire di nuovo la migrazione, ma, a meno che l'oggetto sia stato aggiornato nella gerarchia di origine, non sarà necessario eseguire nuovamente la migrazione di questi oggetti. Se l'oggetto è stato aggiornato nella gerarchia di origine dopo la migrazione originaria, è possibile identificare l'oggetto quando si utilizza il tipo di processo di migrazione di **Oggetti modificati dopo la migrazione**.  
@@ -240,7 +240,7 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
 ### <a name="specify-conflict-resolution-for-migrated-data"></a>Specificare la risoluzione dei conflitti per i dati di cui è stata eseguita la migrazione  
  Per impostazione predefinita, i processi di migrazione non sovrascrivono i dati nel database di destinazione, a meno che il processo di migrazione non sia configurato per ignorare o sovrascrivere i dati di cui è già stata eseguita la migrazione nel database di destinazione.  
 
-##  <a name="About_Collection_Migration"></a> Pianificare processi di migrazione raccolta  
+##  <a name="plan-for-collection-migration-jobs"></a><a name="About_Collection_Migration"></a> Pianificare processi di migrazione raccolta  
  I processi di migrazione raccolta sono disponibili solo quando si esegue la migrazione di dati da una gerarchia di origine che esegue una versione supportata di Configuration Manager 2007. Quando si esegue la migrazione per raccolta, è necessario specificare una o più raccolte di cui eseguire la migrazione. Per ogni raccolta specificata, il processo di migrazione seleziona automaticamente tutti gli oggetti correlati per la migrazione. Ad esempio, se si seleziona una raccolta specifica di utenti, vengono identificati i membri della raccolta e sarà possibile eseguire la migrazione delle distribuzioni associate a tale raccolta. Facoltativamente, è possibile selezionare altri oggetti di distribuzione associati a tali membri per eseguirne la migrazione. Tutti questi elementi selezionati vengono aggiunti all'elenco di oggetti di cui può essere eseguita la migrazione.  
 
  Quando viene eseguita la migrazione di una raccolta, Configuration Manager esegue anche la migrazione delle impostazioni della raccolta, incluse finestre di manutenzione e variabili di raccolta, ma non può eseguire la migrazione delle impostazioni della raccolta per il provisioning del client AMT.  
@@ -290,12 +290,12 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
 
  Per abilitare un programma dopo la migrazione, deselezionare **Disattiva il programma nei computer in cui è distribuito** nella scheda **Avanzate** delle proprietà del programma.  
 
-##  <a name="About_Object_Migration"></a> Pianificare processi di migrazione oggetto  
+##  <a name="plan-for-object-migration-jobs"></a><a name="About_Object_Migration"></a> Pianificare processi di migrazione oggetto  
  A differenza di migrazione di raccolte, è necessario selezionare ogni oggetto e l'istanza dell'oggetto di cui si desidera eseguire la migrazione. È possibile selezionare i singoli oggetti (ad esempio, annunci da una gerarchia di Configuration Manager 2007 o una pubblicazione da una gerarchia di System Center 2012 Configuration Manager o Configuration Manager Current Branch) da aggiungere all'elenco di oggetti di cui eseguire la migrazione per un determinato processo di migrazione. Il processo di migrazione oggetti non eseguirà la migrazione nel sito di destinazione di eventuali oggetti non aggiungi all'elenco di migrazione.  
 
  I processi di migrazione basati su oggetti non richiedono configurazione aggiuntiva rispetto alle configurazione applicabili a tutti i processi di migrazione.  
 
-##  <a name="About_Object_Migrations"></a> Pianificare processi di migrazione di oggetti di cui è già stata eseguita la migrazione  
+##  <a name="plan-for-previously-migrated-object-migration-jobs"></a><a name="About_Object_Migrations"></a> Pianificare processi di migrazione di oggetti di cui è già stata eseguita la migrazione  
  Quando un oggetto di cui è già stata eseguita la migrazione nella gerarchia di destinazione viene aggiornato nella gerarchia di origine, sarà possibile eseguire di nuovo la migrazione di tale oggetto utilizzando il tipo di processo **Oggetti modificati dopo la migrazione** . Ad esempio, quando si rinominano o si aggiornano i file di origine per un pacchetto nella gerarchia di origine, la versione del pacchetto viene incrementata nella gerarchia di origine. Dopo gli incrementi di versione del pacchetto, il pacchetto può essere identificato per la migrazione da questo tipo di processo.  
 
  Questo tipo di processo è analogo al tipo di migrazione oggetti, ma quando si selezionano gli oggetti di cui eseguire la migrazione è possibile selezionare solo gli oggetti aggiornati dopo la migrazione da parte di un processo di migrazione precedente.   

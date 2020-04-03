@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare Policy Spy per visualizzare e risolvere i problemi del sistema di criteri nei client Configuration Manager.
 ms.date: 07/30/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 1012ec24-27d9-4193-8236-918d283c7448
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 2212b401a205280c159dfddf916be57186575964
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 05ca03297e78a35ca5fb05c27b6bfe19d442833f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826034"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599107"
 ---
 # <a name="policy-spy"></a>Policy Spy
 
@@ -28,7 +28,7 @@ Policy Spy è uno [strumento di Configuration Manager](/sccm/core/support/tools)
 > `There is no client installed on this machine. Connection to client policy failed with error 80041003`
 
 
-## <a name="bkmk_policyspy-syntax"></a> Sintassi della riga di comando
+## <a name="command-line-syntax"></a><a name="bkmk_policyspy-syntax"></a> Sintassi della riga di comando
 
 Policy Spy è destinato principalmente all'uso tramite l'interfaccia utente. Fornisce opzioni della riga di comando limitate per supportare l'automazione e l'elaborazione batch.
 
@@ -85,12 +85,12 @@ Il riquadro dei risultati offre viste diverse del sistema di criteri nel compute
 - [Eventi](#bkmk_policyspy-events)
 
 
-### <a name="bkmk_policyspy-actual"></a> Actual (Effettivi)
+### <a name="actual"></a><a name="bkmk_policyspy-actual"></a> Actual (Effettivi)
 
 Questa scheda visualizza i criteri correnti del client. I criteri correnti determinano il comportamento di un client e quello degli agenti client, ad esempio la distribuzione e l'inventario software. La scheda visualizza i risultati in formato albero con un nodo radice per lo spazio dei nomi del computer e lo spazio dei nomi specifico di ogni utente. Espandere il nodo di uno spazio dei nomi per visualizzare un elenco di classi. Espandere una classe per visualizzare un elenco delle istanze. L'elenco di classi include solo le classi con istanze.
 
 
-### <a name="bkmk_policyspy-requested"></a> Requested (Richiesti)
+### <a name="requested"></a><a name="bkmk_policyspy-requested"></a> Requested (Richiesti)
 
 Questa scheda visualizza le assegnazioni dei criteri che il client ha recuperato dal sito assegnato. La scheda visualizza i risultati in formato albero con un nodo radice per lo spazio dei nomi del computer e lo spazio dei nomi specifico di ogni utente. Espandendo il nodo di uno spazio dei nomi, vengono visualizzati i nodi seguenti:  
 
@@ -102,12 +102,12 @@ Questa scheda visualizza le assegnazioni dei criteri che il client ha recuperato
 > Possono esistere più istanze con lo stesso nome perché il client non ha unito queste impostazioni in un set risultante finale. Policy Spy visualizza le istanze sotto questo nodo usando le proprietà RealKey invece delle vere chiavi dei criteri. Correlare queste istanze al set risultante visualizzato nella scheda Actual (Effettivi).  
 
 
-### <a name="bkmk_policyspy-default"></a> Default
+### <a name="default"></a><a name="bkmk_policyspy-default"></a> Default
 
 Questa scheda visualizza le stesse informazioni della scheda **Requested** (Richiesti). Include anche i contenuti degli spazi dei nomi DefaultMachine DefaultUser.
 
 
-### <a name="bkmk_policyspy-events"></a> Eventi
+### <a name="events"></a><a name="bkmk_policyspy-events"></a> Eventi
 
 Questa scheda visualizza gli eventi dell'agente criteri non appena si verificano. La vista crea una sottoscrizione di eventi WMI per tutti gli eventi derivati da CCM_PolicyAgent_Event. La vista mostra un massimo di 200 eventi. Rimuove gli eventi meno recenti dall'inizio dell'elenco, se necessario. Se si seleziona l'ultimo elemento dell'elenco, l'elenco scorre automaticamente verso il basso mentre vengono aggiunti i nuovi eventi. In caso contrario, la vista mantiene la posizione corrente ed è necessario scorrere verso il basso o premere FINE per visualizzare i nuovi eventi. Questa vista è sempre vuota quando si visualizza un criterio esportato.
 

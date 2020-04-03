@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sui dati di diagnostica e utilizzo raccolti da Configuration Manager.
 ms.date: 12/23/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 88ac4e55-d47b-4c94-b9c3-704c6a48b845
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fd59f58ef8c4139a86878b4c9ed677b6c82ae7ca
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.openlocfilehash: 5631b502042d6d95d48ea5a3ddd8937b93d348c9
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76917395"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600992"
 ---
 # <a name="diagnostics-and-usage-data-for-configuration-manager"></a>Dati di diagnostica e utilizzo per Configuration Manager
 

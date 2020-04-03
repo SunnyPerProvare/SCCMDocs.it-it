@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come e quando i client di Configuration Manager usano la posizione del servizio per trovare le risorse del sito.
 ms.date: 02/7/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: ae72df4b-5f5d-4e19-9052-bda28edfbace
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d5269460d26819a1f901a5c1d7ea892af2872600
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: 8af805b7183445cadbaeafa4ab21b40382f81dbc
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79405324"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599946"
 ---
 # <a name="learn-how-clients-find-site-resources-and-services-for-configuration-manager"></a>Informazioni su come i client trovano i servizi e le risorse del sito per Configuration Manager
 

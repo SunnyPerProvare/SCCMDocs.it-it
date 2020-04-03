@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1706 di Configuration Manager.
 ms.date: 08/11/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: ac034143-003e-4629-aac2-99eaffef4db1
 author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: e43e3e110809dd00ce11d8ac5e5003e1c3c8861a
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.openlocfilehash: ef343695923fc0e407ff7eefb9220f28e28c6968
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76917421"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604587"
 ---
 # <a name="what39s-new-in-version-1706-of-configuration-manager"></a>Novità della versione 1706 di Configuration Manager
 

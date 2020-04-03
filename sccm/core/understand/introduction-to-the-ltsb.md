@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su Long Term Servicing Branch di Configuration Manager.
 ms.date: 08/23/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 694bc29f-a7fd-4e06-815a-1a9c5e9ac563
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d58015ae8540a52bb2d99e776eaee6f5f0c74bca
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: e313d2c71e60bb5b97d2df022473a40a572a5a3a
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034656"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598196"
 ---
 # <a name="introduction-to-the-long-term-servicing-branch-of-configuration-manager"></a>Introduzione a Long Term Servicing Branch di Configuration Manager
 

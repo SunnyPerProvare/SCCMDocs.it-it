@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle impostazioni di Configuration Manager che consentono ai client di individuare contenuto in una rete lenta.
 ms.date: 01/3/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 70b5cbc0-64ba-49bd-8b34-fb4c09b2b95b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: a8168c8fcc1645c620287d15ce11a733731af8d5
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 788568a5635a30d98398789f562d545c513d0ec1
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75800407"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600687"
 ---
 # <a name="content-source-location-scenarios-in-configuration-manager"></a>Scenari del percorso di origine del contenuto in Configuration Manager
 

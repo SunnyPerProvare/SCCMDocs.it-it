@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Il provisioning delle risorse cloud per Configuration Manager consente di integrare l'infrastruttura locale.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 24fca61e-9cdb-447a-ad7a-f4d2e4fd6704
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ac97418e58bf311903895371f2eb197f207736ca
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: cd8962c4b8b04a1e101db41efdf9e1b273777464
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825762"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598018"
 ---
 # <a name="use-cloud-services-with-configuration-manager"></a>Usare i servizi cloud con Configuration Manager
 
@@ -27,7 +27,7 @@ Configuration Manager supporta varie opzioni basate su cloud. Queste opzioni pos
 
 -   Come specificare risorse di contenuto per client isolati o risorse nella Intranet, all'esterno del firewall aziendale, usando i punti di distribuzione basati su cloud.  
 
--   Come ridimensionare l'infrastruttura quando l'hardware fisico non è disponibile o non è logicamente incluso per supportare le esigenze, usando macchine virtuali di Microsoft Azure.  
+-   Come aumentare il numero di istanze per l'infrastruttura quando l'hardware fisico non è disponibile o non è logicamente incluso per supportare le esigenze, usando macchine virtuali di Microsoft Azure.  
 
 Anche se non è necessario eseguire il provisioning delle risorse cloud prima di distribuire Configuration Manager, può essere utile comprendere queste opzioni prima di addentrarsi troppo nella pianificazione della struttura della gerarchia. L'uso delle risorse cloud potrebbe ridurre costi e tempi risolvendo al contempo problemi aziendali non risolvibili con l'infrastruttura locale.  
 
@@ -75,7 +75,7 @@ I siti e i client di Configuration Manager eseguiti in macchine virtuali di Azur
 
 Queste funzionalità aggiuntive non richiedono una sottoscrizione di Azure. Non è necessario configurare connessioni specifiche, certificati o servizi nel cloud. ma vengono gestite automaticamente da Configuration Manager. È sufficiente verificare che i dispositivi e i sistemi del sito applicabili possano accedere agli URL basati su Internet.  
 
-##  <a name="BKMK_CloudSec"></a> Sicurezza dei servizi basati su cloud  
+##  <a name="security-for-cloud-based-services"></a><a name="BKMK_CloudSec"></a> Sicurezza dei servizi basati su cloud  
  Configuration Manager usa i certificati per il provisioning e l'accesso al contenuto di Azure e per la gestione dei servizi usati. Configuration Manager crittografa i dati archiviati in Azure, ma non introduce ulteriori controlli su dati o sicurezza oltre a quelli forniti da Azure.  
 
  Per altre informazioni, vedere i dettagli relativi ai diversi scenari di risorse basate su cloud. È anche possibile visualizzare gli argomenti seguenti per la sicurezza di Azure:  

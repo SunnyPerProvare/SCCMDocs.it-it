@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Se l'ambiente include attualmente dispositivi Windows 10 aggiunti a un dominio, configurare Azure AD ibrido prima di abilitare la co-gestione
 ms.date: 01/14/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology: configmgr-comanage
 ms.topic: conceptual
 ms.assetid: 27dd26d1-e99c-4431-b2f8-60406394b6db
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 21faf9c3bdc610d3e9124b1420b443e389445d8a
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c1dd9f91ce523fbbb0b074fb91f77f4817cb76b2
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816905"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80595733"
 ---
 # <a name="set-up-hybrid-azure-ad-for-co-management"></a>Configurare Azure AD ibrido per la co-gestione
 

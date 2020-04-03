@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Lo strumento consente di connettersi al servizio cloud di Configuration Manager per caricare manualmente le informazioni sull'utilizzo.
 ms.date: 09/06/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 6e4964c5-43cb-4372-9a89-b62ae6a4775c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 06eb21125408f15aa8ecf738f87e7442cfc32019
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e535653e0f31e186a6bdbde8da77750f2afdfdb0
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826136"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605600"
 ---
 # <a name="use-the-service-connection-tool-for-configuration-manager"></a>Usare lo strumento di connessione del servizio per Configuration Manager
 
@@ -167,7 +167,7 @@ Riga di comando di esempio che utilizza *- downloadsiteversion*:
 
    Per informazioni sull'installazione degli aggiornamenti, vedere [Installare gli aggiornamenti nella console per Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
 
-## <a name="bkmk_cmd"></a> File di log
+## <a name="log-files"></a><a name="bkmk_cmd"></a> File di log
 
 **ServiceConnectionTool.log**
 
@@ -177,7 +177,7 @@ Ogni volta che si esegue lo strumento di connessione del servizio, verrà genera
 
 Quando si usa lo strumento per la connessione e il download degli aggiornamenti, verrà generato un file di log nella radice dell'unità di sistema denominato **ConfigMgrSetup.log**.  Questo file di log fornirà informazioni più dettagliate, ad esempio quali file vengono scaricati, estratti e se i controlli dell'hash hanno esito positivo.
 
-## <a name="bkmk_cmd"></a> Opzioni della riga di comando  
+## <a name="command-line-options"></a><a name="bkmk_cmd"></a> Opzioni della riga di comando  
 Per visualizzare le informazioni della Guida per lo strumento del punto di connessione del servizio, aprire il prompt dei comandi nella cartella che contiene lo strumento ed eseguire il comando:  **serviceconnectiontool.exe**.  
 
 

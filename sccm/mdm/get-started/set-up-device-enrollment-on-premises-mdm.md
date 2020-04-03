@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Concedere agli utenti le autorizzazioni per registrare i propri dispositivi per la gestione di dispositivi mobili (MDM) locale in Configuration Manager.
 ms.date: 01/09/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-hybrid
+ms.technology: configmgr-mdm
 ms.topic: conceptual
 ms.assetid: 9ffaea91-1379-4b86-9953-b25e152f56a9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 28a39319acfe7fd75677a9eeb979b2f6b0d6641d
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 2f544ff2f656a6d78fb5ff305cccaff16be5d3dc
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76035189"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605353"
 ---
 # <a name="set-up-device-enrollment-for-on-premises-mdm-in-configuration-manager"></a>Configurare la registrazione dei dispositivi per MDM locale in Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "76035189"
 
 Il passaggio finale per configurare la gestione di dispositivi mobili (MDM) locale è consentire agli utenti di registrare i propri dispositivi. Usare Configuration Manager impostazioni client per concedere agli utenti l'autorizzazione per registrare i dispositivi in MDM locale.
 
-## <a name="bkmk_createProf"></a> Creare un profilo di registrazione
+## <a name="create-an-enrollment-profile"></a><a name="bkmk_createProf"></a> Creare un profilo di registrazione
 
 Per eseguire il push delle impostazioni necessarie per consentire agli utenti di registrare i dispositivi mobili, aggiungere un nuovo profilo di registrazione alle impostazioni client predefinite. Questo profilo viene quindi applicato a tutti gli utenti nel sito Configuration Manager.
 
@@ -46,7 +46,7 @@ Per eseguire il push delle impostazioni necessarie per consentire agli utenti di
 
     - Scegliere il **codice del sito di gestione** che contiene il punto di gestione periferiche. Selezionare **OK** per salvare e chiudere.
 
-## <a name="bkmk_addClient"></a>Configurare impostazioni client aggiuntive
+## <a name="configure-additional-client-settings"></a><a name="bkmk_addClient"></a>Configurare impostazioni client aggiuntive
 
 Sono disponibili altre impostazioni client per configurare i dispositivi dopo la registrazione. Per informazioni generali, vedere [How to configure client Settings](/configmgr/core/clients/deploy/configure-client-settings).
 
@@ -59,11 +59,11 @@ Configuration Manager supporta le seguenti impostazioni client per MDM locale:
     > [!NOTE]
     > Per MDM locale, le impostazioni di distribuzione software possono essere usate solo come impostazioni client predefinite.
 
-## <a name="bkmk_enableUsers"></a>Individua utenti
+## <a name="discover-users"></a><a name="bkmk_enableUsers"></a>Individua utenti
 
 Per consentire agli utenti di ricevere le impostazioni client con il profilo di registrazione per MDM locale, il sito individua il proprio account utente in Active Directory. Per assicurarsi che il profilo di registrazione venga ottenuto da tutti gli utenti che ne hanno bisogno, eseguire l'individuazione degli utenti di Active Directory. Per ulteriori informazioni, vedere [Active Directory individuazione utente](/configmgr/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser).
 
-## <a name="bkmk_storeCert"></a>Installare il certificato radice attendibile
+## <a name="install-the-trusted-root-certificate"></a><a name="bkmk_storeCert"></a>Installare il certificato radice attendibile
 
 I dispositivi aggiunti a un dominio ottengono il certificato radice attendibile per la comunicazione attendibile con i server che ospitano i ruoli del sistema del sito. Active Directory Servizi certificati distribuisce automaticamente il certificato radice attendibile. Per i computer e i dispositivi mobili non appartenenti a un dominio è necessario che questo certificato sia installato con altri mezzi per consentire la registrazione.
 
@@ -73,7 +73,7 @@ I dispositivi aggiunti a un dominio ottengono il certificato radice attendibile 
 Dopo aver [esportato il certificato radice attendibile](/configmgr/mdm/get-started/set-up-certificates-on-premises-mdm#bkmk_exportCert), è necessario installarlo nei dispositivi che dovranno registrarsi. Ad esempio, i dispositivi che non sono stati aggiunti al dominio e non possono ottenerli automaticamente da Active Directory. Il processo che si utilizza dipende dai fattori seguenti:
 
 - Tipi di dispositivi specifici e funzionalità tecniche
-- Versione sistema operativo
+- Versione del sistema operativo
 - Requisiti aziendali, di sicurezza e dell'esperienza utente
 
 L'elenco seguente include alcuni metodi di esempio per la distribuzione e l'installazione del certificato radice attendibile nei dispositivi:
@@ -111,4 +111,4 @@ L'elenco seguente include alcuni metodi di esempio per la distribuzione e l'inst
 ## <a name="next-step"></a>Passaggio successivo
 
 > [!div class="nextstepaction"]
-> [Registrare i dispositivi](/configmgr/mdm/deploy-use/enroll-devices-on-premises-mdm)
+> [Registra i dispositivi](/configmgr/mdm/deploy-use/enroll-devices-on-premises-mdm)

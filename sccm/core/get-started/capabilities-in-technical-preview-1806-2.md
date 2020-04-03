@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità disponibili in Configuration Manager Technical Preview versione 1806.2.
 ms.date: 06/27/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 3af2a69d-30e7-4dce-832d-82b7a1c082f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 6a80bc1662a790d726acd2a19426087a9cdc3146
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: dc59c47b4c73cbcd42110dae5555090d0cc570c6
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75804725"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80602091"
 ---
 # <a name="capabilities-in-technical-preview-18062-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1806.2 per Configuration Manager
 
@@ -40,7 +40,7 @@ Steps to workaround, if any.
 
 ## <a name="known-issues-in-this-technical-preview"></a>Problemi noti di questa versione Technical Preview
 
-### <a name="ki_sqlncli"></a> I client non vengono aggiornati automaticamente
+### <a name="clients-dont-automatically-update"></a><a name="ki_sqlncli"></a> I client non vengono aggiornati automaticamente
 <!--518760-->
 Durante l'aggiornamento alla versione 1806.2, il sito aggiorna anche SQL Native Client e ciò può causare un riavvio in sospeso nel server del sito. Questo ritardo impedisce l'aggiornamento di determinati file, con effetti sull'aggiornamento automatico del client.
 
@@ -65,7 +65,7 @@ Per l'installazione di un nuovo client nel sito con versione Technical Preview 1
 > È possibile usare proprietà della riga di comando, come SMSSITECODE o CCMLOGLEVEL, ma non dovrebbe essere necessario per l'aggiornamento di un client esistente. 
 
 
-### <a name="ki_version"></a> La versione 1806.2 indica la versione 1806 in Informazioni su Configuration Manager
+### <a name="version-18062-shows-version-1806-in-about-configuration-manager"></a><a name="ki_version"></a> La versione 1806.2 indica la versione 1806 in Informazioni su Configuration Manager
 <!--518148-->
 Dopo l'aggiornamento alla versione Technical Preview 1806.2, se si apre la finestra **Informazioni su Configuration Manager** dall'angolo superiore sinistro della console, viene ancora visualizzata la **versione 1806**. 
 
@@ -84,7 +84,7 @@ Usare la proprietà **Versione sito** per determinare la differenza tra 1806 e 1
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
 
-## <a name="bkmk_pod"></a> Miglioramenti alle distribuzioni in più fasi
+## <a name="improvements-to-phased-deployments"></a><a name="bkmk_pod"></a> Miglioramenti alle distribuzioni in più fasi
 
 Questa versione include i miglioramenti seguenti per le [distribuzioni in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence):
 - [Stato di distribuzione in più fasi](#bkmk_pod-monitor)
@@ -92,7 +92,7 @@ Questa versione include i miglioramenti seguenti per le [distribuzioni in più f
 - [Implementazione graduale durante le distribuzioni in più fasi](#bkmk_pod-throttle)
 
 
-### <a name="bkmk_pod-monitor"></a> Stato di distribuzione in più fasi
+### <a name="phased-deployment-status"></a><a name="bkmk_pod-monitor"></a> Stato di distribuzione in più fasi
 <!--1358577-->
 Per le distribuzioni in più fasi è ora disponibile un'esperienza di monitoraggio nativa. Dal nodo **Distribuzioni** nell'area di lavoro **Monitoraggio** selezionare una distribuzione in più fasi e quindi fare clic su **Stato di distribuzione in più fasi** nella barra multifunzione.
 
@@ -117,7 +117,7 @@ Questo dashboard visualizza le informazioni seguenti per ogni fase della distrib
 Il dashboard dello stato di distribuzione in più fasi potrebbe visualizzare più righe per la stessa fase.<!--518510-->
 
 
-### <a name="bkmk_pod-app"></a> Distribuzione in più fasi di applicazioni
+### <a name="phased-deployment-of-applications"></a><a name="bkmk_pod-app"></a> Distribuzione in più fasi di applicazioni
 <!--1358147-->
 Creare distribuzioni in più fasi per le applicazioni. Le distribuzioni in più fasi consentono di orchestrare un'implementazione coordinata e in sequenza del software basata su criteri e gruppi personalizzabili.
 
@@ -132,7 +132,7 @@ Distribuire il contenuto per l'applicazione da un punto di distribuzione prima d
 Non è possibile creare manualmente le fasi per un'applicazione. La procedura guidata crea automaticamente due fasi per le distribuzioni di applicazioni.
 
 
-### <a name="bkmk_pod-throttle"></a> Implementazione graduale durante le distribuzioni in più fasi
+### <a name="gradual-rollout-during-phased-deployments"></a><a name="bkmk_pod-throttle"></a> Implementazione graduale durante le distribuzioni in più fasi
 <!--1358578-->
 Durante una distribuzione in più fasi, l'implementazione di ogni fase può ora essere graduale. Questo comportamento consente di ridurre il rischio di problemi di distribuzione e diminuisce il carico sulla rete causato dalla distribuzione di contenuti ai client. Il sito può rendere gradualmente disponibile il software a seconda della configurazione per ogni fase. Tutti i client in una fase hanno una scadenza definita in base al momento in cui il software viene reso disponibile. L'intervallo di tempo tra l'ora di disponibilità e la scadenza è uguale per tutti i client in una fase. 
 
@@ -143,7 +143,7 @@ Quando si crea una distribuzione in più fasi e si configura manualmente una fas
 
 
 
-## <a name="bkmk_msix"></a> Supporto per nuovi formati di pacchetti dell'app Windows
+## <a name="support-for-new-windows-app-package-formats"></a><a name="bkmk_msix"></a> Supporto per nuovi formati di pacchetti dell'app Windows
 <!--1357427-->
 Configuration Manager supporta ora la distribuzione dei nuovi formati di pacchetto dell'app (con estensione msix) e bundle dell'app (con estensione msixbundle) di Windows 10. Le build più recenti di [Windows Insider Preview](https://insider.windows.com/) supportano attualmente questi nuovi formati.
 
@@ -164,7 +164,7 @@ Provare a completare le attività. Inviare quindi [commenti e suggerimenti](capa
 
 
 
-## <a name="bkmk_client-push"></a> Miglioramento della sicurezza dei push client
+## <a name="improvement-to-client-push-security"></a><a name="bkmk_client-push"></a> Miglioramento della sicurezza dei push client
 <!--1358204-->
 Quando si usa il metodo di installazione [push client](/sccm/core/clients/deploy/plan/client-installation-methods#client-push-installation) per il client di Configuration Manager, il server del sito crea una connessione remota al client per avviare l'installazione. A partire da questa versione, il sito può richiedere l'autenticazione reciproca Kerberos non consentendo il fallback a NTLM prima di stabilire la connessione. Questo miglioramento consente di proteggere la comunicazione tra il server e il client. 
 
@@ -190,7 +190,7 @@ Quando si aggiorna il sito, viene mantenuto il comportamento esistente. Dopo ave
 
 
 
-## <a name="bkmk_insights"></a> Informazioni dettagliate sulla gestione per la manutenzione proattiva
+## <a name="management-insights-for-proactive-maintenance"></a><a name="bkmk_insights"></a> Informazioni dettagliate sulla gestione per la manutenzione proattiva
 <!--1352184,et al-->
 In questa versione sono disponibili informazioni dettagliate sulla gestione aggiuntive per evidenziare i potenziali problemi di configurazione. Esaminare le regole seguenti nel nuovo gruppo **Manutenzione proattiva**:  
 
@@ -208,7 +208,7 @@ In questa versione sono disponibili informazioni dettagliate sulla gestione aggi
 
 
 
-## <a name="bkmk_comgmt"></a> Transizione del carico di lavoro per le app per dispositivi mobili per dispositivi con co-gestione
+## <a name="transition-mobile-apps-workload-for-co-managed-devices"></a><a name="bkmk_comgmt"></a> Transizione del carico di lavoro per le app per dispositivi mobili per dispositivi con co-gestione
 <!--1357892-->
 È possibile gestire le app per dispositivi mobili con Microsoft Intune continuando al tempo stesso a usare Configuration Manager per distribuire applicazioni desktop di Windows. Per eseguire la transizione del carico di lavoro per le app per dispositivi mobili, andare alla pagina delle proprietà di co-gestione. Spostare il dispositivo di scorrimento da Configuration Manager a Pilota o Tutto. 
 
@@ -222,7 +222,7 @@ Per altre informazioni, vedere gli articoli seguenti:
 
 
 
-## <a name="bkmk_bgoptions"></a> Opzioni del gruppo di limiti per download peer
+## <a name="boundary-group-options-for-peer-downloads"></a><a name="bkmk_bgoptions"></a> Opzioni del gruppo di limiti per download peer
 <!--1356193-->
 Sono ora disponibili impostazioni aggiuntive per i gruppi di limiti per offrire maggiore controllo sulla distribuzione di contenuti nell'ambiente. Questa versione aggiunge le opzioni seguenti:  
 
@@ -248,7 +248,7 @@ Se il client dell'origine peer ha più di un indirizzo IP (IPv4, IPv6 o entrambi
 
 
 
-## <a name="bkmk_3pupdate"></a> Supporto per gli aggiornamenti software di terze parti per i cataloghi personalizzati
+## <a name="third-party-software-updates-support-for-custom-catalogs"></a><a name="bkmk_3pupdate"></a> Supporto per gli aggiornamenti software di terze parti per i cataloghi personalizzati
 <!--1358714-->
 Questa versione esegue un'ulteriore iterazione sul supporto per gli aggiornamenti software di terze parti in seguito ai [commenti e suggerimenti raccolti con UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8803711-3rd-party-patching-scup-integration-with-sccm-co). [Technical Preview versione 1806](/sccm/core/get-started/capabilities-in-technical-preview-1806#bkmk-3pupdate) ha reso disponibile il supporto per *cataloghi partner*, ovvero cataloghi registrati da fornitori di software. I cataloghi forniti, non registrati con Microsoft, sono denominati *cataloghi personalizzati*. Aggiungere cataloghi personalizzati nella console di Configuration Manager.  
 
@@ -307,7 +307,7 @@ L'azione di eliminazione per i cataloghi personalizzati risulta non disponibile,
 
 
 
-## <a name="bkmk_cloud"></a> Miglioramenti delle funzionalità di gestione cloud
+## <a name="improvements-to-cloud-management-features"></a><a name="bkmk_cloud"></a> Miglioramenti delle funzionalità di gestione cloud
 
 Questa versione include i miglioramenti seguenti:  
 
@@ -323,7 +323,7 @@ Questa versione include i miglioramenti seguenti:
 
 
 
-## <a name="bkmk_report"></a> Nuovo report di conformità degli aggiornamenti software
+## <a name="new-software-updates-compliance-report"></a><a name="bkmk_report"></a> Nuovo report di conformità degli aggiornamenti software
 <!--1357775-->
 La visualizzazione dei report per la conformità degli aggiornamenti software include in genere dati dei client che non hanno contattato il sito di recente. Un nuovo report consente di filtrare i risultati di conformità per un gruppo di aggiornamenti software specifico in base ai client "integri". Questo report mostra lo stato di conformità più realistico dei client attivi nell'ambiente in uso. 
  

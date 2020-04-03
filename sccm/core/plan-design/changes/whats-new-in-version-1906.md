@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1906 di Configuration Manager Current Branch.
 ms.date: 10/01/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 97e23075-549c-4e45-ab1e-0671027edacf
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 8f6d144cc52e0baa790462b1eff9a7a6d15d5b4e
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 5f226f1a16bb7bfbdbf708abe5a11c1968ad52bb
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802515"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604520"
 ---
 # <a name="whats-new-in-version-1906-of-configuration-manager-current-branch"></a>Novità della versione 1906 di Configuration Manager Current Branch
 
@@ -45,7 +45,7 @@ A causa dei punti di debolezza dell'algoritmo SHA-1 e per allinearsi agli standa
 Per altre informazioni, vedere [Prerequisiti per i client Windows](/sccm/core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers#bkmk_sha2).
 
 
-## <a name="bkmk_infra"></a> Infrastruttura del sito
+## <a name="site-infrastructure"></a><a name="bkmk_infra"></a> Infrastruttura del sito
 
 ### <a name="site-server-maintenance-task-improvements"></a>Miglioramenti alle attività di manutenzione del server del sito
 
@@ -101,7 +101,7 @@ Per altre informazioni, vedere [Informazioni dettagliate sulla gestione](/sccm/c
     - Tutte le repliche dei gruppi di disponibilità SQL devono avere la stessa modalità seeding
     - Le repliche dei gruppi di disponibilità di SQL devono essere integre
 
-## <a name="bkmk_cloud"></a> Gestione collegata al cloud
+## <a name="cloud-attached-management"></a><a name="bkmk_cloud"></a> Gestione collegata al cloud
 
 ### <a name="azure-active-directory-user-group-discovery"></a>Individuazione dei gruppi utenti in Azure Active Directory
 
@@ -122,7 +122,7 @@ La sincronizzazione consente di usare le regole di raggruppamento locali esisten
 Per altre informazioni, vedere [Creare raccolte](/sccm/core/clients/manage/collections/create-collections#bkmk_aadcollsync).
 
 
-## <a name="bkmk_da"></a> Desktop Analytics
+## <a name="desktop-analytics"></a><a name="bkmk_da"></a> Desktop Analytics
 
 ### <a name="readiness-insights-for-desktop-apps"></a>Informazioni dettagliate sull'idoneità per le app desktop
 
@@ -141,7 +141,7 @@ Usare lo strumento DesktopAnalyticsLogsCollector.ps1 dalla directory di installa
 Per altre informazioni, vedere [Agente di raccolta dei log](/sccm/desktop-analytics/log-collector).
 
 
-## <a name="bkmk_real"></a> Gestione in tempo reale
+## <a name="real-time-management"></a><a name="bkmk_real"></a> Gestione in tempo reale
 
 ### <a name="add-joins-additional-operators-and-aggregators-in-cmpivot"></a>Aggiungere join, operatori aggiuntivi e aggregatori in CMPivot
 
@@ -174,7 +174,7 @@ Al ruolo [**Amministratore della protezione**](/sccm/core/understand/fundamental
 Per altre informazioni, vedere [CMPivot](/sccm/core/servers/manage/cmpivot#bkmk_cmpivot_secadmin1906).
 
 
-## <a name="bkmk_content"></a> Gestione dei contenuti
+## <a name="content-management"></a><a name="bkmk_content"></a> Gestione dei contenuti
 
 ### <a name="delivery-optimization-download-data-in-client-data-sources-dashboard"></a>Dati di download di Ottimizzazione recapito nel dashboard Origini dati del client
 
@@ -193,7 +193,7 @@ Questo server di cache agisce come una cache trasparente su richiesta per il con
 Per altre informazioni, vedere [Cache in rete di Ottimizzazione recapito in Configuration Manager](/sccm/core/plan-design/hierarchy/delivery-optimization-in-network-cache).
 
 
-## <a name="bkmk_client"></a> Gestione dei client
+## <a name="client-management"></a><a name="bkmk_client"></a> Gestione dei client
 
 ### <a name="support-for-windows-virtual-desktop"></a>Supporto per Desktop virtuale Windows
 
@@ -231,7 +231,7 @@ Per altre informazioni, vedere [Supporto tecnico OneTrace](/sccm/core/support/su
 Per altre informazioni vedere [Impostazioni della cache dei client](/sccm/core/clients/deploy/about-client-settings#client-cache-settings).
 
 
-## <a name="bkmk_comgmt"></a> Co-gestione
+## <a name="co-management"></a><a name="bkmk_comgmt"></a> Co-gestione
 
 ### <a name="improvements-to-co-management-auto-enrollment"></a>Miglioramenti alla registrazione automatica di co-gestione
 
@@ -263,7 +263,7 @@ Per altre informazioni, vedere [Abilitare la co-gestione](/sccm/comanage/how-to-
 I clienti costituiti da enti pubblici degli Stati Uniti possono ora usare la co-gestione con il cloud di Azure per enti pubblici degli Stati Uniti (portal.azure.us). Per altre informazioni, vedere [Abilitare la co-gestione](/sccm/comanage/how-to-enable).
 
 
-## <a name="bkmk_app"></a> Gestione delle applicazioni
+## <a name="application-management"></a><a name="bkmk_app"></a> Gestione delle applicazioni
 
 ### <a name="filter-applications-deployed-to-devices"></a>Filtrare le applicazioni distribuite nei dispositivi
 
@@ -311,7 +311,7 @@ Questa versione include i miglioramenti seguenti alle approvazioni delle app:
 Per altre informazioni, vedere [Approvare le applicazioni](/sccm/apps/deploy-use/app-approval).
 
 
-## <a name="bkmk_osd"></a> Distribuzione del sistema operativo
+## <a name="os-deployment"></a><a name="bkmk_osd"></a> Distribuzione del sistema operativo
 
 ### <a name="task-sequence-debugger"></a>Debugger di sequenze di attività
 
@@ -373,7 +373,7 @@ Questa versione include i miglioramenti seguenti alla distribuzione del sistema 
 - Quando si crea un supporto per sequenza di attività, Configuration Manager non aggiunge un file autorun.inf. Questo file è generalmente bloccato da prodotti antimalware. È ancora possibile includere il file se necessario per lo scenario.<!-- 4090666 -->
 
 
-## <a name="bkmk_userxp"></a> Software Center
+## <a name="software-center"></a><a name="bkmk_userxp"></a> Software Center
 
 ### <a name="improvements-to-software-center-tab-customizations"></a>Miglioramenti delle personalizzazioni delle schede di Software Center
 
@@ -445,7 +445,7 @@ Ad esempio, digitare l'URL seguente nella finestra **Esegui** di Windows.
 
 Per altre informazioni, vedere [Visibilità delle schede di Software Center](/sccm/core/clients/deploy/about-client-settings#software-center-tab-visibility).
 
-## <a name="bkmk_sum"></a> Aggiornamenti software
+## <a name="software-updates"></a><a name="bkmk_sum"></a> Aggiornamenti software
 
 ### <a name="additional-options-for-wsus-maintenance"></a>Opzioni aggiuntive per la manutenzione di WSUS
 
@@ -504,7 +504,7 @@ Il collegamento ipertestuale  **Visualizza gli elementi necessari** è disponibi
 Per altre informazioni, vedere [Monitorare gli aggiornamenti software](/sccm/sum/deploy-use/monitor-software-updates#drill-through-required-updates), [Gestire Windows come servizio](/sccm/osd/deploy-use/manage-windows-as-a-service#drill-through-required-updates) e [Gestire gli aggiornamenti di Office 365 ProPlus](/sccm/sum/deploy-use/manage-office-365-proplus-updates#drill-through-required-office-365-updates).
 
 
-## <a name="bkmk_o365"></a> Gestione di Office
+## <a name="office-management"></a><a name="bkmk_o365"></a> Gestione di Office
 
 ### <a name="office-365-proplus-upgrade-readiness-dashboard"></a>Dashboard Preparazione aggiornamenti per Office 365 ProPlus
 
@@ -515,7 +515,7 @@ Per determinare quali dispositivi sono idonei per l'aggiornamento a Office 365 P
 Per altre informazioni sul dashboard, sui prerequisiti e sull'uso di questi dati, vedere [Integrazione per l'idoneità per Office 365 ProPlus](/configmgr/sum/deploy-use/office-365-dashboard#bkmk_readiness-dash).
 
 
-## <a name="bkmk_protect"></a> Protezione
+## <a name="protection"></a><a name="bkmk_protect"></a> Protezione
 
 ### <a name="windows-defender-application-guard-file-trust-criteria"></a>Criteri di attendibilità file di Windows Defender Application Guard
 
@@ -526,7 +526,7 @@ Una nuova impostazione dei criteri consente agli utenti di considerare attendibi
 Per altre informazioni, vedere [Creare e distribuire criteri di Windows Defender Application Guard](/sccm/protect/deploy-use/create-deploy-application-guard-policy#bkmk_FM).
 
 
-## <a name="bkmk_admin"></a> Console di Configuration Manager
+## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a> Console di Configuration Manager
 
 ### <a name="role-based-access-for-folders"></a>Accesso basato sui ruoli per le cartelle
 
@@ -594,7 +594,7 @@ Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi** e sele
 Nell'area di lavoro **Monitoraggio** espandere **Operazioni client**. L'operazione di **passaggio al punto di aggiornamento software successivo** è ora denominata in modo corretto.
 
 
-## <a name="bkmk_deprecated"></a> Funzionalità e sistemi operativi deprecati
+## <a name="deprecated-features-and-operating-systems"></a><a name="bkmk_deprecated"></a> Funzionalità e sistemi operativi deprecati
 
 Per conoscere le modifiche relative al supporto prima che siano implementate, vedere [Elementi rimossi e deprecati](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated).
 

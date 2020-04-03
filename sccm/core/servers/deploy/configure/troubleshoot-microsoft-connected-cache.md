@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Dettagli tecnici relativi a Microsoft Connected Cache per facilitare la risoluzione dei problemi.
 ms.date: 11/29/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 121e0341-4f51-4d54-a357-732c26caf7c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 353d0a8d62086f7e8cdb2e302394d2999a66bd52
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: b8e91d687caa48d8f8eb3643ed5ae4310eec07cc
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798361"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605999"
 ---
 # <a name="troubleshoot-microsoft-connected-cache-in-configuration-manager"></a>Risolvere i problemi relativi a Microsoft Connected Cache in Configuration Manager
 
@@ -30,7 +30,7 @@ Quando si installa correttamente il server di cache in rete di Ottimizzazione re
 
 Verificare questo comportamento [in un client](#bkmk_verify-client) o [nel server](#bkmk_verify-server).
 
-### <a name="bkmk_verify-client"></a> Verifica in un client
+### <a name="verify-on-a-client"></a><a name="bkmk_verify-client"></a> Verifica in un client
 
 1. In un client che esegue Windows 10, versione 1809 o successiva, scaricare il contenuto gestito dal cloud. Per altre informazioni sui tipi di contenuto supportati da Connected Cache, vedere [Verificare Connected Cache](/sccm/core/plan-design/hierarchy/delivery-optimization-in-network-cache#verify).
 
@@ -74,7 +74,7 @@ Si noti che l'attributo `BytesFromCacheServer` non è zero.
 
 Se il client non è configurato correttamente o il server di cache non è installato correttamente, il client di Ottimizzazione recapito esegue il fallback all'origine cloud originale. L'attributo BytesFromCacheServer sarà quindi zero.
 
-### <a name="bkmk_verify-server"></a> Verifica nel server
+### <a name="verify-on-the-server"></a><a name="bkmk_verify-server"></a> Verifica nel server
 
 Verificare prima di tutto che le proprietà del Registro di sistema siano configurate correttamente: `HKLM\SOFTWARE\Microsoft\Delivery Optimization In-Network Cache`. Ad esempio, il percorso della cache nell'unità è `PrimaryDrivesInput\DOINC-E77D08D0-5FEA-4315-8C95-10D359D59294`, dove `PrimaryDrivesInput` può essere costituito da più unità, ad esempio `C,D,E`.
 

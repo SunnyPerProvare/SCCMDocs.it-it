@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Vedere il processo in base al quale un aggiornamento nella console selezionato installa le repliche in siti aggiuntivi.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: d38ea401-4695-4b4c-bd8d-95bdc2c67f5a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 3bd59b5dc8843c6eb709c9ce5b2d69890d799260
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 2fa606c1047c17b8491f0ce03330a37973b40fa0
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826221"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605029"
 ---
 # <a name="flowchart---update-replication-for-configuration-manager"></a>Diagramma di flusso - Replica degli aggiornamenti per Configuration Manager
 

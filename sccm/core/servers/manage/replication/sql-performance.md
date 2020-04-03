@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare questo diagramma per avviare la risoluzione dei problemi di prestazioni SQL per Configuration Manager
 ms.date: 08/09/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 9930a8a4-4d7f-47a4-bf6b-4c36d0ed5528
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d23bd728997d65e19684f3ff0493e817241186da
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 242da404b76dfd0fafcd00032f8c20ccf6028359
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75793549"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605742"
 ---
 # <a name="sql-performance"></a>Prestazioni SQL
 

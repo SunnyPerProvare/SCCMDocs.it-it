@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come Microsoft raccoglie e usa i dati correlati ai cmdlet di Configuration Manager
 ms.date: 01/3/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: bec00fb4-1ac0-4e49-b330-0871b3722459
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9a8136e7ec4a4fdd71d25a0e1f6b374c8203fc98
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 551a8086894f877d07c57fbe2848c2befacfc5b5
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799166"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606404"
 ---
 # <a name="configuration-manager-cmdlet-library-privacy-statement"></a>Informativa sulla privacy per la libreria di cmdlet di Configuration Manager
 

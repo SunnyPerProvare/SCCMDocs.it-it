@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Comprendere le topologie disponibili e le opzioni di gestione di Configuration Manager per pianificare la gerarchia del sito.
 ms.date: 07/30/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 07ce872e-1558-42ad-b5ad-582c5b1bdbb4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f0c719db3c505614099c051f734c67c9c31036f5
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: 60b07ad124ce2738196aafebb300f06b22011568
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79405384"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600644"
 ---
 # <a name="design-a-hierarchy-of-sites-for-configuration-manager"></a>Progettare una gerarchia di siti per Configuration Manager
 

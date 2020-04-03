@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come usare gli strumenti del Supporto tecnico.
 ms.date: 11/27/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 41cdebfe-b595-40aa-a385-32e0746255ed
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 89224fbcedb8e70a5b4f98671d7b6605a1b4de6f
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 5df474f4afd43f20c0825386c9f59a933201c203
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792396"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598813"
 ---
 # <a name="support-center-user-interface-reference"></a>Informazioni di riferimento sull'interfaccia utente del Supporto tecnico
 
@@ -41,7 +41,7 @@ Questa sezione descrive l'interfaccia utente dello strumento **Supporto tecnico*
 - [Scheda Logs](#bkmk_support-logs) (Log)  
 
 
-### <a name="bkmk_support-window"></a> Menu Window (Finestra)
+### <a name="window-menu"></a><a name="bkmk_support-window"></a> Menu Window (Finestra)
 
 Nell'angolo superiore sinistro della finestra del Supporto tecnico aprire questo menu selezionando la freccia nella casella blu.
 
@@ -67,7 +67,7 @@ Chiude il Supporto tecnico.
 
 
 
-### <a name="bkmk_support-home"></a> Scheda Home
+### <a name="home-tab"></a><a name="bkmk_support-home"></a> Scheda Home
 
 #### <a name="collect-selected-data"></a>Collect Selected Data (Raccogli dati selezionati)
 Il Supporto tecnico raccoglie informazioni dal client di Configuration Manager. Per impostazione predefinita, vengono raccolti i tipi seguenti:
@@ -114,7 +114,7 @@ Se si seleziona la casella di controllo relativa a un'opzione, quando si selezio
 
 
 
-### <a name="bkmk_support-client"></a> Scheda Client
+### <a name="client-tab"></a><a name="bkmk_support-client"></a> Scheda Client
 
 #### <a name="load-or-refresh"></a>Load o Refresh
 Il Supporto tecnico carica o aggiorna i dettagli per il client di Configuration Manager.
@@ -163,7 +163,7 @@ Quando si caricano i dettagli del client, il Supporto tecnico visualizza le prop
 
 
 
-### <a name="bkmk_support-policy"></a> Scheda Policy (Criteri)
+### <a name="policy-tab"></a><a name="bkmk_support-policy"></a> Scheda Policy (Criteri)
 
 Usare le azioni in questa scheda anziché lo strumento [PolicySpy](/sccm/core/support/policy-spy) precedente.
 
@@ -208,7 +208,7 @@ Il Supporto tecnico cancella tutti gli eventi dei criteri.
 
 
 
-### <a name="bkmk_support-content"></a> Scheda Content (Contenuto)
+### <a name="content-tab"></a><a name="bkmk_support-content"></a> Scheda Content (Contenuto)
 
 Visualizza il contenuto del client, incluso il contenuto memorizzato nella cache e consente il monitoraggio dello stato delle distribuzioni di aggiornamenti software e di applicazioni. 
 
@@ -278,7 +278,7 @@ Per ogni evento, questa visualizzazione illustra le proprietà seguenti:
 
 
 
-### <a name="bkmk_support-inventory"></a> Scheda Inventory (Inventario)
+### <a name="inventory-tab"></a><a name="bkmk_support-inventory"></a> Scheda Inventory (Inventario)
 
 #### <a name="load-or-refresh"></a>Load o Refresh
 Il Supporto tecnico carica o aggiorna l'inventario del client per la visualizzazione attualmente selezionata.
@@ -330,7 +330,7 @@ Se non è abilitata una funzionalità, la visualizzazione non visualizza alcun d
 
 
 
-### <a name="bkmk_support-troubleshoot"></a> Scheda Troubleshooting (Risoluzione dei problemi)
+### <a name="troubleshooting-tab"></a><a name="bkmk_support-troubleshoot"></a> Scheda Troubleshooting (Risoluzione dei problemi)
 
 Consente di risolvere alcuni dei problemi più comuni relativi ai client di Configuration Manager:  
 - Problemi con Active Directory  
@@ -364,7 +364,7 @@ Se si esegue la risoluzione dei problemi del client e quindi si vuole tentare nu
 
 
 
-### <a name="bkmk_support-logs"></a> Scheda Logs (Log)
+### <a name="logs-tab"></a><a name="bkmk_support-logs"></a> Scheda Logs (Log)
 
 Questa sezione contiene un elenco degli elementi disponibili nella scheda **Logs** (Log) dello strumento Supporto tecnico. 
 
@@ -393,7 +393,7 @@ Anziché selezionare manualmente i file di log usando il pulsante **Open logs** 
 - **Distribuzione del sistema operativo**
 
 
-## <a name="bkmk_log-viewer"></a> Informazioni di riferimento sul Visualizzatore log del Supporto tecnico
+## <a name="support-center-log-viewer-reference"></a><a name="bkmk_log-viewer"></a> Informazioni di riferimento sul Visualizzatore log del Supporto tecnico
 
 Questa sezione descrive l'interfaccia utente dello strumento **Visualizzatore log del Supporto tecnico**. 
 
@@ -403,7 +403,7 @@ Questa sezione descrive l'interfaccia utente dello strumento **Visualizzatore lo
 Lo strumento **Visualizzatore log** è quasi identico alla scheda **Logs** (Log) del **Supporto tecnico**. Lo strumento **Visualizzatore log** non include le opzioni **Configure client logging** (Configura registrazione client) e **Log groups** (Gruppi di log).
 
 
-### <a name="bkmk_log-window"></a> Menu Window (Finestra)
+### <a name="window-menu"></a><a name="bkmk_log-window"></a> Menu Window (Finestra)
 
 Nell'angolo superiore sinistro della finestra del Visualizzatore log del Supporto tecnico aprire questo menu selezionando la freccia nella casella blu.
 
@@ -423,7 +423,7 @@ Visualizza informazioni sul Visualizzatore log del Supporto tecnico
 Chiude il Visualizzatore log del Supporto tecnico
 
 
-### <a name="bkmk_log-home"></a> Scheda Home
+### <a name="home-tab"></a><a name="bkmk_log-home"></a> Scheda Home
 
 #### <a name="open-logs"></a>Open logs 
 Il Supporto tecnico chiede di selezionare uno o più file di log da aprire.
@@ -477,7 +477,7 @@ Nella finestra di dialogo **Decode certificate** (Decodifica certificato), incol
 
 
 
-## <a name="bkmk_adv-filters"></a> Filtri avanzati dei file di log
+## <a name="advanced-log-file-filters"></a><a name="bkmk_adv-filters"></a> Filtri avanzati dei file di log
 
 I filtri avanzati dei file di log consentono di includere, escludere o evidenziare stringhe specifiche. Queste stringhe possono trovarsi in un file di log o in un gruppo di file di log quando si esaminano voci di file di log. Quando si crea un filtro è possibile usare ricerche con caratteri jolly. È possibile salvare una combinazione di filtri utile come *set di filtri*. 
 
@@ -528,7 +528,7 @@ Nella finestra di dialogo Advanced filters (Filtri avanzati) è possibile creare
 
 
 
-## <a name="bkmk_viewer"></a> Informazioni di riferimento sul Visualizzatore del Supporto tecnico
+## <a name="support-center-viewer-reference"></a><a name="bkmk_viewer"></a> Informazioni di riferimento sul Visualizzatore del Supporto tecnico
 
 Questa sezione descrive l'interfaccia utente dello strumento Configuration Manager **Support Center Viewer** . Le schede disponibili variano in base al contenuto del bundle di risoluzione dei problemi. Il [menu Window](#bkmk_viewer-window) (Finestra) e la [scheda Home](#bkmk_viewer-home) sono visualizzati per impostazione predefinita.
 - [Menu Window](#bkmk_viewer-window) (Finestra)
@@ -543,7 +543,7 @@ Questa sezione descrive l'interfaccia utente dello strumento Configuration Manag
 - [Scheda Troubleshooting](#bkmk_viewer-troubleshoot) (Risoluzione dei problemi)
 
 
-### <a name="bkmk_viewer-window"></a> Menu Window (Finestra)
+### <a name="window-menu"></a><a name="bkmk_viewer-window"></a> Menu Window (Finestra)
 
 Nell'angolo superiore sinistro della finestra del Visualizzatore del Supporto tecnico aprire questo menu selezionando la freccia nella casella blu.
 
@@ -565,7 +565,7 @@ Nella finestra di dialogo **Options** è possibile:
 Esce da Support Center Viewer
 
 
-### <a name="bkmk_viewer-home"></a> Scheda Home
+### <a name="home-tab"></a><a name="bkmk_viewer-home"></a> Scheda Home
 
 #### <a name="open-bundle"></a>Open bundle (Apri bundle)
 Passare al percorso di un bundle di dati creato dal Supporto tecnico.
@@ -577,7 +577,7 @@ Selezionare uno o più file di log da aprire.
 Nella finestra di dialogo **Decode certificate** (Decodifica certificato), incollare il valore del certificato serializzato per qualsiasi certificato presente nel client. Trovare questo valore nel Registro di sistema, nei file di log o in WMI. Selezionare **Process** (Elabora) per visualizzare informazioni generali e dettagli sul certificato. Queste informazioni includono il percorso di certificazione. Selezionare **Export** (Esporta) per esportare il certificato come file con estensione **cer**.
 
 
-### <a name="bkmk_viewer-config"></a> Scheda Configuration (Configurazione)
+### <a name="configuration-tab"></a><a name="bkmk_viewer-config"></a> Scheda Configuration (Configurazione)
 
 La scheda **Configuration** dello strumento Support Center Viewer fornisce le visualizzazioni seguenti usando dati provenienti dai provider WMI:
 
@@ -597,7 +597,7 @@ Dettagli dei servizi in esecuzione nel computer client. Usa la classe [Win32_Ser
 Dettagli delle schede di rete installate nel computer client. Usa la classe [Win32_NetworkAdapterConfiguration](https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-networkadapterconfiguration).
 
 
-### <a name="bkmk_viewer-logs"></a> Scheda Logs (Log)
+### <a name="logs-tab"></a><a name="bkmk_viewer-logs"></a> Scheda Logs (Log)
 
 La scheda **Logs** mostra un elenco dei file di log inclusi nel bundle. Ogni riga di questa scheda visualizza il percorso, il nome e le dimensioni del file di log. 
 
@@ -608,7 +608,7 @@ Dopo aver selezionato un file di log, selezionare questo pulsante per aprire il 
 Nella finestra di dialogo **Decode certificate** (Decodifica certificato), incollare il valore del certificato serializzato per qualsiasi certificato presente nel client. Trovare questo valore nel Registro di sistema, nei file di log o in WMI. Selezionare **Process** (Elabora) per visualizzare informazioni generali e dettagli sul certificato. Queste informazioni includono il percorso di certificazione. Selezionare **Export** (Esporta) per esportare il certificato come file con estensione **cer**.
 
 
-### <a name="bkmk_viewer-debug"></a> Scheda Debug Dumps (Dump del debug)
+### <a name="debug-dumps-tab"></a><a name="bkmk_viewer-debug"></a> Scheda Debug Dumps (Dump del debug)
 
 Ogni riga di questa scheda fornisce dettagli sui file di dump del debug disponibili per l'esportazione. Usare questa scheda per esportare i file di dump del debug (con estensione dmp) per un'ulteriore analisi con uno strumento di debug, ad esempio WinDbg. 
 
@@ -619,7 +619,7 @@ Ogni riga di questa scheda fornisce dettagli sui file di dump del debug disponib
 Consente di salvare una copia del file di dump del debug selezionato.
 
 
-### <a name="bkmk_viewer-wmi"></a> Scheda WMI
+### <a name="wmi-tab"></a><a name="bkmk_viewer-wmi"></a> Scheda WMI
 
 Questa scheda visualizza il set di dati WMI del client di Configuration Manager incluso nel bundle di dati. 
 
@@ -639,7 +639,7 @@ Apre l'istanza successiva della stringa inserita nella finestra di dialogo di ri
 Nella finestra di dialogo **Decode certificate** (Decodifica certificato), incollare il valore del certificato serializzato per qualsiasi certificato presente nel client. Trovare questo valore nel Registro di sistema, nei file di log o in WMI. Selezionare **Process** (Elabora) per visualizzare informazioni generali e dettagli sul certificato. Queste informazioni includono il percorso di certificazione. Selezionare **Export** (Esporta) per esportare il certificato come file con estensione **cer**.
 
 
-### <a name="bkmk_viewer-registry"></a> Scheda Registry (Registro di sistema)
+### <a name="registry-tab"></a><a name="bkmk_viewer-registry"></a> Scheda Registry (Registro di sistema)
 
 Usare la scheda **Registry** (Registro di sistema) per visualizzare i dati del Registro di sistema inclusi nel bundle di dati e per esportarli per un'ulteriore analisi.
 
@@ -662,7 +662,7 @@ Apre l'istanza successiva della stringa inserita nella finestra di dialogo di ri
 Nella finestra di dialogo **Decode certificate** (Decodifica certificato), incollare il valore del certificato serializzato per qualsiasi certificato presente nel client. Trovare questo valore nel Registro di sistema, nei file di log o in WMI. Selezionare **Process** (Elabora) per visualizzare informazioni generali e dettagli sul certificato. Queste informazioni includono il percorso di certificazione. Selezionare **Export** (Esporta) per esportare il certificato come file con estensione **cer**.
 
 
-### <a name="bkmk_viewer-policy"></a> Scheda Policy (Criteri)
+### <a name="policy-tab"></a><a name="bkmk_viewer-policy"></a> Scheda Policy (Criteri)
 
 La scheda **Policy** consente di visualizzare i dati sui criteri inclusi nel bundle di dati. 
 
@@ -682,7 +682,7 @@ Apre l'istanza successiva della stringa inserita nella finestra di dialogo di ri
 Nella finestra di dialogo **Decode certificate** (Decodifica certificato), incollare il valore del certificato serializzato per qualsiasi certificato presente nel client. Trovare questo valore nel Registro di sistema, nei file di log o in WMI. Selezionare **Process** (Elabora) per visualizzare informazioni generali e dettagli sul certificato. Queste informazioni includono il percorso di certificazione. Selezionare **Export** (Esporta) per esportare il certificato come file con estensione **cer**.
 
 
-### <a name="bkmk_viewer-certs"></a> Scheda Certificates (Certificati)
+### <a name="certificates-tab"></a><a name="bkmk_viewer-certs"></a> Scheda Certificates (Certificati)
 
 La scheda **Certificates** consente di visualizzare i certificati inclusi nel bundle di dati e di esportarli.
 
@@ -693,7 +693,7 @@ Visualizza informazioni sul certificato selezionato.
 Apre la finestra di dialogo **Save as** (Salva con nome) per il salvataggio di una copia del certificato selezionato.
 
 
-### <a name="bkmk_viewer-troubleshoot"></a> Scheda Troubleshooting (Risoluzione dei problemi)
+### <a name="troubleshooting-tab"></a><a name="bkmk_viewer-troubleshoot"></a> Scheda Troubleshooting (Risoluzione dei problemi)
 
 Usare la scheda **Troubleshooting** (Risoluzione dei problemi) per visualizzare file di log creati con la scheda Troubleshooting (Risoluzione dei problemi) del Supporto tecnico.
 

@@ -6,17 +6,17 @@ metadata:
   titleSuffix: Configuration Manager
   description: Desktop Analytics è un servizio cloud che si integra con Configuration Manager. Fornisce informazioni dettagliate per facilitare l'aggiornamento dei client Windows.
   ms.prod: configuration-manager
-  ms.technology: configmgr-other
+  ms.technology: configmgr-analytics
   ms.topic: landing-page
   author: aczechowski
   ms.author: aaroncz
   ms.date: 01/28/2020
-  ms.openlocfilehash: 00b7eaf18bad581c910b359df5d31456606b05b1
-  ms.sourcegitcommit: be37256f98120ad30d5f7925bc32f05a07f15984
+  ms.openlocfilehash: 8a8e6a2b5426dc796c7cfaf14ea04c95c81a68c3
+  ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 02/07/2020
-  ms.locfileid: "77071436"
+  ms.lasthandoff: 04/02/2020
+  ms.locfileid: "80604928"
 landingContent:
 - title: Informazioni su Desktop Analytics
   linkLists:

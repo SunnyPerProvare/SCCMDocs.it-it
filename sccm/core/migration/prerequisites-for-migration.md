@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Individuare le versioni supportate di Configuration Manager, le lingue del sito di origine supportate e le configurazioni necessarie per la migrazione.
 ms.date: 05/7/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: ec976930-7467-4d3c-b33c-991bf408a74a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 691d89aff2d7e4880f316d03ceb68a89f6d88473
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 229a8c7980933480a243278b2679d55f012490ce
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75803042"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604662"
 ---
 # <a name="prerequisites-for-migration-in-configuration-manager"></a>Prerequisiti per la migrazione in Configuration Manager
 
@@ -31,7 +31,7 @@ Per eseguire la migrazione da una gerarchia di origine supportata, è necessario
 
 -   [Configurazioni necessarie per la migrazione](#BKMK_Required_Configurations)  
 
-##  <a name="BKMK_SupportedMigrationVersions"></a> Versioni di Configuration Manager supportate per la migrazione  
+##  <a name="versions-of-configuration-manager-that-are-supported-for-migration"></a><a name="BKMK_SupportedMigrationVersions"></a> Versioni di Configuration Manager supportate per la migrazione  
  È possibile eseguire la migrazione di dati da una gerarchia di origine che esegue una delle versioni seguenti di Configuration Manager:  
 
 - Configuration Manager 2007 SP2  (ai fini della migrazione, le versioni di Configuration Manager 2007 R2 o R3 nel sito di origine non sono prese in considerazione. Se il sito di origine esegue SP2, i siti in cui è installato il componente aggiuntivo R2 o R3 sono supportati per la migrazione a Configuration Manager Current Branch).  
@@ -46,7 +46,7 @@ Per eseguire la migrazione da una gerarchia di origine supportata, è necessario
   Ad esempio, se è presente una gerarchia di destinazione che esegue Configuration Manager Current Branch 1606, è possibile usare la migrazione per copiare dati da una gerarchia di origine che esegue la versione 1606 o 1602. Non è tuttavia possibile copiare dati da una gerarchia di origine che esegue la versione 1610.  
 
 
-##  <a name="BKMK_SorceSiteLanguage"></a> Lingue del sito di origine supportate per la migrazione  
+##  <a name="source-site-languages-that-are-supported-for-migration"></a><a name="BKMK_SorceSiteLanguage"></a> Lingue del sito di origine supportate per la migrazione  
  Durante la migrazione dei dati da una gerarchia all'altra di Configuration Manager, i dati vengono archiviati nella gerarchia di destinazione nel formato indipendente dalla lingua per Configuration Manager. Dal momento che Configuration Manager 2007 non archivia i dati in un formato indipendente dalla lingua, il processo di migrazione deve convertire gli oggetti in questo formato durante la migrazione da Configuration Manager 2007. Di conseguenza, per la migrazione sono supportati solo i siti di origine di Configuration Manager 2007 installati con le seguenti lingue:  
 
 -   Inglese  
@@ -67,7 +67,7 @@ Per eseguire la migrazione da una gerarchia di origine supportata, è necessario
 
 Quando si esegue la migrazione di dati da una gerarchia di System Center 2012 Configuration Manager o di Configuration Manager Current Branch, non ci sono limiti per le lingue del sito di origine. Gli oggetti nel database del sito di origine sono già in un formato indipendente dalla lingua.  
 
-##  <a name="BKMK_Required_Configurations"></a> Configurazioni necessarie per la migrazione  
+##  <a name="required-configurations-for-migration"></a><a name="BKMK_Required_Configurations"></a> Configurazioni necessarie per la migrazione  
 Di seguito sono elencate le configurazioni necessarie per l'uso della migrazione e delle operazioni di migrazione:  
 
 - **Per configurare, eseguire e monitorare la migrazione nella console di Configuration Manager:**  

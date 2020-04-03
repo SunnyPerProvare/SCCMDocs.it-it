@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Procedure consigliate per la sicurezza e informazioni sulla privacy per la migrazione all'ambiente Configuration Manager Current Branch.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 6893fce1-7ad5-4151-9ba9-3096871e8e4a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e267403e9d79a3e537a326dacf4d9f618ac7e267
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 7ba1f41af778602fb95d268c071b5f0d1dde158c
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75803008"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604683"
 ---
 # <a name="security-and-privacy-for-migration-to-configuration-manager-current-branch"></a>Sicurezza e privacy per la migrazione a Configuration Manager Current Branch
 

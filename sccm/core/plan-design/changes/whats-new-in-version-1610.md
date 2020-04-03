@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1610 di Configuration Manager.
 ms.date: 11/23/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: f7eb0803-3f8f-4ab6-825a-99ac11f5ba7d
 author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 5333c6f6cbed0f8d13ab90a559ebf5500dfafaf7
-ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
+ms.openlocfilehash: 1f82d1399507e9deca139ff9d7d8d12bf10c7339
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77035369"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605070"
 ---
 # <a name="what39s-new-in-version-1610-of-configuration-manager"></a>Novità della versione 1610 di Configuration Manager
 

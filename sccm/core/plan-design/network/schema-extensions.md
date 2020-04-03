@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Estendere lo schema di Active Directory per supportare Configuration Manager.
 ms.date: 02/7/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 95c13c00-909f-4fbb-bbaa-1eba9d54d8c5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 9af7a0209eaa84aa4029339f6fa2507dc1fe1d36
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 8cb7de37dc293e0b5bb3c7632dfd5859c92c7222
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799370"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599497"
 ---
 # <a name="schema-extensions-for-configuration-manager"></a>Estensioni dello schema per Configuration Manager
 

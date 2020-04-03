@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare i file di log per la risoluzione dei problemi con i client di Configuration Manager e i sistemi del sito.
 ms.date: 11/29/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: b1751e3c-a60c-4ab7-a943-2595df1eb612
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 38d4b1dbbe0573529e0f063aaf6774c1d4f28987
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: aab7936f2212bf761b62d1ea28828a9178bd3ffd
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75800594"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604352"
 ---
 # <a name="about-log-files-in-configuration-manager"></a>Informazioni sui file di log di Configuration Manager
 
@@ -26,12 +26,12 @@ In Configuration Manager i componenti client e del server del sito registrano le
 Questo articolo include informazioni generali sui file di log di Configuration Manager. Sono inclusi gli strumenti da usare, la configurazione dei log e la posizione in cui trovarli. Per altre informazioni su file di log specifici, vedere [Riferimento per i file di log](/sccm/core/plan-design/hierarchy/log-files).
 
 
-## <a name="BKMK_AboutLogs"></a> Come funziona
+## <a name="how-it-works"></a><a name="BKMK_AboutLogs"></a> Come funziona
 
 La maggior parte dei processi in Configuration Manager scrive le informazioni operative in un file di log dedicato al processo. Questi file di log sono identificati dall'estensione **.log** o **.lo_** . Configuration Manager scrive in un file con estensione .log fino a quando il file non raggiunge la dimensione massima. Quando il log è pieno, il file .log viene copiato in un file con lo stesso nome ma con estensione .lo_ e il processo o il componente continua a scrivere nel file .log. Quando il file .log raggiunge nuovamente la dimensione massima, il file .lo_ viene sovrascritto e il processo si ripete. Alcuni componenti stabiliscono una cronologia per i file di log aggiungendo un indicatore di data e ora al nome del file di log e mantenendo l'estensione di file log.
 
 
-## <a name="bkmk_tools"></a> Strumenti visualizzatore log
+## <a name="log-viewer-tools"></a><a name="bkmk_tools"></a> Strumenti visualizzatore log
 
 Tutti i file di log di Configuration Manager sono file di testo normale, pertanto è possibile visualizzarli con qualsiasi lettore di testo, ad esempio con il Blocco note. I log usano una formattazione univoca che viene visualizzata in modo ottimale con uno degli strumenti specializzati seguenti:
 
@@ -55,7 +55,7 @@ Il **Supporto tecnico** include un visualizzatore log aggiornato. Questo strumen
 > Support Center e OneTrace usano Windows Presentation Foundation (WPF). Questo componente non è disponibile in Windows PE. Continuare a usare CMTrace nelle immagini d'avvio con le distribuzioni di sequenze di attività.
 
 
-## <a name="bkmk_logoptions"></a> Configurare le opzioni di registrazione
+## <a name="configure-logging-options"></a><a name="bkmk_logoptions"></a> Configurare le opzioni di registrazione
 
 È possibile modificare la configurazione dei file di log, ad esempio il livello di dettaglio, le dimensioni e la cronologia. Sono disponibili diversi modi per modificare queste impostazioni:
 
@@ -64,7 +64,7 @@ Il **Supporto tecnico** include un visualizzatore log aggiornato. Questo strumen
 - [Tramite il Registro di sistema di Windows](#bkmk_logoptions-registry)
 - [Nella console di Configuration Manager](#bkmk_logoptions-console)
 
-### <a name="bkmk_logoptions-clientprop"></a> Configurare le opzioni di registrazione durante l'installazione client
+### <a name="configure-logging-options-during-client-installation"></a><a name="bkmk_logoptions-clientprop"></a> Configurare le opzioni di registrazione durante l'installazione client
 
 È possibile impostare la configurazione dei file di log del client durante l'installazione. Usare le proprietà seguenti:
 
@@ -76,7 +76,7 @@ Il **Supporto tecnico** include un visualizzatore log aggiornato. Questo strumen
 
 Per altre informazioni, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](/sccm/core/clients/deploy/about-client-installation-properties#clientMsiProps).
 
-### <a name="bkmk_logoptions-sm"></a> Configurare le opzioni di registrazione usando Configuration Manager Service Manager
+### <a name="configure-logging-options-by-using-configuration-manager-service-manager"></a><a name="bkmk_logoptions-sm"></a> Configurare le opzioni di registrazione usando Configuration Manager Service Manager
 
 È possibile modificare la posizione in cui Configuration Manager archivia i file di log e le relative dimensioni.  
 
@@ -100,7 +100,7 @@ Per modificare le dimensioni, il nome e il percorso dei file di log o per fare i
 
 8. Selezionare **OK** per salvare la configurazione.  
 
-### <a name="bkmk_logoptions-registry"></a> Configurare le opzioni di registrazione usando il registro di sistema di Windows
+### <a name="configure-logging-options-by-using-the-windows-registry"></a><a name="bkmk_logoptions-registry"></a> Configurare le opzioni di registrazione usando il registro di sistema di Windows
 
 <!-- SCCMDocs#992 -->
 Usare il registro di sistema di Windows nei server o nei client per modificare le opzioni di registrazione seguenti:
@@ -126,7 +126,7 @@ Le impostazioni del registro di sistema variano a seconda del componente:
 - [Ruolo del sistema del sito](#bkmk_reg-role)
 - [Console di Configuration Manager](#bkmk_reg-console)
 
-#### <a name="bkmk_reg-client"></a> Opzioni di registrazione del client e del punto di gestione
+#### <a name="client-and-management-point-logging-options"></a><a name="bkmk_reg-client"></a> Opzioni di registrazione del client e del punto di gestione
 
 Per configurare le opzioni di registrazione per tutti i componenti in un sistema di sito client o punto di gestione, configurare i seguenti valori di **REG_DWORD** sotto la seguente chiave del Registro di sistema di Windows:
 
@@ -151,7 +151,7 @@ Per il debug avanzato è anche possibile aggiungere questo valore **REG_SZ** sot
 
 Con questa impostazione il client registra le informazioni di basso livello per la risoluzione dei problemi. Evitare di usare questa impostazione nei siti di produzione. La proprietà può dare origine a un volume eccessivo di registrazioni e quindi rendere difficile l'individuazione delle informazioni desiderate nei file di log. Assicurarsi di disattivare questa impostazione dopo aver risolto il problema.
 
-#### <a name="bkmk_reg-site"></a> Opzioni di registrazione del server del sito
+#### <a name="site-server-logging-options"></a><a name="bkmk_reg-site"></a> Opzioni di registrazione del server del sito
 
 È possibile configurare le impostazioni globalmente o per un componente specifico nel server del sito Configuration Manager.
 
@@ -186,7 +186,7 @@ Con l'impostazione DebugLogging il server registra le informazioni di basso live
 > [!Note]  
 > Non modificare altri valori che potrebbero esistere in questa chiave del Registro di sistema.
 
-#### <a name="bkmk_reg-role"></a> Opzioni di registrazione dei ruoli del sistema del sito
+#### <a name="site-system-role-logging-options"></a><a name="bkmk_reg-role"></a> Opzioni di registrazione dei ruoli del sistema del sito
 
 È possibile configurare le impostazioni globalmente o per un componente specifico in un sistema del sito che ospita un ruolo del server Configuration Manager.
 
@@ -207,7 +207,7 @@ Ad esempio per il ruolo punto di distribuzione:
 > [!Note]  
 > Non modificare altri valori che potrebbero esistere in questa chiave del Registro di sistema.
 
-#### <a name="bkmk_reg-console"></a> Opzioni di registrazione della console di Configuration Manager
+#### <a name="configuration-manager-console-logging-options"></a><a name="bkmk_reg-console"></a> Opzioni di registrazione della console di Configuration Manager
 
 Per modificare il livello di dettaglio di AdminUI.log per la console di Configuration Manager seguire questa procedura:
 
@@ -219,7 +219,7 @@ Per modificare il livello di dettaglio di AdminUI.log per la console di Configur
 
 1. Salvare il file e riavviare la console.
 
-### <a name="bkmk_logoptions-console"></a> Configurare le opzioni di registrazione nella console di Configuration Manager
+### <a name="configure-logging-options-in-the-configuration-manager-console"></a><a name="bkmk_logoptions-console"></a> Configurare le opzioni di registrazione nella console di Configuration Manager
 
 <!-- 4433455 -->
 
@@ -231,7 +231,7 @@ A partire dalla versione 1910, abilitare o disabilitare la registrazione dettagl
 
 Per altre informazioni, vedere [Diagnostica client](/sccm/core/clients/manage/client-notification#client-diagnostics).
 
-## <a name="BKMK_LogLocation"></a> Come trovare i file di log
+## <a name="locating-log-files"></a><a name="BKMK_LogLocation"></a> Come trovare i file di log
 
 Configuration Manager e i componenti dipendenti archiviano i file di log in diverse posizioni. Queste posizioni dipendono dal processo che crea il file di log e dalla configurazione dell'ambiente.
 

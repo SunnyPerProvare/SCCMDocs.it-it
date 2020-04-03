@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Requisiti di configurazione e della versione di SQL Server per l'hosting di un database del sito di Configuration Manager.
 ms.date: 08/05/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: d0b5d97754bc20c446664fe6b5af110afa7afbc7
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: c710d497bc34bb74fac79b1ab407be8423faa1b1
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79405464"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80601244"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>Versioni di SQL Server supportate per Configuration Manager
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Pianificare e progettare la distribuzione del contenuto software tramite Microsoft Azure con i punti di distribuzione cloud in Configuration Manager.
 ms.date: 06/17/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 3cd9c725-6b42-427d-9191-86e67f84e48c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ec74032ab8490226436f8afe06de8ff025591726
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 40e6947f7a418584c3a8d9d644b2897f8d501460
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799568"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599932"
 ---
 # <a name="use-a-cloud-distribution-point-in-configuration-manager"></a>Usare un punto di distribuzione cloud in Configuration Manager
 
@@ -47,7 +47,7 @@ Questo articolo fornisce informazioni sul punto di distribuzione cloud, sulla pi
 - [Domande frequenti](#bkmk_faq)
 
 
-## <a name="bkmk_features"></a> Funzionalità e vantaggi
+## <a name="features-and-benefits"></a><a name="bkmk_features"></a> Funzionalità e vantaggi
 
 ### <a name="features"></a>Caratteristiche
 
@@ -72,7 +72,7 @@ Il punto di distribuzione cloud offre i vantaggi aggiuntivi seguenti:
 - A partire dalla versione 1806 è possibile usare i punti di distribuzione cloud come percorsi di origine per i punti di distribuzione pull.  
 
 
-## <a name="bkmk_topology"></a> Progettazione della topologia
+## <a name="topology-design"></a><a name="bkmk_topology"></a> Progettazione della topologia
 
 La distribuzione e l'utilizzo del punto di distribuzione cloud includono i componenti seguenti:  
 
@@ -130,7 +130,7 @@ Quando si usa un punto di distribuzione cloud nella gerarchia, usare le informaz
 - Eseguire il backup e salvare una copia del certificato di autenticazione server. Se si usa la distribuzione classica del servizio in Azure, eseguire il backup e salvare una copia anche del certificato di gestione di Azure. Quando si ripristina il sito primario di Configuration Manager in un server diverso, è necessario reimportare i certificati.  
 
 
-## <a name="bkmk_requirements"></a> Requisiti
+## <a name="requirements"></a><a name="bkmk_requirements"></a> Requisiti
 
 - È necessaria una **sottoscrizione di Azure** per l'hosting del servizio.  
 
@@ -156,7 +156,7 @@ Quando si usa un punto di distribuzione cloud nella gerarchia, usare le informaz
 - I dispositivi client richiedono una **connessione a Internet** e devono usare il protocollo **IPv4**.  
 
 
-## <a name="bkmk_spec"></a> Specifiche
+## <a name="specifications"></a><a name="bkmk_spec"></a> Specifiche
 
 - Il punto di distribuzione cloud supporta tutte le versioni di Windows elencate in [Sistemi operativi supportati per client e dispositivi ](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices).  
 
@@ -188,7 +188,7 @@ Quando si usa un punto di distribuzione cloud nella gerarchia, usare le informaz
 - Non è possibile configurare un punto di distribuzione cloud come punto di distribuzione pull.  
 
 
-## <a name="bkmk_cost"></a> Costi
+## <a name="cost"></a><a name="bkmk_cost"></a> Costi
 
 <!--501018-->
 > [!IMPORTANT]  
@@ -250,7 +250,7 @@ Un punto di distribuzione cloud usa i componenti di Azure seguenti, che implican
 - Ogni servizio cloud ha un indirizzo IP dinamico. Ogni punto di distribuzione cloud distinto usa un nuovo indirizzo IP dinamico. L'aggiunta di macchine virtuali per il servizio cloud non aumenta il numero di indirizzi.  
 
 
-## <a name="bkmk_dataflow"></a> Porte e flusso di dati
+## <a name="ports-and-data-flow"></a><a name="bkmk_dataflow"></a> Porte e flusso di dati
 
 Vi sono due flussi di dati primari per il punto di distribuzione cloud:  
 
@@ -285,7 +285,7 @@ Quando un client usa un punto di distribuzione cloud come percorso del contenuto
 6. Se il client considera attendibile il certificato di autenticazione server del punto di distribuzione cloud, si connette all'archiviazione di Azure per scaricare il contenuto.
 
 
-## <a name="bkmk_perf"></a> Prestazioni e scalabilità
+## <a name="performance-and-scale"></a><a name="bkmk_perf"></a> Prestazioni e scalabilità
 
 <!--494872-->
 
@@ -305,7 +305,7 @@ Il punto di distribuzione cloud usa due macchine virtuali di Azure come front-en
 Il servizio di archiviazione di Azure supporta 500 richieste al secondo per un singolo file. In un test delle prestazioni, un singolo punto di distribuzione cloud ha supportato la distribuzione di un unico file da 100 MB a 50.000 client in 24 ore.<!--512106-->  
 
 
-## <a name="bkmk_certs"></a> Certificati  
+## <a name="certificates"></a><a name="bkmk_certs"></a> Certificati  
 
 A seconda della progettazione del punto di distribuzione cloud, sono necessari uno o più certificati digitali.  
 
@@ -354,7 +354,7 @@ Se si usa il metodo di distribuzione classico di Azure con Configuration Manager
 Per ridurre la complessità, usare lo stesso certificato di gestione di Azure per tutte le distribuzioni classiche di punti di distribuzione cloud e gateway di gestione cloud, con tutte le sottoscrizioni di Azure e tutti i siti di Configuration Manager.
 
 
-## <a name="bkmk_faq"></a> Domande frequenti
+## <a name="frequently-asked-questions-faq"></a><a name="bkmk_faq"></a> Domande frequenti
 
 ### <a name="does-a-client-need-a-certificate-to-download-content-from-a-cloud-distribution-point"></a>Un client necessita di un certificato per scaricare contenuti da un punto di distribuzione cloud?
 

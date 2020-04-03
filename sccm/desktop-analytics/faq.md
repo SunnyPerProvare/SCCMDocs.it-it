@@ -4,24 +4,24 @@ titleSuffix: Configuration Manager
 description: Domande frequenti per Desktop Analytics.
 ms.date: 02/03/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: e0db3311-2303-4013-a906-76b408172d3c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7b580ef5d48e223e293d4224388374325922a086
-ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
+ms.openlocfilehash: 59b83ff5d62d6bb499f9677f260e4f1ee65d74aa
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "76975771"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80597283"
 ---
 # <a name="desktop-analytics-faq"></a>Domande frequenti su Desktop Analytics
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-### <a name="bkmk_intune"></a> È possibile usare l'analisi abilitata per il cloud con i dispositivi gestiti da Intune?
+### <a name="can-i-use-cloud-enabled-analytics-with-intune-managed-devices"></a><a name="bkmk_intune"></a> È possibile usare l'analisi abilitata per il cloud con i dispositivi gestiti da Intune?
 
 Non attualmente, ma vedere l'annuncio di Microsoft Ignite 2019 sulla [gestione dei dispositivi basata su dati analitici](https://myignite.techcommunity.microsoft.com/sessions/81690?source=sessions). Questa soluzione pianificata è un successore di Integrità dispositivi e Preparazione aggiornamenti.
 
@@ -143,7 +143,7 @@ Sì, le funzionalità di Windows Analytics seguenti sono state ritirate o non so
 
 ## <a name="other"></a>Altro
 
-### <a name="bkmk_office"></a> È possibile usare Desktop Analytics per gli aggiornamenti di Office 365 ProPlus?
+### <a name="can-i-use-desktop-analytics-for-my-office-365-proplus-upgrades"></a><a name="bkmk_office"></a> È possibile usare Desktop Analytics per gli aggiornamenti di Office 365 ProPlus?
 
 No, Desktop Analytics si concentra su Windows. Microsoft ha sviluppato Desktop Analytics in stretta collaborazione con molti clienti. Il feedback dei clienti riguarda il modo in cui Desktop Analytics migliora la capacità di gestire le distribuzioni di Windows in tutta sicurezza. I clienti esprimono anche interesse per una maggiore integrazione della [preparazione per Office 365 ProPlus](/sccm/sum/deploy-use/office-365-dashboard#bkmk_o365_readiness) con gli strumenti di gestione di Office in Configuration Manager e Intune. Microsoft continua a investire in queste aree concentrandosi al contempo su scenari Windows in Desktop Analytics.
 

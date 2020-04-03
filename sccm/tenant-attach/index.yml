@@ -6,17 +6,17 @@ metadata:
   titleSuffix: Configuration Manager
   description: Caricare i dispositivi Configuration Manager nel servizio cloud ed eseguire azioni su di essi.
   ms.product: configuration-manager
-  ms.technology: configmgr-other
+  ms.technology: configmgr-core
   ms.topic: landing-page
   author: mestew
   ms.author: mstewart
   ms.date: 04/01/2020
-  ms.openlocfilehash: d4900e26a257cda1f629b6fa7a03fbf82dcc8db3
-  ms.sourcegitcommit: 6ed22f0aa4a0a66428cfa27de13f6b950e79f7ec
+  ms.openlocfilehash: 17da69d013d15621a7948a73dba13f110b62f6fa
+  ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
   ms.translationtype: HT
   ms.contentlocale: it-IT
   ms.lasthandoff: 04/02/2020
-  ms.locfileid: "80543669"
+  ms.locfileid: "80604840"
 landingContent:
 - title: Informazioni sul collegamento di tenant
   linkLists:

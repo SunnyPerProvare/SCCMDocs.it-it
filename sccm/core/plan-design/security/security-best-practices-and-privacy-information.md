@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Individuare risorse che offrano procedure consigliate per la sicurezza e informazioni sulla privacy per Configuration Manager.
 ms.date: 01/3/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: b7bff8a0-fe76-4d3b-aac6-065290888bea
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3678e7696b41bac727221a8cdc5a4831261ba1c6
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 4e424bc7be8c2c501097cc2a1891b619ea39d496
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799132"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606334"
 ---
 # <a name="security-best-practices-and-privacy-information-for-configuration-manager"></a>Procedure consigliate per la sicurezza e informazioni sulla privacy per Configuration Manager
 
@@ -27,7 +27,7 @@ Usare le informazioni seguenti per individuare procedure consigliate per la sicu
 
 -   [Sicurezza e privacy per l'amministrazione dei siti](../../../core/plan-design/hierarchy/security-and-privacy-for-site-administration.md)  
 
--   [Sicurezza e privacy per la creazione di report](../../../core/servers/manage/security-and-privacy-for-reporting.md)  
+-   [Sicurezza e privacy per la creazione di report](../../../core/servers/manage/planning-for-reporting.md#security-and-privacy)  
 
 -   [Sicurezza e privacy per la migrazione a Configuration Manager Current Branch](../../../core/migration/security-and-privacy-for-migration.md)  
 

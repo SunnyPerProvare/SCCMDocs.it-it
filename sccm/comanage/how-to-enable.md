@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Abilitare rapidamente la co-gestione in Configuration Manager per ottenere valore immediato.
 ms.date: 07/26/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology: configmgr-comanage
 ms.topic: conceptual
 ms.assetid: 8fac7ac5-96a3-4ec1-85cb-623b26bf5b1c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 9f9e2911c70b1b07b46959a225c6bf0eb1bfe635
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: dcbe02ae512c3bbb7ddffc608b98e2f8d5080453
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75815544"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80596511"
 ---
 # <a name="how-to-enable-co-management-in-configuration-manager"></a>Come abilitare la co-gestione in Configuration Manager
 

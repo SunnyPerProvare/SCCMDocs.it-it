@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come gli utenti registrano i dispositivi con la gestione di dispositivi mobili (MDM) locale in Configuration Manager.
 ms.date: 01/13/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-hybrid
+ms.technology: configmgr-mdm
 ms.topic: conceptual
 ms.assetid: 59004b34-b64f-4d77-898c-07bf3dc75430
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e2d1eb0476eec975a458222134eb33ab8469cbb6
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: eed1e003bf8c383a46d541997f94f62c58766b5f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76035218"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605431"
 ---
 # <a name="how-users-enroll-devices-with-on-premises-mdm-in-configuration-manager"></a>Come gli utenti registrano i dispositivi con MDM locale in Configuration Manager
 
@@ -29,7 +29,7 @@ Con Configuration Manager gestione di dispositivi mobili (MDM) locale, gli utent
 
 Per altre informazioni su come configurare la registrazione, vedere [configurare la registrazione dei dispositivi per MDM locale](/configmgr/mdm/get-started/set-up-device-enrollment-on-premises-mdm).
 
-## <a name="bkmk_enrollDesk"></a>Registrare Windows 10
+## <a name="enroll-windows-10"></a><a name="bkmk_enrollDesk"></a>Registrare Windows 10
 
 1. In un computer Windows 10, passare a **Impostazioni**.
 
@@ -45,7 +45,7 @@ Per altre informazioni su come configurare la registrazione, vedere [configurare
 
 Dopo un breve periodo di tempo, il dispositivo viene registrato con Configuration Manager.
 
-## <a name="bkmk_enrollMob"></a>Registrazione di Windows 10 Mobile
+## <a name="enroll-windows-10-mobile"></a><a name="bkmk_enrollMob"></a>Registrazione di Windows 10 Mobile
 
 1. In un dispositivo Windows 10 Mobile, passare a **Impostazioni**.
 
@@ -59,6 +59,6 @@ Dopo un breve periodo di tempo, il dispositivo viene registrato con Configuratio
 
 Dopo un breve periodo di tempo, il dispositivo viene registrato con Configuration Manager. Seleziona **Chiudi**.
 
-## <a name="bkmk_verify"></a>Verificare la registrazione
+## <a name="verify-enrollment"></a><a name="bkmk_verify"></a>Verificare la registrazione
 
 Usare la console di Configuration Manager per verificare che i dispositivi siano registrati correttamente. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità** e selezionare **Dispositivi**. Sfogliare o cercare il dispositivo registrato nell'elenco dei dispositivi.

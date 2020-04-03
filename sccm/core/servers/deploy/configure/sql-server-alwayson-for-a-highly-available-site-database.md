@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Pianificare l'uso di un gruppo di disponibilità Always On di SQL Server con Configuration Manager
 ms.date: 07/26/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 58d52fdc-bd18-494d-9f3b-ccfc13ea3d35
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4ad93534e06c67b648253ae83d08a0b8e4547ae1
-ms.sourcegitcommit: 1991263194a5cd6dfbd3dd9a5f5c7f179c1bfeac
+ms.openlocfilehash: cd4fec1611249179ec47925fb73ad2f43f2f704f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77218381"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606020"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparare l'uso di gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -386,11 +386,11 @@ Impostare il modello di recupero del database del sito su **Completo**. Questa c
 
 ## <a name="changes-for-site-recovery"></a>Modifiche per il ripristino del sito
 
-Se almeno uno dei nodi del gruppo di disponibilità continua a funzionare, usare l'opzione di ripristino del sito **Ignora ripristino database (utilizzare questa opzione se non si sono verificati errori nel database del sito)**.
+Se almeno uno dei nodi del gruppo di disponibilità continua a funzionare, usare l'opzione di ripristino del sito **Ignora ripristino database (utilizzare questa opzione se non si sono verificati errori nel database del sito)** .
 
 A partire dalla versione 1906, con il ripristino del sito è possibile ricreare il database in un gruppo SQL Always On. Questo processo funziona con il seeding sia manuale che automatico.<!-- SCCMDocs-pr#3846 -->
 
-Nella versione 1902 e nelle versioni precedenti se tutti i nodi di un gruppo di disponibilità sono andati perduti, prima di poter ripristinare il sito è necessario ricreare il gruppo di disponibilità. Configuration Manager non è in grado di ricompilare o ripristinare il nodo di disponibilità. Ricreare il gruppo, ripristinare il backup e riconfigurare SQL. Quindi usare l'opzione di ripristino sito **Ignora ripristino database (utilizzare questa opzione se non si sono verificati errori nel database del sito)**.
+Nella versione 1902 e nelle versioni precedenti se tutti i nodi di un gruppo di disponibilità sono andati perduti, prima di poter ripristinare il sito è necessario ricreare il gruppo di disponibilità. Configuration Manager non è in grado di ricompilare o ripristinare il nodo di disponibilità. Ricreare il gruppo, ripristinare il backup e riconfigurare SQL. Quindi usare l'opzione di ripristino sito **Ignora ripristino database (utilizzare questa opzione se non si sono verificati errori nel database del sito)** .
 
 Per altre informazioni, vedere [Backup e ripristino](/sccm/core/servers/manage/backup-and-recovery).
 

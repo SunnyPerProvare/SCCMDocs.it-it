@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare la peer cache per i client per i percorsi di origine client quando si distribuisce contenuto con Configuration Manager.
 ms.date: 09/19/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 99598c20f9be0fba61e1afb16ee5ee5704266d23
-ms.sourcegitcommit: 8c10745cb4e2baabba2af4821cb207a2f91d2eb3
+ms.openlocfilehash: 7fb26f0583bddbf2d3f1ba2446e87790bb83a2fd
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80138082"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604302"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 

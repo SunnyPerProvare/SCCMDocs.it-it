@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Assicurarsi che un computer soddisfi i prerequisiti per l'uso come server del sito o server di sistema del sito per Configuration Manager.
 ms.date: 02/14/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 2aca914f-641e-4bc8-98d4-bbf0a2a5276f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 818df92fd64fe97d1cdcc76b63a50283c572df41
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: 2259ffbe192e05d7bfa533ade2b5bfdf1fd7fedc
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79405344"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599548"
 ---
 # <a name="prepare-windows-servers-to-support-configuration-manager"></a>Preparare i server di Windows per il supporto di Configuration Manager
 

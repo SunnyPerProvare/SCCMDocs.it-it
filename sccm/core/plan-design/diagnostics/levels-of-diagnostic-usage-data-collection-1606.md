@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sui livelli dei dati di diagnostica e di utilizzo raccolti da Configuration Manager versione 1606.
 ms.date: 12/29/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: f7350d03-f440-4744-82d4-75f8c6c25028
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 0f5ebd1200cb549e32b7b1b547a57d522fbcbf1a
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: cd58fb2ad105d3fb94fcc1d2fe56f0ae64f766f1
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75801223"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600886"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1606-of-configuration-manager"></a>Livelli di raccolta di dati per utilizzo diagnostico per la versione 1606 di Configuration Manager
 
@@ -30,12 +30,12 @@ Le modifiche rispetto alle versioni precedenti sono contrassegnate da ***[Nuovo]
 > [!IMPORTANT]
 >  Configuration Manager non raccoglie codici del sito, nomi di siti, indirizzi IP, nomi utente, nomi di computer, indirizzi fisici o indirizzi di posta elettronica per i livelli di base e avanzato. L'eventuale raccolta di tali informazioni per il livello completo non è intenzionale, ovvero dati potenzialmente inclusi nelle informazioni di diagnostica avanzate come file di log o snapshot di memoria. Le informazioni eventualmente raccolte non verranno usate da Microsoft per identificare l'utente, contattare l'utente o per fini pubblicitari.
 
-##  <a name="bkmk_change"></a> Come cambiare il livello
+##  <a name="how-to-change-the-level"></a><a name="bkmk_change"></a> Come cambiare il livello
  Gli amministratori con ambito amministrativo basato sui ruoli che include le autorizzazioni **Modifica** per la classe di oggetti **Sito** possono modificare il livello dei dati raccolti nelle impostazioni Dati di diagnostica e di utilizzo nella console di Configuration Manager.
 
    A tale scopo, nella console passare alla scheda Backstage (la scheda in alto a sinistra con la freccia a discesa), selezionare **Dati di utilizzo** e quindi selezionare il livello di dati che si vuole usare.  
 
-##  <a name="bkmk_level1"></a> Livello 1 - Di base
+##  <a name="level-1---basic"></a><a name="bkmk_level1"></a> Livello 1 - Di base
  Il livello di base include i dati sulla gerarchia ed è necessario per consentire il miglioramento dell'esperienza di installazione o aggiornamento, nonché per determinare quali aggiornamenti di Configuration Manager sono applicabili per la gerarchia.
 
  Per Configuration Manager versione 1606, questo livello include i dati seguenti:
@@ -91,7 +91,7 @@ Le modifiche rispetto alle versioni precedenti sono contrassegnate da ***[Nuovo]
 - ***[Nuovo]*** Versione SQL, livello Service Pack, edizione, ID delle regole di confronto e set di caratteri
 
 
-##  <a name="bkmk_level2"></a> Livello 2 - Avanzato
+##  <a name="level-2---enhanced"></a><a name="bkmk_level2"></a> Livello 2 - Avanzato
 Il livello avanzato è quello predefinito dopo l'installazione. Questo livello include i dati raccolti per il livello di base, oltre a dati specifici per le funzionalità (frequenza e durata d'uso), le impostazioni client di Configuration Manager (nome del componente, stato e alcune impostazioni come gli intervalli di polling) e le informazioni di base sugli aggiornamenti software.
 
 Questo livello è consigliato perché offre a Microsoft i dati minimi necessari per apportare miglioramenti utili nelle versioni future di prodotti e servizi. Con questo livello non vengono raccolti i nomi degli oggetti (siti, utenti, computer o oggetti), dettagli sugli oggetti correlati alla sicurezza o informazioni sulle vulnerabilità come il numero di sistemi che richiedono aggiornamenti software.
@@ -354,7 +354,7 @@ Per Configuration Manager versione 1606, questo livello include i dati seguenti:
 
 
 
-##  <a name="bkmk_level3"></a> Livello 3 - Completo
+##  <a name="level-3---full"></a><a name="bkmk_level3"></a> Livello 3 - Completo
 Il livello completo include tutti i dati dei livelli di base e avanzato. Include inoltre informazioni aggiuntive su Endpoint Protection, le percentuali di conformità degli aggiornamenti e informazioni sugli aggiornamenti software. Questo livello può includere anche informazioni di diagnostica avanzate, come file di sistema e snapshot di memoria, che possono contenere informazioni personali presenti in memoria o nei file di log al momento dell'acquisizione.
 
 Per Configuration Manager versione 1606, questo livello include i dati seguenti:

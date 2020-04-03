@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su dove trovare il supporto di installazione per le nuove installazioni di Configuration Manager.
 ms.date: 01/11/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 76c220b6-1824-4e2e-8c61-a719f0b056f1
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: dd70854b67dda1482f1510f870533e2a45f70815
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 433389b0c00173785c21aad0fd6e36c27d28668c
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798256"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605954"
 ---
 # <a name="where-to-get-installation-media-for-configuration-manager"></a>Dove ottenere il supporto di installazione per Configuration Manager
 
