@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Aggiornare i dispositivi a Windows 10 versione 1709 o successive, ovvero le versioni richieste per la co-gestione
 ms.date: 01/14/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology: configmgr-comanage
 ms.topic: conceptual
 ms.assetid: 561eb5b6-f90c-485a-91c2-e45bb0ce7877
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 12d72b4b7c355b86ef5e67fe3bc65fd699681064
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 465068285f1c4765b135e4b86daadf586342706e
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816837"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80595626"
 ---
 # <a name="upgrade-windows-10-for-co-management"></a>Eseguire l'aggiornamento a Windows 10 per la co-gestione
 

@@ -3,18 +3,18 @@ title: Installazione guidata
 titleSuffix: Configuration Manager
 ms.date: 07/26/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 1f703376-5f2c-4fd2-8209-7028c931ddc7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 82e78e3c670b60a567ff7f9950b53071ca655305
-ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
+ms.openlocfilehash: 13658417dbbec0b1cdca03fee76bd183d7415932
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "76891621"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605774"
 ---
 # <a name="use-the-setup-wizard-to-install-configuration-manager-sites"></a>Usare l'installazione guidata per installare i siti di Configuration Manager
 
@@ -43,7 +43,7 @@ Installare un sito secondario dalla console di Configuration Manager. I siti sec
 > - [**Home page di Configuration Manager**](https://www.microsoft.com/cloud-platform/system-center-configuration-manager) <!-- https://go.microsoft.com/fwlink/p/?LinkId=626545 -->
 
 
-## <a name="bkmk_primary"></a> Installare un sito di amministrazione centrale o primario
+## <a name="install-a-central-administration-or-primary-site"></a><a name="bkmk_primary"></a> Installare un sito di amministrazione centrale o primario
 
 Usare la procedura seguente per installare un sito di amministrazione centrale o un sito primario. Usare questa procedura anche per eseguire l'aggiornamento di un sito di valutazione a un sito di Configuration Manager con licenza completa.
 
@@ -54,7 +54,7 @@ Prima di iniziare l'installazione del sito, è consigliabile acquisire familiari
 
 Se si installa un sito di amministrazione centrale come parte di uno scenario di espansione del sito, vedere la sezione [Espandere un sito primario autonomo](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites#bkmk_expand) prima di usare la procedura seguente.
 
-### <a name="bkmk_installpri"></a> Processo di installazione di un sito primario o di amministrazione centrale
+### <a name="process-to-install-a-primary-or-central-administration-site"></a><a name="bkmk_installpri"></a> Processo di installazione di un sito primario o di amministrazione centrale
 
 1. Nel computer in cui si vuole installare il sito, eseguire `<InstallationMedia>\SMSSETUP\BIN\X64\Setup.exe` per avviare l'**Installazione guidata di Configuration Manager**.  
 
@@ -244,7 +244,7 @@ Se si installa un sito di amministrazione centrale come parte di uno scenario di
     - Al termine dell'installazione, sarà possibile connettere una console che consente di modificare oggetti e impostazioni.  
 
 
-## <a name="bkmk_expand"></a> Espandere un sito primario autonomo
+## <a name="expand-a-stand-alone-primary-site"></a><a name="bkmk_expand"></a> Espandere un sito primario autonomo
 
 Dopo aver installato un sito primario autonomo come primo sito, è possibile successivamente espanderlo in una gerarchia più ampia installando un sito di amministrazione centrale.
 
@@ -271,7 +271,7 @@ Per espandere il sito, usare l'installazione guidata di Configuration Manager pe
 Per espandere un sito primario autonomo, vedere prima i [prerequisiti per l'espansione di un sito primario autonomo](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand). Usare quindi la procedura descritta nella sezione [Processo di installazione di un sito primario o di amministrazione centrale](/sccm/core/servers/deploy/install/use-the-setup-wizard-to-install-sites#bkmk_installpri) in precedenza in questo articolo.
 
 
-## <a name="bkmk_secondary"></a> Installare un sito secondario
+## <a name="install-a-secondary-site"></a><a name="bkmk_secondary"></a> Installare un sito secondario
 
 Usare la console di Configuration Manager per installare un sito secondario.  
 
@@ -281,7 +281,7 @@ Usare la console di Configuration Manager per installare un sito secondario.
 
 - Quando si installa il sito secondario, Configuration Manager configura il nuovo sito per l'uso delle porte di comunicazione del client configurate nel sito primario padre.  
 
-### <a name="bkmk_installsecondary"></a> Processo per installare un sito secondario  
+### <a name="process-to-install-a-secondary-site"></a><a name="bkmk_installsecondary"></a> Processo per installare un sito secondario  
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Configurazione del sito** e selezionare **Siti**. Selezionare il sito che sarà il sito primario padre del nuovo sito secondario.  
 
@@ -411,7 +411,7 @@ Usare la console di Configuration Manager per installare un sito secondario.
 
 11. Nella pagina **Riepilogo** verificare le impostazioni, quindi fare clic su **Avanti** per installare il sito secondario. Quando la procedura guidata visualizza la pagina **Completamento**, è possibile chiudere la procedura guidata. L'installazione del sito secondario continua in background.  
 
-### <a name="bkmk_verify"></a> Come verificare lo stato di installazione del sito secondario  
+### <a name="how-to-verify-the-secondary-site-installation-status"></a><a name="bkmk_verify"></a> Come verificare lo stato di installazione del sito secondario  
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Configurazione del sito** e selezionare **Siti**.  
 

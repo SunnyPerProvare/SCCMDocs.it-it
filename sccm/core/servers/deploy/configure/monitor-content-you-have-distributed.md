@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come monitorare il contenuto distribuito usando la console di Configuration Manager.
 ms.date: 07/26/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 82e8a693-9adf-4ca3-8484-7e101c34c7c1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0880d4767da94b032b66a0ef354f6ea354705c83
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 22824b31df3f31b1d0c1075de861e02d301646e2
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798634"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80593015"
 ---
 # <a name="monitor-content-you-distribute-with-configuration-manager"></a>Monitorare il contenuto distribuito con Configuration Manager
 
@@ -32,7 +32,7 @@ Usare la console di Configuration Manager per monitorare il contenuto distribuit
 > [!NOTE]  
 > Configuration Manager monitora solo il contenuto in un punto di distribuzione nella raccolta contenuto. Non monitora il contenuto archiviato nel punto di distribuzione in condivisioni pacchetto o personalizzate.  
 
-## <a name="BKMK_ContentStatus"></a> Monitoraggio dello stato del contenuto
+## <a name="content-status-monitoring"></a><a name="BKMK_ContentStatus"></a> Monitoraggio dello stato del contenuto
 
 Il nodo **Stato componente** dell'area di lavoro **Monitoraggio** fornisce informazioni sui pacchetti contenuto. Nella console di Configuration Manager esaminare informazioni quali:  
 

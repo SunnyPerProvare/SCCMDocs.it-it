@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sull'uso del client di interoperabilità estesa per il supporto a lungo termine di un client di Configuration Manager statico con un sito Current Branch.
 ms.date: 08/27/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 600086d5-bd9e-4ac1-8ace-c7a62de80dc2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 289b4ce6c822c909cf4d68ebdf562522431ede77
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 53dc40cc0a7c0d29415839c72ff9f12cb02e1e20
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792061"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598255"
 ---
 # <a name="use-the-configuration-manager-client-software-for-extended-interoperability-with-future-versions-of-a-current-branch-site"></a>Usare il software client del supporto di Configuration Manager per l'interoperabilità estesa con le versioni future di un sito Current Branch
 

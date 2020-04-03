@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sugli strumenti che consentono di gestire e risolvere i problemi di infrastruttura di Configuration Manager.
 ms.date: 11/29/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 395403dc-6997-4415-93fd-6b1eeb6ba31a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f4036e0b54ff66be6990edf5196115bbeb290ea8
-ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
+ms.openlocfilehash: 1155947aabacd2c60a5c5a11c020a4f4d2258f1d
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78167236"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598641"
 ---
 # <a name="configuration-manager-tools"></a>Strumenti di Configuration Manager
 

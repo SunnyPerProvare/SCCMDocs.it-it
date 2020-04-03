@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Visualizzare i criteri del ciclo di vita Microsoft con il dashboard del ciclo di vita del prodotto in Configuration Manager.
 ms.date: 01/09/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 8b5b144a-0e5f-4fcc-87b2-33b9bcdb5655
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 9eaad7a5659df97988eaadcb808b688203891d6b
-ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
+ms.openlocfilehash: c1d93d56ae6aa894d5a961e3ce8e1dc59b1bcf74
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77516300"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80594975"
 ---
 # <a name="manage-microsoft-lifecycle-policy-with-configuration-manager"></a>Gestire i criteri del ciclo di vita Microsoft con Configuration Manager
 
@@ -37,11 +37,11 @@ A partire dalla versione 1810, il dashboard include le informazioni per System C
 
 - È necessario che sia installato e configurato un ruolo del punto di connessione del servizio. Per ottenere gli aggiornamenti per i dati in questo dashboard, il punto di connessione del servizio deve essere online oppure deve essere sincronizzato regolarmente se è offline. Per altre informazioni, vedere [Informazioni sul punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point).
 
-- Un punto di Reporting Services è necessario per la funzionalità di collegamento ipertestuale nel dashboard. Il dashboard è collegato ai report di SQL Server Reporting Services (SSRS). Per altre informazioni, vedere [Creazione di report in Configuration Manager](/sccm/core/servers/manage/reporting).  
+- Un punto di Reporting Services è necessario per la funzionalità di collegamento ipertestuale nel dashboard. Il dashboard è collegato ai report di SQL Server Reporting Services (SSRS). Per altre informazioni, vedere [Introduzione ai report](/configmgr/core/servers/manage/introduction-to-reporting).  
 
 - Il punto di sincronizzazione di Asset Intelligence deve essere configurato e sincronizzato. Il dashboard usa il catalogo di Asset Intelligence come metadati per i titoli dei prodotti. I metadati vengono confrontati con i dati di inventario nella gerarchia. Per altre informazioni, vedere [Configurare Asset Intelligence in Configuration Manager](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence).  
   - Se si sta configurando il punto di sincronizzazione di Asset Intelligence per la prima volta, assicurarsi di [abilitare le classi di inventario hardware di Asset Intelligence](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence#BKMK_EnableAssetIntelligence). Il dashboard del ciclo di vita dipende da tali classi di inventario hardware di Asset Intelligence. Il dashboard non mostrerà dati fino a quando i client non saranno stati analizzati e non sarà stato restituito l'inventario hardware.  
-  - Per visualizzare informazioni sugli aggiornamenti della sicurezza estesa nel dashboard, abilitare la classe di inventario hardware **Prodotto con gestione licenze software - Asset Intelligence (SoftwareLicensingProduct)**. Per altre informazioni, vedere [Abilitare le classi di report per l'inventario hardware di Asset Intelligence](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence#BKMK_EnableAssetIntelligence). <!--4962901-->
+  - Per visualizzare informazioni sugli aggiornamenti della sicurezza estesa nel dashboard, abilitare la classe di inventario hardware **Prodotto con gestione licenze software - Asset Intelligence (SoftwareLicensingProduct)** . Per altre informazioni, vedere [Abilitare le classi di report per l'inventario hardware di Asset Intelligence](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence#BKMK_EnableAssetIntelligence). <!--4962901-->
 
 
 

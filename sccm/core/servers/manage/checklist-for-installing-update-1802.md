@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager alla versione 1802.
 ms.date: 06/08/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 6af92de2-b2c7-4d5c-affd-6cce81979fb5
 author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9613ff4b55c7b8572aea632de2ed30330844b292
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: dbdacb623da7d87f04ff601225179737e7d07dcc
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75796720"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80592016"
 ---
 # <a name="checklist-for-installing-update-1802-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1802 di Configuration Manager
 

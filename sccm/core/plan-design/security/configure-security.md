@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Configurare le opzioni relative alla sicurezza per Configuration Manager.
 ms.date: 11/27/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 552e7e3d-e584-4a7c-9155-0f796a14b678
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4761a67fa23ac2273dc1d034319f70e79054ed36
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c8bdfaa89bec2c935d344d4fe63f2405b4b49554
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799319"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80593078"
 ---
 # <a name="configure-security-in-configuration-manager"></a>Configurare la sicurezza in Configuration Manager
 
@@ -31,7 +31,7 @@ Usare le informazioni contenute in questo articolo per configurare le opzioni re
 
 
 
-##  <a name="BKMK_ConfigureClientPKI"></a> Configurare le impostazioni per i certificati PKI client  
+##  <a name="configure-settings-for-client-pki-certificates"></a><a name="BKMK_ConfigureClientPKI"></a> Configurare le impostazioni per i certificati PKI client  
 
 Se si desidera utilizzare i certificati di infrastruttura a chiave pubblica (PKI) per le connessioni client con i sistemi del sito che utilizzano IIS (Internet Information Services), utilizzare la seguente procedura per configurare le impostazioni relative ai certificati.  
 
@@ -73,7 +73,7 @@ Ripetere questa procedura per tutti i siti primari nella gerarchia.
 
 
 
-##  <a name="BKMK_ConfigureSigningEncryption"></a> Configurare la firma e la crittografia  
+##  <a name="configure-signing-and-encryption"></a><a name="BKMK_ConfigureSigningEncryption"></a> Configurare la firma e la crittografia  
 
 Configurare le impostazioni di firma e crittografia più sicure per i sistemi del sito supportate da tutti i client del sito. Queste impostazioni sono particolarmente importanti quando si consente ai client di comunicare con i sistemi del sito utilizzando i certificati autofirmati tramite HTTP.  
 
@@ -102,7 +102,7 @@ Ripetere questa procedura per tutti i siti primari nella gerarchia.
 
 
 
-##  <a name="BKMK_ConfigureRBA"></a> Configurare l'amministrazione basata su ruoli  
+##  <a name="configure-role-based-administration"></a><a name="BKMK_ConfigureRBA"></a> Configurare l'amministrazione basata su ruoli  
 
 L'amministrazione basata su ruoli combina ruoli di sicurezza, ambiti di protezione e raccolte assegnate per definire l'ambito amministrativo per ogni utente amministratore. Un ambito comprende gli oggetti che possono essere visualizzati da un utente nella console, nonché le attività correlate agli oggetti eseguibili dall'utente. Le configurazioni dell'amministrazione basata su ruoli vengono applicate a tutti i siti della gerarchia.  
 
@@ -125,7 +125,7 @@ Per altre informazioni, vedere [Configurare un'amministrazione basata su ruoli](
 
 
 
-##  <a name="BKMK_ManageAccounts"></a> Gestire gli account usati da Configuration Manager  
+##  <a name="manage-accounts-that-configuration-manager-uses"></a><a name="BKMK_ManageAccounts"></a> Gestire gli account usati da Configuration Manager  
 
 Configuration Manager supporta gli account di Windows per diverse attività e usi. Per visualizzare gli account configurati per le diverse attività e per gestire la password usata da Configuration Manager per ogni account, usare la procedura seguente:  
 
@@ -144,13 +144,13 @@ Per altre informazioni, vedere [Account usati in Configuration Manager](/sccm/co
 
 
 
-##  <a name="bkmk_azuread"></a> Configurare Azure Active Directory
+##  <a name="configure-azure-active-directory"></a><a name="bkmk_azuread"></a> Configurare Azure Active Directory
 
 Integrare Configuration Manager con Azure Active Directory (Azure AD) per semplificare e abilitare per il cloud l'ambiente. Abilitare il sito e i client per l'autenticazione tramite Azure AD. Per altre informazioni, vedere il servizio **Gestione cloud** in [Configurare i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard).
 
 
 
-## <a name="bkmk_auth"></a> Configurare l'autenticazione del provider SMS
+## <a name="configure-sms-provider-authentication"></a><a name="bkmk_auth"></a> Configurare l'autenticazione del provider SMS
 
 A partire dalla versione 1810 è possibile specificare il livello di autenticazione minimo per gli amministratori per l'accesso ai siti di Configuration Manager. Questa funzionalità impone agli amministratori di accedere a Windows con il livello richiesto. Per altre informazioni, vedere [Piano per il provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_auth). <!--1357013-->  
 

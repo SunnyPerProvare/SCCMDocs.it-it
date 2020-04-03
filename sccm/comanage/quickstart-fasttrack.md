@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: L'organizzazione FastTrack è un ampio gruppo di tecnici Microsoft specializzati nell'offrire assistenza a tutti i tipi di organizzazioni per la distribuzione delle app Microsoft 365
 ms.date: 01/14/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology: configmgr-comanage
 ms.topic: conceptual
 ms.assetid: 42e80570-d637-41a4-97b7-ebf1f8975af3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 146b03b4d6cc9e49c1cbe56b9da3b5da1d194246
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: e39af3921eb51c54350123a4d3911f8bd6bfd0e8
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034702"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80595923"
 ---
 # <a name="get-help-from-fasttrack-for-co-management"></a>Ottenere assistenza da FastTrack per la co-gestione
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sui piani di distribuzione in Desktop Analytics.
 ms.date: 01/14/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: 0f369f3a-f251-4f34-9302-1bdc6ea5d139
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 412c61dccf895e1f09f998df14038091415e202d
-ms.sourcegitcommit: 21a750f700257202b035fbfb0cd8598709580fdc
+ms.openlocfilehash: 64a7ab7fc3b5cb1912c8002fc1ed1bb504471306
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75914487"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80597916"
 ---
 # <a name="about-deployment-plans-in-desktop-analytics"></a>Informazioni sui pani di distribuzione in Desktop Analytics
 

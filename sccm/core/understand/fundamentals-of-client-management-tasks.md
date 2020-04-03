@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle attività da eseguire per gestire i client di Configuration Manager.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 8d4e5641-354e-4439-8b4f-620a760e233d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: eb35071145b0d115e2e139bc6848c6fe7bb66705
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: d58a0da25d98089a54694a21d47d1ef8583acb81
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825881"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598538"
 ---
 # <a name="fundamentals-of-client-management-tasks-for-configuration-manager"></a>Nozioni fondamentali sulle attività di gestione client per Configuration Manager
 

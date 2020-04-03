@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Gestire le applicazioni per la gestione di dispositivi mobili (MDM) locale in Configuration Manager.
 ms.date: 01/13/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-hybrid
+ms.technology: configmgr-mdm
 ms.topic: conceptual
 ms.assetid: 8adbe2e2-de26-4a80-8bbd-a5f34b8bac79
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 660975049ef91ad19e08eb18fa6c557106fbe783
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 12a06a81c8eac127d7f0bc764bfe790e3aad75d3
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76032698"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605435"
 ---
 # <a name="manage-apps-for-on-premises-mdm-in-configuration-manager"></a>Gestire le app per MDM locale in Configuration Manager
 
@@ -30,7 +30,7 @@ Quando si gestiscono i dispositivi con Configuration Manager gestione di disposi
 
 Per informazioni più generali sulla gestione di applicazioni Configuration Manager e sui tipi di distribuzione, vedere [attività di gestione per le applicazioni Configuration Manager](/configmgr/apps/deploy-use/management-tasks-applications).
 
-## <a name="bkmk_winphone"></a>Crea applicazione Windows Phone
+## <a name="create-windows-phone-application"></a><a name="bkmk_winphone"></a>Crea applicazione Windows Phone
 
 Le applicazioni di Configuration Manager hanno uno o più tipi di distribuzione, Il tipo di distribuzione include i file di installazione e le informazioni necessarie per distribuire il software in un dispositivo. Un tipo di distribuzione contiene anche le regole che specificano quando e come deve essere distribuito il software.
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità che Configuration Manager non supporta più.
 ms.date: 02/25/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 287a6324-ae65-4d38-b2ef-198d47c91231
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 525a9369662504a5800b64013438cd09b2751f44
-ms.sourcegitcommit: 579991d3ed610744f2652fe6762f45cba38139a9
+ms.openlocfilehash: b8c77d60da13d64a79488a84e6556b24058ebe72
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78167202"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604614"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Funzionalità rimosse e deprecate per Configuration Manager
 
@@ -34,7 +34,7 @@ Le funzionalità seguenti sono deprecate. È ancora possibile usarle al momento,
 |È stata modificata l'implementazione per la condivisione del contenuto da Azure. Usare un gateway di gestione cloud abilitato per il contenuto. Non sarà possibile creare un punto di distribuzione cloud tradizionale in futuro.|Febbraio 2019|DA DEFINIRE<sup>[Nota 1](#bkmk_note1)</sup>|
 |Distribuzione classica del servizio in Azure per il gateway di gestione cloud e il punto di distribuzione cloud. Per altre informazioni, vedere [Pianificare il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).|Novembre 2018|DA DEFINIRE<sup>[Nota 1](#bkmk_note1)</sup>|
 
-### <a name="bkmk_note1"></a> Nota 1: Rimozione del supporto (da definire)
+### <a name="note-1-support-removed-tbd"></a><a name="bkmk_note1"></a> Nota 1: Rimozione del supporto (da definire)
 
 La tempistica specifica è ancora da definire. Microsoft consiglia di passare al nuovo processo o funzionalità, ma è possibile continuare a usare la funzionalità o il processo deprecato per il prossimo futuro.
 
@@ -67,7 +67,7 @@ Le funzionalità seguenti non sono più supportate. In alcuni casi, non sono pi�
 
 Le sezioni seguenti includono altri dettagli relativi alle funzionalità rimosse con la versione 1511:
 
-#### <a name="bkmk_amt"></a> Gestione fuori banda  
+#### <a name="out-of-band-management"></a><a name="bkmk_amt"></a> Gestione fuori banda  
 
 Con Configuration Manager, il supporto nativo per computer basati su AMT dalla console di Configuration Manager è stato rimosso.  
 
@@ -75,7 +75,7 @@ Con Configuration Manager, il supporto nativo per computer basati su AMT dalla c
 
 - La gestione fuori banda in System Center 2012 Configuration Manager non è interessata da questa modifica.  
 
-#### <a name="bkmk_nap"></a> Protezione accesso alla rete
+#### <a name="network-access-protection"></a><a name="bkmk_nap"></a> Protezione accesso alla rete
 
 Configuration Manager ha rimosso il supporto per Protezione accesso alla rete. Questa funzionalità è stata deprecata in Windows Server 2012 R2 ed è stata rimossa da Windows 10.  
 

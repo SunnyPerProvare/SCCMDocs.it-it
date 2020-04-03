@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle tecniche di installazione di una nuova gerarchia di Configuration Manager durante l'aggiornamento di un sito.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 35586a85-4af9-4c8b-925a-0e32dc8b7346
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 1f6e77eb83fcc1af9a712ea8f1a245a94f78640c
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: fad2d37a6942f778e06763fa434623a4db2d2e1c
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798043"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605906"
 ---
 # <a name="scenarios-to-streamline-your-installation-of-configuration-manager"></a>Scenari per semplificare l'installazione di Configuration Manager
 

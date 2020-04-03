@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulla raccolta contenuto che Configuration Manager usa per ridurre le dimensioni complessive del contenuto distribuito.
 ms.date: 07/31/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 65c88e54-3574-48b0-a127-9cc914a89dca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2147acef5c5a9a2719ee5ee84a36036187960406
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 9cac1546161d59bb7d7e1bd8951095e171d44f97
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799676"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600069"
 ---
 # <a name="the-content-library-in-configuration-manager"></a>Raccolta contenuto in Configuration Manager
 
@@ -70,7 +70,7 @@ Utilizzare le seguenti opzioni per gestire la raccolta contenuto nel sito di amm
 > I punti di distribuzione del cloud non usano l'archiviazione a istanza singola. Il sito esegue la crittografia dei pacchetti prima dell'invio ad Azure e ogni pacchetto ha una chiave crittografata univoca. Anche se i due file sono identici, le versioni crittografate non saranno uguali.  
 
 
-## <a name="bkmk_remote"></a> Configurare una raccolta contenuto remota per il server del sito
+## <a name="configure-a-remote-content-library-for-the-site-server"></a><a name="bkmk_remote"></a> Configurare una raccolta contenuto remota per il server del sito
 
 <!--1357525-->
 A partire dalla versione 1806 per configurare la [disponibilità elevata del server del sito](/sccm/core/servers/deploy/configure/site-server-high-availability) o per liberare spazio sul disco rigido nei server del sito di amministrazione centrale o del sito primario, spostare la raccolta contenuto in un'altra posizione di archiviazione. Spostare la raccolta contenuto in un'altra unità sul server del sito, su un server distinto o su dischi a tolleranza d'errore in una rete di archiviazione (SAN). È consigliabile una SAN perché è a disponibilità elevata e fornisce uno spazio di archiviazione elastico, che può aumentare o ridursi nel tempo per soddisfare i requisiti mutevoli del contenuto. Per altre informazioni, vedere [Opzioni di disponibilità elevata](/sccm/protect/understand/high-availability-options).

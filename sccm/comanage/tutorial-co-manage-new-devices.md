@@ -8,14 +8,14 @@ manager: dougeby
 ms.date: 03/12/2020
 ms.topic: tutorial
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology: configmgr-comanage
 ms.assetid: 7fb02a5c-e286-46b1-a972-6335c858429a
-ms.openlocfilehash: 8348f5ab8387c27a1b234d0c7fb227e92466af95
-ms.sourcegitcommit: 8ebac65a0126a5bfd7f8a0869172547d765d4b31
+ms.openlocfilehash: 3dad5f6fe9ed09a38e4b4bfa0a9ca83f0446000f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79138176"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80595557"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Esercitazione: Abilitare la co-gestione per nuovi dispositivi basati su Internet
 

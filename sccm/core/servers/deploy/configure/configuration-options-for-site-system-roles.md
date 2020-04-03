@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Per informazioni dettagliate sui ruoli del sistema del sito di Configuration Manager non di chiara comprensione, vedere questo articolo.
 ms.date: 11/29/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 0e9f0fbd-e442-4509-a021-bfdedf2d04dd
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 4571634ff204ac882abb9dcca9f75291d3dbcf50
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: 2959ef716a7d4f12b526ee02c7d77a1ae32a30ab
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79405874"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606185"
 ---
 # <a name="configuration-options-for-site-system-roles-in-configuration-manager"></a>Opzioni di configurazione per i ruoli del sistema del sito in Configuration Manager
 

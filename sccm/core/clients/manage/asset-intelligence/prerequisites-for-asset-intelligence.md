@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sui prerequisiti per Asset Intelligence in Configuration Manager.
 ms.date: 02/22/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 23ab4f94-7bfe-436e-8a6a-029409a2730c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 158f9d11d9b0b489615e8159cd69f537afca8e63
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: dfed0f2c2e8149abb05d4b21047d4d494f034e53
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75824691"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80595054"
 ---
 # <a name="prerequisites-for-asset-intelligence-in-configuration-manager"></a>Prerequisiti per l'Asset Intelligence in Configuration Manager
 

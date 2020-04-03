@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come abilitare TLS 1.2 per i client di Configuration Manager.
 ms.date: 12/13/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 5b094a02-a425-4b67-81d3-8455e4265512
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 84832c895934e10f898f0fe6989f133c5fa95c75
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 63843f7917dfdbe299722516840eccbef22dbbec
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799302"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80593085"
 ---
 # <a name="how-to-enable-tls-12-on-clients"></a>Come abilitare TLS 1.2 nei client
 
@@ -29,7 +29,7 @@ Quando si abilita TLS 1.2 per l'ambiente di Configuration Manager, assicurarsi p
 
 Per altre informazioni sulle dipendenze per funzionalità e scenari specifici di Configuration Manager, vedere [informazioni sull'abilitazione di TLS 1.2](/sccm/core/plan-design/security/enable-tls-1-2).
 
-## <a name="bkmk_winhttp"></a> Aggiornare Windows e WinHTTP
+## <a name="update-windows-and-winhttp"></a><a name="bkmk_winhttp"></a> Aggiornare Windows e WinHTTP
 
 Windows 8.1, Windows 2012 R2, Windows 10, Windows Server 2016 e le versioni successive di Windows supportano in modo nativo TLS 1.2 per le comunicazioni client-server tramite WinHTTP. 
 
@@ -53,11 +53,11 @@ L'esempio precedente illustra il valore di `0xAA0` per l'impostazione `DefaultSe
 
  Per disabilitare completamente SSL 3.0 e TLS 1.0, usare l'impostazione dei protocolli disabilitati da SChannel in Windows. Per altre informazioni, vedere [Come limitare l'uso di determinati algoritmi di crittografia e protocolli in Schannel.dll](https://support.microsoft.com/help/245030/how-to-restrict-the-use-of-certain-cryptographic-algorithms-and-protoc).
 
-## <a name="bkmk_protocol"></a> Assicurarsi che TLS 1.2 sia abilitato come protocollo per SChannel a livello di sistema operativo
+## <a name="ensure-that-tls-12-is-enabled-as-a-protocol-for-schannel-at-the-operating-system-level"></a><a name="bkmk_protocol"></a> Assicurarsi che TLS 1.2 sia abilitato come protocollo per SChannel a livello di sistema operativo
 
 [!INCLUDE [Enable TLS 1.2 protocol as a security provider](includes/enable-tls-1-2-protocol-security-provider.md)]
 
-## <a name="bkmk_net"></a> Aggiornare e configurare .NET Framework per il supporto di TLS 1.2
+## <a name="update-and-configure-the-net-framework-to-support-tls-12"></a><a name="bkmk_net"></a> Aggiornare e configurare .NET Framework per il supporto di TLS 1.2
 
 [!INCLUDE [Update and configure the .NET framework to support TLS 1.2](includes/update-net-framework-to-support-tls-1-2.md)]
 

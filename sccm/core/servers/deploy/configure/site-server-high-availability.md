@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Come configurare la disponibilità elevata per il server del sito di Configuration Manager aggiungendo un server del sito in modalità passiva.
 ms.date: 02/07/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 6dcef836-c0d1-40af-ad30-cd8d864b09a9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8864d5e38ead84604f74af07c8d0455682012990
-ms.sourcegitcommit: 524f08ccae92756288c2d73491d4da0d3bb2900f
+ms.openlocfilehash: d71efc69b128441677a23b3033777ee446d2345d
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77145082"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606029"
 ---
 # <a name="site-server-high-availability-in-configuration-manager"></a>Disponibilità elevata del server del sito in Configuration Manager
 

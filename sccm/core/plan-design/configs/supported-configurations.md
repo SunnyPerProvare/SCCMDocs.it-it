@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Identificare le configurazioni e i requisiti principali in modo da pianificare, distribuire e manutenere una distribuzione di Configuration Manager funzionale.
 ms.date: 10/08/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 45a10878-ff48-4318-9c6d-c014b38a4039
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 20384ae1705f35fc4b99d4245bbc6a2567428825
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: b6dbec4c6de8037dd684d7bfe85ba886fe7e303e
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75801716"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80601136"
 ---
 # <a name="supported-configurations-for-configuration-manager"></a>Configurazioni supportate per Configuration Manager
 

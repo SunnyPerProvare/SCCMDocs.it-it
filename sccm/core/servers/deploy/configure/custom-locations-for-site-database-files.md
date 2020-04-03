@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Di seguito viene spiegato come specificare percorsi personalizzati per i file di database di SQL Server.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 500a9aa6-68aa-44eb-bf49-350c1314a697
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: beddc89ea1925c192e275fc2768eb17c8b47c7ed
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: cc7eb1a8ba721545bdee50d45887ab9d3aa8e952
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798837"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606113"
 ---
 # <a name="custom-locations-for-configuration-manager-site-database-files"></a>Percorsi personalizzati per i file di database del sito di Configuration Manager
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Esaminare un elenco di argomenti che consentono di installare Configuration Manager o di aggiungere siti alla gerarchia.
 ms.date: 01/3/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: d0e4ddc3-d9c4-4f5c-8b1f-af098e54f5c8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 5f6176e19ded11a29892c7cfbc91449e4c86a1ce
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 20f7ca6cd9324d948a2e78f2e3c9b33302901614
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798192"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605919"
 ---
 # <a name="resources-for-installing-configuration-manager-sites"></a>Risorse per l'installazione di siti di Configuration Manager
 

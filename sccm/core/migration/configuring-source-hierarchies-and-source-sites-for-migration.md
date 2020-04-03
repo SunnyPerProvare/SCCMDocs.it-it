@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Configurare una gerarchia di origine e i siti di origine per eseguire la migrazione dei dati all'ambiente di Configuration Manager Current Branch.
 ms.date: 12/29/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: ccce7cb5-e18f-4337-8adf-2018edca3c00
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 073639402723cbd836e0ce25dcec1ca056cc7ef1
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c2e8e2ba57867b3c2a0929cfd670629296fdb9c9
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75803246"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605212"
 ---
 # <a name="configure-source-hierarchies-and-source-sites-for-migration-to-configuration-manager-current-branch"></a>Configurare gerarchie di origine e siti di origine per la migrazione a Configuration Manager Current Branch
 
@@ -32,7 +32,7 @@ Per abilitare la migrazione dei dati nell'ambiente di Configuration Manager Curr
 
 -   [Individuare siti di origine aggiuntivi della gerarchia di origine](#BKBM_ConfigSrcSites)  
 
-##  <a name="BKBM_ConfigSrcHierarchy"></a> Specificare una gerarchia di origine per la migrazione  
+##  <a name="specify-a-source-hierarchy-for-migration"></a><a name="BKBM_ConfigSrcHierarchy"></a> Specificare una gerarchia di origine per la migrazione  
  Per migrare i dati nella gerarchia di destinazione, è necessario specificare una gerarchia di origine supportata contenente i dati da migrare. Per impostazione predefinita, il sito di livello superiore di tale gerarchia diventa un sito di origine della gerarchia di origine. Se si esegue la migrazione da una gerarchia di Configuration Manager 2007, è quindi possibile configurare siti di origine aggiuntivi per la migrazione dopo avere raccolto i dati dal sito di origine iniziale. Se si esegue la migrazione da una gerarchia di System Center 2012 Configuration Manager o di Configuration Manager Current Branch, non è necessario configurare i siti di origine aggiuntivi per la migrazione dei dati dalla gerarchia di origine. Questo è possibile perché le versioni di Configuration Manager usano un database condiviso disponibile nel sito principale della gerarchia di origine. Il database condiviso include tutte le informazioni che è possibile migrare.  
 
  Usare le procedure seguenti per specificare una gerarchia di origine per la migrazione e per individuare siti di origine aggiuntivi in una gerarchia di Configuration Manager 2007.  
@@ -65,7 +65,7 @@ Per abilitare la migrazione dei dati nell'ambiente di Configuration Manager Curr
 
 9. Al termine della raccolta dei dati, fare clic su **Chiudi** per chiudere la finestra di dialogo **Stato raccolta dati** e completare la configurazione.  
 
-##  <a name="BKBM_ConfigSrcSites"></a> Individuare siti di origine aggiuntivi della gerarchia di origine  
+##  <a name="identify-additional-source-sites-of-the-source-hierarchy"></a><a name="BKBM_ConfigSrcSites"></a> Individuare siti di origine aggiuntivi della gerarchia di origine  
  Quando viene configurata una gerarchia di origine supportata, il sito di livello superiore di tale gerarchia viene configurato automaticamente come sito di origine e i dati vengono automaticamente raccolti dal sito. L'azione successiva dipende dalla versione di Configuration Manager eseguita dalla gerarchia di origine:  
 
 -   Per una gerarchia di origine di Configuration Manager 2007, è possibile avviare la migrazione da tale sito di origine iniziale oppure configurare altri siti di origine dalla gerarchia di origine al termine della raccolta dei dati per il sito di origine iniziale. Per migrare i dati disponibili solo da un sito figlio, configurare siti di origine aggiuntivi per una gerarchia di Configuration Manager 2007. Ad esempio, potrebbero essere configurati siti di origine aggiuntivi per raccogliere dati sui contenuti che si vuole migrare quando sono stati creati in un sito figlio nella gerarchia di origine e non sono disponibili nel sito di livello superiore per la gerarchia di origine.  

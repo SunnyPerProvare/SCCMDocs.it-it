@@ -3,19 +3,19 @@ title: Trasferire i carichi di lavoro con co-gestione
 titleSuffix: Configuration Manager
 description: Informazioni su come passare i carichi di lavoro attualmente gestiti da Configuration Manager a Microsoft Intune.
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology: configmgr-comanage
 author: mestew
 ms.author: mstewart
 manager: dougeby
 ms.date: 09/06/2019
 ms.topic: conceptual
 ms.assetid: 60e2022f-a4f9-40dd-af01-9ecb37b43878
-ms.openlocfilehash: 588ba5181187bf267fef0b708c2f3f44778b88ce
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: cfb17cda956fc8d55709f407118d4f4369a4260e
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75821495"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80596307"
 ---
 # <a name="how-to-switch-configuration-manager-workloads-to-intune"></a>Come trasferire i carichi di lavoro di Configuration Manager a Intune
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: L'amministrazione basata sui ruoli consente di controllare l'accesso amministrativo a Configuration Manager e agli oggetti gestiti.
 ms.date: 07/26/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 0a2d6c3f-a4e4-4c19-b087-3caada480de9
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 2aabe3b4b563ca1f04eb87423a96515c16ada178
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: f47d74b93af1916b6961f5316612f23320ab50db
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825864"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598341"
 ---
 # <a name="fundamentals-of-role-based-administration-for-configuration-manager"></a>Nozioni fondamentali di amministrazione basata su ruoli per Configuration Manager
 
@@ -55,7 +55,7 @@ Quando si progetta e implementa la protezione amministrativa per Configuration M
 > [!IMPORTANT]  
 > I ritardi di replica tra siti possono impedire a un sito di ricevere modifiche per l'amministrazione basata su ruoli. Per informazioni sul monitoraggio della replica del database tra siti, vedere l'argomento [Trasferimenti di dati tra siti](../../core/servers/manage/data-transfers-between-sites.md).  
 
-##  <a name="bkmk_Planroles"></a> ruoli di sicurezza
+##  <a name="security-roles"></a><a name="bkmk_Planroles"></a> ruoli di sicurezza
 
  Usare i ruoli di sicurezza per concedere le autorizzazioni di sicurezza a utenti amministratori. I ruoli di sicurezza sono gruppi di autorizzazioni di sicurezza assegnate agli utenti amministratori in modo che possano eseguire le relative attività amministrative. Le autorizzazioni di sicurezza definiscono le azioni amministrative che un utente amministratore può eseguire e le autorizzazioni concesse per determinati tipi di oggetto. Come procedura consigliata di sicurezza, assegnare i ruoli di sicurezza che forniscono i privilegi minimi.  
 
@@ -88,7 +88,7 @@ Quando si progetta e implementa la protezione amministrativa per Configuration M
 
 Per informazioni su come creare e configurare i ruoli di sicurezza per l'amministrazione basata su ruoli, vedere [Creare ruoli di sicurezza personalizzati](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole) e [Configurare i ruoli di sicurezza](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecRole) nell'articolo [Configurare l'amministrazione basata su ruoli per Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
-##  <a name="bkmk_planCol"></a> raccolte
+##  <a name="collections"></a><a name="bkmk_planCol"></a> raccolte
 
  Le raccolte specificano utente e risorse del computer che un utente amministratore può visualizzare o gestire. Ad esempio, per poter distribuire applicazioni o eseguire il controllo remoto, agli utenti amministratori deve essere assegnato un ruolo di sicurezza che consente l'accesso a una raccolta che include queste risorse. È possibile selezionare raccolte di utenti o dispositivi.  
 
@@ -103,7 +103,7 @@ Per informazioni su come creare e configurare i ruoli di sicurezza per l'amminis
 
 Per informazioni su come configurare raccolte per l'amministrazione basata su ruoli, vedere [Configurare le raccolte per la gestione della sicurezza](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigColl) nell'articolo [Configurare l'amministrazione basata su ruoli per Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
-## <a name="bkmk_PlanScope"></a> ambiti di protezione
+## <a name="security-scopes"></a><a name="bkmk_PlanScope"></a> ambiti di protezione
 
  Usare gli ambiti di protezione per fornire agli utenti amministratori l'accesso a oggetti a protezione diretta. Gli ambiti di protezione sono una raccolta denominata di oggetti a protezione diretta che vengono assegnati agli utenti amministratori come gruppo. Tutti gli oggetti a protezione diretta devono essere assegnati a uno o più ambiti di protezione. Configuration Manager ha due ambiti di protezione predefiniti:  
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare Content Ownership Tool per modificare la proprietà dei pacchetti orfani in Configuration Manager.
 ms.date: 07/30/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 753d2681-ea72-4f47-94d1-ac10188d9d5b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 61a32c83aaa9c97a7dd230befa38b7351d8509b3
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 42ca8ab938272c8c5279c8d1694ae7fd4d5d4e77
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792895"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604229"
 ---
 # <a name="content-ownership-tool"></a>Content Ownership Tool
 

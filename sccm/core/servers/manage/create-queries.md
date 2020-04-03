@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Questo argomento illustra come creare e importare query in Configuration Manager. Include query di esempio e suggerimenti.
 ms.date: 05/08/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 868049d3-3209-47ec-b34a-9cc26941893a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8da5c143d362ad90c1b1247467e644a9dc5efdaa
-ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
+ms.openlocfilehash: 82df9f8709b4515ab9a7294b00e59945248dd88f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77515722"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80591500"
 ---
 # <a name="create-queries-in-configuration-manager"></a>Creare query in Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "77515722"
 
 Questo articolo descrive come creare e importare query in Configuration Manager.  
 
-##  <a name="BKMK_Create"></a> Creare una query  
+##  <a name="create-a-query"></a><a name="BKMK_Create"></a> Creare una query  
  Usare questa procedura per creare una query in Configuration Manager.  
 
 1.  Nella console di Configuration Manager selezionare **Monitoraggio**.  
@@ -75,7 +75,7 @@ Questo articolo descrive come creare e importare query in Configuration Manager.
 
 12. Completare la procedura guidata per creare la query. La nuova query viene visualizzata nel nodo **Query** nell'area di lavoro **Monitoraggio**.  
 
-##  <a name="BKMK_Import"></a> Importare una query  
+##  <a name="import-a-query"></a><a name="BKMK_Import"></a> Importare una query  
  Usare questa procedura per importare una query in Configuration Manager. Per informazioni su come esportare le query, vedere [Come gestire le query](../../../core/servers/manage/manage-queries.md).  
 
 1.  Nella console di Configuration Manager selezionare **Monitoraggio**.  
@@ -86,7 +86,7 @@ Questo articolo descrive come creare e importare query in Configuration Manager.
 
 4.  Esaminare le informazioni relative alla query da importare e quindi completare la procedura guidata. La nuova query viene visualizzata nel nodo **Query** nell'area di lavoro **Monitoraggio**.  
 
-##  <a name="BKMK_Example"></a> Example WQL queries
+##  <a name="example-wql-queries"></a><a name="BKMK_Example"></a> Example WQL queries
 
 Questa sezione contiene query WQL di esempio che è possibile usare nella gerarchia o modificare per altri scopi. Per usare queste query, selezionare **Mostra linguaggio query** nella finestra di dialogo **Proprietà istruzione query**. Copiare e incollare la query nel campo **Istruzione query**.  
 
@@ -140,7 +140,7 @@ select SMS_R_System.NetbiosName from
 SMS_R_System where SMS_R_System.NetbiosName like "ABC%"  
 ```  
 
-###  <a name="BKMK_DeviceType"></a> Dispositivi di un tipo specifico
+###  <a name="devices-of-a-specific-type"></a><a name="BKMK_DeviceType"></a> Dispositivi di un tipo specifico
 
 I tipi di dispositivo vengono archiviati nel database di Configuration Manager con la classe di risorse **sms_r_system** e il nome di attributo **AgentEdition**. Usare questa query per recuperare solo i dispositivi che corrispondono all'edizione dell'agente del tipo di dispositivo specificato:  
 

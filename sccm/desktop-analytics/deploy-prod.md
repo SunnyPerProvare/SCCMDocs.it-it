@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Guida pratica per la distribuzione in un gruppo di produzione di Desktop Analytics.
 ms.date: 06/14/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: 637fbd8e-b8ea-4c7e-95ee-a60a323c496e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fc8a6d8ba590215d9fa720b472f2c669b525e7ae
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 6dcb7b08e50048611aab45977cbc98e6c9480813
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75791646"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80597472"
 ---
 # <a name="how-to-deploy-to-production-with-desktop-analytics"></a>Come eseguire la distribuzione nell'ambiente di produzione con Desktop Analytics
 
@@ -36,7 +36,7 @@ Per eseguire la distribuzione degli aggiornamenti nei dispositivi di produzione,
 
 
 
-## <a name="bkmk_review"></a> Esaminare le risorse che necessitano di una decisione di aggiornamento
+## <a name="review-assets-that-need-an-upgrade-decision"></a><a name="bkmk_review"></a> Esaminare le risorse che necessitano di una decisione di aggiornamento
 
 Desktop Analytics consente di esaminare le risorse per la distribuzione nell'ambiente di produzione. Nella portale di Azure passare a **Piani di distribuzione**, selezionare un piano di distribuzione, quindi selezionare **Prepara produzione** nel menu a sinistra.
 
@@ -71,7 +71,7 @@ Alcune risorse potrebbero avere lo stato **Intervento necessario** o **Mixed Res
 Rivedere tutte le app. Quando a un determinato dispositivo viene assegnata una decisione di aggiornamento positiva per tutte le risorse, lo stato diventa "pronto per la produzione". Vedere il conteggio corrente nella pagina principale per il piano di distribuzione selezionando il terzo passaggio della distribuzione, vala a dire **Distribuire**.
 
 
-## <a name="bkmk_deploy"></a> Eseguire la distribuzione nei dispositivi pronti
+## <a name="deploy-to-devices-that-are-ready"></a><a name="bkmk_deploy"></a> Eseguire la distribuzione nei dispositivi pronti
 
 Configuration Manager usa i dati di Desktop Analytics per creare una raccolta per la distribuzione nell'ambiente di produzione. Non distribuire la sequenza di attività usando una distribuzione tradizionale. Usare la procedura seguente per creare una distribuzione integrata di Desktop Analytics:
 
@@ -95,7 +95,7 @@ Come per la distribuzione pilota, è consigliabile individuare eventuali problem
 ![Screenshot di Stato distribuzione nell'ambiente di produzione di Desktop Analytics](media/prod-deployment-status.png)
 
 
-## <a name="bkmk_monitor"></a> Monitorare l'integrità dei dispositivi aggiornati
+## <a name="monitor-the-health-of-updated-devices"></a><a name="bkmk_monitor"></a> Monitorare l'integrità dei dispositivi aggiornati
 
 La pagina **Prepara produzione** offre supporto per prendere decisioni di aggiornamento per le risorse. Per impostazione predefinita, questa pagina visualizza solo le risorse che non si trovano ancora nello stato **Pronto**. La pagina **Monitora integrità** visualizza i problemi di integrità nelle risorse importanti, anche in quelle contrassegnate con **Pronto**. Se vengono individuati problemi, è possibile risolvere il problema oppure modificare la decisione di aggiornamento in **Non possibile**. Quando si modifica la decisione di aggiornamento, si impedisce l'aggiornamento futuro nei dispositivi con questa risorsa.
 

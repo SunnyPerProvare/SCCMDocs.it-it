@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sul funzionamento del monitoraggio dello stato di integrità in Desktop Analytics.
 ms.date: 01/16/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: 343dbe2a-597c-4719-b7ac-45b1f39b49ee
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a9b1e229a4ba85734a5d22ca104596ef10b23a41
-ms.sourcegitcommit: 524f08ccae92756288c2d73491d4da0d3bb2900f
+ms.openlocfilehash: a65d516a094a510a976a9281db198941043fb494
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77145074"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80597201"
 ---
 # <a name="health-status-monitoring-in-desktop-analytics"></a>Monitoraggio dello stato di integrità in Desktop Analytics
 

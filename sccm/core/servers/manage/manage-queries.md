@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come gestire le query. Include una tabella di riferimento dettagliata.
 ms.date: 04/29/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: e562e2a0-8df8-4952-952f-e8c38461c612
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 1c82b27b367a123471efefb98f9ab32d6152f3d0
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 7015cb84ec6dbf955bec675fa53741d74b6bb99a
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794766"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80590924"
 ---
 # <a name="how-to-manage-queries-in-configuration-manager"></a>Come gestire le query in Configuration Manager
 

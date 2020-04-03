@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Di seguito viene spiegato come definire i percorsi di rete nella intranet che possono contenere i dispositivi da gestire.
 ms.date: 03/27/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 4a9dc4d9-e114-42ec-ae2b-73bee14ab04f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: bd109fa8451da2bd16e05df22d666df621077794
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: f53088843e0bf42a93c1d959255c7885b07dfe35
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799027"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606280"
 ---
 # <a name="define-network-locations-as-boundaries-for-configuration-manager"></a>Definire percorsi di rete come limiti di Configuration Manager
 

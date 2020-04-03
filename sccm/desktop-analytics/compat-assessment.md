@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulla valutazione della compatibilità per le app e i driver di Windows in Desktop Analytics.
 ms.date: 03/03/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: ea78f726-b1b3-49b0-8141-d916be48c458
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d47687f27bc6d4bbefd3dea5db7fe50601a7799a
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: 4d0bf35ca09c9c7956931d16ae236b12ef41e863
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79191574"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80597718"
 ---
 # <a name="compatibility-assessment-in-desktop-analytics"></a>Valutazione della compatibilità in Desktop Analytics
 

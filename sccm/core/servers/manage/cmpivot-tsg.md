@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come risolvere i problemi di CMPivot in Configuration Manager.
 ms.date: 10/07/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 36385bea-f05e-4300-947f-cb3927b3bac5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 9e8ffbd2a73a19204d7e408510a1da7eff970dc2
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c0902f3a51136fccd55b4bf5ee42e0017414e095
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75796005"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80591641"
 ---
 # <a name="troubleshoot-cmpivot"></a>Risoluzione dei problemi di CMPivot
 
@@ -23,7 +23,7 @@ CMPivot è uno strumento che offre l'accesso allo stato in tempo reale dei dispo
 
 Occasionalmente, potrebbe essere necessario risolvere problemi di CMPivot. Ad esempio, se un messaggio di stato da un client a CMPivot viene danneggiato, il server del sito non può elaborare il messaggio. Questo articolo aiuta a comprendere il flusso di informazioni per CMPivot.
 
-## <a name="bkmk_CMPivot-1902"></a> Risoluzione dei problemi di CMPivot nelle versioni 1902 e successive
+## <a name="troubleshoot-cmpivot-in-version-1902-and-later"></a><a name="bkmk_CMPivot-1902"></a> Risoluzione dei problemi di CMPivot nelle versioni 1902 e successive
 
 In Configuration Manager versioni 1902 e successive è possibile eseguire CMPivot dal sito di amministrazione centrale in una gerarchia. Il sito primario gestisce ancora la comunicazione con il client.
 
@@ -121,7 +121,7 @@ select * from vSMS_CMPivotStatus where TaskID='{9A4E59D2-2F5B-4067-A9FA-B99602A3
 
 [ ![Query SQL di CMPivot per la risoluzione dei problemi nella versione 1902](media/cmpivot-sql-queries-1902.png)](media/cmpivot-sql-queries-1902.png#lightbox)
 
-## <a name="bkmk_CMPivot-1810"></a> Risoluzione dei problemi di CMPivot nelle versioni 1810 e precedenti
+## <a name="troubleshoot-cmpivot-in-1810-and-earlier"></a><a name="bkmk_CMPivot-1810"></a> Risoluzione dei problemi di CMPivot nelle versioni 1810 e precedenti
 
 In Configuration Manager versione 1810 e precedenti il server del sito gestisce la comunicazione con il client.
 

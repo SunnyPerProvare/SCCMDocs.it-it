@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1602 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 1b9265d1-b461-47f8-b7ef-885da0fdd969
 author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 40148c2656c4b73775ee994a90d144aa94c98745
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 662be635146cd60b1788a54bbf3a9617cb97a208
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76035008"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80602863"
 ---
 # <a name="capabilities-in-technical-preview-1602-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1602 per Configuration Manager
 
@@ -26,7 +26,7 @@ Questo articolo presenta le funzionalità disponibili nella Technical Preview pe
 
  Di seguito sono riportate le nuove funzionalità disponibili con questa versione.  
 
-##  <a name="BKMK_MDM"></a> Miglioramenti nella gestione dei dispositivi mobili  
+##  <a name="improvements-to-mobile-device-management"></a><a name="BKMK_MDM"></a> Miglioramenti nella gestione dei dispositivi mobili  
 
 ### <a name="ios-activation-lock"></a>Blocco attivazione di iOS  
  Configuration Manager consente di gestire il blocco attivazione iOS, una funzionalità dell'app Trova il mio iPhone per dispositivi iOS 7.1 e versioni successive. Blocco attivazione viene abilitato automaticamente quando si usa l'app Trova il mio iPhone in un dispositivo. Una volta abilitato, richiede l'immissione di un ID Apple e una password dell'utente prima di poter:  
@@ -39,12 +39,12 @@ Questo articolo presenta le funzionalità disponibili nella Technical Preview pe
 
   Configuration Manager può richiedere lo stato del blocco attivazione per i dispositivi con e senza supervisione che eseguono iOS 7.1 e versioni successive. Per i dispositivi con supervisione, Intune può recuperare il codice del bypass del blocco attivazione e inviarlo direttamente al dispositivo.  
 
-##  <a name="BKMK_SC1601"></a> Miglioramenti di Software Center nella versione 1602  
+##  <a name="improvements-to-software-center-in-version-1602"></a><a name="BKMK_SC1601"></a> Miglioramenti di Software Center nella versione 1602  
 
 ### <a name="refresh-pc-machine-and-user-policy-from-software-center"></a>Aggiornare i criteri di computer e utenti da Software Center  
  È stata aggiunta una nuova opzione, **Criteri sincronizzazione**, alla pagina **Opzioni** > **Manutenzione computer** di Software Center che consente al computer di aggiornare i criteri di computer e utenti di Configuration Manager.  
 
-##  <a name="BKMK_Win10Servicing"></a> Miglioramenti della manutenzione di Windows 10  
+##  <a name="improvements-to-windows-10-servicing"></a><a name="BKMK_Win10Servicing"></a> Miglioramenti della manutenzione di Windows 10  
  Nella Technical Preview 1602 sono stati aggiunti i miglioramenti seguenti per la manutenzione di Windows 10:  
 
 -   Nuove opzioni di filtro per i piani di manutenzione.  È ora possibile filtrare per **Lingua**, **Richiesto** e **Titolo**. Verranno aggiunti alla distribuzione associata solo gli aggiornamenti che soddisfano i criteri specificati.  

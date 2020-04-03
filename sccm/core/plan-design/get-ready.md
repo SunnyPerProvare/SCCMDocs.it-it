@@ -4,17 +4,17 @@ titleSuffix: Configuration Manager
 description: Argomenti che consentono di pianificare una distribuzione di Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 3e839a3e-e476-4ec2-bf29-21e78180441d
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: d2ab0fe8ac6bc9e68e3fdb00b364295395ba739e
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 0074678831fb36394ec932f500d2fa6f1d9b4c6e
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75800628"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604362"
 ---
 # <a name="get-ready-for-configuration-manager"></a>Prepararsi per Configuration Manager
 

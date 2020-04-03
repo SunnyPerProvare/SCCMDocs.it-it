@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Registrare in blocco i dispositivi in modo automatico con la gestione di dispositivi mobili (MDM) locale in Configuration Manager.
 ms.date: 01/13/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-hybrid
+ms.technology: configmgr-mdm
 ms.topic: conceptual
 ms.assetid: b36f5e4a-2b57-4d18-83f6-197081ac2a0a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ac9bfa690cc610ca4a64aedbc8049fb1f5a822f9
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 33df2f9aa00e95b8d55708e128f8cc92b269dd1a
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76035287"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605529"
 ---
 # <a name="how-to-bulk-enroll-devices-with-on-premises-mdm-in-configuration-manager"></a>Come registrare in blocco i dispositivi con MDM locale in Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "76035287"
 
 La registrazione in blocco in Configuration Manager gestione di dispositivi mobili (MDM) locale è un metodo automatico per registrare i dispositivi. L'altro metodo è la registrazione utente, che richiede agli utenti di immettere le credenziali per registrare il dispositivo. La registrazione in blocco usa un pacchetto di registrazione per autenticare il dispositivo durante la registrazione. Il pacchetto è un file con estensione ppkg, che può contenere anche profili certificato e Wi-Fi per supportare la registrazione.
 
-## <a name="bkmk_createCert"></a> Creare un profilo del certificato
+## <a name="create-a-certificate-profile"></a><a name="bkmk_createCert"></a> Creare un profilo del certificato
 
 Includere un profilo certificato per installare automaticamente un certificato radice attendibile nel dispositivo. Questo certificato radice è necessario per la comunicazione attendibile tra i dispositivi e i ruoli del sistema del sito necessari per MDM locale.
 
@@ -31,7 +31,7 @@ Quando si prepara il sito per MDM locale, viene esportato il certificato radice 
 
 Usare il certificato esportato per creare un profilo certificato. Per ulteriori informazioni, vedere [How to Create Certificate Profiles](/configmgr/protect/deploy-use/create-certificate-profiles).
 
-## <a name="CreateWifi"></a> Creare un profilo Wi-Fi
+## <a name="create-a-wi-fi-profile"></a><a name="CreateWifi"></a> Creare un profilo Wi-Fi
 
 Un altro componente del pacchetto di registrazione in blocco è un profilo Wi-Fi. Questo profilo può verificare che il dispositivo disponga della connettività di rete per supportare la registrazione.
 
@@ -59,7 +59,7 @@ Sebbene Configuration Manager disponga di un'impostazione per le informazioni su
 
 - Creare un secondo pacchetto usando la finestra di progettazione di Windows Image and Configuration (ICD), quindi distribuirlo insieme al pacchetto di registrazione in blocco.
 
-## <a name="bkmk_createEnroll"></a> Creare un profilo di registrazione
+## <a name="create-an-enrollment-profile"></a><a name="bkmk_createEnroll"></a> Creare un profilo di registrazione
 
 Il profilo di registrazione consente di specificare le impostazioni necessarie per la registrazione del dispositivo. Queste impostazioni includono un [profilo certificato](#bkmk_createCert) e un [profilo Wi-Fi](#CreateWifi).
 
@@ -86,9 +86,9 @@ Il profilo di registrazione consente di specificare le impostazioni necessarie p
     > [!TIP]
     > Se non si usa un profilo Wi-Fi per il pacchetto di registrazione, ignorare questo passaggio.
 
-1. completare la procedura guidata.
+1. Completare la procedura guidata.
 
-## <a name="bkmk_createPpkg"></a>Creare un pacchetto di registrazione
+## <a name="create-an-enrollment-package"></a><a name="bkmk_createPpkg"></a>Creare un pacchetto di registrazione
 
 Il pacchetto di registrazione (ppkg) è il file usato per registrare in blocco i dispositivi per MDM locale. Creare questo file con Configuration Manager. Sebbene sia possibile creare tipi simili di pacchetti con Windows ICD, solo i pacchetti creati in Configuration Manager possono essere usati per registrare i dispositivi per MDM locale. Un pacchetto creato con Windows ICD può fornire solo il nome dell'entità utente (UPN) necessario per la registrazione, ma non può avviare il processo di registrazione effettivo.
 
@@ -116,7 +116,7 @@ Configuration Manager tiene traccia dei pacchetti di registrazione validi. Nella
 > [!TIP]
 > Se si rimuove un pacchetto di registrazione dalla console di Configuration Manager, non è possibile usarlo per registrare i dispositivi. Usare questo metodo per gestire i pacchetti di registrazione che non si desidera vengano usati da altri utenti per la registrazione in blocco.
 
-## <a name="bkmk_getPpkg"></a>Registrare in blocco un dispositivo
+## <a name="bulk-enroll-a-device"></a><a name="bkmk_getPpkg"></a>Registrare in blocco un dispositivo
 
 È possibile usare un pacchetto per registrare i dispositivi prima o dopo il processo di configurazione guidata del dispositivo. Il pacchetto di registrazione può anche essere incluso come parte di un pacchetto di provisioning OEM (Original Equipment Manufacturer).
 
@@ -130,7 +130,7 @@ Per usare il pacchetto per la registrazione in blocco, è necessario distribuirl
 
 - Copia da una scheda di memoria
 
-- Effettuare la scansione di un codice a barre
+- Eseguire la scansione di un codice a barre
 
 - Copia da un dispositivo con tethering
 
@@ -144,7 +144,7 @@ Per usare il pacchetto per la registrazione in blocco, è necessario distribuirl
 
 Viene avviato il processo di registrazione.
 
-## <a name="bkmk_verifyEnroll"></a>Verificare la registrazione
+## <a name="verify-enrollment"></a><a name="bkmk_verifyEnroll"></a>Verificare la registrazione
 
 ### <a name="verify-bulk-enrollment-on-the-device"></a>Verificare la registrazione in blocco sul dispositivo
 

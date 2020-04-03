@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su quali funzionalità di Windows e di rete sono supportate in Configuration Manager.
 ms.date: 02/19/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 0cf4bacb-6b6d-4d4f-8640-b13fe15873de
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: fb83a90bfd27526bfe524254feda597d4d97a61f
-ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
+ms.openlocfilehash: f581ac28c106dc082c1d03fbf4b2de90ea436e18
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77516046"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80601171"
 ---
 # <a name="support-for-windows-features-and-networks-in-configuration-manager"></a>Supporto per le funzionalità e le reti Windows in Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "77516046"
 
 Questo articolo illustra il supporto di Configuration Manager per funzionalità comuni di Windows e di rete.  
 
-## <a name="bkmk_branchcache"></a> BranchCache  
+## <a name="branchcache"></a><a name="bkmk_branchcache"></a> BranchCache  
 
 È possibile usare Windows BranchCache con Configuration Manager quando si abilita BranchCache nei punti di distribuzione e configurare i client per l'uso di BranchCache in modalità cache distribuita.
 
@@ -55,7 +55,7 @@ Tutte le versioni supportate di Configuration Manager di Windows supportano Bran
 
 Per altre informazioni, vedere [BranchCache per Windows](https://docs.microsoft.com/windows-server/networking/branchcache/branchcache) nella documentazione di Windows Server.  
 
-## <a name="bkmk_Workgroups"></a> Computer in gruppi di lavoro  
+## <a name="computers-in-workgroups"></a><a name="bkmk_Workgroups"></a> Computer in gruppi di lavoro  
 
 Configuration Manager offre il supporto per i client in gruppi di lavoro.  
 
@@ -64,7 +64,7 @@ Configuration Manager offre il supporto per i client in gruppi di lavoro.
 > [!NOTE]
 > Anche se i client sono supportati nei gruppi di lavoro, tutti i sistemi del sito devono essere membri di un dominio Active Directory supportato.  
 
-## <a name="bkmmk_datadedup"></a> Deduplicazione dati
+## <a name="data-deduplication"></a><a name="bkmmk_datadedup"></a> Deduplicazione dati
 
 Configuration Manager supporta l'uso della deduplicazione dati con punti di distribuzione in Windows Server 2012 o versioni successive.
 
@@ -77,7 +77,7 @@ Per altre informazioni, vedere i post seguenti:
 
 - [Panoramica della deduplicazione dati](https://docs.microsoft.com/windows-server/storage/data-deduplication/overview) nella documentazione di Windows Server
 
-## <a name="bkmk_DA"></a> DirectAccess  
+## <a name="directaccess"></a><a name="bkmk_DA"></a> DirectAccess  
 
 Configuration Manager supporta la funzionalità DirectAccess per la comunicazione tra client e sistemi server del sito.  
 
@@ -93,11 +93,11 @@ Configuration Manager non supporta le funzionalità seguenti su DirectAccess:
 
 - Comunicazione tra server del sistema del sito di Configuration Manager all'interno di un sito  
 
-## <a name="bkmk_dualboot"></a> Computer ad avvio doppio  
+## <a name="dual-boot-computers"></a><a name="bkmk_dualboot"></a> Computer ad avvio doppio  
 
 Configuration Manager non può gestire più di un sistema operativo in un singolo computer. Se in un computer è presente più di un sistema operativo da gestire, regolare i metodi di individuazione del sito e di installazione client usati per accertarsi che il client di Configuration Manager sia installato solo sul sistema operativo che deve essere gestito.  
 
-## <a name="bkmk_IPv6"></a> IPv6  
+## <a name="ipv6"></a><a name="bkmk_IPv6"></a> IPv6  
 
 Oltre a al protocollo IP versione 4 (IPv4), Configuration Manager supporta il protocollo IPv6, con le eccezioni seguenti:  
 
@@ -111,11 +111,11 @@ Oltre a al protocollo IP versione 4 (IPv4), Configuration Manager supporta il pr
 |Comunicazione del proxy di riattivazione|IPv4 è necessario per supportare i pacchetti proxy di riattivazione del client.|  
 |Windows CE|IPv4 è necessario per supportare il client di Configuration Manager nei dispositivi Windows CE.|  
 
-## <a name="bkmk_NAT"></a> Network Address Translation  
+## <a name="network-address-translation"></a><a name="bkmk_NAT"></a> Network Address Translation  
 
 Network Address Translation (NAT) è supportato in Configuration Manager solo se il sito supporta i client presenti in Internet e il client rileva che è connesso a Internet. Per altre informazioni sulla gestione client basata su Internet, vedere [Pianificare la gestione dei client basati su Internet](/sccm/core/clients/deploy/plan/plan-for-managing-internet-based-clients).  
 
-## <a name="bkmk_storage"></a> Tecnologia di archiviazione specializzata  
+## <a name="specialized-storage-technology"></a><a name="bkmk_storage"></a> Tecnologia di archiviazione specializzata  
 
 Configuration Manager funziona con qualsiasi hardware certificato nell'Hardware Compatibility List di Windows per la versione del sistema operativo su cui è installato il componente di Configuration Manager.
 

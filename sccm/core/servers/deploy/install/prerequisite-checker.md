@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sull'uso del controllo prerequisiti per identificare e risolvere i problemi che possono bloccare un sito o l'installazione del ruolo di sistema del sito.
 ms.date: 01/13/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: aaf13bb8-4ba2-4bd7-9fac-d36a9d88a1b6
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 88371c561e8c0d4e2abd70533592725e6d8cb97d
-ms.sourcegitcommit: 21a750f700257202b035fbfb0cd8598709580fdc
+ms.openlocfilehash: 1ee871d99285bee3a4489d88bf0d203bf74cde3c
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75914450"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80592465"
 ---
 # <a name="prerequisite-checker-for-configuration-manager"></a>Controllo prerequisiti per Configuration Manager
 

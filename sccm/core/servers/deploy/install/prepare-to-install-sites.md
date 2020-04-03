@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Se si prevede di installare più siti di Configuration Manager, queste informazioni consentono di risparmiare tempo ed evitare errori.
 ms.date: 09/18/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 9089e1b5-cba4-42bd-a2de-126ef882a3af
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f93d12774240599d5f0584c2f45b8aad6463037c
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 874f1600cd9fe8ed5a07c406c18d266d9545f5e3
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798141"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80592539"
 ---
 # <a name="prepare-to-install-configuration-manager-sites"></a>Preparare l'installazione di siti di Configuration Manager
 
@@ -26,7 +26,7 @@ Per prepararsi a una corretta distribuzione di uno o più siti di Configuration 
 > [!TIP]
 > Quando si gestisce l'infrastruttura della gerarchia e dei siti di Configuration Manager, i termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti distinti. Per informazioni su come viene usato ogni termine, vedere [Informazioni su upgrade, aggiornamento e installazione](/sccm/core/understand/upgrade-update-install).
 
-## <a name="bkmk_options"></a> Opzioni per l'installazione di diversi tipi di siti
+## <a name="options-for-installing-different-types-of-sites"></a><a name="bkmk_options"></a> Opzioni per l'installazione di diversi tipi di siti
 Quando si installa un nuovo sito di Configuration Manager, la versione dei file di origine che è possibile usare dipende dalla versione dei siti che si trovano già nella gerarchia, se presenti. I metodi di installazione disponibili dipendono dal tipo di sito che si vuole installare.  
 
 Prima di installare un sito verificare di aver pianificato la gerarchia e di aver definito il tipo di sito che si vuole installare. Per altre informazioni, vedere [Progettare una gerarchia di siti](../../../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md).
@@ -61,7 +61,7 @@ Un sito secondario deve essere installato dalla console di Configuration Manager
 - **Aggiunta di sito primario figlio**:  è possibile usare l'Installazione guidata di Configuration Manager o un'installazione da riga di comando per aggiungere un sito primario figlio sotto un sito di amministrazione centrale.
 - **Aggiunta di un sito secondario**:  per installare un sito secondario come sito figlio al di sotto del sito primario, usare la console di Configuration Manager. Altri metodi non sono supportati per l'aggiunta di siti secondari.
 
-## <a name="bkmk_tasks"></a> Attività comuni da completare prima di avviare un'installazione
+## <a name="common-tasks-to-complete-before-starting-an-installation"></a><a name="bkmk_tasks"></a> Attività comuni da completare prima di avviare un'installazione
 - **Esaminare la topologia della gerarchia che verrà usata per la distribuzione**    
 Per altre informazioni, vedere [Progettare una gerarchia di siti per Configuration Manager](../../../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md).  
 
@@ -79,7 +79,7 @@ Per altre informazioni, vedere [Requisiti dei certificati PKI per Configuration 
 
 - **Installare gli ultimi aggiornamenti sulla sicurezza nei computer che verranno usati come server del sito o server di sistema del sito e avviarli quando è necessario**
 
-## <a name="bkmk_sitecodes"></a> Informazioni su nomi e codici dei siti
+## <a name="about-site-names-and-site-codes"></a><a name="bkmk_sitecodes"></a> Informazioni su nomi e codici dei siti
 I codici e i nomi dei siti dei vengono usati per identificare e gestire i siti in una gerarchia di Configuration Manager. Nella console di Configuration Manager il codice e il nome del sito vengono visualizzati nel formato &lt;*codice sito*\> - &lt;*nome sito*\>. È necessario che ogni codice di sito usato nella gerarchia sia univoco. Se lo schema di Active Directory viene esteso a Configuration Manager e i siti pubblicano dati, i codici di sito usati in una foresta di Active Directory devono essere univoci, anche se vengono usati in una gerarchia diversa di Configuration Manager o sono stati usati in installazioni precedenti di Configuration Manager. Assicurarsi di pianificare con attenzione i codici e i nomi di sito prima della distribuzione della gerarchia.
 
 ### <a name="specify-a-site-code-and-site-name"></a>Specificare un codice e un nome del sito
@@ -114,7 +114,7 @@ Prima di installare un sito, è importante capire le limitazioni seguenti che si
   - Configuration Manager non consente di spostare un sito primario figlio da una gerarchia per creare un sito primario autonomo o aggiungerlo a un'altra gerarchia. Disinstallare invece il sito primario figlio e reinstallarlo come nuovo sito primario autonomo o come sito figlio del sito di amministrazione centrale di un'altra gerarchia.  
 
 
-## <a name="bkmk_optionalsteps"></a> Passaggi facoltativi prima di eseguire l'installazione
+## <a name="optional-steps-before-running-setup"></a><a name="bkmk_optionalsteps"></a> Passaggi facoltativi prima di eseguire l'installazione
 **Eseguire manualmente il [downloader di installazione](../../../../core/servers/deploy/install/setup-downloader.md)**
 
 È possibile eseguire il downloader di installazione per scaricare i file di installazione aggiornati per Configuration Manager. Se il computer in cui si eseguirà l'installazione non è connesso a Internet o se si prevede di installare più server del sito, considerare l'uso del downloader di installazione per scaricare gli aggiornamenti necessari per l'installazione. Altre informazioni:

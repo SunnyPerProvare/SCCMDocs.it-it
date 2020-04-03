@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su funzionalità, prodotti e sistemi operativi che Configuration Manager non supporta più.
 ms.date: 01/25/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: b0adf873-2ff4-4a7b-b5e7-6047f146511f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: d65b27dbd010e514a977478c9bde8b85fbf1118a
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 84a09a37d79effc52c1f72751906b30b933db48c
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802872"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605134"
 ---
 # <a name="removed-and-deprecated-items-for-configuration-manager"></a>Elementi rimossi e deprecati per Configuration Manager
 
@@ -38,9 +38,9 @@ Tuttavia, se si continua a usare una versione precedente che supporta la funzion
 ## <a name="removed-and-deprecated-items-for-configuration-manager"></a>Elementi rimossi e deprecati per Configuration Manager
 Gli elementi rimossi o deprecati vengono suddivisi in tre categorie.  
 
-### <a name="removed-and-deprecated-configuration-manager-featuressccmcoreplan-designchangesdeprecatedremoved-and-deprecated-cmfeatures"></a>[Funzionalità rimosse e deprecate di Configuration Manager](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures)
-### <a name="removed-and-deprecated-items-for-configuration-manager-site-serverssccmcoreplan-designchangesdeprecatedremoved-and-deprecated-server"></a>[Elementi rimossi e deprecati per i server del sito di Configuration Manager](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server)
-### <a name="removed-and-deprecated-items-for-configuration-manager-clientssccmcoreplan-designchangesdeprecatedremoved-and-deprecated-client"></a>[Elementi rimossi e deprecati per i client di Configuration Manager](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-client)
+### <a name="removed-and-deprecated-configuration-manager-features"></a>[Funzionalità rimosse e deprecate di Configuration Manager](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures)
+### <a name="removed-and-deprecated-items-for-configuration-manager-site-servers"></a>[Elementi rimossi e deprecati per i server del sito di Configuration Manager](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server)
+### <a name="removed-and-deprecated-items-for-configuration-manager-clients"></a>[Elementi rimossi e deprecati per i client di Configuration Manager](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-client)
 
 
 ## <a name="more-information"></a>Altre informazioni

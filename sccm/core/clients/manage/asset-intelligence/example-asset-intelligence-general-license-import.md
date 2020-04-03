@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare un file generale delle licenze di Asset Intelligence di esempio per facilitare l'importazione delle licenze software in Configuration Manager.
 ms.date: 02/22/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: e6258333-a783-440b-b1af-f8023b782fbc
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 7b2a67461fa16d5a10bc80d723b64d772d04190e
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 542a0e324056dfedbc1b84d75f1204f2488750c8
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75824759"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80595243"
 ---
 # <a name="example-asset-intelligence-general-license-import-file-in-configuration-manager"></a>File generale di importazione delle licenze di Asset Intelligence di esempio in Configuration Manager
 

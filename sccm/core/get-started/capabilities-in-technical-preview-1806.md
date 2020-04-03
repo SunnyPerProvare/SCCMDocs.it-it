@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità disponibili in Configuration Manager Technical Preview versione 1806.
 ms.date: 06/06/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 52d64ef0-8c0d-42c3-857e-07d7ec776f29
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: e8487e2d73ad6fc85cb675ee01db05adf11e16d8
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 41e48499b908975e482c4767c343dc0e47b8f20d
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75804419"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80602058"
 ---
 # <a name="capabilities-in-technical-preview-1806-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1806 per Configuration Manager
 
@@ -39,7 +39,7 @@ Steps to workaround, if any.
 -->
 ## <a name="known-issues-in-this-technical-preview"></a>Problemi noti di questa versione Technical Preview
 
-### <a name="ki_contentlib"></a> Impossibile aggiornare il sito con una raccolta contenuto remota
+### <a name="site-fails-to-upgrade-with-remote-content-library"></a><a name="ki_contentlib"></a> Impossibile aggiornare il sito con una raccolta contenuto remota
 <!--514642-->
 Il sito non esegue l'aggiornamento con gli errori seguenti in **cmupdate.log**:  
 
@@ -62,7 +62,7 @@ Spostare la raccolta contenuto in un'unità locale nel server del sito. Per altr
 
 
 
-## <a name="bkmk-3pupdate"></a> Aggiornamenti di software di terze parti
+## <a name="third-party-software-updates"></a><a name="bkmk-3pupdate"></a> Aggiornamenti di software di terze parti
 <!--1352101-->
 Questa versione esegue un'ulteriore iterazione sul supporto per gli aggiornamenti software di terze parti in seguito ai [commenti e suggerimenti raccolti con UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8803711-3rd-party-patching-scup-integration-with-sccm-co). Non è più necessario usare System Center Updates Publisher (SCUP) per alcuni scenari comuni. Il nuovo nodo **Cataloghi di aggiornamenti software di terze parti** nella console di Configuration Manager consente di sottoscrivere i cataloghi di terze parti, pubblicarne gli aggiornamenti nel punto di aggiornamento software e quindi implementare i cataloghi nei client. 
 

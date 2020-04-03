@@ -8,14 +8,14 @@ manager: dougeby
 ms.date: 01/24/2020
 ms.topic: overview
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology: configmgr-comanage
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: 3ee12e05c36872691256db1b99529b65cb36aa6f
-ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
+ms.openlocfilehash: 3b35bac69655d906f54d09e7c4cd6de15588c362
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78287681"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80596227"
 ---
 # <a name="what-is-co-management"></a>Informazioni sulla co-gestione
 

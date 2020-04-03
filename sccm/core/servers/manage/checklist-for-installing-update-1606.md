@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager dalla versione 1511 o 1602 alla versione 1606.
 ms.date: 06/6/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 75652cd2-a95a-46c5-91c1-6d43fc8e787e
 author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: c39b7a524234e3cc3ae37bae9e435c682454cde8
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e759061550b64daa37771d4aa7656b9a584f8d91
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75797389"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80592233"
 ---
 # <a name="checklist-for-installing-update-1606-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1606 di Configuration Manager
 

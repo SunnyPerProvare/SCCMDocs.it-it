@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare il dashboard di co-gestione per esaminare le informazioni sui dispositivi con co-gestione.
 ms.date: 07/26/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology: configmgr-comanage
 ms.topic: conceptual
 ms.assetid: e83a7b0d-b381-4b4a-8eca-850385abbebb
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: ef379593a04c1f1e584c3d7066dbf1bece7a08c8
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 950a8368500785706c72adb6273838ee2a1195d3
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825337"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80596567"
 ---
 # <a name="how-to-monitor-co-management-in-configuration-manager"></a>Come monitorare la co-gestione in Configuration Manager
 

@@ -4,18 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager alla versione 1806.
 ms.date: 08/22/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: bb0a87a6-fd65-440b-90a5-2fef35622c9d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: e7f907381844ade22ac143d8e5fb1b2841cf76ab
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ROBOTS: NOINDEX
+ms.openlocfilehash: b411996aea0a0d11d83837f742f02c61d5ec49ec
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75796473"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80591926"
 ---
 # <a name="checklist-for-installing-update-1806-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1806 di Configuration Manager
 

@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1512 per Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: e4d9e414-1346-4ed4-85d0-64d602b68731
 author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: dcb313bf56974207ec907037cb0014a0478c3262
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: ad5d2021443f606d3188182d54c7528e6393fcfd
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75805286"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80602866"
 ---
 # <a name="capabilities-in-technical-preview-1512-for-configuration-manager"></a>Funzionalità della versione Technical Preview 1512 per Configuration Manager
 
@@ -26,7 +26,7 @@ Questo articolo presenta le funzionalità disponibili nella Technical Preview pe
 
  Di seguito sono riportate le nuove funzionalità disponibili con questa versione.  
 
-##  <a name="bkmk_devicehealth"></a> Attestazione dell'integrità dei dispositivi  
+##  <a name="device-health-attestation"></a><a name="bkmk_devicehealth"></a> Attestazione dell'integrità dei dispositivi  
  A partire dalla versione Technical Preview 1512, gli amministratori possono visualizzare lo stato di attestazione dell'integrità dei dispositivi Windows 10 nella console di Configuration Manager.  Questa funzionalità è disponibile per Configuration Manager e Configuration Manager con Microsoft Intune. L'attestazione dell'integrità dei dispositivi consente all'amministratore di assicurare che i computer client dispongano di configurazioni attendibili di BIOS, TPM e software di avvio. Per supportare l'attestazione dell'integrità dei dispositivi, i dispositivi client devono eseguire Windows 10 con TPM 2 abilitato. L'attestazione dell'integrità dei dispositivi visualizza il numero di dispositivi abilitati per ognuno degli elementi seguenti:  
 
 -   Antimalware ad esecuzione anticipata  
@@ -41,7 +41,7 @@ Nella console vengono inoltre visualizzate le principali impostazioni di attesta
 
 Per poter visualizzare l'attestazione dell'integrità del dispositivo, nella console di Configuration Manager passare all'area di lavoro **Monitoraggio** , fare clic sul nodo **Sicurezza** e quindi su **Attestazione dell'integrità**.  
 
-##  <a name="bkmk_viewterms"></a> Monitoraggio di termini e condizioni nella console  
+##  <a name="in-console-monitoring-for-terms-and-conditions"></a><a name="bkmk_viewterms"></a> Monitoraggio di termini e condizioni nella console  
 A partire dalla versione Technical Preview 1512, quando si integra Configuration Manager con Microsoft Intune, è possibile usare la console di Configuration Manager per visualizzare gli utenti che hanno accettato i termini e le condizioni configurati dal reparto IT e quelli che non lo hanno fatto.  
 
 **Per visualizzare le informazioni di riepilogo:**  
@@ -54,7 +54,7 @@ A partire dalla versione Technical Preview 1512, quando si integra Configuration
 
 2.  Nella parte inferiore della console selezionare la scheda **Distribuzioni**, selezionare la distribuzione e quindi fare clic su **Visualizza stato.**  
 
-##  <a name="bkmk_EPpolicy"></a> Miglioramenti delle impostazioni dei criteri di Endpoint Protection  
+##  <a name="improvements-to-endpoint-protection-policy-settings"></a><a name="bkmk_EPpolicy"></a> Miglioramenti delle impostazioni dei criteri di Endpoint Protection  
 Nella Technical Preview 1512 sono state aggiunte le nuove impostazioni seguenti nei criteri antimalware di Endpoint Protection:  
 
 -   Protezione in tempo reale: **Abilita la protezione per le applicazioni potenzialmente indesiderate al download o prima dell'installazione**  

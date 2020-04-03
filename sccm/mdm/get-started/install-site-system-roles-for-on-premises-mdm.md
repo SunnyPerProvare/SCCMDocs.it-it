@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Installare i ruoli del sistema del sito richiesti per la gestione dei dispositivi mobili (MDM) locale in Configuration Manager.
 ms.date: 01/09/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-hybrid
+ms.technology: configmgr-mdm
 ms.topic: conceptual
 ms.assetid: c3cf9f64-c2b9-4ace-9527-2aba6d4eef04
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3768d5930c2523fbc9a5be3e68788206915ec73e
-ms.sourcegitcommit: e7583b5e522d01bc8710ec8e0fe3e5f75a281577
+ms.openlocfilehash: 91128283678bb3bbdb2aabf8af10916cc8268fb9
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77035233"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605393"
 ---
 # <a name="install-site-system-roles-for-on-premises-mdm-in-configuration-manager"></a>Installare i ruoli del sistema del sito per MDM locale in Configuration Manager
 

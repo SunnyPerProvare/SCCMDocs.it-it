@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Punto di servizio e database del data warehouse per Configuration Manager
 ms.date: 05/09/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: aaf43e69-68b4-469a-ad58-9b66deb29057
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 2f2a21e01d49c6d6f7513cc8d5f33c706e201e73
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e2f1d3f6bb6bf82de4554ed67ef5e833f69a07f8
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75795689"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80591343"
 ---
 #  <a name="the-data-warehouse-service-point-for-configuration-manager"></a>Punto di servizio del data warehouse per Configuration Manager
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Leggere la panoramica del processo di individuazione e dei record di dati dell'individuazione.
 ms.date: 02/8/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 30844519-ce14-456f-bfb8-4318b578e9f6
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f999de35ac684d2a17f9179f41df8a616b3d3eb7
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: 1869c9e6de455b7086a051db91bb26bc00a91a5f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79405814"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80592816"
 ---
 # <a name="run-discovery-for-configuration-manager"></a>Eseguire l'individuazione per Configuration Manager
 

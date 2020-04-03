@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Pianificare la gestione dei dispositivi mobili locale per gestire i dispositivi mobili in Configuration Manager
 ms.date: 01/09/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-hybrid
+ms.technology: configmgr-mdm
 ms.topic: conceptual
 ms.assetid: 02979fb8-ea7e-4ec6-b7e0-ecbfda73e52d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 10a10eb7a437c606bcc6b103af8ae94161bd5d20
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 74f08edddca93cf7f9005630973e06cba6fef920
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76035163"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605313"
 ---
 # <a name="plan-for-on-premises-mdm-in-configuration-manager"></a>Pianificare la gestione dei dispositivi mobili locale in Configuration Manager
 
@@ -33,11 +33,11 @@ Quando si prevede di implementare la gestione di dispositivi mobili (MDM) locale
 
 Considerare i requisiti seguenti prima di preparare l'infrastruttura di Configuration Manager per la gestione di MDM locale.
 
-## <a name="bkmk_devices"></a> Dispositivi supportati  
+## <a name="supported-devices"></a><a name="bkmk_devices"></a> Dispositivi supportati  
 
 Current Branch of Configuration Manager supporta la registrazione nella gestione dei dispositivi mobili locale per i dispositivi che eseguono Windows 10. Questi tipi di dispositivi includono principalmente computer portatili, Internet e Surface Hub. Per altre informazioni e per l'elenco di edizioni specifiche, vedere [versioni del sistema operativo supportate per client e dispositivi](/configmgr/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#bkmk_OnpremOS).
 
-## <a name="bkmk_roles"></a> Site system roles
+## <a name="site-system-roles"></a><a name="bkmk_roles"></a>Ruoli di sistema del sito
 
 MDM locale richiede almeno uno dei seguenti ruoli del sistema del sito:
 
@@ -56,7 +56,7 @@ A seconda delle esigenze dell'organizzazione, è possibile installare questi ruo
 
 Per informazioni più generali, vedere [pianificare i server e i ruoli del sistema del sito](/sccm/core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles).
 
-## <a name="bkmk_trustedComs"></a>Comunicazioni attendibili
+## <a name="trusted-communications"></a><a name="bkmk_trustedComs"></a>Comunicazioni attendibili
 
 MDM locale richiede l'abilitazione dei ruoli del sistema del sito per le comunicazioni HTTPS. A seconda delle esigenze, è possibile usare l'autorità di certificazione (CA) dell'organizzazione per stabilire le connessioni attendibili tra i server e i dispositivi. È anche possibile usare una CA disponibile pubblicamente come autorità attendibile. In entrambi i casi, è necessario configurare i certificati seguenti:
 
@@ -66,7 +66,7 @@ MDM locale richiede l'abilitazione dei ruoli del sistema del sito per le comunic
 
 Per altre informazioni, vedere [configurare i certificati per le comunicazioni attendibili in MDM locale](/sccm/mdm/get-started/set-up-certificates-on-premises-mdm).
 
-## <a name="bkmk_enrollment"></a>Registrazione del dispositivo
+## <a name="device-enrollment"></a><a name="bkmk_enrollment"></a>Registrazione del dispositivo
 
 Per abilitare la registrazione del dispositivo per MDM locale:
 

@@ -9,17 +9,16 @@ ms.topic: conceptual
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d600297aa51a1d5e5332f64159205407a65c378d
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 82995f19c1235550b2cf20ca3918d11b9e0d2358
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76033480"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599449"
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Riferimento tecnico per i controlli crittografici
 
 *Si applica a: Configuration Manager (Current Branch)*
-
 
 Configuration Manager usa la firma e la crittografia per proteggere la gestione dei dispositivi nella gerarchia di Configuration Manager. Con la firma, se i dati sono stati modificati in transito vengono scartati. La crittografia consente di impedire a un utente malintenzionato di leggere i dati usando uno strumento di analisi dei protocolli di rete.  
 
@@ -46,19 +45,20 @@ Configuration Manager usa la firma e la crittografia per proteggere la gestione 
  L'algoritmo hash per i criteri è SHA-1 e SHA-256.  
 
 ### <a name="content-hashing"></a>Hash contenuto  
- Il servizio di Gestione distribuzione nel server del sito genera un hash per i file di contenuto per tutti i pacchetti. Il provider di criteri include l'hash nei criteri di distribuzione software. Quando il client di Configuration Manager scarica il contenuto, il client rigenera l'hash a livello locale e lo confronta con quello specificato nei criteri. Se gli hash corrispondono, il contenuto non è stato alterato e il client lo installa. Se un singolo byte del contenuto è stato modificato, gli hash non corrispondono e il software non verrà installato. Questo controllo consente di verificare che sia installato il software corretto poiché il contenuto effettivo viene confrontato con i criteri.  
 
- L'algoritmo hash predefinito per il contenuto è SHA-256. Per modificare il valore predefinito, vedere la documentazione per il Software Development Kit (SDK) di Configuration Manager.  
+Il servizio di Gestione distribuzione nel server del sito genera un hash per i file di contenuto per tutti i pacchetti. Il provider di criteri include l'hash nei criteri di distribuzione software. Quando il client di Configuration Manager scarica il contenuto, il client rigenera l'hash a livello locale e lo confronta con quello specificato nei criteri. Se gli hash corrispondono, il contenuto non è stato alterato e il client lo installa. Se un singolo byte del contenuto è stato modificato, gli hash non corrispondono e il software non verrà installato. Questo controllo consente di verificare che sia installato il software corretto poiché il contenuto effettivo viene confrontato con i criteri.  
 
- Non tutti i dispositivi sono in grado di supportare l'hash contenuto. Le eccezioni includono:  
+L'algoritmo hash predefinito per il contenuto è SHA-256.
 
--   Client Windows quando trasmettono contenuto App-V.  
+Non tutti i dispositivi sono in grado di supportare l'hash contenuto. Le eccezioni includono:  
 
--   Client Windows Phone, anche se questi client verificano la firma di un'applicazione firmata da una fonte attendibile.  
+- Client Windows quando trasmettono contenuto App-V.  
 
--   Client Windows RT, anche se questi client verificano la firma di un'applicazione firmata da una fonte attendibile e usano anche la convalida del nome completo del pacchetto.  
+- Client Windows Phone, anche se questi client verificano la firma di un'applicazione firmata da una fonte attendibile.  
 
--   Client eseguiti su versioni di Linux e UNIX che non supportano SHA-256. Per altre informazioni, vedere [Pianificazione della distribuzione client per computer Linux e UNIX](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers).  
+- Client Windows RT, anche se questi client verificano la firma di un'applicazione firmata da una fonte attendibile e usano anche la convalida del nome completo del pacchetto.  
+
+- Client eseguiti su versioni di Linux e UNIX che non supportano SHA-256. Per altre informazioni, vedere [Pianificazione della distribuzione client per computer Linux e UNIX](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers).  
 
 ### <a name="inventory-signing-and-encryption"></a>Firma e crittografia dell'inventario  
  L'inventario che i client inviano ai punti di gestione viene sempre firmato dai dispositivi, indipendentemente dalla comunicazioni con i punti di gestione in HTTP o HTTPS. Se usano HTTP, è possibile crittografare questi dati, il che è consigliabile.  

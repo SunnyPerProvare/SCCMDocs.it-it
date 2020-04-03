@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sui metodi di individuazione disponibili per individuare i dispositivi nella rete in Active Directory o in Azure Active Directory.
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: ed931751-18f2-4230-a09e-a0a329fbfa1c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 91936216304dd3da8c30bb11137536edc82823d4
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: acabc11485aa6f111973cdf51e50b3627845f8fd
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79405914"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606360"
 ---
 # <a name="about-discovery-methods-for-configuration-manager"></a>Informazioni sui metodi di individuazione per Configuration Manager
 

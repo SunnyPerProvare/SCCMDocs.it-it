@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Creare ed eseguire processi per la migrazione di dati e client a Configuration Manager Current Branch.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: c28e3492-851a-40fc-ba13-67ebc2d8b41a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2d60dd0b6d8feaa0501910c45129eb05c7c1c95a
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: a93269fc50c7bb39cd47f10e448d30742fc8ab22
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75803195"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605162"
 ---
 # <a name="operations-for-migrating-to-configuration-manager-current-branch"></a>Operazioni per la migrazione a Configuration Manager Current Branch
 
@@ -35,7 +35,7 @@ Per la migrazione in Configuration Manager, è possibile eseguire la migrazione 
 
 -   [Completare la migrazione](#Complete_Migration)  
 
-##  <a name="Create_Edit_migration_Jobs"></a> Creare e modificare i processi di migrazione  
+##  <a name="create-and-edit-migration-jobs"></a><a name="Create_Edit_migration_Jobs"></a> Creare e modificare i processi di migrazione  
  Usare le procedure seguenti per creare processi di migrazione dei dati, modificare l'elenco di esclusione per i processi di migrazione basati su raccolte, configurare i punti di distribuzione condivisi e modificare le pianificazioni dei processi di migrazione.  
 
 > [!NOTE]  
@@ -129,7 +129,7 @@ Per la migrazione in Configuration Manager, è possibile eseguire la migrazione 
 
 10. Confermare le impostazioni e quindi completare la procedura guidata.  
 
-###  <a name="BKMK_Modify_Exclusion_List"></a> Modificare l'elenco di esclusione per la migrazione  
+###  <a name="modify-the-exclusion-list-for-migration"></a><a name="BKMK_Modify_Exclusion_List"></a> Modificare l'elenco di esclusione per la migrazione  
 
 1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
 
@@ -163,7 +163,7 @@ Per la migrazione in Configuration Manager, è possibile eseguire la migrazione 
 
 4.  Nelle proprietà del processo di migrazione selezionare la scheda **Impostazioni**, modificare il tempo di esecuzione per il processo di migrazione e quindi scegliere **OK**.  
 
-##  <a name="Run_Migration_Jobs"></a> Eseguire i processi di migrazione  
+##  <a name="run-migration-jobs"></a><a name="Run_Migration_Jobs"></a> Eseguire i processi di migrazione  
  Utilizzare la seguente procedura per eseguire un processo di migrazione non ancora avviato.  
 
 
@@ -175,7 +175,7 @@ Per la migrazione in Configuration Manager, è possibile eseguire la migrazione 
 
 4.  Scegliere **Sì** per avviare il processo di migrazione.  
 
-##  <a name="BKMK_ProcUpgrdSS"></a> Aggiornare o riassegnare un punto di distribuzione condiviso  
+##  <a name="upgrade-or-reassign-a-shared-distribution-point"></a><a name="BKMK_ProcUpgrdSS"></a> Aggiornare o riassegnare un punto di distribuzione condiviso  
  È possibile aggiornare un punto di distribuzione supportato condiviso da un sito di origine di Configuration Manager 2007 oppure riassegnare un punto di distribuzione supportato condiviso da un sito di origine di Configuration Manager in modo che diventi un punto di distribuzione nella gerarchia di destinazione.  
 
 > [!IMPORTANT]  
@@ -200,7 +200,7 @@ Per la migrazione in Configuration Manager, è possibile eseguire la migrazione 
 
 6.  Confermare le impostazioni e quindi completare la procedura guidata.  
 
-##  <a name="Monitor_MIgration"></a> Monitorare l'attività di migrazione nell'area di lavoro Migrazione  
+##  <a name="monitor-migration-activity-in-the-migration-workspace"></a><a name="Monitor_MIgration"></a> Monitorare l'attività di migrazione nell'area di lavoro Migrazione  
  Usare la console di Configuration Manager per monitorare la migrazione.  
 
 1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
@@ -211,10 +211,10 @@ Per la migrazione in Configuration Manager, è possibile eseguire la migrazione 
 
 4.  Visualizzare i dettagli e lo stato relativi al processo di migrazione selezionato nelle schede **Riepilogo** e **Oggetti nel processo**.  
 
-##  <a name="BKMK_MigrateClients"></a> Eseguire la migrazione dei client  
+##  <a name="migrate-clients"></a><a name="BKMK_MigrateClients"></a> Eseguire la migrazione dei client  
  Dopo aver eseguito la migrazione dei dati per i client da una gerarchia all'altra, ma prima di completare tale operazione, pianificare la migrazione dei client nella gerarchia di destinazione. La migrazione di client da una gerarchia all'altra comporta la disinstallazione del software client di Configuration Manager dai computer assegnati alla gerarchia di origine e l'installazione del software client di Configuration Manager dalla gerarchia di destinazione. Quando si installa il client dalla gerarchia di destinazione si assegna anche il client a un sito primario in tale gerarchia. Per altre informazioni sulla migrazione dei client, vedere [Pianificazione di una strategia di migrazione client](../../core/migration/planning-a-client-migration-strategy.md).  
 
-##  <a name="Complete_Migration"></a> Completare la migrazione  
+##  <a name="finish-migration"></a><a name="Complete_Migration"></a> Completare la migrazione  
  Usare questa procedura per completare la migrazione dalla gerarchia di origine.  
 
 1.  Nella console di Configuration Manager scegliere **Amministrazione**.  

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come ripristinare i siti in Configuration Manager.
 ms.date: 08/23/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 19539f4d-1667-4b4c-99a1-9995f12cf5f7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f9a272133a76fbca1b8363caf3a866b8d3b591d7
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 9d31d06c369d64e658e19641a1ee7a816d7fa9bf
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76033271"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80590596"
 ---
 # <a name="recover-a-configuration-manager-site"></a>Ripristinare un sito di Configuration Manager
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come monitorare la replica di SQL Server nella gerarchia di Configuration Manager.
 ms.date: 08/09/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 69550b35-bcdb-4b47-bbec-b3c8bc92bb7b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 9c83a539731cb2c3cd5052e309c55a601845240b
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 453ec84caa11f22ef1d28e57fad16c52a51427d3
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75794739"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80590788"
 ---
 # <a name="monitor-database-replication"></a>Monitorare la replica di database
 
@@ -26,7 +26,7 @@ Monitorare i dettagli della replica di database con il nodo **Replica di databas
 > [!TIP]  
 > Nonostante un nodo **Replica di database** venga visualizzato anche sotto il nodo **Configurazione della gerarchia** nell'area di lavoro **Amministrazione**, da quella posizione non è possibile visualizzare lo stato di replica per i collegamenti di replica di database.  
 
-## <a name="BKMK_MonitorReplicationLinks"></a> Stato del collegamento di replica  
+## <a name="replication-link-status"></a><a name="BKMK_MonitorReplicationLinks"></a> Stato del collegamento di replica  
 
 La replica di database tra siti implica la replica di diversi set di informazioni, denominati *gruppi di replica*. Ogni gruppo di replica invia e riceve dati con priorità diverse. Per impostazione predefinita, non è possibile modificare i dati contenuti in un gruppo di replica e la frequenza di replica.  
 
@@ -55,7 +55,7 @@ La replica non funziona. È possibile che un collegamento di replica possa esser
 Questo stato può anche indicare un problema con la rete fisica tra il sito padre e il sito figlio sul collegamento di replica.
 
 
-## <a name="BKMK_MonitorReplicationStatus"></a> Monitorare lo stato della replica
+## <a name="monitor-replication-status"></a><a name="BKMK_MonitorReplicationStatus"></a> Monitorare lo stato della replica
 
 Usare il nodo **Replica di database** nell'area di lavoro **Monitoraggio** per visualizzare lo stato del collegamento di una replica. Visualizzare i dettagli sul database in ogni sito del collegamento di replica. È anche possibile visualizzare i dettagli relativi ai gruppi di replica. Per visualizzare questi dettagli, selezionare un collegamento di replica e selezionare la scheda appropriata per lo stato di replica che si vuole visualizzare.
 
@@ -105,7 +105,7 @@ Visualizzare lo stato della replica per ogni gruppo che viene replicato nel coll
 > I gruppi di replica per i dati del sito vengono inviati solo dal sito figlio al sito padre. I gruppi di replica per i dati globali vengono replicati in entrambe le direzioni.  
 
 
-## <a name="BKMK_RLA"></a> Replication Link Analyzer
+## <a name="replication-link-analyzer"></a><a name="BKMK_RLA"></a> Replication Link Analyzer
 
 Configuration Manager include **Replication Link Analyzer** (RLA) che consente di analizzare e risolvere i problemi di replica. Usare RLA per correggere gli errori del collegamento quando la replica ha esito negativo. È utile anche quando la replica smette di funzionare, ma il sito non l'ha ancora segnalata come non riuscita.
 
@@ -158,7 +158,7 @@ L'account usato per eseguire RLA deve avere le autorizzazioni seguenti:
 RLA genera errori di certificato di SQL Server Service Broker (SSB) per i siti primari aggiornati da System Center 2012 Configuration Manager. Questo problema è dovuto alle modifiche apportate ai nomi dei certificati in Configuration Manager Current Branch. È possibile ignorare questi errori.  
 
 
-## <a name="BKMK_ProcsforMonitoringReplication"></a> Monitoraggio della replica di database  
+## <a name="monitoring-database-replication"></a><a name="BKMK_ProcsforMonitoringReplication"></a> Monitoraggio della replica di database  
 
 ### <a name="monitor-high-level-site-to-site-database-replication-status"></a>Monitorare a livello generale lo stato della replica di database da sito a sito
 

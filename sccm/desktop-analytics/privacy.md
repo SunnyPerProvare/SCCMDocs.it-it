@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Desktop Analytics si impegna a proteggere la privacy dei dati dei clienti
 ms.date: 12/12/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: b5606f15-f589-485c-a599-cdabf1a9e7ac
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b3ac5b3b9f91fbbb426a5314f72f3bb6d9b608db
-ms.sourcegitcommit: cf978bfea545ed9116dacadfac830cbb08aaa649
+ms.openlocfilehash: 6b1f7bc0ed3d96917563cbf298284d52a945d69c
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75951652"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604187"
 ---
 # <a name="desktop-analytics-data-privacy"></a>Privacy dei dati di Desktop Analytics
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Esercitazione sull'uso di Desktop Analytics e Configuration Manager per distribuire Windows 10 in un gruppo pilota.
 ms.date: 06/13/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: tutorial
 ms.assetid: 3e82cd96-0ce0-474a-a597-d65fceadc95a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 26ca3129e152c7dd8c521e39e6bd859fddbe29df
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 19f5959ec08e1fe70f407d2c2145b0460acab019
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825541"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80597056"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Esercitazione: Distribuire Windows 10 a un gruppo pilota
 
@@ -292,7 +292,7 @@ Usare questa procedura per distribuire Windows 10 in Configuration Manager al gr
 - [Monitor](#bkmk_monitor-ts) status in Configuration Manager  
  -->
 
-### <a name="bkmk_create-package"></a> Creare un pacchetto di aggiornamento del sistema operativo per Windows 10
+### <a name="create-an-os-upgrade-package-for-windows-10"></a><a name="bkmk_create-package"></a> Creare un pacchetto di aggiornamento del sistema operativo per Windows 10
 
 1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Sistemi operativi** e selezionare il nodo **Pacchetti di aggiornamento del sistema operativo**.  
 
@@ -320,7 +320,7 @@ Quindi distribuire il pacchetto di aggiornamento del sistema operativo ai punti 
 4. Completare la Distribuzione guidata contenuto.  
 
 
-### <a name="bkmk_create-ts"></a> Creare una sequenza di attività di aggiornamento del sistema operativo per Windows 10
+### <a name="create-an-os-upgrade-task-sequence-for-windows-10"></a><a name="bkmk_create-ts"></a> Creare una sequenza di attività di aggiornamento del sistema operativo per Windows 10
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Raccolta software**, espandere **Sistemi operativi** e quindi selezionare **Sequenze di attività**.  
 
@@ -348,7 +348,7 @@ Quindi distribuire il pacchetto di aggiornamento del sistema operativo ai punti 
 8. Completare la Creazione guidata della sequenza di attività.  
 
 
-### <a name="bkmk_deploy-ts"></a> Distribuire la sequenza di attività usando il piano di distribuzione di Desktop Analytics
+### <a name="deploy-the-task-sequence-using-the-desktop-analytics-deployment-plan"></a><a name="bkmk_deploy-ts"></a> Distribuire la sequenza di attività usando il piano di distribuzione di Desktop Analytics
 
 1. Nella console di Configuration Manager passare a **Raccolta software**, espandere **Manutenzione di Desktop Analytics** e selezionare il nodo **Piani di distribuzione**.  
 
@@ -376,7 +376,7 @@ Quindi distribuire il pacchetto di aggiornamento del sistema operativo ai punti 
 10. Completare la procedura guidata.  
 
 
-### <a name="bkmk_install-ts"></a> Installare la sequenza di attività da Software Center
+### <a name="install-the-task-sequence-from-software-center"></a><a name="bkmk_install-ts"></a> Installare la sequenza di attività da Software Center
 
 1. Accedere a un dispositivo che è membro del piano di distribuzione pilota.  
 

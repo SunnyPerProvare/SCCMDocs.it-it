@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Procedure consigliate per la sicurezza e privacy quando si esegue una query per ottenere informazioni dal database del sito.
 ms.date: 05/08/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 30080620-20d3-4c38-b8dd-db5516e1acae
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 3bb2647f8914ed45d77c1d6718ee258f8d8f373d
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 882eedd1be029d5824fbd5d26a3f08d8f8f0021d
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75793461"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605671"
 ---
 # <a name="security-and-privacy-for-queries-in-configuration-manager"></a>Sicurezza e privacy per le query in Configuration Manager
 
