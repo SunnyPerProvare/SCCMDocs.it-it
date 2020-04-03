@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Riepilogo delle nuove funzionalità della versione mensile più recente del servizio cloud Desktop Analytics.
 ms.date: 03/12/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: fa300181-86cb-4afe-8fbf-895a7572378d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3c3ab1e6628a9d109cd90177085b70d597ca6856
-ms.sourcegitcommit: 888d695cd30cdc2a65e1ef486cfa0588575ea560
+ms.openlocfilehash: c1b17fdc85f0128e7a59a01c5e07a1afe7431c35
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80250829"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80597027"
 ---
 # <a name="whats-new-in-desktop-analytics"></a>Novità di Desktop Analytics
 

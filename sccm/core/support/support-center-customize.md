@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Personalizzare il file di configurazione di Support Center.
 ms.date: 11/27/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: a6f7f6b7-9ef3-4ffa-a3cf-d877ac55983b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 90ae389e59c6a8a81d96cb0b353c6e541855dac5
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 9afca6ec733b99de5a0521b6d3d8a980037eb214
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825983"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598841"
 ---
 # <a name="customize-support-center"></a>Personalizzare Support Center
 
@@ -38,7 +38,7 @@ Prima di personalizzare il file di configurazione di Support Center, salvare una
 
 
 
-## <a name="bkmk_datacoll"></a> Personalizzare la raccolta dati
+## <a name="customize-data-collection"></a><a name="bkmk_datacoll"></a> Personalizzare la raccolta dati
 
 Per personalizzare la raccolta dati nel client, modificare il file di configurazione di Support Center usando gli elementi XML contenuti nell'elemento `<dataCollectorSettings>`.
 
@@ -92,7 +92,7 @@ Per raccogliere le chiavi del Registro di sistema per i programmi classici insta
 
 
 
-## <a name="bkmk_loggroups"></a> Personalizzare i gruppi di file di log
+## <a name="customize-log-file-groups"></a><a name="bkmk_loggroups"></a> Personalizzare i gruppi di file di log
 
 Per personalizzare i file di log che Support Center raccoglie e la rispettiva visualizzazione nell'elenco **Log groups** (Gruppi di log), usare gli elementi contenuti nell'elemento `<logGroups>`. Quando si avvia Support Center, lo strumento analizza questa sezione del file di configurazione. Poi crea un gruppo nell'elenco **Log groups** (Gruppi di log) per ogni valore dell'attributo chiave trovato negli elementi `<add/>` contenuti nell'elemento `<logGroups>`.
 
@@ -125,7 +125,7 @@ Se lo stesso valore dell'attributo chiave viene usato in un elemento `<add/>` si
 
 
 
-## <a name="bkmk_wildcards"></a> Raccolta di file di log aggiuntivi tramite i caratteri jolly
+## <a name="collecting-additional-log-files-using-wildcards"></a><a name="bkmk_wildcards"></a> Raccolta di file di log aggiuntivi tramite i caratteri jolly
 
 Per raccogliere file di log aggiuntivi, usare i caratteri jolly nel percorso di file o nel nome file. Questi caratteri jolly includono variabili di ambiente a livello di sistema, ad esempio `%WINDIR%`, ma escludono le variabili di ambiente con ambito di utente, ad esempio `%USERPROFILE%`. Per raccogliere file di log aggiuntivi con questa ricerca di file di log non ricorsiva, usare un elemento `<add/>` nell'elemento `<additionalLogFiles>`. 
 

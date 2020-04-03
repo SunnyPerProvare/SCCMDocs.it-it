@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1802 di Configuration Manager.
 ms.date: 10/09/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 5bd637b1-d7a1-411b-877a-c7aae9741173
 author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 833d7e3a673a3638150b2107889636de749df2af
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 37fb726508490bc6f31e0e7d2c4339c4ab2d24d8
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802600"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604581"
 ---
 # <a name="whats-new-in-version-1802-of-configuration-manager"></a>Novità della versione 1802 di Configuration Manager
 

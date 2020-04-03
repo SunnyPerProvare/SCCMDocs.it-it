@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Mostra le classi presenti in Esplora inventario risorse
 ms.date: 11/12/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 1d333f4c-0f85-4278-b421-064cf01529a5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a8202dbcb677b2313982a538db0982a21c2fc761
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 8f70fdce4e3c834ef6383048f1ec415b5c0cb262
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75824266"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80594705"
 ---
 # <a name="resource-explorer-default-inventory-classes"></a>Classi di inventario predefinite di Esplora inventario risorse
 

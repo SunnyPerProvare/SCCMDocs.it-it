@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Comprendere gli effetti dei diversi errori di un sito di Configuration Manager.
 ms.date: 07/30/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 6f0e08f8-f2e1-4823-90f6-7b1f4341eb46
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2cb27812ffe97bfd93cfb1eb721ace2a56286ac9
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 95a76bfe42a6be5b35f79da3763a428653fde47d
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826238"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605647"
 ---
 # <a name="site-failure-impacts-in-configuration-manager"></a>Impatto degli errori del sito in Configuration Manager
 

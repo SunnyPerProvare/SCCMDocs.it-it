@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Ecco come è possibile iniziare a distribuire contenuto ai punti di distribuzione per Configuration Manager dopo averli installati.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: d50dcca0-4419-449d-a487-73abcadf328f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ad5cc86aac61dfd86771b623b6ce51399f0bc714
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: 902c4297837296da878e12ecbfa313cc5fbc6fc4
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79405844"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606080"
 ---
 # <a name="deploy-and-manage-content-for-configuration-manager"></a>Distribuire e gestire contenuto per Configuration Manager
 

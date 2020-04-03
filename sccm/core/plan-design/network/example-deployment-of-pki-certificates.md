@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: È disponibile un esempio dettagliato che fornisce informazioni su come creare e distribuire i certificati PKI usati in Configuration Manager.
 ms.date: 02/14/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 3417ff88-7177-4a0d-8967-ab21fe7eba17
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: be39094879cb47cedd573608177ad3c565aa1141
-ms.sourcegitcommit: 02235f5b3dbbf24ed3043cd7b033636d7f076285
+ms.openlocfilehash: ba68194af94386521f6c40d49cbfe8694de4cd1a
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77178606"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599696"
 ---
 # <a name="step-by-step-example-deployment-of-the-pki-certificates-for-configuration-manager-windows-server-2008-certification-authority"></a>Esempio dettagliato di distribuzione dei certificati PKI per Configuration Manager: Autorità di certificazione di Windows Server 2008
 
@@ -31,7 +31,7 @@ Dal momento che non esiste un singolo metodo di distribuzione per i certificati 
 > - **Autorità di certificazione**: **Windows Server 2003**  
 >   - **Destinatario certificato**: **Windows XP / Server 2003**  
 
-## <a name="BKMK_testnetworkenvironment"></a> Requisiti della rete di test
+## <a name="test-network-requirements"></a><a name="BKMK_testnetworkenvironment"></a> Requisiti della rete di test
 
 Nelle istruzioni dettagliate sono richiesti i seguenti requisiti:  
 
@@ -45,7 +45,7 @@ Nelle istruzioni dettagliate sono richiesti i seguenti requisiti:
 
 - È possibile accedere con un account amministratore di dominio radice o un account amministratore di dominio organizzazione che dovrà essere usato per tutte le procedure descritte in questo esempio di distribuzione.  
 
-## <a name="BKMK_overview2008"></a> Panoramica dei certificati
+## <a name="overview-of-the-certificates"></a><a name="BKMK_overview2008"></a> Panoramica dei certificati
 
 Nella tabella seguente vengono elencati i tipi di certificati PKI che potrebbero essere richiesti per Configuration Manager e le informazioni sul loro uso.  
 
@@ -58,7 +58,7 @@ Nella tabella seguente vengono elencati i tipi di certificati PKI che potrebbero
 |Certificato di registrazione per dispositivi mobili|Questo certificato è usato per l'autenticazione tra i computer client dei dispositivi mobili di Configuration Manager e i sistemi del sito che sono configurati per usare HTTPS. Deve essere installato come parte della registrazione dei dispositivi mobili in Configuration Manager ed è necessario scegliere il modello di certificato configurato come impostazione client dei dispositivi mobili.<br /><br /> Per i passaggi relativi alla configurazione di questo certificato, vedere [Distribuire il certificato di registrazione per i dispositivi mobili](#BKMK_mobiledevices2008_cm2012) in questo argomento.|  
 |Certificato client per computer Mac|È possibile richiedere e installare questo certificato da un computer Mac quando si usa la registrazione di Configuration Manager e scegliere il modello di certificato configurato come impostazione client dei dispositivi mobili.<br /><br /> Per i passaggi relativi alla configurazione di questo certificato, vedere [Distribuire il certificato client per computer Mac](#BKMK_MacClient_SP1) in questo argomento.|  
 
-## <a name="BKMK_webserver2008_cm2012"></a> Distribuire il certificato del server Web per sistemi del sito che eseguono IIS
+## <a name="deploy-the-web-server-certificate-for-site-systems-that-run-iis"></a><a name="BKMK_webserver2008_cm2012"></a> Distribuire il certificato del server Web per sistemi del sito che eseguono IIS
 
 La distribuzione di questo certificato prevede le procedure seguenti:  
 
@@ -68,7 +68,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 - Configurare IIS per l'uso del certificato del server Web  
 
-### <a name="BKMK_webserver22008"></a> Creare ed emettere il modello di certificato del server Web nell'autorità di certificazione
+### <a name="create-and-issue-the-web-server-certificate-template-on-the-certification-authority"></a><a name="BKMK_webserver22008"></a> Creare ed emettere il modello di certificato del server Web nell'autorità di certificazione
 
 Questa procedura crea un modello di certificato per i sistemi del sito di Configuration Manager e lo aggiunge all'autorità di certificazione.  
 
@@ -103,7 +103,7 @@ Questa procedura crea un modello di certificato per i sistemi del sito di Config
 
 13. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
 
-###  <a name="BKMK_webserver32008"></a> Richiedere il certificato del server Web  
+###  <a name="request-the-web-server-certificate"></a><a name="BKMK_webserver32008"></a> Richiedere il certificato del server Web  
  Questa procedura consente di specificare i valori FQDN Intranet e Internet che saranno configurati nelle proprietà del server del sistema del sito, quindi permette di installare il certificato del server Web nel server membro che esegue IIS.  
 
 ##### <a name="to-request-the-web-server-certificate"></a>Per richiedere il certificato del server Web  
@@ -153,7 +153,7 @@ Questa procedura crea un modello di certificato per i sistemi del sito di Config
 
 16. Chiudere **Certificati (computer locale)** .  
 
-###  <a name="BKMK_webserver42008"></a> Configurare IIS per l'uso del certificato del server Web  
+###  <a name="configure-iis-to-use-the-web-server-certificate"></a><a name="BKMK_webserver42008"></a> Configurare IIS per l'uso del certificato del server Web  
  Questa procedura consente di associare il certificato installato nel **Sito Web predefinito**di IIS.  
 
 ##### <a name="to-set-up-iis-to-use-the-web-server-certificate"></a>Per configurare IIS per l'uso del certificato del server Web  
@@ -178,7 +178,7 @@ Questa procedura crea un modello di certificato per i sistemi del sito di Config
 > [!IMPORTANT]  
 >  Quando si installa il server del sistema del sito di Configuration Manager in questo computer, assicurarsi di specificare nelle proprietà del sistema del sito gli stessi FQDN indicati al momento della richiesta del certificato.  
 
-##  <a name="BKMK_clouddp2008_cm2012"></a> Distribuire il certificato di servizio per i punti di distribuzione basati su cloud  
+##  <a name="deploy-the-service-certificate-for-cloud-based-distribution-points"></a><a name="BKMK_clouddp2008_cm2012"></a> Distribuire il certificato di servizio per i punti di distribuzione basati su cloud  
 
 La distribuzione di questo certificato prevede le procedure seguenti:  
 
@@ -188,7 +188,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 - [Esportare il certificato del server Web personalizzato per i punti di distribuzione basati su cloud](#BKMK_clouddpexporting2008)  
 
-###  <a name="BKMK_clouddpcreating2008"></a> Creare ed emettere il modello del certificato del server Web personalizzato nell'autorità di certificazione  
+###  <a name="create-and-issue-a-custom-web-server-certificate-template-on-the-certification-authority"></a><a name="BKMK_clouddpcreating2008"></a> Creare ed emettere il modello del certificato del server Web personalizzato nell'autorità di certificazione  
  Questa procedura consente di creare un modello di certificato personalizzato basato sul modello del certificato del server Web. Il certificato è valido per i punti di distribuzione di Configuration Manager basati sul cloud. La chiave privata deve essere esportabile. Dopo aver creato il modello di certificato, viene aggiunto all'autorità di certificazione.  
 
 > [!NOTE]
@@ -233,7 +233,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 14. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
 
-###  <a name="BKMK_clouddprequesting2008"></a> Richiedere il certificato del server Web  
+###  <a name="request-the-custom-web-server-certificate"></a><a name="BKMK_clouddprequesting2008"></a> Richiedere il certificato del server Web  
  Questa procedura richiede e installa il certificato del server Web personalizzato nel server membro in cui sarà in esecuzione il server del sito.  
 
 ##### <a name="to-request-the-custom-web-server-certificate"></a>Per richiedere il certificato del server Web  
@@ -275,7 +275,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 17. Chiudere **Certificati (computer locale)** .  
 
-###  <a name="BKMK_clouddpexporting2008"></a> Esportare il certificato del server Web personalizzato per i punti di distribuzione basati su cloud  
+###  <a name="export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a><a name="BKMK_clouddpexporting2008"></a> Esportare il certificato del server Web personalizzato per i punti di distribuzione basati su cloud  
  Questa procedura consente di esportare il certificato del server Web personalizzato in un file in modo da importarlo al momento della creazione di un punto di distribuzione basato su cloud.  
 
 ##### <a name="to-export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a>Per esportare il certificato del server Web personalizzato per i punti di distribuzione basati su cloud  
@@ -303,7 +303,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
    Il certificato è ora pronto per essere importato quando si crea un punto di distribuzione basato su cloud.  
 
-##  <a name="BKMK_client2008_cm2012"></a> Distribuire il certificato client per computer Windows  
+##  <a name="deploy-the-client-certificate-for-windows-computers"></a><a name="BKMK_client2008_cm2012"></a> Distribuire il certificato client per computer Windows  
  La distribuzione di questo certificato prevede le procedure seguenti:  
 
 - Creare ed emettere il modello del certificato di autenticazione della workstation nell'autorità di certificazione  
@@ -312,7 +312,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 - Registrare automaticamente il certificato di autenticazione della workstation e verificarne l'installazione nei computer  
 
-###  <a name="BKMK_client02008"></a> Creare ed emettere il modello del certificato di autenticazione della workstation nell'autorità di certificazione  
+###  <a name="create-and-issue-the-workstation-authentication-certificate-template-on-the-certification-authority"></a><a name="BKMK_client02008"></a> Creare ed emettere il modello del certificato di autenticazione della workstation nell'autorità di certificazione  
  Questa procedura crea un modello di certificato per i computer client di Configuration Manager e lo aggiunge all'autorità di certificazione.  
 
 ##### <a name="to-create-and-issue-the-workstation-authentication-certificate-template-on-the-certification-authority"></a>Per creare ed emettere il modello del certificato di autenticazione della workstation nell'autorità di certificazione  
@@ -338,7 +338,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 9. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
 
-###  <a name="BKMK_client12008"></a> Configurare la registrazione automatica del modello di autenticazione della workstation usando i criteri di gruppo  
+###  <a name="configure-autoenrollment-of-the-workstation-authentication-template-by-using-group-policy"></a><a name="BKMK_client12008"></a> Configurare la registrazione automatica del modello di autenticazione della workstation usando i criteri di gruppo  
  Questa procedura consente di configurare i criteri di gruppo per registrare automaticamente il certificato client sui computer.  
 
 ##### <a name="to-set-up-autoenrollment-of-the-workstation-authentication-template-by-using-group-policy"></a>Per configurare la registrazione automatica del modello di autenticazione della workstation usando i criteri di gruppo  
@@ -362,7 +362,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 8.  Chiudere **Gestione criteri di gruppo**.  
 
-###  <a name="BKMK_client22008"></a> Registrare automaticamente il certificato di autenticazione della workstation e verificarne l'installazione nei computer  
+###  <a name="automatically-enroll-the-workstation-authentication-certificate-and-verify-its-installation-on-computers"></a><a name="BKMK_client22008"></a> Registrare automaticamente il certificato di autenticazione della workstation e verificarne l'installazione nei computer  
  Questa procedura consente di installare il certificato del client nei computer e verifica l'installazione.  
 
 ##### <a name="to-automatically-enroll-the-workstation-authentication-certificate-and-verify-its-installation-on-the-client-computer"></a>Per registrare automaticamente il certificato di autenticazione della workstation e verificare la sua installazione nel computer client  
@@ -396,7 +396,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
     A questo punto, il computer è configurato con un certificato client di Configuration Manager.  
 
-##  <a name="BKMK_clientdistributionpoint2008_cm2012"></a> Distribuire il certificato client per punti di distribuzione  
+##  <a name="deploy-the-client-certificate-for-distribution-points"></a><a name="BKMK_clientdistributionpoint2008_cm2012"></a> Distribuire il certificato client per punti di distribuzione  
 
 > [!NOTE]  
 >  Questo certificato può essere utilizzato anche per le immagini di supporto che non utilizzano l'avvio PXE, perché i requisiti del certificato sono gli stessi.  
@@ -409,7 +409,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 - Esportare il certificato client per i punti di distribuzione  
 
-###  <a name="BKMK_clientdistributionpoint02008"></a> Creare ed emettere un modello di certificato di autenticazione della workstation personalizzato nell'autorità di certificazione  
+###  <a name="create-and-issue-a-custom-workstation-authentication-certificate-template-on-the-certification-authority"></a><a name="BKMK_clientdistributionpoint02008"></a> Creare ed emettere un modello di certificato di autenticazione della workstation personalizzato nell'autorità di certificazione  
  Questa procedura crea un modello di certificato personalizzato per i punti di distribuzione di Configuration Manager che consente l'esportazione della chiave privata e l'aggiunta del modello di certificato all'autorità di certificazione.  
 
 > [!NOTE]
@@ -450,7 +450,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 12. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
 
-###  <a name="BKMK_clientdistributionpoint12008"></a> Richiedere il certificato di autenticazione della workstation personalizzato  
+###  <a name="request-the-custom-workstation-authentication-certificate"></a><a name="BKMK_clientdistributionpoint12008"></a> Richiedere il certificato di autenticazione della workstation personalizzato  
  Questa procedura richiede e installa il certificato client personalizzato nel server membro in cui è in esecuzione IIS e che verrà configurato come punto di distribuzione.  
 
 ##### <a name="to-request-the-custom-workstation-authentication-certificate"></a>Per richiedere il certificato di autenticazione della workstation personalizzato  
@@ -481,7 +481,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 13. Non chiudere **Certificati (computer locale)** .  
 
-###  <a name="BKMK_exportclientdistributionpoint22008"></a> Esportare il certificato client per i punti di distribuzione  
+###  <a name="export-the-client-certificate-for-distribution-points"></a><a name="BKMK_exportclientdistributionpoint22008"></a> Esportare il certificato client per i punti di distribuzione  
  Questa procedura consente di esportare il certificato di autenticazione della workstation personalizzato in un file, in modo che possa essere importato nelle proprietà del punto di distribuzione.  
 
 ##### <a name="to-export-the-client-certificate-for-distribution-points"></a>Per esportare il certificato client per i punti di distribuzione  
@@ -512,7 +512,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 > [!TIP]  
 >  È possibile usare lo stesso file del certificato quando si configurano le immagini di supporto per la distribuzione di un sistema operativo che non usa l'avvio PXE e la sequenza attività per installare l'immagine deve contattare un punto di gestione che richieda connessioni client HTTPS.  
 
-##  <a name="BKMK_mobiledevices2008_cm2012"></a> Distribuire il certificato di registrazione per i dispositivi mobili  
+##  <a name="deploy-the-enrollment-certificate-for-mobile-devices"></a><a name="BKMK_mobiledevices2008_cm2012"></a> Distribuire il certificato di registrazione per i dispositivi mobili  
  Questa distribuzione del certificato dispone di una sola procedura per creare ed emettere il modello del certificato di registrazione nell'autorità di certificazione.  
 
 ### <a name="create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>Creare ed emettere il modello di certificato di registrazione nell'autorità di certificazione  
@@ -547,11 +547,11 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
     A questo punto, il modello di certificato di registrazione del dispositivo mobile è pronto per essere selezionato durante la configurazione di un profilo di registrazione del dispositivo mobile nelle impostazioni client.  
 
-##  <a name="BKMK_MacClient_SP1"></a> Distribuire il certificato client per computer Mac  
+##  <a name="deploy-the-client-certificate-for-mac-computers"></a><a name="BKMK_MacClient_SP1"></a> Distribuire il certificato client per computer Mac  
 
 Questa distribuzione del certificato dispone di una sola procedura per creare ed emettere il modello del certificato di registrazione nell'autorità di certificazione.  
 
-###  <a name="BKMK_MacClient_CreatingIssuing"></a> Creare ed emettere un modello di certificato client Mac nell'autorità di certificazione  
+###  <a name="create-and-issue-a-mac-client-certificate-template-on-the-certification-authority"></a><a name="BKMK_MacClient_CreatingIssuing"></a> Creare ed emettere un modello di certificato client Mac nell'autorità di certificazione  
  Questa procedura crea un modello di certificato personalizzato per i computer Mac di Configuration Manager e lo aggiunge all'autorità di certificazione.  
 
 > [!NOTE]  

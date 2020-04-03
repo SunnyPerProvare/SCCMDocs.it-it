@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare Deployment Monitoring Tool per risolvere i problemi di distribuzione del software in un client di Configuration Manager.
 ms.date: 09/24/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 9edc214f-f405-456d-80df-8adcc2a5428d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: ba7039dbfad1dd38541e64e652a63546e6430417
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: eeb9a3b7b07feec3bf140f65bf7383422cfcb71d
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826051"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604973"
 ---
 # <a name="deployment-monitoring-tool"></a>Deployment Monitoring Tool
 

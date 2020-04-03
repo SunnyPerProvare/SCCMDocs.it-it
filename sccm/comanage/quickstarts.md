@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: L'abilitazione della co-gestione offre vantaggi immediati.
 ms.date: 01/14/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology: configmgr-comanage
 ms.topic: conceptual
 ms.assetid: 8d878443-90e7-46e4-9cd3-99e2a19b2ad0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 84b2795fbf0432496a759da545c47cdc8f0f2ddd
-ms.sourcegitcommit: f31916c633277cc09b2125f9b7deee131453479b
+ms.openlocfilehash: 64165ed75a8568c5b9d0da6489a92d67a31ed1f6
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79405674"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80595793"
 ---
 # <a name="cloud-connecting-with-co-management"></a>Connessione al cloud con la co-gestione
 

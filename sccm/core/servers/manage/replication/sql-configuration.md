@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare questo diagramma per avviare la risoluzione dei problemi di configurazione SQL per Configuration Manager
 ms.date: 08/09/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 95ab8cbd-0807-4422-823a-f5f9314ba623
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1580f310acbeb11a55b6b53641694f97e8826a2e
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: cbbefa238dbd1aac2e1f24664ffe694411787e30
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75793576"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605764"
 ---
 # <a name="sql-configuration"></a>Configurazione SQL
 

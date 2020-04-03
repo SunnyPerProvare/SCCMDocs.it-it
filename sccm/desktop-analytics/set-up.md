@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Guida pratica per la configurazione e l'onboarding in Desktop Analytics.
 ms.date: 02/06/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: 7ff8d453-f24d-4230-a116-585190a663fc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 91438d9ad43884239db6e8995c983abda6f0c106
-ms.sourcegitcommit: be37256f98120ad30d5f7925bc32f05a07f15984
+ms.openlocfilehash: 7b6e74ccb856fbfe0f3cd02a38626fbf20bcb959
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071202"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80603954"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Come configurare Desktop Analytics
 

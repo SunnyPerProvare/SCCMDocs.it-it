@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sul modo in cui Package Transfer Manager in Configuration Manager trasferisce il contenuto da un server del sito ai punti di distribuzione remoti.
 ms.date: 02/8/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 3359f254-dd48-42b7-9eab-c92a3417e3fb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b2df092295a93e6ba09200a55219879c9d583c2f
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: b450c45342793b89d41a2d96b8a7340939899093
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799914"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600336"
 ---
 # <a name="package-transfer-manager-in-configuration-manager"></a>Package Transfer Manager in Configuration Manager
 

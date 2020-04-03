@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su quali dati possono e non possono essere migrati a Configuration Manager Current Branch.
 ms.date: 12/29/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 99222dc8-0e1e-4513-8302-7a1acf671e9b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e0031652aba7e31a5a152c7f4834cb2d56d5c9d0
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 4b697df41490d1709782561cc59b43684fb60d16
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75803229"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605194"
 ---
 # <a name="determine-whether-to-migrate-data-to-configuration-manager-current-branch"></a>Determinare se eseguire la migrazione dei dati a Configuration Manager Current Branch
 
@@ -39,7 +39,7 @@ Dopo l'installazione di un client nella nuova gerarchia e l'invio dei dati da pa
 
  Per informazioni sulle versioni di Configuration Manager supportate dalla migrazione, vedere [Prerequisiti per la migrazione](../../core/migration/prerequisites-for-migration.md).  
 
-## <a name="Can_Migrate"></a> Dati di cui è possibile eseguire la migrazione a Configuration Manager Current Branch
+## <a name="data-that-you-can-migrate-to-configuration-manager-current-branch"></a><a name="Can_Migrate"></a> Dati di cui è possibile eseguire la migrazione a Configuration Manager Current Branch
 
 La migrazione può essere applicata alla maggior parte degli oggetti delle gerarchie di Configuration Manager supportate. Le istanze migrate di alcuni oggetti di una versione supportata di Configuration Manager 2007 devono essere modificate per essere conformi al formato oggetti e allo schema di System Center 2012 Configuration Manager.
 
@@ -151,7 +151,7 @@ Di seguito sono elencati gli oggetti di cui è possibile eseguire la migrazione 
 
 -   Pacchetti di applicazioni virtuali  
 
-## <a name="Cannot_migrate"></a> Dati di cui non è possibile eseguire la migrazione a Configuration Manager Current Branch
+## <a name="data-that-you-cant-migrate-to-configuration-manager-current-branch"></a><a name="Cannot_migrate"></a> Dati di cui non è possibile eseguire la migrazione a Configuration Manager Current Branch
 
 Non è possibile migrare i seguenti tipi di oggetti:  
 

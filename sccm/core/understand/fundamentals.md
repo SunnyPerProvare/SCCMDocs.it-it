@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni e concetti di base relativi a Configuration Manager.
 ms.date: 11/29/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: cc4cdb35-f0b4-42b5-9cec-6431a8c30793
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 12434ccd389aa566918dee624ea4dcdc1586d544
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 52105322315a8a1e918700641699f9c66e1571c3
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792078"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598285"
 ---
 # <a name="fundamentals-of-configuration-manager"></a>Nozioni fondamentali di Configuration Manager
 

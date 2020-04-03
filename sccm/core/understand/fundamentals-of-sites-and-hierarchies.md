@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni di base su siti e gerarchie di Configuration Manager.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 4db1e15f-e832-4cf9-be33-d3971e635a55
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e187656c5149ff7dbfd3c4a21d023f55c85b2015
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: bdc64359525b3f15e3e165765b91c81374265a2b
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825847"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598308"
 ---
 # <a name="fundamentals-of-sites-and-hierarchies-for-configuration-manager"></a>Nozioni fondamentali su siti e gerarchie per Configuration Manager
 

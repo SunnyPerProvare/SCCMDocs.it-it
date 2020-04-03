@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Installare e configurare Exchange Connector per Configuration Manager per gestire i dispositivi mobili tramite ActiveSync.
 ms.date: 12/31/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-hybrid
+ms.technology: configmgr-mdm
 ms.topic: conceptual
 ms.collection: M365-identity-device-management
 ms.assetid: e179e30a-a1fc-461e-8087-ff3a55803450
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7d064b440922eb6994b2f761833f27a1d9590f34
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 6e855d8e516b313e0744cc5ba8f2759a1e1337b9
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76037080"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605466"
 ---
 # <a name="install-and-configure-the-exchange-connector"></a>Installare e configurare Exchange Connector
 
@@ -74,7 +74,7 @@ I seguenti ruoli di gestione di Exchange Server includono questi cmdlet:
 
 - Gestione dei destinatari
 - Gestione delle organizzazioni di sola visualizzazione
-- Gestione del server
+- Gestione server
 
 Per ulteriori informazioni, vedere informazioni sui [gruppi del ruolo di gestione](https://docs.microsoft.com/exchange/understanding-management-role-groups-exchange-2013-help) nella documentazione di Exchange Server 2013.
 
@@ -103,17 +103,17 @@ Per ulteriori informazioni, vedere informazioni sui [gruppi del ruolo di gestion
 
 1. Nella pagina **Impostazioni** configurare le impostazioni del dispositivo mobile nei gruppi seguenti:
 
-    - **Generalee**
+    - **Generale**
     - **Password**
     - **Gestione della posta elettronica**
-    - **Security**
+    - **Sicurezza**
     - **Applicazione**
 
     Per ulteriori informazioni, vedere [Exchange Connector Settings](/configmgr/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync#policies).
 
     Se si registrano i dispositivi mobili anche usando Configuration Manager [MDM locale](/configmgr/mdm/understand/manage-mobile-devices-with-on-premises-infrastructure), abilitare l'opzione per **consentire la gestione di dispositivi mobili esterni**. Questa impostazione consente ai dispositivi mobili di continuare a ricevere messaggi di posta elettronica da Exchange dopo la registrazione da Configuration Manager.
 
-1. completare la procedura guidata.
+1. Completare la procedura guidata.
 
 ## <a name="verify-and-monitor"></a>Verifica e monitoraggio
 

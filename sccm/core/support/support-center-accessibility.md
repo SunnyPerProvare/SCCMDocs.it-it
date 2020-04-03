@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità di accessibilità in Configuration Manager Support Center.
 ms.date: 11/27/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 1b931c9d-ffae-4d8e-baa7-c330a152674f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 46482876d328a19da9328a4a32b78421328bafc5
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 45351e9e94bc30abca9d866d6ecfb122bab6658f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792542"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599009"
 ---
 # <a name="accessibility-features-in-support-center"></a>Funzionalità di accessibilità in Support Center
 
@@ -67,7 +67,7 @@ Usare i tasti di scelta rapida per accedere a tutti i menu della barra multifunz
 |Aprire la Guida|**F1**|
 
 
-#### <a name="bkmk_note1"></a> Nota 1: Inserire annotazioni in un file di log
+#### <a name="note-1-annotate-a-log-file"></a><a name="bkmk_note1"></a> Nota 1: Inserire annotazioni in un file di log
 Support Center archivia le annotazioni nella memoria. È possibile usarle solo all'interno di una sessione di visualizzazione log. Per mantenere un'annotazione e usarla in futuro, acquisire la schermata e salvare l'immagine risultante.
 
 

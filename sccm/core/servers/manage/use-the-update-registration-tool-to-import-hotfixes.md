@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su quando e come usare lo strumento di registrazione dell'aggiornamento per importare manualmente un aggiornamento nella console di Configuration Manager.
 ms.date: 03/27/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 8cc13635-85d6-4b07-a3ec-c42188bc5c74
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: d547867a0b9b5fe940d7919379c41f9beb8ddbbc
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 420b13005e8f9ac3d79f7d94398e6aa0ddcc190c
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826121"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605551"
 ---
 # <a name="use-the-update-registration-tool-to-import-hotfixes-to-configuration-manager"></a>Usare lo strumento di registrazione dell'aggiornamento per importare hotfix in Configuration Manager
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sui requisiti per un sistema del sito di Configuration Manager in un dominio di Active Directory.
 ms.date: 10/22/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 8c5a13f8-42d5-4898-b7b6-e594dae8b335
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 70beb8b1d8cc76e885ff2ccd3f8a7dcf7324800d
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: bb7acbcfcf39a91ab9d3cd833a60c9ef643514bb
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802022"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80601310"
 ---
 # <a name="support-for-active-directory-domains-in-configuration-manager"></a>Supporto per i domini di Active Directory in Configuration Manager
 
@@ -39,7 +39,7 @@ Tutti i sistemi del sito di Configuration Manager devono essere membri di un dom
 
 - Configuration Manager supporta il livello di funzionalità del dominio e delle foreste di Windows Server 2008 R2 o versione successiva.<!-- SCCMDocs#1853 -->
 
-## <a name="bkmk_Disjoint"></a> Spazio dei nomi non contiguo
+## <a name="disjoint-namespace"></a><a name="bkmk_Disjoint"></a> Spazio dei nomi non contiguo
 
 È possibile installare client e sistemi del sito di Configuration Manager in un dominio che contiene uno *spazio dei nomi non contiguo*.  
 
@@ -82,7 +82,7 @@ Per assicurarsi che l'*elenco di ricerca dei suffissi DNS* contenga tutti gli sp
 > [!IMPORTANT]  
 > Quando si fa riferimento a un computer in Configuration Manager, immettere il computer usando il suffisso DNS primario. Questo suffisso deve corrispondere al nome di dominio completo registrato come attributo **dnsHostName** nel dominio di Active Directory e al nome dell'entità servizio associata al sistema.  
 
-## <a name="bkmk_SLD"></a> Domini con etichetta singola
+## <a name="single-label-domains"></a><a name="bkmk_SLD"></a> Domini con etichetta singola
 
 Configuration Manager supporta client e sistemi del sito in un nome di dominio con etichetta singola quando vengono soddisfatti i criteri seguenti:  
 

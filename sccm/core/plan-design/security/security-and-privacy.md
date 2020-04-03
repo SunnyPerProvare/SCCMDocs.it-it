@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Trovare risorse sulla sicurezza e sulla privacy per i client di Configuration Manager.
 ms.date: 01/3/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: e18be4d1-9f6e-477c-a79d-c46014b4a03a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 85943664c5b8d92caf700f95ecbd6b774f268538
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 1c4fc26f7978f59f5ca619bcf27a7e7bb8a35d45
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799149"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606380"
 ---
 # <a name="security-and-privacy-for-configuration-manager"></a>Sicurezza e privacy per Configuration Manager
 
@@ -51,7 +51,7 @@ Questo articolo include le risorse per la sicurezza e la privacy per Configurati
 
 -   [Sicurezza e privacy per Asset Intelligence](../../../core/clients/manage/asset-intelligence/security-and-privacy-for-asset-intelligence.md)  
 
--   [Sicurezza e privacy per la creazione di report](../../../core/servers/manage/security-and-privacy-for-reporting.md)  
+-   [Sicurezza e privacy per la creazione di report](../../../core/servers/manage/planning-for-reporting.md#security-and-privacy)  
 
 
 

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Identificare e gestire i gruppi di Windows, gli account e gli oggetti SQL usati in Configuration Manager.
 ms.date: 10/23/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 72d7b174-f015-498f-a0a7-2161b9929198
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 227bfc6d68849cd8bf712ce5cf5133b41628331e
-ms.sourcegitcommit: b73f61371c8591e0c7340ee9d9e945cd5e68347e
+ms.openlocfilehash: d55e4c287ca07f50c2d25d31eed4fd39c339da3a
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77515824"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604342"
 ---
 # <a name="accounts-used-in-configuration-manager"></a>Account usati in Configuration Manager
 
@@ -88,7 +88,7 @@ Usare le informazioni seguenti per identificare i gruppi di Windows, gli account
   - [smsdbrole_WebPortal](#smsdbrole_webportal)
   - [smsschm_users](#smsschm_users)
 
-## <a name="bkmk_groups"></a> Gruppi Windows creati e usati da Configuration Manager  
+## <a name="windows-groups-that-configuration-manager-creates-and-uses"></a><a name="bkmk_groups"></a> Gruppi Windows creati e usati da Configuration Manager  
 
 Configuration Manager crea automaticamente e, in molti casi, gestisce automaticamente i gruppi di Windows seguenti:  
 
@@ -96,7 +96,7 @@ Configuration Manager crea automaticamente e, in molti casi, gestisce automatica
 > Quando Configuration Manager crea un gruppo in un computer appartenente a un dominio, il gruppo è un gruppo di sicurezza locale. Se il computer è un controller di dominio, il gruppo è un gruppo locale di dominio. Questo tipo di gruppo è comune a tutti i controller di dominio del dominio.  
 
 
-### <a name="configmgr_collectedfilesaccess"></a> ConfigMgr_CollectedFilesAccess
+### <a name="configmgr_collectedfilesaccess"></a><a name="configmgr_collectedfilesaccess"></a> ConfigMgr_CollectedFilesAccess
 
 Configuration Manager usa questo gruppo per concedere l'accesso per la visualizzazione dei file raccolti dall'inventario software.  
 
@@ -114,7 +114,7 @@ Configuration Manager gestisce automaticamente l'appartenenza a gruppi. L'appart
 Per impostazione predefinita, questo gruppo dispone dell'autorizzazione di **Lettura** per la seguente cartella nel server del sito: `C:\Program Files\Microsoft Configuration Manager\sinv.box\FileCol`  
 
 
-### <a name="configmgr_dviewaccess"></a>ConfigMgr_DViewAccess  
+### <a name="configmgr_dviewaccess"></a><a name="configmgr_dviewaccess"></a>ConfigMgr_DViewAccess  
 
 Questo gruppo è un gruppo di sicurezza locale creato da Configuration Manager nel server di database del sito o nel server di replica del database di un sito primario figlio. Il sito lo crea quando si usano le viste distribuite per la replica di database tra siti all'interno di una gerarchia. Contiene il server del sito e gli account computer di SQL Server del sito di amministrazione centrale.
 
@@ -166,7 +166,7 @@ Configuration Manager gestisce automaticamente l'appartenenza a gruppi. Per impo
 Quando si usa una console di Configuration Manager remota, configurare le autorizzazioni DCOM di **attivazione remota** sul computer del server di sito e nel provider SMS. Concedere questi diritti al gruppo **SMS Admins**. Questa operazione semplifica l'amministrazione perché evita di dover concedere questi diritti direttamente a utenti o gruppi. Per altre informazioni, vedere [Configurare le autorizzazioni DCOM per le console remote di Configuration Manager](/sccm/core/servers/manage/modify-your-infrastructure#BKMK_ConfigDCOMforRemoteConsole). 
 
 
-### <a name="bkmk_remotemp"></a> SMS_SiteSystemToSiteServerConnection_MP_&lt;codicesito\>  
+### <a name="sms_sitesystemtositeserverconnection_mp_ltsitecode"></a><a name="bkmk_remotemp"></a> SMS_SiteSystemToSiteServerConnection_MP_&lt;codicesito\>  
  
 I punti di gestione remoti rispetto al server del sito usano questo gruppo per connettersi database del sito. Questo gruppo consente l'accesso del punto di gestione alle cartelle della posta in arrivo nel server del sito e nel database del sito.  
 
@@ -182,7 +182,7 @@ Configuration Manager gestisce automaticamente l'appartenenza a gruppi. Per impo
 Per impostazione predefinita, questo gruppo include le autorizzazioni **Lettura**, **Lettura ed esecuzione** e **Visualizzazione contenuto cartella** per la seguente cartella del server del sito `C:\Program Files\Microsoft Configuration Manager\inboxes`. Questo gruppo ha anche l'autorizzazione **Scrittura** per varie sottocartelle in **posta in arrivo**, in cui il punto di gestione scrive i dati client.
 
 
-### <a name="bkmk_remoteprov"></a> SMS_SiteSystemToSiteServerConnection_SMSProv_&lt;codicesito\>  
+### <a name="sms_sitesystemtositeserverconnection_smsprov_ltsitecode"></a><a name="bkmk_remoteprov"></a> SMS_SiteSystemToSiteServerConnection_SMSProv_&lt;codicesito\>  
  
 I computer del provider SMS remoti usano questo gruppo per connettersi al server del sito.  
 
@@ -207,7 +207,7 @@ Include anche le autorizzazioni seguenti per le sottocartelle sotto `C:\Program 
 - **Modifica**   
 
 
-### <a name="bkmk_remotestat"></a> SMS_SiteSystemToSiteServerConnection_Stat_&lt;codicesito\>  
+### <a name="sms_sitesystemtositeserverconnection_stat_ltsitecode"></a><a name="bkmk_remotestat"></a> SMS_SiteSystemToSiteServerConnection_Stat_&lt;codicesito\>  
 
 Il componente Gestione invio file nei computer di sistema del sito remoto di Configuration Manager usa questo gruppo per la connessione al server del sito.  
 
@@ -225,7 +225,7 @@ Per impostazione predefinita, questo gruppo include le autorizzazioni **Lettura*
 Questo gruppo dispone inoltre delle autorizzazioni di **Scrittura** e **Modifica** per la seguente cartella nel server del sito `C:\Program Files\Microsoft Configuration Manager\inboxes\statmgr.box`.
 
 
-### <a name="bkmk_filerepl"></a> SMS_SiteToSiteConnection_&lt;codicesito\>  
+### <a name="sms_sitetositeconnection_ltsitecode"></a><a name="bkmk_filerepl"></a> SMS_SiteToSiteConnection_&lt;codicesito\>  
 Configuration Manager usa questo gruppo per abilitare la replica basata su file tra siti di una gerarchia. Per ciascun sito remoto che esegue il trasferimento diretto di file in questo sito, questo gruppo contiene account configurati come **account di replica file**.  
 
 #### <a name="type-and-location"></a>Tipo e percorso
@@ -241,7 +241,7 @@ Per impostazione predefinita, il gruppo dispone del **controllo completo** per l
 
 
 
-## <a name="bkmk_accounts"></a> Account usati da Configuration Manager  
+## <a name="accounts-that-configuration-manager-uses"></a><a name="bkmk_accounts"></a> Account usati da Configuration Manager  
 
 È possibile configurare gli account seguenti per Configuration Manager.  
 
@@ -618,7 +618,7 @@ Configurare l'account in modo che abbia le autorizzazioni minime necessarie per 
 > Se la riga di comando richiede accesso amministrativo al computer, creare un account amministratore locale unicamente per questo account in tutti i computer che eseguono la sequenza di attività. Eliminare l'account quando non è più necessario.  
 
 
-## <a name="bkmk_sqlusers"></a> Oggetti utente usati da Configuration Manager in SQL 
+## <a name="user-objects-that-configuration-manager-uses-in-sql"></a><a name="bkmk_sqlusers"></a> Oggetti utente usati da Configuration Manager in SQL 
 <!--SCCMDocs issue #1160-->
 Configuration Manager crea automaticamente e mantiene gil oggetti utente seguenti in SQL.  Questi oggetti si trovano all'interno del database di Configuration Manager in SIcurezza/Utenti.  
 
@@ -641,7 +641,7 @@ Questo oggetto viene usato per fornire le autorizzazioni per le istruzioni SQL d
 Questo oggetto viene usato per le esecuzioni di report SQL.  La stored procedure seguente viene usata con questa funzione: spSRExecQuery.
 
 
-## <a name="bkmk_sqlroles"></a>Ruoli del database usati da Configuration Manager in SQL
+## <a name="database-roles-that-configuration-manager-uses-in-sql"></a><a name="bkmk_sqlroles"></a>Ruoli del database usati da Configuration Manager in SQL
 <!--SCCMDocs issue #1160-->
 Configuration Manager crea automaticamente e mantiene gli oggetti ruolo seguenti in SQL. Questi ruoli consentono di accedere a stored procedure, tabelle, viste e funzioni specifiche per eseguire le azioni richieste per ogni ruolo per recuperare o inserire dati da e nel database ConfigMgr. Questi oggetti si trovano all'interno del database di Configuration Manager in Sicurezza/Ruoli/Ruoli del database.
 

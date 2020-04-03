@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Content Library Explorer consente di visualizzare la raccolta contenuto in un punto di distribuzione di Configuration Manager e di risolvere eventuali problemi.
 ms.date: 07/30/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 691896d9-ec0f-461f-a3f2-40378ebd3121
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 544c24be388b07b0dd375a423de257bdc6215bb1
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: ed927e82ae802ad31c578463ae3e707b4b42c32d
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792966"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604275"
 ---
 # <a name="content-library-explorer"></a>Content Library Explorer
 
@@ -79,7 +79,7 @@ Quando si seleziona una cartella, nel riquadro a destra vengono visualizzati tut
 Lo strumento si connette anche al provider di Configuration Manager. La connessione consente di determinare quali pacchetti vengono distribuiti al punto di distribuzione e se effettivamente si trovano o meno nella raccolta contenuto del punto di distribuzione. Ad esempio, un pacchetto la cui distribuzione è sospesa potrebbe non essere ancora presente nella raccolta contenuto. Un pacchetto di questo tipo viene visualizzato dallo strumento come "in sospeso", con nessuna azione abilitata.
 
 
-### <a name="bkmk_disabled-packages"></a> Pacchetti disabilitati
+### <a name="disabled-packages"></a><a name="bkmk_disabled-packages"></a> Pacchetti disabilitati
 
 Alcuni pacchetti sono presenti nel punto di distribuzione ma non sono visibili nella console di Configuration Manager. Questi pacchetti sono contrassegnati con un asterisco (\*). Su di essi non è possibile eseguire alcuna azione. Anche altri pacchetti possono essere contrassegnati da un asterisco e le azioni a loro riservate disabilitate. 
 

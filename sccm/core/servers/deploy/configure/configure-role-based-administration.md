@@ -3,18 +3,18 @@ title: Configurare l'amministrazione basata su ruoli
 titleSuffix: Configuration Manager
 ms.date: 11/08/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 57413dd3-b2f8-4a5f-b27f-8464d357caff
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 68337652ecf6c82494b570f309e5a19a0bc234ad
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 64995c094d86526452dcf21f0ec020b57e404e1e
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75798871"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606162"
 ---
 # <a name="configure-role-based-administration-for-configuration-manager"></a>Configurare l'amministrazione basata su ruoli per Configuration Manager
 
@@ -33,7 +33,7 @@ In Configuration Manager l'amministrazione basata su ruoli combina ruoli di sicu
 - [Creare un nuovo utente amministratore](#BKMK_Create_AdminUser)  
 - [Modificare l'ambito amministrativo di un utente amministratore](#BKMK_ModAdminUser)  
 
-## <a name="BKMK_CreateSecRole"></a> Creare ruoli di sicurezza personalizzati
+## <a name="create-custom-security-roles"></a><a name="BKMK_CreateSecRole"></a> Creare ruoli di sicurezza personalizzati
 
  Configuration Manager fornisce diversi ruoli di sicurezza predefiniti. Se sono necessari ruoli di sicurezza aggiuntivi, è possibile creare un ruolo di sicurezza personalizzato creando una copia di un ruolo di sicurezza esistente e, in seguito, modificando tale copia. È possibile creare un ruolo di sicurezza personalizzato per concedere agli utenti amministratori le autorizzazioni di sicurezza necessarie non incluse in un ruolo di sicurezza attualmente assegnato. Utilizzando un ruolo di sicurezza personalizzato, è possibile concedere soltanto le autorizzazioni richieste, evitando di assegnare un ruolo di sicurezza che conceda più autorizzazioni del necessario.  
 
@@ -68,7 +68,7 @@ In Configuration Manager l'amministrazione basata su ruoli combina ruoli di sicu
             > [!NOTE]  
             > Dopo l'importazione di un ruolo di sicurezza, è possibile modificare le proprietà del ruolo di sicurezza per modificare le autorizzazioni oggetto associate al ruolo di sicurezza.  
 
-## <a name="BKMK_ConfigSecRole"></a> Configurare i ruoli di sicurezza
+## <a name="configure-security-roles"></a><a name="BKMK_ConfigSecRole"></a> Configurare i ruoli di sicurezza
 
  I gruppi di autorizzazioni di sicurezza definiti per un ruolo di sicurezza vengono chiamati assegnazioni delle operazioni di protezione. Le assegnazioni delle operazioni di protezione rappresentano una combinazione di tipi di oggetti e azioni disponibili per ciascun tipo di oggetto. È possibile modificare le operazioni di protezione disponibili per qualsiasi ruolo di sicurezza personalizzato, mentre non è possibile modificare i ruoli di sicurezza predefiniti forniti da Configuration Manager.  
 
@@ -89,7 +89,7 @@ In Configuration Manager l'amministrazione basata su ruoli combina ruoli di sicu
 
 8. Al termine della configurazione delle assegnazioni delle operazioni di protezione, scegliere **OK** per salvare il nuovo ruolo di sicurezza.  
 
-##  <a name="BKMK_ConfigSecScope"></a> Configurare gli ambiti di protezione per un oggetto
+##  <a name="configure-security-scopes-for-an-object"></a><a name="BKMK_ConfigSecScope"></a> Configurare gli ambiti di protezione per un oggetto
  L'associazione di un ambito di protezione per un oggetto si gestisce dall'oggetto e non dall'ambito di protezione. Le uniche configurazioni dirette supportate dagli ambiti di protezione sono le modifiche apportate al nome e alla descrizione. Per modificare il nome e la descrizione di un ambito di protezione durante la visualizzazione delle proprietà dell'ambito di protezione, è necessario disporre dell'autorizzazione **Modifica** per l'oggetto a protezione diretta **Ambiti di protezione** .  
 
  Quando si crea un nuovo oggetto in Configuration Manager, viene associato a ogni ambito di sicurezza che è associato ai ruoli di sicurezza dell'account usato per creare l'oggetto. Questo comportamento si verifica quando i ruoli di sicurezza forniscono l'autorizzazione **Crea** oppure l'autorizzazione **Imposta ambito di protezione**. È possibile modificare gli ambiti di sicurezza per l'oggetto dopo averlo creato.  
@@ -98,7 +98,7 @@ In Configuration Manager l'amministrazione basata su ruoli combina ruoli di sicu
 
  Usare la procedura seguente per configurare gli ambiti di protezione assegnati a un oggetto.  
 
-### <a name="bkmk_config-sec-scope"></a> Per configurare gli ambiti di protezione per un oggetto  
+### <a name="to-configure-security-scopes-for-an-object"></a><a name="bkmk_config-sec-scope"></a> Per configurare gli ambiti di protezione per un oggetto  
 
 1. Nella console di Configuration Manager selezionare un oggetto che supporta l'assegnazione a un ambito di protezione.  
 2. Nel gruppo **Classificazione** della scheda **Home** scegliere **Imposta ambiti di protezione**.
@@ -108,7 +108,7 @@ In Configuration Manager l'amministrazione basata su ruoli combina ruoli di sicu
     > [!NOTE]  
     > Quando viene creato un nuovo oggetto, è possibile assegnare l'oggetto a più ambiti di protezione. Per modificare il numero di ambiti di protezione associati all'oggetto, è necessario modificare l'assegnazione dopo la creazione dell'oggetto.
 
-### <a name="bkmk_config-folder"></a> Per configurare gli ambiti di protezione per una cartella (a partire dalla versione 1906)
+### <a name="to-configure-security-scopes-for-a-folder-starting-in-version-1906"></a><a name="bkmk_config-folder"></a> Per configurare gli ambiti di protezione per una cartella (a partire dalla versione 1906)
 <!--3600867-->
 
 1. Nella console di Configuration Manager selezionare una cartella.  
@@ -122,7 +122,7 @@ In Configuration Manager l'amministrazione basata su ruoli combina ruoli di sicu
     > 
     > - Un elemento è ricercabile in una cartella al di fuori dell'ambito di sicurezza di un utente se quest'ultimo condivide un ambito di sicurezza con la persona che ha creato l'oggetto. <!--5602690-->
 
-## <a name="BKMK_ConfigColl"></a> Configurare le raccolte per la gestione della sicurezza
+## <a name="configure-collections-to-manage-security"></a><a name="BKMK_ConfigColl"></a> Configurare le raccolte per la gestione della sicurezza
 
  Non esistono procedure per la configurazione delle raccolte per l'amministrazione basata su ruoli. Le raccolte non hanno una configurazione dell'amministrazione basata su ruoli. Vengono invece assegnate a un utente amministratore durante la configurazione dell'utente amministratore. Le operazioni di protezione della raccolta abilitate nei ruoli di sicurezza assegnati degli utenti determinano le autorizzazioni di un utente amministratore per le raccolte e le risorse delle raccolte (membri delle raccolte).  
 
@@ -130,7 +130,7 @@ In Configuration Manager l'amministrazione basata su ruoli combina ruoli di sicu
 
  Inoltre, un utente amministratore non può usare l'autorizzazione **Elimina** o **Modifica** in una raccolta che gli è stata assegnata direttamente. Può invece usare queste autorizzazioni sulle raccolte limitate alla raccolta specifica. Nell'esempio precedente, l'utente amministratore può eliminare o modificare la raccolta All North America Desktops, ma non può eliminare o modificare la raccolta All Desktops.  
 
-## <a name="BKMK_Create_AdminUser"></a> Creare un nuovo utente amministratore
+## <a name="create-a-new-administrative-user"></a><a name="BKMK_Create_AdminUser"></a> Creare un nuovo utente amministratore
 
  Per consentire l'accesso a individui o membri di un gruppo di sicurezza per gestire Configuration Manager, creare un utente amministratore in Configuration Manager e specificare l'account Windows Utente o Gruppo utenti. È necessario assegnare a ogni utente amministratore in Configuration Manager almeno un ruolo di sicurezza e un ambito di protezione. È inoltre possibile assegnare delle raccolte per limitare l'ambito amministrativo dell'utente amministratore.  
 
@@ -163,7 +163,7 @@ In Configuration Manager l'amministrazione basata su ruoli combina ruoli di sicu
 
     - Se si seleziona **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**, è possibile scegliere **Aggiungi** per selezionare raccolte e ambiti di protezione aggiuntivi. In alternativa, selezionare uno o più oggetti nell'elenco e quindi scegliere **Rimuovi** per rimuoverli. Scegliere **OK** per completare questa procedura.  
 
-## <a name="BKMK_ModAdminUser"></a> Modificare l'ambito amministrativo di un utente amministratore
+## <a name="modify-the-administrative-scope-of-an-administrative-user"></a><a name="BKMK_ModAdminUser"></a> Modificare l'ambito amministrativo di un utente amministratore
 
  È possibile modificare l'ambito amministrativo di un utente amministratore aggiungendo o rimuovendo raccolte, ruoli di sicurezza e ambiti di protezione associati all'utente. È necessario associare a ogni utente amministratore almeno un ruolo di sicurezza e un ambito di protezione. Potrebbe essere necessario assegnare una o più raccolte all'ambito amministrativo dell'utente. La maggior parte dei ruoli di sicurezza interagisce con le raccolte e non funziona correttamente senza una raccolta assegnata.  
 

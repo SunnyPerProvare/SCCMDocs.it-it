@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Ottenere consigli su hardware per ridimensionare l'ambiente di Configuration Manager, oltre una distribuzione di base.
 ms.date: 05/23/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 5267f0af-34d3-47a0-9ab8-986c41276e6c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 321be3e111f82000602f2bf4325e481fa8417433
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 1192b6edae69bafb3912e2b74d48babad5e768bf
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802141"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80601462"
 ---
 # <a name="recommended-hardware-for-configuration-manager"></a>Hardware consigliato per Configuration Manager
 
@@ -27,7 +27,7 @@ Usare le informazioni delle sezioni seguenti come guida per la pianificazione de
 
 
 
-##  <a name="bkmk_ScaleSieSystems"></a> Sistemi del sito  
+##  <a name="site-systems"></a><a name="bkmk_ScaleSieSystems"></a> Sistemi del sito  
 Questa sezione illustra le configurazioni hardware consigliate per i sistemi del sito di Configuration Manager per le distribuzioni che supportano il numero massimo di client e usano la maggior parte o tutte le funzionalità di Configuration Manager. Le distribuzioni che supportano meno del numero massimo di client e che non usano tutte le funzionalità disponibili possono richiedere meno risorse del computer. In generale, i fattori chiave che limitano le prestazioni dell'intero sistema includono i seguenti, nell'ordine:  
 
 1.  Prestazioni di I/O su disco  
@@ -38,7 +38,7 @@ Questa sezione illustra le configurazioni hardware consigliate per i sistemi del
 
 Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità dati e una rete Ethernet da 1 Gbps.  
 
-###  <a name="bkmk_ScaleSiteServer"></a> Server del sito  
+###  <a name="site-servers"></a><a name="bkmk_ScaleSiteServer"></a> Server del sito  
 
 |Configurazione del sito|CPU (core)|Memoria (GB)|Allocazione di memoria per SQL Server (%)|  
 |-------------------------------|---------------|---------------|----------------------------------------|  
@@ -55,7 +55,7 @@ Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità da
 
 <sup>1</sup> Quando il server del sito e SQL Server sono installati nello stesso computer, la distribuzione supporta i valori massimi di [ridimensionamento](/sccm/core/plan-design/configs/size-and-scale-numbers) per siti e client. Questa configurazione può però limitare le [opzioni di disponibilità elevata per Configuration Manager](/sccm/protect/understand/high-availability-options) come l'uso di un cluster di SQL Server. A causa dei più elevati requisiti di I/O necessari per supportare SQL Server e il server del sito di Configuration Manager durante l'esecuzione di entrambi i server nello stesso computer, si consiglia ai clienti con grandi distribuzioni di usare una configurazione con un computer SQL Server remoto.  
 
-###  <a name="bkmk_RemoteSiteSystem"></a> Server di sistema del sito remoti  
+###  <a name="remote-site-system-servers"></a><a name="bkmk_RemoteSiteSystem"></a> Server di sistema del sito remoti  
 Le indicazioni seguenti sono destinate ai computer che contengono un solo ruolo del sistema del sito. Pianificare delle modifiche quando si installano più ruoli del sistema del sito nello stesso computer.  
 
 |Ruolo del sistema del sito|CPU (core)|Memoria (GB)|Spazio su disco (GB)|  
@@ -71,7 +71,7 @@ Le indicazioni seguenti sono destinate ai computer che contengono un solo ruolo 
 
 - Aumentare il **limite di memoria privata WsusPool** di quattro volte oppure impostarlo su **0** (nessun limite).  
 
-###  <a name="bkmk_DiskSpace"></a> Spazio su disco per i sistemi del sito  
+###  <a name="disk-space-for-site-systems"></a><a name="bkmk_DiskSpace"></a> Spazio su disco per i sistemi del sito  
 La configurazione e l'allocazione dei dischi contribuisce alle prestazioni di Configuration Manager. Dal momento che ogni ambiente di Configuration Manager è diverso, i valori implementati possono variare rispetto alle indicazioni seguenti.  
 
 Per ottenere migliori prestazioni, posizionare ogni oggetto in un volume RAID dedicato separato. Per tutti i volumi di dati (Configuration Manager e relativi file di database), usare RAID 10 per ottenere le migliori prestazioni.  
@@ -104,7 +104,7 @@ Oltre alle informazioni aggiuntive precedenti, prendere in considerazione le lin
 
   - SQL Server 2014 Express: 10 GB  
 
-##  <a name="bkmk_ScaleClient"></a> Client  
+##  <a name="clients"></a><a name="bkmk_ScaleClient"></a> Client  
 Questa sezione illustra le configurazioni hardware consigliate per i computer gestiti con il software client di Configuration Manager.  
 
 ### <a name="client-for-windows-computers"></a>Client per i computer Windows  
@@ -138,7 +138,7 @@ Di seguito sono indicati i requisiti minimi per i server Linux e UNIX gestiti co
 |Spazio su disco|500 MB di spazio disponibile su disco, con 5 GB consigliati per la cache del client di Configuration Manager.|  
 |Connettività di rete|I computer client di Configuration Manager devono avere una connettività di rete con i sistemi del sito di Configuration Manager per abilitare la gestione.|  
 
-##  <a name="bkmk_ScaleConsole"></a> Console di Configuration Manager  
+##  <a name="configuration-manager-console"></a><a name="bkmk_ScaleConsole"></a> Console di Configuration Manager  
 I requisiti riportati nella tabella seguente si applicano a ogni computer che esegue la console di Configuration Manager.  
 
 **Configurazione hardware minima:**  
@@ -165,7 +165,7 @@ Quando si installa il supporto per PowerShell in un computer che esegue la conso
 Oltre a PowerShell, è supportato anche Windows Management Framework (WMF) 3.0 o versione successiva.   
 
 
-##  <a name="bkmk_ScaleLab"></a> Distribuzioni di lab  
+##  <a name="lab-deployments"></a><a name="bkmk_ScaleLab"></a> Distribuzioni di lab  
 Seguire questi consigli in termini di requisiti hardware minimi per le distribuzioni di lab e di prova di Configuration Manager. Questi consigli si applicano a tutti i tipi di sito, fino a un massimo di 100 client:  
 
 |Ruolo|CPU (core)|Memoria (GB)|Spazio su disco (GB)|  

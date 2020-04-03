@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come reimpostare l'account di Desktop Analytics.
 ms.date: 08/16/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: 884d4864-950b-4139-b778-d5368e1f6ef2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5fda61f12bda1637392606848fcf818dfa765d63
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: d75f653029fdccacec9d3a7d83c55489f7fab509
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825660"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80597688"
 ---
 # <a name="how-to-reset-your-account"></a>Come reimpostare l'account
 

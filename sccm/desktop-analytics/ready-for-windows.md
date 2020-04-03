@@ -4,19 +4,19 @@ titleSuffix: Configuration Manager
 description: Informazioni sul ritiro del sito Web Ready for Windows
 ms.date: 10/30/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: 3f09226c-4ca7-4e43-9ae8-5ee6e78e6bc2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 8639485e8fe989109d9bcf77711dc70ebae26569
-ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
+ms.openlocfilehash: 13e1943a9e67b80d1e35e1ca68642325858a0268
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78290005"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80596609"
 ---
 # <a name="ready-for-modern-desktop-retirement-faq"></a>Domande frequenti sul ritiro di Ready for modern desktop
 

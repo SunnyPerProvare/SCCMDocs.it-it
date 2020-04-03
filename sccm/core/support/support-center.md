@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Risolvere i problemi dei client di Configuration Manager con Support Center.
 ms.date: 07/26/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: c631197d-7daa-4faa-9e22-980cd6d604c2
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: fd47a417d94ad4a5e00a07726ed4136c98029fe6
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 4326ec9a28b3b69561185827cccdbcd3059a0b5b
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825949"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598801"
 ---
 # <a name="support-center-for-configuration-manager"></a>Support Center per Configuration Manager
 

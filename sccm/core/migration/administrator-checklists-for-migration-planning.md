@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare gli elenchi di controllo per gli amministratori per facilitare la pianificazione di una strategia di migrazione verso Configuration Manager Current Branch.
 ms.date: 12/29/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 295fdf07-93cc-490c-acdd-ce3ee88cb36f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 315bcc18e424d219975619e82266996a4e6b135d
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: e406a2b7674815bb3313200ba850baa249f17ebc
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75803569"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605237"
 ---
 # <a name="administrator-checklists-for-migration-planning-in-configuration-manager"></a>Elenchi di controllo per gli amministratori per la pianificazione della migrazione in Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "75803569"
 
 Usare gli elenchi di controllo per gli amministratori seguenti per facilitare la pianificazione di una strategia di migrazione verso Configuration Manager Current Branch.
 
-##  <a name="Checklist_Migraiton_Planning"></a> Elenco di controllo amministratore per la pianificazione della migrazione  
+##  <a name="administrator-checklist-for-migration-planning"></a><a name="Checklist_Migraiton_Planning"></a> Elenco di controllo amministratore per la pianificazione della migrazione  
  Utilizzare il seguente elenco di controllo per la procedura di pianificazione pre-migrazione.  
 
 -   **Valutare l'ambiente corrente:**  
@@ -71,7 +71,7 @@ Usare gli elenchi di controllo per gli amministratori seguenti per facilitare la
 
     Decidere quando verrà eseguita la migrazione degli oggetti e dei client. Al termine della migrazione è possibile pianificare la rimozione delle autorizzazioni per i server del sito nella gerarchia di origine.  
 
-##  <a name="Checklist_Hierarchy_for_migration"></a> Elenco di controllo amministratore per la migrazione di una gerarchia  
+##  <a name="administrator-checklist-for-hierarchy-migration"></a><a name="Checklist_Hierarchy_for_migration"></a> Elenco di controllo amministratore per la migrazione di una gerarchia  
 Prima di iniziare la migrazione utilizzare il seguente elenco di controllo per la pianificazione di una gerarchia di destinazione.  
 
 -   **Identificare i computer da usare nella gerarchia di destinazione:**  
@@ -108,7 +108,7 @@ Prima di iniziare la migrazione utilizzare il seguente elenco di controllo per l
     -   Controllare che i client di Configuration Manager installati nella gerarchia di destinazione siano in grado di comunicare correttamente con il relativo sito assegnato.  
 
 
-##  <a name="Checklisit_Migration"></a> Elenco di controllo amministratore per la migrazione  
+##  <a name="administrator-checklist-for-migration"></a><a name="Checklisit_Migration"></a> Elenco di controllo amministratore per la migrazione  
 Utilizzare il seguente elenco di controllo per la migrazione dei dati dalla gerarchia di origine alla gerarchia di destinazione.  
 
 -   **Abilitare la migrazione nella gerarchia di destinazione:**  

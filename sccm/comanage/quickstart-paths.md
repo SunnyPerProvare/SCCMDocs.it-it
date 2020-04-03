@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sui prerequisiti per i due metodi principali per configurare la co-gestione.
 ms.date: 06/27/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology: configmgr-comanage
 ms.topic: conceptual
 ms.assetid: 5beb5564-2fdf-4f0a-8801-d0cec8214c43
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 04bec9f24e003d026d19768bb6f712d7bbac80ee
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 911b3dcd4e7b3a586515dd6afff52912d4b3184c
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75816922"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80595904"
 ---
 # <a name="paths-to-co-management"></a>Percorsi per la co-gestione
 
@@ -28,7 +28,7 @@ Esistono due modi principali per configurare la co-gestione. È importante conos
 
 
 
-## <a name="bkmk_path1"></a> Percorso 1: Registrare automaticamente i client esistenti
+## <a name="path-1-auto-enroll-existing-clients"></a><a name="bkmk_path1"></a> Percorso 1: Registrare automaticamente i client esistenti
 
 Scegliendo questo percorso è possibile registrare rapidamente i dispositivi gestiti da Configuration Manager esistenti in Intune. La gestione di questi dispositivi da Configuration Manager non è diversa rispetto a prima di abilitare la co-gestione. In questo modo si ottengono tutti i vantaggi del cloud. Questo percorso è trasparente per gli utenti.
 
@@ -52,7 +52,7 @@ Per un'esercitazione dedicata a questo percorso, vedere [Esercitazione: Abilitar
 
 
 
-## <a name="bkmk_path2"></a> Percorso 2: Eseguire il bootstrap con provisioning moderno
+## <a name="path-2-bootstrap-with-modern-provisioning"></a><a name="bkmk_path2"></a> Percorso 2: Eseguire il bootstrap con provisioning moderno
 
 Prerequisiti per la configurazione:
 

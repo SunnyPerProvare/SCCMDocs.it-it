@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Guida pratica per eseguire la distribuzione in un gruppo pilota di Desktop Analytics.
 ms.date: 03/12/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: 637fbd8e-b8ea-4c7e-95ee-a60a323c496e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f236125f3ba66b8dc11b3107ca37ad0ce4db0fd9
-ms.sourcegitcommit: 888d695cd30cdc2a65e1ef486cfa0588575ea560
+ms.openlocfilehash: 68937c2b233d94ed1eb1479bc55a1ee35fcfc208
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80250863"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80597439"
 ---
 # <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Come eseguire la distribuzione in un progetto pilota con Desktop Analytics
 

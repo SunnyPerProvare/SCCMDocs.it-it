@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come abilitare TLS 1.2 per i server del sito di Configuration Manager.
 ms.date: 12/13/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 0ce9b428-cb0f-46f3-bf69-c465e6623d6f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 56be249e1d0e2c4dacbe8fec2f04e1a1f1fff806
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 407cba896021642165e348854f0f2ceb57b95baa
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799250"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606463"
 ---
 # <a name="how-to-enable-tls-12-on-the-site-servers-and-remote-site-systems"></a>Come abilitare TLS 1.2 nei server del sito e nei sistemi del sito remoti
 
@@ -30,22 +30,22 @@ Quando si abilita TLS 1.2 per l'ambiente di Configuration Manager, iniziare con 
 
 Per altre informazioni sulle dipendenze per funzionalità e scenari specifici di Configuration Manager, vedere [informazioni sull'abilitazione di TLS 1.2](/sccm/core/plan-design/security/enable-tls-1-2). 
 
-## <a name="bkmk_protocol"></a> Assicurarsi che TLS 1.2 sia abilitato come protocollo per SChannel a livello di sistema operativo
+## <a name="ensure-that-tls-12-is-enabled-as-a-protocol-for-schannel-at-the-operating-system-level"></a><a name="bkmk_protocol"></a> Assicurarsi che TLS 1.2 sia abilitato come protocollo per SChannel a livello di sistema operativo
 
 [!INCLUDE [Enable TLS 1.2 protocol as a security provider](includes/enable-tls-1-2-protocol-security-provider.md)]
 
-## <a name="bkmk_net"></a> Aggiornare e configurare .NET Framework per il supporto di TLS 1.2
+## <a name="update-and-configure-the-net-framework-to-support-tls-12"></a><a name="bkmk_net"></a> Aggiornare e configurare .NET Framework per il supporto di TLS 1.2
 
 [!INCLUDE [Update and configure the .NET framework to support TLS 1.2](includes/update-net-framework-to-support-tls-1-2.md)]
 
 
-## <a name="bkmk_sql"></a> Aggiornare SQL Server e i componenti client
+## <a name="update-sql-server-and-client-components"></a><a name="bkmk_sql"></a> Aggiornare SQL Server e i componenti client
 
 Microsoft SQL Server 2016 e versioni successive supportano TLS 1.1 e TLS 1.2. Le versioni precedenti e le librerie dipendenti potrebbero richiedere aggiornamenti. Per altre informazioni, vedere [KB 3135244: Supporto di TLS 1.2 per Microsoft SQL Server](https://support.microsoft.com/help/3135244/tls-1-2-support-for-microsoft-sql-server).
 
 Per i server del sito secondario è necessario usare almeno SQL Server 2016 Express con Service Pack 2 (13.2.50.26) o versione successiva.
 
-### <a name="bkmk_sql-client"></a> SQL Server Native Client
+### <a name="sql-server-native-client"></a><a name="bkmk_sql-client"></a> SQL Server Native Client
 
 > [!NOTE]
 > L'[articolo KB 3135244](https://support.microsoft.com/help/3135244/tls-1-2-support-for-microsoft-sql-server) descrive anche i requisiti per i componenti client di SQL Server.
@@ -72,7 +72,7 @@ Configuration Manager usa SQL Server Native Client nei seguenti ruoli del sistem
 - Punto di servizio del data warehouse
 
 
-## <a name="bkmk_wsus"></a> Aggiornare Windows Server Update Services (WSUS)
+## <a name="update-windows-server-update-services-wsus"></a><a name="bkmk_wsus"></a> Aggiornare Windows Server Update Services (WSUS)
 
 Per supportare TLS 1.2 nelle versioni precedenti di WSUS, installare l'aggiornamento seguente nel server WSUS:
 

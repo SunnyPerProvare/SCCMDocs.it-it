@@ -2,17 +2,17 @@
 author: aczechowski
 ms.author: aaroncz
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: include
 ms.date: 10/04/2019
-ms.openlocfilehash: d874997f26c9fcb690733d4eac9b6b4f1df8f752
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: cbfdd170d156983d9ad59cdf8a857604f955610d
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75805763"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80593756"
 ---
-### <a name="ki_hinv"></a> Report sull'inventario hardware
+### <a name="hardware-inventory-reports"></a><a name="ki_hinv"></a> Report sull'inventario hardware
 
 <!--5468413-->
 Se si tenta di eseguire un report che si basa sull'inventario hardware, viene restituito un errore. Un report di BitLocker restituisce ad esempio un errore simile al messaggio seguente:

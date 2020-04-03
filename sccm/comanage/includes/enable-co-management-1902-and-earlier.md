@@ -2,14 +2,15 @@
 author: mestew
 ms.author: mstewart
 ms.prod: configuration-manager
+ms.technology: configmgr-comanage
 ms.topic: include
 ms.date: 08/23/2019
-ms.openlocfilehash: d983c2abe283a5a1ac1d528889e974bc89f79879
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 3e0aaf0525e903e0c34d38af5fb49beeea9a6a14
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75815545"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80595589"
 ---
 <!--Don't apply H2/H3 in this include file since they are context driven by article-->
 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Servizi cloud** e selezionare il nodo **Co-gestione**. Fare clic su **Configura la co-gestione** nella barra multifunzione per aprire la **procedura guidata di configurazione della co-gestione**.

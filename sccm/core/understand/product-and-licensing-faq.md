@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Risposte alle domande frequenti sul prodotto e le licenze per Configuration Manager.
 ms.date: 02/12/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: ee8d611f-aa0c-4efd-b0ad-dbd14d0a0623
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3591348033b7dda06f7719e88daac6326b136ccb
-ms.sourcegitcommit: d20267336c0059f40c3250d4479ceb10ae1c8974
+ms.openlocfilehash: cd8a30c1066a21602210a842119f99df60e433f9
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80220354"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598170"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Domande frequenti relative ai rami e alle licenze di Configuration Manager
 

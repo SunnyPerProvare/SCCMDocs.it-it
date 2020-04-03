@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Gestire i dispositivi mobili con il connettore Exchange Server in Configuration Manager.
 ms.date: 12/31/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-hybrid
+ms.technology: configmgr-mdm
 ms.topic: conceptual
 ms.assetid: aba688d9-fd5b-4c42-8cb4-f7e1b161ef50
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 426bf16d984f364020362680e3eb7539c7f80ef3
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: d9de5f58dfd957f88946e072d7a0cf465d753ee4
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76035262"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605460"
 ---
 # <a name="device-management-with-exchange-and-configuration-manager"></a>Gestione dei dispositivi con Exchange e Configuration Manager
 
@@ -31,10 +31,10 @@ Quando si gestiscono i dispositivi mobili con questo connettore, non installa il
 
 Quando si usa il connettore, Configuration Manager configura le impostazioni nei dispositivi mobili. I dispositivi non usano i criteri cassetta postale di Exchange ActiveSync predefiniti. Definire le impostazioni che si desidera utilizzare nei gruppi seguenti:
 
-- **Generalee**
+- **Generale**
 - **Password**
 - **Gestione della posta elettronica**
-- **Security**
+- **Sicurezza**
 - **Applicazione**
 
 Ad esempio, nel gruppo **password** è possibile configurare le impostazioni seguenti:

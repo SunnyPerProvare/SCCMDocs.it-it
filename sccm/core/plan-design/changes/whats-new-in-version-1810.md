@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1810 di Configuration Manager (Current Branch).
 ms.date: 04/23/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 2514025726abd5d39c66603f1355b31580aedd0a
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 3593a3ae83a8d4925e80d61ce61b7e2e1c6552d4
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76034651"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604561"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Novità della versione 1810 di Configuration Manager (Current Branch)
 
@@ -37,7 +37,7 @@ Per sfruttare i vantaggi delle nuove funzionalità di Configuration Manager, agg
 
 
 
-## <a name="bkmk_deprecated"></a> Funzionalità e sistemi operativi deprecati
+## <a name="deprecated-features-and-operating-systems"></a><a name="bkmk_deprecated"></a> Funzionalità e sistemi operativi deprecati
 
 Per conoscere le modifiche relative al supporto prima che siano implementate, vedere [Elementi rimossi e deprecati](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated).
 
@@ -49,7 +49,7 @@ Le distribuzioni classiche del servizio in Azure sono ora deprecate in Configura
 
 
 
-## <a name="bkmk_infra"></a> Infrastruttura del sito
+## <a name="site-infrastructure"></a><a name="bkmk_infra"></a> Infrastruttura del sito
 
 ### <a name="support-for-windows-server-2019"></a>Supporto per Windows Server 2019
 
@@ -94,7 +94,7 @@ Per altre informazioni, vedere [Client notifications](/sccm/core/clients/manage/
 
 
 
-## <a name="bkmk_content"></a> Gestione dei contenuti
+## <a name="content-management"></a><a name="bkmk_content"></a> Gestione dei contenuti
 
 ### <a name="new-boundary-group-options"></a>Nuove opzioni del gruppo di limiti
 
@@ -117,7 +117,7 @@ Per altre informazioni, vedere [Informazioni dettagliate sulla gestione](/sccm/c
 
 
 
-## <a name="bkmk_client"></a> Gestione dei client
+## <a name="client-management"></a><a name="bkmk_client"></a> Gestione dei client
 
 ### <a name="new-client-notification-action-to-wake-up-device"></a>Nuova azione di notifica client per la riattivazione del dispositivo
 
@@ -155,7 +155,7 @@ Per altre informazioni, vedere [Configurare gruppi di limiti](/sccm/core/servers
 
 
 
-## <a name="bkmk_comgmt"></a> Co-gestione
+## <a name="co-management"></a><a name="bkmk_comgmt"></a> Co-gestione
 
 ### <a name="required-app-compliance-policy-for-co-managed-devices"></a>Criteri di conformità delle app obbligatori per i dispositivi con co-gestione
 
@@ -190,7 +190,7 @@ Per altre informazioni, vedere [How to prepare internet-based devices for co-man
 
 
 
-## <a name="bkmk_app"></a> Gestione delle applicazioni
+## <a name="application-management"></a><a name="bkmk_app"></a> Gestione delle applicazioni
 
 ### <a name="convert-applications-to-msix"></a>Convertire le applicazioni in MSIX
 
@@ -230,7 +230,7 @@ Per altre informazioni, vedere [Creare applicazioni](/sccm/apps/deploy-use/creat
 
 
 
-## <a name="bkmk_osd"></a> Distribuzione del sistema operativo
+## <a name="os-deployment"></a><a name="bkmk_osd"></a> Distribuzione del sistema operativo
 
 ### <a name="task-sequence-support-of-windows-autopilot-for-existing-devices"></a>Supporto della sequenza di attività di Windows Autopilot per i dispositivi esistenti
 
@@ -279,7 +279,7 @@ Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd
 
 
 
-## <a name="bkmk_sum"></a> Aggiornamenti software
+## <a name="software-updates"></a><a name="bkmk_sum"></a> Aggiornamenti software
 
 ### <a name="phased-deployment-of-software-updates"></a>Distribuzione in più fasi degli aggiornamenti software
 
@@ -313,7 +313,7 @@ Per altre informazioni, vedere [Comportamento del processo di pulizia WSUS a par
 
 Per altre informazioni, vedere [Supersedence rules](/sccm/sum/get-started/install-a-software-update-point#supersedence-rules).
 
-## <a name="bkmk_report"></a> Creazione di report
+## <a name="reporting"></a><a name="bkmk_report"></a> Creazione di report
 
 ### <a name="improvement-to-lifecycle-dashboard"></a>Miglioramento del dashboard del ciclo di vita
 
@@ -334,7 +334,7 @@ Per altre informazioni, vedere [Data warehouse](/sccm/core/servers/manage/data-w
 
 
 
-## <a name="bkmk_admin"></a> Console di Configuration Manager
+## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a> Console di Configuration Manager
 
 ### <a name="configuration-manager-administrator-authentication"></a>Autenticazione dell'amministratore di Configuration Manager
 
@@ -384,7 +384,7 @@ Per altre informazioni su ulteriori miglioramenti delle prestazioni performance 
 Per altre informazioni, vedere [CMPivot](/sccm/core/servers/manage/cmpivot).
 
 
-### <a name="bkmk_scripts"></a> Miglioramenti degli script
+### <a name="improvements-to-scripts"></a><a name="bkmk_scripts"></a> Miglioramenti degli script
 
 <!--1358239-->
 È ora possibile visualizzare l'output degli script dettagliato in formato JSON non elaborato o strutturato. Questo tipo di formattazione rende più facile leggere e analizzare l'output.
@@ -413,7 +413,7 @@ Per altre informazioni, vedere [Piano per il provider SMS](/sccm/core/plan-desig
 
 
 
-## <a name="bkmk_opmdm"></a> Software MDM locale
+## <a name="on-premises-mdm"></a><a name="bkmk_opmdm"></a> Software MDM locale
 
 ### <a name="an-intune-connection-is-no-longer-required-for-new-on-premises-mdm-deployments"></a>Per le nuove distribuzioni MDM locali non è più necessaria una connessione a Intune
 

@@ -6,17 +6,17 @@ metadata:
   titleSuffix: Configuration Manager
   description: Informazioni fondamentali sul prodotto Configuration Manager, tra cui server del sito e client.
   ms.prod: configuration-manager
-  ms.technology: configmgr-other
+  ms.technology: configmgr-core
   ms.topic: landing-page
   author: aczechowski
   ms.author: aaroncz
   ms.date: 01/30/2020
-  ms.openlocfilehash: 6202e560a1f19cdc4556b213fb18177d5d2c9392
-  ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+  ms.openlocfilehash: a8e4e99033cc04a7ba971853d9ea116be8e45eee
+  ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 02/01/2020
-  ms.locfileid: "76941228"
+  ms.lasthandoff: 04/02/2020
+  ms.locfileid: "80605258"
 landingContent:
 - title: Informazioni sull'infrastruttura di base
   linkLists:

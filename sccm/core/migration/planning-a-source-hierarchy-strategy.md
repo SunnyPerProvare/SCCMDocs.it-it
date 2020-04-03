@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Configurare una gerarchia di origine e raccogliere i dati da un sito di origine prima di configurare un processo di migrazione di Configuration Manager.
 ms.date: 01/3/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 4800a800-66c8-4c35-aebe-e413a23790c1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5b9ee1375ba915a67f509f32c3ee20053236fbd2
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 28960753da06058ef181f94a5d11d9f2327ebf56
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75803127"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604779"
 ---
 # <a name="plan-a-source-hierarchy-strategy-in-configuration-manager"></a>Pianificare una strategia per la gerarchia di origine in Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "75803127"
 
 Prima di configurare un processo di migrazione nell'ambiente di Configuration Manager, è necessario configurare una gerarchia di origine e raccogliere i dati da almeno un sito di origine di tale gerarchia. Usare le sezioni seguenti per pianificare la configurazione delle gerarchie di origine, configurare i siti di origine e determinare come Configuration Manager raccoglie le informazioni dai siti di origine nella gerarchia di origine. 
 
-##  <a name="BKMK_Source_Hierarchies"></a> Gerarchie di origine  
+##  <a name="source-hierarchies"></a><a name="BKMK_Source_Hierarchies"></a> Gerarchie di origine  
 Una gerarchia di origine è una gerarchia di Configuration Manager che contiene i dati di cui si vuole eseguire la migrazione. Quando si configura la migrazione e si specifica una gerarchia di origine, specificare il sito di livello superiore della gerarchia di origine. Tale sito viene anche denominato sito di origine. Anche i siti aggiuntivi da cui è possibile migrare dati dalla gerarchia di origine vengono denominati siti di origine.  
 
 -   Quando si configura un processo di migrazione per la migrazione dei dati da una gerarchia di origine di Configuration Manager 2007, tale processo viene configurato per eseguire la migrazione dei dati da uno o più siti di origine specifici nella gerarchia di origine.  
@@ -58,7 +58,7 @@ Se si ripristina una gerarchia di origine inattiva e non si è usato **Pulisci d
 
 Per altre informazioni sulla configurazione di una gerarchia di origine, vedere [Configurazione di gerarchie di origine e siti di origine per la migrazione in Configuration Manager Current Branch](../../core/migration/configuring-source-hierarchies-and-source-sites-for-migration.md).  
 
-##  <a name="BKMK_Source_Sites"></a> Siti di origine  
+##  <a name="source-sites"></a><a name="BKMK_Source_Sites"></a> Siti di origine  
  I siti di origine sono i siti nella gerarchia di origine che contengono i dati da migrare. Il sito di livello superiore della gerarchia di origine è sempre il primo sito di origine. Quando la migrazione raccoglie i dati dal primo sito di origine di una nuova gerarchia di origine, individua le informazioni sui siti aggiuntivi presenti in tale gerarchia.  
 
  Al termine della raccolta dati per il sito di origine iniziale, le azioni da intraprendere in seguito dipendono dalla versione del prodotto della gerarchia di origine.  
@@ -78,7 +78,7 @@ Per altre informazioni sulla configurazione di una gerarchia di origine, vedere 
 
  Quando si configurano gli account di accesso per la raccolta dati, potrebbe essere necessario garantire l'accesso **Account del provider SMS del sito di origine** per più computer nella gerarchia di origine. Potrebbe essere necessario, ad esempio, quando il sito di origine supporta più istanze del provider SMS, ognuna in un computer diverso. Quando la raccolta dati viene avviata, il sito di livello superiore della gerarchia di origine viene contattato dal sito di livello superiore della gerarchia di destinazione per individuare i percorsi del provider SMS per tale sito. Viene individuata solo la prima istanza del provider SMS. Se il processo di raccolta dati non riesce ad accedere al provider SMS nel percorso individuato, il processo non verrà completato e non tenterà di connettersi a computer aggiuntivi che eseguono un'istanza del provider SMS per tale sito.  
 
-##  <a name="BKMK_Data_Gathering"></a> Raccolta dati  
+##  <a name="data-gathering"></a><a name="BKMK_Data_Gathering"></a> Raccolta dati  
  Subito dopo aver specificato una gerarchia di origine, aver configurato le credenziali per ogni sito di origine aggiuntivo in una gerarchia di origine oppure aver condiviso i punti di distribuzione per un sito di origine, Configuration Manager avvia la raccolta dati dal sito di origine.  
 
  Il processo di raccolta dati quindi viene ripetuto in una pianificazione semplice per mantenere la sincronizzazione con eventuali modifiche apportate ai dati nel sito di origine. Per impostazione predefinita, il processo viene ripetuto ogni quattro ore. È possibile modificare la pianificazione di questo ciclo modificando le **Proprietà** del sito di origine. Il processo di raccolta dati iniziale deve esaminare tutti gli oggetti nel database di Configuration Manager e il completamento di questa operazione potrebbe richiedere diverso tempo. I processi di raccolta dati successivi individuano solo le modifiche apportate ai dati e richiedono meno tempo.  

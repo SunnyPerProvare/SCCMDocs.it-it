@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su come Microsoft raccoglie e usa i dati da Configuration Manager.
 ms.date: 09/04/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 1fcc921f-085f-4b0b-9c53-1e0707211076
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c7908ce69984e7bf1c9c4efa98aef4229110fc09
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.openlocfilehash: 1d3808d617bedf0b5575a5b392d92563998f7702
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76917263"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599475"
 ---
 # <a name="additional-information-about-privacy-for-configuration-manager"></a>Altre informazioni sulla privacy per Configuration Manager
 

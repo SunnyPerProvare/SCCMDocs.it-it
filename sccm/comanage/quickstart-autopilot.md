@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare Windows Autopilot con la co-gestione in Configuration Manager per semplificare la configurazione di nuovi dispositivi Windows 10.
 ms.date: 02/21/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology: configmgr-comanage
 ms.topic: conceptual
 ms.assetid: e3e3c97f-5945-49ab-a622-9f6fe6b9737e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a94a65161ecdf98b28debca4f89d2257c5d11ca5
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 6057e4b0085ac58eec677c3d328054fb5a9e6148
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75817177"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80596177"
 ---
 # <a name="windows-autopilot-with-co-management"></a>Windows Autopilot con la co-gestione
 

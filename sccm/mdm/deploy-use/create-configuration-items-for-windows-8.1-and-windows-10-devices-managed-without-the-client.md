@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Creare elementi di configurazione per gestire le impostazioni per i computer Windows 10 con la gestione di dispositivi mobili (MDM) locale in Configuration Manager.
 ms.date: 01/14/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-hybrid
+ms.technology: configmgr-mdm
 ms.topic: conceptual
 ms.assetid: 23e1e4dc-623a-4521-ad04-ae9482927097
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c9ced71ff7f7ec40d89a3fcf598a138e89c8c61c
-ms.sourcegitcommit: 4ca147f2bb3de35bd5089743c832e00bc3babd19
+ms.openlocfilehash: 908828d477195bd751f6b9796b4d19d16fc9f513
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76033031"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605508"
 ---
 # <a name="create-configuration-items-for-windows-devices-with-on-premises-mdm-in-configuration-manager"></a>Creare elementi di configurazione per dispositivi Windows con MDM locale in Configuration Manager
 
@@ -71,15 +71,15 @@ Per informazioni più generali sulle impostazioni di conformità in Configuratio
     > [!IMPORTANT]
     > I dispositivi non valutano la conformità delle impostazioni non supportate.
 
-1. completare la procedura guidata.
+1. Completare la procedura guidata.
 
 È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .
 
-## <a name="bkmk_setref"></a>Riferimento alle impostazioni  
+## <a name="settings-reference"></a><a name="bkmk_setref"></a>Riferimento alle impostazioni  
 
 Le sezioni seguenti illustrano in dettaglio le impostazioni specifiche disponibili in ogni gruppo. Configurare queste impostazioni nella pagina **Impostazioni dispositivo** della creazione **guidata dell'elemento di configurazione** per i dispositivi **Windows 8.1 e Windows 10** gestiti *senza* il client di Configuration Manager.
 
-### <a name="password"></a>Windows 10
+### <a name="password"></a>Password
 
 Queste impostazioni sono solo per i dispositivi che eseguono Windows 10 e versioni successive.
 
@@ -127,7 +127,7 @@ Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 
 - **Account di posta elettronica personalizzato**: consente o impedisce l'uso di un account di posta elettronica non aziendale sul dispositivo.
 - **Rendi l'account Microsoft facoltativo nell'app Windows Mail**: abilitare questa opzione per non richiedere un account Microsoft in Windows Mail.
 
-### <a name="store"></a>Archivio
+### <a name="store"></a>Store
 
 Queste impostazioni sono solo per i dispositivi che eseguono Windows 10 e versioni successive.
 
@@ -141,7 +141,7 @@ Queste impostazioni sono solo per i dispositivi che eseguono Windows 10 e versio
 - **Usa solo lo store privato**: richiedere agli utenti di scaricare le app dallo Store privato.
 - **Gioco DVR**: Disabilita la registrazione e la trasmissione del gioco Windows
 
-### <a name="browser"></a>Browser
+### <a name="browser"></a>Browser.
 
 Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.
 
@@ -207,7 +207,7 @@ Queste impostazioni sono solo per i dispositivi che eseguono Windows 10 e versio
 - **VPN su rete cellulare**: consente o impedisce al dispositivo di usare una connessione VPN mentre è connessa a una rete cellulare. (solo Windows 10)
 - **Roaming VPN su rete cellulare**: consente o impedisce al dispositivo di usare una connessione VPN durante il roaming in una rete cellulare. (solo Windows 10)
 
-### <a name="encryption"></a>Encryption
+### <a name="encryption"></a>Crittografia
 
 - **Crittografia scheda di memoria**: impostare on per richiedere all'utente di crittografare le schede di memoria usate nel dispositivo. (solo Windows 10)
 - **Crittografia file nel dispositivo**: impostare on per crittografare i file archiviati nel dispositivo.
@@ -236,7 +236,7 @@ Queste impostazioni sono solo per i dispositivi che eseguono Windows 10 e versio
     - **Connessione di rete**: scegliere **Internet** o **lavoro**.
     - **Autenticazione**: scegliere il metodo di autenticazione per la connessione wireless:
         - **Aperto**
-        - **Condivisa**
+        - **Condiviso**
         - **WPA**
         - **WPA-PSK**
         - **WPA2**
@@ -302,7 +302,7 @@ Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 
 
 ### <a name="allowed-and-blocked-apps-list"></a>Elenco delle app consentite e bloccate
 
-Queste impostazioni sono solo per i dispositivi che eseguono Windows Phone, che Configuration Manager MDM locale non supporta. Per altre informazioni, vedere [che cosa è successo a Hybrid?](/configmgr/mdm/understand/what-happened-to-hybrid).
+Queste impostazioni sono solo per i dispositivi che eseguono Windows Phone, che Configuration Manager MDM locale non supporta. Per altre informazioni, vedere [Che cosa è successo alla MDM ibrida?](/configmgr/mdm/understand/what-happened-to-hybrid).
 
 ### <a name="windows-10-team"></a>Windows 10 Team
 
@@ -374,8 +374,8 @@ Queste impostazioni sono solo per i dispositivi che eseguono Windows 10 e versio
 - **Consenti la protezione cloud**: Defender usa il cloud Microsoft per ricevere informazioni sull'attività malware e abilitare funzionalità come il blocco a prima visione.
 - **Richiedi agli utenti l'invio dei campioni**: scegliere il comportamento per Defender quando i file potrebbero richiedere un'ulteriore analisi. Ad esempio, Defender può inviare automaticamente i file a Microsoft per determinare se sono dannosi.
 - **Rilevamento di applicazioni potenzialmente indesiderate**: protegge il dispositivo dal software in esecuzione Classificato da Defender come potenzialmente indesiderato. È possibile proteggersi da queste applicazioni in esecuzione o usare la modalità di controllo per segnalare quando un utente installa un'applicazione potenzialmente indesiderata.
-- **Esclusioni di file e cartelle**: aggiungere uno o più file e cartelle all'elenco esclusioni. Ad esempio: `C:\Path` o `%ProgramFiles%\Path\filename.exe`. Defender non include questi file e cartelle nelle analisi in tempo reale o pianificate.
-- **Esclusioni**di estensioni di file: aggiungere una o più estensioni di file all'elenco esclusioni. Ad esempio: `java` o `exe`. Defender non include alcun file con queste estensioni nelle analisi in tempo reale o pianificate.
+- **Esclusioni di file e cartelle**: aggiungere uno o più file e cartelle all'elenco esclusioni. Ad esempio, `C:\Path` o `%ProgramFiles%\Path\filename.exe`. Defender non include questi file e cartelle nelle analisi in tempo reale o pianificate.
+- **Esclusioni**di estensioni di file: aggiungere una o più estensioni di file all'elenco esclusioni. Ad esempio, `java` o `exe`. Defender non include alcun file con queste estensioni nelle analisi in tempo reale o pianificate.
 - **Esclusioni dei processi**: aggiungere processi specifici all'elenco esclusioni. Ad esempio, `C:\path\myproc.exe` Questo tipo di esclusione supporta solo le estensioni seguenti: `exe`, `com`o `scr`. Defender non include questi processi nelle analisi in tempo reale o pianificate.
 
 ### <a name="additional-settings"></a>Impostazioni aggiuntive

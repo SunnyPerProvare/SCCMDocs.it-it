@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare DP Job Queue Manager per eseguire la risoluzione dei problemi e la gestione dei processi di distribuzione del contenuto ai punti di distribuzione di Configuration Manager.
 ms.date: 07/30/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 4b72922a-d11e-4aef-b309-19f5f0716f32
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 44cdb5584248cd64ced8fff12f13db84d1f3b61d
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 41dd7d0743fadb859be7033e81f3de85738e817a
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75792722"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604939"
 ---
 # <a name="dp-job-queue-manager"></a>DP Job Queue Manager
 
@@ -42,14 +42,14 @@ Eseguire **DPJobMgr.exe**. Il menu principale dello strumento contiene le schede
 - [Gestione processi](#bkmk_manage-jobs): Elenca tutti i processi e i relativi stati in un'unica visualizzazione semplice. Modificare o spostare i processi più in alto nell'elenco, annullare o avviare manualmente un processo.  
 
 
-### <a name="bkmk_connect"></a> Scheda Connetti
+### <a name="connect-tab"></a><a name="bkmk_connect"></a> Scheda Connetti
 
 Usare questa scheda per stabilire la connessione iniziale al server del sito primario. Usa le credenziali dell'utente attualmente connesso. Non è possibile connettersi al sito di amministrazione centrale o ai siti secondari. Per la connessione è necessario il ruolo di sicurezza **amministratore completo**.
 
 Al termine una notifica nella parte inferiore dello strumento conferma la corretta esecuzione della connessione al server del sito. 
 
 
-### <a name="bkmk_overview"></a> Scheda Informazioni generali
+### <a name="overview-tab"></a><a name="bkmk_overview"></a> Scheda Informazioni generali
 
 Riepiloga tutti i processi in tutti i punti di distribuzione. Vedere le colonne seguenti:  
 
@@ -73,7 +73,7 @@ Riepiloga tutti i processi in tutti i punti di distribuzione. Vedere le colonne 
 > - Aggiornare automaticamente le informazioni in questa scheda facendo clic su **Start Auto Refresh** (Avvia aggiornamento automatico) e impostando l'intervallo di aggiornamento automatico. L'intervallo di aggiornamento predefinito è due minuti.  
 
 
-### <a name="bkmk_dp-info"></a> Scheda Informazioni punto di distribuzione
+### <a name="distribution-point-info-tab"></a><a name="bkmk_dp-info"></a> Scheda Informazioni punto di distribuzione
 
 Elenca tutti i punti di distribuzione sotto il sito connesso. Nel riquadro a sinistra sono elencati tutti i punti di distribuzione. Fare clic su **Seleziona tutto** o **Deseleziona tutto** in base alle necessità oppure eseguire la selezione multipla di punti di distribuzione specifici in questo elenco. Nel riquadro a destra sono elencati i processi relativi ai punti di distribuzione selezionati.
 
@@ -111,7 +111,7 @@ Sono presenti otto colonne:
 > - Se è necessario modificare uno specifico processo, fare clic con il pulsante destro del mouse sul processo in questa visualizzazione e selezionare **Gestisci processo**. Questa azione apre la scheda [Gestione processi](#bkmk_manage-jobs).  
 
 
-### <a name="bkmk_manage-jobs"></a> Scheda Gestione processi
+### <a name="manage-jobs-tab"></a><a name="bkmk_manage-jobs"></a> Scheda Gestione processi
 
 Elenca tutti i processi e i relativi stati in un'unica visualizzazione semplice. Contiene le stesse otto colonne presenti nella scheda [Informazioni punto di distribuzione](#bkmk_dp-info). In questa visualizzazione fare clic con il pulsante destro del mouse sui processi per le azioni seguenti:  
 

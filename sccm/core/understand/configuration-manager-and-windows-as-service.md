@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Ottenere informazioni di base sull'adozione di Configuration Manager Current Branch per supportare Windows come servizio.
 ms.date: 06/15/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: c8534a1e-57b8-4688-b6e6-299d82cfcec9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ee26f0ccd0e68a980f2a0f569beb0ef67187d6a7
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.openlocfilehash: 71227cdcba4bbc82ea685292ae99fd6b5c25ff69
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76917539"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598552"
 ---
 # <a name="configuration-manager-and-windows-as-a-service"></a>Configuration Manager e Windows as a Service
 

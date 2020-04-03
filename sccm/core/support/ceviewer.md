@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare Collection Evaluation Viewer per visualizzare e risolvere i problemi del processo di valutazione raccolta in Configuration Manager.
 ms.date: 07/30/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: caad2d93-087c-4dc0-a2a7-6a2fd808b4c8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 55d2599654441dcaa86bceb06f7d1c2a49f8f736
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 008428ad135c6a4839527ccc8fbc1cfa725cb8a0
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826102"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605545"
 ---
 # <a name="collection-evaluation-viewer"></a>Collection Evaluation Viewer
 
@@ -84,7 +84,7 @@ Eseguire **CEViewer.exe**. Il menu principale dello strumento contiene le schede
 - [Incremental Queue](#bkmk_incremental-q) (Coda incrementale): elenca le informazioni dettagliate sulla valutazione raccolta corrente nella coda incrementale  
 
 
-### <a name="bkmk_connect"></a> Scheda Connetti
+### <a name="connect-tab"></a><a name="bkmk_connect"></a> Scheda Connetti
 
 Questa scheda consente di stabilire la connessione iniziale al server del sito primario. Lo strumento stabilisce anche una connessione al server SQL che ospita il database del sito.
 
@@ -93,7 +93,7 @@ Le connessioni sia al server del sito primario che ai server SQL usano le creden
 Dopo che lo strumento ha stabilito una connessione, nella parte inferiore di Collection Evaluation Viewer viene visualizzata una notifica, che conferma la connessione dello strumento a SQL server. 
 
 
-### <a name="bkmk_full-eval"></a> Scheda Full Evaluation (Valutazione completa)
+### <a name="full-evaluation-tab"></a><a name="bkmk_full-eval"></a> Scheda Full Evaluation (Valutazione completa)
 
 Mostra informazioni dettagliate sulle valutazioni raccolta complete precedenti. Sono presenti otto colonne:  
 
@@ -114,7 +114,7 @@ Mostra informazioni dettagliate sulle valutazioni raccolta complete precedenti. 
 - **Percentuale**: percentuale del periodo di valutazione per questa raccolta rispetto al periodo di valutazione totale (tutte le raccolte)  
 
 
-### <a name="bkmk_incremental-eval"></a> Scheda Incremental evaluation (Valutazione incrementale)
+### <a name="incremental-evaluation-tab"></a><a name="bkmk_incremental-eval"></a> Scheda Incremental evaluation (Valutazione incrementale)
 
 Mostra informazioni dettagliate sulle valutazioni raccolta incrementali precedenti. Sono presenti sette colonne:  
 
@@ -133,7 +133,7 @@ Mostra informazioni dettagliate sulle valutazioni raccolta incrementali preceden
 - **Percentuale**: percentuale del periodo di valutazione per questa raccolta rispetto al periodo di valutazione totale (tutte le raccolte)  
 
 
-### <a name="bkmk_all-q"></a> Scheda All Queues (Tutte le code)
+### <a name="all-queues-tab"></a><a name="bkmk_all-q"></a> Scheda All Queues (Tutte le code)
 
 Riepiloga le valutazioni raccolta in tempo reale per tutte e quattro le code. Sono presenti sei sezioni:  
 
@@ -150,7 +150,7 @@ Riepiloga le valutazioni raccolta in tempo reale per tutte e quattro le code. So
 - **Incremental evaluation** (Valutazione incrementale): illustra un breve riepilogo delle raccolte da valutare, l'ora di completamento prevista e l'ordine della valutazione nella coda della valutazione incrementale  
 
 
-### <a name="bkmk_manual-q"></a> Scheda Manual Queue (Coda manuale)
+### <a name="manual-queue-tab"></a><a name="bkmk_manual-q"></a> Scheda Manual Queue (Coda manuale)
 
 Mostra le informazioni sulla valutazione raccolta manuale attualmente in fase di valutazione. L'ordine nell'elenco è quello in cui verrà valutata la raccolta. Sono presenti quattro colonne:  
 
@@ -163,7 +163,7 @@ Mostra le informazioni sulla valutazione raccolta manuale attualmente in fase di
 - **Estimated Run Time** (Tempo di esecuzione stimato): durata prevista della valutazione nel formato giorni:ore:minuti:secondi  
 
 
-### <a name="bkmk_new-q"></a> Scheda Nuova coda
+### <a name="new-queue-tab"></a><a name="bkmk_new-q"></a> Scheda Nuova coda
 
 Mostra le informazioni in tempo reale sulla nuova valutazione raccolta in fase di valutazione. L'ordine nell'elenco è quello in cui verrà valutata la raccolta. Sono presenti quattro colonne:  
 
@@ -176,7 +176,7 @@ Mostra le informazioni in tempo reale sulla nuova valutazione raccolta in fase d
 - **Estimated Run Time** (Tempo di esecuzione stimato): durata prevista della valutazione nel formato giorni:ore:minuti:secondi  
 
 
-### <a name="bkmk_full-q"></a> Scheda Full Queue (Coda completa)
+### <a name="full-queue-tab"></a><a name="bkmk_full-q"></a> Scheda Full Queue (Coda completa)
 
 Mostra le informazioni sulla valutazione raccolta completa attualmente in fase di valutazione. L'ordine nell'elenco è quello in cui verrà valutata la raccolta. Sono presenti quattro colonne:  
 
@@ -189,7 +189,7 @@ Mostra le informazioni sulla valutazione raccolta completa attualmente in fase d
 - **Estimated Run Time** (Tempo di esecuzione stimato): durata prevista della valutazione nel formato giorni:ore:minuti:secondi  
 
 
-### <a name="bkmk_incremental-q"></a> Scheda Incremental Queue (Coda incrementale)
+### <a name="incremental-queue-tab"></a><a name="bkmk_incremental-q"></a> Scheda Incremental Queue (Coda incrementale)
 
 Mostra le informazioni sulla valutazione raccolta incrementale attualmente in fase di valutazione. L'ordine nell'elenco è quello in cui verrà valutata la raccolta. Sono presenti quattro colonne:  
 

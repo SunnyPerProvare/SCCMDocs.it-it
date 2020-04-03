@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1902 di Configuration Manager Current Branch.
 ms.date: 07/12/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 8ddaf7be7d5e769f36b9b5a547bf683909b278f2
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 30e9c959abb97779f890469e481d4f051659c8bd
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75802549"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604500"
 ---
 # <a name="whats-new-in-version-1902-of-configuration-manager-current-branch"></a>Novità della versione 1902 di Configuration Manager Current Branch
 
@@ -35,7 +35,7 @@ Per sfruttare i vantaggi delle nuove funzionalità di Configuration Manager, dop
 > Per ricevere una notifica quando questa pagina viene aggiornata, copiare e incollare l'URL seguente nel lettore di feed RSS: `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+1902+-+Configuration+Manager%22&locale=en-us`
 
 
-## <a name="bkmk_deprecated"></a> Funzionalità e sistemi operativi deprecati
+## <a name="deprecated-features-and-operating-systems"></a><a name="bkmk_deprecated"></a> Funzionalità e sistemi operativi deprecati
 
 Per conoscere le modifiche relative al supporto prima che siano implementate, vedere [Elementi rimossi e deprecati](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated).
 
@@ -46,7 +46,7 @@ Nella versione 1902 viene eliminato il supporto per i prodotti seguenti:
 - Linux e UNIX come client. La deprecazione è stata annunciata con la [versione 1802](/sccm/core/plan-design/changes/whats-new-in-version-1802#deprecation-announcement-for-linux-and-unix-client-support). Per la gestione dei server Linux, è possibile usare la gestione di Microsoft Azure. Le soluzioni di Azure includono un ampio supporto per Linux che nella maggior parte dei casi supera le funzionalità di Configuration Manager, inclusa la gestione end-to-end delle patch per Linux.
 
 
-## <a name="bkmk_infra"></a> Infrastruttura del sito
+## <a name="site-infrastructure"></a><a name="bkmk_infra"></a> Infrastruttura del sito
 
 ### <a name="client-health-dashboard"></a>Dashboard sull'integrità del client
 
@@ -88,7 +88,7 @@ Quando si installa la versione 1902 o si esegue l'aggiornamento a questa version
 - **Riavvio del sistema in sospeso nell'istanza remota di SQL Server**: questo controllo dei prerequisiti è simile alla regola **Riavvio del sistema in sospeso**, ma viene eseguito in un'istanza remota di SQL Server. Per altre informazioni, vedere [Elenco dei controlli dei prerequisiti](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#pending-system-restart-on-the-remote-sql-server). <!--SCCMDocs-pr issue 3377-->  
 
 
-## <a name="bkmk_cloud"></a> Gestione collegata al cloud
+## <a name="cloud-attached-management"></a><a name="bkmk_cloud"></a> Gestione collegata al cloud
 
 ### <a name="stop-cloud-service-when-it-exceeds-threshold"></a>Arrestare il servizio cloud al superamento di una soglia
 
@@ -114,7 +114,7 @@ Per altre informazioni, vedere [Azure Resource Manager per il gateway di gestion
 Per altre informazioni, vedere [Progettazione della gerarchia CMG](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#hierarchy-design) e [Configurare il Cloud Management Gateway](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#configure-boundary-groups).
 
 
-## <a name="bkmk_real"></a> Gestione in tempo reale
+## <a name="real-time-management"></a><a name="bkmk_real"></a> Gestione in tempo reale
 
 ### <a name="run-cmpivot-from-the-central-administration-site"></a>Eseguire CMPivot dal sito di amministrazione centrale
 
@@ -131,7 +131,7 @@ Per altre informazioni, vedere [CMPivot per i dati in tempo reale in Configurati
 Per altre informazioni, vedere [Eseguire script](/sccm/apps/deploy-use/create-deploy-scripts#bkmk_psedit).
 
 
-## <a name="bkmk_content"></a> Gestione dei contenuti
+## <a name="content-management"></a><a name="bkmk_content"></a> Gestione dei contenuti
 
 ### <a name="distribution-point-maintenance-mode"></a>Modalità manutenzione per il punto di distribuzione
 
@@ -156,7 +156,7 @@ Per altre informazioni su questa funzionalità, vedere [Modalità di manutenzion
 Per altre informazioni sull'automazione di questo processo con Configuration Manager SDK, vedere [Metodo SetDPMaintenanceMode nella classe SMS_DistributionPointInfo](/sccm/develop/reference/core/servers/configure/setdpmaintenancemode-method-in-class-sms-distributionpointinfo).
 
 
-## <a name="bkmk_client"></a> Gestione dei client
+## <a name="client-management"></a><a name="bkmk_client"></a> Gestione dei client
 
 ### <a name="client-provisioning-mode-timeout"></a>Timeout della modalità di provisioning dei client
 
@@ -180,7 +180,7 @@ Per altre informazioni, vedere [Come amministrare un computer client Windows in 
 Per altre informazioni, vedere [Come configurare la riattivazione LAN](/sccm/core/clients/deploy/configure-wake-on-lan).
 
 
-## <a name="bkmk_app"></a> Gestione delle applicazioni
+## <a name="application-management"></a><a name="bkmk_app"></a> Gestione delle applicazioni
 
 ### <a name="improvements-to-application-approvals-via-email"></a>Miglioramenti delle approvazioni dell'applicazione tramite posta elettronica
 
@@ -199,7 +199,7 @@ Questa versioni include i miglioramenti di [Package Conversion Manager](/sccm/ap
 - Miglioramenti e correzioni di bug generali
 
 
-## <a name="bkmk_osd"></a> Distribuzione del sistema operativo
+## <a name="os-deployment"></a><a name="bkmk_osd"></a> Distribuzione del sistema operativo
 
 ### <a name="progress-status-during-in-place-upgrade-task-sequence"></a>Stato di avanzamento durante la sequenza di attività di aggiornamento sul posto
 
@@ -292,7 +292,7 @@ Questa versione include i miglioramenti della distribuzione del sistema operativ
 - Quando si abilita un risponditore PXE senza i Servizi di distribuzione Windows, è ora possibile abilitarlo sullo stesso server del servizio DHCP. <!--3734270--> Per altre informazioni, vedere [Configurare almeno un punto di distribuzione per accettare le richieste PXE](/sccm/osd/deploy-use/use-pxe-to-deploy-windows-over-the-network#BKMK_Configure).
 
 
-## <a name="bkmk_userxp"></a> Software Center
+## <a name="software-center"></a><a name="bkmk_userxp"></a> Software Center
 
 ### <a name="replace-toast-notifications-with-dialog-window"></a>Sostituire le notifiche di tipo avviso popup con una finestra di dialogo
 
@@ -330,7 +330,7 @@ Specificare queste impostazioni nel gruppo di impostazioni client di **Software 
 Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#bkmk_swctr_defaults) (Informazioni sulle impostazioni client).
 
 
-## <a name="bkmk_sum"></a> Aggiornamenti software
+## <a name="software-updates"></a><a name="bkmk_sum"></a> Aggiornamenti software
 
 ### <a name="specify-priority-for-feature-updates-in-windows-10-servicing"></a>Specificare la priorità per gli aggiornamenti delle funzionalità nella manutenzione di Windows 10
 
@@ -342,7 +342,7 @@ Usare le impostazioni client per configurare questa opzione. Nel gruppo **Aggior
 Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#software-updates) (Informazioni sulle impostazioni client).
 
 
-## <a name="bkmk_o365"></a> Gestione di Office
+## <a name="office-management"></a><a name="bkmk_o365"></a> Gestione di Office
 
 ### <a name="redirect-windows-known-folders-to-onedrive"></a>Reindirizzare le cartelle note di Windows in OneDrive
 
@@ -381,7 +381,7 @@ Il dashboard del ciclo di vita del prodotto ora include informazioni per le vers
 Per altre informazioni, vedere [Usare il dashboard del ciclo di vita del prodotto](/sccm/core/clients/manage/asset-intelligence/product-lifecycle-dashboard).
 
 
-## <a name="bkmk_pod"></a> Distribuzioni in più fasi
+## <a name="phased-deployments"></a><a name="bkmk_pod"></a> Distribuzioni in più fasi
 
 ### <a name="dedicated-monitoring-for-phased-deployments"></a>Monitoraggio dedicato per le distribuzioni in più fasi
 
@@ -400,9 +400,9 @@ Creare una distribuzione in più fasi per una sequenza di attività, un'applicaz
 Per altre informazioni, vedere [Creare distribuzioni in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence).
 
 
-## <a name="bkmk_admin"></a> Console di Configuration Manager
+## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a> Console di Configuration Manager
 
-### <a name="bkmk_console"></a> Miglioramenti alla console di Configuration Manager
+### <a name="improvements-to-configuration-manager-console"></a><a name="bkmk_console"></a> Miglioramenti alla console di Configuration Manager
 
 <!--3594151-->
 In base ai suggerimenti dei clienti raccolti durante il Midwest Management Summit (MMS) Desert Edition 2018, questa versione include i miglioramenti seguenti della console di Configuration Manager:

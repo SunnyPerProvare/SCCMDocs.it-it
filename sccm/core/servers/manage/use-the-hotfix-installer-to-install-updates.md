@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su quando e come installare gli aggiornamenti usando il programma di installazione degli hotfix per Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: f3058277-c597-4dac-86d1-41b6f7e62b36
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 381b9ebafba24c58ea65f29fe5505763457b4451
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: bb738399e3e8454d6deb4a526dcb4cfdac6f92f3
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826170"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605581"
 ---
 # <a name="use-the-hotfix-installer-to-install-updates-for-configuration-manager"></a>Usare il programma di installazione di hotfix per installare gli aggiornamenti per Configuration Manager
 
@@ -29,7 +29,7 @@ Se il file dell'hotfix ha estensione **update.exe**, vedere [Usare lo strumento 
 > [!NOTE]  
 > Questo argomento fornisce indicazioni generali su come installare gli hotfix che aggiornano Configuration Manager. Per informazioni dettagliate su uno specifico aggiornamento, consultare l'articolo corrispondente della Knowledge Base (KB) nel Supporto tecnico Microsoft.  
 
-##  <a name="bkmk_Overview"></a> Panoramica degli hotfix per Configuration Manager  
+##  <a name="overview-of-hotfixes-for-configuration-manager"></a><a name="bkmk_Overview"></a> Panoramica degli hotfix per Configuration Manager  
 Gli hotfix per Configuration Manager sono simili a quelli per altri prodotti Microsoft, ad esempio SQL Server, contengono una singola correzione o un bundle (un rollup di correzioni) e sono descritti in un articolo della Microsoft Knowledge Base.  
 
 Gli aggiornamenti singoli includono un solo aggiornamento mirato per una versione specifica di Configuration Manager.  
@@ -97,7 +97,7 @@ La tabella seguente fornisce informazioni dettagliate sulle cartelle nella strut
 |&lt;Tipo di aggiornamento\>|Questi sono i tipi di aggiornamenti per Configuration Manager. La procedura guidata crea una cartella separata per ogni tipo di aggiornamento incluso nel bundle di aggiornamento. I nomi delle cartelle rappresentano i tipi di aggiornamento. Essi includono quanto segue:<br /><br /> **Server**: include gli aggiornamenti ai server del sito, ai server del database del sito e ai computer che eseguono il provider SMS.<br /><br /> **Client**: include gli aggiornamenti del client di Configuration Manager.<br /><br /> **AdminConsole**: include gli aggiornamenti della console di Configuration Manager<br /><br /> Oltre ai tipi di aggiornamento precedenti, la procedura guidata crea una cartella denominata **SCUP**. Questa cartella non rappresenta un tipo di aggiornamento, ma contiene invece il file CAB per Updates Publisher.|  
 |&lt;Platform\>|Si tratta di una cartella specifica della piattaforma. Contiene i file di aggiornamento specifici di un tipo di processore.  Queste cartelle includono:<br /><br />- x64<br /><br /> - I386|  
 
-##  <a name="bkmk_Install"></a> Come installare gli aggiornamenti  
+##  <a name="how-to-install-updates"></a><a name="bkmk_Install"></a> Come installare gli aggiornamenti  
 Per installare gli aggiornamenti, è prima necessario installare il bundle di aggiornamento in un server del sito. Quando si installa un bundle di aggiornamenti, viene avviata una procedura guidata di installazione dell'aggiornamento. Questa procedura:  
 
 - Estrae i file di aggiornamento  
@@ -123,15 +123,15 @@ Se si reinstalla un client, la console di Configuration Manager o il provider SM
 
 Usare le informazioni delle sezioni che seguono per installare gli aggiornamenti in ognuno dei componenti per Configuration Manager.  
 
-###  <a name="bkmk_servers"></a> Aggiornare i server  
+###  <a name="update-servers"></a><a name="bkmk_servers"></a> Aggiornare i server  
 Gli aggiornamenti per server possono includere gli aggiornamenti per i **siti**, per il **site database**e per i computer che eseguono un'istanza del **provider SMS**:  
 
-####  <a name="bkmk_site"></a> Aggiornare un sito  
+####  <a name="update-a-site"></a><a name="bkmk_site"></a> Aggiornare un sito  
 Per aggiornare un sito di Configuration Manager, è possibile installare il bundle di aggiornamento direttamente in un server del sito oppure distribuire gli aggiornamenti in un server del sito dopo aver installato il bundle di aggiornamento in un sito diverso.  
 
 Quando si installa un aggiornamento su un server del sito, il processo di installazione dell'aggiornamento gestisce azioni aggiuntive richieste per applicare l'aggiornamento, come ad esempio i ruoli del sistema del sito che stanno effettuando l'aggiornamento. L'eccezione è il database del sito. La sezione seguente contiene informazioni su come aggiornare il database del sito.  
 
-####  <a name="bkmk_database"></a> Aggiornare un database del sito  
+####  <a name="update-a-site-database"></a><a name="bkmk_database"></a> Aggiornare un database del sito  
 Per aggiornare il database del sito, il processo di installazione esegue un file denominato **update.sql** sul database del sito. È possibile configurare il processo di aggiornamento per aggiornare automaticamente il database del sito oppure aggiornare manualmente il database del sito in un secondo momento.  
 
 **Aggiornamento automatico del database del sito**  
@@ -163,12 +163,12 @@ Se si sceglie di non aggiornare automaticamente il database del sito quando si i
 
 5.  Quando si installa il bundle di aggiornamento, **update.sql** viene estratto nel seguente percorso sul server del sito:  **\\\\&lt;Nome server\>\SMS_&lt;Codice sito\>\Hotfix\\&lt;Numero KB\>\update.sql**  
 
-####  <a name="bkmk_provider"></a> Aggiornare un computer che esegue il provider SMS  
+####  <a name="update-a-computer-that-runs-the-sms-provider"></a><a name="bkmk_provider"></a> Aggiornare un computer che esegue il provider SMS  
 Dopo aver installato un pacchetto di aggiornamento che include aggiornamenti per il provider SMS è necessario distribuire l'aggiornamento in ogni computer che esegue il provider SMS. L'unica eccezione è costituita dall'istanza del provider SMS installata in precedenza nel server del sito in cui si installa il bundle di aggiornamenti. L'istanza locale del provider SMS nel server del sito viene aggiornata quando si installa il bundle di aggiornamenti.  
 
 Se si rimuove e quindi si reinstalla il provider SMS in un computer, sarà necessario reinstallare l'aggiornamento per il provider SMS in tale computer.  
 
-###  <a name="BKMK_clients"></a> Aggiornare i client  
+###  <a name="update-clients"></a><a name="BKMK_clients"></a> Aggiornare i client  
 Quando si installa un aggiornamento che include aggiornamenti per il client di Configuration Manager è possibile scegliere se aggiornare automaticamente i client con l'installazione dell'aggiornamento oppure aggiornarli manualmente in un secondo momento. Per altre informazioni sull'aggiornamento automatico dei client, vedere [Come aggiornare i client per i computer Windows](https://technet.microsoft.com/library/mt627885.aspx).  
 
 È possibile distribuire gli aggiornamenti con Updates Publisher o un pacchetto di distribuzione software oppure è possibile scegliere di installare manualmente l'aggiornamento in ogni client. Per altre informazioni su come usare le distribuzioni per installare gli aggiornamenti, vedere la sezione [Distribuire gli aggiornamenti per Configuration Manager](#BKMK_Deploy) in questo argomento.  
@@ -180,7 +180,7 @@ Per installare manualmente l'aggiornamento software, è necessario eseguire **Ms
 
 Ad esempio, è possibile utilizzare la seguente riga di comando per un aggiornamento client. Questa riga di comando esegue MSIEXEC nel computer client e fa riferimento al file MSP estratto dal pacchetto di aggiornamento nel server del sito: **msiexec.exe /p \\\\&lt;NomeServer\>\SMS_&lt;CodiceSito\>\Hotfix\\&lt;Numero KB\>\Client\\&lt;Piattaforma\>\\&lt;msp\> /L\*v &lt;filelog\>REINSTALLMODE=mous REINSTALL=ALL**  
 
-###  <a name="BKMK_console"></a> Aggiornare le console di Configuration Manager  
+###  <a name="update-configuration-manager-consoles"></a><a name="BKMK_console"></a> Aggiornare le console di Configuration Manager  
 Per aggiornare una console di Configuration Manager, al termine dell'installazione della console è necessario installare l'aggiornamento nel computer che esegue la console.  
 
 > [!IMPORTANT]  
@@ -196,10 +196,10 @@ Se il computer che si aggiorna esegue il client di Configuration Manager:
 
 Ad esempio, è possibile usare la riga di comando seguente per aggiornare una console di Configuration Manager. Questa riga di comando esegue MSIEXEC nel computer e fa riferimento al file MSP estratto dal pacchetto di aggiornamento nel server del sito: **msiexec.exe /p \\\\&lt;NomeServer\>\SMS_&lt;CodiceSito\>\Hotfix\\&lt;Numero KB\>\AdminConsole\\&lt;Piattaforma\>\\&lt;msp\> /L\*v &lt;filelog\>REINSTALLMODE=mous REINSTALL=ALL**  
 
-##  <a name="BKMK_Deploy"></a> Distribuire gli aggiornamenti per Configuration Manager  
+##  <a name="deploy-updates-for-configuration-manager"></a><a name="BKMK_Deploy"></a> Distribuire gli aggiornamenti per Configuration Manager  
 Dopo aver installato il bundle di aggiornamenti in un server del sito, è possibile distribuire gli aggiornamenti in altri computer usando uno dei tre metodi seguenti.  
 
-###  <a name="BKMK_DeploySCUP"></a> Usare Updates Publisher 2011 per installare gli aggiornamenti  
+###  <a name="use-updates-publisher-2011-to-install-updates"></a><a name="BKMK_DeploySCUP"></a> Usare Updates Publisher 2011 per installare gli aggiornamenti  
 Quando si installa il bundle di aggiornamenti in un server del sito, la procedura guidata di installazione crea un file di catalogo per Updates Publisher che è possibile usare per distribuire gli aggiornamenti nei computer applicabili. La procedura guidata crea sempre questo catalogo, anche quando si seleziona l'opzione **Use package and program to deploy this update**.  
 
 Il catalogo per Updates Publisher, **SCUPCatalog.cab**, è disponibile nel percorso seguente del computer in cui viene eseguito il pacchetto di aggiornamento: **\\\\&lt;NomeServer\>\SMS_&lt;CodiceSito\>\Hotfix\\&lt;Numero KB\>\SCUP\SCUPCatalog.cab**  
@@ -227,7 +227,7 @@ Usare la procedura seguente per importare il file SCUPCatalog.cab in Updates Pub
 
 7.  Completare la procedura guidata per pubblicare gli aggiornamenti.  
 
-###  <a name="BKMK_DeploySWDist"></a> Usare la distribuzione software per installare gli aggiornamenti  
+###  <a name="use-software-deployment-to-install-updates"></a><a name="BKMK_DeploySWDist"></a> Usare la distribuzione software per installare gli aggiornamenti  
 Quando si installa il bundle di aggiornamenti nel server del sito di un sito primario o di un sito di amministrazione centrale, è possibile configurare la procedura guidata di installazione per creare pacchetti di aggiornamento per la distribuzione software. È quindi possibile distribuire ogni pacchetto in una raccolta di computer che si desidera aggiornare.  
 
 Per creare un pacchetto di distribuzione software, nella pagina **Configure Software Update Deployment** della procedura guidata selezionare la casella di controllo relativa a ogni tipo di pacchetto di aggiornamento che si desidera aggiornare. I tipi disponibili possono includere server, console di Configuration Manager e client. Viene creato un pacchetto separato per ogni tipo di aggiornamento selezionato.  
@@ -245,7 +245,7 @@ Al termine della procedura guidata, è possibile visualizzare i pacchetti creati
 
 Per informazioni su come distribuire i pacchetti ai client di Configuration Manager, vedere [Pacchetti e programmi](../../../apps/deploy-use/packages-and-programs.md).  
 
-###  <a name="BKMK_DeployCollections"></a> Creare raccolte per la distribuzione degli aggiornamenti in Configuration Manager  
+###  <a name="create-collections-for-deploying-updates-to-configuration-manager"></a><a name="BKMK_DeployCollections"></a> Creare raccolte per la distribuzione degli aggiornamenti in Configuration Manager  
 È possibile distribuire aggiornamenti specifici nei client applicabili. Le informazioni seguenti consentono di creare raccolte di dispositivi per i vari componenti per Configuration Manager.  
 
 |Componente di Configuration Manager|Istruzioni|  

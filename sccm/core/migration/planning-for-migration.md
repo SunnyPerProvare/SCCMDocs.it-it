@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni su siti e gerarchie prima di eseguire la migrazione di dati in una gerarchia di destinazione di Configuration Manager.
 ms.date: 01/12/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: b2bf493e-1e10-496f-a139-2646522703ed
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b95147faab5a1e0c8a5b244f8e101ebc3c29bea6
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: b514e2bb0843801cfa6f0f307af8a5013fc3f9e6
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75803110"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604755"
 ---
 # <a name="plan-for-migration-to-configuration-manager-current-branch"></a>Pianificare la migrazione a Configuration Manager Current Branch
 

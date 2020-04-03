@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Panoramica delle procedure per abilitare TLS 1.2 per Configuration Manager.
 ms.date: 12/13/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 31de47c9-891b-4de7-8d5e-fbbc1bff7c60
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: ccb9c241f79268b5571d3b18fa36783a092a0781
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 6d5b181454dbc24883e2f79b6a34334363725e9e
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75799200"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80606420"
 ---
 # <a name="how-to-enable-tls-12"></a>Come abilitare TLS 1.2
 

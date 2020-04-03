@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulla modalità di impiego presso Microsoft dei dati di diagnostica e di utilizzo raccolti da Configuration Manager.
 ms.date: 12/23/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: a8021bc8-2799-41f4-83c2-e27d1242028c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5ebc5576ef4e11dac96ce5fd7528bbb244123cb0
-ms.sourcegitcommit: bfece120a6f9a79dbcc8bacc83905f16f3f1b144
+ms.openlocfilehash: 3f0605c755aa5fc85b169ca7096fea209301c0ee
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76917512"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80600934"
 ---
 # <a name="how-microsoft-uses-configuration-manager-diagnostics-and-usage-data"></a>Come Microsoft usa i dati di diagnostica e di utilizzo di Configuration Manager
 

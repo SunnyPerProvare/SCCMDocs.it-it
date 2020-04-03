@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare lo strumento Send Schedule Tool per attivare una programmazione in un client di Configuration Manager.
 ms.date: 07/30/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: d5ce547d-3b3b-47d3-bcd7-6ff94692c046
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 861136970db70c145d1ac9951b20b13a2ce76f55
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 7078017caa928d3b69436843f18257f74b9c2963
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75826000"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80599046"
 ---
 # <a name="send-schedule-tool"></a>Send Schedule Tool
 
@@ -67,7 +67,7 @@ Elencare tutti i GUID dei messaggi o gli UID DCM disponibili per l'invio. Visual
 
 
 
-## <a name="bkmk_sendschedule-guids"></a> ID messaggio
+## <a name="message-ids"></a><a name="bkmk_sendschedule-guids"></a> ID messaggio
 
 |ID messaggio  |Nome visualizzato  |
 |---------|---------|

@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Installare o aggiornare Long-Term Servicing Branch per System Center Configuration Manager.
 ms.date: 09/06/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: f4f9a5fd-f573-4b99-ad93-b2c76812e922
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 467052e4d22b812a0ed6c7b06f3691560f522453
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: 0b0d0717b48a96d93d01529e422db218f57796c5
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825830"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80598277"
 ---
 # <a name="install-and-upgrade-with-the-version-1606-baseline-media"></a>Eseguire l'installazione e l'aggiornamento con il supporto di base della versione 1606
 

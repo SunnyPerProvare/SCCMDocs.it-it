@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle attività di migrazione dei client da una gerarchia di origine a una gerarchia di destinazione di Configuration Manager Current Branch.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 2e27b0b7-7bd3-45cd-bc99-9c991606c637
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a2fdea69b6115e80f74197fdaec3a906d3ddd0f3
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: c0885cab43deacf7e7f487e5c20e171f6475b302
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75803178"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604835"
 ---
 # <a name="plan-a-client-migration-strategy-in-configuration-manager"></a>Pianificare una strategia di migrazione dei client in Configuration Manager
 
@@ -31,7 +31,7 @@ Per eseguire la migrazione dei client dalla gerarchia di origine a una gerarchia
 
 -   [Pianificare i dati di inventario e di conformità durante la migrazione](#Planning_for_Inventory_data_migration)  
 
-##  <a name="Planning_for_Client_Agent_Migration"></a> Pianificare la migrazione dei client nella gerarchia di destinazione  
+##  <a name="plan-to-migrate-clients-to-the-destination-hierarchy"></a><a name="Planning_for_Client_Agent_Migration"></a> Pianificare la migrazione dei client nella gerarchia di destinazione  
  Quando si esegue la migrazione dei client da una gerarchia di origine, il software client nel computer client viene aggiornato in base alla versione prodotto della gerarchia di destinazione.  
 
 -   **Gerarchia di origine con Configuration Manager 2007:** quando si esegue la migrazione dei client da una gerarchia di origine che esegue una versione supportata di Configuration Manager, il software client esegue l'aggiornamento alla versione client per la gerarchia di destinazione.  
@@ -65,7 +65,7 @@ Per pianificare la migrazione client, utilizzare le seguenti informazioni:
 
 Dopo la migrazione del client nella gerarchia di destinazione, non è più possibile gestire il dispositivo usando la gerarchia di origine ed è necessario valutare la rimozione del client dalla gerarchia di origine. Benché non si tratti di un requisito relativo alla migrazione tra gerarchie, questo consente di impedire il rilevamento di un client migrato in un report della gerarchia di origine o un conteggio errato delle risorse tra le due gerarchie durante la migrazione. Quando ad esempio un client migrato rimane nel database del sito di origine, è possibile eseguire un report degli aggiornamenti software che rileva erroneamente il computer come risorsa non gestita, sebbene il computer sia ora gestito dalla gerarchia di destinazione.  
 
-##  <a name="Planning_for_Client_Data_Migration"></a> Pianificare la gestione dei dati conservati nei client durante la migrazione  
+##  <a name="plan-to-handle-data-maintained-on-clients-during-migration"></a><a name="Planning_for_Client_Data_Migration"></a> Pianificare la gestione dei dati conservati nei client durante la migrazione  
 Quando si esegue la migrazione di un client dalla gerarchia di origine alle gerarchia di destinazione, alcune informazioni vengono conservate nel dispositivo, mentre altre informazioni non sono più disponibili nel dispositivo dopo la migrazione.  
 
 Le seguenti informazioni vengono conservate nel dispositivo client:  
@@ -94,7 +94,7 @@ Quando un client esegue la migrazione, le informazioni archiviate nel Registro d
 
 Inoltre, potrebbe essere necessario reinstallare alcune applicazioni.  
 
-##  <a name="Planning_for_Inventory_data_migration"></a> Pianificare i dati di inventario e di conformità durante la migrazione  
+##  <a name="plan-for--inventory-and-compliance-data-during-migration"></a><a name="Planning_for_Inventory_data_migration"></a> Pianificare i dati di inventario e di conformità durante la migrazione  
 I dati di inventario e di conformità del client non vengono salvati quando si esegue la migrazione di un client nella gerarchia di destinazione. Queste informazioni vengono invece ricreate nella gerarchia di destinazione quando un client invia le proprie informazioni al sito assegnato. Per ridurre i requisiti di larghezza di banda di rete e l'elaborazione del server, valutare una migrazione a più fasi di quantità limitate di client, anziché un'unica migrazione di ampie quantità di client.  
 
  Non è inoltre possibile eseguire la migrazione di personalizzazioni per l'inventario hardware da una gerarchia di origine. È necessario introdurre tali personalizzazioni nella gerarchia di destinazione indipendentemente dalla migrazione. Per altre informazioni su come estendere l'inventario hardware, vedere [Come configurare l'inventario hardware](../../core/clients/manage/inventory/configure-hardware-inventory.md).  

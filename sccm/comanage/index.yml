@@ -6,17 +6,17 @@ metadata:
   titleSuffix: Configuration Manager
   description: Con la co-gestione è possibile gestire i dispositivi Windows 10 contemporaneamente tramite Configuration Manager e Microsoft Intune.
   ms.product: configuration-manager
-  ms.technology: configmgr-other
+  ms.technology: configmgr-comanage
   ms.topic: landing-page
   author: mestew
   ms.author: mstewart
   ms.date: 01/10/2020
-  ms.openlocfilehash: a201e8803ea7d49a5c0e47a56d70e08e72ceb256
-  ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+  ms.openlocfilehash: 5d6fdb8c7eb0c732532986123c51c8be16b1c167
+  ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 01/09/2020
-  ms.locfileid: "75827469"
+  ms.lasthandoff: 04/02/2020
+  ms.locfileid: "80596209"
 landingContent:
 - title: Informazioni sulla co-gestione
   linkLists:

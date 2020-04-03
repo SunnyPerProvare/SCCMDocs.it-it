@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Esaminare le informazioni di riferimento seguenti che consentono di preparare l'installazione di un sito o di una gerarchia di Configuration Manager.
 ms.date: 04/18/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: cdb9fb0c-0912-41e4-b427-f40620971763
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 68dc0e0540eccabd07249b3b418b760d736f5be9
-ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
+ms.openlocfilehash: d948452da54a41e35095b01cb0e942e02a7a597f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "76891637"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80605867"
 ---
 # <a name="reference-for-configuration-manager-setup"></a>Informazioni di riferimento per l'installazione di Configuration Manager
 
@@ -24,20 +24,20 @@ ms.locfileid: "76891637"
 Il programma di installazione di Configuration Manager fa riferimento a diversi argomenti descritti in dettaglio nelle sezioni seguenti. Le informazioni presentate in questo argomento possono essere utili per preparare l'installazione di un sito o di una gerarchia di Configuration Manager e per prendere alcune delle decisioni necessarie durante l'installazione.  
 
 
-##  <a name="bkmk_start"></a> Prima di iniziare  
+##  <a name="before-you-begin"></a><a name="bkmk_start"></a> Prima di iniziare  
 Prima di installare nuovi siti di Configuration Manager, verificare di avere esaminato le informazioni seguenti, utili per garantire una buona riuscita della distribuzione:  
 
 -   [Nozioni fondamentali di Configuration Manager](../../../../core/understand/fundamentals.md)  
 -   [Pianificare l'infrastruttura di Configuration Manage](../../../plan-design/network/configure-firewalls-ports-domains.md)r  
 -   [Preparare l'installazione di siti di Configuration Manager](prepare-to-install-sites.md)  
 
-##  <a name="bkmk_assess"></a> Valutare la conformità dei server  
+##  <a name="assess-server-readiness"></a><a name="bkmk_assess"></a> Valutare la conformità dei server  
 Prima di iniziare l'installazione di un nuovo sito, verificare che il server del sito e i server del sistema del sito remoti da usare per il sito (ad esempio il server che ospita il database del sito) soddisfino tutte le configurazioni dei prerequisiti. Possono essere utili gli argomenti seguenti della raccolta di documentazione:  
 
 -   [Configurazioni supportate per Configuration Manager](../../../../core/plan-design/configs/supported-configurations.md)  
 -   [Controllo prerequisiti](prerequisite-checker.md)  
 
-##  <a name="bkmk_Addclients"></a> Client per altri sistemi operativi  
+##  <a name="clients-for-additional-operating-systems"></a><a name="bkmk_Addclients"></a> Client per altri sistemi operativi  
 È possibile scaricare il software client per Configuration Manager dall'Area download Microsoft per i sistemi operativi seguenti:  
 
 - macOS (Apple)
@@ -50,7 +50,7 @@ Per scaricare i client per la versione di Configuration Manager in uso, usare i 
 
 - [Microsoft Configuration Manager - Client per altri sistemi operativi](https://www.microsoft.com/download/details.aspx?id=47719)
 
-##  <a name="bkmk_usage"></a> Impostazioni e livelli per i dati di utilizzo  
+##  <a name="usage-data-levels-and-settings"></a><a name="bkmk_usage"></a> Impostazioni e livelli per i dati di utilizzo  
 Quando si installa il primo sito di Configuration Manager, nel server del sito viene installato e configurato automaticamente un nuovo ruolo del sistema del sito, ovvero il **punto di connessione del servizio**, con le impostazioni predefinite seguenti:  
 
 -   Modalità **Online** (è disponibile anche una modalità offline)  

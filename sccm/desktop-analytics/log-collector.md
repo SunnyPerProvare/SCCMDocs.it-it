@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Usare l'agente di raccolta log per risolvere i problemi di Desktop Analytics
 ms.date: 07/26/2019
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: 349b2a69-af46-481f-afb2-24d98774e852
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1ee89e46f9bd780fe724a5b6092b4b9aa16ecb1c
-ms.sourcegitcommit: 148745e1c3d9817d8beea20684a54436210959c6
+ms.openlocfilehash: fcf6025d2d48c8af2cec6afcfbc6b7e395ca4388
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75825592"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80604920"
 ---
 # <a name="desktop-analytics-log-collector"></a>Agente di raccolta log di Desktop Analytics
 
@@ -132,31 +132,31 @@ Lo script genera anche altri *file di diagnostica* nella cartella di lavoro. Ad 
 
 ## <a name="examples"></a>Esempi
 
-### <a name="bkmk_ex1"></a> Esempio 1: Eseguire lo script tramite la finestra di comando di PowerShell con i valori predefiniti
+### <a name="example-1-run-script-via-powershell-command-window-with-default-values"></a><a name="bkmk_ex1"></a> Esempio 1: Eseguire lo script tramite la finestra di comando di PowerShell con i valori predefiniti
 
 ```PowerShell
 .\DesktopAnalyticsLogsCollector.ps1
 ```
 
-### <a name="bkmk_ex2"></a> Esempio 2: Eseguire lo script tramite la finestra di comando di PowerShell con i parametri specificati
+### <a name="example-2-run-script-via-powershell-command-window-with-specified-parameters"></a><a name="bkmk_ex2"></a> Esempio 2: Eseguire lo script tramite la finestra di comando di PowerShell con i parametri specificati
 
 ```PowerShell
 .\DesktopAnalyticsLogsCollector.ps1 -LogPath "c:\testABC" -LogMode 0 -CollectNetTrace 0 -CollectUTCTrace 0
 ```
 
-### <a name="bkmk_ex3"></a> Esempio 3: Eseguire lo script tramite la finestra di comando di PowerShell con i parametri specificati nella posizione
+### <a name="example-3-run-script-via-powershell-command-window-with-specified-parameters-in-position"></a><a name="bkmk_ex3"></a> Esempio 3: Eseguire lo script tramite la finestra di comando di PowerShell con i parametri specificati nella posizione
 
 ```PowerShell
 .\DesktopAnalyticsLogsCollector.ps1 "c:\testABC" 2 0 0
 ```
 
-### <a name="bkmk_ex4"></a> Esempio 4: Eseguire lo script tramite la finestra di comando di PowerShell con il parametro specificato e i messaggi dettagliati
+### <a name="example-4-run-script-via-powershell-command-window-with-specified-parameter-and-verbose-messages"></a><a name="bkmk_ex4"></a> Esempio 4: Eseguire lo script tramite la finestra di comando di PowerShell con il parametro specificato e i messaggi dettagliati
 
 ```PowerShell
 .\DesktopAnalyticsLogsCollector.ps1 -LogMode 1 -Verbose
 ```
 
-### <a name="bkmk_ex5"></a> Esempio 5: Distribuire lo script tramite **Script** di Configuration Manager
+### <a name="example-5-deploy-script-via-configuration-manager-scripts"></a><a name="bkmk_ex5"></a> Esempio 5: Distribuire lo script tramite **Script** di Configuration Manager
 
 Per altre informazioni, vedere [Creare ed eseguire script di PowerShell dalla console di Configuration Manager](/sccm/apps/deploy-use/create-deploy-scripts).
 

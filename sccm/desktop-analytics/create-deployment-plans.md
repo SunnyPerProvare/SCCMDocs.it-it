@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Guida pratica per la creazione di piani di distribuzione in Desktop Analytics.
 ms.date: 03/12/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-analytics
 ms.topic: conceptual
 ms.assetid: 8e0e8496-136b-461f-8239-cc19c6b78c3b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6420dbf290c40b503c89a33f520d812bdd4a7c96
-ms.sourcegitcommit: 888d695cd30cdc2a65e1ef486cfa0588575ea560
+ms.openlocfilehash: 19e6faee76fc7fa625f9afbc4a53e85950f87b0f
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80250846"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80597501"
 ---
 # <a name="how-to-create-deployment-plans-in-desktop-analytics"></a>Come creare i piani di distribuzione in Desktop Analytics
 

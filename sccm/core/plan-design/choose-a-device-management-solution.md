@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Informazioni sulle soluzioni offerte da Microsoft per la gestione di PC, server e dispositivi.
 ms.date: 01/24/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 24633725-791a-4df7-8dce-2c24c1a19a03
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 090ad25be0b4bb8fc961e2eb976b50942db7851a
-ms.sourcegitcommit: fa806f4691befecc7f95a3213f709acfa520a132
+ms.openlocfilehash: a724b2890fc4b9625d621533aead3e93ab2a58a9
+ms.sourcegitcommit: ccc3c929b5585c05d562020e68044de7d7e11c6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78290039"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80601489"
 ---
 # <a name="choose-a-device-management-solution"></a>Scegliere una soluzione di gestione dei dispositivi
 
@@ -68,31 +68,31 @@ Sono disponibili anche due tabelle che consentono di confrontare le soluzioni di
 - [Piattaforme supportate](#bkmk_comp1)
 - [Funzionalità di gestione](#bkmk_comp2)
 
-### <a name="bkmk_sccm"></a> Client di Configuration Manager  
+### <a name="configuration-manager-client"></a><a name="bkmk_sccm"></a> Client di Configuration Manager  
 
 Questa opzione richiede l'installazione del client di Configuration Manager nei dispositivi. Fornisce la maggior parte delle funzionalità per la gestione di PC, server e altri dispositivi nell'ambiente in uso.
 
 Per altre informazioni, vedere [Metodi di installazione client](/sccm/core/clients/deploy/plan/client-installation-methods).  
 
-### <a name="bkmk_opmdm"></a> Software MDM locale  
+### <a name="on-premises-mdm"></a><a name="bkmk_opmdm"></a> Software MDM locale  
 
 Questa opzione usa le funzionalità di gestione dei dispositivi incorporate in Windows 10. Anche se non è completa come la gestione basata su client, la gestione dei dispositivi mobili locale offre un approccio più semplice. Usa le risorse di Configuration Manager in locale per gestire i dispositivi.  
 
 Per altre informazioni, vedere [Gestire i dispositivi mobili con l'infrastruttura locale](/sccm/mdm/understand/manage-mobile-devices-with-on-premises-infrastructure).  
 
-### <a name="bkmk_comanage"></a> Co-gestione con Microsoft Intune
+### <a name="co-management-with-microsoft-intune"></a><a name="bkmk_comanage"></a> Co-gestione con Microsoft Intune
 
 La co-gestione è uno dei modi principali per collegare la distribuzione di Configuration Manager esistente al cloud di Microsoft 365. Consente di gestire dispositivi Windows 10 contemporaneamente tramite Configuration Manager e Microsoft Intune. La co-gestione consente di collegare al cloud gli investimenti esistenti in Configuration Manager tramite l'aggiunta di nuove funzionalità.
 
 Per altre informazioni, vedere [What is co-management?](/sccm/comanage/overview) (Informazioni sulla co-gestione).  
 
-### <a name="bkmk_exchange"></a> Microsoft Exchange  
+### <a name="microsoft-exchange"></a><a name="bkmk_exchange"></a> Microsoft Exchange  
 
 Questa opzione usa il connettore Exchange Server per connettere più server Exchange a Configuration Manager. Consente di centralizzare la gestione dei dispositivi che possono connettersi a Exchange ActiveSync. È possibile configurare le funzionalità di gestione dei dispositivi mobili di Exchange dalla console di Configuration Manager. Le funzionalità di esempio includono la cancellazione dei dati del dispositivo remota e il controllo delle impostazioni per più server Exchange.
 
 Per altre informazioni, vedere [Gestire i dispositivi mobili con Configuration Manager ed Exchange](/sccm/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync).  
 
-### <a name="bkmk_comp1"></a> Confrontare le soluzioni in base alle piattaforme supportate  
+### <a name="compare-solutions-by-supported-platforms"></a><a name="bkmk_comp1"></a> Confrontare le soluzioni in base alle piattaforme supportate  
 
 |Piattaforma|Client di Configuration Manager|Software MDM locale|Configuration Manager con Exchange| Intune |
 |--------|----------------------------|---------------|-----------------------------------|--------|
@@ -112,7 +112,7 @@ Per un elenco completo di piattaforme supportate, vedere gli articoli seguenti:
 
 Microsoft consiglia di usare Intune per gestire i dispositivi mobili Android, iOS e Windows 10. Per altre informazioni, vedere [Informazioni su Microsoft Intune](https://docs.microsoft.com/intune/what-is-intune).
 
-### <a name="bkmk_comp2"></a> Confrontare le soluzioni in base alle funzionalità di gestione  
+### <a name="compare-solutions-by-management-functionality"></a><a name="bkmk_comp2"></a> Confrontare le soluzioni in base alle funzionalità di gestione  
 
 |Funzionalità di gestione|Client di Configuration Manager|Software MDM locale|Configuration Manager con Exchange|  
 |--------|----------------------------|---------------|-----------------------------------|  
